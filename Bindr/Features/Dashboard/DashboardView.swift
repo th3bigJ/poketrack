@@ -94,12 +94,13 @@ struct DashboardView: View {
     }
 
     private var sealedProductsCount: Int {
-        visibleCollectionItems.reduce(0) { partialResult, item in
-            guard item.itemKind == ProductKind.sealedProduct.rawValue || SealedProduct.parseCollectionProductID(item.cardID) != nil else {
-                return partialResult
+        Set(
+            visibleCollectionItems.compactMap { item -> String? in
+                guard item.itemKind == ProductKind.sealedProduct.rawValue else { return nil }
+                guard item.quantity > 0 else { return nil }
+                return item.cardID
             }
-            return partialResult + max(item.quantity, 0)
-        }
+        ).count
     }
 
     private var wishlistedCardsCount: Int {

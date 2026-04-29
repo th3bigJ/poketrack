@@ -4,7 +4,7 @@ struct BrowseInlineSearchField: View {
     let title: String
     @Binding var text: String
     private let trailingContent: AnyView?
-    private let chromeCornerRadius: CGFloat = 16
+    @Environment(\.colorScheme) private var colorScheme
 
     init(title: String, text: Binding<String>) {
         self.title = title
@@ -45,9 +45,21 @@ struct BrowseInlineSearchField: View {
         .padding(.horizontal, 14)
         .padding(.vertical, 10)
         .background(
-            RoundedRectangle(cornerRadius: chromeCornerRadius, style: .continuous)
-                .fill(Color(uiColor: .secondarySystemFill))
+            Capsule(style: .continuous)
+                .fill(searchBackground)
         )
+        .overlay(
+            Capsule(style: .continuous)
+                .stroke(searchBorder, lineWidth: 1.5)
+        )
+    }
+
+    private var searchBackground: Color {
+        colorScheme == .dark ? .black : .white
+    }
+
+    private var searchBorder: Color {
+        colorScheme == .dark ? Color.white.opacity(0.24) : Color.black.opacity(0.18)
     }
 }
 

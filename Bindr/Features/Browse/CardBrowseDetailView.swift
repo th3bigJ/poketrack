@@ -650,6 +650,9 @@ private struct CardBrowseDetailPage: View {
                 Text("Qty \(line.quantity)")
                     .font(.caption.weight(.medium))
                     .foregroundStyle(.secondary)
+                if let priceText = line.priceText {
+                    labelValueRow(label: "Price", value: priceText)
+                }
                 Spacer(minLength: 8)
                 Text(line.date.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption.weight(.medium))
@@ -657,12 +660,6 @@ private struct CardBrowseDetailPage: View {
             }
 
             HStack(spacing: 12) {
-                if let priceText = line.priceText {
-                    labelValueRow(label: "Price", value: priceText)
-                }
-                if let counterparty = line.counterparty {
-                    labelValueRow(label: line.counterpartyLabel, value: counterparty)
-                }
                 Spacer(minLength: 8)
                 Button("Edit") { editingLine = line }
                     .buttonStyle(.bordered)

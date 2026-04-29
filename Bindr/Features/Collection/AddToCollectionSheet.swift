@@ -51,6 +51,7 @@ struct AddToCollectionSheet: View {
 
     // Bought
     @State private var priceText: String = ""
+    @State private var occurredAt: Date = Date()
 
     @State private var errorMessage: String?
 
@@ -63,6 +64,10 @@ struct AddToCollectionSheet: View {
 
     private var currencySymbol: String {
         services.priceDisplay.currency.symbol
+    }
+
+    private var headerButtonColor: Color {
+        colorScheme == .dark ? .white : .black
     }
 
     var body: some View {
@@ -111,6 +116,10 @@ struct AddToCollectionSheet: View {
                     Stepper("Quantity: \(quantity)", value: $quantity, in: 1...999)
                 }
 
+                Section {
+                    DatePicker("Date", selection: $occurredAt, displayedComponents: .date)
+                }
+
                 Group {
                     switch acquisitionKind {
                     case .bought:
@@ -131,23 +140,26 @@ struct AddToCollectionSheet: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
-            .tint(colorScheme == .dark ? .white : .black)
             .navigationTitle("Add to collection")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(headerButtonColor)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") { save() }
+                        .foregroundStyle(headerButtonColor)
                         .disabled(acquisitionKind == .trade)
                 }
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
                     Button("Done") { dismissDecimalKeyboard() }
+                        .foregroundStyle(headerButtonColor)
                 }
             }
         }
+        .tint(headerButtonColor)
     }
 
     private func dismissDecimalKeyboard() {
@@ -233,6 +245,7 @@ struct AddToCollectionSheet: View {
                     variantKey: variantKey,
                     kind: .bought,
                     quantity: quantity,
+                    occurredAt: occurredAt,
                     currencyCode: currencyCode,
                     cardDisplayName: card.cardName,
                     unitPrice: unit,
@@ -250,6 +263,7 @@ struct AddToCollectionSheet: View {
                     variantKey: variantKey,
                     kind: .packed,
                     quantity: quantity,
+                    occurredAt: occurredAt,
                     currencyCode: currencyCode,
                     cardDisplayName: card.cardName,
                     unitPrice: nil,
@@ -267,6 +281,7 @@ struct AddToCollectionSheet: View {
                     variantKey: variantKey,
                     kind: .gifted,
                     quantity: quantity,
+                    occurredAt: occurredAt,
                     currencyCode: currencyCode,
                     cardDisplayName: card.cardName,
                     unitPrice: nil,

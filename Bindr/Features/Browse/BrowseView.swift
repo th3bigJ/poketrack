@@ -132,7 +132,8 @@ struct CardGridCell: View {
                 imageURL: safeImageURL(relativePath: card.imageLowSrc),
                 isOwned: isOwned,
                 isWishlisted: isWishlisted,
-                ownedCountBadge: visibleOwnedCountBadge
+                ownedCountBadge: visibleOwnedCountBadge,
+                accentColor: services.theme.accentColor
             )
             .frame(maxWidth: .infinity)
             .aspectRatio(5/7, contentMode: .fit)
@@ -224,75 +225,31 @@ struct CardGridCell: View {
 }
 
 private struct BrowseCardThumbnailView: View {
-    @Environment(AppServices.self) private var services
     let imageURL: URL?
     var isOwned = false
     var isWishlisted = false
     var ownedCountBadge: Int? = nil
+    var accentColor: Color = .accentColor
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             CachedCardThumbnailImage(url: imageURL)
             if let ownedCountBadge, ownedCountBadge > 1 {
-                if ownedCountBadge == 2 {
-                    Image(systemName: "2.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else if ownedCountBadge == 3 {
-                    Image(systemName: "3.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else if ownedCountBadge == 4 {
-                    Image(systemName: "4.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else if ownedCountBadge == 5 {
-                    Image(systemName: "5.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else if ownedCountBadge == 6 {
-                    Image(systemName: "6.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else if ownedCountBadge == 7 {
-                    Image(systemName: "7.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else if ownedCountBadge == 8 {
-                    Image(systemName: "8.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else if ownedCountBadge == 9 {
-                    Image(systemName: "9.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                }
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.white, accentColor)
+                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                    .overlay(alignment: .center) {
+                        Text("\(ownedCountBadge)")
+                            .font(.system(size: 9, weight: .bold))
+                            .foregroundStyle(.white)
+                            .offset(x: 0.5, y: 0.5)
+                    }
+                    .padding(6)
             } else if isOwned {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 24, weight: .semibold))
-                    .foregroundStyle(.white, services.theme.accentColor)
+                    .foregroundStyle(.white, accentColor)
                     .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
                     .padding(6)
             } else if isWishlisted {
@@ -1902,10 +1859,17 @@ private struct BrowseSetsTabContent: View {
 
                                         VStack(alignment: .leading, spacing: 2) {
                                             let progress = setProgress(for: set)
-                                            Text(set.name)
-                                                .font(.subheadline.weight(.medium))
-                                                .foregroundStyle(.primary)
-                                                .lineLimit(2)
+                                            HStack(alignment: .top, spacing: 8) {
+                                                Text(set.name)
+                                                    .font(.subheadline.weight(.medium))
+                                                    .foregroundStyle(.primary)
+                                                    .lineLimit(2)
+                                                Spacer(minLength: 6)
+                                                Text("Full Set Value")
+                                                    .font(.caption2.weight(.semibold))
+                                                    .foregroundStyle(.secondary)
+                                                    .lineLimit(1)
+                                            }
                                             if let total = progress.total, total > 0 {
                                                 ProgressView(value: min(Double(progress.collected), Double(total)), total: Double(total))
                                                     .progressViewStyle(.linear)

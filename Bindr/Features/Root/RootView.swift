@@ -83,6 +83,7 @@ struct RootView: View {
     @State private var collectionNavigationPath = NavigationPath()
     @State private var moreNavigationPath = NavigationPath()
     @State private var selectedCardPresentation: CardPresentationContext?
+    @State private var selectedSealedProductPresentation: SealedProductPresentationContext?
     @State private var showBrandOnboarding = false
     @State private var showCreateFolderAlert = false
     @State private var newFolderTitle = ""
@@ -293,6 +294,16 @@ struct RootView: View {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
             selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
+        })
+        .environment(\.presentCardAtIndex, { list, index in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
+            selectedCardPresentation = CardPresentationContext(cards: list, startIndex: safeIndex)
+        })
+        .environment(\.presentSealedProduct, { _, list, index in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
+            selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
         })
         .sheet(isPresented: $showBrandOnboarding) {
             BrandOnboardingView(isPresented: $showBrandOnboarding)
@@ -505,6 +516,16 @@ struct RootView: View {
                             let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
                             selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
                         })
+                        .environment(\.presentCardAtIndex, { list, index in
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
+                            selectedCardPresentation = CardPresentationContext(cards: list, startIndex: safeIndex)
+                        })
+                        .environment(\.presentSealedProduct, { _, list, index in
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
+                            selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
+                        })
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                         .background {
@@ -558,7 +579,7 @@ struct RootView: View {
         }
         .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
         .overlay {
-            if selectedCardPresentation != nil || services.isSealedDetailPresentationActive {
+            if selectedCardPresentation != nil || selectedSealedProductPresentation != nil || services.isSealedDetailPresentationActive {
                 Color(uiColor: .systemBackground)
                     .ignoresSafeArea()
                     .allowsHitTesting(false)
@@ -567,7 +588,7 @@ struct RootView: View {
         }
         .animation(
             .easeInOut(duration: 0.25),
-            value: selectedCardPresentation != nil || services.isSealedDetailPresentationActive
+            value: selectedCardPresentation != nil || selectedSealedProductPresentation != nil || services.isSealedDetailPresentationActive
         )
         .onChange(of: searchFieldFocused) { _, isFocused in
             if isFocused {
@@ -678,6 +699,17 @@ struct RootView: View {
         .sheet(item: $selectedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
+        }
+        .sheet(item: $selectedSealedProductPresentation) { ctx in
+            if ctx.products.isEmpty {
+                ContentUnavailableView("No product", systemImage: "shippingbox")
+            } else {
+                SealedProductBrowseDetailView(
+                    products: ctx.products,
+                    startProductID: ctx.products[min(max(ctx.startIndex, 0), max(ctx.products.count - 1, 0))].id
+                )
+                .environment(services)
+            }
         }
         .alert("New Folder", isPresented: $showCreateFolderAlert) {
             TextField("Folder name", text: $newFolderTitle)

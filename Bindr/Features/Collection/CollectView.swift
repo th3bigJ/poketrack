@@ -6,6 +6,7 @@ struct CollectView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentCard) private var presentCard
+    @Environment(\.presentCardAtIndex) private var presentCardAtIndex
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     // MARK: - Collection State
@@ -16,6 +17,11 @@ struct CollectView: View {
     @State private var cachedSetNameByBrandAndCode: [String: String] = [:]
     @State private var sealedProductByIDCache: [Int: SealedProduct] = [:]
     @State private var sealedProductByCollectionCardIDCache: [String: SealedProduct] = [:]
+    @State private var collectionFilteredItemsForSelectedTypeCache: [CollectionItem] = []
+    @State private var collectionDisplayedItems: [CollectionItem] = []
+    @State private var collectionDisplayedCards: [Card] = []
+    @State private var collectionNextIndex = 0
+    @State private var isLoadingMoreCollectionItems = false
 
     // MARK: - Wishlist State
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
@@ -35,6 +41,8 @@ struct CollectView: View {
 
     @State private var collectionQuery = ""
     @State private var wishlistQuery = ""
+    private static let collectionInitialBatchSize = 36
+    private static let collectionPageSize = 18
 
     var showsSegmentedControl = true
     var hidesNavigationBar = true
@@ -148,13 +156,18 @@ struct CollectView: View {
                 selectedBrand = services.brandSettings.selectedCatalogBrand
             }
             refreshSealedProductCaches()
+            refreshCollectionFeed()
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
         }
-        .onChange(of: selectedBrand) { _, _ in
-            // Keep persisted filters when switching brands.
-        }
+        .onChange(of: selectedBrand) { _, _ in refreshCollectionFeed() }
+        .onChange(of: selectedContentTypeTab) { _, _ in refreshCollectionFeed() }
+        .onChange(of: collectionQuery) { _, _ in refreshCollectionFeed() }
+        .onChange(of: collectionFilters) { _, _ in refreshCollectionFeed() }
+        .onChange(of: collectionPriceByItemKey) { _, _ in refreshCollectionFeed() }
+        .onChange(of: cardsByCardID) { _, _ in refreshCollectionFeed() }
+        .onChange(of: sealedProductByCollectionCardIDCache) { _, _ in refreshCollectionFeed() }
         .onChange(of: collectionShareSyncSignature) { _, _ in
             services.socialShare.scheduleAutoSyncCollection(items: collectionItems)
         }
@@ -278,7 +291,7 @@ struct CollectView: View {
 
     private var activeFilteredCount: Int {
         switch selectedSegment {
-        case .collection: return filteredCollectionItemsForSelectedType.count
+        case .collection: return collectionFilteredItemsForSelectedTypeCache.count
         case .wishlist:   return filteredWishlistItemsForSelectedType.count
         case .folders:    return 0
         }
@@ -319,7 +332,7 @@ struct CollectView: View {
                 image: "line.3.horizontal.decrease.circle",
                 description: "No \(activeBrand.displayTitle) cards in your collection yet."
             )
-        } else if filteredCollectionItemsForSelectedType.isEmpty {
+        } else if collectionFilteredItemsForSelectedTypeCache.isEmpty {
             emptyState(
                 title: "No matching \(selectedContentTypeTab.title.lowercased())",
                 image: "magnifyingglass",
@@ -328,20 +341,27 @@ struct CollectView: View {
                     : "Try a different product name, series, or year."
             )
         } else {
-            EagerVGrid(items: indexedFilteredCollectionItemsForSelectedType, columns: safeColumnCount, spacing: 12) { indexed in
-                collectionCell(for: indexed.item)
+            EagerVGrid(items: indexedDisplayedCollectionItems, columns: safeColumnCount, spacing: 12) { indexed in
+                collectionCell(for: indexed.item, at: indexed.index)
                     .onAppear {
                         guard selectedContentTypeTab == .cards else { return }
-                        ImagePrefetcher.shared.prefetchCardWindow(orderedCollectionCards, startingAt: indexed.index + 1)
+                        ImagePrefetcher.shared.prefetchCardWindow(collectionDisplayedCards, startingAt: indexed.index + 1)
+                        guard indexed.index >= max(collectionDisplayedItems.count - safeColumnCount, 0) else { return }
+                        Task { await loadMoreCollectionItemsIfNeeded() }
                     }
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 8)
+            if isLoadingMoreCollectionItems {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 12)
+            }
         }
     }
 
     @ViewBuilder
-    private func collectionCell(for item: CollectionItem) -> some View {
+    private func collectionCell(for item: CollectionItem, at index: Int) -> some View {
         if let product = sealedProduct(for: item) {
             Button { selectedSealedProduct = product } label: {
                 SealedProductGridCell(
@@ -356,7 +376,7 @@ struct CollectView: View {
             .buttonStyle(CardCellButtonStyle())
             .accessibilityLabel("\(product.name), \(item.quantity) owned")
         } else if let card = cardsByCardID[item.cardID] {
-            Button { presentCard(card, orderedCollectionCards) } label: {
+            Button { presentCardAtIndex(collectionDisplayedCards, index) } label: {
                 CardGridCell(
                     card: card,
                     gridOptions: gridOptions,
@@ -422,8 +442,8 @@ struct CollectView: View {
         }
     }
 
-    private var indexedFilteredCollectionItemsForSelectedType: [IndexedGridItem<CollectionItem>] {
-        Array(filteredCollectionItemsForSelectedType.enumerated()).map { offset, item in
+    private var indexedDisplayedCollectionItems: [IndexedGridItem<CollectionItem>] {
+        Array(collectionDisplayedItems.enumerated()).map { offset, item in
             IndexedGridItem(index: offset, item: item)
         }
     }
@@ -461,10 +481,6 @@ struct CollectView: View {
         visibleCollectionItems.compactMap { cardsByCardID[$0.cardID] }
     }
 
-    private var orderedCollectionCards: [Card] {
-        indexedFilteredCollectionItemsForSelectedType.compactMap { cardsByCardID[$0.item.cardID] }
-    }
-
     private var collectionSignature: String {
         let brandKey = activeBrand.rawValue
         return visibleCollectionItems.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§") + "|" + brandKey
@@ -496,11 +512,34 @@ struct CollectView: View {
         }
         collectionPriceByItemKey = nextPrices
 
-        let cards = orderedCollectionCards
+        let cards = collectionDisplayedCards
         ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
         collectFilterEnergyOptions = cardEnergyOptions(cards)
         collectFilterRarityOptions = cardRarityOptions(cards)
         collectFilterTrainerTypeOptions = cardTrainerTypeOptions(cards)
+        refreshCollectionFeed()
+    }
+
+    private func refreshCollectionFeed() {
+        let filtered = filteredCollectionItemsForSelectedType
+        collectionFilteredItemsForSelectedTypeCache = filtered
+        let initialEnd = min(Self.collectionInitialBatchSize, filtered.count)
+        collectionDisplayedItems = Array(filtered.prefix(initialEnd))
+        collectionNextIndex = initialEnd
+        collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+    }
+
+    @MainActor
+    private func loadMoreCollectionItemsIfNeeded() async {
+        guard !isLoadingMoreCollectionItems else { return }
+        guard collectionNextIndex < collectionFilteredItemsForSelectedTypeCache.count else { return }
+        isLoadingMoreCollectionItems = true
+        defer { isLoadingMoreCollectionItems = false }
+        let end = min(collectionNextIndex + Self.collectionPageSize, collectionFilteredItemsForSelectedTypeCache.count)
+        let more = collectionFilteredItemsForSelectedTypeCache[collectionNextIndex..<end]
+        collectionDisplayedItems.append(contentsOf: more)
+        collectionNextIndex = end
+        collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
     }
 
     private func sealedProduct(for item: CollectionItem) -> SealedProduct? {

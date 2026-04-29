@@ -95,6 +95,7 @@ private struct GlassCapsuleModifier: ViewModifier {
 struct SocialShareSheet: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
 
     let item: SocialShareItem
 
@@ -137,6 +138,7 @@ struct SocialShareSheet: View {
     }
 
     private var accent: Color { services.theme.accentColor }
+    private var headerButtonColor: Color { colorScheme == .dark ? .white : .black }
 
     private var canPost: Bool {
         switch selectedTag {
@@ -202,7 +204,7 @@ struct SocialShareSheet: View {
                 Button { dismiss() } label: {
                     Text("Cancel")
                         .font(.system(size: 15, weight: .medium))
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(headerButtonColor)
                         .frame(height: 44)
                         .padding(.horizontal, 14)
                         .modifier(GlassCapsuleModifier())
@@ -222,7 +224,7 @@ struct SocialShareSheet: View {
                     } else {
                         Text("Post")
                             .font(.system(size: 15, weight: .semibold))
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(headerButtonColor)
                             .frame(height: 44)
                             .padding(.horizontal, 14)
                             .modifier(GlassCapsuleModifier())

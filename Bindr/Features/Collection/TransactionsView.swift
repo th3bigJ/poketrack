@@ -17,6 +17,7 @@ struct TransactionsView: View {
     @State private var pnlRange: ActivityPnLRange = .month
     @State private var holdingsCollectionValue: Double = 0
     @State private var loadedTransactionCount: Int = 50
+    @State private var transactionSearchText: String = ""
 
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
 
@@ -60,12 +61,21 @@ struct TransactionsView: View {
         }
     }
 
+    private var filteredLedgerLines: [LedgerLine] {
+        let query = transactionSearchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !query.isEmpty else { return visibleLedgerLines }
+        let normalizedQuery = query.lowercased()
+        return visibleLedgerLines.filter { line in
+            searchableText(for: line).localizedCaseInsensitiveContains(normalizedQuery)
+        }
+    }
+
     private var displayedLedgerLines: [LedgerLine] {
-        Array(visibleLedgerLines.prefix(loadedTransactionCount))
+        Array(filteredLedgerLines.prefix(loadedTransactionCount))
     }
 
     private var hasMoreTransactions: Bool {
-        displayedLedgerLines.count < visibleLedgerLines.count
+        displayedLedgerLines.count < filteredLedgerLines.count
     }
 
     private var boughtTotal: Double {
@@ -198,6 +208,18 @@ struct TransactionsView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
+            transactionSearchField
+                .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+
+            if displayedLedgerLines.isEmpty {
+                ContentUnavailableView.search(text: transactionSearchText)
+                    .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 12, trailing: 16))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+            }
+
             ForEach(displayedLedgerLines, id: \.persistentModelID) { line in
                 transactionRow(for: line)
                     .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
@@ -252,6 +274,43 @@ struct TransactionsView: View {
         .scrollContentBackground(.hidden)
     }
 
+    private var transactionSearchField: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "magnifyingglass")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(dashboardSecondaryText)
+
+            TextField("Search transactions", text: $transactionSearchText)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+
+            if !transactionSearchText.isEmpty {
+                Button {
+                    transactionSearchText = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.subheadline)
+                        .foregroundStyle(dashboardSecondaryText)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Clear search")
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 11)
+        .background(
+            Capsule(style: .continuous)
+                .fill(dashboardCardBackground)
+        )
+        .overlay(
+            Capsule(style: .continuous)
+                .stroke(
+                    colorScheme == .dark ? Color.white.opacity(0.24) : Color.black.opacity(0.18),
+                    lineWidth: 1.5
+                )
+        )
+    }
+
     private var pnlSummaryCard: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .firstTextBaseline) {
@@ -264,12 +323,11 @@ struct TransactionsView: View {
                     .foregroundStyle(dashboardSecondaryText)
             }
 
-            Picker("P&L Range", selection: $pnlRange) {
-                ForEach(ActivityPnLRange.allCases, id: \.self) { range in
-                    Text(range.title).tag(range)
-                }
-            }
-            .pickerStyle(.segmented)
+            SlidingSegmentedPicker(
+                selection: $pnlRange,
+                items: ActivityPnLRange.allCases,
+                title: { $0.title }
+            )
 
             HStack(spacing: 10) {
                 summaryValueCell(title: "Bought", value: -boughtTotal, emphasize: false)
@@ -695,12 +753,28 @@ struct TransactionsView: View {
             print("[Transactions] Failed to delete ledger line: \(error.localizedDescription)")
         }
     }
+
+    private func searchableText(for line: LedgerLine) -> String {
+        [
+            primaryTitle(for: line),
+            secondarySubtitle(for: line),
+            directionTitle(for: line),
+            productKindTitle(for: line),
+            cleaned(line.variantKey).map(variantTitle),
+            cleaned(line.cardID)
+        ]
+        .compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }
+        .joined(separator: " ")
+        .lowercased()
+    }
 }
 
-private enum ActivityPnLRange: CaseIterable {
+private enum ActivityPnLRange: CaseIterable, Identifiable {
     case month
     case year
     case allTime
+
+    var id: Self { self }
 
     var title: String {
         switch self {

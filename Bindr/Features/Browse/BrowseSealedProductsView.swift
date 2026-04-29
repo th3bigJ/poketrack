@@ -4,6 +4,7 @@ import SwiftUI
 
 struct BrowseSealedTabContent: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.presentSealedProduct) private var presentSealedProduct
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
 
@@ -11,8 +12,7 @@ struct BrowseSealedTabContent: View {
     let filters: BrowseCardGridFilters
     let gridOptions: BrowseGridOptions
 
-    @State private var selectedProduct: SealedProduct?
-    @State private var detailProducts: [SealedProduct] = []
+    @State private var displayedProducts: [SealedProduct] = []
     private let sealedGridHorizontalPadding: CGFloat = 16
     private let sealedGridSpacing: CGFloat = 12
 
@@ -44,7 +44,7 @@ struct BrowseSealedTabContent: View {
     }
 
     var body: some View {
-        let products = filteredProducts
+        let products = displayedProducts
         Group {
             if services.sealedProducts.isLoading && services.sealedProducts.products.isEmpty {
                 ProgressView("Loading sealed products…")
@@ -65,8 +65,8 @@ struct BrowseSealedTabContent: View {
             } else {
                 EagerVGrid(items: products, columns: sealedGridColumnCount, spacing: sealedGridSpacing) { product in
                     Button {
-                        detailProducts = products
-                        selectedProduct = product
+                        let index = products.firstIndex(where: { $0.id == product.id }) ?? 0
+                        presentSealedProduct(product, products, index)
                     } label: {
                         SealedProductGridCell(
                             product: product,
@@ -88,14 +88,15 @@ struct BrowseSealedTabContent: View {
             if services.sealedProducts.products.isEmpty {
                 await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
             }
+            recomputeDisplayedProducts()
         }
-        .sheet(item: $selectedProduct) { product in
-            SealedProductBrowseDetailView(products: detailProducts.isEmpty ? [product] : detailProducts, startProductID: product.id)
-                .environment(services)
-        }
-        .onChange(of: selectedProduct?.id) { _, productID in
-            services.isSealedDetailPresentationActive = (productID != nil)
-        }
+        .onChange(of: query) { _, _ in recomputeDisplayedProducts() }
+        .onChange(of: filters) { _, _ in recomputeDisplayedProducts() }
+        .onChange(of: services.sealedProducts.products) { _, _ in recomputeDisplayedProducts() }
+    }
+
+    private func recomputeDisplayedProducts() {
+        displayedProducts = filteredProducts
     }
 
     private func sort(products: [SealedProduct]) -> [SealedProduct] {
@@ -143,6 +144,7 @@ struct BrowseSealedTabContent: View {
         x = (x ^ (x >> 27)) &* 0x94D049BB133111EB
         return x ^ (x >> 31)
     }
+
 }
 
 struct SealedProductGridCell: View {
@@ -319,13 +321,11 @@ private struct SealedThumbnailView: View {
 }
 
 struct SealedProductBrowseDetailView: View {
-    @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
 
     let products: [SealedProduct]
 
     @State private var index: Int
-    @State private var navigationPath = NavigationPath()
 
     init(products: [SealedProduct], startProductID: Int) {
         self.products = products
@@ -334,25 +334,24 @@ struct SealedProductBrowseDetailView: View {
     }
 
     var body: some View {
-        NavigationStack(path: $navigationPath) {
-            Group {
-                if products.isEmpty {
-                    ContentUnavailableView("No product", systemImage: "shippingbox")
-                } else {
-                    TabView(selection: $index) {
-                        ForEach(Array(products.enumerated()), id: \.element.id) { idx, product in
-                            SealedProductDetailPage(product: product)
-                                .tag(idx)
-                        }
+        Group {
+            if products.isEmpty {
+                ContentUnavailableView("No product", systemImage: "shippingbox")
+            } else if products.count == 1 {
+                SealedProductDetailPage(product: products[0])
+            } else {
+                TabView(selection: $index) {
+                    ForEach(Array(products.enumerated()), id: \.element.id) { idx, product in
+                        SealedProductDetailPage(product: product)
+                            .tag(idx)
                     }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(pageChromeBackground)
-            .navigationBarHidden(true)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(pageChromeBackground)
         .presentationBackground(pageChromeBackground)
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
@@ -379,6 +378,11 @@ private struct SealedProductDetailPage: View {
     @State private var showWishlistAlert = false
     @State private var isWishlisted = false
     @State private var openingItem: CollectionItem?
+    @State private var editingItem: CollectionItem?
+    @State private var markingItem: CollectionItem?
+    @State private var showAddToFolderSheet = false
+    @State private var showShareSheet = false
+    @State private var showDeferredSections = false
 
     init(product: SealedProduct) {
         self.product = product
@@ -407,6 +411,8 @@ private struct SealedProductDetailPage: View {
     }
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
+    private static let shareTint = Color(red: 0.36, green: 0.61, blue: 0.97)
+    private static let folderTint = Color(red: 0.18, green: 0.72, blue: 0.88)
 
     var body: some View {
         ScrollView {
@@ -418,15 +424,20 @@ private struct SealedProductDetailPage: View {
 
                 actionButtons
 
-                SealedProductPricingPanel(productID: product.id)
+                if showDeferredSections {
+                    SealedProductPricingPanel(productID: product.id)
 
-                if showsCollectionSection {
-                    collectionSection
+                    if showsCollectionSection {
+                        collectionSection
+                    }
+
+                    recentSoldOnEbayButton
+                    detailsSection
+                } else {
+                    ProgressView()
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
                 }
-
-                recentSoldOnEbayButton
-
-                detailsSection
             }
             .padding(.horizontal, 12)
             .padding(.bottom, 48)
@@ -437,9 +448,12 @@ private struct SealedProductDetailPage: View {
         .scrollContentBackground(.hidden)
         .scrollIndicators(.hidden)
         .onAppear {
-            services.setupCollectionLedger(modelContext: modelContext)
-            services.setupWishlist(modelContext: modelContext)
             refreshWishlistState()
+            showDeferredSections = false
+            Task { @MainActor in
+                await Task.yield()
+                showDeferredSections = true
+            }
         }
         .sheet(isPresented: $showAddSheet) {
             AddSealedToCollectionSheet(product: product)
@@ -454,9 +468,41 @@ private struct SealedProductDetailPage: View {
                     .environment(services)
             }
         }
+        .sheet(isPresented: Binding(
+            get: { editingItem != nil },
+            set: { if !$0 { editingItem = nil } }
+        )) {
+            if let editingItem {
+                EditSealedCollectionItemSheet(item: editingItem, productName: product.name)
+                    .environment(services)
+            }
+        }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
                 .environment(services)
+        }
+        .sheet(isPresented: $showAddToFolderSheet) {
+            AddSealedToFolderSheet(cardID: collectionCardID, variantKey: "sealed")
+        }
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(items: shareItems)
+        }
+        .confirmationDialog(
+            "Mark As",
+            isPresented: Binding(
+                get: { markingItem != nil },
+                set: { if !$0 { markingItem = nil } }
+            ),
+            titleVisibility: .visible
+        ) {
+            Button("Mark as Opened") {
+                guard let item = markingItem else { return }
+                openingItem = item
+                markingItem = nil
+            }
+            Button("Cancel", role: .cancel) {
+                markingItem = nil
+            }
         }
         .alert("Wishlist", isPresented: $showWishlistAlert) {
             Button("OK", role: .cancel) {}
@@ -466,7 +512,7 @@ private struct SealedProductDetailPage: View {
     }
 
     private var pageBackground: Color {
-        colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground)
+        colorScheme == .dark ? .black : .white
     }
 
     private var productImage: some View {
@@ -490,43 +536,55 @@ private struct SealedProductDetailPage: View {
                 .foregroundStyle(.primary)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
-            if ownedQuantity > 0 {
-                Text("Owned: \(ownedQuantity)")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(services.theme.accentColor)
-            }
         }
         .frame(maxWidth: .infinity, alignment: .center)
     }
 
     private var actionButtons: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 10) {
             Button {
                 showAddSheet = true
             } label: {
-                sealedActionBody(
+                cardStyleActionBody(
                     title: "Add to Collection",
                     systemImage: "plus.circle.fill",
                     tint: SealedPricingPalette.success
                 )
             }
             .buttonStyle(.plain)
-            .frame(maxWidth: .infinity, alignment: .leading)
-
-            centeredSetBlock
-                .frame(maxWidth: .infinity, alignment: .center)
 
             Button {
                 toggleWishlist()
             } label: {
-                sealedActionBody(
+                cardStyleActionBody(
                     title: "Wish List",
                     systemImage: isWishlisted ? "star.fill" : "star",
                     tint: isWishlisted ? Self.wishlistActiveStarColor : SealedPricingPalette.gold
                 )
             }
             .buttonStyle(.plain)
-            .frame(maxWidth: .infinity, alignment: .trailing)
+
+            Button {
+                showAddToFolderSheet = true
+            } label: {
+                cardStyleActionBody(
+                    title: "Add to Folder",
+                    systemImage: "folder.badge.plus",
+                    tint: Self.folderTint
+                )
+            }
+            .buttonStyle(.plain)
+
+            Button {
+                showShareSheet = true
+            } label: {
+                cardStyleActionBody(
+                    title: "Share",
+                    systemImage: "square.and.arrow.up",
+                    tint: Self.shareTint
+                )
+            }
+            .buttonStyle(.plain)
         }
         .frame(maxWidth: .infinity)
     }
@@ -592,20 +650,28 @@ private struct SealedProductDetailPage: View {
         trimmed(value)?.lowercased()
     }
 
-    private func sealedActionBody(title: String, systemImage: String, tint: Color) -> some View {
-        Image(systemName: systemImage)
-            .font(.system(size: 20, weight: .semibold))
-            .foregroundStyle(tint)
-            .frame(width: 52, height: 52)
-            .background {
-                Circle()
-                    .fill(glassButtonBackground)
-                    .overlay(
-                        Circle()
-                            .stroke(glassButtonBorder, lineWidth: 1)
-                    )
-            }
-            .accessibilityLabel(title)
+    private func cardStyleActionBody(title: String, systemImage: String, tint: Color) -> some View {
+        VStack(spacing: 5) {
+            Image(systemName: systemImage)
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundStyle(tint)
+            Text(title)
+                .font(.system(size: 9, weight: .semibold))
+                .foregroundStyle(tint)
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
+        .background {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .fill(glassButtonBackground)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .stroke(glassButtonBorder, lineWidth: 1)
+                )
+        }
+        .accessibilityLabel(title)
     }
 
     private var glassButtonBackground: Color {
@@ -683,9 +749,7 @@ private struct SealedProductDetailPage: View {
     }
 
     private var detailsSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Details")
-                .font(.headline)
+        SealedDetailSurface(title: "Details") {
             detailRow("Release", value: releaseDateDisplay)
             detailRow("Type", value: product.typeDisplayName)
             if let series = product.series, !series.isEmpty {
@@ -698,47 +762,24 @@ private struct SealedProductDetailPage: View {
                 detailRow("Year", value: String(year))
             }
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(Color.secondary.opacity(0.08))
-        )
     }
 
     private var collectionSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Collection")
-                .font(.headline)
-
+        SealedDetailSurface(title: "Collection") {
             VStack(spacing: 10) {
                 ForEach(visibleCollectionItems, id: \.persistentModelID) { item in
                     collectionStackCard(for: item)
                 }
             }
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(sectionInsetBackground)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(sectionBorder, lineWidth: 1)
-        )
     }
 
     private func collectionStackCard(for item: CollectionItem) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 8) {
                 Text("\(item.quantity) x Sealed")
-                    .font(.subheadline.weight(.semibold))
+                    .font(.headline)
                     .foregroundStyle(.primary)
-                Spacer(minLength: 8)
-                Text(item.dateAcquired.formatted(date: .abbreviated, time: .omitted))
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(.secondary)
             }
 
             let sources = activeHoldingSources(for: item)
@@ -749,70 +790,81 @@ private struct SealedProductDetailPage: View {
             } else {
                 VStack(spacing: 8) {
                     ForEach(sources) { source in
-                        sourceRow(source)
+                        sourceRow(source, item: item)
                     }
                 }
             }
 
             if let notes = cleaned(item.notes) {
                 Text(notes)
-                    .font(.caption)
+                    .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
 
-            Button("Mark Opened") {
-                openingItem = item
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(SealedPricingPalette.danger)
         }
-        .padding(12)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(colorScheme == .dark ? Color.white.opacity(0.05) : Color.black.opacity(0.035))
-        )
+        .padding(.vertical, 6)
     }
 
-    private func sourceRow(_ source: SealedHoldingSource) -> some View {
-        VStack(alignment: .leading, spacing: 7) {
-            HStack(spacing: 8) {
-                Text(source.directionTitle)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(source.tint)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(
-                        Capsule(style: .continuous)
-                            .fill(source.tint.opacity(0.15))
-                    )
+    private func sourceRow(_ source: SealedHoldingSource, item: CollectionItem) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 10) {
+                infoBadge(label: source.directionTitle, tint: source.tint)
                 Text("Qty \(source.quantity)")
                     .font(.caption.weight(.medium))
                     .foregroundStyle(.secondary)
+                if let priceText = source.priceText {
+                    labelValueRow(label: "Price", value: priceText)
+                }
                 Spacer(minLength: 8)
                 Text(source.date.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption.weight(.medium))
                     .foregroundStyle(.secondary)
             }
 
-            if let priceText = source.priceText {
-                Text("Price: \(priceText)")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
+            HStack(spacing: 12) {
+                Spacer(minLength: 8)
+                Button("Edit") {
+                    editingItem = item
+                }
+                .buttonStyle(.bordered)
+                .tint(colorScheme == .dark ? .white : .black)
 
-            if let description = source.description {
-                Text(description)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                Button("Mark As") {
+                    markingItem = item
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(SealedPricingPalette.actionBlue)
             }
         }
-        .padding(10)
+        .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03))
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(sectionInsetBackground.opacity(0.55))
         )
+    }
+
+    private func labelValueRow(label: String, value: String) -> some View {
+        HStack(spacing: 4) {
+            Text(label + ":")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+            Text(value)
+                .font(.caption.weight(.medium))
+                .foregroundStyle(.primary)
+        }
+    }
+
+    private func infoBadge(label: String, tint: Color) -> some View {
+        Text(label)
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(tint)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(tint.opacity(0.14))
+            )
     }
 
     private var releaseDateDisplay: String {
@@ -902,6 +954,14 @@ private struct SealedProductDetailPage: View {
         return trimmed.isEmpty ? nil : trimmed
     }
 
+    private var shareItems: [Any] {
+        var items: [Any] = [product.name]
+        if let url = product.imageURL {
+            items.append(url)
+        }
+        return items
+    }
+
     private func toggleWishlist() {
         guard let wishlist = services.wishlist else {
             wishlistAlertMessage = "Wishlist isn’t available yet. Try again in a moment."
@@ -944,6 +1004,147 @@ private struct SealedProductDetailPage: View {
         isWishlisted = wishlist.items.contains {
             $0.cardID == collectionCardID && $0.variantKey == "sealed"
         }
+    }
+}
+
+private struct SealedDetailSurface<Content: View>: View {
+    let title: String
+    let content: Content
+
+    init(title: String, @ViewBuilder content: () -> Content) {
+        self.title = title
+        self.content = content()
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(Color.primary)
+
+            content
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 26, style: .continuous)
+                .fill(surfaceBackground)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 26, style: .continuous)
+                .stroke(surfaceBorder, lineWidth: 1)
+        )
+    }
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    private var surfaceBackground: Color {
+        colorScheme == .dark ? .black : .white
+    }
+
+    private var surfaceBorder: Color {
+        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
+    }
+}
+
+private struct AddSealedToFolderSheet: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
+
+    let cardID: String
+    let variantKey: String
+
+    @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
+
+    @State private var showCreateAlert = false
+    @State private var newFolderTitle = ""
+    @State private var addedFolderIDs: Set<UUID> = []
+
+    private var headerButtonColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
+
+    var body: some View {
+        NavigationStack {
+            List {
+                Section {
+                    Button {
+                        newFolderTitle = ""
+                        showCreateAlert = true
+                    } label: {
+                        Label("New Folder…", systemImage: "folder.badge.plus")
+                            .foregroundStyle(.primary)
+                    }
+                }
+
+                if !folders.isEmpty {
+                    Section("MY FOLDERS") {
+                        ForEach(folders) { folder in
+                            let alreadyAdded = addedFolderIDs.contains(folder.id) || folderContainsItem(folder)
+                            Button {
+                                guard !alreadyAdded else { return }
+                                addToFolder(folder)
+                            } label: {
+                                HStack {
+                                    Label(folder.title, systemImage: "folder")
+                                        .foregroundStyle(alreadyAdded ? .secondary : .primary)
+                                    Spacer()
+                                    if alreadyAdded {
+                                        Image(systemName: "checkmark")
+                                            .font(.caption.weight(.semibold))
+                                            .foregroundStyle(.secondary)
+                                    } else {
+                                        Text("\((folder.items ?? []).count) cards")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .navigationTitle("Add to Folder")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Done") { dismiss() }
+                        .foregroundStyle(headerButtonColor)
+                }
+            }
+            .alert("New Folder", isPresented: $showCreateAlert) {
+                TextField("Folder name", text: $newFolderTitle)
+                Button("Create") { createAndAdd() }
+                Button("Cancel", role: .cancel) { newFolderTitle = "" }
+            }
+        }
+        .tint(headerButtonColor)
+    }
+
+    private func folderContainsItem(_ folder: CardFolder) -> Bool {
+        (folder.items ?? []).contains { $0.cardID == cardID && $0.variantKey == variantKey }
+    }
+
+    private func addToFolder(_ folder: CardFolder) {
+        let item = CardFolderItem(cardID: cardID, variantKey: variantKey)
+        item.folder = folder
+        modelContext.insert(item)
+        try? modelContext.save()
+        addedFolderIDs.insert(folder.id)
+    }
+
+    private func createAndAdd() {
+        let title = newFolderTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !title.isEmpty else { return }
+        let folder = CardFolder(title: title)
+        modelContext.insert(folder)
+        let item = CardFolderItem(cardID: cardID, variantKey: variantKey)
+        item.folder = folder
+        modelContext.insert(item)
+        try? modelContext.save()
+        addedFolderIDs.insert(folder.id)
+        newFolderTitle = ""
     }
 }
 
@@ -1272,6 +1473,7 @@ private enum SealedPricingPalette {
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
     static let gold = Color(red: 0.97, green: 0.74, blue: 0.06)
+    static let actionBlue = Color(red: 0.12, green: 0.52, blue: 1.0)
 }
 
 private struct OpenSealedCollectionItemSheet: View {
@@ -1345,14 +1547,170 @@ private struct OpenSealedCollectionItemSheet: View {
     }
 }
 
+private struct EditSealedCollectionItemSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.modelContext) private var modelContext
+
+    let item: CollectionItem
+    let productName: String
+
+    @State private var quantity: Int
+    @State private var occurredAt: Date
+    @State private var unitPriceText: String
+    @State private var counterparty: String
+    @State private var sourceDescription: String
+    @State private var notes: String
+    @State private var errorMessage: String?
+
+    init(item: CollectionItem, productName: String) {
+        self.item = item
+        self.productName = productName
+        _quantity = State(initialValue: max(item.quantity, 1))
+        _occurredAt = State(initialValue: item.dateAcquired)
+        _unitPriceText = State(initialValue: item.purchasePrice.map { String($0) } ?? "")
+        let primaryLine = (item.costLots ?? [])
+            .sorted { $0.createdAt > $1.createdAt }
+            .compactMap(\.sourceLedgerLine)
+            .first
+        _counterparty = State(initialValue: primaryLine?.counterparty ?? "")
+        _sourceDescription = State(initialValue: primaryLine?.lineDescription ?? productName)
+        _notes = State(initialValue: item.notes)
+    }
+
+    private var headerButtonColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    Text(productName)
+                        .font(.headline)
+                    Text("In collection: \(item.quantity)")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                Section {
+                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...999)
+                }
+
+                Section {
+                    DatePicker("Date", selection: $occurredAt, displayedComponents: .date)
+                    TextField("Bought value / unit price", text: $unitPriceText)
+                        .keyboardType(.decimalPad)
+                    TextField("Source", text: $counterparty)
+                    TextField("Details", text: $sourceDescription, axis: .vertical)
+                        .lineLimit(2...5)
+                }
+
+                Section {
+                    TextField("Notes", text: $notes, axis: .vertical)
+                        .lineLimit(3...8)
+                }
+
+                if let errorMessage {
+                    Section {
+                        Text(errorMessage)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
+            .navigationTitle("Edit in collection")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                        .foregroundStyle(headerButtonColor)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") { save() }
+                        .foregroundStyle(headerButtonColor)
+                }
+            }
+        }
+        .tint(headerButtonColor)
+    }
+
+    private func save() {
+        errorMessage = nil
+        do {
+            let trimmedCounterparty = counterparty.trimmingCharacters(in: .whitespacesAndNewlines)
+            let trimmedDescription = sourceDescription.trimmingCharacters(in: .whitespacesAndNewlines)
+            let parsedUnitPrice = try parsedOptionalPrice(unitPriceText)
+            let lots = (item.costLots ?? []).filter { $0.quantityRemaining > 0 }
+
+            if !lots.isEmpty {
+                var remaining = quantity
+                let sorted = lots.sorted { $0.createdAt > $1.createdAt }
+                for lot in sorted {
+                    let assigned = min(remaining, lot.quantityRemaining)
+                    lot.quantityRemaining = assigned
+                    remaining -= assigned
+                }
+                if remaining > 0, let first = sorted.first {
+                    first.quantityRemaining += remaining
+                }
+            }
+
+            item.quantity = quantity
+            item.dateAcquired = occurredAt
+            item.purchasePrice = parsedUnitPrice
+            item.notes = notes
+
+            for lot in lots {
+                if let ledgerLine = lot.sourceLedgerLine {
+                    ledgerLine.occurredAt = occurredAt
+                    ledgerLine.unitPrice = parsedUnitPrice
+                    ledgerLine.counterparty = trimmedCounterparty.isEmpty ? nil : trimmedCounterparty
+                    ledgerLine.lineDescription = trimmedDescription.isEmpty ? productName : trimmedDescription
+                    ledgerLine.quantity = lots
+                        .filter { $0.sourceLedgerLine?.id == ledgerLine.id }
+                        .reduce(0) { $0 + $1.quantityRemaining }
+                }
+            }
+
+            try modelContext.save()
+            dismiss()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func parsedOptionalPrice(_ text: String) throws -> Double? {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        guard let value = Double(trimmed.replacingOccurrences(of: ",", with: ".")) else {
+            throw EditSealedValidationError.invalidPrice
+        }
+        return value
+    }
+}
+
+private enum EditSealedValidationError: LocalizedError {
+    case invalidPrice
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidPrice:
+            return "Enter a valid price."
+        }
+    }
+}
+
 private struct AddSealedToCollectionSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
 
     let product: SealedProduct
 
     @State private var acquisitionKind: CollectionAcquisitionKind = .bought
     @State private var quantity: Int = 1
+    @State private var occurredAt: Date = Date()
     @State private var priceText: String = ""
     @State private var errorMessage: String?
 
@@ -1365,6 +1723,10 @@ private struct AddSealedToCollectionSheet: View {
 
     private var currencySymbol: String {
         services.priceDisplay.currency.symbol
+    }
+
+    private var headerButtonColor: Color {
+        colorScheme == .dark ? .white : .black
     }
 
     var body: some View {
@@ -1381,14 +1743,18 @@ private struct AddSealedToCollectionSheet: View {
                 Section {
                     Picker("Acquired by", selection: $acquisitionKind) {
                         Text(CollectionAcquisitionKind.bought.title).tag(CollectionAcquisitionKind.bought)
+                        Text("Traded").tag(CollectionAcquisitionKind.trade)
                         Text(CollectionAcquisitionKind.gifted.title).tag(CollectionAcquisitionKind.gifted)
-                        Text(CollectionAcquisitionKind.packed.title).tag(CollectionAcquisitionKind.packed)
                     }
                     .pickerStyle(.segmented)
                 }
 
                 Section {
                     Stepper("Quantity: \(quantity)", value: $quantity, in: 1...999)
+                }
+
+                Section {
+                    DatePicker("Date", selection: $occurredAt, displayedComponents: .date)
                 }
 
                 if acquisitionKind == .bought {
@@ -1421,12 +1787,15 @@ private struct AddSealedToCollectionSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(headerButtonColor)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") { save() }
+                        .foregroundStyle(headerButtonColor)
                 }
             }
         }
+        .tint(headerButtonColor)
     }
 
     private func parseRequiredPrice(_ text: String) throws -> Double {
@@ -1460,7 +1829,8 @@ private struct AddSealedToCollectionSheet: View {
                 kind: acquisitionKind,
                 currencyCode: currencyCode,
                 unitPrice: unitPrice,
-                cardID: product.collectionCardID
+                cardID: product.collectionCardID,
+                occurredAt: occurredAt
             )
             dismiss()
         } catch AddSealedToCollectionValidation.missingPrice {

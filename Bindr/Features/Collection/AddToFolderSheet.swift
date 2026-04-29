@@ -10,6 +10,7 @@ struct AddToFolderSheetPayload: Identifiable {
 struct AddToFolderSheet: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
 
     let card: Card
     let variantKey: String
@@ -19,6 +20,10 @@ struct AddToFolderSheet: View {
     @State private var showCreateAlert = false
     @State private var newFolderTitle = ""
     @State private var addedFolderIDs: Set<UUID> = []
+
+    private var headerButtonColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
 
     var body: some View {
         NavigationStack {
@@ -65,6 +70,7 @@ struct AddToFolderSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Done") { dismiss() }
+                        .foregroundStyle(headerButtonColor)
                 }
             }
             .alert("New Folder", isPresented: $showCreateAlert) {
@@ -73,6 +79,7 @@ struct AddToFolderSheet: View {
                 Button("Cancel", role: .cancel) { newFolderTitle = "" }
             }
         }
+        .tint(headerButtonColor)
     }
 
     private func folderContainsCard(_ folder: CardFolder) -> Bool {

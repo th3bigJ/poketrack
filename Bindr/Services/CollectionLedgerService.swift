@@ -16,6 +16,7 @@ final class CollectionLedgerService {
         variantKey: String,
         kind: CollectionAcquisitionKind,
         quantity: Int,
+        occurredAt: Date = Date(),
         currencyCode: String,
         cardDisplayName: String,
         /// Unit price / estimated value for cost basis (bought, trade, gift); ignored for packed unless you extend later.
@@ -52,6 +53,7 @@ final class CollectionLedgerService {
         )
 
         let line = LedgerLine(
+            occurredAt: occurredAt,
             direction: direction,
             productKind: productKind,
             lineDescription: lineDescription,
@@ -79,7 +81,7 @@ final class CollectionLedgerService {
             grade: grade
         )
         item.quantity += quantity
-        item.dateAcquired = Date()
+        item.dateAcquired = occurredAt
         if let unitPrice {
             item.purchasePrice = unitPrice
         }
@@ -89,6 +91,7 @@ final class CollectionLedgerService {
             quantityRemaining: quantity,
             unitCost: costPerUnit,
             currencyCode: currencyCode,
+            createdAt: occurredAt,
             collectionItem: item,
             sourceLedgerLine: line
         )
@@ -502,12 +505,14 @@ final class CollectionLedgerService {
         kind: CollectionAcquisitionKind,
         currencyCode: String,
         unitPrice: Double?,
-        cardID: String
+        cardID: String,
+        occurredAt: Date = Date()
     ) throws {
         guard quantity > 0 else { return }
 
         let description = productName.trimmingCharacters(in: .whitespacesAndNewlines)
         let line = LedgerLine(
+            occurredAt: occurredAt,
             direction: kind.ledgerDirection.rawValue,
             productKind: ProductKind.sealedProduct.rawValue,
             lineDescription: description.isEmpty ? "Sealed product" : description,
@@ -531,7 +536,7 @@ final class CollectionLedgerService {
             sealedProductId: sealedProductId
         )
         item.quantity += quantity
-        item.dateAcquired = Date()
+        item.dateAcquired = occurredAt
         item.sealedStatus = SealedInventoryStatus.sealed.rawValue
         if let unitPrice {
             item.purchasePrice = unitPrice
