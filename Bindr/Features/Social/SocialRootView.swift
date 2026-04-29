@@ -20,6 +20,7 @@ struct SocialRootView: View {
         case friendRequests
         case profile(username: String)
         case content(id: UUID)
+        case post(id: UUID)
         case comment(id: UUID)
         case wishlistMatch(id: UUID)
 
@@ -62,6 +63,9 @@ struct SocialRootView: View {
                 if let contentID = queryUUID(in: url, keys: ["content_id", "contentid"]) {
                     return .content(id: contentID)
                 }
+                if let postID = queryUUID(in: url, keys: ["post_id", "postid"]) {
+                    return .post(id: postID)
+                }
                 if let commentID = queryUUID(in: url, keys: ["comment_id", "commentid"]) {
                     return .comment(id: commentID)
                 }
@@ -75,6 +79,8 @@ struct SocialRootView: View {
                 switch deepLinkType {
                 case "content":
                     return .content(id: id)
+                case "post":
+                    return .post(id: id)
                 case "comment":
                     return .comment(id: id)
                 case "wishlist-match":
@@ -515,6 +521,11 @@ struct SocialRootView: View {
             guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) else { return }
             deepLinkedCommentsContent = nil
             deepLinkedSharedContent = sharedContent
+        case .post(let id):
+            selectedTab = .feed
+            guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) else { return }
+            deepLinkedSharedContent = nil
+            deepLinkedCommentsContent = feedContentSummary(from: sharedContent)
         case .comment(let id):
             selectedTab = .feed
             if let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) {

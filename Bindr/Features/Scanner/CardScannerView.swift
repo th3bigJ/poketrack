@@ -40,6 +40,8 @@ struct CardScannerView: View {
     @AppStorage("scanner.captureMode") private var captureModeRawValue: String = ScannerCaptureMode.auto.rawValue
     /// Variant selected in the overlay bar at the moment the user swiped up, keyed by ScanResult.id.
     @State private var selectedVariantsByResultID: [UUID: String] = [:]
+    /// Quantity selected per scanned card, keyed by ScanResult.id.
+    @State private var selectedQuantitiesByResultID: [UUID: Int] = [:]
     @State private var showOnePieceDebugSheet = false
 
     /// Show ONE PIECE debug affordance when the active scanner brand is ONE PIECE.
@@ -97,20 +99,6 @@ struct CardScannerView: View {
                         }
                     }
 
-                    if let err = viewModel.lastErrorMessage {
-                        Text(err)
-                            .font(.subheadline.weight(.medium))
-                            .foregroundStyle(.white)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 10)
-                            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                            .padding(.horizontal, 24)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                            .padding(.top, ScannerSheetLayout.statusBarHeight + 8)
-                            .transition(.move(edge: .top).combined(with: .opacity))
-                    }
-
                     scannerScanningOverlay(geo: geo)
 
                     if permissionDenied { permissionDeniedOverlay }
@@ -123,6 +111,20 @@ struct CardScannerView: View {
                         }
                         .padding(.top, ScannerSheetLayout.statusBarHeight + 10)
                         .padding(.horizontal, 16)
+
+                        if let err = viewModel.lastErrorMessage {
+                            Text(err)
+                                .font(.subheadline.weight(.medium))
+                                .foregroundStyle(.white)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 10)
+                                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .padding(.horizontal, 24)
+                                .padding(.top, 10)
+                                .transition(.move(edge: .top).combined(with: .opacity))
+                        }
+
                         Spacer(minLength: 0)
                     }
                     .allowsHitTesting(!permissionDenied)
@@ -223,6 +225,7 @@ struct CardScannerView: View {
                             currentResultIndex: $currentResultIndex,
                             barDragOffset: $barDragOffset,
                             selectedVariantsByResultID: $selectedVariantsByResultID,
+                            selectedQuantitiesByResultID: $selectedQuantitiesByResultID,
                             onSwipeUp: { showDetailSheet = true },
                             onOpenDetails: { showDetailSheet = true },
                             onAddAllToCollection: { showBulkAddSheet = true },
@@ -327,9 +330,11 @@ struct CardScannerView: View {
                 ScannerBulkAddSheet(
                     results: viewModel.scanResults,
                     selectedVariantsByResultID: $selectedVariantsByResultID,
+                    selectedQuantitiesByResultID: $selectedQuantitiesByResultID,
                     onSuccessClearSession: {
                         viewModel.clearAllScanResults()
                         selectedVariantsByResultID = [:]
+                        selectedQuantitiesByResultID = [:]
                         currentResultIndex = 0
                     }
                 )
@@ -783,6 +788,7 @@ private struct ScannerResultsOverlay: View {
     @Binding var currentResultIndex: Int
     @Binding var barDragOffset: CGFloat
     @Binding var selectedVariantsByResultID: [UUID: String]
+    @Binding var selectedQuantitiesByResultID: [UUID: Int]
     var onSwipeUp: () -> Void
     var onOpenDetails: () -> Void
     var onAddAllToCollection: () -> Void
@@ -829,6 +835,10 @@ private struct ScannerResultsOverlay: View {
                         selectedVariant: Binding(
                             get: { selectedVariantsByResultID[result.id] ?? result.card.pricingVariants?.first ?? "normal" },
                             set: { selectedVariantsByResultID[result.id] = $0 }
+                        ),
+                        selectedQuantity: Binding(
+                            get: { max(1, selectedQuantitiesByResultID[result.id] ?? 1) },
+                            set: { selectedQuantitiesByResultID[result.id] = max(1, $0) }
                         )
                     )
                     .fixedSize(horizontal: false, vertical: true)

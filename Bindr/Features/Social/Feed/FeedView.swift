@@ -863,7 +863,7 @@ private struct SocialAlertsPreviewView: View {
                 return URL(string: "bindr://social/feed/comment/\(commentID.uuidString)")
             }
             if let contentID = item.content?.id {
-                return URL(string: "bindr://social/feed/content/\(contentID.uuidString)")
+                return URL(string: "bindr://social/feed/post/\(contentID.uuidString)")
             }
             return URL(string: "bindr://social/feed")
         case .wishlistMatch:
@@ -871,12 +871,12 @@ private struct SocialAlertsPreviewView: View {
                 return URL(string: "bindr://social/feed/wishlist-match/\(matchID.uuidString)")
             }
             if let contentID = item.content?.id {
-                return URL(string: "bindr://social/feed/content/\(contentID.uuidString)")
+                return URL(string: "bindr://social/feed/post/\(contentID.uuidString)")
             }
             return URL(string: "bindr://social/feed")
         case .vote, .sharedContent, .pull, .dailyDigest:
             if let contentID = item.content?.id {
-                return URL(string: "bindr://social/feed/content/\(contentID.uuidString)")
+                return URL(string: "bindr://social/feed/post/\(contentID.uuidString)")
             }
             return URL(string: "bindr://social/feed")
         }

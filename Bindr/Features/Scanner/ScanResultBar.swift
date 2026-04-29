@@ -15,12 +15,18 @@ struct ScanResultBar: View {
     var onAddAllToCollection: () -> Void
     /// Bound to the parent so the selected variant is readable when swiping up.
     @Binding var selectedVariant: String
+    /// Quantity selected for this scan result.
+    @Binding var selectedQuantity: Int
     @State private var showWrongCardSheet = false
     /// Market price for `selectedVariant` (raw), formatted with `PriceDisplaySettings`.
     @State private var barVariantPriceText: String = "—"
     @State private var wishlistFeedback: WishlistFeedback?
 
     private var card: Card { result.card }
+    private var setDisplayName: String {
+        services.cardData.sets.first(where: { $0.setCode == card.setCode })?.name
+            ?? card.setCode.uppercased()
+    }
 
     private var collectionPlusGlyphColor: Color {
         colorScheme == .dark ? .white : Color.primary
@@ -93,11 +99,19 @@ struct ScanResultBar: View {
             }
             .padding(.horizontal, 16)
 
-            if variants.count > 1 {
-                variantPicker
-                    .padding(.top, 14)
-                    .padding(.horizontal, 16)
+            HStack(alignment: .top, spacing: 12) {
+                if variants.count > 1 {
+                    variantPicker
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                } else {
+                    Spacer(minLength: 0)
+                }
+                quantitySelector
+            }
+            .padding(.top, 14)
+            .padding(.horizontal, 16)
 
+            if variants.count > 1 {
                 Text("Select a variant before adding to collection")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
@@ -171,7 +185,7 @@ struct ScanResultBar: View {
                 .font(.headline)
                 .foregroundStyle(.primary)
                 .lineLimit(1)
-            Text(card.setCode.uppercased() + " · #" + card.cardNumber)
+            Text(setDisplayName + " · #" + card.cardNumber)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
@@ -207,6 +221,47 @@ struct ScanResultBar: View {
                 }
             }
         }
+    }
+
+    private var quantitySelector: some View {
+        HStack(spacing: 10) {
+            Button {
+                guard selectedQuantity > 1 else { return }
+                selectedQuantity -= 1
+                HapticManager.impact(.light)
+            } label: {
+                Image(systemName: "minus")
+                    .font(.caption.weight(.bold))
+                    .frame(width: 28, height: 28)
+                    .background(Circle().fill(Color.primary.opacity(0.1)))
+            }
+            .buttonStyle(.plain)
+            .disabled(selectedQuantity <= 1)
+
+            Text("\(max(1, selectedQuantity))")
+                .font(.subheadline.weight(.semibold))
+                .monospacedDigit()
+                .frame(minWidth: 22)
+
+            Button {
+                selectedQuantity += 1
+                HapticManager.impact(.light)
+            } label: {
+                Image(systemName: "plus")
+                    .font(.caption.weight(.bold))
+                    .frame(width: 28, height: 28)
+                    .background(Circle().fill(Color.primary.opacity(0.1)))
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(.horizontal, 8)
+        .padding(.vertical, 6)
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(Color.primary.opacity(0.08))
+        )
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Quantity \(max(1, selectedQuantity))")
     }
 
     // MARK: - Action buttons

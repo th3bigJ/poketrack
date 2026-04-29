@@ -8,6 +8,7 @@ struct ScannerBulkAddSheet: View {
 
     let results: [ScanResult]
     @Binding var selectedVariantsByResultID: [UUID: String]
+    @Binding var selectedQuantitiesByResultID: [UUID: Int]
     /// Called on the main actor after a successful add, before the sheet dismisses (clear scan session).
     var onSuccessClearSession: () -> Void = {}
 
@@ -40,6 +41,7 @@ struct ScannerBulkAddSheet: View {
                             result: result,
                             variants: variants(for: result.card),
                             variantKey: variantBinding(for: result),
+                            quantity: quantityBinding(for: result),
                             acquisitionKind: acquisitionBinding(for: result.id),
                             priceText: Binding(
                                 get: { pricesByResultID[result.id] ?? "" },
@@ -63,9 +65,11 @@ struct ScannerBulkAddSheet: View {
             .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Add to collection")
             .navigationBarTitleDisplayMode(.inline)
+            .tint(.primary)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(.primary)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     if isSaving {
@@ -74,6 +78,7 @@ struct ScannerBulkAddSheet: View {
                         Button("Add") { save() }
                             .fontWeight(.semibold)
                             .disabled(!canSave)
+                            .foregroundStyle(.primary)
                     }
                 }
                 ToolbarItemGroup(placement: .keyboard) {
@@ -121,6 +126,13 @@ struct ScannerBulkAddSheet: View {
         Binding(
             get: { acquisition(for: id) },
             set: { acquisitionByResultID[id] = $0 }
+        )
+    }
+
+    private func quantityBinding(for result: ScanResult) -> Binding<Int> {
+        Binding(
+            get: { max(1, selectedQuantitiesByResultID[result.id] ?? 1) },
+            set: { selectedQuantitiesByResultID[result.id] = max(1, $0) }
         )
     }
 
@@ -178,6 +190,7 @@ struct ScannerBulkAddSheet: View {
             let variantKey = selectedVariantsByResultID[result.id]
                 ?? result.card.pricingVariants?.first
                 ?? "normal"
+            let quantity = max(1, selectedQuantitiesByResultID[result.id] ?? 1)
             let kind = acquisition(for: result.id)
 
             do {
@@ -190,7 +203,7 @@ struct ScannerBulkAddSheet: View {
                         cardID: result.card.masterCardId,
                         variantKey: variantKey,
                         kind: .bought,
-                        quantity: 1,
+                        quantity: quantity,
                         currencyCode: currencyCode,
                         cardDisplayName: result.card.cardName,
                         unitPrice: unit,
@@ -205,7 +218,7 @@ struct ScannerBulkAddSheet: View {
                         cardID: result.card.masterCardId,
                         variantKey: variantKey,
                         kind: .packed,
-                        quantity: 1,
+                        quantity: quantity,
                         currencyCode: currencyCode,
                         cardDisplayName: result.card.cardName,
                         unitPrice: nil,
@@ -220,7 +233,7 @@ struct ScannerBulkAddSheet: View {
                         cardID: result.card.masterCardId,
                         variantKey: variantKey,
                         kind: .gifted,
-                        quantity: 1,
+                        quantity: quantity,
                         currencyCode: currencyCode,
                         cardDisplayName: result.card.cardName,
                         unitPrice: nil,
@@ -267,6 +280,7 @@ private struct BulkAddCardRow: View {
     let result: ScanResult
     let variants: [String]
     @Binding var variantKey: String
+    @Binding var quantity: Int
     @Binding var acquisitionKind: CollectionAcquisitionKind
     @Binding var priceText: String
     let currencySymbol: String
@@ -274,6 +288,10 @@ private struct BulkAddCardRow: View {
     @State private var priceHint: String = "—"
 
     private var card: Card { result.card }
+    private var setDisplayName: String {
+        services.cardData.sets.first(where: { $0.setCode == card.setCode })?.name
+            ?? card.setCode.uppercased()
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -295,7 +313,7 @@ private struct BulkAddCardRow: View {
                     Text(card.cardName)
                         .font(.subheadline.weight(.semibold))
                         .lineLimit(2)
-                    Text(card.setCode.uppercased() + " · #" + card.cardNumber)
+                    Text(setDisplayName + " · #" + card.cardNumber)
                         .font(.caption2)
                         .foregroundStyle(.tertiary)
                     if acquisitionKind != .bought {
@@ -325,6 +343,43 @@ private struct BulkAddCardRow: View {
                     }
                     .pickerStyle(.menu)
                     .tint(.primary)
+                }
+            }
+
+            HStack {
+                Text("Quantity")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                Spacer()
+                HStack(spacing: 10) {
+                    Button {
+                        guard quantity > 1 else { return }
+                        quantity -= 1
+                        HapticManager.impact(.light)
+                    } label: {
+                        Image(systemName: "minus")
+                            .font(.caption.weight(.bold))
+                            .frame(width: 28, height: 28)
+                            .background(Circle().fill(Color.primary.opacity(0.1)))
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(quantity <= 1)
+
+                    Text("\(max(1, quantity))")
+                        .font(.subheadline.weight(.semibold))
+                        .monospacedDigit()
+                        .frame(minWidth: 24)
+
+                    Button {
+                        quantity += 1
+                        HapticManager.impact(.light)
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.caption.weight(.bold))
+                            .frame(width: 28, height: 28)
+                            .background(Circle().fill(Color.primary.opacity(0.1)))
+                    }
+                    .buttonStyle(.plain)
                 }
             }
 
