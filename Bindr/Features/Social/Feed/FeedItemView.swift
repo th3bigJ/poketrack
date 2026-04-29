@@ -18,18 +18,16 @@ struct FeedItemView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            // Only the upper card area (header + content) opens the comments
-            // sheet on tap. Putting `.onTapGesture` on the *whole* card would
-            // also cover the InteractionBar — and a parent tap gesture on a
-            // container with nested `Button`s is a SwiftUI footgun: the inner
-            // vote buttons appear to fire but the parent gesture eats the
-            // touch, so upvote/downvote stop working. Scoping the tap target
-            // to just the top section keeps the InteractionBar's buttons
-            // free of any container-level gesture.
-            VStack(alignment: .leading, spacing: 10) {
-                header
-                content
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 16) {
+                VStack(alignment: .leading, spacing: 8) {
+                    header
+                    textContentArea
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                CardStackPreview(item: item, size: 150)
+                    .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
             }
             .contentShape(Rectangle())
             .onTapGesture {
@@ -86,7 +84,7 @@ struct FeedItemView: View {
             }
 
             VStack(alignment: .leading, spacing: 0) {
-                HStack(spacing: 4) {
+                HStack(spacing: 6) {
                     if let username = item.actor?.username {
                         NavigationLink(value: SocialDestination.friendProfile(username: username)) {
                             Text(actorName)
@@ -103,16 +101,15 @@ struct FeedItemView: View {
                     Text("· \(SocialFeedService.shortRelativeDate(item.createdAt))")
                         .font(.system(size: 12))
                         .foregroundStyle(.secondary)
+
+                    TypePill(label: badgeText, color: typeAccentColor)
+                        .scaleEffect(0.8)
                 }
 
                 Text("@\(item.actor?.username ?? "trainer")")
                     .font(.system(size: 12))
                     .foregroundStyle(Color.secondary)
             }
-
-            Spacer(minLength: 8)
-
-            TypePill(label: badgeText, color: typeAccentColor)
         }
     }
 
@@ -136,56 +133,45 @@ struct FeedItemView: View {
         .overlay {
             Circle().stroke(typeAccentColor.opacity(0.85), lineWidth: 2)
         }
-      private var content: some View {
-        HStack(alignment: .top, spacing: 16) {
-            VStack(alignment: .leading, spacing: 8) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(cardTitle)
-                        .font(.system(size: 18, weight: .bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
+    }
 
-                    if let bodyText {
-                        Text(bodyText)
-                            .font(.system(size: 14))
-                            .foregroundStyle(Color.secondary)
-                            .lineLimit(2)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
+    private var textContentArea: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(cardTitle)
+                .font(.system(size: 18, weight: .bold))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .fixedSize(horizontal: false, vertical: true)
 
-                    if let metaText {
-                        Text(metaText)
-                            .font(.system(size: 12))
-                            .foregroundStyle(Color.secondary.opacity(0.6))
-                    }
-                }
-                
-                if let captionText {
-                    Text(captionText)
-                        .font(.system(size: 14))
-                        .foregroundStyle(.primary.opacity(0.9))
-                        .padding(.top, 8)
-                }
-
-                hashtagRow
-                
-                Spacer(minLength: 0)
+            if let bodyText {
+                Text(bodyText)
+                    .font(.system(size: 14))
+                    .foregroundStyle(Color.secondary)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
 
-            CardStackPreview(item: item, size: 150)
-                .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
+            if let metaText {
+                Text(metaText)
+                    .font(.system(size: 12))
+                    .foregroundStyle(Color.secondary.opacity(0.6))
+            }
+
+            if let description = item.content?.description, !description.isEmpty {
+                Text(description)
+                    .font(.system(size: 15))
+                    .foregroundStyle(.primary.opacity(0.9))
+                    .italic()
+                    .lineLimit(4)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.top, 4)
+                    .padding(.bottom, 2)
+            }
+
+            hashtagRow
         }
-        .padding(.vertical, 4)
     }
 
-    private var captionText: String? {
-        if item.type == .pull {
-            return "Couldn't believe the first pack hit! ✨"
-        }
-        return nil
-    }
 
     private var hashtagRow: some View {
         HStack(spacing: 8) {
@@ -518,15 +504,6 @@ struct InteractionBar: View {
                         .font(.system(size: 13, weight: .medium))
                 }
                 .foregroundStyle(Color.secondary)
-            }
-            .buttonStyle(.plain)
-            
-            Button {
-                Haptics.lightImpact()
-            } label: {
-                Image(systemName: "bookmark")
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundStyle(Color.secondary)
             }
             .buttonStyle(.plain)
         }
