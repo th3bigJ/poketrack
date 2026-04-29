@@ -136,41 +136,80 @@ struct FeedItemView: View {
         .overlay {
             Circle().stroke(typeAccentColor.opacity(0.85), lineWidth: 2)
         }
-    }
-
       private var content: some View {
         HStack(alignment: .top, spacing: 16) {
-            CardStackPreview(item: item, size: item.type == .pull ? 120 : 100)
-                .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(cardTitle)
-                    .font(.system(size: 17, weight: .bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
-
-                if let bodyText {
-                    Text(bodyText)
-                        .font(.system(size: 14))
-                        .foregroundStyle(Color.secondary)
-                        .lineLimit(3)
+            VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(cardTitle)
+                        .font(.system(size: 18, weight: .bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
                         .fixedSize(horizontal: false, vertical: true)
+
+                    if let bodyText {
+                        Text(bodyText)
+                            .font(.system(size: 14))
+                            .foregroundStyle(Color.secondary)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+
+                    if let metaText {
+                        Text(metaText)
+                            .font(.system(size: 12))
+                            .foregroundStyle(Color.secondary.opacity(0.6))
+                    }
+                }
+                
+                if let captionText {
+                    Text(captionText)
+                        .font(.system(size: 14))
+                        .foregroundStyle(.primary.opacity(0.9))
+                        .padding(.top, 8)
                 }
 
-                if let metaText {
-                    Text(metaText)
-                        .font(.system(size: 12))
-                        .foregroundStyle(typeAccentColor.opacity(0.8))
-                        .padding(.top, 4)
-                }
+                hashtagRow
                 
                 Spacer(minLength: 0)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+
+            CardStackPreview(item: item, size: 150)
+                .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 5)
         }
         .padding(.vertical, 4)
     }
+
+    private var captionText: String? {
+        if item.type == .pull {
+            return "Couldn't believe the first pack hit! ✨"
+        }
+        return nil
+    }
+
+    private var hashtagRow: some View {
+        HStack(spacing: 8) {
+            let tags: [String] = {
+                var t: [String] = []
+                if let name = item.pullCardName { t.append(name.replacingOccurrences(of: " ", with: "")) }
+                if let set = resolvedPullSetName { t.append(set.replacingOccurrences(of: " ", with: "")) }
+                if t.isEmpty { t = ["Collection", "Trainer"] }
+                return t
+            }()
+            
+            ForEach(tags.prefix(2), id: \.self) { tag in
+                Text("#\(tag)")
+                    .font(.system(size: 11, weight: .bold))
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(typeAccentColor.opacity(0.15))
+                    .foregroundStyle(typeAccentColor)
+                    .clipShape(Capsule())
+            }
+        }
+        .padding(.top, 4)
+    }
+
 
     private var actorName: String {
         item.actor?.displayName ?? item.actor?.username ?? "Trainer"
@@ -455,46 +494,43 @@ struct InteractionBar: View {
     @State private var voteErrorMessage: String?
 
     var body: some View {
-        VStack(spacing: 6) {
-            Rectangle()
-                .fill(Color.primary.opacity(0.05))
-                .frame(height: 1)
-
-            HStack(spacing: 6) {
+        HStack(spacing: 16) {
+            HStack(spacing: 12) {
+                // Mockup style: Solid circle for active upvote
                 voteButton(type: .upvote)
                 voteButton(type: .downvote)
+                
                 Text("\(aggregate.score)")
-                    .font(.system(size: 12, weight: .bold))
-                    .foregroundStyle(Color.secondary)
-                    .padding(.horizontal, 8)
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(aggregate.myVoteType != nil ? Color(hex: "F43F5E") : Color.secondary)
+            }
 
-                Spacer()
+            Spacer()
 
-                Button {
-                    Haptics.lightImpact()
-                    onOpenComments()
-                } label: {
-                    HStack(spacing: 4) {
-                        Image(systemName: "bubble.left")
-                            .font(.system(size: 12, weight: .semibold))
-                        Text("\(commentCount)")
-                            .font(.system(size: 11))
-                    }
-                    .foregroundStyle(Color.secondary.opacity(0.6))
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 6)
-                    .contentShape(Rectangle())
+            Button {
+                Haptics.lightImpact()
+                onOpenComments()
+            } label: {
+                HStack(spacing: 6) {
+                    Image(systemName: "bubble.right")
+                        .font(.system(size: 14, weight: .semibold))
+                    Text("\(commentCount)")
+                        .font(.system(size: 13, weight: .medium))
                 }
-                .buttonStyle(.plain)
+                .foregroundStyle(Color.secondary)
             }
-
-            if let voteErrorMessage {
-                Text(voteErrorMessage)
-                    .font(.system(size: 10))
-                    .foregroundStyle(Color.red)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            .buttonStyle(.plain)
+            
+            Button {
+                Haptics.lightImpact()
+            } label: {
+                Image(systemName: "bookmark")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(Color.secondary)
             }
+            .buttonStyle(.plain)
         }
+        .padding(.top, 8)
         .task { await refresh() }
         .onChange(of: refreshToken) { _, _ in
             Task { await refresh() }
@@ -503,40 +539,32 @@ struct InteractionBar: View {
 
     private func voteButton(type: ReactionType) -> some View {
         let isActive = aggregate.myVoteType == type
-        let count = type == .upvote ? aggregate.upvoteCount : aggregate.downvoteCount
         let symbol = type == .upvote ? "arrow.up" : "arrow.down"
-        let tint = type == .upvote ? Color(hex: "52C97C") : Color(hex: "E05252")
+        let activeColor = Color(hex: "F43F5E") // Premium rose/pink from mockup
 
-        // Use a tap-gesture wrapper rather than `Button` here. Inside lazy
-        // scroll containers (LazyVStack on the main feed, Lists on the
-        // profile) `Button(.plain)` taps can be eaten by the scroll view's
-        // own gesture before reaching the button — the visible side-effect
-        // is exactly what the user reported: tap registers visually but the
-        // action never fires. A `.contentShape` + `.onTapGesture` pair
-        // resolves cleanly because tap gestures coexist with the scroll
-        // gesture instead of contending with it.
-        return HStack(spacing: 3) {
-            Image(systemName: symbol)
-                .font(.system(size: 13, weight: .bold))
-            if count > 0 {
-                Text("\(count)")
-                    .font(.system(size: 12, weight: isActive ? .bold : .regular))
-                    .foregroundStyle(isActive ? tint : Color.secondary)
+        return Group {
+            if type == .upvote {
+                // Mockup: Pink circle for active upvote
+                Image(systemName: symbol)
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(isActive ? .white : Color.secondary)
+                    .frame(width: 28, height: 28)
+                    .background(isActive ? activeColor : Color.clear)
+                    .clipShape(Circle())
+                    .overlay {
+                        if !isActive {
+                            Circle().stroke(Color.primary.opacity(0.1), lineWidth: 1)
+                        }
+                    }
+            } else {
+                Image(systemName: symbol)
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(isActive ? activeColor : Color.secondary)
+                    .frame(width: 28, height: 28)
             }
         }
-        .foregroundStyle(isActive ? tint : Color.secondary)
-        .padding(.horizontal, 10)
-        .padding(.vertical, 6)
-        .background(isActive ? tint.opacity(0.15) : .clear, in: Capsule())
-        .overlay {
-            Capsule()
-                .stroke(isActive ? tint.opacity(0.37) : Color.primary.opacity(0.09), lineWidth: 1)
-        }
-        .contentShape(Capsule())
+        .contentShape(Circle())
         .onTapGesture {
-            // Medium tick fires on the optimistic flip — this is a state-
-            // changing action, not just a UI tap, so it earns more than the
-            // light "I noticed your tap" feedback used on chrome buttons.
             Haptics.mediumImpact()
             Task { await toggleVote(type) }
         }
