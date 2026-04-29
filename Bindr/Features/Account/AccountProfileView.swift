@@ -8,14 +8,30 @@ struct AccountProfileView: View {
     @Binding var navigationPath: NavigationPath
     @Binding var isPresented: Bool
     @Binding var externalProfile: SocialProfile?
-    
+
     @State private var profile: SocialProfile?
     @State private var isProfileLoading = false
     @State private var errorMessage: String?
     @State private var currentNonce: String?
-    
+
     enum Destination: Hashable {
         case editProfile
+    }
+
+    init(
+        navigationPath: Binding<NavigationPath>,
+        isPresented: Binding<Bool>,
+        externalProfile: Binding<SocialProfile?>
+    ) {
+        self._navigationPath = navigationPath
+        self._isPresented = isPresented
+        self._externalProfile = externalProfile
+        // Seed local state from the parent's already-loaded profile so the
+        // nav destination has data the moment it resolves. Without this,
+        // tapping "Edit Profile" before the .task refresh completes would
+        // hand `EditProfileView` a nil `existingProfile`, leaving every
+        // field blank.
+        self._profile = State(initialValue: externalProfile.wrappedValue)
     }
     
     var body: some View {
@@ -58,6 +74,14 @@ struct AccountProfileView: View {
                 EditProfileView(existingProfile: profile) { payload in
                     try await handleProfileSave(payload: payload)
                 }
+                // Force EditProfileView to re-init (and re-seed its @State
+                // fields from the latest existingProfile) if `profile`
+                // transitions from nil to a loaded value while the
+                // destination is on screen. SwiftUI normally rebuilds the
+                // destination *closure* on state change, but `EditProfileView`
+                // captures its initial values inside `@State` — those don't
+                // refresh on a parent rebuild without a new identity.
+                .id(profile?.id)
             }
         }
         .task {

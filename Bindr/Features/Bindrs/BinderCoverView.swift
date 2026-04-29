@@ -1,7 +1,8 @@
 import SwiftUI
+import UIKit
 
 /// A premium representation of a binder cover, featuring procedural textures,
-/// a reinforced spine, an ornamental gold header, and an optional fan of
+/// a reinforced spine, an ornamental tinted header, and an optional fan of
 /// "peeking" card-back thumbnails. Designed in an A4 portrait ratio so it
 /// reads as a real binder spine rather than a tile.
 struct BinderCoverView: View {
@@ -29,22 +30,43 @@ struct BinderCoverView: View {
     /// Cover text font selection for title/subtitle/value.
     var titleFontStyle: BinderTitleFontStyle = .serif
 
-    // MARK: - Premium gold accent palette
+    // MARK: - Tinted-white accent palette
     //
-    // The binder body itself is always a saturated dark hue (navy/crimson/etc.),
-    // so a warm gold reads cleanly regardless of whether the surrounding app
-    // chrome is in light or dark mode. Two stops let us paint subtle gradients
-    // on the title, ornament, and value.
-    private var goldAccent: Color { Color(red: 0.86, green: 0.72, blue: 0.42) }
-    private var goldHighlight: Color { Color(red: 0.98, green: 0.86, blue: 0.55) }
+    // The default cover text used to be a warm gold which clashed with the
+    // app's overall theme. Instead we now render the title, ornament, and
+    // value as predominantly **white** with a small amount of the binder's own
+    // base colour mixed in — so the text reads bright on every binder body
+    // (navy/crimson/etc.) but still picks up the binder's hue and feels
+    // cohesive with the rest of the app chrome.
+    private var resolvedBinderColor: Color {
+        BinderColourPalette.color(named: colourName)
+    }
+    /// Mix the binder's base colour into white at the given intensity. 0 → pure
+    /// white, 1 → the raw binder colour. Small values (0.08–0.30) give us the
+    /// "white with a hint of colour" look used on the cover text.
+    private func tintedWhite(intensity: Double) -> Color {
+        let ui = UIColor(resolvedBinderColor)
+        var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        ui.getRed(&r, green: &g, blue: &b, alpha: &a)
+        let clamped = max(0, min(1, intensity))
+        let mr = (1 - clamped) + clamped * Double(r)
+        let mg = (1 - clamped) + clamped * Double(g)
+        let mb = (1 - clamped) + clamped * Double(b)
+        return Color(red: mr, green: mg, blue: mb)
+    }
+    /// Top stop of the title gradient — almost pure white with a faint tint.
+    private var defaultTitleHighlight: Color { tintedWhite(intensity: 0.10) }
+    /// Bottom stop of the title gradient — slightly more of the binder hue
+    /// so the gradient reads as a subtle wash of colour.
+    private var defaultTitleAccent: Color { tintedWhite(intensity: 0.30) }
     private var ornamentColor: Color {
-        titleTextColor == .gold ? goldAccent : titleTextColor.swiftUIColor
+        titleTextColor == .gold ? defaultTitleAccent : titleTextColor.swiftUIColor
     }
     private var titleTextStyle: AnyShapeStyle {
         if titleTextColor == .gold {
             return AnyShapeStyle(
                 LinearGradient(
-                    colors: [goldHighlight, goldAccent],
+                    colors: [defaultTitleHighlight, defaultTitleAccent],
                     startPoint: .top,
                     endPoint: .bottom
                 )
@@ -111,7 +133,7 @@ struct BinderCoverView: View {
         .frame(height: compact ? 230 : 320)
     }
 
-    // MARK: - Top ornament (gold line + diamond)
+    // MARK: - Top ornament (tinted line + diamond)
 
     private var topOrnament: some View {
         HStack(spacing: compact ? 6 : 10) {
@@ -139,7 +161,7 @@ struct BinderCoverView: View {
         Rectangle()
             .fill(LinearGradient(
                 colors: titleTextColor == .gold
-                    ? [goldHighlight, goldAccent]
+                    ? [defaultTitleHighlight, defaultTitleAccent]
                     : [ornamentColor.opacity(0.95), ornamentColor.opacity(0.75)],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -149,7 +171,7 @@ struct BinderCoverView: View {
             .shadow(color: .black.opacity(0.4), radius: 0.5, x: 0, y: 0.5)
     }
 
-    // MARK: - Title block (title + subtitle in gold)
+    // MARK: - Title block (title + subtitle in tinted white)
 
     private var titleBlock: some View {
         VStack(spacing: compact ? 4 : 6) {
@@ -166,7 +188,7 @@ struct BinderCoverView: View {
                 Text(subtitle.uppercased())
                     .font(.system(size: compact ? 9.5 : 11.5, weight: .semibold, design: titleFontStyle.fontDesign))
                     .tracking(compact ? 1.4 : 1.8)
-                    .foregroundStyle(titleTextColor == .gold ? goldAccent.opacity(0.85) : titleTextColor.swiftUIColor.opacity(0.88))
+                    .foregroundStyle(titleTextColor == .gold ? defaultTitleAccent.opacity(0.85) : titleTextColor.swiftUIColor.opacity(0.88))
                     .multilineTextAlignment(.center)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
@@ -175,7 +197,7 @@ struct BinderCoverView: View {
         .padding(.horizontal, 8)
     }
 
-    // MARK: - Value label (gold serif at the bottom)
+    // MARK: - Value label (tinted serif at the bottom)
 
     private func valueLabel(_ text: String) -> some View {
         Text(text)

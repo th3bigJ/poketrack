@@ -34,6 +34,7 @@ struct FeedItemView: View {
             .contentShape(Rectangle())
             .onTapGesture {
                 guard isCardTapEnabled, canOpenComments else { return }
+                Haptics.lightImpact()
                 isCommentsPresented = true
             }
 
@@ -67,6 +68,13 @@ struct FeedItemView: View {
     }
 
     private var header: some View {
+        // The type pill (PULL / SHARE / WISHLIST) used to live in the content
+        // row, eating a full vertical column to the right of the card image —
+        // which crushed the thumbnail and left dead space below the text. We
+        // promoted it up here next to the timestamp instead: it carries the
+        // same context but consumes a tiny corner that was previously empty,
+        // and frees the entire right side of the content row for a bigger
+        // card preview.
         HStack(spacing: 10) {
             if let username = item.actor?.username {
                 NavigationLink(value: SocialDestination.friendProfile(username: username)) {
@@ -77,26 +85,34 @@ struct FeedItemView: View {
                 avatarView
             }
 
-            VStack(alignment: .leading, spacing: 1) {
-                if let username = item.actor?.username {
-                    NavigationLink(value: SocialDestination.friendProfile(username: username)) {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(spacing: 4) {
+                    if let username = item.actor?.username {
+                        NavigationLink(value: SocialDestination.friendProfile(username: username)) {
+                            Text(actorName)
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundStyle(Color.primary)
+                        }
+                        .buttonStyle(.plain)
+                    } else {
                         Text(actorName)
-                            .font(.system(size: 13, weight: .semibold))
-                            .foregroundStyle(Color.primary)
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundStyle(.primary)
                     }
-                    .buttonStyle(.plain)
-                } else {
-                    Text(actorName)
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(.primary)
+                    
+                    Text("· \(SocialFeedService.shortRelativeDate(item.createdAt))")
+                        .font(.system(size: 12))
+                        .foregroundStyle(.secondary)
                 }
 
-                Text("@\(item.actor?.username ?? "trainer") · \(SocialFeedService.shortRelativeDate(item.createdAt))")
-                    .font(.system(size: 11))
+                Text("@\(item.actor?.username ?? "trainer")")
+                    .font(.system(size: 12))
                     .foregroundStyle(Color.secondary)
             }
 
-            Spacer()
+            Spacer(minLength: 8)
+
+            TypePill(label: badgeText, color: typeAccentColor)
         }
     }
 
@@ -122,26 +138,21 @@ struct FeedItemView: View {
         }
     }
 
-    private var content: some View {
-        HStack(alignment: .top, spacing: 14) {
-            CardStackPreview(item: item, size: item.type == .pull ? 90 : 80)
+      private var content: some View {
+        HStack(alignment: .top, spacing: 16) {
+            CardStackPreview(item: item, size: item.type == .pull ? 120 : 100)
+                .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
             
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(alignment: .top) {
-                    Text(cardTitle)
-                        .font(.system(size: 15, weight: .bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
-                    
-                    Spacer(minLength: 8)
-                    
-                    TypePill(label: badgeText, color: typeAccentColor)
-                }
+            VStack(alignment: .leading, spacing: 4) {
+                Text(cardTitle)
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .fixedSize(horizontal: false, vertical: true)
 
                 if let bodyText {
                     Text(bodyText)
-                        .font(.system(size: 12))
+                        .font(.system(size: 14))
                         .foregroundStyle(Color.secondary)
                         .lineLimit(3)
                         .fixedSize(horizontal: false, vertical: true)
@@ -149,9 +160,12 @@ struct FeedItemView: View {
 
                 if let metaText {
                     Text(metaText)
-                        .font(.system(size: 11))
-                        .foregroundStyle(Color.secondary.opacity(0.4))
+                        .font(.system(size: 12))
+                        .foregroundStyle(typeAccentColor.opacity(0.8))
+                        .padding(.top, 4)
                 }
+                
+                Spacer(minLength: 0)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -457,6 +471,7 @@ struct InteractionBar: View {
                 Spacer()
 
                 Button {
+                    Haptics.lightImpact()
                     onOpenComments()
                 } label: {
                     HStack(spacing: 4) {
@@ -519,6 +534,10 @@ struct InteractionBar: View {
         }
         .contentShape(Capsule())
         .onTapGesture {
+            // Medium tick fires on the optimistic flip — this is a state-
+            // changing action, not just a UI tap, so it earns more than the
+            // light "I noticed your tap" feedback used on chrome buttons.
+            Haptics.mediumImpact()
             Task { await toggleVote(type) }
         }
     }
@@ -557,6 +576,7 @@ struct InteractionBar: View {
             // silently.
             aggregate = previous
             voteErrorMessage = "Vote failed: \(error.localizedDescription)"
+            Haptics.error()
         }
     }
 

@@ -16,6 +16,17 @@ final class SocialPushService {
         self.authService = authService
         self.profileService = profileService
         subscribeToPushEvents()
+        // Cold-launch drain: if the user tapped a notification that woke
+        // the app from a fully-terminated state, the UN-delegate's
+        // `didReceive` may have fired before this service existed — and
+        // therefore before any observer was listening on
+        // `.socialPushDeepLinkReceived`. `BindrPushAppDelegate` stashes
+        // the userInfo as a fallback; pull it now so the deep link still
+        // routes once the UI mounts.
+        if let pending = BindrPushAppDelegate.pendingTapUserInfo {
+            BindrPushAppDelegate.pendingTapUserInfo = nil
+            queueDeepLink(from: pending)
+        }
     }
 
     func refreshAuthorizationStatus() async {

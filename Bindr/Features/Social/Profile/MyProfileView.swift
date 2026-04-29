@@ -190,17 +190,9 @@ struct MyProfileView: View {
                     endPoint: .bottomTrailing
                 )
 
-                // Pokémon dex watermark — anchored bottom-left so it doesn't
-                // collide with the avatar/name on the top row.
-                if let dex = profile.favoritePokemonDex {
-                    Text("#\(String(format: "%03d", dex))")
-                        .font(.system(size: 110, weight: .black))
-                        .foregroundStyle(themeColor)
-                        .opacity(0.06)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                        .offset(x: -16, y: 12)
-                        .allowsHitTesting(false)
-                }
+                // (Pokémon dex watermark removed — the giant "#xxx" sat behind
+                // the stats bar and looked like a glitch. Favourite card peek
+                // below remains as the personalised visual anchor.)
 
                 // Tilted favourite card peek — visual anchor on the right that
                 // signals "this is *their* shelf", not a stock template.

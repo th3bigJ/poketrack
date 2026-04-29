@@ -197,7 +197,11 @@ enum BinderTitleTextColor: String, CaseIterable, Identifiable, Codable {
 
     var displayName: String {
         switch self {
-        case .gold: return "Gold"
+        // The default "gold" case now renders as **white tinted with the
+        // binder's own colour** (see ``BinderCoverView``). The raw value stays
+        // `gold` so existing binders migrate seamlessly, but the label users
+        // see in the picker matches the new look.
+        case .gold: return "Tinted"
         case .white: return "White"
         case .black: return "Black"
         }
@@ -206,7 +210,10 @@ enum BinderTitleTextColor: String, CaseIterable, Identifiable, Codable {
     var swiftUIColor: Color {
         switch self {
         case .gold:
-            return Color(red: 0.86, green: 0.72, blue: 0.42)
+            // No longer used as the cover title colour (``BinderCoverView``
+            // overrides ``.gold`` with a tinted-white gradient). Kept as a
+            // sensible fallback should anything else read this value.
+            return .white
         case .white:
             return .white
         case .black:

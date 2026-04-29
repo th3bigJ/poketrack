@@ -80,14 +80,17 @@ struct FriendRequestView: View {
     }
 
     private func respond(accepted: Bool) async {
+        Haptics.mediumImpact()
         isProcessing = true
         defer { isProcessing = false }
         do {
             try await services.socialFriend.respond(to: request.friendship.id, accepted: accepted)
+            if accepted { Haptics.success() }
             onHandled()
             dismiss()
         } catch {
             errorMessage = error.localizedDescription
+            Haptics.error()
         }
     }
 }

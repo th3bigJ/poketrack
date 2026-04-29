@@ -169,20 +169,31 @@ struct FriendSearchView: View {
     }
 
     private func addFriend(for userID: UUID) async {
+        Haptics.mediumImpact()
         do {
             try await services.socialFriend.sendRequest(to: userID)
+            Haptics.success()
             await runSearch()
         } catch {
             errorMessage = error.localizedDescription
+            Haptics.error()
         }
     }
 
     private func respond(friendshipID: UUID, accepted: Bool) async {
+        Haptics.mediumImpact()
         do {
             try await services.socialFriend.respond(to: friendshipID, accepted: accepted)
+            // Accepting a friend feels like a positive completion; declining
+            // is more of a neutral dismissal — match the haptic to the user's
+            // emotional read of the action.
+            if accepted {
+                Haptics.success()
+            }
             await runSearch()
         } catch {
             errorMessage = error.localizedDescription
+            Haptics.error()
         }
     }
 }

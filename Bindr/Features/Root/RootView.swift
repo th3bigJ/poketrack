@@ -338,6 +338,17 @@ struct RootView: View {
                 showSplash = true
             }
             await services.socialPush.updateRegistrationState()
+            // Cold-launch tap: if the AppDelegate's `didReceive` fired
+            // before `AppServices` was constructed, the buffer drain in
+            // `SocialPushService.init` already populated
+            // `queuedDeepLinkURL`. `.onChange` only observes *changes*
+            // after attachment, so it would miss this initial value.
+            // Pick it up explicitly here.
+            if let queuedURL = services.socialPush.queuedDeepLinkURL,
+               queuedURL.scheme?.lowercased() == "bindr" {
+                selectedTab = .social
+                await services.socialAuth.restoreSession()
+            }
         }
         .preferredColorScheme(services.theme.colorScheme)
     }

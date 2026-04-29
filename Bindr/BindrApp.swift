@@ -11,6 +11,16 @@ import UserNotifications
 import UIKit
 
 final class BindrPushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    /// Buffer for a notification tap that arrived before any observer was
+    /// listening — typically a cold launch where the user tapped the
+    /// notification to wake the app and `didReceive` fires before SwiftUI
+    /// has built `AppServices` (and therefore before
+    /// ``SocialPushService.subscribeToPushEvents`` ran).
+    /// `NotificationCenter.default.post` requires a live observer at the
+    /// moment of posting, so without this buffer the deep link would be lost
+    /// on cold launch. ``SocialPushService`` drains this on init.
+    static var pendingTapUserInfo: [AnyHashable: Any]?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         UNUserNotificationCenter.current().delegate = self
         return true
@@ -25,12 +35,29 @@ final class BindrPushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotific
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
-        NotificationCenter.default.post(name: .socialPushDeepLinkReceived, object: nil, userInfo: notification.request.content.userInfo)
-        return [.banner, .sound, .badge]
+        // Foreground arrival: just present the banner. We deliberately do NOT
+        // post the deep-link notification here — `willPresent` fires the
+        // moment a push arrives while the app is in front, which is *before*
+        // the user has done anything. Posting it would route them to the
+        // related post immediately, yanking them out of whatever they were
+        // doing. Only the actual tap (`didReceive` below) should route.
+        if #available(iOS 14.0, *) {
+            return [.banner, .list, .sound, .badge]
+        } else {
+            return [.alert, .sound, .badge]
+        }
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        NotificationCenter.default.post(name: .socialPushDeepLinkReceived, object: nil, userInfo: response.notification.request.content.userInfo)
+        let userInfo = response.notification.request.content.userInfo
+        // Buffer first, then post. Either:
+        //   • An observer is already listening — the post delivers it, the
+        //     observer drains the buffer (no-op) on the next init.
+        //   • No observer yet (cold launch race) — the post is dropped, but
+        //     ``SocialPushService.init`` reads `pendingTapUserInfo` and
+        //     enqueues the deep link as soon as it subscribes.
+        Self.pendingTapUserInfo = userInfo
+        NotificationCenter.default.post(name: .socialPushDeepLinkReceived, object: nil, userInfo: userInfo)
     }
 }
 

@@ -128,15 +128,9 @@ struct FriendProfileView: View {
                     endPoint: .bottomTrailing
                 )
 
-                if let dex = profile.favoritePokemonDex {
-                    Text("#\(String(format: "%03d", dex))")
-                        .font(.system(size: 110, weight: .black))
-                        .foregroundStyle(accent)
-                        .opacity(0.06)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
-                        .offset(x: -16, y: 12)
-                        .allowsHitTesting(false)
-                }
+                // (Pokémon dex watermark removed — it sat behind the stats
+                // bar and looked like a rendering glitch. Favourite card peek
+                // below remains as the personalised visual anchor.)
 
                 if let imageURL = profile.favoriteCardImageURL,
                    let url = URL(string: imageURL) {
@@ -467,24 +461,30 @@ struct FriendProfileView: View {
     }
 
     private func sendRequest(to userID: UUID) async {
+        Haptics.mediumImpact()
         isMutating = true
         defer { isMutating = false }
         do {
             try await services.socialFriend.sendRequest(to: userID)
             relationship = try await services.socialFriend.fetchRelationshipState(for: userID)
+            Haptics.success()
         } catch {
             errorMessage = error.localizedDescription
+            Haptics.error()
         }
     }
 
     private func respond(to friendshipID: UUID, accepted: Bool) async {
+        Haptics.mediumImpact()
         isMutating = true
         defer { isMutating = false }
         do {
             try await services.socialFriend.respond(to: friendshipID, accepted: accepted)
             relationship = accepted ? .friends : .none
+            if accepted { Haptics.success() }
         } catch {
             errorMessage = error.localizedDescription
+            Haptics.error()
         }
     }
 

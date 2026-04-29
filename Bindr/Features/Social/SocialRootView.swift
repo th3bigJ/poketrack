@@ -5,10 +5,6 @@ import Security
 
 struct SocialRootView: View {
 
-    private enum ProfilePopoverDestination: Hashable {
-        case editProfile
-    }
-
     private enum SocialTab: String, CaseIterable, Identifiable {
         case feed = "Feed"
         case friends = "Friends"
@@ -223,7 +219,7 @@ struct SocialRootView: View {
                     } else if selectedTab == .profile {
                         ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
                             Haptics.lightImpact()
-                            profilePopoverPath.append(ProfilePopoverDestination.editProfile)
+                            profilePopoverPath.append(AccountProfileView.Destination.editProfile)
                             showAccountProfile = true
                         } label: {
                             Image(systemName: "pencil")
@@ -430,7 +426,7 @@ struct SocialRootView: View {
             await MainActor.run {
                 profilePopoverPath = NavigationPath()
                 if profile == nil {
-                    profilePopoverPath.append(ProfilePopoverDestination.editProfile)
+                    profilePopoverPath.append(AccountProfileView.Destination.editProfile)
                 }
                 showAccountProfile = true
             }
@@ -507,7 +503,7 @@ struct SocialRootView: View {
         case .profile(let username):
             if profile == nil {
                 profilePopoverPath = NavigationPath()
-                profilePopoverPath.append(ProfilePopoverDestination.editProfile)
+                profilePopoverPath.append(AccountProfileView.Destination.editProfile)
                 showAccountProfile = true
             } else {
                 selectedTab = .friends

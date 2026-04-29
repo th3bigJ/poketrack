@@ -351,27 +351,34 @@ struct FriendsListView: View {
     }
 
     private func respond(to friendshipID: UUID, accepted: Bool) async {
+        Haptics.mediumImpact()
         do {
             try await services.socialFriend.respond(to: friendshipID, accepted: accepted)
+            if accepted { Haptics.success() }
             await refresh()
         } catch {
             errorMessage = error.localizedDescription
+            Haptics.error()
         }
     }
 
     private func handleSearchResultTap(_ result: SocialFriendService.FriendSearchResult) async {
         switch result.relationship {
         case .none:
+            Haptics.mediumImpact()
             do {
                 try await services.socialFriend.sendRequest(to: result.profile.id)
+                Haptics.success()
                 await search(query: searchText)
             } catch {
                 errorMessage = error.localizedDescription
+                Haptics.error()
             }
         case .pendingIncoming(let friendshipID):
             await respond(to: friendshipID, accepted: true)
             await search(query: searchText)
         default:
+            Haptics.lightImpact()
             onOpenUsername(result.profile.username)
         }
     }

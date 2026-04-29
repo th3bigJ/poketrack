@@ -421,6 +421,7 @@ struct NewPostView: View {
     // MARK: - Actions
 
     private func post() async {
+        Haptics.rigidImpact()
         isBusy = true
         errorMessage = nil
         defer { isBusy = false }
@@ -476,6 +477,7 @@ struct NewPostView: View {
                     includeValue: false
                 )
             }
+            Haptics.success()
             dismiss()
         } catch {
             if case SocialShareService.SocialShareError.freeTierLimitReached = error {
@@ -484,6 +486,7 @@ struct NewPostView: View {
                 showPaywall = true
             }
             errorMessage = error.localizedDescription
+            Haptics.error()
         }
     }
 

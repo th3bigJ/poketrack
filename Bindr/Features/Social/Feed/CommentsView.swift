@@ -285,14 +285,19 @@ struct CommentsView: View {
     private func submitComment() async {
         let text = composerText
         guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return }
+        // Crisp click on send — the user is committing to a post, so the
+        // feedback should feel firmer than a mere navigation tap.
+        Haptics.rigidImpact()
         do {
             try await services.socialFeed.postComment(body: text, parentID: replyingTo, to: content.id)
             composerText = ""
             replyingTo = nil
             isComposerFocused = false
+            Haptics.success()
             await loadComments()
         } catch {
             errorMessage = error.localizedDescription
+            Haptics.error()
         }
     }
 }
