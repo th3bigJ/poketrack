@@ -136,9 +136,9 @@ struct CommentsView: View {
                     .font(.subheadline.weight(.semibold))
                 Spacer(minLength: 8)
                 if let createdAt = row.comment.createdAt {
-                    Text(createdAt, style: .relative)
+                    Text(SocialFeedService.shortRelativeDate(createdAt))
                         .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.secondary.opacity(0.8))
                 }
             }
 

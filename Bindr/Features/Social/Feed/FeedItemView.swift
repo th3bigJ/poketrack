@@ -103,7 +103,7 @@ struct FeedItemView: View {
                     
                     Text("· \(SocialFeedService.shortRelativeDate(item.createdAt))")
                         .font(.system(size: 12))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.secondary.opacity(0.8))
 
                     TypePill(label: badgeText, color: typeAccentColor)
                         .scaleEffect(0.8)

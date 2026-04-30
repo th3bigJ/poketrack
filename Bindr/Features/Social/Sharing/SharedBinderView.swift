@@ -156,10 +156,38 @@ struct SharedBinderView: View {
     private func binderPageSize(in available: CGSize) -> CGSize {
         let horizontalPadding: CGFloat = 32
         let verticalPadding: CGFloat = 40
-        return CGSize(
-            width: available.width - horizontalPadding,
-            height: available.height - verticalPadding
-        )
+        var width = available.width - horizontalPadding
+        var height = available.height - verticalPadding
+
+        // Calculate aspect-aware grid height to eliminate dead space at the bottom.
+        // We mirror BinderDetailView's logic here: calculate the width available
+        // for cells, derive the resulting grid height from the card aspect ratio (5:7),
+        // and shrink the container height if it's too tall for the actual content.
+        let cardAspectRatio: CGFloat = 5/7
+        let slotSpacing: CGFloat = 8
+        let surfaceHorizontalChrome: CGFloat = 28 // 14 padding * 2
+        let surfaceVerticalChrome: CGFloat = 28   // 14 padding * 2
+        let rows = Int(ceil(Double(slotsPerPage) / Double(cols)))
+        
+        let totalGridSpacingX = CGFloat(max(cols - 1, 0)) * slotSpacing
+        let totalGridSpacingY = CGFloat(max(rows - 1, 0)) * slotSpacing
+        let contentWidth = max(width - surfaceHorizontalChrome, 120)
+        let cellWidth = (contentWidth - totalGridSpacingX) / CGFloat(cols)
+        let gridHeight = cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
+        let desiredHeight = gridHeight + surfaceVerticalChrome
+
+        if desiredHeight < height {
+            height = desiredHeight
+        } else {
+            // If the grid wants more room than available, shrink cells to fit.
+            let availableForGrid = height - surfaceVerticalChrome
+            let shrunkCellHeight = max((availableForGrid - totalGridSpacingY) / CGFloat(rows), 40)
+            let shrunkCellWidth = shrunkCellHeight * cardAspectRatio
+            let shrunkContentWidth = shrunkCellWidth * CGFloat(cols) + totalGridSpacingX
+            width = min(width, shrunkContentWidth + surfaceHorizontalChrome)
+        }
+
+        return CGSize(width: width, height: height)
     }
 
     private var pagedSurface: some View {
@@ -174,9 +202,8 @@ struct SharedBinderView: View {
                     contentVersion: cardsByID.count
                 ) { pageIdx in
                     pageSurface(pageIdx: pageIdx, pageSize: pageSize)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 20)
                 }
+                .frame(width: pageSize.width, height: pageSize.height)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
 

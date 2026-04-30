@@ -822,7 +822,7 @@ private struct SocialAlertsPreviewView: View {
                     .lineLimit(2)
                 Text(SocialFeedService.shortRelativeDate(group.primary.createdAt))
                     .font(.system(size: 11))
-                    .foregroundStyle(Color.secondary.opacity(0.3))
+                    .foregroundStyle(Color.secondary.opacity(0.6))
             }
 
             Spacer()
