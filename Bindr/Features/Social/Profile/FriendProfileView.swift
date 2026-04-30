@@ -455,6 +455,11 @@ struct FriendProfileView: View {
                     sharedCollectionCardIDs = []
                 }
             }
+            errorMessage = nil
+        } catch is CancellationError {
+            // Ignore
+        } catch let error as URLError where error.code == .cancelled {
+            // Ignore
         } catch {
             errorMessage = error.localizedDescription
         }

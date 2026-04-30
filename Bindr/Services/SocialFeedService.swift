@@ -38,6 +38,7 @@ final class SocialFeedService {
         case following
         case everyone
         case mine
+        case alerts
     }
 
     struct FeedContentSummary: Identifiable, Sendable {
@@ -341,7 +342,7 @@ final class SocialFeedService {
             limit: limit,
             currentUserID: currentUserID,
             blockedUserIDs: blockedUserIDs,
-            scope: .mine,
+            scope: .alerts,
             includeActivityRows: true
         )
     }
@@ -683,7 +684,7 @@ final class SocialFeedService {
             switch scope {
             case .following:
                 guard friendIDs.contains(row.ownerID) else { return nil }
-            case .everyone:
+            case .everyone, .alerts:
                 break
             case .mine:
                 guard row.ownerID == currentUserID else { return nil }
@@ -751,7 +752,7 @@ final class SocialFeedService {
             switch scope {
             case .following:
                 guard friendIDs.contains(row.userID) else { return nil }
-            case .everyone:
+            case .everyone, .alerts:
                 break
             case .mine:
                 guard row.userID == currentUserID else { return nil }
@@ -828,7 +829,7 @@ final class SocialFeedService {
             switch scope {
             case .following:
                 guard friendIDs.contains(row.authorID) else { return nil }
-            case .everyone:
+            case .everyone, .alerts:
                 break
             case .mine:
                 guard row.authorID == currentUserID else { return nil }
@@ -873,7 +874,7 @@ final class SocialFeedService {
             switch scope {
             case .following:
                 guard friendIDs.contains(row.senderID) else { return nil }
-            case .everyone:
+            case .everyone, .alerts:
                 break
             case .mine:
                 guard row.senderID == currentUserID else { return nil }
@@ -931,11 +932,14 @@ final class SocialFeedService {
 
     private func fetchVoteRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [VoteFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand,payload)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id!inner(id,owner_id,title,content_type,description,card_count,brand,payload)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
             path += "&user_id=eq.\(userID.uuidString)"
+        } else if scope == .alerts {
+            let userID = try signedInUserID()
+            path += "&content.owner_id=eq.\(userID.uuidString)&user_id=neq.\(userID.uuidString)"
         }
         
         return try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())
@@ -943,11 +947,14 @@ final class SocialFeedService {
 
     private func fetchCommentRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [CommentFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand,payload)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id!inner(id,owner_id,title,content_type,description,card_count,brand,payload)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
             path += "&author_id=eq.\(userID.uuidString)"
+        } else if scope == .alerts {
+            let userID = try signedInUserID()
+            path += "&content.owner_id=eq.\(userID.uuidString)&author_id=neq.\(userID.uuidString)"
         }
         
         return try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())

@@ -20,11 +20,14 @@ struct FeedItemView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(alignment: .top, spacing: 16) {
-                VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 0) {
                     header
+                    Spacer(minLength: 8)
                     textContentArea
+                    Spacer(minLength: 8)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                .frame(minHeight: 150)
                 
                 CardStackPreview(item: item, size: 150)
                     .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
@@ -143,26 +146,12 @@ struct FeedItemView: View {
                 .lineLimit(2)
                 .fixedSize(horizontal: false, vertical: true)
 
-            if let bodyText {
-                Text(bodyText)
-                    .font(.system(size: 14))
-                    .foregroundStyle(Color.secondary)
-                    .lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-
-            if let metaText {
-                Text(metaText)
-                    .font(.system(size: 12))
-                    .foregroundStyle(Color.secondary.opacity(0.6))
-            }
-
             if let description = item.content?.description, !description.isEmpty {
                 Text(description)
                     .font(.system(size: 15))
                     .foregroundStyle(.primary.opacity(0.9))
                     .italic()
-                    .lineLimit(4)
+                    .lineLimit(6)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.top, 4)
                     .padding(.bottom, 2)
@@ -285,6 +274,8 @@ struct FeedItemView: View {
             case .binder: return "BINDER"
             case .deck: return "DECK"
             case .wishlist: return "WISHLIST"
+            case .folder: return "FOLDER"
+            case .collection: return "COLLECTION"
             default: return "SHARE"
             }
         case .friendship: return "CONNECTED"

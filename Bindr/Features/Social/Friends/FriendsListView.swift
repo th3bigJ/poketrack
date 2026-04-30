@@ -329,6 +329,10 @@ struct FriendsListView: View {
             incomingRequests = try await incomingTask
             outgoingRequests = try await outgoingTask
             errorMessage = nil
+        } catch is CancellationError {
+            // Ignore
+        } catch let error as URLError where error.code == .cancelled {
+            // Ignore
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -345,6 +349,10 @@ struct FriendsListView: View {
         do {
             searchResults = try await services.socialFriend.searchUsers(query: trimmed)
             errorMessage = nil
+        } catch is CancellationError {
+            // Ignore
+        } catch let error as URLError where error.code == .cancelled {
+            // Ignore
         } catch {
             errorMessage = error.localizedDescription
         }

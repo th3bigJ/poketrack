@@ -7,7 +7,7 @@ struct FeedPillFilter: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            pill(for: .following, title: "Following", icon: "person.2.fill")
+            pill(for: .following, title: "Friends", icon: "person.2.fill")
             pill(for: .everyone, title: "Everyone", icon: "globe")
             pill(for: .mine, title: "Mine", icon: "person.fill")
         }
