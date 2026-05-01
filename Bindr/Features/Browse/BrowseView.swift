@@ -505,6 +505,13 @@ struct BrowseView: View {
         return "\(currentBrand.rawValue)#\(ids)"
     }
 
+    private var collectionOwnershipSnapshotKey: String {
+        collectionItems
+            .map { "\($0.cardID)|\($0.quantity)" }
+            .sorted()
+            .joined(separator: ",")
+    }
+
     private var safeColumnCount: Int {
         min(max(gridOptions.columnCount, 1), 4)
     }
@@ -619,6 +626,14 @@ struct BrowseView: View {
                 await scheduleBrowseInitialization(for: newBrand)
             }
         }
+        .onChange(of: collectionOwnershipSnapshotKey) { _, _ in
+            let brandSnapshot = currentBrand
+            Task { @MainActor in
+                await Task.yield()
+                guard isViewVisible else { return }
+                await scheduleOwnedCardIDsRefresh(for: brandSnapshot)
+            }
+        }
         .onChange(of: filters) { _, newFilters in
             guard !isInlineDetailPresented else { return }
             let shouldUseCatalogFeed = selectedTab == .cards
@@ -715,6 +730,7 @@ struct BrowseView: View {
         await Task.yield()
         guard isViewVisible else { return }
         ownedCardIDsCache = Set(collectionItems.compactMap { item in
+            guard item.quantity > 0 else { return nil }
             let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return itemBrand == brand ? item.cardID : nil
         })
@@ -979,6 +995,7 @@ struct BrowseView: View {
                 inlineDetailContent(route: inlineDetailRoute)
             } else {
                 BrowseSetsTabContent(query: query) { set in
+                    HapticManager.impact(.light)
                     lastSelectedSetCodeInSetsTab = set.setCode
                     inlineDetailRoute = .set(set)
                 }
@@ -988,6 +1005,7 @@ struct BrowseView: View {
                 inlineDetailContent(route: inlineDetailRoute)
             } else {
                 BrowsePokemonTabContent(query: query) { route in
+                    HapticManager.impact(.light)
                     inlineDetailRoute = route
                 }
             }

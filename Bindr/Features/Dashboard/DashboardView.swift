@@ -94,13 +94,11 @@ struct DashboardView: View {
     }
 
     private var sealedProductsCount: Int {
-        Set(
-            visibleCollectionItems.compactMap { item -> String? in
-                guard item.itemKind == ProductKind.sealedProduct.rawValue else { return nil }
-                guard item.quantity > 0 else { return nil }
-                return item.cardID
-            }
-        ).count
+        visibleCollectionItems.reduce(0) { total, item in
+            guard sealedProductID(for: item) != nil else { return total }
+            guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { return total }
+            return total + max(item.quantity, 0)
+        }
     }
 
     private var wishlistedCardsCount: Int {
@@ -949,11 +947,15 @@ struct DashboardView: View {
         var totalCost = 0.0
 
         for item in collectionItems {
-            totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)
+            let quantity = max(item.quantity, 0)
+            guard quantity > 0 else { continue }
+            guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
+
+            totalCost += (item.purchasePrice ?? 0) * Double(quantity)
 
             if let sealedProductID = sealedProductID(for: item),
                let sealedPriceUSD = services.sealedProducts.marketPriceUSD(for: sealedProductID) {
-                let gbp = sealedPriceUSD * Double(item.quantity) * services.pricing.usdToGbp
+                let gbp = sealedPriceUSD * Double(quantity) * services.pricing.usdToGbp
                 totalValue += gbp
 
                 switch TCGBrand.inferredFromMasterCardId(item.cardID) {
@@ -973,7 +975,7 @@ struct DashboardView: View {
                 }
             }()
             let usdPrice = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: item.variantKey, grade: gradeKey) ?? 0
-            let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
+            let gbp = usdPrice * Double(quantity) * services.pricing.usdToGbp
             totalValue += gbp
 
             switch TCGBrand.inferredFromMasterCardId(item.cardID) {
