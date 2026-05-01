@@ -23,6 +23,7 @@ struct CollectView: View {
     @State private var collectionNextIndex = 0
     @State private var isLoadingMoreCollectionItems = false
     @State private var markAsSession: CollectionMarkAsSession?
+    @State private var openSealedSession: CollectionOpenSealedSession?
 
     // MARK: - Wishlist State
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
@@ -44,6 +45,14 @@ struct CollectView: View {
     @State private var wishlistQuery = ""
     private static let collectionInitialBatchSize = 36
     private static let collectionPageSize = 18
+    private static let sealedReleaseDateSortFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
 
     var showsSegmentedControl = true
     var hidesNavigationBar = true
@@ -67,6 +76,15 @@ struct CollectView: View {
 
     private var setNameCacheKey: String {
         services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
+    }
+
+    private var setReleaseDateByCode: [String: String] {
+        var map: [String: String] = [:]
+        map.reserveCapacity(services.cardData.sets.count)
+        for set in services.cardData.sets where map[set.setCode] == nil {
+            map[set.setCode] = set.releaseDate ?? ""
+        }
+        return map
     }
 
     private var visibleCollectionItems: [CollectionItem] {
@@ -187,6 +205,10 @@ struct CollectView: View {
                 initialKind: session.initialKind
             )
             .environment(services)
+        }
+        .sheet(item: $openSealedSession) { session in
+            OpenSealedCollectionItemSheet(item: session.item, productName: session.productName)
+                .environment(services)
         }
         .onChange(of: selectedSealedProduct?.id) { _, productID in
             services.isSealedDetailPresentationActive = (productID != nil)
@@ -387,6 +409,23 @@ struct CollectView: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(CardCellButtonStyle())
+            .contextMenu {
+                Menu {
+                    Button {
+                        openSealedSession = CollectionOpenSealedSession(item: item, productName: product.name)
+                    } label: {
+                        Label("Opened", systemImage: "shippingbox")
+                    }
+                    Divider()
+                    markAsButton(kind: .sold, item: item, displayName: product.name)
+                    markAsButton(kind: .traded, item: item, displayName: product.name)
+                    markAsButton(kind: .gifted, item: item, displayName: product.name)
+                    markAsButton(kind: .lost, item: item, displayName: product.name)
+                    markAsButton(kind: .damaged, item: item, displayName: product.name)
+                } label: {
+                    Label("Mark as", systemImage: "tag")
+                }
+            }
             .accessibilityLabel("\(product.name), \(item.quantity) owned")
         } else if let card = cardsByCardID[item.cardID] {
             Button { presentCardAtIndex(collectionDisplayedCards, index) } label: {
@@ -401,12 +440,14 @@ struct CollectView: View {
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {
-                Menu("Mark as") {
+                Menu {
                     markAsButton(kind: .sold, item: item, card: card)
                     markAsButton(kind: .traded, item: item, card: card)
                     markAsButton(kind: .gifted, item: item, card: card)
                     markAsButton(kind: .lost, item: item, card: card)
                     markAsButton(kind: .damaged, item: item, card: card)
+                } label: {
+                    Label("Mark as", systemImage: "tag")
                 }
             }
             .accessibilityLabel("\(card.cardName), \(item.quantity) copies, \(item.variantKey)")
@@ -479,7 +520,20 @@ struct CollectView: View {
                 collectionDisplayName(for: $0).localizedCaseInsensitiveCompare(collectionDisplayName(for: $1)) == .orderedAscending
             }
         case .newestSet, .cardNumber:
-            return items
+            return items.sorted { lhs, rhs in
+                compareNewestSetOrdering(
+                    lhsReleaseDateKey: releaseDateSortKey(for: lhs, cardLookup: cardsByCardID),
+                    rhsReleaseDateKey: releaseDateSortKey(for: rhs, cardLookup: cardsByCardID),
+                    lhsSetCode: cardsByCardID[lhs.cardID]?.setCode,
+                    rhsSetCode: cardsByCardID[rhs.cardID]?.setCode,
+                    lhsCardNumber: cardsByCardID[lhs.cardID]?.cardNumber,
+                    rhsCardNumber: cardsByCardID[rhs.cardID]?.cardNumber,
+                    lhsDisplayName: collectionDisplayName(for: lhs),
+                    rhsDisplayName: collectionDisplayName(for: rhs),
+                    lhsStableID: lhs.cardID,
+                    rhsStableID: rhs.cardID
+                )
+            }
         case .price:
             return items.sorted { lhs, rhs in
                 let lhsPrice = collectionDisplayPrice(for: lhs)
@@ -644,6 +698,13 @@ struct CollectView: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(CardCellButtonStyle())
+            .contextMenu {
+                Button(role: .destructive) {
+                    removeFromWishlist(item)
+                } label: {
+                    Label("Remove from Wishlist", systemImage: "heart.slash")
+                }
+            }
             .accessibilityLabel(product.name)
         } else if let card = wishlistCardsByID[item.cardID] {
             Button { presentCard(card, orderedWishlistCards) } label: {
@@ -656,8 +717,10 @@ struct CollectView: View {
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {
-                Button("Remove from Wishlist", role: .destructive) {
+                Button(role: .destructive) {
                     removeFromWishlist(item)
+                } label: {
+                    Label("Remove from Wishlist", systemImage: "heart.slash")
                 }
             }
             .accessibilityLabel(card.cardName)
@@ -726,7 +789,20 @@ struct CollectView: View {
                 wishlistDisplayName(for: $0).localizedCaseInsensitiveCompare(wishlistDisplayName(for: $1)) == .orderedAscending
             }
         case .newestSet, .cardNumber:
-            return items
+            return items.sorted { lhs, rhs in
+                compareNewestSetOrdering(
+                    lhsReleaseDateKey: releaseDateSortKey(for: lhs, cardLookup: wishlistCardsByID),
+                    rhsReleaseDateKey: releaseDateSortKey(for: rhs, cardLookup: wishlistCardsByID),
+                    lhsSetCode: wishlistCardsByID[lhs.cardID]?.setCode,
+                    rhsSetCode: wishlistCardsByID[rhs.cardID]?.setCode,
+                    lhsCardNumber: wishlistCardsByID[lhs.cardID]?.cardNumber,
+                    rhsCardNumber: wishlistCardsByID[rhs.cardID]?.cardNumber,
+                    lhsDisplayName: wishlistDisplayName(for: lhs),
+                    rhsDisplayName: wishlistDisplayName(for: rhs),
+                    lhsStableID: lhs.cardID,
+                    rhsStableID: rhs.cardID
+                )
+            }
         case .price:
             return items.sorted { lhs, rhs in
                 let lhsPrice = wishlistDisplayPrice(for: lhs)
@@ -787,12 +863,34 @@ struct CollectView: View {
 
     @ViewBuilder
     private func markAsButton(kind: CollectionDispositionKind, item: CollectionItem, card: Card) -> some View {
-        Button(kind.title) {
+        markAsButton(kind: kind, item: item, displayName: card.cardName)
+    }
+
+    @ViewBuilder
+    private func markAsButton(kind: CollectionDispositionKind, item: CollectionItem, displayName: String) -> some View {
+        Button {
             markAsSession = CollectionMarkAsSession(
                 item: item,
-                cardDisplayName: card.cardName,
+                cardDisplayName: displayName,
                 initialKind: kind
             )
+        } label: {
+            Label(kind.title, systemImage: markAsSymbol(for: kind))
+        }
+    }
+
+    private func markAsSymbol(for kind: CollectionDispositionKind) -> String {
+        switch kind {
+        case .sold:
+            return "dollarsign.circle"
+        case .traded:
+            return "arrow.left.arrow.right.circle"
+        case .gifted:
+            return "gift"
+        case .lost:
+            return "questionmark.circle"
+        case .damaged:
+            return "exclamationmark.triangle"
         }
     }
 
@@ -876,6 +974,59 @@ struct CollectView: View {
         return lhsNumber.localizedStandardCompare(rhsNumber) == .orderedAscending
     }
 
+    private func releaseDateSortKey(for item: CollectionItem, cardLookup: [String: Card]) -> String {
+        if let product = sealedProduct(for: item) {
+            guard let releaseDate = product.releaseDate else { return "" }
+            return Self.sealedReleaseDateSortFormatter.string(from: releaseDate)
+        }
+        guard let card = cardLookup[item.cardID] else { return "" }
+        return setReleaseDateByCode[card.setCode] ?? ""
+    }
+
+    private func releaseDateSortKey(for item: WishlistItem, cardLookup: [String: Card]) -> String {
+        if let product = sealedProduct(for: item) {
+            guard let releaseDate = product.releaseDate else { return "" }
+            return Self.sealedReleaseDateSortFormatter.string(from: releaseDate)
+        }
+        guard let card = cardLookup[item.cardID] else { return "" }
+        return setReleaseDateByCode[card.setCode] ?? ""
+    }
+
+    private func compareNewestSetOrdering(
+        lhsReleaseDateKey: String,
+        rhsReleaseDateKey: String,
+        lhsSetCode: String?,
+        rhsSetCode: String?,
+        lhsCardNumber: String?,
+        rhsCardNumber: String?,
+        lhsDisplayName: String,
+        rhsDisplayName: String,
+        lhsStableID: String,
+        rhsStableID: String
+    ) -> Bool {
+        if lhsReleaseDateKey != rhsReleaseDateKey {
+            return lhsReleaseDateKey > rhsReleaseDateKey
+        }
+
+        let lhsResolvedSetCode = lhsSetCode ?? ""
+        let rhsResolvedSetCode = rhsSetCode ?? ""
+        if lhsResolvedSetCode != rhsResolvedSetCode {
+            return lhsResolvedSetCode.localizedStandardCompare(rhsResolvedSetCode) == .orderedAscending
+        }
+
+        let lhsResolvedCardNumber = lhsCardNumber ?? ""
+        let rhsResolvedCardNumber = rhsCardNumber ?? ""
+        if lhsResolvedCardNumber != rhsResolvedCardNumber {
+            return lhsResolvedCardNumber.localizedStandardCompare(rhsResolvedCardNumber) == .orderedAscending
+        }
+
+        if lhsDisplayName != rhsDisplayName {
+            return lhsDisplayName.localizedCaseInsensitiveCompare(rhsDisplayName) == .orderedAscending
+        }
+
+        return lhsStableID.localizedStandardCompare(rhsStableID) == .orderedAscending
+    }
+
     // MARK: - Empty State
 
     private func emptyState(title: String, image: String, description: String) -> some View {
@@ -890,6 +1041,12 @@ private struct CollectionMarkAsSession: Identifiable {
     let item: CollectionItem
     let cardDisplayName: String
     let initialKind: CollectionDispositionKind
+}
+
+private struct CollectionOpenSealedSession: Identifiable {
+    let id = UUID()
+    let item: CollectionItem
+    let productName: String
 }
 
 private struct CollectionMarkAsSheet: View {

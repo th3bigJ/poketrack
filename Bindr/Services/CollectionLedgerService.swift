@@ -612,6 +612,80 @@ final class CollectionLedgerService {
         try modelContext.save()
     }
 
+    /// Records that sealed product units left collection via sale/trade/gift/loss/damage.
+    func recordSealedProductDisposition(
+        item: CollectionItem,
+        kind: CollectionDispositionKind,
+        quantity: Int,
+        currencyCode: String,
+        productName: String,
+        unitPrice: Double? = nil,
+        counterparty: String? = nil,
+        notes: String? = nil,
+        preferredLotIDs: Set<UUID> = []
+    ) throws {
+        guard item.itemKind == ProductKind.sealedProduct.rawValue else {
+            throw CollectionLedgerError.notSealedProductStack
+        }
+        guard quantity > 0 else { throw CollectionLedgerError.invalidQuantity }
+        guard quantity <= item.quantity else { throw CollectionLedgerError.insufficientQuantity }
+
+        let cleanCounterparty = cleanOptionalString(counterparty)
+        let cleanNotes = cleanOptionalString(notes)
+        let baseDescription = "\(kind.title) · \(cleanOptionalString(productName) ?? "Sealed product")"
+        let descriptionParts = [baseDescription, cleanNotes].compactMap { $0 }
+        let line = LedgerLine(
+            direction: kind.ledgerDirection.rawValue,
+            productKind: ProductKind.sealedProduct.rawValue,
+            lineDescription: descriptionParts.joined(separator: " · "),
+            cardID: item.cardID,
+            variantKey: "sealed",
+            sealedProductId: cleanOptionalString(item.sealedProductId),
+            quantity: quantity,
+            unitPrice: unitPrice,
+            currencyCode: currencyCode,
+            feesAmount: nil,
+            sealedStatus: SealedInventoryStatus.sealed.rawValue,
+            counterparty: cleanCounterparty,
+            channel: dispositionChannel(for: kind),
+            externalRef: nil,
+            transactionGroupId: nil
+        )
+        modelContext.insert(line)
+
+        var remaining = quantity
+        let sortedLots = (item.costLots ?? []).sorted { $0.createdAt < $1.createdAt }
+        let preferredLots = sortedLots.filter { preferredLotIDs.contains($0.id) }
+        let fallbackLots = sortedLots.filter { !preferredLotIDs.contains($0.id) }
+        for lot in (preferredLots + fallbackLots) where remaining > 0 {
+            guard lot.quantityRemaining > 0 else { continue }
+            let take = min(remaining, lot.quantityRemaining)
+            lot.quantityRemaining -= take
+            remaining -= take
+
+            if kind == .sold {
+                let allocation = SaleAllocation(
+                    quantity: take,
+                    allocatedCost: Double(take) * lot.unitCost,
+                    saleLedgerLine: line,
+                    costLot: lot
+                )
+                modelContext.insert(allocation)
+            } else if lot.quantityRemaining == 0, (lot.saleAllocations ?? []).isEmpty {
+                modelContext.delete(lot)
+            }
+        }
+
+        item.quantity -= quantity
+        if item.quantity <= 0 {
+            removeDepletedCollectionItem(item)
+        } else {
+            item.sealedStatus = SealedInventoryStatus.sealed.rawValue
+        }
+
+        try modelContext.save()
+    }
+
     private func resolvedUnitCost(kind: CollectionAcquisitionKind, unitPrice: Double?) -> Double {
         switch kind {
         case .bought, .trade, .gifted:

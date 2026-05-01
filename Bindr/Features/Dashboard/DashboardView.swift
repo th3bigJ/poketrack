@@ -1074,7 +1074,11 @@ struct DashboardView: View {
         case .sold: return "Sold"
         case .tradedIn, .tradedOut: return "Traded"
         case .giftedIn, .giftedOut: return "Gifted"
-        case .adjustmentIn, .adjustmentOut: return "Adjusted"
+        case .adjustmentIn, .adjustmentOut:
+            if line.sealedStatus == SealedInventoryStatus.opened.rawValue {
+                return "Opened"
+            }
+            return "Adjusted"
         }
     }
 

@@ -807,6 +807,17 @@ struct RootView: View {
     @ViewBuilder
     private var collectFilterMenuContent: some View {
         let showSealedProductTypeFilter = collectContentTypeTab == .sealed
+        let collectConfig = showSealedProductTypeFilter
+            ? FilterMenuConfig.sealed
+            : FilterMenuConfig(
+                showAcquiredDateSort: true,
+                showRandomSort: false,
+                showCardNumberSort: false,
+                showHideOwned: false,
+                showShowDuplicates: true,
+                showGridOptions: true,
+                defaultSortBy: .price
+            )
         BrowseGridFiltersMenuContent(
             brand: collectActiveBrand,
             filters: activeCollectFiltersBinding,
@@ -815,16 +826,7 @@ struct RootView: View {
             trainerTypeOptions: collectFilterTrainerTypeOptions,
             isAllBrands: isCollectAllBrands,
             gridOptions: $collectFilters.gridOptions,
-            config: FilterMenuConfig(
-                showAcquiredDateSort: true,
-                showRandomSort: false,
-                showCardNumberSort: false,
-                showHideOwned: false,
-                showShowDuplicates: true,
-                showGridOptions: true,
-                defaultSortBy: .price,
-                showSealedProductTypeFilter: showSealedProductTypeFilter
-            )
+            config: collectConfig
         )
     }
 
@@ -860,24 +862,7 @@ struct RootView: View {
             trainerTypeOptions: activeBrowseFilterTrainerTypeOptions,
             isAllBrands: false,
             gridOptions: isSealedTab ? $browseFilters.sealedGridOptions : nil,
-            config: isSealedTab
-                ? FilterMenuConfig(
-                    showAcquiredDateSort: false,
-                    showCardNumberSort: false,
-                    showBrandFilters: false,
-                    showRarity: false,
-                    showRarePlusOnly: false,
-                    showHideOwned: false,
-                    showShowDuplicates: false,
-                    showGridOptions: true,
-                    defaultSortBy: .newestSet,
-                    gridNameToggleTitle: "Show product name",
-                    showGridCardIDToggle: false,
-                    showGridColumns: true,
-                    showGridOwnedToggle: false,
-                    showSealedProductTypeFilter: true
-                )
-                : browseConfig
+            config: isSealedTab ? .sealed : browseConfig
         )
     }
 

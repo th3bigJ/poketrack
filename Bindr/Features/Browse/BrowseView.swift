@@ -236,34 +236,7 @@ private struct BrowseCardThumbnailView: View {
     var accentColor: Color = .accentColor
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            CachedCardThumbnailImage(url: imageURL)
-            if let ownedCountBadge, ownedCountBadge > 1 {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 24, weight: .semibold))
-                    .foregroundStyle(.white, accentColor)
-                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                    .overlay(alignment: .center) {
-                        Text("\(ownedCountBadge)")
-                            .font(.system(size: 9, weight: .bold))
-                            .foregroundStyle(.white)
-                            .offset(x: 0.5, y: 0.5)
-                    }
-                    .padding(6)
-            } else if isOwned {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 24, weight: .semibold))
-                    .foregroundStyle(.white, accentColor)
-                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                    .padding(6)
-            } else if isWishlisted {
-                Image(systemName: "star.circle.fill")
-                    .font(.system(size: 24, weight: .semibold))
-                    .foregroundStyle(.white, .yellow)
-                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                    .padding(6)
-            }
-        }
+        CachedCardThumbnailImage(url: imageURL)
     }
 }
 
@@ -271,8 +244,6 @@ private struct BrowseCardThumbnailView: View {
 struct CardCellButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.94 : 1.0)
-            .animation(.spring(response: 0.2, dampingFraction: 0.75), value: configuration.isPressed)
     }
 }
 
@@ -407,17 +378,25 @@ private struct BrowseCardGridButton: View {
         }
         .buttonStyle(CardCellButtonStyle())
         .contextMenu {
-            Button("Select Multiple") {
+            Button {
                 onSelectMultipleRequested(row.card)
+            } label: {
+                Label("Select Multiple", systemImage: "checklist")
             }
-            Button("Add to Collection") {
+            Button {
                 onQuickAddRequested(row.card, .collection)
+            } label: {
+                Label("Add to Collection", systemImage: "books.vertical")
             }
-            Button("Add to Wishlist") {
+            Button {
                 onQuickAddRequested(row.card, .wishlist)
+            } label: {
+                Label("Add to Wishlist", systemImage: "heart")
             }
-            Button("Add to Folder") {
+            Button {
                 onQuickAddRequested(row.card, .folder)
+            } label: {
+                Label("Add to Folder", systemImage: "folder.badge.plus")
             }
         }
         .frame(maxWidth: .infinity, alignment: .top)
@@ -1060,17 +1039,25 @@ struct BrowseView: View {
                 }
                 .buttonStyle(CardCellButtonStyle())
                 .contextMenu {
-                    Button("Select Multiple") {
+                    Button {
                         beginSelectMultiple(with: card)
+                    } label: {
+                        Label("Select Multiple", systemImage: "checklist")
                     }
-                    Button("Add to Collection") {
+                    Button {
                         beginQuickAdd(card: card, action: .collection)
+                    } label: {
+                        Label("Add to Collection", systemImage: "books.vertical")
                     }
-                    Button("Add to Wishlist") {
+                    Button {
                         beginQuickAdd(card: card, action: .wishlist)
+                    } label: {
+                        Label("Add to Wishlist", systemImage: "heart")
                     }
-                    Button("Add to Folder") {
+                    Button {
                         beginQuickAdd(card: card, action: .folder)
+                    } label: {
+                        Label("Add to Folder", systemImage: "folder.badge.plus")
                     }
                 }
                 .onAppear {
@@ -3799,6 +3786,22 @@ struct FilterMenuConfig {
         showShowDuplicates: true,
         defaultSortBy: .price
     )
+    static let sealed = FilterMenuConfig(
+        showAcquiredDateSort: false,
+        showCardNumberSort: false,
+        showBrandFilters: false,
+        showRarity: false,
+        showRarePlusOnly: false,
+        showHideOwned: false,
+        showShowDuplicates: false,
+        showGridOptions: true,
+        defaultSortBy: .newestSet,
+        gridNameToggleTitle: "Show product name",
+        showGridCardIDToggle: false,
+        showGridColumns: true,
+        showGridOwnedToggle: false,
+        showSealedProductTypeFilter: true
+    )
 }
 
 struct BrowseGridFiltersMenuContent: View {
@@ -3817,15 +3820,17 @@ struct BrowseGridFiltersMenuContent: View {
     var body: some View {
         if filters.isVisiblyCustomized || filters.sortBy != config.defaultSortBy {
             Section {
-                Button("Reset filters", role: .destructive) {
+                Button(role: .destructive) {
                     filters = BrowseCardGridFilters()
                     filters.sortBy = config.defaultSortBy
+                } label: {
+                    Label("Reset filters", systemImage: "arrow.counterclockwise.circle")
                 }
             }
         }
 
         Section("Sort by") {
-            Menu(menuTitle("Sort by", summary: filters.sortBy.title)) {
+            Menu {
                 Picker("Sort by", selection: $filters.sortBy) {
                     ForEach(BrowseCardGridSortOption.allCases.filter {
                         ($0 != .acquiredDateNewest || config.showAcquiredDateSort)
@@ -3837,6 +3842,8 @@ struct BrowseGridFiltersMenuContent: View {
                 }
                 .pickerStyle(.inline)
                 .labelsHidden()
+            } label: {
+                Label(menuTitle("Sort by", summary: filters.sortBy.title), systemImage: "arrow.up.arrow.down.circle")
             }
             .menuActionDismissBehavior(.disabled)
             .menuOrder(.fixed)
@@ -3845,13 +3852,13 @@ struct BrowseGridFiltersMenuContent: View {
         if !isAllBrands && config.showBrandFilters {
         Section("Filters") {
             if brand == .onePiece {
-                filterMenu(title: "Card type", summary: selectionSummary(for: filters.opCardTypes)) {
+                filterMenu(title: "Card type", summary: selectionSummary(for: filters.opCardTypes), systemImage: "square.stack.3d.up") {
                     ForEach(opCardTypeAllOptions, id: \.self) { cardType in
                         Toggle(cardType, isOn: stringBinding(for: cardType, keyPath: \.opCardTypes))
                     }
                 }
 
-                filterMenu(title: "Attribute", summary: selectionSummary(for: filters.opAttributes)) {
+                filterMenu(title: "Attribute", summary: selectionSummary(for: filters.opAttributes), systemImage: "tag") {
                     ForEach(opAttributeAllOptions, id: \.self) { attr in
                         Toggle(attr, isOn: stringBinding(for: attr, keyPath: \.opAttributes))
                     }
@@ -3864,43 +3871,44 @@ struct BrowseGridFiltersMenuContent: View {
                         ("Counter", filters.opCounters.count),
                         ("Life", filters.opLives.count),
                         ("Power", filters.opPowers.count)
-                    )
+                    ),
+                    systemImage: "chart.bar.xaxis"
                 ) {
-                    filterMenu(title: "Cost", summary: selectionSummary(for: filters.opCosts)) {
+                    filterMenu(title: "Cost", summary: selectionSummary(for: filters.opCosts), systemImage: "number.circle") {
                         ForEach(opCostAllOptions, id: \.self) { cost in
                             Toggle("\(cost)", isOn: intBinding(for: cost, keyPath: \.opCosts))
                         }
                     }
-                    filterMenu(title: "Counter", summary: selectionSummary(for: filters.opCounters)) {
+                    filterMenu(title: "Counter", summary: selectionSummary(for: filters.opCounters), systemImage: "plusminus.circle") {
                         ForEach(opCounterAllOptions, id: \.self) { counter in
                             Toggle("\(counter)", isOn: intBinding(for: counter, keyPath: \.opCounters))
                         }
                     }
-                    filterMenu(title: "Life", summary: selectionSummary(for: filters.opLives)) {
+                    filterMenu(title: "Life", summary: selectionSummary(for: filters.opLives), systemImage: "heart.circle") {
                         ForEach(opLifeAllOptions, id: \.self) { life in
                             Toggle("\(life)", isOn: intBinding(for: life, keyPath: \.opLives))
                         }
                     }
-                    filterMenu(title: "Power", summary: selectionSummary(for: filters.opPowers)) {
+                    filterMenu(title: "Power", summary: selectionSummary(for: filters.opPowers), systemImage: "bolt.circle") {
                         ForEach(opPowerAllOptions, id: \.self) { power in
                             Toggle("\(power)", isOn: intBinding(for: power, keyPath: \.opPowers))
                         }
                     }
                 }
             } else {
-                filterMenu(title: "Card type", summary: selectionSummary(for: filters.cardTypes)) {
+                filterMenu(title: "Card type", summary: selectionSummary(for: filters.cardTypes), systemImage: "square.stack.3d.up") {
                     ForEach(BrowseCardTypeFilter.pokemonOptions) { type in
                         Toggle(type.title, isOn: cardTypeBinding(for: type))
                     }
                 }
-                filterMenu(title: "Legal", summary: selectionSummary(for: filters.legalities)) {
+                filterMenu(title: "Legal", summary: selectionSummary(for: filters.legalities), systemImage: "checkmark.shield") {
                     ForEach(BrowseCardLegalityFilter.allCases) { legality in
                         Toggle(legality.title, isOn: legalityBinding(for: legality))
                     }
                 }
             }
 
-            filterMenu(title: brand.energyFilterMenuTitle, summary: selectionSummary(for: filters.energyTypes)) {
+            filterMenu(title: brand.energyFilterMenuTitle, summary: selectionSummary(for: filters.energyTypes), systemImage: "bolt.circle") {
                 if energyOptions.isEmpty {
                     Text("No options available")
                 } else {
@@ -3911,7 +3919,7 @@ struct BrowseGridFiltersMenuContent: View {
             }
 
             if brand == .pokemon {
-                filterMenu(title: "Trainer type", summary: selectionSummary(for: filters.trainerTypes)) {
+                filterMenu(title: "Trainer type", summary: selectionSummary(for: filters.trainerTypes), systemImage: "person.crop.square") {
                     if trainerTypeOptions.isEmpty {
                         Text("No trainer types available")
                     } else {
@@ -3920,12 +3928,12 @@ struct BrowseGridFiltersMenuContent: View {
                         }
                     }
                 }
-                filterMenu(title: "Subtype", summary: selectionSummary(for: filters.pokemonSubtypes)) {
+                filterMenu(title: "Subtype", summary: selectionSummary(for: filters.pokemonSubtypes), systemImage: "square.grid.2x2") {
                     ForEach(pokemonSubtypeAllOptions, id: \.self) { subtype in
                         Toggle(subtype, isOn: stringBinding(for: subtype, keyPath: \.pokemonSubtypes))
                     }
                 }
-                filterMenu(title: "Ability", summary: filters.abilityPresence?.title) {
+                filterMenu(title: "Ability", summary: filters.abilityPresence?.title, systemImage: "wand.and.rays") {
                     ForEach(BrowseCardAbilityPresenceFilter.allCases) { option in
                         Toggle(option.title, isOn: abilityPresenceBinding(for: option))
                     }
@@ -3933,7 +3941,7 @@ struct BrowseGridFiltersMenuContent: View {
             }
 
             if config.showSealedProductTypeFilter {
-                filterMenu(title: "Product type", summary: selectionSummary(for: filters.sealedProductTypes)) {
+                filterMenu(title: "Product type", summary: selectionSummary(for: filters.sealedProductTypes), systemImage: "shippingbox") {
                     ForEach(sealedProductTypeFilterOptions) { option in
                         Toggle(option.title, isOn: stringBinding(for: option.id, keyPath: \.sealedProductTypes))
                     }
@@ -3944,7 +3952,7 @@ struct BrowseGridFiltersMenuContent: View {
         if config.showRarity || config.showRarePlusOnly || config.showHideOwned || config.showShowDuplicates {
             Section("Collection") {
                 if config.showRarity {
-                    filterMenu(title: "Rarity", summary: selectionSummary(for: filters.rarities)) {
+                    filterMenu(title: "Rarity", summary: selectionSummary(for: filters.rarities), systemImage: "sparkles") {
                         if rarityOptions.isEmpty {
                             Text("No rarities available")
                         } else {
@@ -3955,13 +3963,19 @@ struct BrowseGridFiltersMenuContent: View {
                     }
                 }
                 if config.showRarePlusOnly {
-                    Toggle("Rare + only", isOn: $filters.rarePlusOnly)
+                    Toggle(isOn: $filters.rarePlusOnly) {
+                        Label("Rare + only", systemImage: "star.circle")
+                    }
                 }
                 if config.showHideOwned {
-                    Toggle("Hide owned", isOn: $filters.hideOwned)
+                    Toggle(isOn: $filters.hideOwned) {
+                        Label("Hide owned", systemImage: "eye.slash")
+                    }
                 }
                 if config.showShowDuplicates {
-                    Toggle("Show duplicates", isOn: $filters.showDuplicates)
+                    Toggle(isOn: $filters.showDuplicates) {
+                        Label("Show duplicates", systemImage: "square.on.square")
+                    }
                 }
             }
         }
@@ -3969,7 +3983,7 @@ struct BrowseGridFiltersMenuContent: View {
 
         if config.showSealedProductTypeFilter && (!isAllBrands && config.showBrandFilters) == false {
             Section("Filters") {
-                filterMenu(title: "Product type", summary: selectionSummary(for: filters.sealedProductTypes)) {
+                filterMenu(title: "Product type", summary: selectionSummary(for: filters.sealedProductTypes), systemImage: "shippingbox") {
                     ForEach(sealedProductTypeFilterOptions) { option in
                         Toggle(option.title, isOn: stringBinding(for: option.id, keyPath: \.sealedProductTypes))
                     }
@@ -3991,9 +4005,20 @@ struct BrowseGridFiltersMenuContent: View {
     }
 
     @ViewBuilder
-    private func filterMenu<Content: View>(title: String, summary: String?, @ViewBuilder content: () -> Content) -> some View {
-        Menu(menuTitle(title, summary: summary)) {
+    private func filterMenu<Content: View>(
+        title: String,
+        summary: String?,
+        systemImage: String? = nil,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        Menu {
             content()
+        } label: {
+            if let systemImage {
+                Label(menuTitle(title, summary: summary), systemImage: systemImage)
+            } else {
+                Text(menuTitle(title, summary: summary))
+            }
         }
         .menuActionDismissBehavior(.disabled)
         .menuOrder(.fixed)
@@ -4097,19 +4122,29 @@ struct BrowseGridOptionsMenuContent: View {
     var showOwnedToggle: Bool = true
 
     var body: some View {
-        Toggle(nameToggleTitle, isOn: gridOptionBinding(\.showCardName))
-        Toggle("Show set name", isOn: gridOptionBinding(\.showSetName))
+        Toggle(isOn: gridOptionBinding(\.showCardName)) {
+            Label(nameToggleTitle, systemImage: "textformat")
+        }
+        Toggle(isOn: gridOptionBinding(\.showSetName)) {
+            Label("Show set name", systemImage: "doc.text")
+        }
         if showCardIDToggle {
-            Toggle("Show card ID", isOn: gridOptionBinding(\.showSetID))
+            Toggle(isOn: gridOptionBinding(\.showSetID)) {
+                Label("Show card ID", systemImage: "number.circle")
+            }
         }
         if showOwnedToggle, gridOptions != nil {
-            Toggle("Owned", isOn: gridOptionBinding(\.showOwned))
+            Toggle(isOn: gridOptionBinding(\.showOwned)) {
+                Label("Owned", systemImage: "checkmark.circle")
+            }
         }
-        Toggle("Show pricing", isOn: gridOptionBinding(\.showPricing))
+        Toggle(isOn: gridOptionBinding(\.showPricing)) {
+            Label("Show pricing", systemImage: "dollarsign.circle")
+        }
         if showColumns {
             Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
                 let count = gridOptions?.wrappedValue.columnCount ?? services.browseGridOptions.options.columnCount
-                Text("Columns: \(count)")
+                Label("Columns: \(count)", systemImage: "square.grid.3x2")
             }
             .tint(.primary)
         }

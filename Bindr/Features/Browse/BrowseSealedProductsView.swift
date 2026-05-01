@@ -13,6 +13,11 @@ struct BrowseSealedTabContent: View {
     let gridOptions: BrowseGridOptions
 
     @State private var displayedProducts: [SealedProduct] = []
+    @State private var addToCollectionProduct: SealedProduct?
+    @State private var addToFolderProduct: SealedProduct?
+    @State private var showWishlistPaywall = false
+    @State private var showWishlistAlert = false
+    @State private var wishlistAlertMessage: String?
     private let sealedGridHorizontalPadding: CGFloat = 16
     private let sealedGridSpacing: CGFloat = 12
 
@@ -78,6 +83,26 @@ struct BrowseSealedTabContent: View {
                         .contentShape(Rectangle())
                     }
                     .buttonStyle(CardCellButtonStyle())
+                    .contextMenu {
+                        Button {
+                            addToCollectionProduct = product
+                        } label: {
+                            Label("Add to Collection", systemImage: "books.vertical")
+                        }
+                        Button {
+                            toggleWishlist(for: product)
+                        } label: {
+                            Label(
+                                isWishlisted(product) ? "Remove from Wishlist" : "Add to Wishlist",
+                                systemImage: isWishlisted(product) ? "heart.slash" : "heart"
+                            )
+                        }
+                        Button {
+                            addToFolderProduct = product
+                        } label: {
+                            Label("Add to Folder", systemImage: "folder.badge.plus")
+                        }
+                    }
                 }
                 .padding(.horizontal, sealedGridHorizontalPadding)
                 .padding(.bottom, 16)
@@ -93,6 +118,22 @@ struct BrowseSealedTabContent: View {
         .onChange(of: query) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: filters) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: services.sealedProducts.products) { _, _ in recomputeDisplayedProducts() }
+        .sheet(item: $addToCollectionProduct) { product in
+            AddSealedToCollectionSheet(product: product)
+                .environment(services)
+        }
+        .sheet(item: $addToFolderProduct) { product in
+            AddSealedToFolderSheet(cardID: product.collectionCardID, variantKey: "sealed")
+        }
+        .sheet(isPresented: $showWishlistPaywall) {
+            PaywallSheet()
+                .environment(services)
+        }
+        .alert("Wishlist", isPresented: $showWishlistAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(wishlistAlertMessage ?? "")
+        }
     }
 
     private func recomputeDisplayedProducts() {
@@ -143,6 +184,43 @@ struct BrowseSealedTabContent: View {
         x = (x ^ (x >> 30)) &* 0xBF58476D1CE4E5B9
         x = (x ^ (x >> 27)) &* 0x94D049BB133111EB
         return x ^ (x >> 31)
+    }
+
+    private func isWishlisted(_ product: SealedProduct) -> Bool {
+        wishlistedCollectionCardIDs.contains(product.collectionCardID)
+    }
+
+    private func toggleWishlist(for product: SealedProduct) {
+        guard let wishlist = services.wishlist else {
+            wishlistAlertMessage = "Wishlist isn't available yet. Try again in a moment."
+            showWishlistAlert = true
+            return
+        }
+
+        let cardID = product.collectionCardID
+        if isWishlisted(product) {
+            do {
+                try wishlist.removeCardVariant(cardID: cardID, variantKey: "sealed")
+            } catch {
+                wishlistAlertMessage = error.localizedDescription
+                showWishlistAlert = true
+            }
+            return
+        }
+
+        guard wishlist.canAddItem else {
+            showWishlistPaywall = true
+            return
+        }
+
+        do {
+            try wishlist.addItem(cardID: cardID, variantKey: "sealed")
+        } catch WishlistError.limitReached {
+            showWishlistPaywall = true
+        } catch {
+            wishlistAlertMessage = error.localizedDescription
+            showWishlistAlert = true
+        }
     }
 
 }
@@ -379,7 +457,7 @@ private struct SealedProductDetailPage: View {
     @State private var isWishlisted = false
     @State private var openingItem: CollectionItem?
     @State private var editingItem: CollectionItem?
-    @State private var markingItem: CollectionItem?
+    @State private var markAsSession: SealedCollectionMarkAsSession?
     @State private var showAddToFolderSheet = false
     @State private var showShareSheet = false
     @State private var showDeferredSections = false
@@ -477,6 +555,14 @@ private struct SealedProductDetailPage: View {
                     .environment(services)
             }
         }
+        .sheet(item: $markAsSession) { session in
+            SealedCollectionMarkAsSheet(
+                item: session.item,
+                productName: product.name,
+                initialAction: session.initialAction
+            )
+            .environment(services)
+        }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
                 .environment(services)
@@ -486,23 +572,6 @@ private struct SealedProductDetailPage: View {
         }
         .sheet(isPresented: $showShareSheet) {
             ShareSheet(items: shareItems)
-        }
-        .confirmationDialog(
-            "Mark As",
-            isPresented: Binding(
-                get: { markingItem != nil },
-                set: { if !$0 { markingItem = nil } }
-            ),
-            titleVisibility: .visible
-        ) {
-            Button("Mark as Opened") {
-                guard let item = markingItem else { return }
-                openingItem = item
-                markingItem = nil
-            }
-            Button("Cancel", role: .cancel) {
-                markingItem = nil
-            }
         }
         .alert("Wishlist", isPresented: $showWishlistAlert) {
             Button("OK", role: .cancel) {}
@@ -830,7 +899,7 @@ private struct SealedProductDetailPage: View {
                 .tint(colorScheme == .dark ? .white : .black)
 
                 Button("Mark As") {
-                    markingItem = item
+                    markAsSession = SealedCollectionMarkAsSession(item: item, initialAction: .opened)
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(SealedPricingPalette.actionBlue)
@@ -1476,7 +1545,207 @@ private enum SealedPricingPalette {
     static let actionBlue = Color(red: 0.12, green: 0.52, blue: 1.0)
 }
 
-private struct OpenSealedCollectionItemSheet: View {
+private struct SealedCollectionMarkAsSession: Identifiable {
+    let id = UUID()
+    let item: CollectionItem
+    let initialAction: SealedCollectionMarkAsAction
+}
+
+private enum SealedCollectionMarkAsAction: String, CaseIterable, Identifiable {
+    case opened
+    case sold
+    case traded
+    case gifted
+    case lost
+    case damaged
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .opened: return "Opened"
+        case .sold: return "Sold"
+        case .traded: return "Traded"
+        case .gifted: return "Gifted"
+        case .lost: return "Lost"
+        case .damaged: return "Damaged"
+        }
+    }
+
+    var dispositionKind: CollectionDispositionKind? {
+        switch self {
+        case .opened:
+            return nil
+        case .sold:
+            return .sold
+        case .traded:
+            return .traded
+        case .gifted:
+            return .gifted
+        case .lost:
+            return .lost
+        case .damaged:
+            return .damaged
+        }
+    }
+}
+
+private struct SealedCollectionMarkAsSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
+
+    let item: CollectionItem
+    let productName: String
+    let initialAction: SealedCollectionMarkAsAction
+
+    @State private var action: SealedCollectionMarkAsAction
+    @State private var quantity: Int = 1
+    @State private var priceText: String = ""
+    @State private var counterparty: String = ""
+    @State private var notes: String = ""
+    @State private var errorMessage: String?
+
+    init(item: CollectionItem, productName: String, initialAction: SealedCollectionMarkAsAction) {
+        self.item = item
+        self.productName = productName
+        self.initialAction = initialAction
+        _action = State(initialValue: initialAction)
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    Text(productName)
+                        .font(.headline)
+                    Text("In collection: \(item.quantity)")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                Section {
+                    Picker("Status", selection: $action) {
+                        ForEach(SealedCollectionMarkAsAction.allCases) { kind in
+                            Text(kind.title).tag(kind)
+                        }
+                    }
+                }
+
+                Section {
+                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...max(item.quantity, 1))
+                }
+
+                if action == .sold {
+                    Section {
+                        TextField("Sold price per item", text: $priceText)
+                            .keyboardType(.decimalPad)
+                    }
+                }
+
+                if action != .opened {
+                    Section {
+                        TextField(counterpartyLabel, text: $counterparty)
+                        TextField("Notes", text: $notes, axis: .vertical)
+                            .lineLimit(2...6)
+                    }
+                }
+
+                if let errorMessage {
+                    Section {
+                        Text(errorMessage)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
+            .tint(colorScheme == .dark ? .white : .black)
+            .navigationTitle("Mark As")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") { save() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
+                }
+            }
+            .onAppear {
+                quantity = min(max(item.quantity, 1), quantity)
+            }
+        }
+    }
+
+    private var counterpartyLabel: String {
+        switch action {
+        case .opened: return ""
+        case .sold: return "Sold to"
+        case .traded: return "Traded with"
+        case .gifted: return "Gifted to"
+        case .lost: return "Lost details"
+        case .damaged: return "Damage details"
+        }
+    }
+
+    private func save() {
+        errorMessage = nil
+        guard let ledger = services.collectionLedger else {
+            errorMessage = "Collection isn't ready. Try again."
+            return
+        }
+
+        do {
+            if action == .opened {
+                try ledger.recordSealedProductOpened(
+                    item: item,
+                    quantity: quantity,
+                    productName: productName
+                )
+                dismiss()
+                return
+            }
+
+            guard let dispositionKind = action.dispositionKind else { return }
+            try ledger.recordSealedProductDisposition(
+                item: item,
+                kind: dispositionKind,
+                quantity: quantity,
+                currencyCode: services.priceDisplay.currency == .gbp ? "GBP" : "USD",
+                productName: productName,
+                unitPrice: try parsedOptionalPrice(priceText),
+                counterparty: counterparty,
+                notes: notes
+            )
+            dismiss()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func parsedOptionalPrice(_ text: String) throws -> Double? {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        guard let value = Double(trimmed.replacingOccurrences(of: ",", with: ".")) else {
+            throw SealedCollectionMarkAsSheetError.invalidPrice
+        }
+        return value
+    }
+}
+
+private enum SealedCollectionMarkAsSheetError: LocalizedError {
+    case invalidPrice
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidPrice:
+            return "Enter a valid price."
+        }
+    }
+}
+
+struct OpenSealedCollectionItemSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(AppServices.self) private var services
 
