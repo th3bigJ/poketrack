@@ -118,6 +118,29 @@ let pokemonSubtypeAllOptions: [String] = [
     "LEGEND",
     "Restored"
 ]
+let pokemonWeaknessFilterAllOptions: [String] = [
+    "Colorless",
+    "Darkness",
+    "Dragon",
+    "Fairy",
+    "Fighting",
+    "Fire",
+    "Grass",
+    "Lightning",
+    "Metal",
+    "Psychic",
+    "Water"
+]
+let pokemonResistanceFilterAllOptions: [String] = [
+    "Colorless",
+    "Darkness",
+    "Fighting",
+    "Fire",
+    "Lightning",
+    "Metal",
+    "Psychic",
+    "Water"
+]
 
 struct SealedProductTypeFilterOption: Identifiable, Equatable, Sendable {
     let id: String
@@ -183,6 +206,8 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var energyTypes: Set<String> = []
     var rarities: Set<String> = []
     var trainerTypes: Set<String> = []
+    var weaknessTypes: Set<String> = []
+    var resistanceTypes: Set<String> = []
     var pokemonSubtypes: Set<String> = []
     var abilityPresence: BrowseCardAbilityPresenceFilter? = nil
     var legalities: Set<BrowseCardLegalityFilter> = []
@@ -208,6 +233,8 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
             || !energyTypes.isEmpty
             || !rarities.isEmpty
             || !trainerTypes.isEmpty
+            || !weaknessTypes.isEmpty
+            || !resistanceTypes.isEmpty
             || !pokemonSubtypes.isEmpty
             || abilityPresence != nil
             || !legalities.isEmpty
@@ -248,6 +275,8 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         case energyTypes
         case rarities
         case trainerTypes
+        case weaknessTypes
+        case resistanceTypes
         case pokemonSubtypes
         case abilityPresence
         case legalities
@@ -272,6 +301,8 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         energyTypes = try container.decodeIfPresent(Set<String>.self, forKey: .energyTypes) ?? []
         rarities = try container.decodeIfPresent(Set<String>.self, forKey: .rarities) ?? []
         trainerTypes = try container.decodeIfPresent(Set<String>.self, forKey: .trainerTypes) ?? []
+        weaknessTypes = try container.decodeIfPresent(Set<String>.self, forKey: .weaknessTypes) ?? []
+        resistanceTypes = try container.decodeIfPresent(Set<String>.self, forKey: .resistanceTypes) ?? []
         pokemonSubtypes = try container.decodeIfPresent(Set<String>.self, forKey: .pokemonSubtypes) ?? []
         abilityPresence = try container.decodeIfPresent(BrowseCardAbilityPresenceFilter.self, forKey: .abilityPresence)
         legalities = try container.decodeIfPresent(Set<BrowseCardLegalityFilter>.self, forKey: .legalities) ?? []

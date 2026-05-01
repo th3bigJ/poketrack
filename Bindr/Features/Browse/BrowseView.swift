@@ -1701,6 +1701,8 @@ struct BrowseView: View {
     ) -> [BrowseFilterCard] {
         let normalizedQuery = normalizedBrowseSearchText(query)
         let setReleaseDateByCode = firstValueMap(services.cardData.sets, key: \.setCode) { $0.releaseDate ?? "" }
+        let normalizedWeaknessTypes = normalizedBrowseFilterTokens(filters.weaknessTypes)
+        let normalizedResistanceTypes = normalizedBrowseFilterTokens(filters.resistanceTypes)
         return cards.filter { card in
             let matchesQuery = normalizedQuery.isEmpty
                 || normalizedBrowseSearchText(card.cardName).contains(normalizedQuery)
@@ -1751,6 +1753,14 @@ struct BrowseView: View {
                 if trainerType.isEmpty || filters.trainerTypes.contains(trainerType) == false {
                     return false
                 }
+            }
+            if brand == .pokemon,
+               browseTextContainsAnyToken(card.weakness, normalizedTokens: normalizedWeaknessTypes) == false {
+                return false
+            }
+            if brand == .pokemon,
+               browseTextContainsAnyToken(card.resistance, normalizedTokens: normalizedResistanceTypes) == false {
+                return false
             }
             if brand == .pokemon,
                filters.pokemonSubtypes.isEmpty == false {
@@ -3928,6 +3938,16 @@ struct BrowseGridFiltersMenuContent: View {
                         }
                     }
                 }
+                filterMenu(title: "Weakness", summary: selectionSummary(for: filters.weaknessTypes), systemImage: "shield.lefthalf.filled") {
+                    ForEach(pokemonWeaknessFilterAllOptions, id: \.self) { weakness in
+                        Toggle(weakness, isOn: stringBinding(for: weakness, keyPath: \.weaknessTypes))
+                    }
+                }
+                filterMenu(title: "Resistance", summary: selectionSummary(for: filters.resistanceTypes), systemImage: "shield.righthalf.filled") {
+                    ForEach(pokemonResistanceFilterAllOptions, id: \.self) { resistance in
+                        Toggle(resistance, isOn: stringBinding(for: resistance, keyPath: \.resistanceTypes))
+                    }
+                }
                 filterMenu(title: "Subtype", summary: selectionSummary(for: filters.pokemonSubtypes), systemImage: "square.grid.2x2") {
                     ForEach(pokemonSubtypeAllOptions, id: \.self) { subtype in
                         Toggle(subtype, isOn: stringBinding(for: subtype, keyPath: \.pokemonSubtypes))
@@ -4268,6 +4288,8 @@ func filterBrowseCards(
 ) -> [Card] {
     let normalizedQuery = normalizedBrowseSearchText(query)
     let setReleaseDateByCode = firstValueMap(sets, key: \.setCode) { $0.releaseDate ?? "" }
+    let normalizedWeaknessTypes = normalizedBrowseFilterTokens(filters.weaknessTypes)
+    let normalizedResistanceTypes = normalizedBrowseFilterTokens(filters.resistanceTypes)
     let filtered = cards.filter { card in
         let matchesQuery = normalizedQuery.isEmpty
             || normalizedBrowseSearchText(card.cardName).contains(normalizedQuery)
@@ -4318,6 +4340,14 @@ func filterBrowseCards(
             if trainerType.isEmpty || filters.trainerTypes.contains(trainerType) == false {
                 return false
             }
+        }
+        if brand == .pokemon,
+           browseTextContainsAnyToken(card.weakness, normalizedTokens: normalizedWeaknessTypes) == false {
+            return false
+        }
+        if brand == .pokemon,
+           browseTextContainsAnyToken(card.resistance, normalizedTokens: normalizedResistanceTypes) == false {
+            return false
         }
         if brand == .pokemon,
            filters.pokemonSubtypes.isEmpty == false {
@@ -4419,6 +4449,19 @@ private func normalizedBrowseSearchText(_ value: String?) -> String {
     return String(scalars)
         .split(whereSeparator: \.isWhitespace)
         .joined(separator: " ")
+}
+
+private func normalizedBrowseFilterTokens(_ values: Set<String>) -> [String] {
+    values
+        .map(normalizedBrowseSearchText)
+        .filter { !$0.isEmpty }
+}
+
+private func browseTextContainsAnyToken(_ value: String?, normalizedTokens: [String]) -> Bool {
+    guard normalizedTokens.isEmpty == false else { return true }
+    let normalizedValue = normalizedBrowseSearchText(value)
+    guard normalizedValue.isEmpty == false else { return false }
+    return normalizedTokens.contains { normalizedValue.contains($0) }
 }
 
 private func resolvedBrowseCardType(for card: Card, brand: TCGBrand) -> BrowseCardTypeFilter {
