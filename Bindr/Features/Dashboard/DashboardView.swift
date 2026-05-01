@@ -42,6 +42,13 @@ struct DashboardView: View {
     @State private var setNamesByCardID: [String: String] = [:]
     @State private var cardImageURLsByID: [String: URL] = [:]
     @State private var marketTrendData: MarketTrendDailyBlob? = nil
+    @State private var selectedInsightPage: Int = 0
+    @State private var cardTypeBreakdown: [DashboardBreakdownEntry] = []
+    @State private var energyTypeBreakdown: [DashboardBreakdownEntry] = []
+    @State private var formatBreakdown: [DashboardBreakdownEntry] = []
+    @State private var mostExpensiveHolding: DashboardTopHolding? = nil
+    @State private var priceBandBreakdown: [DashboardBreakdownEntry] = []
+    @State private var setCompletionEntries: [DashboardSetCompletionEntry] = []
 
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
@@ -265,7 +272,7 @@ struct DashboardView: View {
                 heroSection
                 milestoneBanner
                 summaryCard
-                statsStrip
+                insightsCarouselSection
                 if !activePoints.isEmpty {
                     valueChartCard
                     if let trend = activeMarketTrend {
@@ -291,6 +298,7 @@ struct DashboardView: View {
         }
         .task(id: dashboardDataSignature) {
             await resolveDashboardMetadata()
+            await resolveInsightsData()
         }
         .task {
             await loadMarketTrendBlob()
@@ -467,10 +475,93 @@ struct DashboardView: View {
         }
     }
 
-    private var statsStrip: some View {
+    private var insightPageCount: Int { 7 }
+    private var insightPageHeight: CGFloat { 210 }
+
+    private var insightsCarouselSection: some View {
         dashboardCard {
-            HStack(spacing: 0) {
-                dashboardStat(
+            VStack(spacing: 12) {
+                TabView(selection: $selectedInsightPage) {
+                    collectionSummaryInsightCard
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .tag(0)
+
+                    distributionInsightCard(
+                        title: "Distribution by Card Type",
+                        entries: cardTypeBreakdown,
+                        emptyMessage: "Add more cards to see a card-type split."
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .tag(1)
+
+                    distributionInsightCard(
+                        title: "Distribution by Energy Type",
+                        entries: energyTypeBreakdown,
+                        emptyMessage: "No energy/type data available yet."
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .tag(2)
+
+                    setCompletionInsightCard
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .tag(3)
+
+                    mostExpensiveCardInsightCard
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .tag(4)
+
+                    priceBandInsightCard
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                        .tag(5)
+
+                    distributionInsightCard(
+                        title: "Collection Format Mix",
+                        entries: formatBreakdown,
+                        emptyMessage: "No format data available yet."
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .tag(6)
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .frame(height: insightPageHeight)
+
+                HStack(spacing: 8) {
+                    ForEach(0..<insightPageCount, id: \.self) { index in
+                        Capsule(style: .continuous)
+                            .fill(index == selectedInsightPage ? services.theme.accentColor : dashboardDividerColor)
+                            .frame(width: index == selectedInsightPage ? 18 : 8, height: 8)
+                            .animation(.easeInOut(duration: 0.18), value: selectedInsightPage)
+                    }
+                }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
+                .background {
+                    if #available(iOS 26.0, *) {
+                        Capsule(style: .continuous)
+                            .fill(.clear)
+                            .glassEffect(.regular, in: Capsule(style: .continuous))
+                    } else {
+                        Capsule(style: .continuous)
+                            .fill(.ultraThinMaterial)
+                            .overlay {
+                                Capsule(style: .continuous)
+                                    .stroke(dashboardBorder.opacity(0.35), lineWidth: 1)
+                            }
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+            }
+        }
+    }
+
+    private var collectionSummaryInsightCard: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Collection Summary")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+
+            HStack(spacing: 8) {
+                insightMetricTile(
                     icon: "square.stack.3d.up.fill",
                     iconColor: DashboardPalette.purple,
                     value: "\(totalCardsCount)",
@@ -478,9 +569,7 @@ struct DashboardView: View {
                     action: onOpenCollection
                 )
 
-                statDivider
-
-                dashboardStat(
+                insightMetricTile(
                     icon: "rectangle.stack.fill",
                     iconColor: DashboardPalette.blue,
                     value: "\(uniqueCardsCount)",
@@ -488,9 +577,7 @@ struct DashboardView: View {
                     action: onOpenCollection
                 )
 
-                statDivider
-
-                dashboardStat(
+                insightMetricTile(
                     icon: "shippingbox.fill",
                     iconColor: DashboardPalette.success,
                     value: "\(sealedProductsCount)",
@@ -498,9 +585,7 @@ struct DashboardView: View {
                     action: onOpenSealedProducts
                 )
 
-                statDivider
-
-                dashboardStat(
+                insightMetricTile(
                     icon: "star.fill",
                     iconColor: DashboardPalette.gold,
                     value: "\(wishlistedCardsCount)",
@@ -508,6 +593,227 @@ struct DashboardView: View {
                     action: onOpenWishlist
                 )
             }
+        }
+    }
+
+    private var mostExpensiveCardInsightCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Most Expensive Card")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+
+            if let topCard = mostExpensiveHolding {
+                HStack(spacing: 12) {
+                    if let imageURL = topCard.imageURL {
+                        CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        } placeholder: {
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .fill(dashboardCardInsetBackground)
+                                .overlay {
+                                    Image(systemName: "photo")
+                                        .font(.headline)
+                                        .foregroundStyle(dashboardSecondaryText)
+                                }
+                        }
+                        .frame(width: 48, height: 68)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .stroke(dashboardBorder, lineWidth: 1)
+                        )
+                    }
+
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(topCard.name)
+                            .font(.headline)
+                            .foregroundStyle(dashboardPrimaryText)
+                            .lineLimit(1)
+                        Text(topCard.setName ?? "Set unknown")
+                            .font(.subheadline)
+                            .foregroundStyle(dashboardSecondaryText)
+                            .lineLimit(1)
+                        Text("Owned: \(topCard.quantity)")
+                            .font(.caption.weight(.medium))
+                            .foregroundStyle(dashboardSecondaryText)
+                    }
+
+                    Spacer(minLength: 8)
+
+                    VStack(alignment: .trailing, spacing: 4) {
+                        Text(formatCurrency(topCard.unitValue))
+                            .font(.title3.weight(.bold))
+                            .foregroundStyle(dashboardPrimaryText)
+                            .contentTransition(.numericText())
+                        Text("per card")
+                            .font(.caption)
+                            .foregroundStyle(dashboardSecondaryText)
+                        if topCard.quantity > 1 {
+                            Text("Total: \(formatCurrency(topCard.totalValue))")
+                                .font(.caption.weight(.medium))
+                                .foregroundStyle(dashboardSecondaryText)
+                                .lineLimit(1)
+                        }
+                    }
+                }
+            } else {
+                Text("No priced cards yet.")
+                    .font(.subheadline)
+                    .foregroundStyle(dashboardSecondaryText)
+            }
+        }
+    }
+
+    private var priceBandInsightCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Distribution by Price")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+
+            if priceBandBreakdown.allSatisfy({ $0.value == 0 }) {
+                Text("No priced cards yet.")
+                    .font(.subheadline)
+                    .foregroundStyle(dashboardSecondaryText)
+            } else {
+                VStack(spacing: 10) {
+                    ForEach(Array(priceBandBreakdown.enumerated()), id: \.element.id) { index, entry in
+                        insightBarRow(
+                            entry: entry,
+                            maxValue: max(priceBandBreakdown.map(\.value).max() ?? 1, 1),
+                            tint: dashboardBreakdownColor(at: index)
+                        )
+                    }
+                }
+            }
+        }
+    }
+
+    private var setCompletionInsightCard: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Sets Closest to Completion")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+
+            if setCompletionEntries.isEmpty {
+                Text("Add cards from sets to track completion progress.")
+                    .font(.subheadline)
+                    .foregroundStyle(dashboardSecondaryText)
+            } else {
+                VStack(spacing: 10) {
+                    ForEach(Array(setCompletionEntries.prefix(3))) { entry in
+                        VStack(alignment: .leading, spacing: 6) {
+                            HStack(spacing: 8) {
+                                Text(entry.setName)
+                                    .font(.subheadline.weight(.medium))
+                                    .foregroundStyle(dashboardPrimaryText)
+                                    .lineLimit(1)
+
+                                Spacer(minLength: 8)
+
+                                Text("\(entry.percentString)%")
+                                    .font(.subheadline.weight(.bold))
+                                    .foregroundStyle(services.theme.accentColor)
+                            }
+
+                            ProgressView(value: entry.progress)
+                                .progressViewStyle(.linear)
+                                .tint(services.theme.accentColor)
+
+                            Text("\(entry.ownedUnique)/\(entry.totalCards) cards")
+                                .font(.caption)
+                                .foregroundStyle(dashboardSecondaryText)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private func distributionInsightCard(
+        title: String,
+        entries: [DashboardBreakdownEntry],
+        emptyMessage: String
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+
+            if entries.isEmpty {
+                Text(emptyMessage)
+                    .font(.subheadline)
+                    .foregroundStyle(dashboardSecondaryText)
+            } else {
+                VStack(spacing: 10) {
+                    let maxValue = max(entries.map(\.value).max() ?? 1, 1)
+                    ForEach(Array(entries.enumerated()), id: \.element.id) { index, entry in
+                        insightBarRow(entry: entry, maxValue: maxValue, tint: dashboardBreakdownColor(at: index))
+                    }
+                }
+            }
+        }
+    }
+
+    private func insightMetricTile(
+        icon: String,
+        iconColor: Color,
+        value: String,
+        label: String,
+        action: (() -> Void)?
+    ) -> some View {
+        Button {
+            action?()
+        } label: {
+            VStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(iconColor)
+                Text(value)
+                    .font(.title3.weight(.bold))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+                Text(label)
+                    .font(.caption)
+                    .foregroundStyle(dashboardSecondaryText)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity, minHeight: 104)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 10)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(dashboardCardInsetBackground)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .stroke(dashboardBorder.opacity(0.6), lineWidth: 1)
+                    )
+            )
+        }
+        .buttonStyle(DashboardPressStyle())
+        .disabled(action == nil)
+    }
+
+    private func insightBarRow(entry: DashboardBreakdownEntry, maxValue: Int, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Text(entry.label)
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .lineLimit(1)
+                Spacer(minLength: 8)
+                Text("\(entry.value)")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(dashboardSecondaryText)
+            }
+
+            ProgressView(value: Double(entry.value), total: Double(maxValue))
+                .progressViewStyle(.linear)
+                .tint(tint)
         }
     }
 
@@ -719,42 +1025,31 @@ struct DashboardView: View {
         Color(uiColor: .systemBackground)
     }
 
-    private var statDivider: some View {
-        Rectangle()
-            .fill(dashboardDividerColor)
-            .frame(width: 1, height: 52)
+    private func dashboardBreakdownColor(at index: Int) -> Color {
+        let colors: [Color] = [
+            DashboardPalette.purple,
+            DashboardPalette.blue,
+            DashboardPalette.success,
+            DashboardPalette.gold,
+            services.theme.accentColor
+        ]
+        return colors[index % colors.count]
     }
 
     private var dashboardDataSignature: String {
         let brand = activeBrand.rawValue
-        let itemPart = visibleCollectionItems.map { "\($0.cardID)|\($0.quantity)" }.joined(separator: "§")
+        let itemPart = visibleCollectionItems.map {
+            [
+                $0.cardID,
+                "\($0.quantity)",
+                $0.variantKey,
+                $0.itemKind,
+                $0.gradingCompany ?? "-",
+                $0.sealedStatus ?? "-"
+            ].joined(separator: "|")
+        }.joined(separator: "§")
         let linePart = recentLines.map { cleaned($0.cardID) ?? $0.id.uuidString }.joined(separator: "§")
         return "\(brand)|\(itemPart)|\(linePart)"
-    }
-
-    private func dashboardStat(icon: String, iconColor: Color, value: String, label: String, action: (() -> Void)? = nil) -> some View {
-        Button {
-            action?()
-        } label: {
-            VStack(spacing: 8) {
-                Image(systemName: icon)
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(iconColor)
-                Text(value)
-                    .font(.title3.weight(.bold))
-                    .foregroundStyle(dashboardPrimaryText)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
-                Text(label)
-                    .font(.caption)
-                    .foregroundStyle(dashboardSecondaryText)
-                    .multilineTextAlignment(.center)
-            }
-            .frame(maxWidth: .infinity, alignment: .center)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(DashboardPressStyle())
-        .disabled(action == nil)
     }
 
     private func quickActionTile(title: String, icon: String, tint: Color, action: (() -> Void)?) -> some View {
@@ -1033,6 +1328,188 @@ struct DashboardView: View {
         cardImageURLsByID = nextImages
     }
 
+    private func resolveInsightsData() async {
+        services.sealedProducts.loadFromLocalIfAvailable()
+
+        var nextCardType: [String: Int] = [:]
+        var nextEnergyType: [String: Int] = [:]
+        var nextFormat: [String: Int] = [:]
+        var nextPriceBand: [String: Int] = ["£": 0, "££": 0, "£££": 0]
+        var nextMostExpensive: DashboardTopHolding? = nil
+        var ownedCardIDsBySetCode: [String: Set<String>] = [:]
+        var cardCache: [String: Card] = [:]
+
+        let setsForBrand = (try? CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
+        var setTotalsByCode: [String: (name: String, total: Int)] = [:]
+        for set in setsForBrand {
+            let total = set.cardCountOfficial ?? set.cardCountTotal ?? 0
+            guard total > 0 else { continue }
+            setTotalsByCode[set.setCode] = (set.name, total)
+        }
+
+        for item in visibleCollectionItems {
+            let quantity = max(item.quantity, 0)
+            guard quantity > 0 else { continue }
+            guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
+
+            nextFormat[formatLabel(for: item), default: 0] += quantity
+
+            // Distribution cards requested by the dashboard are specifically card-focused.
+            if sealedProductID(for: item) != nil { continue }
+            let card: Card
+            if let cached = cardCache[item.cardID] {
+                card = cached
+            } else {
+                guard let loaded = await services.cardData.loadCard(masterCardId: item.cardID) else { continue }
+                card = loaded
+                cardCache[item.cardID] = loaded
+            }
+
+            nextCardType[cardTypeLabel(for: card), default: 0] += quantity
+
+            for energy in energyLabels(for: card) {
+                nextEnergyType[energy, default: 0] += quantity
+            }
+
+            ownedCardIDsBySetCode[card.setCode, default: []].insert(card.masterCardId)
+
+            let unitValue = await unitPriceGBP(for: item, card: card)
+            nextPriceBand[priceBandLabel(for: unitValue), default: 0] += quantity
+
+            guard unitValue > 0 else { continue }
+            let totalValue = unitValue * Double(quantity)
+            if let currentTop = nextMostExpensive, currentTop.unitValue >= unitValue {
+                continue
+            }
+
+            let preferredImagePath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
+            nextMostExpensive = DashboardTopHolding(
+                cardID: card.masterCardId,
+                name: card.cardName,
+                setName: setNamesByCardID[card.masterCardId],
+                imageURL: AppConfiguration.imageURL(relativePath: preferredImagePath),
+                unitValue: unitValue,
+                totalValue: totalValue,
+                quantity: quantity
+            )
+        }
+
+        cardTypeBreakdown = sortedBreakdown(from: nextCardType)
+        energyTypeBreakdown = sortedBreakdown(from: nextEnergyType)
+        formatBreakdown = sortedBreakdown(from: nextFormat)
+        priceBandBreakdown = [
+            DashboardBreakdownEntry(label: "£ (< £1)", value: nextPriceBand["£"] ?? 0),
+            DashboardBreakdownEntry(label: "££ (£1 - £25)", value: nextPriceBand["££"] ?? 0),
+            DashboardBreakdownEntry(label: "£££ (£25+)", value: nextPriceBand["£££"] ?? 0)
+        ]
+        setCompletionEntries = ownedCardIDsBySetCode.compactMap { setCode, ownedIDs in
+            guard let setMeta = setTotalsByCode[setCode] else { return nil }
+            let ownedUnique = ownedIDs.count
+            guard ownedUnique > 0 else { return nil }
+            let progress = min(Double(ownedUnique) / Double(setMeta.total), 1.0)
+            return DashboardSetCompletionEntry(
+                setCode: setCode,
+                setName: setMeta.name,
+                ownedUnique: ownedUnique,
+                totalCards: setMeta.total,
+                progress: progress
+            )
+        }
+        .sorted { lhs, rhs in
+            if lhs.progress == rhs.progress {
+                if lhs.ownedUnique == rhs.ownedUnique {
+                    return lhs.setName.localizedCaseInsensitiveCompare(rhs.setName) == .orderedAscending
+                }
+                return lhs.ownedUnique > rhs.ownedUnique
+            }
+            return lhs.progress > rhs.progress
+        }
+        .prefix(4)
+        .map { $0 }
+        mostExpensiveHolding = nextMostExpensive
+    }
+
+    private func sortedBreakdown(from source: [String: Int], limit: Int = 5) -> [DashboardBreakdownEntry] {
+        source
+            .filter { $0.value > 0 }
+            .sorted { lhs, rhs in
+                if lhs.value == rhs.value {
+                    return lhs.key < rhs.key
+                }
+                return lhs.value > rhs.value
+            }
+            .prefix(limit)
+            .map { DashboardBreakdownEntry(label: $0.key, value: $0.value) }
+    }
+
+    private func formatLabel(for item: CollectionItem) -> String {
+        switch ProductKind(rawValue: item.itemKind) {
+        case .sealedProduct, .boosterPack, .etb:
+            return "Sealed"
+        case .gradedItem:
+            return "Graded"
+        case .singleCard:
+            return "Raw"
+        case .other, .none:
+            return "Other"
+        }
+    }
+
+    private func cardTypeLabel(for card: Card) -> String {
+        if let category = cleaned(card.category) {
+            let lowercased = category.lowercased()
+            if lowercased.contains("pokemon") { return "Pokemon" }
+            if lowercased.contains("trainer") { return "Trainer" }
+            if lowercased.contains("energy") { return "Energy" }
+            return category.capitalized
+        }
+        if cleaned(card.trainerType) != nil {
+            return "Trainer"
+        }
+        if cleaned(card.energyType) != nil {
+            return "Energy"
+        }
+        return "Other"
+    }
+
+    private func energyLabels(for card: Card) -> [String] {
+        if let types = card.elementTypes?
+            .map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) })
+            .filter({ !$0.isEmpty }) {
+            let unique = Array(Set(types))
+            if !unique.isEmpty {
+                return unique.sorted()
+            }
+        }
+        if let fallback = cleaned(card.energyType) {
+            return [fallback.capitalized]
+        }
+        return []
+    }
+
+    private func unitPriceGBP(for item: CollectionItem, card: Card) async -> Double {
+        let gradeKey: String = {
+            guard let company = item.gradingCompany else { return "raw" }
+            switch company.uppercased() {
+            case "PSA": return "psa10"
+            case "ACE": return "ace10"
+            default: return "raw"
+            }
+        }()
+        let usdPrice = await services.pricing.usdPriceForVariantAndGrade(
+            for: card,
+            variantKey: item.variantKey,
+            grade: gradeKey
+        ) ?? 0
+        return usdPrice * services.pricing.usdToGbp
+    }
+
+    private func priceBandLabel(for value: Double) -> String {
+        if value < 1 { return "£" }
+        if value <= 25 { return "££" }
+        return "£££"
+    }
+
     private func activityTitle(for line: LedgerLine) -> String {
         if let cardID = cleaned(line.cardID), let cardName = cardNamesByID[cardID] {
             return "\(line.quantity) x \(cardName)"
@@ -1249,6 +1726,35 @@ private struct ChartPoint: Identifiable {
     let total: Double
     let pokemon: Double
     let onePiece: Double
+}
+
+private struct DashboardBreakdownEntry: Identifiable {
+    var id: String { label }
+    let label: String
+    let value: Int
+}
+
+private struct DashboardTopHolding {
+    let cardID: String
+    let name: String
+    let setName: String?
+    let imageURL: URL?
+    let unitValue: Double
+    let totalValue: Double
+    let quantity: Int
+}
+
+private struct DashboardSetCompletionEntry: Identifiable {
+    var id: String { setCode }
+    let setCode: String
+    let setName: String
+    let ownedUnique: Int
+    let totalCards: Int
+    let progress: Double
+
+    var percentString: String {
+        String(format: "%.0f", progress * 100)
+    }
 }
 
 private struct DashboardPressStyle: ButtonStyle {

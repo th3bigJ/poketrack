@@ -620,7 +620,6 @@ final class SocialShareService {
 
     private func syncIfPublishedWishlist(items: [WishlistItem]) async throws {
         let existing = try await fetchMine(type: .wishlist, localContentID: "wishlist")
-        guard existing != nil else { return }
         _ = try await publishWishlist(
             title: existing?.title ?? "Wishlist",
             description: existing?.description ?? "",
@@ -664,7 +663,6 @@ final class SocialShareService {
 
     private func syncIfPublishedWishlist(itemSnapshots: [WishlistItemSnapshot]) async throws {
         let existing = try await fetchMine(type: .wishlist, localContentID: "wishlist")
-        guard existing != nil else { return }
         let encoded = try await encodeWishlistPayload(itemSnapshots, includeValue: existing?.includeValue ?? false)
         _ = try await upsertSharedContent(
             type: .wishlist,
@@ -679,7 +677,6 @@ final class SocialShareService {
 
     private func syncIfPublishedCollection(itemSnapshots: [CollectionItemSnapshot]) async throws {
         let existing = try await fetchMine(type: .collection, localContentID: "collection")
-        guard existing != nil else { return }
         let encoded = try await encodeCollectionPayload(itemSnapshots, includeValue: existing?.includeValue ?? false)
         _ = try await upsertSharedContent(
             type: .collection,

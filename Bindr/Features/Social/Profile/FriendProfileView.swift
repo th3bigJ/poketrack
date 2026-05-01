@@ -18,8 +18,18 @@ struct FriendProfileView: View {
     @State private var isMutating = false
     @State private var errorMessage: String?
     @State private var selectedTab: ProfileTab = .posts
+    @State private var sharedWishlistCardIDs: [String] = []
+    @State private var hasSharedWishlist = false
     @State private var sharedCollectionCardIDs: [String] = []
     @State private var hasSharedCollection = false
+
+    private var canViewCollection: Bool {
+        relationship == .friends || hasSharedCollection
+    }
+
+    private var canViewWishlist: Bool {
+        relationship == .friends || profile?.isWishlistPublic == true || hasSharedWishlist
+    }
 
     var body: some View {
         Group {
@@ -247,22 +257,23 @@ struct FriendProfileView: View {
                     }
                 }
             case .wishlist:
-                if profile.isWishlistPublic == true, let ids = profile.wishlistCardIDs, !ids.isEmpty {
+                let ids = resolvedWishlistCardIDs(profile: profile)
+                if canViewWishlist, !ids.isEmpty {
                     WishlistCardGrid(cardIDs: ids, cardLoader: { id in
                         await services.cardData.loadCard(masterCardId: id)
                     })
-                } else if profile.isWishlistPublic != true {
+                } else if !canViewWishlist {
                     emptyCard("This user's wishlist is private.")
                 } else {
                     emptyCard("No wishlist items yet.")
                 }
             case .collection:
-                if hasSharedCollection, !sharedCollectionCardIDs.isEmpty {
+                if canViewCollection, !sharedCollectionCardIDs.isEmpty {
                     WishlistCardGrid(cardIDs: sharedCollectionCardIDs, cardLoader: { id in
                         await services.cardData.loadCard(masterCardId: id)
                     })
-                } else if hasSharedCollection {
-                    emptyCard("No cards in this user's shared collection yet.")
+                } else if canViewCollection {
+                    emptyCard("No cards in this user's collection yet.")
                 } else {
                     emptyCard("This user has not shared a collection.")
                 }
@@ -447,9 +458,16 @@ struct FriendProfileView: View {
                 relationship = try await rel
                 activity = (try? await posts) ?? []
                 let sharedContent = (try? await shared) ?? []
+                if let wishlist = sharedContent.first(where: { $0.contentType == .wishlist }) {
+                    hasSharedWishlist = true
+                    sharedWishlistCardIDs = cardIDs(from: wishlist)
+                } else {
+                    hasSharedWishlist = false
+                    sharedWishlistCardIDs = []
+                }
                 if let collection = sharedContent.first(where: { $0.contentType == .collection }) {
                     hasSharedCollection = true
-                    sharedCollectionCardIDs = collectionCardIDs(from: collection)
+                    sharedCollectionCardIDs = cardIDs(from: collection)
                 } else {
                     hasSharedCollection = false
                     sharedCollectionCardIDs = []
@@ -504,7 +522,20 @@ struct FriendProfileView: View {
         }
     }
 
-    private func collectionCardIDs(from content: SharedContent) -> [String] {
+    private func resolvedWishlistCardIDs(profile: SocialProfile) -> [String] {
+        let shared = sharedWishlistCardIDs
+        let profileIDs = profile.wishlistCardIDs ?? []
+        var ordered: [String] = []
+        var seen: Set<String> = []
+        for cardID in shared + profileIDs where !cardID.isEmpty {
+            if seen.insert(cardID).inserted {
+                ordered.append(cardID)
+            }
+        }
+        return ordered
+    }
+
+    private func cardIDs(from content: SharedContent) -> [String] {
         guard case .some(.array(let items)) = content.payload["items"] else { return [] }
         var ordered: [String] = []
         var seen: Set<String> = []

@@ -170,6 +170,9 @@ struct CollectView: View {
         .task(id: sealedProductsSignature) {
             refreshSealedProductCaches()
         }
+        .task(id: collectionShareSyncSignature) {
+            services.socialShare.scheduleAutoSyncCollection(items: collectionItems)
+        }
         .onAppear {
             if selectedBrand != services.brandSettings.selectedCatalogBrand {
                 selectedBrand = services.brandSettings.selectedCatalogBrand
@@ -191,9 +194,6 @@ struct CollectView: View {
         .onChange(of: collectionPriceByItemKey) { _, _ in refreshCollectionFeed() }
         .onChange(of: cardsByCardID) { _, _ in refreshCollectionFeed() }
         .onChange(of: sealedProductByCollectionCardIDCache) { _, _ in refreshCollectionFeed() }
-        .onChange(of: collectionShareSyncSignature) { _, _ in
-            services.socialShare.scheduleAutoSyncCollection(items: collectionItems)
-        }
         .sheet(item: $selectedSealedProduct) { product in
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)
