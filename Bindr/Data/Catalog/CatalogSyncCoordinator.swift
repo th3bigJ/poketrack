@@ -138,6 +138,38 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         self.session = session
     }
 
+    /// Launch-gate predicate: `true` on the first app open after local 03:00 when market pricing/trends
+    /// (or required daily blobs) must refresh before the app shell appears to avoid in-session value jumps.
+    func requiresDailyBlockingRefresh(enabledBrands: Set<TCGBrand>) -> Bool {
+        guard !enabledBrands.isEmpty else { return false }
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return false }
+        let store = CatalogStore.shared
+        try? store.open()
+
+        let lastPricingSync: Date? = {
+            guard let raw = store.meta("pricing_last_synced_at"),
+                  let ts = Double(raw) else { return nil }
+            return Date(timeIntervalSince1970: ts)
+        }()
+        let needsPricingRefresh = DailyMarketPricingSchedule.needsRefreshAfterNewPeriod(lastSync: lastPricingSync)
+        if needsPricingRefresh { return true }
+
+        let periodStart = DailyMarketPricingSchedule.currentPeriodStart(now: Date(), calendar: .current)
+        var dailyKeys: [String] = [DailyBlobKey.priceTrends, DailyBlobKey.marketTrend]
+        if enabledBrands.contains(.pokemon) {
+            dailyKeys.append(contentsOf: [
+                DailyBlobKey.pokedataEnglishPokemonProducts,
+                DailyBlobKey.pokedataEnglishPokemonPrices,
+                DailyBlobKey.pokedataEnglishPokemonPriceHistory,
+                DailyBlobKey.pokedataEnglishPokemonPriceTrends,
+            ])
+        }
+        return dailyKeys.contains { key in
+            guard let fetchedAt = store.dailyBlobFetchedAt(key: key) else { return true }
+            return fetchedAt < periodStart
+        }
+    }
+
     /// Run after app launch: refresh catalog for **enabled** brands only (Pokémon → SQLite + pricing + daily blobs; ONE PIECE → card JSON on disk).
     func syncAllIfNeeded(
         enabledBrands: Set<TCGBrand>,
@@ -160,18 +192,19 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         // Per-set market JSON for every enabled brand, once per local day after 03:00 (same gate as daily blobs below).
         if !enabledBrands.isEmpty {
             try? CatalogStore.shared.open()
-            await syncAllMarketPricingIfNeeded(progress: progress, enabledBrands: enabledBrands)
+            _ = await syncAllMarketPricingIfNeeded(progress: progress, enabledBrands: enabledBrands)
         }
         // Global market JSON (not franchise-specific) — run whenever any catalog is enabled, including ONE PIECE–only.
         if !enabledBrands.isEmpty {
             try? CatalogStore.shared.open()
-            await syncDailyBlobsIfNeeded(progress: progress, enabledBrands: enabledBrands)
+            _ = await syncDailyBlobsIfNeeded(progress: progress, enabledBrands: enabledBrands)
         }
         await progress.setStatus("Finishing card setup…")
     }
 
-    /// User-invoked settings action: checks per-set card JSON immediately (no 03:00 gate) and applies only changed files.
-    /// Returns `true` when at least one card JSON payload was updated in local SQLite.
+    /// User-invoked settings action: checks per-set card JSON immediately (no 03:00 gate),
+    /// then forces market pricing/history/trends and daily market blobs.
+    /// Returns `true` when at least one payload changed in local SQLite.
     func forceCardDataRefresh(
         enabledBrands: Set<TCGBrand>,
         progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)? = nil
@@ -191,11 +224,24 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         if enabledBrands.contains(.onePiece) {
             downloaded += await syncOnePieceCatalogCardDeltas(progress: progress, store: store)
         }
+
+        let marketDownloaded = await syncAllMarketPricingIfNeeded(
+            progress: progress,
+            enabledBrands: enabledBrands,
+            forceRefresh: true
+        )
+        let dailyBlobDownloaded = await syncDailyBlobsIfNeeded(
+            progress: progress,
+            enabledBrands: enabledBrands,
+            forceRefresh: true
+        )
+
+        let totalDownloaded = downloaded + marketDownloaded + dailyBlobDownloaded
         if downloaded > 0 {
             try? store.setMeta("catalog_cards_last_updated_at", String(Date().timeIntervalSince1970))
         }
         await progress.setStatus("Finishing card setup…")
-        return downloaded > 0
+        return totalDownloaded > 0
     }
 
     private func syncCatalogIfNeeded(progress: CatalogSyncProgressReporter) async {
@@ -242,32 +288,64 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         do {
             await progress.addPlannedFiles(1 + sets.count * 2)
             await progress.completeFile(byteCount: Int64(data.count))
+            var existingPricingBySetCode: [String: Data] = [:]
+            if let existingSets = try? store.fetchAllSets(for: .pokemon) {
+                for existing in existingSets {
+                    if let pricing = store.fetchPricingData(setCode: existing.setCode, brand: .pokemon) {
+                        existingPricingBySetCode[existing.setCode] = pricing
+                    }
+                }
+            }
             try store.purgeCatalogTables(for: .pokemon)
             for set in sets {
-                await progress.setStatus("Updating \(set.name)…")
                 try store.upsertSet(set, brand: .pokemon)
-                let code = set.setCode
-                let cardsURL = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
-                if let (cData, _) = try? await session.data(from: cardsURL) {
-                    let cards = try JSONDecoder().decode([Card].self, from: cData)
-                    try store.insertCards(cards, setCode: code, brand: .pokemon)
-                    await progress.completeFile(byteCount: Int64(cData.count))
-                } else {
-                    await progress.completeFile()
+            }
+            let sess = session
+            try await withThrowingTaskGroup(of: (String, Data?, Data?).self) { group in
+                for set in sets {
+                    let code = set.setCode
+                    group.addTask {
+                        let cardsURL = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
+                        let cardsData: Data?
+                        if let (data, _) = try? await sess.data(from: cardsURL) {
+                            cardsData = data
+                        } else {
+                            cardsData = nil
+                        }
+
+                        var pricingData: Data?
+                        for stem in AppConfiguration.pricingFileStemVariants(for: code) {
+                            let pURL = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
+                            guard let (pData, resp) = try? await sess.data(from: pURL),
+                                  let http = resp as? HTTPURLResponse,
+                                  (200...299).contains(http.statusCode),
+                                  !pData.isEmpty
+                            else { continue }
+                            pricingData = pData
+                            break
+                        }
+                        return (code, cardsData, pricingData)
+                    }
                 }
-                var pricingBytes: Int64 = 0
-                for stem in AppConfiguration.pricingFileStemVariants(for: code) {
-                    let pURL = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
-                    guard let (pData, resp) = try? await session.data(from: pURL),
-                          let http = resp as? HTTPURLResponse,
-                          (200...299).contains(http.statusCode),
-                          !pData.isEmpty
-                    else { continue }
-                    try store.upsertPricing(setCode: code, json: pData, brand: .pokemon)
-                    pricingBytes = Int64(pData.count)
-                    break
+                for try await (code, cardsData, pricingData) in group {
+                    if let cardsData, let cards = try? JSONDecoder().decode([Card].self, from: cardsData) {
+                        try store.insertCards(cards, setCode: code, brand: .pokemon)
+                        await progress.completeFile(byteCount: Int64(cardsData.count))
+                    } else {
+                        await progress.completeFile()
+                    }
+
+                    if let pricingData {
+                        try store.upsertPricing(setCode: code, json: pricingData, brand: .pokemon)
+                        await progress.completeFile(byteCount: Int64(pricingData.count))
+                    } else if let fallbackPricing = existingPricingBySetCode[code] {
+                        // Keep yesterday's pricing when today's per-set pricing fetch fails.
+                        try store.upsertPricing(setCode: code, json: fallbackPricing, brand: .pokemon)
+                        await progress.completeFile(byteCount: 0)
+                    } else {
+                        await progress.completeFile()
+                    }
                 }
-                await progress.completeFile(byteCount: pricingBytes)
             }
             try store.setMeta("catalog_sets_sha256", hash)
             if let etag {
@@ -403,34 +481,65 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         await progress.completeFile(byteCount: Int64(data.count))
 
         do {
+            var existingPricingBySetCode: [String: Data] = [:]
+            if let existingSets = try? store.fetchAllSets(for: .onePiece) {
+                for existing in existingSets {
+                    if let pricing = store.fetchPricingData(setCode: existing.setCode, brand: .onePiece) {
+                        existingPricingBySetCode[existing.setCode] = pricing
+                    }
+                }
+            }
             try store.purgeCatalogTables(for: .onePiece)
             for row in rows {
-                let set = row.asTCGSet()
-                let code = row.setCode
-                await progress.setStatus("Updating \(row.name)…")
-                try store.upsertSet(set, brand: .onePiece)
-                let cardsURL = AppConfiguration.r2OnePieceURL(path: "cards/data/\(code).json")
-                if let (cData, _) = try? await session.data(from: cardsURL), !cData.isEmpty {
-                    let dtos = try JSONDecoder().decode([OnePieceCardDTO].self, from: cData)
-                    let cards = dtos.map { OnePieceCatalogMapping.card(from: $0) }
-                    try store.insertCards(cards, setCode: code, brand: .onePiece)
-                    await progress.completeFile(byteCount: Int64(cData.count))
-                } else {
-                    await progress.completeFile()
+                try store.upsertSet(row.asTCGSet(), brand: .onePiece)
+            }
+            let sess = session
+            try await withThrowingTaskGroup(of: (String, Data?, Data?).self) { group in
+                for row in rows {
+                    let code = row.setCode
+                    group.addTask {
+                        let cardsURL = AppConfiguration.r2OnePieceURL(path: "cards/data/\(code).json")
+                        let cardsData: Data?
+                        if let (data, _) = try? await sess.data(from: cardsURL), !data.isEmpty {
+                            cardsData = data
+                        } else {
+                            cardsData = nil
+                        }
+
+                        var pricingData: Data?
+                        for stem in Self.onePiecePricingStemVariants(for: code) {
+                            let pURL = AppConfiguration.r2OnePieceMarketPricingSetURL(setCodeStem: stem)
+                            guard let (pData, resp) = try? await sess.data(from: pURL),
+                                  let http = resp as? HTTPURLResponse,
+                                  (200...299).contains(http.statusCode),
+                                  !pData.isEmpty
+                            else { continue }
+                            pricingData = pData
+                            break
+                        }
+                        return (code, cardsData, pricingData)
+                    }
                 }
-                var pricingBytes: Int64 = 0
-                for stem in Self.onePiecePricingStemVariants(for: code) {
-                    let pURL = AppConfiguration.r2OnePieceMarketPricingSetURL(setCodeStem: stem)
-                    guard let (pData, resp) = try? await session.data(from: pURL),
-                          let http = resp as? HTTPURLResponse,
-                          (200...299).contains(http.statusCode),
-                          !pData.isEmpty
-                    else { continue }
-                    try store.upsertPricing(setCode: code, json: pData, brand: .onePiece)
-                    pricingBytes = Int64(pData.count)
-                    break
+                for try await (code, cardsData, pricingData) in group {
+                    if let cardsData, let dtos = try? JSONDecoder().decode([OnePieceCardDTO].self, from: cardsData) {
+                        let cards = dtos.map { OnePieceCatalogMapping.card(from: $0) }
+                        try store.insertCards(cards, setCode: code, brand: .onePiece)
+                        await progress.completeFile(byteCount: Int64(cardsData.count))
+                    } else {
+                        await progress.completeFile()
+                    }
+
+                    if let pricingData {
+                        try store.upsertPricing(setCode: code, json: pricingData, brand: .onePiece)
+                        await progress.completeFile(byteCount: Int64(pricingData.count))
+                    } else if let fallbackPricing = existingPricingBySetCode[code] {
+                        // Keep yesterday's pricing when today's per-set pricing fetch fails.
+                        try store.upsertPricing(setCode: code, json: fallbackPricing, brand: .onePiece)
+                        await progress.completeFile(byteCount: 0)
+                    } else {
+                        await progress.completeFile()
+                    }
                 }
-                await progress.completeFile(byteCount: pricingBytes)
             }
             try store.setMeta("onepiece_catalog_sets_sha256", hash)
             if let etag {
@@ -531,33 +640,41 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
     /// Refreshes per-set market pricing JSON plus per-set price history and trends for **all** enabled brands using one daily gate (`pricing_last_synced_at`).
     /// After an app update, a one-time pass downloads history/trends only (`pricing_aux_sqlite_v1`) so charts work before the next 03:00 boundary.
-    private func syncAllMarketPricingIfNeeded(progress: CatalogSyncProgressReporter, enabledBrands: Set<TCGBrand>) async {
-        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
+    private func syncAllMarketPricingIfNeeded(
+        progress: CatalogSyncProgressReporter,
+        enabledBrands: Set<TCGBrand>,
+        forceRefresh: Bool = false
+    ) async -> Int64 {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
         let store = CatalogStore.shared
         let last = lastMarketPricingSyncDate(store: store)
         let needsPeriodRefresh = DailyMarketPricingSchedule.needsRefreshAfterNewPeriod(lastSync: last)
         let needsAuxBackfill = store.meta("pricing_aux_sqlite_v1") != "1"
-        guard needsPeriodRefresh || needsAuxBackfill else { return }
+        let shouldRunPeriodRefresh = forceRefresh || needsPeriodRefresh
+        let shouldRunAuxBackfill = !forceRefresh && needsAuxBackfill
+        guard shouldRunPeriodRefresh || shouldRunAuxBackfill else { return 0 }
 
         await progress.setStatus("Refreshing pricing data…")
-        if needsPeriodRefresh {
+        if shouldRunPeriodRefresh {
+            var downloaded: Int64 = 0
             // Daily (post-03:00) delta check for per-set card JSON. This catches card catalog edits
             // even when a set list file is unchanged, while avoiding full re-downloads via ETag.
             if enabledBrands.contains(.pokemon) {
-                _ = await syncPokemonCatalogCardDeltas(progress: progress, store: store)
+                downloaded += await syncPokemonCatalogCardDeltas(progress: progress, store: store)
             }
             if enabledBrands.contains(.onePiece) {
-                _ = await syncOnePieceCatalogCardDeltas(progress: progress, store: store)
+                downloaded += await syncOnePieceCatalogCardDeltas(progress: progress, store: store)
             }
             if enabledBrands.contains(.pokemon) {
-                await syncPokemonMarketPricingFullRefresh(progress: progress, store: store)
+                downloaded += await syncPokemonMarketPricingFullRefresh(progress: progress, store: store)
             }
             if enabledBrands.contains(.onePiece) {
-                await syncOnePieceMarketPricingFullRefresh(progress: progress, store: store)
+                downloaded += await syncOnePieceMarketPricingFullRefresh(progress: progress, store: store)
             }
             try? store.setMeta("pricing_last_synced_at", String(Date().timeIntervalSince1970))
             try? store.setMeta("pricing_aux_sqlite_v1", "1")
-        } else if needsAuxBackfill {
+            return downloaded
+        } else if shouldRunAuxBackfill {
             var downloaded: Int64 = 0
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonHistoryTrendsOnly(progress: progress, store: store)
@@ -569,7 +686,9 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             if downloaded > 0 {
                 try? store.setMeta("pricing_aux_sqlite_v1", "1")
             }
+            return downloaded
         }
+        return 0
     }
 
     private func lastMarketPricingSyncDate(store: CatalogStore) -> Date? {
@@ -577,14 +696,15 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         return Date(timeIntervalSince1970: t)
     }
 
-    private func syncPokemonMarketPricingFullRefresh(progress: CatalogSyncProgressReporter, store: CatalogStore) async {
+    private func syncPokemonMarketPricingFullRefresh(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
         let sets: [TCGSet]
         do {
             sets = try store.fetchAllSets(for: .pokemon)
         } catch {
-            return
+            return 0
         }
-        guard !sets.isEmpty else { return }
+        guard !sets.isEmpty else { return 0 }
+        var downloaded: Int64 = 0
         await progress.addPlannedFiles(sets.count)
         await withTaskGroup(of: (String, Int64)?.self) { group in
             for set in sets {
@@ -655,19 +775,22 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     continue
                 }
                 await progress.completeFile(byteCount: byteCount)
+                downloaded += byteCount
             }
         }
+        return downloaded
     }
 
     /// ONE PIECE catalog sync may skip per-set downloads; this still pulls fresh market + history + trends JSON after each 03:00 boundary.
-    private func syncOnePieceMarketPricingFullRefresh(progress: CatalogSyncProgressReporter, store: CatalogStore) async {
+    private func syncOnePieceMarketPricingFullRefresh(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
         let sets: [TCGSet]
         do {
             sets = try store.fetchAllSets(for: .onePiece)
         } catch {
-            return
+            return 0
         }
-        guard !sets.isEmpty else { return }
+        guard !sets.isEmpty else { return 0 }
+        var downloaded: Int64 = 0
         await progress.addPlannedFiles(sets.count)
         await withTaskGroup(of: (String, Int64)?.self) { group in
             for set in sets {
@@ -737,8 +860,10 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     continue
                 }
                 await progress.completeFile(byteCount: byteCount)
+                downloaded += byteCount
             }
         }
+        return downloaded
     }
 
     /// History + trends SQLite columns only (market JSON already present); used once after upgrade. Returns total bytes stored.
@@ -965,8 +1090,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         }
     }
 
-    private func syncDailyBlobsIfNeeded(progress: CatalogSyncProgressReporter, enabledBrands: Set<TCGBrand>) async {
-        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
+    private func syncDailyBlobsIfNeeded(
+        progress: CatalogSyncProgressReporter,
+        enabledBrands: Set<TCGBrand>,
+        forceRefresh: Bool = false
+    ) async -> Int64 {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
         let store = CatalogStore.shared
         let periodStart = DailyMarketPricingSchedule.currentPeriodStart(now: Date(), calendar: .current)
         var keys: [(String, URL)] = [
@@ -979,17 +1108,22 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             keys.insert((DailyBlobKey.pokedataEnglishPokemonPrices, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPrices)), at: 0)
             keys.insert((DailyBlobKey.pokedataEnglishPokemonProducts, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonProducts)), at: 0)
         }
-        let staleKeys = keys.filter { key, _ in
-            guard let last = store.dailyBlobFetchedAt(key: key) else { return true }
-            return last < periodStart
-        }
-        guard !staleKeys.isEmpty else { return }
+        let staleKeys = forceRefresh
+            ? keys
+            : keys.filter { key, _ in
+                guard let last = store.dailyBlobFetchedAt(key: key) else { return true }
+                return last < periodStart
+            }
+        guard !staleKeys.isEmpty else { return 0 }
+        var downloaded: Int64 = 0
         await progress.setStatus("Refreshing daily market data…")
         await progress.addPlannedFiles(staleKeys.count)
         for (key, url) in staleKeys {
             let etagMetaKey = "daily_blob_http_etag_" + key
             var request = URLRequest(url: url)
-            if let prev = store.meta(etagMetaKey), !prev.isEmpty {
+            if !forceRefresh,
+               let prev = store.meta(etagMetaKey),
+               !prev.isEmpty {
                 request.setValue(prev, forHTTPHeaderField: "If-None-Match")
             }
             guard let (data, resp) = try? await session.data(for: request),
@@ -1016,10 +1150,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     try? store.setMeta(etagMetaKey, e)
                 }
                 await progress.completeFile(byteCount: Int64(data.count))
+                downloaded += Int64(data.count)
             } catch {
                 await progress.completeFile()
             }
         }
+        return downloaded
     }
 
 }

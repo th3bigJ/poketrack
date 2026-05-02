@@ -4,6 +4,7 @@ import Observation
 @Observable
 @MainActor
 final class PricingService {
+    private static let usdToGbpDefaultsKey = "pricing.usd_to_gbp.last_known"
     private(set) var usdToGbp: Double = 0.79
     private(set) var lastFXError: String?
 
@@ -16,6 +17,10 @@ final class PricingService {
     init(session: URLSession = .shared, fileManager: FileManager = .default) {
         self.session = session
         self.fileManager = fileManager
+        let savedRate = UserDefaults.standard.double(forKey: Self.usdToGbpDefaultsKey)
+        if savedRate > 0 {
+            usdToGbp = savedRate
+        }
     }
 
     /// Drops in-memory per-set pricing maps after a catalog purge or before a full re-download so SQLite stays authoritative.
@@ -40,10 +45,11 @@ final class PricingService {
             let decoded = try JSONDecoder().decode(FrankfurterResponse.self, from: data)
             if let gbp = decoded.rates["GBP"] {
                 usdToGbp = gbp
+                UserDefaults.standard.set(gbp, forKey: Self.usdToGbpDefaultsKey)
             }
         } catch {
             lastFXError = error.localizedDescription
-            usdToGbp = 0.79
+            // Keep the last known rate to avoid visible value jumps from temporary FX API failures.
         }
     }
 

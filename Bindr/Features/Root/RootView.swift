@@ -250,7 +250,7 @@ struct RootView: View {
                     } else {
                         StartupBusyView(
                             message: "Preparing your card data…",
-                            status: "Checking catalog updates and prices…"
+                            status: "Updating daily market prices…"
                         )
                     }
                 }

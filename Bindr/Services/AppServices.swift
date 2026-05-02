@@ -5,6 +5,7 @@ import SwiftData
 @Observable
 @MainActor
 final class AppServices {
+    private let launchDailyRefreshTimeoutNanoseconds: UInt64 = 10_000_000_000
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let cardData: CardDataService
@@ -39,7 +40,6 @@ final class AppServices {
     private(set) var shouldRunBackgroundCatalogRefreshOnLaunch = false
     /// Mirrors card-detail root overlay behavior for sealed detail sheets so underlying UI is fully obscured.
     var isSealedDetailPresentationActive = false
-    private var isBackgroundCatalogRefreshInFlight = false
     /// Set when a catalog pipeline run just finished; ``BrowseView`` consumes once to skip duplicate ``CardDataService/reloadAfterBrandChange()`` (same `loadSets` + search index work).
     private var pendingLightBrowseTabEntry = false
     /// When true, ``RootView`` shows the full ``LoadingScreen`` with byte counts; otherwise a simple indeterminate busy state until sync actually transfers data.
@@ -84,9 +84,12 @@ final class AppServices {
         )
         self.theme = ThemeSettings(cloudSettings: cloudSettings)
         if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
+            let requiresBlockingDailyRefresh = CatalogSyncCoordinator.shared.requiresDailyBlockingRefresh(
+                enabledBrands: brandSettings.enabledBrands
+            )
             isReady = true
-            shouldRunBackgroundCatalogRefreshOnLaunch = true
-            isLaunchCatalogPipelineComplete = false
+            shouldRunBackgroundCatalogRefreshOnLaunch = requiresBlockingDailyRefresh
+            isLaunchCatalogPipelineComplete = !requiresBlockingDailyRefresh
         }
         refreshCatalogCardsLastUpdatedAtFromStore()
         Task {
@@ -113,27 +116,84 @@ final class AppServices {
         isReady = true
     }
 
-    /// Cold-launch refresh for returning users. Finishes before ``isLaunchCatalogPipelineComplete`` becomes `true` so the tab shell does not mount until catalog work is done.
+    /// Returning-user launch path: quickly prime local catalog data, then refresh network-backed data in the background.
     func bootstrapCatalogInBackgroundIfNeeded() async {
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
             isLaunchCatalogPipelineComplete = true
             return
         }
         shouldRunBackgroundCatalogRefreshOnLaunch = false
-        await bootstrapCatalogInBackground()
-        isLaunchCatalogPipelineComplete = true
+        // First launch after the daily 03:00 boundary: block app shell until pricing/trends are refreshed
+        // and stored locally to avoid visible value changes after the user is already in the app.
+        if !isLaunchCatalogPipelineComplete {
+            await primeLaunchCatalogFromLocalCache()
+            let blockingTask = Task { @MainActor [weak self] in
+                guard let self else { return }
+                await self.runStartupCatalogPipeline(
+                    updateBootstrapProgressUI: false,
+                    includeDeferredLaunchServices: false
+                )
+                self.pendingLightBrowseTabEntry = true
+            }
+            let completedWithinTimeout = await waitForTaskOrTimeout(
+                blockingTask,
+                timeoutNanoseconds: launchDailyRefreshTimeoutNanoseconds
+            )
+            if !completedWithinTimeout {
+                // Fail open after timeout (offline/slow network). Keep cached values and let the
+                // same refresh task continue in the background.
+            }
+            isLaunchCatalogPipelineComplete = true
+        } else {
+            await primeLaunchCatalogFromLocalCache()
+        }
+        Task(priority: .background) { [weak self] in
+            await self?.runDeferredLaunchServices()
+        }
     }
 
-    private func bootstrapCatalogInBackground() async {
-        guard !isBootstrapping else { return }
-        guard !isBackgroundCatalogRefreshInFlight else { return }
-        isBackgroundCatalogRefreshInFlight = true
-        defer { isBackgroundCatalogRefreshInFlight = false }
-        await runStartupCatalogPipeline(updateBootstrapProgressUI: false)
+    private func waitForTaskOrTimeout(
+        _ task: Task<Void, Never>,
+        timeoutNanoseconds: UInt64
+    ) async -> Bool {
+        await withTaskGroup(of: Bool.self) { group in
+            group.addTask {
+                await task.value
+                return true
+            }
+            group.addTask {
+                try? await Task.sleep(nanoseconds: timeoutNanoseconds)
+                return false
+            }
+            let first = await group.next() ?? false
+            group.cancelAll()
+            return first
+        }
+    }
+
+    /// Fast, local-only readiness pass so Browse/Collect can render without waiting on remote checks.
+    private func primeLaunchCatalogFromLocalCache() async {
+        await cardData.loadSets(preferSyncedCatalog: true)
+        if brandSettings.enabledBrands.contains(.onePiece) {
+            await cardData.loadOnePieceBrowseMetadata()
+        } else {
+            cardData.clearOnePieceBrowseMetadata()
+        }
+        sealedProducts.loadFromLocalIfAvailable()
         pendingLightBrowseTabEntry = true
     }
 
-    private func runStartupCatalogPipeline(updateBootstrapProgressUI: Bool) async {
+    /// Non-critical launch tasks that should never block first paint.
+    private func runDeferredLaunchServices() async {
+        await pricing.refreshFXRate()
+        await store.loadProducts()
+        await store.checkEntitlements()
+    }
+
+    private func runStartupCatalogPipeline(
+        updateBootstrapProgressUI: Bool,
+        includeDeferredLaunchServices: Bool = true
+    ) async {
         await brandsManifest.refresh()
         if updateBootstrapProgressUI {
             bootstrapShowsDownloadProgressUI = false
@@ -214,14 +274,20 @@ final class AppServices {
 
         sealedProducts.loadFromLocalIfAvailable()
 
-        if updateBootstrapProgressUI {
+        if includeDeferredLaunchServices && updateBootstrapProgressUI {
             bootstrapStatus = "Checking purchases…"
         }
-        await pricing.refreshFXRate()
-        await store.loadProducts()
-        await store.checkEntitlements()
+        if includeDeferredLaunchServices {
+            await pricing.refreshFXRate()
+            await store.loadProducts()
+            await store.checkEntitlements()
+        }
         if updateBootstrapProgressUI {
-            bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse + weightStore
+            if includeDeferredLaunchServices {
+                bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse + weightStore
+            } else {
+                bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse
+            }
             bootstrapStatus = "Card data is ready."
         }
 
@@ -294,7 +360,7 @@ final class AppServices {
         pricing.clearSetPricingMemoryCache()
         isCatalogDownloadInProgress = true
         catalogDownloadShowsByteProgressUI = false
-        catalogDownloadMessage = "Checking card data updates…"
+        catalogDownloadMessage = "Checking card and market data updates…"
         catalogDownloadStatus = "Preparing checks…"
         catalogDownloadProgress = 0
         catalogDownloadDownloadedBytes = 0
@@ -313,7 +379,7 @@ final class AppServices {
         }
 
         catalogDownloadProgress = 1
-        catalogDownloadStatus = changed ? "Card data updated." : "Already up to date."
+        catalogDownloadStatus = changed ? "Card and market data updated." : "Already up to date."
         await cardData.reloadAfterBrandChange()
         isCatalogDownloadInProgress = false
         refreshCatalogCardsLastUpdatedAtFromStore()

@@ -303,6 +303,12 @@ struct DashboardView: View {
         .task {
             await loadMarketTrendBlob()
         }
+        .onChange(of: services.isCatalogDownloadInProgress) { _, inProgress in
+            guard !inProgress else { return }
+            Task {
+                await loadMarketTrendBlob()
+            }
+        }
         .onAppear {
             selectedBrand = activeBrand
         }
@@ -313,6 +319,11 @@ struct DashboardView: View {
         .onChange(of: chartRange) { _, _ in
             selectedPoint = nil
             selectedBrand = activeBrand
+        }
+        .onChange(of: services.pricing.usdToGbp) { _, _ in
+            Task {
+                await computeLiveValue()
+            }
         }
     }
 
