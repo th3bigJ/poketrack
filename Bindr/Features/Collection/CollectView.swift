@@ -404,7 +404,8 @@ struct CollectView: View {
                     gridOptions: gridOptions,
                     priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
                     isOwned: item.quantity > 0,
-                    isWishlisted: wishlistedSealedCollectionCardIDs.contains(product.collectionCardID)
+                    isWishlisted: wishlistedSealedCollectionCardIDs.contains(product.collectionCardID),
+                    ownedCountBadge: item.quantity
                 )
                 .contentShape(Rectangle())
             }

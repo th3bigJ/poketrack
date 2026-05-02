@@ -234,6 +234,7 @@ struct SealedProductGridCell: View {
     let priceUSD: Double?
     let isOwned: Bool
     let isWishlisted: Bool
+    var ownedCountBadge: Int? = nil
 
     private var tileBackground: Color {
         colorScheme == .dark ? .black : .white
@@ -292,7 +293,7 @@ struct SealedProductGridCell: View {
                 imageURL: product.imageURL,
                 isOwned: isOwned,
                 isWishlisted: isWishlisted,
-                ownedCountBadge: nil
+                ownedCountBadge: ownedCountBadge
             )
             .frame(maxWidth: .infinity)
             .frame(height: imageHeight)
@@ -375,10 +376,15 @@ private struct SealedThumbnailView: View {
             .clipped()
 
             if let ownedCountBadge, ownedCountBadge > 1 {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 24, weight: .semibold))
-                    .foregroundStyle(.white, services.theme.accentColor)
-                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                Text("x\(ownedCountBadge)")
+                    .font(.caption2.weight(.bold))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 3)
+                    .background(
+                        Capsule(style: .continuous)
+                            .fill(Color.black.opacity(0.72))
+                    )
                     .padding(6)
                     .accessibilityLabel("Owned \(ownedCountBadge)")
             } else if isOwned {

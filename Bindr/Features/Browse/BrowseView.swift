@@ -100,7 +100,7 @@ struct CardGridCell: View {
     }
 
     private var visibleOwnedCountBadge: Int? {
-        guard gridOptions.showOwned, let ownedCountBadge, ownedCountBadge > 1 else { return nil }
+        guard let ownedCountBadge, ownedCountBadge > 1 else { return nil }
         // Defensive clamp in case bad data creates extreme values.
         return min(max(ownedCountBadge, 2), 999)
     }
@@ -249,6 +249,20 @@ private struct BrowseCardThumbnailView: View {
 
     var body: some View {
         CachedCardThumbnailImage(url: imageURL)
+            .overlay(alignment: .bottomTrailing) {
+                if let ownedCountBadge, ownedCountBadge > 1 {
+                    Text("x\(ownedCountBadge)")
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 3)
+                        .background(
+                            Capsule(style: .continuous)
+                                .fill(Color.black.opacity(0.72))
+                        )
+                        .padding(6)
+                }
+            }
     }
 }
 
