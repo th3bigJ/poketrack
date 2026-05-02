@@ -594,7 +594,7 @@ struct SocialAlertsSheet: View {
     let onDeepLinkSelected: (URL) -> Void
     @Environment(AppServices.self) private var services
 
-    /// Activity rows (votes, comments, friendships, wishlist matches) that
+    /// Activity rows (votes, comments, friendships) that
     /// target the current user. These are fetched specifically for the alerts
     /// sheet — the main feed deliberately excludes activity rows
     /// (`includeActivityRows: false` in ``SocialFeedService.fetchFeed``), so
@@ -645,7 +645,9 @@ struct SocialAlertsSheet: View {
         isLoading = true
         defer { isLoading = false }
         do {
-            activity = try await services.socialFeed.fetchUserActivity(limit: 40)
+            activity = try await services.socialFeed
+                .fetchUserActivity(limit: 40)
+                .filter { $0.type != .wishlistMatch }
             errorMessage = nil
         } catch is CancellationError {
             return
@@ -703,7 +705,7 @@ private struct SocialAlertsPreviewView: View {
     private var activityItems: [GroupedFeedItem] {
         items.filter { group in
             switch group.primary.type {
-            case .vote, .comment, .friendship, .wishlistMatch:
+            case .vote, .comment, .friendship:
                 return true
             default:
                 return !group.interactions.isEmpty
@@ -736,10 +738,7 @@ private struct SocialAlertsPreviewView: View {
             if isLoading {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 14) {
-                        sectionLabel("WISHLIST MATCHES")
-                        ShimmerAlertRow()
                         sectionLabel("ALL ACTIVITY")
-                            .padding(.top, 8)
                         ForEach(0..<5, id: \.self) { _ in
                             ShimmerAlertRow()
                         }
@@ -760,18 +759,7 @@ private struct SocialAlertsPreviewView: View {
             } else {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 14) {
-                        sectionLabel("WISHLIST MATCHES")
-                        let matches = activityItems.filter { $0.primary.type == .wishlistMatch }
-                        if matches.isEmpty {
-                            emptyAlert("No wishlist matches yet.")
-                        } else {
-                            ForEach(matches) { group in
-                                alertRow(group: group, tint: Color(hex: "E8B84B"), icon: "target")
-                            }
-                        }
-
                         sectionLabel("ALL ACTIVITY")
-                            .padding(.top, 8)
                         if activityItems.isEmpty {
                             emptyAlert("Votes, comments, and friend activity will appear here.")
                         } else {

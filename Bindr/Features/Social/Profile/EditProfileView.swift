@@ -14,8 +14,6 @@ struct SocialProfileFormPayload: Sendable {
     let favoriteCardSetCode: String?
     let favoriteCardImageURL: String?
     let favoriteDeckArchetype: String
-    let isWishlistPublic: Bool
-    let wishlistCardIDs: [String]?
     let avatarBackgroundColor: String?
     let avatarOutlineStyle: String?
     let collectionCardCount: Int?
@@ -62,6 +60,7 @@ struct EditProfileView: View {
     }
 
     let existingProfile: SocialProfile?
+    let onSignOutTapped: () -> Void
     let onSave: (SocialProfileFormPayload) async throws -> Void
 
     @State private var username: String
@@ -71,7 +70,6 @@ struct EditProfileView: View {
     @State private var favoriteDeckArchetype: String
     @State private var favoritePokemon: FavoritePokemonSelection?
     @State private var favoriteCard: FavoriteCardSelection?
-    @State private var isWishlistPublic: Bool
     @State private var showPokemonPicker = false
     @State private var showCardPicker = false
     @State private var isSaving = false
@@ -82,16 +80,17 @@ struct EditProfileView: View {
 
     init(
         existingProfile: SocialProfile?,
+        onSignOutTapped: @escaping () -> Void,
         onSave: @escaping (SocialProfileFormPayload) async throws -> Void
     ) {
         self.existingProfile = existingProfile
+        self.onSignOutTapped = onSignOutTapped
         self.onSave = onSave
         _username = State(initialValue: existingProfile?.username ?? "")
         _displayName = State(initialValue: existingProfile?.displayName ?? "")
         _bio = State(initialValue: existingProfile?.bio ?? "")
         _profileRoles = State(initialValue: Set((existingProfile?.profileRoles ?? []).compactMap(ProfileRole.init(rawValue:))))
         _favoriteDeckArchetype = State(initialValue: existingProfile?.favoriteDeckArchetype ?? "")
-        _isWishlistPublic = State(initialValue: existingProfile?.isWishlistPublic ?? false)
         _avatarBackgroundColor = State(initialValue: existingProfile?.avatarBackgroundColor)
         _avatarOutlineStyle = State(initialValue: existingProfile?.avatarOutlineStyle)
         _favoritePokemon = State(initialValue: {
@@ -170,8 +169,6 @@ struct EditProfileView: View {
                             favoriteDeckArchetype: favoriteDeckArchetype,
                             pinnedCardID: nil,
                             friendCount: 0,
-                            isWishlistPublic: isWishlistPublic,
-                            wishlistCardIDs: [],
                             avatarBackgroundColor: avatarBackgroundColor,
                             avatarOutlineStyle: avatarOutlineStyle,
                             collectionCardCount: 0,
@@ -277,14 +274,6 @@ struct EditProfileView: View {
                 }
             } footer: {
                 Text("You can choose both Collector and TCG Player.")
-            }
-
-            Section {
-                Toggle("Show Wishlist on Profile", isOn: $isWishlistPublic)
-            } header: {
-                Text("Privacy")
-            } footer: {
-                Text("If enabled, your wishlist will be visible to other users on your profile.")
             }
 
             Section {
@@ -397,6 +386,17 @@ struct EditProfileView: View {
                 .listRowBackground(Color.clear)
                 .listRowInsets(EdgeInsets())
             }
+
+            if existingProfile != nil {
+                Section {
+                    Button("Sign Out", role: .destructive) {
+                        onSignOutTapped()
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                } footer: {
+                    Text("Signing out will close this profile screen.")
+                }
+            }
         }
         .scrollContentBackground(.hidden)
         .background(Color(uiColor: .systemGroupedBackground))
@@ -439,10 +439,6 @@ struct EditProfileView: View {
         isSaving = true
         let resolvedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
         let roleValues = profileRoles.map(\.rawValue).sorted()
-        let localCardIDs = services.wishlist?.items.map(\.cardID) ?? []
-        let existingRemoteIDs = existingProfile?.wishlistCardIDs ?? []
-        let merged = existingRemoteIDs + localCardIDs.filter { !existingRemoteIDs.contains($0) }
-        let wishlistIDs: [String]? = merged.isEmpty ? nil : merged
         let collectionCardCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
         let collectionBinderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         let collectionDeckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
@@ -454,8 +450,6 @@ struct EditProfileView: View {
         let capturedFavoritePokemon = favoritePokemon
         let capturedFavoriteCard = favoriteCard
         let capturedFavoriteDeckArchetype = favoriteDeckArchetype
-        let capturedIsWishlistPublic = isWishlistPublic
-        let capturedWishlistIDs = wishlistIDs
         let capturedAvatarBg = avatarBackgroundColor
         let capturedAvatarOutline = avatarOutlineStyle
         Task {
@@ -474,8 +468,6 @@ struct EditProfileView: View {
                     favoriteCardSetCode: capturedFavoriteCard?.setCode,
                     favoriteCardImageURL: capturedFavoriteCard?.imageURL,
                     favoriteDeckArchetype: capturedFavoriteDeckArchetype,
-                    isWishlistPublic: capturedIsWishlistPublic,
-                    wishlistCardIDs: capturedWishlistIDs,
                     avatarBackgroundColor: capturedAvatarBg,
                     avatarOutlineStyle: capturedAvatarOutline,
                     collectionCardCount: collectionCardCount,

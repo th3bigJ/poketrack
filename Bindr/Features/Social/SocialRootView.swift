@@ -393,18 +393,41 @@ struct SocialRootView: View {
                     )
                 case .profile:
                     MyProfileView(
-                        profile: profile,
-                        onSignOutTapped: {
-                            services.socialAuth.signOut()
-                            self.profile = nil
-                            selectedTab = .feed
-                        }
+                        profile: profile
                     )
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .contentShape(Rectangle())
+            .simultaneousGesture(
+                DragGesture(minimumDistance: 24)
+                    .onEnded { value in
+                        handleTabSwipe(translation: value.translation)
+                    }
+            )
         }
         .background(Color(uiColor: .systemBackground))
+    }
+
+    private func handleTabSwipe(translation: CGSize) {
+        let horizontal = translation.width
+        let vertical = translation.height
+        guard abs(horizontal) > abs(vertical) else { return }
+        guard abs(horizontal) > 56 else { return }
+        if horizontal < 0 {
+            moveSelectedTab(by: 1)
+        } else {
+            moveSelectedTab(by: -1)
+        }
+    }
+
+    private func moveSelectedTab(by offset: Int) {
+        let tabs = SocialTab.allCases
+        guard let currentIndex = tabs.firstIndex(of: selectedTab) else { return }
+        let nextIndex = currentIndex + offset
+        guard tabs.indices.contains(nextIndex) else { return }
+        Haptics.lightImpact()
+        selectedTab = tabs[nextIndex]
     }
 
     private func handleAppleSignInResult(_ result: Result<ASAuthorization, Error>) async {

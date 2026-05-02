@@ -40,8 +40,6 @@ final class SocialProfileService {
         let favoriteCardSetCode: String?
         let favoriteCardImageURL: String?
         let favoriteDeckArchetype: String?
-        let isWishlistPublic: Bool?
-        let wishlistCardIDs: [String]?
         let avatarBackgroundColor: String?
         let avatarOutlineStyle: String?
         let collectionCardCount: Int?
@@ -66,8 +64,6 @@ final class SocialProfileService {
             case favoriteCardSetCode = "favorite_card_set_code"
             case favoriteCardImageURL = "favorite_card_image_url"
             case favoriteDeckArchetype = "favorite_deck_archetype"
-            case isWishlistPublic = "is_wishlist_public"
-            case wishlistCardIDs = "wishlist_card_ids"
             case avatarBackgroundColor = "avatar_background_color"
             case avatarOutlineStyle = "avatar_outline_style"
             case collectionCardCount = "collection_card_count"
@@ -132,8 +128,6 @@ final class SocialProfileService {
         let favoriteCardSetCode: String?
         let favoriteCardImageURL: String?
         let favoriteDeckArchetype: String?
-        let isWishlistPublic: Bool?
-        let wishlistCardIDs: [String]?
         let avatarBackgroundColor: String?
         let avatarOutlineStyle: String?
         let collectionCardCount: Int?
@@ -154,8 +148,6 @@ final class SocialProfileService {
             case favoriteCardSetCode = "favorite_card_set_code"
             case favoriteCardImageURL = "favorite_card_image_url"
             case favoriteDeckArchetype = "favorite_deck_archetype"
-            case isWishlistPublic = "is_wishlist_public"
-            case wishlistCardIDs = "wishlist_card_ids"
             case avatarBackgroundColor = "avatar_background_color"
             case avatarOutlineStyle = "avatar_outline_style"
             case collectionCardCount = "collection_card_count"
@@ -202,8 +194,6 @@ final class SocialProfileService {
         favoriteCardSetCode: String?,
         favoriteCardImageURL: String?,
         favoriteDeckArchetype: String?,
-        isWishlistPublic: Bool?,
-        wishlistCardIDs: [String]?,
         avatarBackgroundColor: String?,
         avatarOutlineStyle: String?,
         collectionCardCount: Int? = nil,
@@ -230,8 +220,6 @@ final class SocialProfileService {
             favoriteCardSetCode: favoriteCardSetCode?.trimmedNilIfEmpty,
             favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
             favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
-            isWishlistPublic: isWishlistPublic,
-            wishlistCardIDs: wishlistCardIDs,
             avatarBackgroundColor: avatarBackgroundColor?.trimmedNilIfEmpty,
             avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty,
             collectionCardCount: collectionCardCount,
@@ -266,8 +254,6 @@ final class SocialProfileService {
         favoriteCardSetCode: String?,
         favoriteCardImageURL: String?,
         favoriteDeckArchetype: String?,
-        isWishlistPublic: Bool?,
-        wishlistCardIDs: [String]?,
         avatarBackgroundColor: String?,
         avatarOutlineStyle: String?,
         collectionCardCount: Int? = nil,
@@ -289,8 +275,6 @@ final class SocialProfileService {
             favoriteCardSetCode: favoriteCardSetCode?.trimmedNilIfEmpty,
             favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
             favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
-            isWishlistPublic: isWishlistPublic,
-            wishlistCardIDs: wishlistCardIDs,
             avatarBackgroundColor: avatarBackgroundColor?.trimmedNilIfEmpty,
             avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty,
             collectionCardCount: collectionCardCount,

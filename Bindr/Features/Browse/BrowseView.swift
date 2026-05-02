@@ -496,7 +496,6 @@ struct BrowseView: View {
     @State private var showFolderCreateAlert = false
     @State private var addedMultiSelectFolderIDs: Set<UUID> = []
     @State private var lastSelectedSetCodeInSetsTab: String?
-    @State private var auxiliaryScrollPositionID: String?
     @State private var pendingSetRestoreRowID: String?
     @State private var setRestoreToken: Int = 0
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
@@ -684,11 +683,11 @@ struct BrowseView: View {
                 inlineDetailPriceByCardID = [:]
                 if selectedTab == .sets {
                     if newValue != nil {
-                        auxiliaryScrollPositionID = browseAuxTopAnchorID()
+                        pendingSetRestoreRowID = browseAuxTopAnchorID()
+                        setRestoreToken += 1
                     } else if let setCode = lastSelectedSetCodeInSetsTab?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(),
                               !setCode.isEmpty {
                         let rowID = browseSetRowScrollID(setCode: setCode)
-                        auxiliaryScrollPositionID = rowID
                         pendingSetRestoreRowID = rowID
                         setRestoreToken += 1
                     }
@@ -974,7 +973,6 @@ struct BrowseView: View {
                 }
                 .scrollTargetLayout()
             }
-            .scrollPosition(id: $auxiliaryScrollPositionID)
             .onChange(of: setRestoreToken) { _, _ in
                 guard let rowID = pendingSetRestoreRowID else { return }
                 DispatchQueue.main.async {
@@ -2091,7 +2089,7 @@ private struct BrowseSetsTabContent: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
             } else {
-                VStack(alignment: .leading, spacing: 20) {
+                LazyVStack(alignment: .leading, spacing: 20) {
                     ForEach(groupedSets, id: \.title) { group in
                         VStack(alignment: .leading, spacing: 8) {
                             Text(group.title)
@@ -2104,7 +2102,7 @@ private struct BrowseSetsTabContent: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 10)
 
-                        VStack(spacing: 0) {
+                        LazyVStack(spacing: 0) {
                             ForEach(group.sets) { set in
                                 Button {
                                     onSelectSet(set)

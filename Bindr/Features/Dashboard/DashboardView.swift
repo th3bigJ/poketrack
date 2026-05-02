@@ -10,6 +10,13 @@ private enum ChartRange: String, CaseIterable, Identifiable {
     var id: String { rawValue }
 }
 
+private enum MoverScope: String, CaseIterable, Identifiable {
+    case collection = "My Cards"
+    case market = "Market"
+
+    var id: String { rawValue }
+}
+
 struct DashboardView: View {
     var onViewAllActivity: (() -> Void)? = nil
     var onOpenScanner: (() -> Void)? = nil
@@ -49,6 +56,13 @@ struct DashboardView: View {
     @State private var mostExpensiveHolding: DashboardTopHolding? = nil
     @State private var priceBandBreakdown: [DashboardBreakdownEntry] = []
     @State private var setCompletionEntries: [DashboardSetCompletionEntry] = []
+    @State private var selectedRecentLedgerLine: LedgerLine?
+    @State private var editingRecentLedgerLine: LedgerLine?
+    @State private var fallbackBiggestGainer7Days: MarketTrendMover? = nil
+    @State private var fallbackBiggestDecliner7Days: MarketTrendMover? = nil
+    @State private var marketBiggestGainer7Days: MarketTrendMover? = nil
+    @State private var marketBiggestDecliner7Days: MarketTrendMover? = nil
+    @State private var moverScope: MoverScope = .collection
 
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
@@ -286,6 +300,14 @@ struct DashboardView: View {
             .padding(.top, 18)
             .padding(.bottom, 32)
         }
+        .overlay {
+            if selectedRecentLedgerLine != nil {
+                Color.black.opacity(0.55)
+                    .ignoresSafeArea()
+                    .transition(.opacity)
+                    .allowsHitTesting(false)
+            }
+        }
         .safeAreaPadding(.top, rootFloatingChromeInset)
         .background(dashboardBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
@@ -315,6 +337,9 @@ struct DashboardView: View {
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
             selectedPoint = nil
+            Task {
+                await resolveMarketMoversFromPriceTrendsBlob()
+            }
         }
         .onChange(of: chartRange) { _, _ in
             selectedPoint = nil
@@ -325,6 +350,32 @@ struct DashboardView: View {
                 await computeLiveValue()
             }
         }
+        .sheet(item: $selectedRecentLedgerLine) { line in
+            TransactionDetailSheet(
+                line: line,
+                title: activityTitle(for: line),
+                subtitle: activitySubtitle(for: line),
+                imageURL: activityImageURL(for: line),
+                directionText: badgeText(for: line) ?? "Activity",
+                productKindText: productKindTitle(for: line),
+                variantText: cleaned(line.variantKey),
+                moneySummary: transactionMoneySummary(for: line),
+                amountColor: directionColor(for: line),
+                availableMarkActions: markActions(for: line),
+                onMarkAs: { action in
+                    markLedgerLine(line, as: action)
+                }
+            ) {
+                selectedRecentLedgerLine = nil
+                DispatchQueue.main.async {
+                    editingRecentLedgerLine = line
+                }
+            }
+        }
+        .sheet(item: $editingRecentLedgerLine) { line in
+            AddManualActivityView(ledgerLineToEdit: line)
+        }
+        .animation(.easeInOut(duration: 0.18), value: selectedRecentLedgerLine != nil)
     }
 
     private var milestoneBanner: some View {
@@ -956,7 +1007,56 @@ struct DashboardView: View {
                     trendCell(title: "7D", value: trend.change7Days)
                     trendCell(title: "1D", value: trend.change1Day)
                 }
+
+                HStack {
+                    Text("Movers")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(dashboardSecondaryText)
+                    Spacer(minLength: 8)
+                    Picker("Mover Scope", selection: $moverScope) {
+                        Text("My Cards")
+                            .tag(MoverScope.collection)
+                        Text("Market")
+                            .tag(MoverScope.market)
+                    }
+                    .labelsHidden()
+                    .pickerStyle(.segmented)
+                    .font(.caption2.weight(.semibold))
+                    .controlSize(.mini)
+                    .frame(width: 154)
+                }
+
+                HStack(spacing: 10) {
+                    moverCell(
+                        title: "Biggest 7D Gain",
+                        mover: biggestGainerMover(from: trend),
+                        fallbackColor: DashboardPalette.success
+                    )
+                    moverCell(
+                        title: "Biggest 7D Drop",
+                        mover: biggestDeclinerMover(from: trend),
+                        fallbackColor: DashboardPalette.danger
+                    )
+                }
             }
+        }
+    }
+
+    private func biggestGainerMover(from trend: MarketTrendMetrics) -> MarketTrendMover? {
+        switch moverScope {
+        case .collection:
+            return fallbackBiggestGainer7Days ?? trend.biggestGainer7Days
+        case .market:
+            return marketBiggestGainer7Days ?? trend.biggestGainer7Days
+        }
+    }
+
+    private func biggestDeclinerMover(from trend: MarketTrendMetrics) -> MarketTrendMover? {
+        switch moverScope {
+        case .collection:
+            return fallbackBiggestDecliner7Days ?? trend.biggestDecliner7Days
+        case .market:
+            return marketBiggestDecliner7Days ?? trend.biggestDecliner7Days
         }
     }
 
@@ -1020,7 +1120,12 @@ struct DashboardView: View {
                 } else {
                     VStack(spacing: 0) {
                         ForEach(recentLines) { line in
-                            dashboardActivityRow(line: line)
+                            Button {
+                                selectedRecentLedgerLine = line
+                            } label: {
+                                dashboardActivityRow(line: line)
+                            }
+                            .buttonStyle(.plain)
                             if line.id != recentLines.last?.id {
                                 Divider()
                                     .overlay(dashboardDividerColor)
@@ -1104,7 +1209,7 @@ struct DashboardView: View {
         HStack(spacing: 12) {
             activityLeadingVisual(for: line)
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 8) {
                 HStack(spacing: 8) {
                     Text(activityTitle(for: line))
                         .font(.headline)
@@ -1126,23 +1231,24 @@ struct DashboardView: View {
                                     .stroke(services.theme.accentColor.opacity(0.28), lineWidth: 1)
                             }
                     }
+
+                    Spacer(minLength: 8)
+
+                    Text(line.occurredAt.formatted(date: .abbreviated, time: .omitted))
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(dashboardSecondaryText)
                 }
 
-                Text(activitySubtitle(for: line))
-                    .font(.subheadline)
-                    .foregroundStyle(dashboardSecondaryText)
-                    .lineLimit(1)
-            }
-
-            Spacer(minLength: 8)
-
-            VStack(alignment: .trailing, spacing: 4) {
-                Text(line.occurredAt.formatted(date: .abbreviated, time: .omitted))
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(dashboardSecondaryText)
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(dashboardSecondaryText)
+                HStack(spacing: 8) {
+                    Text(activitySubtitle(for: line))
+                        .font(.subheadline)
+                        .foregroundStyle(dashboardSecondaryText)
+                        .lineLimit(1)
+                    Spacer(minLength: 8)
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(dashboardSecondaryText)
+                }
             }
         }
         .padding(.vertical, 12)
@@ -1349,6 +1455,8 @@ struct DashboardView: View {
         var nextMostExpensive: DashboardTopHolding? = nil
         var ownedCardIDsBySetCode: [String: Set<String>] = [:]
         var cardCache: [String: Card] = [:]
+        var nextTopGainer: MarketTrendMover? = nil
+        var nextTopDecliner: MarketTrendMover? = nil
 
         let setsForBrand = (try? CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
         var setTotalsByCode: [String: (name: String, total: Int)] = [:]
@@ -1386,6 +1494,21 @@ struct DashboardView: View {
 
             let unitValue = await unitPriceGBP(for: item, card: card)
             nextPriceBand[priceBandLabel(for: unitValue), default: 0] += quantity
+
+            if let change7d = await sevenDayChangePercent(for: item, card: card) {
+                let preferredImagePath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
+                let mover = MarketTrendMover(
+                    displayName: card.cardName,
+                    percentChange: change7d,
+                    imageURL: AppConfiguration.imageURL(relativePath: preferredImagePath)
+                )
+                if nextTopGainer == nil || change7d > (nextTopGainer?.percentChange ?? -.infinity) {
+                    nextTopGainer = mover
+                }
+                if nextTopDecliner == nil || change7d < (nextTopDecliner?.percentChange ?? .infinity) {
+                    nextTopDecliner = mover
+                }
+            }
 
             guard unitValue > 0 else { continue }
             let totalValue = unitValue * Double(quantity)
@@ -1438,6 +1561,33 @@ struct DashboardView: View {
         .prefix(4)
         .map { $0 }
         mostExpensiveHolding = nextMostExpensive
+        fallbackBiggestGainer7Days = nextTopGainer
+        fallbackBiggestDecliner7Days = nextTopDecliner
+    }
+
+    private func sevenDayChangePercent(for item: CollectionItem, card: Card) async -> Double? {
+        guard let trends = await services.pricing.priceTrends(for: card) else { return nil }
+
+        let gradeKey: String = {
+            guard let company = item.gradingCompany else { return "raw" }
+            switch company.uppercased() {
+            case "PSA": return "psa10"
+            case "ACE": return "ace10"
+            default: return "raw"
+            }
+        }()
+
+        let preferredVariant = cleaned(item.variantKey) ?? trends.variant
+        let direct = trends.changes(for: preferredVariant, grade: gradeKey).change7d
+        if let direct { return direct }
+
+        if let variantMap = trends.allVariants[preferredVariant] {
+            if let anyGrade = variantMap.values.compactMap(\.change7d).first {
+                return anyGrade
+            }
+        }
+
+        return trends.change7d
     }
 
     private func sortedBreakdown(from source: [String: Int], limit: Int = 5) -> [DashboardBreakdownEntry] {
@@ -1570,6 +1720,82 @@ struct DashboardView: View {
         }
     }
 
+    private func productKindTitle(for line: LedgerLine) -> String {
+        guard let kind = ProductKind(rawValue: line.productKind) else { return line.productKind }
+        switch kind {
+        case .singleCard: return "Single card"
+        case .gradedItem: return "Graded item"
+        case .sealedProduct: return "Sealed product"
+        case .boosterPack: return "Booster pack"
+        case .etb: return "ETB"
+        case .other: return "Other"
+        }
+    }
+
+    private func transactionMoneySummary(for line: LedgerLine) -> String? {
+        guard let unitPrice = line.unitPrice else { return nil }
+        let total = unitPrice * Double(line.quantity)
+        return total.formatted(
+            .currency(code: line.currencyCode)
+            .precision(.fractionLength(2))
+        )
+    }
+
+    private func markActions(for line: LedgerLine) -> [TransactionMarkAction] {
+        var actions: [TransactionMarkAction] = [
+            .bought, .sold, .packed, .tradedIn, .tradedOut, .giftedIn, .giftedOut, .adjustmentIn, .adjustmentOut
+        ]
+        if line.productKind == ProductKind.sealedProduct.rawValue {
+            actions.append(.opened)
+        }
+        return actions
+    }
+
+    private func markLedgerLine(_ line: LedgerLine, as action: TransactionMarkAction) {
+        let isSealedProduct = line.productKind == ProductKind.sealedProduct.rawValue
+
+        switch action {
+        case .bought:
+            line.direction = LedgerDirection.bought.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .sold:
+            line.direction = LedgerDirection.sold.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .packed:
+            line.direction = LedgerDirection.packed.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .tradedIn:
+            line.direction = LedgerDirection.tradedIn.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .tradedOut:
+            line.direction = LedgerDirection.tradedOut.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .giftedIn:
+            line.direction = LedgerDirection.giftedIn.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .giftedOut:
+            line.direction = LedgerDirection.giftedOut.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .adjustmentIn:
+            line.direction = LedgerDirection.adjustmentIn.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .adjustmentOut:
+            line.direction = LedgerDirection.adjustmentOut.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .opened:
+            line.direction = LedgerDirection.adjustmentOut.rawValue
+            line.sealedStatus = SealedInventoryStatus.opened.rawValue
+        }
+
+        do {
+            try modelContext.save()
+            HapticManager.notification(.success)
+        } catch {
+            HapticManager.notification(.error)
+            print("[Dashboard] Failed to mark ledger line: \(error.localizedDescription)")
+        }
+    }
+
     private func rangeLabel(for date: Date) -> String {
         switch chartRange {
         case .daily:
@@ -1610,6 +1836,7 @@ struct DashboardView: View {
     private func loadMarketTrendBlob() async {
         guard let data = CatalogStore.shared.dailyBlob(key: DailyBlobKey.marketTrend) else {
             marketTrendData = nil
+            await resolveMarketMoversFromPriceTrendsBlob()
             return
         }
         do {
@@ -1617,6 +1844,328 @@ struct DashboardView: View {
         } catch {
             marketTrendData = nil
         }
+        await resolveMarketMoversFromPriceTrendsBlob()
+    }
+
+    private func resolveMarketMoversFromPriceTrendsBlob() async {
+        do {
+            try CatalogStore.shared.open()
+        } catch {
+            marketBiggestGainer7Days = nil
+            marketBiggestDecliner7Days = nil
+            return
+        }
+
+        let sets = (try? CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
+        guard !sets.isEmpty else {
+            marketBiggestGainer7Days = nil
+            marketBiggestDecliner7Days = nil
+            return
+        }
+
+        var candidates: [TrendMoverCandidate] = []
+
+        for set in sets {
+            guard let trendsBlob = await loadPriceTrendsBlobForSet(setCode: set.setCode) else { continue }
+            collectSetTrendCandidates(from: trendsBlob, setCode: set.setCode, into: &candidates)
+        }
+
+        // If per-set rows are unavailable, fall back to the aggregate daily blob parser.
+        if candidates.isEmpty,
+           let aggregate = CatalogStore.shared.dailyBlob(key: DailyBlobKey.priceTrends),
+           let raw = try? JSONSerialization.jsonObject(with: aggregate) {
+            collectTrendMoverCandidates(from: raw, inheritedCardID: nil, into: &candidates)
+        }
+
+        let scoped = candidates.filter(matchesActiveBrand)
+        let finalCandidates = scoped.isEmpty ? candidates : scoped
+
+        let topGain = finalCandidates.max(by: { $0.change7d < $1.change7d })
+        let topDrop = finalCandidates.min(by: { $0.change7d < $1.change7d })
+
+        if let topGain {
+            marketBiggestGainer7Days = await buildMover(from: topGain)
+        } else {
+            marketBiggestGainer7Days = nil
+        }
+
+        if let topDrop {
+            marketBiggestDecliner7Days = await buildMover(from: topDrop)
+        } else {
+            marketBiggestDecliner7Days = nil
+        }
+    }
+
+    private func collectSetTrendCandidates(from trendsBlob: Data, setCode: String, into candidates: inout [TrendMoverCandidate]) {
+        guard let root = try? JSONSerialization.jsonObject(with: trendsBlob) as? [String: Any] else { return }
+        for (cardID, rawEntry) in root {
+            guard let entry = rawEntry as? [String: Any] else { continue }
+            let parsed = CardPriceTrends.parse(from: entry)
+            let change7d = parsed?.change7d
+                ?? parsed?.allVariants.values.flatMap { $0.values }.compactMap(\.change7d).first
+                ?? extractSetEntrySevenDayChange(from: entry)
+            guard let change7d else { continue }
+            candidates.append(
+                TrendMoverCandidate(
+                    cardID: cardID,
+                    displayName: (entry["cardName"] as? String)
+                        ?? (entry["card_name"] as? String)
+                        ?? (entry["name"] as? String)
+                        ?? (entry["title"] as? String),
+                    imageURL: nil,
+                    change7d: change7d,
+                    brandHint: nil,
+                    setCode: setCode
+                )
+            )
+        }
+    }
+
+    private func loadPriceTrendsBlobForSet(setCode: String) async -> Data? {
+        if let exact = CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: activeBrand) {
+            return exact
+        }
+        let lowercased = setCode.lowercased()
+        if lowercased != setCode {
+            if let lower = CatalogStore.shared.fetchPriceTrendsData(setCode: lowercased, brand: activeBrand) {
+                return lower
+            }
+        }
+
+        // Network fallback for when local trends rows were not yet synced.
+        let stems: [String]
+        switch activeBrand {
+        case .pokemon:
+            stems = AppConfiguration.pricingFileStemVariants(for: setCode)
+        case .onePiece:
+            stems = onePieceTrendStemVariants(for: setCode)
+        }
+        for stem in stems {
+            let url: URL
+            switch activeBrand {
+            case .pokemon:
+                url = AppConfiguration.r2PriceTrendsURL(setCode: stem)
+            case .onePiece:
+                url = AppConfiguration.r2OnePiecePriceTrendsURL(setCodeStem: stem)
+            }
+            if let data = await fetchHTTPBodyIfOK(from: url) {
+                return data
+            }
+        }
+        return nil
+    }
+
+    private func onePieceTrendStemVariants(for setCode: String) -> [String] {
+        let s = setCode.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !s.isEmpty else { return [] }
+        var stems: [String] = []
+        func add(_ candidate: String) {
+            let value = candidate.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !value.isEmpty, !stems.contains(value) {
+                stems.append(value)
+            }
+        }
+        add(s)
+        add(s.uppercased())
+        add(s.lowercased())
+        return stems
+    }
+
+    private func fetchHTTPBodyIfOK(from url: URL) async -> Data? {
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+            guard let http = response as? HTTPURLResponse,
+                  (200...299).contains(http.statusCode),
+                  !data.isEmpty else {
+                return nil
+            }
+            return data
+        } catch {
+            return nil
+        }
+    }
+
+    private func extractSetEntrySevenDayChange(from entry: [String: Any]) -> Double? {
+        if let weekly = entry["weekly"] as? [String: Any] {
+            for key in ["changePct", "change_pct", "pct", "value"] {
+                if let raw = weekly[key], let number = parseAnyNumber(raw) {
+                    return number
+                }
+            }
+        }
+        for key in ["change7d", "change_7d", "change7Days", "change_7_days", "percentChange", "percent_change"] {
+            if let raw = entry[key], let number = parseAnyNumber(raw) {
+                return number
+            }
+        }
+        return nil
+    }
+
+    private func collectTrendMoverCandidates(
+        from value: Any,
+        inheritedCardID: String?,
+        into candidates: inout [TrendMoverCandidate]
+    ) {
+        if let dict = value as? [String: Any] {
+            let cardID = (dict["masterCardId"] as? String)
+                ?? (dict["master_card_id"] as? String)
+                ?? (dict["cardId"] as? String)
+                ?? (dict["card_id"] as? String)
+                ?? inheritedCardID
+            let displayName = (dict["cardName"] as? String)
+                ?? (dict["card_name"] as? String)
+                ?? (dict["name"] as? String)
+                ?? (dict["title"] as? String)
+            let imageURL = parseImageURL(from: dict)
+            let brandHint = (dict["brand"] as? String) ?? (dict["tcg"] as? String) ?? (dict["game"] as? String)
+            if let change7d = extractSetEntrySevenDayChange(from: dict) {
+                candidates.append(
+                    TrendMoverCandidate(
+                        cardID: cardID,
+                        displayName: displayName,
+                        imageURL: imageURL,
+                        change7d: change7d,
+                        brandHint: brandHint,
+                        setCode: nil
+                    )
+                )
+            }
+            for (key, child) in dict {
+                let nextCardID = extractCardID(from: key) ?? cardID
+                collectTrendMoverCandidates(from: child, inheritedCardID: nextCardID, into: &candidates)
+            }
+            return
+        }
+
+        if let array = value as? [Any] {
+            for child in array {
+                collectTrendMoverCandidates(from: child, inheritedCardID: inheritedCardID, into: &candidates)
+            }
+        }
+    }
+
+    private func extractCardID(from key: String) -> String? {
+        let trimmed = key.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        let normalized = trimmed.lowercased()
+        if normalized == "weekly" || normalized == "daily" || normalized == "monthly" || normalized == "allvariants" {
+            return nil
+        }
+        if normalized.contains("-"), normalized.rangeOfCharacter(from: .decimalDigits) != nil {
+            return trimmed
+        }
+        return nil
+    }
+
+    private func parseImageURL(from dict: [String: Any]) -> URL? {
+        for key in ["imageURL", "imageUrl", "image_url", "image", "thumbnail", "thumb"] {
+            guard let raw = dict[key] as? String else { continue }
+            let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmed.isEmpty else { continue }
+            if let absolute = URL(string: trimmed), absolute.scheme != nil {
+                return absolute
+            }
+            return AppConfiguration.imageURL(relativePath: trimmed)
+        }
+        return nil
+    }
+
+    private func matchesActiveBrand(_ candidate: TrendMoverCandidate) -> Bool {
+        if let cardID = candidate.cardID {
+            return TCGBrand.inferredFromMasterCardId(cardID) == activeBrand
+        }
+        if let hint = candidate.brandHint?.lowercased() {
+            switch activeBrand {
+            case .pokemon:
+                return hint.contains("pokemon")
+            case .onePiece:
+                return hint.contains("onepiece") || hint.contains("one_piece") || hint.contains("one piece")
+            }
+        }
+        return false
+    }
+
+    private func parseAnyNumber(_ raw: Any) -> Double? {
+        switch raw {
+        case let number as Double: return number
+        case let number as Float: return Double(number)
+        case let number as Int: return Double(number)
+        case let number as NSNumber: return number.doubleValue
+        case let string as String: return Double(string.trimmingCharacters(in: .whitespacesAndNewlines))
+        default: return nil
+        }
+    }
+
+    private func buildMover(from candidate: TrendMoverCandidate) async -> MarketTrendMover {
+        var displayName: String? = candidate.displayName
+        var imageURL: URL? = candidate.imageURL
+
+        if let cardID = candidate.cardID,
+           let card = await services.cardData.loadCard(masterCardId: cardID) {
+            if displayName == nil {
+                displayName = card.cardName
+            }
+            if imageURL == nil {
+                let preferredImagePath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
+                imageURL = AppConfiguration.imageURL(relativePath: preferredImagePath)
+            }
+        } else if let candidateID = candidate.cardID {
+            // Per-set trend files can use alternate card keys; do a best-effort match.
+            let normalizedCandidate = normalizeTrendKey(candidateID)
+            let setScopedCards: [Card]
+            if let setCode = candidate.setCode {
+                setScopedCards = (await services.cardData.loadCards(forSetCode: setCode, catalogBrand: activeBrand)) ?? []
+            } else {
+                setScopedCards = []
+            }
+
+            if let matched = setScopedCards.first(where: { card in
+                if card.masterCardId.caseInsensitiveCompare(candidateID) == .orderedSame {
+                    return true
+                }
+                if let externalId = cleaned(card.externalId),
+                   externalId.caseInsensitiveCompare(candidateID) == .orderedSame {
+                    return true
+                }
+                if let tcgplayerProductId = cleaned(card.tcgplayerProductId),
+                   tcgplayerProductId == candidateID {
+                    return true
+                }
+                let normalizedMaster = normalizeTrendKey(card.masterCardId)
+                let normalizedExternal = normalizeTrendKey(cleaned(card.externalId) ?? "")
+                return normalizedMaster == normalizedCandidate
+                    || normalizedMaster.contains(normalizedCandidate)
+                    || normalizedCandidate.contains(normalizedMaster)
+                    || (!normalizedExternal.isEmpty && (
+                        normalizedExternal == normalizedCandidate
+                        || normalizedExternal.contains(normalizedCandidate)
+                        || normalizedCandidate.contains(normalizedExternal)
+                    ))
+            }) {
+                if displayName == nil { displayName = matched.cardName }
+                if imageURL == nil {
+                    let preferredImagePath = cleaned(matched.imageHighSrc) ?? matched.imageLowSrc
+                    imageURL = AppConfiguration.imageURL(relativePath: preferredImagePath)
+                }
+            }
+        }
+
+        return MarketTrendMover(
+            displayName: displayName ?? readableTrendKey(candidate.cardID),
+            percentChange: candidate.change7d,
+            imageURL: imageURL
+        )
+    }
+
+    private func normalizeTrendKey(_ raw: String) -> String {
+        raw.lowercased().filter { $0.isLetter || $0.isNumber }
+    }
+
+    private func readableTrendKey(_ raw: String?) -> String {
+        guard let raw else { return "Unknown card" }
+        let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return "Unknown card" }
+        return trimmed.replacingOccurrences(of: "::", with: " ")
     }
 
     private func trendCell(title: String, value: Double?) -> some View {
@@ -1630,6 +2179,75 @@ struct DashboardView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 10)
+        .padding(.horizontal, 12)
+        .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
+        )
+    }
+
+    private func moverCell(title: String, mover: MarketTrendMover?, fallbackColor: Color) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(dashboardSecondaryText)
+
+            HStack(spacing: 10) {
+                if let imageURL = mover?.imageURL {
+                    CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } placeholder: {
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .fill(dashboardCardInsetBackground)
+                            .overlay {
+                                Image(systemName: "photo")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(dashboardSecondaryText)
+                            }
+                    }
+                    .frame(width: 42, height: 60)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .stroke(dashboardBorder, lineWidth: 1)
+                    )
+                } else {
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                        .fill(dashboardCardInsetBackground)
+                        .frame(width: 42, height: 60)
+                        .overlay {
+                            Image(systemName: "square.stack.3d.up.fill")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(dashboardSecondaryText)
+                        }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                .stroke(dashboardBorder, lineWidth: 1)
+                        )
+                }
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(mover?.displayName ?? "No data")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(dashboardPrimaryText)
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
+
+                    Text(formatTrendPercent(mover?.percentChange))
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(mover?.percentChange == nil ? fallbackColor : trendColor(mover?.percentChange))
+                        .contentTransition(.numericText())
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 12)
         .padding(.horizontal, 12)
         .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay(
@@ -1729,6 +2347,135 @@ private struct MarketTrendMetrics: Decodable {
     let change1Day: Double?
     let change7Days: Double?
     let change31Days: Double?
+    let biggestGainer7Days: MarketTrendMover?
+    let biggestDecliner7Days: MarketTrendMover?
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: AnyCodingKey.self)
+        change1Day = container.decodeDouble(forKeys: ["change1Day", "change_1_day", "change1d", "change_1d"])
+        change7Days = container.decodeDouble(forKeys: ["change7Days", "change_7_days", "change7d", "change_7d"])
+        change31Days = container.decodeDouble(forKeys: ["change31Days", "change_31_days", "change31d", "change_31d"])
+
+        biggestGainer7Days = container.decodeMover(
+            forKeys: ["biggestGainer7Days", "biggest_gainer_7_days", "topGainer7Days", "top_gainer_7_days"]
+        )
+        biggestDecliner7Days = container.decodeMover(
+            forKeys: ["biggestDecliner7Days", "biggest_decliner_7_days", "topDecliner7Days", "top_decliner_7_days", "biggestLoser7Days", "biggest_loser_7_days"]
+        )
+    }
+}
+
+private struct MarketTrendMover: Decodable {
+    let displayName: String
+    let percentChange: Double?
+    let imageURL: URL?
+
+    init(displayName: String, percentChange: Double?, imageURL: URL?) {
+        self.displayName = displayName
+        self.percentChange = percentChange
+        self.imageURL = imageURL
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: AnyCodingKey.self)
+        displayName = container.decodeString(forKeys: ["cardName", "card_name", "name", "title"]) ?? "Unknown card"
+        percentChange = container.decodeDouble(forKeys: ["percentChange", "percent_change", "change7Days", "change_7_days", "change7d", "change_7d"])
+        imageURL = container.decodeURL(
+            forKeys: ["imageURL", "imageUrl", "image_url", "image", "thumbnail", "thumb"]
+        )
+    }
+}
+
+private struct TrendMoverCandidate {
+    let cardID: String?
+    let displayName: String?
+    let imageURL: URL?
+    let change7d: Double
+    let brandHint: String?
+    let setCode: String?
+}
+
+private struct AnyCodingKey: CodingKey {
+    var stringValue: String
+    var intValue: Int?
+
+    init?(stringValue: String) {
+        self.stringValue = stringValue
+        self.intValue = nil
+    }
+
+    init?(intValue: Int) {
+        self.stringValue = String(intValue)
+        self.intValue = intValue
+    }
+}
+
+private extension KeyedDecodingContainer where K == AnyCodingKey {
+    func decodeString(forKeys keys: [String]) -> String? {
+        for key in keys {
+            guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
+            do {
+                if let value = try decodeIfPresent(String.self, forKey: codingKey),
+                   !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    return value
+                }
+            } catch {
+                continue
+            }
+        }
+        return nil
+    }
+
+    func decodeDouble(forKeys keys: [String]) -> Double? {
+        for key in keys {
+            guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
+            do {
+                if let value = try decodeIfPresent(Double.self, forKey: codingKey) {
+                    return value
+                }
+                if let stringValue = try decodeIfPresent(String.self, forKey: codingKey),
+                   let parsed = Double(stringValue) {
+                    return parsed
+                }
+            } catch {
+                continue
+            }
+        }
+        return nil
+    }
+
+    func decodeMover(forKeys keys: [String]) -> MarketTrendMover? {
+        for key in keys {
+            guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
+            do {
+                if let mover = try decodeIfPresent(MarketTrendMover.self, forKey: codingKey) {
+                    return mover
+                }
+            } catch {
+                continue
+            }
+        }
+        return nil
+    }
+
+    func decodeURL(forKeys keys: [String]) -> URL? {
+        for key in keys {
+            guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
+            do {
+                if let raw = try decodeIfPresent(String.self, forKey: codingKey) {
+                    let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+                    guard !trimmed.isEmpty else { continue }
+                    if let absolute = URL(string: trimmed), absolute.scheme != nil {
+                        return absolute
+                    }
+                    return AppConfiguration.imageURL(relativePath: trimmed)
+                }
+            } catch {
+                continue
+            }
+        }
+        return nil
+    }
 }
 
 private struct ChartPoint: Identifiable {

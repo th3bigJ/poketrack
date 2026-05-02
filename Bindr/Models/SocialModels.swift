@@ -18,8 +18,6 @@ struct SocialProfile: Codable, Identifiable, Sendable {
     let favoriteDeckArchetype: String?
     let pinnedCardID: String?
     let friendCount: Int?
-    let isWishlistPublic: Bool?
-    let wishlistCardIDs: [String]?
     let avatarBackgroundColor: String?
     let avatarOutlineStyle: String?
     let collectionCardCount: Int?
@@ -46,8 +44,6 @@ struct SocialProfile: Codable, Identifiable, Sendable {
         case favoriteDeckArchetype = "favorite_deck_archetype"
         case pinnedCardID = "pinned_card_id"
         case friendCount = "friend_count"
-        case isWishlistPublic = "is_wishlist_public"
-        case wishlistCardIDs = "wishlist_card_ids"
         case avatarBackgroundColor = "avatar_background_color"
         case avatarOutlineStyle = "avatar_outline_style"
         case collectionCardCount = "collection_card_count"

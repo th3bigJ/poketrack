@@ -71,10 +71,10 @@ struct FriendsListView: View {
             Button(action: onOpenQR) {
                 Image(systemName: "qrcode")
                     .font(.system(size: 16, weight: .bold))
-                    .foregroundStyle(Color(hex: "E8B84B"))
+                    .foregroundStyle(Color.black)
                     .frame(width: 36, height: 36)
-                    .background(Color(uiColor: .secondarySystemBackground), in: Circle())
-                    .overlay(Circle().stroke(Color.primary.opacity(0.09), lineWidth: 1))
+                    .background(Color.accentColor, in: Circle())
+                    .overlay(Circle().stroke(Color.accentColor.opacity(0.45), lineWidth: 1))
             }
             .buttonStyle(.plain)
         }
@@ -97,7 +97,7 @@ struct FriendsListView: View {
                         .foregroundStyle(selectedTab == tab ? Color.black : Color.secondary)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
-                        .background(selectedTab == tab ? Color(hex: "E8B84B") : Color(uiColor: .secondarySystemBackground), in: Capsule())
+                        .background(selectedTab == tab ? Color.accentColor : Color(uiColor: .secondarySystemBackground), in: Capsule())
                         .overlay {
                             Capsule()
                                 .stroke(selectedTab == tab ? .clear : Color.primary.opacity(0.09), lineWidth: 1)

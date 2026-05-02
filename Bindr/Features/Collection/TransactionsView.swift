@@ -13,6 +13,7 @@ struct TransactionsView: View {
     @State private var cardNamesByID: [String: String] = [:]
     @State private var cardImageURLsByID: [String: URL] = [:]
     @State private var showAddActivity = false
+    @State private var selectedLedgerLine: LedgerLine?
     @State private var editingLedgerLine: LedgerLine?
     @State private var pnlRange: ActivityPnLRange = .month
     @State private var holdingsCollectionValue: Double = 0
@@ -118,6 +119,14 @@ struct TransactionsView: View {
                 }
             }
         }
+        .overlay {
+            if selectedLedgerLine != nil {
+                Color.black.opacity(0.55)
+                    .ignoresSafeArea()
+                    .transition(.opacity)
+                    .allowsHitTesting(false)
+            }
+        }
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
             transactionsHeader
@@ -138,9 +147,32 @@ struct TransactionsView: View {
         .sheet(isPresented: $showAddActivity) {
             AddManualActivityView()
         }
+        .sheet(item: $selectedLedgerLine) { line in
+            TransactionDetailSheet(
+                line: line,
+                title: primaryTitle(for: line),
+                subtitle: secondarySubtitle(for: line),
+                imageURL: imageURL(for: line),
+                directionText: directionTitle(for: line),
+                productKindText: productKindTitle(for: line),
+                variantText: cleaned(line.variantKey).map(variantTitle),
+                moneySummary: moneySummary(for: line),
+                amountColor: colorForSignedValue(signedCashValue(for: line)),
+                availableMarkActions: markActions(for: line),
+                onMarkAs: { action in
+                    markLedgerLine(line, as: action)
+                }
+            ) {
+                selectedLedgerLine = nil
+                DispatchQueue.main.async {
+                    editingLedgerLine = line
+                }
+            }
+        }
         .sheet(item: $editingLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
         }
+        .animation(.easeInOut(duration: 0.18), value: selectedLedgerLine != nil)
     }
 
     private var transactionsHeader: some View {
@@ -225,6 +257,10 @@ struct TransactionsView: View {
                     .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        selectedLedgerLine = line
+                    }
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button(role: .destructive) {
                             deleteLedgerLine(line)
@@ -384,26 +420,34 @@ struct TransactionsView: View {
                             infoChip(label: variantTitle(variant))
                         }
                         Spacer(minLength: 8)
-                        VStack(alignment: .trailing, spacing: 5) {
-                            Text(line.occurredAt, format: .dateTime.day().month(.abbreviated).year())
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(dashboardSecondaryText)
-                                .multilineTextAlignment(.trailing)
-                            if let value = moneySummary(for: line) {
-                                Text(value)
-                                    .font(.subheadline.weight(.semibold))
-                                    .foregroundStyle(colorForSignedValue(signedCashValue(for: line)))
+                        HStack(spacing: 8) {
+                            VStack(alignment: .trailing, spacing: 5) {
+                                Text(line.occurredAt, format: .dateTime.day().month(.abbreviated).year())
+                                    .font(.caption.weight(.medium))
+                                    .foregroundStyle(dashboardSecondaryText)
+                                    .multilineTextAlignment(.trailing)
+                                if let value = moneySummary(for: line) {
+                                    Text(value)
+                                        .font(.subheadline.weight(.semibold))
+                                        .foregroundStyle(colorForSignedValue(signedCashValue(for: line)))
+                                }
                             }
                         }
                     }
 
                     Spacer(minLength: 0)
 
-                    Text(primaryTitle(for: line))
-                        .font(.headline)
-                        .foregroundStyle(dashboardPrimaryText)
-                        .lineLimit(1)
-                        .truncationMode(.tail)
+                    HStack(spacing: 8) {
+                        Text(primaryTitle(for: line))
+                            .font(.headline)
+                            .foregroundStyle(dashboardPrimaryText)
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                        Spacer(minLength: 0)
+                        Image(systemName: "chevron.right")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(dashboardSecondaryText)
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -754,6 +798,61 @@ struct TransactionsView: View {
         }
     }
 
+    private func markActions(for line: LedgerLine) -> [TransactionMarkAction] {
+        var actions: [TransactionMarkAction] = [
+            .bought, .sold, .packed, .tradedIn, .tradedOut, .giftedIn, .giftedOut, .adjustmentIn, .adjustmentOut
+        ]
+        if line.productKind == ProductKind.sealedProduct.rawValue {
+            actions.append(.opened)
+        }
+        return actions
+    }
+
+    private func markLedgerLine(_ line: LedgerLine, as action: TransactionMarkAction) {
+        let isSealedProduct = line.productKind == ProductKind.sealedProduct.rawValue
+
+        switch action {
+        case .bought:
+            line.direction = LedgerDirection.bought.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .sold:
+            line.direction = LedgerDirection.sold.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .packed:
+            line.direction = LedgerDirection.packed.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .tradedIn:
+            line.direction = LedgerDirection.tradedIn.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .tradedOut:
+            line.direction = LedgerDirection.tradedOut.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .giftedIn:
+            line.direction = LedgerDirection.giftedIn.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .giftedOut:
+            line.direction = LedgerDirection.giftedOut.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .adjustmentIn:
+            line.direction = LedgerDirection.adjustmentIn.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .adjustmentOut:
+            line.direction = LedgerDirection.adjustmentOut.rawValue
+            line.sealedStatus = isSealedProduct ? SealedInventoryStatus.sealed.rawValue : nil
+        case .opened:
+            line.direction = LedgerDirection.adjustmentOut.rawValue
+            line.sealedStatus = SealedInventoryStatus.opened.rawValue
+        }
+
+        do {
+            try modelContext.save()
+            HapticManager.notification(.success)
+        } catch {
+            HapticManager.notification(.error)
+            print("[Transactions] Failed to mark ledger line: \(error.localizedDescription)")
+        }
+    }
+
     private func searchableText(for line: LedgerLine) -> String {
         [
             primaryTitle(for: line),
@@ -788,171 +887,4 @@ private enum ActivityPnLRange: CaseIterable, Identifiable {
 private enum ActivityPalette {
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
-}
-
-// MARK: - Add Manual Activity Sheet
-
-private struct AddManualActivityView: View {
-    @Environment(AppServices.self) private var services
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.modelContext) private var modelContext
-    @Environment(\.colorScheme) private var colorScheme
-
-    private let ledgerLineToEdit: LedgerLine?
-
-    @State private var direction: LedgerDirection = .bought
-    @State private var productKind: ProductKind = .singleCard
-    @State private var lineDescription: String = ""
-    @State private var quantity: Int = 1
-    @State private var unitPriceText: String = ""
-    @State private var counterparty: String = ""
-    @State private var occurredAt: Date = Date()
-
-    private var unitPrice: Double? {
-        Double(unitPriceText.replacingOccurrences(of: ",", with: "."))
-    }
-
-    private var isEditing: Bool { ledgerLineToEdit != nil }
-
-    private var selectedCurrencyCode: String {
-        services.priceDisplay.currency == .gbp ? "GBP" : "USD"
-    }
-
-    private var sheetActionColor: Color {
-        colorScheme == .dark ? .white : .black
-    }
-
-    init(ledgerLineToEdit: LedgerLine? = nil) {
-        self.ledgerLineToEdit = ledgerLineToEdit
-    }
-
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section("Details") {
-                    Picker(selection: $direction) {
-                        ForEach(LedgerDirection.allCases, id: \.self) { dir in
-                            Text(directionTitle(dir)).tag(dir)
-                        }
-                    } label: {
-                        Text("Type")
-                            .foregroundStyle(sheetActionColor)
-                    }
-                    Picker(selection: $productKind) {
-                        ForEach(ProductKind.allCases, id: \.self) { kind in
-                            Text(productKindTitle(kind)).tag(kind)
-                        }
-                    } label: {
-                        Text("Item")
-                            .foregroundStyle(sheetActionColor)
-                    }
-                    TextField("Description", text: $lineDescription)
-                }
-
-                Section("Transaction") {
-                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...9999)
-                    HStack {
-                        Text("Unit price")
-                        Spacer()
-                        TextField("Optional", text: $unitPriceText)
-                            .multilineTextAlignment(.trailing)
-                            .keyboardType(.decimalPad)
-                    }
-                    TextField("Counterparty", text: $counterparty)
-                    DatePicker("Date", selection: $occurredAt, displayedComponents: .date)
-                }
-            }
-            .navigationTitle(isEditing ? "Edit Activity" : "Add Activity")
-            .navigationBarTitleDisplayMode(.inline)
-            .tint(sheetActionColor)
-            .onAppear {
-                populateFieldsIfEditing()
-            }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
-                        .foregroundStyle(sheetActionColor)
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button(isEditing ? "Save" : "Add") { save() }
-                        .foregroundStyle(sheetActionColor)
-                        .disabled(lineDescription.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
-                }
-            }
-        }
-    }
-
-    private func save() {
-        do {
-            if let existing = ledgerLineToEdit {
-                existing.occurredAt = occurredAt
-                existing.direction = direction.rawValue
-                existing.productKind = productKind.rawValue
-                existing.lineDescription = lineDescription.trimmingCharacters(in: .whitespacesAndNewlines)
-                existing.quantity = quantity
-                existing.unitPrice = unitPrice
-                existing.currencyCode = selectedCurrencyCode
-                existing.counterparty = cleanedCounterparty
-            } else {
-                let line = LedgerLine(
-                    occurredAt: occurredAt,
-                    direction: direction.rawValue,
-                    productKind: productKind.rawValue,
-                    lineDescription: lineDescription.trimmingCharacters(in: .whitespacesAndNewlines),
-                    quantity: quantity,
-                    unitPrice: unitPrice,
-                    currencyCode: selectedCurrencyCode,
-                    counterparty: cleanedCounterparty
-                )
-                modelContext.insert(line)
-            }
-            try modelContext.save()
-            HapticManager.notification(.success)
-            dismiss()
-        } catch {
-            HapticManager.notification(.error)
-            print("[Transactions] Failed to save manual activity: \(error.localizedDescription)")
-        }
-    }
-
-    private var cleanedCounterparty: String? {
-        let trimmed = counterparty.trimmingCharacters(in: .whitespacesAndNewlines)
-        return trimmed.isEmpty ? nil : trimmed
-    }
-
-    private func populateFieldsIfEditing() {
-        guard let line = ledgerLineToEdit else { return }
-        occurredAt = line.occurredAt
-        direction = LedgerDirection(rawValue: line.direction) ?? .bought
-        productKind = ProductKind(rawValue: line.productKind) ?? .other
-        lineDescription = line.lineDescription
-        quantity = line.quantity
-        unitPriceText = line.unitPrice.map { String($0) } ?? ""
-        counterparty = line.counterparty ?? ""
-    }
-
-    private func directionTitle(_ dir: LedgerDirection) -> String {
-        switch dir {
-        case .bought: return "Bought"
-        case .packed: return "Packed"
-        case .sold: return "Sold"
-        case .tradedIn: return "Trade In"
-        case .tradedOut: return "Trade Out"
-        case .giftedIn: return "Gift In"
-        case .giftedOut: return "Gift Out"
-        case .adjustmentIn: return "Adjustment In"
-        case .adjustmentOut: return "Adjustment Out"
-        }
-    }
-
-    private func productKindTitle(_ kind: ProductKind) -> String {
-        switch kind {
-        case .singleCard: return "Single card"
-        case .gradedItem: return "Graded item"
-        case .sealedProduct: return "Sealed product"
-        case .boosterPack: return "Booster pack"
-        case .etb: return "ETB"
-        case .other: return "Other"
-        }
-    }
 }

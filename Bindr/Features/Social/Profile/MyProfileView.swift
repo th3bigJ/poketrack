@@ -9,7 +9,6 @@ struct MyProfileView: View {
     }
 
     let profile: SocialProfile
-    let onSignOutTapped: () -> Void
 
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
@@ -22,8 +21,6 @@ struct MyProfileView: View {
     @State private var favoriteCardPrice: Double?
     @State private var myActivity: [SocialFeedService.FeedItem] = []
     @State private var selectedProfileTab: ProfileTab = .posts
-    @State private var isCollectionPublished = false
-    @State private var showCollectionShareSettings = false
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
 
     private var collectionShareAutoSyncSignature: String {
@@ -76,49 +73,19 @@ struct MyProfileView: View {
                 favoritesSection
                 profileTabPicker
                 profileTabContent
-
-                Button(role: .destructive, action: onSignOutTapped) {
-                    Text("Sign Out")
-                        .font(.system(size: 13, weight: .semibold))
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 12)
-                        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                .stroke(Color.primary.opacity(0.09), lineWidth: 1)
-                        }
-                }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 32)
             }
+        }
+        .refreshable {
+            await refreshProfileContent()
         }
         .background(Color(uiColor: .systemBackground))
         .navigationBarTitleDisplayMode(.inline)
-        .sheet(isPresented: $showCollectionShareSettings) {
-            ShareSettingsView(source: .collection(items: collectionItems)) {
-                Task { await refreshCollectionShareStatus() }
-            }
-            .environment(services)
-        }
         .task {
-            fetchStats()
-            if let cardID = profile.favoriteCardID {
-                favoriteCard = await services.cardData.loadCard(masterCardId: cardID)
-                if let card = favoriteCard {
-                    favoriteCardPrice = await services.pricing.usdPrice(for: card, printing: "normal")
-                }
-            }
-            do {
-                myActivity = try await services.socialFeed.fetchUserActivity(limit: 10)
-            } catch {
-                print("Error fetching my activity: \(error)")
-            }
-            await refreshCollectionShareStatus()
+            await refreshProfileContent()
         }
         .onChange(of: collectionShareAutoSyncSignature) { _, _ in
             fetchStats()
-            services.socialShare.scheduleAutoSyncCollection(items: collectionItems)
-            Task { await refreshCollectionShareStatus() }
+            services.socialCardLibrary.scheduleAutoSyncCollection(items: collectionItems)
         }
     }
     
@@ -256,16 +223,6 @@ struct MyProfileView: View {
                 .buttonStyle(.plain)
             }
             Spacer()
-            if selectedProfileTab == .collection {
-                Button {
-                    showCollectionShareSettings = true
-                } label: {
-                    Image(systemName: isCollectionPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(isCollectionPublished ? Color(hex: "52C97C") : Color.secondary)
-                }
-                .buttonStyle(.plain)
-            }
         }
         .padding(.horizontal, 16)
     }
@@ -283,7 +240,7 @@ struct MyProfileView: View {
                     }
                 }
             case .wishlist:
-                let ids = (services.wishlist?.items.map(\.cardID) ?? profile.wishlistCardIDs ?? [])
+                let ids = (services.wishlist?.items.map(\.cardID) ?? [])
                     .filter(isRenderableCardIDForProfileGrid)
                 if ids.isEmpty {
                     emptyProfileCard("Your public wishlist will appear here.")
@@ -526,12 +483,27 @@ struct MyProfileView: View {
         deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
     }
 
-    private func refreshCollectionShareStatus() async {
+    private func refreshProfileContent() async {
+        fetchStats()
+        if let cardID = profile.favoriteCardID {
+            favoriteCard = await services.cardData.loadCard(masterCardId: cardID)
+            if let card = favoriteCard {
+                favoriteCardPrice = await services.pricing.usdPrice(for: card, printing: "normal")
+            } else {
+                favoriteCardPrice = nil
+            }
+        } else {
+            favoriteCard = nil
+            favoriteCardPrice = nil
+        }
         do {
-            let snapshot = try await services.socialShare.shareSnapshotForCollection()
-            isCollectionPublished = snapshot.isPublished
+            myActivity = try await services.socialFeed.fetchUserActivity(limit: 10)
         } catch {
-            isCollectionPublished = false
+            print("Error fetching my activity: \(error)")
+        }
+        services.socialCardLibrary.scheduleAutoSyncCollection(items: collectionItems)
+        if let wishlistItems = services.wishlist?.items {
+            services.socialCardLibrary.scheduleAutoSyncWishlist(items: wishlistItems)
         }
     }
 

@@ -19,6 +19,7 @@ final class AppServices {
     let socialProfile: SocialProfileService
     let socialFriend: SocialFriendService
     let socialShare: SocialShareService
+    let socialCardLibrary: SocialCardLibraryService
     let socialFeed: SocialFeedService
     let socialPush: SocialPushService
     let theme: ThemeSettings
@@ -31,6 +32,7 @@ final class AppServices {
 
     /// Daily value snapshots (SwiftData) — initialized with `ModelContext`.
     private(set) var collectionValue: CollectionValueService?
+    private var socialSyncModelContext: ModelContext?
 
     private(set) var isReady = false
     private(set) var isBootstrapping = false
@@ -76,6 +78,7 @@ final class AppServices {
         let brandSettings = BrandSettings()
         self.brandSettings = brandSettings
         self.cardData = CardDataService(brandSettings: brandSettings)
+        self.socialCardLibrary = SocialCardLibraryService(authService: socialAuth)
         self.socialShare = SocialShareService(
             authService: socialAuth,
             storeService: store,
@@ -94,6 +97,7 @@ final class AppServices {
         refreshCatalogCardsLastUpdatedAtFromStore()
         Task {
             await socialAuth.restoreSession()
+            await syncSocialLibrariesIfPossible()
         }
     }
 
@@ -392,13 +396,19 @@ final class AppServices {
 
     /// Call this from your root view with the model context
     func setupWishlist(modelContext: ModelContext) {
-        guard wishlist == nil else { return }
-        wishlist = WishlistService(modelContext: modelContext, store: store)
+        socialSyncModelContext = modelContext
+        if wishlist == nil {
+            wishlist = WishlistService(modelContext: modelContext, store: store)
+        }
+        Task { await syncSocialLibrariesIfPossible() }
     }
 
     func setupCollectionLedger(modelContext: ModelContext) {
-        guard collectionLedger == nil else { return }
-        collectionLedger = CollectionLedgerService(modelContext: modelContext)
+        socialSyncModelContext = modelContext
+        if collectionLedger == nil {
+            collectionLedger = CollectionLedgerService(modelContext: modelContext)
+        }
+        Task { await syncSocialLibrariesIfPossible() }
     }
 
     func setupCollectionValue(modelContext: ModelContext) {
@@ -414,5 +424,15 @@ final class AppServices {
             return
         }
         catalogCardsLastUpdatedAt = Date(timeIntervalSince1970: ts)
+    }
+
+    private func syncSocialLibrariesIfPossible() async {
+        guard let modelContext = socialSyncModelContext else { return }
+        if let wishlist {
+            socialCardLibrary.scheduleAutoSyncWishlist(items: wishlist.items)
+        }
+        if let collectionItems = try? modelContext.fetch(FetchDescriptor<CollectionItem>()) {
+            socialCardLibrary.scheduleAutoSyncCollection(items: collectionItems)
+        }
     }
 }

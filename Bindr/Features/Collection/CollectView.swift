@@ -171,7 +171,7 @@ struct CollectView: View {
             refreshSealedProductCaches()
         }
         .task(id: collectionShareSyncSignature) {
-            services.socialShare.scheduleAutoSyncCollection(items: collectionItems)
+            services.socialCardLibrary.scheduleAutoSyncCollection(items: collectionItems)
         }
         .onAppear {
             if selectedBrand != services.brandSettings.selectedCatalogBrand {

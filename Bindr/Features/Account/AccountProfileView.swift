@@ -51,14 +51,7 @@ struct AccountProfileView: View {
                 case .signedIn:
                     if let profile {
                         MyProfileView(
-                            profile: profile,
-                            onSignOutTapped: {
-                                services.socialAuth.signOut()
-                                self.profile = nil
-                                self.externalProfile = nil
-                                navigationPath = NavigationPath()
-                                isPresented = false
-                            }
+                            profile: profile
                         )
                     } else {
                         createProfilePrompt
@@ -71,7 +64,16 @@ struct AccountProfileView: View {
         .navigationDestination(for: Destination.self) { destination in
             switch destination {
             case .editProfile:
-                EditProfileView(existingProfile: profile) { payload in
+                EditProfileView(
+                    existingProfile: profile,
+                    onSignOutTapped: {
+                        services.socialAuth.signOut()
+                        self.profile = nil
+                        self.externalProfile = nil
+                        navigationPath = NavigationPath()
+                        isPresented = false
+                    }
+                ) { payload in
                     try await handleProfileSave(payload: payload)
                 }
                 // Force EditProfileView to re-init (and re-seed its @State
@@ -216,8 +218,6 @@ struct AccountProfileView: View {
                 favoriteCardSetCode: payload.favoriteCardSetCode,
                 favoriteCardImageURL: payload.favoriteCardImageURL,
                 favoriteDeckArchetype: payload.favoriteDeckArchetype,
-                isWishlistPublic: payload.isWishlistPublic,
-                wishlistCardIDs: payload.wishlistCardIDs,
                 avatarBackgroundColor: payload.avatarBackgroundColor,
                 avatarOutlineStyle: payload.avatarOutlineStyle,
                 collectionCardCount: payload.collectionCardCount,
@@ -242,8 +242,6 @@ struct AccountProfileView: View {
                 favoriteCardSetCode: payload.favoriteCardSetCode,
                 favoriteCardImageURL: payload.favoriteCardImageURL,
                 favoriteDeckArchetype: payload.favoriteDeckArchetype,
-                isWishlistPublic: payload.isWishlistPublic,
-                wishlistCardIDs: payload.wishlistCardIDs,
                 avatarBackgroundColor: payload.avatarBackgroundColor,
                 avatarOutlineStyle: payload.avatarOutlineStyle,
                 collectionCardCount: payload.collectionCardCount,

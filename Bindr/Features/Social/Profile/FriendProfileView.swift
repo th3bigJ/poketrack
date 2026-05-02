@@ -19,16 +19,14 @@ struct FriendProfileView: View {
     @State private var errorMessage: String?
     @State private var selectedTab: ProfileTab = .posts
     @State private var sharedWishlistCardIDs: [String] = []
-    @State private var hasSharedWishlist = false
     @State private var sharedCollectionCardIDs: [String] = []
-    @State private var hasSharedCollection = false
 
     private var canViewCollection: Bool {
-        relationship == .friends || hasSharedCollection
+        relationship == .friends
     }
 
     private var canViewWishlist: Bool {
-        relationship == .friends || profile?.isWishlistPublic == true || hasSharedWishlist
+        relationship == .friends
     }
 
     var body: some View {
@@ -257,7 +255,7 @@ struct FriendProfileView: View {
                     }
                 }
             case .wishlist:
-                let ids = resolvedWishlistCardIDs(profile: profile)
+                let ids = resolvedWishlistCardIDs()
                 if canViewWishlist, !ids.isEmpty {
                     WishlistCardGrid(cardIDs: ids, cardLoader: { id in
                         await services.cardData.loadCard(masterCardId: id)
@@ -454,22 +452,15 @@ struct FriendProfileView: View {
             if let loaded {
                 async let rel = services.socialFriend.fetchRelationshipState(for: loaded.id)
                 async let posts = services.socialFeed.fetchActivityForUser(userID: loaded.id, limit: 20)
-                async let shared = services.socialShare.fetchSharedContent(ownerID: loaded.id)
                 relationship = try await rel
                 activity = (try? await posts) ?? []
-                let sharedContent = (try? await shared) ?? []
-                if let wishlist = sharedContent.first(where: { $0.contentType == .wishlist }) {
-                    hasSharedWishlist = true
-                    sharedWishlistCardIDs = cardIDs(from: wishlist)
+                if relationship == .friends {
+                    async let wishlistIDs = services.socialCardLibrary.fetchWishlistCardIDs(for: loaded.id)
+                    async let collectionIDs = services.socialCardLibrary.fetchCollectionCardIDs(for: loaded.id)
+                    sharedWishlistCardIDs = (try? await wishlistIDs) ?? []
+                    sharedCollectionCardIDs = (try? await collectionIDs) ?? []
                 } else {
-                    hasSharedWishlist = false
                     sharedWishlistCardIDs = []
-                }
-                if let collection = sharedContent.first(where: { $0.contentType == .collection }) {
-                    hasSharedCollection = true
-                    sharedCollectionCardIDs = cardIDs(from: collection)
-                } else {
-                    hasSharedCollection = false
                     sharedCollectionCardIDs = []
                 }
             }
@@ -522,30 +513,7 @@ struct FriendProfileView: View {
         }
     }
 
-    private func resolvedWishlistCardIDs(profile: SocialProfile) -> [String] {
-        let shared = sharedWishlistCardIDs
-        let profileIDs = profile.wishlistCardIDs ?? []
-        var ordered: [String] = []
-        var seen: Set<String> = []
-        for cardID in shared + profileIDs where !cardID.isEmpty {
-            if seen.insert(cardID).inserted {
-                ordered.append(cardID)
-            }
-        }
-        return ordered
-    }
-
-    private func cardIDs(from content: SharedContent) -> [String] {
-        guard case .some(.array(let items)) = content.payload["items"] else { return [] }
-        var ordered: [String] = []
-        var seen: Set<String> = []
-        for entry in items {
-            guard case .object(let object) = entry else { continue }
-            guard let cardID = object["cardID"]?.stringValue, !cardID.isEmpty else { continue }
-            if seen.insert(cardID).inserted {
-                ordered.append(cardID)
-            }
-        }
-        return ordered
+    private func resolvedWishlistCardIDs() -> [String] {
+        sharedWishlistCardIDs.filter { !$0.isEmpty }
     }
 }

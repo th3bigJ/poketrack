@@ -4,11 +4,12 @@ struct FriendsWishlistsView: View {
     @Environment(AppServices.self) private var services
 
     @State private var friends: [SocialProfile] = []
+    @State private var friendWishlistCardIDs: [UUID: [String]] = [:]
     @State private var isLoading = false
     @State private var selectedFriend: SocialProfile? = nil
 
     private var friendsWithWishlists: [SocialProfile] {
-        friends.filter { $0.isWishlistPublic == true && !($0.wishlistCardIDs ?? []).isEmpty }
+        friends.filter { !(friendWishlistCardIDs[$0.id] ?? []).isEmpty }
     }
 
     var body: some View {
@@ -25,7 +26,7 @@ struct FriendsWishlistsView: View {
                         VStack(alignment: .leading, spacing: 10) {
                             friendHeader(friend)
                             ProfileWishlistPreview(
-                                cardIDs: friend.wishlistCardIDs ?? [],
+                                cardIDs: friendWishlistCardIDs[friend.id] ?? [],
                                 onViewAllTapped: { selectedFriend = friend },
                                 cardLoader: { id in await services.cardData.loadCard(masterCardId: id) },
                                 priceFormatter: priceFormatter
@@ -39,7 +40,7 @@ struct FriendsWishlistsView: View {
         .background(Color(uiColor: .systemBackground))
         .sheet(item: $selectedFriend) { friend in
             PublicWishlistDetailView(
-                cardIDs: friend.wishlistCardIDs ?? [],
+                cardIDs: friendWishlistCardIDs[friend.id] ?? [],
                 title: "@\(friend.username)'s Wishlist",
                 cardLoader: { id in await services.cardData.loadCard(masterCardId: id) },
                 priceFormatter: priceFormatter
@@ -62,7 +63,7 @@ struct FriendsWishlistsView: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
-            Text("\(friend.wishlistCardIDs?.count ?? 0) cards")
+            Text("\(friendWishlistCardIDs[friend.id]?.count ?? 0) cards")
                 .font(.system(size: 11, weight: .semibold))
                 .foregroundStyle(Color.secondary.opacity(0.7))
         }
@@ -77,7 +78,7 @@ struct FriendsWishlistsView: View {
             Text("No shared wishlists yet")
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Color.secondary)
-            Text("Friends can share their wishlist from their profile settings.")
+            Text("Your friends have not added wishlist cards yet.")
                 .font(.system(size: 13))
                 .foregroundStyle(Color.secondary.opacity(0.6))
                 .multilineTextAlignment(.center)
@@ -99,6 +100,9 @@ struct FriendsWishlistsView: View {
     private func refresh() async {
         isLoading = true
         defer { isLoading = false }
-        friends = (try? await services.socialFriend.fetchFriends()) ?? []
+        let loadedFriends = (try? await services.socialFriend.fetchFriends()) ?? []
+        friends = loadedFriends
+        let ids = loadedFriends.map(\.id)
+        friendWishlistCardIDs = (try? await services.socialCardLibrary.fetchWishlistCardIDsByUser(for: ids)) ?? [:]
     }
 }
