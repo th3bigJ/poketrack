@@ -59,6 +59,7 @@ final class AppServices {
     private(set) var catalogDownloadProgress: Double = 0
     private(set) var catalogDownloadDownloadedBytes: Int64 = 0
     private(set) var catalogDownloadEstimatedTotalBytes: Int64 = 0
+    private(set) var catalogCardsLastUpdatedAt: Date?
 
     init() {
         let socialAuth = SocialAuthService()
@@ -87,6 +88,7 @@ final class AppServices {
             shouldRunBackgroundCatalogRefreshOnLaunch = true
             isLaunchCatalogPipelineComplete = false
         }
+        refreshCatalogCardsLastUpdatedAtFromStore()
         Task {
             await socialAuth.restoreSession()
         }
@@ -283,6 +285,38 @@ final class AppServices {
         catalogDownloadProgress = 1
 
         isCatalogDownloadInProgress = false
+        refreshCatalogCardsLastUpdatedAtFromStore()
+    }
+
+    /// Settings action: immediately re-check card JSON deltas (skips 03:00 schedule gate) and report whether any files changed.
+    func forceCardDataRefreshFromSettings() async {
+        guard !isCatalogDownloadInProgress else { return }
+        pricing.clearSetPricingMemoryCache()
+        isCatalogDownloadInProgress = true
+        catalogDownloadShowsByteProgressUI = false
+        catalogDownloadMessage = "Checking card data updates…"
+        catalogDownloadStatus = "Preparing checks…"
+        catalogDownloadProgress = 0
+        catalogDownloadDownloadedBytes = 0
+        catalogDownloadEstimatedTotalBytes = 0
+        await Task.yield()
+
+        let changed = await CatalogSyncCoordinator.shared.forceCardDataRefresh(enabledBrands: brandSettings.enabledBrands) { [weak self] snapshot in
+            guard let self else { return }
+            if snapshot.downloadedBytes > 0 {
+                self.catalogDownloadShowsByteProgressUI = true
+            }
+            self.catalogDownloadStatus = snapshot.status
+            self.catalogDownloadDownloadedBytes = snapshot.downloadedBytes
+            self.catalogDownloadEstimatedTotalBytes = max(snapshot.estimatedTotalBytes, snapshot.downloadedBytes)
+            self.catalogDownloadProgress = min(max(snapshot.fractionCompleted, 0), 1)
+        }
+
+        catalogDownloadProgress = 1
+        catalogDownloadStatus = changed ? "Card data updated." : "Already up to date."
+        await cardData.reloadAfterBrandChange()
+        isCatalogDownloadInProgress = false
+        refreshCatalogCardsLastUpdatedAtFromStore()
     }
 
     /// Call this from your root view with the model context
@@ -299,5 +333,15 @@ final class AppServices {
     func setupCollectionValue(modelContext: ModelContext) {
         guard collectionValue == nil else { return }
         collectionValue = CollectionValueService(modelContext: modelContext, pricing: pricing, cardData: cardData)
+    }
+
+    private func refreshCatalogCardsLastUpdatedAtFromStore() {
+        try? CatalogStore.shared.open()
+        guard let raw = CatalogStore.shared.meta("catalog_cards_last_updated_at"),
+              let ts = Double(raw) else {
+            catalogCardsLastUpdatedAt = nil
+            return
+        }
+        catalogCardsLastUpdatedAt = Date(timeIntervalSince1970: ts)
     }
 }

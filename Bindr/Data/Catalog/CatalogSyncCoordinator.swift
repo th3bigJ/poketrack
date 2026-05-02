@@ -128,6 +128,11 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     static let shared = CatalogSyncCoordinator()
 
     private let session: URLSession
+    private enum ConditionalJSONFetchResult {
+        case downloaded(Data)
+        case unchanged
+        case unavailable
+    }
 
     init(session: URLSession = .shared) {
         self.session = session
@@ -163,6 +168,34 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             await syncDailyBlobsIfNeeded(progress: progress, enabledBrands: enabledBrands)
         }
         await progress.setStatus("Finishing card setup…")
+    }
+
+    /// User-invoked settings action: checks per-set card JSON immediately (no 03:00 gate) and applies only changed files.
+    /// Returns `true` when at least one card JSON payload was updated in local SQLite.
+    func forceCardDataRefresh(
+        enabledBrands: Set<TCGBrand>,
+        progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)? = nil
+    ) async -> Bool {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return false }
+        guard !enabledBrands.isEmpty else { return false }
+        let store = CatalogStore.shared
+        try? store.open()
+
+        let progress = CatalogSyncProgressReporter(handler: progressHandler)
+        await progress.setStatus("Checking card data updates…")
+
+        var downloaded: Int64 = 0
+        if enabledBrands.contains(.pokemon) {
+            downloaded += await syncPokemonCatalogCardDeltas(progress: progress, store: store)
+        }
+        if enabledBrands.contains(.onePiece) {
+            downloaded += await syncOnePieceCatalogCardDeltas(progress: progress, store: store)
+        }
+        if downloaded > 0 {
+            try? store.setMeta("catalog_cards_last_updated_at", String(Date().timeIntervalSince1970))
+        }
+        await progress.setStatus("Finishing card setup…")
+        return downloaded > 0
     }
 
     private func syncCatalogIfNeeded(progress: CatalogSyncProgressReporter) async {
@@ -508,6 +541,14 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
         await progress.setStatus("Refreshing pricing data…")
         if needsPeriodRefresh {
+            // Daily (post-03:00) delta check for per-set card JSON. This catches card catalog edits
+            // even when a set list file is unchanged, while avoiding full re-downloads via ETag.
+            if enabledBrands.contains(.pokemon) {
+                _ = await syncPokemonCatalogCardDeltas(progress: progress, store: store)
+            }
+            if enabledBrands.contains(.onePiece) {
+                _ = await syncOnePieceCatalogCardDeltas(progress: progress, store: store)
+            }
             if enabledBrands.contains(.pokemon) {
                 await syncPokemonMarketPricingFullRefresh(progress: progress, store: store)
             }
@@ -553,26 +594,53 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                 group.addTask {
                     for stem in stems {
                         let pURL = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
-                        guard let (pData, resp) = try? await sess.data(from: pURL),
-                              let http = resp as? HTTPURLResponse,
-                              (200...299).contains(http.statusCode),
-                              !pData.isEmpty
-                        else { continue }
-                        var totalBytes = Int64(pData.count)
-                        try? store.upsertPricing(setCode: code, json: pData, brand: .pokemon)
+                        let pricingResult = await self.fetchJSONWithETag(
+                            url: pURL,
+                            etagMetaKey: Self.etagMetaKey(brand: .pokemon, kind: "pricing", setCode: code),
+                            store: store,
+                            session: sess
+                        )
+                        var totalBytes: Int64 = 0
+                        switch pricingResult {
+                        case .downloaded(let pData):
+                            try? store.upsertPricing(setCode: code, json: pData, brand: .pokemon)
+                            totalBytes += Int64(pData.count)
+                        case .unchanged:
+                            break
+                        case .unavailable:
+                            continue
+                        }
                         for hStem in AppConfiguration.pricingFileStemVariants(for: code) {
                             let hURL = AppConfiguration.r2PricingHistoryURL(setCode: hStem)
-                            if let hData = await Self.fetchHTTPBodyIfOK(session: sess, url: hURL) {
+                            let hResult = await self.fetchJSONWithETag(
+                                url: hURL,
+                                etagMetaKey: Self.etagMetaKey(brand: .pokemon, kind: "history", setCode: code),
+                                store: store,
+                                session: sess
+                            )
+                            if case .downloaded(let hData) = hResult {
                                 try? store.upsertPriceHistory(setCode: code, json: hData, brand: .pokemon)
                                 totalBytes += Int64(hData.count)
+                                break
+                            }
+                            if case .unchanged = hResult {
                                 break
                             }
                         }
                         for tStem in AppConfiguration.pricingFileStemVariants(for: code) {
                             let tURL = AppConfiguration.r2PriceTrendsURL(setCode: tStem)
-                            if let tData = await Self.fetchHTTPBodyIfOK(session: sess, url: tURL) {
+                            let tResult = await self.fetchJSONWithETag(
+                                url: tURL,
+                                etagMetaKey: Self.etagMetaKey(brand: .pokemon, kind: "trends", setCode: code),
+                                store: store,
+                                session: sess
+                            )
+                            if case .downloaded(let tData) = tResult {
                                 try? store.upsertPriceTrends(setCode: code, json: tData, brand: .pokemon)
                                 totalBytes += Int64(tData.count)
+                                break
+                            }
+                            if case .unchanged = tResult {
                                 break
                             }
                         }
@@ -608,26 +676,53 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                 group.addTask {
                     for stem in Self.onePiecePricingStemVariants(for: code) {
                         let pURL = AppConfiguration.r2OnePieceMarketPricingSetURL(setCodeStem: stem)
-                        guard let (pData, resp) = try? await sess.data(from: pURL),
-                              let http = resp as? HTTPURLResponse,
-                              (200...299).contains(http.statusCode),
-                              !pData.isEmpty
-                        else { continue }
-                        var totalBytes = Int64(pData.count)
-                        try? store.upsertPricing(setCode: code, json: pData, brand: .onePiece)
+                        let pricingResult = await self.fetchJSONWithETag(
+                            url: pURL,
+                            etagMetaKey: Self.etagMetaKey(brand: .onePiece, kind: "pricing", setCode: code),
+                            store: store,
+                            session: sess
+                        )
+                        var totalBytes: Int64 = 0
+                        switch pricingResult {
+                        case .downloaded(let pData):
+                            try? store.upsertPricing(setCode: code, json: pData, brand: .onePiece)
+                            totalBytes += Int64(pData.count)
+                        case .unchanged:
+                            break
+                        case .unavailable:
+                            continue
+                        }
                         for hStem in Self.onePiecePricingStemVariants(for: code) {
                             let hURL = AppConfiguration.r2OnePiecePricingHistoryURL(setCodeStem: hStem)
-                            if let hData = await Self.fetchHTTPBodyIfOK(session: sess, url: hURL) {
+                            let hResult = await self.fetchJSONWithETag(
+                                url: hURL,
+                                etagMetaKey: Self.etagMetaKey(brand: .onePiece, kind: "history", setCode: code),
+                                store: store,
+                                session: sess
+                            )
+                            if case .downloaded(let hData) = hResult {
                                 try? store.upsertPriceHistory(setCode: code, json: hData, brand: .onePiece)
                                 totalBytes += Int64(hData.count)
+                                break
+                            }
+                            if case .unchanged = hResult {
                                 break
                             }
                         }
                         for tStem in Self.onePiecePricingStemVariants(for: code) {
                             let tURL = AppConfiguration.r2OnePiecePriceTrendsURL(setCodeStem: tStem)
-                            if let tData = await Self.fetchHTTPBodyIfOK(session: sess, url: tURL) {
+                            let tResult = await self.fetchJSONWithETag(
+                                url: tURL,
+                                etagMetaKey: Self.etagMetaKey(brand: .onePiece, kind: "trends", setCode: code),
+                                store: store,
+                                session: sess
+                            )
+                            if case .downloaded(let tData) = tResult {
                                 try? store.upsertPriceTrends(setCode: code, json: tData, brand: .onePiece)
                                 totalBytes += Int64(tData.count)
+                                break
+                            }
+                            if case .unchanged = tResult {
                                 break
                             }
                         }
@@ -735,6 +830,93 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         return sum
     }
 
+    private func syncPokemonCatalogCardDeltas(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
+        let sets: [TCGSet]
+        do {
+            sets = try store.fetchAllSets(for: .pokemon)
+        } catch {
+            return 0
+        }
+        guard !sets.isEmpty else { return 0 }
+        await progress.addPlannedFiles(sets.count)
+        let sess = session
+        var totalDownloaded: Int64 = 0
+        await withTaskGroup(of: Int64.self) { group in
+            for set in sets {
+                let code = set.setCode
+                group.addTask {
+                    let cardsURL = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
+                    let result = await self.fetchJSONWithETag(
+                        url: cardsURL,
+                        etagMetaKey: Self.etagMetaKey(brand: .pokemon, kind: "cards", setCode: code),
+                        store: store,
+                        session: sess
+                    )
+                    guard case .downloaded(let data) = result,
+                          let cards = try? JSONDecoder().decode([Card].self, from: data)
+                    else {
+                        return 0
+                    }
+                    try? store.deleteCards(forSet: code, brand: .pokemon)
+                    try? store.insertCards(cards, setCode: code, brand: .pokemon)
+                    return Int64(data.count)
+                }
+            }
+            for await byteCount in group {
+                await progress.completeFile(byteCount: byteCount)
+                totalDownloaded += byteCount
+            }
+        }
+        if totalDownloaded > 0 {
+            try? store.setMeta("catalog_cards_last_updated_at", String(Date().timeIntervalSince1970))
+        }
+        return totalDownloaded
+    }
+
+    private func syncOnePieceCatalogCardDeltas(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
+        let sets: [TCGSet]
+        do {
+            sets = try store.fetchAllSets(for: .onePiece)
+        } catch {
+            return 0
+        }
+        guard !sets.isEmpty else { return 0 }
+        await progress.addPlannedFiles(sets.count)
+        let sess = session
+        var totalDownloaded: Int64 = 0
+        await withTaskGroup(of: Int64.self) { group in
+            for set in sets {
+                let code = set.setCode
+                group.addTask {
+                    let cardsURL = AppConfiguration.r2OnePieceURL(path: "cards/data/\(code).json")
+                    let result = await self.fetchJSONWithETag(
+                        url: cardsURL,
+                        etagMetaKey: Self.etagMetaKey(brand: .onePiece, kind: "cards", setCode: code),
+                        store: store,
+                        session: sess
+                    )
+                    guard case .downloaded(let data) = result,
+                          let dtos = try? JSONDecoder().decode([OnePieceCardDTO].self, from: data)
+                    else {
+                        return 0
+                    }
+                    let cards = dtos.map { OnePieceCatalogMapping.card(from: $0) }
+                    try? store.deleteCards(forSet: code, brand: .onePiece)
+                    try? store.insertCards(cards, setCode: code, brand: .onePiece)
+                    return Int64(data.count)
+                }
+            }
+            for await byteCount in group {
+                await progress.completeFile(byteCount: byteCount)
+                totalDownloaded += byteCount
+            }
+        }
+        if totalDownloaded > 0 {
+            try? store.setMeta("catalog_cards_last_updated_at", String(Date().timeIntervalSince1970))
+        }
+        return totalDownloaded
+    }
+
     private static func fetchHTTPBodyIfOK(session: URLSession, url: URL) async -> Data? {
         do {
             let (data, resp) = try await session.data(from: url)
@@ -744,6 +926,42 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             return data
         } catch {
             return nil
+        }
+    }
+
+    private static func etagMetaKey(brand: TCGBrand, kind: String, setCode: String) -> String {
+        let normalizedCode = setCode.lowercased().map { ch in
+            ch.isLetter || ch.isNumber ? ch : "_"
+        }
+        return "etag_\(brand.rawValue)_\(kind)_\(String(normalizedCode))"
+    }
+
+    private func fetchJSONWithETag(
+        url: URL,
+        etagMetaKey: String,
+        store: CatalogStore,
+        session: URLSession
+    ) async -> ConditionalJSONFetchResult {
+        do {
+            var request = URLRequest(url: url)
+            if let prevEtag = store.meta(etagMetaKey), !prevEtag.isEmpty {
+                request.setValue(prevEtag, forHTTPHeaderField: "If-None-Match")
+            }
+            let (data, response) = try await session.data(for: request)
+            guard let http = response as? HTTPURLResponse else { return .unavailable }
+            if http.statusCode == 304 {
+                if let etag = http.value(forHTTPHeaderField: "ETag") ?? http.value(forHTTPHeaderField: "Etag") {
+                    try? store.setMeta(etagMetaKey, etag)
+                }
+                return .unchanged
+            }
+            guard (200...299).contains(http.statusCode), !data.isEmpty else { return .unavailable }
+            if let etag = http.value(forHTTPHeaderField: "ETag") ?? http.value(forHTTPHeaderField: "Etag") {
+                try? store.setMeta(etagMetaKey, etag)
+            }
+            return .downloaded(data)
+        } catch {
+            return .unavailable
         }
     }
 

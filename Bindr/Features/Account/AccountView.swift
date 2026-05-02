@@ -7,6 +7,7 @@ struct SettingsView: View {
     @State private var showDataExport = false
     @State private var showDisclaimer = false
     @State private var brandPendingDisable: TCGBrand?
+    @State private var isForceRefreshInFlight = false
 
     /// Brands the user has not added yet (shown in the Add menu). Order follows the hosted `brands.json`.
     private var brandsAvailableToAdd: [TCGBrand] {
@@ -145,10 +146,32 @@ struct SettingsView: View {
             Button("Refresh catalog") {
                 Task { await services.performCatalogSyncAfterEnablingBrands() }
             }
+            Button {
+                Task {
+                    isForceRefreshInFlight = true
+                    await services.forceCardDataRefreshFromSettings()
+                    isForceRefreshInFlight = false
+                }
+            } label: {
+                HStack {
+                    if isForceRefreshInFlight {
+                        ProgressView()
+                            .controlSize(.small)
+                    }
+                    Text("Force Card Data Refresh")
+                }
+            }
+            .disabled(isForceRefreshInFlight || services.isCatalogDownloadInProgress)
         } header: {
             Text("Catalog")
         } footer: {
-            Text("Re-checks the server for new sets and cards. Use this if a recently released set appears in the list but shows no cards.")
+            let timestampLine: String = {
+                guard let updatedAt = services.catalogCardsLastUpdatedAt else {
+                    return "Last card data update: Not yet recorded."
+                }
+                return "Last card data update: \(updatedAt.formatted(date: .abbreviated, time: .shortened))."
+            }()
+            Text("Re-checks the server for new sets and cards. Use this if a recently released set appears in the list but shows no cards.\n\(timestampLine)")
         }
 
         Section {
