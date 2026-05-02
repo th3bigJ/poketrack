@@ -93,6 +93,7 @@ struct RootView: View {
 
     // MARK: - Splash Flow
     @State private var showSplash = false
+    @State private var hasCompletedLaunchWordmark = false
     private let splashLastVersionKey = "bindr_splash_last_shown_version"
 
     /// True when search has pushed into a detail view — hide the floating `UniversalSearchBar` (detail uses system nav, same as Browse Pokémon).
@@ -243,49 +244,55 @@ struct RootView: View {
 
     var body: some View {
         Group {
-            if services.isReady {
-                Group {
-                    if services.isLaunchCatalogPipelineComplete {
-                        mainContent
-                    } else {
-                        StartupBusyView(
-                            message: "Preparing your card data…",
-                            status: "Updating daily market prices…"
-                        )
-                    }
-                }
-                .task {
-                    await Task.yield()
-                    await Task.yield()
-                    await services.bootstrapCatalogInBackgroundIfNeeded()
-                }
-            } else {
-                Color(uiColor: .systemBackground)
-                    .ignoresSafeArea()
-                    .overlay {
-                        if services.brandSettings.hasCompletedBrandOnboarding,
-                           !services.brandSettings.hasCompletedInitialAppBootstrap {
-                            if services.bootstrapShowsDownloadProgressUI {
-                                LoadingScreen(
-                                    message: services.bootstrapMessage,
-                                    status: services.bootstrapStatus,
-                                    progress: services.bootstrapProgress,
-                                    downloadedBytes: services.bootstrapDownloadedBytes,
-                                    totalBytes: services.bootstrapEstimatedTotalBytes
-                                )
-                            } else {
-                                StartupBusyView(
-                                    message: services.bootstrapMessage,
-                                    status: services.bootstrapStatus
-                                )
-                            }
+            if hasCompletedLaunchWordmark {
+                if services.isReady {
+                    Group {
+                        if !services.isLaunchCatalogPipelineComplete && services.bootstrapShowsDownloadProgressUI {
+                            LoadingScreen(
+                                message: services.bootstrapMessage,
+                                status: services.bootstrapStatus,
+                                progress: services.bootstrapProgress,
+                                downloadedBytes: services.bootstrapDownloadedBytes,
+                                totalBytes: services.bootstrapEstimatedTotalBytes
+                            )
+                        } else {
+                            mainContent
                         }
                     }
-                    .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
-                        guard services.brandSettings.hasCompletedBrandOnboarding else { return }
-                        guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
-                        await services.bootstrap()
+                } else {
+                    Color(uiColor: .systemBackground)
+                        .ignoresSafeArea()
+                        .overlay {
+                            if services.brandSettings.hasCompletedBrandOnboarding,
+                               !services.brandSettings.hasCompletedInitialAppBootstrap {
+                                if services.bootstrapShowsDownloadProgressUI {
+                                    LoadingScreen(
+                                        message: services.bootstrapMessage,
+                                        status: services.bootstrapStatus,
+                                        progress: services.bootstrapProgress,
+                                        downloadedBytes: services.bootstrapDownloadedBytes,
+                                        totalBytes: services.bootstrapEstimatedTotalBytes
+                                    )
+                                } else {
+                                    StartupBusyView(
+                                        message: services.bootstrapMessage,
+                                        status: services.bootstrapStatus
+                                    )
+                                }
+                            }
+                        }
+                        .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
+                            guard services.brandSettings.hasCompletedBrandOnboarding else { return }
+                            guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
+                            await services.bootstrap()
+                        }
+                }
+            } else {
+                LaunchWordmarkView {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        hasCompletedLaunchWordmark = true
                     }
+                }
             }
         }
         .environment(services)
@@ -342,6 +349,10 @@ struct RootView: View {
             }
         }
         .task {
+            if services.isReady {
+                await Task.yield()
+                await services.bootstrapCatalogInBackgroundIfNeeded()
+            }
             // Determine if splash should show (first launch or update)
             let lastShownVersion = UserDefaults.standard.string(forKey: splashLastVersionKey)
             let shouldShowSplash = lastShownVersion == nil || lastShownVersion != currentAppVersion

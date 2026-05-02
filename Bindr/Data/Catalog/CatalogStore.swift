@@ -97,6 +97,11 @@ final class CatalogStore: @unchecked Sendable {
             fetched_at REAL NOT NULL,
             PRIMARY KEY (brand, set_code)
         );
+        CREATE TABLE IF NOT EXISTS catalog_aux_blobs (
+            key TEXT PRIMARY KEY NOT NULL,
+            json BLOB NOT NULL,
+            fetched_at REAL NOT NULL
+        );
         """
         var err: UnsafeMutablePointer<CChar>?
         guard sqlite3_exec(db, ddl, nil, nil, &err) == SQLITE_OK else {
@@ -328,7 +333,13 @@ final class CatalogStore: @unchecked Sendable {
             let keys: [String]
             switch brand {
             case .pokemon:
-                keys = ["catalog_sets_sha256", "catalog_etag", "catalog_import_at"]
+                keys = [
+                    "catalog_sets_sha256",
+                    "catalog_etag",
+                    "catalog_import_at",
+                    "pokemon_national_dex_json",
+                    "pokemon_national_dex_etag",
+                ]
             case .onePiece:
                 keys = [
                     "onepiece_catalog_sets_sha256",
@@ -347,6 +358,14 @@ final class CatalogStore: @unchecked Sendable {
                 guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
                 key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                 _ = sqlite3_step(stmt)
+            }
+            if brand == .pokemon {
+                var auxStmt: OpaquePointer?
+                defer { sqlite3_finalize(auxStmt) }
+                let auxSQL = "DELETE FROM catalog_aux_blobs WHERE key = ?;"
+                guard sqlite3_prepare_v2(db, auxSQL, -1, &auxStmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                "pokemon_national_dex_json".withCString { _ = sqlite3_bind_text(auxStmt, 1, $0, -1, CatalogSQLite.transient) }
+                _ = sqlite3_step(auxStmt)
             }
         }
     }
@@ -730,6 +749,72 @@ final class CatalogStore: @unchecked Sendable {
             guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
             _ = sqlite3_bind_double(stmt, 1, Date().timeIntervalSince1970)
             key.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+            guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
+        }
+    }
+
+    // MARK: - Aux blobs (non-set metadata payloads)
+
+    func upsertAuxBlob(key: String, data: Data) throws {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = """
+            INSERT INTO catalog_aux_blobs(key, json, fetched_at) VALUES(?, ?, ?)
+            ON CONFLICT(key) DO UPDATE SET json = excluded.json, fetched_at = excluded.fetched_at;
+            """
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            if data.isEmpty {
+                _ = sqlite3_bind_blob(stmt, 2, nil, 0, CatalogSQLite.transient)
+            } else {
+                data.withUnsafeBytes { buf in
+                    _ = sqlite3_bind_blob(stmt, 2, buf.baseAddress, Int32(data.count), CatalogSQLite.transient)
+                }
+            }
+            _ = sqlite3_bind_double(stmt, 3, Date().timeIntervalSince1970)
+            guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
+        }
+    }
+
+    func auxBlob(key: String) -> Data? {
+        queue.sync {
+            guard let db else { return nil }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            guard sqlite3_prepare_v2(db, "SELECT json FROM catalog_aux_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                return nil
+            }
+            key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+            let n = sqlite3_column_bytes(stmt, 0)
+            guard let p = sqlite3_column_blob(stmt, 0) else { return nil }
+            return Data(bytes: p, count: Int(n))
+        }
+    }
+
+    func touchAuxBlobFetchedAt(key: String) throws {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = "UPDATE catalog_aux_blobs SET fetched_at = ? WHERE key = ?;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            _ = sqlite3_bind_double(stmt, 1, Date().timeIntervalSince1970)
+            key.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+            guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
+        }
+    }
+
+    func deleteAuxBlob(key: String) throws {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = "DELETE FROM catalog_aux_blobs WHERE key = ?;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
             guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
         }
     }

@@ -126,11 +126,16 @@ final class AppServices {
         // First launch after the daily 03:00 boundary: block app shell until pricing/trends are refreshed
         // and stored locally to avoid visible value changes after the user is already in the app.
         if !isLaunchCatalogPipelineComplete {
+            bootstrapMessage = "Updating Market data…"
+            bootstrapStatus = "Checking for updates…"
+            bootstrapProgress = 0
+            bootstrapDownloadedBytes = 0
+            bootstrapEstimatedTotalBytes = 0
             await primeLaunchCatalogFromLocalCache()
             let blockingTask = Task { @MainActor [weak self] in
                 guard let self else { return }
                 await self.runStartupCatalogPipeline(
-                    updateBootstrapProgressUI: false,
+                    updateBootstrapProgressUI: true,
                     includeDeferredLaunchServices: false
                 )
                 self.pendingLightBrowseTabEntry = true

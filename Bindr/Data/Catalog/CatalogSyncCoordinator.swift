@@ -55,6 +55,8 @@ private actor CatalogSyncProgressReporter {
     private var completedFiles = 0
     private var totalFiles = 0
     private var downloadedBytes: Int64 = 0
+    /// Number of completed payloads that actually transferred body bytes (excludes 304/unchanged checks).
+    private var completedBytePayloads = 0
     /// Only increases so the total size line does not shrink when the average shifts.
     private var peakEstimatedTotalBytes: Int64 = 0
     /// Never decreases so the bar does not move backward when phases add more planned work.
@@ -77,7 +79,11 @@ private actor CatalogSyncProgressReporter {
 
     func completeFile(byteCount: Int64 = 0) async {
         completedFiles += 1
-        downloadedBytes += max(0, byteCount)
+        let positiveBytes = max(0, byteCount)
+        downloadedBytes += positiveBytes
+        if positiveBytes > 0 {
+            completedBytePayloads += 1
+        }
         await emit()
     }
 
@@ -85,28 +91,23 @@ private actor CatalogSyncProgressReporter {
     private func emit() async {
         guard let handler else { return }
         let naiveEstimate: Int64
-        if completedFiles > 0, totalFiles > 0 {
-            let average = Double(downloadedBytes) / Double(completedFiles)
-            naiveEstimate = Int64(average * Double(totalFiles))
+        if completedBytePayloads > 0, totalFiles > 0 {
+            let averagePayloadSize = Double(downloadedBytes) / Double(completedBytePayloads)
+            naiveEstimate = Int64(averagePayloadSize * Double(totalFiles))
         } else {
             naiveEstimate = 0
         }
         peakEstimatedTotalBytes = max(peakEstimatedTotalBytes, naiveEstimate, downloadedBytes)
         let estimatedTotalBytes = peakEstimatedTotalBytes
 
-        let fileFraction: Double
-        if totalFiles > 0 {
-            fileFraction = min(max(Double(completedFiles) / Double(totalFiles), 0), 1)
-        } else {
-            fileFraction = 0
-        }
         let byteFraction: Double
         if estimatedTotalBytes > 0 {
             byteFraction = min(1, Double(downloadedBytes) / Double(estimatedTotalBytes))
         } else {
             byteFraction = 0
         }
-        let blended = max(fileFraction, byteFraction)
+        // Launch bar should represent transferred bytes, not "checks completed".
+        let blended = downloadedBytes > 0 ? byteFraction : 0
         peakFractionCompleted = max(peakFractionCompleted, blended)
 
         let snapshot = CatalogSyncProgressSnapshot(
@@ -126,6 +127,7 @@ private actor CatalogSyncProgressReporter {
 /// Downloads catalog + per-set pricing into `CatalogStore`. Compares `sets.json` SHA256 to avoid full re-import when unchanged.
 final class CatalogSyncCoordinator: @unchecked Sendable {
     static let shared = CatalogSyncCoordinator()
+    private let pokemonNationalDexAuxBlobKey = "pokemon_national_dex_json"
 
     private let session: URLSession
     private enum ConditionalJSONFetchResult {
@@ -181,6 +183,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                 try CatalogStore.shared.open()
                 await progress.setStatus("Checking card catalog…")
                 await syncCatalogIfNeeded(progress: progress)
+                await refreshPokemonNationalDexMetadata(store: CatalogStore.shared)
             } catch {
                 // Local catalog DB unavailable; still prefetch ONE PIECE below if enabled.
             }
@@ -200,6 +203,34 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             _ = await syncDailyBlobsIfNeeded(progress: progress, enabledBrands: enabledBrands)
         }
         await progress.setStatus("Finishing card setup…")
+    }
+
+    /// Keeps Pokémon `pokemon.json` cached in SQLite (`sync_meta`) so runtime reads are local-first.
+    /// Uses ETag validation to avoid re-downloading unchanged payloads.
+    private func refreshPokemonNationalDexMetadata(store: CatalogStore) async {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
+        let url = AppConfiguration.r2CatalogURL(path: "pokemon.json")
+        do {
+            var request = URLRequest(url: url)
+            if let prevEtag = store.meta("pokemon_national_dex_etag"), !prevEtag.isEmpty {
+                request.setValue(prevEtag, forHTTPHeaderField: "If-None-Match")
+            }
+            let (data, response) = try await session.data(for: request)
+            guard let http = response as? HTTPURLResponse else { return }
+            if http.statusCode == 304 {
+                try? store.touchAuxBlobFetchedAt(key: pokemonNationalDexAuxBlobKey)
+                return
+            }
+            guard (200...299).contains(http.statusCode), !data.isEmpty else { return }
+            // Validate shape before persisting so runtime decode remains predictable.
+            guard (try? JSONDecoder().decode([NationalDexPokemon].self, from: data)) != nil else { return }
+            try? store.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: data)
+            if let etag = http.value(forHTTPHeaderField: "ETag") ?? http.value(forHTTPHeaderField: "Etag") {
+                try? store.setMeta("pokemon_national_dex_etag", etag)
+            }
+        } catch {
+            // Keep the last successful local copy.
+        }
     }
 
     /// User-invoked settings action: checks per-set card JSON immediately (no 03:00 gate),

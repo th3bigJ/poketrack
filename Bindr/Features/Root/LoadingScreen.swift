@@ -1,5 +1,42 @@
 import SwiftUI
 
+/// Minimal launch animation: reveals "BINDR" one character at a time.
+struct LaunchWordmarkView: View {
+    var onComplete: () -> Void
+
+    @Environment(\.colorScheme) private var colorScheme
+    @State private var visibleCount = 0
+    @State private var didStart = false
+    private let fullWord = "BINDR"
+
+    private var displayedWord: String {
+        String(fullWord.prefix(visibleCount))
+    }
+
+    var body: some View {
+        ZStack {
+            Color(uiColor: .systemBackground)
+                .ignoresSafeArea()
+
+            Text(displayedWord)
+                .font(.custom("BebasNeue-Regular", size: 66))
+                .foregroundStyle(colorScheme == .dark ? .white.opacity(0.95) : .black.opacity(0.9))
+                .tracking(8)
+                .accessibilityLabel("Bindr")
+        }
+        .task {
+            guard !didStart else { return }
+            didStart = true
+            for index in 1...fullWord.count {
+                visibleCount = index
+                try? await Task.sleep(nanoseconds: 120_000_000)
+            }
+            try? await Task.sleep(nanoseconds: 180_000_000)
+            onComplete()
+        }
+    }
+}
+
 /// Indeterminate startup when the catalog is already local and no HTTP body bytes have been counted yet.
 struct StartupBusyView: View {
     let message: String

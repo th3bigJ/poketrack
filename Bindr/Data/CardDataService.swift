@@ -4,6 +4,7 @@ import Observation
 @Observable
 @MainActor
 final class CardDataService {
+    private let pokemonNationalDexAuxBlobKey = "pokemon_national_dex_json"
     private(set) var sets: [TCGSet] = []
     /// From R2 `pokemon.json` (see `nationalDexNumber`); sorted ascending when loaded.
     private(set) var nationalDexPokemon: [NationalDexPokemon] = []
@@ -67,15 +68,24 @@ final class CardDataService {
         }
     }
 
-    /// Loads `pokemon.json` next to `sets.json` under the catalog prefix. Falls back to bundled `pokemon.json` for previews/offline.
+    /// Loads Pokédex rows from SQLite first (synced from R2 by ``CatalogSyncCoordinator``).
+    /// Falls back to R2 for repair if local cache is missing, then stores it in SQLite; final fallback is bundled JSON.
     func loadNationalDexPokemon() async {
+        if let fromSQLite = loadNationalDexPokemonFromSQLite(), !fromSQLite.isEmpty {
+            nationalDexPokemon = fromSQLite
+            return
+        }
+
         let base = AppConfiguration.r2BaseURL
         if base.host != "invalid.local" {
             let url = AppConfiguration.r2CatalogURL(path: "pokemon.json")
             do {
                 let (data, _) = try await session.data(from: url)
                 let decoded = try JSONDecoder().decode([NationalDexPokemon].self, from: data)
-                nationalDexPokemon = decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+                let sorted = decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+                nationalDexPokemon = sorted
+                try? CatalogStore.shared.open()
+                try? CatalogStore.shared.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: data)
                 return
             } catch {
                 // Fall through to bundle.
@@ -87,6 +97,27 @@ final class CardDataService {
             nationalDexPokemon = decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
         } else {
             nationalDexPokemon = []
+        }
+    }
+
+    private func loadNationalDexPokemonFromSQLite() -> [NationalDexPokemon]? {
+        do {
+            try CatalogStore.shared.open()
+            let data: Data?
+            if let aux = CatalogStore.shared.auxBlob(key: pokemonNationalDexAuxBlobKey) {
+                data = aux
+            } else if let legacy = CatalogStore.shared.metaData(pokemonNationalDexAuxBlobKey) {
+                // One-time compatibility path: move old sync_meta text storage into aux BLOB storage.
+                try? CatalogStore.shared.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: legacy)
+                data = legacy
+            } else {
+                data = nil
+            }
+            guard let data else { return nil }
+            let decoded = try JSONDecoder().decode([NationalDexPokemon].self, from: data)
+            return decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+        } catch {
+            return nil
         }
     }
 
