@@ -109,6 +109,21 @@ struct CardGridCell: View {
         gridOptions.showOwned && isOwned
     }
 
+    private var wishlistBorderColor: Color {
+        // Keep aligned with the wishlist action tint used across Browse.
+        Color(red: 0.99, green: 0.72, blue: 0.22)
+    }
+
+    private var cardBorderColor: Color {
+        if isOwned { return services.theme.accentColor }
+        if isWishlisted { return wishlistBorderColor }
+        return tileBorder
+    }
+
+    private var cardBorderWidth: CGFloat {
+        (isOwned || isWishlisted) ? 1.8 : 1.2
+    }
+
     private var cardCornerRadius: CGFloat {
         showsFooter ? 18 : 0
     }
@@ -205,10 +220,7 @@ struct CardGridCell: View {
         .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
-                .stroke(
-                    showsOwnedUI ? services.theme.accentColor : tileBorder,
-                    lineWidth: showsOwnedUI ? 1.8 : 1.2
-                )
+                .stroke(cardBorderColor, lineWidth: cardBorderWidth)
         }
     }
 
@@ -1535,6 +1547,8 @@ struct BrowseView: View {
             catalogDisplayedCards = []
             catalogDisplayedRows = []
             catalogNextIndex = 0
+            // Reset infinite-scroll latch when switching feed modes after a filter/query change.
+            lastAutoLoadRowCount = 0
             refreshBrowseFeedSnapshot(usingCatalogFeed: false)
             syncFilterMenuState(usingCatalogFeed: false)
             return
@@ -1556,6 +1570,9 @@ struct BrowseView: View {
         guard isViewVisible else { return }
         catalogDisplayedRows = buildBrowseRows(from: catalogDisplayedCards)
         catalogNextIndex = initialEnd
+        // New filtered dataset can have the same initial count as the previous one (e.g. 36).
+        // Clear the latch so bottom-row onAppear can request the next page.
+        lastAutoLoadRowCount = 0
         refreshBrowseFeedSnapshot(usingCatalogFeed: true)
         syncFilterMenuState(usingCatalogFeed: true)
     }
