@@ -1881,8 +1881,11 @@ struct BrowseView: View {
     }
 
     private func isCommonOrUncommon(_ rarity: String?) -> Bool {
-        let normalized = rarity?.lowercased() ?? ""
-        return normalized.contains("common") || normalized.contains("uncommon")
+        let normalized = rarity?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
+        let lettersOnly = String(normalized.unicodeScalars.filter(CharacterSet.letters.contains))
+        return normalized.contains("common")
+            || normalized.contains("uncommon")
+            || lettersOnly == "rare"
     }
 
     private func trimmedValue(_ value: String?) -> String {
@@ -4249,8 +4252,11 @@ private func browseMarketPriceUSD(for entry: CardPricingEntry?) -> Double? {
 }
 
 private func isCommonOrUncommon(_ rarity: String?) -> Bool {
-    let normalized = rarity?.lowercased() ?? ""
-    return normalized.contains("common") || normalized.contains("uncommon")
+    let normalized = rarity?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
+    let lettersOnly = String(normalized.unicodeScalars.filter(CharacterSet.letters.contains))
+    return normalized.contains("common")
+        || normalized.contains("uncommon")
+        || lettersOnly == "rare"
 }
 
 private func cardMatchesPokemonSubtypeFilters(_ card: Card, selectedSubtypes: Set<String>) -> Bool {

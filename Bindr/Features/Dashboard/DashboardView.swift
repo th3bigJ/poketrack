@@ -1342,7 +1342,7 @@ struct DashboardView: View {
         let setsForBrand = (try? CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
         var setTotalsByCode: [String: (name: String, total: Int)] = [:]
         for set in setsForBrand {
-            let total = set.cardCountOfficial ?? set.cardCountTotal ?? 0
+            let total = set.cardCountTotal ?? set.cardCountOfficial ?? 0
             guard total > 0 else { continue }
             setTotalsByCode[set.setCode] = (set.name, total)
         }
