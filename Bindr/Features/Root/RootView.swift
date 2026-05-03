@@ -93,8 +93,56 @@ struct RootView: View {
 
     // MARK: - Splash Flow
     @State private var showSplash = false
-    @State private var hasCompletedLaunchWordmark = false
+    /// Flips once the BINDR letter-reveal stagger has played + breathing
+    /// pulse has started. Distinct from "ready to dismiss" — the wordmark
+    /// stays on screen until the catalog pipeline is also done so we never
+    /// flash dashboard between the wordmark and the download UI.
+    @State private var hasRevealedLaunchWordmark = false
     private let splashLastVersionKey = "bindr_splash_last_shown_version"
+
+    /// Single gate for tearing the launch surface down. We require:
+    ///  - the BINDR reveal animation has played,
+    ///  - the services layer is initialized,
+    ///  - the launch catalog pipeline (returning-user daily refresh, if any)
+    ///    has completed.
+    /// This collapses the previous two-phase "wordmark → maybe LoadingScreen"
+    /// flow into a single fade so the dashboard never appears mid-launch.
+    private var isLaunchSequenceComplete: Bool {
+        hasRevealedLaunchWordmark
+            && services.isReady
+            && services.isLaunchCatalogPipelineComplete
+    }
+
+    private var launchProgressState: LaunchProgressState? {
+        // Don't render progress under the wordmark for brand-new users — that
+        // path goes through the brand-onboarding sheet, not the launch
+        // refresh pipeline.
+        guard services.isReady, !services.isLaunchCatalogPipelineComplete else { return nil }
+        return LaunchProgressState(
+            message: services.bootstrapMessage,
+            status: services.bootstrapStatus,
+            fraction: services.bootstrapProgress,
+            downloadedBytes: services.bootstrapDownloadedBytes,
+            totalBytes: services.bootstrapEstimatedTotalBytes,
+            hasByteProgress: services.bootstrapShowsDownloadProgressUI
+        )
+    }
+
+    /// First-launch (post-brand-onboarding) progress block. Shares the
+    /// wordmark + progress visual with the returning-user path so the launch
+    /// surface looks consistent across cold starts.
+    private var brandOnboardingProgressState: LaunchProgressState? {
+        guard services.brandSettings.hasCompletedBrandOnboarding,
+              !services.brandSettings.hasCompletedInitialAppBootstrap else { return nil }
+        return LaunchProgressState(
+            message: services.bootstrapMessage,
+            status: services.bootstrapStatus,
+            fraction: services.bootstrapProgress,
+            downloadedBytes: services.bootstrapDownloadedBytes,
+            totalBytes: services.bootstrapEstimatedTotalBytes,
+            hasByteProgress: services.bootstrapShowsDownloadProgressUI
+        )
+    }
 
     /// True when search has pushed into a detail view — hide the floating `UniversalSearchBar` (detail uses system nav, same as Browse Pokémon).
     private var isSearchDetailActive: Bool {
@@ -244,57 +292,42 @@ struct RootView: View {
 
     var body: some View {
         Group {
-            if hasCompletedLaunchWordmark {
-                if services.isReady {
-                    Group {
-                        if !services.isLaunchCatalogPipelineComplete && services.bootstrapShowsDownloadProgressUI {
-                            LoadingScreen(
-                                message: services.bootstrapMessage,
-                                status: services.bootstrapStatus,
-                                progress: services.bootstrapProgress,
-                                downloadedBytes: services.bootstrapDownloadedBytes,
-                                totalBytes: services.bootstrapEstimatedTotalBytes
-                            )
-                        } else {
-                            mainContent
-                        }
+            if isLaunchSequenceComplete {
+                // Dashboard slides up under a fade so the eye reads it as one
+                // continuous launch transition rather than a hard cut.
+                mainContent
+                    .transition(.opacity)
+            } else if services.isReady {
+                // Returning-user path: wordmark stays put, progress block fades
+                // in beneath it the moment the daily refresh starts work.
+                LaunchWordmarkView(
+                    progress: launchProgressState,
+                    onRevealComplete: {
+                        hasRevealedLaunchWordmark = true
                     }
-                } else {
-                    Color(uiColor: .systemBackground)
-                        .ignoresSafeArea()
-                        .overlay {
-                            if services.brandSettings.hasCompletedBrandOnboarding,
-                               !services.brandSettings.hasCompletedInitialAppBootstrap {
-                                if services.bootstrapShowsDownloadProgressUI {
-                                    LoadingScreen(
-                                        message: services.bootstrapMessage,
-                                        status: services.bootstrapStatus,
-                                        progress: services.bootstrapProgress,
-                                        downloadedBytes: services.bootstrapDownloadedBytes,
-                                        totalBytes: services.bootstrapEstimatedTotalBytes
-                                    )
-                                } else {
-                                    StartupBusyView(
-                                        message: services.bootstrapMessage,
-                                        status: services.bootstrapStatus
-                                    )
-                                }
-                            }
-                        }
-                        .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
-                            guard services.brandSettings.hasCompletedBrandOnboarding else { return }
-                            guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
-                            await services.bootstrap()
-                        }
-                }
+                )
+                .transition(.opacity)
             } else {
-                LaunchWordmarkView {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        hasCompletedLaunchWordmark = true
-                    }
+                // First-launch / brand-onboarding path is unchanged: keep
+                // showing the wordmark until services come online (the
+                // bootstrap progress UI takes over once onboarding is done).
+                ZStack {
+                    LaunchWordmarkView(
+                        progress: brandOnboardingProgressState,
+                        onRevealComplete: {
+                            hasRevealedLaunchWordmark = true
+                        }
+                    )
                 }
+                .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
+                    guard services.brandSettings.hasCompletedBrandOnboarding else { return }
+                    guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
+                    await services.bootstrap()
+                }
+                .transition(.opacity)
             }
         }
+        .animation(.easeInOut(duration: 0.35), value: isLaunchSequenceComplete)
         .environment(services)
         .environmentObject(chromeScroll)
         .environment(\.presentCard, { card, list in
@@ -349,15 +382,28 @@ struct RootView: View {
             }
         }
         .task {
-            if services.isReady {
-                await Task.yield()
-                await services.bootstrapCatalogInBackgroundIfNeeded()
-            }
-            // Determine if splash should show (first launch or update)
+            // ── Cheap, immediate work ─────────────────────────────────────
+            // Determine splash — just a UserDefaults read, safe to run now.
             let lastShownVersion = UserDefaults.standard.string(forKey: splashLastVersionKey)
             let shouldShowSplash = lastShownVersion == nil || lastShownVersion != currentAppVersion
             if shouldShowSplash {
                 showSplash = true
+            }
+
+            // ── Defer all heavy work until the launch animation finishes ──
+            // bootstrapCatalogInBackgroundIfNeeded does SQLite + search index
+            // work that can hitch the main thread right when 'R' appears.
+            // We poll hasRevealedLaunchWordmark (flips ~1.8s after launch) so
+            // the BINDR letters can settle before we kick off the catalog
+            // pipeline. The wordmark itself stays mounted *after* this — the
+            // dismiss is gated on `isLaunchSequenceComplete` in the body.
+            while !hasRevealedLaunchWordmark {
+                try? await Task.sleep(nanoseconds: 50_000_000) // poll every 50ms
+            }
+            await Task.yield()
+
+            if services.isReady {
+                await services.bootstrapCatalogInBackgroundIfNeeded()
             }
             await services.socialPush.updateRegistrationState()
             // Cold-launch tap: if the AppDelegate's `didReceive` fired

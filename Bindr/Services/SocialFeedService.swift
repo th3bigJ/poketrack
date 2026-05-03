@@ -644,6 +644,73 @@ final class SocialFeedService {
         ) as EmptyResponse
     }
 
+    /// Deletes a shared content post from Supabase and removes it from the local feed.
+    func deleteSharedContent(id: UUID) async throws {
+        let path = "/rest/v1/shared_content?id=eq.\(id.uuidString)"
+        let _: EmptyResponse = try await execute(
+            path: path,
+            method: "DELETE",
+            accessToken: try signedInAccessToken(),
+            extraHeaders: ["Prefer": "return=minimal"]
+        )
+        
+        // Remove from local items
+        items.removeAll { $0.id == id.uuidString || $0.content?.id == id }
+    }
+
+    /// Updates the description/caption of a shared content post.
+    func updateSharedContent(id: UUID, description: String) async throws {
+        let path = "/rest/v1/shared_content?id=eq.\(id.uuidString)"
+        let body = ["description": description]
+        let _: EmptyResponse = try await execute(
+            path: path,
+            method: "PATCH",
+            accessToken: try signedInAccessToken(),
+            body: body,
+            extraHeaders: ["Prefer": "return=minimal"]
+        )
+        
+        // Update local items
+        for index in items.indices {
+            if items[index].content?.id == id {
+                let oldItem = items[index]
+                let oldContent = oldItem.content!
+                let newContent = FeedContentSummary(
+                    id: oldContent.id,
+                    ownerID: oldContent.ownerID,
+                    title: oldContent.title,
+                    contentType: oldContent.contentType,
+                    description: description,
+                    cardCount: oldContent.cardCount,
+                    brand: oldContent.brand
+                )
+                
+                items[index] = FeedItem(
+                    id: oldItem.id,
+                    type: oldItem.type,
+                    createdAt: oldItem.createdAt,
+                    actor: oldItem.actor,
+                    content: newContent,
+                    voteType: oldItem.voteType,
+                    commentBody: oldItem.commentBody,
+                    friendshipID: oldItem.friendshipID,
+                    wishlistCardID: oldItem.wishlistCardID,
+                    pullCardID: oldItem.pullCardID,
+                    pullCardName: oldItem.pullCardName,
+                    pullSetName: oldItem.pullSetName,
+                    pullValue: oldItem.pullValue,
+                    pullRarity: oldItem.pullRarity,
+                    digestCollectionCount: oldItem.digestCollectionCount,
+                    digestWishlistCount: oldItem.digestWishlistCount,
+                    thumbnails: oldItem.thumbnails,
+                    binderColour: oldItem.binderColour,
+                    binderTexture: oldItem.binderTexture,
+                    binderSeed: oldItem.binderSeed
+                )
+            }
+        }
+    }
+
     private func flattenComments(
         parentID: UUID?,
         depth: Int,

@@ -24,6 +24,10 @@ final class SocialProfileService {
         }
     }
 
+    private(set) var currentProfile: SocialProfile?
+    private(set) var isBusy = false
+    private(set) var lastError: String?
+
     private struct UpsertProfileRequest: Encodable {
         let id: UUID
         let appleUserID: String

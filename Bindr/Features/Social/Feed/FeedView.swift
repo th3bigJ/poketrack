@@ -778,7 +778,7 @@ private struct SocialAlertsPreviewView: View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
             .tracking(0.88)
-            .foregroundStyle(Color.secondary.opacity(0.3))
+            .foregroundStyle(Color.secondary.opacity(0.7))
     }
 
     private func emptyAlert(_ text: String) -> some View {

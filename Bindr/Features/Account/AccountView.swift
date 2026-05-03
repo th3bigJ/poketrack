@@ -50,10 +50,12 @@ struct SettingsView: View {
             }
             Button("Delete downloaded data", role: .destructive) {
                 services.brandSettings.setEnabled(brand, isOn: false)
-                do {
-                    try BrandCatalogMaintenance.purgeLocalData(for: brand)
-                } catch {
-                    // Best-effort; UI still disables the brand.
+                Task {
+                    do {
+                        try await BrandCatalogMaintenance.purgeLocalData(for: brand)
+                    } catch {
+                        // Best-effort; UI still disables the brand.
+                    }
                 }
                 services.pricing.clearSetPricingMemoryCache()
                 if services.brandSettings.enabledBrands.contains(.pokemon) {

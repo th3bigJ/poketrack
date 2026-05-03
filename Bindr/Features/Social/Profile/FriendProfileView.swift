@@ -39,7 +39,6 @@ struct FriendProfileView: View {
                     VStack(spacing: 18) {
                         profileHeader(profile)
                         favoritesSection(profile)
-                        relationshipSection(profile)
                         tabPicker
                         tabContent(profile)
                     }
@@ -90,11 +89,15 @@ struct FriendProfileView: View {
                         .font(.system(size: 12))
                         .foregroundStyle(Color.secondary)
                     let roleTitles = roleTitles(for: profile)
-                    if !roleTitles.isEmpty {
+                    // Roles + relationship status share one wrapping row so a
+                    // ✓ Friends / Blocked / Pending pill reads as part of the
+                    // identity block rather than living in its own section.
+                    if !roleTitles.isEmpty || hasRelationshipStatusPill {
                         HStack(spacing: 6) {
                             ForEach(roleTitles, id: \.self) { title in
                                 rolePill(title, accent: accent)
                             }
+                            relationshipStatusPill
                         }
                     }
                 }
@@ -109,11 +112,21 @@ struct FriendProfileView: View {
                     .foregroundStyle(Color.secondary)
             }
 
+            // Primary CTA only appears for *actionable* states (Add Friend /
+            // Accept request). Passive states like .friends or .blocked are
+            // communicated by the status pill above; destructive actions live
+            // in the navbar ⋯ menu.
+            primaryRelationshipAction(for: profile.id)
+
             HStack(spacing: 0) {
-                statColumn(value: "\(profile.collectionCardCount ?? 0)", label: "Cards")
-                statColumn(value: "\(profile.collectionDeckCount ?? 0)", label: "Decks")
-                statColumn(value: "\(profile.collectionBinderCount ?? 0)", label: "Binders")
-                statColumn(value: "\(profile.friendCount ?? 0)", label: "Friends")
+                let cardCount = profile.collectionCardCount ?? 0
+                let deckCount = profile.collectionDeckCount ?? 0
+                let binderCount = profile.collectionBinderCount ?? 0
+                let friendCount = profile.friendCount ?? 0
+                statColumn(value: "\(cardCount)", label: cardCount == 1 ? "Card" : "Cards")
+                statColumn(value: "\(deckCount)", label: deckCount == 1 ? "Deck" : "Decks")
+                statColumn(value: "\(binderCount)", label: binderCount == 1 ? "Binder" : "Binders")
+                statColumn(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
             }
             .padding(.vertical, 12)
             .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -168,7 +181,8 @@ struct FriendProfileView: View {
     /// back to the original gold for friends who haven't picked one. Threaded
     /// through everywhere the view previously hard-coded `#E8B84B`. Reads
     /// from `profile` so helper subviews (`rolePill`, `infoRow`,
-    /// `actionButton`, etc.) can pick it up without each one taking an arg.
+    /// `primaryRelationshipAction`, etc.) can pick it up without each one
+    /// taking an arg.
     private var accentColor: Color {
         if let hex = profile?.avatarBackgroundColor, !hex.isEmpty {
             return Color(hex: hex)
@@ -185,59 +199,146 @@ struct FriendProfileView: View {
 
     @ViewBuilder
     private func favoritesSection(_ profile: SocialProfile) -> some View {
-        if profile.favoritePokemonName != nil || profile.favoriteCardName != nil || profile.favoriteDeckArchetype != nil {
+        // Favourite Pokémon is already the profile avatar and favourite card
+        // is already the tilted hero peek — re-listing them as labelled rows
+        // is pure duplication. Only the favourite deck has no other place to
+        // live, so this section now only renders when there's a deck to show.
+        if let deck = profile.favoriteDeckArchetype, !deck.isEmpty {
             VStack(alignment: .leading, spacing: 10) {
-                sectionLabel("FAVORITES")
-                if let name = profile.favoritePokemonName {
-                    infoRow(icon: "star.fill", label: "Pokémon", value: name)
-                }
-                if let name = profile.favoriteCardName {
-                    infoRow(icon: "rectangle.portrait.fill", label: "Card", value: name)
-                }
-                if let deck = profile.favoriteDeckArchetype {
-                    infoRow(icon: "square.stack.3d.up.fill", label: "Deck", value: deck)
-                }
+                sectionLabel("FAVORITE DECK")
+                infoRow(icon: "square.stack.3d.up.fill", label: "Deck", value: deck)
             }
             .padding(.horizontal, 16)
         }
     }
 
-    private func relationshipSection(_ profile: SocialProfile) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            sectionLabel("FRIENDSHIP")
-            HStack(spacing: 12) {
-                Text(relationshipLabel)
-                    .font(.system(size: 13))
-                    .foregroundStyle(Color.secondary)
-                Spacer()
-                actionButton(for: profile.id)
-            }
-            .padding(12)
-            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
-            }
+    /// `true` when `relationshipStatusPill` will actually render a pill
+    /// (used by the role row to know whether to add itself to the layout).
+    private var hasRelationshipStatusPill: Bool {
+        switch relationship {
+        case .none: return false
+        case .friends, .pendingOutgoing, .pendingIncoming, .blocked: return true
         }
-        .padding(.horizontal, 16)
+    }
+
+    /// Compact passive indicator that lives next to the role pills. Renders
+    /// nothing for `.none` so the role row doesn't show an empty trailing pill.
+    @ViewBuilder
+    private var relationshipStatusPill: some View {
+        switch relationship {
+        case .friends:
+            statusPill(text: "Friends", systemImage: "checkmark", color: Color(hex: "52C97C"))
+        case .pendingOutgoing:
+            statusPill(text: "Pending", systemImage: "clock", color: Color.secondary)
+        case .pendingIncoming:
+            statusPill(text: "Wants to connect", systemImage: "person.crop.circle.badge.plus", color: accentColor)
+        case .blocked:
+            statusPill(text: "Blocked", systemImage: "hand.raised.fill", color: Color(hex: "E05252"))
+        case .none:
+            EmptyView()
+        }
+    }
+
+    private func statusPill(text: String, systemImage: String, color: Color) -> some View {
+        Label(text, systemImage: systemImage)
+            .font(.system(size: 10, weight: .bold))
+            .tracking(0.3)
+            .foregroundStyle(color)
+            .padding(.horizontal, 7)
+            .padding(.vertical, 3)
+            .background(color.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    .stroke(color.opacity(0.22), lineWidth: 1)
+            }
+    }
+
+    /// Renders a primary action (Add Friend / Accept + Decline) below the bio
+    /// only when the relationship needs the user to do something. Friend /
+    /// blocked / outgoing-pending states render nothing here; they're
+    /// communicated by `relationshipStatusPill` instead.
+    @ViewBuilder
+    private func primaryRelationshipAction(for userID: UUID) -> some View {
+        switch relationship {
+        case .none:
+            Button {
+                Task { await sendRequest(to: userID) }
+            } label: {
+                Label("Add Friend", systemImage: "person.crop.circle.badge.plus")
+                    .font(.system(size: 14, weight: .bold))
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 11)
+                    .background(accentColor, in: Capsule())
+                    .foregroundStyle(.black)
+            }
+            .buttonStyle(.plain)
+            .disabled(isMutating)
+        case .pendingIncoming(let friendshipID):
+            HStack(spacing: 10) {
+                Button {
+                    Task { await respond(to: friendshipID, accepted: true) }
+                } label: {
+                    Text("Accept")
+                        .font(.system(size: 14, weight: .bold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 11)
+                        .background(accentColor, in: Capsule())
+                        .foregroundStyle(.black)
+                }
+                .buttonStyle(.plain)
+                .disabled(isMutating)
+                Button {
+                    Task { await respond(to: friendshipID, accepted: false) }
+                } label: {
+                    Text("Decline")
+                        .font(.system(size: 14, weight: .semibold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 11)
+                        .background(Color(uiColor: .tertiarySystemBackground), in: Capsule())
+                        .foregroundStyle(.primary)
+                        .overlay {
+                            Capsule().stroke(Color.primary.opacity(0.12), lineWidth: 1)
+                        }
+                }
+                .buttonStyle(.plain)
+                .disabled(isMutating)
+            }
+        case .friends, .pendingOutgoing, .blocked:
+            EmptyView()
+        }
+    }
+
+    /// Title-cased label for the sub-tabs. Driven off the `ProfileTab` enum's
+    /// `rawValue` so adding a new tab automatically picks up the formatting.
+    private func tabTitle(_ tab: ProfileTab) -> String {
+        tab.rawValue.prefix(1).uppercased() + tab.rawValue.dropFirst()
     }
 
     private var tabPicker: some View {
-        HStack(spacing: 8) {
+        // Equal-width segmented bar that mirrors the top-level Feed/Friends/
+        // Profile picker treatment: Title Case, accent-filled active pill,
+        // primary-colour inactive text so contrast holds in light mode.
+        HStack(spacing: 0) {
             ForEach(ProfileTab.allCases, id: \.self) { tab in
                 Button {
+                    Haptics.selectionChanged()
                     selectedTab = tab
                 } label: {
-                    Text(tab.rawValue)
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(selectedTab == tab ? Color.white : Color.secondary)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 6)
+                    Text(tabTitle(tab))
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(selectedTab == tab ? Color.white : Color.primary.opacity(0.7))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 9)
                         .background(selectedTab == tab ? accentColor : .clear, in: Capsule())
+                        .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
             }
-            Spacer()
+        }
+        .padding(4)
+        .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
+        .overlay {
+            Capsule().stroke(Color.primary.opacity(0.06), lineWidth: 1)
         }
         .padding(.horizontal, 16)
     }
@@ -286,7 +387,7 @@ struct FriendProfileView: View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
             .tracking(0.88)
-            .foregroundStyle(Color.secondary.opacity(0.3))
+            .foregroundStyle(Color.secondary.opacity(0.7))
     }
 
     private func rolePill(_ title: String, accent: Color? = nil) -> some View {
@@ -313,7 +414,7 @@ struct FriendProfileView: View {
                 .minimumScaleFactor(0.65)
             Text(label)
                 .font(.system(size: 10))
-                .foregroundStyle(Color.secondary.opacity(0.3))
+                .foregroundStyle(Color.secondary.opacity(0.7))
         }
         .frame(maxWidth: .infinity)
     }
@@ -332,7 +433,7 @@ struct FriendProfileView: View {
                 Text(label)
                     .font(.system(size: 10, weight: .bold))
                     .tracking(0.4)
-                    .foregroundStyle(Color.secondary.opacity(0.3))
+                    .foregroundStyle(Color.secondary.opacity(0.7))
                 Text(value)
                     .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.primary)
@@ -359,54 +460,6 @@ struct FriendProfileView: View {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .stroke(Color.primary.opacity(0.09), lineWidth: 1)
             }
-    }
-
-    @ViewBuilder
-    private func actionButton(for userID: UUID) -> some View {
-        switch relationship {
-        case .none:
-            Button("Add Friend") {
-                Task { await sendRequest(to: userID) }
-            }
-            .font(.system(size: 12, weight: .bold))
-            .foregroundStyle(.black)
-            .padding(.horizontal, 14)
-            .padding(.vertical, 8)
-            .background(accentColor, in: Capsule())
-            .disabled(isMutating)
-        case .friends:
-            Label("Friends", systemImage: "checkmark")
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color(hex: "52C97C"))
-        case .pendingOutgoing:
-            Label("Pending", systemImage: "clock")
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color.secondary.opacity(0.45))
-        case .pendingIncoming(let friendshipID):
-            Button("Accept") {
-                Task { await respond(to: friendshipID, accepted: true) }
-            }
-            .font(.system(size: 12, weight: .bold))
-            .foregroundStyle(.black)
-            .padding(.horizontal, 14)
-            .padding(.vertical, 8)
-            .background(accentColor, in: Capsule())
-            .disabled(isMutating)
-        case .blocked:
-            Label("Blocked", systemImage: "hand.raised.fill")
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color(hex: "E05252"))
-        }
-    }
-
-    private var relationshipLabel: String {
-        switch relationship {
-        case .none: return "Not connected"
-        case .pendingIncoming: return "Requested you"
-        case .pendingOutgoing: return "Request sent"
-        case .friends: return "Friends"
-        case .blocked: return "Blocked"
-        }
     }
 
     private func roleTitles(for profile: SocialProfile) -> [String] {

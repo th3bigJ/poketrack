@@ -8,6 +8,7 @@ struct DecksRootView: View {
     @Query(sort: \Deck.createdAt, order: .reverse) private var decks: [Deck]
 
     @State private var showCreateSheet = false
+    @State private var showImportSheet = false
     @State private var showPaywall = false
     @State private var deckToDelete: Deck?
     @State private var showDeleteConfirm = false
@@ -39,6 +40,10 @@ struct DecksRootView: View {
         .sheet(isPresented: $showCreateSheet) {
             CreateDeckSheet()
         }
+        .sheet(isPresented: $showImportSheet) {
+            ImportPTCGLSheet()
+                .environment(services)
+        }
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
                 .environment(services)
@@ -67,8 +72,22 @@ struct DecksRootView: View {
             } description: {
                 Text("Build your first deck.")
             } actions: {
-                Button("Create a Deck") { handleCreateTap() }
-                    .buttonStyle(.borderedProminent)
+                Menu {
+                    Button { handleCreateTap() } label: {
+                        Label("Create Manually", systemImage: "pencil")
+                    }
+                    Button { handleImportTap() } label: {
+                        Label("Import from TCG Live", systemImage: "square.and.arrow.down")
+                    }
+                } label: {
+                    Text("New Deck")
+                        .font(.headline)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 12)
+                        .background(Color.accentColor)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+                }
             }
             .frame(minHeight: 300)
         }
@@ -81,8 +100,22 @@ struct DecksRootView: View {
             } description: {
                 Text("Create a \(activeBrand.displayTitle) deck.")
             } actions: {
-                Button("Create a Deck") { handleCreateTap() }
-                    .buttonStyle(.borderedProminent)
+                Menu {
+                    Button { handleCreateTap() } label: {
+                        Label("Create Manually", systemImage: "pencil")
+                    }
+                    Button { handleImportTap() } label: {
+                        Label("Import from TCG Live", systemImage: "square.and.arrow.down")
+                    }
+                } label: {
+                    Text("New Deck")
+                        .font(.headline)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 12)
+                        .background(Color.accentColor)
+                        .foregroundStyle(.white)
+                        .clipShape(Capsule())
+                }
             }
             .frame(minHeight: 300)
         }
@@ -98,6 +131,14 @@ struct DecksRootView: View {
                             .padding(.vertical, 10)
                     }
                     .buttonStyle(.plain)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button(role: .destructive) {
+                            deckToDelete = deck
+                            showDeleteConfirm = true
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
                     .contextMenu {
                         Button(role: .destructive) {
                             deckToDelete = deck
@@ -128,10 +169,21 @@ struct DecksRootView: View {
                 }
 
                 Spacer(minLength: 0)
-                ChromeGlassCircleButton(accessibilityLabel: "Create Deck") { handleCreateTap() } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
+                
+                Menu {
+                    Button { handleCreateTap() } label: {
+                        Label("Create Manually", systemImage: "pencil")
+                    }
+                    Button { handleImportTap() } label: {
+                        Label("Import from TCG Live", systemImage: "square.and.arrow.down")
+                    }
+                } label: {
+                    ChromeGlassCircleButton(accessibilityLabel: "New Deck", action: {}) {
+                        Image(systemName: "plus")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
+                    .allowsHitTesting(false) // Let the Menu handle the tap
                 }
             }
         }
@@ -144,6 +196,14 @@ struct DecksRootView: View {
             showPaywall = true
         } else {
             showCreateSheet = true
+        }
+    }
+
+    private func handleImportTap() {
+        if !services.store.isPremium && visibleDecks.count >= 1 {
+            showPaywall = true
+        } else {
+            showImportSheet = true
         }
     }
 }

@@ -359,12 +359,7 @@ final class PricingService {
 
     private func loadSetHistoryMap(setCode: String, catalogBrand: TCGBrand) async -> [String: [String: Any]] {
         let cacheKey = Self.historyTrendsCacheKey(setCode: setCode, catalogBrand: catalogBrand)
-        // Move the synchronous SQLite queue.sync call off the main actor so it doesn't block the UI
-        // or serialise concurrent card detail views behind each other during catalog sync.
-        let blob = await Task.detached(priority: .userInitiated) {
-            try? CatalogStore.shared.open()
-            return CatalogStore.shared.fetchPriceHistoryData(setCode: setCode, brand: catalogBrand)
-        }.value
+        let blob = await CatalogStore.shared.fetchPriceHistoryData(setCode: setCode, brand: catalogBrand)
         if let blob,
            let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {
             let typed = root.compactMapValues { $0 as? [String: Any] }
@@ -401,11 +396,7 @@ final class PricingService {
 
     private func loadSetTrendsMap(setCode: String, catalogBrand: TCGBrand) async -> [String: [String: Any]] {
         let cacheKey = Self.historyTrendsCacheKey(setCode: setCode, catalogBrand: catalogBrand)
-        // Move the synchronous SQLite queue.sync call off the main actor so it doesn't block the UI.
-        let blob = await Task.detached(priority: .userInitiated) {
-            try? CatalogStore.shared.open()
-            return CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: catalogBrand)
-        }.value
+        let blob = await CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: catalogBrand)
         if let blob,
            let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {
             let typed = root.compactMapValues { $0 as? [String: Any] }
@@ -511,11 +502,10 @@ final class PricingService {
             pricingCache.removeValue(forKey: key)
         }
 
-        // Local reads: SQLite is the catalog runtime source of truth (sync fills this). Legacy disk JSON may exist from older builds.
+        // 1. Local reads: SQLite is the catalog runtime source of truth (sync fills this). Legacy disk JSON may exist from older builds.
         if !forceNetwork {
-            try? CatalogStore.shared.open()
             let catalogBrand = Self.pricingCatalogBrand(for: card)
-            if let blob = CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: catalogBrand),
+            if let blob = await CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: catalogBrand),
                let map = Self.decodePricingMap(from: blob) {
                 pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
                 return map
@@ -524,10 +514,9 @@ final class PricingService {
                 pricingCache[key] = (disk, Date().addingTimeInterval(cacheTTL))
                 return disk
             }
-            return [:]
         }
 
-        // Explicit refresh: fetch R2, upsert SQLite + legacy disk cache, then return.
+        // 2. Explicit refresh: fetch R2, upsert SQLite + legacy disk cache, then return.
         let base = AppConfiguration.r2BaseURL
         if base.host != "invalid.local" {
             switch Self.pricingCatalogBrand(for: card) {
@@ -537,8 +526,7 @@ final class PricingService {
                     if let (map, data) = await fetchPricingMapAndDataIfOK(from: url) {
                         pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
                         saveDiskCache(setCode: key, data: data)
-                        try? CatalogStore.shared.open()
-                        try? CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .onePiece)
+                        try? await CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .onePiece)
                         return map
                     }
                 }
@@ -548,17 +536,16 @@ final class PricingService {
                     if let (map, data) = await fetchPricingMapAndDataIfOK(from: url) {
                         pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
                         saveDiskCache(setCode: key, data: data)
-                        try? CatalogStore.shared.open()
-                        try? CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .pokemon)
+                        try? await CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .pokemon)
                         return map
                     }
                 }
             }
         }
 
-        try? CatalogStore.shared.open()
+        // 3. Final fallback: try local one last time (maybe network failed but we have old data).
         let catalogBrand = Self.pricingCatalogBrand(for: card)
-        if let blob = CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: catalogBrand),
+        if let blob = await CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: catalogBrand),
            let map = Self.decodePricingMap(from: blob) {
             pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
             return map

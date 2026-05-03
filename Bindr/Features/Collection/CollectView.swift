@@ -151,7 +151,7 @@ struct CollectView: View {
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
             services.setupWishlist(modelContext: modelContext)
-            services.sealedProducts.loadFromLocalIfAvailable()
+            Task { await services.sealedProducts.loadFromLocalIfAvailable() }
         }
         .task {
             if services.sealedProducts.products.isEmpty {
@@ -165,7 +165,7 @@ struct CollectView: View {
             await resolveWishlistCards()
         }
         .task(id: setNameCacheKey) {
-            refreshSetNameCache()
+            await refreshSetNameCache()
         }
         .task(id: sealedProductsSignature) {
             refreshSealedProductCaches()
@@ -215,10 +215,10 @@ struct CollectView: View {
         }
     }
 
-    private func refreshSetNameCache() {
+    private func refreshSetNameCache() async {
         var map: [String: String] = [:]
         for brand in services.brandSettings.enabledBrands {
-            guard let sets = try? CatalogStore.shared.fetchAllSets(for: brand) else { continue }
+            guard let sets = try? await CatalogStore.shared.fetchAllSets(for: brand) else { continue }
             for set in sets {
                 let key = setNameKey(brand: brand, setCode: set.setCode)
                 if map[key] == nil {

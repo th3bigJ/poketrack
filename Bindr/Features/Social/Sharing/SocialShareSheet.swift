@@ -169,6 +169,46 @@ struct SocialShareSheet: View {
                     }
                     postTextField
                     visibilityPicker
+                    
+                    if case .deck(let deck) = item {
+                        Divider().opacity(0.15).padding(.vertical, 8)
+                        
+                        VStack(alignment: .leading, spacing: 12) {
+                            sectionLabel("DIGITAL EXPORT")
+                            
+                            Button {
+                                let exportText = PTCGLService.shared.exportToPTCGL(deck: deck, sets: services.cardData.sets)
+                                UIPasteboard.general.string = exportText
+                                HapticManager.notification(.success)
+                                dismiss()
+                            } label: {
+                                HStack {
+                                    Image(systemName: "doc.on.doc")
+                                        .font(.system(size: 14, weight: .semibold))
+                                    Text("Copy to TCG Live (Text)")
+                                        .font(.system(size: 14, weight: .semibold))
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .font(.caption2.weight(.bold))
+                                        .foregroundStyle(.tertiary)
+                                }
+                                .foregroundStyle(.primary)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 14)
+                                .background(Color.primary.opacity(0.05), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                        .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                            
+                            Text("Standardized PTCGL format: Qty Name Set Number")
+                                .font(.system(size: 11))
+                                .foregroundStyle(.secondary)
+                                .padding(.horizontal, 4)
+                        }
+                    }
                 }
                 .padding(16)
             }

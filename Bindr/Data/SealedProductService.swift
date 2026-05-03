@@ -17,14 +17,14 @@ final class SealedProductService {
         self.session = session
     }
 
-    func loadFromLocalIfAvailable() {
+    func loadFromLocalIfAvailable() async {
         if products.isEmpty == false,
            marketPriceByID.isEmpty == false,
            historyByID.isEmpty == false,
            trendsByID.isEmpty == false {
             return
         }
-        loadFromSQLiteDailyBlobs()
+        await loadFromSQLiteDailyBlobs()
     }
 
     func refreshFromNetworkAndStoreLocallyIfNeeded() async {
@@ -48,11 +48,11 @@ final class SealedProductService {
             let historyData = try validatedBody(await historyDataTask)
             let trendsData = try validatedBody(await trendsDataTask)
 
-            try CatalogStore.shared.open()
-            try CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonProducts, data: productsData)
-            try CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPrices, data: pricesData)
-            try CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceHistory, data: historyData)
-            try CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceTrends, data: trendsData)
+            try await CatalogStore.shared.open()
+            try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonProducts, data: productsData)
+            try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPrices, data: pricesData)
+            try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceHistory, data: historyData)
+            try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceTrends, data: trendsData)
 
             decodeAndAssign(
                 productsData: productsData,
@@ -80,13 +80,13 @@ final class SealedProductService {
         trendsByID[productID]
     }
 
-    private func loadFromSQLiteDailyBlobs() {
+    private func loadFromSQLiteDailyBlobs() async {
         do {
-            try CatalogStore.shared.open()
-            let productsData = CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonProducts)
-            let pricesData = CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPrices)
-            let historyData = CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceHistory)
-            let trendsData = CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceTrends)
+            try await CatalogStore.shared.open()
+            let productsData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonProducts)
+            let pricesData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPrices)
+            let historyData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceHistory)
+            let trendsData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceTrends)
 
             guard let productsData,
                   let pricesData,

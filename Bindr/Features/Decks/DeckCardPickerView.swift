@@ -821,10 +821,10 @@ struct DeckCardPickerView: View {
             nextRefIndex = 0
         }
         do {
-            try CatalogStore.shared.open()
-            let sets = try CatalogStore.shared.fetchAllSets(for: deck.tcgBrand)
-            let refs = try CatalogStore.shared.fetchAllCardRefs(for: deck.tcgBrand)
-            var filterCards = try CatalogStore.shared.fetchAllBrowseFilterCards(for: deck.tcgBrand)
+            try await CatalogStore.shared.open()
+            let sets = try await CatalogStore.shared.fetchAllSets(for: deck.tcgBrand)
+            let refs = try await CatalogStore.shared.fetchAllCardRefs(for: deck.tcgBrand)
+            var filterCards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: deck.tcgBrand)
 
             // Pre-filter ineligible cards at the BrowseFilterCard level using setKey + regulationMark
             let fmt = deck.deckFormat
@@ -1184,8 +1184,8 @@ struct DeckCardPickerView: View {
 
     private func loadPokemonDexCards(dexId: Int) async -> [Card] {
         do {
-            try CatalogStore.shared.open()
-            let cards = try CatalogStore.shared.fetchAllCards(for: .pokemon)
+            try await CatalogStore.shared.open()
+            let cards = try await CatalogStore.shared.fetchAllCards(for: .pokemon)
             let matches = cards.filter { $0.dexIds?.contains(dexId) == true && isEligible($0) }
             return matches.sorted {
                 let l = releaseDateBySetCode[$0.setCode] ?? ""
@@ -1387,8 +1387,8 @@ private struct DeckPickerSetsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task(id: deck.format) {
             do {
-                try CatalogStore.shared.open()
-                var allSets = try CatalogStore.shared.fetchAllSets(for: deck.tcgBrand)
+                try await CatalogStore.shared.open()
+                var allSets = try await CatalogStore.shared.fetchAllSets(for: deck.tcgBrand)
                 // Filter sets to only those with at least one eligible card per the format
                 if let legalSets = deck.deckFormat.legalSetKeys {
                     allSets = allSets.filter { legalSets.contains($0.setCode) }

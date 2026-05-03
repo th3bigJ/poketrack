@@ -14,6 +14,11 @@ final class SocialAuthService {
         return false
     }
 
+    var currentUserID: UUID? {
+        if case .signedIn(let userID, _) = authState { return userID }
+        return nil
+    }
+
     private struct AuthResponse: Decodable {
         let accessToken: String?
         let refreshToken: String?

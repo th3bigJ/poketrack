@@ -12,9 +12,19 @@ struct FeedItemView: View {
 
     @State private var isCommentsPresented = false
     @State private var commentsRefreshToken = 0
+    
+    @State private var showDeleteAlert = false
+    @State private var showEditSheet = false
+    @State private var editDescription = ""
+    @State private var isProcessing = false
 
     private var canOpenComments: Bool {
         item.content != nil && item.type != .friendship
+    }
+
+    private var isMyItem: Bool {
+        guard let myID = services.socialAuth.currentUserID else { return false }
+        return item.actor?.id == myID
     }
 
     var body: some View {
@@ -66,6 +76,52 @@ struct FeedItemView: View {
                 }
             }
         }
+        .alert("Delete Post?", isPresented: $showDeleteAlert) {
+            Button("Delete", role: .destructive) {
+                if let contentID = item.content?.id {
+                    Task {
+                        isProcessing = true
+                        try? await services.socialFeed.deleteSharedContent(id: contentID)
+                        isProcessing = false
+                    }
+                }
+            }
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("This will permanently remove this post from the feed.")
+        }
+        .sheet(isPresented: $showEditSheet) {
+            NavigationStack {
+                Form {
+                    Section("Caption") {
+                        TextField("What's on your mind?", text: $editDescription, axis: .vertical)
+                            .lineLimit(3...10)
+                    }
+                }
+                .navigationTitle("Edit Post")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button("Cancel") { showEditSheet = false }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Save") {
+                            if let contentID = item.content?.id {
+                                Task {
+                                    isProcessing = true
+                                    try? await services.socialFeed.updateSharedContent(id: contentID, description: editDescription)
+                                    isProcessing = false
+                                    showEditSheet = false
+                                }
+                            }
+                        }
+                        .bold()
+                        .disabled(isProcessing)
+                    }
+                }
+            }
+            .presentationDetents([.medium])
+        }
     }
 
     private var header: some View {
@@ -110,16 +166,45 @@ struct FeedItemView: View {
                         .font(.system(size: 12))
                         .foregroundStyle(Color.secondary.opacity(0.8))
                         .lineLimit(1)
+                        .fixedSize()
 
                     TypePill(label: badgeText, color: typeAccentColor)
                         .scaleEffect(0.8)
                         .fixedSize()
+                    
+                    if isMyItem, let content = item.content {
+                        Spacer()
+                        
+                        Menu {
+                            Button {
+                                editDescription = content.description ?? ""
+                                showEditSheet = true
+                            } label: {
+                                Label("Edit Caption", systemImage: "pencil")
+                            }
+                            
+                            Button(role: .destructive) {
+                                showDeleteAlert = true
+                            } label: {
+                                Label("Delete Post", systemImage: "trash")
+                            }
+                        } label: {
+                            Image(systemName: "ellipsis")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundStyle(Color.secondary)
+                                .padding(8)
+                                .contentShape(Rectangle())
+                        }
+                    }
                 }
 
-                Text("@\(item.actor?.username ?? "trainer")")
-                    .font(.system(size: 12))
-                    .foregroundStyle(Color.secondary)
-                    .lineLimit(1)
+                if let handle = item.actor?.username,
+                   handle.lowercased() != actorName.lowercased() {
+                    Text("@\(handle)")
+                        .font(.system(size: 12))
+                        .foregroundStyle(Color.secondary)
+                        .lineLimit(1)
+                }
             }
         }
     }
@@ -378,29 +463,62 @@ private struct CardStackPreview: View {
         let placeholderCount = stackColors.prefix(4).count
         let count = thumbnailIDs.isEmpty ? placeholderCount : thumbnailIDs.count
 
-        ZStack(alignment: .leading) {
-            if !thumbnailIDs.isEmpty {
-                ForEach(Array(thumbnailIDs.enumerated()), id: \.offset) { index, _ in
-                    let url = index < cardImageURLs.count ? cardImageURLs[index] : nil
-                    cardImage(at: index, url: url)
-                }
-            } else {
-                ForEach(Array(stackColors.prefix(4).enumerated()), id: \.offset) { index, color in
-                    RoundedRectangle(cornerRadius: 4, style: .continuous)
-                        .fill(color)
-                        .frame(width: size * 0.7, height: size)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 4, style: .continuous)
-                                .stroke(Color.primary.opacity(0.15), lineWidth: 1)
-                        }
-                        .offset(x: CGFloat(index) * 8)
-                        .zIndex(Double(index))
+        ZStack(alignment: .bottomTrailing) {
+            ZStack(alignment: .leading) {
+                if !thumbnailIDs.isEmpty {
+                    ForEach(Array(thumbnailIDs.enumerated()), id: \.offset) { index, _ in
+                        let url = index < cardImageURLs.count ? cardImageURLs[index] : nil
+                        cardImage(at: index, url: url)
+                    }
+                } else {
+                    ForEach(Array(stackColors.prefix(4).enumerated()), id: \.offset) { index, color in
+                        RoundedRectangle(cornerRadius: 4, style: .continuous)
+                            .fill(color)
+                            .frame(width: size * 0.7, height: size)
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                    .stroke(Color.primary.opacity(0.15), lineWidth: 1)
+                            }
+                            .offset(x: CGFloat(index) * 8)
+                            .zIndex(Double(index))
+                    }
                 }
             }
+            .frame(width: size * 0.7 + CGFloat(max(count - 1, 0)) * 8, height: size)
+
+            countBadge
+                .padding(6)
         }
-        .frame(width: size * 0.7 + CGFloat(max(count - 1, 0)) * 8, height: size)
         .task(id: thumbnailIDs.joined(separator: ",")) {
             await resolveCardImageURLs()
+        }
+    }
+
+    /// Total-card chip overlaid on the topmost preview card. Only renders for
+    /// multi-card containers (binders, decks, wishlists, folders, collections,
+    /// digests) — never for single-card pulls or unknown payloads.
+    @ViewBuilder
+    private var countBadge: some View {
+        if isMultiCardContent, let total = item.content?.cardCount, total > 1 {
+            Text("\(total)")
+                .font(.system(size: 10, weight: .heavy))
+                .monospacedDigit()
+                .foregroundStyle(.white)
+                .padding(.horizontal, 7)
+                .padding(.vertical, 3)
+                .background(Color.black.opacity(0.72), in: Capsule())
+                .overlay {
+                    Capsule().stroke(Color.white.opacity(0.22), lineWidth: 0.5)
+                }
+        }
+    }
+
+    private var isMultiCardContent: Bool {
+        switch item.content?.contentType {
+        case .binder, .deck, .wishlist, .collection, .folder, .dailyDigest:
+            return true
+        case .pull, .none:
+            return false
         }
     }
 
@@ -480,14 +598,19 @@ struct InteractionBar: View {
 
     var body: some View {
         HStack(spacing: 16) {
-            HStack(spacing: 12) {
-                // Mockup style: Solid circle for active upvote
+            // Reddit-style vote pill: [↑] [score] [↓] — score sandwiched between
+            // the arrows so it's never read as a "downvote count" the way it
+            // was when sitting flush against the down arrow.
+            HStack(spacing: 6) {
                 voteButton(type: .upvote)
-                voteButton(type: .downvote)
-                
+
                 Text("\(aggregate.score)")
                     .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(aggregate.myVoteType != nil ? Color(hex: "F43F5E") : Color.secondary)
+                    .monospacedDigit()
+                    .frame(minWidth: 18)
+                    .foregroundStyle(aggregate.myVoteType != nil ? services.theme.accentColor : Color.secondary)
+
+                voteButton(type: .downvote)
             }
 
             Spacer()
@@ -506,7 +629,7 @@ struct InteractionBar: View {
             }
             .buttonStyle(.plain)
         }
-        .padding(.top, 8)
+        .padding(.top, 4)
         .task { await refresh() }
         .onChange(of: refreshToken) { _, _ in
             Task { await refresh() }
@@ -516,13 +639,17 @@ struct InteractionBar: View {
     private func voteButton(type: ReactionType) -> some View {
         let isActive = aggregate.myVoteType == type
         let symbol = type == .upvote ? "arrow.up" : "arrow.down"
-        let activeColor = Color(hex: "F43F5E") // Premium rose/pink from mockup
+        // Active state follows the user's chosen accent in Themes so brand
+        // colour cascades through Social just like Dashboard / Browse.
+        let activeColor = services.theme.accentColor
 
         return Group {
             if type == .upvote {
-                // Mockup: Pink circle for active upvote
+                // Filled circle for the active upvote (matches mockup), outlined
+                // ring otherwise. Active arrow also bumps to .heavy + 1.05x so
+                // state isn't communicated by colour alone (a11y).
                 Image(systemName: symbol)
-                    .font(.system(size: 14, weight: .bold))
+                    .font(.system(size: 14, weight: isActive ? .heavy : .bold))
                     .foregroundStyle(isActive ? .white : Color.secondary)
                     .frame(width: 28, height: 28)
                     .background(isActive ? activeColor : Color.clear)
@@ -532,13 +659,16 @@ struct InteractionBar: View {
                             Circle().stroke(Color.primary.opacity(0.1), lineWidth: 1)
                         }
                     }
+                    .scaleEffect(isActive ? 1.05 : 1.0)
             } else {
                 Image(systemName: symbol)
-                    .font(.system(size: 14, weight: .bold))
+                    .font(.system(size: 14, weight: isActive ? .heavy : .bold))
                     .foregroundStyle(isActive ? activeColor : Color.secondary)
                     .frame(width: 28, height: 28)
+                    .scaleEffect(isActive ? 1.05 : 1.0)
             }
         }
+        .animation(.easeOut(duration: 0.15), value: isActive)
         .contentShape(Circle())
         .onTapGesture {
             Haptics.mediumImpact()

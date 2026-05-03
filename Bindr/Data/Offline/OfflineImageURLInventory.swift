@@ -2,8 +2,8 @@ import Foundation
 
 /// Builds the canonical (key, URL) pairs to download for an offline pack.
 enum OfflineImageURLInventory {
-    static func buildDesiredList(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon]) throws -> [(key: String, url: URL)] {
-        try CatalogStore.shared.open()
+    static func buildDesiredList(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon]) async throws -> [(key: String, url: URL)] {
+        try await CatalogStore.shared.open()
         var rows: [(String, URL)] = []
         var seen = Set<String>()
 
@@ -16,11 +16,11 @@ enum OfflineImageURLInventory {
 
         switch brand {
         case .pokemon:
-            let cards = try CatalogStore.shared.fetchAllCards(for: .pokemon)
+            let cards = try await CatalogStore.shared.fetchAllCards(for: .pokemon)
             for c in cards {
                 append(c.imageLowSrc, AppConfiguration.imageURL(relativePath: c.imageLowSrc))
             }
-            let sets = try CatalogStore.shared.fetchAllSets(for: .pokemon)
+            let sets = try await CatalogStore.shared.fetchAllSets(for: .pokemon)
             for s in sets {
                 let logo = s.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)
                 if !logo.isEmpty, let u = AppConfiguration.setLogoURLCandidates(logoSrc: logo).first {
@@ -41,11 +41,11 @@ enum OfflineImageURLInventory {
             }
 
         case .onePiece:
-            let cards = try CatalogStore.shared.fetchAllCards(for: .onePiece)
+            let cards = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
             for c in cards {
                 append(c.imageLowSrc, AppConfiguration.imageURL(relativePath: c.imageLowSrc))
             }
-            let sets = try CatalogStore.shared.fetchAllSets(for: .onePiece)
+            let sets = try await CatalogStore.shared.fetchAllSets(for: .onePiece)
             for s in sets {
                 let logo = s.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)
                 if !logo.isEmpty, let u = AppConfiguration.setLogoURLCandidates(logoSrc: logo).first {

@@ -131,10 +131,11 @@ struct MyProfileView: View {
             }
 
             HStack(spacing: 0) {
-                statColumn(value: "\(displayedCardCount)", label: "Cards")
-                statColumn(value: "\(displayedDeckCount)", label: "Decks")
-                statColumn(value: "\(displayedBinderCount)", label: "Binders")
-                statColumn(value: "\(profile.friendCount ?? 0)", label: "Friends")
+                let friendCount = profile.friendCount ?? 0
+                statColumn(value: "\(displayedCardCount)", label: displayedCardCount == 1 ? "Card" : "Cards")
+                statColumn(value: "\(displayedDeckCount)", label: displayedDeckCount == 1 ? "Deck" : "Decks")
+                statColumn(value: "\(displayedBinderCount)", label: displayedBinderCount == 1 ? "Binder" : "Binders")
+                statColumn(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
             }
             .padding(.vertical, 12)
             .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
@@ -187,42 +188,62 @@ struct MyProfileView: View {
         }
     }
 
+    @ViewBuilder
     private var favoritesSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            sectionLabel("FAVORITES")
+        // Favourite Pokémon and Favourite Card are already visualised in the
+        // header (avatar + tilted hero peek). Listing them again as labelled
+        // rows is duplication. Only the favourite deck has no other home, so
+        // the section now collapses to "FAVORITE DECK" when one is set, or
+        // an onboarding hint when nothing has been picked yet.
+        let hasDeck = (profile.favoriteDeckArchetype?.isEmpty == false)
+        let hasAnyFavourite = profile.favoritePokemonName != nil
+            || profile.favoriteCardName != nil
+            || hasDeck
 
-            if let pokemonName = profile.favoritePokemonName {
-                favoriteRow(icon: "star.fill", label: "Pokémon", value: pokemonName)
+        if hasDeck {
+            VStack(alignment: .leading, spacing: 10) {
+                sectionLabel("FAVORITE DECK")
+                favoriteRow(icon: "square.stack.3d.up.fill", label: "Deck", value: profile.favoriteDeckArchetype ?? "")
             }
-            if let cardName = profile.favoriteCardName {
-                favoriteRow(icon: "rectangle.portrait.fill", label: "Card", value: cardName)
-            }
-            if let deck = profile.favoriteDeckArchetype {
-                favoriteRow(icon: "square.stack.3d.up.fill", label: "Deck", value: deck)
-            }
-            if profile.favoritePokemonName == nil && profile.favoriteCardName == nil && profile.favoriteDeckArchetype == nil {
+            .padding(.horizontal, 16)
+        } else if !hasAnyFavourite {
+            VStack(alignment: .leading, spacing: 10) {
+                sectionLabel("FAVORITES")
                 favoriteRow(icon: "sparkles", label: "Favorites", value: "Choose favorites in Edit")
             }
+            .padding(.horizontal, 16)
         }
-        .padding(.horizontal, 16)
+    }
+
+    private func profileTabTitle(_ tab: ProfileTab) -> String {
+        tab.rawValue.prefix(1).uppercased() + tab.rawValue.dropFirst()
     }
 
     private var profileTabPicker: some View {
-        HStack(spacing: 8) {
+        // Equal-width segmented picker, mirrors the Feed/Friends/Profile bar
+        // up top: Title-Case labels, accent-filled active pill, primary text
+        // for inactive segments so contrast holds in light mode.
+        HStack(spacing: 0) {
             ForEach(ProfileTab.allCases, id: \.self) { tab in
                 Button {
+                    Haptics.selectionChanged()
                     selectedProfileTab = tab
                 } label: {
-                    Text(tab.rawValue)
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(selectedProfileTab == tab ? Color.white : Color.secondary)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 6)
+                    Text(profileTabTitle(tab))
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(selectedProfileTab == tab ? Color.white : Color.primary.opacity(0.7))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 9)
                         .background(selectedProfileTab == tab ? themeColor : .clear, in: Capsule())
+                        .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
             }
-            Spacer()
+        }
+        .padding(4)
+        .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
+        .overlay {
+            Capsule().stroke(Color.primary.opacity(0.06), lineWidth: 1)
         }
         .padding(.horizontal, 16)
     }
@@ -273,7 +294,7 @@ struct MyProfileView: View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
             .tracking(0.88)
-            .foregroundStyle(Color.secondary.opacity(0.3))
+            .foregroundStyle(Color.secondary.opacity(0.7))
     }
 
     private func rolePill(_ title: String) -> some View {
@@ -299,7 +320,7 @@ struct MyProfileView: View {
                 .minimumScaleFactor(0.65)
             Text(label)
                 .font(.system(size: 10))
-                .foregroundStyle(Color.secondary.opacity(0.3))
+                .foregroundStyle(Color.secondary.opacity(0.7))
         }
         .frame(maxWidth: .infinity)
     }
@@ -318,7 +339,7 @@ struct MyProfileView: View {
                 Text(label)
                     .font(.system(size: 10, weight: .bold))
                     .tracking(0.4)
-                    .foregroundStyle(Color.secondary.opacity(0.3))
+                    .foregroundStyle(Color.secondary.opacity(0.7))
                 Text(value)
                     .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.primary)

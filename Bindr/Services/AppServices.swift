@@ -94,8 +94,11 @@ final class AppServices {
             shouldRunBackgroundCatalogRefreshOnLaunch = requiresBlockingDailyRefresh
             isLaunchCatalogPipelineComplete = !requiresBlockingDailyRefresh
         }
-        refreshCatalogCardsLastUpdatedAtFromStore()
+        Task { await refreshCatalogCardsLastUpdatedAtFromStore() }
         Task {
+            // Delay social init until after the launch wordmark animation (~1.8s)
+            // so that network callbacks don't hitch the main thread mid-animation.
+            try? await Task.sleep(nanoseconds: 2_000_000_000)
             await socialAuth.restoreSession()
             await syncSocialLibrariesIfPossible()
         }
@@ -188,7 +191,7 @@ final class AppServices {
         } else {
             cardData.clearOnePieceBrowseMetadata()
         }
-        sealedProducts.loadFromLocalIfAvailable()
+        await sealedProducts.loadFromLocalIfAvailable()
         pendingLightBrowseTabEntry = true
     }
 
@@ -281,7 +284,7 @@ final class AppServices {
             bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse
         }
 
-        sealedProducts.loadFromLocalIfAvailable()
+        await sealedProducts.loadFromLocalIfAvailable()
 
         if includeDeferredLaunchServices && updateBootstrapProgressUI {
             bootstrapStatus = "Checking purchases…"
@@ -354,13 +357,13 @@ final class AppServices {
             catalogDownloadProgress = 0.98
         }
 
-        sealedProducts.loadFromLocalIfAvailable()
+        await sealedProducts.loadFromLocalIfAvailable()
 
         catalogDownloadStatus = "Done."
         catalogDownloadProgress = 1
 
         isCatalogDownloadInProgress = false
-        refreshCatalogCardsLastUpdatedAtFromStore()
+        await refreshCatalogCardsLastUpdatedAtFromStore()
     }
 
     /// Settings action: immediately re-check card JSON deltas (skips 03:00 schedule gate) and report whether any files changed.
@@ -391,7 +394,7 @@ final class AppServices {
         catalogDownloadStatus = changed ? "Card and market data updated." : "Already up to date."
         await cardData.reloadAfterBrandChange()
         isCatalogDownloadInProgress = false
-        refreshCatalogCardsLastUpdatedAtFromStore()
+        await refreshCatalogCardsLastUpdatedAtFromStore()
     }
 
     /// Call this from your root view with the model context
@@ -416,9 +419,9 @@ final class AppServices {
         collectionValue = CollectionValueService(modelContext: modelContext, pricing: pricing, cardData: cardData)
     }
 
-    private func refreshCatalogCardsLastUpdatedAtFromStore() {
-        try? CatalogStore.shared.open()
-        guard let raw = CatalogStore.shared.meta("catalog_cards_last_updated_at"),
+    private func refreshCatalogCardsLastUpdatedAtFromStore() async {
+        try? await CatalogStore.shared.open()
+        guard let raw = await CatalogStore.shared.meta("catalog_cards_last_updated_at"),
               let ts = Double(raw) else {
             catalogCardsLastUpdatedAt = nil
             return
@@ -436,9 +439,9 @@ final class AppServices {
             
             // Sync summary stats to profile
             let cardCount = collectionItems.reduce(0) { $0 + $1.quantity }
-            let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Bindr>())) ?? 0
+            let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
             let deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
-            let totalValue = collectionValue?.totalValue ?? 0
+            let totalValue = collectionValue?.snapshots.last?.totalGbp ?? 0
             
             Task {
                 try? await socialProfile.updateCollectionStats(

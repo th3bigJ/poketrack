@@ -73,7 +73,7 @@ final class OfflineImageDownloadService {
 
         let desired: [(String, URL)]
         do {
-            desired = try OfflineImageURLInventory.buildDesiredList(brand: brand, nationalDexPokemon: nationalDexPokemon)
+            desired = try await OfflineImageURLInventory.buildDesiredList(brand: brand, nationalDexPokemon: nationalDexPokemon)
         } catch {
             statusLine[brand] = "Could not read catalog."
             return

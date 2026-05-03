@@ -139,7 +139,7 @@ struct TransactionsView: View {
         }
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
-            services.sealedProducts.loadFromLocalIfAvailable()
+            Task { await services.sealedProducts.loadFromLocalIfAvailable() }
         }
         .onChange(of: activeBrand) { _, _ in
             loadedTransactionCount = 50

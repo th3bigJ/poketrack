@@ -248,7 +248,7 @@ struct FriendsListView: View {
                         .foregroundStyle(Color.secondary)
                     Text(detail)
                         .font(.system(size: 11))
-                        .foregroundStyle(Color.secondary.opacity(0.3))
+                        .foregroundStyle(Color.secondary)
                 }
                 Spacer()
                 Text(buttonTitle)
@@ -281,7 +281,7 @@ struct FriendsListView: View {
                 .tint(Color(hex: "E8B84B"))
             Text(text)
                 .font(.system(size: 12))
-                .foregroundStyle(Color.secondary)
+                .foregroundStyle(Color.secondary.opacity(0.7))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(14)

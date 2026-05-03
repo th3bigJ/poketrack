@@ -33,7 +33,7 @@ private struct PersistedSearchIndex: Codable {
 }
 
 /// Disk-backed inverted word index over catalog cards (rebuilt when the set list signature changes).
-final class CardSearchIndex {
+actor CardSearchIndex {
     private(set) var isReady = false
     private var inverted: [String: Set<CardRef>] = [:]
     private var loadedSignature: String = ""

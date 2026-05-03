@@ -109,7 +109,7 @@ struct BrowseSealedTabContent: View {
             }
         }
         .task {
-            services.sealedProducts.loadFromLocalIfAvailable()
+            await services.sealedProducts.loadFromLocalIfAvailable()
             if services.sealedProducts.products.isEmpty {
                 await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
             }

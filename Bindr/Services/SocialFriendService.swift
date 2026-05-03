@@ -88,6 +88,13 @@ final class SocialFriendService {
         }
     }
 
+    private(set) var friends: [SocialProfile] = []
+    private(set) var incomingRequests: [IncomingFriendRequest] = []
+    private(set) var outgoingRequestUserIDs: Set<UUID> = []
+    private(set) var blockedUserIDs: Set<UUID> = []
+    private(set) var isBusy = false
+    private(set) var lastError: String?
+
     private struct InsertFriendshipRequest: Encodable {
         let requesterID: UUID
         let addresseeID: UUID

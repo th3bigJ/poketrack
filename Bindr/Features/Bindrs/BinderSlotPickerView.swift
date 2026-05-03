@@ -614,10 +614,10 @@ struct BinderSlotPickerView: View {
         }
 
         do {
-            try CatalogStore.shared.open()
-            let sets = try CatalogStore.shared.fetchAllSets(for: selectedBrand)
-            let refs = try CatalogStore.shared.fetchAllCardRefs(for: selectedBrand)
-            let filterCards = try CatalogStore.shared.fetchAllBrowseFilterCards(for: selectedBrand)
+            try await CatalogStore.shared.open()
+            let sets = try await CatalogStore.shared.fetchAllSets(for: selectedBrand)
+            let refs = try await CatalogStore.shared.fetchAllCardRefs(for: selectedBrand)
+            let filterCards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: selectedBrand)
             await MainActor.run {
                 catalogSets = sets
                 allCardRefs = refs
@@ -962,8 +962,8 @@ struct BinderSlotPickerView: View {
 
     private func loadPokemonDexCards(dexId: Int) async -> [Card] {
         do {
-            try CatalogStore.shared.open()
-            let cards = try CatalogStore.shared.fetchAllCards(for: .pokemon)
+            try await CatalogStore.shared.open()
+            let cards = try await CatalogStore.shared.fetchAllCards(for: .pokemon)
             return sortCardsByReleaseDateNewestFirst(cards.filter { $0.dexIds?.contains(dexId) == true })
         } catch {
             return []
@@ -974,8 +974,8 @@ struct BinderSlotPickerView: View {
         let normalized = name.trimmingCharacters(in: .whitespacesAndNewlines)
             .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
         do {
-            try CatalogStore.shared.open()
-            let cards = try CatalogStore.shared.fetchAllCards(for: .onePiece)
+            try await CatalogStore.shared.open()
+            let cards = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
             let matches = cards.filter {
                 $0.cardName.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current) == normalized
             }
@@ -989,8 +989,8 @@ struct BinderSlotPickerView: View {
         let normalized = name.trimmingCharacters(in: .whitespacesAndNewlines)
             .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
         do {
-            try CatalogStore.shared.open()
-            let cards = try CatalogStore.shared.fetchAllCards(for: .onePiece)
+            try await CatalogStore.shared.open()
+            let cards = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
             let matches = cards.filter { card in
                 let values = (card.subtypes ?? []) + [card.subtype].compactMap { $0 }
                 return values.contains {
@@ -1244,8 +1244,8 @@ private struct BinderPickerSetsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task(id: brand) {
             do {
-                try CatalogStore.shared.open()
-                sets = try CatalogStore.shared.fetchAllSets(for: brand)
+                try await CatalogStore.shared.open()
+                sets = try await CatalogStore.shared.fetchAllSets(for: brand)
             } catch {
                 sets = []
             }

@@ -51,9 +51,9 @@ final class CardDataService {
         lastError = nil
         defer { isLoading = false }
         do {
-            try CatalogStore.shared.open()
+            try await CatalogStore.shared.open()
             let brand = brandSettings.selectedCatalogBrand
-            let rows = try CatalogStore.shared.fetchAllSets(for: brand)
+            let rows = try await CatalogStore.shared.fetchAllSets(for: brand)
             guard !rows.isEmpty else {
                 lastError = "No \(brand.displayTitle) catalog on this device. Turn the game on under Card catalog and download while online."
                 sets = []
@@ -71,7 +71,7 @@ final class CardDataService {
     /// Loads Pokédex rows from SQLite first (synced from R2 by ``CatalogSyncCoordinator``).
     /// Falls back to R2 for repair if local cache is missing, then stores it in SQLite; final fallback is bundled JSON.
     func loadNationalDexPokemon() async {
-        if let fromSQLite = loadNationalDexPokemonFromSQLite(), !fromSQLite.isEmpty {
+        if let fromSQLite = await loadNationalDexPokemonFromSQLite(), !fromSQLite.isEmpty {
             nationalDexPokemon = fromSQLite
             return
         }
@@ -84,8 +84,8 @@ final class CardDataService {
                 let decoded = try JSONDecoder().decode([NationalDexPokemon].self, from: data)
                 let sorted = decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
                 nationalDexPokemon = sorted
-                try? CatalogStore.shared.open()
-                try? CatalogStore.shared.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: data)
+                try? await CatalogStore.shared.open()
+                try? await CatalogStore.shared.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: data)
                 return
             } catch {
                 // Fall through to bundle.
@@ -100,15 +100,15 @@ final class CardDataService {
         }
     }
 
-    private func loadNationalDexPokemonFromSQLite() -> [NationalDexPokemon]? {
+    private func loadNationalDexPokemonFromSQLite() async -> [NationalDexPokemon]? {
         do {
-            try CatalogStore.shared.open()
+            try await CatalogStore.shared.open()
             let data: Data?
-            if let aux = CatalogStore.shared.auxBlob(key: pokemonNationalDexAuxBlobKey) {
+            if let aux = await CatalogStore.shared.auxBlob(key: pokemonNationalDexAuxBlobKey) {
                 data = aux
-            } else if let legacy = CatalogStore.shared.metaData(pokemonNationalDexAuxBlobKey) {
+            } else if let legacy = await CatalogStore.shared.metaData(pokemonNationalDexAuxBlobKey) {
                 // One-time compatibility path: move old sync_meta text storage into aux BLOB storage.
-                try? CatalogStore.shared.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: legacy)
+                try? await CatalogStore.shared.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: legacy)
                 data = legacy
             } else {
                 data = nil
@@ -139,9 +139,9 @@ final class CardDataService {
     /// Loads ONE PIECE browse metadata lists from R2 and keeps them alphabetized for list UIs.
     func loadOnePieceBrowseMetadata() async {
         do {
-            try CatalogStore.shared.open()
-            let names = decodeStoredStringList(forMetaKey: "onepiece_character_names_json")
-            let subtypes = decodeStoredStringList(forMetaKey: "onepiece_character_subtypes_json")
+            try await CatalogStore.shared.open()
+            let names = await decodeStoredStringList(forMetaKey: "onepiece_character_names_json")
+            let subtypes = await decodeStoredStringList(forMetaKey: "onepiece_character_subtypes_json")
             onePieceCharacterNames = names.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
             onePieceCharacterSubtypes = subtypes.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
         } catch {
@@ -150,8 +150,8 @@ final class CardDataService {
         }
     }
 
-    private func decodeStoredStringList(forMetaKey key: String) -> [String] {
-        guard let data = CatalogStore.shared.metaData(key),
+    private func decodeStoredStringList(forMetaKey key: String) async -> [String] {
+        guard let data = await CatalogStore.shared.metaData(key),
               let decoded = try? JSONDecoder().decode([String].self, from: data) else {
             return []
         }
@@ -159,27 +159,35 @@ final class CardDataService {
     }
 
     private func prepareSearchIndex() async {
-        await searchIndex.prepare(sets: sets, brand: brandSettings.selectedCatalogBrand) { [weak self] setCode in
+        let currentSets = sets
+        let brand = brandSettings.selectedCatalogBrand
+        await searchIndex.prepare(sets: currentSets, brand: brand) { [weak self] setCode in
             guard let self else { return [] }
             return await self.loadCards(forSetCode: setCode)
         }
-        isSearchIndexReady = searchIndex.isReady
+        let ready = await searchIndex.isReady
+        await MainActor.run {
+            self.isSearchIndexReady = ready
+        }
     }
 
     func loadCards(forSetCode setCode: String) async -> [Card] {
         if let cached = cardsBySet[setCode] { return cached }
-        let brand = brandSettings.selectedCatalogBrand
-        if let fromDb = try? await loadCardsFromDatabase(setCode: setCode, brand: brand), !fromDb.isEmpty {
-            cardsBySet[setCode] = fromDb
-            return fromDb
+        do {
+            try await CatalogStore.shared.open()
+            let brand = brandSettings.selectedCatalogBrand
+            let rows = try await CatalogStore.shared.fetchCards(setCode: setCode, brand: brand)
+            cardsBySet[setCode] = rows
+            return rows
+        } catch {
+            return []
         }
-        return []
     }
 
     func loadAllCards() async -> [Card] {
         do {
-            try CatalogStore.shared.open()
-            let cards = try CatalogStore.shared.fetchAllCards(for: brandSettings.selectedCatalogBrand)
+            try await CatalogStore.shared.open()
+            let cards = try await CatalogStore.shared.fetchAllCards(for: brandSettings.selectedCatalogBrand)
             if !cards.isEmpty {
                 return cards
             }
@@ -198,8 +206,8 @@ final class CardDataService {
 
     func loadAllBrowseFilterCards() async -> [BrowseFilterCard] {
         do {
-            try CatalogStore.shared.open()
-            let cards = try CatalogStore.shared.fetchAllBrowseFilterCards(for: brandSettings.selectedCatalogBrand)
+            try await CatalogStore.shared.open()
+            let cards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: brandSettings.selectedCatalogBrand)
             if !cards.isEmpty {
                 return cards
             }
@@ -299,8 +307,8 @@ final class CardDataService {
 
     private func buildShuffledBrowseCardRefs() async -> [CardRef] {
         do {
-            try CatalogStore.shared.open()
-            let refs = try CatalogStore.shared.fetchAllCardRefs(for: brandSettings.selectedCatalogBrand)
+            try await CatalogStore.shared.open()
+            let refs = try await CatalogStore.shared.fetchAllCardRefs(for: brandSettings.selectedCatalogBrand)
             if !refs.isEmpty {
                 return refs.shuffled()
             }
@@ -401,14 +409,21 @@ final class CardDataService {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
 
-        await searchIndex.prepare(sets: sets, brand: brandSettings.selectedCatalogBrand) { [weak self] setCode in
+        let currentSets = sets
+        let brand = brandSettings.selectedCatalogBrand
+        
+        await searchIndex.prepare(sets: currentSets, brand: brand) { [weak self] setCode in
             guard let self else { return [] }
             return await self.loadCards(forSetCode: setCode)
         }
-        isSearchIndexReady = searchIndex.isReady
+        
+        let ready = await searchIndex.isReady
+        await MainActor.run {
+            self.isSearchIndexReady = ready
+        }
 
-        if searchIndex.isReady {
-            let refs = searchIndex.refs(matchingNormalizedQuery: q)
+        if ready {
+            let refs = await searchIndex.refs(matchingNormalizedQuery: q)
             if !refs.isEmpty {
                 return await cards(for: refs)
             }
@@ -421,17 +436,24 @@ final class CardDataService {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
 
-        await searchIndex.prepare(sets: sets, brand: brandSettings.selectedCatalogBrand) { [weak self] setCode in
+        let currentSets = sets
+        let brand = brandSettings.selectedCatalogBrand
+        
+        await searchIndex.prepare(sets: currentSets, brand: brand) { [weak self] setCode in
             guard let self else { return [] }
             return await self.loadCards(forSetCode: setCode)
         }
-        isSearchIndexReady = searchIndex.isReady
+        
+        let ready = await searchIndex.isReady
+        await MainActor.run {
+            self.isSearchIndexReady = ready
+        }
 
-        guard searchIndex.isReady else {
+        guard ready else {
             return await linearSubstringSearch(normalizedQuery: q)
         }
 
-        let ranked = searchIndex.softMatchRefs(normalizedQuery: q)
+        let ranked = await searchIndex.softMatchRefs(normalizedQuery: q)
         guard !ranked.isEmpty else { return [] }
         return await cardsPreservingSoftMatchOrder(ranked)
     }
@@ -450,11 +472,18 @@ final class CardDataService {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
 
-        await searchIndex.prepare(sets: sets, brand: brandSettings.selectedCatalogBrand) { [weak self] setCode in
+        let currentSets = sets
+        let brand = brandSettings.selectedCatalogBrand
+        
+        await searchIndex.prepare(sets: currentSets, brand: brand) { [weak self] setCode in
             guard let self else { return [] }
             return await self.loadCards(forSetCode: setCode)
         }
-        isSearchIndexReady = searchIndex.isReady
+        
+        let ready = await searchIndex.isReady
+        await MainActor.run {
+            self.isSearchIndexReady = ready
+        }
 
         return await linearNameSearch(normalizedQuery: q)
     }
@@ -465,17 +494,19 @@ final class CardDataService {
 
     private func linearNameSearch(normalizedQuery q: String, sets brandSets: [TCGSet], catalogBrand: TCGBrand) async -> [Card] {
         let tokens = q.split(whereSeparator: \.isWhitespace).map(String.init)
-        var results: [Card] = []
+        // The DB work inside `loadCards` is already off-main (CatalogStore serial queue);
+        // the per-card filter is bounded by the catalog size and runs fine on MainActor.
+        var out: [Card] = []
         for set in brandSets {
             let cards = await loadCards(forSetCode: set.setCode, catalogBrand: catalogBrand)
             for card in cards {
                 let name = card.cardName.lowercased()
                 if tokens.allSatisfy({ name.contains($0) }) {
-                    results.append(card)
+                    out.append(card)
                 }
             }
         }
-        return sortCardsByReleaseDateNewestFirst(results)
+        return sortCardsByReleaseDateNewestFirst(out)
     }
 
     private func linearSubstringSearch(normalizedQuery q: String) async -> [Card] {
@@ -483,18 +514,20 @@ final class CardDataService {
     }
 
     private func linearSubstringSearch(normalizedQuery q: String, sets brandSets: [TCGSet], catalogBrand: TCGBrand) async -> [Card] {
-        var results: [Card] = []
+        // The DB work inside `loadCards` is already off-main (CatalogStore serial queue);
+        // the per-card substring scan is bounded by the catalog size and runs fine on MainActor.
+        var out: [Card] = []
         for set in brandSets {
             let code = set.setCode
             let cards = await loadCards(forSetCode: code, catalogBrand: catalogBrand)
             for card in cards {
                 let blob = card.searchIndexBlob.lowercased()
                 if blob.contains(q) {
-                    results.append(card)
+                    out.append(card)
                 }
             }
         }
-        return sortCardsByReleaseDateNewestFirst(results)
+        return sortCardsByReleaseDateNewestFirst(out)
     }
 
     // MARK: - Scanner (search without changing browse `selectedCatalogBrand`)
@@ -502,8 +535,8 @@ final class CardDataService {
     /// Loads set list for a brand without mutating browse state.
     func catalogSets(for brand: TCGBrand) async -> [TCGSet] {
         do {
-            try CatalogStore.shared.open()
-            let rows = try CatalogStore.shared.fetchAllSets(for: brand)
+            try await CatalogStore.shared.open()
+            let rows = try await CatalogStore.shared.fetchAllSets(for: brand)
             return rows.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
         } catch {
             return []
@@ -515,8 +548,8 @@ final class CardDataService {
         let key = CardOCRFieldExtractor.normalizedOnePieceCollectorID(normalized)
         guard !key.isEmpty else { return [] }
         do {
-            try CatalogStore.shared.open()
-            let all = try CatalogStore.shared.fetchAllCards(for: .onePiece)
+            try await CatalogStore.shared.open()
+            let all = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
             return all.filter { CardOCRFieldExtractor.normalizedOnePieceCollectorID($0.cardNumber) == key }
         } catch {
             return []
@@ -551,7 +584,8 @@ final class CardDataService {
             guard let self else { return [] }
             return await self.loadCards(forSetCode: setCode, catalogBrand: catalogBrand)
         }
-        isSearchIndexReady = searchIndex.isReady
+        let ready = await searchIndex.isReady
+        isSearchIndexReady = ready
         return await linearNameSearch(normalizedQuery: q, sets: brandSets, catalogBrand: catalogBrand)
     }
 
@@ -563,9 +597,10 @@ final class CardDataService {
             guard let self else { return [] }
             return await self.loadCards(forSetCode: setCode, catalogBrand: catalogBrand)
         }
-        isSearchIndexReady = searchIndex.isReady
-        if searchIndex.isReady {
-            let refs = searchIndex.refs(matchingNormalizedQuery: q)
+        let ready = await searchIndex.isReady
+        isSearchIndexReady = ready
+        if ready {
+            let refs = await searchIndex.refs(matchingNormalizedQuery: q)
             if !refs.isEmpty {
                 return await cards(for: refs, catalogBrand: catalogBrand)
             }
@@ -581,11 +616,12 @@ final class CardDataService {
             guard let self else { return [] }
             return await self.loadCards(forSetCode: setCode, catalogBrand: catalogBrand)
         }
-        isSearchIndexReady = searchIndex.isReady
-        guard searchIndex.isReady else {
+        let ready = await searchIndex.isReady
+        isSearchIndexReady = ready
+        guard ready else {
             return await linearSubstringSearch(normalizedQuery: q, sets: brandSets, catalogBrand: catalogBrand)
         }
-        let ranked = searchIndex.softMatchRefs(normalizedQuery: q)
+        let ranked = await searchIndex.softMatchRefs(normalizedQuery: q)
         guard !ranked.isEmpty else { return [] }
         return await cardsPreservingSoftMatchOrder(ranked, catalogBrand: catalogBrand)
     }
@@ -619,14 +655,14 @@ final class CardDataService {
     }
 
     private func loadCardsFromDatabase(setCode: String, brand: TCGBrand) async throws -> [Card] {
-        try CatalogStore.shared.open()
-        return try CatalogStore.shared.fetchCards(setCode: setCode, brand: brand)
+        try await CatalogStore.shared.open()
+        return try await CatalogStore.shared.fetchCards(setCode: setCode, brand: brand)
     }
 
     private func allCards(for brand: TCGBrand) async -> [Card] {
         do {
-            try CatalogStore.shared.open()
-            let cards = try CatalogStore.shared.fetchAllCards(for: brand)
+            try await CatalogStore.shared.open()
+            let cards = try await CatalogStore.shared.fetchAllCards(for: brand)
             if !cards.isEmpty {
                 return cards
             }
@@ -649,8 +685,8 @@ final class CardDataService {
         }
         let inferred = TCGBrand.inferredFromMasterCardId(masterCardId)
         do {
-            try CatalogStore.shared.open()
-            if let c = try CatalogStore.shared.fetchCard(masterCardId: masterCardId, brand: inferred) {
+            try await CatalogStore.shared.open()
+            if let c = try await CatalogStore.shared.fetchCard(masterCardId: masterCardId, brand: inferred) {
                 return c
             }
         } catch {

@@ -6,6 +6,8 @@ struct SplashView: View {
     var onGetStarted: () -> Void
 
     @Environment(\.colorScheme) var colorScheme
+    @State private var animStates: [Bool] = [false, false, false, false]
+    @State private var shimmerPos: CGFloat = -1
 
     var isDark: Bool { colorScheme == .dark }
 
@@ -28,17 +30,19 @@ struct SplashView: View {
                     .tracking(3)
                     .textCase(.uppercase)
                     .padding(.bottom, 8)
+                    .offset(y: animStates[0] ? 0 : 10)
+                    .opacity(animStates[0] ? 1 : 0)
 
                 // ── "BINDR" wordmark ────────────────────────────────
                 Text("BINDR")
                     .font(.custom("BebasNeue-Regular", size: 64))
-                    // Fallback if Bebas Neue not yet added:
-                    // .font(.system(size: 64, weight: .bold, design: .rounded))
                     .foregroundColor(isDark
                         ? .white.opacity(0.95)
                         : .black.opacity(0.88))
                     .tracking(8)
                     .padding(.bottom, 18)
+                    .offset(y: animStates[1] ? 0 : 15)
+                    .opacity(animStates[1] ? 1 : 0)
 
                 // ── Divider ─────────────────────────────────────────
                 Rectangle()
@@ -55,6 +59,8 @@ struct SplashView: View {
                     )
                     .frame(width: 32, height: 1)
                     .padding(.bottom, 20)
+                    .scaleEffect(x: animStates[1] ? 1 : 0, y: 1)
+                    .opacity(animStates[1] ? 1 : 0)
 
                 // ── Strapline ────────────────────────────────────────
                 VStack(spacing: 0) {
@@ -69,6 +75,8 @@ struct SplashView: View {
                 .multilineTextAlignment(.center)
                 .lineSpacing(6)
                 .padding(.horizontal, 36)
+                .offset(y: animStates[2] ? 0 : 10)
+                .opacity(animStates[2] ? 1 : 0)
 
                 Spacer()
 
@@ -99,6 +107,27 @@ struct SplashView: View {
                                     endPoint: .bottomTrailing)
                             )
 
+                        // Shimmer Effect
+                        GeometryReader { geo in
+                            let size = geo.size
+                            Rectangle()
+                                .fill(
+                                    LinearGradient(
+                                        colors: [.clear, .white.opacity(isDark ? 0.15 : 0.4), .clear],
+                                        startPoint: .leading,
+                                        endPoint: .trailing
+                                    )
+                                )
+                                .rotationEffect(.degrees(25))
+                                .offset(x: shimmerPos * size.width * 1.5)
+                                .onAppear {
+                                    withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
+                                        shimmerPos = 1
+                                    }
+                                }
+                        }
+                        .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
+
                         // Border
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .strokeBorder(
@@ -126,7 +155,6 @@ struct SplashView: View {
                         // Label
                         Text("GET STARTED  →")
                             .font(.custom("BebasNeue-Regular", size: 15))
-                            // Fallback: .font(.system(size: 15, weight: .bold))
                             .foregroundColor(isDark
                                 ? .white.opacity(0.92)
                                 : .black.opacity(0.84))
@@ -134,13 +162,21 @@ struct SplashView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .frame(height: 54)
+                    .scaleEffect(animStates[3] ? 1 : 0.95)
+                    .opacity(animStates[3] ? 1 : 0)
                 }
                 .buttonStyle(.plain)
                 .padding(.horizontal, 24)
                 .padding(.bottom, 52)
             }
         }
-        // Lock to system colour scheme — do not force dark
+        .task {
+            // Staggered entrance
+            withAnimation(.easeOut(duration: 0.8).delay(0.2)) { animStates[0] = true }
+            withAnimation(.spring(response: 0.8, dampingFraction: 0.7).delay(0.4)) { animStates[1] = true }
+            withAnimation(.easeOut(duration: 0.8).delay(0.7)) { animStates[2] = true }
+            withAnimation(.spring(response: 0.8, dampingFraction: 0.7).delay(1.0)) { animStates[3] = true }
+        }
         .preferredColorScheme(nil)
     }
 }

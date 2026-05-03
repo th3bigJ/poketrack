@@ -91,7 +91,7 @@ struct FolderContentsView: View {
             await resolveCards()
         }
         .task(id: setNameCacheKey) {
-            refreshSetNameCache()
+            await refreshSetNameCache()
         }
     }
 
@@ -211,10 +211,10 @@ struct FolderContentsView: View {
         return setNameByBrandAndCode[setNameKey(brand: brand, setCode: card.setCode)]
     }
 
-    private func refreshSetNameCache() {
+    private func refreshSetNameCache() async {
         var map: [String: String] = [:]
         for brand in services.brandSettings.enabledBrands {
-            guard let sets = try? CatalogStore.shared.fetchAllSets(for: brand) else { continue }
+            guard let sets = try? await CatalogStore.shared.fetchAllSets(for: brand) else { continue }
             for set in sets where map[setNameKey(brand: brand, setCode: set.setCode)] == nil {
                 map[setNameKey(brand: brand, setCode: set.setCode)] = set.name
             }

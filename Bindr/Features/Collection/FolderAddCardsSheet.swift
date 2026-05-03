@@ -228,8 +228,8 @@ struct FolderAddCardsSheet: View {
     private func loadAllCards() async {
         isLoading = true
         do {
-            try CatalogStore.shared.open()
-            let refs = try CatalogStore.shared.fetchAllCardRefs(for: brand)
+            try await CatalogStore.shared.open()
+            let refs = try await CatalogStore.shared.fetchAllCardRefs(for: brand)
             await MainActor.run {
                 allCardRefs = refs
                 displayedCards = []

@@ -1407,7 +1407,7 @@ struct DashboardView: View {
         }
 
         guard line.productKind == ProductKind.sealedProduct.rawValue else { return nil }
-        services.sealedProducts.loadFromLocalIfAvailable()
+        Task { await services.sealedProducts.loadFromLocalIfAvailable() }
 
         if let rawID = cleaned(line.sealedProductId),
            let productID = Int(rawID),
@@ -1471,7 +1471,7 @@ struct DashboardView: View {
     private func computeLiveValue() async {
         isLoadingValue = true
         defer { isLoadingValue = false }
-        services.sealedProducts.loadFromLocalIfAvailable()
+        await services.sealedProducts.loadFromLocalIfAvailable()
 
         var totalValue = 0.0
         var pokemonValue = 0.0
@@ -1537,7 +1537,7 @@ struct DashboardView: View {
         var setsByBrandAndCode: [String: String] = [:]
 
         for brand in services.brandSettings.enabledBrands {
-            guard let sets = try? CatalogStore.shared.fetchAllSets(for: brand) else { continue }
+            guard let sets = try? await CatalogStore.shared.fetchAllSets(for: brand) else { continue }
             for set in sets {
                 setsByBrandAndCode["\(brand.rawValue)|\(set.setCode)"] = set.name
             }
@@ -1566,7 +1566,7 @@ struct DashboardView: View {
     }
 
     private func resolveInsightsData() async {
-        services.sealedProducts.loadFromLocalIfAvailable()
+        await services.sealedProducts.loadFromLocalIfAvailable()
 
         var nextCardType: [String: Int] = [:]
         var nextEnergyType: [String: Int] = [:]
@@ -1578,7 +1578,7 @@ struct DashboardView: View {
         var nextTopGainer: MarketTrendMover? = nil
         var nextTopDecliner: MarketTrendMover? = nil
 
-        let setsForBrand = (try? CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
+        let setsForBrand = (try? await CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
         var setTotalsByCode: [String: (name: String, total: Int)] = [:]
         for set in setsForBrand {
             let total = set.cardCountTotal ?? set.cardCountOfficial ?? 0
@@ -1954,7 +1954,7 @@ struct DashboardView: View {
     }
 
     private func loadMarketTrendBlob() async {
-        guard let data = CatalogStore.shared.dailyBlob(key: DailyBlobKey.marketTrend) else {
+        guard let data = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.marketTrend) else {
             marketTrendData = nil
             await resolveMarketMoversFromPriceTrendsBlob()
             return
@@ -1969,14 +1969,14 @@ struct DashboardView: View {
 
     private func resolveMarketMoversFromPriceTrendsBlob() async {
         do {
-            try CatalogStore.shared.open()
+            try await CatalogStore.shared.open()
         } catch {
             marketBiggestGainer7Days = nil
             marketBiggestDecliner7Days = nil
             return
         }
 
-        let sets = (try? CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
+        let sets = (try? await CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
         guard !sets.isEmpty else {
             marketBiggestGainer7Days = nil
             marketBiggestDecliner7Days = nil
@@ -1992,7 +1992,7 @@ struct DashboardView: View {
 
         // If per-set rows are unavailable, fall back to the aggregate daily blob parser.
         if candidates.isEmpty,
-           let aggregate = CatalogStore.shared.dailyBlob(key: DailyBlobKey.priceTrends),
+           let aggregate = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.priceTrends),
            let raw = try? JSONSerialization.jsonObject(with: aggregate) {
             collectTrendMoverCandidates(from: raw, inheritedCardID: nil, into: &candidates)
         }
@@ -2042,12 +2042,12 @@ struct DashboardView: View {
     }
 
     private func loadPriceTrendsBlobForSet(setCode: String) async -> Data? {
-        if let exact = CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: activeBrand) {
+        if let exact = await CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: activeBrand) {
             return exact
         }
         let lowercased = setCode.lowercased()
         if lowercased != setCode {
-            if let lower = CatalogStore.shared.fetchPriceTrendsData(setCode: lowercased, brand: activeBrand) {
+            if let lower = await CatalogStore.shared.fetchPriceTrendsData(setCode: lowercased, brand: activeBrand) {
                 return lower
             }
         }
