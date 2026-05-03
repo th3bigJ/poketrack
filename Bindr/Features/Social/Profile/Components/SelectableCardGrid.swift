@@ -5,6 +5,7 @@ struct SelectableCardGrid: View {
     @Binding var isSelectMode: Bool
     @Binding var selectedCardIDs: Set<String>
     let cardLoader: (String) async -> Card?
+    var onCardTap: ((String) -> Void)? = nil
 
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 8), count: 3)
     private let pageSize = 36
@@ -35,6 +36,8 @@ struct SelectableCardGrid: View {
                         } else {
                             selectedCardIDs.insert(id)
                         }
+                    } else {
+                        onCardTap?(id)
                     }
                 }
             }

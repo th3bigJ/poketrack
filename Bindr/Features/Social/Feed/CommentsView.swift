@@ -223,15 +223,24 @@ struct CommentsView: View {
                     if isLoadingSharedContent {
                         ProgressView()
                             .controlSize(.small)
+                            .tint(services.theme.accentColor)
                     } else {
                         Image(systemName: "arrow.up.right.square")
+                            .foregroundStyle(services.theme.accentColor)
                     }
                     Text("View Content")
                         .fontWeight(.semibold)
+                        .foregroundStyle(.primary)
                 }
                 .frame(maxWidth: .infinity)
+                .padding(.vertical, 10)
+                .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+                }
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.plain)
             .disabled(isLoadingSharedContent)
         }
     }

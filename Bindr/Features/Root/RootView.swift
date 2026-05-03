@@ -758,7 +758,16 @@ struct RootView: View {
             }
         }
         .sheet(item: $selectedCardPresentation) { ctx in
-            CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
+            let showTradeAction = selectedTab == .collect
+                && collectContentTypeTab == .cards
+                && (collectSegment == .collection || collectSegment == .wishlist)
+            CardBrowseDetailView(
+                cards: ctx.cards,
+                startIndex: ctx.startIndex,
+                tradeAction: showTradeAction ? { card in
+                    launchTradeFlowFromCollectionCard(card)
+                } : nil
+            )
                 .environment(services)
         }
         .sheet(item: $selectedSealedProductPresentation) { ctx in
@@ -930,6 +939,30 @@ struct RootView: View {
     private func resetBrowseMultiSelectState() {
         browseMultiSelectActive = false
         browseMultiSelectedCardIDs.removeAll()
+    }
+
+    private func launchTradeFlowFromCollectionCard(_ card: Card) {
+        let preferredSide: AppServices.TradePrefillSide = {
+            switch collectSegment {
+            case .collection:
+                return .mySide
+            case .wishlist:
+                return .theirSide
+            case .folders:
+                // Trade action isn't shown for folders, but keep a safe fallback.
+                return .mySide
+            }
+        }()
+        services.pendingTradeSeed = AppServices.PendingTradeSeed(
+            cardID: card.masterCardId,
+            preferredSide: preferredSide
+        )
+        selectedCardPresentation = nil
+        Haptics.mediumImpact()
+        if let url = URL(string: "bindr://social/friends") {
+            services.socialPush.queueDeepLink(url: url)
+        }
+        selectedTab = .social
     }
 
 }

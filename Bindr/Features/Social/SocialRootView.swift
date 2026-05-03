@@ -143,6 +143,7 @@ struct SocialRootView: View {
         }
         .background(Color(uiColor: .systemBackground))
         .ignoresSafeArea(edges: .bottom)
+        .tint(.primary)
         .navigationTitle("Social")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
@@ -204,7 +205,7 @@ struct SocialRootView: View {
                         ZStack(alignment: .topTrailing) {
                             Image(systemName: "bell")
                                 .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(services.socialFeed.unreadCount > 0 ? Color(hex: "E8B84B") : .primary)
+                                .foregroundStyle(.primary)
 
                             if services.socialFeed.unreadCount > 0 {
                                 Circle()
@@ -231,6 +232,30 @@ struct SocialRootView: View {
                         }
                     } else if selectedTab == .trades {
                         EmptyView()
+                    } else if selectedTab == .friends && services.pendingTradeSeed != nil {
+                        Button("Cancel") {
+                            Haptics.lightImpact()
+                            services.pendingTradeSeed = nil
+                        }
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(.primary)
+                        .padding(.horizontal, 12)
+                        .frame(height: 36)
+                        .background {
+                            if #available(iOS 26.0, *) {
+                                Capsule()
+                                    .fill(.clear)
+                                    .glassEffect(.regular.interactive(), in: Capsule())
+                            } else {
+                                Capsule()
+                                    .fill(.ultraThinMaterial)
+                                    .overlay {
+                                        Capsule()
+                                            .stroke(Color.primary.opacity(0.10), lineWidth: 0.5)
+                                    }
+                            }
+                        }
+                        .buttonStyle(.plain)
                     } else if selectedTab == .profile {
                         ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
                             Haptics.lightImpact()
@@ -355,6 +380,9 @@ struct SocialRootView: View {
                             onOpenQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
                             onOpenUsername: { username in
                                 socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                            },
+                            onSelectFriendForTrade: { friend in
+                                openSeededTradeBuilder(with: friend)
                             }
                         )
                     case .search:
@@ -408,6 +436,9 @@ struct SocialRootView: View {
                         onOpenQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
                         onOpenUsername: { username in
                             socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                        },
+                        onSelectFriendForTrade: { friend in
+                            openSeededTradeBuilder(with: friend)
                         }
                     )
                 case .trades:
@@ -608,6 +639,39 @@ struct SocialRootView: View {
             description: sharedContent.description,
             cardCount: sharedContent.cardCount,
             brand: sharedContent.brand
+        )
+    }
+
+    private func openSeededTradeBuilder(with friend: SocialProfile) {
+        guard let seed = services.pendingTradeSeed else {
+            socialNavigationPath.append(SocialDestination.friendProfile(username: friend.username))
+            return
+        }
+
+        let item = TradeItem(
+            id: UUID(),
+            tradeID: UUID(),
+            ownerID: friend.id,
+            cardID: seed.cardID,
+            variantKey: "normal",
+            quantity: 1,
+            createdAt: nil
+        )
+        let (theirCards, myCards): ([TradeItem], [TradeItem]) = {
+            switch seed.preferredSide {
+            case .mySide:
+                return ([], [item])
+            case .theirSide:
+                return ([item], [])
+            }
+        }()
+        services.pendingTradeSeed = nil
+        socialNavigationPath.append(
+            SocialDestination.tradeBuilder(
+                receiverID: friend.id,
+                theirCards: theirCards,
+                myCards: myCards
+            )
         )
     }
 

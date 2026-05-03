@@ -93,6 +93,10 @@ struct DashboardView: View {
         collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
     }
 
+    private var visibleCardCollectionItems: [CollectionItem] {
+        visibleCollectionItems.filter { sealedProductID(for: $0) == nil }
+    }
+
     private var visibleWishlistItems: [WishlistItem] {
         wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
     }
@@ -112,7 +116,7 @@ struct DashboardView: View {
     }
 
     private var uniqueCardsCount: Int {
-        Set(visibleCollectionItems.map(\.cardID)).count
+        Set(visibleCardCollectionItems.map(\.cardID)).count
     }
 
     private var sealedProductsCount: Int {

@@ -8,38 +8,49 @@ struct TradesView: View {
     @State private var profileCache: [UUID: SocialProfile] = [:]
     @State private var isLoading = false
     @State private var errorMessage: String?
-    @State private var statusFilter: TradeStatusFilter = .all
-    @State private var isSuggestionsExpanded = true
+    @State private var showsCompletedTrades = false
 
     private var currentUserID: UUID? {
         if case .signedIn(let uid, _) = services.socialAuth.authState { return uid }
         return nil
     }
 
-    private var filteredTrades: [TradeWithItems] {
-        guard let matchingStatus = statusFilter.matchingStatus else { return trades }
-        return trades.filter { $0.trade.status == matchingStatus }
+    private var openTrades: [TradeWithItems] {
+        trades.filter { tradeWithItems in
+            switch tradeWithItems.trade.status {
+            case .pending, .countered, .accepted:
+                return true
+            case .complete, .cancelled:
+                return false
+            }
+        }
+    }
+
+    private var completedTrades: [TradeWithItems] {
+        trades.filter { $0.trade.status == .complete }
+    }
+
+    private var displayedTrades: [TradeWithItems] {
+        showsCompletedTrades ? (openTrades + completedTrades) : openTrades
     }
 
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
-                filterPicker
+                SuggestedTradesView(navigationPath: $navigationPath)
+                    .padding(.bottom, 22)
+
+                openTradesHeader
                     .padding(.bottom, 8)
 
-                if isLoading && trades.isEmpty {
+                if isLoading && displayedTrades.isEmpty {
                     ProgressView()
                         .frame(maxWidth: .infinity)
                         .padding(.top, 40)
-                } else if filteredTrades.isEmpty && !isLoading {
+                } else if displayedTrades.isEmpty && !isLoading {
                     emptyState
                 } else {
                     tradesList
-                }
-
-                if !trades.isEmpty {
-                    SuggestedTradesView(navigationPath: $navigationPath)
-                        .padding(.top, 24)
                 }
             }
             .padding(.bottom, 32)
@@ -54,34 +65,30 @@ struct TradesView: View {
         })
     }
 
-    private var filterPicker: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(TradeStatusFilter.allCases) { filter in
-                    Button {
-                        statusFilter = filter
-                    } label: {
-                        Text(filter.rawValue)
-                            .font(.system(size: 13, weight: .semibold))
-                            .foregroundStyle(statusFilter == filter ? Color.primary : Color.secondary)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
-                            .background(
-                                statusFilter == filter
-                                ? Color(uiColor: .secondarySystemBackground)
-                                : Color.clear,
-                                in: Capsule()
-                            )
-                    }
-                }
+    private var openTradesHeader: some View {
+        HStack(alignment: .center, spacing: 10) {
+            Text("OPEN TRADES")
+                .font(.system(size: 11, weight: .bold))
+                .tracking(0.7)
+                .foregroundStyle(.secondary)
+            Spacer()
+            HStack {
+                Text("Show Completed trades")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                Toggle("", isOn: $showsCompletedTrades)
+                    .labelsHidden()
+                    .toggleStyle(.switch)
+                    .scaleEffect(0.85)
             }
-            .padding(.horizontal, 16)
+            .fixedSize(horizontal: false, vertical: true)
         }
+        .padding(.horizontal, 16)
     }
 
     private var tradesList: some View {
         LazyVStack(spacing: 0) {
-            ForEach(filteredTrades) { tradeWithItems in
+            ForEach(displayedTrades) { tradeWithItems in
                 Button {
                     navigationPath.append(SocialDestination.tradeDetail(tradeID: tradeWithItems.id))
                 } label: {
@@ -104,10 +111,12 @@ struct TradesView: View {
             Image(systemName: "arrow.left.arrow.right")
                 .font(.system(size: 36, weight: .light))
                 .foregroundStyle(Color.secondary.opacity(0.4))
-            Text(statusFilter == .all ? "No trades yet" : "No \(statusFilter.rawValue.lowercased()) trades")
+            Text(showsCompletedTrades ? "No trades yet" : "No open trades")
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Color.secondary)
-            Text("Offer a trade from a friend's collection or wishlist to get started.")
+            Text(showsCompletedTrades
+                 ? "Offer a trade from a friend's collection or wishlist to get started."
+                 : "Your active pending/countered/accepted trades will appear here.")
                 .font(.system(size: 13))
                 .foregroundStyle(Color.secondary.opacity(0.7))
                 .multilineTextAlignment(.center)
@@ -123,6 +132,11 @@ struct TradesView: View {
         do {
             trades = try await services.trade.fetchMyTrades()
             await loadProfilesForTrades()
+            errorMessage = nil
+        } catch is CancellationError {
+            // Pull-to-refresh and task refresh can overlap; cancellation here is expected.
+        } catch let error as URLError where error.code == .cancelled {
+            // Ignore URLSession cancellation noise for user-initiated refresh gestures.
         } catch {
             errorMessage = error.localizedDescription
         }

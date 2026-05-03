@@ -496,6 +496,20 @@ final class SocialFriendService {
         guard let http = response as? HTTPURLResponse else {
             throw SocialFriendError.invalidResponse
         }
+        if isExpiredJWTResponse(statusCode: http.statusCode, data: data) {
+            await authService.restoreSession()
+            if let refreshedToken = authService.accessToken,
+               !refreshedToken.isEmpty,
+               refreshedToken != accessToken {
+                return try await execute(
+                    path: path,
+                    method: method,
+                    accessToken: refreshedToken,
+                    body: body,
+                    extraHeaders: extraHeaders
+                )
+            }
+        }
         guard (200..<300).contains(http.statusCode) else {
             if let payload = try? JSONDecoder.socialJSON.decode(APIErrorPayload.self, from: data) {
                 throw SocialFriendError.requestFailed(payload.message ?? payload.hint ?? "Supabase request failed with status \(http.statusCode).")
@@ -511,6 +525,13 @@ final class SocialFriendService {
             throw SocialFriendError.invalidResponse
         }
         return try JSONDecoder.socialJSON.decode(T.self, from: data)
+    }
+
+    private func isExpiredJWTResponse(statusCode: Int, data: Data) -> Bool {
+        guard statusCode == 401 else { return false }
+        guard let payload = try? JSONDecoder.socialJSON.decode(APIErrorPayload.self, from: data) else { return false }
+        let message = (payload.message ?? payload.hint ?? "").lowercased()
+        return message.contains("jwt") && message.contains("expired")
     }
 }
 

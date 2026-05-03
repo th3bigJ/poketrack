@@ -393,6 +393,20 @@ final class SocialCardLibraryService {
         if let json = String(data: data, encoding: .utf8), !json.isEmpty {
             print(json)
         }
+        if isExpiredJWTResponse(statusCode: http.statusCode, data: data) {
+            await authService.restoreSession()
+            if let refreshedToken = authService.accessToken,
+               !refreshedToken.isEmpty,
+               refreshedToken != accessToken {
+                return try await execute(
+                    path: path,
+                    method: method,
+                    accessToken: refreshedToken,
+                    body: body,
+                    extraHeaders: extraHeaders
+                )
+            }
+        }
         guard (200..<300).contains(http.statusCode) else {
             if let payload = try? JSONDecoder.socialJSON.decode(APIErrorPayload.self, from: data) {
                 throw SocialCardLibraryError.requestFailed(payload.message ?? payload.hint ?? "Supabase request failed with status \(http.statusCode).")
@@ -407,6 +421,13 @@ final class SocialCardLibraryService {
             throw SocialCardLibraryError.invalidResponse
         }
         return try JSONDecoder.socialJSON.decode(T.self, from: data)
+    }
+
+    private func isExpiredJWTResponse(statusCode: Int, data: Data) -> Bool {
+        guard statusCode == 401 else { return false }
+        guard let payload = try? JSONDecoder.socialJSON.decode(APIErrorPayload.self, from: data) else { return false }
+        let message = (payload.message ?? payload.hint ?? "").lowercased()
+        return message.contains("jwt") && message.contains("expired")
     }
 }
 

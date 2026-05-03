@@ -257,6 +257,12 @@ struct TradeDetailView: View {
                         .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(TradeActionButtonStyle(color: Color(hex: "52C97C"), isBusy: isMutating))
+
+                Button { showConfirmCancel = true } label: {
+                    Label("Cancel Trade", systemImage: "xmark.circle")
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "E05252"), isBusy: isMutating))
             }
         }
         .disabled(isMutating)

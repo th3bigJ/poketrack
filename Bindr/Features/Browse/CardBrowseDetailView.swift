@@ -12,6 +12,8 @@ struct CardBrowseDetailView: View {
     var showsHeaderChromeActions: Bool = true
     /// When true and ``showsHeaderChromeActions`` is false, still show wishlist actions.
     var showsWishlistWhenChromeHidden: Bool = false
+    /// Optional context-specific trade action (used by Social friend profile card detail).
+    var tradeAction: ((Card) -> Void)? = nil
 
     @State private var index: Int
     @State private var navigationPath = NavigationPath()
@@ -21,12 +23,14 @@ struct CardBrowseDetailView: View {
         startIndex: Int,
         addToDeckAction: ((Card, String, Int) -> Void)? = nil,
         showsHeaderChromeActions: Bool = true,
-        showsWishlistWhenChromeHidden: Bool = false
+        showsWishlistWhenChromeHidden: Bool = false,
+        tradeAction: ((Card) -> Void)? = nil
     ) {
         self.cards = cards
         self.addToDeckAction = addToDeckAction
         self.showsHeaderChromeActions = showsHeaderChromeActions
         self.showsWishlistWhenChromeHidden = showsWishlistWhenChromeHidden
+        self.tradeAction = tradeAction
         let clamped: Int = {
             guard !cards.isEmpty else { return 0 }
             return min(max(0, startIndex), cards.count - 1)
@@ -50,6 +54,7 @@ struct CardBrowseDetailView: View {
                                 addToDeckAction: addToDeckAction,
                                 showsCollectionAction: showsHeaderChromeActions,
                                 showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
+                                tradeAction: tradeAction,
                                 onOpenSet: {
                                     if let set = services.cardData.sets.first(where: { $0.setCode == card.setCode }) {
                                         navigationPath.append(set)
@@ -102,6 +107,7 @@ private struct CardBrowseDetailPage: View {
     let addToDeckAction: ((Card, String, Int) -> Void)?
     let showsCollectionAction: Bool
     let showsWishlistAction: Bool
+    let tradeAction: ((Card) -> Void)?
     let onOpenSet: () -> Void
 
     @State private var editingLine: HoldingLine?
@@ -125,6 +131,7 @@ private struct CardBrowseDetailPage: View {
         addToDeckAction: ((Card, String, Int) -> Void)?,
         showsCollectionAction: Bool,
         showsWishlistAction: Bool,
+        tradeAction: ((Card) -> Void)?,
         onOpenSet: @escaping () -> Void
     ) {
         self.card = card
@@ -132,6 +139,7 @@ private struct CardBrowseDetailPage: View {
         self.addToDeckAction = addToDeckAction
         self.showsCollectionAction = showsCollectionAction
         self.showsWishlistAction = showsWishlistAction
+        self.tradeAction = tradeAction
         self.onOpenSet = onOpenSet
         let cardID = card.masterCardId
         _collectionItems = Query(
@@ -417,6 +425,11 @@ private struct CardBrowseDetailPage: View {
                     }
                     if showsCollectionAction {
                         folderActionButton
+                    }
+                    if let tradeAction {
+                        tradeActionButton(action: tradeAction)
+                    }
+                    if showsCollectionAction {
                         shareActionButton
                     }
                 }
@@ -466,7 +479,7 @@ private struct CardBrowseDetailPage: View {
                 addToCollectionVariant(variantKey: variantKey)
             } label: {
                 cardActionBody(
-                    title: "Add to Collection",
+                    title: "Collection",
                     systemImage: "plus.circle.fill",
                     tint: CardDetailPalette.success
                 )
@@ -481,7 +494,7 @@ private struct CardBrowseDetailPage: View {
                 )
             } label: {
                 cardActionBody(
-                    title: "Add to Collection",
+                    title: "Collection",
                     systemImage: "plus.circle.fill",
                     tint: CardDetailPalette.success
                 )
@@ -576,6 +589,19 @@ private struct CardBrowseDetailPage: View {
                 title: "Share",
                 systemImage: "square.and.arrow.up",
                 tint: Color(red: 0.36, green: 0.61, blue: 0.97)
+            )
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func tradeActionButton(action: @escaping (Card) -> Void) -> some View {
+        Button {
+            action(card)
+        } label: {
+            cardActionBody(
+                title: "Trade",
+                systemImage: "arrow.left.arrow.right.circle.fill",
+                tint: CardDetailPalette.chartLine
             )
         }
         .buttonStyle(.plain)

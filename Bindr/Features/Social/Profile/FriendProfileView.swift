@@ -2,6 +2,7 @@ import SwiftUI
 
 struct FriendProfileView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.dismiss) private var dismiss
 
     let username: String
     var navigationPath: Binding<NavigationPath>? = nil
@@ -23,6 +24,15 @@ struct FriendProfileView: View {
     @State private var sharedCollectionCardIDs: [String] = []
     @State private var isSelectMode = false
     @State private var selectedCardIDs: Set<String> = []
+    @State private var isActionsMenuPresented = false
+    @State private var resolvedSharedCardsByID: [String: Card] = [:]
+    @State private var cardDetailSession: CardDetailSession?
+
+    private struct CardDetailSession: Identifiable {
+        let id = UUID()
+        let cards: [Card]
+        let startIndex: Int
+    }
 
     private var canViewCollection: Bool {
         relationship == .friends
@@ -32,63 +42,134 @@ struct FriendProfileView: View {
         relationship == .friends
     }
 
-    var body: some View {
-        Group {
-            if isLoading {
-                ProgressView("Loading profile…")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } else if let profile {
-                ZStack(alignment: .bottom) {
-                    ScrollView {
-                        VStack(spacing: 18) {
-                            profileHeader(profile)
-                            favoritesSection(profile)
-                            tabPicker
-                            tabContent(profile)
-                        }
-                        .padding(.bottom, isSelectMode && !selectedCardIDs.isEmpty ? 80 : 32)
-                    }
-                    .background(Color(uiColor: .systemBackground))
+    private var showsSelectToolbarButton: Bool {
+        (selectedTab == .wishlist || selectedTab == .collection) && canViewWishlist
+    }
 
-                    if isSelectMode && !selectedCardIDs.isEmpty {
-                        offerTradeButton(for: profile)
+    var body: some View {
+        VStack(spacing: 0) {
+            profileTopBar
+
+            Group {
+                if isLoading {
+                    ProgressView("Loading profile…")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else if let profile {
+                    ZStack(alignment: .bottom) {
+                        ScrollView {
+                            VStack(spacing: 18) {
+                                profileHeader(profile)
+                                favoritesSection(profile)
+                                tabPicker
+                                tabContent(profile)
+                            }
+                            .padding(.bottom, isSelectMode && !selectedCardIDs.isEmpty ? 80 : 32)
+                        }
+                        .background(Color(uiColor: .systemBackground))
+
+                        if isSelectMode && !selectedCardIDs.isEmpty {
+                            offerTradeButton(for: profile)
+                        }
                     }
+                } else {
+                    ContentUnavailableView(
+                        "Profile Not Found",
+                        systemImage: "person.crop.circle.badge.exclamationmark",
+                        description: Text("This username does not exist or is no longer available.")
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-            } else {
-                ContentUnavailableView(
-                    "Profile Not Found",
-                    systemImage: "person.crop.circle.badge.exclamationmark",
-                    description: Text("This username does not exist or is no longer available.")
-                )
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .background(Color(uiColor: .systemBackground).ignoresSafeArea())
-        .navigationTitle("@\(username)")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItemGroup(placement: .topBarTrailing) {
-                if (selectedTab == .wishlist || selectedTab == .collection) && canViewWishlist {
-                    Button(isSelectMode ? "Done" : "Select") {
-                        isSelectMode.toggle()
-                        if !isSelectMode { selectedCardIDs = [] }
-                    }
-                    .font(.system(size: 14, weight: .semibold))
-                }
-                if let profile {
-                    Menu("Actions", systemImage: "ellipsis.circle") {
-                        Button("Block User", role: .destructive) {
-                            Task { await block(profile.id) }
-                        }
-                    }
+        .tint(.primary)
+        .toolbar(.hidden, for: .navigationBar)
+        .confirmationDialog("Profile Actions", isPresented: $isActionsMenuPresented, titleVisibility: .visible) {
+            if let profile {
+                Button("Block User", role: .destructive) {
+                    Task { await block(profile.id) }
                 }
             }
+            Button("Cancel", role: .cancel) { }
         }
         .onChange(of: selectedTab) { _, _ in
             isSelectMode = false
             selectedCardIDs = []
         }
+        .onChange(of: relationship) { _, _ in
+            Task { @MainActor in
+                attemptLaunchPendingSeededTradeIfPossible()
+            }
+        }
+        .onChange(of: profile?.id) { _, _ in
+            Task { @MainActor in
+                attemptLaunchPendingSeededTradeIfPossible()
+            }
+        }
+        .sheet(item: $cardDetailSession) { session in
+            CardBrowseDetailView(
+                cards: session.cards,
+                startIndex: session.startIndex,
+                tradeAction: (navigationPath != nil && profile != nil) ? { card in
+                    offerSingleCardTrade(cardID: card.masterCardId)
+                } : nil
+            )
+            .environment(services)
+        }
         .task(id: username) { await refresh() }
+    }
+
+    private var profileTopBar: some View {
+        ZStack {
+            Text("@\(username)")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
+                .padding(.horizontal, 76)
+
+            HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer(minLength: 0)
+
+                HStack(spacing: 10) {
+                    if showsSelectToolbarButton {
+                        ChromeGlassCircleButton(accessibilityLabel: isSelectMode ? "Exit select mode" : "Select cards") {
+                            isSelectMode.toggle()
+                            if !isSelectMode { selectedCardIDs = [] }
+                        } label: {
+                            Image(systemName: isSelectMode ? "checkmark.circle.fill" : "checkmark.circle")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(isSelectMode ? Color.blue : Color.primary)
+                        }
+                    }
+
+                    if profile != nil {
+                        ChromeGlassCircleButton(accessibilityLabel: "Profile actions") {
+                            Haptics.lightImpact()
+                            isActionsMenuPresented = true
+                        } label: {
+                            Image(systemName: "ellipsis")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                        }
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(Color(uiColor: .systemBackground))
+        .overlay(alignment: .bottom) {
+            Divider().opacity(0.08)
+        }
     }
 
     // MARK: - Subviews
@@ -384,7 +465,10 @@ struct FriendProfileView: View {
                         cardIDs: ids,
                         isSelectMode: $isSelectMode,
                         selectedCardIDs: $selectedCardIDs,
-                        cardLoader: { id in await services.cardData.loadCard(masterCardId: id) }
+                        cardLoader: { id in await loadSharedCard(id) },
+                        onCardTap: { tappedID in
+                            Task { await openCardDetail(tappedID: tappedID, orderedIDs: ids) }
+                        }
                     )
                 } else if !canViewWishlist {
                     emptyCard("This user's wishlist is private.")
@@ -397,7 +481,10 @@ struct FriendProfileView: View {
                         cardIDs: sharedCollectionCardIDs,
                         isSelectMode: $isSelectMode,
                         selectedCardIDs: $selectedCardIDs,
-                        cardLoader: { id in await services.cardData.loadCard(masterCardId: id) }
+                        cardLoader: { id in await loadSharedCard(id) },
+                        onCardTap: { tappedID in
+                            Task { await openCardDetail(tappedID: tappedID, orderedIDs: sharedCollectionCardIDs) }
+                        }
                     )
                 } else if canViewCollection {
                     emptyCard("No cards in this user's collection yet.")
@@ -490,12 +577,13 @@ struct FriendProfileView: View {
                     createdAt: nil
                 )
             }
+            let (theirCards, myCards) = prefills(for: items, sourceTab: selectedTab)
             isSelectMode = false
             selectedCardIDs = []
             navigationPath?.wrappedValue.append(SocialDestination.tradeBuilder(
                 receiverID: profile.id,
-                theirCards: items,
-                myCards: []
+                theirCards: theirCards,
+                myCards: myCards
             ))
         } label: {
             Text("Offer Trade (\(selectedCardIDs.count))")
@@ -579,9 +667,14 @@ struct FriendProfileView: View {
                     async let collectionIDs = services.socialCardLibrary.fetchCollectionCardIDs(for: loaded.id)
                     sharedWishlistCardIDs = (try? await wishlistIDs) ?? []
                     sharedCollectionCardIDs = (try? await collectionIDs) ?? []
+                    let idsToWarm = Array(Set(sharedWishlistCardIDs + sharedCollectionCardIDs))
+                    Task { @MainActor in
+                        await warmSharedCardCache(ids: idsToWarm)
+                    }
                 } else {
                     sharedWishlistCardIDs = []
                     sharedCollectionCardIDs = []
+                    resolvedSharedCardsByID = [:]
                 }
             }
             errorMessage = nil
@@ -635,5 +728,104 @@ struct FriendProfileView: View {
 
     private func resolvedWishlistCardIDs() -> [String] {
         sharedWishlistCardIDs.filter { !$0.isEmpty }
+    }
+
+    @MainActor
+    private func openCardDetail(tappedID: String, orderedIDs: [String]) async {
+        guard !isSelectMode else { return }
+        _ = await loadSharedCard(tappedID)
+        let orderedCards = orderedIDs.compactMap { resolvedSharedCardsByID[$0] }
+        guard let startIndex = orderedCards.firstIndex(where: { $0.masterCardId == tappedID }) else { return }
+        cardDetailSession = CardDetailSession(cards: orderedCards, startIndex: startIndex)
+    }
+
+    @MainActor
+    private func loadSharedCard(_ cardID: String) async -> Card? {
+        if let cached = resolvedSharedCardsByID[cardID] {
+            return cached
+        }
+        guard let loaded = await services.cardData.loadCard(masterCardId: cardID) else {
+            return nil
+        }
+        resolvedSharedCardsByID[cardID] = loaded
+        return loaded
+    }
+
+    @MainActor
+    private func warmSharedCardCache(ids: [String]) async {
+        for id in ids where resolvedSharedCardsByID[id] == nil {
+            _ = await loadSharedCard(id)
+        }
+    }
+
+    @MainActor
+    private func offerSingleCardTrade(cardID: String) {
+        guard let profile else { return }
+        guard navigationPath != nil else { return }
+        cardDetailSession = nil
+        let item = TradeItem(
+            id: UUID(),
+            tradeID: UUID(),
+            ownerID: profile.id,
+            cardID: cardID,
+            variantKey: "normal",
+            quantity: 1,
+            createdAt: nil
+        )
+        let (theirCards, myCards) = prefills(for: [item], sourceTab: selectedTab)
+        navigationPath?.wrappedValue.append(
+            SocialDestination.tradeBuilder(
+                receiverID: profile.id,
+                theirCards: theirCards,
+                myCards: myCards
+            )
+        )
+    }
+
+    @MainActor
+    private func attemptLaunchPendingSeededTradeIfPossible() {
+        guard navigationPath != nil else { return }
+        guard relationship == .friends else { return }
+        guard let profile else { return }
+        guard let seed = services.pendingTradeSeed else { return }
+
+        let item = TradeItem(
+            id: UUID(),
+            tradeID: UUID(),
+            ownerID: profile.id,
+            cardID: seed.cardID,
+            variantKey: "normal",
+            quantity: 1,
+            createdAt: nil
+        )
+        let (theirCards, myCards): ([TradeItem], [TradeItem]) = {
+            switch seed.preferredSide {
+            case .mySide:
+                return ([], [item])
+            case .theirSide:
+                return ([item], [])
+            }
+        }()
+        services.pendingTradeSeed = nil
+        navigationPath?.wrappedValue.append(
+            SocialDestination.tradeBuilder(
+                receiverID: profile.id,
+                theirCards: theirCards,
+                myCards: myCards
+            )
+        )
+    }
+
+    private func prefills(for items: [TradeItem], sourceTab: ProfileTab) -> (theirCards: [TradeItem], myCards: [TradeItem]) {
+        switch sourceTab {
+        case .wishlist:
+            // On a friend's wishlist, tapping Trade means "I'll offer this".
+            return ([], items)
+        case .collection:
+            // On a friend's collection, tapping Trade means "I want this".
+            return (items, [])
+        case .posts:
+            return (items, [])
+        }
     }
 }

@@ -5,6 +5,16 @@ import SwiftData
 @Observable
 @MainActor
 final class AppServices {
+    enum TradePrefillSide: Sendable {
+        case mySide
+        case theirSide
+    }
+
+    struct PendingTradeSeed: Sendable {
+        let cardID: String
+        let preferredSide: TradePrefillSide
+    }
+
     private let launchDailyRefreshTimeoutNanoseconds: UInt64 = 10_000_000_000
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
@@ -43,6 +53,9 @@ final class AppServices {
     private(set) var shouldRunBackgroundCatalogRefreshOnLaunch = false
     /// Mirrors card-detail root overlay behavior for sealed detail sheets so underlying UI is fully obscured.
     var isSealedDetailPresentationActive = false
+    /// Temporary handoff when trade starts from non-social surfaces (e.g. Collect tab),
+    /// then the user chooses a friend profile to complete the trade composer.
+    var pendingTradeSeed: PendingTradeSeed?
     /// Set when a catalog pipeline run just finished; ``BrowseView`` consumes once to skip duplicate ``CardDataService/reloadAfterBrandChange()`` (same `loadSets` + search index work).
     private var pendingLightBrowseTabEntry = false
     /// When true, ``RootView`` shows the full ``LoadingScreen`` with byte counts; otherwise a simple indeterminate busy state until sync actually transfers data.

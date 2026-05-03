@@ -11,6 +11,7 @@ struct FriendsListView: View {
     let onOpenSearch: () -> Void
     let onOpenQR: () -> Void
     let onOpenUsername: (String) -> Void
+    var onSelectFriendForTrade: ((SocialProfile) -> Void)? = nil
 
     @State private var selectedTab: FriendsTab = .mine
     @State private var friends: [SocialProfile] = []
@@ -21,6 +22,54 @@ struct FriendsListView: View {
     @State private var isLoading = false
     @State private var isSearching = false
     @State private var errorMessage: String?
+    @State private var friendCollectionCardIDsByUser: [UUID: Set<String>] = [:]
+    @State private var friendWishlistCardIDsByUser: [UUID: Set<String>] = [:]
+    @State private var tradeSeedCardName: String?
+    @State private var isLoadingTradeSuggestions = false
+
+    private var isSelectingFriendForTrade: Bool {
+        services.pendingTradeSeed != nil
+    }
+    private var tradeSeedSignature: String {
+        guard let seed = services.pendingTradeSeed else { return "none" }
+        let side: String = {
+            switch seed.preferredSide {
+            case .mySide: return "my"
+            case .theirSide: return "their"
+            }
+        }()
+        return "\(seed.cardID)|\(side)"
+    }
+    private var suggestedTradeFriends: [SocialProfile] {
+        guard let seed = services.pendingTradeSeed else { return [] }
+        return friends.filter { friend in
+            switch seed.preferredSide {
+            case .theirSide:
+                return friendCollectionCardIDsByUser[friend.id]?.contains(seed.cardID) == true
+            case .mySide:
+                return friendWishlistCardIDsByUser[friend.id]?.contains(seed.cardID) == true
+            }
+        }
+    }
+    private var tradeSuggestionHeadline: String {
+        guard let seed = services.pendingTradeSeed else { return "Friends with this card" }
+        switch seed.preferredSide {
+        case .theirSide:
+            return "Friends with this card in their collection"
+        case .mySide:
+            return "Friends who want this card"
+        }
+    }
+    private var tradeSuggestionBody: String {
+        guard let seed = services.pendingTradeSeed else { return "Suggestions update as your friends sync their lists." }
+        let cardName = tradeSeedCardName ?? seed.cardID
+        switch seed.preferredSide {
+        case .theirSide:
+            return "Based on your wishlist card \(cardName), these friends currently own it."
+        case .mySide:
+            return "Based on your collection card \(cardName), these friends currently want it in their wishlist."
+        }
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -59,24 +108,47 @@ struct FriendsListView: View {
         .onChange(of: searchText) { _, newValue in
             Task { await search(query: newValue) }
         }
+        .task(id: tradeSeedSignature) {
+            await refreshTradeSuggestionContext(friendIDs: friends.map(\.id))
+        }
     }
 
     private var header: some View {
-        HStack {
-            Text("Friends")
-                .font(.system(size: 22, weight: .heavy))
-                .tracking(-0.5)
-                .foregroundStyle(Color.primary)
-            Spacer()
-            Button(action: onOpenQR) {
-                Image(systemName: "qrcode")
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundStyle(Color.black)
-                    .frame(width: 36, height: 36)
-                    .background(Color.accentColor, in: Circle())
-                    .overlay(Circle().stroke(Color.accentColor.opacity(0.45), lineWidth: 1))
+        VStack(spacing: 10) {
+            HStack {
+                Text("Friends")
+                    .font(.system(size: 22, weight: .heavy))
+                    .tracking(-0.5)
+                    .foregroundStyle(Color.primary)
+                Spacer()
+                Button(action: onOpenQR) {
+                    Image(systemName: "qrcode")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundStyle(Color.primary)
+                        .frame(width: 36, height: 36)
+                        .background(Color(uiColor: .secondarySystemBackground), in: Circle())
+                        .overlay(Circle().stroke(Color.primary.opacity(0.12), lineWidth: 1))
+                }
+                .buttonStyle(.plain)
             }
-            .buttonStyle(.plain)
+            if isSelectingFriendForTrade {
+                HStack(spacing: 8) {
+                    Image(systemName: "arrow.left.arrow.right.circle.fill")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(Color(hex: "E8B84B"))
+                    Text("Select a friend below to start this trade.")
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(.primary)
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 10)
+                .background(Color(hex: "E8B84B").opacity(0.14), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .stroke(Color(hex: "E8B84B").opacity(0.28), lineWidth: 1)
+                }
+            }
         }
         .padding(.horizontal, 16)
         .padding(.top, 18)
@@ -145,13 +217,26 @@ struct FriendsListView: View {
             }
         }
 
+        if isSelectingFriendForTrade {
+            tradeSuggestionCard
+        }
+
         sectionLabel("FOLLOWING · \(friends.count)")
         if friends.isEmpty && !isLoading {
             emptyCard("No friends yet. Find trainers by username or scan a QR code.")
         } else {
             ForEach(friends) { friend in
-                profileRow(profile: friend, detail: profileStats(friend), buttonTitle: "Following") {
-                    onOpenUsername(friend.username)
+                profileRow(
+                    profile: friend,
+                    detail: isSelectingFriendForTrade ? "Start trade with @\(friend.username)" : profileStats(friend),
+                    buttonTitle: isSelectingFriendForTrade ? "Select" : "Following"
+                ) {
+                    if isSelectingFriendForTrade, let onSelectFriendForTrade {
+                        Haptics.mediumImpact()
+                        onSelectFriendForTrade(friend)
+                    } else {
+                        onOpenUsername(friend.username)
+                    }
                 }
             }
         }
@@ -163,6 +248,77 @@ struct FriendsListView: View {
                     onOpenUsername(request.addressee.username)
                 }
             }
+        }
+    }
+
+    @ViewBuilder
+    private var tradeSuggestionCard: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 8) {
+                Image(systemName: "sparkles.rectangle.stack.fill")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(Color(hex: "E8B84B"))
+                Text(tradeSuggestionHeadline)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(.primary)
+                Spacer(minLength: 0)
+                if isLoadingTradeSuggestions {
+                    ProgressView()
+                        .scaleEffect(0.8)
+                } else {
+                    Text("\(suggestedTradeFriends.count)")
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(Color(hex: "E8B84B"))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(Color(hex: "E8B84B").opacity(0.16), in: Capsule())
+                }
+            }
+            Text(tradeSuggestionBody)
+                .font(.system(size: 12))
+                .foregroundStyle(.secondary)
+
+            if !isLoadingTradeSuggestions {
+                if suggestedTradeFriends.isEmpty {
+                    Text("No direct matches yet. You can still pick any friend below.")
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(Color.secondary.opacity(0.8))
+                } else {
+                    ForEach(suggestedTradeFriends.prefix(3)) { friend in
+                        Button {
+                            if let onSelectFriendForTrade {
+                                Haptics.mediumImpact()
+                                onSelectFriendForTrade(friend)
+                            } else {
+                                onOpenUsername(friend.username)
+                            }
+                        } label: {
+                            HStack(spacing: 10) {
+                                ProfileAvatarView(profile: friend, size: 32)
+                                VStack(alignment: .leading, spacing: 1) {
+                                    Text(friend.displayName ?? friend.username)
+                                        .font(.system(size: 13, weight: .semibold))
+                                        .foregroundStyle(.primary)
+                                    Text("@\(friend.username)")
+                                        .font(.system(size: 11))
+                                        .foregroundStyle(.secondary)
+                                }
+                                Spacer(minLength: 0)
+                                Text("Select")
+                                    .font(.system(size: 11, weight: .bold))
+                                    .foregroundStyle(Color(hex: "E8B84B"))
+                            }
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+            }
+        }
+        .padding(14)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Color(hex: "E8B84B").opacity(0.22), lineWidth: 1)
         }
     }
 
@@ -328,6 +484,7 @@ struct FriendsListView: View {
             friends = try await friendsTask
             incomingRequests = try await incomingTask
             outgoingRequests = try await outgoingTask
+            await refreshTradeSuggestionContext(friendIDs: friends.map(\.id))
             errorMessage = nil
         } catch is CancellationError {
             // Ignore
@@ -388,6 +545,37 @@ struct FriendsListView: View {
         default:
             Haptics.lightImpact()
             onOpenUsername(result.profile.username)
+        }
+    }
+
+    private func refreshTradeSuggestionContext(friendIDs: [UUID]) async {
+        guard isSelectingFriendForTrade else {
+            friendCollectionCardIDsByUser = [:]
+            friendWishlistCardIDsByUser = [:]
+            tradeSeedCardName = nil
+            isLoadingTradeSuggestions = false
+            return
+        }
+        guard let seed = services.pendingTradeSeed else { return }
+        isLoadingTradeSuggestions = true
+        defer { isLoadingTradeSuggestions = false }
+
+        if !friendIDs.isEmpty {
+            async let collectionsTask = services.socialCardLibrary.fetchCollectionCardIDsByUser(for: friendIDs)
+            async let wishlistsTask = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
+            let collections = (try? await collectionsTask) ?? [:]
+            let wishlists = (try? await wishlistsTask) ?? [:]
+            friendCollectionCardIDsByUser = collections.mapValues { Set($0) }
+            friendWishlistCardIDsByUser = wishlists.mapValues { Set($0) }
+        } else {
+            friendCollectionCardIDsByUser = [:]
+            friendWishlistCardIDsByUser = [:]
+        }
+
+        if let card = await services.cardData.loadCard(masterCardId: seed.cardID) {
+            tradeSeedCardName = card.cardName
+        } else {
+            tradeSeedCardName = seed.cardID
         }
     }
 }

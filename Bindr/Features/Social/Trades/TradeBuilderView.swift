@@ -18,7 +18,16 @@ struct TradeBuilderView: View {
     @State private var isSubmitting = false
     @State private var errorMessage: String?
     @State private var isMyCardPickerPresented = false
+    @State private var isTheirCardPickerPresented = false
     @State private var receiverProfile: SocialProfile?
+    @State private var receiverCollectionCardIDs: Set<String> = []
+    @State private var myCollectionCardIDs: Set<String> = []
+    @State private var isOwnershipLoading = true
+    @State private var cardNameByID: [String: String] = [:]
+    @State private var valuationCardCacheByID: [String: Card] = [:]
+    @State private var myCardsValueUSD: Double = 0
+    @State private var theirCardsValueUSD: Double = 0
+    @State private var isValuationLoading = false
 
     init(
         receiverID: UUID,
@@ -43,29 +52,101 @@ struct TradeBuilderView: View {
     }
 
     private var isCounterFlow: Bool { existingTradeID != nil }
+    private var myUnavailableCards: [NewTradeItemInput] {
+        guard !isOwnershipLoading else { return [] }
+        return myCards.filter { !myCollectionCardIDs.contains($0.cardID) }
+    }
+    private var theirUnavailableCards: [NewTradeItemInput] {
+        guard !isOwnershipLoading else { return [] }
+        return theirCards.filter { !receiverCollectionCardIDs.contains($0.cardID) }
+    }
+    private var hasUnavailableCards: Bool {
+        !myUnavailableCards.isEmpty || !theirUnavailableCards.isEmpty
+    }
+    private var unavailableCardNameLookupSignature: String {
+        (myUnavailableCards.map(\.cardID) + theirUnavailableCards.map(\.cardID))
+            .sorted()
+            .joined(separator: "|")
+    }
+    private var valuationSignature: String {
+        let myKey = myCards
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }
+            .sorted()
+            .joined(separator: ";")
+        let theirKey = theirCards
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }
+            .sorted()
+            .joined(separator: ";")
+        return "\(myKey)__\(theirKey)__\(services.priceDisplay.currency.rawValue)__\(services.pricing.usdToGbp)"
+    }
+    private var cashInitiatorDisplayAmount: Double {
+        parsedCash(cashInitiatorText)
+    }
+    private var cashReceiverDisplayAmount: Double {
+        parsedCash(cashReceiverText)
+    }
+    private var cashInitiatorUSD: Double {
+        displayAmountToUSD(cashInitiatorDisplayAmount)
+    }
+    private var cashReceiverUSD: Double {
+        displayAmountToUSD(cashReceiverDisplayAmount)
+    }
+    private var mySideTotalUSD: Double {
+        myCardsValueUSD + cashInitiatorUSD
+    }
+    private var theirSideTotalUSD: Double {
+        theirCardsValueUSD + cashReceiverUSD
+    }
+    private var tradeBalanceUSD: Double {
+        mySideTotalUSD - theirSideTotalUSD
+    }
+    private var isTradeEven: Bool {
+        abs(tradeBalanceUSD) < 0.01
+    }
 
     var body: some View {
         List {
             theirSideSection
             mySideSection
-            cashSection
         }
         .listStyle(.insetGrouped)
         .navigationTitle(isCounterFlow ? "Counter Offer" : "New Trade")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .confirmationAction) {
-                Button(isCounterFlow ? "Send Counter" : "Send Trade") {
+                Button(isCounterFlow ? "Send Counter" : "Offer Trade") {
                     Task { await submit() }
                 }
-                .disabled(isSubmitting || (theirCards.isEmpty && myCards.isEmpty))
+                .tint(.primary)
+                .disabled(
+                    isSubmitting
+                    || (theirCards.isEmpty && myCards.isEmpty)
+                    || isOwnershipLoading
+                    || hasUnavailableCards
+                )
                 .overlay {
                     if isSubmitting { ProgressView().scaleEffect(0.7) }
                 }
             }
         }
+        .sheet(isPresented: $isTheirCardPickerPresented) {
+            TradeCardPickerView(
+                ownerUserID: receiverID,
+                navigationTitle: "Pick Their Cards"
+            ) { selected in
+                for item in selected {
+                    if !theirCards.contains(where: { $0.cardID == item.cardID && $0.variantKey == item.variantKey }) {
+                        theirCards.append(item)
+                    }
+                }
+            }
+            .environment(services)
+        }
         .sheet(isPresented: $isMyCardPickerPresented) {
-            TradeCardPickerView { selected in
+            TradeCardPickerView(
+                ownerUserID: currentUserID,
+                navigationTitle: "Pick My Cards"
+            ) { selected in
                 for item in selected {
                     if !myCards.contains(where: { $0.cardID == item.cardID && $0.variantKey == item.variantKey }) {
                         myCards.append(item)
@@ -80,7 +161,19 @@ struct TradeBuilderView: View {
             Text(errorMessage ?? "")
         })
         .task {
+            isOwnershipLoading = true
+            defer { isOwnershipLoading = false }
             receiverProfile = try? await services.socialProfile.fetchProfile(id: receiverID)
+            async let theirCollectionTask = services.socialCardLibrary.fetchCollectionCardIDs(for: receiverID)
+            async let myCollectionTask = services.socialCardLibrary.fetchCollectionCardIDs(for: currentUserID)
+            receiverCollectionCardIDs = Set((try? await theirCollectionTask) ?? [])
+            myCollectionCardIDs = Set((try? await myCollectionTask) ?? [])
+        }
+        .task(id: unavailableCardNameLookupSignature) {
+            await cacheCardNamesForUnavailableCards()
+        }
+        .task(id: valuationSignature) {
+            await refreshTradeValues()
         }
     }
 
@@ -95,11 +188,66 @@ struct TradeBuilderView: View {
                 ForEach(theirCards) { item in
                     BuilderCardRow(item: item, cardLoader: { id in await services.cardData.loadCard(masterCardId: id) })
                 }
+                .onDelete { indices in
+                    theirCards.remove(atOffsets: indices)
+                }
+            }
+            Button {
+                isTheirCardPickerPresented = true
+            } label: {
+                Label("Add Cards from Their Collection", systemImage: "plus.circle")
+                    .font(.system(size: 14))
+            }
+
+            HStack {
+                Text("They add cash")
+                    .font(.system(size: 14))
+                    .foregroundStyle(.primary)
+                Spacer()
+                HStack(spacing: 4) {
+                    Text(services.priceDisplay.currency.symbol)
+                        .font(.system(size: 14))
+                        .foregroundStyle(.secondary)
+                    TextField("0.00", text: $cashReceiverText)
+                        .keyboardType(.decimalPad)
+                        .multilineTextAlignment(.trailing)
+                        .font(.system(size: 14))
+                        .frame(width: 90)
+                }
+            }
+
+            HStack {
+                Text("Their total")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(.primary)
+                Spacer()
+                if isValuationLoading {
+                    ProgressView()
+                        .scaleEffect(0.8)
+                } else {
+                    Text(formattedDisplayAmountUSD(theirSideTotalUSD))
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(.primary)
+                }
             }
         } header: {
             Text(receiverProfile.map { "Their Side (@\($0.username))" } ?? "Their Side")
         } footer: {
-            Text("Cards you are requesting from them.")
+            if theirUnavailableCards.isEmpty {
+                Text("Cards you are requesting from them. Total includes cards + cash.")
+            } else {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Warning: They don't currently have \(theirUnavailableCards.count) selected \(theirUnavailableCards.count == 1 ? "card" : "cards") in their collection.")
+                        .foregroundStyle(.red)
+                    Text(unavailableNamesText(for: theirUnavailableCards))
+                        .foregroundStyle(.red)
+                    Button("Remove unavailable cards") {
+                        removeUnavailableFromTheirSide()
+                    }
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(.red)
+                }
+            }
         }
     }
 
@@ -124,53 +272,59 @@ struct TradeBuilderView: View {
                 Label("Add Cards from My Collection", systemImage: "plus.circle")
                     .font(.system(size: 14))
             }
-        } header: {
-            Text("My Side")
-        } footer: {
-            Text("Cards you are offering in return.")
-        }
-    }
 
-    private var cashSection: some View {
-        Section {
             HStack {
-                Text("You add")
+                Text("I add cash")
                     .font(.system(size: 14))
                     .foregroundStyle(.primary)
                 Spacer()
                 HStack(spacing: 4) {
-                    Text("£")
+                    Text(services.priceDisplay.currency.symbol)
                         .font(.system(size: 14))
                         .foregroundStyle(.secondary)
                     TextField("0.00", text: $cashInitiatorText)
                         .keyboardType(.decimalPad)
                         .multilineTextAlignment(.trailing)
                         .font(.system(size: 14))
-                        .frame(width: 80)
+                        .frame(width: 90)
                 }
             }
+
             HStack {
-                Text("They add")
-                    .font(.system(size: 14))
+                Text("My total")
+                    .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.primary)
                 Spacer()
-                HStack(spacing: 4) {
-                    Text("£")
-                        .font(.system(size: 14))
-                        .foregroundStyle(.secondary)
-                    TextField("0.00", text: $cashReceiverText)
-                        .keyboardType(.decimalPad)
-                        .multilineTextAlignment(.trailing)
-                        .font(.system(size: 14))
-                        .frame(width: 80)
+                if isValuationLoading {
+                    ProgressView()
+                        .scaleEffect(0.8)
+                } else {
+                    Text(formattedDisplayAmountUSD(mySideTotalUSD))
+                        .font(.system(size: 14, weight: .bold))
+                        .foregroundStyle(.primary)
                 }
             }
         } header: {
-            Text("Cash (Optional)")
+            Text("My Side")
         } footer: {
-            Text("Add cash to either side to sweeten the deal.")
+            if myUnavailableCards.isEmpty {
+                Text("Cards you are offering in return. Total includes cards + cash.")
+            } else {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Warning: You don't currently have \(myUnavailableCards.count) selected \(myUnavailableCards.count == 1 ? "card" : "cards") in your collection.")
+                        .foregroundStyle(.red)
+                    Text(unavailableNamesText(for: myUnavailableCards))
+                        .foregroundStyle(.red)
+                    Button("Remove unavailable cards") {
+                        removeUnavailableFromMySide()
+                    }
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(.red)
+                }
+            }
         }
     }
+
 
     private func submit() async {
         isSubmitting = true
@@ -203,15 +357,110 @@ struct TradeBuilderView: View {
             errorMessage = error.localizedDescription
         }
     }
+
+    private var currentUserID: UUID {
+        if case .signedIn(let id, _) = services.socialAuth.authState {
+            return id
+        }
+        return UUID()
+    }
+
+    private func removeUnavailableFromMySide() {
+        guard !isOwnershipLoading else { return }
+        myCards.removeAll { !myCollectionCardIDs.contains($0.cardID) }
+    }
+
+    private func removeUnavailableFromTheirSide() {
+        guard !isOwnershipLoading else { return }
+        theirCards.removeAll { !receiverCollectionCardIDs.contains($0.cardID) }
+    }
+
+    private func unavailableNamesText(for items: [NewTradeItemInput]) -> String {
+        let uniqueCardIDs = Array(Set(items.map(\.cardID))).sorted()
+        let names = uniqueCardIDs.map { cardNameByID[$0] ?? $0 }
+        return "Unavailable: \(names.joined(separator: ", "))"
+    }
+
+    private func cacheCardNamesForUnavailableCards() async {
+        let ids = Array(Set(myUnavailableCards.map(\.cardID) + theirUnavailableCards.map(\.cardID)))
+        for cardID in ids where cardNameByID[cardID] == nil {
+            if let loaded = await services.cardData.loadCard(masterCardId: cardID) {
+                cardNameByID[cardID] = loaded.cardName
+            } else {
+                cardNameByID[cardID] = cardID
+            }
+        }
+    }
+
+    private func refreshTradeValues() async {
+        isValuationLoading = true
+        defer { isValuationLoading = false }
+
+        var nextMyValueUSD: Double = 0
+        var nextTheirValueUSD: Double = 0
+
+        for item in myCards {
+            guard let usd = await usdValue(for: item) else { continue }
+            nextMyValueUSD += usd * Double(max(item.quantity, 1))
+        }
+        for item in theirCards {
+            guard let usd = await usdValue(for: item) else { continue }
+            nextTheirValueUSD += usd * Double(max(item.quantity, 1))
+        }
+
+        myCardsValueUSD = nextMyValueUSD
+        theirCardsValueUSD = nextTheirValueUSD
+    }
+
+    private func usdValue(for item: NewTradeItemInput) async -> Double? {
+        guard let card = await loadCardForValuation(id: item.cardID) else { return nil }
+        if let exactVariant = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+            return exactVariant
+        }
+        return await services.pricing.usdPrice(for: card, printing: item.variantKey)
+    }
+
+    private func loadCardForValuation(id: String) async -> Card? {
+        if let cached = valuationCardCacheByID[id] {
+            return cached
+        }
+        guard let loaded = await services.cardData.loadCard(masterCardId: id) else {
+            return nil
+        }
+        valuationCardCacheByID[id] = loaded
+        return loaded
+    }
+
+    private func parsedCash(_ text: String) -> Double {
+        Double(text.replacingOccurrences(of: ",", with: ".")) ?? 0
+    }
+
+    private func displayAmountToUSD(_ amount: Double) -> Double {
+        switch services.priceDisplay.currency {
+        case .usd:
+            return amount
+        case .gbp:
+            let fx = max(services.pricing.usdToGbp, 0.0001)
+            return amount / fx
+        }
+    }
+
+    private func formattedDisplayAmountUSD(_ amountUSD: Double) -> String {
+        services.priceDisplay.currency.format(amountUSD: amountUSD, usdToGbp: services.pricing.usdToGbp)
+    }
+
 }
 
 // MARK: - BuilderCardRow
 
 private struct BuilderCardRow: View {
+    @Environment(AppServices.self) private var services
+
     let item: NewTradeItemInput
     let cardLoader: (String) async -> Card?
 
     @State private var card: Card?
+    @State private var rowValueUSD: Double?
 
     var body: some View {
         HStack(spacing: 10) {
@@ -244,13 +493,53 @@ private struct BuilderCardRow: View {
                         .foregroundStyle(Color(hex: "E8B84B"))
                 }
             }
+
+            Spacer(minLength: 8)
+
+            Text(rowValueText)
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(.secondary)
+                .multilineTextAlignment(.trailing)
         }
-        .task { card = await cardLoader(item.cardID) }
+        .task(id: valueLookupSignature) {
+            if card == nil {
+                card = await cardLoader(item.cardID)
+            }
+            await refreshRowValue()
+        }
     }
 
     private var shimmer: some View {
         RoundedRectangle(cornerRadius: 4)
             .fill(Color.white.opacity(0.05))
+    }
+
+    private var valueLookupSignature: String {
+        "\(item.cardID)|\(item.variantKey)|\(item.quantity)|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)"
+    }
+
+    private var rowValueText: String {
+        guard let rowValueUSD else { return "—" }
+        return services.priceDisplay.currency.format(amountUSD: rowValueUSD, usdToGbp: services.pricing.usdToGbp)
+    }
+
+    private func refreshRowValue() async {
+        guard let card else {
+            rowValueUSD = nil
+            return
+        }
+        let variantUSD = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey)
+        let unitUSD: Double?
+        if let variantUSD {
+            unitUSD = variantUSD
+        } else {
+            unitUSD = await services.pricing.usdPrice(for: card, printing: item.variantKey)
+        }
+        if let unitUSD {
+            rowValueUSD = unitUSD * Double(max(item.quantity, 1))
+        } else {
+            rowValueUSD = nil
+        }
     }
 }
 
@@ -260,38 +549,63 @@ struct TradeCardPickerView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
 
+    let ownerUserID: UUID
+    let navigationTitle: String
     let onConfirm: ([NewTradeItemInput]) -> Void
 
     @State private var collectionCardIDs: [String] = []
     @State private var selectedCardIDs: Set<String> = []
+    @State private var cardNameByID: [String: String] = [:]
+    @State private var cardCacheByID: [String: Card] = [:]
     @State private var isLoading = false
+    @State private var isIndexingNames = false
     @State private var searchText = ""
+    @State private var visibleCount = 60
+
+    private let pageSize = 60
 
     private var filteredCardIDs: [String] {
-        guard !searchText.isEmpty else { return collectionCardIDs }
-        return collectionCardIDs.filter { $0.localizedCaseInsensitiveContains(searchText) }
+        let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return collectionCardIDs }
+        let query = trimmed.localizedLowercase
+        return collectionCardIDs.filter { cardID in
+            guard let cardName = cardNameByID[cardID] else { return false }
+            return cardName.localizedLowercase.contains(query)
+        }
+    }
+
+    private var visibleCardIDs: [String] {
+        Array(filteredCardIDs.prefix(visibleCount))
     }
 
     var body: some View {
         NavigationStack {
-            Group {
-                if isLoading {
-                    ProgressView("Loading collection…")
+            VStack(spacing: 0) {
+                if !collectionCardIDs.isEmpty {
+                    searchField
+                        .padding(.horizontal, 12)
+                        .padding(.top, 12)
+                        .padding(.bottom, 8)
+                }
+
+                Group {
+                    if isLoading {
+                        ProgressView("Loading collection…")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else if collectionCardIDs.isEmpty {
+                        ContentUnavailableView(
+                            "Collection Empty",
+                            systemImage: "rectangle.stack",
+                            description: Text("Sync your collection to offer cards in a trade.")
+                        )
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if collectionCardIDs.isEmpty {
-                    ContentUnavailableView(
-                        "Collection Empty",
-                        systemImage: "rectangle.stack",
-                        description: Text("Sync your collection to offer cards in a trade.")
-                    )
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    cardGrid
+                    } else {
+                        cardGrid
+                    }
                 }
             }
-            .navigationTitle("Pick Cards")
+            .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
-            .searchable(text: $searchText, prompt: "Search card IDs")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") { dismiss() }
@@ -307,16 +621,23 @@ struct TradeCardPickerView: View {
             }
         }
         .task { await loadCollection() }
+        .onChange(of: searchText) { _, _ in
+            visibleCount = pageSize
+            let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmed.isEmpty else { return }
+            Task { await indexCardNamesIfNeeded() }
+        }
     }
 
     private var cardGrid: some View {
         ScrollView {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
-                ForEach(filteredCardIDs, id: \.self) { cardID in
+                ForEach(visibleCardIDs, id: \.self) { cardID in
                     SelectablePickerCard(
                         cardID: cardID,
                         isSelected: selectedCardIDs.contains(cardID),
-                        cardLoader: { id in await services.cardData.loadCard(masterCardId: id) }
+                        cachedCard: cardCacheByID[cardID],
+                        cardLoader: { id in await loadCard(for: id) }
                     ) {
                         if selectedCardIDs.contains(cardID) {
                             selectedCardIDs.remove(cardID)
@@ -324,27 +645,92 @@ struct TradeCardPickerView: View {
                             selectedCardIDs.insert(cardID)
                         }
                     }
+                    .onAppear {
+                        loadMoreCardsIfNeeded(currentCardID: cardID)
+                    }
                 }
             }
             .padding(12)
+
+            if visibleCount < filteredCardIDs.count {
+                ProgressView()
+                    .padding(.bottom, 12)
+            } else if isIndexingNames {
+                HStack(spacing: 8) {
+                    ProgressView()
+                    Text("Indexing card names...")
+                        .font(.system(size: 12))
+                        .foregroundStyle(.secondary)
+                }
+                .padding(.bottom, 12)
+            }
         }
     }
 
     private func loadCollection() async {
-        guard let uid: UUID = {
-            if case .signedIn(let id, _) = services.socialAuth.authState { return id }
-            return nil
-        }() else { return }
-
         isLoading = true
         defer { isLoading = false }
-        collectionCardIDs = (try? await services.socialCardLibrary.fetchCollectionCardIDs(for: uid)) ?? []
+        collectionCardIDs = (try? await services.socialCardLibrary.fetchCollectionCardIDs(for: ownerUserID)) ?? []
+    }
+
+    private var searchField: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(Color.secondary.opacity(0.5))
+            TextField("Search cards...", text: $searchText)
+                .font(.system(size: 13))
+                .foregroundStyle(Color.primary)
+                .tint(Color(hex: "E8B84B"))
+                .autocorrectionDisabled()
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 11)
+        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Color.primary.opacity(0.09), lineWidth: 1)
+        }
+    }
+
+    private func loadMoreCardsIfNeeded(currentCardID: String) {
+        guard visibleCount < filteredCardIDs.count else { return }
+        let triggerIndex = max(visibleCount - 15, 0)
+        guard filteredCardIDs.indices.contains(triggerIndex) else { return }
+        if filteredCardIDs[triggerIndex] == currentCardID {
+            visibleCount = min(visibleCount + pageSize, filteredCardIDs.count)
+        }
+    }
+
+    private func loadCard(for cardID: String) async -> Card? {
+        if let cached = cardCacheByID[cardID] {
+            return cached
+        }
+        guard let loaded = await services.cardData.loadCard(masterCardId: cardID) else {
+            return nil
+        }
+        cardCacheByID[cardID] = loaded
+        cardNameByID[cardID] = loaded.cardName
+        return loaded
+    }
+
+    private func indexCardNamesIfNeeded() async {
+        let missingIDs = collectionCardIDs.filter { cardNameByID[$0] == nil }
+        guard !missingIDs.isEmpty else { return }
+        isIndexingNames = true
+        defer { isIndexingNames = false }
+
+        for cardID in missingIDs {
+            guard !Task.isCancelled else { return }
+            _ = await loadCard(for: cardID)
+        }
     }
 }
 
 private struct SelectablePickerCard: View {
     let cardID: String
     let isSelected: Bool
+    let cachedCard: Card?
     let cardLoader: (String) async -> Card?
     let onTap: () -> Void
 
@@ -381,6 +767,12 @@ private struct SelectablePickerCard: View {
             }
         }
         .buttonStyle(.plain)
-        .task { card = await cardLoader(cardID) }
+        .task {
+            if let cachedCard {
+                card = cachedCard
+            } else {
+                card = await cardLoader(cardID)
+            }
+        }
     }
 }
