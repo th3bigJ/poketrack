@@ -659,73 +659,94 @@ struct DashboardView: View {
     }
 
     private var mostExpensiveCardInsightCard: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 16) {
             Text("Most Expensive Card")
-                .font(.title3.weight(.semibold))
+                .font(.title3.weight(.bold))
                 .foregroundStyle(dashboardPrimaryText)
 
             if let topCard = mostExpensiveHolding {
-                HStack(spacing: 12) {
-                    if let imageURL = topCard.imageURL {
-                        CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        } placeholder: {
-                            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                .fill(dashboardCardInsetBackground)
+                HStack(spacing: 16) {
+                    // Premium Card Artwork Frame
+                    ZStack {
+                        if let imageURL = topCard.imageURL {
+                            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            } placeholder: {
+                                Color.white.opacity(0.1)
+                            }
+                        } else {
+                            Color.white.opacity(0.1)
                                 .overlay {
                                     Image(systemName: "photo")
                                         .font(.headline)
                                         .foregroundStyle(dashboardSecondaryText)
                                 }
                         }
-                        .frame(width: 48, height: 68)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                .stroke(dashboardBorder, lineWidth: 1)
-                        )
                     }
+                    .frame(width: 58, height: 82)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .background {
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(Color.white)
+                            .shadow(color: services.theme.accentColor.opacity(0.25), radius: 10, x: 0, y: 4)
+                    }
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .stroke(services.theme.accentColor.opacity(0.4), lineWidth: 1)
+                    )
 
-                    VStack(alignment: .leading, spacing: 5) {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text(topCard.name)
-                            .font(.headline)
+                            .font(.headline.weight(.bold))
                             .foregroundStyle(dashboardPrimaryText)
                             .lineLimit(1)
+                        
                         Text(topCard.setName ?? "Set unknown")
-                            .font(.subheadline)
+                            .font(.subheadline.weight(.medium))
                             .foregroundStyle(dashboardSecondaryText)
                             .lineLimit(1)
-                        Text("Owned: \(topCard.quantity)")
-                            .font(.caption.weight(.medium))
-                            .foregroundStyle(dashboardSecondaryText)
+                        
+                        HStack(spacing: 6) {
+                            Image(systemName: "tag.fill")
+                                .font(.caption2)
+                            Text("Owned: \(topCard.quantity)")
+                                .font(.caption.weight(.bold))
+                        }
+                        .foregroundStyle(services.theme.accentColor)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(services.theme.accentColor.opacity(0.1), in: Capsule())
                     }
 
                     Spacer(minLength: 8)
 
                     VStack(alignment: .trailing, spacing: 4) {
                         Text(formatCurrency(topCard.unitValue))
-                            .font(.title3.weight(.bold))
+                            .font(.title2.weight(.black))
                             .foregroundStyle(dashboardPrimaryText)
                             .contentTransition(.numericText())
+                        
                         Text("per card")
-                            .font(.caption)
+                            .font(.caption2.weight(.bold))
                             .foregroundStyle(dashboardSecondaryText)
+                            .textCase(.uppercase)
+
                         if topCard.quantity > 1 {
-                            Text("Total: \(formatCurrency(topCard.totalValue))")
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(dashboardSecondaryText)
-                                .lineLimit(1)
+                            Text(formatCurrency(topCard.totalValue))
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(DashboardPalette.success)
                         }
                     }
                 }
+                .padding(.vertical, 4)
             } else {
                 Text("No priced cards yet.")
                     .font(.subheadline)
                     .foregroundStyle(dashboardSecondaryText)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.vertical, 20)
             }
         }
     }
@@ -755,39 +776,81 @@ struct DashboardView: View {
     }
 
     private var setCompletionInsightCard: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 14) {
             Text("Sets Closest to Completion")
-                .font(.title3.weight(.semibold))
+                .font(.title3.weight(.bold))
                 .foregroundStyle(dashboardPrimaryText)
 
             if setCompletionEntries.isEmpty {
                 Text("Add cards from sets to track completion progress.")
                     .font(.subheadline)
                     .foregroundStyle(dashboardSecondaryText)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.vertical, 20)
             } else {
-                VStack(spacing: 10) {
+                VStack(spacing: 14) {
                     ForEach(Array(setCompletionEntries.prefix(3))) { entry in
-                        VStack(alignment: .leading, spacing: 6) {
+                        VStack(alignment: .leading, spacing: 8) {
                             HStack(spacing: 8) {
                                 Text(entry.setName)
-                                    .font(.subheadline.weight(.medium))
+                                    .font(.subheadline.weight(.bold))
                                     .foregroundStyle(dashboardPrimaryText)
                                     .lineLimit(1)
 
                                 Spacer(minLength: 8)
 
                                 Text("\(entry.percentString)%")
-                                    .font(.subheadline.weight(.bold))
+                                    .font(.subheadline.weight(.heavy))
                                     .foregroundStyle(services.theme.accentColor)
+                                    .italic()
                             }
 
-                            ProgressView(value: entry.progress)
-                                .progressViewStyle(.linear)
-                                .tint(services.theme.accentColor)
+                            GeometryReader { geo in
+                                ZStack(alignment: .leading) {
+                                    // Exp Bar Track
+                                    Capsule()
+                                        .fill(dashboardCardInsetBackground)
+                                        .frame(height: 10)
+                                    
+                                    // Exp Bar Fill
+                                    Capsule()
+                                        .fill(
+                                            LinearGradient(
+                                                colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.7)],
+                                                startPoint: .leading,
+                                                endPoint: .trailing
+                                            )
+                                        )
+                                        .frame(width: max(0, geo.size.width * CGFloat(entry.progress)), height: 10)
+                                        .shadow(color: services.theme.accentColor.opacity(0.3), radius: 4, x: 0, y: 2)
+                                        
+                                    // Glossy Overlay
+                                    Capsule()
+                                        .fill(
+                                            LinearGradient(
+                                                colors: [.white.opacity(0.2), .clear],
+                                                startPoint: .top,
+                                                endPoint: .bottom
+                                            )
+                                        )
+                                        .frame(width: max(0, geo.size.width * CGFloat(entry.progress)), height: 4)
+                                        .padding(.top, 1)
+                                        .padding(.horizontal, 2)
+                                }
+                            }
+                            .frame(height: 10)
 
-                            Text("\(entry.ownedUnique)/\(entry.totalCards) cards")
-                                .font(.caption)
-                                .foregroundStyle(dashboardSecondaryText)
+                            HStack {
+                                Label("\(entry.ownedUnique)/\(entry.totalCards)", systemImage: "square.grid.3x2.fill")
+                                    .font(.caption2.weight(.bold))
+                                    .foregroundStyle(dashboardSecondaryText)
+                                
+                                Spacer()
+                                
+                                Text("Remaining: \(entry.totalCards - entry.ownedUnique)")
+                                    .font(.caption2.weight(.medium))
+                                    .foregroundStyle(dashboardSecondaryText)
+                            }
                         }
                     }
                 }
@@ -800,23 +863,71 @@ struct DashboardView: View {
         entries: [DashboardBreakdownEntry],
         emptyMessage: String
     ) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 14) {
             Text(title)
-                .font(.title3.weight(.semibold))
+                .font(.title3.weight(.bold))
                 .foregroundStyle(dashboardPrimaryText)
 
             if entries.isEmpty {
                 Text(emptyMessage)
                     .font(.subheadline)
                     .foregroundStyle(dashboardSecondaryText)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.vertical, 20)
             } else {
-                VStack(spacing: 10) {
+                VStack(spacing: 12) {
                     let maxValue = max(entries.map(\.value).max() ?? 1, 1)
-                    ForEach(Array(entries.enumerated()), id: \.element.id) { index, entry in
-                        insightBarRow(entry: entry, maxValue: maxValue, tint: dashboardBreakdownColor(at: index))
+                    ForEach(Array(entries.prefix(4).enumerated()), id: \.element.id) { index, entry in
+                        insightBarRow(
+                            entry: entry, 
+                            maxValue: maxValue, 
+                            tint: dashboardBreakdownColor(at: index, label: entry.label)
+                        )
                     }
                 }
             }
+        }
+    }
+
+    private func insightBarRow(entry: DashboardBreakdownEntry, maxValue: Int, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                Text(entry.label)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
+                
+                Spacer()
+                
+                Text("\(entry.value)")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(dashboardSecondaryText)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(dashboardCardInsetBackground, in: Capsule())
+                    .overlay(Capsule().stroke(dashboardBorder.opacity(0.5), lineWidth: 0.5))
+            }
+
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    // Track
+                    Capsule()
+                        .fill(dashboardCardInsetBackground)
+                        .frame(height: 8)
+                    
+                    // Bar
+                    Capsule()
+                        .fill(
+                            LinearGradient(
+                                colors: [tint, tint.opacity(0.8)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: max(0, geo.size.width * CGFloat(entry.value) / CGFloat(maxValue)), height: 8)
+                        .shadow(color: tint.opacity(0.3), radius: 4, x: 0, y: 2)
+                }
+            }
+            .frame(height: 8)
         }
     }
 
@@ -860,24 +971,7 @@ struct DashboardView: View {
         .disabled(action == nil)
     }
 
-    private func insightBarRow(entry: DashboardBreakdownEntry, maxValue: Int, tint: Color) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack {
-                Text(entry.label)
-                    .font(.subheadline.weight(.medium))
-                    .foregroundStyle(dashboardPrimaryText)
-                    .lineLimit(1)
-                Spacer(minLength: 8)
-                Text("\(entry.value)")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(dashboardSecondaryText)
-            }
 
-            ProgressView(value: Double(entry.value), total: Double(maxValue))
-                .progressViewStyle(.linear)
-                .tint(tint)
-        }
-    }
 
     private var valueChartCard: some View {
         dashboardCard {
@@ -1141,15 +1235,41 @@ struct DashboardView: View {
         Color(uiColor: .systemBackground)
     }
 
-    private func dashboardBreakdownColor(at index: Int) -> Color {
-        let colors: [Color] = [
+    private func energyColor(for type: String) -> Color {
+        let normalized = type.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        switch normalized {
+        case "grass": return Color(hex: "7AC74C")
+        case "fire": return Color(hex: "EE8130")
+        case "water": return Color(hex: "6390F0")
+        case "lightning", "electric": return Color(hex: "F7D02C")
+        case "psychic": return Color(hex: "F95587")
+        case "fighting": return Color(hex: "C22E28")
+        case "darkness", "dark": return Color(hex: "705746")
+        case "metal", "steel": return Color(hex: "B7B7CE")
+        case "fairy": return Color(hex: "D685AD")
+        case "dragon": return Color(hex: "6F35FC")
+        case "colorless", "normal": return Color(hex: "A8A77A")
+        default: return services.theme.accentColor
+        }
+    }
+
+    private func dashboardBreakdownColor(at index: Int, label: String = "") -> Color {
+        if !label.isEmpty {
+            let col = energyColor(for: label)
+            if col != services.theme.accentColor {
+                return col
+            }
+        }
+        
+        let palette = [
             DashboardPalette.purple,
             DashboardPalette.blue,
             DashboardPalette.success,
             DashboardPalette.gold,
-            services.theme.accentColor
+            DashboardPalette.orange,
+            DashboardPalette.danger
         ]
-        return colors[index % colors.count]
+        return palette[index % palette.count]
     }
 
     private var dashboardDataSignature: String {
@@ -2114,7 +2234,7 @@ struct DashboardView: View {
             let normalizedCandidate = normalizeTrendKey(candidateID)
             let setScopedCards: [Card]
             if let setCode = candidate.setCode {
-                setScopedCards = (await services.cardData.loadCards(forSetCode: setCode, catalogBrand: activeBrand)) ?? []
+                setScopedCards = await services.cardData.loadCards(forSetCode: setCode, catalogBrand: activeBrand)
             } else {
                 setScopedCards = []
             }
@@ -2530,5 +2650,6 @@ private enum DashboardPalette {
     static let chartLine = Color(red: 0.12, green: 0.52, blue: 1.0)
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let gold = Color(red: 0.99, green: 0.72, blue: 0.22)
+    static let orange = Color(red: 1.0, green: 0.58, blue: 0.22)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
 }

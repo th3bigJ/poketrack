@@ -88,30 +88,38 @@ struct FeedItemView: View {
 
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 6) {
-                    if let username = item.actor?.username {
-                        NavigationLink(value: SocialDestination.friendProfile(username: username)) {
+                    Group {
+                        if let username = item.actor?.username {
+                            NavigationLink(value: SocialDestination.friendProfile(username: username)) {
+                                Text(actorName)
+                                    .font(.system(size: 14, weight: .bold))
+                                    .foregroundStyle(Color.primary)
+                                    .lineLimit(1)
+                            }
+                            .buttonStyle(.plain)
+                        } else {
                             Text(actorName)
                                 .font(.system(size: 14, weight: .bold))
-                                .foregroundStyle(Color.primary)
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
                         }
-                        .buttonStyle(.plain)
-                    } else {
-                        Text(actorName)
-                            .font(.system(size: 14, weight: .bold))
-                            .foregroundStyle(.primary)
                     }
+                    .layoutPriority(1)
                     
                     Text("· \(SocialFeedService.shortRelativeDate(item.createdAt))")
                         .font(.system(size: 12))
                         .foregroundStyle(Color.secondary.opacity(0.8))
+                        .lineLimit(1)
 
                     TypePill(label: badgeText, color: typeAccentColor)
                         .scaleEffect(0.8)
+                        .fixedSize()
                 }
 
                 Text("@\(item.actor?.username ?? "trainer")")
                     .font(.system(size: 12))
                     .foregroundStyle(Color.secondary)
+                    .lineLimit(1)
             }
         }
     }

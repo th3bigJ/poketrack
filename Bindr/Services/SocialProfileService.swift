@@ -158,6 +158,20 @@ final class SocialProfileService {
         }
     }
 
+    private struct UpdateStatsRequest: Encodable {
+        let collectionCardCount: Int
+        let collectionBinderCount: Int
+        let collectionDeckCount: Int
+        let collectionTotalValue: Double
+
+        enum CodingKeys: String, CodingKey {
+            case collectionCardCount = "collection_card_count"
+            case collectionBinderCount = "collection_binder_count"
+            case collectionDeckCount = "collection_deck_count"
+            case collectionTotalValue = "collection_total_value"
+        }
+    }
+
     private struct APIErrorPayload: Decodable {
         let message: String?
         let hint: String?
@@ -293,6 +307,28 @@ final class SocialProfileService {
             ]
         )
         return try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+    }
+
+    func updateCollectionStats(
+        cardCount: Int,
+        binderCount: Int,
+        deckCount: Int,
+        totalValue: Double
+    ) async throws {
+        let userID = try signedInUserID()
+        let payload = UpdateStatsRequest(
+            collectionCardCount: cardCount,
+            collectionBinderCount: binderCount,
+            collectionDeckCount: deckCount,
+            collectionTotalValue: totalValue
+        )
+        _ = try await execute(
+            path: "/rest/v1/profiles?id=eq.\(userID.uuidString)",
+            method: "PATCH",
+            accessToken: try signedInAccessToken(),
+            body: payload,
+            extraHeaders: ["Prefer": "return=minimal"]
+        ) as EmptyResponse
     }
 
     func fetchNotificationPreferences() async throws -> NotificationPreferences {

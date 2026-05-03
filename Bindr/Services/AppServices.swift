@@ -433,6 +433,21 @@ final class AppServices {
         }
         if let collectionItems = try? modelContext.fetch(FetchDescriptor<CollectionItem>()) {
             socialCardLibrary.scheduleAutoSyncCollection(items: collectionItems)
+            
+            // Sync summary stats to profile
+            let cardCount = collectionItems.reduce(0) { $0 + $1.quantity }
+            let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Bindr>())) ?? 0
+            let deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
+            let totalValue = collectionValue?.totalValue ?? 0
+            
+            Task {
+                try? await socialProfile.updateCollectionStats(
+                    cardCount: cardCount,
+                    binderCount: binderCount,
+                    deckCount: deckCount,
+                    totalValue: totalValue
+                )
+            }
         }
     }
 }

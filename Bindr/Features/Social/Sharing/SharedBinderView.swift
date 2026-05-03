@@ -203,7 +203,9 @@ struct SharedBinderView: View {
                 ) { pageIdx in
                     pageSurface(pageIdx: pageIdx, pageSize: pageSize)
                 }
-                .frame(width: pageSize.width, height: pageSize.height)
+                .if(pageSize.width > 0 && pageSize.height > 0) { view in
+                    view.frame(width: pageSize.width, height: pageSize.height)
+                }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
 
