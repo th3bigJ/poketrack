@@ -443,7 +443,6 @@ struct BrowseView: View {
     @Binding var filters: BrowseCardGridFilters
     @Binding var inlineDetailFilters: BrowseCardGridFilters
     @Binding var gridOptions: BrowseGridOptions
-    @Binding var isFilterMenuPresented: Bool
     @Binding var filterResultCount: Int
     @Binding var filterEnergyOptions: [String]
     @Binding var filterRarityOptions: [String]
@@ -472,9 +471,10 @@ struct BrowseView: View {
     @State private var isPreparingFilterCatalog = false
     /// Prevents concurrent full-filter-index loads (background warm vs active filter feed).
     @State private var isLoadingFullCatalog = false
+    @State private var filterTask: Task<Void, Never>? = nil
     @State private var loadedBrand: TCGBrand?
     @State private var cachedSetNameByCode: [String: String] = [:]
-    @State private var query = ""
+    @Binding var query: String
     @State private var inlineDetailCards: [Card] = []
     @State private var inlineDetailPriceByCardID: [String: Double] = [:]
     @State private var inlineDetailQuery = ""
@@ -1525,21 +1525,31 @@ struct BrowseView: View {
     ) async {
         guard isViewVisible else { return }
         if !allBrowseFilterCards.isEmpty { return }
+        
+        // Wait if another load is already in progress
         while isLoadingFullCatalog {
+            if Task.isCancelled { return }
             try? await Task.sleep(nanoseconds: 25_000_000)
         }
+        
+        // Re-check in case it finished while we were waiting
         if !allBrowseFilterCards.isEmpty { return }
+        
         isLoadingFullCatalog = true
         if showsPreparingBanner {
             isPreparingFilterCatalog = true
         }
-        let loaded = await services.cardData.loadAllBrowseFilterCards()
-        guard isViewVisible else { return }
-        allBrowseFilterCards = loaded
-        isLoadingFullCatalog = false
-        if showsPreparingBanner {
-            isPreparingFilterCatalog = false
+        
+        defer {
+            isLoadingFullCatalog = false
+            if showsPreparingBanner {
+                isPreparingFilterCatalog = false
+            }
         }
+        
+        let loaded = await services.cardData.loadAllBrowseFilterCards()
+        guard isViewVisible && !Task.isCancelled else { return }
+        allBrowseFilterCards = loaded
         syncFilterMenuState(usingCatalogFeed: usingCatalogFeed)
     }
 
@@ -1565,7 +1575,6 @@ struct BrowseView: View {
             syncFilterMenuState(usingCatalogFeed: false)
             return
         }
-        guard !allBrowseFilterCards.isEmpty else { return }
         let ordered = await orderedFilteredRefs(
             from: allBrowseFilterCards,
             query: query,
@@ -1573,13 +1582,14 @@ struct BrowseView: View {
             brand: brand,
             ownedCardIDs: ownedCardIDs
         )
-        guard isViewVisible else { return }
+        guard isViewVisible && !Task.isCancelled else { return }
         isUsingCatalogFeedSelection = true
         catalogOrderedRefs = ordered
         let initialEnd = min(Self.catalogInitialBatchSize, ordered.count)
         let initialRefs = Array(ordered.prefix(initialEnd))
-        catalogDisplayedCards = await services.cardData.cardsInOrder(refs: initialRefs)
-        guard isViewVisible else { return }
+        let initialCards = await services.cardData.cardsInOrder(refs: initialRefs)
+        guard isViewVisible && !Task.isCancelled else { return }
+        catalogDisplayedCards = initialCards
         catalogDisplayedRows = buildBrowseRows(from: catalogDisplayedCards)
         catalogNextIndex = initialEnd
         // New filtered dataset can have the same initial count as the previous one (e.g. 36).
@@ -1590,7 +1600,7 @@ struct BrowseView: View {
     }
 
     @MainActor
-    private func handleBrowseFiltersChanged(usingCatalogFeed: Bool) {
+    private func handleBrowseFiltersChanged(usingCatalogFeed: Bool? = nil) {
         if isInlineDetailPresented {
             syncFilterMenuState(usingCatalogFeed: false)
             return
@@ -1600,11 +1610,15 @@ struct BrowseView: View {
         let filtersSnapshot = filters
         let brandSnapshot = currentBrand
         let ownedCardIDsSnapshot = ownedCardIDsCache
-        let isUsingCatalogFeed = usingCatalogFeed
+
+        let isUsingCatalogFeed = usingCatalogFeed ?? (!querySnapshot.isEmpty || filtersSnapshot.hasActiveFieldFilters || filtersSnapshot.hasActiveSort)
         self.isUsingCatalogFeedSelection = isUsingCatalogFeed
+
         if isUsingCatalogFeed {
-            Task {
+            filterTask?.cancel()
+            filterTask = Task { @MainActor in
                 await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
+                if Task.isCancelled { return }
                 await rebuildCatalogFeedIfNeeded(
                     selectedTab: selectedTabSnapshot,
                     query: querySnapshot,
@@ -1615,6 +1629,7 @@ struct BrowseView: View {
                 )
             }
         } else {
+            filterTask?.cancel()
             catalogOrderedRefs = []
             catalogDisplayedCards = []
             catalogDisplayedRows = []
@@ -1693,11 +1708,24 @@ struct BrowseView: View {
         case .price:
             let refs = filtered.map(\.ref)
             let cards = await services.cardData.cardsInOrder(refs: refs)
-            var pricedCards: [(card: Card, price: Double?)] = []
-            pricedCards.reserveCapacity(cards.count)
-            for card in cards {
-                let entry = await services.pricing.pricing(for: card)
-                pricedCards.append((card, browseMarketPriceUSD(for: entry)))
+            let pricedCards: [(card: Card, price: Double?)] = await withTaskGroup(of: (Card, Double?).self) { group in
+                for card in cards {
+                    group.addTask {
+                        if Task.isCancelled { return (card, nil) }
+                        let entry = await services.pricing.pricing(for: card)
+                        return (card, browseMarketPriceUSD(for: entry))
+                    }
+                }
+                var results: [(card: Card, price: Double?)] = []
+                results.reserveCapacity(cards.count)
+                for await result in group {
+                    results.append(result)
+                    if Task.isCancelled {
+                        group.cancelAll()
+                        break
+                    }
+                }
+                return results
             }
             return pricedCards.sorted { lhs, rhs in
                 switch (lhs.price, rhs.price) {
@@ -1911,10 +1939,7 @@ struct BrowseView: View {
 
     private func isCommonOrUncommon(_ rarity: String?) -> Bool {
         let normalized = rarity?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
-        let lettersOnly = String(normalized.unicodeScalars.filter(CharacterSet.letters.contains))
-        return normalized.contains("common")
-            || normalized.contains("uncommon")
-            || lettersOnly == "rare"
+        return normalized == "common" || normalized == "uncommon"
     }
 
     private func trimmedValue(_ value: String?) -> String {
@@ -4024,11 +4049,6 @@ struct BrowseGridFiltersMenuContent: View {
                         Label("Hide owned", systemImage: "eye.slash")
                     }
                 }
-                if config.showShowDuplicates {
-                    Toggle(isOn: $filters.showDuplicates) {
-                        Label("Show duplicates", systemImage: "square.on.square")
-                    }
-                }
             }
         }
         } // end if !isAllBrands && showBrandFilters
@@ -4592,7 +4612,6 @@ private func pokemonSetIsTournamentLegal(releaseDate: String?, now: Date = Date(
             filters: .constant(BrowseCardGridFilters()),
             inlineDetailFilters: .constant(BrowseCardGridFilters()),
             gridOptions: .constant(BrowseGridOptions()),
-            isFilterMenuPresented: .constant(false),
             filterResultCount: .constant(0),
             filterEnergyOptions: .constant([]),
             filterRarityOptions: .constant([]),
@@ -4604,7 +4623,8 @@ private func pokemonSetIsTournamentLegal(releaseDate: String?, now: Date = Date(
             selectedTab: .constant(.cards),
             inlineDetailRoute: .constant(nil),
             isMultiSelectActive: .constant(false),
-            multiSelectedCardIDs: .constant([])
+            multiSelectedCardIDs: .constant([]),
+            query: .constant("")
         )
     }
         .environment(AppServices())

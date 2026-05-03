@@ -22,6 +22,7 @@ private struct BrowseTabView: View {
     @Binding var inlineDetailRoute: BrowseInlineDetailRoute?
     @Binding var isMultiSelectActive: Bool
     @Binding var multiSelectedCardIDs: Set<String>
+    @Binding var query: String
 
     var body: some View {
         BrowseView(
@@ -29,7 +30,6 @@ private struct BrowseTabView: View {
             filters: $filters,
             inlineDetailFilters: $inlineDetailFilters,
             gridOptions: $gridOptions,
-            isFilterMenuPresented: .constant(false),
             filterResultCount: $filterResultCount,
             filterEnergyOptions: $filterEnergyOptions,
             filterRarityOptions: $filterRarityOptions,
@@ -41,7 +41,8 @@ private struct BrowseTabView: View {
             selectedTab: $selectedTab,
             inlineDetailRoute: $inlineDetailRoute,
             isMultiSelectActive: $isMultiSelectActive,
-            multiSelectedCardIDs: $multiSelectedCardIDs
+            multiSelectedCardIDs: $multiSelectedCardIDs,
+            query: $query
         )
     }
 }
@@ -85,6 +86,8 @@ struct RootView: View {
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var selectedSealedProductPresentation: SealedProductPresentationContext?
     @State private var showBrandOnboarding = false
+    @State private var cachedSetNameByCode: [String: String] = [:]
+    @State private var inlineDetailCards: [Card] = []
     @State private var showCreateFolderAlert = false
     @State private var newFolderTitle = ""
     @State private var showSettings = false
@@ -487,7 +490,8 @@ struct RootView: View {
                                 selectedTab: $browseHomeTab,
                                 inlineDetailRoute: $browseInlineDetailRoute,
                                 isMultiSelectActive: $browseMultiSelectActive,
-                                multiSelectedCardIDs: $browseMultiSelectedCardIDs
+                                multiSelectedCardIDs: $browseMultiSelectedCardIDs,
+                                query: $universalQuery
                             )
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
