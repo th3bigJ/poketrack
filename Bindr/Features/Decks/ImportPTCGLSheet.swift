@@ -51,6 +51,7 @@ struct ImportPTCGLSheet: View {
                         
                         TextEditor(text: $decklistText)
                             .font(.system(.body, design: .monospaced))
+                            .scrollContentBackground(.hidden)
                             .padding(8)
                             .background(Color(uiColor: .secondarySystemBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 12))
@@ -58,9 +59,10 @@ struct ImportPTCGLSheet: View {
                             .overlay(alignment: .topLeading) {
                                 if decklistText.isEmpty {
                                     Text("1 Pikachu PGO 27...")
+                                        .font(.system(.body, design: .monospaced))
                                         .foregroundStyle(.tertiary)
-                                        .padding(.horizontal, 12)
-                                        .padding(.vertical, 16)
+                                        .padding(.horizontal, 25)
+                                        .padding(.vertical, 24)
                                         .allowsHitTesting(false)
                                 }
                             }
@@ -103,35 +105,50 @@ struct ImportPTCGLSheet: View {
             let deck = Deck(title: "Imported \(deckTitle)", brand: .pokemon, format: .pokemonStandard)
             
             var deckCards: [DeckCard] = []
-            let allSets = services.cardData.sets
+            let allSets = await services.cardData.catalogSets(for: .pokemon)
             
             for line in lines {
+                var foundCard: Card? = nil
+                
                 // 1. Find the set by its PTCGL code (uppercase)
                 let targetSet = allSets.first { 
                     $0.code?.uppercased() == line.setCode.uppercased() || 
                     $0.setCode.uppercased() == line.setCode.uppercased() 
                 }
                 
-                guard let foundSet = targetSet else {
-                    // If set not found, skip or handle (maybe soft match by name?)
-                    continue
+                if let foundSet = targetSet {
+                    // 2. Load cards for that set
+                    let setCards = await services.cardData.loadCards(forSetCode: foundSet.setCode)
+                    
+                    // 3. Find card by number (strip leading zeros if needed)
+                    let normalizedNum = line.cardNumber.replacingOccurrences(of: "^0+", with: "", options: .regularExpression)
+                    foundCard = setCards.first { 
+                        $0.cardNumber == line.cardNumber || 
+                        $0.cardNumber == normalizedNum ||
+                        $0.printedNumber == line.cardNumber
+                    }
+                    
+                    if foundCard == nil {
+                        // Fallback 1: search by name in that set if number fails
+                        foundCard = setCards.first { $0.cardName.lowercased() == line.name.lowercased() }
+                    }
                 }
                 
-                // 2. Load cards for that set
-                let setCards = await services.cardData.loadCards(forSetCode: foundSet.setCode)
-                
-                // 3. Find card by number (strip leading zeros if needed)
-                let normalizedNum = line.cardNumber.replacingOccurrences(of: "^0+", with: "", options: .regularExpression)
-                let targetCard = setCards.first { 
-                    $0.cardNumber == line.cardNumber || 
-                    $0.cardNumber == normalizedNum ||
-                    $0.printedNumber == line.cardNumber
+                if foundCard == nil {
+                    // Fallback 2: Global search by name and number if set code matching failed or card not in set
+                    let normalizedNum = line.cardNumber.replacingOccurrences(of: "^0+", with: "", options: .regularExpression)
+                    let searchResults = await services.cardData.searchByName(query: line.name, catalogBrand: .pokemon)
+                    foundCard = searchResults.first { 
+                        $0.cardNumber == line.cardNumber || 
+                        $0.cardNumber == normalizedNum ||
+                        $0.printedNumber == line.cardNumber
+                    }
                 }
                 
-                if let card = targetCard {
+                if let card = foundCard {
                     let deckCard = DeckCard(
                         cardID: card.masterCardId,
-                        variantKey: "normal", // PTCGL export doesn't always specify variant clearly
+                        variantKey: "normal", 
                         cardName: card.cardName,
                         quantity: line.quantity,
                         isBasicEnergy: card.category?.lowercased() == "energy" && card.subtype?.lowercased() == "basic",
@@ -150,24 +167,6 @@ struct ImportPTCGLSheet: View {
                         catalogStage: card.stage
                     )
                     deckCards.append(deckCard)
-                } else {
-                    // Fallback: search by name in that set if number fails
-                    let nameMatch = setCards.first { $0.cardName.lowercased() == line.name.lowercased() }
-                    if let card = nameMatch {
-                        let deckCard = DeckCard(
-                            cardID: card.masterCardId,
-                            variantKey: "normal",
-                            cardName: card.cardName,
-                            quantity: line.quantity,
-                            isBasicEnergy: card.category?.lowercased() == "energy" && card.subtype?.lowercased() == "basic",
-                            setKey: card.setCode,
-                            imageLowSrc: card.imageLowSrc,
-                            catalogCategory: card.category,
-                            catalogSubtype: card.subtype,
-                            catalogStage: card.stage
-                        )
-                        deckCards.append(deckCard)
-                    }
                 }
             }
             
