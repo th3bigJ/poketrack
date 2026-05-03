@@ -44,6 +44,7 @@ struct TransactionDetailSheet: View {
     let availableMarkActions: [TransactionMarkAction]
     let onMarkAs: (TransactionMarkAction) -> Void
     let onEdit: () -> Void
+    var onViewCard: (() -> Void)? = nil
 
     @Environment(\.colorScheme) private var colorScheme
     @State private var showMarkAsPicker = false
@@ -211,6 +212,18 @@ struct TransactionDetailSheet: View {
             }
             .buttonStyle(.plain)
             .frame(maxWidth: .infinity)
+            
+            if let onViewCard {
+                Button(action: onViewCard) {
+                    transactionActionBody(
+                        title: "View Card",
+                        systemImage: "rectangle.portrait.on.rectangle.portrait.fill",
+                        tint: Color(red: 0.95, green: 0.62, blue: 0.04)
+                    )
+                }
+                .buttonStyle(.plain)
+                .frame(maxWidth: .infinity)
+            }
         }
     }
 

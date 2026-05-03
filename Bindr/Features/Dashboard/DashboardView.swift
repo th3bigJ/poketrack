@@ -63,6 +63,7 @@ struct DashboardView: View {
     @State private var marketBiggestGainer7Days: MarketTrendMover? = nil
     @State private var marketBiggestDecliner7Days: MarketTrendMover? = nil
     @State private var moverScope: MoverScope = .collection
+    @State private var selectedCardForDetail: Card? = nil
 
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
@@ -364,13 +365,29 @@ struct DashboardView: View {
                 availableMarkActions: markActions(for: line),
                 onMarkAs: { action in
                     markLedgerLine(line, as: action)
+                },
+                onEdit: {
+                    selectedRecentLedgerLine = nil
+                    DispatchQueue.main.async {
+                        editingRecentLedgerLine = line
+                    }
+                },
+                onViewCard: {
+                    guard let cardID = cleaned(line.cardID) else { return }
+                    selectedRecentLedgerLine = nil
+                    Task {
+                        if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                            await MainActor.run {
+                                selectedCardForDetail = card
+                            }
+                        }
+                    }
                 }
-            ) {
-                selectedRecentLedgerLine = nil
-                DispatchQueue.main.async {
-                    editingRecentLedgerLine = line
-                }
-            }
+            )
+        }
+        .sheet(item: $selectedCardForDetail) { card in
+            CardBrowseDetailView(cards: [card], startIndex: 0)
+                .environment(services)
         }
         .sheet(item: $editingRecentLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
@@ -970,7 +987,6 @@ struct DashboardView: View {
         .buttonStyle(DashboardPressStyle())
         .disabled(action == nil)
     }
-
 
 
     private var valueChartCard: some View {
@@ -1618,6 +1634,7 @@ struct DashboardView: View {
             if let change7d = await sevenDayChangePercent(for: item, card: card) {
                 let preferredImagePath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
                 let mover = MarketTrendMover(
+                    cardID: card.masterCardId,
                     displayName: card.cardName,
                     percentChange: change7d,
                     imageURL: AppConfiguration.imageURL(relativePath: preferredImagePath)
@@ -2219,9 +2236,11 @@ struct DashboardView: View {
     private func buildMover(from candidate: TrendMoverCandidate) async -> MarketTrendMover {
         var displayName: String? = candidate.displayName
         var imageURL: URL? = candidate.imageURL
+        var resolvedCardID: String? = nil
 
         if let cardID = candidate.cardID,
            let card = await services.cardData.loadCard(masterCardId: cardID) {
+            resolvedCardID = card.masterCardId
             if displayName == nil {
                 displayName = card.cardName
             }
@@ -2262,6 +2281,7 @@ struct DashboardView: View {
                         || normalizedCandidate.contains(normalizedExternal)
                     ))
             }) {
+                resolvedCardID = matched.masterCardId
                 if displayName == nil { displayName = matched.cardName }
                 if imageURL == nil {
                     let preferredImagePath = cleaned(matched.imageHighSrc) ?? matched.imageLowSrc
@@ -2271,6 +2291,7 @@ struct DashboardView: View {
         }
 
         return MarketTrendMover(
+            cardID: resolvedCardID ?? candidate.cardID,
             displayName: displayName ?? readableTrendKey(candidate.cardID),
             percentChange: candidate.change7d,
             imageURL: imageURL
@@ -2308,72 +2329,93 @@ struct DashboardView: View {
     }
 
     private func moverCell(title: String, mover: MarketTrendMover?, fallbackColor: Color) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(dashboardSecondaryText)
-
-            HStack(spacing: 10) {
-                if let imageURL = mover?.imageURL {
-                    CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    } placeholder: {
-                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                            .fill(dashboardCardInsetBackground)
-                            .overlay {
-                                Image(systemName: "photo")
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(dashboardSecondaryText)
-                            }
+        Button {
+            guard let cardID = mover?.cardID else { return }
+            Task {
+                if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                    await MainActor.run {
+                        selectedCardForDetail = card
                     }
-                    .frame(width: 42, height: 60)
-                    .background(Color.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                            .stroke(dashboardBorder, lineWidth: 1)
-                    )
-                } else {
-                    RoundedRectangle(cornerRadius: 8, style: .continuous)
-                        .fill(dashboardCardInsetBackground)
-                        .frame(width: 42, height: 60)
-                        .overlay {
-                            Image(systemName: "square.stack.3d.up.fill")
-                                .font(.caption.weight(.semibold))
-                                .foregroundStyle(dashboardSecondaryText)
+                }
+            }
+        } label: {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(title)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(dashboardSecondaryText)
+
+                HStack(spacing: 10) {
+                    if let imageURL = mover?.imageURL {
+                        CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        } placeholder: {
+                            RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                .fill(dashboardCardInsetBackground)
+                                .overlay {
+                                    Image(systemName: "photo")
+                                        .font(.caption.weight(.semibold))
+                                        .foregroundStyle(dashboardSecondaryText)
+                                }
                         }
+                        .frame(width: 42, height: 60)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                         .overlay(
                             RoundedRectangle(cornerRadius: 8, style: .continuous)
                                 .stroke(dashboardBorder, lineWidth: 1)
                         )
-                }
+                    } else {
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .fill(dashboardCardInsetBackground)
+                            .frame(width: 42, height: 60)
+                            .overlay {
+                                Image(systemName: "square.stack.3d.up.fill")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(dashboardSecondaryText)
+                            }
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                    .stroke(dashboardBorder, lineWidth: 1)
+                            )
+                    }
 
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(mover?.displayName ?? "No data")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(dashboardPrimaryText)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack(alignment: .top) {
+                            Text(mover?.displayName ?? "No data")
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(dashboardPrimaryText)
+                                .lineLimit(2)
+                                .multilineTextAlignment(.leading)
+                            
+                            Spacer(minLength: 4)
+                            
+                            Image(systemName: "chevron.right")
+                                .font(.caption2.weight(.bold))
+                                .foregroundStyle(dashboardSecondaryText.opacity(0.8))
+                        }
 
-                    Text(formatTrendPercent(mover?.percentChange))
-                        .font(.title3.weight(.bold))
-                        .foregroundStyle(mover?.percentChange == nil ? fallbackColor : trendColor(mover?.percentChange))
-                        .contentTransition(.numericText())
+                        Text(formatTrendPercent(mover?.percentChange))
+                            .font(.title3.weight(.bold))
+                            .foregroundStyle(mover?.percentChange == nil ? fallbackColor : trendColor(mover?.percentChange))
+                            .contentTransition(.numericText())
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.vertical, 12)
+            .padding(.horizontal, 12)
+            .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
+            )
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, 12)
-        .padding(.horizontal, 12)
-        .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
-        )
+        .buttonStyle(DashboardPressStyle())
+        .disabled(mover?.cardID == nil)
     }
 
     private func formatTrendPercent(_ value: Double?) -> String {
@@ -2486,11 +2528,13 @@ private struct MarketTrendMetrics: Decodable {
 }
 
 private struct MarketTrendMover: Decodable {
+    let cardID: String?
     let displayName: String
     let percentChange: Double?
     let imageURL: URL?
 
-    init(displayName: String, percentChange: Double?, imageURL: URL?) {
+    init(cardID: String?, displayName: String, percentChange: Double?, imageURL: URL?) {
+        self.cardID = cardID
         self.displayName = displayName
         self.percentChange = percentChange
         self.imageURL = imageURL
@@ -2498,6 +2542,7 @@ private struct MarketTrendMover: Decodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: AnyCodingKey.self)
+        cardID = container.decodeString(forKeys: ["cardID", "card_id", "id", "masterCardId", "master_card_id"])
         displayName = container.decodeString(forKeys: ["cardName", "card_name", "name", "title"]) ?? "Unknown card"
         percentChange = container.decodeDouble(forKeys: ["percentChange", "percent_change", "change7Days", "change_7_days", "change7d", "change_7d"])
         imageURL = container.decodeURL(
