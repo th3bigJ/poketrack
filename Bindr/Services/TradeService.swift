@@ -71,10 +71,29 @@ final class TradeService {
         }
     }
 
+    private struct TradeCounterPatch: Encodable {
+        let initiatorID: UUID
+        let receiverID: UUID
+        let status: String
+        let cashInitiator: Double
+        let cashReceiver: Double
+        let updatedAt: Date
+
+        enum CodingKeys: String, CodingKey {
+            case initiatorID = "initiator_id"
+            case receiverID = "receiver_id"
+            case status
+            case cashInitiator = "cash_initiator"
+            case cashReceiver = "cash_receiver"
+            case updatedAt = "updated_at"
+        }
+    }
+
     private let authService: SocialAuthService
     private var baseURL: URL? { AppConfiguration.supabaseURL }
     private var publishableKey: String { AppConfiguration.supabasePublishableKey }
     private let maxBatchSize = 250
+    private(set) var lastMutationAt: Date = .distantPast
 
     init(authService: SocialAuthService) {
         self.authService = authService
@@ -166,6 +185,7 @@ final class TradeService {
             ) as EmptyResponse
         }
 
+        markMutation()
         return trade
     }
 
@@ -179,28 +199,55 @@ final class TradeService {
     ) async throws -> Trade {
         let uid = try signedInUserID()
         let token = try signedInAccessToken()
+        let otherPartyID = originalTrade.initiatorID == uid ? originalTrade.receiverID : originalTrade.initiatorID
 
-        // Mark the original trade as countered
-        let patchBody = TradeStatusPatch(status: "countered", updatedAt: Date())
-        _ = try await execute(
+        // Keep the same trade thread and rotate offer ownership so initiator always
+        // represents whoever sent the latest offer.
+        let patchBody = TradeCounterPatch(
+            initiatorID: uid,
+            receiverID: otherPartyID,
+            status: "countered",
+            cashInitiator: cashInitiator,
+            cashReceiver: cashReceiver,
+            updatedAt: Date()
+        )
+        let updated: [Trade] = try await execute(
             path: "/rest/v1/trades?id=eq.\(tradeID.uuidString)",
             method: "PATCH",
             accessToken: token,
             body: patchBody,
+            extraHeaders: ["Prefer": "return=representation"]
+        )
+
+        // Replace prior offer lines with the newly countered offer lines.
+        _ = try await execute(
+            path: "/rest/v1/trade_items?trade_id=eq.\(tradeID.uuidString)",
+            method: "DELETE",
+            accessToken: token,
             extraHeaders: ["Prefer": "return=minimal"]
         ) as EmptyResponse
 
-        // The counter-offer creates a new trade with the roles swapped:
-        // current user becomes initiator, the other party becomes receiver.
-        let otherPartyID = originalTrade.initiatorID == uid ? originalTrade.receiverID : originalTrade.initiatorID
-        let newTrade = try await createTrade(
-            receiverID: otherPartyID,
-            initiatorCards: newInitiatorCards,
-            receiverCards: newReceiverCards,
-            cashInitiator: cashInitiator,
-            cashReceiver: cashReceiver
-        )
-        return newTrade
+        let itemsToInsert = newInitiatorCards.map {
+            TradeItemInsertRequest(tradeID: tradeID, ownerID: uid, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
+        } + newReceiverCards.map {
+            TradeItemInsertRequest(tradeID: tradeID, ownerID: otherPartyID, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
+        }
+
+        for batch in itemsToInsert.chunked(into: maxBatchSize) {
+            _ = try await execute(
+                path: "/rest/v1/trade_items",
+                method: "POST",
+                accessToken: token,
+                body: batch,
+                extraHeaders: ["Prefer": "return=minimal"]
+            ) as EmptyResponse
+        }
+
+        markMutation()
+        guard let trade = updated.first else {
+            throw TradeServiceError.invalidResponse
+        }
+        return trade
     }
 
     func acceptTrade(id: UUID) async throws {
@@ -213,6 +260,7 @@ final class TradeService {
             body: body,
             extraHeaders: ["Prefer": "return=minimal"]
         ) as EmptyResponse
+        markMutation()
     }
 
     func cancelTrade(id: UUID) async throws {
@@ -225,6 +273,7 @@ final class TradeService {
             body: body,
             extraHeaders: ["Prefer": "return=minimal"]
         ) as EmptyResponse
+        markMutation()
     }
 
     func completeTrade(id: UUID) async throws {
@@ -237,6 +286,7 @@ final class TradeService {
             body: body,
             extraHeaders: ["Prefer": "return=minimal"]
         ) as EmptyResponse
+        markMutation()
     }
 
     // MARK: - Helpers
@@ -347,6 +397,10 @@ final class TradeService {
         guard let payload = try? JSONDecoder.tradeJSON.decode(APIErrorPayload.self, from: data) else { return false }
         let message = (payload.message ?? payload.hint ?? "").lowercased()
         return message.contains("jwt") && message.contains("expired")
+    }
+
+    private func markMutation() {
+        lastMutationAt = Date()
     }
 }
 

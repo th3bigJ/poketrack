@@ -231,7 +231,15 @@ struct SocialRootView: View {
                                 .foregroundStyle(.primary)
                         }
                     } else if selectedTab == .trades {
-                        EmptyView()
+                        ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
+                            Haptics.lightImpact()
+                            services.pendingTradeSeed = nil
+                            socialNavigationPath.append(SocialDestination.friends)
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                        }
                     } else if selectedTab == .friends && services.pendingTradeSeed != nil {
                         Button("Cancel") {
                             Haptics.lightImpact()

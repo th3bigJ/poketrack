@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import UIKit
 
 // MARK: - Card group
 
@@ -258,22 +259,56 @@ struct DeckDetailView: View {
                     Text(deck.title).font(.headline)
                 }
             }
-            ToolbarItem(placement: .primaryAction) {
-                HStack(spacing: 10) {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
                     Button {
                         showShareSettings = true
                     } label: {
-                        Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
-                            .foregroundStyle(isSharedPublished ? .green : .primary)
-                    }
-
-                    Button(isEditing ? "Done" : "Edit") {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                            isEditing.toggle()
+                        HStack(spacing: 8) {
+                            Image(systemName: "person.2")
+                                .foregroundStyle(.white)
+                            Text("Post to Social")
                         }
                     }
-                    .fontWeight(isEditing ? .semibold : .regular)
+
+                    Button {
+                        let exportText = PTCGLService.shared.exportToPTCGL(deck: deck, sets: services.cardData.sets)
+                        UIPasteboard.general.string = exportText
+                        HapticManager.notification(.success)
+                    } label: {
+                        HStack(spacing: 8) {
+                            Image(systemName: "doc.on.doc")
+                                .foregroundStyle(.white)
+                            Text("Copy to TCG Live")
+                        }
+                    }
+                } label: {
+                    Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(isSharedPublished ? .green : .primary)
+                        .modifier(ChromeGlassCircleGlyphModifier())
                 }
+                .buttonStyle(.plain)
+                .menuIndicator(.hidden)
+                .frame(width: 48, height: 48)
+                .contentShape(Rectangle())
+                .accessibilityLabel(isSharedPublished ? "Share options, currently shared" : "Share options")
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                        isEditing.toggle()
+                    }
+                } label: {
+                    Image(systemName: isEditing ? "checkmark" : "pencil")
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundStyle(Color.accentColor)
+                        .modifier(ChromeGlassCircleGlyphModifier())
+                }
+                .buttonStyle(.plain)
+                .frame(width: 48, height: 48)
+                .contentShape(Rectangle())
+                .accessibilityLabel(isEditing ? "Done editing deck" : "Edit deck")
             }
         }
         .sheet(item: $pickerGroup) { group in
@@ -1195,7 +1230,7 @@ private struct AddCardCell: View {
                         VStack(spacing: 6) {
                             Image(systemName: "plus.circle.fill")
                                 .font(.system(size: 28))
-                                .foregroundStyle(Color.accentColor)
+                                .foregroundStyle(.white)
                             Text("Add")
                                 .font(.caption2.weight(.semibold))
                                 .foregroundStyle(.secondary)

@@ -1,7 +1,9 @@
 import SwiftUI
+import SwiftData
 
 struct TradeDetailView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
     let tradeID: UUID
@@ -15,6 +17,10 @@ struct TradeDetailView: View {
     @State private var showConfirmDecline = false
     @State private var showConfirmCancel = false
     @State private var showConfirmComplete = false
+    @State private var myItemsValueUSD: Double = 0
+    @State private var theirItemsValueUSD: Double = 0
+    @State private var isValuationLoading = false
+    @State private var valuationCardCacheByID: [String: Card] = [:]
 
     private var currentUserID: UUID? {
         if case .signedIn(let uid, _) = services.socialAuth.authState { return uid }
@@ -47,26 +53,41 @@ struct TradeDetailView: View {
         .background(Color(uiColor: .systemBackground).ignoresSafeArea())
         .navigationTitle("Trade")
         .navigationBarTitleDisplayMode(.inline)
-        .task { await refresh() }
+        .task {
+            services.setupCollectionLedger(modelContext: modelContext)
+            await refresh()
+        }
+        .task(id: services.trade.lastMutationAt) {
+            await refresh()
+        }
         .alert("Error", isPresented: .constant(errorMessage != nil), actions: {
             Button("OK") { errorMessage = nil }
         }, message: {
             Text(errorMessage ?? "")
         })
-        .confirmationDialog("Decline this trade?", isPresented: $showConfirmDecline, titleVisibility: .visible) {
+        .alert("Decline this trade?", isPresented: $showConfirmDecline) {
             Button("Decline", role: .destructive) {
                 Task { await performCancel() }
             }
+            Button("Keep Trade", role: .cancel) { }
+        } message: {
+            Text("This action cannot be undone.")
         }
-        .confirmationDialog("Cancel this trade?", isPresented: $showConfirmCancel, titleVisibility: .visible) {
+        .alert("Cancel this trade?", isPresented: $showConfirmCancel) {
             Button("Cancel Trade", role: .destructive) {
                 Task { await performCancel() }
             }
+            Button("Keep Trade", role: .cancel) { }
+        } message: {
+            Text("This will close the trade for both sides.")
         }
-        .confirmationDialog("Mark this trade as complete?", isPresented: $showConfirmComplete, titleVisibility: .visible) {
+        .alert("Mark this trade as complete?", isPresented: $showConfirmComplete) {
             Button("Mark Complete") {
                 Task { await performComplete() }
             }
+            Button("Not Yet", role: .cancel) { }
+        } message: {
+            Text("Use this only after cards and cash have been exchanged.")
         }
     }
 
@@ -76,30 +97,31 @@ struct TradeDetailView: View {
         let theirItems = twi.theirItems(currentUserID: resolvedUID)
         let myCash = twi.myCash(currentUserID: resolvedUID)
         let theirCash = twi.theirCash(currentUserID: resolvedUID)
+        let myTotalUSD = myItemsValueUSD + displayAmountToUSD(myCash)
+        let theirTotalUSD = theirItemsValueUSD + displayAmountToUSD(theirCash)
 
         return ScrollView {
             VStack(spacing: 16) {
                 statusBanner(twi.trade.status)
 
-                HStack(alignment: .top, spacing: 12) {
-                    tradeSideColumn(
-                        label: "My Side",
-                        profile: myProfile,
-                        items: myItems,
-                        cash: myCash
-                    )
+                tradeSideSection(
+                    label: "My Side",
+                    profile: myProfile,
+                    items: myItems,
+                    cash: myCash,
+                    cardValueUSD: myItemsValueUSD,
+                    totalValueUSD: myTotalUSD
+                )
+                .padding(.horizontal, 16)
 
-                    Rectangle()
-                        .fill(Color.primary.opacity(0.12))
-                        .frame(width: 1)
-
-                    tradeSideColumn(
-                        label: "Their Side",
-                        profile: theirProfile,
-                        items: theirItems,
-                        cash: theirCash
-                    )
-                }
+                tradeSideSection(
+                    label: "Their Side",
+                    profile: theirProfile,
+                    items: theirItems,
+                    cash: theirCash,
+                    cardValueUSD: theirItemsValueUSD,
+                    totalValueUSD: theirTotalUSD
+                )
                 .padding(.horizontal, 16)
 
                 actionButtons(twi)
@@ -107,6 +129,9 @@ struct TradeDetailView: View {
             }
             .padding(.top, 16)
             .padding(.bottom, 40)
+        }
+        .task(id: valuationSignature(for: twi)) {
+            await refreshTradeValues(for: twi)
         }
     }
 
@@ -129,7 +154,7 @@ struct TradeDetailView: View {
         case .pending:
             return (Color(hex: "E8B84B"), isInitiator ? "Waiting for their response" : "Awaiting your response")
         case .countered:
-            return (Color(hex: "E8934B"), isInitiator ? "Review their counter-offer" : "Counter-offer sent")
+            return (Color(hex: "E8934B"), isInitiator ? "Counter-offer sent" : "Review their counter-offer")
         case .accepted:
             return (Color(hex: "52C97C"), "Trade accepted — mark complete when cards are exchanged")
         case .complete:
@@ -139,18 +164,41 @@ struct TradeDetailView: View {
         }
     }
 
-    private func tradeSideColumn(label: String, profile: SocialProfile?, items: [TradeItem], cash: Double) -> some View {
+    private func tradeSideSection(
+        label: String,
+        profile: SocialProfile?,
+        items: [TradeItem],
+        cash: Double,
+        cardValueUSD: Double,
+        totalValueUSD: Double
+    ) -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(label)
-                    .font(.system(size: 11, weight: .bold))
-                    .tracking(0.5)
-                    .foregroundStyle(.secondary)
-                if let profile {
-                    Text(profile.displayName ?? "@\(profile.username)")
-                        .font(.system(size: 12))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
+            HStack(alignment: .top, spacing: 8) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(label)
+                        .font(.system(size: 11, weight: .bold))
+                        .tracking(0.5)
+                        .foregroundStyle(.secondary)
+                    if let profile {
+                        Text(profile.displayName ?? "@\(profile.username)")
+                            .font(.system(size: 12))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                    }
+                }
+                Spacer(minLength: 8)
+                VStack(alignment: .trailing, spacing: 2) {
+                    if isValuationLoading {
+                        ProgressView()
+                            .scaleEffect(0.8)
+                    } else {
+                        Text(formattedDisplayAmountUSD(totalValueUSD))
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundStyle(.primary)
+                    }
+                    Text("Cards: \(formattedDisplayAmountUSD(cardValueUSD))")
+                        .font(.system(size: 11))
+                        .foregroundStyle(.secondary)
                 }
             }
 
@@ -167,17 +215,22 @@ struct TradeDetailView: View {
 
             if cash > 0 {
                 HStack(spacing: 4) {
-                    Image(systemName: "sterlingsign.circle.fill")
+                    Image(systemName: "banknote.fill")
                         .font(.system(size: 12))
                         .foregroundStyle(Color(hex: "52C97C"))
-                    Text("£\(cash, format: .number.precision(.fractionLength(2)))")
+                    Text("\(services.priceDisplay.currency.symbol)\(cash, format: .number.precision(.fractionLength(2)))")
                         .font(.system(size: 13, weight: .semibold))
                         .foregroundStyle(Color(hex: "52C97C"))
                 }
                 .padding(.top, 4)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(14)
+        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Color.primary.opacity(0.08), lineWidth: 1)
+        }
     }
 
     @ViewBuilder
@@ -311,11 +364,193 @@ struct TradeDetailView: View {
         isMutating = true
         defer { isMutating = false }
         do {
+            let snapshot = tradeWithItems
             try await services.trade.completeTrade(id: tradeID)
+            if let snapshot {
+                await applyLocalTradeSettlementIfNeeded(snapshot)
+            }
             await refresh()
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+
+    private func valuationSignature(for twi: TradeWithItems) -> String {
+        let resolvedUID = currentUserID ?? UUID()
+        let myKey = twi.myItems(currentUserID: resolvedUID)
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }
+            .joined(separator: ";")
+        let theirKey = twi.theirItems(currentUserID: resolvedUID)
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }
+            .joined(separator: ";")
+        return "\(twi.id.uuidString)|\(myKey)|\(theirKey)|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)"
+    }
+
+    private func refreshTradeValues(for twi: TradeWithItems) async {
+        isValuationLoading = true
+        defer { isValuationLoading = false }
+
+        let resolvedUID = currentUserID ?? UUID()
+        var nextMyValueUSD: Double = 0
+        var nextTheirValueUSD: Double = 0
+
+        for item in twi.myItems(currentUserID: resolvedUID) {
+            guard let usd = await usdValue(for: item) else { continue }
+            nextMyValueUSD += usd * Double(max(item.quantity, 1))
+        }
+        for item in twi.theirItems(currentUserID: resolvedUID) {
+            guard let usd = await usdValue(for: item) else { continue }
+            nextTheirValueUSD += usd * Double(max(item.quantity, 1))
+        }
+
+        myItemsValueUSD = nextMyValueUSD
+        theirItemsValueUSD = nextTheirValueUSD
+    }
+
+    private func usdValue(for item: TradeItem) async -> Double? {
+        guard let card = await loadCardForValuation(id: item.cardID) else { return nil }
+        if let exactVariant = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+            return exactVariant
+        }
+        return await services.pricing.usdPrice(for: card, printing: item.variantKey)
+    }
+
+    private func loadCardForValuation(id: String) async -> Card? {
+        if let cached = valuationCardCacheByID[id] {
+            return cached
+        }
+        guard let loaded = await services.cardData.loadCard(masterCardId: id) else {
+            return nil
+        }
+        valuationCardCacheByID[id] = loaded
+        return loaded
+    }
+
+    private func displayAmountToUSD(_ amount: Double) -> Double {
+        switch services.priceDisplay.currency {
+        case .usd:
+            return amount
+        case .gbp:
+            let fx = max(services.pricing.usdToGbp, 0.0001)
+            return amount / fx
+        }
+    }
+
+    private func formattedDisplayAmountUSD(_ amountUSD: Double) -> String {
+        services.priceDisplay.currency.format(amountUSD: amountUSD, usdToGbp: services.pricing.usdToGbp)
+    }
+
+    private func applyLocalTradeSettlementIfNeeded(_ twi: TradeWithItems) async {
+        let settlementKey = "trade.local.settlement.\(twi.id.uuidString)"
+        guard !UserDefaults.standard.bool(forKey: settlementKey) else { return }
+        guard let ledger = services.collectionLedger else { return }
+        guard let uid = currentUserID else { return }
+
+        let myItems = twi.myItems(currentUserID: uid)
+        let theirItems = twi.theirItems(currentUserID: uid)
+        let myCash = twi.myCash(currentUserID: uid)
+        let theirCash = twi.theirCash(currentUserID: uid)
+        let counterparty = theirProfile?.displayName ?? theirProfile?.username ?? "Trade partner"
+        let currencyCode = services.priceDisplay.currency == .gbp ? "GBP" : "USD"
+        let reference = "trade-complete-\(twi.id.uuidString)"
+
+        for item in myItems {
+            let quantity = max(item.quantity, 1)
+            guard let stack = findCardStack(cardID: item.cardID, variantKey: item.variantKey),
+                  stack.quantity > 0 else { continue }
+            let cardName = await resolvedCardName(for: item.cardID)
+            do {
+                try ledger.recordSingleCardDisposition(
+                    item: stack,
+                    kind: .traded,
+                    quantity: min(quantity, stack.quantity),
+                    currencyCode: currencyCode,
+                    cardDisplayName: cardName,
+                    unitPrice: nil,
+                    counterparty: counterparty,
+                    notes: "Trade complete"
+                )
+            } catch {
+                continue
+            }
+        }
+
+        for item in theirItems {
+            let cardName = await resolvedCardName(for: item.cardID)
+            do {
+                try ledger.recordSingleCardAcquisition(
+                    cardID: item.cardID,
+                    variantKey: item.variantKey,
+                    kind: .trade,
+                    quantity: max(item.quantity, 1),
+                    currencyCode: currencyCode,
+                    cardDisplayName: cardName,
+                    unitPrice: nil,
+                    packedOpenedFrom: nil,
+                    tradeCounterparty: counterparty,
+                    tradeGaveAway: nil,
+                    giftFrom: nil,
+                    boughtFrom: nil
+                )
+            } catch {
+                continue
+            }
+        }
+
+        if theirCash > 0, !cashLedgerEntryExists(reference: reference) {
+            let line = LedgerLine(
+                direction: LedgerDirection.sold.rawValue,
+                productKind: ProductKind.other.rawValue,
+                lineDescription: "Trade cash received",
+                quantity: 1,
+                unitPrice: theirCash,
+                currencyCode: currencyCode,
+                counterparty: counterparty,
+                channel: "trade",
+                externalRef: reference
+            )
+            modelContext.insert(line)
+        }
+        if myCash > 0, !cashLedgerEntryExists(reference: "\(reference)-out") {
+            let line = LedgerLine(
+                direction: LedgerDirection.bought.rawValue,
+                productKind: ProductKind.other.rawValue,
+                lineDescription: "Trade cash paid",
+                quantity: 1,
+                unitPrice: myCash,
+                currencyCode: currencyCode,
+                counterparty: counterparty,
+                channel: "trade",
+                externalRef: "\(reference)-out"
+            )
+            modelContext.insert(line)
+        }
+
+        try? modelContext.save()
+        UserDefaults.standard.set(true, forKey: settlementKey)
+    }
+
+    private func findCardStack(cardID: String, variantKey: String) -> CollectionItem? {
+        let descriptor = FetchDescriptor<CollectionItem>()
+        let all = (try? modelContext.fetch(descriptor)) ?? []
+        return all.first(where: {
+            $0.cardID == cardID
+                && $0.variantKey == variantKey
+                && ($0.itemKind == ProductKind.singleCard.rawValue || $0.itemKind == ProductKind.gradedItem.rawValue)
+        })
+    }
+
+    private func cashLedgerEntryExists(reference: String) -> Bool {
+        let descriptor = FetchDescriptor<LedgerLine>()
+        let all = (try? modelContext.fetch(descriptor)) ?? []
+        return all.contains(where: { $0.externalRef == reference })
+    }
+
+    private func resolvedCardName(for cardID: String) async -> String {
+        if let card = await services.cardData.loadCard(masterCardId: cardID) {
+            return card.cardName
+        }
+        return cardID
     }
 }
 
@@ -378,15 +613,23 @@ private struct TradeActionButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.system(size: 15, weight: .semibold))
-            .foregroundStyle(isBusy ? Color.secondary : color)
+            .foregroundStyle(isBusy ? Color.secondary : Color.primary)
             .padding(.vertical, 12)
             .background(
-                color.opacity(configuration.isPressed ? 0.18 : 0.12),
-                in: RoundedRectangle(cornerRadius: 10, style: .continuous)
+                Group {
+                    if #available(iOS 26.0, *) {
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(.clear)
+                            .glassEffect(.regular.interactive(), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    } else {
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(.ultraThinMaterial)
+                    }
+                }
             )
             .overlay {
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(color.opacity(0.3), lineWidth: 1)
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(color.opacity(configuration.isPressed ? 0.48 : 0.32), lineWidth: 1)
             }
     }
 }

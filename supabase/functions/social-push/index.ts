@@ -18,6 +18,7 @@ type PushCandidate = {
     | "shared_content_posts"
     | "comments"
     | "wishlist_matches"
+    | "trade_updates"
   title: string
   body: string
   deepLink: string
@@ -284,6 +285,104 @@ function buildCandidate(payload: WebhookPayload): PushCandidate | null {
       }
     }
 
+    case "trades": {
+      const tradeID = asString(record.id)
+      const initiatorID = asString(record.initiator_id)
+      const receiverID = asString(record.receiver_id)
+      const status = asString(record.status)
+      const oldStatus = asString(oldRecord.status)
+      if (!isUUID(tradeID) || !isUUID(initiatorID) || !isUUID(receiverID) || !status) return null
+
+      if (payload.type === "INSERT" && status === "pending") {
+        return {
+          userID: receiverID,
+          category: "trade_updates",
+          title: "New trade offer",
+          body: "You received a new trade offer.",
+          deepLink: `bindr://social/trades/${tradeID}`,
+          metadata: {
+            trade_id: tradeID,
+            initiator_id: initiatorID,
+            receiver_id: receiverID,
+            status,
+            recipients: [receiverID],
+          },
+        }
+      }
+
+      if (payload.type === "UPDATE" && status === "countered") {
+        return {
+          userID: receiverID,
+          category: "trade_updates",
+          title: "Trade countered",
+          body: "Your trade has a new counter-offer.",
+          deepLink: `bindr://social/trades/${tradeID}`,
+          metadata: {
+            trade_id: tradeID,
+            initiator_id: initiatorID,
+            receiver_id: receiverID,
+            status,
+            recipients: [receiverID],
+          },
+        }
+      }
+
+      if (payload.type !== "UPDATE" || oldStatus === status) return null
+
+      if (status === "accepted") {
+        return {
+          userID: initiatorID,
+          category: "trade_updates",
+          title: "Trade accepted",
+          body: "Your trade was accepted.",
+          deepLink: `bindr://social/trades/${tradeID}`,
+          metadata: {
+            trade_id: tradeID,
+            initiator_id: initiatorID,
+            receiver_id: receiverID,
+            status,
+            recipients: [initiatorID],
+          },
+        }
+      }
+
+      if (status === "complete") {
+        return {
+          userID: initiatorID,
+          category: "trade_updates",
+          title: "Trade complete",
+          body: "A trade was marked complete.",
+          deepLink: `bindr://social/trades/${tradeID}`,
+          metadata: {
+            trade_id: tradeID,
+            initiator_id: initiatorID,
+            receiver_id: receiverID,
+            status,
+            recipients: [initiatorID, receiverID],
+          },
+        }
+      }
+
+      if (status === "cancelled") {
+        return {
+          userID: initiatorID,
+          category: "trade_updates",
+          title: "Trade cancelled",
+          body: "A trade was cancelled.",
+          deepLink: `bindr://social/trades/${tradeID}`,
+          metadata: {
+            trade_id: tradeID,
+            initiator_id: initiatorID,
+            receiver_id: receiverID,
+            status,
+            recipients: [initiatorID, receiverID],
+          },
+        }
+      }
+
+      return null
+    }
+
     default:
       return null
   }
@@ -340,6 +439,16 @@ async function expandRecipients(candidate: PushCandidate): Promise<PushCandidate
     const ownerID = asString((data as Record<string, unknown>).owner_id)
     if (!isUUID(ownerID) || ownerID === senderID) return []
     return [{ ...candidate, userID: ownerID }]
+  }
+
+  if (candidate.category === "trade_updates") {
+    const recipientIDsRaw = candidate.metadata.recipients
+    if (!Array.isArray(recipientIDsRaw)) return []
+    const recipientIDs = recipientIDsRaw
+      .map((value) => (typeof value === "string" ? value : null))
+      .filter((value): value is string => isUUID(value))
+    const uniqueRecipients = [...new Set(recipientIDs)]
+    return uniqueRecipients.map((userID) => ({ ...candidate, userID }))
   }
 
   return [candidate]

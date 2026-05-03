@@ -58,6 +58,9 @@ struct TradesView: View {
         .background(Color(uiColor: .systemBackground))
         .refreshable { await refresh() }
         .task { await refresh() }
+        .task(id: services.trade.lastMutationAt) {
+            await refresh()
+        }
         .alert("Error", isPresented: .constant(errorMessage != nil), actions: {
             Button("OK") { errorMessage = nil }
         }, message: {

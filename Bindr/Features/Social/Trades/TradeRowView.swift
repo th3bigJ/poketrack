@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct TradeRowView: View {
+    @Environment(AppServices.self) private var services
+
     let tradeWithItems: TradeWithItems
     let currentUserID: UUID
     let counterpartProfile: SocialProfile?
@@ -42,12 +44,12 @@ struct TradeRowView: View {
                 if myCash > 0 || theirCash > 0 {
                     HStack(spacing: 4) {
                         if myCash > 0 {
-                            Text("You add £\(myCash, format: .number.precision(.fractionLength(2)))")
+                            Text("You add \(services.priceDisplay.currency.symbol)\(myCash, format: .number.precision(.fractionLength(2)))")
                                 .font(.system(size: 11))
                                 .foregroundStyle(Color(hex: "52C97C"))
                         }
                         if theirCash > 0 {
-                            Text("They add £\(theirCash, format: .number.precision(.fractionLength(2)))")
+                            Text("They add \(services.priceDisplay.currency.symbol)\(theirCash, format: .number.precision(.fractionLength(2)))")
                                 .font(.system(size: 11))
                                 .foregroundStyle(Color(hex: "52C97C"))
                         }

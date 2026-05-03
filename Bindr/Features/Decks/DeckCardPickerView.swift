@@ -117,7 +117,7 @@ struct DeckCardPickerView: View {
     @State private var browsePath: [DeckPickerBrowseRoute] = []
     @State private var detailSheetSession: DeckPickerDetailSession? = nil
 
-    private static let initialBatchSize = 36
+    private static let initialBatchSize = 24
     private static let pageSize = 24
 
     // MARK: - Derived
@@ -442,6 +442,7 @@ struct DeckCardPickerView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(.white)
                 }
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Menu {
@@ -468,6 +469,7 @@ struct DeckCardPickerView: View {
                         Image(systemName: filters.isVisiblyCustomized
                               ? "line.3.horizontal.decrease.circle.fill"
                               : "line.3.horizontal.decrease.circle")
+                            .foregroundStyle(.white)
                     }
                 }
             }
@@ -825,12 +827,13 @@ struct DeckCardPickerView: View {
             let sets = try await CatalogStore.shared.fetchAllSets(for: deck.tcgBrand)
             let refs = try await CatalogStore.shared.fetchAllCardRefs(for: deck.tcgBrand)
             var filterCards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: deck.tcgBrand)
+            let releaseDateBySetCode = Dictionary(uniqueKeysWithValues: sets.map { ($0.setCode, $0.releaseDate ?? "") })
 
             // Pre-filter ineligible cards at the BrowseFilterCard level using setKey + regulationMark
             let fmt = deck.deckFormat
             filterCards = filterCards.filter { card in
                 if let legalSets = fmt.legalSetKeys, !legalSets.contains(card.setCode) { return false }
-                let releaseDate = sets.first(where: { $0.setCode == card.setCode })?.releaseDate
+                let releaseDate = releaseDateBySetCode[card.setCode]
                 if fmt == .pokemonStandard,
                    !deckPickerReleaseDateIsTournamentLegal(releaseDate) {
                     return false
@@ -948,10 +951,25 @@ struct DeckCardPickerView: View {
         let ids = Set(collectionItems
             .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == deck.tcgBrand }
             .map(\.cardID))
-        for id in ids where next[id] == nil {
-            if let card = await services.cardData.loadCard(masterCardId: id) {
-                next[id] = card
+        let missingIDs = ids.filter { next[$0] == nil }
+        let loadedPairs: [(String, Card)] = await withTaskGroup(of: (String, Card?).self, returning: [(String, Card)].self) { group in
+            for id in missingIDs {
+                group.addTask {
+                    let card = await services.cardData.loadCard(masterCardId: id)
+                    return (id, card)
+                }
             }
+            var pairs: [(String, Card)] = []
+            pairs.reserveCapacity(missingIDs.count)
+            for await (id, card) in group {
+                if let card {
+                    pairs.append((id, card))
+                }
+            }
+            return pairs
+        }
+        for (id, card) in loadedPairs {
+            next[id] = card
         }
         await MainActor.run { resolvedCardsByID = next }
     }
@@ -960,10 +978,23 @@ struct DeckCardPickerView: View {
         guard !refs.isEmpty else { return [] }
         var bySet: [String: Set<String>] = [:]
         for ref in refs { bySet[ref.setCode, default: []].insert(ref.masterCardId) }
+        let loadedCardsBySet: [[Card]] = await withTaskGroup(of: [Card].self, returning: [[Card]].self) { group in
+            for (setCode, ids) in bySet {
+                group.addTask {
+                    let loaded = await services.cardData.loadCards(forSetCode: setCode, catalogBrand: deck.tcgBrand)
+                    return loaded.filter { ids.contains($0.masterCardId) }
+                }
+            }
+            var buckets: [[Card]] = []
+            buckets.reserveCapacity(bySet.count)
+            for await bucket in group {
+                buckets.append(bucket)
+            }
+            return buckets
+        }
         var cardByKey: [String: Card] = [:]
-        for (setCode, ids) in bySet {
-            let loaded = await services.cardData.loadCards(forSetCode: setCode, catalogBrand: deck.tcgBrand)
-            for card in loaded where ids.contains(card.masterCardId) {
+        for bucket in loadedCardsBySet {
+            for card in bucket {
                 cardByKey["\(card.setCode)|\(card.masterCardId)"] = card
             }
         }

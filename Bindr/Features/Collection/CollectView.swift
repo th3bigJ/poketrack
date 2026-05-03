@@ -141,6 +141,9 @@ struct CollectView: View {
                         contentView
                     }
                 }
+                .refreshable {
+                    await refreshCollectContent()
+                }
             }
         }
         .navigationDestination(for: CardFolder.self) { folder in
@@ -602,6 +605,15 @@ struct CollectView: View {
         collectFilterEnergyOptions = cardEnergyOptions(cards)
         collectFilterRarityOptions = cardRarityOptions(cards)
         collectFilterTrainerTypeOptions = cardTrainerTypeOptions(cards)
+        refreshCollectionFeed()
+    }
+
+    private func refreshCollectContent() async {
+        await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
+        await refreshSetNameCache()
+        refreshSealedProductCaches()
+        await resolveCollectionCards()
+        await resolveWishlistCards()
         refreshCollectionFeed()
     }
 

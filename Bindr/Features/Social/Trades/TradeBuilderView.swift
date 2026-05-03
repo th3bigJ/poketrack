@@ -1,6 +1,11 @@
 import SwiftUI
 
 struct TradeBuilderView: View {
+    private enum CashField: Hashable {
+        case mine
+        case theirs
+    }
+
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
 
@@ -28,6 +33,7 @@ struct TradeBuilderView: View {
     @State private var myCardsValueUSD: Double = 0
     @State private var theirCardsValueUSD: Double = 0
     @State private var isValuationLoading = false
+    @FocusState private var focusedCashField: CashField?
 
     init(
         receiverID: UUID,
@@ -128,6 +134,12 @@ struct TradeBuilderView: View {
                     if isSubmitting { ProgressView().scaleEffect(0.7) }
                 }
             }
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+                Button("Done") {
+                    focusedCashField = nil
+                }
+            }
         }
         .sheet(isPresented: $isTheirCardPickerPresented) {
             TradeCardPickerView(
@@ -210,6 +222,7 @@ struct TradeBuilderView: View {
                         .foregroundStyle(.secondary)
                     TextField("0.00", text: $cashReceiverText)
                         .keyboardType(.decimalPad)
+                        .focused($focusedCashField, equals: .theirs)
                         .multilineTextAlignment(.trailing)
                         .font(.system(size: 14))
                         .frame(width: 90)
@@ -284,6 +297,7 @@ struct TradeBuilderView: View {
                         .foregroundStyle(.secondary)
                     TextField("0.00", text: $cashInitiatorText)
                         .keyboardType(.decimalPad)
+                        .focused($focusedCashField, equals: .mine)
                         .multilineTextAlignment(.trailing)
                         .font(.system(size: 14))
                         .frame(width: 90)
@@ -330,8 +344,9 @@ struct TradeBuilderView: View {
         isSubmitting = true
         defer { isSubmitting = false }
         do {
-            let cashMe = Double(cashInitiatorText.replacingOccurrences(of: ",", with: ".")) ?? 0
-            let cashThem = Double(cashReceiverText.replacingOccurrences(of: ",", with: ".")) ?? 0
+            focusedCashField = nil
+            let cashMe = parsedCash(cashInitiatorText)
+            let cashThem = parsedCash(cashReceiverText)
 
             if isCounterFlow, let existingTradeID, let originalTrade {
                 _ = try await services.trade.counterTrade(

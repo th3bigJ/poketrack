@@ -590,6 +590,14 @@ struct ShimmerAlertRow: View {
 }
 
 struct SocialAlertsSheet: View {
+    struct TradeAlertItem: Identifiable {
+        let id: String
+        let tradeID: UUID
+        let status: TradeStatus
+        let title: String
+        let createdAt: Date
+    }
+
     @Binding var isPresented: Bool
     let onDeepLinkSelected: (URL) -> Void
     @Environment(AppServices.self) private var services
@@ -603,6 +611,7 @@ struct SocialAlertsSheet: View {
     /// activity. Loading them here makes the sheet's data source independent
     /// of the main feed.
     @State private var activity: [SocialFeedService.FeedItem] = []
+    @State private var tradeUpdates: [TradeAlertItem] = []
     @State private var isLoading: Bool = false
     @State private var errorMessage: String?
 
@@ -629,6 +638,7 @@ struct SocialAlertsSheet: View {
     var body: some View {
         SocialAlertsPreviewView(
             items: groupedItems,
+            tradeUpdates: tradeUpdates,
             isLoading: isLoading && activity.isEmpty,
             errorMessage: errorMessage,
             onDone: { isPresented = false },
@@ -645,9 +655,12 @@ struct SocialAlertsSheet: View {
         isLoading = true
         defer { isLoading = false }
         do {
-            activity = try await services.socialFeed
+            let fetchedActivity = try await services.socialFeed
                 .fetchUserActivity(limit: 40)
                 .filter { $0.type != .wishlistMatch }
+            let fetchedTrades = try await services.trade.fetchMyTrades()
+            activity = fetchedActivity
+            tradeUpdates = buildTradeAlerts(from: fetchedTrades)
             errorMessage = nil
         } catch is CancellationError {
             return
@@ -656,6 +669,39 @@ struct SocialAlertsSheet: View {
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+
+    private func buildTradeAlerts(from trades: [TradeWithItems]) -> [TradeAlertItem] {
+        guard case .signedIn(let uid, _) = services.socialAuth.authState else { return [] }
+        return trades.compactMap { tradeWithItems in
+            let trade = tradeWithItems.trade
+            guard let updatedAt = trade.updatedAt ?? trade.createdAt else { return nil }
+            let iStartedTrade = trade.initiatorID == uid
+            let title: String = {
+                switch trade.status {
+                case .pending:
+                    return iStartedTrade ? "Trade offer sent" : "You received a trade offer"
+                case .countered:
+                    return iStartedTrade ? "Counter offer sent" : "You received a counter offer"
+                case .accepted:
+                    return iStartedTrade ? "Your trade was accepted" : "You accepted this trade"
+                case .complete:
+                    return "Trade marked complete"
+                case .cancelled:
+                    return "Trade was declined/cancelled"
+                }
+            }()
+            return TradeAlertItem(
+                id: "trade-\(trade.id.uuidString)-\(trade.status.rawValue)-\(updatedAt.timeIntervalSince1970)",
+                tradeID: trade.id,
+                status: trade.status,
+                title: title,
+                createdAt: updatedAt
+            )
+        }
+        .sorted { $0.createdAt > $1.createdAt }
+        .prefix(20)
+        .map { $0 }
     }
 }
 
@@ -695,12 +741,42 @@ struct NewPostPlaceholderView: View {
 }
 
 private struct SocialAlertsPreviewView: View {
+    private enum AlertLogEntry: Identifiable {
+        case activity(GroupedFeedItem)
+        case trade(SocialAlertsSheet.TradeAlertItem)
+
+        var id: String {
+            switch self {
+            case .activity(let group):
+                return "activity-\(group.id)"
+            case .trade(let trade):
+                return "trade-\(trade.id)"
+            }
+        }
+
+        var createdAt: Date {
+            switch self {
+            case .activity(let group):
+                return group.primary.createdAt
+            case .trade(let trade):
+                return trade.createdAt
+            }
+        }
+    }
+
     let items: [GroupedFeedItem]
+    var tradeUpdates: [SocialAlertsSheet.TradeAlertItem] = []
     var isLoading: Bool = false
     var errorMessage: String? = nil
     let onDone: () -> Void
     let onDeepLinkSelected: (URL) -> Void
     var onRetry: () -> Void = {}
+
+    private var logEntries: [AlertLogEntry] {
+        let activityEntries = activityItems.map(AlertLogEntry.activity)
+        let tradeEntries = tradeUpdates.map(AlertLogEntry.trade)
+        return (activityEntries + tradeEntries).sorted { $0.createdAt > $1.createdAt }
+    }
 
     private var activityItems: [GroupedFeedItem] {
         items.filter { group in
@@ -760,11 +836,16 @@ private struct SocialAlertsPreviewView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 14) {
                         sectionLabel("ALL ACTIVITY")
-                        if activityItems.isEmpty {
-                            emptyAlert("Votes, comments, and friend activity will appear here.")
+                        if logEntries.isEmpty {
+                            emptyAlert("Trade updates, votes, comments, and friend activity will appear here.")
                         } else {
-                            ForEach(activityItems) { group in
-                                alertRow(group: group, tint: tint(for: group.primary), icon: icon(for: group.primary))
+                            ForEach(logEntries) { entry in
+                                switch entry {
+                                case .activity(let group):
+                                    alertRow(group: group, tint: tint(for: group.primary), icon: icon(for: group.primary))
+                                case .trade(let update):
+                                    tradeAlertRow(update)
+                                }
                             }
                         }
                     }
@@ -842,6 +923,46 @@ private struct SocialAlertsPreviewView: View {
         }
     }
 
+    private func tradeAlertRow(_ update: SocialAlertsSheet.TradeAlertItem) -> some View {
+        let tint = tradeTint(update.status)
+        return Button {
+            Haptics.lightImpact()
+            if let url = URL(string: "bindr://social/trades/\(update.tradeID.uuidString)") {
+                onDeepLinkSelected(url)
+            }
+        } label: {
+            HStack(spacing: 10) {
+                Circle()
+                    .fill(tint.opacity(0.15))
+                    .frame(width: 36, height: 36)
+                    .overlay {
+                        Image(systemName: "arrow.left.arrow.right")
+                            .font(.system(size: 15, weight: .bold))
+                            .foregroundStyle(tint)
+                    }
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(update.title)
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(Color.primary)
+                        .lineLimit(2)
+                    Text(SocialFeedService.shortRelativeDate(update.createdAt))
+                        .font(.system(size: 11))
+                        .foregroundStyle(Color.secondary.opacity(0.6))
+                }
+                Spacer(minLength: 0)
+                Circle()
+                    .fill(tint)
+                    .frame(width: 7, height: 7)
+            }
+            .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .padding(14)
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(tint.opacity(0.2), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+    }
+
     private func deepLinkURL(for item: SocialFeedService.FeedItem) -> URL? {
         switch item.type {
         case .friendship:
@@ -909,6 +1030,16 @@ private struct SocialAlertsPreviewView: View {
         case .wishlistMatch: return "target"
         case .vote: return "arrow.up.arrow.down"
         default: return "bell.fill"
+        }
+    }
+
+    private func tradeTint(_ status: TradeStatus) -> Color {
+        switch status {
+        case .pending: return Color(hex: "E8B84B")
+        case .countered: return Color(hex: "E8934B")
+        case .accepted: return Color(hex: "52C97C")
+        case .complete: return Color(hex: "52C97C")
+        case .cancelled: return Color(hex: "E05252")
         }
     }
 }
