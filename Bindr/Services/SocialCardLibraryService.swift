@@ -163,6 +163,21 @@ final class SocialCardLibraryService {
         return dedupeCardIDs(rows.map(\.cardID))
     }
 
+    func fetchCollectionCardIDsByUser(for userIDs: [UUID]) async throws -> [UUID: [String]] {
+        guard !userIDs.isEmpty else { return [:] }
+        let inList = userIDs.map(\.uuidString).joined(separator: ",")
+        let rows: [CollectionItemRow] = try await execute(
+            path: "/rest/v1/social_collection_items?select=user_id,card_id,variant_key,quantity&user_id=in.(\(inList))&order=updated_at.desc",
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        var grouped: [UUID: [String]] = [:]
+        for row in rows where !row.cardID.isEmpty {
+            grouped[row.userID, default: []].append(row.cardID)
+        }
+        return grouped.mapValues { dedupeCardIDs($0) }
+    }
+
     func fetchWishlistCardIDsByUser(for userIDs: [UUID]) async throws -> [UUID: [String]] {
         guard !userIDs.isEmpty else { return [:] }
         let inList = userIDs.map(\.uuidString).joined(separator: ",")

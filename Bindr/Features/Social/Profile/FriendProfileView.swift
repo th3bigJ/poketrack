@@ -4,6 +4,7 @@ struct FriendProfileView: View {
     @Environment(AppServices.self) private var services
 
     let username: String
+    var navigationPath: Binding<NavigationPath>? = nil
 
     private enum ProfileTab: String, CaseIterable {
         case posts
@@ -20,6 +21,8 @@ struct FriendProfileView: View {
     @State private var selectedTab: ProfileTab = .posts
     @State private var sharedWishlistCardIDs: [String] = []
     @State private var sharedCollectionCardIDs: [String] = []
+    @State private var isSelectMode = false
+    @State private var selectedCardIDs: Set<String> = []
 
     private var canViewCollection: Bool {
         relationship == .friends
@@ -35,16 +38,22 @@ struct FriendProfileView: View {
                 ProgressView("Loading profile…")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else if let profile {
-                ScrollView {
-                    VStack(spacing: 18) {
-                        profileHeader(profile)
-                        favoritesSection(profile)
-                        tabPicker
-                        tabContent(profile)
+                ZStack(alignment: .bottom) {
+                    ScrollView {
+                        VStack(spacing: 18) {
+                            profileHeader(profile)
+                            favoritesSection(profile)
+                            tabPicker
+                            tabContent(profile)
+                        }
+                        .padding(.bottom, isSelectMode && !selectedCardIDs.isEmpty ? 80 : 32)
                     }
-                    .padding(.bottom, 32)
+                    .background(Color(uiColor: .systemBackground))
+
+                    if isSelectMode && !selectedCardIDs.isEmpty {
+                        offerTradeButton(for: profile)
+                    }
                 }
-                .background(Color(uiColor: .systemBackground))
             } else {
                 ContentUnavailableView(
                     "Profile Not Found",
@@ -58,7 +67,14 @@ struct FriendProfileView: View {
         .navigationTitle("@\(username)")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                if (selectedTab == .wishlist || selectedTab == .collection) && canViewWishlist {
+                    Button(isSelectMode ? "Done" : "Select") {
+                        isSelectMode.toggle()
+                        if !isSelectMode { selectedCardIDs = [] }
+                    }
+                    .font(.system(size: 14, weight: .semibold))
+                }
                 if let profile {
                     Menu("Actions", systemImage: "ellipsis.circle") {
                         Button("Block User", role: .destructive) {
@@ -67,6 +83,10 @@ struct FriendProfileView: View {
                     }
                 }
             }
+        }
+        .onChange(of: selectedTab) { _, _ in
+            isSelectMode = false
+            selectedCardIDs = []
         }
         .task(id: username) { await refresh() }
     }
@@ -360,9 +380,12 @@ struct FriendProfileView: View {
             case .wishlist:
                 let ids = resolvedWishlistCardIDs()
                 if canViewWishlist, !ids.isEmpty {
-                    WishlistCardGrid(cardIDs: ids, cardLoader: { id in
-                        await services.cardData.loadCard(masterCardId: id)
-                    })
+                    SelectableCardGrid(
+                        cardIDs: ids,
+                        isSelectMode: $isSelectMode,
+                        selectedCardIDs: $selectedCardIDs,
+                        cardLoader: { id in await services.cardData.loadCard(masterCardId: id) }
+                    )
                 } else if !canViewWishlist {
                     emptyCard("This user's wishlist is private.")
                 } else {
@@ -370,9 +393,12 @@ struct FriendProfileView: View {
                 }
             case .collection:
                 if canViewCollection, !sharedCollectionCardIDs.isEmpty {
-                    WishlistCardGrid(cardIDs: sharedCollectionCardIDs, cardLoader: { id in
-                        await services.cardData.loadCard(masterCardId: id)
-                    })
+                    SelectableCardGrid(
+                        cardIDs: sharedCollectionCardIDs,
+                        isSelectMode: $isSelectMode,
+                        selectedCardIDs: $selectedCardIDs,
+                        cardLoader: { id in await services.cardData.loadCard(masterCardId: id) }
+                    )
                 } else if canViewCollection {
                     emptyCard("No cards in this user's collection yet.")
                 } else {
@@ -449,6 +475,45 @@ struct FriendProfileView: View {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .stroke(Color.primary.opacity(0.08), lineWidth: 1)
         }
+    }
+
+    private func offerTradeButton(for profile: SocialProfile) -> some View {
+        Button {
+            let items = selectedCardIDs.map { cardID in
+                TradeItem(
+                    id: UUID(),
+                    tradeID: UUID(),
+                    ownerID: profile.id,
+                    cardID: cardID,
+                    variantKey: "normal",
+                    quantity: 1,
+                    createdAt: nil
+                )
+            }
+            isSelectMode = false
+            selectedCardIDs = []
+            navigationPath?.wrappedValue.append(SocialDestination.tradeBuilder(
+                receiverID: profile.id,
+                theirCards: items,
+                myCards: []
+            ))
+        } label: {
+            Text("Offer Trade (\(selectedCardIDs.count))")
+                .font(.system(size: 16, weight: .bold))
+                .foregroundStyle(.black)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 14)
+                .background(accentColor, in: Capsule())
+        }
+        .padding(.horizontal, 20)
+        .padding(.bottom, 16)
+        .background(
+            LinearGradient(
+                colors: [Color(uiColor: .systemBackground).opacity(0), Color(uiColor: .systemBackground)],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
     }
 
     private func emptyCard(_ text: String) -> some View {

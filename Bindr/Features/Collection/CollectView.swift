@@ -326,8 +326,16 @@ struct CollectView: View {
 
     private var activeFilteredCount: Int {
         switch selectedSegment {
-        case .collection: return collectionFilteredItemsForSelectedTypeCache.count
-        case .wishlist:   return filteredWishlistItemsForSelectedType.count
+        case .collection:
+            if selectedContentTypeTab == .cards {
+                return Set(collectionFilteredItemsForSelectedTypeCache.map(\.cardID)).count
+            }
+            return collectionFilteredItemsForSelectedTypeCache.count
+        case .wishlist:
+            if selectedContentTypeTab == .cards {
+                return Set(filteredWishlistItemsForSelectedType.map(\.cardID)).count
+            }
+            return filteredWishlistItemsForSelectedType.count
         case .folders:    return 0
         }
     }

@@ -8,6 +8,7 @@ struct SocialRootView: View {
     private enum SocialTab: String, CaseIterable, Identifiable {
         case feed = "Feed"
         case friends = "Friends"
+        case trades = "Trades"
         case profile = "Profile"
 
         var id: String { rawValue }
@@ -23,6 +24,7 @@ struct SocialRootView: View {
         case post(id: UUID)
         case comment(id: UUID)
         case wishlistMatch(id: UUID)
+        case trade(id: UUID)
 
         static func parse(from url: URL) -> SocialDeepLinkDestination? {
             guard url.scheme?.lowercased() == "bindr" else { return nil }
@@ -93,6 +95,11 @@ struct SocialRootView: View {
                     return .friendRequests
                 }
                 return .friends
+            case "trades":
+                if pathComponents.count >= 2, let id = UUID(uuidString: String(pathComponents[1])) {
+                    return .trade(id: id)
+                }
+                return .feed
             default:
                 return .feed
             }
@@ -222,6 +229,8 @@ struct SocialRootView: View {
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(.primary)
                         }
+                    } else if selectedTab == .trades {
+                        EmptyView()
                     } else if selectedTab == .profile {
                         ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
                             Haptics.lightImpact()
@@ -355,7 +364,17 @@ struct SocialRootView: View {
                             socialNavigationPath.append(SocialDestination.friendProfile(username: scannedUsername))
                         }
                     case .friendProfile(let username):
-                        FriendProfileView(username: username)
+                        FriendProfileView(username: username, navigationPath: $socialNavigationPath)
+                    case .tradeDetail(let tradeID):
+                        TradeDetailView(tradeID: tradeID)
+                    case .tradeBuilder(let receiverID, let theirCards, let myCards, let existingTradeID, let originalTrade):
+                        TradeBuilderView(
+                            receiverID: receiverID,
+                            initialTheirCards: theirCards,
+                            initialMyCards: myCards,
+                            existingTradeID: existingTradeID,
+                            originalTrade: originalTrade
+                        )
                     }
                 }
             }
@@ -391,6 +410,8 @@ struct SocialRootView: View {
                             socialNavigationPath.append(SocialDestination.friendProfile(username: username))
                         }
                     )
+                case .trades:
+                    TradesView(navigationPath: $socialNavigationPath)
                 case .profile:
                     MyProfileView(
                         profile: profile
@@ -571,6 +592,10 @@ struct SocialRootView: View {
             guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: contentID) else { return }
             deepLinkedCommentsContent = nil
             deepLinkedSharedContent = sharedContent
+        case .trade(let id):
+            selectedTab = .trades
+            socialNavigationPath = NavigationPath()
+            socialNavigationPath.append(SocialDestination.tradeDetail(tradeID: id))
         }
     }
 

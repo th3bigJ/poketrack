@@ -22,6 +22,7 @@ final class AppServices {
     let socialCardLibrary: SocialCardLibraryService
     let socialFeed: SocialFeedService
     let socialPush: SocialPushService
+    let trade: TradeService
     let theme: ThemeSettings
     
     // Wishlist service - initialized after model context is available
@@ -79,6 +80,7 @@ final class AppServices {
         self.brandSettings = brandSettings
         self.cardData = CardDataService(brandSettings: brandSettings)
         self.socialCardLibrary = SocialCardLibraryService(authService: socialAuth)
+        self.trade = TradeService(authService: socialAuth)
         self.socialShare = SocialShareService(
             authService: socialAuth,
             storeService: store,

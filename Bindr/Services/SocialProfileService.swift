@@ -199,6 +199,15 @@ final class SocialProfileService {
         return rows.first
     }
 
+    func fetchProfile(id: UUID) async throws -> SocialProfile? {
+        let rows: [SocialProfile] = try await execute(
+            path: "/rest/v1/profiles?select=*&id=eq.\(id.uuidString)&limit=1",
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        return rows.first
+    }
+
     func saveProfile(
         username: String,
         displayName: String?,

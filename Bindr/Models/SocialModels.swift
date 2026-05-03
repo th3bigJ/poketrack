@@ -162,11 +162,13 @@ enum FriendshipStatus: String, Codable, Sendable {
     case blocked = "blocked"
 }
 
-public enum SocialDestination: Hashable {
+enum SocialDestination: Hashable {
     case friends
     case search
     case qrProfile
     case friendProfile(username: String)
+    case tradeDetail(tradeID: UUID)
+    case tradeBuilder(receiverID: UUID, theirCards: [TradeItem], myCards: [TradeItem], existingTradeID: UUID? = nil, originalTrade: Trade? = nil)
 }
 
 struct Friendship: Codable, Identifiable, Sendable {
