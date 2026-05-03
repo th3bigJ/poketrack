@@ -78,6 +78,18 @@ async function fetchDeviceTokens(userID: string): Promise<string[]> {
     .filter((token): token is string => Boolean(token))
 }
 
+async function invalidateDeviceToken(userID: string, token: string) {
+  await supabase
+    .from("device_tokens")
+    .delete()
+    .eq("user_id", userID)
+    .eq("token", token)
+}
+
+function isApnsUnregistered(statusCode: number, rawBody: string): boolean {
+  return statusCode === 410 || rawBody.includes("\"reason\":\"Unregistered\"")
+}
+
 async function apnsBearerToken(): Promise<string | null> {
   if (!APNS_TEAM_ID || !APNS_KEY_ID || !APNS_PRIVATE_KEY) return null
   try {
@@ -174,6 +186,13 @@ async function sendApnsPush(candidate: PushCandidate) {
         }
 
         const raw = await response.text()
+        const unregistered = isApnsUnregistered(response.status, raw)
+        if (unregistered) {
+          await invalidateDeviceToken(candidate.userID, token)
+          lastError = `apns ${response.status} (${host}): ${raw}; removed stale device token`
+          break
+        }
+
         const shouldTryAlternateHost =
           response.status === 400 &&
           raw.includes("\"reason\":\"BadDeviceToken\"") &&
