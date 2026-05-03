@@ -118,6 +118,7 @@ struct DeckDetailView: View {
     @State private var missingValue: Double? = nil
     @State private var isLoadingValue = false
     @State private var showShareSettings = false
+    @State private var showShareActions = false
     @State private var isSharedPublished = false
 
     private static func catalogSubtypeString(from card: Card) -> String? {
@@ -259,56 +260,24 @@ struct DeckDetailView: View {
                     Text(deck.title).font(.headline)
                 }
             }
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    Button {
-                        showShareSettings = true
-                    } label: {
-                        HStack(spacing: 8) {
-                            Image(systemName: "person.2")
-                                .foregroundStyle(.white)
-                            Text("Post to Social")
-                        }
-                    }
-
-                    Button {
-                        let exportText = PTCGLService.shared.exportToPTCGL(deck: deck, sets: services.cardData.sets)
-                        UIPasteboard.general.string = exportText
-                        HapticManager.notification(.success)
-                    } label: {
-                        HStack(spacing: 8) {
-                            Image(systemName: "doc.on.doc")
-                                .foregroundStyle(.white)
-                            Text("Copy to TCG Live")
-                        }
-                    }
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                ChromeGlassCircleButton(accessibilityLabel: isSharedPublished ? "Share options, currently shared" : "Share options") {
+                    showShareActions = true
                 } label: {
                     Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
                         .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(isSharedPublished ? .green : .primary)
-                        .modifier(ChromeGlassCircleGlyphModifier())
+                        .foregroundStyle(.white)
                 }
-                .buttonStyle(.plain)
-                .menuIndicator(.hidden)
-                .frame(width: 48, height: 48)
-                .contentShape(Rectangle())
-                .accessibilityLabel(isSharedPublished ? "Share options, currently shared" : "Share options")
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
+
+                ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done editing deck" : "Edit deck") {
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
                         isEditing.toggle()
                     }
                 } label: {
                     Image(systemName: isEditing ? "checkmark" : "pencil")
                         .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(Color.accentColor)
-                        .modifier(ChromeGlassCircleGlyphModifier())
+                        .foregroundStyle(.white)
                 }
-                .buttonStyle(.plain)
-                .frame(width: 48, height: 48)
-                .contentShape(Rectangle())
-                .accessibilityLabel(isEditing ? "Done editing deck" : "Edit deck")
             }
         }
         .sheet(item: $pickerGroup) { group in
@@ -329,6 +298,70 @@ struct DeckDetailView: View {
                 .environment(services)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
+        }
+        .sheet(isPresented: $showShareActions) {
+            VStack(spacing: 12) {
+                Text("Share Deck")
+                    .font(.headline)
+                    .foregroundStyle(.primary)
+                    .padding(.top, 6)
+
+                Button {
+                    showShareActions = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        showShareSettings = true
+                    }
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "person.2")
+                            .symbolRenderingMode(.monochrome)
+                            .foregroundStyle(.white)
+                            .frame(width: 20)
+                        Text("Post to Social")
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(.primary)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 12)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .fill(Color(uiColor: .secondarySystemBackground))
+                    )
+                }
+                .buttonStyle(.plain)
+
+                Button {
+                    let exportText = PTCGLService.shared.exportToPTCGL(deck: deck, sets: services.cardData.sets)
+                    UIPasteboard.general.string = exportText
+                    HapticManager.notification(.success)
+                    showShareActions = false
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "doc.on.doc")
+                            .symbolRenderingMode(.monochrome)
+                            .foregroundStyle(.white)
+                            .frame(width: 20)
+                        Text("Copy to TCG Live")
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(.primary)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 12)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .fill(Color(uiColor: .secondarySystemBackground))
+                    )
+                }
+                .buttonStyle(.plain)
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 18)
+            .presentationDetents([.height(220)])
+            .presentationDragIndicator(.visible)
         }
         .task(id: deck.cardList.map(\.cardID).sorted().joined()) {
             await backfillDeckCatalogMetadataIfNeeded()
