@@ -85,6 +85,8 @@ struct FriendProfileView: View {
                     Text(profile.displayName ?? profile.username)
                         .font(.system(size: 18, weight: .heavy))
                         .foregroundStyle(Color.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                     Text("@\(profile.username)")
                         .font(.system(size: 12))
                         .foregroundStyle(Color.secondary)

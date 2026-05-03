@@ -151,16 +151,19 @@ struct FeedItemView: View {
                                     .font(.system(size: 14, weight: .bold))
                                     .foregroundStyle(Color.primary)
                                     .lineLimit(1)
+                                    .minimumScaleFactor(0.8)
                             }
                             .buttonStyle(.plain)
+                            .layoutPriority(1)
                         } else {
                             Text(actorName)
                                 .font(.system(size: 14, weight: .bold))
                                 .foregroundStyle(.primary)
                                 .lineLimit(1)
+                                .minimumScaleFactor(0.8)
+                                .layoutPriority(1)
                         }
                     }
-                    .layoutPriority(1)
                     
                     Text("· \(SocialFeedService.shortRelativeDate(item.createdAt))")
                         .font(.system(size: 12))
@@ -199,6 +202,7 @@ struct FeedItemView: View {
                 }
 
                 if let handle = item.actor?.username,
+                   !isMyItem, // Don't show handle for 'me'
                    handle.lowercased() != actorName.lowercased() {
                     Text("@\(handle)")
                         .font(.system(size: 12))

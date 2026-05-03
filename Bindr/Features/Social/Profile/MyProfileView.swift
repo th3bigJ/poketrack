@@ -107,9 +107,8 @@ struct MyProfileView: View {
                     Text(profile.displayName ?? profile.username)
                         .font(.system(size: 18, weight: .heavy))
                         .foregroundStyle(Color.primary)
-                    Text("@\(profile.username)")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color.secondary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                     if !roleTitles.isEmpty {
                         HStack(spacing: 6) {
                             ForEach(roleTitles, id: \.self) { title in
