@@ -141,24 +141,33 @@ struct MyProfileView: View {
         }
         .padding(16)
         .background {
-            // Layered backdrop driven by the user's theme colour, favourite
-            // Pokémon (huge faded silhouette behind everything), and favourite
-            // card (tilted ghost card peeking from the top-right). Gives every
-            // profile a personalised feel rather than the same gold gradient
-            // for everyone.
+            // Layered backdrop driven by the user's theme colour. 
+            // Using a sophisticated multi-directional gradient that fades out 
+            // at the edges to prevent "sharp cut-off" looks.
             ZStack(alignment: .topTrailing) {
+                // Vertical Fade (Main Glow)
                 LinearGradient(
-                    colors: [themeColor.opacity(0.22), themeColor.opacity(0.06), Color(uiColor: .systemBackground)],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
+                    colors: [
+                        .clear,
+                        themeColor.opacity(0.22),
+                        themeColor.opacity(0.08),
+                        .clear
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                
+                // Horizontal Fade (Secondary Beam)
+                LinearGradient(
+                    colors: [
+                        themeColor.opacity(0.15),
+                        .clear
+                    ],
+                    startPoint: .leading,
+                    endPoint: .trailing
                 )
 
-                // (Pokémon dex watermark removed — the giant "#xxx" sat behind
-                // the stats bar and looked like a glitch. Favourite card peek
-                // below remains as the personalised visual anchor.)
-
-                // Tilted favourite card peek — visual anchor on the right that
-                // signals "this is *their* shelf", not a stock template.
+                // Favourite card peek below remains as the personalised visual anchor.
                 if let imageURL = profile.favoriteCardImageURL,
                    let url = URL(string: imageURL) {
                     CachedAsyncImage(url: url) { image in
@@ -180,6 +189,7 @@ struct MyProfileView: View {
                     .allowsHitTesting(false)
                 }
             }
+            .ignoresSafeArea(edges: .top)
         }
     }
 
