@@ -35,10 +35,7 @@ struct TradeDetailView: View {
     }
 
     private var themeColor: Color {
-        if let hex = myProfile?.avatarBackgroundColor, !hex.isEmpty {
-            return Color(hex: hex)
-        }
-        return .cyan
+        services.theme.accentColor
     }
 
     var body: some View {
