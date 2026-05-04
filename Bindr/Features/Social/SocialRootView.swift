@@ -216,14 +216,14 @@ struct SocialRootView: View {
                             if services.socialFeed.unreadAlertsCount > 0 {
                                 Capsule()
                                     .fill(Color(hex: "E05252"))
-                                    .frame(minWidth: 16, minHeight: 16)
+                                    .frame(minWidth: 14, minHeight: 14)
                                     .overlay {
                                         Text("\(services.socialFeed.unreadAlertsCount)")
-                                            .font(.system(size: 10, weight: .bold))
+                                            .font(.system(size: 9, weight: .bold))
                                             .foregroundStyle(.white)
-                                            .padding(.horizontal, 4)
+                                            .padding(.horizontal, 3)
                                     }
-                                    .offset(x: 8, y: -8)
+                                    .offset(x: 6, y: -6)
                             }
                         }
                     }

@@ -98,9 +98,24 @@ struct BindrPageBackground: View {
                 ],
                 center: .topTrailing,
                 startRadius: 10,
-                endRadius: 360
+                endRadius: 450
             )
-            .offset(x: 50, y: -70)
+            .offset(x: 100, y: -100)
+            
+            RadialGradient(
+                colors: [
+                    accent.opacity(colorScheme == .dark ? 0.04 : 0.03),
+                    .clear
+                ],
+                center: .bottomLeading,
+                startRadius: 0,
+                endRadius: 300
+            )
+            .offset(x: -50, y: 50)
+            
+            // Subtle Noise/Grain Overlay (Simulated via opacity jitter)
+            Color.primary.opacity(0.005)
+                .blendMode(colorScheme == .dark ? .overlay : .multiply)
         }
     }
 }
