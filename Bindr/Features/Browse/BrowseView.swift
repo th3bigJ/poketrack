@@ -3026,6 +3026,58 @@ struct SetCardsView: View {
         colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
     }
 
+    private var uniqueOwnedInSet: Int {
+        cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+    }
+
+    private var setProgressBar: some View {
+        let total = cards.count
+        let owned = uniqueOwnedInSet
+        let progress = total > 0 ? Double(owned) / Double(total) : 0
+        
+        return VStack(spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("Collection Completion")
+                    .font(.system(size: 12, weight: .bold, design: .rounded))
+                    .foregroundStyle(.secondary)
+                
+                Spacer()
+                
+                (Text("\(owned)")
+                    .foregroundStyle(services.theme.accentColor) +
+                 Text(" / \(total)")
+                    .foregroundStyle(.secondary))
+                    .font(.system(size: 13, weight: .black, design: .monospaced))
+            }
+            
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05))
+                    
+                    Capsule()
+                        .fill(
+                            LinearGradient(
+                                colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.8)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: max(geo.size.width * progress, 6)) // Minimum width for visibility
+                        .shadow(color: services.theme.accentColor.opacity(0.25), radius: 3, x: 0, y: 1.5)
+                }
+            }
+            .frame(height: 7)
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 8)
+        .background {
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.03 : 0.01))
+                .padding(.horizontal, 10)
+        }
+    }
+
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView {
@@ -3033,9 +3085,11 @@ struct SetCardsView: View {
                     ProgressView().padding()
                 } else {
                     VStack(spacing: 12) {
-                        BrowseInlineSearchField(title: "Search cards in set", text: $query)
+                        BrowseInlineSearchField(title: "Search \(cards.count) cards in set", text: $query)
                             .padding(.horizontal)
                             .padding(.top, 2)
+                        
+                        setProgressBar
                         if filteredCards.isEmpty {
                             ContentUnavailableView(
                                 "No matching cards",
