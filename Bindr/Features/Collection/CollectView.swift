@@ -13,6 +13,7 @@ struct CollectView: View {
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var collectionPriceByItemKey: [String: Double] = [:]
+    @State private var collectionResolvedPriceItemKeys: Set<String> = []
     @State private var selectedSealedProduct: SealedProduct?
     @State private var cachedSetNameByBrandAndCode: [String: String] = [:]
     @State private var sealedProductByIDCache: [Int: SealedProduct] = [:]
@@ -89,6 +90,43 @@ struct CollectView: View {
 
     private var visibleCollectionItems: [CollectionItem] {
         collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
+    }
+
+    private var visibleCollectionCardItems: [CollectionItem] {
+        visibleCollectionItems.filter { sealedProduct(for: $0) == nil }
+    }
+
+    private var collectionSortNeedsResolvedCards: Bool {
+        switch collectionFilters.sortBy {
+        case .cardName, .newestSet, .cardNumber, .price:
+            return true
+        case .acquiredDateNewest, .random:
+            return false
+        }
+    }
+
+    private var collectionHasCardFilterDependencies: Bool {
+        let trimmedQuery = collectionQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+        return !trimmedQuery.isEmpty || collectionFilters.hasActiveCardFieldFilters
+    }
+
+    private var isCollectionWaitingForCurrentSortOrFilters: Bool {
+        guard selectedContentTypeTab == .cards else { return false }
+        guard !visibleCollectionCardItems.isEmpty else { return false }
+
+        if collectionSortNeedsResolvedCards || collectionHasCardFilterDependencies {
+            let missingCardData = visibleCollectionCardItems.contains { cardsByCardID[$0.cardID] == nil }
+            if missingCardData { return true }
+        }
+
+        if collectionFilters.sortBy == .price {
+            let missingPriceResolution = visibleCollectionCardItems.contains {
+                !collectionResolvedPriceItemKeys.contains(collectionItemKey($0))
+            }
+            if missingPriceResolution { return true }
+        }
+
+        return false
     }
 
     private var sealedProductsSignature: String {
@@ -378,6 +416,15 @@ struct CollectView: View {
                 image: "line.3.horizontal.decrease.circle",
                 description: "No \(activeBrand.displayTitle) cards in your collection yet."
             )
+        } else if isCollectionWaitingForCurrentSortOrFilters {
+            VStack(spacing: 12) {
+                ProgressView()
+                Text("Applying your filters and sort...")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 40)
         } else if collectionFilteredItemsForSelectedTypeCache.isEmpty {
             emptyState(
                 title: "No matching \(selectedContentTypeTab.title.lowercased())",
@@ -591,14 +638,17 @@ struct CollectView: View {
         cardsByCardID = next
 
         var nextPrices: [String: Double] = [:]
+        var resolvedPriceKeys: Set<String> = []
         for item in visibleCollectionItems {
             guard let card = next[item.cardID] else { continue }
+            resolvedPriceKeys.insert(collectionItemKey(item))
             let gradeKey = collectionGradeKey(for: item)
             if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: item.variantKey, grade: gradeKey) {
                 nextPrices[collectionItemKey(item)] = usd
             }
         }
         collectionPriceByItemKey = nextPrices
+        collectionResolvedPriceItemKeys = resolvedPriceKeys
 
         let cards = collectionDisplayedCards
         ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)

@@ -120,7 +120,6 @@ private struct CardBrowseDetailPage: View {
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
-    @State private var deckAddQuantity: Int = 1
     @State private var imageAppeared = false
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
@@ -160,6 +159,15 @@ private struct CardBrowseDetailPage: View {
 
     private var singleAvailableVariantKey: String? {
         wishlistVariantKeys.count == 1 ? wishlistVariantKeys[0] : nil
+    }
+
+    /// Deck rows are keyed by card id and quantity, so variant does not affect deckbuilding behavior.
+    /// Prefer "normal" when present, then fall back to the first available key.
+    private var preferredDeckVariantKey: String {
+        if wishlistVariantKeys.contains("normal") {
+            return "normal"
+        }
+        return wishlistVariantKeys.first ?? "normal"
     }
 
     private var summaryFacts: [(String, String)] {
@@ -374,43 +382,16 @@ private struct CardBrowseDetailPage: View {
             VStack(spacing: 12) {
                 titleBlock
 
-                if let variantKey = singleAvailableVariantKey {
-                    Button {
-                        deckAction(card, variantKey, deckAddQuantity)
-                        deckAddQuantity = 1
-                    } label: {
-                        cardActionBody(
-                            title: "Add to Deck",
-                            systemImage: "plus.circle.fill",
-                            tint: CardDetailPalette.chartLine
-                        )
-                    }
-                    .buttonStyle(.plain)
-                } else {
-                    Menu {
-                        Section {
-                            Stepper("Quantity: \(deckAddQuantity)", value: $deckAddQuantity, in: 1...20)
-                        }
-                        Section("Select Variant") {
-                            ForEach(wishlistVariantKeys, id: \.self) { key in
-                                Button {
-                                    deckAction(card, key, deckAddQuantity)
-                                    deckAddQuantity = 1
-                                } label: {
-                                    Text(variantTitle(key))
-                                }
-                            }
-                        }
-                    } label: {
-                        cardActionBody(
-                            title: "Add to Deck",
-                            systemImage: "plus.circle.fill",
-                            tint: CardDetailPalette.chartLine
-                        )
-                    }
-                    .menuStyle(.button)
-                    .menuIndicator(.hidden)
+                Button {
+                    deckAction(card, preferredDeckVariantKey, 1)
+                } label: {
+                    cardActionBody(
+                        title: "Add to Deck",
+                        systemImage: "plus.circle.fill",
+                        tint: CardDetailPalette.chartLine
+                    )
                 }
+                .buttonStyle(.plain)
             }
         } else {
             VStack(spacing: 12) {

@@ -54,9 +54,11 @@ struct CreateDeckSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(.white)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create") { create() }
+                        .foregroundStyle(.white)
                         .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
             }

@@ -106,6 +106,7 @@ private struct EnergySummaryChip: Identifiable {
 
 struct DeckDetailView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     @Environment(AppServices.self) private var services
     @Bindable var deck: Deck
     @Query private var collectionItems: [CollectionItem]
@@ -247,38 +248,9 @@ struct DeckDetailView: View {
                 Spacer(minLength: 40)
             }
         }
-        .navigationTitle(isEditing ? "" : deck.title)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                if isEditing {
-                    TextField("Deck name", text: $deck.title)
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
-                        .frame(maxWidth: 220)
-                } else {
-                    Text(deck.title).font(.headline)
-                }
-            }
-            ToolbarItemGroup(placement: .topBarTrailing) {
-                ChromeGlassCircleButton(accessibilityLabel: isSharedPublished ? "Share options, currently shared" : "Share options") {
-                    showShareActions = true
-                } label: {
-                    Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.white)
-                }
-
-                ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done editing deck" : "Edit deck") {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                        isEditing.toggle()
-                    }
-                } label: {
-                    Image(systemName: isEditing ? "checkmark" : "pencil")
-                        .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(.white)
-                }
-            }
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top) {
+            deckDetailTopBar
         }
         .sheet(item: $pickerGroup) { group in
             DeckCardPickerView(deck: deck, initialCategoryFilter: group.pickerFilter)
@@ -378,6 +350,56 @@ struct DeckDetailView: View {
     }
 
     // MARK: - Summary
+
+    private var deckDetailTopBar: some View {
+        ZStack {
+            if isEditing {
+                TextField("Deck name", text: $deck.title)
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: 220)
+            } else {
+                Text(deck.title)
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .padding(.horizontal, 64)
+            }
+
+            HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer(minLength: 0)
+
+                HStack(spacing: 10) {
+                    ChromeGlassCircleButton(accessibilityLabel: isSharedPublished ? "Share options, currently shared" : "Share options") {
+                        showShareActions = true
+                    } label: {
+                        Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
+
+                    ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done editing deck" : "Edit deck") {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                            isEditing.toggle()
+                        }
+                    } label: {
+                        Image(systemName: isEditing ? "checkmark" : "pencil")
+                            .font(.system(size: 17, weight: .semibold))
+                            .foregroundStyle(.primary)
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+    }
 
     private var summarySection: some View {
         VStack(spacing: 16) {
