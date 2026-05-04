@@ -84,6 +84,107 @@ private func deckPickerReleaseDateIsTournamentLegal(_ releaseDate: String?, now:
     return legalDate <= now
 }
 
+private struct DeckPickerCatalogSnapshot {
+    let sets: [TCGSet]
+    let refs: [CardRef]
+    let filterCards: [BrowseFilterCard]
+}
+
+@MainActor
+private enum DeckPickerCatalogBootstrapCache {
+    static var snapshotsByBrand: [TCGBrand: DeckPickerCatalogSnapshot] = [:]
+}
+
+private struct DeckPickerEligibilityCacheKey: Hashable {
+    let brand: TCGBrand
+    let format: DeckFormat
+}
+
+private struct DeckPickerEligibilityCacheValue {
+    let filterCards: [BrowseFilterCard]
+    let refs: [CardRef]
+}
+
+@MainActor
+private enum DeckPickerEligibilityCache {
+    static var values: [DeckPickerEligibilityCacheKey: DeckPickerEligibilityCacheValue] = [:]
+}
+
+@MainActor
+enum DeckPickerPrewarm {
+    private static var inFlightKeys: Set<DeckPickerEligibilityCacheKey> = []
+
+    static func prewarm(
+        brand: TCGBrand,
+        format: DeckFormat,
+        cardData: CardDataService
+    ) async {
+        let key = DeckPickerEligibilityCacheKey(brand: brand, format: format)
+        if DeckPickerEligibilityCache.values[key] != nil,
+           DeckPickerCatalogBootstrapCache.snapshotsByBrand[brand] != nil {
+            return
+        }
+        if inFlightKeys.contains(key) { return }
+        inFlightKeys.insert(key)
+        defer { inFlightKeys.remove(key) }
+
+        do {
+            let snapshot: DeckPickerCatalogSnapshot
+            if let cached = DeckPickerCatalogBootstrapCache.snapshotsByBrand[brand] {
+                snapshot = cached
+            } else {
+                try await CatalogStore.shared.open()
+                let sets = try await CatalogStore.shared.fetchAllSets(for: brand)
+                let refs = try await CatalogStore.shared.fetchAllCardRefs(for: brand)
+                let filterCards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: brand)
+                snapshot = DeckPickerCatalogSnapshot(sets: sets, refs: refs, filterCards: filterCards)
+                DeckPickerCatalogBootstrapCache.snapshotsByBrand[brand] = snapshot
+            }
+
+            // Prime "first paint" data by warming the newest set card cache.
+            if let newestSet = snapshot.sets.max(by: { ($0.releaseDate ?? "") < ($1.releaseDate ?? "") }) {
+                _ = await cardData.loadCards(forSetCode: newestSet.setCode, catalogBrand: brand)
+            }
+
+            if DeckPickerEligibilityCache.values[key] == nil {
+                let releaseDateBySetCode = Dictionary(uniqueKeysWithValues: snapshot.sets.map { ($0.setCode, $0.releaseDate ?? "") })
+                let eligibleCards = snapshot.filterCards.filter { card in
+                    if let legalSets = format.legalSetKeys, !legalSets.contains(card.setCode) { return false }
+                    let releaseDate = releaseDateBySetCode[card.setCode]
+                    if format == .pokemonStandard,
+                       !deckPickerReleaseDateIsTournamentLegal(releaseDate) {
+                        return false
+                    }
+                    if format.legalRegulationMarks != nil,
+                       !deckPickerHasLegalRegulationMark(
+                        format: format,
+                        category: card.category,
+                        energyType: card.energyType,
+                        regulationMark: card.regulationMark
+                       ) {
+                        return false
+                    }
+                    if format.isBanned(cardName: card.cardName) { return false }
+                    if format == .pokemonGLC {
+                        let sub = card.subtype ?? ""
+                        let ruleBox = ["ex", "V", "GX", "VMAX", "VSTAR"]
+                        if (card.category ?? "").contains("Pokémon") && ruleBox.contains(where: { sub.contains($0) }) { return false }
+                    }
+                    return true
+                }
+                let eligibleIDs = Set(eligibleCards.map(\.masterCardId))
+                let eligibleRefs = snapshot.refs.filter { eligibleIDs.contains($0.masterCardId) }
+                DeckPickerEligibilityCache.values[key] = DeckPickerEligibilityCacheValue(
+                    filterCards: eligibleCards,
+                    refs: eligibleRefs
+                )
+            }
+        } catch {
+            // Best-effort prewarm only.
+        }
+    }
+}
+
 // MARK: - Main view
 
 struct DeckCardPickerView: View {
@@ -116,6 +217,7 @@ struct DeckCardPickerView: View {
     @State private var resolvedCardsByID: [String: Card] = [:]
     @State private var browsePath: [DeckPickerBrowseRoute] = []
     @State private var detailSheetSession: DeckPickerDetailSession? = nil
+    @State private var didRunFastStart = false
 
     private static let initialBatchSize = 24
     private static let pageSize = 24
@@ -245,6 +347,10 @@ struct DeckCardPickerView: View {
         collectionItems
             .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == deck.tcgBrand }
             .map(\.cardID).sorted().joined(separator: "|")
+    }
+
+    private var collectionResolveTaskKey: String {
+        "\(source.rawValue)|\(visibleItemSignature)"
     }
 
     /// Cards matching the current source, search query, and browse filters — not limited by grid pagination.
@@ -474,9 +580,10 @@ struct DeckCardPickerView: View {
                 }
             }
             .task(id: deck.format) {
-                await reloadAllCards(force: true)
+                await reloadAllCards()
             }
-            .task(id: visibleItemSignature) {
+            .task(id: collectionResolveTaskKey) {
+                guard source == .collection else { return }
                 await resolveVisibleCards()
             }
             .onChange(of: source) { _, _ in
@@ -504,7 +611,7 @@ struct DeckCardPickerView: View {
             }
             .onChange(of: filters) { _, _ in
                 guard source == .allCards, !debouncedQueryIsActive else { return }
-                Task { await rebuildFilteredRefFeed(reset: true) }
+                Task { await rebuildFilteredRefFeed(reset: true, clearVisibleImmediately: true) }
             }
             .onAppear {
                 filters.sortBy = .newestSet
@@ -821,53 +928,93 @@ struct DeckCardPickerView: View {
             displayedAllCards = []
             allBrowseFilterCards = []
             nextRefIndex = 0
+            didRunFastStart = false
         }
         do {
-            try await CatalogStore.shared.open()
-            let sets = try await CatalogStore.shared.fetchAllSets(for: deck.tcgBrand)
-            let refs = try await CatalogStore.shared.fetchAllCardRefs(for: deck.tcgBrand)
-            var filterCards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: deck.tcgBrand)
-            let releaseDateBySetCode = Dictionary(uniqueKeysWithValues: sets.map { ($0.setCode, $0.releaseDate ?? "") })
-
-            // Pre-filter ineligible cards at the BrowseFilterCard level using setKey + regulationMark
-            let fmt = deck.deckFormat
-            filterCards = filterCards.filter { card in
-                if let legalSets = fmt.legalSetKeys, !legalSets.contains(card.setCode) { return false }
-                let releaseDate = releaseDateBySetCode[card.setCode]
-                if fmt == .pokemonStandard,
-                   !deckPickerReleaseDateIsTournamentLegal(releaseDate) {
-                    return false
+            let snapshot: DeckPickerCatalogSnapshot
+            let cachedSnapshot = await MainActor.run {
+                force ? nil : DeckPickerCatalogBootstrapCache.snapshotsByBrand[deck.tcgBrand]
+            }
+            if let cachedSnapshot {
+                snapshot = cachedSnapshot
+            } else {
+                try await CatalogStore.shared.open()
+                let sets = try await CatalogStore.shared.fetchAllSets(for: deck.tcgBrand)
+                let refs = try await CatalogStore.shared.fetchAllCardRefs(for: deck.tcgBrand)
+                let filterCards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: deck.tcgBrand)
+                snapshot = DeckPickerCatalogSnapshot(sets: sets, refs: refs, filterCards: filterCards)
+                await MainActor.run {
+                    DeckPickerCatalogBootstrapCache.snapshotsByBrand[deck.tcgBrand] = snapshot
                 }
-                if fmt.legalRegulationMarks != nil,
-                   !deckPickerHasLegalRegulationMark(
-                    format: fmt,
-                    category: card.category,
-                    energyType: card.energyType,
-                    regulationMark: card.regulationMark
-                   ) {
-                    return false
-                }
-                if fmt.isBanned(cardName: card.cardName) { return false }
-                if fmt == .pokemonGLC {
-                    let sub = card.subtype ?? ""
-                    let ruleBox = ["ex", "V", "GX", "VMAX", "VSTAR"]
-                    if (card.category ?? "").contains("Pokémon") && ruleBox.contains(where: { sub.contains($0) }) { return false }
-                }
-                return true
             }
 
-            let eligibleIDs = Set(filterCards.map(\.masterCardId))
-            let filteredRefs = refs.filter { eligibleIDs.contains($0.masterCardId) }
+            let sets = snapshot.sets
+            let refs = snapshot.refs
+            var filterCards: [BrowseFilterCard]
+            var filteredRefs: [CardRef]
+            let releaseDateBySetCode = Dictionary(uniqueKeysWithValues: sets.map { ($0.setCode, $0.releaseDate ?? "") })
+
+            let eligibilityKey = DeckPickerEligibilityCacheKey(brand: deck.tcgBrand, format: deck.deckFormat)
+            if let cachedEligibility = await MainActor.run(body: {
+                force ? nil : DeckPickerEligibilityCache.values[eligibilityKey]
+            }) {
+                filterCards = cachedEligibility.filterCards
+                filteredRefs = cachedEligibility.refs
+            } else {
+                // Pre-filter ineligible cards at the BrowseFilterCard level using setKey + regulationMark.
+                let fmt = deck.deckFormat
+                filterCards = snapshot.filterCards.filter { card in
+                    if let legalSets = fmt.legalSetKeys, !legalSets.contains(card.setCode) { return false }
+                    let releaseDate = releaseDateBySetCode[card.setCode]
+                    if fmt == .pokemonStandard,
+                       !deckPickerReleaseDateIsTournamentLegal(releaseDate) {
+                        return false
+                    }
+                    if fmt.legalRegulationMarks != nil,
+                       !deckPickerHasLegalRegulationMark(
+                        format: fmt,
+                        category: card.category,
+                        energyType: card.energyType,
+                        regulationMark: card.regulationMark
+                       ) {
+                        return false
+                    }
+                    if fmt.isBanned(cardName: card.cardName) { return false }
+                    if fmt == .pokemonGLC {
+                        let sub = card.subtype ?? ""
+                        let ruleBox = ["ex", "V", "GX", "VMAX", "VSTAR"]
+                        if (card.category ?? "").contains("Pokémon") && ruleBox.contains(where: { sub.contains($0) }) { return false }
+                    }
+                    return true
+                }
+
+                let eligibleIDs = Set(filterCards.map(\.masterCardId))
+                filteredRefs = refs.filter { eligibleIDs.contains($0.masterCardId) }
+                await MainActor.run {
+                    DeckPickerEligibilityCache.values[eligibilityKey] = DeckPickerEligibilityCacheValue(
+                        filterCards: filterCards,
+                        refs: filteredRefs
+                    )
+                }
+            }
+
+            // Fast first paint: show cards from the newest set immediately while the full filtered feed is rebuilt.
+            let shouldFastStart = await MainActor.run {
+                source == .allCards && !didRunFastStart && displayedAllCards.isEmpty
+            }
+            if shouldFastStart {
+                await showQuickStartFromMostRecentSet(sets: sets)
+            }
 
             await MainActor.run {
                 catalogSets = sets
                 allCardRefs = filteredRefs
                 allBrowseFilterCards = filterCards
                 filteredAllCardRefs = filteredRefs
-                displayedAllCards = []
                 nextRefIndex = 0
+                didRunFastStart = true
             }
-            await rebuildFilteredRefFeed(reset: true)
+            await rebuildFilteredRefFeed(reset: true, clearVisibleImmediately: false)
         } catch {
             await MainActor.run {
                 loadError = error.localizedDescription
@@ -883,7 +1030,7 @@ struct DeckCardPickerView: View {
             allCardSearchResults = []
             isSearching = false
             isLoading = false
-            await rebuildFilteredRefFeed(reset: true)
+            await rebuildFilteredRefFeed(reset: true, clearVisibleImmediately: true)
             return
         }
         isSearching = true
@@ -923,12 +1070,14 @@ struct DeckCardPickerView: View {
         }
     }
 
-    private func rebuildFilteredRefFeed(reset: Bool) async {
+    private func rebuildFilteredRefFeed(reset: Bool, clearVisibleImmediately: Bool) async {
         let refs = await orderedFilteredRefs(from: allBrowseFilterCards)
         await MainActor.run {
             filteredAllCardRefs = refs
             if reset {
-                displayedAllCards = []
+                if clearVisibleImmediately {
+                    displayedAllCards = []
+                }
                 nextRefIndex = 0
             }
         }
@@ -946,29 +1095,32 @@ struct DeckCardPickerView: View {
         await loadNextAllCardsPage(reset: true)
     }
 
+    private func showQuickStartFromMostRecentSet(sets: [TCGSet]) async {
+        guard let newestSet = sets.max(by: { ($0.releaseDate ?? "") < ($1.releaseDate ?? "") }) else { return }
+        let loaded = await services.cardData.loadCards(forSetCode: newestSet.setCode, catalogBrand: deck.tcgBrand)
+        guard !loaded.isEmpty else { return }
+        let quickCards = sortCardsByLocalIdHighestFirst(loaded)
+            .filter { isEligible($0) && passesPickerFilters($0) }
+        let initialCards = Array(quickCards.prefix(Self.initialBatchSize))
+        guard !initialCards.isEmpty else { return }
+        await MainActor.run {
+            displayedAllCards = initialCards
+            for card in initialCards {
+                resolvedCardsByID[card.masterCardId] = card
+            }
+            isLoading = false
+        }
+    }
+
     private func resolveVisibleCards() async {
         var next = resolvedCardsByID
         let ids = Set(collectionItems
             .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == deck.tcgBrand }
             .map(\.cardID))
         let missingIDs = ids.filter { next[$0] == nil }
-        let loadedPairs: [(String, Card)] = await withTaskGroup(of: (String, Card?).self, returning: [(String, Card)].self) { group in
-            for id in missingIDs {
-                group.addTask {
-                    let card = await services.cardData.loadCard(masterCardId: id)
-                    return (id, card)
-                }
-            }
-            var pairs: [(String, Card)] = []
-            pairs.reserveCapacity(missingIDs.count)
-            for await (id, card) in group {
-                if let card {
-                    pairs.append((id, card))
-                }
-            }
-            return pairs
-        }
-        for (id, card) in loadedPairs {
+        let loaded = await services.cardData.loadCards(masterCardIDs: Array(missingIDs), catalogBrand: deck.tcgBrand)
+        for card in loaded {
+            let id = card.masterCardId
             next[id] = card
         }
         await MainActor.run { resolvedCardsByID = next }
@@ -976,29 +1128,10 @@ struct DeckCardPickerView: View {
 
     private func loadCardsInOrder(_ refs: [CardRef]) async -> [Card] {
         guard !refs.isEmpty else { return [] }
-        var bySet: [String: Set<String>] = [:]
-        for ref in refs { bySet[ref.setCode, default: []].insert(ref.masterCardId) }
-        let loadedCardsBySet: [[Card]] = await withTaskGroup(of: [Card].self, returning: [[Card]].self) { group in
-            for (setCode, ids) in bySet {
-                group.addTask {
-                    let loaded = await services.cardData.loadCards(forSetCode: setCode, catalogBrand: deck.tcgBrand)
-                    return loaded.filter { ids.contains($0.masterCardId) }
-                }
-            }
-            var buckets: [[Card]] = []
-            buckets.reserveCapacity(bySet.count)
-            for await bucket in group {
-                buckets.append(bucket)
-            }
-            return buckets
-        }
-        var cardByKey: [String: Card] = [:]
-        for bucket in loadedCardsBySet {
-            for card in bucket {
-                cardByKey["\(card.setCode)|\(card.masterCardId)"] = card
-            }
-        }
-        return refs.compactMap { cardByKey["\($0.setCode)|\($0.masterCardId)"] }
+        let requestedIDs = refs.map(\.masterCardId)
+        let loaded = await services.cardData.loadCards(masterCardIDs: requestedIDs, catalogBrand: deck.tcgBrand)
+        let cardByID = Dictionary(uniqueKeysWithValues: loaded.map { ($0.masterCardId, $0) })
+        return requestedIDs.compactMap { cardByID[$0] }
     }
 
     private func orderedFilteredRefs(from cards: [BrowseFilterCard]) async -> [CardRef] {

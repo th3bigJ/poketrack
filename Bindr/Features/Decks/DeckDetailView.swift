@@ -343,6 +343,13 @@ struct DeckDetailView: View {
         .task {
             await refreshShareStatus()
         }
+        .task(id: "\(deck.tcgBrand.rawValue)|\(deck.deckFormat.rawValue)") {
+            await DeckPickerPrewarm.prewarm(
+                brand: deck.tcgBrand,
+                format: deck.deckFormat,
+                cardData: services.cardData
+            )
+        }
         .onChange(of: shareAutoSyncSignature) { _, _ in
             services.socialShare.scheduleAutoSync(deck: deck)
             Task { await refreshShareStatus() }

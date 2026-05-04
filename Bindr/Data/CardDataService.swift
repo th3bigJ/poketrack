@@ -700,4 +700,33 @@ final class CardDataService {
         }
         return nil
     }
+
+    /// Bulk resolves cards by `masterCardId` in one SQLite pass.
+    /// Returns cards in arbitrary order; callers should reorder to their requested id list.
+    func loadCards(masterCardIDs: [String], catalogBrand: TCGBrand) async -> [Card] {
+        let ids = Array(Set(masterCardIDs))
+        guard !ids.isEmpty else { return [] }
+
+        // Fast path: resolve from already-cached set buckets for the selected browse brand.
+        if catalogBrand == brandSettings.selectedCatalogBrand {
+            var cachedById: [String: Card] = [:]
+            cachedById.reserveCapacity(ids.count)
+            for cards in cardsBySet.values {
+                for card in cards where ids.contains(card.masterCardId) {
+                    cachedById[card.masterCardId] = card
+                }
+            }
+            if cachedById.count == ids.count {
+                return Array(cachedById.values)
+            }
+        }
+
+        do {
+            try await CatalogStore.shared.open()
+            let loaded = try await CatalogStore.shared.fetchCards(masterCardIDs: ids, brand: catalogBrand)
+            return loaded
+        } catch {
+            return []
+        }
+    }
 }

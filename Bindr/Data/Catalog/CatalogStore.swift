@@ -730,6 +730,52 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    /// Bulk card lookup by catalog id for a known franchise.
+    /// Uses chunked `IN` queries to stay within SQLite parameter limits.
+    func fetchCards(masterCardIDs: [String], brand: TCGBrand) async throws -> [Card] {
+        let ids = Array(Set(masterCardIDs))
+        guard !ids.isEmpty else { return [] }
+
+        return try await withCheckedThrowingContinuation { continuation in
+            queue.async {
+                do {
+                    guard let db = self.db else { throw CatalogStoreError.notOpen }
+                    let chunkSize = 240
+                    var out: [Card] = []
+                    out.reserveCapacity(ids.count)
+
+                    var index = 0
+                    while index < ids.count {
+                        let upper = min(index + chunkSize, ids.count)
+                        let chunk = Array(ids[index..<upper])
+                        let placeholders = Array(repeating: "?", count: chunk.count).joined(separator: ",")
+                        let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND master_card_id IN (\(placeholders));"
+                        var stmt: OpaquePointer?
+                        guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+                            throw CatalogStoreError.prepareFailed
+                        }
+                        brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                        for (bindIndex, id) in chunk.enumerated() {
+                            id.withCString { _ = sqlite3_bind_text(stmt, Int32(bindIndex + 2), $0, -1, CatalogSQLite.transient) }
+                        }
+                        while sqlite3_step(stmt) == SQLITE_ROW {
+                            guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                            let s = String(cString: c)
+                            guard let d = s.data(using: .utf8),
+                                  let card = try? self.jsonDecoder.decode(Card.self, from: d) else { continue }
+                            out.append(card)
+                        }
+                        sqlite3_finalize(stmt)
+                        index = upper
+                    }
+                    continuation.resume(returning: out)
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
     func fetchAllCardRefs(for brand: TCGBrand) async throws -> [CardRef] {
         try await withCheckedThrowingContinuation { continuation in
             queue.async {
