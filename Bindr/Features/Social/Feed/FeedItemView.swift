@@ -99,7 +99,7 @@ struct FeedItemView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 
                 CardStackPreview(item: item, size: 110)
-                    .padding(.trailing, 22)
+                    .padding(.trailing, 16)
             }
             .frame(minHeight: 110) // Match card size
             .padding(.bottom, 14)
@@ -453,12 +453,12 @@ private struct CardStackPreview: View {
                                 RoundedRectangle(cornerRadius: 4, style: .continuous)
                                     .stroke(Color.primary.opacity(0.15), lineWidth: 1)
                             }
-                            .offset(x: CGFloat(index) * 8)
+                            .offset(x: CGFloat(index) * 6)
                             .zIndex(Double(index))
                     }
                 }
             }
-            .frame(width: size * 0.7 + CGFloat(max(count - 1, 0)) * 8, height: size)
+            .frame(width: size * 0.7 + CGFloat(max(count - 1, 0)) * 6, height: size)
 
             countBadge
                 .padding(6)
@@ -533,7 +533,7 @@ private struct CardStackPreview: View {
         }
         .rotationEffect(.degrees(rotation))
         .shadow(color: .black.opacity(colorScheme == .dark ? 0.3 : 0.15), radius: 6, x: 0, y: 3)
-        .offset(x: CGFloat(index) * 8)
+        .offset(x: CGFloat(index) * 6)
         .zIndex(Double(index))
     }
 
