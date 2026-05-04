@@ -184,6 +184,7 @@ struct CollectView: View {
                 }
             }
         }
+        .bindrPageBackground()
         .navigationDestination(for: CardFolder.self) { folder in
             FolderContentsView(folder: folder)
         }

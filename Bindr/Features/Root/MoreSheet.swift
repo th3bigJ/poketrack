@@ -54,6 +54,8 @@ struct MoreView: View {
             }
         }
         .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
         .navigationDestination(for: SideMenuPage.self) { page in
             switch page {

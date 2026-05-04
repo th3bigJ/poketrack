@@ -141,7 +141,7 @@ struct SocialRootView: View {
             socialHeader
             content
         }
-        .background(Color(uiColor: .systemBackground))
+        .bindrPageBackground()
         .ignoresSafeArea(edges: .bottom)
         .tint(.primary)
         .navigationTitle("Social")
@@ -318,7 +318,7 @@ struct SocialRootView: View {
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
-            .background(Color(uiColor: .systemBackground))
+            .background(Color.clear)
             
             Divider().opacity(0.1)
         }
@@ -398,7 +398,7 @@ struct SocialRootView: View {
             }
         }
         .scrollContentBackground(.hidden)
-        .background(Color(uiColor: .systemGroupedBackground))
+        .bindrPageBackground(ignoresSafeArea: false)
     }
 
     @ViewBuilder
@@ -495,7 +495,7 @@ struct SocialRootView: View {
                     }
             )
         }
-        .background(Color(uiColor: .systemBackground))
+        .bindrPageBackground(ignoresSafeArea: false)
     }
 
     private func handleTabSwipe(translation: CGSize) {

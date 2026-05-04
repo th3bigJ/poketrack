@@ -1252,7 +1252,7 @@ struct DashboardView: View {
     }
 
     private var dashboardBackground: some View {
-        Color(uiColor: .systemBackground)
+        BindrPageBackground()
     }
 
     private func energyColor(for type: String) -> Color {

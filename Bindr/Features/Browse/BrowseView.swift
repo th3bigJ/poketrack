@@ -560,6 +560,7 @@ struct BrowseView: View {
                 }
             }
         }
+        .bindrPageBackground()
         .animation(.spring(response: 0.35, dampingFraction: 0.85), value: isMultiSelectActive && !multiSelectedCardIDs.isEmpty)
         .sheet(item: $multiSelectCollectionPayload) { payload in
             MultiSelectAddToCollectionSheet(cards: payload.cards)

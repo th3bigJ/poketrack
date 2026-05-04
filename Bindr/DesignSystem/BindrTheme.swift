@@ -58,4 +58,49 @@ extension View {
             .environment(\.bindrAccent, accent)
             .tint(accent)
     }
+
+    /// Shared page backdrop used across top-level screens. Keeps native
+    /// `systemBackground` as base, then adds a very subtle accent wash.
+    func bindrPageBackground(ignoresSafeArea: Bool = true) -> some View {
+        background {
+            if ignoresSafeArea {
+                BindrPageBackground()
+                    .ignoresSafeArea()
+            } else {
+                BindrPageBackground()
+            }
+        }
+    }
+}
+
+struct BindrPageBackground: View {
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.bindrAccent) private var accent
+
+    var body: some View {
+        ZStack {
+            Color(uiColor: .systemBackground)
+
+            LinearGradient(
+                colors: [
+                    accent.opacity(colorScheme == .dark ? 0.075 : 0.065),
+                    accent.opacity(colorScheme == .dark ? 0.035 : 0.032),
+                    .clear
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+
+            RadialGradient(
+                colors: [
+                    accent.opacity(colorScheme == .dark ? 0.055 : 0.042),
+                    .clear
+                ],
+                center: .topTrailing,
+                startRadius: 10,
+                endRadius: 360
+            )
+            .offset(x: 50, y: -70)
+        }
+    }
 }

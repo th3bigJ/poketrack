@@ -612,8 +612,8 @@ struct RootView: View {
                     }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        // System background shows through the material where the bar is translucent.
-        .background(Color(uiColor: .systemBackground))
+        // Shared app backdrop shows through translucent chrome/material.
+        .bindrPageBackground()
         .overlay {
             if services.isCatalogDownloadInProgress {
                 ZStack {
@@ -641,7 +641,7 @@ struct RootView: View {
         .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
         .overlay {
             if selectedCardPresentation != nil || selectedSealedProductPresentation != nil || services.isSealedDetailPresentationActive {
-                Color(uiColor: .systemBackground)
+                BindrPageBackground()
                     .ignoresSafeArea()
                     .allowsHitTesting(false)
                     .transition(.opacity)
