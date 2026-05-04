@@ -2,7 +2,7 @@ import Charts
 import SwiftData
 import SwiftUI
 
-struct BrowseSealedTabContent: View {
+struct BrowseProductsTabContent: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentSealedProduct) private var presentSealedProduct
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
@@ -18,6 +18,8 @@ struct BrowseSealedTabContent: View {
     @State private var showWishlistPaywall = false
     @State private var showWishlistAlert = false
     @State private var wishlistAlertMessage: String?
+    @State private var selectedSetID: Int? = nil
+
     private let sealedGridHorizontalPadding: CGFloat = 16
     private let sealedGridSpacing: CGFloat = 12
 
@@ -39,7 +41,10 @@ struct BrowseSealedTabContent: View {
     private var filteredProducts: [SealedProduct] {
         let normalizedQuery = normalizeSealedSearchText(query)
         let base = services.sealedProducts.products.filter { product in
-            if sealedProductMatchesSelectedTypes(product.type, selectedOptionIDs: filters.sealedProductTypes) == false {
+            if let selectedSetID, product.setID != selectedSetID {
+                return false
+            }
+            if productMatchesSelectedTypes(product.type, selectedOptionIDs: filters.productTypes) == false {
                 return false
             }
             guard normalizedQuery.isEmpty == false else { return true }
@@ -49,63 +54,69 @@ struct BrowseSealedTabContent: View {
     }
 
     var body: some View {
-        let products = displayedProducts
         Group {
             if services.sealedProducts.isLoading && services.sealedProducts.products.isEmpty {
-                ProgressView("Loading sealed products…")
+                ProgressView("Loading products…")
                     .frame(maxWidth: .infinity, minHeight: 280)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
-            } else if products.isEmpty {
-                ContentUnavailableView(
-                    services.sealedProducts.products.isEmpty ? "No sealed products yet" : "No matching products",
-                    systemImage: "shippingbox",
-                    description: Text(services.sealedProducts.products.isEmpty
-                        ? "Sealed products will appear after the next market sync."
-                        : "Try a different product name, series, or year.")
-                )
-                .frame(maxWidth: .infinity, minHeight: 280)
-                .padding(.horizontal, 16)
-                .padding(.bottom, 16)
             } else {
-                EagerVGrid(items: products, columns: sealedGridColumnCount, spacing: sealedGridSpacing) { product in
-                    Button {
-                        let index = products.firstIndex(where: { $0.id == product.id }) ?? 0
-                        presentSealedProduct(product, products, index)
-                    } label: {
-                        SealedProductGridCell(
-                            product: product,
-                            gridOptions: gridOptions,
-                            priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
-                            isOwned: ownedCollectionCardIDs.contains(product.collectionCardID),
-                            isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID)
+                VStack(spacing: 0) {
+                    productSetCarousel
+                        .padding(.bottom, 14)
+                    
+                    if displayedProducts.isEmpty {
+                        ContentUnavailableView(
+                            services.sealedProducts.products.isEmpty ? "No products yet" : "No matching products",
+                            systemImage: "shippingbox",
+                            description: Text(services.sealedProducts.products.isEmpty
+                                ? "Products will appear after the next market sync."
+                                : "Try a different product name, series, or year.")
                         )
-                        .contentShape(Rectangle())
-                    }
-                    .buttonStyle(CardCellButtonStyle())
-                    .contextMenu {
-                        Button {
-                            addToCollectionProduct = product
-                        } label: {
-                            Label("Add to Collection", systemImage: "books.vertical")
+                        .frame(maxWidth: .infinity, minHeight: 280)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 16)
+                    } else {
+                        EagerVGrid(items: displayedProducts, columns: sealedGridColumnCount, spacing: sealedGridSpacing) { product in
+                            Button {
+                                let index = displayedProducts.firstIndex(where: { $0.id == product.id }) ?? 0
+                                presentSealedProduct(product, displayedProducts, index)
+                            } label: {
+                                SealedProductGridCell(
+                                    product: product,
+                                    gridOptions: gridOptions,
+                                    priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
+                                    isOwned: ownedCollectionCardIDs.contains(product.collectionCardID),
+                                    isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID)
+                                )
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(CardCellButtonStyle())
+                            .contextMenu {
+                                Button {
+                                    addToCollectionProduct = product
+                                } label: {
+                                    Label("Add to Collection", systemImage: "books.vertical")
+                                }
+                                Button {
+                                    toggleWishlist(for: product)
+                                } label: {
+                                    Label(
+                                        isWishlisted(product) ? "Remove from Wishlist" : "Add to Wishlist",
+                                        systemImage: isWishlisted(product) ? "heart.slash" : "heart"
+                                    )
+                                }
+                                Button {
+                                    addToFolderProduct = product
+                                } label: {
+                                    Label("Add to Folder", systemImage: "folder.badge.plus")
+                                }
+                            }
                         }
-                        Button {
-                            toggleWishlist(for: product)
-                        } label: {
-                            Label(
-                                isWishlisted(product) ? "Remove from Wishlist" : "Add to Wishlist",
-                                systemImage: isWishlisted(product) ? "heart.slash" : "heart"
-                            )
-                        }
-                        Button {
-                            addToFolderProduct = product
-                        } label: {
-                            Label("Add to Folder", systemImage: "folder.badge.plus")
-                        }
+                        .padding(.horizontal, sealedGridHorizontalPadding)
+                        .padding(.bottom, 16)
                     }
                 }
-                .padding(.horizontal, sealedGridHorizontalPadding)
-                .padding(.bottom, 16)
             }
         }
         .task {
@@ -117,6 +128,7 @@ struct BrowseSealedTabContent: View {
         }
         .onChange(of: query) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: filters) { _, _ in recomputeDisplayedProducts() }
+        .onChange(of: selectedSetID) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: services.sealedProducts.products) { _, _ in recomputeDisplayedProducts() }
         .sheet(item: $addToCollectionProduct) { product in
             AddSealedToCollectionSheet(product: product)
@@ -135,6 +147,74 @@ struct BrowseSealedTabContent: View {
             Text(wishlistAlertMessage ?? "")
         }
     }
+
+    private var productSetCarousel: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 12) {
+                // "All Sets" button
+                Button {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                        selectedSetID = nil
+                    }
+                    Haptics.lightImpact()
+                } label: {
+                    Text("All Sets")
+                        .font(.system(size: 13, weight: .bold, design: .rounded))
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background {
+                            Capsule()
+                                .fill(selectedSetID == nil ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
+                        }
+                        .foregroundStyle(selectedSetID == nil ? .white : .primary.opacity(0.8))
+                }
+                .buttonStyle(.plain)
+                
+                let activeSetIDs = Set(services.sealedProducts.products.compactMap { $0.setID })
+                let filteredSets = services.cardData.sets
+                    .filter { set in
+                        guard let id = Int(set.internalId) else { return false }
+                        return activeSetIDs.contains(id)
+                    }
+                    .sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+
+                ForEach(filteredSets) { set in
+                    let setIDInt = Int(set.internalId) ?? 0
+                    let isSelected = selectedSetID == setIDInt
+                    
+                    Button {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                            selectedSetID = isSelected ? nil : setIDInt
+                        }
+                        Haptics.lightImpact()
+                    } label: {
+                        HStack(spacing: 6) {
+                            SetLogoAsyncImage(logoSrc: set.logoSrc, height: 18, brand: services.brandSettings.selectedCatalogBrand)
+                                .grayscale(isSelected ? 0 : 1)
+                                .opacity(isSelected ? 1 : 0.5)
+                            
+                            if isSelected {
+                                Text(set.name)
+                                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                                    .foregroundStyle(.white)
+                                    .fixedSize()
+                            }
+                        }
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background {
+                            Capsule()
+                                .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
+                        }
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal, 16)
+        }
+    }
+
+    @Environment(\.colorScheme) private var colorScheme
 
     private func recomputeDisplayedProducts() {
         displayedProducts = filteredProducts

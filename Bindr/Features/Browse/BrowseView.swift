@@ -322,7 +322,7 @@ enum BrowseHomeTab: String, CaseIterable, Identifiable {
     case cards
     case sets
     case pokemon
-    case sealed
+    case products
 
     var id: String { rawValue }
 
@@ -331,7 +331,7 @@ enum BrowseHomeTab: String, CaseIterable, Identifiable {
         case .cards: return "Cards"
         case .sets: return "Sets"
         case .pokemon: return "Pokemon"
-        case .sealed: return "Sealed"
+        case .products: return "Products"
         }
     }
 }
@@ -899,8 +899,8 @@ struct BrowseView: View {
             return "Search sets"
         case .pokemon:
             return currentBrand == .pokemon ? "Search Pokémon" : "Search characters or subtypes"
-        case .sealed:
-            return "Search sealed"
+        case .products:
+            return "Search products"
         }
     }
 
@@ -1013,8 +1013,8 @@ struct BrowseView: View {
                     inlineDetailRoute = route
                 }
             }
-        case .sealed:
-            BrowseSealedTabContent(query: query, filters: filters, gridOptions: gridOptions)
+        case .products:
+            BrowseProductsTabContent(query: query, filters: filters, gridOptions: gridOptions)
         }
     }
 
@@ -2001,7 +2001,7 @@ struct BrowseView: View {
         switch tab {
         case .sets, .pokemon:
             return true
-        case .cards, .sealed:
+        case .cards, .products:
             return false
         }
     }
@@ -3033,7 +3033,7 @@ struct SetCardsView: View {
     private var setProgressBar: some View {
         let total = cards.count
         let owned = uniqueOwnedInSet
-        let progress = total > 0 ? Double(owned) / Double(total) : 0
+        let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
         
         return VStack(spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
@@ -3043,38 +3043,32 @@ struct SetCardsView: View {
                 
                 Spacer()
                 
-                (Text("\(owned)")
-                    .foregroundStyle(services.theme.accentColor) +
-                 Text(" / \(total)")
-                    .foregroundStyle(.secondary))
-                    .font(.system(size: 13, weight: .black, design: .monospaced))
+                Group {
+                    Text("\(owned)")
+                        .foregroundStyle(services.theme.accentColor)
+                    + Text(" / \(total)")
+                        .foregroundStyle(.secondary)
+                }
+                .font(.system(size: 13, weight: .black, design: .monospaced))
             }
             
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    Capsule()
-                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05))
-                    
-                    Capsule()
-                        .fill(
-                            LinearGradient(
-                                colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.8)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: max(geo.size.width * progress, 6)) // Minimum width for visibility
-                        .shadow(color: services.theme.accentColor.opacity(0.25), radius: 3, x: 0, y: 1.5)
+            Capsule()
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
+                .frame(height: 6)
+                .overlay(alignment: .leading) {
+                    services.theme.accentColor
+                        .frame(maxWidth: .infinity)
+                        .scaleEffect(x: max(progress, 0.005), y: 1.0, anchor: .leading)
+                        .clipShape(Capsule())
+                        .shadow(color: services.theme.accentColor.opacity(0.3), radius: 2, x: 0, y: 1)
                 }
-            }
-            .frame(height: 7)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 8)
+        .padding(.horizontal, 22)
+        .padding(.vertical, 12)
         .background {
             RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.03 : 0.01))
-                .padding(.horizontal, 10)
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.025))
+                .padding(.horizontal, 12)
         }
     }
 
@@ -3908,7 +3902,7 @@ struct FilterMenuConfig {
         showShowDuplicates: true,
         defaultSortBy: .price
     )
-    static let sealed = FilterMenuConfig(
+    static let products = FilterMenuConfig(
         showAcquiredDateSort: false,
         showCardNumberSort: false,
         showBrandFilters: false,
@@ -4073,9 +4067,9 @@ struct BrowseGridFiltersMenuContent: View {
             }
 
             if config.showSealedProductTypeFilter {
-                filterMenu(title: "Product type", summary: selectionSummary(for: filters.sealedProductTypes), systemImage: "shippingbox") {
-                    ForEach(sealedProductTypeFilterOptions) { option in
-                        Toggle(option.title, isOn: stringBinding(for: option.id, keyPath: \.sealedProductTypes))
+                filterMenu(title: "Product type", summary: selectionSummary(for: filters.productTypes), systemImage: "shippingbox") {
+                    ForEach(productTypeFilterOptions) { option in
+                        Toggle(option.title, isOn: stringBinding(for: option.id, keyPath: \.productTypes))
                     }
                 }
             }
@@ -4110,9 +4104,9 @@ struct BrowseGridFiltersMenuContent: View {
 
         if config.showSealedProductTypeFilter && (!isAllBrands && config.showBrandFilters) == false {
             Section("Filters") {
-                filterMenu(title: "Product type", summary: selectionSummary(for: filters.sealedProductTypes), systemImage: "shippingbox") {
-                    ForEach(sealedProductTypeFilterOptions) { option in
-                        Toggle(option.title, isOn: stringBinding(for: option.id, keyPath: \.sealedProductTypes))
+                filterMenu(title: "Product type", summary: selectionSummary(for: filters.productTypes), systemImage: "shippingbox") {
+                    ForEach(productTypeFilterOptions) { option in
+                        Toggle(option.title, isOn: stringBinding(for: option.id, keyPath: \.productTypes))
                     }
                 }
             }

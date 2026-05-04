@@ -142,37 +142,37 @@ let pokemonResistanceFilterAllOptions: [String] = [
     "Water"
 ]
 
-struct SealedProductTypeFilterOption: Identifiable, Equatable, Sendable {
+struct ProductTypeFilterOption: Identifiable, Equatable, Sendable {
     let id: String
     let title: String
     let rawTypes: Set<String>
 }
 
-let sealedProductTypeFilterOptions: [SealedProductTypeFilterOption] = [
-    SealedProductTypeFilterOption(id: "battlebox", title: "battlebox", rawTypes: ["battlebox"]),
-    SealedProductTypeFilterOption(id: "blisterpack", title: "blisterpack", rawTypes: ["blisterpack"]),
-    SealedProductTypeFilterOption(id: "boosterbox", title: "boosterbox", rawTypes: ["boosterbox"]),
-    SealedProductTypeFilterOption(id: "boosterpack", title: "boosterpack", rawTypes: ["boosterpack"]),
-    SealedProductTypeFilterOption(
+let productTypeFilterOptions: [ProductTypeFilterOption] = [
+    ProductTypeFilterOption(id: "battlebox", title: "battlebox", rawTypes: ["battlebox"]),
+    ProductTypeFilterOption(id: "blisterpack", title: "blisterpack", rawTypes: ["blisterpack"]),
+    ProductTypeFilterOption(id: "boosterbox", title: "boosterbox", rawTypes: ["boosterbox"]),
+    ProductTypeFilterOption(id: "boosterpack", title: "boosterpack", rawTypes: ["boosterpack"]),
+    ProductTypeFilterOption(
         id: "collections",
         title: "Collections",
         rawTypes: ["collectionbox", "collectionchest"]
     ),
-    SealedProductTypeFilterOption(id: "deck", title: "deck", rawTypes: ["deck"]),
-    SealedProductTypeFilterOption(id: "elitetrainerbox", title: "elitetrainerbox", rawTypes: ["elitetrainerbox"]),
-    SealedProductTypeFilterOption(id: "miscellaneous", title: "miscellaneous", rawTypes: ["miscellaneous"]),
-    SealedProductTypeFilterOption(id: "pincollection", title: "pincollection", rawTypes: ["pincollection"]),
-    SealedProductTypeFilterOption(
+    ProductTypeFilterOption(id: "deck", title: "deck", rawTypes: ["deck"]),
+    ProductTypeFilterOption(id: "elitetrainerbox", title: "elitetrainerbox", rawTypes: ["elitetrainerbox"]),
+    ProductTypeFilterOption(id: "miscellaneous", title: "miscellaneous", rawTypes: ["miscellaneous"]),
+    ProductTypeFilterOption(id: "pincollection", title: "pincollection", rawTypes: ["pincollection"]),
+    ProductTypeFilterOption(
         id: "special",
         title: "Special",
         rawTypes: ["specialbox", "specialpack", "specialset"]
     ),
-    SealedProductTypeFilterOption(id: "starterset", title: "starterset", rawTypes: ["starterset"]),
-    SealedProductTypeFilterOption(id: "tin", title: "tin", rawTypes: ["tin"])
+    ProductTypeFilterOption(id: "starterset", title: "starterset", rawTypes: ["starterset"]),
+    ProductTypeFilterOption(id: "tin", title: "tin", rawTypes: ["tin"])
 ]
 
-private let sealedProductTypeFilterOptionByID: [String: SealedProductTypeFilterOption] = Dictionary(
-    uniqueKeysWithValues: sealedProductTypeFilterOptions.map { ($0.id, $0) }
+private let productTypeFilterOptionByID: [String: ProductTypeFilterOption] = Dictionary(
+    uniqueKeysWithValues: productTypeFilterOptions.map { ($0.id, $0) }
 )
 
 func normalizeSealedProductTypeToken(_ value: String?) -> String {
@@ -184,12 +184,12 @@ func normalizeSealedProductTypeToken(_ value: String?) -> String {
         .replacingOccurrences(of: " ", with: "")
 }
 
-func sealedProductMatchesSelectedTypes(_ rawType: String?, selectedOptionIDs: Set<String>) -> Bool {
+func productMatchesSelectedTypes(_ rawType: String?, selectedOptionIDs: Set<String>) -> Bool {
     guard !selectedOptionIDs.isEmpty else { return true }
     let normalizedRawType = normalizeSealedProductTypeToken(rawType)
     guard !normalizedRawType.isEmpty else { return false }
     for optionID in selectedOptionIDs {
-        guard let option = sealedProductTypeFilterOptionByID[optionID] else { continue }
+        guard let option = productTypeFilterOptionByID[optionID] else { continue }
         if option.rawTypes.contains(normalizedRawType) {
             return true
         }
@@ -218,8 +218,8 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var opCounters: Set<Int> = []
     var opLives: Set<Int> = []
     var opPowers: Set<Int> = []
-    /// Sealed product type filters (supports grouped options like Collections / Special).
-    var sealedProductTypes: Set<String> = []
+    /// Product type filters (supports grouped options like Collections / Special).
+    var productTypes: Set<String> = []
 
     var isDefault: Bool {
         self == Self()
@@ -246,12 +246,12 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
             || !opPowers.isEmpty
     }
 
-    var hasActiveSealedFieldFilters: Bool {
-        !sealedProductTypes.isEmpty
+    var hasActiveProductFieldFilters: Bool {
+        !productTypes.isEmpty
     }
 
     var hasActiveFieldFilters: Bool {
-        hasActiveCardFieldFilters || hasActiveSealedFieldFilters
+        hasActiveCardFieldFilters || hasActiveProductFieldFilters
     }
 
     var hasActiveSort: Bool {
@@ -286,7 +286,7 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         case opCounters
         case opLives
         case opPowers
-        case sealedProductTypes
+        case productTypes
     }
 
     init() {}
@@ -312,7 +312,7 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         opCounters = try container.decodeIfPresent(Set<Int>.self, forKey: .opCounters) ?? []
         opLives = try container.decodeIfPresent(Set<Int>.self, forKey: .opLives) ?? []
         opPowers = try container.decodeIfPresent(Set<Int>.self, forKey: .opPowers) ?? []
-        sealedProductTypes = try container.decodeIfPresent(Set<String>.self, forKey: .sealedProductTypes) ?? []
+        productTypes = try container.decodeIfPresent(Set<String>.self, forKey: .productTypes) ?? []
     }
 }
 
