@@ -5,6 +5,7 @@ struct TradeDetailView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
 
     let tradeID: UUID
 
@@ -40,14 +41,15 @@ struct TradeDetailView: View {
 
     var body: some View {
         ZStack {
-            // Immersive Retro-Tech Background
-            Color.black.ignoresSafeArea()
+            // Immersive Adaptive Background
+            Color(uiColor: colorScheme == .dark ? .black : .systemBackground)
+                .ignoresSafeArea()
             
-            // Atmospheric Scanlines
+            // Atmospheric Scanlines (Adaptive contrast)
             Rectangle()
                 .fill(
                     LinearGradient(
-                        colors: [.clear, themeColor.opacity(0.03), .clear],
+                        colors: [.clear, (colorScheme == .dark ? Color.white : Color.black).opacity(0.03), .clear],
                         startPoint: .top,
                         endPoint: .bottom
                     )
@@ -165,9 +167,14 @@ struct TradeDetailView: View {
             .padding(.bottom, 10) // Extra space for safe area
             .background {
                 ZStack {
-                    Color.black.opacity(0.8)
+                    (colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground))
+                        .opacity(0.8)
                         .blur(radius: 20)
-                    LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
+                    LinearGradient(
+                        colors: [.clear, (colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground))],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
                 }
                 .ignoresSafeArea()
             }
@@ -197,7 +204,7 @@ struct TradeDetailView: View {
                     if let profile {
                         Text(profile.displayName ?? "@\(profile.username)")
                             .font(.system(size: 17, weight: .bold))
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                     }
                 }
                 
@@ -290,7 +297,7 @@ struct TradeDetailView: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, 4)
                 .background(themeColor, in: Capsule())
-                .foregroundStyle(.black)
+                .foregroundStyle(colorScheme == .dark ? .black : .white)
                 .offset(x: 60)
         }
     }
@@ -303,7 +310,7 @@ struct TradeDetailView: View {
             
             Text("\(services.priceDisplay.currency.symbol)\(amount, format: .number.precision(.fractionLength(2)))")
                 .font(.system(size: 13, weight: .black, design: .monospaced))
-                .foregroundStyle(.white)
+                .foregroundStyle(.primary)
         }
         .frame(width: 100, height: 140)
         .background(themeColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 16))
@@ -664,7 +671,7 @@ private struct TradeCardTile: View {
             VStack(spacing: 2) {
                 Text(card?.cardName ?? "Loading...")
                     .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.primary)
                     .lineLimit(1)
                 
                 if item.quantity > 1 {
