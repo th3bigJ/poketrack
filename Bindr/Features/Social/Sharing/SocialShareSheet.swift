@@ -80,7 +80,7 @@ private struct GlassCapsuleModifier: ViewModifier {
         Group {
             if #available(iOS 26.0, *) {
                 content
-                    .glassEffect(.regular.interactive(), in: Capsule())
+                    .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
             } else {
                 content
                     .background(.ultraThinMaterial, in: Capsule())

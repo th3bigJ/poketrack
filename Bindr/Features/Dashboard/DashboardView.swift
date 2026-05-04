@@ -622,7 +622,7 @@ struct DashboardView: View {
                     if #available(iOS 26.0, *) {
                         Capsule(style: .continuous)
                             .fill(.clear)
-                            .glassEffect(.regular, in: Capsule(style: .continuous))
+                            .glassEffect(.clear.tint(nil), in: Capsule(style: .continuous))
                     } else {
                         Capsule(style: .continuous)
                             .fill(.ultraThinMaterial)

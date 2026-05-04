@@ -620,7 +620,7 @@ private struct TradeActionButtonStyle: ButtonStyle {
                     if #available(iOS 26.0, *) {
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
                             .fill(.clear)
-                            .glassEffect(.regular.interactive(), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                            .glassEffect(.clear.tint(nil).interactive(), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                     } else {
                         RoundedRectangle(cornerRadius: 12, style: .continuous)
                             .fill(.ultraThinMaterial)

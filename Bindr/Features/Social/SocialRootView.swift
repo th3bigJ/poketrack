@@ -253,7 +253,7 @@ struct SocialRootView: View {
                             if #available(iOS 26.0, *) {
                                 Capsule()
                                     .fill(.clear)
-                                    .glassEffect(.regular.interactive(), in: Capsule())
+                                    .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
                             } else {
                                 Capsule()
                                     .fill(.ultraThinMaterial)

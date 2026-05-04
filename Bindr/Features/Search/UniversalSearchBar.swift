@@ -90,7 +90,7 @@ struct UniversalSearchBar: View {
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(.primary)
                                 .frame(width: 44, height: 44)
-                                .glassEffect(.regular.interactive(), in: Circle())
+                                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
                                 .contentTransition(.symbolEffect(.replace))
                                 .contentShape(Circle())
                         }
@@ -105,7 +105,7 @@ struct UniversalSearchBar: View {
                             .padding(.trailing, 8)
                             .frame(height: 44)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .glassEffect(.regular, in: Capsule())
+                            .glassEffect(.clear.tint(nil), in: Capsule())
                             .transition(.move(edge: .leading).combined(with: .opacity))
 
                         cameraButtonLiquid
@@ -239,7 +239,7 @@ struct UniversalSearchBar: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
                 .frame(width: 44, height: 44)
-                .glassEffect(.regular.interactive(), in: Circle())
+                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
@@ -338,7 +338,7 @@ struct UniversalSearchBar: View {
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isFilterEnabled ? AnyShapeStyle(filterTint) : AnyShapeStyle(.secondary))
             .frame(width: 44, height: 44)
-            .glassEffect(.regular.interactive(), in: Circle())
+            .glassEffect(.clear.tint(nil).interactive(), in: Circle())
             .contentShape(Circle())
     }
 
@@ -386,7 +386,7 @@ struct UniversalSearchBar: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
                 .frame(width: 44, height: 44)
-                .glassEffect(.regular.interactive(), in: Circle())
+                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
@@ -424,7 +424,7 @@ struct UniversalSearchBar: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
                 .frame(width: 44, height: 44)
-                .glassEffect(.regular.interactive(), in: Circle())
+                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
                 .contentShape(Circle())
         }
         .buttonStyle(.plain)
@@ -506,7 +506,7 @@ struct ChromeGlassCircleGlyphModifier: ViewModifier {
             if #available(iOS 26.0, *) {
                 content
                     .frame(width: 44, height: 44)
-                    .glassEffect(.regular.interactive(), in: Circle())
+                    .glassEffect(.clear.tint(nil).interactive(), in: Circle())
                     .contentShape(Circle())
             } else {
                 content

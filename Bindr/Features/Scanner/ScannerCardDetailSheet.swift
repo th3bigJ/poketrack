@@ -11,7 +11,7 @@ struct CardDetailStyleGlassBarBackground: View {
             if #available(iOS 26.0, *) {
                 Rectangle()
                     .fill(Color.clear)
-                    .glassEffect(.regular, in: Rectangle())
+                    .glassEffect(.clear.tint(nil), in: Rectangle())
             } else {
                 Rectangle()
                     .fill(.ultraThinMaterial)
