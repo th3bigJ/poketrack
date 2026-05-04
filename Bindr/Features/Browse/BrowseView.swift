@@ -2143,14 +2143,26 @@ private struct BrowseSetsTabContent: View {
 
     private var groupedSets: [(title: String, sets: [TCGSet])] {
         let grouped = Dictionary(grouping: filteredSets, by: browseSeriesTitle(for:))
-        return grouped
-            .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-            .sorted { lhs, rhs in
-                let lhsNewest = lhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
-                let rhsNewest = rhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
-                if lhsNewest != rhsNewest { return lhsNewest > rhsNewest }
-                return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-            }
+        switch services.brandSettings.selectedCatalogBrand {
+        case .pokemon:
+            return grouped
+                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
+                .sorted { lhs, rhs in
+                    let lhsNewest = lhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
+                    let rhsNewest = rhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
+                    if lhsNewest != rhsNewest { return lhsNewest > rhsNewest }
+                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+                }
+        case .onePiece:
+            return grouped
+                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
+                .sorted { lhs, rhs in
+                    let li = onePieceSeriesOrderIndex(lhs.title)
+                    let ri = onePieceSeriesOrderIndex(rhs.title)
+                    if li != ri { return li < ri }
+                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+                }
+        }
     }
 
     private var collectionProgressTaskKey: String {
@@ -2427,36 +2439,6 @@ private struct BrowseSetsTabContent: View {
         }
         let setCode = String(trimmed[..<separatorIndex]).lowercased()
         return (setCode, trimmed.lowercased())
-    }
-
-    private func browseSeriesTitle(for set: TCGSet) -> String {
-        switch services.brandSettings.selectedCatalogBrand {
-        case .pokemon:
-            let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
-            return (title?.isEmpty == false ? title! : "Other")
-        case .onePiece:
-            return normalizedOnePieceSeriesTitle(set.seriesName)
-        }
-    }
-
-    private func sortSetsNewestFirst(_ sets: [TCGSet]) -> [TCGSet] {
-        sets.sorted { lhs, rhs in
-            let ld = lhs.releaseDate ?? ""
-            let rd = rhs.releaseDate ?? ""
-            if ld != rd { return ld > rd }
-            return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
-        }
-    }
-
-    private func normalizedOnePieceSeriesTitle(_ raw: String?) -> String {
-        let title = raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let lower = title.lowercased()
-        if lower.contains("booster pack") { return "Booster Pack" }
-        if lower.contains("extra booster") { return "Extra Boosters" }
-        if lower.contains("starter") { return "Starter deck" }
-        if lower.contains("premium booster") { return "Premium Booster" }
-        if lower.contains("promo") { return "Promo" }
-        return title.isEmpty ? "Other" : title
     }
 
     private func onePieceSeriesOrderIndex(_ title: String) -> Int {
