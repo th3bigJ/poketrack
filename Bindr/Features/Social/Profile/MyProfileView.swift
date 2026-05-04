@@ -5,7 +5,7 @@ struct MyProfileView: View {
     private enum ProfileTab: String, CaseIterable {
         case posts
         case wishlist
-        case collection
+        case tradeList = "trade list"
     }
 
     let profile: SocialProfile
@@ -22,10 +22,11 @@ struct MyProfileView: View {
     @State private var myActivity: [SocialFeedService.FeedItem] = []
     @State private var selectedProfileTab: ProfileTab = .posts
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
+    @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
 
-    private var collectionShareAutoSyncSignature: String {
-        collectionItems
-            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)|\($0.notes)" }
+    private var tradeListSyncSignature: String {
+        tradeListItems
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.notes)" }
             .sorted()
             .joined(separator: ";")
     }
@@ -83,9 +84,8 @@ struct MyProfileView: View {
         .task {
             await refreshProfileContent()
         }
-        .onChange(of: collectionShareAutoSyncSignature) { _, _ in
-            fetchStats()
-            services.socialCardLibrary.scheduleAutoSyncCollection(items: collectionItems)
+        .onChange(of: tradeListSyncSignature) { _, _ in
+            services.socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
         }
     }
     
@@ -221,7 +221,11 @@ struct MyProfileView: View {
     }
 
     private func profileTabTitle(_ tab: ProfileTab) -> String {
-        tab.rawValue.prefix(1).uppercased() + tab.rawValue.dropFirst()
+        switch tab {
+        case .posts: return "Posts"
+        case .wishlist: return "Wishlist"
+        case .tradeList: return "Trade List"
+        }
     }
 
     private var profileTabPicker: some View {
@@ -275,10 +279,10 @@ struct MyProfileView: View {
                         await services.cardData.loadCard(masterCardId: id)
                     })
                 }
-            case .collection:
-                let ids = collectionItems.map(\.cardID).filter(isRenderableCardIDForProfileGrid)
+            case .tradeList:
+                let ids = tradeListItems.map(\.cardID).filter(isRenderableCardIDForProfileGrid)
                 if ids.isEmpty {
-                    emptyProfileCard("Cards you've added to your collection will appear here.")
+                    emptyProfileCard("Cards you add to your trade list will appear here.")
                 } else {
                     WishlistCardGrid(cardIDs: ids, cardLoader: { id in
                         await services.cardData.loadCard(masterCardId: id)
@@ -519,7 +523,7 @@ struct MyProfileView: View {
         } catch {
             print("Error fetching my activity: \(error)")
         }
-        services.socialCardLibrary.scheduleAutoSyncCollection(items: collectionItems)
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
         if let wishlistItems = services.wishlist?.items {
             services.socialCardLibrary.scheduleAutoSyncWishlist(items: wishlistItems)
         }

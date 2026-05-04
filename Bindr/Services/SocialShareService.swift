@@ -91,7 +91,6 @@ final class SocialShareService {
         case binder(UUID)
         case deck(UUID)
         case wishlist
-        case collection
         case folder(UUID)
     }
 
@@ -134,13 +133,6 @@ final class SocialShareService {
     private struct WishlistItemSnapshot: Sendable {
         let cardID: String
         let variantKey: String
-        let notes: String
-    }
-
-    private struct CollectionItemSnapshot: Sendable {
-        let cardID: String
-        let variantKey: String
-        let quantity: Int
         let notes: String
     }
 
@@ -217,54 +209,6 @@ final class SocialShareService {
             includeValue: existing?.includeValue ?? false,
             isPublished: existing != nil
         )
-    }
-
-    func shareSnapshotForCollection() async throws -> ShareSnapshot {
-        let existing = try await fetchMine(type: .collection, localContentID: "collection")
-        return ShareSnapshot(
-            sharedContent: existing,
-            title: existing?.title ?? "My Collection",
-            description: existing?.description ?? "",
-            visibility: existing?.visibility ?? .friends,
-            includeValue: existing?.includeValue ?? false,
-            isPublished: existing != nil
-        )
-    }
-
-    func publishCollection(
-        title: String,
-        description: String,
-        visibility: SharedContentVisibility,
-        includeValue: Bool,
-        collectionItems: [CollectionItem]
-    ) async throws -> SharedContent {
-        let snapshots = collectionItems.map {
-            CollectionItemSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity, notes: $0.notes)
-        }
-        let encoded = try await encodeCollectionPayload(snapshots, includeValue: includeValue)
-        return try await upsertSharedContent(
-            type: .collection,
-            localContentID: "collection",
-            encoded: encoded,
-            title: normalizedTitle(title, fallback: "My Collection"),
-            description: normalizedDescription(description),
-            visibility: visibility,
-            includeValue: includeValue
-        )
-    }
-
-    func unpublishCollection() async throws {
-        try await unpublish(type: .collection, localContentID: "collection")
-    }
-
-    func scheduleAutoSyncCollection(items: [CollectionItem]) {
-        let snapshots = items.map {
-            CollectionItemSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity, notes: $0.notes)
-        }
-        scheduleAutoSync(for: .collection) { [weak self] in
-            guard let self else { return }
-            try await self.syncIfPublishedCollection(itemSnapshots: snapshots)
-        }
     }
 
     func publishBinder(
@@ -675,20 +619,6 @@ final class SocialShareService {
         )
     }
 
-    private func syncIfPublishedCollection(itemSnapshots: [CollectionItemSnapshot]) async throws {
-        let existing = try await fetchMine(type: .collection, localContentID: "collection")
-        let encoded = try await encodeCollectionPayload(itemSnapshots, includeValue: existing?.includeValue ?? false)
-        _ = try await upsertSharedContent(
-            type: .collection,
-            localContentID: "collection",
-            encoded: encoded,
-            title: existing?.title ?? "My Collection",
-            description: existing?.description,
-            visibility: existing?.visibility ?? .friends,
-            includeValue: existing?.includeValue ?? false
-        )
-    }
-
     private func scheduleAutoSync(for key: LocalKey, operation: @escaping @Sendable () async throws -> Void) {
         pendingSyncTasks[key]?.cancel()
         pendingSyncTasks[key] = Task { [weak self] in
@@ -866,45 +796,6 @@ final class SocialShareService {
             cardCount: rows.count,
             brand: nil,
             localContentID: "wishlist"
-        )
-    }
-
-    private func encodeCollectionPayload(_ items: [CollectionItemSnapshot], includeValue: Bool) async throws -> EncodedPayload {
-        var rows: [[String: JSONValue]] = []
-        var totalValue: Double = 0
-        for item in items {
-            var row: [String: JSONValue] = [
-                "cardID": .string(item.cardID),
-                "variantKey": .string(item.variantKey),
-                "quantity": .number(Double(item.quantity))
-            ]
-            if !item.notes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                row["notes"] = .string(item.notes)
-            }
-            if let card = await cardDataService.loadCard(masterCardId: item.cardID) {
-                row["cardName"] = .string(card.cardName)
-                if includeValue, let value = await pricingService.usdPriceForVariant(for: card, variantKey: item.variantKey) {
-                    row["market_value_usd"] = .number(value)
-                    totalValue += value * Double(item.quantity)
-                }
-            }
-            rows.append(row)
-        }
-        var payload: [String: JSONValue] = [
-            "payload_version": .number(1),
-            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
-            "local_content_id": .string("collection"),
-            "items": .array(rows.map(JSONValue.object))
-        ]
-        if includeValue {
-            payload["market_value_usd"] = .number(totalValue)
-        }
-        return EncodedPayload(
-            payload: payload,
-            title: "My Collection",
-            cardCount: rows.count,
-            brand: nil,
-            localContentID: "collection"
         )
     }
 

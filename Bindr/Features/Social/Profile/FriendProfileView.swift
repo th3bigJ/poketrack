@@ -10,7 +10,7 @@ struct FriendProfileView: View {
     private enum ProfileTab: String, CaseIterable {
         case posts
         case wishlist
-        case collection
+        case tradeList = "trade list"
     }
 
     @State private var profile: SocialProfile?
@@ -21,7 +21,7 @@ struct FriendProfileView: View {
     @State private var errorMessage: String?
     @State private var selectedTab: ProfileTab = .posts
     @State private var sharedWishlistCardIDs: [String] = []
-    @State private var sharedCollectionCardIDs: [String] = []
+    @State private var sharedTradeListCardIDs: [String] = []
     @State private var isSelectMode = false
     @State private var selectedCardIDs: Set<String> = []
     @State private var isActionsMenuPresented = false
@@ -34,16 +34,12 @@ struct FriendProfileView: View {
         let startIndex: Int
     }
 
-    private var canViewCollection: Bool {
-        relationship == .friends
-    }
-
     private var canViewWishlist: Bool {
         relationship == .friends
     }
 
     private var showsSelectToolbarButton: Bool {
-        (selectedTab == .wishlist || selectedTab == .collection) && canViewWishlist
+        (selectedTab == .wishlist || selectedTab == .tradeList) && canViewWishlist
     }
 
     var body: some View {
@@ -410,7 +406,11 @@ struct FriendProfileView: View {
     /// Title-cased label for the sub-tabs. Driven off the `ProfileTab` enum's
     /// `rawValue` so adding a new tab automatically picks up the formatting.
     private func tabTitle(_ tab: ProfileTab) -> String {
-        tab.rawValue.prefix(1).uppercased() + tab.rawValue.dropFirst()
+        switch tab {
+        case .posts: return "Posts"
+        case .wishlist: return "Wishlist"
+        case .tradeList: return "Trade List"
+        }
     }
 
     private var tabPicker: some View {
@@ -471,21 +471,21 @@ struct FriendProfileView: View {
                 } else {
                     emptyCard("No wishlist items yet.")
                 }
-            case .collection:
-                if canViewCollection, !sharedCollectionCardIDs.isEmpty {
+            case .tradeList:
+                if relationship == .friends, !sharedTradeListCardIDs.isEmpty {
                     SelectableCardGrid(
-                        cardIDs: sharedCollectionCardIDs,
+                        cardIDs: sharedTradeListCardIDs,
                         isSelectMode: $isSelectMode,
                         selectedCardIDs: $selectedCardIDs,
                         cardLoader: { id in await loadSharedCard(id) },
                         onCardTap: { tappedID in
-                            Task { await openCardDetail(tappedID: tappedID, orderedIDs: sharedCollectionCardIDs) }
+                            Task { await openCardDetail(tappedID: tappedID, orderedIDs: sharedTradeListCardIDs) }
                         }
                     )
-                } else if canViewCollection {
-                    emptyCard("No cards in this user's collection yet.")
+                } else if relationship == .friends {
+                    emptyCard("No cards on this user's trade list yet.")
                 } else {
-                    emptyCard("This user has not shared a collection.")
+                    emptyCard("Become friends to see this user's trade list.")
                 }
             }
         }
@@ -652,16 +652,16 @@ struct FriendProfileView: View {
                 activity = (try? await posts) ?? []
                 if relationship == .friends {
                     async let wishlistIDs = services.socialCardLibrary.fetchWishlistCardIDs(for: loaded.id)
-                    async let collectionIDs = services.socialCardLibrary.fetchCollectionCardIDs(for: loaded.id)
+                    async let tradeListIDs = services.socialCardLibrary.fetchTradeListCardIDs(for: loaded.id)
                     sharedWishlistCardIDs = (try? await wishlistIDs) ?? []
-                    sharedCollectionCardIDs = (try? await collectionIDs) ?? []
-                    let idsToWarm = Array(Set(sharedWishlistCardIDs + sharedCollectionCardIDs))
+                    sharedTradeListCardIDs = (try? await tradeListIDs) ?? []
+                    let idsToWarm = Array(Set(sharedWishlistCardIDs + sharedTradeListCardIDs))
                     Task { @MainActor in
                         await warmSharedCardCache(ids: idsToWarm)
                     }
                 } else {
                     sharedWishlistCardIDs = []
-                    sharedCollectionCardIDs = []
+                    sharedTradeListCardIDs = []
                     resolvedSharedCardsByID = [:]
                 }
             }
@@ -809,8 +809,8 @@ struct FriendProfileView: View {
         case .wishlist:
             // On a friend's wishlist, tapping Trade means "I'll offer this".
             return ([], items)
-        case .collection:
-            // On a friend's collection, tapping Trade means "I want this".
+        case .tradeList:
+            // On a friend's trade list, tapping Trade means "I want this card from them".
             return (items, [])
         case .posts:
             return (items, [])

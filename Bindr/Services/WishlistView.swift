@@ -316,6 +316,7 @@ private enum WishlistPreview {
     static var modelContainer: ModelContainer {
         let schema = Schema([
             WishlistItem.self,
+            TradeListItem.self,
             CollectionItem.self,
             LedgerLine.self,
             CostLot.self,

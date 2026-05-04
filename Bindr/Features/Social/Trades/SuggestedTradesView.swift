@@ -119,22 +119,22 @@ struct SuggestedTradesView: View {
             let friendIDs = friends.map(\.id)
 
             async let friendWishlists = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
-            async let friendCollections = services.socialCardLibrary.fetchCollectionCardIDsByUser(for: friendIDs)
-            async let myCollection = services.socialCardLibrary.fetchCollectionCardIDs(for: uid)
+            async let friendTradeLists = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
+            async let myTradeList = services.socialCardLibrary.fetchTradeListCardIDs(for: uid)
 
             let myWishlist = Set(services.wishlist?.items.map(\.cardID) ?? [])
             let friendWishlistMap = try await friendWishlists
-            let friendCollectionMap = try await friendCollections
-            let myCollectionIDs = Set(try await myCollection)
+            let friendTradeListMap = try await friendTradeLists
+            let myTradeListIDs = Set(try await myTradeList)
 
             var result: [TradeSuggestion] = []
 
             for friend in friends {
-                let theyHave = Set(friendCollectionMap[friend.id] ?? [])
+                let theyHave = Set(friendTradeListMap[friend.id] ?? [])
                 let theyWant = Set(friendWishlistMap[friend.id] ?? [])
 
                 let iWantAndTheyHave = myWishlist.intersection(theyHave)
-                let theyWantAndIHave = theyWant.intersection(myCollectionIDs)
+                let theyWantAndIHave = theyWant.intersection(myTradeListIDs)
 
                 if !iWantAndTheyHave.isEmpty && !theyWantAndIHave.isEmpty {
                     result.append(TradeSuggestion(

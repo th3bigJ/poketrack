@@ -449,15 +449,16 @@ final class AppServices {
         if let wishlist {
             socialCardLibrary.scheduleAutoSyncWishlist(items: wishlist.items)
         }
+        if let tradeListItems = try? modelContext.fetch(FetchDescriptor<TradeListItem>()) {
+            socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
+        }
         if let collectionItems = try? modelContext.fetch(FetchDescriptor<CollectionItem>()) {
-            socialCardLibrary.scheduleAutoSyncCollection(items: collectionItems)
-            
             // Sync summary stats to profile
             let cardCount = collectionItems.reduce(0) { $0 + $1.quantity }
             let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
             let deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
             let totalValue = collectionValue?.snapshots.last?.totalGbp ?? 0
-            
+
             Task {
                 try? await socialProfile.updateCollectionStats(
                     cardCount: cardCount,

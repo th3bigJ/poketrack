@@ -77,6 +77,7 @@ struct BindrApp: App {
     private static func makeModelContainer() -> ModelContainer {
         let schema = Schema([
             WishlistItem.self,
+            TradeListItem.self,
             CollectionItem.self,
             LedgerLine.self,
             CostLot.self,

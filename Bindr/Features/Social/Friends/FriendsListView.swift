@@ -562,7 +562,7 @@ struct FriendsListView: View {
         defer { isLoadingTradeSuggestions = false }
 
         if !friendIDs.isEmpty {
-            async let collectionsTask = services.socialCardLibrary.fetchCollectionCardIDsByUser(for: friendIDs)
+            async let collectionsTask = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
             async let wishlistsTask = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
             let collections = (try? await collectionsTask) ?? [:]
             let wishlists = (try? await wishlistsTask) ?? [:]

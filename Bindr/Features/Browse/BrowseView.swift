@@ -4193,6 +4193,11 @@ struct BrowseGridFiltersMenuContent: View {
                         Label("Hide owned", systemImage: "eye.slash")
                     }
                 }
+                if config.showShowDuplicates {
+                    Toggle(isOn: $filters.showDuplicates) {
+                        Label("Show duplicates", systemImage: "square.stack.3d.up.badge.a")
+                    }
+                }
             }
         }
         } // end if !isAllBrands && showBrandFilters

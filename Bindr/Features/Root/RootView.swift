@@ -176,6 +176,7 @@ struct RootView: View {
         switch collectSegment {
         case .collection: return collectFilters.collectionFilters
         case .wishlist:   return collectFilters.wishlistFilters
+        case .tradeList:  return BrowseCardGridFilters()
         case .folders:    return BrowseCardGridFilters()
         }
     }
@@ -184,6 +185,7 @@ struct RootView: View {
         switch collectSegment {
         case .collection: return $collectFilters.collectionFilters
         case .wishlist:   return $collectFilters.wishlistFilters
+        case .tradeList:  return .constant(BrowseCardGridFilters())
         case .folders:    return .constant(BrowseCardGridFilters())
         }
     }
@@ -749,15 +751,18 @@ struct RootView: View {
             handleSocialDeepLink(queuedURL)
         }
         .sheet(item: $selectedCardPresentation) { ctx in
-            let showTradeAction = selectedTab == .collect
-                && collectContentTypeTab == .cards
-                && (collectSegment == .collection || collectSegment == .wishlist)
+            let isCollectCards = selectedTab == .collect && collectContentTypeTab == .cards
+            let showAddToTradeList = isCollectCards && collectSegment == .collection
+            let showTradeFlow = isCollectCards && collectSegment == .wishlist
             CardBrowseDetailView(
                 cards: ctx.cards,
                 startIndex: ctx.startIndex,
-                tradeAction: showTradeAction ? { card in
+                tradeAction: showAddToTradeList ? { card in
+                    addCardToTradeList(card)
+                } : showTradeFlow ? { card in
                     launchTradeFlowFromCollectionCard(card)
-                } : nil
+                } : nil,
+                tradeActionLabel: showAddToTradeList ? "Trade List" : "Trade"
             )
                 .environment(services)
         }
@@ -938,6 +943,21 @@ struct RootView: View {
         browseMultiSelectedCardIDs.removeAll()
     }
 
+    private func addCardToTradeList(_ card: Card) {
+        let cardID = card.masterCardId
+        let existing = (try? modelContext.fetch(
+            FetchDescriptor<TradeListItem>(predicate: #Predicate { $0.cardID == cardID })
+        )) ?? []
+        if let first = existing.first {
+            first.quantity += 1
+        } else {
+            modelContext.insert(TradeListItem(cardID: cardID))
+        }
+        try? modelContext.save()
+        Haptics.success()
+        selectedCardPresentation = nil
+    }
+
     private func launchTradeFlowFromCollectionCard(_ card: Card) {
         let preferredSide: AppServices.TradePrefillSide = {
             switch collectSegment {
@@ -945,8 +965,9 @@ struct RootView: View {
                 return .mySide
             case .wishlist:
                 return .theirSide
+            case .tradeList:
+                return .mySide
             case .folders:
-                // Trade action isn't shown for folders, but keep a safe fallback.
                 return .mySide
             }
         }()

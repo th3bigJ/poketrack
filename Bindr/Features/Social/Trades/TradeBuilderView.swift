@@ -176,10 +176,10 @@ struct TradeBuilderView: View {
             isOwnershipLoading = true
             defer { isOwnershipLoading = false }
             receiverProfile = try? await services.socialProfile.fetchProfile(id: receiverID)
-            async let theirCollectionTask = services.socialCardLibrary.fetchCollectionCardIDs(for: receiverID)
-            async let myCollectionTask = services.socialCardLibrary.fetchCollectionCardIDs(for: currentUserID)
-            receiverCollectionCardIDs = Set((try? await theirCollectionTask) ?? [])
-            myCollectionCardIDs = Set((try? await myCollectionTask) ?? [])
+            async let theirTradeListTask = services.socialCardLibrary.fetchTradeListCardIDs(for: receiverID)
+            async let myTradeListTask = services.socialCardLibrary.fetchTradeListCardIDs(for: currentUserID)
+            receiverCollectionCardIDs = Set((try? await theirTradeListTask) ?? [])
+            myCollectionCardIDs = Set((try? await myTradeListTask) ?? [])
         }
         .task(id: unavailableCardNameLookupSignature) {
             await cacheCardNamesForUnavailableCards()
@@ -685,7 +685,7 @@ struct TradeCardPickerView: View {
     private func loadCollection() async {
         isLoading = true
         defer { isLoading = false }
-        collectionCardIDs = (try? await services.socialCardLibrary.fetchCollectionCardIDs(for: ownerUserID)) ?? []
+        collectionCardIDs = (try? await services.socialCardLibrary.fetchTradeListCardIDs(for: ownerUserID)) ?? []
     }
 
     private var searchField: some View {

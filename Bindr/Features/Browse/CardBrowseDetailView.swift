@@ -15,6 +15,7 @@ struct CardBrowseDetailView: View {
     var showsWishlistWhenChromeHidden: Bool = false
     /// Optional context-specific trade action (used by Social friend profile card detail).
     var tradeAction: ((Card) -> Void)? = nil
+    var tradeActionLabel: String = "Trade"
 
     @State private var index: Int
     @State private var navigationPath = NavigationPath()
@@ -25,13 +26,15 @@ struct CardBrowseDetailView: View {
         addToDeckAction: ((Card, String, Int) -> Void)? = nil,
         showsHeaderChromeActions: Bool = true,
         showsWishlistWhenChromeHidden: Bool = false,
-        tradeAction: ((Card) -> Void)? = nil
+        tradeAction: ((Card) -> Void)? = nil,
+        tradeActionLabel: String = "Trade"
     ) {
         self.cards = cards
         self.addToDeckAction = addToDeckAction
         self.showsHeaderChromeActions = showsHeaderChromeActions
         self.showsWishlistWhenChromeHidden = showsWishlistWhenChromeHidden
         self.tradeAction = tradeAction
+        self.tradeActionLabel = tradeActionLabel
         let clamped: Int = {
             guard !cards.isEmpty else { return 0 }
             return min(max(0, startIndex), cards.count - 1)
@@ -56,6 +59,7 @@ struct CardBrowseDetailView: View {
                                 showsCollectionAction: showsHeaderChromeActions,
                                 showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
                                 tradeAction: tradeAction,
+                                tradeActionLabel: tradeActionLabel,
                                 onOpenSet: {
                                     if let set = services.cardData.sets.first(where: { $0.setCode == card.setCode }) {
                                         navigationPath.append(set)
@@ -110,6 +114,7 @@ private struct CardBrowseDetailPage: View {
     let showsCollectionAction: Bool
     let showsWishlistAction: Bool
     let tradeAction: ((Card) -> Void)?
+    let tradeActionLabel: String
     let onOpenSet: () -> Void
 
     @State private var editingLine: HoldingLine?
@@ -135,6 +140,7 @@ private struct CardBrowseDetailPage: View {
         showsCollectionAction: Bool,
         showsWishlistAction: Bool,
         tradeAction: ((Card) -> Void)?,
+        tradeActionLabel: String = "Trade",
         onOpenSet: @escaping () -> Void
     ) {
         self.card = card
@@ -143,6 +149,7 @@ private struct CardBrowseDetailPage: View {
         self.showsCollectionAction = showsCollectionAction
         self.showsWishlistAction = showsWishlistAction
         self.tradeAction = tradeAction
+        self.tradeActionLabel = tradeActionLabel
         self.onOpenSet = onOpenSet
         let cardID = card.masterCardId
         _collectionItems = Query(
@@ -651,7 +658,7 @@ private struct CardBrowseDetailPage: View {
             action(card)
         } label: {
             cardActionBody(
-                title: "Trade",
+                title: tradeActionLabel,
                 systemImage: "arrow.left.arrow.right.circle.fill",
                 tint: CardDetailPalette.chartLine
             )
