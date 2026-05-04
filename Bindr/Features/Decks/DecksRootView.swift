@@ -131,6 +131,11 @@ struct DecksRootView: View {
                             .padding(.vertical, 10)
                     }
                     .buttonStyle(.plain)
+                    .simultaneousGesture(
+                        TapGesture().onEnded {
+                            HapticManager.impact(.light)
+                        }
+                    )
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         Button(role: .destructive) {
                             deckToDelete = deck
@@ -161,6 +166,7 @@ struct DecksRootView: View {
 
             HStack {
                 ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    HapticManager.impact(.light)
                     dismiss()
                 } label: {
                     Image(systemName: "chevron.left")
@@ -185,6 +191,11 @@ struct DecksRootView: View {
                     }
                     .allowsHitTesting(false) // Let the Menu handle the tap
                 }
+                .simultaneousGesture(
+                    TapGesture().onEnded {
+                        HapticManager.impact(.light)
+                    }
+                )
             }
         }
         .padding(.horizontal, 16)
@@ -192,6 +203,7 @@ struct DecksRootView: View {
     }
 
     private func handleCreateTap() {
+        HapticManager.impact(.light)
         if !services.store.isPremium && visibleDecks.count >= 1 {
             showPaywall = true
         } else {
@@ -200,6 +212,7 @@ struct DecksRootView: View {
     }
 
     private func handleImportTap() {
+        HapticManager.impact(.light)
         if !services.store.isPremium && visibleDecks.count >= 1 {
             showPaywall = true
         } else {

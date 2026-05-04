@@ -375,7 +375,10 @@ struct DeckDetailView: View {
             }
 
             HStack {
-                ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    HapticManager.impact(.light)
+                    dismiss()
+                } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
@@ -385,6 +388,7 @@ struct DeckDetailView: View {
 
                 HStack(spacing: 10) {
                     ChromeGlassCircleButton(accessibilityLabel: isSharedPublished ? "Share options, currently shared" : "Share options") {
+                        HapticManager.impact(.light)
                         showShareActions = true
                     } label: {
                         Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
@@ -393,6 +397,7 @@ struct DeckDetailView: View {
                     }
 
                     ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done editing deck" : "Edit deck") {
+                        HapticManager.impact(.light)
                         withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
                             isEditing.toggle()
                         }
@@ -1019,6 +1024,7 @@ struct DeckDetailView: View {
 
                     if isEditing {
                         AddCardCell {
+                            HapticManager.impact(.light)
                             pickerGroup = group
                         }
                     }
@@ -1234,6 +1240,7 @@ private struct DeckCardGridCell: View {
 
                 HStack(spacing: 16) {
                     ChromeGlassCircleButton(accessibilityLabel: "Remove one copy") {
+                        HapticManager.impact(.light)
                         onQuantityChange(deckCard.quantity - 1)
                     } label: {
                         Image(systemName: "minus")
@@ -1242,6 +1249,7 @@ private struct DeckCardGridCell: View {
                     }
 
                     ChromeGlassCircleButton(accessibilityLabel: "Add one copy") {
+                        HapticManager.impact(.light)
                         onQuantityChange(deckCard.quantity + 1)
                     } label: {
                         Image(systemName: "plus")
