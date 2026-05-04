@@ -57,15 +57,10 @@ struct FeedItemView: View {
                 )
             }
         }
-        .padding(.horizontal, 14)
-        .padding(.top, 14)
-        .padding(.bottom, 12)
-        .background(Color(uiColor: .secondarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color.primary.opacity(0.08), lineWidth: 1)
-        }
+        .padding(.horizontal, 16)
+        .padding(.top, 16)
+        .padding(.bottom, 14)
+        .glassCardStyle(cornerRadius: 16)
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
         }) {
@@ -256,6 +251,7 @@ struct FeedItemView: View {
 
             hashtagRow
         }
+        .padding(.trailing, 8)
     }
 
 
@@ -540,12 +536,13 @@ private struct CardStackPreview: View {
             }
         }
         .frame(width: size * 0.7, height: size)
-        .clipShape(RoundedRectangle(cornerRadius: 4))
+        .clipShape(RoundedRectangle(cornerRadius: 6))
         .overlay {
-            RoundedRectangle(cornerRadius: 4, style: .continuous)
-                .stroke(Color.primary.opacity(0.15), lineWidth: 0.5)
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                .stroke(Color.white.opacity(0.15), lineWidth: 0.5)
         }
-        .offset(x: CGFloat(index) * 8)
+        .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
+        .offset(x: CGFloat(index) * 10)
         .zIndex(Double(index))
     }
 

@@ -232,11 +232,7 @@ struct FriendProfileView: View {
                 statColumn(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
             }
             .padding(.vertical, 12)
-            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
-            }
+            .glassCardStyle(cornerRadius: 12, interactive: false)
         }
         .padding(16)
         .background {
@@ -557,11 +553,7 @@ struct FriendProfileView: View {
             Spacer()
         }
         .padding(12)
-        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color.primary.opacity(0.08), lineWidth: 1)
-        }
+        .glassCardStyle(cornerRadius: 14, interactive: false)
     }
 
     private func offerTradeButton(for profile: SocialProfile) -> some View {
@@ -610,11 +602,7 @@ struct FriendProfileView: View {
             .foregroundStyle(Color.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(14)
-            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
-            }
+            .glassCardStyle(cornerRadius: 14, interactive: false)
     }
 
     private func roleTitles(for profile: SocialProfile) -> [String] {

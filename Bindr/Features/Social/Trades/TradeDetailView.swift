@@ -226,11 +226,7 @@ struct TradeDetailView: View {
             }
         }
         .padding(14)
-        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color.primary.opacity(0.08), lineWidth: 1)
-        }
+        .glassCardStyle(cornerRadius: 14, interactive: false)
     }
 
     @ViewBuilder
@@ -615,18 +611,7 @@ private struct TradeActionButtonStyle: ButtonStyle {
             .font(.system(size: 15, weight: .semibold))
             .foregroundStyle(isBusy ? Color.secondary : Color.primary)
             .padding(.vertical, 12)
-            .background(
-                Group {
-                    if #available(iOS 26.0, *) {
-                        RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(.clear)
-                            .glassEffect(.clear.tint(nil).interactive(), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                    } else {
-                        RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .fill(.ultraThinMaterial)
-                    }
-                }
-            )
+            .glassCardStyle(cornerRadius: 12, interactive: true)
             .overlay {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                     .stroke(color.opacity(configuration.isPressed ? 0.48 : 0.32), lineWidth: 1)

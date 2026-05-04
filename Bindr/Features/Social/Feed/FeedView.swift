@@ -227,7 +227,7 @@ struct FeedView: View {
     private var feedList: some View {
         let rows = feedRows
         return ScrollView {
-            LazyVStack(spacing: 12) {
+            LazyVStack(spacing: 16) {
                 ForEach(rows) { row in
                     rowView(row)
                         .onAppear {
@@ -661,6 +661,10 @@ struct SocialAlertsSheet: View {
             let fetchedTrades = try await services.trade.fetchMyTrades()
             activity = fetchedActivity
             tradeUpdates = buildTradeAlerts(from: fetchedTrades)
+            
+            // Clear unread alerts state once successfully fetched
+            services.socialFeed.clearUnreadAlertsState(items: fetchedActivity)
+            
             errorMessage = nil
         } catch is CancellationError {
             return

@@ -288,8 +288,13 @@ final class SocialFeedService {
     private var baseURL: URL? { AppConfiguration.supabaseURL }
     private var publishableKey: String { AppConfiguration.supabasePublishableKey }
 
-    private(set) var items: [FeedItem] = []
+    private(set) var items: [FeedItem] = [] {
+        didSet {
+            recalculateUnread(for: .following)
+        }
+    }
     private(set) var unreadCount = 0
+    private(set) var unreadAlertsCount = 0
 
     private var cursorDate: Date?
     private let feedSeenStorageKeyPrefix = "social.feed.seen.ids"
@@ -301,7 +306,19 @@ final class SocialFeedService {
     }
 
     var hasUnread: Bool {
-        unreadCount > 0
+        unreadCount > 0 || unreadAlertsCount > 0
+    }
+
+    /// Background poll for unread alerts without full state refresh
+    func refreshUnreadCounts() async {
+        guard authService.isSignedIn else { return }
+        do {
+            let alerts = try await fetchUserActivity(limit: 20)
+            let seen = seenIDs(for: .alerts)
+            unreadAlertsCount = alerts.filter { !seen.contains($0.id) }.count
+        } catch {
+            print("Failed to background refresh alerts: \(error)")
+        }
     }
 
     func fetchFeed(refresh: Bool = true, pageSize: Int = 20, scope: FeedScope = .following) async throws -> [FeedItem] {
@@ -329,7 +346,7 @@ final class SocialFeedService {
         }
 
         cursorDate = items.last?.createdAt
-        recalculateUnread()
+        recalculateUnread(for: scope)
         return items
     }
 
@@ -435,12 +452,6 @@ final class SocialFeedService {
         try await fetchFeed(refresh: false, pageSize: pageSize)
     }
 
-    func clearUnreadState() {
-        let existing = seenIDs()
-        let merged = (existing + items.map(\.id)).suffix(maxLocalSeenIDs)
-        UserDefaults.standard.set(Array(merged), forKey: seenStorageKey())
-        recalculateUnread()
-    }
 
     func postVote(type: ReactionType, to contentID: UUID) async throws {
         let userID = try signedInUserID()
@@ -1061,19 +1072,35 @@ final class SocialFeedService {
         return blocked
     }
 
-    private func recalculateUnread() {
-        let seen = seenIDs()
-        unreadCount = items.filter { !seen.contains($0.id) }.count
+    func clearUnreadState() {
+        let existing = seenIDs(for: .following)
+        let merged = (Array(existing) + items.map(\.id)).suffix(maxLocalSeenIDs)
+        UserDefaults.standard.set(Array(merged), forKey: seenStorageKey(for: .following))
+        recalculateUnread(for: .following)
     }
 
-    private func seenIDs() -> Set<String> {
-        let values = UserDefaults.standard.stringArray(forKey: seenStorageKey()) ?? []
+    func clearUnreadAlertsState(items: [FeedItem]) {
+        let existing = seenIDs(for: .alerts)
+        let merged = (Array(existing) + items.map(\.id)).suffix(maxLocalSeenIDs)
+        UserDefaults.standard.set(Array(merged), forKey: seenStorageKey(for: .alerts))
+        unreadAlertsCount = 0
+    }
+
+    private func recalculateUnread(for scope: FeedScope) {
+        let seen = seenIDs(for: scope)
+        if scope == .following {
+            unreadCount = items.filter { !seen.contains($0.id) }.count
+        }
+    }
+
+    private func seenIDs(for scope: FeedScope) -> Set<String> {
+        let values = UserDefaults.standard.stringArray(forKey: seenStorageKey(for: scope)) ?? []
         return Set(values)
     }
 
-    private func seenStorageKey() -> String {
+    private func seenStorageKey(for scope: FeedScope) -> String {
         let userID = (try? signedInUserID().uuidString) ?? "signed-out"
-        return "\(feedSeenStorageKeyPrefix).\(userID)"
+        return "\(feedSeenStorageKeyPrefix).\(scope.rawValue).\(userID)"
     }
 
     private func signedInUserID() throws -> UUID {

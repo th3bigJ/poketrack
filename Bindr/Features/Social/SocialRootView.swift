@@ -169,6 +169,12 @@ struct SocialRootView: View {
             await refreshProfileIfNeeded()
             await routeQueuedDeepLinkIfPossible()
             await services.socialPush.updateRegistrationState()
+            
+            // Periodically refresh unread alert counts while Social is active
+            while !Task.isCancelled {
+                await services.socialFeed.refreshUnreadCounts()
+                try? await Task.sleep(nanoseconds: 30_000_000_000) // 30 seconds
+            }
         }
         .onChange(of: services.socialAuth.authState) { _, state in
             Task {
@@ -207,12 +213,17 @@ struct SocialRootView: View {
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(.primary)
 
-                            if services.socialFeed.unreadCount > 0 {
-                                Circle()
+                            if services.socialFeed.unreadAlertsCount > 0 {
+                                Capsule()
                                     .fill(Color(hex: "E05252"))
-                                    .frame(width: 8, height: 8)
-                                    .overlay(Circle().stroke(Color(uiColor: .systemBackground), lineWidth: 1.5))
-                                    .offset(x: 4, y: -4)
+                                    .frame(minWidth: 16, minHeight: 16)
+                                    .overlay {
+                                        Text("\(services.socialFeed.unreadAlertsCount)")
+                                            .font(.system(size: 10, weight: .bold))
+                                            .foregroundStyle(.white)
+                                            .padding(.horizontal, 4)
+                                    }
+                                    .offset(x: 8, y: -8)
                             }
                         }
                     }

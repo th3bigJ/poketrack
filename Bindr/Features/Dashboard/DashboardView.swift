@@ -1476,16 +1476,8 @@ struct DashboardView: View {
 
     private func dashboardCard<Content: View>(@ViewBuilder content: () -> Content) -> some View {
         content()
-            .padding(18)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .fill(dashboardCardBackground)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 26, style: .continuous)
-                            .stroke(dashboardBorder, lineWidth: 1)
-                    )
-            )
+            .padding(16)
+            .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
     private func computeLiveValue() async {
