@@ -4,6 +4,8 @@ import Observation
 @Observable
 @MainActor
 final class SocialFeedService {
+    var selectedScope: FeedScope = .everyone
+
     enum SocialFeedError: LocalizedError {
         case notSignedIn
         case missingConfiguration
@@ -321,7 +323,9 @@ final class SocialFeedService {
         }
     }
 
-    func fetchFeed(refresh: Bool = true, pageSize: Int = 20, scope: FeedScope = .following) async throws -> [FeedItem] {
+    func fetchFeed(refresh: Bool = true, pageSize: Int = 20, scope: FeedScope? = nil) async throws -> [FeedItem] {
+        let activeScope = scope ?? selectedScope
+        
         if refresh {
             cursorDate = nil
         }
@@ -333,7 +337,7 @@ final class SocialFeedService {
             limit: pageSize,
             currentUserID: currentUserID,
             blockedUserIDs: blockedUserIDs,
-            scope: scope,
+            scope: activeScope,
             includeActivityRows: false
         )
         
@@ -346,7 +350,7 @@ final class SocialFeedService {
         }
 
         cursorDate = items.last?.createdAt
-        recalculateUnread(for: scope)
+        recalculateUnread(for: activeScope)
         return items
     }
 

@@ -4,6 +4,7 @@ import SwiftUI
 
 struct FeedItemView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) var colorScheme
     let group: GroupedFeedItem
     var showsInteractionBar: Bool = true
     var isCardTapEnabled: Bool = true
@@ -28,20 +29,80 @@ struct FeedItemView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .top, spacing: 16) {
-                VStack(alignment: .leading, spacing: 0) {
-                    header
-                    Spacer(minLength: 8)
-                    textContentArea
-                    Spacer(minLength: 8)
+        VStack(alignment: .leading, spacing: 0) {
+            // Header
+            HStack(alignment: .top, spacing: 12) {
+                if let username = item.actor?.username {
+                    NavigationLink(value: SocialDestination.friendProfile(username: username)) {
+                        ProfileAvatarView(profile: item.actor!, size: 32)
+                            .overlay(Circle().stroke(Color.primary.opacity(0.1), lineWidth: 0.5))
+                    }
+                    .buttonStyle(.plain)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                .frame(minHeight: 150)
+
+                VStack(alignment: .leading, spacing: 1) {
+                    Text(cardTitle)
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                    
+                    HStack(spacing: 4) {
+                        Text(actorName)
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundStyle(.secondary)
+                        
+                        if isEdited {
+                            Text("• Edited")
+                                .font(.system(size: 10))
+                                .foregroundStyle(.secondary.opacity(0.3))
+                        }
+                        
+                        Text("• \(SocialFeedService.shortRelativeDate(item.createdAt))")
+                            .font(.system(size: 10))
+                            .foregroundStyle(.secondary.opacity(0.5))
+                    }
+                }
                 
-                CardStackPreview(item: item, size: 150)
-                    .shadow(color: .black.opacity(0.15), radius: 8, x: 0, y: 4)
+                Spacer()
+                
+                HStack(spacing: 12) {
+                    if isMyItem {
+                        postMenuButton
+                    }
+                    
+                    if let badgeText = badgeText {
+                        TypePill(label: badgeText, color: typeAccentColor)
+                    }
+                }
             }
+            .padding(.horizontal, 16)
+            .padding(.top, 14)
+            .padding(.bottom, 10)
+
+            // Content
+            HStack(alignment: .top, spacing: 0) {
+                VStack(alignment: .leading, spacing: 4) {
+                    if let description = cleanedDescription, !description.isEmpty {
+                        Text(description)
+                            .font(.system(size: 14))
+                            .foregroundStyle(.secondary.opacity(0.8))
+                            .lineLimit(4)
+                            .padding(.top, 2)
+                    }
+
+                    Spacer(minLength: 8)
+
+                    hashtagRow
+                }
+                .padding(.leading, 16)
+                .padding(.trailing, 12)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                
+                CardStackPreview(item: item, size: 110)
+                    .padding(.trailing, 16)
+            }
+            .frame(minHeight: 110) // Match card size
+            .padding(.bottom, 14)
             .contentShape(Rectangle())
             .onTapGesture {
                 guard isCardTapEnabled, canOpenComments else { return }
@@ -49,18 +110,33 @@ struct FeedItemView: View {
                 isCommentsPresented = true
             }
 
+            // Footer
             if showsInteractionBar, item.type != .friendship {
-                InteractionBar(
-                    item: item,
-                    refreshToken: commentsRefreshToken,
-                    onOpenComments: { isCommentsPresented = true }
-                )
+                VStack(spacing: 0) {
+                    if let summary = group.interactionSummary {
+                        Text(summary)
+                            .font(.system(size: 11))
+                            .foregroundStyle(.secondary.opacity(colorScheme == .dark ? 0.6 : 0.8))
+                            .padding(.horizontal, 16)
+                            .padding(.top, 4)
+                            .padding(.bottom, 8)
+                    }
+
+                    Divider()
+                        .opacity(colorScheme == .dark ? 0.08 : 0.15)
+                    
+                    InteractionBar(
+                        item: item,
+                        refreshToken: commentsRefreshToken,
+                        onOpenComments: { isCommentsPresented = true }
+                    )
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                }
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 16)
-        .padding(.bottom, 14)
-        .glassCardStyle(cornerRadius: 16)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .glassCardStyle(cornerRadius: 16, interactive: false)
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
         }) {
@@ -119,144 +195,33 @@ struct FeedItemView: View {
         }
     }
 
-    private var header: some View {
-        // The type pill (PULL / SHARE / WISHLIST) used to live in the content
-        // row, eating a full vertical column to the right of the card image —
-        // which crushed the thumbnail and left dead space below the text. We
-        // promoted it up here next to the timestamp instead: it carries the
-        // same context but consumes a tiny corner that was previously empty,
-        // and frees the entire right side of the content row for a bigger
-        // card preview.
-        HStack(spacing: 10) {
-            if let username = item.actor?.username {
-                NavigationLink(value: SocialDestination.friendProfile(username: username)) {
-                    avatarView
-                }
-                .buttonStyle(.plain)
-            } else {
-                avatarView
-            }
-
-            VStack(alignment: .leading, spacing: 0) {
-                HStack(spacing: 6) {
-                    Group {
-                        if let username = item.actor?.username {
-                            NavigationLink(value: SocialDestination.friendProfile(username: username)) {
-                                Text(actorName)
-                                    .font(.system(size: 14, weight: .bold))
-                                    .foregroundStyle(Color.primary)
-                                    .lineLimit(1)
-                                    .minimumScaleFactor(0.8)
-                            }
-                            .buttonStyle(.plain)
-                            .layoutPriority(1)
-                        } else {
-                            Text(actorName)
-                                .font(.system(size: 14, weight: .bold))
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.8)
-                                .layoutPriority(1)
-                        }
-                    }
-                    
-                    Text("· \(SocialFeedService.shortRelativeDate(item.createdAt))")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color.secondary.opacity(0.8))
-                        .lineLimit(1)
-                        .fixedSize()
-
-                    TypePill(label: badgeText, color: typeAccentColor)
-                        .scaleEffect(0.8)
-                        .fixedSize()
-                    
-                    if isMyItem, let content = item.content {
-                        Spacer()
-                        
-                        Menu {
-                            Button {
-                                editDescription = content.description ?? ""
-                                showEditSheet = true
-                            } label: {
-                                Label("Edit Caption", systemImage: "pencil")
-                            }
-                            
-                            Button(role: .destructive) {
-                                showDeleteAlert = true
-                            } label: {
-                                Label("Delete Post", systemImage: "trash")
-                            }
-                        } label: {
-                            Image(systemName: "ellipsis")
-                                .font(.system(size: 14, weight: .bold))
-                                .foregroundStyle(Color.secondary)
-                                .padding(8)
-                                .contentShape(Rectangle())
-                        }
-                    }
-                }
-
-                if let handle = item.actor?.username,
-                   !isMyItem, // Don't show handle for 'me'
-                   handle.lowercased() != actorName.lowercased() {
-                    Text("@\(handle)")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color.secondary)
-                        .lineLimit(1)
+    private var postMenuButton: some View {
+        Menu {
+            if let content = item.content {
+                Button {
+                    editDescription = content.description ?? ""
+                    showEditSheet = true
+                } label: {
+                    Label("Edit Caption", systemImage: "pencil")
                 }
             }
-        }
-    }
-
-    private var avatarView: some View {
-        Group {
-            if let actor = item.actor {
-                ProfileAvatarView(profile: actor, size: 34)
-            } else {
-                Circle()
-                    .fill(Color(uiColor: .tertiarySystemBackground))
-                    .frame(width: 34, height: 34)
-                    .overlay {
-                        Image(systemName: "person.fill")
-                            .font(.system(size: 14, weight: .bold))
-                            .foregroundStyle(Color.secondary)
-                    }
+            
+            Button(role: .destructive) {
+                showDeleteAlert = true
+            } label: {
+                Label("Delete Post", systemImage: "trash")
             }
-        }
-        .frame(width: 34, height: 34)
-        .clipShape(Circle())
-        .overlay {
-            Circle().stroke(typeAccentColor.opacity(0.85), lineWidth: 2)
+        } label: {
+            Image(systemName: "ellipsis")
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(Color.secondary.opacity(0.5))
+                .padding(8)
+                .contentShape(Rectangle())
         }
     }
-
-    private var textContentArea: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(cardTitle)
-                .font(.system(size: 18, weight: .bold))
-                .foregroundStyle(.primary)
-                .lineLimit(2)
-                .fixedSize(horizontal: false, vertical: true)
-
-            if let description = item.content?.description, !description.isEmpty {
-                Text(description)
-                    .font(.system(size: 15))
-                    .foregroundStyle(.primary.opacity(0.9))
-                    .italic()
-                    .lineLimit(6)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .padding(.top, 4)
-                    .padding(.bottom, 2)
-            }
-
-            hashtagRow
-        }
-        .padding(.trailing, 8)
-    }
-
 
     private var hashtagRow: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: 6) {
             let tags: [String] = {
                 var t: [String] = []
                 if let name = item.pullCardName { t.append(name.replacingOccurrences(of: " ", with: "")) }
@@ -267,15 +232,14 @@ struct FeedItemView: View {
             
             ForEach(tags.prefix(2), id: \.self) { tag in
                 Text("#\(tag)")
-                    .font(.system(size: 11, weight: .bold))
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 5)
-                    .background(typeAccentColor.opacity(0.15))
-                    .foregroundStyle(typeAccentColor)
-                    .clipShape(Capsule())
+                    .font(.system(size: 10, weight: .semibold))
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(Color.primary.opacity(0.04))
+                    .foregroundStyle(.secondary)
+                    .clipShape(RoundedRectangle(cornerRadius: 4))
             }
         }
-        .padding(.top, 4)
     }
 
 
@@ -358,7 +322,21 @@ struct FeedItemView: View {
         }
     }
 
-    private var badgeText: String {
+    private var isEdited: Bool {
+        // We consider it edited if it has a manual description edit or if the
+        // service reports a significant time gap between creation and last update.
+        // For now, we'll check if the description starts with "Edited Post" (as seen in user data)
+        // or if we add real updatedAt support to the feed summary.
+        return item.content?.description?.contains("Edited Post") ?? false
+    }
+
+    private var cleanedDescription: String? {
+        guard let description = item.content?.description else { return nil }
+        return description.replacingOccurrences(of: "Edited Post", with: "")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var badgeText: String? {
         switch item.type {
         case .pull: return "PULL"
         case .dailyDigest: return "DIGEST"
@@ -371,10 +349,9 @@ struct FeedItemView: View {
             case .collection: return "COLLECTION"
             default: return "SHARE"
             }
-        case .friendship: return "CONNECTED"
+        case .friendship: return nil
         case .wishlistMatch: return "MATCH"
-        case .vote: return "VOTE"
-        case .comment: return "COMMENT"
+        case .vote, .comment: return nil
         }
     }
 
@@ -427,22 +404,19 @@ private struct TypePill: View {
     let color: Color
 
     var body: some View {
-        Text(label.uppercased())
-            .font(.system(size: 10, weight: .bold))
-            .tracking(0.4)
-            .foregroundStyle(color)
+        Text(label)
+            .font(.system(size: 9, weight: .bold))
+            .tracking(0.5)
+            .foregroundStyle(color.opacity(0.8))
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
-            .background(color.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .stroke(color.opacity(0.19), lineWidth: 1)
-            }
+            .background(color.opacity(0.08), in: RoundedRectangle(cornerRadius: 3, style: .continuous))
     }
 }
 
 private struct CardStackPreview: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) var colorScheme
     let item: SocialFeedService.FeedItem
     let size: CGFloat
 
@@ -479,12 +453,12 @@ private struct CardStackPreview: View {
                                 RoundedRectangle(cornerRadius: 4, style: .continuous)
                                     .stroke(Color.primary.opacity(0.15), lineWidth: 1)
                             }
-                            .offset(x: CGFloat(index) * 8)
+                            .offset(x: CGFloat(index) * 6)
                             .zIndex(Double(index))
                     }
                 }
             }
-            .frame(width: size * 0.7 + CGFloat(max(count - 1, 0)) * 8, height: size)
+            .frame(width: size * 0.7 + CGFloat(max(count - 1, 0)) * 6, height: size)
 
             countBadge
                 .padding(6)
@@ -506,10 +480,15 @@ private struct CardStackPreview: View {
                 .foregroundStyle(.white)
                 .padding(.horizontal, 7)
                 .padding(.vertical, 3)
-                .background(Color.black.opacity(0.72), in: Capsule())
-                .overlay {
-                    Capsule().stroke(Color.white.opacity(0.22), lineWidth: 0.5)
+                .background {
+                    Capsule()
+                        .fill(.ultraThinMaterial)
                 }
+                .overlay {
+                    Capsule()
+                        .stroke(Color.white.opacity(0.3), lineWidth: 0.5)
+                }
+                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
         }
     }
 
@@ -524,6 +503,8 @@ private struct CardStackPreview: View {
 
     @ViewBuilder
     private func cardImage(at index: Int, url: URL?) -> some View {
+        let rotation = Double(index) * 2.0 - 2.0 // Subtle fan effect
+        
         Group {
             if let url {
                 CachedAsyncImage(url: url) { image in
@@ -536,13 +517,23 @@ private struct CardStackPreview: View {
             }
         }
         .frame(width: size * 0.7, height: size)
-        .clipShape(RoundedRectangle(cornerRadius: 6))
+        .clipShape(RoundedRectangle(cornerRadius: 4))
         .overlay {
-            RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .stroke(Color.white.opacity(0.15), lineWidth: 0.5)
+            // Subtle Holo Glint
+            LinearGradient(
+                colors: [.clear, .white.opacity(0.08), .clear],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .blendMode(.plusLighter)
         }
-        .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
-        .offset(x: CGFloat(index) * 10)
+        .overlay {
+            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                .stroke(Color.white.opacity(0.12), lineWidth: 0.5)
+        }
+        .rotationEffect(.degrees(rotation))
+        .shadow(color: .black.opacity(colorScheme == .dark ? 0.3 : 0.15), radius: 6, x: 0, y: 3)
+        .offset(x: CGFloat(index) * 6)
         .zIndex(Double(index))
     }
 
@@ -586,6 +577,7 @@ private struct CardStackPreview: View {
 
 struct InteractionBar: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) var colorScheme
     let item: SocialFeedService.FeedItem
     let refreshToken: Int
     let onOpenComments: () -> Void
@@ -598,39 +590,36 @@ struct InteractionBar: View {
     @State private var voteErrorMessage: String?
 
     var body: some View {
-        HStack(spacing: 16) {
-            // Reddit-style vote pill: [↑] [score] [↓] — score sandwiched between
-            // the arrows so it's never read as a "downvote count" the way it
-            // was when sitting flush against the down arrow.
-            HStack(spacing: 6) {
+        HStack(spacing: 20) {
+            // Left: Votes
+            HStack(spacing: 12) {
                 voteButton(type: .upvote)
-
+                
                 Text("\(aggregate.score)")
-                    .font(.system(size: 14, weight: .bold))
+                    .font(.system(size: 13, weight: .bold))
                     .monospacedDigit()
-                    .frame(minWidth: 18)
-                    .foregroundStyle(aggregate.myVoteType != nil ? services.theme.accentColor : Color.secondary)
-
+                    .foregroundStyle(aggregate.myVoteType != nil ? Color.cyan : Color.primary.opacity(0.8))
+                
                 voteButton(type: .downvote)
             }
 
             Spacer()
 
+            // Right: Comments
             Button {
                 Haptics.lightImpact()
                 onOpenComments()
             } label: {
                 HStack(spacing: 6) {
                     Image(systemName: "bubble.right")
-                        .font(.system(size: 14, weight: .semibold))
+                        .font(.system(size: 13, weight: .semibold))
                     Text("\(commentCount)")
-                        .font(.system(size: 13, weight: .medium))
+                        .font(.system(size: 13, weight: .bold))
                 }
-                .foregroundStyle(Color.secondary)
+                .foregroundStyle(Color.secondary.opacity(0.8))
             }
             .buttonStyle(.plain)
         }
-        .padding(.top, 4)
         .task { await refresh() }
         .onChange(of: refreshToken) { _, _ in
             Task { await refresh() }
@@ -640,41 +629,18 @@ struct InteractionBar: View {
     private func voteButton(type: ReactionType) -> some View {
         let isActive = aggregate.myVoteType == type
         let symbol = type == .upvote ? "arrow.up" : "arrow.down"
-        // Active state follows the user's chosen accent in Themes so brand
-        // colour cascades through Social just like Dashboard / Browse.
-        let activeColor = services.theme.accentColor
+        let activeColor = Color.cyan
 
-        return Group {
-            if type == .upvote {
-                // Filled circle for the active upvote (matches mockup), outlined
-                // ring otherwise. Active arrow also bumps to .heavy + 1.05x so
-                // state isn't communicated by colour alone (a11y).
-                Image(systemName: symbol)
-                    .font(.system(size: 14, weight: isActive ? .heavy : .bold))
-                    .foregroundStyle(isActive ? .white : Color.secondary)
-                    .frame(width: 28, height: 28)
-                    .background(isActive ? activeColor : Color.clear)
-                    .clipShape(Circle())
-                    .overlay {
-                        if !isActive {
-                            Circle().stroke(Color.primary.opacity(0.1), lineWidth: 1)
-                        }
-                    }
-                    .scaleEffect(isActive ? 1.05 : 1.0)
-            } else {
-                Image(systemName: symbol)
-                    .font(.system(size: 14, weight: isActive ? .heavy : .bold))
-                    .foregroundStyle(isActive ? activeColor : Color.secondary)
-                    .frame(width: 28, height: 28)
-                    .scaleEffect(isActive ? 1.05 : 1.0)
+        return Image(systemName: symbol)
+            .font(.system(size: 14, weight: isActive ? .heavy : .semibold))
+            .foregroundStyle(isActive ? activeColor : Color.secondary.opacity(0.5))
+            .scaleEffect(isActive ? 1.1 : 1.0)
+            .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isActive)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                Haptics.mediumImpact()
+                Task { await toggleVote(type) }
             }
-        }
-        .animation(.easeOut(duration: 0.15), value: isActive)
-        .contentShape(Circle())
-        .onTapGesture {
-            Haptics.mediumImpact()
-            Task { await toggleVote(type) }
-        }
     }
 
     private func refresh() async {

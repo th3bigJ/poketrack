@@ -233,13 +233,31 @@ struct SocialRootView: View {
 
                 if services.socialAuth.isSignedIn {
                     if selectedTab == .feed {
-                        ChromeGlassCircleButton(accessibilityLabel: "New Post") {
-                            Haptics.lightImpact()
-                            isNewPostPresented = true
-                        } label: {
-                            Image(systemName: "plus")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(.primary)
+                        HStack(spacing: 12) {
+                            Menu {
+                                Picker("Feed Filter", selection: Bindable(services.socialFeed).selectedScope) {
+                                    Label("Friends", systemImage: "person.2").tag(SocialFeedService.FeedScope.following)
+                                    Label("Everyone", systemImage: "globe").tag(SocialFeedService.FeedScope.everyone)
+                                    Label("Mine", systemImage: "person").tag(SocialFeedService.FeedScope.mine)
+                                }
+                            } label: {
+                                ChromeGlassCircleButton(accessibilityLabel: "Filter Feed") {
+                                    // Menu action handled by label
+                                } label: {
+                                    Image(systemName: "line.3.horizontal.decrease.circle")
+                                        .font(.system(size: 17, weight: .medium))
+                                        .foregroundStyle(.primary)
+                                }
+                            }
+
+                            ChromeGlassCircleButton(accessibilityLabel: "New Post") {
+                                Haptics.lightImpact()
+                                isNewPostPresented = true
+                            } label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 17, weight: .medium))
+                                    .foregroundStyle(.primary)
+                            }
                         }
                     } else if selectedTab == .trades {
                         ChromeGlassCircleButton(accessibilityLabel: "Create trade") {

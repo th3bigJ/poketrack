@@ -5,6 +5,7 @@ struct DecksRootView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.bindrAccent) private var bindrAccent
     @Query(sort: \Deck.createdAt, order: .reverse) private var decks: [Deck]
 
     @State private var showCreateSheet = false
@@ -97,7 +98,7 @@ struct DecksRootView: View {
                         .font(.headline)
                         .padding(.horizontal, 24)
                         .padding(.vertical, 12)
-                        .background(Color.accentColor)
+                        .background(bindrAccent)
                         .foregroundStyle(.white)
                         .clipShape(Capsule())
                 }
@@ -125,7 +126,7 @@ struct DecksRootView: View {
                         .font(.headline)
                         .padding(.horizontal, 24)
                         .padding(.vertical, 12)
-                        .background(Color.accentColor)
+                        .background(bindrAccent)
                         .foregroundStyle(.white)
                         .clipShape(Capsule())
                 }

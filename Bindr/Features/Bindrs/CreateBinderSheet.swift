@@ -5,6 +5,7 @@ struct CreateBinderSheet: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.bindrAccent) private var bindrAccent
 
     private let layoutOptions: [BinderPageLayout] = [
         .fixed(rows: 2, columns: 2),
@@ -91,12 +92,12 @@ struct CreateBinderSheet: View {
                                     .font(.system(size: 13, weight: .medium))
                                     .frame(maxWidth: .infinity)
                                     .padding(.vertical, 12)
-                                    .background(layout == .freeScroll ? Color.accentColor.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
+                                    .background(layout == .freeScroll ? bindrAccent.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                                     .overlay {
                                         if layout == .freeScroll {
                                             RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.accentColor, lineWidth: 1)
+                                                .stroke(bindrAccent, lineWidth: 1)
                                         }
                                     }
                                 }
@@ -255,13 +256,13 @@ struct CreateBinderSheet: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
-            .background(isSelected ? Color.accentColor.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
-            .foregroundStyle(isSelected ? Color.accentColor : .primary)
+            .background(isSelected ? bindrAccent.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
+            .foregroundStyle(isSelected ? bindrAccent : .primary)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay {
                 if isSelected {
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.accentColor, lineWidth: 1)
+                        .stroke(bindrAccent, lineWidth: 1)
                 }
             }
         }

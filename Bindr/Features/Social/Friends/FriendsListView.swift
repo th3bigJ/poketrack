@@ -7,6 +7,7 @@ struct FriendsListView: View {
     }
 
     @Environment(AppServices.self) private var services
+    @Environment(\.bindrAccent) private var bindrAccent
 
     let onOpenSearch: () -> Void
     let onOpenQR: () -> Void
@@ -92,10 +93,10 @@ struct FriendsListView: View {
                     if let errorMessage {
                         Text(errorMessage)
                             .font(.system(size: 12))
-                            .foregroundStyle(Color(hex: "E05252"))
+                            .foregroundStyle(BindrPalette.alertRed)
                             .padding(14)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Color(hex: "E05252").opacity(0.15), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                            .background(BindrPalette.alertRed.opacity(0.15), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                 }
                 .padding(16)
@@ -135,7 +136,7 @@ struct FriendsListView: View {
                 HStack(spacing: 8) {
                     Image(systemName: "arrow.left.arrow.right.circle.fill")
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(Color(hex: "E8B84B"))
+                        .foregroundStyle(BindrPalette.binderGold)
                     Text("Select a friend below to start this trade.")
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundStyle(.primary)
@@ -143,10 +144,10 @@ struct FriendsListView: View {
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 10)
-                .background(Color(hex: "E8B84B").opacity(0.14), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .background(BindrPalette.binderGold.opacity(0.14), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .overlay {
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .stroke(Color(hex: "E8B84B").opacity(0.28), lineWidth: 1)
+                        .stroke(BindrPalette.binderGold.opacity(0.28), lineWidth: 1)
                 }
             }
         }
@@ -169,7 +170,7 @@ struct FriendsListView: View {
                         .foregroundStyle(selectedTab == tab ? Color.black : Color.secondary)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
-                        .background(selectedTab == tab ? Color.accentColor : Color(uiColor: .secondarySystemBackground), in: Capsule())
+                        .background(selectedTab == tab ? bindrAccent : Color(uiColor: .secondarySystemBackground), in: Capsule())
                         .overlay {
                             Capsule()
                                 .stroke(selectedTab == tab ? .clear : Color.primary.opacity(0.09), lineWidth: 1)
@@ -190,7 +191,7 @@ struct FriendsListView: View {
             TextField("Search trainers...", text: $searchText)
                 .font(.system(size: 13))
                 .foregroundStyle(Color.primary)
-                .tint(Color(hex: "E8B84B"))
+                .tint(BindrPalette.binderGold)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
         }
@@ -257,7 +258,7 @@ struct FriendsListView: View {
             HStack(spacing: 8) {
                 Image(systemName: "sparkles.rectangle.stack.fill")
                     .font(.system(size: 14, weight: .semibold))
-                    .foregroundStyle(Color(hex: "E8B84B"))
+                    .foregroundStyle(BindrPalette.binderGold)
                 Text(tradeSuggestionHeadline)
                     .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.primary)
@@ -268,10 +269,10 @@ struct FriendsListView: View {
                 } else {
                     Text("\(suggestedTradeFriends.count)")
                         .font(.system(size: 11, weight: .bold))
-                        .foregroundStyle(Color(hex: "E8B84B"))
+                        .foregroundStyle(BindrPalette.binderGold)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)
-                        .background(Color(hex: "E8B84B").opacity(0.16), in: Capsule())
+                        .background(BindrPalette.binderGold.opacity(0.16), in: Capsule())
                 }
             }
             Text(tradeSuggestionBody)
@@ -306,7 +307,7 @@ struct FriendsListView: View {
                                 Spacer(minLength: 0)
                                 Text("Select")
                                     .font(.system(size: 11, weight: .bold))
-                                    .foregroundStyle(Color(hex: "E8B84B"))
+                                    .foregroundStyle(BindrPalette.binderGold)
                             }
                         }
                         .buttonStyle(.plain)
@@ -318,7 +319,7 @@ struct FriendsListView: View {
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color(hex: "E8B84B").opacity(0.22), lineWidth: 1)
+                .stroke(BindrPalette.binderGold.opacity(0.22), lineWidth: 1)
         }
     }
 
@@ -368,7 +369,7 @@ struct FriendsListView: View {
                 .foregroundStyle(.black)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
-                .background(Color(hex: "E8B84B"), in: Capsule())
+                .background(BindrPalette.binderGold, in: Capsule())
 
                 Button {
                     Task { await respond(to: request.friendship.id, accepted: false) }
@@ -384,10 +385,10 @@ struct FriendsListView: View {
             }
         }
         .padding(14)
-        .background(Color(hex: "5B9CF6").opacity(0.12), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(BindrPalette.deckBlue.opacity(0.12), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color(hex: "5B9CF6").opacity(0.19), lineWidth: 1)
+                .stroke(BindrPalette.deckBlue.opacity(0.19), lineWidth: 1)
         }
     }
 
@@ -409,7 +410,7 @@ struct FriendsListView: View {
                 Spacer()
                 Text(buttonTitle)
                     .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(buttonTitle == "Following" || buttonTitle == "Pending" ? Color.secondary : Color(hex: "E8B84B"))
+                    .foregroundStyle(buttonTitle == "Following" || buttonTitle == "Pending" ? Color.secondary : BindrPalette.binderGold)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 6)
                     .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
@@ -434,7 +435,7 @@ struct FriendsListView: View {
     private func loadingCard(_ text: String) -> some View {
         HStack(spacing: 10) {
             ProgressView()
-                .tint(Color(hex: "E8B84B"))
+                .tint(BindrPalette.binderGold)
             Text(text)
                 .font(.system(size: 12))
                 .foregroundStyle(Color.secondary.opacity(0.7))

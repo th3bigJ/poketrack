@@ -2826,7 +2826,7 @@ private struct BrowseGridPriceText: View {
                             .foregroundStyle(.white)
                             .padding(.horizontal, 3)
                             .padding(.vertical, 1.5)
-                            .background(Color.accentColor, in: RoundedRectangle(cornerRadius: 3))
+                            .background(services.theme.accentColor, in: RoundedRectangle(cornerRadius: 3))
                     }
                     if usesAccentColor {
                         Text(priceLine)

@@ -44,6 +44,7 @@ private enum BinderPickerBrowseRoute: Hashable {
 
 struct BinderSlotPickerView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.bindrAccent) private var bindrAccent
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     @Environment(\.dismiss) private var dismiss
@@ -417,7 +418,7 @@ struct BinderSlotPickerView: View {
             HStack(spacing: 16) {
                 ZStack {
                     Circle()
-                        .fill(Color.accentColor)
+                        .fill(bindrAccent)
                         .frame(width: 32, height: 32)
                     Text("\(basket.count)")
                         .font(.subheadline.weight(.bold))
@@ -444,7 +445,7 @@ struct BinderSlotPickerView: View {
                         .font(.subheadline.weight(.semibold))
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)
-                        .background(Color.accentColor, in: Capsule())
+                        .background(bindrAccent, in: Capsule())
                         .foregroundStyle(.white)
                 }
                 .buttonStyle(.plain)
@@ -1109,6 +1110,8 @@ private struct BinderPickerCardCell: View {
     let gridOptions: BrowseGridOptions
     let isSelected: Bool
 
+    @Environment(\.bindrAccent) private var bindrAccent
+
     var body: some View {
         ZStack(alignment: .topTrailing) {
             CardGridCell(
@@ -1120,7 +1123,7 @@ private struct BinderPickerCardCell: View {
 
             Image(systemName: isSelected ? "checkmark.circle.fill" : (entry.isOwned ? "checkmark.circle.fill" : "circle"))
                 .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(isSelected ? Color.accentColor : (entry.isOwned ? .green : .white))
+                .foregroundStyle(isSelected ? bindrAccent : (entry.isOwned ? .green : .white))
                 .background(Circle().fill(isSelected || entry.isOwned ? .white : Color.black.opacity(0.18)))
                 .padding(6)
         }
@@ -1132,7 +1135,7 @@ private struct BinderPickerCardCell: View {
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .strokeBorder(
-                    isSelected ? Color.accentColor : Color.primary.opacity(0.06),
+                    isSelected ? bindrAccent : Color.primary.opacity(0.06),
                     lineWidth: isSelected ? 2 : 1
                 )
         }

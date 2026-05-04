@@ -21,6 +21,7 @@ extension View {
 }
 
 struct GlassCardModifier: ViewModifier {
+    @Environment(\.colorScheme) var colorScheme
     let cornerRadius: CGFloat
     let interactive: Bool
 
@@ -28,9 +29,10 @@ struct GlassCardModifier: ViewModifier {
         content
             .background {
                 if #available(iOS 26.0, *) {
+                    let base = Glass.clear.tint(nil)
                     RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                         .fill(.clear)
-                        .glassEffect(interactive ? .clear.tint(nil).interactive() : .clear.tint(nil), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+                        .glassEffect(interactive ? base.interactive() : base, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
                 } else {
                     RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                         .fill(.ultraThinMaterial)
@@ -38,7 +40,23 @@ struct GlassCardModifier: ViewModifier {
             }
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(Color.primary.opacity(0.06), lineWidth: 1)
+                    .stroke(Color.primary.opacity(colorScheme == .dark ? 0.04 : 0.08), lineWidth: 1)
+            }
+            .overlay {
+                // Subtle inner top highlight
+                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                    .stroke(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(colorScheme == .dark ? 0.12 : 0.4),
+                                .clear
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ),
+                        lineWidth: 1
+                    )
+                    .padding(0.5)
             }
     }
 }

@@ -808,7 +808,13 @@ struct RootView: View {
             )
             .environment(services)
         }
-        .tint(services.theme.accentColor)
+        // `.bindrTheme` injects the accent into both `\.bindrAccent` (read by
+        // `BindrPalette` consumers and any view using the new env-based
+        // approach) and SwiftUI's `\.tint` (read by Buttons, Toggles, etc.).
+        // Single source of truth replaces the prior split between
+        // `Color.accentColor` (asset, didn't track theme) and
+        // `services.theme.accentColor` scattered across 24 files.
+        .bindrTheme(accent: services.theme.accentColor)
     }
 
     @ViewBuilder

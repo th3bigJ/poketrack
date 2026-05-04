@@ -59,7 +59,6 @@ struct FeedView: View {
     /// Cluster IDs the user has tapped to expand. Persists for the life of the
     /// view so scrolling away and back doesn't collapse the user's choice.
     @State private var expandedClusterIDs: Set<String> = []
-    private let selectedScope: SocialFeedService.FeedScope = .everyone
 
     private var groupedItems: [GroupedFeedItem] {
         // Only show actual content posts (binders, pulls, etc) in the main Feed list.
@@ -187,6 +186,9 @@ struct FeedView: View {
                 }
             }
         }
+        .onChange(of: services.socialFeed.selectedScope) { _, _ in
+            Task { await refresh() }
+        }
         .task {
             await refresh()
         }
@@ -226,14 +228,30 @@ struct FeedView: View {
 
     private var feedList: some View {
         let rows = feedRows
+        let sections = groupRowsByDate(rows)
+        
         return ScrollView {
-            LazyVStack(spacing: 16) {
-                ForEach(rows) { row in
-                    rowView(row)
-                        .onAppear {
-                            guard row.id == rows.last?.id else { return }
-                            Task { await loadMore() }
+            LazyVStack(spacing: 16, pinnedViews: [.sectionHeaders]) {
+                ForEach(sections, id: \.title) { section in
+                    Section {
+                        ForEach(section.rows) { row in
+                            rowView(row)
+                                .onAppear {
+                                    guard row.id == rows.last?.id else { return }
+                                    Task { await loadMore() }
+                                }
                         }
+                    } header: {
+                        Text(section.title)
+                            .font(.system(size: 11, weight: .bold))
+                            .tracking(0.8)
+                            .foregroundStyle(.secondary.opacity(0.5))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top, 12)
+                            .padding(.bottom, 4)
+                            .padding(.horizontal, 4)
+                            .background(Color(uiColor: .systemBackground).opacity(0.01)) // For pinned hover
+                    }
                 }
 
                 if isLoadingMore {
@@ -253,6 +271,45 @@ struct FeedView: View {
             .padding(.bottom, 100)
         }
         .refreshable { await refresh() }
+    }
+
+    private struct FeedSection {
+        let title: String
+        let rows: [FeedRow]
+    }
+
+    private func groupRowsByDate(_ rows: [FeedRow]) -> [FeedSection] {
+        guard !rows.isEmpty else { return [] }
+        
+        var today: [FeedRow] = []
+        var yesterday: [FeedRow] = []
+        var earlier: [FeedRow] = []
+        
+        let calendar = Calendar.current
+        let now = Date()
+        
+        for row in rows {
+            let date: Date = {
+                switch row {
+                case .single(let g): return g.primary.createdAt
+                case .cluster(let c): return c.items.first?.primary.createdAt ?? now
+                }
+            }()
+            
+            if calendar.isDateInToday(date) {
+                today.append(row)
+            } else if calendar.isDateInYesterday(date) {
+                yesterday.append(row)
+            } else {
+                earlier.append(row)
+            }
+        }
+        
+        var sections: [FeedSection] = []
+        if !today.isEmpty { sections.append(FeedSection(title: "TODAY", rows: today)) }
+        if !yesterday.isEmpty { sections.append(FeedSection(title: "YESTERDAY", rows: yesterday)) }
+        if !earlier.isEmpty { sections.append(FeedSection(title: "EARLIER", rows: earlier)) }
+        return sections
     }
 
     @ViewBuilder
@@ -294,7 +351,7 @@ struct FeedView: View {
         isInitialLoading = true
         defer { isInitialLoading = false }
         do {
-            _ = try await services.socialFeed.fetchFeed(refresh: true, pageSize: 30, scope: selectedScope)
+            _ = try await services.socialFeed.fetchFeed(refresh: true, pageSize: 30, scope: services.socialFeed.selectedScope)
             services.socialFeed.clearUnreadState()
             services.socialPush.clearAppBadgeCount()
             errorMessage = nil
@@ -434,11 +491,7 @@ struct ConsolidatedFeedRow: View {
                 avatarStack
             }
             .padding(14)
-            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(tint.opacity(0.2), lineWidth: 1)
-            )
+            .glassCardStyle(cornerRadius: 14, interactive: false)
             .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         }
         .buttonStyle(.plain)
@@ -508,8 +561,8 @@ struct ShimmerCard: View {
                 Spacer(minLength: 0)
             }
 
-            // Content row: text column · card stack · type pill
-            HStack(alignment: .top, spacing: 12) {
+            // Content row: text column · card stack
+            HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .leading, spacing: 6) {
                     ShimmerFill(phase: phase, cornerRadius: 4)
                         .frame(maxWidth: .infinity)
@@ -521,13 +574,13 @@ struct ShimmerCard: View {
                         .frame(maxWidth: 140, alignment: .leading)
                         .frame(height: 11)
                 }
+                .padding(.leading, 16)
+                .padding(.trailing, 12)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
                 ShimmerFill(phase: phase, cornerRadius: 4)
                     .frame(width: 56, height: 80)
-
-                ShimmerFill(phase: phase, cornerRadius: 4)
-                    .frame(width: 44, height: 14)
+                    .padding(.trailing, 16)
             }
 
             // Vote bar
@@ -543,12 +596,7 @@ struct ShimmerCard: View {
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 12)
-        .background(Color(uiColor: .secondarySystemBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color.primary.opacity(0.06), lineWidth: 1)
-        }
+        .glassCardStyle(cornerRadius: 14, interactive: false)
         .onAppear {
             withAnimation(.linear(duration: 1.4).repeatForever(autoreverses: false)) {
                 phase = 1.3

@@ -26,6 +26,7 @@ struct LaunchWordmarkView: View {
     var onRevealComplete: () -> Void = {}
 
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.bindrAccent) private var bindrAccent
     @State private var animStates: [Bool] = [false, false, false, false, false]
     @State private var wholeWordAnim = false
     @State private var hasStartedAnimation = false
@@ -140,7 +141,7 @@ struct LaunchWordmarkView: View {
                                 .fill(Color(uiColor: .tertiarySystemFill))
                                 .frame(height: 8)
                             Capsule()
-                                .fill(Color.accentColor)
+                                .fill(bindrAccent)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .mask(alignment: .leading) {
                                     Rectangle()
@@ -246,6 +247,8 @@ struct LoadingScreen: View {
     let downloadedBytes: Int64
     let totalBytes: Int64
 
+    @Environment(\.bindrAccent) private var bindrAccent
+
     private var percentText: String {
         "\(Int((min(max(progress, 0), 1) * 100).rounded()))%"
     }
@@ -285,7 +288,7 @@ struct LoadingScreen: View {
                             .frame(height: 12)
 
                         Capsule()
-                            .fill(Color.accentColor)
+                            .fill(bindrAccent)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .mask(alignment: .leading) {
                                 Rectangle()

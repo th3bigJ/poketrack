@@ -191,6 +191,7 @@ struct DeckCardPickerView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.bindrAccent) private var bindrAccent
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
 
     let deck: Deck
@@ -733,7 +734,7 @@ struct DeckCardPickerView: View {
         if !basket.isEmpty {
             HStack(spacing: 16) {
                 ZStack {
-                    Circle().fill(Color.accentColor).frame(width: 32, height: 32)
+                    Circle().fill(bindrAccent).frame(width: 32, height: 32)
                     Text("\(basketTotalQuantity)")
                         .font(.subheadline.weight(.bold))
                         .foregroundStyle(.white)
@@ -757,7 +758,7 @@ struct DeckCardPickerView: View {
                         .font(.subheadline.weight(.semibold))
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)
-                        .background(Color.accentColor, in: Capsule())
+                        .background(bindrAccent, in: Capsule())
                         .foregroundStyle(.white)
                 }
                 .buttonStyle(.plain)
@@ -1386,6 +1387,8 @@ private struct DeckPickerCardCell: View {
     let isSelected: Bool
     let alreadyInDeck: Bool
 
+    @Environment(\.bindrAccent) private var bindrAccent
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             CardGridCell(
@@ -1399,7 +1402,7 @@ private struct DeckPickerCardCell: View {
                   ? "checkmark.circle.fill"
                   : (entry.isOwned ? "checkmark.circle.fill" : "circle"))
                 .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(isSelected ? Color.accentColor : (entry.isOwned ? .green : .white))
+                .foregroundStyle(isSelected ? bindrAccent : (entry.isOwned ? .green : .white))
                 .background(Circle().fill(isSelected || entry.isOwned ? .white : Color.black.opacity(0.18)))
                 .padding(6)
         }

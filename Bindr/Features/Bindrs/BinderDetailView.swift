@@ -11,6 +11,7 @@ struct BinderDetailView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.bindrAccent) private var bindrAccent
     @Bindable var binder: Binder
     @Query private var collectionItems: [CollectionItem]
 
@@ -659,7 +660,7 @@ struct BinderDetailView: View {
             RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .strokeBorder(
                     draggedSlotPosition != nil && draggedSlotPosition != position
-                        ? Color.accentColor.opacity(0.18)
+                        ? bindrAccent.opacity(0.18)
                         : Color.clear,
                     lineWidth: 1
                 )
@@ -1018,6 +1019,7 @@ struct BinderStylePickerSheet: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.bindrAccent) private var bindrAccent
     @Bindable var binder: Binder
     @State private var cardURLs: [URL?] = [nil, nil, nil]
     private let layoutOptions: [BinderPageLayout] = [
@@ -1074,12 +1076,12 @@ struct BinderStylePickerSheet: View {
                                     .font(.system(size: 13, weight: .medium))
                                     .frame(maxWidth: .infinity)
                                     .padding(.vertical, 12)
-                                    .background(layout.isFreeScroll ? Color.accentColor.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
+                                    .background(layout.isFreeScroll ? bindrAccent.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                                     .overlay {
                                         if layout.isFreeScroll {
                                             RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.accentColor, lineWidth: 1)
+                                                .stroke(bindrAccent, lineWidth: 1)
                                         }
                                     }
                                 }
@@ -1220,13 +1222,13 @@ struct BinderStylePickerSheet: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
-            .background(isSelected ? Color.accentColor.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
-            .foregroundStyle(isSelected ? Color.accentColor : .primary)
+            .background(isSelected ? bindrAccent.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
+            .foregroundStyle(isSelected ? bindrAccent : .primary)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .overlay {
                 if isSelected {
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.accentColor, lineWidth: 1)
+                        .stroke(bindrAccent, lineWidth: 1)
                 }
             }
         }
