@@ -2041,6 +2041,62 @@ struct BrowseView: View {
         ImagePrefetcher.shared.prefetchCardWindow(inlineDetailCards, startingAt: 0, count: 24)
         syncFilterMenuState(usingCatalogFeed: false)
     }
+
+    private func setProgressBar(for set: TCGSet, cards: [Card]) -> some View {
+        let total = cards.count
+        let ownedCardIDs = Set(collectionItems.compactMap { item in
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
+        })
+        let owned = cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+        let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
+        
+        return VStack(spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("Set Completion")
+                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .foregroundStyle(.secondary)
+                
+                Spacer()
+                
+                Group {
+                    Text("\(owned)")
+                        .foregroundStyle(services.theme.accentColor)
+                        .fontWeight(.black)
+                    + Text(" / \(total)")
+                        .foregroundStyle(.secondary)
+                        .fontWeight(.bold)
+                }
+                .font(.system(size: 14, design: .monospaced))
+            }
+            
+            progressCapsule(progress: progress)
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
+        .background {
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.1 : 0.05))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
+                }
+                .padding(.horizontal, 10)
+        }
+    }
+
+    private func progressCapsule(progress: CGFloat) -> some View {
+        Capsule()
+            .fill(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.1))
+            .frame(height: 8)
+            .overlay(alignment: .leading) {
+                services.theme.accentColor
+                    .frame(maxWidth: .infinity)
+                    .scaleEffect(x: max(progress, 0.005), y: 1.0, anchor: .leading)
+                    .clipShape(Capsule())
+                    .shadow(color: services.theme.accentColor.opacity(0.4), radius: 3, x: 0, y: 1)
+            }
+    }
 }
 
 private enum BrowseQuickAddAction {
@@ -2257,62 +2313,6 @@ private struct BrowseSetsTabContent: View {
         return title.isEmpty ? "Other" : title
     }
 
-    private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
-        let collected = uniqueCollectedCountBySetCode[set.setCode.lowercased()] ?? 0
-        return (collected, set.cardCountTotal)
-    }
-
-    private func setProgressBar(for set: TCGSet, cards: [Card]) -> some View {
-        let total = cards.count
-        let ownedCardIDs = Set(collectionItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-        let owned = cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
-        let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
-        
-        return VStack(spacing: 8) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("Set Completion")
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
-                    .foregroundStyle(.secondary)
-                
-                Spacer()
-                
-                Group {
-                    Text("\(owned)")
-                        .foregroundStyle(services.theme.accentColor)
-                        .fontWeight(.black)
-                    + Text(" / \(total)")
-                        .foregroundStyle(.secondary)
-                        .fontWeight(.bold)
-                }
-                .font(.system(size: 14, design: .monospaced))
-            }
-            
-            Capsule()
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.1))
-                .frame(height: 8)
-                .overlay(alignment: .leading) {
-                    services.theme.accentColor
-                        .frame(maxWidth: .infinity)
-                        .scaleEffect(x: max(progress, 0.005), y: 1.0, anchor: .leading)
-                        .clipShape(Capsule())
-                        .shadow(color: services.theme.accentColor.opacity(0.4), radius: 3, x: 0, y: 1)
-                }
-        }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
-        .background {
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.1 : 0.05))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 22, style: .continuous)
-                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
-                }
-                .padding(.horizontal, 10)
-        }
-    }
 
     private func setMarketValueTaskID(for set: TCGSet) -> String {
         "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())"
@@ -2427,6 +2427,52 @@ private struct BrowseSetsTabContent: View {
         }
         let setCode = String(trimmed[..<separatorIndex]).lowercased()
         return (setCode, trimmed.lowercased())
+    }
+
+    private func browseSeriesTitle(for set: TCGSet) -> String {
+        switch services.brandSettings.selectedCatalogBrand {
+        case .pokemon:
+            let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
+            return (title?.isEmpty == false ? title! : "Other")
+        case .onePiece:
+            return normalizedOnePieceSeriesTitle(set.seriesName)
+        }
+    }
+
+    private func sortSetsNewestFirst(_ sets: [TCGSet]) -> [TCGSet] {
+        sets.sorted { lhs, rhs in
+            let ld = lhs.releaseDate ?? ""
+            let rd = rhs.releaseDate ?? ""
+            if ld != rd { return ld > rd }
+            return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
+        }
+    }
+
+    private func normalizedOnePieceSeriesTitle(_ raw: String?) -> String {
+        let title = raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let lower = title.lowercased()
+        if lower.contains("booster pack") { return "Booster Pack" }
+        if lower.contains("extra booster") { return "Extra Boosters" }
+        if lower.contains("starter") { return "Starter deck" }
+        if lower.contains("premium booster") { return "Premium Booster" }
+        if lower.contains("promo") { return "Promo" }
+        return title.isEmpty ? "Other" : title
+    }
+
+    private func onePieceSeriesOrderIndex(_ title: String) -> Int {
+        switch title {
+        case "Booster Pack": return 0
+        case "Extra Boosters": return 1
+        case "Starter deck": return 2
+        case "Premium Booster": return 3
+        case "Promo": return 4
+        default: return 5
+        }
+    }
+
+    private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
+        let collected = uniqueCollectedCountBySetCode[set.setCode.lowercased()] ?? 0
+        return (collected, set.cardCountTotal)
     }
 
     private func prefetchSetLogos() {
