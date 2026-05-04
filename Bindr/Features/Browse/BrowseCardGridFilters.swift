@@ -149,26 +149,66 @@ struct ProductTypeFilterOption: Identifiable, Equatable, Sendable {
 }
 
 let productTypeFilterOptions: [ProductTypeFilterOption] = [
-    ProductTypeFilterOption(id: "battlebox", title: "battlebox", rawTypes: ["battlebox"]),
-    ProductTypeFilterOption(id: "blisterpack", title: "blisterpack", rawTypes: ["blisterpack"]),
-    ProductTypeFilterOption(id: "boosterbox", title: "boosterbox", rawTypes: ["boosterbox"]),
-    ProductTypeFilterOption(id: "boosterpack", title: "boosterpack", rawTypes: ["boosterpack"]),
+    ProductTypeFilterOption(
+        id: "battlebox",
+        title: "Battle Box",
+        rawTypes: ["battlebox", "buildbattlebox", "build&battlebox", "buildbattle"]
+    ),
+    ProductTypeFilterOption(
+        id: "blisterpack",
+        title: "Blister Pack",
+        rawTypes: ["blisterpack", "blister", "3packblister", "checklanepack"]
+    ),
+    ProductTypeFilterOption(
+        id: "boosterbox",
+        title: "Booster Box",
+        rawTypes: ["boosterbox", "boosterdisplay", "boosterbundle"]
+    ),
+    ProductTypeFilterOption(
+        id: "boosterpack",
+        title: "Booster Pack",
+        rawTypes: ["boosterpack", "booster", "sleevedbooster"]
+    ),
     ProductTypeFilterOption(
         id: "collections",
         title: "Collections",
-        rawTypes: ["collectionbox", "collectionchest"]
+        rawTypes: ["collectionbox", "collectionchest", "collection", "box", "case", "premiumcollection"]
     ),
-    ProductTypeFilterOption(id: "deck", title: "deck", rawTypes: ["deck"]),
-    ProductTypeFilterOption(id: "elitetrainerbox", title: "elitetrainerbox", rawTypes: ["elitetrainerbox"]),
-    ProductTypeFilterOption(id: "miscellaneous", title: "miscellaneous", rawTypes: ["miscellaneous"]),
-    ProductTypeFilterOption(id: "pincollection", title: "pincollection", rawTypes: ["pincollection"]),
+    ProductTypeFilterOption(
+        id: "deck",
+        title: "Deck",
+        rawTypes: ["deck", "starterdeck", "themedeck", "vbattledeck"]
+    ),
+    ProductTypeFilterOption(
+        id: "elitetrainerbox",
+        title: "Elite Trainer Box",
+        rawTypes: ["elitetrainerbox", "etb", "pokemoncenterelitetrainerbox"]
+    ),
+    ProductTypeFilterOption(
+        id: "miscellaneous",
+        title: "Miscellaneous",
+        rawTypes: ["miscellaneous", "misc", "accessories", "other"]
+    ),
+    ProductTypeFilterOption(
+        id: "pincollection",
+        title: "Pin Collection",
+        rawTypes: ["pincollection", "pinbox"]
+    ),
     ProductTypeFilterOption(
         id: "special",
         title: "Special",
-        rawTypes: ["specialbox", "specialpack", "specialset"]
+        rawTypes: ["specialbox", "specialpack", "specialset", "celebrations", "anniversary"]
     ),
-    ProductTypeFilterOption(id: "starterset", title: "starterset", rawTypes: ["starterset"]),
-    ProductTypeFilterOption(id: "tin", title: "tin", rawTypes: ["tin"])
+    ProductTypeFilterOption(
+        id: "starterset",
+        title: "Starter Set",
+        rawTypes: ["starterset", "starterpack"]
+    ),
+    ProductTypeFilterOption(
+        id: "tin",
+        title: "Tin",
+        rawTypes: ["tin", "stackingtin", "pokeballtin"]
+    )
 ]
 
 private let productTypeFilterOptionByID: [String: ProductTypeFilterOption] = Dictionary(

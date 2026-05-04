@@ -295,7 +295,7 @@ struct CollectView: View {
     }
 
     private var searchPlaceholder: String {
-        let itemLabel = selectedContentTypeTab == .cards ? "cards" : "sealed"
+        let itemLabel = selectedContentTypeTab == .cards ? "cards" : "product"
         switch selectedSegment {
         case .collection:
             return "Search \(formattedActiveFilteredCount) \(itemLabel) in collection"
@@ -317,7 +317,7 @@ struct CollectView: View {
     private var contentTypeChips: some View {
         HStack(spacing: 6) {
             contentTypeChip(for: .cards, icon: "square.stack.3d.up")
-            contentTypeChip(for: .sealed, icon: "shippingbox")
+            contentTypeChip(for: .products, icon: "shippingbox")
             if !activeQueryBinding.wrappedValue.isEmpty {
                 Button {
                     activeQueryBinding.wrappedValue = ""
@@ -529,7 +529,7 @@ struct CollectView: View {
         }
         let trimmedQuery = collectionQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         let hasCardFieldFilters = collectionFilters.hasActiveCardFieldFilters
-        let hasSealedFieldFilters = collectionFilters.hasActiveSealedFieldFilters
+        let hasSealedFieldFilters = collectionFilters.hasActiveProductFieldFilters
         let needsCardFiltering = hasCardFieldFilters || !trimmedQuery.isEmpty
         let filteredIDs: Set<String> = {
             guard needsCardFiltering else { return [] }
@@ -545,7 +545,7 @@ struct CollectView: View {
             items = items.filter { item in
                 if let product = sealedProduct(for: item) {
                     guard hasCardFieldFilters == false else { return false }
-                    guard sealedProductMatchesSelectedTypes(product.type, selectedOptionIDs: collectionFilters.sealedProductTypes) else {
+                    guard productMatchesSelectedTypes(product.type, selectedOptionIDs: collectionFilters.productTypes) else {
                         return false
                     }
                     guard !normalizedQuery.isEmpty else { return true }
@@ -561,7 +561,7 @@ struct CollectView: View {
     private var filteredCollectionItemsForSelectedType: [CollectionItem] {
         filteredCollectionItems.filter { item in
             let isSealed = sealedProduct(for: item) != nil
-            return selectedContentTypeTab == .sealed ? isSealed : !isSealed
+            return selectedContentTypeTab == .products ? isSealed : !isSealed
         }
     }
 
@@ -811,7 +811,7 @@ struct CollectView: View {
         var items = visibleWishlistItems
         let trimmedQuery = wishlistQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         let hasCardFieldFilters = wishlistFilters.hasActiveCardFieldFilters
-        let hasSealedFieldFilters = wishlistFilters.hasActiveSealedFieldFilters
+        let hasSealedFieldFilters = wishlistFilters.hasActiveProductFieldFilters
         let needsCardFiltering = hasCardFieldFilters || !trimmedQuery.isEmpty
         let filteredIDs: Set<String> = {
             guard needsCardFiltering else { return [] }
@@ -826,7 +826,7 @@ struct CollectView: View {
             items = items.filter { item in
                 if let product = sealedProduct(for: item) {
                     guard hasCardFieldFilters == false else { return false }
-                    guard sealedProductMatchesSelectedTypes(product.type, selectedOptionIDs: wishlistFilters.sealedProductTypes) else {
+                    guard productMatchesSelectedTypes(product.type, selectedOptionIDs: wishlistFilters.productTypes) else {
                         return false
                     }
                     guard !normalizedQuery.isEmpty else { return true }
@@ -842,7 +842,7 @@ struct CollectView: View {
     private var filteredWishlistItemsForSelectedType: [WishlistItem] {
         filteredWishlistItems.filter { item in
             let isSealed = sealedProduct(for: item) != nil
-            return selectedContentTypeTab == .sealed ? isSealed : !isSealed
+            return selectedContentTypeTab == .products ? isSealed : !isSealed
         }
     }
 
@@ -1294,14 +1294,14 @@ enum CollectSegment: String, CaseIterable, Identifiable {
 
 enum CollectContentTypeTab: String, CaseIterable, Identifiable {
     case cards
-    case sealed
+    case products
 
     var id: String { rawValue }
 
     var title: String {
         switch self {
         case .cards: return "Cards"
-        case .sealed: return "Sealed"
+        case .products: return "Products"
         }
     }
 }

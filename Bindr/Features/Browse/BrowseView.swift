@@ -1036,7 +1036,14 @@ struct BrowseView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         } else {
-            EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: 12) { card in
+            VStack(spacing: 0) {
+                if case .set(let set) = route {
+                    setProgressBar(for: set, cards: inlineDetailCards)
+                        .padding(.top, 4)
+                        .padding(.bottom, 12)
+                }
+                
+                EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: 12) { card in
                 let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
                 Button {
                     if isMultiSelectActive {
@@ -1088,6 +1095,7 @@ struct BrowseView: View {
                 .onAppear {
                     ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                 }
+            }
             }
             .padding(.horizontal, 16)
             .padding(.bottom, isMultiSelectActive && !multiSelectedCardIDs.isEmpty ? 96 : 16)
@@ -2254,6 +2262,58 @@ private struct BrowseSetsTabContent: View {
         return (collected, set.cardCountTotal)
     }
 
+    private func setProgressBar(for set: TCGSet, cards: [Card]) -> some View {
+        let total = cards.count
+        let ownedCardIDs = Set(collectionItems.compactMap { item in
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
+        })
+        let owned = cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+        let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
+        
+        return VStack(spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("Set Completion")
+                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .foregroundStyle(.secondary)
+                
+                Spacer()
+                
+                Group {
+                    Text("\(owned)")
+                        .foregroundStyle(services.theme.accentColor)
+                        .fontWeight(.black)
+                    + Text(" / \(total)")
+                        .foregroundStyle(.secondary)
+                        .fontWeight(.bold)
+                }
+                .font(.system(size: 14, design: .monospaced))
+            }
+            
+            Capsule()
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.1))
+                .frame(height: 8)
+                .overlay(alignment: .leading) {
+                    services.theme.accentColor
+                        .frame(maxWidth: .infinity)
+                        .scaleEffect(x: max(progress, 0.005), y: 1.0, anchor: .leading)
+                        .clipShape(Capsule())
+                        .shadow(color: services.theme.accentColor.opacity(0.4), radius: 3, x: 0, y: 1)
+                }
+        }
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
+        .background {
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.1 : 0.05))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
+                }
+                .padding(.horizontal, 10)
+        }
+    }
+
     private func setMarketValueTaskID(for set: TCGSet) -> String {
         "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())"
     }
@@ -3037,8 +3097,8 @@ struct SetCardsView: View {
         
         return VStack(spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
-                Text("Collection Completion")
-                    .font(.system(size: 12, weight: .bold, design: .rounded))
+                Text("Set Completion")
+                    .font(.system(size: 13, weight: .bold, design: .rounded))
                     .foregroundStyle(.secondary)
                 
                 Spacer()
@@ -3046,29 +3106,35 @@ struct SetCardsView: View {
                 Group {
                     Text("\(owned)")
                         .foregroundStyle(services.theme.accentColor)
+                        .fontWeight(.black)
                     + Text(" / \(total)")
                         .foregroundStyle(.secondary)
+                        .fontWeight(.bold)
                 }
-                .font(.system(size: 13, weight: .black, design: .monospaced))
+                .font(.system(size: 14, design: .monospaced))
             }
             
             Capsule()
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
-                .frame(height: 6)
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.1))
+                .frame(height: 8)
                 .overlay(alignment: .leading) {
                     services.theme.accentColor
                         .frame(maxWidth: .infinity)
                         .scaleEffect(x: max(progress, 0.005), y: 1.0, anchor: .leading)
                         .clipShape(Capsule())
-                        .shadow(color: services.theme.accentColor.opacity(0.3), radius: 2, x: 0, y: 1)
+                        .shadow(color: services.theme.accentColor.opacity(0.4), radius: 3, x: 0, y: 1)
                 }
         }
-        .padding(.horizontal, 22)
-        .padding(.vertical, 12)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 16)
         .background {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.025))
-                .padding(.horizontal, 12)
+            RoundedRectangle(cornerRadius: 22, style: .continuous)
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.1 : 0.05))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
+                }
+                .padding(.horizontal, 10)
         }
     }
 
@@ -3078,12 +3144,13 @@ struct SetCardsView: View {
                 if isLoading {
                     ProgressView().padding()
                 } else {
-                    VStack(spacing: 12) {
-                        BrowseInlineSearchField(title: "Search \(cards.count) cards in set", text: $query)
-                            .padding(.horizontal)
-                            .padding(.top, 2)
-                        
-                        setProgressBar
+                        VStack(spacing: 12) {
+                            BrowseInlineSearchField(title: "Search \(cards.count) cards in set", text: $query)
+                                .padding(.horizontal)
+                                .padding(.top, 2)
+                            
+                            setProgressBar
+                                .padding(.bottom, 4)
                         if filteredCards.isEmpty {
                             ContentUnavailableView(
                                 "No matching cards",

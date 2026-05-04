@@ -357,12 +357,12 @@ final class BrowseFiltersSettings {
         static let cardsFiltersJSON = "browseFiltersCardsJSON"
         static let setsFiltersJSON = "browseFiltersSetsJSON"
         static let pokemonFiltersJSON = "browseFiltersPokemonJSON"
-        static let sealedFiltersJSON = "browseFiltersSealedJSON"
+        static let productsFiltersJSON = "browseFiltersProductsJSON"
         static let cardsInlineFiltersJSON = "browseInlineFiltersCardsJSON"
         static let setsInlineFiltersJSON = "browseInlineFiltersSetsJSON"
         static let pokemonInlineFiltersJSON = "browseInlineFiltersPokemonJSON"
-        static let sealedInlineFiltersJSON = "browseInlineFiltersSealedJSON"
-        static let sealedGridOptionsJSON = "browseGridOptionsSealedJSON"
+        static let productsInlineFiltersJSON = "browseInlineFiltersProductsJSON"
+        static let productsGridOptionsJSON = "browseGridOptionsProductsJSON"
     }
 
     var cardsFilters: BrowseCardGridFilters {
@@ -386,10 +386,10 @@ final class BrowseFiltersSettings {
         }
     }
 
-    var sealedFilters: BrowseCardGridFilters {
+    var productsFilters: BrowseCardGridFilters {
         didSet {
-            guard sealedFilters != oldValue else { return }
-            saveBrowseFilters(sealedFilters, key: Keys.sealedFiltersJSON)
+            guard productsFilters != oldValue else { return }
+            saveBrowseFilters(productsFilters, key: Keys.productsFiltersJSON)
         }
     }
 
@@ -414,23 +414,23 @@ final class BrowseFiltersSettings {
         }
     }
 
-    var sealedInlineFilters: BrowseCardGridFilters {
+    var productsInlineFilters: BrowseCardGridFilters {
         didSet {
-            guard sealedInlineFilters != oldValue else { return }
-            saveBrowseFilters(sealedInlineFilters, key: Keys.sealedInlineFiltersJSON)
+            guard productsInlineFilters != oldValue else { return }
+            saveBrowseFilters(productsInlineFilters, key: Keys.productsInlineFiltersJSON)
         }
     }
 
-    /// Sealed browse has dedicated grid options so columns/toggles don't affect cards/sets/pokemon.
-    var sealedGridOptions: BrowseGridOptions {
+    /// Product browse has dedicated grid options so columns/toggles don't affect cards/sets/pokemon.
+    var productsGridOptions: BrowseGridOptions {
         didSet {
-            let sanitized = Self.sanitizeGridOptions(sealedGridOptions)
-            if sanitized != sealedGridOptions {
-                sealedGridOptions = sanitized
+            let sanitized = Self.sanitizeGridOptions(productsGridOptions)
+            if sanitized != productsGridOptions {
+                productsGridOptions = sanitized
                 return
             }
-            guard sealedGridOptions != oldValue else { return }
-            saveSealedGridOptions(sealedGridOptions)
+            guard productsGridOptions != oldValue else { return }
+            saveProductsGridOptions(productsGridOptions)
         }
     }
 
@@ -438,18 +438,18 @@ final class BrowseFiltersSettings {
         cardsFilters = Self.loadBrowseFilters(key: Keys.cardsFiltersJSON)
         setsFilters = Self.loadBrowseFilters(key: Keys.setsFiltersJSON)
         pokemonFilters = Self.loadBrowseFilters(key: Keys.pokemonFiltersJSON)
-        sealedFilters = Self.loadBrowseFilters(key: Keys.sealedFiltersJSON)
+        productsFilters = Self.loadBrowseFilters(key: Keys.productsFiltersJSON)
         cardsInlineFilters = Self.loadBrowseFilters(key: Keys.cardsInlineFiltersJSON)
         setsInlineFilters = Self.loadBrowseFilters(key: Keys.setsInlineFiltersJSON)
         pokemonInlineFilters = Self.loadBrowseFilters(key: Keys.pokemonInlineFiltersJSON)
-        sealedInlineFilters = Self.loadBrowseFilters(key: Keys.sealedInlineFiltersJSON)
-        sealedGridOptions = Self.loadSealedGridOptions()
+        productsInlineFilters = Self.loadBrowseFilters(key: Keys.productsInlineFiltersJSON)
+        productsGridOptions = Self.loadProductsGridOptions()
     }
 
     private static func loadBrowseFilters(key: String) -> BrowseCardGridFilters {
         if let decoded = decodeDefaultsJSON(BrowseCardGridFilters.self, key: key) {
             var sanitized = sanitizeBrowseFilters(decoded)
-            if (key == Keys.sealedFiltersJSON || key == Keys.sealedInlineFiltersJSON),
+            if (key == Keys.productsFiltersJSON || key == Keys.productsInlineFiltersJSON),
                sanitized.sortBy == .random {
                 sanitized.sortBy = .newestSet
             }
@@ -477,15 +477,15 @@ final class BrowseFiltersSettings {
         switch key {
         case Keys.setsFiltersJSON, Keys.setsInlineFiltersJSON:
             return .cardNumber
-        case Keys.pokemonFiltersJSON, Keys.pokemonInlineFiltersJSON, Keys.sealedFiltersJSON, Keys.sealedInlineFiltersJSON:
+        case Keys.pokemonFiltersJSON, Keys.pokemonInlineFiltersJSON, Keys.productsFiltersJSON, Keys.productsInlineFiltersJSON:
             return .newestSet
         default:
             return .random
         }
     }
 
-    private static func loadSealedGridOptions() -> BrowseGridOptions {
-        if let decoded = decodeDefaultsJSON(BrowseGridOptions.self, key: Keys.sealedGridOptionsJSON) {
+    private static func loadProductsGridOptions() -> BrowseGridOptions {
+        if let decoded = decodeDefaultsJSON(BrowseGridOptions.self, key: Keys.productsGridOptionsJSON) {
             return sanitizeGridOptions(decoded)
         }
         var defaults = BrowseGridOptions()
@@ -493,9 +493,9 @@ final class BrowseFiltersSettings {
         return sanitizeGridOptions(defaults)
     }
 
-    private func saveSealedGridOptions(_ options: BrowseGridOptions) {
+    private func saveProductsGridOptions(_ options: BrowseGridOptions) {
         let sanitized = Self.sanitizeGridOptions(options)
-        encodeDefaultsJSON(sanitized, key: Keys.sealedGridOptionsJSON)
+        encodeDefaultsJSON(sanitized, key: Keys.productsGridOptionsJSON)
     }
 
     private static func sanitizeGridOptions(_ options: BrowseGridOptions) -> BrowseGridOptions {

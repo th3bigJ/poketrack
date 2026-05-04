@@ -165,7 +165,7 @@ struct RootView: View {
         selectedTab == .browse
             && browseNavigationPath.isEmpty
             && !isSearchExperiencePresented
-            && (browseHomeTab == .cards || browseHomeTab == .sealed || browseInlineDetailRoute != nil)
+            && (browseHomeTab == .cards || browseHomeTab == .products || browseInlineDetailRoute != nil)
     }
 
     private var isCollectFilterContextActive: Bool {
@@ -249,8 +249,8 @@ struct RootView: View {
     }
 
     private var activeBrowseGridOptionsBinding: Binding<BrowseGridOptions> {
-        if browseHomeTab == .sealed, browseInlineDetailRoute == nil {
-            return $browseFilters.sealedGridOptions
+        if browseHomeTab == .products, browseInlineDetailRoute == nil {
+            return $browseFilters.productsGridOptions
         }
         return sharedBrowseGridOptionsBinding
     }
@@ -263,8 +263,8 @@ struct RootView: View {
             return $browseFilters.setsFilters
         case .pokemon:
             return $browseFilters.pokemonFilters
-        case .sealed:
-            return $browseFilters.sealedFilters
+        case .products:
+            return $browseFilters.productsFilters
         }
     }
 
@@ -276,8 +276,8 @@ struct RootView: View {
             return $browseFilters.setsInlineFilters
         case .pokemon:
             return $browseFilters.pokemonInlineFilters
-        case .sealed:
-            return $browseFilters.sealedInlineFilters
+        case .products:
+            return $browseFilters.productsInlineFilters
         }
     }
 
@@ -456,7 +456,7 @@ struct RootView: View {
                             }, onOpenSealedProducts: {
                                 collectionNavigationPath = NavigationPath()
                                 collectSegment = .collection
-                                collectContentTypeTab = .sealed
+                                collectContentTypeTab = .products
                                 selectedTab = .collect
                             }, onOpenWishlist: {
                                 collectionNavigationPath = NavigationPath()
@@ -707,13 +707,13 @@ struct RootView: View {
             }
         }
         .onChange(of: browseHomeTab) { _, newValue in
-            let supportsMultiSelect = newValue == .cards || newValue == .sealed || browseInlineDetailRoute != nil
+            let supportsMultiSelect = newValue == .cards || newValue == .products || browseInlineDetailRoute != nil
             if !supportsMultiSelect {
                 resetBrowseMultiSelectState()
             }
         }
         .onChange(of: browseInlineDetailRoute) { _, newValue in
-            if newValue == nil && browseHomeTab != .cards && browseHomeTab != .sealed {
+            if newValue == nil && browseHomeTab != .cards && browseHomeTab != .products {
                 resetBrowseMultiSelectState()
             }
         }
@@ -742,20 +742,11 @@ struct RootView: View {
             }
         }
         .onOpenURL { url in
-            guard url.scheme?.lowercased() == "bindr" else { return }
-            services.socialPush.queueDeepLink(url: url)
-            selectedTab = .social
-            Task {
-                await services.socialAuth.restoreSession()
-            }
+            handleSocialDeepLink(url)
         }
         .onChange(of: services.socialPush.queuedDeepLinkURL) { _, queuedURL in
             guard let queuedURL else { return }
-            guard queuedURL.scheme?.lowercased() == "bindr" else { return }
-            selectedTab = .social
-            Task {
-                await services.socialAuth.restoreSession()
-            }
+            handleSocialDeepLink(queuedURL)
         }
         .sheet(item: $selectedCardPresentation) { ctx in
             let showTradeAction = selectedTab == .collect
@@ -882,9 +873,9 @@ struct RootView: View {
 
     @ViewBuilder
     private var collectFilterMenuContent: some View {
-        let showSealedProductTypeFilter = collectContentTypeTab == .sealed
+        let showSealedProductTypeFilter = collectContentTypeTab == .products
         let collectConfig = showSealedProductTypeFilter
-            ? FilterMenuConfig.sealed
+            ? FilterMenuConfig.products
             : FilterMenuConfig(
                 showAcquiredDateSort: true,
                 showRandomSort: false,
@@ -908,7 +899,7 @@ struct RootView: View {
 
     @ViewBuilder
     private var browseFilterMenuContent: some View {
-        let isSealedTab = browseHomeTab == .sealed
+        let isSealedTab = browseHomeTab == .products
         let defaultSortBy: BrowseCardGridSortOption = {
             if let route = browseInlineDetailRoute {
                 switch route {
@@ -921,7 +912,7 @@ struct RootView: View {
             switch browseHomeTab {
             case .sets:
                 return .cardNumber
-            case .pokemon, .sealed:
+            case .pokemon, .products:
                 return .newestSet
             case .cards:
                 return .random
@@ -937,8 +928,8 @@ struct RootView: View {
             rarityOptions: activeBrowseFilterRarityOptions,
             trainerTypeOptions: activeBrowseFilterTrainerTypeOptions,
             isAllBrands: false,
-            gridOptions: isSealedTab ? $browseFilters.sealedGridOptions : nil,
-            config: isSealedTab ? .sealed : browseConfig
+            gridOptions: isSealedTab ? $browseFilters.productsGridOptions : nil,
+            config: isSealedTab ? .products : browseConfig
         )
     }
 
@@ -969,6 +960,17 @@ struct RootView: View {
             services.socialPush.queueDeepLink(url: url)
         }
         selectedTab = .social
+    }
+
+    private func handleSocialDeepLink(_ url: URL) {
+        guard url.scheme?.lowercased() == "bindr" else { return }
+        if services.socialPush.queuedDeepLinkURL != url {
+            services.socialPush.queueDeepLink(url: url)
+        }
+        selectedTab = .social
+        Task {
+            await services.socialAuth.restoreSession()
+        }
     }
 
 }
