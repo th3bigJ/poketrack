@@ -160,6 +160,7 @@ private final class ProgressiveImageLoader {
 struct ProgressiveAsyncImage<Placeholder: View>: View {
     let lowResURL: URL?
     let highResURL: URL?
+    let onImageLoaded: ((UIImage) -> Void)?
     let placeholder: () -> Placeholder
 
     @State private var loader = ProgressiveImageLoader()
@@ -167,10 +168,12 @@ struct ProgressiveAsyncImage<Placeholder: View>: View {
     init(
         lowResURL: URL?,
         highResURL: URL? = nil,
+        onImageLoaded: ((UIImage) -> Void)? = nil,
         @ViewBuilder placeholder: @escaping () -> Placeholder
     ) {
         self.lowResURL = lowResURL
         self.highResURL = highResURL
+        self.onImageLoaded = onImageLoaded
         self.placeholder = placeholder
     }
 
@@ -185,12 +188,14 @@ struct ProgressiveAsyncImage<Placeholder: View>: View {
                     .resizable()
                     .scaledToFit()
                     .transition(.opacity.animation(.easeOut(duration: 0.2)))
+                    .onAppear { onImageLoaded?(image) }
 
             case .highReady(let image):
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
                     .transition(.opacity.animation(.easeInOut(duration: 0.25)))
+                    .onAppear { onImageLoaded?(image) }
             case .failed:
                 placeholder()
             }

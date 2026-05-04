@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import UIKit
 
 struct CardBrowseDetailView: View {
     @Environment(AppServices.self) private var services
@@ -122,6 +123,8 @@ private struct CardBrowseDetailPage: View {
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var imageAppeared = false
+    @State private var extractedAuraColors: [Color] = []
+    @State private var auraSourceImageArea: CGFloat = 0
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
@@ -236,11 +239,7 @@ private struct CardBrowseDetailPage: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                cardImage
-                    .padding(.top, 20)
-                    .padding(.horizontal, 6)
-
-                cardMetaRow
+                cardHeroSection
 
                 CardPricingPanel(card: card)
                 recentSoldOnEbayButton
@@ -262,6 +261,8 @@ private struct CardBrowseDetailPage: View {
         .scrollContentBackground(.hidden)
         .scrollIndicators(.hidden)
         .task(id: card.masterCardId) {
+            extractedAuraColors = []
+            auraSourceImageArea = 0
             await loadWishlistVariantKeys()
         }
         .onAppear {
@@ -295,6 +296,53 @@ private struct CardBrowseDetailPage: View {
         } message: {
             Text(wishlistAlertMessage ?? "")
         }
+    }
+
+    private var cardHeroSection: some View {
+        VStack(spacing: 10) {
+            cardImage
+                .padding(.top, 20)
+                .padding(.horizontal, 6)
+
+            cardMetaRow
+        }
+        .background(alignment: .top) {
+            cardImageToMetaFadeAura
+        }
+    }
+
+    private var cardImageToMetaFadeAura: some View {
+        VStack(spacing: 0) {
+            RoundedRectangle(cornerRadius: 34, style: .continuous)
+                .fill(
+                    LinearGradient(
+                        colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.42 : 0.24) },
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .frame(maxWidth: .infinity)
+                .aspectRatio(5 / 7, contentMode: .fit)
+                .blur(radius: colorScheme == .dark ? 32 : 26)
+                .scaleEffect(1.16)
+
+            LinearGradient(
+                colors: [
+                    cardAuraColors[0].opacity(colorScheme == .dark ? 0.19 : 0.11),
+                    cardAuraColors[1].opacity(colorScheme == .dark ? 0.13 : 0.08),
+                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.08 : 0.05),
+                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.05 : 0.03),
+                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.03 : 0.015),
+                    .clear
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(height: 330)
+            .blur(radius: colorScheme == .dark ? 20 : 15)
+            .offset(y: -8)
+        }
+        .allowsHitTesting(false)
     }
 
     private var recentSoldOnEbayButton: some View {
@@ -358,12 +406,34 @@ private struct CardBrowseDetailPage: View {
     }
 
     private var cardImage: some View {
-        ProgressiveAsyncImage(
-            lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-            highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) }
-        ) {
-            Color(uiColor: .tertiarySystemFill)
+        ZStack {
+            // Type-driven aura to echo colors from each card art while keeping contrast subtle.
+            RoundedRectangle(cornerRadius: 30, style: .continuous)
+                .fill(
+                    LinearGradient(
+                        colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.58 : 0.38) },
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .frame(maxWidth: .infinity)
                 .aspectRatio(5 / 7, contentMode: .fit)
+                .blur(radius: colorScheme == .dark ? 30 : 24)
+                .scaleEffect(1.12)
+
+            ProgressiveAsyncImage(
+                lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) },
+                onImageLoaded: updateAuraColors(from:)
+            ) {
+                Color(uiColor: .tertiarySystemFill)
+                    .aspectRatio(5 / 7, contentMode: .fit)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .stroke(Color.white.opacity(colorScheme == .dark ? 0.16 : 0.22), lineWidth: 1)
+            )
         }
         .frame(maxWidth: .infinity)
         .scaleEffect(imageAppeared ? 1.0 : 0.96)
@@ -1076,6 +1146,35 @@ private struct CardBrowseDetailPage: View {
         colorScheme == .dark ? .black : .white
     }
 
+    private var cardAuraColors: [Color] {
+        if extractedAuraColors.count >= 3 {
+            return Array(extractedAuraColors.prefix(3))
+        }
+        if let first = extractedAuraColors.first {
+            return [first, first.opacity(0.74), first.opacity(0.52)]
+        }
+        return [
+            Color(red: 0.50, green: 0.60, blue: 0.74),
+            Color(red: 0.63, green: 0.52, blue: 0.76),
+            Color(red: 0.72, green: 0.60, blue: 0.68)
+        ]
+    }
+
+    private func updateAuraColors(from image: UIImage) {
+        let imageArea = image.size.width * image.size.height
+        guard imageArea >= auraSourceImageArea else { return }
+
+        auraSourceImageArea = imageArea
+
+        Task.detached(priority: .utility) {
+            let extracted = image.bindrAuraColors(maxColors: 3)
+            guard !extracted.isEmpty else { return }
+            await MainActor.run {
+                extractedAuraColors = extracted
+            }
+        }
+    }
+
     private var glassButtonBackground: Color {
         colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.04)
     }
@@ -1219,6 +1318,119 @@ private enum CardDetailPalette {
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let gold = Color(red: 0.99, green: 0.72, blue: 0.22)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
+}
+
+private extension UIImage {
+    struct AuraBin: Hashable {
+        let r: Int
+        let g: Int
+        let b: Int
+    }
+
+    func bindrAuraColors(maxColors: Int) -> [Color] {
+        guard maxColors > 0 else { return [] }
+        guard let cgImage else { return [] }
+
+        let sampleWidth = 44
+        let sampleHeight = 62
+        let bytesPerPixel = 4
+        let bytesPerRow = sampleWidth * bytesPerPixel
+        let bitsPerComponent = 8
+        var raw = [UInt8](repeating: 0, count: sampleHeight * bytesPerRow)
+
+        guard
+            let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+            let context = CGContext(
+                data: &raw,
+                width: sampleWidth,
+                height: sampleHeight,
+                bitsPerComponent: bitsPerComponent,
+                bytesPerRow: bytesPerRow,
+                space: colorSpace,
+                bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+            )
+        else {
+            return []
+        }
+
+        context.interpolationQuality = .medium
+        context.draw(cgImage, in: CGRect(x: 0, y: 0, width: sampleWidth, height: sampleHeight))
+
+        var histogram: [AuraBin: Double] = [:]
+        let step = 32.0
+
+        for y in 0 ..< sampleHeight {
+            for x in 0 ..< sampleWidth {
+                let i = y * bytesPerRow + (x * bytesPerPixel)
+                let r = Double(raw[i])
+                let g = Double(raw[i + 1])
+                let b = Double(raw[i + 2])
+                let a = Double(raw[i + 3]) / 255.0
+                guard a > 0.6 else { continue }
+
+                let maxC = max(r, g, b) / 255.0
+                let minC = min(r, g, b) / 255.0
+                let delta = maxC - minC
+                let saturation = maxC == 0 ? 0 : (delta / maxC)
+                let brightness = maxC
+
+                // Favor vibrant mid-tone regions from the artwork and avoid edge neutrals.
+                guard saturation >= 0.18 else { continue }
+                guard brightness >= 0.16 && brightness <= 0.95 else { continue }
+
+                let rb = Int(floor(r / step))
+                let gb = Int(floor(g / step))
+                let bb = Int(floor(b / step))
+                let weight = (0.55 + saturation * 0.9 + brightness * 0.25)
+                histogram[AuraBin(r: rb, g: gb, b: bb), default: 0] += weight
+            }
+        }
+
+        let sortedBins = histogram.sorted { $0.value > $1.value }.map(\.key)
+        guard !sortedBins.isEmpty else { return [] }
+
+        var selected: [SIMD3<Double>] = []
+
+        for bin in sortedBins {
+            let candidate = SIMD3<Double>(
+                (Double(bin.r) + 0.5) * step / 255.0,
+                (Double(bin.g) + 0.5) * step / 255.0,
+                (Double(bin.b) + 0.5) * step / 255.0
+            )
+
+            let isDistinct = selected.allSatisfy { existing in
+                let diff = candidate - existing
+                let distance = sqrt((diff.x * diff.x) + (diff.y * diff.y) + (diff.z * diff.z))
+                return distance > 0.22
+            }
+
+            if isDistinct {
+                selected.append(candidate)
+            }
+            if selected.count == maxColors { break }
+        }
+
+        if selected.isEmpty, let fallback = sortedBins.first {
+            selected = [
+                SIMD3<Double>(
+                    (Double(fallback.r) + 0.5) * step / 255.0,
+                    (Double(fallback.g) + 0.5) * step / 255.0,
+                    (Double(fallback.b) + 0.5) * step / 255.0
+                )
+            ]
+        }
+
+        if selected.count == 1, let first = selected.first {
+            selected.append(first * 0.86)
+            selected.append(first * 0.72)
+        } else if selected.count == 2, let first = selected.first {
+            selected.append((selected[1] * 0.7) + (first * 0.3))
+        }
+
+        return selected.prefix(maxColors).map { rgb in
+            Color(red: rgb.x, green: rgb.y, blue: rgb.z)
+        }
+    }
 }
 
 private struct HoldingDispositionSheet: View {
