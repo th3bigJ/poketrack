@@ -210,7 +210,7 @@ struct SocialRootView: View {
                     } label: {
                         ZStack(alignment: .topTrailing) {
                             Image(systemName: "bell")
-                                .font(.system(size: 17, weight: .medium))
+                                .font(.system(size: 15, weight: .medium))
                                 .foregroundStyle(.primary)
 
                             if services.socialFeed.unreadAlertsCount > 0 {
@@ -316,7 +316,7 @@ struct SocialRootView: View {
                 }
             }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 20)
             .padding(.vertical, 8)
             .background(Color(uiColor: .systemBackground))
             

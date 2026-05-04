@@ -34,25 +34,60 @@ struct TradeDetailView: View {
         return t.initiatorID == uid
     }
 
+    private var themeColor: Color {
+        if let hex = myProfile?.avatarBackgroundColor, !hex.isEmpty {
+            return Color(hex: hex)
+        }
+        return .cyan
+    }
+
     var body: some View {
-        Group {
+        ZStack {
+            // Immersive Retro-Tech Background
+            Color.black.ignoresSafeArea()
+            
+            // Atmospheric Scanlines
+            Rectangle()
+                .fill(
+                    LinearGradient(
+                        colors: [.clear, themeColor.opacity(0.03), .clear],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                .frame(height: 2)
+                .offset(y: -100)
+                .ignoresSafeArea()
+
             if isLoading && tradeWithItems == nil {
-                ProgressView("Loading trade…")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                ProgressView()
+                    .tint(themeColor)
+                    .scaleEffect(1.5)
             } else if let tradeWithItems {
                 tradeContent(tradeWithItems)
             } else {
                 ContentUnavailableView(
-                    "Trade Not Found",
-                    systemImage: "exclamationmark.triangle",
-                    description: Text("This trade could not be loaded.")
+                    "Trade Disconnected",
+                    systemImage: "wifi.exclamationmark",
+                    description: Text("The link could not be established.")
                 )
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
-        .navigationTitle("Trade")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack(spacing: 0) {
+                    Text(trade?.status.rawValue.uppercased() ?? "PENDING")
+                        .font(.system(size: 10, weight: .black))
+                        .tracking(2)
+                        .foregroundStyle(themeColor)
+                    Text("TRADE SESSION")
+                        .font(.system(size: 8, weight: .bold))
+                        .tracking(1)
+                        .foregroundStyle(.secondary.opacity(0.5))
+                }
+            }
+        }
         .task {
             services.setupCollectionLedger(modelContext: modelContext)
             await refresh()
@@ -66,25 +101,19 @@ struct TradeDetailView: View {
             Text(errorMessage ?? "")
         })
         .alert("Decline this trade?", isPresented: $showConfirmDecline) {
-            Button("Decline", role: .destructive) {
-                Task { await performCancel() }
-            }
+            Button("Decline", role: .destructive) { Task { await performCancel() } }
             Button("Keep Trade", role: .cancel) { }
         } message: {
             Text("This action cannot be undone.")
         }
         .alert("Cancel this trade?", isPresented: $showConfirmCancel) {
-            Button("Cancel Trade", role: .destructive) {
-                Task { await performCancel() }
-            }
+            Button("Cancel Trade", role: .destructive) { Task { await performCancel() } }
             Button("Keep Trade", role: .cancel) { }
         } message: {
             Text("This will close the trade for both sides.")
         }
         .alert("Mark this trade as complete?", isPresented: $showConfirmComplete) {
-            Button("Mark Complete") {
-                Task { await performComplete() }
-            }
+            Button("Mark Complete") { Task { await performComplete() } }
             Button("Not Yet", role: .cancel) { }
         } message: {
             Text("Use this only after cards and cash have been exchanged.")
@@ -100,133 +129,188 @@ struct TradeDetailView: View {
         let myTotalUSD = myItemsValueUSD + displayAmountToUSD(myCash)
         let theirTotalUSD = theirItemsValueUSD + displayAmountToUSD(theirCash)
 
-        return ScrollView {
-            VStack(spacing: 16) {
-                statusBanner(twi.trade.status)
-
-                tradeSideSection(
-                    label: "My Side",
-                    profile: myProfile,
-                    items: myItems,
-                    cash: myCash,
-                    cardValueUSD: myItemsValueUSD,
-                    totalValueUSD: myTotalUSD
-                )
-                .padding(.horizontal, 16)
-
-                tradeSideSection(
-                    label: "Their Side",
-                    profile: theirProfile,
-                    items: theirItems,
-                    cash: theirCash,
-                    cardValueUSD: theirItemsValueUSD,
-                    totalValueUSD: theirTotalUSD
-                )
-                .padding(.horizontal, 16)
-
-                actionButtons(twi)
-                    .padding(.horizontal, 16)
+        return VStack(spacing: 0) {
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 0) {
+                    // TOP POD: Their Side
+                    tradePod(
+                        label: "THEIR OFFER",
+                        profile: theirProfile,
+                        items: theirItems,
+                        cash: theirCash,
+                        totalValueUSD: theirTotalUSD,
+                        alignment: .top
+                    )
+                    
+                    // CENTRAL LINK CORE
+                    centralLinkCore(twi.trade.status)
+                        .padding(.vertical, -30)
+                        .zIndex(10)
+                    
+                    // BOTTOM POD: My Side
+                    tradePod(
+                        label: "MY OFFER",
+                        profile: myProfile,
+                        items: myItems,
+                        cash: myCash,
+                        totalValueUSD: myTotalUSD,
+                        alignment: .bottom
+                    )
+                }
+                .padding(.vertical, 20)
             }
-            .padding(.top, 16)
-            .padding(.bottom, 40)
+            
+            // ACTION FOOTER - Pinned to bottom, no overlap
+            VStack(spacing: 12) {
+                actionButtons(twi)
+            }
+            .padding(20)
+            .padding(.bottom, 10) // Extra space for safe area
+            .background {
+                ZStack {
+                    Color.black.opacity(0.8)
+                        .blur(radius: 20)
+                    LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
+                }
+                .ignoresSafeArea()
+            }
         }
         .task(id: valuationSignature(for: twi)) {
             await refreshTradeValues(for: twi)
         }
     }
 
-    private func statusBanner(_ status: TradeStatus) -> some View {
-        let (color, message) = statusBannerInfo(status)
-        return HStack(spacing: 8) {
-            TradeStatusBadge(status: status)
-            Text(message)
-                .font(.system(size: 13))
-                .foregroundStyle(.secondary)
-            Spacer()
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 10)
-        .background(color.opacity(0.1))
-    }
-
-    private func statusBannerInfo(_ status: TradeStatus) -> (Color, String) {
-        switch status {
-        case .pending:
-            return (Color(hex: "E8B84B"), isInitiator ? "Waiting for their response" : "Awaiting your response")
-        case .countered:
-            return (Color(hex: "E8934B"), isInitiator ? "Counter-offer sent" : "Review their counter-offer")
-        case .accepted:
-            return (Color(hex: "52C97C"), "Trade accepted — mark complete when cards are exchanged")
-        case .complete:
-            return (Color(hex: "52C97C"), "Trade complete")
-        case .cancelled:
-            return (Color(hex: "E05252"), "Trade cancelled")
-        }
-    }
-
-    private func tradeSideSection(
+    private func tradePod(
         label: String,
         profile: SocialProfile?,
         items: [TradeItem],
         cash: Double,
-        cardValueUSD: Double,
-        totalValueUSD: Double
+        totalValueUSD: Double,
+        alignment: VerticalAlignment
     ) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(alignment: .top, spacing: 8) {
-                VStack(alignment: .leading, spacing: 2) {
+        VStack(alignment: .leading, spacing: 12) {
+            // Pod Header
+            HStack {
+                VStack(alignment: .leading, spacing: 4) {
                     Text(label)
-                        .font(.system(size: 11, weight: .bold))
-                        .tracking(0.5)
-                        .foregroundStyle(.secondary)
+                        .font(.system(size: 10, weight: .black))
+                        .tracking(1.5)
+                        .foregroundStyle(themeColor.opacity(0.6))
+                    
                     if let profile {
                         Text(profile.displayName ?? "@\(profile.username)")
-                            .font(.system(size: 12))
-                            .foregroundStyle(.primary)
-                            .lineLimit(1)
+                            .font(.system(size: 17, weight: .bold))
+                            .foregroundStyle(.white)
                     }
                 }
-                Spacer(minLength: 8)
-                VStack(alignment: .trailing, spacing: 2) {
+                
+                Spacer()
+                
+                VStack(alignment: .trailing, spacing: 4) {
                     if isValuationLoading {
-                        ProgressView()
-                            .scaleEffect(0.8)
+                        ProgressView().tint(themeColor).scaleEffect(0.7)
                     } else {
                         Text(formattedDisplayAmountUSD(totalValueUSD))
-                            .font(.system(size: 13, weight: .bold))
-                            .foregroundStyle(.primary)
+                            .font(.system(size: 17, weight: .black, design: .monospaced))
+                            .foregroundStyle(themeColor)
                     }
-                    Text("Cards: \(formattedDisplayAmountUSD(cardValueUSD))")
-                        .font(.system(size: 11))
+                    Text("\(items.count) CARDS")
+                        .font(.system(size: 10, weight: .bold))
                         .foregroundStyle(.secondary)
                 }
             }
-
-            if items.isEmpty {
-                Text("No cards")
-                    .font(.system(size: 13))
-                    .foregroundStyle(.secondary)
-                    .italic()
-            } else {
-                ForEach(items) { item in
-                    TradeCardRow(item: item, cardLoader: { id in await services.cardData.loadCard(masterCardId: id) })
+            .padding(.bottom, 8)
+            
+            // Item Scroll
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    if cash > 0 {
+                        cashTile(cash)
+                    }
+                    
+                    if items.isEmpty && cash == 0 {
+                        Text("NO ASSETS STAGED")
+                            .font(.system(size: 12, weight: .bold, design: .monospaced))
+                            .foregroundStyle(.secondary.opacity(0.3))
+                            .frame(height: 120)
+                    } else {
+                        ForEach(items) { item in
+                            TradeCardTile(item: item, themeColor: themeColor, cardLoader: { id in await services.cardData.loadCard(masterCardId: id) })
+                        }
+                    }
                 }
-            }
-
-            if cash > 0 {
-                HStack(spacing: 4) {
-                    Image(systemName: "banknote.fill")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color(hex: "52C97C"))
-                    Text("\(services.priceDisplay.currency.symbol)\(cash, format: .number.precision(.fractionLength(2)))")
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(Color(hex: "52C97C"))
-                }
-                .padding(.top, 4)
             }
         }
-        .padding(14)
-        .glassCardStyle(cornerRadius: 14, interactive: false)
+        .padding(20)
+        .background {
+            ZStack {
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .fill(.ultraThinMaterial)
+                
+                RoundedRectangle(cornerRadius: 24, style: .continuous)
+                    .stroke(
+                        LinearGradient(
+                            colors: [themeColor.opacity(0.3), .clear],
+                            startPoint: alignment == .top ? .bottom : .top,
+                            endPoint: alignment == .top ? .top : .bottom
+                        ),
+                        lineWidth: 1
+                    )
+            }
+        }
+        .padding(.horizontal, 16)
+    }
+
+    private func centralLinkCore(_ status: TradeStatus) -> some View {
+        ZStack {
+            // Pulsing Connection Lines
+            VStack(spacing: 0) {
+                Rectangle()
+                    .fill(LinearGradient(colors: [.clear, themeColor.opacity(0.5)], startPoint: .top, endPoint: .bottom))
+                    .frame(width: 2, height: 60)
+                
+                Circle()
+                    .stroke(themeColor.opacity(0.5), lineWidth: 2)
+                    .frame(width: 40, height: 40)
+                    .overlay {
+                        Circle()
+                            .fill(themeColor.opacity(0.1))
+                        
+                        Image(systemName: "bolt.fill")
+                            .font(.system(size: 14))
+                            .foregroundStyle(themeColor)
+                    }
+                
+                Rectangle()
+                    .fill(LinearGradient(colors: [themeColor.opacity(0.5), .clear], startPoint: .top, endPoint: .bottom))
+                    .frame(width: 2, height: 60)
+            }
+            
+            // Status Tag
+            Text(status.rawValue.uppercased())
+                .font(.system(size: 10, weight: .black))
+                .tracking(2)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 4)
+                .background(themeColor, in: Capsule())
+                .foregroundStyle(.black)
+                .offset(x: 60)
+        }
+    }
+
+    private func cashTile(_ amount: Double) -> some View {
+        VStack(spacing: 8) {
+            Image(systemName: "banknote.fill")
+                .font(.system(size: 24))
+                .foregroundStyle(themeColor)
+            
+            Text("\(services.priceDisplay.currency.symbol)\(amount, format: .number.precision(.fractionLength(2)))")
+                .font(.system(size: 13, weight: .black, design: .monospaced))
+                .foregroundStyle(.white)
+        }
+        .frame(width: 100, height: 140)
+        .background(themeColor.opacity(0.1), in: RoundedRectangle(cornerRadius: 16))
+        .overlay(RoundedRectangle(cornerRadius: 16).stroke(themeColor.opacity(0.3), lineWidth: 1))
     }
 
     @ViewBuilder
@@ -550,16 +634,17 @@ struct TradeDetailView: View {
     }
 }
 
-// MARK: - TradeCardRow
+// MARK: - TradeCardTile
 
-private struct TradeCardRow: View {
+private struct TradeCardTile: View {
     let item: TradeItem
+    let themeColor: Color
     let cardLoader: (String) async -> Card?
 
     @State private var card: Card?
 
     var body: some View {
-        HStack(spacing: 8) {
+        VStack(spacing: 8) {
             ZStack {
                 if let imageURLString = card?.imageLowSrc {
                     CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
@@ -571,31 +656,33 @@ private struct TradeCardRow: View {
                     shimmer
                 }
             }
-            .frame(width: 36, height: 50)
-            .clipShape(RoundedRectangle(cornerRadius: 4))
+            .frame(width: 86, height: 120)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(LinearGradient(colors: [.white.opacity(0.3), .clear], startPoint: .topLeading, endPoint: .bottomTrailing), lineWidth: 1)
+            }
+            .shadow(color: .black.opacity(0.4), radius: 6, y: 3)
 
-            VStack(alignment: .leading, spacing: 2) {
-                Text(card?.cardName ?? item.cardID)
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
-                if item.variantKey != "normal" {
-                    Text(item.variantKey)
-                        .font(.system(size: 10))
-                        .foregroundStyle(.secondary)
-                }
+            VStack(spacing: 2) {
+                Text(card?.cardName ?? "Loading...")
+                    .font(.system(size: 11, weight: .bold))
+                    .foregroundStyle(.white)
+                    .lineLimit(1)
+                
                 if item.quantity > 1 {
                     Text("×\(item.quantity)")
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundStyle(Color(hex: "E8B84B"))
+                        .font(.system(size: 10, weight: .black, design: .monospaced))
+                        .foregroundStyle(themeColor)
                 }
             }
         }
+        .frame(width: 86)
         .task { card = await cardLoader(item.cardID) }
     }
 
     private var shimmer: some View {
-        RoundedRectangle(cornerRadius: 4)
+        RoundedRectangle(cornerRadius: 8)
             .fill(Color.white.opacity(0.05))
     }
 }

@@ -266,7 +266,7 @@ struct FeedView: View {
                         .padding()
                 }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 20)
             .padding(.top, 0)
             .padding(.bottom, 100)
         }
