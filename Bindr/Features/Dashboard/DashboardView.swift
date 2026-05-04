@@ -1159,18 +1159,18 @@ struct DashboardView: View {
     private func biggestGainerMover(from trend: MarketTrendMetrics) -> MarketTrendMover? {
         switch moverScope {
         case .collection:
-            return fallbackBiggestGainer7Days ?? trend.biggestGainer7Days
+            return fallbackBiggestGainer7Days
         case .market:
-            return marketBiggestGainer7Days ?? trend.biggestGainer7Days
+            return marketBiggestGainer7Days
         }
     }
 
     private func biggestDeclinerMover(from trend: MarketTrendMetrics) -> MarketTrendMover? {
         switch moverScope {
         case .collection:
-            return fallbackBiggestDecliner7Days ?? trend.biggestDecliner7Days
+            return fallbackBiggestDecliner7Days
         case .market:
-            return marketBiggestDecliner7Days ?? trend.biggestDecliner7Days
+            return marketBiggestDecliner7Days
         }
     }
 
@@ -2128,7 +2128,9 @@ struct DashboardView: View {
 
     private func extractSetEntrySevenDayChange(from entry: [String: Any]) -> Double? {
         if let weekly = entry["weekly"] as? [String: Any] {
-            for key in ["changePct", "change_pct", "pct", "value"] {
+            // Only accept explicit percent fields. Some feeds include `weekly.value`
+            // as a raw price/value metric, which can inflate dashboard movers.
+            for key in ["changePct", "change_pct", "pct", "percent", "percentChange", "percent_change"] {
                 if let raw = weekly[key], let number = parseAnyNumber(raw) {
                     return number
                 }
@@ -2277,13 +2279,7 @@ struct DashboardView: View {
                 let normalizedMaster = normalizeTrendKey(card.masterCardId)
                 let normalizedExternal = normalizeTrendKey(cleaned(card.externalId) ?? "")
                 return normalizedMaster == normalizedCandidate
-                    || normalizedMaster.contains(normalizedCandidate)
-                    || normalizedCandidate.contains(normalizedMaster)
-                    || (!normalizedExternal.isEmpty && (
-                        normalizedExternal == normalizedCandidate
-                        || normalizedExternal.contains(normalizedCandidate)
-                        || normalizedCandidate.contains(normalizedExternal)
-                    ))
+                    || (!normalizedExternal.isEmpty && normalizedExternal == normalizedCandidate)
             }) {
                 resolvedCardID = matched.masterCardId
                 if displayName == nil { displayName = matched.cardName }

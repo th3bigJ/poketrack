@@ -1403,15 +1403,11 @@ private struct DeckPickerCardCell: View {
                 .background(Circle().fill(isSelected || entry.isOwned ? .white : Color.black.opacity(0.18)))
                 .padding(6)
         }
-        .padding(8)
-        .background(RoundedRectangle(cornerRadius: 14, style: .continuous)
-            .fill(Color(uiColor: .secondarySystemBackground)))
         .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .strokeBorder(
-                    isSelected ? Color.accentColor : (alreadyInDeck ? Color.orange.opacity(0.5) : Color.primary.opacity(0.06)),
-                    lineWidth: isSelected ? 2 : (alreadyInDeck ? 1.5 : 1)
-                )
+            if alreadyInDeck && !isSelected {
+                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                    .strokeBorder(Color.orange.opacity(0.5), lineWidth: 1.5)
+            }
         }
     }
 }

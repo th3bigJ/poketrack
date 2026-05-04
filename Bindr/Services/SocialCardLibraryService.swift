@@ -379,19 +379,11 @@ final class SocialCardLibraryService {
         if let body {
             let data = try JSONEncoder.socialJSON.encode(body)
             request.httpBody = data
-            if let json = String(data: data, encoding: .utf8) {
-                print("--- SOCIAL LIB REQUEST \(method) \(path) ---")
-                print(json)
-            }
         }
 
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let http = response as? HTTPURLResponse else {
             throw SocialCardLibraryError.invalidResponse
-        }
-        print("--- SOCIAL LIB RESPONSE \(http.statusCode) ---")
-        if let json = String(data: data, encoding: .utf8), !json.isEmpty {
-            print(json)
         }
         if isExpiredJWTResponse(statusCode: http.statusCode, data: data) {
             await authService.restoreSession()

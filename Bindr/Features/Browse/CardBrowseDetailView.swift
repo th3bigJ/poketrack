@@ -85,6 +85,7 @@ struct CardBrowseDetailView: View {
             }
         }
         .presentationBackground(pageChromeBackground)
+        .ignoresSafeArea(.container, edges: .bottom)
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
@@ -253,7 +254,7 @@ private struct CardBrowseDetailPage: View {
                 }
             }
             .padding(.horizontal, 12)
-            .padding(.bottom, 36)
+            .padding(.bottom, 0)
             .frame(maxWidth: .infinity, minHeight: 0, alignment: .topLeading)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

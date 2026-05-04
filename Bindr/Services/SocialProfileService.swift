@@ -480,10 +480,6 @@ final class SocialProfileService {
             let encoder = JSONEncoder.socialJSON
             let data = try encoder.encode(body)
             request.httpBody = data
-            if let json = String(data: data, encoding: .utf8) {
-                print("--- SOCIAL REQUEST \(method) \(path) ---")
-                print(json)
-            }
         }
 
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -491,10 +487,6 @@ final class SocialProfileService {
             throw SocialProfileError.invalidResponse
         }
         
-        print("--- SOCIAL RESPONSE \(http.statusCode) ---")
-        if let json = String(data: data, encoding: .utf8) {
-            print(json)
-        }
         if isExpiredJWTResponse(statusCode: http.statusCode, data: data) {
             await authService.restoreSession()
             if let refreshedToken = authService.accessToken,

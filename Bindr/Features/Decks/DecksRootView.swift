@@ -12,10 +12,23 @@ struct DecksRootView: View {
     @State private var showPaywall = false
     @State private var deckToDelete: Deck?
     @State private var showDeleteConfirm = false
+    @State private var newDeckMenuHapticSentForCurrentTouch = false
 
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
     private var visibleDecks: [Deck] {
         decks.filter { $0.tcgBrand == activeBrand }
+    }
+    /// `Menu` can swallow tap gestures; zero-distance drag gives a reliable touch-down haptic when opening the New Deck menu.
+    private var newDeckMenuTouchDownHapticGesture: some Gesture {
+        DragGesture(minimumDistance: 0)
+            .onChanged { _ in
+                guard !newDeckMenuHapticSentForCurrentTouch else { return }
+                newDeckMenuHapticSentForCurrentTouch = true
+                HapticManager.impact(.light)
+            }
+            .onEnded { _ in
+                newDeckMenuHapticSentForCurrentTouch = false
+            }
     }
 
     var body: some View {
@@ -191,11 +204,7 @@ struct DecksRootView: View {
                     }
                     .allowsHitTesting(false) // Let the Menu handle the tap
                 }
-                .simultaneousGesture(
-                    TapGesture().onEnded {
-                        HapticManager.impact(.light)
-                    }
-                )
+                .simultaneousGesture(newDeckMenuTouchDownHapticGesture)
             }
         }
         .padding(.horizontal, 16)
