@@ -757,9 +757,9 @@ struct RootView: View {
             CardBrowseDetailView(
                 cards: ctx.cards,
                 startIndex: ctx.startIndex,
-                tradeAction: showAddToTradeList ? { card in
-                    addCardToTradeList(card)
-                } : showTradeFlow ? { card in
+                tradeAction: showAddToTradeList ? { card, qty in
+                    addCardToTradeList(card, quantity: qty)
+                } : showTradeFlow ? { card, _ in
                     launchTradeFlowFromCollectionCard(card)
                 } : nil,
                 tradeActionLabel: showAddToTradeList ? "Trade List" : "Trade"
@@ -943,15 +943,15 @@ struct RootView: View {
         browseMultiSelectedCardIDs.removeAll()
     }
 
-    private func addCardToTradeList(_ card: Card) {
+    private func addCardToTradeList(_ card: Card, quantity: Int) {
         let cardID = card.masterCardId
         let existing = (try? modelContext.fetch(
             FetchDescriptor<TradeListItem>(predicate: #Predicate { $0.cardID == cardID })
         )) ?? []
         if let first = existing.first {
-            first.quantity += 1
+            first.quantity = quantity
         } else {
-            modelContext.insert(TradeListItem(cardID: cardID))
+            modelContext.insert(TradeListItem(cardID: cardID, quantity: quantity))
         }
         try? modelContext.save()
         Haptics.success()

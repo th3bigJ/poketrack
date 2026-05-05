@@ -106,7 +106,7 @@ struct FriendProfileView: View {
             CardBrowseDetailView(
                 cards: session.cards,
                 startIndex: session.startIndex,
-                tradeAction: (navigationPath != nil && profile != nil) ? { card in
+                tradeAction: (navigationPath != nil && profile != nil) ? { card, _ in
                     offerSingleCardTrade(cardID: card.masterCardId)
                 } : nil
             )

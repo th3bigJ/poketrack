@@ -14,7 +14,7 @@ struct CardBrowseDetailView: View {
     /// When true and ``showsHeaderChromeActions`` is false, still show wishlist actions.
     var showsWishlistWhenChromeHidden: Bool = false
     /// Optional context-specific trade action (used by Social friend profile card detail).
-    var tradeAction: ((Card) -> Void)? = nil
+    var tradeAction: ((Card, Int) -> Void)? = nil
     var tradeActionLabel: String = "Trade"
 
     @State private var index: Int
@@ -26,7 +26,7 @@ struct CardBrowseDetailView: View {
         addToDeckAction: ((Card, String, Int) -> Void)? = nil,
         showsHeaderChromeActions: Bool = true,
         showsWishlistWhenChromeHidden: Bool = false,
-        tradeAction: ((Card) -> Void)? = nil,
+        tradeAction: ((Card, Int) -> Void)? = nil,
         tradeActionLabel: String = "Trade"
     ) {
         self.cards = cards
@@ -113,7 +113,7 @@ private struct CardBrowseDetailPage: View {
     let addToDeckAction: ((Card, String, Int) -> Void)?
     let showsCollectionAction: Bool
     let showsWishlistAction: Bool
-    let tradeAction: ((Card) -> Void)?
+    let tradeAction: ((Card, Int) -> Void)?
     let tradeActionLabel: String
     let onOpenSet: () -> Void
 
@@ -122,6 +122,8 @@ private struct CardBrowseDetailPage: View {
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
     @State private var addToFolderPayload: AddToFolderSheetPayload?
     @State private var showCardShare = false
+    @State private var showTradeListQuantityPicker = false
+    @State private var tradeListPickerQuantity = 1
     @State private var wishlistVariantKeys: [String] = ["normal"]
     @State private var isCurrentCardWishlisted = false
     @State private var showWishlistPaywall = false
@@ -139,7 +141,7 @@ private struct CardBrowseDetailPage: View {
         addToDeckAction: ((Card, String, Int) -> Void)?,
         showsCollectionAction: Bool,
         showsWishlistAction: Bool,
-        tradeAction: ((Card) -> Void)?,
+        tradeAction: ((Card, Int) -> Void)?,
         tradeActionLabel: String = "Trade",
         onOpenSet: @escaping () -> Void
     ) {
@@ -653,9 +655,15 @@ private struct CardBrowseDetailPage: View {
         .buttonStyle(.plain)
     }
 
-    private func tradeActionButton(action: @escaping (Card) -> Void) -> some View {
-        Button {
-            action(card)
+    private func tradeActionButton(action: @escaping (Card, Int) -> Void) -> some View {
+        let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }
+        return Button {
+            if totalOwned > 1 {
+                tradeListPickerQuantity = 1
+                showTradeListQuantityPicker = true
+            } else {
+                action(card, 1)
+            }
         } label: {
             cardActionBody(
                 title: tradeActionLabel,
@@ -664,6 +672,30 @@ private struct CardBrowseDetailPage: View {
             )
         }
         .buttonStyle(.plain)
+        .popover(isPresented: $showTradeListQuantityPicker) {
+            VStack(spacing: 16) {
+                Text("How many to trade?")
+                    .font(.headline)
+                Stepper("Quantity: \(tradeListPickerQuantity)", value: $tradeListPickerQuantity, in: 1...totalOwned)
+                Text("You own \(totalOwned) copies")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                HStack(spacing: 12) {
+                    Button("Cancel") { showTradeListQuantityPicker = false }
+                        .buttonStyle(.bordered)
+                        .frame(maxWidth: .infinity)
+                    Button("Add") {
+                        showTradeListQuantityPicker = false
+                        action(card, tradeListPickerQuantity)
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .frame(maxWidth: .infinity)
+                }
+            }
+            .padding(20)
+            .frame(minWidth: 260)
+            .presentationCompactAdaptation(.popover)
+        }
     }
 
     private func cardActionBody(title: String, systemImage: String, tint: Color) -> some View {

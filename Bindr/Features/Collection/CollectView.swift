@@ -36,6 +36,7 @@ struct CollectView: View {
     @State private var tradeListCardsByID: [String: Card] = [:]
     @State private var tradeListPriceByItemKey: [String: Double] = [:]
     @State private var tradeListQuery = ""
+    @State private var pendingTradeListRequest: AddToTradeListRequest?
 
     // MARK: - Shared State (owned by RootView)
     @Binding var selectedSegment: CollectSegment
@@ -260,6 +261,11 @@ struct CollectView: View {
         .sheet(item: $openSealedSession) { session in
             OpenSealedCollectionItemSheet(item: session.item, productName: session.productName)
                 .environment(services)
+        }
+        .sheet(item: $pendingTradeListRequest) { req in
+            AddToTradeListSheet(request: req)
+                .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
         }
         .onChange(of: selectedSealedProduct?.id) { _, productID in
             services.isSealedDetailPresentationActive = (productID != nil)
@@ -1072,14 +1078,24 @@ struct CollectView: View {
     }
 
     private func addToTradeList(_ collectionItem: CollectionItem) {
-        if let existing = tradeListItems.first(where: {
-            $0.cardID == collectionItem.cardID && $0.variantKey == collectionItem.variantKey
-        }) {
-            existing.quantity += 1
+        let cardName = cardsByCardID[collectionItem.cardID]?.cardName ?? collectionItem.cardID
+        if collectionItem.quantity > 1 {
+            pendingTradeListRequest = AddToTradeListRequest(
+                cardID: collectionItem.cardID,
+                variantKey: collectionItem.variantKey,
+                cardName: cardName,
+                ownedQuantity: collectionItem.quantity
+            )
         } else {
-            modelContext.insert(TradeListItem(cardID: collectionItem.cardID, variantKey: collectionItem.variantKey))
+            if let existing = tradeListItems.first(where: {
+                $0.cardID == collectionItem.cardID && $0.variantKey == collectionItem.variantKey
+            }) {
+                existing.quantity = 1
+            } else {
+                modelContext.insert(TradeListItem(cardID: collectionItem.cardID, variantKey: collectionItem.variantKey, quantity: 1))
+            }
+            try? modelContext.save()
         }
-        try? modelContext.save()
     }
 
     @ViewBuilder

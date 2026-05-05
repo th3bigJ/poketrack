@@ -533,16 +533,7 @@ final class SocialFeedService {
         var downvotes = 0
         var myVote: ReactionType?
         
-        #if DEBUG
-        if !rows.isEmpty {
-            print("DEBUG: fetchVoteAggregate for \(contentID.uuidString) found \(rows.count) rows")
-        }
-        #endif
-
         for row in rows {
-            #if DEBUG
-            print("DEBUG: reaction row: id=\(row.id), type=\(row.voteType.rawValue), user=\(row.userID)")
-            #endif
             switch row.voteType {
             case .upvote:
                 upvotes += 1
@@ -554,11 +545,6 @@ final class SocialFeedService {
             }
         }
         
-        #if DEBUG
-        if upvotes > 0 || downvotes > 0 {
-            print("DEBUG: aggregate for \(contentID.uuidString): up=\(upvotes), down=\(downvotes), score=\(upvotes - downvotes)")
-        }
-        #endif
         return VoteAggregate(upvoteCount: upvotes, downvoteCount: downvotes, myVoteType: myVote)
     }
 
