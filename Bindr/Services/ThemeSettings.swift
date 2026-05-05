@@ -22,16 +22,23 @@ final class ThemeSettings {
     private let cloudSettings: CloudSettingsService
     private let accentColorKey = "user_accent_color_hex"
     private let appearanceKey = "user_app_appearance"
-    
+    private let backgroundGlowKey = "user_background_glow_enabled"
+
     var accentColorHex: String {
         didSet {
             cloudSettings.set(accentColorHex, forKey: accentColorKey)
         }
     }
-    
+
     var appearance: AppAppearance {
         didSet {
             cloudSettings.set(appearance.rawValue, forKey: appearanceKey)
+        }
+    }
+
+    var backgroundGlowEnabled: Bool {
+        didSet {
+            cloudSettings.set(backgroundGlowEnabled, forKey: backgroundGlowKey)
         }
     }
     
@@ -51,9 +58,11 @@ final class ThemeSettings {
         self.cloudSettings = cloudSettings
         // Default to a premium blue/indigo
         self.accentColorHex = cloudSettings.string(forKey: accentColorKey) ?? "4f46e5"
-        
+
         let savedAppearance = cloudSettings.string(forKey: appearanceKey) ?? AppAppearance.system.rawValue
         self.appearance = AppAppearance(rawValue: savedAppearance) ?? .system
+
+        self.backgroundGlowEnabled = cloudSettings.boolOrDefault(forKey: backgroundGlowKey, default: true)
     }
     
     static let presetColors = [

@@ -29,13 +29,13 @@ struct GlassCardModifier: ViewModifier {
         content
             .background {
                 if #available(iOS 26.0, *) {
-                    let base = Glass.clear.tint(nil)
+                    let base = Glass.regular.tint(nil)
                     RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                        .fill(.clear)
+                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.04))
                         .glassEffect(interactive ? base.interactive() : base, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
                 } else {
                     RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                        .fill(.ultraThinMaterial)
+                        .fill(.thinMaterial)
                 }
             }
             .overlay {

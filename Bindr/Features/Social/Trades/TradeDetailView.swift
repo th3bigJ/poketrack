@@ -249,7 +249,7 @@ struct TradeDetailView: View {
         .background {
             ZStack {
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .fill(.ultraThinMaterial)
+                    .fill(.thinMaterial)
                 
                 RoundedRectangle(cornerRadius: 24, style: .continuous)
                     .stroke(

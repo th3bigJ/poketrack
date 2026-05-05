@@ -119,7 +119,7 @@ struct CardScannerView: View {
                                 .multilineTextAlignment(.center)
                                 .padding(.horizontal, 16)
                                 .padding(.vertical, 10)
-                                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                                 .padding(.horizontal, 24)
                                 .padding(.top, 10)
                                 .transition(.move(edge: .top).combined(with: .opacity))
@@ -387,7 +387,7 @@ struct CardScannerView: View {
                     }
                     .padding(.horizontal, 12)
                     .padding(.vertical, 6)
-                    .background(.ultraThinMaterial, in: Capsule())
+                    .background(.thinMaterial, in: Capsule())
                     Spacer(minLength: 0)
                 }
                 .padding(.top, geo.safeAreaInsets.top + 8)
@@ -426,7 +426,7 @@ struct CardScannerView: View {
             captureModeChip(.manual)
         }
         .padding(4)
-        .background(.ultraThinMaterial, in: Capsule())
+        .background(.thinMaterial, in: Capsule())
         .overlay(
             Capsule()
                 .strokeBorder(Color.white.opacity(0.22), lineWidth: 1)
@@ -564,7 +564,7 @@ private struct ScannerValueLabel: View {
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
                         .strokeBorder(Color.white.opacity(0.12), lineWidth: 0.5)
@@ -926,12 +926,9 @@ private struct ScannerDetailSheet: View {
     let onPickAlternative: (UUID, Card) -> Void
 
     var body: some View {
-        CardBrowseDetailView(
+        CardDetailSheet(
             cards: results.map(\.card),
-            startIndex: currentResultIndex,
-            addToDeckAction: nil,
-            showsHeaderChromeActions: true,
-            showsWishlistWhenChromeHidden: false
+            startIndex: currentResultIndex
         )
     }
 }
@@ -956,7 +953,7 @@ private struct ScannerUndoBelowFrameButton: View {
                         .foregroundStyle(.white)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)
-                        .background(.ultraThinMaterial, in: Capsule())
+                        .background(.thinMaterial, in: Capsule())
                         .overlay(Capsule().strokeBorder(Color.white.opacity(0.22), lineWidth: 1))
                 }
                 .buttonStyle(.plain)
@@ -1042,12 +1039,12 @@ private struct CardScannerReticle: View {
             Label("Capturing…", systemImage: "camera.fill")
                 .font(.caption.weight(.semibold)).foregroundStyle(.white)
                 .padding(.horizontal, 10).padding(.vertical, 5)
-                .background(.ultraThinMaterial, in: Capsule())
+                .background(.thinMaterial, in: Capsule())
         } else if frameQuality >= Self.qualityGood {
             Label("Hold steady", systemImage: "checkmark.circle.fill")
                 .font(.caption.weight(.semibold)).foregroundStyle(.green)
                 .padding(.horizontal, 10).padding(.vertical, 5)
-                .background(.ultraThinMaterial, in: Capsule())
+                .background(.thinMaterial, in: Capsule())
         } else {
             Text("Align card in frame")
                 .font(.caption.weight(.medium)).foregroundStyle(.white.opacity(0.7))

@@ -18,7 +18,7 @@ struct CardBrowseDetailView: View {
     var tradeActionLabel: String = "Trade"
 
     @State private var index: Int
-    @State private var navigationPath = NavigationPath()
+    @State private var pushedSet: TCGSet? = nil
 
     init(
         cards: [Card],
@@ -43,54 +43,46 @@ struct CardBrowseDetailView: View {
     }
 
     var body: some View {
-        NavigationStack(path: $navigationPath) {
-            Group {
-                if cards.isEmpty {
-                    ContentUnavailableView("No card", systemImage: "rectangle.on.rectangle.slash")
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else {
-                    TabView(selection: $index) {
-                        ForEach(Array(cards.enumerated()), id: \.element.id) { i, card in
-                            CardBrowseDetailPage(
-                                card: card,
-                                set: services.cardData.sets.first { $0.setCode == card.setCode },
-                                addToDeckAction: addToDeckAction,
-                                showsCollectionAction: showsHeaderChromeActions,
-                                showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
-                                tradeAction: tradeAction,
-                                tradeActionLabel: tradeActionLabel,
-                                onOpenSet: {
-                                    if let set = services.cardData.sets.first(where: { $0.setCode == card.setCode }) {
-                                        navigationPath.append(set)
-                                    }
-                                }
-                            )
-                            .tag(i)
-                        }
-                    }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
+        Group {
+            if cards.isEmpty {
+                ContentUnavailableView("No card", systemImage: "rectangle.on.rectangle.slash")
+                    .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.clear)
+            } else {
+                TabView(selection: $index) {
+                    ForEach(Array(cards.enumerated()), id: \.element.id) { i, card in
+                        CardBrowseDetailPage(
+                            card: card,
+                            set: services.cardData.sets.first { $0.setCode == card.setCode },
+                            addToDeckAction: addToDeckAction,
+                            showsCollectionAction: showsHeaderChromeActions,
+                            showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
+                            tradeAction: tradeAction,
+                            tradeActionLabel: tradeActionLabel,
+                            onOpenSet: {
+                                pushedSet = services.cardData.sets.first { $0.setCode == card.setCode }
+                            }
+                        )
+                        .tag(i)
+                    }
                 }
+                .tabViewStyle(.page(indexDisplayMode: .never))
             }
-            .background(pageChromeBackground)
-            .navigationBarHidden(true)
-            .navigationDestination(for: TCGSet.self) { set in
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(pageChromeBackground)
+        .task(id: index) {
+            ImagePrefetcher.shared.prefetchHighResForDetailView(cards, currentIndex: index, window: 2)
+        }
+        .onChange(of: index) { _, _ in
+            HapticManager.selection()
+        }
+        .sheet(item: $pushedSet) { set in
+            NavigationStack {
                 SetCardsView(set: set)
-            }
-            .navigationDestination(for: NationalDexPokemon.self) { mon in
-                DexCardsView(dexId: mon.nationalDexNumber, displayName: mon.displayName)
-            }
-            .task(id: index) {
-                ImagePrefetcher.shared.prefetchHighResForDetailView(cards, currentIndex: index, window: 2)
-            }
-            .onChange(of: index) { _, _ in
-                HapticManager.selection()
             }
         }
         .presentationBackground(pageChromeBackground)
-        .ignoresSafeArea(.container, edges: .bottom)
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
@@ -246,29 +238,31 @@ private struct CardBrowseDetailPage: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 14) {
-                cardHeroSection
+        GeometryReader { geo in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 14) {
+                    cardHeroSection
 
-                CardPricingPanel(card: card)
-                recentSoldOnEbayButton
+                    CardPricingPanel(card: card)
+                    recentSoldOnEbayButton
 
-                if showsCollectionSection {
-                    collectionSection
+                    if showsCollectionSection {
+                        collectionSection
+                    }
+
+                    if !summaryFacts.isEmpty || card.attacks != nil || card.abilities != nil || cleaned(card.rules) != nil || cleaned(card.flavorText) != nil {
+                        cardDetailsSection
+                    }
                 }
-
-                if !summaryFacts.isEmpty || card.attacks != nil || card.abilities != nil || cleaned(card.rules) != nil || cleaned(card.flavorText) != nil {
-                    cardDetailsSection
-                }
+                .padding(.horizontal, 12)
+                .padding(.bottom, 24)
+                .frame(maxWidth: .infinity, minHeight: geo.size.height, alignment: .topLeading)
             }
-            .padding(.horizontal, 12)
-            .padding(.bottom, 0)
-            .frame(maxWidth: .infinity, minHeight: 0, alignment: .topLeading)
+            .scrollContentBackground(.hidden)
+            .scrollIndicators(.hidden)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(pageBackground)
-        .scrollContentBackground(.hidden)
-        .scrollIndicators(.hidden)
+        .background(pageBackground.ignoresSafeArea())
         .task(id: card.masterCardId) {
             extractedAuraColors = []
             auraSourceImageArea = 0
@@ -325,7 +319,7 @@ private struct CardBrowseDetailPage: View {
             RoundedRectangle(cornerRadius: 34, style: .continuous)
                 .fill(
                     LinearGradient(
-                        colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.42 : 0.24) },
+                        colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.62 : 0.42) },
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
@@ -337,11 +331,11 @@ private struct CardBrowseDetailPage: View {
 
             LinearGradient(
                 colors: [
-                    cardAuraColors[0].opacity(colorScheme == .dark ? 0.19 : 0.11),
-                    cardAuraColors[1].opacity(colorScheme == .dark ? 0.13 : 0.08),
+                    cardAuraColors[0].opacity(colorScheme == .dark ? 0.34 : 0.20),
+                    cardAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
+                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.14 : 0.09),
                     cardAuraColors[2].opacity(colorScheme == .dark ? 0.08 : 0.05),
-                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.05 : 0.03),
-                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.03 : 0.015),
+                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.04 : 0.02),
                     .clear
                 ],
                 startPoint: .top,
@@ -420,7 +414,7 @@ private struct CardBrowseDetailPage: View {
             RoundedRectangle(cornerRadius: 30, style: .continuous)
                 .fill(
                     LinearGradient(
-                        colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.58 : 0.38) },
+                        colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.78 : 0.56) },
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
                     )
@@ -711,14 +705,7 @@ private struct CardBrowseDetailPage: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 12)
-        .background {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(glassButtonBackground)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .stroke(glassButtonBorder, lineWidth: 1)
-                )
-        }
+        .glassCardStyle(cornerRadius: 14, interactive: false)
         .accessibilityLabel(title)
     }
 
@@ -1214,14 +1201,6 @@ private struct CardBrowseDetailPage: View {
         }
     }
 
-    private var glassButtonBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.04)
-    }
-
-    private var glassButtonBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
-    }
-
     private var sectionInsetBackground: Color {
         colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
     }
@@ -1271,7 +1250,7 @@ private struct DetailSurface<Content: View>: View {
     }
 }
 
-private struct HoldingGroup: Identifiable {
+struct HoldingGroup: Identifiable {
     let id: String
     let primaryItem: CollectionItem
     let itemKind: String
@@ -1282,7 +1261,7 @@ private struct HoldingGroup: Identifiable {
     var lines: [HoldingLine]
 }
 
-private struct HoldingLine: Identifiable {
+struct HoldingLine: Identifiable {
     let id: String
     let item: CollectionItem
     let itemKind: String
@@ -1352,7 +1331,7 @@ private struct HoldingLine: Identifiable {
     }
 }
 
-private enum CardDetailPalette {
+enum CardDetailPalette {
     static let chartLine = Color(red: 0.12, green: 0.52, blue: 1.0)
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let gold = Color(red: 0.99, green: 0.72, blue: 0.22)
@@ -1414,13 +1393,13 @@ private extension UIImage {
                 let brightness = maxC
 
                 // Favor vibrant mid-tone regions from the artwork and avoid edge neutrals.
-                guard saturation >= 0.18 else { continue }
-                guard brightness >= 0.16 && brightness <= 0.95 else { continue }
+                guard saturation >= 0.22 else { continue }
+                guard brightness >= 0.18 && brightness <= 0.94 else { continue }
 
                 let rb = Int(floor(r / step))
                 let gb = Int(floor(g / step))
                 let bb = Int(floor(b / step))
-                let weight = (0.55 + saturation * 0.9 + brightness * 0.25)
+                let weight = (0.3 + saturation * 1.6 + brightness * 0.2)
                 histogram[AuraBin(r: rb, g: gb, b: bb), default: 0] += weight
             }
         }
@@ -1472,7 +1451,7 @@ private extension UIImage {
     }
 }
 
-private struct HoldingDispositionSheet: View {
+struct HoldingDispositionSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
@@ -1596,7 +1575,7 @@ private struct HoldingDispositionSheet: View {
     }
 }
 
-private enum HoldingDispositionError: LocalizedError {
+enum HoldingDispositionError: LocalizedError {
     case invalidPrice
 
     var errorDescription: String? {
@@ -1609,7 +1588,7 @@ private enum HoldingDispositionError: LocalizedError {
 
 // MARK: - Edit collection stack
 
-private struct EditCollectionItemSheet: View {
+struct EditCollectionItemSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services

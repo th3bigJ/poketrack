@@ -132,7 +132,7 @@ struct MultiSelectAddToCollectionSheet: View {
     private var boughtFields: some View {
         Section {
             HStack(alignment: .firstTextBaseline) {
-                Text("Price paid per card")
+                Text("Price per unit")
                 Spacer()
                 HStack(spacing: 6) {
                     Text(currencySymbol)
@@ -144,7 +144,7 @@ struct MultiSelectAddToCollectionSheet: View {
                 }
             }
             .accessibilityElement(children: .combine)
-            .accessibilityLabel("Price paid per card")
+            .accessibilityLabel("Price per unit")
         } footer: {
             Text("This price is applied to each selected card.")
         }

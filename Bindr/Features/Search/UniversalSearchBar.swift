@@ -160,7 +160,7 @@ struct UniversalSearchBar: View {
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(.primary)
                             .frame(width: 44, height: 44)
-                            .background(.ultraThinMaterial, in: Circle())
+                            .background(.thinMaterial, in: Circle())
                             .overlay {
                                 Circle()
                                     .strokeBorder(glassStroke, lineWidth: 0.5)
@@ -179,7 +179,7 @@ struct UniversalSearchBar: View {
                         .padding(.trailing, 8)
                         .frame(height: 44)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(.ultraThinMaterial, in: Capsule())
+                        .background(.thinMaterial, in: Capsule())
                         .overlay {
                             Capsule()
                                 .strokeBorder(glassStroke, lineWidth: 0.5)
@@ -260,7 +260,7 @@ struct UniversalSearchBar: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
                 .frame(width: 44, height: 44)
-                .background(.ultraThinMaterial, in: Circle())
+                .background(.thinMaterial, in: Circle())
                 .overlay {
                     Circle()
                         .strokeBorder(glassStroke, lineWidth: 0.5)
@@ -347,7 +347,7 @@ struct UniversalSearchBar: View {
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isFilterEnabled ? AnyShapeStyle(filterTint) : AnyShapeStyle(.secondary))
             .frame(width: 44, height: 44)
-            .background(.ultraThinMaterial, in: Circle())
+            .background(.thinMaterial, in: Circle())
             .overlay {
                 Circle()
                     .strokeBorder(glassStroke, lineWidth: 0.5)
@@ -401,7 +401,7 @@ struct UniversalSearchBar: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
                 .frame(width: 44, height: 44)
-                .background(.ultraThinMaterial, in: Circle())
+                .background(.thinMaterial, in: Circle())
                 .overlay {
                     Circle()
                         .strokeBorder(glassStroke, lineWidth: 0.5)
@@ -442,7 +442,7 @@ struct UniversalSearchBar: View {
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
                 .frame(width: 44, height: 44)
-                .background(.ultraThinMaterial, in: Circle())
+                .background(.thinMaterial, in: Circle())
                 .overlay {
                     Circle()
                         .strokeBorder(glassStroke, lineWidth: 0.5)
@@ -511,7 +511,7 @@ struct ChromeGlassCircleGlyphModifier: ViewModifier {
             } else {
                 content
                     .frame(width: 44, height: 44)
-                    .background(.ultraThinMaterial, in: Circle())
+                    .background(.thinMaterial, in: Circle())
                     .overlay {
                         Circle()
                             .strokeBorder(glassStroke, lineWidth: 0.5)

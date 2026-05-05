@@ -754,7 +754,7 @@ struct RootView: View {
             let isCollectCards = selectedTab == .collect && collectContentTypeTab == .cards
             let showAddToTradeList = isCollectCards && collectSegment == .collection
             let showTradeFlow = isCollectCards && collectSegment == .wishlist
-            CardBrowseDetailView(
+            CardDetailSheet(
                 cards: ctx.cards,
                 startIndex: ctx.startIndex,
                 tradeAction: showAddToTradeList ? { card, qty in
@@ -764,7 +764,7 @@ struct RootView: View {
                 } : nil,
                 tradeActionLabel: showAddToTradeList ? "Trade List" : "Trade"
             )
-                .environment(services)
+            .environment(services)
         }
         .sheet(item: $selectedSealedProductPresentation) { ctx in
             if ctx.products.isEmpty {

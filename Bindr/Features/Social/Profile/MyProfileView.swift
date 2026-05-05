@@ -416,7 +416,7 @@ struct MyProfileView: View {
         .padding(12)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(.ultraThinMaterial)
+                .fill(.thinMaterial)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
                         .stroke(Color.primary.opacity(0.07), lineWidth: 1)
@@ -466,7 +466,7 @@ struct MyProfileView: View {
         .padding(12)
         .background(
             RoundedRectangle(cornerRadius: 16)
-                .fill(.ultraThinMaterial)
+                .fill(.thinMaterial)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
                         .stroke(Color.primary.opacity(0.07), lineWidth: 1)

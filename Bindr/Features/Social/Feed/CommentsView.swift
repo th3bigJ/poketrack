@@ -88,7 +88,7 @@ struct CommentsView: View {
                                                 Text(emoji(for: type))
                                                     .font(.caption2)
                                                     .padding(2)
-                                                    .background(.ultraThinMaterial, in: Circle())
+                                                    .background(.thinMaterial, in: Circle())
                                                     .offset(x: 10, y: -10)
                                             }
                                         }

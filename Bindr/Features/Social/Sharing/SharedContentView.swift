@@ -123,7 +123,7 @@ struct SharedContentView: View {
         .sheet(item: $presentedCard) { card in
             // Reuse the standard browse detail screen so the experience matches
             // tapping a card from the Browse tab — same chrome, same actions.
-            CardBrowseDetailView(cards: [card], startIndex: 0)
+            CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
         }
     }
@@ -283,6 +283,6 @@ struct SharedContentView: View {
             .font(.caption.weight(.semibold))
             .padding(.horizontal, 8)
             .padding(.vertical, 5)
-            .background(.ultraThinMaterial, in: Capsule())
+            .background(.thinMaterial, in: Capsule())
     }
 }

@@ -83,7 +83,7 @@ private struct GlassCapsuleModifier: ViewModifier {
                     .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
             } else {
                 content
-                    .background(.ultraThinMaterial, in: Capsule())
+                    .background(.thinMaterial, in: Capsule())
                     .overlay(Capsule().strokeBorder(Color.primary.opacity(0.1), lineWidth: 0.5))
             }
         }

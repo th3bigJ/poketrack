@@ -482,7 +482,7 @@ private struct CardStackPreview: View {
                 .padding(.vertical, 3)
                 .background {
                     Capsule()
-                        .fill(.ultraThinMaterial)
+                        .fill(.thinMaterial)
                 }
                 .overlay {
                     Capsule()

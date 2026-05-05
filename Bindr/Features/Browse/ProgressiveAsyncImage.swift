@@ -16,6 +16,13 @@ private final class ProgressiveImageLoader {
 
     var state: LoadState = .idle
 
+    var readyImage: UIImage? {
+        switch state {
+        case .lowReady(let img), .loadingHigh(let img), .highReady(let img): return img
+        default: return nil
+        }
+    }
+
     private var loadTask: Task<Void, Never>?
     private var currentLowURL: URL?
     private var currentHighURL: URL?
@@ -188,17 +195,18 @@ struct ProgressiveAsyncImage<Placeholder: View>: View {
                     .resizable()
                     .scaledToFit()
                     .transition(.opacity.animation(.easeOut(duration: 0.2)))
-                    .onAppear { onImageLoaded?(image) }
 
             case .highReady(let image):
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
                     .transition(.opacity.animation(.easeInOut(duration: 0.25)))
-                    .onAppear { onImageLoaded?(image) }
             case .failed:
                 placeholder()
             }
+        }
+        .onChange(of: loader.readyImage) { _, image in
+            if let image { onImageLoaded?(image) }
         }
         .task(id: "\(lowResURL?.absoluteString ?? "")|\(highResURL?.absoluteString ?? "")") {
             loader.load(lowResURL: lowResURL, highResURL: highResURL)

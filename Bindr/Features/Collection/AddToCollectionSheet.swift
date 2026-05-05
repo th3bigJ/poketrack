@@ -170,7 +170,7 @@ struct AddToCollectionSheet: View {
     private var boughtFields: some View {
         Section {
             HStack(alignment: .firstTextBaseline) {
-                Text("Price paid")
+                Text("Price per unit")
                 Spacer()
                 HStack(spacing: 6) {
                     Text(currencySymbol)
@@ -182,7 +182,7 @@ struct AddToCollectionSheet: View {
                 }
             }
             .accessibilityElement(children: .combine)
-            .accessibilityLabel("Price paid")
+            .accessibilityLabel("Price per unit")
         } footer: {
             Text("What you paid for this card (cost basis).")
         }

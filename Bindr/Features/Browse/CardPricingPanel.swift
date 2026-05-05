@@ -19,6 +19,8 @@ struct CardPricingPanel: View {
     let card: Card
     /// Pre-select this variant when the panel first loads. If nil the panel picks its own default.
     var initialVariant: String? = nil
+    /// When true, skips the panel's own background so the caller can apply glass styling.
+    var useGlass: Bool = false
 
     // Scrydex variant keys (e.g. "holofoil", "normal")
     @State private var variantKeys: [String] = []
@@ -169,12 +171,16 @@ struct CardPricingPanel: View {
         .padding(.vertical, 4)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .fill(panelCardBackground)
-                .overlay(
+            Group {
+                if !useGlass {
                     RoundedRectangle(cornerRadius: 26, style: .continuous)
-                        .stroke(panelBorder, lineWidth: 1)
-                )
+                        .fill(panelCardBackground)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 26, style: .continuous)
+                                .stroke(panelBorder, lineWidth: 1)
+                        )
+                }
+            }
         )
         .task(id: card.masterCardId) {
             await load()

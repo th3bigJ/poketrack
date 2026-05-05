@@ -8,7 +8,7 @@ struct SocialRootView: View {
     private enum SocialTab: String, CaseIterable, Identifiable {
         case feed = "Feed"
         case friends = "Friends"
-        case trades = "Trades"
+        case trades = "Trade Wall"
         case profile = "Profile"
 
         var id: String { rawValue }
@@ -285,7 +285,7 @@ struct SocialRootView: View {
                                     .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
                             } else {
                                 Capsule()
-                                    .fill(.ultraThinMaterial)
+                                    .fill(.thinMaterial)
                                     .overlay {
                                         Capsule()
                                             .stroke(Color.primary.opacity(0.10), lineWidth: 0.5)

@@ -26,6 +26,21 @@ struct ThemesView: View {
             }
             
             Section {
+                Toggle(isOn: Bindable(services.theme).backgroundGlowEnabled) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Background Glow")
+                            .font(.body)
+                        Text("Adds a subtle color tint to the app background.")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .onChange(of: services.theme.backgroundGlowEnabled) {
+                    Haptics.lightImpact()
+                }
+            }
+
+            Section {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Accent Color")
                         .font(.headline)

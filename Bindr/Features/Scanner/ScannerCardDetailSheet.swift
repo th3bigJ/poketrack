@@ -14,7 +14,7 @@ struct CardDetailStyleGlassBarBackground: View {
                     .glassEffect(.clear.tint(nil), in: Rectangle())
             } else {
                 Rectangle()
-                    .fill(.ultraThinMaterial)
+                    .fill(.thinMaterial)
             }
             Rectangle()
                 .fill(headerFullWidthDimStyle)

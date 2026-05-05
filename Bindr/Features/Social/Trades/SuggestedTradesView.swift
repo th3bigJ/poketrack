@@ -6,58 +6,31 @@ struct SuggestedTradesView: View {
 
     @State private var suggestions: [TradeSuggestion] = []
     @State private var isLoading = false
-    @State private var isExpanded = true
 
     var body: some View {
         VStack(spacing: 0) {
-            sectionHeader
-
-            if isExpanded {
-                if isLoading && suggestions.isEmpty {
-                    ProgressView()
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 20)
-                } else if suggestions.isEmpty {
-                    emptyState
-                } else {
-                    LazyVStack(spacing: 0) {
-                        ForEach(suggestions.prefix(10)) { suggestion in
-                            SuggestionRow(
-                                suggestion: suggestion,
-                                cardLoader: { id in await services.cardData.loadCard(masterCardId: id) }
-                            ) {
-                                offerTrade(for: suggestion)
-                            }
-                            Divider().padding(.leading, 72)
+            if isLoading && suggestions.isEmpty {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 20)
+            } else if suggestions.isEmpty {
+                emptyState
+            } else {
+                LazyVStack(spacing: 0) {
+                    ForEach(suggestions.prefix(10)) { suggestion in
+                        SuggestionRow(
+                            suggestion: suggestion,
+                            cardLoader: { id in await services.cardData.loadCard(masterCardId: id) }
+                        ) {
+                            offerTrade(for: suggestion)
                         }
+                        Divider().padding(.leading, 72)
                     }
                 }
             }
         }
         .background(Color(uiColor: .systemBackground))
         .task { await loadSuggestions() }
-    }
-
-    private var sectionHeader: some View {
-        Button {
-            withAnimation(.easeInOut(duration: 0.2)) {
-                isExpanded.toggle()
-            }
-        } label: {
-            HStack {
-                Text("SUGGESTED TRADES")
-                    .font(.system(size: 11, weight: .bold))
-                    .tracking(0.7)
-                    .foregroundStyle(.secondary)
-                Spacer()
-                Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(.secondary)
-            }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-        }
-        .buttonStyle(.plain)
     }
 
     private var emptyState: some View {

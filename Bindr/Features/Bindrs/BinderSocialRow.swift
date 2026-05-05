@@ -55,7 +55,7 @@ struct BinderSocialRow: View {
             .padding(.vertical, 5)
             .background(
                 Capsule()
-                    .fill(.ultraThinMaterial)
+                    .fill(.thinMaterial)
                     .overlay(
                         Capsule()
                             .stroke(Color.secondary.opacity(0.18), lineWidth: 0.5)

@@ -103,7 +103,7 @@ struct FriendProfileView: View {
             }
         }
         .sheet(item: $cardDetailSession) { session in
-            CardBrowseDetailView(
+            CardDetailSheet(
                 cards: session.cards,
                 startIndex: session.startIndex,
                 tradeAction: (navigationPath != nil && profile != nil) ? { card, _ in

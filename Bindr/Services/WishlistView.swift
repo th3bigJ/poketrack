@@ -205,7 +205,7 @@ struct WishlistView: View {
             Spacer(minLength: 0)
         }
         .padding(12)
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 
     private var iCloudBannerTitle: String {

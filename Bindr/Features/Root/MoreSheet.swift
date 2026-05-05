@@ -171,11 +171,11 @@ private struct QuickAccessButton: View {
     private var glassBackground: some View {
         if #available(iOS 26.0, *) {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.ultraThinMaterial)
+                .fill(.thinMaterial)
                 .glassEffect(.clear.tint(nil), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         } else {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.ultraThinMaterial)
+                .fill(.thinMaterial)
                 .overlay(
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
                         .stroke(Color.primary.opacity(0.1), lineWidth: 0.5)
@@ -210,11 +210,11 @@ private struct QuickAccessNavigationButton: View {
     private var glassBackground: some View {
         if #available(iOS 26.0, *) {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.ultraThinMaterial)
+                .fill(.thinMaterial)
                 .glassEffect(.clear.tint(nil), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         } else {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.ultraThinMaterial)
+                .fill(.thinMaterial)
                 .overlay(
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
                         .stroke(Color.primary.opacity(0.1), lineWidth: 0.5)

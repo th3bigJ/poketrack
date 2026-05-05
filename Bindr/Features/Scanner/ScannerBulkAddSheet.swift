@@ -400,7 +400,7 @@ private struct BulkAddCardRow: View {
                 case .bought:
                     VStack(alignment: .leading, spacing: 6) {
                         HStack(alignment: .firstTextBaseline) {
-                            Text("Price paid")
+                            Text("Price per unit")
                                 .foregroundStyle(.secondary)
                             Spacer()
                             HStack(spacing: 6) {
@@ -413,7 +413,7 @@ private struct BulkAddCardRow: View {
                             }
                         }
                         .accessibilityElement(children: .combine)
-                        .accessibilityLabel("Price paid")
+                        .accessibilityLabel("Price per unit")
                         Text("Cost basis. Market estimate: \(priceHint).")
                             .font(.caption)
                             .foregroundStyle(.tertiary)

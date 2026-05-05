@@ -236,7 +236,7 @@ struct BinderDetailView: View {
         .background(
             ZStack {
                 Rectangle()
-                    .fill(.ultraThinMaterial)
+                    .fill(.thinMaterial)
                 LinearGradient(
                     colors: [
                         Color.black.opacity(colorScheme == .dark ? 0.30 : 0.08),

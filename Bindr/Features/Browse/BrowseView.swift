@@ -45,7 +45,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
         .padding(4)
         .background {
             Capsule()
-                .fill(.ultraThinMaterial)
+                .fill(.thinMaterial)
                 .overlay {
                     Capsule()
                         .strokeBorder(Color.primary.opacity(0.1), lineWidth: 0.5)
@@ -1177,7 +1177,7 @@ struct BrowseView: View {
             .padding(.vertical, 12)
             .background {
                 Capsule(style: .continuous)
-                    .fill(.ultraThinMaterial)
+                    .fill(.thinMaterial)
                     .overlay {
                         Capsule(style: .continuous)
                             .fill(

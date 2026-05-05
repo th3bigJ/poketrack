@@ -85,7 +85,7 @@ struct SplashView: View {
                     ZStack {
                         // Glass background layer
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(.ultraThinMaterial)
+                            .fill(.thinMaterial)
 
                         // Tint overlay
                         RoundedRectangle(cornerRadius: 16, style: .continuous)

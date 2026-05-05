@@ -61,7 +61,7 @@ struct AddManualActivityView: View {
                 Section("Transaction") {
                     Stepper("Quantity: \(quantity)", value: $quantity, in: 1...9999)
                     HStack {
-                        Text("Unit price")
+                        Text("Price per unit")
                         Spacer()
                         TextField("Optional", text: $unitPriceText)
                             .multilineTextAlignment(.trailing)

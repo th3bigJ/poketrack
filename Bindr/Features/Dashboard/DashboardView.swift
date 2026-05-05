@@ -390,7 +390,7 @@ struct DashboardView: View {
             )
         }
         .sheet(item: $selectedCardForDetail) { card in
-            CardBrowseDetailView(cards: [card], startIndex: 0)
+            CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
         }
         .sheet(item: $editingRecentLedgerLine) { line in
@@ -625,7 +625,7 @@ struct DashboardView: View {
                             .glassEffect(.clear.tint(nil), in: Capsule(style: .continuous))
                     } else {
                         Capsule(style: .continuous)
-                            .fill(.ultraThinMaterial)
+                            .fill(.thinMaterial)
                             .overlay {
                                 Capsule(style: .continuous)
                                     .stroke(dashboardBorder.opacity(0.35), lineWidth: 1)

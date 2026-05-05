@@ -76,43 +76,46 @@ extension View {
 struct BindrPageBackground: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var accent
+    @Environment(AppServices.self) private var services
 
     var body: some View {
         ZStack {
             Color(uiColor: .systemBackground)
 
-            LinearGradient(
-                colors: [
-                    accent.opacity(colorScheme == .dark ? 0.075 : 0.065),
-                    accent.opacity(colorScheme == .dark ? 0.035 : 0.032),
-                    .clear
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+            if services.theme.backgroundGlowEnabled {
+                LinearGradient(
+                    colors: [
+                        accent.opacity(colorScheme == .dark ? 0.075 : 0.065),
+                        accent.opacity(colorScheme == .dark ? 0.035 : 0.032),
+                        .clear
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
 
-            RadialGradient(
-                colors: [
-                    accent.opacity(colorScheme == .dark ? 0.055 : 0.042),
-                    .clear
-                ],
-                center: .topTrailing,
-                startRadius: 10,
-                endRadius: 450
-            )
-            .offset(x: 100, y: -100)
-            
-            RadialGradient(
-                colors: [
-                    accent.opacity(colorScheme == .dark ? 0.04 : 0.03),
-                    .clear
-                ],
-                center: .bottomLeading,
-                startRadius: 0,
-                endRadius: 300
-            )
-            .offset(x: -50, y: 50)
-            
+                RadialGradient(
+                    colors: [
+                        accent.opacity(colorScheme == .dark ? 0.055 : 0.042),
+                        .clear
+                    ],
+                    center: .topTrailing,
+                    startRadius: 10,
+                    endRadius: 450
+                )
+                .offset(x: 100, y: -100)
+
+                RadialGradient(
+                    colors: [
+                        accent.opacity(colorScheme == .dark ? 0.04 : 0.03),
+                        .clear
+                    ],
+                    center: .bottomLeading,
+                    startRadius: 0,
+                    endRadius: 300
+                )
+                .offset(x: -50, y: 50)
+            }
+
             // Subtle Noise/Grain Overlay (Simulated via opacity jitter)
             Color.primary.opacity(0.005)
                 .blendMode(colorScheme == .dark ? .overlay : .multiply)

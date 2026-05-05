@@ -2115,7 +2115,7 @@ private struct AddSealedToCollectionSheet: View {
                 if acquisitionKind == .bought {
                     Section {
                         HStack(alignment: .firstTextBaseline) {
-                            Text("Price paid")
+                            Text("Price per unit")
                             Spacer()
                             HStack(spacing: 6) {
                                 Text(currencySymbol)

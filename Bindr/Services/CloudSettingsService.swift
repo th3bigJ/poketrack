@@ -125,6 +125,11 @@ final class CloudSettingsService {
         store.bool(forKey: key)
     }
 
+    func boolOrDefault(forKey key: String, default defaultValue: Bool) -> Bool {
+        guard store.object(forKey: key) != nil else { return defaultValue }
+        return store.bool(forKey: key)
+    }
+
     func integer(forKey key: String) -> Int {
         Int(store.longLong(forKey: key))
     }
