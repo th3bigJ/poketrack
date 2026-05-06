@@ -5,12 +5,14 @@ import SwiftData
 final class CardFolderItem {
     var cardID: String = ""
     var variantKey: String = "normal"
+    var quantity: Int = 1
     var dateAdded: Date = Date()
     var folder: CardFolder?
 
-    init(cardID: String, variantKey: String = "normal") {
+    init(cardID: String, variantKey: String = "normal", quantity: Int = 1) {
         self.cardID = cardID
         self.variantKey = variantKey
+        self.quantity = quantity
         self.dateAdded = Date()
     }
 }

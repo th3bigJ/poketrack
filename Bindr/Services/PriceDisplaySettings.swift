@@ -206,6 +206,7 @@ final class CollectionFiltersSettings {
     private enum Keys {
         static let collectionFiltersJSON = "collectFiltersJSON"
         static let wishlistFiltersJSON   = "wishlistFiltersJSON"
+        static let tradeListFiltersJSON  = "tradeListFiltersJSON"
 
         // Legacy keys retained for migration fallback.
         static let collectionSortBy     = "collectFilterSortBy"
@@ -234,6 +235,13 @@ final class CollectionFiltersSettings {
         }
     }
 
+    var tradeListFilters: BrowseCardGridFilters {
+        didSet {
+            guard tradeListFilters != oldValue else { return }
+            saveTradeListFilters(tradeListFilters)
+        }
+    }
+
     var gridOptions: BrowseGridOptions {
         didSet {
             let sanitized = Self.sanitizeGrid(gridOptions)
@@ -246,6 +254,7 @@ final class CollectionFiltersSettings {
     init() {
         collectionFilters = Self.loadCollectionFilters()
         wishlistFilters   = Self.loadWishlistFilters()
+        tradeListFilters  = Self.loadTradeListFilters()
         gridOptions       = Self.loadGridOptions()
     }
 
@@ -273,6 +282,13 @@ final class CollectionFiltersSettings {
         var f = BrowseCardGridFilters()
         f.sortBy = BrowseCardGridSortOption(rawValue: d.string(forKey: Keys.wishlistSortBy) ?? "") ?? .price
         return sanitizeCollectionFilters(f)
+    }
+
+    private static func loadTradeListFilters() -> BrowseCardGridFilters {
+        if let decoded = decodeDefaultsJSON(BrowseCardGridFilters.self, key: Keys.tradeListFiltersJSON) {
+            return sanitizeCollectionFilters(decoded)
+        }
+        return BrowseCardGridFilters()
     }
 
     private static func loadGridOptions() -> BrowseGridOptions {
@@ -313,6 +329,15 @@ final class CollectionFiltersSettings {
         }
         encodeDefaultsJSON(sanitized, key: Keys.wishlistFiltersJSON)
         UserDefaults.standard.set(sanitized.sortBy.rawValue, forKey: Keys.wishlistSortBy)
+    }
+
+    private func saveTradeListFilters(_ f: BrowseCardGridFilters) {
+        let sanitized = Self.sanitizeCollectionFilters(f)
+        if tradeListFilters != sanitized {
+            tradeListFilters = sanitized
+            return
+        }
+        encodeDefaultsJSON(sanitized, key: Keys.tradeListFiltersJSON)
     }
 
     private func saveGridOptions(_ options: BrowseGridOptions) {

@@ -53,6 +53,8 @@ enum FeedRow: Identifiable {
 struct FeedView: View {
     @Environment(AppServices.self) private var services
 
+    var tabPicker: AnyView = AnyView(EmptyView())
+
     @State private var isInitialLoading = false
     @State private var isLoadingMore = false
     @State private var errorMessage: String?
@@ -203,6 +205,10 @@ struct FeedView: View {
     private var loadingState: some View {
         ScrollView {
             VStack(spacing: 12) {
+                tabPicker
+                    .padding(.horizontal, 16)
+                    .padding(.top, 4)
+                    .padding(.bottom, 6)
                 ForEach(0..<4, id: \.self) { _ in
                     ShimmerCard()
                 }
@@ -213,15 +219,21 @@ struct FeedView: View {
     }
 
     private var emptyState: some View {
-        VStack(spacing: 20) {
-            ContentUnavailableView(
-                errorMessage != nil ? "Feed Error" : "Nothing here yet",
-                systemImage: errorMessage != nil ? "exclamationmark.triangle.fill" : "sparkles.rectangle.stack",
-                description: Text(errorMessage ?? "When friends share binders, decks and collections, they'll appear here.")
-            )
-            if errorMessage != nil {
-                Button("Try Again") { Task { await refresh() } }
-                    .buttonStyle(.bordered)
+        ScrollView {
+            VStack(spacing: 20) {
+                tabPicker
+                    .padding(.horizontal, 16)
+                    .padding(.top, 4)
+                    .padding(.bottom, 6)
+                ContentUnavailableView(
+                    errorMessage != nil ? "Feed Error" : "Nothing here yet",
+                    systemImage: errorMessage != nil ? "exclamationmark.triangle.fill" : "sparkles.rectangle.stack",
+                    description: Text(errorMessage ?? "When friends share binders, decks and collections, they'll appear here.")
+                )
+                if errorMessage != nil {
+                    Button("Try Again") { Task { await refresh() } }
+                        .buttonStyle(.bordered)
+                }
             }
         }
     }
@@ -231,7 +243,11 @@ struct FeedView: View {
         let sections = groupRowsByDate(rows)
         
         return ScrollView {
-            LazyVStack(spacing: 16, pinnedViews: [.sectionHeaders]) {
+            LazyVStack(spacing: 16) {
+                tabPicker
+                    .padding(.horizontal, 16)
+                    .padding(.top, 4)
+                    .padding(.bottom, 6)
                 ForEach(sections, id: \.title) { section in
                     Section {
                         ForEach(section.rows) { row in
@@ -250,7 +266,6 @@ struct FeedView: View {
                             .padding(.top, 12)
                             .padding(.bottom, 4)
                             .padding(.horizontal, 4)
-                            .background(Color(uiColor: .systemBackground).opacity(0.01)) // For pinned hover
                     }
                 }
 

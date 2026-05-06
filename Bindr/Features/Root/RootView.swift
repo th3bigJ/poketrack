@@ -176,7 +176,7 @@ struct RootView: View {
         switch collectSegment {
         case .collection: return collectFilters.collectionFilters
         case .wishlist:   return collectFilters.wishlistFilters
-        case .tradeList:  return BrowseCardGridFilters()
+        case .tradeList:  return collectFilters.tradeListFilters
         case .folders:    return BrowseCardGridFilters()
         }
     }
@@ -185,7 +185,7 @@ struct RootView: View {
         switch collectSegment {
         case .collection: return $collectFilters.collectionFilters
         case .wishlist:   return $collectFilters.wishlistFilters
-        case .tradeList:  return .constant(BrowseCardGridFilters())
+        case .tradeList:  return $collectFilters.tradeListFilters
         case .folders:    return .constant(BrowseCardGridFilters())
         }
     }
@@ -507,6 +507,7 @@ struct RootView: View {
                                 selectedBrand: $collectSelectedBrand,
                                 collectionFilters: $collectFilters.collectionFilters,
                                 wishlistFilters: $collectFilters.wishlistFilters,
+                                tradeListFilters: $collectFilters.tradeListFilters,
                                 collectFilterEnergyOptions: $collectFilterEnergyOptions,
                                 collectFilterRarityOptions: $collectFilterRarityOptions,
                                 collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,

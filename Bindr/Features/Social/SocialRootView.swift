@@ -131,15 +131,24 @@ struct SocialRootView: View {
     @State private var isNewPostPresented = false
     @State private var deepLinkedSharedContent: SharedContent?
     @State private var deepLinkedCommentsContent: SocialFeedService.FeedContentSummary?
+    @State private var socialHeaderHeight: CGFloat = 52
 
     private var isConfigured: Bool {
         AppConfiguration.supabaseURL != nil && !AppConfiguration.supabasePublishableKey.isEmpty
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            socialHeader
+        ZStack(alignment: .top) {
             content
+                .padding(.top, socialHeaderHeight)
+            socialHeader
+                .background(.ultraThinMaterial)
+                .background(
+                    GeometryReader { geo in
+                        Color.clear.preference(key: SocialHeaderHeightKey.self, value: geo.size.height)
+                    }
+                )
+                .onPreferenceChange(SocialHeaderHeightKey.self) { socialHeaderHeight = $0 }
         }
         .bindrPageBackground()
         .ignoresSafeArea(edges: .bottom)
@@ -310,8 +319,7 @@ struct SocialRootView: View {
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
-            .background(Color.clear)
-            
+
             Divider().opacity(0.1)
         }
         .sheet(isPresented: $isAlertsPresented) {
@@ -446,19 +454,19 @@ struct SocialRootView: View {
     }
 
     private func socialShell(profile: SocialProfile) -> some View {
-        VStack(spacing: 0) {
+        let picker = AnyView(
             SlidingSegmentedPicker(
                 selection: $selectedTab,
                 items: SocialTab.allCases,
                 title: { $0.title }
             )
-            .padding(.horizontal, 16)
-            .padding(.bottom, 10)
+        )
 
+        return VStack(spacing: 0) {
             Group {
                 switch selectedTab {
                 case .feed:
-                    FeedView()
+                    FeedView(tabPicker: picker)
                 case .friends:
                     FriendsListView(
                         onOpenSearch: { selectedTab = .friends },
@@ -468,14 +476,13 @@ struct SocialRootView: View {
                         },
                         onSelectFriendForTrade: { friend in
                             openSeededTradeBuilder(with: friend)
-                        }
+                        },
+                        socialTabPicker: picker
                     )
                 case .trades:
-                    TradesView(navigationPath: $socialNavigationPath)
+                    TradesView(navigationPath: $socialNavigationPath, tabPicker: picker)
                 case .profile:
-                    MyProfileView(
-                        profile: profile
-                    )
+                    MyProfileView(profile: profile, tabPicker: picker)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -723,5 +730,12 @@ struct SocialRootView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .systemGroupedBackground))
+    }
+}
+
+private struct SocialHeaderHeightKey: PreferenceKey {
+    static let defaultValue: CGFloat = 52
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = nextValue()
     }
 }

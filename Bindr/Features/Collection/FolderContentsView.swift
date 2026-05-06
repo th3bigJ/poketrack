@@ -168,8 +168,10 @@ struct FolderContentsView: View {
         }
         .buttonStyle(CardCellButtonStyle())
         .contextMenu {
-            Button("Remove from Folder", role: .destructive) {
+            Button(role: .destructive) {
                 removeItem(item)
+            } label: {
+                Label("Remove from Folder", systemImage: "folder.badge.minus")
             }
         }
         .accessibilityLabel("\(card.cardName), \(item.variantKey)")

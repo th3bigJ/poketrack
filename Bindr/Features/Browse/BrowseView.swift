@@ -461,7 +461,7 @@ private struct BrowseCardGridButton: View {
     let isWishlisted: Bool
     let isMultiSelectActive: Bool
     @Binding var multiSelectedCardIDs: Set<String>
-    let onQuickAddRequested: (Card, BrowseQuickAddAction) -> Void
+    let onQuickAddRequested: (Card, CardContextAction) -> Void
     let onSelectMultipleRequested: (Card) -> Void
 
     @Environment(\.presentCard) private var presentCard
@@ -517,6 +517,11 @@ private struct BrowseCardGridButton: View {
                 onQuickAddRequested(row.card, .wishlist)
             } label: {
                 Label("Add to Wishlist", systemImage: "heart")
+            }
+            Button {
+                onQuickAddRequested(row.card, .tradeList)
+            } label: {
+                Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
             }
             Button {
                 onQuickAddRequested(row.card, .folder)
@@ -597,11 +602,7 @@ struct BrowseView: View {
     @State private var lastSelectedSetCodeInSetsTab: String?
     @State private var pendingSetRestoreRowID: String?
     @State private var setRestoreToken: Int = 0
-    @State private var addToCollectionPayload: AddToCollectionSheetPayload?
-    @State private var addToFolderPayload: AddToFolderSheetPayload?
-    @State private var quickAddContext: BrowseQuickAddContext?
-    @State private var quickAddVariantKeys: [String] = []
-    @State private var showQuickAddVariantPicker = false
+    @State private var pendingCardContextRequest: CardContextActionRequest?
 
     private var inlineDetailPriceCacheTaskKey: String {
         let ids = inlineDetailCards.map(\.masterCardId).joined(separator: "|")
@@ -665,13 +666,11 @@ struct BrowseView: View {
             MultiSelectAddToCollectionSheet(cards: payload.cards)
                 .environment(services)
         }
-        .sheet(item: $addToCollectionPayload) { payload in
-            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey)
+        .sheet(item: $pendingCardContextRequest) { req in
+            CardContextActionSheet(request: req)
                 .environment(services)
-        }
-        .sheet(item: $addToFolderPayload) { payload in
-            AddToFolderSheet(card: payload.card, variantKey: payload.variantKey)
-                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
         }
         .sheet(isPresented: $showMultiSelectFolderSheet, onDismiss: { addedMultiSelectFolderIDs.removeAll() }) {
             multiSelectFolderSheet
@@ -684,20 +683,6 @@ struct BrowseView: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(wishlistAlertMessage ?? "")
-        }
-        .confirmationDialog(
-            quickAddDialogTitle,
-            isPresented: $showQuickAddVariantPicker,
-            titleVisibility: .visible
-        ) {
-            ForEach(quickAddVariantKeys, id: \.self) { key in
-                Button(variantTitle(key)) {
-                    completeQuickAdd(with: key)
-                }
-            }
-            Button("Cancel", role: .cancel) {
-                clearQuickAddState()
-            }
         }
         .onAppear {
             isViewVisible = true
@@ -1120,12 +1105,13 @@ struct BrowseView: View {
     @ViewBuilder
     private func inlineDetailContent(route: BrowseInlineDetailRoute) -> some View {
         let filteredCards = filteredInlineDetailCards
+        let isSetRoute: Bool = { if case .set = route { return true }; return false }()
         if inlineDetailLoading {
             ProgressView("Loading cards…")
                 .frame(maxWidth: .infinity, minHeight: 280)
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
-        } else if filteredCards.isEmpty {
+        } else if filteredCards.isEmpty && !isSetRoute {
             ContentUnavailableView(
                 inlineDetailCards.isEmpty ? "No cards found" : "No matching cards",
                 systemImage: "magnifyingglass",
@@ -1137,10 +1123,10 @@ struct BrowseView: View {
         } else {
             VStack(spacing: 0) {
                 if case .set(let set) = route {
-                    setProgressBar(for: set, cards: inlineDetailCards)
-                        .padding(.top, 4)
-                        .padding(.bottom, 12)
-                }
+                                setProgressBar(for: set, cards: inlineDetailCards)
+                                    .padding(.top, 4)
+                                    .padding(.bottom, 12)
+                            }
                 
                 EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: 12) { card in
                 let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
@@ -1184,6 +1170,11 @@ struct BrowseView: View {
                         beginQuickAdd(card: card, action: .wishlist)
                     } label: {
                         Label("Add to Wishlist", systemImage: "heart")
+                    }
+                    Button {
+                        beginQuickAdd(card: card, action: .tradeList)
+                    } label: {
+                        Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
                     }
                     Button {
                         beginQuickAdd(card: card, action: .folder)
@@ -1389,76 +1380,22 @@ struct BrowseView: View {
         HapticManager.impact(.light)
     }
 
-    private var quickAddDialogTitle: String {
-        guard let quickAddContext else { return "Select Variant" }
-        switch quickAddContext.action {
-        case .collection:
-            return "Add to Collection"
-        case .wishlist:
-            return "Add to Wishlist"
-        case .folder:
-            return "Add to Folder"
-        }
-    }
-
-    private func beginQuickAdd(card: Card, action: BrowseQuickAddAction) {
-        quickAddContext = BrowseQuickAddContext(card: card, action: action)
+    private func beginQuickAdd(card: Card, action: CardContextAction) {
         Task {
             var keys = await services.pricing.variantKeys(for: card)
             if keys.isEmpty, let variants = card.pricingVariants, !variants.isEmpty {
                 keys = variants
             }
-            if keys.isEmpty {
-                keys = ["normal"]
-            }
+            if keys.isEmpty { keys = ["normal"] }
+            let sortedKeys = Array(Set(keys)).sorted()
             await MainActor.run {
-                quickAddVariantKeys = Array(Set(keys)).sorted()
-                showQuickAddVariantPicker = true
+                pendingCardContextRequest = CardContextActionRequest(
+                    card: card,
+                    availableVariantKeys: sortedKeys,
+                    initialVariantKey: sortedKeys.first ?? "normal",
+                    initialAction: action
+                )
             }
-        }
-    }
-
-    private func completeQuickAdd(with variantKey: String) {
-        guard let quickAddContext else { return }
-        switch quickAddContext.action {
-        case .collection:
-            addToCollectionPayload = AddToCollectionSheetPayload(card: quickAddContext.card, variantKey: variantKey)
-        case .wishlist:
-            addToWishlist(card: quickAddContext.card, variantKey: variantKey)
-        case .folder:
-            addToFolderPayload = AddToFolderSheetPayload(card: quickAddContext.card, variantKey: variantKey)
-        }
-        clearQuickAddState()
-    }
-
-    private func clearQuickAddState() {
-        quickAddContext = nil
-        quickAddVariantKeys = []
-    }
-
-    private func addToWishlist(card: Card, variantKey: String) {
-        guard let wl = services.wishlist else {
-            wishlistAlertMessage = "Wishlist isn't available yet. Try again in a moment."
-            showWishlistAlert = true
-            return
-        }
-        do {
-            try wl.addItem(cardID: card.masterCardId, variantKey: variantKey, notes: "")
-            HapticManager.notification(.success)
-        } catch let error as WishlistError {
-            switch error {
-            case .limitReached:
-                showWishlistPaywall = true
-            case .alreadyExists:
-                wishlistAlertMessage = "This card and variant are already on your wishlist."
-                showWishlistAlert = true
-            case .saveFailed(let inner):
-                wishlistAlertMessage = inner.localizedDescription
-                showWishlistAlert = true
-            }
-        } catch {
-            wishlistAlertMessage = error.localizedDescription
-            showWishlistAlert = true
         }
     }
 
@@ -2214,17 +2151,6 @@ struct BrowseView: View {
     }
 }
 
-private enum BrowseQuickAddAction {
-    case collection
-    case wishlist
-    case folder
-}
-
-private struct BrowseQuickAddContext {
-    let card: Card
-    let action: BrowseQuickAddAction
-}
-
 private func browseSetRowScrollID(setCode: String) -> String {
     "browse-set-row-\(setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased())"
 }
@@ -2595,8 +2521,13 @@ private struct BrowsePokemonTabContent: View {
     @State private var ownedNationalDexIDs: Set<Int> = []
     @State private var dexCollectionProgress: [Int: (owned: Int, total: Int)] = [:]
     @State private var hideCollectedPokemon = false
+    @State private var selectedGeneration: Int? = nil
 
     private let pokemonColumnCount = 3
+
+    private var availableGenerations: [Int] {
+        Array(Set(rows.compactMap(\.generation))).sorted()
+    }
 
     private var filteredPokemonRows: [NationalDexPokemon] {
         let normalizedQuery = normalizedBrowseSearchText(query)
@@ -2607,6 +2538,9 @@ private struct BrowsePokemonTabContent: View {
                     || normalizedBrowseSearchText(item.displayName).contains(normalizedQuery)
                     || normalizedBrowseSearchText(String(item.nationalDexNumber)).contains(normalizedQuery)
             }
+        }
+        if let gen = selectedGeneration {
+            filtered = filtered.filter { $0.generation == gen }
         }
         if hideCollectedPokemon {
             filtered = filtered.filter { !ownedNationalDexIDs.contains($0.nationalDexNumber) }
@@ -2640,8 +2574,9 @@ private struct BrowsePokemonTabContent: View {
     }
 
     private var hideCollectedToggleTitle: String {
-        let total = rows.count
-        let collected = min(ownedNationalDexIDs.count, total)
+        let scopedRows = selectedGeneration.map { gen in rows.filter { $0.generation == gen } } ?? rows
+        let total = scopedRows.count
+        let collected = scopedRows.filter { ownedNationalDexIDs.contains($0.nationalDexNumber) }.count
         return "Hide Collected (\(collected) of \(total) Pokemon collected)"
     }
 
@@ -2661,7 +2596,11 @@ private struct BrowsePokemonTabContent: View {
             scheduleRowLoad(for: services.brandSettings.selectedCatalogBrand)
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, newBrand in
+            selectedGeneration = nil
             scheduleRowLoad(for: newBrand)
+        }
+        .onChange(of: query) { _, newQuery in
+            if !newQuery.isEmpty { selectedGeneration = nil }
         }
         .task(id: ownedDexTaskKey) {
             await refreshOwnedNationalDexIDs()
@@ -2679,6 +2618,41 @@ private struct BrowsePokemonTabContent: View {
         services.brandSettings.selectedCatalogBrand == .pokemon ? "Loading Pokémon…" : "Loading characters…"
     }
 
+    @Environment(\.colorScheme) private var colorScheme
+
+    private var generationTagBar: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 12) {
+                generationChip(label: "All Gens", generation: nil)
+                ForEach(availableGenerations, id: \.self) { gen in
+                    generationChip(label: "Gen \(gen)", generation: gen)
+                }
+            }
+            .padding(.horizontal, 16)
+        }
+    }
+
+    private func generationChip(label: String, generation: Int?) -> some View {
+        let isSelected = selectedGeneration == generation
+        return Button {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                selectedGeneration = isSelected && generation != nil ? nil : generation
+            }
+            Haptics.lightImpact()
+        } label: {
+            Text(label)
+                .font(.system(size: 13, weight: .bold, design: .rounded))
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background {
+                    Capsule()
+                        .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
+                }
+                .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
+        }
+        .buttonStyle(.plain)
+    }
+
     @ViewBuilder
     private var pokemonBody: some View {
         if rows.isEmpty {
@@ -2691,6 +2665,7 @@ private struct BrowsePokemonTabContent: View {
             .padding(.horizontal, 16)
         } else if filteredPokemonRows.isEmpty {
             VStack(alignment: .leading, spacing: 10) {
+                generationTagBar
                 Toggle(hideCollectedToggleTitle, isOn: $hideCollectedPokemon)
                     .font(.caption.weight(.semibold))
                     .toggleStyle(.switch)
@@ -2706,6 +2681,7 @@ private struct BrowsePokemonTabContent: View {
             }
         } else {
             VStack(alignment: .leading, spacing: 10) {
+                generationTagBar
                 Toggle(hideCollectedToggleTitle, isOn: $hideCollectedPokemon)
                     .font(.caption.weight(.semibold))
                     .toggleStyle(.switch)
@@ -3185,6 +3161,7 @@ struct SetCardsView: View {
     @State private var multiSelectFolderNewTitle = ""
     @State private var showFolderCreateAlert = false
     @State private var addedMultiSelectFolderIDs: Set<UUID> = []
+    @State private var pendingCardContextRequest: CardContextActionRequest?
 
     private var ownedCardIDs: Set<String> {
         return Set(collectionItems.compactMap { item in
@@ -3309,12 +3286,12 @@ struct SetCardsView: View {
                 if isLoading {
                     ProgressView().padding()
                 } else {
-                        VStack(spacing: 12) {
-                            BrowseInlineSearchField(title: "Search \(cards.count) cards in set", text: $query)
-                                .padding(.top, 2)
-                            
-                            setProgressBar
-                                .padding(.bottom, 4)
+                    VStack(spacing: 12) {
+                        BrowseInlineSearchField(title: "Search \(cards.count) cards in set", text: $query)
+                            .padding(.top, 2)
+
+                        setProgressBar
+                            .padding(.bottom, 4)
                         if filteredCards.isEmpty {
                             ContentUnavailableView(
                                 "No matching cards",
@@ -3351,6 +3328,39 @@ struct SetCardsView: View {
                                     }
                                 }
                                 .buttonStyle(CardCellButtonStyle())
+                                .contextMenu {
+                                    Button {
+                                        if !isMultiSelectActive {
+                                            withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
+                                                isMultiSelectActive = true
+                                            }
+                                        }
+                                        selectedCardIDs.insert(card.masterCardId)
+                                        HapticManager.impact(.light)
+                                    } label: {
+                                        Label("Select Multiple", systemImage: "checklist")
+                                    }
+                                    Button {
+                                        beginCardContextAction(card: card, action: .collection)
+                                    } label: {
+                                        Label("Add to Collection", systemImage: "books.vertical")
+                                    }
+                                    Button {
+                                        beginCardContextAction(card: card, action: .wishlist)
+                                    } label: {
+                                        Label("Add to Wishlist", systemImage: "heart")
+                                    }
+                                    Button {
+                                        beginCardContextAction(card: card, action: .tradeList)
+                                    } label: {
+                                        Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                                    }
+                                    Button {
+                                        beginCardContextAction(card: card, action: .folder)
+                                    } label: {
+                                        Label("Add to Folder", systemImage: "folder.badge.plus")
+                                    }
+                                }
                                 .onAppear {
                                     ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                                 }
@@ -3397,6 +3407,12 @@ struct SetCardsView: View {
         .sheet(item: $multiSelectCollectionPayload) { payload in
             MultiSelectAddToCollectionSheet(cards: payload.cards)
                 .environment(services)
+        }
+        .sheet(item: $pendingCardContextRequest) { req in
+            CardContextActionSheet(request: req)
+                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
         }
         .sheet(isPresented: $showMultiSelectFolderSheet, onDismiss: { addedMultiSelectFolderIDs.removeAll() }) {
             multiSelectFolderSheet
@@ -3617,6 +3633,25 @@ struct SetCardsView: View {
             next[card.masterCardId] = usd
         }
         priceByCardID = next
+    }
+
+    private func beginCardContextAction(card: Card, action: CardContextAction) {
+        Task {
+            var keys = await services.pricing.variantKeys(for: card)
+            if keys.isEmpty, let variants = card.pricingVariants, !variants.isEmpty {
+                keys = variants
+            }
+            if keys.isEmpty { keys = ["normal"] }
+            let sortedKeys = Array(Set(keys)).sorted()
+            await MainActor.run {
+                pendingCardContextRequest = CardContextActionRequest(
+                    card: card,
+                    availableVariantKeys: sortedKeys,
+                    initialVariantKey: sortedKeys.first ?? "normal",
+                    initialAction: action
+                )
+            }
+        }
     }
 }
 

@@ -245,6 +245,22 @@ struct DashboardView: View {
     private var chartMin: Double { (activePoints.map(\.total).min() ?? 0) * 0.95 }
     private var chartMax: Double { (activePoints.map(\.total).max() ?? 0) * 1.05 }
 
+    private var chartXAxisDates: [Date] {
+        let points = activePoints
+        guard points.count > 1 else { return points.map(\.date) }
+        let maxLabels = 5
+        if points.count <= maxLabels { return points.map(\.date) }
+        let stride = max(1, (points.count - 1) / (maxLabels - 1))
+        var dates: [Date] = []
+        var i = 0
+        while i < points.count - 1 {
+            dates.append(points[i].date)
+            i += stride
+        }
+        dates.append(points[points.count - 1].date)
+        return dates
+    }
+
     private var periodChange: (amount: Double, pct: Double, label: String)? {
         let points = activePoints
         guard points.count >= 2 else { return nil }
@@ -600,7 +616,7 @@ struct DashboardView: View {
                         }
                     }
                     .chartXAxis {
-                        AxisMarks(values: .automatic(desiredCount: 5)) { value in
+                        AxisMarks(values: chartXAxisDates) { value in
                             AxisValueLabel {
                                 if let d = value.as(Date.self) {
                                     Text(xAxisLabel(for: d))
@@ -1606,7 +1622,10 @@ struct DashboardView: View {
         if let cardID = cleaned(line.cardID), let cardName = cardNamesByID[cardID] {
             return "\(line.quantity) x \(cardName)"
         }
-        return cleaned(line.lineDescription) ?? "Collection update"
+        if let description = cleaned(line.lineDescription) {
+            return "\(line.quantity) x \(description)"
+        }
+        return "Collection update"
     }
 
     private func activitySubtitle(for line: LedgerLine) -> String {

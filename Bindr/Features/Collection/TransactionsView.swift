@@ -64,9 +64,10 @@ struct TransactionsView: View {
 
     private var filteredLedgerLines: [LedgerLine] {
         let query = transactionSearchText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !query.isEmpty else { return visibleLedgerLines }
+        let base = rangeFilteredLines
+        guard !query.isEmpty else { return base }
         let normalizedQuery = query.lowercased()
-        return visibleLedgerLines.filter { line in
+        return base.filter { line in
             searchableText(for: line).localizedCaseInsensitiveContains(normalizedQuery)
         }
     }
@@ -242,7 +243,7 @@ struct TransactionsView: View {
                 .listRowSeparator(.hidden)
 
             pnlSummaryCard
-                .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 10, trailing: 16))
+                .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
@@ -365,7 +366,7 @@ struct TransactionsView: View {
             }
         }
         .padding(18)
-        .glassCardStyle(cornerRadius: 24, interactive: false)
+        .glassCardStyle(cornerRadius: 24, interactive: true)
     }
 
     private func summaryValueCell(title: String, value: Double, emphasize: Bool) -> some View {

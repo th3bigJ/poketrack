@@ -4,6 +4,8 @@ struct TradesView: View {
     @Environment(AppServices.self) private var services
     @Binding var navigationPath: NavigationPath
 
+    var tabPicker: AnyView = AnyView(EmptyView())
+
     @State private var trades: [TradeWithItems] = []
     @State private var profileCache: [UUID: SocialProfile] = [:]
     @State private var isLoading = false
@@ -39,6 +41,10 @@ struct TradesView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
+                tabPicker
+                    .padding(.horizontal, 16)
+                    .padding(.top, 4)
+                    .padding(.bottom, 10)
                 suggestedTradesSection
 
                 Divider()

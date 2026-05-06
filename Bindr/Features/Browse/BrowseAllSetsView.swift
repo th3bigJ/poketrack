@@ -62,7 +62,7 @@ struct GlassSearchFieldModifier: ViewModifier {
                         Capsule(style: .continuous)
                             .fill(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.04))
                     )
-                    .glassEffect(.regular.tint(nil), in: Capsule(style: .continuous))
+                    .glassEffect(.regular.tint(nil).interactive(), in: Capsule(style: .continuous))
                     .overlay(
                         Capsule(style: .continuous)
                             .stroke(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.12), lineWidth: 1)
@@ -82,18 +82,24 @@ struct GlassSearchFieldModifier: ViewModifier {
     }
 }
 
+private enum BrowseAllSetsTab: String, CaseIterable {
+    case cards = "Cards"
+    case sealed = "Sealed"
+}
+
 struct BrowseAllSetsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
     @Query private var collectionItems: [CollectionItem]
     @State private var query = ""
-    
+    @State private var selectedTab: BrowseAllSetsTab = .cards
+
     // Pricing state
     @State private var setMarketValueUSDByKey: [String: Double] = [:]
     @State private var loadedSetMarketValueKeys: Set<String> = []
     @State private var loadingSetMarketValueKeys: Set<String> = []
-    
+
     // Collected counts
     @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
     @State private var isFirstAppear = true
@@ -136,7 +142,7 @@ struct BrowseAllSetsView: View {
 
     var body: some View {
         Group {
-            if filteredSets.isEmpty && query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            if filteredSets.isEmpty && query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && selectedTab == .cards {
                 ContentUnavailableView(
                     "No sets",
                     systemImage: "rectangle.stack",
@@ -145,108 +151,120 @@ struct BrowseAllSetsView: View {
             } else {
                 ScrollView {
                     VStack(spacing: 12) {
-                        BrowseInlineSearchField(title: "Search sets", text: $query)
-                            .padding(.horizontal)
-                            .padding(.top)
-                        
-                        globalProgressHeader
-                        if filteredSets.isEmpty {
-                            ContentUnavailableView(
-                                "No matching sets",
-                                systemImage: "magnifyingglass",
-                                description: Text("Try a different set name or code.")
-                            )
-                            .padding(.horizontal)
-                            .padding(.bottom)
-                        } else {
-                            LazyVStack(alignment: .leading, spacing: 20) {
-                                ForEach(groupedSets, id: \.title) { group in
-                                    VStack(alignment: .leading, spacing: 8) {
-                                        Text(group.title)
-                                            .font(.title2.weight(.bold))
-                                            .foregroundStyle(.primary)
-                                        Rectangle()
-                                            .fill(Color.primary.opacity(0.08))
-                                            .frame(height: 1)
-                                    }
-                                    .padding(.horizontal)
-                                    .padding(.top, 10)
-                                    LazyVStack(spacing: 0) {
-                                        ForEach(group.sets) { set in
-                                            NavigationLink(value: set) {
-                                                HStack(spacing: 14) {
-                                                    SetLogoAsyncImage(
-                                                        logoSrc: set.logoSrc,
-                                                        height: 44,
-                                                        brand: services.brandSettings.selectedCatalogBrand
-                                                    )
-                                                    .frame(width: 80)
-                                                    
-                                                    VStack(alignment: .leading, spacing: 2) {
-                                                        let progress = setProgress(for: set)
-                                                        HStack(alignment: .top, spacing: 8) {
-                                                            Text(set.name)
-                                                                .font(.subheadline.weight(.medium))
-                                                                .foregroundStyle(.primary)
-                                                                .lineLimit(2)
-                                                            Spacer(minLength: 6)
-                                                            Text("Full Set Value")
-                                                                .font(.caption2.weight(.semibold))
-                                                                .foregroundStyle(.secondary)
-                                                                .lineLimit(1)
-                                                        }
-                                                        
-                                                        if let total = progress.total, total > 0 {
-                                                            ProgressView(value: min(Double(progress.collected), Double(total)), total: Double(total))
-                                                                .progressViewStyle(.linear)
-                                                                .tint(services.theme.accentColor)
-                                                                .padding(.top, 2)
-                                                            HStack(spacing: 8) {
-                                                                Text("\(progress.collected) out of \(total) collected")
-                                                                    .font(.caption2)
-                                                                    .foregroundStyle(.secondary)
-                                                                    .lineLimit(1)
-                                                                Spacer(minLength: 6)
-                                                                Text(setMarketValueText(for: set))
-                                                                    .font(.caption2.weight(.semibold))
-                                                                    .foregroundStyle(.secondary)
-                                                                    .lineLimit(1)
-                                                            }
-                                                        } else {
-                                                            HStack(spacing: 8) {
-                                                                Text("\(progress.collected) collected")
-                                                                    .font(.caption2)
-                                                                    .foregroundStyle(.secondary)
-                                                                    .lineLimit(1)
-                                                                Spacer(minLength: 6)
-                                                                Text(setMarketValueText(for: set))
-                                                                    .font(.caption2.weight(.semibold))
-                                                                    .foregroundStyle(.secondary)
-                                                                    .lineLimit(1)
-                                                            }
-                                                        }
-                                                    }
-                                                    
-                                                    Spacer()
-                                                    Image(systemName: "chevron.right")
-                                                        .font(.caption.weight(.semibold))
-                                                        .foregroundStyle(.tertiary)
-                                                }
-                                                .padding(.horizontal)
-                                                .padding(.vertical, 10)
-                                                .contentShape(Rectangle())
-                                            }
-                                            .buttonStyle(.plain)
-                                            .task(id: setMarketValueTaskID(for: set)) {
-                                                await ensureSetMarketValueLoaded(for: set)
-                                            }
-                                            Divider().padding(.leading, 108)
-                                        }
-                                    }
-                                    .padding(.top, 4)
-                                }
+                        Picker("Tab", selection: $selectedTab) {
+                            ForEach(BrowseAllSetsTab.allCases, id: \.self) { tab in
+                                Text(tab.rawValue).tag(tab)
                             }
-                            .padding(.bottom)
+                        }
+                        .pickerStyle(.segmented)
+                        .padding(.horizontal)
+                        .padding(.top)
+
+                        if selectedTab == .cards {
+                            BrowseInlineSearchField(title: "Search sets", text: $query)
+                                .padding(.horizontal)
+
+                            globalProgressHeader
+                            if filteredSets.isEmpty {
+                                ContentUnavailableView(
+                                    "No matching sets",
+                                    systemImage: "magnifyingglass",
+                                    description: Text("Try a different set name or code.")
+                                )
+                                .padding(.horizontal)
+                                .padding(.bottom)
+                            } else {
+                                LazyVStack(alignment: .leading, spacing: 20) {
+                                    ForEach(groupedSets, id: \.title) { group in
+                                        VStack(alignment: .leading, spacing: 8) {
+                                            Text(group.title)
+                                                .font(.title2.weight(.bold))
+                                                .foregroundStyle(.primary)
+                                            Rectangle()
+                                                .fill(Color.primary.opacity(0.08))
+                                                .frame(height: 1)
+                                        }
+                                        .padding(.horizontal)
+                                        .padding(.top, 10)
+                                        LazyVStack(spacing: 0) {
+                                            ForEach(group.sets) { set in
+                                                NavigationLink(value: set) {
+                                                    HStack(spacing: 14) {
+                                                        SetLogoAsyncImage(
+                                                            logoSrc: set.logoSrc,
+                                                            height: 44,
+                                                            brand: services.brandSettings.selectedCatalogBrand
+                                                        )
+                                                        .frame(width: 80)
+
+                                                        VStack(alignment: .leading, spacing: 2) {
+                                                            let progress = setProgress(for: set)
+                                                            HStack(alignment: .top, spacing: 8) {
+                                                                Text(set.name)
+                                                                    .font(.subheadline.weight(.medium))
+                                                                    .foregroundStyle(.primary)
+                                                                    .lineLimit(2)
+                                                                Spacer(minLength: 6)
+                                                                Text("Full Set Value")
+                                                                    .font(.caption2.weight(.semibold))
+                                                                    .foregroundStyle(.secondary)
+                                                                    .lineLimit(1)
+                                                            }
+
+                                                            if let total = progress.total, total > 0 {
+                                                                ProgressView(value: min(Double(progress.collected), Double(total)), total: Double(total))
+                                                                    .progressViewStyle(.linear)
+                                                                    .tint(services.theme.accentColor)
+                                                                    .padding(.top, 2)
+                                                                HStack(spacing: 8) {
+                                                                    Text("\(progress.collected) out of \(total) collected")
+                                                                        .font(.caption2)
+                                                                        .foregroundStyle(.secondary)
+                                                                        .lineLimit(1)
+                                                                    Spacer(minLength: 6)
+                                                                    Text(setMarketValueText(for: set))
+                                                                        .font(.caption2.weight(.semibold))
+                                                                        .foregroundStyle(.secondary)
+                                                                        .lineLimit(1)
+                                                                }
+                                                            } else {
+                                                                HStack(spacing: 8) {
+                                                                    Text("\(progress.collected) collected")
+                                                                        .font(.caption2)
+                                                                        .foregroundStyle(.secondary)
+                                                                        .lineLimit(1)
+                                                                    Spacer(minLength: 6)
+                                                                    Text(setMarketValueText(for: set))
+                                                                        .font(.caption2.weight(.semibold))
+                                                                        .foregroundStyle(.secondary)
+                                                                        .lineLimit(1)
+                                                                }
+                                                            }
+                                                        }
+
+                                                        Spacer()
+                                                        Image(systemName: "chevron.right")
+                                                            .font(.caption.weight(.semibold))
+                                                            .foregroundStyle(.tertiary)
+                                                    }
+                                                    .padding(.horizontal)
+                                                    .padding(.vertical, 10)
+                                                    .contentShape(Rectangle())
+                                                }
+                                                .buttonStyle(.plain)
+                                                .task(id: setMarketValueTaskID(for: set)) {
+                                                    await ensureSetMarketValueLoaded(for: set)
+                                                }
+                                                Divider().padding(.leading, 108)
+                                            }
+                                        }
+                                        .padding(.top, 4)
+                                    }
+                                }
+                                .padding(.bottom)
+                            }
+                        } else {
+                            AllSetsAllSealedView()
                         }
                     }
                 }
@@ -478,6 +496,241 @@ struct BrowseAllSetsView: View {
         case "Premium Booster": return 3
         case "Promo": return 4
         default: return 5
+        }
+    }
+}
+
+// MARK: - Sealed tab for Browse Sets
+
+private struct AllSetsAllSealedView: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.presentSealedProduct) private var presentSealedProduct
+    @Environment(\.colorScheme) private var colorScheme
+    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
+
+    @State private var query = ""
+    @State private var filters = BrowseCardGridFilters()
+    @State private var displayedProducts: [SealedProduct] = []
+    @State private var addToCollectionProduct: SealedProduct?
+    @State private var addToFolderProduct: SealedProduct?
+    @State private var showWishlistPaywall = false
+    @State private var showWishlistAlert = false
+    @State private var wishlistAlertMessage: String?
+
+    private let horizontalPadding: CGFloat = 16
+    private let gridSpacing: CGFloat = 12
+
+    private var columnCount: Int {
+        min(max(services.browseGridOptions.options.columnCount, 1), 4)
+    }
+
+    private var ownedCollectionCardIDs: Set<String> {
+        Set(collectionItems.compactMap { item in
+            guard item.itemKind == ProductKind.sealedProduct.rawValue else { return nil }
+            return item.cardID
+        })
+    }
+
+    private var wishlistedCollectionCardIDs: Set<String> {
+        Set(wishlistItems.map(\.cardID).filter { SealedProduct.parseCollectionProductID($0) != nil })
+    }
+
+    private var filteredProducts: [SealedProduct] {
+        let normalizedQuery = normalizeSealedSearchText(query)
+        let allProducts = services.sealedProducts.products
+        let base = allProducts.compactMap { product -> SealedProduct? in
+            if productMatchesSelectedTypes(product.type, selectedOptionIDs: filters.productTypes) == false {
+                return nil
+            }
+            guard !normalizedQuery.isEmpty else { return product }
+            return product.searchBlob.contains(normalizedQuery) ? product : nil
+        }
+        return sortSealedProducts(base)
+    }
+
+    private func sortSealedProducts(_ products: [SealedProduct]) -> [SealedProduct] {
+        switch filters.sortBy {
+        case .random:
+            return products.sorted { stableRandomRank(for: $0.id) < stableRandomRank(for: $1.id) }
+        case .newestSet:
+            return products.sorted { lhs, rhs in
+                let lDate = lhs.releaseDate ?? .distantPast
+                let rDate = rhs.releaseDate ?? .distantPast
+                if lDate != rDate { return lDate > rDate }
+                return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
+            }
+        case .cardName:
+            return products.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        case .price:
+            return products.sorted { lhs, rhs in
+                let l = services.sealedProducts.marketPriceUSD(for: lhs.id)
+                let r = services.sealedProducts.marketPriceUSD(for: rhs.id)
+                switch (l, r) {
+                case let (lv?, rv?): if lv != rv { return lv > rv }
+                case (.some, nil): return true
+                case (nil, .some): return false
+                case (nil, nil): break
+                }
+                return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
+            }
+        case .cardNumber:
+            return products.sorted { $0.id < $1.id }
+        case .acquiredDateNewest:
+            return products
+        }
+    }
+
+    private func stableRandomRank(for id: Int) -> UInt64 {
+        var x = UInt64(bitPattern: Int64(id))
+        x &+= 0x9E3779B97F4A7C15
+        x = (x ^ (x >> 30)) &* 0xBF58476D1CE4E5B9
+        x = (x ^ (x >> 27)) &* 0x94D049BB133111EB
+        return x ^ (x >> 31)
+    }
+
+    private func isWishlisted(_ product: SealedProduct) -> Bool {
+        wishlistedCollectionCardIDs.contains(product.collectionCardID)
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack(spacing: 8) {
+                BrowseInlineSearchField(title: "Search sealed products", text: $query)
+                Menu {
+                    BrowseGridFiltersMenuContent(
+                        brand: services.brandSettings.selectedCatalogBrand,
+                        filters: $filters,
+                        energyOptions: [],
+                        rarityOptions: [],
+                        trainerTypeOptions: [],
+                        config: .products
+                    )
+                } label: {
+                    Image(systemName: "line.3.horizontal.decrease.circle\(filters.isVisiblyCustomized || filters.sortBy != .newestSet ? ".fill" : "")")
+                        .font(.system(size: 20, weight: .medium))
+                        .foregroundStyle(filters.isVisiblyCustomized || filters.sortBy != .newestSet ? services.theme.accentColor : .primary)
+                        .frame(width: 44, height: 44)
+                        .background(
+                            Circle()
+                                .fill(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.06))
+                        )
+                }
+                .buttonStyle(.plain)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 12)
+
+            if services.sealedProducts.isLoading && services.sealedProducts.products.isEmpty {
+                ProgressView("Loading products…")
+                    .frame(maxWidth: .infinity, minHeight: 280)
+                    .padding(.horizontal, 16)
+            } else if displayedProducts.isEmpty {
+                ContentUnavailableView(
+                    services.sealedProducts.products.isEmpty ? "No products yet" : "No matching products",
+                    systemImage: "shippingbox",
+                    description: Text(services.sealedProducts.products.isEmpty
+                        ? "Products will appear after the next market sync."
+                        : "Try a different product name, series, or year.")
+                )
+                .frame(maxWidth: .infinity, minHeight: 280)
+                .padding(.horizontal, 16)
+            } else {
+                EagerVGrid(items: displayedProducts, columns: columnCount, spacing: gridSpacing) { product in
+                    Button {
+                        let index = displayedProducts.firstIndex(where: { $0.id == product.id }) ?? 0
+                        presentSealedProduct(product, displayedProducts, index)
+                    } label: {
+                        SealedProductGridCell(
+                            product: product,
+                            gridOptions: services.browseGridOptions.options,
+                            priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
+                            isOwned: ownedCollectionCardIDs.contains(product.collectionCardID),
+                            isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID)
+                        )
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(CardCellButtonStyle())
+                    .contextMenu {
+                        Button {
+                            addToCollectionProduct = product
+                        } label: {
+                            Label("Add to Collection", systemImage: "books.vertical")
+                        }
+                        Button {
+                            toggleWishlist(for: product)
+                        } label: {
+                            Label(
+                                isWishlisted(product) ? "Remove from Wishlist" : "Add to Wishlist",
+                                systemImage: isWishlisted(product) ? "heart.slash" : "heart"
+                            )
+                        }
+                        Button {
+                            addToFolderProduct = product
+                        } label: {
+                            Label("Add to Folder", systemImage: "folder.badge.plus")
+                        }
+                    }
+                }
+                .padding(.horizontal, horizontalPadding)
+                .padding(.bottom, 16)
+            }
+        }
+        .task {
+            await services.sealedProducts.loadFromLocalIfAvailable()
+            if services.sealedProducts.products.isEmpty {
+                await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
+            }
+            displayedProducts = filteredProducts
+        }
+        .onChange(of: query) { _, _ in displayedProducts = filteredProducts }
+        .onChange(of: filters) { _, _ in displayedProducts = filteredProducts }
+        .onChange(of: services.sealedProducts.products) { _, _ in displayedProducts = filteredProducts }
+        .sheet(item: $addToCollectionProduct) { product in
+            AddSealedToCollectionSheet(product: product)
+                .environment(services)
+        }
+        .sheet(item: $addToFolderProduct) { product in
+            AddSealedToFolderSheet(cardID: product.collectionCardID, variantKey: "sealed")
+        }
+        .sheet(isPresented: $showWishlistPaywall) {
+            PaywallSheet()
+                .environment(services)
+        }
+        .alert("Wishlist", isPresented: $showWishlistAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(wishlistAlertMessage ?? "")
+        }
+    }
+
+    private func toggleWishlist(for product: SealedProduct) {
+        guard let wishlist = services.wishlist else {
+            wishlistAlertMessage = "Wishlist isn't available yet. Try again in a moment."
+            showWishlistAlert = true
+            return
+        }
+        let cardID = product.collectionCardID
+        if isWishlisted(product) {
+            do {
+                try wishlist.removeCardVariant(cardID: cardID, variantKey: "sealed")
+            } catch {
+                wishlistAlertMessage = error.localizedDescription
+                showWishlistAlert = true
+            }
+            return
+        }
+        guard wishlist.canAddItem else {
+            showWishlistPaywall = true
+            return
+        }
+        do {
+            try wishlist.addItem(cardID: cardID, variantKey: "sealed")
+        } catch WishlistError.limitReached {
+            showWishlistPaywall = true
+        } catch {
+            wishlistAlertMessage = error.localizedDescription
+            showWishlistAlert = true
         }
     }
 }

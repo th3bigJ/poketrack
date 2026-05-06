@@ -9,6 +9,7 @@ struct MyProfileView: View {
     }
 
     let profile: SocialProfile
+    var tabPicker: AnyView = AnyView(EmptyView())
 
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
@@ -70,6 +71,9 @@ struct MyProfileView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 18) {
+                tabPicker
+                    .padding(.horizontal, 16)
+                    .padding(.top, 4)
                 profileHeader
                 favoritesSection
                 profileTabPicker

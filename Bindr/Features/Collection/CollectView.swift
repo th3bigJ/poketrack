@@ -23,7 +23,6 @@ struct CollectView: View {
     @State private var collectionDisplayedCards: [Card] = []
     @State private var collectionNextIndex = 0
     @State private var isLoadingMoreCollectionItems = false
-    @State private var markAsSession: CollectionMarkAsSession?
     @State private var openSealedSession: CollectionOpenSealedSession?
 
     // MARK: - Wishlist State
@@ -36,7 +35,7 @@ struct CollectView: View {
     @State private var tradeListCardsByID: [String: Card] = [:]
     @State private var tradeListPriceByItemKey: [String: Double] = [:]
     @State private var tradeListQuery = ""
-    @State private var pendingTradeListRequest: AddToTradeListRequest?
+    @State private var pendingCardContextRequest: CardContextActionRequest?
 
     // MARK: - Shared State (owned by RootView)
     @Binding var selectedSegment: CollectSegment
@@ -44,6 +43,7 @@ struct CollectView: View {
     @Binding var selectedBrand: TCGBrand?
     @Binding var collectionFilters: BrowseCardGridFilters
     @Binding var wishlistFilters: BrowseCardGridFilters
+    @Binding var tradeListFilters: BrowseCardGridFilters
     @Binding var collectFilterEnergyOptions: [String]
     @Binding var collectFilterRarityOptions: [String]
     @Binding var collectFilterTrainerTypeOptions: [String]
@@ -250,21 +250,14 @@ struct CollectView: View {
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)
         }
-        .sheet(item: $markAsSession) { session in
-            CollectionMarkAsSheet(
-                item: session.item,
-                cardDisplayName: session.cardDisplayName,
-                initialKind: session.initialKind
-            )
-            .environment(services)
-        }
         .sheet(item: $openSealedSession) { session in
             OpenSealedCollectionItemSheet(item: session.item, productName: session.productName)
                 .environment(services)
         }
-        .sheet(item: $pendingTradeListRequest) { req in
-            AddToTradeListSheet(request: req)
-                .presentationDetents([.medium])
+        .sheet(item: $pendingCardContextRequest) { req in
+            CardContextActionSheet(request: req)
+                .environment(services)
+                .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
         }
         .onChange(of: selectedSealedProduct?.id) { _, productID in
@@ -491,20 +484,33 @@ struct CollectView: View {
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {
-                Menu {
-                    Button {
-                        openSealedSession = CollectionOpenSealedSession(item: item, productName: product.name)
-                    } label: {
-                        Label("Opened", systemImage: "shippingbox")
+                let existingTradeItem = tradeListItems.first { $0.cardID == item.cardID }
+                Button {
+                    if let existing = existingTradeItem {
+                        existing.quantity = min(existing.quantity + 1, max(item.quantity, 1))
+                    } else {
+                        modelContext.insert(TradeListItem(cardID: item.cardID, variantKey: "sealed", quantity: 1))
                     }
-                    Divider()
-                    markAsButton(kind: .sold, item: item, displayName: product.name)
-                    markAsButton(kind: .traded, item: item, displayName: product.name)
-                    markAsButton(kind: .gifted, item: item, displayName: product.name)
-                    markAsButton(kind: .lost, item: item, displayName: product.name)
-                    markAsButton(kind: .damaged, item: item, displayName: product.name)
+                    try? modelContext.save()
+                    Haptics.success()
                 } label: {
-                    Label("Mark as", systemImage: "tag")
+                    if let existing = existingTradeItem {
+                        Label("Trade List (\(existing.quantity))", systemImage: "arrow.left.arrow.right")
+                    } else {
+                        Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                    }
+                }
+                if let existing = existingTradeItem {
+                    Button(role: .destructive) {
+                        removeFromTradeList(existing)
+                    } label: {
+                        Label("Remove from Trade List", systemImage: "minus.circle")
+                    }
+                }
+                Button {
+                    openSealedSession = CollectionOpenSealedSession(item: item, productName: product.name)
+                } label: {
+                    Label("Mark as Opened", systemImage: "shippingbox")
                 }
             }
             .accessibilityLabel("\(product.name), \(item.quantity) owned")
@@ -521,13 +527,63 @@ struct CollectView: View {
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {
-                addToTradeListButton(for: item)
-                Menu {
-                    markAsButton(kind: .sold, item: item, card: card)
-                    markAsButton(kind: .traded, item: item, card: card)
-                    markAsButton(kind: .gifted, item: item, card: card)
-                    markAsButton(kind: .lost, item: item, card: card)
-                    markAsButton(kind: .damaged, item: item, card: card)
+                Button {
+                    pendingCardContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: [item.variantKey],
+                        initialVariantKey: item.variantKey,
+                        ownedQuantity: item.quantity,
+                        collectionItem: item,
+                        initialAction: .collection
+                    )
+                } label: {
+                    Label("Add to Collection", systemImage: "books.vertical")
+                }
+                Button {
+                    pendingCardContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: [item.variantKey],
+                        initialVariantKey: item.variantKey,
+                        ownedQuantity: item.quantity,
+                        collectionItem: item,
+                        initialAction: .wishlist
+                    )
+                } label: {
+                    Label("Add to Wishlist", systemImage: "heart")
+                }
+                Button {
+                    pendingCardContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: [item.variantKey],
+                        initialVariantKey: item.variantKey,
+                        ownedQuantity: item.quantity,
+                        collectionItem: item,
+                        initialAction: .tradeList
+                    )
+                } label: {
+                    Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                }
+                Button {
+                    pendingCardContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: [item.variantKey],
+                        initialVariantKey: item.variantKey,
+                        ownedQuantity: item.quantity,
+                        collectionItem: item,
+                        initialAction: .folder
+                    )
+                } label: {
+                    Label("Add to Folder", systemImage: "folder.badge.plus")
+                }
+                Button {
+                    pendingCardContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: [item.variantKey],
+                        initialVariantKey: item.variantKey,
+                        ownedQuantity: item.quantity,
+                        collectionItem: item,
+                        initialAction: .markAs
+                    )
                 } label: {
                     Label("Mark as", systemImage: "tag")
                 }
@@ -804,6 +860,16 @@ struct CollectView: View {
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {
+                Button {
+                    pendingCardContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: [item.variantKey],
+                        initialVariantKey: item.variantKey,
+                        initialAction: .folder
+                    )
+                } label: {
+                    Label("Add to Folder", systemImage: "folder.badge.plus")
+                }
                 Button(role: .destructive) {
                     removeFromWishlist(item)
                 } label: {
@@ -956,19 +1022,21 @@ struct CollectView: View {
             emptyState(
                 title: "Trade list is empty",
                 image: "arrow.left.arrow.right",
-                description: "Long-press any card in your collection to add it to your trade list."
+                description: "Long-press any card or sealed product in your collection to add it to your trade list."
             )
         } else if visibleTradeListItems.isEmpty {
             emptyState(
                 title: "No trade list items",
                 image: "line.3.horizontal.decrease.circle",
-                description: "No \(activeBrand.displayTitle) cards on your trade list yet."
+                description: "No \(activeBrand.displayTitle) items on your trade list yet."
             )
         } else if filteredTradeListItems.isEmpty {
             emptyState(
-                title: "No matching cards",
+                title: "No matching \(selectedContentTypeTab.title.lowercased())",
                 image: "magnifyingglass",
-                description: "Try a different card name, set code, or number."
+                description: selectedContentTypeTab == .cards
+                    ? "Try a different card name, set code, or number."
+                    : "Try a different product name, series, or year."
             )
         } else {
             EagerVGrid(items: indexedFilteredTradeListItems, columns: safeColumnCount, spacing: 12) { indexed in
@@ -984,7 +1052,28 @@ struct CollectView: View {
 
     @ViewBuilder
     private func tradeListCell(for item: TradeListItem) -> some View {
-        if let card = tradeListCardsByID[item.cardID] {
+        if let product = sealedProduct(for: item) {
+            Button { selectedSealedProduct = product } label: {
+                SealedProductGridCell(
+                    product: product,
+                    gridOptions: gridOptions,
+                    priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
+                    isOwned: false,
+                    isWishlisted: false,
+                    ownedCountBadge: item.quantity > 1 ? item.quantity : nil
+                )
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(CardCellButtonStyle())
+            .contextMenu {
+                Button(role: .destructive) {
+                    removeFromTradeList(item)
+                } label: {
+                    Label("Remove from Trade List", systemImage: "minus.circle")
+                }
+            }
+            .accessibilityLabel("\(product.name), \(item.quantity) on trade list")
+        } else if let card = tradeListCardsByID[item.cardID] {
             Button { presentCard(card, orderedTradeListCards) } label: {
                 CardGridCell(
                     card: card,
@@ -996,10 +1085,20 @@ struct CollectView: View {
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {
+                Button {
+                    pendingCardContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: [item.variantKey],
+                        initialVariantKey: item.variantKey,
+                        initialAction: .folder
+                    )
+                } label: {
+                    Label("Add to Folder", systemImage: "folder.badge.plus")
+                }
                 Button(role: .destructive) {
                     removeFromTradeList(item)
                 } label: {
-                    Label("Remove from Trade List", systemImage: "arrow.left.arrow.right.slash")
+                    Label("Remove from Trade List", systemImage: "minus.circle")
                 }
             }
             .accessibilityLabel("\(card.cardName), \(item.quantity) on trade list")
@@ -1018,16 +1117,49 @@ struct CollectView: View {
         tradeListItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
     }
 
+    private var tradeListPriceByCardID: [String: Double] {
+        var result: [String: Double] = [:]
+        for item in visibleTradeListItems {
+            let key = tradeListItemKey(item)
+            guard let price = tradeListPriceByItemKey[key] else { continue }
+            result[item.cardID] = max(result[item.cardID] ?? 0, price)
+        }
+        return result
+    }
+
     private var filteredTradeListItems: [TradeListItem] {
+        let typeFiltered = visibleTradeListItems.filter { item in
+            let isSealed = sealedProduct(for: item) != nil
+            return selectedContentTypeTab == .products ? isSealed : !isSealed
+        }
         let trimmedQuery = tradeListQuery.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmedQuery.isEmpty else { return visibleTradeListItems }
-        let resolvedCards = visibleTradeListItems.compactMap { tradeListCardsByID[$0.cardID] }
-        let filteredIDs = Set(
-            filterBrowseCards(resolvedCards, query: tradeListQuery, filters: BrowseCardGridFilters(),
-                              ownedCardIDs: [], brand: activeBrand, sets: services.cardData.sets)
-                .map(\.masterCardId)
+
+        if selectedContentTypeTab == .products {
+            guard !trimmedQuery.isEmpty else { return typeFiltered }
+            let normalizedQuery = trimmedQuery.lowercased()
+            return typeFiltered.filter { item in
+                guard let product = sealedProduct(for: item) else { return false }
+                return product.searchBlob.contains(normalizedQuery)
+            }
+        }
+
+        let resolvedCards = typeFiltered.compactMap { tradeListCardsByID[$0.cardID] }
+        let sortedCards = filterBrowseCards(
+            resolvedCards, query: trimmedQuery, filters: tradeListFilters,
+            ownedCardIDs: [], brand: activeBrand, sets: services.cardData.sets,
+            priceByCardID: tradeListPriceByCardID
         )
-        return visibleTradeListItems.filter { filteredIDs.contains($0.cardID) }
+        let orderedIDs = sortedCards.map(\.masterCardId)
+        let matchedIDs = Set(orderedIDs)
+        let matched = typeFiltered.filter { matchedIDs.contains($0.cardID) }
+        if !orderedIDs.isEmpty {
+            let indexByID = Dictionary(uniqueKeysWithValues: orderedIDs.enumerated().map { ($1, $0) })
+            return matched.sorted { (indexByID[$0.cardID] ?? Int.max) < (indexByID[$1.cardID] ?? Int.max) }
+        }
+        if trimmedQuery.isEmpty {
+            return typeFiltered
+        }
+        return matched
     }
 
     private var indexedFilteredTradeListItems: [IndexedGridItem<TradeListItem>] {
@@ -1055,6 +1187,7 @@ struct CollectView: View {
     private func resolveTradeListCards() async {
         var next = tradeListCardsByID
         for item in visibleTradeListItems {
+            if sealedProduct(for: item) != nil { continue }
             if next[item.cardID] != nil { continue }
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) { next[item.cardID] = c }
         }
@@ -1077,86 +1210,21 @@ struct CollectView: View {
         try? modelContext.save()
     }
 
-    private func addToTradeList(_ collectionItem: CollectionItem) {
-        let cardName = cardsByCardID[collectionItem.cardID]?.cardName ?? collectionItem.cardID
-        if collectionItem.quantity > 1 {
-            pendingTradeListRequest = AddToTradeListRequest(
-                cardID: collectionItem.cardID,
-                variantKey: collectionItem.variantKey,
-                cardName: cardName,
-                ownedQuantity: collectionItem.quantity
-            )
-        } else {
-            if let existing = tradeListItems.first(where: {
-                $0.cardID == collectionItem.cardID && $0.variantKey == collectionItem.variantKey
-            }) {
-                existing.quantity = 1
-            } else {
-                modelContext.insert(TradeListItem(cardID: collectionItem.cardID, variantKey: collectionItem.variantKey, quantity: 1))
-            }
-            try? modelContext.save()
-        }
-    }
-
-    @ViewBuilder
-    private func addToTradeListButton(for item: CollectionItem) -> some View {
-        let existing = tradeListItems.first { $0.cardID == item.cardID && $0.variantKey == item.variantKey }
-        Button {
-            addToTradeList(item)
-        } label: {
-            if let existing {
-                Label("Trade List (\(existing.quantity))", systemImage: "arrow.left.arrow.right")
-            } else {
-                Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
-            }
-        }
-        if let existing {
-            Button(role: .destructive) {
-                removeFromTradeList(existing)
-            } label: {
-                Label("Remove from Trade List", systemImage: "arrow.left.arrow.right.slash")
-            }
-        }
-    }
-
     private func tradeListItemKey(_ item: TradeListItem) -> String {
         "\(item.cardID)|\(item.variantKey)|\(item.dateAdded.timeIntervalSinceReferenceDate)"
     }
 
-    @ViewBuilder
-    private func markAsButton(kind: CollectionDispositionKind, item: CollectionItem, card: Card) -> some View {
-        markAsButton(kind: kind, item: item, displayName: card.cardName)
-    }
-
-    @ViewBuilder
-    private func markAsButton(kind: CollectionDispositionKind, item: CollectionItem, displayName: String) -> some View {
-        Button {
-            markAsSession = CollectionMarkAsSession(
-                item: item,
-                cardDisplayName: displayName,
-                initialKind: kind
-            )
-        } label: {
-            Label(kind.title, systemImage: markAsSymbol(for: kind))
-        }
-    }
-
-    private func markAsSymbol(for kind: CollectionDispositionKind) -> String {
-        switch kind {
-        case .sold:
-            return "dollarsign.circle"
-        case .traded:
-            return "arrow.left.arrow.right.circle"
-        case .gifted:
-            return "gift"
-        case .lost:
-            return "questionmark.circle"
-        case .damaged:
-            return "exclamationmark.triangle"
-        }
-    }
-
     private func sealedProduct(for item: WishlistItem) -> SealedProduct? {
+        if let product = sealedProductByCollectionCardIDCache[item.cardID] {
+            return product
+        }
+        if let productID = SealedProduct.parseCollectionProductID(item.cardID) {
+            return sealedProductByIDCache[productID]
+        }
+        return nil
+    }
+
+    private func sealedProduct(for item: TradeListItem) -> SealedProduct? {
         if let product = sealedProductByCollectionCardIDCache[item.cardID] {
             return product
         }
@@ -1298,171 +1366,10 @@ struct CollectView: View {
     }
 }
 
-private struct CollectionMarkAsSession: Identifiable {
-    let id = UUID()
-    let item: CollectionItem
-    let cardDisplayName: String
-    let initialKind: CollectionDispositionKind
-}
-
 private struct CollectionOpenSealedSession: Identifiable {
     let id = UUID()
     let item: CollectionItem
     let productName: String
-}
-
-private struct CollectionMarkAsSheet: View {
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.modelContext) private var modelContext
-    @Environment(AppServices.self) private var services
-    @Environment(\.colorScheme) private var colorScheme
-
-    let item: CollectionItem
-    let cardDisplayName: String
-    let initialKind: CollectionDispositionKind
-
-    @State private var dispositionKind: CollectionDispositionKind
-    @State private var quantity: Int = 1
-    @State private var priceText: String = ""
-    @State private var counterparty: String = ""
-    @State private var notes: String = ""
-    @State private var errorMessage: String?
-
-    init(item: CollectionItem, cardDisplayName: String, initialKind: CollectionDispositionKind) {
-        self.item = item
-        self.cardDisplayName = cardDisplayName
-        self.initialKind = initialKind
-        _dispositionKind = State(initialValue: initialKind)
-    }
-
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section {
-                    Text(displayVariant(item.variantKey))
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-
-                Section {
-                    Picker("Status", selection: $dispositionKind) {
-                        ForEach(CollectionDispositionKind.allCases, id: \.self) { kind in
-                            Text(kind.title).tag(kind)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                }
-
-                Section {
-                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...max(item.quantity, 1))
-                }
-
-                if dispositionKind == .sold {
-                    Section {
-                        TextField("Sold price per card", text: $priceText)
-                            .keyboardType(.decimalPad)
-                    }
-                }
-
-                Section {
-                    TextField(counterpartyLabel, text: $counterparty)
-                    TextField("Notes", text: $notes, axis: .vertical)
-                        .lineLimit(2...6)
-                }
-
-                if let errorMessage {
-                    Section {
-                        Text(errorMessage)
-                            .font(.caption)
-                            .foregroundStyle(.red)
-                    }
-                }
-            }
-            .tint(colorScheme == .dark ? .white : .black)
-            .navigationTitle("Mark Card")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
-                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { save() }
-                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
-                }
-            }
-            .onAppear {
-                quantity = min(max(item.quantity, 1), quantity)
-                services.setupCollectionLedger(modelContext: modelContext)
-            }
-        }
-    }
-
-    private var counterpartyLabel: String {
-        switch dispositionKind {
-        case .sold: return "Sold to"
-        case .traded: return "Traded with"
-        case .gifted: return "Gifted to"
-        case .lost: return "Lost details"
-        case .damaged: return "Damage details"
-        }
-    }
-
-    private func save() {
-        errorMessage = nil
-        guard let ledger = services.collectionLedger else {
-            errorMessage = "Collection isn’t ready. Try again."
-            return
-        }
-
-        do {
-            try ledger.recordSingleCardDisposition(
-                item: item,
-                kind: dispositionKind,
-                quantity: quantity,
-                currencyCode: services.priceDisplay.currency == .gbp ? "GBP" : "USD",
-                cardDisplayName: cardDisplayName,
-                unitPrice: try parsedOptionalPrice(priceText),
-                counterparty: counterparty,
-                notes: notes
-            )
-            dismiss()
-        } catch {
-            errorMessage = error.localizedDescription
-        }
-    }
-
-    private func parsedOptionalPrice(_ text: String) throws -> Double? {
-        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return nil }
-        guard let value = Double(trimmed.replacingOccurrences(of: ",", with: ".")) else {
-            throw CollectionMarkAsSheetError.invalidPrice
-        }
-        return value
-    }
-
-    private func displayVariant(_ variantKey: String) -> String {
-        let normalized = variantKey.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !normalized.isEmpty else { return "Normal" }
-        let spaced = normalized
-            .replacingOccurrences(of: "_", with: " ")
-            .replacingOccurrences(of: "([a-z])([A-Z])", with: "$1 $2", options: .regularExpression)
-        return spaced
-            .split(separator: " ")
-            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
-            .joined(separator: " ")
-    }
-}
-
-private enum CollectionMarkAsSheetError: LocalizedError {
-    case invalidPrice
-
-    var errorDescription: String? {
-        switch self {
-        case .invalidPrice:
-            return "Enter a valid price."
-        }
-    }
 }
 
 // MARK: - Segment Enum

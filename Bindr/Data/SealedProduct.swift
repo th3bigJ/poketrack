@@ -31,6 +31,7 @@ struct SealedProduct: Codable, Identifiable, Hashable, Sendable {
     let year: Int?
     let series: String?
     let setID: Int?
+    let setName: String?
     let image: SealedProductImage?
 
     enum CodingKeys: String, CodingKey {
@@ -43,6 +44,7 @@ struct SealedProduct: Codable, Identifiable, Hashable, Sendable {
         case year
         case series
         case setID = "set_id"
+        case setName = "set_name"
         case image
     }
 
@@ -90,6 +92,7 @@ struct SealedProduct: Codable, Identifiable, Hashable, Sendable {
         [
             name,
             series ?? "",
+            setName ?? "",
             type ?? "",
             language ?? "",
             String(year ?? 0),

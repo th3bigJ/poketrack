@@ -111,21 +111,8 @@ struct BrowseProductsTabContent: View {
         guard let normalizedSetName, !normalizedSetName.isEmpty else {
             return false
         }
-        // Product name almost always embeds the set name verbatim (e.g.
-        // "Perfect Order Booster Box"). Series is a looser match — sometimes
-        // the series field stores the parent series ("Mega Evolution") so we
-        // accept either direction of contains.
-        let nameNorm = normalizedProductIndex.name(at: productIndex)
-        if !nameNorm.isEmpty, nameNorm.contains(normalizedSetName) {
-            return true
-        }
-        let seriesNorm = normalizedProductIndex.series(at: productIndex)
-        if !seriesNorm.isEmpty {
-            if seriesNorm.contains(normalizedSetName) || normalizedSetName.contains(seriesNorm) {
-                return true
-            }
-        }
-        return false
+        let setNameNorm = normalizedProductIndex.setName(at: productIndex)
+        return !setNameNorm.isEmpty && setNameNorm == normalizedSetName
     }
 
     /// Rebuilds ``carouselSets`` and ``normalizedProductIndex`` from the
@@ -149,19 +136,9 @@ struct BrowseProductsTabContent: View {
                 }
                 let normalizedSetName = normalizeSealedSearchText(set.name)
                 guard !normalizedSetName.isEmpty else { return false }
-                // Walk the precomputed index — no per-product normalization
-                // happens here on the hot path.
                 for i in allProducts.indices {
-                    let nameNorm = index.name(at: i)
-                    if !nameNorm.isEmpty, nameNorm.contains(normalizedSetName) {
-                        return true
-                    }
-                    let seriesNorm = index.series(at: i)
-                    if !seriesNorm.isEmpty,
-                       seriesNorm.contains(normalizedSetName)
-                        || normalizedSetName.contains(seriesNorm) {
-                        return true
-                    }
+                    let setNameNorm = index.setName(at: i)
+                    if !setNameNorm.isEmpty, setNameNorm == normalizedSetName { return true }
                 }
                 return false
             }
@@ -1393,7 +1370,7 @@ private struct SealedDetailSurface<Content: View>: View {
     }
 }
 
-private struct AddSealedToFolderSheet: View {
+struct AddSealedToFolderSheet: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
@@ -2247,7 +2224,7 @@ private enum EditSealedValidationError: LocalizedError {
     }
 }
 
-private struct AddSealedToCollectionSheet: View {
+struct AddSealedToCollectionSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
@@ -2394,7 +2371,7 @@ private enum AddSealedToCollectionValidation: Error {
     case invalidPrice
 }
 
-private func normalizeSealedSearchText(_ value: String?) -> String {
+func normalizeSealedSearchText(_ value: String?) -> String {
     (value ?? "")
         .folding(options: [.diacriticInsensitive, .widthInsensitive, .caseInsensitive], locale: .current)
         .trimmingCharacters(in: .whitespacesAndNewlines)
@@ -2409,25 +2386,31 @@ private func normalizeSealedSearchText(_ value: String?) -> String {
 struct NormalizedProductIndex: Equatable {
     private let names: [String]
     private let series: [String]
+    private let setNames: [String]
 
-    static let empty = NormalizedProductIndex(names: [], series: [])
+    static let empty = NormalizedProductIndex(names: [], series: [], setNames: [])
 
-    private init(names: [String], series: [String]) {
+    private init(names: [String], series: [String], setNames: [String]) {
         self.names = names
         self.series = series
+        self.setNames = setNames
     }
 
     init(products: [SealedProduct]) {
         var n: [String] = []
         var s: [String] = []
+        var sn: [String] = []
         n.reserveCapacity(products.count)
         s.reserveCapacity(products.count)
+        sn.reserveCapacity(products.count)
         for product in products {
             n.append(normalizeSealedSearchText(product.name))
             s.append(normalizeSealedSearchText(product.series))
+            sn.append(normalizeSealedSearchText(product.setName))
         }
         self.names = n
         self.series = s
+        self.setNames = sn
     }
 
     func name(at index: Int) -> String {
@@ -2438,5 +2421,10 @@ struct NormalizedProductIndex: Equatable {
     func series(at index: Int) -> String {
         guard index >= 0, index < series.count else { return "" }
         return series[index]
+    }
+
+    func setName(at index: Int) -> String {
+        guard index >= 0, index < setNames.count else { return "" }
+        return setNames[index]
     }
 }
