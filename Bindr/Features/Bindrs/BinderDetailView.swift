@@ -327,10 +327,12 @@ struct BinderDetailView: View {
         let verticalPadding: CGFloat = 40 // More vertical breathing room
         let slotSpacing: CGFloat = 8
         // These must match the chrome inside `pageSurface`:
-        //   .padding(.horizontal, 14)  →  28pt total
-        //   .padding(.top, 14) + .padding(.bottom, 14) = 28pt
-        let surfaceHorizontalChrome: CGFloat = 28
-        let surfaceVerticalChrome: CGFloat = 28
+        //   .padding(.leading, 32)  + .padding(.trailing, 14) = 46pt
+        //   .padding(.top, 30)      + .padding(.bottom, 14)   = 44pt
+        // The leading inset reserves the binder-ring spine; the top inset
+        // reserves the foil-stamped title strip.
+        let surfaceHorizontalChrome: CGFloat = 46
+        let surfaceVerticalChrome: CGFloat = 44
         let cardAspectRatio: CGFloat = 5.0 / 7.0
 
         let maxWidth = max(available.width - horizontalPadding, 240)
@@ -423,7 +425,20 @@ struct BinderDetailView: View {
             // Soft drop shadow under the surface.
             .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
 
-            // 2. Card grid
+            // 2. Foil-stamped binder title — sits in the top strip above the
+            //    grid. Tinted with the binder's accent so each binder feels
+            //    distinct, with a layered shadow stack to read as embossed
+            //    foil pressed into the playmat.
+            VStack(spacing: 0) {
+                foilStampedTitle
+                    .padding(.top, 10)
+                    .padding(.leading, 32) // skip past the ring spine
+                    .padding(.trailing, 14)
+                Spacer(minLength: 0)
+            }
+
+            // 3. Card grid — leading padding bumped to 32 to clear the ring
+            //    spine; top padding bumped to 30 to clear the title strip.
             LazyVGrid(
                 columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
                 spacing: 8
@@ -440,10 +455,22 @@ struct BinderDetailView: View {
                     .aspectRatio(5/7, contentMode: .fit)
                 }
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 14)
+            .padding(.leading, 32)
+            .padding(.trailing, 14)
+            .padding(.top, 30)
+            .padding(.bottom, 14)
 
-            // 4. Page-turn dimming overlay (existing behaviour)
+            // 4. Three-ring binder spine on the left edge — the single change
+            //    that turns the page from "felt mat" into "actual binder".
+            //    Sits above the grid so the rings appear in the gutter even
+            //    when cards crowd toward the edge.
+            HStack {
+                binderRingSpine(pageHeight: pageSize.height)
+                    .padding(.leading, 8)
+                Spacer(minLength: 0)
+            }
+
+            // 5. Page-turn dimming overlay (existing behaviour)
             if isPageTurning {
                 RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
                     .fill(Color.black.opacity(colorScheme == .dark ? 0.22 : 0.12))
@@ -466,6 +493,137 @@ struct BinderDetailView: View {
         }
         .foregroundStyle(Color.primary.opacity(0.7))
         .frame(maxWidth: .infinity)
+    }
+
+    // MARK: - Binder ring spine
+
+    /// Three metal rings running down the left edge of the page. The single
+    /// most impactful piece of binder-metaphor chrome — turns the surface
+    /// from "felt playmat" into "object you flip pages of".
+    private func binderRingSpine(pageHeight: CGFloat) -> some View {
+        // Distribute three rings vertically with generous breathing room.
+        // Inset the spine slightly from the top/bottom to mimic the metal
+        // hardware position on a real ringed binder.
+        VStack(spacing: 0) {
+            Spacer(minLength: 0)
+            binderRing()
+            Spacer(minLength: 0)
+            binderRing()
+            Spacer(minLength: 0)
+            binderRing()
+            Spacer(minLength: 0)
+        }
+        .frame(width: 16)
+        .padding(.vertical, max(20, pageHeight * 0.10))
+        .allowsHitTesting(false)
+    }
+
+    /// One ring, drawn as a stack: dark inner hole, metallic gradient body,
+    /// crescent highlight on top to suggest light catching the metal.
+    private func binderRing() -> some View {
+        ZStack {
+            // 1. Outer rim — metallic gradient (dark grey → mid grey → almost
+            //    black) gives the ring its silhouette and dimension.
+            Circle()
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            Color(white: 0.62),
+                            Color(white: 0.30),
+                            Color(white: 0.10)
+                        ],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                .frame(width: 16, height: 16)
+                .shadow(color: .black.opacity(0.55), radius: 1.2, x: 0, y: 1.2)
+
+            // 2. Inner hole — pure dark so the felt colour reads through it
+            //    just enough to feel like a real hole.
+            Circle()
+                .fill(Color.black.opacity(0.92))
+                .frame(width: 8, height: 8)
+                .overlay {
+                    Circle()
+                        .stroke(Color.black.opacity(0.6), lineWidth: 0.5)
+                        .blur(radius: 0.8)
+                }
+
+            // 3. Crescent highlight — bright arc on the upper edge of the
+            //    ring catches the eye and reads instantly as polished metal.
+            Circle()
+                .trim(from: 0.62, to: 0.92)
+                .stroke(
+                    LinearGradient(
+                        colors: [
+                            Color.white.opacity(0.0),
+                            Color.white.opacity(0.75),
+                            Color.white.opacity(0.0)
+                        ],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    ),
+                    style: StrokeStyle(lineWidth: 1.2, lineCap: .round)
+                )
+                .frame(width: 14, height: 14)
+        }
+    }
+
+    // MARK: - Foil-stamped title
+
+    /// Binder title rendered as if it's been pressed into the playmat with
+    /// coloured foil. Tinted with `binder.resolvedColour`, with a layered
+    /// shadow stack (subtle white highlight above + dark shadow below + soft
+    /// outer glow in the accent colour) that reads as embossed metallic ink.
+    private var foilStampedTitle: some View {
+        let title = binder.title.uppercased()
+        let accent = binder.resolvedColour
+        return Text(title)
+            .font(.system(size: 11, weight: .black, design: .serif))
+            .tracking(2.6)
+            .foregroundStyle(
+                LinearGradient(
+                    colors: [
+                        accent.opacity(0.95),
+                        accent.opacity(0.55)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+            .lineLimit(1)
+            .minimumScaleFactor(0.6)
+            // Embossed look: tiny white highlight above the strokes, a darker
+            // shadow below, plus a soft accent-coloured halo around the whole
+            // word so the foil "glows" against the felt.
+            .shadow(color: Color.white.opacity(0.20), radius: 0.4, x: 0, y: -0.6)
+            .shadow(color: Color.black.opacity(0.55), radius: 0.5, x: 0, y: 0.7)
+            .shadow(color: accent.opacity(0.35), radius: 4, x: 0, y: 0)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .allowsHitTesting(false)
+    }
+
+    // MARK: - Holographic sheen
+
+    /// Returns true when a card's rarity should get the animated holo overlay.
+    /// Permissive on purpose — anything that isn't a base common/uncommon/rare
+    /// gets the shimmer so EX, V, VMAX, VSTAR, full art, illustration, secret,
+    /// hyper, rainbow, holo, etc. all light up. Static cards (the bulk of any
+    /// binder) stay plain so the effect feels earned.
+    private func isHoloRarity(_ rarity: String?) -> Bool {
+        guard let raw = rarity?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(),
+              !raw.isEmpty else {
+            return false
+        }
+        // Plain non-holo rarities — keep these static.
+        let plainRarities: Set<String> = [
+            "common", "uncommon", "rare", "double rare"
+        ]
+        if plainRarities.contains(raw) {
+            return false
+        }
+        return true
     }
 
     @ViewBuilder
@@ -499,9 +657,9 @@ struct BinderDetailView: View {
     @ViewBuilder
     private func viewSlotCell(slot: BinderSlot) -> some View {
         let isOwned = ownedCardIDs.contains(slot.cardID)
-        let imageURL = cardsByID[slot.cardID].map {
-            AppConfiguration.imageURL(relativePath: $0.imageLowSrc)
-        }
+        let card = cardsByID[slot.cardID]
+        let imageURL = card.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
+        let cardCornerRadius: CGFloat = 4
         Button {
             if !isEditing { viewingSlot = slot }
         } label: {
@@ -510,13 +668,24 @@ struct BinderDetailView: View {
                 CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 220, height: 308)) { img in
                     img.resizable().scaledToFit()
                 } placeholder: {
-                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                         .fill(Color(uiColor: .systemGray5))
                 }
-                .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
+                // Animated holographic sheen — only renders for rare/EX/V/etc.
+                // cards so plain commons stay matte and the effect feels
+                // earned. Clipped to the card shape and applied with
+                // `plusLighter` so it brightens the underlying art rather
+                // than washing it out.
+                .overlay {
+                    if let card, isHoloRarity(card.rarity) {
+                        HoloSheenOverlay()
+                            .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
+                    }
+                }
 
                 // Inset top highlight — simulates light catching the card edge.
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                     .inset(by: 0.5)
                     .stroke(
                         LinearGradient(
@@ -910,6 +1079,46 @@ private struct BinderCardButtonStyle: ButtonStyle {
                 y: 1
             )
             .animation(.spring(response: 0.28, dampingFraction: 0.72), value: configuration.isPressed)
+    }
+}
+
+// MARK: - Holographic sheen overlay
+
+/// A narrow rainbow band that slides diagonally across the card on a slow
+/// loop, mimicking how a holo Pokémon card catches light when you tilt it.
+/// Uses a single ``TimelineView`` and animates the gradient endpoints rather
+/// than transforming a larger view, so the cost per card is just a
+/// per-frame `LinearGradient` rebuild — affordable for the 3–6 holo cards a
+/// typical binder page contains.
+private struct HoloSheenOverlay: View {
+    /// Length of one full sheen cycle. ~5s feels alive without becoming
+    /// distracting; faster cycles read as flickering, slower as static.
+    private let cycleDuration: Double = 5.0
+
+    var body: some View {
+        TimelineView(.animation(minimumInterval: 1.0 / 30.0, paused: false)) { context in
+            // Phase walks 0 → 1 over `cycleDuration` seconds. Mapping it to
+            // (-0.5, 1.5) lets the band travel from off-screen-leading to
+            // off-screen-trailing, so there's a clean entry/exit instead of
+            // a popping reset.
+            let raw = context.date.timeIntervalSinceReferenceDate
+                .truncatingRemainder(dividingBy: cycleDuration) / cycleDuration
+            let pos = raw * 2.0 - 0.5
+
+            LinearGradient(
+                stops: [
+                    .init(color: .clear, location: 0),
+                    .init(color: Color(red: 1.00, green: 0.55, blue: 0.85).opacity(0.40), location: 0.42),
+                    .init(color: Color(red: 0.55, green: 0.95, blue: 1.00).opacity(0.40), location: 0.50),
+                    .init(color: Color(red: 0.95, green: 1.00, blue: 0.55).opacity(0.40), location: 0.58),
+                    .init(color: .clear, location: 1)
+                ],
+                startPoint: UnitPoint(x: pos - 0.5, y: 0),
+                endPoint: UnitPoint(x: pos + 0.5, y: 1)
+            )
+            .blendMode(.plusLighter)
+            .allowsHitTesting(false)
+        }
     }
 }
 
