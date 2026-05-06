@@ -216,16 +216,98 @@ struct CardDetailSheet: View {
         .frame(maxWidth: .infinity)
     }
 
+    @Query private var tradeListItems: [TradeListItem]
+
     private func cardMetaRow(for card: Card) -> some View {
         VStack(spacing: 12) {
             titleBlock(for: card)
-            HStack(spacing: 8) {
-                collectionActionButton(for: card)
-                wishlistActionButton(for: card)
-                folderActionButton(for: card)
-                if let tradeAction { tradeActionButton(for: card, action: tradeAction) }
-                shareActionButton
-            }
+            
+            CardActionMenu(
+                card: card,
+                isOwned: showsCollectionSection(for: card),
+                isWishlisted: isCurrentCardWishlisted,
+                tradeActionLabel: tradeAction != nil ? tradeActionLabel : nil,
+                onSaveToCollection: {
+                    if let variantKey = singleAvailableVariantKey {
+                        addToCollectionVariant(card: card, variantKey: variantKey)
+                    } else {
+                        addToCollectionVariant(card: card, variantKey: wishlistVariantKeys.first ?? "normal")
+                    }
+                },
+                onAddToWishlist: {
+                    if let variantKey = singleAvailableVariantKey {
+                        addToWishlist(variantKey: variantKey)
+                    } else {
+                        addToWishlist(variantKey: wishlistVariantKeys.first ?? "normal")
+                    }
+                },
+                onRemoveFromWishlist: {
+                    removeCurrentCardFromWishlist()
+                },
+                onAddToFolder: {
+                    let variantKey = singleAvailableVariantKey ?? wishlistVariantKeys.first ?? "normal"
+                    addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: variantKey)
+                },
+                onTradeAction: {
+                    if let tradeAction {
+                        let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }
+                        if totalOwned > 1 {
+                            tradeListPickerQuantity = 1
+                            showTradeListQuantityPicker = true
+                        } else {
+                            tradeAction(card, 1)
+                        }
+                    }
+                },
+                onShareAction: {
+                    showCardShare = true
+                },
+                onEditAction: {
+                    if let firstItem = visibleCollectionItems.first,
+                       let lot = firstItem.costLots?.first(where: { $0.quantityRemaining > 0 }),
+                       let line = lot.sourceLedgerLine {
+                        // Re-implement the manual HoldingLine creation logic
+                        let direction = LedgerDirection(rawValue: line.direction) ?? .bought
+                        let date = line.occurredAt
+                        let counterparty = cleaned(line.counterparty)
+                        let description = cleaned(line.lineDescription)
+                        let unitPrice = line.unitPrice
+                        let currencyCode = line.currencyCode
+                        let groupKey = [firstItem.itemKind, firstItem.variantKey, cleaned(firstItem.gradingCompany) ?? "", cleaned(firstItem.grade) ?? ""].joined(separator: "|")
+                        let lineID = [groupKey, direction.rawValue, counterparty ?? "", description ?? "", currencyCode, (unitPrice.map { String(format: "%.6f", $0) } ?? ""), String(Int(date.timeIntervalSince1970))].joined(separator: "|")
+                        
+                        editingLine = HoldingLine(
+                            id: lineID + "|\(lot.id.uuidString)", item: firstItem, itemKind: firstItem.itemKind,
+                            variantKey: firstItem.variantKey, gradingCompany: cleaned(firstItem.gradingCompany), grade: cleaned(firstItem.grade),
+                            quantity: lot.quantityRemaining, date: date, direction: direction, unitPrice: unitPrice,
+                            currencyCode: currencyCode, counterparty: counterparty, description: description, lotIDs: [lot.id]
+                        )
+                    }
+                },
+                onToggleTradeable: {
+                    if let firstItem = visibleCollectionItems.first,
+                       let lot = firstItem.costLots?.first(where: { $0.quantityRemaining > 0 }),
+                       let line = lot.sourceLedgerLine {
+                        // Using same manual creation for disposition line
+                        let direction = LedgerDirection(rawValue: line.direction) ?? .bought
+                        let date = line.occurredAt
+                        let counterparty = cleaned(line.counterparty)
+                        let description = cleaned(line.lineDescription)
+                        let unitPrice = line.unitPrice
+                        let currencyCode = line.currencyCode
+                        let groupKey = [firstItem.itemKind, firstItem.variantKey, cleaned(firstItem.gradingCompany) ?? "", cleaned(firstItem.grade) ?? ""].joined(separator: "|")
+                        let lineID = [groupKey, direction.rawValue, counterparty ?? "", description ?? "", currencyCode, (unitPrice.map { String(format: "%.6f", $0) } ?? ""), String(Int(date.timeIntervalSince1970))].joined(separator: "|")
+                        
+                        dispositionLine = HoldingLine(
+                            id: lineID + "|\(lot.id.uuidString)", item: firstItem, itemKind: firstItem.itemKind,
+                            variantKey: firstItem.variantKey, gradingCompany: cleaned(firstItem.gradingCompany), grade: cleaned(firstItem.grade),
+                            quantity: lot.quantityRemaining, date: date, direction: direction, unitPrice: unitPrice,
+                            currencyCode: currencyCode, counterparty: counterparty, description: description, lotIDs: [lot.id]
+                        )
+                    }
+                },
+                isTradeable: tradeListItems.contains(where: { $0.cardID == currentCard.masterCardId })
+            )
         }
     }
 
