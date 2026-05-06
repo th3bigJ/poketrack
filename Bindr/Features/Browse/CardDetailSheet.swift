@@ -226,7 +226,7 @@ struct CardDetailSheet: View {
                 card: card,
                 isOwned: showsCollectionSection(for: card),
                 isWishlisted: isCurrentCardWishlisted,
-                tradeActionLabel: tradeAction != nil ? tradeActionLabel : nil,
+                tradeActionLabel: "Trade List",
                 onSaveToCollection: {
                     if let variantKey = singleAvailableVariantKey {
                         addToCollectionVariant(card: card, variantKey: variantKey)
@@ -249,13 +249,15 @@ struct CardDetailSheet: View {
                     addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: variantKey)
                 },
                 onTradeAction: {
-                    if let tradeAction {
+                    if let _ = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
+                        performTradeAction(card: card, quantity: 1)
+                    } else {
                         let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }
                         if totalOwned > 1 {
                             tradeListPickerQuantity = 1
                             showTradeListQuantityPicker = true
                         } else {
-                            tradeAction(card, 1)
+                            performTradeAction(card: card, quantity: 1)
                         }
                     }
                 },
@@ -306,8 +308,26 @@ struct CardDetailSheet: View {
                         )
                     }
                 },
+                onRemoveFromCollection: {
+                    removeCurrentCardFromCollection()
+                },
                 isTradeable: tradeListItems.contains(where: { $0.cardID == currentCard.masterCardId })
             )
+            .popover(isPresented: $showTradeListQuantityPicker) {
+                let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }
+                VStack(spacing: 16) {
+                    Text("How many to trade?").font(.headline)
+                    Stepper("Quantity: \(tradeListPickerQuantity)", value: $tradeListPickerQuantity, in: 1...max(totalOwned, 1))
+                    Text("You own \(totalOwned) copies").font(.caption).foregroundStyle(.secondary)
+                    HStack(spacing: 12) {
+                        Button("Cancel") { showTradeListQuantityPicker = false }.buttonStyle(.bordered).frame(maxWidth: .infinity)
+                        Button("Add") { showTradeListQuantityPicker = false; performTradeAction(card: card, quantity: tradeListPickerQuantity) }
+                            .buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
+                    }
+                }
+                .padding()
+                .frame(width: 280)
+            }
         }
     }
 
@@ -413,31 +433,29 @@ struct CardDetailSheet: View {
         .buttonStyle(.plain)
     }
 
-    private func tradeActionButton(for card: Card, action: @escaping (Card, Int) -> Void) -> some View {
-        let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }
-        return Button {
-            if totalOwned > 1 {
-                tradeListPickerQuantity = 1
-                showTradeListQuantityPicker = true
-            } else {
-                action(card, 1)
-            }
-        } label: {
-            cardActionBody(title: tradeActionLabel, systemImage: "arrow.left.arrow.right.circle.fill", tint: DebugPalette.chartLine)
+    private func removeCurrentCardFromCollection() {
+        for item in collectionItems {
+            modelContext.delete(item)
         }
-        .buttonStyle(.plain)
-        .popover(isPresented: $showTradeListQuantityPicker) {
-            VStack(spacing: 16) {
-                Text("How many to trade?").font(.headline)
-                Stepper("Quantity: \(tradeListPickerQuantity)", value: $tradeListPickerQuantity, in: 1...max(totalOwned, 1))
-                Text("You own \(totalOwned) copies").font(.caption).foregroundStyle(.secondary)
-                HStack(spacing: 12) {
-                    Button("Cancel") { showTradeListQuantityPicker = false }.buttonStyle(.bordered).frame(maxWidth: .infinity)
-                    Button("Add") { showTradeListQuantityPicker = false; action(card, tradeListPickerQuantity) }
-                        .buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
-                }
+        try? modelContext.save()
+        Haptics.success()
+    }
+
+    private func performTradeAction(card: Card, quantity: Int) {
+        if let tradeAction {
+            tradeAction(card, quantity)
+        } else {
+            // Default toggle logic for collection/browse management
+            if let existing = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
+                modelContext.delete(existing)
+                Haptics.lightImpact()
+            } else {
+                let newItem = TradeListItem(cardID: card.masterCardId, quantity: quantity)
+                modelContext.insert(newItem)
+                Haptics.success()
             }
-            .padding(20).frame(minWidth: 260).presentationCompactAdaptation(.popover)
+            try? modelContext.save()
+            services.socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
         }
     }
 

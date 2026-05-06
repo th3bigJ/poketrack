@@ -208,24 +208,25 @@ struct SocialRootView: View {
                         Haptics.lightImpact()
                         isAlertsPresented = true
                     } label: {
-                        ZStack(alignment: .topTrailing) {
-                            Image(systemName: "bell")
-                                .font(.system(size: 15, weight: .medium))
-                                .foregroundStyle(.primary)
-
                             if services.socialFeed.unreadAlertsCount > 0 {
-                                Capsule()
-                                    .fill(Color(hex: "E05252"))
-                                    .frame(minWidth: 14, minHeight: 14)
-                                    .overlay {
+                                Image(systemName: "bell.fill")
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .foregroundStyle(Color(hex: "E05252"))
+                                    .overlay(alignment: .topTrailing) {
                                         Text("\(services.socialFeed.unreadAlertsCount)")
-                                            .font(.system(size: 9, weight: .bold))
-                                            .foregroundStyle(.white)
-                                            .padding(.horizontal, 3)
+                                            .font(.system(size: 8, weight: .black, design: .rounded))
+                                            .foregroundStyle(.primary) // Contrast against the glass
+                                            .padding(.horizontal, 4)
+                                            .padding(.vertical, 2)
+                                            .background(Color.white.opacity(0.9), in: Capsule())
+                                            .shadow(color: .black.opacity(0.1), radius: 2)
+                                            .offset(x: 8, y: -6)
                                     }
-                                    .offset(x: 6, y: -6)
+                            } else {
+                                Image(systemName: "bell")
+                                    .font(.system(size: 15, weight: .medium))
+                                    .foregroundStyle(.primary)
                             }
-                        }
                     }
                 }
 
@@ -431,7 +432,7 @@ struct SocialRootView: View {
                     case .friendProfile(let username):
                         FriendProfileView(username: username, navigationPath: $socialNavigationPath)
                     case .tradeDetail(let tradeID):
-                        TradeDetailView(tradeID: tradeID)
+                        TradeDetailView(navigationPath: $socialNavigationPath, tradeID: tradeID)
                     case .tradeBuilder(let receiverID, let theirCards, let myCards, let existingTradeID, let originalTrade):
                         TradeBuilderView(
                             receiverID: receiverID,

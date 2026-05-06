@@ -7,6 +7,7 @@ struct TradeDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
 
+    @Binding var navigationPath: NavigationPath
     let tradeID: UUID
 
     @State private var tradeWithItems: TradeWithItems?
@@ -320,89 +321,190 @@ struct TradeDetailView: View {
     @ViewBuilder
     private func actionButtons(_ twi: TradeWithItems) -> some View {
         let status = twi.trade.status
+        let resolvedUID = currentUserID ?? UUID()
 
-        VStack(spacing: 10) {
-            if status == .pending && !isInitiator {
-                // Receiver sees: Accept, Counter, Decline
-                Button { Task { await performAccept() } } label: {
-                    Label("Accept Trade", systemImage: "checkmark.circle.fill")
+        VStack(spacing: 12) {
+            if status == .pending || status == .countered {
+                if !isInitiator {
+                    // RECEIVER ACTION MENU
+                    TradeActionMenu(
+                        label: "Respond...",
+                        icon: "arrow.uturn.right.circle.fill",
+                        color: themeColor,
+                        isBusy: isMutating,
+                        menuItems: [
+                            MenuItem(
+                                label: "Accept Trade",
+                                subLabel: "Add cards to collection",
+                                icon: "checkmark.circle.fill",
+                                color: Color(hex: "52C97C"),
+                                action: { Task { await performAccept() } }
+                            ),
+                            MenuItem(
+                                label: "Counter Offer",
+                                subLabel: "Edit this trade offer",
+                                icon: "arrow.left.arrow.right.circle.fill",
+                                color: Color(hex: "E8B84B"),
+                                action: { 
+                                    navigationPath.append(SocialDestination.tradeBuilder(
+                                        receiverID: twi.trade.initiatorID == resolvedUID ? twi.trade.receiverID : twi.trade.initiatorID,
+                                        theirCards: twi.theirItems(currentUserID: resolvedUID),
+                                        myCards: twi.myItems(currentUserID: resolvedUID),
+                                        existingTradeID: twi.trade.id,
+                                        originalTrade: twi.trade
+                                    ))
+                                }
+                            ),
+                            MenuItem(
+                                label: "Decline",
+                                subLabel: "Close this trade session",
+                                icon: "xmark.circle.fill",
+                                color: Color(hex: "E05252"),
+                                action: { showConfirmDecline = true }
+                            )
+                        ]
+                    )
+                } else {
+                    // SENDER STANDALONE CANCEL
+                    Button { showConfirmCancel = true } label: {
+                        HStack {
+                            Image(systemName: "xmark.circle.fill")
+                            Text("Cancel Trade")
+                                .fontWeight(.bold)
+                        }
                         .frame(maxWidth: .infinity)
+                        .frame(height: 56)
+                        .foregroundStyle(Color(hex: "E05252"))
+                        .glassCardStyle(cornerRadius: 18, interactive: true)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "52C97C"), isBusy: isMutating))
-
-                NavigationLink(value: SocialDestination.tradeBuilder(
-                    receiverID: twi.trade.initiatorID,
-                    theirCards: twi.initiatorItems,
-                    myCards: twi.receiverItems,
-                    existingTradeID: twi.trade.id,
-                    originalTrade: twi.trade
-                )) {
-                    Label("Counter Offer", systemImage: "arrow.left.arrow.right")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "E8B84B"), isBusy: false))
-
-                Button { showConfirmDecline = true } label: {
-                    Label("Decline", systemImage: "xmark.circle")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "E05252"), isBusy: isMutating))
-
-            } else if status == .pending && isInitiator {
-                Button { showConfirmCancel = true } label: {
-                    Label("Cancel Trade", systemImage: "xmark.circle")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "E05252"), isBusy: isMutating))
-
-            } else if status == .countered && !isInitiator {
-                // Person who received the counter (original initiator) can accept, counter again, or decline
-                Button { Task { await performAccept() } } label: {
-                    Label("Accept Counter", systemImage: "checkmark.circle.fill")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "52C97C"), isBusy: isMutating))
-
-                NavigationLink(value: SocialDestination.tradeBuilder(
-                    receiverID: twi.trade.receiverID,
-                    theirCards: twi.receiverItems,
-                    myCards: twi.initiatorItems,
-                    existingTradeID: twi.trade.id,
-                    originalTrade: twi.trade
-                )) {
-                    Label("Counter Again", systemImage: "arrow.left.arrow.right")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "E8B84B"), isBusy: false))
-
-                Button { showConfirmDecline = true } label: {
-                    Label("Decline", systemImage: "xmark.circle")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "E05252"), isBusy: isMutating))
-
-            } else if status == .countered && isInitiator {
-                Button { showConfirmCancel = true } label: {
-                    Label("Cancel Trade", systemImage: "xmark.circle")
-                        .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "E05252"), isBusy: isMutating))
-
             } else if status == .accepted {
-                Button { showConfirmComplete = true } label: {
-                    Label("Mark Complete", systemImage: "checkmark.seal.fill")
+                HStack(spacing: 12) {
+                    Button { showConfirmComplete = true } label: {
+                        HStack {
+                            Image(systemName: "checkmark.seal.fill")
+                            Text("Complete")
+                                .fontWeight(.bold)
+                        }
                         .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "52C97C"), isBusy: isMutating))
+                        .frame(height: 56)
+                        .foregroundStyle(Color(hex: "52C97C"))
+                        .glassCardStyle(cornerRadius: 18, interactive: true)
+                    }
+                    .buttonStyle(.plain)
 
-                Button { showConfirmCancel = true } label: {
-                    Label("Cancel Trade", systemImage: "xmark.circle")
-                        .frame(maxWidth: .infinity)
+                    Button { showConfirmCancel = true } label: {
+                        Image(systemName: "xmark.circle")
+                            .font(.system(size: 20))
+                            .frame(width: 56, height: 56)
+                            .foregroundStyle(Color(hex: "E05252"))
+                            .glassCardStyle(cornerRadius: 18, interactive: true)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(TradeActionButtonStyle(color: Color(hex: "E05252"), isBusy: isMutating))
             }
         }
         .disabled(isMutating)
+    }
+
+    private struct MenuItem: Identifiable {
+        let id = UUID()
+        let label: String
+        let subLabel: String?
+        let icon: String
+        let color: Color
+        let action: () -> Void
+    }
+
+    private struct TradeActionMenu: View {
+        let label: String
+        let icon: String
+        let color: Color
+        let isBusy: Bool
+        let menuItems: [MenuItem]
+
+        @State private var isExpanded = false
+        @Environment(\.colorScheme) private var colorScheme
+
+        var body: some View {
+            VStack(spacing: 12) {
+                if isExpanded {
+                    VStack(spacing: 0) {
+                        ForEach(menuItems) { item in
+                            Button {
+                                Haptics.selectionChanged()
+                                item.action()
+                                withAnimation { isExpanded = false }
+                            } label: {
+                                HStack(spacing: 16) {
+                                    Image(systemName: item.icon)
+                                        .font(.system(size: 18, weight: .medium))
+                                        .foregroundStyle(item.color)
+                                        .frame(width: 24)
+                                    
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(item.label)
+                                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                                            .foregroundStyle(.primary)
+                                        if let sub = item.subLabel {
+                                            Text(sub)
+                                                .font(.system(size: 12))
+                                                .foregroundStyle(.secondary)
+                                        }
+                                    }
+                                    Spacer()
+                                }
+                                .padding(.horizontal, 20)
+                                .padding(.vertical, 14)
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+                            
+                            if item.id != menuItems.last?.id {
+                                Divider().padding(.horizontal, 20).opacity(0.1)
+                            }
+                        }
+                    }
+                    .glassCardStyle(cornerRadius: 24, interactive: true)
+                    .transition(.scale(scale: 0.9, anchor: .bottom).combined(with: .opacity).combined(with: .move(edge: .bottom)))
+                }
+
+                Button {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                        isExpanded.toggle()
+                    }
+                    Haptics.lightImpact()
+                } label: {
+                    HStack {
+                        Image(systemName: icon)
+                        Text(label)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Image(systemName: "chevron.up")
+                            .font(.system(size: 12, weight: .bold))
+                            .opacity(0.4)
+                            .rotationEffect(.degrees(isExpanded ? 180 : 0))
+                    }
+                    .padding(.horizontal, 20)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 56)
+                    .foregroundStyle(color)
+                    .glassCardStyle(cornerRadius: 18, interactive: true)
+                }
+                .buttonStyle(.plain)
+            }
+            .overlay {
+                if isExpanded {
+                    Color.black.opacity(0.001)
+                        .onTapGesture {
+                            withAnimation { isExpanded = false }
+                        }
+                        .frame(width: 1000, height: 2000)
+                        .offset(y: -500)
+                }
+            }
+        }
     }
 
     private func refresh() async {

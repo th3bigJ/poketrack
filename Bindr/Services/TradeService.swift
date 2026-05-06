@@ -110,6 +110,16 @@ final class TradeService {
         )
         guard !trades.isEmpty else { return [] }
 
+        // Auto-cancel expired trades (24h timeout)
+        let now = Date()
+        for trade in trades {
+            if (trade.status == .pending || trade.status == .countered),
+               let updatedAt = trade.updatedAt,
+               now.timeIntervalSince(updatedAt) > 86400 {
+                try? await cancelTrade(id: trade.id)
+            }
+        }
+
         let tradeIDs = trades.map(\.id.uuidString).joined(separator: ",")
         let items: [TradeItem] = try await execute(
             path: "/rest/v1/trade_items?trade_id=in.(\(tradeIDs))&order=created_at.asc",
@@ -130,6 +140,15 @@ final class TradeService {
         )
         guard let trade = trades.first else {
             throw TradeServiceError.invalidResponse
+        }
+
+        // Auto-cancel if expired
+        let now = Date()
+        if (trade.status == .pending || trade.status == .countered),
+           let updatedAt = trade.updatedAt,
+           now.timeIntervalSince(updatedAt) > 86400 {
+            try? await cancelTrade(id: id)
+            return try await fetchTrade(id: id) // Re-fetch to get cancelled status
         }
 
         let items: [TradeItem] = try await execute(

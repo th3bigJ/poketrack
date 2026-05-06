@@ -48,7 +48,7 @@ struct TradeWallView: View {
                 cards: [session.card],
                 startIndex: 0,
                 tradeAction: { card, _ in startTrade(card: card, with: session.owner) },
-                tradeActionLabel: "Start Trade"
+                tradeActionLabel: "Offer Trade..."
             )
             .environment(services)
         }
@@ -128,6 +128,7 @@ struct TradeWallView: View {
     }
 
     private func startTrade(card: Card, with friend: SocialProfile) {
+        cardDetailSession = nil
         let item = TradeItem(
             id: UUID(),
             tradeID: UUID(),

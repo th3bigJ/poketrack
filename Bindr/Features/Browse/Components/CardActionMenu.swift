@@ -17,6 +17,7 @@ struct CardActionMenu: View {
     let onShareAction: () -> Void
     let onEditAction: (() -> Void)?
     let onToggleTradeable: (() -> Void)?
+    let onRemoveFromCollection: (() -> Void)?
     let isTradeable: Bool
     
     @State private var isMenuExpanded = false
@@ -32,7 +33,7 @@ struct CardActionMenu: View {
     
     var body: some View {
         HStack(spacing: 12) {
-            // Primary Action Button (Save / Organize / Trade)
+            // Primary Action Button (Add to / Manage / Trade)
             primaryActionButton
             
             // Share Button (Kept separate as requested)
@@ -47,6 +48,19 @@ struct CardActionMenu: View {
             .accessibilityLabel("Share")
         }
         .padding(.horizontal, 4)
+        .overlay {
+            if isMenuExpanded {
+                // Full screen dismissal layer
+                Color.black.opacity(0.001)
+                    .onTapGesture {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                            isMenuExpanded = false
+                        }
+                    }
+                    .frame(width: 1000, height: 2000) // Large enough to cover screen
+                    .offset(y: -500) // Center it roughly
+            }
+        }
         .overlay(alignment: .bottom) {
             if isMenuExpanded {
                 glassMenuOverlay
@@ -72,6 +86,7 @@ struct CardActionMenu: View {
                 
                 Text(primaryLabel)
                     .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .fixedSize()
                 
                 Spacer()
                 
@@ -132,23 +147,27 @@ struct CardActionMenu: View {
         .frame(width: 280)
         .glassCardStyle(cornerRadius: 26, interactive: true)
         .shadow(color: .black.opacity(colorScheme == .dark ? 0.3 : 0.15), radius: 25, y: 15)
+        .zIndex(100)
     }
     
     // MARK: - Logic
     
     private var primaryLabel: String {
-        if let label = tradeActionLabel { return label }
-        return isOwned ? "Organize" : "Save"
+        if isOwned { return "Manage..." }
+        if tradeActionLabel != nil { return "Interested?" }
+        return "Add to..."
     }
     
     private var primaryIcon: String {
+        if isOwned { return "folder.fill" }
         if tradeActionLabel != nil { return "arrow.left.arrow.right.circle.fill" }
-        return isOwned ? "folder.fill" : "plus.circle.fill"
+        return "plus.circle.fill"
     }
     
     private var primaryColor: Color {
+        if isOwned { return Palette.share }
         if tradeActionLabel != nil { return Palette.chartLine }
-        return isOwned ? Palette.share : Palette.success
+        return Palette.success
     }
     
     private var menuItems: [MenuItem] {
@@ -166,8 +185,8 @@ struct CardActionMenu: View {
             
             if let _ = onTradeAction {
                 items.append(MenuItem(
-                    label: "Trade List",
-                    subLabel: isTradeable ? "Marked as tradeable" : "Add to your trade list",
+                    label: isTradeable ? "Remove from Trade List" : "Add to Trade List",
+                    subLabel: isTradeable ? "Currently marked for trade" : "Add to your public trade list",
                     icon: isTradeable ? "arrow.left.arrow.right.circle.fill" : "arrow.left.arrow.right.circle",
                     color: Palette.chartLine,
                     action: { onTradeAction?() }
@@ -181,15 +200,38 @@ struct CardActionMenu: View {
                 color: .primary.opacity(0.7),
                 action: { onEditAction?() }
             ))
+            
+            if let onRemove = onRemoveFromCollection {
+                items.append(MenuItem(
+                    label: "Remove",
+                    subLabel: "Delete from collection",
+                    icon: "trash",
+                    color: Color(red: 0.9, green: 0.3, blue: 0.3),
+                    action: onRemove
+                ))
+            }
         } else {
-            // BROWSE MODE terminology
-            items.append(MenuItem(
-                label: "Collection",
-                subLabel: "Add to your main collection",
-                icon: "plus.circle.fill",
-                color: Palette.success,
-                action: onSaveToCollection
-            ))
+            // BROWSE / SOCIAL MODE terminology
+            
+            // Context-aware Trade Action (e.g. from Trade Wall)
+            if let label = tradeActionLabel, let action = onTradeAction {
+                items.append(MenuItem(
+                    label: label.replacingOccurrences(of: "...", with: ""),
+                    subLabel: "Propose a deal for this card",
+                    icon: "arrow.left.arrow.right.circle.fill",
+                    color: Palette.chartLine,
+                    action: action
+                ))
+            } else {
+                // Standard Browse Mode
+                items.append(MenuItem(
+                    label: "Collection",
+                    subLabel: "Add to your main collection",
+                    icon: "plus.circle.fill",
+                    color: Palette.success,
+                    action: onSaveToCollection
+                ))
+            }
             
             items.append(MenuItem(
                 label: "Wish List",
@@ -238,6 +280,7 @@ private struct MenuItem: Identifiable {
                 onShareAction: {},
                 onEditAction: {},
                 onToggleTradeable: {},
+                onRemoveFromCollection: {},
                 isTradeable: false
             )
             
@@ -254,6 +297,7 @@ private struct MenuItem: Identifiable {
                 onShareAction: {},
                 onEditAction: {},
                 onToggleTradeable: {},
+                onRemoveFromCollection: {},
                 isTradeable: true
             )
         }

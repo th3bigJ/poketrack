@@ -2171,30 +2171,46 @@ struct BrowseView: View {
             
             progressCapsule(progress: progress)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
-        .background {
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.1 : 0.05))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 22, style: .continuous)
-                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
-                }
-                .padding(.horizontal, 10)
-        }
+        .padding(16)
+        .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
     private func progressCapsule(progress: CGFloat) -> some View {
-        Capsule()
-            .fill(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.1))
-            .frame(height: 8)
-            .overlay(alignment: .leading) {
-                services.theme.accentColor
-                    .frame(maxWidth: .infinity)
-                    .scaleEffect(x: max(progress, 0.005), y: 1.0, anchor: .leading)
-                    .clipShape(Capsule())
-                    .shadow(color: services.theme.accentColor.opacity(0.4), radius: 3, x: 0, y: 1)
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                // Track
+                Capsule()
+                    .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
+                
+                // Fill
+                Capsule()
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                services.theme.accentColor,
+                                services.theme.accentColor.opacity(0.7)
+                            ],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .frame(width: max(geo.size.width * progress, 8))
+                    .shadow(color: services.theme.accentColor.opacity(0.3), radius: 4, x: 0, y: 0)
+                    // Glass highlight
+                    .overlay {
+                        Capsule()
+                            .stroke(
+                                LinearGradient(
+                                    colors: [.white.opacity(0.4), .clear],
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                ),
+                                lineWidth: 1
+                            )
+                    }
             }
+        }
+        .frame(height: 8)
     }
 }
 
@@ -3222,47 +3238,69 @@ struct SetCardsView: View {
         let owned = uniqueOwnedInSet
         let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
         
-        return VStack(spacing: 8) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("Set Completion")
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
-                    .foregroundStyle(.secondary)
+        return VStack(spacing: 12) {
+            HStack(alignment: .center) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Set Completion")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary.opacity(0.9))
+                    
+                    Text("\(Int(progress * 100))% Collected")
+                        .font(.system(size: 11, weight: .medium))
+                        .foregroundStyle(.secondary)
+                }
                 
                 Spacer()
                 
-                Group {
+                HStack(alignment: .firstTextBaseline, spacing: 4) {
                     Text("\(owned)")
+                        .font(.system(size: 20, weight: .black, design: .rounded))
                         .foregroundStyle(services.theme.accentColor)
-                        .fontWeight(.black)
-                    + Text(" / \(total)")
+                    
+                    Text("/ \(total)")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
                         .foregroundStyle(.secondary)
-                        .fontWeight(.bold)
                 }
-                .font(.system(size: 14, design: .monospaced))
             }
             
-            Capsule()
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.15 : 0.1))
-                .frame(height: 8)
-                .overlay(alignment: .leading) {
-                    services.theme.accentColor
-                        .frame(maxWidth: .infinity)
-                        .scaleEffect(x: max(progress, 0.005), y: 1.0, anchor: .leading)
-                        .clipShape(Capsule())
-                        .shadow(color: services.theme.accentColor.opacity(0.4), radius: 3, x: 0, y: 1)
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    // Track
+                    Capsule()
+                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
+                    
+                    // Fill
+                    Capsule()
+                        .fill(
+                            LinearGradient(
+                                colors: [
+                                    services.theme.accentColor,
+                                    services.theme.accentColor.opacity(0.7)
+                                ],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: max(geo.size.width * progress, 10))
+                        .shadow(color: services.theme.accentColor.opacity(0.3), radius: 6, x: 0, y: 0)
+                        // Glass highlight
+                        .overlay {
+                            Capsule()
+                                .stroke(
+                                    LinearGradient(
+                                        colors: [.white.opacity(0.4), .clear],
+                                        startPoint: .top,
+                                        endPoint: .bottom
+                                    ),
+                                    lineWidth: 1
+                                )
+                        }
                 }
+            }
+            .frame(height: 10)
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
-        .background {
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.1 : 0.05))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 22, style: .continuous)
-                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
-                }
-                .padding(.horizontal, 10)
-        }
+        .padding(16)
+        .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
     var body: some View {
@@ -3273,7 +3311,6 @@ struct SetCardsView: View {
                 } else {
                         VStack(spacing: 12) {
                             BrowseInlineSearchField(title: "Search \(cards.count) cards in set", text: $query)
-                                .padding(.horizontal)
                                 .padding(.top, 2)
                             
                             setProgressBar
@@ -3284,7 +3321,6 @@ struct SetCardsView: View {
                                 systemImage: "magnifyingglass",
                                 description: Text("Try a different card name or number.")
                             )
-                            .padding(.horizontal)
                             .padding(.bottom)
                         } else {
                             EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
@@ -3319,10 +3355,10 @@ struct SetCardsView: View {
                                     ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                                 }
                             }
-                            .padding(.horizontal)
                             .padding(.bottom, isMultiSelectActive && !selectedCardIDs.isEmpty ? 88 : 0)
                         }
                     }
+                    .padding(.horizontal, 16)
                 }
             }
 
