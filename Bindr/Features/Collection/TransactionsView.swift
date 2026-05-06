@@ -125,6 +125,7 @@ struct TransactionsView: View {
                     .ignoresSafeArea()
                     .transition(.opacity)
                     .allowsHitTesting(false)
+                    .animation(.easeInOut(duration: 0.18), value: selectedLedgerLine != nil)
             }
         }
         .toolbar(.hidden, for: .navigationBar)
@@ -173,7 +174,6 @@ struct TransactionsView: View {
             AddManualActivityView(ledgerLineToEdit: line)
         }
         .background(BindrPageBackground().ignoresSafeArea())
-        .animation(.easeInOut(duration: 0.18), value: selectedLedgerLine != nil)
     }
 
     private var transactionsHeader: some View {
@@ -236,13 +236,13 @@ struct TransactionsView: View {
 
     private var transactionList: some View {
         List {
-            pnlSummaryCard
-                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 10, trailing: 16))
+            transactionSearchField
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
-            transactionSearchField
-                .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
+            pnlSummaryCard
+                .listRowInsets(EdgeInsets(top: 0, leading: 16, bottom: 10, trailing: 16))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
@@ -314,8 +314,7 @@ struct TransactionsView: View {
     private var transactionSearchField: some View {
         HStack(spacing: 10) {
             Image(systemName: "magnifyingglass")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(dashboardSecondaryText)
+                .foregroundStyle(.secondary)
 
             TextField("Search transactions", text: $transactionSearchText)
                 .textInputAutocapitalization(.never)
@@ -326,26 +325,15 @@ struct TransactionsView: View {
                     transactionSearchText = ""
                 } label: {
                     Image(systemName: "xmark.circle.fill")
-                        .font(.subheadline)
-                        .foregroundStyle(dashboardSecondaryText)
+                        .foregroundStyle(.tertiary)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Clear search")
             }
         }
         .padding(.horizontal, 14)
-        .padding(.vertical, 11)
-        .background(
-            Capsule(style: .continuous)
-                .fill(dashboardCardBackground)
-        )
-        .overlay(
-            Capsule(style: .continuous)
-                .stroke(
-                    colorScheme == .dark ? Color.white.opacity(0.24) : Color.black.opacity(0.18),
-                    lineWidth: 1.5
-                )
-        )
+        .padding(.vertical, 10)
+        .modifier(GlassSearchFieldModifier())
     }
 
     private var pnlSummaryCard: some View {

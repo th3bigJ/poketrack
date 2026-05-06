@@ -10,13 +10,6 @@ private enum ChartRange: String, CaseIterable, Identifiable {
     var id: String { rawValue }
 }
 
-private enum MoverScope: String, CaseIterable, Identifiable {
-    case collection = "My Cards"
-    case market = "Market"
-
-    var id: String { rawValue }
-}
-
 struct DashboardView: View {
     var onViewAllActivity: (() -> Void)? = nil
     var onOpenScanner: (() -> Void)? = nil
@@ -49,7 +42,6 @@ struct DashboardView: View {
     @State private var setNamesByCardID: [String: String] = [:]
     @State private var cardImageURLsByID: [String: URL] = [:]
     @State private var marketTrendData: MarketTrendDailyBlob? = nil
-    @State private var selectedInsightPage: Int = 0
     @State private var cardTypeBreakdown: [DashboardBreakdownEntry] = []
     @State private var energyTypeBreakdown: [DashboardBreakdownEntry] = []
     @State private var formatBreakdown: [DashboardBreakdownEntry] = []
@@ -58,11 +50,8 @@ struct DashboardView: View {
     @State private var setCompletionEntries: [DashboardSetCompletionEntry] = []
     @State private var selectedRecentLedgerLine: LedgerLine?
     @State private var editingRecentLedgerLine: LedgerLine?
-    @State private var fallbackBiggestGainer7Days: MarketTrendMover? = nil
-    @State private var fallbackBiggestDecliner7Days: MarketTrendMover? = nil
     @State private var marketBiggestGainer7Days: MarketTrendMover? = nil
     @State private var marketBiggestDecliner7Days: MarketTrendMover? = nil
-    @State private var moverScope: MoverScope = .collection
     @State private var selectedCardForDetail: Card? = nil
 
     private var liveSnapshot: BrandSnapshot? {
@@ -290,15 +279,11 @@ struct DashboardView: View {
             VStack(alignment: .leading, spacing: 18) {
                 heroSection
                 milestoneBanner
-                summaryCard
-                insightsCarouselSection
-                if !activePoints.isEmpty {
-                    valueChartCard
-                    if let trend = activeMarketTrend {
-                        marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
-                    }
+                valueAndHistoryCard
+                dashboardCard { collectionSummaryInsightCard }
+                if let trend = activeMarketTrend {
+                    marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
                 }
-                quickActionsSection
                 recentActivityCard
             }
             .padding(.horizontal, 16)
@@ -508,7 +493,7 @@ struct DashboardView: View {
         return "Good evening"
     }
 
-    private var summaryCard: some View {
+    private var valueAndHistoryCard: some View {
         dashboardCard {
             VStack(alignment: .leading, spacing: 12) {
                 HStack(alignment: .top) {
@@ -554,85 +539,107 @@ struct DashboardView: View {
                         }
                     }
                 }
-            }
-        }
-    }
 
-    private var insightPageCount: Int { 7 }
-    private var insightPageHeight: CGFloat { 210 }
-
-    private var insightsCarouselSection: some View {
-        dashboardCard {
-            VStack(spacing: 12) {
-                TabView(selection: $selectedInsightPage) {
-                    collectionSummaryInsightCard
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .tag(0)
-
-                    distributionInsightCard(
-                        title: "Distribution by Card Type",
-                        entries: cardTypeBreakdown,
-                        emptyMessage: "Add more cards to see a card-type split."
-                    )
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .tag(1)
-
-                    distributionInsightCard(
-                        title: "Distribution by Energy Type",
-                        entries: energyTypeBreakdown,
-                        emptyMessage: "No energy/type data available yet."
-                    )
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .tag(2)
-
-                    setCompletionInsightCard
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .tag(3)
-
-                    mostExpensiveCardInsightCard
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .tag(4)
-
-                    priceBandInsightCard
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                        .tag(5)
-
-                    distributionInsightCard(
-                        title: "Collection Format Mix",
-                        entries: formatBreakdown,
-                        emptyMessage: "No format data available yet."
-                    )
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .tag(6)
-                }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(height: insightPageHeight)
-
-                HStack(spacing: 8) {
-                    ForEach(0..<insightPageCount, id: \.self) { index in
-                        Capsule(style: .continuous)
-                            .fill(index == selectedInsightPage ? services.theme.accentColor : dashboardDividerColor)
-                            .frame(width: index == selectedInsightPage ? 18 : 8, height: 8)
-                            .animation(.easeInOut(duration: 0.18), value: selectedInsightPage)
+                if !activePoints.isEmpty {
+                    HStack {
+                        Spacer()
+                        SlidingSegmentedPicker(
+                            selection: $chartRange,
+                            items: ChartRange.allCases,
+                            title: { $0.rawValue }
+                        )
+                        .frame(maxWidth: 240)
                     }
-                }
-                .padding(.horizontal, 10)
-                .padding(.vertical, 8)
-                .background {
-                    if #available(iOS 26.0, *) {
-                        Capsule(style: .continuous)
-                            .fill(.clear)
-                            .glassEffect(.clear.tint(nil), in: Capsule(style: .continuous))
-                    } else {
-                        Capsule(style: .continuous)
-                            .fill(.thinMaterial)
-                            .overlay {
-                                Capsule(style: .continuous)
-                                    .stroke(dashboardBorder.opacity(0.35), lineWidth: 1)
+
+                    Chart(activePoints) { point in
+                        AreaMark(
+                            x: .value("Date", point.date),
+                            yStart: .value("Min", chartMin),
+                            yEnd: .value("Value", point.total)
+                        )
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [services.theme.accentColor.opacity(0.3), services.theme.accentColor.opacity(0.03)],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                        )
+
+                        LineMark(
+                            x: .value("Date", point.date),
+                            y: .value("Value", point.total)
+                        )
+                        .interpolationMethod(.catmullRom)
+                        .foregroundStyle(services.theme.accentColor)
+                        .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
+
+                        if let sel = selectedPoint, sel.date == point.date {
+                            RuleMark(x: .value("Date", point.date))
+                                .foregroundStyle(dashboardDividerColor)
+                                .lineStyle(StrokeStyle(lineWidth: 1, dash: [4]))
+
+                            PointMark(
+                                x: .value("Date", point.date),
+                                y: .value("Value", point.total)
+                            )
+                            .symbolSize(60)
+                            .foregroundStyle(dashboardPrimaryText)
+                        }
+                    }
+                    .chartYAxis {
+                        AxisMarks(position: .leading, values: .automatic(desiredCount: 4)) { value in
+                            AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
+                                .foregroundStyle(dashboardDividerColor)
+                            AxisValueLabel {
+                                if let d = value.as(Double.self) {
+                                    Text(formatCurrencyShort(d))
+                                        .font(.caption2)
+                                        .foregroundStyle(dashboardSecondaryText)
+                                }
                             }
+                        }
+                    }
+                    .chartXAxis {
+                        AxisMarks(values: .automatic(desiredCount: 5)) { value in
+                            AxisValueLabel {
+                                if let d = value.as(Date.self) {
+                                    Text(xAxisLabel(for: d))
+                                        .font(.caption2)
+                                        .foregroundStyle(dashboardSecondaryText)
+                                }
+                            }
+                        }
+                    }
+                    .chartYScale(domain: chartMin...max(chartMax, chartMin + 1))
+                    .frame(height: 220)
+                    .chartOverlay { proxy in
+                        GeometryReader { geo in
+                            Rectangle()
+                                .fill(Color.clear)
+                                .contentShape(Rectangle())
+                                .gesture(
+                                    DragGesture(minimumDistance: 0)
+                                        .onChanged { value in
+                                            guard let frame = proxy.plotFrame else { return }
+                                            let x = value.location.x - geo[frame].origin.x
+                                            guard let date: Date = proxy.value(atX: x) else { return }
+                                            let nearest = activePoints.min(by: {
+                                                abs($0.date.timeIntervalSince(date)) < abs($1.date.timeIntervalSince(date))
+                                            })
+                                            if nearest?.date != selectedPoint?.date {
+                                                selectedPoint = nearest
+                                                Haptics.selectionChanged()
+                                            }
+                                        }
+                                        .onEnded { _ in
+                                            withAnimation(.easeOut(duration: 0.2)) {
+                                                selectedPoint = nil
+                                            }
+                                        }
+                                )
+                        }
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
             }
         }
     }
@@ -993,114 +1000,6 @@ struct DashboardView: View {
     }
 
 
-    private var valueChartCard: some View {
-        dashboardCard {
-            VStack(alignment: .leading, spacing: 14) {
-                HStack {
-                    Text("Value History")
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(dashboardPrimaryText)
-                    Spacer()
-                    SlidingSegmentedPicker(
-                        selection: $chartRange,
-                        items: ChartRange.allCases,
-                        title: { $0.rawValue }
-                    )
-                    .frame(maxWidth: 240)
-                }
-
-                Chart(activePoints) { point in
-                    AreaMark(
-                        x: .value("Date", point.date),
-                        yStart: .value("Min", chartMin),
-                        yEnd: .value("Value", point.total)
-                    )
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [services.theme.accentColor.opacity(0.3), services.theme.accentColor.opacity(0.03)],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-
-                    LineMark(
-                        x: .value("Date", point.date),
-                        y: .value("Value", point.total)
-                    )
-                    .interpolationMethod(.catmullRom)
-                    .foregroundStyle(services.theme.accentColor)
-                    .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
-
-                    if let sel = selectedPoint, sel.date == point.date {
-                        RuleMark(x: .value("Date", point.date))
-                            .foregroundStyle(dashboardDividerColor)
-                            .lineStyle(StrokeStyle(lineWidth: 1, dash: [4]))
-
-                        PointMark(
-                            x: .value("Date", point.date),
-                            y: .value("Value", point.total)
-                        )
-                        .symbolSize(60)
-                        .foregroundStyle(dashboardPrimaryText)
-                    }
-                }
-                .chartYAxis {
-                    AxisMarks(position: .leading, values: .automatic(desiredCount: 4)) { value in
-                        AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
-                            .foregroundStyle(dashboardDividerColor)
-                        AxisValueLabel {
-                            if let d = value.as(Double.self) {
-                                Text(formatCurrencyShort(d))
-                                    .font(.caption2)
-                                    .foregroundStyle(dashboardSecondaryText)
-                            }
-                        }
-                    }
-                }
-                .chartXAxis {
-                    AxisMarks(values: .automatic(desiredCount: 5)) { value in
-                        AxisValueLabel {
-                            if let d = value.as(Date.self) {
-                                Text(xAxisLabel(for: d))
-                                    .font(.caption2)
-                                    .foregroundStyle(dashboardSecondaryText)
-                            }
-                        }
-                    }
-                }
-                .chartYScale(domain: chartMin...max(chartMax, chartMin + 1))
-                .frame(height: 220)
-                .chartOverlay { proxy in
-                    GeometryReader { geo in
-                        Rectangle()
-                            .fill(Color.clear)
-                            .contentShape(Rectangle())
-                            .gesture(
-                                DragGesture(minimumDistance: 0)
-                                    .onChanged { value in
-                                        guard let frame = proxy.plotFrame else { return }
-                                        let x = value.location.x - geo[frame].origin.x
-                                        guard let date: Date = proxy.value(atX: x) else { return }
-                                        let nearest = activePoints.min(by: {
-                                            abs($0.date.timeIntervalSince(date)) < abs($1.date.timeIntervalSince(date))
-                                        })
-                                        if nearest?.date != selectedPoint?.date {
-                                            selectedPoint = nearest
-                                            Haptics.selectionChanged()
-                                        }
-                                    }
-                                    .onEnded { _ in
-                                        withAnimation(.easeOut(duration: 0.2)) {
-                                            selectedPoint = nil
-                                        }
-                                    }
-                            )
-                    }
-                }
-            }
-        }
-    }
-
     private func marketTrendCard(trend: MarketTrendMetrics, updatedAt: Date?) -> some View {
         dashboardCard {
             VStack(alignment: .leading, spacing: 12) {
@@ -1122,23 +1021,9 @@ struct DashboardView: View {
                     trendCell(title: "1D", value: trend.change1Day)
                 }
 
-                HStack {
-                    Text("Movers")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(dashboardSecondaryText)
-                    Spacer(minLength: 8)
-                    Picker("Mover Scope", selection: $moverScope) {
-                        Text("My Cards")
-                            .tag(MoverScope.collection)
-                        Text("Market")
-                            .tag(MoverScope.market)
-                    }
-                    .labelsHidden()
-                    .pickerStyle(.segmented)
-                    .font(.caption2.weight(.semibold))
-                    .controlSize(.mini)
-                    .frame(width: 154)
-                }
+                Text("Movers")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(dashboardSecondaryText)
 
                 HStack(spacing: 10) {
                     moverCell(
@@ -1157,59 +1042,11 @@ struct DashboardView: View {
     }
 
     private func biggestGainerMover(from trend: MarketTrendMetrics) -> MarketTrendMover? {
-        switch moverScope {
-        case .collection:
-            return fallbackBiggestGainer7Days
-        case .market:
-            return marketBiggestGainer7Days
-        }
+        marketBiggestGainer7Days
     }
 
     private func biggestDeclinerMover(from trend: MarketTrendMetrics) -> MarketTrendMover? {
-        switch moverScope {
-        case .collection:
-            return fallbackBiggestDecliner7Days
-        case .market:
-            return marketBiggestDecliner7Days
-        }
-    }
-
-    private var quickActionsSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Quick Actions")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(dashboardPrimaryText)
-
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 4), spacing: 10) {
-                quickActionTile(
-                    title: "Scan Card",
-                    icon: "camera.fill",
-                    tint: DashboardPalette.purple,
-                    action: onOpenScanner
-                )
-
-                quickActionTile(
-                    title: "Bindrs",
-                    icon: "plus.circle.fill",
-                    tint: DashboardPalette.success,
-                    action: onOpenCollection
-                )
-
-                quickActionTile(
-                    title: "Deck Builder",
-                    icon: "square.stack.3d.up.fill",
-                    tint: DashboardPalette.blue,
-                    action: onOpenBrowse
-                )
-
-                quickActionTile(
-                    title: "Activity",
-                    icon: "clock.arrow.circlepath",
-                    tint: DashboardPalette.gold,
-                    action: onViewAllActivity
-                )
-            }
-        }
+        marketBiggestDecliner7Days
     }
 
     private var recentActivityCard: some View {
@@ -1306,43 +1143,6 @@ struct DashboardView: View {
         }.joined(separator: "§")
         let linePart = recentLines.map { cleaned($0.cardID) ?? $0.id.uuidString }.joined(separator: "§")
         return "\(brand)|\(itemPart)|\(linePart)"
-    }
-
-    private func quickActionTile(title: String, icon: String, tint: Color, action: (() -> Void)?) -> some View {
-        Button {
-            action?()
-        } label: {
-            VStack(spacing: 10) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(tint.opacity(0.18))
-                        .frame(width: 44, height: 44)
-                    Image(systemName: icon)
-                        .font(.headline.weight(.semibold))
-                        .foregroundStyle(tint)
-                }
-
-                Text(title)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(dashboardPrimaryText)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.8)
-            }
-            .padding(.horizontal, 8)
-            .padding(.vertical, 14)
-            .frame(maxWidth: .infinity, minHeight: 108)
-            .background(
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(dashboardCardBackground)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .stroke(dashboardBorder, lineWidth: 1)
-                    )
-            )
-        }
-        .buttonStyle(DashboardPressStyle())
-        .disabled(action == nil)
     }
 
     private func dashboardActivityRow(line: LedgerLine) -> some View {
@@ -1694,8 +1494,6 @@ struct DashboardView: View {
         .prefix(4)
         .map { $0 }
         mostExpensiveHolding = nextMostExpensive
-        fallbackBiggestGainer7Days = nextTopGainer
-        fallbackBiggestDecliner7Days = nextTopDecliner
     }
 
     private func sevenDayChangePercent(for item: CollectionItem, card: Card) async -> Double? {

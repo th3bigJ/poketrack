@@ -45,22 +45,40 @@ struct BrowseInlineSearchField: View {
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 10)
-        .background(
-            Capsule(style: .continuous)
-                .fill(searchBackground)
-        )
-        .overlay(
-            Capsule(style: .continuous)
-                .stroke(searchBorder, lineWidth: 1.5)
-        )
+        .modifier(GlassSearchFieldModifier())
     }
+}
 
-    private var searchBackground: Color {
-        colorScheme == .dark ? .black : .white
-    }
+// MARK: - Glass search field background
 
-    private var searchBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.24) : Color.black.opacity(0.18)
+struct GlassSearchFieldModifier: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        Group {
+            if #available(iOS 26.0, *) {
+                content
+                    .background(
+                        Capsule(style: .continuous)
+                            .fill(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.04))
+                    )
+                    .glassEffect(.regular.tint(nil), in: Capsule(style: .continuous))
+                    .overlay(
+                        Capsule(style: .continuous)
+                            .stroke(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.12), lineWidth: 1)
+                    )
+            } else {
+                content
+                    .background(
+                        Capsule(style: .continuous)
+                            .fill(.thinMaterial)
+                    )
+                    .overlay(
+                        Capsule(style: .continuous)
+                            .stroke(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.1), lineWidth: 1)
+                    )
+            }
+        }
     }
 }
 
