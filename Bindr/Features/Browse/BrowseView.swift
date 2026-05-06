@@ -91,6 +91,76 @@ struct CardGridCell: View {
         colorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.06)
     }
 
+    /// First non-Colorless element type on the card, used to drive a subtle
+    /// accent on the chrome (name strip + footer). Falls back to `nil` for
+    /// trainers/energies/sealed where no Pokémon type applies — those cells
+    /// keep the neutral surface treatment.
+    private var primaryTypeColor: Color? {
+        let types = card.elementTypes ?? []
+        let primary = types.first(where: { type in
+            !type.isEmpty && type != "-" && type != "Colorless"
+        }) ?? types.first(where: { !$0.isEmpty && $0 != "-" })
+        guard let primary else { return nil }
+        return Self.pokemonTypeColor(primary)
+    }
+
+    /// Colour table tuned to read well as a low-opacity wash behind primary
+    /// text. Hand-picked rather than the more saturated values used inside
+    /// deck breakdowns so the whole grid feels cohesive instead of garish.
+    static func pokemonTypeColor(_ type: String) -> Color {
+        switch type {
+        case "Fire":       return Color(hex: "F26B3A")
+        case "Water":      return Color(hex: "4A90E2")
+        case "Grass":      return Color(hex: "5BB85B")
+        case "Lightning":  return Color(hex: "F2C744")
+        case "Psychic":    return Color(hex: "C25BB5")
+        case "Fighting":   return Color(hex: "C24A3A")
+        case "Darkness":   return Color(hex: "5B4A52")
+        case "Metal":      return Color(hex: "8C95A8")
+        case "Dragon":     return Color(hex: "7C5BC2")
+        case "Fairy":      return Color(hex: "E58CB0")
+        case "Colorless":  return Color(hex: "A8A89A")
+        default:           return Color(hex: "A8A89A")
+        }
+    }
+
+    /// Top strip washes the type colour up from the card image — the strip is
+    /// strongest at the bottom (against the divider) and fades to the tile
+    /// background at the top, so visually the colour reads as if it's
+    /// extending up out of the card art.
+    private var nameStripBackground: LinearGradient {
+        let accent = primaryTypeColor ?? (colorScheme == .dark ? Color.white : Color.black)
+        let baseStrong = colorScheme == .dark ? 0.22 : 0.16
+        let baseWeak = colorScheme == .dark ? 0.06 : 0.03
+        return LinearGradient(
+            stops: [
+                .init(color: accent.opacity(baseWeak), location: 0.0),
+                .init(color: accent.opacity(baseWeak * 1.6), location: 0.5),
+                .init(color: accent.opacity(baseStrong), location: 1.0)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+
+    /// Footer mirrors the strip, but inverted — strongest at the top (against
+    /// the divider) so the colour reads as if it's extending DOWN out of the
+    /// card art into the price/set name area.
+    private var footerBackground: LinearGradient {
+        let accent = primaryTypeColor ?? (colorScheme == .dark ? Color.white : Color.black)
+        let baseStrong = colorScheme == .dark ? 0.18 : 0.12
+        let baseWeak = colorScheme == .dark ? 0.04 : 0.02
+        return LinearGradient(
+            stops: [
+                .init(color: accent.opacity(baseStrong), location: 0.0),
+                .init(color: accent.opacity(baseWeak * 1.5), location: 0.6),
+                .init(color: accent.opacity(baseWeak), location: 1.0)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+
     private var showsFooter: Bool {
         (gridOptions.showSetName && !(setName?.isEmpty ?? true))
             || (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
@@ -140,6 +210,8 @@ struct CardGridCell: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 7)
                     .padding(.horizontal, 8)
+                    .background(tileBackground)
+                    .background(nameStripBackground)
                     .overlay(alignment: .bottom) {
                         Rectangle()
                             .fill(dividerColor)
@@ -208,7 +280,8 @@ struct CardGridCell: View {
                 .padding(.horizontal, 8)
                 .padding(.vertical, 7)
                 .frame(maxWidth: .infinity)
-                .background(insetBackground)
+                .background(tileBackground)
+                .background(footerBackground)
                 .overlay(alignment: .top) {
                     Rectangle()
                         .fill(dividerColor)
@@ -219,8 +292,34 @@ struct CardGridCell: View {
         .background(tileBackground)
         .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
         .overlay {
+            // Outer hairline border — picks up the type accent slightly when
+            // the card has one, otherwise the neutral fallback. Stays muted
+            // so owned/wishlist states (handled by `cardBorderColor`) still
+            // dominate when present.
             RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                 .stroke(cardBorderColor, lineWidth: cardBorderWidth)
+        }
+        .overlay {
+            // Inner top highlight — same trick as `glassCardStyle` so the
+            // browse cells read as part of the same premium surface family
+            // as the dashboard glass cards. Skipped on owned/wishlist states
+            // so the coloured border isn't muddied.
+            if !isOwned && !isWishlisted && cardCornerRadius > 0 {
+                RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
+                    .stroke(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(colorScheme == .dark ? 0.10 : 0.32),
+                                .clear
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ),
+                        lineWidth: 1
+                    )
+                    .padding(0.5)
+                    .allowsHitTesting(false)
+            }
         }
     }
 

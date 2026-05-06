@@ -39,19 +39,23 @@ struct TradesView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
-                tradeWallSection
-
-                Divider()
-                    .padding(.vertical, 8)
-
                 suggestedTradesSection
 
                 Divider()
                     .padding(.vertical, 4)
 
                 openTradesSection
+
+                Divider()
+                    .padding(.vertical, 8)
+
+                tradeWallSection
             }
-            .padding(.bottom, 32)
+            // Generous bottom padding so the last section never slides under
+            // the app's custom bottom tab bar (≈60pt) plus the home indicator
+            // (~34pt). The Social shell ignores the bottom safe area so this
+            // padding is what keeps content above the nav.
+            .padding(.bottom, 120)
         }
         .background(Color(uiColor: .systemBackground))
         .refreshable { await refresh() }

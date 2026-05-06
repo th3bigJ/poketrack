@@ -18,7 +18,29 @@ struct BrowseProductsTabContent: View {
     @State private var showWishlistPaywall = false
     @State private var showWishlistAlert = false
     @State private var wishlistAlertMessage: String?
-    @State private var selectedSetID: Int? = nil
+    /// Selected set is tracked by *name* rather than numeric id because the
+    /// sealed-product feed and the catalog `sets.json` come from independent
+    /// pipelines (PokeData/TCGCSV vs. the catalog R2 blob), and their numeric
+    /// IDs don't reliably line up. Matching by name is robust for Pokémon set
+    /// names like "Perfect Order" or "Destined Rivals" since those strings
+    /// always appear inside the product name (e.g. "Perfect Order Booster
+    /// Box"). The filter falls back to the numeric setID for the (common)
+    /// case where the IDs *do* agree, so anything that worked before keeps
+    /// working — but products whose setID is unmapped now also resolve.
+    @State private var selectedSet: TCGSet? = nil
+
+    /// Cached list of sets that have at least one matching product. Computed
+    /// once when the underlying product/set data changes — NEVER inline in the
+    /// carousel body. Inline computation here used to walk `products × sets`
+    /// (~hundreds × hundreds = tens of thousands of string normalizations) on
+    /// every SwiftUI render pass, which was the dominant source of tap lag on
+    /// the Products tab.
+    @State private var carouselSets: [TCGSet] = []
+    /// Lookup of normalized product strings used when resolving the set the
+    /// user has tapped (and when populating ``carouselSets``). Built once per
+    /// product-list change so the per-tap filter cost stays O(N) instead of
+    /// re-normalizing every product on every keystroke or view render.
+    @State private var normalizedProductIndex: NormalizedProductIndex = .empty
 
     private let sealedGridHorizontalPadding: CGFloat = 16
     private let sealedGridSpacing: CGFloat = 12
@@ -40,17 +62,116 @@ struct BrowseProductsTabContent: View {
 
     private var filteredProducts: [SealedProduct] {
         let normalizedQuery = normalizeSealedSearchText(query)
-        let base = services.sealedProducts.products.filter { product in
-            if let selectedSetID, product.setID != selectedSetID {
-                return false
+        let selectedSetIDInt: Int? = {
+            guard let selectedSet else { return nil }
+            return Int(selectedSet.internalId)
+        }()
+        let normalizedSelectedSetName: String? = {
+            guard let selectedSet else { return nil }
+            return normalizeSealedSearchText(selectedSet.name)
+        }()
+        let allProducts = services.sealedProducts.products
+        let base = allProducts.enumerated().compactMap { (index, product) -> SealedProduct? in
+            if selectedSet != nil {
+                if !productMatchesSet(
+                    product: product,
+                    productIndex: index,
+                    setIDInt: selectedSetIDInt,
+                    normalizedSetName: normalizedSelectedSetName
+                ) {
+                    return nil
+                }
             }
             if productMatchesSelectedTypes(product.type, selectedOptionIDs: filters.productTypes) == false {
-                return false
+                return nil
             }
-            guard normalizedQuery.isEmpty == false else { return true }
-            return product.searchBlob.contains(normalizedQuery)
+            guard normalizedQuery.isEmpty == false else { return product }
+            return product.searchBlob.contains(normalizedQuery) ? product : nil
         }
         return sort(products: base)
+    }
+
+    /// True when the product belongs to the user's selected set. Tries the
+    /// numeric setID first (cheap, exact), falls back to a substring match on
+    /// the normalized product name and series (handles the case where the
+    /// product feed's `set_id` doesn't line up with the catalog `internalId`).
+    /// `productIndex` is the *position* of `product` inside
+    /// ``services.sealedProducts.products`` so we can read the precomputed
+    /// normalized strings out of ``normalizedProductIndex`` instead of
+    /// recomputing them on every check.
+    private func productMatchesSet(
+        product: SealedProduct,
+        productIndex: Int,
+        setIDInt: Int?,
+        normalizedSetName: String?
+    ) -> Bool {
+        if let setIDInt, let pid = product.setID, pid == setIDInt {
+            return true
+        }
+        guard let normalizedSetName, !normalizedSetName.isEmpty else {
+            return false
+        }
+        // Product name almost always embeds the set name verbatim (e.g.
+        // "Perfect Order Booster Box"). Series is a looser match — sometimes
+        // the series field stores the parent series ("Mega Evolution") so we
+        // accept either direction of contains.
+        let nameNorm = normalizedProductIndex.name(at: productIndex)
+        if !nameNorm.isEmpty, nameNorm.contains(normalizedSetName) {
+            return true
+        }
+        let seriesNorm = normalizedProductIndex.series(at: productIndex)
+        if !seriesNorm.isEmpty {
+            if seriesNorm.contains(normalizedSetName) || normalizedSetName.contains(seriesNorm) {
+                return true
+            }
+        }
+        return false
+    }
+
+    /// Rebuilds ``carouselSets`` and ``normalizedProductIndex`` from the
+    /// current product feed. Heavy string folding and the O(products × sets)
+    /// matching pass are dispatched to a background priority Task so the
+    /// Products tab can render its first frame immediately when the user
+    /// taps the segmented control. The cached results are then published
+    /// back on the main actor and SwiftUI animates the carousel in.
+    private func recomputeCarouselSets() async {
+        let allProducts = services.sealedProducts.products
+        let allSets = services.cardData.sets
+
+        let computed: (NormalizedProductIndex, [TCGSet]) = await Task.detached(priority: .utility) {
+            let index = NormalizedProductIndex(products: allProducts)
+            let activeSetIDs = Set(allProducts.compactMap { $0.setID })
+
+            let sets = allSets.filter { set in
+                let setIDInt = Int(set.internalId)
+                if let setIDInt, activeSetIDs.contains(setIDInt) {
+                    return true
+                }
+                let normalizedSetName = normalizeSealedSearchText(set.name)
+                guard !normalizedSetName.isEmpty else { return false }
+                // Walk the precomputed index — no per-product normalization
+                // happens here on the hot path.
+                for i in allProducts.indices {
+                    let nameNorm = index.name(at: i)
+                    if !nameNorm.isEmpty, nameNorm.contains(normalizedSetName) {
+                        return true
+                    }
+                    let seriesNorm = index.series(at: i)
+                    if !seriesNorm.isEmpty,
+                       seriesNorm.contains(normalizedSetName)
+                        || normalizedSetName.contains(seriesNorm) {
+                        return true
+                    }
+                }
+                return false
+            }
+            .sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+
+            return (index, sets)
+        }.value
+
+        normalizedProductIndex = computed.0
+        carouselSets = computed.1
     }
 
     var body: some View {
@@ -124,12 +245,26 @@ struct BrowseProductsTabContent: View {
             if services.sealedProducts.products.isEmpty {
                 await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
             }
+            // Build the carousel + normalized index once before the first
+            // grid render. The heavy lifting is dispatched off the main
+            // actor inside `recomputeCarouselSets`, so the tab is interactive
+            // immediately and the carousel populates a frame or two later.
+            await recomputeCarouselSets()
             recomputeDisplayedProducts()
         }
         .onChange(of: query) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: filters) { _, _ in recomputeDisplayedProducts() }
-        .onChange(of: selectedSetID) { _, _ in recomputeDisplayedProducts() }
-        .onChange(of: services.sealedProducts.products) { _, _ in recomputeDisplayedProducts() }
+        .onChange(of: selectedSet) { _, _ in recomputeDisplayedProducts() }
+        .onChange(of: services.sealedProducts.products) { _, _ in
+            // Product feed changed → carousel set list and the normalized
+            // product index both need to be rebuilt before
+            // `recomputeDisplayedProducts` runs (the filter relies on the
+            // index for the selected-set match).
+            Task {
+                await recomputeCarouselSets()
+                recomputeDisplayedProducts()
+            }
+        }
         .sheet(item: $addToCollectionProduct) { product in
             AddSealedToCollectionSheet(product: product)
                 .environment(services)
@@ -154,7 +289,7 @@ struct BrowseProductsTabContent: View {
                 // "All Sets" button
                 Button {
                     withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
-                        selectedSetID = nil
+                        selectedSet = nil
                     }
                     Haptics.lightImpact()
                 } label: {
@@ -164,27 +299,24 @@ struct BrowseProductsTabContent: View {
                         .padding(.vertical, 8)
                         .background {
                             Capsule()
-                                .fill(selectedSetID == nil ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
+                                .fill(selectedSet == nil ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
                         }
-                        .foregroundStyle(selectedSetID == nil ? .white : .primary.opacity(0.8))
+                        .foregroundStyle(selectedSet == nil ? .white : .primary.opacity(0.8))
                 }
                 .buttonStyle(.plain)
-                
-                let activeSetIDs = Set(services.sealedProducts.products.compactMap { $0.setID })
-                let filteredSets = services.cardData.sets
-                    .filter { set in
-                        guard let id = Int(set.internalId) else { return false }
-                        return activeSetIDs.contains(id)
-                    }
-                    .sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
 
-                ForEach(filteredSets) { set in
-                    let setIDInt = Int(set.internalId) ?? 0
-                    let isSelected = selectedSetID == setIDInt
-                    
+                // ``carouselSets`` is precomputed in `recomputeCarouselSets`
+                // and only refreshed when the underlying data changes — it
+                // used to be calculated inline here, doing O(products × sets)
+                // string normalization on every render of the tab, which was
+                // the dominant source of lag when switching to the Products
+                // tab on devices with a large product feed.
+                ForEach(carouselSets) { set in
+                    let isSelected = selectedSet?.id == set.id
+
                     Button {
                         withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
-                            selectedSetID = isSelected ? nil : setIDInt
+                            selectedSet = isSelected ? nil : set
                         }
                         Haptics.lightImpact()
                     } label: {
@@ -192,7 +324,7 @@ struct BrowseProductsTabContent: View {
                             SetLogoAsyncImage(logoSrc: set.logoSrc, height: 18, brand: services.brandSettings.selectedCatalogBrand)
                                 .grayscale(isSelected ? 0 : 1)
                                 .opacity(isSelected ? 1 : 0.5)
-                            
+
                             if isSelected {
                                 Text(set.name)
                                     .font(.system(size: 13, weight: .bold, design: .rounded))
@@ -352,6 +484,41 @@ struct SealedProductGridCell: View {
         }
     }
 
+    /// Sealed products don't carry an element type, but we still want the
+    /// chrome to feel "alive" — using the app's theme accent at low opacity
+    /// gives the strip and footer the same colour-extending-from-the-card
+    /// feel that ``CardGridCell`` gets from the Pokémon type, without picking
+    /// a colour out of thin air.
+    private var stripBackground: LinearGradient {
+        let accent = services.theme.accentColor
+        let strong = colorScheme == .dark ? 0.18 : 0.12
+        let weak = colorScheme == .dark ? 0.04 : 0.02
+        return LinearGradient(
+            stops: [
+                .init(color: accent.opacity(weak), location: 0.0),
+                .init(color: accent.opacity(weak * 1.6), location: 0.5),
+                .init(color: accent.opacity(strong), location: 1.0)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+
+    private var footerAccentBackground: LinearGradient {
+        let accent = services.theme.accentColor
+        let strong = colorScheme == .dark ? 0.16 : 0.10
+        let weak = colorScheme == .dark ? 0.04 : 0.02
+        return LinearGradient(
+            stops: [
+                .init(color: accent.opacity(strong), location: 0.0),
+                .init(color: accent.opacity(weak * 1.5), location: 0.6),
+                .init(color: accent.opacity(weak), location: 1.0)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             if gridOptions.showCardName {
@@ -364,6 +531,8 @@ struct SealedProductGridCell: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 7)
                     .padding(.horizontal, 8)
+                    .background(tileBackground)
+                    .background(stripBackground)
                     .overlay(alignment: .bottom) {
                         Rectangle().fill(dividerColor).frame(height: 1)
                     }
@@ -418,7 +587,8 @@ struct SealedProductGridCell: View {
                 .padding(.horizontal, 8)
                 .padding(.vertical, 7)
                 .frame(maxWidth: .infinity)
-                .background(insetBackground)
+                .background(tileBackground)
+                .background(footerAccentBackground)
                 .overlay(alignment: .top) {
                     Rectangle().fill(dividerColor).frame(height: 1)
                 }
@@ -430,6 +600,27 @@ struct SealedProductGridCell: View {
         .overlay {
             RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                 .stroke(isOwned ? services.theme.accentColor : tileBorder, lineWidth: isOwned ? 1.8 : 1.2)
+        }
+        .overlay {
+            // Inner top highlight — matches CardGridCell + dashboard glass
+            // styling. Skipped on owned state so the accent border isn't
+            // muted by the white inner stroke.
+            if !isOwned && cardCornerRadius > 0 {
+                RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
+                    .stroke(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(colorScheme == .dark ? 0.10 : 0.32),
+                                .clear
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ),
+                        lineWidth: 1
+                    )
+                    .padding(0.5)
+                    .allowsHitTesting(false)
+            }
         }
     }
 }
@@ -2208,4 +2399,44 @@ private func normalizeSealedSearchText(_ value: String?) -> String {
         .folding(options: [.diacriticInsensitive, .widthInsensitive, .caseInsensitive], locale: .current)
         .trimmingCharacters(in: .whitespacesAndNewlines)
         .lowercased()
+}
+
+/// Precomputed normalized strings for every product in the feed, indexed by
+/// the same position the product occupies in
+/// ``SealedProductService.products``. Built once per product-list change and
+/// read on the hot path (carousel build + per-tap set filtering) so name
+/// matching never re-normalizes on every render.
+struct NormalizedProductIndex: Equatable {
+    private let names: [String]
+    private let series: [String]
+
+    static let empty = NormalizedProductIndex(names: [], series: [])
+
+    private init(names: [String], series: [String]) {
+        self.names = names
+        self.series = series
+    }
+
+    init(products: [SealedProduct]) {
+        var n: [String] = []
+        var s: [String] = []
+        n.reserveCapacity(products.count)
+        s.reserveCapacity(products.count)
+        for product in products {
+            n.append(normalizeSealedSearchText(product.name))
+            s.append(normalizeSealedSearchText(product.series))
+        }
+        self.names = n
+        self.series = s
+    }
+
+    func name(at index: Int) -> String {
+        guard index >= 0, index < names.count else { return "" }
+        return names[index]
+    }
+
+    func series(at index: Int) -> String {
+        guard index >= 0, index < series.count else { return "" }
+        return series[index]
+    }
 }

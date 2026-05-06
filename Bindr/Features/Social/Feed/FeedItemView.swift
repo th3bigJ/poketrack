@@ -83,10 +83,13 @@ struct FeedItemView: View {
             HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .leading, spacing: 4) {
                     if let description = cleanedDescription, !description.isEmpty {
-                        Text(description)
-                            .font(.system(size: 14))
-                            .foregroundStyle(.secondary.opacity(0.8))
-                            .lineLimit(4)
+                        // Long captions used to be hard-truncated at 4 lines
+                        // with no way to read the rest without navigating into
+                        // the full content sheet. ``ExpandableDescription``
+                        // measures the rendered text and only shows the
+                        // "Read more" toggle when truncation actually occurs,
+                        // so short posts stay visually identical to before.
+                        ExpandableDescription(text: description, collapsedLineLimit: 4)
                             .padding(.top, 2)
                     }
 
@@ -99,7 +102,12 @@ struct FeedItemView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 
                 CardStackPreview(item: item, size: 110)
-                    .padding(.trailing, 16)
+                    // Multi-card stacks fan out with positive offsets and a
+                    // slight rotation, so the rightmost card visually clips
+                    // into the post's right edge with only 16pt of trailing
+                    // space. Bumping to 22 gives the topmost card the same
+                    // breathing room as the inset on other content.
+                    .padding(.trailing, 22)
             }
             .frame(minHeight: 110) // Match card size
             .padding(.bottom, 14)
@@ -744,5 +752,124 @@ struct InteractionRow: View {
                 .font(.system(size: 10))
                 .foregroundStyle(.secondary)
         }
+    }
+}
+
+// MARK: - ExpandableDescription
+
+/// A description block that collapses to ``collapsedLineLimit`` lines and
+/// surfaces a "Read more" toggle when — and only when — the text is actually
+/// being truncated. Truncation is detected by laying out two hidden ghost
+/// copies of the same text (one unbounded, one line-limited) and comparing
+/// their rendered heights via preference keys, which is more reliable than a
+/// character-count heuristic when posts mix short paragraphs with long ones.
+private struct ExpandableDescription: View {
+    let text: String
+    let collapsedLineLimit: Int
+
+    @State private var isExpanded: Bool = false
+    @State private var fullHeight: CGFloat = 0
+    @State private var collapsedHeight: CGFloat = 0
+
+    /// True when the unbounded version is taller than the line-limited
+    /// version — i.e. the visible text would be cut off if we kept the
+    /// `lineLimit` applied. The half-pixel epsilon avoids flapping caused by
+    /// sub-pixel layout rounding.
+    private var isTruncated: Bool {
+        fullHeight > 0
+            && collapsedHeight > 0
+            && fullHeight > collapsedHeight + 0.5
+    }
+
+    private var showsToggle: Bool {
+        isTruncated || isExpanded
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(text)
+                .font(.system(size: 14))
+                .foregroundStyle(.secondary.opacity(0.8))
+                .lineLimit(isExpanded ? nil : collapsedLineLimit)
+                .fixedSize(horizontal: false, vertical: true)
+                .background(fullHeightProbe)
+                .background(collapsedHeightProbe)
+                .onPreferenceChange(ExpandableTextFullHeightKey.self) { value in
+                    fullHeight = value
+                }
+                .onPreferenceChange(ExpandableTextCollapsedHeightKey.self) { value in
+                    collapsedHeight = value
+                }
+
+            if showsToggle {
+                Button {
+                    Haptics.lightImpact()
+                    withAnimation(.easeInOut(duration: 0.22)) {
+                        isExpanded.toggle()
+                    }
+                } label: {
+                    HStack(spacing: 4) {
+                        Text(isExpanded ? "Show less" : "Read more")
+                        Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
+                            .font(.system(size: 10, weight: .bold))
+                    }
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(.primary.opacity(0.85))
+                    .padding(.vertical, 2)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+
+    /// Hidden full-height ghost. Reports its rendered height back through a
+    /// preference so the parent can compare it against the collapsed version.
+    private var fullHeightProbe: some View {
+        Text(text)
+            .font(.system(size: 14))
+            .lineLimit(nil)
+            .fixedSize(horizontal: false, vertical: true)
+            .hidden()
+            .background(
+                GeometryReader { proxy in
+                    Color.clear.preference(
+                        key: ExpandableTextFullHeightKey.self,
+                        value: proxy.size.height
+                    )
+                }
+            )
+    }
+
+    /// Hidden collapsed-height ghost. Always rendered with the line limit so
+    /// `isTruncated` stays accurate even while the visible text is expanded.
+    private var collapsedHeightProbe: some View {
+        Text(text)
+            .font(.system(size: 14))
+            .lineLimit(collapsedLineLimit)
+            .fixedSize(horizontal: false, vertical: true)
+            .hidden()
+            .background(
+                GeometryReader { proxy in
+                    Color.clear.preference(
+                        key: ExpandableTextCollapsedHeightKey.self,
+                        value: proxy.size.height
+                    )
+                }
+            )
+    }
+}
+
+private struct ExpandableTextFullHeightKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
+    }
+}
+
+private struct ExpandableTextCollapsedHeightKey: PreferenceKey {
+    static var defaultValue: CGFloat = 0
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
     }
 }

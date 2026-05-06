@@ -141,30 +141,42 @@ struct MyProfileView: View {
         }
         .padding(16)
         .background {
-            // Layered backdrop driven by the user's theme colour. 
-            // Using a sophisticated multi-directional gradient that fades out 
-            // at the edges to prevent "sharp cut-off" looks.
+            // Layered backdrop driven by the user's theme colour.
+            // Both colour layers fade vertically toward `.clear` so the colour
+            // never meets the bottom edge of the header with a hard line. The
+            // bottom 30% is dedicated to a long, gradual ramp so the
+            // transition into the page background reads as a soft glow rather
+            // than a stripe that "stops" at the stats row.
             ZStack(alignment: .topTrailing) {
-                // Vertical Fade (Main Glow)
+                // Vertical Fade (Main Glow) — smoother multi-stop ramp
+                // dedicates the bottom third to a slow fade-out so the
+                // gradient eases into the page background instead of cutting
+                // off mid-section.
                 LinearGradient(
-                    colors: [
-                        .clear,
-                        themeColor.opacity(0.22),
-                        themeColor.opacity(0.08),
-                        .clear
+                    stops: [
+                        .init(color: .clear, location: 0.0),
+                        .init(color: themeColor.opacity(0.22), location: 0.30),
+                        .init(color: themeColor.opacity(0.16), location: 0.50),
+                        .init(color: themeColor.opacity(0.08), location: 0.72),
+                        .init(color: themeColor.opacity(0.03), location: 0.88),
+                        .init(color: .clear, location: 1.0)
                     ],
                     startPoint: .top,
                     endPoint: .bottom
                 )
-                
-                // Horizontal Fade (Secondary Beam)
+
+                // Diagonal Beam (replaces the old leading→trailing wash that
+                // had no vertical falloff and produced a hard left-side edge
+                // at the bottom of the header). Fading topLeading→bottomTrailing
+                // means the bottom-left corner naturally fades to clear.
                 LinearGradient(
-                    colors: [
-                        themeColor.opacity(0.15),
-                        .clear
+                    stops: [
+                        .init(color: themeColor.opacity(0.18), location: 0.0),
+                        .init(color: themeColor.opacity(0.06), location: 0.55),
+                        .init(color: .clear, location: 1.0)
                     ],
-                    startPoint: .leading,
-                    endPoint: .trailing
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
                 )
 
                 // Favourite card peek below remains as the personalised visual anchor.
