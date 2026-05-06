@@ -77,6 +77,7 @@ struct DecksRootView: View {
                 // Silent best-effort cleanup.
             }
         }
+        .background(BindrPageBackground().ignoresSafeArea())
     }
 
     private var emptyDecksView: some View {
@@ -141,8 +142,10 @@ struct DecksRootView: View {
                 ForEach(visibleDecks) { deck in
                     NavigationLink(value: deck) {
                         DeckListRow(deck: deck)
+                            .padding(14)
+                            .glassCardStyle(cornerRadius: 16)
                             .padding(.horizontal, 16)
-                            .padding(.vertical, 10)
+                            .padding(.vertical, 8)
                     }
                     .buttonStyle(.plain)
                     .simultaneousGesture(
@@ -166,7 +169,6 @@ struct DecksRootView: View {
                             Label("Delete Deck", systemImage: "trash")
                         }
                     }
-                    Divider().padding(.leading, 70) // Align divider past thumbnail
                 }
             }
         }

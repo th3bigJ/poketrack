@@ -211,17 +211,8 @@ struct SocialRootView: View {
                             if services.socialFeed.unreadAlertsCount > 0 {
                                 Image(systemName: "bell.fill")
                                     .font(.system(size: 14, weight: .semibold))
-                                    .foregroundStyle(Color(hex: "E05252"))
-                                    .overlay(alignment: .topTrailing) {
-                                        Text("\(services.socialFeed.unreadAlertsCount)")
-                                            .font(.system(size: 8, weight: .black, design: .rounded))
-                                            .foregroundStyle(.primary) // Contrast against the glass
-                                            .padding(.horizontal, 4)
-                                            .padding(.vertical, 2)
-                                            .background(Color.white.opacity(0.9), in: Capsule())
-                                            .shadow(color: .black.opacity(0.1), radius: 2)
-                                            .offset(x: 8, y: -6)
-                                    }
+                                    .foregroundStyle(BindrPalette.alertRed)
+                                    .bindrBadge(count: services.socialFeed.unreadAlertsCount)
                             } else {
                                 Image(systemName: "bell")
                                     .font(.system(size: 15, weight: .medium))

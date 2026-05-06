@@ -104,7 +104,7 @@ struct FriendsListView: View {
             }
             .refreshable { await refresh() }
         }
-        .background(Color(uiColor: .systemBackground))
+        .background(BindrPageBackground().ignoresSafeArea())
         .task { await refresh() }
         .onChange(of: searchText) { _, newValue in
             Task { await search(query: newValue) }
@@ -316,9 +316,9 @@ struct FriendsListView: View {
             }
         }
         .padding(14)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .glassCardStyle(cornerRadius: 16, interactive: false)
         .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .stroke(BindrPalette.binderGold.opacity(0.22), lineWidth: 1)
         }
     }
@@ -385,9 +385,9 @@ struct FriendsListView: View {
             }
         }
         .padding(14)
-        .background(BindrPalette.deckBlue.opacity(0.12), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .glassCardStyle(cornerRadius: 16, interactive: false)
         .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .stroke(BindrPalette.deckBlue.opacity(0.19), lineWidth: 1)
         }
     }
@@ -417,11 +417,7 @@ struct FriendsListView: View {
                     .overlay(Capsule().stroke(Color.primary.opacity(0.1), lineWidth: 1))
             }
             .padding(14)
-            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
-            }
+            .glassCardStyle(cornerRadius: 16)
         }
         .buttonStyle(.plain)
     }
@@ -442,7 +438,7 @@ struct FriendsListView: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(14)
-        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
     private func emptyCard(_ text: String) -> some View {
@@ -451,11 +447,7 @@ struct FriendsListView: View {
             .foregroundStyle(Color.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(14)
-            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
-            }
+            .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
     private func profileStats(_ profile: SocialProfile) -> String {

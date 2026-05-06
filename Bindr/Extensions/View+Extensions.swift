@@ -18,6 +18,22 @@ extension View {
     func glassCardStyle(cornerRadius: CGFloat = 16, interactive: Bool = true) -> some View {
         self.modifier(GlassCardModifier(cornerRadius: cornerRadius, interactive: interactive))
     }
+
+    /// Premium red pill badge matching the Social bell alert style.
+    func bindrBadge(count: Int) -> some View {
+        self.overlay(alignment: .topTrailing) {
+            if count > 0 {
+                Text("\(count)")
+                    .font(.system(size: 8, weight: .black, design: .rounded))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 4)
+                    .padding(.vertical, 2)
+                    .background(BindrPalette.alertRed, in: Capsule())
+                    .shadow(color: .black.opacity(0.1), radius: 2)
+                    .offset(x: 8, y: -6)
+            }
+        }
+    }
 }
 
 struct GlassCardModifier: ViewModifier {

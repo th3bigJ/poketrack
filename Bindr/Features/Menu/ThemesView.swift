@@ -5,8 +5,9 @@ struct ThemesView: View {
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
-        List {
-            Section {
+        ScrollView {
+            VStack(spacing: 20) {
+                // Appearance Section
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Appearance")
                         .font(.headline)
@@ -22,25 +23,28 @@ struct ThemesView: View {
                     )
                     .padding(.vertical, 8)
                 }
-                .padding(.vertical, 4)
-            }
-            
-            Section {
-                Toggle(isOn: Bindable(services.theme).backgroundGlowEnabled) {
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Background Glow")
-                            .font(.body)
-                        Text("Adds a subtle color tint to the app background.")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                .padding(16)
+                .glassCardStyle(cornerRadius: 16, interactive: false)
+                
+                // Background Glow Section
+                VStack(alignment: .leading, spacing: 12) {
+                    Toggle(isOn: Bindable(services.theme).backgroundGlowEnabled) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Background Glow")
+                                .font(.body.weight(.bold))
+                            Text("Adds a subtle color tint to the app background.")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .onChange(of: services.theme.backgroundGlowEnabled) {
+                        Haptics.lightImpact()
                     }
                 }
-                .onChange(of: services.theme.backgroundGlowEnabled) {
-                    Haptics.lightImpact()
-                }
-            }
+                .padding(16)
+                .glassCardStyle(cornerRadius: 16, interactive: false)
 
-            Section {
+                // Accent Color Section
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Accent Color")
                         .font(.headline)
@@ -59,11 +63,20 @@ struct ThemesView: View {
                     }
                     .padding(.vertical, 8)
                 }
-                .padding(.vertical, 4)
-            } footer: {
-                Text("Select a color that reflects your style.")
+                .padding(16)
+                .glassCardStyle(cornerRadius: 16, interactive: false)
+                .overlay(alignment: .bottomLeading) {
+                    Text("Select a color that reflects your style.")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .padding(.leading, 16)
+                        .offset(y: 20)
+                }
             }
+            .padding(16)
+            .padding(.bottom, 32)
         }
+        .background(BindrPageBackground().ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
             themesHeader

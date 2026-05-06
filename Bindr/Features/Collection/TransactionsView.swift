@@ -172,6 +172,7 @@ struct TransactionsView: View {
         .sheet(item: $editingLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
         }
+        .background(BindrPageBackground().ignoresSafeArea())
         .animation(.easeInOut(duration: 0.18), value: selectedLedgerLine != nil)
     }
 
@@ -376,14 +377,7 @@ struct TransactionsView: View {
             }
         }
         .padding(18)
-        .background(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(dashboardCardBackground)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .stroke(dashboardBorder, lineWidth: 1)
-                )
-        )
+        .glassCardStyle(cornerRadius: 24, interactive: false)
     }
 
     private func summaryValueCell(title: String, value: Double, emphasize: Bool) -> some View {
@@ -455,14 +449,7 @@ struct TransactionsView: View {
         .padding(.horizontal, 14)
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(dashboardCardBackground)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .stroke(dashboardBorder, lineWidth: 1)
-                )
-        )
+        .glassCardStyle(cornerRadius: 20)
     }
 
     private func infoChip(label: String, tone: Color? = nil) -> some View {
