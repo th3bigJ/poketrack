@@ -52,7 +52,6 @@ enum FeedRow: Identifiable {
 
 struct FeedView: View {
     @Environment(AppServices.self) private var services
-
     var selectedTab: Binding<SocialTab>? = nil
     var headerInset: CGFloat = 0
 

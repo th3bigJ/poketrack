@@ -518,10 +518,7 @@ struct RootView: View {
                         .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
                         .tag(AppTab.collect)
 
-                        NavigationStack {
-                            SocialRootView()
-                        }
-                        .toolbarBackground(.hidden, for: .navigationBar)
+                        SocialRootView()
                         .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
                         .badge(services.socialFeed.hasUnread ? "●" : nil)
                         .tag(AppTab.social)

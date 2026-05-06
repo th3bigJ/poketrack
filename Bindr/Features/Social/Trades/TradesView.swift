@@ -3,7 +3,6 @@ import SwiftUI
 struct TradesView: View {
     @Environment(AppServices.self) private var services
     @Binding var navigationPath: NavigationPath
-
     var selectedTab: Binding<SocialTab>? = nil
     var headerInset: CGFloat = 0
 

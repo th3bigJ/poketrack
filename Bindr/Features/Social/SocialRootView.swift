@@ -140,6 +140,10 @@ struct SocialRootView: View {
     var body: some View {
         ZStack(alignment: .top) {
             content
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .safeAreaInset(edge: .top, spacing: 0) {
+                    Color.clear.frame(height: socialHeaderHeight)
+                }
             socialHeader
                 .background(
                     GeometryReader { geo in
@@ -205,16 +209,16 @@ struct SocialRootView: View {
     private var socialHeader: some View {
         VStack(spacing: 0) {
             ZStack {
-            Text("Social")
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
+                Text("Social")
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(.primary)
 
-            HStack {
-                if services.socialAuth.isSignedIn {
-                    ChromeGlassCircleButton(accessibilityLabel: "Alerts") {
-                        Haptics.lightImpact()
-                        isAlertsPresented = true
-                    } label: {
+                HStack {
+                    if services.socialAuth.isSignedIn {
+                        ChromeGlassCircleButton(accessibilityLabel: "Alerts") {
+                            Haptics.lightImpact()
+                            isAlertsPresented = true
+                        } label: {
                             if services.socialFeed.unreadAlertsCount > 0 {
                                 Image(systemName: "bell.fill")
                                     .font(.system(size: 14, weight: .semibold))
@@ -225,98 +229,99 @@ struct SocialRootView: View {
                                     .font(.system(size: 15, weight: .medium))
                                     .foregroundStyle(.primary)
                             }
+                        }
                     }
-                }
 
-                Spacer(minLength: 0)
+                    Spacer(minLength: 0)
 
-                if services.socialAuth.isSignedIn {
-                    if selectedTab == .feed {
-                        HStack(spacing: 12) {
-                            Menu {
-                                Picker("Feed Filter", selection: Bindable(services.socialFeed).selectedScope) {
-                                    Label("Friends", systemImage: "person.2").tag(SocialFeedService.FeedScope.following)
-                                    Label("Everyone", systemImage: "globe").tag(SocialFeedService.FeedScope.everyone)
-                                    Label("Mine", systemImage: "person").tag(SocialFeedService.FeedScope.mine)
-                                }
-                            } label: {
-                                ChromeGlassCircleButton(accessibilityLabel: "Filter Feed") {
-                                    // Menu action handled by label
+                    if services.socialAuth.isSignedIn {
+                        if selectedTab == .feed {
+                            HStack(spacing: 12) {
+                                Menu {
+                                    Picker("Feed Filter", selection: Bindable(services.socialFeed).selectedScope) {
+                                        Label("Friends", systemImage: "person.2").tag(SocialFeedService.FeedScope.following)
+                                        Label("Everyone", systemImage: "globe").tag(SocialFeedService.FeedScope.everyone)
+                                        Label("Mine", systemImage: "person").tag(SocialFeedService.FeedScope.mine)
+                                    }
                                 } label: {
-                                    Image(systemName: "line.3.horizontal.decrease.circle")
+                                    ChromeGlassCircleButton(accessibilityLabel: "Filter Feed") {
+                                        // Menu action handled by label
+                                    } label: {
+                                        Image(systemName: "line.3.horizontal.decrease.circle")
+                                            .font(.system(size: 17, weight: .medium))
+                                            .foregroundStyle(.primary)
+                                    }
+                                }
+
+                                ChromeGlassCircleButton(accessibilityLabel: "New Post") {
+                                    Haptics.lightImpact()
+                                    isNewPostPresented = true
+                                } label: {
+                                    Image(systemName: "plus")
                                         .font(.system(size: 17, weight: .medium))
                                         .foregroundStyle(.primary)
                                 }
                             }
-
-                            ChromeGlassCircleButton(accessibilityLabel: "New Post") {
+                        } else if selectedTab == .trades {
+                            ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
                                 Haptics.lightImpact()
-                                isNewPostPresented = true
+                                services.pendingTradeSeed = nil
+                                socialNavigationPath.append(SocialDestination.friends)
                             } label: {
                                 Image(systemName: "plus")
                                     .font(.system(size: 17, weight: .medium))
                                     .foregroundStyle(.primary)
                             }
-                        }
-                    } else if selectedTab == .trades {
-                        ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
-                            Haptics.lightImpact()
-                            services.pendingTradeSeed = nil
-                            socialNavigationPath.append(SocialDestination.friends)
-                        } label: {
-                            Image(systemName: "plus")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(.primary)
-                        }
-                    } else if selectedTab == .friends && services.pendingTradeSeed != nil {
-                        Button("Cancel") {
-                            Haptics.lightImpact()
-                            services.pendingTradeSeed = nil
-                        }
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(.primary)
-                        .padding(.horizontal, 12)
-                        .frame(height: 36)
-                        .background {
-                            if #available(iOS 26.0, *) {
-                                Capsule()
-                                    .fill(.clear)
-                                    .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
-                            } else {
-                                Capsule()
-                                    .fill(.thinMaterial)
-                                    .overlay {
-                                        Capsule()
-                                            .stroke(Color.primary.opacity(0.10), lineWidth: 0.5)
-                                    }
+                        } else if selectedTab == .friends && services.pendingTradeSeed != nil {
+                            Button("Cancel") {
+                                Haptics.lightImpact()
+                                services.pendingTradeSeed = nil
+                            }
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundStyle(.primary)
+                            .padding(.horizontal, 12)
+                            .frame(height: 36)
+                            .background {
+                                if #available(iOS 26.0, *) {
+                                    Capsule()
+                                        .fill(.clear)
+                                        .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
+                                } else {
+                                    Capsule()
+                                        .fill(.thinMaterial)
+                                        .overlay {
+                                            Capsule()
+                                                .stroke(Color.primary.opacity(0.10), lineWidth: 0.5)
+                                        }
+                                }
+                            }
+                            .buttonStyle(.plain)
+                        } else if selectedTab == .profile {
+                            ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
+                                Haptics.lightImpact()
+                                profilePopoverPath.append(AccountProfileView.Destination.editProfile)
+                                showAccountProfile = true
+                            } label: {
+                                Image(systemName: "pencil")
+                                    .font(.system(size: 17, weight: .medium))
+                                    .foregroundStyle(.primary)
                             }
                         }
-                        .buttonStyle(.plain)
-                    } else if selectedTab == .profile {
-                        ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
+                    } else {
+                        ChromeGlassCircleButton(accessibilityLabel: "Profile") {
                             Haptics.lightImpact()
-                            profilePopoverPath.append(AccountProfileView.Destination.editProfile)
                             showAccountProfile = true
                         } label: {
-                            Image(systemName: "pencil")
+                            Image(systemName: "person.crop.circle")
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(.primary)
                         }
-                    }
-                } else {
-                    ChromeGlassCircleButton(accessibilityLabel: "Profile") {
-                        Haptics.lightImpact()
-                        showAccountProfile = true
-                    } label: {
-                        Image(systemName: "person.crop.circle")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
                     }
                 }
             }
-            }
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
+
         }
         .sheet(isPresented: $isAlertsPresented) {
             SocialAlertsSheet(isPresented: $isAlertsPresented) { deepLinkURL in
@@ -404,7 +409,6 @@ struct SocialRootView: View {
                 VStack(spacing: 0) {
                     socialShell(profile: profile)
                 }
-                .ignoresSafeArea(edges: .top)
                 .toolbar(.hidden, for: .navigationBar)
                 .navigationDestination(for: SocialDestination.self) { destination in
                     switch destination {
@@ -470,7 +474,11 @@ struct SocialRootView: View {
                         headerInset: socialHeaderHeight
                     )
                 case .trades:
-                    TradesView(navigationPath: $socialNavigationPath, selectedTab: $selectedTab, headerInset: socialHeaderHeight)
+                    TradesView(
+                        navigationPath: $socialNavigationPath,
+                        selectedTab: $selectedTab,
+                        headerInset: socialHeaderHeight
+                    )
                 case .profile:
                     MyProfileView(profile: profile, selectedTab: $selectedTab, headerInset: socialHeaderHeight)
                 }
