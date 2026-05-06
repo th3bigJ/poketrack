@@ -4,7 +4,8 @@ struct TradesView: View {
     @Environment(AppServices.self) private var services
     @Binding var navigationPath: NavigationPath
 
-    var tabPicker: AnyView = AnyView(EmptyView())
+    var selectedTab: Binding<SocialTab>? = nil
+    var headerInset: CGFloat = 0
 
     @State private var trades: [TradeWithItems] = []
     @State private var profileCache: [UUID: SocialProfile] = [:]
@@ -41,9 +42,16 @@ struct TradesView: View {
     var body: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
-                tabPicker
+                Color.clear.frame(height: headerInset)
+                if let selectedTab {
+                    SlidingSegmentedPicker(
+                        selection: selectedTab,
+                        items: SocialTab.allCases,
+                        title: { $0.title }
+                    )
                     .padding(.horizontal, 16)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 6)
+                }
                 suggestedTradesSection
 
                 Divider()

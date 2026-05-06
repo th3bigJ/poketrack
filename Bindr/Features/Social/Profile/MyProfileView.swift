@@ -9,7 +9,8 @@ struct MyProfileView: View {
     }
 
     let profile: SocialProfile
-    var tabPicker: AnyView = AnyView(EmptyView())
+    var selectedTab: Binding<SocialTab>? = nil
+    var headerInset: CGFloat = 0
 
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
@@ -71,8 +72,16 @@ struct MyProfileView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 18) {
-                tabPicker
+                Color.clear.frame(height: headerInset)
+                if let selectedTab {
+                    SlidingSegmentedPicker(
+                        selection: selectedTab,
+                        items: SocialTab.allCases,
+                        title: { $0.title }
+                    )
                     .padding(.horizontal, 16)
+                    .padding(.bottom, 6)
+                }
                 profileHeader
                 favoritesSection
                 profileTabPicker

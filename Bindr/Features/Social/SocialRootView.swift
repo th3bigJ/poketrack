@@ -3,17 +3,17 @@ import AuthenticationServices
 import CryptoKit
 import Security
 
+enum SocialTab: String, CaseIterable, Identifiable {
+    case feed = "Feed"
+    case friends = "Friends"
+    case trades = "Trade Wall"
+    case profile = "Profile"
+
+    var id: String { rawValue }
+    var title: String { rawValue }
+}
+
 struct SocialRootView: View {
-
-    private enum SocialTab: String, CaseIterable, Identifiable {
-        case feed = "Feed"
-        case friends = "Friends"
-        case trades = "Trade Wall"
-        case profile = "Profile"
-
-        var id: String { rawValue }
-        var title: String { rawValue }
-    }
 
     private enum SocialDeepLinkDestination {
         case feed
@@ -315,9 +315,8 @@ struct SocialRootView: View {
                 }
             }
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, 16)
             .padding(.vertical, 8)
-
         }
         .sheet(isPresented: $isAlertsPresented) {
             SocialAlertsSheet(isPresented: $isAlertsPresented) { deepLinkURL in
@@ -405,6 +404,7 @@ struct SocialRootView: View {
                 VStack(spacing: 0) {
                     socialShell(profile: profile)
                 }
+                .ignoresSafeArea(edges: .top)
                 .toolbar(.hidden, for: .navigationBar)
                 .navigationDestination(for: SocialDestination.self) { destination in
                     switch destination {
@@ -451,20 +451,11 @@ struct SocialRootView: View {
     }
 
     private func socialShell(profile: SocialProfile) -> some View {
-        let picker = AnyView(
-            SlidingSegmentedPicker(
-                selection: $selectedTab,
-                items: SocialTab.allCases,
-                title: { $0.title }
-            )
-            .padding(.top, socialHeaderHeight)
-        )
-
         return VStack(spacing: 0) {
             Group {
                 switch selectedTab {
                 case .feed:
-                    FeedView(tabPicker: picker)
+                    FeedView(selectedTab: $selectedTab, headerInset: socialHeaderHeight)
                 case .friends:
                     FriendsListView(
                         onOpenSearch: { selectedTab = .friends },
@@ -475,12 +466,13 @@ struct SocialRootView: View {
                         onSelectFriendForTrade: { friend in
                             openSeededTradeBuilder(with: friend)
                         },
-                        socialTabPicker: picker
+                        socialSelectedTab: $selectedTab,
+                        headerInset: socialHeaderHeight
                     )
                 case .trades:
-                    TradesView(navigationPath: $socialNavigationPath, tabPicker: picker)
+                    TradesView(navigationPath: $socialNavigationPath, selectedTab: $selectedTab, headerInset: socialHeaderHeight)
                 case .profile:
-                    MyProfileView(profile: profile, tabPicker: picker)
+                    MyProfileView(profile: profile, selectedTab: $selectedTab, headerInset: socialHeaderHeight)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

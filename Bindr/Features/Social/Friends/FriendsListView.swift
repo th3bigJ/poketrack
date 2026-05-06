@@ -13,7 +13,8 @@ struct FriendsListView: View {
     let onOpenQR: () -> Void
     let onOpenUsername: (String) -> Void
     var onSelectFriendForTrade: ((SocialProfile) -> Void)? = nil
-    var socialTabPicker: AnyView = AnyView(EmptyView())
+    var socialSelectedTab: Binding<SocialTab>? = nil
+    var headerInset: CGFloat = 0
 
     @State private var selectedTab: FriendsTab = .mine
     @State private var friends: [SocialProfile] = []
@@ -75,9 +76,16 @@ struct FriendsListView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            socialTabPicker
+            Color.clear.frame(height: headerInset)
+            if let socialSelectedTab {
+                SlidingSegmentedPicker(
+                    selection: socialSelectedTab,
+                    items: SocialTab.allCases,
+                    title: { $0.title }
+                )
                 .padding(.horizontal, 16)
                 .padding(.bottom, 6)
+            }
             header
             tabPicker
 

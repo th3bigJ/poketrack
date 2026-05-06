@@ -53,7 +53,8 @@ enum FeedRow: Identifiable {
 struct FeedView: View {
     @Environment(AppServices.self) private var services
 
-    var tabPicker: AnyView = AnyView(EmptyView())
+    var selectedTab: Binding<SocialTab>? = nil
+    var headerInset: CGFloat = 0
 
     @State private var isInitialLoading = false
     @State private var isLoadingMore = false
@@ -200,14 +201,26 @@ struct FeedView: View {
         }
     }
 
+    @ViewBuilder
+    private var tabPickerHeader: some View {
+        Color.clear.frame(height: headerInset)
+        if let selectedTab {
+            SlidingSegmentedPicker(
+                selection: selectedTab,
+                items: SocialTab.allCases,
+                title: { $0.title }
+            )
+            .padding(.horizontal, 16)
+            .padding(.bottom, 6)
+        }
+    }
+
     // MARK: - Subviews
 
     private var loadingState: some View {
         ScrollView {
             VStack(spacing: 12) {
-                tabPicker
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 6)
+                tabPickerHeader
                 ForEach(0..<4, id: \.self) { _ in
                     ShimmerCard()
                 }
@@ -220,9 +233,7 @@ struct FeedView: View {
     private var emptyState: some View {
         ScrollView {
             VStack(spacing: 20) {
-                tabPicker
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 6)
+                tabPickerHeader
                 ContentUnavailableView(
                     errorMessage != nil ? "Feed Error" : "Nothing here yet",
                     systemImage: errorMessage != nil ? "exclamationmark.triangle.fill" : "sparkles.rectangle.stack",
@@ -242,9 +253,7 @@ struct FeedView: View {
         
         return ScrollView {
             LazyVStack(spacing: 16) {
-                tabPicker
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 2)
+                tabPickerHeader
                 ForEach(sections, id: \.title) { section in
                     Section {
                         ForEach(section.rows) { row in
