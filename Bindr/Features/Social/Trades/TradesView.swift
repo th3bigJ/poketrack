@@ -43,7 +43,6 @@ struct TradesView: View {
             LazyVStack(spacing: 0) {
                 tabPicker
                     .padding(.horizontal, 16)
-                    .padding(.top, 4)
                     .padding(.bottom, 10)
                 suggestedTradesSection
 

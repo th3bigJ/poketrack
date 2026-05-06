@@ -207,7 +207,6 @@ struct FeedView: View {
             VStack(spacing: 12) {
                 tabPicker
                     .padding(.horizontal, 16)
-                    .padding(.top, 4)
                     .padding(.bottom, 6)
                 ForEach(0..<4, id: \.self) { _ in
                     ShimmerCard()
@@ -223,7 +222,6 @@ struct FeedView: View {
             VStack(spacing: 20) {
                 tabPicker
                     .padding(.horizontal, 16)
-                    .padding(.top, 4)
                     .padding(.bottom, 6)
                 ContentUnavailableView(
                     errorMessage != nil ? "Feed Error" : "Nothing here yet",
@@ -246,8 +244,7 @@ struct FeedView: View {
             LazyVStack(spacing: 16) {
                 tabPicker
                     .padding(.horizontal, 16)
-                    .padding(.top, 4)
-                    .padding(.bottom, 6)
+                    .padding(.bottom, 2)
                 ForEach(sections, id: \.title) { section in
                     Section {
                         ForEach(section.rows) { row in
@@ -263,7 +260,7 @@ struct FeedView: View {
                             .tracking(0.8)
                             .foregroundStyle(.secondary.opacity(0.5))
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.top, 12)
+                            .padding(.top, 4)
                             .padding(.bottom, 4)
                             .padding(.horizontal, 4)
                     }

@@ -73,7 +73,6 @@ struct MyProfileView: View {
             VStack(spacing: 18) {
                 tabPicker
                     .padding(.horizontal, 16)
-                    .padding(.top, 4)
                 profileHeader
                 favoritesSection
                 profileTabPicker

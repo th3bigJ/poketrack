@@ -77,7 +77,6 @@ struct FriendsListView: View {
         VStack(spacing: 0) {
             socialTabPicker
                 .padding(.horizontal, 16)
-                .padding(.top, 4)
                 .padding(.bottom, 6)
             header
             tabPicker

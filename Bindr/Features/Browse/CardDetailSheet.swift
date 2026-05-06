@@ -12,6 +12,7 @@ struct CardDetailSheet: View {
     let cards: [Card]
     var tradeAction: ((Card, Int) -> Void)? = nil
     var tradeActionLabel: String = "Trade"
+    var addToDeckAction: ((Card, String, Int) -> Void)? = nil
 
     @State private var index: Int
     @State private var scrollIndex: Int?
@@ -33,10 +34,11 @@ struct CardDetailSheet: View {
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
-    init(cards: [Card], startIndex: Int = 0, tradeAction: ((Card, Int) -> Void)? = nil, tradeActionLabel: String = "Trade") {
+    init(cards: [Card], startIndex: Int = 0, tradeAction: ((Card, Int) -> Void)? = nil, tradeActionLabel: String = "Trade", addToDeckAction: ((Card, String, Int) -> Void)? = nil) {
         self.cards = cards
         self.tradeAction = tradeAction
         self.tradeActionLabel = tradeActionLabel
+        self.addToDeckAction = addToDeckAction
         let clamped = cards.isEmpty ? 0 : min(max(0, startIndex), cards.count - 1)
         _index = State(initialValue: clamped)
         _scrollIndex = State(initialValue: clamped)
@@ -311,7 +313,10 @@ struct CardDetailSheet: View {
                 onRemoveFromCollection: {
                     removeCurrentCardFromCollection()
                 },
-                isTradeable: tradeListItems.contains(where: { $0.cardID == currentCard.masterCardId })
+                isTradeable: tradeListItems.contains(where: { $0.cardID == currentCard.masterCardId }),
+                onAddToDeck: addToDeckAction.map { action in
+                    { action(card, wishlistVariantKeys.first ?? "normal", 1) }
+                }
             )
             .popover(isPresented: $showTradeListQuantityPicker) {
                 let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }

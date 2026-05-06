@@ -19,6 +19,7 @@ struct CardActionMenu: View {
     let onToggleTradeable: (() -> Void)?
     let onRemoveFromCollection: (() -> Void)?
     let isTradeable: Bool
+    var onAddToDeck: (() -> Void)? = nil
     
     @State private var isMenuExpanded = false
     
@@ -248,8 +249,18 @@ struct CardActionMenu: View {
                 color: Palette.folder,
                 action: onAddToFolder
             ))
+
+            if let onAddToDeck {
+                items.append(MenuItem(
+                    label: "Add to Deck",
+                    subLabel: "Add this card to the deck",
+                    icon: "rectangle.stack.badge.plus",
+                    color: Color(red: 0.52, green: 0.44, blue: 0.94),
+                    action: onAddToDeck
+                ))
+            }
         }
-        
+
         return items
     }
 }

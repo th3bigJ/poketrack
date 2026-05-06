@@ -256,14 +256,8 @@ struct DeckDetailView: View {
             DeckCardPickerView(deck: deck, initialCategoryFilter: group.pickerFilter)
         }
         .sheet(item: $browseDetailSession) { session in
-            CardBrowseDetailView(
-                cards: session.cards,
-                startIndex: session.startIndex,
-                addToDeckAction: nil,
-                showsHeaderChromeActions: false,
-                showsWishlistWhenChromeHidden: true
-            )
-            .environment(services)
+            CardDetailSheet(cards: session.cards, startIndex: session.startIndex)
+                .environment(services)
         }
         .sheet(isPresented: $showShareSettings) {
             SocialShareSheet(item: .deck(deck))

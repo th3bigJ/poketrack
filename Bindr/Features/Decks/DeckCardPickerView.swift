@@ -1801,11 +1801,13 @@ private struct DeckPickerCatalogCardsView: View {
 // MARK: - Card detail sheet with add-to-deck button
 
 private struct DeckPickerDetailSheet: View {
+    @Environment(AppServices.self) private var services
     let cards: [Card]
     let startIndex: Int
     let onAdd: (Card, String, Int) -> Void
 
     var body: some View {
-        CardBrowseDetailView(cards: cards, startIndex: startIndex, addToDeckAction: onAdd)
+        CardDetailSheet(cards: cards, startIndex: startIndex, addToDeckAction: onAdd)
+            .environment(services)
     }
 }

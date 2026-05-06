@@ -140,9 +140,7 @@ struct SocialRootView: View {
     var body: some View {
         ZStack(alignment: .top) {
             content
-                .padding(.top, socialHeaderHeight)
             socialHeader
-                .background(.ultraThinMaterial)
                 .background(
                     GeometryReader { geo in
                         Color.clear.preference(key: SocialHeaderHeightKey.self, value: geo.size.height)
@@ -320,7 +318,6 @@ struct SocialRootView: View {
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
 
-            Divider().opacity(0.1)
         }
         .sheet(isPresented: $isAlertsPresented) {
             SocialAlertsSheet(isPresented: $isAlertsPresented) { deepLinkURL in
@@ -460,6 +457,7 @@ struct SocialRootView: View {
                 items: SocialTab.allCases,
                 title: { $0.title }
             )
+            .padding(.top, socialHeaderHeight)
         )
 
         return VStack(spacing: 0) {
