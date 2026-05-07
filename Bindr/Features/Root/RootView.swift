@@ -471,9 +471,7 @@ struct RootView: View {
                                 moreNavigationPath.append(SideMenuPage.decks)
                                 selectedTab = .more
                             })
-                            .tabBarChromeFromScroll()
                         }
-                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.symbolName) }
                         .tag(AppTab.dashboard)
@@ -497,9 +495,7 @@ struct RootView: View {
                                 multiSelectedCardIDs: $browseMultiSelectedCardIDs,
                                 query: $universalQuery
                             )
-                            .tabBarChromeFromScroll()
                         }
-                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.browse.title, systemImage: AppTab.browse.symbolName) }
                         .tag(AppTab.browse)
@@ -517,27 +513,21 @@ struct RootView: View {
                                 collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
                                 gridOptions: $collectFilters.gridOptions
                             )
-                            .tabBarChromeFromScroll()
                         }
-                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
                         .tag(AppTab.collect)
 
                         NavigationStack {
                             SocialRootView()
-                                .tabBarChromeFromScroll()
                         }
-                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
                         .tag(AppTab.social)
 
                         NavigationStack(path: $moreNavigationPath) {
                             MoreView(navigationPath: $moreNavigationPath)
-                                .tabBarChromeFromScroll()
                         }
-                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
                         .tag(AppTab.more)
@@ -622,8 +612,6 @@ struct RootView: View {
                         SettingsView()
                             .environment(services)
                     }
-
-                floatingTabBar()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         // Shared app backdrop shows through translucent chrome/material.
