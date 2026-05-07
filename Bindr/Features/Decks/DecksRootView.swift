@@ -14,6 +14,11 @@ struct DecksRootView: View {
     @State private var deckToDelete: Deck?
     @State private var showDeleteConfirm = false
     @State private var newDeckMenuHapticSentForCurrentTouch = false
+    /// Measured height of the translucent floating header. Read back through
+    /// the preference key so `safeAreaInset` reserves exactly the right top
+    /// gutter as the header changes — keeps the deck list aligned without
+    /// hard-coding magic numbers.
+    @State private var decksHeaderHeight: CGFloat = 64
 
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
     private var visibleDecks: [Deck] {
@@ -33,8 +38,10 @@ struct DecksRootView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            decksHeader
+        // ZStack overlay pattern (matches Social + Binders + Dashboard's
+        // floating chrome): scroll content sits underneath a translucent
+        // floating header rather than below an opaque title bar.
+        ZStack(alignment: .top) {
             Group {
                 if decks.isEmpty {
                     emptyDecksView
@@ -44,6 +51,17 @@ struct DecksRootView: View {
                     decksListView
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .safeAreaInset(edge: .top, spacing: 0) {
+                Color.clear.frame(height: decksHeaderHeight)
+            }
+            decksHeader
+                .background(
+                    GeometryReader { geo in
+                        Color.clear.preference(key: DecksHeaderHeightKey.self, value: geo.size.height)
+                    }
+                )
+                .onPreferenceChange(DecksHeaderHeightKey.self) { decksHeaderHeight = $0 }
         }
         .navigationTitle("Deck Builder")
         .navigationBarTitleDisplayMode(.inline)
@@ -175,12 +193,9 @@ struct DecksRootView: View {
     }
 
     private var decksHeader: some View {
-        ZStack {
-            Text("Deck Builder")
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
-
-            HStack {
+        BindrPageHeader(
+            title: "Deck Builder",
+            leading: {
                 ChromeGlassCircleButton(accessibilityLabel: "Back") {
                     HapticManager.impact(.light)
                     dismiss()
@@ -189,9 +204,8 @@ struct DecksRootView: View {
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
                 }
-
-                Spacer(minLength: 0)
-                
+            },
+            trailing: {
                 Menu {
                     Button { handleCreateTap() } label: {
                         Label("Create Manually", systemImage: "pencil")
@@ -209,9 +223,7 @@ struct DecksRootView: View {
                 }
                 .simultaneousGesture(newDeckMenuTouchDownHapticGesture)
             }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        )
     }
 
     private func handleCreateTap() {
@@ -307,10 +319,20 @@ private struct DeckListRow: View {
             }
 
             Spacer()
-            
+
             Image(systemName: "chevron.right")
                 .font(.system(size: 13, weight: .bold))
                 .foregroundStyle(.quaternary)
         }
+    }
+}
+
+/// Preference key used by ``DecksRootView`` to read its own translucent
+/// header height back into a `safeAreaInset` so deck content reserves the
+/// exact pixel-perfect amount of top space for the floating header.
+private struct DecksHeaderHeightKey: PreferenceKey {
+    static var defaultValue: CGFloat = 64
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
     }
 }

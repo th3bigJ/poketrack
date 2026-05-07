@@ -471,7 +471,9 @@ struct RootView: View {
                                 moreNavigationPath.append(SideMenuPage.decks)
                                 selectedTab = .more
                             })
+                            .tabBarChromeFromScroll()
                         }
+                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.symbolName) }
                         .tag(AppTab.dashboard)
@@ -495,7 +497,9 @@ struct RootView: View {
                                 multiSelectedCardIDs: $browseMultiSelectedCardIDs,
                                 query: $universalQuery
                             )
+                            .tabBarChromeFromScroll()
                         }
+                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.browse.title, systemImage: AppTab.browse.symbolName) }
                         .tag(AppTab.browse)
@@ -513,19 +517,27 @@ struct RootView: View {
                                 collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
                                 gridOptions: $collectFilters.gridOptions
                             )
+                            .tabBarChromeFromScroll()
                         }
+                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
                         .tag(AppTab.collect)
 
-                        SocialRootView()
+                        NavigationStack {
+                            SocialRootView()
+                                .tabBarChromeFromScroll()
+                        }
+                        .toolbar(.hidden, for: .tabBar)
+                        .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
-                        .badge(services.socialFeed.hasUnread ? "●" : nil)
                         .tag(AppTab.social)
 
                         NavigationStack(path: $moreNavigationPath) {
                             MoreView(navigationPath: $moreNavigationPath)
+                                .tabBarChromeFromScroll()
                         }
+                        .toolbar(.hidden, for: .tabBar)
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
                         .tag(AppTab.more)
@@ -610,6 +622,8 @@ struct RootView: View {
                         SettingsView()
                             .environment(services)
                     }
+
+                floatingTabBar()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         // Shared app backdrop shows through translucent chrome/material.
@@ -872,6 +886,41 @@ struct RootView: View {
         .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
         .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
         .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
+    }
+
+    @ViewBuilder
+    private func floatingTabBar() -> some View {
+        let visible = chromeScroll.barsVisible && !isSearchExperiencePresented && !isSearchDetailActive
+        
+        VStack(spacing: 0) {
+            Spacer()
+            HStack(spacing: 0) {
+                ForEach(AppTab.visibleTabs) { tab in
+                    Button {
+                        selectedTab = tab
+                    } label: {
+                        VStack(spacing: 4) {
+                            Image(systemName: selectedTab == tab ? tab.symbolName : tab.symbolName.replacingOccurrences(of: ".fill", with: ""))
+                                .font(.system(size: 20, weight: .medium))
+                                .bindrBadge(count: tab == .social ? services.socialFeed.unreadAlertsCount : 0)
+                            
+                            Text(tab.title)
+                                .font(.system(size: 10, weight: .medium))
+                        }
+                        .foregroundStyle(selectedTab == tab ? services.theme.accentColor : .secondary)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal, 12)
+            .glassCardStyle(cornerRadius: 32)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
+        }
+        .offset(y: visible ? 0 : 150)
+        .animation(.spring(response: 0.4, dampingFraction: 0.82), value: visible)
     }
 
     @ViewBuilder

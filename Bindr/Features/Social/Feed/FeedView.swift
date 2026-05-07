@@ -202,6 +202,10 @@ struct FeedView: View {
 
     @ViewBuilder
     private var tabPickerHeader: some View {
+        // Explicit spacer instead of `.safeAreaInset` on the parent container.
+        // `NavigationStack` in SwiftUI often fails to pass safe area insets
+        // down to its internal scroll views, so we must manually reserve
+        // space for the floating header here at the top of the scroll content.
         Color.clear.frame(height: headerInset)
         if let selectedTab {
             SlidingSegmentedPicker(
@@ -209,6 +213,11 @@ struct FeedView: View {
                 items: SocialTab.allCases,
                 title: { $0.title }
             )
+            // Force a full-width layout regardless of the parent stack's
+            // alignment. The 16pt horizontal padding here matches Browse's
+            // segmented picker so the visible capsule width is identical
+            // edge-to-edge across the app.
+            .frame(maxWidth: .infinity)
             .padding(.horizontal, 16)
             .padding(.bottom, 6)
         }
@@ -218,29 +227,38 @@ struct FeedView: View {
 
     private var loadingState: some View {
         ScrollView {
-            VStack(spacing: 12) {
+            // Picker outside the padded VStack so its width matches Browse's
+            // segmented picker exactly — the inner shimmer cards keep their
+            // own indent.
+            VStack(spacing: 0) {
                 tabPickerHeader
-                ForEach(0..<4, id: \.self) { _ in
-                    ShimmerCard()
+
+                VStack(spacing: 12) {
+                    ForEach(0..<4, id: \.self) { _ in
+                        ShimmerCard()
+                    }
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
             }
-            .padding(.horizontal, 16)
-            .padding(.top, 8)
         }
     }
 
     private var emptyState: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack(spacing: 0) {
                 tabPickerHeader
-                ContentUnavailableView(
-                    errorMessage != nil ? "Feed Error" : "Nothing here yet",
-                    systemImage: errorMessage != nil ? "exclamationmark.triangle.fill" : "sparkles.rectangle.stack",
-                    description: Text(errorMessage ?? "When friends share binders, decks and collections, they'll appear here.")
-                )
-                if errorMessage != nil {
-                    Button("Try Again") { Task { await refresh() } }
-                        .buttonStyle(.bordered)
+
+                VStack(spacing: 20) {
+                    ContentUnavailableView(
+                        errorMessage != nil ? "Feed Error" : "Nothing here yet",
+                        systemImage: errorMessage != nil ? "exclamationmark.triangle.fill" : "sparkles.rectangle.stack",
+                        description: Text(errorMessage ?? "When friends share binders, decks and collections, they'll appear here.")
+                    )
+                    if errorMessage != nil {
+                        Button("Try Again") { Task { await refresh() } }
+                            .buttonStyle(.bordered)
+                    }
                 }
             }
         }
@@ -249,46 +267,53 @@ struct FeedView: View {
     private var feedList: some View {
         let rows = feedRows
         let sections = groupRowsByDate(rows)
-        
+
         return ScrollView {
-            LazyVStack(spacing: 16) {
+            // The picker lives OUTSIDE the padded LazyVStack so it inherits
+            // the ScrollView's full width and matches Browse's picker
+            // dimensions exactly. Posts/headers below keep their own
+            // tighter horizontal inset so card stacks read clearly.
+            VStack(spacing: 0) {
                 tabPickerHeader
-                ForEach(sections, id: \.title) { section in
-                    Section {
-                        ForEach(section.rows) { row in
-                            rowView(row)
-                                .onAppear {
-                                    guard row.id == rows.last?.id else { return }
-                                    Task { await loadMore() }
-                                }
+
+                LazyVStack(spacing: 16) {
+                    ForEach(sections, id: \.title) { section in
+                        Section {
+                            ForEach(section.rows) { row in
+                                rowView(row)
+                                    .onAppear {
+                                        guard row.id == rows.last?.id else { return }
+                                        Task { await loadMore() }
+                                    }
+                            }
+                        } header: {
+                            Text(section.title)
+                                .font(.system(size: 11, weight: .bold))
+                                .tracking(0.8)
+                                .foregroundStyle(.secondary.opacity(0.5))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.top, 4)
+                                .padding(.bottom, 4)
+                                .padding(.horizontal, 4)
                         }
-                    } header: {
-                        Text(section.title)
-                            .font(.system(size: 11, weight: .bold))
-                            .tracking(0.8)
-                            .foregroundStyle(.secondary.opacity(0.5))
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.top, 4)
-                            .padding(.bottom, 4)
-                            .padding(.horizontal, 4)
+                    }
+
+                    if isLoadingMore {
+                        ProgressView()
+                            .padding()
+                    }
+
+                    if let errorMessage {
+                        Text(errorMessage)
+                            .font(.footnote)
+                            .foregroundStyle(.red)
+                            .padding()
                     }
                 }
-
-                if isLoadingMore {
-                    ProgressView()
-                        .padding()
-                }
-
-                if let errorMessage {
-                    Text(errorMessage)
-                        .font(.footnote)
-                        .foregroundStyle(.red)
-                        .padding()
-                }
+                .padding(.horizontal, 20)
+                .padding(.top, 0)
+                .padding(.bottom, 100)
             }
-            .padding(.horizontal, 20)
-            .padding(.top, 0)
-            .padding(.bottom, 100)
         }
         .refreshable { await refresh() }
     }

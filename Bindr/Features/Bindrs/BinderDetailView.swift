@@ -163,57 +163,61 @@ struct BinderDetailView: View {
 
     // MARK: - Header
 
+    /// Uses ``BindrPageHeader`` (the same component Social/Binders/Decks list
+    /// pages use) so the binder detail screen's chrome lines up perfectly
+    /// with the rest of the app's glass treatment. The colour-accent capsule
+    /// stays as a per-binder flourish below the title.
     private var binderHeader: some View {
-        VStack(spacing: 8) {
-            ZStack {
-                Text(binder.title)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.primary)
-
-                HStack {
+        VStack(spacing: 4) {
+            BindrPageHeader(
+                title: binder.title,
+                leading: {
                     ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
                         Image(systemName: "chevron.left")
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(.primary)
                     }
-                    Spacer(minLength: 0)
-                    Button {
-                        showShareSettings = true
-                    } label: {
-                        Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(isSharedPublished ? .green : headerIconColor)
-                    }
-                    .modifier(ChromeGlassCircleGlyphModifier())
-                    .frame(width: 48, height: 48)
-                    .contentShape(Rectangle())
-                    .accessibilityLabel(isSharedPublished ? "Shared binder settings" : "Share binder")
-
-                    Button {
-                        withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
-                            isEditing.toggle()
+                },
+                trailing: {
+                    HStack(spacing: 8) {
+                        Button {
+                            showShareSettings = true
+                        } label: {
+                            Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                                .font(.system(size: 17, weight: .semibold))
+                                .foregroundStyle(isSharedPublished ? .green : headerIconColor)
                         }
-                    } label: {
-                        Image(systemName: isEditing ? "checkmark" : "pencil")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(headerIconColor)
+                        .modifier(ChromeGlassCircleGlyphModifier())
+                        .frame(width: 48, height: 48)
+                        .contentShape(Rectangle())
+                        .accessibilityLabel(isSharedPublished ? "Shared binder settings" : "Share binder")
+
+                        Button {
+                            withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
+                                isEditing.toggle()
+                            }
+                        } label: {
+                            Image(systemName: isEditing ? "checkmark" : "pencil")
+                                .font(.system(size: 17, weight: .semibold))
+                                .foregroundStyle(headerIconColor)
+                        }
+                        .modifier(ChromeGlassCircleGlyphModifier())
+                        .frame(width: 48, height: 48)
+                        .contentShape(Rectangle())
+                        .accessibilityLabel(isEditing ? "Done editing binder" : "Edit binder")
                     }
-                    .modifier(ChromeGlassCircleGlyphModifier())
-                    .frame(width: 48, height: 48)
-                    .contentShape(Rectangle())
-                    .accessibilityLabel(isEditing ? "Done editing binder" : "Edit binder")
                 }
-            }
-            
-            // Premium accent line under title
+            )
+
+            // Per-binder colour-accent capsule sits below the shared header
+            // so the chrome layout stays uniform but each binder still gets
+            // its identifying flourish.
             Capsule()
                 .fill(binder.resolvedColour)
                 .frame(width: 40, height: 3)
                 .opacity(0.8)
+                .padding(.bottom, 4)
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 8)
-        .padding(.bottom, 6)
     }
 
     // MARK: - Bottom stats bar (Cards · Page Value · Binder Value)

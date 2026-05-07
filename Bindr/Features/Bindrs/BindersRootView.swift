@@ -14,6 +14,11 @@ struct BindersRootView: View {
     @State private var binderToDelete: Binder?
     @State private var presentedBinder: Binder?
     @State private var showDeleteConfirm = false
+    /// Measured height of the translucent floating header. Read by
+    /// `safeAreaInset` so scroll content reserves exactly the right top
+    /// gutter — keeps padding in lockstep with header changes (e.g. font
+    /// scaling) without hard-coding a constant.
+    @State private var bindersHeaderHeight: CGFloat = 64
 
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
     private var visibleBinders: [Binder] {
@@ -21,79 +26,24 @@ struct BindersRootView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            bindersHeader
-            Group {
-                if binders.isEmpty {
-                    ScrollView {
-                        ContentUnavailableView {
-                            Label("No Binders", systemImage: "books.vertical")
-                        } description: {
-                            Text("Create a binder to organise your cards.")
-                        } actions: {
-                            Button("Create a Binder") { handleCreateTap() }
-                                .buttonStyle(.borderedProminent)
-                        }
-                        .frame(minHeight: 300)
-                    }
-                } else if visibleBinders.isEmpty {
-                    ScrollView {
-                        ContentUnavailableView {
-                            Label("No \(activeBrand.displayTitle) Binders", systemImage: "books.vertical")
-                        } description: {
-                            Text("Create a binder for \(activeBrand.displayTitle) to organise those cards.")
-                        } actions: {
-                            Button("Create a Binder") { handleCreateTap() }
-                                .buttonStyle(.borderedProminent)
-                        }
-                        .frame(minHeight: 300)
-                    }
-                } else {
-                    ScrollView {
-                        // Cards now render in an A4 portrait ratio (~160 × 230),
-                        // so allow each grid cell a bit more horizontal room
-                        // and a touch more vertical spacing between rows.
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 158), spacing: 14)], spacing: 16) {
-                            ForEach(visibleBinders) { binder in
-                                Button {
-                                    presentedBinder = binder
-                                } label: {
-                                    ZStack(alignment: .topTrailing) {
-                                        BinderCardCell(binder: binder)
-                                        
-                                        if isEditing {
-                                            Button {
-                                                binderToDelete = binder
-                                                showDeleteConfirm = true
-                                            } label: {
-                                                Image(systemName: "minus.circle.fill")
-                                                    .font(.title3)
-                                                    .foregroundStyle(.red)
-                                                    .background(Circle().fill(.white).padding(2))
-                                            }
-                                            .transition(.scale.combined(with: .opacity))
-                                            .padding(8)
-                                        }
-                                    }
-                                }
-                                .buttonStyle(.plain)
-                                .contextMenu {
-                                    Button(role: .destructive) {
-                                        binderToDelete = binder
-                                        showDeleteConfirm = true
-                                    } label: {
-                                        Label("Delete Binder", systemImage: "trash")
-                                    }
-                                    .tint(.red)
-                                }
-                            }
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.top, 12)
-                        .padding(.bottom, 8 + rootFloatingChromeInset)
-                    }
+        // ZStack overlay pattern (matches Social + Dashboard):
+        // content scrolls under a translucent floating header rather than
+        // sitting beneath an opaque title bar. `safeAreaInset` reserves the
+        // top space so the first row of binders doesn't slip under the
+        // header; `bindersHeader` itself paints `.ultraThinMaterial`.
+        ZStack(alignment: .top) {
+            content
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .safeAreaInset(edge: .top, spacing: 0) {
+                    Color.clear.frame(height: bindersHeaderHeight)
                 }
-            }
+            bindersHeader
+                .background(
+                    GeometryReader { geo in
+                        Color.clear.preference(key: BindersHeaderHeightKey.self, value: geo.size.height)
+                    }
+                )
+                .onPreferenceChange(BindersHeaderHeightKey.self) { bindersHeaderHeight = $0 }
         }
         .toolbar(.hidden, for: .navigationBar)
         .fullScreenCover(item: $presentedBinder) { binder in
@@ -125,15 +75,91 @@ struct BindersRootView: View {
         }
     }
 
+    // MARK: - Content
+
+    /// Scroll content extracted from `body` so the ZStack overlay can wrap
+    /// it cleanly. The empty/empty-for-brand/populated branches keep the
+    /// behaviour identical to the previous VStack layout — the only
+    /// structural change is that the parent now owns the safe-area inset.
+    @ViewBuilder
+    private var content: some View {
+        if binders.isEmpty {
+            ScrollView {
+                ContentUnavailableView {
+                    Label("No Binders", systemImage: "books.vertical")
+                } description: {
+                    Text("Create a binder to organise your cards.")
+                } actions: {
+                    Button("Create a Binder") { handleCreateTap() }
+                        .buttonStyle(.borderedProminent)
+                }
+                .frame(minHeight: 300)
+            }
+        } else if visibleBinders.isEmpty {
+            ScrollView {
+                ContentUnavailableView {
+                    Label("No \(activeBrand.displayTitle) Binders", systemImage: "books.vertical")
+                } description: {
+                    Text("Create a binder for \(activeBrand.displayTitle) to organise those cards.")
+                } actions: {
+                    Button("Create a Binder") { handleCreateTap() }
+                        .buttonStyle(.borderedProminent)
+                }
+                .frame(minHeight: 300)
+            }
+        } else {
+            ScrollView {
+                // Cards now render in an A4 portrait ratio (~160 × 230),
+                // so allow each grid cell a bit more horizontal room and a
+                // touch more vertical spacing between rows.
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 158), spacing: 14)], spacing: 16) {
+                    ForEach(visibleBinders) { binder in
+                        Button {
+                            presentedBinder = binder
+                        } label: {
+                            ZStack(alignment: .topTrailing) {
+                                BinderCardCell(binder: binder)
+
+                                if isEditing {
+                                    Button {
+                                        binderToDelete = binder
+                                        showDeleteConfirm = true
+                                    } label: {
+                                        Image(systemName: "minus.circle.fill")
+                                            .font(.title3)
+                                            .foregroundStyle(.red)
+                                            .background(Circle().fill(.white).padding(2))
+                                    }
+                                    .transition(.scale.combined(with: .opacity))
+                                    .padding(8)
+                                }
+                            }
+                        }
+                        .buttonStyle(.plain)
+                        .contextMenu {
+                            Button(role: .destructive) {
+                                binderToDelete = binder
+                                showDeleteConfirm = true
+                            } label: {
+                                Label("Delete Binder", systemImage: "trash")
+                            }
+                            .tint(.red)
+                        }
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
+                .padding(.bottom, 8 + rootFloatingChromeInset)
+            }
+        }
+    }
+
     // MARK: - Header
 
     private var bindersHeader: some View {
-        ZStack {
-            Text("Binders")
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
-
-            HStack {
+        BindrPageHeader(
+            title: "Binders",
+            leading: {
                 ChromeGlassCircleButton(accessibilityLabel: "Back") {
                     dismiss()
                 } label: {
@@ -141,18 +167,15 @@ struct BindersRootView: View {
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
                 }
-
-                Spacer()
-
+            },
+            trailing: {
                 ChromeGlassCircleButton(accessibilityLabel: "Create Binder") { handleCreateTap() } label: {
                     Image(systemName: "plus")
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
                 }
             }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        )
     }
 
     private func handleCreateTap() {
@@ -253,5 +276,15 @@ private struct BinderCardCell: View {
         }
         totalUSDValue = sum
         hasLoadedValue = true
+    }
+}
+
+/// Preference key used by ``BindersRootView`` to read its own translucent
+/// header height back into a `safeAreaInset` so scroll content reserves the
+/// exact pixel-perfect amount of top space for the floating header.
+private struct BindersHeaderHeightKey: PreferenceKey {
+    static var defaultValue: CGFloat = 64
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
     }
 }

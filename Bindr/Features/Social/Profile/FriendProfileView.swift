@@ -115,16 +115,13 @@ struct FriendProfileView: View {
         .task(id: username) { await refresh() }
     }
 
+    /// Friend profile top bar uses ``BindrPageHeader`` so its glass chrome
+    /// matches every other page in the app — transparent backdrop, glass
+    /// circle buttons, identical paddings.
     private var profileTopBar: some View {
-        ZStack {
-            Text("@\(username)")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.75)
-                .padding(.horizontal, 76)
-
-            HStack {
+        BindrPageHeader(
+            title: "@\(username)",
+            leading: {
                 ChromeGlassCircleButton(accessibilityLabel: "Back") {
                     dismiss()
                 } label: {
@@ -132,10 +129,9 @@ struct FriendProfileView: View {
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
                 }
-
-                Spacer(minLength: 0)
-
-                HStack(spacing: 10) {
+            },
+            trailing: {
+                HStack(spacing: 8) {
                     if showsSelectToolbarButton {
                         ChromeGlassCircleButton(accessibilityLabel: isSelectMode ? "Exit select mode" : "Select cards") {
                             isSelectMode.toggle()
@@ -159,13 +155,7 @@ struct FriendProfileView: View {
                     }
                 }
             }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
-        .background(Color(uiColor: .systemBackground))
-        .overlay(alignment: .bottom) {
-            Divider().opacity(0.08)
-        }
+        )
     }
 
     // MARK: - Subviews

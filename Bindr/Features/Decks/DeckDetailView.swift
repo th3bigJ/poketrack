@@ -352,59 +352,74 @@ struct DeckDetailView: View {
 
     // MARK: - Summary
 
+    /// Deck detail top bar uses the shared ``BindrPageHeader`` chrome so the
+    /// individual deck screen feels like the rest of the app's glass
+    /// treatment. Edit-mode swaps the title slot for a `TextField`, which we
+    /// can't pass into the shared component (it expects a `String`), so the
+    /// edit-mode path falls back to a custom layout that mirrors the same
+    /// padding and button arrangement as the shared header — keeping the
+    /// chrome visually identical between read and edit modes.
+    @ViewBuilder
     private var deckDetailTopBar: some View {
-        ZStack {
-            if isEditing {
+        if isEditing {
+            ZStack {
                 TextField("Deck name", text: $deck.title)
-                    .font(.headline)
+                    .font(.title2.weight(.bold))
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: 220)
-            } else {
-                Text(deck.title)
-                    .font(.title2.weight(.bold))
+
+                HStack(spacing: 8) {
+                    deckHeaderBackButton
+                    Spacer(minLength: 0)
+                    deckHeaderTrailingButtons
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .padding(.bottom, 10)
+        } else {
+            BindrPageHeader(
+                title: deck.title,
+                leading: { deckHeaderBackButton },
+                trailing: { deckHeaderTrailingButtons }
+            )
+        }
+    }
+
+    private var deckHeaderBackButton: some View {
+        ChromeGlassCircleButton(accessibilityLabel: "Back") {
+            HapticManager.impact(.light)
+            dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+        }
+    }
+
+    private var deckHeaderTrailingButtons: some View {
+        HStack(spacing: 8) {
+            ChromeGlassCircleButton(accessibilityLabel: isSharedPublished ? "Share options, currently shared" : "Share options") {
+                HapticManager.impact(.light)
+                showShareActions = true
+            } label: {
+                Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                    .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
-                    .padding(.horizontal, 64)
             }
 
-            HStack {
-                ChromeGlassCircleButton(accessibilityLabel: "Back") {
-                    HapticManager.impact(.light)
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
+            ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done editing deck" : "Edit deck") {
+                HapticManager.impact(.light)
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                    isEditing.toggle()
                 }
-
-                Spacer(minLength: 0)
-
-                HStack(spacing: 10) {
-                    ChromeGlassCircleButton(accessibilityLabel: isSharedPublished ? "Share options, currently shared" : "Share options") {
-                        HapticManager.impact(.light)
-                        showShareActions = true
-                    } label: {
-                        Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
-                    }
-
-                    ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done editing deck" : "Edit deck") {
-                        HapticManager.impact(.light)
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                            isEditing.toggle()
-                        }
-                    } label: {
-                        Image(systemName: isEditing ? "checkmark" : "pencil")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(.primary)
-                    }
-                }
+            } label: {
+                Image(systemName: isEditing ? "checkmark" : "pencil")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundStyle(.primary)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
     }
 
     private var summarySection: some View {
