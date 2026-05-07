@@ -144,7 +144,6 @@ struct SocialRootView: View {
             socialHeader
         }
         .bindrPageBackground()
-        .ignoresSafeArea(edges: .bottom)
         .tint(.primary)
         .navigationTitle("Social")
         .navigationBarTitleDisplayMode(.inline)
