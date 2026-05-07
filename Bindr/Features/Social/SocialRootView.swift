@@ -148,6 +148,9 @@ struct SocialRootView: View {
         .navigationTitle("Social")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
+        .toolbar(.visible, for: .tabBar)
+        .toolbarBackground(.visible, for: .tabBar)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         .sheet(isPresented: $showAccountProfile) {
             profilePopover
                 .presentationDetents([.large])

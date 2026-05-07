@@ -116,7 +116,6 @@ struct FriendsListView: View {
             }
             .refreshable { await refresh() }
         }
-        .background(BindrPageBackground().ignoresSafeArea())
         .task { await refresh() }
         .onChange(of: searchText) { _, newValue in
             Task { await search(query: newValue) }

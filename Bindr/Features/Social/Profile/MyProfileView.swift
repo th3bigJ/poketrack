@@ -91,7 +91,6 @@ struct MyProfileView: View {
         .refreshable {
             await refreshProfileContent()
         }
-        .background(Color(uiColor: .systemBackground))
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await refreshProfileContent()

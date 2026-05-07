@@ -532,6 +532,7 @@ struct RootView: View {
                         .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
                         .tag(AppTab.more)
                     }
+                    .bindrDisableTabBarMinimize()
                     if isSearchExperiencePresented {
                         Color.black.opacity(colorScheme == .light ? 0.28 : 0.45)
                             .ignoresSafeArea(edges: .bottom)
@@ -1033,4 +1034,15 @@ struct RootView: View {
 
 #Preview {
     RootView()
+}
+
+private extension View {
+    @ViewBuilder
+    func bindrDisableTabBarMinimize() -> some View {
+        if #available(iOS 26.0, *) {
+            self.tabBarMinimizeBehavior(.never)
+        } else {
+            self
+        }
+    }
 }

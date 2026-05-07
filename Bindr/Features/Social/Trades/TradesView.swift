@@ -69,7 +69,6 @@ struct TradesView: View {
             // padding is what keeps content above the nav.
             .padding(.bottom, 120)
         }
-        .background(Color(uiColor: .systemBackground))
         .refreshable { await refresh() }
         .task { await refresh() }
         .task(id: services.trade.lastMutationAt) {
