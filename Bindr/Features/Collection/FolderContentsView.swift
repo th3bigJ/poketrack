@@ -6,16 +6,16 @@ struct FolderContentsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentCard) private var presentCard
     @Environment(\.dismiss) private var dismiss
-    @Query private var collectionItems: [CollectionItem]
 
     let folder: CardFolder
+    @Binding var gridOptions: BrowseGridOptions
 
     @State private var query = ""
     @State private var filters = BrowseCardGridFilters()
-    @State private var gridOptions = BrowseGridOptions()
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var setNameByBrandAndCode: [String: String] = [:]
     @State private var showShare = false
+    @State private var editingItem: CardFolderItem?
 
     private var folderSignature: String {
         (folder.items ?? []).map { "\($0.cardID)|\($0.variantKey)" }.joined(separator: "§")
@@ -86,6 +86,11 @@ struct FolderContentsView: View {
                 .environment(services)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
+        }
+        .sheet(item: $editingItem) { item in
+            FolderItemQuantitySheet(item: item)
+                .presentationDetents([.height(180)])
+                .presentationDragIndicator(.visible)
         }
         .task(id: folderSignature) {
             await resolveCards()
@@ -168,6 +173,11 @@ struct FolderContentsView: View {
         }
         .buttonStyle(CardCellButtonStyle())
         .contextMenu {
+            Button {
+                editingItem = item
+            } label: {
+                Label("Edit Quantity", systemImage: "pencil")
+            }
             Button(role: .destructive) {
                 removeItem(item)
             } label: {
@@ -225,18 +235,7 @@ struct FolderContentsView: View {
     }
 
     private func ownedQuantity(for folderItem: CardFolderItem) -> Int {
-        let targetCardID = folderItem.cardID.trimmingCharacters(in: .whitespacesAndNewlines)
-        let targetVariant = normalizeVariantKey(folderItem.variantKey)
-        guard !targetCardID.isEmpty else { return 0 }
-        return collectionItems.reduce(0) { partial, item in
-            guard item.cardID == targetCardID else { return partial }
-            guard normalizeVariantKey(item.variantKey) == targetVariant else { return partial }
-            return partial + max(0, item.quantity)
-        }
-    }
-
-    private func normalizeVariantKey(_ raw: String) -> String {
-        raw.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        max(0, folderItem.quantity)
     }
 
     private func setNameKey(brand: TCGBrand, setCode: String) -> String {
@@ -272,4 +271,29 @@ private struct IndexedFolderItem: Identifiable {
     let card: Card
 
     var id: String { "\(item.cardID)|\(item.variantKey)" }
+}
+
+private struct FolderItemQuantitySheet: View {
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
+
+    let item: CardFolderItem
+    @State private var quantity: Int = 1
+
+    var body: some View {
+        VStack(spacing: 20) {
+            Text("Edit Quantity")
+                .font(.headline)
+            Stepper("Quantity: \(quantity)", value: $quantity, in: 1...999)
+                .padding(.horizontal)
+            Button("Save") {
+                item.quantity = quantity
+                try? modelContext.save()
+                dismiss()
+            }
+            .buttonStyle(.borderedProminent)
+        }
+        .padding()
+        .onAppear { quantity = item.quantity }
+    }
 }

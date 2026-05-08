@@ -6,6 +6,7 @@ struct AddToCollectionSheetPayload: Identifiable {
     let id = UUID()
     let card: Card
     let variantKey: String
+    let availableVariantKeys: [String]
 }
 
 enum CardCondition: String, CaseIterable, Sendable {
@@ -40,10 +41,17 @@ struct AddToCollectionSheet: View {
     @Environment(AppServices.self) private var services
 
     let card: Card
-    let variantKey: String
+    let availableVariantKeys: [String]
 
+    @State private var selectedVariantKey: String
     @State private var acquisitionKind: CollectionAcquisitionKind = .packed
     @State private var quantity: Int = 1
+
+    init(card: Card, variantKey: String, availableVariantKeys: [String] = ["normal"]) {
+        self.card = card
+        self.availableVariantKeys = availableVariantKeys.isEmpty ? ["normal"] : availableVariantKeys
+        _selectedVariantKey = State(initialValue: variantKey)
+    }
 
     // Grading
     @State private var cardCondition: CardCondition = .raw
@@ -76,9 +84,17 @@ struct AddToCollectionSheet: View {
                 Section {
                     Text(card.cardName)
                         .font(.headline)
-                    Text(variantLabel(variantKey))
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                    if availableVariantKeys.count > 1 {
+                        Picker("Variant", selection: $selectedVariantKey) {
+                            ForEach(availableVariantKeys, id: \.self) { key in
+                                Text(variantLabel(key)).tag(key)
+                            }
+                        }
+                    } else {
+                        Text(variantLabel(selectedVariantKey))
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
                 }
 
                 Section {
@@ -242,7 +258,7 @@ struct AddToCollectionSheet: View {
                 let unit = try parseRequiredPrice(priceText)
                 try ledger.recordSingleCardAcquisition(
                     cardID: card.masterCardId,
-                    variantKey: variantKey,
+                    variantKey: selectedVariantKey,
                     kind: .bought,
                     quantity: quantity,
                     occurredAt: occurredAt,
@@ -260,7 +276,7 @@ struct AddToCollectionSheet: View {
             case .packed:
                 try ledger.recordSingleCardAcquisition(
                     cardID: card.masterCardId,
-                    variantKey: variantKey,
+                    variantKey: selectedVariantKey,
                     kind: .packed,
                     quantity: quantity,
                     occurredAt: occurredAt,
@@ -278,7 +294,7 @@ struct AddToCollectionSheet: View {
             case .gifted:
                 try ledger.recordSingleCardAcquisition(
                     cardID: card.masterCardId,
-                    variantKey: variantKey,
+                    variantKey: selectedVariantKey,
                     kind: .gifted,
                     quantity: quantity,
                     occurredAt: occurredAt,

@@ -19,7 +19,7 @@ struct CardDetailSheet: View {
     @State private var editingLine: HoldingLine?
     @State private var dispositionLine: HoldingLine?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
-    @State private var addToFolderPayload: AddToFolderSheetPayload?
+    @State private var folderContextRequest: CardContextActionRequest?
     @State private var showCardShare = false
     @State private var showTradeListQuantityPicker = false
     @State private var tradeListPickerQuantity = 1
@@ -126,11 +126,12 @@ struct CardDetailSheet: View {
             HoldingDispositionSheet(line: line, cardDisplayName: currentCard.cardName)
         }
         .sheet(item: $addToCollectionPayload) { payload in
-            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey)
+            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey, availableVariantKeys: payload.availableVariantKeys)
                 .environment(services)
         }
-        .sheet(item: $addToFolderPayload) { payload in
-            AddToFolderSheet(card: payload.card, variantKey: payload.variantKey)
+        .sheet(item: $folderContextRequest) { req in
+            CardContextActionSheet(request: req)
+                .environment(services)
         }
         .sheet(isPresented: $showCardShare) {
             SocialShareSheet(item: .card)
@@ -247,7 +248,12 @@ struct CardDetailSheet: View {
                 },
                 onAddToFolder: {
                     let variantKey = singleAvailableVariantKey ?? wishlistVariantKeys.first ?? "normal"
-                    addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: variantKey)
+                    folderContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: wishlistVariantKeys,
+                        initialVariantKey: variantKey,
+                        initialAction: .folder
+                    )
                 },
                 onTradeAction: {
                     if let _ = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
@@ -414,14 +420,26 @@ struct CardDetailSheet: View {
     @ViewBuilder
     private func folderActionButton(for card: Card) -> some View {
         if let variantKey = singleAvailableVariantKey {
-            Button { addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: variantKey) } label: {
+            Button {
+                folderContextRequest = CardContextActionRequest(
+                    card: card,
+                    availableVariantKeys: wishlistVariantKeys,
+                    initialVariantKey: variantKey,
+                    initialAction: .folder
+                )
+            } label: {
                 cardActionBody(title: "Add to Folder", systemImage: "folder.badge.plus", tint: Color(red: 0.18, green: 0.72, blue: 0.88))
             }
             .buttonStyle(.plain)
         } else {
             Menu {
                 variantSelectionMenuContent(for: card, sectionHeader: "Select Variant", showWishlistCheckmarks: false) { key in
-                    addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: key)
+                    folderContextRequest = CardContextActionRequest(
+                        card: card,
+                        availableVariantKeys: wishlistVariantKeys,
+                        initialVariantKey: key,
+                        initialAction: .folder
+                    )
                 }
             } label: {
                 cardActionBody(title: "Add to Folder", systemImage: "folder.badge.plus", tint: Color(red: 0.18, green: 0.72, blue: 0.88))
@@ -808,7 +826,7 @@ struct CardDetailSheet: View {
     }
 
     private func addToCollectionVariant(card: Card, variantKey: String) {
-        addToCollectionPayload = AddToCollectionSheetPayload(card: card, variantKey: variantKey)
+        addToCollectionPayload = AddToCollectionSheetPayload(card: card, variantKey: variantKey, availableVariantKeys: wishlistVariantKeys)
         HapticManager.impact(.medium)
     }
 

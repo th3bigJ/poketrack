@@ -278,7 +278,7 @@ private struct CardBrowseDetailPage: View {
             HoldingDispositionSheet(line: line, cardDisplayName: card.cardName)
         }
         .sheet(item: $addToCollectionPayload) { payload in
-            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey)
+            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey, availableVariantKeys: payload.availableVariantKeys)
                 .environment(services)
         }
         .sheet(item: $addToFolderPayload) { payload in
@@ -1129,7 +1129,7 @@ private struct CardBrowseDetailPage: View {
     }
 
     private func addToCollectionVariant(variantKey: String) {
-        addToCollectionPayload = AddToCollectionSheetPayload(card: card, variantKey: variantKey)
+        addToCollectionPayload = AddToCollectionSheetPayload(card: card, variantKey: variantKey, availableVariantKeys: wishlistVariantKeys)
         HapticManager.impact(.medium)
     }
 

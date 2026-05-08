@@ -48,6 +48,7 @@ struct CollectView: View {
     @Binding var collectFilterRarityOptions: [String]
     @Binding var collectFilterTrainerTypeOptions: [String]
     @Binding var gridOptions: BrowseGridOptions
+    @Binding var folderGridOptions: BrowseGridOptions
 
     @State private var collectionQuery = ""
     @State private var wishlistQuery = ""
@@ -193,7 +194,7 @@ struct CollectView: View {
         }
         .bindrPageBackground()
         .navigationDestination(for: CardFolder.self) { folder in
-            FolderContentsView(folder: folder)
+            FolderContentsView(folder: folder, gridOptions: $folderGridOptions)
         }
         .scrollDismissesKeyboard(.immediately)
         .toolbar(hidesNavigationBar ? .hidden : .visible, for: .navigationBar)
@@ -1153,7 +1154,7 @@ struct CollectView: View {
         let matchedIDs = Set(orderedIDs)
         let matched = typeFiltered.filter { matchedIDs.contains($0.cardID) }
         if !orderedIDs.isEmpty {
-            let indexByID = Dictionary(uniqueKeysWithValues: orderedIDs.enumerated().map { ($1, $0) })
+            let indexByID = Dictionary(orderedIDs.enumerated().map { ($1, $0) }, uniquingKeysWith: { first, _ in first })
             return matched.sorted { (indexByID[$0.cardID] ?? Int.max) < (indexByID[$1.cardID] ?? Int.max) }
         }
         if trimmedQuery.isEmpty {

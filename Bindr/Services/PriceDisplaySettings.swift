@@ -219,6 +219,13 @@ final class CollectionFiltersSettings {
         static let gridShowPricing      = "collectGridShowPricing"
         static let gridShowOwned        = "collectGridShowOwned"
         static let gridColumnCount      = "collectGridColumnCount"
+
+        static let folderGridShowCardName = "folderGridShowCardName"
+        static let folderGridShowSetName  = "folderGridShowSetName"
+        static let folderGridShowSetID    = "folderGridShowSetID"
+        static let folderGridShowPricing  = "folderGridShowPricing"
+        static let folderGridShowOwned    = "folderGridShowOwned"
+        static let folderGridColumnCount  = "folderGridColumnCount"
     }
 
     var collectionFilters: BrowseCardGridFilters {
@@ -251,11 +258,21 @@ final class CollectionFiltersSettings {
         }
     }
 
+    var folderGridOptions: BrowseGridOptions {
+        didSet {
+            let sanitized = Self.sanitizeGrid(folderGridOptions)
+            if sanitized != folderGridOptions { folderGridOptions = sanitized; return }
+            guard folderGridOptions != oldValue else { return }
+            saveFolderGridOptions(folderGridOptions)
+        }
+    }
+
     init() {
         collectionFilters = Self.loadCollectionFilters()
         wishlistFilters   = Self.loadWishlistFilters()
         tradeListFilters  = Self.loadTradeListFilters()
         gridOptions       = Self.loadGridOptions()
+        folderGridOptions = Self.loadFolderGridOptions()
     }
 
     // MARK: - Load
@@ -348,6 +365,31 @@ final class CollectionFiltersSettings {
         d.set(options.showPricing,  forKey: Keys.gridShowPricing)
         d.set(options.showOwned,    forKey: Keys.gridShowOwned)
         d.set(options.columnCount,  forKey: Keys.gridColumnCount)
+    }
+
+    private static func loadFolderGridOptions() -> BrowseGridOptions {
+        let d = UserDefaults.standard
+        let base = BrowseGridOptions()
+        return BrowseGridOptions(
+            showCardName: d.object(forKey: Keys.folderGridShowCardName) != nil ? d.bool(forKey: Keys.folderGridShowCardName) : base.showCardName,
+            showSetName:  d.object(forKey: Keys.folderGridShowSetName)  != nil ? d.bool(forKey: Keys.folderGridShowSetName)  : base.showSetName,
+            showSetID:    d.object(forKey: Keys.folderGridShowSetID)    != nil ? d.bool(forKey: Keys.folderGridShowSetID)    : base.showSetID,
+            showPricing:  d.object(forKey: Keys.folderGridShowPricing)  != nil ? d.bool(forKey: Keys.folderGridShowPricing)  : base.showPricing,
+            showOwned:    d.object(forKey: Keys.folderGridShowOwned)    != nil ? d.bool(forKey: Keys.folderGridShowOwned)    : base.showOwned,
+            columnCount:  sanitizedColumnCount(
+                d.object(forKey: Keys.folderGridColumnCount) != nil ? d.integer(forKey: Keys.folderGridColumnCount) : base.columnCount
+            )
+        )
+    }
+
+    private func saveFolderGridOptions(_ options: BrowseGridOptions) {
+        let d = UserDefaults.standard
+        d.set(options.showCardName, forKey: Keys.folderGridShowCardName)
+        d.set(options.showSetName,  forKey: Keys.folderGridShowSetName)
+        d.set(options.showSetID,    forKey: Keys.folderGridShowSetID)
+        d.set(options.showPricing,  forKey: Keys.folderGridShowPricing)
+        d.set(options.showOwned,    forKey: Keys.folderGridShowOwned)
+        d.set(options.columnCount,  forKey: Keys.folderGridColumnCount)
     }
 
     // MARK: - Helpers

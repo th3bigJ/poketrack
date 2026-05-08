@@ -89,6 +89,7 @@ struct CardContextActionSheet: View {
     // Folder
     @State private var addedFolderIDs: Set<UUID> = []
     @State private var folderQuantity: Int = 1
+    @State private var editingFolderQuantities: [UUID: Int] = [:]
     @State private var showCreateFolderAlert = false
     @State private var newFolderTitle: String = ""
 
@@ -384,24 +385,47 @@ struct CardContextActionSheet: View {
         if !folders.isEmpty {
             Section("MY FOLDERS") {
                 ForEach(folders) { folder in
-                    let alreadyAdded = addedFolderIDs.contains(folder.id)
-                        || folderContainsCard(folder)
-                    Button {
-                        guard !alreadyAdded else { return }
-                        addCardToFolder(folder)
-                    } label: {
-                        HStack {
+                    let existingItem = existingFolderItem(in: folder)
+                    let justAdded = addedFolderIDs.contains(folder.id)
+                    if let item = existingItem {
+                        let editQty = Binding(
+                            get: { editingFolderQuantities[folder.id] ?? item.quantity },
+                            set: { editingFolderQuantities[folder.id] = $0 }
+                        )
+                        VStack(alignment: .leading, spacing: 8) {
                             Label(folder.title, systemImage: "folder")
-                                .foregroundStyle(alreadyAdded ? .secondary : .primary)
-                            Spacer()
-                            if alreadyAdded {
-                                Image(systemName: "checkmark")
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(.secondary)
-                            } else {
-                                Text("\((folder.items ?? []).count) cards")
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
+                                .foregroundStyle(.primary)
+                            HStack {
+                                Stepper("Qty: \(editQty.wrappedValue)", value: editQty, in: 1...999)
+                                Button("Save") {
+                                    updateFolderItemQuantity(item, quantity: editQty.wrappedValue)
+                                    editingFolderQuantities.removeValue(forKey: folder.id)
+                                }
+                                .buttonStyle(.borderedProminent)
+                                .tint(headerButtonColor)
+                                .font(.caption.weight(.semibold))
+                                .disabled(editQty.wrappedValue == item.quantity && editingFolderQuantities[folder.id] == nil)
+                            }
+                        }
+                        .padding(.vertical, 4)
+                    } else {
+                        Button {
+                            guard !justAdded else { return }
+                            addCardToFolder(folder)
+                        } label: {
+                            HStack {
+                                Label(folder.title, systemImage: "folder")
+                                    .foregroundStyle(justAdded ? .secondary : .primary)
+                                Spacer()
+                                if justAdded {
+                                    Image(systemName: "checkmark")
+                                        .font(.caption.weight(.semibold))
+                                        .foregroundStyle(.secondary)
+                                } else {
+                                    Text("\((folder.items ?? []).count) cards")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
                             }
                         }
                     }
@@ -597,9 +621,19 @@ struct CardContextActionSheet: View {
     // MARK: - Folder helpers
 
     private func folderContainsCard(_ folder: CardFolder) -> Bool {
-        (folder.items ?? []).contains {
+        existingFolderItem(in: folder) != nil
+    }
+
+    private func existingFolderItem(in folder: CardFolder) -> CardFolderItem? {
+        (folder.items ?? []).first {
             $0.cardID == request.card.masterCardId && $0.variantKey == selectedVariantKey
         }
+    }
+
+    private func updateFolderItemQuantity(_ item: CardFolderItem, quantity: Int) {
+        item.quantity = quantity
+        try? modelContext.save()
+        Haptics.success()
     }
 
     private func addCardToFolder(_ folder: CardFolder) {

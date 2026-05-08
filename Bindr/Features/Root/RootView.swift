@@ -511,7 +511,8 @@ struct RootView: View {
                                 collectFilterEnergyOptions: $collectFilterEnergyOptions,
                                 collectFilterRarityOptions: $collectFilterRarityOptions,
                                 collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
-                                gridOptions: $collectFilters.gridOptions
+                                gridOptions: $collectFilters.gridOptions,
+                                folderGridOptions: $collectFilters.folderGridOptions
                             )
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
