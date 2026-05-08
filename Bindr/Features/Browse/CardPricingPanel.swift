@@ -140,7 +140,7 @@ struct CardPricingPanel: View {
                     .padding(.top, 12)
             }
 
-            if gradesForVariant.count > 1 {
+            if !gradesForVariant.isEmpty {
                 chipPicker(keys: gradesForVariant, selected: $selectedGrade) { gradeDisplayName($0) }
                     .padding(.top, 6)
             }

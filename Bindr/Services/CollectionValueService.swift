@@ -23,6 +23,7 @@ final class CollectionValueService {
     private let modelContext: ModelContext
     private let pricing: PricingService
     private let cardData: CardDataService
+    private let sealedProducts: SealedProductService
 
     private(set) var snapshots: [CollectionValueSnapshot] = []
     private(set) var weeklyAverages: [CollectionWeeklyAverage] = []
@@ -52,10 +53,16 @@ final class CollectionValueService {
 
     // MARK: - Init
 
-    init(modelContext: ModelContext, pricing: PricingService, cardData: CardDataService) {
+    init(
+        modelContext: ModelContext,
+        pricing: PricingService,
+        cardData: CardDataService,
+        sealedProducts: SealedProductService
+    ) {
         self.modelContext = modelContext
         self.pricing = pricing
         self.cardData = cardData
+        self.sealedProducts = sealedProducts
         loadAll()
     }
 
@@ -63,6 +70,7 @@ final class CollectionValueService {
 
     func runBackfillIfNeeded(collectionItems: [CollectionItem]) async {
         guard !isBackfilling else { return }
+        await sealedProducts.loadFromLocalIfAvailable()
         purgeZeroValueSnapshots()
         await captureTodaySnapshotIfMissing(collectionItems: collectionItems)
 
@@ -229,12 +237,26 @@ final class CollectionValueService {
                item.sealedStatus == SealedInventoryStatus.opened.rawValue {
                 continue
             }
+            if let sealedProductID = sealedProductID(for: item),
+               let sealedPriceUSD = sealedProducts.marketPriceUSD(for: sealedProductID) {
+                total += sealedPriceUSD * Double(item.quantity) * pricing.usdToGbp
+                continue
+            }
             guard let card = await cardData.loadCard(masterCardId: item.cardID) else { continue }
             let grade = resolvedGradeKey(for: item)
             let usd = await usdPrice(for: card, variantKey: item.variantKey, grade: grade, on: date)
             total += usd * Double(item.quantity) * pricing.usdToGbp
         }
         return total
+    }
+
+    private func sealedProductID(for item: CollectionItem) -> Int? {
+        if let rawID = item.sealedProductId,
+           let productID = Int(rawID),
+           productID > 0 {
+            return productID
+        }
+        return SealedProduct.parseCollectionProductID(item.cardID)
     }
 
     /// Maps a CollectionItem's grading fields to the pricing grade key used by PricingService.
@@ -260,7 +282,6 @@ final class CollectionValueService {
         let seriesKey = "\(variantKey)/\(grade)"
         let series = history.series[seriesKey]
             ?? history.series.first(where: { $0.key.hasPrefix(variantKey + "/") })?.value
-            ?? history.series.values.first
 
         guard let dailySeries = series, !dailySeries.daily.isEmpty else { return nil }
 
@@ -270,17 +291,15 @@ final class CollectionValueService {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
 
-        var bestPoint: PriceDataPoint?
-        var bestDiff: TimeInterval = .infinity
-
         for point in dailySeries.daily {
             guard let pointDate = dateFormatter.date(from: point.label) else { continue }
-            let diff = abs(cal.startOfDay(for: pointDate).timeIntervalSince(targetDay))
-            if diff < bestDiff { bestDiff = diff; bestPoint = point }
+            if cal.startOfDay(for: pointDate) == targetDay {
+                return point.price
+            }
         }
 
-        guard let point = bestPoint, bestDiff <= 14 * 24 * 3600 else { return nil }
-        return point.price
+        // No exact-day history point; caller falls back to current live price for consistency.
+        return nil
     }
 
     // MARK: - Helpers

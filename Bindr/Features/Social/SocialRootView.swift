@@ -264,8 +264,6 @@ struct SocialRootView: View {
                 }
             }
         }
-        .animation(.easeInOut(duration: 0.18), value: selectedTab)
-        .animation(.easeInOut(duration: 0.18), value: services.pendingTradeSeed != nil)
     }
 
     @ViewBuilder
@@ -298,7 +296,6 @@ struct SocialRootView: View {
                         .foregroundStyle(.primary)
                 }
             }
-            .transition(.opacity)
         case .trades:
             ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
                 Haptics.lightImpact()
@@ -309,7 +306,6 @@ struct SocialRootView: View {
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(.primary)
             }
-            .transition(.opacity)
         case .friends:
             if services.pendingTradeSeed != nil {
                 Button("Cancel") {
@@ -335,7 +331,6 @@ struct SocialRootView: View {
                     }
                 }
                 .buttonStyle(.plain)
-                .transition(.opacity)
             }
         case .profile:
             ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
@@ -347,7 +342,6 @@ struct SocialRootView: View {
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(.primary)
             }
-            .transition(.opacity)
         }
     }
 

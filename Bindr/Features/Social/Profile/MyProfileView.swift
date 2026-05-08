@@ -71,7 +71,7 @@ struct MyProfileView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 18) {
+            VStack(spacing: 0) {
                 Color.clear.frame(height: headerInset)
                 if let selectedTab {
                     SlidingSegmentedPicker(
@@ -82,10 +82,12 @@ struct MyProfileView: View {
                     .padding(.horizontal, 16)
                     .padding(.bottom, 6)
                 }
-                profileHeader
-                favoritesSection
-                profileTabPicker
-                profileTabContent
+                VStack(spacing: 18) {
+                    profileHeader
+                    favoritesSection
+                    profileTabPicker
+                    profileTabContent
+                }
             }
         }
         .refreshable {

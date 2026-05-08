@@ -177,6 +177,14 @@ struct CardActionMenu: View {
         if isOwned {
             // COLLECTION MODE terminology
             items.append(MenuItem(
+                label: isWishlisted ? "Remove from Wish List" : "Wish List",
+                subLabel: isWishlisted ? "Currently on your wish list" : "Add to your wish list",
+                icon: isWishlisted ? "star.slash" : "star",
+                color: Palette.gold,
+                action: isWishlisted ? onRemoveFromWishlist : onAddToWishlist
+            ))
+
+            items.append(MenuItem(
                 label: "Add to Folder",
                 subLabel: "Place this card in a folder",
                 icon: "folder.badge.plus",

@@ -431,7 +431,12 @@ final class AppServices {
 
     func setupCollectionValue(modelContext: ModelContext) {
         guard collectionValue == nil else { return }
-        collectionValue = CollectionValueService(modelContext: modelContext, pricing: pricing, cardData: cardData)
+        collectionValue = CollectionValueService(
+            modelContext: modelContext,
+            pricing: pricing,
+            cardData: cardData,
+            sealedProducts: sealedProducts
+        )
     }
 
     private func refreshCatalogCardsLastUpdatedAtFromStore() async {

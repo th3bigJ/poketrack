@@ -1851,9 +1851,7 @@ struct DashboardView: View {
         for (cardID, rawEntry) in root {
             guard let entry = rawEntry as? [String: Any] else { continue }
             let parsed = CardPriceTrends.parse(from: entry)
-            let change7d = parsed?.change7d
-                ?? parsed?.allVariants.values.flatMap { $0.values }.compactMap(\.change7d).first
-                ?? extractSetEntrySevenDayChange(from: entry)
+            let change7d = extractRawSevenDayChange(parsed: parsed, entry: entry)
             guard let change7d else { continue }
             candidates.append(
                 TrendMoverCandidate(
@@ -1953,6 +1951,36 @@ struct DashboardView: View {
         return nil
     }
 
+    private func extractRawSevenDayChange(parsed: CardPriceTrends?, entry: [String: Any]) -> Double? {
+        if let parsed {
+            // Prefer RAW for the trend row's primary variant so dashboard movers
+            // match the same per-card variant context the detail chart starts from.
+            let preferredVariant = parsed.variant.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !preferredVariant.isEmpty,
+               let preferredRaw = parsed.allVariants[preferredVariant]?["raw"]?.change7d {
+                return preferredRaw
+            }
+
+            // If the top-level trend row itself is RAW, use it.
+            if parsed.grade.lowercased() == "raw", let topLevelRaw = parsed.change7d {
+                return topLevelRaw
+            }
+
+            // Fallback: if there is exactly one RAW value across variants, use it.
+            let rawCandidates = parsed.allVariants.values.compactMap { $0["raw"]?.change7d }
+            if rawCandidates.count == 1, let loneRaw = rawCandidates.first {
+                return loneRaw
+            }
+        }
+
+        // Dynamic JSON fallback when strong parsing misses: only accept entries marked RAW.
+        if let grade = (entry["grade"] as? String)?.lowercased(), grade == "raw" {
+            return extractSetEntrySevenDayChange(from: entry)
+        }
+
+        return nil
+    }
+
     private func collectTrendMoverCandidates(
         from value: Any,
         inheritedCardID: String?,
@@ -1970,7 +1998,8 @@ struct DashboardView: View {
                 ?? (dict["title"] as? String)
             let imageURL = parseImageURL(from: dict)
             let brandHint = (dict["brand"] as? String) ?? (dict["tcg"] as? String) ?? (dict["game"] as? String)
-            if let change7d = extractSetEntrySevenDayChange(from: dict) {
+            let parsed = CardPriceTrends.parse(from: dict)
+            if let change7d = extractRawSevenDayChange(parsed: parsed, entry: dict) {
                 candidates.append(
                     TrendMoverCandidate(
                         cardID: cardID,
