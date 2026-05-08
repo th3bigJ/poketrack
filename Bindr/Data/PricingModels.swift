@@ -78,6 +78,11 @@ struct ScrydexVariantPricing: Codable, Hashable {
         raw ?? market ?? avg ?? psa10 ?? ace10
     }
 
+    /// Raw (ungraded) price only — never returns a graded price. Returns `nil` when no raw data exists.
+    func rawMarketEstimateUSD() -> Double? {
+        raw ?? market ?? avg
+    }
+
     func encode(to encoder: Encoder) throws {
         var c = encoder.container(keyedBy: CodingKeys.self)
         try c.encodeIfPresent(raw, forKey: .raw)

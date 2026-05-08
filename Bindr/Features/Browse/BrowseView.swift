@@ -3056,10 +3056,10 @@ private struct BrowseGridPriceText: View {
         "\(card.id)|\(overridePrice ?? -1)|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)"
     }
 
-    /// Min/max market USD across **all** Scrydex variants on the card (grid headline when multiple printings exist).
+    /// Min/max raw (ungraded) market USD across Scrydex variants on the card.
     private func resolvedMarketPriceRange(_ entry: CardPricingEntry) -> (min: Double, max: Double)? {
         if let scrydex = entry.scrydex, !scrydex.isEmpty {
-            let values = scrydex.values.compactMap { $0.marketEstimateUSD() }
+            let values = scrydex.values.compactMap { $0.rawMarketEstimateUSD() }
             guard let minV = values.min(), let maxV = values.max() else { return nil }
             return (minV, maxV)
         }
@@ -3068,6 +3068,7 @@ private struct BrowseGridPriceText: View {
         }
         return nil
     }
+
 }
 
 private func sortCardsByReleaseDateNewestFirst(_ cards: [Card], sets: [TCGSet]) -> [Card] {
@@ -4614,7 +4615,7 @@ func browseFilterTrainerTypeOptions(_ cards: [BrowseFilterCard]) -> [String] {
 private func browseMarketPriceUSD(for entry: CardPricingEntry?) -> Double? {
     guard let entry else { return nil }
     if let scrydex = entry.scrydex, !scrydex.isEmpty {
-        return scrydex.values.compactMap { $0.marketEstimateUSD() }.max()
+        return scrydex.values.compactMap { $0.rawMarketEstimateUSD() }.max()
     }
     return entry.tcgplayerMarketEstimateUSD()
 }

@@ -180,6 +180,11 @@ struct DecksRootView: View {
                         }
                     }
                     .contextMenu {
+                        Button {
+                            duplicateDeck(deck)
+                        } label: {
+                            Label("Duplicate Deck", systemImage: "doc.on.doc")
+                        }
                         Button(role: .destructive) {
                             deckToDelete = deck
                             showDeleteConfirm = true
@@ -224,6 +229,39 @@ struct DecksRootView: View {
                 .simultaneousGesture(newDeckMenuTouchDownHapticGesture)
             }
         )
+    }
+
+    private func duplicateDeck(_ source: Deck) {
+        HapticManager.impact(.light)
+        let copy = Deck(title: "\(source.title) Copy", brand: source.tcgBrand, format: source.deckFormat)
+        modelContext.insert(copy)
+        for card in source.cardList {
+            let cardCopy = DeckCard(
+                cardID: card.cardID,
+                variantKey: card.variantKey,
+                cardName: card.cardName,
+                quantity: card.quantity,
+                isBasicEnergy: card.isBasicEnergy,
+                isAceSpec: card.isAceSpec,
+                isRadiant: card.isRadiant,
+                isBasicPokemon: card.isBasicPokemon,
+                isRuleBox: card.isRuleBox,
+                setKey: card.setKey,
+                regulationMark: card.regulationMark,
+                elementTypes: card.elementTypes,
+                trainerType: card.trainerType,
+                isEnergy: card.isEnergy,
+                imageLowSrc: card.imageLowSrc,
+                catalogCategory: card.catalogCategory,
+                catalogSubtype: card.catalogSubtype,
+                catalogStage: card.catalogStage,
+                opCost: card.opCost,
+                opPower: card.opPower,
+                opCounter: card.opCounter
+            )
+            cardCopy.deck = copy
+            modelContext.insert(cardCopy)
+        }
     }
 
     private func handleCreateTap() {

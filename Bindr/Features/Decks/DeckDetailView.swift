@@ -248,6 +248,7 @@ struct DeckDetailView: View {
                 Spacer(minLength: 40)
             }
         }
+        .background(BindrPageBackground().ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
             deckDetailTopBar
@@ -525,7 +526,7 @@ struct DeckDetailView: View {
             }
         }
         .padding(16)
-        .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(Color(uiColor: .secondarySystemBackground)))
+        .glassCardStyle(cornerRadius: 16)
     }
 
     private func summaryPill(label: String, count: Int, color: Color) -> some View {
