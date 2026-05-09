@@ -229,8 +229,17 @@ struct CardActionMenu: View {
             }
         } else {
             // BROWSE / SOCIAL MODE terminology
-            
-            // Context-aware Trade Action (e.g. from Trade Wall)
+
+            // Keep collection add available even when a context-specific trade action exists.
+            items.append(MenuItem(
+                label: "Collection",
+                subLabel: "Add to your main collection",
+                icon: "plus.circle.fill",
+                color: Palette.success,
+                action: onSaveToCollection
+            ))
+
+            // Context-aware Trade Action (e.g. from Trade Wall or collection wishlist flow)
             if let label = tradeActionLabel, let action = onTradeAction {
                 items.append(MenuItem(
                     label: label.replacingOccurrences(of: "...", with: ""),
@@ -238,15 +247,6 @@ struct CardActionMenu: View {
                     icon: "arrow.left.arrow.right.circle.fill",
                     color: Palette.chartLine,
                     action: action
-                ))
-            } else {
-                // Standard Browse Mode
-                items.append(MenuItem(
-                    label: "Collection",
-                    subLabel: "Add to your main collection",
-                    icon: "plus.circle.fill",
-                    color: Palette.success,
-                    action: onSaveToCollection
                 ))
             }
             
