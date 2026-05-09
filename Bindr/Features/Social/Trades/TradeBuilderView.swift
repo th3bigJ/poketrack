@@ -635,6 +635,7 @@ struct TradeCardPickerView: View {
                 }
             }
         }
+        .tint(.primary)
         .task { await loadCollection() }
         .onChange(of: searchText) { _, _ in
             visibleCount = pageSize

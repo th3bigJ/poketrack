@@ -504,11 +504,6 @@ private struct BrowseCardGridButton: View {
         .buttonStyle(CardCellButtonStyle())
         .contextMenu {
             Button {
-                onSelectMultipleRequested(row.card)
-            } label: {
-                Label("Select Multiple", systemImage: "checklist")
-            }
-            Button {
                 onQuickAddRequested(row.card, .collection)
             } label: {
                 Label("Add to Collection", systemImage: "books.vertical")
@@ -1156,11 +1151,6 @@ struct BrowseView: View {
                 }
                 .buttonStyle(CardCellButtonStyle())
                 .contextMenu {
-                    Button {
-                        beginSelectMultiple(with: card)
-                    } label: {
-                        Label("Select Multiple", systemImage: "checklist")
-                    }
                     Button {
                         beginQuickAdd(card: card, action: .collection)
                     } label: {
@@ -3331,17 +3321,6 @@ struct SetCardsView: View {
                                 .buttonStyle(CardCellButtonStyle())
                                 .contextMenu {
                                     Button {
-                                        if !isMultiSelectActive {
-                                            withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
-                                                isMultiSelectActive = true
-                                            }
-                                        }
-                                        selectedCardIDs.insert(card.masterCardId)
-                                        HapticManager.impact(.light)
-                                    } label: {
-                                        Label("Select Multiple", systemImage: "checklist")
-                                    }
-                                    Button {
                                         beginCardContextAction(card: card, action: .collection)
                                     } label: {
                                         Label("Add to Collection", systemImage: "books.vertical")
@@ -4074,21 +4053,6 @@ private struct BrowseDetailNavBar<FilterMenuContent: View, GridMenuContent: View
                 Spacer(minLength: 0)
 
                 HStack(spacing: 10) {
-                    if let onMultiSelectToggle {
-                        Button {
-                            onMultiSelectToggle()
-                        } label: {
-                            Image(systemName: isMultiSelectActive ? "checkmark.circle.fill" : "checkmark.circle")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(isMultiSelectActive ? Color.blue : Color.primary)
-                                .modifier(ChromeGlassCircleGlyphModifier())
-                        }
-                        .buttonStyle(.plain)
-                        .frame(width: 48, height: 48)
-                        .contentShape(Rectangle())
-                        .accessibilityLabel(isMultiSelectActive ? "Exit multi-select" : "Multi-select")
-                    }
-
                     Menu {
                         gridMenuContent()
                     } label: {
