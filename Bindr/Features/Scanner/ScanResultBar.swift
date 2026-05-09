@@ -404,10 +404,16 @@ struct ScanResultBar: View {
 
 /// Lists other ranked catalog matches for the same OCR pass so the user can correct a mis-match.
 struct ScannerWrongCardAlternativesSheet: View {
+    @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
 
     let alternatives: [Card]
     let onSelect: (Card) -> Void
+
+    private func setDisplayName(for card: Card) -> String {
+        services.cardData.sets.first(where: { $0.setCode == card.setCode })?.name
+            ?? card.setCode.uppercased()
+    }
 
     var body: some View {
         NavigationStack {
@@ -446,7 +452,7 @@ struct ScannerWrongCardAlternativesSheet: View {
                                                 .font(.headline)
                                                 .foregroundStyle(Color(uiColor: .label))
                                                 .multilineTextAlignment(.leading)
-                                            Text(card.setCode.uppercased() + " · #" + card.cardNumber)
+                                            Text(setDisplayName(for: card) + " · #" + card.cardNumber)
                                                 .font(.subheadline)
                                                 .foregroundStyle(Color(uiColor: .secondaryLabel))
                                             if let rarity = card.rarity {
