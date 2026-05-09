@@ -152,26 +152,44 @@ struct CardActionMenu: View {
     }
     
     // MARK: - Logic
+    private var isDeckAddOnlyMode: Bool {
+        onAddToDeck != nil
+    }
     
     private var primaryLabel: String {
+        if isDeckAddOnlyMode { return "Add to Deck" }
         if isOwned { return "Manage..." }
         if tradeActionLabel != nil { return "Interested?" }
         return "Add to..."
     }
     
     private var primaryIcon: String {
+        if isDeckAddOnlyMode { return "rectangle.stack.badge.plus" }
         if isOwned { return "folder.fill" }
         if tradeActionLabel != nil { return "arrow.left.arrow.right.circle.fill" }
         return "plus.circle.fill"
     }
     
     private var primaryColor: Color {
+        if isDeckAddOnlyMode { return Color(red: 0.52, green: 0.44, blue: 0.94) }
         if isOwned { return Palette.share }
         if tradeActionLabel != nil { return Palette.chartLine }
         return Palette.success
     }
     
     private var menuItems: [MenuItem] {
+        if let onAddToDeck, isDeckAddOnlyMode {
+            return [
+                MenuItem(
+                    label: "Add to Deck",
+                    subLabel: "Add this card to the deck",
+                    icon: "rectangle.stack.badge.plus",
+                    color: Color(red: 0.52, green: 0.44, blue: 0.94),
+                    action: onAddToDeck
+                )
+            ]
+        }
+
         var items: [MenuItem] = []
         
         if isOwned {
