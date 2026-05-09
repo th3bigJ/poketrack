@@ -3363,14 +3363,7 @@ struct SetCardsView: View {
             BrowseDetailNavBar(
                 title: set.name,
                 isFilterActive: filters.isVisiblyCustomized,
-                isGridOptionsActive: !services.browseGridOptions.options.isDefault,
-                isMultiSelectActive: isMultiSelectActive,
-                onMultiSelectToggle: {
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
-                        isMultiSelectActive.toggle()
-                        if !isMultiSelectActive { selectedCardIDs.removeAll() }
-                    }
-                }
+                isGridOptionsActive: !services.browseGridOptions.options.isDefault
             ) {
                 BrowseGridFiltersMenuContent(
                     brand: services.brandSettings.selectedCatalogBrand,
@@ -4028,8 +4021,6 @@ private struct BrowseDetailNavBar<FilterMenuContent: View, GridMenuContent: View
     let title: String
     let isFilterActive: Bool
     let isGridOptionsActive: Bool
-    var isMultiSelectActive: Bool = false
-    var onMultiSelectToggle: (() -> Void)? = nil
     @ViewBuilder let filterMenuContent: () -> FilterMenuContent
     @ViewBuilder let gridMenuContent: () -> GridMenuContent
     @Environment(\.dismiss) private var dismiss

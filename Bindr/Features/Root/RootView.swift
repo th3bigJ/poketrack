@@ -20,8 +20,6 @@ private struct BrowseTabView: View {
     @Binding var inlineDetailFilterTrainerTypeOptions: [String]
     @Binding var selectedTab: BrowseHomeTab
     @Binding var inlineDetailRoute: BrowseInlineDetailRoute?
-    @Binding var isMultiSelectActive: Bool
-    @Binding var multiSelectedCardIDs: Set<String>
     @Binding var query: String
 
     var body: some View {
@@ -40,8 +38,8 @@ private struct BrowseTabView: View {
             inlineDetailFilterTrainerTypeOptions: $inlineDetailFilterTrainerTypeOptions,
             selectedTab: $selectedTab,
             inlineDetailRoute: $inlineDetailRoute,
-            isMultiSelectActive: $isMultiSelectActive,
-            multiSelectedCardIDs: $multiSelectedCardIDs,
+            isMultiSelectActive: .constant(false),
+            multiSelectedCardIDs: .constant([]),
             query: $query
         )
     }
@@ -69,8 +67,6 @@ struct RootView: View {
     @State private var browseInlineDetailFilterTrainerTypeOptions: [String] = []
     @State private var browseHomeTab: BrowseHomeTab = .cards
     @State private var browseInlineDetailRoute: BrowseInlineDetailRoute?
-    @State private var browseMultiSelectActive = false
-    @State private var browseMultiSelectedCardIDs: Set<String> = []
     @State private var collectSelectedBrand: TCGBrand? = nil
     @State private var collectFilters = CollectionFiltersSettings()
     @State private var collectFilterEnergyOptions: [String] = []
@@ -212,19 +208,7 @@ struct RootView: View {
         }
     }
 
-    private var chromeExtraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
-        guard isBrowseGridFilterContextActive else { return nil }
-        return (
-            browseMultiSelectActive ? "checkmark.circle.fill" : "checkmark.circle",
-            browseMultiSelectActive ? "Exit multi-select" : "Multi-select",
-            {
-                browseMultiSelectActive.toggle()
-                if !browseMultiSelectActive {
-                    browseMultiSelectedCardIDs.removeAll()
-                }
-            }
-        )
-    }
+    private var chromeExtraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? { nil }
 
     private var rootChromeTitle: String {
         if selectedTab == .browse, let browseInlineDetailRoute {
@@ -491,8 +475,6 @@ struct RootView: View {
                                 inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
                                 selectedTab: $browseHomeTab,
                                 inlineDetailRoute: $browseInlineDetailRoute,
-                                isMultiSelectActive: $browseMultiSelectActive,
-                                multiSelectedCardIDs: $browseMultiSelectedCardIDs,
                                 query: $universalQuery
                             )
                         }
@@ -684,9 +666,6 @@ struct RootView: View {
         .onChange(of: selectedTab) { _, tab in
             Haptics.selectionChanged()
             chromeScroll.configureForTab(tab)
-            if tab != .browse {
-                resetBrowseMultiSelectState()
-            }
             if tab == .collect {
                 collectionNavigationPath = NavigationPath()
             }
@@ -703,22 +682,8 @@ struct RootView: View {
             }
         }
         .onChange(of: browseNavigationPath.count) { _, newCount in
-            if newCount > 0 {
-                resetBrowseMultiSelectState()
-            }
             if newCount == 0 {
                 chromeScroll.forceVisible()
-            }
-        }
-        .onChange(of: browseHomeTab) { _, newValue in
-            let supportsMultiSelect = newValue == .cards || newValue == .products || browseInlineDetailRoute != nil
-            if !supportsMultiSelect {
-                resetBrowseMultiSelectState()
-            }
-        }
-        .onChange(of: browseInlineDetailRoute) { _, newValue in
-            if newValue == nil && browseHomeTab != .cards && browseHomeTab != .products {
-                resetBrowseMultiSelectState()
             }
         }
         .onChange(of: isSearchExperiencePresented) { _, open in
@@ -734,7 +699,6 @@ struct RootView: View {
             searchNavigationPath = NavigationPath()
             browseHomeTab = .cards
             browseInlineDetailRoute = nil
-            resetBrowseMultiSelectState()
             selectedCardPresentation = nil
             universalQuery = ""
             searchFieldFocused = false
@@ -973,11 +937,6 @@ struct RootView: View {
             gridOptions: isSealedTab ? $browseFilters.productsGridOptions : nil,
             config: isSealedTab ? .products : browseConfig
         )
-    }
-
-    private func resetBrowseMultiSelectState() {
-        browseMultiSelectActive = false
-        browseMultiSelectedCardIDs.removeAll()
     }
 
     private func addCardToTradeList(_ card: Card, quantity: Int) {
