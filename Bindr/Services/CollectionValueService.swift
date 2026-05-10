@@ -68,18 +68,27 @@ final class CollectionValueService {
 
     // MARK: - Public entry point
 
-    func runBackfillIfNeeded(collectionItems: [CollectionItem]) async {
+    func runBackfillIfNeeded(
+        collectionItems: [CollectionItem],
+        preferredTodaySnapshot: BrandSnapshot? = nil
+    ) async {
         guard !isBackfilling else { return }
         await sealedProducts.loadFromLocalIfAvailable()
         purgeZeroValueSnapshots()
-        await captureTodaySnapshotIfMissing(collectionItems: collectionItems)
+        await captureTodaySnapshotIfMissing(
+            collectionItems: collectionItems,
+            preferredSnapshot: preferredTodaySnapshot
+        )
 
         aggregateWeeklyIfNeeded()
         aggregateMonthlyIfNeeded()
         loadAll()
     }
 
-    private func captureTodaySnapshotIfMissing(collectionItems: [CollectionItem]) async {
+    private func captureTodaySnapshotIfMissing(
+        collectionItems: [CollectionItem],
+        preferredSnapshot: BrandSnapshot?
+    ) async {
         let cal = Calendar.current
         let today = cal.startOfDay(for: Date())
         guard !snapshotExists(for: today) else { return }
@@ -96,9 +105,14 @@ final class CollectionValueService {
             return
         }
 
-        isBackfilling = true
-        let result = await computeValue(for: collectionItems, on: today)
-        isBackfilling = false
+        let result: BrandSnapshot
+        if let preferredSnapshot, preferredSnapshot.total > 0 {
+            result = preferredSnapshot
+        } else {
+            isBackfilling = true
+            result = await computeValue(for: collectionItems, on: today)
+            isBackfilling = false
+        }
         guard result.total > 0 else {
             print("[CollectionValue] Skipping daily snapshot (value is zero).")
             return

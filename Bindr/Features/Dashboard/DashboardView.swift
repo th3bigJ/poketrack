@@ -322,7 +322,13 @@ struct DashboardView: View {
         }
         .task(id: backfillTrigger) {
             guard services.collectionValue != nil else { return }
-            await services.collectionValue?.runBackfillIfNeeded(collectionItems: collectionItems)
+            if liveSnapshot == nil {
+                await computeLiveValue()
+            }
+            await services.collectionValue?.runBackfillIfNeeded(
+                collectionItems: collectionItems,
+                preferredTodaySnapshot: liveSnapshot
+            )
         }
         .task(id: dashboardDataSignature) {
             await resolveDashboardMetadata()
