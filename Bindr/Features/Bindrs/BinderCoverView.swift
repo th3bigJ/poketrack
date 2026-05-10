@@ -291,29 +291,42 @@ struct BinderCoverView: View {
     // MARK: - Embossed art layer
 
     private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
-        ZStack {
-            CachedAsyncImage(url: url, targetSize: CGSize(width: 500 * scale, height: 700 * scale)) { img in
+        let isCharacter = binder.embossModeKind == .character
+        let cardWidth: CGFloat = 320 * scale
+        let cardHeight: CGFloat = isCharacter ? 260 * scale : 450 * scale
+        
+        return ZStack {
+            CachedAsyncImage(url: url, targetSize: CGSize(width: 800 * scale, height: 1100 * scale)) { img in
                 img.resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 300 * scale, height: binder.embossModeKind == .character ? 220 * scale : 420 * scale)
-                    .clipped()
-                    // Convert to high-contrast grayscale to act as a bump map
+                    .frame(width: cardWidth, height: cardHeight, alignment: isCharacter ? .top : .center)
+                    .scaleEffect(isCharacter ? 1.3 : 1.0, anchor: .top) // Zoom into the art box for character mode
                     .grayscale(1.0)
-                    .contrast(1.8)
-                    // Blend into the material. Use Overlay for mid-tones, 
-                    // but on very dark binders we need a bit of Screen/PlusLighter.
-                    .opacity(0.4)
+                    .contrast(2.4)
+                    .brightness(-0.1)
+                    .opacity(0.45)
                     .blendMode(.overlay)
-                    // Create the "pressed" effect
-                    .shadow(color: .white.opacity(0.2), radius: 0.5 * scale, x: 1 * scale, y: 1 * scale)
-                    .shadow(color: .black.opacity(0.3), radius: 1 * scale, x: -1 * scale, y: -1 * scale)
+                    .shadow(color: .black.opacity(0.6), radius: 1.5 * scale, x: -1 * scale, y: -1 * scale)
+                    .shadow(color: .white.opacity(0.35), radius: 0.5 * scale, x: 1 * scale, y: 1 * scale)
+                    .clipped()
+                    .overlay {
+                        if isCharacter {
+                            // Give character mode a more "medallion" feel with a subtle vignette
+                            RadialGradient(
+                                colors: [.clear, .black.opacity(0.1)],
+                                center: .center,
+                                startRadius: 40 * scale,
+                                endRadius: 130 * scale
+                            )
+                        }
+                    }
             } placeholder: {
                 ProgressView().controlSize(.small).opacity(0.3)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, 120 * scale)
-        .padding(.bottom, 40 * scale)
+        .padding(.top, isCharacter ? 180 * scale : 110 * scale) // Center character medallion higher
+        .padding(.bottom, 30 * scale)
     }
 
     // MARK: - Peeking card thumbnail
