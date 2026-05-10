@@ -6,17 +6,16 @@ import UIKit
 /// "peeking" card-back thumbnails. Designed in an A4 portrait ratio so it
 /// reads as a real binder spine rather than a tile.
 struct BinderCoverView: View {
-    let title: String
-    let subtitle: String?
-    let colourName: String
-    let texture: BinderTexture
-    let seed: Int
-    let peekingCardURLs: [URL?]
-
-    /// When `false`, the card fan is omitted and the cover shows only the
-    /// title (slightly larger, centred). User-facing toggle — the model stores
-    /// this as ``Binder/showCardPreview``.
-    var showCardPreview: Bool = true
+    @Environment(AppServices.self) private var services
+    let binder: Binder
+    
+    /// Optional override for the peeking thumbnails, used to pass 
+    /// already-loaded URLs from a grid cell to the fullscreen morph.
+    var peekingURLsOverride: [URL?]? = nil
+    /// Optional subtitle override for situations where we want to match a 
+    /// specific string (e.g. from the grid cell) rather than the default 
+    /// "X cards · Y x Y" format.
+    var subtitleOverride: String? = nil
 
     /// If true, the view uses smaller refinements suitable for list cells.
     var compact: Bool = false
@@ -25,6 +24,10 @@ struct BinderCoverView: View {
     /// the bottom of the cover. Pass `nil` to omit (e.g. for empty binders or
     /// preview/creation flows where the value isn't meaningful yet).
     var valueText: String? = nil
+
+    @State private var resolvedPeekingURLs: [URL?] = []
+    @State private var embossedURL: URL? = nil
+    
     /// Cover text color selection for title/subtitle/value.
     var titleTextColor: BinderTitleTextColor = .gold
     /// Cover text font selection for title/subtitle/value.
@@ -38,14 +41,8 @@ struct BinderCoverView: View {
     // base colour mixed in — so the text reads bright on every binder body
     // (navy/crimson/etc.) but still picks up the binder's hue and feels
     // cohesive with the rest of the app chrome.
-    private var resolvedBinderColor: Color {
-        BinderColourPalette.color(named: colourName)
-    }
-    /// Mix the binder's base colour into white at the given intensity. 0 → pure
-    /// white, 1 → the raw binder colour. Small values (0.08–0.30) give us the
-    /// "white with a hint of colour" look used on the cover text.
     private func tintedWhite(intensity: Double) -> Color {
-        let ui = UIColor(resolvedBinderColor)
+        let ui = UIColor(BinderColourPalette.color(named: binder.colour))
         var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
         ui.getRed(&r, green: &g, blue: &b, alpha: &a)
         let clamped = max(0, min(1, intensity))
@@ -60,10 +57,10 @@ struct BinderCoverView: View {
     /// so the gradient reads as a subtle wash of colour.
     private var defaultTitleAccent: Color { tintedWhite(intensity: 0.30) }
     private var ornamentColor: Color {
-        titleTextColor == .gold ? defaultTitleAccent : titleTextColor.swiftUIColor
+        binder.titleTextColorKind == .gold ? defaultTitleAccent : binder.titleTextColorKind.swiftUIColor
     }
     private var titleTextStyle: AnyShapeStyle {
-        if titleTextColor == .gold {
+        if binder.titleTextColorKind == .gold {
             return AnyShapeStyle(
                 LinearGradient(
                     colors: [defaultTitleHighlight, defaultTitleAccent],
@@ -72,79 +69,121 @@ struct BinderCoverView: View {
                 )
             )
         }
-        return AnyShapeStyle(titleTextColor.swiftUIColor)
+        return AnyShapeStyle(binder.titleTextColorKind.swiftUIColor)
     }
 
     var body: some View {
-        ZStack(alignment: .leading) {
-            // Main binder body (tactile material)
-            BinderTextureView(
-                colourName: colourName,
-                texture: texture,
-                seed: seed,
-                compact: compact
-            )
-            .clipShape(RoundedRectangle(cornerRadius: compact ? 12 : 16, style: .continuous))
-            .shadow(color: .black.opacity(0.15), radius: compact ? 4 : 8, x: 0, y: 4)
+        GeometryReader { geo in
+            // Reference height is 600pt (premium view). 
+            // We scale everything proportionally based on the current height.
+            let scale = geo.size.height / 600.0
+            
+            ZStack(alignment: .leading) {
+                // Main binder body (tactile material)
+                BinderTextureView(
+                    colourName: binder.colour,
+                    texture: binder.textureKind,
+                    seed: binder.textureSeed,
+                    compact: compact
+                )
+                .clipShape(RoundedRectangle(cornerRadius: geo.size.height * 0.03, style: .continuous))
+                .shadow(color: .black.opacity(0.15), radius: geo.size.height * 0.015, x: 0, y: geo.size.height * 0.008)
 
-            // Foreground content — ornament at top, title in upper portion,
-            // optional card fan in the middle, value at the bottom.
-            VStack(spacing: 0) {
-                Spacer().frame(height: compact ? 14 : 22)
+                // Embossed cover art (sits "in" the material)
+                if !binder.showCardPreview, let url = embossedURL {
+                    embossedArtLayer(url: url, scale: scale)
+                        .padding(.leading, 36 * scale) // Stay right of the spine
+                }
 
-                topOrnament
+                // Foreground content — ornament at top, title in upper portion,
+                // optional card fan in the middle, value at the bottom.
+                VStack(spacing: 0) {
+                    Spacer().frame(height: 22 * scale)
 
-                Spacer().frame(height: compact ? 10 : 14)
+                    topOrnament(scale: scale)
 
-                titleBlock
+                    Spacer().frame(height: 14 * scale)
 
-                if showCardPreview && !peekingCardURLs.isEmpty {
-                    Spacer(minLength: compact ? 6 : 10)
+                    titleBlock(scale: scale)
 
-                    HStack(spacing: compact ? -35 : -50) {
-                        ForEach(0..<peekingCardURLs.count, id: \.self) { index in
-                            peekingCard(url: peekingCardURLs[index], index: index)
+                    if binder.showCardPreview {
+                        Spacer(minLength: 8 * scale)
+
+                        let displayURLs = peekingURLsOverride ?? resolvedPeekingURLs
+                        if !displayURLs.isEmpty {
+                            HStack(spacing: -70 * scale) {
+                                ForEach(0..<displayURLs.count, id: \.self) { index in
+                                    peekingCard(url: displayURLs[index], scale: scale, index: index, totalCount: displayURLs.count)
+                                }
+                            }
+                            .frame(height: 145 * scale)
                         }
+
+                        Spacer(minLength: 12 * scale)
+                    } else {
+                        Spacer(minLength: 0)
                     }
 
-                    Spacer(minLength: compact ? 6 : 10)
-                } else {
-                    Spacer(minLength: 0)
+                    if let valueText {
+                        valueLabel(valueText, scale: scale)
+                            .padding(.bottom, 24 * scale)
+                    } else {
+                        Spacer().frame(height: 20 * scale)
+                    }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.leading, 36 * scale)
+                .padding(.trailing, 14 * scale)
 
-                if let valueText {
-                    valueLabel(valueText)
-                        .padding(.bottom, compact ? 16 : 24)
-                } else {
-                    Spacer().frame(height: compact ? 14 : 20)
+                // Spine overlay (stays on left)
+                spineOverlay(scale: scale)
+            }
+            .task {
+                await refreshAssets()
+            }
+            // Re-load if the binder's state changes
+            .onChange(of: binder.showCardPreview) { Task { await refreshAssets() } }
+            .onChange(of: binder.embossedCardID) { Task { await refreshAssets() } }
+            .onChange(of: binder.embossMode) { Task { await refreshAssets() } }
+        }
+    }
+
+    private func refreshAssets() async {
+        // 1. Resolve peeking cards (if needed)
+        if binder.showCardPreview && peekingURLsOverride == nil {
+            let slots = binder.slotList.prefix(3)
+            var urls: [URL?] = []
+            for slot in slots {
+                if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
+                    urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
                 }
             }
-            .frame(maxWidth: .infinity)
-            .padding(.leading, compact ? 22 : 36)
-            .padding(.trailing, compact ? 10 : 14)
-
-            // Spine overlay (stays on left)
-            spineOverlay
+            while urls.count < 3 { urls.append(nil) }
+            resolvedPeekingURLs = urls
         }
-        .frame(maxWidth: .infinity)
-        // A4-ish portrait ratio (1 : ~1.41). On the listing grid the cells are
-        // ~160pt wide which gives ~226pt tall; the larger preview height keeps
-        // the same proportion when the cover is shown full-screen.
-        .frame(height: compact ? 230 : 320)
+
+        // 2. Resolve embossed art
+        if !binder.showCardPreview, let cardID = binder.embossedCardID {
+            if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                embossedURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+            }
+        } else {
+            embossedURL = nil
+        }
     }
 
     // MARK: - Top ornament (tinted line + diamond)
 
-    private var topOrnament: some View {
-        HStack(spacing: compact ? 6 : 10) {
-            ornamentLine
-            ornamentDiamond
-            ornamentLine
+    private func topOrnament(scale: CGFloat) -> some View {
+        HStack(spacing: 10 * scale) {
+            ornamentLine(scale: scale)
+            ornamentDiamond(scale: scale)
+            ornamentLine(scale: scale)
         }
-        .frame(maxWidth: compact ? 110 : 160)
+        .frame(maxWidth: 160 * scale)
     }
 
-    private var ornamentLine: some View {
+    private func ornamentLine(scale: CGFloat) -> some View {
         LinearGradient(
             colors: [
                 ornamentColor.opacity(0.0),
@@ -154,10 +193,10 @@ struct BinderCoverView: View {
             startPoint: .leading,
             endPoint: .trailing
         )
-        .frame(height: compact ? 1 : 1.4)
+        .frame(height: 1.4 * scale)
     }
 
-    private var ornamentDiamond: some View {
+    private func ornamentDiamond(scale: CGFloat) -> some View {
         Rectangle()
             .fill(LinearGradient(
                 colors: titleTextColor == .gold
@@ -167,102 +206,135 @@ struct BinderCoverView: View {
                 endPoint: .bottomTrailing
             ))
             .rotationEffect(.degrees(45))
-            .frame(width: compact ? 5 : 7, height: compact ? 5 : 7)
-            .shadow(color: .black.opacity(0.4), radius: 0.5, x: 0, y: 0.5)
+            .frame(width: 7 * scale, height: 7 * scale)
+            .shadow(color: .black.opacity(0.4), radius: 0.5 * scale, x: 0, y: 0.5 * scale)
     }
 
     // MARK: - Title block (title + subtitle in tinted white)
 
-    private var titleBlock: some View {
-        VStack(spacing: compact ? 4 : 6) {
-            Text(title.isEmpty ? "Binder name…" : title)
-                .font(.system(size: compact ? 17 : 24, weight: .bold, design: titleFontStyle.fontDesign))
+    private func titleBlock(scale: CGFloat) -> some View {
+        VStack(spacing: 8 * scale) {
+            Text(binder.title.isEmpty ? "Binder name…" : binder.title)
+                .font(.system(size: 32 * scale, weight: .bold, design: binder.titleFontStyleKind.fontDesign))
                 .foregroundStyle(titleTextStyle)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
                 .minimumScaleFactor(0.7)
-                .opacity(title.isEmpty ? 0.5 : 1)
-                .shadow(color: .black.opacity(0.4), radius: 1.5, x: 0, y: 1)
+                .opacity(binder.title.isEmpty ? 0.5 : 1)
+                .shadow(color: .black.opacity(0.4), radius: 1.5 * scale, x: 0, y: 1 * scale)
 
-            if let subtitle {
-                Text(subtitle.uppercased())
-                    .font(.system(size: compact ? 9.5 : 11.5, weight: .semibold, design: titleFontStyle.fontDesign))
-                    .tracking(compact ? 1.4 : 1.8)
-                    .foregroundStyle(titleTextColor == .gold ? defaultTitleAccent.opacity(0.85) : titleTextColor.swiftUIColor.opacity(0.88))
+            let generatedSubtitle = "\(binder.slotList.count) \(binder.slotList.count == 1 ? "card" : "cards")"
+            if let override = subtitleOverride {
+                Text(override.uppercased())
+                    .font(.system(size: 14 * scale, weight: .semibold, design: binder.titleFontStyleKind.fontDesign))
+                    .tracking(2.0 * scale)
+                    .foregroundStyle(binder.titleTextColorKind == .gold ? defaultTitleHighlight.opacity(0.85) : binder.titleTextColorKind.swiftUIColor.opacity(0.88))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+            } else {
+                Text(generatedSubtitle.uppercased())
+                    .font(.system(size: 14 * scale, weight: .semibold, design: binder.titleFontStyleKind.fontDesign))
+                    .tracking(2.0 * scale)
+                    .foregroundStyle(binder.titleTextColorKind == .gold ? defaultTitleHighlight.opacity(0.85) : binder.titleTextColorKind.swiftUIColor.opacity(0.88))
                     .multilineTextAlignment(.center)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
             }
         }
-        .padding(.horizontal, 8)
+        .padding(.horizontal, 8 * scale)
     }
 
     // MARK: - Value label (tinted serif at the bottom)
 
-    private func valueLabel(_ text: String) -> some View {
+    private func valueLabel(_ text: String, scale: CGFloat) -> some View {
         Text(text)
-            .font(.system(size: compact ? 26 : 38, weight: .bold, design: titleFontStyle.fontDesign))
+            .font(.system(size: 44 * scale, weight: .bold, design: binder.titleFontStyleKind.fontDesign))
             .foregroundStyle(titleTextStyle)
-            .shadow(color: .black.opacity(0.45), radius: 1.5, x: 0, y: 1)
+            .shadow(color: .black.opacity(0.45), radius: 1.5 * scale, x: 0, y: 1 * scale)
             .lineLimit(1)
             .minimumScaleFactor(0.6)
-            .padding(.horizontal, 8)
+            .padding(.horizontal, 8 * scale)
     }
 
     // MARK: - Spine overlay (left edge with binding rings)
 
-    private var spineOverlay: some View {
-        GeometryReader { geo in
-            ZStack(alignment: .leading) {
-                // Darkened spine strip
-                Rectangle()
-                    .fill(Color.black.opacity(0.12))
-                    .frame(width: compact ? 20 : 32)
+    private func spineOverlay(scale: CGFloat) -> some View {
+        ZStack(alignment: .leading) {
+            // Darkened spine strip
+            Rectangle()
+                .fill(Color.black.opacity(0.12))
+                .frame(width: 32 * scale)
 
-                // Binding rings/dots
-                VStack(spacing: compact ? 30 : 44) {
-                    ForEach(0..<3) { _ in
-                        Circle()
-                            .fill(LinearGradient(
-                                colors: [.black.opacity(0.4), .black.opacity(0.1)],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ))
-                            .frame(width: compact ? 5 : 7, height: compact ? 5 : 7)
-                            .overlay {
-                                Circle()
-                                    .stroke(Color.white.opacity(0.1), lineWidth: 0.5)
-                            }
-                    }
+            // Binding rings/dots
+            VStack(spacing: 44 * scale) {
+                ForEach(0..<3) { _ in
+                    Circle()
+                        .fill(LinearGradient(
+                            colors: [.black.opacity(0.4), .black.opacity(0.1)],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ))
+                        .frame(width: 7 * scale, height: 7 * scale)
+                        .overlay {
+                            Circle()
+                                .stroke(Color.white.opacity(0.1), lineWidth: 0.5 * scale)
+                        }
                 }
-                .frame(width: compact ? 20 : 32)
-                .padding(.vertical, compact ? 24 : 36)
+            }
+            .frame(width: 32 * scale)
+            .padding(.vertical, 36 * scale)
+        }
+        .allowsHitTesting(false)
+    }
+
+    // MARK: - Embossed art layer
+
+    private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
+        ZStack {
+            CachedAsyncImage(url: url, targetSize: CGSize(width: 500 * scale, height: 700 * scale)) { img in
+                img.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 300 * scale, height: binder.embossModeKind == .character ? 220 * scale : 420 * scale)
+                    .clipped()
+                    // Convert to high-contrast grayscale to act as a bump map
+                    .grayscale(1.0)
+                    .contrast(1.8)
+                    // Blend into the material. Use Overlay for mid-tones, 
+                    // but on very dark binders we need a bit of Screen/PlusLighter.
+                    .opacity(0.4)
+                    .blendMode(.overlay)
+                    // Create the "pressed" effect
+                    .shadow(color: .white.opacity(0.2), radius: 0.5 * scale, x: 1 * scale, y: 1 * scale)
+                    .shadow(color: .black.opacity(0.3), radius: 1 * scale, x: -1 * scale, y: -1 * scale)
+            } placeholder: {
+                ProgressView().controlSize(.small).opacity(0.3)
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: compact ? 12 : 16, style: .continuous))
-        .allowsHitTesting(false)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.top, 120 * scale)
+        .padding(.bottom, 40 * scale)
     }
 
     // MARK: - Peeking card thumbnail
 
     @ViewBuilder
-    private func peekingCard(url: URL?, index: Int) -> some View {
-        let cardCount = peekingCardURLs.count
-        let middleIndex = Double(cardCount - 1) / 2.0
+    private func peekingCard(url: URL?, scale: CGFloat, index: Int, totalCount: Int) -> some View {
+        let middleIndex = Double(totalCount - 1) / 2.0
         let relativeIndex = Double(index) - middleIndex
 
         // Fanning geometry: cards rotate from the bottom centre to create
         // a natural "spread".
-        let rotation = relativeIndex * 12.0
-        let xOffset = relativeIndex * (compact ? 2 : 4)
-        let yOffset = abs(relativeIndex) * (compact ? 3 : 5)
+        let rotation = relativeIndex * 15.0
+        let xOffset = relativeIndex * 8 * scale
+        let yOffset = abs(relativeIndex) * 12 * scale
 
         ZStack {
-            RoundedRectangle(cornerRadius: compact ? 4 : 6, style: .continuous)
+            RoundedRectangle(cornerRadius: 6 * scale, style: .continuous)
                 .fill(Color(white: 0.15)) // Dark base for empty/loading
                 .overlay {
                     if let url {
-                        CachedAsyncImage(url: url, targetSize: CGSize(width: 140, height: 196)) { img in
+                        CachedAsyncImage(url: url, targetSize: CGSize(width: 140 * scale, height: 196 * scale)) { img in
                             img.resizable()
                                 .aspectRatio(contentMode: .fill)
                         } placeholder: {
@@ -270,19 +342,19 @@ struct BinderCoverView: View {
                         }
                     } else {
                         // Glassy placeholder for empty slots
-                        RoundedRectangle(cornerRadius: compact ? 4 : 6, style: .continuous)
+                        RoundedRectangle(cornerRadius: 6 * scale, style: .continuous)
                             .fill(.white.opacity(0.12))
-                            .blur(radius: 1)
+                            .blur(radius: 1 * scale)
                     }
                 }
-                .clipShape(RoundedRectangle(cornerRadius: compact ? 4 : 6, style: .continuous))
-                .shadow(color: .black.opacity(0.25), radius: 3, x: -2, y: 2)
+                .clipShape(RoundedRectangle(cornerRadius: 6 * scale, style: .continuous))
+                .shadow(color: .black.opacity(0.25), radius: 3 * scale, x: -2 * scale, y: 2 * scale)
 
             // Subtle edge highlight
-            RoundedRectangle(cornerRadius: compact ? 4 : 6, style: .continuous)
-                .stroke(Color.white.opacity(0.1), lineWidth: 0.5)
+            RoundedRectangle(cornerRadius: 6 * scale, style: .continuous)
+                .stroke(Color.white.opacity(0.1), lineWidth: 0.5 * scale)
         }
-        .frame(width: compact ? 45 : 70, height: compact ? 63 : 98)
+        .aspectRatio(5/7, contentMode: .fit)
         .rotationEffect(.degrees(rotation), anchor: .bottom)
         .offset(x: xOffset, y: yOffset)
         .zIndex(-Double(index))
@@ -295,57 +367,24 @@ struct BinderCoverView: View {
 extension BinderCoverView {
     /// Create a cover view from a model instance.
     init(binder: Binder, compact: Bool = false, valueText: String? = nil) {
-        // Resolve first 3 card image URLs
-        let slots = binder.slotList.prefix(3)
-        let urls: [URL?] = slots.map { slot in
-            AppConfiguration.imageURL(relativePath: "\(slot.cardID)_low.png") // Placeholder logic, will refine in parent
-        }
+        self.binder = binder
+        self.compact = compact
+        self.valueText = valueText
+    }
 
-        // Ensure we always have 3 slots (filled with nil if needed)
-        var finalURLs = Array(urls)
-        while finalURLs.count < 3 { finalURLs.append(nil) }
+    /// Convenience modifier to override the subtitle.
+    func subtitleOverride(_ text: String?) -> Self {
+        var copy = self
+        copy.subtitleOverride = text
+        return copy
+    }
 
-        self.init(
-            title: binder.title,
-            subtitle: "\(binder.slotList.count) cards · \(binder.layout.displayName)",
-            colourName: binder.colour,
-            texture: binder.textureKind,
-            seed: binder.textureSeed,
-            peekingCardURLs: finalURLs,
-            showCardPreview: binder.showCardPreview,
-            compact: compact,
-            valueText: valueText,
-            titleTextColor: binder.titleTextColorKind,
-            titleFontStyle: binder.titleFontStyleKind
-        )
+    /// Convenience modifier to override the peeking URLs.
+    func peekingURLsOverride(_ urls: [URL?]?) -> Self {
+        var copy = self
+        copy.peekingURLsOverride = urls
+        return copy
     }
 }
 
 
-#Preview {
-    VStack(spacing: 20) {
-        BinderCoverView(
-            title: "Charizard Vault",
-            subtitle: "RAW · 9 cards",
-            colourName: "crimson",
-            texture: .leather,
-            seed: 1,
-            peekingCardURLs: [nil, nil, nil],
-            valueText: "£4,210"
-        )
-        .padding()
-
-        BinderCoverView(
-            title: "Blue Chip",
-            subtitle: "RAW · 18 cards",
-            colourName: "navy",
-            texture: .suede,
-            seed: 2,
-            peekingCardURLs: [URL(string: "https://example.com/1.png"), nil, nil],
-            compact: true,
-            valueText: "£1,779"
-        )
-        .padding()
-    }
-    .background(Color.black)
-}

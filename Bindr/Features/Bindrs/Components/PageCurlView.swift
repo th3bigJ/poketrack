@@ -65,7 +65,9 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
         if shown !== coord.controllers[clampedPage] || versionChanged {
             let isPageShift = shown !== coord.controllers[clampedPage]
             if isPageShift {
-                isTurning = true
+                DispatchQueue.main.async {
+                    isTurning = true
+                }
             }
             
             uiViewController.setViewControllers(
@@ -105,7 +107,9 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
         }
 
         func pageViewController(_ pvc: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-            parent.isTurning = true
+            DispatchQueue.main.async {
+                self.parent.isTurning = true
+            }
         }
 
         func pageViewController(
@@ -114,11 +118,13 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
             previousViewControllers: [UIViewController],
             transitionCompleted completed: Bool
         ) {
-            parent.isTurning = false
-            guard completed, let shown = pvc.viewControllers?.first,
-                  let idx = controllers.firstIndex(of: shown) else { return }
-            parent.currentPage = idx
-            self.lastPage = idx
+            DispatchQueue.main.async {
+                self.parent.isTurning = false
+                guard completed, let shown = pvc.viewControllers?.first,
+                      let idx = self.controllers.firstIndex(of: shown) else { return }
+                self.parent.currentPage = idx
+                self.lastPage = idx
+            }
         }
     }
 }

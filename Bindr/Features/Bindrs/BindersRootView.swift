@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import UIKit
 
 struct BindersRootView: View {
     @Environment(AppServices.self) private var services
@@ -20,6 +21,32 @@ struct BindersRootView: View {
     /// scaling) without hard-coding a constant.
     @State private var bindersHeaderHeight: CGFloat = 64
 
+    // MARK: Custom-presentation state
+    //
+    // We replaced ``fullScreenCover`` with an overlay-based presentation so
+    // the open/close animation can sweep the other binders, morph the
+    // tapped cover, and hand off to the existing page-curl. None of these
+    // states are persisted — they're just the choreography for one tap.
+
+    /// Per-binder global frames captured by the grid cells via
+    /// ``BinderCellFramePreferenceKey``. The selected cell's frame becomes
+    /// the morph "source"; other cells use it to compute their sweep
+    /// direction.
+    @State private var binderCellFrames: [UUID: CGRect] = [:]
+    /// `true` while the open/close sequence is in flight; drives the sweep
+    /// offsets and source-cell hide. Distinct from ``presentedBinder`` so we
+    /// can keep this true through the entire close animation (which outlives
+    /// the dismiss) and only flip it back to `false` at the very end.
+    @State private var isPresentingBinder: Bool = false
+    /// Identifier of the binder being presented (or just dismissed). Used to
+    /// look up its source frame and exclude it from the sweep.
+    @State private var presentingBinderID: UUID? = nil
+    /// Cache of card thumbnail URLs resolved by grid cells, so the morph
+    /// overlay can show images immediately without reloading.
+    @State private var gridResolvedURLs: [UUID: [URL?]] = [:]
+    /// Cache of total value text resolved by grid cells.
+    @State private var gridResolvedValues: [UUID: String] = [:]
+
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
     private var visibleBinders: [Binder] {
         binders.filter { $0.tcgBrand == activeBrand }
@@ -37,6 +64,12 @@ struct BindersRootView: View {
                 .safeAreaInset(edge: .top, spacing: 0) {
                     Color.clear.frame(height: bindersHeaderHeight)
                 }
+                // Capture every cell's global frame so the open animation
+                // knows where to morph from and the sweep knows which way
+                // each non-selected cell should fly.
+                .onPreferenceChange(BinderCellFramePreferenceKey.self) { frames in
+                    binderCellFrames = frames
+                }
             bindersHeader
                 .background(
                     GeometryReader { geo in
@@ -44,12 +77,36 @@ struct BindersRootView: View {
                     }
                 )
                 .onPreferenceChange(BindersHeaderHeightKey.self) { bindersHeaderHeight = $0 }
+                // Header fades while a binder is presented so it doesn't
+                // sit awkwardly above the morphing cover. Spring matches
+                // the sweep so everything moves together.
+                .opacity(isPresentingBinder ? 0 : 1)
+                .allowsHitTesting(!isPresentingBinder)
+                .animation(.spring(response: 0.38, dampingFraction: 0.85), value: isPresentingBinder)
+
+            // Custom presentation overlay. Replaces ``fullScreenCover`` so
+            // the cover can morph from its grid frame to the page area and
+            // hand off to ``BinderDetailView``'s existing page-curl.
+            if let binder = presentedBinder,
+               let sourceFrame = binderCellFrames[binder.id] {
+                BinderOpenContainer(
+                    binder: binder,
+                    sourceFrame: sourceFrame,
+                    peekingURLs: gridResolvedURLs[binder.id] ?? [nil, nil, nil],
+                    valueText: gridResolvedValues[binder.id],
+                    onDismissComplete: { finishBinderClose() },
+                    onStartClose: { beginSweepBack() }
+                )
+                .environment(services)
+                .ignoresSafeArea(.all)
+                .zIndex(50)
+                .transition(.identity)
+                // Hide the tab bar while a binder is open so it doesn't 
+                // sit above the full-screen view.
+                .toolbar(isPresentingBinder ? .hidden : .visible, for: .tabBar)
+            }
         }
         .toolbar(.hidden, for: .navigationBar)
-        .fullScreenCover(item: $presentedBinder) { binder in
-            BinderDetailView(binder: binder)
-                .environment(services)
-        }
         .sheet(isPresented: $showCreateSheet) {
             CreateBinderSheet()
                 .environment(services)
@@ -115,10 +172,18 @@ struct BindersRootView: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 158), spacing: 14)], spacing: 16) {
                     ForEach(visibleBinders) { binder in
                         Button {
-                            presentedBinder = binder
+                            beginBinderOpen(binder)
                         } label: {
                             ZStack(alignment: .topTrailing) {
-                                BinderCardCell(binder: binder)
+                                BinderCardCell(
+                                    binder: binder,
+                                    onURLsLoaded: { urls in
+                                        gridResolvedURLs[binder.id] = urls
+                                    },
+                                    onValueLoaded: { val in
+                                        gridResolvedValues[binder.id] = val
+                                    }
+                                )
 
                                 if isEditing {
                                     Button {
@@ -136,6 +201,7 @@ struct BindersRootView: View {
                             }
                         }
                         .buttonStyle(.plain)
+                        .aspectRatio(0.707, contentMode: .fill)
                         .contextMenu {
                             Button(role: .destructive) {
                                 binderToDelete = binder
@@ -145,12 +211,95 @@ struct BindersRootView: View {
                             }
                             .tint(.red)
                         }
+                        // Hide the source cell while it's being presented —
+                        // the morphing overlay covers its position so a
+                        // duplicate underneath would just create flicker.
+                        .opacity(presentingBinderID == binder.id ? 0 : 1)
+                        // Sweep non-selected binders out of the way based
+                        // on their grid position relative to the tapped
+                        // cell. ``sweepOffset`` returns ``.zero`` while
+                        // idle so the grid sits still until a tap lands.
+                        .offset(sweepOffset(for: binder))
+                        .animation(
+                            .spring(response: 0.4, dampingFraction: 0.82),
+                            value: isPresentingBinder
+                        )
+                        // Each cell publishes its frame in screen coords so
+                        // the open animation knows where to morph from /
+                        // collapse back to.
+                        .background(
+                            GeometryReader { cellGeo in
+                                Color.clear.preference(
+                                    key: BinderCellFramePreferenceKey.self,
+                                    value: [binder.id: cellGeo.frame(in: .global)]
+                                )
+                            }
+                        )
                     }
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 12)
                 .padding(.bottom, 8 + rootFloatingChromeInset)
             }
+        }
+    }
+
+    // MARK: - Open / close choreography
+
+    /// Tap handler — flips ``isPresentingBinder`` so the other cells
+    /// sweep, then mounts ``BinderOpenContainer`` which owns the actual
+    /// morph + cover hold + hand-off to ``BinderDetailView``.
+    private func beginBinderOpen(_ binder: Binder) {
+        guard presentedBinder == nil else { return }
+        presentingBinderID = binder.id
+        // Stagger the sweep slightly ahead of the morph so the user sees
+        // the others moving as the tapped cover lifts off the table — the
+        // spring duration matches what the user described (350-400ms).
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.82)) {
+            isPresentingBinder = true
+        }
+        presentedBinder = binder
+    }
+
+    private func beginSweepBack() {
+        // Start moving the other binders back to their positions 
+        // at the same time the overlay starts collapsing.
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.85)) {
+            isPresentingBinder = false
+        }
+    }
+
+    /// Called by ``BinderOpenContainer`` once the close animation (page
+    /// curl back → cover morph back to grid) has finished. Sweeps the
+    /// other binders back into place and tears down the overlay.
+    private func finishBinderClose() {
+        // Overlay has landed. Now we can safely remove the presenter.
+        presentedBinder = nil
+        presentingBinderID = nil
+    }
+
+    /// Computes the offset to apply to each non-selected binder cell so it
+    /// sweeps off-screen in the direction of "away from the tapped cell".
+    /// Returns ``.zero`` while idle and for the tapped cell itself.
+    private func sweepOffset(for binder: Binder) -> CGSize {
+        guard isPresentingBinder,
+              let openedID = presentingBinderID,
+              openedID != binder.id,
+              let openedFrame = binderCellFrames[openedID],
+              let thisFrame = binderCellFrames[binder.id] else {
+            return .zero
+        }
+        let dx = thisFrame.midX - openedFrame.midX
+        let dy = thisFrame.midY - openedFrame.midY
+        // A generous sweep distance ensures every cell exits the viewport
+        // even on iPad-class screens. Direction is decided by which axis
+        // is larger so corner cells fly diagonally out via their dominant
+        // component rather than at an awkward 45°.
+        let sweep: CGFloat = 1200
+        if abs(dx) >= abs(dy) {
+            return CGSize(width: dx >= 0 ? sweep : -sweep, height: 0)
+        } else {
+            return CGSize(width: 0, height: dy >= 0 ? sweep : -sweep)
         }
     }
 
@@ -190,27 +339,27 @@ struct BindersRootView: View {
 private struct BinderCardCell: View {
     @Environment(AppServices.self) private var services
     let binder: Binder
+    var onURLsLoaded: (([URL?]) -> Void)? = nil
+    var onValueLoaded: ((String?) -> Void)? = nil
     @State private var cardURLs: [URL?] = [nil, nil, nil]
     @State private var totalUSDValue: Double = 0
     @State private var hasLoadedValue: Bool = false
 
     var body: some View {
         BinderCoverView(
-            title: binder.title,
-            subtitle: subtitleText,
-            colourName: binder.colour,
-            texture: binder.textureKind,
-            seed: binder.textureSeed,
-            peekingCardURLs: cardURLs,
-            showCardPreview: binder.showCardPreview,
-            compact: true,
-            valueText: displayedValueText,
-            titleTextColor: binder.titleTextColorKind,
-            titleFontStyle: binder.titleFontStyleKind
+            binder: binder,
+            compact: false,
+            valueText: displayedValueText
         )
+        // We render the "premium" (non-compact) layout even in the grid
+        // so that when the morph starts, the internal proportions 
+        // (card sizes, text, spacing) are identical. 
+        .subtitleOverride(subtitleText)
+        .peekingURLsOverride(cardURLs)
         .task {
             await loadCardURLs()
             await refreshTotalValue()
+            onValueLoaded?(displayedValueText)
         }
     }
 
@@ -233,16 +382,10 @@ private struct BinderCardCell: View {
         let amount = display == .gbp ? usd * services.pricing.usdToGbp : usd
 
         let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        if amount >= 1000 {
-            formatter.maximumFractionDigits = 0
-            formatter.minimumFractionDigits = 0
-        } else {
-            formatter.maximumFractionDigits = 2
-            formatter.minimumFractionDigits = 2
-        }
-        let pretty = formatter.string(from: NSNumber(value: amount)) ?? "0"
-        return "\(display.symbol)\(pretty)"
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = display.symbol
+        formatter.maximumFractionDigits = amount >= 1000 ? 0 : 2
+        return formatter.string(from: NSNumber(value: amount)) ?? ""
     }
 
     private func loadCardURLs() async {
@@ -251,6 +394,8 @@ private struct BinderCardCell: View {
 
         for slot in slots {
             if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
+                // Use the real image path from the card metadata (e.g. cards/sv01/1_low.png)
+                // rather than guessing the path from the ID.
                 urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
             } else {
                 urls.append(nil)
@@ -259,6 +404,7 @@ private struct BinderCardCell: View {
 
         while urls.count < 3 { urls.append(nil) }
         cardURLs = urls
+        onURLsLoaded?(urls)
     }
 
     /// Sums every slot's USD market price the same way ``BinderDetailView``
@@ -286,5 +432,409 @@ private struct BindersHeaderHeightKey: PreferenceKey {
     static var defaultValue: CGFloat = 64
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = max(value, nextValue())
+    }
+}
+
+/// Per-binder grid-cell frame, in screen/global coordinates. Each
+/// ``BinderCardCell`` publishes its own frame via this key; the parent
+/// merges them into a `[UUID: CGRect]` and uses the result to drive both
+/// the open animation (source frame to morph from) and the sweep
+/// directions for non-selected cells.
+private struct BinderCellFramePreferenceKey: PreferenceKey {
+    static var defaultValue: [UUID: CGRect] = [:]
+    static func reduce(value: inout [UUID: CGRect], nextValue: () -> [UUID: CGRect]) {
+        value.merge(nextValue(), uniquingKeysWith: { _, new in new })
+    }
+}
+
+// MARK: - Open / close container
+
+/// Hosts the ``BinderDetailView`` plus the morphing cover overlay that sits
+/// above it during the entry / exit transitions. Lives only while a binder
+/// is presented; teardown happens via ``onDismissComplete`` once the close
+/// animation has fully reversed.
+///
+/// **Choreography**
+/// 1. *Entry.* On mount, a ``BinderCoverView`` is rendered at the source
+///    grid frame (passed in by the caller) and animated to the page-area
+///    frame ``BinderDetailView`` reports through
+///    ``BinderPageFramePreferenceKey``. Spring matches the sweep timing
+///    upstream so everything moves together.
+/// 2. *Hand-off.* After the morph (~400ms) the overlay cover fades out;
+///    underneath, ``BinderDetailView``'s ``PageCurlView`` is showing the
+///    same cover at page 0. ``BinderDetailView``'s own auto-advance timer
+///    fires the existing page-curl from cover (page 0) to first card page
+///    (page 1) ~1s after mount, exactly when the user wanted.
+/// 3. *Exit.* When the user taps back, ``BinderDetailView`` curls back to
+///    page 0 via the existing curl, then calls ``onCustomDismiss``. We
+///    re-show the overlay cover at the page-area frame, fade
+///    ``BinderDetailView`` away, and animate the cover back to the source
+///    grid frame. Once the spring completes we call ``onDismissComplete``
+///    so the parent can sweep the other binders back in.
+struct BinderOpenContainer: View {
+    let binder: Binder
+    let sourceFrame: CGRect
+    let peekingURLs: [URL?]
+    let valueText: String?
+    let onDismissComplete: () -> Void
+    let onStartClose: () -> Void
+
+    @Environment(AppServices.self) private var services
+    /// iOS "Reduce Motion" accessibility setting. When enabled we skip
+    /// the spring-based morph and the cover-hold and use a quick
+    /// cross-fade instead so vestibular-sensitive users aren't shoved
+    /// across the screen by a 400ms scale animation.
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    /// Frame of ``BinderDetailView``'s page-curl page area, in screen
+    /// coordinates. Reported by ``BinderPageFramePreferenceKey``; we wait
+    /// for the first non-zero value before kicking off the morph so the
+    /// destination is real geometry, not the default zero rect.
+    @State private var pageFrame: CGRect = .zero
+    /// Uniform scale applied to the overlay cover during the morph.
+    /// ``BinderCoverView`` lays its contents (text, ornament, peeking
+    /// thumbnails) out at fixed sizes — animating ``.frame`` alone clips
+    /// or stretches them. Rendering at a single reference size and
+    /// scaling the rendered view as a whole is what gives the open/close
+    /// that smooth, "lifting off the table" feel where every internal
+    /// element scales proportionally with the binder.
+    @State private var coverScale: CGFloat = 1.0
+    /// Live centre point of the overlay cover, in the global coordinate
+    /// space shared with ``sourceFrame`` and ``pageFrame``. Animated
+    /// alongside ``coverScale`` to drive the position part of the morph.
+    @State private var coverCenter: CGPoint = .zero
+    /// Visibility of the overlay cover. Drops to 0 after the open morph
+    /// (so the user starts seeing ``BinderDetailView``'s page 0) and rises
+    /// back to 1 instantly when the close animation begins.
+    @State private var coverOpacity: Double = 1.0
+    /// Visibility of the underlying ``BinderDetailView``. Stays at 0 until
+    /// the open morph is almost done, then fades in as the overlay cover
+    /// fades out. This ensures the user only sees one binder at a time.
+    @State private var detailOpacity: Double = 0
+    /// `true` once we've kicked off the morph. Guards against repeating it
+    /// when the page-frame preference changes again later.
+    @State private var hasStartedOpen = false
+    /// `true` once the close sequence is in flight. Hides
+    /// ``BinderDetailView`` while the overlay collapses.
+    @State private var isClosing = false
+    /// Drives the lift shadow under the cover. 0 at the source frame
+    /// (small/tight, like the cell sitting on the grid), 1 at the page
+    /// frame (large/diffuse, like the binder hovering near the lens).
+    /// Animated alongside ``coverScale`` so the shadow grows in lockstep
+    /// with the morph and reads as a single physical motion.
+    @State private var liftIntensity: CGFloat = 0
+    /// Tiny extra scale applied during the cover hold to give the binder
+    /// a subtle "breath". 1.0 at rest, ~1.012 at peak. Multiplied with
+    /// ``coverScale`` so the breath rides on top of the morph and stops
+    /// instantly when the page-curl auto-advance fires.
+    @State private var breathingScale: CGFloat = 1.0
+
+    /// Spring used for both the opening morph and the closing collapse.
+    /// Tuned to the 350-400ms window the user described — fast enough to
+    /// feel responsive but with enough overshoot to read as physical.
+    private var morphAnimation: Animation {
+        .spring(response: 0.4, dampingFraction: 0.82)
+    }
+
+    var body: some View {
+        GeometryReader { rootGeo in
+            ZStack {
+                // Underlying detail view — stays mounted for the whole
+                // presentation. Hidden during the very last collapse so the
+                // page-area doesn't poke out behind the morphing cover.
+                BinderDetailView(
+                    binder: binder,
+                    entryFromGrid: true,
+                    onCustomDismiss: { beginClose() },
+                    preloadedPeekingURLs: peekingURLs,
+                    preloadedValueText: valueText,
+                    topSafeAreaInset: rootGeo.safeAreaInsets.top,
+                    bottomSafeAreaInset: rootGeo.safeAreaInsets.bottom
+                )
+                .environment(services)
+                .opacity(isClosing ? 0 : detailOpacity)
+                .animation(.easeOut(duration: 0.2), value: isClosing)
+                .animation(.easeOut(duration: 0.2), value: detailOpacity)
+                .onPreferenceChange(BinderPageFramePreferenceKey.self) { newFrame in
+                    guard newFrame != .zero else { return }
+                    pageFrame = newFrame
+                    if !hasStartedOpen {
+                        hasStartedOpen = true
+                        startOpenMorph()
+                    }
+                }
+
+                // Morphing cover overlay. Renders the same cover as
+                // ``BinderDetailView``'s page 0 so the hand-off is seamless.
+                //
+                // Sizing strategy: render the cover at the *target* page
+                // frame (always at the larger, "compact-false" geometry)
+                // and morph it via ``scaleEffect`` + ``position``. That
+                // way every internal layout sub-piece — title, ornament,
+                // value text, peeking card fan — scales uniformly, which
+                // is what stops the cards from "popping" mid-morph.
+                BinderCoverView(
+                    binder: binder,
+                    compact: false,
+                    valueText: valueText
+                )
+                // Use the URLs passed from the grid so they are visible
+                // immediately during the morph without re-loading.
+                .peekingURLsOverride(peekingURLs)
+                .subtitleOverride("\(binder.slotList.count) \(binder.slotList.count == 1 ? "card" : "cards")")
+                // Always render the overlay at the cover's *natural* A4
+                // aspect ratio. ``coverTargetFrame`` is an A4 rectangle
+                // fitted inside ``pageFrame`` and used as the morph end
+                // point. Because ``sourceFrame`` is also A4 (the grid
+                // cells are aspect-locked to 0.707), source and target
+                // share aspect — a single uniform ``scaleEffect`` morphs
+                // cleanly between them with no end-of-close height pop.
+                .frame(
+                    width: max(coverTargetFrame.width, 1),
+                    height: max(coverTargetFrame.height, 1)
+                )
+                // Animated lift shadow — grows from a tight contact
+                // shadow at the source frame (binder sitting on the
+                // grid) to a deep, diffuse shadow at the page frame
+                // (binder hovering close to the camera). Drives off
+                // ``liftIntensity`` so it interpolates with the same
+                // spring as the position/scale.
+                .shadow(
+                    color: .black.opacity(0.18 + 0.22 * Double(liftIntensity)),
+                    radius: 4 + 22 * liftIntensity,
+                    x: 0,
+                    y: 2 + 18 * liftIntensity
+                )
+                .scaleEffect(coverScale * breathingScale, anchor: .center)
+                .position(x: coverCenter.x, y: coverCenter.y)
+                .opacity(coverOpacity)
+                .allowsHitTesting(false)
+            }
+            .ignoresSafeArea(.all)
+            // Free-scroll layouts don't host a ``PageCurlView`` and so never
+            // publish ``BinderPageFramePreferenceKey``. Fall back to a
+            // centred rect inside the root geometry after a brief wait so
+            // the morph still runs in those cases. Paged layouts publish
+            // their real page frame on the first layout pass and skip this
+            // path entirely.
+            .task {
+                try? await Task.sleep(nanoseconds: 250_000_000)
+                if !hasStartedOpen {
+                    let size = rootGeo.size
+                    let fallbackHeight = min(size.height * 0.78, size.width * 1.4)
+                    let fallbackWidth = min(size.width - 32, fallbackHeight / 1.4)
+                    pageFrame = CGRect(
+                        x: (size.width - fallbackWidth) / 2,
+                        y: (size.height - fallbackHeight) / 2,
+                        width: fallbackWidth,
+                        height: fallbackHeight
+                    )
+                    hasStartedOpen = true
+                    startOpenMorph()
+                }
+            }
+            // Logic moved to BinderCardCell and passed in via valueText
+        }
+    }
+
+    // MARK: Phase transitions
+
+    /// Cover's natural aspect ratio — the same A4-ish portrait the grid
+    /// cells are locked to (``aspectRatio(0.707, contentMode: .fill)``).
+    /// Treating the cover as A4 at every step of the morph means source
+    /// and target share aspect, which is what lets a single uniform
+    /// scaleEffect morph cleanly without distortion.
+    private static let coverAspect: CGFloat = 0.707
+
+    /// A4-aspect rectangle fitted inside ``pageFrame`` and centred there.
+    /// This is the morph's actual destination — *not* the page frame
+    /// itself. Some layouts (4×3) produce a near-square page area; we
+    /// don't want the binder cover to morph into a square mid-flight.
+    private var coverTargetFrame: CGRect {
+        guard pageFrame.width > 0, pageFrame.height > 0 else { return pageFrame }
+        let aspect = Self.coverAspect
+        let pageAspect = pageFrame.width / pageFrame.height
+        let width: CGFloat
+        let height: CGFloat
+        if pageAspect < aspect {
+            // Page is narrower than A4 — width-limited.
+            width = pageFrame.width
+            height = width / aspect
+        } else {
+            // Page is wider than (or equal to) A4 — height-limited.
+            height = pageFrame.height
+            width = height * aspect
+        }
+        return CGRect(
+            x: pageFrame.midX - width / 2,
+            y: pageFrame.midY - height / 2,
+            width: width,
+            height: height
+        )
+    }
+
+    /// Scale that maps the rendered cover (always at ``coverTargetFrame``
+    /// dimensions) down to the source grid cell. Width-based: both
+    /// rectangles share the cover aspect, so width is enough to derive
+    /// the full transform.
+    private var sourceScale: CGFloat {
+        guard coverTargetFrame.width > 0 else { return 1.0 }
+        return max(0.05, sourceFrame.width / coverTargetFrame.width)
+    }
+
+    private var sourceCenter: CGPoint {
+        CGPoint(x: sourceFrame.midX, y: sourceFrame.midY)
+    }
+
+    private var pageCenter: CGPoint {
+        CGPoint(x: coverTargetFrame.midX, y: coverTargetFrame.midY)
+    }
+
+    /// Kicks off the morph from grid cell → page area. Once the morph
+    /// settles, fade the overlay out so ``BinderDetailView``'s own page 0
+    /// (which already shows an identical cover) takes over.
+    private func startOpenMorph() {
+        // Snap to the source state (no animation). Scale + position both
+        // jump to the source frame so the very first frame the user sees
+        // is the cover sitting precisely on top of the grid cell it came
+        // from.
+        coverScale = sourceScale
+        coverCenter = sourceCenter
+        coverOpacity = 1
+        liftIntensity = 0
+
+        // Reduce-Motion path: the morph itself becomes a quick
+        // cross-fade, no spring or scale travel. We still show the
+        // overlay cover at the page frame so the cover-to-page-1 hand
+        // off works the same way in ``BinderDetailView``.
+        if reduceMotion {
+            coverScale = 1.0
+            coverCenter = pageCenter
+            liftIntensity = 1
+            Task {
+                try? await Task.sleep(nanoseconds: 200_000_000)
+                await MainActor.run {
+                    withAnimation(.easeOut(duration: 0.2)) {
+                        coverOpacity = 0
+                        detailOpacity = 1
+                    }
+                }
+            }
+            return
+        }
+
+        Task {
+            // Tiny wait to ensure the snap has settled in the next layout
+            // pass before we start the spring.
+            try? await Task.sleep(nanoseconds: 10_000_000)
+            await MainActor.run {
+                withAnimation(morphAnimation) {
+                    coverScale = 1.0
+                    coverCenter = pageCenter
+                    liftIntensity = 1
+                }
+            }
+
+            // Soft haptic at the moment the cover lands — sells the
+            // "binder placed in front of you" beat. ``.soft`` is the
+            // gentle thud Apple uses when a sheet finishes presenting.
+            try? await Task.sleep(nanoseconds: 380_000_000)
+            await MainActor.run {
+                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+            }
+
+            // Fade the overlay out shortly after the spring lands. The
+            // ``BinderDetailView`` cover (page 0) is already underneath at
+            // the same rect so the user can't see the swap.
+            try? await Task.sleep(nanoseconds: 30_000_000)
+            await MainActor.run {
+                withAnimation(.easeOut(duration: 0.25)) {
+                    coverOpacity = 0
+                    detailOpacity = 1
+                }
+                // Subtle breath during the cover hold — single ease in/
+                // out cycle so the binder reads as "alive" without
+                // becoming a gimmick. Stops as soon as the page-curl
+                // auto-advance fires (we explicitly clamp it).
+                withAnimation(.easeInOut(duration: 0.45).delay(0.05)) {
+                    breathingScale = 1.012
+                }
+            }
+
+            // Settle the breath back to 1.0 just before the auto-curl
+            // would start, so the curl doesn't inherit a non-1 scale.
+            try? await Task.sleep(nanoseconds: 600_000_000)
+            await MainActor.run {
+                withAnimation(.easeInOut(duration: 0.35)) {
+                    breathingScale = 1.0
+                }
+            }
+        }
+    }
+
+    /// Triggered by ``BinderDetailView``'s back tap once it has finished
+    /// curling back to page 0. Re-shows the overlay cover at the page-area
+    /// frame, fades the detail view, and animates the cover back to the
+    /// source grid frame. After the spring completes we call
+    /// ``onDismissComplete`` so the parent finishes the choreography
+    /// (sweep the other binders back in).
+    private func beginClose() {
+        guard !isClosing else { return }
+        onStartClose()
+
+        // Park the overlay cover at the page frame and bring it back to
+        // full opacity instantly — both the overlay and the detail view's
+        // page 0 are showing the same cover, so the user just sees one
+        // continuous cover at this rect.
+        coverScale = 1.0
+        coverCenter = pageCenter
+        coverOpacity = 1
+        detailOpacity = 0
+        breathingScale = 1.0
+        liftIntensity = 1
+        isClosing = true
+
+        // Reduce-Motion path: skip the spring collapse, just fade out.
+        if reduceMotion {
+            Task {
+                try? await Task.sleep(nanoseconds: 30_000_000)
+                await MainActor.run {
+                    withAnimation(.easeOut(duration: 0.2)) {
+                        coverOpacity = 0
+                    }
+                }
+                try? await Task.sleep(nanoseconds: 220_000_000)
+                await MainActor.run {
+                    onDismissComplete()
+                }
+            }
+            return
+        }
+
+        Task {
+            // Tiny wait to ensure visibility has settled.
+            try? await Task.sleep(nanoseconds: 20_000_000)
+            await MainActor.run {
+                withAnimation(morphAnimation) {
+                    coverScale = sourceScale
+                    coverCenter = sourceCenter
+                    liftIntensity = 0
+                }
+            }
+
+            // Soft haptic at the moment the cover seats back into the
+            // grid — mirror of the open-morph land so close feels just
+            // as committed as open.
+            try? await Task.sleep(nanoseconds: 410_000_000)
+            await MainActor.run {
+                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+            }
+
+            // Wait a beat for the haptic to settle, then unmount.
+            try? await Task.sleep(nanoseconds: 20_000_000)
+            await MainActor.run {
+                onDismissComplete()
+            }
+        }
     }
 }

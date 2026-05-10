@@ -25,22 +25,31 @@ struct CreateBinderSheet: View {
     @State private var titleTextColor = BinderTitleTextColor.gold
     @State private var titleFontStyle = BinderTitleFontStyle.serif
 
+    private var transientBinder: Binder {
+        Binder(
+            title: name.isEmpty ? "New Binder" : name,
+            brand: services.brandSettings.selectedCatalogBrand,
+            pageLayout: layout,
+            colour: colourName,
+            texture: texture,
+            showCardPreview: showCardPreview,
+            showValueOnCover: showValueOnCover,
+            titleTextColor: titleTextColor,
+            titleFontStyle: titleFontStyle
+        )
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 24) {
                     // 1. Premium Preview
                     BinderCoverView(
-                        title: name,
-                        subtitle: "\(services.brandSettings.selectedCatalogBrand.displayTitle) · 0 cards · \(layout.displayName)",
-                        colourName: colourName,
-                        texture: texture,
-                        seed: 1, // Fixed seed for creation preview
-                        peekingCardURLs: [nil, nil, nil],
-                        showCardPreview: showCardPreview,
-                        titleTextColor: titleTextColor,
-                        titleFontStyle: titleFontStyle
+                        binder: transientBinder,
+                        compact: false,
+                        valueText: showValueOnCover ? "$0.00" : nil
                     )
+                    .subtitleOverride("\(services.brandSettings.selectedCatalogBrand.displayTitle) · 0 cards · \(layout.displayName)")
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
 

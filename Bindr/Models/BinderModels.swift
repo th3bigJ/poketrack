@@ -63,7 +63,7 @@ struct BinderPageLayout: Codable, Hashable {
     var isFreeScroll: Bool { kind == .freeScroll }
 
     var displayName: String {
-        isFreeScroll ? "Free Scroll" : "\(rows)×\(columns)"
+        isFreeScroll ? "Free Scroll" : "\(columns)×\(rows)"
     }
 
     var slotsPerPage: Int? {
@@ -227,6 +227,7 @@ enum BinderTitleFontStyle: String, CaseIterable, Identifiable, Codable {
     case rounded
     case sans
     case mono
+    case monoItalic
 
     var id: String { rawValue }
 
@@ -236,6 +237,7 @@ enum BinderTitleFontStyle: String, CaseIterable, Identifiable, Codable {
         case .rounded: return "Rounded"
         case .sans: return "Sans"
         case .mono: return "Mono"
+        case .monoItalic: return "Mono Italic"
         }
     }
 
@@ -244,7 +246,21 @@ enum BinderTitleFontStyle: String, CaseIterable, Identifiable, Codable {
         case .serif: return .serif
         case .rounded: return .rounded
         case .sans: return .default
-        case .mono: return .monospaced
+        case .mono, .monoItalic: return .monospaced
+        }
+    }
+}
+
+enum BinderEmbossMode: String, CaseIterable, Identifiable, Codable {
+    case fullCard
+    case character
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .fullCard: return "Full Card"
+        case .character: return "Character"
         }
     }
 }
@@ -271,6 +287,13 @@ enum BinderTitleFontStyle: String, CaseIterable, Identifiable, Codable {
     var titleTextColor: String = BinderTitleTextColor.gold.rawValue
     /// Cover title/subtitle/value font design. Stored as ``BinderTitleFontStyle`` raw value.
     var titleFontStyle: String = BinderTitleFontStyle.serif.rawValue
+    
+    /// Optional card featured (embossed) on the front cover.
+    var embossedCardID: String?
+    /// Whether to emboss the full card or just the character/art.
+    /// Stored as a raw value of ``BinderEmbossMode``.
+    var embossMode: String = BinderEmbossMode.fullCard.rawValue
+    
     var createdAt: Date = Date()
     /// CloudKit: to-many relationships must be optional.
     @Relationship(deleteRule: .cascade, inverse: \BinderSlot.binder)
@@ -326,6 +349,10 @@ enum BinderTitleFontStyle: String, CaseIterable, Identifiable, Codable {
 
     var titleFontStyleKind: BinderTitleFontStyle {
         BinderTitleFontStyle(rawValue: titleFontStyle) ?? .serif
+    }
+
+    var embossModeKind: BinderEmbossMode {
+        BinderEmbossMode(rawValue: embossMode) ?? .fullCard
     }
 
     var resolvedColour: Color {

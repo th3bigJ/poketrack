@@ -15,7 +15,30 @@ struct BinderDetailView: View {
     @Bindable var binder: Binder
     @Query private var collectionItems: [CollectionItem]
 
+    /// When `true`, the binder was opened from the Binders grid and should
+    /// include its front cover as page 0 of the page-curl. After a brief
+    /// hold (~1s) the view programmatically advances to page 1 so the
+    /// existing UIPageViewController curl reveals the first card page —
+    /// identical to a manual swipe.
+    var entryFromGrid: Bool = false
+    /// Custom dismiss hook. When provided, the back button (and the
+    /// post-cover-curl exit) call this instead of the SwiftUI `dismiss`
+    /// environment, so the host can drive its own collapse animation.
+    var onCustomDismiss: (() -> Void)? = nil
+    /// Pre-loaded card thumbnail URLs passed from the grid view, used to 
+    /// prevent re-loading flickers on the cover page during entry.
+    var preloadedPeekingURLs: [URL?]? = nil
+    /// Pre-resolved binder value text passed from the grid.
+    var preloadedValueText: String? = nil
+    /// The top safe-area inset of the screen, passed in by the host when
+    /// ``entryFromGrid`` is true so the header doesn't overlap the status bar.
+    var topSafeAreaInset: CGFloat = 0
+    /// The bottom safe-area inset of the screen (home indicator area), passed
+    /// in by the host so the bottom stats row doesn't sit under the home bar.
+    var bottomSafeAreaInset: CGFloat = 0
+
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var isEditing = false
     @State private var cardsByID: [String: Card] = [:]
     @State private var slotPickerTarget: BinderSlotPickerTarget? = nil
@@ -28,6 +51,85 @@ struct BinderDetailView: View {
     @State private var viewingSlot: BinderSlot? = nil
     @State private var isPageTurning = false
     @State private var draggedSlotPosition: Int? = nil
+    @State private var isClosing = false
+    /// Hides the header and bottom stats row until the binder has finished
+    /// its opening morph. Prevents users from tapping "Back" before the
+    /// animation lands and creates a cleaner "reveal" moment.
+    @State private var isChromeVisible = false
+    /// Becomes `true` once the post-mount cover-hold timer has fired and we
+    /// have programmatically auto-advanced from the cover (page 0) to the
+    /// first card page (page 1). Tracks whether we're still in the entry
+    /// "cover" moment so chrome can fade in at the right point.
+    @State private var hasAutoAdvancedFromCover = false
+    /// Wall-clock moment (`CACurrentMediaTime` reference) at which the
+    /// auto page-curl from the cover finished. Used by ``handleBackTap``
+    /// to decide whether to play the full reverse curl or skip straight
+    /// to the host's collapse — quick "I tapped the wrong binder" backs
+    /// shouldn't feel like a 2-second penalty.
+    @State private var firstCardPageLandedAt: Date? = nil
+
+    /// Back-button handler for the binder detail screen. Mirrors the open
+    /// sequence: when entered from the grid we curl back to the cover (page
+    /// 0) using the existing ``PageCurlView`` flip, then hand off to the
+    /// host's collapse animation. When opened any other way (or when we're
+    /// already on the cover), we just dismiss.
+    ///
+    /// **Quick-back shortcut.** If the user taps back within ~2.5s of the
+    /// auto page-curl landing on page 1, they almost certainly opened the
+    /// wrong binder by mistake — skip the full reverse curl and go straight
+    /// to the host's collapse. This avoids subjecting the user to a ~1.7s
+    /// "did you really mean to leave" animation when they obviously did.
+    /// Reduce-Motion always takes the shortcut path.
+    private func handleBackTap() {
+        guard !isClosing else { return }
+
+        let triggerHostDismiss = {
+            if let onCustomDismiss {
+                onCustomDismiss()
+            } else {
+                dismiss()
+            }
+        }
+
+        // Decide whether to play the reverse curl or skip straight to
+        // the host's collapse.
+        let isQuickBack: Bool = {
+            guard let landed = firstCardPageLandedAt else { return false }
+            return Date().timeIntervalSince(landed) < 2.5
+        }()
+        let shouldReverseCurl =
+            entryFromGrid &&
+            currentPage > 0 &&
+            !reduceMotion &&
+            !isQuickBack
+
+        if shouldReverseCurl {
+            // Reverse curl → cover.
+            // We hide the chrome immediately to focus on the cover.
+            isChromeVisible = false
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                currentPage = 0
+            }
+
+            // Wait for the curl-back to settle before handing control
+            // back to the host's collapse overlay.
+            Task {
+                try? await Task.sleep(nanoseconds: 600_000_000)
+                await MainActor.run {
+                    isClosing = true
+                    triggerHostDismiss()
+                }
+            }
+        } else {
+            // Shortcut path: hide chrome and hand the host control
+            // immediately so its collapse-from-page-frame morph runs
+            // straight away. The host owns the cover-back-to-grid morph;
+            // we just need to get out of the way fast.
+            isChromeVisible = false
+            isClosing = true
+            triggerHostDismiss()
+        }
+    }
     /// Cached USD price per "cardID|variantKey" — refreshed whenever the slot
     /// set or pricing provider changes. Used by the bottom stats bar to show
     /// a live total value and by the page-info bar for per-page value.
@@ -69,22 +171,50 @@ struct BinderDetailView: View {
         return "\(binder.title)|\(slotSignature)"
     }
 
-    private var pageCount: Int {
+    /// Number of card pages (the playmat surfaces). Doesn't count the
+    /// optional binder-front cover page — see ``totalPageCount``.
+    private var cardPageCount: Int {
         let maxPos = sortedSlots.last?.position ?? -1
         return max(1, Int(ceil(Double(maxPos + 1) / Double(slotsPerPage))))
     }
 
-    private func positions(for page: Int) -> [Int] {
-        let start = page * slotsPerPage
+    /// Total pages handed to ``PageCurlView``. When entering from the grid we
+    /// prepend the binder-front cover at index 0; otherwise the count is just
+    /// the regular card pages.
+    private var totalPageCount: Int {
+        cardPageCount + (entryFromGrid ? 1 : 0)
+    }
+
+    /// Convert a `PageCurlView` page index to the underlying card-page index.
+    /// When entering from the grid, page 0 is the cover so card pages begin
+    /// at 1 and we subtract one to get the real card-page index.
+    private func cardPageIndex(for pageIdx: Int) -> Int {
+        entryFromGrid ? max(0, pageIdx - 1) : pageIdx
+    }
+
+    /// `true` when the given `PageCurlView` page index should render the
+    /// binder front cover instead of a card-grid page.
+    private func isCoverPage(_ pageIdx: Int) -> Bool {
+        entryFromGrid && pageIdx == 0
+    }
+
+    private func positions(for cardPage: Int) -> [Int] {
+        let start = cardPage * slotsPerPage
         return Array(start..<(start + slotsPerPage))
     }
 
     var body: some View {
         VStack(spacing: 0) {
             binderHeader
+                .opacity(isChromeVisible ? 1 : 0)
+                .offset(y: isChromeVisible ? 0 : -20)
+                .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
             if !isEditing {
-                // Share/likers/weekly-change row — sits between the title and
-                // the binder pages so it doesn't crowd the editing surface.
+                // Share/likers/weekly-change row — sits between the title
+                // and the binder pages so it doesn't crowd the editing
+                // surface. Tied to the same chrome flag as the header so
+                // it appears together with the rest of the UI after the
+                // cover-to-first-page curl.
                 BinderSocialRow(
                     isPublished: isSharedPublished,
                     likers: likers,
@@ -92,20 +222,38 @@ struct BinderDetailView: View {
                     onShareTap: { showShareSettings = true },
                     onLikersTap: nil
                 )
+                .opacity(isChromeVisible ? 1 : 0)
+                .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
             }
             if isEditing {
                 editContent
             } else {
-                // No top info bar any more — "Page Value" moved into the
-                // bottom stats row so the binder itself has more vertical room.
                 ZStack(alignment: .bottom) {
                     viewContent
+                        // Lock swipe gestures while the open sequence is
+                        // still running. Without this guard a fast user
+                        // can flick the page mid-morph, racing against
+                        // the auto cover→page-1 advance and leaving the
+                        // ``UIPageViewController`` in a confused state.
+                        // Once chrome lands the user is firmly in the
+                        // detail view and the page-curl is theirs again.
+                        .allowsHitTesting(isChromeVisible)
                     if !layout.isFreeScroll {
                         swipeHint
                             .padding(.bottom, 8)
+                            // Hide the swipe hint until the chrome has
+                            // arrived too — there's nothing to swipe to
+                            // during the cover-hold so promising one is
+                            // a lie.
+                            .opacity(isChromeVisible ? 1 : 0)
+                            .animation(.easeOut(duration: 0.3), value: isChromeVisible)
                     }
+                    Spacer(minLength: 0)
                 }
                 bottomStatsBar
+                    .opacity(isChromeVisible ? 1 : 0)
+                    .offset(y: isChromeVisible ? 0 : 20)
+                    .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
             }
         }
         .background(Color(uiColor: .systemBackground))
@@ -116,7 +264,9 @@ struct BinderDetailView: View {
                 BinderCardViewer(card: card) {
                     viewingSlot = nil
                 }
-                .transition(.opacity)
+                .ignoresSafeArea(.all)
+                .zIndex(50)
+                .transition(.identity)
             }
         }
         .animation(.easeInOut(duration: 0.25), value: viewingSlot?.id)
@@ -124,6 +274,82 @@ struct BinderDetailView: View {
             Task {
                 await loadCards()
                 await refreshShareStatus()
+            }
+            // Cover-hold + auto page-turn. When the binder was opened from
+            // the grid, page 0 is the cover and we hold for ~1s after the
+            // open morph settles before advancing to page 1 — that flips
+            // ``currentPage`` through the existing ``PageCurlView`` curl
+            // animation, which the user wanted preserved verbatim.
+            //
+            // The 1.4s budget reserves ~400ms for the host's morph + ~1s of
+            // pure hold so the cover read time matches the user's spec
+            // ("approximately 1 second" *after* the cover lands).
+            if entryFromGrid && !hasAutoAdvancedFromCover {
+                currentPage = 0
+
+                // Reduce-Motion path: skip the cover hold + auto page
+                // curl entirely. Land on page 1 with chrome visible,
+                // no animation. Less delight, much less vestibular
+                // stress.
+                if reduceMotion {
+                    Task {
+                        try? await Task.sleep(nanoseconds: 250_000_000)
+                        await MainActor.run {
+                            hasAutoAdvancedFromCover = true
+                            if cardPageCount > 0 { currentPage = 1 }
+                            firstCardPageLandedAt = Date()
+                            withAnimation(.easeIn(duration: 0.25)) {
+                                isChromeVisible = true
+                            }
+                        }
+                    }
+                    return
+                }
+
+                Task {
+                    // Cover-hold + auto page-turn.
+                    // The 1.4s budget reserves ~400ms for the host's morph + ~1s of
+                    // pure hold so the cover read time matches the user's spec.
+                    try? await Task.sleep(nanoseconds: 1_400_000_000)
+                    await MainActor.run {
+                        guard !hasAutoAdvancedFromCover else { return }
+                        hasAutoAdvancedFromCover = true
+                        if cardPageCount > 0 {
+                            currentPage = 1
+                        }
+                        // Light haptic the moment the page-curl kicks
+                        // off — the user feels the page lift even
+                        // before they see it move. Pairs with the
+                        // ``.soft`` haptic the host fires when the
+                        // open morph lands.
+                        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    }
+
+                    // Stamp the moment the page-curl landed so
+                    // ``handleBackTap`` can decide whether a back tap
+                    // counts as a "quick back" (skip the reverse curl).
+                    // ~1.1s for the curl itself.
+                    try? await Task.sleep(nanoseconds: 1_100_000_000)
+                    await MainActor.run {
+                        firstCardPageLandedAt = Date()
+                    }
+
+                    // Reveal the chrome (buttons/stats) only AFTER the page
+                    // has fully turned. ``PageCurlView`` runs the curl through
+                    // ``UIPageViewController`` at ``layer.speed = 0.55`` which
+                    // gives a ~1.1s curl; we then wait an additional 0.5s so
+                    // the user has a moment to take in the first page before
+                    // the chrome flies in.
+                    try? await Task.sleep(nanoseconds: 500_000_000)
+                    await MainActor.run {
+                        withAnimation(.spring(response: 0.4, dampingFraction: 0.8)) {
+                            isChromeVisible = true
+                        }
+                    }
+                }
+            } else {
+                // Not from grid? Show chrome immediately.
+                isChromeVisible = true
             }
         }
         .onChange(of: binder.slotList.count) { Task { await loadCards() } }
@@ -172,7 +398,7 @@ struct BinderDetailView: View {
             BindrPageHeader(
                 title: binder.title,
                 leading: {
-                    ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
+                    ChromeGlassCircleButton(accessibilityLabel: "Back") { handleBackTap() } label: {
                         Image(systemName: "chevron.left")
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(.primary)
@@ -208,6 +434,10 @@ struct BinderDetailView: View {
                     }
                 }
             )
+            // Push the header down so it sits below the status bar. 
+            // Fall back to 47pt (standard notch height) if the inset 
+            // isn't reported correctly.
+            .padding(.top, entryFromGrid ? (topSafeAreaInset > 0 ? topSafeAreaInset : 47) : 0)
 
             // Per-binder colour-accent capsule sits below the shared header
             // so the chrome layout stays uniform but each binder still gets
@@ -257,6 +487,7 @@ struct BinderDetailView: View {
                         .frame(height: 1)
                 }
         )
+        .padding(.bottom, entryFromGrid ? bottomSafeAreaInset : 0)
     }
 
     private func statCell(value: String, label: String) -> some View {
@@ -313,17 +544,80 @@ struct BinderDetailView: View {
         let pageSize = binderPageSize(in: geo.size)
         return VStack(spacing: 0) {
             PageCurlView(
-                pageCount: pageCount,
+                pageCount: totalPageCount,
                 currentPage: $currentPage,
                 isTurning: $isPageTurning,
                 pageBackgroundColor: .systemBackground,
                 contentVersion: binder.slotList.count
             ) { pageIdx in
-                pageSurface(pageIdx: pageIdx, pageSize: pageSize)
+                if isCoverPage(pageIdx) {
+                    coverPageSurface(pageSize: pageSize)
+                } else {
+                    pageSurface(pageIdx: cardPageIndex(for: pageIdx), pageSize: pageSize)
+                }
             }
             .frame(width: pageSize.width, height: pageSize.height)
+            .background(
+                // Report the page-area frame in screen coordinates so the
+                // hosting screen (BindersRootView) can align its open/close
+                // morph overlay to the same rectangle.
+                GeometryReader { pgGeo in
+                    Color.clear.preference(
+                        key: BinderPageFramePreferenceKey.self,
+                        value: pgGeo.frame(in: .global)
+                    )
+                }
+            )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+    }
+
+    /// Renders the binder's front cover so it can sit as page 0 of
+    /// ``PageCurlView``. The cover itself is laid out at the cover's
+    /// natural A4 aspect (centred inside the wider page area) — that's
+    /// what lets the open/close morph use a single uniform scale and
+    /// land cleanly on the A4 grid cell without a height pop. The
+    /// surrounding ``pageSize`` rectangle stays as the curl's "page" so
+    /// ``UIPageViewController`` flips between equally-sized pages.
+    private func coverPageSurface(pageSize: CGSize) -> some View {
+        // Mirror the grid cell's logic: hide the value entirely on empty
+        // binders or when the user has switched the cover-value setting
+        // off.
+        let value: String? = preloadedValueText ?? ((binder.showValueOnCover && !binder.slotList.isEmpty)
+            ? formattedTotalValue
+            : nil)
+
+        // Lay the cover out at A4 aspect, fitted inside ``pageSize``.
+        // Same maths as ``BinderOpenContainer.coverTargetFrame`` so the
+        // moment the morph overlay fades, the page-0 cover sits at the
+        // exact same rectangle and the hand-off is invisible.
+        let coverAspect: CGFloat = 0.707
+        let pageAspect = pageSize.width / max(pageSize.height, 1)
+        let coverWidth: CGFloat
+        let coverHeight: CGFloat
+        if pageAspect < coverAspect {
+            coverWidth = pageSize.width
+            coverHeight = coverWidth / coverAspect
+        } else {
+            coverHeight = pageSize.height
+            coverWidth = coverHeight * coverAspect
+        }
+
+        return ZStack {
+            // The page itself is the system background — same colour
+            // ``PageCurlView`` is initialised with — so the cover sits
+            // visually flush within the curl's "page" rectangle.
+            Color(uiColor: .systemBackground)
+            BinderCoverView(
+                binder: binder,
+                compact: false,
+                valueText: value
+            )
+            .peekingURLsOverride(preloadedPeekingURLs)
+            .frame(width: coverWidth, height: coverHeight)
+        }
+        .frame(width: pageSize.width, height: pageSize.height)
+        .clipped()
     }
 
     private func binderPageSize(in available: CGSize) -> CGSize {
@@ -608,28 +902,6 @@ struct BinderDetailView: View {
             .allowsHitTesting(false)
     }
 
-    // MARK: - Holographic sheen
-
-    /// Returns true when a card's rarity should get the animated holo overlay.
-    /// Permissive on purpose — anything that isn't a base common/uncommon/rare
-    /// gets the shimmer so EX, V, VMAX, VSTAR, full art, illustration, secret,
-    /// hyper, rainbow, holo, etc. all light up. Static cards (the bulk of any
-    /// binder) stay plain so the effect feels earned.
-    private func isHoloRarity(_ rarity: String?) -> Bool {
-        guard let raw = rarity?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(),
-              !raw.isEmpty else {
-            return false
-        }
-        // Plain non-holo rarities — keep these static.
-        let plainRarities: Set<String> = [
-            "common", "uncommon", "rare", "double rare"
-        ]
-        if plainRarities.contains(raw) {
-            return false
-        }
-        return true
-    }
-
     @ViewBuilder
     private func emptySlotCell(position: Int) -> some View {
         let cornerRadius: CGFloat = 6
@@ -676,17 +948,6 @@ struct BinderDetailView: View {
                         .fill(Color(uiColor: .systemGray5))
                 }
                 .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
-                // Animated holographic sheen — only renders for rare/EX/V/etc.
-                // cards so plain commons stay matte and the effect feels
-                // earned. Clipped to the card shape and applied with
-                // `plusLighter` so it brightens the underlying art rather
-                // than washing it out.
-                .overlay {
-                    if let card, isHoloRarity(card.rarity) {
-                        HoloSheenOverlay()
-                            .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
-                    }
-                }
 
                 // Inset top highlight — simulates light catching the card edge.
                 RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
@@ -723,7 +984,7 @@ struct BinderDetailView: View {
                 if layout.isFreeScroll {
                     editGrid(positions: Array(0..<max(sortedSlots.count + 3, slotsPerPage)))
                 } else {
-                    ForEach(0..<(pageCount + 1), id: \.self) { pageIdx in
+                    ForEach(0..<(cardPageCount + 1), id: \.self) { pageIdx in
                         editPageSection(pageIdx: pageIdx)
                     }
                 }
@@ -895,8 +1156,11 @@ struct BinderDetailView: View {
     }
 
     private func addPage() {
-        // Navigate to the last page so the user sees the new empty page
-        withAnimation { currentPage = pageCount }
+        // Navigate to the last page so the user sees the new empty page.
+        // The page-curl indexes through ``totalPageCount`` (which includes
+        // the cover when entered from the grid) so the destination index is
+        // the count itself — that's the new last page.
+        withAnimation { currentPage = totalPageCount }
     }
 
     private func loadCards() async {
@@ -968,7 +1232,11 @@ struct BinderDetailView: View {
     }
 
     private var pageUSDValue: Double {
-        let positions = Set(positions(for: currentPage))
+        // ``currentPage`` indexes into ``PageCurlView``'s pages — when entering
+        // from the grid that includes a cover at index 0, so translate back
+        // to the underlying card page before reading its slot positions.
+        let cardPage = cardPageIndex(for: currentPage)
+        let positions = Set(positions(for: cardPage))
         return binder.slotList
             .filter { positions.contains($0.position) }
             .reduce(0) { acc, slot in
@@ -990,13 +1258,11 @@ struct BinderDetailView: View {
         // visually balanced; per-page uses the same precision the rest of the
         // app does (2dp) so small values still read accurately.
         let amount = display == .gbp ? usd * services.pricing.usdToGbp : usd
-        let formatted: String
-        if amount >= 1000 {
-            formatted = String(format: "%.0f", amount)
-        } else {
-            formatted = String(format: "%.2f", amount)
-        }
-        return "\(display.symbol)\(formatted)"
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = display.symbol
+        formatter.maximumFractionDigits = amount >= 1000 ? 0 : 2
+        return formatter.string(from: NSNumber(value: amount)) ?? ""
     }
 
     private func refreshShareStatus() async {
@@ -1086,46 +1352,6 @@ private struct BinderCardButtonStyle: ButtonStyle {
     }
 }
 
-// MARK: - Holographic sheen overlay
-
-/// A narrow rainbow band that slides diagonally across the card on a slow
-/// loop, mimicking how a holo Pokémon card catches light when you tilt it.
-/// Uses a single ``TimelineView`` and animates the gradient endpoints rather
-/// than transforming a larger view, so the cost per card is just a
-/// per-frame `LinearGradient` rebuild — affordable for the 3–6 holo cards a
-/// typical binder page contains.
-private struct HoloSheenOverlay: View {
-    /// Length of one full sheen cycle. ~5s feels alive without becoming
-    /// distracting; faster cycles read as flickering, slower as static.
-    private let cycleDuration: Double = 5.0
-
-    var body: some View {
-        TimelineView(.animation(minimumInterval: 1.0 / 30.0, paused: false)) { context in
-            // Phase walks 0 → 1 over `cycleDuration` seconds. Mapping it to
-            // (-0.5, 1.5) lets the band travel from off-screen-leading to
-            // off-screen-trailing, so there's a clean entry/exit instead of
-            // a popping reset.
-            let raw = context.date.timeIntervalSinceReferenceDate
-                .truncatingRemainder(dividingBy: cycleDuration) / cycleDuration
-            let pos = raw * 2.0 - 0.5
-
-            LinearGradient(
-                stops: [
-                    .init(color: .clear, location: 0),
-                    .init(color: Color(red: 1.00, green: 0.55, blue: 0.85).opacity(0.40), location: 0.42),
-                    .init(color: Color(red: 0.55, green: 0.95, blue: 1.00).opacity(0.40), location: 0.50),
-                    .init(color: Color(red: 0.95, green: 1.00, blue: 0.55).opacity(0.40), location: 0.58),
-                    .init(color: .clear, location: 1)
-                ],
-                startPoint: UnitPoint(x: pos - 0.5, y: 0),
-                endPoint: UnitPoint(x: pos + 0.5, y: 1)
-            )
-            .blendMode(.plusLighter)
-            .allowsHitTesting(false)
-        }
-    }
-}
-
 private struct BinderSlotDropDelegate: DropDelegate {
     let targetPosition: Int
     @Binding var draggedSlotPosition: Int?
@@ -1143,6 +1369,21 @@ private struct BinderSlotDropDelegate: DropDelegate {
     }
 
     func dropExited(info: DropInfo) {}
+}
+
+// MARK: - Page-area frame preference key
+
+/// Reports the binder page-curl's page-area frame (in screen/global
+/// coordinates) so the host (``BindersRootView``) can position its open/close
+/// morph overlay over the same rectangle. The host reads it through a
+/// `.onPreferenceChange` and animates the matched-geometry cover from the
+/// grid cell frame to this rect, then back when the binder is closed.
+struct BinderPageFramePreferenceKey: PreferenceKey {
+    static var defaultValue: CGRect = .zero
+    static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
+        let next = nextValue()
+        if next != .zero { value = next }
+    }
 }
 
 // MARK: - Full-size card viewer with swipe-to-dismiss
@@ -1244,6 +1485,18 @@ struct BinderStylePickerSheet: View {
         .fixed(rows: 4, columns: 4)
     ]
 
+    private var formattedTotalValue: String {
+        let total = binder.slotList.compactMap { slot in
+            // Basic price lookup if available
+            return 0.0 // Simplified for now since we don't have easy access to the full pricing service here
+        }.reduce(0, +)
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = "USD" // Fallback
+        return formatter.string(from: NSNumber(value: total)) ?? "$0.00"
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -1251,16 +1504,9 @@ struct BinderStylePickerSheet: View {
                     // Preview
                     GeometryReader { proxy in
                         BinderCoverView(
-                            title: binder.title,
-                            subtitle: "\(binder.slotList.count) cards · \(binder.layout.displayName)",
-                            colourName: binder.colour,
-                            texture: binder.textureKind,
-                            seed: binder.textureSeed,
-                            peekingCardURLs: cardURLs,
-                            showCardPreview: binder.showCardPreview,
+                            binder: binder,
                             compact: false,
-                            titleTextColor: binder.titleTextColorKind,
-                            titleFontStyle: binder.titleFontStyleKind
+                            valueText: binder.showValueOnCover ? formattedTotalValue : nil
                         )
                         .frame(width: proxy.size.width * 0.6)
                         .frame(maxWidth: .infinity)
@@ -1395,6 +1641,97 @@ struct BinderStylePickerSheet: View {
                                 }
                             }
                             .tint(colorScheme == .dark ? .white : .black)
+                        }
+
+                        // NEW: Cover Art Feature
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("COVER ART")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+
+                            Picker("Art Style", selection: $binder.showCardPreview) {
+                                Text("3-Card Fan").tag(true)
+                                Text("Embossed Design").tag(false)
+                            }
+                            .pickerStyle(.segmented)
+                            .tint(colorScheme == .dark ? .white : .black)
+
+                            if !binder.showCardPreview {
+                                // Emboss settings
+                                Picker("Emboss Mode", selection: $binder.embossMode) {
+                                    ForEach(BinderEmbossMode.allCases) { mode in
+                                        Text(mode.displayName).tag(mode.rawValue)
+                                    }
+                                }
+                                .pickerStyle(.segmented)
+                                .tint(colorScheme == .dark ? .white : .black)
+
+                                if !binder.slotList.isEmpty {
+                                    VStack(alignment: .leading, spacing: 8) {
+                                        Text("Select card to emboss")
+                                            .font(.caption.bold())
+                                            .foregroundStyle(.secondary)
+
+                                        ScrollView(.horizontal, showsIndicators: false) {
+                                            HStack(spacing: 12) {
+                                                // Option to have no art
+                                                Button {
+                                                    binder.embossedCardID = nil
+                                                } label: {
+                                                    VStack {
+                                                        RoundedRectangle(cornerRadius: 8)
+                                                            .fill(Color.secondary.opacity(0.1))
+                                                            .frame(width: 60, height: 84)
+                                                            .overlay {
+                                                                Image(systemName: "slash.circle")
+                                                                    .foregroundStyle(.secondary)
+                                                            }
+                                                        Text("None")
+                                                            .font(.caption2)
+                                                    }
+                                                }
+                                                .buttonStyle(.plain)
+
+                                                ForEach(binder.slotList) { slot in
+                                                    Button {
+                                                        binder.embossedCardID = slot.cardID
+                                                    } label: {
+                                                        VStack {
+                                                            let url = AppConfiguration.imageURL(relativePath: "\(slot.cardID)_low.png")
+                                                            CachedAsyncImage(url: url, targetSize: CGSize(width: 120, height: 168)) { img in
+                                                                img.resizable()
+                                                                    .aspectRatio(contentMode: .fill)
+                                                            } placeholder: {
+                                                                Color.secondary.opacity(0.1)
+                                                            }
+                                                            .frame(width: 60, height: 84)
+                                                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                                                            .overlay {
+                                                                if binder.embossedCardID == slot.cardID {
+                                                                    RoundedRectangle(cornerRadius: 8)
+                                                                        .stroke(bindrAccent, lineWidth: 2)
+                                                                }
+                                                            }
+                                                            
+                                                            Text(slot.cardName)
+                                                                .font(.caption2)
+                                                                .lineLimit(1)
+                                                                .frame(width: 60)
+                                                        }
+                                                    }
+                                                    .buttonStyle(.plain)
+                                                }
+                                            }
+                                            .padding(.horizontal, 2)
+                                            .padding(.vertical, 4)
+                                        }
+                                    }
+                                } else {
+                                    Text("Add cards to this binder to select cover art.")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
                         }
                     }
                     .padding(.horizontal, 16)

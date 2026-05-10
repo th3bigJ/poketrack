@@ -5,15 +5,16 @@ struct BinderShareView: View {
     let item: SocialFeedService.FeedItem
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        let binder = Binder(
+            title: item.content?.title ?? "Binder",
+            pageLayout: .fixed(rows: 3, columns: 3), // Fallback
+            colour: item.binderColour ?? "navy",
+            texture: BinderTexture(rawValue: item.binderTexture ?? "leather") ?? .leather
+        )
+
+        return VStack(alignment: .leading, spacing: 12) {
             BinderCoverView(
-                title: item.content?.title ?? "Binder",
-                subtitle: nil,
-                colourName: item.binderColour ?? "navy",
-                texture: BinderTexture(rawValue: item.binderTexture ?? "leather") ?? .leather,
-                seed: item.binderSeed ?? 1,
-                peekingCardURLs: [],
-                showCardPreview: true,
+                binder: binder,
                 compact: true
             )
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
