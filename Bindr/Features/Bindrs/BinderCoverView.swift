@@ -162,10 +162,13 @@ struct BinderCoverView: View {
             resolvedPeekingURLs = urls
         }
 
-        // 2. Resolve embossed art
+        // 2. Resolve embossed art — prefer high-res for detail
         if !binder.showCardPreview, let cardID = binder.embossedCardID {
             if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                embossedURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                let path = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false
+                    ? card.imageHighSrc!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    : card.imageLowSrc
+                embossedURL = AppConfiguration.imageURL(relativePath: path)
             }
         } else {
             embossedURL = nil
@@ -292,40 +295,50 @@ struct BinderCoverView: View {
 
     private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
         let isCharacter = binder.embossModeKind == .character
-        let cardWidth: CGFloat = 320 * scale
-        let cardHeight: CGFloat = isCharacter ? 260 * scale : 450 * scale
-        
-        return ZStack {
-            CachedAsyncImage(url: url, targetSize: CGSize(width: 800 * scale, height: 1100 * scale)) { img in
+        let cardW: CGFloat = 290 * scale
+        // Full card: show the entire card shape. Character: zoom to top 55% (artwork box)
+        let cardH: CGFloat = isCharacter ? (cardW / 0.714) * 0.55 : cardW / 0.714
+
+        return CachedAsyncImage(url: url, targetSize: CGSize(width: Int(cardW * 2), height: Int(cardH * 2))) { img in
+            ZStack {
+                // ── Layer 1: Dark offset copy  (top-left = "pressed shadow") ──
                 img.resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: cardWidth, height: cardHeight, alignment: isCharacter ? .top : .center)
-                    .scaleEffect(isCharacter ? 1.3 : 1.0, anchor: .top) // Zoom into the art box for character mode
-                    .grayscale(1.0)
-                    .contrast(2.4)
-                    .brightness(-0.1)
-                    .opacity(0.45)
-                    .blendMode(.overlay)
-                    .shadow(color: .black.opacity(0.6), radius: 1.5 * scale, x: -1 * scale, y: -1 * scale)
-                    .shadow(color: .white.opacity(0.35), radius: 0.5 * scale, x: 1 * scale, y: 1 * scale)
+                    .frame(width: cardW, height: cardH, alignment: isCharacter ? .top : .center)
                     .clipped()
-                    .overlay {
-                        if isCharacter {
-                            // Give character mode a more "medallion" feel with a subtle vignette
-                            RadialGradient(
-                                colors: [.clear, .black.opacity(0.1)],
-                                center: .center,
-                                startRadius: 40 * scale,
-                                endRadius: 130 * scale
-                            )
-                        }
-                    }
-            } placeholder: {
-                ProgressView().controlSize(.small).opacity(0.3)
+                    .grayscale(1)
+                    .brightness(-0.5)      // very dark
+                    .opacity(0.55)
+                    .offset(x: -1.5 * scale, y: -1.5 * scale)
+                    .blendMode(.multiply)
+
+                // ── Layer 2: Light offset copy (bottom-right = "raised highlight") ──
+                img.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: cardW, height: cardH, alignment: isCharacter ? .top : .center)
+                    .clipped()
+                    .grayscale(1)
+                    .brightness(0.6)       // very light
+                    .opacity(0.55)
+                    .offset(x: 1.5 * scale, y: 1.5 * scale)
+                    .blendMode(.screen)
+
+                // ── Layer 3: Base card at full colour, low opacity ──
+                // This lets you see the art "tinted" into the binder material
+                img.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: cardW, height: cardH, alignment: isCharacter ? .top : .center)
+                    .clipped()
+                    .grayscale(0.7)
+                    .opacity(0.22)
+                    .blendMode(.overlay)
             }
+            .clipShape(RoundedRectangle(cornerRadius: isCharacter ? 12 * scale : 8 * scale, style: .continuous))
+        } placeholder: {
+            ProgressView().controlSize(.small).opacity(0.3)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, isCharacter ? 180 * scale : 110 * scale) // Center character medallion higher
+        .padding(.top, 105 * scale)
         .padding(.bottom, 30 * scale)
     }
 

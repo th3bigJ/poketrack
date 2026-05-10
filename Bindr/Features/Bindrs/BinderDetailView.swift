@@ -1476,6 +1476,7 @@ struct BinderStylePickerSheet: View {
     @Environment(\.bindrAccent) private var bindrAccent
     @Bindable var binder: Binder
     @State private var cardURLs: [URL?] = [nil, nil, nil]
+    @State private var slotImageURLs: [String: URL] = [:]
     private let layoutOptions: [BinderPageLayout] = [
         .fixed(rows: 2, columns: 2),
         .fixed(rows: 3, columns: 2),
@@ -1697,7 +1698,7 @@ struct BinderStylePickerSheet: View {
                                                         binder.embossedCardID = slot.cardID
                                                     } label: {
                                                         VStack {
-                                                            let url = AppConfiguration.imageURL(relativePath: "\(slot.cardID)_low.png")
+                                                            let url = slotImageURLs[slot.cardID]
                                                             CachedAsyncImage(url: url, targetSize: CGSize(width: 120, height: 168)) { img in
                                                                 img.resizable()
                                                                     .aspectRatio(contentMode: .fill)
@@ -1740,6 +1741,7 @@ struct BinderStylePickerSheet: View {
             }
             .task {
                 await loadCardURLs()
+                await loadSlotImageURLs()
             }
             .navigationTitle("Binder Style")
             .navigationBarTitleDisplayMode(.inline)
@@ -1806,5 +1808,17 @@ struct BinderStylePickerSheet: View {
         
         while urls.count < 3 { urls.append(nil) }
         cardURLs = urls
+    }
+
+    private func loadSlotImageURLs() async {
+        var result: [String: URL] = [:]
+        for slot in binder.slotList {
+            if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
+                if let url = AppConfiguration.imageURL(relativePath: card.imageLowSrc) {
+                    result[slot.cardID] = url
+                }
+            }
+        }
+        slotImageURLs = result
     }
 }
