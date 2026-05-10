@@ -300,10 +300,26 @@ struct DeckDetailView: View {
                 .buttonStyle(.plain)
 
                 Button {
-                    let exportText = PTCGLService.shared.exportToPTCGL(deck: deck, sets: services.cardData.sets)
-                    UIPasteboard.general.string = exportText
-                    HapticManager.notification(.success)
-                    showShareActions = false
+                    Task {
+                        let idsNeedingLookup = deck.cardList
+                            .filter { ($0.localId ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+                            .map(\.cardID)
+                        var pokemonSets = await services.cardData.catalogSets(for: .pokemon)
+                        let hasAnySetAbbreviation = pokemonSets.contains {
+                            guard let abbr = $0.setAbbreviation else { return false }
+                            return !abbr.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                        }
+                        if pokemonSets.isEmpty || !hasAnySetAbbreviation {
+                            await services.forceCatalogRedownloadFromSettings()
+                            pokemonSets = await services.cardData.catalogSets(for: .pokemon)
+                        }
+                        let lookedUpCards = await services.cardData.loadCards(masterCardIDs: idsNeedingLookup, catalogBrand: .pokemon)
+                        let cardsByMasterId = Dictionary(uniqueKeysWithValues: lookedUpCards.map { ($0.masterCardId, $0) })
+                        let exportText = PTCGLService.shared.exportToPTCGL(deck: deck, sets: pokemonSets, cardsByMasterId: cardsByMasterId)
+                        UIPasteboard.general.string = exportText
+                        HapticManager.notification(.success)
+                        showShareActions = false
+                    }
                 } label: {
                     HStack(spacing: 10) {
                         Image(systemName: "doc.on.doc")

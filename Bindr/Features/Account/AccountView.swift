@@ -7,7 +7,7 @@ struct SettingsView: View {
     @State private var showDataExport = false
     @State private var showDisclaimer = false
     @State private var brandPendingDisable: TCGBrand?
-    @State private var isForceRefreshInFlight = false
+    @State private var showForceRedownloadPrompt = false
 
     /// Brands the user has not added yet (shown in the Add menu). Order follows the hosted `brands.json`.
     private var brandsAvailableToAdd: [TCGBrand] {
@@ -21,21 +21,28 @@ struct SettingsView: View {
 
     var body: some View {
         List {
+            settingsHero
             topSections
             bottomSections
         }
+        .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .background(Color(uiColor: .systemGroupedBackground))
         .toolbar(.hidden, for: .navigationBar)
         .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
                 .environment(services)
+                .presentationDragIndicator(.visible)
         }
         .sheet(isPresented: $showDataExport) {
             DataExportView()
                 .environment(services)
+                .presentationDragIndicator(.visible)
         }
         .sheet(isPresented: $showDisclaimer) {
             DisclaimerView()
+                .presentationDragIndicator(.visible)
         }
         .alert(
             "Remove catalog?",
@@ -74,9 +81,63 @@ struct SettingsView: View {
                 services.cardData.clearNationalDexForDisabledPokemon()
             }
         }
+        .alert("Force re-download catalog data?", isPresented: $showForceRedownloadPrompt) {
+            Button("Cancel", role: .cancel) {}
+            Button("Re-download", role: .destructive) {
+                Task { await services.forceCatalogRedownloadFromSettings() }
+            }
+        } message: {
+            Text("This will delete downloaded card catalog data on this device and fetch it again into SQLite for your enabled games.")
+        }
+    }
+
+    private var settingsHero: some View {
+        Section {
+            Text("Settings")
+                .font(.system(size: 36, weight: .bold, design: .default))
+                .foregroundStyle(.primary)
+                .padding(.top, 20)
+                .padding(.bottom, 8)
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+        }
     }
 
     @ViewBuilder private var topSections: some View {
+        Section {
+            Picker(
+                "Active Game",
+                selection: Binding(
+                    get: { services.brandSettings.selectedCatalogBrand },
+                    set: { services.brandSettings.selectedCatalogBrand = $0 }
+                )
+            ) {
+                ForEach(sortedEnabledBrands) { brand in
+                    Text(brand.displayTitle).tag(brand)
+                }
+            }
+        } header: {
+            Text("Active Game")
+        } footer: {
+            Text("Changes which card game is used across browse, collection, and search.")
+        }
+
+        CatalogSection(brandsAvailableToAdd: brandsAvailableToAdd, onAdd: addBrand, onDelete: requestBrandRemoval)
+
+        Section("Pricing") {
+            Picker("Show prices in", selection: Binding(
+                get: { services.priceDisplay.currency },
+                set: { services.priceDisplay.currency = $0 }
+            )) {
+                ForEach(PriceDisplayCurrency.allCases) { c in Text(c.pickerTitle).tag(c) }
+            }
+            Text("Catalog and history values from the server are in US dollars. Pounds use a daily exchange rate.")
+                .font(.caption).foregroundStyle(.secondary)
+        }
+    }
+
+    @ViewBuilder private var bottomSections: some View {
         Section {
             switch services.cloudSettings.syncStatus {
             case .cloudKitConnected:
@@ -102,84 +163,39 @@ struct SettingsView: View {
             }
         }
 
-        Section {
-            Picker(
-                "Active Game",
-                selection: Binding(
-                    get: { services.brandSettings.selectedCatalogBrand },
-                    set: { services.brandSettings.selectedCatalogBrand = $0 }
-                )
-            ) {
-                ForEach(sortedEnabledBrands) { brand in
-                    Text(brand.displayTitle).tag(brand)
-                }
-            }
-        } header: {
-            Text("Active Game")
-        } footer: {
-            Text("Changes which card game is used across browse, collection, and search.")
-        }
-
-        Section("Pricing") {
-            Picker("Show prices in", selection: Binding(
-                get: { services.priceDisplay.currency },
-                set: { services.priceDisplay.currency = $0 }
-            )) {
-                ForEach(PriceDisplayCurrency.allCases) { c in Text(c.pickerTitle).tag(c) }
-            }
-            Text("Catalog and history values from the server are in US dollars. Pounds use a daily exchange rate.")
-                .font(.caption).foregroundStyle(.secondary)
-        }
-
         Section("Premium") {
             if services.store.isPremium {
                 Label("Premium active", systemImage: "checkmark.seal.fill")
+                    .foregroundStyle(.green)
             } else {
-                Button("Unlock Premium") { showPaywall = true }
-            }
-            Button("Restore purchases") { Task { try? await services.store.restore() } }
-        }
-
-        CatalogSection(brandsAvailableToAdd: brandsAvailableToAdd, onAdd: addBrand, onDelete: requestBrandRemoval)
-    }
-
-    @ViewBuilder private var bottomSections: some View {
-        Section {
-            Button("Refresh catalog") {
-                Task { await services.performCatalogSyncAfterEnablingBrands() }
+                Button {
+                    showPaywall = true
+                } label: {
+                    Label("Unlock Premium", systemImage: "crown.fill")
+                }
             }
             Button {
-                Task {
-                    isForceRefreshInFlight = true
-                    await services.forceCardDataRefreshFromSettings()
-                    isForceRefreshInFlight = false
-                }
+                Task { try? await services.store.restore() }
             } label: {
-                HStack {
-                    if isForceRefreshInFlight {
-                        ProgressView()
-                            .controlSize(.small)
-                    }
-                    Text("Force Card Data Refresh")
-                }
+                Label("Restore purchases", systemImage: "arrow.clockwise")
             }
-            .disabled(isForceRefreshInFlight || services.isCatalogDownloadInProgress)
-        } header: {
-            Text("Catalog")
-        } footer: {
-            let timestampLine: String = {
-                guard let updatedAt = services.catalogCardsLastUpdatedAt else {
-                    return "Last card data update: Not yet recorded."
-                }
-                return "Last card data update: \(updatedAt.formatted(date: .abbreviated, time: .shortened))."
-            }()
-            Text("Re-checks the server for new sets and cards. Use this if a recently released set appears in the list but shows no cards.\n\(timestampLine)")
         }
 
         Section {
-            Button("Export Data") { showDataExport = true }
+            Button {
+                showDataExport = true
+            } label: {
+                Label("Export Data", systemImage: "square.and.arrow.up")
+            }
+            Button(role: .destructive) {
+                showForceRedownloadPrompt = true
+            } label: {
+                Label("Force Re-download Catalog", systemImage: "arrow.triangle.2.circlepath")
+            }
         } header: {
             Text("Data")
+        } footer: {
+            Text("Use this when catalog fields change (for example new set metadata) and you need a full fresh download.")
         }
 
         Section {
@@ -196,7 +212,11 @@ struct SettingsView: View {
         }
 
         Section {
-            Button("Legal Disclaimer") { showDisclaimer = true }
+            Button {
+                showDisclaimer = true
+            } label: {
+                Label("Legal Disclaimer", systemImage: "doc.text")
+            }
         }
 
         if let diagnostic = services.cloudSettings.cloudKitDiagnostic,
@@ -272,4 +292,3 @@ private struct CatalogSection: View {
         }
     }
 }
-

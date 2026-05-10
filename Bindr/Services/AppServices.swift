@@ -412,6 +412,31 @@ final class AppServices {
         await refreshCatalogCardsLastUpdatedAtFromStore()
     }
 
+    /// Settings action: hard reset local catalog SQLite payloads for enabled brands, then fully re-download.
+    func forceCatalogRedownloadFromSettings() async {
+        guard !isCatalogDownloadInProgress else { return }
+        pricing.clearSetPricingMemoryCache()
+        isCatalogDownloadInProgress = true
+        catalogDownloadShowsByteProgressUI = false
+        catalogDownloadMessage = "Re-downloading catalog data…"
+        catalogDownloadStatus = "Clearing local catalog cache…"
+        catalogDownloadProgress = 0
+        catalogDownloadDownloadedBytes = 0
+        catalogDownloadEstimatedTotalBytes = 0
+        await Task.yield()
+
+        let enabled = brandSettings.enabledBrands
+        for brand in enabled {
+            try? await BrandCatalogMaintenance.purgeLocalData(for: brand)
+        }
+
+        catalogDownloadStatus = "Downloading fresh catalog data…"
+        isCatalogDownloadInProgress = false
+        await performCatalogSyncAfterEnablingBrands()
+        await cardData.reloadAfterBrandChange()
+        await refreshCatalogCardsLastUpdatedAtFromStore()
+    }
+
     /// Call this from your root view with the model context
     func setupWishlist(modelContext: ModelContext) {
         socialSyncModelContext = modelContext

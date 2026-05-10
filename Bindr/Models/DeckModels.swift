@@ -59,6 +59,14 @@ private func deckModelHasLegalRegulationMark(_ card: DeckCard, format: DeckForma
     return card.isBasicEnergy
 }
 
+private func deckModelIsBasicPokemon(_ card: DeckCard) -> Bool {
+    if card.isBasicPokemon { return true }
+    guard (card.catalogCategory ?? "").lowercased() == "pokémon" else { return false }
+    if (card.catalogStage ?? "").lowercased() == "basic" { return true }
+    if (card.catalogSubtype ?? "").lowercased().contains("basic") { return true }
+    return false
+}
+
 private func onePieceDeckCopyLimitIdentity(for card: DeckCard) -> (key: String, label: String) {
     let trimmedSet = card.setKey.trimmingCharacters(in: .whitespacesAndNewlines)
     let rawID = card.cardID.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -279,7 +287,7 @@ enum DeckFormat: String, Codable, CaseIterable {
         }
 
         // Must contain at least one Basic Pokémon
-        let hasBasicPokemon = cardList.contains { $0.isBasicPokemon }
+        let hasBasicPokemon = cardList.contains { deckModelIsBasicPokemon($0) }
         if !hasBasicPokemon {
             issues.append("Deck must contain at least 1 Basic Pokémon")
         }
@@ -370,6 +378,7 @@ enum DeckFormat: String, Codable, CaseIterable {
     var isBasicPokemon: Bool = false
     var isRuleBox: Bool = false
     var setKey: String = ""
+    var localId: String? = nil
     var regulationMark: String? = nil
     var elementTypes: [String]? = nil
     var trainerType: String? = nil
@@ -402,6 +411,7 @@ enum DeckFormat: String, Codable, CaseIterable {
         isBasicPokemon: Bool = false,
         isRuleBox: Bool = false,
         setKey: String = "",
+        localId: String? = nil,
         regulationMark: String? = nil,
         elementTypes: [String]? = nil,
         trainerType: String? = nil,
@@ -424,6 +434,7 @@ enum DeckFormat: String, Codable, CaseIterable {
         self.isBasicPokemon = isBasicPokemon
         self.isRuleBox = isRuleBox
         self.setKey = setKey
+        self.localId = localId
         self.regulationMark = regulationMark
         self.elementTypes = elementTypes
         self.trainerType = trainerType

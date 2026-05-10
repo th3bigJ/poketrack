@@ -8,14 +8,14 @@ struct ScannerBulkAddSheet: View {
 
     let results: [ScanResult]
     @Binding var selectedVariantsByResultID: [UUID: String]
-    @Binding var selectedQuantitiesByResultID: [UUID: Int]
+    @Binding var selectedVariantQuantitiesByResultID: [UUID: [String: Int]]
     /// Called on the main actor after a successful add, before the sheet dismisses (clear scan session).
     var onSuccessClearSession: () -> Void = {}
 
-    /// Per-card acquisition (default `.packed` when unset).
-    @State private var acquisitionByResultID: [UUID: CollectionAcquisitionKind] = [:]
-    /// Per-card bought prices keyed by ScanResult.id
-    @State private var pricesByResultID: [UUID: String] = [:]
+    /// Per-card + per-variant acquisition (default `.packed` when unset).
+    @State private var acquisitionByResultID: [UUID: [String: CollectionAcquisitionKind]] = [:]
+    /// Per-card + per-variant bought prices keyed by ScanResult.id + variant key.
+    @State private var pricesByResultID: [UUID: [String: String]] = [:]
     @State private var errorMessage: String?
     @State private var isSaving = false
     @State private var successCount = 0
@@ -40,13 +40,10 @@ struct ScannerBulkAddSheet: View {
                         BulkAddCardRow(
                             result: result,
                             variants: variants(for: result.card),
-                            variantKey: variantBinding(for: result),
-                            quantity: quantityBinding(for: result),
-                            acquisitionKind: acquisitionBinding(for: result.id),
-                            priceText: Binding(
-                                get: { pricesByResultID[result.id] ?? "" },
-                                set: { pricesByResultID[result.id] = $0 }
-                            ),
+                            selectedVariantKey: variantBinding(for: result),
+                            variantQuantities: variantQuantitiesBinding(for: result),
+                            acquisitionByVariant: acquisitionByVariantBinding(for: result),
+                            pricesByVariant: pricesByVariantBinding(for: result),
                             currencySymbol: currencySymbol
                         )
                     }
@@ -99,7 +96,15 @@ struct ScannerBulkAddSheet: View {
     }
 
     private var canSave: Bool {
-        !results.contains { acquisition(for: $0.id) == .trade }
+        !results.contains { result in
+            let quantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
+            let selected = quantities.filter { $0.value > 0 }
+            return selected.keys.contains { acquisition(for: result.id, variantKey: $0) == .trade }
+        } &&
+        results.contains { result in
+            let quantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
+            return quantities.values.contains(where: { $0 > 0 })
+        }
     }
 
     private func variants(for card: Card) -> [String] {
@@ -107,8 +112,8 @@ struct ScannerBulkAddSheet: View {
         return ["normal"]
     }
 
-    private func acquisition(for id: UUID) -> CollectionAcquisitionKind {
-        acquisitionByResultID[id] ?? .packed
+    private func acquisition(for id: UUID, variantKey: String) -> CollectionAcquisitionKind {
+        acquisitionByResultID[id]?[variantKey] ?? .packed
     }
 
     private func variantBinding(for result: ScanResult) -> Binding<String> {
@@ -122,17 +127,34 @@ struct ScannerBulkAddSheet: View {
         )
     }
 
-    private func acquisitionBinding(for id: UUID) -> Binding<CollectionAcquisitionKind> {
+    private func acquisitionByVariantBinding(for result: ScanResult) -> Binding<[String: CollectionAcquisitionKind]> {
         Binding(
-            get: { acquisition(for: id) },
-            set: { acquisitionByResultID[id] = $0 }
+            get: { acquisitionByResultID[result.id] ?? [:] },
+            set: { acquisitionByResultID[result.id] = $0 }
         )
     }
 
-    private func quantityBinding(for result: ScanResult) -> Binding<Int> {
+    private func pricesByVariantBinding(for result: ScanResult) -> Binding<[String: String]> {
         Binding(
-            get: { max(1, selectedQuantitiesByResultID[result.id] ?? 1) },
-            set: { selectedQuantitiesByResultID[result.id] = max(1, $0) }
+            get: { pricesByResultID[result.id] ?? [:] },
+            set: { pricesByResultID[result.id] = $0 }
+        )
+    }
+
+    private func variantDisplayName(_ key: String) -> String {
+        let spaced = key
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
+    }
+
+    private func variantQuantitiesBinding(for result: ScanResult) -> Binding<[String: Int]> {
+        Binding(
+            get: { selectedVariantQuantitiesByResultID[result.id] ?? [:] },
+            set: { selectedVariantQuantitiesByResultID[result.id] = $0 }
         )
     }
 
@@ -165,20 +187,23 @@ struct ScannerBulkAddSheet: View {
             return
         }
 
-        for result in results where acquisition(for: result.id) == .trade {
-            errorMessage = "Trades are not available yet. Change how you acquired \(result.card.cardName), or remove it from the scan."
-            return
-        }
-
         for result in results {
-            let kind = acquisition(for: result.id)
-            guard kind == .bought else { continue }
-            let text = pricesByResultID[result.id] ?? ""
-            let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !trimmed.isEmpty,
-                  Double(trimmed.replacingOccurrences(of: ",", with: ".")) != nil else {
-                errorMessage = "Enter a valid price paid for \(result.card.cardName)."
-                return
+            let quantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
+            let selected = quantities.filter { $0.value > 0 }
+            for (variantKey, _) in selected {
+                let kind = acquisition(for: result.id, variantKey: variantKey)
+                if kind == .trade {
+                    errorMessage = "Trades are not available yet. Change how you acquired \(result.card.cardName) (\(variantDisplayName(variantKey)))."
+                    return
+                }
+                guard kind == .bought else { continue }
+                let text = pricesByResultID[result.id]?[variantKey] ?? ""
+                let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+                guard !trimmed.isEmpty,
+                      Double(trimmed.replacingOccurrences(of: ",", with: ".")) != nil else {
+                    errorMessage = "Enter a valid price paid for \(result.card.cardName) (\(variantDisplayName(variantKey)))."
+                    return
+                }
             }
         }
 
@@ -187,68 +212,69 @@ struct ScannerBulkAddSheet: View {
         var firstError: String?
 
         for result in results {
-            let variantKey = selectedVariantsByResultID[result.id]
-                ?? result.card.pricingVariants?.first
-                ?? "normal"
-            let quantity = max(1, selectedQuantitiesByResultID[result.id] ?? 1)
-            let kind = acquisition(for: result.id)
+            let variantQuantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
+            let selectedEntries = variantQuantities.filter { $0.value > 0 }
+            guard !selectedEntries.isEmpty else { continue }
 
-            do {
-                switch kind {
-                case .bought:
-                    let text = pricesByResultID[result.id] ?? ""
-                    let unit = Double(text.trimmingCharacters(in: .whitespacesAndNewlines)
-                        .replacingOccurrences(of: ",", with: ".")) ?? 0
-                    try ledger.recordSingleCardAcquisition(
-                        cardID: result.card.masterCardId,
-                        variantKey: variantKey,
-                        kind: .bought,
-                        quantity: quantity,
-                        currencyCode: currencyCode,
-                        cardDisplayName: result.card.cardName,
-                        unitPrice: unit,
-                        packedOpenedFrom: nil,
-                        tradeCounterparty: nil,
-                        tradeGaveAway: nil,
-                        giftFrom: nil,
-                        boughtFrom: nil
-                    )
-                case .packed:
-                    try ledger.recordSingleCardAcquisition(
-                        cardID: result.card.masterCardId,
-                        variantKey: variantKey,
-                        kind: .packed,
-                        quantity: quantity,
-                        currencyCode: currencyCode,
-                        cardDisplayName: result.card.cardName,
-                        unitPrice: nil,
-                        packedOpenedFrom: nil,
-                        tradeCounterparty: nil,
-                        tradeGaveAway: nil,
-                        giftFrom: nil,
-                        boughtFrom: nil
-                    )
-                case .gifted:
-                    try ledger.recordSingleCardAcquisition(
-                        cardID: result.card.masterCardId,
-                        variantKey: variantKey,
-                        kind: .gifted,
-                        quantity: quantity,
-                        currencyCode: currencyCode,
-                        cardDisplayName: result.card.cardName,
-                        unitPrice: nil,
-                        packedOpenedFrom: nil,
-                        tradeCounterparty: nil,
-                        tradeGaveAway: nil,
-                        giftFrom: nil,
-                        boughtFrom: nil
-                    )
-                case .trade:
-                    continue
+            for (variantKey, quantity) in selectedEntries {
+                let kind = acquisition(for: result.id, variantKey: variantKey)
+                do {
+                    switch kind {
+                    case .bought:
+                        let text = pricesByResultID[result.id]?[variantKey] ?? ""
+                        let unit = Double(text.trimmingCharacters(in: .whitespacesAndNewlines)
+                            .replacingOccurrences(of: ",", with: ".")) ?? 0
+                        try ledger.recordSingleCardAcquisition(
+                            cardID: result.card.masterCardId,
+                            variantKey: variantKey,
+                            kind: .bought,
+                            quantity: quantity,
+                            currencyCode: currencyCode,
+                            cardDisplayName: result.card.cardName,
+                            unitPrice: unit,
+                            packedOpenedFrom: nil,
+                            tradeCounterparty: nil,
+                            tradeGaveAway: nil,
+                            giftFrom: nil,
+                            boughtFrom: nil
+                        )
+                    case .packed:
+                        try ledger.recordSingleCardAcquisition(
+                            cardID: result.card.masterCardId,
+                            variantKey: variantKey,
+                            kind: .packed,
+                            quantity: quantity,
+                            currencyCode: currencyCode,
+                            cardDisplayName: result.card.cardName,
+                            unitPrice: nil,
+                            packedOpenedFrom: nil,
+                            tradeCounterparty: nil,
+                            tradeGaveAway: nil,
+                            giftFrom: nil,
+                            boughtFrom: nil
+                        )
+                    case .gifted:
+                        try ledger.recordSingleCardAcquisition(
+                            cardID: result.card.masterCardId,
+                            variantKey: variantKey,
+                            kind: .gifted,
+                            quantity: quantity,
+                            currencyCode: currencyCode,
+                            cardDisplayName: result.card.cardName,
+                            unitPrice: nil,
+                            packedOpenedFrom: nil,
+                            tradeCounterparty: nil,
+                            tradeGaveAway: nil,
+                            giftFrom: nil,
+                            boughtFrom: nil
+                        )
+                    case .trade:
+                        continue
+                    }
+                    saved += quantity
+                } catch {
+                    if firstError == nil { firstError = error.localizedDescription }
                 }
-                saved += 1
-            } catch {
-                if firstError == nil { firstError = error.localizedDescription }
             }
         }
 
@@ -279,10 +305,10 @@ private struct BulkAddCardRow: View {
 
     let result: ScanResult
     let variants: [String]
-    @Binding var variantKey: String
-    @Binding var quantity: Int
-    @Binding var acquisitionKind: CollectionAcquisitionKind
-    @Binding var priceText: String
+    @Binding var selectedVariantKey: String
+    @Binding var variantQuantities: [String: Int]
+    @Binding var acquisitionByVariant: [String: CollectionAcquisitionKind]
+    @Binding var pricesByVariant: [String: String]
     let currencySymbol: String
 
     @State private var priceHint: String = "—"
@@ -316,7 +342,7 @@ private struct BulkAddCardRow: View {
                     Text(setDisplayName + " · #" + card.cardNumber)
                         .font(.caption2)
                         .foregroundStyle(.tertiary)
-                    if acquisitionKind != .bought {
+                    if activeAcquisitionKind != .bought {
                         Label {
                             Text("Market \(priceHint)")
                                 .font(.caption)
@@ -331,30 +357,49 @@ private struct BulkAddCardRow: View {
                 Spacer(minLength: 8)
             }
 
-            if variants.count > 1 {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Print / variant")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    Picker("Print / variant", selection: $variantKey) {
-                        ForEach(variants, id: \.self) { key in
-                            Text(variantDisplayName(key)).tag(key)
-                        }
-                    }
-                    .pickerStyle(.menu)
-                    .tint(.primary)
-                }
-            }
-
-            HStack {
-                Text("Quantity")
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Variants")
                     .font(.caption)
                     .foregroundStyle(.secondary)
-                Spacer()
+
+                ForEach(variants, id: \.self) { key in
+                    variantQuantityRow(for: key)
+                }
+            }
+        }
+        .padding(.vertical, 4)
+        .onAppear {
+            if selectedVariantKey.isEmpty {
+                selectedVariantKey = variants.first ?? "normal"
+            }
+        }
+        .task(id: "\(card.masterCardId)_\(selectedVariantKey)_\(activeAcquisitionKind.rawValue)") {
+            await loadPriceHint()
+        }
+    }
+
+    private var activeAcquisitionKind: CollectionAcquisitionKind {
+        acquisitionByVariant[selectedVariantKey] ?? .packed
+    }
+
+    private func variantQuantityRow(for key: String) -> some View {
+        let qty = max(0, variantQuantities[key] ?? 0)
+
+        let kind = acquisitionByVariant[key] ?? .packed
+
+        return VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 10) {
+                Text(variantDisplayName(key))
+                    .font(.subheadline.weight(.medium))
+                    .lineLimit(1)
+
+                Spacer(minLength: 8)
+
                 HStack(spacing: 10) {
                     Button {
-                        guard quantity > 1 else { return }
-                        quantity -= 1
+                        guard qty > 0 else { return }
+                        selectedVariantKey = key
+                        variantQuantities[key] = qty - 1
                         HapticManager.impact(.light)
                     } label: {
                         Image(systemName: "minus")
@@ -363,15 +408,16 @@ private struct BulkAddCardRow: View {
                             .background(Circle().fill(Color.primary.opacity(0.1)))
                     }
                     .buttonStyle(.plain)
-                    .disabled(quantity <= 1)
+                    .disabled(qty <= 0)
 
-                    Text("\(max(1, quantity))")
+                    Text("\(qty)")
                         .font(.subheadline.weight(.semibold))
                         .monospacedDigit()
                         .frame(minWidth: 24)
 
                     Button {
-                        quantity += 1
+                        selectedVariantKey = key
+                        variantQuantities[key] = qty + 1
                         HapticManager.impact(.light)
                     } label: {
                         Image(systemName: "plus")
@@ -383,73 +429,65 @@ private struct BulkAddCardRow: View {
                 }
             }
 
-            VStack(alignment: .leading, spacing: 6) {
-                Text("How acquired")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                Picker("How acquired", selection: $acquisitionKind) {
-                    ForEach(CollectionAcquisitionKind.allCases, id: \.self) { kind in
-                        Text(kind.title).tag(kind)
-                    }
-                }
-                .pickerStyle(.segmented)
-            }
+            if qty > 0 {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("How acquired")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
 
-            Group {
-                switch acquisitionKind {
-                case .bought:
-                    VStack(alignment: .leading, spacing: 6) {
+                    Picker("How acquired for \(variantDisplayName(key))", selection: Binding(
+                        get: { acquisitionByVariant[key] ?? .packed },
+                        set: { acquisitionByVariant[key] = $0 }
+                    )) {
+                        ForEach(CollectionAcquisitionKind.allCases, id: \.self) { kind in
+                            Text(kind.title).tag(kind)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+
+                    if kind == .bought {
                         HStack(alignment: .firstTextBaseline) {
                             Text("Price per unit")
+                                .font(.caption)
                                 .foregroundStyle(.secondary)
                             Spacer()
                             HStack(spacing: 6) {
                                 Text(currencySymbol)
                                     .foregroundStyle(.secondary)
-                                TextField("0.00", text: $priceText)
-                                    .keyboardType(.decimalPad)
-                                    .multilineTextAlignment(.trailing)
-                                    .frame(minWidth: 72)
+                                TextField("0.00", text: Binding(
+                                    get: { pricesByVariant[key] ?? "" },
+                                    set: { pricesByVariant[key] = $0 }
+                                ))
+                                .keyboardType(.decimalPad)
+                                .multilineTextAlignment(.trailing)
+                                .frame(minWidth: 72)
                             }
                         }
-                        .accessibilityElement(children: .combine)
-                        .accessibilityLabel("Price per unit")
-                        Text("Cost basis. Market estimate: \(priceHint).")
-                            .font(.caption)
-                            .foregroundStyle(.tertiary)
                     }
-                case .packed, .gifted:
-                    EmptyView()
-                case .trade:
-                    ContentUnavailableView(
-                        "Trades",
-                        systemImage: "arrow.left.arrow.right",
-                        description: Text("Trades are coming soon. Choose another option above.")
-                    )
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 4)
                 }
             }
         }
-        .padding(.vertical, 4)
-        .task(id: "\(card.masterCardId)_\(variantKey)_\(acquisitionKind.rawValue)") {
-            await loadPriceHint()
-        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 9)
+        .background(
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .fill((selectedVariantKey == key ? Color.primary.opacity(0.12) : Color.primary.opacity(0.06)))
+        )
     }
 
     private func loadPriceHint() async {
         if let usd = await services.pricing.usdPriceForVariantAndGrade(
-            for: card, variantKey: variantKey, grade: "raw"
+            for: card, variantKey: selectedVariantKey, grade: "raw"
         ) {
             let formatted = services.priceDisplay.currency.format(
                 amountUSD: usd, usdToGbp: services.pricing.usdToGbp
             )
             await MainActor.run { priceHint = formatted }
-            if priceText.isEmpty, acquisitionKind == .bought {
+            if (pricesByVariant[selectedVariantKey] ?? "").isEmpty, activeAcquisitionKind == .bought {
                 let raw = String(format: "%.2f", services.priceDisplay.currency == .gbp
                     ? usd * services.pricing.usdToGbp
                     : usd)
-                await MainActor.run { priceText = raw }
+                await MainActor.run { pricesByVariant[selectedVariantKey] = raw }
             }
         }
     }

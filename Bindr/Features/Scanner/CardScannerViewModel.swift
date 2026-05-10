@@ -99,6 +99,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     /// Minimum time after a finished scan (or attempted capture) before auto-capture can run again.
     private let autoCaptureMinInterval: TimeInterval = 2.0
     private var isAnalysingFrame = false        // prevent overlapping Vision calls
+    /// Token for the currently active OCR/search request. Replaced on each new scan and on cancel.
+    private var activeScanRequestID = UUID()
 
     // MARK: - Setup
 
@@ -142,6 +144,15 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         autoCaptureFrameCount = 0
     }
 
+    /// Cancels the current OCR/search cycle and returns scanner UI to idle.
+    func cancelCurrentScan() {
+        activeScanRequestID = UUID()
+        scanState = .idle
+        isCapturing = false
+        lastErrorMessage = nil
+        autoCaptureFrameCount = 0
+    }
+
     /// User chose a different catalog match for an existing scan (same OCR). Previous pick moves into alternatives.
     func replaceScanResult(id: UUID, with newCard: Card) {
         guard let i = scanResults.firstIndex(where: { $0.id == id }) else { return }
@@ -160,6 +171,13 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     func undoLastScan() {
         guard !scanResults.isEmpty else { return }
         scanResults.removeFirst()
+        autoCaptureFrameCount = 0
+    }
+
+    /// Removes a specific scan result by id. No-op when id is not found.
+    func removeScanResult(id: UUID) {
+        guard let idx = scanResults.firstIndex(where: { $0.id == id }) else { return }
+        scanResults.remove(at: idx)
         autoCaptureFrameCount = 0
     }
 
@@ -258,6 +276,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     // MARK: - Still image → Vision
 
     private func processStillImage(_ image: UIImage) {
+        let requestID = UUID()
+        activeScanRequestID = requestID
         scanState = .scanning
 
         guard let fullCG = image.cgImage else {
@@ -277,35 +297,36 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             }
             onePieceHashSourceImage = debugImage
             Task { [weak self] in
-                await self?.performOnePieceOCR(on: correctedCG)
+                await self?.performOnePieceOCR(on: correctedCG, requestID: requestID)
             }
         } else {
             let ocrCGImage = preprocessCardForOCR(croppedCG) ?? croppedCG
-            performOCR(on: ocrCGImage)
+            performOCR(on: ocrCGImage, requestID: requestID)
         }
     }
 
-    private func performOnePieceOCR(on correctedCG: CGImage) async {
+    private func performOnePieceOCR(on correctedCG: CGImage, requestID: UUID) async {
         let footerCG = correctedCG.croppingToBottomFraction(onePieceOCRFraction) ?? correctedCG
         let effectCG = correctedCG.croppingBetweenTopFractions(onePieceEffectBandStart, onePieceEffectBandEnd) ?? correctedCG
         async let footerObs = recognizeText(in: footerCG)
         async let effectObs = recognizeText(in: effectCG)
         let (footerObservations, effectObservations) = await (footerObs, effectObs)
-        handleOnePieceTextObservations(footerObservations, effectObservations: effectObservations)
+        handleOnePieceTextObservations(footerObservations, effectObservations: effectObservations, requestID: requestID)
     }
 
-    private func performOCR(on ocrCGImage: CGImage) {
+    private func performOCR(on ocrCGImage: CGImage, requestID: UUID) {
         DispatchQueue.global(qos: .userInitiated).async {
             Task { [weak self] in
                 let observations = await self?.recognizeText(in: ocrCGImage) ?? []
                 if observations.isEmpty, Task.isCancelled == false {
                     DispatchQueue.main.async { [weak self] in
-                        self?.scanState = .idle
-                        self?.lastErrorMessage = "Text recognition failed. Try better light or retake."
+                        guard let self, self.activeScanRequestID == requestID else { return }
+                        self.scanState = .idle
+                        self.lastErrorMessage = "Text recognition failed. Try better light or retake."
                     }
                     return
                 }
-                self?.handleTextObservations(observations)
+                self?.handleTextObservations(observations, requestID: requestID)
             }
         }
     }
@@ -427,9 +448,9 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
     // MARK: - OCR result parsing
 
-    private func handleTextObservations(_ observations: [VNRecognizedTextObservation]) {
+    private func handleTextObservations(_ observations: [VNRecognizedTextObservation], requestID: UUID) {
         if scanBrand == .onePiece {
-            handleOnePieceTextObservations(observations)
+            handleOnePieceTextObservations(observations, requestID: requestID)
             return
         }
         let sortedLines = CardOCRFieldExtractor.sortedLinesForDebug(from: observations)
@@ -468,14 +489,16 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 illustrator: fields.illustrator,
                 centerHint: fields.centerSearchHint,
                 numberCandidates: numberCandidates,
-                rawOCRBlob: rawBlob
+                rawOCRBlob: rawBlob,
+                requestID: requestID
             )
         }
     }
 
     private func handleOnePieceTextObservations(
         _ observations: [VNRecognizedTextObservation],
-        effectObservations: [VNRecognizedTextObservation] = []
+        effectObservations: [VNRecognizedTextObservation] = [],
+        requestID: UUID
     ) {
         let sortedLines = CardOCRFieldExtractor.sortedLinesForDebug(from: observations)
         let effectLines = CardOCRFieldExtractor.sortedLinesForDebug(from: effectObservations)
@@ -535,7 +558,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 effectText: fields.effectText,
                 numberCandidates: numberCandidates,
                 rawOCRBlob: ([rawBlob] + effectLines).filter { !$0.isEmpty }.joined(separator: "\n"),
-                debugHeader: headerWithCandidates
+                debugHeader: headerWithCandidates,
+                requestID: requestID
             )
         }
     }
@@ -659,7 +683,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         effectText: String?,
         numberCandidates: [String],
         rawOCRBlob: String?,
-        debugHeader: String
+        debugHeader: String,
+        requestID: UUID
     ) async {
         guard let service = cardDataService else { return }
         let brand = TCGBrand.onePiece
@@ -918,8 +943,9 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         guard let top = ranked.first else {
             setOnePieceDebug(debugHeader + searchSection + "\nResult: FAIL — empty pool after ranking.")
             await MainActor.run { [weak self] in
-                self?.scanState = .idle
-                self?.lastErrorMessage = "No catalog match for that text. Try again."
+                guard let self, self.activeScanRequestID == requestID else { return }
+                self.scanState = .idle
+                self.lastErrorMessage = "No catalog match for that text. Try again."
             }
             return
         }
@@ -961,6 +987,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         let finalSearchSection = searchSection
         await MainActor.run { [weak self] in
             guard let self else { return }
+            guard self.activeScanRequestID == requestID else { return }
             scanState = .idle
             lastErrorMessage = nil
             autoCaptureFrameCount = 0
@@ -988,7 +1015,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     private func runSearch(
         cardName: String?, hp: String?, setNumber: String?,
         illustrator: String?, centerHint: String?,
-        numberCandidates: [String], rawOCRBlob: String?
+        numberCandidates: [String], rawOCRBlob: String?,
+        requestID: UUID
     ) async {
         guard let service = cardDataService else { return }
         /// Must match the brand the user picked in the scanner — not `BrandSettings.selectedCatalogBrand` (browse tab).
@@ -1032,8 +1060,9 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
         guard let top = ranked.first else {
             await MainActor.run { [weak self] in
-                self?.scanState = .idle
-                self?.lastErrorMessage = "No catalog match for that text. Try again."
+                guard let self, self.activeScanRequestID == requestID else { return }
+                self.scanState = .idle
+                self.lastErrorMessage = "No catalog match for that text. Try again."
             }
             return
         }
@@ -1042,6 +1071,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
         await MainActor.run { [weak self] in
             guard let self else { return }
+            guard self.activeScanRequestID == requestID else { return }
             scanState = .idle
             lastErrorMessage = nil
             autoCaptureFrameCount = 0

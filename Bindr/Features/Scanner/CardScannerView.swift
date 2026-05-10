@@ -40,8 +40,8 @@ struct CardScannerView: View {
     @AppStorage("scanner.captureMode") private var captureModeRawValue: String = ScannerCaptureMode.auto.rawValue
     /// Variant selected in the overlay bar at the moment the user swiped up, keyed by ScanResult.id.
     @State private var selectedVariantsByResultID: [UUID: String] = [:]
-    /// Quantity selected per scanned card, keyed by ScanResult.id.
-    @State private var selectedQuantitiesByResultID: [UUID: Int] = [:]
+    /// Quantity selected per variant for each scanned card (resultID -> variantKey -> qty).
+    @State private var selectedVariantQuantitiesByResultID: [UUID: [String: Int]] = [:]
     @State private var showOnePieceDebugSheet = false
 
     /// Show ONE PIECE debug affordance when the active scanner brand is ONE PIECE.
@@ -61,6 +61,13 @@ struct CardScannerView: View {
         guard !permissionDenied, !isCameraPaused, !viewModel.isCapturing, viewModel.isCameraReady else { return false }
         if case .scanning = viewModel.scanState { return false }
         return true
+    }
+
+    private var canAddCurrentScannedCard: Bool {
+        guard viewModel.scanResults.indices.contains(currentResultIndex) else { return false }
+        let resultID = viewModel.scanResults[currentResultIndex].id
+        let quantities = selectedVariantQuantitiesByResultID[resultID] ?? [:]
+        return quantities.values.contains(where: { $0 > 0 })
     }
 
     var body: some View {
@@ -84,8 +91,8 @@ struct CardScannerView: View {
                     } else if case .scanning = viewModel.scanState {
                         CardScannerReticle(
                             frameQuality: viewModel.frameQuality,
-                            isCapturing: true,
-                            hideQualityPill: false
+                            isCapturing: false,
+                            hideQualityPill: true
                         ) { rect in
                             viewModel.cardNormalizedRect = rect
                         }
@@ -104,10 +111,33 @@ struct CardScannerView: View {
                     if permissionDenied { permissionDeniedOverlay }
 
                     VStack {
-                        HStack {
+                        HStack(spacing: 0) {
+                            if captureMode == .auto {
+                                Button {
+                                    isCameraPaused.toggle()
+                                    if isCameraPaused {
+                                        viewModel.stopSession()
+                                    } else {
+                                        viewModel.startSession()
+                                    }
+                                    HapticManager.impact(.light)
+                                } label: {
+                                    Image(systemName: isCameraPaused ? "play.circle.fill" : "pause.circle.fill")
+                                        .font(.system(size: 30))
+                                        .foregroundStyle(.white, .black.opacity(0.45))
+                                        .animation(.easeInOut(duration: 0.2), value: isCameraPaused)
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel(isCameraPaused ? "Resume camera" : "Pause camera")
+                                .frame(width: 40, alignment: .leading)
+                            } else {
+                                Color.clear.frame(width: 40, height: 1)
+                            }
+
                             Spacer(minLength: 0)
                             captureModeToggle
                             Spacer(minLength: 0)
+                            Color.clear.frame(width: 40, height: 1)
                         }
                         .padding(.top, ScannerSheetLayout.statusBarHeight + 10)
                         .padding(.horizontal, 16)
@@ -158,12 +188,13 @@ struct CardScannerView: View {
                     if !viewModel.scanResults.isEmpty {
                         ScannerValueLabel(
                             results: viewModel.scanResults,
-                            selectedVariantsByResultID: selectedVariantsByResultID
+                            selectedVariantsByResultID: selectedVariantsByResultID,
+                            selectedVariantQuantitiesByResultID: selectedVariantQuantitiesByResultID
                         )
                         .transition(AnyTransition.opacity.combined(with: AnyTransition.move(edge: .bottom)))
                     }
 
-                    // Pause / resume button — bottom-trailing of camera area
+                    // Bottom-trailing controls
                     VStack {
                         Spacer(minLength: 0)
                         HStack {
@@ -185,22 +216,28 @@ struct CardScannerView: View {
                                     .accessibilityLabel("ONE PIECE scan debug")
                                 }
 
-                                Button {
-                                    isCameraPaused.toggle()
-                                    if isCameraPaused {
-                                        viewModel.stopSession()
-                                    } else {
-                                        viewModel.startSession()
+                                if !viewModel.scanResults.isEmpty {
+                                    Button {
+                                        guard canAddCurrentScannedCard else { return }
+                                        showBulkAddSheet = true
+                                        HapticManager.impact(.medium)
+                                    } label: {
+                                        Text("Add to collection")
+                                            .font(.subheadline.weight(.semibold))
+                                            .foregroundStyle(.white)
+                                            .padding(.horizontal, 14)
+                                            .padding(.vertical, 9)
+                                            .background(services.theme.accentColor, in: Capsule())
+                                            .overlay(
+                                                Capsule()
+                                                    .strokeBorder(services.theme.accentColor.opacity(0.4), lineWidth: 1)
+                                            )
+                                            .opacity(canAddCurrentScannedCard ? 1 : 0.5)
                                     }
-                                    HapticManager.impact(.light)
-                                } label: {
-                                    Image(systemName: isCameraPaused ? "play.circle.fill" : "pause.circle.fill")
-                                        .font(.system(size: 30))
-                                        .foregroundStyle(.white, .black.opacity(0.45))
-                                        .animation(.easeInOut(duration: 0.2), value: isCameraPaused)
+                                    .buttonStyle(.plain)
+                                    .disabled(!canAddCurrentScannedCard)
+                                    .accessibilityLabel("Add to collection")
                                 }
-                                .buttonStyle(.plain)
-                                .accessibilityLabel(isCameraPaused ? "Resume camera" : "Pause camera")
                             }
                             .padding(.trailing, 16)
                             .padding(.bottom, 14)
@@ -225,10 +262,19 @@ struct CardScannerView: View {
                             currentResultIndex: $currentResultIndex,
                             barDragOffset: $barDragOffset,
                             selectedVariantsByResultID: $selectedVariantsByResultID,
-                            selectedQuantitiesByResultID: $selectedQuantitiesByResultID,
-                            onSwipeUp: { showDetailSheet = true },
+                            selectedVariantQuantitiesByResultID: $selectedVariantQuantitiesByResultID,
                             onOpenDetails: { showDetailSheet = true },
-                            onAddAllToCollection: { showBulkAddSheet = true },
+                            onDeleteResult: { id in
+                                viewModel.removeScanResult(id: id)
+                                selectedVariantsByResultID[id] = nil
+                                selectedVariantQuantitiesByResultID[id] = nil
+                                let count = viewModel.scanResults.count
+                                if count == 0 {
+                                    currentResultIndex = 0
+                                } else {
+                                    currentResultIndex = min(currentResultIndex, count - 1)
+                                }
+                            },
                             onPickAlternative: { id, picked in
                                 viewModel.replaceScanResult(id: id, with: picked)
                             }
@@ -330,11 +376,11 @@ struct CardScannerView: View {
                 ScannerBulkAddSheet(
                     results: viewModel.scanResults,
                     selectedVariantsByResultID: $selectedVariantsByResultID,
-                    selectedQuantitiesByResultID: $selectedQuantitiesByResultID,
+                    selectedVariantQuantitiesByResultID: $selectedVariantQuantitiesByResultID,
                     onSuccessClearSession: {
                         viewModel.clearAllScanResults()
                         selectedVariantsByResultID = [:]
-                        selectedQuantitiesByResultID = [:]
+                        selectedVariantQuantitiesByResultID = [:]
                         currentResultIndex = 0
                     }
                 )
@@ -376,25 +422,47 @@ struct CardScannerView: View {
     @ViewBuilder
     private func scannerScanningOverlay(geo: GeometryProxy) -> some View {
         if case .scanning = viewModel.scanState {
-            VStack {
-                HStack {
-                    Spacer(minLength: 0)
-                    HStack(spacing: 6) {
+            let cardW = geo.size.width * ScannerCardFrameLayout.reticleWidthFraction
+            let cardH = cardW * ScannerCardFrameLayout.cardAspectHeightOverWidth
+            let cardCenterY = ((geo.size.height - cardH) / 2 - ScannerCardFrameLayout.verticalCenterBias) + (cardH / 2)
+
+            ZStack {
+                HStack(spacing: 10) {
+                    HStack(spacing: 8) {
                         ProgressView().tint(.white).scaleEffect(0.8)
-                        Text("Identifying…")
+                        Text("Scanning…")
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(.white)
                     }
                     .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
+                    .padding(.vertical, 7)
                     .background(.thinMaterial, in: Capsule())
-                    Spacer(minLength: 0)
+
+                    Button {
+                        viewModel.cancelCurrentScan()
+                        HapticManager.impact(.light)
+                    } label: {
+                        Text("Cancel")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 7)
+                            .background(.black.opacity(0.35), in: Capsule())
+                            .overlay(
+                                Capsule()
+                                    .strokeBorder(Color.white.opacity(0.25), lineWidth: 1)
+                            )
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Cancel scanning")
                 }
-                .padding(.top, geo.safeAreaInsets.top + 8)
-                Spacer(minLength: 0)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 8)
+                .background(.black.opacity(0.28), in: Capsule())
+                .position(x: geo.size.width / 2, y: cardCenterY)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .allowsHitTesting(false)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .allowsHitTesting(true)
         }
     }
 
@@ -544,6 +612,7 @@ private struct ScannerValueLabel: View {
 
     let results: [ScanResult]
     let selectedVariantsByResultID: [UUID: String]
+    let selectedVariantQuantitiesByResultID: [UUID: [String: Int]]
 
     @State private var totalText: String = "—"
 
@@ -582,8 +651,10 @@ private struct ScannerValueLabel: View {
 
     private var taskID: String {
         results.map { r in
-            let v = selectedVariantsByResultID[r.id] ?? r.card.pricingVariants?.first ?? "normal"
-            return "\(r.card.masterCardId)_\(v)"
+            let quantities = selectedVariantQuantitiesByResultID[r.id] ?? [:]
+            let sorted = quantities.keys.sorted().map { "\($0):\(quantities[$0] ?? 0)" }.joined(separator: "|")
+            let selected = selectedVariantsByResultID[r.id] ?? ""
+            return "\(r.card.masterCardId)_\(selected)_\(sorted)"
         }.joined(separator: ",")
         + "_\(services.priceDisplay.currency.rawValue)_\(services.pricing.usdToGbp)"
     }
@@ -591,13 +662,13 @@ private struct ScannerValueLabel: View {
     private func refreshTotal() async {
         var total: Double = 0
         for result in results {
-            let variantKey = selectedVariantsByResultID[result.id]
-                ?? result.card.pricingVariants?.first
-                ?? "normal"
-            if let usd = await services.pricing.usdPriceForVariantAndGrade(
-                for: result.card, variantKey: variantKey, grade: "raw"
-            ) {
-                total += usd
+            let quantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
+            for (variantKey, quantity) in quantities where quantity > 0 {
+                if let usd = await services.pricing.usdPriceForVariantAndGrade(
+                    for: result.card, variantKey: variantKey, grade: "raw"
+                ) {
+                    total += usd * Double(quantity)
+                }
             }
         }
         let formatted = services.priceDisplay.currency.format(
@@ -721,10 +792,10 @@ private struct ScannerBrandPickPanel: View {
 private struct ScannerIdleInstructions: View {
     @State private var appeared = false
 
-    private let steps: [(icon: String, text: String)] = [
-        ("viewfinder.rectangular", "Align card to the frame above"),
-        ("square.on.square",       "Select variant and add to collection"),
-        ("arrow.up",               "Swipe up to view full card details"),
+    private let steps: [(icon: String, iconColor: Color, iconBackground: Color, title: String, subtitle: String)] = [
+        ("viewfinder.rectangular", Color.blue.opacity(0.9), Color.blue.opacity(0.28), "Align card to the frame above", "Position the card within the frame"),
+        ("square.on.square",       Color.green.opacity(0.9), Color.green.opacity(0.28), "Select variant and add to collection", "Choose the correct card and save"),
+        ("doc.text.magnifyingglass", Color.indigo.opacity(0.9), Color.indigo.opacity(0.28), "Scroll to browse all variants", "Tap card image for full card details"),
     ]
 
     var body: some View {
@@ -735,22 +806,38 @@ private struct ScannerIdleInstructions: View {
         VStack(spacing: 0) {
             Spacer(minLength: 0)
 
-            VStack(spacing: 20) {
+            VStack(spacing: 0) {
                 ForEach(Array(steps.enumerated()), id: \.offset) { i, step in
                     HStack(spacing: 14) {
                         ZStack {
-                            Circle()
-                                .fill(Color.white.opacity(0.08))
-                                .frame(width: 36, height: 36)
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .fill(step.iconBackground)
+                                .frame(width: 54, height: 54)
                             Image(systemName: step.icon)
-                                .font(.system(size: 15, weight: .semibold))
-                                .foregroundStyle(Color.white.opacity(0.75))
+                                .font(.system(size: 24, weight: .semibold))
+                                .foregroundStyle(step.iconColor)
                         }
-                        Text(step.text)
-                            .font(.subheadline.weight(.medium))
-                            .foregroundStyle(Color.white.opacity(0.65))
-                            .multilineTextAlignment(.leading)
+
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(step.title)
+                                .font(.headline.weight(.semibold))
+                                .foregroundStyle(Color.white.opacity(0.95))
+                            Text(step.subtitle)
+                                .font(.subheadline)
+                                .foregroundStyle(Color.white.opacity(0.65))
+                        }
                         Spacer(minLength: 0)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                    .background(Color.clear)
+                    .overlay(alignment: .bottom) {
+                        if i < steps.count - 1 {
+                            Rectangle()
+                                .fill(Color.white.opacity(0.08))
+                                .frame(height: 1)
+                                .padding(.leading, 84)
+                        }
                     }
                     .opacity(appeared ? 1 : 0)
                     .offset(y: appeared ? 0 : 10)
@@ -761,17 +848,16 @@ private struct ScannerIdleInstructions: View {
                     )
                 }
             }
-            .padding(.horizontal, 28)
-
-            Spacer(minLength: 0)
-
-            // Subtle divider hint at top
-            Capsule()
-                .fill(Color.white.opacity(0.15))
-                .frame(width: 36, height: 4)
-                .padding(.bottom, max(safeBottom, 16))
-                .opacity(appeared ? 1 : 0)
-                .animation(.easeOut(duration: 0.4).delay(0.25), value: appeared)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 26, style: .continuous)
+                    .strokeBorder(Color.white.opacity(0.14), lineWidth: 1)
+            }
+            .padding(.horizontal, 12)
+            .padding(.bottom, max(safeBottom, 12))
+            .opacity(appeared ? 1 : 0)
+            .offset(y: appeared ? 0 : 12)
+            .animation(.spring(response: 0.42, dampingFraction: 0.86), value: appeared)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .onAppear { appeared = true }
@@ -788,10 +874,9 @@ private struct ScannerResultsOverlay: View {
     @Binding var currentResultIndex: Int
     @Binding var barDragOffset: CGFloat
     @Binding var selectedVariantsByResultID: [UUID: String]
-    @Binding var selectedQuantitiesByResultID: [UUID: Int]
-    var onSwipeUp: () -> Void
+    @Binding var selectedVariantQuantitiesByResultID: [UUID: [String: Int]]
     var onOpenDetails: () -> Void
-    var onAddAllToCollection: () -> Void
+    let onDeleteResult: (UUID) -> Void
     let onPickAlternative: (UUID, Card) -> Void
 
     var body: some View {
@@ -802,25 +887,6 @@ private struct ScannerResultsOverlay: View {
             .first?.windows.first?.safeAreaInsets.bottom ?? 0)
 
         VStack(spacing: 8) {
-            // Drag indicator — also the swipe-up target
-            Capsule()
-                .fill(Color.primary.opacity(0.3))
-                .frame(width: 36, height: 5)
-                .padding(.top, 10)
-                .padding(.bottom, 4)
-                .frame(maxWidth: .infinity)
-                .contentShape(Rectangle().inset(by: -20))
-                .gesture(
-                    DragGesture(minimumDistance: 10)
-                        .onEnded { value in
-                            guard abs(value.translation.height) > abs(value.translation.width) else { return }
-                            if value.translation.height < -20 || value.predictedEndTranslation.height < -60 {
-                                HapticManager.impact(.light)
-                                onSwipeUp()
-                            }
-                        }
-                )
-
             ZStack {
                 ForEach(Array(results.enumerated()), id: \.element.id) { i, result in
                     let offset = CGFloat(i - currentResultIndex) * (screenWidth + 12) + barDragOffset
@@ -831,14 +897,14 @@ private struct ScannerResultsOverlay: View {
                             onPickAlternative(result.id, picked)
                         },
                         onOpenDetails: onOpenDetails,
-                        onAddAllToCollection: onAddAllToCollection,
+                        onDelete: { onDeleteResult(result.id) },
                         selectedVariant: Binding(
-                            get: { selectedVariantsByResultID[result.id] ?? result.card.pricingVariants?.first ?? "normal" },
+                            get: { selectedVariantsByResultID[result.id] ?? "" },
                             set: { selectedVariantsByResultID[result.id] = $0 }
                         ),
-                        selectedQuantity: Binding(
-                            get: { max(1, selectedQuantitiesByResultID[result.id] ?? 1) },
-                            set: { selectedQuantitiesByResultID[result.id] = max(1, $0) }
+                        selectedVariantQuantities: Binding(
+                            get: { selectedVariantQuantitiesByResultID[result.id] ?? [:] },
+                            set: { selectedVariantQuantitiesByResultID[result.id] = $0 }
                         )
                     )
                     .fixedSize(horizontal: false, vertical: true)
@@ -863,26 +929,15 @@ private struct ScannerResultsOverlay: View {
                         .animation(.spring(response: 0.2), value: currentResultIndex)
                 }
             }
-            .padding(.bottom, safeBottom > 0 ? safeBottom : 16)
+            .padding(.bottom, max(safeBottom, 2))
         }
         .frame(width: screenWidth)
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 10)
-                .onEnded { value in
-                    guard value.translation.height < 0 else { return }
-                    guard abs(value.translation.height) > abs(value.translation.width) else { return }
-                    if value.translation.height < -20 || value.predictedEndTranslation.height < -60 {
-                        HapticManager.impact(.light)
-                        onSwipeUp()
-                    }
-                }
-        )
         .background {
             UnevenRoundedRectangle(
-                topLeadingRadius: 20,
+                topLeadingRadius: 0,
                 bottomLeadingRadius: ScannerSheetLayout.deviceCornerRadius,
                 bottomTrailingRadius: ScannerSheetLayout.deviceCornerRadius,
-                topTrailingRadius: 20,
+                topTrailingRadius: 0,
                 style: .continuous
             )
             .fill(.regularMaterial)

@@ -12,6 +12,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
     let name: String
     /// File stem for card JSON and pricing (e.g. `me3`).
     let setKey: String?
+    let setAbbreviation: String?
     let code: String?
     let tcgdexId: String?
     let releaseDate: String?
@@ -24,10 +25,25 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
 
     enum CodingKeys: String, CodingKey {
         case internalId = "id"
-        case name, setKey, code, tcgdexId, releaseDate
+        case name, setKey, setAbbreviation, code, tcgdexId, releaseDate
         case cardCountTotal, cardCountOfficial, seriesName
         case logoSrc, symbolSrc
         case scannerEnExpansionNumber
+    }
+
+    private struct AnyCodingKey: CodingKey {
+        let stringValue: String
+        let intValue: Int?
+
+        init?(stringValue: String) {
+            self.stringValue = stringValue
+            self.intValue = nil
+        }
+
+        init?(intValue: Int) {
+            self.stringValue = String(intValue)
+            self.intValue = intValue
+        }
     }
 
     init(from decoder: Decoder) throws {
@@ -35,6 +51,22 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         internalId = try c.decode(String.self, forKey: .internalId)
         name = try c.decode(String.self, forKey: .name)
         setKey = try c.decodeIfPresent(String.self, forKey: .setKey)
+        if let camel = try c.decodeIfPresent(String.self, forKey: .setAbbreviation), !camel.isEmpty {
+            setAbbreviation = camel
+        } else {
+            let raw = try decoder.container(keyedBy: AnyCodingKey.self)
+            let candidates = ["set_abbreviation", "abbreviation", "ptcglSetCode", "ptcgl_set_code"]
+            var resolved: String?
+            for key in candidates {
+                guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
+                if let value = try raw.decodeIfPresent(String.self, forKey: codingKey),
+                   !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    resolved = value
+                    break
+                }
+            }
+            setAbbreviation = resolved
+        }
         code = try c.decodeIfPresent(String.self, forKey: .code)
         tcgdexId = try c.decodeIfPresent(String.self, forKey: .tcgdexId)
         releaseDate = try c.decodeIfPresent(String.self, forKey: .releaseDate)
@@ -51,6 +83,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         internalId: String,
         name: String,
         setKey: String?,
+        setAbbreviation: String? = nil,
         code: String?,
         tcgdexId: String?,
         releaseDate: String?,
@@ -64,6 +97,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         self.internalId = internalId
         self.name = name
         self.setKey = setKey
+        self.setAbbreviation = setAbbreviation
         self.code = code
         self.tcgdexId = tcgdexId
         self.releaseDate = releaseDate

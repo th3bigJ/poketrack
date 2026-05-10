@@ -592,9 +592,13 @@ struct RootView: View {
 
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
                 floatingSearchBar(hiddenOffset: chromeSearchBarHiddenOffset, topInset: chromeSearchBarTopInset, bottomInset: chromeSearchBarBottomInset)
-                    .popover(isPresented: $showSettings) {
-                        SettingsView()
-                            .environment(services)
+                    .sheet(isPresented: $showSettings) {
+                        NavigationStack {
+                            SettingsView()
+                                .environment(services)
+                        }
+                        .presentationDetents([.large])
+                        .presentationDragIndicator(.visible)
                     }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

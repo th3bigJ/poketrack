@@ -124,11 +124,11 @@ final class CatalogStore: @unchecked Sendable {
         try migrateCardSchemaIfNeededLocked()
     }
 
-    /// Bump when catalog card JSON structure changes so both franchises re-download into SQLite.
-    /// This catches new fields (e.g. abilities / rules / flavor text) even when `sets.json` is unchanged.
+    /// Bump when catalog payload structure changes so franchises re-download into SQLite.
+    /// This catches new fields (e.g. set abbreviations, abilities / rules / flavor text) even when cache fingerprints linger.
     private func migrateCardSchemaIfNeededLocked() throws {
         guard let db else { throw CatalogStoreError.notOpen }
-        let currentVersion = 1
+        let currentVersion = 2
         var stmt: OpaquePointer?
         defer { sqlite3_finalize(stmt) }
         guard sqlite3_prepare_v2(db, "SELECT value FROM sync_meta WHERE key = 'catalog_card_schema_version' LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return }

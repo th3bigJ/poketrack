@@ -99,11 +99,13 @@ struct MoreView: View {
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
                 }
-                .popover(isPresented: $showSettings) {
+                .sheet(isPresented: $showSettings) {
                     NavigationStack {
                         SettingsView()
                             .environment(services)
                     }
+                    .presentationDetents([.large])
+                    .presentationDragIndicator(.visible)
                 }
 
                 Spacer(minLength: 0)

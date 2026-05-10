@@ -247,6 +247,7 @@ struct DecksRootView: View {
                 isBasicPokemon: card.isBasicPokemon,
                 isRuleBox: card.isRuleBox,
                 setKey: card.setKey,
+                localId: card.localId,
                 regulationMark: card.regulationMark,
                 elementTypes: card.elementTypes,
                 trainerType: card.trainerType,

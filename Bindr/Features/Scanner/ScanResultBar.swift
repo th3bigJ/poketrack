@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ScanResultBar: View {
     @Environment(AppServices.self) private var services
-    @Environment(\.colorScheme) private var colorScheme
 
     let result: ScanResult
     /// Only the centered page should show expanded UI; others stay compact while off-screen.
@@ -11,16 +10,15 @@ struct ScanResultBar: View {
     var onPickAlternative: (Card) -> Void
     /// Opens the full card detail sheet.
     var onOpenDetails: () -> Void
-    /// Opens the bulk add-to-collection sheet for all scanned cards.
-    var onAddAllToCollection: () -> Void
+    /// Removes this scanned result from the list.
+    var onDelete: () -> Void
     /// Bound to the parent so the selected variant is readable when swiping up.
     @Binding var selectedVariant: String
-    /// Quantity selected for this scan result.
-    @Binding var selectedQuantity: Int
+    /// Quantity selected per variant for this scan result.
+    @Binding var selectedVariantQuantities: [String: Int]
     @State private var showWrongCardSheet = false
-    /// Market price for `selectedVariant` (raw), formatted with `PriceDisplaySettings`.
-    @State private var barVariantPriceText: String = "—"
-    @State private var wishlistFeedback: WishlistFeedback?
+    /// Market prices keyed by variant, formatted with `PriceDisplaySettings`.
+    @State private var barVariantPriceTextByKey: [String: String] = [:]
 
     private var card: Card { result.card }
     private var setDisplayName: String {
@@ -28,123 +26,57 @@ struct ScanResultBar: View {
             ?? card.setCode.uppercased()
     }
 
-    private var collectionPlusGlyphColor: Color {
-        colorScheme == .dark ? .white : Color.primary
-    }
-
-    /// Filled wishlist star — matches `CardBrowseDetailView` (gold, not accent blue).
-    private static let wishlistStarGold = Color(red: 0.98, green: 0.78, blue: 0.18)
-
-    private var isCurrentVariantWishlisted: Bool {
-        guard let wl = services.wishlist else { return false }
-        _ = wl.items
-        return wl.isInWishlist(cardID: card.masterCardId, variantKey: selectedVariant)
-    }
-
-    private enum WishlistFeedback {
-        case added, removed, alreadyExists, limitReached, error(String)
-
-        var message: String {
-            switch self {
-            case .added:         return "Added to wishlist"
-            case .removed:       return "Removed from wishlist"
-            case .alreadyExists: return "Already in wishlist"
-            case .limitReached:  return "Wishlist limit reached"
-            case .error(let e):  return e
-            }
-        }
-        var icon: String {
-            switch self {
-            case .added:         return "checkmark.circle.fill"
-            case .removed:       return "checkmark.circle.fill"
-            case .alreadyExists: return "checkmark.circle"
-            case .limitReached:  return "exclamationmark.circle.fill"
-            case .error:         return "xmark.circle.fill"
-            }
-        }
-        var color: Color {
-            switch self {
-            case .added, .removed:       return .green
-            case .alreadyExists:         return .secondary
-            case .limitReached, .error:  return .orange
-            }
-        }
-    }
-
     private var variants: [String] {
         if let v = card.pricingVariants, !v.isEmpty { return v }
         return ["normal"]
     }
 
-    /// One print → single add; multiple → menu.
-    private var singleVariantForActions: String? {
-        variants.count == 1 ? variants.first : nil
-    }
-
     var body: some View {
         VStack(spacing: 0) {
-            // Card row
-            HStack(spacing: 14) {
+            HStack(alignment: .top, spacing: 14) {
                 cardThumbnail
                 cardInfo
                 Spacer(minLength: 8)
-                Text(barVariantPriceText)
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundStyle(.primary)
-                    .monospacedDigit()
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
-                    .multilineTextAlignment(.trailing)
-                    .frame(maxWidth: 120, alignment: .trailing)
+                VStack(alignment: .trailing, spacing: 8) {
+                    wrongCardButton
+                    deleteCardButton
+                }
             }
+            .padding(.top, 10)
             .padding(.horizontal, 16)
 
-            HStack(alignment: .top, spacing: 12) {
-                if variants.count > 1 {
-                    variantPicker
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                } else {
-                    Spacer(minLength: 0)
-                }
-                quantitySelector
-            }
-            .padding(.top, 14)
-            .padding(.horizontal, 16)
-
-            if variants.count > 1 {
-                Text("Select a variant before adding to collection")
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, 6)
-                    .padding(.horizontal, 16)
-            }
-
-            if let feedback = wishlistFeedback {
-                HStack(spacing: 6) {
-                    Image(systemName: feedback.icon).foregroundStyle(feedback.color)
-                    Text(feedback.message).font(.subheadline).foregroundStyle(.primary)
-                }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 8)
-                .padding(.horizontal, 16)
+            Text("Select variant and add to collection")
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(.primary)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 10)
-                .transition(.move(edge: .bottom).combined(with: .opacity))
-            }
-
-            actionButtons
-                .padding(.top, 14)
                 .padding(.horizontal, 16)
-                .padding(.bottom, 18)
+
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 8) {
+                    ForEach(variants, id: \.self) { key in
+                        variantRow(key)
+                    }
+                }
+                .padding(.bottom, 6)
+            }
+            .frame(maxHeight: 265)
+            .padding(.top, 8)
+            .padding(.horizontal, 16)
+
+            Spacer(minLength: 0)
         }
         .onAppear {
-            if selectedVariant.isEmpty { selectedVariant = variants.first ?? "normal" }
+            for key in variants where (selectedVariantQuantities[key] ?? 0) < 0 {
+                selectedVariantQuantities[key] = 0
+            }
         }
         .onChange(of: card.masterCardId) { _, _ in
-            selectedVariant = variants.first ?? "normal"
+            selectedVariant = ""
+            selectedVariantQuantities = [:]
         }
-        .task(id: "\(card.masterCardId)_\(selectedVariant)_\(services.priceDisplay.currency.rawValue)_\(services.pricing.usdToGbp)") {
-            await refreshBarVariantPrice()
+        .task(id: "\(card.masterCardId)_\(services.priceDisplay.currency.rawValue)_\(services.pricing.usdToGbp)") {
+            await refreshBarVariantPrices()
         }
         .sheet(isPresented: $showWrongCardSheet) {
             ScannerWrongCardAlternativesSheet(
@@ -175,6 +107,13 @@ struct ScanResultBar: View {
                 .frame(width: 52, height: 72)
         }
         .shadow(color: .black.opacity(0.4), radius: 6, y: 3)
+        .onTapGesture {
+            guard isCurrentPage else { return }
+            onOpenDetails()
+            HapticManager.impact(.light)
+        }
+        .accessibilityAddTraits(.isButton)
+        .accessibilityLabel("Open card details")
     }
 
     // MARK: - Card info
@@ -198,193 +137,134 @@ struct ScanResultBar: View {
         }
     }
 
-    // MARK: - Variant picker
-
-    private var variantPicker: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                ForEach(variants, id: \.self) { key in
-                    let isSelected = key == selectedVariant
-                    Button {
-                        selectedVariant = key
-                        HapticManager.impact(.light)
-                    } label: {
-                        Text(variantDisplayName(key))
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(isSelected ? Color(uiColor: .systemBackground) : .primary)
-                            .padding(.horizontal, 12)
-                            .padding(.vertical, 6)
-                            .background(Capsule().fill(isSelected ? Color.primary : Color.primary.opacity(0.1)))
-                    }
-                    .buttonStyle(.plain)
-                    .animation(.spring(response: 0.25, dampingFraction: 0.8), value: selectedVariant)
-                }
+    private var wrongCardButton: some View {
+        Button {
+            guard isCurrentPage else { return }
+            showWrongCardSheet = true
+            HapticManager.impact(.light)
+        } label: {
+            HStack(spacing: 7) {
+                Image(systemName: "questionmark.circle.fill")
+                    .font(.system(size: 15, weight: .semibold))
+                Text("Wrong card?")
+                    .font(.subheadline.weight(.semibold))
             }
+            .foregroundStyle(.primary)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 8)
+            .frame(width: 128)
+            .background(.thinMaterial, in: Capsule())
+            .overlay(Capsule().strokeBorder(Color.white.opacity(0.14), lineWidth: 1))
         }
+        .buttonStyle(.plain)
     }
 
-    private var quantitySelector: some View {
-        HStack(spacing: 10) {
+    private var deleteCardButton: some View {
+        Button {
+            guard isCurrentPage else { return }
+            onDelete()
+            HapticManager.impact(.light)
+        } label: {
+            HStack(spacing: 6) {
+                Image(systemName: "trash")
+                    .font(.system(size: 13, weight: .semibold))
+                Text("Delete")
+                    .font(.caption.weight(.semibold))
+            }
+            .foregroundStyle(Color.red.opacity(0.95))
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .frame(width: 128)
+            .background(Color.red.opacity(0.12), in: Capsule())
+            .overlay(Capsule().strokeBorder(Color.red.opacity(0.25), lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Delete scanned card")
+    }
+
+    private func quantitySelector(for key: String) -> some View {
+        let quantity = max(0, selectedVariantQuantities[key] ?? 0)
+
+        return HStack(spacing: 10) {
             Button {
-                guard selectedQuantity > 1 else { return }
-                selectedQuantity -= 1
+                guard quantity > 0 else { return }
+                selectedVariant = key
+                selectedVariantQuantities[key] = max(0, quantity - 1)
                 HapticManager.impact(.light)
             } label: {
                 Image(systemName: "minus")
                     .font(.caption.weight(.bold))
-                    .frame(width: 28, height: 28)
+                    .frame(width: 34, height: 34)
                     .background(Circle().fill(Color.primary.opacity(0.1)))
             }
             .buttonStyle(.plain)
-            .disabled(selectedQuantity <= 1)
+            .disabled(quantity <= 0)
 
-            Text("\(max(1, selectedQuantity))")
+            Text("\(quantity)")
                 .font(.subheadline.weight(.semibold))
                 .monospacedDigit()
                 .frame(minWidth: 22)
 
             Button {
-                selectedQuantity += 1
+                selectedVariant = key
+                selectedVariantQuantities[key] = quantity + 1
                 HapticManager.impact(.light)
             } label: {
                 Image(systemName: "plus")
                     .font(.caption.weight(.bold))
-                    .frame(width: 28, height: 28)
+                    .frame(width: 34, height: 34)
                     .background(Circle().fill(Color.primary.opacity(0.1)))
             }
             .buttonStyle(.plain)
         }
-        .padding(.horizontal, 8)
-        .padding(.vertical, 6)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Quantity \(quantity)")
+    }
+
+    private func variantRow(_ key: String) -> some View {
+        let isSelected = (selectedVariantQuantities[key] ?? 0) > 0
+
+        return HStack(spacing: 10) {
+            Text(variantDisplayName(key))
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+            Spacer(minLength: 6)
+            Text(priceText(for: key))
+                .font(.headline.weight(.semibold))
+                .foregroundStyle(.primary)
+                .monospacedDigit()
+                .frame(minWidth: 68, alignment: .trailing)
+            quantitySelector(for: key)
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 7)
         .background(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(Color.primary.opacity(0.08))
+                .fill(isSelected ? Color.primary.opacity(0.12) : Color.primary.opacity(0.07))
         )
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("Quantity \(max(1, selectedQuantity))")
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .strokeBorder(isSelected ? Color.primary.opacity(0.16) : Color.clear, lineWidth: 1)
+        )
     }
 
-    // MARK: - Action buttons
-
-    private var actionButtons: some View {
-        HStack(spacing: 10) {
-            actionButton(icon: "questionmark.circle.fill", label: "Wrong card?", style: .secondary) {
-                guard isCurrentPage else { return }
-                showWrongCardSheet = true
-                HapticManager.impact(.light)
-            }
-            actionButton(icon: "info.circle.fill", label: "Card details", style: .secondary) {
-                guard isCurrentPage else { return }
-                onOpenDetails()
-                HapticManager.impact(.light)
-            }
-            actionButton(icon: "plus.circle.fill", label: "Add", style: .primary) {
-                guard isCurrentPage else { return }
-                onAddAllToCollection()
-                HapticManager.impact(.medium)
-            }
-        }
-    }
-
-    private var wishlistActionButton: some View {
-        Button {
-            guard isCurrentPage else { return }
-            toggleWishlist()
-        } label: {
-            VStack(spacing: 5) {
-                Image(systemName: isCurrentVariantWishlisted ? "star.fill" : "star")
-                    .font(.system(size: 20))
-                    .foregroundStyle(isCurrentVariantWishlisted ? Self.wishlistStarGold : .primary)
-                Text("Wishlist")
-                    .font(.system(size: 11, weight: .semibold))
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 12)
-            .foregroundStyle(.primary)
-            .background(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(Color.primary.opacity(0.08))
-            )
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(isCurrentVariantWishlisted ? "Remove from wishlist" : "Add to wishlist")
-    }
-
-    private enum ButtonStyle { case primary, secondary }
-
-    private func actionButton(icon: String, label: String, style: ButtonStyle, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            VStack(spacing: 5) {
-                Image(systemName: icon).font(.system(size: 20))
-                Text(label).font(.system(size: 11, weight: .semibold))
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 12)
-            .foregroundStyle(style == .primary ? Color(uiColor: .systemBackground) : .primary)
-            .background(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(style == .primary ? Color.primary : Color.primary.opacity(0.08))
-            )
-        }
-        .buttonStyle(.plain)
-    }
-
-    // MARK: - Wishlist
-
-    private func isVariantWishlisted(_ key: String) -> Bool {
-        guard let wl = services.wishlist else { return false }
-        _ = wl.items
-        return wl.isInWishlist(cardID: card.masterCardId, variantKey: key)
-    }
-
-    private func toggleWishlist() {
-        toggleWishlist(forVariantKey: selectedVariant)
-    }
-
-    private func toggleWishlist(forVariantKey key: String) {
-        guard let wishlist = services.wishlist else { return }
-        if isVariantWishlisted(key) {
-            do {
-                try wishlist.removeCardVariant(cardID: card.masterCardId, variantKey: key)
-                selectedVariant = key
-                show(feedback: .removed)
-                HapticManager.impact(.light)
-            } catch {
-                show(feedback: .error(error.localizedDescription))
-            }
-            return
-        }
-        do {
-            try wishlist.addItem(cardID: card.masterCardId, variantKey: key)
-            selectedVariant = key
-            show(feedback: .added)
-            HapticManager.impact(.medium)
-        } catch WishlistError.alreadyExists {
-            show(feedback: .alreadyExists)
-        } catch WishlistError.limitReached {
-            show(feedback: .limitReached)
-        } catch {
-            show(feedback: .error(error.localizedDescription))
-        }
-    }
-
-    private func show(feedback: WishlistFeedback) {
-        withAnimation(.spring(response: 0.3)) { wishlistFeedback = feedback }
-        Task {
-            try? await Task.sleep(for: .seconds(2))
-            withAnimation(.easeOut(duration: 0.25)) { wishlistFeedback = nil }
-        }
+    private func priceText(for key: String) -> String {
+        barVariantPriceTextByKey[key] ?? "—"
     }
 
     // MARK: - Bar price (selected variant, raw grade)
 
-    private func refreshBarVariantPrice() async {
-        let key = selectedVariant.isEmpty ? (variants.first ?? "normal") : selectedVariant
-        if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: key, grade: "raw") {
-            barVariantPriceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
-        } else {
-            barVariantPriceText = "—"
+    private func refreshBarVariantPrices() async {
+        var next: [String: String] = [:]
+        for key in variants {
+            if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: key, grade: "raw") {
+                next[key] = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
+            } else {
+                next[key] = "—"
+            }
         }
+        barVariantPriceTextByKey = next
     }
 
     // MARK: - Helpers

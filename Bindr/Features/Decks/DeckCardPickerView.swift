@@ -864,6 +864,7 @@ struct DeckCardPickerView: View {
                 isBasicPokemon: cardIsBasicPokemon,
                 isRuleBox: cardIsRuleBox,
                 setKey: card.setCode,
+                localId: card.localId ?? card.cardNumber ?? card.printedNumber,
                 regulationMark: card.regulationMark,
                 elementTypes: card.elementTypes,
                 trainerType: card.trainerType,

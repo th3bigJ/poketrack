@@ -109,43 +109,60 @@ struct ImportPTCGLSheet: View {
             
             for line in lines {
                 var foundCard: Card? = nil
+                let setToken = line.setCode.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
                 
-                // 1. Find the set by its PTCGL code (uppercase)
+                // 1. Find the set by its TCG Live abbreviation (preferred), then fallback tokens.
                 let targetSet = allSets.first { 
-                    $0.code?.uppercased() == line.setCode.uppercased() || 
-                    $0.setCode.uppercased() == line.setCode.uppercased() 
+                    $0.setAbbreviation?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased() == setToken ||
+                    $0.code?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased() == setToken ||
+                    $0.setCode.trimmingCharacters(in: .whitespacesAndNewlines).uppercased() == setToken
                 }
                 
                 if let foundSet = targetSet {
                     // 2. Load cards for that set
                     let setCards = await services.cardData.loadCards(forSetCode: foundSet.setCode)
                     
-                    // 3. Find card by number (strip leading zeros if needed)
-                    let normalizedNum = line.cardNumber.replacingOccurrences(of: "^0+", with: "", options: .regularExpression)
+                    // 3. Find card by number (treat padded and unpadded forms as equivalent).
+                    let normalizedNum = normalizedCardToken(line.cardNumber)
                     foundCard = setCards.first { 
-                        $0.cardNumber == line.cardNumber || 
-                        $0.cardNumber == normalizedNum ||
-                        $0.printedNumber == line.cardNumber
+                        normalizedCardToken($0.localId ?? "") == normalizedNum ||
+                        normalizedCardToken($0.cardNumber) == normalizedNum ||
+                        normalizedCardToken($0.printedNumber ?? "") == normalizedNum
                     }
                     
                     if foundCard == nil {
                         // Fallback 1: search by name in that set if number fails
-                        foundCard = setCards.first { $0.cardName.lowercased() == line.name.lowercased() }
+                        let targetName = normalizedPTCGLName(line.name)
+                        foundCard = setCards.first { normalizedPTCGLName($0.cardName) == targetName }
                     }
                 }
                 
                 if foundCard == nil {
                     // Fallback 2: Global search by name and number if set code matching failed or card not in set
-                    let normalizedNum = line.cardNumber.replacingOccurrences(of: "^0+", with: "", options: .regularExpression)
+                    let normalizedNum = normalizedCardToken(line.cardNumber)
                     let searchResults = await services.cardData.searchByName(query: line.name, catalogBrand: .pokemon)
                     foundCard = searchResults.first { 
-                        $0.cardNumber == line.cardNumber || 
-                        $0.cardNumber == normalizedNum ||
-                        $0.printedNumber == line.cardNumber
+                        normalizedCardToken($0.localId ?? "") == normalizedNum ||
+                        normalizedCardToken($0.cardNumber) == normalizedNum ||
+                        normalizedCardToken($0.printedNumber ?? "") == normalizedNum
                     }
+                }
+
+                if foundCard == nil,
+                   let inferredType = inferredBasicEnergyType(from: line.name) {
+                    foundCard = await resolveBasicEnergyFallback(
+                        inferredType: inferredType,
+                        importedNumberToken: line.cardNumber,
+                        allSets: allSets
+                    )
                 }
                 
                 if let card = foundCard {
+                    let isBasicPokemon = card.category?.lowercased() == "pokémon" && (
+                        card.stage?.lowercased() == "basic"
+                        || card.subtype?.lowercased().contains("basic") == true
+                        || card.subtypes?.contains(where: { $0.lowercased() == "basic" }) == true
+                    )
                     let deckCard = DeckCard(
                         cardID: card.masterCardId,
                         variantKey: "normal", 
@@ -154,9 +171,10 @@ struct ImportPTCGLSheet: View {
                         isBasicEnergy: card.category?.lowercased() == "energy" && card.subtype?.lowercased() == "basic",
                         isAceSpec: card.subtype?.lowercased().contains("ace spec") == true,
                         isRadiant: card.subtype?.lowercased().contains("radiant") == true,
-                        isBasicPokemon: card.stage?.lowercased() == "basic",
+                        isBasicPokemon: isBasicPokemon,
                         isRuleBox: card.subtypes?.contains(where: { ["ex", "v", "vmax", "vstar", "gx"].contains($0.lowercased()) }) == true,
                         setKey: card.setCode,
+                        localId: card.localId ?? card.cardNumber ?? card.printedNumber,
                         regulationMark: card.regulationMark,
                         elementTypes: card.elementTypes,
                         trainerType: card.trainerType,
@@ -182,6 +200,92 @@ struct ImportPTCGLSheet: View {
             
             isImporting = false
             dismiss()
+        }
+    }
+
+    private func normalizedPTCGLName(_ raw: String) -> String {
+        var out = raw.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        out = out.replacingOccurrences(of: #"\{[a-z]\}"#, with: "", options: .regularExpression)
+        out = out.replacingOccurrences(of: #"\s+"#, with: " ", options: .regularExpression).trimmingCharacters(in: .whitespacesAndNewlines)
+        if out.hasPrefix("basic "), out.hasSuffix(" energy") {
+            out = String(out.dropFirst("basic ".count))
+        }
+        return out
+    }
+
+    private func normalizedCardToken(_ raw: String) -> String {
+        let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return "" }
+        let stripped = trimmed.replacingOccurrences(of: "^0+", with: "", options: .regularExpression)
+        return stripped.isEmpty ? "0" : stripped
+    }
+
+    private func inferredBasicEnergyType(from importedName: String) -> String? {
+        if let symbolRange = importedName.range(of: #"\{([A-Z])\}"#, options: .regularExpression) {
+            let token = String(importedName[symbolRange])
+                .replacingOccurrences(of: "{", with: "")
+                .replacingOccurrences(of: "}", with: "")
+                .uppercased()
+            switch token {
+            case "G": return "Grass"
+            case "R": return "Fire"
+            case "W": return "Water"
+            case "L": return "Lightning"
+            case "P": return "Psychic"
+            case "F": return "Fighting"
+            case "D": return "Darkness"
+            case "M": return "Metal"
+            case "N": return "Dragon"
+            case "Y": return "Fairy"
+            case "C": return "Colorless"
+            default: break
+            }
+        }
+
+        let lower = importedName.lowercased()
+        if lower.contains("grass") { return "Grass" }
+        if lower.contains("fire") { return "Fire" }
+        if lower.contains("water") { return "Water" }
+        if lower.contains("lightning") { return "Lightning" }
+        if lower.contains("psychic") { return "Psychic" }
+        if lower.contains("fighting") { return "Fighting" }
+        if lower.contains("dark") { return "Darkness" }
+        if lower.contains("metal") { return "Metal" }
+        if lower.contains("dragon") { return "Dragon" }
+        if lower.contains("fairy") { return "Fairy" }
+        if lower.contains("colorless") { return "Colorless" }
+        return nil
+    }
+
+    private func resolveBasicEnergyFallback(
+        inferredType: String,
+        importedNumberToken: String,
+        allSets: [TCGSet]
+    ) async -> Card? {
+        guard let meeSet = allSets.first(where: {
+            $0.setAbbreviation?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased() == "MEE"
+            || $0.code?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased() == "MEE"
+            || $0.setCode.trimmingCharacters(in: .whitespacesAndNewlines).uppercased() == "MEE"
+        }) else {
+            return nil
+        }
+
+        let meeCards = await services.cardData.loadCards(forSetCode: meeSet.setCode)
+        let normalizedNum = normalizedCardToken(importedNumberToken)
+
+        return meeCards.first {
+            ($0.category?.lowercased() == "energy")
+            && ($0.energyType?.lowercased() == "basic")
+            && ($0.elementTypes?.first?.lowercased() == inferredType.lowercased())
+            && (
+                normalizedCardToken($0.localId ?? "") == normalizedNum
+                || normalizedCardToken($0.cardNumber) == normalizedNum
+                || normalizedCardToken($0.printedNumber ?? "") == normalizedNum
+            )
+        } ?? meeCards.first {
+            ($0.category?.lowercased() == "energy")
+            && ($0.energyType?.lowercased() == "basic")
+            && ($0.elementTypes?.first?.lowercased() == inferredType.lowercased())
         }
     }
 }
