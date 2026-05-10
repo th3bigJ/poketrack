@@ -314,9 +314,13 @@ struct BinderCoverView: View {
     private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
         let isCharacter = binder.embossModeKind == .character
         let cardW: CGFloat = isCharacter ? 230 * scale : 248 * scale
-        // Larger offsets = more dramatic 3D depth
-        let shadowOff: CGFloat = 3.5 * scale
-        let hiOff: CGFloat = 3.5 * scale
+        
+        // Character mode: Sharp and dramatic (high contrast)
+        // Card mode: Softer and subtler (low noise)
+        let shadowOff: CGFloat = (isCharacter ? 3.5 : 2.0) * scale
+        let hiOff: CGFloat = (isCharacter ? 3.5 : 2.0) * scale
+        let detailBlur: CGFloat = isCharacter ? 0 : 1.2 // Blur cards slightly to hide messy text/lines
+        let baseContrast: CGFloat = isCharacter ? 5.0 : 2.5
 
         return CachedAsyncImage(
             url: url,
@@ -324,65 +328,64 @@ struct BinderCoverView: View {
         ) { img in
             ZStack {
                 // ── Plate: a slightly darkened inset "die" behind the stamp ──
-                // Creates the illusion the image is pressed INTO the surface
                 img.resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: cardW)
                     .grayscale(1)
-                    .contrast(4.0)
-                    .brightness(-0.9)   // Near black
-                    .opacity(0.18)
+                    .contrast(isCharacter ? 4.0 : 1.5)
+                    .brightness(isCharacter ? -0.9 : -0.2)
+                    .opacity(isCharacter ? 0.18 : 0.08)
                     .blendMode(.multiply)
 
                 // ── Shadow layer: dark copy shifted top-left ──
-                // Where the image is raised, the far edge casts shadow
                 img.resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: cardW)
                     .grayscale(1)
-                    .contrast(5.0)
-                    .brightness(-1.0)   // Black
-                    .opacity(0.65)
+                    .contrast(baseContrast)
+                    .brightness(-1.0)
+                    .blur(radius: detailBlur * scale)
+                    .opacity(isCharacter ? 0.65 : 0.35)
                     .offset(x: -shadowOff, y: -shadowOff)
                     .blendMode(.multiply)
 
                 // ── Highlight layer: white copy shifted bottom-right ──
-                // Where the image is raised, top-right light catches the edge
                 img.resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: cardW)
                     .grayscale(1)
-                    .contrast(5.0)
-                    .brightness(1.0)    // White
-                    .opacity(0.75)
+                    .contrast(baseContrast)
+                    .brightness(1.0)
+                    .blur(radius: detailBlur * scale)
+                    .opacity(isCharacter ? 0.75 : 0.45)
                     .offset(x: hiOff, y: hiOff)
                     .blendMode(.screen)
 
-                // ── Mid layer: centred slightly transparent, ties it together ──
+                // ── Mid layer: centred slightly transparent ──
                 img.resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: cardW)
                     .grayscale(1)
-                    .contrast(3.0)
-                    .brightness(-0.1)
-                    .opacity(0.40)
+                    .contrast(isCharacter ? 3.0 : 1.5)
+                    .brightness(isCharacter ? -0.1 : 0.0)
+                    .opacity(isCharacter ? 0.40 : 0.25)
                     .blendMode(.overlay)
 
                 // ── Colour tint: a whisper of original art colour ──
                 img.resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: cardW)
-                    .grayscale(isCharacter ? 0.0 : 0.5)  // Pokémon PNGs: keep more colour
-                    .saturation(isCharacter ? 0.6 : 0.3)
-                    .opacity(isCharacter ? 0.28 : 0.12)
+                    .grayscale(isCharacter ? 0.0 : 0.6)
+                    .saturation(isCharacter ? 0.6 : 0.2)
+                    .opacity(isCharacter ? 0.28 : 0.10)
                     .blendMode(.softLight)
 
-                // ── Top-light sheen: linear gradient to sell the directional light ──
+                // ── Top-light sheen ──
                 LinearGradient(
                     colors: [
-                        Color.white.opacity(0.10),
+                        Color.white.opacity(isCharacter ? 0.10 : 0.05),
                         Color.clear,
-                        Color.black.opacity(0.08)
+                        Color.black.opacity(isCharacter ? 0.08 : 0.04)
                     ],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
@@ -392,22 +395,20 @@ struct BinderCoverView: View {
                 .blendMode(.overlay)
                 .allowsHitTesting(false)
             }
-            // Offscreen compositing — required for correct blend mode stacking
             .drawingGroup()
             .clipShape(RoundedRectangle(cornerRadius: isCharacter ? 2 * scale : 10 * scale, style: .continuous))
-            // Outer inset-shadow ring: makes the stamp look truly pressed in
             .overlay {
                 RoundedRectangle(cornerRadius: isCharacter ? 2 * scale : 10 * scale, style: .continuous)
                     .stroke(
                         LinearGradient(
-                            colors: [Color.black.opacity(0.25), Color.white.opacity(0.15)],
+                            colors: [Color.black.opacity(0.20), Color.white.opacity(0.10)],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
                         ),
-                        lineWidth: 1.5 * scale
+                        lineWidth: (isCharacter ? 1.5 : 1.0) * scale
                     )
             }
-            .shadow(color: .black.opacity(0.30), radius: 4 * scale, x: 2 * scale, y: 3 * scale)
+            .shadow(color: .black.opacity(isCharacter ? 0.30 : 0.15), radius: 4 * scale, x: 2 * scale, y: 3 * scale)
         } placeholder: {
             ProgressView().controlSize(.small).opacity(0.3)
         }
