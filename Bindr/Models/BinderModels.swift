@@ -290,6 +290,8 @@ enum BinderEmbossMode: String, CaseIterable, Identifiable, Codable {
     
     /// Optional card featured (embossed) on the front cover.
     var embossedCardID: String?
+    /// Optional Pokémon image filename (from NationalDex) for character emboss mode.
+    var embossedPokemonImageUrl: String?
     /// Whether to emboss the full card or just the character/art.
     /// Stored as a raw value of ``BinderEmbossMode``.
     var embossMode: String = BinderEmbossMode.fullCard.rawValue

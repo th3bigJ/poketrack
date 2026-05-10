@@ -145,6 +145,7 @@ struct BinderCoverView: View {
             .onChange(of: binder.showCardPreview) { Task { await refreshAssets() } }
             .onChange(of: binder.embossedCardID) { Task { await refreshAssets() } }
             .onChange(of: binder.embossMode) { Task { await refreshAssets() } }
+            .onChange(of: binder.embossedPokemonImageUrl) { Task { await refreshAssets() } }
         }
     }
 
@@ -162,16 +163,33 @@ struct BinderCoverView: View {
             resolvedPeekingURLs = urls
         }
 
-        // 2. Resolve embossed art — prefer high-res for detail
-        if !binder.showCardPreview, let cardID = binder.embossedCardID {
-            if let card = await services.cardData.loadCard(masterCardId: cardID) {
+        // 2. Resolve embossed art
+        guard !binder.showCardPreview else { embossedURL = nil; return }
+
+        if binder.embossModeKind == .character {
+            // Character mode: use the Pokémon PNG if set, else fall back to card
+            if let imageUrl = binder.embossedPokemonImageUrl {
+                embossedURL = AppConfiguration.pokemonArtURL(imageFileName: imageUrl)
+            } else if let cardID = binder.embossedCardID,
+                      let card = await services.cardData.loadCard(masterCardId: cardID) {
                 let path = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false
                     ? card.imageHighSrc!.trimmingCharacters(in: .whitespacesAndNewlines)
                     : card.imageLowSrc
                 embossedURL = AppConfiguration.imageURL(relativePath: path)
+            } else {
+                embossedURL = nil
             }
         } else {
-            embossedURL = nil
+            // Full card mode: use the selected card
+            if let cardID = binder.embossedCardID,
+               let card = await services.cardData.loadCard(masterCardId: cardID) {
+                let path = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false
+                    ? card.imageHighSrc!.trimmingCharacters(in: .whitespacesAndNewlines)
+                    : card.imageLowSrc
+                embossedURL = AppConfiguration.imageURL(relativePath: path)
+            } else {
+                embossedURL = nil
+            }
         }
     }
 
@@ -295,50 +313,46 @@ struct BinderCoverView: View {
 
     private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
         let isCharacter = binder.embossModeKind == .character
-        let cardW: CGFloat = 290 * scale
-        // Full card: show the entire card shape. Character: zoom to top 55% (artwork box)
-        let cardH: CGFloat = isCharacter ? (cardW / 0.714) * 0.55 : cardW / 0.714
+        // Full card: preserve standard card aspect ratio (2.5" x 3.5" = 0.714)
+        // Character: Pokémon PNGs are transparent square-ish art, show them larger
+        let cardW: CGFloat = isCharacter ? 240 * scale : 250 * scale
 
-        return CachedAsyncImage(url: url, targetSize: CGSize(width: Int(cardW * 2), height: Int(cardH * 2))) { img in
+        return CachedAsyncImage(url: url, targetSize: CGSize(width: Int(cardW * 2), height: Int(cardW * 2))) { img in
             ZStack {
-                // ── Layer 1: Dark offset copy  (top-left = "pressed shadow") ──
+                // ── Layer 1: Dark offset copy (top-left = "pressed shadow") ──
                 img.resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: cardW, height: cardH, alignment: isCharacter ? .top : .center)
-                    .clipped()
+                    .aspectRatio(contentMode: isCharacter ? .fit : .fit)
+                    .frame(width: cardW, height: nil)
                     .grayscale(1)
-                    .brightness(-0.5)      // very dark
+                    .brightness(-0.5)
                     .opacity(0.55)
                     .offset(x: -1.5 * scale, y: -1.5 * scale)
                     .blendMode(.multiply)
 
                 // ── Layer 2: Light offset copy (bottom-right = "raised highlight") ──
                 img.resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: cardW, height: cardH, alignment: isCharacter ? .top : .center)
-                    .clipped()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: cardW, height: nil)
                     .grayscale(1)
-                    .brightness(0.6)       // very light
+                    .brightness(0.6)
                     .opacity(0.55)
                     .offset(x: 1.5 * scale, y: 1.5 * scale)
                     .blendMode(.screen)
 
-                // ── Layer 3: Base card at full colour, low opacity ──
-                // This lets you see the art "tinted" into the binder material
+                // ── Layer 3: Base art at partial grayscale ──
                 img.resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: cardW, height: cardH, alignment: isCharacter ? .top : .center)
-                    .clipped()
-                    .grayscale(0.7)
-                    .opacity(0.22)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: cardW, height: nil)
+                    .grayscale(isCharacter ? 0.3 : 0.7) // Pokémon art looks better with more colour
+                    .opacity(isCharacter ? 0.35 : 0.22)
                     .blendMode(.overlay)
             }
-            .clipShape(RoundedRectangle(cornerRadius: isCharacter ? 12 * scale : 8 * scale, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: isCharacter ? 0 : 8 * scale, style: .continuous))
         } placeholder: {
             ProgressView().controlSize(.small).opacity(0.3)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, 105 * scale)
+        .padding(.top, 100 * scale)
         .padding(.bottom, 30 * scale)
     }
 
