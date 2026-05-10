@@ -313,47 +313,107 @@ struct BinderCoverView: View {
 
     private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
         let isCharacter = binder.embossModeKind == .character
-        // Full card: preserve standard card aspect ratio (2.5" x 3.5" = 0.714)
-        // Character: Pokémon PNGs are transparent square-ish art, show them larger
-        let cardW: CGFloat = isCharacter ? 240 * scale : 250 * scale
+        let cardW: CGFloat = isCharacter ? 230 * scale : 248 * scale
+        // Larger offsets = more dramatic 3D depth
+        let shadowOff: CGFloat = 3.5 * scale
+        let hiOff: CGFloat = 3.5 * scale
 
-        return CachedAsyncImage(url: url, targetSize: CGSize(width: Int(cardW * 2), height: Int(cardW * 2))) { img in
+        return CachedAsyncImage(
+            url: url,
+            targetSize: CGSize(width: Int(cardW * 3), height: Int(cardW * 4))
+        ) { img in
             ZStack {
-                // ── Layer 1: Dark offset copy (top-left = "pressed shadow") ──
+                // ── Plate: a slightly darkened inset "die" behind the stamp ──
+                // Creates the illusion the image is pressed INTO the surface
                 img.resizable()
-                    .aspectRatio(contentMode: isCharacter ? .fit : .fit)
-                    .frame(width: cardW, height: nil)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: cardW)
                     .grayscale(1)
-                    .brightness(-0.5)
-                    .opacity(0.55)
-                    .offset(x: -1.5 * scale, y: -1.5 * scale)
+                    .contrast(4.0)
+                    .brightness(-0.9)   // Near black
+                    .opacity(0.18)
                     .blendMode(.multiply)
 
-                // ── Layer 2: Light offset copy (bottom-right = "raised highlight") ──
+                // ── Shadow layer: dark copy shifted top-left ──
+                // Where the image is raised, the far edge casts shadow
                 img.resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: cardW, height: nil)
+                    .frame(width: cardW)
                     .grayscale(1)
-                    .brightness(0.6)
-                    .opacity(0.55)
-                    .offset(x: 1.5 * scale, y: 1.5 * scale)
+                    .contrast(5.0)
+                    .brightness(-1.0)   // Black
+                    .opacity(0.65)
+                    .offset(x: -shadowOff, y: -shadowOff)
+                    .blendMode(.multiply)
+
+                // ── Highlight layer: white copy shifted bottom-right ──
+                // Where the image is raised, top-right light catches the edge
+                img.resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: cardW)
+                    .grayscale(1)
+                    .contrast(5.0)
+                    .brightness(1.0)    // White
+                    .opacity(0.75)
+                    .offset(x: hiOff, y: hiOff)
                     .blendMode(.screen)
 
-                // ── Layer 3: Base art at partial grayscale ──
+                // ── Mid layer: centred slightly transparent, ties it together ──
                 img.resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: cardW, height: nil)
-                    .grayscale(isCharacter ? 0.3 : 0.7) // Pokémon art looks better with more colour
-                    .opacity(isCharacter ? 0.35 : 0.22)
+                    .frame(width: cardW)
+                    .grayscale(1)
+                    .contrast(3.0)
+                    .brightness(-0.1)
+                    .opacity(0.40)
                     .blendMode(.overlay)
+
+                // ── Colour tint: a whisper of original art colour ──
+                img.resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: cardW)
+                    .grayscale(isCharacter ? 0.0 : 0.5)  // Pokémon PNGs: keep more colour
+                    .saturation(isCharacter ? 0.6 : 0.3)
+                    .opacity(isCharacter ? 0.28 : 0.12)
+                    .blendMode(.softLight)
+
+                // ── Top-light sheen: linear gradient to sell the directional light ──
+                LinearGradient(
+                    colors: [
+                        Color.white.opacity(0.10),
+                        Color.clear,
+                        Color.black.opacity(0.08)
+                    ],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .frame(width: cardW)
+                .aspectRatio(contentMode: .fit)
+                .blendMode(.overlay)
+                .allowsHitTesting(false)
             }
-            .clipShape(RoundedRectangle(cornerRadius: isCharacter ? 0 : 8 * scale, style: .continuous))
+            // Offscreen compositing — required for correct blend mode stacking
+            .drawingGroup()
+            .clipShape(RoundedRectangle(cornerRadius: isCharacter ? 2 * scale : 10 * scale, style: .continuous))
+            // Outer inset-shadow ring: makes the stamp look truly pressed in
+            .overlay {
+                RoundedRectangle(cornerRadius: isCharacter ? 2 * scale : 10 * scale, style: .continuous)
+                    .stroke(
+                        LinearGradient(
+                            colors: [Color.black.opacity(0.25), Color.white.opacity(0.15)],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: 1.5 * scale
+                    )
+            }
+            .shadow(color: .black.opacity(0.30), radius: 4 * scale, x: 2 * scale, y: 3 * scale)
         } placeholder: {
             ProgressView().controlSize(.small).opacity(0.3)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, 100 * scale)
-        .padding(.bottom, 30 * scale)
+        .padding(.top, 95 * scale)
+        .padding(.bottom, 25 * scale)
     }
 
     // MARK: - Peeking card thumbnail
