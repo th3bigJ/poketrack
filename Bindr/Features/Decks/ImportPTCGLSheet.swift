@@ -174,7 +174,7 @@ struct ImportPTCGLSheet: View {
                         isBasicPokemon: isBasicPokemon,
                         isRuleBox: card.subtypes?.contains(where: { ["ex", "v", "vmax", "vstar", "gx"].contains($0.lowercased()) }) == true,
                         setKey: card.setCode,
-                        localId: card.localId ?? card.cardNumber ?? card.printedNumber,
+                        localId: card.localId ?? card.cardNumber,
                         regulationMark: card.regulationMark,
                         elementTypes: card.elementTypes,
                         trainerType: card.trainerType,
