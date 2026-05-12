@@ -26,8 +26,10 @@ private final class ImageLoader {
             return
         }
 
-        if url == currentURL {
-            if image != nil { return }
+        // Only skip if URL is the same AND we have no local file to try.
+        // If localURL is provided (offline pack), always reload so we serve from disk.
+        if url == currentURL, image != nil, localURL == nil {
+            return
         }
 
         currentURL = url
@@ -118,6 +120,10 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
         return offlineContext?.localURL(for: url)
     }
 
+    private var taskID: String {
+        "\(url?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(offlineContext?.packDataRevision ?? 0)"
+    }
+
     var body: some View {
         Group {
             if let ui = loader.image,
@@ -130,7 +136,7 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
                 placeholder()
             }
         }
-        .task(id: url?.absoluteString ?? "") {
+        .task(id: taskID) {
             loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }
         .onDisappear {
@@ -167,6 +173,10 @@ struct CachedCardThumbnailImage: View {
         return true
     }
 
+    private var taskID: String {
+        "\(url?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(offlineContext?.packDataRevision ?? 0)"
+    }
+
     var body: some View {
         Group {
             if hasRenderableImage, let ui = loader.image {
@@ -178,7 +188,7 @@ struct CachedCardThumbnailImage: View {
                     .aspectRatio(5 / 7, contentMode: .fit)
             }
         }
-        .task(id: url?.absoluteString ?? "") {
+        .task(id: taskID) {
             loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }
         .onDisappear {

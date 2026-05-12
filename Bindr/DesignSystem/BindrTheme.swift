@@ -43,14 +43,19 @@ struct OfflineImageContext: Sendable {
     /// Whether the offline pack is enabled for the active brand (snapshot at inject time).
     let isOfflineEnabled: Bool
     let brand: TCGBrand?
+    /// Bumped by `OfflineImageDownloadService` when a pack write completes; including this in
+    /// image view task IDs ensures visible cells reload from disk once download finishes.
+    let packDataRevision: Int
 
     /// Returns the on-disk file URL for a remote image URL when offline mode is active.
     func localURL(for remoteURL: URL) -> URL? {
-        guard isOfflineEnabled,
-              let brand,
-              let key = AppConfiguration.offlineImageKey(for: remoteURL)
-        else { return nil }
-        return OfflineImageStore.shared.localFileURL(relativePath: key, brand: brand)
+        guard isOfflineEnabled, let brand else { return nil }
+        let store = OfflineImageStore.shared
+        if let key = AppConfiguration.offlineImageKey(for: remoteURL),
+           let local = store.localFileURL(relativePath: key, brand: brand) {
+            return local
+        }
+        return store.localFileURL(relativePath: remoteURL.absoluteString, brand: brand)
     }
 }
 

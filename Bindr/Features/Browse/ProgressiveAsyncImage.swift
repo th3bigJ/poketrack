@@ -30,7 +30,9 @@ private final class ProgressiveImageLoader {
     func load(lowResURL: URL?, highResURL: URL?, localLowResURL: URL? = nil) {
         loadTask?.cancel()
 
-        if lowResURL == currentLowURL && highResURL == currentHighURL {
+        // Skip reload only when URLs match, we already have an image, AND there's no local
+        // file to try — if localLowResURL is provided we always reload to serve from disk.
+        if lowResURL == currentLowURL && highResURL == currentHighURL && localLowResURL == nil {
             switch state {
             case .lowReady, .loadingHigh, .highReady:
                 return
@@ -233,7 +235,7 @@ struct ProgressiveAsyncImage<Placeholder: View>: View {
         .onChange(of: loader.readyImage) { _, image in
             if let image { onImageLoaded?(image) }
         }
-        .task(id: "\(lowResURL?.absoluteString ?? "")|\(highResURL?.absoluteString ?? "")") {
+        .task(id: "\(lowResURL?.absoluteString ?? "")|\(highResURL?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(offlineContext?.packDataRevision ?? 0)") {
             loader.load(lowResURL: lowResURL, highResURL: highResURL, localLowResURL: localLowResURL)
         }
         .onDisappear {
@@ -260,7 +262,7 @@ private final class OptimizedImageLoader {
             return
         }
 
-        if url == currentURL, image != nil { return }
+        if url == currentURL, image != nil, localURL == nil { return }
 
         currentURL = url
         self.targetSize = targetSize
@@ -347,7 +349,7 @@ struct OptimizedAsyncImage<Content: View, Placeholder: View>: View {
             }
         }
         .animation(.easeOut(duration: 0.18), value: loader.image != nil)
-        .task(id: url?.absoluteString ?? "") {
+        .task(id: "\(url?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(offlineContext?.packDataRevision ?? 0)") {
             loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }
         .onDisappear {

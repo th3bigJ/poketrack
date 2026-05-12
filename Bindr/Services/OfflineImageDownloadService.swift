@@ -1,39 +1,26 @@
 import Foundation
-import Network
 import Observation
 
-/// Wi‑Fi–only downloader for per-brand offline image packs; reconciles after catalog sync.
+/// Downloader for per-brand offline image packs; reconciles after catalog sync.
 @MainActor
 @Observable
 final class OfflineImageDownloadService {
     private let store = OfflineImageStore.shared
     private let settings: OfflineImageSettings
-    private let wifiMonitor = NWPathMonitor(requiredInterfaceType: .wifi)
-    private let wifiQueue = DispatchQueue(label: "com.bindr.offline.wifi")
 
-    /// Matches ``AppURLSession`` `httpMaximumConnectionsPerHost` — good parallelism without overwhelming R2.
-    private static let maxConcurrentImageDownloads = 10
+    private static let maxConcurrentImageDownloads = 2
 
-    private(set) var isWiFiAvailable = false
     /// Short status for Account UI (per brand).
     private(set) var statusLine: [TCGBrand: String] = [:]
     /// Bumped when any pack write finishes so `CachedAsyncImage` can reload from disk.
     private(set) var packDataRevision: Int = 0
-    /// Brands with an active download task. Image views use this to prefer R2/cache over disk during
-    /// the download window, avoiding blank cells for not-yet-saved files.
+    /// Brands with an active download task.
     private(set) var brandsDownloadingImages: Set<TCGBrand> = []
 
     private var downloadTasks: [TCGBrand: Task<Void, Never>] = [:]
 
     init(settings: OfflineImageSettings) {
         self.settings = settings
-        wifiMonitor.pathUpdateHandler = { [weak self] path in
-            let ok = path.status == .satisfied
-            Task { @MainActor [weak self] in
-                self?.isWiFiAvailable = ok
-            }
-        }
-        wifiMonitor.start(queue: wifiQueue)
     }
 
     func cancelDownload(for brand: TCGBrand) {
@@ -71,6 +58,14 @@ final class OfflineImageDownloadService {
         brandsDownloadingImages.insert(brand)
         defer { brandsDownloadingImages.remove(brand) }
 
+        // Ensure all sets have cards in the catalog before building the image inventory.
+        // Sets with no cards are skipped by the normal sync (only downloaded on first install).
+        let missingBefore = (try? await CatalogStore.shared.fetchSetCodesWithNoCards(for: brand))?.count ?? 0
+        statusLine[brand] = "Completing catalog (\(missingBefore) sets missing)…"
+        await CatalogSyncCoordinator.shared.fillMissingSetCards(for: brand)
+        let missingAfter = (try? await CatalogStore.shared.fetchSetCodesWithNoCards(for: brand))?.count ?? 0
+        statusLine[brand] = "Catalogued. \(missingBefore - missingAfter) sets filled, \(missingAfter) still empty. Building list…"
+
         let desired: [(String, URL)]
         do {
             desired = try await OfflineImageURLInventory.buildDesiredList(brand: brand, nationalDexPokemon: nationalDexPokemon)
@@ -78,6 +73,7 @@ final class OfflineImageDownloadService {
             statusLine[brand] = "Could not read catalog."
             return
         }
+        statusLine[brand] = "Found \(desired.count) images to check…"
 
         let desiredKeys = Set(desired.map(\.0))
         var didMutatePack = false
@@ -97,19 +93,10 @@ final class OfflineImageDownloadService {
         let toFetch = desired.filter { !store.hasEntry(relativePath: $0.0, brand: brand) }
         if toFetch.isEmpty {
             statusLine[brand] = "Offline images ready."
-            // Do not bump revision when nothing changed — otherwise every app launch re-runs every
-            // `CachedAsyncImage` / `ProgressiveAsyncImage` task and feels like images re-download.
             if didMutatePack {
                 packDataRevision += 1
             }
             return
-        }
-
-        let wifiWait: @Sendable () async -> Void = { [weak self] in
-            while await MainActor.run(body: { [weak self] in self?.isWiFiAvailable == false }) {
-                if Task.isCancelled { return }
-                try? await Task.sleep(nanoseconds: 1_500_000_000)
-            }
         }
 
         var completed = 0
@@ -122,7 +109,6 @@ final class OfflineImageDownloadService {
             for _ in 0..<initial {
                 guard let (key, url) = iterator.next() else { break }
                 group.addTask {
-                    await wifiWait()
                     if Task.isCancelled { return false }
                     return await Self.downloadAndSave(key: key, url: url, brand: brand)
                 }
@@ -132,9 +118,12 @@ final class OfflineImageDownloadService {
                 if Task.isCancelled { group.cancelAll(); return }
                 completed += 1
                 statusLine[brand] = "Downloading… \(completed)/\(total)"
+                // Flush manifest every 500 saves to persist progress without hammering disk.
+                if completed.isMultiple(of: 500) {
+                    try? OfflineImageStore.shared.flushManifest(for: brand)
+                }
                 if let (key, url) = iterator.next() {
                     group.addTask {
-                        await wifiWait()
                         if Task.isCancelled { return false }
                         return await Self.downloadAndSave(key: key, url: url, brand: brand)
                     }
@@ -143,9 +132,12 @@ final class OfflineImageDownloadService {
         }
 
         if Task.isCancelled {
+            // Flush whatever was saved before cancellation so progress isn't lost.
+            try? OfflineImageStore.shared.flushManifest(for: brand)
             return
         }
 
+        try? OfflineImageStore.shared.flushManifest(for: brand)
         statusLine[brand] = "Offline images ready."
         packDataRevision += 1
     }

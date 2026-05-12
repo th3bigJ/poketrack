@@ -270,6 +270,10 @@ private struct OfflineModeSection: View {
         services.offlineImageDownload.statusLine[brand]
     }
 
+    private var manifestCount: Int {
+        OfflineImageStore.shared.manifestKeys(for: brand).count
+    }
+
     var body: some View {
         Section {
             Toggle(isOn: Binding(
@@ -304,6 +308,11 @@ private struct OfflineModeSection: View {
                             .foregroundStyle(.secondary)
                     }
                 }
+            }
+            if isEnabled {
+                Text("\(manifestCount) images stored locally")
+                    .font(.caption.monospaced())
+                    .foregroundStyle(.secondary)
             }
         } header: {
             Text("Offline")

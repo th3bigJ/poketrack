@@ -234,6 +234,33 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         }
     }
 
+    /// Downloads card JSON for any sets that have no cards in the local catalog.
+    /// Called before building the offline image inventory so the inventory is complete.
+    func fillMissingSetCards(for brand: TCGBrand) async {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
+        let store = CatalogStore.shared
+        try? await store.open()
+        let emptyCodes: [String]
+        do {
+            emptyCodes = try await store.fetchSetCodesWithNoCards(for: brand)
+        } catch { return }
+        guard !emptyCodes.isEmpty else { return }
+
+        let sess = session
+        await withTaskGroup(of: Void.self) { group in
+            for code in emptyCodes {
+                group.addTask {
+                    let url = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
+                    guard let data = try? await sess.data(from: url).0,
+                          let cards = try? JSONDecoder().decode([Card].self, from: data),
+                          !cards.isEmpty
+                    else { return }
+                    try? await store.insertCards(cards, setCode: code, brand: brand)
+                }
+            }
+        }
+    }
+
     /// User-invoked settings action: checks per-set card JSON immediately (no 03:00 gate),
     /// then forces market pricing/history/trends and daily market blobs.
     /// Returns `true` when at least one payload changed in local SQLite.

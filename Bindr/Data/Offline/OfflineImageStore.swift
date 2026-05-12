@@ -76,25 +76,40 @@ final class OfflineImageStore: @unchecked Sendable {
         localFileURL(relativePath: relativePath, brand: brand) != nil
     }
 
-    /// Writes bytes for a canonical catalog-relative key and updates the manifest.
+    /// Writes bytes for a canonical catalog-relative key and updates the in-memory manifest.
+    /// The manifest is NOT flushed to disk here — call `flushManifest(for:)` periodically
+    /// or once after a batch completes to avoid writing manifest.json on every single save.
     func save(data: Data, relativePath: String, brand: TCGBrand) throws {
         let key = OfflineImageCanonicalKey.normalize(relativePath)
         guard !key.isEmpty else { return }
-        try io.sync {
-            var manifest = loadManifestLocked(for: brand) ?? OfflinePackManifest(entries: [:])
-            let files = try filesDir(for: brand)
-            let ext = (key as NSString).pathExtension
-            let baseName: String
-            if ext.isEmpty {
-                baseName = Self.stableFileName(for: key)
-            } else {
-                baseName = Self.stableFileName(for: key) + "." + ext
-            }
-            let dest = files.appendingPathComponent(baseName, isDirectory: false)
-            try data.write(to: dest, options: .atomic)
+
+        // Compute the destination path without holding the serial queue.
+        let ext = (key as NSString).pathExtension
+        let baseName = ext.isEmpty ? Self.stableFileName(for: key) : Self.stableFileName(for: key) + "." + ext
+        let files = try filesDir(for: brand)
+        let dest = files.appendingPathComponent(baseName, isDirectory: false)
+
+        // File write is independent per image — no need to serialize it.
+        try data.write(to: dest, options: .atomic)
+
+        // Only the manifest cache update needs the serial queue.
+        io.sync {
+            var manifest = manifestMemoryCache[brand] ?? OfflinePackManifest(entries: [:])
             manifest.entries[key] = baseName
-            try saveManifestLocked(manifest, brand: brand)
+            manifestMemoryCache[brand] = manifest
         }
+    }
+
+    /// Persists the current in-memory manifest to disk for `brand`.
+    /// Call this periodically during a large batch (e.g. every 500 saves) and once when done.
+    func flushManifest(for brand: TCGBrand) throws {
+        // Snapshot under the lock (fast), then encode + write outside it so the
+        // serial queue isn't blocked during the potentially slow disk write.
+        let snapshot: OfflinePackManifest? = io.sync { manifestMemoryCache[brand] }
+        guard let snapshot else { return }
+        let url = try manifestURL(for: brand)
+        let data = try encoder.encode(snapshot)
+        try data.write(to: url, options: .atomic)
     }
 
     /// Removes every file + manifest for a franchise.

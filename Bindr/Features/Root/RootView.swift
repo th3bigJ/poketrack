@@ -321,7 +321,8 @@ struct RootView: View {
             isOfflineEnabled: services.offlineImageSettings.isOfflinePackEnabled(
                 for: services.brandSettings.selectedCatalogBrand
             ),
-            brand: services.brandSettings.selectedCatalogBrand
+            brand: services.brandSettings.selectedCatalogBrand,
+            packDataRevision: services.offlineImageDownload.packDataRevision
         ))
         .environment(services)
         .environmentObject(chromeScroll)

@@ -1390,8 +1390,7 @@ struct DashboardView: View {
             guard let card = await services.cardData.loadCard(masterCardId: cardID) else { continue }
             nextNames[cardID] = card.cardName
             if nextImages[cardID] == nil {
-                let preferredPath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
-                nextImages[cardID] = AppConfiguration.imageURL(relativePath: preferredPath)
+                nextImages[cardID] = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
             }
 
             let brand = TCGBrand.inferredFromMasterCardId(cardID)
@@ -1456,12 +1455,11 @@ struct DashboardView: View {
             nextPriceBand[priceBandLabel(for: unitValue), default: 0] += quantity
 
             if let change7d = await sevenDayChangePercent(for: item, card: card) {
-                let preferredImagePath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
                 let mover = MarketTrendMover(
                     cardID: card.masterCardId,
                     displayName: card.cardName,
                     percentChange: change7d,
-                    imageURL: AppConfiguration.imageURL(relativePath: preferredImagePath)
+                    imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc)
                 )
                 if nextTopGainer == nil || change7d > (nextTopGainer?.percentChange ?? -.infinity) {
                     nextTopGainer = mover
@@ -1477,12 +1475,11 @@ struct DashboardView: View {
                 continue
             }
 
-            let preferredImagePath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
             nextMostExpensive = DashboardTopHolding(
                 cardID: card.masterCardId,
                 name: card.cardName,
                 setName: setNamesByCardID[card.masterCardId],
-                imageURL: AppConfiguration.imageURL(relativePath: preferredImagePath),
+                imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
                 unitValue: unitValue,
                 totalValue: totalValue,
                 quantity: quantity
@@ -2091,8 +2088,7 @@ struct DashboardView: View {
                 displayName = card.cardName
             }
             if imageURL == nil {
-                let preferredImagePath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
-                imageURL = AppConfiguration.imageURL(relativePath: preferredImagePath)
+                imageURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
             }
         } else if let candidateID = candidate.cardID {
             // Per-set trend files can use alternate card keys; do a best-effort match.
@@ -2124,8 +2120,7 @@ struct DashboardView: View {
                 resolvedCardID = matched.masterCardId
                 if displayName == nil { displayName = matched.cardName }
                 if imageURL == nil {
-                    let preferredImagePath = cleaned(matched.imageHighSrc) ?? matched.imageLowSrc
-                    imageURL = AppConfiguration.imageURL(relativePath: preferredImagePath)
+                    imageURL = AppConfiguration.imageURL(relativePath: matched.imageLowSrc)
                 }
             }
         }
