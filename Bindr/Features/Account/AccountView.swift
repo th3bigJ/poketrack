@@ -125,6 +125,8 @@ struct SettingsView: View {
 
         CatalogSection(brandsAvailableToAdd: brandsAvailableToAdd, onAdd: addBrand, onDelete: requestBrandRemoval)
 
+        OfflineModeSection()
+
         Section("Pricing") {
             Picker("Show prices in", selection: Binding(
                 get: { services.priceDisplay.currency },
@@ -253,6 +255,62 @@ struct SettingsView: View {
         brandPendingDisable = sorted[index]
     }
 
+}
+
+private struct OfflineModeSection: View {
+    @Environment(AppServices.self) private var services
+
+    private var brand: TCGBrand { services.brandSettings.selectedCatalogBrand }
+
+    private var isEnabled: Bool {
+        services.offlineImageSettings.isOfflinePackEnabled(for: brand)
+    }
+
+    private var statusLine: String? {
+        services.offlineImageDownload.statusLine[brand]
+    }
+
+    var body: some View {
+        Section {
+            Toggle(isOn: Binding(
+                get: { isEnabled },
+                set: { newValue in
+                    services.offlineImageSettings.setOfflinePackEnabled(newValue, for: brand)
+                    if newValue {
+                        Task {
+                            await services.offlineImageDownload.runFullDownloadIfNeeded(
+                                brand: brand,
+                                nationalDexPokemon: services.cardData.nationalDexPokemon
+                            )
+                        }
+                    } else {
+                        services.offlineImageDownload.cancelDownload(for: brand)
+                        Task {
+                            try? OfflineImageStore.shared.deleteAll(for: brand)
+                            services.offlineImageDownload.notifyPackMutated()
+                        }
+                    }
+                }
+            )) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Offline Mode")
+                    if let status = statusLine {
+                        Text(status)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    } else if !isEnabled {
+                        Text("Downloads \(OfflinePackDownloadSizeCopy.approximateLabel(for: brand)) of card images")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+        } header: {
+            Text("Offline")
+        } footer: {
+            Text("Downloads low-resolution card images to your device so they load without a network connection. High-resolution images in card details are still fetched when needed.")
+        }
+    }
 }
 
 private struct CatalogSection: View {

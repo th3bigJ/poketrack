@@ -317,6 +317,12 @@ struct RootView: View {
             }
         }
         .animation(.easeInOut(duration: 0.35), value: isLaunchSequenceComplete)
+        .environment(\.offlineImageContext, OfflineImageContext(
+            isOfflineEnabled: services.offlineImageSettings.isOfflinePackEnabled(
+                for: services.brandSettings.selectedCatalogBrand
+            ),
+            brand: services.brandSettings.selectedCatalogBrand
+        ))
         .environment(services)
         .environmentObject(chromeScroll)
         .environment(\.presentCard, { card, list in

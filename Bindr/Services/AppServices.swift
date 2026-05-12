@@ -34,7 +34,9 @@ final class AppServices {
     let socialPush: SocialPushService
     let trade: TradeService
     let theme: ThemeSettings
-    
+    let offlineImageSettings: OfflineImageSettings
+    let offlineImageDownload: OfflineImageDownloadService
+
     // Wishlist service - initialized after model context is available
     private(set) var wishlist: WishlistService?
 
@@ -101,6 +103,9 @@ final class AppServices {
             pricingService: pricing
         )
         self.theme = ThemeSettings(cloudSettings: cloudSettings)
+        let offlineImageSettings = OfflineImageSettings()
+        self.offlineImageSettings = offlineImageSettings
+        self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
         if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
             let requiresBlockingDailyRefresh = CatalogSyncCoordinator.shared.requiresDailyBlockingRefresh(
                 enabledBrands: brandSettings.enabledBrands

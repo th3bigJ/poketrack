@@ -1178,7 +1178,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             for (cardId, variants) in cardMap {
                 var cardEntry = merged[cardId] as? [String: [String: Any]] ?? [:]
                 for (variant, grades) in variants {
-                    var variantEntry = cardEntry[variant] as? [String: Any] ?? [:]
+                    var variantEntry = cardEntry[variant] ?? [:]
                     for (grade, newPoints) in grades {
                         var window = variantEntry[grade] as? [String: [[String]]] ?? [:]
                         var daily = window["daily"] ?? []

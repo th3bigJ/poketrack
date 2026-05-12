@@ -34,6 +34,38 @@ private struct BindrAccentColorKey: EnvironmentKey {
     static let defaultValue: Color = Color(hex: "4f46e5")
 }
 
+// MARK: - Offline image context
+
+/// Injected at the root so image components can serve from the local offline pack without
+/// needing to reach AppServices directly (which is not available inside loader classes).
+/// Captures offline state as plain values so it is safe to use from background tasks.
+struct OfflineImageContext: Sendable {
+    /// Whether the offline pack is enabled for the active brand (snapshot at inject time).
+    let isOfflineEnabled: Bool
+    let brand: TCGBrand?
+
+    /// Returns the on-disk file URL for a remote image URL when offline mode is active.
+    func localURL(for remoteURL: URL) -> URL? {
+        guard isOfflineEnabled,
+              let brand,
+              let key = AppConfiguration.offlineImageKey(for: remoteURL)
+        else { return nil }
+        return OfflineImageStore.shared.localFileURL(relativePath: key, brand: brand)
+    }
+}
+
+private struct OfflineImageContextKey: EnvironmentKey {
+    static let defaultValue: OfflineImageContext? = nil
+}
+
+extension EnvironmentValues {
+    /// Provides offline image resolution to `CachedAsyncImage` and `ProgressiveAsyncImage`.
+    var offlineImageContext: OfflineImageContext? {
+        get { self[OfflineImageContextKey.self] }
+        set { self[OfflineImageContextKey.self] = newValue }
+    }
+}
+
 extension EnvironmentValues {
     /// User's chosen theme accent. Prefer this over `Color.accentColor` and
     /// over reaching directly for `services.theme.accentColor` in deeply

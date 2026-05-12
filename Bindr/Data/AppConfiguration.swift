@@ -339,6 +339,22 @@ enum AppConfiguration {
         return url(prefix: r2AssetsPathPrefix, path: path)
     }
 
+    /// Returns the canonical relative path (offline store key) for an R2 image URL, or nil if the
+    /// URL does not belong to our CDN. Strips base URL and optional assets prefix.
+    static func offlineImageKey(for url: URL) -> String? {
+        let base = r2BaseURL.absoluteString.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        let full = url.absoluteString
+        guard full.hasPrefix(base) else { return nil }
+        var relative = String(full.dropFirst(base.count))
+            .trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        let prefix = r2AssetsPathPrefix.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        if !prefix.isEmpty, relative.hasPrefix(prefix) {
+            relative = String(relative.dropFirst(prefix.count))
+                .trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        }
+        return relative.isEmpty ? nil : relative
+    }
+
     private static func url(prefix: String, path: String) -> URL {
         var base = r2BaseURL
         let p = prefix.trimmingCharacters(in: .whitespacesAndNewlines)

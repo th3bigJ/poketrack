@@ -66,6 +66,50 @@ final class CollectionValueService {
         loadAll()
     }
 
+    // MARK: - Persisted last-known value (for yesterday's snapshot on new-day launch)
+
+    private enum LastKnownValueKey {
+        static let total   = "collectionValue.lastKnown.total"
+        static let pokemon = "collectionValue.lastKnown.pokemon"
+        static let onePiece = "collectionValue.lastKnown.onePiece"
+        static let date    = "collectionValue.lastKnown.date"
+    }
+
+    /// Call this when the app moves to the background so the value is available on next launch.
+    func persistLastKnownValue(_ snapshot: BrandSnapshot) {
+        guard snapshot.total > 0 else { return }
+        let defaults = UserDefaults.standard
+        defaults.set(snapshot.total,    forKey: LastKnownValueKey.total)
+        defaults.set(snapshot.pokemon,  forKey: LastKnownValueKey.pokemon)
+        defaults.set(snapshot.onePiece, forKey: LastKnownValueKey.onePiece)
+        defaults.set(Date(),            forKey: LastKnownValueKey.date)
+    }
+
+    private func saveYesterdaySnapshotFromPersistedValueIfNeeded() {
+        let defaults = UserDefaults.standard
+        guard let savedDate = defaults.object(forKey: LastKnownValueKey.date) as? Date else { return }
+        let cal = Calendar.current
+        let yesterday = cal.date(byAdding: .day, value: -1, to: cal.startOfDay(for: Date()))!
+        guard cal.startOfDay(for: savedDate) == yesterday else { return }
+        guard !snapshotExists(for: yesterday) else { return }
+
+        let total    = defaults.double(forKey: LastKnownValueKey.total)
+        let pokemon  = defaults.double(forKey: LastKnownValueKey.pokemon)
+        let onePiece = defaults.double(forKey: LastKnownValueKey.onePiece)
+        guard total > 0 else { return }
+
+        print("[CollectionValue] Saving yesterday's snapshot from persisted value → \(yesterday.formatted(date: .abbreviated, time: .omitted)) total=\(total)")
+        let snapshot = CollectionValueSnapshot(
+            date: yesterday,
+            totalGbp: total,
+            pokemonGbp: pokemon,
+            onePieceGbp: onePiece
+        )
+        modelContext.insert(snapshot)
+        try? modelContext.save()
+        loadAll()
+    }
+
     // MARK: - Public entry point
 
     func runBackfillIfNeeded(
@@ -75,6 +119,7 @@ final class CollectionValueService {
         guard !isBackfilling else { return }
         await sealedProducts.loadFromLocalIfAvailable()
         purgeZeroValueSnapshots()
+        saveYesterdaySnapshotFromPersistedValueIfNeeded()
         await captureTodaySnapshotIfMissing(
             collectionItems: collectionItems,
             preferredSnapshot: preferredTodaySnapshot

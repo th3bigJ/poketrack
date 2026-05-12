@@ -16,7 +16,7 @@ private final class ImageLoader {
         return ThumbnailImageDecode.downsampled(data: cached.data, targetSize: targetSize, scale: scale)
     }
 
-    func load(url: URL?, targetSize: CGSize?) {
+    func load(url: URL?, localURL: URL?, targetSize: CGSize?) {
         loadTask?.cancel()
         loadTask = nil
 
@@ -35,34 +35,43 @@ private final class ImageLoader {
         image = nil
 
         let capturedURL = url
+        let capturedLocal = localURL
         let capturedTarget = targetSize
 
         loadTask = Task.detached(priority: .utility) { [weak self] in
             let scale = await MainActor.run { UIScreen.main.scale }
-            let request = URLRequest(url: capturedURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
 
             var decoded: UIImage?
 
-            if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
-                decoded = self?.decodeImage(from: cached, targetSize: capturedTarget, scale: scale)
-                if decoded == nil {
-                    AppURLSession.imageURLCache.removeCachedResponse(for: request)
-                }
+            // Serve from offline pack if available
+            if let localURL = capturedLocal, let data = try? Data(contentsOf: localURL) {
+                decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: capturedTarget, scale: scale)
             }
 
             if decoded == nil {
-                do {
-                    let refreshRequest = URLRequest(url: capturedURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
-                    let (data, response) = try await AppURLSession.images.data(for: refreshRequest)
-                    guard !Task.isCancelled else { return }
-                    let cachedResponse = CachedURLResponse(response: response, data: data)
-                    if self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale) != nil {
-                        AppURLSession.imageURLCache.storeCachedResponse(cachedResponse, for: request)
-                    } else {
+                let request = URLRequest(url: capturedURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+
+                if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
+                    decoded = self?.decodeImage(from: cached, targetSize: capturedTarget, scale: scale)
+                    if decoded == nil {
                         AppURLSession.imageURLCache.removeCachedResponse(for: request)
                     }
-                    decoded = self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale)
-                } catch { }
+                }
+
+                if decoded == nil {
+                    do {
+                        let refreshRequest = URLRequest(url: capturedURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+                        let (data, response) = try await AppURLSession.images.data(for: refreshRequest)
+                        guard !Task.isCancelled else { return }
+                        let cachedResponse = CachedURLResponse(response: response, data: data)
+                        if self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale) != nil {
+                            AppURLSession.imageURLCache.storeCachedResponse(cachedResponse, for: request)
+                        } else {
+                            AppURLSession.imageURLCache.removeCachedResponse(for: request)
+                        }
+                        decoded = self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale)
+                    } catch { }
+                }
             }
 
             let finalImage = decoded
@@ -90,6 +99,7 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
     private let placeholder: () -> Placeholder
 
     @State private var loader = ImageLoader()
+    @Environment(\.offlineImageContext) private var offlineContext
 
     init(
         url: URL?,
@@ -101,6 +111,11 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
         self.targetSize = targetSize
         self.content = content
         self.placeholder = placeholder
+    }
+
+    private var localURL: URL? {
+        guard let url else { return nil }
+        return offlineContext?.localURL(for: url)
     }
 
     var body: some View {
@@ -116,7 +131,7 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
             }
         }
         .task(id: url?.absoluteString ?? "") {
-            loader.load(url: url, targetSize: targetSize)
+            loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }
         .onDisappear {
             loader.cancel()
@@ -130,10 +145,16 @@ struct CachedCardThumbnailImage: View {
     private let url: URL?
     private let targetSize: CGSize?
     @State private var loader = ImageLoader()
+    @Environment(\.offlineImageContext) private var offlineContext
 
     init(url: URL?, targetSize: CGSize? = nil) {
         self.url = url
         self.targetSize = targetSize
+    }
+
+    private var localURL: URL? {
+        guard let url else { return nil }
+        return offlineContext?.localURL(for: url)
     }
 
     private var hasRenderableImage: Bool {
@@ -158,7 +179,7 @@ struct CachedCardThumbnailImage: View {
             }
         }
         .task(id: url?.absoluteString ?? "") {
-            loader.load(url: url, targetSize: targetSize)
+            loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }
         .onDisappear {
             loader.cancel()

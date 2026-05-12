@@ -22,6 +22,7 @@ struct DashboardView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
+    @Environment(\.scenePhase) private var scenePhase
 
     @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var allLedgerLines: [LedgerLine]
     @Query private var collectionItems: [CollectionItem]
@@ -360,6 +361,11 @@ struct DashboardView: View {
         .onChange(of: services.pricing.usdToGbp) { _, _ in
             Task {
                 await computeLiveValue()
+            }
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .background, let snapshot = liveSnapshot {
+                services.collectionValue?.persistLastKnownValue(snapshot)
             }
         }
         .sheet(item: $selectedRecentLedgerLine) { line in
