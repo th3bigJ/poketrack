@@ -1009,7 +1009,7 @@ struct DeckDetailView: View {
     private func bestPrice(_ entry: CardPricingEntry?) -> Double? {
         guard let entry else { return nil }
         if let scrydex = entry.scrydex, !scrydex.isEmpty {
-            return scrydex.values.compactMap { $0.marketEstimateUSD() }.max()
+            return scrydex.values.compactMap { $0.marketEstimateUSD() }.min()
         }
         return entry.tcgplayerMarketEstimateUSD()
     }

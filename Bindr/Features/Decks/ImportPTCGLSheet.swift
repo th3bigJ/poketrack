@@ -10,6 +10,9 @@ struct ImportPTCGLSheet: View {
     @State private var isImporting = false
     @State private var importError: String?
     @State private var importedDeck: Deck?
+    @State private var pendingDeckCards: [DeckCard] = []
+    @State private var pendingDeckName: String = ""
+    @State private var showingNamePrompt = false
 
     var body: some View {
         NavigationStack {
@@ -73,6 +76,19 @@ struct ImportPTCGLSheet: View {
             }
             .navigationTitle("Import from TCG Live")
             .navigationBarTitleDisplayMode(.inline)
+            .alert("Name Your Deck", isPresented: $showingNamePrompt) {
+                TextField("Deck name", text: $pendingDeckName)
+                Button("Cancel", role: .cancel) {
+                    pendingDeckCards = []
+                    pendingDeckName = ""
+                }
+                Button("Save") {
+                    savePendingDeck()
+                }
+                .disabled(pendingDeckName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            } message: {
+                Text("Enter a name for the imported deck.")
+            }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
@@ -100,9 +116,8 @@ struct ImportPTCGLSheet: View {
                 return
             }
             
-            // Use the first Pokémon's name or a generic name for the deck
+            // Suggest a name from the first non-energy card; user can override in the name prompt
             let deckTitle = lines.first(where: { !$0.name.contains("Energy") })?.name ?? "Imported Deck"
-            let deck = Deck(title: "Imported \(deckTitle)", brand: .pokemon, format: .pokemonStandard)
             
             var deckCards: [DeckCard] = []
             let allSets = await services.cardData.catalogSets(for: .pokemon)
@@ -193,14 +208,25 @@ struct ImportPTCGLSheet: View {
                 isImporting = false
                 return
             }
-            
-            // Add cards to deck
-            deck.cards = deckCards
-            modelContext.insert(deck)
-            
-            isImporting = false
-            dismiss()
+
+            await MainActor.run {
+                pendingDeckCards = deckCards
+                pendingDeckName = deckTitle
+                isImporting = false
+                showingNamePrompt = true
+            }
         }
+    }
+
+    private func savePendingDeck() {
+        let name = pendingDeckName.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !name.isEmpty else { return }
+        let deck = Deck(title: name, brand: .pokemon, format: .pokemonStandard)
+        deck.cards = pendingDeckCards
+        modelContext.insert(deck)
+        pendingDeckCards = []
+        pendingDeckName = ""
+        dismiss()
     }
 
     private func normalizedPTCGLName(_ raw: String) -> String {

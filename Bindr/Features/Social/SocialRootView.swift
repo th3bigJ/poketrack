@@ -406,6 +406,7 @@ struct SocialRootView: View {
             }
         }
         .scrollContentBackground(.hidden)
+        .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)
         .bindrPageBackground(ignoresSafeArea: false)
     }
 

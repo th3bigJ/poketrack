@@ -36,6 +36,7 @@ final class AppServices {
     let theme: ThemeSettings
     let offlineImageSettings: OfflineImageSettings
     let offlineImageDownload: OfflineImageDownloadService
+    let essentialAssetsDownload: EssentialAssetsDownloadService
 
     // Wishlist service - initialized after model context is available
     private(set) var wishlist: WishlistService?
@@ -106,6 +107,7 @@ final class AppServices {
         let offlineImageSettings = OfflineImageSettings()
         self.offlineImageSettings = offlineImageSettings
         self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
+        self.essentialAssetsDownload = EssentialAssetsDownloadService()
         if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
             let requiresBlockingDailyRefresh = CatalogSyncCoordinator.shared.requiresDailyBlockingRefresh(
                 enabledBrands: brandSettings.enabledBrands
@@ -245,11 +247,10 @@ final class AppServices {
             await Task.yield()
         }
 
-        let weightSync: Double = 0.62
-        let weightLoadSets: Double = 0.18
-        let weightDex: Double = brandSettings.enabledBrands.contains(.pokemon) ? 0.12 : 0
-        let weightOnePieceBrowse: Double = brandSettings.enabledBrands.contains(.onePiece) ? 0.06 : 0
-        let weightStore: Double = max(0.04, 1.0 - weightSync - weightLoadSets - weightDex - weightOnePieceBrowse)
+        // Give the network sync phase 95% of the bar. The remaining post-sync
+        // steps (loadSets, dex, browse lists) are local SQLite reads that take
+        // milliseconds — they don't warrant visible bar segments.
+        let weightSync: Double = 0.95
 
         let progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)?
         if updateBootstrapProgressUI {
@@ -273,53 +274,38 @@ final class AppServices {
 
         if updateBootstrapProgressUI {
             bootstrapProgress = weightSync
-            bootstrapStatus = "Refreshing catalog…"
+            bootstrapStatus = "Finishing up…"
         }
         await cardData.loadSets(preferSyncedCatalog: true)
-        if updateBootstrapProgressUI {
-            bootstrapProgress = weightSync + weightLoadSets
-        }
 
         if brandSettings.enabledBrands.contains(.pokemon) {
-            if updateBootstrapProgressUI {
-                bootstrapStatus = "Loading Pokemon index…"
-            }
             await cardData.loadNationalDexPokemon()
         } else {
             cardData.clearNationalDexForDisabledPokemon()
         }
-        if updateBootstrapProgressUI {
-            bootstrapProgress = weightSync + weightLoadSets + weightDex
-        }
 
         if brandSettings.enabledBrands.contains(.onePiece) {
-            if updateBootstrapProgressUI {
-                bootstrapStatus = "Loading ONE PIECE browse lists…"
-            }
             await cardData.loadOnePieceBrowseMetadata()
         } else {
             cardData.clearOnePieceBrowseMetadata()
         }
-        if updateBootstrapProgressUI {
-            bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse
-        }
 
         await sealedProducts.loadFromLocalIfAvailable()
 
-        if includeDeferredLaunchServices && updateBootstrapProgressUI {
-            bootstrapStatus = "Checking purchases…"
-        }
+        // Kick off essential asset downloads (set logos, symbols, pokémon art, sealed product images)
+        // in the background. Fire-and-forget: does not block the bootstrap sequence.
+        essentialAssetsDownload.downloadIfNeeded(
+            for: brandSettings.enabledBrands,
+            nationalDexPokemon: cardData.nationalDexPokemon
+        )
+
         if includeDeferredLaunchServices {
             await pricing.refreshFXRate()
             await store.loadProducts()
             await store.checkEntitlements()
         }
         if updateBootstrapProgressUI {
-            if includeDeferredLaunchServices {
-                bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse + weightStore
-            } else {
-                bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse
-            }
+            bootstrapProgress = 1.0
             bootstrapStatus = "Card data is ready."
         }
 
@@ -378,6 +364,12 @@ final class AppServices {
         }
 
         await sealedProducts.loadFromLocalIfAvailable()
+
+        // Force-recheck after catalog sync so any new sets, pokémon, or sealed products are fetched.
+        essentialAssetsDownload.scheduleRecheck(
+            for: brandSettings.enabledBrands,
+            nationalDexPokemon: cardData.nationalDexPokemon
+        )
 
         catalogDownloadStatus = "Done."
         catalogDownloadProgress = 1

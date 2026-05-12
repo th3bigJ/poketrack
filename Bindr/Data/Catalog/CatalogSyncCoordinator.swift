@@ -51,13 +51,11 @@ private actor CatalogSyncProgressReporter {
     typealias Handler = @MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void
 
     private let handler: Handler?
-    private var status: String = "Preparing card data…"
+    private var status: String = "Preparing card data..."
     private var completedFiles = 0
     private var totalFiles = 0
     private var downloadedBytes: Int64 = 0
-    /// Number of completed payloads that actually transferred body bytes (excludes 304/unchanged checks).
-    private var completedBytePayloads = 0
-    /// Only increases so the total size line does not shrink when the average shifts.
+    /// Only increases so the byte label does not shrink.
     private var peakEstimatedTotalBytes: Int64 = 0
     /// Never decreases so the bar does not move backward when phases add more planned work.
     private var peakFractionCompleted: Double = 0
@@ -79,43 +77,34 @@ private actor CatalogSyncProgressReporter {
 
     func completeFile(byteCount: Int64 = 0) async {
         completedFiles += 1
-        let positiveBytes = max(0, byteCount)
-        downloadedBytes += positiveBytes
-        if positiveBytes > 0 {
-            completedBytePayloads += 1
-        }
+        downloadedBytes += max(0, byteCount)
         await emit()
     }
 
     /// Delivers each snapshot on the main actor so SwiftUI does not coalesce async `Task { @MainActor }` updates into a single 100% frame.
     private func emit() async {
         guard let handler else { return }
-        let naiveEstimate: Int64
-        if completedBytePayloads > 0, totalFiles > 0 {
-            let averagePayloadSize = Double(downloadedBytes) / Double(completedBytePayloads)
-            naiveEstimate = Int64(averagePayloadSize * Double(totalFiles))
-        } else {
-            naiveEstimate = 0
-        }
-        peakEstimatedTotalBytes = max(peakEstimatedTotalBytes, naiveEstimate, downloadedBytes)
-        let estimatedTotalBytes = peakEstimatedTotalBytes
 
-        let byteFraction: Double
-        if estimatedTotalBytes > 0 {
-            byteFraction = min(1, Double(downloadedBytes) / Double(estimatedTotalBytes))
-        } else {
-            byteFraction = 0
-        }
-        // Launch bar should represent transferred bytes, not "checks completed".
-        let blended = downloadedBytes > 0 ? byteFraction : 0
-        peakFractionCompleted = max(peakFractionCompleted, blended)
+        // Use file-count as the primary fraction — it's exact and never jumps
+        // backward. Byte estimation was unreliable because most files return 304
+        // (no body), so the average-based total estimate was wildly inaccurate
+        // and the bar barely moved until the very end.
+        let fileFraction: Double = totalFiles > 0
+            ? min(1, Double(completedFiles) / Double(totalFiles))
+            : 0
+
+        peakFractionCompleted = max(peakFractionCompleted, fileFraction)
+
+        // Keep a byte total for the “X MB / Y MB” label — only for display,
+        // not used to drive the fraction anymore.
+        peakEstimatedTotalBytes = max(peakEstimatedTotalBytes, downloadedBytes)
 
         let snapshot = CatalogSyncProgressSnapshot(
             status: status,
             completedFiles: completedFiles,
             totalFiles: totalFiles,
             downloadedBytes: downloadedBytes,
-            estimatedTotalBytes: estimatedTotalBytes,
+            estimatedTotalBytes: peakEstimatedTotalBytes,
             fractionCompleted: peakFractionCompleted
         )
         await MainActor.run {
@@ -339,31 +328,51 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     private func syncCatalogIfNeeded(progress: CatalogSyncProgressReporter) async {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
         let setsURL = AppConfiguration.r2CatalogURL(path: "sets.json")
-        let (data, resp): (Data, URLResponse)
         await progress.setStatus("Checking card catalog…")
+
+        let store = CatalogStore.shared
+        try? await store.open()
+
+        // Use a conditional request so a 304 transfers no body bytes and does
+        // not trigger the download progress UI.
+        var setsRequest = URLRequest(url: setsURL)
+        if let prevEtag = await store.meta("catalog_etag"), !prevEtag.isEmpty {
+            setsRequest.setValue(prevEtag, forHTTPHeaderField: "If-None-Match")
+        }
+
+        let data: Data
+        let http: HTTPURLResponse?
         do {
-            (data, resp) = try await session.data(from: setsURL)
+            let (d, resp) = try await session.data(for: setsRequest)
+            http = resp as? HTTPURLResponse
+            if http?.statusCode == 304 {
+                // Catalog index unchanged — no body bytes transferred.
+                await progress.addPlannedFiles(2)
+                await progress.completeFile(byteCount: 0)
+                await progress.completeFile(byteCount: 0)
+                return
+            }
+            data = d
         } catch {
             await progress.addPlannedFiles(2)
             await progress.completeFile()
             await progress.completeFile()
             return
         }
-        let http = resp as? HTTPURLResponse
+
         let etag = http?.value(forHTTPHeaderField: "ETag") ?? http?.value(forHTTPHeaderField: "Etag")
         let hash = SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
 
-        let store = CatalogStore.shared
-        try? await store.open()
         let storedSetsHash = await store.meta("catalog_sets_sha256")
         let storedSetsEtag = await store.meta("catalog_etag")
         let unchangedHash = storedSetsHash == hash
         let unchangedEtag = etag != nil && storedSetsEtag == etag
         let hasCards = (try? await store.hasAnyCards(for: .pokemon)) ?? false
         if hasCards && (unchangedHash || unchangedEtag) {
-            // Two steps so progress never reads 100% after a single "file" (index already up to date).
+            // Body downloaded but content unchanged — count as 0 new bytes so
+            // the download progress UI does not appear.
             await progress.addPlannedFiles(2)
-            await progress.completeFile(byteCount: Int64(data.count))
+            await progress.completeFile(byteCount: 0)
             await progress.completeFile(byteCount: 0)
             return
         }
@@ -373,7 +382,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             sets = try JSONDecoder().decode([TCGSet].self, from: data)
         } catch {
             await progress.addPlannedFiles(2)
-            await progress.completeFile(byteCount: Int64(data.count))
+            await progress.completeFile(byteCount: 0)
             await progress.completeFile(byteCount: 0)
             return
         }

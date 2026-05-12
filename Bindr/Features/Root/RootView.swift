@@ -113,10 +113,11 @@ struct RootView: View {
     }
 
     private var launchProgressState: LaunchProgressState? {
-        // Don't render progress under the wordmark for brand-new users — that
-        // path goes through the brand-onboarding sheet, not the launch
-        // refresh pipeline.
-        guard services.isReady, !services.isLaunchCatalogPipelineComplete else { return nil }
+        // Only show progress when actual data is being downloaded — not during
+        // local SQLite/index work which completes silently in the background.
+        guard services.isReady,
+              !services.isLaunchCatalogPipelineComplete,
+              services.bootstrapShowsDownloadProgressUI else { return nil }
         return LaunchProgressState(
             message: services.bootstrapMessage,
             status: services.bootstrapStatus,

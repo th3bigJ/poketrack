@@ -31,7 +31,9 @@ struct LaunchWordmarkView: View {
     @State private var wholeWordAnim = false
     @State private var hasStartedAnimation = false
     @State private var hasFiredRevealComplete = false
+    @State private var taglineWordStates: [Bool] = [false, false, false]
     private let fullWord = "BINDR"
+    private let taglineWords = ["Share", "your", "Collection"]
 
     private var byteProgressText: String {
         guard let p = progress, p.totalBytes > 0 else { return "" }
@@ -54,19 +56,21 @@ struct LaunchWordmarkView: View {
             Color(uiColor: .systemBackground)
                 .ignoresSafeArea()
 
-            VStack(spacing: 32) {
+            VStack(spacing: 24) {
                 wordmark
 
-                // The progress block lives below the wordmark and fades in
-                // only when the parent passes a non-nil state. The reserved
-                // height avoids a layout jump when it appears mid-launch.
-                progressBlock
-                    .frame(maxWidth: .infinity)
-                    .frame(minHeight: 92)
-                    .padding(.horizontal, 24)
-                    .opacity(progress == nil ? 0 : 1)
-                    .animation(.easeInOut(duration: 0.28), value: progress != nil)
+                tagline
+
+                // Progress block only appears when a real download is active.
+                if progress != nil {
+                    progressBlock
+                        .frame(maxWidth: .infinity)
+                        .frame(minHeight: 92)
+                        .padding(.horizontal, 24)
+                        .transition(.opacity.combined(with: .move(edge: .bottom)))
+                }
             }
+            .animation(.easeInOut(duration: 0.28), value: progress != nil)
         }
         .task {
             guard !hasStartedAnimation else { return }
@@ -79,17 +83,38 @@ struct LaunchWordmarkView: View {
             }
 
             // Hold the completed wordmark — let the last spring fully settle
-            try? await Task.sleep(nanoseconds: 700_000_000)
+            try? await Task.sleep(nanoseconds: 500_000_000)
 
             // Gentle breathing pulse — starts only after full settle
             wholeWordAnim = true
 
+            // Stagger in tagline words one at a time
+            for index in 0..<taglineWords.count {
+                try? await Task.sleep(nanoseconds: 160_000_000) // 160ms between words
+                withAnimation(.easeOut(duration: 0.4)) {
+                    taglineWordStates[index] = true
+                }
+            }
+
             // Brief display before signalling reveal-complete. Parent decides
             // when to actually dismiss; this is just the minimum hold time.
-            try? await Task.sleep(nanoseconds: 600_000_000)
+            try? await Task.sleep(nanoseconds: 400_000_000)
             if !hasFiredRevealComplete {
                 hasFiredRevealComplete = true
                 onRevealComplete()
+            }
+        }
+    }
+
+    private var tagline: some View {
+        HStack(spacing: 6) {
+            ForEach(0..<taglineWords.count, id: \.self) { index in
+                Text(taglineWords[index])
+                    .font(.system(size: 13, weight: .regular))
+                    .foregroundStyle(colorScheme == .dark ? Color.white.opacity(0.50) : Color.black.opacity(0.45))
+                    .tracking(1.5)
+                    .offset(y: taglineWordStates[index] ? 0 : 6)
+                    .opacity(taglineWordStates[index] ? 1 : 0)
             }
         }
     }

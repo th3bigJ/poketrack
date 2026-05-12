@@ -284,7 +284,8 @@ private struct OfflineModeSection: View {
                         Task {
                             await services.offlineImageDownload.runFullDownloadIfNeeded(
                                 brand: brand,
-                                nationalDexPokemon: services.cardData.nationalDexPokemon
+                                nationalDexPokemon: services.cardData.nationalDexPokemon,
+                                sealedProducts: services.sealedProducts.products
                             )
                         }
                     } else {

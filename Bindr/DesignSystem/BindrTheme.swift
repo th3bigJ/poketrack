@@ -49,13 +49,26 @@ struct OfflineImageContext: Sendable {
 
     /// Returns the on-disk file URL for a remote image URL when offline mode is active.
     func localURL(for remoteURL: URL) -> URL? {
-        guard isOfflineEnabled, let brand else { return nil }
-        let store = OfflineImageStore.shared
-        if let key = AppConfiguration.offlineImageKey(for: remoteURL),
-           let local = store.localFileURL(relativePath: key, brand: brand) {
+        guard let brand else { return nil }
+        let key = AppConfiguration.offlineImageKey(for: remoteURL)
+
+        // Essential assets (set logos, symbols, pokémon art) are always available from disk
+        // regardless of whether the user has enabled the offline pack.
+        let essential = EssentialImageStore.shared
+        if let key, let local = essential.localFileURL(relativePath: key, brand: brand) {
             return local
         }
-        return store.localFileURL(relativePath: remoteURL.absoluteString, brand: brand)
+        if let local = essential.localFileURL(relativePath: remoteURL.absoluteString, brand: brand) {
+            return local
+        }
+
+        guard isOfflineEnabled else { return nil }
+
+        let pack = OfflineImageStore.shared
+        if let key, let local = pack.localFileURL(relativePath: key, brand: brand) {
+            return local
+        }
+        return pack.localFileURL(relativePath: remoteURL.absoluteString, brand: brand)
     }
 }
 

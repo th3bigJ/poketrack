@@ -1974,7 +1974,10 @@ struct BrowseView: View {
 
     private func isCommonOrUncommon(_ rarity: String?) -> Bool {
         let normalized = rarity?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
-        return normalized == "common" || normalized == "uncommon"
+        let lettersOnly = String(normalized.unicodeScalars.filter(CharacterSet.letters.contains))
+        return normalized.contains("common")
+            || lettersOnly == "rare"
+            || normalized == "rare holo"
     }
 
     private func trimmedValue(_ value: String?) -> String {
@@ -4311,7 +4314,7 @@ struct BrowseGridFiltersMenuContent: View {
                 }
                 if config.showRarePlusOnly {
                     Toggle(isOn: $filters.rarePlusOnly) {
-                        Label("Rare + only", systemImage: "star.circle")
+                        Label("> Rare", systemImage: "star.circle")
                     }
                 }
                 if config.showHideOwned {
@@ -4579,8 +4582,8 @@ private func isCommonOrUncommon(_ rarity: String?) -> Bool {
     let normalized = rarity?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
     let lettersOnly = String(normalized.unicodeScalars.filter(CharacterSet.letters.contains))
     return normalized.contains("common")
-        || normalized.contains("uncommon")
         || lettersOnly == "rare"
+        || normalized == "rare holo"
 }
 
 private func cardMatchesPokemonSubtypeFilters(_ card: Card, selectedSubtypes: Set<String>) -> Bool {

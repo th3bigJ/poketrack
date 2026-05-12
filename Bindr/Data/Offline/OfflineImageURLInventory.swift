@@ -2,7 +2,7 @@ import Foundation
 
 /// Builds the canonical (key, URL) pairs to download for an offline pack.
 enum OfflineImageURLInventory {
-    static func buildDesiredList(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon]) async throws -> [(key: String, url: URL)] {
+    static func buildDesiredList(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon], sealedProducts: [SealedProduct]) async throws -> [(key: String, url: URL)] {
         try await CatalogStore.shared.open()
         var rows: [(String, URL)] = []
         var seen = Set<String>()
@@ -39,6 +39,11 @@ enum OfflineImageURLInventory {
                     append(rel, AppConfiguration.pokemonArtURL(imageFileName: row.imageUrl))
                 }
             }
+            for product in sealedProducts where product.tcg == "pokemon" {
+                guard let url = product.image?.resolvedURL else { continue }
+                let key = AppConfiguration.offlineImageKey(for: url) ?? url.absoluteString
+                append(key, url)
+            }
 
         case .onePiece:
             let cards = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
@@ -56,7 +61,11 @@ enum OfflineImageURLInventory {
                     append(sym, u)
                 }
             }
-
+            for product in sealedProducts where product.tcg == "one_piece" {
+                guard let url = product.image?.resolvedURL else { continue }
+                let key = AppConfiguration.offlineImageKey(for: url) ?? url.absoluteString
+                append(key, url)
+            }
         }
 
         return rows

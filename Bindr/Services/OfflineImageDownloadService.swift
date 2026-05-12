@@ -35,11 +35,11 @@ final class OfflineImageDownloadService {
     }
 
     /// Full download or top-up after the user enables the pack toggle.
-    func runFullDownloadIfNeeded(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon]) async {
+    func runFullDownloadIfNeeded(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon], sealedProducts: [SealedProduct]) async {
         guard settings.isOfflinePackEnabled(for: brand) else { return }
         cancelDownload(for: brand)
         let task = Task {
-            await self.performDownload(brand: brand, nationalDexPokemon: nationalDexPokemon, pruneOrphans: true)
+            await self.performDownload(brand: brand, nationalDexPokemon: nationalDexPokemon, sealedProducts: sealedProducts, pruneOrphans: true)
         }
         downloadTasks[brand] = task
         await task.value
@@ -47,13 +47,13 @@ final class OfflineImageDownloadService {
     }
 
     /// After catalog sync adds/removes cards, refresh local files for every brand with the pack enabled.
-    func reconcileAfterCatalogSync(enabledBrands: Set<TCGBrand>, nationalDexPokemon: [NationalDexPokemon]) async {
+    func reconcileAfterCatalogSync(enabledBrands: Set<TCGBrand>, nationalDexPokemon: [NationalDexPokemon], sealedProducts: [SealedProduct]) async {
         for brand in enabledBrands where settings.isOfflinePackEnabled(for: brand) {
-            await performDownload(brand: brand, nationalDexPokemon: nationalDexPokemon, pruneOrphans: true)
+            await performDownload(brand: brand, nationalDexPokemon: nationalDexPokemon, sealedProducts: sealedProducts, pruneOrphans: true)
         }
     }
 
-    private func performDownload(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon], pruneOrphans: Bool) async {
+    private func performDownload(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon], sealedProducts: [SealedProduct], pruneOrphans: Bool) async {
         guard settings.isOfflinePackEnabled(for: brand) else { return }
         brandsDownloadingImages.insert(brand)
         defer { brandsDownloadingImages.remove(brand) }
@@ -68,7 +68,7 @@ final class OfflineImageDownloadService {
 
         let desired: [(String, URL)]
         do {
-            desired = try await OfflineImageURLInventory.buildDesiredList(brand: brand, nationalDexPokemon: nationalDexPokemon)
+            desired = try await OfflineImageURLInventory.buildDesiredList(brand: brand, nationalDexPokemon: nationalDexPokemon, sealedProducts: sealedProducts)
         } catch {
             statusLine[brand] = "Could not read catalog."
             return
