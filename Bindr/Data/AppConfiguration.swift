@@ -105,6 +105,12 @@ enum AppConfiguration {
         url(prefix: r2CatalogPathPrefix, path: path)
     }
 
+    /// Catalog version sentinel: `version.md` at bucket root. Text format: `Version - N`.
+    /// When N increases the app re-downloads sets, series, and all card JSONs.
+    static var r2CatalogVersionURL: URL {
+        url(prefix: "", path: "version.md")
+    }
+
     // MARK: - One Piece TCG (same bucket; prefix is `onepiece/`, not `tcg/onepiece/`)
 
     /// R2 key prefix for One Piece. Layout (under bucket root):
@@ -173,14 +179,29 @@ enum AppConfiguration {
         url(prefix: r2MarketPathPrefix, path: path)
     }
 
-    /// Per-set price history file: `pricing/price-history/{setCode}.json`
+    /// Per-set price history file (ONE PIECE only — Pokémon history is built from daily buckets): `pricing/price-history/{setCode}.json`
     static func r2PricingHistoryURL(setCode: String) -> URL {
         r2PricingURL(path: "pricing/price-history/\(setCode).json")
     }
 
-    /// Per-set price trends file: `pricing/price-trends/{setCode}.json`
+    /// Per-set price trends file: `new_pricing/price-trends/{setCode}.json`
     static func r2PriceTrendsURL(setCode: String) -> URL {
-        r2PricingURL(path: "pricing/price-trends/\(setCode).json")
+        r2MarketURL(path: "new_pricing/price-trends/\(setCode).json")
+    }
+
+    /// Flat daily price bucket: `new_pricing/daily/{YYYY-MM-DD}.json`
+    static func r2NewPricingDailyURL(dateKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/daily/\(dateKey).json")
+    }
+
+    /// Flat weekly price bucket: `new_pricing/weekly/{YYYY-Www}.json`
+    static func r2NewPricingWeeklyURL(weekKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/weekly/\(weekKey).json")
+    }
+
+    /// Flat monthly price bucket: `new_pricing/monthly/{YYYY-MM}.json`
+    static func r2NewPricingMonthlyURL(monthKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/monthly/\(monthKey).json")
     }
 
     private static func normalizedSetLogoPath(_ logoSrc: String) -> String {

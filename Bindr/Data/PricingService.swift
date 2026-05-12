@@ -382,14 +382,8 @@ final class PricingService {
             }
             return [:]
         case .pokemon:
-            for stem in AppConfiguration.pricingFileStemVariants(for: setCode) {
-                let url = AppConfiguration.r2PricingHistoryURL(setCode: stem)
-                guard let data = await fetchDataIfOK(from: url),
-                      let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { continue }
-                let typed = root.compactMapValues { $0 as? [String: Any] }
-                historyCache[cacheKey] = typed
-                return typed
-            }
+            // History is now built from daily bucket files during sync and stored in SQLite.
+            // Per-set history files no longer exist on R2; SQLite is the only source.
             return [:]
         }
     }
@@ -419,14 +413,7 @@ final class PricingService {
             }
             return [:]
         case .pokemon:
-            for stem in AppConfiguration.pricingFileStemVariants(for: setCode) {
-                let url = AppConfiguration.r2PriceTrendsURL(setCode: stem)
-                guard let data = await fetchDataIfOK(from: url),
-                      let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { continue }
-                let typed = root.compactMapValues { $0 as? [String: Any] }
-                trendsCache[cacheKey] = typed
-                return typed
-            }
+            // Trends are populated from daily sync into SQLite; no per-set network fallback.
             return [:]
         }
     }
@@ -531,15 +518,9 @@ final class PricingService {
                     }
                 }
             case .pokemon:
-                for stem in AppConfiguration.pricingFileStemVariants(for: key) {
-                    let url = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
-                    if let (map, data) = await fetchPricingMapAndDataIfOK(from: url) {
-                        pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
-                        saveDiskCache(setCode: key, data: data)
-                        try? await CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .pokemon)
-                        return map
-                    }
-                }
+                // Pokemon pricing is built from daily bucket files during sync (syncPricingBuckets).
+                // Per-set card-pricing files no longer exist on R2; SQLite is the only source.
+                break
             }
         }
 

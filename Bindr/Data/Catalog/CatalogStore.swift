@@ -114,6 +114,10 @@ final class CatalogStore: @unchecked Sendable {
             json BLOB NOT NULL,
             fetched_at REAL NOT NULL
         );
+        CREATE TABLE IF NOT EXISTS processed_pricing_buckets (
+            bucket_key TEXT PRIMARY KEY NOT NULL,
+            processed_at REAL NOT NULL
+        );
         """
         var err: UnsafeMutablePointer<CChar>?
         guard sqlite3_exec(db, ddl, nil, nil, &err) == SQLITE_OK else {
@@ -1153,6 +1157,69 @@ final class CatalogStore: @unchecked Sendable {
                 } catch {
                     continuation.resume(throwing: error)
                 }
+            }
+        }
+    }
+
+    // MARK: - Pricing bucket tracking
+
+    func markBucketProcessed(key: String) async throws {
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+            queue.async {
+                do {
+                    guard let db = self.db else { throw CatalogStoreError.notOpen }
+                    var stmt: OpaquePointer?
+                    defer { sqlite3_finalize(stmt) }
+                    let sql = """
+                    INSERT INTO processed_pricing_buckets(bucket_key, processed_at) VALUES(?, ?)
+                    ON CONFLICT(bucket_key) DO UPDATE SET processed_at = excluded.processed_at;
+                    """
+                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                    key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                    _ = sqlite3_bind_double(stmt, 2, Date().timeIntervalSince1970)
+                    guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
+                    continuation.resume()
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
+    func isBucketProcessed(key: String) async -> Bool {
+        await withCheckedContinuation { continuation in
+            queue.async {
+                guard let db = self.db else { continuation.resume(returning: false); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                guard sqlite3_prepare_v2(db, "SELECT 1 FROM processed_pricing_buckets WHERE bucket_key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: false)
+                    return
+                }
+                key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                continuation.resume(returning: sqlite3_step(stmt) == SQLITE_ROW)
+            }
+        }
+    }
+
+    func unprocessedBucketKeys(from candidates: [String]) async -> [String] {
+        await withCheckedContinuation { continuation in
+            queue.async {
+                guard let db = self.db else { continuation.resume(returning: candidates); return }
+                var result: [String] = []
+                for key in candidates {
+                    var stmt: OpaquePointer?
+                    defer { sqlite3_finalize(stmt) }
+                    guard sqlite3_prepare_v2(db, "SELECT 1 FROM processed_pricing_buckets WHERE bucket_key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                        result.append(key)
+                        continue
+                    }
+                    key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                    if sqlite3_step(stmt) != SQLITE_ROW {
+                        result.append(key)
+                    }
+                }
+                continuation.resume(returning: result)
             }
         }
     }

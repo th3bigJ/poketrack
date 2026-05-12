@@ -28,6 +28,15 @@ final class SealedProductService {
     }
 
     func refreshFromNetworkAndStoreLocallyIfNeeded() async {
+        // Always try SQLite first — daily sync populates it before the app opens.
+        await loadFromSQLiteDailyBlobs()
+        // Only hit the network if SQLite had nothing (e.g. very first launch before sync completes).
+        if products.isEmpty {
+            await fetchFromNetworkAndStore()
+        }
+    }
+
+    private func fetchFromNetworkAndStore() async {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
         isLoading = true
         defer { isLoading = false }

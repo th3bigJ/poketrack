@@ -1886,24 +1886,14 @@ struct DashboardView: View {
             }
         }
 
-        // Network fallback for when local trends rows were not yet synced.
-        let stems: [String]
-        switch activeBrand {
-        case .pokemon:
-            stems = AppConfiguration.pricingFileStemVariants(for: setCode)
-        case .onePiece:
-            stems = onePieceTrendStemVariants(for: setCode)
-        }
-        for stem in stems {
-            let url: URL
-            switch activeBrand {
-            case .pokemon:
-                url = AppConfiguration.r2PriceTrendsURL(setCode: stem)
-            case .onePiece:
-                url = AppConfiguration.r2OnePiecePriceTrendsURL(setCodeStem: stem)
-            }
-            if let data = await fetchHTTPBodyIfOK(from: url) {
-                return data
+        // One Piece network fallback (per-set files still live on R2).
+        // Pokemon trends come from daily sync into SQLite only — no network fallback.
+        if activeBrand == .onePiece {
+            for stem in onePieceTrendStemVariants(for: setCode) {
+                let url = AppConfiguration.r2OnePiecePriceTrendsURL(setCodeStem: stem)
+                if let data = await fetchHTTPBodyIfOK(from: url) {
+                    return data
+                }
             }
         }
         return nil

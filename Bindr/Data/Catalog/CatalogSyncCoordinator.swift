@@ -182,6 +182,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             do {
                 try await CatalogStore.shared.open()
                 await progress.setStatus("Checking card catalog…")
+                await checkAndApplyCatalogVersionIfNeeded(store: CatalogStore.shared)
                 await syncCatalogIfNeeded(progress: progress)
                 await refreshPokemonNationalDexMetadata(store: CatalogStore.shared)
             } catch {
@@ -275,6 +276,39 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         return totalDownloaded > 0
     }
 
+    /// Fetches `version.md`, parses `Version - N`, and if N is greater than the stored value
+    /// clears the catalog SHA256/ETag guards so `syncCatalogIfNeeded` forces a full re-download.
+    private func checkAndApplyCatalogVersionIfNeeded(store: CatalogStore) async {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
+        guard let data = await Self.fetchHTTPBodyIfOK(session: session, url: AppConfiguration.r2CatalogVersionURL),
+              let text = String(data: data, encoding: .utf8)
+        else { return }
+
+        guard let remoteVersion = Self.parseCatalogVersion(from: text) else { return }
+
+        let storedVersion: Int
+        if let s = await store.meta("catalog_version"), let v = Int(s) {
+            storedVersion = v
+        } else {
+            storedVersion = 0
+        }
+
+        guard remoteVersion > storedVersion else { return }
+
+        // Invalidate hash/etag guards and mark that all sets need re-downloading.
+        try? await store.setMeta("catalog_sets_sha256", "")
+        try? await store.setMeta("catalog_etag", "")
+        try? await store.setMeta("catalog_force_full_download", "1")
+        try? await store.setMeta("catalog_version", String(remoteVersion))
+    }
+
+    /// Parses `Version - N` (case-insensitive, whitespace-tolerant) from version.md text.
+    private static func parseCatalogVersion(from text: String) -> Int? {
+        let line = text.components(separatedBy: .newlines).first(where: { $0.lowercased().contains("version") }) ?? text
+        let digits = line.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        return Int(digits)
+    }
+
     private func syncCatalogIfNeeded(progress: CatalogSyncProgressReporter) async {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
         let setsURL = AppConfiguration.r2CatalogURL(path: "sets.json")
@@ -320,21 +354,25 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         do {
             try await store.open()
             // 1. Identify which sets actually need their cards downloaded/updated
+            let forceFullDownload = (await store.meta("catalog_force_full_download")) == "1"
+            if forceFullDownload {
+                try? await store.setMeta("catalog_force_full_download", "")
+            }
+
             let existingSets = try await store.fetchAllSets(for: .pokemon)
             let existingCodes = Set(existingSets.map(\.setCode))
-            
-            // For delta sync, we only download sets that are new or were never fully imported
-            // (detected by having no cards in the database).
+
+            // On a version bump download all sets; otherwise only new/empty ones.
             var setsToDownload: [TCGSet] = []
             let setsWithNoCards = try await store.fetchSetCodesWithNoCards(for: .pokemon)
             for set in sets {
                 let hasCards = !setsWithNoCards.contains(set.setCode)
-                if !existingCodes.contains(set.setCode) || !hasCards {
+                if forceFullDownload || !existingCodes.contains(set.setCode) || !hasCards {
                     setsToDownload.append(set)
                 }
             }
 
-            await progress.addPlannedFiles(1 + setsToDownload.count * 2)
+            await progress.addPlannedFiles(1 + setsToDownload.count)
             await progress.completeFile(byteCount: Int64(data.count))
             
             // 2. Upsert the set metadata first
@@ -349,41 +387,22 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                 return
             }
 
-            // 3. Download cards and pricing for the delta sets only
+            // 3. Download cards for the delta sets only (pricing comes from daily bucket sync)
             let sess = session
-            try await withThrowingTaskGroup(of: (String, Data?, Data?).self) { group in
+            try await withThrowingTaskGroup(of: (String, Data?).self) { group in
                 for set in setsToDownload {
                     let code = set.setCode
                     group.addTask {
                         let cardsURL = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
                         let cardsData = try? await sess.data(from: cardsURL).0
-
-                        var pricingData: Data?
-                        for stem in AppConfiguration.pricingFileStemVariants(for: code) {
-                            let pURL = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
-                            guard let (pData, resp) = try? await sess.data(from: pURL),
-                                  let http = resp as? HTTPURLResponse,
-                                  (200...299).contains(http.statusCode),
-                                  !pData.isEmpty
-                            else { continue }
-                            pricingData = pData
-                            break
-                        }
-                        return (code, cardsData, pricingData)
+                        return (code, cardsData)
                     }
                 }
-                
-                for try await (code, cardsData, pricingData) in group {
+
+                for try await (code, cardsData) in group {
                     if let cardsData, let cards = try? JSONDecoder().decode([Card].self, from: cardsData) {
                         try await store.insertCards(cards, setCode: code, brand: .pokemon)
                         await progress.completeFile(byteCount: Int64(cardsData.count))
-                    } else {
-                        await progress.completeFile()
-                    }
-
-                    if let pricingData {
-                        try await store.upsertPricing(setCode: code, json: pricingData, brand: .pokemon)
-                        await progress.completeFile(byteCount: Int64(pricingData.count))
                     } else {
                         await progress.completeFile()
                     }
@@ -705,6 +724,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             }
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonMarketPricingFullRefresh(progress: progress, store: store)
+                downloaded += await syncPricingBuckets(store: store)
             }
             if enabledBrands.contains(.onePiece) {
                 downloaded += await syncOnePieceMarketPricingFullRefresh(progress: progress, store: store)
@@ -716,6 +736,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             var downloaded: Int64 = 0
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonHistoryTrendsOnly(progress: progress, store: store)
+                downloaded += await syncPricingBuckets(store: store)
             }
             if enabledBrands.contains(.onePiece) {
                 downloaded += await syncOnePieceHistoryTrendsOnly(progress: progress, store: store)
@@ -734,6 +755,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         return Date(timeIntervalSince1970: t)
     }
 
+    /// Downloads per-set price trends from `new_pricing/price-trends/{setCode}.json` into SQLite.
+    /// Per-set card pricing is now handled by `syncPricingBuckets` (built from daily bucket files).
     private func syncPokemonMarketPricingFullRefresh(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
         let sets: [TCGSet]
         do {
@@ -744,74 +767,31 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         guard !sets.isEmpty else { return 0 }
         var downloaded: Int64 = 0
         await progress.addPlannedFiles(sets.count)
-        await withTaskGroup(of: (String, Int64)?.self) { group in
+        let sess = session
+        await withTaskGroup(of: Int64.self) { group in
             for set in sets {
                 let code = set.setCode
-                let stems = AppConfiguration.pricingFileStemVariants(for: code)
-                let sess = session
                 group.addTask {
-                    for stem in stems {
-                        let pURL = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
-                        let pricingResult = await self.fetchJSONWithETag(
-                            url: pURL,
-                            etagMetaKey: Self.etagMetaKey(brand: .pokemon, kind: "pricing", setCode: code),
+                    var totalBytes: Int64 = 0
+                    for tStem in AppConfiguration.pricingFileStemVariants(for: code) {
+                        let tURL = AppConfiguration.r2PriceTrendsURL(setCode: tStem)
+                        let tResult = await self.fetchJSONWithETag(
+                            url: tURL,
+                            etagMetaKey: Self.etagMetaKey(brand: .pokemon, kind: "trends", setCode: code),
                             store: store,
                             session: sess
                         )
-                        var totalBytes: Int64 = 0
-                        switch pricingResult {
-                        case .downloaded(let pData):
-                            try? await store.upsertPricing(setCode: code, json: pData, brand: .pokemon)
-                            totalBytes += Int64(pData.count)
-                        case .unchanged:
+                        if case .downloaded(let tData) = tResult {
+                            try? await store.upsertPriceTrends(setCode: code, json: tData, brand: .pokemon)
+                            totalBytes += Int64(tData.count)
                             break
-                        case .unavailable:
-                            continue
                         }
-                        for hStem in AppConfiguration.pricingFileStemVariants(for: code) {
-                            let hURL = AppConfiguration.r2PricingHistoryURL(setCode: hStem)
-                            let hResult = await self.fetchJSONWithETag(
-                                url: hURL,
-                                etagMetaKey: Self.etagMetaKey(brand: .pokemon, kind: "history", setCode: code),
-                                store: store,
-                                session: sess
-                            )
-                            if case .downloaded(let hData) = hResult {
-                                try? await store.upsertPriceHistory(setCode: code, json: hData, brand: .pokemon)
-                                totalBytes += Int64(hData.count)
-                                break
-                            }
-                            if case .unchanged = hResult {
-                                break
-                            }
-                        }
-                        for tStem in AppConfiguration.pricingFileStemVariants(for: code) {
-                            let tURL = AppConfiguration.r2PriceTrendsURL(setCode: tStem)
-                            let tResult = await self.fetchJSONWithETag(
-                                url: tURL,
-                                etagMetaKey: Self.etagMetaKey(brand: .pokemon, kind: "trends", setCode: code),
-                                store: store,
-                                session: sess
-                            )
-                            if case .downloaded(let tData) = tResult {
-                                try? await store.upsertPriceTrends(setCode: code, json: tData, brand: .pokemon)
-                                totalBytes += Int64(tData.count)
-                                break
-                            }
-                            if case .unchanged = tResult {
-                                break
-                            }
-                        }
-                        return (code, totalBytes)
+                        if case .unchanged = tResult { break }
                     }
-                    return nil
+                    return totalBytes
                 }
             }
-            for await result in group {
-                guard let (_, byteCount) = result else {
-                    await progress.completeFile()
-                    continue
-                }
+            for await byteCount in group {
                 await progress.completeFile(byteCount: byteCount)
                 downloaded += byteCount
             }
@@ -921,14 +901,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                 let code = set.setCode
                 group.addTask {
                     var total: Int64 = 0
-                    for hStem in AppConfiguration.pricingFileStemVariants(for: code) {
-                        let hURL = AppConfiguration.r2PricingHistoryURL(setCode: hStem)
-                        if let hData = await Self.fetchHTTPBodyIfOK(session: sess, url: hURL) {
-                            try? await store.upsertPriceHistory(setCode: code, json: hData, brand: .pokemon)
-                            total += Int64(hData.count)
-                            break
-                        }
-                    }
                     for tStem in AppConfiguration.pricingFileStemVariants(for: code) {
                         let tURL = AppConfiguration.r2PriceTrendsURL(setCode: tStem)
                         if let tData = await Self.fetchHTTPBodyIfOK(session: sess, url: tURL) {
@@ -1128,6 +1100,189 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         }
     }
 
+    /// Downloads missing daily bucket files from `new_pricing/daily/` (up to last 31 days),
+    /// pivots each into per-set price history, and upserts into SQLite.
+    /// Also upserts today's bucket as per-set card pricing (SetPricingMap shape).
+    /// Only downloads bucket keys not already recorded in `processed_pricing_buckets`.
+    private func syncPricingBuckets(store: CatalogStore) async -> Int64 {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
+
+        let todayDateKey = Self.todayUTCKey()
+        let candidateKeys = Self.last31DailyKeys()
+        let missing = await store.unprocessedBucketKeys(from: candidateKeys)
+        guard !missing.isEmpty else { return 0 }
+
+        var totalBytes: Int64 = 0
+
+        // setCode → cardId → variant → grade → [[dateKey, price]]
+        var accumulated: [String: [String: [String: [String: [[String]]]]]] = [:]
+        // setCode → cardId → variant → { raw/psa10/ace10 } (today's prices only, for card_pricing)
+        var todayPricing: [String: [String: [String: [String: Double]]]] = [:]
+
+        for dateKey in missing {
+            let url = AppConfiguration.r2NewPricingDailyURL(dateKey: dateKey)
+            guard let data = await Self.fetchHTTPBodyIfOK(session: session, url: url),
+                  let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [String: Double]]]
+            else { continue }
+            totalBytes += Int64(data.count)
+
+            let isToday = dateKey == todayDateKey
+            for (cardId, variants) in bucket {
+                let setCode = Self.setCodeFromCardId(cardId)
+                for (variant, grades) in variants {
+                    for (grade, price) in grades {
+                        accumulated[setCode, default: [:]][cardId, default: [:]][variant, default: [:]][grade, default: []]
+                            .append([dateKey, String(price)])
+                        if isToday {
+                            todayPricing[setCode, default: [:]][cardId, default: [:]][variant, default: [:]][grade] = price
+                        }
+                    }
+                }
+            }
+
+            try? await store.markBucketProcessed(key: dateKey)
+        }
+
+        // Upsert today's bucket as per-set card_pricing rows (SetPricingMap: cardId → { scrydex: { variant: { raw/psa10/ace10 } } })
+        for (setCode, cardMap) in todayPricing {
+            var pricingMap: [String: [String: Any]] = [:]
+            for (cardId, variants) in cardMap {
+                var scrydex: [String: [String: Double]] = [:]
+                for (variant, grades) in variants {
+                    var entry: [String: Double] = [:]
+                    if let v = grades["raw"] { entry["raw"] = v }
+                    if let v = grades["psa10"] { entry["psa10"] = v }
+                    if let v = grades["ace10"] { entry["ace10"] = v }
+                    if !entry.isEmpty { scrydex[variant] = entry }
+                }
+                if !scrydex.isEmpty {
+                    pricingMap[cardId] = ["scrydex": scrydex, "tcgplayer": NSNull(), "cardmarket": NSNull()]
+                }
+            }
+            if let json = try? JSONSerialization.data(withJSONObject: pricingMap) {
+                try? await store.upsertPricing(setCode: setCode, json: json, brand: .pokemon)
+            }
+        }
+
+        // Merge accumulated points into existing SQLite history per set
+        for (setCode, cardMap) in accumulated {
+            let existing: [String: [String: Any]]
+            if let blob = await store.fetchPriceHistoryData(setCode: setCode, brand: .pokemon),
+               let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {
+                existing = root.compactMapValues { $0 as? [String: Any] }
+            } else {
+                existing = [:]
+            }
+
+            var merged = existing
+            for (cardId, variants) in cardMap {
+                var cardEntry = merged[cardId] as? [String: [String: Any]] ?? [:]
+                for (variant, grades) in variants {
+                    var variantEntry = cardEntry[variant] as? [String: Any] ?? [:]
+                    for (grade, newPoints) in grades {
+                        var window = variantEntry[grade] as? [String: [[String]]] ?? [:]
+                        var daily = window["daily"] ?? []
+                        for point in newPoints {
+                            daily.removeAll { $0.first == point.first }
+                            daily.append(point)
+                        }
+                        daily.sort { ($0.first ?? "") < ($1.first ?? "") }
+                        if daily.count > 31 { daily = Array(daily.suffix(31)) }
+                        window["daily"] = daily
+                        window["weekly"] = Self.weeklyAverages(from: daily, limit: 52)
+                        window["monthly"] = Self.monthlyAverages(from: daily, limit: 60)
+                        variantEntry[grade] = window
+                    }
+                    cardEntry[variant] = variantEntry
+                }
+                merged[cardId] = cardEntry
+            }
+
+            if let json = try? JSONSerialization.data(withJSONObject: merged) {
+                try? await store.upsertPriceHistory(setCode: setCode, json: json, brand: .pokemon)
+            }
+        }
+
+        return totalBytes
+    }
+
+    private static func todayUTCKey(now: Date = Date()) -> String {
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        let c = cal.dateComponents([.year, .month, .day], from: now)
+        return String(format: "%04d-%02d-%02d", c.year!, c.month!, c.day!)
+    }
+
+    private static func setCodeFromCardId(_ cardId: String) -> String {
+        // e.g. "base1-1" → "base1", "sv3pt5-200" → "sv3pt5"
+        guard let dash = cardId.lastIndex(of: "-") else { return cardId }
+        return String(cardId[..<dash])
+    }
+
+    /// ISO week key "YYYY-Www" from a "YYYY-MM-DD" date key.
+    private static func isoWeekKey(from dateKey: String) -> String? {
+        guard dateKey.count == 10 else { return nil }
+        let parts = dateKey.split(separator: "-")
+        guard parts.count == 3,
+              let year = Int(parts[0]), let month = Int(parts[1]), let day = Int(parts[2]) else { return nil }
+        var comps = DateComponents()
+        comps.year = year; comps.month = month; comps.day = day
+        var cal = Calendar(identifier: .iso8601)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        guard let date = cal.date(from: comps) else { return nil }
+        let isoYear = cal.component(.yearForWeekOfYear, from: date)
+        let isoWeek = cal.component(.weekOfYear, from: date)
+        return String(format: "%04d-W%02d", isoYear, isoWeek)
+    }
+
+    /// "YYYY-MM" from "YYYY-MM-DD".
+    private static func monthKey(from dateKey: String) -> String? {
+        guard dateKey.count >= 7 else { return nil }
+        return String(dateKey.prefix(7))
+    }
+
+    /// Returns sorted [["weekKey", avgPrice]] from daily points, trimmed to `limit`.
+    private static func weeklyAverages(from daily: [[String]], limit: Int) -> [[String]] {
+        var totals: [String: (sum: Double, count: Int)] = [:]
+        for point in daily {
+            guard point.count == 2, let wk = isoWeekKey(from: point[0]), let p = Double(point[1]) else { continue }
+            totals[wk, default: (0, 0)].sum += p
+            totals[wk, default: (0, 0)].count += 1
+        }
+        return totals
+            .map { (k, v) in [k, String(v.sum / Double(v.count))] }
+            .sorted { $0[0] < $1[0] }
+            .suffix(limit)
+            .map { $0 }
+    }
+
+    /// Returns sorted [["YYYY-MM", avgPrice]] from daily points, trimmed to `limit`.
+    private static func monthlyAverages(from daily: [[String]], limit: Int) -> [[String]] {
+        var totals: [String: (sum: Double, count: Int)] = [:]
+        for point in daily {
+            guard point.count == 2, let mk = monthKey(from: point[0]), let p = Double(point[1]) else { continue }
+            totals[mk, default: (0, 0)].sum += p
+            totals[mk, default: (0, 0)].count += 1
+        }
+        return totals
+            .map { (k, v) in [k, String(v.sum / Double(v.count))] }
+            .sorted { $0[0] < $1[0] }
+            .suffix(limit)
+            .map { $0 }
+    }
+
+    /// Last 31 calendar days as "YYYY-MM-DD" keys (UTC), oldest first.
+    private static func last31DailyKeys(relativeTo now: Date = Date()) -> [String] {
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        return (0..<31).compactMap { offset -> String? in
+            guard let date = cal.date(byAdding: .day, value: -offset, to: now) else { return nil }
+            let comps = cal.dateComponents([.year, .month, .day], from: date)
+            guard let y = comps.year, let m = comps.month, let d = comps.day else { return nil }
+            return String(format: "%04d-%02d-%02d", y, m, d)
+        }.reversed()
+    }
+
     private func syncDailyBlobsIfNeeded(
         progress: CatalogSyncProgressReporter,
         enabledBrands: Set<TCGBrand>,
@@ -1220,9 +1375,9 @@ enum DailyBlobKey {
 /// Paths relative to `r2MarketPathPrefix` (default: bucket root). Adjust in `AppConfiguration` / plist if your tidy layout differs.
 enum DailyBlobPath {
     static let pokedataEnglishPokemonProducts = "data/pokedata-english-pokemon-products.json"
-    static let pokedataEnglishPokemonPrices = "pricing/pokedata-english-pokemon-prices.json"
-    static let pokedataEnglishPokemonPriceHistory = "pricing/pokedata-english-pokemon-price-history.json"
-    static let pokedataEnglishPokemonPriceTrends = "pricing/pokedata-english-pokemon-price-trends.json"
+    static let pokedataEnglishPokemonPrices = "new_pricing/pokedata-english-pokemon-prices.json"
+    static let pokedataEnglishPokemonPriceHistory = "new_pricing/pokedata-english-pokemon-price-history.json"
+    static let pokedataEnglishPokemonPriceTrends = "new_pricing/pokedata-english-pokemon-price-trends.json"
     static let priceTrends = "data/price-trends.json"
-    static let marketTrend = "pricing/market-trend.json"
+    static let marketTrend = "new_pricing/market-trend.json"
 }
