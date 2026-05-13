@@ -292,6 +292,19 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         return totalDownloaded > 0
     }
 
+    /// User-invoked settings action: force re-download of daily market blobs (market trend, price trends, pokedata)
+    /// without touching card catalog or per-set pricing. Bypasses the 03:00 daily gate.
+    func forceMarketTrendRefresh(
+        enabledBrands: Set<TCGBrand>,
+        progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)? = nil
+    ) async {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
+        let store = CatalogStore.shared
+        try? await store.open()
+        let progress = CatalogSyncProgressReporter(handler: progressHandler)
+        _ = await syncDailyBlobsIfNeeded(progress: progress, enabledBrands: enabledBrands, forceRefresh: true)
+    }
+
     /// Fetches `version.md`, parses `Version - N`, and if N is greater than the stored value
     /// clears the catalog SHA256/ETag guards so `syncCatalogIfNeeded` forces a full re-download.
     private func checkAndApplyCatalogVersionIfNeeded(store: CatalogStore) async {

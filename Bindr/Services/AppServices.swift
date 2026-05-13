@@ -416,6 +416,15 @@ final class AppServices {
         await refreshCatalogCardsLastUpdatedAtFromStore()
     }
 
+    /// Settings action: force re-download of market trend and daily blob data, then reload the dashboard.
+    /// Deliberately does NOT touch isCatalogDownloadInProgress — that flag triggers forceRecalculate
+    /// on the dashboard which purges collection value snapshot history. Market trend blobs don't
+    /// affect per-card prices so no recalculation is needed.
+    func forceMarketTrendRefreshFromSettings() async {
+        await CatalogSyncCoordinator.shared.forceMarketTrendRefresh(enabledBrands: brandSettings.enabledBrands)
+        requestDashboardMarketReload()
+    }
+
     /// Settings action: hard reset local catalog SQLite payloads for enabled brands, then fully re-download.
     func forceCatalogRedownloadFromSettings() async {
         guard !isCatalogDownloadInProgress else { return }

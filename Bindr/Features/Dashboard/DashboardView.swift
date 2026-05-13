@@ -1787,9 +1787,18 @@ struct DashboardView: View {
     }
 
     private func formatCurrencyShort(_ value: Double) -> String {
-        value >= 1000
-            ? "£\(String(format: "%.1fk", value / 1000))"
-            : "£\(String(format: "%.0f", value))"
+        guard value >= 1000 else {
+            return "£\(String(format: "%.0f", value))"
+        }
+        // Use extra decimal places when the visible chart range is tight enough
+        // that 1 decimal place would produce duplicate Y-axis labels.
+        let range = chartMax - chartMin
+        if range < 200 {
+            return "£\(String(format: "%.2fk", value / 1000))"
+        } else if range < 500 {
+            return "£\(String(format: "%.1fk", value / 1000))"
+        }
+        return "£\(String(format: "%.1fk", value / 1000))"
     }
 
     private func loadMarketTrendBlob() async {

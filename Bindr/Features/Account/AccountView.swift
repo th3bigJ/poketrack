@@ -12,6 +12,8 @@ struct SettingsView: View {
     @State private var showForceRedownloadPrompt = false
     @State private var isRecalculating = false
     @State private var recalcDone = false
+    @State private var isRefreshingMarketTrend = false
+    @State private var marketTrendRefreshDone = false
 
     /// Brands the user has not added yet (shown in the Add menu). Order follows the hosted `brands.json`.
     private var brandsAvailableToAdd: [TCGBrand] {
@@ -172,6 +174,27 @@ struct SettingsView: View {
                 }
             }
             .disabled(isRecalculating)
+            Button {
+                guard !isRefreshingMarketTrend else { return }
+                isRefreshingMarketTrend = true
+                marketTrendRefreshDone = false
+                Task {
+                    await services.forceMarketTrendRefreshFromSettings()
+                    isRefreshingMarketTrend = false
+                    marketTrendRefreshDone = true
+                }
+            } label: {
+                if isRefreshingMarketTrend {
+                    Label("Refreshing market data…", systemImage: "arrow.clockwise")
+                        .foregroundStyle(.secondary)
+                } else if marketTrendRefreshDone {
+                    Label("Market data refreshed", systemImage: "checkmark.circle")
+                        .foregroundStyle(.green)
+                } else {
+                    Label("Refresh market trend data", systemImage: "chart.line.uptrend.xyaxis")
+                }
+            }
+            .disabled(isRefreshingMarketTrend)
         }
     }
 
