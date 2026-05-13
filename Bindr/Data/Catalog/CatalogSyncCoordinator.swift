@@ -1709,7 +1709,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     private func syncSealedPricingBuckets(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
 
-        let todayDateKey = Self.todayUTCKey()
         let candidateDailyKeys = Self.last31DailyKeys().map { "sealed/\($0)" }
         let missingDailyKeys = await store.unprocessedBucketKeys(from: candidateDailyKeys)
 
