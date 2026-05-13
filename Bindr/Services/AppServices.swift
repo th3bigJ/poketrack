@@ -69,6 +69,13 @@ final class AppServices {
     private(set) var bootstrapDownloadedBytes: Int64 = 0
     private(set) var bootstrapEstimatedTotalBytes: Int64 = 0
 
+    /// Incremented by the settings recalculate button so DashboardView reloads market trend/movers.
+    private(set) var dashboardMarketReloadToken: Int = 0
+
+    func requestDashboardMarketReload() {
+        dashboardMarketReloadToken += 1
+    }
+
     /// Full-screen catalog download (Account toggles on) — mirrors bootstrap progress but does not block app launch.
     private(set) var isCatalogDownloadInProgress = false
     /// Heavy download UI only after bytes are observed (warm re-launch may stay on a light spinner).

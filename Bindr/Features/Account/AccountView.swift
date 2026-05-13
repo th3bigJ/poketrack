@@ -1,13 +1,17 @@
 import SwiftUI
+import SwiftData
 
 struct SettingsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
+    @Query private var collectionItems: [CollectionItem]
     @State private var showPaywall = false
     @State private var showDataExport = false
     @State private var showDisclaimer = false
     @State private var brandPendingDisable: TCGBrand?
     @State private var showForceRedownloadPrompt = false
+    @State private var isRecalculating = false
+    @State private var recalcDone = false
 
     /// Brands the user has not added yet (shown in the Add menu). Order follows the hosted `brands.json`.
     private var brandsAvailableToAdd: [TCGBrand] {
@@ -136,6 +140,38 @@ struct SettingsView: View {
             }
             Text("Catalog and history values from the server are in US dollars. Pounds use a daily exchange rate.")
                 .font(.caption).foregroundStyle(.secondary)
+            Button {
+                guard !isRecalculating else { return }
+                isRecalculating = true
+                recalcDone = false
+                let items = collectionItems
+                Task {
+                    await services.pricing.refreshFXRate()
+                    services.pricing.clearSetPricingMemoryCache()
+                    let liveSnapshot = await computeLiveSnapshot(items: items)
+                    print("[Recalc] items=\(items.count) liveSnapshot=\(liveSnapshot?.total as Any) collectionValue=\(services.collectionValue != nil)")
+                    if let liveSnapshot {
+                        await services.collectionValue?.forceRecalculate(
+                            liveSnapshot: liveSnapshot,
+                            collectionItems: items
+                        )
+                    }
+                    services.requestDashboardMarketReload()
+                    isRecalculating = false
+                    recalcDone = true
+                }
+            } label: {
+                if isRecalculating {
+                    Label("Recalculating…", systemImage: "arrow.clockwise")
+                        .foregroundStyle(.secondary)
+                } else if recalcDone {
+                    Label("Recalculation complete", systemImage: "checkmark.circle")
+                        .foregroundStyle(.green)
+                } else {
+                    Label("Recalculate dashboard values", systemImage: "arrow.clockwise")
+                }
+            }
+            .disabled(isRecalculating)
         }
     }
 
@@ -253,6 +289,45 @@ struct SettingsView: View {
         let sorted = services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
         guard let index = offsets.first, sorted.indices.contains(index) else { return }
         brandPendingDisable = sorted[index]
+    }
+
+    private func computeLiveSnapshot(items: [CollectionItem]) async -> BrandSnapshot? {
+        var pokemon = 0.0
+        var onePiece = 0.0
+        await services.sealedProducts.loadFromLocalIfAvailable()
+        for item in items {
+            let qty = max(item.quantity, 0)
+            guard qty > 0, item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
+            let usd: Double
+            if let pid = sealedProductID(for: item),
+               let p = services.sealedProducts.marketPriceUSD(for: pid) {
+                usd = p * Double(qty)
+            } else {
+                guard let card = await services.cardData.loadCard(masterCardId: item.cardID) else { continue }
+                let grade: String = {
+                    guard let c = item.gradingCompany else { return "raw" }
+                    switch c.uppercased() {
+                    case "PSA": return "psa10"
+                    case "ACE": return "ace10"
+                    default: return "raw"
+                    }
+                }()
+                usd = (await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: item.variantKey, grade: grade) ?? 0) * Double(qty)
+            }
+            let gbp = usd * services.pricing.usdToGbp
+            switch TCGBrand.inferredFromMasterCardId(item.cardID) {
+            case .pokemon: pokemon += gbp
+            case .onePiece: onePiece += gbp
+            }
+        }
+        let total = pokemon + onePiece
+        guard total > 0 else { return nil }
+        return BrandSnapshot(total: total, pokemon: pokemon, onePiece: onePiece)
+    }
+
+    private func sealedProductID(for item: CollectionItem) -> Int? {
+        if let rawID = item.sealedProductId, let id = Int(rawID), id > 0 { return id }
+        return SealedProduct.parseCollectionProductID(item.cardID)
     }
 
 }

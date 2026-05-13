@@ -38,6 +38,7 @@ struct DashboardView: View {
     @State private var isLoadingValue = false
     @State private var selectedPoint: ChartPoint? = nil
     @State private var chartRange: ChartRange = .daily
+    @State private var chartRefreshID: Int = 0
     @State private var selectedBrand: TCGBrand? = nil
     @State private var cardNamesByID: [String: String] = [:]
     @State private var setNamesByCardID: [String: String] = [:]
@@ -185,44 +186,21 @@ struct DashboardView: View {
     }
 
     private var weeklyPoints: [ChartPoint] {
-        let svc = services.collectionValue
+        guard let svc = services.collectionValue else { return [] }
         let cal = Calendar.current
         let cutoff = cal.date(byAdding: .year, value: -1, to: cal.startOfDay(for: Date()))!
-        var points: [ChartPoint] = []
-        if let svc {
-            points = svc.weeklyAverages
-                .filter { $0.weekStart >= cutoff }
-                .map { ChartPoint(date: $0.weekStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
-            let cwAvg = svc.currentWeekAverage(liveToday: liveSnapshot)
-            if cwAvg.total > 0 {
-                var cal2 = Calendar(identifier: .iso8601)
-                cal2.timeZone = TimeZone.current
-                let thisWeekStart = cal2.date(from: cal2.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
-                points.append(ChartPoint(date: thisWeekStart, total: cwAvg.total, pokemon: cwAvg.pokemon, onePiece: cwAvg.onePiece))
-            }
-        }
-        return points
+        return svc.weeklyAverages
+            .filter { $0.weekStart >= cutoff }
+            .map { ChartPoint(date: $0.weekStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
     }
 
     private var monthlyPoints: [ChartPoint] {
-        let svc = services.collectionValue
+        guard let svc = services.collectionValue else { return [] }
         let cal = Calendar.current
         let cutoff = cal.date(byAdding: .year, value: -5, to: cal.startOfDay(for: Date()))!
-        var points: [ChartPoint] = []
-        if let svc {
-            points = svc.monthlyAverages
-                .filter { $0.monthStart >= cutoff }
-                .map { ChartPoint(date: $0.monthStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
-            let cmAvg = svc.currentMonthAverage(liveToday: liveSnapshot)
-            let currentMonthTotal = cmAvg.total > 0 ? cmAvg.total : (liveSnapshot?.total ?? 0)
-            if currentMonthTotal > 0 {
-                let comps = cal.dateComponents([.year, .month], from: Date())
-                let thisMonthStart = cal.date(from: comps)!
-                let snap = cmAvg.total > 0 ? cmAvg : liveSnapshot!
-                points.append(ChartPoint(date: thisMonthStart, total: snap.total, pokemon: snap.pokemon, onePiece: snap.onePiece))
-            }
-        }
-        return points
+        return svc.monthlyAverages
+            .filter { $0.monthStart >= cutoff }
+            .map { ChartPoint(date: $0.monthStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
     }
 
     private var activePoints: [ChartPoint] {
@@ -338,10 +316,25 @@ struct DashboardView: View {
         .task {
             await loadMarketTrendBlob()
         }
+        .task(id: services.dashboardMarketReloadToken) {
+            guard services.dashboardMarketReloadToken > 0 else { return }
+            await computeLiveValue()
+            chartRefreshID += 1
+            await loadMarketTrendBlob()
+            await resolveInsightsData()
+        }
         .onChange(of: services.isCatalogDownloadInProgress) { _, inProgress in
             guard !inProgress else { return }
             Task {
+                await computeLiveValue()
+                if let snap = liveSnapshot {
+                    await services.collectionValue?.forceRecalculate(
+                        liveSnapshot: snap,
+                        collectionItems: collectionItems
+                    )
+                }
                 await loadMarketTrendBlob()
+                await resolveInsightsData()
             }
         }
         .onAppear {
@@ -523,6 +516,7 @@ struct DashboardView: View {
 
     private var valueAndHistoryCard: some View {
         dashboardCard {
+            let _ = chartRefreshID  // force re-evaluation when recalculate completes
             VStack(alignment: .leading, spacing: 12) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 8) {
@@ -1360,6 +1354,12 @@ struct DashboardView: View {
         livePokemonGbp = pokemonValue
         liveOnePieceGbp = onePieceValue
         totalCostBasis = totalCost
+
+        // Keep today's snapshot current throughout the day so the chart always shows live data
+        if let snap = liveSnapshot {
+            let changed = services.collectionValue?.updateTodaySnapshot(snap) ?? false
+            if changed { services.collectionValue?.aggregateCurrentPeriods() }
+        }
     }
 
     private func sealedProductID(for item: CollectionItem) -> Int? {

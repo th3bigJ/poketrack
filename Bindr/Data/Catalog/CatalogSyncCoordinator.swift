@@ -760,7 +760,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             }
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonMarketPricingFullRefresh(progress: progress, store: store)
-                downloaded += await syncPricingBuckets(store: store)
+                downloaded += await syncPricingBuckets(progress: progress, store: store)
             }
             if enabledBrands.contains(.onePiece) {
                 downloaded += await syncOnePieceMarketPricingFullRefresh(progress: progress, store: store)
@@ -772,7 +772,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             var downloaded: Int64 = 0
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonHistoryTrendsOnly(progress: progress, store: store)
-                downloaded += await syncPricingBuckets(store: store)
+                downloaded += await syncPricingBuckets(progress: progress, store: store)
             }
             if enabledBrands.contains(.onePiece) {
                 downloaded += await syncOnePieceHistoryTrendsOnly(progress: progress, store: store)
@@ -1140,13 +1140,16 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     /// pivots each into per-set price history, and upserts into SQLite.
     /// Also upserts today's bucket as per-set card pricing (SetPricingMap shape).
     /// Only downloads bucket keys not already recorded in `processed_pricing_buckets`.
-    private func syncPricingBuckets(store: CatalogStore) async -> Int64 {
+    private func syncPricingBuckets(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
 
         let todayDateKey = Self.todayUTCKey()
         let candidateKeys = Self.last31DailyKeys()
         let missing = await store.unprocessedBucketKeys(from: candidateKeys)
         guard !missing.isEmpty else { return 0 }
+
+        await progress.setStatus("Downloading daily price data…")
+        await progress.addPlannedFiles(missing.count)
 
         var totalBytes: Int64 = 0
 
@@ -1159,7 +1162,10 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             let url = AppConfiguration.r2NewPricingDailyURL(dateKey: dateKey)
             guard let data = await Self.fetchHTTPBodyIfOK(session: session, url: url),
                   let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [String: Double]]]
-            else { continue }
+            else {
+                await progress.completeFile()
+                continue
+            }
             totalBytes += Int64(data.count)
 
             let isToday = dateKey == todayDateKey
@@ -1177,6 +1183,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             }
 
             try? await store.markBucketProcessed(key: dateKey)
+            await progress.completeFile(byteCount: Int64(data.count))
         }
 
         // Upsert today's bucket as per-set card_pricing rows (SetPricingMap: cardId → { scrydex: { variant: { raw/psa10/ace10 } } })
