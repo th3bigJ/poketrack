@@ -743,9 +743,10 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         let last = await lastMarketPricingSyncDate(store: store)
         let needsPeriodRefresh = DailyMarketPricingSchedule.needsRefreshAfterNewPeriod(lastSync: last)
         let needsAuxBackfill = (await store.meta("pricing_aux_sqlite_v1")) != "1"
+        let needsHistoryBackfill = (await store.meta("pricing_history_backfill_v1")) != "1"
         let shouldRunPeriodRefresh = forceRefresh || needsPeriodRefresh
         let shouldRunAuxBackfill = !forceRefresh && needsAuxBackfill
-        guard shouldRunPeriodRefresh || shouldRunAuxBackfill else { return 0 }
+        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill else { return 0 }
 
         await progress.setStatus("Refreshing pricing data…")
         if shouldRunPeriodRefresh {
@@ -761,6 +762,10 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonMarketPricingFullRefresh(progress: progress, store: store)
                 downloaded += await syncPricingBuckets(progress: progress, store: store)
+                if needsHistoryBackfill {
+                    downloaded += await syncPricingHistoryBackfill(progress: progress, store: store)
+                    try? await store.setMeta("pricing_history_backfill_v1", "1")
+                }
             }
             if enabledBrands.contains(.onePiece) {
                 downloaded += await syncOnePieceMarketPricingFullRefresh(progress: progress, store: store)
@@ -773,6 +778,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonHistoryTrendsOnly(progress: progress, store: store)
                 downloaded += await syncPricingBuckets(progress: progress, store: store)
+                if needsHistoryBackfill {
+                    downloaded += await syncPricingHistoryBackfill(progress: progress, store: store)
+                    if downloaded > 0 {
+                        try? await store.setMeta("pricing_history_backfill_v1", "1")
+                    }
+                }
             }
             if enabledBrands.contains(.onePiece) {
                 downloaded += await syncOnePieceHistoryTrendsOnly(progress: progress, store: store)
@@ -780,6 +791,17 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             // Avoid marking complete offline: retry chart backfill on a later launch when networked.
             if downloaded > 0 {
                 try? await store.setMeta("pricing_aux_sqlite_v1", "1")
+            }
+            return downloaded
+        } else if needsHistoryBackfill {
+            // Already past the daily gate and aux backfill, but history was never downloaded
+            // (e.g. app updated after pricing_aux_sqlite_v1 was already set on an older build).
+            var downloaded: Int64 = 0
+            if enabledBrands.contains(.pokemon) {
+                downloaded += await syncPricingHistoryBackfill(progress: progress, store: store)
+            }
+            if downloaded > 0 {
+                try? await store.setMeta("pricing_history_backfill_v1", "1")
             }
             return downloaded
         }
@@ -1249,6 +1271,115 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         return totalBytes
     }
 
+    /// On first install, downloads all available weekly and monthly price buckets from R2 and merges
+    /// them into SQLite price history. Each bucket key is tracked in `processed_pricing_buckets` so
+    /// it is never re-fetched. After this one-time pass, daily `syncPricingBuckets` takes over and
+    /// weekly/monthly averages are recomputed on-device from incoming daily data.
+    ///
+    /// The start year (2020) is the earliest data available on R2. Adjust if the dataset grows.
+    private func syncPricingHistoryBackfill(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
+
+        let allWeekly = Self.allWeeklyKeys(from: 2020)
+        let allMonthly = Self.allMonthlyKeys(from: 2020)
+
+        let missingWeekly = await store.unprocessedBucketKeys(from: allWeekly)
+        let missingMonthly = await store.unprocessedBucketKeys(from: allMonthly)
+        guard !missingWeekly.isEmpty || !missingMonthly.isEmpty else { return 0 }
+
+        await progress.setStatus("Downloading price history…")
+        await progress.addPlannedFiles(missingWeekly.count + missingMonthly.count)
+
+        var totalBytes: Int64 = 0
+        // setCode → cardId → variant → grade → [[bucketKey, price]]
+        var accumulated: [String: [String: [String: [String: [[String]]]]]] = [:]
+
+        func processBucket(key: String, data: Data) {
+            guard let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [String: Double]]] else { return }
+            for (cardId, variants) in bucket {
+                let setCode = Self.setCodeFromCardId(cardId)
+                for (variant, grades) in variants {
+                    for (grade, price) in grades {
+                        accumulated[setCode, default: [:]][cardId, default: [:]][variant, default: [:]][grade, default: []]
+                            .append([key, String(price)])
+                    }
+                }
+            }
+        }
+
+        for weekKey in missingWeekly {
+            let url = AppConfiguration.r2NewPricingWeeklyURL(weekKey: weekKey)
+            if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url) {
+                totalBytes += Int64(data.count)
+                processBucket(key: weekKey, data: data)
+            }
+            try? await store.markBucketProcessed(key: weekKey)
+            await progress.completeFile(byteCount: 0)
+        }
+
+        for monthKey in missingMonthly {
+            let url = AppConfiguration.r2NewPricingMonthlyURL(monthKey: monthKey)
+            if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url) {
+                totalBytes += Int64(data.count)
+                processBucket(key: monthKey, data: data)
+            }
+            try? await store.markBucketProcessed(key: monthKey)
+            await progress.completeFile(byteCount: 0)
+        }
+
+        // Merge accumulated weekly/monthly points into per-set history blobs.
+        // Weekly points go into window["weekly"], monthly into window["monthly"].
+        // Each array is deduplicated by key and kept sorted.
+        for (setCode, cardMap) in accumulated {
+            let existing: [String: [String: Any]]
+            if let blob = await store.fetchPriceHistoryData(setCode: setCode, brand: .pokemon),
+               let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {
+                existing = root.compactMapValues { $0 as? [String: Any] }
+            } else {
+                existing = [:]
+            }
+
+            var merged = existing
+            for (cardId, variants) in cardMap {
+                var cardEntry = merged[cardId] as? [String: [String: Any]] ?? [:]
+                for (variant, grades) in variants {
+                    var variantEntry = cardEntry[variant] ?? [:]
+                    for (grade, newPoints) in grades {
+                        var window = variantEntry[grade] as? [String: [[String]]] ?? [:]
+
+                        // Partition new points into weekly vs monthly by key format
+                        let newWeekly = newPoints.filter { $0.first?.contains("-W") == true }
+                        let newMonthly = newPoints.filter { pt in
+                            guard let k = pt.first else { return false }
+                            return !k.contains("-W") && k.count == 7  // "YYYY-MM"
+                        }
+
+                        func merge(existing arr: [[String]], with newPts: [[String]]) -> [[String]] {
+                            var result = arr
+                            for pt in newPts {
+                                result.removeAll { $0.first == pt.first }
+                                result.append(pt)
+                            }
+                            return result.sorted { ($0.first ?? "") < ($1.first ?? "") }
+                        }
+
+                        window["weekly"] = merge(existing: window["weekly"] ?? [], with: newWeekly)
+                        window["monthly"] = merge(existing: window["monthly"] ?? [], with: newMonthly)
+                        variantEntry[grade] = window
+                    }
+                    cardEntry[variant] = variantEntry
+                }
+                merged[cardId] = cardEntry
+            }
+
+            if let json = try? JSONSerialization.data(withJSONObject: merged) {
+                try? await store.upsertPriceHistory(setCode: setCode, json: json, brand: .pokemon)
+            }
+        }
+
+        return totalBytes
+    }
+
     private static func todayUTCKey(now: Date = Date()) -> String {
         var cal = Calendar(identifier: .gregorian)
         cal.timeZone = TimeZone(identifier: "UTC")!
@@ -1324,6 +1455,48 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             guard let y = comps.year, let m = comps.month, let d = comps.day else { return nil }
             return String(format: "%04d-%02d-%02d", y, m, d)
         }.reversed()
+    }
+
+    /// All ISO week keys "YYYY-Www" from `startYear` up to and including the current week (UTC), oldest first.
+    private static func allWeeklyKeys(from startYear: Int, relativeTo now: Date = Date()) -> [String] {
+        var cal = Calendar(identifier: .iso8601)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        var comps = DateComponents()
+        comps.weekOfYear = 1
+        comps.yearForWeekOfYear = startYear
+        guard var cursor = cal.date(from: comps) else { return [] }
+        let currentWeekKey = isoWeekKey(from: todayUTCKey(now: now)) ?? ""
+        var keys: [String] = []
+        while let key = isoWeekKey(from: {
+            let c = cal.dateComponents([.year, .month, .day], from: cursor)
+            return String(format: "%04d-%02d-%02d", c.year!, c.month!, c.day!)
+        }()), key <= currentWeekKey {
+            if keys.last != key { keys.append(key) }
+            guard let next = cal.date(byAdding: .weekOfYear, value: 1, to: cursor) else { break }
+            cursor = next
+        }
+        return keys
+    }
+
+    /// All month keys "YYYY-MM" from `startYear` up to and including the current month (UTC), oldest first.
+    private static func allMonthlyKeys(from startYear: Int, relativeTo now: Date = Date()) -> [String] {
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        var comps = DateComponents()
+        comps.year = startYear; comps.month = 1; comps.day = 1
+        guard var cursor = cal.date(from: comps) else { return [] }
+        let todayComps = cal.dateComponents([.year, .month], from: now)
+        let currentKey = String(format: "%04d-%02d", todayComps.year!, todayComps.month!)
+        var keys: [String] = []
+        while true {
+            let c = cal.dateComponents([.year, .month], from: cursor)
+            let key = String(format: "%04d-%02d", c.year!, c.month!)
+            guard key <= currentKey else { break }
+            keys.append(key)
+            guard let next = cal.date(byAdding: .month, value: 1, to: cursor) else { break }
+            cursor = next
+        }
+        return keys
     }
 
     private func syncDailyBlobsIfNeeded(
