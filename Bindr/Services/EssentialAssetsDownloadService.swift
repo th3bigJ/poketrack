@@ -59,9 +59,13 @@ final class EssentialAssetsDownloadService {
                 group.addTask { await Self.downloadAndSave(key: item.key, url: item.url, brand: brand) }
             }
             for await _ in group {
-                if Task.isCancelled { group.cancelAll(); return }
                 completed += 1
-                if completed.isMultiple(of: 100) {
+                if Task.isCancelled {
+                    try? store.flushManifest(for: brand)
+                    group.cancelAll()
+                    return
+                }
+                if completed.isMultiple(of: 50) {
                     try? store.flushManifest(for: brand)
                 }
                 if let item = iterator.next() {

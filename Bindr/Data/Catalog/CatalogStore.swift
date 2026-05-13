@@ -14,10 +14,21 @@ private enum CatalogSQLite {
 final class CatalogStore: @unchecked Sendable {
     static let shared = CatalogStore()
 
-    private let queue = DispatchQueue(label: "com.bindr.catalog.sqlite", qos: .utility)
+    /// Serial queue for all writes (INSERT / UPDATE / DELETE / DDL).
+    private let queue = DispatchQueue(label: "com.bindr.catalog.sqlite.write", qos: .utility)
+    /// Concurrent queue for read-only queries. WAL mode allows readers to run
+    /// concurrently with the writer without blocking or being blocked.
+    private let readQueue = DispatchQueue(label: "com.bindr.catalog.sqlite.read", qos: .userInitiated, attributes: .concurrent)
     private var db: OpaquePointer?
+    /// Separate read-only connection used exclusively on `readQueue`.
+    private var readDb: OpaquePointer?
     private let jsonDecoder = JSONDecoder()
     private let jsonEncoder = JSONEncoder()
+
+    /// In-memory mirror of the `sync_meta` table. Loaded at open time; writes update both SQLite and this dict.
+    /// Protected by `metaCacheLock` so reads never dispatch to `queue`.
+    private var metaCache: [String: String] = [:]
+    private let metaCacheLock = NSLock()
 
     private init() {}
 
@@ -63,8 +74,60 @@ final class CatalogStore: @unchecked Sendable {
             throw error
         }
         sqlite3_exec(db, "PRAGMA journal_mode=WAL;", nil, nil, nil)
+        sqlite3_exec(db, "PRAGMA cache_size = -8000;", nil, nil, nil)
+        sqlite3_exec(db, "PRAGMA mmap_size = 67108864;", nil, nil, nil)
         sqlite3_exec(db, "PRAGMA foreign_keys=ON;", nil, nil, nil)
         sqlite3_exec(db, "PRAGMA busy_timeout = 5000;", nil, nil, nil)
+        // Load after migrations (which may have written/deleted sync_meta rows directly).
+        loadMetaCacheLocked()
+
+        // Open a second read-only connection on the same WAL database.
+        var rHandle: OpaquePointer?
+        let rFlags = SQLITE_OPEN_READONLY | SQLITE_OPEN_FULLMUTEX | SQLITE_OPEN_SHAREDCACHE
+        if sqlite3_open_v2(path, &rHandle, rFlags, nil) == SQLITE_OK, let rh = rHandle {
+            sqlite3_exec(rh, "PRAGMA cache_size = -4000;", nil, nil, nil)
+            sqlite3_exec(rh, "PRAGMA mmap_size = 67108864;", nil, nil, nil)
+            sqlite3_exec(rh, "PRAGMA busy_timeout = 5000;", nil, nil, nil)
+            readDb = rh
+        }
+    }
+
+    /// Dispatch a read-only closure on the concurrent read queue using the read-only connection.
+    /// Falls back to the write connection if the read connection has not been opened yet.
+    private func readAsync<T>(
+        _ continuation: CheckedContinuation<T, any Error>,
+        body: @escaping (OpaquePointer) throws -> T
+    ) {
+        readQueue.async {
+            let handle = self.readDb ?? self.db
+            guard let handle else { continuation.resume(throwing: CatalogStoreError.notOpen); return }
+            do { continuation.resume(returning: try body(handle)) }
+            catch { continuation.resume(throwing: error) }
+        }
+    }
+
+    private func readAsyncOptional<T>(
+        _ continuation: CheckedContinuation<T?, Never>,
+        body: @escaping (OpaquePointer) -> T?
+    ) {
+        readQueue.async {
+            let handle = self.readDb ?? self.db
+            guard let handle else { continuation.resume(returning: nil); return }
+            continuation.resume(returning: body(handle))
+        }
+    }
+
+    private func loadMetaCacheLocked() {
+        guard let db else { return }
+        var stmt: OpaquePointer?
+        defer { sqlite3_finalize(stmt) }
+        guard sqlite3_prepare_v2(db, "SELECT key, value FROM sync_meta;", -1, &stmt, nil) == SQLITE_OK else { return }
+        var cache: [String: String] = [:]
+        while sqlite3_step(stmt) == SQLITE_ROW {
+            guard let k = sqlite3_column_text(stmt, 0), let v = sqlite3_column_text(stmt, 1) else { continue }
+            cache[String(cString: k)] = String(cString: v)
+        }
+        metaCacheLock.withLock { metaCache = cache }
     }
 
     private func migrateLocked() throws {
@@ -118,6 +181,34 @@ final class CatalogStore: @unchecked Sendable {
             bucket_key TEXT PRIMARY KEY NOT NULL,
             processed_at REAL NOT NULL
         );
+        CREATE VIRTUAL TABLE IF NOT EXISTS catalog_cards_fts USING fts5(
+            master_card_id UNINDEXED,
+            set_code UNINDEXED,
+            brand UNINDEXED,
+            body,
+            tokenize='ascii'
+        );
+        CREATE TABLE IF NOT EXISTS card_prices (
+            brand TEXT NOT NULL,
+            set_code TEXT NOT NULL,
+            card_key TEXT NOT NULL,
+            json BLOB NOT NULL,
+            fetched_at REAL NOT NULL,
+            PRIMARY KEY (brand, set_code, card_key)
+        );
+        CREATE INDEX IF NOT EXISTS idx_card_prices_key ON card_prices(brand, card_key);
+        CREATE TABLE IF NOT EXISTS price_history_points (
+            brand TEXT NOT NULL,
+            set_code TEXT NOT NULL,
+            card_key TEXT NOT NULL,
+            variant TEXT NOT NULL,
+            grade TEXT NOT NULL,
+            period_type TEXT NOT NULL,
+            period_key TEXT NOT NULL,
+            price REAL NOT NULL,
+            PRIMARY KEY (brand, set_code, card_key, variant, grade, period_type, period_key)
+        );
+        CREATE INDEX IF NOT EXISTS idx_php_card ON price_history_points(brand, card_key);
         """
         var err: UnsafeMutablePointer<CChar>?
         guard sqlite3_exec(db, ddl, nil, nil, &err) == SQLITE_OK else {
@@ -235,61 +326,14 @@ final class CatalogStore: @unchecked Sendable {
 
     // MARK: - Meta
 
-    /// Synchronous read — for launch-path use only (e.g. `requiresDailyBlockingRefresh` called from `init`).
-    /// All other callers must use the `async` variant.
+    /// Synchronous read from the in-memory cache — safe to call from any context.
     func metaSync(_ key: String) -> String? {
-        queue.sync {
-            guard let db else { return nil }
-            var stmt: OpaquePointer?
-            defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(db, "SELECT value FROM sync_meta WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return nil }
-            key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-            guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
-            guard let c = sqlite3_column_text(stmt, 0) else { return nil }
-            return String(cString: c)
-        }
+        metaCacheLock.withLock { metaCache[key] }
     }
 
-    /// Synchronous read — for launch-path use only.
-    func dailyBlobFetchedAtSync(key: String) -> Date? {
-        queue.sync {
-            guard let db else { return nil }
-            var stmt: OpaquePointer?
-            defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(db, "SELECT fetched_at FROM daily_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return nil }
-            key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-            guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
-            return Date(timeIntervalSince1970: sqlite3_column_double(stmt, 0))
-        }
-    }
-
+    /// Asynchronous read — reads from the in-memory cache directly (no queue hop).
     func meta(_ key: String) async -> String? {
-        await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else {
-                    continuation.resume(returning: nil)
-                    return
-                }
-                var stmt: OpaquePointer?
-                defer { sqlite3_finalize(stmt) }
-                guard sqlite3_prepare_v2(db, "SELECT value FROM sync_meta WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: nil)
-                    return
-                }
-                key.withCString { cstr in
-                    _ = sqlite3_bind_text(stmt, 1, cstr, -1, CatalogSQLite.transient)
-                }
-                guard sqlite3_step(stmt) == SQLITE_ROW else {
-                    continuation.resume(returning: nil)
-                    return
-                }
-                guard let c = sqlite3_column_text(stmt, 0) else {
-                    continuation.resume(returning: nil)
-                    return
-                }
-                continuation.resume(returning: String(cString: c))
-            }
-        }
+        metaCacheLock.withLock { metaCache[key] }
     }
 
     func setMeta(_ key: String, _ value: String) async throws {
@@ -304,11 +348,25 @@ final class CatalogStore: @unchecked Sendable {
                     key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                     value.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
                     guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
+                    self.metaCacheLock.withLock { self.metaCache[key] = value }
                     continuation.resume()
                 } catch {
                     continuation.resume(throwing: error)
                 }
             }
+        }
+    }
+
+    /// Synchronous read — for launch-path use only.
+    func dailyBlobFetchedAtSync(key: String) -> Date? {
+        queue.sync {
+            guard let db else { return nil }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            guard sqlite3_prepare_v2(db, "SELECT fetched_at FROM daily_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return nil }
+            key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+            return Date(timeIntervalSince1970: sqlite3_column_double(stmt, 0))
         }
     }
 
@@ -448,6 +506,9 @@ final class CatalogStore: @unchecked Sendable {
                         key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                         _ = sqlite3_step(stmt)
                     }
+                    self.metaCacheLock.withLock {
+                        for key in keys { self.metaCache.removeValue(forKey: key) }
+                    }
                     if brand == .pokemon {
                         var auxStmt: OpaquePointer?
                         defer { sqlite3_finalize(auxStmt) }
@@ -479,6 +540,35 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    func upsertSets(_ sets: [TCGSet], brand: TCGBrand) async throws {
+        guard !sets.isEmpty else { return }
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+            queue.async {
+                do {
+                    guard let db = self.db else { throw CatalogStoreError.notOpen }
+                    guard sqlite3_exec(db, "BEGIN IMMEDIATE;", nil, nil, nil) == SQLITE_OK else { throw CatalogStoreError.execFailed }
+                    do {
+                        for set in sets {
+                            let data = try self.jsonEncoder.encode(set)
+                            guard let json = String(data: data, encoding: .utf8) else { throw CatalogStoreError.encodeFailed }
+                            try self.upsertSetRawLocked(brand: brand, setCode: set.setCode, json: json)
+                        }
+                    } catch {
+                        sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                        throw error
+                    }
+                    guard sqlite3_exec(db, "COMMIT;", nil, nil, nil) == SQLITE_OK else {
+                        sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                        throw CatalogStoreError.execFailed
+                    }
+                    continuation.resume()
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
     private func upsertSetRawLocked(brand: TCGBrand, setCode: String, json: String) throws {
         guard let db else { throw CatalogStoreError.notOpen }
         var stmt: OpaquePointer?
@@ -499,15 +589,19 @@ final class CatalogStore: @unchecked Sendable {
             queue.async {
                 do {
                     guard let db = self.db else { throw CatalogStoreError.notOpen }
-                    var stmt: OpaquePointer?
-                    defer { sqlite3_finalize(stmt) }
-                    let sql = "DELETE FROM catalog_cards WHERE brand = ? AND set_code = ?;"
-                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-                        throw CatalogStoreError.prepareFailed
+                    for sql in [
+                        "DELETE FROM catalog_cards WHERE brand = ? AND set_code = ?;",
+                        "DELETE FROM catalog_cards_fts WHERE brand = ? AND set_code = ?;",
+                    ] {
+                        var stmt: OpaquePointer?
+                        defer { sqlite3_finalize(stmt) }
+                        guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+                            throw CatalogStoreError.prepareFailed
+                        }
+                        brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                        setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                        _ = sqlite3_step(stmt)
                     }
-                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                    setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
-                    _ = sqlite3_step(stmt)
                     continuation.resume()
                 } catch {
                     continuation.resume(throwing: error)
@@ -537,7 +631,14 @@ final class CatalogStore: @unchecked Sendable {
                         sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
                         throw CatalogStoreError.prepareFailed
                     }
-                    
+
+                    var ftsStmt: OpaquePointer?
+                    defer { sqlite3_finalize(ftsStmt) }
+                    let ftsSql = """
+                    INSERT INTO catalog_cards_fts(master_card_id, set_code, brand, body) VALUES(?, ?, ?, ?);
+                    """
+                    _ = sqlite3_prepare_v2(db, ftsSql, -1, &ftsStmt, nil)
+
                     for card in cards {
                         let blob = try self.jsonEncoder.encode(card)
                         guard let j = String(data: blob, encoding: .utf8) else { continue }
@@ -550,6 +651,15 @@ final class CatalogStore: @unchecked Sendable {
                         guard sqlite3_step(stmt) == SQLITE_DONE else {
                             sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
                             throw CatalogStoreError.execFailed
+                        }
+                        if let ftsStmt {
+                            sqlite3_reset(ftsStmt)
+                            sqlite3_clear_bindings(ftsStmt)
+                            card.masterCardId.withCString { _ = sqlite3_bind_text(ftsStmt, 1, $0, -1, CatalogSQLite.transient) }
+                            setCode.withCString { _ = sqlite3_bind_text(ftsStmt, 2, $0, -1, CatalogSQLite.transient) }
+                            brand.rawValue.withCString { _ = sqlite3_bind_text(ftsStmt, 3, $0, -1, CatalogSQLite.transient) }
+                            card.searchIndexBlob.withCString { _ = sqlite3_bind_text(ftsStmt, 4, $0, -1, CatalogSQLite.transient) }
+                            _ = sqlite3_step(ftsStmt)
                         }
                     }
                     // Commit transaction
@@ -598,104 +708,82 @@ final class CatalogStore: @unchecked Sendable {
 
     func fetchAllSets(for brand: TCGBrand) async throws -> [TCGSet] {
         try await withCheckedThrowingContinuation { continuation in
-            queue.async {
-                do {
-                    guard let db = self.db else { throw CatalogStoreError.notOpen }
-                    var stmt: OpaquePointer?
-                    defer { sqlite3_finalize(stmt) }
-                    let sql = "SELECT json FROM catalog_sets WHERE brand = ? ORDER BY set_code;"
-                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-                        throw CatalogStoreError.prepareFailed
-                    }
-                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                    var out: [TCGSet] = []
-                    while sqlite3_step(stmt) == SQLITE_ROW {
-                        guard let c = sqlite3_column_text(stmt, 0) else { continue }
-                        let s = String(cString: c)
-                        guard let d = s.data(using: .utf8), let set = try? self.jsonDecoder.decode(TCGSet.self, from: d) else { continue }
-                        out.append(set)
-                    }
-                    continuation.resume(returning: out)
-                } catch {
-                    continuation.resume(throwing: error)
+            self.readAsync(continuation) { db in
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT json FROM catalog_sets WHERE brand = ? ORDER BY set_code;"
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                var out: [TCGSet] = []
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                    let s = String(cString: c)
+                    guard let d = s.data(using: .utf8), let set = try? self.jsonDecoder.decode(TCGSet.self, from: d) else { continue }
+                    out.append(set)
                 }
+                return out
             }
         }
     }
 
     func fetchCards(setCode: String, brand: TCGBrand) async throws -> [Card] {
         try await withCheckedThrowingContinuation { continuation in
-            queue.async {
-                do {
-                    guard let db = self.db else { throw CatalogStoreError.notOpen }
-                    var stmt: OpaquePointer?
-                    defer { sqlite3_finalize(stmt) }
-                    let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND set_code = ? ORDER BY master_card_id;"
-                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                    setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
-                    var out: [Card] = []
-                    while sqlite3_step(stmt) == SQLITE_ROW {
-                        guard let c = sqlite3_column_text(stmt, 0) else { continue }
-                        let s = String(cString: c)
-                        guard let d = s.data(using: .utf8), let card = try? self.jsonDecoder.decode(Card.self, from: d) else { continue }
-                        out.append(card)
-                    }
-                    continuation.resume(returning: out)
-                } catch {
-                    continuation.resume(throwing: error)
+            self.readAsync(continuation) { db in
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND set_code = ? ORDER BY master_card_id;"
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                var out: [Card] = []
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                    let s = String(cString: c)
+                    guard let d = s.data(using: .utf8), let card = try? self.jsonDecoder.decode(Card.self, from: d) else { continue }
+                    out.append(card)
                 }
+                return out
             }
         }
     }
 
     func fetchAllCards(for brand: TCGBrand) async throws -> [Card] {
         try await withCheckedThrowingContinuation { continuation in
-            queue.async {
-                do {
-                    guard let db = self.db else { throw CatalogStoreError.notOpen }
-                    var stmt: OpaquePointer?
-                    defer { sqlite3_finalize(stmt) }
-                    let sql = "SELECT json FROM catalog_cards WHERE brand = ? ORDER BY set_code, master_card_id;"
-                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                    var out: [Card] = []
-                    while sqlite3_step(stmt) == SQLITE_ROW {
-                        guard let c = sqlite3_column_text(stmt, 0) else { continue }
-                        let s = String(cString: c)
-                        guard let d = s.data(using: .utf8), let card = try? self.jsonDecoder.decode(Card.self, from: d) else { continue }
-                        out.append(card)
-                    }
-                    continuation.resume(returning: out)
-                } catch {
-                    continuation.resume(throwing: error)
+            self.readAsync(continuation) { db in
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT json FROM catalog_cards WHERE brand = ? ORDER BY set_code, master_card_id;"
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                var out: [Card] = []
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                    let s = String(cString: c)
+                    guard let d = s.data(using: .utf8), let card = try? self.jsonDecoder.decode(Card.self, from: d) else { continue }
+                    out.append(card)
                 }
+                return out
             }
         }
     }
 
     func fetchAllBrowseFilterCards(for brand: TCGBrand) async throws -> [BrowseFilterCard] {
         try await withCheckedThrowingContinuation { continuation in
-            queue.async {
-                do {
-                    guard let db = self.db else { throw CatalogStoreError.notOpen }
-                    var stmt: OpaquePointer?
-                    defer { sqlite3_finalize(stmt) }
-                    let sql = "SELECT json FROM catalog_cards WHERE brand = ? ORDER BY set_code, master_card_id;"
-                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                    var out: [BrowseFilterCard] = []
-                    while sqlite3_step(stmt) == SQLITE_ROW {
-                        guard let c = sqlite3_column_text(stmt, 0) else { continue }
-                        let s = String(cString: c)
-                        guard let d = s.data(using: .utf8),
-                              let card = try? self.jsonDecoder.decode(BrowseFilterCard.self, from: d) else { continue }
-                        out.append(card)
-                    }
-                    continuation.resume(returning: out)
-                } catch {
-                    continuation.resume(throwing: error)
+            self.readAsync(continuation) { db in
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT json FROM catalog_cards WHERE brand = ? ORDER BY set_code, master_card_id;"
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                var out: [BrowseFilterCard] = []
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                    let s = String(cString: c)
+                    guard let d = s.data(using: .utf8),
+                          let card = try? self.jsonDecoder.decode(BrowseFilterCard.self, from: d) else { continue }
+                    out.append(card)
                 }
+                return out
             }
         }
     }
@@ -703,33 +791,17 @@ final class CatalogStore: @unchecked Sendable {
     /// Single card by catalog id for a known franchise (browse / wishlist resolve).
     func fetchCard(masterCardId: String, brand: TCGBrand) async throws -> Card? {
         try await withCheckedThrowingContinuation { continuation in
-            queue.async {
-                do {
-                    guard let db = self.db else { throw CatalogStoreError.notOpen }
-                    var stmt: OpaquePointer?
-                    defer { sqlite3_finalize(stmt) }
-                    let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND master_card_id = ? LIMIT 1;"
-                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                    masterCardId.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
-                    guard sqlite3_step(stmt) == SQLITE_ROW else {
-                        continuation.resume(returning: nil)
-                        return
-                    }
-                    guard let c = sqlite3_column_text(stmt, 0) else {
-                        continuation.resume(returning: nil)
-                        return
-                    }
-                    let s = String(cString: c)
-                    guard let d = s.data(using: .utf8) else {
-                        continuation.resume(returning: nil)
-                        return
-                    }
-                    let decoded = try self.jsonDecoder.decode(Card.self, from: d)
-                    continuation.resume(returning: decoded)
-                } catch {
-                    continuation.resume(throwing: error)
-                }
+            self.readAsync(continuation) { db in
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND master_card_id = ? LIMIT 1;"
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                masterCardId.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                guard sqlite3_step(stmt) == SQLITE_ROW, let c = sqlite3_column_text(stmt, 0) else { return nil }
+                let s = String(cString: c)
+                guard let d = s.data(using: .utf8) else { return nil }
+                return try self.jsonDecoder.decode(Card.self, from: d)
             }
         }
     }
@@ -741,62 +813,96 @@ final class CatalogStore: @unchecked Sendable {
         guard !ids.isEmpty else { return [] }
 
         return try await withCheckedThrowingContinuation { continuation in
-            queue.async {
-                do {
-                    guard let db = self.db else { throw CatalogStoreError.notOpen }
-                    let chunkSize = 240
-                    var out: [Card] = []
-                    out.reserveCapacity(ids.count)
-
-                    var index = 0
-                    while index < ids.count {
-                        let upper = min(index + chunkSize, ids.count)
-                        let chunk = Array(ids[index..<upper])
-                        let placeholders = Array(repeating: "?", count: chunk.count).joined(separator: ",")
-                        let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND master_card_id IN (\(placeholders));"
-                        var stmt: OpaquePointer?
-                        guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-                            throw CatalogStoreError.prepareFailed
-                        }
-                        brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                        for (bindIndex, id) in chunk.enumerated() {
-                            id.withCString { _ = sqlite3_bind_text(stmt, Int32(bindIndex + 2), $0, -1, CatalogSQLite.transient) }
-                        }
-                        while sqlite3_step(stmt) == SQLITE_ROW {
-                            guard let c = sqlite3_column_text(stmt, 0) else { continue }
-                            let s = String(cString: c)
-                            guard let d = s.data(using: .utf8),
-                                  let card = try? self.jsonDecoder.decode(Card.self, from: d) else { continue }
-                            out.append(card)
-                        }
-                        sqlite3_finalize(stmt)
-                        index = upper
+            self.readAsync(continuation) { db in
+                let chunkSize = 240
+                var out: [Card] = []
+                out.reserveCapacity(ids.count)
+                var index = 0
+                while index < ids.count {
+                    let upper = min(index + chunkSize, ids.count)
+                    let chunk = Array(ids[index..<upper])
+                    let placeholders = Array(repeating: "?", count: chunk.count).joined(separator: ",")
+                    let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND master_card_id IN (\(placeholders));"
+                    var stmt: OpaquePointer?
+                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                    for (bindIndex, id) in chunk.enumerated() {
+                        id.withCString { _ = sqlite3_bind_text(stmt, Int32(bindIndex + 2), $0, -1, CatalogSQLite.transient) }
                     }
-                    continuation.resume(returning: out)
-                } catch {
-                    continuation.resume(throwing: error)
+                    while sqlite3_step(stmt) == SQLITE_ROW {
+                        guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                        let s = String(cString: c)
+                        guard let d = s.data(using: .utf8),
+                              let card = try? self.jsonDecoder.decode(Card.self, from: d) else { continue }
+                        out.append(card)
+                    }
+                    sqlite3_finalize(stmt)
+                    index = upper
                 }
+                return out
             }
         }
     }
 
     func fetchAllCardRefs(for brand: TCGBrand) async throws -> [CardRef] {
         try await withCheckedThrowingContinuation { continuation in
+            self.readAsync(continuation) { db in
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT set_code, master_card_id FROM catalog_cards WHERE brand = ?;"
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                var out: [CardRef] = []
+                out.reserveCapacity(10_000)
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    guard let sc = sqlite3_column_text(stmt, 0), let mid = sqlite3_column_text(stmt, 1) else { continue }
+                    out.append(CardRef(masterCardId: String(cString: mid), setCode: String(cString: sc)))
+                }
+                return out
+            }
+        }
+    }
+
+    // MARK: - Per-card pricing (normalized rows)
+
+    func upsertCardPrices(setCode: String, brand: TCGBrand, entries: [(cardKey: String, json: Data)]) async throws {
+        guard !entries.isEmpty else { return }
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             queue.async {
                 do {
                     guard let db = self.db else { throw CatalogStoreError.notOpen }
+                    guard sqlite3_exec(db, "BEGIN IMMEDIATE;", nil, nil, nil) == SQLITE_OK else { throw CatalogStoreError.execFailed }
                     var stmt: OpaquePointer?
-                    defer { sqlite3_finalize(stmt) }
-                    let sql = "SELECT set_code, master_card_id FROM catalog_cards WHERE brand = ?;"
-                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                    var out: [CardRef] = []
-                    out.reserveCapacity(10_000)
-                    while sqlite3_step(stmt) == SQLITE_ROW {
-                        guard let sc = sqlite3_column_text(stmt, 0), let mid = sqlite3_column_text(stmt, 1) else { continue }
-                        out.append(CardRef(masterCardId: String(cString: mid), setCode: String(cString: sc)))
+                    let sql = """
+                    INSERT INTO card_prices(brand, set_code, card_key, json, fetched_at) VALUES(?, ?, ?, ?, ?)
+                    ON CONFLICT(brand, set_code, card_key) DO UPDATE SET json = excluded.json, fetched_at = excluded.fetched_at;
+                    """
+                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+                        sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                        throw CatalogStoreError.prepareFailed
                     }
-                    continuation.resume(returning: out)
+                    defer { sqlite3_finalize(stmt) }
+                    let now = Date().timeIntervalSince1970
+                    for entry in entries {
+                        sqlite3_reset(stmt)
+                        sqlite3_clear_bindings(stmt)
+                        brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                        setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                        entry.cardKey.withCString { _ = sqlite3_bind_text(stmt, 3, $0, -1, CatalogSQLite.transient) }
+                        entry.json.withUnsafeBytes { buf in
+                            _ = sqlite3_bind_blob(stmt, 4, buf.baseAddress, Int32(entry.json.count), CatalogSQLite.transient)
+                        }
+                        _ = sqlite3_bind_double(stmt, 5, now)
+                        guard sqlite3_step(stmt) == SQLITE_DONE else {
+                            sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                            throw CatalogStoreError.execFailed
+                        }
+                    }
+                    guard sqlite3_exec(db, "COMMIT;", nil, nil, nil) == SQLITE_OK else {
+                        sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                        throw CatalogStoreError.execFailed
+                    }
+                    continuation.resume()
                 } catch {
                     continuation.resume(throwing: error)
                 }
@@ -804,31 +910,160 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    func fetchPricingData(setCode: String, brand: TCGBrand) async -> Data? {
+    func fetchCardPrice(cardKey: String, brand: TCGBrand) async -> Data? {
         await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: nil); return }
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
-                let sql = "SELECT json FROM card_pricing WHERE brand = ? AND set_code = ? LIMIT 1;"
-                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: nil)
+                let sql = "SELECT json FROM card_prices WHERE brand = ? AND card_key = ? LIMIT 1;"
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: nil); return
+                }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                cardKey.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                guard sqlite3_step(stmt) == SQLITE_ROW else { continuation.resume(returning: nil); return }
+                let n = sqlite3_column_bytes(stmt, 0)
+                guard let p = sqlite3_column_blob(stmt, 0) else { continuation.resume(returning: nil); return }
+                continuation.resume(returning: Data(bytes: p, count: Int(n)))
+            }
+        }
+    }
+
+    // MARK: - Normalized price history points
+
+    struct PriceHistoryPoint {
+        let cardKey: String
+        let variant: String
+        let grade: String
+        let periodType: String
+        let periodKey: String
+        let price: Double
+    }
+
+    func upsertPriceHistoryPoints(brand: TCGBrand, setCode: String, points: [PriceHistoryPoint]) async throws {
+        guard !points.isEmpty else { return }
+        try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
+            queue.async {
+                do {
+                    guard let db = self.db else { throw CatalogStoreError.notOpen }
+                    guard sqlite3_exec(db, "BEGIN IMMEDIATE;", nil, nil, nil) == SQLITE_OK else { throw CatalogStoreError.execFailed }
+                    var stmt: OpaquePointer?
+                    let sql = """
+                    INSERT INTO price_history_points(brand, set_code, card_key, variant, grade, period_type, period_key, price)
+                    VALUES(?, ?, ?, ?, ?, ?, ?, ?)
+                    ON CONFLICT(brand, set_code, card_key, variant, grade, period_type, period_key) DO UPDATE SET price = excluded.price;
+                    """
+                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+                        sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                        throw CatalogStoreError.prepareFailed
+                    }
+                    defer { sqlite3_finalize(stmt) }
+                    for pt in points {
+                        sqlite3_reset(stmt)
+                        sqlite3_clear_bindings(stmt)
+                        brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                        setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                        pt.cardKey.withCString { _ = sqlite3_bind_text(stmt, 3, $0, -1, CatalogSQLite.transient) }
+                        pt.variant.withCString { _ = sqlite3_bind_text(stmt, 4, $0, -1, CatalogSQLite.transient) }
+                        pt.grade.withCString { _ = sqlite3_bind_text(stmt, 5, $0, -1, CatalogSQLite.transient) }
+                        pt.periodType.withCString { _ = sqlite3_bind_text(stmt, 6, $0, -1, CatalogSQLite.transient) }
+                        pt.periodKey.withCString { _ = sqlite3_bind_text(stmt, 7, $0, -1, CatalogSQLite.transient) }
+                        _ = sqlite3_bind_double(stmt, 8, pt.price)
+                        guard sqlite3_step(stmt) == SQLITE_DONE else {
+                            sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                            throw CatalogStoreError.execFailed
+                        }
+                    }
+                    guard sqlite3_exec(db, "COMMIT;", nil, nil, nil) == SQLITE_OK else {
+                        sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                        throw CatalogStoreError.execFailed
+                    }
+                    continuation.resume()
+                } catch {
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
+    }
+
+    func fetchPriceHistoryPoints(brand: TCGBrand, cardKey: String) async -> [PriceHistoryPoint] {
+        await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: []); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT card_key, variant, grade, period_type, period_key, price FROM price_history_points WHERE brand = ? AND card_key = ? ORDER BY period_key ASC;"
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: []); return
+                }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                cardKey.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                var results: [PriceHistoryPoint] = []
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    func str(_ col: Int32) -> String {
+                        guard let c = sqlite3_column_text(stmt, col) else { return "" }
+                        return String(cString: c)
+                    }
+                    results.append(PriceHistoryPoint(
+                        cardKey: str(0),
+                        variant: str(1),
+                        grade: str(2),
+                        periodType: str(3),
+                        periodKey: str(4),
+                        price: sqlite3_column_double(stmt, 5)
+                    ))
+                }
+                continuation.resume(returning: results)
+            }
+        }
+    }
+
+    /// FTS5 prefix search: returns (masterCardId, setCode) pairs ordered by FTS rank.
+    /// The query string is tokenized by FTS5's ascii tokenizer; a trailing `*` enables prefix matching.
+    func searchCards(query: String, brand: TCGBrand) async -> [CardRef] {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return [] }
+        let ftsQuery = trimmed.split(whereSeparator: \.isWhitespace)
+            .map { String($0) + "*" }
+            .joined(separator: " ")
+        return await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: []); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT master_card_id, set_code FROM catalog_cards_fts WHERE brand = ? AND catalog_cards_fts MATCH ? ORDER BY rank LIMIT 200;"
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: [])
                     return
                 }
                 brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                ftsQuery.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                var out: [CardRef] = []
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    guard let mid = sqlite3_column_text(stmt, 0), let sc = sqlite3_column_text(stmt, 1) else { continue }
+                    out.append(CardRef(masterCardId: String(cString: mid), setCode: String(cString: sc)))
+                }
+                continuation.resume(returning: out)
+            }
+        }
+    }
+
+    func fetchPricingData(setCode: String, brand: TCGBrand) async -> Data? {
+        await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: nil); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT json FROM card_pricing WHERE brand = ? AND set_code = ? LIMIT 1;"
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: nil); return
+                }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                 setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
-                guard sqlite3_step(stmt) == SQLITE_ROW else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+                guard sqlite3_step(stmt) == SQLITE_ROW else { continuation.resume(returning: nil); return }
                 let n = sqlite3_column_bytes(stmt, 0)
-                guard let p = sqlite3_column_blob(stmt, 0) else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+                guard let p = sqlite3_column_blob(stmt, 0) else { continuation.resume(returning: nil); return }
                 continuation.resume(returning: Data(bytes: p, count: Int(n)))
             }
         }
@@ -868,29 +1103,19 @@ final class CatalogStore: @unchecked Sendable {
 
     func fetchPriceHistoryData(setCode: String, brand: TCGBrand) async -> Data? {
         await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: nil); return }
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
                 let sql = "SELECT json FROM card_price_history WHERE brand = ? AND set_code = ? LIMIT 1;"
-                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: nil)
-                    return
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: nil); return
                 }
                 brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                 setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
-                guard sqlite3_step(stmt) == SQLITE_ROW else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+                guard sqlite3_step(stmt) == SQLITE_ROW else { continuation.resume(returning: nil); return }
                 let n = sqlite3_column_bytes(stmt, 0)
-                guard let p = sqlite3_column_blob(stmt, 0) else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+                guard let p = sqlite3_column_blob(stmt, 0) else { continuation.resume(returning: nil); return }
                 continuation.resume(returning: Data(bytes: p, count: Int(n)))
             }
         }
@@ -930,29 +1155,19 @@ final class CatalogStore: @unchecked Sendable {
 
     func fetchPriceTrendsData(setCode: String, brand: TCGBrand) async -> Data? {
         await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: nil); return }
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
                 let sql = "SELECT json FROM card_price_trends WHERE brand = ? AND set_code = ? LIMIT 1;"
-                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: nil)
-                    return
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: nil); return
                 }
                 brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                 setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
-                guard sqlite3_step(stmt) == SQLITE_ROW else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+                guard sqlite3_step(stmt) == SQLITE_ROW else { continuation.resume(returning: nil); return }
                 let n = sqlite3_column_bytes(stmt, 0)
-                guard let p = sqlite3_column_blob(stmt, 0) else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+                guard let p = sqlite3_column_blob(stmt, 0) else { continuation.resume(returning: nil); return }
                 continuation.resume(returning: Data(bytes: p, count: Int(n)))
             }
         }
@@ -992,27 +1207,17 @@ final class CatalogStore: @unchecked Sendable {
 
     func dailyBlob(key: String) async -> Data? {
         await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: nil); return }
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
-                guard sqlite3_prepare_v2(db, "SELECT json FROM daily_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: nil)
-                    return
+                guard sqlite3_prepare_v2(handle, "SELECT json FROM daily_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: nil); return
                 }
                 key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                guard sqlite3_step(stmt) == SQLITE_ROW else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+                guard sqlite3_step(stmt) == SQLITE_ROW else { continuation.resume(returning: nil); return }
                 let n = sqlite3_column_bytes(stmt, 0)
-                guard let p = sqlite3_column_blob(stmt, 0) else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+                guard let p = sqlite3_column_blob(stmt, 0) else { continuation.resume(returning: nil); return }
                 continuation.resume(returning: Data(bytes: p, count: Int(n)))
             }
         }
@@ -1020,16 +1225,12 @@ final class CatalogStore: @unchecked Sendable {
 
     func dailyBlobFetchedAt(key: String) async -> Date? {
         await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else {
-                    continuation.resume(returning: nil)
-                    return
-                }
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: nil); return }
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
-                guard sqlite3_prepare_v2(db, "SELECT fetched_at FROM daily_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: nil)
-                    return
+                guard sqlite3_prepare_v2(handle, "SELECT fetched_at FROM daily_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: nil); return
                 }
                 key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                 guard sqlite3_step(stmt) == SQLITE_ROW else {
@@ -1188,13 +1389,12 @@ final class CatalogStore: @unchecked Sendable {
 
     func isBucketProcessed(key: String) async -> Bool {
         await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else { continuation.resume(returning: false); return }
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: false); return }
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
-                guard sqlite3_prepare_v2(db, "SELECT 1 FROM processed_pricing_buckets WHERE bucket_key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: false)
-                    return
+                guard sqlite3_prepare_v2(handle, "SELECT 1 FROM processed_pricing_buckets WHERE bucket_key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: false); return
                 }
                 key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                 continuation.resume(returning: sqlite3_step(stmt) == SQLITE_ROW)
@@ -1205,26 +1405,21 @@ final class CatalogStore: @unchecked Sendable {
     func unprocessedBucketKeys(from candidates: [String]) async -> [String] {
         guard !candidates.isEmpty else { return [] }
         return await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else { continuation.resume(returning: candidates); return }
-
-                // Build a single IN (?, ?, …) query instead of N individual lookups.
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: candidates); return }
                 let placeholders = candidates.map { _ in "?" }.joined(separator: ",")
                 let sql = "SELECT bucket_key FROM processed_pricing_buckets WHERE bucket_key IN (\(placeholders));"
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
-                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: candidates)
-                    return
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: candidates); return
                 }
                 for (i, key) in candidates.enumerated() {
                     key.withCString { _ = sqlite3_bind_text(stmt, Int32(i + 1), $0, -1, CatalogSQLite.transient) }
                 }
                 var processed = Set<String>()
                 while sqlite3_step(stmt) == SQLITE_ROW {
-                    if let cStr = sqlite3_column_text(stmt, 0) {
-                        processed.insert(String(cString: cStr))
-                    }
+                    if let cStr = sqlite3_column_text(stmt, 0) { processed.insert(String(cString: cStr)) }
                 }
                 continuation.resume(returning: candidates.filter { !processed.contains($0) })
             }
@@ -1234,26 +1429,22 @@ final class CatalogStore: @unchecked Sendable {
     /// Returns the set of all bucket keys that start with `prefix` — used by backfill to avoid
     /// building a huge candidate list when most periods are already processed.
     func processedBucketKeys(withPrefix prefix: String) async -> Set<String> {
-        await withCheckedContinuation { continuation in
-            queue.async {
-                guard let db = self.db else { continuation.resume(returning: []); return }
+        return await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: []); return }
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
                 let sql = "SELECT bucket_key FROM processed_pricing_buckets WHERE bucket_key LIKE ? ESCAPE '\\';"
-                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
-                    continuation.resume(returning: [])
-                    return
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: []); return
                 }
-                // Escape LIKE special chars in prefix, append '%'.
                 let escaped = prefix.replacingOccurrences(of: "\\", with: "\\\\")
                                     .replacingOccurrences(of: "%", with: "\\%")
                                     .replacingOccurrences(of: "_", with: "\\_") + "%"
                 escaped.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
                 var result = Set<String>()
                 while sqlite3_step(stmt) == SQLITE_ROW {
-                    if let cStr = sqlite3_column_text(stmt, 0) {
-                        result.insert(String(cString: cStr))
-                    }
+                    if let cStr = sqlite3_column_text(stmt, 0) { result.insert(String(cString: cStr)) }
                 }
                 continuation.resume(returning: result)
             }

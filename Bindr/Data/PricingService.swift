@@ -54,14 +54,52 @@ final class PricingService {
     }
 
     func pricing(for card: Card) async -> CardPricingEntry? {
+        if Self.pricingCatalogBrand(for: card) == .pokemon {
+            return await loadPokemonCardPricing(for: card)
+        }
         let map = await loadPricingMap(for: card)
         if let entry = Self.resolvePricingEntry(in: map, for: card) {
             return entry
         }
-        // `CatalogStore` / disk may hold pricing JSON from before a card was added to R2; price history is fetched
-        // fresh from the network, so the chart can work while Scrydex rows are missing. Force one network reload.
         let map2 = await loadPricingMap(for: card, forceNetwork: true)
         return Self.resolvePricingEntry(in: map2, for: card)
+    }
+
+    private func loadPokemonCardPricing(for card: Card) async -> CardPricingEntry? {
+        let keys = Self.pricingLookupKeys(for: card)
+        for key in keys {
+            guard let data = await CatalogStore.shared.fetchCardPrice(cardKey: key, brand: .pokemon) else { continue }
+            if let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: data) { return entry }
+            if let obj = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+               let subData = try? JSONSerialization.data(withJSONObject: obj),
+               let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: subData) { return entry }
+        }
+        // card_prices not yet populated (e.g. daily bucket not synced yet). Build a synthetic entry
+        // from the most recent daily point in price_history_points so pricing still returns a value.
+        for key in keys {
+            let pts = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, cardKey: key)
+            let dailyPts = pts.filter { $0.periodType == "daily" }
+            guard !dailyPts.isEmpty else { continue }
+            // Keep only the latest period_key per variant/grade combination.
+            var latestByVariantGrade: [String: CatalogStore.PriceHistoryPoint] = [:]
+            for pt in dailyPts {
+                let k = "\(pt.variant)/\(pt.grade)"
+                if latestByVariantGrade[k] == nil || pt.periodKey > latestByVariantGrade[k]!.periodKey {
+                    latestByVariantGrade[k] = pt
+                }
+            }
+            // Build {"scrydex": {"holofoil": {"raw": 1.23, "psa10": 9.99}}} — same shape as syncPricingBuckets writes.
+            var scrydexDict: [String: [String: Double]] = [:]
+            for (_, pt) in latestByVariantGrade {
+                scrydexDict[pt.variant, default: [:]][pt.grade == "raw" ? "raw" : pt.grade] = pt.price
+            }
+            guard !scrydexDict.isEmpty,
+                  let json = try? JSONSerialization.data(withJSONObject: ["scrydex": scrydexDict]),
+                  let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: json)
+            else { continue }
+            return entry
+        }
+        return nil
     }
 
     /// Keys to try for per-set pricing / history JSON lookups.
@@ -95,11 +133,43 @@ final class PricingService {
                 append("\(sc)-\(n)")
                 append(String(format: "%@-%03d", sc, n))
             }
+            // Some sets have sub-sets with separate pricing files (e.g. swsh12 Trainer Gallery cards
+            // are priced under swsh12tg-*, swsh12pt5 Galaxy cards under swsh12pt5gg-*, etc.).
+            // Generate alternate-set-code keys so lookups find the correct pricing row.
+            for alt in Self.alternatePricingSetCodes(for: sc, localId: local) {
+                append("\(alt)-\(local)")
+                if let n = Int(local) {
+                    append("\(alt)-\(n)")
+                    append(String(format: "%@-%03d", alt, n))
+                }
+            }
         }
         if !opStyle {
             append(card.masterCardId)
         }
         return keys
+    }
+
+    /// Returns alternate pricing-file set codes for cards whose pricing is published under a
+    /// sub-set code rather than the parent set code.
+    ///
+    /// e.g. swsh12 Trainer Gallery → swsh12tg, swsh12pt5 Galaxy Gallery → swsh12pt5gg,
+    ///      swshN Trainer Gallery  → swshNtg,  swsh45 Shining Fates SV → swsh45sv
+    private static func alternatePricingSetCodes(for setCode: String, localId: String) -> [String] {
+        let sc = setCode.lowercased()
+        let lid = localId.uppercased()
+
+        // swsh12pt5 (Crown Zenith): Galaxy Gallery cards have localId prefix GG
+        if sc == "swsh12pt5" && lid.hasPrefix("GG") { return ["swsh12pt5gg"] }
+
+        // swsh45 (Shining Fates): Shiny Vault cards have localId prefix SV
+        if sc == "swsh45" && lid.hasPrefix("SV") { return ["swsh45sv"] }
+
+        // swshN Trainer Gallery sets: TG prefix
+        let tgSets = ["swsh12", "swsh11", "swsh10", "swsh9"]
+        if tgSets.contains(sc) && lid.hasPrefix("TG") { return ["\(sc)tg"] }
+
+        return []
     }
 
     /// Exact key, case-insensitive, then unified form (`me02.5-280` ≡ `me2pt5-280`, `sm4-030` ≡ `sm4-30`, …).
@@ -301,18 +371,48 @@ final class PricingService {
         }
     }
 
-    /// Resolves price history from the per-set file (SQLite after daily sync, else network), looks up by card key.
+    /// Resolves price history from SQLite (normalized rows for Pokémon, per-set blob for ONE PIECE).
     func priceHistory(for card: Card) async -> CardPriceHistory? {
-        let setCode = card.setCode.lowercased()
         let catalogBrand = Self.pricingCatalogBrand(for: card)
+        if catalogBrand == .pokemon {
+            return await loadPokemonPriceHistory(for: card)
+        }
+        let setCode = card.setCode.lowercased()
         let setMap = await loadSetHistoryMap(setCode: setCode, catalogBrand: catalogBrand)
         let keys = Self.pricingLookupKeys(for: card, historyStyle: true)
         guard let variantMap = Self.lookupPerCardEntry(in: setMap, keys: keys) else { return nil }
         guard let parsed = CardPriceHistory.parse(from: variantMap) else { return nil }
-        if catalogBrand != .pokemon {
-            return Self.remapOnePiecePriceHistory(parsed, card: card)
+        return Self.remapOnePiecePriceHistory(parsed, card: card)
+    }
+
+    private func loadPokemonPriceHistory(for card: Card) async -> CardPriceHistory? {
+        let keys = Self.pricingLookupKeys(for: card, historyStyle: true)
+        for key in keys {
+            let points = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, cardKey: key)
+            guard !points.isEmpty else { continue }
+            var seriesMap: [String: (daily: [PriceDataPoint], weekly: [PriceDataPoint], monthly: [PriceDataPoint])] = [:]
+            for pt in points {
+                let seriesKey = "\(pt.variant)/\(pt.grade)"
+                let dataPoint = PriceDataPoint(id: pt.periodKey, label: pt.periodKey, price: pt.price)
+                switch pt.periodType {
+                case "daily": seriesMap[seriesKey, default: ([], [], [])].daily.append(dataPoint)
+                case "weekly": seriesMap[seriesKey, default: ([], [], [])].weekly.append(dataPoint)
+                case "monthly": seriesMap[seriesKey, default: ([], [], [])].monthly.append(dataPoint)
+                default: break
+                }
+            }
+            guard !seriesMap.isEmpty else { continue }
+            var series: [String: CardPriceHistory.Series] = [:]
+            for (k, v) in seriesMap {
+                series[k] = CardPriceHistory.Series(
+                    daily: v.daily.sorted { $0.id < $1.id },
+                    weekly: v.weekly.sorted { $0.id < $1.id },
+                    monthly: v.monthly.sorted { $0.id < $1.id }
+                )
+            }
+            return CardPriceHistory(series: series)
         }
-        return parsed
+        return nil
     }
 
     /// Resolves price trends from the per-set file (SQLite after daily sync, else network), looks up by card key.
@@ -479,7 +579,7 @@ final class PricingService {
         return nil
     }
 
-    /// Loads per-set pricing: Pokémon from `pricing/card-pricing/…`; ONE PIECE from `onepiece/pricing/market/{set}.json` (keys match catalog `priceKey`).
+    /// Loads per-set pricing for ONE PIECE cards. Pokémon cards use `loadPokemonCardPricing` instead.
     private func loadPricingMap(for card: Card, forceNetwork: Bool = false) async -> SetPricingMap {
         let key = card.setCode.lowercased()
         if !forceNetwork, let hit = pricingCache[key], hit.expiry > Date() {
@@ -489,44 +589,27 @@ final class PricingService {
             pricingCache.removeValue(forKey: key)
         }
 
-        // 1. Local reads: SQLite is the catalog runtime source of truth (sync fills this). Legacy disk JSON may exist from older builds.
         if !forceNetwork {
-            let catalogBrand = Self.pricingCatalogBrand(for: card)
-            if let blob = await CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: catalogBrand),
+            if let blob = await CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: .onePiece),
                let map = Self.decodePricingMap(from: blob) {
                 pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
                 return map
             }
-            if catalogBrand == .pokemon, let disk = loadDiskCache(setCode: key) {
-                pricingCache[key] = (disk, Date().addingTimeInterval(cacheTTL))
-                return disk
-            }
         }
 
-        // 2. Explicit refresh: fetch R2, upsert SQLite + legacy disk cache, then return.
-        let base = AppConfiguration.r2BaseURL
-        if base.host != "invalid.local" {
-            switch Self.pricingCatalogBrand(for: card) {
-            case .onePiece:
-                for stem in Self.onePieceMarketPricingStemVariants(for: card.setCode) {
-                    let url = AppConfiguration.r2OnePieceMarketPricingSetURL(setCodeStem: stem)
-                    if let (map, data) = await fetchPricingMapAndDataIfOK(from: url) {
-                        pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
-                        saveDiskCache(setCode: key, data: data)
-                        try? await CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .onePiece)
-                        return map
-                    }
+        if AppConfiguration.r2BaseURL.host != "invalid.local" {
+            for stem in Self.onePieceMarketPricingStemVariants(for: card.setCode) {
+                let url = AppConfiguration.r2OnePieceMarketPricingSetURL(setCodeStem: stem)
+                if let (map, data) = await fetchPricingMapAndDataIfOK(from: url) {
+                    pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
+                    saveDiskCache(setCode: key, data: data)
+                    try? await CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .onePiece)
+                    return map
                 }
-            case .pokemon:
-                // Pokemon pricing is built from daily bucket files during sync (syncPricingBuckets).
-                // Per-set card-pricing files no longer exist on R2; SQLite is the only source.
-                break
             }
         }
 
-        // 3. Final fallback: try local one last time (maybe network failed but we have old data).
-        let catalogBrand = Self.pricingCatalogBrand(for: card)
-        if let blob = await CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: catalogBrand),
+        if let blob = await CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: .onePiece),
            let map = Self.decodePricingMap(from: blob) {
             pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
             return map

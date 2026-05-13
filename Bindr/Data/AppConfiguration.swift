@@ -184,19 +184,19 @@ enum AppConfiguration {
         r2MarketURL(path: "new_pricing/price-trends/\(setCode).json")
     }
 
-    /// Per-set daily card price bucket: `new_pricing/daily/{YYYY-MM-DD}/{setCode}.json`
-    static func r2NewPricingDailySetURL(dateKey: String, setCode: String) -> URL {
-        r2MarketURL(path: "new_pricing/daily/\(dateKey)/\(setCode).json")
+    /// Combined daily card price bucket (all sets): `new_pricing/daily/{YYYY-MM-DD}.json`
+    static func r2NewPricingDailyURL(dateKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/daily/\(dateKey).json")
     }
 
-    /// Per-set weekly card price bucket: `new_pricing/weekly/{YYYY-Www}/{setCode}.json`
-    static func r2NewPricingWeeklySetURL(weekKey: String, setCode: String) -> URL {
-        r2MarketURL(path: "new_pricing/weekly/\(weekKey)/\(setCode).json")
+    /// Combined weekly card price bucket (all sets): `new_pricing/weekly/{YYYY-Www}.json`
+    static func r2NewPricingWeeklyURL(weekKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/weekly/\(weekKey).json")
     }
 
-    /// Per-set monthly card price bucket: `new_pricing/monthly/{YYYY-MM}/{setCode}.json`
-    static func r2NewPricingMonthlySetURL(monthKey: String, setCode: String) -> URL {
-        r2MarketURL(path: "new_pricing/monthly/\(monthKey)/\(setCode).json")
+    /// Combined monthly card price bucket (all sets): `new_pricing/monthly/{YYYY-MM}.json`
+    static func r2NewPricingMonthlyURL(monthKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/monthly/\(monthKey).json")
     }
 
     /// Sealed product daily price bucket: `new_pricing/sealed/daily/{YYYY-MM-DD}.json`
@@ -407,6 +407,21 @@ enum AppConfiguration {
     }
 
     // MARK: - Card pricing file stems
+
+    /// Sub-set pricing stems for sets whose cards are priced under a separate R2 path.
+    /// e.g. swsh12 → [swsh12tg], swsh12pt5 → [swsh12pt5gg], swsh45 → [swsh45sv]
+    static func subSetPricingStems(for setCode: String) -> [String] {
+        let sc = setCode.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        switch sc {
+        case "swsh12":    return ["swsh12tg"]
+        case "swsh12pt5": return ["swsh12pt5gg"]
+        case "swsh11":    return ["swsh11tg"]
+        case "swsh10":    return ["swsh10tg"]
+        case "swsh9":     return ["swsh9tg"]
+        case "swsh45":    return ["swsh45sv"]
+        default:          return []
+        }
+    }
 
     /// Stems to try for `pricing/card-pricing/{stem}.json` when catalog `setCode` does not match your export filename.
     /// - Example: `me03` vs `me3` (leading zeros in the letter+digits prefix).

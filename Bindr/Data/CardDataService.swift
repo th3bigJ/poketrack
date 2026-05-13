@@ -19,7 +19,6 @@ final class CardDataService {
 
     private let session: URLSession
     private let fileManager: FileManager
-    private let searchIndex = CardSearchIndex()
     private let brandSettings: BrandSettings
 
     init(
@@ -61,7 +60,8 @@ final class CardDataService {
             }
             sets = rows.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
             lastError = nil
-            Task { await self.prepareSearchIndex() }
+            // FTS5 table is populated during card inserts, so search is ready immediately.
+            isSearchIndexReady = true
         } catch {
             lastError = error.localizedDescription
             sets = []
@@ -156,19 +156,6 @@ final class CardDataService {
             return []
         }
         return decoded.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
-    }
-
-    private func prepareSearchIndex() async {
-        let currentSets = sets
-        let brand = brandSettings.selectedCatalogBrand
-        await searchIndex.prepare(sets: currentSets, brand: brand) { [weak self] setCode in
-            guard let self else { return [] }
-            return await self.loadCards(forSetCode: setCode)
-        }
-        let ready = await searchIndex.isReady
-        await MainActor.run {
-            self.isSearchIndexReady = ready
-        }
     }
 
     func loadCards(forSetCode setCode: String) async -> [Card] {
@@ -408,54 +395,24 @@ final class CardDataService {
     func search(query: String) async -> [Card] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
-
-        let currentSets = sets
         let brand = brandSettings.selectedCatalogBrand
-        
-        await searchIndex.prepare(sets: currentSets, brand: brand) { [weak self] setCode in
-            guard let self else { return [] }
-            return await self.loadCards(forSetCode: setCode)
-        }
-        
-        let ready = await searchIndex.isReady
-        await MainActor.run {
-            self.isSearchIndexReady = ready
-        }
-
-        if ready {
-            let refs = await searchIndex.refs(matchingNormalizedQuery: q)
-            if !refs.isEmpty {
-                return await cards(for: refs)
-            }
+        let ftsRefs = await CatalogStore.shared.searchCards(query: q, brand: brand)
+        if !ftsRefs.isEmpty {
+            return await cards(for: Set(ftsRefs))
         }
         return await linearSubstringSearch(normalizedQuery: q)
     }
 
-    /// Partial token overlap (not strict intersection). Best for long **trainer rules** text when OCR only matches part of the catalog `rules` field.
+    /// Partial token overlap — uses FTS5 which natively supports partial matching.
     func searchSoftTokenMatch(query: String) async -> [Card] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
-
-        let currentSets = sets
         let brand = brandSettings.selectedCatalogBrand
-        
-        await searchIndex.prepare(sets: currentSets, brand: brand) { [weak self] setCode in
-            guard let self else { return [] }
-            return await self.loadCards(forSetCode: setCode)
+        let ftsRefs = await CatalogStore.shared.searchCards(query: q, brand: brand)
+        if !ftsRefs.isEmpty {
+            return await cards(for: Set(ftsRefs))
         }
-        
-        let ready = await searchIndex.isReady
-        await MainActor.run {
-            self.isSearchIndexReady = ready
-        }
-
-        guard ready else {
-            return await linearSubstringSearch(normalizedQuery: q)
-        }
-
-        let ranked = await searchIndex.softMatchRefs(normalizedQuery: q)
-        guard !ranked.isEmpty else { return [] }
-        return await cardsPreservingSoftMatchOrder(ranked)
+        return await linearSubstringSearch(normalizedQuery: q)
     }
 
     private func cardsPreservingSoftMatchOrder(_ ranked: [(ref: CardRef, tokenHits: Int)]) async -> [Card] {
@@ -471,20 +428,6 @@ final class CardDataService {
     func searchByName(query: String) async -> [Card] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
-
-        let currentSets = sets
-        let brand = brandSettings.selectedCatalogBrand
-        
-        await searchIndex.prepare(sets: currentSets, brand: brand) { [weak self] setCode in
-            guard let self else { return [] }
-            return await self.loadCards(forSetCode: setCode)
-        }
-        
-        let ready = await searchIndex.isReady
-        await MainActor.run {
-            self.isSearchIndexReady = ready
-        }
-
         return await linearNameSearch(normalizedQuery: q)
     }
 
@@ -580,50 +523,29 @@ final class CardDataService {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
         let brandSets = await catalogSets(for: catalogBrand)
-        await searchIndex.prepare(sets: brandSets, brand: catalogBrand) { [weak self] setCode in
-            guard let self else { return [] }
-            return await self.loadCards(forSetCode: setCode, catalogBrand: catalogBrand)
-        }
-        let ready = await searchIndex.isReady
-        isSearchIndexReady = ready
         return await linearNameSearch(normalizedQuery: q, sets: brandSets, catalogBrand: catalogBrand)
     }
 
     func search(query: String, catalogBrand: TCGBrand) async -> [Card] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
+        let ftsRefs = await CatalogStore.shared.searchCards(query: q, brand: catalogBrand)
+        if !ftsRefs.isEmpty {
+            return await cards(for: Set(ftsRefs), catalogBrand: catalogBrand)
+        }
         let brandSets = await catalogSets(for: catalogBrand)
-        await searchIndex.prepare(sets: brandSets, brand: catalogBrand) { [weak self] setCode in
-            guard let self else { return [] }
-            return await self.loadCards(forSetCode: setCode, catalogBrand: catalogBrand)
-        }
-        let ready = await searchIndex.isReady
-        isSearchIndexReady = ready
-        if ready {
-            let refs = await searchIndex.refs(matchingNormalizedQuery: q)
-            if !refs.isEmpty {
-                return await cards(for: refs, catalogBrand: catalogBrand)
-            }
-        }
         return await linearSubstringSearch(normalizedQuery: q, sets: brandSets, catalogBrand: catalogBrand)
     }
 
     func searchSoftTokenMatch(query: String, catalogBrand: TCGBrand) async -> [Card] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return [] }
+        let ftsRefs = await CatalogStore.shared.searchCards(query: q, brand: catalogBrand)
+        if !ftsRefs.isEmpty {
+            return await cards(for: Set(ftsRefs), catalogBrand: catalogBrand)
+        }
         let brandSets = await catalogSets(for: catalogBrand)
-        await searchIndex.prepare(sets: brandSets, brand: catalogBrand) { [weak self] setCode in
-            guard let self else { return [] }
-            return await self.loadCards(forSetCode: setCode, catalogBrand: catalogBrand)
-        }
-        let ready = await searchIndex.isReady
-        isSearchIndexReady = ready
-        guard ready else {
-            return await linearSubstringSearch(normalizedQuery: q, sets: brandSets, catalogBrand: catalogBrand)
-        }
-        let ranked = await searchIndex.softMatchRefs(normalizedQuery: q)
-        guard !ranked.isEmpty else { return [] }
-        return await cardsPreservingSoftMatchOrder(ranked, catalogBrand: catalogBrand)
+        return await linearSubstringSearch(normalizedQuery: q, sets: brandSets, catalogBrand: catalogBrand)
     }
 
     private func cards(for refs: Set<CardRef>, catalogBrand: TCGBrand) async -> [Card] {

@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 import UserNotifications
 import UIKit
+import BackgroundTasks
 
 final class BindrPushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     /// Buffer for a notification tap that arrived before any observer was
@@ -23,6 +24,12 @@ final class BindrPushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotific
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         UNUserNotificationCenter.current().delegate = self
+        BGTaskScheduler.shared.register(
+            forTaskWithIdentifier: CatalogDailyRefreshTask.identifier,
+            using: nil
+        ) { task in
+            CatalogDailyRefreshTask.handle(task as! BGAppRefreshTask)
+        }
         return true
     }
 
@@ -67,6 +74,8 @@ struct BindrApp: App {
 
     static let cloudKitFallbackDefaultsKey = "cloudKitFallbackActive"
     static let cloudKitLastErrorDefaultsKey = "cloudKitLastError"
+
+    private let modelContainer: ModelContainer = Self.makeModelContainer()
 
     init() {
         Self.configureTabBarAppearance()
@@ -207,10 +216,17 @@ struct BindrApp: App {
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }
 
+    @Environment(\.scenePhase) private var scenePhase
+
     var body: some Scene {
         WindowGroup {
             RootView()
         }
-        .modelContainer(Self.makeModelContainer())
+        .modelContainer(modelContainer)
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .background {
+                CatalogDailyRefreshTask.schedule()
+            }
+        }
     }
 }
