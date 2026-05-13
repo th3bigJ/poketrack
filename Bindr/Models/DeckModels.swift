@@ -220,6 +220,8 @@ enum DeckFormat: String, Codable, CaseIterable {
     var brand: String = TCGBrand.pokemon.rawValue
     var format: String = DeckFormat.pokemonStandard.rawValue
     var createdAt: Date = Date()
+    /// Optional user-selected card to represent this deck in deck-list previews.
+    var mainCardID: String? = nil
     @Relationship(deleteRule: .cascade, inverse: \DeckCard.deck)
     var cards: [DeckCard]? = []
 
@@ -364,6 +366,15 @@ enum DeckFormat: String, Codable, CaseIterable {
     /// The ID of the first card in the deck, used for the "Hero Card" preview on the deck box.
     var heroCardID: String? {
         cardList.first?.cardID
+    }
+
+    /// Preferred preview card for deck-list thumbnails.
+    var previewCardID: String? {
+        let normalized = mainCardID?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        if !normalized.isEmpty, cardList.contains(where: { $0.cardID == normalized }) {
+            return normalized
+        }
+        return heroCardID
     }
 }
 

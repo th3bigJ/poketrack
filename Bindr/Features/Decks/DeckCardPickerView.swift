@@ -219,6 +219,11 @@ struct DeckCardPickerView: View {
     @State private var browsePath: [DeckPickerBrowseRoute] = []
     @State private var detailSheetSession: DeckPickerDetailSession? = nil
     @State private var didRunFastStart = false
+    @State private var collectionDisplayLimit = Self.initialBatchSize
+    @State private var isLoadingCollectionMore = false
+    @State private var collectionEligibleCardIDs: Set<String> = []
+    @State private var collectionMatchingTotalCount = 0
+    @State private var collectionVisibleEntriesCache: [DeckPickerEntry] = []
 
     private static let initialBatchSize = 24
     private static let pageSize = 24
@@ -239,6 +244,10 @@ struct DeckCardPickerView: View {
 
     private var basketCardIDs: Set<String> {
         Set(basket.map { $0.card.masterCardId })
+    }
+
+    private func basketQuantity(for cardID: String) -> Int {
+        basket.first(where: { $0.card.masterCardId == cardID })?.quantity ?? 0
     }
 
     /// Total copies staged in the basket (sum of line quantities).
@@ -282,13 +291,40 @@ struct DeckCardPickerView: View {
         debouncedQueryIsActive ? allCardSearchResults : displayedAllCards
     }
 
+    private var collectionItemsForBrand: [CollectionItem] {
+        collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == deck.tcgBrand }
+    }
+
+    /// Distinct collection cards for this brand, keeping first-seen order from
+    /// `collectionItems` (newest acquisitions first due to query sort).
+    private var uniqueCollectionItemsForBrand: [CollectionItem] {
+        var seen: Set<String> = []
+        var unique: [CollectionItem] = []
+        unique.reserveCapacity(collectionItemsForBrand.count)
+        for item in collectionItemsForBrand {
+            if seen.insert(item.cardID).inserted {
+                unique.append(item)
+            }
+        }
+        return unique
+    }
+
+    /// Unique collection cards that are format/filter-eligible by catalog id
+    /// (does not require loading full `Card` models).
+    private var collectionCandidateItems: [CollectionItem] {
+        uniqueCollectionItemsForBrand.filter { collectionEligibleCardIDs.contains($0.cardID) }
+    }
+
     private var collectionEntries: [DeckPickerEntry] {
         let q = debouncedTrimmedQuery.lowercased()
-        return collectionItems.compactMap { item in
-            guard TCGBrand.inferredFromMasterCardId(item.cardID) == deck.tcgBrand else { return nil }
+        let scopedItems: [CollectionItem]
+        if q.isEmpty {
+            scopedItems = Array(collectionCandidateItems.prefix(collectionDisplayLimit))
+        } else {
+            scopedItems = collectionCandidateItems
+        }
+        return scopedItems.compactMap { item in
             guard let card = resolvedCardsByID[item.cardID] else { return nil }
-            guard isEligible(card) else { return nil }
-            guard passesPickerFilters(card) else { return nil }
             if !q.isEmpty {
                 let name = card.cardName.lowercased()
                 let num = card.cardNumber.lowercased()
@@ -316,7 +352,7 @@ struct DeckCardPickerView: View {
                 )
             }
         case .collection:
-            return sortedCollectionEntries(collectionEntries)
+            return collectionVisibleEntriesCache
         }
     }
 
@@ -344,14 +380,8 @@ struct DeckCardPickerView: View {
         "\(source.rawValue)|\(deck.format)|\(debouncedTrimmedQuery)"
     }
 
-    private var visibleItemSignature: String {
-        collectionItems
-            .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == deck.tcgBrand }
-            .map(\.cardID).sorted().joined(separator: "|")
-    }
-
     private var collectionResolveTaskKey: String {
-        "\(source.rawValue)|\(visibleItemSignature)"
+        "\(source.rawValue)|\(collectionDisplayLimit)|\(debouncedTrimmedQuery)|\(collectionCandidateItems.count)"
     }
 
     /// Cards matching the current source, search query, and browse filters — not limited by grid pagination.
@@ -363,7 +393,7 @@ struct DeckCardPickerView: View {
             }
             return filteredAllCardRefs.count
         case .collection:
-            return collectionEntries.count
+            return collectionMatchingTotalCount
         }
     }
 
@@ -439,22 +469,25 @@ struct DeckCardPickerView: View {
                             } else {
                                 LazyVGrid(columns: columns, spacing: 12) {
                                     ForEach(visibleEntries) { entry in
-                                        Button {
-                                            openDetail(for: entry)
-                                        } label: {
-                                            DeckPickerCardCell(
-                                                entry: entry,
-                                                setName: setNameByCode[entry.card.setCode],
-                                                gridOptions: gridOptions,
-                                                isSelected: basketCardIDs.contains(entry.card.masterCardId),
-                                                alreadyInDeck: deckCardIDs.contains(entry.card.masterCardId)
-                                            )
-                                        }
-                                        .buttonStyle(CardCellButtonStyle())
+                                        DeckPickerCardCell(
+                                            entry: entry,
+                                            setName: setNameByCode[entry.card.setCode],
+                                            gridOptions: gridOptions,
+                                            isSelected: basketCardIDs.contains(entry.card.masterCardId),
+                                            stagedQuantity: basketQuantity(for: entry.card.masterCardId),
+                                            alreadyInDeck: deckCardIDs.contains(entry.card.masterCardId),
+                                            onCardTap: { openDetail(for: entry) },
+                                            onIncrement: { incrementBasket(for: entry) },
+                                            onDecrement: { decrementBasket(for: entry) }
+                                        )
                                         .onAppear {
-                                            guard source == .allCards, !debouncedQueryIsActive else { return }
                                             guard entry.id == preloadTriggerEntryID else { return }
-                                            Task { await loadNextAllCardsPage() }
+                                            if source == .allCards {
+                                                guard !debouncedQueryIsActive else { return }
+                                                Task { await loadNextAllCardsPage() }
+                                            } else if source == .collection {
+                                                Task { await loadNextCollectionPageIfNeeded() }
+                                            }
                                         }
                                     }
                                 }
@@ -491,6 +524,9 @@ struct DeckCardPickerView: View {
                         deck: deck,
                         isEligible: isEligible,
                         basketCardIDs: basketCardIDs,
+                        basketQuantityForCardID: basketQuantity(for:),
+                        onIncrement: incrementBasket(for:),
+                        onDecrement: decrementBasket(for:),
                         loadCards: {
                             let loaded = await services.cardData.loadCards(forSetCode: set.setCode, catalogBrand: deck.tcgBrand)
                             return sortCardsByLocalIdHighestFirst(loaded)
@@ -509,6 +545,9 @@ struct DeckCardPickerView: View {
                         deck: deck,
                         isEligible: isEligible,
                         basketCardIDs: basketCardIDs,
+                        basketQuantityForCardID: basketQuantity(for:),
+                        onIncrement: incrementBasket(for:),
+                        onDecrement: decrementBasket(for:),
                         loadCards: { await loadPokemonDexCards(dexId: dexId) },
                         onCardSelected: { card, swipeCards in
                             openDetailForCard(card, swipeContext: swipeCards)
@@ -524,6 +563,9 @@ struct DeckCardPickerView: View {
                         deck: deck,
                         isEligible: isEligible,
                         basketCardIDs: basketCardIDs,
+                        basketQuantityForCardID: basketQuantity(for:),
+                        onIncrement: incrementBasket(for:),
+                        onDecrement: decrementBasket(for:),
                         loadCards: { await services.cardData.cards(matchingOnePieceCharacterName: name) },
                         onCardSelected: { card, swipeCards in
                             openDetailForCard(card, swipeContext: swipeCards)
@@ -539,6 +581,9 @@ struct DeckCardPickerView: View {
                         deck: deck,
                         isEligible: isEligible,
                         basketCardIDs: basketCardIDs,
+                        basketQuantityForCardID: basketQuantity(for:),
+                        onIncrement: incrementBasket(for:),
+                        onDecrement: decrementBasket(for:),
                         loadCards: { await services.cardData.cards(matchingOnePieceSubtype: name) },
                         onCardSelected: { card, swipeCards in
                             openDetailForCard(card, swipeContext: swipeCards)
@@ -590,6 +635,10 @@ struct DeckCardPickerView: View {
             .onChange(of: source) { _, _ in
                 if source == .allCards {
                     Task { await restoreAllCardsFeedIfNeeded() }
+                } else {
+                    collectionDisplayLimit = Self.initialBatchSize
+                    refreshCollectionEligibilitySnapshot()
+                    Task { await resolveVisibleCards() }
                 }
             }
             .task(id: query) {
@@ -611,8 +660,13 @@ struct DeckCardPickerView: View {
                 Task { await restoreAllCardsFeedIfNeeded() }
             }
             .onChange(of: filters) { _, _ in
-                guard source == .allCards, !debouncedQueryIsActive else { return }
-                Task { await rebuildFilteredRefFeed(reset: true, clearVisibleImmediately: true) }
+                if source == .allCards {
+                    guard !debouncedQueryIsActive else { return }
+                    Task { await rebuildFilteredRefFeed(reset: true, clearVisibleImmediately: true) }
+                } else if source == .collection {
+                    refreshCollectionEligibilitySnapshot()
+                    Task { await resolveVisibleCards() }
+                }
             }
             .onAppear {
                 filters.sortBy = .newestSet
@@ -743,7 +797,7 @@ struct DeckCardPickerView: View {
                 VStack(alignment: .leading, spacing: 1) {
                     Text("\(basketTotalQuantity) card\(basketTotalQuantity == 1 ? "" : "s") in basket")
                         .font(.subheadline.weight(.semibold))
-                    Text("Tap the grid to remove · Confirm to add to deck")
+                    Text("Use + / - under cards · Confirm to add to deck")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -900,6 +954,25 @@ struct DeckCardPickerView: View {
         toggleBasketCard(entry.card, variantKey: entry.variantKey)
     }
 
+    private func incrementBasket(for entry: DeckPickerEntry) {
+        addToBasket(card: entry.card, variantKey: entry.variantKey, quantity: 1)
+    }
+
+    private func decrementBasket(for entry: DeckPickerEntry) {
+        guard let idx = basket.firstIndex(where: { $0.card.masterCardId == entry.card.masterCardId }) else { return }
+        let nextQuantity = basket[idx].quantity - 1
+        if nextQuantity <= 0 {
+            basket.remove(at: idx)
+        } else {
+            basket[idx] = DeckPickerSelection(
+                card: basket[idx].card,
+                variantKey: basket[idx].variantKey,
+                quantity: nextQuantity
+            )
+        }
+        HapticManager.impact(.light)
+    }
+
     private func toggleBasketCard(_ card: Card, variantKey: String? = nil) {
         if let idx = basket.firstIndex(where: { $0.card.masterCardId == card.masterCardId }) {
             basket.remove(at: idx)
@@ -1016,6 +1089,9 @@ struct DeckCardPickerView: View {
                 nextRefIndex = 0
                 didRunFastStart = true
             }
+            await MainActor.run {
+                refreshCollectionEligibilitySnapshot()
+            }
             await rebuildFilteredRefFeed(reset: true, clearVisibleImmediately: false)
         } catch {
             await MainActor.run {
@@ -1097,6 +1173,20 @@ struct DeckCardPickerView: View {
         await loadNextAllCardsPage(reset: true)
     }
 
+    private func loadNextCollectionPageIfNeeded() async {
+        guard source == .collection else { return }
+        guard debouncedTrimmedQuery.isEmpty else { return }
+        guard !isLoadingCollectionMore else { return }
+        let total = collectionCandidateItems.count
+        guard collectionDisplayLimit < total else { return }
+        await MainActor.run { isLoadingCollectionMore = true }
+        defer { Task { @MainActor in isLoadingCollectionMore = false } }
+        await MainActor.run {
+            collectionDisplayLimit = min(collectionDisplayLimit + Self.pageSize, total)
+        }
+        await resolveVisibleCards()
+    }
+
     private func showQuickStartFromMostRecentSet(sets: [TCGSet]) async {
         guard let newestSet = sets.max(by: { ($0.releaseDate ?? "") < ($1.releaseDate ?? "") }) else { return }
         let loaded = await services.cardData.loadCards(forSetCode: newestSet.setCode, catalogBrand: deck.tcgBrand)
@@ -1116,16 +1206,37 @@ struct DeckCardPickerView: View {
 
     private func resolveVisibleCards() async {
         var next = resolvedCardsByID
-        let ids = Set(collectionItems
-            .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == deck.tcgBrand }
-            .map(\.cardID))
+        let scopedItems: [CollectionItem]
+        if debouncedTrimmedQuery.isEmpty {
+            scopedItems = Array(collectionCandidateItems.prefix(collectionDisplayLimit))
+        } else {
+            // Search requires matching against all collection cards.
+            scopedItems = collectionCandidateItems
+        }
+        let ids = Set(scopedItems.map(\.cardID))
         let missingIDs = ids.filter { next[$0] == nil }
         let loaded = await services.cardData.loadCards(masterCardIDs: Array(missingIDs), catalogBrand: deck.tcgBrand)
         for card in loaded {
             let id = card.masterCardId
             next[id] = card
         }
-        await MainActor.run { resolvedCardsByID = next }
+        await MainActor.run {
+            resolvedCardsByID = next
+            rebuildCollectionVisibleEntriesCache()
+        }
+    }
+
+    private func refreshCollectionEligibilitySnapshot() {
+        let eligibleIDs = Set(filterBrowseFilterCards(allBrowseFilterCards).map(\.masterCardId))
+        collectionEligibleCardIDs = eligibleIDs
+        collectionMatchingTotalCount = uniqueCollectionItemsForBrand.reduce(into: 0) { acc, item in
+            if eligibleIDs.contains(item.cardID) { acc += 1 }
+        }
+        rebuildCollectionVisibleEntriesCache()
+    }
+
+    private func rebuildCollectionVisibleEntriesCache() {
+        collectionVisibleEntriesCache = sortedCollectionEntries(collectionEntries)
     }
 
     private func loadCardsInOrder(_ refs: [CardRef]) async -> [Card] {
@@ -1386,31 +1497,65 @@ private struct DeckPickerCardCell: View {
     let setName: String?
     let gridOptions: BrowseGridOptions
     let isSelected: Bool
+    let stagedQuantity: Int
     let alreadyInDeck: Bool
+    let onCardTap: () -> Void
+    let onIncrement: () -> Void
+    let onDecrement: () -> Void
 
     @Environment(\.bindrAccent) private var bindrAccent
 
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
-            CardGridCell(
-                card: entry.card,
-                gridOptions: gridOptions,
-                setName: setName,
-                footnote: nil
-            )
+        VStack(spacing: 6) {
+            Button(action: onCardTap) {
+                ZStack(alignment: .bottomTrailing) {
+                    CardGridCell(
+                        card: entry.card,
+                        gridOptions: gridOptions,
+                        setName: setName,
+                        footnote: nil
+                    )
 
-            Image(systemName: isSelected
-                  ? "checkmark.circle.fill"
-                  : (entry.isOwned ? "checkmark.circle.fill" : "circle"))
-                .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(isSelected ? bindrAccent : (entry.isOwned ? .green : .white))
-                .background(Circle().fill(isSelected || entry.isOwned ? .white : Color.black.opacity(0.18)))
-                .padding(6)
-        }
-        .overlay {
-            if alreadyInDeck && !isSelected {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .strokeBorder(Color.orange.opacity(0.5), lineWidth: 1.5)
+                    if isSelected {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 18, weight: .semibold))
+                            .foregroundStyle(bindrAccent)
+                            .background(Circle().fill(.white))
+                            .padding(6)
+                    }
+                }
+            }
+            .buttonStyle(CardCellButtonStyle())
+            .overlay {
+                if alreadyInDeck && !isSelected {
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .strokeBorder(Color.orange.opacity(0.5), lineWidth: 1.5)
+                }
+            }
+
+            HStack(spacing: 12) {
+                Button(action: onDecrement) {
+                    Image(systemName: "minus")
+                        .font(.system(size: 14, weight: .bold))
+                        .frame(width: 28, height: 28)
+                        .background(Color(uiColor: .secondarySystemFill), in: Circle())
+                }
+                .buttonStyle(.plain)
+                .disabled(stagedQuantity == 0)
+                .opacity(stagedQuantity == 0 ? 0.45 : 1)
+
+                Text("\(stagedQuantity)")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.primary)
+                    .frame(minWidth: 16)
+
+                Button(action: onIncrement) {
+                    Image(systemName: "plus")
+                        .font(.system(size: 14, weight: .bold))
+                        .frame(width: 28, height: 28)
+                        .background(Color(uiColor: .secondarySystemFill), in: Circle())
+                }
+                .buttonStyle(.plain)
             }
         }
     }
@@ -1707,6 +1852,9 @@ private struct DeckPickerCatalogCardsView: View {
     let deck: Deck
     let isEligible: (Card) -> Bool
     let basketCardIDs: Set<String>
+    let basketQuantityForCardID: (String) -> Int
+    let onIncrement: (DeckPickerEntry) -> Void
+    let onDecrement: (DeckPickerEntry) -> Void
     let loadCards: () async -> [Card]
     /// Opens the deck detail sheet; second argument is the list to swipe through (typically the filtered grid).
     let onCardSelected: (Card, [Card]) -> Void
@@ -1759,21 +1907,23 @@ private struct DeckPickerCatalogCardsView: View {
                     } else {
                         LazyVGrid(columns: columns, spacing: 12) {
                             ForEach(filteredCards) { card in
-                                Button { onCardSelected(card, filteredCards) } label: {
-                                    DeckPickerCardCell(
-                                        entry: DeckPickerEntry(
-                                            id: "cat|\(card.masterCardId)",
-                                            card: card,
-                                            variantKey: card.pricingVariants?.first ?? "normal",
-                                            isOwned: ownedCardIDs.contains(card.masterCardId)
-                                        ),
-                                        setName: setNameByCode[card.setCode],
-                                        gridOptions: services.browseGridOptions.options,
-                                        isSelected: basketCardIDs.contains(card.masterCardId),
-                                        alreadyInDeck: deckCardIDs.contains(card.masterCardId)
-                                    )
-                                }
-                                .buttonStyle(CardCellButtonStyle())
+                                let entry = DeckPickerEntry(
+                                    id: "cat|\(card.masterCardId)",
+                                    card: card,
+                                    variantKey: card.pricingVariants?.first ?? "normal",
+                                    isOwned: ownedCardIDs.contains(card.masterCardId)
+                                )
+                                DeckPickerCardCell(
+                                    entry: entry,
+                                    setName: setNameByCode[card.setCode],
+                                    gridOptions: services.browseGridOptions.options,
+                                    isSelected: basketCardIDs.contains(card.masterCardId),
+                                    stagedQuantity: basketQuantityForCardID(card.masterCardId),
+                                    alreadyInDeck: deckCardIDs.contains(card.masterCardId),
+                                    onCardTap: { onCardSelected(card, filteredCards) },
+                                    onIncrement: { onIncrement(entry) },
+                                    onDecrement: { onDecrement(entry) }
+                                )
                             }
                         }
                         .padding(.horizontal, 16)

@@ -102,6 +102,12 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     /// Token for the currently active OCR/search request. Replaced on each new scan and on cancel.
     private var activeScanRequestID = UUID()
 
+    private func perfLog(_ message: String) {
+#if DEBUG
+        print("[Perf][Scanner] \(message)")
+#endif
+    }
+
     // MARK: - Setup
 
     func configure(cardDataService: CardDataService) {
@@ -630,24 +636,57 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         return raw ?? cleanedName
     }
 
+    private enum ScannerSearchKind: String {
+        case name
+        case exact
+        case soft
+    }
+
+    private func searchCardsCached(
+        service: CardDataService,
+        kind: ScannerSearchKind,
+        query: String,
+        brand: TCGBrand,
+        cache: inout [String: [Card]]
+    ) async -> [Card] {
+        let normalized = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalized.isEmpty else { return [] }
+        let key = "\(kind.rawValue)|\(brand.rawValue)|\(normalized.lowercased())"
+        if let cached = cache[key] {
+            return cached
+        }
+        let results: [Card]
+        switch kind {
+        case .name:
+            results = await service.searchByName(query: normalized, catalogBrand: brand)
+        case .exact:
+            results = await service.search(query: normalized, catalogBrand: brand)
+        case .soft:
+            results = await service.searchSoftTokenMatch(query: normalized, catalogBrand: brand)
+        }
+        cache[key] = results
+        return results
+    }
+
     private func mixedFallbackPool(
         service: CardDataService, cleanedName: String?, hp: String?,
         setNumber: String?, illustrator: String?, centerHint: String?,
-        catalogBrand: TCGBrand
+        catalogBrand: TCGBrand,
+        cache: inout [String: [Card]]
     ) async -> [Card] {
         var combined: [Card] = []
         if let cleanedName, !cleanedName.isEmpty {
-            combined.append(contentsOf: await service.searchByName(query: cleanedName, catalogBrand: catalogBrand))
-            combined.append(contentsOf: await service.search(query: cleanedName, catalogBrand: catalogBrand))
+            combined.append(contentsOf: await searchCardsCached(service: service, kind: .name, query: cleanedName, brand: catalogBrand, cache: &cache))
+            combined.append(contentsOf: await searchCardsCached(service: service, kind: .exact, query: cleanedName, brand: catalogBrand, cache: &cache))
         }
         if let setNumber, !setNumber.isEmpty {
-            combined.append(contentsOf: await service.search(query: setNumber, catalogBrand: catalogBrand))
+            combined.append(contentsOf: await searchCardsCached(service: service, kind: .exact, query: setNumber, brand: catalogBrand, cache: &cache))
         }
         if let illustrator, !illustrator.isEmpty {
-            combined.append(contentsOf: await service.search(query: illustrator, catalogBrand: catalogBrand))
+            combined.append(contentsOf: await searchCardsCached(service: service, kind: .exact, query: illustrator, brand: catalogBrand, cache: &cache))
         }
         if let centerHint, !centerHint.isEmpty {
-            combined.append(contentsOf: await service.searchSoftTokenMatch(query: centerHint, catalogBrand: catalogBrand))
+            combined.append(contentsOf: await searchCardsCached(service: service, kind: .soft, query: centerHint, brand: catalogBrand, cache: &cache))
         }
         var deduped = Self.dedupCards(combined)
         if catalogBrand == .pokemon, let hp, let ocrHP = Int(hp.trimmingCharacters(in: .whitespacesAndNewlines)) {
@@ -686,6 +725,12 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         debugHeader: String,
         requestID: UUID
     ) async {
+        let startedAt = CFAbsoluteTimeGetCurrent()
+        var outcome = "unknown"
+        defer {
+            let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
+            perfLog("brand=one_piece outcome=\(outcome) elapsed=\(elapsedMs)ms")
+        }
         guard let service = cardDataService else { return }
         let brand = TCGBrand.onePiece
 
@@ -696,22 +741,23 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         let hasName = !(preferredNameQuery?.isEmpty ?? true)
 
         var pool: [Card] = []
+        var searchCache: [String: [Card]] = [:]
         var searchPath = ""
         if hasName {
             searchPath = "searchByName(\"\(preferredNameQuery!)\")"
-            pool = await service.searchByName(query: preferredNameQuery!, catalogBrand: brand)
+            pool = await searchCardsCached(service: service, kind: .name, query: preferredNameQuery!, brand: brand, cache: &searchCache)
             if pool.isEmpty, let cleanedName, cleanedName.caseInsensitiveCompare(preferredNameQuery!) != .orderedSame {
                 searchPath += " → searchByName(cleaned)"
-                pool = await service.searchByName(query: cleanedName, catalogBrand: brand)
+                pool = await searchCardsCached(service: service, kind: .name, query: cleanedName, brand: brand, cache: &searchCache)
             }
             if pool.isEmpty, let cleanedName {
                 searchPath += " → search / softMatch"
-                pool = await service.search(query: cleanedName, catalogBrand: brand)
-                if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: cleanedName, catalogBrand: brand) }
+                pool = await searchCardsCached(service: service, kind: .exact, query: cleanedName, brand: brand, cache: &searchCache)
+                if pool.isEmpty { pool = await searchCardsCached(service: service, kind: .soft, query: cleanedName, brand: brand, cache: &searchCache) }
             }
         } else if let num = cardNumber, !num.isEmpty {
             searchPath = "search(\"\(num)\")"
-            pool = await service.search(query: num, catalogBrand: brand)
+            pool = await searchCardsCached(service: service, kind: .exact, query: num, brand: brand, cache: &searchCache)
         }
 
         if pool.isEmpty {
@@ -719,7 +765,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             pool = await mixedFallbackPool(
                 service: service, cleanedName: cleanedName, hp: nil,
                 setNumber: cardNumber, illustrator: nil, centerHint: nil,
-                catalogBrand: brand
+                catalogBrand: brand,
+                cache: &searchCache
             )
         }
 
@@ -941,6 +988,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
 
         guard let top = ranked.first else {
+            outcome = "no_match"
             setOnePieceDebug(debugHeader + searchSection + "\nResult: FAIL — empty pool after ranking.")
             await MainActor.run { [weak self] in
                 guard let self, self.activeScanRequestID == requestID else { return }
@@ -951,6 +999,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
 
         let alternatives = Array(ranked.dropFirst().prefix(30))
+        outcome = "ranked_candidate"
 
         let topScore = ScannerCompositeRanker.onePieceTotalScoreDebug(
             card: top,
@@ -1018,6 +1067,12 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         numberCandidates: [String], rawOCRBlob: String?,
         requestID: UUID
     ) async {
+        let startedAt = CFAbsoluteTimeGetCurrent()
+        var outcome = "unknown"
+        defer {
+            let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
+            perfLog("brand=\(scanBrand.rawValue) outcome=\(outcome) elapsed=\(elapsedMs)ms")
+        }
         guard let service = cardDataService else { return }
         /// Must match the brand the user picked in the scanner — not `BrandSettings.selectedCatalogBrand` (browse tab).
         let brand = scanBrand
@@ -1025,20 +1080,21 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         let rawName = cardName?.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedName = Self.cleanedOCRName(rawName)
         let hasName = !(rawName?.isEmpty ?? true)
+        var searchCache: [String: [Card]] = [:]
 
         var pool: [Card]
         if hasName {
-            pool = await service.searchByName(query: rawName!, catalogBrand: brand)
+            pool = await searchCardsCached(service: service, kind: .name, query: rawName!, brand: brand, cache: &searchCache)
             if pool.isEmpty, let cleanedName, cleanedName.caseInsensitiveCompare(rawName!) != .orderedSame {
-                pool = await service.searchByName(query: cleanedName, catalogBrand: brand)
+                pool = await searchCardsCached(service: service, kind: .name, query: cleanedName, brand: brand, cache: &searchCache)
             }
             if pool.isEmpty, let cleanedName {
-                pool = await service.search(query: cleanedName, catalogBrand: brand)
-                if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: cleanedName, catalogBrand: brand) }
+                pool = await searchCardsCached(service: service, kind: .exact, query: cleanedName, brand: brand, cache: &searchCache)
+                if pool.isEmpty { pool = await searchCardsCached(service: service, kind: .soft, query: cleanedName, brand: brand, cache: &searchCache) }
             }
         } else if let hint = centerHint, !hint.isEmpty {
-            pool = await service.search(query: hint, catalogBrand: brand)
-            if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: hint, catalogBrand: brand) }
+            pool = await searchCardsCached(service: service, kind: .exact, query: hint, brand: brand, cache: &searchCache)
+            if pool.isEmpty { pool = await searchCardsCached(service: service, kind: .soft, query: hint, brand: brand, cache: &searchCache) }
         } else {
             pool = []
         }
@@ -1047,7 +1103,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             pool = await mixedFallbackPool(
                 service: service, cleanedName: cleanedName, hp: hp,
                 setNumber: setNumber, illustrator: illustrator, centerHint: centerHint,
-                catalogBrand: brand
+                catalogBrand: brand,
+                cache: &searchCache
             )
         }
 
@@ -1059,6 +1116,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         )
 
         guard let top = ranked.first else {
+            outcome = "no_match"
             await MainActor.run { [weak self] in
                 guard let self, self.activeScanRequestID == requestID else { return }
                 self.scanState = .idle
@@ -1068,6 +1126,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
 
         let alternatives = Array(ranked.dropFirst().prefix(30))
+        outcome = "ranked_candidate"
 
         await MainActor.run { [weak self] in
             guard let self else { return }

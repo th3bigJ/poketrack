@@ -20,6 +20,8 @@ final class CardDataService {
     private let session: URLSession
     private let fileManager: FileManager
     private let brandSettings: BrandSettings
+    private var normalizedNameByCardID: [String: String] = [:]
+    private var normalizedSearchBlobByCardID: [String: String] = [:]
 
     init(
         brandSettings: BrandSettings,
@@ -34,6 +36,9 @@ final class CardDataService {
     /// Call after the user switches the browse brand (carousel or account). Clears caches and reloads `sets` + search index.
     func reloadAfterBrandChange() async {
         cardsBySet = [:]
+        cardsForCatalogBrandCache = [:]
+        normalizedNameByCardID = [:]
+        normalizedSearchBlobByCardID = [:]
         browseFeedSessionRefs = nil
         isSearchIndexReady = false
         await loadSets(preferSyncedCatalog: false)
@@ -165,6 +170,7 @@ final class CardDataService {
             let brand = brandSettings.selectedCatalogBrand
             let rows = try await CatalogStore.shared.fetchCards(setCode: setCode, brand: brand)
             cardsBySet[setCode] = rows
+            indexNormalizedSearchValues(rows)
             return rows
         } catch {
             return []
@@ -437,19 +443,20 @@ final class CardDataService {
 
     private func linearNameSearch(normalizedQuery q: String, sets brandSets: [TCGSet], catalogBrand: TCGBrand) async -> [Card] {
         let tokens = q.split(whereSeparator: \.isWhitespace).map(String.init)
-        // The DB work inside `loadCards` is already off-main (CatalogStore serial queue);
-        // the per-card filter is bounded by the catalog size and runs fine on MainActor.
-        var out: [Card] = []
+        var all: [Card] = []
         for set in brandSets {
             let cards = await loadCards(forSetCode: set.setCode, catalogBrand: catalogBrand)
-            for card in cards {
-                let name = card.cardName.lowercased()
-                if tokens.allSatisfy({ name.contains($0) }) {
-                    out.append(card)
-                }
-            }
+            all.append(contentsOf: cards)
         }
-        return sortCardsByReleaseDateNewestFirst(out)
+        indexNormalizedSearchValues(all)
+        let names = normalizedNameByCardID
+        let filtered = await Task.detached(priority: .userInitiated) {
+            all.filter { card in
+                let name = names[card.masterCardId] ?? card.cardName.lowercased()
+                return tokens.allSatisfy { name.contains($0) }
+            }
+        }.value
+        return sortCardsByReleaseDateNewestFirst(filtered)
     }
 
     private func linearSubstringSearch(normalizedQuery q: String) async -> [Card] {
@@ -457,20 +464,21 @@ final class CardDataService {
     }
 
     private func linearSubstringSearch(normalizedQuery q: String, sets brandSets: [TCGSet], catalogBrand: TCGBrand) async -> [Card] {
-        // The DB work inside `loadCards` is already off-main (CatalogStore serial queue);
-        // the per-card substring scan is bounded by the catalog size and runs fine on MainActor.
-        var out: [Card] = []
+        var all: [Card] = []
         for set in brandSets {
             let code = set.setCode
             let cards = await loadCards(forSetCode: code, catalogBrand: catalogBrand)
-            for card in cards {
-                let blob = card.searchIndexBlob.lowercased()
-                if blob.contains(q) {
-                    out.append(card)
-                }
-            }
+            all.append(contentsOf: cards)
         }
-        return sortCardsByReleaseDateNewestFirst(out)
+        indexNormalizedSearchValues(all)
+        let blobs = normalizedSearchBlobByCardID
+        let filtered = await Task.detached(priority: .userInitiated) {
+            all.filter { card in
+                let blob = blobs[card.masterCardId] ?? card.searchIndexBlob.lowercased()
+                return blob.contains(q)
+            }
+        }.value
+        return sortCardsByReleaseDateNewestFirst(filtered)
     }
 
     // MARK: - Scanner (search without changing browse `selectedCatalogBrand`)
@@ -516,6 +524,7 @@ final class CardDataService {
             cards = []
         }
         cardsForCatalogBrandCache[cacheKey] = cards
+        indexNormalizedSearchValues(cards)
         return cards
     }
 
@@ -627,6 +636,7 @@ final class CardDataService {
     /// Returns cards in arbitrary order; callers should reorder to their requested id list.
     func loadCards(masterCardIDs: [String], catalogBrand: TCGBrand) async -> [Card] {
         let ids = Array(Set(masterCardIDs))
+        let idSet = Set(ids)
         guard !ids.isEmpty else { return [] }
 
         // Fast path: resolve from already-cached set buckets for the selected browse brand.
@@ -634,7 +644,7 @@ final class CardDataService {
             var cachedById: [String: Card] = [:]
             cachedById.reserveCapacity(ids.count)
             for cards in cardsBySet.values {
-                for card in cards where ids.contains(card.masterCardId) {
+                for card in cards where idSet.contains(card.masterCardId) {
                     cachedById[card.masterCardId] = card
                 }
             }
@@ -649,6 +659,18 @@ final class CardDataService {
             return loaded
         } catch {
             return []
+        }
+    }
+
+    private func indexNormalizedSearchValues(_ cards: [Card]) {
+        guard !cards.isEmpty else { return }
+        for card in cards {
+            if normalizedNameByCardID[card.masterCardId] == nil {
+                normalizedNameByCardID[card.masterCardId] = card.cardName.lowercased()
+            }
+            if normalizedSearchBlobByCardID[card.masterCardId] == nil {
+                normalizedSearchBlobByCardID[card.masterCardId] = card.searchIndexBlob.lowercased()
+            }
         }
     }
 }

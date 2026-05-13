@@ -1,6 +1,23 @@
 import SwiftUI
 import UIKit
 
+actor DecodedImageMemoryCache {
+    static let shared = DecodedImageMemoryCache()
+    private var storage: [String: UIImage] = [:]
+    private let maxEntries = 1200
+
+    func image(for key: String) -> UIImage? {
+        storage[key]
+    }
+
+    func set(_ image: UIImage, for key: String) {
+        storage[key] = image
+        if storage.count > maxEntries, let keyToRemove = storage.keys.first {
+            storage.removeValue(forKey: keyToRemove)
+        }
+    }
+}
+
 @Observable
 private final class ImageLoader {
     var image: UIImage?
@@ -14,6 +31,13 @@ private final class ImageLoader {
             return nil
         }
         return ThumbnailImageDecode.downsampled(data: cached.data, targetSize: targetSize, scale: scale)
+    }
+
+    private static func cacheKey(url: URL, localURL: URL?, targetSize: CGSize?, scale: CGFloat) -> String {
+        let source = localURL?.path(percentEncoded: false) ?? url.absoluteString
+        let w = targetSize?.width ?? 0
+        let h = targetSize?.height ?? 0
+        return "\(source)|\(w)x\(h)|@\(scale)"
     }
 
     func load(url: URL?, localURL: URL?, targetSize: CGSize?) {
@@ -42,6 +66,17 @@ private final class ImageLoader {
 
         loadTask = Task.detached(priority: .utility) { [weak self] in
             let scale = await MainActor.run { UIScreen.main.scale }
+            let key = Self.cacheKey(url: capturedURL, localURL: capturedLocal, targetSize: capturedTarget, scale: scale)
+
+            if let memCached = await DecodedImageMemoryCache.shared.image(for: key) {
+                await MainActor.run { [weak self] in
+                    guard let self, !Task.isCancelled else { return }
+                    guard self.currentURL == capturedURL else { return }
+                    self.image = memCached
+                    self.loadTask = nil
+                }
+                return
+            }
 
             var decoded: UIImage?
 
@@ -74,6 +109,10 @@ private final class ImageLoader {
                         decoded = self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale)
                     } catch { }
                 }
+            }
+
+            if let decoded {
+                await DecodedImageMemoryCache.shared.set(decoded, for: key)
             }
 
             let finalImage = decoded

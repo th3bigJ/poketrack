@@ -388,18 +388,17 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
 
     var body: some View {
         let cols = max(columns, 1)
-        let rows = stride(from: 0, to: items.count, by: cols).map {
-            Array(items[$0..<min($0 + cols, items.count)])
-        }
         LazyVStack(spacing: spacing) {
-            ForEach(Array(rows.enumerated()), id: \.offset) { _, rowItems in
+            ForEach(Array(stride(from: 0, to: items.count, by: cols)), id: \.self) { rowStart in
                 HStack(spacing: spacing) {
-                    ForEach(rowItems) { item in
+                    let rowEnd = min(rowStart + cols, items.count)
+                    ForEach(rowStart..<rowEnd, id: \.self) { index in
+                        let item = items[index]
                         cell(item)
                             .frame(maxWidth: .infinity)
                     }
-                    if rowItems.count < cols {
-                        ForEach(0..<(cols - rowItems.count), id: \.self) { _ in
+                    if rowEnd - rowStart < cols {
+                        ForEach(0..<(cols - (rowEnd - rowStart)), id: \.self) { _ in
                             Color.clear.frame(maxWidth: .infinity)
                         }
                     }
@@ -408,6 +407,23 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+private actor BrowseGridPriceLineCache {
+    static let shared = BrowseGridPriceLineCache()
+    private var cache: [String: String] = [:]
+    private let maxEntries = 4000
+
+    func value(for key: String) -> String? {
+        cache[key]
+    }
+
+    func set(_ value: String, for key: String) {
+        cache[key] = value
+        if cache.count > maxEntries, let keyToRemove = cache.keys.first {
+            cache.removeValue(forKey: keyToRemove)
+        }
     }
 }
 
@@ -598,10 +614,18 @@ struct BrowseView: View {
     @State private var pendingSetRestoreRowID: String?
     @State private var setRestoreToken: Int = 0
     @State private var pendingCardContextRequest: CardContextActionRequest?
+    @State private var browseAppearStartedAt: CFAbsoluteTime?
+    @State private var browseFirstPaintLogged = false
 
     private var inlineDetailPriceCacheTaskKey: String {
         let ids = inlineDetailCards.map(\.masterCardId).joined(separator: "|")
         return "\(currentBrand.rawValue)#\(ids)"
+    }
+
+    private func perfLog(_ message: String) {
+#if DEBUG
+        print("[Perf][Browse] \(message)")
+#endif
     }
 
     private var collectionOwnershipSnapshotKey: String {
@@ -683,11 +707,19 @@ struct BrowseView: View {
             isViewVisible = true
             isInlineDetailPresented = (inlineDetailRoute != nil)
             currentBrand = services.brandSettings.selectedCatalogBrand
+            if browseAppearStartedAt == nil {
+                browseAppearStartedAt = CFAbsoluteTimeGetCurrent()
+            }
             if isBrowseBodyReady == false {
                 Task { @MainActor in
                     await Task.yield()
                     guard isViewVisible else { return }
                     isBrowseBodyReady = true
+                    if browseFirstPaintLogged == false, let started = browseAppearStartedAt {
+                        browseFirstPaintLogged = true
+                        let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - started) * 1000)
+                        perfLog("first-paint brand=\(currentBrand.rawValue) elapsed=\(elapsedMs)ms")
+                    }
                 }
             }
             let brandSnapshot = services.brandSettings.selectedCatalogBrand
@@ -859,6 +891,7 @@ struct BrowseView: View {
         ownedCardIDsSnapshot: Set<String>,
         shouldUseCatalogFeedOnStartup: Bool
     ) async {
+        let startedAt = CFAbsoluteTimeGetCurrent()
         guard isViewVisible else { return }
         if loadedBrand != selectedBrand {
             shuffledRefs = []
@@ -910,6 +943,11 @@ struct BrowseView: View {
                 usingCatalogFeed: false
             )
         }
+        let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
+        perfLog(
+            "initialize brand=\(selectedBrand.rawValue) tab=\(selectedTabSnapshot.rawValue) " +
+            "catalogMode=\(shouldUseCatalogFeedOnStartup) rows=\(browseFeedSnapshot.rows.count) elapsed=\(elapsedMs)ms"
+        )
     }
 
     @ViewBuilder
@@ -3023,24 +3061,35 @@ private struct BrowseGridPriceText: View {
             }
         }
         .task(id: taskID) {
+            if let cached = await BrowseGridPriceLineCache.shared.value(for: taskID) {
+                priceLine = cached
+                return
+            }
             priceLine = nil
             let currency = services.priceDisplay.currency
             let fx = services.pricing.usdToGbp
             if let usd = overridePrice {
-                priceLine = currency.format(amountUSD: usd, usdToGbp: fx)
+                let line = currency.format(amountUSD: usd, usdToGbp: fx)
+                priceLine = line
+                await BrowseGridPriceLineCache.shared.set(line, for: taskID)
                 return
             }
             guard let entry = await services.pricing.pricing(for: card),
                   let range = resolvedMarketPriceRange(entry) else {
                 priceLine = "—"
+                await BrowseGridPriceLineCache.shared.set("—", for: taskID)
                 return
             }
             if abs(range.max - range.min) < 0.005 {
-                priceLine = currency.format(amountUSD: range.min, usdToGbp: fx)
+                let line = currency.format(amountUSD: range.min, usdToGbp: fx)
+                priceLine = line
+                await BrowseGridPriceLineCache.shared.set(line, for: taskID)
             } else {
                 let low = currency.format(amountUSD: range.min, usdToGbp: fx)
                 let high = currency.format(amountUSD: range.max, usdToGbp: fx)
-                priceLine = "\(low) - \(high)"
+                let line = "\(low) - \(high)"
+                priceLine = line
+                await BrowseGridPriceLineCache.shared.set(line, for: taskID)
             }
         }
     }

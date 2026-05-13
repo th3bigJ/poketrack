@@ -1039,9 +1039,11 @@ struct DeckDetailView: View {
                             deckCard: deckCard,
                             copiesNeededFromCollection: copiesNeededByDeckCard[deckCard.persistentModelID] ?? 0,
                             isEditing: isEditing,
+                            isMainCard: deck.mainCardID == deckCard.cardID,
                             maxCopies: deckCard.isBasicEnergy ? 99 : deck.deckFormat.maxCopiesPerCard,
                             onQuantityChange: { updateQuantity(deckCard: deckCard, qty: $0) },
-                            onDelete: { modelContext.delete(deckCard) },
+                            onSetAsMainCard: { deck.mainCardID = deckCard.cardID },
+                            onDelete: { deleteDeckCard(deckCard) },
                             onViewCardTap: isEditing ? nil : {
                                 Task { await openBrowseDetail(for: deckCard) }
                             }
@@ -1063,7 +1065,20 @@ struct DeckDetailView: View {
     // MARK: - Helpers
 
     private func updateQuantity(deckCard: DeckCard, qty: Int) {
-        if qty <= 0 { modelContext.delete(deckCard) } else { deckCard.quantity = qty }
+        if qty <= 0 {
+            deleteDeckCard(deckCard)
+        } else {
+            deckCard.quantity = qty
+        }
+    }
+
+    private func deleteDeckCard(_ deckCard: DeckCard) {
+        let deletingCardID = deckCard.cardID
+        modelContext.delete(deckCard)
+        if deck.mainCardID == deletingCardID,
+           !deck.cardList.contains(where: { $0.cardID == deletingCardID }) {
+            deck.mainCardID = nil
+        }
     }
 
     private func openBrowseDetail(for deckCard: DeckCard) async {
@@ -1175,8 +1190,8 @@ private extension DeckCard {
 // MARK: - Deck grid metrics (edit mode columns share the same vertical slots so `Add` aligns with cards)
 
 private enum DeckCardGridLayoutMetrics {
-    /// Reserve space for the two-line “N needed / to complete deck” block so rows stay level when some cards need 0 copies.
-    static let neededSectionHeight: CGFloat = 40
+    /// No extra spacer needed now that the missing-count hint is shown on-card.
+    static let neededSectionHeight: CGFloat = 0
     /// Matches ``ChromeGlassCircleButton`` outer frame height in the − / + row.
     static let editControlsRowHeight: CGFloat = 48
 }
@@ -1188,8 +1203,10 @@ private struct DeckCardGridCell: View {
     /// Copies of this deck line still not covered by the collection (after allocating owned playsets across lines).
     let copiesNeededFromCollection: Int
     let isEditing: Bool
+    let isMainCard: Bool
     let maxCopies: Int
     let onQuantityChange: (Int) -> Void
+    let onSetAsMainCard: () -> Void
     let onDelete: () -> Void
     /// When non-`nil` and not editing, tapping the artwork opens browse detail (view-only sheet).
     var onViewCardTap: (() -> Void)? = nil
@@ -1219,20 +1236,27 @@ private struct DeckCardGridCell: View {
             .aspectRatio(5/7, contentMode: .fit)
             .clipShape(RoundedRectangle(cornerRadius: 8))
 
-            HStack {
+            HStack(alignment: .bottom) {
+                if copiesNeededFromCollection > 0 {
+                    Text("\(copiesNeededFromCollection) missing")
+                        .font(.system(size: 11, weight: .semibold))
+                        .padding(.horizontal, 6).padding(.vertical, 3)
+                        .background(Color.black.opacity(0.7), in: Capsule())
+                        .foregroundStyle(Color.orange)
+                }
                 Spacer()
                 Text("×\(deckCard.quantity)")
                     .font(.system(size: 11, weight: .bold))
                     .padding(.horizontal, 5).padding(.vertical, 2)
                     .background(Color.black.opacity(0.7), in: Capsule())
                     .foregroundStyle(.white)
-                    .padding(4)
             }
+            .padding(4)
         }
     }
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 2) {
             Group {
                 if let tap = onViewCardTap, !isEditing {
                     Button(action: tap) {
@@ -1247,17 +1271,7 @@ private struct DeckCardGridCell: View {
             }
 
             if isEditing {
-                VStack(spacing: 2) {
-                    if copiesNeededFromCollection > 0 {
-                        Text("\(copiesNeededFromCollection) needed")
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(Color.orange)
-                        Text("to complete deck")
-                            .font(.caption2)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .multilineTextAlignment(.center)
+                Color.clear
                 .frame(maxWidth: .infinity)
                 .frame(height: DeckCardGridLayoutMetrics.neededSectionHeight, alignment: .center)
                 .accessibilityElement(children: .combine)
@@ -1286,23 +1300,13 @@ private struct DeckCardGridCell: View {
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: DeckCardGridLayoutMetrics.editControlsRowHeight)
-            } else if copiesNeededFromCollection > 0 {
-                VStack(spacing: 2) {
-                    Text("\(copiesNeededFromCollection) needed")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(Color.orange)
-                    Text("to complete deck")
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                }
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity)
-                .accessibilityElement(children: .combine)
-                .accessibilityLabel("\(copiesNeededFromCollection) copies needed from your collection to complete this deck slot")
             }
         }
         .contextMenu {
             if isEditing {
+                Button(action: onSetAsMainCard) {
+                    Label(isMainCard ? "Main Card" : "Set as Main Card", systemImage: isMainCard ? "checkmark.circle.fill" : "star.fill")
+                }
                 Button(role: .destructive, action: onDelete) {
                     Label("Remove", systemImage: "trash")
                 }
@@ -1317,7 +1321,7 @@ private struct AddCardCell: View {
     let onTap: () -> Void
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 2) {
             Button(action: onTap) {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color(uiColor: .systemGray5))

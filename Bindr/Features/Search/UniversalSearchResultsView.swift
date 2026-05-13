@@ -17,6 +17,15 @@ struct UniversalSearchResultsView: View {
     @State private var hasMoreCardResults = false
     @State private var showAllCards = false
     @State private var debouncedQuery = ""
+    @State private var lastSearchTaskKey = ""
+    @State private var lastSearchCards: [Card] = []
+    @State private var lastSearchSets: [SearchSetMatch] = []
+
+    private func perfLog(_ message: String) {
+#if DEBUG
+        print("[Perf][UniversalSearch] \(message)")
+#endif
+    }
 
     private let previewCardLimit = 9
 
@@ -228,6 +237,7 @@ struct UniversalSearchResultsView: View {
             debouncedQuery = query
         }
         .task(id: searchTaskKey) {
+            let startedAt = CFAbsoluteTimeGetCurrent()
             guard !trimmed.isEmpty else {
                 matchingSets = []
                 cards = []
@@ -235,6 +245,17 @@ struct UniversalSearchResultsView: View {
                 isLoadingAllCards = false
                 hasMoreCardResults = false
                 showAllCards = false
+                lastSearchTaskKey = ""
+                lastSearchCards = []
+                lastSearchSets = []
+                return
+            }
+            if lastSearchTaskKey == searchTaskKey {
+                matchingSets = lastSearchSets
+                cards = Array(lastSearchCards.prefix(previewCardLimit))
+                hasMoreCardResults = lastSearchCards.count > previewCardLimit
+                let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
+                perfLog("task=\(searchTaskKey) reused-cache cards=\(cards.count) sets=\(matchingSets.count) elapsed=\(elapsedMs)ms")
                 return
             }
             isLoadingAllCards = false
@@ -265,11 +286,21 @@ struct UniversalSearchResultsView: View {
                 let allBrandCards = await services.cardData.search(query: trimmed, catalogBrand: selectedBrand)
                 cards = Array(allBrandCards.prefix(previewCardLimit))
                 hasMoreCardResults = allBrandCards.count > previewCardLimit
+                lastSearchTaskKey = searchTaskKey
+                lastSearchSets = matchingSets
+                lastSearchCards = allBrandCards
+                let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
+                perfLog("task=\(searchTaskKey) scope=allCards cards=\(allBrandCards.count) sets=\(matchingSets.count) elapsed=\(elapsedMs)ms")
             } else {
                 matchingSets = []
                 let allCollectionCards = await collectionSearchResults(query: trimmed, brand: selectedBrand)
                 cards = Array(allCollectionCards.prefix(previewCardLimit))
                 hasMoreCardResults = allCollectionCards.count > previewCardLimit
+                lastSearchTaskKey = searchTaskKey
+                lastSearchSets = []
+                lastSearchCards = allCollectionCards
+                let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
+                perfLog("task=\(searchTaskKey) scope=myCollection cards=\(allCollectionCards.count) elapsed=\(elapsedMs)ms")
             }
         }
     }
@@ -278,6 +309,7 @@ struct UniversalSearchResultsView: View {
     private func loadAllCardResults(for query: String) async {
         guard !query.isEmpty else { return }
         guard !isLoadingAllCards else { return }
+        let startedAt = CFAbsoluteTimeGetCurrent()
 
         isLoadingAllCards = true
         defer { isLoadingAllCards = false }
@@ -292,6 +324,10 @@ struct UniversalSearchResultsView: View {
         cards = allCards
         showAllCards = true
         hasMoreCardResults = allCards.count > previewCardLimit
+        lastSearchTaskKey = searchTaskKey
+        lastSearchCards = allCards
+        let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
+        perfLog("loadAll query=\"\(query)\" cards=\(allCards.count) elapsed=\(elapsedMs)ms")
     }
 
     private var searchTaskKey: String {

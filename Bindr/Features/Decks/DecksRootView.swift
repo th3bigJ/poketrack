@@ -316,10 +316,22 @@ private struct DeckListRow: View {
                 RoundedRectangle(cornerRadius: 6, style: .continuous)
                     .stroke(.black.opacity(0.1), lineWidth: 0.5)
             }
-            .task {
-                if let cardID = deck.heroCardID,
-                   let card = await services.cardData.loadCard(masterCardId: cardID) {
+            .task(id: deck.previewCardID) {
+                guard let cardID = deck.previewCardID else {
+                    thumbnailURL = nil
+                    return
+                }
+                if let deckCard = deck.cardList.first(where: { $0.cardID == cardID }) {
+                    let localPath = deckCard.imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+                    if !localPath.isEmpty {
+                        thumbnailURL = AppConfiguration.imageURL(relativePath: localPath)
+                        return
+                    }
+                }
+                if let card = await services.cardData.loadCard(masterCardId: cardID) {
                     thumbnailURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                } else {
+                    thumbnailURL = nil
                 }
             }
 

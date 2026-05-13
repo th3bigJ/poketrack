@@ -27,6 +27,10 @@ private final class ProgressiveImageLoader {
     private var currentLowURL: URL?
     private var currentHighURL: URL?
 
+    private static func cacheKey(url: URL, scale: CGFloat) -> String {
+        "\(url.absoluteString)|full|@\(scale)"
+    }
+
     func load(lowResURL: URL?, highResURL: URL?, localLowResURL: URL? = nil) {
         loadTask?.cancel()
 
@@ -55,11 +59,24 @@ private final class ProgressiveImageLoader {
     }
 
     private func runProgressiveLoad(lowResURL: URL?, highResURL: URL?, localLowResURL: URL?) async {
+        let scale = await MainActor.run { UIScreen.main.scale }
+        if let highURL = highResURL {
+            let key = Self.cacheKey(url: highURL, scale: scale)
+            if let cached = await DecodedImageMemoryCache.shared.image(for: key) {
+                await MainActor.run { [weak self] in
+                    guard !Task.isCancelled else { return }
+                    self?.state = .highReady(cached)
+                }
+                return
+            }
+        }
         // Check cache for high-res first (avoids low→high flash when already cached)
         if let highURL = highResURL {
             let highRequest = URLRequest(url: highURL, cachePolicy: .returnCacheDataElseLoad)
             if let cached = AppURLSession.imageURLCache.cachedResponse(for: highRequest),
                let ui = UIImage(data: cached.data) {
+                let key = Self.cacheKey(url: highURL, scale: scale)
+                await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
                     self?.state = .highReady(ui)
@@ -77,6 +94,10 @@ private final class ProgressiveImageLoader {
             if let high = highResURL {
                 await loadHighResAsync(high)
             } else {
+                if let low = lowResURL {
+                    let key = Self.cacheKey(url: low, scale: scale)
+                    await DecodedImageMemoryCache.shared.set(ui, for: key)
+                }
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
                     self?.state = .highReady(ui)
@@ -89,6 +110,8 @@ private final class ProgressiveImageLoader {
             let lowRequest = URLRequest(url: lowURL, cachePolicy: .returnCacheDataElseLoad)
             if let cached = AppURLSession.imageURLCache.cachedResponse(for: lowRequest),
                let ui = UIImage(data: cached.data) {
+                let key = Self.cacheKey(url: lowURL, scale: scale)
+                await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
                     self?.state = .loadingHigh(ui)
@@ -134,6 +157,9 @@ private final class ProgressiveImageLoader {
                 }
                 return
             }
+            let scale = await MainActor.run { UIScreen.main.scale }
+            let key = Self.cacheKey(url: url, scale: scale)
+            await DecodedImageMemoryCache.shared.set(ui, for: key)
 
             await MainActor.run { [weak self] in
                 guard !Task.isCancelled else { return }
@@ -169,6 +195,9 @@ private final class ProgressiveImageLoader {
                 CachedURLResponse(response: response, data: data), for: request)
 
             if let ui = UIImage(data: data) {
+                let scale = await MainActor.run { UIScreen.main.scale }
+                let key = Self.cacheKey(url: url, scale: scale)
+                await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
                     self?.state = .highReady(ui)
