@@ -179,29 +179,40 @@ enum AppConfiguration {
         url(prefix: r2MarketPathPrefix, path: path)
     }
 
-    /// Per-set price history file (ONE PIECE only — Pokémon history is built from daily buckets): `pricing/price-history/{setCode}.json`
-    static func r2PricingHistoryURL(setCode: String) -> URL {
-        r2PricingURL(path: "pricing/price-history/\(setCode).json")
-    }
-
     /// Per-set price trends file: `new_pricing/price-trends/{setCode}.json`
     static func r2PriceTrendsURL(setCode: String) -> URL {
         r2MarketURL(path: "new_pricing/price-trends/\(setCode).json")
     }
 
-    /// Flat daily price bucket: `new_pricing/daily/{YYYY-MM-DD}.json`
-    static func r2NewPricingDailyURL(dateKey: String) -> URL {
-        r2MarketURL(path: "new_pricing/daily/\(dateKey).json")
+    /// Per-set daily card price bucket: `new_pricing/daily/{YYYY-MM-DD}/{setCode}.json`
+    static func r2NewPricingDailySetURL(dateKey: String, setCode: String) -> URL {
+        r2MarketURL(path: "new_pricing/daily/\(dateKey)/\(setCode).json")
     }
 
-    /// Flat weekly price bucket: `new_pricing/weekly/{YYYY-Www}.json`
-    static func r2NewPricingWeeklyURL(weekKey: String) -> URL {
-        r2MarketURL(path: "new_pricing/weekly/\(weekKey).json")
+    /// Per-set weekly card price bucket: `new_pricing/weekly/{YYYY-Www}/{setCode}.json`
+    static func r2NewPricingWeeklySetURL(weekKey: String, setCode: String) -> URL {
+        r2MarketURL(path: "new_pricing/weekly/\(weekKey)/\(setCode).json")
     }
 
-    /// Flat monthly price bucket: `new_pricing/monthly/{YYYY-MM}.json`
-    static func r2NewPricingMonthlyURL(monthKey: String) -> URL {
-        r2MarketURL(path: "new_pricing/monthly/\(monthKey).json")
+    /// Per-set monthly card price bucket: `new_pricing/monthly/{YYYY-MM}/{setCode}.json`
+    static func r2NewPricingMonthlySetURL(monthKey: String, setCode: String) -> URL {
+        r2MarketURL(path: "new_pricing/monthly/\(monthKey)/\(setCode).json")
+    }
+
+    /// Sealed product daily price bucket: `new_pricing/sealed/daily/{YYYY-MM-DD}.json`
+    /// Shape: `{ "productId": price }` (flat Double, not an object).
+    static func r2SealedDailyURL(dateKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/sealed/daily/\(dateKey).json")
+    }
+
+    /// Sealed product weekly price bucket: `new_pricing/sealed/weekly/{YYYY-Www}.json`
+    static func r2SealedWeeklyURL(weekKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/sealed/weekly/\(weekKey).json")
+    }
+
+    /// Sealed product monthly price bucket: `new_pricing/sealed/monthly/{YYYY-MM}.json`
+    static func r2SealedMonthlyURL(monthKey: String) -> URL {
+        r2MarketURL(path: "new_pricing/sealed/monthly/\(monthKey).json")
     }
 
     private static func normalizedSetLogoPath(_ logoSrc: String) -> String {

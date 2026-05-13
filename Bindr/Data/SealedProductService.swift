@@ -7,7 +7,6 @@ final class SealedProductService {
     private(set) var products: [SealedProduct] = []
     private(set) var marketPriceByID: [Int: Double] = [:]
     private(set) var historyByID: [Int: SealedProductHistorySeries] = [:]
-    private(set) var trendsByID: [Int: SealedProductTrendEntry] = [:]
     private(set) var isLoading = false
     private(set) var lastError: String?
 
@@ -18,10 +17,7 @@ final class SealedProductService {
     }
 
     func loadFromLocalIfAvailable() async {
-        if products.isEmpty == false,
-           marketPriceByID.isEmpty == false,
-           historyByID.isEmpty == false,
-           trendsByID.isEmpty == false {
+        if products.isEmpty == false, marketPriceByID.isEmpty == false {
             return
         }
         await loadFromSQLiteDailyBlobs()
@@ -32,43 +28,28 @@ final class SealedProductService {
         await loadFromSQLiteDailyBlobs()
         // Only hit the network if SQLite had nothing (e.g. very first launch before sync completes).
         if products.isEmpty {
-            await fetchFromNetworkAndStore()
+            await fetchProductsFromNetworkAndStore()
         }
     }
 
-    private func fetchFromNetworkAndStore() async {
+    /// Fetches only the sealed product catalog (names/images); prices come from bucket sync.
+    private func fetchProductsFromNetworkAndStore() async {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
         isLoading = true
         defer { isLoading = false }
 
         do {
             let productsURL = AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonProducts)
-            let pricesURL = AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPrices)
-            let historyURL = AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPriceHistory)
-            let trendsURL = AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPriceTrends)
-
-            async let productsDataTask = session.data(from: productsURL)
-            async let pricesDataTask = session.data(from: pricesURL)
-            async let historyDataTask = session.data(from: historyURL)
-            async let trendsDataTask = session.data(from: trendsURL)
-
-            let productsData = try validatedBody(await productsDataTask)
-            let pricesData = try validatedBody(await pricesDataTask)
-            let historyData = try validatedBody(await historyDataTask)
-            let trendsData = try validatedBody(await trendsDataTask)
+            let (productsData, _) = try await session.data(from: productsURL)
+            guard !productsData.isEmpty else { return }
 
             try await CatalogStore.shared.open()
             try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonProducts, data: productsData)
-            try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPrices, data: pricesData)
-            try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceHistory, data: historyData)
-            try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceTrends, data: trendsData)
 
-            decodeAndAssign(
-                productsData: productsData,
-                pricesData: pricesData,
-                historyData: historyData,
-                trendsData: trendsData
-            )
+            let decoder = JSONDecoder()
+            if let payload = try? decoder.decode(SealedProductsPayload.self, from: productsData) {
+                products = sortedProducts(payload.products)
+            }
             lastError = nil
         } catch {
             if products.isEmpty {
@@ -85,31 +66,34 @@ final class SealedProductService {
         historyByID[productID]
     }
 
-    func trends(for productID: Int) -> SealedProductTrendEntry? {
-        trendsByID[productID]
-    }
-
     private func loadFromSQLiteDailyBlobs() async {
         do {
             try await CatalogStore.shared.open()
             let productsData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonProducts)
-            let pricesData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPrices)
-            let historyData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceHistory)
-            let trendsData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.pokedataEnglishPokemonPriceTrends)
+            let pricesData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.sealedPrices)
+            let historyData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.sealedPriceHistory)
 
-            guard let productsData,
-                  let pricesData,
-                  let historyData,
-                  let trendsData else {
-                return
+            let decoder = JSONDecoder()
+
+            if let productsData,
+               let payload = try? decoder.decode(SealedProductsPayload.self, from: productsData) {
+                products = sortedProducts(payload.products)
             }
 
-            decodeAndAssign(
-                productsData: productsData,
-                pricesData: pricesData,
-                historyData: historyData,
-                trendsData: trendsData
-            )
+            if let pricesData,
+               let flatPrices = try? JSONSerialization.jsonObject(with: pricesData) as? [String: Double] {
+                var next: [Int: Double] = [:]
+                for (k, v) in flatPrices {
+                    if let id = Int(k) { next[id] = v }
+                }
+                marketPriceByID = next
+            }
+
+            if let historyData,
+               let raw = try? JSONSerialization.jsonObject(with: historyData) as? [String: [String: [[Any]]]] {
+                historyByID = decodeSealedHistory(raw)
+            }
+
             lastError = nil
         } catch {
             if products.isEmpty {
@@ -118,44 +102,38 @@ final class SealedProductService {
         }
     }
 
-    private func decodeAndAssign(
-        productsData: Data,
-        pricesData: Data,
-        historyData: Data,
-        trendsData: Data
-    ) {
-        let decoder = JSONDecoder()
-        let productsPayload = (try? decoder.decode(SealedProductsPayload.self, from: productsData))
-        let pricesPayload = (try? decoder.decode(SealedProductPricesPayload.self, from: pricesData))
-        let historyPayload = (try? decoder.decode([String: SealedProductHistorySeries].self, from: historyData)) ?? [:]
-        let trendsPayload = (try? decoder.decode([String: SealedProductTrendEntry].self, from: trendsData)) ?? [:]
+    /// Decodes sealed history from the SQLite blob shape:
+    /// `{ "productId": { "daily": [[dateKey, price], …], "weekly": […], "monthly": […] } }`
+    private func decodeSealedHistory(_ raw: [String: [String: [[Any]]]]) -> [Int: SealedProductHistorySeries] {
+        var result: [Int: SealedProductHistorySeries] = [:]
+        for (key, windows) in raw {
+            guard let id = Int(key) else { continue }
+            func parseWindow(_ key: String) -> [PriceDataPoint] {
+                guard let pairs = windows[key] else { return [] }
+                return pairs.compactMap { pair -> PriceDataPoint? in
+                    guard pair.count >= 2,
+                          let label = pair[0] as? String,
+                          let price = (pair[1] as? Double) ?? (pair[1] as? NSNumber).map({ $0.doubleValue })
+                    else { return nil }
+                    return PriceDataPoint(id: label, label: label, price: price)
+                }
+            }
+            result[id] = SealedProductHistorySeries(
+                daily: parseWindow("daily"),
+                weekly: parseWindow("weekly"),
+                monthly: parseWindow("monthly")
+            )
+        }
+        return result
+    }
 
-        products = (productsPayload?.products ?? []).sorted { lhs, rhs in
+    private func sortedProducts(_ list: [SealedProduct]) -> [SealedProduct] {
+        list.sorted { lhs, rhs in
             let lDate = lhs.releaseDate ?? .distantPast
             let rDate = rhs.releaseDate ?? .distantPast
             if lDate != rDate { return lDate > rDate }
             return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
         }
-
-        var nextPrices: [Int: Double] = [:]
-        for (key, value) in pricesPayload?.prices ?? [:] {
-            let id = value.id
-            let numericKey = Int(key) ?? id
-            if let market = value.marketValue {
-                nextPrices[numericKey] = market
-            }
-        }
-        marketPriceByID = nextPrices
-
-        historyByID = Dictionary(uniqueKeysWithValues: historyPayload.compactMap { key, value in
-            guard let id = Int(key) else { return nil }
-            return (id, value)
-        })
-
-        trendsByID = Dictionary(uniqueKeysWithValues: trendsPayload.compactMap { key, value in
-            guard let id = Int(key) else { return nil }
-            return (id, value)
-        })
     }
 
     private func validatedBody(_ request: (Data, URLResponse)) throws -> Data {

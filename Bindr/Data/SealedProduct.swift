@@ -115,29 +115,16 @@ struct SealedProductsPayload: Decodable {
     let products: [SealedProduct]
 }
 
-struct SealedProductPriceEntry: Decodable, Hashable, Sendable {
-    let id: Int
-    let marketValue: Double?
-    let currency: String?
-    let live: Bool?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case marketValue = "market_value"
-        case currency
-        case live
-    }
-}
-
-struct SealedProductPricesPayload: Decodable {
-    let scrapedAt: String?
-    let prices: [String: SealedProductPriceEntry]
-}
-
 struct SealedProductHistorySeries: Decodable, Sendable {
     let daily: [PriceDataPoint]
     let weekly: [PriceDataPoint]
     let monthly: [PriceDataPoint]
+
+    init(daily: [PriceDataPoint], weekly: [PriceDataPoint], monthly: [PriceDataPoint]) {
+        self.daily = daily
+        self.weekly = weekly
+        self.monthly = monthly
+    }
 
     private enum CodingKeys: String, CodingKey {
         case daily
@@ -168,23 +155,6 @@ struct SealedProductHistorySeries: Decodable, Sendable {
             return PriceDataPoint(id: label, label: label, price: price)
         }
     }
-}
-
-struct SealedProductTrendPeriod: Decodable, Hashable, Sendable {
-    let changePct: Double?
-    let direction: String?
-
-    enum CodingKeys: String, CodingKey {
-        case changePct
-        case direction
-    }
-}
-
-struct SealedProductTrendEntry: Decodable, Hashable, Sendable {
-    let current: Double?
-    let daily: SealedProductTrendPeriod?
-    let weekly: SealedProductTrendPeriod?
-    let monthly: SealedProductTrendPeriod?
 }
 
 private enum JSONScalar: Decodable {

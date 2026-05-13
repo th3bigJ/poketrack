@@ -150,9 +150,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         if enabledBrands.contains(.pokemon) {
             dailyKeys.append(contentsOf: [
                 DailyBlobKey.pokedataEnglishPokemonProducts,
-                DailyBlobKey.pokedataEnglishPokemonPrices,
-                DailyBlobKey.pokedataEnglishPokemonPriceHistory,
-                DailyBlobKey.pokedataEnglishPokemonPriceTrends,
+                DailyBlobKey.sealedPrices,
+                DailyBlobKey.sealedPriceHistory,
             ])
         }
         return dailyKeys.contains { key in
@@ -324,10 +323,27 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
         guard remoteVersion > storedVersion else { return }
 
-        // Invalidate hash/etag guards and mark that all sets need re-downloading.
+        // Invalidate card catalog hash/etag guards — forces full set + card re-download.
         try? await store.setMeta("catalog_sets_sha256", "")
         try? await store.setMeta("catalog_etag", "")
         try? await store.setMeta("catalog_force_full_download", "1")
+
+        // Clear pricing sync date so the period refresh runs unconditionally on next launch,
+        // re-fetching sealed products list, market trend, and per-set price trends.
+        try? await store.setMeta("pricing_last_synced_at", "")
+
+        // Clear ETags for daily blobs so sealed products catalog re-downloads even if the
+        // pricing period gate was already satisfied today.
+        for key in [DailyBlobKey.pokedataEnglishPokemonProducts, DailyBlobKey.marketTrend, DailyBlobKey.priceTrends] {
+            try? await store.setMeta("daily_blob_http_etag_" + key, "")
+        }
+
+        // Clear backfill flags so any new sets added in this version get full weekly/monthly
+        // price history. The backfill is efficient — existing sets' composite keys are already
+        // in processed_pricing_buckets and are skipped; only new sets actually download.
+        try? await store.setMeta("pricing_history_backfill_v1", "")
+        try? await store.setMeta("sealed_pricing_history_backfill_v1", "")
+
         try? await store.setMeta("catalog_version", String(remoteVersion))
     }
 
@@ -757,9 +773,10 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         let needsPeriodRefresh = DailyMarketPricingSchedule.needsRefreshAfterNewPeriod(lastSync: last)
         let needsAuxBackfill = (await store.meta("pricing_aux_sqlite_v1")) != "1"
         let needsHistoryBackfill = (await store.meta("pricing_history_backfill_v1")) != "1"
+        let needsSealedHistoryBackfill = (await store.meta("sealed_pricing_history_backfill_v1")) != "1"
         let shouldRunPeriodRefresh = forceRefresh || needsPeriodRefresh
         let shouldRunAuxBackfill = !forceRefresh && needsAuxBackfill
-        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill else { return 0 }
+        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill || needsSealedHistoryBackfill else { return 0 }
 
         await progress.setStatus("Refreshing pricing data…")
         if shouldRunPeriodRefresh {
@@ -775,9 +792,14 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonMarketPricingFullRefresh(progress: progress, store: store)
                 downloaded += await syncPricingBuckets(progress: progress, store: store)
+                downloaded += await syncSealedPricingBuckets(progress: progress, store: store)
                 if needsHistoryBackfill {
                     downloaded += await syncPricingHistoryBackfill(progress: progress, store: store)
                     try? await store.setMeta("pricing_history_backfill_v1", "1")
+                }
+                if needsSealedHistoryBackfill {
+                    downloaded += await syncSealedPricingHistoryBackfill(progress: progress, store: store)
+                    try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
                 }
             }
             if enabledBrands.contains(.onePiece) {
@@ -791,10 +813,17 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonHistoryTrendsOnly(progress: progress, store: store)
                 downloaded += await syncPricingBuckets(progress: progress, store: store)
+                downloaded += await syncSealedPricingBuckets(progress: progress, store: store)
                 if needsHistoryBackfill {
                     downloaded += await syncPricingHistoryBackfill(progress: progress, store: store)
                     if downloaded > 0 {
                         try? await store.setMeta("pricing_history_backfill_v1", "1")
+                    }
+                }
+                if needsSealedHistoryBackfill {
+                    downloaded += await syncSealedPricingHistoryBackfill(progress: progress, store: store)
+                    if downloaded > 0 {
+                        try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
                     }
                 }
             }
@@ -806,15 +835,21 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                 try? await store.setMeta("pricing_aux_sqlite_v1", "1")
             }
             return downloaded
-        } else if needsHistoryBackfill {
+        } else if needsHistoryBackfill || needsSealedHistoryBackfill {
             // Already past the daily gate and aux backfill, but history was never downloaded
             // (e.g. app updated after pricing_aux_sqlite_v1 was already set on an older build).
             var downloaded: Int64 = 0
             if enabledBrands.contains(.pokemon) {
-                downloaded += await syncPricingHistoryBackfill(progress: progress, store: store)
+                if needsHistoryBackfill {
+                    downloaded += await syncPricingHistoryBackfill(progress: progress, store: store)
+                }
+                if needsSealedHistoryBackfill {
+                    downloaded += await syncSealedPricingHistoryBackfill(progress: progress, store: store)
+                }
             }
             if downloaded > 0 {
-                try? await store.setMeta("pricing_history_backfill_v1", "1")
+                if needsHistoryBackfill { try? await store.setMeta("pricing_history_backfill_v1", "1") }
+                if needsSealedHistoryBackfill { try? await store.setMeta("sealed_pricing_history_backfill_v1", "1") }
             }
             return downloaded
         }
@@ -1171,38 +1206,75 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         }
     }
 
-    /// Downloads missing daily bucket files from `new_pricing/daily/` (up to last 31 days),
-    /// pivots each into per-set price history, and upserts into SQLite.
-    /// Also upserts today's bucket as per-set card pricing (SetPricingMap shape).
-    /// Only downloads bucket keys not already recorded in `processed_pricing_buckets`.
+    /// Downloads missing daily per-set bucket files from `new_pricing/daily/{date}/{setCode}.json`
+    /// (up to last 31 days), pivots into per-set price history, and upserts into SQLite.
+    /// Also upserts today's data as per-set card pricing (SetPricingMap shape).
+    /// Processed keys are tracked as `"{dateKey}/{setCode}"` in `processed_pricing_buckets`.
     private func syncPricingBuckets(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
 
+        let sets: [TCGSet]
+        do {
+            sets = try await store.fetchAllSets(for: .pokemon)
+        } catch {
+            return 0
+        }
+        guard !sets.isEmpty else { return 0 }
+
         let todayDateKey = Self.todayUTCKey()
-        let candidateKeys = Self.last31DailyKeys()
-        let missing = await store.unprocessedBucketKeys(from: candidateKeys)
-        guard !missing.isEmpty else { return 0 }
+        let candidateDateKeys = Self.last31DailyKeys()
+
+        // Build composite "date/setCode" keys and find unprocessed ones.
+        var allCandidateComposites: [String] = []
+        for dateKey in candidateDateKeys {
+            for set in sets {
+                for stem in AppConfiguration.pricingFileStemVariants(for: set.setCode) {
+                    allCandidateComposites.append("\(dateKey)/\(stem)")
+                    break // only need the primary stem for tracking; we try variants on fetch
+                }
+            }
+        }
+        let missingComposites = await store.unprocessedBucketKeys(from: allCandidateComposites)
+        guard !missingComposites.isEmpty else { return 0 }
 
         await progress.setStatus("Downloading daily price data…")
-        await progress.addPlannedFiles(missing.count)
+        await progress.addPlannedFiles(missingComposites.count)
 
         var totalBytes: Int64 = 0
-
         // setCode → cardId → variant → grade → [[dateKey, price]]
         var accumulated: [String: [String: [String: [String: [[String]]]]]] = [:]
         // setCode → cardId → variant → { raw/psa10/ace10 } (today's prices only, for card_pricing)
         var todayPricing: [String: [String: [String: [String: Double]]]] = [:]
 
-        for dateKey in missing {
-            let url = AppConfiguration.r2NewPricingDailyURL(dateKey: dateKey)
-            guard let data = await Self.fetchHTTPBodyIfOK(session: session, url: url),
-                  let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [String: Double]]]
-            else {
+        for compositeKey in missingComposites {
+            // compositeKey is "YYYY-MM-DD/setCode"
+            guard let slashIdx = compositeKey.firstIndex(of: "/") else {
                 await progress.completeFile()
                 continue
             }
-            totalBytes += Int64(data.count)
+            let dateKey = String(compositeKey[..<slashIdx])
+            let setCodeStem = String(compositeKey[compositeKey.index(after: slashIdx)...])
 
+            // Try stem variants (e.g. me03 / me3 / me2pt5).
+            var bucket: [String: [String: [String: Double]]]?
+            var fetchedBytes: Int64 = 0
+            for stem in AppConfiguration.pricingFileStemVariants(for: setCodeStem) {
+                let url = AppConfiguration.r2NewPricingDailySetURL(dateKey: dateKey, setCode: stem)
+                if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url),
+                   let parsed = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [String: Double]]] {
+                    bucket = parsed
+                    fetchedBytes = Int64(data.count)
+                    break
+                }
+            }
+
+            guard let bucket else {
+                try? await store.markBucketProcessed(key: compositeKey)
+                await progress.completeFile()
+                continue
+            }
+
+            totalBytes += fetchedBytes
             let isToday = dateKey == todayDateKey
             for (cardId, variants) in bucket {
                 let setCode = Self.setCodeFromCardId(cardId)
@@ -1217,8 +1289,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                 }
             }
 
-            try? await store.markBucketProcessed(key: dateKey)
-            await progress.completeFile(byteCount: Int64(data.count))
+            try? await store.markBucketProcessed(key: compositeKey)
+            await progress.completeFile(byteCount: fetchedBytes)
         }
 
         // Upsert today's bucket as per-set card_pricing rows (SetPricingMap: cardId → { scrydex: { variant: { raw/psa10/ace10 } } })
@@ -1284,20 +1356,47 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         return totalBytes
     }
 
-    /// On first install, downloads all available weekly and monthly price buckets from R2 and merges
-    /// them into SQLite price history. Each bucket key is tracked in `processed_pricing_buckets` so
-    /// it is never re-fetched. After this one-time pass, daily `syncPricingBuckets` takes over and
-    /// weekly/monthly averages are recomputed on-device from incoming daily data.
+    /// On first install, downloads all available weekly and monthly per-set price buckets from R2 and
+    /// merges them into SQLite price history. Each key is tracked in `processed_pricing_buckets` as
+    /// `"{weekOrMonthKey}/{setCode}"`. After this one-time pass, daily `syncPricingBuckets` takes over
+    /// and weekly/monthly averages are recomputed on-device from incoming daily data.
     ///
     /// The start year (2020) is the earliest data available on R2. Adjust if the dataset grows.
     private func syncPricingHistoryBackfill(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
 
+        let sets: [TCGSet]
+        do {
+            sets = try await store.fetchAllSets(for: .pokemon)
+        } catch {
+            return 0
+        }
+        guard !sets.isEmpty else { return 0 }
+
+        // Fetch all already-processed composite keys in one query (weekly "YYYY-Www/…" and monthly
+        // "YYYY-MM/…" both start with "20"), then diff in Swift — avoids N per-key SQLite lookups.
+        let processedAll = await store.processedBucketKeys(withPrefix: "20")
+
         let allWeekly = Self.allWeeklyKeys(from: 2020)
         let allMonthly = Self.allMonthlyKeys(from: 2020)
+        let setStems: [(setCode: String, stem: String)] = sets.compactMap { set in
+            guard let stem = AppConfiguration.pricingFileStemVariants(for: set.setCode).first else { return nil }
+            return (set.setCode, stem)
+        }
 
-        let missingWeekly = await store.unprocessedBucketKeys(from: allWeekly)
-        let missingMonthly = await store.unprocessedBucketKeys(from: allMonthly)
+        // Build only the missing composites by diffing against the in-memory processed set.
+        var missingWeekly: [String] = []
+        var missingMonthly: [String] = []
+        for (_, stem) in setStems {
+            for wk in allWeekly {
+                let key = "\(wk)/\(stem)"
+                if !processedAll.contains(key) { missingWeekly.append(key) }
+            }
+            for mk in allMonthly {
+                let key = "\(mk)/\(stem)"
+                if !processedAll.contains(key) { missingMonthly.append(key) }
+            }
+        }
         guard !missingWeekly.isEmpty || !missingMonthly.isEmpty else { return 0 }
 
         await progress.setStatus("Downloading price history…")
@@ -1307,42 +1406,58 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         // setCode → cardId → variant → grade → [[bucketKey, price]]
         var accumulated: [String: [String: [String: [String: [[String]]]]]] = [:]
 
-        func processBucket(key: String, data: Data) {
+        func processPerSetBucket(bucketKey: String, data: Data) {
             guard let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [String: Double]]] else { return }
             for (cardId, variants) in bucket {
                 let setCode = Self.setCodeFromCardId(cardId)
                 for (variant, grades) in variants {
                     for (grade, price) in grades {
                         accumulated[setCode, default: [:]][cardId, default: [:]][variant, default: [:]][grade, default: []]
-                            .append([key, String(price)])
+                            .append([bucketKey, String(price)])
                     }
                 }
             }
         }
 
-        for weekKey in missingWeekly {
-            let url = AppConfiguration.r2NewPricingWeeklyURL(weekKey: weekKey)
-            if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url) {
-                totalBytes += Int64(data.count)
-                processBucket(key: weekKey, data: data)
+        for compositeKey in missingWeekly {
+            guard let slashIdx = compositeKey.firstIndex(of: "/") else {
+                await progress.completeFile()
+                continue
             }
-            try? await store.markBucketProcessed(key: weekKey)
+            let weekKey = String(compositeKey[..<slashIdx])
+            let stem = String(compositeKey[compositeKey.index(after: slashIdx)...])
+            for tryStem in AppConfiguration.pricingFileStemVariants(for: stem) {
+                let url = AppConfiguration.r2NewPricingWeeklySetURL(weekKey: weekKey, setCode: tryStem)
+                if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url) {
+                    totalBytes += Int64(data.count)
+                    processPerSetBucket(bucketKey: weekKey, data: data)
+                    break
+                }
+            }
+            try? await store.markBucketProcessed(key: compositeKey)
             await progress.completeFile(byteCount: 0)
         }
 
-        for monthKey in missingMonthly {
-            let url = AppConfiguration.r2NewPricingMonthlyURL(monthKey: monthKey)
-            if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url) {
-                totalBytes += Int64(data.count)
-                processBucket(key: monthKey, data: data)
+        for compositeKey in missingMonthly {
+            guard let slashIdx = compositeKey.firstIndex(of: "/") else {
+                await progress.completeFile()
+                continue
             }
-            try? await store.markBucketProcessed(key: monthKey)
+            let monthKey = String(compositeKey[..<slashIdx])
+            let stem = String(compositeKey[compositeKey.index(after: slashIdx)...])
+            for tryStem in AppConfiguration.pricingFileStemVariants(for: stem) {
+                let url = AppConfiguration.r2NewPricingMonthlySetURL(monthKey: monthKey, setCode: tryStem)
+                if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url) {
+                    totalBytes += Int64(data.count)
+                    processPerSetBucket(bucketKey: monthKey, data: data)
+                    break
+                }
+            }
+            try? await store.markBucketProcessed(key: compositeKey)
             await progress.completeFile(byteCount: 0)
         }
 
         // Merge accumulated weekly/monthly points into per-set history blobs.
-        // Weekly points go into window["weekly"], monthly into window["monthly"].
-        // Each array is deduplicated by key and kept sorted.
         for (setCode, cardMap) in accumulated {
             let existing: [String: [String: Any]]
             if let blob = await store.fetchPriceHistoryData(setCode: setCode, brand: .pokemon),
@@ -1360,14 +1475,13 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     for (grade, newPoints) in grades {
                         var window = variantEntry[grade] as? [String: [[String]]] ?? [:]
 
-                        // Partition new points into weekly vs monthly by key format
                         let newWeekly = newPoints.filter { $0.first?.contains("-W") == true }
                         let newMonthly = newPoints.filter { pt in
                             guard let k = pt.first else { return false }
-                            return !k.contains("-W") && k.count == 7  // "YYYY-MM"
+                            return !k.contains("-W") && k.count == 7
                         }
 
-                        func merge(existing arr: [[String]], with newPts: [[String]]) -> [[String]] {
+                        func mergePoints(existing arr: [[String]], with newPts: [[String]]) -> [[String]] {
                             var result = arr
                             for pt in newPts {
                                 result.removeAll { $0.first == pt.first }
@@ -1376,8 +1490,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                             return result.sorted { ($0.first ?? "") < ($1.first ?? "") }
                         }
 
-                        window["weekly"] = merge(existing: window["weekly"] ?? [], with: newWeekly)
-                        window["monthly"] = merge(existing: window["monthly"] ?? [], with: newMonthly)
+                        window["weekly"] = mergePoints(existing: window["weekly"] ?? [], with: newWeekly)
+                        window["monthly"] = mergePoints(existing: window["monthly"] ?? [], with: newMonthly)
                         variantEntry[grade] = window
                     }
                     cardEntry[variant] = variantEntry
@@ -1525,9 +1639,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             (DailyBlobKey.marketTrend, AppConfiguration.r2MarketURL(path: DailyBlobPath.marketTrend)),
         ]
         if enabledBrands.contains(.pokemon) {
-            keys.insert((DailyBlobKey.pokedataEnglishPokemonPriceTrends, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPriceTrends)), at: 0)
-            keys.insert((DailyBlobKey.pokedataEnglishPokemonPriceHistory, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPriceHistory)), at: 0)
-            keys.insert((DailyBlobKey.pokedataEnglishPokemonPrices, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPrices)), at: 0)
+            // Sealed product catalog (names/images) is still a static file; prices/history come from bucket sync.
             keys.insert((DailyBlobKey.pokedataEnglishPokemonProducts, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonProducts)), at: 0)
         }
         let staleKeys = forceRefresh
@@ -1590,23 +1702,198 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         return results
     }
 
+    /// Downloads missing sealed product daily price files from `new_pricing/sealed/daily/{date}.json`
+    /// (up to last 31 days) and weekly/monthly backfill files. Merges today's prices into the
+    /// `sealed_prices` daily blob and accumulates per-product history into `sealed_price_history`.
+    /// Bucket keys are tracked as `"sealed/{dateOrPeriodKey}"` in `processed_pricing_buckets`.
+    private func syncSealedPricingBuckets(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
+
+        let todayDateKey = Self.todayUTCKey()
+        let candidateDailyKeys = Self.last31DailyKeys().map { "sealed/\($0)" }
+        let missingDailyKeys = await store.unprocessedBucketKeys(from: candidateDailyKeys)
+
+        guard !missingDailyKeys.isEmpty else { return 0 }
+
+        await progress.setStatus("Downloading sealed price data…")
+        await progress.addPlannedFiles(missingDailyKeys.count)
+
+        var totalBytes: Int64 = 0
+        // productId (String) → [[dateKey, price]] for history accumulation
+        var accumulated: [String: [[String]]] = [:]
+        var latestPrices: [String: Double] = [:]
+        var latestDate: String = ""
+
+        for compositeKey in missingDailyKeys {
+            // compositeKey is "sealed/YYYY-MM-DD"
+            let dateKey = String(compositeKey.dropFirst("sealed/".count))
+            let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
+            guard let data = await Self.fetchHTTPBodyIfOK(session: session, url: url),
+                  let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
+            else {
+                try? await store.markBucketProcessed(key: compositeKey)
+                await progress.completeFile()
+                continue
+            }
+
+            totalBytes += Int64(data.count)
+            for (productIdStr, price) in bucket {
+                accumulated[productIdStr, default: []].append([dateKey, String(price)])
+                if dateKey >= latestDate {
+                    latestDate = dateKey
+                    latestPrices[productIdStr] = price
+                }
+            }
+
+            try? await store.markBucketProcessed(key: compositeKey)
+            await progress.completeFile(byteCount: Int64(data.count))
+        }
+
+        // Upsert merged latest prices as sealed_prices blob: { "productId": price }
+        if !latestPrices.isEmpty {
+            // Merge with existing blob so products not in today's file keep their last price.
+            var merged: [String: Double] = [:]
+            if let existing = await store.dailyBlob(key: DailyBlobKey.sealedPrices),
+               let parsed = try? JSONSerialization.jsonObject(with: existing) as? [String: Double] {
+                merged = parsed
+            }
+            for (k, v) in latestPrices { merged[k] = v }
+            if let json = try? JSONSerialization.data(withJSONObject: merged) {
+                try? await store.upsertDailyBlob(key: DailyBlobKey.sealedPrices, data: json)
+            }
+        }
+
+        // Merge accumulated daily points into existing sealed_price_history blob.
+        // Shape: { "productId": { "daily": [[dateKey, price]], "weekly": [...], "monthly": [...] } }
+        if !accumulated.isEmpty {
+            var historyMap: [String: [String: [[String]]]] = [:]
+            if let existing = await store.dailyBlob(key: DailyBlobKey.sealedPriceHistory),
+               let parsed = try? JSONSerialization.jsonObject(with: existing) as? [String: [String: [[String]]]] {
+                historyMap = parsed
+            }
+
+            for (productIdStr, newPoints) in accumulated {
+                var window = historyMap[productIdStr] ?? [:]
+                var daily = window["daily"] ?? []
+                for point in newPoints {
+                    daily.removeAll { $0.first == point.first }
+                    daily.append(point)
+                }
+                daily.sort { ($0.first ?? "") < ($1.first ?? "") }
+                if daily.count > 31 { daily = Array(daily.suffix(31)) }
+                window["daily"] = daily
+                window["weekly"] = Self.weeklyAverages(from: daily, limit: 52)
+                window["monthly"] = Self.monthlyAverages(from: daily, limit: 60)
+                historyMap[productIdStr] = window
+            }
+
+            if let json = try? JSONSerialization.data(withJSONObject: historyMap) {
+                try? await store.upsertDailyBlob(key: DailyBlobKey.sealedPriceHistory, data: json)
+            }
+        }
+
+        return totalBytes
+    }
+
+    /// One-time backfill: downloads sealed weekly/monthly bucket files from R2 and merges them into
+    /// the `sealed_price_history` blob in SQLite. Tracked as `"sealed/{weekOrMonthKey}"`.
+    private func syncSealedPricingHistoryBackfill(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
+
+        let processed = await store.processedBucketKeys(withPrefix: "sealed/")
+        let missingWeekly = Self.allWeeklyKeys(from: 2020)
+            .map { "sealed/\($0)" }.filter { !processed.contains($0) }
+        let missingMonthly = Self.allMonthlyKeys(from: 2020)
+            .map { "sealed/\($0)" }.filter { !processed.contains($0) }
+        guard !missingWeekly.isEmpty || !missingMonthly.isEmpty else { return 0 }
+
+        await progress.setStatus("Downloading sealed price history…")
+        await progress.addPlannedFiles(missingWeekly.count + missingMonthly.count)
+
+        var totalBytes: Int64 = 0
+        // productId → [[bucketKey, price]]
+        var accumulated: [String: [[String]]] = [:]
+
+        func processSealedBucket(key: String, data: Data) {
+            guard let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double] else { return }
+            for (productIdStr, price) in bucket {
+                accumulated[productIdStr, default: []].append([key, String(price)])
+            }
+        }
+
+        for compositeKey in missingWeekly {
+            let weekKey = String(compositeKey.dropFirst("sealed/".count))
+            let url = AppConfiguration.r2SealedWeeklyURL(weekKey: weekKey)
+            if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url) {
+                totalBytes += Int64(data.count)
+                processSealedBucket(key: weekKey, data: data)
+            }
+            try? await store.markBucketProcessed(key: compositeKey)
+            await progress.completeFile(byteCount: 0)
+        }
+
+        for compositeKey in missingMonthly {
+            let monthKey = String(compositeKey.dropFirst("sealed/".count))
+            let url = AppConfiguration.r2SealedMonthlyURL(monthKey: monthKey)
+            if let data = await Self.fetchHTTPBodyIfOK(session: session, url: url) {
+                totalBytes += Int64(data.count)
+                processSealedBucket(key: monthKey, data: data)
+            }
+            try? await store.markBucketProcessed(key: compositeKey)
+            await progress.completeFile(byteCount: 0)
+        }
+
+        guard !accumulated.isEmpty else { return totalBytes }
+
+        var historyMap: [String: [String: [[String]]]] = [:]
+        if let existing = await store.dailyBlob(key: DailyBlobKey.sealedPriceHistory),
+           let parsed = try? JSONSerialization.jsonObject(with: existing) as? [String: [String: [[String]]]] {
+            historyMap = parsed
+        }
+
+        for (productIdStr, newPoints) in accumulated {
+            var window = historyMap[productIdStr] ?? [:]
+
+            let newWeekly = newPoints.filter { $0.first?.contains("-W") == true }
+            let newMonthly = newPoints.filter { pt in
+                guard let k = pt.first else { return false }
+                return !k.contains("-W") && k.count == 7
+            }
+
+            func mergePoints(existing arr: [[String]], with newPts: [[String]]) -> [[String]] {
+                var result = arr
+                for pt in newPts {
+                    result.removeAll { $0.first == pt.first }
+                    result.append(pt)
+                }
+                return result.sorted { ($0.first ?? "") < ($1.first ?? "") }
+            }
+
+            window["weekly"] = mergePoints(existing: window["weekly"] ?? [], with: newWeekly)
+            window["monthly"] = mergePoints(existing: window["monthly"] ?? [], with: newMonthly)
+            historyMap[productIdStr] = window
+        }
+
+        if let json = try? JSONSerialization.data(withJSONObject: historyMap) {
+            try? await store.upsertDailyBlob(key: DailyBlobKey.sealedPriceHistory, data: json)
+        }
+
+        return totalBytes
+    }
+
 }
 
 enum DailyBlobKey {
     static let pokedataEnglishPokemonProducts = "pokedata_english_pokemon_products"
-    static let pokedataEnglishPokemonPrices = "pokedata_english_pokemon_prices"
-    static let pokedataEnglishPokemonPriceHistory = "pokedata_english_pokemon_price_history"
-    static let pokedataEnglishPokemonPriceTrends = "pokedata_english_pokemon_price_trends"
     static let priceTrends = "price_trends"
     static let marketTrend = "market_trend"
+    static let sealedPrices = "sealed_prices"
+    static let sealedPriceHistory = "sealed_price_history"
 }
 
 /// Paths relative to `r2MarketPathPrefix` (default: bucket root). Adjust in `AppConfiguration` / plist if your tidy layout differs.
 enum DailyBlobPath {
     static let pokedataEnglishPokemonProducts = "data/pokedata-english-pokemon-products.json"
-    static let pokedataEnglishPokemonPrices = "new_pricing/pokedata-english-pokemon-prices.json"
-    static let pokedataEnglishPokemonPriceHistory = "new_pricing/pokedata-english-pokemon-price-history.json"
-    static let pokedataEnglishPokemonPriceTrends = "new_pricing/pokedata-english-pokemon-price-trends.json"
     static let priceTrends = "data/price-trends.json"
     static let marketTrend = "new_pricing/market-trend.json"
 }

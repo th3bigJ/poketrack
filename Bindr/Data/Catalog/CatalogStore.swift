@@ -1203,20 +1203,56 @@ final class CatalogStore: @unchecked Sendable {
     }
 
     func unprocessedBucketKeys(from candidates: [String]) async -> [String] {
-        await withCheckedContinuation { continuation in
+        guard !candidates.isEmpty else { return [] }
+        return await withCheckedContinuation { continuation in
             queue.async {
                 guard let db = self.db else { continuation.resume(returning: candidates); return }
-                var result: [String] = []
-                for key in candidates {
-                    var stmt: OpaquePointer?
-                    defer { sqlite3_finalize(stmt) }
-                    guard sqlite3_prepare_v2(db, "SELECT 1 FROM processed_pricing_buckets WHERE bucket_key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
-                        result.append(key)
-                        continue
+
+                // Build a single IN (?, ?, …) query instead of N individual lookups.
+                let placeholders = candidates.map { _ in "?" }.joined(separator: ",")
+                let sql = "SELECT bucket_key FROM processed_pricing_buckets WHERE bucket_key IN (\(placeholders));"
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: candidates)
+                    return
+                }
+                for (i, key) in candidates.enumerated() {
+                    key.withCString { _ = sqlite3_bind_text(stmt, Int32(i + 1), $0, -1, CatalogSQLite.transient) }
+                }
+                var processed = Set<String>()
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    if let cStr = sqlite3_column_text(stmt, 0) {
+                        processed.insert(String(cString: cStr))
                     }
-                    key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                    if sqlite3_step(stmt) != SQLITE_ROW {
-                        result.append(key)
+                }
+                continuation.resume(returning: candidates.filter { !processed.contains($0) })
+            }
+        }
+    }
+
+    /// Returns the set of all bucket keys that start with `prefix` — used by backfill to avoid
+    /// building a huge candidate list when most periods are already processed.
+    func processedBucketKeys(withPrefix prefix: String) async -> Set<String> {
+        await withCheckedContinuation { continuation in
+            queue.async {
+                guard let db = self.db else { continuation.resume(returning: []); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT bucket_key FROM processed_pricing_buckets WHERE bucket_key LIKE ? ESCAPE '\\';"
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: [])
+                    return
+                }
+                // Escape LIKE special chars in prefix, append '%'.
+                let escaped = prefix.replacingOccurrences(of: "\\", with: "\\\\")
+                                    .replacingOccurrences(of: "%", with: "\\%")
+                                    .replacingOccurrences(of: "_", with: "\\_") + "%"
+                escaped.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                var result = Set<String>()
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    if let cStr = sqlite3_column_text(stmt, 0) {
+                        result.insert(String(cString: cStr))
                     }
                 }
                 continuation.resume(returning: result)

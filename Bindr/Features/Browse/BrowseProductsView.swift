@@ -1494,7 +1494,6 @@ private struct SealedProductPricingPanel: View {
     let productID: Int
 
     @State private var history: SealedProductHistorySeries?
-    @State private var trends: SealedProductTrendEntry?
     @State private var currentPrice = "—"
     @State private var chartRange: SealedChartRange = .oneMonth
     @State private var scrubPoint: PriceDataPoint? = nil
@@ -1521,16 +1520,6 @@ private struct SealedProductPricingPanel: View {
                 .font(.system(size: 28, weight: .bold))
                 .foregroundStyle(.primary)
                 .padding(.top, 2)
-
-            if let trends {
-                HStack(spacing: 12) {
-                    changeBadge(label: "1D", value: trends.daily?.changePct)
-                    changeBadge(label: "7D", value: trends.weekly?.changePct)
-                    changeBadge(label: "1M", value: trends.monthly?.changePct)
-                }
-                .padding(.top, 8)
-                .padding(.bottom, 4)
-            }
 
             if !chartPoints.isEmpty {
                 chartView
@@ -1562,7 +1551,6 @@ private struct SealedProductPricingPanel: View {
         )
         .task(id: taskID) {
             history = services.sealedProducts.history(for: productID)
-            trends = services.sealedProducts.trends(for: productID)
             refreshPrice()
         }
         .onChange(of: services.priceDisplay.currency) { _, _ in
