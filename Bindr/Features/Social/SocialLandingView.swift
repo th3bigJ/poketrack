@@ -37,10 +37,7 @@ struct SocialLandingView: View {
             ScrollView {
                 VStack(spacing: BindrSpacing.xxl) {
                     heroBlock
-                    pulseBlock
-                    activityBlock
                     featuresBlock
-                    socialProofBlock
 
                     // Bottom safe area for the floating CTA panel.
                     Color.clear.frame(height: 180)
@@ -69,14 +66,14 @@ struct SocialLandingView: View {
 
     private var heroBlock: some View {
         VStack(spacing: BindrSpacing.lg) {
-            SocialSectionEyebrow(title: "JOIN THE HUNT", accentDot: true)
+            SocialSectionEyebrow(title: "THE NEXT BIG THING", accentDot: true)
 
             VStack(spacing: 0) {
-                Text("The hunt hits")
+                Text("Connect with the")
                     .font(.system(size: 38, weight: .heavy))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 HStack(spacing: 8) {
-                    Text("different")
+                    Text("community.")
                         .font(.system(size: 38, weight: .heavy))
                         .italic()
                         .foregroundStyle(
@@ -86,15 +83,12 @@ struct SocialLandingView: View {
                                 endPoint: .trailing
                             )
                         )
-                    Text("together.")
-                        .font(.system(size: 38, weight: .heavy))
-                        .italic()
                     Spacer(minLength: 0)
                 }
             }
             .multilineTextAlignment(.leading)
 
-            Text("One tap into the collector network — see pulls happen live, track grails before they disappear, and trade with friends who actually want what you're sitting on.")
+            Text("Share your collection, discover suggested trades, and react to friends' pulls. Sign in with iCloud to join the network.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -134,70 +128,49 @@ struct SocialLandingView: View {
         .allowsHitTesting(false)
     }
 
-    // MARK: Pulse stats
 
-    private var pulseBlock: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "COMMUNITY PULSE")
-            CollectorPulseStats()
-        }
-    }
 
-    // MARK: Live activity
 
-    private var activityBlock: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            HStack {
-                SocialSectionEyebrow(title: "LIVE NOW", accentDot: true)
-                Spacer()
-                Text("Trade Wall + Feed")
-                    .font(.system(size: 11, weight: .semibold))
-                    .foregroundStyle(.tertiary)
-            }
-            LiveActivityTicker()
-                .frame(minHeight: 180)
-        }
-    }
 
     // MARK: Features
 
     private var featuresBlock: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "WHAT YOU UNLOCK")
+            SocialSectionEyebrow(title: "IN THE SOCIAL TAB")
 
             VStack(spacing: BindrSpacing.sm) {
                 SocialFeatureCard(
                     icon: "arrow.left.arrow.right",
-                    title: "Trade Wall access",
-                    description: "List, browse, and lock in deals with collectors moving the same cards as you.",
+                    title: "Trade Network",
+                    description: "Auto-find suggested trades based on your wishlist and friends' collections.",
                     tint: BindrPalette.deckBlue,
                     index: 1
                 )
                 SocialFeatureCard(
                     icon: "sparkles",
-                    title: "See pulls happen live",
-                    description: "Real-time feed of friends pulling, listing, and chasing.",
+                    title: "Activity feed",
+                    description: "See pulls, binders, and trades as they happen in real-time.",
                     tint: BindrPalette.ownedGreen,
                     index: 2
                 )
                 SocialFeatureCard(
                     icon: "crown.fill",
-                    title: "Grail alerts",
-                    description: "Get pinged the second yours hits the wall. Move first.",
+                    title: "Wishlist alerts",
+                    description: "Be notified the moment a card you want becomes available for trade.",
                     tint: BindrPalette.binderGold,
                     index: 3
                 )
                 SocialFeatureCard(
                     icon: "person.crop.square.filled.and.at.rectangle",
-                    title: "Collection profile",
-                    description: "Your binder, finally worth showing off. Share a page collectors want to see.",
+                    title: "Public Showcase",
+                    description: "Share your binders and collections with a premium profile.",
                     tint: BindrPalette.wishlistViolet,
                     index: 4
                 )
                 SocialFeatureCard(
                     icon: "bubble.left.and.bubble.right.fill",
-                    title: "Hype, comments, reactions",
-                    description: "Trainers move fast. So does the love when you pull something dirty.",
+                    title: "Interactions",
+                    description: "React to pulls and stay connected with other collectors.",
                     tint: BindrPalette.alertRed,
                     index: 5
                 )
@@ -205,24 +178,7 @@ struct SocialLandingView: View {
         }
     }
 
-    // MARK: Social proof
 
-    private var socialProofBlock: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "WHY COLLECTORS STAY")
-
-            VStack(spacing: BindrSpacing.sm) {
-                proofQuote(
-                    text: "Locked in three trades in a week. This is where collectors actually move.",
-                    author: "@robin · Grail hunter"
-                )
-                proofQuote(
-                    text: "Pull notifications hit harder than card breaks now.",
-                    author: "@dre.tcg · 1,402 cards"
-                )
-            }
-        }
-    }
 
     private func proofQuote(text: String, author: String) -> some View {
         VStack(alignment: .leading, spacing: 8) {

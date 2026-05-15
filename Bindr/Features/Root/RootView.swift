@@ -665,6 +665,7 @@ struct RootView: View {
                             .toolbar {
                                 ToolbarItem(placement: .cancellationAction) {
                                     Button("Done") { showSocialFeaturesSheet = false }
+                                        .glassToolbarButton()
                                 }
                             }
                         }

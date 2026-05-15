@@ -334,9 +334,9 @@ struct HeroCard: Identifiable, Hashable {
         ),
         HeroCard(
             title: "Moonbreon",
-            subtitle: "Evolving Skies • Alt Art",
+            subtitle: "Evolving Skies • 215/203",
             symbol: "moon.stars.fill",
-            rarityBadge: "GRAIL",
+            rarityBadge: "ALT ART",
             gradientTop: Color(hex: "2A1A4A"),
             gradientBottom: Color(hex: "0A0518"),
             glow: Color(hex: "A78BFA")

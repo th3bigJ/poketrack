@@ -56,7 +56,7 @@ struct PremiumUpgradeView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Close") { dismiss() }
-                        .fontWeight(.semibold)
+                        .glassToolbarButton()
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Restore") {
@@ -69,7 +69,7 @@ struct PremiumUpgradeView: View {
                             }
                         }
                     }
-                    .font(.system(size: 14, weight: .semibold))
+                    .glassToolbarSecondaryButton()
                 }
             }
             .task {
@@ -97,11 +97,11 @@ struct PremiumUpgradeView: View {
 
             VStack(spacing: BindrSpacing.sm) {
                 SocialSectionEyebrow(title: "BINDR PREMIUM")
-                Text("Move first.\nCollect smarter.")
+                Text("The complete toolkit\nfor your collection.")
                     .font(.system(size: 32, weight: .heavy))
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
-                Text("Unlock the tools serious collectors use to track grails, trade faster, and stay ahead of the wall.")
+                Text("Advanced tools to track value, discover suggested trades, and manage your binders with a professional edge.")
                     .font(.system(size: 15))
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -191,43 +191,43 @@ struct PremiumUpgradeView: View {
 
     private var pillarsBlock: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "WHAT YOU UNLOCK")
+            SocialSectionEyebrow(title: "WHAT'S INCLUDED")
 
             VStack(spacing: BindrSpacing.sm) {
                 pillarRow(
                     icon: "bell.badge.fill",
-                    title: "Early grail alerts",
-                    description: "Beat the wall. Get notified the second a grail on your list lands.",
+                    title: "Wishlist notifications",
+                    description: "Get notified the moment a card you want becomes available for trade.",
                     tint: BindrPalette.alertRed
                 )
                 pillarRow(
                     icon: "chart.line.uptrend.xyaxis",
-                    title: "Advanced collection insights",
-                    description: "Cost basis, weekly trend, set completion deltas — the analytics serious collectors track.",
+                    title: "Collection analytics",
+                    description: "Cost basis, market deltas, and set completion tracking.",
                     tint: BindrPalette.deckBlue
                 )
                 pillarRow(
                     icon: "wand.and.stars",
-                    title: "Premium profile customisation",
-                    description: "Display cards, custom themes, animated foils on your public binder.",
+                    title: "Public customization",
+                    description: "Premium themes and animated binder covers for your profile.",
                     tint: BindrPalette.wishlistViolet
                 )
                 pillarRow(
                     icon: "bolt.fill",
-                    title: "Trade Wall boosts",
-                    description: "Listings surface faster. Friends see your moves first.",
+                    title: "Priority trade listings",
+                    description: "Your trade offers reach the top of the community network.",
                     tint: BindrPalette.binderGold
                 )
                 pillarRow(
                     icon: "wifi.slash",
-                    title: "Offline collection mode",
-                    description: "Your binder travels with you — scan and browse anywhere.",
+                    title: "Offline access",
+                    description: "Browse your binders and build decks without a signal.",
                     tint: BindrPalette.ownedGreen
                 )
                 pillarRow(
-                    icon: "magnifyingglass.circle.fill",
-                    title: "Advanced filters & search",
-                    description: "Filter by acquisition date, foil pattern, condition, and dozens more.",
+                    icon: "line.3.horizontal.decrease.circle.fill",
+                    title: "Advanced filters",
+                    description: "Filter by foil type, date, condition, and rarity.",
                     tint: accent
                 )
             }
@@ -265,20 +265,20 @@ struct PremiumUpgradeView: View {
 
     private var deepValueBlock: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "WHY UPGRADE")
+            SocialSectionEyebrow(title: "THE DIFFERENCE")
 
             VStack(alignment: .leading, spacing: BindrSpacing.lg) {
                 bullet(
-                    "Move first on grails",
-                    detail: "Push notifications fire before the listing fans out to everyone else."
+                    "Reach the community",
+                    detail: "Get your listings seen and connect with other collectors faster."
                 )
                 bullet(
-                    "Track value, not vibes",
-                    detail: "Real cost basis, real market deltas, real ROI on the cards you own."
+                    "Professional tracking",
+                    detail: "Cost basis, market deltas, and ROI — know exactly where you stand."
                 )
                 bullet(
-                    "Trade like a closer",
-                    detail: "Boosted listings, faster matches, friends-only Trade Wall lanes."
+                    "Curated experience",
+                    detail: "Priority trade offers, suggested matches, and a profile worth sharing."
                 )
             }
             .padding(BindrSpacing.lg)
@@ -311,12 +311,12 @@ struct PremiumUpgradeView: View {
 
     private var faqBlock: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "GOOD TO KNOW")
+            SocialSectionEyebrow(title: "BEFORE YOU COMMIT")
 
             VStack(spacing: BindrSpacing.sm) {
-                faqRow(question: "Cancel anytime", answer: "Manage in Settings → Subscriptions. No surprise renewals.")
-                faqRow(question: "Family Sharing", answer: "Premium unlocks across every device on your Apple ID.")
-                faqRow(question: "Existing collection", answer: "All of your cards, folders, and trades stay exactly as they are.")
+                faqRow(question: "Cancel anytime", answer: "Manage in iOS Settings → Subscriptions. It stops at the end of the billing period, nothing extra.")
+                faqRow(question: "Shared across devices", answer: "One Apple ID covers every iPhone and iPad you own.")
+                faqRow(question: "Your collection stays put", answer: "Cards, folders, trades — nothing changes if you upgrade, downgrade, or cancel.")
             }
         }
     }

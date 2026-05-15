@@ -28,8 +28,7 @@ struct OnboardingSocialDiscoveryView: View {
                     headline
                     heroVisual
                     featurePeeks
-                    tickerBlock
-                    Color.clear.frame(height: 100)
+                    Color.clear.frame(height: 20)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
                 .padding(.top, BindrSpacing.xl)
@@ -48,11 +47,10 @@ struct OnboardingSocialDiscoveryView: View {
 
     private var headline: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-            SocialSectionEyebrow(title: "STEP 3 OF 3")
-            Text("The community\nis already moving.")
+            Text("Collect\ntogether.")
                 .font(.system(size: 34, weight: .heavy))
                 .lineSpacing(-2)
-            Text("Trade, hype, hunt grails, and watch friends pull live. Bindr is best with people in it.")
+            Text("Discover suggested trades based on your wishlist and share your latest pulls with friends. Sign in with iCloud to join the community.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
@@ -82,31 +80,31 @@ struct OnboardingSocialDiscoveryView: View {
 
     private var featurePeeks: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "WHAT'S IN THE TAB")
+            SocialSectionEyebrow(title: "THE SOCIAL TAB")
 
             VStack(spacing: BindrSpacing.sm) {
                 peekRow(
                     icon: "arrow.left.arrow.right",
-                    title: "Trade Wall",
-                    description: "List cards, browse listings, lock in deals.",
+                    title: "Trade Network",
+                    description: "Browse listings and initiate trades with friends.",
                     tint: BindrPalette.deckBlue
                 )
                 peekRow(
                     icon: "sparkles",
-                    title: "Live feed",
-                    description: "Friends pulling, listing, hunting — in real time.",
+                    title: "Activity Feed",
+                    description: "See pulls, binders, and collections shared in real-time.",
                     tint: BindrPalette.ownedGreen
                 )
                 peekRow(
                     icon: "crown.fill",
-                    title: "Grail alerts",
-                    description: "Get pinged the second a card on your wishlist hits the wall.",
+                    title: "Wishlist alerts",
+                    description: "Be notified when a card you want is listed for trade.",
                     tint: BindrPalette.binderGold
                 )
                 peekRow(
                     icon: "person.crop.square.filled.and.at.rectangle",
-                    title: "Collection profile",
-                    description: "Share a page collectors actually want to look at.",
+                    title: "Public Profile",
+                    description: "Showcase your binders and collections to the community.",
                     tint: BindrPalette.wishlistViolet
                 )
             }
@@ -143,15 +141,7 @@ struct OnboardingSocialDiscoveryView: View {
         .glassCardStyle(cornerRadius: BindrRadius.lg, interactive: false)
     }
 
-    // MARK: Ticker preview
 
-    private var tickerBlock: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "LIVE NOW", accentDot: true)
-            LiveActivityTicker()
-                .frame(minHeight: 180)
-        }
-    }
 
     // MARK: CTA
 
@@ -162,7 +152,7 @@ struct OnboardingSocialDiscoveryView: View {
                 onFinish()
             } label: {
                 HStack(spacing: 8) {
-                    Text("Enter Bindr")
+                    Text("I'm ready")
                         .font(.system(size: 17, weight: .heavy))
                     Image(systemName: "arrow.right")
                         .font(.system(size: 15, weight: .heavy))

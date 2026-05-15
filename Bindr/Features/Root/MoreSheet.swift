@@ -130,6 +130,7 @@ struct MoreView: View {
                                     Button("Done") {
                                         showProfile = false
                                     }
+                                    .glassToolbarButton()
                                 }
                             }
                     }

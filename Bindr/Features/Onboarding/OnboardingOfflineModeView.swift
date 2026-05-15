@@ -55,11 +55,10 @@ struct OnboardingOfflineModeView: View {
 
     private var headline: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-            SocialSectionEyebrow(title: "STEP 2 OF 3")
-            Text("Pro tools for\nyour collection.")
+            Text("Built to go\nanywhere.")
                 .font(.system(size: 36, weight: .heavy))
                 .lineSpacing(-2)
-            Text("From premium binders to pro deck building and full offline access — everything you need in one place.")
+            Text("Premium binders, a full deck builder, and offline access — the complete toolkit for your collection.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
@@ -263,26 +262,26 @@ struct OnboardingOfflineModeView: View {
         VStack(spacing: BindrSpacing.sm) {
             offlineBenefit(
                 icon: "books.vertical.fill",
-                title: "Digital Binders",
-                description: "Curate your grails into premium binders with 3D embossed covers and custom layouts.",
+                title: "Digital binders",
+                description: "3D embossed covers, custom layouts, and a page worth showing off.",
                 tint: BindrPalette.binderGold
             )
             offlineBenefit(
                 icon: "rectangle.stack.badge.plus",
-                title: "Pro Deck Builder",
-                description: "Master the meta. Import from PTCGL or build from scratch with real-time legality checks.",
+                title: "Deck builder",
+                description: "Import from PTCGL or build from scratch. Real-time legality, no compromises.",
                 tint: BindrPalette.deckBlue
             )
             offlineBenefit(
                 icon: "wifi.slash",
-                title: "Offline collection mode",
-                description: "Catalogue, scanner, and your binder all keep working underground or on flights.",
+                title: "Works offline",
+                description: "Scanner, catalog, and binder all keep going without a signal.",
                 tint: accent
             )
             offlineBenefit(
                 icon: "lock.shield.fill",
                 title: "Wi-Fi only by default",
-                description: "We never touch your cellular data for image packs unless you explicitly say so.",
+                description: "Image packs never touch your cellular data unless you say so.",
                 tint: BindrPalette.ownedGreen
             )
         }

@@ -45,11 +45,10 @@ struct OnboardingGameSelectionView: View {
 
     private var headline: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-            SocialSectionEyebrow(title: "STEP 1 OF 3")
-            Text("Pick your\nuniverse.")
+            Text("Your collection,\nyour game.")
                 .font(.system(size: 38, weight: .heavy))
                 .lineSpacing(-2)
-            Text("Choose the game you collect — we'll tune your catalog, browse tab, and scanner around it.")
+            Text("Select the TCG you collect. Your catalog, scanner, and browse feed will adapt to your choice.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

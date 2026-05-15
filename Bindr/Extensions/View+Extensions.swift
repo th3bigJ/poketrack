@@ -19,6 +19,26 @@ extension View {
         self.modifier(GlassCardModifier(cornerRadius: cornerRadius, interactive: interactive))
     }
 
+    /// Primary toolbar button style — semibold, neutral `.primary` colour.
+    ///
+    /// Use on Close / Done / Cancel buttons in sheet toolbars so they read
+    /// as part of the glass chrome rather than inheriting the accent tint
+    /// injected by `bindrTheme(accent:)`.
+    func glassToolbarButton() -> some View {
+        self
+            .font(.system(size: 15, weight: .semibold))
+            .foregroundStyle(.primary)
+    }
+
+    /// Secondary toolbar button style — medium weight, `.secondary` colour.
+    ///
+    /// Use on Restore / secondary actions that should sit behind the primary.
+    func glassToolbarSecondaryButton() -> some View {
+        self
+            .font(.system(size: 14, weight: .medium))
+            .foregroundStyle(.secondary)
+    }
+
     /// Premium red pill badge matching the Social bell alert style.
     func bindrBadge(count: Int) -> some View {
         self.overlay(alignment: .topTrailing) {
