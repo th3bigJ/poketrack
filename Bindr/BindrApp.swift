@@ -174,8 +174,10 @@ struct BindrApp: App {
 
     private static func logModelContainerIssue(stage: String, error: Error) {
         let nsError = error as NSError
+        let iCloudToken = FileManager.default.ubiquityIdentityToken
         let diagnostic = [
             "stage=\(stage)",
+            "iCloudAccount=\(iCloudToken != nil ? "signed-in" : "not-signed-in")",
             "domain=\(nsError.domain)",
             "code=\(nsError.code)",
             "description=\(nsError.localizedDescription)",
@@ -186,11 +188,12 @@ struct BindrApp: App {
 
         UserDefaults.standard.set(diagnostic, forKey: cloudKitLastErrorDefaultsKey)
 
-        print("SwiftData model container failure during \(stage)")
-        print("domain=\(nsError.domain) code=\(nsError.code)")
-        print("description=\(nsError.localizedDescription)")
+        print("[PokeTrack] SwiftData model container failure during \(stage)")
+        print("[PokeTrack] iCloud account present: \(iCloudToken != nil)")
+        print("[PokeTrack] domain=\(nsError.domain) code=\(nsError.code)")
+        print("[PokeTrack] description=\(nsError.localizedDescription)")
         if !nsError.userInfo.isEmpty {
-            print("userInfo=\(nsError.userInfo)")
+            print("[PokeTrack] userInfo=\(nsError.userInfo)")
         }
     }
 

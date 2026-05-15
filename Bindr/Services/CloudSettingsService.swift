@@ -110,6 +110,26 @@ final class CloudSettingsService {
         UserDefaults.standard.string(forKey: BindrApp.cloudKitLastErrorDefaultsKey)
     }
 
+    /// Detailed diagnostic info for the iCloud sync debug panel.
+    var syncDiagnosticLines: [String] {
+        var lines: [String] = []
+
+        let token = FileManager.default.ubiquityIdentityToken
+        lines.append("iCloud account: \(token != nil ? "signed in" : "not signed in")")
+        lines.append("CloudKit mode: \(isCloudKitFallbackActive ? "local-only (fallback)" : "CloudKit (.automatic)")")
+
+        let kvStoreAvailable = store.synchronize()
+        lines.append("NSUbiquitousKeyValueStore.synchronize: \(kvStoreAvailable ? "ok" : "failed")")
+
+        if let lastError = cloudKitDiagnostic {
+            lines.append("")
+            lines.append("Last container error:")
+            lines.append(lastError)
+        }
+
+        return lines
+    }
+
     // MARK: - Generic Accessors
 
     func set(_ value: Any?, forKey key: String) {

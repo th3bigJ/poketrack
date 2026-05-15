@@ -151,7 +151,7 @@ struct SettingsView: View {
             case .cloudKitFallback:
                 Text("This build is using local-only storage because the CloudKit store could not be opened on this device yet.")
             case .cloudKitConnected:
-                Text("Your wishlist, collection, and ledger data are stored locally and synced through your private iCloud database.")
+                Text("Your wishlist, collection, and ledger data are stored locally and synced through your private iCloud database. After reinstalling, data may take several minutes to finish syncing from iCloud.")
             case .iCloudAccountUnavailable:
                 Text("You can still use the app offline, but CloudKit sync stays off until this device is signed into iCloud.")
             }
@@ -204,13 +204,14 @@ struct SettingsView: View {
             }
         }
 
-        if let diagnostic = services.cloudSettings.cloudKitDiagnostic,
-           services.cloudSettings.syncStatus == .cloudKitFallback {
-            Section {
-                Text(diagnostic).font(.caption.monospaced()).textSelection(.enabled)
-            } header: { Text("CloudKit Debug") } footer: {
-                Text("This is the last SwiftData/CloudKit container error captured during app launch.")
-            }
+        Section {
+            let lines = services.cloudSettings.syncDiagnosticLines
+            Text(lines.joined(separator: "\n"))
+                .font(.caption.monospaced())
+                .textSelection(.enabled)
+                .foregroundStyle(.secondary)
+        } header: { Text("iCloud Debug") } footer: {
+            Text("Diagnostic info for troubleshooting sync issues. After a fresh install, CloudKit may take several minutes to import existing records from the server.")
         }
 
     }
