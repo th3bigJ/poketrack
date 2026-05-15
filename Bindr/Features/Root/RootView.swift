@@ -748,8 +748,6 @@ struct RootView: View {
             if tab == .social {
                 services.socialFeed.clearUnreadState()
                 services.socialPush.clearAppBadgeCount()
-                // FOR TESTING: Show features intro every time
-                showSocialFeaturesSheet = true
             }
             if tab == .more {
                 if suppressMorePathReset {

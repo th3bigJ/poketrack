@@ -250,19 +250,8 @@ struct SocialRootView: View {
     /// of the visible "flash" when switching tabs.
     @ViewBuilder
     private var socialHeaderTrailing: some View {
-        Group {
-            if services.socialAuth.isSignedIn {
-                signedInTrailingButtons
-            } else {
-                ChromeGlassCircleButton(accessibilityLabel: "Profile") {
-                    Haptics.lightImpact()
-                    showAccountProfile = true
-                } label: {
-                    Image(systemName: "person.crop.circle")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                }
-            }
+        if services.socialAuth.isSignedIn {
+            signedInTrailingButtons
         }
     }
 
