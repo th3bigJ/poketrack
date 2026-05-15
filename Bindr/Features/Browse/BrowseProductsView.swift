@@ -1031,7 +1031,7 @@ private struct SealedProductDetailPage: View {
                     tint: tint,
                     priceText: line.flatMap { l in
                         guard let p = l.unitPrice, p > 0 else { return nil }
-                        return formatCurrency(amount: p, code: l.currencyCode ?? "USD")
+                        return formatCurrency(amount: p, code: l.currencyCode)
                     },
                     description: cleaned(line?.lineDescription)
                 )

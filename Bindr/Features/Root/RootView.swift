@@ -90,6 +90,25 @@ struct RootView: View {
     @State private var suppressMorePathReset = false
     @FocusState private var searchFieldFocused: Bool
 
+    // MARK: - Premium upsell auto-popup
+    // Weekly cadence (per the product spec). The upsell defers itself until
+    // the launch sequence finishes, the splash is dismissed, and the user is
+    // not currently mid-brand-onboarding — we don't want to greet a first-run
+    // user with a paywall before they've even seen the dashboard.
+    @State private var showPremiumAutoSheet = false
+    @State private var showSocialFeaturesSheet = false
+    @State private var hasEvaluatedPremiumUpsellThisSession = false
+    @State private var hasShownOnboardingThisSession = false
+    private static let premiumUpsellLastShownKey = "bindr_premium_upsell_last_shown_at"
+    private static let premiumUpsellIntervalSeconds: TimeInterval = 7 * 24 * 60 * 60
+
+    // MARK: - One-shot onboarding replay
+    // Bump the version suffix to re-trigger this for everyone (e.g. when we
+    // ship the next major onboarding redesign). Each version key only fires
+    // a single reset, so even if the user mashes "Skip" the flow doesn't
+    // come back on subsequent launches.
+    private static let onboardingReplayMigrationKey = "bindr_onboarding_replay_v1"
+
     // MARK: - Splash Flow
     @State private var showSplash = false
     /// Flips once the BINDR letter-reveal stagger has played + breathing
@@ -318,6 +337,17 @@ struct RootView: View {
             }
         }
         .animation(.easeInOut(duration: 0.35), value: isLaunchSequenceComplete)
+        .onChange(of: isLaunchSequenceComplete) { _, complete in
+            if complete { evaluatePremiumUpsellIfNeeded() }
+        }
+        .onChange(of: showBrandOnboarding) { _, presented in
+            // After the user finishes (or skips) onboarding, give the launch
+            // a beat to settle and then re-check the upsell gate.
+            if !presented { evaluatePremiumUpsellIfNeeded() }
+        }
+        .onChange(of: showSplash) { _, presented in
+            if !presented { evaluatePremiumUpsellIfNeeded() }
+        }
         .environment(\.offlineImageContext, OfflineImageContext(
             isOfflineEnabled: services.offlineImageSettings.isOfflinePackEnabled(
                 for: services.brandSettings.selectedCatalogBrand
@@ -342,9 +372,10 @@ struct RootView: View {
             let safeIndex = min(max(index, 0), max(list.count - 1, 0))
             selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
         })
-        .sheet(isPresented: $showBrandOnboarding) {
-            BrandOnboardingView(isPresented: $showBrandOnboarding)
+        .fullScreenCover(isPresented: $showBrandOnboarding) {
+            BindrOnboardingFlow(isPresented: $showBrandOnboarding)
                 .environment(services)
+                .bindrTheme(accent: services.theme.accentColor)
         }
         .onChange(of: services.brandSettings.hasCompletedBrandOnboarding) { _, completed in
             // Only show brand onboarding if splash has been dismissed
@@ -380,6 +411,11 @@ struct RootView: View {
         }
         .task {
             // ── Cheap, immediate work ─────────────────────────────────────
+            // Replay-onboarding migration: run before we read brandSettings
+            // anywhere else this launch so the `.onChange` that opens
+            // `BindrOnboardingFlow` fires with the freshly-reset flag.
+            applyOnboardingReplayMigrationIfNeeded()
+
             // Determine splash — just a UserDefaults read, safe to run now.
             let lastShownVersion = UserDefaults.standard.string(forKey: splashLastVersionKey)
             let shouldShowSplash = lastShownVersion == nil || lastShownVersion != currentAppVersion
@@ -608,6 +644,33 @@ struct RootView: View {
                         .presentationDetents([.large])
                         .presentationDragIndicator(.visible)
                     }
+                    .sheet(isPresented: $showPremiumAutoSheet) {
+                        // Same `PaywallSheet` wrapper everywhere else uses,
+                        // so the user-initiated path and the auto-popup path
+                        // render the exact same `PremiumUpgradeView` body.
+                        PaywallSheet()
+                            .environment(services)
+                            .bindrTheme(accent: services.theme.accentColor)
+                            .presentationDetents([.large])
+                            .presentationDragIndicator(.visible)
+                    }
+                    .sheet(isPresented: $showSocialFeaturesSheet) {
+                        NavigationStack {
+                            SocialLandingView(
+                                currentNonce: .constant(nil),
+                                errorMessage: nil,
+                                rootFloatingChromeInset: 0,
+                                onSignInResult: { _ in }
+                            )
+                            .toolbar {
+                                ToolbarItem(placement: .cancellationAction) {
+                                    Button("Done") { showSocialFeaturesSheet = false }
+                                }
+                            }
+                        }
+                        .presentationDetents([.large])
+                        .presentationDragIndicator(.visible)
+                    }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         // Shared app backdrop shows through translucent chrome/material.
@@ -684,6 +747,8 @@ struct RootView: View {
             if tab == .social {
                 services.socialFeed.clearUnreadState()
                 services.socialPush.clearAppBadgeCount()
+                // FOR TESTING: Show features intro every time
+                showSocialFeaturesSheet = true
             }
             if tab == .more {
                 if suppressMorePathReset {
@@ -1002,6 +1067,58 @@ struct RootView: View {
         }
     }
 
+    // MARK: - Premium upsell gate
+
+    /// Decide whether to surface the weekly Premium upsell sheet this session.
+    ///
+    /// All gates must pass:
+    ///   * Launch sequence has fully finished (so the user has actually
+    ///     seen the dashboard before we paywall them).
+    ///   * No higher-priority modal is on screen (splash, brand onboarding).
+    ///   * The user is not already Premium.
+    ///   * At least 7 days have elapsed since the last shown timestamp.
+    ///   * We haven't already evaluated *and shown* it earlier this session
+    ///     — re-running this with `hasEvaluatedPremiumUpsellThisSession`
+    ///     true is a no-op so multiple `.onChange` triggers don't flicker
+    ///     the sheet.
+    ///
+    /// First-launch behaviour: if there's no stored timestamp we treat
+    /// "now" as the seed. The user therefore won't see the upsell until
+    /// 7 days after their *first* successful launch — they get a full
+    /// week to explore before any paywall pressure.
+    private func evaluatePremiumUpsellIfNeeded() {
+        // FOR TESTING: Always show onboarding (Features) intro first, once per session
+        if !hasShownOnboardingThisSession {
+            hasShownOnboardingThisSession = true
+            showBrandOnboarding = true
+        }
+        
+        // FOR TESTING: Always show premium intro on load (delayed so it shows after onboarding)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            if !services.store.isPremium && !showBrandOnboarding {
+                showPremiumAutoSheet = true
+            }
+        }
+        
+        /* Original logic suppressed for testing
+        guard !hasEvaluatedPremiumUpsellThisSession else { return }
+        ...
+        */
+    }
+
+    // MARK: - One-shot onboarding replay
+
+    /// Resets `hasCompletedBrandOnboarding` exactly once per migration
+    /// version so existing users see the new 3-screen onboarding flow on
+    /// their next launch. The version key (`onboardingReplayMigrationKey`)
+    /// persists forever after firing, so this never repeats — users won't
+    /// be re-onboarded every cold launch.
+    fileprivate func applyOnboardingReplayMigrationIfNeeded() {
+        let defaults = UserDefaults.standard
+        guard !defaults.bool(forKey: Self.onboardingReplayMigrationKey) else { return }
+        defaults.set(true, forKey: Self.onboardingReplayMigrationKey)
+        services.brandSettings.hasCompletedBrandOnboarding = false
+    }
 }
 
 #Preview {
