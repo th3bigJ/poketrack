@@ -1,6 +1,7 @@
 import Charts
 import SwiftData
 import SwiftUI
+import UIKit
 
 struct BrowseProductsTabContent: View {
     @Environment(AppServices.self) private var services
@@ -653,45 +654,80 @@ private struct SealedThumbnailView: View {
 }
 
 struct SealedProductBrowseDetailView: View {
-    @Environment(\.colorScheme) private var colorScheme
-
     let products: [SealedProduct]
 
-    @State private var index: Int
+    @Environment(\.colorScheme) private var colorScheme
+    @State private var scrollIndex: Int?
+    @State private var auraColorsByProductID: [Int: [Color]] = [:]
 
     init(products: [SealedProduct], startProductID: Int) {
         self.products = products
         let start = products.firstIndex(where: { $0.id == startProductID }) ?? 0
-        _index = State(initialValue: start)
+        _scrollIndex = State(initialValue: start)
+    }
+
+    private var currentProductID: Int? {
+        guard let i = scrollIndex, products.indices.contains(i) else { return nil }
+        return products[i].id
+    }
+
+    private var currentAuraColors: [Color] {
+        let extracted = currentProductID.flatMap { auraColorsByProductID[$0] } ?? []
+        if extracted.count >= 3 { return Array(extracted.prefix(3)) }
+        if let first = extracted.first { return [first, first.opacity(0.74), first.opacity(0.52)] }
+        return [Color(red: 0.50, green: 0.60, blue: 0.74),
+                Color(red: 0.63, green: 0.52, blue: 0.76),
+                Color(red: 0.72, green: 0.60, blue: 0.68)]
     }
 
     var body: some View {
-        Group {
-            if products.isEmpty {
-                ContentUnavailableView("No product", systemImage: "shippingbox")
-            } else if products.count == 1 {
-                SealedProductDetailPage(product: products[0])
-            } else {
-                TabView(selection: $index) {
-                    ForEach(Array(products.enumerated()), id: \.element.id) { idx, product in
-                        SealedProductDetailPage(product: product)
-                            .tag(idx)
+        GeometryReader { geo in
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 0) {
+                    ForEach(Array(products.indices), id: \.self) { i in
+                        SealedProductDetailPage(
+                            product: products[i],
+                            onAuraColors: { colors in
+                                auraColorsByProductID[products[i].id] = colors
+                            }
+                        )
+                        .frame(width: geo.size.width, height: geo.size.height)
+                        .id(i)
                     }
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .scrollTargetLayout()
+            }
+            .scrollTargetBehavior(.paging)
+            .scrollPosition(id: $scrollIndex)
+            .scrollContentBackground(.hidden)
+            .scrollIndicators(.hidden)
+            .onChange(of: scrollIndex) { _, i in
+                guard i != nil else { return }
+                HapticManager.selection()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(pageChromeBackground)
-        .presentationBackground(pageChromeBackground)
+        .background(sheetBackground)
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
     }
 
-    private var pageChromeBackground: Color {
-        colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground)
+    private var sheetBackground: some View {
+        ZStack {
+            colorScheme == .dark ? Color.black : Color.white
+            currentAuraColors[0].opacity(colorScheme == .dark ? 0.30 : 0.16)
+            LinearGradient(
+                colors: [
+                    currentAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
+                    .clear,
+                    currentAuraColors[2].opacity(colorScheme == .dark ? 0.24 : 0.14),
+                ],
+                startPoint: .topTrailing,
+                endPoint: .bottomLeading
+            )
+        }
+        .ignoresSafeArea()
     }
 }
 
@@ -703,129 +739,78 @@ private struct SealedProductDetailPage: View {
     @Query private var collectionItems: [CollectionItem]
 
     let product: SealedProduct
+    var onAuraColors: (([Color]) -> Void)? = nil
 
+    @State private var auraColors: [Color] = []
     @State private var showAddSheet = false
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var isWishlisted = false
-    @State private var openingItem: CollectionItem?
-    @State private var editingItem: CollectionItem?
-    @State private var markAsSession: SealedCollectionMarkAsSession?
     @State private var showAddToFolderSheet = false
     @State private var showShareSheet = false
-    @State private var showDeferredSections = false
+    @State private var isMenuExpanded = false
+    @State private var editingItem: CollectionItem?
+    @State private var markAsSession: SealedCollectionMarkAsSession?
 
-    init(product: SealedProduct) {
+    init(product: SealedProduct, onAuraColors: (([Color]) -> Void)? = nil) {
         self.product = product
+        self.onAuraColors = onAuraColors
         let cardID = SealedProduct.collectionCardID(productID: product.id)
         _collectionItems = Query(filter: #Predicate<CollectionItem> { $0.cardID == cardID })
     }
 
-    private var collectionCardID: String {
-        SealedProduct.collectionCardID(productID: product.id)
-    }
-
-    private var ownedQuantity: Int {
-        collectionItems
-            .filter { $0.itemKind == ProductKind.sealedProduct.rawValue }
-            .reduce(0) { $0 + max($1.quantity, 0) }
-    }
-
-    private var visibleCollectionItems: [CollectionItem] {
-        collectionItems
-            .filter { $0.itemKind == ProductKind.sealedProduct.rawValue && $0.quantity > 0 }
-            .sorted { $0.dateAcquired > $1.dateAcquired }
-    }
-
-    private var showsCollectionSection: Bool {
-        !visibleCollectionItems.isEmpty
-    }
-
-    private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
-    private static let shareTint = Color(red: 0.36, green: 0.61, blue: 0.97)
-    private static let folderTint = Color(red: 0.18, green: 0.72, blue: 0.88)
+    private var collectionCardID: String { SealedProduct.collectionCardID(productID: product.id) }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
-                productImage
-                    .padding(.top, 26)
+        GeometryReader { geo in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 14) {
+                    heroAndMeta
 
-                metaSection
-
-                actionButtons
-
-                if showDeferredSections {
                     SealedProductPricingPanel(productID: product.id)
+                        .glassCardStyle(cornerRadius: 26, interactive: false)
+                        .padding(.horizontal, 12)
 
-                    if showsCollectionSection {
+                    if !visibleCollectionItems.isEmpty {
                         collectionSection
+                            .padding(.horizontal, 12)
                     }
 
-                    recentSoldOnEbayButton
                     detailsSection
-                } else {
-                    ProgressView()
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 12)
+                        .padding(.horizontal, 12)
                 }
+                .frame(maxWidth: .infinity, minHeight: geo.size.height, alignment: .topLeading)
+                .padding(.bottom, 24)
             }
-            .padding(.horizontal, 12)
-            .padding(.bottom, 48)
-            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .scrollContentBackground(.hidden)
+            .scrollIndicators(.hidden)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(pageBackground)
-        .scrollContentBackground(.hidden)
-        .scrollIndicators(.hidden)
-        .onAppear {
-            refreshWishlistState()
-            showDeferredSections = false
-            Task { @MainActor in
-                await Task.yield()
-                showDeferredSections = true
-            }
-        }
+        .background(
+            auraBackground
+                .ignoresSafeArea()
+        )
+        .onAppear { refreshWishlistState() }
         .sheet(isPresented: $showAddSheet) {
-            AddSealedToCollectionSheet(product: product)
-                .environment(services)
-        }
-        .sheet(isPresented: Binding(
-            get: { openingItem != nil },
-            set: { if !$0 { openingItem = nil } }
-        )) {
-            if let openingItem {
-                OpenSealedCollectionItemSheet(item: openingItem, productName: product.name)
-                    .environment(services)
-            }
-        }
-        .sheet(isPresented: Binding(
-            get: { editingItem != nil },
-            set: { if !$0 { editingItem = nil } }
-        )) {
-            if let editingItem {
-                EditSealedCollectionItemSheet(item: editingItem, productName: product.name)
-                    .environment(services)
-            }
-        }
-        .sheet(item: $markAsSession) { session in
-            SealedCollectionMarkAsSheet(
-                item: session.item,
-                productName: product.name,
-                initialAction: session.initialAction
-            )
-            .environment(services)
+            AddSealedToCollectionSheet(product: product).environment(services)
         }
         .sheet(isPresented: $showWishlistPaywall) {
-            PaywallSheet()
-                .environment(services)
+            PaywallSheet().environment(services)
         }
         .sheet(isPresented: $showAddToFolderSheet) {
             AddSealedToFolderSheet(cardID: collectionCardID, variantKey: "sealed")
         }
         .sheet(isPresented: $showShareSheet) {
             ShareSheet(items: shareItems)
+        }
+        .sheet(isPresented: Binding(get: { editingItem != nil }, set: { if !$0 { editingItem = nil } })) {
+            if let editingItem {
+                EditSealedCollectionItemSheet(item: editingItem, productName: product.name).environment(services)
+            }
+        }
+        .sheet(item: $markAsSession) { session in
+            SealedCollectionMarkAsSheet(item: session.item, productName: product.name, initialAction: session.initialAction).environment(services)
         }
         .alert("Wishlist", isPresented: $showWishlistAlert) {
             Button("OK", role: .cancel) {}
@@ -834,82 +819,446 @@ private struct SealedProductDetailPage: View {
         }
     }
 
-    private var pageBackground: Color {
-        colorScheme == .dark ? .black : .white
-    }
+    private var heroAndMeta: some View {
+        VStack(spacing: 12) {
+            productHeroSection
+                .padding(.top, 20)
+                .padding(.horizontal, 24)
 
-    private var productImage: some View {
-        CachedAsyncImage(url: product.imageURL) { image in
-            image
-                .resizable()
-                .scaledToFit()
-                .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-        } placeholder: {
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(Color.secondary.opacity(0.12))
-                .overlay { ProgressView() }
+            VStack(spacing: 4) {
+                Text(product.name)
+                    .font(.system(size: 24, weight: .bold, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                centeredSetBlock
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.horizontal, 16)
+
+            actionButtons
+                .padding(.horizontal, 12)
+                .padding(.bottom, 12)
         }
-        .frame(maxWidth: .infinity)
     }
 
-    private var metaSection: some View {
-        VStack(alignment: .center, spacing: 8) {
-            Text(product.name)
-                .font(.system(size: 28, weight: .bold, design: .rounded))
+    private var auraBackground: some View {
+        VStack(spacing: 0) {
+            RoundedRectangle(cornerRadius: 34, style: .continuous)
+                .fill(LinearGradient(
+                    colors: resolvedAuraColors.map { $0.opacity(colorScheme == .dark ? 0.62 : 0.42) },
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ))
+                .frame(maxWidth: .infinity)
+                .aspectRatio(4 / 3, contentMode: .fit)
+                .blur(radius: colorScheme == .dark ? 32 : 26)
+                .scaleEffect(1.16)
+
+            LinearGradient(
+                colors: [
+                    resolvedAuraColors[0].opacity(colorScheme == .dark ? 0.34 : 0.20),
+                    resolvedAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
+                    resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.14 : 0.09),
+                    resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.08 : 0.05),
+                    resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.04 : 0.02),
+                    .clear
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(height: 330)
+            .blur(radius: colorScheme == .dark ? 20 : 15)
+            .offset(y: -8)
+        }
+        .allowsHitTesting(false)
+    }
+
+    private var visibleCollectionItems: [CollectionItem] {
+        collectionItems
+            .filter { $0.itemKind == ProductKind.sealedProduct.rawValue && $0.quantity > 0 }
+            .sorted { $0.dateAcquired > $1.dateAcquired }
+    }
+
+    private var collectionSection: some View {
+        SealedDetailSurface(title: "My Collection") {
+            VStack(spacing: 10) {
+                ForEach(visibleCollectionItems, id: \.persistentModelID) { item in
+                    collectionItemCard(item)
+                }
+            }
+        }
+    }
+
+    private func collectionItemCard(_ item: CollectionItem) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("\(item.quantity) × Sealed")
+                .font(.headline)
                 .foregroundStyle(.primary)
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity, alignment: .center)
+
+            let sources = activeHoldingSources(for: item)
+            if sources.isEmpty {
+                Text("No source details recorded yet.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } else {
+                VStack(spacing: 8) {
+                    ForEach(sources) { source in
+                        sourceRow(source, item: item)
+                    }
+                }
+            }
+
+            if let notes = cleaned(item.notes) {
+                Text(notes).font(.subheadline).foregroundStyle(.secondary)
+            }
         }
-        .frame(maxWidth: .infinity, alignment: .center)
+        .padding(.vertical, 6)
+    }
+
+    private func sourceRow(_ source: SealedHoldingSource, item: CollectionItem) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 10) {
+                infoBadge(label: source.directionTitle, tint: source.tint)
+                Text("Qty \(source.quantity)")
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.secondary)
+                if let priceText = source.priceText {
+                    labelValueRow(label: "Price", value: priceText)
+                }
+                Spacer(minLength: 8)
+                Text(source.date.formatted(date: .abbreviated, time: .omitted))
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.secondary)
+            }
+            HStack(spacing: 12) {
+                Spacer(minLength: 8)
+                Button("Edit") { editingItem = item }
+                    .buttonStyle(.bordered)
+                    .tint(colorScheme == .dark ? .white : .black)
+                Button("Mark As") { markAsSession = SealedCollectionMarkAsSession(item: item, initialAction: .opened) }
+                    .buttonStyle(.borderedProminent)
+                    .tint(SealedPricingPalette.actionBlue)
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(RoundedRectangle(cornerRadius: 16, style: .continuous)
+            .fill(sectionInsetBackground.opacity(0.55)))
+    }
+
+    private var detailsSection: some View {
+        SealedDetailSurface(title: "Details") {
+            let facts: [(String, String)] = [
+                ("Release", releaseDateDisplay),
+                ("Type", product.typeDisplayName),
+                product.series.flatMap { $0.isEmpty ? nil : ("Series", $0) },
+                product.language.flatMap { $0.isEmpty ? nil : ("Language", $0) },
+                product.year.map { ("Year", String($0)) },
+            ].compactMap { $0 }
+
+            let rows = stride(from: 0, to: facts.count, by: 2).map {
+                Array(facts[$0..<min($0 + 2, facts.count)])
+            }
+            VStack(spacing: 10) {
+                ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
+                    HStack(spacing: 12) {
+                        ForEach(row, id: \.0) { fact in
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(fact.0)
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                Text(fact.1)
+                                    .font(.subheadline.weight(.medium))
+                                    .foregroundStyle(.primary)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(10)
+                            .background(RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .fill(sectionInsetBackground))
+                        }
+                        if row.count < 2 { Color.clear.frame(maxWidth: .infinity) }
+                    }
+                }
+            }
+        }
+    }
+
+    private var releaseDateDisplay: String {
+        if let date = product.releaseDate {
+            return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+        }
+        return product.releaseDateRaw.flatMap { $0.isEmpty ? nil : $0 } ?? "Unknown"
+    }
+
+    private var sectionInsetBackground: Color {
+        colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
+    }
+
+    private func labelValueRow(label: String, value: String) -> some View {
+        HStack(spacing: 4) {
+            Text(label + ":").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+            Text(value).font(.caption.weight(.medium)).foregroundStyle(.primary)
+        }
+    }
+
+    private func infoBadge(label: String, tint: Color) -> some View {
+        Text(label)
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(tint)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(Capsule(style: .continuous).fill(tint.opacity(0.14)))
+    }
+
+    private func activeHoldingSources(for item: CollectionItem) -> [SealedHoldingSource] {
+        (item.costLots ?? [])
+            .filter { $0.quantityRemaining > 0 }
+            .sorted { $0.createdAt > $1.createdAt }
+            .map { lot in
+                let line = lot.sourceLedgerLine
+                let direction = line.flatMap { LedgerDirection(rawValue: $0.direction) } ?? .bought
+                let tint: Color
+                switch direction {
+                case .sold, .tradedOut, .giftedOut, .adjustmentOut: tint = SealedPricingPalette.danger
+                default: tint = SealedPricingPalette.success
+                }
+                return SealedHoldingSource(
+                    id: line?.id ?? UUID(),
+                    quantity: lot.quantityRemaining,
+                    date: line?.occurredAt ?? item.dateAcquired,
+                    directionTitle: directionTitle(for: direction),
+                    tint: tint,
+                    priceText: line.flatMap { l in
+                        guard let p = l.unitPrice, p > 0 else { return nil }
+                        return formatCurrency(amount: p, code: l.currencyCode ?? "USD")
+                    },
+                    description: cleaned(line?.lineDescription)
+                )
+            }
+    }
+
+    private func directionTitle(for direction: LedgerDirection) -> String {
+        switch direction {
+        case .bought: return "Bought"
+        case .packed: return "Packed"
+        case .tradedIn: return "Traded In"
+        case .giftedIn: return "Gifted"
+        case .adjustmentIn: return "Adjusted In"
+        case .sold: return "Sold"
+        case .tradedOut: return "Traded Out"
+        case .giftedOut: return "Gifted Out"
+        case .adjustmentOut: return "Adjusted Out"
+        }
+    }
+
+    private func formatCurrency(amount: Double, code: String) -> String {
+        let fmt = NumberFormatter()
+        fmt.numberStyle = .currency
+        fmt.currencyCode = code
+        fmt.maximumFractionDigits = 2
+        return fmt.string(from: NSNumber(value: amount)) ?? String(format: "%.2f", amount)
+    }
+
+    private func cleaned(_ text: String?) -> String? {
+        guard let t = text?.trimmingCharacters(in: .whitespacesAndNewlines), !t.isEmpty else { return nil }
+        return t
     }
 
     private var actionButtons: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 12) {
             Button {
-                showAddSheet = true
+                withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                    isMenuExpanded.toggle()
+                }
+                Haptics.lightImpact()
             } label: {
-                cardStyleActionBody(
-                    title: "Add to Collection",
-                    systemImage: "plus.circle.fill",
-                    tint: SealedPricingPalette.success
-                )
+                HStack(spacing: 12) {
+                    Image(systemName: isOwned ? "folder.fill" : "plus.circle.fill")
+                        .font(.system(size: 18, weight: .bold))
+                    Text(isOwned ? "Manage..." : "Add to...")
+                        .font(.system(size: 17, weight: .bold, design: .rounded))
+                        .fixedSize()
+                    Spacer()
+                    Image(systemName: "chevron.up")
+                        .font(.system(size: 11, weight: .bold))
+                        .opacity(0.4)
+                        .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
+                }
+                .padding(.horizontal, 20)
+                .frame(maxWidth: .infinity)
+                .frame(height: 56)
+                .foregroundStyle(isOwned ? Color(red: 0.36, green: 0.61, blue: 0.97) : SealedPricingPalette.success)
+                .glassCardStyle(cornerRadius: 18, interactive: true)
             }
             .buttonStyle(.plain)
 
-            Button {
-                toggleWishlist()
-            } label: {
-                cardStyleActionBody(
-                    title: "Wish List",
-                    systemImage: isWishlisted ? "star.fill" : "star",
-                    tint: isWishlisted ? Self.wishlistActiveStarColor : SealedPricingPalette.gold
-                )
+            Button { showShareSheet = true } label: {
+                Image(systemName: "square.and.arrow.up")
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundStyle(Color(red: 0.36, green: 0.61, blue: 0.97))
+                    .frame(width: 56, height: 56)
+                    .glassCardStyle(cornerRadius: 18, interactive: true)
             }
             .buttonStyle(.plain)
-
-            Button {
-                showAddToFolderSheet = true
-            } label: {
-                cardStyleActionBody(
-                    title: "Add to Folder",
-                    systemImage: "folder.badge.plus",
-                    tint: Self.folderTint
-                )
-            }
-            .buttonStyle(.plain)
-
-            Button {
-                showShareSheet = true
-            } label: {
-                cardStyleActionBody(
-                    title: "Share",
-                    systemImage: "square.and.arrow.up",
-                    tint: Self.shareTint
-                )
-            }
-            .buttonStyle(.plain)
+            .accessibilityLabel("Share")
         }
         .frame(maxWidth: .infinity)
+        .overlay(alignment: .bottom) {
+            if isMenuExpanded {
+                sealedActionMenu
+                    .transition(.asymmetric(
+                        insertion: .scale(scale: 0.9, anchor: .bottom).combined(with: .opacity).combined(with: .move(edge: .bottom)),
+                        removal: .scale(scale: 0.9, anchor: .bottom).combined(with: .opacity).combined(with: .move(edge: .bottom))
+                    ))
+                    .offset(y: -74)
+                    .zIndex(100)
+            }
+        }
+    }
+
+    private var isOwned: Bool {
+        collectionItems.contains { $0.itemKind == ProductKind.sealedProduct.rawValue && $0.quantity > 0 }
+    }
+
+    private var sealedActionMenu: some View {
+        VStack(spacing: 0) {
+            menuRow(label: "Add to Collection", subLabel: isOwned ? "Add more copies" : "Add to your collection", icon: "plus.circle.fill", color: SealedPricingPalette.success) {
+                showAddSheet = true
+            }
+            Divider().padding(.horizontal, 20).opacity(0.06)
+            menuRow(label: isWishlisted ? "Remove from Wish List" : "Wish List", subLabel: isWishlisted ? "Currently on your wish list" : "Add to your wish list", icon: isWishlisted ? "star.slash" : "star", color: Color(red: 0.98, green: 0.78, blue: 0.18)) {
+                toggleWishlist()
+            }
+            Divider().padding(.horizontal, 20).opacity(0.06)
+            menuRow(label: "Add to Folder", subLabel: "Save to a specific folder", icon: "folder.badge.plus", color: Color(red: 0.18, green: 0.72, blue: 0.88)) {
+                showAddToFolderSheet = true
+            }
+        }
+        .frame(width: 280)
+        .glassCardStyle(cornerRadius: 26, interactive: true)
+        .shadow(color: .black.opacity(colorScheme == .dark ? 0.3 : 0.15), radius: 25, y: 15)
+    }
+
+    private func menuRow(label: String, subLabel: String, icon: String, color: Color, action: @escaping () -> Void) -> some View {
+        Button {
+            Haptics.selectionChanged()
+            action()
+            withAnimation(.spring(response: 0.25)) { isMenuExpanded = false }
+        } label: {
+            HStack(spacing: 16) {
+                Image(systemName: icon)
+                    .font(.system(size: 18, weight: .medium))
+                    .foregroundStyle(color)
+                    .frame(width: 24)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(label)
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.primary)
+                    Text(subLabel)
+                        .font(.system(size: 12))
+                        .foregroundStyle(.secondary)
+                }
+                Spacer()
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 14)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var shareItems: [Any] {
+        var items: [Any] = [product.name]
+        if let url = product.imageURL { items.append(url) }
+        return items
+    }
+
+    private func toggleWishlist() {
+        guard let wishlist = services.wishlist else {
+            wishlistAlertMessage = "Wishlist isn't available yet. Try again in a moment."
+            showWishlistAlert = true
+            return
+        }
+        if isWishlisted {
+            do {
+                try wishlist.removeCardVariant(cardID: collectionCardID, variantKey: "sealed")
+                isWishlisted = false
+            } catch {
+                wishlistAlertMessage = error.localizedDescription
+                showWishlistAlert = true
+            }
+            return
+        }
+        guard wishlist.canAddItem else { showWishlistPaywall = true; return }
+        do {
+            try wishlist.addItem(cardID: collectionCardID, variantKey: "sealed")
+            isWishlisted = true
+        } catch WishlistError.limitReached {
+            showWishlistPaywall = true
+        } catch {
+            wishlistAlertMessage = error.localizedDescription
+            showWishlistAlert = true
+        }
+    }
+
+    private func refreshWishlistState() {
+        guard let wishlist = services.wishlist else { isWishlisted = false; return }
+        isWishlisted = wishlist.items.contains { $0.cardID == collectionCardID && $0.variantKey == "sealed" }
+    }
+
+    private var resolvedAuraColors: [Color] {
+        if auraColors.count >= 3 { return Array(auraColors.prefix(3)) }
+        if let first = auraColors.first { return [first, first.opacity(0.74), first.opacity(0.52)] }
+        return [
+            Color(red: 0.50, green: 0.60, blue: 0.74),
+            Color(red: 0.63, green: 0.52, blue: 0.76),
+            Color(red: 0.72, green: 0.60, blue: 0.68)
+        ]
+    }
+
+    private var productHeroSection: some View {
+        CachedAsyncImage(url: product.imageURL, targetSize: CGSize(width: 800, height: 800)) { image in
+            image
+                .resizable()
+                .scaledToFit()
+                .onAppear { extractAuraColors(from: image) }
+        } placeholder: {
+            Color(uiColor: .tertiarySystemFill)
+                .aspectRatio(3 / 4, contentMode: .fit)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(Color.white.opacity(colorScheme == .dark ? 0.16 : 0.22), lineWidth: 1)
+        )
+        .background(
+            RoundedRectangle(cornerRadius: 30, style: .continuous)
+                .fill(LinearGradient(
+                    colors: resolvedAuraColors.map { $0.opacity(colorScheme == .dark ? 0.78 : 0.56) },
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                ))
+                .blur(radius: colorScheme == .dark ? 30 : 24)
+                .scaleEffect(1.12)
+        )
+        .frame(maxWidth: .infinity)
+    }
+
+    @MainActor
+    private func extractAuraColors(from image: Image) {
+        guard auraColors.isEmpty else { return }
+        let renderer = ImageRenderer(content: image.resizable().frame(width: 44, height: 62))
+        renderer.scale = 1
+        guard let uiImage = renderer.uiImage else { return }
+        Task.detached(priority: .utility) {
+            let colors = uiImage.sealedAuraColors(maxColors: 3)
+            guard !colors.isEmpty else { return }
+            await MainActor.run {
+                self.auraColors = colors
+                self.onAuraColors?(colors)
+            }
+        }
     }
 
     @ViewBuilder
@@ -936,398 +1285,24 @@ private struct SealedProductDetailPage: View {
 
     private var matchedSet: TCGSet? {
         let sets = services.cardData.sets
-        if let setID = product.setID {
-            let needle = String(setID)
-            if let exactIdMatch = sets.first(where: { set in
-                set.internalId == needle
-                    || set.setCode == needle
-                    || set.code == needle
-                    || set.tcgdexId == needle
-            }) {
-                return exactIdMatch
-            }
+        if let setName = normalized(product.setName) {
+            if let match = sets.first(where: { normalized($0.name) == setName }) { return match }
         }
         if let series = normalized(product.series) {
-            if let nameMatch = sets.first(where: { normalized($0.name) == series }) {
-                return nameMatch
-            }
-            if let seriesMatch = sets.first(where: { normalized($0.seriesName) == series }) {
-                return seriesMatch
-            }
+            if let match = sets.first(where: { normalized($0.name) == series }) { return match }
+            if let match = sets.first(where: { normalized($0.seriesName) == series }) { return match }
         }
         return nil
     }
 
-    private var displaySeries: String? {
-        trimmed(product.series)
-    }
+    private var displaySeries: String? { trimmed(product.series) }
 
     private func trimmed(_ value: String?) -> String? {
-        guard let raw = value?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else {
-            return nil
-        }
+        guard let raw = value?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return nil }
         return raw
     }
 
-    private func normalized(_ value: String?) -> String? {
-        trimmed(value)?.lowercased()
-    }
-
-    private func cardStyleActionBody(title: String, systemImage: String, tint: Color) -> some View {
-        VStack(spacing: 5) {
-            Image(systemName: systemImage)
-                .font(.system(size: 20, weight: .semibold))
-                .foregroundStyle(tint)
-            Text(title)
-                .font(.system(size: 9, weight: .semibold))
-                .foregroundStyle(tint)
-                .lineLimit(1)
-                .minimumScaleFactor(0.6)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 12)
-        .background {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(glassButtonBackground)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .stroke(glassButtonBorder, lineWidth: 1)
-                )
-        }
-        .accessibilityLabel(title)
-    }
-
-    private var glassButtonBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.06)
-    }
-
-    private var glassButtonBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.18) : Color.black.opacity(0.10)
-    }
-
-    private var sectionInsetBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.05)
-    }
-
-    private var sectionBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
-    }
-
-    private var recentSoldOnEbayButton: some View {
-        Button {
-            guard let url = ebayRecentSoldURL else { return }
-            openURL(url)
-        } label: {
-            HStack(spacing: 10) {
-                ebayWordmark
-                Text("Recent Sold on eBay")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.primary)
-                Spacer(minLength: 0)
-                Image(systemName: "arrow.up.right.square")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(.secondary)
-            }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 12)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(sectionInsetBackground)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(sectionBorder, lineWidth: 1)
-            )
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel("Open recent sold listings on eBay")
-    }
-
-    private var ebayWordmark: some View {
-        HStack(spacing: 0) {
-            Text("e").foregroundStyle(Color(red: 0.89, green: 0.15, blue: 0.13))
-            Text("B").foregroundStyle(Color(red: 0.00, green: 0.38, blue: 0.75))
-            Text("a").foregroundStyle(Color(red: 0.97, green: 0.74, blue: 0.06))
-            Text("y").foregroundStyle(Color(red: 0.44, green: 0.68, blue: 0.11))
-        }
-        .font(.system(size: 18, weight: .bold, design: .rounded))
-    }
-
-    private var ebayRecentSoldURL: URL? {
-        let searchText = [product.name, product.series, product.typeDisplayName, String(product.id)]
-            .compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }
-            .filter { !$0.isEmpty }
-            .joined(separator: " ")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !searchText.isEmpty else { return nil }
-
-        var components = URLComponents(string: "https://www.ebay.com/sch/i.html")
-        components?.queryItems = [
-            URLQueryItem(name: "_nkw", value: searchText),
-            URLQueryItem(name: "LH_Sold", value: "1"),
-            URLQueryItem(name: "LH_Complete", value: "1")
-        ]
-        return components?.url
-    }
-
-    private var detailsSection: some View {
-        SealedDetailSurface(title: "Details") {
-            detailRow("Release", value: releaseDateDisplay)
-            detailRow("Type", value: product.typeDisplayName)
-            if let series = product.series, !series.isEmpty {
-                detailRow("Series", value: series)
-            }
-            if let language = product.language, !language.isEmpty {
-                detailRow("Language", value: language)
-            }
-            if let year = product.year {
-                detailRow("Year", value: String(year))
-            }
-        }
-    }
-
-    private var collectionSection: some View {
-        SealedDetailSurface(title: "Collection") {
-            VStack(spacing: 10) {
-                ForEach(visibleCollectionItems, id: \.persistentModelID) { item in
-                    collectionStackCard(for: item)
-                }
-            }
-        }
-    }
-
-    private func collectionStackCard(for item: CollectionItem) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .top, spacing: 8) {
-                Text("\(item.quantity) x Sealed")
-                    .font(.headline)
-                    .foregroundStyle(.primary)
-            }
-
-            let sources = activeHoldingSources(for: item)
-            if sources.isEmpty {
-                Text("No source details recorded yet.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            } else {
-                VStack(spacing: 8) {
-                    ForEach(sources) { source in
-                        sourceRow(source, item: item)
-                    }
-                }
-            }
-
-            if let notes = cleaned(item.notes) {
-                Text(notes)
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            }
-
-        }
-        .padding(.vertical, 6)
-    }
-
-    private func sourceRow(_ source: SealedHoldingSource, item: CollectionItem) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .center, spacing: 10) {
-                infoBadge(label: source.directionTitle, tint: source.tint)
-                Text("Qty \(source.quantity)")
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(.secondary)
-                if let priceText = source.priceText {
-                    labelValueRow(label: "Price", value: priceText)
-                }
-                Spacer(minLength: 8)
-                Text(source.date.formatted(date: .abbreviated, time: .omitted))
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(.secondary)
-            }
-
-            HStack(spacing: 12) {
-                Spacer(minLength: 8)
-                Button("Edit") {
-                    editingItem = item
-                }
-                .buttonStyle(.bordered)
-                .tint(colorScheme == .dark ? .white : .black)
-
-                Button("Mark As") {
-                    markAsSession = SealedCollectionMarkAsSession(item: item, initialAction: .opened)
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(SealedPricingPalette.actionBlue)
-            }
-        }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(sectionInsetBackground.opacity(0.55))
-        )
-    }
-
-    private func labelValueRow(label: String, value: String) -> some View {
-        HStack(spacing: 4) {
-            Text(label + ":")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
-            Text(value)
-                .font(.caption.weight(.medium))
-                .foregroundStyle(.primary)
-        }
-    }
-
-    private func infoBadge(label: String, tint: Color) -> some View {
-        Text(label)
-            .font(.caption.weight(.semibold))
-            .foregroundStyle(tint)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .background(
-                Capsule(style: .continuous)
-                    .fill(tint.opacity(0.14))
-            )
-    }
-
-    private var releaseDateDisplay: String {
-        if let date = product.releaseDate {
-            return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
-        }
-        if let raw = product.releaseDateRaw, !raw.isEmpty {
-            return raw
-        }
-        return "Unknown"
-    }
-
-    private func detailRow(_ label: String, value: String) -> some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text(label)
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .frame(width: 78, alignment: .leading)
-            Text(value)
-                .font(.subheadline)
-                .foregroundStyle(.primary)
-            Spacer(minLength: 0)
-        }
-    }
-
-    private func activeHoldingSources(for item: CollectionItem) -> [SealedHoldingSource] {
-        (item.costLots ?? [])
-            .filter { $0.quantityRemaining > 0 }
-            .sorted { $0.createdAt > $1.createdAt }
-            .map { lot in
-                let line = lot.sourceLedgerLine
-                let direction = line
-                    .flatMap { LedgerDirection(rawValue: $0.direction) }
-                    .map(directionTitle(for:)) ?? "Acquired"
-                let tint = line
-                    .flatMap { LedgerDirection(rawValue: $0.direction) }
-                    .map(directionTint(for:)) ?? services.theme.accentColor
-                return SealedHoldingSource(
-                    id: line?.id ?? UUID(),
-                    quantity: lot.quantityRemaining,
-                    date: line?.occurredAt ?? item.dateAcquired,
-                    directionTitle: direction,
-                    tint: tint,
-                    priceText: {
-                        guard let unitPrice = line?.unitPrice, unitPrice > 0 else { return nil }
-                        return formatCurrency(amount: unitPrice, code: line?.currencyCode ?? "USD")
-                    }(),
-                    description: cleaned(line?.lineDescription)
-                )
-            }
-    }
-
-    private func directionTitle(for direction: LedgerDirection) -> String {
-        switch direction {
-        case .bought: return "Bought"
-        case .packed: return "Packed"
-        case .tradedIn: return "Traded In"
-        case .giftedIn: return "Gifted"
-        case .adjustmentIn: return "Adjusted In"
-        case .sold: return "Sold"
-        case .tradedOut: return "Traded Out"
-        case .giftedOut: return "Gifted Out"
-        case .adjustmentOut: return "Adjusted Out"
-        }
-    }
-
-    private func directionTint(for direction: LedgerDirection) -> Color {
-        switch direction {
-        case .sold, .tradedOut, .giftedOut, .adjustmentOut:
-            return SealedPricingPalette.danger
-        default:
-            return SealedPricingPalette.success
-        }
-    }
-
-    private func formatCurrency(amount: Double, code: String) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = code
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: amount)) ?? String(format: "%.2f", amount)
-    }
-
-    private func cleaned(_ text: String?) -> String? {
-        guard let text else { return nil }
-        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        return trimmed.isEmpty ? nil : trimmed
-    }
-
-    private var shareItems: [Any] {
-        var items: [Any] = [product.name]
-        if let url = product.imageURL {
-            items.append(url)
-        }
-        return items
-    }
-
-    private func toggleWishlist() {
-        guard let wishlist = services.wishlist else {
-            wishlistAlertMessage = "Wishlist isn’t available yet. Try again in a moment."
-            showWishlistAlert = true
-            return
-        }
-
-        if isWishlisted {
-            do {
-                try wishlist.removeCardVariant(cardID: collectionCardID, variantKey: "sealed")
-                isWishlisted = false
-            } catch {
-                wishlistAlertMessage = error.localizedDescription
-                showWishlistAlert = true
-            }
-            return
-        }
-
-        guard wishlist.canAddItem else {
-            showWishlistPaywall = true
-            return
-        }
-
-        do {
-            try wishlist.addItem(cardID: collectionCardID, variantKey: "sealed")
-            isWishlisted = true
-        } catch WishlistError.limitReached {
-            showWishlistPaywall = true
-        } catch {
-            wishlistAlertMessage = error.localizedDescription
-            showWishlistAlert = true
-        }
-    }
-
-    private func refreshWishlistState() {
-        guard let wishlist = services.wishlist else {
-            isWishlisted = false
-            return
-        }
-        isWishlisted = wishlist.items.contains {
-            $0.cardID == collectionCardID && $0.variantKey == "sealed"
-        }
-    }
+    private func normalized(_ value: String?) -> String? { trimmed(value)?.lowercased() }
 }
 
 private struct SealedDetailSurface<Content: View>: View {
@@ -1344,30 +1319,13 @@ private struct SealedDetailSurface<Content: View>: View {
             Text(title)
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(Color.primary)
-
             content
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .fill(surfaceBackground)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .stroke(surfaceBorder, lineWidth: 1)
-        )
+        .glassCardStyle(cornerRadius: 26, interactive: false)
     }
 
-    @Environment(\.colorScheme) private var colorScheme
-
-    private var surfaceBackground: Color {
-        colorScheme == .dark ? .black : .white
-    }
-
-    private var surfaceBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
-    }
 }
 
 struct AddSealedToFolderSheet: View {
@@ -1497,14 +1455,24 @@ private struct SealedProductPricingPanel: View {
     @State private var currentPrice = "—"
     @State private var chartRange: SealedChartRange = .oneMonth
     @State private var scrubPoint: PriceDataPoint? = nil
+    @State private var isLoading = false
 
     private var chartPoints: [PriceDataPoint] {
         guard let history else { return [] }
         switch chartRange {
-        case .oneMonth: return Array(history.daily.suffix(30))
-        case .threeMonths: return Array(history.weekly.suffix(13))
-        case .oneYear: return Array(history.monthly.suffix(12))
+        case .oneMonth:     return Array(history.daily.suffix(30))
+        case .threeMonths:  return Array(history.weekly.suffix(13))
+        case .oneYear:      return Array(history.monthly.suffix(12))
         }
+    }
+
+    private var change1d: Double? { pctChange(Array(history?.daily.suffix(2) ?? [])) }
+    private var change7d: Double? { pctChange(Array(history?.daily.suffix(8) ?? [])) }
+    private var change30d: Double? { pctChange(Array(history?.daily.suffix(31) ?? [])) }
+
+    private func pctChange(_ pts: [PriceDataPoint]) -> Double? {
+        guard pts.count >= 2, pts.first!.price > 0 else { return nil }
+        return ((pts.last!.price - pts.first!.price) / pts.first!.price) * 100
     }
 
     var body: some View {
@@ -1513,6 +1481,7 @@ private struct SealedProductPricingPanel: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .padding(.top, 12)
+                .animation(.none, value: scrubPoint?.label)
 
             Text(scrubPoint != nil
                  ? services.priceDisplay.currency.format(amountUSD: scrubPoint!.price, usdToGbp: services.pricing.usdToGbp)
@@ -1520,49 +1489,54 @@ private struct SealedProductPricingPanel: View {
                 .font(.system(size: 28, weight: .bold))
                 .foregroundStyle(.primary)
                 .padding(.top, 2)
+                .animation(.none, value: scrubPoint?.price)
+
+            if change1d != nil || change7d != nil || change30d != nil {
+                HStack(spacing: 12) {
+                    changeBadge(label: "1D", value: change1d)
+                    changeBadge(label: "7D", value: change7d)
+                    changeBadge(label: "1M", value: change30d)
+                }
+                .padding(.top, 8)
+                .padding(.bottom, 4)
+            }
 
             if !chartPoints.isEmpty {
                 chartView
-                    .padding(.top, 16)
+                    .padding(.top, 4)
 
                 Picker("Range", selection: $chartRange) {
-                    ForEach(SealedChartRange.allCases, id: \.self) { range in
-                        Text(range.rawValue).tag(range)
+                    ForEach(SealedChartRange.allCases, id: \.self) { r in
+                        Text(r.rawValue).tag(r)
                     }
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
-                .padding(.bottom, 16)
+                .padding(.bottom, 4)
+            } else if isLoading {
+                ProgressView()
+                    .tint(.primary)
+                    .padding(.vertical, 24)
             } else {
                 Spacer().frame(height: 16)
             }
         }
         .padding(.horizontal, 6)
-        .padding(.vertical, 18)
+        .padding(.vertical, 4)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .fill(colorScheme == .dark ? .black : .white)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 26, style: .continuous)
-                        .stroke(colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08), lineWidth: 1)
-                )
-        )
-        .task(id: taskID) {
+        .task(id: "\(productID)|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)") {
+            isLoading = true
             history = services.sealedProducts.history(for: productID)
             refreshPrice()
+            isLoading = false
         }
-        .onChange(of: services.priceDisplay.currency) { _, _ in
-            refreshPrice()
-        }
-        .onChange(of: services.pricing.usdToGbp) { _, _ in
-            refreshPrice()
-        }
+        .onChange(of: services.priceDisplay.currency) { _, _ in refreshPrice() }
+        .onChange(of: services.pricing.usdToGbp) { _, _ in refreshPrice() }
     }
 
-    private var taskID: String {
-        "\(productID)|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)"
+    private var panelDivider: Color {
+        colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
     }
 
     private var chartView: some View {
@@ -1586,78 +1560,66 @@ private struct SealedProductPricingPanel: View {
                 yEnd: .value("Price", point.price)
             )
             .interpolationMethod(.catmullRom)
-            .foregroundStyle(
-                LinearGradient(
-                    colors: [services.theme.accentColor.opacity(0.28), services.theme.accentColor.opacity(0.03)],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
+            .foregroundStyle(LinearGradient(
+                colors: [services.theme.accentColor.opacity(0.28), services.theme.accentColor.opacity(0.03)],
+                startPoint: .top, endPoint: .bottom
+            ))
         }
         .chartYScale(domain: minP...maxP)
         .chartXAxis {
             let stride = max(1, points.count / 4)
             let lastIndex = points.count - 1
-            let visibleLabels = Set(points.enumerated().compactMap { idx, point -> String? in
-                (idx == 0 || idx == lastIndex || idx % stride == 0) ? point.label : nil
+            let visibleLabels = Set(points.enumerated().compactMap { i, p -> String? in
+                (i == 0 || i == lastIndex || i % stride == 0) ? p.label : nil
             })
             AxisMarks(values: points.map(\.label)) { value in
                 if let label = value.as(String.self), visibleLabels.contains(label) {
-                    AxisValueLabel(truncatedLabel(label), anchor: .top)
+                    let isFirst = label == points.first?.label
+                    let isLast  = label == points.last?.label
+                    AxisValueLabel(truncatedLabel(label), anchor: isFirst ? .topLeading : isLast ? .topTrailing : .top)
+                        .foregroundStyle(Color(uiColor: .label))
                         .font(.system(size: 9))
                 }
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
-                    .foregroundStyle(colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10))
+                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4])).foregroundStyle(panelDivider)
             }
         }
         .chartYAxis {
             AxisMarks(position: .trailing) { value in
                 if let price = value.as(Double.self) {
                     AxisValueLabel(services.priceDisplay.currency.formatAxisTick(usd: price, usdToGbp: services.pricing.usdToGbp))
+                        .foregroundStyle(Color(uiColor: .label))
                         .font(.system(size: 9))
                 }
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
-                    .foregroundStyle(colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10))
+                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4])).foregroundStyle(panelDivider)
             }
         }
         .chartOverlay { proxy in
             GeometryReader { geo in
                 if let plotAnchor = proxy.plotFrame {
                     let plotFrame = geo[plotAnchor]
-
                     if let scrub = scrubPoint, let xPos = proxy.position(forX: scrub.label) {
                         let x = xPos + plotFrame.origin.x
                         Rectangle()
-                            .fill(colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10))
-                            .frame(width: 1.5)
-                            .frame(maxHeight: .infinity)
-                            .offset(x: x - 0.75)
-                            .allowsHitTesting(false)
-
+                            .fill(panelDivider)
+                            .frame(width: 1.5).frame(maxHeight: .infinity)
+                            .offset(x: x - 0.75).allowsHitTesting(false)
                         if let yPos = proxy.position(forY: scrub.price) {
-                            Circle()
-                                .fill(services.theme.accentColor)
+                            Circle().fill(services.theme.accentColor)
                                 .frame(width: 8, height: 8)
                                 .offset(x: x - 4, y: plotFrame.origin.y + yPos - 4)
                                 .allowsHitTesting(false)
                         }
                     }
-
-                    Rectangle()
-                        .fill(Color.clear)
-                        .contentShape(Rectangle())
-                        .gesture(
-                            DragGesture(minimumDistance: 0)
-                                .onChanged { value in
-                                    let x = value.location.x - plotFrame.origin.x
-                                    guard x >= 0, x <= plotFrame.width else { return }
-                                    if let label: String = proxy.value(atX: x) {
-                                        scrubPoint = nearestPoint(to: label, in: points)
-                                    }
+                    Rectangle().fill(Color.clear).contentShape(Rectangle())
+                        .gesture(DragGesture(minimumDistance: 0)
+                            .onChanged { value in
+                                let x = value.location.x - plotFrame.origin.x
+                                guard x >= 0, x <= plotFrame.width else { return }
+                                if let label: String = proxy.value(atX: x) {
+                                    scrubPoint = nearestPoint(to: label, in: points)
                                 }
-                                .onEnded { _ in
-                                    scrubPoint = nil
-                                }
+                            }
+                            .onEnded { _ in scrubPoint = nil }
                         )
                 }
             }
@@ -1667,10 +1629,7 @@ private struct SealedProductPricingPanel: View {
     }
 
     private func refreshPrice() {
-        guard let usd = services.sealedProducts.marketPriceUSD(for: productID) else {
-            currentPrice = "—"
-            return
-        }
+        guard let usd = services.sealedProducts.marketPriceUSD(for: productID) else { currentPrice = "—"; return }
         currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
     }
 
@@ -1678,103 +1637,79 @@ private struct SealedProductPricingPanel: View {
     private func changeBadge(label: String, value: Double?) -> some View {
         if let value {
             HStack(spacing: 3) {
-                Text(label)
-                    .font(.caption2.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                Image(systemName: value >= 0 ? "arrow.up" : "arrow.down")
-                    .font(.system(size: 9, weight: .bold))
-                Text(String(format: "%.1f%%", abs(value)))
-                    .font(.caption.weight(.semibold))
+                Text(label).font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
+                Image(systemName: value >= 0 ? "arrow.up" : "arrow.down").font(.system(size: 9, weight: .bold))
+                Text(String(format: "%.1f%%", abs(value))).font(.caption.weight(.semibold))
             }
             .foregroundStyle(value >= 0 ? SealedPricingPalette.success : SealedPricingPalette.danger)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background(
-                Capsule()
-                    .fill((value >= 0 ? SealedPricingPalette.success : SealedPricingPalette.danger).opacity(0.15))
-            )
+            .padding(.horizontal, 8).padding(.vertical, 4)
+            .background(Capsule().fill((value >= 0 ? SealedPricingPalette.success : SealedPricingPalette.danger).opacity(0.15)))
         }
     }
 
     private func truncatedLabel(_ label: String) -> String {
         switch chartRange {
-        case .oneMonth:
-            return dailyToShortUK(label)
-        case .threeMonths:
-            return weekLabelToShortUK(label)
-        case .oneYear:
-            return monthLabelToShort(label)
+        case .oneMonth:    return dailyToShortUK(label)
+        case .threeMonths: return weekLabelToShortUK(label)
+        case .oneYear:     return monthLabelToShort(label)
         }
     }
 
     private func scrubLabel(_ label: String) -> String {
         switch chartRange {
-        case .oneMonth:
-            return dailyToFullUK(label)
-        case .threeMonths:
-            return weekLabelToFullUK(label)
+        case .oneMonth:    return dailyToFullUK(label)
+        case .threeMonths: return weekLabelToFullUK(label)
         case .oneYear:
             let parts = label.components(separatedBy: "-")
             guard parts.count == 2, let month = Int(parts[1]) else { return label }
-            let fmt = DateFormatter()
-            return "\(fmt.shortMonthSymbols[month - 1]) \(parts[0])"
+            return "\(DateFormatter().shortMonthSymbols[month - 1]) \(parts[0])"
         }
     }
 
     private func dailyToShortUK(_ label: String) -> String {
-        let parts = label.components(separatedBy: "-")
-        guard parts.count == 3 else { return label }
-        return "\(parts[2])/\(parts[1])"
+        let p = label.components(separatedBy: "-")
+        guard p.count == 3 else { return label }
+        return "\(p[2])/\(p[1])"
     }
 
     private func dailyToFullUK(_ label: String) -> String {
-        let parts = label.components(separatedBy: "-")
-        guard parts.count == 3, parts[0].count == 4 else { return label }
-        let yy = String(parts[0].suffix(2))
-        return "\(parts[2])/\(parts[1])/\(yy)"
+        let p = label.components(separatedBy: "-")
+        guard p.count == 3, p[0].count == 4 else { return label }
+        return "\(p[2])/\(p[1])/\(String(p[0].suffix(2)))"
     }
 
     private func weekLabelToShortUK(_ label: String) -> String {
         guard let date = weekLabelToDate(label) else { return label }
-        let fmt = DateFormatter()
-        fmt.dateFormat = "dd/MM"
-        fmt.timeZone = TimeZone(identifier: "UTC")
+        let fmt = DateFormatter(); fmt.dateFormat = "dd/MM"; fmt.timeZone = TimeZone(identifier: "UTC")
         return fmt.string(from: date)
     }
 
     private func weekLabelToFullUK(_ label: String) -> String {
         guard let date = weekLabelToDate(label) else { return label }
-        let fmt = DateFormatter()
-        fmt.dateFormat = "dd/MM/yy"
-        fmt.timeZone = TimeZone(identifier: "UTC")
+        let fmt = DateFormatter(); fmt.dateFormat = "dd/MM/yy"; fmt.timeZone = TimeZone(identifier: "UTC")
         return fmt.string(from: date)
     }
 
     private func weekLabelToDate(_ label: String) -> Date? {
         let parts = label.components(separatedBy: "-W")
-        guard parts.count == 2,
-              let year = Int(parts[0]),
-              let week = Int(parts[1]) else { return nil }
+        guard parts.count == 2, let year = Int(parts[0]), let week = Int(parts[1]) else { return nil }
         var cal = Calendar(identifier: .iso8601)
         cal.timeZone = TimeZone(identifier: "UTC")!
         return cal.date(from: DateComponents(weekOfYear: week, yearForWeekOfYear: year))
     }
 
     private func monthLabelToShort(_ label: String) -> String {
-        let parts = label.components(separatedBy: "-")
-        guard parts.count == 2, let month = Int(parts[1]) else { return label }
-        let fmt = DateFormatter()
-        return fmt.shortMonthSymbols[month - 1]
+        let p = label.components(separatedBy: "-")
+        guard p.count == 2, let month = Int(p[1]) else { return label }
+        return DateFormatter().shortMonthSymbols[month - 1]
     }
 
     private func nearestPoint(to label: String, in points: [PriceDataPoint]) -> PriceDataPoint? {
         guard !points.isEmpty else { return nil }
         if let exact = points.first(where: { $0.label == label }) { return exact }
         let sorted = points.sorted { $0.label < $1.label }
-        for (index, point) in sorted.enumerated() {
-            if point.label > label {
-                return index == 0 ? point : sorted[index - 1]
-            }
+        for (i, p) in sorted.enumerated() {
+            if p.label > label { return i == 0 ? p : sorted[i - 1] }
         }
         return sorted.last
     }
@@ -2414,5 +2349,53 @@ struct NormalizedProductIndex: Equatable {
     func setName(at index: Int) -> String {
         guard index >= 0, index < setNames.count else { return "" }
         return setNames[index]
+    }
+}
+
+private extension UIImage {
+    func sealedAuraColors(maxColors: Int) -> [Color] {
+        guard maxColors > 0, let cgImage else { return [] }
+        let sampleWidth = 44, sampleHeight = 62, bytesPerPixel = 4
+        let bytesPerRow = sampleWidth * bytesPerPixel
+        var raw = [UInt8](repeating: 0, count: sampleHeight * bytesPerRow)
+        guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+              let context = CGContext(data: &raw, width: sampleWidth, height: sampleHeight,
+                                     bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace,
+                                     bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)
+        else { return [] }
+        context.interpolationQuality = .medium
+        context.draw(cgImage, in: CGRect(x: 0, y: 0, width: sampleWidth, height: sampleHeight))
+        struct AuraBin: Hashable { let r, g, b: Int }
+        var histogram: [AuraBin: Double] = [:]
+        let step = 32.0
+        for y in 0..<sampleHeight {
+            for x in 0..<sampleWidth {
+                let i = y * bytesPerRow + x * bytesPerPixel
+                let r = Double(raw[i]), g = Double(raw[i+1]), b = Double(raw[i+2]), a = Double(raw[i+3]) / 255.0
+                guard a > 0.6 else { continue }
+                let maxC = max(r, g, b) / 255.0, minC = min(r, g, b) / 255.0
+                let saturation = maxC == 0 ? 0.0 : (maxC - minC) / maxC
+                let brightness = maxC
+                guard saturation >= 0.22, brightness >= 0.18, brightness <= 0.94 else { continue }
+                let bin = AuraBin(r: Int(floor(r/step)), g: Int(floor(g/step)), b: Int(floor(b/step)))
+                histogram[bin, default: 0] += 0.3 + saturation * 1.6 + brightness * 0.2
+            }
+        }
+        let sortedBins = histogram.sorted { $0.value > $1.value }.map(\.key)
+        guard !sortedBins.isEmpty else { return [] }
+        var selected: [SIMD3<Double>] = []
+        for bin in sortedBins {
+            let c = SIMD3<Double>((Double(bin.r)+0.5)*step/255, (Double(bin.g)+0.5)*step/255, (Double(bin.b)+0.5)*step/255)
+            if selected.allSatisfy({ existing in let d = c - existing; return sqrt(d.x*d.x+d.y*d.y+d.z*d.z) > 0.22 }) {
+                selected.append(c)
+            }
+            if selected.count == maxColors { break }
+        }
+        if selected.isEmpty, let f = sortedBins.first {
+            selected = [SIMD3<Double>((Double(f.r)+0.5)*step/255, (Double(f.g)+0.5)*step/255, (Double(f.b)+0.5)*step/255)]
+        }
+        if selected.count == 1, let f = selected.first { selected += [f*0.86, f*0.72] }
+        else if selected.count == 2 { selected.append(selected[1]*0.7 + selected[0]*0.3) }
+        return selected.prefix(maxColors).map { Color(red: $0.x, green: $0.y, blue: $0.z) }
     }
 }

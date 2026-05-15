@@ -13,7 +13,7 @@ struct TransactionsView: View {
     @State private var cardNamesByID: [String: String] = [:]
     @State private var cardImageURLsByID: [String: URL] = [:]
     @State private var showAddActivity = false
-    @State private var selectedLedgerLine: LedgerLine?
+    @State private var selectedCardForDetail: Card? = nil
     @State private var editingLedgerLine: LedgerLine?
     @State private var pnlRange: ActivityPnLRange = .month
     @State private var holdingsCollectionValue: Double = 0
@@ -120,15 +120,6 @@ struct TransactionsView: View {
                 }
             }
         }
-        .overlay {
-            if selectedLedgerLine != nil {
-                Color.black.opacity(0.55)
-                    .ignoresSafeArea()
-                    .transition(.opacity)
-                    .allowsHitTesting(false)
-                    .animation(.easeInOut(duration: 0.18), value: selectedLedgerLine != nil)
-            }
-        }
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
             transactionsHeader
@@ -149,27 +140,9 @@ struct TransactionsView: View {
         .sheet(isPresented: $showAddActivity) {
             AddManualActivityView()
         }
-        .sheet(item: $selectedLedgerLine) { line in
-            TransactionDetailSheet(
-                line: line,
-                title: primaryTitle(for: line),
-                subtitle: secondarySubtitle(for: line),
-                imageURL: imageURL(for: line),
-                directionText: directionTitle(for: line),
-                productKindText: productKindTitle(for: line),
-                variantText: cleaned(line.variantKey).map(variantTitle),
-                moneySummary: moneySummary(for: line),
-                amountColor: colorForSignedValue(signedCashValue(for: line)),
-                availableMarkActions: markActions(for: line),
-                onMarkAs: { action in
-                    markLedgerLine(line, as: action)
-                }
-            ) {
-                selectedLedgerLine = nil
-                DispatchQueue.main.async {
-                    editingLedgerLine = line
-                }
-            }
+        .sheet(item: $selectedCardForDetail) { card in
+            CardDetailSheet(cards: [card], startIndex: 0)
+                .environment(services)
         }
         .sheet(item: $editingLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
@@ -261,7 +234,12 @@ struct TransactionsView: View {
                     .listRowSeparator(.hidden)
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        selectedLedgerLine = line
+                        guard let cardID = cleaned(line.cardID) else { return }
+                        Task {
+                            if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                                await MainActor.run { selectedCardForDetail = card }
+                            }
+                        }
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button(role: .destructive) {

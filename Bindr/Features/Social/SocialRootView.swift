@@ -373,41 +373,14 @@ struct SocialRootView: View {
     }
 
     private var signInCard: some View {
-        Form {
-            Section {
-                Text("Sign in with your Apple ID to create and sync your social profile.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-
-                SignInWithAppleButton(.signIn) { request in
-                    let nonce = randomNonceString()
-                    currentNonce = nonce
-                    request.requestedScopes = [.email, .fullName]
-                    request.nonce = sha256(nonce)
-                } onCompletion: { result in
-                    Task {
-                        await handleAppleSignInResult(result)
-                    }
-                }
-                .signInWithAppleButtonStyle(.black)
-                .frame(height: 48)
-            } header: {
-                Text("Account")
-            } footer: {
-                Text("This uses Apple’s native authentication sheet and then exchanges the Apple identity token for a Supabase session.")
+        SocialSignInUpsellView(
+            currentNonce: $currentNonce,
+            errorMessage: errorMessage,
+            rootFloatingChromeInset: rootFloatingChromeInset,
+            onSignInResult: { result in
+                Task { await handleAppleSignInResult(result) }
             }
-
-            if let errorMessage {
-                Section {
-                    Text(errorMessage)
-                        .font(.footnote)
-                        .foregroundStyle(.red)
-                }
-            }
-        }
-        .scrollContentBackground(.hidden)
-        .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)
-        .bindrPageBackground(ignoresSafeArea: false)
+        )
     }
 
     @ViewBuilder
@@ -736,6 +709,129 @@ struct SocialRootView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .systemGroupedBackground))
+    }
+}
+
+private struct SocialSignInUpsellView: View {
+    @Binding var currentNonce: String?
+    let errorMessage: String?
+    let rootFloatingChromeInset: CGFloat
+    let onSignInResult: (Result<ASAuthorization, Error>) -> Void
+
+    @Environment(\.bindrAccent) private var accent
+
+    private func sha256(_ input: String) -> String {
+        let digest = CryptoKit.SHA256.hash(data: Data(input.utf8))
+        return digest.map { String(format: "%02x", $0) }.joined()
+    }
+
+    private func randomNonce(length: Int = 32) -> String {
+        let charset = Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+        var result = ""
+        var remaining = length
+        while remaining > 0 {
+            var bytes = [UInt8](repeating: 0, count: 16)
+            _ = SecRandomCopyBytes(kSecRandomDefault, bytes.count, &bytes)
+            bytes.forEach { byte in
+                guard remaining > 0, byte < charset.count else { return }
+                result.append(charset[Int(byte)])
+                remaining -= 1
+            }
+        }
+        return result
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("The hunt is")
+                            .font(.system(size: 34, weight: .bold))
+                        Text("better together.")
+                            .font(.system(size: 34, weight: .bold))
+                            .italic()
+                            .foregroundStyle(accent)
+                    }
+                    .padding(.horizontal, 24)
+
+                    Text("One tap unlocks the social side of your binder.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal, 24)
+                        .padding(.top, 12)
+
+                    VStack(spacing: 0) {
+                        SocialFeatureRow(icon: "arrow.left.arrow.right", title: "Trade wall access", description: "List, browse, and lock in deals.", number: "01")
+                        Divider()
+                        SocialFeatureRow(icon: "person.2", title: "Friends & activity", description: "See pulls and listings live.", number: "02")
+                        Divider()
+                        SocialFeatureRow(icon: "bell", title: "Grail alerts", description: "Ping the moment yours posts.", number: "03")
+                        Divider()
+                        SocialFeatureRow(icon: "square.and.arrow.up", title: "Collection profile", description: "Share a page worth showing off.", number: "04")
+                        Divider()
+                        SocialFeatureRow(icon: "message", title: "Comments & likes", description: "Hype your fellow Trainers. Get hyped back.", number: "05")
+                    }
+                    .padding(.horizontal, 24)
+                    .padding(.top, 24)
+                }
+            }
+
+            VStack(spacing: 12) {
+                if let errorMessage {
+                    Text(errorMessage)
+                        .font(.footnote)
+                        .foregroundStyle(BindrPalette.alertRed)
+                        .multilineTextAlignment(.center)
+                }
+                SignInWithAppleButton(.signIn) { request in
+                    let nonce = randomNonce()
+                    currentNonce = nonce
+                    request.requestedScopes = [.email, .fullName]
+                    request.nonce = sha256(nonce)
+                } onCompletion: { result in onSignInResult(result) }
+                .signInWithAppleButtonStyle(.whiteOutline)
+                .frame(height: 52)
+                .cornerRadius(14)
+            }
+            .padding(.horizontal, 24)
+            .padding(.top, 16)
+            .padding(.bottom, 32)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .bindrPageBackground(ignoresSafeArea: false)
+        .contentMargins(.top, rootFloatingChromeInset + 16, for: .scrollContent)
+    }
+}
+
+private struct SocialFeatureRow: View {
+    let icon: String
+    let title: String
+    let description: String
+    let number: String
+
+    var body: some View {
+        HStack(spacing: 16) {
+            Image(systemName: icon)
+                .font(.system(size: 18, weight: .medium))
+                .foregroundStyle(.secondary)
+                .frame(width: 28)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(title)
+                    .font(.system(size: 15, weight: .semibold))
+                Text(description)
+                    .font(.system(size: 13))
+                    .foregroundStyle(.secondary)
+            }
+
+            Spacer()
+
+            Text(number)
+                .font(.system(size: 13, weight: .medium, design: .monospaced))
+                .foregroundStyle(.tertiary)
+        }
+        .padding(.vertical, 16)
     }
 }
 

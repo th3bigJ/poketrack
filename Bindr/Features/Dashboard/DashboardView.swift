@@ -50,7 +50,6 @@ struct DashboardView: View {
     @State private var mostExpensiveHolding: DashboardTopHolding? = nil
     @State private var priceBandBreakdown: [DashboardBreakdownEntry] = []
     @State private var setCompletionEntries: [DashboardSetCompletionEntry] = []
-    @State private var selectedRecentLedgerLine: LedgerLine?
     @State private var editingRecentLedgerLine: LedgerLine?
     @State private var marketBiggestGainer7Days: MarketTrendMover? = nil
     @State private var marketBiggestDecliner7Days: MarketTrendMover? = nil
@@ -285,14 +284,6 @@ struct DashboardView: View {
             .padding(.top, 18)
             .padding(.bottom, 32)
         }
-        .overlay {
-            if selectedRecentLedgerLine != nil {
-                Color.black.opacity(0.55)
-                    .ignoresSafeArea()
-                    .transition(.opacity)
-                    .allowsHitTesting(false)
-            }
-        }
         .safeAreaPadding(.top, rootFloatingChromeInset)
         .background(dashboardBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
@@ -361,40 +352,6 @@ struct DashboardView: View {
                 services.collectionValue?.persistLastKnownValue(snapshot)
             }
         }
-        .sheet(item: $selectedRecentLedgerLine) { line in
-            TransactionDetailSheet(
-                line: line,
-                title: activityTitle(for: line),
-                subtitle: activitySubtitle(for: line),
-                imageURL: activityImageURL(for: line),
-                directionText: badgeText(for: line) ?? "Activity",
-                productKindText: productKindTitle(for: line),
-                variantText: cleaned(line.variantKey),
-                moneySummary: transactionMoneySummary(for: line),
-                amountColor: directionColor(for: line),
-                availableMarkActions: markActions(for: line),
-                onMarkAs: { action in
-                    markLedgerLine(line, as: action)
-                },
-                onEdit: {
-                    selectedRecentLedgerLine = nil
-                    DispatchQueue.main.async {
-                        editingRecentLedgerLine = line
-                    }
-                },
-                onViewCard: {
-                    guard let cardID = cleaned(line.cardID) else { return }
-                    selectedRecentLedgerLine = nil
-                    Task {
-                        if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                            await MainActor.run {
-                                selectedCardForDetail = card
-                            }
-                        }
-                    }
-                }
-            )
-        }
         .sheet(item: $selectedCardForDetail) { card in
             CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
@@ -402,7 +359,6 @@ struct DashboardView: View {
         .sheet(item: $editingRecentLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
         }
-        .animation(.easeInOut(duration: 0.18), value: selectedRecentLedgerLine != nil)
     }
 
     private var milestoneBanner: some View {
@@ -1094,7 +1050,12 @@ struct DashboardView: View {
                     VStack(spacing: 0) {
                         ForEach(recentLines) { line in
                             Button {
-                                selectedRecentLedgerLine = line
+                                guard let cardID = cleaned(line.cardID) else { return }
+                                Task {
+                                    if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                                        await MainActor.run { selectedCardForDetail = card }
+                                    }
+                                }
                             } label: {
                                 dashboardActivityRow(line: line)
                             }

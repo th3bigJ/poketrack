@@ -111,10 +111,17 @@ final class SealedProductService {
             func parseWindow(_ key: String) -> [PriceDataPoint] {
                 guard let pairs = windows[key] else { return [] }
                 return pairs.compactMap { pair -> PriceDataPoint? in
-                    guard pair.count >= 2,
-                          let label = pair[0] as? String,
-                          let price = (pair[1] as? Double) ?? (pair[1] as? NSNumber).map({ $0.doubleValue })
-                    else { return nil }
+                    guard pair.count >= 2, let label = pair[0] as? String else { return nil }
+                    let price: Double
+                    if let d = pair[1] as? Double {
+                        price = d
+                    } else if let n = pair[1] as? NSNumber {
+                        price = n.doubleValue
+                    } else if let s = pair[1] as? String, let d = Double(s) {
+                        price = d
+                    } else {
+                        return nil
+                    }
                     return PriceDataPoint(id: label, label: label, price: price)
                 }
             }

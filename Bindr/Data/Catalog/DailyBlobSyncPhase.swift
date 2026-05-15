@@ -50,36 +50,54 @@ struct DailyBlobSyncPhase {
         await progress.setStatus("Refreshing daily market data…")
         await progress.addPlannedFiles(staleKeys.count)
 
-        for (key, url) in staleKeys {
-            let etagMetaKey = "daily_blob_http_etag_" + key
-            var request = URLRequest(url: url)
-            if !forceRefresh, let prev = await store.meta(etagMetaKey), !prev.isEmpty {
-                request.setValue(prev, forHTTPHeaderField: "If-None-Match")
-            }
-            guard let (data, resp) = try? await session.data(for: request),
-                  let http = resp as? HTTPURLResponse
-            else { await progress.completeFile(); continue }
+        typealias BlobResult = (key: String, data: Data?, etag: String?, touched: Bool)
 
-            if http.statusCode == 304 {
-                try? await store.touchDailyBlobFetchedAt(key: key)
-                if let e = http.value(forHTTPHeaderField: "ETag") ?? http.value(forHTTPHeaderField: "Etag") {
-                    try? await store.setMeta(etagMetaKey, e)
+        let sess = session
+        let shouldSendEtag = !forceRefresh
+        let etags: [String: String] = await {
+            var map: [String: String] = [:]
+            for (key, _) in staleKeys {
+                let etagMetaKey = "daily_blob_http_etag_" + key
+                if let prev = await store.meta(etagMetaKey), !prev.isEmpty {
+                    map[key] = prev
                 }
-                await progress.completeFile(byteCount: 0)
-                continue
             }
-            guard (200...299).contains(http.statusCode), !data.isEmpty else {
-                await progress.completeFile(); continue
-            }
-            do {
-                try await store.upsertDailyBlob(key: key, data: data)
-                if let e = http.value(forHTTPHeaderField: "ETag") ?? http.value(forHTTPHeaderField: "Etag") {
-                    try? await store.setMeta(etagMetaKey, e)
+            return map
+        }()
+
+        await withTaskGroup(of: BlobResult.self) { group in
+            for (key, url) in staleKeys {
+                let prevEtag = shouldSendEtag ? etags[key] : nil
+                group.addTask {
+                    var request = URLRequest(url: url)
+                    if let etag = prevEtag { request.setValue(etag, forHTTPHeaderField: "If-None-Match") }
+                    guard let (data, resp) = try? await sess.data(for: request),
+                          let http = resp as? HTTPURLResponse
+                    else { return (key, nil, nil, false) }
+                    let etag = http.value(forHTTPHeaderField: "ETag") ?? http.value(forHTTPHeaderField: "Etag")
+                    if http.statusCode == 304 { return (key, nil, etag, true) }
+                    guard (200...299).contains(http.statusCode), !data.isEmpty else { return (key, nil, nil, false) }
+                    return (key, data, etag, false)
                 }
-                await progress.completeFile(byteCount: Int64(data.count))
-                downloaded += Int64(data.count)
-            } catch {
-                await progress.completeFile()
+            }
+            for await result in group {
+                let etagMetaKey = "daily_blob_http_etag_" + result.key
+                if result.touched {
+                    try? await store.touchDailyBlobFetchedAt(key: result.key)
+                    if let e = result.etag { try? await store.setMeta(etagMetaKey, e) }
+                    await progress.completeFile(byteCount: 0)
+                } else if let data = result.data {
+                    do {
+                        try await store.upsertDailyBlob(key: result.key, data: data)
+                        if let e = result.etag { try? await store.setMeta(etagMetaKey, e) }
+                        await progress.completeFile(byteCount: Int64(data.count))
+                        downloaded += Int64(data.count)
+                    } catch {
+                        await progress.completeFile()
+                    }
+                } else {
+                    await progress.completeFile()
+                }
             }
         }
         return downloaded

@@ -580,27 +580,56 @@ struct MarketPricingSyncPhase {
         await progress.setStatus("Downloading sealed price data…")
         await progress.addPlannedFiles(missingDailyKeys.count)
 
+        typealias SealedDailyResult = (
+            compositeKey: String,
+            dateKey: String,
+            bucket: [String: Double]?,
+            bytes: Int64
+        )
+
         var totalBytes: Int64 = 0
         var accumulated: [String: [[String]]] = [:]
         var latestPrices: [String: Double] = [:]
         var latestDate: String = ""
 
-        for compositeKey in missingDailyKeys {
-            let dateKey = String(compositeKey.dropFirst("sealed/".count))
-            let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
-            guard let data = await Self.fetchBodyIfOK(session: session, url: url),
-                  let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
-            else {
-                try? await store.markBucketProcessed(key: compositeKey)
-                await progress.completeFile(); continue
+        await withTaskGroup(of: SealedDailyResult.self) { group in
+            var iterator = missingDailyKeys.makeIterator()
+            for _ in 0..<min(Self.maxConcurrentBackfillRequests, missingDailyKeys.count) {
+                if let key = iterator.next() {
+                    let dateKey = String(key.dropFirst("sealed/".count))
+                    group.addTask {
+                        let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
+                        guard let data = await Self.fetchBodyIfOK(session: self.session, url: url),
+                              let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
+                        else { return (key, dateKey, nil, 0) }
+                        return (key, dateKey, bucket, Int64(data.count))
+                    }
+                }
             }
-            totalBytes += Int64(data.count)
-            for (productIdStr, price) in bucket {
-                accumulated[productIdStr, default: []].append([dateKey, String(price)])
-                if dateKey >= latestDate { latestDate = dateKey; latestPrices[productIdStr] = price }
+            for await result in group {
+                if let key = iterator.next() {
+                    let dateKey = String(key.dropFirst("sealed/".count))
+                    group.addTask {
+                        let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
+                        guard let data = await Self.fetchBodyIfOK(session: self.session, url: url),
+                              let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
+                        else { return (key, dateKey, nil, 0) }
+                        return (key, dateKey, bucket, Int64(data.count))
+                    }
+                }
+                guard let bucket = result.bucket else {
+                    try? await store.markBucketProcessed(key: result.compositeKey)
+                    await progress.completeFile(); continue
+                }
+                totalBytes += result.bytes
+                let dateKey = result.dateKey
+                for (productIdStr, price) in bucket {
+                    accumulated[productIdStr, default: []].append([dateKey, String(price)])
+                    if dateKey >= latestDate { latestDate = dateKey; latestPrices[productIdStr] = price }
+                }
+                try? await store.markBucketProcessed(key: result.compositeKey)
+                await progress.completeFile(byteCount: result.bytes)
             }
-            try? await store.markBucketProcessed(key: compositeKey)
-            await progress.completeFile(byteCount: Int64(data.count))
         }
 
         if !latestPrices.isEmpty {

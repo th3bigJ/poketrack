@@ -190,8 +190,9 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             try? await store.open()
             let pricingPhase = MarketPricingSyncPhase(session: session, store: store)
             let blobPhase = DailyBlobSyncPhase(session: session, store: store)
-            _ = await pricingPhase.syncAllIfNeeded(progress: progress, enabledBrands: enabledBrands)
-            _ = await blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands)
+            async let pricingResult = pricingPhase.syncAllIfNeeded(progress: progress, enabledBrands: enabledBrands)
+            async let blobResult = blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands)
+            _ = await (pricingResult, blobResult)
         }
         await progress.setStatus("Finishing card setup…")
     }
