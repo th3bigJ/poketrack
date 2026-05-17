@@ -262,7 +262,14 @@ final class SocialCardLibraryService {
         ) as EmptyResponse
     }
 
+    private var canSyncToCloud: Bool {
+        guard case .signedIn = authService.authState else { return false }
+        guard let token = authService.accessToken, !token.isEmpty else { return false }
+        return true
+    }
+
     private func scheduleSync(for key: SyncKey) {
+        guard canSyncToCloud else { return }
         guard pendingSyncTasks[key] == nil else { return }
         pendingSyncTasks[key] = Task { [weak self] in
             guard let self else { return }
@@ -286,6 +293,8 @@ final class SocialCardLibraryService {
                 lastSyncError = nil
             } catch is CancellationError {
                 // Benign when app lifecycle cancels tasks.
+            } catch SocialCardLibraryError.notSignedIn {
+                // Expected while signed out; AppServices retries after sign-in.
             } catch {
                 // Non-fatal; next local change (or auth recovery) will schedule another sync.
                 lastSyncError = error.localizedDescription

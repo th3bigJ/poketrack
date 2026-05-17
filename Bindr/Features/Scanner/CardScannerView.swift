@@ -4,9 +4,9 @@ import AVFoundation
 private enum ScannerCardFrameLayout {
     static let verticalCenterBias: CGFloat = 8
     /// Fraction of total screen height used by the camera preview.
-    static let cameraHeightFraction: CGFloat = 0.70
+    static let cameraHeightFraction: CGFloat = 0.66
     /// Alignment frame width as a fraction of preview width. Slightly smaller than full-card fill helps autofocus lock on the subject.
-    static let reticleWidthFraction: CGFloat = 0.58
+    static let reticleWidthFraction: CGFloat = 0.52
     /// Pokémon TCG–style aspect (tall card).
     static let cardAspectHeightOverWidth: CGFloat = 1.395
 }
@@ -139,7 +139,7 @@ struct CardScannerView: View {
                             Spacer(minLength: 0)
                             Color.clear.frame(width: 40, height: 1)
                         }
-                        .padding(.top, ScannerSheetLayout.statusBarHeight + 10)
+                        .padding(.top, ScannerSheetLayout.statusBarHeight + 4)
                         .padding(.horizontal, 16)
 
                         if let err = viewModel.lastErrorMessage {
@@ -151,7 +151,7 @@ struct CardScannerView: View {
                                 .padding(.vertical, 10)
                                 .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                                 .padding(.horizontal, 24)
-                                .padding(.top, 10)
+                                .padding(.top, 4)
                                 .transition(.move(edge: .top).combined(with: .opacity))
                         }
 
@@ -279,6 +279,7 @@ struct CardScannerView: View {
                                 viewModel.replaceScanResult(id: id, with: picked)
                             }
                         )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                 }
@@ -929,19 +930,14 @@ private struct ScannerResultsOverlay: View {
                         .animation(.spring(response: 0.2), value: currentResultIndex)
                 }
             }
-            .padding(.bottom, max(safeBottom, 2))
+            .padding(.bottom, 2)
         }
         .frame(width: screenWidth)
+        .frame(maxHeight: .infinity, alignment: .top)
         .background {
-            UnevenRoundedRectangle(
-                topLeadingRadius: 0,
-                bottomLeadingRadius: ScannerSheetLayout.deviceCornerRadius,
-                bottomTrailingRadius: ScannerSheetLayout.deviceCornerRadius,
-                topTrailingRadius: 0,
-                style: .continuous
-            )
-            .fill(.regularMaterial)
-            .ignoresSafeArea(edges: .bottom)
+            Rectangle()
+                .fill(.regularMaterial)
+                .ignoresSafeArea(edges: .bottom)
         }
     }
 

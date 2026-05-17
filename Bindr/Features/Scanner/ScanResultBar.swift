@@ -58,9 +58,9 @@ struct ScanResultBar: View {
                         variantRow(key)
                     }
                 }
-                .padding(.bottom, 6)
+                .padding(.bottom, 24)
             }
-            .frame(maxHeight: 265)
+            .frame(maxHeight: 180)
             .padding(.top, 8)
             .padding(.horizontal, 16)
 
@@ -238,7 +238,7 @@ struct ScanResultBar: View {
             quantitySelector(for: key)
         }
         .padding(.horizontal, 10)
-        .padding(.vertical, 7)
+        .padding(.vertical, 5)
         .background(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .fill(isSelected ? Color.primary.opacity(0.12) : Color.primary.opacity(0.07))

@@ -592,6 +592,7 @@ struct BrowseView: View {
     @Binding var query: String
     @State private var inlineDetailCards: [Card] = []
     @State private var inlineDetailPriceByCardID: [String: Double] = [:]
+    @State private var inlineDetailSetTrendChanges: (change1d: Double?, change7d: Double?, change30d: Double?) = (nil, nil, nil)
     @State private var inlineDetailQuery = ""
     @State private var inlineDetailLoading = false
     @State private var ownedCardIDsCache: Set<String> = []
@@ -793,6 +794,7 @@ struct BrowseView: View {
                 isInlineDetailPresented = (newValue != nil)
                 inlineDetailQuery = ""
                 inlineDetailPriceByCardID = [:]
+                inlineDetailSetTrendChanges = (nil, nil, nil)
                 if selectedTab == .sets {
                     if newValue != nil {
                         pendingSetRestoreRowID = browseAuxTopAnchorID()
@@ -1485,6 +1487,32 @@ struct BrowseView: View {
             next[card.masterCardId] = usd
         }
         inlineDetailPriceByCardID = next
+        await refreshInlineDetailSetTrends()
+    }
+
+    private func refreshInlineDetailSetTrends() async {
+        let cards = inlineDetailCards
+        guard !cards.isEmpty else { return }
+        var sum1d = 0.0; var count1d = 0
+        var sum7d = 0.0; var count7d = 0
+        var sum30d = 0.0; var count30d = 0
+        for card in cards {
+            guard let trends = await services.pricing.priceTrends(for: card) else { continue }
+            let candidates = ["holofoil", "normal", trends.variant]
+            var resolved: (change1d: Double?, change7d: Double?, change30d: Double?) = (trends.change1d, trends.change7d, trends.change30d)
+            for variant in candidates {
+                let c = trends.changes(for: variant, grade: "raw")
+                if c.change1d != nil || c.change7d != nil || c.change30d != nil { resolved = c; break }
+            }
+            if let v = resolved.change1d { sum1d += v; count1d += 1 }
+            if let v = resolved.change7d { sum7d += v; count7d += 1 }
+            if let v = resolved.change30d { sum30d += v; count30d += 1 }
+        }
+        inlineDetailSetTrendChanges = (
+            change1d: count1d > 0 ? sum1d / Double(count1d) : nil,
+            change7d: count7d > 0 ? sum7d / Double(count7d) : nil,
+            change30d: count30d > 0 ? sum30d / Double(count30d) : nil
+        )
     }
 
     @ViewBuilder
@@ -2117,64 +2145,143 @@ struct BrowseView: View {
         })
         let owned = cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
         let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
-        
-        return VStack(spacing: 8) {
+        let currency = services.priceDisplay.currency
+        let fx = services.pricing.usdToGbp
+        let totalValue = inlineDetailPriceByCardID.values.reduce(0, +)
+        let ownedValue = cards
+            .filter { ownedCardIDs.contains($0.masterCardId) }
+            .compactMap { inlineDetailPriceByCardID[$0.masterCardId] }
+            .reduce(0, +)
+        let remainingValue = max(totalValue - ownedValue, 0)
+        let hasPrices = totalValue > 0
+        let trends = inlineDetailSetTrendChanges
+
+        return VStack(spacing: 14) {
+            // Header
             HStack(alignment: .firstTextBaseline) {
                 Text("Set Completion")
-                    .font(.system(size: 13, weight: .bold, design: .rounded))
-                    .foregroundStyle(.secondary)
-                
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .foregroundStyle(.primary)
                 Spacer()
-                
-                Group {
+                HStack(alignment: .firstTextBaseline, spacing: 3) {
                     Text("\(owned)")
+                        .font(.system(size: 18, weight: .black, design: .rounded))
                         .foregroundStyle(services.theme.accentColor)
-                        .fontWeight(.black)
-                    + Text(" / \(total)")
+                    Text("/ \(total)")
+                        .font(.system(size: 13, weight: .bold, design: .rounded))
                         .foregroundStyle(.secondary)
-                        .fontWeight(.bold)
                 }
-                .font(.system(size: 14, design: .monospaced))
             }
-            
-            progressCapsule(progress: progress)
+
+            // Progress bar
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
+                    Capsule()
+                        .fill(LinearGradient(
+                            colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.7)],
+                            startPoint: .leading, endPoint: .trailing
+                        ))
+                        .frame(width: max(geo.size.width * progress, 8))
+                        .shadow(color: services.theme.accentColor.opacity(0.3), radius: 4)
+                        .overlay {
+                            Capsule().stroke(
+                                LinearGradient(colors: [.white.opacity(0.4), .clear], startPoint: .top, endPoint: .bottom),
+                                lineWidth: 1
+                            )
+                        }
+                }
+            }
+            .frame(height: 10)
+
+            // Value row
+            HStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("SET VALUE")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: totalValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                }
+                Spacer()
+                VStack(alignment: .center, spacing: 2) {
+                    Text("COLLECTED")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: ownedValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                }
+                Spacer()
+                VStack(alignment: .trailing, spacing: 2) {
+                    Text("TO COMPLETE")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: remainingValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(hasPrices ? services.theme.accentColor : .secondary)
+                }
+            }
+
+            // Trend badges
+            HStack(spacing: 8) {
+                Spacer()
+                inlineTrendBadge(label: "1D", value: trends.change1d)
+                inlineTrendBadge(label: "7D", value: trends.change7d)
+                inlineTrendBadge(label: "30D", value: trends.change30d)
+                if trends.change1d == nil && trends.change7d == nil && trends.change30d == nil {
+                    Text("Loading trends…")
+                        .font(.system(size: 11, weight: .medium, design: .rounded))
+                        .foregroundStyle(.tertiary)
+                }
+                Spacer()
+            }
         }
         .padding(16)
         .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
+    @ViewBuilder
+    private func inlineTrendBadge(label: String, value: Double?) -> some View {
+        if let value {
+            let isUp = value >= 0
+            let tint: Color = isUp ? Color(red: 0.2, green: 0.78, blue: 0.35) : Color(red: 0.95, green: 0.27, blue: 0.27)
+            HStack(spacing: 3) {
+                Text(label)
+                    .font(.system(size: 10, weight: .semibold, design: .rounded))
+                    .foregroundStyle(tint.opacity(0.8))
+                Image(systemName: isUp ? "arrow.up" : "arrow.down")
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundStyle(tint)
+                Text(String(format: "%.1f%%", abs(value)))
+                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+                    .foregroundStyle(tint)
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Capsule().fill(tint.opacity(0.12)))
+        }
+    }
+
     private func progressCapsule(progress: CGFloat) -> some View {
         GeometryReader { geo in
             ZStack(alignment: .leading) {
-                // Track
                 Capsule()
                     .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
-                
-                // Fill
                 Capsule()
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                services.theme.accentColor,
-                                services.theme.accentColor.opacity(0.7)
-                            ],
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        )
-                    )
+                    .fill(LinearGradient(
+                        colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.7)],
+                        startPoint: .leading, endPoint: .trailing
+                    ))
                     .frame(width: max(geo.size.width * progress, 8))
                     .shadow(color: services.theme.accentColor.opacity(0.3), radius: 4, x: 0, y: 0)
-                    // Glass highlight
                     .overlay {
-                        Capsule()
-                            .stroke(
-                                LinearGradient(
-                                    colors: [.white.opacity(0.4), .clear],
-                                    startPoint: .top,
-                                    endPoint: .bottom
-                                ),
-                                lineWidth: 1
-                            )
+                        Capsule().stroke(
+                            LinearGradient(colors: [.white.opacity(0.4), .clear], startPoint: .top, endPoint: .bottom),
+                            lineWidth: 1
+                        )
                     }
             }
         }
@@ -3205,6 +3312,7 @@ struct SetCardsView: View {
     @State private var showFolderCreateAlert = false
     @State private var addedMultiSelectFolderIDs: Set<UUID> = []
     @State private var pendingCardContextRequest: CardContextActionRequest?
+    @State private var setTrendChanges: (change1d: Double?, change7d: Double?, change30d: Double?) = (nil, nil, nil)
 
     private var ownedCardIDs: Set<String> {
         return Set(collectionItems.compactMap { item in
@@ -3253,57 +3361,62 @@ struct SetCardsView: View {
         cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
     }
 
+    private var totalSetValueUSD: Double {
+        priceByCardID.values.reduce(0, +)
+    }
+
+    private var ownedSetValueUSD: Double {
+        cards
+            .filter { ownedCardIDs.contains($0.masterCardId) }
+            .compactMap { priceByCardID[$0.masterCardId] }
+            .reduce(0, +)
+    }
+
     private var setProgressBar: some View {
         let total = cards.count
         let owned = uniqueOwnedInSet
         let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
-        
-        return VStack(spacing: 12) {
-            HStack(alignment: .center) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Set Completion")
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
-                        .foregroundStyle(.primary.opacity(0.9))
-                    
-                    Text("\(Int(progress * 100))% Collected")
-                        .font(.system(size: 11, weight: .medium))
-                        .foregroundStyle(.secondary)
-                }
-                
+        let currency = services.priceDisplay.currency
+        let fx = services.pricing.usdToGbp
+        let totalValue = totalSetValueUSD
+        let ownedValue = ownedSetValueUSD
+        let remainingValue = max(totalValue - ownedValue, 0)
+        let hasPrices = totalValue > 0
+
+        return VStack(spacing: 14) {
+            // Header row
+            HStack(alignment: .firstTextBaseline) {
+                Text("Set Completion")
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .foregroundStyle(.primary)
+
                 Spacer()
-                
-                HStack(alignment: .firstTextBaseline, spacing: 4) {
+
+                HStack(alignment: .firstTextBaseline, spacing: 3) {
                     Text("\(owned)")
-                        .font(.system(size: 20, weight: .black, design: .rounded))
+                        .font(.system(size: 18, weight: .black, design: .rounded))
                         .foregroundStyle(services.theme.accentColor)
-                    
                     Text("/ \(total)")
-                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .font(.system(size: 13, weight: .bold, design: .rounded))
                         .foregroundStyle(.secondary)
                 }
             }
-            
+
+            // Progress bar
             GeometryReader { geo in
                 ZStack(alignment: .leading) {
-                    // Track
                     Capsule()
                         .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
-                    
-                    // Fill
                     Capsule()
                         .fill(
                             LinearGradient(
-                                colors: [
-                                    services.theme.accentColor,
-                                    services.theme.accentColor.opacity(0.7)
-                                ],
+                                colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.7)],
                                 startPoint: .leading,
                                 endPoint: .trailing
                             )
                         )
                         .frame(width: max(geo.size.width * progress, 10))
                         .shadow(color: services.theme.accentColor.opacity(0.3), radius: 6, x: 0, y: 0)
-                        // Glass highlight
                         .overlay {
                             Capsule()
                                 .stroke(
@@ -3318,9 +3431,80 @@ struct SetCardsView: View {
                 }
             }
             .frame(height: 10)
+
+            // Value row — always shown; dashes until prices load
+            HStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("SET VALUE")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: totalValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer()
+
+                VStack(alignment: .center, spacing: 2) {
+                    Text("COLLECTED")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: ownedValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer()
+
+                VStack(alignment: .trailing, spacing: 2) {
+                    Text("TO COMPLETE")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: remainingValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(hasPrices ? services.theme.accentColor : .secondary)
+                }
+            }
+
+            // Trend badges — always show row; shimmer/empty until loaded
+            HStack(spacing: 8) {
+                let trends = setTrendChanges
+                Spacer()
+                setTrendBadge(label: "1D", value: trends.change1d)
+                setTrendBadge(label: "7D", value: trends.change7d)
+                setTrendBadge(label: "30D", value: trends.change30d)
+                if trends.change1d == nil && trends.change7d == nil && trends.change30d == nil {
+                    Text("Loading trends…")
+                        .font(.system(size: 11, weight: .medium, design: .rounded))
+                        .foregroundStyle(.tertiary)
+                }
+                Spacer()
+            }
         }
         .padding(16)
         .glassCardStyle(cornerRadius: 16, interactive: false)
+    }
+
+    @ViewBuilder
+    private func setTrendBadge(label: String, value: Double?) -> some View {
+        if let value {
+            let isUp = value >= 0
+            let tint = isUp ? Color(red: 0.2, green: 0.78, blue: 0.35) : Color(red: 0.95, green: 0.27, blue: 0.27)
+            HStack(spacing: 3) {
+                Text(label)
+                    .font(.system(size: 10, weight: .semibold, design: .rounded))
+                    .foregroundStyle(tint.opacity(0.8))
+                Image(systemName: isUp ? "arrow.up" : "arrow.down")
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundStyle(tint)
+                Text(String(format: "%.1f%%", abs(value)))
+                    .font(.system(size: 11, weight: .semibold, design: .rounded))
+                    .foregroundStyle(tint)
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .background(Capsule().fill(tint.opacity(0.12)))
+        }
     }
 
     var body: some View {
@@ -3658,6 +3842,39 @@ struct SetCardsView: View {
             next[card.masterCardId] = usd
         }
         priceByCardID = next
+        await refreshSetTrends()
+    }
+
+    @MainActor
+    private func refreshSetTrends() async {
+        var sum1d = 0.0; var count1d = 0
+        var sum7d = 0.0; var count7d = 0
+        var sum30d = 0.0; var count30d = 0
+
+        for card in cards {
+            guard let trends = await services.pricing.priceTrends(for: card) else { continue }
+            let candidates = ["holofoil", "normal", trends.variant]
+            var resolved: (change1d: Double?, change7d: Double?, change30d: Double?) = (nil, nil, nil)
+            for variant in candidates {
+                let c = trends.changes(for: variant, grade: "raw")
+                if c.change1d != nil || c.change7d != nil || c.change30d != nil {
+                    resolved = c
+                    break
+                }
+            }
+            if resolved.change1d == nil && resolved.change7d == nil && resolved.change30d == nil {
+                resolved = (trends.change1d, trends.change7d, trends.change30d)
+            }
+            if let v = resolved.change1d { sum1d += v; count1d += 1 }
+            if let v = resolved.change7d { sum7d += v; count7d += 1 }
+            if let v = resolved.change30d { sum30d += v; count30d += 1 }
+        }
+
+        setTrendChanges = (
+            change1d: count1d > 0 ? sum1d / Double(count1d) : nil,
+            change7d: count7d > 0 ? sum7d / Double(count7d) : nil,
+            change30d: count30d > 0 ? sum30d / Double(count30d) : nil
+        )
     }
 
     private func beginCardContextAction(card: Card, action: CardContextAction) {

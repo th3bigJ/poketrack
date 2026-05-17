@@ -1092,17 +1092,14 @@ struct RootView: View {
             showBrandOnboarding = true
         }
         
-        // FOR TESTING: Always show premium intro on load (delayed so it shows after onboarding)
+        guard !hasEvaluatedPremiumUpsellThisSession else { return }
+        hasEvaluatedPremiumUpsellThisSession = true
+        guard !services.store.isPremium else { return }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            if !services.store.isPremium && !showBrandOnboarding {
+            if !showBrandOnboarding {
                 showPremiumAutoSheet = true
             }
         }
-        
-        /* Original logic suppressed for testing
-        guard !hasEvaluatedPremiumUpsellThisSession else { return }
-        ...
-        */
     }
 
     // MARK: - One-shot onboarding replay
