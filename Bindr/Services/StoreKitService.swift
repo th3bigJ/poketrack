@@ -17,6 +17,7 @@ final class StoreKitService {
     }
 
     private(set) var products: [Product] = []
+    private(set) var annualProduct: Product?
     private(set) var purchaseError: String?
 
     private var updatesTask: Task<Void, Never>?
@@ -38,10 +39,16 @@ final class StoreKitService {
 
     func loadProducts() async {
         do {
-            products = try await Product.products(for: [AppConfiguration.premiumProductID])
+            let fetched = try await Product.products(for: [
+                AppConfiguration.premiumProductID,
+                AppConfiguration.premiumAnnualProductID
+            ])
+            products = fetched.filter { $0.id == AppConfiguration.premiumProductID }
+            annualProduct = fetched.first { $0.id == AppConfiguration.premiumAnnualProductID }
         } catch {
             purchaseError = error.localizedDescription
             products = []
+            annualProduct = nil
         }
     }
 
@@ -49,7 +56,7 @@ final class StoreKitService {
         var premium = false
         for await result in StoreKit.Transaction.currentEntitlements {
             guard case .verified(let t) = result else { continue }
-            if t.productID == AppConfiguration.premiumProductID {
+            if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
                 premium = true
                 break
             }
@@ -57,9 +64,15 @@ final class StoreKitService {
         premiumEntitlement = premium
     }
 
-    func purchase() async throws {
+    func purchase(annual: Bool = false) async throws {
         purchaseError = nil
-        guard let product = products.first else {
+        let product: Product?
+        if annual {
+            product = annualProduct ?? products.first
+        } else {
+            product = products.first
+        }
+        guard let product else {
             await loadProducts()
             throw PurchaseError.productUnavailable
         }
@@ -88,7 +101,7 @@ final class StoreKitService {
     private func observeTransactions() async {
         for await update in StoreKit.Transaction.updates {
             guard case .verified(let t) = update else { continue }
-            if t.productID == AppConfiguration.premiumProductID {
+            if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
                 premiumEntitlement = true
             }
         }

@@ -21,20 +21,17 @@ struct SocialFeatureCard: View {
     let title: String
     let description: String
     let tint: Color
-    let index: Int
 
     init(
         icon: String,
         title: String,
         description: String,
-        tint: Color,
-        index: Int
+        tint: Color
     ) {
         self.icon = icon
         self.title = title
         self.description = description
         self.tint = tint
-        self.index = index
     }
 
     var body: some View {
@@ -64,9 +61,6 @@ struct SocialFeatureCard: View {
 
             Spacer(minLength: 0)
 
-            Text(String(format: "%02d", index))
-                .font(.system(size: 11, weight: .heavy, design: .monospaced))
-                .foregroundStyle(.tertiary)
         }
         .padding(.horizontal, BindrSpacing.md)
         .padding(.vertical, BindrSpacing.md)

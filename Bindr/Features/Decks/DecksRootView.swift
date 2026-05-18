@@ -80,8 +80,8 @@ struct DecksRootView: View {
             PaywallSheet()
                 .environment(services)
         }
-        .confirmationDialog("Delete Deck?", isPresented: $showDeleteConfirm, presenting: deckToDelete) { deck in
-            Button("Delete \"\(deck.title)\"", role: .destructive) {
+        .alert("Delete Deck?", isPresented: $showDeleteConfirm, presenting: deckToDelete) { deck in
+            Button("Delete", role: .destructive) {
                 modelContext.delete(deck)
             }
             Button("Cancel", role: .cancel) {}

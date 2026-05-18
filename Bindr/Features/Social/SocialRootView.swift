@@ -365,7 +365,7 @@ struct SocialRootView: View {
         SocialLandingView(
             currentNonce: $currentNonce,
             errorMessage: errorMessage,
-            rootFloatingChromeInset: rootFloatingChromeInset,
+            headerInset: rootFloatingChromeInset,
             onSignInResult: { result in
                 Task { await handleAppleSignInResult(result) }
             }

@@ -2,23 +2,6 @@ import StoreKit
 import SwiftUI
 
 // MARK: - PremiumUpgradeView
-//
-// New premium upgrade surface. Replaces the bare `List`-based
-// `PaywallSheet` body with a marketing-grade screen that mirrors the
-// new Social landing aesthetic: hero block, animated tier badge,
-// feature pillars, and a sticky purchase CTA.
-//
-// Call-site contract is unchanged — `PaywallSheet` is still the sheet
-// users present from 14+ places in the app; its body now defers to
-// this view so we don't have to chase down every callsite.
-//
-// Visual tenets:
-//   * The premium tier reads as a *collectible badge* (foil card-style
-//     gradient + crown) rather than a price card. The price comes after.
-//   * Feature pillars are glass tiles, same family as Social landing,
-//     so the user reads premium as a "next layer" of the same product.
-//   * Single CTA at the bottom — Restore Purchases lives in the toolbar
-//     to keep the primary action visually uncontested.
 
 struct PremiumUpgradeView: View {
     @Environment(\.dismiss) private var dismiss
@@ -29,27 +12,28 @@ struct PremiumUpgradeView: View {
     @State private var isPurchasing = false
     @State private var restoreError: String?
     @State private var hasAppeared = false
+    @State private var selectedPlan: PlanOption = .monthly
+
+    enum PlanOption { case monthly, annual }
 
     var body: some View {
         NavigationStack {
-            ZStack(alignment: .bottom) {
-                ScrollView {
-                    VStack(spacing: BindrSpacing.xxl) {
-                        heroBlock
-                        pillarsBlock
-                        deepValueBlock
-                        faqBlock
-                        Color.clear.frame(height: 160)
-                    }
-                    .padding(.horizontal, BindrSpacing.lg)
-                    .padding(.top, BindrSpacing.xl)
+            ScrollView {
+                VStack(spacing: BindrSpacing.xxl) {
+                    heroBlock
+                    planPickerBlock
+                    comparisonGrid
+                    Color.clear.frame(height: 20)
                 }
-                .scrollIndicators(.hidden)
-
+                .padding(.horizontal, BindrSpacing.lg)
+                .padding(.top, BindrSpacing.xl)
+            }
+            .scrollIndicators(.hidden)
+            .safeAreaInset(edge: .bottom, spacing: 0) {
                 ctaPanel
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .bindrPageBackground(ignoresSafeArea: false)
+            .background(Color(uiColor: .systemBackground).ignoresSafeArea())
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.hidden, for: .navigationBar)
@@ -87,53 +71,52 @@ struct PremiumUpgradeView: View {
 
     private var heroBlock: some View {
         VStack(spacing: BindrSpacing.lg) {
-            ZStack {
-                premiumGlow
-                premiumBadge
-                    .scaleEffect(hasAppeared ? 1.0 : 0.85)
-                    .opacity(hasAppeared ? 1 : 0)
-            }
-            .frame(height: 220)
+            premiumBadge
+                .scaleEffect(hasAppeared ? 1.0 : 0.85)
+                .opacity(hasAppeared ? 1 : 0)
 
             VStack(spacing: BindrSpacing.sm) {
                 SocialSectionEyebrow(title: "BINDR PREMIUM")
-                Text("The complete toolkit\nfor your collection.")
-                    .font(.system(size: 32, weight: .heavy))
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
+
+                VStack(spacing: 0) {
+                    Text("Unlock the full")
+                        .font(.system(size: 36, weight: .heavy))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack(spacing: 8) {
+                        Text("experience.")
+                            .font(.system(size: 36, weight: .heavy))
+                            .italic()
+                            .foregroundStyle(
+                                LinearGradient(
+                                    colors: [accent, accent.opacity(0.7)],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                        Spacer(minLength: 0)
+                    }
+                }
+                .multilineTextAlignment(.leading)
+
                 Text("Advanced tools to track value, discover suggested trades, and manage your binders with a professional edge.")
                     .font(.system(size: 15))
                     .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, BindrSpacing.md)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .lineSpacing(2)
             }
         }
-    }
-
-    private var premiumGlow: some View {
-        ZStack {
-            RadialGradient(
-                colors: [accent.opacity(colorScheme == .dark ? 0.32 : 0.22), .clear],
-                center: .center,
-                startRadius: 10,
-                endRadius: 220
-            )
-            .blur(radius: 28)
-
-            RadialGradient(
-                colors: [BindrPalette.binderGold.opacity(0.30), .clear],
-                center: .center,
-                startRadius: 4,
-                endRadius: 140
-            )
-            .blur(radius: 18)
-        }
-        .allowsHitTesting(false)
     }
 
     private var premiumBadge: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: BindrRadius.xxl, style: .continuous)
+            // Soft diffuse glow beneath the card
+            Ellipse()
+                .fill(BindrPalette.binderGold.opacity(colorScheme == .dark ? 0.45 : 0.30))
+                .frame(width: 110, height: 24)
+                .blur(radius: 20)
+                .offset(y: 54)
+
+            RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
                 .fill(
                     LinearGradient(
                         colors: [
@@ -145,10 +128,10 @@ struct PremiumUpgradeView: View {
                         endPoint: .bottomTrailing
                     )
                 )
-                .frame(width: 156, height: 200)
+                .frame(width: 110, height: 140)
 
-            // Foil overlay
-            RoundedRectangle(cornerRadius: BindrRadius.xxl, style: .continuous)
+            // Foil sheen
+            RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
                 .fill(
                     LinearGradient(
                         colors: [
@@ -162,182 +145,196 @@ struct PremiumUpgradeView: View {
                     )
                 )
                 .blendMode(.plusLighter)
-                .frame(width: 156, height: 200)
+                .frame(width: 110, height: 140)
 
-            RoundedRectangle(cornerRadius: BindrRadius.xxl, style: .continuous)
+            RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
                 .stroke(Color.white.opacity(0.45), lineWidth: 1)
-                .padding(0.5)
-                .frame(width: 156, height: 200)
+                .frame(width: 110, height: 140)
 
-            VStack(spacing: 8) {
+            VStack(spacing: 5) {
                 Image(systemName: "crown.fill")
-                    .font(.system(size: 36, weight: .black))
+                    .font(.system(size: 26, weight: .black))
                     .foregroundStyle(.white)
                     .shadow(color: .black.opacity(0.25), radius: 2, y: 1)
                 Text("PREMIUM")
-                    .font(.system(size: 13, weight: .black, design: .rounded))
+                    .font(.system(size: 10, weight: .black, design: .rounded))
                     .tracking(3)
                     .foregroundStyle(.white)
                 Text("MEMBER")
-                    .font(.system(size: 10, weight: .heavy, design: .rounded))
+                    .font(.system(size: 8, weight: .heavy, design: .rounded))
                     .tracking(2)
                     .foregroundStyle(.white.opacity(0.85))
             }
         }
-        .shadow(color: BindrPalette.binderGold.opacity(0.55), radius: 30, x: 0, y: 14)
     }
 
-    // MARK: Pillars
+    // MARK: Plan Picker
 
-    private var pillarsBlock: some View {
+    private var planPickerBlock: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "WHAT'S INCLUDED")
+            SocialSectionEyebrow(title: "CHOOSE YOUR PLAN")
 
             VStack(spacing: BindrSpacing.sm) {
-                pillarRow(
-                    icon: "bell.badge.fill",
-                    title: "Wishlist notifications",
-                    description: "Get notified the moment a card you want becomes available for trade.",
-                    tint: BindrPalette.alertRed
-                )
-                pillarRow(
-                    icon: "chart.line.uptrend.xyaxis",
-                    title: "Collection analytics",
-                    description: "Cost basis, market deltas, and set completion tracking.",
-                    tint: BindrPalette.deckBlue
-                )
-                pillarRow(
-                    icon: "wand.and.stars",
-                    title: "Public customization",
-                    description: "Premium themes and animated binder covers for your profile.",
-                    tint: BindrPalette.wishlistViolet
-                )
-                pillarRow(
-                    icon: "bolt.fill",
-                    title: "Priority trade listings",
-                    description: "Your trade offers reach the top of the community network.",
-                    tint: BindrPalette.binderGold
-                )
-                pillarRow(
-                    icon: "wifi.slash",
-                    title: "Offline access",
-                    description: "Browse your binders and build decks without a signal.",
-                    tint: BindrPalette.ownedGreen
-                )
-                pillarRow(
-                    icon: "line.3.horizontal.decrease.circle.fill",
-                    title: "Advanced filters",
-                    description: "Filter by foil type, date, condition, and rarity.",
-                    tint: accent
-                )
+                planTile(plan: .monthly, label: "Monthly Plan", price: services.store.products.first?.displayPrice ?? "—", badge: nil)
+                planTile(plan: .annual, label: "Annual Plan", price: annualPrice, badge: "Best Value")
             }
         }
     }
 
-    private func pillarRow(icon: String, title: String, description: String, tint: Color) -> some View {
-        HStack(spacing: BindrSpacing.md) {
-            ZStack {
-                RoundedRectangle(cornerRadius: BindrRadius.md, style: .continuous)
-                    .fill(tint.opacity(colorScheme == .dark ? 0.20 : 0.15))
-                Image(systemName: icon)
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundStyle(tint)
-            }
-            .frame(width: 44, height: 44)
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(title)
-                    .font(.system(size: 15, weight: .semibold))
-                Text(description)
-                    .font(.system(size: 13))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(2)
-            }
-            Spacer(minLength: 0)
-        }
-        .padding(.horizontal, BindrSpacing.md)
-        .padding(.vertical, BindrSpacing.md)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
+    private var annualPrice: String {
+        services.store.annualProduct?.displayPrice ?? "£24.99"
     }
 
-    // MARK: Deep value block
+    private func planTile(plan: PlanOption, label: String, price: String, badge: String?) -> some View {
+        let isSelected = selectedPlan == plan
+        return Button {
+            withAnimation(.easeInOut(duration: 0.18)) { selectedPlan = plan }
+            Haptics.lightImpact()
+        } label: {
+            HStack {
+                HStack(spacing: BindrSpacing.sm) {
+                    Text(label)
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(.primary)
+                    if let badge {
+                        Text(badge)
+                            .font(.system(size: 10, weight: .heavy, design: .rounded))
+                            .tracking(0.5)
+                            .foregroundStyle(accent)
+                            .padding(.horizontal, 7)
+                            .padding(.vertical, 3)
+                            .background { Capsule().fill(accent.opacity(0.15)) }
+                    }
+                }
+                Spacer()
+                Text(price)
+                    .font(.system(size: 17, weight: .heavy))
+                    .foregroundStyle(isSelected ? accent : .primary)
+            }
+            .padding(.horizontal, BindrSpacing.lg)
+            .padding(.vertical, BindrSpacing.md + 2)
+            .frame(maxWidth: .infinity)
+            .background {
+                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                    .fill(isSelected
+                        ? accent.opacity(colorScheme == .dark ? 0.18 : 0.12)
+                        : Color.primary.opacity(colorScheme == .dark ? 0.07 : 0.04))
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                    .stroke(
+                        isSelected ? accent.opacity(0.6) : Color.primary.opacity(0.10),
+                        lineWidth: isSelected ? 1.5 : 1
+                    )
+            }
+        }
+        .buttonStyle(.plain)
+    }
 
-    private var deepValueBlock: some View {
+    // MARK: Comparison Grid
+
+    private var comparisonGrid: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "THE DIFFERENCE")
+            SocialSectionEyebrow(title: "FREE VS PREMIUM")
 
-            VStack(alignment: .leading, spacing: BindrSpacing.lg) {
-                bullet(
-                    "Reach the community",
-                    detail: "Get your listings seen and connect with other collectors faster."
-                )
-                bullet(
-                    "Professional tracking",
-                    detail: "Cost basis, market deltas, and ROI — know exactly where you stand."
-                )
-                bullet(
-                    "Curated experience",
-                    detail: "Priority trade offers, suggested matches, and a profile worth sharing."
-                )
+            VStack(spacing: 0) {
+                // Header row
+                comparisonHeader
+
+                Divider().opacity(0.12)
+
+                // Feature rows
+                comparisonRow(icon: "camera.viewfinder", label: "Card scans", free: "20 / month", premium: "Unlimited")
+                comparisonRow(icon: "square.stack.3d.up.fill", label: "Collection", free: "25 cards", premium: "Unlimited")
+                comparisonRow(icon: "arrow.left.arrow.right", label: "Trade list", free: "5 listings", premium: "Unlimited")
+                comparisonRow(icon: "star.fill", label: "Wishlist", free: "5 cards", premium: "Unlimited")
+                comparisonRow(icon: "books.vertical.fill", label: "Binders", free: "1", premium: "Unlimited")
+                comparisonRow(icon: "rectangle.stack.fill", label: "Decks", free: "1", premium: "Unlimited")
+                comparisonRow(icon: "chart.line.uptrend.xyaxis", label: "Price history", free: "7 days", premium: "Full history")
+                comparisonRow(icon: "wifi.slash", label: "Offline mode", free: nil, premium: "Included")
+                comparisonRow(icon: "bell.badge.fill", label: "Trade notifications", free: nil, premium: "Priority")
             }
-            .padding(BindrSpacing.lg)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .glassCardStyle(cornerRadius: BindrRadius.xxl, interactive: false)
+            .background {
+                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                    .fill(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.04))
+            }
+            .clipShape(RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
+            }
         }
     }
 
-    private func bullet(_ title: String, detail: String) -> some View {
-        HStack(alignment: .top, spacing: BindrSpacing.md) {
-            ZStack {
-                Circle()
-                    .fill(accent.opacity(0.18))
-                    .frame(width: 24, height: 24)
-                Image(systemName: "checkmark")
-                    .font(.system(size: 11, weight: .heavy))
+    private var comparisonHeader: some View {
+        HStack {
+            Spacer()
+            Text("Free")
+                .font(.system(size: 12, weight: .heavy, design: .rounded))
+                .foregroundStyle(.secondary)
+                .frame(width: 90, alignment: .center)
+            Rectangle()
+                .fill(accent.opacity(0.3))
+                .frame(width: 1)
+                .frame(height: 36)
+            HStack(spacing: 4) {
+                Image(systemName: "crown.fill")
+                    .font(.system(size: 10, weight: .heavy))
+                    .foregroundStyle(accent)
+                Text("Premium")
+                    .font(.system(size: 12, weight: .heavy, design: .rounded))
                     .foregroundStyle(accent)
             }
-            VStack(alignment: .leading, spacing: 2) {
-                Text(title)
-                    .font(.system(size: 15, weight: .semibold))
-                Text(detail)
-                    .font(.system(size: 13))
+            .frame(width: 90, alignment: .center)
+        }
+        .padding(.horizontal, BindrSpacing.md)
+        .frame(height: 36)
+        .background(accent.opacity(colorScheme == .dark ? 0.08 : 0.05))
+    }
+
+    private func comparisonRow(icon: String, label: String, free: String?, premium: String) -> some View {
+        VStack(spacing: 0) {
+            Divider().opacity(0.08)
+            HStack(spacing: BindrSpacing.sm) {
+                Image(systemName: icon)
+                    .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(.secondary)
+                    .frame(width: 20)
+                Text(label)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(.primary)
+                Spacer()
+                // Free column
+                Group {
+                    if let free {
+                        Text(free)
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundStyle(.tertiary)
+                    }
+                }
+                .frame(width: 90, alignment: .center)
+
+                Rectangle()
+                    .fill(accent.opacity(0.2))
+                    .frame(width: 1)
+                    .frame(height: 36)
+
+                // Premium column
+                Text(premium)
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundStyle(accent)
+                    .frame(width: 90, alignment: .center)
             }
+            .padding(.horizontal, BindrSpacing.md)
+            .frame(height: 44)
         }
     }
 
-    // MARK: FAQ
-
-    private var faqBlock: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "BEFORE YOU COMMIT")
-
-            VStack(spacing: BindrSpacing.sm) {
-                faqRow(question: "Cancel anytime", answer: "Manage in iOS Settings → Subscriptions. It stops at the end of the billing period, nothing extra.")
-                faqRow(question: "Shared across devices", answer: "One Apple ID covers every iPhone and iPad you own.")
-                faqRow(question: "Your collection stays put", answer: "Cards, folders, trades — nothing changes if you upgrade, downgrade, or cancel.")
-            }
-        }
-    }
-
-    private func faqRow(question: String, answer: String) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(question)
-                .font(.system(size: 14, weight: .semibold))
-            Text(answer)
-                .font(.system(size: 13))
-                .foregroundStyle(.secondary)
-        }
-        .padding(BindrSpacing.md)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background {
-            RoundedRectangle(cornerRadius: BindrRadius.lg, style: .continuous)
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.04 : 0.03))
-        }
-    }
-
-    // MARK: CTA panel
+    // MARK: Floating CTA panel
 
     private var ctaPanel: some View {
         VStack(spacing: BindrSpacing.sm) {
@@ -358,7 +355,7 @@ struct PremiumUpgradeView: View {
                 Task {
                     isPurchasing = true
                     defer { isPurchasing = false }
-                    try? await services.store.purchase()
+                    try? await services.store.purchase(annual: selectedPlan == .annual)
                     if services.store.isPremium { dismiss() }
                 }
             } label: {
@@ -368,7 +365,7 @@ struct PremiumUpgradeView: View {
                             .progressViewStyle(.circular)
                             .tint(.white)
                     } else {
-                        purchaseLabel
+                        subscribeLabel
                     }
                 }
                 .frame(maxWidth: .infinity)
@@ -387,19 +384,18 @@ struct PremiumUpgradeView: View {
                     RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
                         .stroke(Color.white.opacity(0.18), lineWidth: 1)
                 }
-                .shadow(color: accent.opacity(colorScheme == .dark ? 0.55 : 0.35), radius: 22, x: 0, y: 10)
             }
             .buttonStyle(.plain)
             .disabled(isPurchasing || services.store.products.isEmpty)
-            .padding(.horizontal, BindrSpacing.lg)
 
             Text(footerNote)
                 .font(.system(size: 11))
                 .foregroundStyle(.tertiary)
                 .padding(.bottom, 6)
         }
-        .padding(.top, BindrSpacing.md)
-        .padding(.bottom, BindrSpacing.lg)
+        .padding(.top, BindrSpacing.sm)
+        .padding(.bottom, BindrSpacing.sm)
+        .padding(.horizontal, BindrSpacing.lg)
         .frame(maxWidth: .infinity)
         .background {
             LinearGradient(
@@ -416,25 +412,20 @@ struct PremiumUpgradeView: View {
     }
 
     @ViewBuilder
-    private var purchaseLabel: some View {
-        if let product = services.store.products.first {
-            HStack(spacing: 10) {
-                Image(systemName: "crown.fill")
-                    .font(.system(size: 16, weight: .bold))
-                Text("Unlock Premium")
-                    .font(.system(size: 17, weight: .heavy))
-                Text("·")
-                    .font(.system(size: 17, weight: .heavy))
-                    .opacity(0.6)
-                Text(product.displayPrice)
-                    .font(.system(size: 17, weight: .heavy))
-            }
-            .foregroundStyle(.white)
-        } else {
-            Text("Premium not available yet")
-                .font(.system(size: 16, weight: .semibold))
-                .foregroundStyle(.white.opacity(0.9))
+    private var subscribeLabel: some View {
+        let price = selectedPlan == .annual ? annualPrice : (services.store.products.first?.displayPrice ?? "—")
+        return HStack(spacing: 10) {
+            Image(systemName: "crown.fill")
+                .font(.system(size: 16, weight: .bold))
+            Text("Subscribe")
+                .font(.system(size: 17, weight: .heavy))
+            Text("·")
+                .font(.system(size: 17, weight: .heavy))
+                .opacity(0.6)
+            Text(price)
+                .font(.system(size: 17, weight: .heavy))
         }
+        .foregroundStyle(.white)
     }
 
     private var footerNote: String {

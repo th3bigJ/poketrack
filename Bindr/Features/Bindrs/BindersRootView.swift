@@ -106,6 +106,7 @@ struct BindersRootView: View {
                 .toolbar(isPresentingBinder ? .hidden : .visible, for: .tabBar)
             }
         }
+        .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $showCreateSheet) {
             CreateBinderSheet()

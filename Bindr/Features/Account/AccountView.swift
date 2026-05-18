@@ -1,48 +1,185 @@
 import SwiftUI
 
+// MARK: - Root Settings Page
+
 struct SettingsView: View {
     @Environment(AppServices.self) private var services
-    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
-    @State private var showPaywall = false
-    @State private var showDataExport = false
-    @State private var showDisclaimer = false
+
+    var body: some View {
+        List {
+            gameSection
+            storageSection
+            premiumSection
+            socialSection
+            aboutSection
+        }
+        .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .background(Color(uiColor: .systemGroupedBackground))
+        .navigationTitle("Settings")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    // MARK: - Game & Catalog
+
+    private var gameSection: some View {
+        Section("Game & Catalog") {
+            NavigationLink {
+                CatalogSettingsPage()
+                    .environment(services)
+            } label: {
+                Label("Card Catalogs", systemImage: "square.stack.3d.up.fill")
+            }
+
+            NavigationLink {
+                ActiveGameSettingsPage()
+                    .environment(services)
+            } label: {
+                Label("Active Game", systemImage: "gamecontroller.fill")
+            }
+        }
+    }
+
+    // MARK: - Storage & Pricing
+
+    private var storageSection: some View {
+        Section("Storage & Pricing") {
+            NavigationLink {
+                OfflineSettingsPage()
+                    .environment(services)
+            } label: {
+                Label("Offline Mode", systemImage: "arrow.down.circle.fill")
+            }
+
+            NavigationLink {
+                PricingSettingsPage()
+                    .environment(services)
+            } label: {
+                Label("Pricing & Currency", systemImage: "dollarsign.circle.fill")
+            }
+
+            NavigationLink {
+                DataSyncSettingsPage()
+                    .environment(services)
+            } label: {
+                syncStatusLabel
+            }
+        }
+    }
+
+    private var syncStatusLabel: some View {
+        HStack {
+            Label("iCloud Sync", systemImage: syncIconName)
+                .foregroundStyle(syncColor)
+        }
+    }
+
+    private var syncIconName: String {
+        switch services.cloudSettings.syncStatus {
+        case .cloudKitConnected: "checkmark.icloud.fill"
+        case .cloudKitFallback, .iCloudAccountUnavailable: "exclamationmark.icloud.fill"
+        }
+    }
+
+    private var syncColor: Color {
+        switch services.cloudSettings.syncStatus {
+        case .cloudKitConnected: .green
+        case .cloudKitFallback, .iCloudAccountUnavailable: .orange
+        }
+    }
+
+    // MARK: - Premium
+
+    private var premiumSection: some View {
+        Section("Subscription") {
+            NavigationLink {
+                PremiumSettingsPage()
+                    .environment(services)
+            } label: {
+                if services.store.isPremium {
+                    Label("Premium", systemImage: "crown.fill")
+                        .foregroundStyle(.yellow)
+                } else {
+                    Label("Unlock Premium", systemImage: "crown.fill")
+                }
+            }
+        }
+    }
+
+    // MARK: - Social
+
+    private var socialSection: some View {
+        Section("Social") {
+            NavigationLink {
+                NotificationPreferencesView()
+                    .environment(services)
+            } label: {
+                Label("Notifications", systemImage: "bell.badge.fill")
+            }
+        }
+    }
+
+    // MARK: - About
+
+    private var aboutSection: some View {
+        Section("About") {
+            NavigationLink {
+                DataExportView()
+                    .environment(services)
+            } label: {
+                Label("Export Data", systemImage: "square.and.arrow.up.fill")
+            }
+
+            NavigationLink {
+                DisclaimerView()
+            } label: {
+                Label("Legal Disclaimer", systemImage: "doc.text.fill")
+            }
+        }
+    }
+
+}
+
+// MARK: - Catalog Settings Page
+
+private struct CatalogSettingsPage: View {
+    @Environment(AppServices.self) private var services
     @State private var brandPendingDisable: TCGBrand?
 
-
-    /// Brands the user has not added yet (shown in the Add menu). Order follows the hosted `brands.json`.
     private var brandsAvailableToAdd: [TCGBrand] {
         services.brandsManifest.brandsAvailableToAdd(enabled: services.brandSettings.enabledBrands)
     }
 
-    /// Enabled brands ordered for user-facing controls.
-    private var sortedEnabledBrands: [TCGBrand] {
+    private var sortedEnabled: [TCGBrand] {
         services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
     }
 
     var body: some View {
         List {
-            settingsHero
-            topSections
-            bottomSections
+            Section {
+                ForEach(sortedEnabled) { brand in
+                    Text(brand.displayTitle)
+                }
+                .onDelete(perform: requestBrandRemoval)
+                .deleteDisabled(services.brandSettings.enabledBrands.count <= 1)
+            } footer: {
+                Text("Removing a game deletes its downloaded catalog from this device and hides those cards from browse, wishlist, and collection until you add the game again.")
+            }
         }
         .listStyle(.insetGrouped)
-        .scrollContentBackground(.hidden)
-        .background(Color(uiColor: .systemGroupedBackground))
-        .toolbar(.hidden, for: .navigationBar)
-        .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)
-        .sheet(isPresented: $showPaywall) {
-            PaywallSheet()
-                .environment(services)
-                .presentationDragIndicator(.visible)
-        }
-        .sheet(isPresented: $showDataExport) {
-            DataExportView()
-                .environment(services)
-                .presentationDragIndicator(.visible)
-        }
-        .sheet(isPresented: $showDisclaimer) {
-            DisclaimerView()
-                .presentationDragIndicator(.visible)
+        .navigationTitle("Card Catalogs")
+        .navigationBarTitleDisplayMode(.large)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    ForEach(brandsAvailableToAdd) { brand in
+                        Button(brand.displayTitle) { addBrand(brand) }
+                    }
+                } label: {
+                    Image(systemName: "plus")
+                }
+                .disabled(brandsAvailableToAdd.isEmpty)
+            }
         }
         .alert(
             "Remove catalog?",
@@ -52,17 +189,12 @@ struct SettingsView: View {
             ),
             presenting: brandPendingDisable
         ) { brand in
-            Button("Cancel", role: .cancel) {
-                brandPendingDisable = nil
-            }
+            Button("Cancel", role: .cancel) { brandPendingDisable = nil }
             Button("Delete downloaded data", role: .destructive) {
                 services.brandSettings.setEnabled(brand, isOn: false)
                 Task {
-                    do {
-                        try await BrandCatalogMaintenance.purgeLocalData(for: brand)
-                    } catch {
-                        // Best-effort; UI still disables the brand.
-                    }
+                    do { try await BrandCatalogMaintenance.purgeLocalData(for: brand) }
+                    catch { }
                 }
                 services.pricing.clearSetPricingMemoryCache()
                 if services.brandSettings.enabledBrands.contains(.pokemon) {
@@ -83,144 +215,9 @@ struct SettingsView: View {
         }
     }
 
-    private var settingsHero: some View {
-        Section {
-            Text("Settings")
-                .font(.system(size: 36, weight: .bold, design: .default))
-                .foregroundStyle(.primary)
-                .padding(.top, 20)
-                .padding(.bottom, 8)
-                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
-        }
-    }
-
-    @ViewBuilder private var topSections: some View {
-        Section {
-            Picker(
-                "Active Game",
-                selection: Binding(
-                    get: { services.brandSettings.selectedCatalogBrand },
-                    set: { services.brandSettings.selectedCatalogBrand = $0 }
-                )
-            ) {
-                ForEach(sortedEnabledBrands) { brand in
-                    Text(brand.displayTitle).tag(brand)
-                }
-            }
-        } header: {
-            Text("Active Game")
-        } footer: {
-            Text("Changes which card game is used across browse, collection, and search.")
-        }
-
-        CatalogSection(brandsAvailableToAdd: brandsAvailableToAdd, onAdd: addBrand, onDelete: requestBrandRemoval)
-
-        OfflineModeSection()
-
-        Section("Pricing") {
-            Picker("Show prices in", selection: Binding(
-                get: { services.priceDisplay.currency },
-                set: { services.priceDisplay.currency = $0 }
-            )) {
-                ForEach(PriceDisplayCurrency.allCases) { c in Text(c.pickerTitle).tag(c) }
-            }
-            Text("Catalog and history values from the server are in US dollars. Pounds use a daily exchange rate.")
-                .font(.caption).foregroundStyle(.secondary)
-        }
-    }
-
-    @ViewBuilder private var bottomSections: some View {
-        Section {
-            switch services.cloudSettings.syncStatus {
-            case .cloudKitConnected:
-                Label("iCloud connected", systemImage: "checkmark.icloud").foregroundStyle(.green)
-            case .cloudKitFallback:
-                Label("CloudKit sync failed", systemImage: "exclamationmark.icloud").foregroundStyle(.orange)
-            case .iCloudAccountUnavailable:
-                Label("iCloud not available", systemImage: "exclamationmark.icloud").foregroundStyle(.orange)
-                Button("Open Settings") {
-                    if let url = URL(string: UIApplication.openSettingsURLString) {
-                        UIApplication.shared.open(url)
-                    }
-                }
-            }
-        } header: { Text("Data Sync") } footer: {
-            switch services.cloudSettings.syncStatus {
-            case .cloudKitFallback:
-                Text("This build is using local-only storage because the CloudKit store could not be opened on this device yet.")
-            case .cloudKitConnected:
-                Text("Your wishlist, collection, and ledger data are stored locally and synced through your private iCloud database. After reinstalling, data may take several minutes to finish syncing from iCloud.")
-            case .iCloudAccountUnavailable:
-                Text("You can still use the app offline, but CloudKit sync stays off until this device is signed into iCloud.")
-            }
-        }
-
-        Section("Premium") {
-            if services.store.isPremium {
-                Label("Premium active", systemImage: "checkmark.seal.fill")
-                    .foregroundStyle(.green)
-            } else {
-                Button {
-                    showPaywall = true
-                } label: {
-                    Label("Unlock Premium", systemImage: "crown.fill")
-                }
-            }
-            Button {
-                Task { try? await services.store.restore() }
-            } label: {
-                Label("Restore purchases", systemImage: "arrow.clockwise")
-            }
-        }
-
-        Section {
-            Button {
-                showDataExport = true
-            } label: {
-                Label("Export Data", systemImage: "square.and.arrow.up")
-            }
-        }
-
-        Section {
-            NavigationLink {
-                NotificationPreferencesView()
-                    .environment(services)
-            } label: {
-                Label("Notification Preferences", systemImage: "bell.badge")
-            }
-        } header: {
-            Text("Social")
-        } footer: {
-            Text("Choose exactly which social activity types can notify you.")
-        }
-
-        Section {
-            Button {
-                showDisclaimer = true
-            } label: {
-                Label("Legal Disclaimer", systemImage: "doc.text")
-            }
-        }
-
-        Section {
-            let lines = services.cloudSettings.syncDiagnosticLines
-            Text(lines.joined(separator: "\n"))
-                .font(.caption.monospaced())
-                .textSelection(.enabled)
-                .foregroundStyle(.secondary)
-        } header: { Text("iCloud Debug") } footer: {
-            Text("Diagnostic info for troubleshooting sync issues. After a fresh install, CloudKit may take several minutes to import existing records from the server.")
-        }
-
-    }
-
     private func addBrand(_ brand: TCGBrand) {
         services.brandSettings.setEnabled(brand, isOn: true)
-        Task {
-            await services.performCatalogSyncAfterEnablingBrands()
-        }
+        Task { await services.performCatalogSyncAfterEnablingBrands() }
     }
 
     private func requestBrandRemoval(at offsets: IndexSet) {
@@ -228,10 +225,46 @@ struct SettingsView: View {
         guard let index = offsets.first, sorted.indices.contains(index) else { return }
         brandPendingDisable = sorted[index]
     }
-
 }
 
-private struct OfflineModeSection: View {
+// MARK: - Active Game Settings Page
+
+private struct ActiveGameSettingsPage: View {
+    @Environment(AppServices.self) private var services
+
+    private var sortedEnabled: [TCGBrand] {
+        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
+    }
+
+    var body: some View {
+        List {
+            Section {
+                Picker(
+                    "Active Game",
+                    selection: Binding(
+                        get: { services.brandSettings.selectedCatalogBrand },
+                        set: { services.brandSettings.selectedCatalogBrand = $0 }
+                    )
+                ) {
+                    ForEach(sortedEnabled) { brand in
+                        Text(brand.displayTitle).tag(brand)
+                    }
+                }
+                .pickerStyle(.inline)
+                .labelsHidden()
+            } footer: {
+                Text("Changes which card game is used across browse, collection, and search.")
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("Active Game")
+        .navigationBarTitleDisplayMode(.large)
+    }
+}
+
+// MARK: - Offline Settings Page
+
+private struct OfflineSettingsPage: View {
     @Environment(AppServices.self) private var services
 
     private var brand: TCGBrand { services.brandSettings.selectedCatalogBrand }
@@ -249,88 +282,175 @@ private struct OfflineModeSection: View {
     }
 
     var body: some View {
-        Section {
-            Toggle(isOn: Binding(
-                get: { isEnabled },
-                set: { newValue in
-                    services.offlineImageSettings.setOfflinePackEnabled(newValue, for: brand)
-                    if newValue {
-                        Task {
-                            await services.offlineImageDownload.runFullDownloadIfNeeded(
-                                brand: brand,
-                                nationalDexPokemon: services.cardData.nationalDexPokemon,
-                                sealedProducts: services.sealedProducts.products
-                            )
+        List {
+            Section {
+                Toggle(isOn: Binding(
+                    get: { isEnabled },
+                    set: { newValue in
+                        services.offlineImageSettings.setOfflinePackEnabled(newValue, for: brand)
+                        if newValue {
+                            Task {
+                                await services.offlineImageDownload.runFullDownloadIfNeeded(
+                                    brand: brand,
+                                    nationalDexPokemon: services.cardData.nationalDexPokemon,
+                                    sealedProducts: services.sealedProducts.products
+                                )
+                            }
+                        } else {
+                            services.offlineImageDownload.cancelDownload(for: brand)
+                            Task {
+                                try? OfflineImageStore.shared.deleteAll(for: brand)
+                                services.offlineImageDownload.notifyPackMutated()
+                            }
                         }
-                    } else {
-                        services.offlineImageDownload.cancelDownload(for: brand)
-                        Task {
-                            try? OfflineImageStore.shared.deleteAll(for: brand)
-                            services.offlineImageDownload.notifyPackMutated()
+                    }
+                )) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Enable Offline Mode")
+                        if let status = statusLine {
+                            Text(status)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        } else if !isEnabled {
+                            Text("Downloads \(OfflinePackDownloadSizeCopy.approximateLabel(for: brand)) of card images")
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
                         }
                     }
                 }
-            )) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Offline Mode")
-                    if let status = statusLine {
-                        Text(status)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    } else if !isEnabled {
-                        Text("Downloads \(OfflinePackDownloadSizeCopy.approximateLabel(for: brand)) of card images")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                }
+            } footer: {
+                Text("Downloads low-resolution card images to your device so they load without a network connection. High-resolution images in card details are still fetched when needed.")
             }
+
             if isEnabled {
-                Text("\(manifestCount) images stored locally")
-                    .font(.caption.monospaced())
-                    .foregroundStyle(.secondary)
+                Section("Storage") {
+                    Label("\(manifestCount) images stored locally", systemImage: "photo.on.rectangle.angled")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
             }
-        } header: {
-            Text("Offline")
-        } footer: {
-            Text("Downloads low-resolution card images to your device so they load without a network connection. High-resolution images in card details are still fetched when needed.")
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("Offline Mode")
+        .navigationBarTitleDisplayMode(.large)
+    }
+}
+
+// MARK: - Pricing Settings Page
+
+private struct PricingSettingsPage: View {
+    @Environment(AppServices.self) private var services
+
+    var body: some View {
+        List {
+            Section {
+                Picker("Currency", selection: Binding(
+                    get: { services.priceDisplay.currency },
+                    set: { services.priceDisplay.currency = $0 }
+                )) {
+                    ForEach(PriceDisplayCurrency.allCases) { c in
+                        Text(c.pickerTitle).tag(c)
+                    }
+                }
+                .pickerStyle(.inline)
+                .labelsHidden()
+            } footer: {
+                Text("Catalog and history values from the server are in US dollars. Pounds use a daily exchange rate.")
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("Pricing & Currency")
+        .navigationBarTitleDisplayMode(.large)
+    }
+}
+
+// MARK: - Data Sync Settings Page
+
+private struct DataSyncSettingsPage: View {
+    @Environment(AppServices.self) private var services
+
+    var body: some View {
+        List {
+            Section {
+                syncStatusRow
+                if case .iCloudAccountUnavailable = services.cloudSettings.syncStatus {
+                    Button("Open iOS Settings") {
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(url)
+                        }
+                    }
+                }
+            } header: {
+                Text("Status")
+            } footer: {
+                statusFooter
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("iCloud Sync")
+        .navigationBarTitleDisplayMode(.large)
+    }
+
+    private var syncStatusRow: some View {
+        switch services.cloudSettings.syncStatus {
+        case .cloudKitConnected:
+            return Label("iCloud connected", systemImage: "checkmark.icloud.fill")
+                .foregroundStyle(.green)
+        case .cloudKitFallback:
+            return Label("CloudKit sync failed", systemImage: "exclamationmark.icloud.fill")
+                .foregroundStyle(.orange)
+        case .iCloudAccountUnavailable:
+            return Label("iCloud not available", systemImage: "exclamationmark.icloud.fill")
+                .foregroundStyle(.orange)
+        }
+    }
+
+    @ViewBuilder private var statusFooter: some View {
+        switch services.cloudSettings.syncStatus {
+        case .cloudKitFallback:
+            Text("This build is using local-only storage because the CloudKit store could not be opened on this device yet.")
+        case .cloudKitConnected:
+            Text("Your wishlist, collection, and ledger data are stored locally and synced through your private iCloud database. After reinstalling, data may take several minutes to finish syncing from iCloud.")
+        case .iCloudAccountUnavailable:
+            Text("You can still use the app offline, but CloudKit sync stays off until this device is signed into iCloud.")
         }
     }
 }
 
-private struct CatalogSection: View {
-    @Environment(AppServices.self) private var services
-    let brandsAvailableToAdd: [TCGBrand]
-    let onAdd: (TCGBrand) -> Void
-    let onDelete: (IndexSet) -> Void
+// MARK: - Premium Settings Page
 
-    private var sortedEnabled: [TCGBrand] {
-        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
-    }
+private struct PremiumSettingsPage: View {
+    @Environment(AppServices.self) private var services
+    @State private var showPaywall = false
 
     var body: some View {
-        Section {
-            ForEach(sortedEnabled) { brand in
-                Text(brand.displayTitle)
-            }
-            .onDelete(perform: onDelete)
-            .deleteDisabled(services.brandSettings.enabledBrands.count <= 1)
-        } header: {
-            HStack {
-                Text("Card catalog")
-                Spacer(minLength: 8)
-                Menu {
-                    ForEach(brandsAvailableToAdd) { brand in
-                        Button(brand.displayTitle) { onAdd(brand) }
+        List {
+            Section {
+                if services.store.isPremium {
+                    Label("Premium active", systemImage: "checkmark.seal.fill")
+                        .foregroundStyle(.green)
+                } else {
+                    Button {
+                        showPaywall = true
+                    } label: {
+                        Label("Unlock Premium", systemImage: "crown.fill")
                     }
-                } label: {
-                    Label("Add", systemImage: "plus.circle.fill")
                 }
-                .disabled(brandsAvailableToAdd.isEmpty)
-                .opacity(brandsAvailableToAdd.isEmpty ? 0.35 : 1)
-                .accessibilityHint(brandsAvailableToAdd.isEmpty ? "All available games are already in your catalog" : "Choose a game to download")
+
+                Button {
+                    Task { try? await services.store.restore() }
+                } label: {
+                    Label("Restore Purchases", systemImage: "arrow.clockwise")
+                }
             }
-        } footer: {
-            Text("Removing a game deletes its downloaded catalog from this device and hides those cards from browse, wishlist, and collection until you add the game again and download.")
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("Premium")
+        .navigationBarTitleDisplayMode(.large)
+        .sheet(isPresented: $showPaywall) {
+            PaywallSheet()
+                .environment(services)
+                .presentationDragIndicator(.visible)
         }
     }
 }

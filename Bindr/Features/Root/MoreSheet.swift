@@ -8,7 +8,6 @@ struct MoreView: View {
     @Binding var navigationPath: NavigationPath
 
     @State private var showProfile = false
-    @State private var showSettings = false
     @State private var showCreateBinder = false
     @State private var profilePath = NavigationPath()
     @State private var profile: SocialProfile? = nil
@@ -60,10 +59,8 @@ struct MoreView: View {
         .navigationDestination(for: SideMenuPage.self) { page in
             switch page {
             case .account:
-                NavigationStack {
-                    SettingsView()
-                        .environment(services)
-                }
+                SettingsView()
+                    .environment(services)
             case .social:
                 SocialRootView()
                     .environment(services)
@@ -93,19 +90,11 @@ struct MoreView: View {
             HStack {
                 ChromeGlassCircleButton(accessibilityLabel: "Settings") {
                     Haptics.lightImpact()
-                    showSettings = true
+                    navigationPath.append(SideMenuPage.account)
                 } label: {
                     Image(systemName: "gearshape")
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
-                }
-                .sheet(isPresented: $showSettings) {
-                    NavigationStack {
-                        SettingsView()
-                            .environment(services)
-                    }
-                    .presentationDetents([.large])
-                    .presentationDragIndicator(.visible)
                 }
 
                 Spacer(minLength: 0)

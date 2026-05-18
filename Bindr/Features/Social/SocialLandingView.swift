@@ -27,15 +27,13 @@ struct SocialLandingView: View {
 
     @Binding var currentNonce: String?
     let errorMessage: String?
-    let rootFloatingChromeInset: CGFloat
+    let headerInset: CGFloat
     let onSignInResult: (Result<ASAuthorization, Error>) -> Void
-
-    @State private var hasAppeared = false
 
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView {
-                VStack(spacing: BindrSpacing.xxl) {
+                VStack(spacing: BindrSpacing.lg) {
                     heroBlock
                     featuresBlock
 
@@ -43,31 +41,20 @@ struct SocialLandingView: View {
                     Color.clear.frame(height: 180)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
-                .padding(.top, BindrSpacing.lg)
             }
-            .contentMargins(.top, rootFloatingChromeInset + 16, for: .scrollContent)
+            .contentMargins(.top, headerInset, for: .scrollContent)
             .scrollIndicators(.hidden)
 
             ctaPanel
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .bindrPageBackground(ignoresSafeArea: false)
-        .onAppear {
-            // Stagger-fade the hero on first appearance so it doesn't snap
-            // in if the user navigated here while another transition was
-            // still in flight.
-            withAnimation(.easeOut(duration: 0.45)) {
-                hasAppeared = true
-            }
-        }
     }
 
     // MARK: Hero
 
     private var heroBlock: some View {
         VStack(spacing: BindrSpacing.lg) {
-            SocialSectionEyebrow(title: "THE NEXT BIG THING", accentDot: true)
-
             VStack(spacing: 0) {
                 Text("Connect with the")
                     .font(.system(size: 38, weight: .heavy))
@@ -94,41 +81,8 @@ struct SocialLandingView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .lineSpacing(2)
 
-            ZStack {
-                heroBackdropGlow
-                FloatingCardStack()
-                    .frame(height: 280)
-                    .offset(y: hasAppeared ? 0 : 20)
-                    .opacity(hasAppeared ? 1 : 0)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.top, BindrSpacing.sm)
         }
     }
-
-    private var heroBackdropGlow: some View {
-        ZStack {
-            RadialGradient(
-                colors: [accent.opacity(colorScheme == .dark ? 0.30 : 0.18), .clear],
-                center: .center,
-                startRadius: 10,
-                endRadius: 260
-            )
-            .blur(radius: 30)
-
-            RadialGradient(
-                colors: [BindrPalette.binderGold.opacity(0.18), .clear],
-                center: UnitPoint(x: 0.85, y: 0.2),
-                startRadius: 5,
-                endRadius: 180
-            )
-            .blur(radius: 24)
-        }
-        .frame(height: 320)
-        .allowsHitTesting(false)
-    }
-
-
 
 
 
@@ -144,35 +98,30 @@ struct SocialLandingView: View {
                     title: "Trade Network",
                     description: "Auto-find suggested trades based on your wishlist and friends' collections.",
                     tint: BindrPalette.deckBlue,
-                    index: 1
                 )
                 SocialFeatureCard(
                     icon: "sparkles",
                     title: "Activity feed",
                     description: "See pulls, binders, and trades as they happen in real-time.",
-                    tint: BindrPalette.ownedGreen,
-                    index: 2
+                    tint: BindrPalette.ownedGreen
                 )
                 SocialFeatureCard(
                     icon: "crown.fill",
                     title: "Wishlist alerts",
                     description: "Be notified the moment a card you want becomes available for trade.",
-                    tint: BindrPalette.binderGold,
-                    index: 3
+                    tint: BindrPalette.binderGold
                 )
                 SocialFeatureCard(
                     icon: "person.crop.square.filled.and.at.rectangle",
                     title: "Public Showcase",
                     description: "Share your binders and collections with a premium profile.",
-                    tint: BindrPalette.wishlistViolet,
-                    index: 4
+                    tint: BindrPalette.wishlistViolet
                 )
                 SocialFeatureCard(
                     icon: "bubble.left.and.bubble.right.fill",
                     title: "Interactions",
                     description: "React to pulls and stay connected with other collectors.",
-                    tint: BindrPalette.alertRed,
-                    index: 5
+                    tint: BindrPalette.alertRed
                 )
             }
         }
@@ -226,13 +175,8 @@ struct SocialLandingView: View {
             .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
             .frame(height: 54)
             .clipShape(RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous))
-            .shadow(color: accent.opacity(colorScheme == .dark ? 0.45 : 0.22), radius: 18, x: 0, y: 6)
             .padding(.horizontal, BindrSpacing.lg)
 
-            Text("By continuing you agree to Bindr's Terms & Privacy.")
-                .font(.system(size: 11))
-                .foregroundStyle(.tertiary)
-                .padding(.bottom, 6)
         }
         .padding(.top, BindrSpacing.md)
         .padding(.bottom, BindrSpacing.lg)

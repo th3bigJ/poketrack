@@ -108,6 +108,7 @@ struct GradingOpportunitiesView: View {
                 content
             }
         }
+        .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
             header

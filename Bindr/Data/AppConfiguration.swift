@@ -8,8 +8,10 @@ import Foundation
 /// - Card images in JSON as `cards/…` resolve under **assets prefix** (default: bucket root → `…/cards/…`).
 /// - Set logos: try exact `logoSrc` path first, then `tcg/…` mirrors — see `setLogoURLCandidates`.
 enum AppConfiguration {
-    /// Single non-consumable premium product — create the same ID in App Store Connect.
+    /// Monthly premium subscription product ID.
     static let premiumProductID = "app1xy.bindr.premium"
+    /// Annual premium subscription product ID.
+    static let premiumAnnualProductID = "app1xy.bindr.premium.annual"
 
     /// Supabase project URL used for social/auth APIs.
     static var supabaseURL: URL? {

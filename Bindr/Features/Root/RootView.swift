@@ -86,7 +86,6 @@ struct RootView: View {
     @State private var inlineDetailCards: [Card] = []
     @State private var showCreateFolderAlert = false
     @State private var newFolderTitle = ""
-    @State private var showSettings = false
     @State private var suppressMorePathReset = false
     @FocusState private var searchFieldFocused: Bool
 
@@ -223,7 +222,12 @@ struct RootView: View {
             return ("folder.badge.plus", "Create folder", { showCreateFolderAlert = true })
         }
         switch selectedTab {
-        case .dashboard: return ("gearshape", "Settings", { showSettings = true })
+        case .dashboard: return ("gearshape", "Settings", {
+            suppressMorePathReset = true
+            moreNavigationPath = NavigationPath()
+            moreNavigationPath.append(SideMenuPage.account)
+            selectedTab = .more
+        })
         default: return nil
         }
     }
@@ -636,14 +640,6 @@ struct RootView: View {
 
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
                 floatingSearchBar(hiddenOffset: chromeSearchBarHiddenOffset, topInset: chromeSearchBarTopInset, bottomInset: chromeSearchBarBottomInset)
-                    .sheet(isPresented: $showSettings) {
-                        NavigationStack {
-                            SettingsView()
-                                .environment(services)
-                        }
-                        .presentationDetents([.large])
-                        .presentationDragIndicator(.visible)
-                    }
                     .sheet(isPresented: $showPremiumAutoSheet) {
                         // Same `PaywallSheet` wrapper everywhere else uses,
                         // so the user-initiated path and the auto-popup path
@@ -659,7 +655,7 @@ struct RootView: View {
                             SocialLandingView(
                                 currentNonce: .constant(nil),
                                 errorMessage: nil,
-                                rootFloatingChromeInset: 0,
+                                headerInset: 0,
                                 onSignInResult: { _ in }
                             )
                             .toolbar {

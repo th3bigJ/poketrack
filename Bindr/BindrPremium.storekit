@@ -42,6 +42,15 @@
           "adHocOffers" : [
 
           ],
+          "billingPlans" : [
+            {
+              "billingPlanType" : "BILLED_UPFRONT",
+              "commitmentDisplayPrice" : "2.99",
+              "displayPrice" : "2.99",
+              "internalID" : "58E76581",
+              "isEnabled" : true
+            }
+          ],
           "codeOffers" : [
 
           ],
@@ -67,6 +76,45 @@
           "productID" : "app1xy.bindr.premium",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Bindr Premium 1 month",
+          "subscriptionGroupID" : "66D52E89",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "billingPlans" : [
+            {
+              "billingPlanType" : "BILLED_UPFRONT",
+              "commitmentDisplayPrice" : "0.99",
+              "displayPrice" : "0.99",
+              "internalID" : "465274F2",
+              "isEnabled" : true
+            }
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "24.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "9BB93AA1",
+          "introductoryOffers" : [
+
+          ],
+          "localizations" : [
+            {
+              "description" : "",
+              "displayName" : "",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "app1xy.bindr.premium.annual",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Bindr Premium Yearly",
           "subscriptionGroupID" : "66D52E89",
           "type" : "RecurringSubscription",
           "winbackOffers" : [
