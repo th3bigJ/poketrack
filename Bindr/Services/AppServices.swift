@@ -150,6 +150,9 @@ final class AppServices {
         pendingLightBrowseTabEntry = true
         isLaunchCatalogPipelineComplete = true
         isReady = true
+        Task(priority: .background) { [weak self] in
+            await self?.resumeOfflineDownloadsIfNeeded()
+        }
     }
 
     /// Returning-user launch path: quickly prime local catalog data, then refresh network-backed data in the background.
@@ -190,6 +193,28 @@ final class AppServices {
         }
         Task(priority: .background) { [weak self] in
             await self?.runDeferredLaunchServices()
+        }
+        Task(priority: .background) { [weak self] in
+            await self?.resumeOfflineDownloadsIfNeeded()
+        }
+    }
+
+    /// Resume any in-progress offline image downloads after app relaunch.
+    /// `runFullDownloadIfNeeded` skips images already on disk, so this is safe to call every launch.
+    func resumeOfflineDownloadsIfNeeded() async {
+        let enabledBrands = TCGBrand.allCases.filter { offlineImageSettings.isOfflinePackEnabled(for: $0) }
+        guard !enabledBrands.isEmpty else { return }
+        if sealedProducts.products.isEmpty {
+            await sealedProducts.loadFromLocalIfAvailable()
+        }
+        let nationalDexPokemon = cardData.nationalDexPokemon
+        let products = sealedProducts.products
+        for brand in enabledBrands {
+            await offlineImageDownload.runFullDownloadIfNeeded(
+                brand: brand,
+                nationalDexPokemon: nationalDexPokemon,
+                sealedProducts: products
+            )
         }
     }
 

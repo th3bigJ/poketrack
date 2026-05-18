@@ -8,7 +8,7 @@ final class OfflineImageDownloadService {
     private let store = OfflineImageStore.shared
     private let settings: OfflineImageSettings
 
-    private static let maxConcurrentImageDownloads = 2
+    private static let maxConcurrentImageDownloads = 4
 
     /// Short status for Account UI (per brand).
     private(set) var statusLine: [TCGBrand: String] = [:]
