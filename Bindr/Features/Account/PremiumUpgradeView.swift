@@ -30,22 +30,20 @@ struct PremiumUpgradeView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Minimalist naked text/icon header for Premium page (no glass button backdrops)
+                // Perfect, crisp glassmorphic header matching all other screens, bypasses native squircle styling
                 HStack {
-                    Button(action: {
+                    ChromeGlassCircleButton(accessibilityLabel: "Close") {
                         Haptics.lightImpact()
                         dismiss()
-                    }) {
+                    } label: {
                         Image(systemName: "xmark")
-                            .font(.system(size: 16, weight: .medium))
+                            .font(.system(size: 14, weight: .bold))
                             .foregroundStyle(.primary)
                     }
-                    .buttonStyle(.plain)
                     
                     Spacer()
                     
-                    Button(action: {
-                        Haptics.lightImpact()
+                    ChromeGlassCapsuleButton(label: "Restore") {
                         Task {
                             do {
                                 try await services.store.restore()
@@ -54,16 +52,11 @@ struct PremiumUpgradeView: View {
                                 restoreError = error.localizedDescription
                             }
                         }
-                    }) {
-                        Text("Restore")
-                            .font(.system(size: 15, weight: .semibold))
-                            .foregroundStyle(.primary)
                     }
-                    .buttonStyle(.plain)
                 }
-                .padding(.horizontal, 20)
-                .padding(.top, 16)
-                .padding(.bottom, 8)
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 10)
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: BindrSpacing.lg) {
@@ -116,14 +109,33 @@ struct PremiumUpgradeView: View {
                 .font(.system(size: 13, weight: .semibold))
                 .foregroundStyle(.secondary)
                 .padding(.bottom, 2)
-
+ 
             VStack(alignment: .leading, spacing: 8) {
                 benefitRow(label: "Unlimited card scans")
                 benefitRow(label: "Unlimited collection & binders")
                 benefitRow(label: "Full price history & trends")
                 benefitRow(label: "Offline database access")
                 benefitRow(label: "Priority trade notifications")
-                benefitRow(label: "Premium badges (Pokéball & Straw Hat)")
+                
+                // Beautiful custom row showing the premium badges side-by-side
+                HStack(spacing: BindrSpacing.md) {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(accent)
+                    
+                    Text("Premium badges")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(.primary)
+                    
+                    Spacer()
+                    
+                    HStack(spacing: -5) {
+                        PokeballEmblemView(size: 20)
+                        StrawHatEmblemView(size: 20)
+                            .offset(y: 1)
+                    }
+                    .padding(.trailing, 2)
+                }
             }
             .padding(BindrSpacing.md)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -191,18 +203,8 @@ struct PremiumUpgradeView: View {
             Haptics.lightImpact()
         } label: {
             VStack(spacing: 8) {
-                if let meta {
-                    Text(meta)
-                        .font(.system(size: 11, weight: .bold))
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
-                        .background(accent.gradient, in: Capsule())
-                        .offset(y: -14)
-                        .padding(.bottom, -14)
-                } else {
-                    Spacer().frame(height: 12)
-                }
+                // Keep top padding consistent so titles line up perfectly
+                Spacer().frame(height: 12)
                 
                 Text(label)
                     .font(.system(size: 14, weight: .semibold))
@@ -237,6 +239,17 @@ struct PremiumUpgradeView: View {
             .overlay {
                 RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
                     .stroke(isSelected ? accent : Color.clear, lineWidth: 2)
+            }
+            .overlay(alignment: .top) {
+                if let meta {
+                    Text(meta)
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(accent.gradient, in: Capsule())
+                        .offset(y: -13) // Drawn ON TOP of the border stroke to cleanly mask the line
+                }
             }
         }
         .buttonStyle(.plain)
@@ -306,6 +319,40 @@ struct PremiumUpgradeView: View {
             return "\(product.displayName) · auto-renews until cancelled."
         }
         return "Configure in App Store Connect to enable purchase."
+    }
+}
+
+// MARK: - Premium-specific Capsule Glass button
+private struct ChromeGlassCapsuleButton: View {
+    let label: String
+    let action: () -> Void
+
+    private var glassStroke: Color { Color.primary.opacity(0.1) }
+
+    var body: some View {
+        Button(action: { Haptics.lightImpact(); action() }) {
+            Text(label)
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(.primary)
+                .padding(.horizontal, 14)
+                .frame(height: 36)
+                .background {
+                    if #available(iOS 26.0, *) {
+                        Capsule()
+                            .fill(.clear)
+                            .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
+                    } else {
+                        Capsule()
+                            .fill(.thinMaterial)
+                            .overlay {
+                                Capsule()
+                                    .strokeBorder(glassStroke, lineWidth: 0.5)
+                              }
+                    }
+                }
+                .contentShape(Capsule())
+        }
+        .buttonStyle(.plain)
     }
 }
 
