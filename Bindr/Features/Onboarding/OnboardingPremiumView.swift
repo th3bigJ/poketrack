@@ -215,25 +215,25 @@ struct OnboardingPremiumView: View {
 
     /// Special grid cell showing both Pokéball and Straw Hat premium badges
     private func pokeballGridItem() -> some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 8) {
             HStack(spacing: -6) {
-                PokeballEmblemView(size: 24)
-                StrawHatEmblemView(size: 24)
+                PokeballEmblemView(size: 20)
+                StrawHatEmblemView(size: 20)
                     .offset(y: 1)
             }
-            .frame(width: 42, height: 32, alignment: .center)
+            .frame(width: 34, height: 32, alignment: .center)
 
             VStack(alignment: .leading, spacing: 3) {
                 Text("Premium Badges")
                     .font(.system(size: 12, weight: .bold))
                     .foregroundStyle(.primary)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.85)
+                    .minimumScaleFactor(0.7)
                 Text("Pokéball & Straw Hat styles")
                     .font(.system(size: 10))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
-                    .minimumScaleFactor(0.85)
+                    .minimumScaleFactor(0.7)
             }
             Spacer(minLength: 0)
         }

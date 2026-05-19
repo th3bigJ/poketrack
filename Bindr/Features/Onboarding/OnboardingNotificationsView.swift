@@ -44,14 +44,34 @@ struct OnboardingNotificationsView: View {
                 primary: {
                     OnboardingPrimaryButton(title: "Enable Alerts") {
                         Task {
-                            // Routes through SocialPushService so the
-                            // service's cached authorization state is
-                            // refreshed; also re-evaluates registration
-                            // in case the user is already signed in via
-                            // a restored Apple session.
-                            await services.socialPush.requestAuthorizationIfNeeded()
-                            await services.socialPush.updateRegistrationState()
-                            onContinue()
+                            let center = UNUserNotificationCenter.current()
+                            let settings = await center.notificationSettings()
+                            
+                            if settings.authorizationStatus == .denied {
+                                // If already denied, open iOS system settings directly to Bindr's page
+                                if let url = URL(string: UIApplication.openSettingsURLString),
+                                   UIApplication.shared.canOpenURL(url) {
+                                    await UIApplication.shared.open(url)
+                                }
+                                onContinue()
+                            } else if settings.authorizationStatus == .notDetermined {
+                                // If not yet prompted, request permissions
+                                let granted = (try? await center.requestAuthorization(options: [.alert, .badge, .sound])) ?? false
+                                await services.socialPush.refreshAuthorizationStatus()
+                                if granted {
+                                    // Register with APNs in the background so there is zero main thread lag
+                                    Task {
+                                        await services.socialPush.updateRegistrationState()
+                                    }
+                                }
+                                onContinue()
+                            } else {
+                                // If already authorized, register in the background and continue
+                                Task {
+                                    await services.socialPush.updateRegistrationState()
+                                }
+                                onContinue()
+                            }
                         }
                     }
                 },
