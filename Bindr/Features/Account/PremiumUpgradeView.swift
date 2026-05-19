@@ -29,27 +29,9 @@ struct PremiumUpgradeView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: BindrSpacing.lg) {
-                    heroBlock
-                    benefitsList
-                    planPickerBlock
-                    Color.clear.frame(height: 10)
-                }
-                .padding(.horizontal, BindrSpacing.lg)
-                .padding(.top, BindrSpacing.md)
-            }
-            .scrollIndicators(.hidden)
-            .safeAreaInset(edge: .bottom, spacing: 0) {
-                ctaPanel
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(uiColor: .systemBackground).ignoresSafeArea())
-            .navigationTitle("")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.hidden, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+            VStack(spacing: 0) {
+                // Perfect, crisp glassmorphic header matching all other screens, bypasses native squircle styling
+                HStack {
                     ChromeGlassCircleButton(accessibilityLabel: "Close") {
                         Haptics.lightImpact()
                         dismiss()
@@ -58,8 +40,9 @@ struct PremiumUpgradeView: View {
                             .font(.system(size: 14, weight: .bold))
                             .foregroundStyle(.primary)
                     }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    Spacer()
+                    
                     ChromeGlassCapsuleButton(label: "Restore") {
                         Task {
                             do {
@@ -71,7 +54,28 @@ struct PremiumUpgradeView: View {
                         }
                     }
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 10)
+                
+                ScrollView {
+                    VStack(alignment: .leading, spacing: BindrSpacing.lg) {
+                        heroBlock
+                        benefitsList
+                        planPickerBlock
+                        Color.clear.frame(height: 10)
+                    }
+                    .padding(.horizontal, BindrSpacing.lg)
+                    .padding(.top, BindrSpacing.sm)
+                }
+                .scrollIndicators(.hidden)
             }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                ctaPanel
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(uiColor: .systemBackground).ignoresSafeArea())
+            .toolbar(.hidden, for: .navigationBar) // Completely hides native navigation bar
             .tint(.primary)
             .task {
                 if services.store.products.isEmpty {

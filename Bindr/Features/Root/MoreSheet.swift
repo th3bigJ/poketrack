@@ -14,134 +14,140 @@ struct MoreView: View {
     @State private var profile: SocialProfile? = nil
 
     var body: some View {
-        List {
-            // MARK: - Core Features Section
-            Section {
-                NavigationLink(value: SideMenuPage.binders) {
-                    Label {
-                        Text("Binders")
-                            .font(.body)
-                            .foregroundStyle(.primary)
-                    } icon: {
-                        Image(systemName: "books.vertical.fill")
-                            .font(.system(size: 15, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
-                            .background(Color.blue.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    }
-                }
-                
-                NavigationLink(value: SideMenuPage.decks) {
-                    Label {
-                        Text("Deck Builder")
-                            .font(.body)
-                            .foregroundStyle(.primary)
-                    } icon: {
-                        Image(systemName: "rectangle.on.rectangle.angled")
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
-                            .background(Color.green.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    }
-                }
-                
-                NavigationLink(value: SideMenuPage.transactions) {
-                    Label {
-                        Text("Activity Ledger")
-                            .font(.body)
-                            .foregroundStyle(.primary)
-                    } icon: {
-                        Image(systemName: "list.bullet.rectangle.fill")
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
-                            .background(Color.orange.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    }
-                }
-            } header: {
-                Text("Collection Tools")
-            }
-
-            // MARK: - Settings & Utility Section
-            Section {
-                NavigationLink(value: SideMenuPage.themes) {
-                    Label {
-                        Text("Themes & Colors")
-                            .font(.body)
-                            .foregroundStyle(.primary)
-                    } icon: {
-                        Image(systemName: "paintpalette.fill")
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
-                            .background(Color.purple.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    }
-                }
-                
-                NavigationLink(value: SideMenuPage.gradingOpportunities) {
-                    Label {
-                        Text("Grading Opportunities")
-                            .font(.body)
-                            .foregroundStyle(.primary)
-                    } icon: {
-                        Image(systemName: "chart.line.uptrend.xyaxis")
-                            .font(.system(size: 14, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
-                            .background(Color.red.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    }
-                }
-            } header: {
-                Text("App Preferences")
-            }
-        }
-        .listStyle(.insetGrouped)
-        .scrollContentBackground(.hidden)
-        .bindrPageBackground()
-        .tint(.primary)
-        .navigationTitle("More")
-        .navigationBarTitleDisplayMode(.large)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                ChromeGlassCircleButton(accessibilityLabel: "Settings") {
-                    navigationPath.append(SideMenuPage.account)
-                } label: {
-                    Image(systemName: "gearshape")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundStyle(.primary)
-                }
-            }
-
-            ToolbarItem(placement: .topBarTrailing) {
-                ChromeGlassCircleButton(accessibilityLabel: "Profile") {
-                    showProfile = true
-                } label: {
-                    Image(systemName: "person.crop.circle")
-                        .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(.primary)
-                }
-                .popover(isPresented: $showProfile) {
-                    NavigationStack(path: $profilePath) {
-                        AccountProfileView(
-                            navigationPath: $profilePath,
-                            isPresented: $showProfile,
-                            externalProfile: $profile
-                        )
-                        .toolbar {
-                            ToolbarItem(placement: .topBarLeading) {
-                                Button("Done") {
-                                    showProfile = false
-                                }
-                                .font(.system(size: 16, weight: .semibold))
-                                .foregroundStyle(accent)
-                            }
+        ZStack(alignment: .top) {
+            List {
+                // MARK: - Core Features Section
+                Section {
+                    NavigationLink(value: SideMenuPage.binders) {
+                        Label {
+                            Text("Binders")
+                                .font(.body)
+                                .foregroundStyle(.primary)
+                        } icon: {
+                            Image(systemName: "books.vertical.fill")
+                                .font(.system(size: 15, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(width: 30, height: 30)
+                                .background(Color.blue.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                         }
                     }
-                    .presentationDetents([.large])
-                    .presentationDragIndicator(.visible)
+                    
+                    NavigationLink(value: SideMenuPage.decks) {
+                        Label {
+                            Text("Deck Builder")
+                                .font(.body)
+                                .foregroundStyle(.primary)
+                        } icon: {
+                            Image(systemName: "rectangle.on.rectangle.angled")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(width: 30, height: 30)
+                                .background(Color.green.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        }
+                    }
+                    
+                    NavigationLink(value: SideMenuPage.transactions) {
+                        Label {
+                            Text("Activity Ledger")
+                                .font(.body)
+                                .foregroundStyle(.primary)
+                        } icon: {
+                            Image(systemName: "list.bullet.rectangle.fill")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(width: 30, height: 30)
+                                .background(Color.orange.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        }
+                    }
+                } header: {
+                    Text("Collection Tools")
+                }
+
+                // MARK: - Settings & Utility Section
+                Section {
+                    NavigationLink(value: SideMenuPage.themes) {
+                        Label {
+                            Text("Themes & Colors")
+                                .font(.body)
+                                .foregroundStyle(.primary)
+                        } icon: {
+                            Image(systemName: "paintpalette.fill")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(width: 30, height: 30)
+                                .background(Color.purple.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        }
+                    }
+                    
+                    NavigationLink(value: SideMenuPage.gradingOpportunities) {
+                        Label {
+                            Text("Grading Opportunities")
+                                .font(.body)
+                                .foregroundStyle(.primary)
+                        } icon: {
+                            Image(systemName: "chart.line.uptrend.xyaxis")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(width: 30, height: 30)
+                                .background(Color.red.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        }
+                    }
+                } header: {
+                    Text("App Preferences")
                 }
             }
+            .listStyle(.insetGrouped)
+            .scrollContentBackground(.hidden)
+            .safeAreaInset(edge: .top) {
+                Color.clear.frame(height: 54)
+            }
+            
+            // Clean, perfect glassmorphic header matching all other main tabs
+            BindrPageHeader(
+                title: "More",
+                leading: {
+                    ChromeGlassCircleButton(accessibilityLabel: "Settings") {
+                        navigationPath.append(SideMenuPage.account)
+                    } label: {
+                        Image(systemName: "gearshape")
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundStyle(.primary)
+                    }
+                },
+                trailing: {
+                    ChromeGlassCircleButton(accessibilityLabel: "Profile") {
+                        showProfile = true
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                            .font(.system(size: 17, weight: .semibold))
+                            .foregroundStyle(.primary)
+                    }
+                    .popover(isPresented: $showProfile) {
+                        NavigationStack(path: $profilePath) {
+                            AccountProfileView(
+                                navigationPath: $profilePath,
+                                isPresented: $showProfile,
+                                externalProfile: $profile
+                            )
+                            .toolbar {
+                                ToolbarItem(placement: .topBarLeading) {
+                                    Button("Done") {
+                                        showProfile = false
+                                    }
+                                    .font(.system(size: 16, weight: .semibold))
+                                    .foregroundStyle(accent)
+                                }
+                            }
+                        }
+                        .presentationDetents([.large])
+                        .presentationDragIndicator(.visible)
+                    }
+                }
+            )
         }
+        .bindrPageBackground()
+        .tint(.primary)
+        .toolbar(.hidden, for: .navigationBar) // Hides native squircle toolbar entirely
         .navigationDestination(for: SideMenuPage.self) { page in
             switch page {
             case .account:
