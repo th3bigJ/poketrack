@@ -26,16 +26,6 @@ struct PokeballEmblemView: View {
             Rectangle()
                 .fill(.black)
                 .frame(height: size * 0.1)
-            
-            // Center circle black outline
-            Circle()
-                .fill(.black)
-                .frame(width: size * 0.38, height: size * 0.38)
-            
-            // Center button white
-            Circle()
-                .fill(Color.white)
-                .frame(width: size * 0.22, height: size * 0.22)
         }
         .frame(width: size, height: size)
         .clipShape(Circle())

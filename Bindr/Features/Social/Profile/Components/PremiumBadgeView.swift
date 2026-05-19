@@ -65,6 +65,7 @@ struct PremiumBadgeView: View {
 /// Vector-drawn Luffy-style straw hat badge for ONE PIECE premium users.
 /// Rendered entirely with SwiftUI shapes — no images, scales perfectly.
 struct StrawHatEmblemView: View {
+    @Environment(\.bindrAccent) private var accent
     var size: CGFloat = 14
 
     var body: some View {
@@ -100,12 +101,12 @@ struct StrawHatEmblemView: View {
             ctx.fill(crownPath, with: .color(Color(hex: "D4A017")))
             ctx.stroke(crownPath, with: .color(Color(hex: "8B6914")), lineWidth: size * 0.06)
 
-            // ── Red band ────────────────────────────────────────────────
+            // ── Band dynamically matching user's selected theme accent ──────────────────
             let bandH = h * 0.14
             let bandY = brimRect.minY - bandH * 0.4
             let bandRect = CGRect(x: cx - crownW * 0.52, y: bandY, width: crownW * 1.04, height: bandH)
             let bandPath = Path(ellipseIn: bandRect)
-            ctx.fill(bandPath, with: .color(Color(hex: "E04040")))
+            ctx.fill(bandPath, with: .color(accent))
 
             // ── Band highlight ──────────────────────────────────────────
             let hlH = bandH * 0.35
