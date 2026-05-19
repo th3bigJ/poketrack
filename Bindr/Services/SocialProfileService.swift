@@ -236,6 +236,12 @@ final class SocialProfileService {
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let appleUserID = KeychainStorage.readAppleUserIdentifier() ?? "apple-\(userID.uuidString)"
+        
+        // Dynamic fallback: cache premium badge style to UserDefaults locally
+        if let premiumBadgeStyle {
+            UserDefaults.standard.set(premiumBadgeStyle, forKey: "bindr_badge_style_\(userID.uuidString)")
+        }
+
         let payload = UpsertProfileRequest(
             id: userID,
             appleUserID: appleUserID,
@@ -261,18 +267,63 @@ final class SocialProfileService {
             collectionTotalValue: collectionTotalValue,
             premiumBadgeStyle: premiumBadgeStyle
         )
-        let profiles: [SocialProfile] = try await execute(
-            path: "/rest/v1/profiles?on_conflict=id&select=*",
-            method: "POST",
-            accessToken: try signedInAccessToken(),
-            body: payload,
-            extraHeaders: [
-                "Prefer": "resolution=merge-duplicates,return=representation"
-            ]
-        )
-        let profile = try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
-        try await ensureNotificationPreferences(userID: userID)
-        return profile
+        do {
+            let profiles: [SocialProfile] = try await execute(
+                path: "/rest/v1/profiles?on_conflict=id&select=*",
+                method: "POST",
+                accessToken: try signedInAccessToken(),
+                body: payload,
+                extraHeaders: [
+                    "Prefer": "resolution=merge-duplicates,return=representation"
+                ]
+            )
+            let profile = try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+            try await ensureNotificationPreferences(userID: userID)
+            return profile
+        } catch {
+            let errorMsg = error.localizedDescription
+            if errorMsg.contains("premium_badge_style") {
+                print("[SocialProfileService] Supabase profiles schema lacks 'premium_badge_style'. Retrying save without it...")
+                let fallbackPayload = UpsertProfileRequest(
+                    id: userID,
+                    appleUserID: appleUserID,
+                    username: username,
+                    displayName: displayName?.trimmedNilIfEmpty,
+                    bio: bio?.trimmedNilIfEmpty,
+                    avatarURL: nil,
+                    profileRoles: profileRoles,
+                    favoritePokemonDex: favoritePokemonDex,
+                    favoritePokemonName: favoritePokemonName?.trimmedNilIfEmpty,
+                    favoritePokemonImageURL: favoritePokemonImageURL?.trimmedNilIfEmpty,
+                    favoriteCardID: favoriteCardID?.trimmedNilIfEmpty,
+                    favoriteCardName: favoriteCardName?.trimmedNilIfEmpty,
+                    favoriteCardSetCode: favoriteCardSetCode?.trimmedNilIfEmpty,
+                    favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
+                    favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
+                    avatarBackgroundColor: avatarBackgroundColor?.trimmedNilIfEmpty,
+                    avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty,
+                    collectionCardCount: collectionCardCount,
+                    collectionBinderCount: collectionBinderCount,
+                    collectionDeckCount: collectionDeckCount,
+                    friendCount: friendCount,
+                    collectionTotalValue: collectionTotalValue,
+                    premiumBadgeStyle: nil
+                )
+                let profiles: [SocialProfile] = try await execute(
+                    path: "/rest/v1/profiles?on_conflict=id&select=*",
+                    method: "POST",
+                    accessToken: try signedInAccessToken(),
+                    body: fallbackPayload,
+                    extraHeaders: [
+                        "Prefer": "resolution=merge-duplicates,return=representation"
+                    ]
+                )
+                let profile = try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+                try await ensureNotificationPreferences(userID: userID)
+                return profile
+            }
+            throw error
+        }
     }
 
     func updateProfile(
@@ -297,6 +348,12 @@ final class SocialProfileService {
         premiumBadgeStyle: String? = nil
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
+
+        // Dynamic fallback: cache premium badge style to UserDefaults locally
+        if let premiumBadgeStyle {
+            UserDefaults.standard.set(premiumBadgeStyle, forKey: "bindr_badge_style_\(userID.uuidString)")
+        }
+
         let payload = UpdateProfileRequest(
             displayName: displayName?.trimmedNilIfEmpty,
             bio: bio?.trimmedNilIfEmpty,
@@ -318,16 +375,55 @@ final class SocialProfileService {
             collectionTotalValue: collectionTotalValue,
             premiumBadgeStyle: premiumBadgeStyle
         )
-        let profiles: [SocialProfile] = try await execute(
-            path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",
-            method: "PATCH",
-            accessToken: try signedInAccessToken(),
-            body: payload,
-            extraHeaders: [
-                "Prefer": "return=representation"
-            ]
-        )
-        return try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+        do {
+            let profiles: [SocialProfile] = try await execute(
+                path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",
+                method: "PATCH",
+                accessToken: try signedInAccessToken(),
+                body: payload,
+                extraHeaders: [
+                    "Prefer": "return=representation"
+                ]
+            )
+            return try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+        } catch {
+            let errorMsg = error.localizedDescription
+            if errorMsg.contains("premium_badge_style") {
+                print("[SocialProfileService] Supabase profiles schema lacks 'premium_badge_style'. Retrying update without it...")
+                let fallbackPayload = UpdateProfileRequest(
+                    displayName: displayName?.trimmedNilIfEmpty,
+                    bio: bio?.trimmedNilIfEmpty,
+                    profileRoles: profileRoles,
+                    favoritePokemonDex: favoritePokemonDex,
+                    favoritePokemonName: favoritePokemonName?.trimmedNilIfEmpty,
+                    favoritePokemonImageURL: favoritePokemonImageURL?.trimmedNilIfEmpty,
+                    favoriteCardID: favoriteCardID?.trimmedNilIfEmpty,
+                    favoriteCardName: favoriteCardName?.trimmedNilIfEmpty,
+                    favoriteCardSetCode: favoriteCardSetCode?.trimmedNilIfEmpty,
+                    favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
+                    favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
+                    avatarBackgroundColor: avatarBackgroundColor?.trimmedNilIfEmpty,
+                    avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty,
+                    collectionCardCount: collectionCardCount,
+                    collectionBinderCount: collectionBinderCount,
+                    collectionDeckCount: collectionDeckCount,
+                    friendCount: friendCount,
+                    collectionTotalValue: collectionTotalValue,
+                    premiumBadgeStyle: nil
+                )
+                let profiles: [SocialProfile] = try await execute(
+                    path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",
+                    method: "PATCH",
+                    accessToken: try signedInAccessToken(),
+                    body: fallbackPayload,
+                    extraHeaders: [
+                        "Prefer": "return=representation"
+                    ]
+                )
+                return try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+            }
+            throw error
+        }
     }
 
     func updateCollectionStats(

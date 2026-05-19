@@ -34,6 +34,10 @@ struct SocialProfile: Codable, Identifiable, Sendable {
 
     /// Decoded badge style, defaulting to .pokeball for premium users.
     var badgeStyle: PremiumBadgeStyle {
+        if let localRaw = UserDefaults.standard.string(forKey: "bindr_badge_style_\(id.uuidString)"),
+           let style = PremiumBadgeStyle(rawValue: localRaw) {
+            return style
+        }
         guard let raw = premiumBadgeStyle else { return .pokeball }
         return PremiumBadgeStyle(rawValue: raw) ?? .pokeball
     }
