@@ -5,6 +5,7 @@ import SwiftUI
 struct SplashView: View {
     var onGetStarted: () -> Void
 
+    @Environment(\.bindrAccent) private var accent
     @Environment(\.colorScheme) var colorScheme
     @State private var animStates: [Bool] = [false, false, false, false]
     @State private var shimmerPos: CGFloat = -1
@@ -13,10 +14,6 @@ struct SplashView: View {
 
     var body: some View {
         ZStack {
-            // Background — pure black iOS dark / Apple light grey
-            (isDark ? Color.black : Color(red: 0.961, green: 0.961, blue: 0.969))
-                .ignoresSafeArea()
-
             VStack(spacing: 0) {
                 Spacer()
 
@@ -81,95 +78,50 @@ struct SplashView: View {
                 Spacer()
 
                 // ── GET STARTED button ───────────────────────────────
-                Button(action: onGetStarted) {
-                    ZStack {
-                        // Glass background layer
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(.thinMaterial)
-
-                        // Tint overlay
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(
-                                isDark
-                                ? LinearGradient(
-                                    colors: [
-                                        Color.white.opacity(0.12),
-                                        Color.white.opacity(0.05)
-                                    ],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing)
-                                : LinearGradient(
-                                    colors: [
-                                        Color.black.opacity(0.08),
-                                        Color.black.opacity(0.04)
-                                    ],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing)
-                            )
-
-                        // Shimmer Effect
-                        GeometryReader { geo in
-                            let size = geo.size
-                            Rectangle()
-                                .fill(
-                                    LinearGradient(
-                                        colors: [.clear, .white.opacity(isDark ? 0.15 : 0.4), .clear],
-                                        startPoint: .leading,
-                                        endPoint: .trailing
+                Button(action: {
+                    Haptics.lightImpact()
+                    onGetStarted()
+                }) {
+                    Text("GET STARTED  →")
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 54)
+                        .background(accent.gradient)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .overlay {
+                            // Subtle white specular shimmer animation looping across the accent gradient
+                            GeometryReader { geo in
+                                let size = geo.size
+                                Rectangle()
+                                    .fill(
+                                        LinearGradient(
+                                            colors: [.clear, .white.opacity(0.35), .clear],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
                                     )
-                                )
-                                .rotationEffect(.degrees(25))
-                                .offset(x: shimmerPos * size.width * 1.5)
-                                .onAppear {
-                                    withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
-                                        shimmerPos = 1
+                                    .rotationEffect(.degrees(25))
+                                    .offset(x: shimmerPos * size.width * 1.5)
+                                    .onAppear {
+                                        withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
+                                            shimmerPos = 1
+                                        }
                                     }
-                                }
+                            }
+                            .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
                         }
-                        .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
-
-                        // Border
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .strokeBorder(
-                                isDark
-                                    ? Color.white.opacity(0.20)
-                                    : Color.black.opacity(0.14),
-                                lineWidth: 1
-                            )
-
-                        // Specular top edge
-                        VStack {
-                            LinearGradient(
-                                colors: [
-                                    (isDark ? Color.white : Color.white).opacity(isDark ? 0.28 : 0.60),
-                                    Color.clear
-                                ],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                            .frame(height: 1)
-                            .padding(.horizontal, 40)
-                            Spacer()
-                        }
-
-                        // Label
-                        Text("GET STARTED  →")
-                            .font(.custom("BebasNeue-Regular", size: 15))
-                            .foregroundColor(isDark
-                                ? .white.opacity(0.92)
-                                : .black.opacity(0.84))
-                            .tracking(2.5)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 54)
-                    .scaleEffect(animStates[3] ? 1 : 0.95)
-                    .opacity(animStates[3] ? 1 : 0)
+                        // Premium glowing drop shadow matching user's selected accent color
+                        .shadow(color: accent.opacity(0.32), radius: 8, x: 0, y: 4)
                 }
                 .buttonStyle(.plain)
                 .padding(.horizontal, 24)
                 .padding(.bottom, 52)
+                .scaleEffect(animStates[3] ? 1 : 0.95)
+                .opacity(animStates[3] ? 1 : 0)
             }
         }
+        .bindrPageBackground()
         .task {
             // Staggered entrance
             withAnimation(.easeOut(duration: 0.8).delay(0.2)) { animStates[0] = true }
