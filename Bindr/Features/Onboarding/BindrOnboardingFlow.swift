@@ -45,6 +45,14 @@ struct BindrOnboardingFlow: View {
         }
         .interactiveDismissDisabled()
         .preferredColorScheme(services.theme.colorScheme)
+        .onDisappear {
+            // Safety net: if the sheet is dismissed by ANY means (interactive
+            // gesture in Simulator, system modal stack dismissal, etc.) without
+            // finish() being called, still unblock the launch pipeline.
+            if !services.brandSettings.hasCompletedBrandOnboarding {
+                services.brandSettings.completeBrandOnboarding()
+            }
+        }
     }
 
     @ViewBuilder

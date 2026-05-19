@@ -4,7 +4,15 @@ struct ProfileHeroHeader: View {
     let profile: SocialProfile
     let onEditTapped: (() -> Void)?
     
+    @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) var colorScheme
+    
+    private var isProfilePremium: Bool {
+        if let myID = services.socialAuth.currentUserID, profile.id == myID {
+            return services.store.isPremium
+        }
+        return profile.hasPremium
+    }
     
     private var backgroundGradient: LinearGradient {
         if colorScheme == .dark {
@@ -113,9 +121,16 @@ struct ProfileHeroHeader: View {
                 ProfileAvatarView(profile: profile, size: 80)
                 
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(profile.displayName ?? profile.username)
-                        .font(.title3.weight(.bold))
-                        .foregroundStyle(.primary)
+                    HStack(alignment: .center, spacing: 6) {
+                        Text(profile.displayName ?? profile.username)
+                            .font(.title3.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                        
+                        if isProfilePremium {
+                            PokeballEmblemView(size: 15)
+                        }
+                    }
                     Text("@\(profile.username)")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)

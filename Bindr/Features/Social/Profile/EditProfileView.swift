@@ -175,7 +175,8 @@ struct EditProfileView: View {
                             collectionBinderCount: 0,
                             collectionDeckCount: 0,
                             collectionTotalValue: 0,
-                            createdAt: nil
+                            createdAt: nil,
+                            isPremium: nil
                         ),
                         size: 100
                     )
@@ -191,30 +192,35 @@ struct EditProfileView: View {
                         .font(.footnote.weight(.medium))
                         .foregroundStyle(.secondary)
                     
-                    HStack(spacing: 12) {
-                        let colors = [
-                            ("Indigo", "6366f1"),
-                            ("Rose", "f43f5e"),
-                            ("Amber", "f59e0b"),
-                            ("Emerald", "10b981"),
-                            ("Purple", "a855f7"),
-                            ("Cyan", "06b6d4"),
-                            ("Lime", "84cc16"),
-                            ("Slate", "64748b")
-                        ]
-                        
-                        ForEach(colors, id: \.1) { name, hex in
-                            Circle()
-                                .fill(Color(hex: hex))
-                                .frame(width: 38, height: 38)
-                                .overlay(
+                    LazyVGrid(
+                        columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 6),
+                        spacing: 10
+                    ) {
+                        ForEach(ThemeSettings.presetColors, id: \.self) { hex in
+                            let isSelected = avatarBackgroundColor == hex
+                            Button {
+                                avatarBackgroundColor = hex
+                                Haptics.lightImpact()
+                            } label: {
+                                ZStack {
                                     Circle()
-                                        .stroke(Color.primary.opacity(avatarBackgroundColor == hex ? 1 : 0), lineWidth: 3)
-                                        .padding(-4)
-                                )
-                                .onTapGesture {
-                                    avatarBackgroundColor = hex
+                                        .fill(Color(hex: hex))
+                                        .frame(width: 36, height: 36)
+
+                                    if isSelected {
+                                        Circle()
+                                            .stroke(Color.primary.opacity(0.92), lineWidth: 2)
+                                            .frame(width: 36, height: 36)
+                                        Image(systemName: "checkmark")
+                                            .font(.system(size: 13, weight: .bold))
+                                            .foregroundStyle(.white)
+                                            .shadow(color: .black.opacity(0.35), radius: 1, y: 0.5)
+                                    }
                                 }
+                                .frame(maxWidth: .infinity)
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
                         }
                     }
                     .padding(.vertical, 4)
@@ -239,6 +245,7 @@ struct EditProfileView: View {
                             ForEach(styles, id: \.1) { name, style in
                                 Button {
                                     avatarOutlineStyle = style
+                                    Haptics.lightImpact()
                                 } label: {
                                     Text(name)
                                         .font(.system(size: 14, weight: .medium))
@@ -246,7 +253,7 @@ struct EditProfileView: View {
                                         .padding(.vertical, 8)
                                         .background(
                                             Capsule()
-                                                .fill(avatarOutlineStyle == style ? Color.blue : Color.gray.opacity(0.1))
+                                                .fill(avatarOutlineStyle == style ? services.theme.accentColor : Color.gray.opacity(0.1))
                                         )
                                         .foregroundStyle(avatarOutlineStyle == style ? .white : .primary)
                                 }

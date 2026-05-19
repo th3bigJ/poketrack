@@ -227,13 +227,18 @@ struct BindersRootView: View {
                         )
                         // Each cell publishes its frame in screen coords so
                         // the open animation knows where to morph from /
-                        // collapse back to.
+                        // collapse back to. We only emit when the frame has
+                        // actually changed to avoid the "multiple updates per
+                        // frame" SwiftUI warning caused by all visible cells
+                        // firing simultaneously during normal scroll redraws.
                         .background(
                             GeometryReader { cellGeo in
-                                Color.clear.preference(
-                                    key: BinderCellFramePreferenceKey.self,
-                                    value: [binder.id: cellGeo.frame(in: .global)]
-                                )
+                                let newFrame = cellGeo.frame(in: .global)
+                                Color.clear
+                                    .preference(
+                                        key: BinderCellFramePreferenceKey.self,
+                                        value: [binder.id: newFrame]
+                                    )
                             }
                         )
                     }
@@ -444,7 +449,16 @@ private struct BindersHeaderHeightKey: PreferenceKey {
 private struct BinderCellFramePreferenceKey: PreferenceKey {
     static var defaultValue: [UUID: CGRect] = [:]
     static func reduce(value: inout [UUID: CGRect], nextValue: () -> [UUID: CGRect]) {
-        value.merge(nextValue(), uniquingKeysWith: { _, new in new })
+        // Only merge entries that are new or whose frame has actually moved —
+        // this prevents the "tried to update multiple times per frame" warning
+        // that fires when multiple grid cells all publish during the same
+        // render pass (scroll, rotation, etc.) and the accumulator gets
+        // written more than once before SwiftUI flushes the preference.
+        for (id, frame) in nextValue() {
+            if value[id] != frame {
+                value[id] = frame
+            }
+        }
     }
 }
 

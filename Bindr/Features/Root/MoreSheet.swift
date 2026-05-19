@@ -1,9 +1,10 @@
 import SwiftUI
 
 /// Root page for the More tab.
-/// Contains quick access grid (glass icons) and Account section.
+/// Styled using standard iOS grouped List elements with colorful glyph backdrops for a premium native look and feel.
 struct MoreView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.bindrAccent) private var accent
 
     @Binding var navigationPath: NavigationPath
 
@@ -14,48 +15,134 @@ struct MoreView: View {
 
     var body: some View {
         List {
-            // MARK: - Quick Access Grid
+            // MARK: - Core Features Section
             Section {
-                LazyVGrid(columns: [
-                    GridItem(.flexible()),
-                    GridItem(.flexible()),
-                    GridItem(.flexible())
-                ], spacing: 16) {
-                    QuickAccessNavigationButton(
-                        icon: "books.vertical.fill",
-                        title: "Binders",
-                        action: { navigationPath.append(SideMenuPage.binders) }
-                    )
-                    QuickAccessNavigationButton(
-                        icon: "rectangle.on.rectangle.angled",
-                        title: "Deck Builder",
-                        action: { navigationPath.append(SideMenuPage.decks) }
-                    )
-                    QuickAccessNavigationButton(
-                        icon: "list.bullet.rectangle",
-                        title: "Activity",
-                        action: { navigationPath.append(SideMenuPage.transactions) }
-                    )
-                    QuickAccessNavigationButton(
-                        icon: "paintpalette.fill",
-                        title: "Themes",
-                        action: { navigationPath.append(SideMenuPage.themes) }
-                    )
-                    QuickAccessNavigationButton(
-                        icon: "chart.line.uptrend.xyaxis",
-                        title: "Grading",
-                        action: { navigationPath.append(SideMenuPage.gradingOpportunities) }
-                    )
+                NavigationLink(value: SideMenuPage.binders) {
+                    Label {
+                        Text("Binders")
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                    } icon: {
+                        Image(systemName: "books.vertical.fill")
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundColor(.white)
+                            .frame(width: 30, height: 30)
+                            .background(Color.blue.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    }
                 }
-                .padding(.vertical, 8)
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
+                
+                NavigationLink(value: SideMenuPage.decks) {
+                    Label {
+                        Text("Deck Builder")
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                    } icon: {
+                        Image(systemName: "rectangle.on.rectangle.angled")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.white)
+                            .frame(width: 30, height: 30)
+                            .background(Color.green.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    }
+                }
+                
+                NavigationLink(value: SideMenuPage.transactions) {
+                    Label {
+                        Text("Activity Ledger")
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                    } icon: {
+                        Image(systemName: "list.bullet.rectangle.fill")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.white)
+                            .frame(width: 30, height: 30)
+                            .background(Color.orange.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    }
+                }
+            } header: {
+                Text("Collection Tools")
+            }
+
+            // MARK: - Settings & Utility Section
+            Section {
+                NavigationLink(value: SideMenuPage.themes) {
+                    Label {
+                        Text("Themes & Colors")
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                    } icon: {
+                        Image(systemName: "paintpalette.fill")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.white)
+                            .frame(width: 30, height: 30)
+                            .background(Color.purple.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    }
+                }
+                
+                NavigationLink(value: SideMenuPage.gradingOpportunities) {
+                    Label {
+                        Text("Grading Opportunities")
+                            .font(.body)
+                            .foregroundStyle(.primary)
+                    } icon: {
+                        Image(systemName: "chart.line.uptrend.xyaxis")
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundColor(.white)
+                            .frame(width: 30, height: 30)
+                            .background(Color.red.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    }
+                }
+            } header: {
+                Text("App Preferences")
             }
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
         .bindrPageBackground()
-        .toolbar(.hidden, for: .navigationBar)
+        .navigationTitle("More")
+        .navigationBarTitleDisplayMode(.large)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    Haptics.lightImpact()
+                    navigationPath.append(SideMenuPage.account)
+                } label: {
+                    Image(systemName: "gearshape")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(accent)
+                }
+            }
+
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    Haptics.lightImpact()
+                    showProfile = true
+                } label: {
+                    Image(systemName: "person.crop.circle")
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundStyle(accent)
+                }
+                .popover(isPresented: $showProfile) {
+                    NavigationStack(path: $profilePath) {
+                        AccountProfileView(
+                            navigationPath: $profilePath,
+                            isPresented: $showProfile,
+                            externalProfile: $profile
+                        )
+                        .toolbar {
+                            ToolbarItem(placement: .topBarLeading) {
+                                Button("Done") {
+                                    showProfile = false
+                                }
+                                .font(.system(size: 16, weight: .semibold))
+                                .foregroundStyle(accent)
+                            }
+                        }
+                    }
+                    .presentationDetents([.large])
+                    .presentationDragIndicator(.visible)
+                }
+            }
+        }
         .navigationDestination(for: SideMenuPage.self) { page in
             switch page {
             case .account:
@@ -76,141 +163,6 @@ struct MoreView: View {
                 GradingOpportunitiesView()
             }
         }
-        .safeAreaInset(edge: .top) {
-            moreHeader
-        }
-    }
-
-    private var moreHeader: some View {
-        ZStack {
-            Text("More")
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
-
-            HStack {
-                ChromeGlassCircleButton(accessibilityLabel: "Settings") {
-                    Haptics.lightImpact()
-                    navigationPath.append(SideMenuPage.account)
-                } label: {
-                    Image(systemName: "gearshape")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                }
-
-                Spacer(minLength: 0)
-
-                ChromeGlassCircleButton(accessibilityLabel: "Profile") {
-                    Haptics.lightImpact()
-                    showProfile = true
-                } label: {
-                    Image(systemName: "person.crop.circle")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                }
-                .popover(isPresented: $showProfile) {
-                    NavigationStack(path: $profilePath) {
-                        AccountProfileView(
-                            navigationPath: $profilePath,
-                            isPresented: $showProfile,
-                            externalProfile: $profile
-                        )
-                        .toolbar {
-                                ToolbarItem(placement: .topBarLeading) {
-                                    Button("Done") {
-                                        showProfile = false
-                                    }
-                                    .glassToolbarButton()
-                                }
-                            }
-                    }
-                    .presentationDetents([.large])
-                    .presentationDragIndicator(.visible)
-                }
-            }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
     }
 }
 
-// MARK: - Quick Access Button
-private struct QuickAccessButton: View {
-    let icon: String
-    let title: String
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 8) {
-                Image(systemName: icon)
-                    .font(.system(size: 24))
-                    .foregroundStyle(.primary)
-                    .frame(width: 56, height: 56)
-                    .background(
-                        glassBackground
-                    )
-                Text(title)
-                    .font(.caption)
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-            }
-        }
-        .buttonStyle(.plain)
-    }
-
-    /// Matches the chrome-button glass treatment in `UniversalSearchBar` — ultra-thin material with a hairline stroke, Liquid Glass on iOS 26+. No colour tint.
-    @ViewBuilder
-    private var glassBackground: some View {
-        if #available(iOS 26.0, *) {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.thinMaterial)
-                .glassEffect(.clear.tint(nil), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        } else {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.thinMaterial)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .stroke(Color.primary.opacity(0.1), lineWidth: 0.5)
-                )
-        }
-    }
-}
-
-private struct QuickAccessNavigationButton: View {
-    let icon: String
-    let title: String
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: 8) {
-                Image(systemName: icon)
-                    .font(.system(size: 24))
-                    .foregroundStyle(.primary)
-                    .frame(width: 56, height: 56)
-                    .background(glassBackground)
-                Text(title)
-                    .font(.caption)
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-            }
-        }
-        .buttonStyle(.plain)
-    }
-
-    @ViewBuilder
-    private var glassBackground: some View {
-        if #available(iOS 26.0, *) {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.thinMaterial)
-                .glassEffect(.clear.tint(nil), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        } else {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.thinMaterial)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .stroke(Color.primary.opacity(0.1), lineWidth: 0.5)
-                )
-        }
-    }
-}

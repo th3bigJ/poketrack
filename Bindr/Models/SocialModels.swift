@@ -25,6 +25,11 @@ struct SocialProfile: Codable, Identifiable, Sendable {
     let collectionDeckCount: Int?
     let collectionTotalValue: Double?
     let createdAt: Date?
+    let isPremium: Bool?
+
+    var hasPremium: Bool {
+        isPremium ?? false
+    }
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -51,6 +56,7 @@ struct SocialProfile: Codable, Identifiable, Sendable {
         case collectionDeckCount = "collection_deck_count"
         case collectionTotalValue = "collection_total_value"
         case createdAt = "created_at"
+        case isPremium = "is_premium"
     }
 }
 

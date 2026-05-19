@@ -30,14 +30,14 @@ struct PremiumUpgradeView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: BindrSpacing.xl) {
+                VStack(alignment: .leading, spacing: BindrSpacing.lg) {
                     heroBlock
+                    benefitsList
                     planPickerBlock
-                    comparisonGrid
-                    Color.clear.frame(height: 20)
+                    Color.clear.frame(height: 10)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
-                .padding(.top, BindrSpacing.lg)
+                .padding(.top, BindrSpacing.md)
             }
             .scrollIndicators(.hidden)
             .safeAreaInset(edge: .bottom, spacing: 0) {
@@ -76,11 +76,11 @@ struct PremiumUpgradeView: View {
     // MARK: Hero
 
     private var heroBlock: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.lg) {
+        VStack(alignment: .leading, spacing: BindrSpacing.md) {
             PremiumLineCardBadge()
-                .frame(width: 120, height: 154)
+                .frame(width: 90, height: 115)
                 .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top, BindrSpacing.sm)
+                .padding(.top, BindrSpacing.xs)
 
             OnboardingHeadline(
                 title: "Unlock the full experience.",
@@ -89,72 +89,125 @@ struct PremiumUpgradeView: View {
         }
     }
 
+    // MARK: Benefits Checklist
+
+    private var benefitsList: some View {
+        VStack(alignment: .leading, spacing: BindrSpacing.xs) {
+            Text("What's included")
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(.secondary)
+                .padding(.bottom, 2)
+
+            VStack(alignment: .leading, spacing: 8) {
+                benefitRow(label: "Unlimited card scans")
+                benefitRow(label: "Unlimited collection & binders")
+                benefitRow(label: "Full price history & trends")
+                benefitRow(label: "Offline database access")
+                benefitRow(label: "Priority trade notifications")
+                benefitRow(label: "Premium Pokéball profile badge")
+            }
+            .padding(BindrSpacing.md)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background {
+                RoundedRectangle(cornerRadius: BindrRadius.lg, style: .continuous)
+                    .fill(Color.primary.opacity(colorScheme == .dark ? 0.04 : 0.025))
+            }
+        }
+    }
+
+    private func benefitRow(label: String) -> some View {
+        HStack(spacing: BindrSpacing.md) {
+            Image(systemName: "checkmark")
+                .font(.system(size: 11, weight: .bold))
+                .foregroundStyle(accent)
+            Text(label)
+                .font(.system(size: 14, weight: .medium))
+                .foregroundStyle(.primary)
+        }
+    }
+
     // MARK: Plan Picker
 
     private var planPickerBlock: some View {
-        VStack(spacing: BindrSpacing.sm) {
-            planTile(
+        HStack(spacing: BindrSpacing.md) {
+            squarePlanTile(
                 plan: .monthly,
                 label: "Monthly",
-                price: services.store.products.first?.displayPrice ?? "—",
-                cadence: "per month",
+                price: monthlyPrice,
+                breakdown: "£2.99 / mo",
                 meta: nil
             )
-            planTile(
+            
+            squarePlanTile(
                 plan: .annual,
                 label: "Annual",
                 price: annualPrice,
-                cadence: "per year",
-                meta: "Save 30%"
+                breakdown: "£2.08 / mo",
+                meta: "Save 30%",
+                subMeta: "Save £10.89/yr"
             )
         }
+        .padding(.top, 8)
+    }
+
+    private var monthlyPrice: String {
+        services.store.products.first?.displayPrice ?? "£2.99"
     }
 
     private var annualPrice: String {
         services.store.annualProduct?.displayPrice ?? "£24.99"
     }
 
-    private func planTile(
+    private func squarePlanTile(
         plan: PlanOption,
         label: String,
         price: String,
-        cadence: String,
-        meta: String?
+        breakdown: String,
+        meta: String?,
+        subMeta: String? = nil
     ) -> some View {
         let isSelected = selectedPlan == plan
         return Button {
             withAnimation(.easeInOut(duration: 0.18)) { selectedPlan = plan }
             Haptics.lightImpact()
         } label: {
-            HStack(spacing: BindrSpacing.md) {
-                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 22, weight: .regular))
-                    .foregroundStyle(isSelected ? accent : Color.primary.opacity(0.18))
-                    .symbolRenderingMode(.hierarchical)
-
-                VStack(alignment: .leading, spacing: 2) {
-                    HStack(spacing: BindrSpacing.sm) {
-                        Text(label)
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundStyle(.primary)
-                        if let meta {
-                            Text(meta)
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    Text(cadence)
-                        .font(.system(size: 13))
-                        .foregroundStyle(.secondary)
+            VStack(spacing: 8) {
+                if let meta {
+                    Text(meta)
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(accent.gradient, in: Capsule())
+                        .offset(y: -14)
+                        .padding(.bottom, -14)
+                } else {
+                    Spacer().frame(height: 12)
                 }
-
-                Spacer(minLength: 0)
-
+                
+                Text(label)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                
                 Text(price)
-                    .font(.system(size: 17, weight: .semibold))
+                    .font(.system(size: 24, weight: .bold))
                     .foregroundStyle(.primary)
+                
+                Text(breakdown)
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundStyle(.secondary)
+                
+                if let subMeta {
+                    Text(subMeta)
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(accent)
+                        .padding(.top, 2)
+                } else {
+                    Spacer().frame(height: 16)
+                }
             }
-            .padding(BindrSpacing.md)
+            .padding(.vertical, BindrSpacing.md)
+            .padding(.horizontal, BindrSpacing.sm)
             .frame(maxWidth: .infinity)
             .background {
                 RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
@@ -162,96 +215,12 @@ struct PremiumUpgradeView: View {
                           ? accent.opacity(colorScheme == .dark ? 0.14 : 0.08)
                           : Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.04))
             }
+            .overlay {
+                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                    .stroke(isSelected ? accent : Color.clear, lineWidth: 2)
+            }
         }
         .buttonStyle(.plain)
-    }
-
-    // MARK: Comparison Grid
-
-    private var comparisonGrid: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            Text("What's included")
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(.secondary)
-
-            VStack(spacing: 0) {
-                comparisonHeader
-                comparisonRow(label: "Card scans", free: "20 / mo", premium: "Unlimited")
-                comparisonRow(label: "Collection", free: "25 cards", premium: "Unlimited")
-                comparisonRow(label: "Trade list", free: "5 listings", premium: "Unlimited")
-                comparisonRow(label: "Wishlist", free: "5 cards", premium: "Unlimited")
-                comparisonRow(label: "Binders", free: "1", premium: "Unlimited")
-                comparisonRow(label: "Decks", free: "1", premium: "Unlimited")
-                comparisonRow(label: "Price history", free: "7 days", premium: "Full")
-                comparisonRow(label: "Offline mode", free: nil, premium: "Included")
-                comparisonRow(label: "Trade notifications", free: nil, premium: "Priority")
-            }
-            .background {
-                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
-                    .fill(Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.035))
-            }
-            .clipShape(RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous))
-        }
-    }
-
-    private var comparisonHeader: some View {
-        HStack {
-            Spacer()
-            Text("Free")
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(.secondary)
-                .frame(width: 90, alignment: .center)
-            Text("Premium")
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(accent)
-                .frame(width: 90, alignment: .center)
-        }
-        .padding(.horizontal, BindrSpacing.md)
-        .padding(.vertical, BindrSpacing.sm)
-        .background(Color.primary.opacity(colorScheme == .dark ? 0.04 : 0.02))
-    }
-
-    private func comparisonRow(label: String, free: String?, premium: String) -> some View {
-        VStack(spacing: 0) {
-            Divider().opacity(0.08)
-            HStack(spacing: BindrSpacing.sm) {
-                Text(label)
-                    .font(.system(size: 14))
-                    .foregroundStyle(.primary)
-                Spacer()
-                // Free column — uniform "–" for missing features rather
-                // than a coloured xmark.
-                Group {
-                    if let free {
-                        Text(free)
-                            .font(.system(size: 13))
-                            .foregroundStyle(.secondary)
-                    } else {
-                        Text("—")
-                            .font(.system(size: 13))
-                            .foregroundStyle(.tertiary)
-                    }
-                }
-                .frame(width: 90, alignment: .center)
-
-                // Premium column — uniform accent checkmark for
-                // included-but-not-quantified, otherwise an accent label.
-                Group {
-                    if premium == "Included" {
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 12, weight: .bold))
-                            .foregroundStyle(accent)
-                    } else {
-                        Text(premium)
-                            .font(.system(size: 13, weight: .semibold))
-                            .foregroundStyle(accent)
-                    }
-                }
-                .frame(width: 90, alignment: .center)
-            }
-            .padding(.horizontal, BindrSpacing.md)
-            .frame(height: 44)
-        }
     }
 
     // MARK: CTA panel
@@ -309,7 +278,7 @@ struct PremiumUpgradeView: View {
     }
 
     private var subscribeTitle: String {
-        let price = selectedPlan == .annual ? annualPrice : (services.store.products.first?.displayPrice ?? "—")
+        let price = selectedPlan == .annual ? annualPrice : monthlyPrice
         return "Subscribe · \(price)"
     }
 

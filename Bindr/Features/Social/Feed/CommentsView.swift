@@ -132,8 +132,22 @@ struct CommentsView: View {
     private func commentRow(_ row: SocialFeedService.CommentDisplay) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
-                Text(row.author?.displayName ?? row.author?.username ?? "Collector")
-                    .font(.subheadline.weight(.semibold))
+                HStack(spacing: 4) {
+                    Text(row.author?.displayName ?? row.author?.username ?? "Collector")
+                        .font(.subheadline.weight(.semibold))
+                    
+                    if let author = row.author {
+                        let isAuthorPremium = {
+                            if let myID = services.socialAuth.currentUserID, author.id == myID {
+                                return services.store.isPremium
+                            }
+                            return author.hasPremium
+                        }()
+                        if isAuthorPremium {
+                            PokeballEmblemView(size: 10)
+                        }
+                    }
+                }
                 Spacer(minLength: 8)
                 if let createdAt = row.comment.createdAt {
                     Text(SocialFeedService.shortRelativeDate(createdAt))
@@ -252,8 +266,22 @@ struct CommentsView: View {
                     ProfileAvatarView(profile: actor, size: 26)
                 }
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(sourceItem?.actor?.displayName ?? sourceItem?.actor?.username ?? "Post")
-                        .font(.subheadline.weight(.semibold))
+                    HStack(spacing: 4) {
+                        Text(sourceItem?.actor?.displayName ?? sourceItem?.actor?.username ?? "Post")
+                            .font(.subheadline.weight(.semibold))
+                        
+                        if let actor = sourceItem?.actor {
+                            let isActorPremium = {
+                                if let myID = services.socialAuth.currentUserID, actor.id == myID {
+                                    return services.store.isPremium
+                                }
+                                return actor.hasPremium
+                            }()
+                            if isActorPremium {
+                                PokeballEmblemView(size: 10)
+                            }
+                        }
+                    }
                     if let createdAt = sourceItem?.createdAt {
                         Text(createdAt, style: .relative)
                             .font(.caption)

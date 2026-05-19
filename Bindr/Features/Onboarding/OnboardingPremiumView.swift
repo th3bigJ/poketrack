@@ -29,18 +29,18 @@ struct OnboardingPremiumView: View {
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
-                VStack(alignment: .leading, spacing: BindrSpacing.xl) {
+                VStack(alignment: .leading, spacing: BindrSpacing.lg) {
                     badgeBlock
                     OnboardingHeadline(
                         title: "Unlock the full experience.",
                         subtitle: "Unlimited everything — scans, collection, binders, and trade listings — plus full price history and offline mode."
                     )
-                    planPicker
                     featureBullets
-                    Color.clear.frame(height: 90)
+                    planPicker
+                    Color.clear.frame(height: 12)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
-                .padding(.top, BindrSpacing.lg)
+                .padding(.top, BindrSpacing.md)
             }
             .scrollIndicators(.hidden)
 
@@ -71,81 +71,91 @@ struct OnboardingPremiumView: View {
         }
     }
 
-    // MARK: Badge
+    // MARK: - Badge
 
     private var badgeBlock: some View {
         VStack {
             PremiumLineCardBadge()
-                .frame(width: 110, height: 140)
+                .frame(width: 88, height: 110)
         }
         .frame(maxWidth: .infinity)
-        .padding(.top, BindrSpacing.lg)
+        .padding(.top, BindrSpacing.sm)
     }
 
-    // MARK: Plan picker
+    // MARK: - Plan picker
 
     private var planPicker: some View {
-        VStack(spacing: BindrSpacing.sm) {
-            planTile(
+        HStack(spacing: BindrSpacing.md) {
+            squarePlanTile(
                 isAnnual: false,
                 label: "Monthly",
                 price: services.store.products.first?.displayPrice ?? "£2.99",
-                cadence: "per month",
+                breakdown: "£2.99 / mo",
                 meta: nil
             )
-            planTile(
+            
+            squarePlanTile(
                 isAnnual: true,
                 label: "Annual",
                 price: services.store.annualProduct?.displayPrice ?? "£24.99",
-                cadence: "per year",
-                meta: "Save 30%"
+                breakdown: "£2.08 / mo",
+                meta: "Save 30%",
+                subMeta: "Save £10.89/yr"
             )
         }
+        .padding(.top, 4)
     }
 
-    private func planTile(
+    private func squarePlanTile(
         isAnnual: Bool,
         label: String,
         price: String,
-        cadence: String,
-        meta: String?
+        breakdown: String,
+        meta: String?,
+        subMeta: String? = nil
     ) -> some View {
         let isSelected = selectAnnual == isAnnual
         return Button {
             withAnimation(.easeInOut(duration: 0.18)) { selectAnnual = isAnnual }
             Haptics.lightImpact()
         } label: {
-            HStack(spacing: BindrSpacing.md) {
-                // Native checkmark selection cue.
-                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 22, weight: .regular))
-                    .foregroundStyle(isSelected ? accent : Color.primary.opacity(0.18))
-                    .symbolRenderingMode(.hierarchical)
-
-                VStack(alignment: .leading, spacing: 2) {
-                    HStack(spacing: BindrSpacing.sm) {
-                        Text(label)
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundStyle(.primary)
-                        if let meta {
-                            // Borderless metadata. No pill background.
-                            Text(meta)
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    Text(cadence)
-                        .font(.system(size: 13))
-                        .foregroundStyle(.secondary)
+            VStack(spacing: 8) {
+                if let meta {
+                    Text(meta)
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 4)
+                        .background(accent.gradient, in: Capsule())
+                        .offset(y: -14)
+                        .padding(.bottom, -14)
+                } else {
+                    Spacer().frame(height: 12)
                 }
-
-                Spacer(minLength: 0)
-
+                
+                Text(label)
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                
                 Text(price)
-                    .font(.system(size: 17, weight: .semibold))
+                    .font(.system(size: 24, weight: .bold))
                     .foregroundStyle(.primary)
+                
+                Text(breakdown)
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundStyle(.secondary)
+                
+                if let subMeta {
+                    Text(subMeta)
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(accent)
+                        .padding(.top, 2)
+                } else {
+                    Spacer().frame(height: 16)
+                }
             }
-            .padding(BindrSpacing.md)
+            .padding(.vertical, BindrSpacing.md)
+            .padding(.horizontal, BindrSpacing.sm)
             .frame(maxWidth: .infinity)
             .background {
                 RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
@@ -153,40 +163,82 @@ struct OnboardingPremiumView: View {
                           ? accent.opacity(colorScheme == .dark ? 0.14 : 0.08)
                           : Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.04))
             }
+            .overlay {
+                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                    .stroke(isSelected ? accent : Color.clear, lineWidth: 2)
+            }
         }
         .buttonStyle(.plain)
     }
 
-    // MARK: Feature bullets
+    // MARK: - Feature bullets
 
     private var featureBullets: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-            bulletRow(label: "Unlimited card scans")
-            bulletRow(label: "Unlimited collection & wishlist")
-            bulletRow(label: "Unlimited binders & decks")
-            bulletRow(label: "Full price history")
-            bulletRow(label: "Offline mode included")
+        LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
+            featureGridItem(sfIcon: "camera.viewfinder",  title: "Unlimited Scans",    desc: "Scan cards instantly")
+            featureGridItem(sfIcon: "books.vertical",     title: "Unlimited Binders",  desc: "No collection limits")
+            featureGridItem(sfIcon: "chart.line.uptrend.xyaxis", title: "Price History", desc: "Track market trends")
+            pokeballGridItem()
+            featureGridItem(sfIcon: "arrow.left.arrow.right", title: "Priority Trades", desc: "Faster local matches")
+            featureGridItem(sfIcon: "lock.shield",        title: "Offline Database",   desc: "Access cards offline")
         }
-        .padding(BindrSpacing.lg)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
     }
 
-    private func bulletRow(label: String) -> some View {
-        HStack(spacing: BindrSpacing.md) {
-            // Unified accent check — no more rainbow of icon tints.
-            Image(systemName: "checkmark")
-                .font(.system(size: 13, weight: .bold))
+    /// Standard grid cell with an SF Symbol icon
+    private func featureGridItem(sfIcon: String, title: String, desc: String) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: sfIcon)
+                .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(accent)
-                .frame(width: 18, alignment: .leading)
-            Text(label)
-                .font(.system(size: 15))
-                .foregroundStyle(.primary)
+                .frame(width: 32, height: 32, alignment: .center)
+                .background(accent.opacity(colorScheme == .dark ? 0.12 : 0.07), in: Circle())
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
+                Text(desc)
+                    .font(.system(size: 10))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
+            }
             Spacer(minLength: 0)
         }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .glassCardStyle(cornerRadius: BindrRadius.md, interactive: false)
     }
 
-    // MARK: Purchase
+    /// Special grid cell using the real PokeballEmblemView instead of an SF Symbol
+    private func pokeballGridItem() -> some View {
+        HStack(spacing: 10) {
+            PokeballEmblemView(size: 32)
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text("Pokéball Badge")
+                    .font(.system(size: 12, weight: .bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
+                Text("Premium profile style")
+                    .font(.system(size: 10))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .glassCardStyle(cornerRadius: BindrRadius.md, interactive: false)
+    }
+
+    // MARK: - Purchase
 
     private var subscribeTitle: String {
         let price = selectAnnual

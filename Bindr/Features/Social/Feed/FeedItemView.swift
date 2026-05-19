@@ -51,6 +51,10 @@ struct FeedItemView: View {
                             .font(.system(size: 11, weight: .medium))
                             .foregroundStyle(.secondary)
                         
+                        if isActorPremium {
+                            PokeballEmblemView(size: 10)
+                        }
+                        
                         if isEdited {
                             Text("• Edited")
                                 .font(.system(size: 10))
@@ -253,6 +257,14 @@ struct FeedItemView: View {
 
     private var actorName: String {
         item.actor?.displayName ?? item.actor?.username ?? "Trainer"
+    }
+
+    private var isActorPremium: Bool {
+        guard let actor = item.actor else { return false }
+        if let myID = services.socialAuth.currentUserID, actor.id == myID {
+            return services.store.isPremium
+        }
+        return actor.hasPremium
     }
 
     private var cardTitle: String {
@@ -724,7 +736,16 @@ struct InteractionBar: View {
 // MARK: - InteractionRow
 
 struct InteractionRow: View {
+    @Environment(AppServices.self) private var services
     let item: SocialFeedService.FeedItem
+
+    private var isActorPremium: Bool {
+        guard let actor = item.actor else { return false }
+        if let myID = services.socialAuth.currentUserID, actor.id == myID {
+            return services.store.isPremium
+        }
+        return actor.hasPremium
+    }
 
     var body: some View {
         HStack(spacing: 8) {
@@ -733,9 +754,15 @@ struct InteractionRow: View {
                     .clipShape(Circle())
             }
             VStack(alignment: .leading, spacing: 1) {
-                Text(item.actor?.displayName ?? item.actor?.username ?? "Trainer")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.primary)
+                HStack(spacing: 4) {
+                    Text(item.actor?.displayName ?? item.actor?.username ?? "Trainer")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.primary)
+                    
+                    if isActorPremium {
+                        PokeballEmblemView(size: 8)
+                    }
+                }
                 Group {
                     if item.type == .comment, let body = item.commentBody {
                         Text(body).italic()

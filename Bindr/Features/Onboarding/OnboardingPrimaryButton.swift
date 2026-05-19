@@ -2,18 +2,15 @@ import SwiftUI
 
 // MARK: - OnboardingPrimaryButton
 //
-// Shared CTA button used by every onboarding step. Centralising the
-// style here means tightening typography/weights/shadows in one place
-// applies across the whole flow.
+// Shared CTA button used by every onboarding step. Refactored to use a
+// premium, tactile ButtonStyle that automatically animates a scale compression
+// when pressed—matching standard premium native iOS button animations.
 //
-// Visual contract (post-refactor):
-//   * Centred label only — no trailing arrow icon. iOS HIG: action
-//     buttons describe the action, not where the user is going.
-//   * Semibold (.semibold) label weight — not .heavy / .black.
-//   * Accent gradient retained as the primary CTA recognition cue;
-//     this is consistent with primary actions everywhere else in Bindr.
-//   * Optional `subtitle` rendered as small caption *below* the button
-//     for cases like "£24.99 / yr · auto-renews" beneath "Subscribe".
+// Visual contract:
+//   * Centred label only — no trailing arrow icon.
+//   * Semibold (.semibold) label weight.
+//   * Dynamic scaling feedback upon press.
+//   * Unified brand color gradient backdrop with native drop shadow.
 
 struct OnboardingPrimaryButton: View {
     @Environment(\.bindrAccent) private var accent
@@ -37,10 +34,25 @@ struct OnboardingPrimaryButton: View {
                         .tint(.white)
                 } else {
                     Text(title)
-                        .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(.white)
                 }
             }
+        }
+        .buttonStyle(TactileBrandButtonStyle(disabled: disabled || isLoading))
+        .disabled(disabled || isLoading)
+    }
+}
+
+// MARK: - TactileBrandButtonStyle
+
+struct TactileBrandButtonStyle: ButtonStyle {
+    @Environment(\.bindrAccent) private var accent
+    @Environment(\.colorScheme) private var colorScheme
+    let disabled: Bool
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 17, weight: .semibold))
+            .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
             .frame(height: 54)
             .background {
@@ -53,11 +65,10 @@ struct OnboardingPrimaryButton: View {
                         )
                     )
             }
-            .shadow(color: accent.opacity(colorScheme == .dark ? 0.45 : 0.25), radius: 18, x: 0, y: 8)
-            .opacity(disabled ? 0.5 : 1.0)
-        }
-        .buttonStyle(.plain)
-        .disabled(disabled || isLoading)
+            .shadow(color: accent.opacity(colorScheme == .dark ? 0.35 : 0.18), radius: 12, x: 0, y: 6)
+            .opacity(disabled ? 0.5 : (configuration.isPressed ? 0.90 : 1.0))
+            .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
+            .animation(.spring(response: 0.2, dampingFraction: 0.7), value: configuration.isPressed)
     }
 }
 
@@ -79,8 +90,18 @@ struct OnboardingSecondaryLink: View {
                 .font(.system(size: 14, weight: .medium))
                 .foregroundStyle(.secondary)
                 .padding(.vertical, BindrSpacing.sm)
+                .contentShape(Rectangle())
         }
-        .buttonStyle(.plain)
+        .buttonStyle(SecondaryLinkButtonStyle())
+    }
+}
+
+struct SecondaryLinkButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.5 : 1.0)
+            .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
+            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
     }
 }
 

@@ -12,6 +12,14 @@ final class SocialPushService {
     private(set) var authorizationStatus: UNAuthorizationStatus = .notDetermined
     private(set) var queuedDeepLinkURL: URL?
 
+    private var isRunningForPreviews: Bool {
+        #if DEBUG
+        return ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+        #else
+        return false
+        #endif
+    }
+
     init(authService: SocialAuthService, profileService: SocialProfileService) {
         self.authService = authService
         self.profileService = profileService
@@ -30,11 +38,19 @@ final class SocialPushService {
     }
 
     func refreshAuthorizationStatus() async {
+        if isRunningForPreviews {
+            authorizationStatus = .authorized
+            return
+        }
         let settings = await UNUserNotificationCenter.current().notificationSettings()
         authorizationStatus = settings.authorizationStatus
     }
 
     func requestAuthorizationIfNeeded() async {
+        if isRunningForPreviews {
+            authorizationStatus = .authorized
+            return
+        }
         await refreshAuthorizationStatus()
         guard authorizationStatus == .notDetermined else { return }
         let granted = (try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])) ?? false
@@ -42,6 +58,9 @@ final class SocialPushService {
     }
 
     func updateRegistrationState() async {
+        if isRunningForPreviews {
+            return
+        }
         await requestAuthorizationIfNeeded()
         guard authorizationStatus == .authorized || authorizationStatus == .provisional else { return }
         guard case .signedIn = authService.authState else { return }
@@ -74,6 +93,9 @@ final class SocialPushService {
     }
 
     func clearAppBadgeCount() {
+        if isRunningForPreviews {
+            return
+        }
         if #available(iOS 17.0, *) {
             UNUserNotificationCenter.current().setBadgeCount(0) { _ in }
         } else {

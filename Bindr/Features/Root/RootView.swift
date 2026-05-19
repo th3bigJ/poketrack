@@ -108,7 +108,12 @@ struct RootView: View {
     private static let onboardingReplayMigrationKey = "bindr_onboarding_replay_v2"
 
     // MARK: - Splash Flow
-    @State private var showSplash = false
+    @State private var showSplash: Bool = {
+        let currentAppVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+        let splashLastVersionKey = "bindr_splash_last_shown_version"
+        let lastShownVersion = UserDefaults.standard.string(forKey: splashLastVersionKey)
+        return lastShownVersion == nil || lastShownVersion != currentAppVersion
+    }()
     /// Flips once the BINDR letter-reveal stagger has played + breathing
     /// pulse has started. Distinct from "ready to dismiss" — the wordmark
     /// stays on screen until the catalog pipeline is also done so we never
@@ -346,7 +351,14 @@ struct RootView: View {
         .onChange(of: showBrandOnboarding) { _, presented in
             // After the user finishes (or skips) onboarding, give the launch
             // a beat to settle and then re-check the upsell gate.
-            if !presented { evaluatePremiumUpsellIfNeeded() }
+            if !presented {
+                // Safety net: ensure completion is marked so the launch pipeline
+                // isn't stuck waiting for the bootstrap task to fire.
+                if !services.brandSettings.hasCompletedBrandOnboarding {
+                    services.brandSettings.completeBrandOnboarding()
+                }
+                evaluatePremiumUpsellIfNeeded()
+            }
         }
         .onChange(of: showSplash) { _, presented in
             if !presented { evaluatePremiumUpsellIfNeeded() }
@@ -381,18 +393,22 @@ struct RootView: View {
                 .bindrTheme(accent: services.theme.accentColor)
         }
         .onChange(of: services.brandSettings.hasCompletedBrandOnboarding) { _, completed in
-            // Only show brand onboarding if splash has been dismissed
-            if !showSplash {
-                showBrandOnboarding = !completed
+            // Only show brand onboarding after splash has been fully dismissed
+            if !showSplash && !completed {
+                showBrandOnboarding = true
             }
         }
         .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
             guard !services.brandSettings.hasCompletedBrandOnboarding else { return }
-            // Wait for splash to be dismissed before showing onboarding
-            if !showSplash {
-                await Task.yield()
-                showBrandOnboarding = true
+            // Give the startup .task a tick to run and set showSplash = true
+            // before we evaluate it — they race on the first launch.
+            try? await Task.sleep(nanoseconds: 100_000_000) // 100 ms grace period
+            // Now actively wait for splash to be dismissed before presenting onboarding
+            while showSplash {
+                try? await Task.sleep(nanoseconds: 50_000_000) // poll every 50 ms
             }
+            await Task.yield()
+            showBrandOnboarding = true
         }
         // MARK: - Splash Overlay
         .overlay {
@@ -419,11 +435,15 @@ struct RootView: View {
             // `BindrOnboardingFlow` fires with the freshly-reset flag.
             applyOnboardingReplayMigrationIfNeeded()
 
-            // Determine splash — just a UserDefaults read, safe to run now.
-            let lastShownVersion = UserDefaults.standard.string(forKey: splashLastVersionKey)
-            let shouldShowSplash = lastShownVersion == nil || lastShownVersion != currentAppVersion
-            if shouldShowSplash {
+            if !services.brandSettings.hasCompletedBrandOnboarding {
                 showSplash = true
+            } else {
+                // Determine splash — just a UserDefaults read, safe to run now.
+                let lastShownVersion = UserDefaults.standard.string(forKey: splashLastVersionKey)
+                let shouldShowSplash = lastShownVersion == nil || lastShownVersion != currentAppVersion
+                if shouldShowSplash {
+                    showSplash = true
+                }
             }
 
             // ── Defer all heavy work until the launch animation finishes ──
@@ -1082,12 +1102,15 @@ struct RootView: View {
     /// week to explore before any paywall pressure.
     private func evaluatePremiumUpsellIfNeeded() {
         guard !hasEvaluatedPremiumUpsellThisSession else { return }
-        hasEvaluatedPremiumUpsellThisSession = true
         guard !services.store.isPremium else { return }
+        // Only mark as evaluated (and potentially show) once the full launch
+        // sequence is done — never over the BINDR wordmark or splash screen.
+        guard isLaunchSequenceComplete else { return }
+        hasEvaluatedPremiumUpsellThisSession = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-            if !showBrandOnboarding {
-                showPremiumAutoSheet = true
-            }
+            // Re-check at fire time — nothing modal should be on screen.
+            guard !showSplash, !showBrandOnboarding, isLaunchSequenceComplete else { return }
+            showPremiumAutoSheet = true
         }
     }
 
@@ -1100,6 +1123,7 @@ struct RootView: View {
     /// be re-onboarded every cold launch.
     fileprivate func applyOnboardingReplayMigrationIfNeeded() {
         services.brandSettings.hasCompletedBrandOnboarding = false
+        showSplash = true
     }
 }
 

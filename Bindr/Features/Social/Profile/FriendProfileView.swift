@@ -169,11 +169,17 @@ struct FriendProfileView: View {
                     .overlay(Circle().stroke(accent, lineWidth: 3))
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(profile.displayName ?? profile.username)
-                        .font(.system(size: 18, weight: .heavy))
-                        .foregroundStyle(Color.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.8)
+                    HStack(alignment: .center, spacing: 6) {
+                        Text(profile.displayName ?? profile.username)
+                            .font(.system(size: 18, weight: .heavy))
+                            .foregroundStyle(Color.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                        
+                        if profile.hasPremium {
+                            PokeballEmblemView(size: 14)
+                        }
+                    }
                     Text("@\(profile.username)")
                         .font(.system(size: 12))
                         .foregroundStyle(Color.secondary)

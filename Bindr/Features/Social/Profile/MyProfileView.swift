@@ -117,11 +117,17 @@ struct MyProfileView: View {
                 }
 
                 VStack(alignment: .leading, spacing: 6) {
-                    Text(profile.displayName ?? profile.username)
-                        .font(.system(size: 18, weight: .heavy))
-                        .foregroundStyle(Color.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.8)
+                    HStack(alignment: .center, spacing: 6) {
+                        Text(profile.displayName ?? profile.username)
+                            .font(.system(size: 18, weight: .heavy))
+                            .foregroundStyle(Color.primary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                        
+                        if services.store.isPremium || profile.hasPremium {
+                            PokeballEmblemView(size: 14)
+                        }
+                    }
                     if !roleTitles.isEmpty {
                         HStack(spacing: 6) {
                             ForEach(roleTitles, id: \.self) { title in
