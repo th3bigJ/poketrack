@@ -1099,9 +1099,6 @@ struct RootView: View {
     /// persists forever after firing, so this never repeats — users won't
     /// be re-onboarded every cold launch.
     fileprivate func applyOnboardingReplayMigrationIfNeeded() {
-        let defaults = UserDefaults.standard
-        guard !defaults.bool(forKey: Self.onboardingReplayMigrationKey) else { return }
-        defaults.set(true, forKey: Self.onboardingReplayMigrationKey)
         services.brandSettings.hasCompletedBrandOnboarding = false
     }
 }
