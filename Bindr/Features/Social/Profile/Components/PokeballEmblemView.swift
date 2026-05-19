@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct PokeballEmblemView: View {
+    @Environment(\.bindrAccent) private var accent
     var size: CGFloat = 14
     
     var body: some View {
@@ -9,10 +10,10 @@ struct PokeballEmblemView: View {
             Circle()
                 .fill(.black)
             
-            // Top half red
+            // Top half dynamically styled to match the user's active theme accent color
             Circle()
                 .trim(from: 0.0, to: 0.5)
-                .fill(Color(hex: "E05252")) // Beautiful vibrant Pokéball red
+                .fill(accent.gradient)
                 .rotationEffect(.degrees(180))
             
             // Bottom half white

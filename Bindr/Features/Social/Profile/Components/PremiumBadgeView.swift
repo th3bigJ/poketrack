@@ -9,15 +9,15 @@ enum PremiumBadgeStyle: String, CaseIterable, Codable, Sendable {
 
     var displayName: String {
         switch self {
-        case .pokeball: return "Pokéball"
-        case .strawHat: return "Straw Hat"
+        case .pokeball: return "Pocket Collector"
+        case .strawHat: return "Pirate Captain"
         }
     }
 
     var gameHint: String {
         switch self {
-        case .pokeball: return "Pokémon"
-        case .strawHat: return "ONE PIECE"
+        case .pokeball: return "COLLECTOR"
+        case .strawHat: return "PIRATE"
         }
     }
 }
