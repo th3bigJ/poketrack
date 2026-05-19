@@ -98,6 +98,7 @@ struct MoreView: View {
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
         .bindrPageBackground()
+        .tint(.primary)
         .navigationTitle("More")
         .navigationBarTitleDisplayMode(.large)
         .toolbar {
@@ -107,7 +108,7 @@ struct MoreView: View {
                 } label: {
                     Image(systemName: "gearshape")
                         .font(.system(size: 16, weight: .semibold))
-                        .foregroundStyle(accent)
+                        .foregroundStyle(.primary)
                 }
             }
 
@@ -117,7 +118,7 @@ struct MoreView: View {
                 } label: {
                     Image(systemName: "person.crop.circle")
                         .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(accent)
+                        .foregroundStyle(.primary)
                 }
                 .popover(isPresented: $showProfile) {
                     NavigationStack(path: $profilePath) {
