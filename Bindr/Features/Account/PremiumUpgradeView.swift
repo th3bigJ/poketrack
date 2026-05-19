@@ -30,20 +30,22 @@ struct PremiumUpgradeView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Perfect, crisp glassmorphic header matching all other screens, bypasses native squircle styling
+                // Minimalist naked text/icon header for Premium page (no glass button backdrops)
                 HStack {
-                    ChromeGlassCircleButton(accessibilityLabel: "Close") {
+                    Button(action: {
                         Haptics.lightImpact()
                         dismiss()
-                    } label: {
+                    }) {
                         Image(systemName: "xmark")
-                            .font(.system(size: 14, weight: .bold))
+                            .font(.system(size: 16, weight: .medium))
                             .foregroundStyle(.primary)
                     }
+                    .buttonStyle(.plain)
                     
                     Spacer()
                     
-                    ChromeGlassCapsuleButton(label: "Restore") {
+                    Button(action: {
+                        Haptics.lightImpact()
                         Task {
                             do {
                                 try await services.store.restore()
@@ -52,11 +54,16 @@ struct PremiumUpgradeView: View {
                                 restoreError = error.localizedDescription
                             }
                         }
+                    }) {
+                        Text("Restore")
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundStyle(.primary)
                     }
+                    .buttonStyle(.plain)
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-                .padding(.bottom, 10)
+                .padding(.horizontal, 20)
+                .padding(.top, 16)
+                .padding(.bottom, 8)
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: BindrSpacing.lg) {
@@ -299,40 +306,6 @@ struct PremiumUpgradeView: View {
             return "\(product.displayName) · auto-renews until cancelled."
         }
         return "Configure in App Store Connect to enable purchase."
-    }
-}
-
-// MARK: - Premium-specific Capsule Glass button
-private struct ChromeGlassCapsuleButton: View {
-    let label: String
-    let action: () -> Void
-
-    private var glassStroke: Color { Color.primary.opacity(0.1) }
-
-    var body: some View {
-        Button(action: { Haptics.lightImpact(); action() }) {
-            Text(label)
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(.primary)
-                .padding(.horizontal, 14)
-                .frame(height: 36)
-                .background {
-                    if #available(iOS 26.0, *) {
-                        Capsule()
-                            .fill(.clear)
-                            .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
-                    } else {
-                        Capsule()
-                            .fill(.thinMaterial)
-                            .overlay {
-                                Capsule()
-                                    .strokeBorder(glassStroke, lineWidth: 0.5)
-                            }
-                    }
-                }
-                .contentShape(Capsule())
-        }
-        .buttonStyle(.plain)
     }
 }
 
