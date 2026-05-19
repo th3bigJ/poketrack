@@ -102,23 +102,21 @@ struct MoreView: View {
         .navigationBarTitleDisplayMode(.large)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    Haptics.lightImpact()
+                ChromeGlassCircleButton(accessibilityLabel: "Settings") {
                     navigationPath.append(SideMenuPage.account)
                 } label: {
                     Image(systemName: "gearshape")
-                        .font(.system(size: 17, weight: .medium))
+                        .font(.system(size: 16, weight: .semibold))
                         .foregroundStyle(accent)
                 }
             }
 
             ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    Haptics.lightImpact()
+                ChromeGlassCircleButton(accessibilityLabel: "Profile") {
                     showProfile = true
                 } label: {
                     Image(systemName: "person.crop.circle")
-                        .font(.system(size: 18, weight: .medium))
+                        .font(.system(size: 17, weight: .semibold))
                         .foregroundStyle(accent)
                 }
                 .popover(isPresented: $showProfile) {
