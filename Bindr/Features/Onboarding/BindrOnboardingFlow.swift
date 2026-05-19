@@ -2,18 +2,17 @@ import SwiftUI
 
 // MARK: - BindrOnboardingFlow
 //
-// 3-screen first-run experience.
-//
-// Replaces the old `BrandOnboardingView` list-style picker with an
-// interactive flow:
-//   1. Pick your game (Pokémon / One Piece)        — `OnboardingGameSelectionView`
-//   2. Enable offline collection                   — `OnboardingOfflineModeView`
-//   3. Discover the social / community layer       — `OnboardingSocialDiscoveryView`
+// 5-screen first-run experience:
+//   1. Welcome                                     — `OnboardingWelcomeView`
+//   2. Pick your game (Pokémon / One Piece)        — `OnboardingGameSelectionView`
+//   3. Enable offline collection                   — `OnboardingOfflineModeView`
+//   4. Enable notifications                        — `OnboardingNotificationsView`
+//   5. Premium subscription upsell                 — `OnboardingPremiumView`
 //
 // Routing contract:
 //   * The flow is dismissable: `isPresented` binding tracked by the host
 //     (`RootView`).
-//   * On step-3 completion we call `services.brandSettings.completeBrandOnboarding()`
+//   * On final step completion we call `services.brandSettings.completeBrandOnboarding()`
 //     for the same downstream effects as the original brand picker had —
 //     this keeps the rest of the launch pipeline (catalog bootstrap,
 //     splash gating) unchanged.
@@ -27,7 +26,7 @@ struct BindrOnboardingFlow: View {
     @Environment(\.bindrAccent) private var accent
 
     @Binding var isPresented: Bool
-    @State private var step: BindrOnboardingStep = .game
+    @State private var step: BindrOnboardingStep = .welcome
     @State private var selectedBrand: TCGBrand = .pokemon
 
     var body: some View {
@@ -52,6 +51,9 @@ struct BindrOnboardingFlow: View {
     private var contentStack: some View {
         ZStack {
             switch step {
+            case .welcome:
+                OnboardingWelcomeView(onContinue: { advance() })
+                    .transition(stepTransition)
             case .game:
                 OnboardingGameSelectionView(
                     selectedBrand: $selectedBrand,
@@ -65,11 +67,12 @@ struct BindrOnboardingFlow: View {
                     onSkip: { advance() }
                 )
                 .transition(stepTransition)
-            case .social:
-                OnboardingSocialDiscoveryView(
-                    onFinish: { finish() }
-                )
-                .transition(stepTransition)
+            case .notifications:
+                OnboardingNotificationsView(onContinue: { advance() })
+                    .transition(stepTransition)
+            case .premium:
+                OnboardingPremiumView(onFinish: { finish() })
+                    .transition(stepTransition)
             }
         }
         .animation(.spring(response: 0.45, dampingFraction: 0.86), value: step)
@@ -97,19 +100,19 @@ struct BindrOnboardingFlow: View {
 
             Button {
                 Haptics.lightImpact()
-                if step == .social {
-                    finish()
-                } else {
-                    advance()
-                }
+                advance()
             } label: {
-                Text(step == .social ? "" : "Skip")
+                Text("Skip")
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(.secondary)
             }
             .buttonStyle(.plain)
-            .opacity(step == .social ? 0 : 1)
+            .opacity(skipHidden ? 0 : 1)
         }
+    }
+
+    private var skipHidden: Bool {
+        step == .welcome || step == .notifications || step == .premium
     }
 
     private func advance() {
@@ -120,6 +123,7 @@ struct BindrOnboardingFlow: View {
         if step == .game {
             services.brandSettings.enabledBrands = [selectedBrand]
             services.brandSettings.selectedCatalogBrand = selectedBrand
+            services.prefetchCatalogInBackground(for: [selectedBrand])
         }
         if let next = step.next {
             withAnimation(.spring(response: 0.45, dampingFraction: 0.86)) {
@@ -144,9 +148,11 @@ struct BindrOnboardingFlow: View {
 // MARK: - Step model
 
 enum BindrOnboardingStep: Int, CaseIterable {
-    case game = 0
-    case offline = 1
-    case social = 2
+    case welcome       = 0
+    case game          = 1
+    case offline       = 2
+    case notifications = 3
+    case premium       = 4
 
     var next: BindrOnboardingStep? {
         BindrOnboardingStep(rawValue: rawValue + 1)

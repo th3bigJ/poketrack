@@ -1,35 +1,23 @@
 import SwiftUI
 
-// MARK: - OnboardingOfflineModeView
+// MARK: - OnboardingWelcomeView
 //
-// Step 3 of `BindrOnboardingFlow`. Explains the offline image pack and
-// what it unlocks — focused purely on what offline mode enables rather
-// than general app features. No device mockup animation; just clear,
-// scannable cards.
-//
-// The actual download isn't kicked off here — we only mark the toggle
-// preference on `services.offlineImageSettings`. The catalog pipeline
-// (post-onboarding) reads that flag and schedules the pack download on
-// the next Wi-Fi window.
+// Step 1 of `BindrOnboardingFlow`. Pitches Bindr's value before the user
+// makes any decisions. No data collected, no heavy animations — just a
+// clear headline and feature cards that are immediately responsive.
 
-struct OnboardingOfflineModeView: View {
-    @Environment(AppServices.self) private var services
+struct OnboardingWelcomeView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var accent
 
-    let brand: TCGBrand
     let onContinue: () -> Void
-    let onSkip: () -> Void
-
-    @State private var enableOffline: Bool = true
 
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
                 VStack(alignment: .leading, spacing: BindrSpacing.xl) {
                     headline
-                    offlineFeatures
-                    toggleBlock
+                    featureGrid
                     Color.clear.frame(height: 100)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
@@ -37,7 +25,7 @@ struct OnboardingOfflineModeView: View {
             }
             .scrollIndicators(.hidden)
 
-            ctaRow
+            continueButton
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
@@ -46,54 +34,60 @@ struct OnboardingOfflineModeView: View {
 
     private var headline: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-            Text("Built to go\nanywhere.")
+            Text("Your collection,\nbeautifully organized.")
                 .font(.system(size: 36, weight: .heavy))
                 .lineSpacing(-2)
-            Text("Download the \(brand.displayTitle) image pack once over Wi-Fi and your full catalog is available offline — forever.")
+            Text("The complete toolkit for serious collectors — catalog, scanner, binders, and community in one place.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
         }
     }
 
-    // MARK: Offline feature cards
+    // MARK: Feature grid
 
-    private var offlineFeatures: some View {
+    private var featureGrid: some View {
         VStack(spacing: BindrSpacing.sm) {
-            offlineCard(
-                icon: "photo.stack.fill",
-                title: "Full card images, no signal needed",
-                description: "Browse, search, and view every card in the catalog without an internet connection.",
+            featureCard(
+                icon: "camera.viewfinder",
+                title: "Card Scanner",
+                description: "Point your camera at any card for instant identification, pricing, and set info.",
                 tint: accent
             )
-            offlineCard(
-                icon: "camera.viewfinder",
-                title: "Scanner works offline",
-                description: "Scan and identify cards at markets, trade events, or anywhere without Wi-Fi.",
+            featureCard(
+                icon: "rectangle.grid.3x2.fill",
+                title: "Full Catalog",
+                description: "Every set, variant, and alt art across Pokémon and ONE PIECE in one place.",
                 tint: BindrPalette.deckBlue
             )
-            offlineCard(
+            featureCard(
                 icon: "books.vertical.fill",
-                title: "Binders stay accessible",
-                description: "Open, browse, and share your binders without needing a connection.",
+                title: "Digital Binders",
+                description: "3D embossed covers and custom layouts to show off your rarest pulls.",
                 tint: BindrPalette.binderGold
             )
-            offlineCard(
-                icon: "rectangle.stack.fill",
-                title: "Deck builder runs locally",
-                description: "Build and review decks on the go — card data is stored on your device.",
+            featureCard(
+                icon: "rectangle.stack.badge.plus",
+                title: "Deck Builder",
+                description: "Build from scratch or import from PTCGL. Real-time legality checking.",
                 tint: BindrPalette.wishlistViolet
             )
-            offlineCard(
-                icon: "lock.shield.fill",
-                title: "Wi-Fi only download",
-                description: "The image pack never uses cellular data unless you explicitly allow it.",
+            featureCard(
+                icon: "chart.line.uptrend.xyaxis",
+                title: "Collection Value",
+                description: "Live pricing, trend history, and portfolio value at a glance.",
                 tint: BindrPalette.ownedGreen
+            )
+            featureCard(
+                icon: "arrow.left.arrow.right",
+                title: "Trade Network",
+                description: "Find trade partners, list your extras, and get alerts when wishlist cards appear.",
+                tint: Color(hex: "FF6B6B")
             )
         }
     }
 
-    private func offlineCard(icon: String, title: String, description: String, tint: Color) -> some View {
+    private func featureCard(icon: String, title: String, description: String, tint: Color) -> some View {
         HStack(spacing: BindrSpacing.md) {
             ZStack {
                 RoundedRectangle(cornerRadius: BindrRadius.md, style: .continuous)
@@ -110,7 +104,7 @@ struct OnboardingOfflineModeView: View {
                 Text(description)
                     .font(.system(size: 12))
                     .foregroundStyle(.secondary)
-                    .lineLimit(3)
+                    .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
             }
             Spacer(minLength: 0)
@@ -121,34 +115,16 @@ struct OnboardingOfflineModeView: View {
         .glassCardStyle(cornerRadius: BindrRadius.lg, interactive: false)
     }
 
-    // MARK: Toggle
-
-    private var toggleBlock: some View {
-        Toggle(isOn: $enableOffline) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text("Download \(brand.displayTitle) pack")
-                    .font(.system(size: 15, weight: .semibold))
-                Text("\(OfflinePackDownloadSizeCopy.approximateLabel(for: brand)) · Wi-Fi only")
-                    .font(.system(size: 12))
-                    .foregroundStyle(.secondary)
-            }
-        }
-        .tint(accent)
-        .padding(BindrSpacing.md)
-        .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
-    }
-
     // MARK: CTA
 
-    private var ctaRow: some View {
-        VStack(spacing: BindrSpacing.sm) {
+    private var continueButton: some View {
+        VStack(spacing: 0) {
             Button {
                 Haptics.lightImpact()
-                services.offlineImageSettings.setOfflinePackEnabled(enableOffline, for: brand)
                 onContinue()
             } label: {
                 HStack(spacing: 8) {
-                    Text(enableOffline ? "Enable & Continue" : "Continue")
+                    Text("Get Started")
                         .font(.system(size: 17, weight: .heavy))
                     Image(systemName: "arrow.right")
                         .font(.system(size: 15, weight: .heavy))
@@ -174,20 +150,9 @@ struct OnboardingOfflineModeView: View {
             }
             .buttonStyle(.plain)
             .padding(.horizontal, BindrSpacing.lg)
-
-            Button {
-                Haptics.lightImpact()
-                onSkip()
-            } label: {
-                Text("Not now")
-                    .font(.system(size: 13, weight: .semibold))
-                    .foregroundStyle(.secondary)
-                    .padding(.vertical, 6)
-            }
-            .buttonStyle(.plain)
             .padding(.bottom, BindrSpacing.lg)
+            .padding(.top, BindrSpacing.sm)
         }
-        .padding(.top, BindrSpacing.sm)
         .background {
             LinearGradient(
                 colors: [

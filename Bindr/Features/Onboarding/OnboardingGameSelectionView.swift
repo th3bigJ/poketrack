@@ -2,16 +2,13 @@ import SwiftUI
 
 // MARK: - OnboardingGameSelectionView
 //
-// Step 1 of `BindrOnboardingFlow`. Two large, animated franchise cards
-// take the place of the old toggle list — Pokémon vs ONE PIECE. Each
-// card has its own gradient identity and tilts toward the user when
-// selected, mimicking holding a card up to a light.
+// Step 2 of `BindrOnboardingFlow`. Two clean selection cards let the user
+// pick their TCG. Uses the same glass card style as the rest of the app
+// rather than bespoke gradient cards.
 //
 // Selection contract:
 //   * `selectedBrand` defaults to `.pokemon` and is updated on tap.
-//   * `onContinue` is only enabled once a brand is picked (Pokémon is
-//     pre-selected so the CTA is enabled on appear — matching the
-//     legacy default behaviour).
+//   * `onContinue` is always enabled since Pokémon is pre-selected.
 //
 // Future: when we add a third brand (MTG, Lorcana, etc.) move the
 // catalog metadata into a small `OnboardingGameOption` struct backed
@@ -62,16 +59,16 @@ struct OnboardingGameSelectionView: View {
                 title: "Pokémon",
                 tagline: "The original chase. Energy, sets, and TGs.",
                 symbol: "bolt.fill",
-                gradient: [Color(hex: "FFB02E"), Color(hex: "FF6F40"), Color(hex: "C0351F")],
-                accentTag: "MOST POPULAR"
+                accentTag: "MOST POPULAR",
+                tint: Color(hex: "FF6F40")
             )
             gameCard(
                 brand: .onePiece,
                 title: "ONE PIECE",
                 tagline: "Manga rares, alt arts, the new frontier.",
                 symbol: "sparkles",
-                gradient: [Color(hex: "FF4A57"), Color(hex: "C8121E"), Color(hex: "660810")],
-                accentTag: "FASTEST GROWING"
+                accentTag: "FASTEST GROWING",
+                tint: Color(hex: "E8192C")
             )
         }
     }
@@ -81,126 +78,70 @@ struct OnboardingGameSelectionView: View {
         title: String,
         tagline: String,
         symbol: String,
-        gradient: [Color],
-        accentTag: String
+        accentTag: String,
+        tint: Color
     ) -> some View {
         let isSelected = selectedBrand == brand
         return Button {
             Haptics.selectionChanged()
-            withAnimation(.spring(response: 0.35, dampingFraction: 0.78)) {
+            withAnimation(.easeInOut(duration: 0.18)) {
                 selectedBrand = brand
             }
         } label: {
-            ZStack(alignment: .topLeading) {
-                RoundedRectangle(cornerRadius: BindrRadius.xxl, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: gradient,
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
+            HStack(spacing: BindrSpacing.md) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: BindrRadius.md, style: .continuous)
+                        .fill(tint.opacity(colorScheme == .dark ? 0.20 : 0.14))
+                    Image(systemName: symbol)
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundStyle(tint)
+                }
+                .frame(width: 52, height: 52)
 
-                // Foil shimmer overlay
-                RoundedRectangle(cornerRadius: BindrRadius.xxl, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                Color.white.opacity(0.32),
-                                Color.white.opacity(0.0),
-                                Color.white.opacity(0.14),
-                                Color.white.opacity(0.0)
-                            ],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .blendMode(.plusLighter)
-
-                // Inner gloss highlight
-                RoundedRectangle(cornerRadius: BindrRadius.xxl, style: .continuous)
-                    .stroke(
-                        LinearGradient(
-                            colors: [Color.white.opacity(0.5), .clear],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        ),
-                        lineWidth: 1
-                    )
-                    .padding(0.5)
-
-                VStack(alignment: .leading, spacing: BindrSpacing.md) {
-                    HStack {
+                VStack(alignment: .leading, spacing: 4) {
+                    HStack(spacing: BindrSpacing.sm) {
+                        Text(title)
+                            .font(.system(size: 17, weight: .bold))
+                            .foregroundStyle(.primary)
                         Text(accentTag)
                             .font(.system(size: 9, weight: .black, design: .rounded))
-                            .tracking(1.5)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(.white.opacity(0.25), in: Capsule())
-                            .foregroundStyle(.white)
-                        Spacer()
-                        ZStack {
-                            Circle()
-                                .stroke(Color.white.opacity(0.85), lineWidth: 2)
-                                .frame(width: 26, height: 26)
-                            if isSelected {
-                                Circle()
-                                    .fill(Color.white)
-                                    .frame(width: 16, height: 16)
-                                    .transition(.scale.combined(with: .opacity))
-                            }
-                        }
+                            .tracking(1)
+                            .foregroundStyle(tint)
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 3)
+                            .background { Capsule().fill(tint.opacity(0.15)) }
                     }
+                    Text(tagline)
+                        .font(.system(size: 13))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                }
 
-                    Spacer(minLength: 0)
+                Spacer(minLength: 0)
 
-                    HStack(alignment: .center, spacing: BindrSpacing.md) {
-                        ZStack {
-                            Circle()
-                                .fill(.white.opacity(0.18))
-                                .frame(width: 56, height: 56)
-                            Image(systemName: symbol)
-                                .font(.system(size: 26, weight: .black))
-                                .foregroundStyle(.white)
-                        }
-
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(title)
-                                .font(.system(size: 28, weight: .heavy))
-                                .foregroundStyle(.white)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.7)
-                            Text(tagline)
-                                .font(.system(size: 13, weight: .semibold))
-                                .foregroundStyle(.white.opacity(0.85))
-                                .lineLimit(2)
-                                .multilineTextAlignment(.leading)
-                        }
-                        Spacer(minLength: 0)
+                ZStack {
+                    Circle()
+                        .stroke(isSelected ? accent : Color.primary.opacity(0.25), lineWidth: 1.5)
+                        .frame(width: 24, height: 24)
+                    if isSelected {
+                        Circle()
+                            .fill(accent)
+                            .frame(width: 14, height: 14)
+                            .transition(.scale.combined(with: .opacity))
                     }
                 }
-                .padding(BindrSpacing.lg)
+                .animation(.easeInOut(duration: 0.18), value: isSelected)
             }
-            .frame(height: 200)
+            .padding(BindrSpacing.md)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
             .overlay {
-                RoundedRectangle(cornerRadius: BindrRadius.xxl, style: .continuous)
-                    .stroke(Color.white.opacity(isSelected ? 0.9 : 0.2), lineWidth: isSelected ? 2 : 0.5)
+                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                    .stroke(isSelected ? accent.opacity(0.55) : Color.clear, lineWidth: 1.5)
             }
-            .scaleEffect(isSelected ? 1.0 : 0.985)
-            .rotation3DEffect(
-                .degrees(isSelected ? -3 : 0),
-                axis: (x: 1, y: 0, z: 0),
-                perspective: 0.6
-            )
-            .shadow(
-                color: (gradient.last ?? .black).opacity(isSelected ? 0.55 : 0.25),
-                radius: isSelected ? 28 : 16,
-                x: 0,
-                y: isSelected ? 14 : 8
-            )
         }
         .buttonStyle(.plain)
-        .animation(.spring(response: 0.4, dampingFraction: 0.82), value: isSelected)
+        .animation(.easeInOut(duration: 0.18), value: isSelected)
     }
 
     private var helperRow: some View {

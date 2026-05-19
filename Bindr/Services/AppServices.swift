@@ -218,6 +218,19 @@ final class AppServices {
         }
     }
 
+    /// Silently pre-fetches catalog data for the selected brand in the background during onboarding,
+    /// so the post-onboarding bootstrap has less network work to do. Fire-and-forget; no UI feedback.
+    func prefetchCatalogInBackground(for brands: Set<TCGBrand>) {
+        Task(priority: .background) { [weak self] in
+            guard let self else { return }
+            await CatalogSyncCoordinator.shared.syncAllIfNeeded(
+                enabledBrands: brands,
+                progressHandler: nil
+            )
+            await brandsManifest.refresh()
+        }
+    }
+
     private func waitForTaskOrTimeout(
         _ task: Task<Void, Never>,
         timeoutNanoseconds: UInt64

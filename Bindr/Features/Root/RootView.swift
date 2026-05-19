@@ -97,7 +97,6 @@ struct RootView: View {
     @State private var showPremiumAutoSheet = false
     @State private var showSocialFeaturesSheet = false
     @State private var hasEvaluatedPremiumUpsellThisSession = false
-    @State private var hasShownOnboardingThisSession = false
     private static let premiumUpsellLastShownKey = "bindr_premium_upsell_last_shown_at"
     private static let premiumUpsellIntervalSeconds: TimeInterval = 7 * 24 * 60 * 60
 
@@ -106,7 +105,7 @@ struct RootView: View {
     // ship the next major onboarding redesign). Each version key only fires
     // a single reset, so even if the user mashes "Skip" the flow doesn't
     // come back on subsequent launches.
-    private static let onboardingReplayMigrationKey = "bindr_onboarding_replay_v1"
+    private static let onboardingReplayMigrationKey = "bindr_onboarding_replay_v2"
 
     // MARK: - Splash Flow
     @State private var showSplash = false
@@ -1082,12 +1081,6 @@ struct RootView: View {
     /// 7 days after their *first* successful launch — they get a full
     /// week to explore before any paywall pressure.
     private func evaluatePremiumUpsellIfNeeded() {
-        // FOR TESTING: Always show onboarding (Features) intro first, once per session
-        if !hasShownOnboardingThisSession {
-            hasShownOnboardingThisSession = true
-            showBrandOnboarding = true
-        }
-        
         guard !hasEvaluatedPremiumUpsellThisSession else { return }
         hasEvaluatedPremiumUpsellThisSession = true
         guard !services.store.isPremium else { return }

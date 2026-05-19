@@ -1,33 +1,26 @@
 import SwiftUI
+import UserNotifications
 
-// MARK: - OnboardingSocialDiscoveryView
+// MARK: - OnboardingNotificationsView
 //
-// Step 3 of `BindrOnboardingFlow`. Acts as the bridge between the
-// catalog-only experience (steps 1–2) and the new social tab. The
-// hero combines the same `FloatingCardStack` + `LiveActivityTicker`
-// pieces used on `SocialLandingView` so users see the surface they're
-// being teleported toward.
-//
-// Outcome: tapping "Enter Bindr" closes the flow and the Social tab is
-// just one tap away in the bottom tab bar. We deliberately don't auto-
-// route the user into Social so first-launch users still land on the
-// dashboard / catalog they signed up for.
+// Step 4 of `BindrOnboardingFlow`. Pitches notification value before
+// requesting iOS permission — wishlist alerts, price drops, trade offers,
+// and new set drops. The native permission prompt fires when the user taps
+// "Enable Alerts"; "Not now" advances without requesting permission.
+// Either way `onContinue` is called to move on to the Premium step.
 
-struct OnboardingSocialDiscoveryView: View {
+struct OnboardingNotificationsView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var accent
 
-    let onFinish: () -> Void
-
-    @State private var hasAppeared = false
+    let onContinue: () -> Void
 
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
                 VStack(alignment: .leading, spacing: BindrSpacing.xl) {
                     headline
-                    heroVisual
-                    featurePeeks
+                    notificationPeeks
                     Color.clear.frame(height: 20)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
@@ -38,73 +31,51 @@ struct OnboardingSocialDiscoveryView: View {
             ctaRow
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear {
-            withAnimation(.easeOut(duration: 0.45)) {
-                hasAppeared = true
-            }
-        }
     }
+
+    // MARK: Headline
 
     private var headline: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-            Text("Collect\ntogether.")
-                .font(.system(size: 34, weight: .heavy))
+            Text("Stay in\nthe loop.")
+                .font(.system(size: 36, weight: .heavy))
                 .lineSpacing(-2)
-            Text("Discover suggested trades based on your wishlist and share your latest pulls with friends. Sign in with iCloud to join the community.")
+            Text("Get notified the moment something relevant to your collection happens — wishlist matches, price swings, and more.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
         }
     }
 
-    private var heroVisual: some View {
-        ZStack {
-            RadialGradient(
-                colors: [accent.opacity(colorScheme == .dark ? 0.30 : 0.18), .clear],
-                center: .center,
-                startRadius: 10,
-                endRadius: 240
-            )
-            .blur(radius: 26)
+    // MARK: Notification peeks
 
-            FloatingCardStack()
-                .frame(height: 260)
-                .scaleEffect(hasAppeared ? 1.0 : 0.9)
-                .opacity(hasAppeared ? 1 : 0)
-        }
-        .frame(height: 280)
-        .frame(maxWidth: .infinity)
-    }
-
-    // MARK: Feature peeks
-
-    private var featurePeeks: some View {
+    private var notificationPeeks: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
-            SocialSectionEyebrow(title: "THE SOCIAL TAB")
+            SocialSectionEyebrow(title: "WHAT YOU'LL HEAR ABOUT")
 
             VStack(spacing: BindrSpacing.sm) {
                 peekRow(
+                    icon: "star.fill",
+                    title: "Wishlist alerts",
+                    description: "Someone lists a card you want for trade.",
+                    tint: BindrPalette.binderGold
+                )
+                peekRow(
+                    icon: "chart.line.uptrend.xyaxis",
+                    title: "Price movements",
+                    description: "Cards in your collection spike or dip.",
+                    tint: BindrPalette.ownedGreen
+                )
+                peekRow(
                     icon: "arrow.left.arrow.right",
-                    title: "Trade Network",
-                    description: "Browse listings and initiate trades with friends.",
+                    title: "Trade offers",
+                    description: "New offers and replies on your trade listings.",
                     tint: BindrPalette.deckBlue
                 )
                 peekRow(
                     icon: "sparkles",
-                    title: "Activity Feed",
-                    description: "See pulls, binders, and collections shared in real-time.",
-                    tint: BindrPalette.ownedGreen
-                )
-                peekRow(
-                    icon: "crown.fill",
-                    title: "Wishlist alerts",
-                    description: "Be notified when a card you want is listed for trade.",
-                    tint: BindrPalette.binderGold
-                )
-                peekRow(
-                    icon: "person.crop.square.filled.and.at.rectangle",
-                    title: "Public Profile",
-                    description: "Showcase your binders and collections to the community.",
+                    title: "New set drops",
+                    description: "Be first to know when a new set hits the catalog.",
                     tint: BindrPalette.wishlistViolet
                 )
             }
@@ -131,9 +102,6 @@ struct OnboardingSocialDiscoveryView: View {
                     .lineLimit(2)
             }
             Spacer(minLength: 0)
-            Image(systemName: "chevron.right")
-                .font(.system(size: 12, weight: .heavy))
-                .foregroundStyle(.tertiary)
         }
         .padding(.horizontal, BindrSpacing.md)
         .padding(.vertical, BindrSpacing.md)
@@ -141,18 +109,18 @@ struct OnboardingSocialDiscoveryView: View {
         .glassCardStyle(cornerRadius: BindrRadius.lg, interactive: false)
     }
 
-
-
     // MARK: CTA
 
     private var ctaRow: some View {
         VStack(spacing: BindrSpacing.sm) {
             Button {
-                Haptics.success()
-                onFinish()
+                Haptics.lightImpact()
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
+                    DispatchQueue.main.async { onContinue() }
+                }
             } label: {
                 HStack(spacing: 8) {
-                    Text("I'm ready")
+                    Text("Enable Alerts")
                         .font(.system(size: 17, weight: .heavy))
                     Image(systemName: "arrow.right")
                         .font(.system(size: 15, weight: .heavy))
@@ -178,6 +146,17 @@ struct OnboardingSocialDiscoveryView: View {
             }
             .buttonStyle(.plain)
             .padding(.horizontal, BindrSpacing.lg)
+
+            Button {
+                Haptics.lightImpact()
+                onContinue()
+            } label: {
+                Text("Not now")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                    .padding(.vertical, 6)
+            }
+            .buttonStyle(.plain)
             .padding(.bottom, BindrSpacing.lg)
         }
         .padding(.top, BindrSpacing.sm)
