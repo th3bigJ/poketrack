@@ -135,17 +135,8 @@ struct CommentsView: View {
                 HStack(spacing: 4) {
                     Text(row.author?.displayName ?? row.author?.username ?? "Collector")
                         .font(.subheadline.weight(.semibold))
-                    
                     if let author = row.author {
-                        let isAuthorPremium = {
-                            if let myID = services.socialAuth.currentUserID, author.id == myID {
-                                return services.store.isPremium
-                            }
-                            return author.hasPremium
-                        }()
-                        if isAuthorPremium {
-                            PokeballEmblemView(size: 10)
-                        }
+                        PremiumBadgeView(profile: author, size: 10)
                     }
                 }
                 Spacer(minLength: 8)
@@ -269,17 +260,8 @@ struct CommentsView: View {
                     HStack(spacing: 4) {
                         Text(sourceItem?.actor?.displayName ?? sourceItem?.actor?.username ?? "Post")
                             .font(.subheadline.weight(.semibold))
-                        
                         if let actor = sourceItem?.actor {
-                            let isActorPremium = {
-                                if let myID = services.socialAuth.currentUserID, actor.id == myID {
-                                    return services.store.isPremium
-                                }
-                                return actor.hasPremium
-                            }()
-                            if isActorPremium {
-                                PokeballEmblemView(size: 10)
-                            }
+                            PremiumBadgeView(profile: actor, size: 10)
                         }
                     }
                     if let createdAt = sourceItem?.createdAt {

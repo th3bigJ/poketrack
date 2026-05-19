@@ -224,7 +224,8 @@ struct AccountProfileView: View {
                 collectionBinderCount: payload.collectionBinderCount,
                 collectionDeckCount: payload.collectionDeckCount,
                 friendCount: payload.friendCount,
-                collectionTotalValue: payload.collectionTotalValue
+                collectionTotalValue: payload.collectionTotalValue,
+                premiumBadgeStyle: payload.premiumBadgeStyle
             )
             print("[ProfileSave] saveProfile succeeded: \(saved.username)")
             profile = saved
@@ -248,7 +249,8 @@ struct AccountProfileView: View {
                 collectionBinderCount: payload.collectionBinderCount,
                 collectionDeckCount: payload.collectionDeckCount,
                 friendCount: payload.friendCount,
-                collectionTotalValue: payload.collectionTotalValue
+                collectionTotalValue: payload.collectionTotalValue,
+                premiumBadgeStyle: payload.premiumBadgeStyle
             )
             print("[ProfileSave] updateProfile succeeded: \(updated.username)")
             profile = updated

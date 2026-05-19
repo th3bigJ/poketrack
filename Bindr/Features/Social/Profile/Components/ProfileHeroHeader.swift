@@ -126,10 +126,7 @@ struct ProfileHeroHeader: View {
                             .font(.title3.weight(.bold))
                             .foregroundStyle(.primary)
                             .lineLimit(1)
-                        
-                        if isProfilePremium {
-                            PokeballEmblemView(size: 15)
-                        }
+                        PremiumBadgeView(profile: profile, size: 15)
                     }
                     Text("@\(profile.username)")
                         .font(.subheadline)

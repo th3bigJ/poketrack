@@ -21,6 +21,7 @@ struct SocialProfileFormPayload: Sendable {
     let collectionDeckCount: Int?
     let friendCount: Int?
     let collectionTotalValue: Double?
+    let premiumBadgeStyle: String?
 }
 
 private struct FavoritePokemonSelection: Identifiable, Hashable {
@@ -77,6 +78,7 @@ struct EditProfileView: View {
     @State private var showErrorAlert = false
     @State private var avatarBackgroundColor: String?
     @State private var avatarOutlineStyle: String?
+    @State private var premiumBadgeStyle: PremiumBadgeStyle
 
     init(
         existingProfile: SocialProfile?,
@@ -93,6 +95,7 @@ struct EditProfileView: View {
         _favoriteDeckArchetype = State(initialValue: existingProfile?.favoriteDeckArchetype ?? "")
         _avatarBackgroundColor = State(initialValue: existingProfile?.avatarBackgroundColor)
         _avatarOutlineStyle = State(initialValue: existingProfile?.avatarOutlineStyle)
+        _premiumBadgeStyle = State(initialValue: existingProfile?.badgeStyle ?? .pokeball)
         _favoritePokemon = State(initialValue: {
             guard let dex = existingProfile?.favoritePokemonDex else { return nil }
             return FavoritePokemonSelection(
@@ -176,7 +179,8 @@ struct EditProfileView: View {
                             collectionDeckCount: 0,
                             collectionTotalValue: 0,
                             createdAt: nil,
-                            isPremium: nil
+                            isPremium: nil,
+                            premiumBadgeStyle: premiumBadgeStyle.rawValue
                         ),
                         size: 100
                     )
@@ -268,6 +272,66 @@ struct EditProfileView: View {
                 Text("Avatar Customization")
             } footer: {
                 Text("Personalize your trainer profile picture with colors and patterns.")
+            }
+
+            // MARK: - Premium Badge Picker
+            Section {
+                VStack(alignment: .leading, spacing: 14) {
+                    Text("Profile Badge")
+                        .font(.footnote.weight(.medium))
+                        .foregroundStyle(.secondary)
+
+                    HStack(spacing: 12) {
+                        ForEach(PremiumBadgeStyle.allCases, id: \.self) { style in
+                            Button {
+                                premiumBadgeStyle = style
+                                Haptics.lightImpact()
+                            } label: {
+                                HStack(spacing: 8) {
+                                    Group {
+                                        if style == .pokeball {
+                                            PokeballEmblemView(size: 22)
+                                        } else {
+                                            StrawHatEmblemView(size: 22)
+                                        }
+                                    }
+                                    VStack(alignment: .leading, spacing: 1) {
+                                        Text(style.displayName)
+                                            .font(.system(size: 13, weight: .semibold))
+                                        Text(style.gameHint)
+                                            .font(.system(size: 10))
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    Spacer()
+                                    if premiumBadgeStyle == style {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .foregroundStyle(services.theme.accentColor)
+                                    }
+                                }
+                                .padding(.horizontal, 12)
+                                .padding(.vertical, 10)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                        .fill(premiumBadgeStyle == style
+                                              ? services.theme.accentColor.opacity(0.12)
+                                              : Color.gray.opacity(0.08))
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                        .stroke(premiumBadgeStyle == style ? services.theme.accentColor : Color.clear, lineWidth: 1.5)
+                                )
+                            }
+                            .buttonStyle(.plain)
+                            .frame(maxWidth: .infinity)
+                        }
+                    }
+                }
+                .padding(.vertical, 8)
+            } header: {
+                Text("Premium Badge")
+            } footer: {
+                // Temp: visible to all for testing. Production: guard on isPremium.
+                Text("Choose the badge that appears next to your name in the feed and on your profile.")
             }
 
             Section {
@@ -459,6 +523,7 @@ struct EditProfileView: View {
         let capturedFavoriteDeckArchetype = favoriteDeckArchetype
         let capturedAvatarBg = avatarBackgroundColor
         let capturedAvatarOutline = avatarOutlineStyle
+        let capturedBadgeStyle = premiumBadgeStyle.rawValue
         Task {
             do {
                 let friendCount = try? await services.socialFriend.fetchFriends().count
@@ -481,7 +546,8 @@ struct EditProfileView: View {
                     collectionBinderCount: collectionBinderCount,
                     collectionDeckCount: collectionDeckCount,
                     friendCount: friendCount,
-                    collectionTotalValue: collectionTotalValue
+                    collectionTotalValue: collectionTotalValue,
+                    premiumBadgeStyle: capturedBadgeStyle
                 )
                 print("[EditProfileView] Calling onSave…")
                 try await onSave(payload)

@@ -51,6 +51,7 @@ final class SocialProfileService {
         let collectionDeckCount: Int?
         let friendCount: Int?
         let collectionTotalValue: Double?
+        let premiumBadgeStyle: String?
 
         enum CodingKeys: String, CodingKey {
             case id
@@ -75,6 +76,7 @@ final class SocialProfileService {
             case collectionDeckCount = "collection_deck_count"
             case friendCount = "friend_count"
             case collectionTotalValue = "collection_total_value"
+            case premiumBadgeStyle = "premium_badge_style"
         }
     }
 
@@ -139,6 +141,7 @@ final class SocialProfileService {
         let collectionDeckCount: Int?
         let friendCount: Int?
         let collectionTotalValue: Double?
+        let premiumBadgeStyle: String?
 
         enum CodingKeys: String, CodingKey {
             case displayName = "display_name"
@@ -159,6 +162,7 @@ final class SocialProfileService {
             case collectionDeckCount = "collection_deck_count"
             case friendCount = "friend_count"
             case collectionTotalValue = "collection_total_value"
+            case premiumBadgeStyle = "premium_badge_style"
         }
     }
 
@@ -227,7 +231,8 @@ final class SocialProfileService {
         collectionBinderCount: Int? = nil,
         collectionDeckCount: Int? = nil,
         friendCount: Int? = nil,
-        collectionTotalValue: Double? = nil
+        collectionTotalValue: Double? = nil,
+        premiumBadgeStyle: String? = nil
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let appleUserID = KeychainStorage.readAppleUserIdentifier() ?? "apple-\(userID.uuidString)"
@@ -253,7 +258,8 @@ final class SocialProfileService {
             collectionBinderCount: collectionBinderCount,
             collectionDeckCount: collectionDeckCount,
             friendCount: friendCount,
-            collectionTotalValue: collectionTotalValue
+            collectionTotalValue: collectionTotalValue,
+            premiumBadgeStyle: premiumBadgeStyle
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?on_conflict=id&select=*",
@@ -287,7 +293,8 @@ final class SocialProfileService {
         collectionBinderCount: Int? = nil,
         collectionDeckCount: Int? = nil,
         friendCount: Int? = nil,
-        collectionTotalValue: Double? = nil
+        collectionTotalValue: Double? = nil,
+        premiumBadgeStyle: String? = nil
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let payload = UpdateProfileRequest(
@@ -308,7 +315,8 @@ final class SocialProfileService {
             collectionBinderCount: collectionBinderCount,
             collectionDeckCount: collectionDeckCount,
             friendCount: friendCount,
-            collectionTotalValue: collectionTotalValue
+            collectionTotalValue: collectionTotalValue,
+            premiumBadgeStyle: premiumBadgeStyle
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",

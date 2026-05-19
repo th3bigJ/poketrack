@@ -51,8 +51,8 @@ struct FeedItemView: View {
                             .font(.system(size: 11, weight: .medium))
                             .foregroundStyle(.secondary)
                         
-                        if isActorPremium {
-                            PokeballEmblemView(size: 10)
+                        if let actor = item.actor {
+                            PremiumBadgeView(profile: actor, size: 10)
                         }
                         
                         if isEdited {
@@ -759,8 +759,8 @@ struct InteractionRow: View {
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(.primary)
                     
-                    if isActorPremium {
-                        PokeballEmblemView(size: 8)
+                    if let actor = item.actor {
+                        PremiumBadgeView(profile: actor, size: 8)
                     }
                 }
                 Group {

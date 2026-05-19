@@ -26,9 +26,16 @@ struct SocialProfile: Codable, Identifiable, Sendable {
     let collectionTotalValue: Double?
     let createdAt: Date?
     let isPremium: Bool?
+    let premiumBadgeStyle: String?
 
     var hasPremium: Bool {
         isPremium ?? false
+    }
+
+    /// Decoded badge style, defaulting to .pokeball for premium users.
+    var badgeStyle: PremiumBadgeStyle {
+        guard let raw = premiumBadgeStyle else { return .pokeball }
+        return PremiumBadgeStyle(rawValue: raw) ?? .pokeball
     }
 
     enum CodingKeys: String, CodingKey {
@@ -57,6 +64,7 @@ struct SocialProfile: Codable, Identifiable, Sendable {
         case collectionTotalValue = "collection_total_value"
         case createdAt = "created_at"
         case isPremium = "is_premium"
+        case premiumBadgeStyle = "premium_badge_style"
     }
 }
 

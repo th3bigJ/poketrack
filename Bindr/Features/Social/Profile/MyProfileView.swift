@@ -123,10 +123,7 @@ struct MyProfileView: View {
                             .foregroundStyle(Color.primary)
                             .lineLimit(1)
                             .minimumScaleFactor(0.8)
-                        
-                        if services.store.isPremium || profile.hasPremium {
-                            PokeballEmblemView(size: 14)
-                        }
+                        PremiumBadgeView(profile: profile, size: 14)
                     }
                     if !roleTitles.isEmpty {
                         HStack(spacing: 6) {

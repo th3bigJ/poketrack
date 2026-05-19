@@ -175,10 +175,7 @@ struct FriendProfileView: View {
                             .foregroundStyle(Color.primary)
                             .lineLimit(1)
                             .minimumScaleFactor(0.8)
-                        
-                        if profile.hasPremium {
-                            PokeballEmblemView(size: 14)
-                        }
+                        PremiumBadgeView(profile: profile, size: 14)
                     }
                     Text("@\(profile.username)")
                         .font(.system(size: 12))
