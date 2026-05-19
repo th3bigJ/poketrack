@@ -98,16 +98,10 @@ struct OnboardingOfflineModeView: View {
     /// "Enable Pack" CTA only flipped a flag and the user still had no
     /// offline data the next time they lost signal.
     private func applyAndContinue() {
+        // Persist the preference now so it's readable by BindrOnboardingFlow.finish(),
+        // but defer the actual download until onboarding is complete to avoid
+        // competing with the remaining page transitions.
         services.offlineImageSettings.setOfflinePackEnabled(enableOffline, for: brand)
-        if enableOffline {
-            Task {
-                await services.offlineImageDownload.runFullDownloadIfNeeded(
-                    brand: brand,
-                    nationalDexPokemon: services.cardData.nationalDexPokemon,
-                    sealedProducts: services.sealedProducts.products
-                )
-            }
-        }
         onContinue()
     }
 

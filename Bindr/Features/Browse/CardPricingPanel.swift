@@ -42,6 +42,7 @@ struct CardPricingPanel: View {
         var seen: [String] = []
         for key in history.series.keys.sorted() {
             let variant = key.components(separatedBy: "/").first ?? key
+            if variant == "default" { continue }
             if !seen.contains(variant) { seen.append(variant) }
         }
         return seen
@@ -485,7 +486,7 @@ struct CardPricingPanel: View {
         let (keys, hist, trnd) = await (keysTask, historyTask, trendsTask)
 
         // Set history first so grade lookups work immediately
-        variantKeys = keys
+        variantKeys = keys.filter { $0 != "default" }
         history = hist
         trends = trnd
 
@@ -493,6 +494,7 @@ struct CardPricingPanel: View {
         var historyVariantsSeen: [String] = []
         for key in (hist?.series.keys ?? [:].keys) {
             let v = key.components(separatedBy: "/").first ?? key
+            if v == "default" { continue }
             if !historyVariantsSeen.contains(v) { historyVariantsSeen.append(v) }
         }
         let scrydexKeys = Set(keys)

@@ -96,7 +96,7 @@ struct ScrydexVariantPricing: Codable, Hashable {
 // MARK: - Price History
 
 /// One data point in a price history series.
-struct PriceDataPoint: Identifiable {
+struct PriceDataPoint: Identifiable, Sendable {
     let id: String   // the label string (date / week / month)
     let label: String
     let price: Double

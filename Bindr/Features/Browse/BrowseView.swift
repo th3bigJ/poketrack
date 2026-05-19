@@ -199,111 +199,152 @@ struct CardGridCell: View {
     }
 
     var body: some View {
+        CardGridCellLayout(
+            card: card,
+            gridOptions: gridOptions,
+            setName: setName,
+            isOwned: isOwned,
+            isWishlisted: isWishlisted,
+            ownedCountBadge: ownedCountBadge,
+            footnote: footnote,
+            postPriceFootnote: postPriceFootnote,
+            overridePrice: overridePrice,
+            gradeLabel: gradeLabel,
+            tileBackground: tileBackground,
+            tileBorder: tileBorder,
+            dividerColor: dividerColor,
+            nameStripBackground: nameStripBackground,
+            footerBackground: footerBackground,
+            showsFooter: showsFooter,
+            showsOwnedUI: showsOwnedUI,
+            visibleOwnedCountBadge: visibleOwnedCountBadge,
+            cardBorderColor: cardBorderColor,
+            cardBorderWidth: cardBorderWidth,
+            cardCornerRadius: cardCornerRadius,
+            wishlistBorderColor: wishlistBorderColor,
+            trailingCardID: trailingCardID,
+            accentColor: services.theme.accentColor,
+            colorScheme: colorScheme,
+            imageURL: safeImageURL(relativePath: card.imageLowSrc)
+        )
+    }
+
+    private func safeImageURL(relativePath: String) -> URL? {
+        let trimmed = relativePath.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        if trimmed.hasPrefix("http") {
+            return URL(string: trimmed)
+        }
+        return AppConfiguration.imageURL(relativePath: trimmed)
+    }
+
+    private var trailingCardID: String {
+        let number = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
+        if number.isEmpty { return card.setCode }
+        return number
+    }
+}
+
+/// Renders the visual card tile with all computed values pre-resolved.
+/// Keeping all layout work in a plain struct with no @Environment lookups
+/// avoids the iOS 26 attribute graph crash that occurs when SwiftUI tries
+/// to resolve environment values during LazyVStack row measurement.
+private struct CardGridCellLayout: View {
+    let card: Card
+    let gridOptions: BrowseGridOptions
+    let setName: String?
+    let isOwned: Bool
+    let isWishlisted: Bool
+    let ownedCountBadge: Int?
+    let footnote: String?
+    let postPriceFootnote: String?
+    let overridePrice: Double?
+    let gradeLabel: String?
+    let tileBackground: Color
+    let tileBorder: Color
+    let dividerColor: Color
+    let nameStripBackground: LinearGradient
+    let footerBackground: LinearGradient
+    let showsFooter: Bool
+    let showsOwnedUI: Bool
+    let visibleOwnedCountBadge: Int?
+    let cardBorderColor: Color
+    let cardBorderWidth: CGFloat
+    let cardCornerRadius: CGFloat
+    let wishlistBorderColor: Color
+    let trailingCardID: String
+    let accentColor: Color
+    let colorScheme: ColorScheme
+    let imageURL: URL?
+
+    var body: some View {
         VStack(spacing: 0) {
             if gridOptions.showCardName {
-                Text(card.cardName)
-                    .font(.caption2.weight(.semibold))
-                    .lineLimit(1)
-                    .truncationMode(.tail)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.primary)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 7)
-                    .padding(.horizontal, 8)
-                    .background(tileBackground)
-                    .background(nameStripBackground)
-                    .overlay(alignment: .bottom) {
-                        Rectangle()
-                            .fill(dividerColor)
-                            .frame(height: 1)
-                    }
+                ZStack {
+                    tileBackground
+                    nameStripBackground
+                    Text(card.cardName)
+                        .font(.caption2.weight(.semibold))
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(.primary)
+                        .padding(.vertical, 7)
+                        .padding(.horizontal, 8)
+                }
+                .fixedSize(horizontal: false, vertical: true)
+                dividerLine
             }
 
             BrowseCardThumbnailView(
-                imageURL: safeImageURL(relativePath: card.imageLowSrc),
+                imageURL: imageURL,
                 isOwned: showsOwnedUI,
                 isWishlisted: isWishlisted,
                 ownedCountBadge: visibleOwnedCountBadge,
-                accentColor: services.theme.accentColor
+                accentColor: accentColor
             )
-            .frame(maxWidth: .infinity)
             .aspectRatio(5/7, contentMode: .fit)
 
             if showsFooter {
-                VStack(spacing: 3) {
-                    if gridOptions.showSetName, let setName, !setName.isEmpty {
-                        Text(setName)
-                            .font(.caption2)
-                            .lineLimit(1)
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(.secondary)
-                            .frame(maxWidth: .infinity)
+                dividerLine
+                ZStack {
+                    tileBackground
+                    footerBackground
+                    VStack(spacing: 3) {
+                        if gridOptions.showSetName, let setName, !setName.isEmpty {
+                            footerText(setName, style: .secondary)
+                        }
+                        if gridOptions.showOwned, let footnote, !footnote.isEmpty {
+                            footerText(footnote, style: .secondary)
+                        }
+                        if gridOptions.showSetID {
+                            footerText(trailingCardID, style: .tertiary)
+                        }
+                        if gridOptions.showPricing {
+                            BrowseGridPriceText(
+                                card: card,
+                                overridePrice: overridePrice,
+                                gradeLabel: gradeLabel,
+                                usesAccentColor: true
+                            )
+                        }
+                        if let postPriceFootnote, !postPriceFootnote.isEmpty {
+                            footerText(postPriceFootnote, style: .secondary)
+                        }
                     }
-
-                    if gridOptions.showOwned, let footnote, !footnote.isEmpty {
-                        Text(footnote)
-                            .font(.caption2)
-                            .lineLimit(1)
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(.secondary)
-                            .frame(maxWidth: .infinity)
-                    }
-
-                    if gridOptions.showSetID {
-                        Text(trailingCardID)
-                            .font(.caption2)
-                            .lineLimit(1)
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(.tertiary)
-                            .frame(maxWidth: .infinity)
-                    }
-
-                    if gridOptions.showPricing {
-                        BrowseGridPriceText(
-                            card: card,
-                            overridePrice: overridePrice,
-                            gradeLabel: gradeLabel,
-                            usesAccentColor: true
-                        )
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    }
-
-                    if let postPriceFootnote, !postPriceFootnote.isEmpty {
-                        Text(postPriceFootnote)
-                            .font(.caption2)
-                            .lineLimit(1)
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(.secondary)
-                            .frame(maxWidth: .infinity)
-                    }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 7)
                 }
-                .padding(.horizontal, 8)
-                .padding(.vertical, 7)
-                .frame(maxWidth: .infinity)
-                .background(tileBackground)
-                .background(footerBackground)
-                .overlay(alignment: .top) {
-                    Rectangle()
-                        .fill(dividerColor)
-                        .frame(height: 1)
-                }
+                .fixedSize(horizontal: false, vertical: true)
             }
         }
         .background(tileBackground)
         .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
         .overlay {
-            // Outer hairline border — picks up the type accent slightly when
-            // the card has one, otherwise the neutral fallback. Stays muted
-            // so owned/wishlist states (handled by `cardBorderColor`) still
-            // dominate when present.
             RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                 .stroke(cardBorderColor, lineWidth: cardBorderWidth)
         }
         .overlay {
-            // Inner top highlight — same trick as `glassCardStyle` so the
-            // browse cells read as part of the same premium surface family
-            // as the dashboard glass cards. Skipped on owned/wishlist states
-            // so the coloured border isn't muddied.
             if !isOwned && !isWishlisted && cardCornerRadius > 0 {
                 RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                     .stroke(
@@ -323,19 +364,18 @@ struct CardGridCell: View {
         }
     }
 
-    private func safeImageURL(relativePath: String) -> URL? {
-        let trimmed = relativePath.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return nil }
-        if trimmed.hasPrefix("http") {
-            return URL(string: trimmed)
-        }
-        return AppConfiguration.imageURL(relativePath: trimmed)
+    private var dividerLine: some View {
+        Rectangle()
+            .fill(dividerColor)
+            .frame(height: 1)
     }
 
-    private var trailingCardID: String {
-        let number = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
-        if number.isEmpty { return card.setCode }
-        return number
+    private func footerText(_ text: String, style: HierarchicalShapeStyle) -> some View {
+        Text(text)
+            .font(.caption2)
+            .lineLimit(1)
+            .multilineTextAlignment(.center)
+            .foregroundStyle(style)
     }
 }
 

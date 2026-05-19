@@ -385,6 +385,23 @@ final class PricingService {
         return Self.remapOnePiecePriceHistory(parsed, card: card)
     }
 
+    /// Normalises variant strings that may have been stored with inconsistent casing from older R2 bucket files.
+    private static func canonicalVariant(_ raw: String) -> String {
+        switch raw.lowercased() {
+        case "firstedition":           return "firstEdition"
+        case "firsteditionholofoil":   return "firstEditionHolofoil"
+        case "reverseholofoil":        return "reverseHolofoil"
+        case "unlimitedholofoil":      return "unlimitedHolofoil"
+        case "shadowlesholofoil",
+             "shadowlessholofoil":     return "shadowlessHolofoil"
+        case "amazingrare":            return "amazingRare"
+        case "radiantholofoil":        return "radiantHolofoil"
+        case "cosmosholofoil":         return "cosmosHolofoil"
+        case "pokeballreverseholofoil": return "pokeballReverseHolofoil"
+        default:                       return raw
+        }
+    }
+
     private func loadPokemonPriceHistory(for card: Card) async -> CardPriceHistory? {
         let keys = Self.pricingLookupKeys(for: card, historyStyle: true)
         for key in keys {
@@ -392,7 +409,8 @@ final class PricingService {
             guard !points.isEmpty else { continue }
             var seriesMap: [String: (daily: [PriceDataPoint], weekly: [PriceDataPoint], monthly: [PriceDataPoint])] = [:]
             for pt in points {
-                let seriesKey = "\(pt.variant)/\(pt.grade)"
+                let variant = Self.canonicalVariant(pt.variant)
+                let seriesKey = "\(variant)/\(pt.grade)"
                 let dataPoint = PriceDataPoint(id: pt.periodKey, label: pt.periodKey, price: pt.price)
                 switch pt.periodType {
                 case "daily": seriesMap[seriesKey, default: ([], [], [])].daily.append(dataPoint)

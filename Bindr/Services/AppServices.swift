@@ -127,7 +127,12 @@ final class AppServices {
         Task {
             // Delay social init until after the launch wordmark animation (~1.8s)
             // so that network callbacks don't hitch the main thread mid-animation.
+            // For first-run users, also wait until onboarding completes so the
+            // @MainActor work from restoreSession doesn't freeze the onboarding UI.
             try? await Task.sleep(nanoseconds: 2_000_000_000)
+            while !brandSettings.hasCompletedBrandOnboarding {
+                try? await Task.sleep(nanoseconds: 500_000_000)
+            }
             await socialAuth.restoreSession()
             await syncSocialLibrariesIfPossible()
         }

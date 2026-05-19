@@ -119,6 +119,10 @@ struct RootView: View {
     /// stays on screen until the catalog pipeline is also done so we never
     /// flash dashboard between the wordmark and the download UI.
     @State private var hasRevealedLaunchWordmark = false
+    /// Separate from isLaunchSequenceComplete — flipped one frame after isLaunchSequenceComplete
+    /// so the wordmark→dashboard fade animation begins before the heavy mainContent view tree
+    /// is constructed, preventing a main-thread hitch at the transition point.
+    @State private var hasInsertedMainContent = false
     private let splashLastVersionKey = "bindr_splash_last_shown_version"
 
     /// Single gate for tearing the launch surface down. We require:
@@ -132,6 +136,7 @@ struct RootView: View {
         hasRevealedLaunchWordmark
             && services.isReady
             && services.isLaunchCatalogPipelineComplete
+            && !showBrandOnboarding
     }
 
     private var launchProgressState: LaunchProgressState? {
@@ -310,10 +315,17 @@ struct RootView: View {
     var body: some View {
         Group {
             if isLaunchSequenceComplete {
-                // Dashboard slides up under a fade so the eye reads it as one
-                // continuous launch transition rather than a hard cut.
-                mainContent
-                    .transition(.opacity)
+                // Show a plain background immediately so the fade-out of the
+                // wordmark has something to reveal, then insert the full view
+                // tree one frame later so SwiftUI builds it off the critical path.
+                Group {
+                    if hasInsertedMainContent {
+                        mainContent
+                    } else {
+                        Color(uiColor: .systemBackground)
+                    }
+                }
+                .transition(.opacity)
             } else if services.isReady {
                 // Returning-user path: wordmark stays put, progress block fades
                 // in beneath it the moment the daily refresh starts work.
@@ -346,7 +358,17 @@ struct RootView: View {
         }
         .animation(.easeInOut(duration: 0.35), value: isLaunchSequenceComplete)
         .onChange(of: isLaunchSequenceComplete) { _, complete in
-            if complete { evaluatePremiumUpsellIfNeeded() }
+            if complete {
+                evaluatePremiumUpsellIfNeeded()
+                // Insert mainContent one frame after the fade animation begins so
+                // SwiftUI builds the full tab view tree off the critical animation path.
+                Task { @MainActor in
+                    // Sleep one frame so SwiftUI commits the fade-in animation
+                    // before building the full mainContent view tree.
+                    try? await Task.sleep(for: .milliseconds(16))
+                    hasInsertedMainContent = true
+                }
+            }
         }
         .onChange(of: showBrandOnboarding) { _, presented in
             // After the user finishes (or skips) onboarding, give the launch
@@ -358,6 +380,11 @@ struct RootView: View {
                     services.brandSettings.completeBrandOnboarding()
                 }
                 evaluatePremiumUpsellIfNeeded()
+                // Register for push now that onboarding is done. We skipped this
+                // in the root .task to avoid racing with the notifications step.
+                Task {
+                    await services.socialPush.updateRegistrationState()
+                }
             }
         }
         .onChange(of: showSplash) { _, presented in
@@ -461,7 +488,13 @@ struct RootView: View {
             if services.isReady {
                 await services.bootstrapCatalogInBackgroundIfNeeded()
             }
-            await services.socialPush.updateRegistrationState()
+            // Skip push registration during first-run onboarding — the notifications
+            // step handles the permission request itself. Running it here races with
+            // that page and can trigger the system dialog at the wrong time, causing
+            // the notifications screen to freeze or lag.
+            if services.brandSettings.hasCompletedBrandOnboarding {
+                await services.socialPush.updateRegistrationState()
+            }
             // Cold-launch tap: if the AppDelegate's `didReceive` fired
             // before `AppServices` was constructed, the buffer drain in
             // `SocialPushService.init` already populated

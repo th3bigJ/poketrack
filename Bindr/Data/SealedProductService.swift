@@ -46,10 +46,16 @@ final class SealedProductService {
             try await CatalogStore.shared.open()
             try await CatalogStore.shared.upsertDailyBlob(key: DailyBlobKey.pokedataEnglishPokemonProducts, data: productsData)
 
-            let decoder = JSONDecoder()
-            if let payload = try? decoder.decode(SealedProductsPayload.self, from: productsData) {
-                products = sortedProducts(payload.products)
-            }
+            let sorted = await Task.detached(priority: .userInitiated) {
+                guard let payload = try? JSONDecoder().decode(SealedProductsPayload.self, from: productsData) else { return [SealedProduct]() }
+                return payload.products.sorted { lhs, rhs in
+                    let lDate = lhs.releaseDate ?? .distantPast
+                    let rDate = rhs.releaseDate ?? .distantPast
+                    if lDate != rDate { return lDate > rDate }
+                    return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
+                }
+            }.value
+            if !sorted.isEmpty { products = sorted }
             lastError = nil
         } catch {
             if products.isEmpty {
@@ -73,73 +79,69 @@ final class SealedProductService {
             let pricesData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.sealedPrices)
             let historyData = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.sealedPriceHistory)
 
-            let decoder = JSONDecoder()
+            // All three blobs are potentially large — decode off the main actor.
+            let (parsedProducts, parsedPrices, parsedHistory) = await Task.detached(priority: .userInitiated) {
+                let decoder = JSONDecoder()
 
-            if let productsData,
-               let payload = try? decoder.decode(SealedProductsPayload.self, from: productsData) {
-                products = sortedProducts(payload.products)
-            }
-
-            if let pricesData,
-               let flatPrices = try? JSONSerialization.jsonObject(with: pricesData) as? [String: Double] {
-                var next: [Int: Double] = [:]
-                for (k, v) in flatPrices {
-                    if let id = Int(k) { next[id] = v }
+                var decodedProducts: [SealedProduct]? = nil
+                if let data = productsData,
+                   let payload = try? decoder.decode(SealedProductsPayload.self, from: data) {
+                    decodedProducts = payload.products.sorted { lhs, rhs in
+                        let lDate = lhs.releaseDate ?? .distantPast
+                        let rDate = rhs.releaseDate ?? .distantPast
+                        if lDate != rDate { return lDate > rDate }
+                        return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
+                    }
                 }
-                marketPriceByID = next
-            }
 
-            if let historyData,
-               let raw = try? JSONSerialization.jsonObject(with: historyData) as? [String: [String: [[Any]]]] {
-                historyByID = decodeSealedHistory(raw)
-            }
+                var decodedPrices: [Int: Double]? = nil
+                if let data = pricesData,
+                   let flat = try? JSONSerialization.jsonObject(with: data) as? [String: Double] {
+                    var next: [Int: Double] = [:]
+                    next.reserveCapacity(flat.count)
+                    for (k, v) in flat { if let id = Int(k) { next[id] = v } }
+                    decodedPrices = next
+                }
 
+                var decodedHistory: [Int: SealedProductHistorySeries]? = nil
+                if let data = historyData,
+                   let raw = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [[Any]]]] {
+                    var result: [Int: SealedProductHistorySeries] = [:]
+                    result.reserveCapacity(raw.count)
+                    for (key, windows) in raw {
+                        guard let id = Int(key) else { continue }
+                        func parseWindow(_ wKey: String) -> [PriceDataPoint] {
+                            guard let pairs = windows[wKey] else { return [] }
+                            return pairs.compactMap { pair -> PriceDataPoint? in
+                                guard pair.count >= 2, let label = pair[0] as? String else { return nil }
+                                let price: Double
+                                if let d = pair[1] as? Double { price = d }
+                                else if let n = pair[1] as? NSNumber { price = n.doubleValue }
+                                else if let s = pair[1] as? String, let d = Double(s) { price = d }
+                                else { return nil }
+                                return PriceDataPoint(id: label, label: label, price: price)
+                            }
+                        }
+                        result[id] = SealedProductHistorySeries(
+                            daily: parseWindow("daily"),
+                            weekly: parseWindow("weekly"),
+                            monthly: parseWindow("monthly")
+                        )
+                    }
+                    decodedHistory = result
+                }
+
+                return (decodedProducts, decodedPrices, decodedHistory)
+            }.value
+
+            if let parsedProducts { products = parsedProducts }
+            if let parsedPrices { marketPriceByID = parsedPrices }
+            if let parsedHistory { historyByID = parsedHistory }
             lastError = nil
         } catch {
             if products.isEmpty {
                 lastError = "Failed to load sealed products: \(error.localizedDescription)"
             }
-        }
-    }
-
-    /// Decodes sealed history from the SQLite blob shape:
-    /// `{ "productId": { "daily": [[dateKey, price], …], "weekly": […], "monthly": […] } }`
-    private func decodeSealedHistory(_ raw: [String: [String: [[Any]]]]) -> [Int: SealedProductHistorySeries] {
-        var result: [Int: SealedProductHistorySeries] = [:]
-        for (key, windows) in raw {
-            guard let id = Int(key) else { continue }
-            func parseWindow(_ key: String) -> [PriceDataPoint] {
-                guard let pairs = windows[key] else { return [] }
-                return pairs.compactMap { pair -> PriceDataPoint? in
-                    guard pair.count >= 2, let label = pair[0] as? String else { return nil }
-                    let price: Double
-                    if let d = pair[1] as? Double {
-                        price = d
-                    } else if let n = pair[1] as? NSNumber {
-                        price = n.doubleValue
-                    } else if let s = pair[1] as? String, let d = Double(s) {
-                        price = d
-                    } else {
-                        return nil
-                    }
-                    return PriceDataPoint(id: label, label: label, price: price)
-                }
-            }
-            result[id] = SealedProductHistorySeries(
-                daily: parseWindow("daily"),
-                weekly: parseWindow("weekly"),
-                monthly: parseWindow("monthly")
-            )
-        }
-        return result
-    }
-
-    private func sortedProducts(_ list: [SealedProduct]) -> [SealedProduct] {
-        list.sorted { lhs, rhs in
-            let lDate = lhs.releaseDate ?? .distantPast
-            let rDate = rhs.releaseDate ?? .distantPast
-            if lDate != rDate { return lDate > rDate }
-            return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
         }
     }
 

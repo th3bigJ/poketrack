@@ -86,8 +86,9 @@ final class CardDataService {
             let url = AppConfiguration.r2CatalogURL(path: "pokemon.json")
             do {
                 let (data, _) = try await session.data(from: url)
-                let decoded = try JSONDecoder().decode([NationalDexPokemon].self, from: data)
-                let sorted = decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+                let sorted = await Task.detached(priority: .userInitiated) {
+                    (try? JSONDecoder().decode([NationalDexPokemon].self, from: data))?.sorted { $0.nationalDexNumber < $1.nationalDexNumber } ?? []
+                }.value
                 nationalDexPokemon = sorted
                 try? await CatalogStore.shared.open()
                 try? await CatalogStore.shared.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: data)
@@ -96,10 +97,14 @@ final class CardDataService {
                 // Fall through to bundle.
             }
         }
-        if let url = Bundle.main.url(forResource: "pokemon", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let decoded = try? JSONDecoder().decode([NationalDexPokemon].self, from: data) {
-            nationalDexPokemon = decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+        if let url = Bundle.main.url(forResource: "pokemon", withExtension: "json") {
+            let sorted = await Task.detached(priority: .userInitiated) {
+                guard let data = try? Data(contentsOf: url),
+                      let decoded = try? JSONDecoder().decode([NationalDexPokemon].self, from: data)
+                else { return [NationalDexPokemon]() }
+                return decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+            }.value
+            nationalDexPokemon = sorted
         } else {
             nationalDexPokemon = []
         }
@@ -112,15 +117,17 @@ final class CardDataService {
             if let aux = await CatalogStore.shared.auxBlob(key: pokemonNationalDexAuxBlobKey) {
                 data = aux
             } else if let legacy = await CatalogStore.shared.metaData(pokemonNationalDexAuxBlobKey) {
-                // One-time compatibility path: move old sync_meta text storage into aux BLOB storage.
                 try? await CatalogStore.shared.upsertAuxBlob(key: pokemonNationalDexAuxBlobKey, data: legacy)
                 data = legacy
             } else {
                 data = nil
             }
             guard let data else { return nil }
-            let decoded = try JSONDecoder().decode([NationalDexPokemon].self, from: data)
-            return decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+            // Decode and sort off the main actor — large JSON blob, can take 100ms+.
+            return await Task.detached(priority: .userInitiated) {
+                guard let decoded = try? JSONDecoder().decode([NationalDexPokemon].self, from: data) else { return nil }
+                return decoded.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+            }.value
         } catch {
             return nil
         }

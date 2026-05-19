@@ -45,33 +45,33 @@ struct OnboardingNotificationsView: View {
                     OnboardingPrimaryButton(title: "Enable Alerts") {
                         Task {
                             let center = UNUserNotificationCenter.current()
-                            let settings = await center.notificationSettings()
-                            
-                            if settings.authorizationStatus == .denied {
-                                // If already denied, open iOS system settings directly to Bindr's page
-                                if let url = URL(string: UIApplication.openSettingsURLString),
-                                   UIApplication.shared.canOpenURL(url) {
+
+                            // Check current status off the main actor — UNC initialization
+                            // can be slow and would hitch the UI if run on MainActor.
+                            let status = await Task.detached(priority: .userInitiated) {
+                                await center.notificationSettings().authorizationStatus
+                            }.value
+
+                            if status == .denied {
+                                if let url = URL(string: UIApplication.openSettingsURLString) {
                                     await UIApplication.shared.open(url)
                                 }
-                                onContinue()
-                            } else if settings.authorizationStatus == .notDetermined {
-                                // If not yet prompted, request permissions
-                                let granted = (try? await center.requestAuthorization(options: [.alert, .badge, .sound])) ?? false
-                                await services.socialPush.refreshAuthorizationStatus()
+                            } else if status == .notDetermined {
+                                // requestAuthorization suspends until the user responds to
+                                // the system dialog — run off main so the animation thread
+                                // stays unblocked during that wait.
+                                let granted = await Task.detached(priority: .userInitiated) {
+                                    (try? await center.requestAuthorization(options: [.alert, .badge, .sound])) ?? false
+                                }.value
                                 if granted {
-                                    // Register with APNs in the background so there is zero main thread lag
-                                    Task {
-                                        await services.socialPush.updateRegistrationState()
-                                    }
+                                    UIApplication.shared.registerForRemoteNotifications()
                                 }
-                                onContinue()
                             } else {
-                                // If already authorized, register in the background and continue
-                                Task {
-                                    await services.socialPush.updateRegistrationState()
-                                }
-                                onContinue()
+                                UIApplication.shared.registerForRemoteNotifications()
                             }
+
+                            await services.socialPush.refreshAuthorizationStatus()
+                            onContinue()
                         }
                     }
                 },

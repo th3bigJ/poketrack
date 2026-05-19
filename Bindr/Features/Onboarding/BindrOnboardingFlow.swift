@@ -147,6 +147,16 @@ struct BindrOnboardingFlow: View {
         services.brandSettings.enabledBrands = [selectedBrand]
         services.brandSettings.selectedCatalogBrand = selectedBrand
         services.brandSettings.completeBrandOnboarding()
+        // Start the offline pack download now that all onboarding transitions are done.
+        if services.offlineImageSettings.isOfflinePackEnabled(for: selectedBrand) {
+            Task {
+                await services.offlineImageDownload.runFullDownloadIfNeeded(
+                    brand: selectedBrand,
+                    nationalDexPokemon: services.cardData.nationalDexPokemon,
+                    sealedProducts: services.sealedProducts.products
+                )
+            }
+        }
         withAnimation(.easeInOut(duration: 0.3)) {
             isPresented = false
         }

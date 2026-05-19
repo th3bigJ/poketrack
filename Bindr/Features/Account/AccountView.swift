@@ -124,13 +124,6 @@ struct SettingsView: View {
     private var aboutSection: some View {
         Section("About") {
             NavigationLink {
-                DataExportView()
-                    .environment(services)
-            } label: {
-                Label("Export Data", systemImage: "square.and.arrow.up.fill")
-            }
-
-            NavigationLink {
                 DisclaimerView()
             } label: {
                 Label("Legal Disclaimer", systemImage: "doc.text.fill")

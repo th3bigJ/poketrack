@@ -74,33 +74,17 @@ struct BinderSlotPickerView: View {
     @State private var basket: [BinderSlotPickerSelection] = []
     @State private var resolvedCardsByID: [String: Card] = [:]
     @State private var browsePath: [BinderPickerBrowseRoute] = []
+    @State private var displayedCollectionCount = 0
+    @State private var displayedWishlistCount = 0
 
     private static let initialBatchSize = 36
     private static let pageSize = 24
 
-    private var ownedCardIDs: Set<String> {
-        Set(collectionItems.map(\.cardID))
-    }
-
-    private var basketCardIDs: Set<String> {
-        Set(basket.map(\.cardID))
-    }
-
-    private var setNameByCode: [String: String] {
-        var result: [String: String] = [:]
-        for set in catalogSets where result[set.setCode] == nil {
-            result[set.setCode] = set.name
-        }
-        return result
-    }
-
-    private var releaseDateBySetCode: [String: String] {
-        var result: [String: String] = [:]
-        for set in catalogSets where result[set.setCode] == nil {
-            result[set.setCode] = set.releaseDate ?? ""
-        }
-        return result
-    }
+    // Cached lookups — rebuilt only when their source changes, not on every render.
+    @State private var ownedCardIDs: Set<String> = []
+    @State private var basketCardIDs: Set<String> = []
+    @State private var setNameByCode: [String: String] = [:]
+    @State private var releaseDateBySetCode: [String: String] = [:]
 
     private var sourceCards: [Card] {
         switch source {
@@ -197,9 +181,23 @@ struct BinderSlotPickerView: View {
                 )
             }
         case .collection:
-            return sortedEntries(collectionEntries)
+            let all = sortedEntries(collectionEntries)
+            guard displayedCollectionCount > 0 else { return [] }
+            return Array(all.prefix(displayedCollectionCount))
         case .wishlist:
-            return sortedEntries(wishlistEntries)
+            let all = sortedEntries(wishlistEntries)
+            guard displayedWishlistCount > 0 else { return [] }
+            return Array(all.prefix(displayedWishlistCount))
+        }
+    }
+
+    private var totalCollectionCount: Int { sortedEntries(collectionEntries).count }
+    private var totalWishlistCount: Int { sortedEntries(wishlistEntries).count }
+    private var totalEntryCount: Int {
+        switch source {
+        case .allCards: return allCardsBase.count
+        case .collection: return totalCollectionCount
+        case .wishlist: return totalWishlistCount
         }
     }
 
@@ -209,15 +207,8 @@ struct BinderSlotPickerView: View {
         return occupiedPositions.intersection(Set(startPosition..<end)).count
     }
 
-    private var columns: [GridItem] {
-        Array(
-            repeating: GridItem(.flexible(), spacing: 12),
-            count: min(max(gridOptions.columnCount, 1), 4)
-        )
-    }
-
     private var preloadTriggerEntryID: String? {
-        visibleEntries.suffix(4).first?.id
+        visibleEntries.dropLast(3).last?.id
     }
 
     var body: some View {
@@ -246,23 +237,28 @@ struct BinderSlotPickerView: View {
                                     .frame(maxWidth: .infinity, minHeight: 280)
                                     .padding(.top, 24)
                             } else {
-                                LazyVGrid(columns: columns, spacing: 12) {
-                                    ForEach(visibleEntries) { entry in
-                                        Button {
-                                            toggleBasket(entry: entry)
-                                        } label: {
-                                            BinderPickerCardCell(
-                                                entry: entry,
-                                                setName: setNameByCode[entry.card.setCode],
-                                                gridOptions: gridOptions,
-                                                isSelected: basketCardIDs.contains(entry.card.masterCardId)
-                                            )
-                                        }
-                                        .buttonStyle(CardCellButtonStyle())
-                                        .onAppear {
-                                            guard source == .allCards, debouncedQueryIsActive == false else { return }
-                                            guard entry.id == preloadTriggerEntryID else { return }
+                                EagerVGrid(items: visibleEntries, columns: gridOptions.columnCount, spacing: 12) { entry in
+                                    Button {
+                                        toggleBasket(entry: entry)
+                                    } label: {
+                                        BinderPickerCardCell(
+                                            entry: entry,
+                                            setName: setNameByCode[entry.card.setCode],
+                                            gridOptions: gridOptions,
+                                            isSelected: basketCardIDs.contains(entry.card.masterCardId)
+                                        )
+                                    }
+                                    .buttonStyle(CardCellButtonStyle())
+                                    .onAppear {
+                                        guard entry.id == preloadTriggerEntryID else { return }
+                                        switch source {
+                                        case .allCards:
+                                            guard debouncedQueryIsActive == false else { return }
                                             Task { await loadNextAllCardsPage() }
+                                        case .collection:
+                                            displayedCollectionCount = min(displayedCollectionCount + Self.pageSize, totalCollectionCount)
+                                        case .wishlist:
+                                            displayedWishlistCount = min(displayedWishlistCount + Self.pageSize, totalWishlistCount)
                                         }
                                     }
                                 }
@@ -270,11 +266,10 @@ struct BinderSlotPickerView: View {
                                 .padding(.top, 12)
                             }
 
-                            if isLoadingMore {
-                                ProgressView()
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 16)
-                            }
+                            ProgressView()
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 16)
+                                .opacity(isLoadingMore ? 1 : 0)
                             Spacer(minLength: 0)
                                 .frame(height: 110)
                         }
@@ -375,8 +370,17 @@ struct BinderSlotPickerView: View {
                 await resolveVisibleCards()
             }
             .onChange(of: source) { _, _ in
-                if source == .allCards {
+                switch source {
+                case .allCards:
                     Task { await reloadAllCardsIfNeeded() }
+                case .collection:
+                    if displayedCollectionCount == 0 {
+                        displayedCollectionCount = min(Self.initialBatchSize, totalCollectionCount)
+                    }
+                case .wishlist:
+                    if displayedWishlistCount == 0 {
+                        displayedWishlistCount = min(Self.initialBatchSize, totalWishlistCount)
+                    }
                 }
             }
             .task(id: query) {
@@ -404,7 +408,11 @@ struct BinderSlotPickerView: View {
             .onAppear {
                 selectedBrand = brand
                 filters.sortBy = .newestSet
+                ownedCardIDs = Set(collectionItems.map(\.cardID))
                 Task { await restoreAllCardsFeedIfNeeded() }
+            }
+            .onChange(of: collectionItems) { _, newItems in
+                ownedCardIDs = Set(newItems.map(\.cardID))
             }
             .safeAreaInset(edge: .bottom) {
                 basketBar
@@ -483,7 +491,7 @@ struct BinderSlotPickerView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Spacer()
-                Text("\(visibleEntries.count) shown")
+                Text("\(totalEntryCount) shown")
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
             }
@@ -583,12 +591,14 @@ struct BinderSlotPickerView: View {
     private func toggleBasketCard(_ card: Card, variantKey: String? = nil) {
         if let idx = basket.firstIndex(where: { $0.cardID == card.masterCardId }) {
             basket.remove(at: idx)
+            basketCardIDs.remove(card.masterCardId)
         } else {
             basket.append(BinderSlotPickerSelection(
                 cardID: card.masterCardId,
                 variantKey: variantKey ?? card.pricingVariants?.first ?? "normal",
                 cardName: card.cardName
             ))
+            basketCardIDs.insert(card.masterCardId)
         }
     }
 
@@ -598,6 +608,8 @@ struct BinderSlotPickerView: View {
         allCardSearchResults = []
         query = ""
         debouncedQuery = ""
+        displayedCollectionCount = 0
+        displayedWishlistCount = 0
         await reloadAllCardsIfNeeded(force: true)
         await resolveVisibleCards()
     }
@@ -621,6 +633,8 @@ struct BinderSlotPickerView: View {
             let filterCards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: selectedBrand)
             await MainActor.run {
                 catalogSets = sets
+                setNameByCode = Dictionary(sets.map { ($0.setCode, $0.name) }, uniquingKeysWith: { first, _ in first })
+                releaseDateBySetCode = Dictionary(sets.map { ($0.setCode, $0.releaseDate ?? "") }, uniquingKeysWith: { first, _ in first })
                 allCardRefs = refs
                 allBrowseFilterCards = filterCards
                 filteredAllCardRefs = refs
@@ -739,24 +753,40 @@ struct BinderSlotPickerView: View {
     }
 
     private func resolveVisibleCards() async {
-        var next = resolvedCardsByID
-        let ids = Set(
-            collectionItems
-                .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == selectedBrand }
-                .map(\.cardID)
-                + wishlistItems
-                .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == selectedBrand }
-                .map(\.cardID)
-        )
+        let (existingIDs, brand) = await MainActor.run { (Set(resolvedCardsByID.keys), selectedBrand) }
 
-        for id in ids where next[id] == nil {
-            if let card = await services.cardData.loadCard(masterCardId: id) {
-                next[id] = card
-            }
+        let allIDs = collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }.map(\.cardID)
+            + wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }.map(\.cardID)
+        let missing = allIDs.filter { !existingIDs.contains($0) }
+
+        guard !missing.isEmpty else {
+            await MainActor.run { seedDisplayCounts(from: resolvedCardsByID) }
+            return
         }
 
+        let loaded = await services.cardData.loadCards(masterCardIDs: missing, catalogBrand: brand)
+
         await MainActor.run {
-            resolvedCardsByID = next
+            for card in loaded {
+                resolvedCardsByID[card.masterCardId] = card
+            }
+            seedDisplayCounts(from: resolvedCardsByID)
+        }
+    }
+
+    @MainActor
+    private func seedDisplayCounts(from resolved: [String: Card]) {
+        if displayedCollectionCount == 0 {
+            let count = collectionItems
+                .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == selectedBrand }
+                .filter { resolved[$0.cardID] != nil }.count
+            displayedCollectionCount = min(Self.initialBatchSize, count)
+        }
+        if displayedWishlistCount == 0 {
+            let count = wishlistItems
+                .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == selectedBrand }
+                .filter { resolved[$0.cardID] != nil }.count
+            displayedWishlistCount = min(Self.initialBatchSize, count)
         }
     }
 
