@@ -2,17 +2,16 @@ import SwiftUI
 
 // MARK: - OnboardingGameSelectionView
 //
-// Step 2 of `BindrOnboardingFlow`. Two clean selection cards let the user
-// pick their TCG. Uses the same glass card style as the rest of the app
-// rather than bespoke gradient cards.
-//
-// Selection contract:
-//   * `selectedBrand` defaults to `.pokemon` and is updated on tap.
-//   * `onContinue` is always enabled since Pokémon is pre-selected.
-//
-// Future: when we add a third brand (MTG, Lorcana, etc.) move the
-// catalog metadata into a small `OnboardingGameOption` struct backed
-// by `BrandsManifestService` rather than hardcoding cases.
+// Step 2. Refactor brief:
+//   * Replaced the bespoke "MOST POPULAR / FASTEST GROWING" pills with a
+//     borderless, muted subtitle line — same information without the
+//     e-commerce feel.
+//   * Selection chrome dropped the gradient-stroke outline + radio dot.
+//     Selected card now uses a subtle solid background shift + native
+//     `checkmark.circle.fill` accent.
+//   * Icon backdrop tile retained but recolored to the brand-system
+//     accent (no per-brand pastel).
+//   * Primary CTA centred "Continue" — no trailing arrow.
 
 struct OnboardingGameSelectionView: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -25,50 +24,41 @@ struct OnboardingGameSelectionView: View {
         VStack(spacing: 0) {
             ScrollView {
                 VStack(alignment: .leading, spacing: BindrSpacing.xl) {
-                    headline
+                    OnboardingHeadline(
+                        title: "Your collection,\nyour game.",
+                        subtitle: "Select the TCG you collect. Your catalog, scanner, and browse feed will adapt to your choice."
+                    )
                     cardsStack
                     helperRow
-                    Color.clear.frame(height: 100)
+                    Color.clear.frame(height: 80)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
                 .padding(.top, BindrSpacing.xl)
             }
             .scrollIndicators(.hidden)
 
-            continueButton
+            OnboardingFooterBar(
+                primary: {
+                    OnboardingPrimaryButton(title: "Continue", action: onContinue)
+                }
+            )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
-    private var headline: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-            Text("Your collection,\nyour game.")
-                .font(.system(size: 38, weight: .heavy))
-                .lineSpacing(-2)
-            Text("Select the TCG you collect. Your catalog, scanner, and browse feed will adapt to your choice.")
-                .font(.system(size: 15))
-                .foregroundStyle(.secondary)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-    }
-
     private var cardsStack: some View {
-        VStack(spacing: BindrSpacing.md) {
+        VStack(spacing: BindrSpacing.sm) {
             gameCard(
                 brand: .pokemon,
                 title: "Pokémon",
                 tagline: "The original chase. Energy, sets, and TGs.",
-                symbol: "bolt.fill",
-                accentTag: "MOST POPULAR",
-                tint: Color(hex: "FF6F40")
+                symbol: "bolt"
             )
             gameCard(
                 brand: .onePiece,
                 title: "ONE PIECE",
                 tagline: "Manga rares, alt arts, the new frontier.",
-                symbol: "sparkles",
-                accentTag: "FASTEST GROWING",
-                tint: Color(hex: "E8192C")
+                symbol: "sparkles"
             )
         }
     }
@@ -77,9 +67,7 @@ struct OnboardingGameSelectionView: View {
         brand: TCGBrand,
         title: String,
         tagline: String,
-        symbol: String,
-        accentTag: String,
-        tint: Color
+        symbol: String
     ) -> some View {
         let isSelected = selectedBrand == brand
         return Button {
@@ -89,28 +77,15 @@ struct OnboardingGameSelectionView: View {
             }
         } label: {
             HStack(spacing: BindrSpacing.md) {
-                ZStack {
-                    RoundedRectangle(cornerRadius: BindrRadius.md, style: .continuous)
-                        .fill(tint.opacity(colorScheme == .dark ? 0.20 : 0.14))
-                    Image(systemName: symbol)
-                        .font(.system(size: 20, weight: .bold))
-                        .foregroundStyle(tint)
-                }
-                .frame(width: 52, height: 52)
+                Image(systemName: symbol)
+                    .font(.system(size: 22, weight: .regular))
+                    .foregroundStyle(isSelected ? accent : .secondary)
+                    .frame(width: 32, alignment: .center)
 
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack(spacing: BindrSpacing.sm) {
-                        Text(title)
-                            .font(.system(size: 17, weight: .bold))
-                            .foregroundStyle(.primary)
-                        Text(accentTag)
-                            .font(.system(size: 9, weight: .black, design: .rounded))
-                            .tracking(1)
-                            .foregroundStyle(tint)
-                            .padding(.horizontal, 6)
-                            .padding(.vertical, 3)
-                            .background { Capsule().fill(tint.opacity(0.15)) }
-                    }
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundStyle(.primary)
                     Text(tagline)
                         .font(.system(size: 13))
                         .foregroundStyle(.secondary)
@@ -119,25 +94,22 @@ struct OnboardingGameSelectionView: View {
 
                 Spacer(minLength: 0)
 
-                ZStack {
-                    Circle()
-                        .stroke(isSelected ? accent : Color.primary.opacity(0.25), lineWidth: 1.5)
-                        .frame(width: 24, height: 24)
-                    if isSelected {
-                        Circle()
-                            .fill(accent)
-                            .frame(width: 14, height: 14)
-                            .transition(.scale.combined(with: .opacity))
-                    }
-                }
-                .animation(.easeInOut(duration: 0.18), value: isSelected)
+                // Native checkmark selection cue. No radio dot, no
+                // gradient stroke — just the iOS-standard "selected" mark.
+                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+                    .font(.system(size: 22, weight: .regular))
+                    .foregroundStyle(isSelected ? accent : Color.primary.opacity(0.18))
+                    .symbolRenderingMode(.hierarchical)
             }
             .padding(BindrSpacing.md)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
-            .overlay {
+            .background {
+                // Subtle solid background shift instead of a stroke +
+                // gradient outline. Reads as iOS-native selection.
                 RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
-                    .stroke(isSelected ? accent.opacity(0.55) : Color.clear, lineWidth: 1.5)
+                    .fill(isSelected
+                          ? accent.opacity(colorScheme == .dark ? 0.14 : 0.08)
+                          : Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.04))
             }
         }
         .buttonStyle(.plain)
@@ -147,62 +119,12 @@ struct OnboardingGameSelectionView: View {
     private var helperRow: some View {
         HStack(spacing: BindrSpacing.sm) {
             Image(systemName: "info.circle")
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(.tertiary)
-            Text("Don't worry — you can add the other one later in Account.")
+                .font(.system(size: 13, weight: .regular))
+                .foregroundStyle(.secondary)
+            Text("You can add the other one later in Account.")
                 .font(.system(size: 13))
                 .foregroundStyle(.secondary)
             Spacer(minLength: 0)
-        }
-    }
-
-    private var continueButton: some View {
-        VStack(spacing: 0) {
-            Button {
-                Haptics.lightImpact()
-                onContinue()
-            } label: {
-                HStack(spacing: 8) {
-                    Text("Continue")
-                        .font(.system(size: 17, weight: .heavy))
-                    Image(systemName: "arrow.right")
-                        .font(.system(size: 15, weight: .heavy))
-                }
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity)
-                .frame(height: 56)
-                .background {
-                    RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
-                        .fill(
-                            LinearGradient(
-                                colors: [accent, accent.opacity(0.78)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                }
-                .overlay {
-                    RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
-                        .stroke(Color.white.opacity(0.18), lineWidth: 1)
-                }
-                .shadow(color: accent.opacity(colorScheme == .dark ? 0.55 : 0.32), radius: 22, x: 0, y: 10)
-            }
-            .buttonStyle(.plain)
-            .padding(.horizontal, BindrSpacing.lg)
-            .padding(.bottom, BindrSpacing.lg)
-            .padding(.top, BindrSpacing.sm)
-        }
-        .background {
-            LinearGradient(
-                colors: [
-                    Color.clear,
-                    Color(uiColor: .systemBackground).opacity(0.65),
-                    Color(uiColor: .systemBackground)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea(edges: .bottom)
         }
     }
 }

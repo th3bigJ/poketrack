@@ -2,16 +2,13 @@ import SwiftUI
 
 // MARK: - SocialFeatureCard
 //
-// Reusable feature pill used by both `SocialLandingView` and the social
-// page of the onboarding flow. Replaces the dense divider-separated list
-// from the original placeholder with discrete glass tiles so the surface
-// reads as "modules of the social experience" rather than a settings list.
-//
-// Visual contract:
-//   * Glass card body (same modifier the tab bar / dashboard cards use).
-//   * Accent-tinted icon chip on the leading edge.
-//   * Trailing chevron is implicit — we don't render one because the tile
-//     itself isn't navigable until the user signs in.
+// Feature pill used by `SocialLandingView` and the social-discovery
+// surface in onboarding. Refactor brief:
+//   * Pastel-square icon backdrops removed. Icons render as monochrome
+//     SF Symbols tinted with the accent color (or an explicit override).
+//   * Numeric index moved to a borderless caption, no monospaced badge.
+//   * Title weight stays at .semibold; subtitle bumped to .secondary
+//     at 13pt for proper iOS contrast.
 
 struct SocialFeatureCard: View {
     @Environment(\.colorScheme) private var colorScheme
@@ -20,34 +17,30 @@ struct SocialFeatureCard: View {
     let icon: String
     let title: String
     let description: String
-    let tint: Color
+    /// Optional accent override. When nil, the icon uses the theme accent.
+    let tint: Color?
+    let index: Int
 
     init(
         icon: String,
         title: String,
         description: String,
-        tint: Color
+        tint: Color? = nil,
+        index: Int
     ) {
         self.icon = icon
         self.title = title
         self.description = description
         self.tint = tint
+        self.index = index
     }
 
     var body: some View {
         HStack(spacing: BindrSpacing.md) {
-            ZStack {
-                RoundedRectangle(cornerRadius: BindrRadius.md, style: .continuous)
-                    .fill(tint.opacity(colorScheme == .dark ? 0.2 : 0.16))
-                Image(systemName: icon)
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundStyle(tint)
-            }
-            .frame(width: 44, height: 44)
-            .overlay {
-                RoundedRectangle(cornerRadius: BindrRadius.md, style: .continuous)
-                    .stroke(tint.opacity(0.25), lineWidth: 0.5)
-            }
+            Image(systemName: icon)
+                .font(.system(size: 22, weight: .regular))
+                .foregroundStyle(tint ?? accent)
+                .frame(width: 32, alignment: .center)
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
@@ -61,6 +54,10 @@ struct SocialFeatureCard: View {
 
             Spacer(minLength: 0)
 
+            // Borderless numeric metadata — no pill, no monospaced design.
+            Text(String(format: "%02d", index))
+                .font(.system(size: 12, weight: .medium))
+                .foregroundStyle(.secondary)
         }
         .padding(.horizontal, BindrSpacing.md)
         .padding(.vertical, BindrSpacing.md)
@@ -71,7 +68,8 @@ struct SocialFeatureCard: View {
 
 // MARK: - Section header
 
-/// Small all-caps caption used above hero blocks ("LIVE NOW", "WHAT YOU UNLOCK").
+/// Small caption used above hero blocks. Drops the previous tracking-2
+/// heavy treatment in favour of a calmer, more readable iOS metadata feel.
 struct SocialSectionEyebrow: View {
     @Environment(\.bindrAccent) private var accent
     let title: String
@@ -82,16 +80,10 @@ struct SocialSectionEyebrow: View {
             if accentDot {
                 Circle()
                     .fill(BindrPalette.ownedGreen)
-                    .frame(width: 7, height: 7)
-                    .overlay {
-                        Circle()
-                            .stroke(BindrPalette.ownedGreen.opacity(0.35), lineWidth: 4)
-                            .blur(radius: 2)
-                    }
+                    .frame(width: 6, height: 6)
             }
             Text(title)
-                .font(.system(size: 11, weight: .heavy, design: .rounded))
-                .tracking(2)
+                .font(.system(size: 12, weight: .semibold))
                 .foregroundStyle(.secondary)
         }
     }

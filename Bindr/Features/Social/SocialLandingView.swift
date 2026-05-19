@@ -55,21 +55,14 @@ struct SocialLandingView: View {
 
     private var heroBlock: some View {
         VStack(spacing: BindrSpacing.lg) {
-            VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
                 Text("Connect with the")
-                    .font(.system(size: 38, weight: .heavy))
+                    .font(.system(size: 30, weight: .bold))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 HStack(spacing: 8) {
                     Text("community.")
-                        .font(.system(size: 38, weight: .heavy))
-                        .italic()
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [accent, accent.opacity(0.7)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
+                        .font(.system(size: 30, weight: .bold))
+                        .foregroundStyle(accent)
                     Spacer(minLength: 0)
                 }
             }
@@ -93,35 +86,37 @@ struct SocialLandingView: View {
             SocialSectionEyebrow(title: "IN THE SOCIAL TAB")
 
             VStack(spacing: BindrSpacing.sm) {
+                // All feature icons use the accent tint via the
+                // SocialFeatureCard default — no per-tile pastel mixing.
                 SocialFeatureCard(
                     icon: "arrow.left.arrow.right",
                     title: "Trade Network",
                     description: "Auto-find suggested trades based on your wishlist and friends' collections.",
-                    tint: BindrPalette.deckBlue,
+                    index: 1
                 )
                 SocialFeatureCard(
                     icon: "sparkles",
                     title: "Activity feed",
                     description: "See pulls, binders, and trades as they happen in real-time.",
-                    tint: BindrPalette.ownedGreen
+                    index: 2
                 )
                 SocialFeatureCard(
-                    icon: "crown.fill",
+                    icon: "star",
                     title: "Wishlist alerts",
                     description: "Be notified the moment a card you want becomes available for trade.",
-                    tint: BindrPalette.binderGold
+                    index: 3
                 )
                 SocialFeatureCard(
-                    icon: "person.crop.square.filled.and.at.rectangle",
+                    icon: "person.crop.square",
                     title: "Public Showcase",
                     description: "Share your binders and collections with a premium profile.",
-                    tint: BindrPalette.wishlistViolet
+                    index: 4
                 )
                 SocialFeatureCard(
-                    icon: "bubble.left.and.bubble.right.fill",
+                    icon: "bubble.left.and.bubble.right",
                     title: "Interactions",
                     description: "React to pulls and stay connected with other collectors.",
-                    tint: BindrPalette.alertRed
+                    index: 5
                 )
             }
         }

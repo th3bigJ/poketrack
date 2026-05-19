@@ -1,80 +1,32 @@
 import SwiftUI
 
+// MARK: - ThemesView
+//
+// Themes & appearance settings. Refactor brief:
+//   * Appearance picker uses native `Picker(.segmented)` — same control
+//     iOS Settings uses for "Appearance: Light / Dark / Automatic".
+//   * Background Glow uses a stock `Toggle` (no oversized custom styling)
+//     with the explainer text rendered as a proper footer below the row,
+//     not floating outside the card.
+//   * Accent color grid is a fixed 6-column layout with tight spacing so
+//     the swatches read as a single geometric block.
+//   * "Select a color that reflects your style." now lives **inside** the
+//     accent card as a footer caption, eliminating the previously orphaned
+//     floating line of subtext.
+
 struct ThemesView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
-    
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
-                // Appearance Section
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Appearance")
-                        .font(.headline)
-                    
-                    Text("Choose how Bindr looks on your device.")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    
-                    SlidingSegmentedPicker(
-                        selection: Bindable(services.theme).appearance,
-                        items: ThemeSettings.AppAppearance.allCases,
-                        title: { $0.displayName }
-                    )
-                    .padding(.vertical, 8)
-                }
-                .padding(16)
-                .glassCardStyle(cornerRadius: 16, interactive: false)
-                
-                // Background Glow Section
-                VStack(alignment: .leading, spacing: 12) {
-                    Toggle(isOn: Bindable(services.theme).backgroundGlowEnabled) {
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text("Background Glow")
-                                .font(.body.weight(.bold))
-                            Text("Adds a subtle color tint to the app background.")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    .onChange(of: services.theme.backgroundGlowEnabled) {
-                        Haptics.lightImpact()
-                    }
-                }
-                .padding(16)
-                .glassCardStyle(cornerRadius: 16, interactive: false)
-
-                // Accent Color Section
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Accent Color")
-                        .font(.headline)
-                    
-                    Text("Choose a color that will be used for buttons, links, and highlights throughout the app.")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 44))], spacing: 16) {
-                        ForEach(ThemeSettings.presetColors, id: \.self) { hex in
-                            ColorPill(hex: hex, isSelected: services.theme.accentColorHex == hex) {
-                                services.theme.accentColorHex = hex
-                                Haptics.lightImpact()
-                            }
-                        }
-                    }
-                    .padding(.vertical, 8)
-                }
-                .padding(16)
-                .glassCardStyle(cornerRadius: 16, interactive: false)
-                .overlay(alignment: .bottomLeading) {
-                    Text("Select a color that reflects your style.")
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                        .padding(.leading, 16)
-                        .offset(y: 20)
-                }
+            VStack(spacing: BindrSpacing.xl) {
+                appearanceCard
+                glowCard
+                accentCard
             }
-            .padding(16)
-            .padding(.bottom, 32)
+            .padding(BindrSpacing.lg)
+            .padding(.bottom, BindrSpacing.xxxl)
         }
         .background(BindrPageBackground().ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
@@ -83,10 +35,104 @@ struct ThemesView: View {
         }
     }
 
+    // MARK: Appearance
+
+    private var appearanceCard: some View {
+        cardSection(
+            title: "Appearance",
+            footer: "Choose how Bindr looks on your device."
+        ) {
+            Picker(
+                "Appearance",
+                selection: Bindable(services.theme).appearance
+            ) {
+                ForEach(ThemeSettings.AppAppearance.allCases) { option in
+                    Text(option.displayName).tag(option)
+                }
+            }
+            .pickerStyle(.segmented)
+        }
+    }
+
+    // MARK: Glow
+
+    private var glowCard: some View {
+        cardSection(
+            title: nil,
+            footer: "Adds a subtle color tint to the app background."
+        ) {
+            Toggle(isOn: Bindable(services.theme).backgroundGlowEnabled) {
+                Text("Background Glow")
+                    .font(.system(size: 15, weight: .semibold))
+            }
+            .tint(services.theme.accentColor)
+            .onChange(of: services.theme.backgroundGlowEnabled) {
+                Haptics.lightImpact()
+            }
+        }
+    }
+
+    // MARK: Accent
+
+    private var accentCard: some View {
+        cardSection(
+            title: "Accent Color",
+            footer: "Used for buttons, links, and highlights. Select a color that reflects your style."
+        ) {
+            // Fixed-6 grid keeps the swatches geometric rather than
+            // sprawling — adaptive sizing wraps unpredictably on the
+            // notch widths we ship for.
+            LazyVGrid(
+                columns: Array(repeating: GridItem(.flexible(), spacing: BindrSpacing.sm), count: 6),
+                spacing: BindrSpacing.sm
+            ) {
+                ForEach(ThemeSettings.presetColors, id: \.self) { hex in
+                    ColorSwatch(
+                        hex: hex,
+                        isSelected: services.theme.accentColorHex == hex
+                    ) {
+                        services.theme.accentColorHex = hex
+                        Haptics.lightImpact()
+                    }
+                }
+            }
+        }
+    }
+
+    // MARK: Section helper
+
+    /// Reusable "card with optional title and inline footer". The footer
+    /// sits *inside* the card so loose instructional text never floats
+    /// underneath the rounded container.
+    @ViewBuilder
+    private func cardSection<Content: View>(
+        title: String?,
+        footer: String,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        VStack(alignment: .leading, spacing: BindrSpacing.md) {
+            if let title {
+                Text(title)
+                    .font(.system(size: 15, weight: .semibold))
+            }
+
+            content()
+
+            Text(footer)
+                .font(.system(size: 12))
+                .foregroundStyle(.secondary)
+        }
+        .padding(BindrSpacing.lg)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
+    }
+
+    // MARK: Header
+
     private var themesHeader: some View {
         ZStack {
             Text("Themes")
-                .font(.title2.weight(.bold))
+                .font(.system(size: 17, weight: .semibold))
                 .foregroundStyle(.primary)
 
             HStack {
@@ -101,35 +147,45 @@ struct ThemesView: View {
                 Spacer(minLength: 0)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        .padding(.horizontal, BindrSpacing.lg)
+        .padding(.vertical, BindrSpacing.sm)
     }
 }
 
-private struct ColorPill: View {
+// MARK: - Color swatch
+//
+// Compact accent swatch: solid circle, no shadow, no white outer ring.
+// Selection state is a subtle inner check + accent-tinted ring so the
+// swatch reads as a single dense token in the grid rather than each
+// being a freestanding chip.
+private struct ColorSwatch: View {
+    @Environment(\.colorScheme) private var colorScheme
     let hex: String
     let isSelected: Bool
     let action: () -> Void
-    
+
     var body: some View {
         Button(action: action) {
             ZStack {
                 Circle()
                     .fill(Color(hex: hex))
-                    .frame(width: 44, height: 44)
-                
+                    .frame(width: 36, height: 36)
+
                 if isSelected {
                     Circle()
-                        .strokeBorder(.white, lineWidth: 3)
-                        .frame(width: 44, height: 44)
-                    
+                        .stroke(Color.primary.opacity(colorScheme == .dark ? 0.92 : 1.0), lineWidth: 2)
+                        .frame(width: 36, height: 36)
                     Image(systemName: "checkmark")
-                        .font(.system(size: 14, weight: .black))
+                        .font(.system(size: 13, weight: .bold))
                         .foregroundStyle(.white)
+                        .shadow(color: .black.opacity(0.35), radius: 1, y: 0.5)
                 }
             }
-            .shadow(color: .black.opacity(0.1), radius: 4, y: 2)
+            .frame(maxWidth: .infinity)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("Accent color \(hex)")
+        .accessibilityAddTraits(isSelected ? [.isSelected] : [])
     }
 }

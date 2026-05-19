@@ -883,9 +883,6 @@ private struct ScannerResultsOverlay: View {
     var body: some View {
         let count = results.count
         let screenWidth = UIScreen.main.bounds.width
-        let safeBottom = (UIApplication.shared.connectedScenes
-            .compactMap { $0 as? UIWindowScene }
-            .first?.windows.first?.safeAreaInsets.bottom ?? 0)
 
         VStack(spacing: 8) {
             ZStack {
