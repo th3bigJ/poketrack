@@ -49,11 +49,18 @@ struct PremiumUpgradeView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.hidden, for: .navigationBar)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Close") { dismiss() }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    ChromeGlassCircleButton(accessibilityLabel: "Close") {
+                        Haptics.lightImpact()
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundStyle(.primary)
+                    }
                 }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Restore") {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ChromeGlassCapsuleButton(label: "Restore") {
                         Task {
                             do {
                                 try await services.store.restore()
@@ -65,6 +72,7 @@ struct PremiumUpgradeView: View {
                     }
                 }
             }
+            .tint(.primary)
             .task {
                 if services.store.products.isEmpty {
                     await services.store.loadProducts()
@@ -289,3 +297,38 @@ struct PremiumUpgradeView: View {
         return "Configure in App Store Connect to enable purchase."
     }
 }
+
+// MARK: - Premium-specific Capsule Glass button
+private struct ChromeGlassCapsuleButton: View {
+    let label: String
+    let action: () -> Void
+
+    private var glassStroke: Color { Color.primary.opacity(0.1) }
+
+    var body: some View {
+        Button(action: { Haptics.lightImpact(); action() }) {
+            Text(label)
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(.primary)
+                .padding(.horizontal, 14)
+                .frame(height: 36)
+                .background {
+                    if #available(iOS 26.0, *) {
+                        Capsule()
+                            .fill(.clear)
+                            .glassEffect(.clear.tint(nil).interactive(), in: Capsule())
+                    } else {
+                        Capsule()
+                            .fill(.thinMaterial)
+                            .overlay {
+                                Capsule()
+                                    .strokeBorder(glassStroke, lineWidth: 0.5)
+                            }
+                    }
+                }
+                .contentShape(Capsule())
+        }
+        .buttonStyle(.plain)
+    }
+}
+
