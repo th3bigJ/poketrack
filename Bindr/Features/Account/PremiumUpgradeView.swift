@@ -104,7 +104,7 @@ struct PremiumUpgradeView: View {
                 benefitRow(label: "Full price history & trends")
                 benefitRow(label: "Offline database access")
                 benefitRow(label: "Priority trade notifications")
-                benefitRow(label: "Premium Pokéball profile badge")
+                benefitRow(label: "Premium badges (Pokéball & Straw Hat)")
             }
             .padding(BindrSpacing.md)
             .frame(maxWidth: .infinity, alignment: .leading)

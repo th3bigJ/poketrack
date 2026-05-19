@@ -213,18 +213,23 @@ struct OnboardingPremiumView: View {
         .glassCardStyle(cornerRadius: BindrRadius.md, interactive: false)
     }
 
-    /// Special grid cell using the real PokeballEmblemView instead of an SF Symbol
+    /// Special grid cell showing both Pokéball and Straw Hat premium badges
     private func pokeballGridItem() -> some View {
         HStack(spacing: 10) {
-            PokeballEmblemView(size: 32)
+            HStack(spacing: -6) {
+                PokeballEmblemView(size: 24)
+                StrawHatEmblemView(size: 24)
+                    .offset(y: 1)
+            }
+            .frame(width: 42, height: 32, alignment: .center)
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("Pokéball Badge")
+                Text("Premium Badges")
                     .font(.system(size: 12, weight: .bold))
                     .foregroundStyle(.primary)
                     .lineLimit(1)
                     .minimumScaleFactor(0.85)
-                Text("Premium profile style")
+                Text("Pokéball & Straw Hat styles")
                     .font(.system(size: 10))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
