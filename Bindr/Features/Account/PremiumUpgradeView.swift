@@ -74,7 +74,7 @@ struct PremiumUpgradeView: View {
                 ctaPanel
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(uiColor: .systemBackground).ignoresSafeArea())
+            .bindrPageBackground()
             .toolbar(.hidden, for: .navigationBar) // Completely hides native navigation bar
             .tint(.primary)
             .task {
