@@ -358,8 +358,7 @@ struct RootView: View {
                         }
                     )
                 }
-                .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
-                    guard services.brandSettings.hasCompletedBrandOnboarding else { return }
+                .task {
                     guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
                     await services.bootstrap()
                 }

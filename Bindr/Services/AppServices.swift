@@ -145,12 +145,27 @@ final class AppServices {
         return true
     }
 
-    /// One-time blocking gate for brand-new users (after onboarding). Later launches use ``bootstrapCatalogInBackgroundIfNeeded()`` from the root view.
     func bootstrap() async {
         guard !isReady, !isBootstrapping else { return }
         isBootstrapping = true
         defer { isBootstrapping = false }
-        await runStartupCatalogPipeline(updateBootstrapProgressUI: true)
+        
+        let bootstrapTask = Task { [weak self] in
+            guard let self else { return }
+            await self.runStartupCatalogPipeline(updateBootstrapProgressUI: true)
+        }
+        
+        // Fails open after 8 seconds timeout (slow network or offline). Keep cached/bundled values and proceed.
+        let completedWithinTimeout = await waitForTaskOrTimeout(
+            bootstrapTask,
+            timeoutNanoseconds: 8_000_000_000 // 8 seconds
+        )
+        
+        if !completedWithinTimeout {
+            // Prime local cached/bundled catalog datasets immediately so the user can navigate the dashboard safely offline.
+            await primeLaunchCatalogFromLocalCache()
+        }
+        
         brandSettings.markInitialAppBootstrapCompleted()
         pendingLightBrowseTabEntry = true
         isLaunchCatalogPipelineComplete = true
