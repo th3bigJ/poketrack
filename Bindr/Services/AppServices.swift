@@ -115,7 +115,7 @@ final class AppServices {
         self.offlineImageSettings = offlineImageSettings
         self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
         self.essentialAssetsDownload = EssentialAssetsDownloadService()
-        if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
+        if brandSettings.hasCompletedInitialAppBootstrap {
             let requiresBlockingDailyRefresh = CatalogSyncCoordinator.shared.requiresDailyBlockingRefresh(
                 enabledBrands: brandSettings.enabledBrands
             )

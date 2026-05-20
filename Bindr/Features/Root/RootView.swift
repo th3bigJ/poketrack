@@ -105,7 +105,7 @@ struct RootView: View {
     // ship the next major onboarding redesign). Each version key only fires
     // a single reset, so even if the user mashes "Skip" the flow doesn't
     // come back on subsequent launches.
-    private static let onboardingReplayMigrationKey = "bindr_onboarding_replay_v2"
+    private static let onboardingReplayMigrationKey = "bindr_onboarding_replay_v3"
 
     // MARK: - Splash Flow
     @State private var showSplash: Bool = {
