@@ -26,6 +26,9 @@ struct BindrOnboardingFlow: View {
     @Environment(\.bindrAccent) private var accent
 
     @Binding var isPresented: Bool
+    /// Called synchronously just before `isPresented` is set to false, so the
+    /// host can flip its own state in the same pass and avoid a blank-frame gap.
+    var onWillDismiss: (() -> Void)? = nil
     @State private var step: BindrOnboardingStep = .welcome
     @State private var selectedBrand: TCGBrand = .pokemon
 
@@ -157,6 +160,7 @@ struct BindrOnboardingFlow: View {
                 )
             }
         }
+        onWillDismiss?()
         withAnimation(.easeInOut(duration: 0.3)) {
             isPresented = false
         }

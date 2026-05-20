@@ -81,7 +81,6 @@ struct RootView: View {
     @State private var moreNavigationPath = NavigationPath()
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var selectedSealedProductPresentation: SealedProductPresentationContext?
-    @State private var showBrandOnboarding = false
     @State private var cachedSetNameByCode: [String: String] = [:]
     @State private var inlineDetailCards: [Card] = []
     @State private var showCreateFolderAlert = false
@@ -114,6 +113,10 @@ struct RootView: View {
         let lastShownVersion = UserDefaults.standard.string(forKey: splashLastVersionKey)
         return lastShownVersion == nil || lastShownVersion != currentAppVersion
     }()
+    /// True while a first-run user is in the onboarding flow. The main app
+    /// bootstraps in the background during onboarding; once complete we show
+    /// the wordmark + progress until the pipeline finishes, then reveal the app.
+    @State private var showOnboardingImmediate = false
     /// Flips once the BINDR letter-reveal stagger has played + breathing
     /// pulse has started. Distinct from "ready to dismiss" — the wordmark
     /// stays on screen until the catalog pipeline is also done so we never
@@ -129,14 +132,15 @@ struct RootView: View {
     ///  - the BINDR reveal animation has played,
     ///  - the services layer is initialized,
     ///  - the launch catalog pipeline (returning-user daily refresh, if any)
-    ///    has completed.
-    /// This collapses the previous two-phase "wordmark → maybe LoadingScreen"
-    /// flow into a single fade so the dashboard never appears mid-launch.
+    ///    has completed,
+    ///  - onboarding is fully complete (not mid-flow).
     private var isLaunchSequenceComplete: Bool {
         hasRevealedLaunchWordmark
             && services.isReady
             && services.isLaunchCatalogPipelineComplete
             && !showSplash
+            && !showOnboardingImmediate
+            && services.brandSettings.hasCompletedBrandOnboarding
     }
 
     private var launchProgressState: LaunchProgressState? {
@@ -327,14 +331,34 @@ struct RootView: View {
                 }
                 .transition(.opacity)
             } else if showSplash {
-                // Welcome splash screen for first-run or new version updates
+                // Welcome splash screen for first-run or new version updates.
+                // First-run: tapping GET STARTED opens onboarding immediately
+                // without waiting for services to be ready.
                 SplashView(onGetStarted: {
+                    UserDefaults.standard.set(currentAppVersion, forKey: splashLastVersionKey)
                     withAnimation(.easeInOut(duration: 0.35)) {
                         showSplash = false
-                        // Mark this version as shown
-                        UserDefaults.standard.set(currentAppVersion, forKey: splashLastVersionKey)
+                        if !services.brandSettings.hasCompletedBrandOnboarding {
+                            // First-run: jump straight to onboarding while
+                            // bootstrap runs in the background.
+                            showOnboardingImmediate = true
+                        }
                     }
                 })
+                .transition(.opacity)
+            } else if showOnboardingImmediate {
+                // Onboarding runs immediately after splash on first run.
+                // onWillDismiss flips showOnboardingImmediate in the same pass as
+                // isPresented, so there's never a blank frame between the two states.
+                BindrOnboardingFlow(
+                    isPresented: .constant(true),
+                    onWillDismiss: {
+                        showOnboardingImmediate = false
+                        Task { await services.socialPush.updateRegistrationState() }
+                    }
+                )
+                .environment(services)
+                .bindrTheme(accent: services.theme.accentColor)
                 .transition(.opacity)
             } else if services.isReady {
                 // Returning-user path: wordmark stays put, progress block fades
@@ -347,17 +371,14 @@ struct RootView: View {
                 )
                 .transition(.opacity)
             } else {
-                // First-launch / brand-onboarding path is unchanged: keep
-                // showing the wordmark until services come online (the
-                // bootstrap progress UI takes over once onboarding is done).
-                ZStack {
-                    LaunchWordmarkView(
-                        progress: brandOnboardingProgressState,
-                        onRevealComplete: {
-                            hasRevealedLaunchWordmark = true
-                        }
-                    )
-                }
+                // Post-onboarding loading path: show wordmark + progress until
+                // services and the catalog pipeline are fully ready.
+                LaunchWordmarkView(
+                    progress: brandOnboardingProgressState,
+                    onRevealComplete: {
+                        hasRevealedLaunchWordmark = true
+                    }
+                )
                 .task {
                     guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
                     await services.bootstrap()
@@ -371,37 +392,9 @@ struct RootView: View {
                 // Insert mainContent one frame after the fade animation begins so
                 // SwiftUI builds the full tab view tree off the critical animation path.
                 Task { @MainActor in
-                    // Sleep one frame so SwiftUI commits the fade-in animation
-                    // before building the full mainContent view tree.
                     try? await Task.sleep(for: .milliseconds(16))
                     hasInsertedMainContent = true
-                    
-                    // Trigger onboarding popups after dashboard has been revealed and settled
-                    if !services.brandSettings.hasCompletedBrandOnboarding {
-                        try? await Task.sleep(for: .milliseconds(500))
-                        withAnimation {
-                            showBrandOnboarding = true
-                        }
-                    } else {
-                        evaluatePremiumUpsellIfNeeded()
-                    }
-                }
-            }
-        }
-        .onChange(of: showBrandOnboarding) { _, presented in
-            // After the user finishes (or skips) onboarding, give the launch
-            // a beat to settle and then re-check the upsell gate.
-            if !presented {
-                // Safety net: ensure completion is marked so the launch pipeline
-                // isn't stuck waiting for the bootstrap task to fire.
-                if !services.brandSettings.hasCompletedBrandOnboarding {
-                    services.brandSettings.completeBrandOnboarding()
-                }
-                evaluatePremiumUpsellIfNeeded()
-                // Register for push now that onboarding is done. We skipped this
-                // in the root .task to avoid racing with the notifications step.
-                Task {
-                    await services.socialPush.updateRegistrationState()
+                    evaluatePremiumUpsellIfNeeded()
                 }
             }
         }
@@ -432,12 +425,6 @@ struct RootView: View {
             let safeIndex = min(max(index, 0), max(list.count - 1, 0))
             selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
         })
-        .fullScreenCover(isPresented: $showBrandOnboarding) {
-            BindrOnboardingFlow(isPresented: $showBrandOnboarding)
-                .environment(services)
-                .bindrTheme(accent: services.theme.accentColor)
-        }
-
         .task {
             // ── Cheap, immediate work ─────────────────────────────────────
             // Replay-onboarding migration: run before we read brandSettings
@@ -456,15 +443,38 @@ struct RootView: View {
                 }
             }
 
-            // ── Defer all heavy work until the launch animation finishes ──
-            // bootstrapCatalogInBackgroundIfNeeded does SQLite + search index
-            // work that can hitch the main thread right when 'R' appears.
-            // We poll hasRevealedLaunchWordmark (flips ~1.8s after launch) so
-            // the BINDR letters can settle before we kick off the catalog
-            // pipeline. The wordmark itself stays mounted *after* this — the
-            // dismiss is gated on `isLaunchSequenceComplete` in the body.
+            // ── Bootstrap strategy depends on launch path ─────────────────
+            //
+            // First-run: user is shown splash → onboarding → wordmark+progress.
+            //   - Wait for splash to dismiss, then kick off bootstrap immediately
+            //     so the catalog is being fetched while the user is in onboarding.
+            //   - After onboarding finishes (showOnboardingImmediate → false), the
+            //     wordmark appears. Wait for its reveal before catalog pipeline work.
+            //
+            // Returning-user: wordmark shows immediately after splash.
+            //   - Wait for the BINDR letter reveal (~1.8 s) to avoid hitching the
+            //     animation, then run the catalog pipeline.
+
+            // Wait for the splash to be dismissed (user tapped GET STARTED).
+            while showSplash {
+                try? await Task.sleep(nanoseconds: 50_000_000)
+            }
+            await Task.yield()
+
+            if showOnboardingImmediate {
+                // First-run: bootstrap in background while user goes through onboarding.
+                if !services.brandSettings.hasCompletedInitialAppBootstrap {
+                    await services.bootstrap()
+                }
+                // Wait for onboarding to finish — wordmark appears afterward.
+                while showOnboardingImmediate {
+                    try? await Task.sleep(nanoseconds: 50_000_000)
+                }
+            }
+
+            // Wait for the wordmark reveal before kicking off catalog work.
             while !hasRevealedLaunchWordmark {
-                try? await Task.sleep(nanoseconds: 50_000_000) // poll every 50ms
+                try? await Task.sleep(nanoseconds: 50_000_000)
             }
             await Task.yield()
 
@@ -1128,7 +1138,7 @@ struct RootView: View {
         hasEvaluatedPremiumUpsellThisSession = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             // Re-check at fire time — nothing modal should be on screen.
-            guard !showSplash, !showBrandOnboarding, isLaunchSequenceComplete else { return }
+            guard !showSplash, !showOnboardingImmediate, isLaunchSequenceComplete else { return }
             showPremiumAutoSheet = true
         }
     }
