@@ -76,6 +76,9 @@ struct BinderSlotPickerView: View {
     @State private var browsePath: [BinderPickerBrowseRoute] = []
     @State private var displayedCollectionCount = 0
     @State private var displayedWishlistCount = 0
+    @State private var cachedCollectionEntries: [BinderPickerEntry] = []
+    @State private var cachedWishlistEntries: [BinderPickerEntry] = []
+    @State private var cachedPriceByCardID: [String: Double] = [:]
 
     private static let initialBatchSize = 36
     private static let pageSize = 24
@@ -141,14 +144,16 @@ struct BinderSlotPickerView: View {
     }
 
     private var collectionEntries: [BinderPickerEntry] {
-        collectionItems.compactMap { item in
+        var seen = Set<String>()
+        return collectionItems.compactMap { item in
             guard TCGBrand.inferredFromMasterCardId(item.cardID) == selectedBrand else { return nil }
             guard let card = resolvedCardsByID[item.cardID] else { return nil }
+            guard seen.insert(item.cardID).inserted else { return nil }
             return BinderPickerEntry(
-                id: "collection|\(String(describing: item.persistentModelID))",
+                id: "collection|\(item.cardID)",
                 card: card,
                 variantKey: item.variantKey,
-                footnote: "×\(item.quantity) · \(displayVariant(item.variantKey))",
+                footnote: nil,
                 isOwned: true
             )
         }
@@ -181,18 +186,16 @@ struct BinderSlotPickerView: View {
                 )
             }
         case .collection:
-            let all = sortedEntries(collectionEntries)
             guard displayedCollectionCount > 0 else { return [] }
-            return Array(all.prefix(displayedCollectionCount))
+            return Array(cachedCollectionEntries.prefix(displayedCollectionCount))
         case .wishlist:
-            let all = sortedEntries(wishlistEntries)
             guard displayedWishlistCount > 0 else { return [] }
-            return Array(all.prefix(displayedWishlistCount))
+            return Array(cachedWishlistEntries.prefix(displayedWishlistCount))
         }
     }
 
-    private var totalCollectionCount: Int { sortedEntries(collectionEntries).count }
-    private var totalWishlistCount: Int { sortedEntries(wishlistEntries).count }
+    private var totalCollectionCount: Int { cachedCollectionEntries.count }
+    private var totalWishlistCount: Int { cachedWishlistEntries.count }
     private var totalEntryCount: Int {
         switch source {
         case .allCards: return allCardsBase.count
@@ -208,7 +211,16 @@ struct BinderSlotPickerView: View {
     }
 
     private var preloadTriggerEntryID: String? {
-        visibleEntries.dropLast(3).last?.id
+        switch source {
+        case .allCards:
+            return allCardsBase.dropLast(3).last.map { "all|\($0.masterCardId)" }
+        case .collection:
+            let count = min(displayedCollectionCount, cachedCollectionEntries.count)
+            return cachedCollectionEntries.prefix(count).dropLast(3).last?.id
+        case .wishlist:
+            let count = min(displayedWishlistCount, cachedWishlistEntries.count)
+            return cachedWishlistEntries.prefix(count).dropLast(3).last?.id
+        }
     }
 
     var body: some View {
@@ -336,6 +348,7 @@ struct BinderSlotPickerView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(.primary)
                 }
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Menu {
@@ -348,7 +361,7 @@ struct BinderSlotPickerView: View {
                             gridOptions: $gridOptions,
                             config: FilterMenuConfig(
                                 showSortBy: true,
-                                showAcquiredDateSort: false,
+                                showAcquiredDateSort: source != .allCards,
                                 showBrandFilters: false,
                                 showRarity: true,
                                 showRarePlusOnly: true,
@@ -360,6 +373,7 @@ struct BinderSlotPickerView: View {
                         )
                     } label: {
                         Image(systemName: filters.isVisiblyCustomized ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
+                            .foregroundStyle(.primary)
                     }
                 }
             }
@@ -374,10 +388,12 @@ struct BinderSlotPickerView: View {
                 case .allCards:
                     Task { await reloadAllCardsIfNeeded() }
                 case .collection:
+                    rebuildCollectionWishlistCaches()
                     if displayedCollectionCount == 0 {
                         displayedCollectionCount = min(Self.initialBatchSize, totalCollectionCount)
                     }
                 case .wishlist:
+                    rebuildCollectionWishlistCaches()
                     if displayedWishlistCount == 0 {
                         displayedWishlistCount = min(Self.initialBatchSize, totalWishlistCount)
                     }
@@ -402,8 +418,16 @@ struct BinderSlotPickerView: View {
                 Task { await restoreAllCardsFeedIfNeeded() }
             }
             .onChange(of: filters) { _, _ in
-                guard source == .allCards, debouncedQueryIsActive == false else { return }
-                Task { await rebuildFilteredRefFeed(reset: true) }
+                if source != .allCards {
+                    rebuildCollectionWishlistCaches()
+                } else if debouncedQueryIsActive == false {
+                    Task { await rebuildFilteredRefFeed(reset: true) }
+                }
+            }
+            .onChange(of: debouncedQuery) { _, _ in
+                if source != .allCards {
+                    rebuildCollectionWishlistCaches()
+                }
             }
             .onAppear {
                 selectedBrand = brand
@@ -418,6 +442,7 @@ struct BinderSlotPickerView: View {
                 basketBar
             }
         }
+        .tint(.primary)
     }
 
     @ViewBuilder
@@ -759,34 +784,48 @@ struct BinderSlotPickerView: View {
             + wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }.map(\.cardID)
         let missing = allIDs.filter { !existingIDs.contains($0) }
 
-        guard !missing.isEmpty else {
+        let cardsToPrice: [Card]
+        if missing.isEmpty {
+            cardsToPrice = await MainActor.run { allIDs.compactMap { resolvedCardsByID[$0] } }
             await MainActor.run { seedDisplayCounts(from: resolvedCardsByID) }
-            return
+        } else {
+            let loaded = await services.cardData.loadCards(masterCardIDs: missing, catalogBrand: brand)
+            await MainActor.run {
+                for card in loaded { resolvedCardsByID[card.masterCardId] = card }
+                seedDisplayCounts(from: resolvedCardsByID)
+            }
+            cardsToPrice = await MainActor.run { allIDs.compactMap { resolvedCardsByID[$0] } }
         }
 
-        let loaded = await services.cardData.loadCards(masterCardIDs: missing, catalogBrand: brand)
-
-        await MainActor.run {
-            for card in loaded {
-                resolvedCardsByID[card.masterCardId] = card
+        var prices: [String: Double] = [:]
+        for card in cardsToPrice {
+            if let entry = await services.pricing.pricing(for: card),
+               let usd = pickerMarketPriceUSD(for: entry) {
+                prices[card.masterCardId] = usd
             }
-            seedDisplayCounts(from: resolvedCardsByID)
+        }
+        await MainActor.run {
+            cachedPriceByCardID.merge(prices) { _, new in new }
+            if filters.sortBy == .price {
+                rebuildCollectionWishlistCaches()
+            }
         }
     }
 
     @MainActor
+    private func rebuildCollectionWishlistCaches() {
+        cachedCollectionEntries = sortedEntries(collectionEntries)
+        cachedWishlistEntries = sortedEntries(wishlistEntries)
+    }
+
+    @MainActor
     private func seedDisplayCounts(from resolved: [String: Card]) {
+        rebuildCollectionWishlistCaches()
         if displayedCollectionCount == 0 {
-            let count = collectionItems
-                .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == selectedBrand }
-                .filter { resolved[$0.cardID] != nil }.count
-            displayedCollectionCount = min(Self.initialBatchSize, count)
+            displayedCollectionCount = min(Self.initialBatchSize, cachedCollectionEntries.count)
         }
         if displayedWishlistCount == 0 {
-            let count = wishlistItems
-                .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == selectedBrand }
-                .filter { resolved[$0.cardID] != nil }.count
-            displayedWishlistCount = min(Self.initialBatchSize, count)
+            displayedWishlistCount = min(Self.initialBatchSize, cachedWishlistEntries.count)
         }
     }
 
@@ -811,7 +850,9 @@ struct BinderSlotPickerView: View {
     private func orderedFilteredRefs(from cards: [BrowseFilterCard]) async -> [CardRef] {
         let filtered = filterBrowseFilterCards(cards)
         switch filters.sortBy {
-        case .random, .acquiredDateNewest:
+        case .random:
+            return filtered.map(\.ref).shuffled()
+        case .acquiredDateNewest:
             let filteredIDs = Set(filtered.map(\.masterCardId))
             let ordered = allCardRefs.filter { filteredIDs.contains($0.masterCardId) }
             let covered = Set(ordered.map(\.masterCardId))
@@ -1079,7 +1120,21 @@ struct BinderSlotPickerView: View {
             return filteredEntries.sorted { compareCardsNewestSetFirst($0.card, $1.card) }
         case .cardNumber:
             return filteredEntries.sorted { compareCardsByNumber($0.card, $1.card) }
-        case .price, .random, .acquiredDateNewest:
+        case .random:
+            return filteredEntries.shuffled()
+        case .price:
+            return filteredEntries.sorted { lhs, rhs in
+                let lp = collectionDisplayPrice(for: lhs.card)
+                let rp = collectionDisplayPrice(for: rhs.card)
+                switch (lp, rp) {
+                case let (l?, r?): if l != r { return l > r }
+                case (.some, nil): return true
+                case (nil, .some): return false
+                case (nil, nil): break
+                }
+                return lhs.card.cardName.localizedCaseInsensitiveCompare(rhs.card.cardName) == .orderedAscending
+            }
+        case .acquiredDateNewest:
             return filteredEntries
         }
     }
@@ -1095,6 +1150,10 @@ struct BinderSlotPickerView: View {
             brand: selectedBrand,
             sets: catalogSets
         )
+    }
+
+    private func collectionDisplayPrice(for card: Card) -> Double? {
+        cachedPriceByCardID[card.masterCardId]
     }
 
     private func compareCardsNewestSetFirst(_ lhs: Card, _ rhs: Card) -> Bool {
@@ -1117,14 +1176,16 @@ struct BinderSlotPickerView: View {
         variantKey.replacingOccurrences(of: "_", with: " ")
     }
 
-    private var visibleItemSignature: String {
-        let collectionKey = collectionItems
-            .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == selectedBrand }
-            .map(\.cardID).sorted().joined(separator: "|")
-        let wishlistKey = wishlistItems
-            .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == selectedBrand }
-            .map(\.cardID).sorted().joined(separator: "|")
-        return "\(selectedBrand.rawValue)#\(collectionKey)#\(wishlistKey)"
+    private var visibleItemSignature: Int {
+        var h = Hasher()
+        h.combine(selectedBrand.rawValue)
+        for item in collectionItems where TCGBrand.inferredFromMasterCardId(item.cardID) == selectedBrand {
+            h.combine(item.cardID)
+        }
+        for item in wishlistItems where TCGBrand.inferredFromMasterCardId(item.cardID) == selectedBrand {
+            h.combine(item.cardID)
+        }
+        return h.finalize()
     }
 
     private var searchTaskKey: String {
@@ -1151,10 +1212,10 @@ private struct BinderPickerCardCell: View {
                 footnote: entry.footnote
             )
 
-            Image(systemName: isSelected ? "checkmark.circle.fill" : (entry.isOwned ? "checkmark.circle.fill" : "circle"))
+            Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                 .font(.system(size: 18, weight: .semibold))
-                .foregroundStyle(isSelected ? bindrAccent : (entry.isOwned ? .green : .white))
-                .background(Circle().fill(isSelected || entry.isOwned ? .white : Color.black.opacity(0.18)))
+                .foregroundStyle(isSelected ? bindrAccent : .white)
+                .background(Circle().fill(isSelected ? .white : Color.black.opacity(0.18)))
                 .padding(6)
         }
         .padding(8)

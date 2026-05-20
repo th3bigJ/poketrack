@@ -20,6 +20,7 @@ struct ScannerBulkAddSheet: View {
     @State private var isSaving = false
     @State private var successCount = 0
     @State private var showSuccess = false
+    @State private var showPaywall = false
 
     private var currencyCode: String {
         switch services.priceDisplay.currency {
@@ -87,6 +88,9 @@ struct ScannerBulkAddSheet: View {
                 if showSuccess {
                     successOverlay
                 }
+            }
+            .sheet(isPresented: $showPaywall) {
+                PaywallSheet().environment(services)
             }
         }
     }
@@ -272,6 +276,9 @@ struct ScannerBulkAddSheet: View {
                         continue
                     }
                     saved += quantity
+                } catch CollectionLedgerError.freeTierLimitReached {
+                    if firstError == nil { firstError = CollectionLedgerError.freeTierLimitReached.errorDescription }
+                    showPaywall = true
                 } catch {
                     if firstError == nil { firstError = error.localizedDescription }
                 }

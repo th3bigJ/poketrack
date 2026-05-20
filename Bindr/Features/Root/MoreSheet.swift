@@ -59,6 +59,20 @@ struct MoreView: View {
                                 .background(Color.orange.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                         }
                     }
+
+                    NavigationLink(value: SideMenuPage.gradingOpportunities) {
+                        Label {
+                            Text("Grading Opportunities")
+                                .font(.body)
+                                .foregroundStyle(.primary)
+                        } icon: {
+                            Image(systemName: "chart.line.uptrend.xyaxis")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(width: 30, height: 30)
+                                .background(Color.red.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        }
+                    }
                 } header: {
                     Text("Collection Tools")
                 }
@@ -76,20 +90,6 @@ struct MoreView: View {
                                 .foregroundColor(.white)
                                 .frame(width: 30, height: 30)
                                 .background(Color.purple.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                        }
-                    }
-                    
-                    NavigationLink(value: SideMenuPage.gradingOpportunities) {
-                        Label {
-                            Text("Grading Opportunities")
-                                .font(.body)
-                                .foregroundStyle(.primary)
-                        } icon: {
-                            Image(systemName: "chart.line.uptrend.xyaxis")
-                                .font(.system(size: 14, weight: .semibold))
-                                .foregroundColor(.white)
-                                .frame(width: 30, height: 30)
-                                .background(Color.red.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                         }
                     }
                 } header: {

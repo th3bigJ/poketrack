@@ -122,10 +122,12 @@ struct RootView: View {
     /// stays on screen until the catalog pipeline is also done so we never
     /// flash dashboard between the wordmark and the download UI.
     @State private var hasRevealedLaunchWordmark = false
-    /// Separate from isLaunchSequenceComplete — flipped one frame after isLaunchSequenceComplete
-    /// so the wordmark→dashboard fade animation begins before the heavy mainContent view tree
-    /// is constructed, preventing a main-thread hitch at the transition point.
+    /// Flipped to true as soon as isLaunchSequenceComplete fires. mainContent is built immediately
+    /// so SwiftUI can do the heavy layout work while the launch overlay is still covering it.
     @State private var hasInsertedMainContent = false
+    /// Controls the launch overlay fade-out. Stays true until mainContent has been inserted AND
+    /// a couple of frames have passed so the freeze from initial layout is fully hidden.
+    @State private var isLaunchOverlayVisible = true
     private let splashLastVersionKey = "bindr_splash_last_shown_version"
 
     /// Single gate for tearing the launch surface down. We require:
@@ -317,83 +319,92 @@ struct RootView: View {
     }
 
     var body: some View {
-        Group {
-            if isLaunchSequenceComplete {
-                // Show a plain background immediately so the fade-out of the
-                // wordmark has something to reveal, then insert the full view
-                // tree one frame later so SwiftUI builds it off the critical path.
+        ZStack {
+            // Main app content — inserted as soon as the launch sequence completes.
+            // It builds underneath the launch overlay so any first-frame layout freeze
+            // is fully hidden. The overlay fades out only after two frames have passed.
+            if hasInsertedMainContent {
+                mainContent
+            } else {
+                Color(uiColor: .systemBackground)
+            }
+
+            // Launch overlay — stays on top until we're ready to reveal.
+            if isLaunchOverlayVisible {
                 Group {
-                    if hasInsertedMainContent {
-                        mainContent
+                    if showSplash {
+                        SplashView(onGetStarted: {
+                            UserDefaults.standard.set(currentAppVersion, forKey: splashLastVersionKey)
+                            withAnimation(.easeInOut(duration: 0.35)) {
+                                showSplash = false
+                                if !services.brandSettings.hasCompletedBrandOnboarding {
+                                    showOnboardingImmediate = true
+                                }
+                            }
+                        })
+                    } else if showOnboardingImmediate {
+                        BindrOnboardingFlow(
+                            isPresented: .constant(true),
+                            onWillDismiss: {
+                                showOnboardingImmediate = false
+                                Task { await services.socialPush.updateRegistrationState() }
+                            }
+                        )
+                        .environment(services)
+                        .bindrTheme(accent: services.theme.accentColor)
+                    } else if services.isReady {
+                        LaunchWordmarkView(
+                            progress: launchProgressState,
+                            onRevealComplete: {
+                                hasRevealedLaunchWordmark = true
+                            }
+                        )
                     } else {
-                        Color(uiColor: .systemBackground)
-                    }
-                }
-                .transition(.opacity)
-            } else if showSplash {
-                // Welcome splash screen for first-run or new version updates.
-                // First-run: tapping GET STARTED opens onboarding immediately
-                // without waiting for services to be ready.
-                SplashView(onGetStarted: {
-                    UserDefaults.standard.set(currentAppVersion, forKey: splashLastVersionKey)
-                    withAnimation(.easeInOut(duration: 0.35)) {
-                        showSplash = false
-                        if !services.brandSettings.hasCompletedBrandOnboarding {
-                            // First-run: jump straight to onboarding while
-                            // bootstrap runs in the background.
-                            showOnboardingImmediate = true
+                        LaunchWordmarkView(
+                            progress: brandOnboardingProgressState,
+                            onRevealComplete: {
+                                hasRevealedLaunchWordmark = true
+                            }
+                        )
+                        .task {
+                            guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
+                            await services.bootstrap()
                         }
                     }
-                })
-                .transition(.opacity)
-            } else if showOnboardingImmediate {
-                // Onboarding runs immediately after splash on first run.
-                // onWillDismiss flips showOnboardingImmediate in the same pass as
-                // isPresented, so there's never a blank frame between the two states.
-                BindrOnboardingFlow(
-                    isPresented: .constant(true),
-                    onWillDismiss: {
-                        showOnboardingImmediate = false
-                        Task { await services.socialPush.updateRegistrationState() }
-                    }
-                )
-                .environment(services)
-                .bindrTheme(accent: services.theme.accentColor)
-                .transition(.opacity)
-            } else if services.isReady {
-                // Returning-user path: wordmark stays put, progress block fades
-                // in beneath it the moment the daily refresh starts work.
-                LaunchWordmarkView(
-                    progress: launchProgressState,
-                    onRevealComplete: {
-                        hasRevealedLaunchWordmark = true
-                    }
-                )
-                .transition(.opacity)
-            } else {
-                // Post-onboarding loading path: show wordmark + progress until
-                // services and the catalog pipeline are fully ready.
-                LaunchWordmarkView(
-                    progress: brandOnboardingProgressState,
-                    onRevealComplete: {
-                        hasRevealedLaunchWordmark = true
-                    }
-                )
-                .task {
-                    guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
-                    await services.bootstrap()
                 }
                 .transition(.opacity)
+                .zIndex(1)
             }
         }
-        .animation(.easeInOut(duration: 0.35), value: isLaunchSequenceComplete)
+        .animation(.easeInOut(duration: 0.35), value: isLaunchOverlayVisible)
         .onChange(of: isLaunchSequenceComplete) { _, complete in
             if complete {
-                // Insert mainContent one frame after the fade animation begins so
-                // SwiftUI builds the full tab view tree off the critical animation path.
+                // Insert mainContent while the overlay is still fully opaque so
+                // SwiftUI builds the entire tab tree invisibly behind it.
+                hasInsertedMainContent = true
                 Task { @MainActor in
-                    try? await Task.sleep(for: .milliseconds(16))
-                    hasInsertedMainContent = true
+                    // Poll until the main thread is genuinely free — each yield
+                    // only resumes when the run loop has a spare cycle, so if the
+                    // main thread is blocked building the tab tree we stay here
+                    // (and the overlay remains visible) until it finishes.
+                    // Cap at 30 iterations (~15 s) so we never hang forever.
+                    var idleCount = 0
+                    for _ in 0..<300 {
+                        let before = CACurrentMediaTime()
+                        await Task.yield()
+                        let elapsed = CACurrentMediaTime() - before
+                        // A yield that comes back in under 32 ms means the main
+                        // thread had a free frame — the heavy layout work is done.
+                        if elapsed < 0.032 {
+                            idleCount += 1
+                            if idleCount >= 3 { break }
+                        } else {
+                            idleCount = 0
+                        }
+                    }
+                    withAnimation(.easeInOut(duration: 0.35)) {
+                        isLaunchOverlayVisible = false
+                    }
                     evaluatePremiumUpsellIfNeeded()
                 }
             }

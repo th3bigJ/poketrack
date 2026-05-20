@@ -426,19 +426,32 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
     let spacing: CGFloat
     @ViewBuilder let cell: (Item) -> Cell
 
+    private struct Row: Identifiable {
+        // Stable ID: first item's id + row index, avoids O(n) string joins on every render.
+        let id: String
+        let startIndex: Int
+        let endIndex: Int
+    }
+
+    private func makeRows(cols: Int) -> [Row] {
+        stride(from: 0, to: items.count, by: cols).map { rowStart in
+            let rowEnd = min(rowStart + cols, items.count)
+            return Row(id: "\(items[rowStart].id)|\(rowStart)", startIndex: rowStart, endIndex: rowEnd)
+        }
+    }
+
     var body: some View {
         let cols = max(columns, 1)
+        let rows = makeRows(cols: cols)
         LazyVStack(spacing: spacing) {
-            ForEach(Array(stride(from: 0, to: items.count, by: cols)), id: \.self) { rowStart in
+            ForEach(rows) { row in
                 HStack(spacing: spacing) {
-                    let rowEnd = min(rowStart + cols, items.count)
-                    ForEach(rowStart..<rowEnd, id: \.self) { index in
-                        let item = items[index]
-                        cell(item)
+                    ForEach(row.startIndex..<row.endIndex, id: \.self) { index in
+                        cell(items[index])
                             .frame(maxWidth: .infinity)
                     }
-                    if rowEnd - rowStart < cols {
-                        ForEach(0..<(cols - (rowEnd - rowStart)), id: \.self) { _ in
+                    if row.endIndex - row.startIndex < cols {
+                        ForEach(0..<(cols - (row.endIndex - row.startIndex)), id: \.self) { _ in
                             Color.clear.frame(maxWidth: .infinity)
                         }
                     }
@@ -658,9 +671,11 @@ struct BrowseView: View {
     @State private var browseAppearStartedAt: CFAbsoluteTime?
     @State private var browseFirstPaintLogged = false
 
-    private var inlineDetailPriceCacheTaskKey: String {
-        let ids = inlineDetailCards.map(\.masterCardId).joined(separator: "|")
-        return "\(currentBrand.rawValue)#\(ids)"
+    private var inlineDetailPriceCacheTaskKey: Int {
+        var h = Hasher()
+        h.combine(currentBrand.rawValue)
+        for card in inlineDetailCards { h.combine(card.masterCardId) }
+        return h.finalize()
     }
 
     private func perfLog(_ message: String) {
@@ -669,11 +684,13 @@ struct BrowseView: View {
 #endif
     }
 
-    private var collectionOwnershipSnapshotKey: String {
-        collectionItems
-            .map { "\($0.cardID)|\($0.quantity)" }
-            .sorted()
-            .joined(separator: ",")
+    private var collectionOwnershipSnapshotKey: Int {
+        var h = Hasher()
+        for item in collectionItems {
+            h.combine(item.cardID)
+            h.combine(item.quantity)
+        }
+        return h.finalize()
     }
 
     private var safeColumnCount: Int {
@@ -2384,18 +2401,23 @@ private struct BrowseSetsTabContent: View {
         }
     }
 
-    private var collectionProgressTaskKey: String {
-        let snapshot = collectionItems
-            .map { "\($0.cardID)|\($0.quantity)" }
-            .sorted()
-            .joined(separator: ",")
-        return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(snapshot)"
+    private var collectionProgressTaskKey: Int {
+        var h = Hasher()
+        h.combine(services.brandSettings.selectedCatalogBrand.rawValue)
+        for item in collectionItems {
+            h.combine(item.cardID)
+            h.combine(item.quantity)
+        }
+        return h.finalize()
     }
 
-    private var setLogoPrefetchTaskKey: String {
-        filteredSets
-            .map { "\($0.setCode)|\($0.logoSrc)" }
-            .joined(separator: "§")
+    private var setLogoPrefetchTaskKey: Int {
+        var h = Hasher()
+        for set in filteredSets {
+            h.combine(set.setCode)
+            h.combine(set.logoSrc)
+        }
+        return h.finalize()
     }
 
     var body: some View {
@@ -2738,17 +2760,15 @@ private struct BrowsePokemonTabContent: View {
         return subtypeRows.filter { normalizedBrowseSearchText($0).contains(normalizedQuery) }
     }
 
-    private var ownedDexTaskKey: String {
-        let collectionSnapshot = collectionItems
-            .filter { $0.quantity > 0 }
-            .map { "\($0.cardID)|\($0.quantity)" }
-            .sorted()
-            .joined(separator: ",")
-        let setSnapshot = services.cardData.sets
-            .map(\.setCode)
-            .sorted()
-            .joined(separator: ",")
-        return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(setSnapshot)#\(collectionSnapshot)"
+    private var ownedDexTaskKey: Int {
+        var h = Hasher()
+        h.combine(services.brandSettings.selectedCatalogBrand.rawValue)
+        for item in collectionItems where item.quantity > 0 {
+            h.combine(item.cardID)
+            h.combine(item.quantity)
+        }
+        for set in services.cardData.sets { h.combine(set.setCode) }
+        return h.finalize()
     }
 
     private var hideCollectedToggleTitle: String {

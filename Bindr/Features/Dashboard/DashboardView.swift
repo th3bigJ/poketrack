@@ -1112,20 +1112,19 @@ struct DashboardView: View {
         return palette[index % palette.count]
     }
 
-    private var dashboardDataSignature: String {
-        let brand = activeBrand.rawValue
-        let itemPart = visibleCollectionItems.map {
-            [
-                $0.cardID,
-                "\($0.quantity)",
-                $0.variantKey,
-                $0.itemKind,
-                $0.gradingCompany ?? "-",
-                $0.sealedStatus ?? "-"
-            ].joined(separator: "|")
-        }.joined(separator: "§")
-        let linePart = recentLines.map { cleaned($0.cardID) ?? $0.id.uuidString }.joined(separator: "§")
-        return "\(brand)|\(itemPart)|\(linePart)"
+    private var dashboardDataSignature: Int {
+        var h = Hasher()
+        h.combine(activeBrand.rawValue)
+        for item in visibleCollectionItems {
+            h.combine(item.cardID)
+            h.combine(item.quantity)
+            h.combine(item.variantKey)
+            h.combine(item.itemKind)
+            h.combine(item.gradingCompany)
+            h.combine(item.sealedStatus)
+        }
+        for line in recentLines { h.combine(line.id) }
+        return h.finalize()
     }
 
     private func dashboardActivityRow(line: LedgerLine) -> some View {

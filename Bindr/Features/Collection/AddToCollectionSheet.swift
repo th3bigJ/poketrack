@@ -62,6 +62,7 @@ struct AddToCollectionSheet: View {
     @State private var occurredAt: Date = Date()
 
     @State private var errorMessage: String?
+    @State private var showPaywall = false
 
     private var currencyCode: String {
         switch services.priceDisplay.currency {
@@ -176,6 +177,9 @@ struct AddToCollectionSheet: View {
             }
         }
         .tint(headerButtonColor)
+        .sheet(isPresented: $showPaywall) {
+            PaywallSheet().environment(services)
+        }
     }
 
     private func dismissDecimalKeyboard() {
@@ -317,6 +321,9 @@ struct AddToCollectionSheet: View {
             errorMessage = "Enter a unit price."
         } catch AddToCollectionValidation.invalidPrice {
             errorMessage = "Enter a valid unit price."
+        } catch CollectionLedgerError.freeTierLimitReached {
+            errorMessage = CollectionLedgerError.freeTierLimitReached.errorDescription
+            showPaywall = true
         } catch {
             errorMessage = error.localizedDescription
         }

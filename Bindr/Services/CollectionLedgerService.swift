@@ -1,13 +1,19 @@
 import Foundation
 import SwiftData
 
+enum CollectionFreeTier {
+    static let maxItems = 25
+}
+
 /// Creates ledger lines, collection rows, and cost lots for purchases (and future sales).
 @MainActor
 final class CollectionLedgerService {
     private let modelContext: ModelContext
+    private let store: StoreKitService
 
-    init(modelContext: ModelContext) {
+    init(modelContext: ModelContext, store: StoreKitService) {
         self.modelContext = modelContext
+        self.store = store
     }
 
     /// Records acquiring single cards (raw or graded): bought, from a pack, trade in, or gift.
@@ -37,6 +43,13 @@ final class CollectionLedgerService {
         boughtFrom: String?
     ) throws {
         guard quantity > 0 else { return }
+        if !store.isPremium {
+            let existing = try modelContext.fetch(FetchDescriptor<CollectionItem>())
+            let isNewStack = !existing.contains { $0.cardID == cardID && $0.variantKey == variantKey && $0.itemKind == (gradingCompany != nil ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue) && $0.gradingCompany == gradingCompany && $0.grade == grade }
+            if isNewStack && existing.count >= CollectionFreeTier.maxItems {
+                throw CollectionLedgerError.freeTierLimitReached
+            }
+        }
 
         let isGraded = gradingCompany != nil
         let productKind = isGraded ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue
@@ -509,6 +522,13 @@ final class CollectionLedgerService {
         occurredAt: Date = Date()
     ) throws {
         guard quantity > 0 else { return }
+        if !store.isPremium {
+            let existing = try modelContext.fetch(FetchDescriptor<CollectionItem>())
+            let isNewStack = !existing.contains { $0.cardID == cardID && $0.itemKind == ProductKind.sealedProduct.rawValue && $0.sealedProductId == sealedProductId }
+            if isNewStack && existing.count >= CollectionFreeTier.maxItems {
+                throw CollectionLedgerError.freeTierLimitReached
+            }
+        }
 
         let description = productName.trimmingCharacters(in: .whitespacesAndNewlines)
         let line = LedgerLine(
@@ -860,6 +880,7 @@ enum CollectionLedgerError: LocalizedError {
     case notSealedProductStack
     case invalidQuantity
     case insufficientQuantity
+    case freeTierLimitReached
 
     var errorDescription: String? {
         switch self {
@@ -871,6 +892,8 @@ enum CollectionLedgerError: LocalizedError {
             return "Quantity must be at least 1."
         case .insufficientQuantity:
             return "You don't have that many copies in this stack."
+        case .freeTierLimitReached:
+            return "Free users can store up to \(CollectionFreeTier.maxItems) unique cards or products. Upgrade to Premium for an unlimited collection!"
         }
     }
 }

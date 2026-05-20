@@ -137,8 +137,10 @@ struct CollectView: View {
         return false
     }
 
-    private var sealedProductsSignature: String {
-        services.sealedProducts.products.map { "\($0.id)" }.joined(separator: ",")
+    private var sealedProductsSignature: Int {
+        var h = Hasher()
+        for p in services.sealedProducts.products { h.combine(p.id) }
+        return h.finalize()
     }
 
     private var wishlistedSealedCollectionCardIDs: Set<String> {
@@ -696,9 +698,15 @@ struct CollectView: View {
         visibleCollectionItems.compactMap { cardsByCardID[$0.cardID] }
     }
 
-    private var collectionSignature: String {
-        let brandKey = activeBrand.rawValue
-        return visibleCollectionItems.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§") + "|" + brandKey
+    private var collectionSignature: Int {
+        var h = Hasher()
+        h.combine(activeBrand.rawValue)
+        for item in visibleCollectionItems {
+            h.combine(item.cardID)
+            h.combine(item.variantKey)
+            h.combine(item.quantity)
+        }
+        return h.finalize()
     }
 
     private func resolveCollectionCards() async {
@@ -742,7 +750,18 @@ struct CollectView: View {
 
     private func refreshCollectionFeed() {
         let filtered = filteredCollectionItemsForSelectedType
+        let filteredIDs = filtered.map(\.id)
+        let previousIDs = collectionFilteredItemsForSelectedTypeCache.map(\.id)
+
         collectionFilteredItemsForSelectedTypeCache = filtered
+
+        if filteredIDs == previousIDs && !collectionDisplayedItems.isEmpty {
+            // Only prices or card metadata changed — keep the current scroll position
+            // and just refresh the cards array so cells render updated data.
+            collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+            return
+        }
+
         let initialEnd = min(Self.collectionInitialBatchSize, filtered.count)
         collectionDisplayedItems = Array(filtered.prefix(initialEnd))
         collectionNextIndex = initialEnd
@@ -984,9 +1003,11 @@ struct CollectView: View {
         indexedFilteredWishlistItemsForSelectedType.compactMap { wishlistCardsByID[$0.item.cardID] }
     }
 
-    private var wishlistSignature: String {
-        let brandKey = activeBrand.rawValue
-        return visibleWishlistItems.map { $0.cardID }.joined(separator: "§") + "|" + brandKey
+    private var wishlistSignature: Int {
+        var h = Hasher()
+        h.combine(activeBrand.rawValue)
+        for item in visibleWishlistItems { h.combine(item.cardID) }
+        return h.finalize()
     }
 
     private func resolveWishlistCards() async {
@@ -1173,16 +1194,22 @@ struct CollectView: View {
         indexedFilteredTradeListItems.compactMap { tradeListCardsByID[$0.item.cardID] }
     }
 
-    private var tradeListSignature: String {
-        let brandKey = activeBrand.rawValue
-        return visibleTradeListItems.map { $0.cardID }.joined(separator: "§") + "|" + brandKey
+    private var tradeListSignature: Int {
+        var h = Hasher()
+        h.combine(activeBrand.rawValue)
+        for item in visibleTradeListItems { h.combine(item.cardID) }
+        return h.finalize()
     }
 
-    private var tradeListSyncSignature: String {
-        tradeListItems
-            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)|\($0.notes)" }
-            .sorted()
-            .joined(separator: ";")
+    private var tradeListSyncSignature: Int {
+        var h = Hasher()
+        for item in tradeListItems {
+            h.combine(item.cardID)
+            h.combine(item.variantKey)
+            h.combine(item.quantity)
+            h.combine(item.notes)
+        }
+        return h.finalize()
     }
 
     private func resolveTradeListCards() async {

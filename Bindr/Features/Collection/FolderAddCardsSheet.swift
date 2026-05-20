@@ -35,8 +35,6 @@ struct FolderAddCardsSheet: View {
 
     private var brand: TCGBrand { services.brandSettings.selectedCatalogBrand }
 
-    private var ownedIDs: Set<String> { Set(collectionItems.map(\.cardID)) }
-
     private var inFolderKeys: Set<String> {
         Set((folder.items ?? []).map { "\($0.cardID)|\($0.variantKey)" })
     }
@@ -180,12 +178,6 @@ struct FolderAddCardsSheet: View {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(.white, services.theme.accentColor)
-                    .background(Circle().fill(Color.white))
-                    .padding(6)
-            } else if ownedIDs.contains(card.masterCardId) {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 18, weight: .semibold))
-                    .foregroundStyle(.white, .green)
                     .background(Circle().fill(Color.white))
                     .padding(6)
             }

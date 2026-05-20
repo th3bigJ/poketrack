@@ -43,6 +43,7 @@ struct CardScannerView: View {
     /// Quantity selected per variant for each scanned card (resultID -> variantKey -> qty).
     @State private var selectedVariantQuantitiesByResultID: [UUID: [String: Int]] = [:]
     @State private var showOnePieceDebugSheet = false
+    @State private var showScanLimitPaywall = false
 
     /// Show ONE PIECE debug affordance when the active scanner brand is ONE PIECE.
     private var showOnePieceDebugButton: Bool {
@@ -143,16 +144,21 @@ struct CardScannerView: View {
                         .padding(.horizontal, 16)
 
                         if let err = viewModel.lastErrorMessage {
-                            Text(err)
-                                .font(.subheadline.weight(.medium))
-                                .foregroundStyle(.white)
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 10)
-                                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                                .padding(.horizontal, 24)
-                                .padding(.top, 4)
-                                .transition(.move(edge: .top).combined(with: .opacity))
+                            Button {
+                                if viewModel.hasReachedScanLimit { showScanLimitPaywall = true }
+                            } label: {
+                                Text(err)
+                                    .font(.subheadline.weight(.medium))
+                                    .foregroundStyle(.white)
+                                    .multilineTextAlignment(.center)
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 10)
+                                    .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                    .padding(.horizontal, 24)
+                                    .padding(.top, 4)
+                            }
+                            .buttonStyle(.plain)
+                            .transition(.move(edge: .top).combined(with: .opacity))
                         }
 
                         Spacer(minLength: 0)
@@ -393,7 +399,7 @@ struct CardScannerView: View {
         }
         .ignoresSafeArea()
         .onAppear {
-            viewModel.configure(cardDataService: services.cardData)
+            viewModel.configure(cardDataService: services.cardData, storeService: services.store)
             viewModel.autoCaptureEnabled = (captureMode == .auto)
             let selectedBrand = services.brandSettings.selectedCatalogBrand
             viewModel.scanBrand = selectedBrand
@@ -416,6 +422,9 @@ struct CardScannerView: View {
         .onDisappear { viewModel.stopSession() }
         .animation(.spring(response: 0.45, dampingFraction: 0.82), value: viewModel.scanResults.isEmpty)
         .animation(.easeOut(duration: 0.2), value: viewModel.lastErrorMessage)
+        .sheet(isPresented: $showScanLimitPaywall) {
+            PaywallSheet().environment(services)
+        }
         .background(Color.black.ignoresSafeArea())
         .interactiveDismissDisabled(true)
     }

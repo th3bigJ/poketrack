@@ -520,7 +520,7 @@ final class AppServices {
     func setupCollectionLedger(modelContext: ModelContext) {
         socialSyncModelContext = modelContext
         if collectionLedger == nil {
-            collectionLedger = CollectionLedgerService(modelContext: modelContext)
+            collectionLedger = CollectionLedgerService(modelContext: modelContext, store: store)
         }
         Task { await syncSocialLibrariesIfPossible() }
     }

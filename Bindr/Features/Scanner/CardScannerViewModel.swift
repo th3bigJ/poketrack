@@ -10,6 +10,10 @@ enum ScanState {
     case scanning
 }
 
+enum FreeTierScanLimit {
+    static let maxScansPerMonth = 20
+}
+
 struct CardQuad {
     let topLeft: CGPoint
     let topRight: CGPoint
@@ -78,6 +82,45 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     // MARK: - Private
 
     private var cardDataService: CardDataService?
+    private var storeService: StoreKitService?
+
+    // MARK: - Monthly scan tracking (free tier)
+
+    private static let scanCountDefaultsKey = "bindr_free_scan_count"
+    private static let scanMonthDefaultsKey = "bindr_free_scan_month"
+
+    /// How many scans the free user has used this calendar month.
+    var monthlyScanCount: Int {
+        let storedMonth = UserDefaults.standard.string(forKey: Self.scanMonthDefaultsKey) ?? ""
+        if storedMonth != Self.currentMonthKey { return 0 }
+        return UserDefaults.standard.integer(forKey: Self.scanCountDefaultsKey)
+    }
+
+    var hasReachedScanLimit: Bool {
+        guard !cachedIsPremium else { return false }
+        return monthlyScanCount >= FreeTierScanLimit.maxScansPerMonth
+    }
+
+    /// Snapshot of `StoreKitService.isPremium` written on the main actor when `configure` is called or checked.
+    private var cachedIsPremium: Bool = false
+
+    private static var currentMonthKey: String {
+        let c = Calendar.current
+        let now = Date()
+        return "\(c.component(.year, from: now))-\(c.component(.month, from: now))"
+    }
+
+    private func incrementMonthlyScanCount() {
+        let month = Self.currentMonthKey
+        let storedMonth = UserDefaults.standard.string(forKey: Self.scanMonthDefaultsKey) ?? ""
+        if storedMonth != month {
+            UserDefaults.standard.set(month, forKey: Self.scanMonthDefaultsKey)
+            UserDefaults.standard.set(1, forKey: Self.scanCountDefaultsKey)
+        } else {
+            let current = UserDefaults.standard.integer(forKey: Self.scanCountDefaultsKey)
+            UserDefaults.standard.set(current + 1, forKey: Self.scanCountDefaultsKey)
+        }
+    }
     private let photoOutput = AVCapturePhotoOutput()
     private let videoOutput = AVCaptureVideoDataOutput()
     private let videoQueue = DispatchQueue(label: "scanner.video", qos: .userInitiated)
@@ -110,8 +153,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
     // MARK: - Setup
 
-    func configure(cardDataService: CardDataService) {
+    @MainActor func configure(cardDataService: CardDataService, storeService: StoreKitService) {
         self.cardDataService = cardDataService
+        self.storeService = storeService
+        self.cachedIsPremium = storeService.isPremium
     }
 
     fileprivate static let defaultOnePieceDebugBlurb = """
@@ -199,6 +244,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     /// Fires the still photo pipeline manually.
     func capturePhoto() {
         guard session.isRunning, !isCapturing, !requiresBrandSelection else { return }
+        if hasReachedScanLimit {
+            lastErrorMessage = "You've used all \(FreeTierScanLimit.maxScansPerMonth) free scans this month. Upgrade to Premium for unlimited scanning."
+            return
+        }
         lastErrorMessage = nil
         isCapturing = true
         autoCaptureFrameCount = 0  // reset so we don't double-fire
@@ -1047,6 +1096,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             }
             let result = ScanResult(card: top, alternativeCards: alternatives)
             scanResults.insert(result, at: 0)
+            incrementMonthlyScanCount()
             self.setOnePieceDebug(debugHeader + finalSearchSection + "\nResult: OK — match accepted.")
             onMatch?(result)
         }
@@ -1142,6 +1192,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             }
             let result = ScanResult(card: top, alternativeCards: alternatives)
             scanResults.insert(result, at: 0)
+            incrementMonthlyScanCount()
             onMatch?(result)
         }
     }

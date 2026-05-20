@@ -443,7 +443,7 @@ struct SealedProductGridCell: View {
     }
 
     private var showsFooter: Bool {
-        (gridOptions.showSetName && !(product.series ?? "").isEmpty)
+        (gridOptions.showSetName && !(product.setName ?? "").isEmpty)
             || gridOptions.showSetID
             || gridOptions.showPricing
     }
@@ -528,8 +528,8 @@ struct SealedProductGridCell: View {
 
             if showsFooter {
                 VStack(spacing: 3) {
-                    if gridOptions.showSetName, let series = product.series, !series.isEmpty {
-                        Text(series)
+                    if gridOptions.showSetName, let setName = product.setName, !setName.isEmpty {
+                        Text(setName)
                             .font(.caption2)
                             .lineLimit(1)
                             .multilineTextAlignment(.center)
