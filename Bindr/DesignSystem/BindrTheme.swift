@@ -126,13 +126,13 @@ extension View {
 struct BindrPageBackground: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var accent
-    @Environment(AppServices.self) private var services
+    @Environment(AppServices.self) private var services: AppServices?
 
     var body: some View {
         ZStack {
             Color(uiColor: .systemBackground)
 
-            if services.theme.backgroundGlowEnabled {
+            if services?.theme.backgroundGlowEnabled ?? true {
                 LinearGradient(
                     colors: [
                         accent.opacity(colorScheme == .dark ? 0.075 : 0.065),

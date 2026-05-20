@@ -11,8 +11,8 @@ struct TradesView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var showsCompletedTrades = false
-    @State private var isSuggestedExpanded = true
-    @State private var isOpenTradesExpanded = true
+    @State private var isSuggestedExpanded = false
+    @State private var isOpenTradesExpanded = false
 
     private var currentUserID: UUID? {
         if case .signedIn(let uid, _) = services.socialAuth.authState { return uid }
@@ -234,6 +234,11 @@ struct TradesView: View {
         do {
             trades = try await services.trade.fetchMyTrades()
             await loadProfilesForTrades()
+            
+            // Auto-expand open trades if there are active trades to see; otherwise collapse to keep vertical space free for the Trade Wall
+            withAnimation(.easeInOut(duration: 0.25)) {
+                isOpenTradesExpanded = !openTrades.isEmpty
+            }
             errorMessage = nil
         } catch is CancellationError {
         } catch let error as URLError where error.code == .cancelled {

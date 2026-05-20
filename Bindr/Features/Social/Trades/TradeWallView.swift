@@ -2,6 +2,8 @@ import SwiftUI
 
 struct TradeWallView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.bindrAccent) private var accent
+    @Environment(\.colorScheme) private var colorScheme
     @Binding var navigationPath: NavigationPath
 
     @State private var cardEntries: [WallEntry] = []
@@ -63,7 +65,7 @@ struct TradeWallView: View {
                     case .cards:
                         if cardEntries.isEmpty {
                             emptyState(
-                                icon: "square.grid.2x2",
+                                icon: "square.stack.3d.up",
                                 title: "No cards on the trade wall",
                                 message: "Cards your friends have on their trade list will appear here."
                             )
@@ -112,35 +114,29 @@ struct TradeWallView: View {
         }
     }
 
-    // MARK: - Tab picker
-
     private var tabPicker: some View {
         HStack(spacing: 0) {
             ForEach(Tab.allCases, id: \.self) { tab in
-                Button {
-                    Haptics.selectionChanged()
-                    withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
-                        selectedTab = tab
+                TradeWallTabButton(
+                    tab: tab,
+                    isSelected: selectedTab == tab,
+                    accent: accent,
+                    action: {
+                        Haptics.selectionChanged()
+                        withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
+                            selectedTab = tab
+                        }
                     }
-                } label: {
-                    HStack(spacing: 5) {
-                        Image(systemName: tab == .cards ? "square.stack.3d.up" : "shippingbox")
-                            .font(.system(size: 11, weight: .semibold))
-                        Text(tab.rawValue)
-                            .font(.system(size: 13, weight: .semibold))
-                    }
-                    .foregroundStyle(selectedTab == tab ? .white : .secondary)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 9)
-                    .background(selectedTab == tab ? services.theme.accentColor : .clear, in: Capsule())
-                    .contentShape(Capsule())
-                }
-                .buttonStyle(.plain)
+                )
             }
         }
         .padding(4)
-        .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
-        .overlay { Capsule().stroke(Color.primary.opacity(0.06), lineWidth: 1) }
+        .background(.ultraThinMaterial, in: Capsule())
+        .overlay {
+            Capsule()
+                .stroke(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08), lineWidth: 0.5)
+        }
+        .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.25 : 0.06), radius: 4, x: 0, y: 2)
     }
 
     // MARK: - Grids
@@ -157,9 +153,10 @@ struct TradeWallView: View {
                     setName: entry.setName
                 )
                 .overlay(alignment: .topTrailing) {
-                    ProfileAvatarView(profile: entry.owner, size: 20)
-                        .overlay(Circle().stroke(Color(uiColor: .systemBackground), lineWidth: 1.5))
-                        .padding(4)
+                    ProfileAvatarView(profile: entry.owner, size: 22)
+                        .overlay(Circle().stroke(Color.primary.opacity(0.12), lineWidth: 1.0))
+                        .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
+                        .padding(6)
                 }
             }
             .buttonStyle(CardCellButtonStyle())
@@ -181,9 +178,10 @@ struct TradeWallView: View {
                     isWishlisted: false
                 )
                 .overlay(alignment: .topTrailing) {
-                    ProfileAvatarView(profile: entry.owner, size: 20)
-                        .overlay(Circle().stroke(Color(uiColor: .systemBackground), lineWidth: 1.5))
-                        .padding(4)
+                    ProfileAvatarView(profile: entry.owner, size: 22)
+                        .overlay(Circle().stroke(Color.primary.opacity(0.12), lineWidth: 1.0))
+                        .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
+                        .padding(6)
                 }
             }
             .buttonStyle(CardCellButtonStyle())
@@ -194,20 +192,36 @@ struct TradeWallView: View {
     // MARK: - Empty state
 
     private func emptyState(icon: String, title: String, message: String) -> some View {
-        VStack(spacing: 12) {
-            Image(systemName: icon)
-                .font(.system(size: 36, weight: .light))
-                .foregroundStyle(Color.secondary.opacity(0.4))
-            Text(title)
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundStyle(Color.secondary)
-            Text(message)
-                .font(.system(size: 13))
-                .foregroundStyle(Color.secondary.opacity(0.7))
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 32)
+        VStack(spacing: 16) {
+            ZStack {
+                Circle()
+                    .fill(accent.opacity(0.08))
+                    .frame(width: 56, height: 56)
+                Image(systemName: icon)
+                    .font(.system(size: 22, weight: .semibold))
+                    .foregroundStyle(accent.gradient)
+            }
+            
+            VStack(spacing: 6) {
+                Text(title)
+                    .font(.system(size: 15, weight: .bold))
+                    .foregroundStyle(.primary)
+                Text(message)
+                    .font(.system(size: 13))
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 24)
+            }
         }
+        .padding(.vertical, 36)
         .frame(maxWidth: .infinity)
+        .background(.thinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08), lineWidth: 0.5)
+        }
+        .padding(.horizontal, 16)
         .padding(.top, 40)
     }
 
@@ -279,5 +293,31 @@ struct TradeWallView: View {
             theirCards: [item],
             myCards: []
         ))
+    }
+}
+
+// MARK: - TradeWallTabButton
+
+struct TradeWallTabButton: View {
+    let tab: TradeWallView.Tab
+    let isSelected: Bool
+    let accent: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                Image(systemName: tab == .cards ? "square.stack.3d.up" : "shippingbox")
+                    .font(.system(size: 11, weight: .semibold))
+                Text(tab.rawValue)
+                    .font(.system(size: 13, weight: .bold))
+            }
+            .foregroundStyle(isSelected ? .white : .primary.opacity(0.60))
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 9)
+            .background(isSelected ? accent.gradient : Color.clear.gradient, in: Capsule())
+            .contentShape(Capsule())
+        }
+        .buttonStyle(.plain)
     }
 }
