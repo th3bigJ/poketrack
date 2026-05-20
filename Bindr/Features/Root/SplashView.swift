@@ -83,20 +83,35 @@ struct SplashView: View {
                     onGetStarted()
                 }) {
                     Text("GET STARTED  →")
-                        .font(.system(size: 15, weight: .bold))
-                        .foregroundColor(.white)
+                        .font(.system(size: 14, weight: .bold))
+                        .tracking(1.5)
+                        .foregroundColor(isDark ? .white : .primary)
                         .frame(maxWidth: .infinity)
                         .frame(height: 54)
-                        .background(accent.gradient)
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .background(.ultraThinMaterial)
+                        .clipShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
                         .overlay {
-                            // Subtle white specular shimmer animation looping across the accent gradient
+                            RoundedRectangle(cornerRadius: 27, style: .continuous)
+                                .strokeBorder(
+                                    LinearGradient(
+                                        colors: [
+                                            .white.opacity(isDark ? 0.35 : 0.45),
+                                            .white.opacity(isDark ? 0.08 : 0.15)
+                                        ],
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    ),
+                                    lineWidth: 1.0
+                                )
+                        }
+                        .overlay {
+                            // Subtle white specular shimmer animation looping across the glass button
                             GeometryReader { geo in
                                 let size = geo.size
                                 Rectangle()
                                     .fill(
                                         LinearGradient(
-                                            colors: [.clear, .white.opacity(0.35), .clear],
+                                            colors: [.clear, .white.opacity(isDark ? 0.20 : 0.15), .clear],
                                             startPoint: .leading,
                                             endPoint: .trailing
                                         )
@@ -104,15 +119,16 @@ struct SplashView: View {
                                     .rotationEffect(.degrees(25))
                                     .offset(x: shimmerPos * size.width * 1.5)
                                     .onAppear {
-                                        withAnimation(.linear(duration: 3).repeatForever(autoreverses: false)) {
+                                        withAnimation(.linear(duration: 3.5).repeatForever(autoreverses: false)) {
                                             shimmerPos = 1
                                         }
                                     }
+                                    .allowsHitTesting(false)
                             }
-                            .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                            .mask(RoundedRectangle(cornerRadius: 27, style: .continuous))
                         }
-                        // Premium glowing drop shadow matching user's selected accent color
-                        .shadow(color: accent.opacity(0.32), radius: 8, x: 0, y: 4)
+                        // Premium glowing glass drop shadow
+                        .shadow(color: Color.black.opacity(isDark ? 0.15 : 0.05), radius: 6, x: 0, y: 3)
                 }
                 .buttonStyle(.plain)
                 .padding(.horizontal, 24)

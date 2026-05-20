@@ -53,11 +53,6 @@ struct SocialFeatureCard: View {
             }
 
             Spacer(minLength: 0)
-
-            // Borderless numeric metadata — no pill, no monospaced design.
-            Text(String(format: "%02d", index))
-                .font(.system(size: 12, weight: .medium))
-                .foregroundStyle(.secondary)
         }
         .padding(.horizontal, BindrSpacing.md)
         .padding(.vertical, BindrSpacing.md)

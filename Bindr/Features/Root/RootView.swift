@@ -136,7 +136,6 @@ struct RootView: View {
         hasRevealedLaunchWordmark
             && services.isReady
             && services.isLaunchCatalogPipelineComplete
-            && !showBrandOnboarding
     }
 
     private var launchProgressState: LaunchProgressState? {
@@ -359,7 +358,6 @@ struct RootView: View {
         .animation(.easeInOut(duration: 0.35), value: isLaunchSequenceComplete)
         .onChange(of: isLaunchSequenceComplete) { _, complete in
             if complete {
-                evaluatePremiumUpsellIfNeeded()
                 // Insert mainContent one frame after the fade animation begins so
                 // SwiftUI builds the full tab view tree off the critical animation path.
                 Task { @MainActor in
@@ -367,6 +365,16 @@ struct RootView: View {
                     // before building the full mainContent view tree.
                     try? await Task.sleep(for: .milliseconds(16))
                     hasInsertedMainContent = true
+                    
+                    // Trigger onboarding popups after dashboard has been revealed and settled
+                    if !services.brandSettings.hasCompletedBrandOnboarding {
+                        try? await Task.sleep(for: .milliseconds(500))
+                        withAnimation {
+                            showBrandOnboarding = true
+                        }
+                    } else {
+                        evaluatePremiumUpsellIfNeeded()
+                    }
                 }
             }
         }
@@ -419,24 +427,6 @@ struct RootView: View {
                 .environment(services)
                 .bindrTheme(accent: services.theme.accentColor)
         }
-        .onChange(of: services.brandSettings.hasCompletedBrandOnboarding) { _, completed in
-            // Only show brand onboarding after splash has been fully dismissed
-            if !showSplash && !completed {
-                showBrandOnboarding = true
-            }
-        }
-        .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
-            guard !services.brandSettings.hasCompletedBrandOnboarding else { return }
-            // Give the startup .task a tick to run and set showSplash = true
-            // before we evaluate it — they race on the first launch.
-            try? await Task.sleep(nanoseconds: 100_000_000) // 100 ms grace period
-            // Now actively wait for splash to be dismissed before presenting onboarding
-            while showSplash {
-                try? await Task.sleep(nanoseconds: 50_000_000) // poll every 50 ms
-            }
-            await Task.yield()
-            showBrandOnboarding = true
-        }
         // MARK: - Splash Overlay
         .overlay {
             if showSplash {
@@ -445,10 +435,6 @@ struct RootView: View {
                         showSplash = false
                         // Mark this version as shown
                         UserDefaults.standard.set(currentAppVersion, forKey: splashLastVersionKey)
-                        // Show existing brand onboarding if not completed
-                        if !services.brandSettings.hasCompletedBrandOnboarding {
-                            showBrandOnboarding = true
-                        }
                     }
                 })
                 .transition(.opacity)
@@ -1139,6 +1125,9 @@ struct RootView: View {
         // Only mark as evaluated (and potentially show) once the full launch
         // sequence is done — never over the BINDR wordmark or splash screen.
         guard isLaunchSequenceComplete else { return }
+        // Ensure onboarding is completed before evaluating automated upsell popups
+        guard services.brandSettings.hasCompletedBrandOnboarding else { return }
+        
         hasEvaluatedPremiumUpsellThisSession = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
             // Re-check at fire time — nothing modal should be on screen.
@@ -1155,8 +1144,12 @@ struct RootView: View {
     /// persists forever after firing, so this never repeats — users won't
     /// be re-onboarded every cold launch.
     fileprivate func applyOnboardingReplayMigrationIfNeeded() {
-        services.brandSettings.hasCompletedBrandOnboarding = false
-        showSplash = true
+        let migrationKey = Self.onboardingReplayMigrationKey
+        if !UserDefaults.standard.bool(forKey: migrationKey) {
+            services.brandSettings.hasCompletedBrandOnboarding = false
+            showSplash = true
+            UserDefaults.standard.set(true, forKey: migrationKey)
+        }
     }
 }
 

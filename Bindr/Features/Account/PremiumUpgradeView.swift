@@ -113,6 +113,7 @@ struct PremiumUpgradeView: View {
             VStack(alignment: .leading, spacing: 8) {
                 benefitRow(label: "Unlimited card scans")
                 benefitRow(label: "Unlimited collection & binders")
+                benefitRow(label: "Unlimited custom decks")
                 benefitRow(label: "Full price history & trends")
                 benefitRow(label: "Offline database access")
                 benefitRow(label: "Priority trade notifications")

@@ -176,7 +176,7 @@ struct OnboardingPremiumView: View {
     private var featureBullets: some View {
         LazyVGrid(columns: [GridItem(.flexible(), spacing: 12), GridItem(.flexible(), spacing: 12)], spacing: 12) {
             featureGridItem(sfIcon: "camera.viewfinder",  title: "Unlimited Scans",    desc: "Scan cards instantly")
-            featureGridItem(sfIcon: "books.vertical",     title: "Unlimited Binders",  desc: "No collection limits")
+            featureGridItem(sfIcon: "books.vertical",     title: "Unlimited Binders & Decks", desc: "No collection or deck limits")
             featureGridItem(sfIcon: "chart.line.uptrend.xyaxis", title: "Price History", desc: "Track market trends")
             pokeballGridItem()
             featureGridItem(sfIcon: "arrow.left.arrow.right", title: "Priority Trades", desc: "Faster local matches")
