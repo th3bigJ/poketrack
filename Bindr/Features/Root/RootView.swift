@@ -136,6 +136,7 @@ struct RootView: View {
         hasRevealedLaunchWordmark
             && services.isReady
             && services.isLaunchCatalogPipelineComplete
+            && !showSplash
     }
 
     private var launchProgressState: LaunchProgressState? {
@@ -325,6 +326,16 @@ struct RootView: View {
                     }
                 }
                 .transition(.opacity)
+            } else if showSplash {
+                // Welcome splash screen for first-run or new version updates
+                SplashView(onGetStarted: {
+                    withAnimation(.easeInOut(duration: 0.35)) {
+                        showSplash = false
+                        // Mark this version as shown
+                        UserDefaults.standard.set(currentAppVersion, forKey: splashLastVersionKey)
+                    }
+                })
+                .transition(.opacity)
             } else if services.isReady {
                 // Returning-user path: wordmark stays put, progress block fades
                 // in beneath it the moment the daily refresh starts work.
@@ -427,20 +438,7 @@ struct RootView: View {
                 .environment(services)
                 .bindrTheme(accent: services.theme.accentColor)
         }
-        // MARK: - Splash Overlay
-        .overlay {
-            if showSplash {
-                SplashView(onGetStarted: {
-                    withAnimation(.easeInOut(duration: 0.35)) {
-                        showSplash = false
-                        // Mark this version as shown
-                        UserDefaults.standard.set(currentAppVersion, forKey: splashLastVersionKey)
-                    }
-                })
-                .transition(.opacity)
-                .zIndex(100)
-            }
-        }
+
         .task {
             // ── Cheap, immediate work ─────────────────────────────────────
             // Replay-onboarding migration: run before we read brandSettings
