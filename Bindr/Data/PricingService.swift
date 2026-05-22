@@ -68,38 +68,93 @@ final class PricingService {
     private func loadPokemonCardPricing(for card: Card) async -> CardPricingEntry? {
         let keys = Self.pricingLookupKeys(for: card)
         for key in keys {
-            guard let data = await CatalogStore.shared.fetchCardPrice(cardKey: key, brand: .pokemon) else { continue }
-            if let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: data) { return entry }
-            if let obj = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-               let subData = try? JSONSerialization.data(withJSONObject: obj),
-               let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: subData) { return entry }
+            let data = await CatalogStore.shared.fetchCardPrice(cardKey: key, brand: .pokemon)
+            if let entry = Self.decodePokemonCardPrice(data) { return entry }
+        }
+        if let entry = await Self.matchPokemonCardPriceInSet(for: card, candidateKeys: keys) {
+            return entry
         }
         // card_prices not yet populated (e.g. daily bucket not synced yet). Build a synthetic entry
         // from the most recent daily point in price_history_points so pricing still returns a value.
         for key in keys {
             let pts = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, cardKey: key)
-            let dailyPts = pts.filter { $0.periodType == "daily" }
-            guard !dailyPts.isEmpty else { continue }
-            // Keep only the latest period_key per variant/grade combination.
-            var latestByVariantGrade: [String: CatalogStore.PriceHistoryPoint] = [:]
-            for pt in dailyPts {
-                let k = "\(pt.variant)/\(pt.grade)"
-                if latestByVariantGrade[k] == nil || pt.periodKey > latestByVariantGrade[k]!.periodKey {
-                    latestByVariantGrade[k] = pt
-                }
-            }
-            // Build {"scrydex": {"holofoil": {"raw": 1.23, "psa10": 9.99}}} — same shape as syncPricingBuckets writes.
-            var scrydexDict: [String: [String: Double]] = [:]
-            for (_, pt) in latestByVariantGrade {
-                scrydexDict[pt.variant, default: [:]][pt.grade == "raw" ? "raw" : pt.grade] = pt.price
-            }
-            guard !scrydexDict.isEmpty,
-                  let json = try? JSONSerialization.data(withJSONObject: ["scrydex": scrydexDict]),
-                  let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: json)
-            else { continue }
+            if let entry = Self.cardPricingEntry(fromDailyHistoryPoints: pts) { return entry }
+        }
+        let unifiedCandidates = Set(keys.map { Self.unifiedPricingCardKey($0) })
+        for setCode in Self.pricingSetCodesToQuery(for: card) {
+            let setPts = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, setCode: setCode)
+            let matchingPts = setPts.filter { unifiedCandidates.contains(Self.unifiedPricingCardKey($0.cardKey)) }
+            if let entry = Self.cardPricingEntry(fromDailyHistoryPoints: matchingPts) { return entry }
+        }
+        return nil
+    }
+
+    private static func pricingSetCodesToQuery(for card: Card) -> [String] {
+        var codes: [String] = []
+        func append(_ s: String) {
+            let raw = s.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            guard !raw.isEmpty else { return }
+            if !codes.contains(raw) { codes.append(raw) }
+            let normalized = BucketDateMath.normalizedSetCode(raw)
+            if !normalized.isEmpty, !codes.contains(normalized) { codes.append(normalized) }
+        }
+        append(card.setCode)
+        for key in pricingLookupKeys(for: card) {
+            guard let dash = key.lastIndex(of: "-") else { continue }
+            append(String(key[..<dash]))
+        }
+        return codes
+    }
+
+    private static func decodePokemonCardPrice(_ data: Data?) -> CardPricingEntry? {
+        guard let data else { return nil }
+        if let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: data) { return entry }
+        if let obj = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+           let subData = try? JSONSerialization.data(withJSONObject: obj),
+           let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: subData) {
             return entry
         }
         return nil
+    }
+
+    private static func matchPokemonCardPriceInSet(for card: Card, candidateKeys: [String]) async -> CardPricingEntry? {
+        let setCodes = Self.pricingSetCodesToQuery(for: card)
+        guard !setCodes.isEmpty else { return nil }
+        let unifiedCandidates = Set(candidateKeys.map { unifiedPricingCardKey($0) })
+        for setCode in setCodes {
+            let rows = await CatalogStore.shared.fetchCardPricesForSet(setCode: setCode, brand: .pokemon)
+            for row in rows {
+                guard unifiedCandidates.contains(unifiedPricingCardKey(row.cardKey)) else { continue }
+                if let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: row.json) { return entry }
+                if let obj = try? JSONSerialization.jsonObject(with: row.json) as? [String: Any],
+                   let subData = try? JSONSerialization.data(withJSONObject: obj),
+                   let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: subData) {
+                    return entry
+                }
+            }
+        }
+        return nil
+    }
+
+    private static func cardPricingEntry(fromDailyHistoryPoints points: [CatalogStore.PriceHistoryPoint]) -> CardPricingEntry? {
+        let dailyPts = points.filter { $0.periodType == "daily" }
+        guard !dailyPts.isEmpty else { return nil }
+        var latestByVariantGrade: [String: CatalogStore.PriceHistoryPoint] = [:]
+        for pt in dailyPts {
+            let k = "\(pt.variant)/\(pt.grade)"
+            if latestByVariantGrade[k] == nil || pt.periodKey > latestByVariantGrade[k]!.periodKey {
+                latestByVariantGrade[k] = pt
+            }
+        }
+        var scrydexDict: [String: [String: Double]] = [:]
+        for (_, pt) in latestByVariantGrade {
+            scrydexDict[pt.variant, default: [:]][pt.grade == "raw" ? "raw" : pt.grade] = pt.price
+        }
+        guard !scrydexDict.isEmpty,
+              let json = try? JSONSerialization.data(withJSONObject: ["scrydex": scrydexDict]),
+              let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: json)
+        else { return nil }
+        return entry
     }
 
     /// Keys to try for per-set pricing / history JSON lookups.

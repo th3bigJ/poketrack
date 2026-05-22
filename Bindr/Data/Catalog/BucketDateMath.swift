@@ -15,6 +15,19 @@ enum BucketDateMath {
         return String(cardId[..<dash])
     }
 
+    /// Collapses `me04` → `me4` so daily bucket set stems align with catalog `setCode`.
+    static func normalizedSetCode(_ setCode: String) -> String {
+        let lower = setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard let regex = try? NSRegularExpression(pattern: #"^([a-z]+)(\d+)$"#, options: []),
+              let m = regex.firstMatch(in: lower, range: NSRange(lower.startIndex..., in: lower)),
+              m.numberOfRanges == 3,
+              let r1 = Range(m.range(at: 1), in: lower),
+              let r2 = Range(m.range(at: 2), in: lower),
+              let n = Int(String(lower[r2]))
+        else { return lower }
+        return "\(String(lower[r1]))\(n)"
+    }
+
     static func isoWeekKey(from dateKey: String) -> String? {
         guard dateKey.count == 10 else { return nil }
         let parts = dateKey.split(separator: "-")

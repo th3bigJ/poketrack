@@ -33,10 +33,19 @@ struct MarketPricingSyncPhase {
         }
         if shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill {
             // Daily pricing buckets (up to 31) + sealed buckets (up to 31)
-            let missingDaily = await store.unprocessedBucketKeys(from: BucketDateMath.last31DailyKeys())
+            let dailyCandidates = BucketDateMath.last31DailyKeys()
+            var missingDaily = await store.unprocessedBucketKeys(from: dailyCandidates)
+            if forceRefresh {
+                let today = BucketDateMath.todayUTCKey()
+                if !missingDaily.contains(today) { missingDaily.append(today) }
+            }
             count += missingDaily.count
-            let candidateSealed = BucketDateMath.last31DailyKeys().map { "sealed/\($0)" }
-            let missingSealed = await store.unprocessedBucketKeys(from: candidateSealed)
+            let candidateSealed = dailyCandidates.map { "sealed/\($0)" }
+            var missingSealed = await store.unprocessedBucketKeys(from: candidateSealed)
+            if forceRefresh {
+                let todaySealed = "sealed/\(BucketDateMath.todayUTCKey())"
+                if !missingSealed.contains(todaySealed) { missingSealed.append(todaySealed) }
+            }
             count += missingSealed.count
         }
         if needsHistoryBackfill {
@@ -84,8 +93,8 @@ struct MarketPricingSyncPhase {
             }
             if enabledBrands.contains(.pokemon) {
                 downloaded += await syncPokemonMarketPricingFullRefresh(progress: progress)
-                downloaded += await syncPricingBuckets(progress: progress)
-                downloaded += await syncSealedPricingBuckets(progress: progress)
+                downloaded += await syncPricingBuckets(progress: progress, forceRefresh: forceRefresh)
+                downloaded += await syncSealedPricingBuckets(progress: progress, forceRefresh: forceRefresh)
                 if needsHistoryBackfill {
                     downloaded += await syncPricingHistoryBackfill(progress: progress)
                     try? await store.setMeta("pricing_history_backfill_v1", "1")
@@ -395,12 +404,17 @@ struct MarketPricingSyncPhase {
         return sum
     }
 
-    private func syncPricingBuckets(progress: CatalogSyncProgressReporter) async -> Int64 {
+    private func syncPricingBuckets(progress: CatalogSyncProgressReporter, forceRefresh: Bool = false) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
 
         let todayDateKey = BucketDateMath.todayUTCKey()
         let candidateDateKeys = BucketDateMath.last31DailyKeys()
-        let missingDateKeys = await store.unprocessedBucketKeys(from: candidateDateKeys)
+        var missingDateKeys = await store.unprocessedBucketKeys(from: candidateDateKeys)
+        // Today's bucket may already be marked processed (e.g. before a new set was added to R2).
+        // Force refresh must re-download it so `card_prices` picks up new cards like me4.
+        if forceRefresh, !missingDateKeys.contains(todayDateKey) {
+            missingDateKeys.append(todayDateKey)
+        }
         guard !missingDateKeys.isEmpty else { return 0 }
 
         await progress.setStatus("Downloading daily price data…")
@@ -466,6 +480,7 @@ struct MarketPricingSyncPhase {
         }
 
         for (setCode, cardMap) in todayPricing {
+            let storageSetCode = BucketDateMath.normalizedSetCode(setCode)
             var entries: [(cardKey: String, json: Data)] = []
             for (cardId, variants) in cardMap {
                 var scrydex: [String: [String: Double]] = [:]
@@ -482,14 +497,15 @@ struct MarketPricingSyncPhase {
                 entries.append((cardKey: cardId, json: json))
             }
             if !entries.isEmpty {
-                try? await store.upsertCardPrices(setCode: setCode, brand: .pokemon, entries: entries)
+                try? await store.upsertCardPrices(setCode: storageSetCode, brand: .pokemon, entries: entries)
             }
         }
 
         if !allPoints.isEmpty {
             let bySet = Dictionary(grouping: allPoints) { BucketDateMath.setCodeFromCardId($0.cardKey) }
             for (setCode, pts) in bySet {
-                try? await store.upsertPriceHistoryPoints(brand: .pokemon, setCode: setCode, points: pts)
+                let storageSetCode = BucketDateMath.normalizedSetCode(setCode)
+                try? await store.upsertPriceHistoryPoints(brand: .pokemon, setCode: storageSetCode, points: pts)
             }
         }
 
@@ -571,10 +587,14 @@ struct MarketPricingSyncPhase {
         return totalBytes
     }
 
-    private func syncSealedPricingBuckets(progress: CatalogSyncProgressReporter) async -> Int64 {
+    private func syncSealedPricingBuckets(progress: CatalogSyncProgressReporter, forceRefresh: Bool = false) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
         let candidateDailyKeys = BucketDateMath.last31DailyKeys().map { "sealed/\($0)" }
-        let missingDailyKeys = await store.unprocessedBucketKeys(from: candidateDailyKeys)
+        var missingDailyKeys = await store.unprocessedBucketKeys(from: candidateDailyKeys)
+        if forceRefresh {
+            let todaySealed = "sealed/\(BucketDateMath.todayUTCKey())"
+            if !missingDailyKeys.contains(todaySealed) { missingDailyKeys.append(todaySealed) }
+        }
         guard !missingDailyKeys.isEmpty else { return 0 }
 
         await progress.setStatus("Downloading sealed price data…")

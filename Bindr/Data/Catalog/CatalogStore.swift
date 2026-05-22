@@ -910,6 +910,11 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    struct CardPriceRow: Sendable {
+        let cardKey: String
+        let json: Data
+    }
+
     func fetchCardPrice(cardKey: String, brand: TCGBrand) async -> Data? {
         await withCheckedContinuation { continuation in
             readQueue.async {
@@ -926,6 +931,33 @@ final class CatalogStore: @unchecked Sendable {
                 let n = sqlite3_column_bytes(stmt, 0)
                 guard let p = sqlite3_column_blob(stmt, 0) else { continuation.resume(returning: nil); return }
                 continuation.resume(returning: Data(bytes: p, count: Int(n)))
+            }
+        }
+    }
+
+    func fetchCardPricesForSet(setCode: String, brand: TCGBrand) async -> [CardPriceRow] {
+        let normalizedSet = setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !normalizedSet.isEmpty else { return [] }
+        return await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: []); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT card_key, json FROM card_prices WHERE brand = ? AND set_code = ?;"
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: []); return
+                }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                normalizedSet.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                var rows: [CardPriceRow] = []
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    guard let keyC = sqlite3_column_text(stmt, 0) else { continue }
+                    let key = String(cString: keyC)
+                    let n = sqlite3_column_bytes(stmt, 1)
+                    guard let p = sqlite3_column_blob(stmt, 1) else { continue }
+                    rows.append(CardPriceRow(cardKey: key, json: Data(bytes: p, count: Int(n))))
+                }
+                continuation.resume(returning: rows)
             }
         }
     }
@@ -983,6 +1015,40 @@ final class CatalogStore: @unchecked Sendable {
                 } catch {
                     continuation.resume(throwing: error)
                 }
+            }
+        }
+    }
+
+    func fetchPriceHistoryPoints(brand: TCGBrand, setCode: String) async -> [PriceHistoryPoint] {
+        let normalizedSet = setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !normalizedSet.isEmpty else { return [] }
+        return await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: []); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT card_key, variant, grade, period_type, period_key, price FROM price_history_points WHERE brand = ? AND set_code = ? ORDER BY period_key ASC;"
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: []); return
+                }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                normalizedSet.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                var results: [PriceHistoryPoint] = []
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    func str(_ col: Int32) -> String {
+                        guard let c = sqlite3_column_text(stmt, col) else { return "" }
+                        return String(cString: c)
+                    }
+                    results.append(PriceHistoryPoint(
+                        cardKey: str(0),
+                        variant: str(1),
+                        grade: str(2),
+                        periodType: str(3),
+                        periodKey: str(4),
+                        price: sqlite3_column_double(stmt, 5)
+                    ))
+                }
+                continuation.resume(returning: results)
             }
         }
     }
