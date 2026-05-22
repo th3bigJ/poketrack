@@ -483,6 +483,41 @@ final class AppServices {
         requestDashboardMarketReload()
     }
 
+    /// Developer Tools: re-download pricing payloads from R2 (per-set prices, daily buckets, sealed prices, trend blobs).
+    func forcePricingRefreshFromSettings() async {
+        guard !isCatalogDownloadInProgress else { return }
+        pricing.clearSetPricingMemoryCache()
+        isCatalogDownloadInProgress = true
+        catalogDownloadShowsByteProgressUI = false
+        catalogDownloadMessage = "Refreshing pricing from R2…"
+        catalogDownloadStatus = "Preparing downloads…"
+        catalogDownloadProgress = 0
+        catalogDownloadDownloadedBytes = 0
+        catalogDownloadEstimatedTotalBytes = 0
+        await Task.yield()
+
+        let changed = await CatalogSyncCoordinator.shared.forcePricingRefresh(
+            enabledBrands: brandSettings.enabledBrands
+        ) { [weak self] snapshot in
+            guard let self else { return }
+            if snapshot.downloadedBytes > 0 {
+                self.catalogDownloadShowsByteProgressUI = true
+            }
+            self.catalogDownloadStatus = snapshot.status
+            self.catalogDownloadDownloadedBytes = snapshot.downloadedBytes
+            self.catalogDownloadEstimatedTotalBytes = max(snapshot.estimatedTotalBytes, snapshot.downloadedBytes)
+            self.catalogDownloadProgress = min(max(snapshot.fractionCompleted, 0), 1)
+        }
+
+        await sealedProducts.loadFromLocalIfAvailable()
+        await pricing.refreshFXRate()
+        requestDashboardMarketReload()
+
+        catalogDownloadProgress = 1
+        catalogDownloadStatus = changed ? "Pricing updated from R2." : "Pricing already up to date."
+        isCatalogDownloadInProgress = false
+    }
+
     /// Settings action: hard reset local catalog SQLite payloads for enabled brands, then fully re-download.
     func forceCatalogRedownloadFromSettings() async {
         guard !isCatalogDownloadInProgress else { return }

@@ -11,6 +11,7 @@ struct SettingsView: View {
             storageSection
             premiumSection
             socialSection
+            devToolsSection
             aboutSection
         }
         .listStyle(.insetGrouped)
@@ -115,6 +116,19 @@ struct SettingsView: View {
                     .environment(services)
             } label: {
                 Label("Notifications", systemImage: "bell.badge.fill")
+            }
+        }
+    }
+
+    // MARK: - Developer
+
+    private var devToolsSection: some View {
+        Section("Developer") {
+            NavigationLink {
+                DevToolsSettingsPage()
+                    .environment(services)
+            } label: {
+                Label("Developer Tools", systemImage: "hammer.fill")
             }
         }
     }
@@ -407,6 +421,52 @@ private struct DataSyncSettingsPage: View {
         case .iCloudAccountUnavailable:
             Text("You can still use the app offline, but CloudKit sync stays off until this device is signed into iCloud.")
         }
+    }
+}
+
+// MARK: - Developer Tools Page
+
+private struct DevToolsSettingsPage: View {
+    @Environment(AppServices.self) private var services
+
+    private var r2Configured: Bool {
+        AppConfiguration.r2BaseURL.host != "invalid.local"
+    }
+
+    var body: some View {
+        List {
+            Section {
+                Button {
+                    Task { await services.forcePricingRefreshFromSettings() }
+                } label: {
+                    HStack {
+                        Label("Refresh pricing from R2", systemImage: "arrow.clockwise.circle.fill")
+                        Spacer()
+                        if services.isCatalogDownloadInProgress {
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(
+                    !r2Configured
+                        || services.brandSettings.enabledBrands.isEmpty
+                        || services.isCatalogDownloadInProgress
+                )
+            } footer: {
+                if !r2Configured {
+                    Text("R2 is not configured in this build, so pricing cannot be downloaded.")
+                } else if !services.brandSettings.enabledBrands.isEmpty {
+                    Text("Re-downloads market pricing, daily price buckets, sealed product prices, and trend data from R2. This bypasses the usual daily 03:00 refresh schedule.")
+                } else {
+                    Text("Enable at least one card catalog in Settings before refreshing pricing.")
+                }
+            }
+        }
+        .listStyle(.insetGrouped)
+        .scrollContentBackground(.hidden)
+        .background(Color(uiColor: .systemGroupedBackground))
+        .navigationTitle("Developer Tools")
+        .navigationBarTitleDisplayMode(.large)
     }
 }
 

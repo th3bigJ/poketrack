@@ -254,6 +254,33 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         _ = await DailyBlobSyncPhase(session: session, store: store).syncIfNeeded(progress: progress, enabledBrands: enabledBrands, forceRefresh: true)
     }
 
+    /// Re-downloads market pricing, daily buckets, and trend blobs from R2 (skips the 03:00 schedule gate). Does not refresh card catalog JSON.
+    func forcePricingRefresh(
+        enabledBrands: Set<TCGBrand>,
+        progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)? = nil
+    ) async -> Bool {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return false }
+        guard !enabledBrands.isEmpty else { return false }
+        let store = CatalogStore.shared
+        try? await store.open()
+
+        let progress = CatalogSyncProgressReporter(handler: progressHandler)
+        await progress.setStatus("Refreshing pricing from R2…")
+
+        let pricingPhase = MarketPricingSyncPhase(session: session, store: store)
+        let blobPhase = DailyBlobSyncPhase(session: session, store: store)
+        let pricingCount = await pricingPhase.estimatedFileCount(enabledBrands: enabledBrands, forceRefresh: true)
+        let blobCount = await blobPhase.estimatedFileCount(enabledBrands: enabledBrands, forceRefresh: true)
+        await progress.addPlannedFiles(pricingCount + blobCount)
+
+        let downloaded: Int64 =
+            await pricingPhase.syncAllIfNeeded(progress: progress, enabledBrands: enabledBrands, forceRefresh: true) +
+            (await blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands, forceRefresh: true))
+
+        await progress.setStatus("Pricing refresh complete.")
+        return downloaded > 0
+    }
+
     // MARK: - Shared helpers (used by phase structs)
 
     static func fetchJSONWithETag(
