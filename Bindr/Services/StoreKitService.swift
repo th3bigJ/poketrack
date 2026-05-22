@@ -80,7 +80,7 @@ final class StoreKitService {
         switch result {
         case .success(let verification):
             guard case .verified(let t) = verification else { return }
-            if t.productID == AppConfiguration.premiumProductID {
+            if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
                 premiumEntitlement = true
             }
         case .userCancelled:

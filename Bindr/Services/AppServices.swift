@@ -355,7 +355,7 @@ final class AppServices {
             cardData.clearOnePieceBrowseMetadata()
         }
 
-        await sealedProducts.loadFromLocalIfAvailable()
+        await sealedProducts.reloadFromLocal()
 
         // Kick off essential asset downloads (set logos, symbols, pokémon art, sealed product images)
         // in the background. Fire-and-forget: does not block the bootstrap sequence.
@@ -428,7 +428,7 @@ final class AppServices {
             catalogDownloadProgress = 0.98
         }
 
-        await sealedProducts.loadFromLocalIfAvailable()
+        await sealedProducts.reloadFromLocal()
 
         // Force-recheck after catalog sync so any new sets, pokémon, or sealed products are fetched.
         essentialAssetsDownload.scheduleRecheck(
@@ -509,7 +509,7 @@ final class AppServices {
             self.catalogDownloadProgress = min(max(snapshot.fractionCompleted, 0), 1)
         }
 
-        await sealedProducts.loadFromLocalIfAvailable()
+        await sealedProducts.reloadFromLocal()
         await pricing.refreshFXRate()
         requestDashboardMarketReload()
 

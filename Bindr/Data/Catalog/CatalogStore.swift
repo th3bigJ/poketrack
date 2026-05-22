@@ -1309,6 +1309,24 @@ final class CatalogStore: @unchecked Sendable {
     }
 
     /// Bumps `fetched_at` without replacing the blob (used after HTTP `304 Not Modified`).
+    /// Resets `fetched_at` to epoch 0 so the daily freshness gate treats the blob as stale,
+    /// forcing re-download on the next sync even if the blob was already fetched today.
+    func staleDailyBlobFetchedAt(key: String) async {
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+            queue.async {
+                guard let db = self.db else { continuation.resume(); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                guard sqlite3_prepare_v2(db, "UPDATE daily_blobs SET fetched_at = 0 WHERE key = ?;", -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(); return
+                }
+                key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                _ = sqlite3_step(stmt)
+                continuation.resume()
+            }
+        }
+    }
+
     func touchDailyBlobFetchedAt(key: String) async throws {
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             queue.async {
@@ -1488,6 +1506,22 @@ final class CatalogStore: @unchecked Sendable {
                     if let cStr = sqlite3_column_text(stmt, 0) { processed.insert(String(cString: cStr)) }
                 }
                 continuation.resume(returning: candidates.filter { !processed.contains($0) })
+            }
+        }
+    }
+
+    func unmarkBucketProcessed(key: String) async {
+        await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+            queue.async {
+                guard let db = self.db else { continuation.resume(); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                guard sqlite3_prepare_v2(db, "DELETE FROM processed_pricing_buckets WHERE bucket_key = ?;", -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(); return
+                }
+                key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                _ = sqlite3_step(stmt)
+                continuation.resume()
             }
         }
     }

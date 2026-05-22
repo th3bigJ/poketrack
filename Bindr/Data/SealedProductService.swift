@@ -23,6 +23,12 @@ final class SealedProductService {
         await loadFromSQLiteDailyBlobs()
     }
 
+    /// Always reloads from SQLite, even if products are already in memory. Use this after a catalog
+    /// sync that may have updated the stored blob (e.g. version bump downloaded new products).
+    func reloadFromLocal() async {
+        await loadFromSQLiteDailyBlobs()
+    }
+
     func refreshFromNetworkAndStoreLocallyIfNeeded() async {
         // Always try SQLite first — daily sync populates it before the app opens.
         await loadFromSQLiteDailyBlobs()

@@ -357,10 +357,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         // re-fetching sealed products list, market trend, and per-set price trends.
         try? await store.setMeta("pricing_last_synced_at", "")
 
-        // Clear ETags for daily blobs so sealed products catalog re-downloads even if the
-        // pricing period gate was already satisfied today.
+        // Clear ETags and reset fetched_at for daily blobs so they re-download on next sync
+        // even if they were already fetched earlier today (the freshness gate checks fetched_at,
+        // not the ETag, so clearing the ETag alone is not enough).
         for key in [DailyBlobKey.pokedataEnglishPokemonProducts, DailyBlobKey.marketTrend, DailyBlobKey.priceTrends] {
             try? await store.setMeta("daily_blob_http_etag_" + key, "")
+            await store.staleDailyBlobFetchedAt(key: key)
         }
 
         // Clear backfill flags so any new sets added in this version get full weekly/monthly
@@ -368,6 +370,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         // in processed_pricing_buckets and are skipped; only new sets actually download.
         try? await store.setMeta("pricing_history_backfill_v1", "")
         try? await store.setMeta("sealed_pricing_history_backfill_v1", "")
+
+        // Unmark today's pricing buckets so the next sync re-fetches them, picking up any
+        // new cards or sealed products added in this catalog version.
+        let todayKey = BucketDateMath.todayUTCKey()
+        await store.unmarkBucketProcessed(key: todayKey)
+        await store.unmarkBucketProcessed(key: "sealed/\(todayKey)")
 
         try? await store.setMeta("catalog_version", String(remoteVersion))
     }
