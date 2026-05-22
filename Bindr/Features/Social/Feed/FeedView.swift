@@ -785,7 +785,7 @@ struct SocialAlertsSheet: View {
                 case .complete:
                     return "Trade marked complete"
                 case .cancelled:
-                    return "Trade was declined/cancelled"
+                    return iStartedTrade ? "You cancelled the trade" : "Trade partner cancelled the trade"
                 }
             }()
             return TradeAlertItem(

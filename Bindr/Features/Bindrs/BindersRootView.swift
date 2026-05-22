@@ -46,6 +46,10 @@ struct BindersRootView: View {
     @State private var gridResolvedURLs: [UUID: [URL?]] = [:]
     /// Cache of total value text resolved by grid cells.
     @State private var gridResolvedValues: [UUID: String] = [:]
+    
+    /// Stable grid cell frame captured at the exact moment of tapping.
+    /// Persistent across the entire presentation, preventing coordinate resetting or unmounting.
+    @State private var activeSourceFrame: CGRect = .zero
 
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
     private var visibleBinders: [Binder] {
@@ -87,11 +91,10 @@ struct BindersRootView: View {
             // Custom presentation overlay. Replaces ``fullScreenCover`` so
             // the cover can morph from its grid frame to the page area and
             // hand off to ``BinderDetailView``'s existing page-curl.
-            if let binder = presentedBinder,
-               let sourceFrame = binderCellFrames[binder.id] {
+            if let binder = presentedBinder {
                 BinderOpenContainer(
                     binder: binder,
-                    sourceFrame: sourceFrame,
+                    sourceFrame: activeSourceFrame,
                     peekingURLs: gridResolvedURLs[binder.id] ?? [nil, nil, nil],
                     valueText: gridResolvedValues[binder.id],
                     onDismissComplete: { finishBinderClose() },
@@ -258,6 +261,15 @@ struct BindersRootView: View {
     private func beginBinderOpen(_ binder: Binder) {
         guard presentedBinder == nil else { return }
         presentingBinderID = binder.id
+        
+        // Capture a stable, persistent grid frame snapshot at the exact moment of tap!
+        if let frame = binderCellFrames[binder.id] {
+            activeSourceFrame = frame
+        } else {
+            // Fallback to a safe screen frame if not resolved yet
+            activeSourceFrame = CGRect(x: 100, y: 200, width: 160, height: 230)
+        }
+        
         // Stagger the sweep slightly ahead of the morph so the user sees
         // the others moving as the tapped cover lifts off the table — the
         // spring duration matches what the user described (350-400ms).
@@ -517,11 +529,13 @@ struct BinderOpenContainer: View {
     /// Live centre point of the overlay cover, in the global coordinate
     /// space shared with ``sourceFrame`` and ``pageFrame``. Animated
     /// alongside ``coverScale`` to drive the position part of the morph.
-    @State private var coverCenter: CGPoint = .zero
+    /// Initialised to ``sourceFrame``'s midpoint (not .zero) so the cover
+    /// is never positioned at the top-left corner on its first render.
+    @State private var coverCenter: CGPoint
     /// Visibility of the overlay cover. Drops to 0 after the open morph
     /// (so the user starts seeing ``BinderDetailView``'s page 0) and rises
     /// back to 1 instantly when the close animation begins.
-    @State private var coverOpacity: Double = 1.0
+    @State private var coverOpacity: Double = 0.0
     /// Visibility of the underlying ``BinderDetailView``. Stays at 0 until
     /// the open morph is almost done, then fades in as the overlay cover
     /// fades out. This ensures the user only sees one binder at a time.
@@ -543,12 +557,46 @@ struct BinderOpenContainer: View {
     /// ``coverScale`` so the breath rides on top of the morph and stops
     /// instantly when the page-curl auto-advance fires.
     @State private var breathingScale: CGFloat = 1.0
+    /// Page frame captured the moment the open morph starts. Using a
+    /// snapshot here (rather than the live ``pageFrame``) prevents layout
+    /// changes during the header / stats-bar chrome reveal from shifting
+    /// the close-morph destination mid-animation.
+    @State private var stablePageFrame: CGRect = .zero
 
     /// Spring used for both the opening morph and the closing collapse.
     /// Tuned to the 350-400ms window the user described — fast enough to
     /// feel responsive but with enough overshoot to read as physical.
     private var morphAnimation: Animation {
         .spring(response: 0.4, dampingFraction: 0.82)
+    }
+
+    // MARK: Init
+
+    /// Designated init so we can seed ``coverCenter`` with the source
+    /// frame's midpoint rather than CGPoint.zero. This means the cover
+    /// overlay is NEVER at (0,0) on any render — even before
+    /// ``startOpenMorph`` has a chance to run — which eliminates the
+    /// "slides in from the top-left corner" glitch caused by animation
+    /// context leaking into the first state-change pass.
+    init(
+        binder: Binder,
+        sourceFrame: CGRect,
+        peekingURLs: [URL?],
+        valueText: String?,
+        onDismissComplete: @escaping () -> Void,
+        onStartClose: @escaping () -> Void
+    ) {
+        self.binder = binder
+        self.sourceFrame = sourceFrame
+        self.peekingURLs = peekingURLs
+        self.valueText = valueText
+        self.onDismissComplete = onDismissComplete
+        self.onStartClose = onStartClose
+        // Seed cover position at the grid cell so it is never at (0,0).
+        self._coverCenter = State(initialValue: CGPoint(
+            x: sourceFrame.midX,
+            y: sourceFrame.midY
+        ))
     }
 
     var body: some View {
@@ -571,7 +619,10 @@ struct BinderOpenContainer: View {
                 .animation(.easeOut(duration: 0.2), value: isClosing)
                 .animation(.easeOut(duration: 0.2), value: detailOpacity)
                 .onPreferenceChange(BinderPageFramePreferenceKey.self) { newFrame in
+                    guard !isClosing else { return }
                     guard newFrame != .zero else { return }
+                    guard newFrame.origin.y > 20, newFrame.width > 100, newFrame.height > 100 else { return }
+                    
                     pageFrame = newFrame
                     if !hasStartedOpen {
                         hasStartedOpen = true
@@ -621,7 +672,17 @@ struct BinderOpenContainer: View {
                     y: 2 + 18 * liftIntensity
                 )
                 .scaleEffect(coverScale * breathingScale, anchor: .center)
-                .position(x: coverCenter.x, y: coverCenter.y)
+                // coverCenter is stored in .global coordinates (same space
+                // as sourceFrame / pageFrame). Convert to the GeometryReader's
+                // LOCAL space by subtracting its global origin.  On most
+                // devices the origin is (0,0), but when the container is
+                // nested inside a safe-area-constrained parent the origin can
+                // be offset by the status-bar height, which causes the cover
+                // to appear shifted — typically toward the top-left corner.
+                .position(
+                    x: coverCenter.x - rootGeo.frame(in: .global).origin.x,
+                    y: coverCenter.y - rootGeo.frame(in: .global).origin.y
+                )
                 .opacity(coverOpacity)
                 .allowsHitTesting(false)
             }
@@ -665,24 +726,30 @@ struct BinderOpenContainer: View {
     /// This is the morph's actual destination — *not* the page frame
     /// itself. Some layouts (4×3) produce a near-square page area; we
     /// don't want the binder cover to morph into a square mid-flight.
+    ///
+    /// Once ``stablePageFrame`` is locked (at the start of the open morph),
+    /// we use that snapshot so chrome-reveal layout changes cannot shift
+    /// the destination while the animation is in flight.
     private var coverTargetFrame: CGRect {
-        guard pageFrame.width > 0, pageFrame.height > 0 else { return pageFrame }
+        // Prefer the locked stable frame once it has been set.
+        let base = stablePageFrame != .zero ? stablePageFrame : pageFrame
+        guard base.width > 0, base.height > 0 else { return base }
         let aspect = Self.coverAspect
-        let pageAspect = pageFrame.width / pageFrame.height
+        let pageAspect = base.width / base.height
         let width: CGFloat
         let height: CGFloat
         if pageAspect < aspect {
             // Page is narrower than A4 — width-limited.
-            width = pageFrame.width
+            width = base.width
             height = width / aspect
         } else {
             // Page is wider than (or equal to) A4 — height-limited.
-            height = pageFrame.height
+            height = base.height
             width = height * aspect
         }
         return CGRect(
-            x: pageFrame.midX - width / 2,
-            y: pageFrame.midY - height / 2,
+            x: base.midX - width / 2,
+            y: base.midY - height / 2,
             width: width,
             height: height
         )
@@ -709,14 +776,25 @@ struct BinderOpenContainer: View {
     /// settles, fade the overlay out so ``BinderDetailView``'s own page 0
     /// (which already shows an identical cover) takes over.
     private func startOpenMorph() {
-        // Snap to the source state (no animation). Scale + position both
-        // jump to the source frame so the very first frame the user sees
-        // is the cover sitting precisely on top of the grid cell it came
-        // from.
-        coverScale = sourceScale
-        coverCenter = sourceCenter
-        coverOpacity = 1
-        liftIntensity = 0
+        // Lock the page frame snapshot so that chrome-reveal layout
+        // changes (isChromeVisible transitions animating the header and
+        // stats bar) cannot shift the destination while the morph is
+        // in flight, and so that beginClose() always has a stable target.
+        stablePageFrame = pageFrame
+
+        // Snap to the source state with ALL animation disabled.
+        // Without disablesAnimations, any spring transaction still in
+        // flight from `withAnimation { isPresentingBinder = true }` in
+        // beginBinderOpen() causes the cover to slide in from (0,0)
+        // rather than jumping directly to the grid-cell frame.
+        var snapTx = Transaction(animation: nil)
+        snapTx.disablesAnimations = true
+        withTransaction(snapTx) {
+            coverScale = sourceScale
+            coverCenter = sourceCenter
+            coverOpacity = 1
+            liftIntensity = 0
+        }
 
         // Reduce-Motion path: the morph itself becomes a quick
         // cross-fade, no spring or scale travel. We still show the
@@ -739,9 +817,11 @@ struct BinderOpenContainer: View {
         }
 
         Task {
-            // Tiny wait to ensure the snap has settled in the next layout
-            // pass before we start the spring.
-            try? await Task.sleep(nanoseconds: 10_000_000)
+            // Wait one 60fps frame so the no-animation snap is committed
+            // to a render pass before the spring starts. Without this gap
+            // SwiftUI can batch the snap + spring into a single update,
+            // undoing the snap's disablesAnimations guard.
+            try? await Task.sleep(nanoseconds: 16_000_000)
             await MainActor.run {
                 withAnimation(morphAnimation) {
                     coverScale = 1.0
@@ -797,17 +877,22 @@ struct BinderOpenContainer: View {
         guard !isClosing else { return }
         onStartClose()
 
-        // Park the overlay cover at the page frame and bring it back to
-        // full opacity instantly — both the overlay and the detail view's
-        // page 0 are showing the same cover, so the user just sees one
-        // continuous cover at this rect.
-        coverScale = 1.0
-        coverCenter = pageCenter
-        coverOpacity = 1
-        detailOpacity = 0
-        breathingScale = 1.0
-        liftIntensity = 1
-        isClosing = true
+        // Re-show the overlay cover at the (stable) page-frame position
+        // with ALL animation disabled — same pattern as the open snap.
+        // Using stablePageFrame (via coverTargetFrame → pageCenter) means
+        // layout drift from the chrome-reveal animation cannot push the
+        // starting point of the collapse to (0, 0) or off-screen.
+        var snapTx = Transaction(animation: nil)
+        snapTx.disablesAnimations = true
+        withTransaction(snapTx) {
+            coverScale = 1.0
+            coverCenter = pageCenter   // reads stablePageFrame via coverTargetFrame
+            coverOpacity = 1
+            detailOpacity = 0
+            breathingScale = 1.0
+            liftIntensity = 1
+            isClosing = true
+        }
 
         // Reduce-Motion path: skip the spring collapse, just fade out.
         if reduceMotion {
@@ -827,8 +912,9 @@ struct BinderOpenContainer: View {
         }
 
         Task {
-            // Tiny wait to ensure visibility has settled.
-            try? await Task.sleep(nanoseconds: 20_000_000)
+            // Wait one 60fps frame so the no-animation snap is committed
+            // before the spring starts (same reasoning as startOpenMorph).
+            try? await Task.sleep(nanoseconds: 16_000_000)
             await MainActor.run {
                 withAnimation(morphAnimation) {
                     coverScale = sourceScale

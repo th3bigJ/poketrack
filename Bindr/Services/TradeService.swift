@@ -71,6 +71,20 @@ final class TradeService {
         }
     }
 
+    private struct TradeCancelPatch: Encodable {
+        let initiatorID: UUID
+        let receiverID: UUID
+        let status: String
+        let updatedAt: Date
+
+        enum CodingKeys: String, CodingKey {
+            case initiatorID = "initiator_id"
+            case receiverID = "receiver_id"
+            case status
+            case updatedAt = "updated_at"
+        }
+    }
+
     private struct TradeCounterPatch: Encodable {
         let initiatorID: UUID
         let receiverID: UUID
@@ -282,16 +296,32 @@ final class TradeService {
         markMutation()
     }
 
-    func cancelTrade(id: UUID) async throws {
+    func cancelTrade(id: UUID, counterpartID: UUID? = nil) async throws {
         let token = try signedInAccessToken()
-        let body = TradeStatusPatch(status: "cancelled", updatedAt: Date())
-        _ = try await execute(
-            path: "/rest/v1/trades?id=eq.\(id.uuidString)",
-            method: "PATCH",
-            accessToken: token,
-            body: body,
-            extraHeaders: ["Prefer": "return=minimal"]
-        ) as EmptyResponse
+        if let counterpartID, let uid = try? signedInUserID() {
+            let body = TradeCancelPatch(
+                initiatorID: uid,
+                receiverID: counterpartID,
+                status: "cancelled",
+                updatedAt: Date()
+            )
+            _ = try await execute(
+                path: "/rest/v1/trades?id=eq.\(id.uuidString)",
+                method: "PATCH",
+                accessToken: token,
+                body: body,
+                extraHeaders: ["Prefer": "return=minimal"]
+            ) as EmptyResponse
+        } else {
+            let body = TradeStatusPatch(status: "cancelled", updatedAt: Date())
+            _ = try await execute(
+                path: "/rest/v1/trades?id=eq.\(id.uuidString)",
+                method: "PATCH",
+                accessToken: token,
+                body: body,
+                extraHeaders: ["Prefer": "return=minimal"]
+            ) as EmptyResponse
+        }
         markMutation()
     }
 

@@ -494,7 +494,7 @@ struct TradeDetailView: View {
                 }
                 .buttonStyle(.plain)
             }
-            .overlay {
+            .background {
                 if isExpanded {
                     Color.black.opacity(0.001)
                         .onTapGesture {
@@ -539,7 +539,8 @@ struct TradeDetailView: View {
         isMutating = true
         defer { isMutating = false }
         do {
-            try await services.trade.cancelTrade(id: tradeID)
+            let counterpartID = tradeWithItems?.counterpartID(currentUserID: currentUserID ?? UUID())
+            try await services.trade.cancelTrade(id: tradeID, counterpartID: counterpartID)
             await refresh()
         } catch {
             errorMessage = error.localizedDescription

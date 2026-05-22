@@ -55,6 +55,19 @@ struct TradeBuilderView: View {
         self._myCards = State(initialValue: initialMyCards.map {
             NewTradeItemInput(cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
         })
+        
+        if let originalTrade {
+            if originalTrade.initiatorID == receiverID {
+                self._cashInitiatorText = State(initialValue: originalTrade.cashReceiver > 0 ? String(format: "%.2f", originalTrade.cashReceiver) : "")
+                self._cashReceiverText = State(initialValue: originalTrade.cashInitiator > 0 ? String(format: "%.2f", originalTrade.cashInitiator) : "")
+            } else {
+                self._cashInitiatorText = State(initialValue: originalTrade.cashInitiator > 0 ? String(format: "%.2f", originalTrade.cashInitiator) : "")
+                self._cashReceiverText = State(initialValue: originalTrade.cashReceiver > 0 ? String(format: "%.2f", originalTrade.cashReceiver) : "")
+            }
+        } else {
+            self._cashInitiatorText = State(initialValue: "")
+            self._cashReceiverText = State(initialValue: "")
+        }
     }
 
     private var isCounterFlow: Bool { existingTradeID != nil }
@@ -200,15 +213,17 @@ struct TradeBuilderView: View {
                 ForEach(theirCards) { item in
                     BuilderCardRow(item: item, cardLoader: { id in await services.cardData.loadCard(masterCardId: id) })
                 }
-                .onDelete { indices in
+                .onDelete(perform: isCounterFlow ? nil : { indices in
                     theirCards.remove(atOffsets: indices)
-                }
+                })
             }
-            Button {
-                isTheirCardPickerPresented = true
-            } label: {
-                Label("Add Cards from Their Collection", systemImage: "plus.circle")
-                    .font(.system(size: 14))
+            if !isCounterFlow {
+                Button {
+                    isTheirCardPickerPresented = true
+                } label: {
+                    Label("Add Cards from Their Collection", systemImage: "plus.circle")
+                        .font(.system(size: 14))
+                }
             }
 
             HStack {
@@ -216,16 +231,22 @@ struct TradeBuilderView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(.primary)
                 Spacer()
-                HStack(spacing: 4) {
-                    Text(services.priceDisplay.currency.symbol)
-                        .font(.system(size: 14))
+                if isCounterFlow {
+                    Text("\(services.priceDisplay.currency.symbol)\(cashReceiverText.isEmpty ? "0.00" : cashReceiverText)")
+                        .font(.system(size: 14, weight: .semibold, design: .monospaced))
                         .foregroundStyle(.secondary)
-                    TextField("0.00", text: $cashReceiverText)
-                        .keyboardType(.decimalPad)
-                        .focused($focusedCashField, equals: .theirs)
-                        .multilineTextAlignment(.trailing)
-                        .font(.system(size: 14))
-                        .frame(width: 90)
+                } else {
+                    HStack(spacing: 4) {
+                        Text(services.priceDisplay.currency.symbol)
+                            .font(.system(size: 14))
+                            .foregroundStyle(.secondary)
+                        TextField("0.00", text: $cashReceiverText)
+                            .keyboardType(.decimalPad)
+                            .focused($focusedCashField, equals: .theirs)
+                            .multilineTextAlignment(.trailing)
+                            .font(.system(size: 14))
+                            .frame(width: 90)
+                    }
                 }
             }
 

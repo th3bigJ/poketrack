@@ -209,7 +209,7 @@ struct BinderDetailView: View {
                 .opacity(isChromeVisible ? 1 : 0)
                 .offset(y: isChromeVisible ? 0 : -20)
                 .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
-            if !isEditing {
+            if !isEditing && (isSharedPublished || !likers.isEmpty) {
                 // Share/likers/weekly-change row — sits between the title
                 // and the binder pages so it doesn't crowd the editing
                 // surface. Tied to the same chrome flag as the header so
@@ -238,22 +238,26 @@ struct BinderDetailView: View {
                         // Once chrome lands the user is firmly in the
                         // detail view and the page-curl is theirs again.
                         .allowsHitTesting(isChromeVisible)
-                    if !layout.isFreeScroll {
-                        swipeHint
-                            .padding(.bottom, 8)
-                            // Hide the swipe hint until the chrome has
-                            // arrived too — there's nothing to swipe to
-                            // during the cover-hold so promising one is
-                            // a lie.
+                    
+                    VStack(spacing: 12) {
+                        if !layout.isFreeScroll {
+                            swipeHint
+                                // Hide the swipe hint until the chrome has
+                                // arrived too — there's nothing to swipe to
+                                // during the cover-hold so promising one is
+                                // a lie.
+                                .opacity(isChromeVisible ? 1 : 0)
+                                .animation(.easeOut(duration: 0.3), value: isChromeVisible)
+                        }
+                        
+                        bottomStatsBar
                             .opacity(isChromeVisible ? 1 : 0)
-                            .animation(.easeOut(duration: 0.3), value: isChromeVisible)
+                            .offset(y: isChromeVisible ? 0 : 20)
+                            .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
                     }
-                    Spacer(minLength: 0)
+                    .allowsHitTesting(isChromeVisible)
+                    .ignoresSafeArea(.container, edges: .bottom)
                 }
-                bottomStatsBar
-                    .opacity(isChromeVisible ? 1 : 0)
-                    .offset(y: isChromeVisible ? 0 : 20)
-                    .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
             }
         }
         .background(Color(uiColor: .systemBackground))
@@ -452,10 +456,6 @@ struct BinderDetailView: View {
 
     // MARK: - Bottom stats bar (Cards · Page Value · Binder Value)
 
-    /// Sits flush at the bottom of the binder page.
-    /// The top "Page X of Y / Page value" bar was removed — page value moved
-    /// here next to the binder-wide value, and "Add Card" lives on the
-    /// header's edit button, so we don't need the pill any more.
     private var bottomStatsBar: some View {
         HStack(spacing: 10) {
             statCell(value: "\(filledCardCount)", label: "CARDS")
@@ -465,29 +465,28 @@ struct BinderDetailView: View {
             statCell(value: formattedTotalValue, label: "BINDER VALUE")
         }
         .padding(.horizontal, 16)
-        .padding(.top, 12)
-        .padding(.bottom, 10)
+        .padding(.vertical, 16)
         .background(
-            ZStack {
-                Rectangle()
-                    .fill(.thinMaterial)
-                LinearGradient(
-                    colors: [
-                        Color.black.opacity(colorScheme == .dark ? 0.30 : 0.08),
-                        Color.black.opacity(colorScheme == .dark ? 0.12 : 0.03)
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
+            RoundedRectangle(cornerRadius: 38, style: .continuous)
+                .fill(.ultraThinMaterial)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 38, style: .continuous)
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(colorScheme == .dark ? 0.15 : 0.3),
+                                    Color.white.opacity(colorScheme == .dark ? 0.05 : 0.1)
+                                ],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            ),
+                            lineWidth: 1
+                        )
                 )
-            }
-                .ignoresSafeArea(edges: .bottom)
-                .overlay(alignment: .top) {
-                    Rectangle()
-                        .fill(Color.white.opacity(colorScheme == .dark ? 0.10 : 0.18))
-                        .frame(height: 1)
-                }
+                .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.25 : 0.1), radius: 15, x: 0, y: 8)
         )
-        .padding(.bottom, entryFromGrid ? bottomSafeAreaInset : 0)
+        .padding(.horizontal, 16)
+        .padding(.bottom, 16)
     }
 
     private func statCell(value: String, label: String) -> some View {
@@ -557,10 +556,8 @@ struct BinderDetailView: View {
                 }
             }
             .frame(width: pageSize.width, height: pageSize.height)
+            .offset(y: -40) // Shift binder up so it is perfectly balanced visually between header and floating bottom bar
             .background(
-                // Report the page-area frame in screen coordinates so the
-                // hosting screen (BindersRootView) can align its open/close
-                // morph overlay to the same rectangle.
                 GeometryReader { pgGeo in
                     Color.clear.preference(
                         key: BinderPageFramePreferenceKey.self,

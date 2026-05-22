@@ -227,24 +227,6 @@ struct CardActionMenu: View {
                     action: { onTradeAction?() }
                 ))
             }
-            
-            items.append(MenuItem(
-                label: "Edit Details",
-                subLabel: "Condition, price, and notes",
-                icon: "pencil.circle",
-                color: .primary.opacity(0.7),
-                action: { onEditAction?() }
-            ))
-            
-            if let onRemove = onRemoveFromCollection {
-                items.append(MenuItem(
-                    label: "Remove",
-                    subLabel: "Delete from collection",
-                    icon: "trash",
-                    color: Color(red: 0.9, green: 0.3, blue: 0.3),
-                    action: onRemove
-                ))
-            }
         } else {
             // BROWSE / SOCIAL MODE terminology
 

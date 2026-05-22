@@ -748,36 +748,84 @@ private struct CardBrowseDetailPage: View {
     }
 
     private func holdingSourceRow(_ line: HoldingLine) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .center, spacing: 10) {
-                infoBadge(label: line.directionTitle, tint: line.tint)
-                Text("Qty \(line.quantity)")
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(.secondary)
-                if let priceText = line.priceText {
-                    labelValueRow(label: "Price", value: priceText)
+        HStack(alignment: .center, spacing: 12) {
+            // Left Column: Details
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(spacing: 8) {
+                    infoBadge(label: line.directionTitle, tint: line.tint)
+                    Text("Qty \(line.quantity)")
+                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.primary)
                 }
-                Spacer(minLength: 8)
-                Text(line.date.formatted(date: .abbreviated, time: .omitted))
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(.secondary)
+                
+                HStack(spacing: 6) {
+                    Text(line.date.formatted(date: .abbreviated, time: .omitted))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    
+                    if let priceText = line.priceText {
+                        Text("•")
+                            .font(.caption)
+                            .foregroundStyle(.tertiary)
+                        Text(priceText)
+                            .font(.system(size: 12, weight: .semibold, design: .rounded))
+                            .foregroundStyle(CardDetailPalette.chartLine)
+                    }
+                }
             }
-
-            HStack(spacing: 12) {
-                Spacer(minLength: 8)
-                Button("Edit") { editingLine = line }
-                    .buttonStyle(.bordered)
-                    .tint(colorScheme == .dark ? .white : .black)
-                Button("Mark As") { dispositionLine = line }
-                    .buttonStyle(.borderedProminent)
-                    .tint(CardDetailPalette.chartLine)
+            
+            Spacer()
+            
+            // Right Side: Quick Action Icons or Compact Buttons
+            HStack(spacing: 8) {
+                Button {
+                    editingLine = line
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "pencil")
+                            .font(.system(size: 12, weight: .bold))
+                        Text("Edit")
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(
+                        Capsule()
+                            .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.05))
+                    )
+                    .foregroundStyle(.primary)
+                }
+                .buttonStyle(.plain)
+                
+                Button {
+                    dispositionLine = line
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "tag.fill")
+                            .font(.system(size: 12, weight: .bold))
+                        Text("Mark As")
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                    }
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(
+                        Capsule()
+                            .fill(CardDetailPalette.chartLine.opacity(0.12))
+                    )
+                    .foregroundStyle(CardDetailPalette.chartLine)
+                }
+                .buttonStyle(.plain)
             }
         }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
         .background(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(sectionInsetBackground.opacity(0.55))
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(sectionInsetBackground.opacity(0.4))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .stroke(Color.white.opacity(0.06), lineWidth: 1)
+                )
         )
     }
 
@@ -1668,6 +1716,18 @@ struct EditCollectionItemSheet: View {
                     TextField("Notes", text: $notes, axis: .vertical)
                         .lineLimit(3...8)
                 }
+                Section {
+                    Button(role: .destructive) {
+                        deleteItem()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("Delete from Collection")
+                                .bold()
+                            Spacer()
+                        }
+                    }
+                }
                 if let errorMessage {
                     Section {
                         Text(errorMessage)
@@ -1747,6 +1807,28 @@ struct EditCollectionItemSheet: View {
             line.item.gradingCompany = cardCondition == .graded ? gradingCompany.rawValue : nil
             line.item.grade = cardCondition == .graded ? "10" : nil
             line.item.notes = notes
+            try modelContext.save()
+            dismiss()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func deleteItem() {
+        errorMessage = nil
+        services.setupCollectionLedger(modelContext: modelContext)
+        guard let ledger = services.collectionLedger else {
+            errorMessage = "Collection isn’t ready. Try again."
+            return
+        }
+        do {
+            let selectedLots = (line.item.costLots ?? []).filter { line.lotIDs.contains($0.id) }
+            for lot in selectedLots {
+                if let ledgerLine = lot.sourceLedgerLine {
+                    try ledger.deleteLedgerLineAndReconcileCollection(ledgerLine)
+                }
+                modelContext.delete(lot)
+            }
             try modelContext.save()
             dismiss()
         } catch {
