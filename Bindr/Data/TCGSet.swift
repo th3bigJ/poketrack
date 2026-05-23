@@ -18,6 +18,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
     let releaseDate: String?
     let cardCountTotal: Int?
     let cardCountOfficial: Int?
+    let masterSetTotal: Int?
     let seriesName: String?
     let logoSrc: String
     let symbolSrc: String?
@@ -26,7 +27,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
     enum CodingKeys: String, CodingKey {
         case internalId = "id"
         case name, setKey, setAbbreviation, code, tcgdexId, releaseDate
-        case cardCountTotal, cardCountOfficial, seriesName
+        case cardCountTotal, cardCountOfficial, masterSetTotal, seriesName
         case logoSrc, symbolSrc
         case scannerEnExpansionNumber
     }
@@ -72,6 +73,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         releaseDate = try c.decodeIfPresent(String.self, forKey: .releaseDate)
         cardCountTotal = try c.decodeIfPresent(Int.self, forKey: .cardCountTotal)
         cardCountOfficial = try c.decodeIfPresent(Int.self, forKey: .cardCountOfficial)
+        masterSetTotal = try c.decodeIfPresent(Int.self, forKey: .masterSetTotal)
         seriesName = try c.decodeIfPresent(String.self, forKey: .seriesName)
         logoSrc = try c.decode(String.self, forKey: .logoSrc)
         symbolSrc = try c.decodeIfPresent(String.self, forKey: .symbolSrc)
@@ -89,6 +91,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         releaseDate: String?,
         cardCountTotal: Int?,
         cardCountOfficial: Int?,
+        masterSetTotal: Int? = nil,
         seriesName: String?,
         logoSrc: String,
         symbolSrc: String?,
@@ -103,6 +106,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         self.releaseDate = releaseDate
         self.cardCountTotal = cardCountTotal
         self.cardCountOfficial = cardCountOfficial
+        self.masterSetTotal = masterSetTotal
         self.seriesName = seriesName
         self.logoSrc = logoSrc
         self.symbolSrc = symbolSrc

@@ -1201,12 +1201,16 @@ private struct BinderPickerCardCell: View {
     let gridOptions: BrowseGridOptions
     let isSelected: Bool
 
+    @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
             CardGridCell(
                 card: entry.card,
+                services: services,
+                colorScheme: colorScheme,
                 gridOptions: gridOptions,
                 setName: setName,
                 footnote: entry.footnote

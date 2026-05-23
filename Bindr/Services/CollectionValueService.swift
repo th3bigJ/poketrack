@@ -75,6 +75,21 @@ final class CollectionValueService {
         static let date    = "collectionValue.lastKnown.date"
     }
 
+    /// Returns the persisted value if it was saved today, so startup can skip a full recompute.
+    func todayPersistedSnapshot() -> BrandSnapshot? {
+        let defaults = UserDefaults.standard
+        guard let savedDate = defaults.object(forKey: LastKnownValueKey.date) as? Date else { return nil }
+        let cal = Calendar.current
+        guard cal.isDateInToday(savedDate) else { return nil }
+        let total = defaults.double(forKey: LastKnownValueKey.total)
+        guard total > 0 else { return nil }
+        return BrandSnapshot(
+            total: total,
+            pokemon: defaults.double(forKey: LastKnownValueKey.pokemon),
+            onePiece: defaults.double(forKey: LastKnownValueKey.onePiece)
+        )
+    }
+
     /// Call this when the app moves to the background so the value is available on next launch.
     func persistLastKnownValue(_ snapshot: BrandSnapshot) {
         guard snapshot.total > 0 else { return }

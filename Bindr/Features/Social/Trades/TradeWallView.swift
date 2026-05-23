@@ -149,6 +149,8 @@ struct TradeWallView: View {
             } label: {
                 CardGridCell(
                     card: entry.card,
+                    services: services,
+                    colorScheme: colorScheme,
                     gridOptions: Self.gridOptions,
                     setName: entry.setName
                 )

@@ -4,6 +4,7 @@ import SwiftUI
 /// Owned cards — same grid pattern as Wishlist / Browse.
 struct CollectionListView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentCardAtIndex) private var presentCardAtIndex
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
@@ -131,7 +132,7 @@ struct CollectionListView: View {
                 let index = cards.firstIndex(where: { $0.masterCardId == card.masterCardId }) ?? 0
                 presentCardAtIndex(cards, index)
             } label: {
-                CardGridCell(card: card, footnote: collectionFootnote(for: item))
+                CardGridCell(card: card, services: services, colorScheme: colorScheme, footnote: collectionFootnote(for: item))
             }
             .buttonStyle(CardCellButtonStyle())
             .accessibilityLabel("\(card.cardName), \(item.quantity) copies, \(item.variantKey)")

@@ -88,6 +88,13 @@ struct RootView: View {
     @State private var suppressMorePathReset = false
     @FocusState private var searchFieldFocused: Bool
 
+    // Tabs are built lazily — only render their heavy content after first visit.
+    // Dashboard is always built immediately (it's the landing tab).
+    @State private var browseTabVisited = false
+    @State private var collectTabVisited = false
+    @State private var socialTabVisited = false
+    @State private var moreTabVisited = false
+
     // MARK: - Premium upsell auto-popup
     // Weekly cadence (per the product spec). The upsell defers itself until
     // the launch sequence finishes, the splash is dismissed, and the user is
@@ -556,55 +563,71 @@ struct RootView: View {
                         .tag(AppTab.dashboard)
 
                         NavigationStack(path: $browseNavigationPath) {
-                            BrowseTabView(
-                                filters: activeBrowseTabFiltersBinding,
-                                inlineDetailFilters: activeBrowseTabInlineFiltersBinding,
-                                gridOptions: activeBrowseGridOptionsBinding,
-                                filterResultCount: $browseFilterResultCount,
-                                filterEnergyOptions: $browseFilterEnergyOptions,
-                                filterRarityOptions: $browseFilterRarityOptions,
-                                filterTrainerTypeOptions: $browseFilterTrainerTypeOptions,
-                                inlineDetailFilterResultCount: $browseInlineDetailFilterResultCount,
-                                inlineDetailFilterEnergyOptions: $browseInlineDetailFilterEnergyOptions,
-                                inlineDetailFilterRarityOptions: $browseInlineDetailFilterRarityOptions,
-                                inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
-                                selectedTab: $browseHomeTab,
-                                inlineDetailRoute: $browseInlineDetailRoute,
-                                query: $universalQuery
-                            )
+                            if browseTabVisited {
+                                BrowseTabView(
+                                    filters: activeBrowseTabFiltersBinding,
+                                    inlineDetailFilters: activeBrowseTabInlineFiltersBinding,
+                                    gridOptions: activeBrowseGridOptionsBinding,
+                                    filterResultCount: $browseFilterResultCount,
+                                    filterEnergyOptions: $browseFilterEnergyOptions,
+                                    filterRarityOptions: $browseFilterRarityOptions,
+                                    filterTrainerTypeOptions: $browseFilterTrainerTypeOptions,
+                                    inlineDetailFilterResultCount: $browseInlineDetailFilterResultCount,
+                                    inlineDetailFilterEnergyOptions: $browseInlineDetailFilterEnergyOptions,
+                                    inlineDetailFilterRarityOptions: $browseInlineDetailFilterRarityOptions,
+                                    inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
+                                    selectedTab: $browseHomeTab,
+                                    inlineDetailRoute: $browseInlineDetailRoute,
+                                    query: $universalQuery
+                                )
+                            } else {
+                                Color.clear
+                            }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.browse.title, systemImage: AppTab.browse.symbolName) }
                         .tag(AppTab.browse)
 
                         NavigationStack(path: $collectionNavigationPath) {
-                            CollectView(
-                                selectedSegment: $collectSegment,
-                                selectedContentTypeTab: $collectContentTypeTab,
-                                selectedBrand: $collectSelectedBrand,
-                                collectionFilters: $collectFilters.collectionFilters,
-                                wishlistFilters: $collectFilters.wishlistFilters,
-                                tradeListFilters: $collectFilters.tradeListFilters,
-                                collectFilterEnergyOptions: $collectFilterEnergyOptions,
-                                collectFilterRarityOptions: $collectFilterRarityOptions,
-                                collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
-                                gridOptions: $collectFilters.gridOptions,
-                                folderGridOptions: $collectFilters.folderGridOptions
-                            )
+                            if collectTabVisited {
+                                CollectView(
+                                    selectedSegment: $collectSegment,
+                                    selectedContentTypeTab: $collectContentTypeTab,
+                                    selectedBrand: $collectSelectedBrand,
+                                    collectionFilters: $collectFilters.collectionFilters,
+                                    wishlistFilters: $collectFilters.wishlistFilters,
+                                    tradeListFilters: $collectFilters.tradeListFilters,
+                                    collectFilterEnergyOptions: $collectFilterEnergyOptions,
+                                    collectFilterRarityOptions: $collectFilterRarityOptions,
+                                    collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
+                                    gridOptions: $collectFilters.gridOptions,
+                                    folderGridOptions: $collectFilters.folderGridOptions
+                                )
+                            } else {
+                                Color.clear
+                            }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
                         .tag(AppTab.collect)
 
                         NavigationStack {
-                            SocialRootView()
+                            if socialTabVisited {
+                                SocialRootView()
+                            } else {
+                                Color.clear
+                            }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
                         .tag(AppTab.social)
 
                         NavigationStack(path: $moreNavigationPath) {
-                            MoreView(navigationPath: $moreNavigationPath)
+                            if moreTabVisited {
+                                MoreView(navigationPath: $moreNavigationPath)
+                            } else {
+                                Color.clear
+                            }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
                         .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
@@ -770,21 +793,39 @@ struct RootView: View {
             chromeScroll.configureForTab(selectedTab)
             collectSelectedBrand = services.brandSettings.selectedCatalogBrand
             if services.isReady {
-                services.setupWishlist(modelContext: modelContext)
-                services.setupCollectionLedger(modelContext: modelContext)
-                services.setupCollectionValue(modelContext: modelContext)
+                // Defer service setup by two frames so the dashboard's first paint
+                // isn't blocked by the SwiftData fetches inside setupWishlist /
+                // setupCollectionLedger (which trigger syncSocialLibrariesIfPossible).
+                Task { @MainActor in
+                    await Task.yield()
+                    await Task.yield()
+                    services.setupWishlist(modelContext: modelContext)
+                    services.setupCollectionLedger(modelContext: modelContext)
+                    services.setupCollectionValue(modelContext: modelContext)
+                }
             }
         }
         .onChange(of: services.isReady) { _, ready in
             if ready {
-                services.setupWishlist(modelContext: modelContext)
-                services.setupCollectionLedger(modelContext: modelContext)
-                services.setupCollectionValue(modelContext: modelContext)
+                Task { @MainActor in
+                    await Task.yield()
+                    await Task.yield()
+                    services.setupWishlist(modelContext: modelContext)
+                    services.setupCollectionLedger(modelContext: modelContext)
+                    services.setupCollectionValue(modelContext: modelContext)
+                }
             }
         }
         .onChange(of: selectedTab) { _, tab in
             Haptics.selectionChanged()
             chromeScroll.configureForTab(tab)
+            switch tab {
+            case .browse:  browseTabVisited = true
+            case .collect: collectTabVisited = true
+            case .social:  socialTabVisited = true
+            case .more:    moreTabVisited = true
+            case .dashboard: break
+            }
             if tab == .collect {
                 collectionNavigationPath = NavigationPath()
             }

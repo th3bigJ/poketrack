@@ -9,6 +9,11 @@ final class PricingService {
     private(set) var lastFXError: String?
 
     private var pricingCache: [String: (map: SetPricingMap, expiry: Date)] = [:]
+    /// Per-card pricing cache keyed by card key (lowercased). Populated by `prefetchPokemonCardPricing`.
+    /// `nil` value means "looked up and found nothing" so we skip the SQLite round-trip.
+    private var pokemonCardPricingCache: [String: CardPricingEntry?] = [:]
+    /// Set codes already loaded into `pokemonCardPricingCache`.
+    private var pokemonPricingPrefetchedSets: Set<String> = []
 
     private let session: URLSession
     private let fileManager: FileManager
@@ -28,6 +33,25 @@ final class PricingService {
         pricingCache.removeAll(keepingCapacity: false)
         historyCache.removeAll(keepingCapacity: false)
         trendsCache.removeAll(keepingCapacity: false)
+        pokemonCardPricingCache.removeAll(keepingCapacity: false)
+        pokemonPricingPrefetchedSets.removeAll(keepingCapacity: false)
+    }
+
+    /// Bulk-loads Pokémon card prices for the given set codes into an in-memory cache so that
+    /// subsequent per-card `pricing(for:)` calls are served from memory rather than SQLite.
+    /// Safe to call multiple times — already-fetched sets are skipped.
+    func prefetchPokemonCardPricing(forSetCodes setCodes: Set<String>) async {
+        let missing = setCodes.subtracting(pokemonPricingPrefetchedSets)
+        guard !missing.isEmpty else { return }
+        for setCode in missing {
+            let rows = await CatalogStore.shared.fetchCardPricesForSet(setCode: setCode, brand: .pokemon)
+            for row in rows {
+                let cacheKey = row.cardKey.lowercased()
+                guard pokemonCardPricingCache[cacheKey] == nil else { continue }
+                pokemonCardPricingCache[cacheKey] = Self.decodePokemonCardPrice(row.json)
+            }
+            pokemonPricingPrefetchedSets.insert(setCode)
+        }
     }
 
     private var cacheDirectory: URL {
@@ -67,6 +91,13 @@ final class PricingService {
 
     private func loadPokemonCardPricing(for card: Card) async -> CardPricingEntry? {
         let keys = Self.pricingLookupKeys(for: card)
+        // Fast path: return from pre-fetched cache (populated by `prefetchPokemonCardPricing`).
+        for key in keys {
+            let cacheKey = key.lowercased()
+            if let cached = pokemonCardPricingCache[cacheKey] {
+                return cached
+            }
+        }
         for key in keys {
             let data = await CatalogStore.shared.fetchCardPrice(cardKey: key, brand: .pokemon)
             if let entry = Self.decodePokemonCardPrice(data) { return entry }
@@ -561,8 +592,21 @@ final class PricingService {
         }
     }
 
+    /// Bulk-populate trendsCache from an already-fetched [setCode → raw blob] map (avoids N SQLite queries in the per-card loop).
+    func prefetchTrendsCache(from allTrendsData: [String: Data], brand: TCGBrand) {
+        for (setCode, blob) in allTrendsData {
+            let cacheKey = Self.historyTrendsCacheKey(setCode: setCode, catalogBrand: brand)
+            guard trendsCache[cacheKey] == nil else { continue }
+            guard let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] else { continue }
+            let typed = root.compactMapValues { $0 as? [String: Any] }
+            if !typed.isEmpty { trendsCache[cacheKey] = typed }
+        }
+    }
+
     private func loadSetTrendsMap(setCode: String, catalogBrand: TCGBrand) async -> [String: [String: Any]] {
         let cacheKey = Self.historyTrendsCacheKey(setCode: setCode, catalogBrand: catalogBrand)
+        // Check in-memory cache first — prefetchTrendsCache may have already populated it.
+        if let cached = trendsCache[cacheKey] { return cached }
         let blob = await CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: catalogBrand)
         if let blob,
            let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {

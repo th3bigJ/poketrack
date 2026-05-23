@@ -304,24 +304,39 @@ struct DashboardView: View {
         .background(dashboardBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
         .task(id: collectionItems.count) {
+            let t = ContinuousClock().now
             await computeLiveValue()
+            print("[Dashboard⏱] computeLiveValue: \(ContinuousClock().now - t) items=\(collectionItems.count)")
         }
         .task(id: backfillTrigger) {
-            guard services.collectionValue != nil else { return }
+            guard let svc = services.collectionValue else { return }
+            if liveSnapshot == nil, let persisted = svc.todayPersistedSnapshot() {
+                liveTotalGbp = persisted.total
+                livePokemonGbp = persisted.pokemon
+                liveOnePieceGbp = persisted.onePiece
+            }
             if liveSnapshot == nil {
                 await computeLiveValue()
             }
-            await services.collectionValue?.runBackfillIfNeeded(
+            let t = ContinuousClock().now
+            await svc.runBackfillIfNeeded(
                 collectionItems: collectionItems,
                 preferredTodaySnapshot: liveSnapshot
             )
+            print("[Dashboard⏱] runBackfillIfNeeded: \(ContinuousClock().now - t)")
         }
         .task(id: dashboardDataSignature) {
+            let t = ContinuousClock().now
             await resolveDashboardMetadata()
+            print("[Dashboard⏱] resolveDashboardMetadata: \(ContinuousClock().now - t)")
+            let t2 = ContinuousClock().now
             await resolveInsightsData()
+            print("[Dashboard⏱] resolveInsightsData: \(ContinuousClock().now - t2)")
         }
         .task {
+            let t = ContinuousClock().now
             await loadMarketTrendBlob()
+            print("[Dashboard⏱] loadMarketTrendBlob+movers: \(ContinuousClock().now - t)")
         }
         .task(id: services.dashboardMarketReloadToken) {
             guard services.dashboardMarketReloadToken > 0 else { return }
@@ -346,6 +361,13 @@ struct DashboardView: View {
         }
         .onAppear {
             selectedBrand = activeBrand
+            // Restore today's persisted value synchronously so the chart/value card
+            // shows a number from the first frame rather than a blank loading state.
+            if liveTotalGbp == nil, let persisted = services.collectionValue?.todayPersistedSnapshot() {
+                liveTotalGbp = persisted.total
+                livePokemonGbp = persisted.pokemon
+                liveOnePieceGbp = persisted.onePiece
+            }
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
@@ -1281,33 +1303,90 @@ struct DashboardView: View {
     private func computeLiveValue() async {
         isLoadingValue = true
         defer { isLoadingValue = false }
+        let _t0 = ContinuousClock().now
         await services.sealedProducts.loadFromLocalIfAvailable()
+        print("[Dashboard⏱]   sealedProducts.loadFromLocal: \(ContinuousClock().now - _t0)")
 
+        // Split active (non-opened, non-zero) items into sealed vs card, and by brand.
+        var sealedItems: [CollectionItem] = []
+        var pokemonCardItems: [CollectionItem] = []
+        var onePieceCardItems: [CollectionItem] = []
+
+        for item in collectionItems {
+            guard item.quantity > 0 else { continue }
+            guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
+            if sealedProductID(for: item) != nil {
+                sealedItems.append(item)
+            } else if !item.cardID.hasPrefix("sealed:") {
+                switch TCGBrand.inferredFromMasterCardId(item.cardID) {
+                case .pokemon:  pokemonCardItems.append(item)
+                case .onePiece: onePieceCardItems.append(item)
+                }
+            }
+        }
+
+        // Bulk-load card objects in two queries (one per brand) instead of N per-card SQLite calls.
+        async let pokemonCards = services.cardData.loadCards(
+            masterCardIDs: pokemonCardItems.map(\.cardID),
+            catalogBrand: .pokemon
+        )
+        async let onePieceCards = services.cardData.loadCards(
+            masterCardIDs: onePieceCardItems.map(\.cardID),
+            catalogBrand: .onePiece
+        )
+        let _t1 = ContinuousClock().now
+        let (pCards, opCards) = await (pokemonCards, onePieceCards)
+        print("[Dashboard⏱]   loadCards bulk: \(ContinuousClock().now - _t1) pokemon=\(pCards.count) onePiece=\(opCards.count)")
+
+        let cardByID: [String: Card] = Dictionary(
+            (pCards + opCards).map { ($0.masterCardId, $0) },
+            uniquingKeysWith: { first, _ in first }
+        )
+
+        // Pre-warm Pokémon pricing cache with one query per set instead of one per card.
+        let pokemonSetCodes = Set(pCards.flatMap { card -> [String] in
+            var codes = [card.setCode.lowercased()]
+            if let local = card.localId, !local.isEmpty {
+                let sc = card.setCode.lowercased()
+                let lid = local.uppercased()
+                if sc == "swsh12pt5" && lid.hasPrefix("GG") { codes.append("swsh12pt5gg") }
+                else if sc == "swsh45" && lid.hasPrefix("SV") { codes.append("swsh45sv") }
+                else if ["swsh12", "swsh11", "swsh10", "swsh9"].contains(sc) && lid.hasPrefix("TG") { codes.append("\(sc)tg") }
+            }
+            return codes
+        })
+        let _t2 = ContinuousClock().now
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: pokemonSetCodes)
+        print("[Dashboard⏱]   prefetchPokemonCardPricing: \(ContinuousClock().now - _t2) sets=\(pokemonSetCodes.count)")
+
+        let _t3 = ContinuousClock().now
         var totalValue = 0.0
         var pokemonValue = 0.0
         var onePieceValue = 0.0
         var totalCost = 0.0
 
+        // Tally cost basis across all active items.
         for item in collectionItems {
-            let quantity = max(item.quantity, 0)
-            guard quantity > 0 else { continue }
+            guard item.quantity > 0 else { continue }
             guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
+            totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)
+        }
 
-            totalCost += (item.purchasePrice ?? 0) * Double(quantity)
-
-            if let sealedProductID = sealedProductID(for: item),
-               let sealedPriceUSD = services.sealedProducts.marketPriceUSD(for: sealedProductID) {
-                let gbp = sealedPriceUSD * Double(quantity) * services.pricing.usdToGbp
-                totalValue += gbp
-
-                switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-                case .pokemon: pokemonValue += gbp
-                case .onePiece: onePieceValue += gbp
-                }
-                continue
+        // Sealed products — no card lookup needed.
+        for item in sealedItems {
+            guard let pid = sealedProductID(for: item),
+                  let priceUSD = services.sealedProducts.marketPriceUSD(for: pid) else { continue }
+            let gbp = priceUSD * Double(item.quantity) * services.pricing.usdToGbp
+            totalValue += gbp
+            switch TCGBrand.inferredFromMasterCardId(item.cardID) {
+            case .pokemon:  pokemonValue += gbp
+            case .onePiece: onePieceValue += gbp
             }
+        }
 
-            guard let card = await services.cardData.loadCard(masterCardId: item.cardID) else { continue }
+        // Card items — resolve from bulk-loaded dict, price using pre-warmed cache.
+        for item in pokemonCardItems + onePieceCardItems {
+            guard let card = cardByID[item.cardID] else { continue }
             let gradeKey: String = {
                 guard let company = item.gradingCompany else { return "raw" }
                 switch company.uppercased() {
@@ -1316,22 +1395,24 @@ struct DashboardView: View {
                 default: return "raw"
                 }
             }()
-            let usdPrice = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: item.variantKey, grade: gradeKey) ?? 0
-            let gbp = usdPrice * Double(quantity) * services.pricing.usdToGbp
+            let usdPrice = await services.pricing.usdPriceForVariantAndGrade(
+                for: card, variantKey: item.variantKey, grade: gradeKey
+            ) ?? 0
+            let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
             totalValue += gbp
-
             switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-            case .pokemon: pokemonValue += gbp
+            case .pokemon:  pokemonValue += gbp
             case .onePiece: onePieceValue += gbp
             }
         }
 
+        print("[Dashboard⏱]   pricing loop: \(ContinuousClock().now - _t3) cards=\(pokemonCardItems.count + onePieceCardItems.count)")
         liveTotalGbp = totalValue > 0 ? totalValue : nil
         livePokemonGbp = pokemonValue
         liveOnePieceGbp = onePieceValue
         totalCostBasis = totalCost
 
-        // Keep today's snapshot current throughout the day so the chart always shows live data
+        // Keep today's snapshot current throughout the day so the chart always shows live data.
         if let snap = liveSnapshot {
             let changed = services.collectionValue?.updateTodaySnapshot(snap) ?? false
             if changed { services.collectionValue?.aggregateCurrentPeriods() }
@@ -1359,16 +1440,26 @@ struct DashboardView: View {
             }
         }
 
-        let cardIDs = Set(visibleCollectionItems.map(\.cardID) + recentLines.compactMap { cleaned($0.cardID) })
+        let allCardIDs = Set(visibleCollectionItems.map(\.cardID) + recentLines.compactMap { cleaned($0.cardID) })
+        let missingIDs = allCardIDs.filter {
+            nextNames[$0] == nil || nextSets[$0] == nil || nextImages[$0] == nil
+        }
+        guard !missingIDs.isEmpty else { return }
 
-        for cardID in cardIDs {
-            guard nextNames[cardID] == nil || nextSets[cardID] == nil || nextImages[cardID] == nil else { continue }
-            guard let card = await services.cardData.loadCard(masterCardId: cardID) else { continue }
+        // Bulk-load all missing cards grouped by brand — one query per brand.
+        let pokemonIDs = missingIDs.filter { !$0.contains("::") && !$0.hasPrefix("sealed:") }
+        let onePieceIDs = missingIDs.filter { $0.contains("::") }
+
+        async let pokemonCards = services.cardData.loadCards(masterCardIDs: Array(pokemonIDs), catalogBrand: .pokemon)
+        async let onePieceCards = services.cardData.loadCards(masterCardIDs: Array(onePieceIDs), catalogBrand: .onePiece)
+        let allCards = await pokemonCards + onePieceCards
+
+        for card in allCards {
+            let cardID = card.masterCardId
             nextNames[cardID] = card.cardName
             if nextImages[cardID] == nil {
                 nextImages[cardID] = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
             }
-
             let brand = TCGBrand.inferredFromMasterCardId(cardID)
             if let setName = setsByBrandAndCode["\(brand.rawValue)|\(card.setCode)"] {
                 nextSets[cardID] = setName
@@ -1389,7 +1480,6 @@ struct DashboardView: View {
         var nextPriceBand: [String: Int] = ["£": 0, "££": 0, "£££": 0]
         var nextMostExpensive: DashboardTopHolding? = nil
         var ownedCardIDsBySetCode: [String: Set<String>] = [:]
-        var cardCache: [String: Card] = [:]
         var nextTopGainer: MarketTrendMover? = nil
         var nextTopDecliner: MarketTrendMover? = nil
 
@@ -1401,6 +1491,29 @@ struct DashboardView: View {
             setTotalsByCode[set.setCode] = (set.name, total)
         }
 
+        // Bulk-load all card items for this brand in one query.
+        let cardItems = visibleCollectionItems.filter {
+            $0.quantity > 0
+            && $0.sealedStatus != SealedInventoryStatus.opened.rawValue
+            && sealedProductID(for: $0) == nil
+        }
+        let cardIDs = Array(Set(cardItems.map(\.cardID)))
+
+        // Pre-warm trendsCache concurrently with card loading so sevenDayChangePercent
+        // hits in-memory cache instead of firing a SQLite query per card.
+        let _tiT = ContinuousClock().now
+        async let allTrendsForInsights = CatalogStore.shared.fetchAllPriceTrendsData(brand: activeBrand)
+        let _ti1 = ContinuousClock().now
+        async let loadedCardsAsync = services.cardData.loadCards(masterCardIDs: cardIDs, catalogBrand: activeBrand)
+        let (fetchedTrends, loadedCards) = await (allTrendsForInsights, loadedCardsAsync)
+        services.pricing.prefetchTrendsCache(from: fetchedTrends, brand: activeBrand)
+        print("[Dashboard⏱]   insights prefetchTrendsCache: \(ContinuousClock().now - _tiT) rows=\(fetchedTrends.count)")
+        print("[Dashboard⏱]   insights loadCards: \(ContinuousClock().now - _ti1) ids=\(cardIDs.count)")
+        let cardByID = Dictionary(loadedCards.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
+
+        var _unitValueTime: Duration = .zero
+        var _sevenDayTime: Duration = .zero
+
         for item in visibleCollectionItems {
             let quantity = max(item.quantity, 0)
             guard quantity > 0 else { continue }
@@ -1408,16 +1521,8 @@ struct DashboardView: View {
 
             nextFormat[formatLabel(for: item), default: 0] += quantity
 
-            // Distribution cards requested by the dashboard are specifically card-focused.
             if sealedProductID(for: item) != nil { continue }
-            let card: Card
-            if let cached = cardCache[item.cardID] {
-                card = cached
-            } else {
-                guard let loaded = await services.cardData.loadCard(masterCardId: item.cardID) else { continue }
-                card = loaded
-                cardCache[item.cardID] = loaded
-            }
+            guard let card = cardByID[item.cardID] else { continue }
 
             nextCardType[cardTypeLabel(for: card), default: 0] += quantity
 
@@ -1427,10 +1532,14 @@ struct DashboardView: View {
 
             ownedCardIDsBySetCode[card.setCode, default: []].insert(card.masterCardId)
 
+            let _u = ContinuousClock().now
             let unitValue = await unitPriceGBP(for: item, card: card)
+            _unitValueTime += ContinuousClock().now - _u
             nextPriceBand[priceBandLabel(for: unitValue), default: 0] += quantity
 
+            let _s = ContinuousClock().now
             if let change7d = await sevenDayChangePercent(for: item, card: card) {
+                _sevenDayTime += ContinuousClock().now - _s
                 let mover = MarketTrendMover(
                     cardID: card.masterCardId,
                     displayName: card.cardName,
@@ -1443,6 +1552,8 @@ struct DashboardView: View {
                 if nextTopDecliner == nil || change7d < (nextTopDecliner?.percentChange ?? .infinity) {
                     nextTopDecliner = mover
                 }
+            } else {
+                _sevenDayTime += ContinuousClock().now - _s
             }
 
             guard unitValue > 0 else { continue }
@@ -1462,6 +1573,8 @@ struct DashboardView: View {
             )
         }
 
+        print("[Dashboard⏱]   insights unitPriceGBP total: \(_unitValueTime)")
+        print("[Dashboard⏱]   insights sevenDayChange total: \(_sevenDayTime)")
         cardTypeBreakdown = sortedBreakdown(from: nextCardType)
         energyTypeBreakdown = sortedBreakdown(from: nextEnergyType)
         formatBreakdown = sortedBreakdown(from: nextFormat)
@@ -1800,19 +1913,22 @@ struct DashboardView: View {
             return
         }
 
-        let sets = (try? await CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
-        guard !sets.isEmpty else {
-            marketBiggestGainer7Days = nil
-            marketBiggestDecliner7Days = nil
-            return
-        }
+        // Fetch all set trends in one query instead of one per set.
+        let _ta = ContinuousClock().now
+        let allTrendsData = await CatalogStore.shared.fetchAllPriceTrendsData(brand: activeBrand)
+        print("[Dashboard⏱]   fetchAllPriceTrendsData: \(ContinuousClock().now - _ta) rows=\(allTrendsData.count)")
 
+        // Pre-warm PricingService.trendsCache so resolveInsightsData's per-card sevenDayChangePercent
+        // calls hit the in-memory cache instead of firing a SQLite query per card.
+        services.pricing.prefetchTrendsCache(from: allTrendsData, brand: activeBrand)
+
+        let _tb = ContinuousClock().now
         var candidates: [TrendMoverCandidate] = []
 
-        for set in sets {
-            guard let trendsBlob = await loadPriceTrendsBlobForSet(setCode: set.setCode) else { continue }
-            collectSetTrendCandidates(from: trendsBlob, setCode: set.setCode, into: &candidates)
+        for (setCode, trendsBlob) in allTrendsData {
+            collectSetTrendCandidates(from: trendsBlob, setCode: setCode, into: &candidates)
         }
+        print("[Dashboard⏱]   collectSetTrendCandidates: \(ContinuousClock().now - _tb) candidates=\(candidates.count)")
 
         // If per-set rows are unavailable, fall back to the aggregate daily blob parser.
         if candidates.isEmpty,

@@ -3,6 +3,7 @@ import SwiftUI
 
 struct GradingOpportunitiesView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
     @Environment(\.presentCard) private var presentCard
 
@@ -165,6 +166,8 @@ struct GradingOpportunitiesView: View {
                         } label: {
                             CardGridCell(
                                 card: item.card,
+                                services: services,
+                                colorScheme: colorScheme,
                                 gridOptions: gradingGridOptions,
                                 setName: setName(for: item.card),
                                 postPriceFootnote: footnote(for: item),

@@ -1503,6 +1503,8 @@ private struct DeckPickerCardCell: View {
     let onIncrement: () -> Void
     let onDecrement: () -> Void
 
+    @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
 
     var body: some View {
@@ -1511,6 +1513,8 @@ private struct DeckPickerCardCell: View {
                 ZStack(alignment: .bottomTrailing) {
                     CardGridCell(
                         card: entry.card,
+                        services: services,
+                        colorScheme: colorScheme,
                         gridOptions: gridOptions,
                         setName: setName,
                         footnote: nil

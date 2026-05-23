@@ -660,6 +660,7 @@ private struct FavoritePokemonPickerView: View {
 
 private struct FavoriteCardPickerView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dismiss) private var dismiss
     @Binding var selection: FavoriteCardSelection?
 
@@ -699,6 +700,8 @@ private struct FavoriteCardPickerView: View {
                             } label: {
                                 CardGridCell(
                                     card: card,
+                                    services: services,
+                                    colorScheme: colorScheme,
                                     gridOptions: BrowseGridOptions()
                                 )
                                 .padding(6)

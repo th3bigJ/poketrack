@@ -56,45 +56,42 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
 
 // MARK: - Shared card grid cell
 
+/// Card cell for browse/collection grids.
+///
+/// Requires services and colorScheme as plain stored properties — no @Environment.
+/// iOS 26 corrupts the attribute graph when @Environment is accessed during ForEach
+/// item-update passes or lazy-container sizing. Plain stored lets are safe everywhere.
 struct CardGridCell: View {
     let card: Card
+    let services: AppServices
+    let colorScheme: ColorScheme
     var gridOptions = BrowseGridOptions()
     var setName: String? = nil
     var isOwned = false
     var isWishlisted = false
-    /// Optional owned-count badge for collection surfaces. Renders as `xN` in the thumbnail corner.
     var ownedCountBadge: Int? = nil
-    /// Optional line under the name (e.g. wishlist variant key).
+    var variantLabel: String? = nil
+    var variantPricingKey: String? = nil
     var footnote: String? = nil
-    /// Optional line rendered after pricing in the footer (used by grading opportunities for upside text).
     var postPriceFootnote: String? = nil
-    /// When provided, shown as the price instead of doing a live lookup (used by collection grid to show grade-correct price).
     var overridePrice: Double? = nil
-    /// When provided, shown as a small badge next to the price (e.g. "PSA 10", "ACE 10").
     var gradeLabel: String? = nil
-    @Environment(AppServices.self) private var services
-    @Environment(\.colorScheme) private var colorScheme
+
+    private var resolvedServices: AppServices { services }
+    private var resolvedColorScheme: ColorScheme { colorScheme }
 
     private var tileBackground: Color {
-        colorScheme == .dark ? .black : .white
+        resolvedColorScheme == .dark ? .black : .white
     }
 
     private var tileBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.20) : Color.black.opacity(0.16)
-    }
-
-    private var insetBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.03) : Color.black.opacity(0.02)
+        resolvedColorScheme == .dark ? Color.white.opacity(0.20) : Color.black.opacity(0.16)
     }
 
     private var dividerColor: Color {
-        colorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.06)
+        resolvedColorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.06)
     }
 
-    /// First non-Colorless element type on the card, used to drive a subtle
-    /// accent on the chrome (name strip + footer). Falls back to `nil` for
-    /// trainers/energies/sealed where no Pokémon type applies — those cells
-    /// keep the neutral surface treatment.
     private var primaryTypeColor: Color? {
         let types = card.elementTypes ?? []
         let primary = types.first(where: { type in
@@ -104,34 +101,10 @@ struct CardGridCell: View {
         return Self.pokemonTypeColor(primary)
     }
 
-    /// Colour table tuned to read well as a low-opacity wash behind primary
-    /// text. Hand-picked rather than the more saturated values used inside
-    /// deck breakdowns so the whole grid feels cohesive instead of garish.
-    static func pokemonTypeColor(_ type: String) -> Color {
-        switch type {
-        case "Fire":       return Color(hex: "F26B3A")
-        case "Water":      return Color(hex: "4A90E2")
-        case "Grass":      return Color(hex: "5BB85B")
-        case "Lightning":  return Color(hex: "F2C744")
-        case "Psychic":    return Color(hex: "C25BB5")
-        case "Fighting":   return Color(hex: "C24A3A")
-        case "Darkness":   return Color(hex: "5B4A52")
-        case "Metal":      return Color(hex: "8C95A8")
-        case "Dragon":     return Color(hex: "7C5BC2")
-        case "Fairy":      return Color(hex: "E58CB0")
-        case "Colorless":  return Color(hex: "A8A89A")
-        default:           return Color(hex: "A8A89A")
-        }
-    }
-
-    /// Top strip washes the type colour up from the card image — the strip is
-    /// strongest at the bottom (against the divider) and fades to the tile
-    /// background at the top, so visually the colour reads as if it's
-    /// extending up out of the card art.
     private var nameStripBackground: LinearGradient {
-        let accent = primaryTypeColor ?? (colorScheme == .dark ? Color.white : Color.black)
-        let baseStrong = colorScheme == .dark ? 0.22 : 0.16
-        let baseWeak = colorScheme == .dark ? 0.06 : 0.03
+        let accent = primaryTypeColor ?? (resolvedColorScheme == .dark ? Color.white : Color.black)
+        let baseStrong = resolvedColorScheme == .dark ? 0.22 : 0.16
+        let baseWeak = resolvedColorScheme == .dark ? 0.06 : 0.03
         return LinearGradient(
             stops: [
                 .init(color: accent.opacity(baseWeak), location: 0.0),
@@ -143,13 +116,10 @@ struct CardGridCell: View {
         )
     }
 
-    /// Footer mirrors the strip, but inverted — strongest at the top (against
-    /// the divider) so the colour reads as if it's extending DOWN out of the
-    /// card art into the price/set name area.
     private var footerBackground: LinearGradient {
-        let accent = primaryTypeColor ?? (colorScheme == .dark ? Color.white : Color.black)
-        let baseStrong = colorScheme == .dark ? 0.18 : 0.12
-        let baseWeak = colorScheme == .dark ? 0.04 : 0.02
+        let accent = primaryTypeColor ?? (resolvedColorScheme == .dark ? Color.white : Color.black)
+        let baseStrong = resolvedColorScheme == .dark ? 0.18 : 0.12
+        let baseWeak = resolvedColorScheme == .dark ? 0.04 : 0.02
         return LinearGradient(
             stops: [
                 .init(color: accent.opacity(baseStrong), location: 0.0),
@@ -171,7 +141,6 @@ struct CardGridCell: View {
 
     private var visibleOwnedCountBadge: Int? {
         guard let ownedCountBadge, ownedCountBadge > 1 else { return nil }
-        // Defensive clamp in case bad data creates extreme values.
         return min(max(ownedCountBadge, 2), 999)
     }
 
@@ -180,12 +149,11 @@ struct CardGridCell: View {
     }
 
     private var wishlistBorderColor: Color {
-        // Keep aligned with the wishlist action tint used across Browse.
         Color(red: 0.99, green: 0.72, blue: 0.22)
     }
 
     private var cardBorderColor: Color {
-        if isOwned { return services.theme.accentColor }
+        if isOwned { return resolvedServices.theme.accentColor }
         if isWishlisted { return wishlistBorderColor }
         return tileBorder
     }
@@ -198,6 +166,18 @@ struct CardGridCell: View {
         (gridOptions.showCardName || showsFooter) ? 18 : 0
     }
 
+    private func safeImageURL(relativePath: String) -> URL? {
+        let trimmed = relativePath.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        if trimmed.hasPrefix("http") { return URL(string: trimmed) }
+        return AppConfiguration.imageURL(relativePath: trimmed)
+    }
+
+    private var trailingCardID: String {
+        let number = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
+        return number.isEmpty ? card.setCode : number
+    }
+
     var body: some View {
         CardGridCellLayout(
             card: card,
@@ -206,6 +186,8 @@ struct CardGridCell: View {
             isOwned: isOwned,
             isWishlisted: isWishlisted,
             ownedCountBadge: ownedCountBadge,
+            variantLabel: variantLabel,
+            variantPricingKey: variantPricingKey,
             footnote: footnote,
             postPriceFootnote: postPriceFootnote,
             overridePrice: overridePrice,
@@ -223,25 +205,27 @@ struct CardGridCell: View {
             cardCornerRadius: cardCornerRadius,
             wishlistBorderColor: wishlistBorderColor,
             trailingCardID: trailingCardID,
-            accentColor: services.theme.accentColor,
-            colorScheme: colorScheme,
+            accentColor: resolvedServices.theme.accentColor,
+            colorScheme: resolvedColorScheme,
             imageURL: safeImageURL(relativePath: card.imageLowSrc)
         )
     }
 
-    private func safeImageURL(relativePath: String) -> URL? {
-        let trimmed = relativePath.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return nil }
-        if trimmed.hasPrefix("http") {
-            return URL(string: trimmed)
+    static func pokemonTypeColor(_ type: String) -> Color {
+        switch type {
+        case "Fire":       return Color(hex: "F26B3A")
+        case "Water":      return Color(hex: "4A90E2")
+        case "Grass":      return Color(hex: "5BB85B")
+        case "Lightning":  return Color(hex: "F2C744")
+        case "Psychic":    return Color(hex: "C25BB5")
+        case "Fighting":   return Color(hex: "C24A3A")
+        case "Darkness":   return Color(hex: "5B4A52")
+        case "Metal":      return Color(hex: "8C95A8")
+        case "Dragon":     return Color(hex: "7C5BC2")
+        case "Fairy":      return Color(hex: "E58CB0")
+        case "Colorless":  return Color(hex: "A8A89A")
+        default:           return Color(hex: "A8A89A")
         }
-        return AppConfiguration.imageURL(relativePath: trimmed)
-    }
-
-    private var trailingCardID: String {
-        let number = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
-        if number.isEmpty { return card.setCode }
-        return number
     }
 }
 
@@ -256,6 +240,8 @@ private struct CardGridCellLayout: View {
     let isOwned: Bool
     let isWishlisted: Bool
     let ownedCountBadge: Int?
+    let variantLabel: String?
+    let variantPricingKey: String?
     let footnote: String?
     let postPriceFootnote: String?
     let overridePrice: Double?
@@ -283,14 +269,24 @@ private struct CardGridCellLayout: View {
                 ZStack {
                     tileBackground
                     nameStripBackground
-                    Text(card.cardName)
-                        .font(.caption2.weight(.semibold))
-                        .lineLimit(1)
-                        .truncationMode(.tail)
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(.primary)
-                        .padding(.vertical, 7)
-                        .padding(.horizontal, 8)
+                    VStack(spacing: 1) {
+                        Text(card.cardName)
+                            .font(.caption2.weight(.semibold))
+                            .lineLimit(1)
+                            .truncationMode(.tail)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.primary)
+                        if let variantLabel, !variantLabel.isEmpty {
+                            Text(variantLabel)
+                                .font(.system(size: 9, weight: .medium))
+                                .lineLimit(1)
+                                .truncationMode(.tail)
+                                .multilineTextAlignment(.center)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    .padding(.vertical, 7)
+                    .padding(.horizontal, 8)
                 }
                 .fixedSize(horizontal: false, vertical: true)
                 dividerLine
@@ -325,7 +321,8 @@ private struct CardGridCellLayout: View {
                                 card: card,
                                 overridePrice: overridePrice,
                                 gradeLabel: gradeLabel,
-                                usesAccentColor: true
+                                usesAccentColor: true,
+                                variantKey: variantPricingKey
                             )
                         }
                         if let postPriceFootnote, !postPriceFootnote.isEmpty {
@@ -418,25 +415,35 @@ private struct BrowseCardRow: Identifiable {
     let setName: String?
 }
 
-/// LazyVGrid inside an unbounded ScrollView triggers a SwiftUI iOS 26 layout crash.
-/// Using LazyVStack with manual row chunking achieves virtualization without the bug.
+struct MasterSetVariantRow: Identifiable {
+    let id: String
+    let card: Card
+    let variant: String
+}
+
+/// Card grid safe for iOS 26.
+///
+/// LazyVStack/LazyVGrid are avoided entirely — both traverse their full subgraph during
+/// measureEstimates on iOS 26, corrupting the attribute graph. A plain VStack is safe.
+/// Perf is acceptable because the browse feed is paginated (18 cards/page) and callers
+/// that show full sets are bounded in practice. The crash fix lives in CardGridCell, which
+/// now receives services/colorScheme as plain stored properties instead of @Environment.
 struct EagerVGrid<Item: Identifiable, Cell: View>: View {
     let items: [Item]
     let columns: Int
     let spacing: CGFloat
     @ViewBuilder let cell: (Item) -> Cell
 
-    private struct Row: Identifiable {
-        // Stable ID: first item's id + row index, avoids O(n) string joins on every render.
+    private struct RowRange: Identifiable {
         let id: String
         let startIndex: Int
         let endIndex: Int
     }
 
-    private func makeRows(cols: Int) -> [Row] {
+    private func makeRows(cols: Int) -> [RowRange] {
         stride(from: 0, to: items.count, by: cols).map { rowStart in
             let rowEnd = min(rowStart + cols, items.count)
-            return Row(id: "\(items[rowStart].id)|\(rowStart)", startIndex: rowStart, endIndex: rowEnd)
+            return RowRange(id: "\(items[rowStart].id)|\(rowStart)", startIndex: rowStart, endIndex: rowEnd)
         }
     }
 
@@ -446,9 +453,8 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
         LazyVStack(spacing: spacing) {
             ForEach(rows) { row in
                 HStack(spacing: spacing) {
-                    ForEach(row.startIndex..<row.endIndex, id: \.self) { index in
-                        cell(items[index])
-                            .frame(maxWidth: .infinity)
+                    ForEach(row.startIndex..<row.endIndex, id: \.self) { idx in
+                        cell(items[idx]).frame(maxWidth: .infinity)
                     }
                     if row.endIndex - row.startIndex < cols {
                         ForEach(0..<(cols - (row.endIndex - row.startIndex)), id: \.self) { _ in
@@ -529,6 +535,8 @@ private struct BrowseCardGridButton: View {
     let isOwned: Bool
     let isWishlisted: Bool
     let isMultiSelectActive: Bool
+    let services: AppServices
+    let colorScheme: ColorScheme
     @Binding var multiSelectedCardIDs: Set<String>
     let onQuickAddRequested: (Card, CardContextAction) -> Void
     let onSelectMultipleRequested: (Card) -> Void
@@ -555,6 +563,8 @@ private struct BrowseCardGridButton: View {
         } label: {
             CardGridCell(
                 card: row.card,
+                services: services,
+                colorScheme: colorScheme,
                 gridOptions: gridOptions,
                 setName: row.setName,
                 isOwned: isOwned,
@@ -645,6 +655,8 @@ struct BrowseView: View {
     @Binding var query: String
     @State private var inlineDetailCards: [Card] = []
     @State private var inlineDetailPriceByCardID: [String: Double] = [:]
+    @State private var inlineDetailMasterPriceByCardID: [String: Double] = [:]
+    @State private var masterSetVariantRows: [MasterSetVariantRow] = []
     @State private var inlineDetailSetTrendChanges: (change1d: Double?, change7d: Double?, change30d: Double?) = (nil, nil, nil)
     @State private var inlineDetailQuery = ""
     @State private var inlineDetailLoading = false
@@ -664,6 +676,7 @@ struct BrowseView: View {
     @State private var multiSelectFolderNewTitle = ""
     @State private var showFolderCreateAlert = false
     @State private var addedMultiSelectFolderIDs: Set<UUID> = []
+    @State private var showMasterSet = false
     @State private var lastSelectedSetCodeInSetsTab: String?
     @State private var pendingSetRestoreRowID: String?
     @State private var setRestoreToken: Int = 0
@@ -875,6 +888,10 @@ struct BrowseView: View {
                 await refreshInlineDetailPriceCache()
             }
         }
+        .onChange(of: showMasterSet) { _, _ in
+            guard case .some(.set) = inlineDetailRoute else { return }
+            Task { @MainActor in await rebuildMasterSetVariantRows() }
+        }
     }
 
     @MainActor
@@ -1021,6 +1038,8 @@ struct BrowseView: View {
                     isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
                     isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
                     isMultiSelectActive: isMultiSelectActive,
+                    services: services,
+                    colorScheme: colorScheme,
                     multiSelectedCardIDs: $multiSelectedCardIDs,
                     onQuickAddRequested: beginQuickAdd(card:action:),
                     onSelectMultipleRequested: beginSelectMultiple(with:)
@@ -1174,7 +1193,7 @@ struct BrowseView: View {
             if let inlineDetailRoute {
                 inlineDetailContent(route: inlineDetailRoute)
             } else {
-                BrowseSetsTabContent(query: query) { set in
+                BrowseSetsTabContent(query: query, showMasterSet: $showMasterSet) { set in
                     HapticManager.impact(.light)
                     lastSelectedSetCodeInSetsTab = set.setCode
                     inlineDetailRoute = .set(set)
@@ -1198,6 +1217,8 @@ struct BrowseView: View {
     private func inlineDetailContent(route: BrowseInlineDetailRoute) -> some View {
         let filteredCards = filteredInlineDetailCards
         let isSetRoute: Bool = { if case .set = route { return true }; return false }()
+        let useMasterGrid = showMasterSet && isSetRoute
+        let variantRows = useMasterGrid ? masterSetVariantRows : []
         if inlineDetailLoading {
             ProgressView("Loading cards…")
                 .frame(maxWidth: .infinity, minHeight: 280)
@@ -1215,67 +1236,92 @@ struct BrowseView: View {
         } else {
             VStack(spacing: 0) {
                 if case .set(let set) = route {
-                                setProgressBar(for: set, cards: inlineDetailCards)
-                                    .padding(.top, 4)
-                                    .padding(.bottom, 12)
-                            }
-                
-                EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: 12) { card in
-                let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
-                Button {
-                    if isMultiSelectActive {
-                        toggleMultiSelectCardID(card.masterCardId)
-                    } else {
-                        presentCard(card, filteredCards)
+                    setProgressBar(for: set, cards: inlineDetailCards)
+                        .padding(.top, 4)
+                        .padding(.bottom, 12)
+                }
+
+                if useMasterGrid {
+                    EagerVGrid(items: variantRows, columns: safeColumnCount, spacing: 12) { row in
+                        Button {
+                            presentCard(row.card, filteredCards)
+                        } label: {
+                            CardGridCell(
+                                card: row.card,
+                                services: services,
+                                colorScheme: colorScheme,
+                                gridOptions: gridOptions,
+                                setName: cachedSetNameByCode[row.card.setCode],
+                                isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
+                                isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
+                                variantLabel: variantTitle(row.variant),
+                                variantPricingKey: row.variant
+                            )
+                        }
+                        .buttonStyle(CardCellButtonStyle())
                     }
-                } label: {
-                    CardGridCell(
-                        card: card,
-                        gridOptions: gridOptions,
-                        setName: cachedSetNameByCode[card.setCode],
-                        isOwned: ownedCardIDsCache.contains(card.masterCardId),
-                        isWishlisted: visibleWishlistedCardIDs.contains(card.masterCardId)
-                    )
-                    .overlay(alignment: .topTrailing) {
-                        if isMultiSelectActive {
-                            Image(systemName: multiSelectedCardIDs.contains(card.masterCardId) ? "checkmark.circle.fill" : "circle")
-                                .font(.system(size: 22, weight: .semibold))
-                                .foregroundStyle(multiSelectedCardIDs.contains(card.masterCardId) ? Color.blue : Color.white)
-                                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
-                                .padding(6)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 16)
+                } else {
+                    EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: 12) { card in
+                        let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                        Button {
+                            if isMultiSelectActive {
+                                toggleMultiSelectCardID(card.masterCardId)
+                            } else {
+                                presentCard(card, filteredCards)
+                            }
+                        } label: {
+                            CardGridCell(
+                                card: card,
+                                services: services,
+                                colorScheme: colorScheme,
+                                gridOptions: gridOptions,
+                                setName: cachedSetNameByCode[card.setCode],
+                                isOwned: ownedCardIDsCache.contains(card.masterCardId),
+                                isWishlisted: visibleWishlistedCardIDs.contains(card.masterCardId)
+                            )
+                            .overlay(alignment: .topTrailing) {
+                                if isMultiSelectActive {
+                                    Image(systemName: multiSelectedCardIDs.contains(card.masterCardId) ? "checkmark.circle.fill" : "circle")
+                                        .font(.system(size: 22, weight: .semibold))
+                                        .foregroundStyle(multiSelectedCardIDs.contains(card.masterCardId) ? Color.blue : Color.white)
+                                        .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+                                        .padding(6)
+                                }
+                            }
+                        }
+                        .buttonStyle(CardCellButtonStyle())
+                        .contextMenu {
+                            Button {
+                                beginQuickAdd(card: card, action: .collection)
+                            } label: {
+                                Label("Add to Collection", systemImage: "books.vertical")
+                            }
+                            Button {
+                                beginQuickAdd(card: card, action: .wishlist)
+                            } label: {
+                                Label("Add to Wishlist", systemImage: "heart")
+                            }
+                            Button {
+                                beginQuickAdd(card: card, action: .tradeList)
+                            } label: {
+                                Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                            }
+                            Button {
+                                beginQuickAdd(card: card, action: .folder)
+                            } label: {
+                                Label("Add to Folder", systemImage: "folder.badge.plus")
+                            }
+                        }
+                        .onAppear {
+                            ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                         }
                     }
-                }
-                .buttonStyle(CardCellButtonStyle())
-                .contextMenu {
-                    Button {
-                        beginQuickAdd(card: card, action: .collection)
-                    } label: {
-                        Label("Add to Collection", systemImage: "books.vertical")
-                    }
-                    Button {
-                        beginQuickAdd(card: card, action: .wishlist)
-                    } label: {
-                        Label("Add to Wishlist", systemImage: "heart")
-                    }
-                    Button {
-                        beginQuickAdd(card: card, action: .tradeList)
-                    } label: {
-                        Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
-                    }
-                    Button {
-                        beginQuickAdd(card: card, action: .folder)
-                    } label: {
-                        Label("Add to Folder", systemImage: "folder.badge.plus")
-                    }
-                }
-                .onAppear {
-                    ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, isMultiSelectActive && !multiSelectedCardIDs.isEmpty ? 96 : 16)
                 }
             }
-            }
-            .padding(.horizontal, 16)
-            .padding(.bottom, isMultiSelectActive && !multiSelectedCardIDs.isEmpty ? 96 : 16)
         }
     }
 
@@ -1534,17 +1580,33 @@ struct BrowseView: View {
     private func refreshInlineDetailPriceCache() async {
         guard isInlineDetailPresented, !inlineDetailCards.isEmpty else {
             inlineDetailPriceByCardID = [:]
+            inlineDetailMasterPriceByCardID = [:]
             return
         }
         var next: [String: Double] = [:]
+        var nextMaster: [String: Double] = [:]
         next.reserveCapacity(inlineDetailCards.count)
+        nextMaster.reserveCapacity(inlineDetailCards.count)
         for card in inlineDetailCards {
-            guard let entry = await services.pricing.pricing(for: card),
-                  let usd = browseMarketPriceUSD(for: entry) else { continue }
-            next[card.masterCardId] = usd
+            guard let entry = await services.pricing.pricing(for: card) else { continue }
+            if let usd = browseMarketPriceUSD(for: entry) {
+                next[card.masterCardId] = usd
+            }
+            let masterUSD = allVariantsMarketUSDForEntry(entry)
+            if masterUSD > 0 {
+                nextMaster[card.masterCardId] = masterUSD
+            }
         }
         inlineDetailPriceByCardID = next
+        inlineDetailMasterPriceByCardID = nextMaster
         await refreshInlineDetailSetTrends()
+    }
+
+    private func allVariantsMarketUSDForEntry(_ entry: CardPricingEntry) -> Double {
+        if let scrydex = entry.scrydex, !scrydex.isEmpty {
+            return scrydex.values.compactMap { $0.marketEstimateUSD() }.filter { $0 > 0 }.reduce(0, +)
+        }
+        return entry.tcgplayerMarketEstimateUSD() ?? 0
     }
 
     private func refreshInlineDetailSetTrends() async {
@@ -2192,10 +2254,55 @@ struct BrowseView: View {
 
         ImagePrefetcher.shared.prefetchCardWindow(inlineDetailCards, startingAt: 0, count: 24)
         syncFilterMenuState(usingCatalogFeed: false)
+        await rebuildMasterSetVariantRows()
+    }
+
+    @MainActor
+    private func rebuildMasterSetVariantRows() async {
+        guard case .some(.set) = inlineDetailRoute else {
+            masterSetVariantRows = []
+            return
+        }
+        var rows: [MasterSetVariantRow] = []
+        for card in inlineDetailCards {
+            let keys = await services.pricing.variantKeys(for: card)
+            if keys.isEmpty {
+                rows.append(MasterSetVariantRow(id: "\(card.masterCardId)::normal", card: card, variant: "normal"))
+            } else {
+                for key in keys {
+                    rows.append(MasterSetVariantRow(id: "\(card.masterCardId)::\(key)", card: card, variant: key))
+                }
+            }
+        }
+        masterSetVariantRows = rows
+    }
+
+    private func setModeChip(label: String, isMaster: Bool) -> some View {
+        let isSelected = showMasterSet == isMaster
+        return Button {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                showMasterSet = isMaster
+            }
+            Haptics.lightImpact()
+        } label: {
+            Text(label)
+                .font(.system(size: 12, weight: .bold, design: .rounded))
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
+                .background {
+                    Capsule()
+                        .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
+                }
+                .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
+        }
+        .buttonStyle(.plain)
+        .animation(.easeInOut(duration: 0.15), value: isSelected)
     }
 
     private func setProgressBar(for set: TCGSet, cards: [Card]) -> some View {
-        let total = cards.count
+        let priceDict = showMasterSet ? inlineDetailMasterPriceByCardID : inlineDetailPriceByCardID
+        let masterTotal = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal ?? cards.count) : (set.cardCountTotal ?? cards.count)
+        let total = masterTotal
         let ownedCardIDs = Set(collectionItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
@@ -2204,19 +2311,26 @@ struct BrowseView: View {
         let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
         let currency = services.priceDisplay.currency
         let fx = services.pricing.usdToGbp
-        let totalValue = inlineDetailPriceByCardID.values.reduce(0, +)
+        let totalValue = priceDict.values.reduce(0, +)
         let ownedValue = cards
             .filter { ownedCardIDs.contains($0.masterCardId) }
-            .compactMap { inlineDetailPriceByCardID[$0.masterCardId] }
+            .compactMap { priceDict[$0.masterCardId] }
             .reduce(0, +)
         let remainingValue = max(totalValue - ownedValue, 0)
         let hasPrices = totalValue > 0
         let trends = inlineDetailSetTrendChanges
 
         return VStack(spacing: 14) {
+            // Chip bar
+            HStack(spacing: 8) {
+                setModeChip(label: "Full Set", isMaster: false)
+                setModeChip(label: "Master Set", isMaster: true)
+                Spacer()
+            }
+
             // Header
             HStack(alignment: .firstTextBaseline) {
-                Text("Set Completion")
+                Text(showMasterSet ? "Master Set Completion" : "Set Completion")
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .foregroundStyle(.primary)
                 Spacer()
@@ -2255,7 +2369,7 @@ struct BrowseView: View {
             // Value row
             HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("SET VALUE")
+                    Text(showMasterSet ? "MASTER VALUE" : "SET VALUE")
                         .font(.system(size: 10, weight: .semibold, design: .rounded))
                         .foregroundStyle(.secondary)
                     Text(hasPrices ? currency.format(amountUSD: totalValue, usdToGbp: fx) : "—")
@@ -2356,9 +2470,11 @@ private func browseAuxTopAnchorID() -> String {
 
 private struct BrowseSetsTabContent: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Query private var collectionItems: [CollectionItem]
 
     let query: String
+    @Binding var showMasterSet: Bool
     let onSelectSet: (TCGSet) -> Void
 
     @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
@@ -2422,6 +2538,8 @@ private struct BrowseSetsTabContent: View {
 
     var body: some View {
         Group {
+            masterSetChipBar
+
             if filteredSets.isEmpty {
                 ContentUnavailableView(
                     "No matching sets",
@@ -2466,7 +2584,7 @@ private struct BrowseSetsTabContent: View {
                                                     .foregroundStyle(.primary)
                                                     .lineLimit(2)
                                                 Spacer(minLength: 6)
-                                                Text("Full Set Value")
+                                                Text(showMasterSet ? "Master Set Value" : "Full Set Value")
                                                     .font(.caption2.weight(.semibold))
                                                     .foregroundStyle(.secondary)
                                                     .lineLimit(1)
@@ -2568,7 +2686,7 @@ private struct BrowseSetsTabContent: View {
 
 
     private func setMarketValueTaskID(for set: TCGSet) -> String {
-        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())"
+        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())|\(showMasterSet ? "master" : "full")"
     }
 
     private func setMarketValueKey(for set: TCGSet) -> String {
@@ -2601,9 +2719,17 @@ private struct BrowseSetsTabContent: View {
 
         for card in cards {
             guard let entry = await services.pricing.pricing(for: card) else { continue }
-            guard let cheapestUSD = cheapestVariantMarketUSD(for: entry), cheapestUSD > 0 else { continue }
-            totalUSD += cheapestUSD
-            pricedCardCount += 1
+            if showMasterSet {
+                let variantTotal = allVariantsMarketUSD(for: entry)
+                if variantTotal > 0 {
+                    totalUSD += variantTotal
+                    pricedCardCount += 1
+                }
+            } else {
+                guard let cheapestUSD = cheapestVariantMarketUSD(for: entry), cheapestUSD > 0 else { continue }
+                totalUSD += cheapestUSD
+                pricedCardCount += 1
+            }
         }
 
         if pricedCardCount > 0 {
@@ -2625,6 +2751,16 @@ private struct BrowseSetsTabContent: View {
             return usd
         }
         return nil
+    }
+
+    private func allVariantsMarketUSD(for entry: CardPricingEntry) -> Double {
+        if let scrydex = entry.scrydex, !scrydex.isEmpty {
+            return scrydex.values
+                .compactMap { $0.marketEstimateUSD() }
+                .filter { $0 > 0 }
+                .reduce(0, +)
+        }
+        return entry.tcgplayerMarketEstimateUSD() ?? 0
     }
 
     @MainActor
@@ -2693,9 +2829,42 @@ private struct BrowseSetsTabContent: View {
         }
     }
 
+    private var masterSetChipBar: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 12) {
+                masterSetChip(label: "Full Set", isMaster: false)
+                masterSetChip(label: "Master Set", isMaster: true)
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 4)
+        }
+    }
+
+    private func masterSetChip(label: String, isMaster: Bool) -> some View {
+        let isSelected = showMasterSet == isMaster
+        return Button {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                showMasterSet = isMaster
+            }
+            Haptics.lightImpact()
+        } label: {
+            Text(label)
+                .font(.system(size: 13, weight: .bold, design: .rounded))
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background {
+                    Capsule()
+                        .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(0.12))
+                }
+                .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
+        }
+        .buttonStyle(.plain)
+    }
+
     private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
         let collected = uniqueCollectedCountBySetCode[set.setCode.lowercased()] ?? 0
-        return (collected, set.cardCountTotal)
+        let total = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal) : set.cardCountTotal
+        return (collected, total)
     }
 
     private func prefetchSetLogos() {
@@ -3190,6 +3359,8 @@ private struct BrowseGridPriceText: View {
     var gradeLabel: String? = nil
     /// When true, render the resolved price in the current theme accent color.
     var usesAccentColor: Bool = false
+    /// When set, show the price for this specific variant only (no range).
+    var variantKey: String? = nil
 
     /// `nil` until the pricing task finishes; then a single price, a `low - high` range, or an em dash when unknown.
     @State private var priceLine: String?
@@ -3241,8 +3412,19 @@ private struct BrowseGridPriceText: View {
                 await BrowseGridPriceLineCache.shared.set(line, for: taskID)
                 return
             }
-            guard let entry = await services.pricing.pricing(for: card),
-                  let range = resolvedMarketPriceRange(entry) else {
+            guard let entry = await services.pricing.pricing(for: card) else {
+                priceLine = "—"
+                await BrowseGridPriceLineCache.shared.set("—", for: taskID)
+                return
+            }
+            if let key = variantKey {
+                let usd = entry.scrydex?[key]?.rawMarketEstimateUSD() ?? entry.tcgplayerMarketEstimateUSD()
+                let line = usd.map { currency.format(amountUSD: $0, usdToGbp: fx) } ?? "—"
+                priceLine = line
+                await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                return
+            }
+            guard let range = resolvedMarketPriceRange(entry) else {
                 priceLine = "—"
                 await BrowseGridPriceLineCache.shared.set("—", for: taskID)
                 return
@@ -3262,7 +3444,7 @@ private struct BrowseGridPriceText: View {
     }
 
     private var taskID: String {
-        "\(card.id)|\(overridePrice ?? -1)|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)"
+        "\(card.id)|\(overridePrice ?? -1)|\(variantKey ?? "")|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)"
     }
 
     /// Min/max raw (ungraded) market USD across Scrydex variants on the card.
@@ -3599,6 +3781,8 @@ struct SetCardsView: View {
                                 } label: {
                                     CardGridCell(
                                         card: card,
+                                        services: services,
+                                        colorScheme: colorScheme,
                                         gridOptions: services.browseGridOptions.options,
                                         setName: set.name,
                                         isOwned: ownedCardIDs.contains(card.masterCardId),
@@ -3983,6 +4167,7 @@ private func localIdNumericSortValue(_ raw: String?) -> Int {
 struct DexCardsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
+    @Environment(\.colorScheme) private var colorScheme
     @Query private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     let dexId: Int
@@ -4054,6 +4239,8 @@ struct DexCardsView: View {
                             } label: {
                                 CardGridCell(
                                     card: card,
+                                    services: services,
+                                    colorScheme: colorScheme,
                                     gridOptions: services.browseGridOptions.options,
                                     setName: setNameByCode[card.setCode],
                                     isOwned: ownedCardIDs.contains(card.masterCardId),
@@ -4125,6 +4312,7 @@ struct DexCardsView: View {
 struct OnePieceCharacterCardsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
+    @Environment(\.colorScheme) private var colorScheme
     @Query private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
 
@@ -4189,6 +4377,8 @@ struct OnePieceCharacterCardsView: View {
                             } label: {
                                 CardGridCell(
                                     card: card,
+                                    services: services,
+                                    colorScheme: colorScheme,
                                     gridOptions: services.browseGridOptions.options,
                                     setName: setNameByCode[card.setCode],
                                     isOwned: ownedCardIDs.contains(card.masterCardId),
@@ -4237,6 +4427,7 @@ struct OnePieceCharacterCardsView: View {
 struct OnePieceSubtypeCardsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
+    @Environment(\.colorScheme) private var colorScheme
     @Query private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
 
@@ -4301,6 +4492,8 @@ struct OnePieceSubtypeCardsView: View {
                             } label: {
                                 CardGridCell(
                                     card: card,
+                                    services: services,
+                                    colorScheme: colorScheme,
                                     gridOptions: services.browseGridOptions.options,
                                     setName: setNameByCode[card.setCode],
                                     isOwned: ownedCardIDs.contains(card.masterCardId),

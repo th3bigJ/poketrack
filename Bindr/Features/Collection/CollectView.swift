@@ -4,6 +4,7 @@ import SwiftUI
 /// Combined Collection + Wishlist view with segmented toggle at top.
 struct CollectView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentCard) private var presentCard
     @Environment(\.presentCardAtIndex) private var presentCardAtIndex
@@ -532,6 +533,8 @@ struct CollectView: View {
             } label: {
                 CardGridCell(
                     card: card,
+                    services: services,
+                    colorScheme: colorScheme,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
                     ownedCountBadge: item.quantity,
@@ -884,6 +887,8 @@ struct CollectView: View {
             Button { presentCard(card, orderedWishlistCards) } label: {
                 CardGridCell(
                     card: card,
+                    services: services,
+                    colorScheme: colorScheme,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
                     footnote: nil
@@ -1110,6 +1115,8 @@ struct CollectView: View {
             Button { presentCard(card, orderedTradeListCards) } label: {
                 CardGridCell(
                     card: card,
+                    services: services,
+                    colorScheme: colorScheme,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
                     ownedCountBadge: item.quantity > 1 ? item.quantity : nil,

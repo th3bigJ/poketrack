@@ -104,6 +104,9 @@ struct BrowseAllSetsView: View {
     @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
     @State private var isFirstAppear = true
 
+    // Master set toggle
+    @State private var showMasterSet = false
+
     private var filteredSets: [TCGSet] {
         let sets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -164,6 +167,14 @@ struct BrowseAllSetsView: View {
                             BrowseInlineSearchField(title: "Search sets", text: $query)
                                 .padding(.horizontal)
 
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack(spacing: 12) {
+                                    masterSetChip(label: "Full Set", isMaster: false)
+                                    masterSetChip(label: "Master Set", isMaster: true)
+                                }
+                                .padding(.horizontal, 16)
+                            }
+
                             globalProgressHeader
                             if filteredSets.isEmpty {
                                 ContentUnavailableView(
@@ -205,7 +216,7 @@ struct BrowseAllSetsView: View {
                                                                     .foregroundStyle(.primary)
                                                                     .lineLimit(2)
                                                                 Spacer(minLength: 6)
-                                                                Text("Full Set Value")
+                                                                Text(showMasterSet ? "Master Set Value" : "Full Set Value")
                                                                     .font(.caption2.weight(.semibold))
                                                                     .foregroundStyle(.secondary)
                                                                     .lineLimit(1)
@@ -304,12 +315,13 @@ struct BrowseAllSetsView: View {
         }
         let uniqueOwnedCount = Set(brandOwned.map(\.cardID)).count
         
-        // Let's use a simpler "Sets Completed" or "Total Cards Collected" metric.
-        let totalCardsInCatalog = allSets.reduce(0, { $0 + ($1.cardCountTotal ?? 0) })
-        
+        let totalCardsInCatalog = allSets.reduce(0) { acc, set in
+            acc + (showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal ?? 0) : (set.cardCountTotal ?? 0))
+        }
+
         return VStack(spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
-                Text("Overall Completion")
+                Text(showMasterSet ? "Master Set Completion" : "Overall Completion")
                     .font(.system(size: 12, weight: .bold, design: .rounded))
                     .foregroundStyle(.secondary)
                 
@@ -346,9 +358,31 @@ struct BrowseAllSetsView: View {
         }
     }
 
+    private func masterSetChip(label: String, isMaster: Bool) -> some View {
+        let isSelected = showMasterSet == isMaster
+        return Button {
+            withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                showMasterSet = isMaster
+            }
+            Haptics.lightImpact()
+        } label: {
+            Text(label)
+                .font(.system(size: 13, weight: .bold, design: .rounded))
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background {
+                    Capsule()
+                        .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
+                }
+                .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
+        }
+        .buttonStyle(.plain)
+    }
+
     private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
         let collected = uniqueCollectedCountBySetCode[set.setCode.lowercased()] ?? 0
-        return (collected, set.cardCountTotal)
+        let total = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal) : set.cardCountTotal
+        return (collected, total)
     }
 
     private func setMarketValueTaskID(for set: TCGSet) -> String {

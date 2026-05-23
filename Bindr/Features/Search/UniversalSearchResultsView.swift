@@ -4,6 +4,7 @@ import SwiftUI
 /// In-app results for the universal search field (sets + cards; sealed placeholder until indexed).
 struct UniversalSearchResultsView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentCard) private var presentCard
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     let query: String
@@ -213,7 +214,7 @@ struct UniversalSearchResultsView: View {
                             LazyVGrid(columns: cardColumns, spacing: 12) {
                                 ForEach(displayedCards) { card in
                                     Button { presentCard(card, displayedCards) } label: {
-                                        CardGridCell(card: card)
+                                        CardGridCell(card: card, services: services, colorScheme: colorScheme)
                                     }
                                     .buttonStyle(CardCellButtonStyle())
                                 }

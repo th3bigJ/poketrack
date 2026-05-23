@@ -3,6 +3,7 @@ import SwiftData
 
 struct WishlistView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentCard) private var presentCard
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
@@ -236,7 +237,7 @@ struct WishlistView: View {
             Button {
                 presentCard(card, orderedCards)
             } label: {
-                CardGridCell(card: card, footnote: item.variantKey)
+                CardGridCell(card: card, services: services, colorScheme: colorScheme, footnote: item.variantKey)
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {

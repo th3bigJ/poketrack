@@ -3,6 +3,7 @@ import SwiftData
 
 struct FolderContentsView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentCard) private var presentCard
     @Environment(\.dismiss) private var dismiss
@@ -164,6 +165,8 @@ struct FolderContentsView: View {
             let qty = ownedQuantity(for: item)
             CardGridCell(
                 card: card,
+                services: services,
+                colorScheme: colorScheme,
                 gridOptions: gridOptions,
                 setName: setName(for: card),
                 isOwned: qty > 0,

@@ -3,6 +3,7 @@ import SwiftData
 
 struct FolderAddCardsSheet: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
@@ -172,7 +173,7 @@ struct FolderAddCardsSheet: View {
 
     private func folderPickerCell(card: Card, alreadyIn: Bool) -> some View {
         ZStack(alignment: .bottomTrailing) {
-            CardGridCell(card: card, gridOptions: gridOptions)
+            CardGridCell(card: card, services: services, colorScheme: colorScheme, gridOptions: gridOptions)
 
             if alreadyIn {
                 Image(systemName: "checkmark.circle.fill")
