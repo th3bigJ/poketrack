@@ -61,6 +61,11 @@ struct BinderDetailView: View {
     /// first card page (page 1). Tracks whether we're still in the entry
     /// "cover" moment so chrome can fade in at the right point.
     @State private var hasAutoAdvancedFromCover = false
+    /// When the cover auto-curls into the first card page, start the
+    /// wider inner page just a little smaller and ease it to full size.
+    /// This softens the portrait-cover → landscape-grid size change
+    /// without cropping the cover itself.
+    @State private var innerPageRevealScale: CGFloat = 1
     /// Wall-clock moment (`CACurrentMediaTime` reference) at which the
     /// auto page-curl from the cover finished. Used by ``handleBackTap``
     /// to decide whether to play the full reverse curl or skip straight
@@ -317,6 +322,7 @@ struct BinderDetailView: View {
                     try? await Task.sleep(nanoseconds: 1_400_000_000)
                     await MainActor.run {
                         guard !hasAutoAdvancedFromCover else { return }
+                        innerPageRevealScale = 0.94
                         hasAutoAdvancedFromCover = true
                         if cardPageCount > 0 {
                             currentPage = 1
@@ -327,6 +333,13 @@ struct BinderDetailView: View {
                         // ``.soft`` haptic the host fires when the
                         // open morph lands.
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    }
+
+                    try? await Task.sleep(nanoseconds: 180_000_000)
+                    await MainActor.run {
+                        withAnimation(.easeOut(duration: 0.55)) {
+                            innerPageRevealScale = 1
+                        }
                     }
 
                     // Stamp the moment the page-curl landed so
@@ -541,6 +554,7 @@ struct BinderDetailView: View {
 
     private func pagedViewContent(geo: GeometryProxy) -> some View {
         let pageSize = binderPageSize(in: geo.size)
+        let pageVerticalOffset: CGFloat = -40
         return VStack(spacing: 0) {
             PageCurlView(
                 pageCount: totalPageCount,
@@ -553,15 +567,18 @@ struct BinderDetailView: View {
                     coverPageSurface(pageSize: pageSize)
                 } else {
                     pageSurface(pageIdx: cardPageIndex(for: pageIdx), pageSize: pageSize)
+                        .scaleEffect(innerPageScale(for: pageIdx), anchor: .center)
                 }
             }
             .frame(width: pageSize.width, height: pageSize.height)
-            .offset(y: -40) // Shift binder up so it is perfectly balanced visually between header and floating bottom bar
+            .offset(y: pageVerticalOffset) // Shift binder up so it is visually balanced between header and floating bottom bar.
             .background(
                 GeometryReader { pgGeo in
+                    let layoutFrame = pgGeo.frame(in: .named("bindersRoot"))
+                    let visualFrame = layoutFrame.offsetBy(dx: 0, dy: pageVerticalOffset)
                     Color.clear.preference(
                         key: BinderPageFramePreferenceKey.self,
-                        value: pgGeo.frame(in: .named("bindersRoot"))
+                        value: visualFrame
                     )
                 }
             )
@@ -615,6 +632,10 @@ struct BinderDetailView: View {
         }
         .frame(width: pageSize.width, height: pageSize.height)
         .clipped()
+    }
+
+    private func innerPageScale(for pageIdx: Int) -> CGFloat {
+        entryFromGrid && pageIdx == 1 && hasAutoAdvancedFromCover ? innerPageRevealScale : 1
     }
 
     private func binderPageSize(in available: CGSize) -> CGSize {

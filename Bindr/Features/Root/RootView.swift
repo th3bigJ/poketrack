@@ -383,26 +383,17 @@ struct RootView: View {
                 // SwiftUI builds the entire tab tree invisibly behind it.
                 hasInsertedMainContent = true
                 Task { @MainActor in
-                    // Poll until the main thread is genuinely free — each yield
-                    // only resumes when the run loop has a spare cycle, so if the
-                    // main thread is blocked building the tab tree we stay here
-                    // (and the overlay remains visible) until it finishes.
-                    // Cap at 30 iterations (~15 s) so we never hang forever.
-                    var idleCount = 0
-                    for _ in 0..<300 {
-                        let before = CACurrentMediaTime()
-                        await Task.yield()
-                        let elapsed = CACurrentMediaTime() - before
-                        // A yield that comes back in under 32 ms means the main
-                        // thread had a free frame — the heavy layout work is done.
-                        if elapsed < 0.032 {
-                            idleCount += 1
-                            if idleCount >= 3 { break }
-                        } else {
-                            idleCount = 0
-                        }
-                    }
-                    withAnimation(.easeInOut(duration: 0.35)) {
+                    // One yield to let SwiftUI begin the tab-tree layout pass
+                    // before the fade starts — avoids a single blank frame where
+                    // the overlay disappears before any content is drawn.
+                    // The old 2-second polling loop tried to hide the DashboardView
+                    // SwiftData load behind the overlay, but it caused the opposite
+                    // problem: the overlay faded at 2 s while the main thread was
+                    // still busy, leaving the dashboard visible-but-frozen.
+                    // Fading immediately lets content load naturally while visible,
+                    // which reads as normal startup rather than a locked screen.
+                    await Task.yield()
+                    withAnimation(.easeInOut(duration: 0.45)) {
                         isLaunchOverlayVisible = false
                     }
                     evaluatePremiumUpsellIfNeeded()
@@ -1145,11 +1136,35 @@ struct RootView: View {
         guard isLaunchSequenceComplete else { return }
         // Ensure onboarding is completed before evaluating automated upsell popups
         guard services.brandSettings.hasCompletedBrandOnboarding else { return }
-        
+
         hasEvaluatedPremiumUpsellThisSession = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+        let now = Date()
+        let defaults = UserDefaults.standard
+        let lastShown = defaults.object(forKey: Self.premiumUpsellLastShownKey) as? Date
+
+        // First successful launch seeds the cadence silently. This avoids the
+        // dashboard feeling blocked by a paywall while cold-start work is still
+        // settling, and prevents the upsell from appearing on every app open.
+        guard let lastShown else {
+            defaults.set(now, forKey: Self.premiumUpsellLastShownKey)
+            return
+        }
+
+        guard now.timeIntervalSince(lastShown) >= Self.premiumUpsellIntervalSeconds else { return }
+
+        // 6 s gives the SwiftData queries, pricing tasks, and chart loads time
+        // to fully settle before interrupting the user. The previous 2.5 s delay
+        // coincided exactly with the end of the cold-start load, making the upsell
+        // feel like a "reward" for surviving the freeze rather than a natural pause.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
             // Re-check at fire time — nothing modal should be on screen.
-            guard !showSplash, !showOnboardingImmediate, isLaunchSequenceComplete else { return }
+            guard !showSplash,
+                  !showOnboardingImmediate,
+                  isLaunchSequenceComplete,
+                  selectedCardPresentation == nil,
+                  selectedSealedProductPresentation == nil,
+                  !services.isSealedDetailPresentationActive else { return }
+            defaults.set(Date(), forKey: Self.premiumUpsellLastShownKey)
             showPremiumAutoSheet = true
         }
     }

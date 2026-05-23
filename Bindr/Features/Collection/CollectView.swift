@@ -518,7 +518,18 @@ struct CollectView: View {
             }
             .accessibilityLabel("\(product.name), \(item.quantity) owned")
         } else if let card = cardsByCardID[item.cardID] {
-            Button { presentCardAtIndex(collectionDisplayedCards, index) } label: {
+            Button {
+                // Build the presentable card list from the current displayed items
+                // at tap-time rather than relying on ``collectionDisplayedCards``
+                // (a @State that can lag behind ``collectionDisplayedItems`` if
+                // ``cardsByCardID`` changed between the last render and this tap).
+                // Using ``firstIndex`` by masterCardId is safe: the card is
+                // guaranteed to be in the tap-time list because we're inside the
+                // `cardsByCardID[item.cardID] != nil` branch.
+                let tapTimeCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+                let cardIndex = tapTimeCards.firstIndex(where: { $0.masterCardId == card.masterCardId }) ?? 0
+                presentCardAtIndex(tapTimeCards, cardIndex)
+            } label: {
                 CardGridCell(
                     card: card,
                     gridOptions: gridOptions,

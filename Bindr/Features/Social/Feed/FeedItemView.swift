@@ -13,7 +13,11 @@ struct FeedItemView: View {
 
     @State private var isCommentsPresented = false
     @State private var commentsRefreshToken = 0
-    
+    /// Resolved card for pull-type posts. When non-nil a ``CardDetailSheet``
+    /// is presented directly — skipping the Comments → View Content →
+    /// SharedContentView chain that makes single-card pulls feel buried.
+    @State private var presentedPullCard: Card?
+
     @State private var showDeleteAlert = false
     @State private var showEditSheet = false
     @State private var editDescription = ""
@@ -84,15 +88,14 @@ struct FeedItemView: View {
             .padding(.bottom, 10)
 
             // Content
+            // The description area and the card preview have separate tap
+            // targets. For pull posts (single card) the card image goes
+            // directly to ``CardDetailSheet`` — no Comments → View Content
+            // → SharedContentView detour needed. Every other post type and
+            // tapping the description area still opens comments as before.
             HStack(alignment: .top, spacing: 0) {
                 VStack(alignment: .leading, spacing: 4) {
                     if let description = cleanedDescription, !description.isEmpty {
-                        // Long captions used to be hard-truncated at 4 lines
-                        // with no way to read the rest without navigating into
-                        // the full content sheet. ``ExpandableDescription``
-                        // measures the rendered text and only shows the
-                        // "Read more" toggle when truncation actually occurs,
-                        // so short posts stay visually identical to before.
                         ExpandableDescription(text: description, collapsedLineLimit: 4)
                             .padding(.top, 2)
                     }
@@ -104,23 +107,36 @@ struct FeedItemView: View {
                 .padding(.leading, 16)
                 .padding(.trailing, 12)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    guard isCardTapEnabled, canOpenComments else { return }
+                    Haptics.lightImpact()
+                    isCommentsPresented = true
+                }
+
                 CardStackPreview(item: item, size: 110)
-                    // Multi-card stacks fan out with positive offsets and a
-                    // slight rotation, so the rightmost card visually clips
-                    // into the post's right edge with only 16pt of trailing
-                    // space. Bumping to 22 gives the topmost card the same
-                    // breathing room as the inset on other content.
                     .padding(.trailing, 22)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        guard isCardTapEnabled else { return }
+                        // Pull posts are a single card — jump straight to the
+                        // card detail sheet without the extra two screens.
+                        if item.type == .pull,
+                           let cardID = item.pullCardID ?? item.thumbnails?.first {
+                            Haptics.lightImpact()
+                            Task {
+                                if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                                    presentedPullCard = card
+                                }
+                            }
+                        } else if canOpenComments {
+                            Haptics.lightImpact()
+                            isCommentsPresented = true
+                        }
+                    }
             }
-            .frame(minHeight: 110) // Match card size
+            .frame(minHeight: 110)
             .padding(.bottom, 14)
-            .contentShape(Rectangle())
-            .onTapGesture {
-                guard isCardTapEnabled, canOpenComments else { return }
-                Haptics.lightImpact()
-                isCommentsPresented = true
-            }
 
             // Footer
             if showsInteractionBar, item.type != .friendship {
@@ -157,7 +173,15 @@ struct FeedItemView: View {
                     CommentsView(content: content, sourceItem: item)
                         .environment(services)
                 }
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
             }
+        }
+        // Direct card detail for pull posts — bypasses the
+        // Comments → View Content → SharedContentView chain.
+        .sheet(item: $presentedPullCard) { card in
+            CardDetailSheet(cards: [card], startIndex: 0)
+                .environment(services)
         }
         .alert("Delete Post?", isPresented: $showDeleteAlert) {
             Button("Delete", role: .destructive) {
@@ -794,7 +818,7 @@ private struct ExpandableDescription: View {
     let text: String
     let collapsedLineLimit: Int
 
-    @State private var isExpanded: Bool = false
+    @State private var isExpanded: Bool = true
     @State private var fullHeight: CGFloat = 0
     @State private var collapsedHeight: CGFloat = 0
 
@@ -809,7 +833,9 @@ private struct ExpandableDescription: View {
     }
 
     private var showsToggle: Bool {
-        isTruncated || isExpanded
+        // Only offer the toggle when the text would actually be cut off at
+        // the collapsed line limit. Short posts never need a "Show less" button.
+        isTruncated
     }
 
     var body: some View {

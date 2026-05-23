@@ -5,7 +5,7 @@ import SwiftUI
 struct CollectionListView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.presentCard) private var presentCard
+    @Environment(\.presentCardAtIndex) private var presentCardAtIndex
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var items: [CollectionItem]
 
@@ -50,6 +50,10 @@ struct CollectionListView: View {
 
     private var orderedCards: [Card] {
         visibleCollectionItems.compactMap { cardsByCardID[$0.cardID] }
+    }
+
+    private var filteredOrderedCards: [Card] {
+        filteredCollectionItems.compactMap { cardsByCardID[$0.cardID] }
     }
 
     var body: some View {
@@ -123,7 +127,9 @@ struct CollectionListView: View {
     private func collectionCell(for item: CollectionItem) -> some View {
         if let card = cardsByCardID[item.cardID] {
             Button {
-                presentCard(card, orderedCards)
+                let cards = filteredOrderedCards
+                let index = cards.firstIndex(where: { $0.masterCardId == card.masterCardId }) ?? 0
+                presentCardAtIndex(cards, index)
             } label: {
                 CardGridCell(card: card, footnote: collectionFootnote(for: item))
             }

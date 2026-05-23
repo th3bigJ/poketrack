@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CommentsView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.dismiss) private var dismiss
 
     let content: SocialFeedService.FeedContentSummary
     let sourceItem: SocialFeedService.FeedItem?
@@ -14,6 +15,12 @@ struct CommentsView: View {
     @State private var errorMessage: String?
     @State private var sharedContentDetail: SharedContent?
     @State private var isLoadingSharedContent = false
+    /// For pull-type posts: the resolved ``Card`` shown inline in the post
+    /// header so the user can tap straight to ``CardDetailSheet`` without the
+    /// View Content → SharedContentView detour.
+    @State private var pullCard: Card?
+    /// Drives the ``CardDetailSheet`` presentation for pull posts.
+    @State private var presentedPullCard: Card?
     @FocusState private var isComposerFocused: Bool
 
     init(
@@ -26,6 +33,8 @@ struct CommentsView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            sheetPullArea
+
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
                     VStack(alignment: .leading, spacing: 12) {
@@ -38,6 +47,8 @@ struct CommentsView: View {
                             .padding(.horizontal, 16)
                     }
                     .padding(.top, 16)
+                    .contentShape(Rectangle())
+                    .gesture(sheetDismissDragGesture)
 
                     VStack(alignment: .leading, spacing: 16) {
                         Text("COMMENTS")
@@ -117,8 +128,16 @@ struct CommentsView: View {
         }
         .navigationTitle("Comments")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .navigationBar)
         .task {
             await loadComments()
+            // For pull posts, resolve the card up-front so the inline
+            // card row is ready immediately — no "View Content" tap needed.
+            if content.contentType == .pull,
+               let cardID = sourceItem?.pullCardID ?? sourceItem?.thumbnails?.first,
+               pullCard == nil {
+                pullCard = await services.cardData.loadCard(masterCardId: cardID)
+            }
         }
         .sheet(item: $sharedContentDetail) { sharedContent in
             NavigationStack {
@@ -126,6 +145,36 @@ struct CommentsView: View {
                     .environment(services)
             }
         }
+        .sheet(item: $presentedPullCard) { card in
+            CardDetailSheet(cards: [card], startIndex: 0)
+                .environment(services)
+        }
+    }
+
+    private var sheetPullArea: some View {
+        VStack(spacing: 8) {
+            Capsule()
+                .fill(Color.secondary.opacity(0.35))
+                .frame(width: 38, height: 5)
+                .padding(.top, 8)
+
+            Text("Comments")
+                .font(.headline.weight(.semibold))
+                .frame(maxWidth: .infinity)
+                .padding(.bottom, 8)
+        }
+        .frame(maxWidth: .infinity)
+        .contentShape(Rectangle())
+        .gesture(sheetDismissDragGesture)
+    }
+
+    private var sheetDismissDragGesture: some Gesture {
+        DragGesture(minimumDistance: 8)
+            .onEnded { value in
+                guard value.translation.height > 70,
+                      abs(value.translation.height) > abs(value.translation.width) else { return }
+                dismiss()
+            }
     }
 
     @ViewBuilder
@@ -221,32 +270,92 @@ struct CommentsView: View {
                 postCard
             }
 
-            Button {
-                Task { await openSharedContent() }
-            } label: {
-                HStack(spacing: 8) {
-                    if isLoadingSharedContent {
-                        ProgressView()
-                            .controlSize(.small)
-                            .tint(services.theme.accentColor)
-                    } else {
-                        Image(systemName: "arrow.up.right.square")
-                            .foregroundStyle(services.theme.accentColor)
+            // Pull posts are a single card — show it inline so the user
+            // can tap straight to the card detail without two extra screens.
+            // Everything else (binder, deck, etc.) keeps "View Content".
+            if content.contentType == .pull {
+                if let card = pullCard {
+                    Button {
+                        presentedPullCard = card
+                    } label: {
+                        HStack(spacing: 12) {
+                            let imageURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 80, height: 112)) { img in
+                                img.resizable().scaledToFit()
+                            } placeholder: {
+                                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                    .fill(Color.secondary.opacity(0.15))
+                            }
+                            .frame(width: 44, height: 62)
+                            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text(card.cardName)
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(.primary)
+                                    .lineLimit(1)
+                                Text("Tap to view card")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 12, weight: .semibold))
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 10)
+                        .background(Color(uiColor: .secondarySystemBackground),
+                                    in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+                        }
                     }
-                    Text("View Content")
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.primary)
+                    .buttonStyle(.plain)
+                } else {
+                    // Still resolving the card — show a quiet placeholder so
+                    // the layout doesn't jump when the card loads in.
+                    HStack {
+                        ProgressView().controlSize(.small)
+                        Text("Loading card…")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 14)
+                    .background(Color(uiColor: .secondarySystemBackground),
+                                in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 10)
-                .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+            } else {
+                Button {
+                    Task { await openSharedContent() }
+                } label: {
+                    HStack(spacing: 8) {
+                        if isLoadingSharedContent {
+                            ProgressView()
+                                .controlSize(.small)
+                                .tint(services.theme.accentColor)
+                        } else {
+                            Image(systemName: "arrow.up.right.square")
+                                .foregroundStyle(services.theme.accentColor)
+                        }
+                        Text("View Content")
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.primary)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 10)
+                    .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+                    }
                 }
+                .buttonStyle(.plain)
+                .disabled(isLoadingSharedContent)
             }
-            .buttonStyle(.plain)
-            .disabled(isLoadingSharedContent)
         }
     }
 

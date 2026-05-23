@@ -16,6 +16,7 @@ struct CardDetailSheet: View {
 
     @State private var index: Int
     @State private var scrollIndex: Int?
+    @State private var hasAppliedInitialScrollPosition = false
     @State private var editingLine: HoldingLine?
     @State private var dispositionLine: HoldingLine?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
@@ -118,6 +119,7 @@ struct CardDetailSheet: View {
         }
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
+            applyInitialScrollPositionIfNeeded()
         }
         .sheet(item: $editingLine) { line in
             EditCollectionItemSheet(line: line, cardDisplayName: currentCard.cardName)
@@ -154,6 +156,24 @@ struct CardDetailSheet: View {
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
+    }
+
+    private func applyInitialScrollPositionIfNeeded() {
+        guard !hasAppliedInitialScrollPosition else { return }
+        hasAppliedInitialScrollPosition = true
+        let targetIndex = index
+
+        Task { @MainActor in
+            scrollIndex = nil
+            await Task.yield()
+            await Task.yield()
+
+            var transaction = Transaction(animation: nil)
+            transaction.disablesAnimations = true
+            withTransaction(transaction) {
+                scrollIndex = targetIndex
+            }
+        }
     }
 
     private func cardPage(for pageCard: Card) -> some View {
@@ -559,104 +579,159 @@ struct CardDetailSheet: View {
 
     private func holdingCard(for group: HoldingGroup) -> some View {
         VStack(alignment: .leading, spacing: 14) {
-            HStack(spacing: 8) {
-                Text("\(group.totalQuantity) x \(variantTitle(group.variantKey))")
-                    .font(.headline).foregroundStyle(.primary)
-                infoBadge(label: group.itemKind == ProductKind.gradedItem.rawValue ? "Graded" : "Raw", tint: DebugPalette.chartLine)
-                if let company = cleaned(group.gradingCompany), let grade = cleaned(group.grade) {
-                    infoBadge(label: "\(company) \(grade)", tint: DebugPalette.gold)
+            HStack(alignment: .firstTextBaseline, spacing: 12) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("\(group.totalQuantity) \(group.totalQuantity == 1 ? "copy" : "copies")")
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+
+                    Text(variantTitle(group.variantKey))
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer(minLength: 8)
+
+                HStack(spacing: 6) {
+                    infoBadge(label: group.itemKind == ProductKind.gradedItem.rawValue ? "Graded" : "Raw", tint: DebugPalette.chartLine)
+                    if let company = cleaned(group.gradingCompany), let grade = cleaned(group.grade) {
+                        infoBadge(label: "\(company) \(grade)", tint: DebugPalette.gold)
+                    }
                 }
             }
-            VStack(spacing: 10) {
+
+            VStack(spacing: 8) {
                 ForEach(group.lines) { line in holdingSourceRow(line) }
             }
+
             if let notes = cleaned(group.primaryItem.notes) {
-                Text(notes).font(.subheadline).foregroundStyle(.secondary)
+                Label(notes, systemImage: "note.text")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             }
         }
-        .padding(.vertical, 6)
     }
 
     private func holdingSourceRow(_ line: HoldingLine) -> some View {
         HStack(alignment: .center, spacing: 12) {
-            // Left Column: Details
-            VStack(alignment: .leading, spacing: 6) {
-                HStack(spacing: 8) {
-                    infoBadge(label: line.directionTitle, tint: line.tint)
-                    Text("Qty \(line.quantity)")
-                        .font(.system(size: 14, weight: .semibold, design: .rounded))
+            ZStack {
+                Circle()
+                    .fill(line.tint.opacity(colorScheme == .dark ? 0.20 : 0.14))
+                    .frame(width: 42, height: 42)
+                Image(systemName: holdingIcon(for: line.direction))
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(line.tint)
+            }
+
+            VStack(alignment: .leading, spacing: 5) {
+                HStack(spacing: 7) {
+                    Text(line.directionTitle)
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
                         .foregroundStyle(.primary)
+
+                    Text("Qty \(line.quantity)")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(line.tint)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(line.tint.opacity(0.12), in: Capsule())
                 }
-                
-                HStack(spacing: 6) {
+
+                HStack(spacing: 5) {
                     Text(line.date.formatted(date: .abbreviated, time: .omitted))
-                        .font(.caption)
+                        .font(.caption.weight(.medium))
                         .foregroundStyle(.secondary)
-                    
+
                     if let priceText = line.priceText {
-                        Text("•")
-                            .font(.caption)
-                            .foregroundStyle(.tertiary)
+                        separatorDot
                         Text(priceText)
-                            .font(.system(size: 12, weight: .semibold, design: .rounded))
+                            .font(.caption.weight(.semibold))
                             .foregroundStyle(DebugPalette.chartLine)
                     }
+
+                    if let source = holdingSourceText(for: line) {
+                        separatorDot
+                        Text(source)
+                            .font(.caption.weight(.medium))
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                    }
                 }
             }
-            
+
             Spacer()
-            
-            // Right Side: Quick Action Icons or Compact Buttons
-            HStack(spacing: 8) {
-                Button {
+
+            HStack(spacing: 6) {
+                holdingActionButton(systemImage: "pencil", title: "Edit acquisition", tint: .primary, usesNeutralFill: true) {
                     editingLine = line
-                } label: {
-                    HStack(spacing: 4) {
-                        Image(systemName: "pencil")
-                            .font(.system(size: 12, weight: .bold))
-                        Text("Edit")
-                            .font(.system(size: 12, weight: .bold, design: .rounded))
-                    }
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 8)
-                    .background(
-                        Capsule()
-                            .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.05))
-                    )
-                    .foregroundStyle(.primary)
                 }
-                .buttonStyle(.plain)
-                
-                Button {
+
+                holdingActionButton(systemImage: "tag.fill", title: "Mark disposition", tint: DebugPalette.chartLine) {
                     dispositionLine = line
-                } label: {
-                    HStack(spacing: 4) {
-                        Image(systemName: "tag.fill")
-                            .font(.system(size: 12, weight: .bold))
-                        Text("Mark As")
-                            .font(.system(size: 12, weight: .bold, design: .rounded))
-                    }
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 8)
-                    .background(
-                        Capsule()
-                            .fill(DebugPalette.chartLine.opacity(0.12))
-                    )
-                    .foregroundStyle(DebugPalette.chartLine)
                 }
-                .buttonStyle(.plain)
             }
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 12)
         .padding(.vertical, 12)
         .background(
             RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(sectionInsetBackground.opacity(0.4))
+                .fill(.ultraThinMaterial)
                 .overlay(
                     RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .stroke(Color.white.opacity(0.06), lineWidth: 1)
+                        .stroke(sectionBorder.opacity(0.7), lineWidth: 1)
                 )
         )
+    }
+
+    private var separatorDot: some View {
+        Circle()
+            .fill(Color.secondary.opacity(0.45))
+            .frame(width: 3, height: 3)
+    }
+
+    private func holdingActionButton(
+        systemImage: String,
+        title: String,
+        tint: Color,
+        usesNeutralFill: Bool = false,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            Image(systemName: systemImage)
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundStyle(tint)
+                .frame(width: 40, height: 40)
+                .background(
+                    Circle()
+                        .fill(usesNeutralFill
+                            ? (colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.055))
+                            : tint.opacity(0.12))
+                )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(title)
+    }
+
+    private func holdingIcon(for direction: LedgerDirection) -> String {
+        switch direction {
+        case .packed: return "shippingbox.fill"
+        case .bought: return "cart.fill"
+        case .sold: return "dollarsign.circle.fill"
+        case .tradedIn, .tradedOut: return "arrow.left.arrow.right"
+        case .giftedIn, .giftedOut: return "gift.fill"
+        case .adjustmentIn, .adjustmentOut: return "slider.horizontal.3"
+        }
+    }
+
+    private func holdingSourceText(for line: HoldingLine) -> String? {
+        if let counterparty = cleaned(line.counterparty) {
+            return "\(line.counterpartyLabel) \(counterparty)"
+        }
+        return cleaned(line.description)
     }
 
     // MARK: - Card details section

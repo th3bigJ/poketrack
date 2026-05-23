@@ -568,10 +568,11 @@ struct BinderOpenContainer: View {
     @State private var stablePageFrame: CGRect = .zero
 
     /// Spring used for both the opening morph and the closing collapse.
-    /// Tuned to the 350-400ms window the user described — fast enough to
-    /// feel responsive but with enough overshoot to read as physical.
+    /// Critical damping (1.0) so the cover arrives at its destination with
+    /// zero overshoot — no subtle upward bounce when landing at page-center
+    /// on open, and no oscillation when seating back into the grid on close.
     private var morphAnimation: Animation {
-        .spring(response: 0.4, dampingFraction: 0.82)
+        .spring(response: 0.4, dampingFraction: 1.0)
     }
 
     // MARK: Init
@@ -676,9 +677,19 @@ struct BinderOpenContainer: View {
                     y: 2 + 18 * liftIntensity
                 )
                 .scaleEffect(coverScale * breathingScale, anchor: .center)
+                // ``coverCenter`` is stored in the "bindersRoot" coordinate space
+                // (same as the cell frames and the page-frame preference). The parent
+                // ZStack here starts at the top of the screen (y = 0) because
+                // BinderOpenContainer was applied .ignoresSafeArea(.all), while the
+                // "bindersRoot" ZStack starts below the status bar. Subtracting the
+                // origin of this full-screen reader in "bindersRoot" space converts
+                // bindersRoot coordinates → the screen-local coordinates that
+                // .position() expects. Without this correction the cover appears
+                // ~59 px above the actual grid cell and appears to "lift" before
+                // starting the spring.
                 .position(
-                    x: coverCenter.x,
-                    y: coverCenter.y
+                    x: coverCenter.x - rootGeo.frame(in: .named("bindersRoot")).origin.x,
+                    y: coverCenter.y - rootGeo.frame(in: .named("bindersRoot")).origin.y
                 )
                 .opacity(coverOpacity)
                 .allowsHitTesting(false)
@@ -696,9 +707,13 @@ struct BinderOpenContainer: View {
                     let size = rootGeo.size
                     let fallbackHeight = min(size.height * 0.78, size.width * 1.4)
                     let fallbackWidth = min(size.width - 32, fallbackHeight / 1.4)
+                    // Express the fallback rect in "bindersRoot" space (same as cell
+                    // frames and the page-frame preference) so coverTargetFrame →
+                    // pageCenter → .position correction all stay consistent.
+                    let geoOrigin = rootGeo.frame(in: .named("bindersRoot")).origin
                     pageFrame = CGRect(
-                        x: (size.width - fallbackWidth) / 2,
-                        y: (size.height - fallbackHeight) / 2,
+                        x: geoOrigin.x + (size.width - fallbackWidth) / 2,
+                        y: geoOrigin.y + (size.height - fallbackHeight) / 2,
                         width: fallbackWidth,
                         height: fallbackHeight
                     )
@@ -814,11 +829,11 @@ struct BinderOpenContainer: View {
         }
 
         Task {
-            // Wait one 60fps frame so the no-animation snap is committed
-            // to a render pass before the spring starts. Without this gap
-            // SwiftUI can batch the snap + spring into a single update,
-            // undoing the snap's disablesAnimations guard.
-            try? await Task.sleep(nanoseconds: 16_000_000)
+            // Yield to the next main-actor run-loop turn so the
+            // no-animation snap is committed in its own render pass
+            // before the spring starts. Task.yield() is more precise
+            // than a 16 ms sleep on variable-refresh-rate displays.
+            await Task.yield()
             await MainActor.run {
                 withAnimation(morphAnimation) {
                     coverScale = 1.0
@@ -837,12 +852,16 @@ struct BinderOpenContainer: View {
 
             // Fade the overlay out shortly after the spring lands. The
             // ``BinderDetailView`` cover (page 0) is already underneath at
-            // the same rect so the user can't see the swap.
+            // the same rect so the user can't see the swap. Fading
+            // ``liftIntensity`` alongside opacity dissolves the floating
+            // shadow gradually instead of it "dropping" the moment the
+            // overlay disappears — the hand-off reads as one continuous motion.
             try? await Task.sleep(nanoseconds: 30_000_000)
             await MainActor.run {
                 withAnimation(.easeOut(duration: 0.25)) {
                     coverOpacity = 0
                     detailOpacity = 1
+                    liftIntensity = 0
                 }
                 // Subtle breath during the cover hold — single ease in/
                 // out cycle so the binder reads as "alive" without
@@ -909,13 +928,22 @@ struct BinderOpenContainer: View {
         }
 
         Task {
-            // Wait one 60fps frame so the no-animation snap is committed
-            // before the spring starts (same reasoning as startOpenMorph).
-            try? await Task.sleep(nanoseconds: 16_000_000)
+            // Yield to the next run-loop turn — same reasoning as startOpenMorph.
+            await Task.yield()
             await MainActor.run {
+                // Spring drives only position and scale — liftIntensity is
+                // kept separate so the shadow stays "elevated" while the binder
+                // travels toward the grid cell, rather than immediately sinking
+                // (which created a visual drop at the start of the close).
                 withAnimation(morphAnimation) {
                     coverScale = sourceScale
                     coverCenter = sourceCenter
+                }
+                // Shadow fades out near the END of the close travel so the
+                // binder looks lifted the whole way and only "lands" once it
+                // reaches the cell. delay(0.25) lets most of the spring travel
+                // complete first; duration(0.15) matches the final approach.
+                withAnimation(.easeOut(duration: 0.15).delay(0.25)) {
                     liftIntensity = 0
                 }
             }

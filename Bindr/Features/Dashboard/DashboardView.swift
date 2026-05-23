@@ -24,7 +24,23 @@ struct DashboardView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Environment(\.scenePhase) private var scenePhase
 
-    @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var allLedgerLines: [LedgerLine]
+    // Fetch only the 100 most-recent ledger lines — the dashboard shows at most
+    // 5 (``recentLines``). Loading every entry in a large collection blocked the
+    // main thread on cold launch for several seconds; a 100-row cap makes the
+    // query near-instant while still covering any brand-filtering scenario.
+    //
+    // ``fetchLimit`` is a stored property on FetchDescriptor (not an initializer
+    // parameter), so we build the descriptor in a static lazy property and
+    // reference it here — that's the only way to use it with @Query.
+    @Query(DashboardView.ledgerDescriptor) private var allLedgerLines: [LedgerLine]
+
+    private static let ledgerDescriptor: FetchDescriptor<LedgerLine> = {
+        var d = FetchDescriptor<LedgerLine>(
+            sortBy: [SortDescriptor(\LedgerLine.occurredAt, order: .reverse)]
+        )
+        d.fetchLimit = 100
+        return d
+    }()
     @Query private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     @Query private var binders: [Binder]
