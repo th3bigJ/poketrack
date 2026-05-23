@@ -561,7 +561,7 @@ struct BinderDetailView: View {
                 GeometryReader { pgGeo in
                     Color.clear.preference(
                         key: BinderPageFramePreferenceKey.self,
-                        value: pgGeo.frame(in: .global)
+                        value: pgGeo.frame(in: .named("bindersRoot"))
                     )
                 }
             )

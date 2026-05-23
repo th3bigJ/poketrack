@@ -109,6 +109,10 @@ struct BindersRootView: View {
                 .toolbar(isPresentingBinder ? .hidden : .visible, for: .tabBar)
             }
         }
+        // All cell frames and the page-frame preference are reported in this
+        // named space so the morph overlay and source positions share a single
+        // consistent coordinate origin.
+        .coordinateSpace(name: "bindersRoot")
         .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $showCreateSheet) {
@@ -236,7 +240,7 @@ struct BindersRootView: View {
                         // firing simultaneously during normal scroll redraws.
                         .background(
                             GeometryReader { cellGeo in
-                                let newFrame = cellGeo.frame(in: .global)
+                                let newFrame = cellGeo.frame(in: .named("bindersRoot"))
                                 Color.clear
                                     .preference(
                                         key: BinderCellFramePreferenceKey.self,
@@ -672,16 +676,9 @@ struct BinderOpenContainer: View {
                     y: 2 + 18 * liftIntensity
                 )
                 .scaleEffect(coverScale * breathingScale, anchor: .center)
-                // coverCenter is stored in .global coordinates (same space
-                // as sourceFrame / pageFrame). Convert to the GeometryReader's
-                // LOCAL space by subtracting its global origin.  On most
-                // devices the origin is (0,0), but when the container is
-                // nested inside a safe-area-constrained parent the origin can
-                // be offset by the status-bar height, which causes the cover
-                // to appear shifted — typically toward the top-left corner.
                 .position(
-                    x: coverCenter.x - rootGeo.frame(in: .global).origin.x,
-                    y: coverCenter.y - rootGeo.frame(in: .global).origin.y
+                    x: coverCenter.x,
+                    y: coverCenter.y
                 )
                 .opacity(coverOpacity)
                 .allowsHitTesting(false)
