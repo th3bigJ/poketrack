@@ -45,8 +45,11 @@ final class PricingService {
     /// Build a masterCardId-keyed index from already-loaded Card objects so that
     /// `cachedUsdPriceForCardID` can do O(1) lookups without knowing externalId/tcgdex_id.
     /// Call this after `prefetchAllPokemonCardPricing` and a bulk card load both complete.
-    func indexPricingForCards(_ cards: [Card]) {
+    func indexPricingForCards(_ cards: [Card]) async {
+        var i = 0
         for card in cards {
+            i += 1
+            if i % 200 == 0 { await Task.yield() }
             let key = card.masterCardId.lowercased()
             guard pokemonPricingByMasterCardID[key] == nil else { continue }
             let lookupKeys = Self.pricingLookupKeys(for: card)

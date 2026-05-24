@@ -11,6 +11,8 @@ final class SealedProductService {
     private(set) var lastError: String?
 
     private let session: URLSession
+    // Coalesces concurrent loadFromLocalIfAvailable calls so only one SQLite decode runs at a time.
+    private var localLoadTask: Task<Void, Never>?
 
     init(session: URLSession = .shared) {
         self.session = session
@@ -20,7 +22,14 @@ final class SealedProductService {
         if products.isEmpty == false, marketPriceByID.isEmpty == false {
             return
         }
-        await loadFromSQLiteDailyBlobs()
+        if let existing = localLoadTask {
+            await existing.value
+            return
+        }
+        let task = Task { await self.loadFromSQLiteDailyBlobs() }
+        localLoadTask = task
+        await task.value
+        localLoadTask = nil
     }
 
     /// Always reloads from SQLite, even if products are already in memory. Use this after a catalog

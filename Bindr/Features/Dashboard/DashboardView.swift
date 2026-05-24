@@ -166,7 +166,7 @@ struct DashboardView: View {
     }
 
     private var backfillTrigger: String {
-        "\(services.collectionValue == nil ? "nil" : "ready"):\(collectionItems.count)"
+        "\(services.collectionValue == nil ? "nil" : "ready"):\(collectionItems.count):\(services.isLaunchCatalogPipelineComplete)"
     }
 
     private var dailyPoints: [ChartPoint] {
@@ -317,9 +317,9 @@ struct DashboardView: View {
                 fireInitialLoadCompleteIfReady()
             }
         }
-        .task(id: collectionItems.count) {
-            guard collectionItems.count > 0 else { return }
-            // Background recalculation — runs after the overlay has already closed.
+        .task(id: "\(collectionItems.count):\(services.isLaunchCatalogPipelineComplete)") {
+            guard collectionItems.count > 0, services.isLaunchCatalogPipelineComplete else { return }
+            // Background recalculation — runs after the catalog pipeline is fully ready.
             print("[Dashboard⏱] collectionItems.count task fired (items=\(collectionItems.count))")
             print("[Dashboard⏱] computeLiveValue start (items=\(collectionItems.count))")
             let t = ContinuousClock().now
@@ -327,7 +327,7 @@ struct DashboardView: View {
             print("[Dashboard⏱] computeLiveValue: \(ContinuousClock().now - t) items=\(collectionItems.count)")
         }
         .task(id: backfillTrigger) {
-            guard collectionItems.count > 0, let svc = services.collectionValue else { return }
+            guard collectionItems.count > 0, services.isLaunchCatalogPipelineComplete, let svc = services.collectionValue else { return }
             print("[Dashboard⏱] runBackfillIfNeeded start")
             let t = ContinuousClock().now
             await svc.runBackfillIfNeeded(
@@ -1013,7 +1013,7 @@ struct DashboardView: View {
         async let pokemonCards = services.cardData.loadCards(masterCardIDs: pokemonCollectionIDs, catalogBrand: .pokemon)
         async let onePieceCards = services.cardData.loadCards(masterCardIDs: onePieceCollectionIDs, catalogBrand: .onePiece)
         let (pCards, opCards) = await (pokemonCards, onePieceCards)
-        services.pricing.indexPricingForCards(pCards + opCards)
+        await services.pricing.indexPricingForCards(pCards + opCards)
         print("[Dashboard⏱]   indexPricingForCards: \(ContinuousClock().now - _tIndex) cards=\(pCards.count + opCards.count)")
 
         let _t3 = ContinuousClock().now
@@ -1076,7 +1076,7 @@ struct DashboardView: View {
             let (pm, opm) = await (pMiss, opMiss)
             let allMissedCards = pm + opm
             // Index loaded cards so future calls (FX recompute, market reload) avoid this fallback.
-            services.pricing.indexPricingForCards(allMissedCards)
+            await services.pricing.indexPricingForCards(allMissedCards)
             let cardByID = Dictionary(allMissedCards.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
             print("[Dashboard⏱]   cache miss fallback: \(cacheMissIDs.count) cards loaded=\(pm.count + opm.count)")
             for item in collectionItems where cacheMissIDs.contains(item.cardID) {
