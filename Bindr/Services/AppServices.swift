@@ -60,6 +60,7 @@ final class AppServices {
     /// initial @MainActor import callbacks, which would stall the fade animation.
     private(set) var isCloudKitImportComplete = false
     private var cloudKitObserver: NSObjectProtocol?
+    private var cloudKitIdleMonitor: CloudKitIdleMonitor?
     /// Until `true`, the root UI should not mount the main tab shell (Browse, etc.) so the cold launch catalog pipeline does not race the same SQLite + network work on the main actor.
     private(set) var isLaunchCatalogPipelineComplete = false
     /// Set in `init` when the user already completed the one-time blocking bootstrap; consumed by the first `.task` on the main UI to refresh catalogs in the background.
@@ -316,20 +317,20 @@ final class AppServices {
         pendingLightBrowseTabEntry = true
     }
 
-    /// Non-critical launch tasks that should never block first paint.
-    private func runDeferredLaunchServices() async {
-        print("[Launch] runDeferredLaunchServices: refreshFXRate start")
-        let t = ContinuousClock().now
-        await pricing.refreshFXRate()
-        print("[Launch] runDeferredLaunchServices: refreshFXRate done \(ContinuousClock().now - t)")
-        let t2 = ContinuousClock().now
-        print("[Launch] runDeferredLaunchServices: loadProducts start")
-        await store.loadProducts()
-        print("[Launch] runDeferredLaunchServices: loadProducts done \(ContinuousClock().now - t2)")
-        let t3 = ContinuousClock().now
-        print("[Launch] runDeferredLaunchServices: checkEntitlements start")
-        await store.checkEntitlements()
-        print("[Launch] runDeferredLaunchServices: checkEntitlements done \(ContinuousClock().now - t3)")
+    /// Non-critical launch tasks — fired concurrently, none block @MainActor.
+    private func runDeferredLaunchServices() {
+        Task.detached(priority: .utility) { [weak self] in
+            guard let self else { return }
+            await self.pricing.refreshFXRate()
+        }
+        Task.detached(priority: .utility) { [weak self] in
+            guard let self else { return }
+            await self.store.loadProducts()
+        }
+        Task.detached(priority: .utility) { [weak self] in
+            guard let self else { return }
+            await self.store.checkEntitlements()
+        }
     }
 
     private func runStartupCatalogPipeline(
@@ -628,44 +629,44 @@ final class AppServices {
         await syncSocialLibrariesIfPossible()
     }
 
-    /// Begin watching for the initial CloudKit import event. Call once after the model
-    /// container is available. Automatically times out after `timeout` seconds so the
-    /// launch gate doesn't hang when the user is offline or not signed into iCloud.
-    func beginCloudKitReadinessMonitoring(timeout: TimeInterval = 8) {
-        // If already complete or already observing, skip.
-        guard !isCloudKitImportComplete, cloudKitObserver == nil else { return }
+    /// Keeps the launch overlay visible until SwiftData's CloudKit merge is done.
+    ///
+    /// CloudKit always syncs on every launch — for existing installs this is a small
+    /// catch-up; for fresh installs this is a full restore. Either way, SwiftData posts
+    /// mergeChanges work items to @MainActor that freeze the UI. We use CloudKitIdleMonitor
+    /// to detect when those merges have finished (main thread idle + no recent notifications),
+    /// then close the overlay. The freeze is hidden behind the overlay, not felt on the dashboard.
+    ///
+    /// - Parameters:
+    ///   - quietWindow: seconds of silence after last notification/hitch before declaring idle.
+    ///     Use a shorter window for existing installs (small catch-up) vs fresh installs (full restore).
+    func beginCloudKitReadinessMonitoring() {
+        guard !isCloudKitImportComplete else { return }
 
-        // If the device has no iCloud account, CloudKit won't fire — complete immediately.
-        if FileManager.default.ubiquityIdentityToken == nil {
-            print("[Launch] CloudKit: no iCloud account — skipping readiness wait")
-            isCloudKitImportComplete = true
+        guard FileManager.default.ubiquityIdentityToken != nil else {
+            print("[CloudKit] no iCloud account — opening immediately")
+            markCloudKitImportComplete()
             return
         }
 
-        print("[Launch] CloudKit: waiting for initial import event (timeout \(Int(timeout))s)")
+        let isFreshInstall = !BindrApp.storeExistedAtLaunch
+        // Fresh installs do a full restore and may have many notification bursts — keep a
+        // generous window so we don't open mid-merge. Existing installs only catch up on
+        // deltas since last launch, so a short window is safe and gets the user in faster.
+        let quietWindow: TimeInterval = isFreshInstall ? 8.0 : 3.0
+        let timeout: TimeInterval     = isFreshInstall ? 30.0 : 12.0
 
-        cloudKitObserver = NotificationCenter.default.addObserver(
-            forName: NSPersistentCloudKitContainer.eventChangedNotification,
-            object: nil,
-            queue: nil
-        ) { [weak self] notification in
-            guard let event = notification.userInfo?[NSPersistentCloudKitContainer.eventNotificationUserInfoKey]
-                    as? NSPersistentCloudKitContainer.Event else { return }
-            // We care about the import finishing — that's when SwiftData posts
-            // @MainActor callbacks to merge remote records into the local store.
-            guard event.type == .import, event.endDate != nil else { return }
-            let succeeded = event.error == nil
-            print("[Launch] CloudKit: import event finished (succeeded=\(succeeded))")
-            Task { @MainActor [weak self] in
-                self?.markCloudKitImportComplete()
-            }
+        print("[CloudKit] \(isFreshInstall ? "fresh install" : "existing install") — idle monitor armed (quietWindow=\(quietWindow)s, timeout=\(timeout)s)")
+
+        let monitor = CloudKitIdleMonitor(quietWindow: quietWindow) { [weak self] in
+            self?.markCloudKitImportComplete()
         }
+        self.cloudKitIdleMonitor = monitor
+        monitor.start()
 
-        // Timeout: don't hold the launch gate open indefinitely.
-        Task { @MainActor [weak self] in
-            try? await Task.sleep(nanoseconds: UInt64(timeout * 1_000_000_000))
+        DispatchQueue.main.asyncAfter(deadline: .now() + timeout) { [weak self] in
             guard let self, !self.isCloudKitImportComplete else { return }
-            print("[Launch] CloudKit: readiness timeout — proceeding anyway")
+            print("[CloudKit] timeout (\(timeout)s) — opening anyway")
             self.markCloudKitImportComplete()
         }
     }
@@ -673,6 +674,8 @@ final class AppServices {
     private func markCloudKitImportComplete() {
         guard !isCloudKitImportComplete else { return }
         isCloudKitImportComplete = true
+        cloudKitIdleMonitor?.stop()
+        cloudKitIdleMonitor = nil
         if let observer = cloudKitObserver {
             NotificationCenter.default.removeObserver(observer)
             cloudKitObserver = nil

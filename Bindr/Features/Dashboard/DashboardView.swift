@@ -320,6 +320,7 @@ struct DashboardView: View {
         .task(id: collectionItems.count) {
             guard collectionItems.count > 0 else { return }
             // Background recalculation — runs after the overlay has already closed.
+            print("[Dashboard⏱] collectionItems.count task fired (items=\(collectionItems.count))")
             print("[Dashboard⏱] computeLiveValue start (items=\(collectionItems.count))")
             let t = ContinuousClock().now
             await computeLiveValue()
@@ -997,6 +998,24 @@ struct DashboardView: View {
         await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
         print("[Dashboard⏱]   prefetchPokemonCardPricing: \(ContinuousClock().now - _t2)")
 
+        // Build the masterCardId→pricing index for all collection cards so the pricing
+        // loop below hits the O(1) fast path instead of falling back to per-card SQLite
+        // fetches. indexPricingForCards is a no-op for cards already in the index.
+        let _tIndex = ContinuousClock().now
+        let pokemonCollectionIDs = collectionItems.compactMap { item -> String? in
+            guard !item.cardID.hasPrefix("sealed:"), !item.cardID.contains("::") else { return nil }
+            return item.cardID
+        }
+        let onePieceCollectionIDs = collectionItems.compactMap { item -> String? in
+            guard item.cardID.contains("::") else { return nil }
+            return item.cardID
+        }
+        async let pokemonCards = services.cardData.loadCards(masterCardIDs: pokemonCollectionIDs, catalogBrand: .pokemon)
+        async let onePieceCards = services.cardData.loadCards(masterCardIDs: onePieceCollectionIDs, catalogBrand: .onePiece)
+        let (pCards, opCards) = await (pokemonCards, onePieceCards)
+        services.pricing.indexPricingForCards(pCards + opCards)
+        print("[Dashboard⏱]   indexPricingForCards: \(ContinuousClock().now - _tIndex) cards=\(pCards.count + opCards.count)")
+
         let _t3 = ContinuousClock().now
         var totalValue = 0.0
         var pokemonValue = 0.0
@@ -1004,7 +1023,12 @@ struct DashboardView: View {
         var totalCost = 0.0
         var cacheMissIDs: [String] = []
 
+        // Yield every 100 items so the main thread stays responsive during large collections.
+        var yieldCounter = 0
         for item in collectionItems {
+            yieldCounter += 1
+            if yieldCounter % 100 == 0 { await Task.yield() }
+
             guard item.quantity > 0 else { continue }
             guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
             totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)

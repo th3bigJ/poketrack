@@ -77,12 +77,14 @@ final class PricingService {
             }
             return result
         }.value
-        // Single bulk merge back on @MainActor — one dict assignment instead of N.
-        for (key, entry) in decoded {
-            if pokemonCardPricingCache[key] == nil {
-                pokemonCardPricingCache[key] = entry
-            }
-        }
+        // Bulk merge: since we only get here when pokemonAllPricingPrefetched==false (guard above),
+        // the cache is empty or has only a handful of per-card misses — just merge with updateValue
+        // to preserve any entries already in the cache, then flip the prefetch flag.
+        // Avoid iterating 800+ entries one-by-one on @MainActor; use merging(_:uniquingKeysWith:)
+        // which is a single O(n) pass done as a value-type operation before the assignment lands.
+        print("[Pricing] prefetchAllPokemonCardPricing: merging \(decoded.count) entries into cache (had \(pokemonCardPricingCache.count))")
+        let merged = decoded.merging(pokemonCardPricingCache) { _, existing in existing }
+        pokemonCardPricingCache = merged
         pokemonAllPricingPrefetched = true
     }
 
@@ -100,8 +102,11 @@ final class PricingService {
     func refreshFXRate() async {
         lastFXError = nil
         let url = URL(string: "https://api.frankfurter.app/latest?from=USD&to=GBP")!
+        // Perform network I/O off @MainActor so a slow response doesn't block the main thread.
         do {
-            let (data, _) = try await session.data(from: url)
+            let (data, _) = try await Task.detached(priority: .utility) {
+                try await URLSession.shared.data(from: url)
+            }.value
             let decoded = try JSONDecoder().decode(FrankfurterResponse.self, from: data)
             if let gbp = decoded.rates["GBP"] {
                 usdToGbp = gbp
@@ -109,7 +114,6 @@ final class PricingService {
             }
         } catch {
             lastFXError = error.localizedDescription
-            // Keep the last known rate to avoid visible value jumps from temporary FX API failures.
         }
     }
 

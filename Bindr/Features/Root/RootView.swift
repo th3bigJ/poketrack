@@ -189,21 +189,11 @@ struct RootView: View {
     @State private var isLaunchOverlayVisible = true
     /// Flipped by DashboardView once a value is ready to display (persisted snapshot or fresh compute).
     @State private var isDashboardDataReady = false
-    /// Flipped once updateRegistrationState completes (or is skipped for first-run users).
-    /// Held in the launch gate so the overlay never closes while push registration is in flight.
-    @State private var isPushRegistrationComplete = false
-    /// Flipped once setupWishlist + setupCollectionLedger + syncSocialLibraries have completed.
-    /// Held in the launch gate so the overlay never closes while these are still running.
-    @State private var isWishlistAndLedgerReady = false
     private let splashLastVersionKey = "bindr_splash_last_shown_version"
 
-    /// Single gate for tearing the launch surface down. We require:
-    ///  - the BINDR reveal animation has played,
-    ///  - the services layer is initialized,
-    ///  - the launch catalog pipeline (returning-user daily refresh, if any)
-    ///    has completed,
-    ///  - onboarding is fully complete (not mid-flow),
-    ///  - push registration has finished (so its @MainActor callbacks don't land during the fade).
+    /// Single gate for tearing the launch surface down.
+    /// Kept minimal — only block on things that directly affect what the user sees
+    /// at first paint. Push registration, wishlist, and ledger run after launch.
     private var isLaunchSequenceComplete: Bool {
         hasRevealedLaunchWordmark
             && services.isReady
@@ -212,8 +202,6 @@ struct RootView: View {
             && !showOnboardingImmediate
             && services.brandSettings.hasCompletedBrandOnboarding
             && isDashboardDataReady
-            && isPushRegistrationComplete
-            && isWishlistAndLedgerReady
             && services.isCloudKitImportComplete
     }
 
@@ -413,6 +401,7 @@ struct RootView: View {
                     launchTimerTask?.cancel()
                     launchTimerTask = nil
                     Task { @MainActor in
+                        isLaunchOverlayVisible = false
                         services.runDeferredLaunchServicesIfNeeded()
                         evaluatePremiumUpsellIfNeeded()
                     }
@@ -425,29 +414,20 @@ struct RootView: View {
         }
         .onChange(of: services.isReady) { _, ready in
             launchLog("services.isReady → \(ready)")
-            if ready {
-                // Insert mainContent as soon as services are ready — while the overlay
-                // is fully opaque. SwiftUI will do the full tab tree layout here, which
-                // takes several seconds. Doing it now means the freeze is hidden behind
-                // the wordmark animation rather than during the fade-out.
+            if ready && !hasInsertedMainContent {
                 launchLog("inserting mainContent (isReady)")
                 hasInsertedMainContent = true
                 services.setupCollectionValue(modelContext: modelContext)
             }
         }
+        .onChange(of: services.isCloudKitImportComplete) { _, complete in
+            launchLog("isCloudKitImportComplete → \(complete)")
+        }
         .onChange(of: hasRevealedLaunchWordmark) { _, revealed in
             launchLog("hasRevealedLaunchWordmark → \(revealed)")
-            if revealed && !hasInsertedMainContent {
-                launchLog("inserting mainContent (wordmark fallback)")
-                hasInsertedMainContent = true
-            }
         }
         .onChange(of: services.isLaunchCatalogPipelineComplete) { _, complete in
             launchLog("isLaunchCatalogPipelineComplete → \(complete)")
-            if complete && !hasInsertedMainContent {
-                launchLog("inserting mainContent (pipeline fallback)")
-                hasInsertedMainContent = true
-            }
         }
         .onChange(of: hasInsertedMainContent) { _, inserted in
             if inserted { launchLog("mainContent inserted") }
@@ -455,30 +435,28 @@ struct RootView: View {
         .onChange(of: isDashboardDataReady) { _, ready in
             if ready { launchLog("isDashboardDataReady → true") }
         }
-        .onChange(of: services.isCloudKitImportComplete) { _, complete in
-            if complete { launchLog("isCloudKitImportComplete → true") }
-        }
         .onChange(of: isLaunchSequenceComplete) { _, complete in
             if complete {
                 launchLog("isLaunchSequenceComplete — fading overlay")
-                hasInsertedMainContent = true
-                // Trigger the CALayer fade imperatively via launchFadeHandle so the
-                // animation starts immediately on the render thread, even if @MainActor
-                // is about to be blocked by a CloudKit/SwiftData merge callback.
-                // isLaunchOverlayVisible is also flipped as a fallback: if makeUIView
-                // hasn't run yet (handle not registered), updateUIView picks it up later.
-                isLaunchOverlayVisible = false
+                // Trigger the CALayer fade imperatively — this starts the animation on
+                // the render server immediately without touching any SwiftUI @State.
+                // isLaunchOverlayVisible is NOT flipped here: doing so would schedule
+                // a full SwiftUI body re-render right as CloudKit's @Query results land,
+                // causing a multi-second main-thread freeze proportional to collection size.
+                // It is flipped in the completion block instead, after the fade is done
+                // and the overlay is being removed from the hit-test tree.
+                launchLog("isLaunchSequenceComplete — calling triggerFadeIfNeeded")
                 launchFadeHandle.triggerFadeIfNeeded(
                     duration: 0.45,
                     completion: {
                         launchLog("overlay fade complete — app is ready")
                         launchTimerTask?.cancel()
                         launchTimerTask = nil
-                        // Dispatch deferred services on the next run-loop tick so this
-                        // completion callback returns immediately — the compositor can
-                        // commit the first visible dashboard frame before any @MainActor
-                        // work from deferred services lands.
                         Task { @MainActor in
+                            // Flip the fallback flag now that the fade is visually done.
+                            // This is the first @State mutation after launch — SwiftUI's
+                            // body re-render happens here instead of mid-fade.
+                            isLaunchOverlayVisible = false
                             services.runDeferredLaunchServicesIfNeeded()
                             evaluatePremiumUpsellIfNeeded()
                         }
@@ -518,9 +496,6 @@ struct RootView: View {
             // before any other launch work so the monitor is registered before
             // the notification fires.
             services.beginCloudKitReadinessMonitoring()
-            // Insert mainContent immediately if services are already ready (returning user).
-            // onChange(of: services.isReady) only catches transitions; this handles the
-            // already-true case so the tab tree layout starts on the first run loop tick.
             if services.isReady && !hasInsertedMainContent {
                 launchLog("inserting mainContent immediately (already ready at launch)")
                 hasInsertedMainContent = true
@@ -598,21 +573,15 @@ struct RootView: View {
                 await services.bootstrapCatalogInBackgroundIfNeeded()
                 launchLog("bootstrapCatalogInBackgroundIfNeeded done")
             }
-            // Push registration: must complete before the overlay closes so its
-            // @MainActor callbacks don't land during the fade animation.
-            // Skipped for first-run users — the notifications onboarding page handles it.
-            if services.brandSettings.hasCompletedBrandOnboarding {
-                launchLog("updateRegistrationState starting")
-                await services.socialPush.updateRegistrationState()
-                launchLog("updateRegistrationState done")
+            // Push registration and wishlist/ledger run after the overlay closes —
+            // they are not needed for first paint and their @MainActor network calls
+            // would freeze the UI if awaited here.
+            Task {
+                if services.brandSettings.hasCompletedBrandOnboarding {
+                    await services.socialPush.updateRegistrationState()
+                }
+                await services.setupWishlistAndLedger(modelContext: modelContext)
             }
-            isPushRegistrationComplete = true
-            launchLog("isPushRegistrationComplete → true")
-            launchLog("setupWishlistAndLedger starting")
-            await services.setupWishlistAndLedger(modelContext: modelContext)
-            launchLog("setupWishlistAndLedger done")
-            isWishlistAndLedgerReady = true
-            launchLog("isWishlistAndLedgerReady → true")
             // Cold-launch tap: if the AppDelegate's `didReceive` fired
             // before `AppServices` was constructed, the buffer drain in
             // `SocialPushService.init` already populated
@@ -664,6 +633,7 @@ struct RootView: View {
         } else if services.isReady {
             LaunchWordmarkView(
                 progress: launchProgressState,
+                isSyncingCloudKit: hasRevealedLaunchWordmark && !services.isCloudKitImportComplete && launchProgressState == nil,
                 onRevealComplete: { hasRevealedLaunchWordmark = true },
                 elapsedLabel: launchElapsedLabel
             )

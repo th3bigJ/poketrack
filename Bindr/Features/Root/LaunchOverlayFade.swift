@@ -82,7 +82,9 @@ final class _FadeContainerView: UIView {
         anim.fillMode = .forwards
         anim.isRemovedOnCompletion = false
         CATransaction.begin()
-        CATransaction.setCompletionBlock(completion)
+        CATransaction.setCompletionBlock {
+            DispatchQueue.main.async { completion() }
+        }
         layer.add(anim, forKey: "launchFade")
         layer.opacity = 0
         CATransaction.commit()

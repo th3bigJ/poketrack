@@ -132,18 +132,28 @@ final class CollectionValueService {
         preferredTodaySnapshot: BrandSnapshot? = nil
     ) async {
         guard !isBackfilling else { return }
+        let _t0 = ContinuousClock().now
         await sealedProducts.loadFromLocalIfAvailable()
+        print("[CollectionValue] runBackfillIfNeeded: sealedProducts.loadFromLocal \(ContinuousClock().now - _t0)")
+        let _t1 = ContinuousClock().now
         purgeZeroValueSnapshots()
         saveYesterdaySnapshotFromPersistedValueIfNeeded()
+        print("[CollectionValue] runBackfillIfNeeded: purge+yesterday \(ContinuousClock().now - _t1)")
+        let _t2 = ContinuousClock().now
         await captureTodaySnapshotIfMissing(
             collectionItems: collectionItems,
             preferredSnapshot: preferredTodaySnapshot
         )
+        print("[CollectionValue] runBackfillIfNeeded: captureTodaySnapshot \(ContinuousClock().now - _t2)")
+        let _t3 = ContinuousClock().now
         await fillSnapshotGapsIfNeeded(collectionItems: collectionItems)
-
-        aggregateWeeklyIfNeeded()
-        aggregateMonthlyIfNeeded()
+        print("[CollectionValue] runBackfillIfNeeded: fillGaps \(ContinuousClock().now - _t3)")
+        let _t4 = ContinuousClock().now
+        let freshSnapshots = fetchAllSnapshots()
+        aggregateWeeklyIfNeeded(using: freshSnapshots)
+        aggregateMonthlyIfNeeded(using: freshSnapshots)
         loadAll()
+        print("[CollectionValue] runBackfillIfNeeded: aggregate+load \(ContinuousClock().now - _t4)")
     }
 
     /// Fills gaps between the oldest existing snapshot and yesterday using the closest available
@@ -209,8 +219,9 @@ final class CollectionValueService {
         // Re-aggregate weekly/monthly from the full set of daily snapshots (history intact + new today).
         purgeAllWeeklyAverages()
         purgeAllMonthlyAverages()
-        aggregateWeeklyIfNeeded()
-        aggregateMonthlyIfNeeded()
+        let freshSnapshots = fetchAllSnapshots()
+        aggregateWeeklyIfNeeded(using: freshSnapshots)
+        aggregateMonthlyIfNeeded(using: freshSnapshots)
         loadAll()
         print("[CollectionValue] forceRecalculate done — snapshots=\(snapshots.count) weekly=\(weeklyAverages.count) monthly=\(monthlyAverages.count)")
     }
@@ -335,10 +346,10 @@ final class CollectionValueService {
 
     // MARK: - Weekly aggregation
 
-    private func aggregateWeeklyIfNeeded() {
+    private func aggregateWeeklyIfNeeded(using allSnapshots: [CollectionValueSnapshot]? = nil) {
         let cal = weekCalendar
 
-        let allSnapshots = fetchAllSnapshots()
+        let allSnapshots = allSnapshots ?? fetchAllSnapshots()
         guard !allSnapshots.isEmpty else { return }
 
         // Group ALL snapshots by ISO week start, including the current week
@@ -381,10 +392,10 @@ final class CollectionValueService {
 
     // MARK: - Monthly aggregation
 
-    private func aggregateMonthlyIfNeeded() {
+    private func aggregateMonthlyIfNeeded(using allSnapshots: [CollectionValueSnapshot]? = nil) {
         let cal = Calendar.current
 
-        let allSnapshots = fetchAllSnapshots()
+        let allSnapshots = allSnapshots ?? fetchAllSnapshots()
         guard !allSnapshots.isEmpty else { return }
 
         // Group ALL snapshots by month start, including the current month

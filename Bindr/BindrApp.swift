@@ -74,15 +74,54 @@ struct BindrApp: App {
 
     static let cloudKitFallbackDefaultsKey = "cloudKitFallbackActive"
     static let cloudKitLastErrorDefaultsKey = "cloudKitLastError"
+    /// True if the SQLite store already existed when the app launched.
+    /// False means this is a fresh install (or after deletion) — CloudKit restore is needed.
+    static let storeExistedAtLaunch: Bool = FileManager.default.fileExists(atPath: Self.storeURL.path)
 
     private let modelContainer: ModelContainer = Self.makeModelContainer()
 
     init() {
         Self.configureTabBarAppearance()
+        Self.installMainThreadWatchdog()
     }
 
-    /// CloudKit-backed store for user data. SwiftData keeps a local cache on-device and syncs it through the
-    /// app's private iCloud database when the user is signed into iCloud.
+    /// Logs a stack trace every time the main thread is blocked for >100ms.
+    /// Remove before shipping.
+    private static func installMainThreadWatchdog() {
+        #if DEBUG
+        let q = DispatchQueue(label: "main.watchdog", qos: .userInteractive)
+        q.async {
+            var lastPing = CFAbsoluteTimeGetCurrent()
+            // Ping the main thread every 100ms; if the ack takes >500ms, log it.
+            while true {
+                let sent = CFAbsoluteTimeGetCurrent()
+                DispatchQueue.main.async {
+                    let delay = CFAbsoluteTimeGetCurrent() - sent
+                    if delay > 0.5 {
+                        print(String(format: "[Watchdog] main thread was blocked for %.2fs", delay))
+                        // Capture the main thread's backtrace via Thread.callStackSymbols.
+                        // This runs ON the main thread so it's the actual offending stack.
+                        let stack = Thread.callStackSymbols
+                            .prefix(30)
+                            .joined(separator: "\n")
+                        print("[Watchdog] stack at unblock:\n\(stack)")
+                    }
+                    lastPing = CFAbsoluteTimeGetCurrent()
+                }
+                Thread.sleep(forTimeInterval: 0.1)
+                // If we haven't heard back in 2s, the block is ongoing — log from here.
+                let waited = CFAbsoluteTimeGetCurrent() - lastPing
+                if waited > 2.0 {
+                    print(String(format: "[Watchdog] main thread still blocked (%.1fs so far)", waited))
+                }
+            }
+        }
+        #endif
+    }
+
+    /// CloudKit-backed store. SwiftData merges CloudKit records on @MainActor; the
+    /// CloudKitIdleMonitor keeps the launch overlay visible until those merges complete,
+    /// so the freeze is hidden behind the overlay rather than felt on the dashboard.
     private static func makeModelContainer() -> ModelContainer {
         let schema = Schema([
             WishlistItem.self,
@@ -108,23 +147,15 @@ struct BindrApp: App {
             UserDefaults.standard.removeObject(forKey: cloudKitLastErrorDefaultsKey)
             return container
         } catch {
-            logModelContainerIssue(
-                stage: "initial CloudKit load",
-                error: error
-            )
+            logModelContainerIssue(stage: "initial CloudKit load", error: error)
             destroyPersistentStoreFiles()
-
             do {
                 let container = try makePersistentContainer(schema: schema, cloudKitDatabase: .automatic)
                 UserDefaults.standard.set(false, forKey: cloudKitFallbackDefaultsKey)
                 UserDefaults.standard.removeObject(forKey: cloudKitLastErrorDefaultsKey)
                 return container
             } catch {
-                logModelContainerIssue(
-                    stage: "CloudKit reload after store reset",
-                    error: error
-                )
-
+                logModelContainerIssue(stage: "CloudKit reload after store reset", error: error)
                 do {
                     let container = try makePersistentContainer(schema: schema, cloudKitDatabase: .none)
                     UserDefaults.standard.set(true, forKey: cloudKitFallbackDefaultsKey)

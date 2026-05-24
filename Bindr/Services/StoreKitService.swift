@@ -38,11 +38,14 @@ final class StoreKitService {
     }
 
     func loadProducts() async {
+        // Fetch from App Store off @MainActor — network latency must not block the main thread.
         do {
-            let fetched = try await Product.products(for: [
-                AppConfiguration.premiumProductID,
-                AppConfiguration.premiumAnnualProductID
-            ])
+            let fetched = try await Task.detached(priority: .utility) {
+                try await Product.products(for: [
+                    AppConfiguration.premiumProductID,
+                    AppConfiguration.premiumAnnualProductID
+                ])
+            }.value
             products = fetched.filter { $0.id == AppConfiguration.premiumProductID }
             annualProduct = fetched.first { $0.id == AppConfiguration.premiumAnnualProductID }
         } catch {
@@ -53,14 +56,19 @@ final class StoreKitService {
     }
 
     func checkEntitlements() async {
-        var premium = false
-        for await result in StoreKit.Transaction.currentEntitlements {
-            guard case .verified(let t) = result else { continue }
-            if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
-                premium = true
-                break
+        // Drain the async sequence on a background executor so StoreKit's
+        // network round-trip doesn't hold @MainActor while Apple's servers respond.
+        let premium = await Task.detached(priority: .userInitiated) {
+            var found = false
+            for await result in StoreKit.Transaction.currentEntitlements {
+                guard case .verified(let t) = result else { continue }
+                if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
+                    found = true
+                    break
+                }
             }
-        }
+            return found
+        }.value
         premiumEntitlement = premium
     }
 
