@@ -65,6 +65,13 @@ struct DashboardView: View {
     @State private var editingRecentLedgerLine: LedgerLine?
     @State private var selectedCardForDetail: Card? = nil
 
+    // Cached collection stats — updated via task when collectionItems/brand changes,
+    // so SwiftUI body evaluation never pays the O(n) cost of iterating 997+ items.
+    @State private var cachedTotalCardsCount: Int = 0
+    @State private var cachedUniqueCardsCount: Int = 0
+    @State private var cachedSealedProductsCount: Int = 0
+    @State private var cachedWishlistedCardsCount: Int = 0
+
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
         return BrandSnapshot(total: t, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp)
@@ -111,24 +118,21 @@ struct DashboardView: View {
         )
     }
 
-    private var totalCardsCount: Int {
-        visibleCollectionItems.reduce(0) { $0 + max($1.quantity, 0) }
-    }
+    private var totalCardsCount: Int { cachedTotalCardsCount }
+    private var uniqueCardsCount: Int { cachedUniqueCardsCount }
+    private var sealedProductsCount: Int { cachedSealedProductsCount }
+    private var wishlistedCardsCount: Int { cachedWishlistedCardsCount }
 
-    private var uniqueCardsCount: Int {
-        Set(visibleCardCollectionItems.map(\.cardID)).count
-    }
-
-    private var sealedProductsCount: Int {
-        visibleCollectionItems.reduce(0) { total, item in
+    private func recomputeCollectionStats() {
+        let visible = collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
+        cachedTotalCardsCount = visible.reduce(0) { $0 + max($1.quantity, 0) }
+        cachedUniqueCardsCount = Set(visible.filter { sealedProductID(for: $0) == nil }.map(\.cardID)).count
+        cachedSealedProductsCount = visible.reduce(0) { total, item in
             guard sealedProductID(for: item) != nil else { return total }
             guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { return total }
             return total + max(item.quantity, 0)
         }
-    }
-
-    private var wishlistedCardsCount: Int {
-        Set(visibleWishlistItems.map(\.cardID)).count
+        cachedWishlistedCardsCount = Set(wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }.map(\.cardID)).count
     }
 
     private var portfolioGain: Double? {
@@ -366,6 +370,9 @@ struct DashboardView: View {
         }
         .onAppear {
             selectedBrand = activeBrand
+        }
+        .task(id: "\(collectionItems.count):\(wishlistItems.count):\(activeBrand.rawValue)") {
+            recomputeCollectionStats()
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
@@ -837,16 +844,11 @@ struct DashboardView: View {
     }
 
     private var dashboardDataSignature: Int {
+        // Keep this O(1) / O(recent-lines) — never iterate all collection items here.
+        // collectionItems.count captures adds/removes; recentLines covers activity changes.
         var h = Hasher()
         h.combine(activeBrand.rawValue)
-        for item in visibleCollectionItems {
-            h.combine(item.cardID)
-            h.combine(item.quantity)
-            h.combine(item.variantKey)
-            h.combine(item.itemKind)
-            h.combine(item.gradingCompany)
-            h.combine(item.sealedStatus)
-        }
+        h.combine(collectionItems.count)
         for line in recentLines { h.combine(line.id) }
         return h.finalize()
     }

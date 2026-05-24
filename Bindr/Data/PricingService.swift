@@ -8,15 +8,15 @@ final class PricingService {
     private(set) var usdToGbp: Double = 0.79
     private(set) var lastFXError: String?
 
-    private var pricingCache: [String: (map: SetPricingMap, expiry: Date)] = [:]
+    @ObservationIgnored private var pricingCache: [String: (map: SetPricingMap, expiry: Date)] = [:]
     /// Per-card pricing cache keyed by card key (lowercased). Populated by `prefetchPokemonCardPricing`.
     /// `nil` value means "looked up and found nothing" so we skip the SQLite round-trip.
-    private var pokemonCardPricingCache: [String: CardPricingEntry?] = [:]
+    @ObservationIgnored private var pokemonCardPricingCache: [String: CardPricingEntry?] = [:]
     /// Secondary index keyed by masterCardId (lowercased). Built by `indexPricingForCards` once
     /// card objects are in memory, enabling O(1) lookup without knowing externalId/tcgdex_id.
-    private var pokemonPricingByMasterCardID: [String: CardPricingEntry?] = [:]
-    private var pokemonPricingPrefetchedSets: Set<String> = []
-    private var pokemonAllPricingPrefetched: Bool = false
+    @ObservationIgnored private var pokemonPricingByMasterCardID: [String: CardPricingEntry?] = [:]
+    @ObservationIgnored private var pokemonPricingPrefetchedSets: Set<String> = []
+    @ObservationIgnored private var pokemonAllPricingPrefetched: Bool = false
 
     private let session: URLSession
     private let fileManager: FileManager
@@ -567,8 +567,8 @@ final class PricingService {
     }
 
     // Per-set history/trends raw JSON cache (cardKey → raw dict). Key includes brand so Pokémon vs ONE PIECE paths don’t collide.
-    private var historyCache: [String: [String: [String: Any]]] = [:]
-    private var trendsCache: [String: [String: [String: Any]]] = [:]
+    @ObservationIgnored private var historyCache: [String: [String: [String: Any]]] = [:]
+    @ObservationIgnored private var trendsCache: [String: [String: [String: Any]]] = [:]
 
     private static func historyTrendsCacheKey(setCode: String, catalogBrand: TCGBrand) -> String {
         let s = setCode.lowercased()

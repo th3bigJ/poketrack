@@ -20,10 +20,10 @@ final class CardDataService {
     private let session: URLSession
     private let fileManager: FileManager
     private let brandSettings: BrandSettings
-    private var normalizedNameByCardID: [String: String] = [:]
-    private var normalizedSearchBlobByCardID: [String: String] = [:]
+    @ObservationIgnored private var normalizedNameByCardID: [String: String] = [:]
+    @ObservationIgnored private var normalizedSearchBlobByCardID: [String: String] = [:]
     /// Cache for bulk master-card-ID lookups so repeated calls (computeLiveValue, resolveInsightsData, etc.) skip SQLite.
-    private var cardByMasterID: [String: Card] = [:]
+    @ObservationIgnored private var cardByMasterID: [String: Card] = [:]
 
     init(
         brandSettings: BrandSettings,
@@ -293,7 +293,7 @@ final class CardDataService {
     }
 
     /// Stable shuffle order for the Browse tab for this app session. New shuffle only when `forceReshuffle` is true (pull-to-refresh) or before first load.
-    private var browseFeedSessionRefs: [CardRef]?
+    @ObservationIgnored private var browseFeedSessionRefs: [CardRef]?
 
     /// Card order for the Browse grid. Set `forceReshuffle` to `true` on pull-to-refresh; otherwise the same order is reused until the app restarts.
     func browseFeedCardRefs(forceReshuffle: Bool) async -> [CardRef] {
@@ -517,7 +517,7 @@ final class CardDataService {
         }
     }
 
-    private var cardsForCatalogBrandCache: [String: [Card]] = [:]
+    @ObservationIgnored private var cardsForCatalogBrandCache: [String: [Card]] = [:]
 
     /// Loads cards for `setCode` using the given franchise (not necessarily the current browse brand).
     func loadCards(forSetCode setCode: String, catalogBrand: TCGBrand) async -> [Card] {
