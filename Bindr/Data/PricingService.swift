@@ -12,8 +12,11 @@ final class PricingService {
     /// Per-card pricing cache keyed by card key (lowercased). Populated by `prefetchPokemonCardPricing`.
     /// `nil` value means "looked up and found nothing" so we skip the SQLite round-trip.
     private var pokemonCardPricingCache: [String: CardPricingEntry?] = [:]
-    /// Set codes already loaded into `pokemonCardPricingCache`.
+    /// Secondary index keyed by masterCardId (lowercased). Built by `indexPricingForCards` once
+    /// card objects are in memory, enabling O(1) lookup without knowing externalId/tcgdex_id.
+    private var pokemonPricingByMasterCardID: [String: CardPricingEntry?] = [:]
     private var pokemonPricingPrefetchedSets: Set<String> = []
+    private var pokemonAllPricingPrefetched: Bool = false
 
     private let session: URLSession
     private let fileManager: FileManager
@@ -34,24 +37,57 @@ final class PricingService {
         historyCache.removeAll(keepingCapacity: false)
         trendsCache.removeAll(keepingCapacity: false)
         pokemonCardPricingCache.removeAll(keepingCapacity: false)
+        pokemonPricingByMasterCardID.removeAll(keepingCapacity: false)
         pokemonPricingPrefetchedSets.removeAll(keepingCapacity: false)
+        pokemonAllPricingPrefetched = false
     }
 
-    /// Bulk-loads Pokémon card prices for the given set codes into an in-memory cache so that
-    /// subsequent per-card `pricing(for:)` calls are served from memory rather than SQLite.
-    /// Safe to call multiple times — already-fetched sets are skipped.
-    func prefetchPokemonCardPricing(forSetCodes setCodes: Set<String>) async {
-        let missing = setCodes.subtracting(pokemonPricingPrefetchedSets)
-        guard !missing.isEmpty else { return }
-        for setCode in missing {
-            let rows = await CatalogStore.shared.fetchCardPricesForSet(setCode: setCode, brand: .pokemon)
-            for row in rows {
-                let cacheKey = row.cardKey.lowercased()
-                guard pokemonCardPricingCache[cacheKey] == nil else { continue }
-                pokemonCardPricingCache[cacheKey] = Self.decodePokemonCardPrice(row.json)
+    /// Build a masterCardId-keyed index from already-loaded Card objects so that
+    /// `cachedUsdPriceForCardID` can do O(1) lookups without knowing externalId/tcgdex_id.
+    /// Call this after `prefetchAllPokemonCardPricing` and a bulk card load both complete.
+    func indexPricingForCards(_ cards: [Card]) {
+        for card in cards {
+            let key = card.masterCardId.lowercased()
+            guard pokemonPricingByMasterCardID[key] == nil else { continue }
+            let lookupKeys = Self.pricingLookupKeys(for: card)
+            var found: CardPricingEntry? = nil
+            for lk in lookupKeys {
+                if let idx = pokemonCardPricingCache.index(forKey: lk.lowercased()),
+                   let entry = pokemonCardPricingCache[idx].value {
+                    found = entry
+                    break
+                }
             }
-            pokemonPricingPrefetchedSets.insert(setCode)
+            pokemonPricingByMasterCardID[key] = found
         }
+    }
+
+    /// Bulk-populate the Pokemon card pricing cache from a single SQLite query covering all sets.
+    /// Replaces per-set fetching which missed alternate set codes (swsh12tg, swsh45sv, etc.).
+    func prefetchAllPokemonCardPricing() async {
+        guard !pokemonAllPricingPrefetched else { return }
+        let allPrices = await CatalogStore.shared.fetchAllCardPrices(brand: .pokemon)
+        // Decode all JSON blobs off @MainActor — with 800+ cards this loop accounts
+        // for ~250ms of main-thread freeze on every cold launch.
+        let decoded: [String: CardPricingEntry?] = await Task.detached(priority: .userInitiated) {
+            var result: [String: CardPricingEntry?] = [:]
+            result.reserveCapacity(allPrices.count)
+            for (cardKey, json) in allPrices {
+                result[cardKey.lowercased()] = Self.decodePokemonCardPrice(json)
+            }
+            return result
+        }.value
+        // Single bulk merge back on @MainActor — one dict assignment instead of N.
+        for (key, entry) in decoded {
+            if pokemonCardPricingCache[key] == nil {
+                pokemonCardPricingCache[key] = entry
+            }
+        }
+        pokemonAllPricingPrefetched = true
+    }
+
+    func prefetchPokemonCardPricing(forSetCodes setCodes: Set<String>) async {
+        await prefetchAllPokemonCardPricing()
     }
 
     private var cacheDirectory: URL {
@@ -92,10 +128,11 @@ final class PricingService {
     private func loadPokemonCardPricing(for card: Card) async -> CardPricingEntry? {
         let keys = Self.pricingLookupKeys(for: card)
         // Fast path: return from pre-fetched cache (populated by `prefetchPokemonCardPricing`).
+        // Use index(forKey:) so a cached nil ("looked up, no price") is also a hit and skips SQLite.
         for key in keys {
             let cacheKey = key.lowercased()
-            if let cached = pokemonCardPricingCache[cacheKey] {
-                return cached
+            if let idx = pokemonCardPricingCache.index(forKey: cacheKey) {
+                return pokemonCardPricingCache[idx].value
             }
         }
         for key in keys {
@@ -137,7 +174,7 @@ final class PricingService {
         return codes
     }
 
-    private static func decodePokemonCardPrice(_ data: Data?) -> CardPricingEntry? {
+    nonisolated private static func decodePokemonCardPrice(_ data: Data?) -> CardPricingEntry? {
         guard let data else { return nil }
         if let entry = try? JSONDecoder().decode(CardPricingEntry.self, from: data) { return entry }
         if let obj = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
@@ -241,7 +278,7 @@ final class PricingService {
     ///
     /// e.g. swsh12 Trainer Gallery → swsh12tg, swsh12pt5 Galaxy Gallery → swsh12pt5gg,
     ///      swshN Trainer Gallery  → swshNtg,  swsh45 Shining Fates SV → swsh45sv
-    private static func alternatePricingSetCodes(for setCode: String, localId: String) -> [String] {
+    nonisolated private static func alternatePricingSetCodes(for setCode: String, localId: String) -> [String] {
         let sc = setCode.lowercased()
         let lid = localId.uppercased()
 
@@ -393,6 +430,83 @@ final class PricingService {
     /// ``usdPrice(for:printing:)`` so the headline market price still matches available Scrydex rows.
     func usdPriceForVariantAndGrade(for card: Card, variantKey: String, grade: String) async -> Double? {
         guard let entry = await pricing(for: card) else { return nil }
+        return Self.resolveUsdPrice(entry: entry, variantKey: variantKey, grade: grade)
+    }
+
+    /// Synchronous variant — only reads the pre-warmed in-memory cache, never touches SQLite.
+    /// Call this inside bulk pricing loops after `prefetchPokemonCardPricing` has run.
+    func cachedUsdPriceForVariantAndGrade(for card: Card, variantKey: String, grade: String) -> Double? {
+        let keys = Self.pricingLookupKeys(for: card)
+        for key in keys {
+            if let idx = pokemonCardPricingCache.index(forKey: key.lowercased()) {
+                guard let entry = pokemonCardPricingCache[idx].value else { return nil }
+                return Self.resolveUsdPrice(entry: entry, variantKey: variantKey, grade: grade)
+            }
+        }
+        return nil
+    }
+
+    /// Like `cachedUsdPriceForVariantAndGrade` but derives lookup keys from just the `masterCardId`
+    /// string — no `Card` object required. Pokémon card IDs are `{setCode}-{localId}` so all
+    /// `{setCode}-{localId}` key variants can be generated without a SQLite round-trip.
+    /// Returns `nil` if the cache has no entry; caller should fall back to the full `Card`-based
+    /// lookup for the rare cards where `externalId`/`tcgdex_id` is the only matching key.
+    func cachedUsdPriceForCardID(_ masterCardId: String, variantKey: String, grade: String) -> Double? {
+        // Fast path: masterCardId index built by indexPricingForCards — O(1) and handles externalId/tcgdex_id keys.
+        let indexKey = masterCardId.lowercased()
+        if let idx = pokemonPricingByMasterCardID.index(forKey: indexKey) {
+            guard let entry = pokemonPricingByMasterCardID[idx].value else { return nil }
+            return Self.resolveUsdPrice(entry: entry, variantKey: variantKey, grade: grade)
+        }
+        // Fallback: derive keys from masterCardId format (works for cards not yet indexed).
+        let keys = Self.pricingLookupKeysFromMasterCardId(masterCardId)
+        for key in keys {
+            if let idx = pokemonCardPricingCache.index(forKey: key.lowercased()) {
+                guard let entry = pokemonCardPricingCache[idx].value else { return nil }
+                return Self.resolveUsdPrice(entry: entry, variantKey: variantKey, grade: grade)
+            }
+        }
+        return nil
+    }
+
+    /// Generates pricing lookup keys from just a `masterCardId` string, without a `Card` object.
+    /// Covers all `{setCode}-{localId}` patterns including alternate sub-set codes.
+    nonisolated private static func pricingLookupKeysFromMasterCardId(_ masterCardId: String) -> [String] {
+        // One Piece cards use `::` separator — masterCardId is itself the key.
+        if masterCardId.contains("::") {
+            return [masterCardId]
+        }
+        // Pokémon: masterCardId is `{setCode}-{localId}` (e.g. "sv3-196", "swsh12-TG01").
+        // Split on first `-` to extract setCode and localId.
+        guard let dashRange = masterCardId.range(of: "-") else {
+            return [masterCardId]
+        }
+        let sc = String(masterCardId[..<dashRange.lowerBound])
+        let local = String(masterCardId[dashRange.upperBound...])
+        guard !sc.isEmpty, !local.isEmpty else { return [masterCardId] }
+
+        var keys: [String] = []
+        func append(_ s: String) {
+            let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !t.isEmpty, !keys.contains(t) { keys.append(t) }
+        }
+        append("\(sc)-\(local)")
+        if let n = Int(local) {
+            append("\(sc)-\(n)")
+            append(String(format: "%@-%03d", sc, n))
+        }
+        for alt in alternatePricingSetCodes(for: sc, localId: local) {
+            append("\(alt)-\(local)")
+            if let n = Int(local) {
+                append("\(alt)-\(n)")
+                append(String(format: "%@-%03d", alt, n))
+            }
+        }
+        append(masterCardId)
+        return keys
+    }
+
+    private static func resolveUsdPrice(entry: CardPricingEntry, variantKey: String, grade: String) -> Double? {
         if let scrydex = entry.scrydex, !scrydex.isEmpty {
             for key in Self.scrydexVariantKeyFallbackOrder(preferred: variantKey, scrydex: scrydex) {
                 guard let pricing = scrydex[key] else { continue }

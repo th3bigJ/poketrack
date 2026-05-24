@@ -17,6 +17,7 @@ struct DashboardView: View {
     var onOpenSealedProducts: (() -> Void)? = nil
     var onOpenWishlist: (() -> Void)? = nil
     var onOpenBrowse: (() -> Void)? = nil
+    var onInitialLoadComplete: (() -> Void)? = nil
 
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
@@ -52,6 +53,7 @@ struct DashboardView: View {
     @State private var liveOnePieceGbp: Double = 0
     @State private var totalCostBasis: Double = 0
     @State private var isLoadingValue = false
+    @State private var hasFiredInitialLoadComplete = false
     @State private var selectedPoint: ChartPoint? = nil
     @State private var chartRange: ChartRange = .daily
     @State private var chartRefreshID: Int = 0
@@ -60,15 +62,7 @@ struct DashboardView: View {
     @State private var setNamesByCardID: [String: String] = [:]
     @State private var cardImageURLsByID: [String: URL] = [:]
     @State private var marketTrendData: MarketTrendDailyBlob? = nil
-    @State private var cardTypeBreakdown: [DashboardBreakdownEntry] = []
-    @State private var energyTypeBreakdown: [DashboardBreakdownEntry] = []
-    @State private var formatBreakdown: [DashboardBreakdownEntry] = []
-    @State private var mostExpensiveHolding: DashboardTopHolding? = nil
-    @State private var priceBandBreakdown: [DashboardBreakdownEntry] = []
-    @State private var setCompletionEntries: [DashboardSetCompletionEntry] = []
     @State private var editingRecentLedgerLine: LedgerLine?
-    @State private var marketBiggestGainer7Days: MarketTrendMover? = nil
-    @State private var marketBiggestDecliner7Days: MarketTrendMover? = nil
     @State private var selectedCardForDetail: Card? = nil
 
     private var liveSnapshot: BrandSnapshot? {
@@ -303,21 +297,37 @@ struct DashboardView: View {
         .safeAreaPadding(.top, rootFloatingChromeInset)
         .background(dashboardBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
+        .task(id: services.collectionValue != nil) {
+            // Fire the launch gate as soon as we have any value to show —
+            // either from the persisted snapshot (instant) or a fresh compute.
+            // The actual live recalculation happens in the background task below.
+            guard let svc = services.collectionValue else { return }
+            if let persisted = svc.todayPersistedSnapshot() {
+                liveTotalGbp = persisted.total
+                livePokemonGbp = persisted.pokemon
+                liveOnePieceGbp = persisted.onePiece
+                fireInitialLoadCompleteIfReady()
+            } else if collectionItems.count > 0 {
+                // No persisted snapshot — compute once synchronously so the gate fires.
+                print("[Dashboard⏱] no persisted snapshot — computing for launch gate")
+                await computeLiveValue()
+                fireInitialLoadCompleteIfReady()
+            } else {
+                // Empty collection: nothing to show, open immediately.
+                fireInitialLoadCompleteIfReady()
+            }
+        }
         .task(id: collectionItems.count) {
+            guard collectionItems.count > 0 else { return }
+            // Background recalculation — runs after the overlay has already closed.
+            print("[Dashboard⏱] computeLiveValue start (items=\(collectionItems.count))")
             let t = ContinuousClock().now
             await computeLiveValue()
             print("[Dashboard⏱] computeLiveValue: \(ContinuousClock().now - t) items=\(collectionItems.count)")
         }
         .task(id: backfillTrigger) {
-            guard let svc = services.collectionValue else { return }
-            if liveSnapshot == nil, let persisted = svc.todayPersistedSnapshot() {
-                liveTotalGbp = persisted.total
-                livePokemonGbp = persisted.pokemon
-                liveOnePieceGbp = persisted.onePiece
-            }
-            if liveSnapshot == nil {
-                await computeLiveValue()
-            }
+            guard collectionItems.count > 0, let svc = services.collectionValue else { return }
+            print("[Dashboard⏱] runBackfillIfNeeded start")
             let t = ContinuousClock().now
             await svc.runBackfillIfNeeded(
                 collectionItems: collectionItems,
@@ -326,24 +336,19 @@ struct DashboardView: View {
             print("[Dashboard⏱] runBackfillIfNeeded: \(ContinuousClock().now - t)")
         }
         .task(id: dashboardDataSignature) {
+            guard visibleCollectionItems.count > 0 || allLedgerLines.count > 0 else { return }
             let t = ContinuousClock().now
             await resolveDashboardMetadata()
             print("[Dashboard⏱] resolveDashboardMetadata: \(ContinuousClock().now - t)")
             let t2 = ContinuousClock().now
-            await resolveInsightsData()
-            print("[Dashboard⏱] resolveInsightsData: \(ContinuousClock().now - t2)")
-        }
-        .task {
-            let t = ContinuousClock().now
             await loadMarketTrendBlob()
-            print("[Dashboard⏱] loadMarketTrendBlob+movers: \(ContinuousClock().now - t)")
+            print("[Dashboard⏱] loadMarketTrendBlob: \(ContinuousClock().now - t2)")
         }
         .task(id: services.dashboardMarketReloadToken) {
             guard services.dashboardMarketReloadToken > 0 else { return }
             await computeLiveValue()
             chartRefreshID += 1
             await loadMarketTrendBlob()
-            await resolveInsightsData()
         }
         .onChange(of: services.isCatalogDownloadInProgress) { _, inProgress in
             guard !inProgress else { return }
@@ -356,33 +361,28 @@ struct DashboardView: View {
                     )
                 }
                 await loadMarketTrendBlob()
-                await resolveInsightsData()
             }
         }
         .onAppear {
             selectedBrand = activeBrand
-            // Restore today's persisted value synchronously so the chart/value card
-            // shows a number from the first frame rather than a blank loading state.
-            if liveTotalGbp == nil, let persisted = services.collectionValue?.todayPersistedSnapshot() {
-                liveTotalGbp = persisted.total
-                livePokemonGbp = persisted.pokemon
-                liveOnePieceGbp = persisted.onePiece
-            }
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
             selectedPoint = nil
-            Task {
-                await resolveMarketMoversFromPriceTrendsBlob()
-            }
         }
         .onChange(of: chartRange) { _, _ in
             selectedPoint = nil
             selectedBrand = activeBrand
         }
-        .onChange(of: services.pricing.usdToGbp) { _, _ in
+        .onChange(of: services.pricing.usdToGbp) { old, new in
+            // Skip recompute if the rate change is < 0.5% (daily FX moves are tiny).
+            let delta = abs(new - old) / max(old, 1e-9)
+            guard delta >= 0.005 else { return }
+            print("[Dashboard] usdToGbp changed \(String(format: "%.4f", old))→\(String(format: "%.4f", new)) (\(String(format: "%.2f", delta * 100))%) — recomputing live value")
             Task {
+                let t = ContinuousClock().now
                 await computeLiveValue()
+                print("[Dashboard] usdToGbp recompute done: \(ContinuousClock().now - t)")
             }
         }
         .onChange(of: scenePhase) { _, phase in
@@ -702,279 +702,6 @@ struct DashboardView: View {
         }
     }
 
-    private var mostExpensiveCardInsightCard: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text("Most Expensive Card")
-                .font(.title3.weight(.bold))
-                .foregroundStyle(dashboardPrimaryText)
-
-            if let topCard = mostExpensiveHolding {
-                HStack(spacing: 16) {
-                    // Premium Card Artwork Frame
-                    ZStack {
-                        if let imageURL = topCard.imageURL {
-                            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                            } placeholder: {
-                                Color.white.opacity(0.1)
-                            }
-                        } else {
-                            Color.white.opacity(0.1)
-                                .overlay {
-                                    Image(systemName: "photo")
-                                        .font(.headline)
-                                        .foregroundStyle(dashboardSecondaryText)
-                                }
-                        }
-                    }
-                    .frame(width: 58, height: 82)
-                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    .background {
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .fill(Color.white)
-                            .shadow(color: services.theme.accentColor.opacity(0.25), radius: 10, x: 0, y: 4)
-                    }
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .stroke(services.theme.accentColor.opacity(0.4), lineWidth: 1)
-                    )
-
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(topCard.name)
-                            .font(.headline.weight(.bold))
-                            .foregroundStyle(dashboardPrimaryText)
-                            .lineLimit(1)
-                        
-                        Text(topCard.setName ?? "Set unknown")
-                            .font(.subheadline.weight(.medium))
-                            .foregroundStyle(dashboardSecondaryText)
-                            .lineLimit(1)
-                        
-                        HStack(spacing: 6) {
-                            Image(systemName: "tag.fill")
-                                .font(.caption2)
-                            Text("Owned: \(topCard.quantity)")
-                                .font(.caption.weight(.bold))
-                        }
-                        .foregroundStyle(services.theme.accentColor)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(services.theme.accentColor.opacity(0.1), in: Capsule())
-                    }
-
-                    Spacer(minLength: 8)
-
-                    VStack(alignment: .trailing, spacing: 4) {
-                        Text(formatCurrency(topCard.unitValue))
-                            .font(.title2.weight(.black))
-                            .foregroundStyle(dashboardPrimaryText)
-                            .contentTransition(.numericText())
-                        
-                        Text("per card")
-                            .font(.caption2.weight(.bold))
-                            .foregroundStyle(dashboardSecondaryText)
-                            .textCase(.uppercase)
-
-                        if topCard.quantity > 1 {
-                            Text(formatCurrency(topCard.totalValue))
-                                .font(.caption.weight(.semibold))
-                                .foregroundStyle(DashboardPalette.success)
-                        }
-                    }
-                }
-                .padding(.vertical, 4)
-            } else {
-                Text("No priced cards yet.")
-                    .font(.subheadline)
-                    .foregroundStyle(dashboardSecondaryText)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 20)
-            }
-        }
-    }
-
-    private var priceBandInsightCard: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Distribution by Price")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(dashboardPrimaryText)
-
-            if priceBandBreakdown.allSatisfy({ $0.value == 0 }) {
-                Text("No priced cards yet.")
-                    .font(.subheadline)
-                    .foregroundStyle(dashboardSecondaryText)
-            } else {
-                VStack(spacing: 10) {
-                    ForEach(Array(priceBandBreakdown.enumerated()), id: \.element.id) { index, entry in
-                        insightBarRow(
-                            entry: entry,
-                            maxValue: max(priceBandBreakdown.map(\.value).max() ?? 1, 1),
-                            tint: dashboardBreakdownColor(at: index)
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    private var setCompletionInsightCard: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text("Sets Closest to Completion")
-                .font(.title3.weight(.bold))
-                .foregroundStyle(dashboardPrimaryText)
-
-            if setCompletionEntries.isEmpty {
-                Text("Add cards from sets to track completion progress.")
-                    .font(.subheadline)
-                    .foregroundStyle(dashboardSecondaryText)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 20)
-            } else {
-                VStack(spacing: 14) {
-                    ForEach(Array(setCompletionEntries.prefix(3))) { entry in
-                        VStack(alignment: .leading, spacing: 8) {
-                            HStack(spacing: 8) {
-                                Text(entry.setName)
-                                    .font(.subheadline.weight(.bold))
-                                    .foregroundStyle(dashboardPrimaryText)
-                                    .lineLimit(1)
-
-                                Spacer(minLength: 8)
-
-                                Text("\(entry.percentString)%")
-                                    .font(.subheadline.weight(.heavy))
-                                    .foregroundStyle(services.theme.accentColor)
-                                    .italic()
-                            }
-
-                            GeometryReader { geo in
-                                ZStack(alignment: .leading) {
-                                    // Exp Bar Track
-                                    Capsule()
-                                        .fill(dashboardCardInsetBackground)
-                                        .frame(height: 10)
-                                    
-                                    // Exp Bar Fill
-                                    Capsule()
-                                        .fill(
-                                            LinearGradient(
-                                                colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.7)],
-                                                startPoint: .leading,
-                                                endPoint: .trailing
-                                            )
-                                        )
-                                        .frame(width: max(0, geo.size.width * CGFloat(entry.progress)), height: 10)
-                                        .shadow(color: services.theme.accentColor.opacity(0.3), radius: 4, x: 0, y: 2)
-                                        
-                                    // Glossy Overlay
-                                    Capsule()
-                                        .fill(
-                                            LinearGradient(
-                                                colors: [.white.opacity(0.2), .clear],
-                                                startPoint: .top,
-                                                endPoint: .bottom
-                                            )
-                                        )
-                                        .frame(width: max(0, geo.size.width * CGFloat(entry.progress)), height: 4)
-                                        .padding(.top, 1)
-                                        .padding(.horizontal, 2)
-                                }
-                            }
-                            .frame(height: 10)
-
-                            HStack {
-                                Label("\(entry.ownedUnique)/\(entry.totalCards)", systemImage: "square.grid.3x2.fill")
-                                    .font(.caption2.weight(.bold))
-                                    .foregroundStyle(dashboardSecondaryText)
-                                
-                                Spacer()
-                                
-                                Text("Remaining: \(entry.totalCards - entry.ownedUnique)")
-                                    .font(.caption2.weight(.medium))
-                                    .foregroundStyle(dashboardSecondaryText)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    private func distributionInsightCard(
-        title: String,
-        entries: [DashboardBreakdownEntry],
-        emptyMessage: String
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text(title)
-                .font(.title3.weight(.bold))
-                .foregroundStyle(dashboardPrimaryText)
-
-            if entries.isEmpty {
-                Text(emptyMessage)
-                    .font(.subheadline)
-                    .foregroundStyle(dashboardSecondaryText)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 20)
-            } else {
-                VStack(spacing: 12) {
-                    let maxValue = max(entries.map(\.value).max() ?? 1, 1)
-                    ForEach(Array(entries.prefix(4).enumerated()), id: \.element.id) { index, entry in
-                        insightBarRow(
-                            entry: entry, 
-                            maxValue: maxValue, 
-                            tint: dashboardBreakdownColor(at: index, label: entry.label)
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    private func insightBarRow(entry: DashboardBreakdownEntry, maxValue: Int, tint: Color) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .firstTextBaseline) {
-                Text(entry.label)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(dashboardPrimaryText)
-                
-                Spacer()
-                
-                Text("\(entry.value)")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(dashboardSecondaryText)
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(dashboardCardInsetBackground, in: Capsule())
-                    .overlay(Capsule().stroke(dashboardBorder.opacity(0.5), lineWidth: 0.5))
-            }
-
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    // Track
-                    Capsule()
-                        .fill(dashboardCardInsetBackground)
-                        .frame(height: 8)
-                    
-                    // Bar
-                    Capsule()
-                        .fill(
-                            LinearGradient(
-                                colors: [tint, tint.opacity(0.8)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: max(0, geo.size.width * CGFloat(entry.value) / CGFloat(maxValue)), height: 8)
-                        .shadow(color: tint.opacity(0.3), radius: 4, x: 0, y: 2)
-                }
-            }
-            .frame(height: 8)
-        }
-    }
-
     private func insightMetricTile(
         icon: String,
         iconColor: Color,
@@ -1016,6 +743,25 @@ struct DashboardView: View {
     }
 
 
+    private func trendCell(title: String, value: Double?) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(dashboardSecondaryText)
+            Text(formatTrendPercent(value))
+                .font(.title3.weight(.bold))
+                .foregroundStyle(trendColor(value))
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 10)
+        .padding(.horizontal, 12)
+        .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
+        )
+    }
+
     private func marketTrendCard(trend: MarketTrendMetrics, updatedAt: Date?) -> some View {
         dashboardCard {
             VStack(alignment: .leading, spacing: 12) {
@@ -1037,32 +783,8 @@ struct DashboardView: View {
                     trendCell(title: "1D", value: trend.change1Day)
                 }
 
-                Text("Movers")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(dashboardSecondaryText)
-
-                HStack(spacing: 10) {
-                    moverCell(
-                        title: "Biggest 7D Gain",
-                        mover: biggestGainerMover(from: trend),
-                        fallbackColor: DashboardPalette.success
-                    )
-                    moverCell(
-                        title: "Biggest 7D Drop",
-                        mover: biggestDeclinerMover(from: trend),
-                        fallbackColor: DashboardPalette.danger
-                    )
-                }
             }
         }
-    }
-
-    private func biggestGainerMover(from trend: MarketTrendMetrics) -> MarketTrendMover? {
-        marketBiggestGainer7Days
-    }
-
-    private func biggestDeclinerMover(from trend: MarketTrendMetrics) -> MarketTrendMover? {
-        marketBiggestDecliner7Days
     }
 
     private var recentActivityCard: some View {
@@ -1111,43 +833,6 @@ struct DashboardView: View {
 
     private var dashboardBackground: some View {
         BindrPageBackground()
-    }
-
-    private func energyColor(for type: String) -> Color {
-        let normalized = type.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-        switch normalized {
-        case "grass": return Color(hex: "7AC74C")
-        case "fire": return Color(hex: "EE8130")
-        case "water": return Color(hex: "6390F0")
-        case "lightning", "electric": return Color(hex: "F7D02C")
-        case "psychic": return Color(hex: "F95587")
-        case "fighting": return Color(hex: "C22E28")
-        case "darkness", "dark": return Color(hex: "705746")
-        case "metal", "steel": return Color(hex: "B7B7CE")
-        case "fairy": return Color(hex: "D685AD")
-        case "dragon": return Color(hex: "6F35FC")
-        case "colorless", "normal": return Color(hex: "A8A77A")
-        default: return services.theme.accentColor
-        }
-    }
-
-    private func dashboardBreakdownColor(at index: Int, label: String = "") -> Color {
-        if !label.isEmpty {
-            let col = energyColor(for: label)
-            if col != services.theme.accentColor {
-                return col
-            }
-        }
-        
-        let palette = [
-            DashboardPalette.purple,
-            DashboardPalette.blue,
-            DashboardPalette.success,
-            DashboardPalette.gold,
-            DashboardPalette.orange,
-            DashboardPalette.danger
-        ]
-        return palette[index % palette.count]
     }
 
     private var dashboardDataSignature: Int {
@@ -1307,106 +992,93 @@ struct DashboardView: View {
         await services.sealedProducts.loadFromLocalIfAvailable()
         print("[Dashboard⏱]   sealedProducts.loadFromLocal: \(ContinuousClock().now - _t0)")
 
-        // Split active (non-opened, non-zero) items into sealed vs card, and by brand.
-        var sealedItems: [CollectionItem] = []
-        var pokemonCardItems: [CollectionItem] = []
-        var onePieceCardItems: [CollectionItem] = []
-
-        for item in collectionItems {
-            guard item.quantity > 0 else { continue }
-            guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
-            if sealedProductID(for: item) != nil {
-                sealedItems.append(item)
-            } else if !item.cardID.hasPrefix("sealed:") {
-                switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-                case .pokemon:  pokemonCardItems.append(item)
-                case .onePiece: onePieceCardItems.append(item)
-                }
-            }
-        }
-
-        // Bulk-load card objects in two queries (one per brand) instead of N per-card SQLite calls.
-        async let pokemonCards = services.cardData.loadCards(
-            masterCardIDs: pokemonCardItems.map(\.cardID),
-            catalogBrand: .pokemon
-        )
-        async let onePieceCards = services.cardData.loadCards(
-            masterCardIDs: onePieceCardItems.map(\.cardID),
-            catalogBrand: .onePiece
-        )
-        let _t1 = ContinuousClock().now
-        let (pCards, opCards) = await (pokemonCards, onePieceCards)
-        print("[Dashboard⏱]   loadCards bulk: \(ContinuousClock().now - _t1) pokemon=\(pCards.count) onePiece=\(opCards.count)")
-
-        let cardByID: [String: Card] = Dictionary(
-            (pCards + opCards).map { ($0.masterCardId, $0) },
-            uniquingKeysWith: { first, _ in first }
-        )
-
-        // Pre-warm Pokémon pricing cache with one query per set instead of one per card.
-        let pokemonSetCodes = Set(pCards.flatMap { card -> [String] in
-            var codes = [card.setCode.lowercased()]
-            if let local = card.localId, !local.isEmpty {
-                let sc = card.setCode.lowercased()
-                let lid = local.uppercased()
-                if sc == "swsh12pt5" && lid.hasPrefix("GG") { codes.append("swsh12pt5gg") }
-                else if sc == "swsh45" && lid.hasPrefix("SV") { codes.append("swsh45sv") }
-                else if ["swsh12", "swsh11", "swsh10", "swsh9"].contains(sc) && lid.hasPrefix("TG") { codes.append("\(sc)tg") }
-            }
-            return codes
-        })
+        // Pre-warm the full pricing cache (one SQLite scan, decode off @MainActor).
         let _t2 = ContinuousClock().now
-        await services.pricing.prefetchPokemonCardPricing(forSetCodes: pokemonSetCodes)
-        print("[Dashboard⏱]   prefetchPokemonCardPricing: \(ContinuousClock().now - _t2) sets=\(pokemonSetCodes.count)")
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        print("[Dashboard⏱]   prefetchPokemonCardPricing: \(ContinuousClock().now - _t2)")
 
         let _t3 = ContinuousClock().now
         var totalValue = 0.0
         var pokemonValue = 0.0
         var onePieceValue = 0.0
         var totalCost = 0.0
+        var cacheMissIDs: [String] = []
 
-        // Tally cost basis across all active items.
         for item in collectionItems {
             guard item.quantity > 0 else { continue }
             guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
             totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)
-        }
 
-        // Sealed products — no card lookup needed.
-        for item in sealedItems {
-            guard let pid = sealedProductID(for: item),
-                  let priceUSD = services.sealedProducts.marketPriceUSD(for: pid) else { continue }
-            let gbp = priceUSD * Double(item.quantity) * services.pricing.usdToGbp
-            totalValue += gbp
-            switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-            case .pokemon:  pokemonValue += gbp
-            case .onePiece: onePieceValue += gbp
-            }
-        }
-
-        // Card items — resolve from bulk-loaded dict, price using pre-warmed cache.
-        for item in pokemonCardItems + onePieceCardItems {
-            guard let card = cardByID[item.cardID] else { continue }
-            let gradeKey: String = {
-                guard let company = item.gradingCompany else { return "raw" }
-                switch company.uppercased() {
-                case "PSA": return "psa10"
-                case "ACE": return "ace10"
-                default: return "raw"
+            if sealedProductID(for: item) != nil {
+                guard let pid = sealedProductID(for: item),
+                      let priceUSD = services.sealedProducts.marketPriceUSD(for: pid) else { continue }
+                let gbp = priceUSD * Double(item.quantity) * services.pricing.usdToGbp
+                totalValue += gbp
+                switch TCGBrand.inferredFromMasterCardId(item.cardID) {
+                case .pokemon:  pokemonValue += gbp
+                case .onePiece: onePieceValue += gbp
                 }
-            }()
-            let usdPrice = await services.pricing.usdPriceForVariantAndGrade(
-                for: card, variantKey: item.variantKey, grade: gradeKey
-            ) ?? 0
-            let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
-            totalValue += gbp
-            switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-            case .pokemon:  pokemonValue += gbp
-            case .onePiece: onePieceValue += gbp
+            } else if !item.cardID.hasPrefix("sealed:") {
+                let gradeKey: String = {
+                    guard let company = item.gradingCompany else { return "raw" }
+                    switch company.uppercased() {
+                    case "PSA": return "psa10"
+                    case "ACE": return "ace10"
+                    default: return "raw"
+                    }
+                }()
+                if let usdPrice = services.pricing.cachedUsdPriceForCardID(
+                    item.cardID, variantKey: item.variantKey, grade: gradeKey
+                ) {
+                    let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
+                    totalValue += gbp
+                    switch TCGBrand.inferredFromMasterCardId(item.cardID) {
+                    case .pokemon:  pokemonValue += gbp
+                    case .onePiece: onePieceValue += gbp
+                    }
+                } else {
+                    // Cache miss — collect for fallback card load (rare: externalId/tcgdex_id needed).
+                    cacheMissIDs.append(item.cardID)
+                }
             }
         }
 
-        print("[Dashboard⏱]   pricing loop: \(ContinuousClock().now - _t3) cards=\(pokemonCardItems.count + onePieceCardItems.count)")
+        // Fallback: load full Card objects only for items that missed the ID-based cache lookup.
+        if !cacheMissIDs.isEmpty {
+            let pokemonMissIDs = cacheMissIDs.filter { !$0.contains("::") }
+            let onePieceMissIDs = cacheMissIDs.filter { $0.contains("::") }
+            async let pMiss = services.cardData.loadCards(masterCardIDs: pokemonMissIDs, catalogBrand: .pokemon)
+            async let opMiss = services.cardData.loadCards(masterCardIDs: onePieceMissIDs, catalogBrand: .onePiece)
+            let (pm, opm) = await (pMiss, opMiss)
+            let allMissedCards = pm + opm
+            // Index loaded cards so future calls (FX recompute, market reload) avoid this fallback.
+            services.pricing.indexPricingForCards(allMissedCards)
+            let cardByID = Dictionary(allMissedCards.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
+            print("[Dashboard⏱]   cache miss fallback: \(cacheMissIDs.count) cards loaded=\(pm.count + opm.count)")
+            for item in collectionItems where cacheMissIDs.contains(item.cardID) {
+                guard item.quantity > 0, item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
+                guard let card = cardByID[item.cardID] else { continue }
+                let gradeKey: String = {
+                    guard let company = item.gradingCompany else { return "raw" }
+                    switch company.uppercased() {
+                    case "PSA": return "psa10"
+                    case "ACE": return "ace10"
+                    default: return "raw"
+                    }
+                }()
+                let usdPrice = services.pricing.cachedUsdPriceForVariantAndGrade(
+                    for: card, variantKey: item.variantKey, grade: gradeKey
+                ) ?? 0
+                let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
+                totalValue += gbp
+                switch TCGBrand.inferredFromMasterCardId(item.cardID) {
+                case .pokemon:  pokemonValue += gbp
+                case .onePiece: onePieceValue += gbp
+                }
+            }
+        }
+
+        print("[Dashboard⏱]   pricing loop: \(ContinuousClock().now - _t3) cards=\(collectionItems.count) misses=\(cacheMissIDs.count)")
         liveTotalGbp = totalValue > 0 ? totalValue : nil
         livePokemonGbp = pokemonValue
         liveOnePieceGbp = onePieceValue
@@ -1417,6 +1089,13 @@ struct DashboardView: View {
             let changed = services.collectionValue?.updateTodaySnapshot(snap) ?? false
             if changed { services.collectionValue?.aggregateCurrentPeriods() }
         }
+    }
+
+    private func fireInitialLoadCompleteIfReady() {
+        guard !hasFiredInitialLoadComplete else { return }
+        hasFiredInitialLoadComplete = true
+        print("[Launch] dashboard initial load complete — firing onInitialLoadComplete")
+        onInitialLoadComplete?()
     }
 
     private func sealedProductID(for item: CollectionItem) -> Int? {
@@ -1469,251 +1148,6 @@ struct DashboardView: View {
         cardNamesByID = nextNames
         setNamesByCardID = nextSets
         cardImageURLsByID = nextImages
-    }
-
-    private func resolveInsightsData() async {
-        await services.sealedProducts.loadFromLocalIfAvailable()
-
-        var nextCardType: [String: Int] = [:]
-        var nextEnergyType: [String: Int] = [:]
-        var nextFormat: [String: Int] = [:]
-        var nextPriceBand: [String: Int] = ["£": 0, "££": 0, "£££": 0]
-        var nextMostExpensive: DashboardTopHolding? = nil
-        var ownedCardIDsBySetCode: [String: Set<String>] = [:]
-        var nextTopGainer: MarketTrendMover? = nil
-        var nextTopDecliner: MarketTrendMover? = nil
-
-        let setsForBrand = (try? await CatalogStore.shared.fetchAllSets(for: activeBrand)) ?? []
-        var setTotalsByCode: [String: (name: String, total: Int)] = [:]
-        for set in setsForBrand {
-            let total = set.cardCountTotal ?? set.cardCountOfficial ?? 0
-            guard total > 0 else { continue }
-            setTotalsByCode[set.setCode] = (set.name, total)
-        }
-
-        // Bulk-load all card items for this brand in one query.
-        let cardItems = visibleCollectionItems.filter {
-            $0.quantity > 0
-            && $0.sealedStatus != SealedInventoryStatus.opened.rawValue
-            && sealedProductID(for: $0) == nil
-        }
-        let cardIDs = Array(Set(cardItems.map(\.cardID)))
-
-        // Pre-warm trendsCache concurrently with card loading so sevenDayChangePercent
-        // hits in-memory cache instead of firing a SQLite query per card.
-        let _tiT = ContinuousClock().now
-        async let allTrendsForInsights = CatalogStore.shared.fetchAllPriceTrendsData(brand: activeBrand)
-        let _ti1 = ContinuousClock().now
-        async let loadedCardsAsync = services.cardData.loadCards(masterCardIDs: cardIDs, catalogBrand: activeBrand)
-        let (fetchedTrends, loadedCards) = await (allTrendsForInsights, loadedCardsAsync)
-        services.pricing.prefetchTrendsCache(from: fetchedTrends, brand: activeBrand)
-        print("[Dashboard⏱]   insights prefetchTrendsCache: \(ContinuousClock().now - _tiT) rows=\(fetchedTrends.count)")
-        print("[Dashboard⏱]   insights loadCards: \(ContinuousClock().now - _ti1) ids=\(cardIDs.count)")
-        let cardByID = Dictionary(loadedCards.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
-
-        var _unitValueTime: Duration = .zero
-        var _sevenDayTime: Duration = .zero
-
-        for item in visibleCollectionItems {
-            let quantity = max(item.quantity, 0)
-            guard quantity > 0 else { continue }
-            guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
-
-            nextFormat[formatLabel(for: item), default: 0] += quantity
-
-            if sealedProductID(for: item) != nil { continue }
-            guard let card = cardByID[item.cardID] else { continue }
-
-            nextCardType[cardTypeLabel(for: card), default: 0] += quantity
-
-            for energy in energyLabels(for: card) {
-                nextEnergyType[energy, default: 0] += quantity
-            }
-
-            ownedCardIDsBySetCode[card.setCode, default: []].insert(card.masterCardId)
-
-            let _u = ContinuousClock().now
-            let unitValue = await unitPriceGBP(for: item, card: card)
-            _unitValueTime += ContinuousClock().now - _u
-            nextPriceBand[priceBandLabel(for: unitValue), default: 0] += quantity
-
-            let _s = ContinuousClock().now
-            if let change7d = await sevenDayChangePercent(for: item, card: card) {
-                _sevenDayTime += ContinuousClock().now - _s
-                let mover = MarketTrendMover(
-                    cardID: card.masterCardId,
-                    displayName: card.cardName,
-                    percentChange: change7d,
-                    imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc)
-                )
-                if nextTopGainer == nil || change7d > (nextTopGainer?.percentChange ?? -.infinity) {
-                    nextTopGainer = mover
-                }
-                if nextTopDecliner == nil || change7d < (nextTopDecliner?.percentChange ?? .infinity) {
-                    nextTopDecliner = mover
-                }
-            } else {
-                _sevenDayTime += ContinuousClock().now - _s
-            }
-
-            guard unitValue > 0 else { continue }
-            let totalValue = unitValue * Double(quantity)
-            if let currentTop = nextMostExpensive, currentTop.unitValue >= unitValue {
-                continue
-            }
-
-            nextMostExpensive = DashboardTopHolding(
-                cardID: card.masterCardId,
-                name: card.cardName,
-                setName: setNamesByCardID[card.masterCardId],
-                imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                unitValue: unitValue,
-                totalValue: totalValue,
-                quantity: quantity
-            )
-        }
-
-        print("[Dashboard⏱]   insights unitPriceGBP total: \(_unitValueTime)")
-        print("[Dashboard⏱]   insights sevenDayChange total: \(_sevenDayTime)")
-        cardTypeBreakdown = sortedBreakdown(from: nextCardType)
-        energyTypeBreakdown = sortedBreakdown(from: nextEnergyType)
-        formatBreakdown = sortedBreakdown(from: nextFormat)
-        priceBandBreakdown = [
-            DashboardBreakdownEntry(label: "£ (< £1)", value: nextPriceBand["£"] ?? 0),
-            DashboardBreakdownEntry(label: "££ (£1 - £25)", value: nextPriceBand["££"] ?? 0),
-            DashboardBreakdownEntry(label: "£££ (£25+)", value: nextPriceBand["£££"] ?? 0)
-        ]
-        setCompletionEntries = ownedCardIDsBySetCode.compactMap { setCode, ownedIDs in
-            guard let setMeta = setTotalsByCode[setCode] else { return nil }
-            let ownedUnique = ownedIDs.count
-            guard ownedUnique > 0 else { return nil }
-            let progress = min(Double(ownedUnique) / Double(setMeta.total), 1.0)
-            return DashboardSetCompletionEntry(
-                setCode: setCode,
-                setName: setMeta.name,
-                ownedUnique: ownedUnique,
-                totalCards: setMeta.total,
-                progress: progress
-            )
-        }
-        .sorted { lhs, rhs in
-            if lhs.progress == rhs.progress {
-                if lhs.ownedUnique == rhs.ownedUnique {
-                    return lhs.setName.localizedCaseInsensitiveCompare(rhs.setName) == .orderedAscending
-                }
-                return lhs.ownedUnique > rhs.ownedUnique
-            }
-            return lhs.progress > rhs.progress
-        }
-        .prefix(4)
-        .map { $0 }
-        mostExpensiveHolding = nextMostExpensive
-    }
-
-    private func sevenDayChangePercent(for item: CollectionItem, card: Card) async -> Double? {
-        guard let trends = await services.pricing.priceTrends(for: card) else { return nil }
-
-        let gradeKey: String = {
-            guard let company = item.gradingCompany else { return "raw" }
-            switch company.uppercased() {
-            case "PSA": return "psa10"
-            case "ACE": return "ace10"
-            default: return "raw"
-            }
-        }()
-
-        let preferredVariant = cleaned(item.variantKey) ?? trends.variant
-        let direct = trends.changes(for: preferredVariant, grade: gradeKey).change7d
-        if let direct { return direct }
-
-        if let variantMap = trends.allVariants[preferredVariant] {
-            if let anyGrade = variantMap.values.compactMap(\.change7d).first {
-                return anyGrade
-            }
-        }
-
-        return trends.change7d
-    }
-
-    private func sortedBreakdown(from source: [String: Int], limit: Int = 5) -> [DashboardBreakdownEntry] {
-        source
-            .filter { $0.value > 0 }
-            .sorted { lhs, rhs in
-                if lhs.value == rhs.value {
-                    return lhs.key < rhs.key
-                }
-                return lhs.value > rhs.value
-            }
-            .prefix(limit)
-            .map { DashboardBreakdownEntry(label: $0.key, value: $0.value) }
-    }
-
-    private func formatLabel(for item: CollectionItem) -> String {
-        switch ProductKind(rawValue: item.itemKind) {
-        case .sealedProduct, .boosterPack, .etb:
-            return "Sealed"
-        case .gradedItem:
-            return "Graded"
-        case .singleCard:
-            return "Raw"
-        case .other, .none:
-            return "Other"
-        }
-    }
-
-    private func cardTypeLabel(for card: Card) -> String {
-        if let category = cleaned(card.category) {
-            let lowercased = category.lowercased()
-            if lowercased.contains("pokemon") { return "Pokemon" }
-            if lowercased.contains("trainer") { return "Trainer" }
-            if lowercased.contains("energy") { return "Energy" }
-            return category.capitalized
-        }
-        if cleaned(card.trainerType) != nil {
-            return "Trainer"
-        }
-        if cleaned(card.energyType) != nil {
-            return "Energy"
-        }
-        return "Other"
-    }
-
-    private func energyLabels(for card: Card) -> [String] {
-        if let types = card.elementTypes?
-            .map({ $0.trimmingCharacters(in: .whitespacesAndNewlines) })
-            .filter({ !$0.isEmpty }) {
-            let unique = Array(Set(types))
-            if !unique.isEmpty {
-                return unique.sorted()
-            }
-        }
-        if let fallback = cleaned(card.energyType) {
-            return [fallback.capitalized]
-        }
-        return []
-    }
-
-    private func unitPriceGBP(for item: CollectionItem, card: Card) async -> Double {
-        let gradeKey: String = {
-            guard let company = item.gradingCompany else { return "raw" }
-            switch company.uppercased() {
-            case "PSA": return "psa10"
-            case "ACE": return "ace10"
-            default: return "raw"
-            }
-        }()
-        let usdPrice = await services.pricing.usdPriceForVariantAndGrade(
-            for: card,
-            variantKey: item.variantKey,
-            grade: gradeKey
-        ) ?? 0
-        return usdPrice * services.pricing.usdToGbp
-    }
-
-    private func priceBandLabel(for value: Double) -> String {
-        if value < 1 { return "£" }
-        if value <= 25 { return "££" }
-        return "£££"
     }
 
     private func activityTitle(for line: LedgerLine) -> String {
@@ -1893,7 +1327,6 @@ struct DashboardView: View {
     private func loadMarketTrendBlob() async {
         guard let data = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.marketTrend) else {
             marketTrendData = nil
-            await resolveMarketMoversFromPriceTrendsBlob()
             return
         }
         do {
@@ -1901,457 +1334,6 @@ struct DashboardView: View {
         } catch {
             marketTrendData = nil
         }
-        await resolveMarketMoversFromPriceTrendsBlob()
-    }
-
-    private func resolveMarketMoversFromPriceTrendsBlob() async {
-        do {
-            try await CatalogStore.shared.open()
-        } catch {
-            marketBiggestGainer7Days = nil
-            marketBiggestDecliner7Days = nil
-            return
-        }
-
-        // Fetch all set trends in one query instead of one per set.
-        let _ta = ContinuousClock().now
-        let allTrendsData = await CatalogStore.shared.fetchAllPriceTrendsData(brand: activeBrand)
-        print("[Dashboard⏱]   fetchAllPriceTrendsData: \(ContinuousClock().now - _ta) rows=\(allTrendsData.count)")
-
-        // Pre-warm PricingService.trendsCache so resolveInsightsData's per-card sevenDayChangePercent
-        // calls hit the in-memory cache instead of firing a SQLite query per card.
-        services.pricing.prefetchTrendsCache(from: allTrendsData, brand: activeBrand)
-
-        let _tb = ContinuousClock().now
-        var candidates: [TrendMoverCandidate] = []
-
-        for (setCode, trendsBlob) in allTrendsData {
-            collectSetTrendCandidates(from: trendsBlob, setCode: setCode, into: &candidates)
-        }
-        print("[Dashboard⏱]   collectSetTrendCandidates: \(ContinuousClock().now - _tb) candidates=\(candidates.count)")
-
-        // If per-set rows are unavailable, fall back to the aggregate daily blob parser.
-        if candidates.isEmpty,
-           let aggregate = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.priceTrends),
-           let raw = try? JSONSerialization.jsonObject(with: aggregate) {
-            collectTrendMoverCandidates(from: raw, inheritedCardID: nil, into: &candidates)
-        }
-
-        let scoped = candidates.filter(matchesActiveBrand)
-        let finalCandidates = scoped.isEmpty ? candidates : scoped
-
-        let topGain = finalCandidates.max(by: { $0.change7d < $1.change7d })
-        let topDrop = finalCandidates.min(by: { $0.change7d < $1.change7d })
-
-        if let topGain {
-            marketBiggestGainer7Days = await buildMover(from: topGain)
-        } else {
-            marketBiggestGainer7Days = nil
-        }
-
-        if let topDrop {
-            marketBiggestDecliner7Days = await buildMover(from: topDrop)
-        } else {
-            marketBiggestDecliner7Days = nil
-        }
-    }
-
-    private func collectSetTrendCandidates(from trendsBlob: Data, setCode: String, into candidates: inout [TrendMoverCandidate]) {
-        guard let root = try? JSONSerialization.jsonObject(with: trendsBlob) as? [String: Any] else { return }
-        for (cardID, rawEntry) in root {
-            guard let entry = rawEntry as? [String: Any] else { continue }
-            let parsed = CardPriceTrends.parse(from: entry)
-            let change7d = extractRawSevenDayChange(parsed: parsed, entry: entry)
-            guard let change7d else { continue }
-            candidates.append(
-                TrendMoverCandidate(
-                    cardID: cardID,
-                    displayName: (entry["cardName"] as? String)
-                        ?? (entry["card_name"] as? String)
-                        ?? (entry["name"] as? String)
-                        ?? (entry["title"] as? String),
-                    imageURL: nil,
-                    change7d: change7d,
-                    brandHint: nil,
-                    setCode: setCode
-                )
-            )
-        }
-    }
-
-    private func loadPriceTrendsBlobForSet(setCode: String) async -> Data? {
-        if let exact = await CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: activeBrand) {
-            return exact
-        }
-        let lowercased = setCode.lowercased()
-        if lowercased != setCode {
-            if let lower = await CatalogStore.shared.fetchPriceTrendsData(setCode: lowercased, brand: activeBrand) {
-                return lower
-            }
-        }
-
-        // One Piece network fallback (per-set files still live on R2).
-        // Pokemon trends come from daily sync into SQLite only — no network fallback.
-        if activeBrand == .onePiece {
-            for stem in onePieceTrendStemVariants(for: setCode) {
-                let url = AppConfiguration.r2OnePiecePriceTrendsURL(setCodeStem: stem)
-                if let data = await fetchHTTPBodyIfOK(from: url) {
-                    return data
-                }
-            }
-        }
-        return nil
-    }
-
-    private func onePieceTrendStemVariants(for setCode: String) -> [String] {
-        let s = setCode.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !s.isEmpty else { return [] }
-        var stems: [String] = []
-        func add(_ candidate: String) {
-            let value = candidate.trimmingCharacters(in: .whitespacesAndNewlines)
-            if !value.isEmpty, !stems.contains(value) {
-                stems.append(value)
-            }
-        }
-        add(s)
-        add(s.uppercased())
-        add(s.lowercased())
-        return stems
-    }
-
-    private func fetchHTTPBodyIfOK(from url: URL) async -> Data? {
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            guard let http = response as? HTTPURLResponse,
-                  (200...299).contains(http.statusCode),
-                  !data.isEmpty else {
-                return nil
-            }
-            return data
-        } catch {
-            return nil
-        }
-    }
-
-    private func extractSetEntrySevenDayChange(from entry: [String: Any]) -> Double? {
-        if let weekly = entry["weekly"] as? [String: Any] {
-            // Only accept explicit percent fields. Some feeds include `weekly.value`
-            // as a raw price/value metric, which can inflate dashboard movers.
-            for key in ["changePct", "change_pct", "pct", "percent", "percentChange", "percent_change"] {
-                if let raw = weekly[key], let number = parseAnyNumber(raw) {
-                    return number
-                }
-            }
-        }
-        for key in ["change7d", "change_7d", "change7Days", "change_7_days", "percentChange", "percent_change"] {
-            if let raw = entry[key], let number = parseAnyNumber(raw) {
-                return number
-            }
-        }
-        return nil
-    }
-
-    private func extractRawSevenDayChange(parsed: CardPriceTrends?, entry: [String: Any]) -> Double? {
-        if let parsed {
-            // Prefer RAW for the trend row's primary variant so dashboard movers
-            // match the same per-card variant context the detail chart starts from.
-            let preferredVariant = parsed.variant.trimmingCharacters(in: .whitespacesAndNewlines)
-            if !preferredVariant.isEmpty,
-               let preferredRaw = parsed.allVariants[preferredVariant]?["raw"]?.change7d {
-                return preferredRaw
-            }
-
-            // If the top-level trend row itself is RAW, use it.
-            if parsed.grade.lowercased() == "raw", let topLevelRaw = parsed.change7d {
-                return topLevelRaw
-            }
-
-            // Fallback: if there is exactly one RAW value across variants, use it.
-            let rawCandidates = parsed.allVariants.values.compactMap { $0["raw"]?.change7d }
-            if rawCandidates.count == 1, let loneRaw = rawCandidates.first {
-                return loneRaw
-            }
-        }
-
-        // Dynamic JSON fallback when strong parsing misses: only accept entries marked RAW.
-        if let grade = (entry["grade"] as? String)?.lowercased(), grade == "raw" {
-            return extractSetEntrySevenDayChange(from: entry)
-        }
-
-        return nil
-    }
-
-    private func collectTrendMoverCandidates(
-        from value: Any,
-        inheritedCardID: String?,
-        into candidates: inout [TrendMoverCandidate]
-    ) {
-        if let dict = value as? [String: Any] {
-            let cardID = (dict["masterCardId"] as? String)
-                ?? (dict["master_card_id"] as? String)
-                ?? (dict["cardId"] as? String)
-                ?? (dict["card_id"] as? String)
-                ?? inheritedCardID
-            let displayName = (dict["cardName"] as? String)
-                ?? (dict["card_name"] as? String)
-                ?? (dict["name"] as? String)
-                ?? (dict["title"] as? String)
-            let imageURL = parseImageURL(from: dict)
-            let brandHint = (dict["brand"] as? String) ?? (dict["tcg"] as? String) ?? (dict["game"] as? String)
-            let parsed = CardPriceTrends.parse(from: dict)
-            if let change7d = extractRawSevenDayChange(parsed: parsed, entry: dict) {
-                candidates.append(
-                    TrendMoverCandidate(
-                        cardID: cardID,
-                        displayName: displayName,
-                        imageURL: imageURL,
-                        change7d: change7d,
-                        brandHint: brandHint,
-                        setCode: nil
-                    )
-                )
-            }
-            for (key, child) in dict {
-                let nextCardID = extractCardID(from: key) ?? cardID
-                collectTrendMoverCandidates(from: child, inheritedCardID: nextCardID, into: &candidates)
-            }
-            return
-        }
-
-        if let array = value as? [Any] {
-            for child in array {
-                collectTrendMoverCandidates(from: child, inheritedCardID: inheritedCardID, into: &candidates)
-            }
-        }
-    }
-
-    private func extractCardID(from key: String) -> String? {
-        let trimmed = key.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return nil }
-        let normalized = trimmed.lowercased()
-        if normalized == "weekly" || normalized == "daily" || normalized == "monthly" || normalized == "allvariants" {
-            return nil
-        }
-        if normalized.contains("-"), normalized.rangeOfCharacter(from: .decimalDigits) != nil {
-            return trimmed
-        }
-        return nil
-    }
-
-    private func parseImageURL(from dict: [String: Any]) -> URL? {
-        for key in ["imageURL", "imageUrl", "image_url", "image", "thumbnail", "thumb"] {
-            guard let raw = dict[key] as? String else { continue }
-            let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !trimmed.isEmpty else { continue }
-            if let absolute = URL(string: trimmed), absolute.scheme != nil {
-                return absolute
-            }
-            return AppConfiguration.imageURL(relativePath: trimmed)
-        }
-        return nil
-    }
-
-    private func matchesActiveBrand(_ candidate: TrendMoverCandidate) -> Bool {
-        if let cardID = candidate.cardID {
-            return TCGBrand.inferredFromMasterCardId(cardID) == activeBrand
-        }
-        if let hint = candidate.brandHint?.lowercased() {
-            switch activeBrand {
-            case .pokemon:
-                return hint.contains("pokemon")
-            case .onePiece:
-                return hint.contains("onepiece") || hint.contains("one_piece") || hint.contains("one piece")
-            }
-        }
-        return false
-    }
-
-    private func parseAnyNumber(_ raw: Any) -> Double? {
-        switch raw {
-        case let number as Double: return number
-        case let number as Float: return Double(number)
-        case let number as Int: return Double(number)
-        case let number as NSNumber: return number.doubleValue
-        case let string as String: return Double(string.trimmingCharacters(in: .whitespacesAndNewlines))
-        default: return nil
-        }
-    }
-
-    private func buildMover(from candidate: TrendMoverCandidate) async -> MarketTrendMover {
-        var displayName: String? = candidate.displayName
-        var imageURL: URL? = candidate.imageURL
-        var resolvedCardID: String? = nil
-
-        if let cardID = candidate.cardID,
-           let card = await services.cardData.loadCard(masterCardId: cardID) {
-            resolvedCardID = card.masterCardId
-            if displayName == nil {
-                displayName = card.cardName
-            }
-            if imageURL == nil {
-                imageURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
-            }
-        } else if let candidateID = candidate.cardID {
-            // Per-set trend files can use alternate card keys; do a best-effort match.
-            let normalizedCandidate = normalizeTrendKey(candidateID)
-            let setScopedCards: [Card]
-            if let setCode = candidate.setCode {
-                setScopedCards = await services.cardData.loadCards(forSetCode: setCode, catalogBrand: activeBrand)
-            } else {
-                setScopedCards = []
-            }
-
-            if let matched = setScopedCards.first(where: { card in
-                if card.masterCardId.caseInsensitiveCompare(candidateID) == .orderedSame {
-                    return true
-                }
-                if let externalId = cleaned(card.externalId),
-                   externalId.caseInsensitiveCompare(candidateID) == .orderedSame {
-                    return true
-                }
-                if let tcgplayerProductId = cleaned(card.tcgplayerProductId),
-                   tcgplayerProductId == candidateID {
-                    return true
-                }
-                let normalizedMaster = normalizeTrendKey(card.masterCardId)
-                let normalizedExternal = normalizeTrendKey(cleaned(card.externalId) ?? "")
-                return normalizedMaster == normalizedCandidate
-                    || (!normalizedExternal.isEmpty && normalizedExternal == normalizedCandidate)
-            }) {
-                resolvedCardID = matched.masterCardId
-                if displayName == nil { displayName = matched.cardName }
-                if imageURL == nil {
-                    imageURL = AppConfiguration.imageURL(relativePath: matched.imageLowSrc)
-                }
-            }
-        }
-
-        return MarketTrendMover(
-            cardID: resolvedCardID ?? candidate.cardID,
-            displayName: displayName ?? readableTrendKey(candidate.cardID),
-            percentChange: candidate.change7d,
-            imageURL: imageURL
-        )
-    }
-
-    private func normalizeTrendKey(_ raw: String) -> String {
-        raw.lowercased().filter { $0.isLetter || $0.isNumber }
-    }
-
-    private func readableTrendKey(_ raw: String?) -> String {
-        guard let raw else { return "Unknown card" }
-        let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return "Unknown card" }
-        return trimmed.replacingOccurrences(of: "::", with: " ")
-    }
-
-    private func trendCell(title: String, value: Double?) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(dashboardSecondaryText)
-            Text(formatTrendPercent(value))
-                .font(.title3.weight(.bold))
-                .foregroundStyle(trendColor(value))
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, 10)
-        .padding(.horizontal, 12)
-        .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
-        )
-    }
-
-    private func moverCell(title: String, mover: MarketTrendMover?, fallbackColor: Color) -> some View {
-        Button {
-            guard let cardID = mover?.cardID else { return }
-            Task {
-                if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                    await MainActor.run {
-                        selectedCardForDetail = card
-                    }
-                }
-            }
-        } label: {
-            VStack(alignment: .leading, spacing: 8) {
-                Text(title)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(dashboardSecondaryText)
-
-                HStack(spacing: 10) {
-                    if let imageURL = mover?.imageURL {
-                        CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        } placeholder: {
-                            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                .fill(dashboardCardInsetBackground)
-                                .overlay {
-                                    Image(systemName: "photo")
-                                        .font(.caption.weight(.semibold))
-                                        .foregroundStyle(dashboardSecondaryText)
-                                }
-                        }
-                        .frame(width: 42, height: 60)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                .stroke(dashboardBorder, lineWidth: 1)
-                        )
-                    } else {
-                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                            .fill(dashboardCardInsetBackground)
-                            .frame(width: 42, height: 60)
-                            .overlay {
-                                Image(systemName: "square.stack.3d.up.fill")
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(dashboardSecondaryText)
-                            }
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                    .stroke(dashboardBorder, lineWidth: 1)
-                            )
-                    }
-
-                    VStack(alignment: .leading, spacing: 4) {
-                        HStack(alignment: .top) {
-                            Text(mover?.displayName ?? "No data")
-                                .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(dashboardPrimaryText)
-                                .lineLimit(2)
-                                .multilineTextAlignment(.leading)
-                            
-                            Spacer(minLength: 4)
-                            
-                            Image(systemName: "chevron.right")
-                                .font(.caption2.weight(.bold))
-                                .foregroundStyle(dashboardSecondaryText.opacity(0.8))
-                        }
-
-                        Text(formatTrendPercent(mover?.percentChange))
-                            .font(.title3.weight(.bold))
-                            .foregroundStyle(mover?.percentChange == nil ? fallbackColor : trendColor(mover?.percentChange))
-                            .contentTransition(.numericText())
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, 12)
-            .padding(.horizontal, 12)
-            .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
-            )
-        }
-        .buttonStyle(DashboardPressStyle())
-        .disabled(mover?.cardID == nil)
     }
 
     private func formatTrendPercent(_ value: Double?) -> String {
@@ -2445,55 +1427,12 @@ private struct MarketTrendMetrics: Decodable {
     let change1Day: Double?
     let change7Days: Double?
     let change31Days: Double?
-    let biggestGainer7Days: MarketTrendMover?
-    let biggestDecliner7Days: MarketTrendMover?
-
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: AnyCodingKey.self)
         change1Day = container.decodeDouble(forKeys: ["change1Day", "change_1_day", "change1d", "change_1d"])
         change7Days = container.decodeDouble(forKeys: ["change7Days", "change_7_days", "change7d", "change_7d"])
         change31Days = container.decodeDouble(forKeys: ["change31Days", "change_31_days", "change31d", "change_31d"])
-
-        biggestGainer7Days = container.decodeMover(
-            forKeys: ["biggestGainer7Days", "biggest_gainer_7_days", "topGainer7Days", "top_gainer_7_days"]
-        )
-        biggestDecliner7Days = container.decodeMover(
-            forKeys: ["biggestDecliner7Days", "biggest_decliner_7_days", "topDecliner7Days", "top_decliner_7_days", "biggestLoser7Days", "biggest_loser_7_days"]
-        )
     }
-}
-
-private struct MarketTrendMover: Decodable {
-    let cardID: String?
-    let displayName: String
-    let percentChange: Double?
-    let imageURL: URL?
-
-    init(cardID: String?, displayName: String, percentChange: Double?, imageURL: URL?) {
-        self.cardID = cardID
-        self.displayName = displayName
-        self.percentChange = percentChange
-        self.imageURL = imageURL
-    }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: AnyCodingKey.self)
-        cardID = container.decodeString(forKeys: ["cardID", "card_id", "id", "masterCardId", "master_card_id"])
-        displayName = container.decodeString(forKeys: ["cardName", "card_name", "name", "title"]) ?? "Unknown card"
-        percentChange = container.decodeDouble(forKeys: ["percentChange", "percent_change", "change7Days", "change_7_days", "change7d", "change_7d"])
-        imageURL = container.decodeURL(
-            forKeys: ["imageURL", "imageUrl", "image_url", "image", "thumbnail", "thumb"]
-        )
-    }
-}
-
-private struct TrendMoverCandidate {
-    let cardID: String?
-    let displayName: String?
-    let imageURL: URL?
-    let change7d: Double
-    let brandHint: String?
-    let setCode: String?
 }
 
 private struct AnyCodingKey: CodingKey {
@@ -2545,38 +1484,6 @@ private extension KeyedDecodingContainer where K == AnyCodingKey {
         return nil
     }
 
-    func decodeMover(forKeys keys: [String]) -> MarketTrendMover? {
-        for key in keys {
-            guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
-            do {
-                if let mover = try decodeIfPresent(MarketTrendMover.self, forKey: codingKey) {
-                    return mover
-                }
-            } catch {
-                continue
-            }
-        }
-        return nil
-    }
-
-    func decodeURL(forKeys keys: [String]) -> URL? {
-        for key in keys {
-            guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
-            do {
-                if let raw = try decodeIfPresent(String.self, forKey: codingKey) {
-                    let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
-                    guard !trimmed.isEmpty else { continue }
-                    if let absolute = URL(string: trimmed), absolute.scheme != nil {
-                        return absolute
-                    }
-                    return AppConfiguration.imageURL(relativePath: trimmed)
-                }
-            } catch {
-                continue
-            }
-        }
-        return nil
-    }
 }
 
 private struct ChartPoint: Identifiable {
@@ -2585,35 +1492,6 @@ private struct ChartPoint: Identifiable {
     let total: Double
     let pokemon: Double
     let onePiece: Double
-}
-
-private struct DashboardBreakdownEntry: Identifiable {
-    var id: String { label }
-    let label: String
-    let value: Int
-}
-
-private struct DashboardTopHolding {
-    let cardID: String
-    let name: String
-    let setName: String?
-    let imageURL: URL?
-    let unitValue: Double
-    let totalValue: Double
-    let quantity: Int
-}
-
-private struct DashboardSetCompletionEntry: Identifiable {
-    var id: String { setCode }
-    let setCode: String
-    let setName: String
-    let ownedUnique: Int
-    let totalCards: Int
-    let progress: Double
-
-    var percentString: String {
-        String(format: "%.0f", progress * 100)
-    }
 }
 
 private struct DashboardPressStyle: ButtonStyle {
@@ -2628,9 +1506,7 @@ private struct DashboardPressStyle: ButtonStyle {
 private enum DashboardPalette {
     static let purple = Color(red: 0.58, green: 0.33, blue: 1.0)
     static let blue = Color(red: 0.24, green: 0.58, blue: 1.0)
-    static let chartLine = Color(red: 0.12, green: 0.52, blue: 1.0)
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let gold = Color(red: 0.99, green: 0.72, blue: 0.22)
-    static let orange = Color(red: 1.0, green: 0.58, blue: 0.22)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
 }

@@ -24,6 +24,8 @@ struct LaunchWordmarkView: View {
     /// Fired exactly once after the reveal stagger finishes — parent uses this
     /// to gate the minimum on-screen time before dismissing.
     var onRevealComplete: () -> Void = {}
+    /// DEV: elapsed time string driven by the parent, e.g. "2.4s"
+    var elapsedLabel: String = "0.0s"
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
@@ -60,6 +62,11 @@ struct LaunchWordmarkView: View {
                 wordmark
 
                 tagline
+
+                // DEV: elapsed time counter driven by parent.
+                Text(elapsedLabel)
+                    .font(.system(size: 11, weight: .medium, design: .monospaced))
+                    .foregroundStyle(colorScheme == .dark ? Color.white.opacity(0.35) : Color.black.opacity(0.30))
 
                 // Progress block only appears when a real download is active.
                 if progress != nil {

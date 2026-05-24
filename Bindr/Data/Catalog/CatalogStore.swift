@@ -962,6 +962,31 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    /// Fetches every card_prices row for a brand in one query. Returns card_key → json blob.
+    func fetchAllCardPrices(brand: TCGBrand) async -> [String: Data] {
+        await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: [:]); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "SELECT card_key, json FROM card_prices WHERE brand = ?;"
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: [:]); return
+                }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                var result: [String: Data] = [:]
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    guard let keyC = sqlite3_column_text(stmt, 0) else { continue }
+                    let key = String(cString: keyC)
+                    let n = sqlite3_column_bytes(stmt, 1)
+                    guard let p = sqlite3_column_blob(stmt, 1) else { continue }
+                    result[key] = Data(bytes: p, count: Int(n))
+                }
+                continuation.resume(returning: result)
+            }
+        }
+    }
+
     // MARK: - Normalized price history points
 
     struct PriceHistoryPoint {

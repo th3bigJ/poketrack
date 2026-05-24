@@ -22,6 +22,8 @@ final class CardDataService {
     private let brandSettings: BrandSettings
     private var normalizedNameByCardID: [String: String] = [:]
     private var normalizedSearchBlobByCardID: [String: String] = [:]
+    /// Cache for bulk master-card-ID lookups so repeated calls (computeLiveValue, resolveInsightsData, etc.) skip SQLite.
+    private var cardByMasterID: [String: Card] = [:]
 
     init(
         brandSettings: BrandSettings,
@@ -37,6 +39,7 @@ final class CardDataService {
     func reloadAfterBrandChange() async {
         cardsBySet = [:]
         cardsForCatalogBrandCache = [:]
+        cardByMasterID = [:]
         normalizedNameByCardID = [:]
         normalizedSearchBlobByCardID = [:]
         browseFeedSessionRefs = nil
@@ -642,30 +645,46 @@ final class CardDataService {
     /// Bulk resolves cards by `masterCardId` in one SQLite pass.
     /// Returns cards in arbitrary order; callers should reorder to their requested id list.
     func loadCards(masterCardIDs: [String], catalogBrand: TCGBrand) async -> [Card] {
-        let ids = Array(Set(masterCardIDs))
-        let idSet = Set(ids)
-        guard !ids.isEmpty else { return [] }
+        let idSet = Set(masterCardIDs)
+        guard !idSet.isEmpty else { return [] }
 
-        // Fast path: resolve from already-cached set buckets for the selected browse brand.
+        // Fast path 1: all IDs already in per-card cache.
+        var result: [Card] = []
+        result.reserveCapacity(idSet.count)
+        var missing: [String] = []
+        for id in idSet {
+            if let cached = cardByMasterID[id] {
+                result.append(cached)
+            } else {
+                missing.append(id)
+            }
+        }
+        guard !missing.isEmpty else { return result }
+
+        // Fast path 2: resolve remainder from already-cached set buckets for the selected browse brand.
         if catalogBrand == brandSettings.selectedCatalogBrand {
-            var cachedById: [String: Card] = [:]
-            cachedById.reserveCapacity(ids.count)
+            let missingSet = Set(missing)
+            var stillMissing: [String] = []
             for cards in cardsBySet.values {
-                for card in cards where idSet.contains(card.masterCardId) {
-                    cachedById[card.masterCardId] = card
+                for card in cards where missingSet.contains(card.masterCardId) {
+                    cardByMasterID[card.masterCardId] = card
+                    result.append(card)
                 }
             }
-            if cachedById.count == ids.count {
-                return Array(cachedById.values)
-            }
+            stillMissing = missing.filter { cardByMasterID[$0] == nil }
+            if stillMissing.isEmpty { return result }
+            missing = stillMissing
         }
 
         do {
             try await CatalogStore.shared.open()
-            let loaded = try await CatalogStore.shared.fetchCards(masterCardIDs: ids, brand: catalogBrand)
-            return loaded
+            let loaded = try await CatalogStore.shared.fetchCards(masterCardIDs: missing, brand: catalogBrand)
+            for card in loaded {
+                cardByMasterID[card.masterCardId] = card
+            }
+            return result + loaded
         } catch {
-            return []
+            return result
         }
     }
 
