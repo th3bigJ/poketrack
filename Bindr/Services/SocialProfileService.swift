@@ -200,12 +200,22 @@ final class SocialProfileService {
             method: "GET",
             accessToken: try signedInAccessToken()
         )
+        currentProfile = rows.first
         return rows.first
     }
 
     func fetchProfile(id: UUID) async throws -> SocialProfile? {
         let rows: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?select=*&id=eq.\(id.uuidString)&limit=1",
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        return rows.first
+    }
+
+    func fetchProfile(username: String) async throws -> SocialProfile? {
+        let rows: [SocialProfile] = try await execute(
+            path: "/rest/v1/profiles?select=*&username=eq.\(username.lowercased())&limit=1",
             method: "GET",
             accessToken: try signedInAccessToken()
         )
@@ -279,6 +289,7 @@ final class SocialProfileService {
             )
             let profile = try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
             try await ensureNotificationPreferences(userID: userID)
+            currentProfile = profile
             return profile
         } catch {
             let errorMsg = error.localizedDescription
@@ -320,6 +331,7 @@ final class SocialProfileService {
                 )
                 let profile = try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
                 try await ensureNotificationPreferences(userID: userID)
+                currentProfile = profile
                 return profile
             }
             throw error
@@ -385,7 +397,9 @@ final class SocialProfileService {
                     "Prefer": "return=representation"
                 ]
             )
-            return try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+            let profile = try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+            currentProfile = profile
+            return profile
         } catch {
             let errorMsg = error.localizedDescription
             if errorMsg.contains("premium_badge_style") {
@@ -420,7 +434,9 @@ final class SocialProfileService {
                         "Prefer": "return=representation"
                     ]
                 )
-                return try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+                let profile = try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+                currentProfile = profile
+                return profile
             }
             throw error
         }

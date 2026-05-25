@@ -252,14 +252,9 @@ struct LaunchWordmarkView: View {
             .offset(x: 60, y: -60)
             .ignoresSafeArea()
 
-            VStack(spacing: 0) {
-                Spacer()
-
-                // Wordmark
+            VStack(spacing: 10) {
                 wordmarkView
-                    .padding(.bottom, 10)
 
-                // Tagline
                 Text("Share your Collection")
                     .font(.system(size: 12, weight: .medium))
                     .foregroundStyle(subtle)
@@ -267,24 +262,20 @@ struct LaunchWordmarkView: View {
                     .textCase(.uppercase)
                     .opacity(taglineVisible ? 1 : 0)
                     .offset(y: taglineVisible ? 0 : 6)
-
-                // Elapsed (dev only)
-                Text(elapsedLabel)
-                    .font(.system(size: 10, weight: .regular, design: .monospaced))
-                    .foregroundStyle(foreground.opacity(0.18))
-                    .padding(.top, 6)
-
-                Spacer()
-                Spacer()
-
-                // Status area — pinned near bottom
-                statusArea
-                    .frame(height: 80)
-                    .opacity(statusVisible ? 1 : 0)
-                    .offset(y: statusVisible ? 0 : 12)
-                    .padding(.bottom, 56)
             }
             .padding(.horizontal, 40)
+            .offset(y: -58)
+
+            VStack {
+                Spacer()
+                statusArea
+                    .frame(height: 170)
+                    .opacity(statusVisible ? 1 : 0)
+                    .offset(y: statusVisible ? 0 : 12)
+                    .padding(.horizontal, 40)
+                    .padding(.bottom, 44)
+            }
+            .allowsHitTesting(false)
         }
         .task {
             guard !hasStartedAnimation else { return }
@@ -305,19 +296,8 @@ struct LaunchWordmarkView: View {
             ForEach(0..<fullWord.count, id: \.self) { i in
                 Text(String(fullWord[fullWord.index(fullWord.startIndex, offsetBy: i)]))
                     .font(.custom("BebasNeue-Regular", size: 80))
-                    .foregroundStyle(
-                        LinearGradient(
-                            colors: [
-                                foreground.opacity(0.96),
-                                foreground.opacity(0.78),
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
                     .offset(y: animStates[i] ? 0 : 20)
                     .opacity(animStates[i] ? 1 : 0)
-                    .blur(radius: animStates[i] ? 0 : 4)
                     .animation(
                         .spring(response: 0.50, dampingFraction: 0.70)
                             .delay(Double(i) * 0.08),
@@ -325,6 +305,18 @@ struct LaunchWordmarkView: View {
                     )
             }
         }
+        .foregroundStyle(
+            LinearGradient(
+                colors: [
+                    foreground.opacity(0.96),
+                    foreground.opacity(0.78),
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+        )
+        .drawingGroup(opaque: false, colorMode: .linear)
+        .geometryGroup()
     }
 
     // MARK: Status area
@@ -343,88 +335,103 @@ struct LaunchWordmarkView: View {
     // MARK: CloudKit sync indicator
 
     private var cloudKitSyncView: some View {
-        VStack(spacing: 10) {
-            // Pill badge
-            HStack(spacing: 7) {
-                Image(systemName: "icloud.and.arrow.down.fill")
-                    .font(.system(size: 11, weight: .semibold))
-                    .foregroundStyle(bindrAccent)
-                Text("Syncing iCloud")
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundStyle(foreground.opacity(0.75))
-                    .tracking(0.3)
-                PulseDots(color: bindrAccent.opacity(0.7))
-                    .padding(.leading, 2)
-            }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 9)
-            .background {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .fill(.thinMaterial)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .strokeBorder(
-                                LinearGradient(
-                                    colors: [
-                                        bindrAccent.opacity(0.35),
-                                        bindrAccent.opacity(0.10),
-                                    ],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                ),
-                                lineWidth: 0.75
-                            )
-                    }
-            }
-
-            Text("Loading your cards from iCloud…")
-                .font(.system(size: 11, weight: .regular))
-                .foregroundStyle(subtle)
-        }
+        launchStatusPanel(
+            title: "Syncing iCloud",
+            status: "Loading your cards from iCloud...",
+            icon: "icloud.and.arrow.down.fill",
+            progress: nil
+        )
     }
 
     // MARK: Catalog download progress
 
     @ViewBuilder
     private func catalogProgressView(_ p: LaunchProgressState) -> some View {
-        VStack(spacing: 12) {
-            // Label
-            VStack(spacing: 3) {
-                Text(p.message)
-                    .font(.system(size: 13, weight: .semibold))
-                    .foregroundStyle(foreground.opacity(0.88))
-                    .multilineTextAlignment(.center)
-                Text(p.status)
-                    .font(.system(size: 11, weight: .regular))
-                    .foregroundStyle(subtle)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
+        launchStatusPanel(
+            title: p.message,
+            status: p.status,
+            icon: p.hasByteProgress ? "sparkles" : "square.grid.2x2.fill",
+            progress: p.hasByteProgress ? p : nil
+        )
+    }
+
+    private func launchStatusPanel(
+        title: String,
+        status: String,
+        icon: String,
+        progress: LaunchProgressState?
+    ) -> some View {
+        VStack(spacing: 14) {
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: icon)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(bindrAccent)
+                    .frame(width: 34, height: 34)
+                    .background(bindrAccent.opacity(colorScheme == .dark ? 0.16 : 0.10), in: Circle())
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(.system(size: 16, weight: .bold, design: .rounded))
+                        .foregroundStyle(foreground.opacity(0.92))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.85)
+                    Text(status)
+                        .font(.system(size: 13, weight: .regular))
+                        .foregroundStyle(subtle)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.85)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
 
-            if p.hasByteProgress {
-                VStack(spacing: 7) {
-                    // Track
-                    CAProgressBar(fraction: p.fraction, fillColor: bindrAccent, height: 3)
-                        .frame(maxWidth: 220)
+            if let progress {
+                VStack(spacing: 8) {
+                    CAProgressBar(fraction: progress.fraction, fillColor: bindrAccent, height: 5)
+                        .frame(maxWidth: .infinity)
                         .clipShape(Capsule())
 
                     HStack(spacing: 6) {
-                        Text("\(Int((min(max(p.fraction, 0), 1) * 100).rounded()))%")
-                            .font(.system(size: 11, weight: .semibold, design: .rounded))
-                            .foregroundStyle(foreground.opacity(0.65))
+                        Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(foreground.opacity(0.70))
                         if !byteProgressText.isEmpty {
                             Text("·")
                                 .foregroundStyle(subtle)
                             Text(byteProgressText)
-                                .font(.system(size: 11, weight: .regular))
+                                .font(.system(size: 12, weight: .medium))
                                 .foregroundStyle(subtle)
                         }
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } else {
                 PulseDots(color: bindrAccent.opacity(0.55))
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 18)
+        .frame(maxWidth: 330)
+        .background {
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .fill(.ultraThinMaterial)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 24, style: .continuous)
+                        .strokeBorder(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(colorScheme == .dark ? 0.16 : 0.48),
+                                    bindrAccent.opacity(colorScheme == .dark ? 0.12 : 0.16),
+                                    Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.08)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 0.75
+                        )
+                }
+        }
+        .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.18 : 0.08), radius: 18, x: 0, y: 10)
     }
 
     // MARK: Animation sequence

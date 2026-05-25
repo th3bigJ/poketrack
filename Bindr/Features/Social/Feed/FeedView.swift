@@ -683,6 +683,12 @@ struct ShimmerAlertRow: View {
 }
 
 struct SocialAlertsSheet: View {
+    enum AlertTab: String, CaseIterable, Identifiable {
+        case new = "New"
+        case all = "All"
+        var id: String { rawValue }
+    }
+
     struct TradeAlertItem: Identifiable {
         let id: String
         let tradeID: UUID
@@ -707,6 +713,8 @@ struct SocialAlertsSheet: View {
     @State private var tradeUpdates: [TradeAlertItem] = []
     @State private var isLoading: Bool = false
     @State private var errorMessage: String?
+    @State private var selectedTab: AlertTab = .new
+    @State private var seenIDs: Set<String> = []
 
     private var groupedItems: [GroupedFeedItem] {
         var groups: [GroupedFeedItem] = []
@@ -734,13 +742,25 @@ struct SocialAlertsSheet: View {
             tradeUpdates: tradeUpdates,
             isLoading: isLoading && activity.isEmpty,
             errorMessage: errorMessage,
-            onDone: { isPresented = false },
+            onDone: {
+                services.socialFeed.clearUnreadAlertsState(items: activity)
+                isPresented = false
+            },
             onDeepLinkSelected: { url in
                 onDeepLinkSelected(url)
                 isPresented = false
             },
-            onRetry: { Task { await refresh() } }
+            onRetry: { Task { await refresh() } },
+            onMarkAllAsRead: { markAllAsRead() },
+            selectedTab: $selectedTab,
+            seenIDs: seenIDs
         )
+        .onChange(of: selectedTab) { _, newTab in
+            if newTab == .all {
+                services.socialFeed.clearUnreadAlertsState(items: activity)
+                seenIDs = services.socialFeed.alertSeenIDs
+            }
+        }
         .task { await refresh() }
     }
 
@@ -754,10 +774,7 @@ struct SocialAlertsSheet: View {
             let fetchedTrades = try await services.trade.fetchMyTrades()
             activity = fetchedActivity
             tradeUpdates = buildTradeAlerts(from: fetchedTrades)
-            
-            // Clear unread alerts state once successfully fetched
-            services.socialFeed.clearUnreadAlertsState(items: fetchedActivity)
-            
+            seenIDs = services.socialFeed.alertSeenIDs
             errorMessage = nil
         } catch is CancellationError {
             return
@@ -766,6 +783,13 @@ struct SocialAlertsSheet: View {
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+
+    private func markAllAsRead() {
+        // Mark the currently-loaded batch as seen and reset the badge.
+        services.socialFeed.clearUnreadAlertsState(items: activity)
+        seenIDs = services.socialFeed.alertSeenIDs
+        selectedTab = .all
     }
 
     private func buildTradeAlerts(from trades: [TradeWithItems]) -> [TradeAlertItem] {
@@ -868,21 +892,31 @@ private struct SocialAlertsPreviewView: View {
     let onDone: () -> Void
     let onDeepLinkSelected: (URL) -> Void
     var onRetry: () -> Void = {}
+    let onMarkAllAsRead: () -> Void
+    @Binding var selectedTab: SocialAlertsSheet.AlertTab
+    let seenIDs: Set<String>
 
     private var logEntries: [AlertLogEntry] {
-        let activityEntries = activityItems.map(AlertLogEntry.activity)
+        let activityEntries = filteredActivityItems.map(AlertLogEntry.activity)
         let tradeEntries = tradeUpdates.map(AlertLogEntry.trade)
         return (activityEntries + tradeEntries).sorted { $0.createdAt > $1.createdAt }
     }
 
-    private var activityItems: [GroupedFeedItem] {
+    private var filteredActivityItems: [GroupedFeedItem] {
         items.filter { group in
-            switch group.primary.type {
-            case .vote, .comment, .friendship:
-                return true
-            default:
-                return !group.interactions.isEmpty
+            let typeMatch: Bool = {
+                switch group.primary.type {
+                case .vote, .comment, .friendship:
+                    return true
+                default:
+                    return !group.interactions.isEmpty
+                }
+            }()
+            guard typeMatch else { return false }
+            if selectedTab == .new {
+                return !seenIDs.contains(group.primary.id)
             }
+            return true
         }
     }
 
@@ -908,10 +942,18 @@ private struct SocialAlertsPreviewView: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
 
+            SlidingSegmentedPicker(
+                selection: $selectedTab,
+                items: SocialAlertsSheet.AlertTab.allCases,
+                title: { $0.rawValue }
+            )
+            .padding(.horizontal, 40)
+            .padding(.bottom, 12)
+
             if isLoading {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 14) {
-                        sectionLabel("ALL ACTIVITY")
+                        sectionLabel(selectedTab == .new ? "NEW ACTIVITY" : "ALL ACTIVITY")
                         ForEach(0..<5, id: \.self) { _ in
                             ShimmerAlertRow()
                         }
@@ -932,9 +974,25 @@ private struct SocialAlertsPreviewView: View {
             } else {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 14) {
-                        sectionLabel("ALL ACTIVITY")
+                        HStack(spacing: 0) {
+                            sectionLabel(selectedTab == .new ? "NEW ACTIVITY" : "ALL ACTIVITY")
+                            Spacer(minLength: 0)
+                            if selectedTab == .new && !logEntries.isEmpty {
+                                Button {
+                                    Haptics.lightImpact()
+                                    onMarkAllAsRead()
+                                } label: {
+                                    Text("Mark All as Read")
+                                        .font(.system(size: 11, weight: .medium))
+                                        .foregroundStyle(Color(hex: "5B9CF6"))
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
                         if logEntries.isEmpty {
-                            emptyAlert("Trade updates, votes, comments, and friend activity will appear here.")
+                            emptyAlert(selectedTab == .new
+                                ? "No new alerts. Check back later for updates on trades, votes, comments, and friend activity."
+                                : "Trade updates, votes, comments, and friend activity will appear here.")
                         } else {
                             ForEach(logEntries) { entry in
                                 switch entry {

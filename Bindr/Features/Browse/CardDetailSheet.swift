@@ -184,7 +184,7 @@ struct CardDetailSheet: View {
                 CardPricingPanel(card: pageCard, useGlass: true)
                     .glassCardStyle(cornerRadius: 26, interactive: false)
                 recentSoldOnEbayButton(for: pageCard)
-                    .glassCardStyle(cornerRadius: 14, interactive: false)
+                    .glassCardStyle(cornerRadius: 26, interactive: false)
                 if showsCollectionSection(for: pageCard) { collectionSection }
                 if !facts.isEmpty || pageCard.attacks != nil || pageCard.abilities != nil || cleaned(pageCard.rules) != nil || cleaned(pageCard.flavorText) != nil {
                     cardDetailsSection(for: pageCard, facts: facts)
@@ -525,21 +525,49 @@ struct CardDetailSheet: View {
             guard let url = ebayRecentSoldURL(for: card) else { return }
             openURL(url)
         } label: {
-            HStack(spacing: 10) {
-                ebayWordmark
-                Text("Recent Sold on eBay")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.primary)
+            HStack(spacing: 14) {
+                ebayWordmarkBadge
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Recent Sold on eBay")
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.primary)
+                    Text("Open sold listings for this card")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
                 Spacer(minLength: 0)
-                Image(systemName: "arrow.up.right.square")
-                    .font(.footnote.weight(.semibold))
+                Image(systemName: "arrow.up.right")
+                    .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.secondary)
+                    .frame(width: 32, height: 32)
+                    .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05), in: Circle())
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 12)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
+            .frame(minHeight: 76)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: 26, style: .continuous)
+                    .fill(sectionInsetBackground)
+            )
+            .overlay {
+                RoundedRectangle(cornerRadius: 26, style: .continuous)
+                    .stroke(sectionBorder, lineWidth: 1)
+            }
         }
         .buttonStyle(.plain)
+        .contentShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
+        .accessibilityLabel("Open recent sold listings on eBay")
+    }
+
+    private var ebayWordmarkBadge: some View {
+        ebayWordmark
+            .frame(width: 74, height: 42)
+            .background(Color.white.opacity(colorScheme == .dark ? 0.08 : 0.70), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.05), lineWidth: 1)
+            }
     }
 
     private var ebayWordmark: some View {
@@ -549,7 +577,7 @@ struct CardDetailSheet: View {
             Text("a").foregroundStyle(Color(red: 0.97, green: 0.74, blue: 0.06))
             Text("y").foregroundStyle(Color(red: 0.44, green: 0.68, blue: 0.11))
         }
-        .font(.system(size: 18, weight: .bold, design: .rounded))
+        .font(.system(size: 24, weight: .bold, design: .rounded))
     }
 
     private func ebayRecentSoldURL(for card: Card) -> URL? {

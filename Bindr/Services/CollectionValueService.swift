@@ -63,6 +63,9 @@ final class CollectionValueService {
         self.pricing = pricing
         self.cardData = cardData
         self.sealedProducts = sealedProducts
+    }
+
+    func loadAllFromStore() {
         loadAll()
     }
 

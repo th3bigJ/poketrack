@@ -489,7 +489,7 @@ struct TradeBuilderView: View {
 
 // MARK: - BuilderCardRow
 
-private struct BuilderCardRow: View {
+struct BuilderCardRow: View {
     @Environment(AppServices.self) private var services
 
     let item: NewTradeItemInput

@@ -151,6 +151,7 @@ struct RootView: View {
     private let launchStart = ContinuousClock().now
     @State private var launchElapsedTenths: Int = 0
     @State private var launchTimerTask: Task<Void, Never>? = nil
+    @State private var hasScheduledPostLaunchServices = false
     /// Shared handle for imperative CALayer fade — bypasses SwiftUI's updateUIView
     /// scheduling so CloudKit/@MainActor merges can't delay the overlay disappearing.
     @State private var launchFadeHandle = LaunchFadeHandle()
@@ -163,6 +164,19 @@ struct RootView: View {
         let elapsed = ContinuousClock().now - launchStart
         let secs = Double(elapsed.components.seconds) + Double(elapsed.components.attoseconds) / 1e18
         print(String(format: "[Launch %.2fs] %@", secs, msg))
+    }
+
+    private func schedulePostLaunchServicesIfNeeded() {
+        guard !hasScheduledPostLaunchServices else { return }
+        hasScheduledPostLaunchServices = true
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 20_000_000_000)
+            guard !Task.isCancelled else { return }
+            if services.brandSettings.hasCompletedBrandOnboarding {
+                await services.socialPush.updateRegistrationState()
+            }
+            await services.setupWishlistAndLedger(modelContext: modelContext)
+        }
     }
 
     // MARK: - Splash Flow
@@ -187,8 +201,15 @@ struct RootView: View {
     /// Controls the launch overlay fade-out. Stays true until mainContent has been inserted AND
     /// a couple of frames have passed so the freeze from initial layout is fully hidden.
     @State private var isLaunchOverlayVisible = true
+    /// Split from `isLaunchOverlayVisible` so hit testing can be disabled immediately
+    /// when the fade starts, without waiting for `DispatchQueue.main.async` in the
+    /// CALayer completion block. Without this, the overlay becomes invisible (opacity 0
+    /// on the render server) but still intercepts touches for several seconds while the
+    /// main thread is busy with post-launch work.
+    @State private var isLaunchOverlayHitTestingEnabled = true
     /// Flipped by DashboardView once a value is ready to display (persisted snapshot or fresh compute).
     @State private var isDashboardDataReady = false
+    @State private var dashboardLaunchStatus = "Loading your collection..."
     private let splashLastVersionKey = "bindr_splash_last_shown_version"
 
     /// Single gate for tearing the launch surface down.
@@ -206,19 +227,37 @@ struct RootView: View {
     }
 
     private var launchProgressState: LaunchProgressState? {
-        // Only show progress when actual data is being downloaded — not during
-        // local SQLite/index work which completes silently in the background.
-        guard services.isReady,
-              !services.isLaunchCatalogPipelineComplete,
-              services.bootstrapShowsDownloadProgressUI else { return nil }
-        return LaunchProgressState(
-            message: services.bootstrapMessage,
-            status: services.bootstrapStatus,
-            fraction: services.bootstrapProgress,
-            downloadedBytes: services.bootstrapDownloadedBytes,
-            totalBytes: services.bootstrapEstimatedTotalBytes,
-            hasByteProgress: services.bootstrapShowsDownloadProgressUI
-        )
+        guard services.isReady else { return nil }
+
+        if !services.isLaunchCatalogPipelineComplete,
+           services.bootstrapShowsDownloadProgressUI {
+            return LaunchProgressState(
+                message: services.bootstrapMessage,
+                status: services.bootstrapStatus,
+                fraction: services.bootstrapProgress,
+                downloadedBytes: services.bootstrapDownloadedBytes,
+                totalBytes: services.bootstrapEstimatedTotalBytes,
+                hasByteProgress: services.bootstrapShowsDownloadProgressUI
+            )
+        }
+
+        if services.isLaunchCatalogPipelineComplete,
+           services.isCloudKitImportComplete,
+           !isDashboardDataReady,
+           !showSplash,
+           !showOnboardingImmediate,
+           services.brandSettings.hasCompletedBrandOnboarding {
+            return LaunchProgressState(
+                message: "Preparing dashboard",
+                status: dashboardLaunchStatus,
+                fraction: 1,
+                downloadedBytes: 0,
+                totalBytes: 0,
+                hasByteProgress: false
+            )
+        }
+
+        return nil
     }
 
     /// First-launch (post-brand-onboarding) progress block. Shares the
@@ -397,18 +436,19 @@ struct RootView: View {
                 isVisible: isLaunchOverlayVisible,
                 duration: 0.45,
                 onFadeComplete: {
-                    launchLog("overlay fade complete — app is ready")
-                    launchTimerTask?.cancel()
-                    launchTimerTask = nil
+                    // Fallback path (isVisible flipped directly rather than via handle).
+                    // Timer is already cancelled before the fade starts (see onChange above).
+                    launchLog("overlay fade complete (fallback path) — app is ready")
                     Task { @MainActor in
                         isLaunchOverlayVisible = false
                         services.runDeferredLaunchServicesIfNeeded()
                         evaluatePremiumUpsellIfNeeded()
+                        schedulePostLaunchServicesIfNeeded()
                     }
                 },
                 handle: launchFadeHandle
             )
-            .allowsHitTesting(isLaunchOverlayVisible)
+            .allowsHitTesting(isLaunchOverlayHitTestingEnabled)
             .ignoresSafeArea()
             .zIndex(1)
         }
@@ -438,6 +478,22 @@ struct RootView: View {
         .onChange(of: isLaunchSequenceComplete) { _, complete in
             if complete {
                 launchLog("isLaunchSequenceComplete — fading overlay")
+                // Stop the 100ms elapsed-time timer BEFORE starting the CALayer fade.
+                // The timer mutates @State (launchElapsedTenths) every 100ms, causing
+                // RootView.body to re-evaluate. During a 450ms fade that means 4–5
+                // spurious full body re-renders while SwiftUI is also compositing the
+                // fade animation — visibly janky on devices with large collections.
+                launchTimerTask?.cancel()
+                launchTimerTask = nil
+
+                // Disable hit-testing immediately so the dashboard is interactive
+                // even before the fade animation completes. The CALayer fade runs on
+                // the render server and its completion is dispatched via
+                // DispatchQueue.main.async — if the main thread is blocked by post-load
+                // work, the overlay stays invisible but still intercepts touches for
+                // several seconds. Flipping hit-testing here avoids that gap entirely.
+                isLaunchOverlayHitTestingEnabled = false
+
                 // Trigger the CALayer fade imperatively — this starts the animation on
                 // the render server immediately without touching any SwiftUI @State.
                 // isLaunchOverlayVisible is NOT flipped here: doing so would schedule
@@ -450,8 +506,6 @@ struct RootView: View {
                     duration: 0.45,
                     completion: {
                         launchLog("overlay fade complete — app is ready")
-                        launchTimerTask?.cancel()
-                        launchTimerTask = nil
                         Task { @MainActor in
                             // Flip the fallback flag now that the fade is visually done.
                             // This is the first @State mutation after launch — SwiftUI's
@@ -459,6 +513,7 @@ struct RootView: View {
                             isLaunchOverlayVisible = false
                             services.runDeferredLaunchServicesIfNeeded()
                             evaluatePremiumUpsellIfNeeded()
+                            schedulePostLaunchServicesIfNeeded()
                         }
                     }
                 )
@@ -573,15 +628,9 @@ struct RootView: View {
                 await services.bootstrapCatalogInBackgroundIfNeeded()
                 launchLog("bootstrapCatalogInBackgroundIfNeeded done")
             }
-            // Push registration and wishlist/ledger run after the overlay closes —
-            // they are not needed for first paint and their @MainActor network calls
-            // would freeze the UI if awaited here.
-            Task {
-                if services.brandSettings.hasCompletedBrandOnboarding {
-                    await services.socialPush.updateRegistrationState()
-                }
-                await services.setupWishlistAndLedger(modelContext: modelContext)
-            }
+            // Push registration and wishlist/ledger setup are intentionally scheduled
+            // from the overlay fade completion, with a short post-launch delay, so
+            // they cannot compete with the first tappable dashboard frame.
             // Cold-launch tap: if the AppDelegate's `didReceive` fired
             // before `AppServices` was constructed, the buffer drain in
             // `SocialPushService.init` already populated
@@ -683,6 +732,8 @@ struct RootView: View {
                                 moreNavigationPath = NavigationPath()
                                 moreNavigationPath.append(SideMenuPage.decks)
                                 selectedTab = .more
+                            }, onInitialLoadStatusChange: { status in
+                                dashboardLaunchStatus = status
                             }, onInitialLoadComplete: {
                                 isDashboardDataReady = true
                             })

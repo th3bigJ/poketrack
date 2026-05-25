@@ -152,16 +152,12 @@ struct CommentsView: View {
     }
 
     private var sheetPullArea: some View {
-        VStack(spacing: 8) {
-            Capsule()
-                .fill(Color.secondary.opacity(0.35))
-                .frame(width: 38, height: 5)
-                .padding(.top, 8)
-
+        VStack(spacing: 0) {
             Text("Comments")
                 .font(.headline.weight(.semibold))
                 .frame(maxWidth: .infinity)
-                .padding(.bottom, 8)
+                .padding(.top, 18)
+                .padding(.bottom, 12)
         }
         .frame(maxWidth: .infinity)
         .contentShape(Rectangle())
@@ -270,9 +266,6 @@ struct CommentsView: View {
                 postCard
             }
 
-            // Pull posts are a single card — show it inline so the user
-            // can tap straight to the card detail without two extra screens.
-            // Everything else (binder, deck, etc.) keeps "View Content".
             if content.contentType == .pull {
                 if let card = pullCard {
                     Button {
@@ -300,7 +293,7 @@ struct CommentsView: View {
                             }
                             Spacer()
                             Image(systemName: "chevron.right")
-                                .font(.system(size: 12, weight: .semibold))
+                                .font(.system(size: 18, weight: .semibold))
                                 .foregroundStyle(.secondary)
                         }
                         .padding(.horizontal, 14)
@@ -329,34 +322,75 @@ struct CommentsView: View {
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 }
             } else {
-                Button {
-                    Task { await openSharedContent() }
-                } label: {
-                    HStack(spacing: 8) {
-                        if isLoadingSharedContent {
-                            ProgressView()
-                                .controlSize(.small)
-                                .tint(services.theme.accentColor)
-                        } else {
-                            Image(systemName: "arrow.up.right.square")
-                                .foregroundStyle(services.theme.accentColor)
-                        }
-                        Text("View Content")
-                            .fontWeight(.semibold)
-                            .foregroundStyle(.primary)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 10)
-                    .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 12, style: .continuous)
-                            .stroke(Color.primary.opacity(0.10), lineWidth: 1)
-                    }
-                }
-                .buttonStyle(.plain)
-                .disabled(isLoadingSharedContent)
+                sharedContentBanner
             }
         }
+    }
+
+    private var sharedContentBanner: some View {
+        Button {
+            Task { await openSharedContent() }
+        } label: {
+            HStack(spacing: 12) {
+                CommentsContentPreviewThumb(
+                    contentType: content.contentType,
+                    thumbnailIDs: Array((sourceItem?.thumbnails ?? []).prefix(4)),
+                    cardCount: content.cardCount
+                )
+                .frame(width: 54, height: 62)
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(content.title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                    Text(openBannerSubtitle)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+
+                Spacer(minLength: 8)
+
+                if isLoadingSharedContent {
+                    ProgressView()
+                        .controlSize(.small)
+                        .tint(services.theme.accentColor)
+                } else {
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
+            .background(Color(uiColor: .secondarySystemBackground),
+                        in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+            }
+        }
+        .buttonStyle(.plain)
+        .disabled(isLoadingSharedContent)
+    }
+
+    private var openBannerSubtitle: String {
+        let noun: String = {
+            switch content.contentType {
+            case .binder: return "binder"
+            case .deck: return "deck"
+            case .folder: return "folder"
+            case .wishlist: return "wishlist"
+            case .collection: return "collection"
+            case .dailyDigest: return "digest"
+            case .pull: return "card"
+            }
+        }()
+        if let count = content.cardCount, count > 0, content.contentType != .dailyDigest {
+            return "Tap to view \(noun) · \(count) \(count == 1 ? "card" : "cards")"
+        }
+        return "Tap to view \(noun)"
     }
 
     private var postCard: some View {
@@ -458,6 +492,136 @@ struct CommentsView: View {
         } catch {
             errorMessage = error.localizedDescription
             Haptics.error()
+        }
+    }
+}
+
+private struct CommentsContentPreviewThumb: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
+
+    let contentType: SharedContentType
+    let thumbnailIDs: [String]
+    let cardCount: Int?
+
+    @State private var cardImageURLs: [URL?] = []
+
+    var body: some View {
+        ZStack(alignment: .bottomTrailing) {
+            if thumbnailIDs.isEmpty {
+                fallbackIcon
+            } else {
+                cardStack
+            }
+
+            if let cardCount, cardCount > 1 {
+                Text("\(cardCount)")
+                    .font(.system(size: 9, weight: .heavy))
+                    .monospacedDigit()
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(.thinMaterial, in: Capsule())
+                    .overlay {
+                        Capsule()
+                            .stroke(Color.white.opacity(0.35), lineWidth: 0.5)
+                    }
+                    .shadow(color: .black.opacity(0.24), radius: 2, x: 0, y: 1)
+                    .offset(x: 3, y: 2)
+            }
+        }
+        .task(id: thumbnailIDs.joined(separator: ",")) {
+            await resolveCardImageURLs()
+        }
+    }
+
+    private var cardStack: some View {
+        ZStack(alignment: .leading) {
+            ForEach(Array(thumbnailIDs.prefix(4).enumerated()), id: \.offset) { index, _ in
+                let url = index < cardImageURLs.count ? cardImageURLs[index] : nil
+                cardThumb(url: url, index: index)
+            }
+        }
+        .frame(width: 52, height: 62, alignment: .leading)
+    }
+
+    private func cardThumb(url: URL?, index: Int) -> some View {
+        Group {
+            if let url {
+                CachedAsyncImage(url: url, targetSize: CGSize(width: 56, height: 78)) { image in
+                    image.resizable().aspectRatio(contentMode: .fill)
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 5, style: .continuous)
+                        .fill(accentColor.opacity(0.16))
+                }
+            } else {
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                    .fill(accentColor.opacity(0.16))
+            }
+        }
+        .frame(width: 38, height: 54)
+        .clipShape(RoundedRectangle(cornerRadius: 5, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 5, style: .continuous)
+                .stroke(Color.white.opacity(colorScheme == .dark ? 0.14 : 0.45), lineWidth: 0.5)
+        }
+        .rotationEffect(.degrees(Double(index) * 2.5 - 3))
+        .shadow(color: .black.opacity(colorScheme == .dark ? 0.22 : 0.12), radius: 4, x: 0, y: 2)
+        .offset(x: CGFloat(index) * 5)
+        .zIndex(Double(index))
+    }
+
+    private var fallbackIcon: some View {
+        RoundedRectangle(cornerRadius: 12, style: .continuous)
+            .fill(accentColor.opacity(colorScheme == .dark ? 0.20 : 0.14))
+            .overlay {
+                Image(systemName: iconName)
+                    .font(.system(size: 22, weight: .semibold))
+                    .foregroundStyle(accentColor)
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(accentColor.opacity(0.18), lineWidth: 1)
+            }
+    }
+
+    private func resolveCardImageURLs() async {
+        guard !thumbnailIDs.isEmpty else {
+            cardImageURLs = []
+            return
+        }
+        var resolved: [URL?] = []
+        for cardID in thumbnailIDs.prefix(4) {
+            if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                resolved.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+            } else {
+                resolved.append(nil)
+            }
+        }
+        cardImageURLs = resolved
+    }
+
+    private var iconName: String {
+        switch contentType {
+        case .binder: return "books.vertical.fill"
+        case .deck: return "rectangle.stack.fill"
+        case .folder: return "folder.fill"
+        case .wishlist: return "heart.fill"
+        case .collection: return "square.grid.2x2.fill"
+        case .dailyDigest: return "chart.line.uptrend.xyaxis"
+        case .pull: return "sparkles"
+        }
+    }
+
+    private var accentColor: Color {
+        switch contentType {
+        case .binder: return Color(hex: "E8B84B")
+        case .deck: return Color(hex: "5B9CF6")
+        case .folder: return Color(hex: "22B8CF")
+        case .wishlist: return Color(hex: "A78BFA")
+        case .collection: return Color(hex: "52C97C")
+        case .dailyDigest: return Color(hex: "5B9CF6")
+        case .pull: return Color(hex: "52C97C")
         }
     }
 }

@@ -14,123 +14,56 @@ struct SplashView: View {
 
     var body: some View {
         ZStack {
-            VStack(spacing: 0) {
+            VStack(spacing: 24) {
                 Spacer()
 
-                // ── "welcome to" label ──────────────────────────────
-                Text("welcome to")
-                    .font(.system(size: 12, weight: .regular))
-                    .italic()
-                    .foregroundColor(isDark
-                        ? .white.opacity(0.50)
-                        : .black.opacity(0.45))
-                    .tracking(3)
-                    .textCase(.uppercase)
-                    .padding(.bottom, 8)
-                    .offset(y: animStates[0] ? 0 : 10)
-                    .opacity(animStates[0] ? 1 : 0)
-
-                // ── "BINDR" wordmark ────────────────────────────────
-                Text("BINDR")
-                    .font(.custom("BebasNeue-Regular", size: 64))
-                    .foregroundColor(isDark
-                        ? .white.opacity(0.95)
-                        : .black.opacity(0.88))
-                    .tracking(8)
-                    .padding(.bottom, 18)
-                    .offset(y: animStates[1] ? 0 : 15)
-                    .opacity(animStates[1] ? 1 : 0)
-
-                // ── Divider ─────────────────────────────────────────
-                Rectangle()
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                .clear,
-                                (isDark ? Color.white : Color.black).opacity(0.22),
-                                .clear
-                            ],
-                            startPoint: .leading,
-                            endPoint: .trailing
+                VStack(spacing: 22) {
+                    brandMark
+                    Divider()
+                        .overlay(
+                            LinearGradient(
+                                colors: [
+                                    .clear,
+                                    (isDark ? Color.white : Color.black).opacity(0.20),
+                                    .clear
+                                ],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
                         )
-                    )
-                    .frame(width: 32, height: 1)
-                    .padding(.bottom, 20)
-                    .scaleEffect(x: animStates[1] ? 1 : 0, y: 1)
-                    .opacity(animStates[1] ? 1 : 0)
-
-                // ── Strapline ────────────────────────────────────────
-                VStack(spacing: 0) {
-                    Text("Scan Pokémon & One Piece cards.")
-                    Text("Track prices, build your collection,")
-                    Text("and join our community.")
+                        .frame(maxWidth: 92)
+                        .scaleEffect(x: animStates[1] ? 1 : 0, y: 1)
+                        .opacity(animStates[1] ? 1 : 0)
+                    strapline
                 }
-                .font(.system(size: 15, weight: .regular))
-                .foregroundColor(isDark
-                    ? .white.opacity(0.65)
-                    : .black.opacity(0.60))
-                .multilineTextAlignment(.center)
-                .lineSpacing(6)
-                .padding(.horizontal, 36)
-                .offset(y: animStates[2] ? 0 : 10)
-                .opacity(animStates[2] ? 1 : 0)
+                .padding(.horizontal, 26)
+                .padding(.vertical, 34)
+                .frame(maxWidth: 360)
+                .glassCardStyle(cornerRadius: 32, interactive: false)
+                .padding(.horizontal, 24)
 
                 Spacer()
 
-                // ── GET STARTED button ───────────────────────────────
                 Button(action: {
                     Haptics.lightImpact()
                     onGetStarted()
                 }) {
-                    Text("GET STARTED  →")
-                        .font(.system(size: 14, weight: .bold))
-                        .tracking(1.5)
-                        .foregroundColor(isDark ? .white : .primary)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 54)
-                        .background(.ultraThinMaterial)
-                        .clipShape(RoundedRectangle(cornerRadius: 27, style: .continuous))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 27, style: .continuous)
-                                .strokeBorder(
-                                    LinearGradient(
-                                        colors: [
-                                            .white.opacity(isDark ? 0.35 : 0.45),
-                                            .white.opacity(isDark ? 0.08 : 0.15)
-                                        ],
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    ),
-                                    lineWidth: 1.0
-                                )
-                        }
-                        .overlay {
-                            // Subtle white specular shimmer animation looping across the glass button
-                            GeometryReader { geo in
-                                let size = geo.size
-                                Rectangle()
-                                    .fill(
-                                        LinearGradient(
-                                            colors: [.clear, .white.opacity(isDark ? 0.20 : 0.15), .clear],
-                                            startPoint: .leading,
-                                            endPoint: .trailing
-                                        )
-                                    )
-                                    .rotationEffect(.degrees(25))
-                                    .offset(x: shimmerPos * size.width * 1.5)
-                                    .onAppear {
-                                        withAnimation(.linear(duration: 3.5).repeatForever(autoreverses: false)) {
-                                            shimmerPos = 1
-                                        }
-                                    }
-                                    .allowsHitTesting(false)
-                            }
-                            .mask(RoundedRectangle(cornerRadius: 27, style: .continuous))
-                        }
-                        // Premium glowing glass drop shadow
-                        .shadow(color: Color.black.opacity(isDark ? 0.15 : 0.05), radius: 6, x: 0, y: 3)
+                    HStack(spacing: 10) {
+                        Text("Get Started")
+                            .font(.system(size: 15, weight: .bold, design: .rounded))
+                            .tracking(0.7)
+                        Image(systemName: "arrow.right")
+                            .font(.system(size: 15, weight: .bold))
+                    }
+                    .foregroundStyle(.primary)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 58)
+                    .contentShape(RoundedRectangle(cornerRadius: 29, style: .continuous))
                 }
                 .buttonStyle(.plain)
+                .glassCardStyle(cornerRadius: 29, interactive: true)
+                .overlay(shimmerOverlay(cornerRadius: 29))
+                .shadow(color: accent.opacity(isDark ? 0.18 : 0.12), radius: 18, x: 0, y: 8)
                 .padding(.horizontal, 24)
                 .padding(.bottom, 52)
                 .scaleEffect(animStates[3] ? 1 : 0.95)
@@ -146,6 +79,72 @@ struct SplashView: View {
             withAnimation(.spring(response: 0.8, dampingFraction: 0.7).delay(1.0)) { animStates[3] = true }
         }
         .preferredColorScheme(nil)
+    }
+
+    private var brandMark: some View {
+        VStack(spacing: 8) {
+            Text("welcome to")
+                .font(.system(size: 12, weight: .medium))
+                .italic()
+                .foregroundStyle(.secondary)
+                .tracking(3)
+                .textCase(.uppercase)
+                .offset(y: animStates[0] ? 0 : 10)
+                .opacity(animStates[0] ? 1 : 0)
+
+            Text("BINDR")
+                .font(.custom("BebasNeue-Regular", size: 70))
+                .foregroundStyle(
+                    LinearGradient(
+                        colors: [
+                            (isDark ? Color.white : Color.black).opacity(0.96),
+                            (isDark ? Color.white : Color.black).opacity(0.70)
+                        ],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                .tracking(8)
+                .offset(y: animStates[1] ? 0 : 15)
+                .opacity(animStates[1] ? 1 : 0)
+        }
+    }
+
+    private var strapline: some View {
+        VStack(spacing: 6) {
+            Text("Scan Pokémon and One Piece cards.")
+            Text("Track prices, build your collection,")
+            Text("and join the community.")
+        }
+        .font(.system(size: 15, weight: .regular))
+        .foregroundStyle(.secondary)
+        .multilineTextAlignment(.center)
+        .lineSpacing(4)
+        .offset(y: animStates[2] ? 0 : 10)
+        .opacity(animStates[2] ? 1 : 0)
+    }
+
+    private func shimmerOverlay(cornerRadius: CGFloat) -> some View {
+        GeometryReader { geo in
+            let size = geo.size
+            Rectangle()
+                .fill(
+                    LinearGradient(
+                        colors: [.clear, .white.opacity(isDark ? 0.20 : 0.16), .clear],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .rotationEffect(.degrees(25))
+                .offset(x: shimmerPos * size.width * 1.5)
+                .onAppear {
+                    withAnimation(.linear(duration: 3.8).repeatForever(autoreverses: false)) {
+                        shimmerPos = 1
+                    }
+                }
+                .allowsHitTesting(false)
+        }
+        .mask(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
     }
 }
 

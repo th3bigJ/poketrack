@@ -641,6 +641,11 @@ struct TradeDetailView: View {
         let currencyCode = services.priceDisplay.currency == .gbp ? "GBP" : "USD"
         let reference = "trade-complete-\(twi.id.uuidString)"
 
+        let netCashPaid = myCash - theirCash
+        let totalReceivedQty = theirItems.reduce(0) { $0 + max($1.quantity, 1) }
+        let isCashPurchase = netCashPaid > 0 && totalReceivedQty > 0
+        let cardUnitPrice = isCashPurchase ? netCashPaid / Double(totalReceivedQty) : nil
+
         for item in myItems {
             let quantity = max(item.quantity, 1)
             guard let stack = findCardStack(cardID: item.cardID, variantKey: item.variantKey),
@@ -655,7 +660,7 @@ struct TradeDetailView: View {
                     cardDisplayName: cardName,
                     unitPrice: nil,
                     counterparty: counterparty,
-                    notes: "Trade complete"
+                    notes: "Traded to \(counterparty)"
                 )
             } catch {
                 continue
@@ -664,21 +669,24 @@ struct TradeDetailView: View {
 
         for item in theirItems {
             let cardName = await resolvedCardName(for: item.cardID)
+            let qty = max(item.quantity, 1)
             do {
                 try ledger.recordSingleCardAcquisition(
                     cardID: item.cardID,
                     variantKey: item.variantKey,
-                    kind: .trade,
-                    quantity: max(item.quantity, 1),
+                    kind: isCashPurchase ? .bought : .trade,
+                    quantity: qty,
                     currencyCode: currencyCode,
                     cardDisplayName: cardName,
-                    unitPrice: nil,
+                    unitPrice: cardUnitPrice,
                     packedOpenedFrom: nil,
-                    tradeCounterparty: counterparty,
+                    tradeCounterparty: isCashPurchase ? nil : counterparty,
                     tradeGaveAway: nil,
                     giftFrom: nil,
-                    boughtFrom: nil
+                    boughtFrom: isCashPurchase ? counterparty : nil
                 )
+                let note = isCashPurchase ? "Bought from \(counterparty)" : "Traded from \(counterparty)"
+                appendCardNote(cardID: item.cardID, variantKey: item.variantKey, note: note)
             } catch {
                 continue
             }
@@ -715,6 +723,18 @@ struct TradeDetailView: View {
 
         try? modelContext.save()
         UserDefaults.standard.set(true, forKey: settlementKey)
+    }
+
+    private func appendCardNote(cardID: String, variantKey: String, note: String) {
+        let kind = ProductKind.singleCard.rawValue
+        let all = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
+        for stack in all where stack.cardID == cardID && stack.variantKey == variantKey && stack.itemKind == kind {
+            if stack.notes.isEmpty {
+                stack.notes = note
+            } else if !stack.notes.localizedCaseInsensitiveContains(note) {
+                stack.notes = "\(stack.notes); \(note)"
+            }
+        }
     }
 
     private func findCardStack(cardID: String, variantKey: String) -> CollectionItem? {

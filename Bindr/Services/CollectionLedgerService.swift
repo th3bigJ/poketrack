@@ -223,6 +223,77 @@ final class CollectionLedgerService {
         try modelContext.save()
     }
 
+    /// Moves a selected quantity into another card-condition stack without
+    /// mutating the whole source stack.
+    @discardableResult
+    func reclassifyCardUnits(
+        item: CollectionItem,
+        quantity: Int,
+        targetProductKind: String,
+        targetGradingCompany: String?,
+        targetGrade: String?,
+        preferredLotIDs: Set<UUID> = []
+    ) throws -> CollectionItem {
+        guard item.itemKind == ProductKind.singleCard.rawValue || item.itemKind == ProductKind.gradedItem.rawValue else {
+            throw CollectionLedgerError.notSingleCardStack
+        }
+        guard quantity > 0 else { throw CollectionLedgerError.invalidQuantity }
+        guard quantity <= item.quantity else { throw CollectionLedgerError.insufficientQuantity }
+
+        let normalizedCompany = cleanOptionalString(targetGradingCompany)
+        let normalizedGrade = cleanOptionalString(targetGrade)
+        if item.itemKind == targetProductKind,
+           item.gradingCompany == normalizedCompany,
+           item.grade == normalizedGrade {
+            return item
+        }
+
+        let target = try findOrCreateCardStack(
+            cardID: item.cardID,
+            variantKey: item.variantKey,
+            productKind: targetProductKind,
+            gradingCompany: normalizedCompany,
+            grade: normalizedGrade
+        )
+        target.quantity += quantity
+        target.dateAcquired = Date()
+        if target.purchasePrice == nil {
+            target.purchasePrice = item.purchasePrice
+        }
+
+        var remaining = quantity
+        let sortedLots = (item.costLots ?? []).sorted { $0.createdAt < $1.createdAt }
+        let preferredLots = sortedLots.filter { preferredLotIDs.contains($0.id) }
+        let fallbackLots = sortedLots.filter { !preferredLotIDs.contains($0.id) }
+        for lot in (preferredLots + fallbackLots) where remaining > 0 {
+            guard lot.quantityRemaining > 0 else { continue }
+            let take = min(remaining, lot.quantityRemaining)
+            if take == lot.quantityRemaining {
+                lot.collectionItem = target
+            } else {
+                lot.quantityRemaining -= take
+                let splitLot = CostLot(
+                    quantityRemaining: take,
+                    unitCost: lot.unitCost,
+                    currencyCode: lot.currencyCode,
+                    createdAt: lot.createdAt,
+                    collectionItem: target,
+                    sourceLedgerLine: lot.sourceLedgerLine
+                )
+                modelContext.insert(splitLot)
+            }
+            remaining -= take
+        }
+
+        item.quantity -= quantity
+        if item.quantity <= 0 {
+            removeDepletedCollectionItem(item)
+        }
+
+        try modelContext.save()
+        return target
+    }
+
     /// Deletes a ledger line and reconciles current collection quantities for card stacks.
     /// Inbound lines (`bought`, `packed`, `tradedIn`, `giftedIn`, `adjustmentIn`) are subtracted.
     /// Outbound lines (`sold`, `tradedOut`, `giftedOut`, `adjustmentOut`) are added back.

@@ -34,6 +34,7 @@ final class AppServices {
     let socialFeed: SocialFeedService
     let socialPush: SocialPushService
     let trade: TradeService
+    let tradeSession: TradeSessionService
     let theme: ThemeSettings
     let offlineImageSettings: OfflineImageSettings
     let offlineImageDownload: OfflineImageDownloadService
@@ -68,11 +69,16 @@ final class AppServices {
     private(set) var isLaunchCatalogPipelineComplete = false
     /// Set in `init` when the user already completed the one-time blocking bootstrap; consumed by the first `.task` on the main UI to refresh catalogs in the background.
     private(set) var shouldRunBackgroundCatalogRefreshOnLaunch = false
+    private var hasResolvedLaunchCatalogRefreshRequirement = true
     /// Mirrors card-detail root overlay behavior for sealed detail sheets so underlying UI is fully obscured.
     var isSealedDetailPresentationActive = false
     /// Temporary handoff when trade starts from non-social surfaces (e.g. Collect tab),
     /// then the user chooses a friend profile to complete the trade composer.
     var pendingTradeSeed: PendingTradeSeed?
+    /// Set by the Trade Wall + button so `FriendsListView` enters "select a friend"
+    /// mode for a blank new trade (no pre-seeded card). Cleared by `openSeededTradeBuilder`
+    /// when the friend is picked, or by the Cancel button if the user backs out.
+    var isCreatingNewTrade: Bool = false
     /// Set when a catalog pipeline run just finished; ``BrowseView`` consumes once to skip duplicate ``CardDataService/reloadAfterBrandChange()`` (same `loadSets` + search index work).
     private var pendingLightBrowseTabEntry = false
     /// When true, ``RootView`` shows the full ``LoadingScreen`` with byte counts; otherwise a simple indeterminate busy state until sync actually transfers data.
@@ -118,6 +124,7 @@ final class AppServices {
         self.cardData = CardDataService(brandSettings: brandSettings)
         self.socialCardLibrary = SocialCardLibraryService(authService: socialAuth)
         self.trade = TradeService(authService: socialAuth)
+        self.tradeSession = TradeSessionService(authService: socialAuth)
         self.socialShare = SocialShareService(
             authService: socialAuth,
             storeService: store,
@@ -130,14 +137,20 @@ final class AppServices {
         self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
         self.essentialAssetsDownload = EssentialAssetsDownloadService()
         if brandSettings.hasCompletedInitialAppBootstrap {
-            let requiresBlockingDailyRefresh = CatalogSyncCoordinator.shared.requiresDailyBlockingRefresh(
-                enabledBrands: brandSettings.enabledBrands
-            )
             isReady = true
-            shouldRunBackgroundCatalogRefreshOnLaunch = requiresBlockingDailyRefresh
-            isLaunchCatalogPipelineComplete = !requiresBlockingDailyRefresh
-            if isLaunchCatalogPipelineComplete {
-                launchCatalogPipelineCompletedAt = Date()
+            isLaunchCatalogPipelineComplete = false
+            hasResolvedLaunchCatalogRefreshRequirement = false
+            Task { [weak self] in
+                guard let self else { return }
+                let requiresBlockingDailyRefresh = await CatalogSyncCoordinator.shared.requiresDailyBlockingRefreshAsync(
+                    enabledBrands: brandSettings.enabledBrands
+                )
+                self.shouldRunBackgroundCatalogRefreshOnLaunch = requiresBlockingDailyRefresh
+                self.isLaunchCatalogPipelineComplete = !requiresBlockingDailyRefresh
+                self.hasResolvedLaunchCatalogRefreshRequirement = true
+                if self.isLaunchCatalogPipelineComplete {
+                    self.launchCatalogPipelineCompletedAt = Date()
+                }
             }
         }
         Task { await refreshCatalogCardsLastUpdatedAtFromStore() }
@@ -202,6 +215,9 @@ final class AppServices {
 
     /// Returning-user launch path: quickly prime local catalog data, then refresh network-backed data in the background.
     func bootstrapCatalogInBackgroundIfNeeded() async {
+        while !hasResolvedLaunchCatalogRefreshRequirement {
+            try? await Task.sleep(nanoseconds: 50_000_000)
+        }
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
             isLaunchCatalogPipelineComplete = true
             launchCatalogPipelineCompletedAt = Date()
@@ -253,7 +269,7 @@ final class AppServices {
         guard shouldRunDeferredLaunchServices else { return }
         shouldRunDeferredLaunchServices = false
         Task(priority: .background) { [weak self] in
-            await self?.runDeferredLaunchServices()
+            self?.runDeferredLaunchServices()
         }
     }
 
@@ -659,11 +675,11 @@ final class AppServices {
         }
 
         let isFreshInstall = !BindrApp.storeExistedAtLaunch
-        // Fresh installs do a full restore and may have many notification bursts — keep a
-        // generous window so we don't open mid-merge. Existing installs only catch up on
-        // deltas since last launch, so a short window is safe and gets the user in faster.
-        let quietWindow: TimeInterval = isFreshInstall ? 8.0 : 3.0
-        let timeout: TimeInterval     = isFreshInstall ? 30.0 : 12.0
+        // SwiftData CloudKit merges can arrive several seconds after the last remote
+        // change notification. Keep the overlay up through that quiet period; a
+        // longer honest launch is better than revealing a frozen dashboard.
+        let quietWindow: TimeInterval = isFreshInstall ? 10.0 : 8.0
+        let timeout: TimeInterval     = isFreshInstall ? 45.0 : 25.0
 
         print("[CloudKit] \(isFreshInstall ? "fresh install" : "existing install") — idle monitor armed (quietWindow=\(quietWindow)s, timeout=\(timeout)s)")
 
@@ -706,12 +722,13 @@ final class AppServices {
 
     func setupCollectionValue(modelContext: ModelContext) {
         guard collectionValue == nil else { return }
-        collectionValue = CollectionValueService(
+        let service = CollectionValueService(
             modelContext: modelContext,
             pricing: pricing,
             cardData: cardData,
             sealedProducts: sealedProducts
         )
+        collectionValue = service
     }
 
     private func refreshCatalogCardsLastUpdatedAtFromStore() async {
@@ -731,24 +748,20 @@ final class AppServices {
         if let wishlist {
             socialCardLibrary.scheduleAutoSyncWishlist(items: wishlist.items)
         }
-        if let tradeListItems = try? modelContext.fetch(FetchDescriptor<TradeListItem>()) {
-            socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
-        }
-        if let collectionItems = try? modelContext.fetch(FetchDescriptor<CollectionItem>()) {
-            // Sync summary stats to profile
-            let cardCount = collectionItems.reduce(0) { $0 + $1.quantity }
-            let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
-            let deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
-            let totalValue = collectionValue?.snapshots.last?.totalGbp ?? 0
+        // Keep launch social sync cheap: do not materialize full SwiftData tables on
+        // @MainActor while the launch overlay is coming down.
+        let cardCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
+        let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
+        let deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
+        let totalValue = collectionValue?.snapshots.last?.totalGbp ?? 0
 
-            Task {
-                try? await socialProfile.updateCollectionStats(
-                    cardCount: cardCount,
-                    binderCount: binderCount,
-                    deckCount: deckCount,
-                    totalValue: totalValue
-                )
-            }
+        Task {
+            try? await socialProfile.updateCollectionStats(
+                cardCount: cardCount,
+                binderCount: binderCount,
+                deckCount: deckCount,
+                totalValue: totalValue
+            )
         }
         print("[Launch] syncSocialLibrariesIfPossible done: \(ContinuousClock().now - t)")
     }

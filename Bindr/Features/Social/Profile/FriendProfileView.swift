@@ -55,7 +55,6 @@ struct FriendProfileView: View {
                         ScrollView {
                             VStack(spacing: 18) {
                                 profileHeader(profile)
-                                favoritesSection(profile)
                                 tabPicker
                                 tabContent(profile)
                             }
@@ -285,21 +284,6 @@ struct FriendProfileView: View {
         return Color(hex: "E8B84B")
     }
 
-    @ViewBuilder
-    private func favoritesSection(_ profile: SocialProfile) -> some View {
-        // Favourite Pokémon is already the profile avatar and favourite card
-        // is already the tilted hero peek — re-listing them as labelled rows
-        // is pure duplication. Only the favourite deck has no other place to
-        // live, so this section now only renders when there's a deck to show.
-        if let deck = profile.favoriteDeckArchetype, !deck.isEmpty {
-            VStack(alignment: .leading, spacing: 10) {
-                sectionLabel("FAVORITE DECK")
-                infoRow(icon: "square.stack.3d.up.fill", label: "Deck", value: deck)
-            }
-            .padding(.horizontal, 16)
-        }
-    }
-
     /// `true` when `relationshipStatusPill` will actually render a pill
     /// (used by the role row to know whether to add itself to the layout).
     private var hasRelationshipStatusPill: Bool {
@@ -487,13 +471,6 @@ struct FriendProfileView: View {
 
     // MARK: - Helpers
 
-    private func sectionLabel(_ text: String) -> some View {
-        Text(text)
-            .font(.system(size: 11, weight: .bold))
-            .tracking(0.88)
-            .foregroundStyle(Color.secondary.opacity(0.7))
-    }
-
     private func rolePill(_ title: String, accent: Color? = nil) -> some View {
         let tint = accent ?? accentColor
         return Text(title.uppercased())
@@ -521,32 +498,6 @@ struct FriendProfileView: View {
                 .foregroundStyle(Color.secondary.opacity(0.7))
         }
         .frame(maxWidth: .infinity)
-    }
-
-    private func infoRow(icon: String, label: String, value: String) -> some View {
-        HStack(spacing: 10) {
-            Circle()
-                .fill(accentColor.opacity(0.15))
-                .frame(width: 34, height: 34)
-                .overlay {
-                    Image(systemName: icon)
-                        .font(.system(size: 13, weight: .bold))
-                        .foregroundStyle(accentColor)
-                }
-            VStack(alignment: .leading, spacing: 2) {
-                Text(label)
-                    .font(.system(size: 10, weight: .bold))
-                    .tracking(0.4)
-                    .foregroundStyle(Color.secondary.opacity(0.7))
-                Text(value)
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-            }
-            Spacer()
-        }
-        .padding(12)
-        .glassCardStyle(cornerRadius: 14, interactive: false)
     }
 
     private func offerTradeButton(for profile: SocialProfile) -> some View {

@@ -17,6 +17,7 @@ struct DashboardView: View {
     var onOpenSealedProducts: (() -> Void)? = nil
     var onOpenWishlist: (() -> Void)? = nil
     var onOpenBrowse: (() -> Void)? = nil
+    var onInitialLoadStatusChange: ((String) -> Void)? = nil
     var onInitialLoadComplete: (() -> Void)? = nil
 
     @Environment(AppServices.self) private var services
@@ -42,12 +43,15 @@ struct DashboardView: View {
         d.fetchLimit = 100
         return d
     }()
-    @Query private var collectionItems: [CollectionItem]
-    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
-    @Query private var binders: [Binder]
-    
     @AppStorage("dismissedMilestones") private var dismissedMilestonesData: Data = Data()
 
+    @State private var collectionItems: [CollectionItem] = []
+    @State private var wishlistItems: [WishlistItem] = []
+    @State private var binderCount = 0
+    @State private var dashboardDataRevision = 0
+    @State private var isLoadingDashboardInventory = false
+    @State private var isPreparingInitialDashboardData = false
+    @State private var hasPreparedInitialDashboardData = false
     @State private var liveTotalGbp: Double? = nil
     @State private var livePokemonGbp: Double = 0
     @State private var liveOnePieceGbp: Double = 0
@@ -353,39 +357,29 @@ struct DashboardView: View {
         .safeAreaPadding(.top, rootFloatingChromeInset)
         .background(dashboardBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
-        .task(id: services.collectionValue != nil) {
-            // Fire the launch gate as soon as we have any value to show —
-            // either from the persisted snapshot (instant) or a fresh compute.
-            // The actual live recalculation happens in the background task below.
-            guard let svc = services.collectionValue else { return }
-            if let persisted = svc.todayPersistedSnapshot() {
-                liveTotalGbp = persisted.total
-                livePokemonGbp = persisted.pokemon
-                liveOnePieceGbp = persisted.onePiece
-                liveCardsGbp = persisted.cards
-                liveSealedGbp = persisted.sealed
-                fireInitialLoadCompleteIfReady()
-            } else if collectionItems.count > 0 {
-                // No persisted snapshot — compute once synchronously so the gate fires.
-                print("[Dashboard⏱] no persisted snapshot — computing for launch gate")
-                await computeLiveValue()
-                fireInitialLoadCompleteIfReady()
-            } else {
-                // Empty collection: nothing to show, open immediately.
-                fireInitialLoadCompleteIfReady()
-            }
+        .task(id: "\(services.collectionValue != nil):\(services.isLaunchCatalogPipelineComplete)") {
+            guard services.collectionValue != nil else { return }
+            guard services.isLaunchCatalogPipelineComplete else { return }
+            await prepareInitialDashboardData()
         }
         .task(id: "\(collectionItems.count):\(services.isLaunchCatalogPipelineComplete)") {
             guard collectionItems.count > 0, services.isLaunchCatalogPipelineComplete else { return }
-            // Background recalculation — runs after the catalog pipeline is fully ready.
-            print("[Dashboard⏱] collectionItems.count task fired (items=\(collectionItems.count))")
-            print("[Dashboard⏱] computeLiveValue start (items=\(collectionItems.count))")
-            let t = ContinuousClock().now
+            guard hasFiredInitialLoadComplete, !hasPreparedInitialDashboardData else { return }
+            // Avoid hitting the main actor in the first visible seconds after launch.
+            try? await Task.sleep(nanoseconds: 20_000_000_000)
+            guard !Task.isCancelled, !hasPreparedInitialDashboardData else { return }
             await computeLiveValue()
-            print("[Dashboard⏱] computeLiveValue: \(ContinuousClock().now - t) items=\(collectionItems.count)")
+            hasPreparedInitialDashboardData = true
         }
         .task(id: backfillTrigger) {
-            guard collectionItems.count > 0, services.isLaunchCatalogPipelineComplete, let svc = services.collectionValue else { return }
+            guard collectionItems.count > 0,
+                  services.isLaunchCatalogPipelineComplete,
+                  hasFiredInitialLoadComplete,
+                  let svc = services.collectionValue else { return }
+            // Snapshot backfill is not needed for first paint. Keep it well away
+            // from the launch handoff so taps stay responsive after the overlay fades.
+            try? await Task.sleep(nanoseconds: 30_000_000_000)
+            guard !Task.isCancelled else { return }
             print("[Dashboard⏱] runBackfillIfNeeded start")
             let t = ContinuousClock().now
             await svc.runBackfillIfNeeded(
@@ -395,6 +389,7 @@ struct DashboardView: View {
             print("[Dashboard⏱] runBackfillIfNeeded: \(ContinuousClock().now - t)")
         }
         .task(id: dashboardDataSignature) {
+            guard hasFiredInitialLoadComplete else { return }
             guard visibleCollectionItems.count > 0 || allLedgerLines.count > 0 else { return }
             let t = ContinuousClock().now
             await resolveDashboardMetadata()
@@ -405,6 +400,10 @@ struct DashboardView: View {
         }
         .task(id: services.dashboardMarketReloadToken) {
             guard services.dashboardMarketReloadToken > 0 else { return }
+            guard hasFiredInitialLoadComplete else { return }
+            try? await Task.sleep(nanoseconds: 12_000_000_000)
+            guard !Task.isCancelled else { return }
+            await reloadDashboardInventory(deferForLaunch: false)
             await computeLiveValue()
             chartRefreshID += 1
             await loadMarketTrendBlob()
@@ -412,6 +411,10 @@ struct DashboardView: View {
         .onChange(of: services.isCatalogDownloadInProgress) { _, inProgress in
             guard !inProgress else { return }
             Task {
+                guard hasFiredInitialLoadComplete else { return }
+                try? await Task.sleep(nanoseconds: 12_000_000_000)
+                guard !Task.isCancelled else { return }
+                await reloadDashboardInventory(deferForLaunch: false)
                 await computeLiveValue()
                 if let snap = liveSnapshot {
                     await services.collectionValue?.forceRecalculate(
@@ -425,7 +428,7 @@ struct DashboardView: View {
         .onAppear {
             selectedBrand = activeBrand
         }
-        .task(id: "\(collectionItems.count):\(wishlistItems.count):\(activeBrand.rawValue)") {
+        .task(id: "\(dashboardDataRevision):\(activeBrand.rawValue)") {
             recomputeCollectionStats()
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
@@ -523,7 +526,7 @@ struct DashboardView: View {
         }
         
         // 3. First Binder
-        if !binders.isEmpty && !dismissed.contains("first_bindr") {
+        if binderCount > 0 && !dismissed.contains("first_bindr") {
             return Milestone(id: "first_bindr", title: "Organized!", description: "You've created your first Binder.")
         }
         
@@ -905,10 +908,10 @@ struct DashboardView: View {
 
     private var dashboardDataSignature: Int {
         // Keep this O(1) / O(recent-lines) — never iterate all collection items here.
-        // collectionItems.count captures adds/removes; recentLines covers activity changes.
+        // dashboardDataRevision captures inventory reloads; recentLines covers activity changes.
         var h = Hasher()
         h.combine(activeBrand.rawValue)
-        h.combine(collectionItems.count)
+        h.combine(dashboardDataRevision)
         for line in recentLines { h.combine(line.id) }
         return h.finalize()
     }
@@ -1046,6 +1049,74 @@ struct DashboardView: View {
         content()
             .padding(16)
             .glassCardStyle(cornerRadius: 16, interactive: false)
+    }
+
+    private func prepareInitialDashboardData() async {
+        guard !hasPreparedInitialDashboardData, !isPreparingInitialDashboardData else { return }
+        guard let svc = services.collectionValue else { return }
+        isPreparingInitialDashboardData = true
+        defer { isPreparingInitialDashboardData = false }
+
+        let launchStart = ContinuousClock().now
+        onInitialLoadStatusChange?("Loading your collection...")
+        await reloadDashboardInventory(deferForLaunch: false)
+        recomputeCollectionStats()
+
+        onInitialLoadStatusChange?("Checking saved pricing...")
+        if let persisted = svc.todayPersistedSnapshot() {
+            liveTotalGbp = persisted.total
+            livePokemonGbp = persisted.pokemon
+            liveOnePieceGbp = persisted.onePiece
+            liveCardsGbp = persisted.cards
+            liveSealedGbp = persisted.sealed
+        } else if collectionItems.count > 0 {
+            print("[Dashboard⏱] no persisted snapshot — computing behind launch overlay")
+            onInitialLoadStatusChange?("Calculating your collection value...")
+            await computeLiveValue()
+        }
+
+        onInitialLoadStatusChange?("Loading pricing history...")
+        svc.loadAllFromStore()
+
+        if visibleCollectionItems.count > 0 || allLedgerLines.count > 0 {
+            onInitialLoadStatusChange?("Preparing card details...")
+            await resolveDashboardMetadata()
+            onInitialLoadStatusChange?("Loading market trends...")
+            await loadMarketTrendBlob()
+        }
+
+        // Give SwiftUI one turn to lay out the populated dashboard while the
+        // launch overlay is still intercepting touches.
+        onInitialLoadStatusChange?("Almost ready...")
+        await Task.yield()
+        try? await Task.sleep(nanoseconds: 250_000_000)
+
+        hasPreparedInitialDashboardData = true
+        print("[Dashboard⏱] prepareInitialDashboardData: \(ContinuousClock().now - launchStart)")
+        fireInitialLoadCompleteIfReady()
+    }
+
+    private func reloadDashboardInventory(deferForLaunch: Bool) async {
+        guard services.isLaunchCatalogPipelineComplete else { return }
+        guard !isLoadingDashboardInventory else { return }
+        isLoadingDashboardInventory = true
+        defer { isLoadingDashboardInventory = false }
+
+        if deferForLaunch {
+            try? await Task.sleep(nanoseconds: 1_000_000_000)
+            guard !Task.isCancelled else { return }
+        }
+
+        let t = ContinuousClock().now
+        var wishlistDescriptor = FetchDescriptor<WishlistItem>(
+            sortBy: [SortDescriptor(\.dateAdded, order: .reverse)]
+        )
+        wishlistDescriptor.fetchLimit = 500
+        collectionItems = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
+        wishlistItems = (try? modelContext.fetch(wishlistDescriptor)) ?? []
+        binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
+        dashboardDataRevision += 1
+        print("[Dashboard⏱] reloadDashboardInventory: \(ContinuousClock().now - t) collection=\(collectionItems.count) wishlist=\(wishlistItems.count) binders=\(binderCount)")
     }
 
     private func computeLiveValue() async {

@@ -147,7 +147,7 @@ private struct FriendQRScannerSheet: View {
     }
 }
 
-private struct FriendQRScannerView: UIViewControllerRepresentable {
+struct FriendQRScannerView: UIViewControllerRepresentable {
     let onScan: (String) -> Void
     let onError: (String) -> Void
 
@@ -158,7 +158,7 @@ private struct FriendQRScannerView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: FriendQRScannerController, context: Context) {}
 }
 
-private final class FriendQRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+final class FriendQRScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     private let onScan: (String) -> Void
     private let onError: (String) -> Void
     private let session = AVCaptureSession()

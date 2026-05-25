@@ -38,21 +38,13 @@ struct TradeWallView: View {
         let owner: SocialProfile
     }
 
-    private static let gridOptions = BrowseGridOptions(
-        showCardName: true,
-        showSetName: true,
-        showSetID: false,
-        showPricing: true,
-        showOwned: false
-    )
-
     var body: some View {
         VStack(spacing: 0) {
             if !cardEntries.isEmpty || !sealedEntries.isEmpty {
                 tabPicker
                     .padding(.horizontal, 16)
-                    .padding(.top, 8)
-                    .padding(.bottom, 4)
+                    .padding(.top, 12)
+                    .padding(.bottom, 8)
             }
 
             Group {
@@ -72,7 +64,7 @@ struct TradeWallView: View {
                         } else {
                             ScrollView {
                                 cardGrid
-                                    .padding(.top, 8)
+                                    .padding(.top, 4)
                             }
                         }
                     case .sealed:
@@ -85,7 +77,7 @@ struct TradeWallView: View {
                         } else {
                             ScrollView {
                                 sealedGrid
-                                    .padding(.top, 8)
+                                    .padding(.top, 4)
                             }
                         }
                     }
@@ -142,53 +134,31 @@ struct TradeWallView: View {
     // MARK: - Grids
 
     private var cardGrid: some View {
-        EagerVGrid(items: cardEntries, columns: 3, spacing: 8) { entry in
+        EagerVGrid(items: cardEntries, columns: 2, spacing: 12) { entry in
             Button {
                 Haptics.lightImpact()
                 cardDetailSession = CardDetailSession(card: entry.card, owner: entry.owner)
             } label: {
-                CardGridCell(
-                    card: entry.card,
-                    services: services,
-                    colorScheme: colorScheme,
-                    gridOptions: Self.gridOptions,
-                    setName: entry.setName
-                )
-                .overlay(alignment: .topTrailing) {
-                    ProfileAvatarView(profile: entry.owner, size: 22)
-                        .overlay(Circle().stroke(Color.primary.opacity(0.12), lineWidth: 1.0))
-                        .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
-                        .padding(6)
-                }
+                TradeWallCardCell(entry: entry, colorScheme: colorScheme)
             }
-            .buttonStyle(CardCellButtonStyle())
+            .buttonStyle(TradeWallCellButtonStyle())
         }
         .padding(.horizontal, 12)
+        .padding(.bottom, 8)
     }
 
     private var sealedGrid: some View {
-        EagerVGrid(items: sealedEntries, columns: 3, spacing: 8) { entry in
+        EagerVGrid(items: sealedEntries, columns: 2, spacing: 12) { entry in
             Button {
                 Haptics.lightImpact()
                 selectedSealedProduct = entry.product
             } label: {
-                SealedProductGridCell(
-                    product: entry.product,
-                    gridOptions: Self.gridOptions,
-                    priceUSD: services.sealedProducts.marketPriceUSD(for: entry.product.id),
-                    isOwned: false,
-                    isWishlisted: false
-                )
-                .overlay(alignment: .topTrailing) {
-                    ProfileAvatarView(profile: entry.owner, size: 22)
-                        .overlay(Circle().stroke(Color.primary.opacity(0.12), lineWidth: 1.0))
-                        .shadow(color: .black.opacity(0.18), radius: 2, x: 0, y: 1)
-                        .padding(6)
-                }
+                TradeWallSealedCell(entry: entry, colorScheme: colorScheme)
             }
-            .buttonStyle(CardCellButtonStyle())
+            .buttonStyle(TradeWallCellButtonStyle())
         }
         .padding(.horizontal, 12)
+        .padding(.bottom, 8)
     }
 
     // MARK: - Empty state
@@ -321,5 +291,162 @@ struct TradeWallTabButton: View {
             .contentShape(Capsule())
         }
         .buttonStyle(.plain)
+    }
+}
+
+// MARK: - TradeWallCardCell
+
+/// Premium 2-column card cell. Card image fills the top ~72% of the cell;
+/// the owner strip lives in a `.thinMaterial` footer below it — no cramped
+/// corner overlays, name never truncates, avatar is large enough to see.
+private struct TradeWallCardCell: View {
+    let entry: TradeWallView.WallEntry
+    let colorScheme: ColorScheme
+
+    var body: some View {
+        VStack(spacing: 0) {
+            // Card image — Pokemon cards are ~245×342, i.e. roughly 5:7
+            CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: entry.card.imageLowSrc)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                Rectangle()
+                    .fill(Color.secondary.opacity(0.08))
+                    .overlay {
+                        Image(systemName: "photo")
+                            .font(.system(size: 22, weight: .light))
+                            .foregroundStyle(.tertiary)
+                    }
+            }
+            .aspectRatio(5/7, contentMode: .fit)
+            .frame(maxWidth: .infinity)
+            .clipped()
+
+            // Owner + card name footer
+            ownerFooter
+        }
+        .background(.thinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(
+                    Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08),
+                    lineWidth: 0.5
+                )
+        }
+        .shadow(
+            color: .black.opacity(colorScheme == .dark ? 0.32 : 0.10),
+            radius: 8, x: 0, y: 4
+        )
+    }
+
+    private var ownerFooter: some View {
+        HStack(spacing: 9) {
+            ProfileAvatarView(profile: entry.owner, size: 32)
+                .overlay(
+                    Circle().stroke(Color.primary.opacity(0.10), lineWidth: 1)
+                )
+                .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 1)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(entry.owner.displayName ?? entry.owner.username)
+                    .font(.system(size: 11, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                Text(entry.card.cardName)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 10)
+        // Fixed footer height ensures both cells in a row are always the same
+        // total height (image aspect ratio is already deterministic by column width).
+        .frame(minHeight: 68, alignment: .top)
+    }
+}
+
+// MARK: - TradeWallSealedCell
+
+private struct TradeWallSealedCell: View {
+    let entry: TradeWallView.SealedWallEntry
+    let colorScheme: ColorScheme
+
+    var body: some View {
+        VStack(spacing: 0) {
+            // Sealed box art — roughly square
+            CachedAsyncImage(url: entry.product.imageURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                Rectangle()
+                    .fill(Color.secondary.opacity(0.08))
+                    .overlay {
+                        Image(systemName: "shippingbox")
+                            .font(.system(size: 22, weight: .light))
+                            .foregroundStyle(.tertiary)
+                    }
+            }
+            .aspectRatio(5/7, contentMode: .fit)
+            .frame(maxWidth: .infinity)
+            .clipped()
+
+            ownerFooter
+        }
+        .background(.thinMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(
+                    Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08),
+                    lineWidth: 0.5
+                )
+        }
+        .shadow(
+            color: .black.opacity(colorScheme == .dark ? 0.32 : 0.10),
+            radius: 8, x: 0, y: 4
+        )
+    }
+
+    private var ownerFooter: some View {
+        HStack(spacing: 9) {
+            ProfileAvatarView(profile: entry.owner, size: 32)
+                .overlay(
+                    Circle().stroke(Color.primary.opacity(0.10), lineWidth: 1)
+                )
+                .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 1)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(entry.owner.displayName ?? entry.owner.username)
+                    .font(.system(size: 11, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                Text(entry.product.name)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 10)
+        .frame(minHeight: 68, alignment: .top)
+    }
+}
+
+// MARK: - TradeWallCellButtonStyle
+
+/// Scale-press feedback without the default opacity flash that `.plain` gives.
+private struct TradeWallCellButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.96 : 1.0)
+            .animation(.spring(response: 0.25, dampingFraction: 0.7), value: configuration.isPressed)
     }
 }

@@ -45,11 +45,6 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    /// Synchronous open — for launch-path use only (e.g. called from `init` before async context exists).
-    func openSync() {
-        try? queue.sync { try self.openLocked() }
-    }
-
     private func openLocked() throws {
         guard db == nil else { return }
         let dir = try FileManager.default.url(
@@ -354,19 +349,6 @@ final class CatalogStore: @unchecked Sendable {
                     continuation.resume(throwing: error)
                 }
             }
-        }
-    }
-
-    /// Synchronous read — for launch-path use only.
-    func dailyBlobFetchedAtSync(key: String) -> Date? {
-        queue.sync {
-            guard let db else { return nil }
-            var stmt: OpaquePointer?
-            defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(db, "SELECT fetched_at FROM daily_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return nil }
-            key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-            guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
-            return Date(timeIntervalSince1970: sqlite3_column_double(stmt, 0))
         }
     }
 

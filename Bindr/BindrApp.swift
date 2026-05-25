@@ -78,8 +78,6 @@ struct BindrApp: App {
     /// False means this is a fresh install (or after deletion) — CloudKit restore is needed.
     static let storeExistedAtLaunch: Bool = FileManager.default.fileExists(atPath: Self.storeURL.path)
 
-    private let modelContainer: ModelContainer = Self.makeModelContainer()
-
     init() {
         Self.configureTabBarAppearance()
         Self.installMainThreadWatchdog()
@@ -254,12 +252,30 @@ struct BindrApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
+            ModelContainerHost()
         }
-        .modelContainer(modelContainer)
         .onChange(of: scenePhase) { _, newPhase in
             if newPhase == .background {
                 CatalogDailyRefreshTask.schedule()
+            }
+        }
+    }
+
+    private struct ModelContainerHost: View {
+        @State private var modelContainer: ModelContainer?
+
+        var body: some View {
+            Group {
+                if let modelContainer {
+                    RootView()
+                        .modelContainer(modelContainer)
+                } else {
+                    LaunchWordmarkView(elapsedLabel: "")
+                        .task {
+                            await Task.yield()
+                            modelContainer = BindrApp.makeModelContainer()
+                        }
+                }
             }
         }
     }

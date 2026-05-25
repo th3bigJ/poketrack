@@ -353,30 +353,49 @@ private struct CardBrowseDetailPage: View {
             guard let url = ebayRecentSoldURL else { return }
             openURL(url)
         } label: {
-            HStack(spacing: 10) {
-                ebayWordmark
-                Text("Recent Sold on eBay")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.primary)
+            HStack(spacing: 14) {
+                ebayWordmarkBadge
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Recent Sold on eBay")
+                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.primary)
+                    Text("Open sold listings for this card")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
                 Spacer(minLength: 0)
-                Image(systemName: "arrow.up.right.square")
-                    .font(.footnote.weight(.semibold))
+                Image(systemName: "arrow.up.right")
+                    .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.secondary)
+                    .frame(width: 32, height: 32)
+                    .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05), in: Circle())
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 12)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 14)
+            .frame(minHeight: 76)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(sectionInsetBackground)
+                RoundedRectangle(cornerRadius: 26, style: .continuous)
+                    .fill(colorScheme == .dark ? Color.black : Color.white)
             )
             .overlay(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(sectionBorder, lineWidth: 1)
+                RoundedRectangle(cornerRadius: 26, style: .continuous)
+                    .stroke(colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08), lineWidth: 1)
             )
         }
         .buttonStyle(.plain)
+        .contentShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
         .accessibilityLabel("Open recent sold listings on eBay")
+    }
+
+    private var ebayWordmarkBadge: some View {
+        ebayWordmark
+            .frame(width: 74, height: 42)
+            .background(Color.white.opacity(colorScheme == .dark ? 0.08 : 0.70), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.05), lineWidth: 1)
+            }
     }
 
     private var ebayWordmark: some View {
@@ -386,7 +405,7 @@ private struct CardBrowseDetailPage: View {
             Text("a").foregroundStyle(Color(red: 0.97, green: 0.74, blue: 0.06))
             Text("y").foregroundStyle(Color(red: 0.44, green: 0.68, blue: 0.11))
         }
-        .font(.system(size: 18, weight: .bold, design: .rounded))
+        .font(.system(size: 24, weight: .bold, design: .rounded))
     }
 
     private var ebayRecentSoldURL: URL? {
@@ -1769,6 +1788,31 @@ struct EditCollectionItemSheet: View {
             let directionRaw = acquisitionKind.ledgerDirection.rawValue
             let previousQuantity = line.quantity
             let delta = quantity - previousQuantity
+            let targetProductKind = cardCondition == .graded ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue
+            let targetGradingCompany = cardCondition == .graded ? gradingCompany.rawValue : nil
+            let targetGrade = cardCondition == .graded ? "10" : nil
+            let isConditionChange = line.item.itemKind != targetProductKind
+                || line.item.gradingCompany != targetGradingCompany
+                || line.item.grade != targetGrade
+
+            if isConditionChange {
+                guard let ledger = services.collectionLedger else {
+                    errorMessage = "Collection isn’t ready. Try again."
+                    return
+                }
+                let target = try ledger.reclassifyCardUnits(
+                    item: line.item,
+                    quantity: min(quantity, line.item.quantity),
+                    targetProductKind: targetProductKind,
+                    targetGradingCompany: targetGradingCompany,
+                    targetGrade: targetGrade,
+                    preferredLotIDs: line.lotIDs
+                )
+                target.notes = notes
+                try modelContext.save()
+                dismiss()
+                return
+            }
 
             let selectedLots = (line.item.costLots ?? []).filter { line.lotIDs.contains($0.id) }
             let selectedUnits = selectedLots.reduce(0) { $0 + $1.quantityRemaining }
@@ -1803,9 +1847,6 @@ struct EditCollectionItemSheet: View {
                 }
             }
 
-            line.item.itemKind = cardCondition == .graded ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue
-            line.item.gradingCompany = cardCondition == .graded ? gradingCompany.rawValue : nil
-            line.item.grade = cardCondition == .graded ? "10" : nil
             line.item.notes = notes
             try modelContext.save()
             dismiss()

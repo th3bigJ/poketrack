@@ -84,7 +84,6 @@ struct MyProfileView: View {
                 }
                 VStack(spacing: 18) {
                     profileHeader
-                    favoritesSection
                     profileTabPicker
                     profileTabContent
                 }
@@ -221,32 +220,6 @@ struct MyProfileView: View {
         }
     }
 
-    @ViewBuilder
-    private var favoritesSection: some View {
-        // Favourite Pokémon and Favourite Card are already visualised in the
-        // header (avatar + tilted hero peek). Listing them again as labelled
-        // rows is duplication. Only the favourite deck has no other home, so
-        // the section now collapses to "FAVORITE DECK" when one is set, or
-        // an onboarding hint when nothing has been picked yet.
-        let hasDeck = (profile.favoriteDeckArchetype?.isEmpty == false)
-        let hasAnyFavourite = profile.favoritePokemonName != nil
-            || profile.favoriteCardName != nil
-            || hasDeck
-
-        if hasDeck {
-            VStack(alignment: .leading, spacing: 10) {
-                sectionLabel("FAVORITE DECK")
-                favoriteRow(icon: "square.stack.3d.up.fill", label: "Deck", value: profile.favoriteDeckArchetype ?? "")
-            }
-            .padding(.horizontal, 16)
-        } else if !hasAnyFavourite {
-            VStack(alignment: .leading, spacing: 10) {
-                sectionLabel("FAVORITES")
-                favoriteRow(icon: "sparkles", label: "Favorites", value: "Choose favorites in Edit")
-            }
-            .padding(.horizontal, 16)
-        }
-    }
 
     private func profileTabTitle(_ tab: ProfileTab) -> String {
         switch tab {
@@ -327,13 +300,6 @@ struct MyProfileView: View {
         !cardID.hasPrefix("sealed:")
     }
 
-    private func sectionLabel(_ text: String) -> some View {
-        Text(text)
-            .font(.system(size: 11, weight: .bold))
-            .tracking(0.88)
-            .foregroundStyle(Color.secondary.opacity(0.7))
-    }
-
     private func rolePill(_ title: String) -> some View {
         Text(title.uppercased())
             .font(.system(size: 10, weight: .bold))
@@ -360,32 +326,6 @@ struct MyProfileView: View {
                 .foregroundStyle(Color.secondary.opacity(0.7))
         }
         .frame(maxWidth: .infinity)
-    }
-
-    private func favoriteRow(icon: String, label: String, value: String) -> some View {
-        HStack(spacing: 10) {
-            Circle()
-                .fill(themeColor.opacity(0.15))
-                .frame(width: 34, height: 34)
-                .overlay {
-                    Image(systemName: icon)
-                        .font(.system(size: 13, weight: .bold))
-                        .foregroundStyle(themeColor)
-                }
-            VStack(alignment: .leading, spacing: 2) {
-                Text(label)
-                    .font(.system(size: 10, weight: .bold))
-                    .tracking(0.4)
-                    .foregroundStyle(Color.secondary.opacity(0.7))
-                Text(value)
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-            }
-            Spacer()
-        }
-        .padding(12)
-        .glassCardStyle(cornerRadius: 14, interactive: false)
     }
 
     private func emptyProfileCard(_ text: String) -> some View {

@@ -167,6 +167,8 @@ struct SocialRootView: View {
                 CommentsView(content: content)
                     .environment(services)
             }
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
         }
         .task {
             await services.socialAuth.restoreSession()
@@ -286,20 +288,37 @@ struct SocialRootView: View {
                 }
             }
         case .trades:
-            ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
-                Haptics.lightImpact()
-                services.pendingTradeSeed = nil
-                socialNavigationPath.append(SocialDestination.friends)
+            Menu {
+                Button {
+                    Haptics.lightImpact()
+                    services.pendingTradeSeed = nil
+                    services.isCreatingNewTrade = true
+                    socialNavigationPath.append(SocialDestination.friends)
+                } label: {
+                    Label("Select a Friend", systemImage: "person.2")
+                }
+
+                Button {
+                    Haptics.lightImpact()
+                    socialNavigationPath.append(SocialDestination.qrTrade)
+                } label: {
+                    Label("Scan QR Code", systemImage: "qrcode.viewfinder")
+                }
             } label: {
-                Image(systemName: "plus")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(.primary)
+                ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
+                    // handled by Menu
+                } label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
             }
         case .friends:
-            if services.pendingTradeSeed != nil {
+            if services.pendingTradeSeed != nil || services.isCreatingNewTrade {
                 Button("Cancel") {
                     Haptics.lightImpact()
                     services.pendingTradeSeed = nil
+                    services.isCreatingNewTrade = false
                 }
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(.primary)
@@ -393,12 +412,28 @@ struct SocialRootView: View {
                                 openSeededTradeBuilder(with: friend)
                             }
                         )
+                        .onDisappear {
+                            services.pendingTradeSeed = nil
+                            services.isCreatingNewTrade = false
+                        }
                     case .search:
                         FriendSearchView()
                     case .qrProfile:
                         QRProfileView(username: profile.username) { scannedUsername in
                             socialNavigationPath.append(SocialDestination.friendProfile(username: scannedUsername))
                         }
+                    case .qrTrade:
+                        QRTradeView(
+                            currentUsername: profile.username,
+                            navigationPath: $socialNavigationPath
+                        )
+                    case .mutualTrade(let sessionID, let otherUserID, let otherUsername):
+                        MutualTradeView(
+                            navigationPath: $socialNavigationPath,
+                            sessionID: sessionID,
+                            otherUserID: otherUserID,
+                            otherUsername: otherUsername
+                        )
                     case .friendProfile(let username):
                         FriendProfileView(username: username, navigationPath: $socialNavigationPath)
                     case .tradeDetail(let tradeID):
@@ -647,8 +682,18 @@ struct SocialRootView: View {
     }
 
     private func openSeededTradeBuilder(with friend: SocialProfile) {
+        // Always clear both trade-initiation flags regardless of path taken below.
+        services.isCreatingNewTrade = false
+
         guard let seed = services.pendingTradeSeed else {
-            socialNavigationPath.append(SocialDestination.friendProfile(username: friend.username))
+            // No pre-seeded card (came from Trade Wall + button) — open a blank builder.
+            socialNavigationPath.append(
+                SocialDestination.tradeBuilder(
+                    receiverID: friend.id,
+                    theirCards: [],
+                    myCards: []
+                )
+            )
             return
         }
 

@@ -31,7 +31,7 @@ struct FriendsListView: View {
     @State private var isLoadingTradeSuggestions = false
 
     private var isSelectingFriendForTrade: Bool {
-        services.pendingTradeSeed != nil
+        services.pendingTradeSeed != nil || services.isCreatingNewTrade
     }
     private var tradeSeedSignature: String {
         guard let seed = services.pendingTradeSeed else { return "none" }
@@ -148,7 +148,7 @@ struct FriendsListView: View {
                     Image(systemName: "arrow.left.arrow.right.circle.fill")
                         .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(BindrPalette.binderGold)
-                    Text("Select a friend below to start this trade.")
+                    Text("Start a trade")
                         .font(.system(size: 12, weight: .semibold))
                         .foregroundStyle(.primary)
                     Spacer(minLength: 0)
@@ -265,72 +265,85 @@ struct FriendsListView: View {
 
     @ViewBuilder
     private var tradeSuggestionCard: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack(spacing: 8) {
-                Image(systemName: "sparkles.rectangle.stack.fill")
-                    .font(.system(size: 14, weight: .semibold))
-                    .foregroundStyle(BindrPalette.binderGold)
-                Text(tradeSuggestionHeadline)
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(.primary)
-                Spacer(minLength: 0)
-                if isLoadingTradeSuggestions {
-                    ProgressView()
-                        .scaleEffect(0.8)
-                } else {
-                    Text("\(suggestedTradeFriends.count)")
-                        .font(.system(size: 11, weight: .bold))
+        if services.pendingTradeSeed != nil {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 8) {
+                    Image(systemName: "sparkles.rectangle.stack.fill")
+                        .font(.system(size: 14, weight: .semibold))
                         .foregroundStyle(BindrPalette.binderGold)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(BindrPalette.binderGold.opacity(0.16), in: Capsule())
+                    Text(tradeSuggestionHeadline)
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(.primary)
+                    Spacer(minLength: 0)
+                    if isLoadingTradeSuggestions {
+                        ProgressView()
+                            .scaleEffect(0.8)
+                    } else {
+                        Text("\(suggestedTradeFriends.count)")
+                            .font(.system(size: 11, weight: .bold))
+                            .foregroundStyle(BindrPalette.binderGold)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(BindrPalette.binderGold.opacity(0.16), in: Capsule())
+                    }
                 }
-            }
-            Text(tradeSuggestionBody)
-                .font(.system(size: 12))
-                .foregroundStyle(.secondary)
+                Text(tradeSuggestionBody)
+                    .font(.system(size: 12))
+                    .foregroundStyle(.secondary)
 
-            if !isLoadingTradeSuggestions {
-                if suggestedTradeFriends.isEmpty {
-                    Text("No direct matches yet. You can still pick any friend below.")
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(Color.secondary.opacity(0.8))
-                } else {
-                    ForEach(suggestedTradeFriends.prefix(3)) { friend in
-                        Button {
-                            if let onSelectFriendForTrade {
-                                Haptics.mediumImpact()
-                                onSelectFriendForTrade(friend)
-                            } else {
-                                onOpenUsername(friend.username)
-                            }
-                        } label: {
-                            HStack(spacing: 10) {
-                                ProfileAvatarView(profile: friend, size: 32)
-                                VStack(alignment: .leading, spacing: 1) {
-                                    Text(friend.displayName ?? friend.username)
-                                        .font(.system(size: 13, weight: .semibold))
-                                        .foregroundStyle(.primary)
-                                    Text("@\(friend.username)")
-                                        .font(.system(size: 11))
-                                        .foregroundStyle(.secondary)
+                if !isLoadingTradeSuggestions {
+                    if suggestedTradeFriends.isEmpty {
+                        Text("No direct matches yet. You can still pick any friend below.")
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundStyle(Color.secondary.opacity(0.8))
+                    } else {
+                        ForEach(suggestedTradeFriends.prefix(3)) { friend in
+                            Button {
+                                if let onSelectFriendForTrade {
+                                    Haptics.mediumImpact()
+                                    onSelectFriendForTrade(friend)
+                                } else {
+                                    onOpenUsername(friend.username)
                                 }
-                                Spacer(minLength: 0)
-                                Text("Select")
-                                    .font(.system(size: 11, weight: .bold))
-                                    .foregroundStyle(BindrPalette.binderGold)
+                            } label: {
+                                HStack(spacing: 10) {
+                                    ProfileAvatarView(profile: friend, size: 32)
+                                    VStack(alignment: .leading, spacing: 1) {
+                                        Text(friend.displayName ?? friend.username)
+                                            .font(.system(size: 13, weight: .semibold))
+                                            .foregroundStyle(.primary)
+                                        Text("@\(friend.username)")
+                                            .font(.system(size: 11))
+                                            .foregroundStyle(.secondary)
+                                    }
+                                    Spacer(minLength: 0)
+                                    Text("Select")
+                                        .font(.system(size: 11, weight: .bold))
+                                        .foregroundStyle(BindrPalette.binderGold)
+                                }
                             }
+                            .buttonStyle(.plain)
                         }
-                        .buttonStyle(.plain)
                     }
                 }
             }
-        }
-        .padding(14)
-        .glassCardStyle(cornerRadius: 16, interactive: false)
-        .overlay {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .stroke(BindrPalette.binderGold.opacity(0.22), lineWidth: 1)
+            .padding(14)
+            .glassCardStyle(cornerRadius: 16, interactive: false)
+            .overlay {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(BindrPalette.binderGold.opacity(0.22), lineWidth: 1)
+            }
+        } else {
+            Text("Suggestions update as your friends sync their lists.")
+                .font(.system(size: 12))
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(14)
+                .glassCardStyle(cornerRadius: 16, interactive: false)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(BindrPalette.binderGold.opacity(0.22), lineWidth: 1)
+                }
         }
     }
 

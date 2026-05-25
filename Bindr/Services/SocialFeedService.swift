@@ -1069,6 +1069,10 @@ final class SocialFeedService {
         recalculateUnread(for: .following)
     }
 
+    var alertSeenIDs: Set<String> {
+        seenIDs(for: .alerts)
+    }
+
     func clearUnreadAlertsState(items: [FeedItem]) {
         let existing = seenIDs(for: .alerts)
         let merged = (Array(existing) + items.map(\.id)).suffix(maxLocalSeenIDs)

@@ -122,11 +122,11 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
     // MARK: - Public API
 
-    func requiresDailyBlockingRefresh(enabledBrands: Set<TCGBrand>) -> Bool {
+    func requiresDailyBlockingRefreshAsync(enabledBrands: Set<TCGBrand>) async -> Bool {
         guard !enabledBrands.isEmpty else { return false }
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return false }
         let store = CatalogStore.shared
-        store.openSync()
+        try? await store.open()
 
         let lastPricingSync: Date? = {
             guard let raw = store.metaSync("pricing_last_synced_at"),
@@ -145,10 +145,14 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                 DailyBlobKey.sealedPriceHistory,
             ])
         }
-        return dailyKeys.contains { key in
-            guard let fetchedAt = store.dailyBlobFetchedAtSync(key: key) else { return true }
-            return fetchedAt < periodStart
+
+        for key in dailyKeys {
+            guard let fetchedAt = await store.dailyBlobFetchedAt(key: key),
+                  fetchedAt >= periodStart else {
+                return true
+            }
         }
+        return false
     }
 
     func syncAllIfNeeded(
