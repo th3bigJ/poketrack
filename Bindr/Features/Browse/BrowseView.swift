@@ -1239,6 +1239,12 @@ struct BrowseView: View {
                     setProgressBar(for: set, cards: inlineDetailCards)
                         .padding(.top, 4)
                         .padding(.bottom, 12)
+
+                    Toggle("Hide owned cards", isOn: $inlineDetailFilters.hideOwned)
+                        .font(.caption.weight(.semibold))
+                        .toggleStyle(.switch)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 12)
                 }
 
                 if useMasterGrid {
@@ -1514,6 +1520,10 @@ struct BrowseView: View {
     }
 
     private func beginQuickAdd(card: Card, action: CardContextAction) {
+        if action == .wishlist {
+            addCardToWishlist(card)
+            return
+        }
         Task {
             var keys = await services.pricing.variantKeys(for: card)
             if keys.isEmpty, let variants = card.pricingVariants, !variants.isEmpty {
@@ -1529,6 +1539,31 @@ struct BrowseView: View {
                     initialAction: action
                 )
             }
+        }
+    }
+
+    private func addCardToWishlist(_ card: Card) {
+        guard let wl = services.wishlist else {
+            wishlistAlertMessage = "Wishlist isn't available yet. Try again in a moment."
+            showWishlistAlert = true
+            return
+        }
+        do {
+            try wl.addItem(cardID: card.masterCardId, variantKey: "normal", notes: "")
+            HapticManager.notification(.success)
+        } catch let error as WishlistError {
+            switch error {
+            case .limitReached:
+                showWishlistPaywall = true
+            case .alreadyExists:
+                break
+            case .saveFailed:
+                wishlistAlertMessage = "Couldn’t add card to wishlist. Please try again."
+                showWishlistAlert = true
+            }
+        } catch {
+            wishlistAlertMessage = "Couldn’t add card to wishlist. Please try again."
+            showWishlistAlert = true
         }
     }
 
@@ -2326,6 +2361,12 @@ struct BrowseView: View {
                 setModeChip(label: "Full Set", isMaster: false)
                 setModeChip(label: "Master Set", isMaster: true)
                 Spacer()
+                SetLogoAsyncImage(
+                    logoSrc: set.logoSrc,
+                    height: 24,
+                    brand: services.brandSettings.selectedCatalogBrand
+                )
+                .frame(width: 76, alignment: .trailing)
             }
 
             // Header
@@ -2726,8 +2767,8 @@ private struct BrowseSetsTabContent: View {
                     pricedCardCount += 1
                 }
             } else {
-                guard let cheapestUSD = cheapestVariantMarketUSD(for: entry), cheapestUSD > 0 else { continue }
-                totalUSD += cheapestUSD
+                guard let browseUSD = browseMarketPriceUSD(for: entry), browseUSD > 0 else { continue }
+                totalUSD += browseUSD
                 pricedCardCount += 1
             }
         }
@@ -2738,19 +2779,6 @@ private struct BrowseSetsTabContent: View {
             setMarketValueUSDByKey.removeValue(forKey: key)
         }
         loadedSetMarketValueKeys.insert(key)
-    }
-
-    private func cheapestVariantMarketUSD(for entry: CardPricingEntry) -> Double? {
-        if let scrydex = entry.scrydex, !scrydex.isEmpty {
-            return scrydex.values
-                .compactMap { $0.marketEstimateUSD() }
-                .filter { $0 > 0 }
-                .min()
-        }
-        if let usd = entry.tcgplayerMarketEstimateUSD(), usd > 0 {
-            return usd
-        }
-        return nil
     }
 
     private func allVariantsMarketUSD(for entry: CardPricingEntry) -> Double {
@@ -3413,20 +3441,42 @@ private struct BrowseGridPriceText: View {
                 return
             }
             guard let entry = await services.pricing.pricing(for: card) else {
-                priceLine = "—"
-                await BrowseGridPriceLineCache.shared.set("—", for: taskID)
+                if let fallbackUSD = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: variantKey ?? "holofoil", grade: "raw") {
+                    let line = currency.format(amountUSD: fallbackUSD, usdToGbp: fx)
+                    priceLine = line
+                    await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                } else {
+                    priceLine = "—"
+                    await BrowseGridPriceLineCache.shared.set("—", for: taskID)
+                }
                 return
             }
             if let key = variantKey {
-                let usd = entry.scrydex?[key]?.rawMarketEstimateUSD() ?? entry.tcgplayerMarketEstimateUSD()
+                var usd = entry.scrydex?[key]?.rawMarketEstimateUSD() ?? entry.tcgplayerMarketEstimateUSD()
+                if usd == nil {
+                    usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: key, grade: "raw")
+                }
                 let line = usd.map { currency.format(amountUSD: $0, usdToGbp: fx) } ?? "—"
                 priceLine = line
                 await BrowseGridPriceLineCache.shared.set(line, for: taskID)
                 return
             }
             guard let range = resolvedMarketPriceRange(entry) else {
-                priceLine = "—"
-                await BrowseGridPriceLineCache.shared.set("—", for: taskID)
+                var fallbackUSD = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: "holofoil", grade: "raw")
+                if fallbackUSD == nil {
+                    fallbackUSD = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: "normal", grade: "raw")
+                }
+                if fallbackUSD == nil {
+                    fallbackUSD = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: "reverseHolofoil", grade: "raw")
+                }
+                if let fallbackUSD {
+                    let line = currency.format(amountUSD: fallbackUSD, usdToGbp: fx)
+                    priceLine = line
+                    await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                } else {
+                    priceLine = "—"
+                    await BrowseGridPriceLineCache.shared.set("—", for: taskID)
+                }
                 return
             }
             if abs(range.max - range.min) < 0.005 {
@@ -3761,6 +3811,11 @@ struct SetCardsView: View {
 
                         setProgressBar
                             .padding(.bottom, 4)
+
+                        Toggle("Hide owned cards", isOn: $filters.hideOwned)
+                            .font(.caption.weight(.semibold))
+                            .toggleStyle(.switch)
+
                         if filteredCards.isEmpty {
                             ContentUnavailableView(
                                 "No matching cards",
@@ -4122,6 +4177,10 @@ struct SetCardsView: View {
     }
 
     private func beginCardContextAction(card: Card, action: CardContextAction) {
+        if action == .wishlist {
+            addCardToWishlist(card)
+            return
+        }
         Task {
             var keys = await services.pricing.variantKeys(for: card)
             if keys.isEmpty, let variants = card.pricingVariants, !variants.isEmpty {
@@ -4137,6 +4196,31 @@ struct SetCardsView: View {
                     initialAction: action
                 )
             }
+        }
+    }
+
+    private func addCardToWishlist(_ card: Card) {
+        guard let wl = services.wishlist else {
+            wishlistAlertMessage = "Wishlist isn't available yet. Try again in a moment."
+            showWishlistAlert = true
+            return
+        }
+        do {
+            try wl.addItem(cardID: card.masterCardId, variantKey: "normal", notes: "")
+            HapticManager.notification(.success)
+        } catch let error as WishlistError {
+            switch error {
+            case .limitReached:
+                showWishlistPaywall = true
+            case .alreadyExists:
+                break
+            case .saveFailed:
+                wishlistAlertMessage = "Couldn’t add card to wishlist. Please try again."
+                showWishlistAlert = true
+            }
+        } catch {
+            wishlistAlertMessage = "Couldn’t add card to wishlist. Please try again."
+            showWishlistAlert = true
         }
     }
 }

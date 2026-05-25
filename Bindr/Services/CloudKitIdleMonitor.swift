@@ -19,7 +19,8 @@ final class CloudKitIdleMonitor {
     private var lastFrameTimestamp: CFTimeInterval = 0
     private var lastRemoteChangeTime: CFAbsoluteTime = 0
     private var hasSeenNotification = false
-    private let onIdle: () -> Void
+    /// Return `true` to stop monitoring and finalize idle; `false` to keep monitoring.
+    private let onIdle: () -> Bool
 
     /// A frame arriving more than this late counts as a hitch and resets the counter.
     private let hitchThreshold: CFTimeInterval = 0.080
@@ -28,7 +29,7 @@ final class CloudKitIdleMonitor {
     /// Seconds of silence after last notification/hitch before declaring idle.
     private let quietWindow: CFTimeInterval
 
-    init(quietWindow: CFTimeInterval = 12.0, onIdle: @escaping () -> Void) {
+    init(quietWindow: CFTimeInterval = 12.0, onIdle: @escaping () -> Bool) {
         self.quietWindow = quietWindow
         self.onIdle = onIdle
     }
@@ -100,8 +101,17 @@ final class CloudKitIdleMonitor {
                 ? String(format: "%.1fs after last notification/hitch", CFAbsoluteTimeGetCurrent() - lastRemoteChangeTime)
                 : "no notifications received"
             print("[CloudKit] idle confirmed (\(note))")
-            tearDown()
-            onIdle()
+            let shouldFinalize = onIdle()
+            if shouldFinalize {
+                tearDown()
+            } else {
+                // Caller asked to keep observing (e.g. launch pipeline not yet complete).
+                consecutiveCleanFrames = 0
+                lastFrameTimestamp = 0
+                if hasSeenNotification {
+                    lastRemoteChangeTime = CFAbsoluteTimeGetCurrent()
+                }
+            }
         }
     }
 

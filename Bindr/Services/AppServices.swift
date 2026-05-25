@@ -61,6 +61,9 @@ final class AppServices {
     private(set) var isCloudKitImportComplete = false
     private var cloudKitObserver: NSObjectProtocol?
     private var cloudKitIdleMonitor: CloudKitIdleMonitor?
+    /// Timestamp used to avoid finalizing CloudKit readiness on the exact frame
+    /// the launch catalog pipeline flips complete.
+    private var launchCatalogPipelineCompletedAt: Date?
     /// Until `true`, the root UI should not mount the main tab shell (Browse, etc.) so the cold launch catalog pipeline does not race the same SQLite + network work on the main actor.
     private(set) var isLaunchCatalogPipelineComplete = false
     /// Set in `init` when the user already completed the one-time blocking bootstrap; consumed by the first `.task` on the main UI to refresh catalogs in the background.
@@ -133,6 +136,9 @@ final class AppServices {
             isReady = true
             shouldRunBackgroundCatalogRefreshOnLaunch = requiresBlockingDailyRefresh
             isLaunchCatalogPipelineComplete = !requiresBlockingDailyRefresh
+            if isLaunchCatalogPipelineComplete {
+                launchCatalogPipelineCompletedAt = Date()
+            }
         }
         Task { await refreshCatalogCardsLastUpdatedAtFromStore() }
         Task {
@@ -187,6 +193,7 @@ final class AppServices {
         brandSettings.markInitialAppBootstrapCompleted()
         pendingLightBrowseTabEntry = true
         isLaunchCatalogPipelineComplete = true
+        launchCatalogPipelineCompletedAt = Date()
         isReady = true
         Task(priority: .background) { [weak self] in
             await self?.resumeOfflineDownloadsIfNeeded()
@@ -197,6 +204,7 @@ final class AppServices {
     func bootstrapCatalogInBackgroundIfNeeded() async {
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
             isLaunchCatalogPipelineComplete = true
+            launchCatalogPipelineCompletedAt = Date()
             return
         }
         shouldRunBackgroundCatalogRefreshOnLaunch = false
@@ -226,6 +234,7 @@ final class AppServices {
                 // same refresh task continue in the background.
             }
             isLaunchCatalogPipelineComplete = true
+            launchCatalogPipelineCompletedAt = Date()
         } else {
             await primeLaunchCatalogFromLocalCache()
         }
@@ -659,7 +668,20 @@ final class AppServices {
         print("[CloudKit] \(isFreshInstall ? "fresh install" : "existing install") — idle monitor armed (quietWindow=\(quietWindow)s, timeout=\(timeout)s)")
 
         let monitor = CloudKitIdleMonitor(quietWindow: quietWindow) { [weak self] in
-            self?.markCloudKitImportComplete()
+            guard let self else { return true }
+            guard self.isLaunchCatalogPipelineComplete else {
+                print("[CloudKit] idle detected before launch catalog pipeline finished — continuing monitor")
+                return false
+            }
+            // Prevent same-tick completion when the catalog gate just flipped; allow a
+            // brief post-pipeline settling window for late main-thread merges.
+            if let completedAt = self.launchCatalogPipelineCompletedAt,
+               Date().timeIntervalSince(completedAt) < 2.0 {
+                print("[CloudKit] idle detected immediately after pipeline completion — waiting briefly")
+                return false
+            }
+            self.markCloudKitImportComplete()
+            return true
         }
         self.cloudKitIdleMonitor = monitor
         monitor.start()

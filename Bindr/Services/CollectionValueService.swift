@@ -72,6 +72,8 @@ final class CollectionValueService {
         static let total   = "collectionValue.lastKnown.total"
         static let pokemon = "collectionValue.lastKnown.pokemon"
         static let onePiece = "collectionValue.lastKnown.onePiece"
+        static let cards = "collectionValue.lastKnown.cards"
+        static let sealed = "collectionValue.lastKnown.sealed"
         static let date    = "collectionValue.lastKnown.date"
     }
 
@@ -86,7 +88,9 @@ final class CollectionValueService {
         return BrandSnapshot(
             total: total,
             pokemon: defaults.double(forKey: LastKnownValueKey.pokemon),
-            onePiece: defaults.double(forKey: LastKnownValueKey.onePiece)
+            onePiece: defaults.double(forKey: LastKnownValueKey.onePiece),
+            cards: defaults.double(forKey: LastKnownValueKey.cards),
+            sealed: defaults.double(forKey: LastKnownValueKey.sealed)
         )
     }
 
@@ -97,6 +101,8 @@ final class CollectionValueService {
         defaults.set(snapshot.total,    forKey: LastKnownValueKey.total)
         defaults.set(snapshot.pokemon,  forKey: LastKnownValueKey.pokemon)
         defaults.set(snapshot.onePiece, forKey: LastKnownValueKey.onePiece)
+        defaults.set(snapshot.cards,    forKey: LastKnownValueKey.cards)
+        defaults.set(snapshot.sealed,   forKey: LastKnownValueKey.sealed)
         defaults.set(Date(),            forKey: LastKnownValueKey.date)
     }
 
@@ -111,6 +117,8 @@ final class CollectionValueService {
         let total    = defaults.double(forKey: LastKnownValueKey.total)
         let pokemon  = defaults.double(forKey: LastKnownValueKey.pokemon)
         let onePiece = defaults.double(forKey: LastKnownValueKey.onePiece)
+        let cards    = defaults.double(forKey: LastKnownValueKey.cards)
+        let sealed   = defaults.double(forKey: LastKnownValueKey.sealed)
         guard total > 0 else { return }
 
         print("[CollectionValue] Saving yesterday's snapshot from persisted value → \(yesterday.formatted(date: .abbreviated, time: .omitted)) total=\(total)")
@@ -118,7 +126,9 @@ final class CollectionValueService {
             date: yesterday,
             totalGbp: total,
             pokemonGbp: pokemon,
-            onePieceGbp: onePiece
+            onePieceGbp: onePiece,
+            cardsGbp: cards,
+            sealedGbp: sealed
         )
         modelContext.insert(snapshot)
         try? modelContext.save()
@@ -188,7 +198,14 @@ final class CollectionValueService {
         for date in missingDays {
             let value = await computeValue(for: collectionItems, on: date)
             guard value.total > 0 else { continue }
-            let record = CollectionValueSnapshot(date: date, totalGbp: value.total, pokemonGbp: value.pokemon, onePieceGbp: value.onePiece)
+            let record = CollectionValueSnapshot(
+                date: date,
+                totalGbp: value.total,
+                pokemonGbp: value.pokemon,
+                onePieceGbp: value.onePiece,
+                cardsGbp: value.cards,
+                sealedGbp: value.sealed
+            )
             modelContext.insert(record)
         }
         try? modelContext.save()
@@ -211,7 +228,14 @@ final class CollectionValueService {
         let cal = Calendar.current
         let today = cal.startOfDay(for: Date())
         purgeTodaySnapshot()
-        let todayRecord = CollectionValueSnapshot(date: today, totalGbp: liveSnapshot.total, pokemonGbp: liveSnapshot.pokemon, onePieceGbp: liveSnapshot.onePiece)
+        let todayRecord = CollectionValueSnapshot(
+            date: today,
+            totalGbp: liveSnapshot.total,
+            pokemonGbp: liveSnapshot.pokemon,
+            onePieceGbp: liveSnapshot.onePiece,
+            cardsGbp: liveSnapshot.cards,
+            sealedGbp: liveSnapshot.sealed
+        )
         modelContext.insert(todayRecord)
         try? modelContext.save()
         loadAll()
@@ -291,7 +315,9 @@ final class CollectionValueService {
             date: today,
             totalGbp: snapshot.total,
             pokemonGbp: snapshot.pokemon,
-            onePieceGbp: snapshot.onePiece
+            onePieceGbp: snapshot.onePiece,
+            cardsGbp: snapshot.cards,
+            sealedGbp: snapshot.sealed
         )
         modelContext.insert(record)
         try? modelContext.save()
@@ -337,7 +363,9 @@ final class CollectionValueService {
             date: today,
             totalGbp: result.total,
             pokemonGbp: result.pokemon,
-            onePieceGbp: result.onePiece
+            onePieceGbp: result.onePiece,
+            cardsGbp: result.cards,
+            sealedGbp: result.sealed
         )
         modelContext.insert(snapshot)
         try? modelContext.save()
@@ -370,10 +398,14 @@ final class CollectionValueService {
             let avg = average(of: days.map(\.asBrandSnapshot))
             if let existing = existingByWeekStart[weekStart] {
                 // Only update if value changed meaningfully (avoids constant churn on current week)
-                if abs(existing.totalGbp - avg.total) > 0.01 {
+                if abs(existing.totalGbp - avg.total) > 0.01 ||
+                    abs(existing.cardsGbp - avg.cards) > 0.01 ||
+                    abs(existing.sealedGbp - avg.sealed) > 0.01 {
                     existing.totalGbp = avg.total
                     existing.pokemonGbp = avg.pokemon
                     existing.onePieceGbp = avg.onePiece
+                    existing.cardsGbp = avg.cards
+                    existing.sealedGbp = avg.sealed
                     print("[CollectionValue] Updated weekly avg for week of \(weekStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
                 }
             } else {
@@ -381,7 +413,9 @@ final class CollectionValueService {
                     weekStart: weekStart,
                     totalGbp: avg.total,
                     pokemonGbp: avg.pokemon,
-                    onePieceGbp: avg.onePiece
+                    onePieceGbp: avg.onePiece,
+                    cardsGbp: avg.cards,
+                    sealedGbp: avg.sealed
                 )
                 modelContext.insert(record)
                 print("[CollectionValue] Saved weekly avg for week of \(weekStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
@@ -417,10 +451,14 @@ final class CollectionValueService {
         for (monthStart, days) in byMonth {
             let avg = average(of: days.map(\.asBrandSnapshot))
             if let existing = existingByMonthStart[monthStart] {
-                if abs(existing.totalGbp - avg.total) > 0.01 {
+                if abs(existing.totalGbp - avg.total) > 0.01 ||
+                    abs(existing.cardsGbp - avg.cards) > 0.01 ||
+                    abs(existing.sealedGbp - avg.sealed) > 0.01 {
                     existing.totalGbp = avg.total
                     existing.pokemonGbp = avg.pokemon
                     existing.onePieceGbp = avg.onePiece
+                    existing.cardsGbp = avg.cards
+                    existing.sealedGbp = avg.sealed
                     print("[CollectionValue] Updated monthly avg for \(monthStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
                 }
             } else {
@@ -428,7 +466,9 @@ final class CollectionValueService {
                     monthStart: monthStart,
                     totalGbp: avg.total,
                     pokemonGbp: avg.pokemon,
-                    onePieceGbp: avg.onePiece
+                    onePieceGbp: avg.onePiece,
+                    cardsGbp: avg.cards,
+                    sealedGbp: avg.sealed
                 )
                 modelContext.insert(record)
                 print("[CollectionValue] Saved monthly avg for \(monthStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
@@ -466,11 +506,19 @@ final class CollectionValueService {
         async let p = computeBrandValue(items: pokemonItemsCopy, on: date)
         async let o = computeBrandValue(items: onePieceItemsCopy, on: date)
         let (pv, ov) = await (p, o)
-        return BrandSnapshot(total: pv + ov, pokemon: pv, onePiece: ov)
+        return BrandSnapshot(
+            total: pv.total + ov.total,
+            pokemon: pv.total,
+            onePiece: ov.total,
+            cards: pv.cards + ov.cards,
+            sealed: pv.sealed + ov.sealed
+        )
     }
 
-    private func computeBrandValue(items: [CollectionItem], on date: Date) async -> Double {
+    private func computeBrandValue(items: [CollectionItem], on date: Date) async -> (total: Double, cards: Double, sealed: Double) {
         var total = 0.0
+        var cards = 0.0
+        var sealed = 0.0
         for item in items {
             guard item.quantity > 0 else { continue }
             if item.itemKind == ProductKind.sealedProduct.rawValue,
@@ -479,15 +527,19 @@ final class CollectionValueService {
             }
             if let sealedProductID = sealedProductID(for: item),
                let sealedPriceUSD = sealedProducts.marketPriceUSD(for: sealedProductID) {
-                total += sealedPriceUSD * Double(item.quantity) * pricing.usdToGbp
+                let gbp = sealedPriceUSD * Double(item.quantity) * pricing.usdToGbp
+                total += gbp
+                sealed += gbp
                 continue
             }
             guard let card = await cardData.loadCard(masterCardId: item.cardID) else { continue }
             let grade = resolvedGradeKey(for: item)
             let usd = await usdPrice(for: card, variantKey: item.variantKey, grade: grade, on: date)
-            total += usd * Double(item.quantity) * pricing.usdToGbp
+            let gbp = usd * Double(item.quantity) * pricing.usdToGbp
+            total += gbp
+            cards += gbp
         }
-        return total
+        return (total: total, cards: cards, sealed: sealed)
     }
 
     private func sealedProductID(for item: CollectionItem) -> Int? {
@@ -545,12 +597,14 @@ final class CollectionValueService {
     // MARK: - Helpers
 
     private func average(of snapshots: [BrandSnapshot]) -> BrandSnapshot {
-        guard !snapshots.isEmpty else { return BrandSnapshot(total: 0, pokemon: 0, onePiece: 0) }
+        guard !snapshots.isEmpty else { return BrandSnapshot(total: 0, pokemon: 0, onePiece: 0, cards: 0, sealed: 0) }
         let count = Double(snapshots.count)
         return BrandSnapshot(
             total:    snapshots.map(\.total).reduce(0, +) / count,
             pokemon:  snapshots.map(\.pokemon).reduce(0, +) / count,
-            onePiece: snapshots.map(\.onePiece).reduce(0, +) / count
+            onePiece: snapshots.map(\.onePiece).reduce(0, +) / count,
+            cards:    snapshots.map(\.cards).reduce(0, +) / count,
+            sealed:   snapshots.map(\.sealed).reduce(0, +) / count
         )
     }
 
@@ -605,10 +659,19 @@ struct BrandSnapshot {
     var total: Double
     var pokemon: Double
     var onePiece: Double
+    var cards: Double
+    var sealed: Double
 }
 
 extension CollectionValueSnapshot {
     var asBrandSnapshot: BrandSnapshot {
-        BrandSnapshot(total: totalGbp, pokemon: pokemonGbp, onePiece: onePieceGbp)
+        let hasExplicitSplit = cardsGbp > 0 || sealedGbp > 0
+        return BrandSnapshot(
+            total: totalGbp,
+            pokemon: pokemonGbp,
+            onePiece: onePieceGbp,
+            cards: hasExplicitSplit ? cardsGbp : totalGbp,
+            sealed: hasExplicitSplit ? sealedGbp : 0
+        )
     }
 }

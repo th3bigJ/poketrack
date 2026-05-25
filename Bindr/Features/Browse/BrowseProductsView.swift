@@ -106,14 +106,21 @@ struct BrowseProductsTabContent: View {
         setIDInt: Int?,
         normalizedSetName: String?
     ) -> Bool {
+        let setNameNorm = normalizedProductIndex.setName(at: productIndex)
+        if let normalizedSetName, !normalizedSetName.isEmpty {
+            // Prefer exact set-name matching whenever the product has set-name data.
+            // Some feed rows can share or drift set IDs across nearby releases, which
+            // causes cross-set leakage (e.g. Ascended Heroes pulling Mega Evolution).
+            if !setNameNorm.isEmpty {
+                return setNameNorm == normalizedSetName
+            }
+        }
+
+        // Fallback for rows that do not carry set-name metadata.
         if let setIDInt, let pid = product.setID, pid == setIDInt {
             return true
         }
-        guard let normalizedSetName, !normalizedSetName.isEmpty else {
-            return false
-        }
-        let setNameNorm = normalizedProductIndex.setName(at: productIndex)
-        return !setNameNorm.isEmpty && setNameNorm == normalizedSetName
+        return false
     }
 
     /// Rebuilds ``carouselSets`` and ``normalizedProductIndex`` from the
@@ -129,13 +136,16 @@ struct BrowseProductsTabContent: View {
         let computed: (NormalizedProductIndex, [TCGSet]) = await Task.detached(priority: .utility) {
             let index = NormalizedProductIndex(products: allProducts)
             let activeSetIDs = Set(allProducts.compactMap { $0.setID })
+            let normalized: (String?) -> String = { value in
+                normalizeSealedSearchText(value)
+            }
 
-            let sets = allSets.filter { set in
+            let matchedCatalogSets = allSets.filter { set in
                 let setIDInt = Int(set.internalId)
                 if let setIDInt, activeSetIDs.contains(setIDInt) {
                     return true
                 }
-                let normalizedSetName = normalizeSealedSearchText(set.name)
+                let normalizedSetName = normalized(set.name)
                 guard !normalizedSetName.isEmpty else { return false }
                 for i in allProducts.indices {
                     let setNameNorm = index.setName(at: i)
@@ -143,7 +153,38 @@ struct BrowseProductsTabContent: View {
                 }
                 return false
             }
-            .sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+            var seenSetNames = Set(matchedCatalogSets.map { normalized($0.name) })
+
+            // Include any set names that exist in sealed products but not in catalog sets.
+            // This keeps the set-tag carousel complete when sealed feed data lands before
+            // catalog set metadata (e.g. newly released products).
+            var virtualSets: [TCGSet] = []
+            for product in allProducts {
+                let setName = (product.setName ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+                guard !setName.isEmpty else { continue }
+                let setNameNorm = normalized(setName)
+                guard !setNameNorm.isEmpty, !seenSetNames.contains(setNameNorm) else { continue }
+                seenSetNames.insert(setNameNorm)
+
+                virtualSets.append(
+                    TCGSet(
+                        internalId: "virtual:\(setNameNorm)",
+                        name: setName,
+                        setKey: nil,
+                        code: nil,
+                        tcgdexId: nil,
+                        releaseDate: product.releaseDate?.formatted(.iso8601.year().month().day()),
+                        cardCountTotal: nil,
+                        cardCountOfficial: nil,
+                        seriesName: product.series,
+                        logoSrc: "",
+                        symbolSrc: nil
+                    )
+                )
+            }
+
+            let sets = (matchedCatalogSets + virtualSets)
+                .sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
 
             return (index, sets)
         }.value
@@ -772,6 +813,10 @@ private struct SealedProductDetailPage: View {
                         .glassCardStyle(cornerRadius: 26, interactive: false)
                         .padding(.horizontal, 12)
 
+                    recentSoldOnEbayButton
+                        .glassCardStyle(cornerRadius: 14, interactive: false)
+                        .padding(.horizontal, 12)
+
                     if !visibleCollectionItems.isEmpty {
                         collectionSection
                             .padding(.horizontal, 12)
@@ -993,6 +1038,60 @@ private struct SealedProductDetailPage: View {
 
     private var sectionInsetBackground: Color {
         colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
+    }
+
+    private var recentSoldOnEbayButton: some View {
+        Button {
+            guard let url = ebayRecentSoldURL else { return }
+            openURL(url)
+        } label: {
+            HStack(spacing: 10) {
+                ebayWordmark
+                Text("Recent Sold on eBay")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+                Spacer(minLength: 0)
+                Image(systemName: "arrow.up.right.square")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 12)
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Open recent sold listings on eBay")
+    }
+
+    private var ebayWordmark: some View {
+        HStack(spacing: 0) {
+            Text("e").foregroundStyle(Color(red: 0.89, green: 0.15, blue: 0.13))
+            Text("B").foregroundStyle(Color(red: 0.00, green: 0.38, blue: 0.75))
+            Text("a").foregroundStyle(Color(red: 0.97, green: 0.74, blue: 0.06))
+            Text("y").foregroundStyle(Color(red: 0.44, green: 0.68, blue: 0.11))
+        }
+        .font(.system(size: 18, weight: .bold, design: .rounded))
+    }
+
+    private var ebayRecentSoldURL: URL? {
+        let searchText = [
+            product.name.trimmingCharacters(in: .whitespacesAndNewlines),
+            (product.setName ?? "").trimmingCharacters(in: .whitespacesAndNewlines),
+            product.year.map(String.init) ?? ""
+        ]
+        .filter { !$0.isEmpty }
+        .joined(separator: " ")
+        .trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard !searchText.isEmpty else { return nil }
+
+        var components = URLComponents(string: "https://www.ebay.com/sch/i.html")
+        components?.queryItems = [
+            URLQueryItem(name: "_nkw", value: searchText),
+            URLQueryItem(name: "LH_Sold", value: "1"),
+            URLQueryItem(name: "LH_Complete", value: "1")
+        ]
+        return components?.url
     }
 
     private func labelValueRow(label: String, value: String) -> some View {

@@ -566,6 +566,17 @@ final class PricingService {
         return usd * usdToGbp
     }
 
+    /// Latest available history-point price for a variant/grade combination.
+    /// Used as a UI fallback when the live market entry is temporarily missing.
+    func latestHistoryPriceUSD(for card: Card, variantKey: String, grade: String) async -> Double? {
+        guard let history = await priceHistory(for: card),
+              let series = history.series["\(variantKey)/\(grade)"] else { return nil }
+        if let p = series.daily.last?.price { return p }
+        if let p = series.weekly.last?.price { return p }
+        if let p = series.monthly.last?.price { return p }
+        return nil
+    }
+
     // Per-set history/trends raw JSON cache (cardKey → raw dict). Key includes brand so Pokémon vs ONE PIECE paths don’t collide.
     @ObservationIgnored private var historyCache: [String: [String: [String: Any]]] = [:]
     @ObservationIgnored private var trendsCache: [String: [String: [String: Any]]] = [:]

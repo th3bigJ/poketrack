@@ -34,6 +34,17 @@ struct CardActionMenu: View {
     
     var body: some View {
         HStack(spacing: 12) {
+            // Wishlist Button (same size/style as Share)
+            Button(action: wishlistAction) {
+                Image(systemName: isWishlisted ? "star.fill" : "star")
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundStyle(Palette.gold)
+                    .frame(width: 56, height: 56)
+                    .glassCardStyle(cornerRadius: 18, interactive: true)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(isWishlisted ? "Remove from Wish List" : "Add to Wish List")
+
             // Primary Action Button (Add to / Manage / Trade)
             primaryActionButton
             
@@ -81,20 +92,23 @@ struct CardActionMenu: View {
             }
             Haptics.lightImpact()
         } label: {
-            HStack(spacing: 12) {
-                Image(systemName: primaryIcon)
-                    .font(.system(size: 18, weight: .bold))
-                
-                Text(primaryLabel)
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
-                    .fixedSize()
-                
-                Spacer()
-                
-                Image(systemName: "chevron.up")
-                    .font(.system(size: 11, weight: .bold))
-                    .opacity(0.4)
-                    .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
+            ZStack {
+                HStack(spacing: 12) {
+                    Image(systemName: primaryIcon)
+                        .font(.system(size: 18, weight: .bold))
+
+                    Text(primaryLabel)
+                        .font(.system(size: 17, weight: .bold, design: .rounded))
+                        .fixedSize()
+                }
+
+                HStack {
+                    Spacer()
+                    Image(systemName: "chevron.up")
+                        .font(.system(size: 11, weight: .bold))
+                        .opacity(0.4)
+                        .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
+                }
             }
             .padding(.horizontal, 20)
             .frame(maxWidth: .infinity)
@@ -203,14 +217,6 @@ struct CardActionMenu: View {
             ))
 
             items.append(MenuItem(
-                label: isWishlisted ? "Remove from Wish List" : "Wish List",
-                subLabel: isWishlisted ? "Currently on your wish list" : "Add to your wish list",
-                icon: isWishlisted ? "star.slash" : "star",
-                color: Palette.gold,
-                action: isWishlisted ? onRemoveFromWishlist : onAddToWishlist
-            ))
-
-            items.append(MenuItem(
                 label: "Add to Folder",
                 subLabel: "Place this card in a folder",
                 icon: "folder.badge.plus",
@@ -251,14 +257,6 @@ struct CardActionMenu: View {
             }
             
             items.append(MenuItem(
-                label: "Wish List",
-                subLabel: isWishlisted ? "Already wishlisted" : "Add to your wish list",
-                icon: isWishlisted ? "star.fill" : "star",
-                color: Palette.gold,
-                action: isWishlisted ? onRemoveFromWishlist : onAddToWishlist
-            ))
-            
-            items.append(MenuItem(
                 label: "Add to Folder",
                 subLabel: "Save to a specific folder",
                 icon: "folder.badge.plus",
@@ -278,6 +276,14 @@ struct CardActionMenu: View {
         }
 
         return items
+    }
+
+    private func wishlistAction() {
+        if isWishlisted {
+            onRemoveFromWishlist()
+        } else {
+            onAddToWishlist()
+        }
     }
 }
 

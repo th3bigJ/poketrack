@@ -51,6 +51,8 @@ struct DashboardView: View {
     @State private var liveTotalGbp: Double? = nil
     @State private var livePokemonGbp: Double = 0
     @State private var liveOnePieceGbp: Double = 0
+    @State private var liveCardsGbp: Double = 0
+    @State private var liveSealedGbp: Double = 0
     @State private var totalCostBasis: Double = 0
     @State private var isLoadingValue = false
     @State private var hasFiredInitialLoadComplete = false
@@ -74,7 +76,13 @@ struct DashboardView: View {
 
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
-        return BrandSnapshot(total: t, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp)
+        return BrandSnapshot(
+            total: t,
+            pokemon: livePokemonGbp,
+            onePiece: liveOnePieceGbp,
+            cards: liveCardsGbp,
+            sealed: liveSealedGbp
+        )
     }
 
     private var displayTotal: Double {
@@ -87,6 +95,14 @@ struct DashboardView: View {
     }
 
     private var isScrubbingOrLoaded: Bool { selectedPoint != nil || liveTotalGbp != nil }
+    private var displayCardsValue: Double {
+        if let point = selectedPoint, let cards = point.cards { return cards }
+        return liveCardsGbp
+    }
+    private var displaySealedValue: Double {
+        if let point = selectedPoint, let sealed = point.sealed { return sealed }
+        return liveSealedGbp
+    }
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
     private var activeMarketTrend: MarketTrendMetrics? {
         guard let marketTrendData else { return nil }
@@ -186,14 +202,23 @@ struct DashboardView: View {
                     date: day,
                     total: snapshot.totalGbp,
                     pokemon: snapshot.pokemonGbp,
-                    onePiece: snapshot.onePieceGbp
+                    onePiece: snapshot.onePieceGbp,
+                    cards: snapshot.cardsGbp > 0 || snapshot.sealedGbp > 0 ? snapshot.cardsGbp : snapshot.totalGbp,
+                    sealed: snapshot.cardsGbp > 0 || snapshot.sealedGbp > 0 ? snapshot.sealedGbp : 0
                 )
             }
         }
         if let live = liveTotalGbp {
             let today = cal.startOfDay(for: Date())
             // Always use today's live value so the chart matches the summary value card.
-            pointsByDay[today] = ChartPoint(date: today, total: live, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp)
+            pointsByDay[today] = ChartPoint(
+                date: today,
+                total: live,
+                pokemon: livePokemonGbp,
+                onePiece: liveOnePieceGbp,
+                cards: liveCardsGbp,
+                sealed: liveSealedGbp
+            )
         }
         return pointsByDay.keys.sorted().compactMap { pointsByDay[$0] }
     }
@@ -204,7 +229,17 @@ struct DashboardView: View {
         let cutoff = cal.date(byAdding: .year, value: -1, to: cal.startOfDay(for: Date()))!
         return svc.weeklyAverages
             .filter { $0.weekStart >= cutoff }
-            .map { ChartPoint(date: $0.weekStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
+            .map {
+                let hasExplicitSplit = $0.cardsGbp > 0 || $0.sealedGbp > 0
+                return ChartPoint(
+                    date: $0.weekStart,
+                    total: $0.totalGbp,
+                    pokemon: $0.pokemonGbp,
+                    onePiece: $0.onePieceGbp,
+                    cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
+                    sealed: hasExplicitSplit ? $0.sealedGbp : 0
+                )
+            }
     }
 
     private var monthlyPoints: [ChartPoint] {
@@ -213,7 +248,17 @@ struct DashboardView: View {
         let cutoff = cal.date(byAdding: .year, value: -5, to: cal.startOfDay(for: Date()))!
         return svc.monthlyAverages
             .filter { $0.monthStart >= cutoff }
-            .map { ChartPoint(date: $0.monthStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
+            .map {
+                let hasExplicitSplit = $0.cardsGbp > 0 || $0.sealedGbp > 0
+                return ChartPoint(
+                    date: $0.monthStart,
+                    total: $0.totalGbp,
+                    pokemon: $0.pokemonGbp,
+                    onePiece: $0.onePieceGbp,
+                    cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
+                    sealed: hasExplicitSplit ? $0.sealedGbp : 0
+                )
+            }
     }
 
     private var activePoints: [ChartPoint] {
@@ -230,7 +275,14 @@ struct DashboardView: View {
             case .pokemon: total = point.pokemon
             case .onePiece: total = point.onePiece
             }
-            return ChartPoint(date: point.date, total: total, pokemon: point.pokemon, onePiece: point.onePiece)
+            return ChartPoint(
+                date: point.date,
+                total: total,
+                pokemon: point.pokemon,
+                onePiece: point.onePiece,
+                cards: point.cards,
+                sealed: point.sealed
+            )
         }
     }
 
@@ -310,6 +362,8 @@ struct DashboardView: View {
                 liveTotalGbp = persisted.total
                 livePokemonGbp = persisted.pokemon
                 liveOnePieceGbp = persisted.onePiece
+                liveCardsGbp = persisted.cards
+                liveSealedGbp = persisted.sealed
                 fireInitialLoadCompleteIfReady()
             } else if collectionItems.count > 0 {
                 // No persisted snapshot — compute once synchronously so the gate fires.
@@ -534,6 +588,12 @@ struct DashboardView: View {
                                 .font(.system(size: 30, weight: .bold, design: .rounded))
                                 .foregroundStyle(dashboardPrimaryText)
                                 .contentTransition(.numericText())
+                            HStack(spacing: 12) {
+                                Text("Cards \(formatCurrency(displayCardsValue))")
+                                Text("Sealed \(formatCurrency(displaySealedValue))")
+                            }
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(dashboardSecondaryText)
                         } else {
                             Text("No pricing data yet")
                                 .font(.headline)
@@ -1022,6 +1082,8 @@ struct DashboardView: View {
         var totalValue = 0.0
         var pokemonValue = 0.0
         var onePieceValue = 0.0
+        var cardsValue = 0.0
+        var sealedValue = 0.0
         var totalCost = 0.0
         var cacheMissIDs: [String] = []
 
@@ -1040,6 +1102,7 @@ struct DashboardView: View {
                       let priceUSD = services.sealedProducts.marketPriceUSD(for: pid) else { continue }
                 let gbp = priceUSD * Double(item.quantity) * services.pricing.usdToGbp
                 totalValue += gbp
+                sealedValue += gbp
                 switch TCGBrand.inferredFromMasterCardId(item.cardID) {
                 case .pokemon:  pokemonValue += gbp
                 case .onePiece: onePieceValue += gbp
@@ -1058,6 +1121,7 @@ struct DashboardView: View {
                 ) {
                     let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
                     totalValue += gbp
+                    cardsValue += gbp
                     switch TCGBrand.inferredFromMasterCardId(item.cardID) {
                     case .pokemon:  pokemonValue += gbp
                     case .onePiece: onePieceValue += gbp
@@ -1097,6 +1161,7 @@ struct DashboardView: View {
                 ) ?? 0
                 let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
                 totalValue += gbp
+                cardsValue += gbp
                 switch TCGBrand.inferredFromMasterCardId(item.cardID) {
                 case .pokemon:  pokemonValue += gbp
                 case .onePiece: onePieceValue += gbp
@@ -1108,6 +1173,8 @@ struct DashboardView: View {
         liveTotalGbp = totalValue > 0 ? totalValue : nil
         livePokemonGbp = pokemonValue
         liveOnePieceGbp = onePieceValue
+        liveCardsGbp = cardsValue
+        liveSealedGbp = sealedValue
         totalCostBasis = totalCost
 
         // Keep today's snapshot current throughout the day so the chart always shows live data.
@@ -1518,6 +1585,8 @@ private struct ChartPoint: Identifiable {
     let total: Double
     let pokemon: Double
     let onePiece: Double
+    let cards: Double?
+    let sealed: Double?
 }
 
 private struct DashboardPressStyle: ButtonStyle {

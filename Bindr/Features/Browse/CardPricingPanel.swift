@@ -538,6 +538,10 @@ struct CardPricingPanel: View {
         let grade = selectedGrade ?? "raw"
         if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: variant, grade: grade) {
             currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
+            return
+        }
+        if let usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: variant, grade: grade) {
+            currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
         }
     }
 
