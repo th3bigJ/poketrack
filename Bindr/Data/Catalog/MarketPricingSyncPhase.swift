@@ -67,6 +67,18 @@ struct MarketPricingSyncPhase {
         forceRefresh: Bool = false
     ) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
+        let needsBackfillRetryReset = (await store.meta("pricing_backfill_retry_v2")) != "1"
+        if needsBackfillRetryReset {
+            // Prior versions could mark missing weekly/monthly buckets as processed even when
+            // the fetch failed. Clear those markers once so backfill can retry successfully.
+            for key in BucketDateMath.allWeeklyKeys(from: 2020) + BucketDateMath.allMonthlyKeys(from: 2020) {
+                await store.unmarkBucketProcessed(key: key)
+                await store.unmarkBucketProcessed(key: "sealed/\(key)")
+            }
+            try? await store.setMeta("pricing_history_backfill_v1", "")
+            try? await store.setMeta("sealed_pricing_history_backfill_v1", "")
+            try? await store.setMeta("pricing_backfill_retry_v2", "1")
+        }
         let needsNormalizedMigration = (await store.meta("pricing_normalized_v1")) != "1"
         if needsNormalizedMigration {
             try? await store.setMeta("pricing_history_backfill_v1", "")
@@ -424,14 +436,15 @@ struct MarketPricingSyncPhase {
             points: [CatalogStore.PriceHistoryPoint],
             todayPricing: [String: [String: [String: [String: Double]]]],
             bytes: Int64,
-            dateKey: String
+            dateKey: String,
+            downloaded: Bool
         )
 
         func fetchDailyBucket(dateKey: String) async -> DailyBucketResult {
             let url = AppConfiguration.r2NewPricingDailyURL(dateKey: dateKey)
             guard let data = await Self.fetchBodyIfOK(session: session, url: url),
                   let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [String: Double]]]
-            else { return ([], [:], 0, dateKey) }
+            else { return ([], [:], 0, dateKey, false) }
             let isToday = dateKey == todayDateKey
             var pts: [CatalogStore.PriceHistoryPoint] = []
             var todayMap: [String: [String: [String: [String: Double]]]] = [:]
@@ -449,7 +462,7 @@ struct MarketPricingSyncPhase {
                     }
                 }
             }
-            return (pts, todayMap, Int64(data.count), dateKey)
+            return (pts, todayMap, Int64(data.count), dateKey, true)
         }
 
         var totalBytes: Int64 = 0
@@ -474,7 +487,9 @@ struct MarketPricingSyncPhase {
                         }
                     }
                 }
-                try? await store.markBucketProcessed(key: result.dateKey)
+                if result.downloaded {
+                    try? await store.markBucketProcessed(key: result.dateKey)
+                }
                 await progress.completeFile(byteCount: result.bytes)
             }
         }
@@ -523,7 +538,7 @@ struct MarketPricingSyncPhase {
         await progress.setStatus("Downloading price history…")
         await progress.addPlannedFiles(missingWeekly.count + missingMonthly.count)
 
-        typealias BackfillResult = (points: [CatalogStore.PriceHistoryPoint], bytes: Int64, key: String)
+        typealias BackfillResult = (points: [CatalogStore.PriceHistoryPoint], bytes: Int64, key: String, downloaded: Bool)
 
         func fetchBucket(periodKey: String, periodType: String) async -> BackfillResult {
             let url = periodType == "weekly"
@@ -531,7 +546,7 @@ struct MarketPricingSyncPhase {
                 : AppConfiguration.r2NewPricingMonthlyURL(monthKey: periodKey)
             guard let data = await Self.fetchBodyIfOK(session: session, url: url),
                   let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: [String: [String: Double]]]
-            else { return ([], 0, periodKey) }
+            else { return ([], 0, periodKey, false) }
             var pts: [CatalogStore.PriceHistoryPoint] = []
             for (cardId, variants) in bucket {
                 for (variant, grades) in variants {
@@ -543,7 +558,7 @@ struct MarketPricingSyncPhase {
                     }
                 }
             }
-            return (pts, Int64(data.count), periodKey)
+            return (pts, Int64(data.count), periodKey, true)
         }
 
         let allKeys: [(key: String, periodType: String)] =
@@ -565,7 +580,9 @@ struct MarketPricingSyncPhase {
                 }
                 totalBytes += result.bytes
                 pendingPoints.append(contentsOf: result.points)
-                try? await store.markBucketProcessed(key: result.key)
+                if result.downloaded {
+                    try? await store.markBucketProcessed(key: result.key)
+                }
                 await progress.completeFile(byteCount: result.bytes)
                 if pendingPoints.count > 10_000 {
                     let bySet = Dictionary(grouping: pendingPoints) { BucketDateMath.setCodeFromCardId($0.cardKey) }
@@ -604,7 +621,8 @@ struct MarketPricingSyncPhase {
             compositeKey: String,
             dateKey: String,
             bucket: [String: Double]?,
-            bytes: Int64
+            bytes: Int64,
+            downloaded: Bool
         )
 
         var totalBytes: Int64 = 0
@@ -621,8 +639,8 @@ struct MarketPricingSyncPhase {
                         let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
                         guard let data = await Self.fetchBodyIfOK(session: self.session, url: url),
                               let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
-                        else { return (key, dateKey, nil, 0) }
-                        return (key, dateKey, bucket, Int64(data.count))
+                        else { return (key, dateKey, nil, 0, false) }
+                        return (key, dateKey, bucket, Int64(data.count), true)
                     }
                 }
             }
@@ -633,12 +651,14 @@ struct MarketPricingSyncPhase {
                         let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
                         guard let data = await Self.fetchBodyIfOK(session: self.session, url: url),
                               let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
-                        else { return (key, dateKey, nil, 0) }
-                        return (key, dateKey, bucket, Int64(data.count))
+                        else { return (key, dateKey, nil, 0, false) }
+                        return (key, dateKey, bucket, Int64(data.count), true)
                     }
                 }
                 guard let bucket = result.bucket else {
-                    try? await store.markBucketProcessed(key: result.compositeKey)
+                    if result.downloaded {
+                        try? await store.markBucketProcessed(key: result.compositeKey)
+                    }
                     await progress.completeFile(); continue
                 }
                 totalBytes += result.bytes
@@ -647,7 +667,9 @@ struct MarketPricingSyncPhase {
                     accumulated[productIdStr, default: []].append([dateKey, String(price)])
                     if dateKey >= latestDate { latestDate = dateKey; latestPrices[productIdStr] = price }
                 }
-                try? await store.markBucketProcessed(key: result.compositeKey)
+                if result.downloaded {
+                    try? await store.markBucketProcessed(key: result.compositeKey)
+                }
                 await progress.completeFile(byteCount: result.bytes)
             }
         }
@@ -698,7 +720,7 @@ struct MarketPricingSyncPhase {
         await progress.setStatus("Downloading sealed price history…")
         await progress.addPlannedFiles(missingWeekly.count + missingMonthly.count)
 
-        typealias SealedBackfillResult = (points: [(id: String, periodKey: String, price: Double)], bytes: Int64, key: String)
+        typealias SealedBackfillResult = (points: [(id: String, periodKey: String, price: Double)], bytes: Int64, key: String, downloaded: Bool)
 
         func fetchSealedBucket(compositeKey: String, isWeekly: Bool) async -> SealedBackfillResult {
             let periodKey = String(compositeKey.dropFirst("sealed/".count))
@@ -707,9 +729,9 @@ struct MarketPricingSyncPhase {
                 : AppConfiguration.r2SealedMonthlyURL(monthKey: periodKey)
             guard let data = await Self.fetchBodyIfOK(session: session, url: url),
                   let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
-            else { return ([], 0, compositeKey) }
+            else { return ([], 0, compositeKey, false) }
             let pts = bucket.map { (id: $0.key, periodKey: periodKey, price: $0.value) }
-            return (pts, Int64(data.count), compositeKey)
+            return (pts, Int64(data.count), compositeKey, true)
         }
 
         let allSealedKeys: [(key: String, isWeekly: Bool)] =
@@ -731,7 +753,9 @@ struct MarketPricingSyncPhase {
                 }
                 totalBytes += result.bytes
                 for pt in result.points { accumulated[pt.id, default: []].append([pt.periodKey, String(pt.price)]) }
-                try? await store.markBucketProcessed(key: result.key)
+                if result.downloaded {
+                    try? await store.markBucketProcessed(key: result.key)
+                }
                 await progress.completeFile(byteCount: result.bytes)
             }
         }

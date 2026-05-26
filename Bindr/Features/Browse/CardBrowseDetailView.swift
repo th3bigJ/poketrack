@@ -244,7 +244,9 @@ private struct CardBrowseDetailPage: View {
                     cardHeroSection
 
                     CardPricingPanel(card: card)
+                        .glassCardStyle(cornerRadius: 26, interactive: false)
                     recentSoldOnEbayButton
+                        .glassCardStyle(cornerRadius: 26, interactive: false)
 
                     if showsCollectionSection {
                         collectionSection
@@ -374,16 +376,9 @@ private struct CardBrowseDetailPage: View {
             .padding(.vertical, 14)
             .frame(minHeight: 76)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .fill(colorScheme == .dark ? Color.black : Color.white)
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .stroke(colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08), lineWidth: 1)
-            )
         }
         .buttonStyle(.plain)
+        .glassCardStyle(cornerRadius: 26, interactive: false)
         .contentShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
         .accessibilityLabel("Open recent sold listings on eBay")
     }

@@ -10,6 +10,12 @@ private enum ChartRange: String, CaseIterable {
     case oneYear = "1Y"
 }
 
+private enum ChartDataResolution {
+    case daily
+    case weekly
+    case monthly
+}
+
 // MARK: - Main panel
 
 struct CardPricingPanel: View {
@@ -72,12 +78,43 @@ struct CardPricingPanel: View {
         return history.series[key]
     }
 
-    private var chartPoints: [PriceDataPoint] {
-        guard let series = chartSeries else { return [] }
+    private var resolvedChart: (points: [PriceDataPoint], resolution: ChartDataResolution) {
+        guard let series = chartSeries else { return ([], .daily) }
+
+        let daily31 = Array(series.daily.suffix(31))
+        let weekly13 = Array((series.weekly.isEmpty ? weeklyFromDaily(series.daily) : series.weekly).suffix(13))
+        let monthly12 = Array((series.monthly.isEmpty ? monthlyFromDaily(series.daily) : series.monthly).suffix(12))
+
         switch chartRange {
-        case .oneMonth:    return Array(series.daily.suffix(30))
-        case .threeMonths: return Array(series.weekly.suffix(13))
-        case .oneYear:     return Array(series.monthly.suffix(12))
+        case .oneMonth:
+            if !daily31.isEmpty { return (daily31, .daily) }
+            if !weekly13.isEmpty { return (weekly13, .weekly) }
+            if !monthly12.isEmpty { return (monthly12, .monthly) }
+        case .threeMonths:
+            if !weekly13.isEmpty { return (weekly13, .weekly) }
+            if !daily31.isEmpty { return (daily31, .daily) }
+            if !monthly12.isEmpty { return (monthly12, .monthly) }
+        case .oneYear:
+            if !monthly12.isEmpty { return (monthly12, .monthly) }
+            if !weekly13.isEmpty { return (weekly13, .weekly) }
+            if !daily31.isEmpty { return (daily31, .daily) }
+        }
+        return ([], .daily)
+    }
+
+    private func weeklyFromDaily(_ daily: [PriceDataPoint]) -> [PriceDataPoint] {
+        let tuples = daily.map { [$0.label, String($0.price)] }
+        return BucketDateMath.weeklyAverages(from: tuples, limit: 13).compactMap { pair in
+            guard pair.count >= 2, let price = Double(pair[1]) else { return nil }
+            return PriceDataPoint(id: pair[0], label: pair[0], price: price)
+        }
+    }
+
+    private func monthlyFromDaily(_ daily: [PriceDataPoint]) -> [PriceDataPoint] {
+        let tuples = daily.map { [$0.label, String($0.price)] }
+        return BucketDateMath.monthlyAverages(from: tuples, limit: 12).compactMap { pair in
+            guard pair.count >= 2, let price = Double(pair[1]) else { return nil }
+            return PriceDataPoint(id: pair[0], label: pair[0], price: price)
         }
     }
 
@@ -147,7 +184,7 @@ struct CardPricingPanel: View {
             }
 
             // Chart
-            if !chartPoints.isEmpty {
+            if !resolvedChart.points.isEmpty {
                 chartView
                     .padding(.top, 4)
 
@@ -256,7 +293,7 @@ struct CardPricingPanel: View {
     // MARK: - Chart
 
     private var chartView: some View {
-        let points = chartPoints
+        let points = resolvedChart.points
         let prices = points.map(\.price)
         let minP = (prices.min() ?? 0) * 0.97
         let maxP = (prices.max() ?? 1) * 1.03
@@ -359,14 +396,14 @@ struct CardPricingPanel: View {
 
     // Axis tick labels (short)
     private func truncatedLabel(_ label: String) -> String {
-        switch chartRange {
-        case .oneMonth:
+        switch resolvedChart.resolution {
+        case .daily:
             // "2026-03-21" → "21/03"
             return dailyToShortUK(label)
-        case .threeMonths:
+        case .weekly:
             // "2026-W14" → "30/03"
             return weekLabelToShortUK(label)
-        case .oneYear:
+        case .monthly:
             // "2026-03" → "Mar"
             return monthLabelToShort(label)
         }
@@ -374,12 +411,12 @@ struct CardPricingPanel: View {
 
     // Scrub overlay label (full dd/mm/yy)
     private func scrubLabel(_ label: String) -> String {
-        switch chartRange {
-        case .oneMonth:
+        switch resolvedChart.resolution {
+        case .daily:
             return dailyToFullUK(label)
-        case .threeMonths:
+        case .weekly:
             return weekLabelToFullUK(label)
-        case .oneYear:
+        case .monthly:
             let parts = label.components(separatedBy: "-")
             guard parts.count == 2, let month = Int(parts[1]) else { return label }
             let fmt = DateFormatter()

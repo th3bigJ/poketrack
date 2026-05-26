@@ -194,6 +194,96 @@ struct PulseDots: UIViewRepresentable {
     }
 }
 
+struct CYCyclingTitle: UIViewRepresentable {
+    let messages: [String]
+    let color: UIColor
+    let font: UIFont
+
+    func makeUIView(context: Context) -> _CYCyclingTitleView {
+        let v = _CYCyclingTitleView()
+        v.configure(messages: messages, color: color, font: font)
+        return v
+    }
+
+    func updateUIView(_ uiView: _CYCyclingTitleView, context: Context) {
+        uiView.configure(messages: messages, color: color, font: font)
+    }
+}
+
+final class _CYCyclingTitleView: UIView {
+    private var textLayers: [CATextLayer] = []
+    private var appliedSignature: String = ""
+
+    override var intrinsicContentSize: CGSize {
+        CGSize(width: UIView.noIntrinsicMetric, height: 24)
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        isOpaque = false
+    }
+
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        for textLayer in textLayers {
+            textLayer.frame = bounds
+        }
+    }
+
+    func configure(messages: [String], color: UIColor, font: UIFont) {
+        let signature = messages.joined(separator: "|") + "|\(font.pointSize)"
+        guard signature != appliedSignature else { return }
+        appliedSignature = signature
+        let safeMessages = messages.isEmpty ? ["Syncing iCloud"] : messages
+
+        textLayers.forEach { $0.removeFromSuperlayer() }
+        textLayers.removeAll()
+
+        for (index, message) in safeMessages.enumerated() {
+            let textLayer = CATextLayer()
+            textLayer.contentsScale = UIScreen.main.scale
+            textLayer.alignmentMode = .center
+            textLayer.truncationMode = .end
+            textLayer.foregroundColor = color.cgColor
+            textLayer.font = font
+            textLayer.fontSize = font.pointSize
+            textLayer.string = message
+            textLayer.frame = bounds
+            textLayer.opacity = index == 0 ? 1 : 0
+            layer.addSublayer(textLayer)
+            textLayers.append(textLayer)
+        }
+
+        let step: CFTimeInterval = 3.0
+        let count = safeMessages.count
+        let total = step * Double(count)
+
+        for (index, textLayer) in textLayers.enumerated() {
+            textLayer.removeAnimation(forKey: "cy_opacity_cycle")
+
+            var values: [NSNumber] = []
+            var keyTimes: [NSNumber] = []
+            for slot in 0...count {
+                let activeIndex = slot % count
+                values.append(NSNumber(value: activeIndex == index ? 1.0 : 0.0))
+                keyTimes.append(NSNumber(value: Double(slot) / Double(count)))
+            }
+
+            let anim = CAKeyframeAnimation(keyPath: "opacity")
+            anim.values = values
+            anim.keyTimes = keyTimes
+            anim.calculationMode = .discrete
+            anim.duration = total
+            anim.repeatCount = .infinity
+            anim.isRemovedOnCompletion = false
+            anim.fillMode = .forwards
+            textLayer.add(anim, forKey: "cy_opacity_cycle")
+        }
+    }
+}
+
 // MARK: - Launch wordmark view
 
 struct LaunchWordmarkView: View {
@@ -210,6 +300,12 @@ struct LaunchWordmarkView: View {
     @State private var hasStartedAnimation = false
     @State private var hasFiredRevealComplete = false
     private let fullWord = "BINDR"
+    private let loadingStatusMessages = [
+        "Syncing iCloud",
+        "Loading Cards",
+        "Updating Pricing",
+        "Loading Dashboard"
+    ]
 
     private var foreground: Color { colorScheme == .dark ? .white : Color(white: 0.08) }
     private var subtle: Color { foreground.opacity(0.38) }
@@ -268,12 +364,17 @@ struct LaunchWordmarkView: View {
 
             VStack {
                 Spacer()
-                statusArea
-                    .frame(height: 170)
-                    .opacity(statusVisible ? 1 : 0)
-                    .offset(y: statusVisible ? 0 : 12)
-                    .padding(.horizontal, 40)
-                    .padding(.bottom, 44)
+                HStack(spacing: 0) {
+                    Spacer(minLength: 0)
+                    statusArea
+                        .fixedSize(horizontal: true, vertical: false)
+                        .frame(height: 112, alignment: .center)
+                        .opacity(statusVisible ? 1 : 0)
+                        .offset(y: statusVisible ? 0 : 12)
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 52)
             }
             .allowsHitTesting(false)
         }
@@ -336,8 +437,8 @@ struct LaunchWordmarkView: View {
 
     private var cloudKitSyncView: some View {
         launchStatusPanel(
-            title: "Syncing iCloud",
-            status: "Loading your cards from iCloud...",
+            title: loadingStatusMessages.first ?? "Syncing iCloud",
+            status: "Preparing data…",
             icon: "icloud.and.arrow.down.fill",
             progress: nil
         )
@@ -347,11 +448,12 @@ struct LaunchWordmarkView: View {
 
     @ViewBuilder
     private func catalogProgressView(_ p: LaunchProgressState) -> some View {
+        let isByteProgress = p.hasByteProgress
         launchStatusPanel(
-            title: p.message,
-            status: p.status,
-            icon: p.hasByteProgress ? "sparkles" : "square.grid.2x2.fill",
-            progress: p.hasByteProgress ? p : nil
+            title: isByteProgress ? p.message : (loadingStatusMessages.first ?? "Syncing iCloud"),
+            status: isByteProgress ? p.status : "Preparing data…",
+            icon: isByteProgress ? "sparkles" : "square.grid.2x2.fill",
+            progress: isByteProgress ? p : nil
         )
     }
 
@@ -361,77 +463,87 @@ struct LaunchWordmarkView: View {
         icon: String,
         progress: LaunchProgressState?
     ) -> some View {
-        VStack(spacing: 14) {
-            HStack(alignment: .top, spacing: 12) {
+        VStack(spacing: 10) {
+            VStack(spacing: 8) {
                 Image(systemName: icon)
                     .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(bindrAccent)
-                    .frame(width: 34, height: 34)
-                    .background(bindrAccent.opacity(colorScheme == .dark ? 0.16 : 0.10), in: Circle())
+                    .foregroundStyle(Color.white.opacity(0.92))
+                    .frame(width: 36, height: 36)
+                    .background(
+                        Circle()
+                            .fill(
+                                LinearGradient(
+                                    colors: [
+                                        bindrAccent.opacity(colorScheme == .dark ? 0.55 : 0.45),
+                                        bindrAccent.opacity(colorScheme == .dark ? 0.28 : 0.22)
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                    )
+                    .overlay {
+                        Circle()
+                            .strokeBorder(Color.white.opacity(colorScheme == .dark ? 0.18 : 0.42), lineWidth: 0.8)
+                    }
+                if progress == nil {
+                    PulseDots(color: bindrAccent.opacity(0.75))
+                }
+            }
+            .frame(width: 36, alignment: .center)
 
-                VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .center, spacing: 4) {
+                if progress == nil {
+                    CYCyclingTitle(
+                        messages: loadingStatusMessages,
+                        color: UIColor(foreground.opacity(0.92)),
+                        font: .systemFont(ofSize: 16, weight: .bold)
+                    )
+                    .frame(height: 24)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                } else {
                     Text(title)
                         .font(.system(size: 16, weight: .bold, design: .rounded))
                         .foregroundStyle(foreground.opacity(0.92))
                         .lineLimit(2)
                         .minimumScaleFactor(0.85)
-                    Text(status)
-                        .font(.system(size: 13, weight: .regular))
-                        .foregroundStyle(subtle)
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.85)
+                        .multilineTextAlignment(.center)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-            }
 
-            if let progress {
-                VStack(spacing: 8) {
-                    CAProgressBar(fraction: progress.fraction, fillColor: bindrAccent, height: 5)
-                        .frame(maxWidth: .infinity)
-                        .clipShape(Capsule())
+                Text(status)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(subtle)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.85)
+                    .multilineTextAlignment(.center)
 
-                    HStack(spacing: 6) {
-                        Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
-                            .font(.system(size: 12, weight: .bold, design: .rounded))
-                            .foregroundStyle(foreground.opacity(0.70))
-                        if !byteProgressText.isEmpty {
-                            Text("·")
-                                .foregroundStyle(subtle)
-                            Text(byteProgressText)
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundStyle(subtle)
+                if let progress {
+                    VStack(spacing: 7) {
+                        CAProgressBar(fraction: progress.fraction, fillColor: bindrAccent, height: 4)
+                            .frame(width: 220)
+                            .clipShape(Capsule())
+
+                        HStack(spacing: 6) {
+                            Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
+                                .font(.system(size: 12, weight: .bold, design: .rounded))
+                                .foregroundStyle(foreground.opacity(0.70))
+                            if !byteProgressText.isEmpty {
+                                Text("·")
+                                    .foregroundStyle(subtle)
+                                Text(byteProgressText)
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundStyle(subtle)
+                            }
                         }
+                        .frame(width: 220, alignment: .center)
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 4)
                 }
-            } else {
-                PulseDots(color: bindrAccent.opacity(0.55))
-                    .frame(maxWidth: .infinity, alignment: .leading)
             }
+            .frame(maxWidth: .infinity, alignment: .center)
         }
-        .padding(.horizontal, 18)
-        .padding(.vertical, 18)
-        .frame(maxWidth: 330)
-        .background {
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(.ultraThinMaterial)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 24, style: .continuous)
-                        .strokeBorder(
-                            LinearGradient(
-                                colors: [
-                                    Color.white.opacity(colorScheme == .dark ? 0.16 : 0.48),
-                                    bindrAccent.opacity(colorScheme == .dark ? 0.12 : 0.16),
-                                    Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.08)
-                                ],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ),
-                            lineWidth: 0.75
-                        )
-                }
-        }
-        .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.18 : 0.08), radius: 18, x: 0, y: 10)
+        .padding(.horizontal, 10)
+        .frame(width: 320, alignment: .center)
     }
 
     // MARK: Animation sequence

@@ -92,7 +92,7 @@ struct CardActionMenu: View {
             }
             Haptics.lightImpact()
         } label: {
-            ZStack {
+            HStack(spacing: 12) {
                 HStack(spacing: 12) {
                     Image(systemName: primaryIcon)
                         .font(.system(size: 18, weight: .bold))
@@ -101,14 +101,11 @@ struct CardActionMenu: View {
                         .font(.system(size: 17, weight: .bold, design: .rounded))
                         .fixedSize()
                 }
-
-                HStack {
-                    Spacer()
-                    Image(systemName: "chevron.up")
-                        .font(.system(size: 11, weight: .bold))
-                        .opacity(0.4)
-                        .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
-                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                Image(systemName: "chevron.up")
+                    .font(.system(size: 11, weight: .bold))
+                    .opacity(0.4)
+                    .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
             }
             .padding(.horizontal, 20)
             .frame(maxWidth: .infinity)

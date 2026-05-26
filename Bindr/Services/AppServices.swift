@@ -192,15 +192,19 @@ final class AppServices {
             await self.runStartupCatalogPipeline(updateBootstrapProgressUI: true)
         }
         
-        // Fails open after 8 seconds timeout (slow network or offline). Keep cached/bundled values and proceed.
+        // Enforce a strict launch gate: if timeout is reached, keep showing
+        // the launch surface and wait for the blocking bootstrap task to finish.
         let completedWithinTimeout = await waitForTaskOrTimeout(
             bootstrapTask,
             timeoutNanoseconds: 8_000_000_000 // 8 seconds
         )
         
         if !completedWithinTimeout {
-            // Prime local cached/bundled catalog datasets immediately so the user can navigate the dashboard safely offline.
+            // Prime local cached/bundled catalog datasets while waiting, then
+            // hold the gate until bootstrap fully completes.
             await primeLaunchCatalogFromLocalCache()
+            bootstrapStatus = "Finishing update…"
+            await bootstrapTask.value
         }
         
         brandSettings.markInitialAppBootstrapCompleted()
@@ -246,8 +250,12 @@ final class AppServices {
                 timeoutNanoseconds: launchDailyRefreshTimeoutNanoseconds
             )
             if !completedWithinTimeout {
-                // Fail open after timeout (offline/slow network). Keep cached values and let the
-                // same refresh task continue in the background.
+                // Keep the launch gate up until the blocking refresh fully completes.
+                // Previously we marked the launch pipeline complete here even after
+                // timeout, which let the splash/overlay dismiss while this task was
+                // still running.
+                bootstrapStatus = "Finishing update…"
+                await blockingTask.value
             }
             isLaunchCatalogPipelineComplete = true
             launchCatalogPipelineCompletedAt = Date()
@@ -675,13 +683,20 @@ final class AppServices {
         }
 
         let isFreshInstall = !BindrApp.storeExistedAtLaunch
+        if !isFreshInstall {
+            // Existing installs should not hold the launch overlay for CloudKit catch-up.
+            // We keep syncing in the background, but let the user in once local launch gates clear.
+            print("[CloudKit] existing install — skipping launch gate and syncing in background")
+            markCloudKitImportComplete()
+            return
+        }
         // SwiftData CloudKit merges can arrive several seconds after the last remote
         // change notification. Keep the overlay up through that quiet period; a
         // longer honest launch is better than revealing a frozen dashboard.
-        let quietWindow: TimeInterval = isFreshInstall ? 10.0 : 8.0
-        let timeout: TimeInterval     = isFreshInstall ? 45.0 : 25.0
+        let quietWindow: TimeInterval = 10.0
+        let timeout: TimeInterval = 45.0
 
-        print("[CloudKit] \(isFreshInstall ? "fresh install" : "existing install") — idle monitor armed (quietWindow=\(quietWindow)s, timeout=\(timeout)s)")
+        print("[CloudKit] fresh install — idle monitor armed (quietWindow=\(quietWindow)s, timeout=\(timeout)s)")
 
         let monitor = CloudKitIdleMonitor(quietWindow: quietWindow) { [weak self] in
             guard let self else { return true }

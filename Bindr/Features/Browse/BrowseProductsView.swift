@@ -1040,10 +1040,6 @@ private struct SealedProductDetailPage: View {
         colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
     }
 
-    private var sectionBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.06)
-    }
-
     private var recentSoldOnEbayButton: some View {
         Button {
             guard let url = ebayRecentSoldURL else { return }
@@ -1070,14 +1066,6 @@ private struct SealedProductDetailPage: View {
             .padding(.vertical, 14)
             .frame(minHeight: 76)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .fill(sectionInsetBackground)
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .stroke(sectionBorder, lineWidth: 1)
-            }
         }
         .buttonStyle(.plain)
         .contentShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
@@ -1204,12 +1192,14 @@ private struct SealedProductDetailPage: View {
                 Haptics.lightImpact()
             } label: {
                 HStack(spacing: 12) {
-                    Image(systemName: isOwned ? "folder.fill" : "plus.circle.fill")
-                        .font(.system(size: 18, weight: .bold))
-                    Text(isOwned ? "Manage..." : "Add to...")
-                        .font(.system(size: 17, weight: .bold, design: .rounded))
-                        .fixedSize()
-                    Spacer()
+                    HStack(spacing: 12) {
+                        Image(systemName: isOwned ? "folder.fill" : "plus.circle.fill")
+                            .font(.system(size: 18, weight: .bold))
+                        Text(isOwned ? "Manage..." : "Add to...")
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .fixedSize()
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     Image(systemName: "chevron.up")
                         .font(.system(size: 11, weight: .bold))
                         .opacity(0.4)
@@ -1575,6 +1565,12 @@ private enum SealedChartRange: String, CaseIterable {
     case oneYear = "1Y"
 }
 
+private enum SealedChartDataResolution {
+    case daily
+    case weekly
+    case monthly
+}
+
 private struct SealedProductPricingPanel: View {
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
@@ -1587,12 +1583,43 @@ private struct SealedProductPricingPanel: View {
     @State private var scrubPoint: PriceDataPoint? = nil
     @State private var isLoading = false
 
-    private var chartPoints: [PriceDataPoint] {
-        guard let history else { return [] }
+    private var resolvedChart: (points: [PriceDataPoint], resolution: SealedChartDataResolution) {
+        guard let history else { return ([], .daily) }
+
+        let daily31 = Array(history.daily.suffix(31))
+        let weekly13 = Array((history.weekly.isEmpty ? weeklyFromDaily(history.daily) : history.weekly).suffix(13))
+        let monthly12 = Array((history.monthly.isEmpty ? monthlyFromDaily(history.daily) : history.monthly).suffix(12))
+
         switch chartRange {
-        case .oneMonth:     return Array(history.daily.suffix(30))
-        case .threeMonths:  return Array(history.weekly.suffix(13))
-        case .oneYear:      return Array(history.monthly.suffix(12))
+        case .oneMonth:
+            if !daily31.isEmpty { return (daily31, .daily) }
+            if !weekly13.isEmpty { return (weekly13, .weekly) }
+            if !monthly12.isEmpty { return (monthly12, .monthly) }
+        case .threeMonths:
+            if !weekly13.isEmpty { return (weekly13, .weekly) }
+            if !daily31.isEmpty { return (daily31, .daily) }
+            if !monthly12.isEmpty { return (monthly12, .monthly) }
+        case .oneYear:
+            if !monthly12.isEmpty { return (monthly12, .monthly) }
+            if !weekly13.isEmpty { return (weekly13, .weekly) }
+            if !daily31.isEmpty { return (daily31, .daily) }
+        }
+        return ([], .daily)
+    }
+
+    private func weeklyFromDaily(_ daily: [PriceDataPoint]) -> [PriceDataPoint] {
+        let tuples = daily.map { [$0.label, String($0.price)] }
+        return BucketDateMath.weeklyAverages(from: tuples, limit: 13).compactMap { pair in
+            guard pair.count >= 2, let price = Double(pair[1]) else { return nil }
+            return PriceDataPoint(id: pair[0], label: pair[0], price: price)
+        }
+    }
+
+    private func monthlyFromDaily(_ daily: [PriceDataPoint]) -> [PriceDataPoint] {
+        let tuples = daily.map { [$0.label, String($0.price)] }
+        return BucketDateMath.monthlyAverages(from: tuples, limit: 12).compactMap { pair in
+            guard pair.count >= 2, let price = Double(pair[1]) else { return nil }
+            return PriceDataPoint(id: pair[0], label: pair[0], price: price)
         }
     }
 
@@ -1631,7 +1658,7 @@ private struct SealedProductPricingPanel: View {
                 .padding(.bottom, 4)
             }
 
-            if !chartPoints.isEmpty {
+            if !resolvedChart.points.isEmpty {
                 chartView
                     .padding(.top, 4)
 
@@ -1670,7 +1697,7 @@ private struct SealedProductPricingPanel: View {
     }
 
     private var chartView: some View {
-        let points = chartPoints
+        let points = resolvedChart.points
         let prices = points.map(\.price)
         let minP = (prices.min() ?? 0) * 0.97
         let maxP = (prices.max() ?? 1) * 1.03
@@ -1778,18 +1805,18 @@ private struct SealedProductPricingPanel: View {
     }
 
     private func truncatedLabel(_ label: String) -> String {
-        switch chartRange {
-        case .oneMonth:    return dailyToShortUK(label)
-        case .threeMonths: return weekLabelToShortUK(label)
-        case .oneYear:     return monthLabelToShort(label)
+        switch resolvedChart.resolution {
+        case .daily: return dailyToShortUK(label)
+        case .weekly: return weekLabelToShortUK(label)
+        case .monthly: return monthLabelToShort(label)
         }
     }
 
     private func scrubLabel(_ label: String) -> String {
-        switch chartRange {
-        case .oneMonth:    return dailyToFullUK(label)
-        case .threeMonths: return weekLabelToFullUK(label)
-        case .oneYear:
+        switch resolvedChart.resolution {
+        case .daily: return dailyToFullUK(label)
+        case .weekly: return weekLabelToFullUK(label)
+        case .monthly:
             let parts = label.components(separatedBy: "-")
             guard parts.count == 2, let month = Int(parts[1]) else { return label }
             return "\(DateFormatter().shortMonthSymbols[month - 1]) \(parts[0])"
