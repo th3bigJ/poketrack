@@ -170,8 +170,9 @@ struct RootView: View {
         guard !hasScheduledPostLaunchServices else { return }
         hasScheduledPostLaunchServices = true
         Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 20_000_000_000)
+            try? await Task.sleep(nanoseconds: 20_000_000_000)    // 20 second delay
             guard !Task.isCancelled else { return }
+            LaunchTraceProfiler.flushToFile()
             if services.brandSettings.hasCompletedBrandOnboarding {
                 await services.socialPush.updateRegistrationState()
             }
@@ -478,6 +479,7 @@ struct RootView: View {
         .onChange(of: isLaunchSequenceComplete) { _, complete in
             if complete {
                 launchLog("isLaunchSequenceComplete — fading overlay")
+                LaunchTraceProfiler.mark("isLaunchSequenceComplete — fading overlay")
                 // Stop the 100ms elapsed-time timer BEFORE starting the CALayer fade.
                 // The timer mutates @State (launchElapsedTenths) every 100ms, causing
                 // RootView.body to re-evaluate. During a 450ms fade that means 4–5
@@ -493,6 +495,7 @@ struct RootView: View {
                 // work, the overlay stays invisible but still intercepts touches for
                 // several seconds. Flipping hit-testing here avoids that gap entirely.
                 isLaunchOverlayHitTestingEnabled = false
+                LaunchTraceProfiler.mark("hit-testing disabled")
 
                 // Trigger the CALayer fade imperatively — this starts the animation on
                 // the render server immediately without touching any SwiftUI @State.
@@ -506,6 +509,7 @@ struct RootView: View {
                     duration: 0.45,
                     completion: {
                         launchLog("overlay fade complete — app is ready")
+                        LaunchTraceProfiler.mark("overlay fade complete")
                         Task { @MainActor in
                             // Flip the fallback flag now that the fade is visually done.
                             // This is the first @State mutation after launch — SwiftUI's
@@ -550,7 +554,9 @@ struct RootView: View {
             // Start watching for CloudKit's initial import event immediately —
             // before any other launch work so the monitor is registered before
             // the notification fires.
+            LaunchTraceProfiler.begin("beginCloudKitReadinessMonitoring")
             services.beginCloudKitReadinessMonitoring()
+            LaunchTraceProfiler.end("beginCloudKitReadinessMonitoring")
             if services.isReady && !hasInsertedMainContent {
                 launchLog("inserting mainContent immediately (already ready at launch)")
                 hasInsertedMainContent = true
@@ -588,6 +594,7 @@ struct RootView: View {
             //     animation, then run the catalog pipeline.
 
             launchLog("root .task started")
+            LaunchTraceProfiler.mark("RootView.task launched")
             launchTimerTask = Task { @MainActor in
                 while !Task.isCancelled {
                     try? await Task.sleep(nanoseconds: 100_000_000)
@@ -600,13 +607,16 @@ struct RootView: View {
                 try? await Task.sleep(nanoseconds: 50_000_000)
             }
             launchLog("splash dismissed")
+            LaunchTraceProfiler.mark("splash dismissed")
             await Task.yield()
 
             if showOnboardingImmediate {
                 // First-run: bootstrap in background while user goes through onboarding.
                 if !services.brandSettings.hasCompletedInitialAppBootstrap {
                     launchLog("bootstrap() starting (first-run)")
+                    LaunchTraceProfiler.begin("bootstrap (first-run)")
                     await services.bootstrap()
+                    LaunchTraceProfiler.end("bootstrap (first-run)")
                     launchLog("bootstrap() done")
                 }
                 // Wait for onboarding to finish — wordmark appears afterward.
@@ -621,11 +631,14 @@ struct RootView: View {
                 try? await Task.sleep(nanoseconds: 50_000_000)
             }
             launchLog("wordmark revealed — starting catalog pipeline")
+            LaunchTraceProfiler.mark("wordmark revealed")
             await Task.yield()
 
             if services.isReady {
                 launchLog("bootstrapCatalogInBackgroundIfNeeded starting")
+                LaunchTraceProfiler.begin("bootstrapCatalogInBackgroundIfNeeded")
                 await services.bootstrapCatalogInBackgroundIfNeeded()
+                LaunchTraceProfiler.end("bootstrapCatalogInBackgroundIfNeeded")
                 launchLog("bootstrapCatalogInBackgroundIfNeeded done")
             }
             // Push registration and wishlist/ledger setup are intentionally scheduled

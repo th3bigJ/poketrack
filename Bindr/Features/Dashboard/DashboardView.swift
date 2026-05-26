@@ -1058,9 +1058,16 @@ struct DashboardView: View {
         defer { isPreparingInitialDashboardData = false }
 
         let launchStart = ContinuousClock().now
+        LaunchTraceProfiler.begin("prepareInitialDashboardData")
+
         onInitialLoadStatusChange?("Loading your collection...")
+        LaunchTraceProfiler.begin("reloadDashboardInventory")
         await reloadDashboardInventory(deferForLaunch: false)
+        LaunchTraceProfiler.end("reloadDashboardInventory")
+
+        LaunchTraceProfiler.begin("recomputeCollectionStats")
         recomputeCollectionStats()
+        LaunchTraceProfiler.end("recomputeCollectionStats")
 
         onInitialLoadStatusChange?("Checking saved pricing...")
         if let persisted = svc.todayPersistedSnapshot() {
@@ -1070,28 +1077,36 @@ struct DashboardView: View {
             liveCardsGbp = persisted.cards
             liveSealedGbp = persisted.sealed
         } else if collectionItems.count > 0 {
-            print("[Dashboard⏱] no persisted snapshot — computing behind launch overlay")
+            print("[Dashboard⏱] no persisted snapshot — computing live value")
             onInitialLoadStatusChange?("Calculating your collection value...")
+            LaunchTraceProfiler.begin("computeLiveValue")
             await computeLiveValue()
+            LaunchTraceProfiler.end("computeLiveValue")
         }
 
         onInitialLoadStatusChange?("Loading pricing history...")
+        LaunchTraceProfiler.begin("loadAllFromStore")
         svc.loadAllFromStore()
+        LaunchTraceProfiler.end("loadAllFromStore")
 
         if visibleCollectionItems.count > 0 || allLedgerLines.count > 0 {
             onInitialLoadStatusChange?("Preparing card details...")
+            LaunchTraceProfiler.begin("resolveDashboardMetadata")
             await resolveDashboardMetadata()
+            LaunchTraceProfiler.end("resolveDashboardMetadata")
+
             onInitialLoadStatusChange?("Loading market trends...")
+            LaunchTraceProfiler.begin("loadMarketTrendBlob")
             await loadMarketTrendBlob()
+            LaunchTraceProfiler.end("loadMarketTrendBlob")
         }
 
-        // Give SwiftUI one turn to lay out the populated dashboard while the
-        // launch overlay is still intercepting touches.
         onInitialLoadStatusChange?("Almost ready...")
         await Task.yield()
         try? await Task.sleep(nanoseconds: 250_000_000)
 
         hasPreparedInitialDashboardData = true
+        LaunchTraceProfiler.end("prepareInitialDashboardData")
         print("[Dashboard⏱] prepareInitialDashboardData: \(ContinuousClock().now - launchStart)")
         fireInitialLoadCompleteIfReady()
     }
@@ -1112,7 +1127,9 @@ struct DashboardView: View {
             sortBy: [SortDescriptor(\.dateAdded, order: .reverse)]
         )
         wishlistDescriptor.fetchLimit = 500
-        collectionItems = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
+        var collectionDescriptor = FetchDescriptor<CollectionItem>()
+        collectionDescriptor.fetchLimit = 5000
+        collectionItems = (try? modelContext.fetch(collectionDescriptor)) ?? []
         wishlistItems = (try? modelContext.fetch(wishlistDescriptor)) ?? []
         binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         dashboardDataRevision += 1

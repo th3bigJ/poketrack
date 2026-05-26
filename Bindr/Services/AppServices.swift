@@ -185,8 +185,9 @@ final class AppServices {
     func bootstrap() async {
         guard !isReady, !isBootstrapping else { return }
         isBootstrapping = true
-        defer { isBootstrapping = false }
-        
+        LaunchTraceProfiler.begin("bootstrap")
+        defer { isBootstrapping = false; LaunchTraceProfiler.end("bootstrap") }
+
         let bootstrapTask = Task { [weak self] in
             guard let self else { return }
             await self.runStartupCatalogPipeline(updateBootstrapProgressUI: true)
@@ -219,6 +220,8 @@ final class AppServices {
 
     /// Returning-user launch path: quickly prime local catalog data, then refresh network-backed data in the background.
     func bootstrapCatalogInBackgroundIfNeeded() async {
+        LaunchTraceProfiler.begin("bootstrapCatalogInBackgroundIfNeeded")
+        defer { LaunchTraceProfiler.end("bootstrapCatalogInBackgroundIfNeeded") }
         while !hasResolvedLaunchCatalogRefreshRequirement {
             try? await Task.sleep(nanoseconds: 50_000_000)
         }
