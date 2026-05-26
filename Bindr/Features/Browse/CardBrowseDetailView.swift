@@ -378,7 +378,6 @@ private struct CardBrowseDetailPage: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .buttonStyle(.plain)
-        .glassCardStyle(cornerRadius: 26, interactive: false)
         .contentShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
         .accessibilityLabel("Open recent sold listings on eBay")
     }

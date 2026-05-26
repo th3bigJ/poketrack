@@ -546,14 +546,6 @@ struct CardDetailSheet: View {
             .padding(.vertical, 14)
             .frame(minHeight: 76)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .fill(sectionInsetBackground)
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .stroke(sectionBorder, lineWidth: 1)
-            }
         }
         .buttonStyle(.plain)
         .contentShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
