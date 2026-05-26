@@ -122,7 +122,11 @@ struct CardDetailSheet: View {
             applyInitialScrollPositionIfNeeded()
         }
         .sheet(item: $editingLine) { line in
-            EditCollectionItemSheet(line: line, cardDisplayName: currentCard.cardName)
+            EditCollectionItemSheet(
+                line: line,
+                cardDisplayName: currentCard.cardName,
+                availableVariantKeys: wishlistVariantKeys
+            )
         }
         .sheet(item: $dispositionLine) { line in
             HoldingDispositionSheet(line: line, cardDisplayName: currentCard.cardName)

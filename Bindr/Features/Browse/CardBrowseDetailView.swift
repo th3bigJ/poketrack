@@ -274,7 +274,11 @@ private struct CardBrowseDetailPage: View {
             services.setupCollectionLedger(modelContext: modelContext)
         }
         .sheet(item: $editingLine) { line in
-            EditCollectionItemSheet(line: line, cardDisplayName: card.cardName)
+            EditCollectionItemSheet(
+                line: line,
+                cardDisplayName: card.cardName,
+                availableVariantKeys: wishlistVariantKeys
+            )
         }
         .sheet(item: $dispositionLine) { line in
             HoldingDispositionSheet(line: line, cardDisplayName: card.cardName)
@@ -1657,8 +1661,10 @@ struct EditCollectionItemSheet: View {
 
     let line: HoldingLine
     let cardDisplayName: String
+    let availableVariantKeys: [String]
 
     @State private var acquisitionKind: CollectionAcquisitionKind
+    @State private var selectedVariantKey: String
     @State private var quantity: Int
     @State private var cardCondition: CardCondition
     @State private var gradingCompany: GradingCompany
@@ -1669,10 +1675,12 @@ struct EditCollectionItemSheet: View {
     @State private var notes: String
     @State private var errorMessage: String?
 
-    init(line: HoldingLine, cardDisplayName: String) {
+    init(line: HoldingLine, cardDisplayName: String, availableVariantKeys: [String] = ["normal"]) {
         self.line = line
         self.cardDisplayName = cardDisplayName
+        self.availableVariantKeys = availableVariantKeys.isEmpty ? ["normal"] : availableVariantKeys
         _acquisitionKind = State(initialValue: Self.acquisitionKind(for: line.direction))
+        _selectedVariantKey = State(initialValue: line.variantKey)
         _quantity = State(initialValue: max(line.quantity, 1))
         _cardCondition = State(initialValue: line.itemKind == ProductKind.gradedItem.rawValue ? .graded : .raw)
         _gradingCompany = State(initialValue: Self.gradingCompany(for: line.gradingCompany))
@@ -1693,6 +1701,23 @@ struct EditCollectionItemSheet: View {
                         }
                     }
                     .pickerStyle(.segmented)
+                }
+
+                Section {
+                    if availableVariantKeys.count > 1 {
+                        Picker("Variant", selection: $selectedVariantKey) {
+                            ForEach(availableVariantKeys, id: \.self) { key in
+                                Text(variantLabel(key)).tag(key)
+                            }
+                        }
+                    } else {
+                        HStack {
+                            Text("Variant")
+                            Spacer()
+                            Text(variantLabel(selectedVariantKey))
+                                .foregroundStyle(.secondary)
+                        }
+                    }
                 }
 
                 Section {
@@ -1785,11 +1810,12 @@ struct EditCollectionItemSheet: View {
             let targetProductKind = cardCondition == .graded ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue
             let targetGradingCompany = cardCondition == .graded ? gradingCompany.rawValue : nil
             let targetGrade = cardCondition == .graded ? "10" : nil
-            let isConditionChange = line.item.itemKind != targetProductKind
+            let isConditionOrVariantChange = line.item.itemKind != targetProductKind
+                || line.item.variantKey != selectedVariantKey
                 || line.item.gradingCompany != targetGradingCompany
                 || line.item.grade != targetGrade
 
-            if isConditionChange {
+            if isConditionOrVariantChange {
                 guard let ledger = services.collectionLedger else {
                     errorMessage = "Collection isn’t ready. Try again."
                     return
@@ -1797,6 +1823,7 @@ struct EditCollectionItemSheet: View {
                 let target = try ledger.reclassifyCardUnits(
                     item: line.item,
                     quantity: min(quantity, line.item.quantity),
+                    targetVariantKey: selectedVariantKey,
                     targetProductKind: targetProductKind,
                     targetGradingCompany: targetGradingCompany,
                     targetGrade: targetGrade,
@@ -1878,6 +1905,16 @@ struct EditCollectionItemSheet: View {
             throw HoldingDispositionError.invalidPrice
         }
         return value
+    }
+
+    private func variantLabel(_ key: String) -> String {
+        let spaced = key
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
     }
 
     private static func acquisitionKind(for direction: LedgerDirection) -> CollectionAcquisitionKind {

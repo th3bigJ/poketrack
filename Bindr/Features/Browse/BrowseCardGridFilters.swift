@@ -358,9 +358,9 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
 
 struct BrowseGridOptions: Equatable, Sendable, Codable {
     var showCardName = true
-    var showSetName = false
+    var showSetName = true
     var showSetID = false
-    var showPricing = false
+    var showPricing = true
     var showOwned = true
     var columnCount = 3
 

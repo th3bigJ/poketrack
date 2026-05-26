@@ -229,6 +229,7 @@ final class CollectionLedgerService {
     func reclassifyCardUnits(
         item: CollectionItem,
         quantity: Int,
+        targetVariantKey: String? = nil,
         targetProductKind: String,
         targetGradingCompany: String?,
         targetGrade: String?,
@@ -242,7 +243,9 @@ final class CollectionLedgerService {
 
         let normalizedCompany = cleanOptionalString(targetGradingCompany)
         let normalizedGrade = cleanOptionalString(targetGrade)
+        let normalizedVariantKey = cleanOptionalString(targetVariantKey) ?? item.variantKey
         if item.itemKind == targetProductKind,
+           item.variantKey == normalizedVariantKey,
            item.gradingCompany == normalizedCompany,
            item.grade == normalizedGrade {
             return item
@@ -250,7 +253,7 @@ final class CollectionLedgerService {
 
         let target = try findOrCreateCardStack(
             cardID: item.cardID,
-            variantKey: item.variantKey,
+            variantKey: normalizedVariantKey,
             productKind: targetProductKind,
             gradingCompany: normalizedCompany,
             grade: normalizedGrade

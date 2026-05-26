@@ -1186,6 +1186,18 @@ private struct SealedProductDetailPage: View {
     private var actionButtons: some View {
         HStack(spacing: 12) {
             Button {
+                toggleWishlist()
+            } label: {
+                Image(systemName: isWishlisted ? "star.fill" : "star")
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundStyle(Color(red: 0.98, green: 0.78, blue: 0.18))
+                    .frame(width: 56, height: 56)
+                    .glassCardStyle(cornerRadius: 18, interactive: true)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(isWishlisted ? "Remove from wishlist" : "Add to wishlist")
+
+            Button {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
                     isMenuExpanded.toggle()
                 }
@@ -1245,10 +1257,6 @@ private struct SealedProductDetailPage: View {
         VStack(spacing: 0) {
             menuRow(label: "Add to Collection", subLabel: isOwned ? "Add more copies" : "Add to your collection", icon: "plus.circle.fill", color: SealedPricingPalette.success) {
                 showAddSheet = true
-            }
-            Divider().padding(.horizontal, 20).opacity(0.06)
-            menuRow(label: isWishlisted ? "Remove from Wish List" : "Wish List", subLabel: isWishlisted ? "Currently on your wish list" : "Add to your wish list", icon: isWishlisted ? "star.slash" : "star", color: Color(red: 0.98, green: 0.78, blue: 0.18)) {
-                toggleWishlist()
             }
             Divider().padding(.horizontal, 20).opacity(0.06)
             menuRow(label: "Add to Folder", subLabel: "Save to a specific folder", icon: "folder.badge.plus", color: Color(red: 0.18, green: 0.72, blue: 0.88)) {

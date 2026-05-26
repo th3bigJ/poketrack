@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 // MARK: - ThemesView
 //
@@ -89,14 +90,58 @@ struct ThemesView: View {
                 ForEach(ThemeSettings.presetColors, id: \.self) { hex in
                     ColorSwatch(
                         hex: hex,
-                        isSelected: services.theme.accentColorHex == hex
+                        isSelected: normalizedAccentHex == normalizeHex(hex)
                     ) {
                         services.theme.accentColorHex = hex
                         Haptics.lightImpact()
                     }
                 }
+
+                ColorPickerSwatch(
+                    selection: customAccentBinding,
+                    isSelected: isUsingCustomAccent
+                )
             }
         }
+    }
+
+    private var normalizedAccentHex: String {
+        normalizeHex(services.theme.accentColorHex)
+    }
+
+    private var isUsingCustomAccent: Bool {
+        !ThemeSettings.presetColors.contains(where: { normalizeHex($0) == normalizedAccentHex })
+    }
+
+    private var customAccentBinding: Binding<Color> {
+        Binding(
+            get: { Color(hex: services.theme.accentColorHex) },
+            set: { newColor in
+                services.theme.accentColorHex = hexString(from: newColor)
+            }
+        )
+    }
+
+    private func normalizeHex(_ value: String) -> String {
+        value
+            .trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+            .lowercased()
+    }
+
+    private func hexString(from color: Color) -> String {
+        let uiColor = UIColor(color)
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        guard uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+            return services.theme.accentColorHex
+        }
+
+        let r = Int(round(red * 255))
+        let g = Int(round(green * 255))
+        let b = Int(round(blue * 255))
+        return String(format: "%02x%02x%02x", r, g, b)
     }
 
     // MARK: Section helper
@@ -187,5 +232,38 @@ private struct ColorSwatch: View {
         .buttonStyle(.plain)
         .accessibilityLabel("Accent color \(hex)")
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+    }
+}
+
+private struct ColorPickerSwatch: View {
+    @Environment(\.colorScheme) private var colorScheme
+    @Binding var selection: Color
+    let isSelected: Bool
+
+    var body: some View {
+        ColorPicker("Custom accent color", selection: $selection, supportsOpacity: false)
+            .labelsHidden()
+            .frame(maxWidth: .infinity, alignment: .center)
+            .overlay {
+                ZStack {
+                    Circle()
+                        .fill(selection)
+                        .frame(width: 36, height: 36)
+
+                    Image(systemName: "eyedropper.halffull")
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundStyle(.white)
+                        .shadow(color: .black.opacity(0.35), radius: 1, y: 0.5)
+
+                    if isSelected {
+                        Circle()
+                            .stroke(Color.primary.opacity(colorScheme == .dark ? 0.92 : 1.0), lineWidth: 2)
+                            .frame(width: 36, height: 36)
+                    }
+                }
+            }
+            .contentShape(Rectangle())
+            .accessibilityLabel("Custom accent color")
+            .accessibilityAddTraits(isSelected ? [.isSelected] : [])
     }
 }
