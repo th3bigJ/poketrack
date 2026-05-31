@@ -318,7 +318,7 @@ struct BinderCoverView: View {
 
     private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
         let isCharacter = binder.embossModeKind == .character
-        let artWidth: CGFloat = (isCharacter ? 190 : 178) * scale
+        let artWidth: CGFloat = (isCharacter ? 190 : 148) * scale
         let lightOffset: CGFloat = (isCharacter ? 2.2 : 1.5) * scale
         let shadowOffset: CGFloat = (isCharacter ? 2.4 : 1.7) * scale
         let maskContrast: CGFloat = isCharacter ? 3.4 : 1.65
@@ -407,7 +407,7 @@ struct BinderCoverView: View {
                         .grayscale(1)
                         .contrast(maskContrast)
                         .brightness(-1)
-                        .blur(radius: 2.0 * scale)
+                        .blur(radius: 1.2 * scale)
                         .opacity(0.24)
                         .offset(x: shadowOffset, y: shadowOffset)
                         .blendMode(.multiply)
@@ -418,7 +418,7 @@ struct BinderCoverView: View {
                         .grayscale(1)
                         .contrast(maskContrast)
                         .brightness(1)
-                        .blur(radius: 1.5 * scale)
+                        .blur(radius: 1.0 * scale)
                         .opacity(0.25)
                         .offset(x: -lightOffset, y: -lightOffset)
                         .blendMode(.screen)
@@ -428,9 +428,20 @@ struct BinderCoverView: View {
                         .frame(width: artWidth)
                         .grayscale(1)
                         .contrast(0.8)
-                        .blur(radius: 1.0 * scale)
+                        .blur(radius: 0.6 * scale)
                         .opacity(0.08)
                         .blendMode(.overlay)
+
+                    // Sharp detail layer to make the card text, frames, and illustration
+                    // sharp and legible rather than a muddy blur.
+                    img.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: artWidth)
+                        .grayscale(1)
+                        .contrast(1.6)
+                        .brightness(-0.04)
+                        .opacity(0.18)
+                        .blendMode(.softLight)
                 }
 
                 LinearGradient(
@@ -448,7 +459,7 @@ struct BinderCoverView: View {
                 .allowsHitTesting(false)
             }
             .drawingGroup()
-            .offset(y: isCharacter ? 48 * scale : 65 * scale)
+            .offset(y: isCharacter ? 48 * scale : 90 * scale)
         } placeholder: {
             ProgressView().controlSize(.small).opacity(0.3)
         }
