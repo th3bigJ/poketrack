@@ -442,7 +442,7 @@ private struct CardBrowseDetailPage: View {
                 .scaleEffect(1.12)
 
             ProgressiveAsyncImage(
-                lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                lowResURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
                 highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) },
                 onImageLoaded: updateAuraColors(from:)
             ) {

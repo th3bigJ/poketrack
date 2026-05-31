@@ -207,7 +207,7 @@ struct CardGridCell: View {
             trailingCardID: trailingCardID,
             accentColor: resolvedServices.theme.accentColor,
             colorScheme: resolvedColorScheme,
-            imageURL: safeImageURL(relativePath: card.imageLowSrc)
+            imageURL: safeImageURL(relativePath: card.displayImageSrc)
         )
     }
 
@@ -294,7 +294,7 @@ private struct CardGridCellLayout: View {
 
             BrowseCardThumbnailView(
                 imageURL: imageURL,
-                isOwned: showsOwnedUI,
+                isOwned: isOwned,
                 isWishlisted: isWishlisted,
                 ownedCountBadge: visibleOwnedCountBadge,
                 accentColor: accentColor
@@ -387,18 +387,36 @@ private struct BrowseCardThumbnailView: View {
         CachedCardThumbnailImage(url: imageURL)
             .overlay(alignment: .bottomTrailing) {
                 if let ownedCountBadge, ownedCountBadge > 1 {
-                    Text("x\(ownedCountBadge)")
-                        .font(.caption2.weight(.bold))
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 3)
-                        .background(
-                            Capsule(style: .continuous)
-                                .fill(Color.black.opacity(0.72))
-                        )
-                        .padding(6)
+                    ownedBadge(count: ownedCountBadge)
+                } else if !isOwned && isWishlisted {
+                    wishlistBadge
                 }
             }
+    }
+
+    private func ownedBadge(count: Int) -> some View {
+        Text("x\(count)")
+            .font(.caption2.weight(.bold))
+            .foregroundStyle(.white)
+            .padding(.horizontal, 6)
+            .padding(.vertical, 3)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(Color.black.opacity(0.72))
+            )
+            .padding(6)
+    }
+
+    private var wishlistBadge: some View {
+        Image(systemName: "star.fill")
+            .font(.system(size: 11, weight: .bold))
+            .foregroundStyle(Color(red: 0.98, green: 0.78, blue: 0.18))
+            .frame(width: 20, height: 20)
+            .background(
+                Circle()
+                    .fill(Color.black.opacity(0.72))
+            )
+            .padding(6)
     }
 }
 
@@ -534,6 +552,7 @@ private struct BrowseCardGridButton: View {
     let gridOptions: BrowseGridOptions
     let isOwned: Bool
     let isWishlisted: Bool
+    let ownedCountBadge: Int?
     let isMultiSelectActive: Bool
     let services: AppServices
     let colorScheme: ColorScheme
@@ -568,7 +587,8 @@ private struct BrowseCardGridButton: View {
                 gridOptions: gridOptions,
                 setName: row.setName,
                 isOwned: isOwned,
-                isWishlisted: isWishlisted
+                isWishlisted: isWishlisted,
+                ownedCountBadge: ownedCountBadge
             )
             .overlay(alignment: .topTrailing) {
                 if isMultiSelectActive {
@@ -716,6 +736,15 @@ struct BrowseView: View {
             let itemBrand = TCGBrand.inferredFromMasterCardId(cardID)
             return itemBrand == services.brandSettings.selectedCatalogBrand ? cardID : nil
         })
+    }
+
+    private var ownedQuantityByCardID: [String: Int] {
+        collectionItems.reduce(into: [:]) { result, item in
+            guard item.quantity > 0 else { return }
+            let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            guard itemBrand == services.brandSettings.selectedCatalogBrand else { return }
+            result[item.cardID, default: 0] += item.quantity
+        }
     }
 
     private var multiSelectedCards: [Card] {
@@ -1030,6 +1059,7 @@ struct BrowseView: View {
     private var browseCardGrid: some View {
         let snapshot = browseFeedSnapshot
         let usesCatalogFeed = isUsingCatalogFeedSelection
+        let ownedQuantities = ownedQuantityByCardID
         VStack(spacing: 0) {
             EagerVGrid(items: snapshot.rows, columns: safeColumnCount, spacing: 12) { row in
                 BrowseCardGridButton(
@@ -1037,6 +1067,7 @@ struct BrowseView: View {
                     gridOptions: gridOptions,
                     isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
                     isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
+                    ownedCountBadge: ownedQuantities[row.card.masterCardId],
                     isMultiSelectActive: isMultiSelectActive,
                     services: services,
                     colorScheme: colorScheme,
@@ -1219,6 +1250,7 @@ struct BrowseView: View {
         let isSetRoute: Bool = { if case .set = route { return true }; return false }()
         let useMasterGrid = showMasterSet && isSetRoute
         let variantRows = useMasterGrid ? masterSetVariantRows : []
+        let ownedQuantities = ownedQuantityByCardID
         if inlineDetailLoading {
             ProgressView("Loading cards…")
                 .frame(maxWidth: .infinity, minHeight: 280)
@@ -1260,6 +1292,7 @@ struct BrowseView: View {
                                 setName: cachedSetNameByCode[row.card.setCode],
                                 isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
                                 isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
+                                ownedCountBadge: ownedQuantities[row.card.masterCardId],
                                 variantLabel: variantTitle(row.variant),
                                 variantPricingKey: row.variant
                             )
@@ -1285,7 +1318,8 @@ struct BrowseView: View {
                                 gridOptions: gridOptions,
                                 setName: cachedSetNameByCode[card.setCode],
                                 isOwned: ownedCardIDsCache.contains(card.masterCardId),
-                                isWishlisted: visibleWishlistedCardIDs.contains(card.masterCardId)
+                                isWishlisted: visibleWishlistedCardIDs.contains(card.masterCardId),
+                                ownedCountBadge: ownedQuantities[card.masterCardId]
                             )
                             .overlay(alignment: .topTrailing) {
                                 if isMultiSelectActive {
@@ -1768,7 +1802,7 @@ struct BrowseView: View {
         let upcoming = Array(shuffledRefs[nextRefIndex..<end])
         Task(priority: .low) {
             let cards = await services.cardData.cardsInOrder(refs: upcoming)
-            let urls = cards.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
+            let urls = cards.map { AppConfiguration.imageURL(relativePath: $0.displayImageSrc) }
             ImagePrefetcher.shared.prefetch(urls)
         }
     }
@@ -3311,7 +3345,7 @@ private struct BrowseGridCardCell: View {
     var body: some View {
         VStack(spacing: 4) {
             CachedAsyncImage(
-                url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
                 targetSize: imageDecodeSize
             ) { img in
                 img.resizable().scaledToFit()
@@ -3613,6 +3647,15 @@ struct SetCardsView: View {
         })
     }
 
+    private var ownedQuantityByCardID: [String: Int] {
+        collectionItems.reduce(into: [:]) { result, item in
+            guard item.quantity > 0 else { return }
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            guard brand == services.brandSettings.selectedCatalogBrand else { return }
+            result[item.cardID, default: 0] += item.quantity
+        }
+    }
+
     private var wishlistedCardIDs: Set<String> {
         Set(wishlistItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
@@ -3841,7 +3884,8 @@ struct SetCardsView: View {
                                         gridOptions: services.browseGridOptions.options,
                                         setName: set.name,
                                         isOwned: ownedCardIDs.contains(card.masterCardId),
-                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
+                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
+                                        ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
                                     )
                                     .overlay(alignment: .topTrailing) {
                                         if isMultiSelectActive {
@@ -4274,6 +4318,15 @@ struct DexCardsView: View {
         })
     }
 
+    private var ownedQuantityByCardID: [String: Int] {
+        collectionItems.reduce(into: [:]) { result, item in
+            guard item.quantity > 0 else { return }
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            guard brand == services.brandSettings.selectedCatalogBrand else { return }
+            result[item.cardID, default: 0] += item.quantity
+        }
+    }
+
     private var wishlistedCardIDs: Set<String> {
         Set(wishlistItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
@@ -4328,7 +4381,8 @@ struct DexCardsView: View {
                                     gridOptions: services.browseGridOptions.options,
                                     setName: setNameByCode[card.setCode],
                                     isOwned: ownedCardIDs.contains(card.masterCardId),
-                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
+                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
+                                    ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
                                 )
                             }
                             .buttonStyle(CardCellButtonStyle())
@@ -4418,6 +4472,15 @@ struct OnePieceCharacterCardsView: View {
         })
     }
 
+    private var ownedQuantityByCardID: [String: Int] {
+        collectionItems.reduce(into: [:]) { result, item in
+            guard item.quantity > 0 else { return }
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            guard brand == services.brandSettings.selectedCatalogBrand else { return }
+            result[item.cardID, default: 0] += item.quantity
+        }
+    }
+
     private var wishlistedCardIDs: Set<String> {
         Set(wishlistItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
@@ -4466,7 +4529,8 @@ struct OnePieceCharacterCardsView: View {
                                     gridOptions: services.browseGridOptions.options,
                                     setName: setNameByCode[card.setCode],
                                     isOwned: ownedCardIDs.contains(card.masterCardId),
-                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
+                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
+                                    ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
                                 )
                             }
                             .buttonStyle(CardCellButtonStyle())
@@ -4533,6 +4597,15 @@ struct OnePieceSubtypeCardsView: View {
         })
     }
 
+    private var ownedQuantityByCardID: [String: Int] {
+        collectionItems.reduce(into: [:]) { result, item in
+            guard item.quantity > 0 else { return }
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            guard brand == services.brandSettings.selectedCatalogBrand else { return }
+            result[item.cardID, default: 0] += item.quantity
+        }
+    }
+
     private var wishlistedCardIDs: Set<String> {
         Set(wishlistItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
@@ -4581,7 +4654,8 @@ struct OnePieceSubtypeCardsView: View {
                                     gridOptions: services.browseGridOptions.options,
                                     setName: setNameByCode[card.setCode],
                                     isOwned: ownedCardIDs.contains(card.masterCardId),
-                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
+                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
+                                    ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
                                 )
                             }
                             .buttonStyle(CardCellButtonStyle())

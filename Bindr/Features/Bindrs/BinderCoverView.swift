@@ -2,6 +2,10 @@
 import SwiftUI
 import UIKit
 
+enum BinderRingGuide {
+    static let normalizedYPositions: [CGFloat] = [0.30, 0.50, 0.70]
+}
+
 /// A premium representation of a binder cover, featuring procedural textures,
 /// a reinforced spine, an ornamental tinted header, and an optional fan of
 /// "peeking" card-back thumbnails. Designed in an A4 portrait ratio so it
@@ -93,7 +97,8 @@ struct BinderCoverView: View {
                 // Embossed cover art (sits "in" the material)
                 if !binder.showCardPreview, let url = embossedURL {
                     embossedArtLayer(url: url, scale: scale)
-                        .padding(.leading, 36 * scale) // Stay right of the spine
+                        .padding(.leading, 28 * scale) // Stay clear of the spine.
+                        .padding(.trailing, 12 * scale)
                 }
 
                 // Foreground content — ornament at top, title in upper portion,
@@ -110,7 +115,7 @@ struct BinderCoverView: View {
                     if binder.showCardPreview {
                         Spacer(minLength: 8 * scale)
 
-                        let displayURLs = peekingURLsOverride ?? resolvedPeekingURLs
+                        let displayURLs = (peekingURLsOverride ?? resolvedPeekingURLs).compactMap { $0 }
                         if !displayURLs.isEmpty {
                             HStack(spacing: -70 * scale) {
                                 ForEach(0..<displayURLs.count, id: \.self) { index in
@@ -157,10 +162,9 @@ struct BinderCoverView: View {
             var urls: [URL?] = []
             for slot in slots {
                 if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
-                    urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+                    urls.append(AppConfiguration.imageURL(relativePath: card.displayImageSrc))
                 }
             }
-            while urls.count < 3 { urls.append(nil) }
             resolvedPeekingURLs = urls
         }
 
@@ -175,7 +179,7 @@ struct BinderCoverView: View {
                       let card = await services.cardData.loadCard(masterCardId: cardID) {
                 let path = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false
                     ? card.imageHighSrc!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    : card.imageLowSrc
+                    : card.displayImageSrc
                 embossedURL = AppConfiguration.imageURL(relativePath: path)
             } else {
                 embossedURL = nil
@@ -186,7 +190,7 @@ struct BinderCoverView: View {
                let card = await services.cardData.loadCard(masterCardId: cardID) {
                 let path = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false
                     ? card.imageHighSrc!.trimmingCharacters(in: .whitespacesAndNewlines)
-                    : card.imageLowSrc
+                    : card.displayImageSrc
                 embossedURL = AppConfiguration.imageURL(relativePath: path)
             } else {
                 embossedURL = nil
@@ -282,15 +286,15 @@ struct BinderCoverView: View {
     // MARK: - Spine overlay (left edge with binding rings)
 
     private func spineOverlay(scale: CGFloat) -> some View {
-        ZStack(alignment: .leading) {
+        GeometryReader { proxy in
             // Darkened spine strip
             Rectangle()
                 .fill(Color.black.opacity(0.12))
                 .frame(width: 32 * scale)
 
             // Binding rings/dots
-            VStack(spacing: 44 * scale) {
-                ForEach(0..<3) { _ in
+            ZStack(alignment: .topLeading) {
+                ForEach(Array(BinderRingGuide.normalizedYPositions.enumerated()), id: \.offset) { _, yPosition in
                     Circle()
                         .fill(LinearGradient(
                             colors: [.black.opacity(0.4), .black.opacity(0.1)],
@@ -302,10 +306,10 @@ struct BinderCoverView: View {
                             Circle()
                                 .stroke(Color.white.opacity(0.1), lineWidth: 0.5 * scale)
                         }
+                        .position(x: 16 * scale, y: proxy.size.height * yPosition)
                 }
             }
             .frame(width: 32 * scale)
-            .padding(.vertical, 36 * scale)
         }
         .allowsHitTesting(false)
     }
@@ -314,114 +318,147 @@ struct BinderCoverView: View {
 
     private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
         let isCharacter = binder.embossModeKind == .character
-        let cardW: CGFloat = isCharacter ? 230 * scale : 248 * scale
-        
-        // Character mode: Sharp and dramatic (high contrast)
-        // Card mode: Softer and subtler (low noise)
-        let shadowOff: CGFloat = (isCharacter ? 3.5 : 2.0) * scale
-        let hiOff: CGFloat = (isCharacter ? 3.5 : 2.0) * scale
-        let detailBlur: CGFloat = isCharacter ? 0 : 1.2 // Blur cards slightly to hide messy text/lines
-        let baseContrast: CGFloat = isCharacter ? 5.0 : 2.5
+        let artWidth: CGFloat = (isCharacter ? 190 : 178) * scale
+        let lightOffset: CGFloat = (isCharacter ? 2.2 : 1.5) * scale
+        let shadowOffset: CGFloat = (isCharacter ? 2.4 : 1.7) * scale
+        let maskContrast: CGFloat = isCharacter ? 3.4 : 1.65
+        let surfaceTint = BinderColourPalette.color(named: binder.colour)
 
         return CachedAsyncImage(
             url: url,
-            targetSize: CGSize(width: Int(cardW * 3), height: Int(cardW * 4))
+            targetSize: CGSize(width: Int(artWidth * 3), height: Int(artWidth * 4))
         ) { img in
             ZStack {
-                // ── Plate: a slightly darkened inset "die" behind the stamp ──
-                img.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: cardW)
-                    .grayscale(1)
-                    .contrast(isCharacter ? 4.0 : 1.5)
-                    .brightness(isCharacter ? -0.9 : -0.2)
-                    .opacity(isCharacter ? 0.18 : 0.08)
-                    .blendMode(.multiply)
+                if isCharacter {
+                    // A logo-like character stamp: strong silhouette, material
+                    // tint, and opposing edges to read as pressed relief.
+                    img.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: artWidth)
+                        .grayscale(1)
+                        .contrast(maskContrast)
+                        .brightness(-1)
+                        .blur(radius: 1.1 * scale)
+                        .opacity(0.34)
+                        .offset(x: shadowOffset, y: shadowOffset)
+                        .blendMode(.multiply)
 
-                // ── Shadow layer: dark copy shifted top-left ──
-                img.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: cardW)
-                    .grayscale(1)
-                    .contrast(baseContrast)
-                    .brightness(-1.0)
-                    .blur(radius: detailBlur * scale)
-                    .opacity(isCharacter ? 0.65 : 0.35)
-                    .offset(x: -shadowOff, y: -shadowOff)
-                    .blendMode(.multiply)
+                    img.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: artWidth)
+                        .grayscale(1)
+                        .contrast(maskContrast)
+                        .brightness(1)
+                        .blur(radius: 0.8 * scale)
+                        .opacity(0.44)
+                        .offset(x: -lightOffset, y: -lightOffset)
+                        .blendMode(.screen)
 
-                // ── Highlight layer: white copy shifted bottom-right ──
-                img.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: cardW)
-                    .grayscale(1)
-                    .contrast(baseContrast)
-                    .brightness(1.0)
-                    .blur(radius: detailBlur * scale)
-                    .opacity(isCharacter ? 0.75 : 0.45)
-                    .offset(x: hiOff, y: hiOff)
-                    .blendMode(.screen)
+                    surfaceTint
+                        .opacity(0.20)
+                        .frame(width: artWidth)
+                        .aspectRatio(contentMode: .fit)
+                        .mask(
+                            img.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: artWidth)
+                                .grayscale(1)
+                                .contrast(maskContrast)
+                                .luminanceToAlpha()
+                        )
+                        .blendMode(.overlay)
 
-                // ── Mid layer: centred slightly transparent ──
-                img.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: cardW)
-                    .grayscale(1)
-                    .contrast(isCharacter ? 3.0 : 1.5)
-                    .brightness(isCharacter ? -0.1 : 0.0)
-                    .opacity(isCharacter ? 0.40 : 0.25)
-                    .blendMode(.overlay)
+                    img.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: artWidth)
+                        .grayscale(1)
+                        .contrast(2.2)
+                        .brightness(-0.06)
+                        .opacity(0.12)
+                        .blendMode(.softLight)
+                } else {
+                    // Full cards become a pressed plaque. The source art is
+                    // softened so card text does not read as a flat grey image.
+                    RoundedRectangle(cornerRadius: 13 * scale, style: .continuous)
+                        .fill(Color.black.opacity(0.10))
+                        .frame(width: artWidth + 18 * scale, height: (artWidth + 18 * scale) * 1.4)
+                        .blur(radius: 0.6 * scale)
+                        .blendMode(.multiply)
 
-                // ── Colour tint: a whisper of original art colour ──
-                img.resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: cardW)
-                    .grayscale(isCharacter ? 0.0 : 0.6)
-                    .saturation(isCharacter ? 0.6 : 0.2)
-                    .opacity(isCharacter ? 0.28 : 0.10)
-                    .blendMode(.softLight)
+                    RoundedRectangle(cornerRadius: 13 * scale, style: .continuous)
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(0.18),
+                                    Color.clear,
+                                    Color.black.opacity(0.20)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 1.2 * scale
+                        )
+                        .frame(width: artWidth + 18 * scale, height: (artWidth + 18 * scale) * 1.4)
+                        .blendMode(.overlay)
 
-                // ── Top-light sheen ──
+                    img.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: artWidth)
+                        .grayscale(1)
+                        .contrast(maskContrast)
+                        .brightness(-1)
+                        .blur(radius: 2.0 * scale)
+                        .opacity(0.24)
+                        .offset(x: shadowOffset, y: shadowOffset)
+                        .blendMode(.multiply)
+
+                    img.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: artWidth)
+                        .grayscale(1)
+                        .contrast(maskContrast)
+                        .brightness(1)
+                        .blur(radius: 1.5 * scale)
+                        .opacity(0.25)
+                        .offset(x: -lightOffset, y: -lightOffset)
+                        .blendMode(.screen)
+
+                    img.resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: artWidth)
+                        .grayscale(1)
+                        .contrast(0.8)
+                        .blur(radius: 1.0 * scale)
+                        .opacity(0.08)
+                        .blendMode(.overlay)
+                }
+
                 LinearGradient(
                     colors: [
-                        Color.white.opacity(isCharacter ? 0.10 : 0.05),
+                        Color.white.opacity(isCharacter ? 0.12 : 0.08),
                         Color.clear,
-                        Color.black.opacity(isCharacter ? 0.08 : 0.04)
+                        Color.black.opacity(isCharacter ? 0.10 : 0.08)
                     ],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
-                .frame(width: cardW)
-                .aspectRatio(contentMode: .fit)
+                .frame(width: isCharacter ? artWidth : artWidth + 18 * scale)
+                .aspectRatio(isCharacter ? 1 : 5 / 7, contentMode: .fit)
                 .blendMode(.overlay)
                 .allowsHitTesting(false)
             }
             .drawingGroup()
-            .clipShape(RoundedRectangle(cornerRadius: isCharacter ? 2 * scale : 10 * scale, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: isCharacter ? 2 * scale : 10 * scale, style: .continuous)
-                    .stroke(
-                        LinearGradient(
-                            colors: [Color.black.opacity(0.20), Color.white.opacity(0.10)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ),
-                        lineWidth: (isCharacter ? 1.5 : 1.0) * scale
-                    )
-            }
-            .shadow(color: .black.opacity(isCharacter ? 0.30 : 0.15), radius: 4 * scale, x: 2 * scale, y: 3 * scale)
+            .offset(y: isCharacter ? 48 * scale : 0)
         } placeholder: {
             ProgressView().controlSize(.small).opacity(0.3)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(.top, 95 * scale)
-        .padding(.bottom, 25 * scale)
     }
 
     // MARK: - Peeking card thumbnail
 
     @ViewBuilder
-    private func peekingCard(url: URL?, scale: CGFloat, index: Int, totalCount: Int) -> some View {
+    private func peekingCard(url: URL, scale: CGFloat, index: Int, totalCount: Int) -> some View {
         let middleIndex = Double(totalCount - 1) / 2.0
         let relativeIndex = Double(index) - middleIndex
 
@@ -435,18 +472,11 @@ struct BinderCoverView: View {
             RoundedRectangle(cornerRadius: 6 * scale, style: .continuous)
                 .fill(Color(white: 0.15)) // Dark base for empty/loading
                 .overlay {
-                    if let url {
-                        CachedAsyncImage(url: url, targetSize: CGSize(width: 140 * scale, height: 196 * scale)) { img in
-                            img.resizable()
-                                .aspectRatio(contentMode: .fill)
-                        } placeholder: {
-                            ProgressView().controlSize(.small)
-                        }
-                    } else {
-                        // Glassy placeholder for empty slots
-                        RoundedRectangle(cornerRadius: 6 * scale, style: .continuous)
-                            .fill(.white.opacity(0.12))
-                            .blur(radius: 1 * scale)
+                    CachedAsyncImage(url: url, targetSize: CGSize(width: 140 * scale, height: 196 * scale)) { img in
+                        img.resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Color.clear
                     }
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 6 * scale, style: .continuous))
@@ -488,5 +518,3 @@ extension BinderCoverView {
         return copy
     }
 }
-
-

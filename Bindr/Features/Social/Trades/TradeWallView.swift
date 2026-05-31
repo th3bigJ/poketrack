@@ -306,7 +306,7 @@ private struct TradeWallCardCell: View {
     var body: some View {
         VStack(spacing: 0) {
             // Card image — Pokemon cards are ~245×342, i.e. roughly 5:7
-            CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: entry.card.imageLowSrc)) { image in
+            CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: entry.card.displayImageSrc)) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)

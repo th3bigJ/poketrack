@@ -95,7 +95,7 @@ struct BindersRootView: View {
                 BinderOpenContainer(
                     binder: binder,
                     sourceFrame: activeSourceFrame,
-                    peekingURLs: gridResolvedURLs[binder.id] ?? [nil, nil, nil],
+                    peekingURLs: gridResolvedURLs[binder.id] ?? [],
                     valueText: gridResolvedValues[binder.id],
                     onDismissComplete: { finishBinderClose() },
                     onStartClose: { beginSweepBack() }
@@ -363,7 +363,7 @@ private struct BinderCardCell: View {
     let binder: Binder
     var onURLsLoaded: (([URL?]) -> Void)? = nil
     var onValueLoaded: ((String?) -> Void)? = nil
-    @State private var cardURLs: [URL?] = [nil, nil, nil]
+    @State private var cardURLs: [URL?]? = nil
     @State private var totalUSDValue: Double = 0
     @State private var hasLoadedValue: Bool = false
 
@@ -418,13 +418,12 @@ private struct BinderCardCell: View {
             if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
                 // Use the real image path from the card metadata (e.g. cards/sv01/1_low.png)
                 // rather than guessing the path from the ID.
-                urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+                urls.append(AppConfiguration.imageURL(relativePath: card.displayImageSrc))
             } else {
                 urls.append(nil)
             }
         }
 
-        while urls.count < 3 { urls.append(nil) }
         cardURLs = urls
         onURLsLoaded?(urls)
     }

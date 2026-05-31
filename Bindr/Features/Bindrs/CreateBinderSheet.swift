@@ -188,27 +188,29 @@ struct CreateBinderSheet: View {
                                 .font(.caption.bold())
                                 .foregroundStyle(.secondary)
 
-                            Toggle(isOn: $showCardPreview) {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Show cards on cover")
-                                        .font(.subheadline.weight(.medium))
-                                    Text("Preview the first few cards on the binder front")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
+                            VStack(spacing: 14) {
+                                Toggle(isOn: $showCardPreview) {
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Show cards on cover")
+                                            .font(.subheadline.weight(.medium))
+                                        Text("Preview the first few cards on the binder front")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
                                 }
-                            }
-                            .tint(.accentColor)
+                                .tint(.accentColor)
 
-                            Toggle(isOn: $showValueOnCover) {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Show value on cover")
-                                        .font(.subheadline.weight(.medium))
-                                    Text("Display the binder value label on the front")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
+                                Toggle(isOn: $showValueOnCover) {
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Show value on cover")
+                                            .font(.subheadline.weight(.medium))
+                                        Text("Display the binder value label on the front")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
                                 }
+                                .tint(.accentColor)
                             }
-                            .tint(.accentColor)
                             .padding(16)
                             .background(Color(uiColor: .secondarySystemGroupedBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 16))

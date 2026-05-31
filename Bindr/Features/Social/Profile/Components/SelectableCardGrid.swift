@@ -81,7 +81,7 @@ private struct SelectableCardCell: View {
         Button(action: onTap) {
             ZStack(alignment: .topTrailing) {
                 ZStack {
-                    if let imageURLString = card?.imageLowSrc {
+                    if let imageURLString = card?.displayImageSrc {
                         CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
                             image
                                 .resizable()

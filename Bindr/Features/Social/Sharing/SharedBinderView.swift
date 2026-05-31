@@ -346,7 +346,7 @@ struct SharedBinderView: View {
     @ViewBuilder
     private func cardCell(entry: BinderCardEntry) -> some View {
         let card = cardsByID[entry.cardID]
-        let imageURL = card.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
+        let imageURL = card.map { AppConfiguration.imageURL(relativePath: $0.displayImageSrc) }
 
         Button {
             if let card { presentedCard = card }

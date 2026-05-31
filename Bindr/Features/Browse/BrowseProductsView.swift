@@ -57,6 +57,14 @@ struct BrowseProductsTabContent: View {
         })
     }
 
+    private var ownedQuantityByProductID: [String: Int] {
+        collectionItems.reduce(into: [:]) { result, item in
+            guard item.quantity > 0 else { return }
+            guard item.itemKind == ProductKind.sealedProduct.rawValue else { return }
+            result[item.cardID, default: 0] += item.quantity
+        }
+    }
+
     private var wishlistedCollectionCardIDs: Set<String> {
         Set(wishlistItems.map(\.cardID).filter { SealedProduct.parseCollectionProductID($0) != nil })
     }
@@ -227,7 +235,8 @@ struct BrowseProductsTabContent: View {
                                     gridOptions: gridOptions,
                                     priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
                                     isOwned: ownedCollectionCardIDs.contains(product.collectionCardID),
-                                    isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID)
+                                    isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID),
+                                    ownedCountBadge: ownedQuantityByProductID[product.collectionCardID]
                                 )
                                 .contentShape(Rectangle())
                             }

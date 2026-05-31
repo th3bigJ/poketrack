@@ -169,7 +169,7 @@ struct SharedContentView: View {
     }
 
     private func cardThumbnail(cardID: String) -> some View {
-        let imageURL = cardsByID[cardID].map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
+        let imageURL = cardsByID[cardID].map { AppConfiguration.imageURL(relativePath: $0.displayImageSrc) }
         return CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 80, height: 112)) { image in
             image
                 .resizable()

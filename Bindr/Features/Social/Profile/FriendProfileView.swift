@@ -53,11 +53,12 @@ struct FriendProfileView: View {
                 } else if let profile {
                     ZStack(alignment: .bottom) {
                         ScrollView {
-                            VStack(spacing: 18) {
+                            VStack(spacing: BindrSpacing.lg) {
                                 profileHeader(profile)
                                 tabPicker
                                 tabContent(profile)
                             }
+                            .padding(.top, BindrSpacing.lg)
                             .padding(.bottom, isSelectMode && !selectedCardIDs.isEmpty ? 80 : 32)
                         }
                         .background(Color(uiColor: .systemBackground))
@@ -162,13 +163,13 @@ struct FriendProfileView: View {
     private func profileHeader(_ profile: SocialProfile) -> some View {
         let accent = themeColor(for: profile)
 
-        return VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .top, spacing: 14) {
+        return VStack(alignment: .leading, spacing: BindrSpacing.md) {
+            HStack(alignment: .top, spacing: BindrSpacing.md) {
                 ProfileAvatarView(profile: profile, size: 64)
                     .overlay(Circle().stroke(accent, lineWidth: 3))
 
-                VStack(alignment: .leading, spacing: 6) {
-                    HStack(alignment: .center, spacing: 6) {
+                VStack(alignment: .leading, spacing: BindrSpacing.sm) {
+                    HStack(alignment: .center, spacing: BindrSpacing.sm) {
                         Text(profile.displayName ?? profile.username)
                             .font(.system(size: 18, weight: .heavy))
                             .foregroundStyle(Color.primary)
@@ -184,7 +185,7 @@ struct FriendProfileView: View {
                     // ✓ Friends / Blocked / Pending pill reads as part of the
                     // identity block rather than living in its own section.
                     if !roleTitles.isEmpty || hasRelationshipStatusPill {
-                        HStack(spacing: 6) {
+                        HStack(spacing: BindrSpacing.sm) {
                             ForEach(roleTitles, id: \.self) { title in
                                 rolePill(title, accent: accent)
                             }
@@ -219,10 +220,10 @@ struct FriendProfileView: View {
                 statColumn(value: "\(binderCount)", label: binderCount == 1 ? "Binder" : "Binders")
                 statColumn(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
             }
-            .padding(.vertical, 12)
+            .padding(.vertical, BindrSpacing.md)
             .glassCardStyle(cornerRadius: 12, interactive: false)
         }
-        .padding(16)
+        .padding(BindrSpacing.lg)
         .background {
             // Layered backdrop driven by the friend's theme colour, favourite
             // Pokémon (faded silhouette behind everything), and favourite
@@ -231,7 +232,24 @@ struct FriendProfileView: View {
             // profile feels like *their* space, not a stock template.
             ZStack(alignment: .topTrailing) {
                 LinearGradient(
-                    colors: [accent.opacity(0.22), accent.opacity(0.06), Color(uiColor: .systemBackground)],
+                    stops: [
+                        .init(color: .clear, location: 0.0),
+                        .init(color: accent.opacity(0.22), location: 0.30),
+                        .init(color: accent.opacity(0.16), location: 0.50),
+                        .init(color: accent.opacity(0.08), location: 0.72),
+                        .init(color: accent.opacity(0.03), location: 0.88),
+                        .init(color: .clear, location: 1.0)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+
+                LinearGradient(
+                    stops: [
+                        .init(color: accent.opacity(0.18), location: 0.0),
+                        .init(color: accent.opacity(0.06), location: 0.55),
+                        .init(color: .clear, location: 1.0)
+                    ],
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
@@ -256,12 +274,18 @@ struct FriendProfileView: View {
                     .shadow(color: accent.opacity(0.45), radius: 10, x: 0, y: 6)
                     .rotationEffect(.degrees(8))
                     .opacity(0.85)
-                    .padding(.top, 14)
-                    .padding(.trailing, 18)
+                    .padding(.top, BindrSpacing.md)
+                    .padding(.trailing, BindrSpacing.lg)
                     .allowsHitTesting(false)
                 }
             }
         }
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(Color.primary.opacity(0.06), lineWidth: 1)
+        }
+        .padding(.horizontal, BindrSpacing.lg)
     }
 
     /// Accent colour driven by the friend's chosen avatar background. Falls
@@ -411,17 +435,17 @@ struct FriendProfileView: View {
                 .buttonStyle(.plain)
             }
         }
-        .padding(4)
+        .padding(BindrSpacing.xs)
         .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
         .overlay {
             Capsule().stroke(Color.primary.opacity(0.06), lineWidth: 1)
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, BindrSpacing.lg)
     }
 
     @ViewBuilder
     private func tabContent(_ profile: SocialProfile) -> some View {
-        VStack(spacing: 10) {
+        VStack(spacing: BindrSpacing.md) {
             switch selectedTab {
             case .posts:
                 if groupedActivity.isEmpty {
@@ -466,7 +490,7 @@ struct FriendProfileView: View {
                 }
             }
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, BindrSpacing.lg)
     }
 
     // MARK: - Helpers
@@ -545,7 +569,7 @@ struct FriendProfileView: View {
             .font(.system(size: 12))
             .foregroundStyle(Color.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(14)
+            .padding(BindrSpacing.md)
             .glassCardStyle(cornerRadius: 14, interactive: false)
     }
 

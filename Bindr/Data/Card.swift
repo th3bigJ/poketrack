@@ -416,3 +416,39 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         return nil
     }
 }
+
+extension Card {
+    /// Artwork to use anywhere the card itself is being displayed.
+    ///
+    /// Chaos Rising (`me4`) cards 001-007 have exported low-res files that are
+    /// the generic Pokemon card back, while their high-res files are the fronts.
+    var displayImageSrc: String {
+        let low = imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+        let high = imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if shouldPreferHighResDisplayImage, let high, !high.isEmpty {
+            return high
+        }
+        if low.isEmpty, let high, !high.isEmpty {
+            return high
+        }
+        return low
+    }
+
+    private var shouldPreferHighResDisplayImage: Bool {
+        guard setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == "me4" else {
+            return false
+        }
+        guard let number = numericLocalCardNumber else { return false }
+        return (1...7).contains(number)
+    }
+
+    private var numericLocalCardNumber: Int? {
+        if let localId = localId?.trimmingCharacters(in: .whitespacesAndNewlines),
+           let number = Int(localId) {
+            return number
+        }
+        let printed = cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
+        let prefix = printed.prefix { $0.isNumber }
+        return Int(prefix)
+    }
+}

@@ -743,7 +743,7 @@ struct SocialAlertsSheet: View {
             isLoading: isLoading && activity.isEmpty,
             errorMessage: errorMessage,
             onDone: {
-                services.socialFeed.clearUnreadAlertsState(items: activity)
+                clearLoadedAlerts()
                 isPresented = false
             },
             onDeepLinkSelected: { url in
@@ -757,7 +757,7 @@ struct SocialAlertsSheet: View {
         )
         .onChange(of: selectedTab) { _, newTab in
             if newTab == .all {
-                services.socialFeed.clearUnreadAlertsState(items: activity)
+                clearLoadedAlerts()
                 seenIDs = services.socialFeed.alertSeenIDs
             }
         }
@@ -787,9 +787,15 @@ struct SocialAlertsSheet: View {
 
     private func markAllAsRead() {
         // Mark the currently-loaded batch as seen and reset the badge.
-        services.socialFeed.clearUnreadAlertsState(items: activity)
+        clearLoadedAlerts()
         seenIDs = services.socialFeed.alertSeenIDs
-        selectedTab = .all
+    }
+
+    private func clearLoadedAlerts() {
+        services.socialFeed.clearUnreadAlertsState(
+            items: activity,
+            extraIDs: tradeUpdates.map(\.id)
+        )
     }
 
     private func buildTradeAlerts(from trades: [TradeWithItems]) -> [TradeAlertItem] {
@@ -861,6 +867,23 @@ struct NewPostPlaceholderView: View {
     }
 }
 
+private struct AlertClearAwayModifier: ViewModifier {
+    let isClearing: Bool
+    let index: Int
+
+    func body(content: Content) -> some View {
+        content
+            .offset(x: isClearing ? 420 : 0, y: 0)
+            .opacity(isClearing ? 0 : 1)
+            .scaleEffect(isClearing ? 0.98 : 1, anchor: .trailing)
+            .animation(
+                .interpolatingSpring(stiffness: 260, damping: 28)
+                    .delay(Double(min(index, 8)) * 0.025),
+                value: isClearing
+            )
+    }
+}
+
 private struct SocialAlertsPreviewView: View {
     private enum AlertLogEntry: Identifiable {
         case activity(GroupedFeedItem)
@@ -896,9 +919,12 @@ private struct SocialAlertsPreviewView: View {
     @Binding var selectedTab: SocialAlertsSheet.AlertTab
     let seenIDs: Set<String>
 
+    @State private var clearingEntryIDs: Set<String> = []
+    @State private var isMarkingAllAsRead = false
+
     private var logEntries: [AlertLogEntry] {
         let activityEntries = filteredActivityItems.map(AlertLogEntry.activity)
-        let tradeEntries = tradeUpdates.map(AlertLogEntry.trade)
+        let tradeEntries = filteredTradeUpdates.map(AlertLogEntry.trade)
         return (activityEntries + tradeEntries).sorted { $0.createdAt > $1.createdAt }
     }
 
@@ -918,6 +944,11 @@ private struct SocialAlertsPreviewView: View {
             }
             return true
         }
+    }
+
+    private var filteredTradeUpdates: [SocialAlertsSheet.TradeAlertItem] {
+        guard selectedTab == .new else { return tradeUpdates }
+        return tradeUpdates.filter { !seenIDs.contains($0.id) }
     }
 
     var body: some View {
@@ -980,13 +1011,14 @@ private struct SocialAlertsPreviewView: View {
                             if selectedTab == .new && !logEntries.isEmpty {
                                 Button {
                                     Haptics.lightImpact()
-                                    onMarkAllAsRead()
+                                    animateMarkAllAsRead()
                                 } label: {
                                     Text("Mark All as Read")
                                         .font(.system(size: 11, weight: .medium))
                                         .foregroundStyle(Color(hex: "5B9CF6"))
                                 }
                                 .buttonStyle(.plain)
+                                .disabled(isMarkingAllAsRead)
                             }
                         }
                         if logEntries.isEmpty {
@@ -994,19 +1026,46 @@ private struct SocialAlertsPreviewView: View {
                                 ? "No new alerts. Check back later for updates on trades, votes, comments, and friend activity."
                                 : "Trade updates, votes, comments, and friend activity will appear here.")
                         } else {
-                            ForEach(logEntries) { entry in
-                                switch entry {
-                                case .activity(let group):
-                                    alertRow(group: group, tint: tint(for: group.primary), icon: icon(for: group.primary))
-                                case .trade(let update):
-                                    tradeAlertRow(update)
+                            ForEach(Array(logEntries.enumerated()), id: \.element.id) { index, entry in
+                                Group {
+                                    switch entry {
+                                    case .activity(let group):
+                                        alertRow(
+                                            group: group,
+                                            tint: tint(for: group.primary),
+                                            icon: icon(for: group.primary),
+                                            isUnread: !seenIDs.contains(group.primary.id)
+                                        )
+                                    case .trade(let update):
+                                        tradeAlertRow(update, isUnread: !seenIDs.contains(update.id))
+                                    }
                                 }
+                                .modifier(AlertClearAwayModifier(
+                                    isClearing: clearingEntryIDs.contains(entry.id),
+                                    index: index
+                                ))
                             }
                         }
                     }
                     .padding(16)
                 }
             }
+        }
+    }
+
+    private func animateMarkAllAsRead() {
+        guard !isMarkingAllAsRead else { return }
+        let ids = Set(logEntries.map(\.id))
+        guard !ids.isEmpty else { return }
+        isMarkingAllAsRead = true
+        withAnimation(.easeInOut(duration: 0.28)) {
+            clearingEntryIDs = ids
+        }
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 360_000_000)
+            onMarkAllAsRead()
+            clearingEntryIDs = []
+            isMarkingAllAsRead = false
         }
     }
 
@@ -1028,7 +1087,7 @@ private struct SocialAlertsPreviewView: View {
     }
 
     @ViewBuilder
-    private func alertRow(group: GroupedFeedItem, tint: Color, icon: String) -> some View {
+    private func alertRow(group: GroupedFeedItem, tint: Color, icon: String, isUnread: Bool) -> some View {
         let row = HStack(spacing: 10) {
             Circle()
                 .fill(tint.opacity(0.15))
@@ -1051,9 +1110,11 @@ private struct SocialAlertsPreviewView: View {
 
             Spacer()
 
-            Circle()
-                .fill(tint)
-                .frame(width: 7, height: 7)
+            if isUnread {
+                Circle()
+                    .fill(tint)
+                    .frame(width: 7, height: 7)
+            }
         }
         .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
 
@@ -1078,7 +1139,7 @@ private struct SocialAlertsPreviewView: View {
         }
     }
 
-    private func tradeAlertRow(_ update: SocialAlertsSheet.TradeAlertItem) -> some View {
+    private func tradeAlertRow(_ update: SocialAlertsSheet.TradeAlertItem, isUnread: Bool) -> some View {
         let tint = tradeTint(update.status)
         return Button {
             Haptics.lightImpact()
@@ -1106,9 +1167,11 @@ private struct SocialAlertsPreviewView: View {
                         .foregroundStyle(Color.secondary.opacity(0.6))
                 }
                 Spacer(minLength: 0)
-                Circle()
-                    .fill(tint)
-                    .frame(width: 7, height: 7)
+                if isUnread {
+                    Circle()
+                        .fill(tint)
+                        .frame(width: 7, height: 7)
+                }
             }
             .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .padding(14)

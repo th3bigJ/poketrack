@@ -55,7 +55,7 @@ private struct WishlistPreviewItem: View {
         VStack(alignment: .leading, spacing: 6) {
             // Card Thumbnail
             ZStack {
-                if let imageURLString = card?.imageLowSrc {
+                if let imageURLString = card?.displayImageSrc {
                     CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
                     } placeholder: {

@@ -83,19 +83,18 @@ struct FriendsListView: View {
                     items: SocialTab.allCases,
                     title: { $0.title }
                 )
-                .padding(.horizontal, 16)
-                .padding(.bottom, 6)
+                .padding(.horizontal, BindrSpacing.lg)
             }
             header
             tabPicker
 
             if selectedTab == .find {
                 searchField
-                    .padding(.top, 12)
+                    .padding(.top, BindrSpacing.md)
             }
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 14) {
+                VStack(alignment: .leading, spacing: BindrSpacing.md) {
                     if selectedTab == .mine {
                         myFriendsContent
                     } else {
@@ -106,13 +105,13 @@ struct FriendsListView: View {
                         Text(errorMessage)
                             .font(.system(size: 12))
                             .foregroundStyle(BindrPalette.alertRed)
-                            .padding(14)
+                            .padding(BindrSpacing.md)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .background(BindrPalette.alertRed.opacity(0.15), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                     }
                 }
-                .padding(16)
-                .padding(.bottom, 32)
+                .padding(BindrSpacing.lg)
+                .padding(.bottom, BindrSpacing.xxxl)
             }
             .refreshable { await refresh() }
         }
@@ -126,7 +125,7 @@ struct FriendsListView: View {
     }
 
     private var header: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: BindrSpacing.md) {
             HStack {
                 Text("Friends")
                     .font(.system(size: 22, weight: .heavy))
@@ -153,8 +152,8 @@ struct FriendsListView: View {
                         .foregroundStyle(.primary)
                     Spacer(minLength: 0)
                 }
-                .padding(.horizontal, 12)
-                .padding(.vertical, 10)
+                .padding(.horizontal, BindrSpacing.md)
+                .padding(.vertical, BindrSpacing.sm)
                 .background(BindrPalette.binderGold.opacity(0.14), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 .overlay {
                     RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -162,9 +161,9 @@ struct FriendsListView: View {
                 }
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 18)
-        .padding(.bottom, 12)
+        .padding(.horizontal, BindrSpacing.lg)
+        .padding(.top, BindrSpacing.lg)
+        .padding(.bottom, BindrSpacing.md)
     }
 
     private var tabPicker: some View {
@@ -191,7 +190,7 @@ struct FriendsListView: View {
             }
             Spacer()
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, BindrSpacing.lg)
     }
 
     private var searchField: some View {
@@ -206,14 +205,14 @@ struct FriendsListView: View {
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
         }
-        .padding(.horizontal, 12)
+        .padding(.horizontal, BindrSpacing.md)
         .padding(.vertical, 11)
         .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .stroke(Color.primary.opacity(0.09), lineWidth: 1)
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, BindrSpacing.lg)
     }
 
     @ViewBuilder

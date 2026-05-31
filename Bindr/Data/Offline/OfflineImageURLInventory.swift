@@ -18,7 +18,7 @@ enum OfflineImageURLInventory {
         case .pokemon:
             let cards = try await CatalogStore.shared.fetchAllCards(for: .pokemon)
             for c in cards {
-                append(c.imageLowSrc, AppConfiguration.imageURL(relativePath: c.imageLowSrc))
+                append(c.displayImageSrc, AppConfiguration.imageURL(relativePath: c.displayImageSrc))
             }
             let sets = try await CatalogStore.shared.fetchAllSets(for: .pokemon)
             for s in sets {
@@ -48,7 +48,7 @@ enum OfflineImageURLInventory {
         case .onePiece:
             let cards = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
             for c in cards {
-                append(c.imageLowSrc, AppConfiguration.imageURL(relativePath: c.imageLowSrc))
+                append(c.displayImageSrc, AppConfiguration.imageURL(relativePath: c.displayImageSrc))
             }
             let sets = try await CatalogStore.shared.fetchAllSets(for: .onePiece)
             for s in sets {

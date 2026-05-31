@@ -226,7 +226,7 @@ struct CardDetailSheet: View {
                 .scaleEffect(1.05)
 
             ProgressiveAsyncImage(
-                lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                lowResURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
                 highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) },
                 onImageLoaded: { updateAuraColors(from: $0, cardID: card.masterCardId) }
             ) {

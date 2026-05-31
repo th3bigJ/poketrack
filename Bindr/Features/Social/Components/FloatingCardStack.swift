@@ -163,10 +163,10 @@ private struct RealHeroCardFace: View {
     private var imageURL: URL? {
         // Prefer the high-res asset for a sharp foil look at hero scale,
         // fall back to the low-res so we never show an empty rectangle.
-        if let hi = card.imageHighSrc, let url = URL(string: hi) {
-            return url
+        if let hi = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !hi.isEmpty {
+            return AppConfiguration.imageURL(relativePath: hi)
         }
-        return URL(string: card.imageLowSrc)
+        return AppConfiguration.imageURL(relativePath: card.displayImageSrc)
     }
 
     var body: some View {

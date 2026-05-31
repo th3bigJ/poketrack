@@ -1073,9 +1073,9 @@ final class SocialFeedService {
         seenIDs(for: .alerts)
     }
 
-    func clearUnreadAlertsState(items: [FeedItem]) {
+    func clearUnreadAlertsState(items: [FeedItem], extraIDs: [String] = []) {
         let existing = seenIDs(for: .alerts)
-        let merged = (Array(existing) + items.map(\.id)).suffix(maxLocalSeenIDs)
+        let merged = (Array(existing) + items.map(\.id) + extraIDs).suffix(maxLocalSeenIDs)
         UserDefaults.standard.set(Array(merged), forKey: seenStorageKey(for: .alerts))
         unreadAlertsCount = 0
     }

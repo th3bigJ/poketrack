@@ -61,7 +61,7 @@ final class ImagePrefetcher: @unchecked Sendable {
         guard startIndex < cards.count else { return }
         let endIndex = min(startIndex + count, cards.count)
         let urls = cards[startIndex..<endIndex].map {
-            AppConfiguration.imageURL(relativePath: $0.imageLowSrc)
+            AppConfiguration.imageURL(relativePath: $0.displayImageSrc)
         }
         prefetch(urls, priority: .userInitiated)
     }
@@ -79,7 +79,7 @@ final class ImagePrefetcher: @unchecked Sendable {
             if let highSrc = card.imageHighSrc {
                 urls.append(AppConfiguration.imageURL(relativePath: highSrc))
             } else {
-                urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+                urls.append(AppConfiguration.imageURL(relativePath: card.displayImageSrc))
             }
         }
         
@@ -92,7 +92,7 @@ final class ImagePrefetcher: @unchecked Sendable {
     func prefetchInitialBatch(_ cards: [Card], count: Int = 60) {
         let end = min(count, cards.count)
         let urls = cards[0..<end].map {
-            AppConfiguration.imageURL(relativePath: $0.imageLowSrc)
+            AppConfiguration.imageURL(relativePath: $0.displayImageSrc)
         }
         prefetch(urls, priority: .userInitiated)
     }

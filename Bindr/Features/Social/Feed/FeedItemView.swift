@@ -589,7 +589,7 @@ private struct CardStackPreview: View {
         var resolved: [URL?] = []
         for cardID in thumbnailIDs {
             if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                resolved.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+                resolved.append(AppConfiguration.imageURL(relativePath: card.displayImageSrc))
             } else {
                 resolved.append(nil)
             }

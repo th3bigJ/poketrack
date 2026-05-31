@@ -79,14 +79,14 @@ struct MyProfileView: View {
                         items: SocialTab.allCases,
                         title: { $0.title }
                     )
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 6)
+                    .padding(.horizontal, BindrSpacing.lg)
                 }
-                VStack(spacing: 18) {
+                VStack(spacing: BindrSpacing.lg) {
                     profileHeader
                     profileTabPicker
                     profileTabContent
                 }
+                .padding(.top, BindrSpacing.lg)
             }
         }
         .refreshable {
@@ -104,8 +104,8 @@ struct MyProfileView: View {
     // MARK: - Subviews
 
     private var profileHeader: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .top, spacing: 14) {
+        VStack(alignment: .leading, spacing: BindrSpacing.md) {
+            HStack(alignment: .top, spacing: BindrSpacing.md) {
                 ZStack(alignment: .bottomTrailing) {
                     ProfileAvatarView(profile: profile, size: 64)
                         .overlay(Circle().stroke(themeColor, lineWidth: 3))
@@ -115,8 +115,8 @@ struct MyProfileView: View {
                         .overlay(Circle().stroke(Color(uiColor: .systemBackground), lineWidth: 3))
                 }
 
-                VStack(alignment: .leading, spacing: 6) {
-                    HStack(alignment: .center, spacing: 6) {
+                VStack(alignment: .leading, spacing: BindrSpacing.sm) {
+                    HStack(alignment: .center, spacing: BindrSpacing.sm) {
                         Text(profile.displayName ?? profile.username)
                             .font(.system(size: 18, weight: .heavy))
                             .foregroundStyle(Color.primary)
@@ -125,7 +125,7 @@ struct MyProfileView: View {
                         PremiumBadgeView(profile: profile, size: 14)
                     }
                     if !roleTitles.isEmpty {
-                        HStack(spacing: 6) {
+                        HStack(spacing: BindrSpacing.sm) {
                             ForEach(roleTitles, id: \.self) { title in
                                 rolePill(title)
                             }
@@ -151,10 +151,10 @@ struct MyProfileView: View {
                 statColumn(value: "\(displayedBinderCount)", label: displayedBinderCount == 1 ? "Binder" : "Binders")
                 statColumn(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
             }
-            .padding(.vertical, 12)
+            .padding(.vertical, BindrSpacing.md)
             .glassCardStyle(cornerRadius: 12, interactive: false)
         }
-        .padding(16)
+        .padding(BindrSpacing.lg)
         .background {
             // Layered backdrop driven by the user's theme colour.
             // Both colour layers fade vertically toward `.clear` so the colour
@@ -211,13 +211,18 @@ struct MyProfileView: View {
                     .shadow(color: themeColor.opacity(0.45), radius: 10, x: 0, y: 6)
                     .rotationEffect(.degrees(8))
                     .opacity(0.85)
-                    .padding(.top, 14)
-                    .padding(.trailing, 18)
+                    .padding(.top, BindrSpacing.md)
+                    .padding(.trailing, BindrSpacing.lg)
                     .allowsHitTesting(false)
                 }
             }
-            .ignoresSafeArea(edges: .top)
         }
+        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(Color.primary.opacity(colorScheme == .dark ? 0.10 : 0.06), lineWidth: 1)
+        }
+        .padding(.horizontal, BindrSpacing.lg)
     }
 
 
@@ -250,17 +255,17 @@ struct MyProfileView: View {
                 .buttonStyle(.plain)
             }
         }
-        .padding(4)
+        .padding(BindrSpacing.xs)
         .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
         .overlay {
             Capsule().stroke(Color.primary.opacity(0.06), lineWidth: 1)
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, BindrSpacing.lg)
     }
 
     @ViewBuilder
     private var profileTabContent: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: BindrSpacing.md) {
             switch selectedProfileTab {
             case .posts:
                 if groupedActivity.isEmpty {
@@ -291,7 +296,7 @@ struct MyProfileView: View {
                 }
             }
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, BindrSpacing.lg)
     }
 
     private func isRenderableCardIDForProfileGrid(_ cardID: String) -> Bool {
@@ -333,7 +338,7 @@ struct MyProfileView: View {
             .font(.system(size: 12))
             .foregroundStyle(Color.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(14)
+            .padding(BindrSpacing.md)
             .glassCardStyle(cornerRadius: 14, interactive: false)
     }
     

@@ -501,7 +501,7 @@ struct BuilderCardRow: View {
     var body: some View {
         HStack(spacing: 10) {
             ZStack {
-                if let imageURLString = card?.imageLowSrc {
+                if let imageURLString = card?.displayImageSrc {
                     CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
                     } placeholder: {
@@ -777,7 +777,7 @@ private struct SelectablePickerCard: View {
         Button(action: onTap) {
             ZStack(alignment: .topTrailing) {
                 ZStack {
-                    if let imageURLString = card?.imageLowSrc {
+                    if let imageURLString = card?.displayImageSrc {
                         CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
                             image.resizable().aspectRatio(contentMode: .fill)
                         } placeholder: {

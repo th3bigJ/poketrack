@@ -69,7 +69,7 @@ enum FeaturedHeroCardsLoader {
     private static func curate(cards: [Card], excluding seen: Set<String>) -> [Card] {
         let pool = cards.filter { card in
             guard !seen.contains(card.masterCardId) else { return false }
-            return !card.imageLowSrc.isEmpty
+            return !card.displayImageSrc.isEmpty
         }
 
         // Priority pass — for each rarity fragment, pick the first match.

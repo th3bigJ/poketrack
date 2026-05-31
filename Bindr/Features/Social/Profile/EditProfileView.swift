@@ -694,7 +694,7 @@ private struct FavoriteCardPickerView: View {
                                     cardID: card.masterCardId,
                                     cardName: card.cardName,
                                     setCode: card.setCode,
-                                    imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc).absoluteString
+                                    imageURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc).absoluteString
                                 )
                                 dismiss()
                             } label: {

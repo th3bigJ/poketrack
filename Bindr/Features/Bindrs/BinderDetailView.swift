@@ -817,20 +817,13 @@ struct BinderDetailView: View {
     /// most impactful piece of binder-metaphor chrome — turns the surface
     /// from "felt playmat" into "object you flip pages of".
     private func binderRingSpine(pageHeight: CGFloat) -> some View {
-        // Distribute three rings vertically with generous breathing room.
-        // Inset the spine slightly from the top/bottom to mimic the metal
-        // hardware position on a real ringed binder.
-        VStack(spacing: 0) {
-            Spacer(minLength: 0)
-            binderRing()
-            Spacer(minLength: 0)
-            binderRing()
-            Spacer(minLength: 0)
-            binderRing()
-            Spacer(minLength: 0)
+        ZStack(alignment: .top) {
+            ForEach(Array(BinderRingGuide.normalizedYPositions.enumerated()), id: \.offset) { _, yPosition in
+                binderRing()
+                    .position(x: 8, y: pageHeight * yPosition)
+            }
         }
-        .frame(width: 16)
-        .padding(.vertical, max(20, pageHeight * 0.10))
+        .frame(width: 16, height: pageHeight)
         .allowsHitTesting(false)
     }
 
@@ -936,15 +929,8 @@ struct BinderDetailView: View {
                     style: StrokeStyle(lineWidth: 1.5, dash: [4, 3])
                 )
 
-            // Faint plus/cross formed by two thin lines.
-            ZStack {
-                Rectangle()
-                    .fill(Color.white.opacity(0.07))
-                    .frame(width: 14, height: 1)
-                Rectangle()
-                    .fill(Color.white.opacity(0.07))
-                    .frame(width: 1, height: 14)
-            }
+            // No add affordance in view mode: empty pockets should still
+            // read as real binder sleeves until the user enters edit mode.
         }
     }
 
@@ -952,7 +938,7 @@ struct BinderDetailView: View {
     private func viewSlotCell(slot: BinderSlot) -> some View {
         let isOwned = ownedCardIDs.contains(slot.cardID)
         let card = cardsByID[slot.cardID]
-        let imageURL = card.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
+        let imageURL = card.map { AppConfiguration.imageURL(relativePath: $0.displayImageSrc) }
         let cardCornerRadius: CGFloat = 4
         Button {
             if !isEditing { viewingSlot = slot }
@@ -1077,7 +1063,7 @@ struct BinderDetailView: View {
         ZStack(alignment: .topTrailing) {
             if let slot {
                 let imageURL = cardsByID[slot.cardID].map {
-                    AppConfiguration.imageURL(relativePath: $0.imageLowSrc)
+                    AppConfiguration.imageURL(relativePath: $0.displayImageSrc)
                 }
                 CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 220, height: 308)) { img in
                     img.resizable().scaledToFit()
@@ -1415,7 +1401,7 @@ private struct BinderCardViewer: View {
     @State private var opacity: Double = 1
 
     private var imageURL: URL? {
-        let src = card.imageHighSrc ?? card.imageLowSrc
+        let src = card.displayImageSrc
         return AppConfiguration.imageURL(relativePath: src)
     }
 
@@ -1488,14 +1474,31 @@ private struct BinderCardViewer: View {
 // MARK: - Style picker sheet
 
 struct BinderStylePickerSheet: View {
+    private enum CoverDisplayMode: String, CaseIterable, Identifiable {
+        case clean
+        case cards
+        case embossed
+
+        var id: String { rawValue }
+
+        var title: String {
+            switch self {
+            case .cards: return "Cards"
+            case .clean: return "Clean"
+            case .embossed: return "Embossed"
+            }
+        }
+    }
+
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
     @Bindable var binder: Binder
-    @State private var cardURLs: [URL?] = [nil, nil, nil]
+    @State private var cardURLs: [URL?]? = nil
     @State private var slotImageURLs: [String: URL] = [:]
     @State private var pokemonQuery = ""
+    @State private var coverDisplayMode: CoverDisplayMode = .cards
     private let layoutOptions: [BinderPageLayout] = [
         .fixed(rows: 2, columns: 2),
         .fixed(rows: 3, columns: 2),
@@ -1517,342 +1520,306 @@ struct BinderStylePickerSheet: View {
         return formatter.string(from: NSNumber(value: total)) ?? "$0.00"
     }
 
+    private var hasEmbossSelection: Bool {
+        binder.embossedCardID != nil || binder.embossedPokemonImageUrl != nil
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 32) {
-                    // Preview
+                VStack(spacing: 20) {
                     GeometryReader { proxy in
                         BinderCoverView(
                             binder: binder,
                             compact: false,
                             valueText: binder.showValueOnCover ? formattedTotalValue : nil
                         )
+                        .peekingURLsOverride(cardURLs)
                         .frame(width: proxy.size.width * 0.6)
                         .frame(maxWidth: .infinity)
                     }
                     .frame(height: 320)
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, 24)
 
-                    VStack(alignment: .leading, spacing: 20) {
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("LAYOUT")
-                                .font(.caption.bold())
-                                .foregroundStyle(.secondary)
-
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                                ForEach(layoutOptions, id: \.self) { option in
-                                    layoutButton(for: option)
-                                }
-
-                                Button {
-                                    binder.pageLayout = BinderPageLayout.freeScroll.rawValue
-                                } label: {
-                                    HStack {
-                                        Image(systemName: "square.grid.3x3")
-                                        Text("Free flow")
-                                    }
-                                    .font(.system(size: 13, weight: .medium))
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 12)
-                                    .background(layout.isFreeScroll ? bindrAccent.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .overlay {
-                                        if layout.isFreeScroll {
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(bindrAccent, lineWidth: 1)
-                                        }
+                    VStack(alignment: .leading, spacing: 16) {
+                        stylePanel(title: "Binder style", icon: "swatchpalette") {
+                            VStack(alignment: .leading, spacing: 16) {
+                                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 14) {
+                                    ForEach(BinderColourPalette.pickerOptions, id: \.name) { swatch in
+                                        colorSwatchButton(swatch)
                                     }
                                 }
-                                .buttonStyle(.plain)
-                                .gridCellColumns(3)
-                            }
-                        }
 
-                        // Texture Selection
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("TEXTURE")
-                                .font(.caption.bold())
-                                .foregroundStyle(.secondary)
-
-                            Picker("Texture", selection: $binder.texture) {
-                                ForEach(BinderTexture.allCases) { tex in
-                                    Text(tex.displayName).tag(tex.rawValue)
-                                }
-                            }
-                            .pickerStyle(.segmented)
-                            .tint(colorScheme == .dark ? .white : .black)
-                        }
-
-                        // Colour Selection
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("COLOUR")
-                                .font(.caption.bold())
-                                .foregroundStyle(.secondary)
-
-                            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
-                                ForEach(BinderColourPalette.pickerOptions, id: \.name) { swatch in
-                                    Button {
-                                        binder.colour = swatch.name
-                                    } label: {
-                                        Circle()
-                                            .fill(swatch.color)
-                                            .frame(width: 44, height: 44)
-                                            .overlay {
-                                                if binder.colour == swatch.name {
-                                                    Image(systemName: "checkmark")
-                                                        .font(.headline.weight(.bold))
-                                                        .foregroundStyle(.white)
-                                                }
-                                            }
-                                            .shadow(color: swatch.color.opacity(0.3), radius: 4, x: 0, y: 2)
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                                    ForEach(BinderTexture.allCases) { texture in
+                                        textureButton(texture)
                                     }
                                 }
-                            }
-                        }
 
-                        // Cover Options — mirror of the create sheet's toggle.
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("TITLE")
-                                .font(.caption.bold())
-                                .foregroundStyle(.secondary)
+                                Divider()
 
-                            Picker("Title text color", selection: $binder.titleTextColor) {
-                                ForEach(BinderTitleTextColor.allCases) { option in
-                                    Text(option.displayName).tag(option.rawValue)
-                                }
-                            }
-                            .pickerStyle(.segmented)
-                            .tint(colorScheme == .dark ? .white : .black)
-
-                            Picker("Title font", selection: $binder.titleFontStyle) {
-                                ForEach(BinderTitleFontStyle.allCases) { option in
-                                    Text(option.displayName).tag(option.rawValue)
-                                }
-                            }
-                            .pickerStyle(.segmented)
-                            .tint(colorScheme == .dark ? .white : .black)
-                        }
-
-                        // Cover Options — mirror of the create sheet's toggle.
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("COVER")
-                                .font(.caption.bold())
-                                .foregroundStyle(.secondary)
-
-                            Toggle(isOn: $binder.showCardPreview) {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Show cards on cover")
-                                        .font(.subheadline.weight(.medium))
-                                    Text("Preview the first few cards on the binder front")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                            }
-                            .tint(colorScheme == .dark ? .white : .black)
-
-                            Toggle(isOn: $binder.showValueOnCover) {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text("Show value on cover")
-                                        .font(.subheadline.weight(.medium))
-                                    Text("Display the binder value label on the front")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                            }
-                            .tint(colorScheme == .dark ? .white : .black)
-                        }
-
-                        // NEW: Cover Art Feature
-                        VStack(alignment: .leading, spacing: 12) {
-                            Text("COVER ART")
-                                .font(.caption.bold())
-                                .foregroundStyle(.secondary)
-
-                            Picker("Art Style", selection: $binder.showCardPreview) {
-                                Text("3-Card Fan").tag(true)
-                                Text("Embossed Design").tag(false)
-                            }
-                            .pickerStyle(.segmented)
-                            .tint(colorScheme == .dark ? .white : .black)
-
-                            if !binder.showCardPreview {
-                                // Emboss mode toggle
-                                Picker("Emboss Mode", selection: $binder.embossMode) {
-                                    ForEach(BinderEmbossMode.allCases) { mode in
-                                        Text(mode.displayName).tag(mode.rawValue)
+                                Picker("Title text color", selection: $binder.titleTextColor) {
+                                    ForEach(BinderTitleTextColor.allCases) { option in
+                                        Text(option.displayName).tag(option.rawValue)
                                     }
                                 }
                                 .pickerStyle(.segmented)
                                 .tint(colorScheme == .dark ? .white : .black)
 
-                                if binder.embossModeKind == .character {
-                                    // CHARACTER mode: pick a Pokémon from the national dex
-                                    VStack(alignment: .leading, spacing: 10) {
-                                        Text("Select Pokémon to emboss")
-                                            .font(.caption.bold())
-                                            .foregroundStyle(.secondary)
+                                Picker("Title font", selection: $binder.titleFontStyle) {
+                                    ForEach(BinderTitleFontStyle.allCases) { option in
+                                        Text(option.displayName).tag(option.rawValue)
+                                    }
+                                }
+                                .pickerStyle(.segmented)
+                                .tint(colorScheme == .dark ? .white : .black)
 
-                                        // Search bar
+                                Divider()
+
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                                    ForEach(layoutOptions, id: \.self) { option in
+                                        layoutButton(for: option)
+                                    }
+
+                                    Button {
+                                        binder.pageLayout = BinderPageLayout.freeScroll.rawValue
+                                    } label: {
                                         HStack {
-                                            Image(systemName: "magnifyingglass")
-                                                .foregroundStyle(.secondary)
-                                            TextField("Search Pokémon", text: $pokemonQuery)
-                                                .textInputAutocapitalization(.never)
-                                                .autocorrectionDisabled()
+                                            Image(systemName: "square.grid.3x3")
+                                            Text("Free flow")
                                         }
-                                        .padding(10)
-                                        .background(Color.secondary.opacity(0.1))
+                                        .font(.system(size: 13, weight: .medium))
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.vertical, 12)
+                                        .background(layout.isFreeScroll ? bindrAccent.opacity(0.1) : Color(uiColor: .tertiarySystemGroupedBackground))
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
-
-                                        let allPokemon = services.cardData.nationalDexPokemonSorted()
-                                        let filteredPokemon: [NationalDexPokemon] = {
-                                            let q = pokemonQuery.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-                                            guard !q.isEmpty else { return allPokemon }
-                                            return allPokemon.filter {
-                                                $0.name.lowercased().contains(q) ||
-                                                $0.displayName.lowercased().contains(q) ||
-                                                String($0.nationalDexNumber).contains(q)
+                                        .overlay {
+                                            if layout.isFreeScroll {
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .stroke(bindrAccent, lineWidth: 1)
                                             }
-                                        }()
-
-                                        // None option
-                                        if pokemonQuery.isEmpty {
-                                            Button {
-                                                binder.embossedPokemonImageUrl = nil
-                                                binder.embossedCardID = nil
-                                            } label: {
-                                                HStack(spacing: 8) {
-                                                    RoundedRectangle(cornerRadius: 6)
-                                                        .fill(Color.secondary.opacity(0.12))
-                                                        .frame(width: 44, height: 44)
-                                                        .overlay {
-                                                            Image(systemName: "slash.circle")
-                                                                .foregroundStyle(.secondary)
-                                                        }
-                                                    Text("None")
-                                                        .font(.subheadline)
-                                                        .foregroundStyle(.primary)
-                                                    Spacer()
-                                                    if binder.embossedPokemonImageUrl == nil && binder.embossedCardID == nil {
-                                                        Image(systemName: "checkmark")
-                                                            .foregroundStyle(bindrAccent)
-                                                            .fontWeight(.semibold)
-                                                    }
-                                                }
-                                                .padding(.horizontal, 4)
-                                                .padding(.vertical, 6)
-                                            }
-                                            .buttonStyle(.plain)
-                                            Divider()
                                         }
+                                    }
+                                    .buttonStyle(.plain)
+                                    .gridCellColumns(3)
+                                }
+                            }
+                        }
 
-                                        // Pokémon grid
-                                        LazyVGrid(
-                                            columns: [GridItem(.adaptive(minimum: 80), spacing: 8)],
-                                            spacing: 8
-                                        ) {
-                                            ForEach(filteredPokemon) { mon in
-                                                Button {
-                                                    binder.embossedPokemonImageUrl = mon.imageUrl
-                                                    binder.embossedCardID = nil
-                                                } label: {
-                                                    VStack(spacing: 4) {
-                                                        CachedAsyncImage(url: AppConfiguration.pokemonArtURL(imageFileName: mon.imageUrl)) { img in
-                                                            img.resizable().scaledToFit()
-                                                        } placeholder: {
-                                                            Color.secondary.opacity(0.1)
+                        stylePanel(title: "Front cover", icon: "rectangle.portrait") {
+                            VStack(spacing: 12) {
+                                ForEach(CoverDisplayMode.allCases) { mode in
+                                    coverModeRow(mode)
+                                }
+
+                                Divider()
+
+                                Toggle(isOn: $binder.showValueOnCover) {
+                                    Label {
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text("Show value")
+                                                .font(.subheadline.weight(.semibold))
+                                            Text("Adds the collection value to the cover")
+                                                .font(.caption)
+                                                .foregroundStyle(.secondary)
+                                        }
+                                    } icon: {
+                                        Image(systemName: "sterlingsign.circle")
+                                            .foregroundStyle(bindrAccent)
+                                    }
+                                }
+                                .tint(bindrAccent)
+                            }
+                        }
+
+                        if coverDisplayMode == .embossed {
+                            stylePanel(title: "Embossed art", icon: "sparkles") {
+                                VStack(alignment: .leading, spacing: 14) {
+                                    Picker("Emboss Mode", selection: $binder.embossMode) {
+                                        ForEach(BinderEmbossMode.allCases) { mode in
+                                            Text(mode.displayName).tag(mode.rawValue)
+                                        }
+                                    }
+                                    .pickerStyle(.segmented)
+                                    .tint(colorScheme == .dark ? .white : .black)
+
+                                    if binder.embossModeKind == .character {
+                                        VStack(alignment: .leading, spacing: 10) {
+                                            Text("Character")
+                                                .font(.caption.weight(.semibold))
+                                                .foregroundStyle(.secondary)
+
+                                            HStack {
+                                                Image(systemName: "magnifyingglass")
+                                                    .foregroundStyle(.secondary)
+                                                TextField("Search Pokémon", text: $pokemonQuery)
+                                                    .textInputAutocapitalization(.never)
+                                                    .autocorrectionDisabled()
+                                            }
+                                            .padding(12)
+                                            .background(Color(uiColor: .tertiarySystemGroupedBackground))
+                                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+
+                                            let allPokemon = services.cardData.nationalDexPokemonSorted()
+                                            let filteredPokemon: [NationalDexPokemon] = {
+                                                let q = pokemonQuery.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                                                guard !q.isEmpty else { return allPokemon }
+                                                return allPokemon.filter {
+                                                    $0.name.lowercased().contains(q) ||
+                                                    $0.displayName.lowercased().contains(q) ||
+                                                    String($0.nationalDexNumber).contains(q)
+                                                }
+                                            }()
+
+                                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 82), spacing: 10)], spacing: 10) {
+                                                if pokemonQuery.isEmpty {
+                                                    Button {
+                                                        binder.embossedPokemonImageUrl = nil
+                                                        binder.embossedCardID = nil
+                                                    } label: {
+                                                        VStack(spacing: 5) {
+                                                            Image(systemName: "slash.circle")
+                                                                .font(.system(size: 22, weight: .semibold))
+                                                                .foregroundStyle(.secondary)
+                                                                .frame(height: 58)
+                                                            Text("None")
+                                                                .font(.caption2)
+                                                                .lineLimit(1)
                                                         }
-                                                        .frame(height: 64)
-                                                        Text(mon.displayName)
+                                                        .foregroundStyle(.primary)
+                                                        .padding(8)
+                                                        .frame(maxWidth: .infinity)
+                                                        .background(
+                                                            binder.embossedPokemonImageUrl == nil && binder.embossedCardID == nil
+                                                                ? bindrAccent.opacity(0.14)
+                                                                : Color(uiColor: .tertiarySystemGroupedBackground),
+                                                            in: RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                                        )
+                                                        .overlay {
+                                                            if binder.embossedPokemonImageUrl == nil && binder.embossedCardID == nil {
+                                                                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                                                    .stroke(bindrAccent, lineWidth: 1.5)
+                                                            }
+                                                        }
+                                                    }
+                                                    .buttonStyle(.plain)
+                                                }
+
+                                                ForEach(filteredPokemon) { mon in
+                                                    Button {
+                                                        binder.embossedPokemonImageUrl = mon.imageUrl
+                                                        binder.embossedCardID = nil
+                                                    } label: {
+                                                        VStack(spacing: 5) {
+                                                            CachedAsyncImage(url: AppConfiguration.pokemonArtURL(imageFileName: mon.imageUrl)) { img in
+                                                                img.resizable().scaledToFit()
+                                                            } placeholder: {
+                                                                Color.secondary.opacity(0.1)
+                                                            }
+                                                            .frame(height: 58)
+                                                            Text(mon.displayName)
+                                                                .font(.caption2)
+                                                                .lineLimit(1)
+                                                        }
+                                                        .foregroundStyle(.primary)
+                                                        .padding(8)
+                                                        .frame(maxWidth: .infinity)
+                                                        .background(binder.embossedPokemonImageUrl == mon.imageUrl ? bindrAccent.opacity(0.14) : Color(uiColor: .tertiarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                                        .overlay {
+                                                            if binder.embossedPokemonImageUrl == mon.imageUrl {
+                                                                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                                                    .stroke(bindrAccent, lineWidth: 1.5)
+                                                            }
+                                                        }
+                                                    }
+                                                    .buttonStyle(.plain)
+                                                }
+                                            }
+                                            .task {
+                                                if services.cardData.nationalDexPokemon.isEmpty {
+                                                    await services.cardData.loadNationalDexPokemon()
+                                                }
+                                            }
+                                        }
+                                    } else if !binder.slotList.isEmpty {
+                                        VStack(alignment: .leading, spacing: 10) {
+                                            Text("Full card")
+                                                .font(.caption.weight(.semibold))
+                                                .foregroundStyle(.secondary)
+
+                                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 82), spacing: 10)], spacing: 10) {
+                                                Button {
+                                                    binder.embossedCardID = nil
+                                                    binder.embossedPokemonImageUrl = nil
+                                                } label: {
+                                                    VStack(spacing: 5) {
+                                                        Image(systemName: "slash.circle")
+                                                            .font(.system(size: 22, weight: .semibold))
+                                                            .foregroundStyle(.secondary)
+                                                            .frame(height: 76)
+                                                        Text("None")
                                                             .font(.caption2)
                                                             .lineLimit(1)
-                                                            .foregroundStyle(.primary)
                                                     }
-                                                    .padding(6)
+                                                    .foregroundStyle(.primary)
+                                                    .padding(8)
+                                                    .frame(maxWidth: .infinity)
                                                     .background(
-                                                        RoundedRectangle(cornerRadius: 10)
-                                                            .fill(binder.embossedPokemonImageUrl == mon.imageUrl
-                                                                  ? bindrAccent.opacity(0.15)
-                                                                  : Color.secondary.opacity(0.08))
+                                                        binder.embossedCardID == nil && binder.embossedPokemonImageUrl == nil
+                                                            ? bindrAccent.opacity(0.14)
+                                                            : Color(uiColor: .tertiarySystemGroupedBackground),
+                                                        in: RoundedRectangle(cornerRadius: 12, style: .continuous)
                                                     )
                                                     .overlay {
-                                                        if binder.embossedPokemonImageUrl == mon.imageUrl {
-                                                            RoundedRectangle(cornerRadius: 10)
+                                                        if binder.embossedCardID == nil && binder.embossedPokemonImageUrl == nil {
+                                                            RoundedRectangle(cornerRadius: 12, style: .continuous)
                                                                 .stroke(bindrAccent, lineWidth: 1.5)
                                                         }
                                                     }
                                                 }
                                                 .buttonStyle(.plain)
-                                            }
-                                        }
-                                        .task {
-                                            if services.cardData.nationalDexPokemon.isEmpty {
-                                                await services.cardData.loadNationalDexPokemon()
-                                            }
-                                        }
-                                    }
 
-                                } else {
-                                    // FULL CARD mode: pick from binder slots
-                                    if !binder.slotList.isEmpty {
-                                        VStack(alignment: .leading, spacing: 8) {
-                                            Text("Select card to emboss")
-                                                .font(.caption.bold())
-                                                .foregroundStyle(.secondary)
-
-                                            ScrollView(.horizontal, showsIndicators: false) {
-                                                HStack(spacing: 12) {
+                                                ForEach(binder.slotList) { slot in
                                                     Button {
-                                                        binder.embossedCardID = nil
+                                                        binder.embossedCardID = slot.cardID
                                                         binder.embossedPokemonImageUrl = nil
                                                     } label: {
-                                                        VStack {
-                                                            RoundedRectangle(cornerRadius: 8)
-                                                                .fill(Color.secondary.opacity(0.1))
-                                                                .frame(width: 60, height: 84)
-                                                                .overlay {
-                                                                    Image(systemName: "slash.circle")
-                                                                        .foregroundStyle(.secondary)
-                                                                }
-                                                            Text("None")
+                                                        VStack(spacing: 5) {
+                                                            let url = slotImageURLs[slot.cardID]
+                                                            CachedAsyncImage(url: url, targetSize: CGSize(width: 132, height: 184)) { img in
+                                                                img.resizable()
+                                                                    .aspectRatio(contentMode: .fill)
+                                                            } placeholder: {
+                                                                Color.secondary.opacity(0.1)
+                                                            }
+                                                            .frame(width: 58, height: 76)
+                                                            .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+                                                            .overlay {
+                                                                RoundedRectangle(cornerRadius: 7, style: .continuous)
+                                                                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
+                                                            }
+                                                            Text(slot.cardName)
                                                                 .font(.caption2)
+                                                                .lineLimit(1)
+                                                        }
+                                                        .foregroundStyle(.primary)
+                                                        .padding(8)
+                                                        .frame(maxWidth: .infinity)
+                                                        .background(
+                                                            binder.embossedCardID == slot.cardID
+                                                                ? bindrAccent.opacity(0.14)
+                                                                : Color(uiColor: .tertiarySystemGroupedBackground),
+                                                            in: RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                                        )
+                                                        .overlay {
+                                                            if binder.embossedCardID == slot.cardID {
+                                                                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                                                    .stroke(bindrAccent, lineWidth: 1.5)
+                                                            }
                                                         }
                                                     }
                                                     .buttonStyle(.plain)
-
-                                                    ForEach(binder.slotList) { slot in
-                                                        Button {
-                                                            binder.embossedCardID = slot.cardID
-                                                            binder.embossedPokemonImageUrl = nil
-                                                        } label: {
-                                                            VStack {
-                                                                let url = slotImageURLs[slot.cardID]
-                                                                CachedAsyncImage(url: url, targetSize: CGSize(width: 120, height: 168)) { img in
-                                                                    img.resizable()
-                                                                        .aspectRatio(contentMode: .fill)
-                                                                } placeholder: {
-                                                                    Color.secondary.opacity(0.1)
-                                                                }
-                                                                .frame(width: 60, height: 84)
-                                                                .clipShape(RoundedRectangle(cornerRadius: 8))
-                                                                .overlay {
-                                                                    if binder.embossedCardID == slot.cardID {
-                                                                        RoundedRectangle(cornerRadius: 8)
-                                                                            .stroke(bindrAccent, lineWidth: 2)
-                                                                    }
-                                                                }
-                                                                Text(slot.cardName)
-                                                                    .font(.caption2)
-                                                                    .lineLimit(1)
-                                                                    .frame(width: 60)
-                                                            }
-                                                        }
-                                                        .buttonStyle(.plain)
-                                                    }
                                                 }
-                                                .padding(.horizontal, 2)
-                                                .padding(.vertical, 4)
                                             }
                                         }
                                     } else {
@@ -1863,14 +1830,19 @@ struct BinderStylePickerSheet: View {
                                 }
                             }
                         }
+
                     }
                     .padding(.horizontal, 16)
                 }
                 .padding(.vertical, 24)
             }
             .task {
+                syncCoverDisplayModeFromBinder()
                 await loadCardURLs()
                 await loadSlotImageURLs()
+            }
+            .onChange(of: coverDisplayMode) { _, mode in
+                applyCoverDisplayMode(mode)
             }
             .navigationTitle("Binder Style")
             .navigationBarTitleDisplayMode(.inline)
@@ -1887,6 +1859,169 @@ struct BinderStylePickerSheet: View {
 
     private var layout: BinderPageLayout {
         BinderPageLayout(rawValue: binder.pageLayout)
+    }
+
+    private func syncCoverDisplayModeFromBinder() {
+        if binder.showCardPreview {
+            coverDisplayMode = .cards
+        } else if hasEmbossSelection {
+            coverDisplayMode = .embossed
+        } else {
+            coverDisplayMode = .clean
+        }
+    }
+
+    private func applyCoverDisplayMode(_ mode: CoverDisplayMode) {
+        switch mode {
+        case .cards:
+            binder.showCardPreview = true
+        case .clean:
+            binder.showCardPreview = false
+            binder.embossedCardID = nil
+            binder.embossedPokemonImageUrl = nil
+        case .embossed:
+            binder.showCardPreview = false
+        }
+    }
+
+    private func coverModeRow(_ mode: CoverDisplayMode) -> some View {
+        let isSelected = coverDisplayMode == mode
+        return Button {
+            coverDisplayMode = mode
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: coverModeIcon(mode))
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(isSelected ? bindrAccent : .secondary)
+                    .frame(width: 34, height: 34)
+                    .background(
+                        (isSelected ? bindrAccent.opacity(0.14) : Color(uiColor: .tertiarySystemGroupedBackground)),
+                        in: RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    )
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(mode.title)
+                        .font(.subheadline.weight(.semibold))
+                    Text(coverModeSubtitle(mode))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(bindrAccent)
+                }
+            }
+            .foregroundStyle(.primary)
+            .padding(12)
+            .background(
+                isSelected ? bindrAccent.opacity(0.08) : Color(uiColor: .tertiarySystemGroupedBackground),
+                in: RoundedRectangle(cornerRadius: 14, style: .continuous)
+            )
+            .overlay {
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(isSelected ? bindrAccent.opacity(0.45) : Color.primary.opacity(0.06), lineWidth: 1)
+            }
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func coverModeIcon(_ mode: CoverDisplayMode) -> String {
+        switch mode {
+        case .cards: return "rectangle.stack.fill"
+        case .clean: return "rectangle.portrait.fill"
+        case .embossed: return "sparkles"
+        }
+    }
+
+    private func coverModeSubtitle(_ mode: CoverDisplayMode) -> String {
+        switch mode {
+        case .cards: return "Fan the first cards across the cover"
+        case .clean: return "Keep the material and title uncluttered"
+        case .embossed: return "Press a card or character into the surface"
+        }
+    }
+
+    private func colorSwatchButton(_ swatch: (name: String, color: Color)) -> some View {
+        let isSelected = binder.colour == swatch.name
+        return Button {
+            binder.colour = swatch.name
+        } label: {
+            Circle()
+                .fill(swatch.color)
+                .frame(width: 36, height: 36)
+                .overlay {
+                    Circle()
+                        .stroke(isSelected ? Color.primary.opacity(0.35) : Color.white.opacity(0.2), lineWidth: isSelected ? 2 : 1)
+                }
+                .overlay {
+                    if isSelected {
+                        Image(systemName: "checkmark")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(.white)
+                            .shadow(color: .black.opacity(0.35), radius: 1, x: 0, y: 1)
+                    }
+                }
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(BinderColourPalette.displayName(for: swatch.name))
+    }
+
+    private func textureButton(_ texture: BinderTexture) -> some View {
+        let isSelected = binder.texture == texture.rawValue
+        return Button {
+            binder.texture = texture.rawValue
+        } label: {
+            HStack(spacing: 8) {
+                Image(systemName: texture.pickerSymbol)
+                    .font(.system(size: 13, weight: .semibold))
+                Text(texture.displayName)
+                    .font(.system(size: 12, weight: .semibold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .foregroundStyle(isSelected ? bindrAccent : .primary)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 11)
+            .background(
+                isSelected ? bindrAccent.opacity(0.10) : Color(uiColor: .tertiarySystemGroupedBackground),
+                in: RoundedRectangle(cornerRadius: 11, style: .continuous)
+            )
+            .overlay {
+                RoundedRectangle(cornerRadius: 11, style: .continuous)
+                    .stroke(isSelected ? bindrAccent.opacity(0.55) : Color.primary.opacity(0.06), lineWidth: 1)
+            }
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func stylePanel<Content: View>(
+        title: String,
+        icon: String,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Label {
+                Text(title)
+                    .font(.system(size: 15, weight: .semibold))
+            } icon: {
+                Image(systemName: icon)
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(bindrAccent)
+            }
+            .foregroundStyle(.primary)
+
+            content()
+        }
+        .padding(16)
+        .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(Color.primary.opacity(0.06), lineWidth: 1)
+        }
     }
 
     @ViewBuilder
@@ -1929,13 +2064,12 @@ struct BinderStylePickerSheet: View {
         
         for slot in slots {
             if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
-                urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+                urls.append(AppConfiguration.imageURL(relativePath: card.displayImageSrc))
             } else {
                 urls.append(nil)
             }
         }
         
-        while urls.count < 3 { urls.append(nil) }
         cardURLs = urls
     }
 
@@ -1943,7 +2077,7 @@ struct BinderStylePickerSheet: View {
         var result: [String: URL] = [:]
         for slot in binder.slotList {
             if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
-                result[slot.cardID] = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                result[slot.cardID] = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
             }
         }
         slotImageURLs = result

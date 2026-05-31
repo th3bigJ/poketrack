@@ -272,7 +272,7 @@ struct CommentsView: View {
                         presentedPullCard = card
                     } label: {
                         HStack(spacing: 12) {
-                            let imageURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                            let imageURL = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
                             CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 80, height: 112)) { img in
                                 img.resizable().scaledToFit()
                             } placeholder: {
@@ -593,7 +593,7 @@ private struct CommentsContentPreviewThumb: View {
         var resolved: [URL?] = []
         for cardID in thumbnailIDs.prefix(4) {
             if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                resolved.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+                resolved.append(AppConfiguration.imageURL(relativePath: card.displayImageSrc))
             } else {
                 resolved.append(nil)
             }

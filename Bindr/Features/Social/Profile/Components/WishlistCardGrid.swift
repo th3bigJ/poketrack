@@ -60,7 +60,7 @@ private struct WishlistCardCell: View {
 
     var body: some View {
         ZStack {
-            if let imageURLString = card?.imageLowSrc {
+            if let imageURLString = card?.displayImageSrc {
                 CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
                     image
                         .resizable()

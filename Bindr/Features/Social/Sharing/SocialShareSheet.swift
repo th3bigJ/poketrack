@@ -383,7 +383,7 @@ struct SocialShareSheet: View {
     }
 
     private func cardImageCell(cardID: String, variantKey: String, isSelected: Bool, action: @escaping () -> Void) -> some View {
-        let imageURL = cardsByID[cardID].map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
+        let imageURL = cardsByID[cardID].map { AppConfiguration.imageURL(relativePath: $0.displayImageSrc) }
         return Button(action: action) {
             VStack(spacing: 6) {
                 ZStack(alignment: .topTrailing) {
