@@ -140,8 +140,14 @@ struct CardGridCell: View {
     }
 
     private var visibleOwnedCountBadge: Int? {
-        guard let ownedCountBadge, ownedCountBadge > 1 else { return nil }
-        return min(max(ownedCountBadge, 2), 999)
+        guard let ownedCountBadge else { return nil }
+        if ownedCountBadge > 1 {
+            return min(max(ownedCountBadge, 2), 999)
+        }
+        if isOwned && ownedCountBadge == 1 {
+            return 1
+        }
+        return nil
     }
 
     private var showsOwnedUI: Bool {
@@ -386,7 +392,7 @@ private struct BrowseCardThumbnailView: View {
     var body: some View {
         CachedCardThumbnailImage(url: imageURL)
             .overlay(alignment: .bottomTrailing) {
-                if let ownedCountBadge, ownedCountBadge > 1 {
+                if let ownedCountBadge, ownedCountBadge >= 1 {
                     ownedBadge(count: ownedCountBadge)
                 } else if !isOwned && isWishlisted {
                     wishlistBadge
