@@ -61,6 +61,14 @@ struct MoreView: View {
                                 color: .purple,
                                 destination: .themes
                             )
+                            Divider()
+                                .padding(.leading, 60)
+                            MoreMenuRow(
+                                title: "Settings",
+                                systemImage: "gearshape.fill",
+                                color: .gray,
+                                destination: .account
+                            )
                         }
                     }
                     .padding(.horizontal, BindrSpacing.lg)
@@ -70,16 +78,7 @@ struct MoreView: View {
             
             // Clean, perfect glassmorphic header matching all other main tabs
             BindrPageHeader(
-                title: "More",
-                leading: {
-                    ChromeGlassCircleButton(accessibilityLabel: "Settings") {
-                        navigationPath.append(SideMenuPage.account)
-                    } label: {
-                        Image(systemName: "gearshape")
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundStyle(.primary)
-                    }
-                }
+                title: "More"
             )
         }
         .bindrPageBackground()
