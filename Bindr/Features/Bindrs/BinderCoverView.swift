@@ -448,7 +448,7 @@ struct BinderCoverView: View {
                 .allowsHitTesting(false)
             }
             .drawingGroup()
-            .offset(y: isCharacter ? 48 * scale : 0)
+            .offset(y: isCharacter ? 48 * scale : 65 * scale)
         } placeholder: {
             ProgressView().controlSize(.small).opacity(0.3)
         }
