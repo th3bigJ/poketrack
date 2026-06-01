@@ -901,15 +901,8 @@ struct BrowseView: View {
                 inlineDetailPriceByCardID = [:]
                 inlineDetailSetTrendChanges = (nil, nil, nil)
                 if selectedTab == .sets {
-                    if newValue != nil {
-                        pendingSetRestoreRowID = browseAuxTopAnchorID()
-                        setRestoreToken += 1
-                    } else if let setCode = lastSelectedSetCodeInSetsTab?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(),
-                              !setCode.isEmpty {
-                        let rowID = browseSetRowScrollID(setCode: setCode)
-                        pendingSetRestoreRowID = rowID
-                        setRestoreToken += 1
-                    }
+                    pendingSetRestoreRowID = browseAuxTopAnchorID()
+                    setRestoreToken += 1
                 }
                 await loadInlineDetailIfNeeded(route: newValue)
             }

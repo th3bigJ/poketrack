@@ -70,6 +70,7 @@ struct DashboardView: View {
     @State private var marketTrendData: MarketTrendDailyBlob? = nil
     @State private var editingRecentLedgerLine: LedgerLine?
     @State private var selectedCardForDetail: Card? = nil
+    @State private var selectedSealedProductForDetail: SealedProduct? = nil
 
     // Cached collection stats — updated via task when collectionItems/brand changes,
     // so SwiftUI body evaluation never pays the O(n) cost of iterating 997+ items.
@@ -458,6 +459,13 @@ struct DashboardView: View {
         .sheet(item: $selectedCardForDetail) { card in
             CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
+        }
+        .sheet(item: $selectedSealedProductForDetail) { product in
+            SealedProductBrowseDetailView(products: [product], startProductID: product.id)
+                .environment(services)
+        }
+        .onChange(of: selectedSealedProductForDetail?.id) { _, productID in
+            services.isSealedDetailPresentationActive = (productID != nil)
         }
         .sheet(item: $editingRecentLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
@@ -881,12 +889,7 @@ struct DashboardView: View {
                     VStack(spacing: 0) {
                         ForEach(recentLines) { line in
                             Button {
-                                guard let cardID = cleaned(line.cardID) else { return }
-                                Task {
-                                    if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                                        await MainActor.run { selectedCardForDetail = card }
-                                    }
-                                }
+                                openRecentActivityDetail(for: line)
                             } label: {
                                 dashboardActivityRow(line: line)
                             }
@@ -1285,6 +1288,36 @@ struct DashboardView: View {
             return productID
         }
         return SealedProduct.parseCollectionProductID(item.cardID)
+    }
+
+    private func sealedProductID(for line: LedgerLine) -> Int? {
+        if let rawID = cleaned(line.sealedProductId), let productID = Int(rawID) {
+            return productID
+        }
+        if let cardID = cleaned(line.cardID) {
+            return SealedProduct.parseCollectionProductID(cardID)
+        }
+        return nil
+    }
+
+    private func openRecentActivityDetail(for line: LedgerLine) {
+        if line.productKind == ProductKind.sealedProduct.rawValue {
+            Task {
+                await services.sealedProducts.loadFromLocalIfAvailable()
+                guard let productID = sealedProductID(for: line),
+                      let product = services.sealedProducts.products.first(where: { $0.id == productID })
+                else { return }
+                await MainActor.run { selectedSealedProductForDetail = product }
+            }
+            return
+        }
+
+        guard let cardID = cleaned(line.cardID) else { return }
+        Task {
+            if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                await MainActor.run { selectedCardForDetail = card }
+            }
+        }
     }
 
     private func resolveDashboardMetadata() async {

@@ -14,6 +14,7 @@ struct TransactionsView: View {
     @State private var cardImageURLsByID: [String: URL] = [:]
     @State private var showAddActivity = false
     @State private var selectedCardForDetail: Card? = nil
+    @State private var selectedSealedProductForDetail: SealedProduct? = nil
     @State private var editingLedgerLine: LedgerLine?
     @State private var pnlRange: ActivityPnLRange = .month
     @State private var holdingsCollectionValue: Double = 0
@@ -144,6 +145,13 @@ struct TransactionsView: View {
             CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
         }
+        .sheet(item: $selectedSealedProductForDetail) { product in
+            SealedProductBrowseDetailView(products: [product], startProductID: product.id)
+                .environment(services)
+        }
+        .onChange(of: selectedSealedProductForDetail?.id) { _, productID in
+            services.isSealedDetailPresentationActive = (productID != nil)
+        }
         .sheet(item: $editingLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
         }
@@ -234,12 +242,7 @@ struct TransactionsView: View {
                     .listRowSeparator(.hidden)
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        guard let cardID = cleaned(line.cardID) else { return }
-                        Task {
-                            if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                                await MainActor.run { selectedCardForDetail = card }
-                            }
-                        }
+                        openTransactionDetail(for: line)
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button(role: .destructive) {
@@ -566,6 +569,36 @@ struct TransactionsView: View {
             return productID
         }
         return SealedProduct.parseCollectionProductID(item.cardID)
+    }
+
+    private func sealedProductID(for line: LedgerLine) -> Int? {
+        if let rawID = cleaned(line.sealedProductId), let productID = Int(rawID) {
+            return productID
+        }
+        if let cardID = cleaned(line.cardID) {
+            return SealedProduct.parseCollectionProductID(cardID)
+        }
+        return nil
+    }
+
+    private func openTransactionDetail(for line: LedgerLine) {
+        if line.productKind == ProductKind.sealedProduct.rawValue {
+            Task {
+                await services.sealedProducts.loadFromLocalIfAvailable()
+                guard let productID = sealedProductID(for: line),
+                      let product = services.sealedProducts.products.first(where: { $0.id == productID })
+                else { return }
+                await MainActor.run { selectedSealedProductForDetail = product }
+            }
+            return
+        }
+
+        guard let cardID = cleaned(line.cardID) else { return }
+        Task {
+            if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                await MainActor.run { selectedCardForDetail = card }
+            }
+        }
     }
 
     private func primaryTitle(for line: LedgerLine) -> String {
