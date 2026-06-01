@@ -23,7 +23,6 @@ private final class ProgressiveImageLoader {
         }
     }
 
-    private var loadTask: Task<Void, Never>?
     private var currentLowURL: URL?
     private var currentHighURL: URL?
 
@@ -31,9 +30,7 @@ private final class ProgressiveImageLoader {
         "\(url.absoluteString)|full|@\(scale)"
     }
 
-    func load(lowResURL: URL?, highResURL: URL?, localLowResURL: URL? = nil) {
-        loadTask?.cancel()
-
+    func load(lowResURL: URL?, highResURL: URL?, localLowResURL: URL? = nil) async {
         // Skip reload only when URLs match, we already have an image, AND there's no local
         // file to try — if localLowResURL is provided we always reload to serve from disk.
         if lowResURL == currentLowURL && highResURL == currentHighURL && localLowResURL == nil {
@@ -48,14 +45,7 @@ private final class ProgressiveImageLoader {
         currentLowURL = lowResURL
         currentHighURL = highResURL
 
-        let capturedLow = lowResURL
-        let capturedHigh = highResURL
-        let capturedLocalLow = localLowResURL
-
-        loadTask = Task.detached(priority: .userInitiated) { [weak self] in
-            guard let self else { return }
-            await self.runProgressiveLoad(lowResURL: capturedLow, highResURL: capturedHigh, localLowResURL: capturedLocalLow)
-        }
+        await runProgressiveLoad(lowResURL: lowResURL, highResURL: highResURL, localLowResURL: localLowResURL)
     }
 
     private func runProgressiveLoad(lowResURL: URL?, highResURL: URL?, localLowResURL: URL?) async {
@@ -65,6 +55,7 @@ private final class ProgressiveImageLoader {
             if let cached = await DecodedImageMemoryCache.shared.image(for: key) {
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
+                    guard self?.currentHighURL == highURL else { return }
                     self?.state = .highReady(cached)
                 }
                 return
@@ -79,6 +70,7 @@ private final class ProgressiveImageLoader {
                 await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
+                    guard self?.currentHighURL == highURL else { return }
                     self?.state = .highReady(ui)
                 }
                 return
@@ -89,6 +81,7 @@ private final class ProgressiveImageLoader {
         if let localURL = localLowResURL, let data = try? Data(contentsOf: localURL), let ui = UIImage(data: data) {
             await MainActor.run { [weak self] in
                 guard !Task.isCancelled else { return }
+                guard self?.currentLowURL == lowResURL else { return }
                 self?.state = .loadingHigh(ui)
             }
             if let high = highResURL {
@@ -100,6 +93,7 @@ private final class ProgressiveImageLoader {
                 }
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
+                    guard self?.currentLowURL == lowResURL else { return }
                     self?.state = .highReady(ui)
                 }
             }
@@ -114,6 +108,7 @@ private final class ProgressiveImageLoader {
                 await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
+                    guard self?.currentLowURL == lowURL else { return }
                     self?.state = .loadingHigh(ui)
                 }
                 if let high = highResURL {
@@ -121,6 +116,7 @@ private final class ProgressiveImageLoader {
                 } else {
                     await MainActor.run { [weak self] in
                         guard !Task.isCancelled else { return }
+                        guard self?.currentLowURL == lowURL else { return }
                         self?.state = .highReady(ui)
                     }
                 }
@@ -130,6 +126,7 @@ private final class ProgressiveImageLoader {
 
         await MainActor.run { [weak self] in
             guard !Task.isCancelled else { return }
+            guard self?.currentLowURL == lowResURL else { return }
             self?.state = .loadingLow
         }
         await loadLowResAsync(lowResURL, thenLoadHigh: highResURL)
@@ -153,6 +150,7 @@ private final class ProgressiveImageLoader {
             guard let ui = UIImage(data: data) else {
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
+                    guard self?.currentLowURL == url else { return }
                     self?.state = .failed
                 }
                 return
@@ -163,6 +161,7 @@ private final class ProgressiveImageLoader {
 
             await MainActor.run { [weak self] in
                 guard !Task.isCancelled else { return }
+                guard self?.currentLowURL == url else { return }
                 self?.state = .loadingHigh(ui)
             }
 
@@ -171,12 +170,14 @@ private final class ProgressiveImageLoader {
             } else {
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
+                    guard self?.currentLowURL == url else { return }
                     self?.state = .highReady(ui)
                 }
             }
         } catch {
             await MainActor.run { [weak self] in
                 guard !Task.isCancelled else { return }
+                guard self?.currentLowURL == url else { return }
                 self?.state = .failed
             }
         }
@@ -200,14 +201,11 @@ private final class ProgressiveImageLoader {
                 await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
+                    guard self?.currentHighURL == url else { return }
                     self?.state = .highReady(ui)
                 }
             }
         } catch { }
-    }
-
-    func cancel() {
-        loadTask?.cancel()
     }
 }
 
@@ -265,10 +263,7 @@ struct ProgressiveAsyncImage<Placeholder: View>: View {
             if let image { onImageLoaded?(image) }
         }
         .task(id: "\(lowResURL?.absoluteString ?? "")|\(highResURL?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(offlineContext?.packDataRevision ?? 0)") {
-            loader.load(lowResURL: lowResURL, highResURL: highResURL, localLowResURL: localLowResURL)
-        }
-        .onDisappear {
-            loader.cancel()
+            await loader.load(lowResURL: lowResURL, highResURL: highResURL, localLowResURL: localLowResURL)
         }
     }
 }
@@ -279,12 +274,9 @@ struct ProgressiveAsyncImage<Placeholder: View>: View {
 private final class OptimizedImageLoader {
     var image: UIImage?
     private var currentURL: URL?
-    private var loadTask: Task<Void, Never>?
     private var targetSize: CGSize?
 
-    func load(url: URL?, localURL: URL? = nil, targetSize: CGSize? = nil) {
-        loadTask?.cancel()
-
+    func load(url: URL?, localURL: URL? = nil, targetSize: CGSize? = nil) async {
         guard let url else {
             currentURL = nil
             image = nil
@@ -297,45 +289,35 @@ private final class OptimizedImageLoader {
         self.targetSize = targetSize
         image = nil
 
-        let capturedURL = url
-        let capturedLocal = localURL
-        let capturedTarget = targetSize
+        let scale = await MainActor.run { UIScreen.main.scale }
 
-        loadTask = Task.detached(priority: .utility) { [weak self] in
-            let scale = await MainActor.run { UIScreen.main.scale }
+        var decoded: UIImage?
 
-            var decoded: UIImage?
+        if let localURL = localURL, let data = try? Data(contentsOf: localURL) {
+            decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: targetSize, scale: scale)
+        }
 
-            if let localURL = capturedLocal, let data = try? Data(contentsOf: localURL) {
-                decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: capturedTarget, scale: scale)
-            }
-
-            if decoded == nil {
-                let request = URLRequest(url: capturedURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-                if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
-                    decoded = ThumbnailImageDecode.downsampled(data: cached.data, targetSize: capturedTarget, scale: scale)
-                } else {
-                    do {
-                        let (data, response) = try await AppURLSession.images.data(for: request)
-                        guard !Task.isCancelled else { return }
-                        AppURLSession.imageURLCache.storeCachedResponse(
-                            CachedURLResponse(response: response, data: data), for: request)
-                        decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: capturedTarget, scale: scale)
-                    } catch { }
-                }
-            }
-
-            let finalImage = decoded
-            await MainActor.run { [weak self] in
-                guard let self, !Task.isCancelled else { return }
-                guard self.currentURL == capturedURL else { return }
-                self.image = finalImage
+        if decoded == nil {
+            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+            if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
+                decoded = ThumbnailImageDecode.downsampled(data: cached.data, targetSize: targetSize, scale: scale)
+            } else {
+                do {
+                    let (data, response) = try await AppURLSession.images.data(for: request)
+                    guard !Task.isCancelled else { return }
+                    AppURLSession.imageURLCache.storeCachedResponse(
+                        CachedURLResponse(response: response, data: data), for: request)
+                    decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: targetSize, scale: scale)
+                } catch { }
             }
         }
-    }
 
-    func cancel() {
-        loadTask?.cancel()
+        let finalImage = decoded
+        await MainActor.run { [weak self] in
+            guard let self, !Task.isCancelled else { return }
+            guard self.currentURL == url else { return }
+            self.image = finalImage
+        }
     }
 }
 
@@ -379,10 +361,7 @@ struct OptimizedAsyncImage<Content: View, Placeholder: View>: View {
         }
         .animation(.easeOut(duration: 0.18), value: loader.image != nil)
         .task(id: "\(url?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(offlineContext?.packDataRevision ?? 0)") {
-            loader.load(url: url, localURL: localURL, targetSize: targetSize)
-        }
-        .onDisappear {
-            loader.cancel()
+            await loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }
     }
 }

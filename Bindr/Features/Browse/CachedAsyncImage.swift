@@ -22,7 +22,6 @@ actor DecodedImageMemoryCache {
 private final class ImageLoader {
     var image: UIImage?
     private var currentURL: URL?
-    private var loadTask: Task<Void, Never>?
     private var targetSize: CGSize?
 
     private func decodeImage(from cached: CachedURLResponse, targetSize: CGSize?, scale: CGFloat) -> UIImage? {
@@ -40,10 +39,7 @@ private final class ImageLoader {
         return "\(source)|\(w)x\(h)|@\(scale)"
     }
 
-    func load(url: URL?, localURL: URL?, targetSize: CGSize?) {
-        loadTask?.cancel()
-        loadTask = nil
-
+    func load(url: URL?, localURL: URL?, targetSize: CGSize?) async {
         guard let url else {
             currentURL = nil
             image = nil
@@ -60,74 +56,61 @@ private final class ImageLoader {
         self.targetSize = targetSize
         image = nil
 
-        let capturedURL = url
-        let capturedLocal = localURL
-        let capturedTarget = targetSize
+        let scale = await MainActor.run { UIScreen.main.scale }
+        let key = Self.cacheKey(url: url, localURL: localURL, targetSize: targetSize, scale: scale)
 
-        loadTask = Task.detached(priority: .utility) { [weak self] in
-            let scale = await MainActor.run { UIScreen.main.scale }
-            let key = Self.cacheKey(url: capturedURL, localURL: capturedLocal, targetSize: capturedTarget, scale: scale)
-
-            if let memCached = await DecodedImageMemoryCache.shared.image(for: key) {
-                await MainActor.run { [weak self] in
-                    guard let self, !Task.isCancelled else { return }
-                    guard self.currentURL == capturedURL else { return }
-                    self.image = memCached
-                    self.loadTask = nil
-                }
-                return
+        if let memCached = await DecodedImageMemoryCache.shared.image(for: key) {
+            await MainActor.run { [weak self] in
+                guard let self, !Task.isCancelled else { return }
+                guard self.currentURL == url else { return }
+                self.image = memCached
             }
+            return
+        }
 
-            var decoded: UIImage?
+        var decoded: UIImage?
 
-            // Serve from offline pack if available
-            if let localURL = capturedLocal, let data = try? Data(contentsOf: localURL) {
-                decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: capturedTarget, scale: scale)
+        // Serve from offline pack if available
+        if let localURL = localURL, let data = try? Data(contentsOf: localURL) {
+            decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: targetSize, scale: scale)
+        }
+
+        if decoded == nil {
+            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+
+            if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
+                decoded = decodeImage(from: cached, targetSize: targetSize, scale: scale)
+                if decoded == nil {
+                    AppURLSession.imageURLCache.removeCachedResponse(for: request)
+                }
             }
 
             if decoded == nil {
-                let request = URLRequest(url: capturedURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-
-                if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
-                    decoded = self?.decodeImage(from: cached, targetSize: capturedTarget, scale: scale)
-                    if decoded == nil {
+                do {
+                    let refreshRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+                    let (data, response) = try await AppURLSession.images.data(for: refreshRequest)
+                    guard !Task.isCancelled else { return }
+                    let cachedResponse = CachedURLResponse(response: response, data: data)
+                    if decodeImage(from: cachedResponse, targetSize: targetSize, scale: scale) != nil {
+                        AppURLSession.imageURLCache.storeCachedResponse(cachedResponse, for: request)
+                    } else {
                         AppURLSession.imageURLCache.removeCachedResponse(for: request)
                     }
-                }
-
-                if decoded == nil {
-                    do {
-                        let refreshRequest = URLRequest(url: capturedURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
-                        let (data, response) = try await AppURLSession.images.data(for: refreshRequest)
-                        guard !Task.isCancelled else { return }
-                        let cachedResponse = CachedURLResponse(response: response, data: data)
-                        if self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale) != nil {
-                            AppURLSession.imageURLCache.storeCachedResponse(cachedResponse, for: request)
-                        } else {
-                            AppURLSession.imageURLCache.removeCachedResponse(for: request)
-                        }
-                        decoded = self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale)
-                    } catch { }
-                }
-            }
-
-            if let decoded {
-                await DecodedImageMemoryCache.shared.set(decoded, for: key)
-            }
-
-            let finalImage = decoded
-            await MainActor.run { [weak self] in
-                guard let self, !Task.isCancelled else { return }
-                guard self.currentURL == capturedURL else { return }
-                self.image = finalImage
-                self.loadTask = nil
+                    decoded = decodeImage(from: cachedResponse, targetSize: targetSize, scale: scale)
+                } catch { }
             }
         }
-    }
 
-    func cancel() {
-        loadTask?.cancel()
-        loadTask = nil
+        if let decoded {
+            await DecodedImageMemoryCache.shared.set(decoded, for: key)
+        }
+
+        let finalImage = decoded
+        await MainActor.run { [weak self] in
+            guard let self, !Task.isCancelled else { return }
+            guard self.currentURL == url else { return }
+            self.image = finalImage
+        }
     }
 }
 
@@ -176,10 +159,7 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
             }
         }
         .task(id: taskID) {
-            loader.load(url: url, localURL: localURL, targetSize: targetSize)
-        }
-        .onDisappear {
-            loader.cancel()
+            await loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }
     }
 }
@@ -228,10 +208,7 @@ struct CachedCardThumbnailImage: View {
             }
         }
         .task(id: taskID) {
-            loader.load(url: url, localURL: localURL, targetSize: targetSize)
-        }
-        .onDisappear {
-            loader.cancel()
+            await loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }
     }
 }
