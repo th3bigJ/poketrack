@@ -279,6 +279,7 @@ struct BrowseAllSetsView: View {
                         }
                     }
                 }
+                .defaultScrollAnchor(.top)
             }
         }
         .navigationDestination(for: TCGSet.self) { set in

@@ -401,16 +401,16 @@ private struct BrowseCardThumbnailView: View {
     }
 
     private func ownedBadge(count: Int) -> some View {
-        Text("x\(count)")
-            .font(.caption2.weight(.bold))
-            .foregroundStyle(.white)
-            .padding(.horizontal, 6)
-            .padding(.vertical, 3)
-            .background(
-                Capsule(style: .continuous)
-                    .fill(Color.black.opacity(0.72))
-            )
-            .padding(6)
+        ZStack {
+            Circle()
+                .fill(accentColor)
+                .frame(width: 24, height: 24)
+            Text("x\(count)")
+                .font(.system(size: 9, weight: .bold))
+                .foregroundStyle(.white)
+        }
+        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+        .padding(6)
     }
 
     private var wishlistBadge: some View {
@@ -3127,6 +3127,7 @@ private struct BrowsePokemonTabContent: View {
                         onSelectRoute(.dex(dexId: item.nationalDexNumber, displayName: item.displayName))
                     } label: {
                         VStack(spacing: 6) {
+                            let isOwned = ownedNationalDexIDs.contains(item.nationalDexNumber)
                             CachedAsyncImage(
                                 url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
                             ) { img in
@@ -3134,35 +3135,27 @@ private struct BrowsePokemonTabContent: View {
                             } placeholder: {
                                 Color.gray.opacity(0.12)
                             }
+                            .saturation(isOwned ? 1.0 : 0.0)
+                            .opacity(isOwned ? 1.0 : 0.35)
                             .frame(height: 140)
 
-                            HStack(alignment: .center, spacing: 8) {
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(item.displayName)
-                                        .font(.caption2)
-                                        .foregroundStyle(.primary)
-                                        .lineLimit(2)
-                                        .multilineTextAlignment(.leading)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(item.displayName)
+                                    .font(.caption2)
+                                    .foregroundStyle(.primary)
+                                    .lineLimit(2)
+                                    .multilineTextAlignment(.leading)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
 
-                                    Text("#\(item.nationalDexNumber)")
-                                        .font(.caption2)
-                                        .foregroundStyle(.secondary)
+                                Text("#\(item.nationalDexNumber)")
+                                    .font(.caption2)
+                                    .foregroundStyle(.secondary)
 
-                                    Text(dexCollectionSummary(for: item.nationalDexNumber))
-                                        .font(.caption2)
-                                        .foregroundStyle(.tertiary)
-                                        .lineLimit(1)
-                                        .minimumScaleFactor(0.7)
-                                }
-
-                                Spacer(minLength: 0)
-
-                                if ownedNationalDexIDs.contains(item.nationalDexNumber) {
-                                    PokemonOwnedPokeBallBadge()
-                                        .frame(width: 18, height: 18)
-                                        .accessibilityHidden(true)
-                                }
+                                Text(dexCollectionSummary(for: item.nationalDexNumber))
+                                    .font(.caption2)
+                                    .foregroundStyle(.tertiary)
+                                    .lineLimit(1)
+                                    .minimumScaleFactor(0.7)
                             }
                         }
                         .padding(6)

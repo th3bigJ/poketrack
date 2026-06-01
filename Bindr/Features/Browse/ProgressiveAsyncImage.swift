@@ -54,7 +54,6 @@ private final class ProgressiveImageLoader {
             let key = Self.cacheKey(url: highURL, scale: scale)
             if let cached = await DecodedImageMemoryCache.shared.image(for: key) {
                 await MainActor.run { [weak self] in
-                    guard !Task.isCancelled else { return }
                     guard self?.currentHighURL == highURL else { return }
                     self?.state = .highReady(cached)
                 }
@@ -69,7 +68,6 @@ private final class ProgressiveImageLoader {
                 let key = Self.cacheKey(url: highURL, scale: scale)
                 await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
-                    guard !Task.isCancelled else { return }
                     guard self?.currentHighURL == highURL else { return }
                     self?.state = .highReady(ui)
                 }
@@ -80,7 +78,6 @@ private final class ProgressiveImageLoader {
         // Serve low-res from offline pack if available
         if let localURL = localLowResURL, let data = try? Data(contentsOf: localURL), let ui = UIImage(data: data) {
             await MainActor.run { [weak self] in
-                guard !Task.isCancelled else { return }
                 guard self?.currentLowURL == lowResURL else { return }
                 self?.state = .loadingHigh(ui)
             }
@@ -92,7 +89,6 @@ private final class ProgressiveImageLoader {
                     await DecodedImageMemoryCache.shared.set(ui, for: key)
                 }
                 await MainActor.run { [weak self] in
-                    guard !Task.isCancelled else { return }
                     guard self?.currentLowURL == lowResURL else { return }
                     self?.state = .highReady(ui)
                 }
@@ -107,7 +103,6 @@ private final class ProgressiveImageLoader {
                 let key = Self.cacheKey(url: lowURL, scale: scale)
                 await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
-                    guard !Task.isCancelled else { return }
                     guard self?.currentLowURL == lowURL else { return }
                     self?.state = .loadingHigh(ui)
                 }
@@ -115,7 +110,6 @@ private final class ProgressiveImageLoader {
                     await loadHighResAsync(high)
                 } else {
                     await MainActor.run { [weak self] in
-                        guard !Task.isCancelled else { return }
                         guard self?.currentLowURL == lowURL else { return }
                         self?.state = .highReady(ui)
                     }

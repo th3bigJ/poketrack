@@ -480,9 +480,9 @@ struct CollectView: View {
                     product: product,
                     gridOptions: gridOptions,
                     priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
-                    isOwned: item.quantity > 0,
+                    isOwned: false,
                     isWishlisted: wishlistedSealedCollectionCardIDs.contains(product.collectionCardID),
-                    ownedCountBadge: item.quantity
+                    ownedCountBadge: item.quantity > 1 ? item.quantity : nil
                 )
                 .contentShape(Rectangle())
             }
@@ -870,7 +870,7 @@ struct CollectView: View {
                     gridOptions: gridOptions,
                     priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
                     isOwned: false,
-                    isWishlisted: true
+                    isWishlisted: false
                 )
                 .contentShape(Rectangle())
             }

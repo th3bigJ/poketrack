@@ -505,10 +505,10 @@ struct SealedProductGridCell: View {
     private var imageHeight: CGFloat {
         let columns = min(max(gridOptions.columnCount, 1), 4)
         switch columns {
-        case 1: return 220
-        case 2: return 130
-        case 3: return 96
-        default: return 78
+        case 1: return 180
+        case 2: return 110
+        case 3: return 80
+        default: return 65
         }
     }
 
@@ -552,8 +552,7 @@ struct SealedProductGridCell: View {
             if gridOptions.showCardName {
                 Text(product.name)
                     .font(.caption2.weight(.semibold))
-                    .lineLimit(1)
-                    .truncationMode(.tail)
+                    .lineLimit(2)
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.primary)
                     .frame(maxWidth: .infinity)
@@ -627,13 +626,13 @@ struct SealedProductGridCell: View {
         .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
-                .stroke(isOwned ? services.theme.accentColor : tileBorder, lineWidth: isOwned ? 1.8 : 1.2)
+                .stroke(isOwned ? services.theme.accentColor : isWishlisted ? Color.yellow : tileBorder, lineWidth: isOwned || isWishlisted ? 1.8 : 1.2)
         }
         .overlay {
             // Inner top highlight — matches CardGridCell + dashboard glass
             // styling. Skipped on owned state so the accent border isn't
             // muted by the white inner stroke.
-            if !isOwned && cardCornerRadius > 0 {
+            if !isOwned && !isWishlisted && cardCornerRadius > 0 {
                 RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                     .stroke(
                         LinearGradient(
@@ -674,24 +673,18 @@ private struct SealedThumbnailView: View {
             }
             .clipped()
 
-            if let ownedCountBadge, ownedCountBadge > 1 {
-                Text("x\(ownedCountBadge)")
-                    .font(.caption2.weight(.bold))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 3)
-                    .background(
-                        Capsule(style: .continuous)
-                            .fill(Color.black.opacity(0.72))
-                    )
-                    .padding(6)
-                    .accessibilityLabel("Owned \(ownedCountBadge)")
-            } else if isOwned {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 24, weight: .semibold))
-                    .foregroundStyle(.white, services.theme.accentColor)
-                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                    .padding(6)
+            if let ownedCountBadge, ownedCountBadge >= 1 {
+                ZStack {
+                    Circle()
+                        .fill(services.theme.accentColor)
+                        .frame(width: 24, height: 24)
+                    Text("x\(ownedCountBadge)")
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundStyle(.white)
+                }
+                .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                .padding(6)
+                .accessibilityLabel("Owned \(ownedCountBadge)")
             } else if isWishlisted {
                 Image(systemName: "star.circle.fill")
                     .font(.system(size: 24, weight: .semibold))
