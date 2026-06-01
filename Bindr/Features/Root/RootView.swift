@@ -170,7 +170,7 @@ struct RootView: View {
         guard !hasScheduledPostLaunchServices else { return }
         hasScheduledPostLaunchServices = true
         Task { @MainActor in
-            try? await Task.sleep(nanoseconds: 20_000_000_000)    // 20 second delay
+            try? await Task.sleep(nanoseconds: 3_000_000_000)    // 3s: let launch fully settle
             guard !Task.isCancelled else { return }
             LaunchTraceProfiler.flushToFile()
             if services.brandSettings.hasCompletedBrandOnboarding {

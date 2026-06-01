@@ -80,144 +80,7 @@ struct BindrApp: App {
 
     init() {
         Self.configureTabBarAppearance()
-        Self.installMainThreadWatchdog()
     }
-
-    /// Logs a stack trace every time the main thread is blocked for >100ms.
-    /// Remove before shipping.
-    ///
-    /// Timestamps are printed as seconds since process start (`systemUptime`) so they can be
-    /// correlated against other launch events (e.g. the Liquid Glass enable flip in
-    /// `ModelContainerHost`, which also logs its `systemUptime`). The previous version only
-    /// logged the *duration* of a block and captured the stack *at unblock* — by which point the
-    /// main thread is already idle, so the stack was always the runloop and never the real
-    /// culprit. Logging the block's START uptime lets us pinpoint exactly what scheduled work
-    /// was running when the freeze began.
-    private static func installMainThreadWatchdog() {
-        #if DEBUG
-        // Capture the main thread's mach port HERE (init runs on the main thread) so the
-        // background watchdog can read the main thread's stack while it is blocked.
-        mainThreadMachPort = mach_thread_self()
-        let q = DispatchQueue(label: "main.watchdog", qos: .userInteractive)
-        q.async {
-            var lastPing = CFAbsoluteTimeGetCurrent()
-            // Capture the main thread's stack DURING a long hang (not at unblock). We only sample
-            // once per distinct hang so the log isn't flooded.
-            var didSampleCurrentHang = false
-            while true {
-                let sent = CFAbsoluteTimeGetCurrent()
-                DispatchQueue.main.async {
-                    let delay = CFAbsoluteTimeGetCurrent() - sent
-                    if delay > 0.5 {
-                        let now = ProcessInfo.processInfo.systemUptime
-                        print(String(format: "[Watchdog] main blocked %.2fs (started at uptime %.2fs, ended %.2fs)",
-                                     delay, now - delay, now))
-                    }
-                    lastPing = CFAbsoluteTimeGetCurrent()
-                    didSampleCurrentHang = false
-                }
-                Thread.sleep(forTimeInterval: 0.1)
-                let waited = CFAbsoluteTimeGetCurrent() - lastPing
-                if waited > 2.0 {
-                    let now = ProcessInfo.processInfo.systemUptime
-                    print(String(format: "[Watchdog] main STILL blocked %.1fs (block began ~uptime %.2fs)",
-                                 waited, now - waited))
-                    // Sample the real main-thread stack the first time we notice this hang.
-                    if !didSampleCurrentHang {
-                        didSampleCurrentHang = true
-                        if let stack = Self.captureMainThreadStack() {
-                            print("[Watchdog] MAIN THREAD stack DURING hang:\n\(stack)")
-                        }
-                    }
-                }
-            }
-        }
-        #endif
-    }
-
-    #if DEBUG
-    /// Mach port of the main thread, captured once at launch (in `installMainThreadWatchdog`,
-    /// which runs on the main thread) so the watchdog — running on a background queue — can read
-    /// the main thread's backtrace while it is blocked.
-    nonisolated(unsafe) private static var mainThreadMachPort: thread_t = 0
-
-    /// Walks the main thread's stack frames and symbolicates them with `dladdr`.
-    /// Returns a newline-joined, human-readable backtrace, or nil if it could not be read.
-    ///
-    /// This briefly suspends the main thread, reads its register state + frame-pointer chain,
-    /// then resumes it. It is DEBUG-only diagnostic code and must be removed before shipping.
-    private static func captureMainThreadStack() -> String? {
-        #if arch(arm64)
-        let target = mainThreadMachPort
-        guard thread_suspend(target) == KERN_SUCCESS else { return nil }
-        defer { thread_resume(target) }
-
-        var state = arm_thread_state64_t()
-        var count = mach_msg_type_number_t(MemoryLayout<arm_thread_state64_t>.size / MemoryLayout<UInt32>.size)
-        let kr = withUnsafeMutablePointer(to: &state) {
-            $0.withMemoryRebound(to: natural_t.self, capacity: Int(count)) { ptr in
-                thread_get_state(target, thread_state_flavor_t(ARM_THREAD_STATE64), ptr, &count)
-            }
-        }
-        guard kr == KERN_SUCCESS else { return nil }
-
-        // The app target is arm64 (not arm64e), so PC/LR/FP and on-stack return addresses are
-        // not pointer-authenticated and can be read directly. Mask off any high tag bits just in
-        // case so the addresses are valid user-space VAs for dladdr.
-        let vaMask: UInt = 0x0000_007F_FFFF_FFFF
-        var pcs: [UInt] = []
-        pcs.append(UInt(state.__pc) & vaMask)
-        let lr = UInt(state.__lr) & vaMask
-        if lr != 0 { pcs.append(lr) }
-
-        // Walk the frame-pointer chain: each frame is [saved FP, saved LR].
-        var fp = UInt(state.__fp)
-        var depth = 0
-        while fp != 0, depth < 40 {
-            guard let framePtr = UnsafePointer<UInt>(bitPattern: fp) else { break }
-            let nextFP = framePtr.pointee
-            let returnAddr = framePtr.advanced(by: 1).pointee & vaMask
-            if returnAddr != 0 { pcs.append(returnAddr) }
-            if nextFP <= fp { break } // stacks grow downward; FP must increase walking up
-            fp = nextFP
-            depth += 1
-        }
-
-        let lines: [String] = pcs.enumerated().map { idx, addr in
-            var info = Dl_info()
-            if dladdr(UnsafeRawPointer(bitPattern: addr), &info) != 0, let sname = info.dli_sname {
-                let symbol = String(cString: sname)
-                let image = info.dli_fname.map { (String(cString: $0) as NSString).lastPathComponent } ?? "?"
-                return String(format: "%2d  %@  %@", idx, image, Self.demangle(symbol))
-            }
-            return String(format: "%2d  0x%016lx", idx, addr)
-        }
-        return lines.joined(separator: "\n")
-        #else
-        return nil
-        #endif
-    }
-
-    /// Demangles a Swift symbol name via `swift_demangle` (resolved at runtime). Falls back to the
-    /// raw symbol for C/Objective-C names that don't need demangling.
-    private static func demangle(_ mangled: String) -> String {
-        typealias DemangleFn = @convention(c) (
-            _ name: UnsafePointer<CChar>?, _ nameLength: Int,
-            _ out: UnsafeMutablePointer<CChar>?, _ outLength: UnsafeMutablePointer<Int>?,
-            _ flags: UInt32
-        ) -> UnsafeMutablePointer<CChar>?
-        guard mangled.hasPrefix("$s") || mangled.hasPrefix("_$s"),
-              let sym = dlsym(UnsafeMutableRawPointer(bitPattern: -2), "swift_demangle") else {
-            return mangled
-        }
-        let fn = unsafeBitCast(sym, to: DemangleFn.self)
-        return mangled.withCString { cstr -> String in
-            guard let out = fn(cstr, strlen(cstr), nil, nil, 0) else { return mangled }
-            defer { free(out) }
-            return String(cString: out)
-        }
-    }
-    #endif
 
     /// CloudKit-backed store. SwiftData merges CloudKit records on @MainActor; the
     /// CloudKitIdleMonitor keeps the launch overlay visible until those merges complete,
@@ -384,15 +247,12 @@ struct BindrApp: App {
                 }
             }
             .task {
-                // iOS 26's Glass.regular.glassEffect() is expensive to initialise: rendering
-                // 5 concurrent glass layers for the first time blocks the main thread for 8–9s.
-                // Delay enabling glass until well after the launch layout storm has settled.
-                try? await Task.sleep(for: .seconds(10))
-                print(String(format: "[Glass] enabling Liquid Glass at uptime %.2fs",
-                             ProcessInfo.processInfo.systemUptime))
+                // Liquid Glass initialises quickly; enabling it is cheap. (An earlier "8–9s glass"
+                // freeze was actually the offline-image reconcile blocking the main thread — see
+                // OfflineImageDownloadService.) Flip glass on after one short settle so the cards
+                // come up glassy on the first interactive frame rather than popping in late.
+                try? await Task.sleep(for: .milliseconds(300))
                 GlassReadySignal.shared.isReady = true
-                print(String(format: "[Glass] isReady flipped (returned to scheduler) at uptime %.2fs",
-                             ProcessInfo.processInfo.systemUptime))
             }
         }
     }

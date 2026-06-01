@@ -364,8 +364,8 @@ struct DashboardView: View {
         .task(id: "\(collectionItems.count):\(services.isLaunchCatalogPipelineComplete)") {
             guard collectionItems.count > 0, services.isLaunchCatalogPipelineComplete else { return }
             guard hasFiredInitialLoadComplete, !hasPreparedInitialDashboardData else { return }
-            // Avoid hitting the main actor in the first visible seconds after launch.
-            try? await Task.sleep(nanoseconds: 20_000_000_000)
+            // Let the first interactive frame settle before recomputing the live value.
+            try? await Task.sleep(nanoseconds: 1_000_000_000)
             guard !Task.isCancelled, !hasPreparedInitialDashboardData else { return }
             await computeLiveValue()
             hasPreparedInitialDashboardData = true
@@ -375,9 +375,9 @@ struct DashboardView: View {
                   services.isLaunchCatalogPipelineComplete,
                   hasFiredInitialLoadComplete,
                   let svc = services.collectionValue else { return }
-            // Snapshot backfill is not needed for first paint. Keep it well away
-            // from the launch handoff so taps stay responsive after the overlay fades.
-            try? await Task.sleep(nanoseconds: 30_000_000_000)
+            // Snapshot backfill is not needed for first paint — keep it just off the launch
+            // handoff so taps stay responsive right after the overlay fades.
+            try? await Task.sleep(nanoseconds: 2_000_000_000)
             guard !Task.isCancelled else { return }
             print("[Dashboard⏱] runBackfillIfNeeded start")
             let t = ContinuousClock().now
@@ -390,8 +390,9 @@ struct DashboardView: View {
         .task(id: dashboardDataSignature) {
             guard hasFiredInitialLoadComplete else { return }
             guard visibleCollectionItems.count > 0 || allLedgerLines.count > 0 else { return }
-            // Defer card metadata + market trend until the overlay fade and first taps settle.
-            try? await Task.sleep(nanoseconds: 12_000_000_000)
+            // Defer card metadata + market trend just past the overlay fade so they don't
+            // compete with the first interactive frame.
+            try? await Task.sleep(nanoseconds: 500_000_000)
             guard !Task.isCancelled else { return }
             let t = ContinuousClock().now
             await resolveDashboardMetadata()
@@ -403,7 +404,7 @@ struct DashboardView: View {
         .task(id: services.dashboardMarketReloadToken) {
             guard services.dashboardMarketReloadToken > 0 else { return }
             guard hasFiredInitialLoadComplete else { return }
-            try? await Task.sleep(nanoseconds: 12_000_000_000)
+            try? await Task.sleep(nanoseconds: 300_000_000)
             guard !Task.isCancelled else { return }
             await reloadDashboardInventory(deferForLaunch: false)
             await computeLiveValue()
@@ -414,7 +415,7 @@ struct DashboardView: View {
             guard !inProgress else { return }
             Task {
                 guard hasFiredInitialLoadComplete else { return }
-                try? await Task.sleep(nanoseconds: 12_000_000_000)
+                try? await Task.sleep(nanoseconds: 500_000_000)
                 guard !Task.isCancelled else { return }
                 await reloadDashboardInventory(deferForLaunch: false)
                 await computeLiveValue()
@@ -1300,10 +1301,10 @@ struct DashboardView: View {
         hasFiredInitialLoadComplete = true
         print("[Launch] dashboard initial load complete — firing onInitialLoadComplete")
         onInitialLoadComplete?()
-        // Load chart history well after the overlay fade so snapshot fetches and
-        // chart layout don't compete with the first interactive frame.
+        // Load chart history just past the overlay fade. loadAllFromStore reads on a background
+        // ModelContext, so this only needs to clear the first interactive frame.
         Task { @MainActor in
-            try? await Task.sleep(for: .seconds(12))
+            try? await Task.sleep(for: .milliseconds(500))
             guard let svc = services.collectionValue else { return }
             await svc.loadAllFromStore()
         }

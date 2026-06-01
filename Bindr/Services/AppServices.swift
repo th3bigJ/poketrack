@@ -284,8 +284,10 @@ final class AppServices {
         Task(priority: .background) { [weak self] in
             self?.runDeferredLaunchServices()
         }
+        // The sealed price-history blob is only needed for charts/detail, and loads on a
+        // background context, so a short defer past the launch handoff is enough.
         Task(priority: .utility) { [weak self] in
-            try? await Task.sleep(nanoseconds: 8_000_000_000)
+            try? await Task.sleep(nanoseconds: 1_000_000_000)
             await self?.sealedProducts.loadSealedPriceHistoryIfNeeded()
         }
     }
