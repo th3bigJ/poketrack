@@ -16,7 +16,7 @@ final class AppServices {
         let preferredSide: TradePrefillSide
     }
 
-    private let launchDailyRefreshTimeoutNanoseconds: UInt64 = 10_000_000_000
+    private let launchDailyRefreshTimeoutNanoseconds: UInt64 = 5_000_000_000
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let cardData: CardDataService
@@ -239,7 +239,8 @@ final class AppServices {
             bootstrapProgress = 0
             bootstrapDownloadedBytes = 0
             bootstrapEstimatedTotalBytes = 0
-            await primeLaunchCatalogFromLocalCache()
+            // Start the network task immediately so the connection handshake overlaps
+            // with local SQLite reads in primeLaunchCatalogFromLocalCache.
             let blockingTask = Task { @MainActor [weak self] in
                 guard let self else { return }
                 await self.runStartupCatalogPipeline(
@@ -248,6 +249,7 @@ final class AppServices {
                 )
                 self.pendingLightBrowseTabEntry = true
             }
+            await primeLaunchCatalogFromLocalCache()
             let completedWithinTimeout = await waitForTaskOrTimeout(
                 blockingTask,
                 timeoutNanoseconds: launchDailyRefreshTimeoutNanoseconds
@@ -281,6 +283,10 @@ final class AppServices {
         shouldRunDeferredLaunchServices = false
         Task(priority: .background) { [weak self] in
             self?.runDeferredLaunchServices()
+        }
+        Task(priority: .utility) { [weak self] in
+            try? await Task.sleep(nanoseconds: 8_000_000_000)
+            await self?.sealedProducts.loadSealedPriceHistoryIfNeeded()
         }
     }
 
@@ -348,7 +354,7 @@ final class AppServices {
         }
         let t2 = ContinuousClock().now
         print("[Launch] primeLaunchCatalogFromLocalCache: sealedProducts start")
-        await sealedProducts.loadFromLocalIfAvailable()
+        await sealedProducts.loadFromLocalIfAvailable(launchMode: true)
         print("[Launch] primeLaunchCatalogFromLocalCache: sealedProducts done \(ContinuousClock().now - t2)")
         pendingLightBrowseTabEntry = true
     }

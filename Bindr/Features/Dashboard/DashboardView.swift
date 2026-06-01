@@ -26,23 +26,13 @@ struct DashboardView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Environment(\.scenePhase) private var scenePhase
 
-    // Fetch only the 100 most-recent ledger lines — the dashboard shows at most
-    // 5 (``recentLines``). Loading every entry in a large collection blocked the
-    // main thread on cold launch for several seconds; a 100-row cap makes the
-    // query near-instant while still covering any brand-filtering scenario.
-    //
-    // ``fetchLimit`` is a stored property on FetchDescriptor (not an initializer
-    // parameter), so we build the descriptor in a static lazy property and
-    // reference it here — that's the only way to use it with @Query.
-    @Query(DashboardView.ledgerDescriptor) private var allLedgerLines: [LedgerLine]
-
-    private static let ledgerDescriptor: FetchDescriptor<LedgerLine> = {
-        var d = FetchDescriptor<LedgerLine>(
-            sortBy: [SortDescriptor(\LedgerLine.occurredAt, order: .reverse)]
-        )
-        d.fetchLimit = 100
-        return d
-    }()
+    // Manual @State instead of @Query so CloudKit background syncs don't trigger
+    // DashboardView body re-renders. @Query fires on every SwiftData save — including
+    // every CloudKit record delivery — which blocked the main thread for 8-9 seconds
+    // after launch with 1000+ collection items. Ledger lines are refreshed explicitly
+    // in reloadDashboardInventory and via a debounced SwiftData notification observer.
+    @State private var allLedgerLines: [LedgerLine] = []
+    @State private var ledgerRefreshDebounceTask: Task<Void, Never>? = nil
     @AppStorage("dismissedMilestones") private var dismissedMilestonesData: Data = Data()
 
     @State private var collectionItems: [CollectionItem] = []
@@ -64,9 +54,17 @@ struct DashboardView: View {
     @State private var chartRange: ChartRange = .daily
     @State private var chartRefreshID: Int = 0
     @State private var selectedBrand: TCGBrand? = nil
-    @State private var cardNamesByID: [String: String] = [:]
-    @State private var setNamesByCardID: [String: String] = [:]
-    @State private var cardImageURLsByID: [String: URL] = [:]
+    // Grouped into a single struct so all three update in one SwiftUI render pass,
+    // avoiding three sequential body re-evaluations over the full collection.
+    private struct CardMetadataCache {
+        var namesByID: [String: String] = [:]
+        var setNamesByCardID: [String: String] = [:]
+        var imageURLsByID: [String: URL] = [:]
+    }
+    @State private var cardMetadata = CardMetadataCache()
+    private var cardNamesByID: [String: String] { cardMetadata.namesByID }
+    private var setNamesByCardID: [String: String] { cardMetadata.setNamesByCardID }
+    private var cardImageURLsByID: [String: URL] { cardMetadata.imageURLsByID }
     @State private var marketTrendData: MarketTrendDailyBlob? = nil
     @State private var editingRecentLedgerLine: LedgerLine?
     @State private var selectedCardForDetail: Card? = nil
@@ -392,6 +390,9 @@ struct DashboardView: View {
         .task(id: dashboardDataSignature) {
             guard hasFiredInitialLoadComplete else { return }
             guard visibleCollectionItems.count > 0 || allLedgerLines.count > 0 else { return }
+            // Defer card metadata + market trend until the overlay fade and first taps settle.
+            try? await Task.sleep(nanoseconds: 12_000_000_000)
+            guard !Task.isCancelled else { return }
             let t = ContinuousClock().now
             await resolveDashboardMetadata()
             print("[Dashboard⏱] resolveDashboardMetadata: \(ContinuousClock().now - t)")
@@ -454,6 +455,38 @@ struct DashboardView: View {
         .onChange(of: scenePhase) { _, phase in
             if phase == .background, let snapshot = liveSnapshot {
                 services.collectionValue?.persistLastKnownValue(snapshot)
+            }
+        }
+        // Refresh ledger lines and collection items when SwiftData saves (e.g. CloudKit sync or
+        // card added mid-session). Debounce so rapid batch saves only trigger one fetch. The 2s
+        // debounce lets CloudKit finish delivering a batch before we read — avoids partial re-renders.
+        .onReceive(NotificationCenter.default.publisher(for: ModelContext.didSave)) { _ in
+            guard hasFiredInitialLoadComplete else { return }
+            ledgerRefreshDebounceTask?.cancel()
+            ledgerRefreshDebounceTask = Task { @MainActor in
+                try? await Task.sleep(for: .seconds(2))
+                guard !Task.isCancelled else { return }
+                var d = FetchDescriptor<LedgerLine>(
+                    sortBy: [SortDescriptor(\LedgerLine.occurredAt, order: .reverse)]
+                )
+                d.fetchLimit = 100
+                allLedgerLines = (try? modelContext.fetch(d)) ?? []
+
+                // If a CollectionItem was added, removed, or had its quantity changed, reload inventory
+                // and recompute live value.
+                let freshItems = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
+                let freshSignature = freshItems.reduce(into: (count: 0, totalQty: 0)) {
+                    $0.count += 1
+                    $0.totalQty += $1.quantity
+                }
+                let currentSignature = collectionItems.reduce(into: (count: 0, totalQty: 0)) {
+                    $0.count += 1
+                    $0.totalQty += $1.quantity
+                }
+                guard freshSignature != currentSignature else { return }
+                await reloadDashboardInventory(deferForLaunch: false)
+                recomputeCollectionStats()
+                await computeLiveValue()
             }
         }
         .sheet(item: $selectedCardForDetail) { card in
@@ -1087,27 +1120,9 @@ struct DashboardView: View {
             LaunchTraceProfiler.end("computeLiveValue")
         }
 
-        onInitialLoadStatusChange?("Loading pricing history...")
-        LaunchTraceProfiler.begin("loadAllFromStore")
-        svc.loadAllFromStore()
-        LaunchTraceProfiler.end("loadAllFromStore")
-
-        if visibleCollectionItems.count > 0 || allLedgerLines.count > 0 {
-            onInitialLoadStatusChange?("Preparing card details...")
-            LaunchTraceProfiler.begin("resolveDashboardMetadata")
-            await resolveDashboardMetadata()
-            LaunchTraceProfiler.end("resolveDashboardMetadata")
-
-            onInitialLoadStatusChange?("Loading market trends...")
-            LaunchTraceProfiler.begin("loadMarketTrendBlob")
-            await loadMarketTrendBlob()
-            LaunchTraceProfiler.end("loadMarketTrendBlob")
-        }
-
-        onInitialLoadStatusChange?("Almost ready...")
-        await Task.yield()
-        try? await Task.sleep(nanoseconds: 250_000_000)
-
+        // Value is established — unblock the launch overlay immediately.
+        // loadAllFromStore, resolveDashboardMetadata, and loadMarketTrendBlob are
+        // driven by the existing .task(id:) handlers above and run after the fade.
         hasPreparedInitialDashboardData = true
         LaunchTraceProfiler.end("prepareInitialDashboardData")
         print("[Dashboard⏱] prepareInitialDashboardData: \(ContinuousClock().now - launchStart)")
@@ -1132,8 +1147,13 @@ struct DashboardView: View {
         wishlistDescriptor.fetchLimit = 500
         var collectionDescriptor = FetchDescriptor<CollectionItem>()
         collectionDescriptor.fetchLimit = 5000
+        var ledgerDescriptor = FetchDescriptor<LedgerLine>(
+            sortBy: [SortDescriptor(\LedgerLine.occurredAt, order: .reverse)]
+        )
+        ledgerDescriptor.fetchLimit = 100
         collectionItems = (try? modelContext.fetch(collectionDescriptor)) ?? []
         wishlistItems = (try? modelContext.fetch(wishlistDescriptor)) ?? []
+        allLedgerLines = (try? modelContext.fetch(ledgerDescriptor)) ?? []
         binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         dashboardDataRevision += 1
         print("[Dashboard⏱] reloadDashboardInventory: \(ContinuousClock().now - t) collection=\(collectionItems.count) wishlist=\(wishlistItems.count) binders=\(binderCount)")
@@ -1280,6 +1300,13 @@ struct DashboardView: View {
         hasFiredInitialLoadComplete = true
         print("[Launch] dashboard initial load complete — firing onInitialLoadComplete")
         onInitialLoadComplete?()
+        // Load chart history well after the overlay fade so snapshot fetches and
+        // chart layout don't compete with the first interactive frame.
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(12))
+            guard let svc = services.collectionValue else { return }
+            await svc.loadAllFromStore()
+        }
     }
 
     private func sealedProductID(for item: CollectionItem) -> Int? {
@@ -1321,47 +1348,58 @@ struct DashboardView: View {
     }
 
     private func resolveDashboardMetadata() async {
-        var nextNames = cardNamesByID
-        var nextSets = setNamesByCardID
-        var nextImages = cardImageURLsByID
-        var setsByBrandAndCode: [String: String] = [:]
+        // Snapshot inputs on @MainActor before leaving.
+        let currentMetadata = cardMetadata
+        let cardIDs = Set(visibleCollectionItems.map(\.cardID) + recentLines.compactMap { cleaned($0.cardID) })
+        let enabledBrands = services.brandSettings.enabledBrands
+        let cardData = services.cardData
 
-        for brand in services.brandSettings.enabledBrands {
-            guard let sets = try? await CatalogStore.shared.fetchAllSets(for: brand) else { continue }
-            for set in sets {
-                setsByBrandAndCode["\(brand.rawValue)|\(set.setCode)"] = set.name
+        // Do all I/O off @MainActor so intermediate awaits don't trigger SwiftUI
+        // body re-renders mid-computation. One hop back at the very end to write state.
+        let result = await Task.detached(priority: .userInitiated) {
+            var nextNames = currentMetadata.namesByID
+            var nextSets = currentMetadata.setNamesByCardID
+            var nextImages = currentMetadata.imageURLsByID
+            var setsByBrandAndCode: [String: String] = [:]
+
+            for brand in enabledBrands {
+                guard let sets = try? await CatalogStore.shared.fetchAllSets(for: brand) else { continue }
+                for set in sets {
+                    setsByBrandAndCode["\(brand.rawValue)|\(set.setCode)"] = set.name
+                }
             }
-        }
 
-        let allCardIDs = Set(visibleCollectionItems.map(\.cardID) + recentLines.compactMap { cleaned($0.cardID) })
-        let missingIDs = allCardIDs.filter {
-            nextNames[$0] == nil || nextSets[$0] == nil || nextImages[$0] == nil
-        }
-        guard !missingIDs.isEmpty else { return }
-
-        // Bulk-load all missing cards grouped by brand — one query per brand.
-        let pokemonIDs = missingIDs.filter { !$0.contains("::") && !$0.hasPrefix("sealed:") }
-        let onePieceIDs = missingIDs.filter { $0.contains("::") }
-
-        async let pokemonCards = services.cardData.loadCards(masterCardIDs: Array(pokemonIDs), catalogBrand: .pokemon)
-        async let onePieceCards = services.cardData.loadCards(masterCardIDs: Array(onePieceIDs), catalogBrand: .onePiece)
-        let allCards = await pokemonCards + onePieceCards
-
-        for card in allCards {
-            let cardID = card.masterCardId
-            nextNames[cardID] = card.cardName
-            if nextImages[cardID] == nil {
-                nextImages[cardID] = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+            let missingIDs = cardIDs.filter {
+                nextNames[$0] == nil || nextSets[$0] == nil || nextImages[$0] == nil
             }
-            let brand = TCGBrand.inferredFromMasterCardId(cardID)
-            if let setName = setsByBrandAndCode["\(brand.rawValue)|\(card.setCode)"] {
-                nextSets[cardID] = setName
+            guard !missingIDs.isEmpty else {
+                return CardMetadataCache(namesByID: nextNames, setNamesByCardID: nextSets, imageURLsByID: nextImages)
             }
-        }
 
-        cardNamesByID = nextNames
-        setNamesByCardID = nextSets
-        cardImageURLsByID = nextImages
+            let pokemonIDs = missingIDs.filter { !$0.contains("::") && !$0.hasPrefix("sealed:") }
+            let onePieceIDs = missingIDs.filter { $0.contains("::") }
+
+            async let pokemonCards = cardData.loadCards(masterCardIDs: Array(pokemonIDs), catalogBrand: .pokemon)
+            async let onePieceCards = cardData.loadCards(masterCardIDs: Array(onePieceIDs), catalogBrand: .onePiece)
+            let allCards = await pokemonCards + onePieceCards
+
+            for card in allCards {
+                let cardID = card.masterCardId
+                nextNames[cardID] = card.cardName
+                if nextImages[cardID] == nil {
+                    nextImages[cardID] = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                }
+                let brand = TCGBrand.inferredFromMasterCardId(cardID)
+                if let setName = setsByBrandAndCode["\(brand.rawValue)|\(card.setCode)"] {
+                    nextSets[cardID] = setName
+                }
+            }
+
+            return CardMetadataCache(namesByID: nextNames, setNamesByCardID: nextSets, imageURLsByID: nextImages)
+        }.value
+
+        // Single @MainActor state write — one render pass, no interleaved re-renders.
+        cardMetadata = result
     }
 
     private func activityTitle(for line: LedgerLine) -> String {

@@ -28,36 +28,51 @@ final class OfflineImageStore: @unchecked Sendable {
 
     private init() {}
 
-    private func rootDir() throws -> URL {
+    /// Computes the `…/Bindr/OfflineMedia` directory URL.
+    ///
+    /// - Parameter create: When `true`, the intermediate directories are created (`mkdir`
+    ///   syscalls). Pass `false` for read-only lookups — creating directories on every
+    ///   `hasEntry`/`localFileURL` call previously issued thousands of `mkdir` syscalls and
+    ///   blocked the main thread for ~8s during the offline-pack reconcile after launch.
+    private func rootDir(create: Bool) throws -> URL {
         let base = try fm.url(
             for: .applicationSupportDirectory,
             in: .userDomainMask,
             appropriateFor: nil,
-            create: true
+            create: create
         ).appendingPathComponent("Bindr", isDirectory: true)
-        try fm.createDirectory(at: base, withIntermediateDirectories: true)
+        if create {
+            try fm.createDirectory(at: base, withIntermediateDirectories: true)
+        }
         return base.appendingPathComponent("OfflineMedia", isDirectory: true)
     }
 
-    private func brandDir(for brand: TCGBrand) throws -> URL {
-        let r = try rootDir()
-        try fm.createDirectory(at: r, withIntermediateDirectories: true)
+    private func brandDir(for brand: TCGBrand, create: Bool) throws -> URL {
+        let r = try rootDir(create: create)
+        if create {
+            try fm.createDirectory(at: r, withIntermediateDirectories: true)
+        }
         let d = r.appendingPathComponent(brand.rawValue, isDirectory: true)
-        try fm.createDirectory(at: d, withIntermediateDirectories: true)
+        if create {
+            try fm.createDirectory(at: d, withIntermediateDirectories: true)
+        }
         return d
     }
 
-    private func manifestURL(for brand: TCGBrand) throws -> URL {
-        try brandDir(for: brand).appendingPathComponent("manifest.json", isDirectory: false)
+    private func manifestURL(for brand: TCGBrand, create: Bool = true) throws -> URL {
+        try brandDir(for: brand, create: create).appendingPathComponent("manifest.json", isDirectory: false)
     }
 
-    private func filesDir(for brand: TCGBrand) throws -> URL {
-        let d = try brandDir(for: brand).appendingPathComponent("files", isDirectory: true)
-        try fm.createDirectory(at: d, withIntermediateDirectories: true)
+    private func filesDir(for brand: TCGBrand, create: Bool = true) throws -> URL {
+        let d = try brandDir(for: brand, create: create).appendingPathComponent("files", isDirectory: true)
+        if create {
+            try fm.createDirectory(at: d, withIntermediateDirectories: true)
+        }
         return d
     }
 
     /// Returns on-disk file URL if the manifest contains this canonical key.
+    /// Read-only: never creates directories (see `rootDir(create:)`).
     func localFileURL(relativePath: String, brand: TCGBrand) -> URL? {
         let key = OfflineImageCanonicalKey.normalize(relativePath)
         guard !key.isEmpty else { return nil }
@@ -66,7 +81,7 @@ final class OfflineImageStore: @unchecked Sendable {
                   let name = manifest.entries[key],
                   !name.isEmpty
             else { return nil }
-            let url = (try? filesDir(for: brand))?.appendingPathComponent(name, isDirectory: false)
+            let url = (try? filesDir(for: brand, create: false))?.appendingPathComponent(name, isDirectory: false)
             guard let url, fm.fileExists(atPath: url.path) else { return nil }
             return url
         }
@@ -116,7 +131,7 @@ final class OfflineImageStore: @unchecked Sendable {
     func deleteAll(for brand: TCGBrand) throws {
         try io.sync {
             manifestMemoryCache.removeValue(forKey: brand)
-            let dir = try brandDir(for: brand)
+            let dir = try brandDir(for: brand, create: false)
             if fm.fileExists(atPath: dir.path) {
                 try fm.removeItem(at: dir)
             }
@@ -148,7 +163,7 @@ final class OfflineImageStore: @unchecked Sendable {
 
     private func loadManifestLocked(for brand: TCGBrand) -> OfflinePackManifest? {
         if let cached = manifestMemoryCache[brand] { return cached }
-        guard let url = try? manifestURL(for: brand),
+        guard let url = try? manifestURL(for: brand, create: false),
               let data = try? Data(contentsOf: url),
               let m = try? decoder.decode(OfflinePackManifest.self, from: data)
         else { return nil }

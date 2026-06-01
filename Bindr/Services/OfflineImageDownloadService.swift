@@ -75,22 +75,30 @@ final class OfflineImageDownloadService {
         }
         statusLine[brand] = "Found \(desired.count) images to check…"
 
-        let desiredKeys = Set(desired.map(\.0))
-        var didMutatePack = false
-        if pruneOrphans {
-            let existing = store.manifestKeys(for: brand)
-            for orphan in existing.subtracting(desiredKeys) {
-                guard store.hasEntry(relativePath: orphan, brand: brand) else { continue }
-                do {
-                    try store.removeEntry(relativePath: orphan, brand: brand)
-                    didMutatePack = true
-                } catch {
-                    // Disk / manifest race — skip; next reconcile can retry.
+        // Reconciling the desired list against what's already on disk is pure filesystem work
+        // (a manifest lookup + an existence check per item). With 1000+ items this previously ran
+        // on the main actor and froze the UI for ~8s. `OfflineImageStore` is thread-safe
+        // (@unchecked Sendable, serialised internally), so do the prune + diff on a background
+        // task and only hop back to the main actor with the results.
+        let store = self.store
+        let (toFetch, didMutatePack): ([(String, URL)], Bool) = await Task.detached(priority: .utility) {
+            let desiredKeys = Set(desired.map(\.0))
+            var didMutate = false
+            if pruneOrphans {
+                let existing = store.manifestKeys(for: brand)
+                for orphan in existing.subtracting(desiredKeys) {
+                    guard store.hasEntry(relativePath: orphan, brand: brand) else { continue }
+                    do {
+                        try store.removeEntry(relativePath: orphan, brand: brand)
+                        didMutate = true
+                    } catch {
+                        // Disk / manifest race — skip; next reconcile can retry.
+                    }
                 }
             }
-        }
-
-        let toFetch = desired.filter { !store.hasEntry(relativePath: $0.0, brand: brand) }
+            let toFetch = desired.filter { !store.hasEntry(relativePath: $0.0, brand: brand) }
+            return (toFetch, didMutate)
+        }.value
         if toFetch.isEmpty {
             statusLine[brand] = "Offline images ready."
             if didMutatePack {

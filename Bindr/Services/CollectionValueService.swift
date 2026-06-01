@@ -17,17 +17,47 @@ import Observation
 /// - A month average is written once the month is fully complete (user opens on or after the 1st
 ///   of the following month).
 /// - The *current incomplete month* average is computed live from existing daily snapshots.
+/// Sendable value copies of SwiftData model objects — used for cross-actor transfer out of
+/// background ModelContext fetches so the main thread is never blocked by SQLite reads.
+struct SnapshotValue: Sendable {
+    let date: Date
+    let totalGbp: Double
+    let pokemonGbp: Double
+    let onePieceGbp: Double
+    let cardsGbp: Double
+    let sealedGbp: Double
+}
+
+struct WeeklyAverageValue: Sendable {
+    let weekStart: Date
+    let totalGbp: Double
+    let pokemonGbp: Double
+    let onePieceGbp: Double
+    let cardsGbp: Double
+    let sealedGbp: Double
+}
+
+struct MonthlyAverageValue: Sendable {
+    let monthStart: Date
+    let totalGbp: Double
+    let pokemonGbp: Double
+    let onePieceGbp: Double
+    let cardsGbp: Double
+    let sealedGbp: Double
+}
+
 @Observable
 @MainActor
 final class CollectionValueService {
     private let modelContext: ModelContext
+    private let modelContainer: ModelContainer
     private let pricing: PricingService
     private let cardData: CardDataService
     private let sealedProducts: SealedProductService
 
-    private(set) var snapshots: [CollectionValueSnapshot] = []
-    private(set) var weeklyAverages: [CollectionWeeklyAverage] = []
-    private(set) var monthlyAverages: [CollectionMonthlyAverage] = []
+    private(set) var snapshots: [SnapshotValue] = []
+    private(set) var weeklyAverages: [WeeklyAverageValue] = []
+    private(set) var monthlyAverages: [MonthlyAverageValue] = []
     private(set) var isBackfilling = false
 
     // MARK: - Live partial-period averages (current incomplete week / month)
@@ -60,13 +90,39 @@ final class CollectionValueService {
         sealedProducts: SealedProductService
     ) {
         self.modelContext = modelContext
+        self.modelContainer = modelContext.container
         self.pricing = pricing
         self.cardData = cardData
         self.sealedProducts = sealedProducts
     }
 
-    func loadAllFromStore() {
-        loadAll()
+    func loadAllFromStore() async {
+        let container = modelContainer
+        let (snaps, weekly, monthly) = await Task.detached(priority: .userInitiated) {
+            let ctx = ModelContext(container)
+            let snaps = (try? ctx.fetch(FetchDescriptor<CollectionValueSnapshot>(
+                sortBy: [SortDescriptor(\.date, order: .forward)]
+            )))?.map {
+                SnapshotValue(date: $0.date, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
+                              onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+            } ?? []
+            let weekly = (try? ctx.fetch(FetchDescriptor<CollectionWeeklyAverage>(
+                sortBy: [SortDescriptor(\.weekStart, order: .forward)]
+            )))?.map {
+                WeeklyAverageValue(weekStart: $0.weekStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
+                                   onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+            } ?? []
+            let monthly = (try? ctx.fetch(FetchDescriptor<CollectionMonthlyAverage>(
+                sortBy: [SortDescriptor(\.monthStart, order: .forward)]
+            )))?.map {
+                MonthlyAverageValue(monthStart: $0.monthStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
+                                    onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+            } ?? []
+            return (snaps, weekly, monthly)
+        }.value
+        snapshots = snaps
+        weeklyAverages = weekly
+        monthlyAverages = monthly
     }
 
     // MARK: - Persisted last-known value (for yesterday's snapshot on new-day launch)
@@ -390,9 +446,11 @@ final class CollectionValueService {
             byWeek[ws, default: []].append(snap)
         }
 
-        // Build a lookup of existing records by week start so we can upsert
+        // Build a lookup of existing records by week start so we can upsert.
+        // Fetch live @Model objects here so we can mutate them through modelContext.
+        let liveWeeklyRecords = (try? modelContext.fetch(FetchDescriptor<CollectionWeeklyAverage>())) ?? []
         var existingByWeekStart: [Date: CollectionWeeklyAverage] = [:]
-        for record in weeklyAverages {
+        for record in liveWeeklyRecords {
             let ws = cal.date(from: cal.dateComponents([.yearForWeekOfYear, .weekOfYear], from: record.weekStart))!
             existingByWeekStart[ws] = record
         }
@@ -443,9 +501,11 @@ final class CollectionValueService {
             byMonth[ms, default: []].append(snap)
         }
 
-        // Build a lookup of existing records by month start so we can upsert
+        // Build a lookup of existing records by month start so we can upsert.
+        // Fetch live @Model objects here so we can mutate them through modelContext.
+        let liveMonthlyRecords = (try? modelContext.fetch(FetchDescriptor<CollectionMonthlyAverage>())) ?? []
         var existingByMonthStart: [Date: CollectionMonthlyAverage] = [:]
-        for record in monthlyAverages {
+        for record in liveMonthlyRecords {
             let comps = cal.dateComponents([.year, .month], from: record.monthStart)
             let ms = cal.date(from: comps)!
             existingByMonthStart[ms] = record
@@ -506,8 +566,8 @@ final class CollectionValueService {
 
         let pokemonItemsCopy = pokemonItems
         let onePieceItemsCopy = onePieceItems
-        async let p = computeBrandValue(items: pokemonItemsCopy, on: date)
-        async let o = computeBrandValue(items: onePieceItemsCopy, on: date)
+        async let p = computeBrandValue(items: pokemonItemsCopy, brand: .pokemon, on: date)
+        async let o = computeBrandValue(items: onePieceItemsCopy, brand: .onePiece, on: date)
         let (pv, ov) = await (p, o)
         return BrandSnapshot(
             total: pv.total + ov.total,
@@ -518,10 +578,22 @@ final class CollectionValueService {
         )
     }
 
-    private func computeBrandValue(items: [CollectionItem], on date: Date) async -> (total: Double, cards: Double, sealed: Double) {
+    private func computeBrandValue(items: [CollectionItem], brand: TCGBrand, on date: Date) async -> (total: Double, cards: Double, sealed: Double) {
         var total = 0.0
         var cards = 0.0
         var sealed = 0.0
+
+        // Batch-load all non-sealed cards in a single SQLite query instead of one per item.
+        let cardIDs = items.compactMap { item -> String? in
+            guard item.quantity > 0 else { return nil }
+            guard !(item.itemKind == ProductKind.sealedProduct.rawValue &&
+                    item.sealedStatus == SealedInventoryStatus.opened.rawValue) else { return nil }
+            guard sealedProductID(for: item) == nil else { return nil }
+            return item.cardID
+        }
+        let loadedCards = await cardData.loadCards(masterCardIDs: cardIDs, catalogBrand: brand)
+        let cardByID = Dictionary(loadedCards.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
+
         for item in items {
             guard item.quantity > 0 else { continue }
             if item.itemKind == ProductKind.sealedProduct.rawValue,
@@ -535,7 +607,7 @@ final class CollectionValueService {
                 sealed += gbp
                 continue
             }
-            guard let card = await cardData.loadCard(masterCardId: item.cardID) else { continue }
+            guard let card = cardByID[item.cardID] else { continue }
             let grade = resolvedGradeKey(for: item)
             let usd = await usdPrice(for: card, variantKey: item.variantKey, grade: grade, on: date)
             let gbp = usd * Double(item.quantity) * pricing.usdToGbp
@@ -640,20 +712,30 @@ final class CollectionValueService {
     }
 
     private func loadAll() {
-        snapshots = fetchAllSnapshots()
+        snapshots = fetchAllSnapshots().map {
+            SnapshotValue(date: $0.date, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
+                          onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+        }
         weeklyAverages = {
             let d = FetchDescriptor<CollectionWeeklyAverage>(
                 sortBy: [SortDescriptor(\.weekStart, order: .forward)]
             )
-            return (try? modelContext.fetch(d)) ?? []
+            return ((try? modelContext.fetch(d)) ?? []).map {
+                WeeklyAverageValue(weekStart: $0.weekStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
+                                   onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+            }
         }()
         monthlyAverages = {
             let d = FetchDescriptor<CollectionMonthlyAverage>(
                 sortBy: [SortDescriptor(\.monthStart, order: .forward)]
             )
-            return (try? modelContext.fetch(d)) ?? []
+            return ((try? modelContext.fetch(d)) ?? []).map {
+                MonthlyAverageValue(monthStart: $0.monthStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
+                                    onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+            }
         }()
     }
+
 }
 
 // MARK: - Shared value type
@@ -667,6 +749,19 @@ struct BrandSnapshot {
 }
 
 extension CollectionValueSnapshot {
+    var asBrandSnapshot: BrandSnapshot {
+        let hasExplicitSplit = cardsGbp > 0 || sealedGbp > 0
+        return BrandSnapshot(
+            total: totalGbp,
+            pokemon: pokemonGbp,
+            onePiece: onePieceGbp,
+            cards: hasExplicitSplit ? cardsGbp : totalGbp,
+            sealed: hasExplicitSplit ? sealedGbp : 0
+        )
+    }
+}
+
+extension SnapshotValue {
     var asBrandSnapshot: BrandSnapshot {
         let hasExplicitSplit = cardsGbp > 0 || sealedGbp > 0
         return BrandSnapshot(

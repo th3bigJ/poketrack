@@ -56,15 +56,25 @@ extension View {
     }
 }
 
+// Shared flag so ALL GlassCardModifier instances flip together in one render pass,
+// avoiding N separate re-renders (one per card) each costing another glass-init hit.
+@Observable
+@MainActor
+final class GlassReadySignal {
+    static let shared = GlassReadySignal()
+    var isReady = false
+}
+
 struct GlassCardModifier: ViewModifier {
     @Environment(\.colorScheme) var colorScheme
     let cornerRadius: CGFloat
     let interactive: Bool
 
     func body(content: Content) -> some View {
-        content
+        let glassReady = GlassReadySignal.shared.isReady
+        return content
             .background {
-                if #available(iOS 26.0, *) {
+                if #available(iOS 26.0, *), glassReady {
                     let base = Glass.regular.tint(nil)
                     RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                         .fill(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.04))
