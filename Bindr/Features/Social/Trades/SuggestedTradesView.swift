@@ -8,6 +8,7 @@ struct SuggestedTradesView: View {
 
     @State private var suggestions: [TradeSuggestion] = []
     @State private var isLoading = false
+    @State private var hasLoaded = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -32,7 +33,7 @@ struct SuggestedTradesView: View {
             }
         }
         .background(Color(uiColor: .systemBackground))
-        .task { await loadSuggestions() }
+        .task { await loadAfterFirstPaint() }
     }
 
     private var emptyState: some View {
@@ -80,6 +81,14 @@ struct SuggestedTradesView: View {
                 myCards: items
             ))
         }
+    }
+
+    private func loadAfterFirstPaint() async {
+        guard !hasLoaded else { return }
+        hasLoaded = true
+        await Task.yield()
+        try? await Task.sleep(nanoseconds: 180_000_000)
+        await loadSuggestions()
     }
 
     private func loadSuggestions() async {

@@ -460,6 +460,32 @@ enum DeckFormat: String, Codable, CaseIterable {
     }
 }
 
+extension DeckCard {
+    enum PokemonCategory { case pokemon, trainer, energy }
+    enum OPCategory      { case leader, character, event, stage }
+
+    var pokemonCategory: PokemonCategory {
+        if isEnergyCard { return .energy }
+        if let raw = catalogCategory?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty {
+            let c = raw.lowercased()
+            if c.contains("energy") { return .energy }
+            if c.contains("trainer") { return .trainer }
+            if c.contains("pokémon") || c.contains("pokemon") { return .pokemon }
+        }
+        if trainerType != nil { return .trainer }
+        if isBasicPokemon || isRuleBox || isRadiant { return .pokemon }
+        return .pokemon
+    }
+
+    var opCategory: OPCategory {
+        let c = catalogCategory?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
+        if c.contains("leader")    { return .leader }
+        if c.contains("event")     { return .event }
+        if c.contains("stage")     { return .stage }
+        return .character
+    }
+}
+
 extension Deck {
     var cardList: [DeckCard] { cards ?? [] }
 }

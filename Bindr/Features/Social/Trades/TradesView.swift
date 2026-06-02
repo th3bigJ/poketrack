@@ -14,6 +14,7 @@ struct TradesView: View {
     @State private var showsCompletedTrades = false
     @State private var isSuggestedExpanded = true
     @State private var isOpenTradesExpanded = false
+    @State private var hasLoadedTrades = false
 
     private var currentUserID: UUID? {
         if case .signedIn(let uid, _) = services.socialAuth.authState { return uid }
@@ -65,9 +66,11 @@ struct TradesView: View {
             .padding(.bottom, 120)
         }
         .refreshable { await refresh() }
-        .task { await refresh() }
-        .task(id: services.trade.lastMutationAt) {
-            await refresh()
+        .task {
+            await loadAfterFirstPaint()
+        }
+        .onChange(of: services.trade.lastMutationAt) { _, _ in
+            Task { await refresh(force: true) }
         }
         .alert("Error", isPresented: .constant(errorMessage != nil), actions: {
             Button("OK") { errorMessage = nil }
@@ -286,7 +289,16 @@ struct TradesView: View {
 
     // MARK: - Data
 
-    private func refresh() async {
+    private func loadAfterFirstPaint() async {
+        guard !hasLoadedTrades else { return }
+        hasLoadedTrades = true
+        await Task.yield()
+        try? await Task.sleep(nanoseconds: 120_000_000)
+        await refresh(force: true)
+    }
+
+    private func refresh(force: Bool = false) async {
+        guard force || !isLoading else { return }
         isLoading = true
         defer { isLoading = false }
         do {

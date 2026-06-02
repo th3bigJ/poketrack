@@ -102,6 +102,108 @@ final class PTCGLService {
         
         return output.trimmingCharacters(in: .whitespacesAndNewlines)
     }
+
+    /// Converts a Deck into official league formatted plain text.
+    func exportToOfficialLeague(deck: Deck, sets: [TCGSet], cardsByMasterId: [String: Card] = [:]) -> String {
+        var output = ""
+        let cards = deck.cardList
+        let setNameLookup = buildSetNameLookup(from: sets)
+        
+        output += "DECK LIST: \(deck.title)\n"
+        output += "TCG: \(deck.tcgBrand == .pokemon ? "Pokémon" : "One Piece")\n"
+        output += "Format: \(deck.deckFormat.displayName)\n"
+        output += "Total Cards: \(deck.totalCardCount)\n\n"
+        
+        if deck.tcgBrand == .onePiece {
+            let leaders = cards.filter { $0.opCategory == .leader }
+            let characters = cards.filter { $0.opCategory == .character }
+            let events = cards.filter { $0.opCategory == .event }
+            let stages = cards.filter { $0.opCategory == .stage }
+            
+            if !leaders.isEmpty {
+                output += "LEADER (\(leaders.reduce(0) { $0 + $1.quantity })):\n"
+                for card in leaders {
+                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
+                }
+                output += "\n"
+            }
+            if !characters.isEmpty {
+                output += "CHARACTERS (\(characters.reduce(0) { $0 + $1.quantity })):\n"
+                for card in characters {
+                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
+                }
+                output += "\n"
+            }
+            if !events.isEmpty {
+                output += "EVENTS (\(events.reduce(0) { $0 + $1.quantity })):\n"
+                for card in events {
+                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
+                }
+                output += "\n"
+            }
+            if !stages.isEmpty {
+                output += "STAGES (\(stages.reduce(0) { $0 + $1.quantity })):\n"
+                for card in stages {
+                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
+                }
+            }
+        } else {
+            let pokemon = cards.filter { $0.pokemonCategory == .pokemon }
+            let trainers = cards.filter { $0.pokemonCategory == .trainer }
+            let energy = cards.filter { $0.pokemonCategory == .energy }
+            
+            if !pokemon.isEmpty {
+                output += "POKÉMON (\(pokemon.reduce(0) { $0 + $1.quantity })):\n"
+                for card in pokemon {
+                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
+                }
+                output += "\n"
+            }
+            if !trainers.isEmpty {
+                output += "TRAINER (\(trainers.reduce(0) { $0 + $1.quantity })):\n"
+                for card in trainers {
+                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
+                }
+                output += "\n"
+            }
+            if !energy.isEmpty {
+                output += "ENERGY (\(energy.reduce(0) { $0 + $1.quantity })):\n"
+                for card in energy {
+                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
+                }
+            }
+        }
+        
+        return output.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private func buildSetNameLookup(from sets: [TCGSet]) -> [String: String] {
+        var out: [String: String] = [:]
+        for set in sets {
+            let name = set.name.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !name.isEmpty else { continue }
+            let candidates = [
+                set.setCode,
+                set.setKey,
+                set.code,
+                set.tcgdexId
+            ]
+            for candidate in candidates {
+                let key = (candidate ?? "").trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                if !key.isEmpty { out[key] = name }
+            }
+        }
+        return out
+    }
+
+    private func formatLeagueCard(_ card: DeckCard, nameBySetKey: [String: String], cardsByMasterId: [String: Card]) -> String {
+        let setKey = card.setKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let setName = nameBySetKey[setKey] ?? (card.setKey.isEmpty ? "Unknown Set" : card.setKey.uppercased())
+        let localId = normalizedExportLocalId(resolvedLocalId(for: card, cardsByMasterId: cardsByMasterId))
+        let numberToken = localId.isEmpty ? "" : " \(localId)"
+        
+        return "\(card.quantity) \(card.cardName) - \(setName)\(numberToken)"
+    }
     
     private func formatCard(_ card: DeckCard, abbreviationBySetKey: [String: String], cardsByMasterId: [String: Card]) -> String {
         let setKey = card.setKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()

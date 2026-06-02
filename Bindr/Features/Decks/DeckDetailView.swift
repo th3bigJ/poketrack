@@ -60,33 +60,6 @@ private enum DeckCardGroup: String, CaseIterable, Identifiable {
     }
 }
 
-private extension DeckCard {
-    enum PokemonCategory { case pokemon, trainer, energy }
-    enum OPCategory      { case leader, character, event, stage }
-
-    var pokemonCategory: PokemonCategory {
-        if isEnergyCard { return .energy }
-        if let raw = catalogCategory?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty {
-            let c = raw.lowercased()
-            if c.contains("energy") { return .energy }
-            if c.contains("trainer") { return .trainer }
-            if c.contains("pokémon") || c.contains("pokemon") { return .pokemon }
-        }
-        if trainerType != nil { return .trainer }
-        if isBasicPokemon || isRuleBox || isRadiant { return .pokemon }
-        return .pokemon
-    }
-
-    var opCategory: OPCategory {
-        let c = catalogCategory?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
-        if c.contains("leader")    { return .leader }
-        if c.contains("event")     { return .event }
-        if c.contains("stage")     { return .stage }
-        return .character
-    }
-
-}
-
 /// Full deck swipe order for ``CardBrowseDetailView`` paging (matches Pokémon → Trainers → Energy on screen).
 private struct DeckDetailBrowseSession: Identifiable {
     let id = UUID()
@@ -340,10 +313,45 @@ struct DeckDetailView: View {
                     )
                 }
                 .buttonStyle(.plain)
+
+                Button {
+                    Task {
+                        let idsNeedingLookup = deck.cardList
+                            .filter { ($0.localId ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+                            .map(\.cardID)
+                        let catalogBrand = deck.tcgBrand
+                        let sets = await services.cardData.catalogSets(for: catalogBrand)
+                        let lookedUpCards = await services.cardData.loadCards(masterCardIDs: idsNeedingLookup, catalogBrand: catalogBrand)
+                        let cardsByMasterId = Dictionary(uniqueKeysWithValues: lookedUpCards.map { ($0.masterCardId, $0) })
+                        let exportText = PTCGLService.shared.exportToOfficialLeague(deck: deck, sets: sets, cardsByMasterId: cardsByMasterId)
+                        UIPasteboard.general.string = exportText
+                        HapticManager.notification(.success)
+                        showShareActions = false
+                    }
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "list.bullet.rectangle.portrait")
+                            .symbolRenderingMode(.monochrome)
+                            .foregroundStyle(.white)
+                            .frame(width: 20)
+                        Text("Copy Official Deck List")
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(.primary)
+                        Spacer()
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 12)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .fill(Color(uiColor: .secondarySystemBackground))
+                    )
+                }
+                .buttonStyle(.plain)
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 18)
-            .presentationDetents([.height(220)])
+            .presentationDetents([.height(290)])
             .presentationDragIndicator(.visible)
         }
         .task(id: deck.cardList.map(\.cardID).sorted().joined()) {

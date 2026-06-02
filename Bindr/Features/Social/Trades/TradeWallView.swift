@@ -13,6 +13,7 @@ struct TradeWallView: View {
     @State private var cardDetailSession: CardDetailSession?
     @State private var selectedSealedProduct: SealedProduct?
     @State private var selectedTab: Tab = .cards
+    @State private var hasLoaded = false
 
     enum Tab: String, CaseIterable {
         case cards  = "Cards"
@@ -62,10 +63,8 @@ struct TradeWallView: View {
                                 message: "Cards your friends have on their trade list will appear here."
                             )
                         } else {
-                            ScrollView {
-                                cardGrid
-                                    .padding(.top, 4)
-                            }
+                            cardGrid
+                                .padding(.top, 4)
                         }
                     case .sealed:
                         if sealedEntries.isEmpty {
@@ -75,17 +74,15 @@ struct TradeWallView: View {
                                 message: "Sealed products your friends have on their trade list will appear here."
                             )
                         } else {
-                            ScrollView {
-                                sealedGrid
-                                    .padding(.top, 4)
-                            }
+                            sealedGrid
+                                .padding(.top, 4)
                         }
                     }
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .task { await load() }
+        .task { await loadAfterFirstPaint() }
         .sheet(item: $cardDetailSession) { session in
             CardDetailSheet(
                 cards: [session.card],
@@ -198,6 +195,14 @@ struct TradeWallView: View {
     }
 
     // MARK: - Load
+
+    private func loadAfterFirstPaint() async {
+        guard !hasLoaded else { return }
+        hasLoaded = true
+        await Task.yield()
+        try? await Task.sleep(nanoseconds: 160_000_000)
+        await load()
+    }
 
     private func load() async {
         guard case .signedIn = services.socialAuth.authState else { return }

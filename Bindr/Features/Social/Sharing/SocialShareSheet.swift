@@ -223,6 +223,47 @@ struct SocialShareSheet: View {
                                 .font(.system(size: 11))
                                 .foregroundStyle(.secondary)
                                 .padding(.horizontal, 4)
+
+                            Button {
+                                Task {
+                                    let idsNeedingLookup = deck.cardList
+                                        .filter { ($0.localId ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+                                        .map(\.cardID)
+                                    let catalogBrand = deck.tcgBrand
+                                    let sets = await services.cardData.catalogSets(for: catalogBrand)
+                                    let lookedUpCards = await services.cardData.loadCards(masterCardIDs: idsNeedingLookup, catalogBrand: catalogBrand)
+                                    let cardsByMasterId = Dictionary(uniqueKeysWithValues: lookedUpCards.map { ($0.masterCardId, $0) })
+                                    let exportText = PTCGLService.shared.exportToOfficialLeague(deck: deck, sets: sets, cardsByMasterId: cardsByMasterId)
+                                    UIPasteboard.general.string = exportText
+                                    HapticManager.notification(.success)
+                                    dismiss()
+                                }
+                            } label: {
+                                HStack {
+                                    Image(systemName: "list.bullet.rectangle.portrait")
+                                        .font(.system(size: 14, weight: .semibold))
+                                    Text("Copy Official Deck List (Text)")
+                                        .font(.system(size: 14, weight: .semibold))
+                                    Spacer()
+                                    Image(systemName: "chevron.right")
+                                        .font(.caption2.weight(.bold))
+                                        .foregroundStyle(.tertiary)
+                                }
+                                .foregroundStyle(.primary)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 14)
+                                .background(Color.primary.opacity(0.05), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                        .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                            
+                            Text("Official competition-ready format: Qty Name - Set Number")
+                                .font(.system(size: 11))
+                                .foregroundStyle(.secondary)
+                                .padding(.horizontal, 4)
                         }
                     }
                 }
