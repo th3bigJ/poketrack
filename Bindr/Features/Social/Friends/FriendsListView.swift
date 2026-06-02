@@ -15,6 +15,9 @@ struct FriendsListView: View {
     var onSelectFriendForTrade: ((SocialProfile) -> Void)? = nil
     var socialSelectedTab: Binding<SocialTab>? = nil
     var headerInset: CGFloat = 0
+    /// When embedded in `MyProfileView`'s scroll view, skip the nested `ScrollView`
+    /// so the friends header, tabs, and list scroll with the profile chrome.
+    var embedInParentScrollView: Bool = false
 
     @State private var selectedTab: FriendsTab = .mine
     @State private var friends: [SocialProfile] = []
@@ -75,45 +78,28 @@ struct FriendsListView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            Color.clear.frame(height: headerInset)
-            if let socialSelectedTab {
-                SlidingSegmentedPicker(
-                    selection: socialSelectedTab,
-                    items: SocialTab.allCases,
-                    title: { $0.title }
-                )
-                .padding(.horizontal, BindrSpacing.lg)
-            }
-            header
-            tabPicker
-
-            if selectedTab == .find {
-                searchField
-                    .padding(.top, BindrSpacing.md)
-            }
-
-            ScrollView {
-                VStack(alignment: .leading, spacing: BindrSpacing.md) {
-                    if selectedTab == .mine {
-                        myFriendsContent
-                    } else {
-                        findTrainersContent
+        Group {
+            if embedInParentScrollView {
+                friendsScrollContent
+            } else {
+                VStack(spacing: 0) {
+                    Color.clear.frame(height: headerInset)
+                    if let socialSelectedTab {
+                        SlidingSegmentedPicker(
+                            selection: socialSelectedTab,
+                            items: SocialTab.allCases,
+                            title: { $0.title }
+                        )
+                        .padding(.horizontal, BindrSpacing.lg)
                     }
 
-                    if let errorMessage {
-                        Text(errorMessage)
-                            .font(.system(size: 12))
-                            .foregroundStyle(BindrPalette.alertRed)
-                            .padding(BindrSpacing.md)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .background(BindrPalette.alertRed.opacity(0.15), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                    ScrollView {
+                        friendsScrollContent
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    .refreshable { await refresh() }
                 }
-                .padding(BindrSpacing.lg)
-                .padding(.bottom, BindrSpacing.xxxl)
             }
-            .refreshable { await refresh() }
         }
         .task { await refresh() }
         .onChange(of: searchText) { _, newValue in
@@ -122,6 +108,34 @@ struct FriendsListView: View {
         .task(id: tradeSeedSignature) {
             await refreshTradeSuggestionContext(friendIDs: friends.map(\.id))
         }
+    }
+
+    private var friendsScrollContent: some View {
+        VStack(alignment: .leading, spacing: BindrSpacing.md) {
+            header
+            tabPicker
+
+            if selectedTab == .find {
+                searchField
+            }
+
+            if selectedTab == .mine {
+                myFriendsContent
+            } else {
+                findTrainersContent
+            }
+
+            if let errorMessage {
+                Text(errorMessage)
+                    .font(.system(size: 12))
+                    .foregroundStyle(BindrPalette.alertRed)
+                    .padding(BindrSpacing.md)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(BindrPalette.alertRed.opacity(0.15), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            }
+        }
+        .padding(.horizontal, BindrSpacing.lg)
+        .padding(.bottom, embedInParentScrollView ? BindrSpacing.lg : BindrSpacing.xxxl)
     }
 
     private var header: some View {
@@ -161,7 +175,6 @@ struct FriendsListView: View {
                 }
             }
         }
-        .padding(.horizontal, BindrSpacing.lg)
         .padding(.top, BindrSpacing.lg)
         .padding(.bottom, BindrSpacing.md)
     }
@@ -190,7 +203,6 @@ struct FriendsListView: View {
             }
             Spacer()
         }
-        .padding(.horizontal, BindrSpacing.lg)
     }
 
     private var searchField: some View {
@@ -212,7 +224,6 @@ struct FriendsListView: View {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .stroke(Color.primary.opacity(0.09), lineWidth: 1)
         }
-        .padding(.horizontal, BindrSpacing.lg)
     }
 
     @ViewBuilder

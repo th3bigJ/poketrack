@@ -448,12 +448,11 @@ struct LaunchWordmarkView: View {
 
     @ViewBuilder
     private func catalogProgressView(_ p: LaunchProgressState) -> some View {
-        let isByteProgress = p.hasByteProgress
         launchStatusPanel(
-            title: isByteProgress ? p.message : (loadingStatusMessages.first ?? "Syncing iCloud"),
-            status: isByteProgress ? p.status : "Preparing data…",
-            icon: isByteProgress ? "sparkles" : "square.grid.2x2.fill",
-            progress: isByteProgress ? p : nil
+            title: p.message,
+            status: p.status,
+            icon: p.hasByteProgress ? "sparkles" : "square.grid.2x2.fill",
+            progress: p
         )
     }
 

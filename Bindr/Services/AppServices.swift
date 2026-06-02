@@ -239,6 +239,7 @@ final class AppServices {
             bootstrapProgress = 0
             bootstrapDownloadedBytes = 0
             bootstrapEstimatedTotalBytes = 0
+            bootstrapShowsDownloadProgressUI = true
             // Start the network task immediately so the connection handshake overlaps
             // with local SQLite reads in primeLaunchCatalogFromLocalCache.
             let blockingTask = Task { @MainActor [weak self] in
@@ -383,7 +384,7 @@ final class AppServices {
     ) async {
         await brandsManifest.refresh()
         if updateBootstrapProgressUI {
-            bootstrapShowsDownloadProgressUI = false
+            bootstrapShowsDownloadProgressUI = true
             let enabled = brandSettings.enabledBrands
             if enabled.count == 1, enabled.contains(.onePiece) {
                 bootstrapMessage = "Updating ONE PIECE card data…"
@@ -410,6 +411,10 @@ final class AppServices {
             progressHandler = { [weak self] snapshot in
                 guard let self else { return }
                 if snapshot.downloadedBytes > 0 {
+                    self.bootstrapShowsDownloadProgressUI = true
+                } else if snapshot.fractionCompleted > 0 {
+                    // Daily pricing refresh often completes files with 0 bytes (304 / unchanged);
+                    // still show the determinate bar from file-fraction progress.
                     self.bootstrapShowsDownloadProgressUI = true
                 }
                 self.bootstrapStatus = snapshot.status

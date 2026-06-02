@@ -1144,13 +1144,54 @@ struct BrowseView: View {
         }
     }
 
+    @ViewBuilder
+    private var browseSetSummaryRow: some View {
+        if case .set(let set) = inlineDetailRoute, !inlineDetailLoading {
+            setProgressBar(for: set, cards: inlineDetailCards)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 10)
+        }
+    }
+
+    @ViewBuilder
+    private var browseSetNavigationRow: some View {
+        if case .set(let set) = inlineDetailRoute {
+            HStack(alignment: .center, spacing: 12) {
+                setAdjacentSetArrow(
+                    label: "Previous set",
+                    systemImage: "chevron.left",
+                    enabled: adjacentSet(to: set, offset: -1) != nil
+                ) {
+                    navigateToAdjacentSet(from: set, offset: -1)
+                }
+
+                SetLogoAsyncImage(
+                    logoSrc: set.logoSrc,
+                    height: 44,
+                    brand: services.brandSettings.selectedCatalogBrand
+                )
+                .frame(maxWidth: .infinity)
+
+                setAdjacentSetArrow(
+                    label: "Next set",
+                    systemImage: "chevron.right",
+                    enabled: adjacentSet(to: set, offset: 1) != nil
+                ) {
+                    navigateToAdjacentSet(from: set, offset: 1)
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 10)
+        }
+    }
+
     private var browseSearchRow: some View {
         BrowseInlineSearchField(
             title: browseSearchPlaceholder,
             text: isInlineDetailPresented ? $inlineDetailQuery : $query
         )
-            .padding(.horizontal, 16)
-            .padding(.bottom, 10)
+        .padding(.horizontal, 16)
+        .padding(.bottom, 10)
     }
 
     @ViewBuilder
@@ -1168,6 +1209,8 @@ struct BrowseView: View {
                     .frame(height: rootFloatingChromeInset)
                 browseTabsRow
                 browseSearchRow
+                browseSetSummaryRow
+                browseSetNavigationRow
                 browseResultCountRow
                 activeTabContent
                 if selectedTab == .cards && isPreparingFilterCatalog {
@@ -1194,6 +1237,8 @@ struct BrowseView: View {
                         .id(browseAuxTopAnchorID())
                     browseTabsRow
                     browseSearchRow
+                    browseSetSummaryRow
+                    browseSetNavigationRow
                     browseResultCountRow
                     activeTabContent
                 }
@@ -1266,11 +1311,7 @@ struct BrowseView: View {
             .padding(.bottom, 16)
         } else {
             VStack(spacing: 0) {
-                if case .set(let set) = route {
-                    setProgressBar(for: set, cards: inlineDetailCards)
-                        .padding(.top, 4)
-                        .padding(.bottom, 12)
-
+                if case .set = route {
                     Toggle("Hide owned cards", isOn: $inlineDetailFilters.hideOwned)
                         .font(.caption.weight(.semibold))
                         .toggleStyle(.switch)
@@ -2367,6 +2408,47 @@ struct BrowseView: View {
         .animation(.easeInOut(duration: 0.15), value: isSelected)
     }
 
+    private var setsInDisplayOrder: [TCGSet] {
+        services.cardData.allSetsSortedByReleaseDateNewestFirst()
+    }
+
+    private func adjacentSet(to set: TCGSet, offset: Int) -> TCGSet? {
+        let sets = setsInDisplayOrder
+        guard let index = sets.firstIndex(where: { $0.setCode == set.setCode }) else { return nil }
+        let targetIndex = index + offset
+        guard sets.indices.contains(targetIndex) else { return nil }
+        return sets[targetIndex]
+    }
+
+    private func navigateToAdjacentSet(from set: TCGSet, offset: Int) {
+        guard let target = adjacentSet(to: set, offset: offset) else { return }
+        Haptics.lightImpact()
+        lastSelectedSetCodeInSetsTab = target.setCode
+        inlineDetailRoute = .set(target)
+    }
+
+    private func setAdjacentSetArrow(
+        label: String,
+        systemImage: String,
+        enabled: Bool,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button {
+            guard enabled else { return }
+            action()
+        } label: {
+            Image(systemName: systemImage)
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(enabled ? Color.primary : Color.primary.opacity(0.28))
+                .modifier(ChromeGlassCircleGlyphModifier())
+        }
+        .buttonStyle(.plain)
+        .frame(width: 44, height: 44)
+        .contentShape(Rectangle())
+        .accessibilityLabel(label)
+        .disabled(!enabled)
+    }
+
     private func setProgressBar(for set: TCGSet, cards: [Card]) -> some View {
         let priceDict = showMasterSet ? inlineDetailMasterPriceByCardID : inlineDetailPriceByCardID
         let masterTotal = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal ?? cards.count) : (set.cardCountTotal ?? cards.count)
@@ -2400,13 +2482,7 @@ struct BrowseView: View {
             HStack(spacing: 8) {
                 setModeChip(label: "Full Set", isMaster: false)
                 setModeChip(label: "Master Set", isMaster: true)
-                Spacer()
-                SetLogoAsyncImage(
-                    logoSrc: set.logoSrc,
-                    height: 24,
-                    brand: services.brandSettings.selectedCatalogBrand
-                )
-                .frame(width: 76, alignment: .trailing)
+                Spacer(minLength: 0)
             }
 
             // Header

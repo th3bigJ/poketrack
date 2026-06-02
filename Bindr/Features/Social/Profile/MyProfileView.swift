@@ -88,18 +88,13 @@ struct MyProfileView: View {
     }
 
     var body: some View {
-        Group {
-            if activeProfileTab == .friends {
-                VStack(spacing: 0) {
-                    profileIntro
+        ScrollView {
+            VStack(spacing: 0) {
+                profileIntro
+                if activeProfileTab == .friends {
                     friendsTabContent
-                }
-            } else {
-                ScrollView {
-                    VStack(spacing: 0) {
-                        profileIntro
-                        profileTabContent
-                    }
+                } else {
+                    profileTabContent
                 }
             }
         }
@@ -343,7 +338,8 @@ struct MyProfileView: View {
             onOpenSearch: onOpenFriendsSearch ?? {},
             onOpenQR: onOpenFriendsQR ?? {},
             onOpenUsername: onOpenFriendUsername ?? { _ in },
-            onSelectFriendForTrade: onSelectFriendForTrade
+            onSelectFriendForTrade: onSelectFriendForTrade,
+            embedInParentScrollView: true
         )
         .padding(.top, profileTabContentTopGap)
     }
@@ -541,7 +537,7 @@ struct MyProfileView: View {
             favoriteCardPrice = nil
         }
         do {
-            myActivity = try await services.socialFeed.fetchUserActivity(limit: 10)
+            myActivity = try await services.socialFeed.fetchActivityForUser(userID: profile.id, limit: 50)
         } catch {
             print("Error fetching my activity: \(error)")
         }
@@ -554,27 +550,6 @@ struct MyProfileView: View {
     // MARK: - Grouping Logic
     
     private var groupedActivity: [GroupedFeedItem] {
-        var groups: [GroupedFeedItem] = []
-        var contentIndex: [UUID: Int] = [:]
-
-        for item in myActivity {
-            switch item.type {
-            case .vote, .comment:
-                if let contentID = item.content?.id, let idx = contentIndex[contentID] {
-                    groups[idx].interactions.append(item)
-                    continue
-                }
-                let group = GroupedFeedItem(id: item.id, primary: item, interactions: [])
-                groups.append(group)
-            default:
-                let group = GroupedFeedItem(id: item.id, primary: item, interactions: [])
-                let idx = groups.count
-                groups.append(group)
-                if let contentID = item.content?.id {
-                    contentIndex[contentID] = idx
-                }
-            }
-        }
-        return groups
+        myActivity.map { GroupedFeedItem(id: $0.id, primary: $0, interactions: []) }
     }
 }

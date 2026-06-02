@@ -17,37 +17,6 @@ struct GroupedFeedItem: Identifiable {
     }
 }
 
-/// A run of consecutive feed items that share a "shape" — currently used for
-/// collapsing multiple pulls from the same set or several shares of the same
-/// content type into a single condensed row. Tapping the row expands the
-/// underlying items inline so nothing is hidden.
-struct ClusteredFeedRow: Identifiable {
-    let id: String
-    let kind: Kind
-    let items: [GroupedFeedItem]
-
-    enum Kind {
-        /// Multiple pulls, same set, ≥2 distinct actors.
-        case pullsFromSet(setName: String)
-        /// Multiple shares of the same content type (e.g. 3 binders).
-        case sharedContent(contentType: SharedContentType)
-    }
-}
-
-/// Top-level row in the rendered feed — either a single grouped item or an
-/// auto-consolidated cluster.
-enum FeedRow: Identifiable {
-    case single(GroupedFeedItem)
-    case cluster(ClusteredFeedRow)
-
-    var id: String {
-        switch self {
-        case .single(let g): return "single-\(g.id)"
-        case .cluster(let c): return "cluster-\(c.id)"
-        }
-    }
-}
-
 // MARK: - FeedView
 
 struct FeedView: View {
@@ -58,9 +27,6 @@ struct FeedView: View {
     @State private var isInitialLoading = false
     @State private var isLoadingMore = false
     @State private var errorMessage: String?
-    /// Cluster IDs the user has tapped to expand. Persists for the life of the
-    /// view so scrolling away and back doesn't collapse the user's choice.
-    @State private var expandedClusterIDs: Set<String> = []
 
     private var groupedItems: [GroupedFeedItem] {
         // Only show actual content posts (binders, pulls, etc) in the main Feed list.
@@ -100,80 +66,6 @@ struct FeedView: View {
             }
         }
         return groups
-    }
-
-    /// Walk the grouped items in order and collapse adjacent runs that share
-    /// the same "shape" (same set for pulls, same contentType for shares) and
-    /// were posted by ≥2 distinct actors. The user's eye reads four "Sam
-    /// pulled from Twilight Masquerade / Alex pulled from Twilight Masquerade"
-    /// rows as visual noise; collapsing them into "Sam, Alex and 2 others
-    /// pulled from Twilight Masquerade" keeps signal density high and makes
-    /// the feed feel curated rather than a raw firehose.
-    private var feedRows: [FeedRow] {
-        let groups = groupedItems
-        guard !groups.isEmpty else { return [] }
-
-        var rows: [FeedRow] = []
-        var run: [GroupedFeedItem] = []
-        var runKey: String?
-        var runKind: ClusteredFeedRow.Kind?
-
-        func flushRun() {
-            guard !run.isEmpty else { return }
-            // Need at least 2 distinct actors before we collapse — a single
-            // actor double-posting shouldn't disappear behind "and 1 other".
-            let distinctActors = Set(run.compactMap { $0.primary.actor?.id })
-            if run.count >= 2, distinctActors.count >= 2, let kind = runKind, let key = runKey {
-                let cluster = ClusteredFeedRow(
-                    id: "\(key)-\(run.first?.id ?? "")",
-                    kind: kind,
-                    items: run
-                )
-                rows.append(.cluster(cluster))
-            } else {
-                rows.append(contentsOf: run.map { FeedRow.single($0) })
-            }
-            run = []
-            runKey = nil
-            runKind = nil
-        }
-
-        for group in groups {
-            let (key, kind) = clusterKey(for: group)
-            if let key, let kind {
-                if key == runKey {
-                    run.append(group)
-                } else {
-                    flushRun()
-                    run = [group]
-                    runKey = key
-                    runKind = kind
-                }
-            } else {
-                flushRun()
-                rows.append(.single(group))
-            }
-        }
-        flushRun()
-        return rows
-    }
-
-    private func clusterKey(for group: GroupedFeedItem) -> (String?, ClusteredFeedRow.Kind?) {
-        let item = group.primary
-        switch item.type {
-        case .pull:
-            // Resolve the catalog set name so older posts that stored a raw
-            // set code still cluster with newer ones using the human name.
-            let raw = item.pullSetName ?? ""
-            let resolved = services.cardData.sets.first(where: { $0.setCode == raw })?.name ?? raw
-            guard !resolved.isEmpty else { return (nil, nil) }
-            return ("pull:\(resolved)", .pullsFromSet(setName: resolved))
-        case .sharedContent:
-            guard let type = item.content?.contentType else { return (nil, nil) }
-            return ("shared:\(type.rawValue)", .sharedContent(contentType: type))
-        default:
-            return (nil, nil)
-        }
     }
 
     var body: some View {
@@ -265,7 +157,7 @@ struct FeedView: View {
     }
 
     private var feedList: some View {
-        let rows = feedRows
+        let rows = groupedItems
         let sections = groupRowsByDate(rows)
 
         return ScrollView {
@@ -279,10 +171,10 @@ struct FeedView: View {
                 LazyVStack(spacing: 16) {
                     ForEach(sections, id: \.title) { section in
                         Section {
-                            ForEach(section.rows) { row in
-                                rowView(row)
+                            ForEach(section.rows) { group in
+                                FeedItemView(group: group)
                                     .onAppear {
-                                        guard row.id == rows.last?.id else { return }
+                                        guard group.id == rows.last?.id else { return }
                                         Task { await loadMore() }
                                     }
                             }
@@ -320,33 +212,27 @@ struct FeedView: View {
 
     private struct FeedSection {
         let title: String
-        let rows: [FeedRow]
+        let rows: [GroupedFeedItem]
     }
 
-    private func groupRowsByDate(_ rows: [FeedRow]) -> [FeedSection] {
+    private func groupRowsByDate(_ rows: [GroupedFeedItem]) -> [FeedSection] {
         guard !rows.isEmpty else { return [] }
         
-        var today: [FeedRow] = []
-        var yesterday: [FeedRow] = []
-        var earlier: [FeedRow] = []
+        var today: [GroupedFeedItem] = []
+        var yesterday: [GroupedFeedItem] = []
+        var earlier: [GroupedFeedItem] = []
         
         let calendar = Calendar.current
-        let now = Date()
         
-        for row in rows {
-            let date: Date = {
-                switch row {
-                case .single(let g): return g.primary.createdAt
-                case .cluster(let c): return c.items.first?.primary.createdAt ?? now
-                }
-            }()
+        for group in rows {
+            let date = group.primary.createdAt
             
             if calendar.isDateInToday(date) {
-                today.append(row)
+                today.append(group)
             } else if calendar.isDateInYesterday(date) {
-                yesterday.append(row)
+                yesterday.append(group)
             } else {
-                earlier.append(row)
+                earlier.append(group)
             }
         }
         
@@ -356,39 +242,6 @@ struct FeedView: View {
         if !earlier.isEmpty { sections.append(FeedSection(title: "EARLIER", rows: earlier)) }
         return sections
     }
-
-    @ViewBuilder
-    private func rowView(_ row: FeedRow) -> some View {
-        switch row {
-        case .single(let group):
-            FeedItemView(group: group)
-        case .cluster(let cluster):
-            let isExpanded = expandedClusterIDs.contains(cluster.id)
-            VStack(spacing: 12) {
-                ConsolidatedFeedRow(
-                    cluster: cluster,
-                    isExpanded: isExpanded,
-                    onToggle: {
-                        Haptics.lightImpact()
-                        withAnimation(.spring(response: 0.32, dampingFraction: 0.86)) {
-                            if isExpanded {
-                                expandedClusterIDs.remove(cluster.id)
-                            } else {
-                                expandedClusterIDs.insert(cluster.id)
-                            }
-                        }
-                    }
-                )
-                if isExpanded {
-                    ForEach(cluster.items) { group in
-                        FeedItemView(group: group)
-                            .transition(.opacity.combined(with: .move(edge: .top)))
-                    }
-                }
-            }
-        }
-    }
-
 
     // MARK: - Data
 
@@ -422,135 +275,6 @@ struct FeedView: View {
             return
         } catch {
             errorMessage = error.localizedDescription
-        }
-    }
-}
-
-// MARK: - Consolidated Cluster Row
-
-/// Compact "Sam, Alex and 2 others pulled from Twilight Masquerade" row that
-/// stands in for a run of similar feed events. Tap to expand the underlying
-/// items inline; tap again to collapse. Visually quieter than a single
-/// FeedItemView so a cluster of 5 reads as *one* unit, not five competing
-/// cards.
-struct ConsolidatedFeedRow: View {
-    let cluster: ClusteredFeedRow
-    let isExpanded: Bool
-    let onToggle: () -> Void
-
-    private var distinctActors: [SocialProfile] {
-        var seen = Set<UUID>()
-        var result: [SocialProfile] = []
-        for item in cluster.items {
-            guard let actor = item.primary.actor else { continue }
-            if seen.insert(actor.id).inserted {
-                result.append(actor)
-            }
-        }
-        return result
-    }
-
-    private var summaryText: String {
-        let actors = distinctActors
-        let names = actors.prefix(2).map { $0.displayName ?? $0.username }
-        let leadIn: String
-        switch names.count {
-        case 0:
-            leadIn = "Several trainers"
-        case 1:
-            leadIn = names[0]
-        case 2 where actors.count == 2:
-            leadIn = "\(names[0]) and \(names[1])"
-        default:
-            let extra = actors.count - 2
-            leadIn = "\(names[0]), \(names[1]) and \(extra) other\(extra == 1 ? "" : "s")"
-        }
-        switch cluster.kind {
-        case .pullsFromSet(let setName):
-            return "\(leadIn) pulled from \(setName)"
-        case .sharedContent(let contentType):
-            switch contentType {
-            case .binder:    return "\(leadIn) shared binders"
-            case .deck:      return "\(leadIn) shared decks"
-            case .wishlist:  return "\(leadIn) updated wishlists"
-            case .collection:return "\(leadIn) shared their collection"
-            case .folder:    return "\(leadIn) shared folders"
-            case .pull:      return "\(leadIn) shared pulls"
-            case .dailyDigest: return "\(leadIn) posted updates"
-            }
-        }
-    }
-
-    private var tint: Color {
-        switch cluster.kind {
-        case .pullsFromSet:
-            return Color(hex: "52C97C")
-        case .sharedContent(let type):
-            switch type {
-            case .binder: return Color(hex: "E8B84B")
-            case .deck: return Color(hex: "5B9CF6")
-            case .wishlist: return Color(hex: "A78BFA")
-            default: return Color(hex: "5B9CF6")
-            }
-        }
-    }
-
-    private var icon: String {
-        switch cluster.kind {
-        case .pullsFromSet: return "sparkles"
-        case .sharedContent(let type):
-            switch type {
-            case .binder: return "books.vertical.fill"
-            case .deck: return "rectangle.stack.fill"
-            case .wishlist: return "heart.fill"
-            default: return "square.grid.2x2.fill"
-            }
-        }
-    }
-
-    var body: some View {
-        Button(action: onToggle) {
-            HStack(spacing: 12) {
-                Circle()
-                    .fill(tint.opacity(0.15))
-                    .frame(width: 38, height: 38)
-                    .overlay {
-                        Image(systemName: icon)
-                            .font(.system(size: 15, weight: .bold))
-                            .foregroundStyle(tint)
-                    }
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(summaryText)
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
-                    Text("\(cluster.items.count) posts · tap to \(isExpanded ? "collapse" : "expand")")
-                        .font(.system(size: 11))
-                        .foregroundStyle(.secondary.opacity(0.6))
-                }
-
-                Spacer(minLength: 0)
-
-                avatarStack
-            }
-            .padding(14)
-            .glassCardStyle(cornerRadius: 14, interactive: false)
-            .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-        }
-        .buttonStyle(.plain)
-    }
-
-    private var avatarStack: some View {
-        let visible = Array(distinctActors.prefix(3))
-        return HStack(spacing: -10) {
-            ForEach(Array(visible.enumerated()), id: \.element.id) { index, actor in
-                ProfileAvatarView(profile: actor, size: 28)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color(uiColor: .secondarySystemBackground), lineWidth: 2))
-                    .zIndex(Double(visible.count - index))
-            }
         }
     }
 }

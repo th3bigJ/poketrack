@@ -1554,7 +1554,9 @@ struct DashboardView: View {
         case .daily:
             return date.formatted(.dateTime.day().month(.abbreviated))
         case .weekly:
-            return "w/c \(date.formatted(.dateTime.day().month(.abbreviated)))"
+            let day = Calendar.current.component(.day, from: date)
+            let month = Calendar.current.component(.month, from: date)
+            return "\(day)/\(month)"
         case .monthly:
             return date.formatted(.dateTime.month(.abbreviated).year())
         }

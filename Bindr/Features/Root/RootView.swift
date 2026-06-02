@@ -230,8 +230,7 @@ struct RootView: View {
     private var launchProgressState: LaunchProgressState? {
         guard services.isReady else { return nil }
 
-        if !services.isLaunchCatalogPipelineComplete,
-           services.bootstrapShowsDownloadProgressUI {
+        if !services.isLaunchCatalogPipelineComplete {
             return LaunchProgressState(
                 message: services.bootstrapMessage,
                 status: services.bootstrapStatus,
