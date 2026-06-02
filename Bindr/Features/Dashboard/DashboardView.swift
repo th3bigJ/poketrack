@@ -486,6 +486,12 @@ struct DashboardView: View {
                 }
                 guard freshSignature != currentSignature else { return }
                 await reloadDashboardInventory(deferForLaunch: false)
+                // If a concurrent reload was in-flight, reloadDashboardInventory returns early
+                // without updating collectionItems. Use freshItems directly so computeLiveValue
+                // always sees the latest collection regardless.
+                if collectionItems.count != freshSignature.count || collectionItems.reduce(0, { $0 + $1.quantity }) != freshSignature.totalQty {
+                    collectionItems = freshItems
+                }
                 recomputeCollectionStats()
                 await computeLiveValue()
             }

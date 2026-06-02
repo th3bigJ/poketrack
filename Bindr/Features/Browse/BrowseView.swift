@@ -2371,12 +2371,19 @@ struct BrowseView: View {
         let priceDict = showMasterSet ? inlineDetailMasterPriceByCardID : inlineDetailPriceByCardID
         let masterTotal = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal ?? cards.count) : (set.cardCountTotal ?? cards.count)
         let total = masterTotal
-        let ownedCardIDs = Set(collectionItems.compactMap { item in
+        var ownedVariantsByCardID: [String: Set<String>] = [:]
+        for item in collectionItems where item.quantity > 0 {
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-        let owned = cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
-        let progress = total > 0 ? CGFloat(owned) / CGFloat(total) : 0
+            guard brand == services.brandSettings.selectedCatalogBrand else { continue }
+            let variant = item.variantKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            ownedVariantsByCardID[item.cardID, default: []].insert(variant.isEmpty ? "normal" : variant)
+        }
+        let ownedCardIDs = Set(ownedVariantsByCardID.keys)
+        // Master set: count each owned variant of a card separately; full set: count the card once.
+        let owned = showMasterSet
+            ? cards.reduce(0) { $0 + (ownedVariantsByCardID[$1.masterCardId]?.count ?? 0) }
+            : cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+        let progress = total > 0 ? min(CGFloat(owned) / CGFloat(total), 1) : 0
         let currency = services.priceDisplay.currency
         let fx = services.pricing.usdToGbp
         let totalValue = priceDict.values.reduce(0, +)
@@ -2552,6 +2559,8 @@ private struct BrowseSetsTabContent: View {
     let onSelectSet: (TCGSet) -> Void
 
     @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
+    /// Master-set collected counts: each owned card+variant combination counts separately.
+    @State private var variantCollectedCountBySetCode: [String: Int] = [:]
     @State private var setMarketValueUSDByKey: [String: Double] = [:]
     @State private var loadedSetMarketValueKeys: Set<String> = []
     @State private var loadingSetMarketValueKeys: Set<String> = []
@@ -2828,6 +2837,7 @@ private struct BrowseSetsTabContent: View {
     private func refreshCollectedCounts() async {
         let activeSetCodes = Set(services.cardData.sets.map { $0.setCode.lowercased() })
         var uniqueCardKeysBySetCode: [String: Set<String>] = [:]
+        var uniqueVariantKeysBySetCode: [String: Set<String>] = [:]
 
         for item in collectionItems where item.quantity > 0 {
             guard let identity = await resolveCollectionCardIdentity(
@@ -2835,9 +2845,15 @@ private struct BrowseSetsTabContent: View {
                 activeSetCodes: activeSetCodes
             ) else { continue }
             uniqueCardKeysBySetCode[identity.setCode, default: []].insert(identity.uniqueCardKey)
+
+            // Master set: count each owned variant of a card as its own slot.
+            let variant = item.variantKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            let variantToken = variant.isEmpty ? "normal" : variant
+            uniqueVariantKeysBySetCode[identity.setCode, default: []].insert("\(identity.uniqueCardKey)::\(variantToken)")
         }
 
         uniqueCollectedCountBySetCode = uniqueCardKeysBySetCode.mapValues(\.count)
+        variantCollectedCountBySetCode = uniqueVariantKeysBySetCode.mapValues(\.count)
     }
 
     private func resolveCollectionCardIdentity(
@@ -2923,7 +2939,10 @@ private struct BrowseSetsTabContent: View {
     }
 
     private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
-        let collected = uniqueCollectedCountBySetCode[set.setCode.lowercased()] ?? 0
+        let setCode = set.setCode.lowercased()
+        let collected = showMasterSet
+            ? (variantCollectedCountBySetCode[setCode] ?? 0)
+            : (uniqueCollectedCountBySetCode[setCode] ?? 0)
         let total = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal) : set.cardCountTotal
         return (collected, total)
     }
