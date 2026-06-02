@@ -53,9 +53,10 @@ struct FriendProfileView: View {
                 } else if let profile {
                     ZStack(alignment: .bottom) {
                         ScrollView {
-                            VStack(spacing: BindrSpacing.lg) {
+                            VStack(spacing: 0) {
                                 profileHeader(profile)
                                 tabPicker
+                                    .padding(.top, BindrSpacing.lg)
                                 tabContent(profile)
                             }
                             .padding(.top, BindrSpacing.lg)
@@ -162,6 +163,8 @@ struct FriendProfileView: View {
 
     private func profileHeader(_ profile: SocialProfile) -> some View {
         let accent = themeColor(for: profile)
+        let hasFavoriteCard = favoriteCardImageExists(profile)
+        let roleTitles = roleTitles(for: profile)
 
         return VStack(alignment: .leading, spacing: BindrSpacing.md) {
             HStack(alignment: .top, spacing: BindrSpacing.md) {
@@ -180,21 +183,22 @@ struct FriendProfileView: View {
                     Text("@\(profile.username)")
                         .font(.system(size: 12))
                         .foregroundStyle(Color.secondary)
-                    let roleTitles = roleTitles(for: profile)
-                    // Roles + relationship status share one wrapping row so a
-                    // ✓ Friends / Blocked / Pending pill reads as part of the
-                    // identity block rather than living in its own section.
-                    if !roleTitles.isEmpty || hasRelationshipStatusPill {
-                        HStack(spacing: BindrSpacing.sm) {
-                            ForEach(roleTitles, id: \.self) { title in
-                                rolePill(title, accent: accent)
-                            }
-                            relationshipStatusPill
-                        }
-                    }
                 }
 
                 Spacer()
+            }
+            .padding(.trailing, hasFavoriteCard ? 78 : 0)
+
+            // Full-width so the favourite card can sit above the row without
+            // squeezing role/status pills into two-line labels.
+            if !roleTitles.isEmpty || hasRelationshipStatusPill {
+                HStack(spacing: BindrSpacing.sm) {
+                    ForEach(roleTitles, id: \.self) { title in
+                        rolePill(title, accent: accent)
+                    }
+                    relationshipStatusPill
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
 
             if let bio = profile.bio, !bio.isEmpty {
@@ -202,6 +206,7 @@ struct FriendProfileView: View {
                     .font(.system(size: 13))
                     .lineSpacing(3)
                     .foregroundStyle(Color.secondary)
+                    .padding(.trailing, hasFavoriteCard ? 56 : 0)
             }
 
             // Primary CTA only appears for *actionable* states (Add Friend /
@@ -265,7 +270,7 @@ struct FriendProfileView: View {
                     } placeholder: {
                         Color.gray.opacity(0.08)
                     }
-                    .frame(width: 64, height: 90)
+                    .frame(width: 56, height: 78)
                     .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                     .overlay {
                         RoundedRectangle(cornerRadius: 6, style: .continuous)
@@ -273,9 +278,9 @@ struct FriendProfileView: View {
                     }
                     .shadow(color: accent.opacity(0.45), radius: 10, x: 0, y: 6)
                     .rotationEffect(.degrees(8))
-                    .opacity(0.85)
-                    .padding(.top, BindrSpacing.md)
-                    .padding(.trailing, BindrSpacing.lg)
+                    .opacity(0.75)
+                    .padding(.top, BindrSpacing.sm)
+                    .padding(.trailing, BindrSpacing.xl)
                     .allowsHitTesting(false)
                 }
             }
@@ -286,6 +291,11 @@ struct FriendProfileView: View {
                 .stroke(Color.primary.opacity(0.06), lineWidth: 1)
         }
         .padding(.horizontal, BindrSpacing.lg)
+    }
+
+    private func favoriteCardImageExists(_ profile: SocialProfile) -> Bool {
+        guard let imageURL = profile.favoriteCardImageURL else { return false }
+        return URL(string: imageURL) != nil
     }
 
     /// Accent colour driven by the friend's chosen avatar background. Falls
@@ -340,6 +350,8 @@ struct FriendProfileView: View {
             .font(.system(size: 10, weight: .bold))
             .tracking(0.3)
             .foregroundStyle(color)
+            .lineLimit(1)
+            .minimumScaleFactor(0.8)
             .padding(.horizontal, 7)
             .padding(.vertical, 3)
             .background(color.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
@@ -490,6 +502,7 @@ struct FriendProfileView: View {
                 }
             }
         }
+        .padding(.top, BindrSpacing.xl)
         .padding(.horizontal, BindrSpacing.lg)
     }
 
@@ -501,6 +514,8 @@ struct FriendProfileView: View {
             .font(.system(size: 10, weight: .bold))
             .tracking(0.4)
             .foregroundStyle(tint)
+            .lineLimit(1)
+            .minimumScaleFactor(0.8)
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
             .background(tint.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))

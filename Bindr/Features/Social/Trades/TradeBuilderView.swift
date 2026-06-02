@@ -195,7 +195,7 @@ struct TradeBuilderView: View {
             defer { isOwnershipLoading = false }
             receiverProfile = try? await services.socialProfile.fetchProfile(id: receiverID)
             async let theirTradeListTask = services.socialCardLibrary.fetchTradeListCardIDs(for: receiverID)
-            receiverCollectionCardIDs = Set((try? await theirTradeListTask) ?? [])
+            receiverCollectionCardIDs = Set<String>((try? await theirTradeListTask) ?? [])
             myCollectionCardIDs = localCollectionCardIDs
         }
         .task(id: unavailableCardNameLookupSignature) {
@@ -410,7 +410,7 @@ struct TradeBuilderView: View {
     }
 
     private var localCollectionCardIDs: Set<String> {
-        Set(collectionItems.compactMap { item in
+        Set<String>(collectionItems.compactMap { item in
             guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
             return item.cardID
         })

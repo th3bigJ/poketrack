@@ -69,6 +69,10 @@ struct MyProfileView: View {
         profileTabBinding.wrappedValue
     }
 
+    private var profileTabContentTopGap: CGFloat {
+        BindrSpacing.xl
+    }
+
     // Prefer local counts on My Profile so totals remain correct
     // when remote profile stats are stale.
     private var displayedCardCount: Int {
@@ -330,6 +334,7 @@ struct MyProfileView: View {
                 EmptyView()
             }
         }
+        .padding(.top, profileTabContentTopGap)
         .padding(.horizontal, BindrSpacing.lg)
     }
 
@@ -340,6 +345,7 @@ struct MyProfileView: View {
             onOpenUsername: onOpenFriendUsername ?? { _ in },
             onSelectFriendForTrade: onSelectFriendForTrade
         )
+        .padding(.top, profileTabContentTopGap)
     }
 
     private func isRenderableCardIDForProfileGrid(_ cardID: String) -> Bool {
