@@ -27,6 +27,7 @@ struct SocialRootView: View {
         case comment(id: UUID)
         case wishlistMatch(id: UUID)
         case trade(id: UUID)
+        case tradeQR(userID: UUID?, username: String?)
 
         static func parse(from url: URL) -> SocialDeepLinkDestination? {
             guard url.scheme?.lowercased() == "bindr" else { return nil }
@@ -102,6 +103,19 @@ struct SocialRootView: View {
                     return .trade(id: id)
                 }
                 return .feed
+            case "trade":
+                guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
+                    return .feed
+                }
+                let userID = queryUUID(in: url, keys: ["user_id", "userid"])
+                let rawUsername = components.queryItems?
+                    .first(where: { $0.name.lowercased() == "username" })?
+                    .value?
+                    .trimmingCharacters(in: .whitespacesAndNewlines)
+                    .lowercased()
+                let username = (rawUsername?.isEmpty == false) ? rawUsername : nil
+                guard userID != nil || username != nil else { return .feed }
+                return .tradeQR(userID: userID, username: username)
             default:
                 return .feed
             }
@@ -683,6 +697,29 @@ struct SocialRootView: View {
             selectedTab = .trades
             socialNavigationPath = NavigationPath()
             socialNavigationPath.append(SocialDestination.tradeDetail(tradeID: id))
+        case .tradeQR(let userID, let username):
+            selectedTab = .trades
+            do {
+                let profile: SocialProfile?
+                if let userID {
+                    profile = try await services.socialProfile.fetchProfile(id: userID)
+                } else if let username {
+                    profile = try await services.socialFriend.fetchProfile(username: username)
+                } else {
+                    profile = nil
+                }
+                guard let profile else { return }
+                guard profile.id != services.socialAuth.currentUserID else { return }
+                let session = try await services.tradeSession.createSession(participantID: profile.id)
+                socialNavigationPath = NavigationPath()
+                socialNavigationPath.append(SocialDestination.mutualTrade(
+                    sessionID: session.id,
+                    otherUserID: profile.id,
+                    otherUsername: profile.username
+                ))
+            } catch {
+                print("[SocialRootView] Failed to route trade QR deep link: \(error.localizedDescription)")
+            }
         }
     }
 

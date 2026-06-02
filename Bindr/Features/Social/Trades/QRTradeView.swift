@@ -153,10 +153,17 @@ struct QRTradeView: View {
         if let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
            url.scheme?.lowercased() == "bindr",
            url.host?.lowercased() == "social",
-           url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/")).lowercased() == "trade",
-           let rawUserID = components.queryItems?.first(where: { $0.name.lowercased() == "user_id" })?.value,
-           let userID = UUID(uuidString: rawUserID) {
-            return .userID(userID)
+           url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/")).lowercased() == "trade" {
+            if let rawUserID = components.queryItems?.first(where: { $0.name.lowercased() == "user_id" })?.value,
+               let userID = UUID(uuidString: rawUserID) {
+                return .userID(userID)
+            }
+            if let rawUsername = components.queryItems?.first(where: { $0.name.lowercased() == "username" })?.value {
+                let username = rawUsername.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                if !username.isEmpty {
+                    return .username(username)
+                }
+            }
         }
 
         if let username = SocialFriendService.parseProfileUsername(from: url) {

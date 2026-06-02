@@ -22,8 +22,6 @@ struct CardDetailSheet: View {
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
     @State private var folderContextRequest: CardContextActionRequest?
     @State private var showCardShare = false
-    @State private var showTradeListQuantityPicker = false
-    @State private var tradeListPickerQuantity = 1
     @State private var wishlistVariantKeys: [String] = ["normal"]
     @State private var isCurrentCardWishlisted = false
     @State private var showWishlistPaywall = false
@@ -287,16 +285,17 @@ struct CardDetailSheet: View {
                     )
                 },
                 onTradeAction: {
-                    if let _ = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
+                    if tradeListItems.contains(where: { $0.cardID == card.masterCardId }) {
                         performTradeAction(card: card, quantity: 1)
                     } else {
-                        let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }
-                        if totalOwned > 1 {
-                            tradeListPickerQuantity = 1
-                            showTradeListQuantityPicker = true
-                        } else {
-                            performTradeAction(card: card, quantity: 1)
-                        }
+                        folderContextRequest = CardContextActionRequest(
+                            card: card,
+                            availableVariantKeys: [preferredTradeListVariantKey],
+                            initialVariantKey: preferredTradeListVariantKey,
+                            ownedQuantity: max(visibleCollectionItems.reduce(0) { $0 + $1.quantity }, 1),
+                            collectionItem: visibleCollectionItems.first,
+                            initialAction: .tradeList
+                        )
                     }
                 },
                 onShareAction: {
@@ -354,21 +353,6 @@ struct CardDetailSheet: View {
                     { action(card, wishlistVariantKeys.first ?? "normal", 1) }
                 }
             )
-            .popover(isPresented: $showTradeListQuantityPicker) {
-                let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }
-                VStack(spacing: 16) {
-                    Text("How many to trade?").font(.headline)
-                    Stepper("Quantity: \(tradeListPickerQuantity)", value: $tradeListPickerQuantity, in: 1...max(totalOwned, 1))
-                    Text("You own \(totalOwned) copies").font(.caption).foregroundStyle(.secondary)
-                    HStack(spacing: 12) {
-                        Button("Cancel") { showTradeListQuantityPicker = false }.buttonStyle(.bordered).frame(maxWidth: .infinity)
-                        Button("Add") { showTradeListQuantityPicker = false; performTradeAction(card: card, quantity: tradeListPickerQuantity) }
-                            .buttonStyle(.borderedProminent).frame(maxWidth: .infinity)
-                    }
-                }
-                .padding()
-                .frame(width: 280)
-            }
         }
     }
 

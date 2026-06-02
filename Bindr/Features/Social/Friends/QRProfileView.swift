@@ -88,11 +88,7 @@ struct QRProfileView: View {
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $isScannerPresented) {
             FriendQRScannerSheet { scannedURL in
-                guard let url = URL(string: scannedURL),
-                      let parsed = SocialFriendService.parseProfileUsername(from: url)
-                else {
-                    return
-                }
+                guard let parsed = scannedProfileUsername(from: scannedURL) else { return }
                 isScannerPresented = false
                 onScannedUsername(parsed)
             }
@@ -108,6 +104,27 @@ struct QRProfileView: View {
                     .padding(.bottom, 12)
             }
         }
+    }
+
+    private func scannedProfileUsername(from rawString: String) -> String? {
+        guard let url = URL(string: rawString) else { return nil }
+        if let username = SocialFriendService.parseProfileUsername(from: url) {
+            return username
+        }
+        return tradeQRCodeUsername(from: url)
+    }
+
+    private func tradeQRCodeUsername(from url: URL) -> String? {
+        guard url.scheme?.lowercased() == "bindr",
+              url.host?.lowercased() == "social",
+              url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/")).lowercased() == "trade",
+              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+              let rawUsername = components.queryItems?.first(where: { $0.name.lowercased() == "username" })?.value
+        else {
+            return nil
+        }
+        let username = rawUsername.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        return username.isEmpty ? nil : username
     }
 }
 
