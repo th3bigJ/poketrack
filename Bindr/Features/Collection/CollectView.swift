@@ -496,6 +496,7 @@ struct CollectView: View {
                         modelContext.insert(TradeListItem(cardID: item.cardID, variantKey: "sealed", quantity: 1))
                     }
                     try? modelContext.save()
+                    syncTradeList()
                     Haptics.success()
                 } label: {
                     if let existing = existingTradeItem {
@@ -1254,6 +1255,12 @@ struct CollectView: View {
     private func removeFromTradeList(_ item: TradeListItem) {
         modelContext.delete(item)
         try? modelContext.save()
+        syncTradeList()
+    }
+
+    private func syncTradeList() {
+        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
     }
 
     private func tradeListItemKey(_ item: TradeListItem) -> String {

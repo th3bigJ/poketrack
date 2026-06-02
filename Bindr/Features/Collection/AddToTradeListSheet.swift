@@ -10,6 +10,7 @@ struct AddToTradeListRequest: Identifiable {
 }
 
 struct AddToTradeListSheet: View {
+    @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
@@ -72,8 +73,14 @@ struct AddToTradeListSheet: View {
             ))
         }
         try? modelContext.save()
+        syncTradeList()
         Haptics.success()
         dismiss()
+    }
+
+    private func syncTradeList() {
+        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
     }
 
     private func displayVariant(_ variantKey: String) -> String {

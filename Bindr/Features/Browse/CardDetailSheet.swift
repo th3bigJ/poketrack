@@ -67,6 +67,13 @@ struct CardDetailSheet: View {
         wishlistVariantKeys.count == 1 ? wishlistVariantKeys[0] : nil
     }
 
+    private var preferredTradeListVariantKey: String {
+        visibleCollectionItems.first?.variantKey
+            ?? singleAvailableVariantKey
+            ?? wishlistVariantKeys.first
+            ?? "normal"
+    }
+
     private func summaryFacts(for card: Card) -> [(String, String)] {
         var facts: [(String, String)] = []
         if let number = cleaned(card.printedNumber) ?? cleaned(card.cardNumber) { facts.append(("Number", number)) }
@@ -496,13 +503,22 @@ struct CardDetailSheet: View {
                 modelContext.delete(existing)
                 Haptics.lightImpact()
             } else {
-                let newItem = TradeListItem(cardID: card.masterCardId, quantity: quantity)
+                let newItem = TradeListItem(
+                    cardID: card.masterCardId,
+                    variantKey: preferredTradeListVariantKey,
+                    quantity: quantity
+                )
                 modelContext.insert(newItem)
                 Haptics.success()
             }
             try? modelContext.save()
-            services.socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
+            syncTradeList()
         }
+    }
+
+    private func syncTradeList() {
+        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
     }
 
     private func cardActionBody(title: String, systemImage: String, tint: Color) -> some View {

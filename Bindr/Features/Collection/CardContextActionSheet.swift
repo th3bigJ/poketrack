@@ -589,8 +589,14 @@ struct CardContextActionSheet: View {
             ))
         }
         try? modelContext.save()
+        syncTradeList()
         Haptics.success()
         dismiss()
+    }
+
+    private func syncTradeList() {
+        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
     }
 
     private func saveMarkAs() {

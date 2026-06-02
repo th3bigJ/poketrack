@@ -1057,17 +1057,14 @@ struct RootView: View {
         }
         .sheet(item: $selectedCardPresentation) { ctx in
             let isCollectCards = selectedTab == .collect && collectContentTypeTab == .cards
-            let showAddToTradeList = isCollectCards && collectSegment == .collection
             let showTradeFlow = isCollectCards && collectSegment == .wishlist
             CardDetailSheet(
                 cards: ctx.cards,
                 startIndex: ctx.startIndex,
-                tradeAction: showAddToTradeList ? { card, qty in
-                    addCardToTradeList(card, quantity: qty)
-                } : showTradeFlow ? { card, _ in
+                tradeAction: showTradeFlow ? { card, _ in
                     launchTradeFlowFromCollectionCard(card)
                 } : nil,
-                tradeActionLabel: showAddToTradeList ? "Trade List" : "Trade"
+                tradeActionLabel: "Trade"
             )
             .environment(services)
         }
@@ -1276,21 +1273,6 @@ struct RootView: View {
             gridOptions: isSealedTab ? $browseFilters.productsGridOptions : nil,
             config: isSealedTab ? .products : browseConfig
         )
-    }
-
-    private func addCardToTradeList(_ card: Card, quantity: Int) {
-        let cardID = card.masterCardId
-        let existing = (try? modelContext.fetch(
-            FetchDescriptor<TradeListItem>(predicate: #Predicate { $0.cardID == cardID })
-        )) ?? []
-        if let first = existing.first {
-            first.quantity = quantity
-        } else {
-            modelContext.insert(TradeListItem(cardID: cardID, quantity: quantity))
-        }
-        try? modelContext.save()
-        Haptics.success()
-        selectedCardPresentation = nil
     }
 
     private func launchTradeFlowFromCollectionCard(_ card: Card) {
