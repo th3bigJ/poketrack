@@ -656,6 +656,7 @@ struct RootView: View {
                 await services.socialAuth.restoreSession()
             }
         }
+        .bindrTheme(accent: services.theme.accentColor)
         .preferredColorScheme(services.theme.colorScheme)
     }
 

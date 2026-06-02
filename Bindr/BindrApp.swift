@@ -72,11 +72,11 @@ final class BindrPushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotific
 struct BindrApp: App {
     @UIApplicationDelegateAdaptor(BindrPushAppDelegate.self) private var pushAppDelegate
 
-    static let cloudKitFallbackDefaultsKey = "cloudKitFallbackActive"
-    static let cloudKitLastErrorDefaultsKey = "cloudKitLastError"
+    nonisolated static let cloudKitFallbackDefaultsKey = "cloudKitFallbackActive"
+    nonisolated static let cloudKitLastErrorDefaultsKey = "cloudKitLastError"
     /// True if the SQLite store already existed when the app launched.
     /// False means this is a fresh install (or after deletion) — CloudKit restore is needed.
-    static let storeExistedAtLaunch: Bool = FileManager.default.fileExists(atPath: Self.storeURL.path)
+    nonisolated static let storeExistedAtLaunch: Bool = FileManager.default.fileExists(atPath: Self.storeURL.path)
 
     init() {
         Self.configureTabBarAppearance()
@@ -85,7 +85,7 @@ struct BindrApp: App {
     /// CloudKit-backed store. SwiftData merges CloudKit records on @MainActor; the
     /// CloudKitIdleMonitor keeps the launch overlay visible until those merges complete,
     /// so the freeze is hidden behind the overlay rather than felt on the dashboard.
-    private static func makeModelContainer() -> ModelContainer {
+    nonisolated private static func makeModelContainer() -> ModelContainer {
         let schema = Schema([
             WishlistItem.self,
             TradeListItem.self,
@@ -130,7 +130,7 @@ struct BindrApp: App {
         }
     }
 
-    private static func makePersistentContainer(
+    nonisolated private static func makePersistentContainer(
         schema: Schema,
         cloudKitDatabase: ModelConfiguration.CloudKitDatabase
     ) throws -> ModelContainer {
@@ -142,7 +142,7 @@ struct BindrApp: App {
         return try ModelContainer(for: schema, configurations: [configuration])
     }
 
-    private static var storeURL: URL {
+    nonisolated private static var storeURL: URL {
         let baseURL = FileManager.default.urls(
             for: .applicationSupportDirectory,
             in: .userDomainMask
@@ -153,7 +153,7 @@ struct BindrApp: App {
         return directoryURL.appendingPathComponent("Bindr.store")
     }
 
-    private static func destroyPersistentStoreFiles() {
+    nonisolated private static func destroyPersistentStoreFiles() {
         let fileManager = FileManager.default
         let urls = [
             storeURL,
@@ -166,7 +166,7 @@ struct BindrApp: App {
         }
     }
 
-    private static func logModelContainerIssue(stage: String, error: Error) {
+    nonisolated private static func logModelContainerIssue(stage: String, error: Error) {
         let nsError = error as NSError
         let iCloudToken = FileManager.default.ubiquityIdentityToken
         let diagnostic = [

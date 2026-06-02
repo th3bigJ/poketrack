@@ -518,6 +518,11 @@ struct TradeDetailView: View {
                 async let myFetch = services.socialProfile.fetchMyProfile()
                 theirProfile = try await theirFetch
                 myProfile = try await myFetch
+
+                // If trade is completed, apply local settlement (checks UserDefaults internally to execute exactly once)
+                if twi.trade.status == .complete {
+                    await applyLocalTradeSettlementIfNeeded(twi)
+                }
             }
         } catch {
             errorMessage = error.localizedDescription
@@ -648,6 +653,18 @@ struct TradeDetailView: View {
 
         for item in myItems {
             let quantity = max(item.quantity, 1)
+
+            // Remove from local TradeList
+            let fetchDescriptor = FetchDescriptor<TradeListItem>()
+            let tradeListItems = (try? modelContext.fetch(fetchDescriptor)) ?? []
+            if let matchingTradeItem = tradeListItems.first(where: { $0.cardID == item.cardID && $0.variantKey == item.variantKey }) {
+                if matchingTradeItem.quantity <= quantity {
+                    modelContext.delete(matchingTradeItem)
+                } else {
+                    matchingTradeItem.quantity -= quantity
+                }
+            }
+
             guard let stack = findCardStack(cardID: item.cardID, variantKey: item.variantKey),
                   stack.quantity > 0 else { continue }
             let cardName = await resolvedCardName(for: item.cardID)
@@ -666,6 +683,10 @@ struct TradeDetailView: View {
                 continue
             }
         }
+
+        // Sync local TradeList with remote DB
+        let remainingTradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: remainingTradeListItems)
 
         for item in theirItems {
             let cardName = await resolvedCardName(for: item.cardID)
