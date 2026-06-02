@@ -12,6 +12,8 @@ struct CardDetailSheet: View {
     let cards: [Card]
     var tradeAction: ((Card, Int) -> Void)? = nil
     var tradeActionLabel: String = "Trade"
+    /// When true, the action bar shows a single Offer Trade button (Trade Wall context).
+    var offerTradeOnly: Bool = false
     var addToDeckAction: ((Card, String, Int) -> Void)? = nil
 
     @State private var index: Int
@@ -33,10 +35,18 @@ struct CardDetailSheet: View {
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
-    init(cards: [Card], startIndex: Int = 0, tradeAction: ((Card, Int) -> Void)? = nil, tradeActionLabel: String = "Trade", addToDeckAction: ((Card, String, Int) -> Void)? = nil) {
+    init(
+        cards: [Card],
+        startIndex: Int = 0,
+        tradeAction: ((Card, Int) -> Void)? = nil,
+        tradeActionLabel: String = "Trade",
+        offerTradeOnly: Bool = false,
+        addToDeckAction: ((Card, String, Int) -> Void)? = nil
+    ) {
         self.cards = cards
         self.tradeAction = tradeAction
         self.tradeActionLabel = tradeActionLabel
+        self.offerTradeOnly = offerTradeOnly
         self.addToDeckAction = addToDeckAction
         let clamped = cards.isEmpty ? 0 : min(max(0, startIndex), cards.count - 1)
         _index = State(initialValue: clamped)
@@ -257,7 +267,10 @@ struct CardDetailSheet: View {
                 card: card,
                 isOwned: showsCollectionSection(for: card),
                 isWishlisted: isCurrentCardWishlisted,
-                tradeActionLabel: showsCollectionSection(for: card) ? "Trade List" : (tradeAction != nil ? tradeActionLabel : nil),
+                tradeActionLabel: offerTradeOnly
+                    ? nil
+                    : (showsCollectionSection(for: card) ? "Trade List" : (tradeAction != nil ? tradeActionLabel : nil)),
+                offerTradeOnly: offerTradeOnly,
                 onSaveToCollection: {
                     if let variantKey = singleAvailableVariantKey {
                         addToCollectionVariant(card: card, variantKey: variantKey)
@@ -285,7 +298,9 @@ struct CardDetailSheet: View {
                     )
                 },
                 onTradeAction: {
-                    if tradeListItems.contains(where: { $0.cardID == card.masterCardId }) {
+                    if offerTradeOnly {
+                        performTradeAction(card: card, quantity: 1)
+                    } else if tradeListItems.contains(where: { $0.cardID == card.masterCardId }) {
                         performTradeAction(card: card, quantity: 1)
                     } else {
                         folderContextRequest = CardContextActionRequest(

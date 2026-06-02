@@ -1,24 +1,21 @@
 import SwiftUI
+import SwiftData
 
 struct TradeWallView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var accent
     @Environment(\.colorScheme) private var colorScheme
     @Binding var navigationPath: NavigationPath
+    @Query private var collectionItems: [CollectionItem]
 
+    @State private var suggestedEntries: [SuggestedWallEntry] = []
     @State private var cardEntries: [WallEntry] = []
     @State private var sealedEntries: [SealedWallEntry] = []
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var cardDetailSession: CardDetailSession?
     @State private var selectedSealedProduct: SealedProduct?
-    @State private var selectedTab: Tab = .cards
     @State private var hasLoaded = false
-
-    enum Tab: String, CaseIterable {
-        case cards  = "Cards"
-        case sealed = "Sealed"
-    }
 
     struct WallEntry: Identifiable {
         let id: String
@@ -33,62 +30,60 @@ struct TradeWallView: View {
         let owner: SocialProfile
     }
 
+    struct SuggestedWallEntry: Identifiable {
+        let id: String
+        let card: Card
+        let owner: SocialProfile
+        let matchType: TradeSuggestion.MatchType
+    }
+
+    enum TradeWallGridItem: Identifiable {
+        case suggested(SuggestedWallEntry)
+        case card(WallEntry)
+        case sealed(SealedWallEntry)
+
+        var id: String {
+            switch self {
+            case .suggested(let entry): "suggested-\(entry.id)"
+            case .card(let entry): "card-\(entry.id)"
+            case .sealed(let entry): "sealed-\(entry.id)"
+            }
+        }
+    }
+
     private struct CardDetailSession: Identifiable {
         let id = UUID()
         let card: Card
         let owner: SocialProfile
+        let matchType: TradeSuggestion.MatchType?
+    }
+
+    private var gridItems: [TradeWallGridItem] {
+        suggestedEntries.map { .suggested($0) }
+            + cardEntries.map { .card($0) }
+            + sealedEntries.map { .sealed($0) }
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            if !cardEntries.isEmpty || !sealedEntries.isEmpty {
-                tabPicker
-                    .padding(.horizontal, 16)
-                    .padding(.top, 12)
-                    .padding(.bottom, 8)
+        Group {
+            if isLoading && gridItems.isEmpty {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 40)
+            } else if gridItems.isEmpty {
+                emptyState
+            } else {
+                unifiedGrid
+                    .padding(.top, 4)
             }
-
-            Group {
-                if isLoading && cardEntries.isEmpty && sealedEntries.isEmpty {
-                    ProgressView()
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 40)
-                } else {
-                    switch selectedTab {
-                    case .cards:
-                        if cardEntries.isEmpty {
-                            emptyState(
-                                icon: "square.stack.3d.up",
-                                title: "No cards on the trade wall",
-                                message: "Cards your friends have on their trade list will appear here."
-                            )
-                        } else {
-                            cardGrid
-                                .padding(.top, 4)
-                        }
-                    case .sealed:
-                        if sealedEntries.isEmpty {
-                            emptyState(
-                                icon: "shippingbox",
-                                title: "No sealed products on the trade wall",
-                                message: "Sealed products your friends have on their trade list will appear here."
-                            )
-                        } else {
-                            sealedGrid
-                                .padding(.top, 4)
-                        }
-                    }
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .task { await loadAfterFirstPaint() }
         .sheet(item: $cardDetailSession) { session in
             CardDetailSheet(
                 cards: [session.card],
                 startIndex: 0,
-                tradeAction: { card, _ in startTrade(card: card, with: session.owner) },
-                tradeActionLabel: "Offer Trade..."
+                tradeAction: { card, _ in startTrade(card: card, with: session.owner, matchType: session.matchType) },
+                offerTradeOnly: true
             )
             .environment(services)
         }
@@ -103,56 +98,42 @@ struct TradeWallView: View {
         }
     }
 
-    private var tabPicker: some View {
-        HStack(spacing: 0) {
-            ForEach(Tab.allCases, id: \.self) { tab in
-                TradeWallTabButton(
-                    tab: tab,
-                    isSelected: selectedTab == tab,
-                    accent: accent,
-                    action: {
-                        Haptics.selectionChanged()
-                        withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
-                            selectedTab = tab
-                        }
-                    }
-                )
-            }
-        }
-        .padding(4)
-        .background(.ultraThinMaterial, in: Capsule())
-        .overlay {
-            Capsule()
-                .stroke(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08), lineWidth: 0.5)
-        }
-        .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.25 : 0.06), radius: 4, x: 0, y: 2)
-    }
+    // MARK: - Grid
 
-    // MARK: - Grids
+    private var unifiedGrid: some View {
+        EagerVGrid(items: gridItems, columns: 3, spacing: 8) { item in
+            switch item {
+            case .suggested(let entry):
+                Button {
+                    Haptics.lightImpact()
+                    cardDetailSession = CardDetailSession(
+                        card: entry.card,
+                        owner: entry.owner,
+                        matchType: entry.matchType
+                    )
+                } label: {
+                    TradeWallSuggestedCell(entry: entry, colorScheme: colorScheme)
+                }
+                .buttonStyle(TradeWallCellButtonStyle())
 
-    private var cardGrid: some View {
-        EagerVGrid(items: cardEntries, columns: 3, spacing: 8) { entry in
-            Button {
-                Haptics.lightImpact()
-                cardDetailSession = CardDetailSession(card: entry.card, owner: entry.owner)
-            } label: {
-                TradeWallCardCell(entry: entry, colorScheme: colorScheme)
-            }
-            .buttonStyle(TradeWallCellButtonStyle())
-        }
-        .padding(.horizontal, 8)
-        .padding(.bottom, 8)
-    }
+            case .card(let entry):
+                Button {
+                    Haptics.lightImpact()
+                    cardDetailSession = CardDetailSession(card: entry.card, owner: entry.owner, matchType: nil)
+                } label: {
+                    TradeWallCardCell(entry: entry, colorScheme: colorScheme)
+                }
+                .buttonStyle(TradeWallCellButtonStyle())
 
-    private var sealedGrid: some View {
-        EagerVGrid(items: sealedEntries, columns: 3, spacing: 8) { entry in
-            Button {
-                Haptics.lightImpact()
-                selectedSealedProduct = entry.product
-            } label: {
-                TradeWallSealedCell(entry: entry, colorScheme: colorScheme)
+            case .sealed(let entry):
+                Button {
+                    Haptics.lightImpact()
+                    selectedSealedProduct = entry.product
+                } label: {
+                    TradeWallSealedCell(entry: entry, colorScheme: colorScheme)
+                }
+                .buttonStyle(TradeWallCellButtonStyle())
             }
-            .buttonStyle(TradeWallCellButtonStyle())
         }
         .padding(.horizontal, 8)
         .padding(.bottom, 8)
@@ -160,22 +141,22 @@ struct TradeWallView: View {
 
     // MARK: - Empty state
 
-    private func emptyState(icon: String, title: String, message: String) -> some View {
+    private var emptyState: some View {
         VStack(spacing: 16) {
             ZStack {
                 Circle()
                     .fill(accent.opacity(0.08))
                     .frame(width: 56, height: 56)
-                Image(systemName: icon)
+                Image(systemName: "sparkles")
                     .font(.system(size: 22, weight: .semibold))
                     .foregroundStyle(accent.gradient)
             }
-            
+
             VStack(spacing: 6) {
-                Text(title)
+                Text("Nothing on the trade wall yet")
                     .font(.system(size: 15, weight: .bold))
                     .foregroundStyle(.primary)
-                Text(message)
+                Text("Suggested matches and cards or sealed products your friends have on their trade lists will appear here.")
                     .font(.system(size: 13))
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -184,14 +165,6 @@ struct TradeWallView: View {
         }
         .padding(.vertical, 36)
         .frame(maxWidth: .infinity)
-        .background(.thinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .stroke(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08), lineWidth: 0.5)
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 40)
     }
 
     // MARK: - Load
@@ -213,15 +186,59 @@ struct TradeWallView: View {
 
         do {
             let friends = try await services.socialFriend.fetchFriends()
-            guard !friends.isEmpty else { return }
+            guard !friends.isEmpty else {
+                suggestedEntries = []
+                cardEntries = []
+                sealedEntries = []
+                return
+            }
 
             let friendIDs = friends.map(\.id)
-            let tradeListMap = try await services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
 
+            async let friendWishlists = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
+            async let friendTradeLists = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
+
+            let myWishlist = Set<String>(services.wishlist?.items.map(\.cardID) ?? [])
+            let friendWishlistMap = try await friendWishlists
+            let tradeListMap = try await friendTradeLists
+            let myOwnedCardIDs = Set<String>(collectionItems.compactMap { item in
+                guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
+                return item.cardID
+            })
+
+            var newSuggested: [SuggestedWallEntry] = []
             var newCardEntries: [WallEntry] = []
             var newSealedEntries: [SealedWallEntry] = []
 
             for friend in friends {
+                let theyHave = Set<String>(tradeListMap[friend.id] ?? [])
+                let theyWant = Set<String>(friendWishlistMap[friend.id] ?? [])
+
+                let iWantAndTheyHave = myWishlist.intersection(theyHave)
+                let theyWantAndIHave = theyWant.intersection(myOwnedCardIDs)
+
+                for cardID in theyWantAndIHave {
+                    if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                        newSuggested.append(SuggestedWallEntry(
+                            id: "\(friend.id)-want-\(cardID)",
+                            card: card,
+                            owner: friend,
+                            matchType: .iHaveWhatTheyWant
+                        ))
+                    }
+                }
+
+                for cardID in iWantAndTheyHave {
+                    if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                        newSuggested.append(SuggestedWallEntry(
+                            id: "\(friend.id)-have-\(cardID)",
+                            card: card,
+                            owner: friend,
+                            matchType: .theyHaveWhatIWant
+                        ))
+                    }
+                }
+
                 let cardIDs = tradeListMap[friend.id] ?? []
                 for cardID in cardIDs {
                     if let productID = SealedProduct.parseCollectionProductID(cardID) {
@@ -244,6 +261,10 @@ struct TradeWallView: View {
                 }
             }
 
+            let suggestedKeys = Set(newSuggested.map { "\($0.owner.id)-\($0.card.masterCardId)" })
+            newCardEntries.removeAll { suggestedKeys.contains("\($0.owner.id)-\($0.card.masterCardId)") }
+
+            suggestedEntries = newSuggested
             cardEntries = newCardEntries
             sealedEntries = newSealedEntries
             errorMessage = nil
@@ -254,9 +275,9 @@ struct TradeWallView: View {
 
     // MARK: - Trade
 
-    private func startTrade(card: Card, with friend: SocialProfile) {
+    private func startTrade(card: Card, with friend: SocialProfile, matchType: TradeSuggestion.MatchType?) {
         cardDetailSession = nil
-        let item = TradeItem(
+        let theirItem = TradeItem(
             id: UUID(),
             tradeID: UUID(),
             ownerID: friend.id,
@@ -265,37 +286,140 @@ struct TradeWallView: View {
             quantity: 1,
             createdAt: nil
         )
-        navigationPath.append(SocialDestination.tradeBuilder(
-            receiverID: friend.id,
-            theirCards: [item],
-            myCards: []
-        ))
+        let myItem = TradeItem(
+            id: UUID(),
+            tradeID: UUID(),
+            ownerID: friend.id,
+            cardID: card.masterCardId,
+            variantKey: "normal",
+            quantity: 1,
+            createdAt: nil
+        )
+
+        switch matchType {
+        case .iHaveWhatTheyWant:
+            navigationPath.append(SocialDestination.tradeBuilder(
+                receiverID: friend.id,
+                theirCards: [],
+                myCards: [myItem]
+            ))
+        case .theyHaveWhatIWant, .mutual, .none:
+            navigationPath.append(SocialDestination.tradeBuilder(
+                receiverID: friend.id,
+                theirCards: [theirItem],
+                myCards: []
+            ))
+        }
     }
 }
 
-// MARK: - TradeWallTabButton
+// MARK: - Trade wall tags & footer
 
-struct TradeWallTabButton: View {
-    let tab: TradeWallView.Tab
-    let isSelected: Bool
-    let accent: Color
-    let action: () -> Void
+private enum TradeWallStatusTag {
+    case theyWantIt
+    case theyHaveIt
+    case onTradeList
+
+    var label: String {
+        switch self {
+        case .theyWantIt: "They want it"
+        case .theyHaveIt: "They have it"
+        case .onTradeList: "On Tradelist"
+        }
+    }
+
+    var color: Color {
+        switch self {
+        case .theyWantIt: Color(hex: "5B8CF5")
+        case .theyHaveIt: Color(hex: "E8B84B")
+        case .onTradeList: Color.secondary
+        }
+    }
+
+    static func suggested(_ matchType: TradeSuggestion.MatchType) -> TradeWallStatusTag {
+        switch matchType {
+        case .iHaveWhatTheyWant: .theyWantIt
+        case .theyHaveWhatIWant, .mutual: .theyHaveIt
+        }
+    }
+}
+
+private struct TradeWallStatusBadge: View {
+    let tag: TradeWallStatusTag
 
     var body: some View {
-        Button(action: action) {
-            HStack(spacing: 6) {
-                Image(systemName: tab == .cards ? "square.stack.3d.up" : "shippingbox")
-                    .font(.system(size: 11, weight: .semibold))
-                Text(tab.rawValue)
-                    .font(.system(size: 13, weight: .bold))
+        Text(tag.label)
+            .font(.system(size: 8, weight: .bold))
+            .tracking(0.2)
+            .foregroundStyle(tag.color)
+            .padding(.horizontal, 5)
+            .padding(.vertical, 3)
+            .background(tag.color.opacity(0.12), in: Capsule())
+            .overlay(Capsule().stroke(tag.color.opacity(0.28), lineWidth: 0.5))
+    }
+}
+
+private struct TradeWallCellFooter: View {
+    let owner: SocialProfile
+    let itemName: String
+    let tag: TradeWallStatusTag
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(alignment: .top, spacing: 7) {
+                ProfileAvatarView(profile: owner, size: 24)
+                    .overlay(
+                        Circle().stroke(Color.primary.opacity(0.10), lineWidth: 1)
+                    )
+                    .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 1)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(owner.displayName ?? owner.username)
+                        .font(.system(size: 9, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                    Text(itemName)
+                        .font(.system(size: 11, weight: .bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .foregroundStyle(isSelected ? .white : .primary.opacity(0.60))
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 9)
-            .background(isSelected ? accent.gradient : Color.clear.gradient, in: Capsule())
-            .contentShape(Capsule())
+
+            TradeWallStatusBadge(tag: tag)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .buttonStyle(.plain)
+        .padding(.horizontal, 7)
+        .padding(.vertical, 7)
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+// MARK: - TradeWallSuggestedCell
+
+private struct TradeWallSuggestedCell: View {
+    let entry: TradeWallView.SuggestedWallEntry
+    let colorScheme: ColorScheme
+
+    var body: some View {
+        tradeWallCellChrome(colorScheme: colorScheme) {
+            CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: entry.card.displayImageSrc)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                tradeWallImagePlaceholder(icon: "photo")
+            }
+            .aspectRatio(5/7, contentMode: .fit)
+            .frame(maxWidth: .infinity)
+            .clipped()
+
+            TradeWallCellFooter(
+                owner: entry.owner,
+                itemName: entry.card.cardName,
+                tag: .suggested(entry.matchType)
+            )
+        }
     }
 }
 
@@ -307,67 +431,24 @@ private struct TradeWallCardCell: View {
     let colorScheme: ColorScheme
 
     var body: some View {
-        VStack(spacing: 0) {
-            // Card image — Pokemon cards are ~245×342, i.e. roughly 5:7
+        tradeWallCellChrome(colorScheme: colorScheme) {
             CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: entry.card.displayImageSrc)) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             } placeholder: {
-                Rectangle()
-                    .fill(Color.secondary.opacity(0.08))
-                    .overlay {
-                        Image(systemName: "photo")
-                            .font(.system(size: 22, weight: .light))
-                            .foregroundStyle(.tertiary)
-                    }
+                tradeWallImagePlaceholder(icon: "photo")
             }
             .aspectRatio(5/7, contentMode: .fit)
             .frame(maxWidth: .infinity)
             .clipped()
 
-            // Owner + card name footer
-            ownerFooter
+            TradeWallCellFooter(
+                owner: entry.owner,
+                itemName: entry.card.cardName,
+                tag: .onTradeList
+            )
         }
-        .background(.thinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .stroke(
-                    Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08),
-                    lineWidth: 0.5
-                )
-        }
-        .shadow(
-            color: .black.opacity(colorScheme == .dark ? 0.32 : 0.10),
-            radius: 6, x: 0, y: 3
-        )
-    }
-
-    private var ownerFooter: some View {
-        HStack(spacing: 7) {
-            ProfileAvatarView(profile: entry.owner, size: 24)
-                .overlay(
-                    Circle().stroke(Color.primary.opacity(0.10), lineWidth: 1)
-                )
-                .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 1)
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(entry.owner.displayName ?? entry.owner.username)
-                    .font(.system(size: 9, weight: .semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                Text(entry.card.cardName)
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-            }
-
-            Spacer(minLength: 0)
-        }
-        .padding(.horizontal, 7)
-        .padding(.vertical, 7)
-        .frame(minHeight: 44, alignment: .top)
     }
 }
 
@@ -378,67 +459,60 @@ private struct TradeWallSealedCell: View {
     let colorScheme: ColorScheme
 
     var body: some View {
-        VStack(spacing: 0) {
-            // Sealed box art — roughly square
+        tradeWallCellChrome(colorScheme: colorScheme) {
             CachedAsyncImage(url: entry.product.imageURL) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             } placeholder: {
-                Rectangle()
-                    .fill(Color.secondary.opacity(0.08))
-                    .overlay {
-                        Image(systemName: "shippingbox")
-                            .font(.system(size: 22, weight: .light))
-                            .foregroundStyle(.tertiary)
-                    }
+                tradeWallImagePlaceholder(icon: "shippingbox")
             }
             .aspectRatio(5/7, contentMode: .fit)
             .frame(maxWidth: .infinity)
             .clipped()
 
-            ownerFooter
+            TradeWallCellFooter(
+                owner: entry.owner,
+                itemName: entry.product.name,
+                tag: .onTradeList
+            )
         }
-        .background(.thinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+}
+
+// MARK: - Trade wall cell chrome
+
+@ViewBuilder
+private func tradeWallCellChrome<Content: View>(
+    colorScheme: ColorScheme,
+    @ViewBuilder content: () -> Content
+) -> some View {
+    VStack(spacing: 0) {
+        content()
+    }
+    .background(.thinMaterial)
+    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+    .overlay {
+        RoundedRectangle(cornerRadius: 12, style: .continuous)
+            .stroke(
+                Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08),
+                lineWidth: 0.5
+            )
+    }
+    .shadow(
+        color: .black.opacity(colorScheme == .dark ? 0.32 : 0.10),
+        radius: 6, x: 0, y: 3
+    )
+}
+
+private func tradeWallImagePlaceholder(icon: String) -> some View {
+    Rectangle()
+        .fill(Color.secondary.opacity(0.08))
         .overlay {
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .stroke(
-                    Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08),
-                    lineWidth: 0.5
-                )
+            Image(systemName: icon)
+                .font(.system(size: 22, weight: .light))
+                .foregroundStyle(.tertiary)
         }
-        .shadow(
-            color: .black.opacity(colorScheme == .dark ? 0.32 : 0.10),
-            radius: 6, x: 0, y: 3
-        )
-    }
-
-    private var ownerFooter: some View {
-        HStack(spacing: 7) {
-            ProfileAvatarView(profile: entry.owner, size: 24)
-                .overlay(
-                    Circle().stroke(Color.primary.opacity(0.10), lineWidth: 1)
-                )
-                .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 1)
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(entry.owner.displayName ?? entry.owner.username)
-                    .font(.system(size: 9, weight: .semibold))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                Text(entry.product.name)
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-            }
-
-            Spacer(minLength: 0)
-        }
-        .padding(.horizontal, 7)
-        .padding(.vertical, 7)
-        .frame(minHeight: 44, alignment: .top)
-    }
 }
 
 // MARK: - TradeWallCellButtonStyle

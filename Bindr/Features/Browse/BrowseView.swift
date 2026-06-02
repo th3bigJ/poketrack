@@ -1153,38 +1153,6 @@ struct BrowseView: View {
         }
     }
 
-    @ViewBuilder
-    private var browseSetNavigationRow: some View {
-        if case .set(let set) = inlineDetailRoute {
-            HStack(alignment: .center, spacing: 12) {
-                setAdjacentSetArrow(
-                    label: "Previous set",
-                    systemImage: "chevron.left",
-                    enabled: adjacentSet(to: set, offset: -1) != nil
-                ) {
-                    navigateToAdjacentSet(from: set, offset: -1)
-                }
-
-                SetLogoAsyncImage(
-                    logoSrc: set.logoSrc,
-                    height: 44,
-                    brand: services.brandSettings.selectedCatalogBrand
-                )
-                .frame(maxWidth: .infinity)
-
-                setAdjacentSetArrow(
-                    label: "Next set",
-                    systemImage: "chevron.right",
-                    enabled: adjacentSet(to: set, offset: 1) != nil
-                ) {
-                    navigateToAdjacentSet(from: set, offset: 1)
-                }
-            }
-            .padding(.horizontal, 16)
-            .padding(.bottom, 10)
-        }
-    }
-
     private var browseSearchRow: some View {
         BrowseInlineSearchField(
             title: browseSearchPlaceholder,
@@ -1210,7 +1178,6 @@ struct BrowseView: View {
                 browseTabsRow
                 browseSearchRow
                 browseSetSummaryRow
-                browseSetNavigationRow
                 browseResultCountRow
                 activeTabContent
                 if selectedTab == .cards && isPreparingFilterCatalog {
@@ -1238,7 +1205,6 @@ struct BrowseView: View {
                     browseTabsRow
                     browseSearchRow
                     browseSetSummaryRow
-                    browseSetNavigationRow
                     browseResultCountRow
                     activeTabContent
                 }
@@ -2427,10 +2393,41 @@ struct BrowseView: View {
         inlineDetailRoute = .set(target)
     }
 
+    @ViewBuilder
+    private func setSummaryInlineNavigation(for set: TCGSet) -> some View {
+        HStack(spacing: 6) {
+            setAdjacentSetArrow(
+                label: "Previous set",
+                systemImage: "chevron.left",
+                enabled: adjacentSet(to: set, offset: -1) != nil,
+                controlSize: 32
+            ) {
+                navigateToAdjacentSet(from: set, offset: -1)
+            }
+
+            SetLogoAsyncImage(
+                logoSrc: set.logoSrc,
+                height: 32,
+                brand: services.brandSettings.selectedCatalogBrand
+            )
+            .frame(maxWidth: 88)
+
+            setAdjacentSetArrow(
+                label: "Next set",
+                systemImage: "chevron.right",
+                enabled: adjacentSet(to: set, offset: 1) != nil,
+                controlSize: 32
+            ) {
+                navigateToAdjacentSet(from: set, offset: 1)
+            }
+        }
+    }
+
     private func setAdjacentSetArrow(
         label: String,
         systemImage: String,
         enabled: Bool,
+        controlSize: CGFloat = 44,
         action: @escaping () -> Void
     ) -> some View {
         Button {
@@ -2438,12 +2435,12 @@ struct BrowseView: View {
             action()
         } label: {
             Image(systemName: systemImage)
-                .font(.system(size: 17, weight: .medium))
+                .font(.system(size: controlSize >= 40 ? 17 : 14, weight: .medium))
                 .foregroundStyle(enabled ? Color.primary : Color.primary.opacity(0.28))
                 .modifier(ChromeGlassCircleGlyphModifier())
         }
         .buttonStyle(.plain)
-        .frame(width: 44, height: 44)
+        .frame(width: controlSize, height: controlSize)
         .contentShape(Rectangle())
         .accessibilityLabel(label)
         .disabled(!enabled)
@@ -2478,11 +2475,12 @@ struct BrowseView: View {
         let trends = inlineDetailSetTrendChanges
 
         return VStack(spacing: 14) {
-            // Chip bar
-            HStack(spacing: 8) {
+            // Chip bar + adjacent-set navigation
+            HStack(alignment: .center, spacing: 8) {
                 setModeChip(label: "Full Set", isMaster: false)
                 setModeChip(label: "Master Set", isMaster: true)
-                Spacer(minLength: 0)
+                Spacer(minLength: 8)
+                setSummaryInlineNavigation(for: set)
             }
 
             // Header

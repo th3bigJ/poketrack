@@ -271,13 +271,29 @@ struct DataExportView: View {
 // MARK: - Share Sheet
 struct ShareSheet: UIViewControllerRepresentable {
     let items: [Any]
-    
-    func makeUIViewController(context: Context) -> UIActivityViewController {
-        UIActivityViewController(activityItems: items, applicationActivities: nil)
+    var onComplete: ((Bool) -> Void)? = nil
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(onComplete: onComplete)
     }
-    
+
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let controller = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        controller.completionWithItemsHandler = { _, completed, _, _ in
+            context.coordinator.onComplete?(completed)
+        }
+        return controller
+    }
+
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: Context) {
-        // No update needed
+        context.coordinator.onComplete = onComplete
+    }
+
+    final class Coordinator {
+        var onComplete: ((Bool) -> Void)?
+        init(onComplete: ((Bool) -> Void)?) {
+            self.onComplete = onComplete
+        }
     }
 }
 

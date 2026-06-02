@@ -12,7 +12,7 @@ struct TradesView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var showsCompletedTrades = false
-    @State private var isSuggestedExpanded = true
+    @State private var isTradeWallExpanded = true
     @State private var isOpenTradesExpanded = false
     @State private var hasLoadedTrades = false
 
@@ -56,8 +56,6 @@ struct TradesView: View {
                 tradeOpportunityTray
                     .padding(.top, 6)
                     .padding(.bottom, 14)
-
-                tradeWallSection
             }
             // Generous bottom padding so the last section never slides under
             // the app's custom bottom tab bar (≈60pt) plus the home indicator
@@ -79,33 +77,21 @@ struct TradesView: View {
         })
     }
 
-    // MARK: - Trade Wall Section
-
-    private var tradeWallSection: some View {
-        VStack(spacing: 0) {
-            sectionHeader(title: "TRADE WALL")
-                .padding(.bottom, 8)
-
-            TradeWallView(navigationPath: $navigationPath)
-        }
-        .padding(.top, 4)
-    }
-
-    // MARK: - Suggested Trades Section
+    // MARK: - Trade opportunity tray
 
     private var tradeOpportunityTray: some View {
         VStack(spacing: 0) {
             HStack(spacing: 10) {
                 tradeOpportunityButton(
-                    title: "Matches",
-                    subtitle: "Wishlist hits",
+                    title: "Trade Wall",
+                    subtitle: "Suggested & trade lists",
                     systemImage: "sparkles",
                     count: nil,
-                    isExpanded: isSuggestedExpanded
+                    isExpanded: isTradeWallExpanded
                 ) {
                     withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
-                        isSuggestedExpanded.toggle()
-                        if isSuggestedExpanded {
+                        isTradeWallExpanded.toggle()
+                        if isTradeWallExpanded {
                             isOpenTradesExpanded = false
                         }
                     }
@@ -121,7 +107,7 @@ struct TradesView: View {
                     withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
                         isOpenTradesExpanded.toggle()
                         if isOpenTradesExpanded {
-                            isSuggestedExpanded = false
+                            isTradeWallExpanded = false
                         }
                     }
                 }
@@ -129,27 +115,19 @@ struct TradesView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 10)
 
-            if isSuggestedExpanded {
-                SuggestedTradesView(navigationPath: $navigationPath)
+            if isTradeWallExpanded {
+                TradeWallView(navigationPath: $navigationPath)
                     .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                     .padding(.horizontal, 16)
             }
 
             if isOpenTradesExpanded {
-                VStack(spacing: 10) {
-                    HStack {
-                        Text("Show Completed")
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(.secondary)
-                        Spacer()
-                        Toggle("", isOn: $showsCompletedTrades)
-                            .labelsHidden()
-                            .toggleStyle(.switch)
-                            .scaleEffect(0.85)
-                    }
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 10)
-                    .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                VStack(spacing: 0) {
+                    Toggle("Show Completed", isOn: $showsCompletedTrades)
+                        .font(.caption.weight(.semibold))
+                        .toggleStyle(.switch)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 12)
 
                     if isLoading && displayedTrades.isEmpty {
                         ProgressView()
@@ -157,17 +135,12 @@ struct TradesView: View {
                             .padding(.vertical, 26)
                     } else if displayedTrades.isEmpty && !isLoading {
                         openTradesEmptyState
+                            .padding(.horizontal, 16)
                     } else {
                         tradesList
+                            .padding(.horizontal, 16)
                     }
                 }
-                .padding(12)
-                .background(Color(uiColor: .secondarySystemBackground).opacity(0.55), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .stroke(Color.primary.opacity(0.07), lineWidth: 1)
-                }
-                .padding(.horizontal, 16)
             }
         }
     }
@@ -305,7 +278,7 @@ struct TradesView: View {
             trades = try await services.trade.fetchMyTrades()
             await loadProfilesForTrades()
             
-            // Auto-expand open trades if there are active trades to see; otherwise collapse to keep vertical space free for the Trade Wall
+            // Auto-expand open trades if there are active trades to see; otherwise collapse to keep vertical space free for the trade wall grid
             withAnimation(.easeInOut(duration: 0.25)) {
                 isOpenTradesExpanded = !openTrades.isEmpty
             }

@@ -7,7 +7,9 @@ struct CardActionMenu: View {
     let isOwned: Bool
     let isWishlisted: Bool
     let tradeActionLabel: String?
-    
+    /// When true (e.g. opened from Trade Wall), the primary button is a single "Offer Trade" action with no menu.
+    var offerTradeOnly: Bool = false
+
     // Actions
     let onSaveToCollection: () -> Void
     let onAddToWishlist: () -> Void
@@ -86,34 +88,59 @@ struct CardActionMenu: View {
     }
     
     private var primaryActionButton: some View {
-        Button {
-            withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                isMenuExpanded.toggle()
-            }
-            Haptics.lightImpact()
-        } label: {
-            HStack(spacing: 12) {
-                HStack(spacing: 12) {
-                    Image(systemName: primaryIcon)
-                        .font(.system(size: 18, weight: .bold))
-
-                    Text(primaryLabel)
-                        .font(.system(size: 17, weight: .bold, design: .rounded))
-                        .fixedSize()
+        Group {
+            if offerTradeOnly {
+                Button {
+                    Haptics.lightImpact()
+                    onTradeAction?()
+                } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: primaryIcon)
+                            .font(.system(size: 18, weight: .bold))
+                        Text(primaryLabel)
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .fixedSize()
+                        Spacer(minLength: 0)
+                    }
+                    .padding(.horizontal, 20)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 56)
+                    .foregroundStyle(primaryColor)
+                    .glassCardStyle(cornerRadius: 18, interactive: true)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                Image(systemName: "chevron.up")
-                    .font(.system(size: 11, weight: .bold))
-                    .opacity(0.4)
-                    .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
+                .buttonStyle(.plain)
+                .accessibilityLabel("Offer Trade")
+            } else {
+                Button {
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                        isMenuExpanded.toggle()
+                    }
+                    Haptics.lightImpact()
+                } label: {
+                    HStack(spacing: 12) {
+                        HStack(spacing: 12) {
+                            Image(systemName: primaryIcon)
+                                .font(.system(size: 18, weight: .bold))
+
+                            Text(primaryLabel)
+                                .font(.system(size: 17, weight: .bold, design: .rounded))
+                                .fixedSize()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        Image(systemName: "chevron.up")
+                            .font(.system(size: 11, weight: .bold))
+                            .opacity(0.4)
+                            .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
+                    }
+                    .padding(.horizontal, 20)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 56)
+                    .foregroundStyle(primaryColor)
+                    .glassCardStyle(cornerRadius: 18, interactive: true)
+                }
+                .buttonStyle(.plain)
             }
-            .padding(.horizontal, 20)
-            .frame(maxWidth: .infinity)
-            .frame(height: 56)
-            .foregroundStyle(primaryColor)
-            .glassCardStyle(cornerRadius: 18, interactive: true)
         }
-        .buttonStyle(.plain)
     }
     
     private var glassMenuOverlay: some View {
@@ -168,6 +195,7 @@ struct CardActionMenu: View {
     }
     
     private var primaryLabel: String {
+        if offerTradeOnly { return "Offer Trade" }
         if isDeckAddOnlyMode { return "Add to Deck" }
         if isOwned { return "Manage..." }
         if tradeActionLabel != nil { return "Interested?" }
@@ -175,6 +203,7 @@ struct CardActionMenu: View {
     }
     
     private var primaryIcon: String {
+        if offerTradeOnly { return "arrow.left.arrow.right.circle.fill" }
         if isDeckAddOnlyMode { return "rectangle.stack.badge.plus" }
         if isOwned { return "folder.fill" }
         if tradeActionLabel != nil { return "arrow.left.arrow.right.circle.fill" }
@@ -182,6 +211,7 @@ struct CardActionMenu: View {
     }
     
     private var primaryColor: Color {
+        if offerTradeOnly { return Palette.chartLine }
         if isDeckAddOnlyMode { return Color(red: 0.52, green: 0.44, blue: 0.94) }
         if isOwned { return Palette.share }
         if tradeActionLabel != nil { return Palette.chartLine }

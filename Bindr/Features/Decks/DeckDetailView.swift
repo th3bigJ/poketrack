@@ -93,7 +93,8 @@ struct DeckDetailView: View {
     @State private var isLoadingValue = false
     @State private var showShareSettings = false
     @State private var showShareActions = false
-    @State private var isSharedPublished = false
+    @State private var showOfficialDeckListSheet = false
+    @State private var showOfficialDeckListUnavailable = false
 
     private static func catalogSubtypeString(from card: Card) -> String? {
         if let s = card.subtype?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
@@ -240,127 +241,22 @@ struct DeckDetailView: View {
                 .presentationDragIndicator(.hidden)
         }
         .sheet(isPresented: $showShareActions) {
-            VStack(spacing: 12) {
-                Text("Share Deck")
-                    .font(.headline)
-                    .foregroundStyle(.primary)
-                    .padding(.top, 6)
-
-                Button {
-                    showShareActions = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                        showShareSettings = true
-                    }
-                } label: {
-                    HStack(spacing: 10) {
-                        Image(systemName: "person.2")
-                            .symbolRenderingMode(.monochrome)
-                            .foregroundStyle(.white)
-                            .frame(width: 20)
-                        Text("Post to Social")
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(.primary)
-                        Spacer()
-                    }
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 12)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        RoundedRectangle(cornerRadius: 14, style: .continuous)
-                            .fill(Color(uiColor: .secondarySystemBackground))
-                    )
-                }
-                .buttonStyle(.plain)
-
-                Button {
-                    Task {
-                        let idsNeedingLookup = deck.cardList
-                            .filter { ($0.localId ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
-                            .map(\.cardID)
-                        var pokemonSets = await services.cardData.catalogSets(for: .pokemon)
-                        let hasAnySetAbbreviation = pokemonSets.contains {
-                            guard let abbr = $0.setAbbreviation else { return false }
-                            return !abbr.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                        }
-                        if pokemonSets.isEmpty || !hasAnySetAbbreviation {
-                            await services.forceCatalogRedownloadFromSettings()
-                            pokemonSets = await services.cardData.catalogSets(for: .pokemon)
-                        }
-                        let lookedUpCards = await services.cardData.loadCards(masterCardIDs: idsNeedingLookup, catalogBrand: .pokemon)
-                        let cardsByMasterId = Dictionary(uniqueKeysWithValues: lookedUpCards.map { ($0.masterCardId, $0) })
-                        let exportText = PTCGLService.shared.exportToPTCGL(deck: deck, sets: pokemonSets, cardsByMasterId: cardsByMasterId)
-                        UIPasteboard.general.string = exportText
-                        HapticManager.notification(.success)
-                        showShareActions = false
-                    }
-                } label: {
-                    HStack(spacing: 10) {
-                        Image(systemName: "doc.on.doc")
-                            .symbolRenderingMode(.monochrome)
-                            .foregroundStyle(.white)
-                            .frame(width: 20)
-                        Text("Copy to TCG Live")
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(.primary)
-                        Spacer()
-                    }
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 12)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        RoundedRectangle(cornerRadius: 14, style: .continuous)
-                            .fill(Color(uiColor: .secondarySystemBackground))
-                    )
-                }
-                .buttonStyle(.plain)
-
-                Button {
-                    Task {
-                        let idsNeedingLookup = deck.cardList
-                            .filter { ($0.localId ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
-                            .map(\.cardID)
-                        let catalogBrand = deck.tcgBrand
-                        let sets = await services.cardData.catalogSets(for: catalogBrand)
-                        let lookedUpCards = await services.cardData.loadCards(masterCardIDs: idsNeedingLookup, catalogBrand: catalogBrand)
-                        let cardsByMasterId = Dictionary(uniqueKeysWithValues: lookedUpCards.map { ($0.masterCardId, $0) })
-                        let exportText = PTCGLService.shared.exportToOfficialLeague(deck: deck, sets: sets, cardsByMasterId: cardsByMasterId)
-                        UIPasteboard.general.string = exportText
-                        HapticManager.notification(.success)
-                        showShareActions = false
-                    }
-                } label: {
-                    HStack(spacing: 10) {
-                        Image(systemName: "list.bullet.rectangle.portrait")
-                            .symbolRenderingMode(.monochrome)
-                            .foregroundStyle(.white)
-                            .frame(width: 20)
-                        Text("Copy Official Deck List")
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(.primary)
-                        Spacer()
-                    }
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 12)
-                    .frame(maxWidth: .infinity)
-                    .background(
-                        RoundedRectangle(cornerRadius: 14, style: .continuous)
-                            .fill(Color(uiColor: .secondarySystemBackground))
-                    )
-                }
-                .buttonStyle(.plain)
-            }
-            .padding(.horizontal, 16)
-            .padding(.bottom, 18)
-            .presentationDetents([.height(290)])
-            .presentationDragIndicator(.visible)
+            deckShareActionsSheet
+        }
+        .sheet(isPresented: $showOfficialDeckListSheet) {
+            OfficialDeckListSheet(deck: deck)
+                .environment(services)
+                .bindrTheme(accent: services.theme.accentColor)
+        }
+        .alert("Create Deck List", isPresented: $showOfficialDeckListUnavailable) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text("PDF deck lists are available for Pokémon TCG decks. Use Copy to TCG Live for other games.")
         }
         .task(id: deck.cardList.map(\.cardID).sorted().joined()) {
             await backfillDeckCatalogMetadataIfNeeded()
             await syncDeckImagePathsFromCatalog()
             await refreshValue()
-        }
-        .task {
-            await refreshShareStatus()
         }
         .task(id: "\(deck.tcgBrand.rawValue)|\(deck.deckFormat.rawValue)") {
             await DeckPickerPrewarm.prewarm(
@@ -371,7 +267,6 @@ struct DeckDetailView: View {
         }
         .onChange(of: shareAutoSyncSignature) { _, _ in
             services.socialShare.scheduleAutoSync(deck: deck)
-            Task { await refreshShareStatus() }
         }
     }
 
@@ -425,11 +320,11 @@ struct DeckDetailView: View {
 
     private var deckHeaderTrailingButtons: some View {
         HStack(spacing: 8) {
-            ChromeGlassCircleButton(accessibilityLabel: isSharedPublished ? "Share options, currently shared" : "Share options") {
+            ChromeGlassCircleButton(accessibilityLabel: "Share options") {
                 HapticManager.impact(.light)
                 showShareActions = true
             } label: {
-                Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                Image(systemName: "square.and.arrow.up")
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(.primary)
             }
@@ -445,6 +340,68 @@ struct DeckDetailView: View {
                     .foregroundStyle(.primary)
             }
         }
+    }
+
+    private var deckShareActionsSheet: some View {
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                Spacer(minLength: 0)
+                CircleShareActionButton(title: "Post to Social", systemImage: "person.2") {
+                    HapticManager.impact(.light)
+                    showShareActions = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        showShareSettings = true
+                    }
+                }
+                Spacer(minLength: 0)
+                CircleShareActionButton(title: "Copy to TCG Live", systemImage: "doc.on.doc") {
+                    HapticManager.impact(.light)
+                    Task {
+                        await copyDeckToTCGLive()
+                        showShareActions = false
+                    }
+                }
+                Spacer(minLength: 0)
+                CircleShareActionButton(title: "Create Deck List", systemImage: "list.bullet.rectangle.portrait") {
+                    HapticManager.impact(.light)
+                    showShareActions = false
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        if isOnePiece {
+                            showOfficialDeckListUnavailable = true
+                        } else {
+                            showOfficialDeckListSheet = true
+                        }
+                    }
+                }
+                Spacer(minLength: 0)
+            }
+            .padding(.top, 28)
+            .padding(.horizontal, 20)
+            .padding(.bottom, 24)
+        }
+        .frame(maxWidth: .infinity)
+        .presentationDetents([.height(200)])
+        .presentationDragIndicator(.visible)
+    }
+
+    private func copyDeckToTCGLive() async {
+        let idsNeedingLookup = deck.cardList
+            .filter { ($0.localId ?? "").trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+            .map(\.cardID)
+        var pokemonSets = await services.cardData.catalogSets(for: .pokemon)
+        let hasAnySetAbbreviation = pokemonSets.contains {
+            guard let abbr = $0.setAbbreviation else { return false }
+            return !abbr.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }
+        if pokemonSets.isEmpty || !hasAnySetAbbreviation {
+            await services.forceCatalogRedownloadFromSettings()
+            pokemonSets = await services.cardData.catalogSets(for: .pokemon)
+        }
+        let lookedUpCards = await services.cardData.loadCards(masterCardIDs: idsNeedingLookup, catalogBrand: .pokemon)
+        let cardsByMasterId = Dictionary(uniqueKeysWithValues: lookedUpCards.map { ($0.masterCardId, $0) })
+        let exportText = PTCGLService.shared.exportToPTCGL(deck: deck, sets: pokemonSets, cardsByMasterId: cardsByMasterId)
+        UIPasteboard.general.string = exportText
+        HapticManager.notification(.success)
     }
 
     private var summarySection: some View {
@@ -1143,14 +1100,6 @@ struct DeckDetailView: View {
         }
     }
 
-    private func refreshShareStatus() async {
-        do {
-            let snapshot = try await services.socialShare.shareSnapshot(for: deck)
-            isSharedPublished = snapshot.isPublished
-        } catch {
-            isSharedPublished = false
-        }
-    }
 }
 
 // MARK: - DeckCard helper

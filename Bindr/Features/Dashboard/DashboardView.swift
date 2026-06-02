@@ -33,7 +33,6 @@ struct DashboardView: View {
     // in reloadDashboardInventory and via a debounced SwiftData notification observer.
     @State private var allLedgerLines: [LedgerLine] = []
     @State private var ledgerRefreshDebounceTask: Task<Void, Never>? = nil
-    @AppStorage("dismissedMilestones") private var dismissedMilestonesData: Data = Data()
 
     @State private var collectionItems: [CollectionItem] = []
     @State private var wishlistItems: [WishlistItem] = []
@@ -341,7 +340,6 @@ struct DashboardView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 18) {
                 heroSection
-                milestoneBanner
                 valueAndHistoryCard
                 dashboardCard { collectionSummaryInsightCard }
                 if let trend = activeMarketTrend {
@@ -512,87 +510,6 @@ struct DashboardView: View {
         }
     }
 
-    private var milestoneBanner: some View {
-        guard let milestone = activeMilestone else { return AnyView(EmptyView()) }
-        
-        return AnyView(
-            HStack(spacing: 12) {
-                Image(systemName: "trophy.fill")
-                    .font(.title3)
-                    .foregroundStyle(Color(hex: "f59e0b"))
-                
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(milestone.title)
-                        .font(.subheadline.weight(.bold))
-                    Text(milestone.description)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                
-                Spacer()
-                
-                Button {
-                    dismissMilestone(milestone.id)
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(.secondary)
-                        .padding(8)
-                        .background(Color.white.opacity(0.1))
-                        .clipShape(Circle())
-                }
-            }
-            .padding(16)
-            .background {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(Color(hex: "f59e0b").opacity(0.08))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(Color(hex: "f59e0b").opacity(0.2), lineWidth: 1)
-                    }
-            }
-        )
-    }
-
-    private struct Milestone: Identifiable {
-        let id: String
-        let title: String
-        let description: String
-    }
-
-    private var activeMilestone: Milestone? {
-        let dismissed = getDismissedMilestones()
-        
-        // 1. First Scan
-        if totalCardsCount > 0 && !dismissed.contains("first_scan") {
-            return Milestone(id: "first_scan", title: "First Scan Complete!", description: "You've started your journey as a Master Trainer.")
-        }
-        
-        // 2. £100 Milestone
-        if (liveTotalGbp ?? 0) >= 100 && !dismissed.contains("value_100") {
-            return Milestone(id: "value_100", title: "Century Club!", description: "Your collection value has crossed £100.")
-        }
-        
-        // 3. First Binder
-        if binderCount > 0 && !dismissed.contains("first_bindr") {
-            return Milestone(id: "first_bindr", title: "Organized!", description: "You've created your first Binder.")
-        }
-        
-        return nil
-    }
-
-    private func getDismissedMilestones() -> Set<String> {
-        (try? JSONDecoder().decode(Set<String>.self, from: dismissedMilestonesData)) ?? []
-    }
-
-    private func dismissMilestone(_ id: String) {
-        var dismissed = getDismissedMilestones()
-        dismissed.insert(id)
-        if let data = try? JSONEncoder().encode(dismissed) {
-            dismissedMilestonesData = data
-        }
-    }
-    
     private var heroSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             VStack(alignment: .leading, spacing: 4) {

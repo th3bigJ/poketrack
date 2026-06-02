@@ -6,7 +6,7 @@ import Security
 enum SocialTab: String, CaseIterable, Identifiable {
     case feed = "Feed"
     case friends = "Friends"
-    case trades = "Trade Wall"
+    case trades = "Trade"
     case profile = "Profile"
 
     static let allCases: [SocialTab] = [.feed, .trades, .profile]
