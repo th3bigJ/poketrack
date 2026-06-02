@@ -2,6 +2,7 @@ import SwiftUI
 
 struct TradesView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.bindrAccent) private var accent
     @Binding var navigationPath: NavigationPath
     var selectedTab: Binding<SocialTab>? = nil
     var headerInset: CGFloat = 0
@@ -11,7 +12,7 @@ struct TradesView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var showsCompletedTrades = false
-    @State private var isSuggestedExpanded = false
+    @State private var isSuggestedExpanded = true
     @State private var isOpenTradesExpanded = false
 
     private var currentUserID: UUID? {
@@ -51,15 +52,9 @@ struct TradesView: View {
                     .padding(.horizontal, 16)
                     .padding(.bottom, 6)
                 }
-                suggestedTradesSection
-
-                Divider()
-                    .padding(.vertical, 4)
-
-                openTradesSection
-
-                Divider()
-                    .padding(.vertical, 8)
+                tradeOpportunityTray
+                    .padding(.top, 6)
+                    .padding(.bottom, 14)
 
                 tradeWallSection
             }
@@ -85,7 +80,7 @@ struct TradesView: View {
 
     private var tradeWallSection: some View {
         VStack(spacing: 0) {
-            sectionHeader(title: "TRADE WALL", systemImage: "square.grid.2x2")
+            sectionHeader(title: "TRADE WALL")
                 .padding(.bottom, 8)
 
             TradeWallView(navigationPath: $navigationPath)
@@ -95,60 +90,88 @@ struct TradesView: View {
 
     // MARK: - Suggested Trades Section
 
-    private var suggestedTradesSection: some View {
+    private var tradeOpportunityTray: some View {
         VStack(spacing: 0) {
-            collapsibleSectionHeader(
-                title: "SUGGESTED TRADES",
-                isExpanded: $isSuggestedExpanded
-            )
+            HStack(spacing: 10) {
+                tradeOpportunityButton(
+                    title: "Matches",
+                    subtitle: "Wishlist hits",
+                    systemImage: "sparkles",
+                    count: nil,
+                    isExpanded: isSuggestedExpanded
+                ) {
+                    withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
+                        isSuggestedExpanded.toggle()
+                        if isSuggestedExpanded {
+                            isOpenTradesExpanded = false
+                        }
+                    }
+                }
+
+                tradeOpportunityButton(
+                    title: "Active",
+                    subtitle: showsCompletedTrades ? "Including completed" : "Open offers",
+                    systemImage: "arrow.left.arrow.right",
+                    count: openTrades.count,
+                    isExpanded: isOpenTradesExpanded
+                ) {
+                    withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
+                        isOpenTradesExpanded.toggle()
+                        if isOpenTradesExpanded {
+                            isSuggestedExpanded = false
+                        }
+                    }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 10)
 
             if isSuggestedExpanded {
                 SuggestedTradesView(navigationPath: $navigationPath)
-                    .padding(.bottom, 4)
-            }
-        }
-    }
-
-    // MARK: - Open Trades Section
-
-    private var openTradesSection: some View {
-        VStack(spacing: 0) {
-            HStack(alignment: .center, spacing: 10) {
-                collapsibleSectionHeader(
-                    title: "OPEN TRADES",
-                    isExpanded: $isOpenTradesExpanded
-                )
-
-                HStack {
-                    Text("Show Completed")
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(.secondary)
-                    Toggle("", isOn: $showsCompletedTrades)
-                        .labelsHidden()
-                        .toggleStyle(.switch)
-                        .scaleEffect(0.85)
-                }
-                .fixedSize(horizontal: false, vertical: true)
-                .padding(.trailing, 16)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .padding(.horizontal, 16)
             }
 
             if isOpenTradesExpanded {
-                if isLoading && displayedTrades.isEmpty {
-                    ProgressView()
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 40)
-                } else if displayedTrades.isEmpty && !isLoading {
-                    openTradesEmptyState
-                } else {
-                    tradesList
+                VStack(spacing: 10) {
+                    HStack {
+                        Text("Show Completed")
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Toggle("", isOn: $showsCompletedTrades)
+                            .labelsHidden()
+                            .toggleStyle(.switch)
+                            .scaleEffect(0.85)
+                    }
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+
+                    if isLoading && displayedTrades.isEmpty {
+                        ProgressView()
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 26)
+                    } else if displayedTrades.isEmpty && !isLoading {
+                        openTradesEmptyState
+                    } else {
+                        tradesList
+                    }
                 }
+                .padding(12)
+                .background(Color(uiColor: .secondarySystemBackground).opacity(0.55), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .stroke(Color.primary.opacity(0.07), lineWidth: 1)
+                }
+                .padding(.horizontal, 16)
             }
         }
     }
 
     // MARK: - Shared Header Helpers
 
-    private func sectionHeader(title: String, systemImage: String) -> some View {
+    private func sectionHeader(title: String) -> some View {
         HStack(spacing: 6) {
             Text(title)
                 .font(.system(size: 11, weight: .bold))
@@ -160,33 +183,67 @@ struct TradesView: View {
         .padding(.vertical, 12)
     }
 
-    private func collapsibleSectionHeader(title: String, isExpanded: Binding<Bool>) -> some View {
+    private func tradeOpportunityButton(
+        title: String,
+        subtitle: String,
+        systemImage: String,
+        count: Int?,
+        isExpanded: Bool,
+        action: @escaping () -> Void
+    ) -> some View {
         Button {
-            withAnimation(.easeInOut(duration: 0.2)) {
-                isExpanded.wrappedValue.toggle()
-            }
+            Haptics.selectionChanged()
+            action()
         } label: {
-            HStack {
-                Text(title)
-                    .font(.system(size: 11, weight: .bold))
-                    .tracking(0.7)
-                    .foregroundStyle(.secondary)
-                Spacer()
-                Image(systemName: isExpanded.wrappedValue ? "chevron.up" : "chevron.down")
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(.secondary)
+            HStack(spacing: 10) {
+                ZStack {
+                    Circle()
+                        .fill(isExpanded ? Color.white.opacity(0.22) : Color.primary.opacity(0.06))
+                        .frame(width: 34, height: 34)
+                    Image(systemName: systemImage)
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(isExpanded ? Color.white : Color.primary.opacity(0.75))
+                }
+
+                VStack(alignment: .leading, spacing: 2) {
+                    HStack(spacing: 6) {
+                        Text(title)
+                            .font(.system(size: 14, weight: .heavy))
+                            .foregroundStyle(isExpanded ? Color.white : Color.primary)
+                            .lineLimit(1)
+                        if let count {
+                            Text("\(count)")
+                                .font(.system(size: 10, weight: .bold))
+                                .foregroundStyle(isExpanded ? Color.white : Color.secondary)
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 2)
+                                .background((isExpanded ? Color.white.opacity(0.20) : Color.primary.opacity(0.07)), in: Capsule())
+                        }
+                    }
+                    Text(subtitle)
+                        .font(.system(size: 11, weight: .semibold))
+                        .foregroundStyle(isExpanded ? Color.white.opacity(0.78) : Color.secondary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                }
+
+                Spacer(minLength: 0)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
+            .padding(12)
+            .frame(maxWidth: .infinity, minHeight: 64)
+            .background(isExpanded ? accent : Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(isExpanded ? Color.white.opacity(0.18) : Color.primary.opacity(0.07), lineWidth: 1)
+            }
         }
         .buttonStyle(.plain)
-        .frame(maxWidth: .infinity)
     }
 
     // MARK: - Trades List
 
     private var tradesList: some View {
-        LazyVStack(spacing: 0) {
+        LazyVStack(spacing: 8) {
             ForEach(displayedTrades) { tradeWithItems in
                 Button {
                     navigationPath.append(SocialDestination.tradeDetail(tradeID: tradeWithItems.id))
@@ -198,9 +255,11 @@ struct TradesView: View {
                     )
                 }
                 .buttonStyle(.plain)
-
-                Divider()
-                    .padding(.leading, 72)
+                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .stroke(Color.primary.opacity(0.06), lineWidth: 1)
+                }
             }
         }
     }
@@ -214,7 +273,7 @@ struct TradesView: View {
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Color.secondary)
             Text(showsCompletedTrades
-                 ? "Offer a trade from a friend's collection or wishlist to get started."
+                 ? "Offer a trade from a friend's trade list or wishlist to get started."
                  : "Your active pending/countered/accepted trades will appear here.")
                 .font(.system(size: 13))
                 .foregroundStyle(Color.secondary.opacity(0.7))
@@ -222,8 +281,7 @@ struct TradesView: View {
                 .padding(.horizontal, 32)
         }
         .frame(maxWidth: .infinity)
-        .padding(.top, 40)
-        .padding(.bottom, 20)
+        .padding(.vertical, 26)
     }
 
     // MARK: - Data

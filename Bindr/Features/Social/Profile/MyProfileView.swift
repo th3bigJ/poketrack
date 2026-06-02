@@ -2,15 +2,21 @@ import SwiftUI
 import SwiftData
 
 struct MyProfileView: View {
-    private enum ProfileTab: String, CaseIterable {
+    enum ProfileTab: String, CaseIterable {
         case posts
         case wishlist
         case tradeList = "trade list"
+        case friends
     }
 
     let profile: SocialProfile
     var selectedTab: Binding<SocialTab>? = nil
+    var selectedProfileTab: Binding<ProfileTab>? = nil
     var headerInset: CGFloat = 0
+    var onOpenFriendsSearch: (() -> Void)? = nil
+    var onOpenFriendsQR: (() -> Void)? = nil
+    var onOpenFriendUsername: ((String) -> Void)? = nil
+    var onSelectFriendForTrade: ((SocialProfile) -> Void)? = nil
 
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
@@ -22,7 +28,7 @@ struct MyProfileView: View {
     @State private var favoriteCard: Card?
     @State private var favoriteCardPrice: Double?
     @State private var myActivity: [SocialFeedService.FeedItem] = []
-    @State private var selectedProfileTab: ProfileTab = .posts
+    @State private var localSelectedProfileTab: ProfileTab = .posts
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
 
@@ -55,6 +61,14 @@ struct MyProfileView: View {
         return Color(hex: "E8B84B")
     }
 
+    private var profileTabBinding: Binding<ProfileTab> {
+        selectedProfileTab ?? $localSelectedProfileTab
+    }
+
+    private var activeProfileTab: ProfileTab {
+        profileTabBinding.wrappedValue
+    }
+
     // Prefer local counts on My Profile so totals remain correct
     // when remote profile stats are stale.
     private var displayedCardCount: Int {
@@ -70,23 +84,19 @@ struct MyProfileView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                Color.clear.frame(height: headerInset)
-                if let selectedTab {
-                    SlidingSegmentedPicker(
-                        selection: selectedTab,
-                        items: SocialTab.allCases,
-                        title: { $0.title }
-                    )
-                    .padding(.horizontal, BindrSpacing.lg)
+        Group {
+            if activeProfileTab == .friends {
+                VStack(spacing: 0) {
+                    profileIntro
+                    friendsTabContent
                 }
-                VStack(spacing: BindrSpacing.lg) {
-                    profileHeader
-                    profileTabPicker
-                    profileTabContent
+            } else {
+                ScrollView {
+                    VStack(spacing: 0) {
+                        profileIntro
+                        profileTabContent
+                    }
                 }
-                .padding(.top, BindrSpacing.lg)
             }
         }
         .refreshable {
@@ -102,6 +112,25 @@ struct MyProfileView: View {
     }
     
     // MARK: - Subviews
+
+    private var profileIntro: some View {
+        VStack(spacing: 0) {
+            Color.clear.frame(height: headerInset)
+            if let selectedTab {
+                SlidingSegmentedPicker(
+                    selection: selectedTab,
+                    items: SocialTab.allCases,
+                    title: { $0.title }
+                )
+                .padding(.horizontal, BindrSpacing.lg)
+            }
+            VStack(spacing: BindrSpacing.lg) {
+                profileHeader
+                profileTabPicker
+            }
+            .padding(.top, BindrSpacing.lg)
+        }
+    }
 
     private var profileHeader: some View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
@@ -231,6 +260,7 @@ struct MyProfileView: View {
         case .posts: return "Posts"
         case .wishlist: return "Wishlist"
         case .tradeList: return "Trade List"
+        case .friends: return "Friends"
         }
     }
 
@@ -242,14 +272,16 @@ struct MyProfileView: View {
             ForEach(ProfileTab.allCases, id: \.self) { tab in
                 Button {
                     Haptics.selectionChanged()
-                    selectedProfileTab = tab
+                    profileTabBinding.wrappedValue = tab
                 } label: {
                     Text(profileTabTitle(tab))
                         .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(selectedProfileTab == tab ? Color.white : Color.primary.opacity(0.7))
+                        .foregroundStyle(activeProfileTab == tab ? Color.white : Color.primary.opacity(0.7))
                         .frame(maxWidth: .infinity)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
                         .padding(.vertical, 9)
-                        .background(selectedProfileTab == tab ? themeColor : .clear, in: Capsule())
+                        .background(activeProfileTab == tab ? themeColor : .clear, in: Capsule())
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
@@ -266,7 +298,7 @@ struct MyProfileView: View {
     @ViewBuilder
     private var profileTabContent: some View {
         VStack(spacing: BindrSpacing.md) {
-            switch selectedProfileTab {
+            switch activeProfileTab {
             case .posts:
                 if groupedActivity.isEmpty {
                     emptyProfileCard("Your shared posts will appear here.")
@@ -294,9 +326,20 @@ struct MyProfileView: View {
                         await services.cardData.loadCard(masterCardId: id)
                     })
                 }
+            case .friends:
+                EmptyView()
             }
         }
         .padding(.horizontal, BindrSpacing.lg)
+    }
+
+    private var friendsTabContent: some View {
+        FriendsListView(
+            onOpenSearch: onOpenFriendsSearch ?? {},
+            onOpenQR: onOpenFriendsQR ?? {},
+            onOpenUsername: onOpenFriendUsername ?? { _ in },
+            onSelectFriendForTrade: onSelectFriendForTrade
+        )
     }
 
     private func isRenderableCardIDForProfileGrid(_ cardID: String) -> Bool {

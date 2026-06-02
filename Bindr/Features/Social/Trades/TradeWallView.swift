@@ -134,7 +134,7 @@ struct TradeWallView: View {
     // MARK: - Grids
 
     private var cardGrid: some View {
-        EagerVGrid(items: cardEntries, columns: 2, spacing: 12) { entry in
+        EagerVGrid(items: cardEntries, columns: 3, spacing: 8) { entry in
             Button {
                 Haptics.lightImpact()
                 cardDetailSession = CardDetailSession(card: entry.card, owner: entry.owner)
@@ -143,12 +143,12 @@ struct TradeWallView: View {
             }
             .buttonStyle(TradeWallCellButtonStyle())
         }
-        .padding(.horizontal, 12)
+        .padding(.horizontal, 8)
         .padding(.bottom, 8)
     }
 
     private var sealedGrid: some View {
-        EagerVGrid(items: sealedEntries, columns: 2, spacing: 12) { entry in
+        EagerVGrid(items: sealedEntries, columns: 3, spacing: 8) { entry in
             Button {
                 Haptics.lightImpact()
                 selectedSealedProduct = entry.product
@@ -157,7 +157,7 @@ struct TradeWallView: View {
             }
             .buttonStyle(TradeWallCellButtonStyle())
         }
-        .padding(.horizontal, 12)
+        .padding(.horizontal, 8)
         .padding(.bottom, 8)
     }
 
@@ -296,9 +296,7 @@ struct TradeWallTabButton: View {
 
 // MARK: - TradeWallCardCell
 
-/// Premium 2-column card cell. Card image fills the top ~72% of the cell;
-/// the owner strip lives in a `.thinMaterial` footer below it — no cramped
-/// corner overlays, name never truncates, avatar is large enough to see.
+/// Compact trade wall cell for the 3-column grid.
 private struct TradeWallCardCell: View {
     let entry: TradeWallView.WallEntry
     let colorScheme: ColorScheme
@@ -327,9 +325,9 @@ private struct TradeWallCardCell: View {
             ownerFooter
         }
         .background(.thinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .stroke(
                     Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08),
                     lineWidth: 0.5
@@ -337,13 +335,13 @@ private struct TradeWallCardCell: View {
         }
         .shadow(
             color: .black.opacity(colorScheme == .dark ? 0.32 : 0.10),
-            radius: 8, x: 0, y: 4
+            radius: 6, x: 0, y: 3
         )
     }
 
     private var ownerFooter: some View {
-        HStack(spacing: 9) {
-            ProfileAvatarView(profile: entry.owner, size: 32)
+        HStack(spacing: 7) {
+            ProfileAvatarView(profile: entry.owner, size: 24)
                 .overlay(
                     Circle().stroke(Color.primary.opacity(0.10), lineWidth: 1)
                 )
@@ -351,22 +349,20 @@ private struct TradeWallCardCell: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(entry.owner.displayName ?? entry.owner.username)
-                    .font(.system(size: 11, weight: .semibold))
+                    .font(.system(size: 9, weight: .semibold))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                 Text(entry.card.cardName)
-                    .font(.system(size: 13, weight: .bold))
+                    .font(.system(size: 11, weight: .bold))
                     .foregroundStyle(.primary)
-                    .lineLimit(2)
+                    .lineLimit(1)
             }
 
             Spacer(minLength: 0)
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 10)
-        // Fixed footer height ensures both cells in a row are always the same
-        // total height (image aspect ratio is already deterministic by column width).
-        .frame(minHeight: 68, alignment: .top)
+        .padding(.horizontal, 7)
+        .padding(.vertical, 7)
+        .frame(minHeight: 44, alignment: .top)
     }
 }
 
@@ -399,9 +395,9 @@ private struct TradeWallSealedCell: View {
             ownerFooter
         }
         .background(.thinMaterial)
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .stroke(
                     Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08),
                     lineWidth: 0.5
@@ -409,13 +405,13 @@ private struct TradeWallSealedCell: View {
         }
         .shadow(
             color: .black.opacity(colorScheme == .dark ? 0.32 : 0.10),
-            radius: 8, x: 0, y: 4
+            radius: 6, x: 0, y: 3
         )
     }
 
     private var ownerFooter: some View {
-        HStack(spacing: 9) {
-            ProfileAvatarView(profile: entry.owner, size: 32)
+        HStack(spacing: 7) {
+            ProfileAvatarView(profile: entry.owner, size: 24)
                 .overlay(
                     Circle().stroke(Color.primary.opacity(0.10), lineWidth: 1)
                 )
@@ -423,20 +419,20 @@ private struct TradeWallSealedCell: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(entry.owner.displayName ?? entry.owner.username)
-                    .font(.system(size: 11, weight: .semibold))
+                    .font(.system(size: 9, weight: .semibold))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                 Text(entry.product.name)
-                    .font(.system(size: 13, weight: .bold))
+                    .font(.system(size: 11, weight: .bold))
                     .foregroundStyle(.primary)
-                    .lineLimit(2)
+                    .lineLimit(1)
             }
 
             Spacer(minLength: 0)
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 10)
-        .frame(minHeight: 68, alignment: .top)
+        .padding(.horizontal, 7)
+        .padding(.vertical, 7)
+        .frame(minHeight: 44, alignment: .top)
     }
 }
 

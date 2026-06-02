@@ -1,8 +1,10 @@
 import SwiftUI
+import SwiftData
 
 struct SuggestedTradesView: View {
     @Environment(AppServices.self) private var services
     @Binding var navigationPath: NavigationPath
+    @Query private var collectionItems: [CollectionItem]
 
     @State private var suggestions: [TradeSuggestion] = []
     @State private var isLoading = false
@@ -81,7 +83,7 @@ struct SuggestedTradesView: View {
     }
 
     private func loadSuggestions() async {
-        guard case .signedIn(let uid, _) = services.socialAuth.authState else { return }
+        guard case .signedIn = services.socialAuth.authState else { return }
         isLoading = true
         defer { isLoading = false }
 
@@ -93,12 +95,14 @@ struct SuggestedTradesView: View {
 
             async let friendWishlists = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
             async let friendTradeLists = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
-            async let myTradeList = services.socialCardLibrary.fetchTradeListCardIDs(for: uid)
 
             let myWishlist = Set(services.wishlist?.items.map(\.cardID) ?? [])
             let friendWishlistMap = try await friendWishlists
             let friendTradeListMap = try await friendTradeLists
-            let myTradeListIDs = Set(try await myTradeList)
+            let myOwnedCardIDs = Set(collectionItems.compactMap { item in
+                guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
+                return item.cardID
+            })
 
             var result: [TradeSuggestion] = []
 
@@ -107,7 +111,7 @@ struct SuggestedTradesView: View {
                 let theyWant = Set(friendWishlistMap[friend.id] ?? [])
 
                 let iWantAndTheyHave = myWishlist.intersection(theyHave)
-                let theyWantAndIHave = theyWant.intersection(myTradeListIDs)
+                let theyWantAndIHave = theyWant.intersection(myOwnedCardIDs)
 
                 if !iWantAndTheyHave.isEmpty && !theyWantAndIHave.isEmpty {
                     result.append(TradeSuggestion(

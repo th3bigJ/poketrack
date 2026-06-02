@@ -9,6 +9,8 @@ enum SocialTab: String, CaseIterable, Identifiable {
     case trades = "Trade Wall"
     case profile = "Profile"
 
+    static let allCases: [SocialTab] = [.feed, .trades, .profile]
+
     var id: String { rawValue }
     var title: String { rawValue }
 }
@@ -127,6 +129,7 @@ struct SocialRootView: View {
     @State private var socialNavigationPath = NavigationPath()
     @State private var currentNonce: String?
     @State private var selectedTab: SocialTab = .feed
+    @State private var selectedProfileTab: MyProfileView.ProfileTab = .posts
     @State private var isAlertsPresented = false
     @State private var isNewPostPresented = false
     @State private var deepLinkedSharedContent: SharedContent?
@@ -485,7 +488,20 @@ struct SocialRootView: View {
                         headerInset: rootFloatingChromeInset
                     )
                 case .profile:
-                    MyProfileView(profile: profile, selectedTab: $selectedTab, headerInset: rootFloatingChromeInset)
+                    MyProfileView(
+                        profile: profile,
+                        selectedTab: $selectedTab,
+                        selectedProfileTab: $selectedProfileTab,
+                        headerInset: rootFloatingChromeInset,
+                        onOpenFriendsSearch: { socialNavigationPath.append(SocialDestination.search) },
+                        onOpenFriendsQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
+                        onOpenFriendUsername: { username in
+                            socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                        },
+                        onSelectFriendForTrade: { friend in
+                            openSeededTradeBuilder(with: friend)
+                        }
+                    )
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -619,14 +635,15 @@ struct SocialRootView: View {
         case .feed:
             selectedTab = .feed
         case .friends, .friendRequests:
-            selectedTab = .friends
+            selectedTab = .profile
+            selectedProfileTab = .friends
         case .profile(let username):
             if profile == nil {
                 profilePopoverPath = NavigationPath()
                 profilePopoverPath.append(AccountProfileView.Destination.editProfile)
                 showAccountProfile = true
             } else {
-                selectedTab = .friends
+                selectedTab = .profile
                 socialNavigationPath = NavigationPath()
                 socialNavigationPath.append(SocialDestination.friendProfile(username: username))
             }

@@ -91,7 +91,7 @@ struct SocialLandingView: View {
                 SocialFeatureCard(
                     icon: "arrow.left.arrow.right",
                     title: "Trade Network",
-                    description: "Auto-find suggested trades based on your wishlist and friends' collections.",
+                    description: "Auto-find suggested trades based on wishlists and trade lists.",
                     index: 1
                 )
                 SocialFeatureCard(

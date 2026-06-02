@@ -221,7 +221,7 @@ struct MutualTradeView: View {
             Button {
                 isMyOfferingPickerPresented = true
             } label: {
-                Label("Add from My Collection", systemImage: "plus.circle")
+                Label("Add Cards", systemImage: "plus.circle")
                     .font(.system(size: 14))
             }
 
@@ -238,7 +238,7 @@ struct MutualTradeView: View {
             Button {
                 isMyWantingPickerPresented = true
             } label: {
-                Label("Add from Their Collection", systemImage: "plus.circle")
+                Label("Add from Their Trade List", systemImage: "plus.circle")
                     .font(.system(size: 14))
             }
 

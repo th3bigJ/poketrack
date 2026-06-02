@@ -25,7 +25,7 @@ struct FriendsListView: View {
     @State private var isLoading = false
     @State private var isSearching = false
     @State private var errorMessage: String?
-    @State private var friendCollectionCardIDsByUser: [UUID: Set<String>] = [:]
+    @State private var friendTradeListCardIDsByUser: [UUID: Set<String>] = [:]
     @State private var friendWishlistCardIDsByUser: [UUID: Set<String>] = [:]
     @State private var tradeSeedCardName: String?
     @State private var isLoadingTradeSuggestions = false
@@ -48,7 +48,7 @@ struct FriendsListView: View {
         return friends.filter { friend in
             switch seed.preferredSide {
             case .theirSide:
-                return friendCollectionCardIDsByUser[friend.id]?.contains(seed.cardID) == true
+                return friendTradeListCardIDsByUser[friend.id]?.contains(seed.cardID) == true
             case .mySide:
                 return friendWishlistCardIDsByUser[friend.id]?.contains(seed.cardID) == true
             }
@@ -58,17 +58,17 @@ struct FriendsListView: View {
         guard let seed = services.pendingTradeSeed else { return "Friends with this card" }
         switch seed.preferredSide {
         case .theirSide:
-            return "Friends with this card in their collection"
+            return "Friends trading this card"
         case .mySide:
             return "Friends who want this card"
         }
     }
     private var tradeSuggestionBody: String {
-        guard let seed = services.pendingTradeSeed else { return "Suggestions update as your friends sync their lists." }
+        guard let seed = services.pendingTradeSeed else { return "Suggestions update as your friends sync their wishlists and trade lists." }
         let cardName = tradeSeedCardName ?? seed.cardID
         switch seed.preferredSide {
         case .theirSide:
-            return "Based on your wishlist card \(cardName), these friends currently own it."
+            return "Based on your wishlist card \(cardName), these friends have it on their trade list."
         case .mySide:
             return "Based on your collection card \(cardName), these friends currently want it in their wishlist."
         }
@@ -333,7 +333,7 @@ struct FriendsListView: View {
                     .stroke(BindrPalette.binderGold.opacity(0.22), lineWidth: 1)
             }
         } else {
-            Text("Suggestions update as your friends sync their lists.")
+            Text("Suggestions update as your friends sync their wishlists and trade lists.")
                 .font(.system(size: 12))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -566,7 +566,7 @@ struct FriendsListView: View {
 
     private func refreshTradeSuggestionContext(friendIDs: [UUID]) async {
         guard isSelectingFriendForTrade else {
-            friendCollectionCardIDsByUser = [:]
+            friendTradeListCardIDsByUser = [:]
             friendWishlistCardIDsByUser = [:]
             tradeSeedCardName = nil
             isLoadingTradeSuggestions = false
@@ -577,14 +577,14 @@ struct FriendsListView: View {
         defer { isLoadingTradeSuggestions = false }
 
         if !friendIDs.isEmpty {
-            async let collectionsTask = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
+            async let tradeListsTask = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
             async let wishlistsTask = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
-            let collections = (try? await collectionsTask) ?? [:]
+            let tradeLists = (try? await tradeListsTask) ?? [:]
             let wishlists = (try? await wishlistsTask) ?? [:]
-            friendCollectionCardIDsByUser = collections.mapValues { Set($0) }
+            friendTradeListCardIDsByUser = tradeLists.mapValues { Set($0) }
             friendWishlistCardIDsByUser = wishlists.mapValues { Set($0) }
         } else {
-            friendCollectionCardIDsByUser = [:]
+            friendTradeListCardIDsByUser = [:]
             friendWishlistCardIDsByUser = [:]
         }
 

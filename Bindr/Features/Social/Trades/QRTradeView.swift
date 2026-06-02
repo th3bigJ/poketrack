@@ -12,7 +12,17 @@ struct QRTradeView: View {
     @State private var errorMessage: String?
 
     private var deepLinkString: String {
-        "bindr://profile/@\(currentUsername.lowercased())"
+        if let currentUserID {
+            return "bindr://social/trade?user_id=\(currentUserID.uuidString)&username=\(currentUsername.lowercased())"
+        }
+        return "bindr://profile/@\(currentUsername.lowercased())"
+    }
+
+    private var currentUserID: UUID? {
+        if case .signedIn(let id, _) = services.socialAuth.authState {
+            return id
+        }
+        return nil
     }
 
     private var qrImage: UIImage? {
@@ -93,18 +103,29 @@ struct QRTradeView: View {
     }
 
     private func handleScan(_ rawString: String) {
-        guard let url = URL(string: rawString),
-              let username = SocialFriendService.parseProfileUsername(from: url)
-        else {
-            errorMessage = "Invalid QR code. Make sure it's a valid Bindr profile QR."
+        guard let scannedIdentity = scannedTradeIdentity(from: rawString) else {
+            errorMessage = "Invalid QR code. Make sure it's a valid Bindr trade QR."
             return
         }
         isScannerPresented = false
         isLoading = true
         Task {
             do {
-                guard let profile = try await services.socialProfile.fetchProfile(username: username) else {
-                    errorMessage = "Could not find user @\(username)."
+                let profile: SocialProfile?
+                switch scannedIdentity {
+                case .userID(let id):
+                    profile = try await services.socialProfile.fetchProfile(id: id)
+                case .username(let username):
+                    profile = try await services.socialFriend.fetchProfile(username: username)
+                }
+
+                guard let profile else {
+                    errorMessage = "Could not find that Bindr user."
+                    isLoading = false
+                    return
+                }
+                guard profile.id != currentUserID else {
+                    errorMessage = "Scan another user's QR code to start a trade."
                     isLoading = false
                     return
                 }
@@ -113,13 +134,35 @@ struct QRTradeView: View {
                 navigationPath.wrappedValue.append(SocialDestination.mutualTrade(
                     sessionID: session.id,
                     otherUserID: profile.id,
-                    otherUsername: username
+                    otherUsername: profile.username
                 ))
             } catch {
                 errorMessage = error.localizedDescription
                 isLoading = false
             }
         }
+    }
+
+    private enum ScannedTradeIdentity {
+        case userID(UUID)
+        case username(String)
+    }
+
+    private func scannedTradeIdentity(from rawString: String) -> ScannedTradeIdentity? {
+        guard let url = URL(string: rawString) else { return nil }
+        if let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
+           url.scheme?.lowercased() == "bindr",
+           url.host?.lowercased() == "social",
+           url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/")).lowercased() == "trade",
+           let rawUserID = components.queryItems?.first(where: { $0.name.lowercased() == "user_id" })?.value,
+           let userID = UUID(uuidString: rawUserID) {
+            return .userID(userID)
+        }
+
+        if let username = SocialFriendService.parseProfileUsername(from: url) {
+            return .username(username)
+        }
+        return nil
     }
 }
 
