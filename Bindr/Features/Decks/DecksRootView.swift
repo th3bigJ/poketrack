@@ -226,6 +226,7 @@ struct DecksRootView: View {
                     }
                     .allowsHitTesting(false) // Let the Menu handle the tap
                 }
+                .buttonStyle(.plain)
                 .simultaneousGesture(newDeckMenuTouchDownHapticGesture)
             }
         )
