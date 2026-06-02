@@ -222,7 +222,7 @@ struct DecksRootView: View {
                     ChromeGlassCircleButton(accessibilityLabel: "New Deck", action: {}) {
                         Image(systemName: "plus")
                             .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                     }
                     .allowsHitTesting(false) // Let the Menu handle the tap
                 }
