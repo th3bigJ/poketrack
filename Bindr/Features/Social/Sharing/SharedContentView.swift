@@ -41,10 +41,13 @@ struct SharedContentView: View {
     var body: some View {
         // Binders get a dedicated read-only binder view that reproduces the
         // playmat surface and grid the publisher sees in BinderDetailView.
-        // Everything else (wishlist, deck, pull, daily digest, folder) keeps
+        // Decks get a dedicated grid visualizer that matches the builder's layout.
+        // Everything else (wishlist, pull, daily digest, folder) keeps
         // the list rendering — those payloads are inherently list-shaped.
         if content.contentType == .binder {
             SharedBinderView(content: content)
+        } else if content.contentType == .deck {
+            SharedDeckView(content: content)
         } else {
             listBody
         }
