@@ -11,17 +11,16 @@ struct CollectionImportView: View {
     @State private var showFileImporter = false
     @State private var selectedFileURL: URL?
     @State private var selectedFileName: String?
-    @State private var preview: DexCollectionCSVImporter.ParseResult?
+    @State private var parseResult: DexCollectionCSVImporter.ParseResult?
+    @State private var importPlan: CollectionImportPlan?
     @State private var previewError: String?
+    @State private var isValidatingCatalog = false
+    @State private var validationTask: Task<Void, Never>?
 
     @State private var isImporting = false
     @State private var importError: String?
     @State private var outcome: CollectionCSVImportOutcome?
     @State private var showPaywall = false
-
-    private var importableRowCount: Int {
-        preview?.rows.count ?? 0
-    }
 
     var body: some View {
         List {
@@ -37,10 +36,7 @@ struct CollectionImportView: View {
 
             Section {
                 Button {
-                    preview = nil
-                    previewError = nil
-                    outcome = nil
-                    importError = nil
+                    resetPreviewState()
                     showFileImporter = true
                 } label: {
                     HStack {
@@ -54,15 +50,21 @@ struct CollectionImportView: View {
                         }
                     }
                 }
-                .disabled(isImporting)
+                .disabled(isImporting || isValidatingCatalog)
 
-                if let preview {
-                    LabeledContent("Rows to import") {
-                        Text("\(preview.rows.count)")
+                if isValidatingCatalog {
+                    HStack(spacing: 10) {
+                        ProgressView()
+                        Text("Checking catalog…")
+                            .foregroundStyle(.secondary)
                     }
-                    if preview.skippedZeroQuantity > 0 {
+                } else if let importPlan {
+                    LabeledContent("Ready to import") {
+                        Text("\(importPlan.importableRowCount) rows · \(importPlan.importableCopyCount) cards")
+                    }
+                    if importPlan.skippedZeroQuantity > 0 {
                         LabeledContent("Skipped (0 qty)") {
-                            Text("\(preview.skippedZeroQuantity)")
+                            Text("\(importPlan.skippedZeroQuantity)")
                                 .foregroundStyle(.secondary)
                         }
                     }
@@ -77,6 +79,26 @@ struct CollectionImportView: View {
                 Text("Uses Id for the card, Variant for the printing, and Quantity for how many to add. Rows with quantity 0 are ignored.")
             }
 
+            if let importPlan, !importPlan.skipped.isEmpty {
+                Section {
+                    DisclosureGroup {
+                        ForEach(importPlan.skipped) { row in
+                            skippedRowView(row)
+                        }
+                    } label: {
+                        Label(
+                            "Won't import (\(importPlan.skipped.count))",
+                            systemImage: "exclamationmark.triangle.fill"
+                        )
+                        .foregroundStyle(.orange)
+                    }
+                } header: {
+                    Text("Not in catalog")
+                } footer: {
+                    Text("These card IDs aren't in your downloaded catalogs. Add the game or set under Settings → Card Catalogs, then try again.")
+                }
+            }
+
             if let outcome {
                 Section("Result") {
                     LabeledContent("Stacks added") {
@@ -84,12 +106,6 @@ struct CollectionImportView: View {
                     }
                     LabeledContent("Cards imported") {
                         Text("\(outcome.importedCopyCount)")
-                    }
-                    if outcome.skippedUnknownCards > 0 {
-                        LabeledContent("Not in catalog") {
-                            Text("\(outcome.skippedUnknownCards)")
-                                .foregroundStyle(.orange)
-                        }
                     }
                     if outcome.stoppedByFreeTierLimit {
                         Text("Import stopped — free tier collection limit reached. Upgrade to Premium to import the rest.")
@@ -118,7 +134,12 @@ struct CollectionImportView: View {
             }
             ToolbarItem(placement: .confirmationAction) {
                 Button("Import") { runImport() }
-                    .disabled(preview == nil || isImporting)
+                    .disabled(
+                        importPlan == nil
+                            || (importPlan?.importable.isEmpty ?? true)
+                            || isImporting
+                            || isValidatingCatalog
+                    )
             }
         }
         .fileImporter(
@@ -141,6 +162,42 @@ struct CollectionImportView: View {
         .sheet(isPresented: $showPaywall) {
             PaywallSheet().environment(services)
         }
+        .onDisappear {
+            validationTask?.cancel()
+        }
+    }
+
+    @ViewBuilder
+    private func skippedRowView(_ row: CollectionImportSkippedRow) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(row.cardName ?? row.cardID)
+                .font(.subheadline.weight(.medium))
+            HStack(spacing: 6) {
+                Text(row.variantDisplayName)
+                Text("·")
+                    .foregroundStyle(.tertiary)
+                Text("×\(row.quantity)")
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
+            Text(row.cardID)
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
+            Text(row.reason)
+                .font(.caption2)
+                .foregroundStyle(.orange)
+        }
+        .padding(.vertical, 2)
+    }
+
+    private func resetPreviewState() {
+        validationTask?.cancel()
+        parseResult = nil
+        importPlan = nil
+        previewError = nil
+        outcome = nil
+        importError = nil
+        isValidatingCatalog = false
     }
 
     private func handleFileSelection(_ result: Result<[URL], Error>) {
@@ -165,33 +222,45 @@ struct CollectionImportView: View {
 
         selectedFileURL = url
         selectedFileName = url.lastPathComponent
+        importPlan = nil
+        outcome = nil
+        importError = nil
+
         do {
-            preview = try DexCollectionCSVImporter.parse(fileURL: url)
+            let parsed = try DexCollectionCSVImporter.parse(fileURL: url)
+            parseResult = parsed
             previewError = nil
+            validateCatalog(for: parsed)
         } catch {
-            preview = nil
+            parseResult = nil
             previewError = error.localizedDescription
         }
     }
 
-    private func runImport() {
-        guard let preview else { return }
-        guard let url = selectedFileURL else {
-            importError = "Choose a CSV file first."
-            return
+    private func validateCatalog(for parsed: DexCollectionCSVImporter.ParseResult) {
+        validationTask?.cancel()
+        isValidatingCatalog = true
+        validationTask = Task {
+            let plan = await CollectionCSVImportService.buildImportPlan(
+                parseResult: parsed,
+                services: services
+            )
+            guard !Task.isCancelled else { return }
+            importPlan = plan
+            isValidatingCatalog = false
         }
+    }
+
+    private func runImport() {
+        guard let importPlan else { return }
 
         isImporting = true
         importError = nil
         outcome = nil
 
         Task {
-            let didAccess = url.startAccessingSecurityScopedResource()
-            defer { if didAccess { url.stopAccessingSecurityScopedResource() } }
-
-            let result = await CollectionCSVImportService.importFile(
-                url: url,
-                source: selectedSource,
+            let result = await CollectionCSVImportService.importPlan(
+                importPlan,
                 services: services,
                 modelContext: modelContext
             )
@@ -209,5 +278,4 @@ struct CollectionImportView: View {
             }
         }
     }
-
 }

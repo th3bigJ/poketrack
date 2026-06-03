@@ -23,6 +23,34 @@ struct CollectionCSVImportOutcome: Sendable {
     let stoppedByFreeTierLimit: Bool
 }
 
+struct CollectionImportSkippedRow: Identifiable, Sendable {
+    var id: String { "\(cardID)|\(variantDisplayName)" }
+    let cardID: String
+    let cardName: String?
+    let variantDisplayName: String
+    let quantity: Int
+    let reason: String
+}
+
+struct CollectionImportRowPlan: Sendable {
+    let cardID: String
+    let cardName: String
+    let variantKey: String
+    let variantDisplayName: String
+    let quantity: Int
+}
+
+/// Resolved import plan after matching CSV rows to the on-device catalog.
+struct CollectionImportPlan: Sendable {
+    let importable: [CollectionImportRowPlan]
+    let skipped: [CollectionImportSkippedRow]
+    let skippedZeroQuantity: Int
+    let skippedInvalidRows: Int
+
+    var importableRowCount: Int { importable.count }
+    var importableCopyCount: Int { importable.reduce(0) { $0 + $1.quantity } }
+}
+
 @MainActor
 enum CollectionCSVImportService {
 
@@ -37,42 +65,22 @@ enum CollectionCSVImportService {
         }
     }
 
-    static func importFile(
-        url: URL,
-        source: CollectionImportSource,
-        services: AppServices,
-        modelContext: ModelContext
-    ) async -> Result<CollectionCSVImportOutcome, Error> {
-        services.setupCollectionLedger(modelContext: modelContext)
-        guard let ledger = services.collectionLedger else {
-            return .failure(ServiceError.ledgerUnavailable)
-        }
-
-        do {
-            switch source {
-            case .dex:
-                let parseResult = try DexCollectionCSVImporter.parse(fileURL: url)
-                return await importDexRows(parseResult, ledger: ledger, services: services)
-            }
-        } catch {
-            return .failure(error)
-        }
-    }
-
-    private static func importDexRows(
-        _ parseResult: DexCollectionCSVImporter.ParseResult,
-        ledger: CollectionLedgerService,
+    static func buildImportPlan(
+        parseResult: DexCollectionCSVImporter.ParseResult,
         services: AppServices
-    ) async -> Result<CollectionCSVImportOutcome, Error> {
-        let currencyCode = services.priceDisplay.currency == .gbp ? "GBP" : "USD"
-        var importedCards = 0
-        var importedCopies = 0
-        var skippedUnknown = 0
-        var stoppedByLimit = false
+    ) async -> CollectionImportPlan {
+        var importable: [CollectionImportRowPlan] = []
+        var skipped: [CollectionImportSkippedRow] = []
 
         for row in parseResult.rows {
             guard let card = await services.cardData.loadCard(masterCardId: row.cardID) else {
-                skippedUnknown += 1
+                skipped.append(CollectionImportSkippedRow(
+                    cardID: row.cardID,
+                    cardName: row.cardName,
+                    variantDisplayName: row.variantDisplayName,
+                    quantity: row.quantity,
+                    reason: "Not in catalog"
+                ))
                 continue
             }
 
@@ -81,16 +89,65 @@ enum CollectionCSVImportService {
                 forDexVariant: row.variantDisplayName,
                 availableKeys: availableKeys
             )
-            let displayName = row.cardName ?? card.cardName
+            importable.append(CollectionImportRowPlan(
+                cardID: card.masterCardId,
+                cardName: row.cardName ?? card.cardName,
+                variantKey: variantKey,
+                variantDisplayName: row.variantDisplayName,
+                quantity: row.quantity
+            ))
+        }
 
+        return CollectionImportPlan(
+            importable: importable,
+            skipped: skipped,
+            skippedZeroQuantity: parseResult.skippedZeroQuantity,
+            skippedInvalidRows: parseResult.skippedInvalidRows
+        )
+    }
+
+    static func importFile(
+        url: URL,
+        source: CollectionImportSource,
+        services: AppServices,
+        modelContext: ModelContext
+    ) async -> Result<CollectionCSVImportOutcome, Error> {
+        do {
+            switch source {
+            case .dex:
+                let parseResult = try DexCollectionCSVImporter.parse(fileURL: url)
+                let plan = await buildImportPlan(parseResult: parseResult, services: services)
+                return await importPlan(plan, services: services, modelContext: modelContext)
+            }
+        } catch {
+            return .failure(error)
+        }
+    }
+
+    static func importPlan(
+        _ plan: CollectionImportPlan,
+        services: AppServices,
+        modelContext: ModelContext
+    ) async -> Result<CollectionCSVImportOutcome, Error> {
+        services.setupCollectionLedger(modelContext: modelContext)
+        guard let ledger = services.collectionLedger else {
+            return .failure(ServiceError.ledgerUnavailable)
+        }
+
+        let currencyCode = services.priceDisplay.currency == .gbp ? "GBP" : "USD"
+        var importedCards = 0
+        var importedCopies = 0
+        var stoppedByLimit = false
+
+        for row in plan.importable {
             do {
                 try ledger.recordSingleCardAcquisition(
-                    cardID: card.masterCardId,
-                    variantKey: variantKey,
+                    cardID: row.cardID,
+                    variantKey: row.variantKey,
                     kind: .imported,
                     quantity: row.quantity,
                     currencyCode: currencyCode,
-                    cardDisplayName: displayName,
+                    cardDisplayName: row.cardName,
                     unitPrice: nil,
                     packedOpenedFrom: nil,
                     tradeCounterparty: nil,
@@ -111,9 +168,9 @@ enum CollectionCSVImportService {
         let outcome = CollectionCSVImportOutcome(
             importedCardCount: importedCards,
             importedCopyCount: importedCopies,
-            skippedUnknownCards: skippedUnknown,
-            skippedZeroQuantity: parseResult.skippedZeroQuantity,
-            skippedInvalidRows: parseResult.skippedInvalidRows,
+            skippedUnknownCards: plan.skipped.count,
+            skippedZeroQuantity: plan.skippedZeroQuantity,
+            skippedInvalidRows: plan.skippedInvalidRows,
             stoppedByFreeTierLimit: stoppedByLimit
         )
         return .success(outcome)
