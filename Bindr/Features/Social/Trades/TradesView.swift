@@ -1,6 +1,11 @@
 import SwiftUI
 
 struct TradesView: View {
+    private enum ExpandedTradeSection {
+        case wall
+        case active
+    }
+
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var accent
     @Binding var navigationPath: NavigationPath
@@ -12,8 +17,7 @@ struct TradesView: View {
     @State private var isLoading = false
     @State private var errorMessage: String?
     @State private var showsCompletedTrades = false
-    @State private var isTradeWallExpanded = true
-    @State private var isOpenTradesExpanded = false
+    @State private var expandedSection: ExpandedTradeSection = .wall
     @State private var hasLoadedTrades = false
 
     private var currentUserID: UUID? {
@@ -87,13 +91,10 @@ struct TradesView: View {
                     subtitle: "Suggested & trade lists",
                     systemImage: "sparkles",
                     count: nil,
-                    isExpanded: isTradeWallExpanded
+                    isExpanded: expandedSection == .wall
                 ) {
                     withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
-                        isTradeWallExpanded.toggle()
-                        if isTradeWallExpanded {
-                            isOpenTradesExpanded = false
-                        }
+                        expandedSection = .wall
                     }
                 }
 
@@ -102,26 +103,23 @@ struct TradesView: View {
                     subtitle: showsCompletedTrades ? "Including completed" : "Open offers",
                     systemImage: "arrow.left.arrow.right",
                     count: openTrades.count,
-                    isExpanded: isOpenTradesExpanded
+                    isExpanded: expandedSection == .active
                 ) {
                     withAnimation(.spring(response: 0.28, dampingFraction: 0.86)) {
-                        isOpenTradesExpanded.toggle()
-                        if isOpenTradesExpanded {
-                            isTradeWallExpanded = false
-                        }
+                        expandedSection = .active
                     }
                 }
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 10)
 
-            if isTradeWallExpanded {
+            if expandedSection == .wall {
                 TradeWallView(navigationPath: $navigationPath)
                     .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                     .padding(.horizontal, 16)
             }
 
-            if isOpenTradesExpanded {
+            if expandedSection == .active {
                 VStack(spacing: 0) {
                     Toggle("Show Completed", isOn: $showsCompletedTrades)
                         .font(.caption.weight(.semibold))
@@ -277,11 +275,6 @@ struct TradesView: View {
         do {
             trades = try await services.trade.fetchMyTrades()
             await loadProfilesForTrades()
-            
-            // Auto-expand open trades if there are active trades to see; otherwise collapse to keep vertical space free for the trade wall grid
-            withAnimation(.easeInOut(duration: 0.25)) {
-                isOpenTradesExpanded = !openTrades.isEmpty
-            }
             errorMessage = nil
         } catch is CancellationError {
         } catch let error as URLError where error.code == .cancelled {

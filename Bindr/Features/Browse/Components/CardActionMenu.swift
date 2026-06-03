@@ -198,7 +198,7 @@ struct CardActionMenu: View {
         if offerTradeOnly { return "Offer Trade" }
         if isDeckAddOnlyMode { return "Add to Deck" }
         if isOwned { return "Manage..." }
-        if tradeActionLabel != nil { return "Interested?" }
+        if let tradeActionLabel { return tradeActionLabel.replacingOccurrences(of: "...", with: "") }
         return "Add to..."
     }
     

@@ -109,7 +109,8 @@ struct FriendProfileView: View {
                 startIndex: session.startIndex,
                 tradeAction: (navigationPath != nil && profile != nil) ? { card, _ in
                     offerSingleCardTrade(cardID: card.masterCardId)
-                } : nil
+                } : nil,
+                tradeActionLabel: "Offer Trade"
             )
             .environment(services)
         }

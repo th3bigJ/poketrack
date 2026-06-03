@@ -21,6 +21,7 @@ struct MyProfileView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.presentCard) private var presentCard
 
     @State private var cardCount: Int = 0
     @State private var binderCount: Int = 0
@@ -29,6 +30,9 @@ struct MyProfileView: View {
     @State private var favoriteCardPrice: Double?
     @State private var myActivity: [SocialFeedService.FeedItem] = []
     @State private var localSelectedProfileTab: ProfileTab = .posts
+    @State private var isProfileCardSelectMode = false
+    @State private var selectedProfileCardIDs: Set<String> = []
+    @State private var profileCardsByID: [String: Card] = [:]
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
 
@@ -312,18 +316,33 @@ struct MyProfileView: View {
                 if ids.isEmpty {
                     emptyProfileCard("Your public wishlist will appear here.")
                 } else {
-                    WishlistCardGrid(cardIDs: ids, cardLoader: { id in
-                        await services.cardData.loadCard(masterCardId: id)
-                    })
+                    SelectableCardGrid(
+                        cardIDs: ids,
+                        isSelectMode: $isProfileCardSelectMode,
+                        selectedCardIDs: $selectedProfileCardIDs,
+                        cardLoader: { id in await loadProfileCard(id) },
+                        onCardTap: { tappedID in
+                            Task { await openProfileCardDetail(tappedID: tappedID, orderedIDs: ids) }
+                        }
+                    )
                 }
             case .tradeList:
                 let ids = tradeListItems.map(\.cardID).filter(isRenderableCardIDForProfileGrid)
                 if ids.isEmpty {
                     emptyProfileCard("Cards you add to your trade list will appear here.")
                 } else {
-                    WishlistCardGrid(cardIDs: ids, cardLoader: { id in
-                        await services.cardData.loadCard(masterCardId: id)
-                    })
+                    SelectableCardGrid(
+                        cardIDs: ids,
+                        isSelectMode: $isProfileCardSelectMode,
+                        selectedCardIDs: $selectedProfileCardIDs,
+                        cardLoader: { id in await loadProfileCard(id) },
+                        onCardTap: { tappedID in
+                            Task { await openProfileCardDetail(tappedID: tappedID, orderedIDs: ids) }
+                        },
+                        onRemoveFromTradeList: { cardID in
+                            removeCardFromTradeList(cardID)
+                        }
+                    )
                 }
             case .friends:
                 EmptyView()
@@ -348,6 +367,37 @@ struct MyProfileView: View {
         // Shared profile card grid renders trading cards only.
         // Sealed product ids (e.g. "sealed:pokemon:123") produce permanent placeholders.
         !cardID.hasPrefix("sealed:")
+    }
+
+    @MainActor
+    private func loadProfileCard(_ cardID: String) async -> Card? {
+        if let cached = profileCardsByID[cardID] {
+            return cached
+        }
+        guard let loaded = await services.cardData.loadCard(masterCardId: cardID) else {
+            return nil
+        }
+        profileCardsByID[cardID] = loaded
+        return loaded
+    }
+
+    @MainActor
+    private func openProfileCardDetail(tappedID: String, orderedIDs: [String]) async {
+        guard !isProfileCardSelectMode else { return }
+        _ = await loadProfileCard(tappedID)
+        guard let tappedCard = profileCardsByID[tappedID] else { return }
+        let orderedCards = orderedIDs.compactMap { profileCardsByID[$0] }
+        presentCard(tappedCard, orderedCards.isEmpty ? [tappedCard] : orderedCards)
+    }
+
+    private func removeCardFromTradeList(_ cardID: String) {
+        for item in tradeListItems where item.cardID == cardID {
+            modelContext.delete(item)
+        }
+        try? modelContext.save()
+        let remaining = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: remaining)
+        Haptics.lightImpact()
     }
 
     private func rolePill(_ title: String) -> some View {

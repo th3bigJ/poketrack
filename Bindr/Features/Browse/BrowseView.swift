@@ -558,12 +558,14 @@ private struct BrowseCardGridButton: View {
     let gridOptions: BrowseGridOptions
     let isOwned: Bool
     let isWishlisted: Bool
+    let isTradeable: Bool
     let ownedCountBadge: Int?
     let isMultiSelectActive: Bool
     let services: AppServices
     let colorScheme: ColorScheme
     @Binding var multiSelectedCardIDs: Set<String>
     let onQuickAddRequested: (Card, CardContextAction) -> Void
+    let onTradeListToggleRequested: (Card) -> Void
     let onSelectMultipleRequested: (Card) -> Void
 
     @Environment(\.presentCard) private var presentCard
@@ -619,9 +621,12 @@ private struct BrowseCardGridButton: View {
                 Label("Add to Wishlist", systemImage: "heart")
             }
             Button {
-                onQuickAddRequested(row.card, .tradeList)
+                onTradeListToggleRequested(row.card)
             } label: {
-                Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                Label(
+                    isTradeable ? "Remove from Trade List" : "Add to Trade List",
+                    systemImage: isTradeable ? "minus.circle" : "arrow.left.arrow.right"
+                )
             }
             Button {
                 onQuickAddRequested(row.card, .folder)
@@ -641,6 +646,7 @@ struct BrowseView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
+    @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
 
     let collectionItems: [CollectionItem]
 
@@ -741,6 +747,13 @@ struct BrowseView: View {
             let cardID = item.cardID
             let itemBrand = TCGBrand.inferredFromMasterCardId(cardID)
             return itemBrand == services.brandSettings.selectedCatalogBrand ? cardID : nil
+        })
+    }
+
+    private var visibleTradeListCardIDs: Set<String> {
+        Set(tradeListItems.compactMap { item in
+            let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return itemBrand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
     }
 
@@ -1059,6 +1072,7 @@ struct BrowseView: View {
         let snapshot = browseFeedSnapshot
         let usesCatalogFeed = isUsingCatalogFeedSelection
         let ownedQuantities = ownedQuantityByCardID
+        let tradeListCardIDs = visibleTradeListCardIDs
         VStack(spacing: 0) {
             EagerVGrid(items: snapshot.rows, columns: safeColumnCount, spacing: 12) { row in
                 BrowseCardGridButton(
@@ -1066,12 +1080,14 @@ struct BrowseView: View {
                     gridOptions: gridOptions,
                     isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
                     isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
+                    isTradeable: tradeListCardIDs.contains(row.card.masterCardId),
                     ownedCountBadge: ownedQuantities[row.card.masterCardId],
                     isMultiSelectActive: isMultiSelectActive,
                     services: services,
                     colorScheme: colorScheme,
                     multiSelectedCardIDs: $multiSelectedCardIDs,
                     onQuickAddRequested: beginQuickAdd(card:action:),
+                    onTradeListToggleRequested: beginTradeListToggle(card:),
                     onSelectMultipleRequested: beginSelectMultiple(with:)
                 )
                 .onAppear {
@@ -1350,9 +1366,12 @@ struct BrowseView: View {
                                 Label("Add to Wishlist", systemImage: "heart")
                             }
                             Button {
-                                beginQuickAdd(card: card, action: .tradeList)
+                                beginTradeListToggle(card: card)
                             } label: {
-                                Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                                Label(
+                                    visibleTradeListCardIDs.contains(card.masterCardId) ? "Remove from Trade List" : "Add to Trade List",
+                                    systemImage: visibleTradeListCardIDs.contains(card.masterCardId) ? "minus.circle" : "arrow.left.arrow.right"
+                                )
                             }
                             Button {
                                 beginQuickAdd(card: card, action: .folder)
@@ -1580,6 +1599,22 @@ struct BrowseView: View {
                 )
             }
         }
+    }
+
+    private func beginTradeListToggle(card: Card) {
+        if let existing = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
+            modelContext.delete(existing)
+            try? modelContext.save()
+            syncTradeList()
+            Haptics.lightImpact()
+        } else {
+            beginQuickAdd(card: card, action: .tradeList)
+        }
+    }
+
+    private func syncTradeList() {
+        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
     }
 
     private func addCardToWishlist(_ card: Card) {
@@ -3702,6 +3737,7 @@ struct SetCardsView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Query private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
+    @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
     @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
     let set: TCGSet
 
@@ -3743,6 +3779,13 @@ struct SetCardsView: View {
 
     private var wishlistedCardIDs: Set<String> {
         Set(wishlistItems.compactMap { item in
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
+        })
+    }
+
+    private var tradeListCardIDs: Set<String> {
+        Set(tradeListItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
@@ -3995,9 +4038,12 @@ struct SetCardsView: View {
                                         Label("Add to Wishlist", systemImage: "heart")
                                     }
                                     Button {
-                                        beginCardContextAction(card: card, action: .tradeList)
+                                        beginTradeListToggle(card: card)
                                     } label: {
-                                        Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                                        Label(
+                                            tradeListCardIDs.contains(card.masterCardId) ? "Remove from Trade List" : "Add to Trade List",
+                                            systemImage: tradeListCardIDs.contains(card.masterCardId) ? "minus.circle" : "arrow.left.arrow.right"
+                                        )
                                     }
                                     Button {
                                         beginCardContextAction(card: card, action: .folder)
@@ -4326,6 +4372,22 @@ struct SetCardsView: View {
                 )
             }
         }
+    }
+
+    private func beginTradeListToggle(card: Card) {
+        if let existing = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
+            modelContext.delete(existing)
+            try? modelContext.save()
+            syncTradeList()
+            Haptics.lightImpact()
+        } else {
+            beginCardContextAction(card: card, action: .tradeList)
+        }
+    }
+
+    private func syncTradeList() {
+        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
     }
 
     private func addCardToWishlist(_ card: Card) {

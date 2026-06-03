@@ -545,6 +545,9 @@ struct CollectView: View {
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {
+                let existingTradeItem = tradeListItems.first {
+                    $0.cardID == item.cardID && $0.variantKey == item.variantKey
+                }
                 Button {
                     pendingCardContextRequest = CardContextActionRequest(
                         card: card,
@@ -569,17 +572,25 @@ struct CollectView: View {
                 } label: {
                     Label("Add to Wishlist", systemImage: "heart")
                 }
-                Button {
-                    pendingCardContextRequest = CardContextActionRequest(
-                        card: card,
-                        availableVariantKeys: [item.variantKey],
-                        initialVariantKey: item.variantKey,
-                        ownedQuantity: item.quantity,
-                        collectionItem: item,
-                        initialAction: .tradeList
-                    )
-                } label: {
-                    Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                if let existingTradeItem {
+                    Button(role: .destructive) {
+                        removeFromTradeList(existingTradeItem)
+                    } label: {
+                        Label("Remove from Trade List", systemImage: "minus.circle")
+                    }
+                } else {
+                    Button {
+                        pendingCardContextRequest = CardContextActionRequest(
+                            card: card,
+                            availableVariantKeys: [item.variantKey],
+                            initialVariantKey: item.variantKey,
+                            ownedQuantity: item.quantity,
+                            collectionItem: item,
+                            initialAction: .tradeList
+                        )
+                    } label: {
+                        Label("Add to Trade List", systemImage: "arrow.left.arrow.right")
+                    }
                 }
                 Button {
                     pendingCardContextRequest = CardContextActionRequest(

@@ -6,6 +6,7 @@ struct SelectableCardGrid: View {
     @Binding var selectedCardIDs: Set<String>
     let cardLoader: (String) async -> Card?
     var onCardTap: ((String) -> Void)? = nil
+    var onRemoveFromTradeList: ((String) -> Void)? = nil
 
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 8), count: 3)
     private let pageSize = 36
@@ -28,7 +29,8 @@ struct SelectableCardGrid: View {
                     cardID: id,
                     isSelectMode: isSelectMode,
                     isSelected: selectedCardIDs.contains(id),
-                    cardLoader: cardLoader
+                    cardLoader: cardLoader,
+                    onRemoveFromTradeList: onRemoveFromTradeList
                 ) {
                     if isSelectMode {
                         if selectedCardIDs.contains(id) {
@@ -73,6 +75,7 @@ private struct SelectableCardCell: View {
     let isSelectMode: Bool
     let isSelected: Bool
     let cardLoader: (String) async -> Card?
+    let onRemoveFromTradeList: ((String) -> Void)?
     let onTap: () -> Void
 
     @State private var card: Card?
@@ -112,6 +115,15 @@ private struct SelectableCardCell: View {
             }
         }
         .buttonStyle(.plain)
+        .contextMenu {
+            if let onRemoveFromTradeList {
+                Button(role: .destructive) {
+                    onRemoveFromTradeList(cardID)
+                } label: {
+                    Label("Remove from Trade List", systemImage: "minus.circle")
+                }
+            }
+        }
         .task { card = await cardLoader(cardID) }
     }
 

@@ -621,37 +621,19 @@ struct LoadingScreen: View {
     let totalBytes: Int64
 
     @Environment(\.bindrAccent) private var bindrAccent
-    @Environment(\.colorScheme) private var colorScheme
-    private var foreground: Color { colorScheme == .dark ? .white : Color(white: 0.08) }
-
-    private var byteProgressText: String {
-        guard totalBytes > 0 else { return "Calculating download size…" }
-        let f = ByteCountFormatter()
-        f.allowedUnits = [.useKB, .useMB]
-        f.countStyle = .file
-        f.includesUnit = true
-        return "\(f.string(fromByteCount: downloadedBytes)) / \(f.string(fromByteCount: totalBytes))"
-    }
 
     var body: some View {
-        ZStack {
-            Color(uiColor: .systemBackground).ignoresSafeArea()
-            VStack(spacing: 20) {
-                VStack(spacing: 8) {
-                    Text(message).font(.headline).foregroundStyle(.primary).multilineTextAlignment(.center)
-                    Text(status).font(.subheadline).foregroundStyle(.secondary).multilineTextAlignment(.center)
-                }
-                VStack(spacing: 10) {
-                    CAProgressBar(fraction: progress, fillColor: bindrAccent, height: 3)
-                        .frame(width: min(UIScreen.main.bounds.width - 64, 320))
-                    Text("\(Int((min(max(progress, 0), 1) * 100).rounded()))% complete")
-                        .font(.subheadline.weight(.semibold)).foregroundStyle(.primary)
-                    Text(byteProgressText).font(.caption).foregroundStyle(.secondary)
-                }
-            }
-            .padding(.horizontal, 24)
-            .frame(maxWidth: 420)
-        }
+        LaunchWordmarkView(
+            progress: LaunchProgressState(
+                message: message,
+                status: status,
+                fraction: progress,
+                downloadedBytes: downloadedBytes,
+                totalBytes: totalBytes,
+                hasByteProgress: totalBytes > 0
+            )
+        )
+        .environment(\.bindrAccent, bindrAccent)
     }
 }
 

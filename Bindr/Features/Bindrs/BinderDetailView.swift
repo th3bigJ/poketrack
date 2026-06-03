@@ -575,7 +575,10 @@ struct BinderDetailView: View {
             .background(
                 GeometryReader { pgGeo in
                     let layoutFrame = pgGeo.frame(in: .named("bindersRoot"))
-                    let visualFrame = layoutFrame.offsetBy(dx: 0, dy: pageVerticalOffset)
+                    let reportedFrame = isCoverPage(currentPage)
+                        ? coverFrame(in: pageSize, pageOrigin: layoutFrame.origin)
+                        : layoutFrame
+                    let visualFrame = reportedFrame.offsetBy(dx: 0, dy: pageVerticalOffset)
                     Color.clear.preference(
                         key: BinderPageFramePreferenceKey.self,
                         value: visualFrame
@@ -601,21 +604,7 @@ struct BinderDetailView: View {
             ? formattedTotalValue
             : nil)
 
-        // Lay the cover out at A4 aspect, fitted inside ``pageSize``.
-        // Same maths as ``BinderOpenContainer.coverTargetFrame`` so the
-        // moment the morph overlay fades, the page-0 cover sits at the
-        // exact same rectangle and the hand-off is invisible.
-        let coverAspect: CGFloat = 0.707
-        let pageAspect = pageSize.width / max(pageSize.height, 1)
-        let coverWidth: CGFloat
-        let coverHeight: CGFloat
-        if pageAspect < coverAspect {
-            coverWidth = pageSize.width
-            coverHeight = coverWidth / coverAspect
-        } else {
-            coverHeight = pageSize.height
-            coverWidth = coverHeight * coverAspect
-        }
+        let coverRect = coverFrame(in: pageSize)
 
         return ZStack {
             // The page itself is the system background — same colour
@@ -628,10 +617,31 @@ struct BinderDetailView: View {
                 valueText: value
             )
             .peekingURLsOverride(preloadedPeekingURLs)
-            .frame(width: coverWidth, height: coverHeight)
+            .frame(width: coverRect.width, height: coverRect.height)
+            .position(x: coverRect.midX, y: coverRect.midY)
         }
         .frame(width: pageSize.width, height: pageSize.height)
         .clipped()
+    }
+
+    private func coverFrame(in pageSize: CGSize, pageOrigin: CGPoint = .zero) -> CGRect {
+        let coverAspect: CGFloat = 0.707
+        let pageAspect = pageSize.width / max(pageSize.height, 1)
+        let coverWidth: CGFloat
+        let coverHeight: CGFloat
+        if pageAspect < coverAspect {
+            coverWidth = pageSize.width
+            coverHeight = coverWidth / coverAspect
+        } else {
+            coverHeight = pageSize.height
+            coverWidth = coverHeight * coverAspect
+        }
+        return CGRect(
+            x: pageOrigin.x + (pageSize.width - coverWidth) / 2,
+            y: pageOrigin.y + (pageSize.height - coverHeight) / 2,
+            width: coverWidth,
+            height: coverHeight
+        )
     }
 
     private func innerPageScale(for pageIdx: Int) -> CGFloat {

@@ -634,8 +634,7 @@ struct TradeDetailView: View {
 
     private func applyLocalTradeSettlementIfNeeded(_ twi: TradeWithItems) async {
         let settlementKey = "trade.local.settlement.\(twi.id.uuidString)"
-        guard !UserDefaults.standard.bool(forKey: settlementKey) else { return }
-        guard let ledger = services.collectionLedger else { return }
+        let tradeListCleanupKey = "trade.local.tradeListCleanup.v2.\(twi.id.uuidString)"
         guard let uid = currentUserID else { return }
 
         let myItems = twi.myItems(currentUserID: uid)
@@ -651,19 +650,25 @@ struct TradeDetailView: View {
         let isCashPurchase = netCashPaid > 0 && totalReceivedQty > 0
         let cardUnitPrice = isCashPurchase ? netCashPaid / Double(totalReceivedQty) : nil
 
+        if !UserDefaults.standard.bool(forKey: tradeListCleanupKey) {
+            for item in myItems {
+                removeFromLocalTradeList(
+                    cardID: item.cardID,
+                    variantKey: item.variantKey,
+                    quantity: max(item.quantity, 1)
+                )
+            }
+            try? modelContext.save()
+            let remainingTradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
+            services.socialCardLibrary.scheduleAutoSyncTradeList(items: remainingTradeListItems)
+            UserDefaults.standard.set(true, forKey: tradeListCleanupKey)
+        }
+
+        guard !UserDefaults.standard.bool(forKey: settlementKey) else { return }
+        guard let ledger = services.collectionLedger else { return }
+
         for item in myItems {
             let quantity = max(item.quantity, 1)
-
-            // Remove from local TradeList
-            let fetchDescriptor = FetchDescriptor<TradeListItem>()
-            let tradeListItems = (try? modelContext.fetch(fetchDescriptor)) ?? []
-            if let matchingTradeItem = tradeListItems.first(where: { $0.cardID == item.cardID && $0.variantKey == item.variantKey }) {
-                if matchingTradeItem.quantity <= quantity {
-                    modelContext.delete(matchingTradeItem)
-                } else {
-                    matchingTradeItem.quantity -= quantity
-                }
-            }
 
             guard let stack = findCardStack(cardID: item.cardID, variantKey: item.variantKey),
                   stack.quantity > 0 else { continue }
@@ -758,14 +763,37 @@ struct TradeDetailView: View {
         }
     }
 
+    private func removeFromLocalTradeList(cardID: String, variantKey: String, quantity: Int) {
+        let tradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
+        let candidates = tradeListItems.filter { $0.cardID == cardID }
+        guard !candidates.isEmpty else { return }
+
+        let ordered = candidates.sorted {
+            if $0.variantKey == variantKey && $1.variantKey != variantKey { return true }
+            if $0.variantKey != variantKey && $1.variantKey == variantKey { return false }
+            return $0.dateAdded < $1.dateAdded
+        }
+
+        var remaining = max(quantity, 1)
+        for item in ordered where remaining > 0 {
+            let removed = min(item.quantity, remaining)
+            if item.quantity <= removed {
+                modelContext.delete(item)
+            } else {
+                item.quantity -= removed
+            }
+            remaining -= removed
+        }
+    }
+
     private func findCardStack(cardID: String, variantKey: String) -> CollectionItem? {
         let descriptor = FetchDescriptor<CollectionItem>()
         let all = (try? modelContext.fetch(descriptor)) ?? []
-        return all.first(where: {
+        let matchingStacks = all.filter {
             $0.cardID == cardID
-                && $0.variantKey == variantKey
                 && ($0.itemKind == ProductKind.singleCard.rawValue || $0.itemKind == ProductKind.gradedItem.rawValue)
-        })
+        }
+        return matchingStacks.first(where: { $0.variantKey == variantKey }) ?? matchingStacks.first
     }
 
     private func cashLedgerEntryExists(reference: String) -> Bool {

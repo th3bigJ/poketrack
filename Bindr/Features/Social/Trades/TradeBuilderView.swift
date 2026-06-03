@@ -27,7 +27,6 @@ struct TradeBuilderView: View {
     @State private var isMyCardPickerPresented = false
     @State private var isTheirCardPickerPresented = false
     @State private var receiverProfile: SocialProfile?
-    @State private var receiverCollectionCardIDs: Set<String> = []
     @State private var myCollectionCardIDs: Set<String> = []
     @State private var isOwnershipLoading = true
     @State private var cardNameByID: [String: String] = [:]
@@ -78,8 +77,7 @@ struct TradeBuilderView: View {
         return myCards.filter { !myCollectionCardIDs.contains($0.cardID) }
     }
     private var theirUnavailableCards: [NewTradeItemInput] {
-        guard !isOwnershipLoading else { return [] }
-        return theirCards.filter { !receiverCollectionCardIDs.contains($0.cardID) }
+        []
     }
     private var hasUnavailableCards: Bool {
         !myUnavailableCards.isEmpty || !theirUnavailableCards.isEmpty
@@ -194,8 +192,6 @@ struct TradeBuilderView: View {
             isOwnershipLoading = true
             defer { isOwnershipLoading = false }
             receiverProfile = try? await services.socialProfile.fetchProfile(id: receiverID)
-            async let theirTradeListTask = services.socialCardLibrary.fetchTradeListCardIDs(for: receiverID)
-            receiverCollectionCardIDs = Set<String>((try? await theirTradeListTask) ?? [])
             myCollectionCardIDs = localCollectionCardIDs
         }
         .task(id: unavailableCardNameLookupSignature) {
@@ -275,21 +271,7 @@ struct TradeBuilderView: View {
         } header: {
             Text(receiverProfile.map { "Their Side (@\($0.username))" } ?? "Their Side")
         } footer: {
-            if theirUnavailableCards.isEmpty {
-                Text("Cards you are requesting from them. Total includes cards + cash.")
-            } else {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("Warning: They don't currently have \(theirUnavailableCards.count) selected \(theirUnavailableCards.count == 1 ? "card" : "cards") in their trade list.")
-                        .foregroundStyle(.red)
-                    Text(unavailableNamesText(for: theirUnavailableCards))
-                        .foregroundStyle(.red)
-                    Button("Remove unavailable cards") {
-                        removeUnavailableFromTheirSide()
-                    }
-                    .font(.system(size: 12, weight: .semibold))
-                    .foregroundStyle(.red)
-                }
-            }
+            Text("Cards you are requesting from them. Total includes cards + cash.")
         }
     }
 
@@ -419,11 +401,6 @@ struct TradeBuilderView: View {
     private func removeUnavailableFromMySide() {
         guard !isOwnershipLoading else { return }
         myCards.removeAll { !myCollectionCardIDs.contains($0.cardID) }
-    }
-
-    private func removeUnavailableFromTheirSide() {
-        guard !isOwnershipLoading else { return }
-        theirCards.removeAll { !receiverCollectionCardIDs.contains($0.cardID) }
     }
 
     private func unavailableNamesText(for items: [NewTradeItemInput]) -> String {
