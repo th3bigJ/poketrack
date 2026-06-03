@@ -72,8 +72,11 @@ enum CollectionCSVImportService {
         var importable: [CollectionImportRowPlan] = []
         var skipped: [CollectionImportSkippedRow] = []
 
+        let catalogIds = Array(Set(parseResult.rows.map(\.cardID)))
+        let cardsByCatalogId = await services.cardData.loadCardsByCatalogIds(catalogIds)
+
         for row in parseResult.rows {
-            guard let card = await services.cardData.loadCard(masterCardId: row.cardID) else {
+            guard let card = cardsByCatalogId[row.cardID] else {
                 skipped.append(CollectionImportSkippedRow(
                     cardID: row.cardID,
                     cardName: row.cardName,

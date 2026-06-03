@@ -4,6 +4,7 @@ import Foundation
 enum DexCollectionCSVImporter {
 
     struct Row: Sendable {
+        /// Dex `Id` column — matches catalog ``Card/externalId`` (not ``Card/masterCardId``).
         let cardID: String
         let variantDisplayName: String
         let quantity: Int

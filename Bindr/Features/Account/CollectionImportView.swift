@@ -76,7 +76,7 @@ struct CollectionImportView: View {
             } header: {
                 Text("File")
             } footer: {
-                Text("Uses Id for the card, Variant for the printing, and Quantity for how many to add. Rows with quantity 0 are ignored.")
+                Text("Uses Id (matches each card's external id in our catalog), Variant for the printing, and Quantity for how many to add. Rows with quantity 0 are ignored.")
             }
 
             if let importPlan, !importPlan.skipped.isEmpty {
@@ -95,7 +95,7 @@ struct CollectionImportView: View {
                 } header: {
                     Text("Not in catalog")
                 } footer: {
-                    Text("These card IDs aren't in your downloaded catalogs. Add the game or set under Settings → Card Catalogs, then try again.")
+                    Text("These external ids aren't in your downloaded catalogs. Add the game or set under Settings → Card Catalogs, then try again.")
                 }
             }
 

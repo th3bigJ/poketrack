@@ -788,6 +788,87 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    /// Resolves cards when the caller has a Dex-style id (`externalId`, e.g. `sv2-12`) rather than `masterCardId`.
+    /// Returns a map keyed by the **original** id strings from `catalogIds`.
+    func fetchCardsMatchingCatalogIds(_ catalogIds: [String], brand: TCGBrand) async throws -> [String: Card] {
+        let trimmed = catalogIds
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        let unique = Array(Set(trimmed))
+        guard !unique.isEmpty else { return [:] }
+
+        var lowerToOriginal: [String: String] = [:]
+        for id in unique {
+            lowerToOriginal[id.lowercased()] = id
+        }
+        let lowerIDs = Array(lowerToOriginal.keys)
+        var result: [String: Card] = [:]
+
+        return try await withCheckedThrowingContinuation { continuation in
+            self.readAsync(continuation) { db in
+                let chunkSize = 80
+                var index = 0
+                while index < lowerIDs.count {
+                    let upper = min(index + chunkSize, lowerIDs.count)
+                    let chunk = Array(lowerIDs[index..<upper])
+                    let placeholders = Array(repeating: "?", count: chunk.count).joined(separator: ",")
+                    let sql = """
+                        SELECT json FROM catalog_cards
+                        WHERE brand = ?
+                          AND (
+                            lower(master_card_id) IN (\(placeholders))
+                            OR lower(json_extract(json, '$.externalId')) IN (\(placeholders))
+                            OR lower(json_extract(json, '$.tcgdex_id')) IN (\(placeholders))
+                          );
+                        """
+                    var stmt: OpaquePointer?
+                    guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                    var bindIndex: Int32 = 1
+                    brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, bindIndex, $0, -1, CatalogSQLite.transient) }
+                    bindIndex += 1
+                    for _ in 0..<3 {
+                        for id in chunk {
+                            id.withCString { _ = sqlite3_bind_text(stmt, bindIndex, $0, -1, CatalogSQLite.transient) }
+                            bindIndex += 1
+                        }
+                    }
+                    while sqlite3_step(stmt) == SQLITE_ROW {
+                        guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                        let s = String(cString: c)
+                        guard let d = s.data(using: .utf8),
+                              let card = try? self.jsonDecoder.decode(Card.self, from: d) else { continue }
+                        Self.registerCatalogIdAliases(for: card, lowerToOriginal: lowerToOriginal, into: &result)
+                    }
+                    sqlite3_finalize(stmt)
+                    index = upper
+                }
+                return result
+            }
+        }
+    }
+
+    private static func registerCatalogIdAliases(
+        for card: Card,
+        lowerToOriginal: [String: String],
+        into result: inout [String: Card]
+    ) {
+        var aliases: [String] = [card.masterCardId]
+        if let externalId = card.externalId { aliases.append(externalId) }
+        if let tcgdexId = card.tcgdex_id { aliases.append(tcgdexId) }
+        if let local = card.localId, !local.isEmpty {
+            aliases.append("\(card.setCode)-\(local)")
+            if let n = Int(local) {
+                aliases.append("\(card.setCode)-\(n)")
+                aliases.append(String(format: "%@-%03d", card.setCode, n))
+            }
+        }
+        for alias in aliases {
+            let key = alias.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            guard !key.isEmpty, let original = lowerToOriginal[key] else { continue }
+            result[original] = card
+        }
+    }
+
     /// Bulk card lookup by catalog id for a known franchise.
     /// Uses chunked `IN` queries to stay within SQLite parameter limits.
     func fetchCards(masterCardIDs: [String], brand: TCGBrand) async throws -> [Card] {

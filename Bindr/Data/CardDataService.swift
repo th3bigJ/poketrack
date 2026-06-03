@@ -628,6 +628,12 @@ final class CardDataService {
         do {
             try await CatalogStore.shared.open()
             if let c = try await CatalogStore.shared.fetchCard(masterCardId: masterCardId, brand: inferred) {
+                cacheCard(c)
+                return c
+            }
+            let byCatalogId = try await CatalogStore.shared.fetchCardsMatchingCatalogIds([masterCardId], brand: inferred)
+            if let c = byCatalogId[masterCardId] {
+                cacheCard(c)
                 return c
             }
         } catch {
@@ -636,10 +642,35 @@ final class CardDataService {
         for set in sets {
             let cards = await loadCards(forSetCode: set.setCode)
             if let c = cards.first(where: { $0.masterCardId == masterCardId }) {
+                cacheCard(c)
+                return c
+            }
+            if let c = cards.first(where: {
+                $0.externalId?.caseInsensitiveCompare(masterCardId) == .orderedSame
+                    || $0.tcgdex_id?.caseInsensitiveCompare(masterCardId) == .orderedSame
+            }) {
+                cacheCard(c)
                 return c
             }
         }
         return nil
+    }
+
+    /// Bulk resolve Dex / pricing ids (`externalId`, `tcgdex_id`, or `masterCardId`) to catalog cards.
+    func loadCardsByCatalogIds(_ catalogIds: [String], catalogBrand: TCGBrand = .pokemon) async -> [String: Card] {
+        guard !catalogIds.isEmpty else { return [:] }
+        do {
+            try await CatalogStore.shared.open()
+            let map = try await CatalogStore.shared.fetchCardsMatchingCatalogIds(catalogIds, brand: catalogBrand)
+            for card in map.values { cacheCard(card) }
+            return map
+        } catch {
+            return [:]
+        }
+    }
+
+    private func cacheCard(_ card: Card) {
+        cardByMasterID[card.masterCardId] = card
     }
 
     /// Bulk resolves cards by `masterCardId` in one SQLite pass.
