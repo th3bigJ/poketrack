@@ -8,12 +8,11 @@ struct DeckShareView: View {
         HStack(spacing: 16) {
             // Stacked card thumbnails
             ZStack {
-                ForEach(0..<min(3, item.thumbnails?.count ?? 0), id: \.self) { index in
-                    if let thumbnails = item.thumbnails {
-                        thumbnail(cardID: thumbnails[index])
-                            .rotationEffect(.degrees(Double(index - 1) * 10))
-                            .offset(x: Double(index - 1) * 15)
-                    }
+                let thumbnails = Array((item.thumbnails ?? []).prefix(3).reversed())
+                ForEach(0..<thumbnails.count, id: \.self) { index in
+                    thumbnail(cardID: thumbnails[index])
+                        .rotationEffect(.degrees(Double(index - 1) * 10))
+                        .offset(x: Double(index - 1) * 15)
                 }
             }
             .frame(width: 80, height: 80)

@@ -474,7 +474,7 @@ private struct CardStackPreview: View {
     @State private var cardImageURLs: [URL?] = []
 
     private var thumbnailIDs: [String] {
-        Array((item.thumbnails ?? []).prefix(4))
+        Array((item.thumbnails ?? []).prefix(4).reversed())
     }
 
     var body: some View {

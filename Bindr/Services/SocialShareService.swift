@@ -443,12 +443,18 @@ final class SocialShareService {
     }
 
     func scheduleAutoSync(deck: Deck) {
+        let mainID = deck.previewCardID
+        let sortedCards = deck.cardList.sorted { a, b in
+            if a.cardID == mainID { return true }
+            if b.cardID == mainID { return false }
+            return a.cardName < b.cardName
+        }
         let snapshot = DeckSyncSnapshot(
             id: deck.id,
             title: deck.title,
             brandRawValue: deck.tcgBrand.rawValue,
             formatDisplayName: deck.deckFormat.displayName,
-            cards: deck.cardList.map {
+            cards: sortedCards.map {
                 DeckCardSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, cardName: $0.cardName, quantity: $0.quantity)
             }
         )
@@ -910,13 +916,26 @@ final class SocialShareService {
             }
             rows.append(row)
         }
+        
+        var thumbnailIDs: [String] = []
+        if let main = deck.previewCardID {
+            thumbnailIDs.append(main)
+        }
+        for entry in deck.cardList {
+            if entry.cardID != deck.previewCardID {
+                thumbnailIDs.append(entry.cardID)
+            }
+            if thumbnailIDs.count >= 4 { break }
+        }
+        
         var payload: [String: JSONValue] = [
             "payload_version": .number(1),
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
             "local_content_id": .string(deck.id.uuidString),
             "brand": .string(deck.tcgBrand.rawValue),
             "format": .string(deck.deckFormat.displayName),
-            "cards": .array(rows.map(JSONValue.object))
+            "cards": .array(rows.map(JSONValue.object)),
+            "thumbnails": .array(thumbnailIDs.map(JSONValue.string))
         ]
         if includeValue {
             payload["market_value_usd"] = .number(totalValue)
@@ -951,13 +970,23 @@ final class SocialShareService {
             }
             rows.append(row)
         }
+        
+        var thumbnailIDs: [String] = []
+        for entry in snapshot.cards {
+            if !thumbnailIDs.contains(entry.cardID) {
+                thumbnailIDs.append(entry.cardID)
+            }
+            if thumbnailIDs.count >= 4 { break }
+        }
+        
         var payload: [String: JSONValue] = [
             "payload_version": .number(1),
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
             "local_content_id": .string(snapshot.id.uuidString),
             "brand": .string(snapshot.brandRawValue),
             "format": .string(snapshot.formatDisplayName),
-            "cards": .array(rows.map(JSONValue.object))
+            "cards": .array(rows.map(JSONValue.object)),
+            "thumbnails": .array(thumbnailIDs.map(JSONValue.string))
         ]
         if includeValue {
             payload["market_value_usd"] = .number(totalValue)
