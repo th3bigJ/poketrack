@@ -252,21 +252,25 @@ final class TradeService {
             extraHeaders: ["Prefer": "return=representation"]
         )
 
-        // Replace prior offer lines with the newly countered offer lines.
+        // Replace only the current user's own offer lines. The other party's
+        // items (what we're requesting) are locked/read-only in the counter UI
+        // and must not be touched — re-inserting them would duplicate them when
+        // Supabase RLS silently blocks the broad DELETE (which only permits
+        // deleting rows where owner_id = auth.uid()).
         _ = try await execute(
-            path: "/rest/v1/trade_items?trade_id=eq.\(tradeID.uuidString)",
+            path: "/rest/v1/trade_items?trade_id=eq.\(tradeID.uuidString)&owner_id=eq.\(uid.uuidString)",
             method: "DELETE",
             accessToken: token,
             extraHeaders: ["Prefer": "return=minimal"]
         ) as EmptyResponse
 
-        let itemsToInsert = newInitiatorCards.map {
+        // Only insert the counter-maker's own (new) offer lines. The other
+        // party's rows remain in the table unchanged.
+        let myItemsToInsert = newInitiatorCards.map {
             TradeItemInsertRequest(tradeID: tradeID, ownerID: uid, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
-        } + newReceiverCards.map {
-            TradeItemInsertRequest(tradeID: tradeID, ownerID: otherPartyID, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
         }
 
-        for batch in itemsToInsert.chunked(into: maxBatchSize) {
+        for batch in myItemsToInsert.chunked(into: maxBatchSize) {
             _ = try await execute(
                 path: "/rest/v1/trade_items",
                 method: "POST",
