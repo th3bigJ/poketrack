@@ -631,8 +631,9 @@ final class CardDataService {
                 cacheCard(c)
                 return c
             }
-            let byCatalogId = try await CatalogStore.shared.fetchCardsMatchingCatalogIds([masterCardId], brand: inferred)
-            if let c = byCatalogId[masterCardId] {
+            let candidates = CatalogImportIdNormalizer.lookupCandidates(for: masterCardId)
+            let byCatalogId = try await CatalogStore.shared.fetchCardsMatchingCatalogIds(candidates, brand: inferred)
+            if let c = candidates.compactMap({ byCatalogId[$0] }).first {
                 cacheCard(c)
                 return c
             }
@@ -657,13 +658,29 @@ final class CardDataService {
     }
 
     /// Bulk resolve Dex / pricing ids (`externalId`, `tcgdex_id`, or `masterCardId`) to catalog cards.
+    /// Expands Dex shorthand set codes (e.g. `sv35-149` → `sv3pt5-149`) before querying.
     func loadCardsByCatalogIds(_ catalogIds: [String], catalogBrand: TCGBrand = .pokemon) async -> [String: Card] {
         guard !catalogIds.isEmpty else { return [:] }
+
+        var expanded: [String] = []
+        for dexId in catalogIds {
+            expanded.append(contentsOf: CatalogImportIdNormalizer.lookupCandidates(for: dexId))
+        }
+
         do {
             try await CatalogStore.shared.open()
-            let map = try await CatalogStore.shared.fetchCardsMatchingCatalogIds(catalogIds, brand: catalogBrand)
-            for card in map.values { cacheCard(card) }
-            return map
+            let resolved = try await CatalogStore.shared.fetchCardsMatchingCatalogIds(expanded, brand: catalogBrand)
+            var byDexId: [String: Card] = [:]
+            for dexId in catalogIds {
+                for candidate in CatalogImportIdNormalizer.lookupCandidates(for: dexId) {
+                    if let card = resolved[candidate] {
+                        byDexId[dexId] = card
+                        break
+                    }
+                }
+            }
+            for card in byDexId.values { cacheCard(card) }
+            return byDexId
         } catch {
             return [:]
         }

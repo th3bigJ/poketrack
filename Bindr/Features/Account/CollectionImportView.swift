@@ -62,12 +62,6 @@ struct CollectionImportView: View {
                     LabeledContent("Ready to import") {
                         Text("\(importPlan.importableRowCount) rows · \(importPlan.importableCopyCount) cards")
                     }
-                    if importPlan.skippedZeroQuantity > 0 {
-                        LabeledContent("Skipped (0 qty)") {
-                            Text("\(importPlan.skippedZeroQuantity)")
-                                .foregroundStyle(.secondary)
-                        }
-                    }
                 } else if let previewError {
                     Text(previewError)
                         .font(.caption)
