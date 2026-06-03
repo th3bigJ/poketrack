@@ -8,6 +8,7 @@ struct FriendsListView: View {
 
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var bindrAccent
+    @Environment(\.dismiss) private var dismiss
 
     let onOpenSearch: () -> Void
     let onOpenQR: () -> Void
@@ -99,8 +100,26 @@ struct FriendsListView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                     .refreshable { await refresh() }
                 }
+                .safeAreaInset(edge: .top, spacing: 0) {
+                    if socialSelectedTab == nil {
+                        BindrPageHeader(
+                            title: "Friends",
+                            leading: {
+                                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                                    HapticManager.impact(.light)
+                                    dismiss()
+                                } label: {
+                                    Image(systemName: "chevron.left")
+                                        .font(.system(size: 17, weight: .medium))
+                                        .foregroundStyle(.primary)
+                                }
+                            }
+                        )
+                    }
+                }
             }
         }
+        .toolbar(socialSelectedTab == nil ? .hidden : .automatic, for: .navigationBar)
         .task { await refresh() }
         .onChange(of: searchText) { _, newValue in
             Task { await search(query: newValue) }
@@ -140,21 +159,23 @@ struct FriendsListView: View {
 
     private var header: some View {
         VStack(spacing: BindrSpacing.md) {
-            HStack {
-                Text("Friends")
-                    .font(.system(size: 22, weight: .heavy))
-                    .tracking(-0.5)
-                    .foregroundStyle(Color.primary)
-                Spacer()
-                Button(action: onOpenQR) {
-                    Image(systemName: "qrcode")
-                        .font(.system(size: 16, weight: .bold))
+            if socialSelectedTab != nil {
+                HStack {
+                    Text("Friends")
+                        .font(.system(size: 22, weight: .heavy))
+                        .tracking(-0.5)
                         .foregroundStyle(Color.primary)
-                        .frame(width: 36, height: 36)
-                        .background(Color(uiColor: .secondarySystemBackground), in: Circle())
-                        .overlay(Circle().stroke(Color.primary.opacity(0.12), lineWidth: 1))
+                    Spacer()
+                    Button(action: onOpenQR) {
+                        Image(systemName: "qrcode")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(Color.primary)
+                            .frame(width: 36, height: 36)
+                            .background(Color(uiColor: .secondarySystemBackground), in: Circle())
+                            .overlay(Circle().stroke(Color.primary.opacity(0.12), lineWidth: 1))
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
             }
             if isSelectingFriendForTrade {
                 HStack(spacing: 8) {
@@ -175,7 +196,7 @@ struct FriendsListView: View {
                 }
             }
         }
-        .padding(.top, BindrSpacing.lg)
+        .padding(.top, socialSelectedTab != nil ? BindrSpacing.lg : 0)
         .padding(.bottom, BindrSpacing.md)
     }
 

@@ -68,6 +68,7 @@ struct BindrPageHeader<Leading: View, Trailing: View>: View {
             }
         }
         .frame(maxWidth: .infinity)
+        .frame(height: 48)
         // Padding values match `RootChromeEnvironment` (8pt top / 10pt
         // bottom) so vertical position lines up with the Dashboard /
         // Browse floating search bar.

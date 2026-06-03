@@ -73,9 +73,9 @@ struct TradeDetailView: View {
                 )
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top, spacing: 0) {
+            ZStack {
                 VStack(spacing: 0) {
                     Text(trade?.status.rawValue.uppercased() ?? "PENDING")
                         .font(.system(size: 10, weight: .black))
@@ -86,7 +86,24 @@ struct TradeDetailView: View {
                         .tracking(1)
                         .foregroundStyle(.secondary.opacity(0.5))
                 }
+
+                HStack {
+                    ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                        HapticManager.impact(.light)
+                        dismiss()
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
+                    Spacer()
+                }
             }
+            .frame(maxWidth: .infinity)
+            .frame(height: 48)
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .padding(.bottom, 10)
         }
         .task {
             services.setupCollectionLedger(modelContext: modelContext)

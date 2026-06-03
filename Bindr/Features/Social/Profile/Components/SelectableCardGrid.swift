@@ -79,6 +79,7 @@ private struct SelectableCardCell: View {
     let onTap: () -> Void
 
     @State private var card: Card?
+    @State private var isLoading = true
 
     var body: some View {
         Button(action: onTap) {
@@ -92,8 +93,10 @@ private struct SelectableCardCell: View {
                         } placeholder: {
                             shimmer
                         }
-                    } else {
+                    } else if isLoading {
                         shimmer
+                    } else {
+                        placeholderView
                     }
                 }
                 .aspectRatio(5/7, contentMode: .fit)
@@ -115,6 +118,7 @@ private struct SelectableCardCell: View {
             }
         }
         .buttonStyle(.plain)
+        .contentShape(RoundedRectangle(cornerRadius: 8))
         .contextMenu {
             if let onRemoveFromTradeList {
                 Button(role: .destructive) {
@@ -124,11 +128,34 @@ private struct SelectableCardCell: View {
                 }
             }
         }
-        .task { card = await cardLoader(cardID) }
+        .task {
+            isLoading = true
+            card = await cardLoader(cardID)
+            isLoading = false
+        }
     }
 
     private var shimmer: some View {
         RoundedRectangle(cornerRadius: 8)
-            .fill(Color.white.opacity(0.05))
+            .fill(Color.primary.opacity(0.05))
+    }
+
+    private var placeholderView: some View {
+        RoundedRectangle(cornerRadius: 8)
+            .fill(Color.primary.opacity(0.04))
+            .overlay {
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
+            }
+            .overlay {
+                VStack(spacing: 6) {
+                    Image(systemName: "photo")
+                        .font(.system(size: 16))
+                        .foregroundStyle(.secondary.opacity(0.6))
+                    Text("Unavailable")
+                        .font(.system(size: 9, weight: .semibold))
+                        .foregroundStyle(.secondary.opacity(0.6))
+                }
+            }
     }
 }

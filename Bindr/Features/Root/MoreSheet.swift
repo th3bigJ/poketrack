@@ -5,6 +5,7 @@ import SwiftUI
 struct MoreView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var accent
+    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     @Binding var navigationPath: NavigationPath
 
@@ -17,7 +18,7 @@ struct MoreView: View {
         ZStack(alignment: .top) {
             ScrollView {
                 VStack(spacing: BindrSpacing.lg) {
-                    Color.clear.frame(height: 54)
+                    Color.clear.frame(height: rootFloatingChromeInset)
 
                     Button {
                         showProfile = true
