@@ -650,9 +650,9 @@ struct TradeDetailView: View {
     }
 
     private func applyLocalTradeSettlementIfNeeded(_ twi: TradeWithItems) async {
-        let settlementKey = "trade.local.settlement.\(twi.id.uuidString)"
-        let tradeListCleanupKey = "trade.local.tradeListCleanup.v2.\(twi.id.uuidString)"
         guard let uid = currentUserID else { return }
+        let settlementKey = "trade.local.settlement.\(uid.uuidString).\(twi.id.uuidString)"
+        let tradeListCleanupKey = "trade.local.tradeListCleanup.v2.\(uid.uuidString).\(twi.id.uuidString)"
 
         let myItems = twi.myItems(currentUserID: uid)
         let theirItems = twi.theirItems(currentUserID: uid)
@@ -690,6 +690,15 @@ struct TradeDetailView: View {
             guard let stack = findCardStack(cardID: item.cardID, variantKey: item.variantKey),
                   stack.quantity > 0 else { continue }
             let cardName = await resolvedCardName(for: item.cardID)
+            if cardLedgerEntryExists(
+                direction: .tradedOut,
+                cardID: stack.cardID,
+                variantKey: stack.variantKey,
+                quantity: quantity,
+                counterparty: counterparty
+            ) {
+                continue
+            }
             do {
                 try ledger.recordSingleCardDisposition(
                     item: stack,
@@ -713,6 +722,15 @@ struct TradeDetailView: View {
         for item in theirItems {
             let cardName = await resolvedCardName(for: item.cardID)
             let qty = max(item.quantity, 1)
+            if cardLedgerEntryExists(
+                direction: isCashPurchase ? .bought : .tradedIn,
+                cardID: item.cardID,
+                variantKey: item.variantKey,
+                quantity: qty,
+                counterparty: counterparty
+            ) {
+                continue
+            }
             do {
                 try ledger.recordSingleCardAcquisition(
                     cardID: item.cardID,
@@ -817,6 +835,23 @@ struct TradeDetailView: View {
         let descriptor = FetchDescriptor<LedgerLine>()
         let all = (try? modelContext.fetch(descriptor)) ?? []
         return all.contains(where: { $0.externalRef == reference })
+    }
+
+    private func cardLedgerEntryExists(
+        direction: LedgerDirection,
+        cardID: String,
+        variantKey: String,
+        quantity: Int,
+        counterparty: String
+    ) -> Bool {
+        let all = (try? modelContext.fetch(FetchDescriptor<LedgerLine>())) ?? []
+        return all.contains {
+            $0.direction == direction.rawValue
+                && $0.cardID == cardID
+                && $0.variantKey == variantKey
+                && $0.quantity == quantity
+                && $0.counterparty == counterparty
+        }
     }
 
     private func resolvedCardName(for cardID: String) async -> String {

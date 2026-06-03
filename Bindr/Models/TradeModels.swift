@@ -88,11 +88,11 @@ struct TradeWithItems: Identifiable, Sendable {
     var id: UUID { trade.id }
 
     func myItems(currentUserID: UUID) -> [TradeItem] {
-        trade.initiatorID == currentUserID ? initiatorItems : receiverItems
+        Self.consolidatedItems(trade.initiatorID == currentUserID ? initiatorItems : receiverItems)
     }
 
     func theirItems(currentUserID: UUID) -> [TradeItem] {
-        trade.initiatorID == currentUserID ? receiverItems : initiatorItems
+        Self.consolidatedItems(trade.initiatorID == currentUserID ? receiverItems : initiatorItems)
     }
 
     func myCash(currentUserID: UUID) -> Double {
@@ -105,6 +105,31 @@ struct TradeWithItems: Identifiable, Sendable {
 
     func counterpartID(currentUserID: UUID) -> UUID {
         trade.initiatorID == currentUserID ? trade.receiverID : trade.initiatorID
+    }
+
+    private static func consolidatedItems(_ items: [TradeItem]) -> [TradeItem] {
+        var orderedKeys: [String] = []
+        var byKey: [String: TradeItem] = [:]
+
+        for item in items {
+            let key = "\(item.ownerID.uuidString)|\(item.cardID)|\(item.variantKey)"
+            if let existing = byKey[key] {
+                byKey[key] = TradeItem(
+                    id: existing.id,
+                    tradeID: existing.tradeID,
+                    ownerID: existing.ownerID,
+                    cardID: existing.cardID,
+                    variantKey: existing.variantKey,
+                    quantity: existing.quantity + item.quantity,
+                    createdAt: existing.createdAt
+                )
+            } else {
+                orderedKeys.append(key)
+                byKey[key] = item
+            }
+        }
+
+        return orderedKeys.compactMap { byKey[$0] }
     }
 }
 

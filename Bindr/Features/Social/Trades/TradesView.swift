@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 struct TradesView: View {
@@ -8,6 +9,7 @@ struct TradesView: View {
 
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var accent
+    @Environment(\.modelContext) private var modelContext
     @Binding var navigationPath: NavigationPath
     var selectedTab: Binding<SocialTab>? = nil
     var headerInset: CGFloat = 0
@@ -69,6 +71,7 @@ struct TradesView: View {
         }
         .refreshable { await refresh() }
         .task {
+            services.setupCollectionLedger(modelContext: modelContext)
             await loadAfterFirstPaint()
         }
         .onChange(of: services.trade.lastMutationAt) { _, _ in
@@ -275,6 +278,7 @@ struct TradesView: View {
         do {
             trades = try await services.trade.fetchMyTrades()
             await loadProfilesForTrades()
+            await applyCompletedTradeSettlementsIfNeeded()
             errorMessage = nil
         } catch is CancellationError {
         } catch let error as URLError where error.code == .cancelled {
@@ -301,5 +305,221 @@ struct TradesView: View {
                 }
             }
         }
+    }
+
+    private func applyCompletedTradeSettlementsIfNeeded() async {
+        services.setupCollectionLedger(modelContext: modelContext)
+        for tradeWithItems in completedTrades {
+            await applyLocalTradeSettlementIfNeeded(tradeWithItems)
+        }
+    }
+
+    private func applyLocalTradeSettlementIfNeeded(_ twi: TradeWithItems) async {
+        guard let uid = currentUserID else { return }
+        let settlementKey = "trade.local.settlement.\(uid.uuidString).\(twi.id.uuidString)"
+        let tradeListCleanupKey = "trade.local.tradeListCleanup.v2.\(uid.uuidString).\(twi.id.uuidString)"
+
+        let myItems = twi.myItems(currentUserID: uid)
+        let theirItems = twi.theirItems(currentUserID: uid)
+        let myCash = twi.myCash(currentUserID: uid)
+        let theirCash = twi.theirCash(currentUserID: uid)
+        let counterpartyID = twi.counterpartID(currentUserID: uid)
+        let counterpartyProfile = profileCache[counterpartyID]
+        let counterparty = counterpartyProfile?.displayName ?? counterpartyProfile?.username ?? "Trade partner"
+        let currencyCode = services.priceDisplay.currency == .gbp ? "GBP" : "USD"
+        let reference = "trade-complete-\(twi.id.uuidString)"
+
+        let netCashPaid = myCash - theirCash
+        let totalReceivedQty = theirItems.reduce(0) { $0 + max($1.quantity, 1) }
+        let isCashPurchase = netCashPaid > 0 && totalReceivedQty > 0
+        let cardUnitPrice = isCashPurchase ? netCashPaid / Double(totalReceivedQty) : nil
+
+        if !UserDefaults.standard.bool(forKey: tradeListCleanupKey) {
+            for item in myItems {
+                removeFromLocalTradeList(
+                    cardID: item.cardID,
+                    variantKey: item.variantKey,
+                    quantity: max(item.quantity, 1)
+                )
+            }
+            try? modelContext.save()
+            let remainingTradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
+            services.socialCardLibrary.scheduleAutoSyncTradeList(items: remainingTradeListItems)
+            UserDefaults.standard.set(true, forKey: tradeListCleanupKey)
+        }
+
+        guard !UserDefaults.standard.bool(forKey: settlementKey) else { return }
+        guard let ledger = services.collectionLedger else { return }
+
+        for item in myItems {
+            let quantity = max(item.quantity, 1)
+            guard let stack = findCardStack(cardID: item.cardID, variantKey: item.variantKey),
+                  stack.quantity > 0 else { continue }
+            let cardName = await resolvedCardName(for: item.cardID)
+            if cardLedgerEntryExists(
+                direction: .tradedOut,
+                cardID: stack.cardID,
+                variantKey: stack.variantKey,
+                quantity: quantity,
+                counterparty: counterparty
+            ) {
+                continue
+            }
+            do {
+                try ledger.recordSingleCardDisposition(
+                    item: stack,
+                    kind: .traded,
+                    quantity: min(quantity, stack.quantity),
+                    currencyCode: currencyCode,
+                    cardDisplayName: cardName,
+                    unitPrice: nil,
+                    counterparty: counterparty,
+                    notes: "Traded to \(counterparty)"
+                )
+            } catch {
+                continue
+            }
+        }
+
+        for item in theirItems {
+            let cardName = await resolvedCardName(for: item.cardID)
+            let qty = max(item.quantity, 1)
+            if cardLedgerEntryExists(
+                direction: isCashPurchase ? .bought : .tradedIn,
+                cardID: item.cardID,
+                variantKey: item.variantKey,
+                quantity: qty,
+                counterparty: counterparty
+            ) {
+                continue
+            }
+            do {
+                try ledger.recordSingleCardAcquisition(
+                    cardID: item.cardID,
+                    variantKey: item.variantKey,
+                    kind: isCashPurchase ? .bought : .trade,
+                    quantity: qty,
+                    currencyCode: currencyCode,
+                    cardDisplayName: cardName,
+                    unitPrice: cardUnitPrice,
+                    packedOpenedFrom: nil,
+                    tradeCounterparty: isCashPurchase ? nil : counterparty,
+                    tradeGaveAway: nil,
+                    giftFrom: nil,
+                    boughtFrom: isCashPurchase ? counterparty : nil
+                )
+                let note = isCashPurchase ? "Bought from \(counterparty)" : "Traded from \(counterparty)"
+                appendCardNote(cardID: item.cardID, variantKey: item.variantKey, note: note)
+            } catch {
+                continue
+            }
+        }
+
+        if theirCash > 0, !cashLedgerEntryExists(reference: reference) {
+            let line = LedgerLine(
+                direction: LedgerDirection.sold.rawValue,
+                productKind: ProductKind.other.rawValue,
+                lineDescription: "Trade cash received",
+                quantity: 1,
+                unitPrice: theirCash,
+                currencyCode: currencyCode,
+                counterparty: counterparty,
+                channel: "trade",
+                externalRef: reference
+            )
+            modelContext.insert(line)
+        }
+        if myCash > 0, !cashLedgerEntryExists(reference: "\(reference)-out") {
+            let line = LedgerLine(
+                direction: LedgerDirection.bought.rawValue,
+                productKind: ProductKind.other.rawValue,
+                lineDescription: "Trade cash paid",
+                quantity: 1,
+                unitPrice: myCash,
+                currencyCode: currencyCode,
+                counterparty: counterparty,
+                channel: "trade",
+                externalRef: "\(reference)-out"
+            )
+            modelContext.insert(line)
+        }
+
+        try? modelContext.save()
+        let remainingTradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
+        services.socialCardLibrary.scheduleAutoSyncTradeList(items: remainingTradeListItems)
+        UserDefaults.standard.set(true, forKey: settlementKey)
+    }
+
+    private func appendCardNote(cardID: String, variantKey: String, note: String) {
+        let kind = ProductKind.singleCard.rawValue
+        let all = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
+        for stack in all where stack.cardID == cardID && stack.variantKey == variantKey && stack.itemKind == kind {
+            if stack.notes.isEmpty {
+                stack.notes = note
+            } else if !stack.notes.localizedCaseInsensitiveContains(note) {
+                stack.notes = "\(stack.notes); \(note)"
+            }
+        }
+    }
+
+    private func removeFromLocalTradeList(cardID: String, variantKey: String, quantity: Int) {
+        let tradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
+        let candidates = tradeListItems.filter { $0.cardID == cardID }
+        guard !candidates.isEmpty else { return }
+
+        let ordered = candidates.sorted {
+            if $0.variantKey == variantKey && $1.variantKey != variantKey { return true }
+            if $0.variantKey != variantKey && $1.variantKey == variantKey { return false }
+            return $0.dateAdded < $1.dateAdded
+        }
+
+        var remaining = max(quantity, 1)
+        for item in ordered where remaining > 0 {
+            let removed = min(item.quantity, remaining)
+            if item.quantity <= removed {
+                modelContext.delete(item)
+            } else {
+                item.quantity -= removed
+            }
+            remaining -= removed
+        }
+    }
+
+    private func findCardStack(cardID: String, variantKey: String) -> CollectionItem? {
+        let all = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
+        let matchingStacks = all.filter {
+            $0.cardID == cardID
+                && ($0.itemKind == ProductKind.singleCard.rawValue || $0.itemKind == ProductKind.gradedItem.rawValue)
+        }
+        return matchingStacks.first(where: { $0.variantKey == variantKey }) ?? matchingStacks.first
+    }
+
+    private func cashLedgerEntryExists(reference: String) -> Bool {
+        let all = (try? modelContext.fetch(FetchDescriptor<LedgerLine>())) ?? []
+        return all.contains(where: { $0.externalRef == reference })
+    }
+
+    private func cardLedgerEntryExists(
+        direction: LedgerDirection,
+        cardID: String,
+        variantKey: String,
+        quantity: Int,
+        counterparty: String
+    ) -> Bool {
+        let all = (try? modelContext.fetch(FetchDescriptor<LedgerLine>())) ?? []
+        return all.contains {
+            $0.direction == direction.rawValue
+                && $0.cardID == cardID
+                && $0.variantKey == variantKey
+                && $0.quantity == quantity
+                && $0.counterparty == counterparty
+        }
+    }
+
+    private func resolvedCardName(for cardID: String) async -> String {
+        if let card = await services.cardData.loadCard(masterCardId: cardID) {
+            return card.cardName
+        }
+        return cardID
     }
 }

@@ -202,9 +202,9 @@ final class TradeService {
             throw TradeServiceError.invalidResponse
         }
 
-        let itemsToInsert = initiatorCards.map {
+        let itemsToInsert = Self.consolidatedInputs(initiatorCards).map {
             TradeItemInsertRequest(tradeID: trade.id, ownerID: uid, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
-        } + receiverCards.map {
+        } + Self.consolidatedInputs(receiverCards).map {
             TradeItemInsertRequest(tradeID: trade.id, ownerID: receiverID, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
         }
 
@@ -266,7 +266,7 @@ final class TradeService {
 
         // Only insert the counter-maker's own (new) offer lines. The other
         // party's rows remain in the table unchanged.
-        let myItemsToInsert = newInitiatorCards.map {
+        let myItemsToInsert = Self.consolidatedInputs(newInitiatorCards).map {
             TradeItemInsertRequest(tradeID: tradeID, ownerID: uid, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
         }
 
@@ -356,6 +356,30 @@ final class TradeService {
                 initiatorItems: allItems.filter { $0.ownerID == trade.initiatorID },
                 receiverItems: allItems.filter { $0.ownerID == trade.receiverID }
             )
+        }
+    }
+
+    private static func consolidatedInputs(_ inputs: [NewTradeItemInput]) -> [NewTradeItemInput] {
+        var orderedKeys: [String] = []
+        var quantitiesByKey: [String: Int] = [:]
+        var cardIDByKey: [String: String] = [:]
+        var variantByKey: [String: String] = [:]
+
+        for input in inputs {
+            let key = "\(input.cardID)|\(input.variantKey)"
+            if quantitiesByKey[key] == nil {
+                orderedKeys.append(key)
+                cardIDByKey[key] = input.cardID
+                variantByKey[key] = input.variantKey
+            }
+            quantitiesByKey[key, default: 0] += max(input.quantity, 1)
+        }
+
+        return orderedKeys.compactMap { key in
+            guard let cardID = cardIDByKey[key],
+                  let variantKey = variantByKey[key],
+                  let quantity = quantitiesByKey[key] else { return nil }
+            return NewTradeItemInput(cardID: cardID, variantKey: variantKey, quantity: quantity)
         }
     }
 
