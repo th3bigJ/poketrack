@@ -103,6 +103,11 @@ struct BinderCoverView: View {
 
                 // Foreground content — ornament at top, title in upper portion,
                 // optional card fan in the middle, value at the bottom.
+                // Leading padding matches the card-grid page's leading inset (32pt =
+                // spine strip width) so the title / ornament / card fan are
+                // visually centred at the same horizontal position as the card grid
+                // when the binder is open. Both cover and opened page now share the
+                // same (32 leading, 14 trailing) inset, giving a consistent centre.
                 VStack(spacing: 0) {
                     Spacer().frame(height: 22 * scale)
 
@@ -138,7 +143,7 @@ struct BinderCoverView: View {
                     }
                 }
                 .frame(maxWidth: .infinity)
-                .padding(.leading, 36 * scale)
+                .padding(.leading, 32 * scale)
                 .padding(.trailing, 14 * scale)
 
                 // Spine overlay (stays on left)
