@@ -268,7 +268,7 @@ struct CardContextActionSheet: View {
     private var collectionFields: some View {
         Section {
             Picker("How acquired", selection: $acquisitionKind) {
-                ForEach(CollectionAcquisitionKind.allCases, id: \.self) { kind in
+                ForEach(CollectionAcquisitionKind.manualAddCases, id: \.self) { kind in
                     Text(kind.title).tag(kind)
                 }
             }

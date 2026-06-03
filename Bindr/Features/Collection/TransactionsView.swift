@@ -647,6 +647,7 @@ struct TransactionsView: View {
         case .giftedOut: return "Gift Out"
         case .adjustmentIn: return "Adjustment In"
         case .adjustmentOut: return "Adjustment Out"
+        case .importedIn: return "Imported"
         }
     }
 
@@ -673,6 +674,7 @@ struct TransactionsView: View {
         case .giftedIn, .giftedOut: return "gift.fill"
         case .adjustmentIn: return "plus.circle.fill"
         case .adjustmentOut: return "minus.circle.fill"
+        case .importedIn: return "square.and.arrow.down.fill"
         }
     }
 
@@ -680,7 +682,7 @@ struct TransactionsView: View {
         if isOpenedSealedLine(line) { return .orange }
         guard let direction = LedgerDirection(rawValue: line.direction) else { return .secondary }
         switch direction {
-        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:
+        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn, .importedIn:
             return .green
         case .sold, .tradedOut, .giftedOut, .adjustmentOut:
             return .orange
@@ -711,7 +713,7 @@ struct TransactionsView: View {
             return -total
         case .sold, .tradedOut, .giftedOut, .adjustmentOut:
             return total
-        case .packed:
+        case .packed, .importedIn:
             return 0
         }
     }

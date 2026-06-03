@@ -1372,6 +1372,7 @@ struct HoldingLine: Identifiable {
         case .sold: return "Sold"
         case .tradedIn, .tradedOut: return "Traded"
         case .giftedIn, .giftedOut: return "Gifted"
+        case .importedIn: return "Imported"
         case .adjustmentIn, .adjustmentOut: return "Adjusted"
         }
     }
@@ -1381,7 +1382,7 @@ struct HoldingLine: Identifiable {
         case .packed: return CardDetailPalette.gold
         case .bought: return CardDetailPalette.chartLine
         case .sold, .tradedOut, .giftedOut, .adjustmentOut: return CardDetailPalette.danger
-        case .tradedIn, .giftedIn, .adjustmentIn: return CardDetailPalette.success
+        case .tradedIn, .giftedIn, .adjustmentIn, .importedIn: return CardDetailPalette.success
         }
     }
 
@@ -1391,7 +1392,7 @@ struct HoldingLine: Identifiable {
         case .sold: return "To"
         case .tradedIn, .tradedOut: return "Trade"
         case .giftedIn, .giftedOut: return "With"
-        case .packed, .adjustmentIn, .adjustmentOut: return "Source"
+        case .packed, .adjustmentIn, .adjustmentOut, .importedIn: return "Source"
         }
     }
 }
@@ -1696,7 +1697,7 @@ struct EditCollectionItemSheet: View {
             Form {
                 Section {
                     Picker("Purchase type", selection: $acquisitionKind) {
-                        ForEach(CollectionAcquisitionKind.allCases, id: \.self) { kind in
+                        ForEach(CollectionAcquisitionKind.manualAddCases, id: \.self) { kind in
                             Text(kind.title).tag(kind)
                         }
                     }
@@ -1923,6 +1924,7 @@ struct EditCollectionItemSheet: View {
         case .packed: return .packed
         case .giftedIn, .giftedOut: return .gifted
         case .tradedIn, .tradedOut: return .trade
+        case .importedIn: return .imported
         case .sold, .adjustmentIn, .adjustmentOut: return .bought
         }
     }

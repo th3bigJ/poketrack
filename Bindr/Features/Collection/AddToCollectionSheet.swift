@@ -100,7 +100,7 @@ struct AddToCollectionSheet: View {
 
                 Section {
                     Picker("Purchase type", selection: $acquisitionKind) {
-                        ForEach(CollectionAcquisitionKind.allCases, id: \.self) { kind in
+                        ForEach(CollectionAcquisitionKind.manualAddCases, id: \.self) { kind in
                             Text(kind.title).tag(kind)
                         }
                     }
@@ -141,7 +141,7 @@ struct AddToCollectionSheet: View {
                     switch acquisitionKind {
                     case .bought:
                         boughtFields
-                    case .packed, .gifted:
+                    case .packed, .gifted, .imported:
                         EmptyView()
                     case .trade:
                         tradePlaceholder
@@ -313,7 +313,7 @@ struct AddToCollectionSheet: View {
                     giftFrom: nil,
                     boughtFrom: nil
                 )
-            case .trade:
+            case .trade, .imported:
                 break
             }
             dismiss()

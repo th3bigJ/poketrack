@@ -1370,6 +1370,7 @@ struct DashboardView: View {
         case .sold: return "Sold"
         case .tradedIn, .tradedOut: return "Traded"
         case .giftedIn, .giftedOut: return "Gifted"
+        case .importedIn: return "Imported"
         case .adjustmentIn, .adjustmentOut:
             if line.sealedStatus == SealedInventoryStatus.opened.rawValue {
                 return "Opened"
@@ -1550,13 +1551,14 @@ struct DashboardView: View {
         case .giftedOut: return "gift"
         case .adjustmentIn: return "plus.circle.fill"
         case .adjustmentOut: return "minus.circle.fill"
+        case .importedIn: return "square.and.arrow.down.fill"
         }
     }
 
     private func directionColor(for line: LedgerLine) -> Color {
         guard let dir = LedgerDirection(rawValue: line.direction) else { return dashboardSecondaryText }
         switch dir {
-        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:
+        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn, .importedIn:
             return DashboardPalette.success
         case .sold, .tradedOut, .giftedOut, .adjustmentOut:
             return DashboardPalette.danger

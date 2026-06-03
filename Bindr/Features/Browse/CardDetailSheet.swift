@@ -763,6 +763,7 @@ struct CardDetailSheet: View {
         case .tradedIn, .tradedOut: return "arrow.left.arrow.right"
         case .giftedIn, .giftedOut: return "gift.fill"
         case .adjustmentIn, .adjustmentOut: return "slider.horizontal.3"
+        case .importedIn: return "square.and.arrow.down.fill"
         }
     }
 

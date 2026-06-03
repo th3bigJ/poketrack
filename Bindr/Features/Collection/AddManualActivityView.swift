@@ -151,6 +151,7 @@ struct AddManualActivityView: View {
         case .giftedOut: return "Gift Out"
         case .adjustmentIn: return "Adjustment In"
         case .adjustmentOut: return "Adjustment Out"
+        case .importedIn: return "Imported"
         }
     }
 

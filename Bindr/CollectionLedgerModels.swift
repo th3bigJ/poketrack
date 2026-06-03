@@ -17,6 +17,8 @@ enum LedgerDirection: String, Codable, CaseIterable, Sendable {
     case adjustmentIn
     /// Manual stack decrease (FIFO consumption of ``CostLot`` layers).
     case adjustmentOut
+    /// Bulk import from another app (e.g. Dex CSV).
+    case importedIn
 }
 
 /// How the user acquired the card when adding to collection (maps to ``LedgerDirection``).
@@ -26,6 +28,11 @@ enum CollectionAcquisitionKind: String, CaseIterable, Sendable {
     case bought
     case trade
     case gifted
+    /// Bulk CSV import — not offered in manual “add to collection” pickers.
+    case imported
+
+    /// Types the user can pick when adding cards manually.
+    static let manualAddCases: [CollectionAcquisitionKind] = [.packed, .bought, .trade, .gifted]
 
     var title: String {
         switch self {
@@ -33,6 +40,7 @@ enum CollectionAcquisitionKind: String, CaseIterable, Sendable {
         case .bought: return "Bought"
         case .trade: return "Trade"
         case .gifted: return "Gifted"
+        case .imported: return "Imported"
         }
     }
 
@@ -42,6 +50,7 @@ enum CollectionAcquisitionKind: String, CaseIterable, Sendable {
         case .bought: return .bought
         case .trade: return .tradedIn
         case .gifted: return .giftedIn
+        case .imported: return .importedIn
         }
     }
 }

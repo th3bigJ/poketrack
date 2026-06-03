@@ -1164,6 +1164,7 @@ private struct SealedProductDetailPage: View {
         case .packed: return "Packed"
         case .tradedIn: return "Traded In"
         case .giftedIn: return "Gifted"
+        case .importedIn: return "Imported"
         case .adjustmentIn: return "Adjusted In"
         case .sold: return "Sold"
         case .tradedOut: return "Traded Out"

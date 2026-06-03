@@ -298,7 +298,7 @@ final class CollectionLedgerService {
     }
 
     /// Deletes a ledger line and reconciles current collection quantities for card stacks.
-    /// Inbound lines (`bought`, `packed`, `tradedIn`, `giftedIn`, `adjustmentIn`) are subtracted.
+    /// Inbound lines (`bought`, `packed`, `tradedIn`, `giftedIn`, `adjustmentIn`, `importedIn`) are subtracted.
     /// Outbound lines (`sold`, `tradedOut`, `giftedOut`, `adjustmentOut`) are added back.
     func deleteLedgerLineAndReconcileCollection(_ line: LedgerLine) throws {
         defer { modelContext.delete(line) }
@@ -320,7 +320,7 @@ final class CollectionLedgerService {
 
         let quantityDelta: Int
         switch direction {
-        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:
+        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn, .importedIn:
             quantityDelta = -line.quantity
         case .sold, .tradedOut, .giftedOut, .adjustmentOut:
             quantityDelta = line.quantity
@@ -784,7 +784,7 @@ final class CollectionLedgerService {
         switch kind {
         case .bought, .trade, .gifted:
             return unitPrice ?? 0
-        case .packed:
+        case .packed, .imported:
             return 0
         }
     }
@@ -814,6 +814,8 @@ final class CollectionLedgerService {
             return (cardDisplayName, cleanOptionalString(tradeCounterparty), "trade")
         case .gifted:
             return (cardDisplayName, cleanOptionalString(giftFrom), "gift")
+        case .imported:
+            return ("\(cardDisplayName) · Imported", nil, "import")
         }
     }
 

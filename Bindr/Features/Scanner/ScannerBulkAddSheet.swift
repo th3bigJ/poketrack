@@ -272,7 +272,7 @@ struct ScannerBulkAddSheet: View {
                             giftFrom: nil,
                             boughtFrom: nil
                         )
-                    case .trade:
+                    case .trade, .imported:
                         continue
                     }
                     saved += quantity
@@ -446,7 +446,7 @@ private struct BulkAddCardRow: View {
                         get: { acquisitionByVariant[key] ?? .packed },
                         set: { acquisitionByVariant[key] = $0 }
                     )) {
-                        ForEach(CollectionAcquisitionKind.allCases, id: \.self) { kind in
+                        ForEach(CollectionAcquisitionKind.manualAddCases, id: \.self) { kind in
                             Text(kind.title).tag(kind)
                         }
                     }
