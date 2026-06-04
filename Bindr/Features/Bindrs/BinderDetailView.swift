@@ -13,7 +13,6 @@ struct BinderDetailView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
     @Bindable var binder: Binder
-    @Query private var collectionItems: [CollectionItem]
 
     /// When `true`, the binder was opened from the Binders grid and should
     /// include its front cover as page 0 of the page-curl. After a brief
@@ -159,10 +158,6 @@ struct BinderDetailView: View {
 
     private var sortedSlots: [BinderSlot] {
         binder.slotList.sorted { $0.position < $1.position }
-    }
-
-    private var ownedCardIDs: Set<String> {
-        Set(collectionItems.map { $0.cardID })
     }
 
     private var slotsPerPage: Int { layout.slotsPerPage ?? 9 }
@@ -946,7 +941,6 @@ struct BinderDetailView: View {
 
     @ViewBuilder
     private func viewSlotCell(slot: BinderSlot) -> some View {
-        let isOwned = ownedCardIDs.contains(slot.cardID)
         let card = cardsByID[slot.cardID]
         let imageURL = card.map { AppConfiguration.imageURL(relativePath: $0.displayImageSrc) }
         let cardCornerRadius: CGFloat = 4
@@ -977,12 +971,6 @@ struct BinderDetailView: View {
                         ),
                         lineWidth: 1
                     )
-
-                Image(systemName: isOwned ? "checkmark.circle.fill" : "questionmark.circle.fill")
-                    .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(isOwned ? .green : Color(uiColor: .systemGray3))
-                    .background(Circle().fill(.white).padding(1))
-                    .padding(3)
             }
         }
         .buttonStyle(BinderCardButtonStyle())
