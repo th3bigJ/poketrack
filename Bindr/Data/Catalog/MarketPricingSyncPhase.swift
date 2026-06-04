@@ -42,10 +42,7 @@ struct MarketPricingSyncPhase {
             count += missingDaily.count
             let candidateSealed = dailyCandidates.map { "sealed/\($0)" }
             var missingSealed = await store.unprocessedBucketKeys(from: candidateSealed)
-            if forceRefresh {
-                let todaySealed = "sealed/\(BucketDateMath.todayUTCKey())"
-                if !missingSealed.contains(todaySealed) { missingSealed.append(todaySealed) }
-            }
+            appendTodaySealedBucketIfNeeded(&missingSealed)
             count += missingSealed.count
         }
         if needsHistoryBackfill {
@@ -78,6 +75,16 @@ struct MarketPricingSyncPhase {
             try? await store.setMeta("pricing_history_backfill_v1", "")
             try? await store.setMeta("sealed_pricing_history_backfill_v1", "")
             try? await store.setMeta("pricing_backfill_retry_v2", "1")
+        }
+        let needsDailyBucketRetryReset = (await store.meta("pricing_daily_bucket_retry_v1")) != "1"
+        if needsDailyBucketRetryReset {
+            // Same bug for combined daily buckets (card + sealed): a failed download could still
+            // be marked processed, so later period refreshes skipped re-downloading those dates.
+            for dateKey in BucketDateMath.last31DailyKeys() {
+                await store.unmarkBucketProcessed(key: dateKey)
+                await store.unmarkBucketProcessed(key: "sealed/\(dateKey)")
+            }
+            try? await store.setMeta("pricing_daily_bucket_retry_v1", "1")
         }
         let needsNormalizedMigration = (await store.meta("pricing_normalized_v1")) != "1"
         if needsNormalizedMigration {
@@ -604,14 +611,18 @@ struct MarketPricingSyncPhase {
         return totalBytes
     }
 
+    /// Ensures today's sealed daily bucket is always attempted when this phase runs.
+    /// Sealed prices only come from these daily files (unlike cards, which also get per-set JSON).
+    private func appendTodaySealedBucketIfNeeded(_ keys: inout [String]) {
+        let todaySealed = "sealed/\(BucketDateMath.todayUTCKey())"
+        if !keys.contains(todaySealed) { keys.append(todaySealed) }
+    }
+
     private func syncSealedPricingBuckets(progress: CatalogSyncProgressReporter, forceRefresh: Bool = false) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
         let candidateDailyKeys = BucketDateMath.last31DailyKeys().map { "sealed/\($0)" }
         var missingDailyKeys = await store.unprocessedBucketKeys(from: candidateDailyKeys)
-        if forceRefresh {
-            let todaySealed = "sealed/\(BucketDateMath.todayUTCKey())"
-            if !missingDailyKeys.contains(todaySealed) { missingDailyKeys.append(todaySealed) }
-        }
+        appendTodaySealedBucketIfNeeded(&missingDailyKeys)
         guard !missingDailyKeys.isEmpty else { return 0 }
 
         await progress.setStatus("Downloading sealed price data…")
