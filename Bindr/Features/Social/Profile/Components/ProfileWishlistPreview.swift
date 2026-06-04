@@ -55,8 +55,8 @@ private struct WishlistPreviewItem: View {
         VStack(alignment: .leading, spacing: 6) {
             // Card Thumbnail
             ZStack {
-                if let imageURLString = card?.displayImageSrc {
-                    CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
+                if let imageURL = card?.displayImageURL {
+                    CachedAsyncImage(url: imageURL) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
                     } placeholder: {
                         Color.gray.opacity(0.1)
@@ -92,7 +92,9 @@ private struct WishlistPreviewItem: View {
                 .fill(colorScheme == .dark ? Color.white.opacity(0.05) : Color.black.opacity(0.03))
         )
         .frame(width: 80)
-        .task {
+        .task(id: cardID) {
+            card = nil
+            price = nil
             card = await cardLoader(cardID)
             if let card = card {
                 price = await services.pricing.usdPrice(for: card, printing: "normal")

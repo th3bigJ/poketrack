@@ -434,6 +434,12 @@ extension Card {
         return low
     }
 
+    var displayImageURL: URL? {
+        let path = displayImageSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !path.isEmpty else { return nil }
+        return AppConfiguration.imageURL(relativePath: path)
+    }
+
     private var shouldPreferHighResDisplayImage: Bool {
         guard setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == "me4" else {
             return false

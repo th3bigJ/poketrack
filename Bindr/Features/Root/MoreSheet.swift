@@ -13,6 +13,7 @@ struct MoreView: View {
     @State private var showCreateBinder = false
     @State private var profilePath = NavigationPath()
     @State private var profile: SocialProfile? = nil
+    @State private var acceptedFriendCount: Int? = nil
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -23,7 +24,7 @@ struct MoreView: View {
                     Button {
                         showProfile = true
                     } label: {
-                        MoreProfileHeroCard(profile: profile)
+                        MoreProfileHeroCard(profile: profile, friendCountOverride: acceptedFriendCount)
                     }
                     .buttonStyle(.plain)
 
@@ -135,9 +136,17 @@ struct MoreView: View {
 
     private func loadProfileIfPossible() async {
         profile = services.socialProfile.currentProfile
-        guard services.socialAuth.isSignedIn else { return }
+        guard services.socialAuth.isSignedIn else {
+            acceptedFriendCount = nil
+            return
+        }
         if profile == nil {
             profile = try? await services.socialProfile.fetchMyProfile()
+        }
+        if let profile {
+            acceptedFriendCount = try? await services.socialFriend.fetchAcceptedFriendCount(for: profile.id)
+        } else {
+            acceptedFriendCount = nil
         }
     }
 }
@@ -150,6 +159,7 @@ struct MoreView: View {
 /// the More tab in sync with the rest of the social UI.
 private struct MoreProfileHeroCard: View {
     let profile: SocialProfile?
+    let friendCountOverride: Int?
 
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
@@ -185,7 +195,7 @@ private struct MoreProfileHeroCard: View {
         }
     }
 
-    private var friendCount: Int { profile?.friendCount ?? 0 }
+    private var friendCount: Int { friendCountOverride ?? profile?.friendCount ?? 0 }
     private var cardCount: Int { profile?.collectionCardCount ?? 0 }
     private var deckCount: Int { profile?.collectionDeckCount ?? 0 }
     private var binderCount: Int { profile?.collectionBinderCount ?? 0 }

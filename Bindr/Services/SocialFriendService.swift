@@ -111,6 +111,28 @@ final class SocialFriendService {
         let status: FriendshipStatus
     }
 
+    private struct FriendshipCountRow: Decodable {
+        let id: UUID
+    }
+
+    private struct ProfileFriendCountsRequest: Encodable {
+        let userIDs: [UUID]
+
+        enum CodingKeys: String, CodingKey {
+            case userIDs = "user_ids"
+        }
+    }
+
+    private struct ProfileFriendCountRow: Decodable {
+        let userID: UUID
+        let friendCount: Int
+
+        enum CodingKeys: String, CodingKey {
+            case userID = "user_id"
+            case friendCount = "friend_count"
+        }
+    }
+
     private struct APIErrorPayload: Decodable {
         let message: String?
         let hint: String?
@@ -141,6 +163,29 @@ final class SocialFriendService {
                 return row.addressee
             }
             return row.requester
+        }
+    }
+
+    func fetchAcceptedFriendCount(for userID: UUID) async throws -> Int {
+        let rows: [FriendshipCountRow] = try await execute(
+            path: "/rest/v1/friendships?select=id&status=eq.accepted&or=(requester_id.eq.\(userID.uuidString),addressee_id.eq.\(userID.uuidString))",
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        return rows.count
+    }
+
+    func fetchPublicFriendCounts(for userIDs: [UUID]) async throws -> [UUID: Int] {
+        let uniqueIDs = Array(Set(userIDs))
+        guard !uniqueIDs.isEmpty else { return [:] }
+        let rows: [ProfileFriendCountRow] = try await execute(
+            path: "/rest/v1/rpc/get_profile_friend_counts",
+            method: "POST",
+            accessToken: try signedInAccessToken(),
+            body: ProfileFriendCountsRequest(userIDs: uniqueIDs)
+        )
+        return rows.reduce(into: [UUID: Int]()) { partialResult, row in
+            partialResult[row.userID] = row.friendCount
         }
     }
 

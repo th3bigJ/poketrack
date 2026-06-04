@@ -14,6 +14,7 @@ struct FriendProfileView: View {
     }
 
     @State private var profile: SocialProfile?
+    @State private var publicFriendCount: Int?
     @State private var relationship: SocialFriendService.RelationshipState = .none
     @State private var activity: [SocialFeedService.FeedItem] = []
     @State private var isLoading = false
@@ -220,7 +221,7 @@ struct FriendProfileView: View {
                 let cardCount = profile.collectionCardCount ?? 0
                 let deckCount = profile.collectionDeckCount ?? 0
                 let binderCount = profile.collectionBinderCount ?? 0
-                let friendCount = profile.friendCount ?? 0
+                let friendCount = publicFriendCount ?? profile.friendCount ?? 0
                 statColumn(value: "\(cardCount)", label: cardCount == 1 ? "Card" : "Cards")
                 statColumn(value: "\(deckCount)", label: deckCount == 1 ? "Deck" : "Decks")
                 statColumn(value: "\(binderCount)", label: binderCount == 1 ? "Binder" : "Binders")
@@ -632,8 +633,10 @@ struct FriendProfileView: View {
             if let loaded {
                 async let rel = services.socialFriend.fetchRelationshipState(for: loaded.id)
                 async let posts = services.socialFeed.fetchActivityForUser(userID: loaded.id, limit: 20)
+                async let friendCounts = services.socialFriend.fetchPublicFriendCounts(for: [loaded.id])
                 relationship = try await rel
                 activity = (try? await posts) ?? []
+                publicFriendCount = (try? await friendCounts)?[loaded.id]
                 if relationship == .friends {
                     async let wishlistIDs = services.socialCardLibrary.fetchWishlistCardIDs(for: loaded.id)
                     async let tradeListIDs = services.socialCardLibrary.fetchTradeListCardIDs(for: loaded.id)
@@ -650,6 +653,9 @@ struct FriendProfileView: View {
                 }
             }
             errorMessage = nil
+            if loaded == nil {
+                publicFriendCount = nil
+            }
         } catch is CancellationError {
             // Ignore
         } catch let error as URLError where error.code == .cancelled {

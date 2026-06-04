@@ -8,6 +8,7 @@ struct AccountProfileView: View {
     @Binding var navigationPath: NavigationPath
     @Binding var isPresented: Bool
     @Binding var externalProfile: SocialProfile?
+    var onOpenFriendUsername: ((String) -> Void)? = nil
 
     @State private var profile: SocialProfile?
     @State private var isProfileLoading = false
@@ -16,16 +17,19 @@ struct AccountProfileView: View {
 
     enum Destination: Hashable {
         case editProfile
+        case friendProfile(username: String)
     }
 
     init(
         navigationPath: Binding<NavigationPath>,
         isPresented: Binding<Bool>,
-        externalProfile: Binding<SocialProfile?>
+        externalProfile: Binding<SocialProfile?>,
+        onOpenFriendUsername: ((String) -> Void)? = nil
     ) {
         self._navigationPath = navigationPath
         self._isPresented = isPresented
         self._externalProfile = externalProfile
+        self.onOpenFriendUsername = onOpenFriendUsername
         // Seed local state from the parent's already-loaded profile so the
         // nav destination has data the moment it resolves. Without this,
         // tapping "Edit Profile" before the .task refresh completes would
@@ -51,7 +55,14 @@ struct AccountProfileView: View {
                 case .signedIn:
                     if let profile {
                         MyProfileView(
-                            profile: profile
+                            profile: profile,
+                            onOpenFriendUsername: { username in
+                                if let onOpenFriendUsername {
+                                    onOpenFriendUsername(username)
+                                } else {
+                                    navigationPath.append(Destination.friendProfile(username: username))
+                                }
+                            }
                         )
                     } else {
                         createProfilePrompt
@@ -84,6 +95,8 @@ struct AccountProfileView: View {
                 // captures its initial values inside `@State` — those don't
                 // refresh on a parent rebuild without a new identity.
                 .id(profile?.id)
+            case .friendProfile(let username):
+                FriendProfileView(username: username)
             }
         }
         .task {

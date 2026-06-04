@@ -61,8 +61,8 @@ private struct WishlistCardCell: View {
 
     var body: some View {
         ZStack {
-            if let imageURLString = card?.displayImageSrc {
-                CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
+            if let imageURL = card?.displayImageURL {
+                CachedAsyncImage(url: imageURL) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -77,8 +77,9 @@ private struct WishlistCardCell: View {
         }
         .aspectRatio(5/7, contentMode: .fit)
         .clipShape(RoundedRectangle(cornerRadius: 8))
-        .task {
+        .task(id: cardID) {
             isLoading = true
+            card = nil
             card = await cardLoader(cardID)
             isLoading = false
         }

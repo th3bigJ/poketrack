@@ -26,6 +26,7 @@ struct MyProfileView: View {
     @State private var cardCount: Int = 0
     @State private var binderCount: Int = 0
     @State private var deckCount: Int = 0
+    @State private var acceptedFriendCount: Int?
     @State private var favoriteCard: Card?
     @State private var favoriteCardPrice: Double?
     @State private var myActivity: [SocialFeedService.FeedItem] = []
@@ -89,6 +90,10 @@ struct MyProfileView: View {
 
     private var displayedBinderCount: Int {
         max(binderCount, profile.collectionBinderCount ?? 0)
+    }
+
+    private var displayedFriendCount: Int {
+        acceptedFriendCount ?? profile.friendCount ?? 0
     }
 
     var body: some View {
@@ -177,7 +182,7 @@ struct MyProfileView: View {
             }
 
             HStack(spacing: 0) {
-                let friendCount = profile.friendCount ?? 0
+                let friendCount = displayedFriendCount
                 statColumn(value: "\(displayedCardCount)", label: displayedCardCount == 1 ? "Card" : "Cards")
                 statColumn(value: "\(displayedDeckCount)", label: displayedDeckCount == 1 ? "Deck" : "Decks")
                 statColumn(value: "\(displayedBinderCount)", label: displayedBinderCount == 1 ? "Binder" : "Binders")
@@ -591,6 +596,7 @@ struct MyProfileView: View {
         } catch {
             print("Error fetching my activity: \(error)")
         }
+        acceptedFriendCount = try? await services.socialFriend.fetchAcceptedFriendCount(for: profile.id)
         services.socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
         if let wishlistItems = services.wishlist?.items {
             services.socialCardLibrary.scheduleAutoSyncWishlist(items: wishlistItems)

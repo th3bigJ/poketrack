@@ -29,6 +29,7 @@ struct FriendsListView: View {
     @State private var isLoading = false
     @State private var isSearching = false
     @State private var errorMessage: String?
+    @State private var friendCountsByUserID: [UUID: Int] = [:]
     @State private var friendTradeListCardIDsByUser: [UUID: Set<String>] = [:]
     @State private var friendWishlistCardIDsByUser: [UUID: Set<String>] = [:]
     @State private var tradeSeedCardName: String?
@@ -119,7 +120,7 @@ struct FriendsListView: View {
                 }
             }
         }
-        .toolbar(socialSelectedTab == nil ? .hidden : .automatic, for: .navigationBar)
+        .toolbar(socialSelectedTab == nil && !embedInParentScrollView ? .hidden : .automatic, for: .navigationBar)
         .task { await refresh() }
         .onChange(of: searchText) { _, newValue in
             Task { await search(query: newValue) }
@@ -508,7 +509,7 @@ struct FriendsListView: View {
     private func profileStats(_ profile: SocialProfile) -> String {
         let cards = profile.collectionCardCount ?? 0
         let decks = profile.collectionDeckCount ?? 0
-        let friends = profile.friendCount ?? 0
+        let friends = friendCountsByUserID[profile.id] ?? profile.friendCount ?? 0
         return "\(cards) cards · \(decks) decks · \(friends) friends"
     }
 
@@ -532,6 +533,7 @@ struct FriendsListView: View {
             friends = try await friendsTask
             incomingRequests = try await incomingTask
             outgoingRequests = try await outgoingTask
+            friendCountsByUserID = (try? await services.socialFriend.fetchPublicFriendCounts(for: friends.map(\.id))) ?? [:]
             await refreshTradeSuggestionContext(friendIDs: friends.map(\.id))
             errorMessage = nil
         } catch is CancellationError {
@@ -553,6 +555,10 @@ struct FriendsListView: View {
         defer { isSearching = false }
         do {
             searchResults = try await services.socialFriend.searchUsers(query: trimmed)
+            friendCountsByUserID.merge(
+                (try? await services.socialFriend.fetchPublicFriendCounts(for: searchResults.map(\.profile.id))) ?? [:],
+                uniquingKeysWith: { _, new in new }
+            )
             errorMessage = nil
         } catch is CancellationError {
             // Ignore

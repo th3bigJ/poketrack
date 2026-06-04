@@ -54,8 +54,8 @@ private struct PublicWishlistDetailItem: View {
         VStack(alignment: .leading, spacing: 8) {
             // Card Thumbnail
             ZStack {
-                if let imageURLString = card?.displayImageSrc {
-                    CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
+                if let imageURL = card?.displayImageURL {
+                    CachedAsyncImage(url: imageURL) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
                     } placeholder: {
                         Color.gray.opacity(0.1)
@@ -96,7 +96,9 @@ private struct PublicWishlistDetailItem: View {
                 .fill(Color(uiColor: .secondarySystemGroupedBackground))
                 .shadow(color: .black.opacity(0.03), radius: 2, y: 1)
         )
-        .task {
+        .task(id: cardID) {
+            card = nil
+            price = nil
             card = await cardLoader(cardID)
             if let card = card {
                 price = await services.pricing.usdPrice(for: card, printing: "normal")
