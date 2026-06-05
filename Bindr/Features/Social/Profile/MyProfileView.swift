@@ -5,7 +5,6 @@ struct MyProfileView: View {
     enum ProfileTab: String, CaseIterable {
         case posts
         case wishlist
-        case tradeList = "trade list"
         case friends
     }
 
@@ -35,15 +34,7 @@ struct MyProfileView: View {
     @State private var selectedProfileCardIDs: Set<String> = []
     @State private var profileCardsByID: [String: Card] = [:]
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
-    @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
 
-    private var tradeListSyncSignature: String {
-        tradeListItems
-            .map { "\($0.cardID)|\($0.variantKey)|\($0.notes)" }
-            .sorted()
-            .joined(separator: ";")
-    }
-    
     private var roleTitles: [String] {
         (profile.profileRoles ?? []).map { role in
             switch role {
@@ -113,9 +104,6 @@ struct MyProfileView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await refreshProfileContent()
-        }
-        .onChange(of: tradeListSyncSignature) { _, _ in
-            services.socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
         }
     }
     
@@ -267,7 +255,6 @@ struct MyProfileView: View {
         switch tab {
         case .posts: return "Posts"
         case .wishlist: return "Wishlist"
-        case .tradeList: return "Trade List"
         case .friends: return "Friends"
         }
     }
@@ -331,24 +318,6 @@ struct MyProfileView: View {
                         }
                     )
                 }
-            case .tradeList:
-                let ids = tradeListItems.map(\.cardID).filter(isRenderableCardIDForProfileGrid)
-                if ids.isEmpty {
-                    emptyProfileCard("Cards you add to your trade list will appear here.")
-                } else {
-                    SelectableCardGrid(
-                        cardIDs: ids,
-                        isSelectMode: $isProfileCardSelectMode,
-                        selectedCardIDs: $selectedProfileCardIDs,
-                        cardLoader: { id in await loadProfileCard(id) },
-                        onCardTap: { tappedID in
-                            Task { await openProfileCardDetail(tappedID: tappedID, orderedIDs: ids) }
-                        },
-                        onRemoveFromTradeList: { cardID in
-                            removeCardFromTradeList(cardID)
-                        }
-                    )
-                }
             case .friends:
                 EmptyView()
             }
@@ -393,16 +362,6 @@ struct MyProfileView: View {
         guard let tappedCard = profileCardsByID[tappedID] else { return }
         let orderedCards = orderedIDs.compactMap { profileCardsByID[$0] }
         presentCard(tappedCard, orderedCards.isEmpty ? [tappedCard] : orderedCards)
-    }
-
-    private func removeCardFromTradeList(_ cardID: String) {
-        for item in tradeListItems where item.cardID == cardID {
-            modelContext.delete(item)
-        }
-        try? modelContext.save()
-        let remaining = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
-        services.socialCardLibrary.scheduleAutoSyncTradeList(items: remaining)
-        Haptics.lightImpact()
     }
 
     private func rolePill(_ title: String) -> some View {
@@ -597,7 +556,6 @@ struct MyProfileView: View {
             print("Error fetching my activity: \(error)")
         }
         acceptedFriendCount = try? await services.socialFriend.fetchAcceptedFriendCount(for: profile.id)
-        services.socialCardLibrary.scheduleAutoSyncTradeList(items: tradeListItems)
         if let wishlistItems = services.wishlist?.items {
             services.socialCardLibrary.scheduleAutoSyncWishlist(items: wishlistItems)
         }

@@ -317,7 +317,6 @@ struct TradesView: View {
     private func applyLocalTradeSettlementIfNeeded(_ twi: TradeWithItems) async {
         guard let uid = currentUserID else { return }
         let settlementKey = "trade.local.settlement.\(uid.uuidString).\(twi.id.uuidString)"
-        let tradeListCleanupKey = "trade.local.tradeListCleanup.v2.\(uid.uuidString).\(twi.id.uuidString)"
 
         let myItems = twi.myItems(currentUserID: uid)
         let theirItems = twi.theirItems(currentUserID: uid)
@@ -333,20 +332,6 @@ struct TradesView: View {
         let totalReceivedQty = theirItems.reduce(0) { $0 + max($1.quantity, 1) }
         let isCashPurchase = netCashPaid > 0 && totalReceivedQty > 0
         let cardUnitPrice = isCashPurchase ? netCashPaid / Double(totalReceivedQty) : nil
-
-        if !UserDefaults.standard.bool(forKey: tradeListCleanupKey) {
-            for item in myItems {
-                removeFromLocalTradeList(
-                    cardID: item.cardID,
-                    variantKey: item.variantKey,
-                    quantity: max(item.quantity, 1)
-                )
-            }
-            try? modelContext.save()
-            let remainingTradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
-            services.socialCardLibrary.scheduleAutoSyncTradeList(items: remainingTradeListItems)
-            UserDefaults.standard.set(true, forKey: tradeListCleanupKey)
-        }
 
         guard !UserDefaults.standard.bool(forKey: settlementKey) else { return }
         guard let ledger = services.collectionLedger else { return }
@@ -445,8 +430,6 @@ struct TradesView: View {
         }
 
         try? modelContext.save()
-        let remainingTradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
-        services.socialCardLibrary.scheduleAutoSyncTradeList(items: remainingTradeListItems)
         UserDefaults.standard.set(true, forKey: settlementKey)
     }
 
@@ -459,29 +442,6 @@ struct TradesView: View {
             } else if !stack.notes.localizedCaseInsensitiveContains(note) {
                 stack.notes = "\(stack.notes); \(note)"
             }
-        }
-    }
-
-    private func removeFromLocalTradeList(cardID: String, variantKey: String, quantity: Int) {
-        let tradeListItems = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? []
-        let candidates = tradeListItems.filter { $0.cardID == cardID }
-        guard !candidates.isEmpty else { return }
-
-        let ordered = candidates.sorted {
-            if $0.variantKey == variantKey && $1.variantKey != variantKey { return true }
-            if $0.variantKey != variantKey && $1.variantKey == variantKey { return false }
-            return $0.dateAdded < $1.dateAdded
-        }
-
-        var remaining = max(quantity, 1)
-        for item in ordered where remaining > 0 {
-            let removed = min(item.quantity, remaining)
-            if item.quantity <= removed {
-                modelContext.delete(item)
-            } else {
-                item.quantity -= removed
-            }
-            remaining -= removed
         }
     }
 

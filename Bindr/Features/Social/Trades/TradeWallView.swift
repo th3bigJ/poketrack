@@ -196,25 +196,20 @@ struct TradeWallView: View {
             let friendIDs = friends.map(\.id)
 
             async let friendWishlists = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
-            async let friendTradeLists = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
 
             let myWishlist = Set<String>(services.wishlist?.items.map(\.cardID) ?? [])
             let friendWishlistMap = try await friendWishlists
-            let tradeListMap = try await friendTradeLists
             let myOwnedCardIDs = Set<String>(collectionItems.compactMap { item in
                 guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
                 return item.cardID
             })
 
             var newSuggested: [SuggestedWallEntry] = []
-            var newCardEntries: [WallEntry] = []
-            var newSealedEntries: [SealedWallEntry] = []
+            let newCardEntries: [WallEntry] = []
+            let newSealedEntries: [SealedWallEntry] = []
 
             for friend in friends {
-                let theyHave = Set<String>(tradeListMap[friend.id] ?? [])
                 let theyWant = Set<String>(friendWishlistMap[friend.id] ?? [])
-
-                let iWantAndTheyHave = myWishlist.intersection(theyHave)
                 let theyWantAndIHave = theyWant.intersection(myOwnedCardIDs)
 
                 for cardID in theyWantAndIHave {
@@ -228,41 +223,7 @@ struct TradeWallView: View {
                     }
                 }
 
-                for cardID in iWantAndTheyHave {
-                    if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                        newSuggested.append(SuggestedWallEntry(
-                            id: "\(friend.id)-have-\(cardID)",
-                            card: card,
-                            owner: friend,
-                            matchType: .theyHaveWhatIWant
-                        ))
-                    }
-                }
-
-                let cardIDs = tradeListMap[friend.id] ?? []
-                for cardID in cardIDs {
-                    if let productID = SealedProduct.parseCollectionProductID(cardID) {
-                        if let product = services.sealedProducts.products.first(where: { $0.id == productID }) {
-                            newSealedEntries.append(SealedWallEntry(
-                                id: "\(friend.id)-\(cardID)",
-                                product: product,
-                                owner: friend
-                            ))
-                        }
-                    } else if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                        let setName = services.cardData.sets.first { $0.setCode == card.setCode }?.name
-                        newCardEntries.append(WallEntry(
-                            id: "\(friend.id)-\(cardID)",
-                            card: card,
-                            owner: friend,
-                            setName: setName
-                        ))
-                    }
-                }
             }
-
-            let suggestedKeys = Set(newSuggested.map { "\($0.owner.id)-\($0.card.masterCardId)" })
-            newCardEntries.removeAll { suggestedKeys.contains("\($0.owner.id)-\($0.card.masterCardId)") }
 
             suggestedEntries = newSuggested
             cardEntries = newCardEntries
@@ -318,13 +279,13 @@ struct TradeWallView: View {
 private enum TradeWallStatusTag {
     case theyWantIt
     case theyHaveIt
-    case onTradeList
+    case inCollection
 
     var label: String {
         switch self {
         case .theyWantIt: "They want it"
         case .theyHaveIt: "They have it"
-        case .onTradeList: "On Tradelist"
+        case .inCollection: "In collection"
         }
     }
 
@@ -332,7 +293,7 @@ private enum TradeWallStatusTag {
         switch self {
         case .theyWantIt: Color(hex: "5B8CF5")
         case .theyHaveIt: Color(hex: "E8B84B")
-        case .onTradeList: Color.secondary
+        case .inCollection: Color.secondary
         }
     }
 
@@ -446,7 +407,7 @@ private struct TradeWallCardCell: View {
             TradeWallCellFooter(
                 owner: entry.owner,
                 itemName: entry.card.cardName,
-                tag: .onTradeList
+                tag: .inCollection
             )
         }
     }
@@ -474,7 +435,7 @@ private struct TradeWallSealedCell: View {
             TradeWallCellFooter(
                 owner: entry.owner,
                 itemName: entry.product.name,
-                tag: .onTradeList
+                tag: .inCollection
             )
         }
     }

@@ -15,7 +15,6 @@ struct BrowseProductsTabContent: View {
 
     @State private var displayedProducts: [SealedProduct] = []
     @State private var addToCollectionProduct: SealedProduct?
-    @State private var addToFolderProduct: SealedProduct?
     @State private var showWishlistPaywall = false
     @State private var showWishlistAlert = false
     @State private var wishlistAlertMessage: String?
@@ -255,11 +254,6 @@ struct BrowseProductsTabContent: View {
                                         systemImage: isWishlisted(product) ? "heart.slash" : "heart"
                                     )
                                 }
-                                Button {
-                                    addToFolderProduct = product
-                                } label: {
-                                    Label("Add to Folder", systemImage: "folder.badge.plus")
-                                }
                             }
                         }
                         .padding(.horizontal, sealedGridHorizontalPadding)
@@ -296,9 +290,6 @@ struct BrowseProductsTabContent: View {
         .sheet(item: $addToCollectionProduct) { product in
             AddSealedToCollectionSheet(product: product)
                 .environment(services)
-        }
-        .sheet(item: $addToFolderProduct) { product in
-            AddSealedToFolderSheet(cardID: product.collectionCardID, variantKey: "sealed")
         }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
@@ -790,7 +781,6 @@ private struct SealedProductDetailPage: View {
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var isWishlisted = false
-    @State private var showAddToFolderSheet = false
     @State private var showShareSheet = false
     @State private var isMenuExpanded = false
     @State private var editingItem: CollectionItem?
@@ -844,9 +834,6 @@ private struct SealedProductDetailPage: View {
         }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet().environment(services)
-        }
-        .sheet(isPresented: $showAddToFolderSheet) {
-            AddSealedToFolderSheet(cardID: collectionCardID, variantKey: "sealed")
         }
         .sheet(isPresented: $showShareSheet) {
             ShareSheet(items: shareItems)
@@ -1261,10 +1248,6 @@ private struct SealedProductDetailPage: View {
             menuRow(label: "Add to Collection", subLabel: isOwned ? "Add more copies" : "Add to your collection", icon: "plus.circle.fill", color: SealedPricingPalette.success) {
                 showAddSheet = true
             }
-            Divider().padding(.horizontal, 20).opacity(0.06)
-            menuRow(label: "Add to Folder", subLabel: "Save to a specific folder", icon: "folder.badge.plus", color: Color(red: 0.18, green: 0.72, blue: 0.88)) {
-                showAddToFolderSheet = true
-            }
         }
         .frame(width: 280)
         .glassCardStyle(cornerRadius: 26, interactive: true)
@@ -1457,107 +1440,6 @@ private struct SealedDetailSurface<Content: View>: View {
         .glassCardStyle(cornerRadius: 26, interactive: false)
     }
 
-}
-
-struct AddSealedToFolderSheet: View {
-    @Environment(\.modelContext) private var modelContext
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.colorScheme) private var colorScheme
-
-    let cardID: String
-    let variantKey: String
-
-    @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
-
-    @State private var showCreateAlert = false
-    @State private var newFolderTitle = ""
-    @State private var addedFolderIDs: Set<UUID> = []
-
-    private var headerButtonColor: Color {
-        colorScheme == .dark ? .white : .black
-    }
-
-    var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    Button {
-                        newFolderTitle = ""
-                        showCreateAlert = true
-                    } label: {
-                        Label("New Folder…", systemImage: "folder.badge.plus")
-                            .foregroundStyle(.primary)
-                    }
-                }
-
-                if !folders.isEmpty {
-                    Section("MY FOLDERS") {
-                        ForEach(folders) { folder in
-                            let alreadyAdded = addedFolderIDs.contains(folder.id) || folderContainsItem(folder)
-                            Button {
-                                guard !alreadyAdded else { return }
-                                addToFolder(folder)
-                            } label: {
-                                HStack {
-                                    Label(folder.title, systemImage: "folder")
-                                        .foregroundStyle(alreadyAdded ? .secondary : .primary)
-                                    Spacer()
-                                    if alreadyAdded {
-                                        Image(systemName: "checkmark")
-                                            .font(.caption.weight(.semibold))
-                                            .foregroundStyle(.secondary)
-                                    } else {
-                                        Text("\((folder.items ?? []).count) cards")
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Add to Folder")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Done") { dismiss() }
-                        .foregroundStyle(headerButtonColor)
-                }
-            }
-            .alert("New Folder", isPresented: $showCreateAlert) {
-                TextField("Folder name", text: $newFolderTitle)
-                Button("Create") { createAndAdd() }
-                Button("Cancel", role: .cancel) { newFolderTitle = "" }
-            }
-        }
-        .tint(headerButtonColor)
-    }
-
-    private func folderContainsItem(_ folder: CardFolder) -> Bool {
-        (folder.items ?? []).contains { $0.cardID == cardID && $0.variantKey == variantKey }
-    }
-
-    private func addToFolder(_ folder: CardFolder) {
-        let item = CardFolderItem(cardID: cardID, variantKey: variantKey)
-        item.folder = folder
-        modelContext.insert(item)
-        try? modelContext.save()
-        addedFolderIDs.insert(folder.id)
-    }
-
-    private func createAndAdd() {
-        let title = newFolderTitle.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !title.isEmpty else { return }
-        let folder = CardFolder(title: title)
-        modelContext.insert(folder)
-        let item = CardFolderItem(cardID: cardID, variantKey: variantKey)
-        item.folder = folder
-        modelContext.insert(item)
-        try? modelContext.save()
-        addedFolderIDs.insert(folder.id)
-        newFolderTitle = ""
-    }
 }
 
 private struct SealedHoldingSource: Identifiable {

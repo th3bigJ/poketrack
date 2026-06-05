@@ -38,8 +38,6 @@ struct CardContextActionRequest: Identifiable {
 enum CardContextAction: String, CaseIterable, Identifiable {
     case collection = "Collection"
     case wishlist   = "Wishlist"
-    case tradeList  = "Trade List"
-    case folder     = "Folder"
     case markAs     = "Mark As"
 
     var id: String { rawValue }
@@ -48,8 +46,6 @@ enum CardContextAction: String, CaseIterable, Identifiable {
         switch self {
         case .collection: return "books.vertical"
         case .wishlist:   return "heart"
-        case .tradeList:  return "arrow.left.arrow.right"
-        case .folder:     return "folder.badge.plus"
         case .markAs:     return "tag"
         }
     }
@@ -62,9 +58,6 @@ struct CardContextActionSheet: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
-    @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
-    @Query private var tradeListItems: [TradeListItem]
-
     let request: CardContextActionRequest
 
     // Action picker
@@ -80,18 +73,6 @@ struct CardContextActionSheet: View {
     @State private var gradingCompany: GradingCompany = .psa
     @State private var occurredAt: Date = Date()
     @State private var collectionPriceText: String = ""
-
-    // Wishlist (no extra fields)
-
-    // Trade List
-    @State private var tradeListQuantity: Int = 1
-
-    // Folder
-    @State private var addedFolderIDs: Set<UUID> = []
-    @State private var folderQuantity: Int = 1
-    @State private var editingFolderQuantities: [UUID: Int] = [:]
-    @State private var showCreateFolderAlert = false
-    @State private var newFolderTitle: String = ""
 
     // Mark As
     @State private var dispositionKind: CollectionDispositionKind = .sold
@@ -110,7 +91,7 @@ struct CardContextActionSheet: View {
         if request.collectionItem != nil {
             return CardContextAction.allCases
         }
-        return [.collection, .wishlist, .tradeList, .folder]
+        return [.collection, .wishlist]
     }
 
     private var currencySymbol: String { services.priceDisplay.currency.symbol }
@@ -119,12 +100,6 @@ struct CardContextActionSheet: View {
     }
 
     private var ownedQuantity: Int { request.ownedQuantity ?? 1 }
-
-    private var existingTradeListItem: TradeListItem? {
-        tradeListItems.first {
-            $0.cardID == request.card.masterCardId && $0.variantKey == selectedVariantKey
-        }
-    }
 
     init(request: CardContextActionRequest) {
         self.request = request
@@ -141,8 +116,6 @@ struct CardContextActionSheet: View {
                 switch selectedAction {
                 case .collection: collectionFields
                 case .wishlist:   wishlistFields
-                case .tradeList:  tradeListFields
-                case .folder:     folderFields
                 case .markAs:     markAsFields
                 }
 
@@ -171,11 +144,6 @@ struct CardContextActionSheet: View {
                         .foregroundStyle(headerButtonColor)
                 }
             }
-            .alert("New Folder", isPresented: $showCreateFolderAlert) {
-                TextField("Folder name", text: $newFolderTitle)
-                Button("Create") { createAndAddToFolder() }
-                Button("Cancel", role: .cancel) { newFolderTitle = "" }
-            }
         }
         .tint(headerButtonColor)
         .sheet(isPresented: $showPaywall) {
@@ -183,7 +151,6 @@ struct CardContextActionSheet: View {
         }
         .onAppear {
             quantity = min(ownedQuantity, 1)
-            tradeListQuantity = min(ownedQuantity, existingTradeListItem.map { $0.quantity + 1 } ?? 1)
             markAsQuantity = min(max(ownedQuantity, 1), 1)
         }
     }
@@ -337,103 +304,6 @@ struct CardContextActionSheet: View {
 
     // MARK: - Trade List fields
 
-    @ViewBuilder
-    private var tradeListFields: some View {
-        Section {
-            Stepper(
-                "Quantity: \(tradeListQuantity)",
-                value: $tradeListQuantity,
-                in: 1...max(ownedQuantity, 1)
-            )
-        } footer: {
-            if request.ownedQuantity != nil {
-                Text("You own \(ownedQuantity) \(ownedQuantity == 1 ? "copy" : "copies") of this card.")
-            }
-        }
-
-        if let existing = existingTradeListItem {
-            Section {
-                HStack {
-                    Text("Currently on trade list")
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    Text("\(existing.quantity)")
-                }
-                .font(.subheadline)
-            }
-        }
-    }
-
-    // MARK: - Folder fields
-
-    @ViewBuilder
-    private var folderFields: some View {
-        Section {
-            Stepper("Quantity: \(folderQuantity)", value: $folderQuantity, in: 1...999)
-        }
-
-        Section {
-            Button {
-                newFolderTitle = ""
-                showCreateFolderAlert = true
-            } label: {
-                Label("New Folder…", systemImage: "folder.badge.plus")
-                    .foregroundStyle(.primary)
-            }
-        }
-
-        if !folders.isEmpty {
-            Section("MY FOLDERS") {
-                ForEach(folders) { folder in
-                    let existingItem = existingFolderItem(in: folder)
-                    let justAdded = addedFolderIDs.contains(folder.id)
-                    if let item = existingItem {
-                        let editQty = Binding(
-                            get: { editingFolderQuantities[folder.id] ?? item.quantity },
-                            set: { editingFolderQuantities[folder.id] = $0 }
-                        )
-                        VStack(alignment: .leading, spacing: 8) {
-                            Label(folder.title, systemImage: "folder")
-                                .foregroundStyle(.primary)
-                            HStack {
-                                Stepper("Qty: \(editQty.wrappedValue)", value: editQty, in: 1...999)
-                                Button("Save") {
-                                    updateFolderItemQuantity(item, quantity: editQty.wrappedValue)
-                                    editingFolderQuantities.removeValue(forKey: folder.id)
-                                }
-                                .buttonStyle(.borderedProminent)
-                                .tint(headerButtonColor)
-                                .font(.caption.weight(.semibold))
-                                .disabled(editQty.wrappedValue == item.quantity && editingFolderQuantities[folder.id] == nil)
-                            }
-                        }
-                        .padding(.vertical, 4)
-                    } else {
-                        Button {
-                            guard !justAdded else { return }
-                            addCardToFolder(folder)
-                        } label: {
-                            HStack {
-                                Label(folder.title, systemImage: "folder")
-                                    .foregroundStyle(justAdded ? .secondary : .primary)
-                                Spacer()
-                                if justAdded {
-                                    Image(systemName: "checkmark")
-                                        .font(.caption.weight(.semibold))
-                                        .foregroundStyle(.secondary)
-                                } else {
-                                    Text("\((folder.items ?? []).count) cards")
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     // MARK: - Mark As fields
 
     @ViewBuilder
@@ -493,9 +363,6 @@ struct CardContextActionSheet: View {
     @ViewBuilder
     private var confirmButton: some View {
         switch selectedAction {
-        case .folder:
-            Button("Done") { dismiss() }
-                .foregroundStyle(headerButtonColor)
         case .wishlist:
             Button("Add") { saveWishlist() }
                 .foregroundStyle(headerButtonColor)
@@ -503,9 +370,6 @@ struct CardContextActionSheet: View {
             Button("Add") { saveCollection() }
                 .foregroundStyle(headerButtonColor)
                 .disabled(acquisitionKind == .trade)
-        case .tradeList:
-            Button("Save") { saveTradeList() }
-                .foregroundStyle(headerButtonColor)
         case .markAs:
             Button("Save") { saveMarkAs() }
                 .foregroundStyle(headerButtonColor)
@@ -577,28 +441,6 @@ struct CardContextActionSheet: View {
         }
     }
 
-    private func saveTradeList() {
-        errorMessage = nil
-        if let existing = existingTradeListItem {
-            existing.quantity = tradeListQuantity
-        } else {
-            modelContext.insert(TradeListItem(
-                cardID: request.card.masterCardId,
-                variantKey: selectedVariantKey,
-                quantity: tradeListQuantity
-            ))
-        }
-        try? modelContext.save()
-        syncTradeList()
-        Haptics.success()
-        dismiss()
-    }
-
-    private func syncTradeList() {
-        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
-        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
-    }
-
     private func saveMarkAs() {
         errorMessage = nil
         guard let item = request.collectionItem else { return }
@@ -622,47 +464,6 @@ struct CardContextActionSheet: View {
         } catch {
             errorMessage = error.localizedDescription
         }
-    }
-
-    // MARK: - Folder helpers
-
-    private func folderContainsCard(_ folder: CardFolder) -> Bool {
-        existingFolderItem(in: folder) != nil
-    }
-
-    private func existingFolderItem(in folder: CardFolder) -> CardFolderItem? {
-        (folder.items ?? []).first {
-            $0.cardID == request.card.masterCardId && $0.variantKey == selectedVariantKey
-        }
-    }
-
-    private func updateFolderItemQuantity(_ item: CardFolderItem, quantity: Int) {
-        item.quantity = quantity
-        try? modelContext.save()
-        Haptics.success()
-    }
-
-    private func addCardToFolder(_ folder: CardFolder) {
-        let item = CardFolderItem(cardID: request.card.masterCardId, variantKey: selectedVariantKey, quantity: folderQuantity)
-        item.folder = folder
-        modelContext.insert(item)
-        try? modelContext.save()
-        addedFolderIDs.insert(folder.id)
-        Haptics.success()
-    }
-
-    private func createAndAddToFolder() {
-        let title = newFolderTitle.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !title.isEmpty else { return }
-        let folder = CardFolder(title: title)
-        modelContext.insert(folder)
-        let item = CardFolderItem(cardID: request.card.masterCardId, variantKey: selectedVariantKey, quantity: folderQuantity)
-        item.folder = folder
-        modelContext.insert(item)
-        try? modelContext.save()
-        addedFolderIDs.insert(folder.id)
-        newFolderTitle = ""
-        Haptics.success()
     }
 
     // MARK: - Helpers

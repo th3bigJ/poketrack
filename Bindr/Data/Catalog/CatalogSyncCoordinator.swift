@@ -136,6 +136,16 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         let needsPricingRefresh = DailyMarketPricingSchedule.needsRefreshAfterNewPeriod(lastSync: lastPricingSync)
         if needsPricingRefresh { return true }
 
+        if enabledBrands.contains(.pokemon) {
+            // Sealed prices only come from daily R2 buckets. A background refresh at 03:15 can
+            // run before today's file exists; without this gate the foreground launch would skip
+            // sync because pricing_last_synced_at and sealed blob fetched_at were already bumped.
+            let todayUTC = BucketDateMath.todayUTCKey()
+            if store.metaSync(DailyBlobKey.sealedPricesAsOfDate) != todayUTC {
+                return true
+            }
+        }
+
         let periodStart = DailyMarketPricingSchedule.currentPeriodStart(now: Date(), calendar: .current)
         var dailyKeys: [String] = [DailyBlobKey.priceTrends, DailyBlobKey.marketTrend]
         if enabledBrands.contains(.pokemon) {
@@ -397,6 +407,8 @@ enum DailyBlobKey {
     static let marketTrend = "market_trend"
     static let sealedPrices = "sealed_prices"
     static let sealedPriceHistory = "sealed_price_history"
+    /// UTC date key (`YYYY-MM-DD`) for the newest sealed daily bucket merged into `sealedPrices`.
+    static let sealedPricesAsOfDate = "sealed_prices_as_of_date"
 }
 
 enum DailyBlobPath {

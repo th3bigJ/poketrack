@@ -30,7 +30,6 @@ struct FriendsListView: View {
     @State private var isSearching = false
     @State private var errorMessage: String?
     @State private var friendCountsByUserID: [UUID: Int] = [:]
-    @State private var friendTradeListCardIDsByUser: [UUID: Set<String>] = [:]
     @State private var friendWishlistCardIDsByUser: [UUID: Set<String>] = [:]
     @State private var tradeSeedCardName: String?
     @State private var isLoadingTradeSuggestions = false
@@ -53,7 +52,7 @@ struct FriendsListView: View {
         return friends.filter { friend in
             switch seed.preferredSide {
             case .theirSide:
-                return friendTradeListCardIDsByUser[friend.id]?.contains(seed.cardID) == true
+                return false
             case .mySide:
                 return friendWishlistCardIDsByUser[friend.id]?.contains(seed.cardID) == true
             }
@@ -604,7 +603,6 @@ struct FriendsListView: View {
 
     private func refreshTradeSuggestionContext(friendIDs: [UUID]) async {
         guard isSelectingFriendForTrade else {
-            friendTradeListCardIDsByUser = [:]
             friendWishlistCardIDsByUser = [:]
             tradeSeedCardName = nil
             isLoadingTradeSuggestions = false
@@ -615,14 +613,10 @@ struct FriendsListView: View {
         defer { isLoadingTradeSuggestions = false }
 
         if !friendIDs.isEmpty {
-            async let tradeListsTask = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
             async let wishlistsTask = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
-            let tradeLists = (try? await tradeListsTask) ?? [:]
             let wishlists = (try? await wishlistsTask) ?? [:]
-            friendTradeListCardIDsByUser = tradeLists.mapValues { Set($0) }
             friendWishlistCardIDsByUser = wishlists.mapValues { Set($0) }
         } else {
-            friendTradeListCardIDsByUser = [:]
             friendWishlistCardIDsByUser = [:]
         }
 

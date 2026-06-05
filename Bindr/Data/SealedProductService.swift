@@ -34,6 +34,25 @@ private enum SealedProductSQLiteLoader {
         }.value
     }
 
+    private static func parseFlatStringDoubleMap(_ data: Data) -> [String: Double]? {
+        guard let raw = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return nil }
+        var bucket: [String: Double] = [:]
+        bucket.reserveCapacity(raw.count)
+        for (key, value) in raw {
+            switch value {
+            case let d as Double: bucket[key] = d
+            case let f as Float: bucket[key] = Double(f)
+            case let i as Int: bucket[key] = Double(i)
+            case let n as NSNumber: bucket[key] = n.doubleValue
+            case let s as String:
+                let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+                if let d = Double(t) { bucket[key] = d }
+            default: continue
+            }
+        }
+        return bucket
+    }
+
     private static func decode(
         productsData: Data?,
         pricesData: Data?,
@@ -54,7 +73,7 @@ private enum SealedProductSQLiteLoader {
 
         var decodedPrices: [Int: Double]?
         if let data = pricesData,
-           let flat = try? JSONSerialization.jsonObject(with: data) as? [String: Double] {
+           let flat = Self.parseFlatStringDoubleMap(data) {
             var next: [Int: Double] = [:]
             next.reserveCapacity(flat.count)
             for (k, v) in flat {

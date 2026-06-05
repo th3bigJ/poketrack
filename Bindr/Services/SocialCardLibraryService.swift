@@ -45,37 +45,7 @@ final class SocialCardLibraryService {
         }
     }
 
-    private struct TradeListItemUpsertRequest: Encodable {
-        let userID: UUID
-        let cardID: String
-        let variantKey: String
-        let quantity: Int
-        let notes: String?
-        let updatedAt: Date
-
-        enum CodingKeys: String, CodingKey {
-            case userID = "user_id"
-            case cardID = "card_id"
-            case variantKey = "variant_key"
-            case quantity
-            case notes
-            case updatedAt = "updated_at"
-        }
-    }
-
     private struct WishlistItemRow: Decodable {
-        let userID: UUID
-        let cardID: String
-        let variantKey: String
-
-        enum CodingKeys: String, CodingKey {
-            case userID = "user_id"
-            case cardID = "card_id"
-            case variantKey = "variant_key"
-        }
-    }
-
-    private struct TradeListItemRow: Decodable {
         let userID: UUID
         let cardID: String
         let variantKey: String
@@ -89,7 +59,6 @@ final class SocialCardLibraryService {
 
     private enum SyncKey: Hashable {
         case wishlist
-        case tradeList
     }
 
     private struct WishlistItemSnapshot: Sendable, Equatable {
@@ -98,19 +67,11 @@ final class SocialCardLibraryService {
         let notes: String?
     }
 
-    private struct TradeListItemSnapshot: Sendable, Equatable {
-        let cardID: String
-        let variantKey: String
-        let quantity: Int
-        let notes: String?
-    }
-
     private let authService: SocialAuthService
     private var baseURL: URL? { AppConfiguration.supabaseURL }
     private var publishableKey: String { AppConfiguration.supabasePublishableKey }
     private var pendingSyncTasks: [SyncKey: Task<Void, Never>] = [:]
     private var pendingWishlistSnapshots: [WishlistItemSnapshot] = []
-    private var pendingTradeListSnapshots: [TradeListItemSnapshot] = []
     private let queryDateFormatter = ISO8601DateFormatter()
     private(set) var lastSyncError: String?
     private let maxUpsertBatchSize = 250
@@ -131,18 +92,6 @@ final class SocialCardLibraryService {
         scheduleSync(for: .wishlist)
     }
 
-    func scheduleAutoSyncTradeList(items: [TradeListItem]) {
-        pendingTradeListSnapshots = items.map {
-            TradeListItemSnapshot(
-                cardID: $0.cardID,
-                variantKey: $0.variantKey,
-                quantity: $0.quantity,
-                notes: cleanedNotes($0.notes)
-            )
-        }
-        scheduleSync(for: .tradeList)
-    }
-
     func fetchWishlistCardIDs(for userID: UUID) async throws -> [String] {
         let rows: [WishlistItemRow] = try await execute(
             path: "/rest/v1/social_wishlist_items?select=user_id,card_id,variant_key&user_id=eq.\(userID.uuidString)&order=updated_at.desc",
@@ -150,30 +99,6 @@ final class SocialCardLibraryService {
             accessToken: try signedInAccessToken()
         )
         return dedupeCardIDs(rows.map(\.cardID))
-    }
-
-    func fetchTradeListCardIDs(for userID: UUID) async throws -> [String] {
-        let rows: [TradeListItemRow] = try await execute(
-            path: "/rest/v1/social_trade_list_items?select=user_id,card_id,variant_key&user_id=eq.\(userID.uuidString)&order=updated_at.desc",
-            method: "GET",
-            accessToken: try signedInAccessToken()
-        )
-        return dedupeCardIDs(rows.map(\.cardID))
-    }
-
-    func fetchTradeListCardIDsByUser(for userIDs: [UUID]) async throws -> [UUID: [String]] {
-        guard !userIDs.isEmpty else { return [:] }
-        let inList = userIDs.map(\.uuidString).joined(separator: ",")
-        let rows: [TradeListItemRow] = try await execute(
-            path: "/rest/v1/social_trade_list_items?select=user_id,card_id,variant_key&user_id=in.(\(inList))&order=updated_at.desc",
-            method: "GET",
-            accessToken: try signedInAccessToken()
-        )
-        var grouped: [UUID: [String]] = [:]
-        for row in rows where !row.cardID.isEmpty {
-            grouped[row.userID, default: []].append(row.cardID)
-        }
-        return grouped.mapValues { dedupeCardIDs($0) }
     }
 
     func fetchWishlistCardIDsByUser(for userIDs: [UUID]) async throws -> [UUID: [String]] {
@@ -226,42 +151,6 @@ final class SocialCardLibraryService {
         ) as EmptyResponse
     }
 
-    private func replaceMyTradeList(with snapshots: [TradeListItemSnapshot]) async throws {
-        let userID = try signedInUserID()
-        let token = try signedInAccessToken()
-        let syncStartedAt = Date(timeIntervalSince1970: floor(Date().timeIntervalSince1970))
-
-        if !snapshots.isEmpty {
-            let payload = snapshots.map {
-                TradeListItemUpsertRequest(
-                    userID: userID,
-                    cardID: $0.cardID,
-                    variantKey: $0.variantKey,
-                    quantity: $0.quantity,
-                    notes: $0.notes,
-                    updatedAt: syncStartedAt
-                )
-            }
-            for batch in payload.chunked(into: maxUpsertBatchSize) {
-                _ = try await execute(
-                    path: "/rest/v1/social_trade_list_items?on_conflict=user_id,card_id,variant_key",
-                    method: "POST",
-                    accessToken: token,
-                    body: batch,
-                    extraHeaders: ["Prefer": "resolution=merge-duplicates,return=minimal"]
-                ) as EmptyResponse
-            }
-        }
-
-        let encodedCutoff = encodedQueryValue(queryDateFormatter.string(from: syncStartedAt))
-        _ = try await execute(
-            path: "/rest/v1/social_trade_list_items?user_id=eq.\(userID.uuidString)&updated_at=lt.\(encodedCutoff)",
-            method: "DELETE",
-            accessToken: token,
-            extraHeaders: ["Prefer": "return=minimal"]
-        ) as EmptyResponse
-    }
-
     private var canSyncToCloud: Bool {
         guard case .signedIn = authService.authState else { return false }
         guard let token = authService.accessToken, !token.isEmpty else { return false }
@@ -285,10 +174,6 @@ final class SocialCardLibraryService {
                     let snapshots = pendingWishlistSnapshots
                     try await replaceMyWishlist(with: snapshots)
                     pendingWishlistSnapshots = snapshots == pendingWishlistSnapshots ? [] : pendingWishlistSnapshots
-                case .tradeList:
-                    let snapshots = pendingTradeListSnapshots
-                    try await replaceMyTradeList(with: snapshots)
-                    pendingTradeListSnapshots = snapshots == pendingTradeListSnapshots ? [] : pendingTradeListSnapshots
                 }
                 lastSyncError = nil
             } catch is CancellationError {
@@ -308,8 +193,6 @@ final class SocialCardLibraryService {
         switch key {
         case .wishlist:
             return !pendingWishlistSnapshots.isEmpty
-        case .tradeList:
-            return !pendingTradeListSnapshots.isEmpty
         }
     }
 

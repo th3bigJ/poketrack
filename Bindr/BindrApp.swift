@@ -88,7 +88,6 @@ struct BindrApp: App {
     nonisolated private static func makeModelContainer() -> ModelContainer {
         let schema = Schema([
             WishlistItem.self,
-            TradeListItem.self,
             CollectionItem.self,
             LedgerLine.self,
             CostLot.self,
@@ -100,8 +99,6 @@ struct BindrApp: App {
             CollectionValueSnapshot.self,
             CollectionWeeklyAverage.self,
             CollectionMonthlyAverage.self,
-            CardFolder.self,
-            CardFolderItem.self,
         ])
 
         do {

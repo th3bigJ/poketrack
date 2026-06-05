@@ -4,7 +4,6 @@ import SwiftData
 // MARK: - Share Item
 
 enum SocialShareItem {
-    case folder(CardFolder)
     case binder(Binder)
     case deck(Deck)
     case card
@@ -19,14 +18,13 @@ private enum PostTag: String, CaseIterable, Identifiable {
     case want    = "I Want"
     case binder  = "Binder"
     case deck    = "Deck"
-    case folder  = "Folder"
 
     var id: String { rawValue }
 
     var showsCardPicker: Bool {
         switch self {
         case .pull, .bought, .trade, .want: return true
-        case .binder, .deck, .folder:       return false
+        case .binder, .deck:               return false
         }
     }
 }
@@ -103,7 +101,6 @@ struct SocialShareSheet: View {
     @Query(sort: \WishlistItem.dateAdded, order: .reverse)      private var wishlistItems: [WishlistItem]
     @Query(sort: \Binder.createdAt, order: .reverse)            private var binders: [Binder]
     @Query(sort: \Deck.createdAt, order: .reverse)              private var decks: [Deck]
-    @Query(sort: \CardFolder.createdAt, order: .reverse)        private var folders: [CardFolder]
 
     @State private var selectedTag: PostTag
     @State private var postText = ""
@@ -111,7 +108,6 @@ struct SocialShareSheet: View {
     @State private var selectedWishlistItem: WishlistItem? = nil
     @State private var selectedBinder: Binder? = nil
     @State private var selectedDeck: Deck? = nil
-    @State private var selectedFolder: CardFolder? = nil
     @State private var visibility: SharedContentVisibility = .friends
     @State private var cardsByID: [String: Card] = [:]
     @State private var setCodesByID: [String: String] = [:]
@@ -123,9 +119,6 @@ struct SocialShareSheet: View {
     init(item: SocialShareItem) {
         self.item = item
         switch item {
-        case .folder(let f):
-            _selectedTag    = State(initialValue: .folder)
-            _selectedFolder = State(initialValue: f)
         case .binder(let b):
             _selectedTag    = State(initialValue: .binder)
             _selectedBinder = State(initialValue: b)
@@ -146,7 +139,6 @@ struct SocialShareSheet: View {
         case .want:                  return selectedWishlistItem != nil
         case .binder:                return selectedBinder != nil
         case .deck:                  return selectedDeck != nil
-        case .folder:                return selectedFolder != nil
         }
     }
 
@@ -462,10 +454,6 @@ struct SocialShareSheet: View {
                 sectionLabel("SELECT DECK")
                 chipPicker(items: decks, id: { $0.id }, title: { $0.title }, subtitle: { "\($0.totalCardCount) cards" },
                            selected: Binding(get: { selectedDeck?.id }, set: { id in selectedDeck = decks.first { $0.id == id } }))
-            case .folder:
-                sectionLabel("SELECT FOLDER")
-                chipPicker(items: folders, id: { $0.id }, title: { $0.title }, subtitle: { "\(($0.items ?? []).count) cards" },
-                           selected: Binding(get: { selectedFolder?.id }, set: { id in selectedFolder = folders.first { $0.id == id } }))
             default:
                 EmptyView()
             }
@@ -624,11 +612,6 @@ struct SocialShareSheet: View {
                 guard let deck = selectedDeck else { return }
                 _ = try await services.socialShare.publishDeck(
                     deck, title: deck.title, description: postText, visibility: visibility, includeValue: false
-                )
-            case .folder:
-                guard let folder = selectedFolder else { return }
-                _ = try await services.socialShare.publishFolder(
-                    folder, title: folder.title, description: postText, visibility: visibility, includeValue: false
                 )
             }
             dismiss()

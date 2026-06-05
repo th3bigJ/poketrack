@@ -299,5 +299,5 @@ struct ShareSheet: UIViewControllerRepresentable {
 
 #Preview {
     DataExportView()
-        .modelContainer(for: [WishlistItem.self, TradeListItem.self, CollectionItem.self, LedgerLine.self])
+        .modelContainer(for: [WishlistItem.self, CollectionItem.self, LedgerLine.self])
 }

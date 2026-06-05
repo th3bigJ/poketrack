@@ -103,11 +103,9 @@ struct SuggestedTradesView: View {
             let friendIDs = friends.map(\.id)
 
             async let friendWishlists = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
-            async let friendTradeLists = services.socialCardLibrary.fetchTradeListCardIDsByUser(for: friendIDs)
 
             let myWishlist = Set<String>(services.wishlist?.items.map(\.cardID) ?? [])
             let friendWishlistMap = try await friendWishlists
-            let friendTradeListMap = try await friendTradeLists
             let myOwnedCardIDs = Set<String>(collectionItems.compactMap { item in
                 guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
                 return item.cardID
@@ -116,25 +114,10 @@ struct SuggestedTradesView: View {
             var result: [TradeSuggestion] = []
 
             for friend in friends {
-                let theyHave = Set<String>(friendTradeListMap[friend.id] ?? [])
                 let theyWant = Set<String>(friendWishlistMap[friend.id] ?? [])
-
-                let iWantAndTheyHave = myWishlist.intersection(theyHave)
                 let theyWantAndIHave = theyWant.intersection(myOwnedCardIDs)
 
-                if !iWantAndTheyHave.isEmpty && !theyWantAndIHave.isEmpty {
-                    result.append(TradeSuggestion(
-                        friend: friend,
-                        matchType: .mutual,
-                        matchingCardIDs: Array(iWantAndTheyHave.prefix(5))
-                    ))
-                } else if !iWantAndTheyHave.isEmpty {
-                    result.append(TradeSuggestion(
-                        friend: friend,
-                        matchType: .theyHaveWhatIWant,
-                        matchingCardIDs: Array(iWantAndTheyHave.prefix(5))
-                    ))
-                } else if !theyWantAndIHave.isEmpty {
+                if !theyWantAndIHave.isEmpty {
                     result.append(TradeSuggestion(
                         friend: friend,
                         matchType: .iHaveWhatTheyWant,

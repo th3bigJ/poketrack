@@ -547,7 +547,6 @@ private struct AllSetsAllSealedView: View {
     @State private var filters = BrowseCardGridFilters()
     @State private var displayedProducts: [SealedProduct] = []
     @State private var addToCollectionProduct: SealedProduct?
-    @State private var addToFolderProduct: SealedProduct?
     @State private var showWishlistPaywall = false
     @State private var showWishlistAlert = false
     @State private var wishlistAlertMessage: String?
@@ -699,11 +698,6 @@ private struct AllSetsAllSealedView: View {
                                 systemImage: isWishlisted(product) ? "heart.slash" : "heart"
                             )
                         }
-                        Button {
-                            addToFolderProduct = product
-                        } label: {
-                            Label("Add to Folder", systemImage: "folder.badge.plus")
-                        }
                     }
                 }
                 .padding(.horizontal, horizontalPadding)
@@ -723,9 +717,6 @@ private struct AllSetsAllSealedView: View {
         .sheet(item: $addToCollectionProduct) { product in
             AddSealedToCollectionSheet(product: product)
                 .environment(services)
-        }
-        .sheet(item: $addToFolderProduct) { product in
-            AddSealedToFolderSheet(cardID: product.collectionCardID, variantKey: "sealed")
         }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()

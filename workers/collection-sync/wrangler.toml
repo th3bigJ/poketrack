@@ -1,0 +1,12 @@
+name = "collection-sync"
+main = "index.ts"
+compatibility_date = "2024-01-01"
+
+[[r2_buckets]]
+binding = "COLLECTION_BUCKET"
+bucket_name = "bindr-user-collections"
+
+[vars]
+# Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY as secrets:
+#   wrangler secret put SUPABASE_URL
+#   wrangler secret put SUPABASE_SERVICE_ROLE_KEY

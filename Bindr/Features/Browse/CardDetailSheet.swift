@@ -22,7 +22,6 @@ struct CardDetailSheet: View {
     @State private var editingLine: HoldingLine?
     @State private var dispositionLine: HoldingLine?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
-    @State private var folderContextRequest: CardContextActionRequest?
     @State private var showCardShare = false
     @State private var wishlistVariantKeys: [String] = ["normal"]
     @State private var isCurrentCardWishlisted = false
@@ -73,13 +72,6 @@ struct CardDetailSheet: View {
 
     private var singleAvailableVariantKey: String? {
         wishlistVariantKeys.count == 1 ? wishlistVariantKeys[0] : nil
-    }
-
-    private var preferredTradeListVariantKey: String {
-        visibleCollectionItems.first?.variantKey
-            ?? singleAvailableVariantKey
-            ?? wishlistVariantKeys.first
-            ?? "normal"
     }
 
     private func summaryFacts(for card: Card) -> [(String, String)] {
@@ -148,10 +140,6 @@ struct CardDetailSheet: View {
         }
         .sheet(item: $addToCollectionPayload) { payload in
             AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey, availableVariantKeys: payload.availableVariantKeys)
-                .environment(services)
-        }
-        .sheet(item: $folderContextRequest) { req in
-            CardContextActionSheet(request: req)
                 .environment(services)
         }
         .sheet(isPresented: $showCardShare) {
@@ -257,8 +245,6 @@ struct CardDetailSheet: View {
         .frame(maxWidth: .infinity)
     }
 
-    @Query private var tradeListItems: [TradeListItem]
-
     private func cardMetaRow(for card: Card) -> some View {
         VStack(spacing: 12) {
             titleBlock(for: card)
@@ -288,31 +274,9 @@ struct CardDetailSheet: View {
                 onRemoveFromWishlist: {
                     removeCurrentCardFromWishlist()
                 },
-                onAddToFolder: {
-                    let variantKey = singleAvailableVariantKey ?? wishlistVariantKeys.first ?? "normal"
-                    folderContextRequest = CardContextActionRequest(
-                        card: card,
-                        availableVariantKeys: wishlistVariantKeys,
-                        initialVariantKey: variantKey,
-                        initialAction: .folder
-                    )
-                },
-                onTradeAction: {
-                    if offerTradeOnly {
-                        performTradeAction(card: card, quantity: 1)
-                    } else if tradeListItems.contains(where: { $0.cardID == card.masterCardId }) {
-                        performTradeAction(card: card, quantity: 1)
-                    } else {
-                        folderContextRequest = CardContextActionRequest(
-                            card: card,
-                            availableVariantKeys: [preferredTradeListVariantKey],
-                            initialVariantKey: preferredTradeListVariantKey,
-                            ownedQuantity: max(visibleCollectionItems.reduce(0) { $0 + $1.quantity }, 1),
-                            collectionItem: visibleCollectionItems.first,
-                            initialAction: .tradeList
-                        )
-                    }
-                },
+                onTradeAction: tradeAction != nil ? {
+                    performTradeAction(card: card, quantity: 1)
+                } : nil,
                 onShareAction: {
                     showCardShare = true
                 },
@@ -363,7 +327,6 @@ struct CardDetailSheet: View {
                 onRemoveFromCollection: {
                     removeCurrentCardFromCollection()
                 },
-                isTradeable: tradeListItems.contains(where: { $0.cardID == currentCard.masterCardId }),
                 onAddToDeck: addToDeckAction.map { action in
                     { action(card, wishlistVariantKeys.first ?? "normal", 1) }
                 }
@@ -447,37 +410,6 @@ struct CardDetailSheet: View {
         }
     }
 
-    @ViewBuilder
-    private func folderActionButton(for card: Card) -> some View {
-        if let variantKey = singleAvailableVariantKey {
-            Button {
-                folderContextRequest = CardContextActionRequest(
-                    card: card,
-                    availableVariantKeys: wishlistVariantKeys,
-                    initialVariantKey: variantKey,
-                    initialAction: .folder
-                )
-            } label: {
-                cardActionBody(title: "Add to Folder", systemImage: "folder.badge.plus", tint: Color(red: 0.18, green: 0.72, blue: 0.88))
-            }
-            .buttonStyle(.plain)
-        } else {
-            Menu {
-                variantSelectionMenuContent(for: card, sectionHeader: "Select Variant", showWishlistCheckmarks: false) { key in
-                    folderContextRequest = CardContextActionRequest(
-                        card: card,
-                        availableVariantKeys: wishlistVariantKeys,
-                        initialVariantKey: key,
-                        initialAction: .folder
-                    )
-                }
-            } label: {
-                cardActionBody(title: "Add to Folder", systemImage: "folder.badge.plus", tint: Color(red: 0.18, green: 0.72, blue: 0.88))
-            }
-            .menuStyle(.button).menuIndicator(.hidden)
-        }
-    }
-
     private var shareActionButton: some View {
         Button { showCardShare = true } label: {
             cardActionBody(title: "Share", systemImage: "square.and.arrow.up", tint: Color(red: 0.36, green: 0.61, blue: 0.97))
@@ -494,30 +426,7 @@ struct CardDetailSheet: View {
     }
 
     private func performTradeAction(card: Card, quantity: Int) {
-        if let tradeAction {
-            tradeAction(card, quantity)
-        } else {
-            // Default toggle logic for collection/browse management
-            if let existing = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
-                modelContext.delete(existing)
-                Haptics.lightImpact()
-            } else {
-                let newItem = TradeListItem(
-                    cardID: card.masterCardId,
-                    variantKey: preferredTradeListVariantKey,
-                    quantity: quantity
-                )
-                modelContext.insert(newItem)
-                Haptics.success()
-            }
-            try? modelContext.save()
-            syncTradeList()
-        }
-    }
-
-    private func syncTradeList() {
-        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
-        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
+        tradeAction?(card, quantity)
     }
 
     private func cardActionBody(title: String, systemImage: String, tint: Color) -> some View {

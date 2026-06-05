@@ -558,14 +558,12 @@ private struct BrowseCardGridButton: View {
     let gridOptions: BrowseGridOptions
     let isOwned: Bool
     let isWishlisted: Bool
-    let isTradeable: Bool
     let ownedCountBadge: Int?
     let isMultiSelectActive: Bool
     let services: AppServices
     let colorScheme: ColorScheme
     @Binding var multiSelectedCardIDs: Set<String>
     let onQuickAddRequested: (Card, CardContextAction) -> Void
-    let onTradeListToggleRequested: (Card) -> Void
     let onSelectMultipleRequested: (Card) -> Void
 
     @Environment(\.presentCard) private var presentCard
@@ -620,19 +618,6 @@ private struct BrowseCardGridButton: View {
             } label: {
                 Label("Add to Wishlist", systemImage: "heart")
             }
-            Button {
-                onTradeListToggleRequested(row.card)
-            } label: {
-                Label(
-                    isTradeable ? "Remove from Trade List" : "Add to Trade List",
-                    systemImage: isTradeable ? "minus.circle" : "arrow.left.arrow.right"
-                )
-            }
-            Button {
-                onQuickAddRequested(row.card, .folder)
-            } label: {
-                Label("Add to Folder", systemImage: "folder.badge.plus")
-            }
         }
         .frame(maxWidth: .infinity, alignment: .top)
     }
@@ -645,9 +630,6 @@ struct BrowseView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
-    @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
-    @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
-
     let collectionItems: [CollectionItem]
 
     @Binding var filters: BrowseCardGridFilters
@@ -701,13 +683,9 @@ struct BrowseView: View {
     @State private var currentBrand: TCGBrand = .pokemon
     @State private var lastAutoLoadRowCount = 0
     @State private var multiSelectCollectionPayload: MultiSelectCollectionPayload?
-    @State private var showMultiSelectFolderSheet = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var showWishlistPaywall = false
-    @State private var multiSelectFolderNewTitle = ""
-    @State private var showFolderCreateAlert = false
-    @State private var addedMultiSelectFolderIDs: Set<UUID> = []
     @State private var showMasterSet = false
     @State private var lastSelectedSetCodeInSetsTab: String?
     @State private var pendingSetRestoreRowID: String?
@@ -747,13 +725,6 @@ struct BrowseView: View {
             let cardID = item.cardID
             let itemBrand = TCGBrand.inferredFromMasterCardId(cardID)
             return itemBrand == services.brandSettings.selectedCatalogBrand ? cardID : nil
-        })
-    }
-
-    private var visibleTradeListCardIDs: Set<String> {
-        Set(tradeListItems.compactMap { item in
-            let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return itemBrand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
     }
 
@@ -809,9 +780,6 @@ struct BrowseView: View {
                 .environment(services)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
-        }
-        .sheet(isPresented: $showMultiSelectFolderSheet, onDismiss: { addedMultiSelectFolderIDs.removeAll() }) {
-            multiSelectFolderSheet
         }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
@@ -1072,7 +1040,6 @@ struct BrowseView: View {
         let snapshot = browseFeedSnapshot
         let usesCatalogFeed = isUsingCatalogFeedSelection
         let ownedQuantities = ownedQuantityByCardID
-        let tradeListCardIDs = visibleTradeListCardIDs
         VStack(spacing: 0) {
             EagerVGrid(items: snapshot.rows, columns: safeColumnCount, spacing: 12) { row in
                 BrowseCardGridButton(
@@ -1080,14 +1047,12 @@ struct BrowseView: View {
                     gridOptions: gridOptions,
                     isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
                     isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
-                    isTradeable: tradeListCardIDs.contains(row.card.masterCardId),
                     ownedCountBadge: ownedQuantities[row.card.masterCardId],
                     isMultiSelectActive: isMultiSelectActive,
                     services: services,
                     colorScheme: colorScheme,
                     multiSelectedCardIDs: $multiSelectedCardIDs,
                     onQuickAddRequested: beginQuickAdd(card:action:),
-                    onTradeListToggleRequested: beginTradeListToggle(card:),
                     onSelectMultipleRequested: beginSelectMultiple(with:)
                 )
                 .onAppear {
@@ -1365,19 +1330,6 @@ struct BrowseView: View {
                             } label: {
                                 Label("Add to Wishlist", systemImage: "heart")
                             }
-                            Button {
-                                beginTradeListToggle(card: card)
-                            } label: {
-                                Label(
-                                    visibleTradeListCardIDs.contains(card.masterCardId) ? "Remove from Trade List" : "Add to Trade List",
-                                    systemImage: visibleTradeListCardIDs.contains(card.masterCardId) ? "minus.circle" : "arrow.left.arrow.right"
-                                )
-                            }
-                            Button {
-                                beginQuickAdd(card: card, action: .folder)
-                            } label: {
-                                Label("Add to Folder", systemImage: "folder.badge.plus")
-                            }
                         }
                         .onAppear {
                             ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
@@ -1433,16 +1385,6 @@ struct BrowseView: View {
             ) {
                 addSelectedToWishlist()
             }
-
-            multiSelectActionButton(
-                title: "Add to Folder",
-                systemImage: "folder.badge.plus",
-                tint: Color(red: 0.18, green: 0.72, blue: 0.88)
-            ) {
-                guard !multiSelectedCards.isEmpty else { return }
-                addedMultiSelectFolderIDs.removeAll()
-                showMultiSelectFolderSheet = true
-            }
         }
         .padding(.horizontal, 16)
         .padding(.bottom, 10)
@@ -1482,60 +1424,6 @@ struct BrowseView: View {
             .accessibilityLabel(title)
         }
         .buttonStyle(.plain)
-    }
-
-    private var multiSelectFolderSheet: some View {
-        NavigationStack {
-            List {
-                Section {
-                    Button {
-                        multiSelectFolderNewTitle = ""
-                        showFolderCreateAlert = true
-                    } label: {
-                        Label("New Folder…", systemImage: "folder.badge.plus")
-                            .foregroundStyle(.primary)
-                    }
-                }
-                if !folders.isEmpty {
-                    Section("MY FOLDERS") {
-                        ForEach(folders) { folder in
-                            let alreadyAdded = addedMultiSelectFolderIDs.contains(folder.id)
-                            Button {
-                                guard !alreadyAdded else { return }
-                                addSelectedCards(to: folder)
-                            } label: {
-                                HStack {
-                                    Label(folder.title, systemImage: "folder")
-                                        .foregroundStyle(alreadyAdded ? .secondary : .primary)
-                                    Spacer()
-                                    if alreadyAdded {
-                                        Image(systemName: "checkmark")
-                                            .font(.caption.weight(.semibold))
-                                            .foregroundStyle(.secondary)
-                                    } else {
-                                        Text("\((folder.items ?? []).count) cards")
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Add to Folder")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Done") { showMultiSelectFolderSheet = false }
-                }
-            }
-            .alert("New Folder", isPresented: $showFolderCreateAlert) {
-                TextField("Folder name", text: $multiSelectFolderNewTitle)
-                Button("Create") { createFolderAndAddSelected() }
-                Button("Cancel", role: .cancel) { multiSelectFolderNewTitle = "" }
-            }
-        }
     }
 
     private func addSelectedToWishlist() {
@@ -1601,22 +1489,6 @@ struct BrowseView: View {
         }
     }
 
-    private func beginTradeListToggle(card: Card) {
-        if let existing = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
-            modelContext.delete(existing)
-            try? modelContext.save()
-            syncTradeList()
-            Haptics.lightImpact()
-        } else {
-            beginQuickAdd(card: card, action: .tradeList)
-        }
-    }
-
-    private func syncTradeList() {
-        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
-        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
-    }
-
     private func addCardToWishlist(_ card: Card) {
         guard let wl = services.wishlist else {
             wishlistAlertMessage = "Wishlist isn't available yet. Try again in a moment."
@@ -1652,38 +1524,6 @@ struct BrowseView: View {
             .split(separator: " ")
             .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
             .joined(separator: " ")
-    }
-
-    private func addSelectedCards(to folder: CardFolder) {
-        for card in multiSelectedCards {
-            let alreadyIn = (folder.items ?? []).contains { $0.cardID == card.masterCardId && $0.variantKey == "normal" }
-            guard !alreadyIn else { continue }
-            let item = CardFolderItem(cardID: card.masterCardId, variantKey: "normal")
-            item.folder = folder
-            modelContext.insert(item)
-        }
-        try? modelContext.save()
-        addedMultiSelectFolderIDs.insert(folder.id)
-        HapticManager.notification(.success)
-    }
-
-    private func createFolderAndAddSelected() {
-        let title = multiSelectFolderNewTitle.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !title.isEmpty else { return }
-
-        let folder = CardFolder(title: title)
-        modelContext.insert(folder)
-
-        for card in multiSelectedCards {
-            let item = CardFolderItem(cardID: card.masterCardId, variantKey: "normal")
-            item.folder = folder
-            modelContext.insert(item)
-        }
-
-        try? modelContext.save()
-        addedMultiSelectFolderIDs.insert(folder.id)
-        multiSelectFolderNewTitle = ""
-        HapticManager.notification(.success)
     }
 
     @MainActor
@@ -3737,8 +3577,6 @@ struct SetCardsView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Query private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
-    @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
-    @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
     let set: TCGSet
 
     @State private var cards: [Card] = []
@@ -3751,13 +3589,10 @@ struct SetCardsView: View {
     @State private var isMultiSelectActive = false
     @State private var selectedCardIDs: Set<String> = []
     @State private var multiSelectCollectionPayload: MultiSelectCollectionPayload?
-    @State private var showMultiSelectFolderSheet = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var showWishlistPaywall = false
-    @State private var multiSelectFolderNewTitle = ""
-    @State private var showFolderCreateAlert = false
-    @State private var addedMultiSelectFolderIDs: Set<UUID> = []
+
     @State private var pendingCardContextRequest: CardContextActionRequest?
     @State private var setTrendChanges: (change1d: Double?, change7d: Double?, change30d: Double?) = (nil, nil, nil)
 
@@ -3779,13 +3614,6 @@ struct SetCardsView: View {
 
     private var wishlistedCardIDs: Set<String> {
         Set(wishlistItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-    }
-
-    private var tradeListCardIDs: Set<String> {
-        Set(tradeListItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
@@ -4037,19 +3865,6 @@ struct SetCardsView: View {
                                     } label: {
                                         Label("Add to Wishlist", systemImage: "heart")
                                     }
-                                    Button {
-                                        beginTradeListToggle(card: card)
-                                    } label: {
-                                        Label(
-                                            tradeListCardIDs.contains(card.masterCardId) ? "Remove from Trade List" : "Add to Trade List",
-                                            systemImage: tradeListCardIDs.contains(card.masterCardId) ? "minus.circle" : "arrow.left.arrow.right"
-                                        )
-                                    }
-                                    Button {
-                                        beginCardContextAction(card: card, action: .folder)
-                                    } label: {
-                                        Label("Add to Folder", systemImage: "folder.badge.plus")
-                                    }
                                 }
                                 .onAppear {
                                     ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
@@ -4097,9 +3912,6 @@ struct SetCardsView: View {
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
         }
-        .sheet(isPresented: $showMultiSelectFolderSheet, onDismiss: { addedMultiSelectFolderIDs.removeAll() }) {
-            multiSelectFolderSheet
-        }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
                 .environment(services)
@@ -4143,14 +3955,6 @@ struct SetCardsView: View {
             ) {
                 addSelectedToWishlist()
             }
-            multiSelectActionButton(
-                title: "Add to Folder",
-                systemImage: "folder.badge.plus",
-                tint: Color(red: 0.18, green: 0.72, blue: 0.88)
-            ) {
-                addedMultiSelectFolderIDs.removeAll()
-                showMultiSelectFolderSheet = true
-            }
         }
         .padding(.horizontal, 16)
         .padding(.bottom, 8)
@@ -4182,60 +3986,6 @@ struct SetCardsView: View {
             .accessibilityLabel(title)
         }
         .buttonStyle(.plain)
-    }
-
-    private var multiSelectFolderSheet: some View {
-        NavigationStack {
-            List {
-                Section {
-                    Button {
-                        multiSelectFolderNewTitle = ""
-                        showFolderCreateAlert = true
-                    } label: {
-                        Label("New Folder…", systemImage: "folder.badge.plus")
-                            .foregroundStyle(.primary)
-                    }
-                }
-                if !folders.isEmpty {
-                    Section("MY FOLDERS") {
-                        ForEach(folders) { folder in
-                            let alreadyAdded = addedMultiSelectFolderIDs.contains(folder.id)
-                            Button {
-                                guard !alreadyAdded else { return }
-                                addSelectedCards(to: folder)
-                            } label: {
-                                HStack {
-                                    Label(folder.title, systemImage: "folder")
-                                        .foregroundStyle(alreadyAdded ? .secondary : .primary)
-                                    Spacer()
-                                    if alreadyAdded {
-                                        Image(systemName: "checkmark")
-                                            .font(.caption.weight(.semibold))
-                                            .foregroundStyle(.secondary)
-                                    } else {
-                                        Text("\((folder.items ?? []).count) cards")
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Add to Folder")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Done") { showMultiSelectFolderSheet = false }
-                }
-            }
-            .alert("New Folder", isPresented: $showFolderCreateAlert) {
-                TextField("Folder name", text: $multiSelectFolderNewTitle)
-                Button("Create") { createFolderAndAddSelected() }
-                Button("Cancel", role: .cancel) { multiSelectFolderNewTitle = "" }
-            }
-        }
     }
 
     private func toggleSelection(_ card: Card) {
@@ -4275,35 +4025,6 @@ struct SetCardsView: View {
         if addedCount > 0 {
             HapticManager.notification(.success)
         }
-    }
-
-    private func addSelectedCards(to folder: CardFolder) {
-        for card in selectedCards {
-            let alreadyIn = (folder.items ?? []).contains { $0.cardID == card.masterCardId && $0.variantKey == "normal" }
-            guard !alreadyIn else { continue }
-            let item = CardFolderItem(cardID: card.masterCardId, variantKey: "normal")
-            item.folder = folder
-            modelContext.insert(item)
-        }
-        try? modelContext.save()
-        addedMultiSelectFolderIDs.insert(folder.id)
-        HapticManager.notification(.success)
-    }
-
-    private func createFolderAndAddSelected() {
-        let title = multiSelectFolderNewTitle.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !title.isEmpty else { return }
-        let folder = CardFolder(title: title)
-        modelContext.insert(folder)
-        for card in selectedCards {
-            let item = CardFolderItem(cardID: card.masterCardId, variantKey: "normal")
-            item.folder = folder
-            modelContext.insert(item)
-        }
-        try? modelContext.save()
-        addedMultiSelectFolderIDs.insert(folder.id)
-        multiSelectFolderNewTitle = ""
-        HapticManager.notification(.success)
     }
 
     @MainActor
@@ -4372,22 +4093,6 @@ struct SetCardsView: View {
                 )
             }
         }
-    }
-
-    private func beginTradeListToggle(card: Card) {
-        if let existing = tradeListItems.first(where: { $0.cardID == card.masterCardId }) {
-            modelContext.delete(existing)
-            try? modelContext.save()
-            syncTradeList()
-            Haptics.lightImpact()
-        } else {
-            beginCardContextAction(card: card, action: .tradeList)
-        }
-    }
-
-    private func syncTradeList() {
-        let items = (try? modelContext.fetch(FetchDescriptor<TradeListItem>())) ?? tradeListItems
-        services.socialCardLibrary.scheduleAutoSyncTradeList(items: items)
     }
 
     private func addCardToWishlist(_ card: Card) {

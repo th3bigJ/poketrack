@@ -10,7 +10,7 @@ struct FriendProfileView: View {
     private enum ProfileTab: String, CaseIterable {
         case posts
         case wishlist
-        case tradeList = "trade list"
+        case collection
     }
 
     @State private var profile: SocialProfile?
@@ -22,7 +22,9 @@ struct FriendProfileView: View {
     @State private var errorMessage: String?
     @State private var selectedTab: ProfileTab = .posts
     @State private var sharedWishlistCardIDs: [String] = []
-    @State private var sharedTradeListCardIDs: [String] = []
+    @State private var friendCollectionCardIDs: [String] = []
+    @State private var isLoadingCollection = false
+    @State private var collectionLoadError: String? = nil
     @State private var isSelectMode = false
     @State private var selectedCardIDs: Set<String> = []
     @State private var isActionsMenuPresented = false
@@ -40,7 +42,7 @@ struct FriendProfileView: View {
     }
 
     private var showsSelectToolbarButton: Bool {
-        (selectedTab == .wishlist || selectedTab == .tradeList) && canViewWishlist
+        (selectedTab == .wishlist || selectedTab == .collection) && canViewWishlist
     }
 
     var body: some View {
@@ -424,7 +426,7 @@ struct FriendProfileView: View {
         switch tab {
         case .posts: return "Posts"
         case .wishlist: return "Wishlist"
-        case .tradeList: return "Trade List"
+        case .collection: return "Collection"
         }
     }
 
@@ -486,21 +488,27 @@ struct FriendProfileView: View {
                 } else {
                     emptyCard("No wishlist items yet.")
                 }
-            case .tradeList:
-                if relationship == .friends, !sharedTradeListCardIDs.isEmpty {
+            case .collection:
+                if !canViewWishlist {
+                    emptyCard("Become friends to view this user's collection.")
+                } else if isLoadingCollection {
+                    ProgressView("Loading collection…")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 40)
+                } else if let error = collectionLoadError {
+                    emptyCard("Couldn't load collection: \(error)")
+                } else if friendCollectionCardIDs.isEmpty {
+                    emptyCard("This friend hasn't synced their collection yet.")
+                } else {
                     SelectableCardGrid(
-                        cardIDs: sharedTradeListCardIDs,
+                        cardIDs: friendCollectionCardIDs,
                         isSelectMode: $isSelectMode,
                         selectedCardIDs: $selectedCardIDs,
                         cardLoader: { id in await loadSharedCard(id) },
                         onCardTap: { tappedID in
-                            Task { await openCardDetail(tappedID: tappedID, orderedIDs: sharedTradeListCardIDs) }
+                            Task { await openCardDetail(tappedID: tappedID, orderedIDs: friendCollectionCardIDs) }
                         }
                     )
-                } else if relationship == .friends {
-                    emptyCard("No cards on this user's trade list yet.")
-                } else {
-                    emptyCard("Become friends to see this user's trade list.")
                 }
             }
         }
@@ -639,16 +647,16 @@ struct FriendProfileView: View {
                 publicFriendCount = (try? await friendCounts)?[loaded.id]
                 if relationship == .friends {
                     async let wishlistIDs = services.socialCardLibrary.fetchWishlistCardIDs(for: loaded.id)
-                    async let tradeListIDs = services.socialCardLibrary.fetchTradeListCardIDs(for: loaded.id)
                     sharedWishlistCardIDs = (try? await wishlistIDs) ?? []
-                    sharedTradeListCardIDs = (try? await tradeListIDs) ?? []
-                    let idsToWarm = Array(Set(sharedWishlistCardIDs + sharedTradeListCardIDs))
                     Task { @MainActor in
-                        await warmSharedCardCache(ids: idsToWarm)
+                        await warmSharedCardCache(ids: sharedWishlistCardIDs)
+                    }
+                    Task { @MainActor in
+                        await loadFriendCollection(userID: loaded.id)
                     }
                 } else {
                     sharedWishlistCardIDs = []
-                    sharedTradeListCardIDs = []
+                    friendCollectionCardIDs = []
                     resolvedSharedCardsByID = [:]
                 }
             }
@@ -662,6 +670,28 @@ struct FriendProfileView: View {
             // Ignore
         } catch {
             errorMessage = error.localizedDescription
+        }
+    }
+
+    private func loadFriendCollection(userID: UUID) async {
+        guard !isLoadingCollection else { return }
+        isLoadingCollection = true
+        collectionLoadError = nil
+        defer { isLoadingCollection = false }
+        do {
+            let snapshot = try await services.collectionSync.fetchFriendCollection(userID: userID)
+            let ids = snapshot.collection.compactMap { entry -> String? in
+                guard !entry.cardID.isEmpty else { return nil }
+                return entry.cardID
+            }
+            friendCollectionCardIDs = ids
+            Task { @MainActor in
+                await warmSharedCardCache(ids: ids)
+            }
+        } catch CollectionSyncError.httpError(404) {
+            friendCollectionCardIDs = []
+        } catch {
+            collectionLoadError = error.localizedDescription
         }
     }
 
@@ -797,10 +827,10 @@ struct FriendProfileView: View {
     private func prefills(for items: [TradeItem], sourceTab: ProfileTab) -> (theirCards: [TradeItem], myCards: [TradeItem]) {
         switch sourceTab {
         case .wishlist:
-            // On a friend's wishlist, tapping Trade means "I'll offer this".
+            // Tapping Trade on their wishlist: "I'll offer this"
             return ([], items)
-        case .tradeList:
-            // On a friend's trade list, tapping Trade means "I want this card from them".
+        case .collection:
+            // Tapping Trade on their collection: "I want this from them"
             return (items, [])
         case .posts:
             return (items, [])

@@ -35,6 +35,7 @@ final class AppServices {
     let socialPush: SocialPushService
     let trade: TradeService
     let tradeSession: TradeSessionService
+    let collectionSync: CollectionSyncService
     let theme: ThemeSettings
     let offlineImageSettings: OfflineImageSettings
     let offlineImageDownload: OfflineImageDownloadService
@@ -125,6 +126,7 @@ final class AppServices {
         self.socialCardLibrary = SocialCardLibraryService(authService: socialAuth)
         self.trade = TradeService(authService: socialAuth)
         self.tradeSession = TradeSessionService(authService: socialAuth)
+        self.collectionSync = CollectionSyncService(authService: socialAuth)
         self.socialShare = SocialShareService(
             authService: socialAuth,
             storeService: store,
@@ -226,6 +228,7 @@ final class AppServices {
             try? await Task.sleep(nanoseconds: 50_000_000)
         }
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
+            await primeLaunchCatalogFromLocalCache()
             isLaunchCatalogPipelineComplete = true
             launchCatalogPipelineCompletedAt = Date()
             return
@@ -675,6 +678,7 @@ final class AppServices {
             collectionLedger = CollectionLedgerService(modelContext: modelContext, store: store)
         }
         print("[Launch] setupCollectionLedger done: \(ContinuousClock().now - t2)")
+        collectionSync.setup(modelContext: modelContext)
         await syncSocialLibrariesIfPossible()
     }
 
@@ -779,6 +783,7 @@ final class AppServices {
         if let wishlist {
             socialCardLibrary.scheduleAutoSyncWishlist(items: wishlist.items)
         }
+        collectionSync.scheduleUpload()
         // Keep launch social sync cheap: do not materialize full SwiftData tables on
         // @MainActor while the launch overlay is coming down.
         let cardCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0

@@ -574,24 +574,9 @@ struct BuilderCardRow: View {
 // MARK: - TradeCardPickerView
 
 struct TradeCardPickerView: View {
-    private enum CardSource: String, CaseIterable, Identifiable {
-        case tradeList
-        case collection
-
-        var id: String { rawValue }
-
-        var title: String {
-            switch self {
-            case .tradeList: return "Trade List"
-            case .collection: return "Collection"
-            }
-        }
-    }
-
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
-    @Query(sort: \TradeListItem.dateAdded, order: .reverse) private var tradeListItems: [TradeListItem]
 
     let ownerUserID: UUID
     let navigationTitle: String
@@ -605,11 +590,9 @@ struct TradeCardPickerView: View {
     @State private var isIndexingNames = false
     @State private var searchText = ""
     @State private var visibleCount = 60
-    @State private var selectedSource: CardSource = .tradeList
 
     private let pageSize = 60
     private var isCurrentUserPicker: Bool { ownerUserID == currentUserID }
-    private var availableSources: [CardSource] { isCurrentUserPicker ? CardSource.allCases : [.tradeList] }
 
     private var filteredCardIDs: [String] {
         let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -628,20 +611,16 @@ struct TradeCardPickerView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                if !collectionCardIDs.isEmpty || availableSources.count > 1 {
-                    sourcePicker
-                        .padding(.horizontal, 12)
-                        .padding(.top, 12)
-
+                if !collectionCardIDs.isEmpty {
                     searchField
                         .padding(.horizontal, 12)
-                        .padding(.top, 8)
+                        .padding(.top, 12)
                         .padding(.bottom, 8)
                 }
 
                 Group {
                     if isLoading {
-                        ProgressView("Loading \(selectedSource.title.lowercased())...")
+                        ProgressView("Loading collection...")
                             .frame(maxWidth: .infinity, maxHeight: .infinity)
                     } else if collectionCardIDs.isEmpty {
                         ContentUnavailableView(
@@ -673,12 +652,6 @@ struct TradeCardPickerView: View {
         }
         .tint(.primary)
         .task { await loadCollection() }
-        .onChange(of: selectedSource) { _, _ in
-            selectedCardIDs = []
-            searchText = ""
-            visibleCount = pageSize
-            Task { await loadCollection() }
-        }
         .onChange(of: searchText) { _, _ in
             visibleCount = pageSize
             let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -694,31 +667,12 @@ struct TradeCardPickerView: View {
         return UUID()
     }
 
-    private var sourcePicker: some View {
-        Picker("Card source", selection: $selectedSource) {
-            ForEach(availableSources) { source in
-                Text(source.title).tag(source)
-            }
-        }
-        .pickerStyle(.segmented)
-    }
-
-    private var emptyTitle: String {
-        switch selectedSource {
-        case .tradeList: return "Trade List Empty"
-        case .collection: return "Collection Empty"
-        }
-    }
+    private var emptyTitle: String { "Collection Empty" }
 
     private var emptyDescription: String {
-        if selectedSource == .tradeList {
-            return isCurrentUserPicker
-                ? "Add cards to your trade list to offer them quickly."
-                : "This friend has not added any cards to their trade list."
-        }
-        return isCurrentUserPicker
+        isCurrentUserPicker
             ? "Add cards to your collection to offer them in a trade."
-            : "This friend has not added any cards to their trade list."
+            : "This friend has no cards in their collection."
     }
 
     private var cardGrid: some View {
@@ -762,19 +716,10 @@ struct TradeCardPickerView: View {
     private func loadCollection() async {
         isLoading = true
         defer { isLoading = false }
-        if isCurrentUserPicker {
-            switch selectedSource {
-            case .tradeList:
-                collectionCardIDs = dedupeCardIDs(tradeListItems.map(\.cardID))
-            case .collection:
-                collectionCardIDs = dedupeCardIDs(collectionItems.compactMap { item in
-                    guard item.quantity > 0 else { return nil }
-                    return item.cardID
-                })
-            }
-        } else {
-            collectionCardIDs = (try? await services.socialCardLibrary.fetchTradeListCardIDs(for: ownerUserID)) ?? []
-        }
+        collectionCardIDs = dedupeCardIDs(collectionItems.compactMap { item in
+            guard item.quantity > 0 else { return nil }
+            return item.cardID
+        })
     }
 
     private func dedupeCardIDs(_ ids: [String]) -> [String] {

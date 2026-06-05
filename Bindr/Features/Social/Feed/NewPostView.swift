@@ -8,7 +8,6 @@ private enum PostType: String, CaseIterable, Identifiable {
     case want = "I Want"
     case binder = "Binder"
     case deck = "Deck"
-    case folder = "Folder"
 
     var id: String { rawValue }
 
@@ -18,7 +17,6 @@ private enum PostType: String, CaseIterable, Identifiable {
         case .want:   return "heart"
         case .binder: return "books.vertical"
         case .deck:   return "rectangle.stack"
-        case .folder: return "folder"
         }
     }
 
@@ -28,7 +26,6 @@ private enum PostType: String, CaseIterable, Identifiable {
         case .want:   return Color(hex: "A78BFA")
         case .binder: return Color(hex: "E8B84B")
         case .deck:   return Color(hex: "5B9CF6")
-        case .folder: return Color(hex: "22B8CF")
         }
     }
 }
@@ -43,7 +40,6 @@ struct NewPostView: View {
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     @Query(sort: \Binder.createdAt, order: .reverse) private var binders: [Binder]
     @Query(sort: \Deck.createdAt, order: .reverse) private var decks: [Deck]
-    @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
 
     @State private var selectedType: PostType
     @State private var message = ""
@@ -51,13 +47,9 @@ struct NewPostView: View {
     @State private var selectedWishlistItem: WishlistItem? = nil
     @State private var selectedBinder: Binder? = nil
     @State private var selectedDeck: Deck? = nil
-    @State private var selectedFolder: CardFolder? = nil
 
-    init(preselectedFolder: CardFolder? = nil, preselectedBinder: Binder? = nil, preselectedDeck: Deck? = nil) {
-        if preselectedFolder != nil {
-            _selectedType = State(initialValue: .folder)
-            _selectedFolder = State(initialValue: preselectedFolder)
-        } else if preselectedBinder != nil {
+    init(preselectedBinder: Binder? = nil, preselectedDeck: Deck? = nil) {
+        if preselectedBinder != nil {
             _selectedType = State(initialValue: .binder)
             _selectedBinder = State(initialValue: preselectedBinder)
         } else if preselectedDeck != nil {
@@ -80,7 +72,6 @@ struct NewPostView: View {
         case .want:   return selectedWishlistItem != nil
         case .binder: return selectedBinder != nil
         case .deck:   return selectedDeck != nil
-        case .folder: return selectedFolder != nil
         }
     }
 
@@ -204,8 +195,6 @@ struct NewPostView: View {
                 binderList(selected: $selectedBinder)
             case .deck:
                 deckList(selected: $selectedDeck)
-            case .folder:
-                folderList(selected: $selectedFolder)
             }
         }
     }
@@ -216,7 +205,6 @@ struct NewPostView: View {
         case .want:   return "SELECT CARD FROM WISHLIST"
         case .binder: return "SELECT BINDER"
         case .deck:   return "SELECT DECK"
-        case .folder: return "SELECT FOLDER"
         }
     }
 
@@ -324,30 +312,7 @@ struct NewPostView: View {
         }
     }
 
-    private func folderList(selected: Binding<CardFolder?>) -> some View {
-        Group {
-            if folders.isEmpty {
-                emptyPicker("No folders yet. Create a folder first.")
-            } else {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 8) {
-                        ForEach(folders) { folder in
-                            let isSelected = selected.wrappedValue?.id == folder.id
-                            cardChip(
-                                title: folder.title,
-                                subtitle: "\((folder.items ?? []).count) cards",
-                                isSelected: isSelected,
-                                color: PostType.folder.accentColor
-                            ) {
-                                selected.wrappedValue = isSelected ? nil : folder
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 1)
-                }
-            }
-        }
-    }
+
 
     private func cardChip(title: String, subtitle: String?, isSelected: Bool, color: Color, action: @escaping () -> Void) -> some View {
         Button(action: action) {
@@ -463,15 +428,6 @@ struct NewPostView: View {
                 _ = try await services.socialShare.publishDeck(
                     deck,
                     title: deck.title,
-                    description: message,
-                    visibility: .friends,
-                    includeValue: false
-                )
-            case .folder:
-                guard let folder = selectedFolder else { return }
-                _ = try await services.socialShare.publishFolder(
-                    folder,
-                    title: folder.title,
                     description: message,
                     visibility: .friends,
                     includeValue: false

@@ -14,13 +14,11 @@ struct CardActionMenu: View {
     let onSaveToCollection: () -> Void
     let onAddToWishlist: () -> Void
     let onRemoveFromWishlist: () -> Void
-    let onAddToFolder: () -> Void
     let onTradeAction: (() -> Void)?
     let onShareAction: () -> Void
     let onEditAction: (() -> Void)?
     let onToggleTradeable: (() -> Void)?
     let onRemoveFromCollection: (() -> Void)?
-    let isTradeable: Bool
     var onAddToDeck: (() -> Void)? = nil
     
     @State private var isMenuExpanded = false
@@ -30,7 +28,6 @@ struct CardActionMenu: View {
         static let success = Color(red: 0.22, green: 0.81, blue: 0.44)
         static let chartLine = Color(red: 0.52, green: 0.44, blue: 0.94)
         static let gold = Color(red: 0.98, green: 0.78, blue: 0.18)
-        static let folder = Color(red: 0.18, green: 0.72, blue: 0.88)
         static let share = Color(red: 0.36, green: 0.61, blue: 0.97)
     }
     
@@ -234,7 +231,6 @@ struct CardActionMenu: View {
         var items: [MenuItem] = []
         
         if isOwned {
-            // COLLECTION MODE terminology
             items.append(MenuItem(
                 label: "Add to Collection",
                 subLabel: "Add more copies to your collection",
@@ -243,27 +239,16 @@ struct CardActionMenu: View {
                 action: onSaveToCollection
             ))
 
-            items.append(MenuItem(
-                label: "Add to Folder",
-                subLabel: "Place this card in a folder",
-                icon: "folder.badge.plus",
-                color: Palette.folder,
-                action: onAddToFolder
-            ))
-            
             if let _ = onTradeAction {
                 items.append(MenuItem(
-                    label: isTradeable ? "Remove from Trade List" : "Add to Trade List",
-                    subLabel: isTradeable ? "Currently marked for trade" : "Add to your public trade list",
-                    icon: isTradeable ? "arrow.left.arrow.right.circle.fill" : "arrow.left.arrow.right.circle",
+                    label: "Trade",
+                    subLabel: "Propose a deal for this card",
+                    icon: "arrow.left.arrow.right.circle.fill",
                     color: Palette.chartLine,
                     action: { onTradeAction?() }
                 ))
             }
         } else {
-            // BROWSE / SOCIAL MODE terminology
-
-            // Keep collection add available even when a context-specific trade action exists.
             items.append(MenuItem(
                 label: "Collection",
                 subLabel: "Add to your main collection",
@@ -272,7 +257,6 @@ struct CardActionMenu: View {
                 action: onSaveToCollection
             ))
 
-            // Context-aware Trade Action (e.g. from Trade Wall or collection wishlist flow)
             if let label = tradeActionLabel, let action = onTradeAction {
                 items.append(MenuItem(
                     label: label.replacingOccurrences(of: "...", with: ""),
@@ -282,14 +266,6 @@ struct CardActionMenu: View {
                     action: action
                 ))
             }
-            
-            items.append(MenuItem(
-                label: "Add to Folder",
-                subLabel: "Save to a specific folder",
-                icon: "folder.badge.plus",
-                color: Palette.folder,
-                action: onAddToFolder
-            ))
 
             if let onAddToDeck {
                 items.append(MenuItem(
@@ -335,15 +311,13 @@ private struct MenuItem: Identifiable {
                 onSaveToCollection: {},
                 onAddToWishlist: {},
                 onRemoveFromWishlist: {},
-                onAddToFolder: {},
                 onTradeAction: nil,
                 onShareAction: {},
                 onEditAction: {},
                 onToggleTradeable: {},
-                onRemoveFromCollection: {},
-                isTradeable: false
+                onRemoveFromCollection: {}
             )
-            
+
             CardActionMenu(
                 card: previewCard,
                 isOwned: true,
@@ -352,13 +326,11 @@ private struct MenuItem: Identifiable {
                 onSaveToCollection: {},
                 onAddToWishlist: {},
                 onRemoveFromWishlist: {},
-                onAddToFolder: {},
                 onTradeAction: nil,
                 onShareAction: {},
                 onEditAction: {},
                 onToggleTradeable: {},
-                onRemoveFromCollection: {},
-                isTradeable: true
+                onRemoveFromCollection: {}
             )
         }
         .padding()

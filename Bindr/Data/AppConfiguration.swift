@@ -473,4 +473,31 @@ enum AppConfiguration {
         }
         return [collapsedPt, literalPt]
     }
+
+    // MARK: - Collection Sync Worker
+
+    /// Base URL for the Cloudflare collection-sync Worker. Set `BINDR_COLLECTION_SYNC_WORKER_URL` in Info.plist.
+    static var collectionSyncWorkerURL: URL? {
+        if let s = Bundle.main.object(forInfoDictionaryKey: "BINDR_COLLECTION_SYNC_WORKER_URL") as? String {
+            let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !t.isEmpty, let u = URL(string: t) { return u }
+        }
+        if let env = ProcessInfo.processInfo.environment["BINDR_COLLECTION_SYNC_WORKER_URL"] {
+            let t = env.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !t.isEmpty, let u = URL(string: t) { return u }
+        }
+        return nil
+    }
+
+    /// PUT endpoint — upload the signed-in user's collection snapshot.
+    static var collectionSyncPutURL: URL? {
+        collectionSyncWorkerURL?.appending(path: "user-collection")
+    }
+
+    /// GET endpoint — download a user's collection snapshot by their UUID.
+    static func collectionSyncGetURL(userID: UUID) -> URL? {
+        guard var components = collectionSyncWorkerURL.flatMap({ URLComponents(url: $0.appending(path: "user-collection"), resolvingAgainstBaseURL: false) }) else { return nil }
+        components.queryItems = [URLQueryItem(name: "userID", value: userID.uuidString)]
+        return components.url
+    }
 }

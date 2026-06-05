@@ -46,7 +46,7 @@ private struct BrowseTabView: View {
 }
 
 /// Lazy wrapper so CollectView's three @Query properties (collectionItems, wishlistItems,
-/// tradeListItems) are not instantiated — and their SwiftData fetches not executed — until
+/// collectionItems/wishlistItems) are not instantiated — and their SwiftData fetches not executed — until
 /// the Collect tab is first visited. Without this, TabView instantiates CollectView at
 /// mainContent build time, blocking the main thread for several seconds.
 private struct CollectTabView: View {
@@ -55,12 +55,10 @@ private struct CollectTabView: View {
     @Binding var selectedBrand: TCGBrand?
     @Binding var collectionFilters: BrowseCardGridFilters
     @Binding var wishlistFilters: BrowseCardGridFilters
-    @Binding var tradeListFilters: BrowseCardGridFilters
     @Binding var collectFilterEnergyOptions: [String]
     @Binding var collectFilterRarityOptions: [String]
     @Binding var collectFilterTrainerTypeOptions: [String]
     @Binding var gridOptions: BrowseGridOptions
-    @Binding var folderGridOptions: BrowseGridOptions
 
     var body: some View {
         CollectView(
@@ -69,12 +67,10 @@ private struct CollectTabView: View {
             selectedBrand: $selectedBrand,
             collectionFilters: $collectionFilters,
             wishlistFilters: $wishlistFilters,
-            tradeListFilters: $tradeListFilters,
             collectFilterEnergyOptions: $collectFilterEnergyOptions,
             collectFilterRarityOptions: $collectFilterRarityOptions,
             collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
-            gridOptions: $gridOptions,
-            folderGridOptions: $folderGridOptions
+            gridOptions: $gridOptions
         )
     }
 }
@@ -117,8 +113,6 @@ struct RootView: View {
     @State private var selectedSealedProductPresentation: SealedProductPresentationContext?
     @State private var cachedSetNameByCode: [String: String] = [:]
     @State private var inlineDetailCards: [Card] = []
-    @State private var showCreateFolderAlert = false
-    @State private var newFolderTitle = ""
     @State private var suppressMorePathReset = false
     @FocusState private var searchFieldFocused: Bool
 
@@ -298,15 +292,13 @@ struct RootView: View {
     }
 
     private var isCollectFilterContextActive: Bool {
-        selectedTab == .collect && collectionNavigationPath.isEmpty && collectSegment != .folders
+        selectedTab == .collect && collectionNavigationPath.isEmpty
     }
 
     private var activeCollectFilters: BrowseCardGridFilters {
         switch collectSegment {
         case .collection: return collectFilters.collectionFilters
         case .wishlist:   return collectFilters.wishlistFilters
-        case .tradeList:  return collectFilters.tradeListFilters
-        case .folders:    return BrowseCardGridFilters()
         }
     }
 
@@ -314,13 +306,11 @@ struct RootView: View {
         switch collectSegment {
         case .collection: return $collectFilters.collectionFilters
         case .wishlist:   return $collectFilters.wishlistFilters
-        case .tradeList:  return $collectFilters.tradeListFilters
-        case .folders:    return .constant(BrowseCardGridFilters())
         }
     }
 
     private var isCollectFilterActive: Bool {
-        collectSegment == .folders ? false : activeCollectFilters.isVisiblyCustomized
+        activeCollectFilters.isVisiblyCustomized
     }
 
     private var collectActiveBrand: TCGBrand {
@@ -332,9 +322,6 @@ struct RootView: View {
     }
 
     private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
-        if selectedTab == .collect && collectSegment == .folders && collectionNavigationPath.isEmpty {
-            return ("folder.badge.plus", "Create folder", { showCreateFolderAlert = true })
-        }
         switch selectedTab {
         case .dashboard: return ("gearshape", "Settings", {
             suppressMorePathReset = true
@@ -789,12 +776,10 @@ struct RootView: View {
                                     selectedBrand: $collectSelectedBrand,
                                     collectionFilters: $collectFilters.collectionFilters,
                                     wishlistFilters: $collectFilters.wishlistFilters,
-                                    tradeListFilters: $collectFilters.tradeListFilters,
                                     collectFilterEnergyOptions: $collectFilterEnergyOptions,
                                     collectFilterRarityOptions: $collectFilterRarityOptions,
                                     collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
-                                    gridOptions: $collectFilters.gridOptions,
-                                    folderGridOptions: $collectFilters.folderGridOptions
+                                    gridOptions: $collectFilters.gridOptions
                                 )
                             } else {
                                 Color.clear
@@ -1078,19 +1063,6 @@ struct RootView: View {
                 .environment(services)
             }
         }
-        .alert("New Folder", isPresented: $showCreateFolderAlert) {
-            TextField("Folder name", text: $newFolderTitle)
-            Button("Create") {
-                let title = newFolderTitle.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !title.isEmpty {
-                    let folder = CardFolder(title: title)
-                    modelContext.insert(folder)
-                    try? modelContext.save()
-                }
-                newFolderTitle = ""
-            }
-            Button("Cancel", role: .cancel) { newFolderTitle = "" }
-        }
         .fullScreenCover(isPresented: $showCardScanner) {
             CardScannerView(
                 onMatch: { card in
@@ -1281,10 +1253,6 @@ struct RootView: View {
                 return .mySide
             case .wishlist:
                 return .theirSide
-            case .tradeList:
-                return .mySide
-            case .folders:
-                return .mySide
             }
         }()
         services.pendingTradeSeed = AppServices.PendingTradeSeed(

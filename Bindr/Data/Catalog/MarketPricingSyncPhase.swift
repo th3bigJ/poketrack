@@ -24,7 +24,12 @@ struct MarketPricingSyncPhase {
         let needsSealedHistoryBackfill = (await store.meta("sealed_pricing_history_backfill_v1")) != "1"
         let auxSqliteV1 = await store.meta("pricing_aux_sqlite_v1")
         let needsAuxBackfill = needsNormalizedMigration || auxSqliteV1 != "1"
+        let needsSealedDailyRefresh = await needsSealedDailyRefresh(enabledBrands: enabledBrands)
         let shouldRunAuxBackfill = !forceRefresh && needsAuxBackfill
+
+        if needsSealedDailyRefresh && !shouldRunPeriodRefresh && !shouldRunAuxBackfill && !needsHistoryBackfill && !needsSealedHistoryBackfill {
+            count += 1
+        }
 
         if shouldRunPeriodRefresh || shouldRunAuxBackfill {
             // Card delta sets + market pricing sets (one file each)
@@ -97,14 +102,16 @@ struct MarketPricingSyncPhase {
         let needsAuxBackfill = needsNormalizedMigration || auxSqliteV1 != "1"
         let needsHistoryBackfill = (await store.meta("pricing_history_backfill_v1")) != "1"
         let needsSealedHistoryBackfill = (await store.meta("sealed_pricing_history_backfill_v1")) != "1"
+        let needsSealedDailyRefresh = await needsSealedDailyRefresh(enabledBrands: enabledBrands)
         let shouldRunPeriodRefresh = forceRefresh || needsPeriodRefresh
         let shouldRunAuxBackfill = !forceRefresh && needsAuxBackfill
-        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill || needsSealedHistoryBackfill else { return 0 }
+        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill || needsSealedHistoryBackfill || needsSealedDailyRefresh else { return 0 }
 
         await progress.setStatus("Refreshing pricing data…")
         if shouldRunPeriodRefresh {
             var downloaded: Int64 = 0
             if enabledBrands.contains(.pokemon) {
+                await store.unmarkBucketProcessed(key: todaySealedBucketKey())
                 downloaded += await syncPokemonCardDeltas(progress: progress)
             }
             if enabledBrands.contains(.onePiece) {
@@ -126,7 +133,10 @@ struct MarketPricingSyncPhase {
             if enabledBrands.contains(.onePiece) {
                 downloaded += await syncOnePieceMarketPricingFullRefresh(progress: progress)
             }
-            try? await store.setMeta("pricing_last_synced_at", String(Date().timeIntervalSince1970))
+            let sealedPricesCurrent = await hasCurrentSealedPrices()
+            if !enabledBrands.contains(.pokemon) || sealedPricesCurrent {
+                try? await store.setMeta("pricing_last_synced_at", String(Date().timeIntervalSince1970))
+            }
             try? await store.setMeta("pricing_aux_sqlite_v1", "1")
             try? await store.setMeta("pricing_normalized_v1", "1")
             return downloaded
@@ -166,8 +176,47 @@ struct MarketPricingSyncPhase {
                 }
             }
             return downloaded
+        } else if needsSealedDailyRefresh {
+            guard enabledBrands.contains(.pokemon) else { return 0 }
+            return await syncSealedPricingBuckets(progress: progress, forceRefresh: forceRefresh)
         }
         return 0
+    }
+
+    private func todaySealedBucketKey() -> String {
+        "sealed/\(BucketDateMath.todayUTCKey())"
+    }
+
+    private func needsSealedDailyRefresh(enabledBrands: Set<TCGBrand>) async -> Bool {
+        guard enabledBrands.contains(.pokemon) else { return false }
+        return !(await hasCurrentSealedPrices())
+    }
+
+    private func hasCurrentSealedPrices() async -> Bool {
+        (await store.meta(DailyBlobKey.sealedPricesAsOfDate)) == BucketDateMath.todayUTCKey()
+    }
+
+    private static func parseSealedDailyBucket(_ data: Data) -> [String: Double]? {
+        guard let raw = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return nil }
+        var bucket: [String: Double] = [:]
+        bucket.reserveCapacity(raw.count)
+        for (key, value) in raw {
+            switch value {
+            case let d as Double: bucket[key] = d
+            case let f as Float: bucket[key] = Double(f)
+            case let i as Int: bucket[key] = Double(i)
+            case let n as NSNumber: bucket[key] = n.doubleValue
+            case let s as String:
+                let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+                if let d = Double(t) { bucket[key] = d }
+            default: continue
+            }
+        }
+        return bucket
+    }
+
+    private static func parseSealedPricesBlob(_ data: Data) -> [String: Double]? {
+        parseSealedDailyBucket(data)
     }
 
     private func lastSyncDate() async -> Date? {
@@ -620,6 +669,7 @@ struct MarketPricingSyncPhase {
 
     private func syncSealedPricingBuckets(progress: CatalogSyncProgressReporter, forceRefresh: Bool = false) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
+        let todayKey = BucketDateMath.todayUTCKey()
         let candidateDailyKeys = BucketDateMath.last31DailyKeys().map { "sealed/\($0)" }
         var missingDailyKeys = await store.unprocessedBucketKeys(from: candidateDailyKeys)
         appendTodaySealedBucketIfNeeded(&missingDailyKeys)
@@ -632,68 +682,59 @@ struct MarketPricingSyncPhase {
             compositeKey: String,
             dateKey: String,
             bucket: [String: Double]?,
-            bytes: Int64,
-            downloaded: Bool
+            bytes: Int64
         )
+
+        func fetchSealedDaily(compositeKey: String, dateKey: String) async -> SealedDailyResult {
+            let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
+            guard let data = await Self.fetchBodyIfOK(session: session, url: url),
+                  let bucket = Self.parseSealedDailyBucket(data),
+                  !bucket.isEmpty
+            else { return (compositeKey, dateKey, nil, 0) }
+            return (compositeKey, dateKey, bucket, Int64(data.count))
+        }
 
         var totalBytes: Int64 = 0
         var accumulated: [String: [[String]]] = [:]
-        var latestPrices: [String: Double] = [:]
-        var latestDate: String = ""
+        var todayPrices: [String: Double] = [:]
 
         await withTaskGroup(of: SealedDailyResult.self) { group in
             var iterator = missingDailyKeys.makeIterator()
             for _ in 0..<min(Self.maxConcurrentBackfillRequests, missingDailyKeys.count) {
                 if let key = iterator.next() {
                     let dateKey = String(key.dropFirst("sealed/".count))
-                    group.addTask {
-                        let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
-                        guard let data = await Self.fetchBodyIfOK(session: self.session, url: url),
-                              let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
-                        else { return (key, dateKey, nil, 0, false) }
-                        return (key, dateKey, bucket, Int64(data.count), true)
-                    }
+                    group.addTask { await fetchSealedDaily(compositeKey: key, dateKey: dateKey) }
                 }
             }
             for await result in group {
                 if let key = iterator.next() {
                     let dateKey = String(key.dropFirst("sealed/".count))
-                    group.addTask {
-                        let url = AppConfiguration.r2SealedDailyURL(dateKey: dateKey)
-                        guard let data = await Self.fetchBodyIfOK(session: self.session, url: url),
-                              let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
-                        else { return (key, dateKey, nil, 0, false) }
-                        return (key, dateKey, bucket, Int64(data.count), true)
-                    }
+                    group.addTask { await fetchSealedDaily(compositeKey: key, dateKey: dateKey) }
                 }
                 guard let bucket = result.bucket else {
-                    if result.downloaded {
-                        try? await store.markBucketProcessed(key: result.compositeKey)
-                    }
                     await progress.completeFile(); continue
                 }
                 totalBytes += result.bytes
                 let dateKey = result.dateKey
                 for (productIdStr, price) in bucket {
                     accumulated[productIdStr, default: []].append([dateKey, String(price)])
-                    if dateKey >= latestDate { latestDate = dateKey; latestPrices[productIdStr] = price }
+                    if dateKey == todayKey { todayPrices[productIdStr] = price }
                 }
-                if result.downloaded {
-                    try? await store.markBucketProcessed(key: result.compositeKey)
-                }
+                try? await store.markBucketProcessed(key: result.compositeKey)
                 await progress.completeFile(byteCount: result.bytes)
             }
         }
 
-        if !latestPrices.isEmpty {
+        if !todayPrices.isEmpty {
             var merged: [String: Double] = [:]
             if let existing = await store.dailyBlob(key: DailyBlobKey.sealedPrices),
-               let parsed = try? JSONSerialization.jsonObject(with: existing) as? [String: Double] {
+               let parsed = Self.parseSealedPricesBlob(existing) {
                 merged = parsed
             }
-            for (k, v) in latestPrices { merged[k] = v }
+            for (k, v) in todayPrices { merged[k] = v }
             if let json = try? JSONSerialization.data(withJSONObject: merged) {
                 try? await store.upsertDailyBlob(key: DailyBlobKey.sealedPrices, data: json)
+                try? await store.setMeta(DailyBlobKey.sealedPricesAsOfDate, todayKey)
             }
         }
 
@@ -739,7 +780,8 @@ struct MarketPricingSyncPhase {
                 ? AppConfiguration.r2SealedWeeklyURL(weekKey: periodKey)
                 : AppConfiguration.r2SealedMonthlyURL(monthKey: periodKey)
             guard let data = await Self.fetchBodyIfOK(session: session, url: url),
-                  let bucket = try? JSONSerialization.jsonObject(with: data) as? [String: Double]
+                  let bucket = Self.parseSealedDailyBucket(data),
+                  !bucket.isEmpty
             else { return ([], 0, compositeKey, false) }
             let pts = bucket.map { (id: $0.key, periodKey: periodKey, price: $0.value) }
             return (pts, Int64(data.count), compositeKey, true)

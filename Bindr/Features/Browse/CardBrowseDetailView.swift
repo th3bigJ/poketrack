@@ -112,10 +112,7 @@ private struct CardBrowseDetailPage: View {
     @State private var editingLine: HoldingLine?
     @State private var dispositionLine: HoldingLine?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
-    @State private var addToFolderPayload: AddToFolderSheetPayload?
     @State private var showCardShare = false
-    @State private var showTradeListQuantityPicker = false
-    @State private var tradeListPickerQuantity = 1
     @State private var wishlistVariantKeys: [String] = ["normal"]
     @State private var isCurrentCardWishlisted = false
     @State private var showWishlistPaywall = false
@@ -286,9 +283,6 @@ private struct CardBrowseDetailPage: View {
         .sheet(item: $addToCollectionPayload) { payload in
             AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey, availableVariantKeys: payload.availableVariantKeys)
                 .environment(services)
-        }
-        .sheet(item: $addToFolderPayload) { payload in
-            AddToFolderSheet(card: payload.card, variantKey: payload.variantKey)
         }
         .sheet(isPresented: $showCardShare) {
             SocialShareSheet(item: .card)
@@ -495,9 +489,6 @@ private struct CardBrowseDetailPage: View {
                     if showsWishlistAction {
                         wishlistActionButton
                     }
-                    if showsCollectionAction {
-                        folderActionButton
-                    }
                     if let tradeAction {
                         tradeActionButton(action: tradeAction)
                     }
@@ -619,40 +610,6 @@ private struct CardBrowseDetailPage: View {
         }
     }
 
-    @ViewBuilder
-    private var folderActionButton: some View {
-        if let variantKey = singleAvailableVariantKey {
-            Button {
-                addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: variantKey)
-            } label: {
-                cardActionBody(
-                    title: "Add to Folder",
-                    systemImage: "folder.badge.plus",
-                    tint: Color(red: 0.18, green: 0.72, blue: 0.88)
-                )
-            }
-            .buttonStyle(.plain)
-        } else {
-            Menu {
-                variantSelectionMenuContent(
-                    sectionHeader: "Select Variant to add to folder",
-                    showWishlistCheckmarks: false,
-                    onSelect: { key in
-                        addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: key)
-                    }
-                )
-            } label: {
-                cardActionBody(
-                    title: "Add to Folder",
-                    systemImage: "folder.badge.plus",
-                    tint: Color(red: 0.18, green: 0.72, blue: 0.88)
-                )
-            }
-            .menuStyle(.button)
-            .menuIndicator(.hidden)
-        }
-    }
-
     private var shareActionButton: some View {
         Button {
             showCardShare = true
@@ -667,14 +624,8 @@ private struct CardBrowseDetailPage: View {
     }
 
     private func tradeActionButton(action: @escaping (Card, Int) -> Void) -> some View {
-        let totalOwned = visibleCollectionItems.reduce(0) { $0 + $1.quantity }
-        return Button {
-            if totalOwned > 1 {
-                tradeListPickerQuantity = 1
-                showTradeListQuantityPicker = true
-            } else {
-                action(card, 1)
-            }
+        Button {
+            action(card, 1)
         } label: {
             cardActionBody(
                 title: tradeActionLabel,
@@ -683,30 +634,6 @@ private struct CardBrowseDetailPage: View {
             )
         }
         .buttonStyle(.plain)
-        .popover(isPresented: $showTradeListQuantityPicker) {
-            VStack(spacing: 16) {
-                Text("How many to trade?")
-                    .font(.headline)
-                Stepper("Quantity: \(tradeListPickerQuantity)", value: $tradeListPickerQuantity, in: 1...totalOwned)
-                Text("You own \(totalOwned) copies")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                HStack(spacing: 12) {
-                    Button("Cancel") { showTradeListQuantityPicker = false }
-                        .buttonStyle(.bordered)
-                        .frame(maxWidth: .infinity)
-                    Button("Add") {
-                        showTradeListQuantityPicker = false
-                        action(card, tradeListPickerQuantity)
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .frame(maxWidth: .infinity)
-                }
-            }
-            .padding(20)
-            .frame(minWidth: 260)
-            .presentationCompactAdaptation(.popover)
-        }
     }
 
     private func cardActionBody(title: String, systemImage: String, tint: Color) -> some View {
