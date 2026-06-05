@@ -186,6 +186,8 @@ enum SocialDestination: Hashable {
     case qrProfile
     case qrTrade
     case friendProfile(username: String)
+    case friendCollection(username: String)
+    case friendsCollection
     case tradeDetail(tradeID: UUID)
     case mutualTrade(sessionID: UUID, otherUserID: UUID, otherUsername: String)
     case tradeBuilder(receiverID: UUID, theirCards: [TradeItem], myCards: [TradeItem], existingTradeID: UUID? = nil, originalTrade: Trade? = nil)

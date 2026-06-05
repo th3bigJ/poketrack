@@ -6,8 +6,16 @@ struct FriendProfileView: View {
 
     let username: String
     var navigationPath: Binding<NavigationPath>? = nil
+    var initialTab: ProfileTab = .posts
 
-    private enum ProfileTab: String, CaseIterable {
+    init(username: String, navigationPath: Binding<NavigationPath>? = nil, initialTab: ProfileTab = .posts) {
+        self.username = username
+        self.navigationPath = navigationPath
+        self.initialTab = initialTab
+        _selectedTab = State(initialValue: initialTab)
+    }
+
+    enum ProfileTab: String, CaseIterable {
         case posts
         case wishlist
         case collection
@@ -20,7 +28,7 @@ struct FriendProfileView: View {
     @State private var isLoading = false
     @State private var isMutating = false
     @State private var errorMessage: String?
-    @State private var selectedTab: ProfileTab = .posts
+    @State private var selectedTab: ProfileTab
     @State private var sharedWishlistCardIDs: [String] = []
     @State private var friendCollectionCardIDs: [String] = []
     @State private var isLoadingCollection = false

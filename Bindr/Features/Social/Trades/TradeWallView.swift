@@ -41,12 +41,14 @@ struct TradeWallView: View {
         case suggested(SuggestedWallEntry)
         case card(WallEntry)
         case sealed(SealedWallEntry)
+        case seeAll(SocialProfile)
 
         var id: String {
             switch self {
             case .suggested(let entry): "suggested-\(entry.id)"
             case .card(let entry): "card-\(entry.id)"
             case .sealed(let entry): "sealed-\(entry.id)"
+            case .seeAll(let profile): "seeall-\(profile.id)"
             }
         }
     }
@@ -59,9 +61,23 @@ struct TradeWallView: View {
     }
 
     private var gridItems: [TradeWallGridItem] {
-        suggestedEntries.map { .suggested($0) }
-            + cardEntries.map { .card($0) }
-            + sealedEntries.map { .sealed($0) }
+        // Interleave suggested entries with a "see all" card after the last
+        // suggestion for each friend.
+        var items: [TradeWallGridItem] = []
+        var seenFriendIDs: Set<UUID> = []
+        let friendsWithSuggestions = Set(suggestedEntries.map(\.owner.id))
+        for entry in suggestedEntries {
+            items.append(.suggested(entry))
+            let isLastForFriend = suggestedEntries.last(where: { $0.owner.id == entry.owner.id })?.id == entry.id
+            if isLastForFriend, !seenFriendIDs.contains(entry.owner.id) {
+                seenFriendIDs.insert(entry.owner.id)
+                items.append(.seeAll(entry.owner))
+            }
+        }
+        // Only show card/sealed wall entries for friends who had no suggestions
+        items += cardEntries.filter { !friendsWithSuggestions.contains($0.owner.id) }.map { .card($0) }
+        items += sealedEntries.filter { !friendsWithSuggestions.contains($0.owner.id) }.map { .sealed($0) }
+        return items
     }
 
     var body: some View {
@@ -131,6 +147,15 @@ struct TradeWallView: View {
                     selectedSealedProduct = entry.product
                 } label: {
                     TradeWallSealedCell(entry: entry, colorScheme: colorScheme)
+                }
+                .buttonStyle(TradeWallCellButtonStyle())
+
+            case .seeAll(let profile):
+                Button {
+                    Haptics.lightImpact()
+                    navigationPath.append(SocialDestination.friendsCollection)
+                } label: {
+                    TradeWallSeeAllCell(profile: profile, colorScheme: colorScheme)
                 }
                 .buttonStyle(TradeWallCellButtonStyle())
             }
@@ -437,6 +462,56 @@ private struct TradeWallSealedCell: View {
                 itemName: entry.product.name,
                 tag: .inCollection
             )
+        }
+    }
+}
+
+// MARK: - TradeWallSeeAllCell
+
+private struct TradeWallSeeAllCell: View {
+    let profile: SocialProfile
+    let colorScheme: ColorScheme
+
+    var body: some View {
+        tradeWallCellChrome(colorScheme: colorScheme) {
+            // Invisible footer rendered underneath to match the exact height of
+            // card cells (image area + footer). The ZStack overlays the content
+            // centred over both layers.
+            ZStack(alignment: .top) {
+                VStack(spacing: 0) {
+                    Rectangle()
+                        .fill(Color.clear)
+                        .aspectRatio(5/7, contentMode: .fit)
+                        .frame(maxWidth: .infinity)
+                    TradeWallCellFooter(
+                        owner: profile,
+                        itemName: "",
+                        tag: .inCollection
+                    )
+                    .hidden()
+                }
+
+                // Visible content centred over the full cell height
+                VStack(spacing: 12) {
+                    Image(systemName: "person.2.fill")
+                        .font(.system(size: 28, weight: .medium))
+                        .foregroundStyle(Color.primary.opacity(0.3))
+
+                    VStack(spacing: 3) {
+                        Text("See all")
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundStyle(.primary)
+                        Text("friends' cards")
+                            .font(.system(size: 13, weight: .bold))
+                            .foregroundStyle(.primary)
+                    }
+
+                    Image(systemName: "chevron.right.circle.fill")
+                        .font(.system(size: 22))
+                        .foregroundStyle(Color.primary.opacity(0.25))
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
         }
     }
 }

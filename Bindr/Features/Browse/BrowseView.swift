@@ -73,6 +73,7 @@ struct CardGridCell: View {
     var variantLabel: String? = nil
     var variantPricingKey: String? = nil
     var footnote: String? = nil
+    var footnoteLeadingAvatarURL: URL? = nil
     var postPriceFootnote: String? = nil
     var overridePrice: Double? = nil
     var gradeLabel: String? = nil
@@ -195,6 +196,7 @@ struct CardGridCell: View {
             variantLabel: variantLabel,
             variantPricingKey: variantPricingKey,
             footnote: footnote,
+            footnoteLeadingAvatarURL: footnoteLeadingAvatarURL,
             postPriceFootnote: postPriceFootnote,
             overridePrice: overridePrice,
             gradeLabel: gradeLabel,
@@ -249,6 +251,7 @@ private struct CardGridCellLayout: View {
     let variantLabel: String?
     let variantPricingKey: String?
     let footnote: String?
+    var footnoteLeadingAvatarURL: URL? = nil
     let postPriceFootnote: String?
     let overridePrice: Double?
     let gradeLabel: String?
@@ -317,7 +320,7 @@ private struct CardGridCellLayout: View {
                             footerText(setName, style: .secondary)
                         }
                         if gridOptions.showOwned, let footnote, !footnote.isEmpty {
-                            footerText(footnote, style: .secondary)
+                            footnoteRow(footnote)
                         }
                         if gridOptions.showSetID {
                             footerText(trailingCardID, style: .tertiary)
@@ -379,6 +382,24 @@ private struct CardGridCellLayout: View {
             .lineLimit(1)
             .multilineTextAlignment(.center)
             .foregroundStyle(style)
+    }
+
+    @ViewBuilder
+    private func footnoteRow(_ text: String) -> some View {
+        if let url = footnoteLeadingAvatarURL {
+            HStack(spacing: 3) {
+                CachedAsyncImage(url: url) { image in
+                    image.resizable().scaledToFill()
+                } placeholder: {
+                    Circle().fill(Color.secondary.opacity(0.25))
+                }
+                .frame(width: 11, height: 11)
+                .clipShape(Circle())
+                footerText(text, style: .secondary)
+            }
+        } else {
+            footerText(text, style: .secondary)
+        }
     }
 }
 

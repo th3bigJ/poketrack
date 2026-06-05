@@ -453,6 +453,10 @@ struct SocialRootView: View {
                         )
                     case .friendProfile(let username):
                         FriendProfileView(username: username, navigationPath: $socialNavigationPath)
+                    case .friendCollection(let username):
+                        FriendProfileView(username: username, navigationPath: $socialNavigationPath, initialTab: .collection)
+                    case .friendsCollection:
+                        FriendsCollectionView()
                     case .tradeDetail(let tradeID):
                         TradeDetailView(navigationPath: $socialNavigationPath, tradeID: tradeID)
                     case .tradeBuilder(let receiverID, let theirCards, let myCards, let existingTradeID, let originalTrade):
