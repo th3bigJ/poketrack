@@ -656,7 +656,9 @@ final class AppServices {
         let t = ContinuousClock().now
         socialSyncModelContext = modelContext
         if collectionLedger == nil {
-            collectionLedger = CollectionLedgerService(modelContext: modelContext, store: store)
+            let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
+            ledger.onCollectionChanged = { [weak self] in self?.collectionSync.scheduleUpload() }
+            collectionLedger = ledger
         }
         print("[Launch] setupCollectionLedger done: \(ContinuousClock().now - t)")
         Task { await syncSocialLibrariesIfPossible() }
@@ -675,7 +677,9 @@ final class AppServices {
         print("[Launch] setupCollectionLedger start")
         let t2 = ContinuousClock().now
         if collectionLedger == nil {
-            collectionLedger = CollectionLedgerService(modelContext: modelContext, store: store)
+            let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
+            ledger.onCollectionChanged = { [weak self] in self?.collectionSync.scheduleUpload() }
+            collectionLedger = ledger
         }
         print("[Launch] setupCollectionLedger done: \(ContinuousClock().now - t2)")
         collectionSync.setup(modelContext: modelContext)

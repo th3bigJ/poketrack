@@ -133,7 +133,7 @@ final class CollectionSyncService {
 
         let formatter = ISO8601DateFormatter()
         return FriendCollectionSnapshot(
-            userID: userID.uuidString,
+            userID: userID.uuidString.lowercased(),
             updatedAt: formatter.string(from: Date()),
             collection: collection,
             wishlist: wishlist

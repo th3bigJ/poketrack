@@ -77,9 +77,11 @@ async function handlePut(request: Request, env: Env, callerID: string): Promise<
 // ---------------------------------------------------------------------------
 
 async function handleGet(env: Env, callerID: string, targetUserID: string): Promise<Response> {
+  console.log("[handleGet] callerID:", callerID, "targetUserID:", targetUserID, "same:", callerID === targetUserID);
   // Self-access is always allowed
   if (callerID !== targetUserID) {
     const isFriend = await checkFriendship(env, callerID, targetUserID);
+    console.log("[handleGet] isFriend:", isFriend);
     if (!isFriend) return json({ error: "Forbidden" }, 403);
   }
 
@@ -101,7 +103,7 @@ async function handleGet(env: Env, callerID: string, targetUserID: string): Prom
 // ---------------------------------------------------------------------------
 
 function snapshotKey(userID: string): string {
-  return `user-collections/${userID}/collection.json`;
+  return `user-collections/${userID.toLowerCase()}/collection.json`;
 }
 
 function bearerToken(request: Request): string | null {
@@ -136,22 +138,24 @@ async function verifyJWT(token: string, env: Env): Promise<string | null> {
  */
 async function checkFriendship(env: Env, callerID: string, targetUserID: string): Promise<boolean> {
   try {
-    const params = new URLSearchParams({
-      select: "id",
-      status: "eq.accepted",
-      or: `and(requester_id.eq.${callerID},addressee_id.eq.${targetUserID}),and(requester_id.eq.${targetUserID},addressee_id.eq.${callerID})`,
-      limit: "1",
-    });
-    const response = await fetch(`${env.SUPABASE_URL}/rest/v1/friendships?${params}`, {
+    const orFilter = `or(and(requester_id.eq.${callerID},addressee_id.eq.${targetUserID}),and(requester_id.eq.${targetUserID},addressee_id.eq.${callerID}))`;
+    const url = `${env.SUPABASE_URL}/rest/v1/friendships?select=id&status=eq.accepted&${orFilter}&limit=1`;
+    console.log("[checkFriendship] callerID:", callerID, "targetUserID:", targetUserID);
+    console.log("[checkFriendship] url:", url);
+    const response = await fetch(url, {
       headers: {
         apikey: env.SUPABASE_SERVICE_ROLE_KEY,
         Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
       },
     });
+    console.log("[checkFriendship] status:", response.status);
+    const body = await response.text();
+    console.log("[checkFriendship] body:", body);
     if (!response.ok) return false;
-    const rows = await response.json() as unknown[];
+    const rows = JSON.parse(body) as unknown[];
     return rows.length > 0;
-  } catch {
+  } catch (e) {
+    console.log("[checkFriendship] error:", e);
     return false;
   }
 }

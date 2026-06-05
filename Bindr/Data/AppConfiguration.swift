@@ -497,7 +497,7 @@ enum AppConfiguration {
     /// GET endpoint — download a user's collection snapshot by their UUID.
     static func collectionSyncGetURL(userID: UUID) -> URL? {
         guard var components = collectionSyncWorkerURL.flatMap({ URLComponents(url: $0.appending(path: "user-collection"), resolvingAgainstBaseURL: false) }) else { return nil }
-        components.queryItems = [URLQueryItem(name: "userID", value: userID.uuidString)]
+        components.queryItems = [URLQueryItem(name: "userID", value: userID.uuidString.lowercased())]
         return components.url
     }
 }

@@ -10,6 +10,8 @@ enum CollectionFreeTier {
 final class CollectionLedgerService {
     private let modelContext: ModelContext
     private let store: StoreKitService
+    /// Called after any mutation that changes collection quantities so R2 snapshot stays current.
+    var onCollectionChanged: (() -> Void)?
 
     init(modelContext: ModelContext, store: StoreKitService) {
         self.modelContext = modelContext
@@ -111,6 +113,7 @@ final class CollectionLedgerService {
         modelContext.insert(lot)
 
         try modelContext.save()
+        onCollectionChanged?()
     }
 
     // MARK: - Manual quantity edit (card stack)
@@ -146,6 +149,7 @@ final class CollectionLedgerService {
             )
         }
         try modelContext.save()
+        onCollectionChanged?()
     }
 
     /// Records that a card stack left the collection via sale, trade, or gift.
@@ -221,6 +225,7 @@ final class CollectionLedgerService {
         }
 
         try modelContext.save()
+        onCollectionChanged?()
     }
 
     /// Moves a selected quantity into another card-condition stack without
@@ -294,6 +299,7 @@ final class CollectionLedgerService {
         }
 
         try modelContext.save()
+        onCollectionChanged?()
         return target
     }
 
@@ -346,6 +352,7 @@ final class CollectionLedgerService {
         }
 
         try modelContext.save()
+        onCollectionChanged?()
     }
 
     private func applyDecreaseSingleCardStack(
@@ -647,6 +654,7 @@ final class CollectionLedgerService {
         modelContext.insert(lot)
 
         try modelContext.save()
+        onCollectionChanged?()
     }
 
     /// Records opening sealed product quantity, removing it from active collection while keeping history.
@@ -704,6 +712,7 @@ final class CollectionLedgerService {
         }
 
         try modelContext.save()
+        onCollectionChanged?()
     }
 
     /// Records that sealed product units left collection via sale/trade/gift/loss/damage.
@@ -778,6 +787,7 @@ final class CollectionLedgerService {
         }
 
         try modelContext.save()
+        onCollectionChanged?()
     }
 
     private func resolvedUnitCost(kind: CollectionAcquisitionKind, unitPrice: Double?) -> Double {
