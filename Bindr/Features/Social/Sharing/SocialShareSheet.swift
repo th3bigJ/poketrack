@@ -267,6 +267,8 @@ struct SocialShareSheet: View {
             PaywallSheet().environment(services)
         }
         .task { await loadCards() }
+        .onChange(of: singleCards) { _, _ in Task { await loadCards() } }
+        .onChange(of: wishlistItems) { _, _ in Task { await loadCards() } }
         .onChange(of: selectedTag) { _, _ in errorMessage = nil }
     }
 
@@ -379,7 +381,7 @@ struct SocialShareSheet: View {
                 emptyPicker("No cards in your collection yet.")
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
+                    LazyHStack(spacing: 10) {
                         ForEach(singleCards, id: \.cardID) { item in
                             let isSelected = selectedCollectionItem?.cardID == item.cardID
                                           && selectedCollectionItem?.variantKey == item.variantKey
@@ -388,8 +390,11 @@ struct SocialShareSheet: View {
                             }
                         }
                     }
-                    .padding(.horizontal, 1).padding(.vertical, 4)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 6)
                 }
+                .frame(height: 132)
+                .padding(.horizontal, -16)
             }
         }
     }
@@ -400,7 +405,7 @@ struct SocialShareSheet: View {
                 emptyPicker("Your wishlist is empty.")
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 10) {
+                    LazyHStack(spacing: 10) {
                         ForEach(wishlistItems, id: \.cardID) { item in
                             let isSelected = selectedWishlistItem?.cardID == item.cardID
                                           && selectedWishlistItem?.variantKey == item.variantKey
@@ -409,8 +414,11 @@ struct SocialShareSheet: View {
                             }
                         }
                     }
-                    .padding(.horizontal, 1).padding(.vertical, 4)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 6)
                 }
+                .frame(height: 132)
+                .padding(.horizontal, -16)
             }
         }
     }
@@ -420,7 +428,7 @@ struct SocialShareSheet: View {
         return Button(action: action) {
             VStack(spacing: 6) {
                 ZStack(alignment: .topTrailing) {
-                    CachedCardThumbnailImage(url: imageURL)
+                    CachedCardThumbnailImage(url: imageURL, targetSize: CGSize(width: 80, height: 112))
                         .frame(width: 80, height: 112)
                         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                         .overlay {
@@ -631,23 +639,46 @@ struct SocialShareSheet: View {
     }
 
     private func loadCards() async {
-        var ids = Set<String>()
-        singleCards.forEach { ids.insert($0.cardID) }
-        wishlistItems.forEach { ids.insert($0.cardID) }
-        // Build a setCode -> human-readable set name map from the catalog so
-        // pull posts attribute the card to e.g. "Mega Evolution" rather than
-        // the raw "me2pt5" set code.
+        let ids = Set(singleCards.map(\.cardID) + wishlistItems.map(\.cardID))
+            .filter { cardsByID[$0] == nil }
+        guard !ids.isEmpty else { return }
+
         let setNameByCode = Dictionary(
             uniqueKeysWithValues: services.cardData.sets.map { ($0.setCode, $0.name) }
         )
-        for id in ids {
-            guard cardsByID[id] == nil else { continue }
-            if let card = await services.cardData.loadCard(masterCardId: id) {
-                cardsByID[id] = card
-                setCodesByID[id] = card.setCode
-                if let name = setNameByCode[card.setCode] {
-                    setNamesByID[id] = name
-                }
+        let cardDataService = services.cardData
+        var loaded: [Card] = []
+        await withTaskGroup(of: Card?.self) { group in
+            for id in ids {
+                group.addTask { await cardDataService.loadCard(masterCardId: id) }
+            }
+            for await card in group {
+                if let card { loaded.append(card) }
+            }
+        }
+        for card in loaded {
+            cardsByID[card.masterCardId] = card
+            setCodesByID[card.masterCardId] = card.setCode
+            if let name = setNameByCode[card.setCode] {
+                setNamesByID[card.masterCardId] = name
+            }
+        }
+        prefetchImages()
+    }
+
+    private func prefetchImages() {
+        let urls = cardsByID.values.compactMap { card -> URL? in
+            let url = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
+            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+            guard AppURLSession.imageURLCache.cachedResponse(for: request) == nil else { return nil }
+            return url
+        }
+        for url in urls {
+            Task.detached(priority: .background) {
+                let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+                guard let (data, response) = try? await AppURLSession.images.data(for: request) else { return }
+                let cached = CachedURLResponse(response: response, data: data)
+                AppURLSession.imageURLCache.storeCachedResponse(cached, for: URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30))
             }
         }
     }

@@ -5,6 +5,7 @@ import SwiftUI
 struct MoreView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var accent
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     @Binding var navigationPath: NavigationPath
@@ -105,7 +106,7 @@ struct MoreView: View {
                             showProfile = false
                         }
                         .font(.system(size: 16, weight: .semibold))
-                        .foregroundStyle(accent)
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
                     }
                 }
             }

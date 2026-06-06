@@ -15,17 +15,24 @@ struct FriendsCollectionView: View {
     @State private var isLoading = false
     @State private var loadError: String?
 
+    @AppStorage("friendsCollection.gridOptions") private var gridOptionsData: Data = {
+        var o = BrowseGridOptions()
+        o.showOwned = true
+        return (try? JSONEncoder().encode(o)) ?? Data()
+    }()
+
     @State private var query = ""
     @State private var filters: BrowseCardGridFilters = {
         var f = BrowseCardGridFilters()
         f.sortBy = .cardName
         return f
     }()
-    @State private var gridOptions: BrowseGridOptions = {
-        var o = BrowseGridOptions()
-        o.showOwned = true  // repurposed: show owner name footnote
-        return o
-    }()
+    private var gridOptions: BrowseGridOptions {
+        get { (try? JSONDecoder().decode(BrowseGridOptions.self, from: gridOptionsData)) ?? {
+            var o = BrowseGridOptions(); o.showOwned = true; return o
+        }() }
+        nonmutating set { gridOptionsData = (try? JSONEncoder().encode(newValue)) ?? gridOptionsData }
+    }
     @State private var energyOptions: [String] = []
     @State private var rarityOptions: [String] = []
     @State private var trainerTypeOptions: [String] = []
@@ -86,6 +93,10 @@ struct FriendsCollectionView: View {
         )
     }
 
+    private var gridOptionsBinding: Binding<BrowseGridOptions> {
+        Binding(get: { gridOptions }, set: { gridOptions = $0 })
+    }
+
     // MARK: - Body
 
     var body: some View {
@@ -132,7 +143,7 @@ struct FriendsCollectionView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
-                    Toggle(isOn: $gridOptions.showOwned) {
+                    Toggle(isOn: gridOptionsBinding.showOwned) {
                         Label("Show owner", systemImage: "person.circle")
                     }
                     Divider()
@@ -143,7 +154,7 @@ struct FriendsCollectionView: View {
                         rarityOptions: rarityOptions,
                         trainerTypeOptions: trainerTypeOptions,
                         isAllBrands: false,
-                        gridOptions: $gridOptions,
+                        gridOptions: gridOptionsBinding,
                         config: filterConfig
                     )
                 } label: {
