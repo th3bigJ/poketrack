@@ -46,13 +46,6 @@ struct SettingsView: View {
     private var storageSection: some View {
         Section("Storage & Pricing") {
             NavigationLink {
-                CollectionImportView()
-                    .environment(services)
-            } label: {
-                Label("Import Collection", systemImage: "square.and.arrow.down.on.square")
-            }
-
-            NavigationLink {
                 OfflineSettingsPage()
                     .environment(services)
             } label: {

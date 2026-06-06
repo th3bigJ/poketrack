@@ -17,7 +17,7 @@ enum LedgerDirection: String, Codable, CaseIterable, Sendable {
     case adjustmentIn
     /// Manual stack decrease (FIFO consumption of ``CostLot`` layers).
     case adjustmentOut
-    /// Bulk import from another app (e.g. Dex CSV).
+    /// Historical acquisition from a removed import flow.
     case importedIn
 }
 
@@ -28,7 +28,7 @@ enum CollectionAcquisitionKind: String, CaseIterable, Sendable {
     case bought
     case trade
     case gifted
-    /// Bulk CSV import — not offered in manual “add to collection” pickers.
+    /// Historical acquisition from a removed import flow — not offered in manual “add to collection” pickers.
     case imported
 
     /// Types the user can pick when adding cards manually.

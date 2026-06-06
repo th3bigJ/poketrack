@@ -1163,10 +1163,16 @@ struct BrowseView: View {
 
     @ViewBuilder
     private var browseSetSummaryRow: some View {
-        if case .set(let set) = inlineDetailRoute, !inlineDetailLoading {
-            setProgressBar(for: set, cards: inlineDetailCards)
-                .padding(.horizontal, 16)
-                .padding(.bottom, 10)
+        if !inlineDetailLoading {
+            if case .set(let set) = inlineDetailRoute {
+                setProgressBar(for: set, cards: inlineDetailCards)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 10)
+            } else if case .dex(let dexId, let displayName) = inlineDetailRoute {
+                dexProgressBar(dexId: dexId, displayName: displayName, cards: inlineDetailCards)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 10)
+            }
         }
     }
 
@@ -1275,7 +1281,8 @@ struct BrowseView: View {
     private func inlineDetailContent(route: BrowseInlineDetailRoute) -> some View {
         let filteredCards = filteredInlineDetailCards
         let isSetRoute: Bool = { if case .set = route { return true }; return false }()
-        let useMasterGrid = showMasterSet && isSetRoute
+        let isDexRoute: Bool = { if case .dex = route { return true }; return false }()
+        let useMasterGrid = showMasterSet && (isSetRoute || isDexRoute)
         let allVariantRows = useMasterGrid ? masterSetVariantRows : []
         let variantOwnedQuantities = ownedQuantityByCardVariant
         let variantOwnedKeys = ownedCardVariantKeys
@@ -1288,7 +1295,7 @@ struct BrowseView: View {
                 .frame(maxWidth: .infinity, minHeight: 280)
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
-        } else if filteredCards.isEmpty && !isSetRoute {
+        } else if filteredCards.isEmpty && !isSetRoute && !isDexRoute {
             ContentUnavailableView(
                 inlineDetailCards.isEmpty ? "No cards found" : "No matching cards",
                 systemImage: "magnifyingglass",
@@ -1299,7 +1306,8 @@ struct BrowseView: View {
             .padding(.bottom, 16)
         } else {
             VStack(spacing: 0) {
-                if case .set = route {
+                let showHideOwnedToggle: Bool = { if case .set = route { return true }; if case .dex = route { return true }; return false }()
+                if showHideOwnedToggle {
                     Toggle("Hide owned cards", isOn: $inlineDetailFilters.hideOwned)
                         .font(.caption.weight(.semibold))
                         .toggleStyle(.switch)
@@ -2251,7 +2259,12 @@ struct BrowseView: View {
 
     @MainActor
     private func rebuildMasterSetVariantRows() async {
-        guard case .some(.set) = inlineDetailRoute else {
+        let isSetOrDex: Bool = {
+            if case .set = inlineDetailRoute { return true }
+            if case .dex = inlineDetailRoute { return true }
+            return false
+        }()
+        guard isSetOrDex else {
             masterSetVariantRows = []
             return
         }
@@ -2308,6 +2321,20 @@ struct BrowseView: View {
         Haptics.lightImpact()
         lastSelectedSetCodeInSetsTab = target.setCode
         inlineDetailRoute = .set(target)
+    }
+
+    private func adjacentPokemon(to dexId: Int, offset: Int) -> NationalDexPokemon? {
+        let all = services.cardData.nationalDexPokemonSorted()
+        guard let index = all.firstIndex(where: { $0.nationalDexNumber == dexId }) else { return nil }
+        let targetIndex = index + offset
+        guard all.indices.contains(targetIndex) else { return nil }
+        return all[targetIndex]
+    }
+
+    private func navigateToAdjacentPokemon(from dexId: Int, offset: Int) {
+        guard let target = adjacentPokemon(to: dexId, offset: offset) else { return }
+        Haptics.lightImpact()
+        inlineDetailRoute = .dex(dexId: target.nationalDexNumber, displayName: target.displayName)
     }
 
     @ViewBuilder
@@ -2442,6 +2469,154 @@ struct BrowseView: View {
             HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(showMasterSet ? "MASTER VALUE" : "SET VALUE")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: totalValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                }
+                Spacer()
+                VStack(alignment: .center, spacing: 2) {
+                    Text("COLLECTED")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: ownedValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                }
+                Spacer()
+                VStack(alignment: .trailing, spacing: 2) {
+                    Text("TO COMPLETE")
+                        .font(.system(size: 10, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                    Text(hasPrices ? currency.format(amountUSD: remainingValue, usdToGbp: fx) : "—")
+                        .font(.system(size: 14, weight: .bold, design: .rounded))
+                        .foregroundStyle(hasPrices ? services.theme.accentColor : .secondary)
+                }
+            }
+
+            // Trend badges
+            HStack(spacing: 8) {
+                Spacer()
+                inlineTrendBadge(label: "1D", value: trends.change1d)
+                inlineTrendBadge(label: "7D", value: trends.change7d)
+                inlineTrendBadge(label: "30D", value: trends.change30d)
+                if trends.change1d == nil && trends.change7d == nil && trends.change30d == nil {
+                    Text("Loading trends…")
+                        .font(.system(size: 11, weight: .medium, design: .rounded))
+                        .foregroundStyle(.tertiary)
+                }
+                Spacer()
+            }
+        }
+        .padding(16)
+        .glassCardStyle(cornerRadius: 16, interactive: false)
+    }
+
+    private func dexProgressBar(dexId: Int, displayName: String, cards: [Card]) -> some View {
+        let priceDict = showMasterSet ? inlineDetailMasterPriceByCardID : inlineDetailPriceByCardID
+        var ownedVariantsByCardID: [String: Set<String>] = [:]
+        for item in collectionItems where item.quantity > 0 {
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            guard brand == services.brandSettings.selectedCatalogBrand else { continue }
+            let variant = item.variantKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            ownedVariantsByCardID[item.cardID, default: []].insert(variant.isEmpty ? "normal" : variant)
+        }
+        let ownedCardIDs = Set(ownedVariantsByCardID.keys)
+        let masterTotal = masterSetVariantRows.count
+        let displayTotal = showMasterSet ? (masterTotal > 0 ? masterTotal : cards.count) : cards.count
+        let owned = showMasterSet
+            ? cards.reduce(0) { $0 + (ownedVariantsByCardID[$1.masterCardId]?.count ?? 0) }
+            : cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+        let progress = displayTotal > 0 ? min(CGFloat(owned) / CGFloat(displayTotal), 1) : 0
+        let currency = services.priceDisplay.currency
+        let fx = services.pricing.usdToGbp
+        let totalValue = priceDict.values.reduce(0, +)
+        let ownedValue = cards
+            .filter { ownedCardIDs.contains($0.masterCardId) }
+            .compactMap { priceDict[$0.masterCardId] }
+            .reduce(0, +)
+        let remainingValue = max(totalValue - ownedValue, 0)
+        let hasPrices = totalValue > 0
+        let trends = inlineDetailSetTrendChanges
+        let pokemon = services.cardData.nationalDexPokemon.first { $0.nationalDexNumber == dexId }
+
+        return VStack(spacing: 14) {
+            // Chip bar + navigation
+            HStack(alignment: .center, spacing: 8) {
+                setModeChip(label: "Full Set", isMaster: false)
+                setModeChip(label: "Master Set", isMaster: true)
+                Spacer(minLength: 8)
+                setAdjacentSetArrow(
+                    label: "Previous Pokémon",
+                    systemImage: "chevron.left",
+                    enabled: adjacentPokemon(to: dexId, offset: -1) != nil,
+                    controlSize: 32
+                ) {
+                    navigateToAdjacentPokemon(from: dexId, offset: -1)
+                }
+                if let pokemon {
+                    CachedAsyncImage(
+                        url: AppConfiguration.pokemonArtURL(imageFileName: pokemon.imageUrl)
+                    ) { img in
+                        img.resizable().scaledToFit()
+                    } placeholder: {
+                        Color.clear
+                    }
+                    .frame(width: 56, height: 56)
+                }
+                setAdjacentSetArrow(
+                    label: "Next Pokémon",
+                    systemImage: "chevron.right",
+                    enabled: adjacentPokemon(to: dexId, offset: 1) != nil,
+                    controlSize: 32
+                ) {
+                    navigateToAdjacentPokemon(from: dexId, offset: 1)
+                }
+            }
+
+            // Header
+            HStack(alignment: .firstTextBaseline) {
+                Text(showMasterSet ? "Master Set Completion" : "Card Completion")
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .foregroundStyle(.primary)
+                Spacer()
+                HStack(alignment: .firstTextBaseline, spacing: 3) {
+                    Text("\(owned)")
+                        .font(.system(size: 18, weight: .black, design: .rounded))
+                        .foregroundStyle(services.theme.accentColor)
+                    Text("/ \(displayTotal)")
+                        .font(.system(size: 13, weight: .bold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                }
+            }
+
+            // Progress bar
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
+                    Capsule()
+                        .fill(LinearGradient(
+                            colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.7)],
+                            startPoint: .leading, endPoint: .trailing
+                        ))
+                        .frame(width: max(geo.size.width * progress, 8))
+                        .shadow(color: services.theme.accentColor.opacity(0.3), radius: 4)
+                        .overlay {
+                            Capsule().stroke(
+                                LinearGradient(colors: [.white.opacity(0.4), .clear], startPoint: .top, endPoint: .bottom),
+                                lineWidth: 1
+                            )
+                        }
+                }
+            }
+            .frame(height: 10)
+
+            // Value row
+            HStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(showMasterSet ? "MASTER VALUE" : "CARD VALUE")
                         .font(.system(size: 10, weight: .semibold, design: .rounded))
                         .foregroundStyle(.secondary)
                     Text(hasPrices ? currency.format(amountUSD: totalValue, usdToGbp: fx) : "—")

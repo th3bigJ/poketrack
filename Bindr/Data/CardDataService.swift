@@ -631,12 +631,6 @@ final class CardDataService {
                 cacheCard(c)
                 return c
             }
-            let candidates = CatalogImportIdNormalizer.lookupCandidates(for: masterCardId)
-            let byCatalogId = try await CatalogStore.shared.fetchCardsMatchingCatalogIds(candidates, brand: inferred)
-            if let c = candidates.compactMap({ byCatalogId[$0] }).first {
-                cacheCard(c)
-                return c
-            }
         } catch {
             // Fall through.
         }
@@ -655,35 +649,6 @@ final class CardDataService {
             }
         }
         return nil
-    }
-
-    /// Bulk resolve Dex / pricing ids (`externalId`, `tcgdex_id`, or `masterCardId`) to catalog cards.
-    /// Expands Dex shorthand set codes (e.g. `sv35-149` → `sv3pt5-149`) before querying.
-    func loadCardsByCatalogIds(_ catalogIds: [String], catalogBrand: TCGBrand = .pokemon) async -> [String: Card] {
-        guard !catalogIds.isEmpty else { return [:] }
-
-        var expanded: [String] = []
-        for dexId in catalogIds {
-            expanded.append(contentsOf: CatalogImportIdNormalizer.lookupCandidates(for: dexId))
-        }
-
-        do {
-            try await CatalogStore.shared.open()
-            let resolved = try await CatalogStore.shared.fetchCardsMatchingCatalogIds(expanded, brand: catalogBrand)
-            var byDexId: [String: Card] = [:]
-            for dexId in catalogIds {
-                for candidate in CatalogImportIdNormalizer.lookupCandidates(for: dexId) {
-                    if let card = resolved[candidate] {
-                        byDexId[dexId] = card
-                        break
-                    }
-                }
-            }
-            for card in byDexId.values { cacheCard(card) }
-            return byDexId
-        } catch {
-            return [:]
-        }
     }
 
     private func cacheCard(_ card: Card) {

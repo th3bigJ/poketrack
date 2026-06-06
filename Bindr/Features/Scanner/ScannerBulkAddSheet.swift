@@ -100,11 +100,6 @@ struct ScannerBulkAddSheet: View {
     }
 
     private var canSave: Bool {
-        !results.contains { result in
-            let quantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
-            let selected = quantities.filter { $0.value > 0 }
-            return selected.keys.contains { acquisition(for: result.id, variantKey: $0) == .trade }
-        } &&
         results.contains { result in
             let quantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
             return quantities.values.contains(where: { $0 > 0 })
@@ -196,10 +191,6 @@ struct ScannerBulkAddSheet: View {
             let selected = quantities.filter { $0.value > 0 }
             for (variantKey, _) in selected {
                 let kind = acquisition(for: result.id, variantKey: variantKey)
-                if kind == .trade {
-                    errorMessage = "Trades are not available yet. Change how you acquired \(result.card.cardName) (\(variantDisplayName(variantKey)))."
-                    return
-                }
                 guard kind == .bought else { continue }
                 let text = pricesByResultID[result.id]?[variantKey] ?? ""
                 let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -272,7 +263,22 @@ struct ScannerBulkAddSheet: View {
                             giftFrom: nil,
                             boughtFrom: nil
                         )
-                    case .trade, .imported:
+                    case .trade:
+                        try ledger.recordSingleCardAcquisition(
+                            cardID: result.card.masterCardId,
+                            variantKey: variantKey,
+                            kind: .trade,
+                            quantity: quantity,
+                            currencyCode: currencyCode,
+                            cardDisplayName: result.card.cardName,
+                            unitPrice: nil,
+                            packedOpenedFrom: nil,
+                            tradeCounterparty: nil,
+                            tradeGaveAway: nil,
+                            giftFrom: nil,
+                            boughtFrom: nil
+                        )
+                    case .imported:
                         continue
                     }
                     saved += quantity

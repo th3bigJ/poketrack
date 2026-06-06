@@ -141,10 +141,8 @@ struct AddToCollectionSheet: View {
                     switch acquisitionKind {
                     case .bought:
                         boughtFields
-                    case .packed, .gifted, .imported:
+                    case .packed, .gifted, .imported, .trade:
                         EmptyView()
-                    case .trade:
-                        tradePlaceholder
                     }
                 }
 
@@ -167,7 +165,6 @@ struct AddToCollectionSheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add") { save() }
                         .foregroundStyle(headerButtonColor)
-                        .disabled(acquisitionKind == .trade)
                 }
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
@@ -208,19 +205,6 @@ struct AddToCollectionSheet: View {
         }
     }
 
-    @ViewBuilder
-    private var tradePlaceholder: some View {
-        Section {
-            ContentUnavailableView(
-                "Trades",
-                systemImage: "arrow.left.arrow.right",
-                description: Text("Trades feature coming soon.")
-            )
-            .frame(minHeight: 120)
-            .listRowInsets(EdgeInsets())
-        }
-    }
-
     private func variantLabel(_ key: String) -> String {
         let spaced = key
             .replacingOccurrences(of: "_", with: " ")
@@ -250,7 +234,6 @@ struct AddToCollectionSheet: View {
 
     private func save() {
         errorMessage = nil
-        guard acquisitionKind != .trade else { return }
         guard let ledger = services.collectionLedger else {
             errorMessage = "Collection isn't ready. Try again."
             return
@@ -313,7 +296,25 @@ struct AddToCollectionSheet: View {
                     giftFrom: nil,
                     boughtFrom: nil
                 )
-            case .trade, .imported:
+            case .trade:
+                try ledger.recordSingleCardAcquisition(
+                    cardID: card.masterCardId,
+                    variantKey: selectedVariantKey,
+                    kind: .trade,
+                    quantity: quantity,
+                    occurredAt: occurredAt,
+                    currencyCode: currencyCode,
+                    cardDisplayName: card.cardName,
+                    unitPrice: nil,
+                    gradingCompany: resolvedGradingCompany,
+                    grade: resolvedGrade,
+                    packedOpenedFrom: nil,
+                    tradeCounterparty: nil,
+                    tradeGaveAway: nil,
+                    giftFrom: nil,
+                    boughtFrom: nil
+                )
+            case .imported:
                 break
             }
             dismiss()

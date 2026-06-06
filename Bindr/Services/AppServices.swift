@@ -93,8 +93,17 @@ final class AppServices {
     /// Incremented by the settings recalculate button so DashboardView reloads market trend/movers.
     private(set) var dashboardMarketReloadToken: Int = 0
 
+    /// Bumped whenever collection inventory changes (add, remove, gift, sell, etc.) so
+    /// DashboardView can recompute live collection value without waiting on SwiftData debounce.
+    private(set) var collectionInventoryRevision: Int = 0
+
     func requestDashboardMarketReload() {
         dashboardMarketReloadToken += 1
+    }
+
+    func notifyCollectionInventoryChanged() {
+        collectionInventoryRevision += 1
+        collectionSync.scheduleUpload()
     }
 
     /// Full-screen catalog download (Account toggles on) — mirrors bootstrap progress but does not block app launch.
@@ -661,7 +670,7 @@ final class AppServices {
         socialSyncModelContext = modelContext
         if collectionLedger == nil {
             let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
-            ledger.onCollectionChanged = { [weak self] in self?.collectionSync.scheduleUpload() }
+            ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
             collectionLedger = ledger
         }
         print("[Launch] setupCollectionLedger done: \(ContinuousClock().now - t)")
@@ -682,7 +691,7 @@ final class AppServices {
         let t2 = ContinuousClock().now
         if collectionLedger == nil {
             let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
-            ledger.onCollectionChanged = { [weak self] in self?.collectionSync.scheduleUpload() }
+            ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
             collectionLedger = ledger
         }
         print("[Launch] setupCollectionLedger done: \(ContinuousClock().now - t2)")

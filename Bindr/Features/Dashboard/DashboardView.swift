@@ -409,6 +409,14 @@ struct DashboardView: View {
             chartRefreshID += 1
             await loadMarketTrendBlob()
         }
+        .task(id: "\(services.collectionInventoryRevision):\(hasFiredInitialLoadComplete)") {
+            guard hasFiredInitialLoadComplete else { return }
+            guard services.collectionInventoryRevision > 0 else { return }
+            await reloadDashboardInventory(deferForLaunch: false)
+            recomputeCollectionStats()
+            await computeLiveValue()
+            chartRefreshID += 1
+        }
         .onChange(of: services.isCatalogDownloadInProgress) { _, inProgress in
             guard !inProgress else { return }
             Task {
@@ -1216,6 +1224,7 @@ struct DashboardView: View {
         if let snap = liveSnapshot {
             let changed = services.collectionValue?.updateTodaySnapshot(snap) ?? false
             if changed { services.collectionValue?.aggregateCurrentPeriods() }
+            services.collectionValue?.persistLastKnownValue(snap)
         }
     }
 

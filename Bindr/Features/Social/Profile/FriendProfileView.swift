@@ -33,9 +33,6 @@ struct FriendProfileView: View {
     @State private var friendCollectionCardIDs: [String] = []
     @State private var isLoadingCollection = false
     @State private var collectionLoadError: String? = nil
-    @State private var isSelectMode = false
-    @State private var selectedCardIDs: Set<String> = []
-    @State private var isActionsMenuPresented = false
     @State private var resolvedSharedCardsByID: [String: Card] = [:]
     @State private var cardDetailSession: CardDetailSession?
 
@@ -49,10 +46,6 @@ struct FriendProfileView: View {
         relationship == .friends
     }
 
-    private var showsSelectToolbarButton: Bool {
-        (selectedTab == .wishlist || selectedTab == .collection) && canViewWishlist
-    }
-
     var body: some View {
         VStack(spacing: 0) {
             profileTopBar
@@ -62,23 +55,17 @@ struct FriendProfileView: View {
                     ProgressView("Loading profile…")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else if let profile {
-                    ZStack(alignment: .bottom) {
-                        ScrollView {
-                            VStack(spacing: 0) {
-                                profileHeader(profile)
-                                tabPicker
-                                    .padding(.top, BindrSpacing.lg)
-                                tabContent(profile)
-                            }
-                            .padding(.top, BindrSpacing.lg)
-                            .padding(.bottom, isSelectMode && !selectedCardIDs.isEmpty ? 80 : 32)
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            profileHeader(profile)
+                            tabPicker
+                                .padding(.top, BindrSpacing.lg)
+                            tabContent(profile)
                         }
-                        .background(Color(uiColor: .systemBackground))
-
-                        if isSelectMode && !selectedCardIDs.isEmpty {
-                            offerTradeButton(for: profile)
-                        }
+                        .padding(.top, BindrSpacing.lg)
+                        .padding(.bottom, 32)
                     }
+                    .background(Color(uiColor: .systemBackground))
                 } else {
                     ContentUnavailableView(
                         "Profile Not Found",
@@ -92,18 +79,6 @@ struct FriendProfileView: View {
         .background(Color(uiColor: .systemBackground).ignoresSafeArea())
         .tint(.primary)
         .toolbar(.hidden, for: .navigationBar)
-        .confirmationDialog("Profile Actions", isPresented: $isActionsMenuPresented, titleVisibility: .visible) {
-            if let profile {
-                Button("Block User", role: .destructive) {
-                    Task { await block(profile.id) }
-                }
-            }
-            Button("Cancel", role: .cancel) { }
-        }
-        .onChange(of: selectedTab) { _, _ in
-            isSelectMode = false
-            selectedCardIDs = []
-        }
         .onChange(of: relationship) { _, _ in
             Task { @MainActor in
                 attemptLaunchPendingSeededTradeIfPossible()
@@ -144,31 +119,46 @@ struct FriendProfileView: View {
                 }
             },
             trailing: {
-                HStack(spacing: 8) {
-                    if showsSelectToolbarButton {
-                        ChromeGlassCircleButton(accessibilityLabel: isSelectMode ? "Exit select mode" : "Select cards") {
-                            isSelectMode.toggle()
-                            if !isSelectMode { selectedCardIDs = [] }
-                        } label: {
-                            Image(systemName: isSelectMode ? "checkmark.circle.fill" : "checkmark.circle")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(isSelectMode ? Color.blue : Color.primary)
-                        }
-                    }
-
-                    if profile != nil {
-                        ChromeGlassCircleButton(accessibilityLabel: "Profile actions") {
-                            Haptics.lightImpact()
-                            isActionsMenuPresented = true
-                        } label: {
-                            Image(systemName: "ellipsis")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(.primary)
-                        }
-                    }
+                if let profile {
+                    profileActionsMenu(for: profile)
                 }
             }
         )
+    }
+
+    /// Liquid Glass menu anchored to the ellipsis button — expands from the
+    /// chrome control instead of a bottom confirmation sheet.
+    private func profileActionsMenu(for profile: SocialProfile) -> some View {
+        Menu {
+            if relationship == .friends {
+                Button {
+                    Haptics.mediumImpact()
+                    Task { await unfriend(profile.id) }
+                } label: {
+                    Label("Unfriend", systemImage: "person.badge.minus")
+                        .foregroundStyle(.white)
+                }
+            }
+
+            Button {
+                Haptics.mediumImpact()
+                Task { await block(profile.id) }
+            } label: {
+                Label("Block User", systemImage: "hand.raised.fill")
+                    .foregroundStyle(.white)
+            }
+        } label: {
+            Image(systemName: "ellipsis")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+                .modifier(ChromeGlassCircleGlyphModifier())
+        }
+        .buttonStyle(.plain)
+        .menuOrder(.fixed)
+        .menuIndicator(.hidden)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel("Profile actions")
     }
 
     // MARK: - Subviews
@@ -484,8 +474,8 @@ struct FriendProfileView: View {
                 if canViewWishlist, !ids.isEmpty {
                     SelectableCardGrid(
                         cardIDs: ids,
-                        isSelectMode: $isSelectMode,
-                        selectedCardIDs: $selectedCardIDs,
+                        isSelectMode: .constant(false),
+                        selectedCardIDs: .constant([]),
                         cardLoader: { id in await loadSharedCard(id) },
                         onCardTap: { tappedID in
                             Task { await openCardDetail(tappedID: tappedID, orderedIDs: ids) }
@@ -510,8 +500,8 @@ struct FriendProfileView: View {
                 } else {
                     SelectableCardGrid(
                         cardIDs: friendCollectionCardIDs,
-                        isSelectMode: $isSelectMode,
-                        selectedCardIDs: $selectedCardIDs,
+                        isSelectMode: .constant(false),
+                        selectedCardIDs: .constant([]),
                         cardLoader: { id in await loadSharedCard(id) },
                         onCardTap: { tappedID in
                             Task { await openCardDetail(tappedID: tappedID, orderedIDs: friendCollectionCardIDs) }
@@ -555,46 +545,6 @@ struct FriendProfileView: View {
                 .foregroundStyle(Color.secondary.opacity(0.7))
         }
         .frame(maxWidth: .infinity)
-    }
-
-    private func offerTradeButton(for profile: SocialProfile) -> some View {
-        Button {
-            let items = selectedCardIDs.map { cardID in
-                TradeItem(
-                    id: UUID(),
-                    tradeID: UUID(),
-                    ownerID: profile.id,
-                    cardID: cardID,
-                    variantKey: "normal",
-                    quantity: 1,
-                    createdAt: nil
-                )
-            }
-            let (theirCards, myCards) = prefills(for: items, sourceTab: selectedTab)
-            isSelectMode = false
-            selectedCardIDs = []
-            navigationPath?.wrappedValue.append(SocialDestination.tradeBuilder(
-                receiverID: profile.id,
-                theirCards: theirCards,
-                myCards: myCards
-            ))
-        } label: {
-            Text("Offer Trade (\(selectedCardIDs.count))")
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(.black)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
-                .background(accentColor, in: Capsule())
-        }
-        .padding(.horizontal, 20)
-        .padding(.bottom, 16)
-        .background(
-            LinearGradient(
-                colors: [Color(uiColor: .systemBackground).opacity(0), Color(uiColor: .systemBackground)],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        )
     }
 
     private func emptyCard(_ text: String) -> some View {
@@ -731,12 +681,31 @@ struct FriendProfileView: View {
         }
     }
 
+    private func unfriend(_ userID: UUID) async {
+        isMutating = true
+        defer { isMutating = false }
+        do {
+            try await services.socialFriend.removeFriend(userID: userID)
+            relationship = .none
+            sharedWishlistCardIDs = []
+            friendCollectionCardIDs = []
+            resolvedSharedCardsByID = [:]
+            Haptics.success()
+        } catch {
+            errorMessage = error.localizedDescription
+            Haptics.error()
+        }
+    }
+
     private func block(_ userID: UUID) async {
         isMutating = true
         defer { isMutating = false }
         do {
             try await services.socialFriend.block(userID: userID)
             relationship = .blocked
+            sharedWishlistCardIDs = []
+            friendCollectionCardIDs = []
+            resolvedSharedCardsByID = [:]
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -748,7 +717,6 @@ struct FriendProfileView: View {
 
     @MainActor
     private func openCardDetail(tappedID: String, orderedIDs: [String]) async {
-        guard !isSelectMode else { return }
         _ = await loadSharedCard(tappedID)
         let orderedCards = orderedIDs.compactMap { resolvedSharedCardsByID[$0] }
         guard let startIndex = orderedCards.firstIndex(where: { $0.masterCardId == tappedID }) else { return }

@@ -357,6 +357,27 @@ final class SocialFriendService {
         }
     }
 
+    func removeFriend(userID: UUID) async throws {
+        let currentUserID = try signedInUserID()
+        guard currentUserID != userID else { throw SocialFriendError.invalidRequest }
+
+        let accessToken = try signedInAccessToken()
+        let existing = try await fetchMutualRelationships(with: userID, currentUserID: currentUserID)
+
+        guard let friendship = existing.first(where: { $0.status == .accepted }) else {
+            throw SocialFriendError.invalidRequest
+        }
+
+        _ = try await execute(
+            path: "/rest/v1/friendships?id=eq.\(friendship.id.uuidString)&status=eq.accepted",
+            method: "DELETE",
+            accessToken: accessToken,
+            extraHeaders: [
+                "Prefer": "return=minimal"
+            ]
+        ) as EmptyResponse
+    }
+
     func block(userID: UUID) async throws {
         let currentUserID = try signedInUserID()
         guard currentUserID != userID else { throw SocialFriendError.invalidRequest }
