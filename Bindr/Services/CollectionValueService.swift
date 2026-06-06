@@ -153,6 +153,13 @@ final class CollectionValueService {
         )
     }
 
+    /// Clears the persisted snapshot so the next call to `todayPersistedSnapshot()` returns nil
+    /// and forces a full recompute. Call this after a daily pricing sync so stale pre-03:00 values
+    /// saved earlier in the same calendar day do not short-circuit the recompute.
+    func invalidatePersistedSnapshot() {
+        UserDefaults.standard.removeObject(forKey: LastKnownValueKey.date)
+    }
+
     /// Call this when the app moves to the background so the value is available on next launch.
     func persistLastKnownValue(_ snapshot: BrandSnapshot) {
         guard snapshot.total > 0 else { return }

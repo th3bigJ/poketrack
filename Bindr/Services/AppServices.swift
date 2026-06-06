@@ -266,6 +266,10 @@ final class AppServices {
                 bootstrapStatus = "Finishing update…"
                 await blockingTask.value
             }
+            // Invalidate any persisted collection value snapshot saved earlier today
+            // (e.g. before 03:00 with yesterday's prices) so the dashboard recomputes
+            // with the freshly-downloaded pricing rather than reusing the stale cache.
+            collectionValue?.invalidatePersistedSnapshot()
             isLaunchCatalogPipelineComplete = true
             launchCatalogPipelineCompletedAt = Date()
         } else {
