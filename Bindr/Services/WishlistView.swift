@@ -87,8 +87,6 @@ struct WishlistView: View {
         }
         .task(id: wishlistSignature) {
             await resolveWishlistCards()
-            // Sync the full local wishlist, not just currently visible brand-filtered items.
-            services.socialCardLibrary.scheduleAutoSyncWishlist(items: items)
         }
         .onAppear {
             services.setupWishlist(modelContext: modelContext)

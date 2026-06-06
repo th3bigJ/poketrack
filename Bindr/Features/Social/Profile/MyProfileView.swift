@@ -5,7 +5,7 @@ struct MyProfileView: View {
     enum ProfileTab: String, CaseIterable {
         case posts
         case wishlist
-        case friends
+        case collection
     }
 
     let profile: SocialProfile
@@ -91,11 +91,7 @@ struct MyProfileView: View {
         ScrollView {
             VStack(spacing: 0) {
                 profileIntro
-                if activeProfileTab == .friends {
-                    friendsTabContent
-                } else {
-                    profileTabContent
-                }
+                profileTabContent
             }
         }
         .refreshable {
@@ -255,7 +251,7 @@ struct MyProfileView: View {
         switch tab {
         case .posts: return "Posts"
         case .wishlist: return "Wishlist"
-        case .friends: return "Friends"
+        case .collection: return "Collection"
         }
     }
 
@@ -318,23 +314,12 @@ struct MyProfileView: View {
                         }
                     )
                 }
-            case .friends:
+            case .collection:
                 EmptyView()
             }
         }
         .padding(.top, profileTabContentTopGap)
         .padding(.horizontal, BindrSpacing.lg)
-    }
-
-    private var friendsTabContent: some View {
-        FriendsListView(
-            onOpenSearch: onOpenFriendsSearch ?? {},
-            onOpenQR: onOpenFriendsQR ?? {},
-            onOpenUsername: onOpenFriendUsername ?? { _ in },
-            onSelectFriendForTrade: onSelectFriendForTrade,
-            embedInParentScrollView: true
-        )
-        .padding(.top, profileTabContentTopGap)
     }
 
     private func isRenderableCardIDForProfileGrid(_ cardID: String) -> Bool {
@@ -556,9 +541,6 @@ struct MyProfileView: View {
             print("Error fetching my activity: \(error)")
         }
         acceptedFriendCount = try? await services.socialFriend.fetchAcceptedFriendCount(for: profile.id)
-        if let wishlistItems = services.wishlist?.items {
-            services.socialCardLibrary.scheduleAutoSyncWishlist(items: wishlistItems)
-        }
     }
 
     // MARK: - Grouping Logic

@@ -30,7 +30,6 @@ final class AppServices {
     let socialProfile: SocialProfileService
     let socialFriend: SocialFriendService
     let socialShare: SocialShareService
-    let socialCardLibrary: SocialCardLibraryService
     let socialFeed: SocialFeedService
     let socialPush: SocialPushService
     let trade: TradeService
@@ -132,7 +131,6 @@ final class AppServices {
         let brandSettings = BrandSettings()
         self.brandSettings = brandSettings
         self.cardData = CardDataService(brandSettings: brandSettings)
-        self.socialCardLibrary = SocialCardLibraryService(authService: socialAuth)
         self.trade = TradeService(authService: socialAuth)
         self.tradeSession = TradeSessionService(authService: socialAuth)
         self.collectionSync = CollectionSyncService(authService: socialAuth)
@@ -147,6 +145,13 @@ final class AppServices {
         self.offlineImageSettings = offlineImageSettings
         self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
         self.essentialAssetsDownload = EssentialAssetsDownloadService()
+        // First-run: begin network sync immediately so catalog data is being downloaded
+        // while the user reads through the splash and onboarding screens (~15-30s of user time).
+        // bootstrap() is idempotent — when it runs after onboarding it will find all files
+        // already cached and complete near-instantly.
+        if !brandSettings.hasCompletedInitialAppBootstrap {
+            prefetchCatalogInBackground(for: brandSettings.enabledBrands)
+        }
         if brandSettings.hasCompletedInitialAppBootstrap {
             isReady = true
             isLaunchCatalogPipelineComplete = false
@@ -730,7 +735,7 @@ final class AppServices {
         // SwiftData CloudKit merges can arrive several seconds after the last remote
         // change notification. Keep the overlay up through that quiet period; a
         // longer honest launch is better than revealing a frozen dashboard.
-        let quietWindow: TimeInterval = 10.0
+        let quietWindow: TimeInterval = 4.0
         let timeout: TimeInterval = 45.0
 
         print("[CloudKit] fresh install — idle monitor armed (quietWindow=\(quietWindow)s, timeout=\(timeout)s)")
@@ -797,9 +802,6 @@ final class AppServices {
         guard let modelContext = socialSyncModelContext else { return }
         let t = ContinuousClock().now
         print("[Launch] syncSocialLibrariesIfPossible starting")
-        if let wishlist {
-            socialCardLibrary.scheduleAutoSyncWishlist(items: wishlist.items)
-        }
         collectionSync.scheduleUpload()
         // Keep launch social sync cheap: do not materialize full SwiftData tables on
         // @MainActor while the launch overlay is coming down.

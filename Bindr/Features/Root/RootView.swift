@@ -1326,8 +1326,10 @@ struct RootView: View {
         // coincided exactly with the end of the cold-start load, making the upsell
         // feel like a "reward" for surviving the freeze rather than a natural pause.
         DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
-            // Re-check at fire time — nothing modal should be on screen.
-            guard !showSplash,
+            // Re-check at fire time — nothing modal should be on screen, and
+            // entitlements may have resolved since the initial isPremium gate above.
+            guard !services.store.isPremium,
+                  !showSplash,
                   !showOnboardingImmediate,
                   isLaunchSequenceComplete,
                   selectedCardPresentation == nil,

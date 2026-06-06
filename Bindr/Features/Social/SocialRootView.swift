@@ -9,7 +9,7 @@ enum SocialTab: String, CaseIterable, Identifiable {
     case trades = "Trade"
     case profile = "Profile"
 
-    static let allCases: [SocialTab] = [.feed, .trades, .profile]
+    static let allCases: [SocialTab] = [.feed, .trades, .friends, .profile]
 
     var id: String { rawValue }
     var title: String { rawValue }
@@ -653,8 +653,7 @@ struct SocialRootView: View {
         case .feed:
             selectedTab = .feed
         case .friends, .friendRequests:
-            selectedTab = .profile
-            selectedProfileTab = .friends
+            selectedTab = .friends
         case .profile(let username):
             if profile == nil {
                 profilePopoverPath = NavigationPath()

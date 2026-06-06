@@ -184,21 +184,32 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             await progress.addPlannedFiles(catalogCount + pricingCount + blobCount)
         }
 
-        if enabledBrands.contains(.pokemon) {
-            do {
-                try await store.open()
-                await progress.setStatus("Checking card catalog…")
-                await checkAndApplyCatalogVersionIfNeeded(store: store)
-                let pokemonPhase = PokemonCatalogSyncPhase(session: session, store: store)
-                await pokemonPhase.syncCatalogIfNeeded(progress: progress)
-                await pokemonPhase.refreshNationalDexMetadata()
-            } catch {}
-        }
-        if enabledBrands.contains(.onePiece) {
+        // Open the store once before branching so both catalog phases start with an open DB.
+        if enabledBrands.contains(.pokemon) || enabledBrands.contains(.onePiece) {
             try? await store.open()
-            let onePiecePhase = OnePieceCatalogSyncPhase(session: session, store: store)
-            await onePiecePhase.syncCatalogIfNeeded(progress: progress)
         }
+
+        // Run catalog version check (Pokémon-only) before both phases so neither
+        // phase races on the ETags that checkAndApply clears.
+        if enabledBrands.contains(.pokemon) {
+            await progress.setStatus("Checking card catalog…")
+            await checkAndApplyCatalogVersionIfNeeded(store: store)
+        }
+
+        // Both catalog phases fetch entirely independent URLs and write to separate
+        // SQLite namespaces, so they can run concurrently.
+        async let pokemonCatalogDone: Void = {
+            guard enabledBrands.contains(.pokemon) else { return }
+            let phase = PokemonCatalogSyncPhase(session: session, store: store)
+            await phase.syncCatalogIfNeeded(progress: progress)
+            await phase.refreshNationalDexMetadata()
+        }()
+        async let onePieceCatalogDone: Void = {
+            guard enabledBrands.contains(.onePiece) else { return }
+            let phase = OnePieceCatalogSyncPhase(session: session, store: store)
+            await phase.syncCatalogIfNeeded(progress: progress)
+        }()
+        _ = await (pokemonCatalogDone, onePieceCatalogDone)
 
         if !enabledBrands.isEmpty {
             try? await store.open()

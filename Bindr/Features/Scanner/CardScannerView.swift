@@ -44,6 +44,7 @@ struct CardScannerView: View {
     @State private var selectedVariantQuantitiesByResultID: [UUID: [String: Int]] = [:]
     @State private var showOnePieceDebugSheet = false
     @State private var showScanLimitPaywall = false
+    @State private var showQuantityWarning = false
 
     /// Show ONE PIECE debug affordance when the active scanner brand is ONE PIECE.
     private var showOnePieceDebugButton: Bool {
@@ -143,7 +144,23 @@ struct CardScannerView: View {
                         .padding(.top, ScannerSheetLayout.statusBarHeight + 4)
                         .padding(.horizontal, 16)
 
-                        if let err = viewModel.lastErrorMessage {
+                        if showQuantityWarning {
+                            Label("Add at least 1 card before scanning the next", systemImage: "exclamationmark.triangle.fill")
+                                .font(.subheadline.weight(.medium))
+                                .foregroundStyle(.white)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 10)
+                                .background(Color.orange.opacity(0.88), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                .padding(.horizontal, 24)
+                                .padding(.top, 4)
+                                .transition(.move(edge: .top).combined(with: .opacity))
+                                .onAppear {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+                                        withAnimation { showQuantityWarning = false }
+                                    }
+                                }
+                        } else if let err = viewModel.lastErrorMessage {
                             Button {
                                 if viewModel.hasReachedScanLimit { showScanLimitPaywall = true }
                             } label: {
@@ -408,6 +425,16 @@ struct CardScannerView: View {
                 HapticManager.impact(.medium)
                 currentResultIndex = 0
             }
+            viewModel.captureBlocker = {
+                guard !viewModel.scanResults.isEmpty else { return false }
+                let resultID = viewModel.scanResults[0].id
+                let quantities = selectedVariantQuantitiesByResultID[resultID] ?? [:]
+                return !quantities.values.contains(where: { $0 > 0 })
+            }
+            viewModel.onCaptureBlocked = {
+                HapticManager.notification(.warning)
+                withAnimation { showQuantityWarning = true }
+            }
             let status = AVCaptureDevice.authorizationStatus(for: .video)
             if status == .denied || status == .restricted {
                 permissionDenied = true
@@ -418,6 +445,11 @@ struct CardScannerView: View {
         .onChange(of: captureModeRawValue) { _, newRaw in
             let mode = ScannerCaptureMode(rawValue: newRaw) ?? .auto
             viewModel.autoCaptureEnabled = (mode == .auto)
+        }
+        .onChange(of: selectedVariantQuantitiesByResultID) { _, _ in
+            if showQuantityWarning, viewModel.captureBlocker?() == false {
+                withAnimation { showQuantityWarning = false }
+            }
         }
         .onDisappear { viewModel.stopSession() }
         .animation(.spring(response: 0.45, dampingFraction: 0.82), value: viewModel.scanResults.isEmpty)

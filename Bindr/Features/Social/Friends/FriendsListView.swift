@@ -613,9 +613,21 @@ struct FriendsListView: View {
         defer { isLoadingTradeSuggestions = false }
 
         if !friendIDs.isEmpty {
-            async let wishlistsTask = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
-            let wishlists = (try? await wishlistsTask) ?? [:]
-            friendWishlistCardIDsByUser = wishlists.mapValues { Set($0) }
+            var result: [UUID: Set<String>] = [:]
+            await withTaskGroup(of: (UUID, [String]).self) { group in
+                for friendID in friendIDs {
+                    group.addTask {
+                        guard let snapshot = try? await services.collectionSync.fetchFriendCollection(userID: friendID) else {
+                            return (friendID, [])
+                        }
+                        return (friendID, snapshot.wishlist.compactMap { $0.cardID.isEmpty ? nil : $0.cardID })
+                    }
+                }
+                for await (id, ids) in group {
+                    result[id] = Set(ids)
+                }
+            }
+            friendWishlistCardIDsByUser = result
         } else {
             friendWishlistCardIDsByUser = [:]
         }

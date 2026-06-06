@@ -604,11 +604,6 @@ struct FriendProfileView: View {
                 activity = (try? await posts) ?? []
                 publicFriendCount = (try? await friendCounts)?[loaded.id]
                 if relationship == .friends {
-                    async let wishlistIDs = services.socialCardLibrary.fetchWishlistCardIDs(for: loaded.id)
-                    sharedWishlistCardIDs = (try? await wishlistIDs) ?? []
-                    Task { @MainActor in
-                        await warmSharedCardCache(ids: sharedWishlistCardIDs)
-                    }
                     Task { @MainActor in
                         await loadFriendCollection(userID: loaded.id)
                     }
@@ -638,16 +633,22 @@ struct FriendProfileView: View {
         defer { isLoadingCollection = false }
         do {
             let snapshot = try await services.collectionSync.fetchFriendCollection(userID: userID)
-            let ids = snapshot.collection.compactMap { entry -> String? in
+            let collectionIDs = snapshot.collection.compactMap { entry -> String? in
                 guard !entry.cardID.isEmpty else { return nil }
                 return entry.cardID
             }
-            friendCollectionCardIDs = ids
+            let wishlistIDs = snapshot.wishlist.compactMap { entry -> String? in
+                guard !entry.cardID.isEmpty else { return nil }
+                return entry.cardID
+            }
+            friendCollectionCardIDs = collectionIDs
+            sharedWishlistCardIDs = wishlistIDs
             Task { @MainActor in
-                await warmSharedCardCache(ids: ids)
+                await warmSharedCardCache(ids: collectionIDs + wishlistIDs)
             }
         } catch CollectionSyncError.httpError(404) {
             friendCollectionCardIDs = []
+            sharedWishlistCardIDs = []
         } catch {
             collectionLoadError = error.localizedDescription
         }

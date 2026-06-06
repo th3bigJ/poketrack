@@ -102,10 +102,22 @@ struct SuggestedTradesView: View {
 
             let friendIDs = friends.map(\.id)
 
-            async let friendWishlists = services.socialCardLibrary.fetchWishlistCardIDsByUser(for: friendIDs)
+            var friendWishlistMap: [UUID: [String]] = [:]
+            await withTaskGroup(of: (UUID, [String]).self) { group in
+                for friend in friends {
+                    group.addTask {
+                        guard let snapshot = try? await services.collectionSync.fetchFriendCollection(userID: friend.id) else {
+                            return (friend.id, [])
+                        }
+                        return (friend.id, snapshot.wishlist.compactMap { $0.cardID.isEmpty ? nil : $0.cardID })
+                    }
+                }
+                for await (id, ids) in group {
+                    friendWishlistMap[id] = ids
+                }
+            }
 
             let myWishlist = Set<String>(services.wishlist?.items.map(\.cardID) ?? [])
-            let friendWishlistMap = try await friendWishlists
             let myOwnedCardIDs = Set<String>(collectionItems.compactMap { item in
                 guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
                 return item.cardID

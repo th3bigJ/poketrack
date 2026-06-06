@@ -102,7 +102,21 @@ struct FriendsWishlistsView: View {
         defer { isLoading = false }
         let loadedFriends = (try? await services.socialFriend.fetchFriends()) ?? []
         friends = loadedFriends
-        let ids = loadedFriends.map(\.id)
-        friendWishlistCardIDs = (try? await services.socialCardLibrary.fetchWishlistCardIDsByUser(for: ids)) ?? [:]
+        var result: [UUID: [String]] = [:]
+        await withTaskGroup(of: (UUID, [String]).self) { group in
+            for friend in loadedFriends {
+                group.addTask {
+                    guard let snapshot = try? await services.collectionSync.fetchFriendCollection(userID: friend.id) else {
+                        return (friend.id, [])
+                    }
+                    let ids = snapshot.wishlist.compactMap { $0.cardID.isEmpty ? nil : $0.cardID }
+                    return (friend.id, ids)
+                }
+            }
+            for await (id, ids) in group {
+                result[id] = ids
+            }
+        }
+        friendWishlistCardIDs = result
     }
 }

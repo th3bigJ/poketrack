@@ -381,7 +381,7 @@ struct SocialShareSheet: View {
                 emptyPicker("No cards in your collection yet.")
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: 10) {
+                    HStack(spacing: 10) {
                         ForEach(singleCards, id: \.cardID) { item in
                             let isSelected = selectedCollectionItem?.cardID == item.cardID
                                           && selectedCollectionItem?.variantKey == item.variantKey
@@ -405,7 +405,7 @@ struct SocialShareSheet: View {
                 emptyPicker("Your wishlist is empty.")
             } else {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: 10) {
+                    HStack(spacing: 10) {
                         ForEach(wishlistItems, id: \.cardID) { item in
                             let isSelected = selectedWishlistItem?.cardID == item.cardID
                                           && selectedWishlistItem?.variantKey == item.variantKey

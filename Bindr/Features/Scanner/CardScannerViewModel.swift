@@ -78,6 +78,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
     // MARK: - Callbacks
     var onMatch: ((ScanResult) -> Void)?
+    /// Returns true if the current scan result still needs a quantity before another scan is allowed.
+    var captureBlocker: (() -> Bool)?
+    /// Called when a capture attempt is blocked by `captureBlocker`.
+    var onCaptureBlocked: (() -> Void)?
 
     // MARK: - Private
 
@@ -244,6 +248,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     /// Fires the still photo pipeline manually.
     func capturePhoto() {
         guard session.isRunning, !isCapturing, !requiresBrandSelection else { return }
+        if captureBlocker?() == true {
+            onCaptureBlocked?()
+            return
+        }
         if hasReachedScanLimit {
             lastErrorMessage = "You've used all \(FreeTierScanLimit.maxScansPerMonth) free scans this month. Upgrade to Premium for unlimited scanning."
             return
