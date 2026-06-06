@@ -42,10 +42,11 @@ struct TransactionsView: View {
     private var holdingsSignature: String {
         let brandKey = activeBrand.rawValue
         let currencyKey = services.priceDisplay.currency.rawValue
-        let itemKey = visibleCollectionItems
+        let rangeKey = pnlRange.title
+        let itemKey = periodCollectionItems
             .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)|\($0.itemKind)|\($0.gradingCompany ?? "")" }
             .joined(separator: "§")
-        return "\(brandKey)|\(currencyKey)|\(itemKey)"
+        return "\(brandKey)|\(currencyKey)|\(rangeKey)|\(itemKey)"
     }
 
     private var rangeFilteredLines: [LedgerLine] {
@@ -98,6 +99,21 @@ struct TransactionsView: View {
     private var visibleCollectionItems: [CollectionItem] {
         collectionItems.filter { item in
             TCGBrand.inferredFromMasterCardId(item.cardID) == activeBrand
+        }
+    }
+
+    private var periodCollectionItems: [CollectionItem] {
+        let cal = Calendar.current
+        let now = Date()
+        return visibleCollectionItems.filter { item in
+            switch pnlRange {
+            case .month:
+                return cal.isDate(item.dateAcquired, equalTo: now, toGranularity: .month)
+            case .year:
+                return cal.isDate(item.dateAcquired, equalTo: now, toGranularity: .year)
+            case .allTime:
+                return true
+            }
         }
     }
 
@@ -532,7 +548,7 @@ struct TransactionsView: View {
     private func computeHoldingsCollectionValue() async {
         var total = 0.0
 
-        for item in visibleCollectionItems {
+        for item in periodCollectionItems {
             if let sealedProductID = sealedProductID(for: item),
                let sealedUSD = services.sealedProducts.marketPriceUSD(for: sealedProductID) {
                 total += sealedUSD * Double(item.quantity)

@@ -1261,7 +1261,10 @@ struct BrowseView: View {
         let filteredCards = filteredInlineDetailCards
         let isSetRoute: Bool = { if case .set = route { return true }; return false }()
         let useMasterGrid = showMasterSet && isSetRoute
-        let variantRows = useMasterGrid ? masterSetVariantRows : []
+        let allVariantRows = useMasterGrid ? masterSetVariantRows : []
+        let variantRows = inlineDetailFilters.hideOwned
+            ? allVariantRows.filter { !ownedCardIDsCache.contains($0.card.masterCardId) }
+            : allVariantRows
         let ownedQuantities = ownedQuantityByCardID
         if inlineDetailLoading {
             ProgressView("Loading cards…")

@@ -1517,7 +1517,7 @@ struct HoldingDispositionSheet: View {
                 }
             }
             .onAppear {
-                quantity = min(max(line.quantity, 1), quantity)
+                quantity = 1
                 services.setupCollectionLedger(modelContext: modelContext)
             }
         }
