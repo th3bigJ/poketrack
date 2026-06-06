@@ -1974,6 +1974,7 @@ private enum SealedCollectionMarkAsSheetError: LocalizedError {
 
 struct OpenSealedCollectionItemSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
 
     let item: CollectionItem
@@ -1986,6 +1987,10 @@ struct OpenSealedCollectionItemSheet: View {
         self.item = item
         self.productName = productName
         _quantity = State(initialValue: min(max(item.quantity, 1), 999))
+    }
+
+    private var headerButtonColor: Color {
+        colorScheme == .dark ? .white : .black
     }
 
     var body: some View {
@@ -2016,12 +2021,15 @@ struct OpenSealedCollectionItemSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(headerButtonColor)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { save() }
+                        .foregroundStyle(headerButtonColor)
                 }
             }
         }
+        .tint(headerButtonColor)
     }
 
     private func save() {
