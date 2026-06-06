@@ -758,6 +758,21 @@ struct BrowseView: View {
         }
     }
 
+    // Keyed by "masterCardId::variantKey" for per-variant ownership in the master set grid.
+    private var ownedQuantityByCardVariant: [String: Int] {
+        collectionItems.reduce(into: [:]) { result, item in
+            guard item.quantity > 0 else { return }
+            let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            guard itemBrand == services.brandSettings.selectedCatalogBrand else { return }
+            let key = "\(item.cardID)::\(item.variantKey)"
+            result[key, default: 0] += item.quantity
+        }
+    }
+
+    private var ownedCardVariantKeys: Set<String> {
+        Set(ownedQuantityByCardVariant.keys)
+    }
+
     private var multiSelectedCards: [Card] {
         var cardsByMasterID: [String: Card] = [:]
         for card in browseFeedSnapshot.cards {
@@ -1262,8 +1277,10 @@ struct BrowseView: View {
         let isSetRoute: Bool = { if case .set = route { return true }; return false }()
         let useMasterGrid = showMasterSet && isSetRoute
         let allVariantRows = useMasterGrid ? masterSetVariantRows : []
+        let variantOwnedQuantities = ownedQuantityByCardVariant
+        let variantOwnedKeys = ownedCardVariantKeys
         let variantRows = inlineDetailFilters.hideOwned
-            ? allVariantRows.filter { !ownedCardIDsCache.contains($0.card.masterCardId) }
+            ? allVariantRows.filter { !variantOwnedKeys.contains("\($0.card.masterCardId)::\($0.variant)") }
             : allVariantRows
         let ownedQuantities = ownedQuantityByCardID
         if inlineDetailLoading {
@@ -1292,6 +1309,7 @@ struct BrowseView: View {
 
                 if useMasterGrid {
                     EagerVGrid(items: variantRows, columns: safeColumnCount, spacing: 12) { row in
+                        let variantCompositeKey = "\(row.card.masterCardId)::\(row.variant)"
                         Button {
                             presentCard(row.card, filteredCards)
                         } label: {
@@ -1301,9 +1319,9 @@ struct BrowseView: View {
                                 colorScheme: colorScheme,
                                 gridOptions: gridOptions,
                                 setName: cachedSetNameByCode[row.card.setCode],
-                                isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
+                                isOwned: variantOwnedKeys.contains(variantCompositeKey),
                                 isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
-                                ownedCountBadge: ownedQuantities[row.card.masterCardId],
+                                ownedCountBadge: variantOwnedQuantities[variantCompositeKey],
                                 variantLabel: variantTitle(row.variant),
                                 variantPricingKey: row.variant
                             )
