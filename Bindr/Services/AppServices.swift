@@ -36,6 +36,7 @@ final class AppServices {
     let trade: TradeService
     let tradeSession: TradeSessionService
     let collectionSync: CollectionSyncService
+    let cardFriendTradeMatches = CardFriendTradeMatchService()
     let theme: ThemeSettings
     let offlineImageSettings: OfflineImageSettings
     let offlineImageDownload: OfflineImageDownloadService

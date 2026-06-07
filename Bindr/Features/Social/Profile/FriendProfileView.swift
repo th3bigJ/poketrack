@@ -94,10 +94,7 @@ struct FriendProfileView: View {
             CardDetailSheet(
                 cards: session.cards,
                 startIndex: session.startIndex,
-                tradeAction: (navigationPath != nil && profile != nil) ? { card, _ in
-                    offerSingleCardTrade(cardID: card.masterCardId)
-                } : nil,
-                tradeActionLabel: "Offer Trade"
+                directTradeContext: friendCardTradeContext()
             )
             .environment(services)
         }
@@ -775,6 +772,23 @@ struct FriendProfileView: View {
     private func warmSharedCardCache(ids: [String]) async {
         for id in ids where resolvedSharedCardsByID[id] == nil {
             _ = await loadSharedCard(id)
+        }
+    }
+
+    private func friendCardTradeContext() -> CardTradeContext? {
+        guard navigationPath != nil, let profile, relationship == .friends else { return nil }
+        let name = profile.shortDisplayName
+        switch selectedTab {
+        case .wishlist:
+            return .friendWants(name: name) { card in
+                offerSingleCardTrade(cardID: card.masterCardId)
+            }
+        case .collection:
+            return .friendHas(name: name) { card in
+                offerSingleCardTrade(cardID: card.masterCardId)
+            }
+        case .posts:
+            return nil
         }
     }
 

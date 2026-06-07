@@ -14,8 +14,7 @@ struct CardBrowseDetailView: View {
     /// When true and ``showsHeaderChromeActions`` is false, still show wishlist actions.
     var showsWishlistWhenChromeHidden: Bool = false
     /// Optional context-specific trade action (used by Social friend profile card detail).
-    var tradeAction: ((Card, Int) -> Void)? = nil
-    var tradeActionLabel: String = "Trade"
+    var directTradeContext: CardTradeContext? = nil
 
     @State private var index: Int
     @State private var pushedSet: TCGSet? = nil
@@ -26,15 +25,13 @@ struct CardBrowseDetailView: View {
         addToDeckAction: ((Card, String, Int) -> Void)? = nil,
         showsHeaderChromeActions: Bool = true,
         showsWishlistWhenChromeHidden: Bool = false,
-        tradeAction: ((Card, Int) -> Void)? = nil,
-        tradeActionLabel: String = "Trade"
+        directTradeContext: CardTradeContext? = nil
     ) {
         self.cards = cards
         self.addToDeckAction = addToDeckAction
         self.showsHeaderChromeActions = showsHeaderChromeActions
         self.showsWishlistWhenChromeHidden = showsWishlistWhenChromeHidden
-        self.tradeAction = tradeAction
-        self.tradeActionLabel = tradeActionLabel
+        self.directTradeContext = directTradeContext
         let clamped: Int = {
             guard !cards.isEmpty else { return 0 }
             return min(max(0, startIndex), cards.count - 1)
@@ -57,8 +54,7 @@ struct CardBrowseDetailView: View {
                             addToDeckAction: addToDeckAction,
                             showsCollectionAction: showsHeaderChromeActions,
                             showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
-                            tradeAction: tradeAction,
-                            tradeActionLabel: tradeActionLabel,
+                            directTradeContext: directTradeContext,
                             onOpenSet: {
                                 pushedSet = services.cardData.sets.first { $0.setCode == card.setCode }
                             }
@@ -105,12 +101,11 @@ private struct CardBrowseDetailPage: View {
     let addToDeckAction: ((Card, String, Int) -> Void)?
     let showsCollectionAction: Bool
     let showsWishlistAction: Bool
-    let tradeAction: ((Card, Int) -> Void)?
-    let tradeActionLabel: String
+    let directTradeContext: CardTradeContext?
     let onOpenSet: () -> Void
 
     @State private var editingLine: HoldingLine?
-    @State private var dispositionLine: HoldingLine?
+    @State private var dispositionFlowPayload: CollectionDispositionFlowPayload?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
     @State private var showCardShare = false
     @State private var wishlistVariantKeys: [String] = ["normal"]
@@ -130,8 +125,7 @@ private struct CardBrowseDetailPage: View {
         addToDeckAction: ((Card, String, Int) -> Void)?,
         showsCollectionAction: Bool,
         showsWishlistAction: Bool,
-        tradeAction: ((Card, Int) -> Void)?,
-        tradeActionLabel: String = "Trade",
+        directTradeContext: CardTradeContext?,
         onOpenSet: @escaping () -> Void
     ) {
         self.card = card
@@ -139,8 +133,7 @@ private struct CardBrowseDetailPage: View {
         self.addToDeckAction = addToDeckAction
         self.showsCollectionAction = showsCollectionAction
         self.showsWishlistAction = showsWishlistAction
-        self.tradeAction = tradeAction
-        self.tradeActionLabel = tradeActionLabel
+        self.directTradeContext = directTradeContext
         self.onOpenSet = onOpenSet
         let cardID = card.masterCardId
         _collectionItems = Query(
@@ -277,8 +270,8 @@ private struct CardBrowseDetailPage: View {
                 availableVariantKeys: wishlistVariantKeys
             )
         }
-        .sheet(item: $dispositionLine) { line in
-            HoldingDispositionSheet(line: line, cardDisplayName: card.cardName)
+        .sheet(item: $dispositionFlowPayload) { payload in
+            CollectionDispositionFlowSheet(lines: payload.lines, cardDisplayName: payload.cardDisplayName)
         }
         .sheet(item: $addToCollectionPayload) { payload in
             AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey, availableVariantKeys: payload.availableVariantKeys)
@@ -483,19 +476,21 @@ private struct CardBrowseDetailPage: View {
                 titleBlock
 
                 HStack(spacing: 8) {
-                    if showsCollectionAction {
-                        collectionActionButton
-                    }
                     if showsWishlistAction {
                         wishlistActionButton
                     }
-                    if let tradeAction {
-                        tradeActionButton(action: tradeAction)
+                    if showsCollectionAction {
+                        collectionActionButton
+                        if showsCollectionSection {
+                            removeCollectionActionButton
+                        }
                     }
                     if showsCollectionAction {
                         shareActionButton
                     }
                 }
+
+                CardFriendTradeMatchesSection(card: card, directContext: directTradeContext)
             }
         }
     }
@@ -533,6 +528,20 @@ private struct CardBrowseDetailPage: View {
             Color.clear
                 .frame(width: 140, height: 40)
         }
+    }
+
+    private var removeCollectionActionButton: some View {
+        Button {
+            openRemoveFromCollectionFlow()
+        } label: {
+            cardActionBody(
+                title: "Collection",
+                systemImage: "minus.circle.fill",
+                tint: CardDetailPalette.danger
+            )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Remove from collection")
     }
 
     @ViewBuilder
@@ -623,19 +632,6 @@ private struct CardBrowseDetailPage: View {
         .buttonStyle(.plain)
     }
 
-    private func tradeActionButton(action: @escaping (Card, Int) -> Void) -> some View {
-        Button {
-            action(card, 1)
-        } label: {
-            cardActionBody(
-                title: tradeActionLabel,
-                systemImage: "arrow.left.arrow.right.circle.fill",
-                tint: CardDetailPalette.chartLine
-            )
-        }
-        .buttonStyle(.plain)
-    }
-
     private func cardActionBody(title: String, systemImage: String, tint: Color) -> some View {
         VStack(spacing: 5) {
             Image(systemName: systemImage)
@@ -720,46 +716,24 @@ private struct CardBrowseDetailPage: View {
             
             Spacer()
             
-            // Right Side: Quick Action Icons or Compact Buttons
-            HStack(spacing: 8) {
-                Button {
-                    editingLine = line
-                } label: {
-                    HStack(spacing: 4) {
-                        Image(systemName: "pencil")
-                            .font(.system(size: 12, weight: .bold))
-                        Text("Edit")
-                            .font(.system(size: 12, weight: .bold, design: .rounded))
-                    }
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 8)
-                    .background(
-                        Capsule()
-                            .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.05))
-                    )
-                    .foregroundStyle(.primary)
+            Button {
+                editingLine = line
+            } label: {
+                HStack(spacing: 4) {
+                    Image(systemName: "pencil")
+                        .font(.system(size: 12, weight: .bold))
+                    Text("Edit")
+                        .font(.system(size: 12, weight: .bold, design: .rounded))
                 }
-                .buttonStyle(.plain)
-                
-                Button {
-                    dispositionLine = line
-                } label: {
-                    HStack(spacing: 4) {
-                        Image(systemName: "tag.fill")
-                            .font(.system(size: 12, weight: .bold))
-                        Text("Mark As")
-                            .font(.system(size: 12, weight: .bold, design: .rounded))
-                    }
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 8)
-                    .background(
-                        Capsule()
-                            .fill(CardDetailPalette.chartLine.opacity(0.12))
-                    )
-                    .foregroundStyle(CardDetailPalette.chartLine)
-                }
-                .buttonStyle(.plain)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .background(
+                    Capsule()
+                        .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.05))
+                )
+                .foregroundStyle(.primary)
             }
+            .buttonStyle(.plain)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
@@ -1125,6 +1099,19 @@ private struct CardBrowseDetailPage: View {
         HapticManager.impact(.medium)
     }
 
+    private var allHoldingLines: [HoldingLine] {
+        groupedHoldings
+            .flatMap(\.lines)
+            .sorted { $0.date > $1.date }
+    }
+
+    private func openRemoveFromCollectionFlow() {
+        let lines = allHoldingLines
+        guard !lines.isEmpty else { return }
+        dispositionFlowPayload = CollectionDispositionFlowPayload(lines: lines, cardDisplayName: card.cardName)
+        HapticManager.impact(.medium)
+    }
+
     private func wishlistRowShowsCheckmark(for key: String) -> Bool {
         services.wishlist?.isInWishlist(cardID: card.masterCardId, variantKey: key) == true
     }
@@ -1441,6 +1428,121 @@ private extension UIImage {
         return selected.prefix(maxColors).map { rgb in
             Color(red: rgb.x, green: rgb.y, blue: rgb.z)
         }
+    }
+}
+
+struct CollectionDispositionFlowPayload: Identifiable {
+    let id = UUID()
+    let lines: [HoldingLine]
+    let cardDisplayName: String
+}
+
+struct CollectionDispositionFlowSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
+
+    let lines: [HoldingLine]
+    let cardDisplayName: String
+
+    @State private var selectedLine: HoldingLine?
+
+    var body: some View {
+        Group {
+            if let selectedLine {
+                HoldingDispositionSheet(line: selectedLine, cardDisplayName: cardDisplayName)
+            } else {
+                transactionPicker
+            }
+        }
+        .onAppear {
+            if lines.count == 1 {
+                selectedLine = lines[0]
+            }
+        }
+    }
+
+    private var transactionPicker: some View {
+        NavigationStack {
+            List {
+                Section {
+                    ForEach(lines) { line in
+                        Button {
+                            Haptics.selectionChanged()
+                            selectedLine = line
+                        } label: {
+                            HoldingLinePickerRow(line: line)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                } header: {
+                    Text("Select Transaction")
+                } footer: {
+                    Text("Choose which acquisition to mark as sold, traded, gifted, lost, or damaged.")
+                }
+            }
+            .scrollContentBackground(.hidden)
+            .background(colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground))
+            .navigationTitle("Remove from Collection")
+            .navigationBarTitleDisplayMode(.inline)
+            .tint(colorScheme == .dark ? .white : .black)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
+                }
+            }
+        }
+    }
+}
+
+private struct HoldingLinePickerRow: View {
+    let line: HoldingLine
+
+    var body: some View {
+        HStack(spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(spacing: 8) {
+                    Text(line.directionTitle)
+                        .font(.subheadline.weight(.semibold))
+                    Text("Qty \(line.quantity)")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(line.tint)
+                }
+                HStack(spacing: 6) {
+                    Text(line.date.formatted(date: .abbreviated, time: .omitted))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    if let priceText = line.priceText {
+                        Text("•")
+                            .foregroundStyle(.tertiary)
+                        Text(priceText)
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(CardDetailPalette.chartLine)
+                    }
+                }
+                if line.variantKey != "normal" {
+                    Text(variantTitle(line.variantKey))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            Spacer()
+            Image(systemName: "chevron.right")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.tertiary)
+        }
+        .padding(.vertical, 4)
+        .contentShape(Rectangle())
+    }
+
+    private func variantTitle(_ key: String) -> String {
+        let spaced = key
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
     }
 }
 

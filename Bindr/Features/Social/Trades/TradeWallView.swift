@@ -98,8 +98,7 @@ struct TradeWallView: View {
             CardDetailSheet(
                 cards: [session.card],
                 startIndex: 0,
-                tradeAction: { card, _ in startTrade(card: card, with: session.owner, matchType: session.matchType) },
-                offerTradeOnly: true
+                directTradeContext: tradeWallTradeContext(for: session)
             )
             .environment(services)
         }
@@ -269,6 +268,23 @@ struct TradeWallView: View {
     }
 
     // MARK: - Trade
+
+    private func tradeWallTradeContext(for session: CardDetailSession) -> CardTradeContext {
+        let name = session.owner.shortDisplayName
+        let message: String = {
+            switch session.matchType {
+            case .iHaveWhatTheyWant:
+                return "\(name) wants this card"
+            case .theyHaveWhatIWant, .mutual:
+                return "\(name) has this card"
+            case .none:
+                return "\(name) has this card"
+            }
+        }()
+        return CardTradeContext(message: message) { card in
+            startTrade(card: card, with: session.owner, matchType: session.matchType)
+        }
+    }
 
     private func startTrade(card: Card, with friend: SocialProfile, matchType: TradeSuggestion.MatchType?) {
         cardDetailSession = nil

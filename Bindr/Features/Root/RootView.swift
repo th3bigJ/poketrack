@@ -1026,15 +1026,9 @@ struct RootView: View {
             handleSocialDeepLink(queuedURL)
         }
         .sheet(item: $selectedCardPresentation) { ctx in
-            let isCollectCards = selectedTab == .collect && collectContentTypeTab == .cards
-            let showTradeFlow = isCollectCards && collectSegment == .wishlist
             CardDetailSheet(
                 cards: ctx.cards,
-                startIndex: ctx.startIndex,
-                tradeAction: showTradeFlow ? { card, _ in
-                    launchTradeFlowFromCollectionCard(card)
-                } : nil,
-                tradeActionLabel: "Trade"
+                startIndex: ctx.startIndex
             )
             .environment(services)
         }

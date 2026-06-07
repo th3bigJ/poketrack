@@ -1,284 +1,139 @@
 import SwiftUI
 
 struct CardActionMenu: View {
-    @Environment(\.colorScheme) private var colorScheme
-    
-    let card: Card
     let isOwned: Bool
     let isWishlisted: Bool
-    let tradeActionLabel: String?
-    /// When true (e.g. opened from Trade Wall), the primary button is a single "Offer Trade" action with no menu.
-    var offerTradeOnly: Bool = false
+    var availableVariantKeys: [String] = ["normal"]
+    let card: Card
 
-    // Actions
-    let onSaveToCollection: () -> Void
+    let onSaveToCollection: (String) -> Void
+    let onRemoveFromCollection: () -> Void
     let onAddToWishlist: () -> Void
     let onRemoveFromWishlist: () -> Void
-    let onTradeAction: (() -> Void)?
     let onShareAction: () -> Void
-    let onEditAction: (() -> Void)?
-    let onToggleTradeable: (() -> Void)?
-    let onRemoveFromCollection: (() -> Void)?
-    var onAddToDeck: (() -> Void)? = nil
-    
-    @State private var isMenuExpanded = false
-    
-    // Exact colors from CardDetailSheet
+
     private struct Palette {
         static let success = Color(red: 0.22, green: 0.81, blue: 0.44)
-        static let chartLine = Color(red: 0.52, green: 0.44, blue: 0.94)
+        static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
         static let gold = Color(red: 0.98, green: 0.78, blue: 0.18)
         static let share = Color(red: 0.36, green: 0.61, blue: 0.97)
     }
-    
+
+    private var singleVariantKey: String? {
+        availableVariantKeys.count == 1 ? availableVariantKeys[0] : nil
+    }
+
     var body: some View {
-        HStack(spacing: 12) {
-            // Wishlist Button (same size/style as Share)
-            Button(action: wishlistAction) {
-                Image(systemName: isWishlisted ? "star.fill" : "star")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundStyle(Palette.gold)
-                    .frame(width: 56, height: 56)
-                    .glassCardStyle(cornerRadius: 18, interactive: true)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel(isWishlisted ? "Remove from Wish List" : "Add to Wish List")
+        VStack(spacing: 10) {
+            HStack(spacing: 12) {
+                wishlistButton
 
-            // Primary Action Button (Add to / Manage / Trade)
-            primaryActionButton
-            
-            // Share Button (Kept separate as requested)
-            Button(action: onShareAction) {
-                Image(systemName: "square.and.arrow.up")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundStyle(Palette.share)
-                    .frame(width: 56, height: 56)
-                    .glassCardStyle(cornerRadius: 18, interactive: true)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Share")
-        }
-        .padding(.horizontal, 4)
-        .overlay {
-            if isMenuExpanded {
-                // Full screen dismissal layer
-                Color.black.opacity(0.001)
-                    .onTapGesture {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                            isMenuExpanded = false
-                        }
+                HStack(spacing: 8) {
+                    addCollectionButton
+                    if isOwned {
+                        removeCollectionButton
                     }
-                    .frame(width: 1000, height: 2000) // Large enough to cover screen
-                    .offset(y: -500) // Center it roughly
-            }
-        }
-        .overlay(alignment: .bottom) {
-            if isMenuExpanded {
-                glassMenuOverlay
-                    .transition(.asymmetric(
-                        insertion: .scale(scale: 0.9, anchor: .bottom).combined(with: .opacity).combined(with: .move(edge: .bottom)),
-                        removal: .scale(scale: 0.9, anchor: .bottom).combined(with: .opacity).combined(with: .move(edge: .bottom))
-                    ))
-                    .offset(y: -74)
-            }
-        }
-    }
-    
-    private var primaryActionButton: some View {
-        Group {
-            if offerTradeOnly {
-                Button {
-                    Haptics.lightImpact()
-                    onTradeAction?()
-                } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: primaryIcon)
-                            .font(.system(size: 18, weight: .bold))
-                        Text(primaryLabel)
-                            .font(.system(size: 17, weight: .bold, design: .rounded))
-                            .fixedSize()
-                        Spacer(minLength: 0)
-                    }
-                    .padding(.horizontal, 20)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .foregroundStyle(primaryColor)
-                    .glassCardStyle(cornerRadius: 18, interactive: true)
                 }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Offer Trade")
-            } else {
-                Button {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                        isMenuExpanded.toggle()
-                    }
-                    Haptics.lightImpact()
-                } label: {
-                    HStack(spacing: 12) {
-                        HStack(spacing: 12) {
-                            Image(systemName: primaryIcon)
-                                .font(.system(size: 18, weight: .bold))
+                .frame(maxWidth: .infinity)
 
-                            Text(primaryLabel)
-                                .font(.system(size: 17, weight: .bold, design: .rounded))
-                                .fixedSize()
-                        }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        Image(systemName: "chevron.up")
-                            .font(.system(size: 11, weight: .bold))
-                            .opacity(0.4)
-                            .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
-                    }
-                    .padding(.horizontal, 20)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .foregroundStyle(primaryColor)
-                    .glassCardStyle(cornerRadius: 18, interactive: true)
-                }
-                .buttonStyle(.plain)
+                shareButton
             }
+            .padding(.horizontal, 4)
         }
     }
-    
-    private var glassMenuOverlay: some View {
-        VStack(spacing: 0) {
-            ForEach(menuItems) { item in
-                Button {
-                    Haptics.selectionChanged()
-                    item.action()
-                    withAnimation(.spring(response: 0.25)) { isMenuExpanded = false }
-                } label: {
-                    HStack(spacing: 16) {
-                        Image(systemName: item.icon)
-                            .font(.system(size: 18, weight: .medium))
-                            .foregroundStyle(item.color)
-                            .frame(width: 24)
-                        
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(item.label)
-                                .font(.system(size: 16, weight: .semibold, design: .rounded))
-                                .foregroundStyle(.primary)
-                            if let sub = item.subLabel {
-                                Text(sub)
-                                    .font(.system(size: 12))
-                                    .foregroundStyle(.secondary)
-                            }
-                        }
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 14)
-                    .contentShape(Rectangle())
-                }
-                .buttonStyle(.plain)
-                
-                if item.id != menuItems.last?.id {
-                    Divider()
-                        .padding(.horizontal, 20)
-                        .opacity(0.06)
-                }
-            }
-        }
-        .frame(width: 280)
-        .glassCardStyle(cornerRadius: 26, interactive: true)
-        .shadow(color: .black.opacity(colorScheme == .dark ? 0.3 : 0.15), radius: 25, y: 15)
-        .zIndex(100)
-    }
-    
-    // MARK: - Logic
-    private var isDeckAddOnlyMode: Bool {
-        onAddToDeck != nil
-    }
-    
-    private var primaryLabel: String {
-        if offerTradeOnly { return "Offer Trade" }
-        if isDeckAddOnlyMode { return "Add to Deck" }
-        if isOwned { return "Manage..." }
-        if let tradeActionLabel { return tradeActionLabel.replacingOccurrences(of: "...", with: "") }
-        return "Add to..."
-    }
-    
-    private var primaryIcon: String {
-        if offerTradeOnly { return "arrow.left.arrow.right.circle.fill" }
-        if isDeckAddOnlyMode { return "rectangle.stack.badge.plus" }
-        if isOwned { return "folder.fill" }
-        if tradeActionLabel != nil { return "arrow.left.arrow.right.circle.fill" }
-        return "plus.circle.fill"
-    }
-    
-    private var primaryColor: Color {
-        if offerTradeOnly { return Palette.chartLine }
-        if isDeckAddOnlyMode { return Color(red: 0.52, green: 0.44, blue: 0.94) }
-        if isOwned { return Palette.share }
-        if tradeActionLabel != nil { return Palette.chartLine }
-        return Palette.success
-    }
-    
-    private var menuItems: [MenuItem] {
-        if let onAddToDeck, isDeckAddOnlyMode {
-            return [
-                MenuItem(
-                    label: "Add to Deck",
-                    subLabel: "Add this card to the deck",
-                    icon: "rectangle.stack.badge.plus",
-                    color: Color(red: 0.52, green: 0.44, blue: 0.94),
-                    action: onAddToDeck
-                )
-            ]
-        }
 
-        var items: [MenuItem] = []
-        
-        if isOwned {
-            items.append(MenuItem(
-                label: "Add to Collection",
-                subLabel: "Add more copies to your collection",
-                icon: "plus.circle.fill",
-                color: Palette.success,
-                action: onSaveToCollection
-            ))
+    private var wishlistButton: some View {
+        Button(action: wishlistAction) {
+            Image(systemName: isWishlisted ? "star.fill" : "star")
+                .font(.system(size: 20, weight: .medium))
+                .foregroundStyle(Palette.gold)
+                .frame(width: 56, height: 56)
+                .glassCardStyle(cornerRadius: 18, interactive: true)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(isWishlisted ? "Remove from Wish List" : "Add to Wish List")
+    }
 
-            if let _ = onTradeAction {
-                items.append(MenuItem(
-                    label: "Trade",
-                    subLabel: "Propose a deal for this card",
-                    icon: "arrow.left.arrow.right.circle.fill",
-                    color: Palette.chartLine,
-                    action: { onTradeAction?() }
-                ))
-            }
+    private var shareButton: some View {
+        Button(action: onShareAction) {
+            Image(systemName: "square.and.arrow.up")
+                .font(.system(size: 20, weight: .medium))
+                .foregroundStyle(Palette.share)
+                .frame(width: 56, height: 56)
+                .glassCardStyle(cornerRadius: 18, interactive: true)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Share")
+    }
+
+    @ViewBuilder
+    private var addCollectionButton: some View {
+        if let variantKey = singleVariantKey {
+            collectionButton(
+                title: "Collection",
+                systemImage: "plus.circle.fill",
+                tint: Palette.success,
+                action: { onSaveToCollection(variantKey) }
+            )
         } else {
-            items.append(MenuItem(
-                label: "Collection",
-                subLabel: "Add to your main collection",
-                icon: "plus.circle.fill",
-                color: Palette.success,
-                action: onSaveToCollection
-            ))
-
-            if let label = tradeActionLabel, let action = onTradeAction {
-                items.append(MenuItem(
-                    label: label.replacingOccurrences(of: "...", with: ""),
-                    subLabel: "Propose a deal for this card",
-                    icon: "arrow.left.arrow.right.circle.fill",
-                    color: Palette.chartLine,
-                    action: action
-                ))
+            Menu {
+                Section("Select Variant") {
+                    ForEach(availableVariantKeys, id: \.self) { key in
+                        Button { onSaveToCollection(key) } label: {
+                            Text(variantLabel(key))
+                        }
+                    }
+                }
+            } label: {
+                collectionButtonLabel(
+                    title: "Collection",
+                    systemImage: "plus.circle.fill",
+                    tint: Palette.success
+                )
             }
-
-            if let onAddToDeck {
-                items.append(MenuItem(
-                    label: "Add to Deck",
-                    subLabel: "Add this card to the deck",
-                    icon: "rectangle.stack.badge.plus",
-                    color: Color(red: 0.52, green: 0.44, blue: 0.94),
-                    action: onAddToDeck
-                ))
-            }
+            .menuStyle(.button)
+            .menuIndicator(.hidden)
         }
+    }
 
-        return items
+    private var removeCollectionButton: some View {
+        collectionButton(
+            title: "Collection",
+            systemImage: "minus.circle.fill",
+            tint: Palette.danger,
+            action: onRemoveFromCollection
+        )
+    }
+
+    private func collectionButton(
+        title: String,
+        systemImage: String,
+        tint: Color,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button {
+            Haptics.lightImpact()
+            action()
+        } label: {
+            collectionButtonLabel(title: title, systemImage: systemImage, tint: tint)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(systemImage.contains("plus") ? "Add to" : "Remove from") collection")
+    }
+
+    private func collectionButtonLabel(title: String, systemImage: String, tint: Color) -> some View {
+        HStack(spacing: 8) {
+            Image(systemName: systemImage)
+                .font(.system(size: 18, weight: .bold))
+            Text(title)
+                .font(.system(size: 17, weight: .bold, design: .rounded))
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+        }
+        .foregroundStyle(tint)
+        .frame(maxWidth: .infinity)
+        .frame(height: 56)
+        .glassCardStyle(cornerRadius: 18, interactive: true)
     }
 
     private func wishlistAction() {
@@ -288,15 +143,17 @@ struct CardActionMenu: View {
             onAddToWishlist()
         }
     }
-}
 
-private struct MenuItem: Identifiable {
-    let id = UUID()
-    let label: String
-    let subLabel: String?
-    let icon: String
-    let color: Color
-    let action: () -> Void
+    private func variantLabel(_ key: String) -> String {
+        let normalized = key.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalized.isEmpty, normalized != "normal" else { return "Normal" }
+        let spaced = normalized
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([a-z])([A-Z])", with: "$1 $2", options: .regularExpression)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
+    }
 }
 
 #Preview {
@@ -304,33 +161,25 @@ private struct MenuItem: Identifiable {
         Color.black.ignoresSafeArea()
         VStack(spacing: 40) {
             CardActionMenu(
-                card: previewCard,
                 isOwned: false,
                 isWishlisted: false,
-                tradeActionLabel: nil,
-                onSaveToCollection: {},
+                card: previewCard,
+                onSaveToCollection: { _ in },
+                onRemoveFromCollection: {},
                 onAddToWishlist: {},
                 onRemoveFromWishlist: {},
-                onTradeAction: nil,
-                onShareAction: {},
-                onEditAction: {},
-                onToggleTradeable: {},
-                onRemoveFromCollection: {}
+                onShareAction: {}
             )
 
             CardActionMenu(
-                card: previewCard,
                 isOwned: true,
-                isWishlisted: false,
-                tradeActionLabel: nil,
-                onSaveToCollection: {},
+                isWishlisted: true,
+                card: previewCard,
+                onSaveToCollection: { _ in },
+                onRemoveFromCollection: {},
                 onAddToWishlist: {},
                 onRemoveFromWishlist: {},
-                onTradeAction: nil,
-                onShareAction: {},
-                onEditAction: {},
-                onToggleTradeable: {},
-                onRemoveFromCollection: {}
+                onShareAction: {}
             )
         }
         .padding()

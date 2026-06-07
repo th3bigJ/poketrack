@@ -19,6 +19,34 @@ struct FriendCollectionSnapshot: Codable {
     struct WishlistEntry: Codable {
         let cardID: String
         let variantKey: String
+
+        enum CodingKeys: String, CodingKey {
+            case cardID
+            case cardIDSnake = "card_id"
+            case variantKey
+            case variantKeySnake = "variant_key"
+        }
+
+        init(cardID: String, variantKey: String) {
+            self.cardID = cardID
+            self.variantKey = variantKey
+        }
+
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            cardID = try container.decodeIfPresent(String.self, forKey: .cardID)
+                ?? container.decodeIfPresent(String.self, forKey: .cardIDSnake)
+                ?? ""
+            variantKey = try container.decodeIfPresent(String.self, forKey: .variantKey)
+                ?? container.decodeIfPresent(String.self, forKey: .variantKeySnake)
+                ?? "normal"
+        }
+
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(cardID, forKey: .cardID)
+            try container.encode(variantKey, forKey: .variantKey)
+        }
     }
 
     let userID: String

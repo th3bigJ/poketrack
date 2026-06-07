@@ -10,17 +10,14 @@ struct CardDetailSheet: View {
     @Query private var collectionItems: [CollectionItem]
 
     let cards: [Card]
-    var tradeAction: ((Card, Int) -> Void)? = nil
-    var tradeActionLabel: String = "Trade"
-    /// When true, the action bar shows a single Offer Trade button (Trade Wall context).
-    var offerTradeOnly: Bool = false
-    var addToDeckAction: ((Card, String, Int) -> Void)? = nil
+    /// When opened from a specific friend context (profile, trade wall), trade goes directly to them.
+    var directTradeContext: CardTradeContext? = nil
 
     @State private var index: Int
     @State private var scrollIndex: Int?
     @State private var hasAppliedInitialScrollPosition = false
     @State private var editingLine: HoldingLine?
-    @State private var dispositionLine: HoldingLine?
+    @State private var dispositionFlowPayload: CollectionDispositionFlowPayload?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
     @State private var showCardShare = false
     @State private var wishlistVariantKeys: [String] = ["normal"]
@@ -37,16 +34,10 @@ struct CardDetailSheet: View {
     init(
         cards: [Card],
         startIndex: Int = 0,
-        tradeAction: ((Card, Int) -> Void)? = nil,
-        tradeActionLabel: String = "Trade",
-        offerTradeOnly: Bool = false,
-        addToDeckAction: ((Card, String, Int) -> Void)? = nil
+        directTradeContext: CardTradeContext? = nil
     ) {
         self.cards = cards
-        self.tradeAction = tradeAction
-        self.tradeActionLabel = tradeActionLabel
-        self.offerTradeOnly = offerTradeOnly
-        self.addToDeckAction = addToDeckAction
+        self.directTradeContext = directTradeContext
         let clamped = cards.isEmpty ? 0 : min(max(0, startIndex), cards.count - 1)
         _index = State(initialValue: clamped)
         _scrollIndex = State(initialValue: clamped)
@@ -135,8 +126,8 @@ struct CardDetailSheet: View {
                 availableVariantKeys: wishlistVariantKeys
             )
         }
-        .sheet(item: $dispositionLine) { line in
-            HoldingDispositionSheet(line: line, cardDisplayName: currentCard.cardName)
+        .sheet(item: $dispositionFlowPayload) { payload in
+            CollectionDispositionFlowSheet(lines: payload.lines, cardDisplayName: payload.cardDisplayName)
         }
         .sheet(item: $addToCollectionPayload) { payload in
             AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey, availableVariantKeys: payload.availableVariantKeys)
@@ -250,19 +241,15 @@ struct CardDetailSheet: View {
             titleBlock(for: card)
             
             CardActionMenu(
-                card: card,
                 isOwned: showsCollectionSection(for: card),
                 isWishlisted: isCurrentCardWishlisted,
-                tradeActionLabel: offerTradeOnly
-                    ? nil
-                    : (showsCollectionSection(for: card) ? "Available for Trade" : (tradeAction != nil ? tradeActionLabel : nil)),
-                offerTradeOnly: offerTradeOnly,
-                onSaveToCollection: {
-                    if let variantKey = singleAvailableVariantKey {
-                        addToCollectionVariant(card: card, variantKey: variantKey)
-                    } else {
-                        addToCollectionVariant(card: card, variantKey: wishlistVariantKeys.first ?? "normal")
-                    }
+                availableVariantKeys: wishlistVariantKeys,
+                card: card,
+                onSaveToCollection: { variantKey in
+                    addToCollectionVariant(card: card, variantKey: variantKey)
+                },
+                onRemoveFromCollection: {
+                    openRemoveFromCollectionFlow(for: card)
                 },
                 onAddToWishlist: {
                     if let variantKey = singleAvailableVariantKey {
@@ -274,63 +261,12 @@ struct CardDetailSheet: View {
                 onRemoveFromWishlist: {
                     removeCurrentCardFromWishlist()
                 },
-                onTradeAction: tradeAction != nil ? {
-                    performTradeAction(card: card, quantity: 1)
-                } : nil,
                 onShareAction: {
                     showCardShare = true
-                },
-                onEditAction: {
-                    if let firstItem = visibleCollectionItems.first,
-                       let lot = firstItem.costLots?.first(where: { $0.quantityRemaining > 0 }),
-                       let line = lot.sourceLedgerLine {
-                        // Re-implement the manual HoldingLine creation logic
-                        let direction = LedgerDirection(rawValue: line.direction) ?? .bought
-                        let date = line.occurredAt
-                        let counterparty = cleaned(line.counterparty)
-                        let description = cleaned(line.lineDescription)
-                        let unitPrice = line.unitPrice
-                        let currencyCode = line.currencyCode
-                        let groupKey = [firstItem.itemKind, firstItem.variantKey, cleaned(firstItem.gradingCompany) ?? "", cleaned(firstItem.grade) ?? ""].joined(separator: "|")
-                        let lineID = [groupKey, direction.rawValue, counterparty ?? "", description ?? "", currencyCode, (unitPrice.map { String(format: "%.6f", $0) } ?? ""), String(Int(date.timeIntervalSince1970))].joined(separator: "|")
-                        
-                        editingLine = HoldingLine(
-                            id: lineID + "|\(lot.id.uuidString)", item: firstItem, itemKind: firstItem.itemKind,
-                            variantKey: firstItem.variantKey, gradingCompany: cleaned(firstItem.gradingCompany), grade: cleaned(firstItem.grade),
-                            quantity: lot.quantityRemaining, date: date, direction: direction, unitPrice: unitPrice,
-                            currencyCode: currencyCode, counterparty: counterparty, description: description, lotIDs: [lot.id]
-                        )
-                    }
-                },
-                onToggleTradeable: {
-                    if let firstItem = visibleCollectionItems.first,
-                       let lot = firstItem.costLots?.first(where: { $0.quantityRemaining > 0 }),
-                       let line = lot.sourceLedgerLine {
-                        // Using same manual creation for disposition line
-                        let direction = LedgerDirection(rawValue: line.direction) ?? .bought
-                        let date = line.occurredAt
-                        let counterparty = cleaned(line.counterparty)
-                        let description = cleaned(line.lineDescription)
-                        let unitPrice = line.unitPrice
-                        let currencyCode = line.currencyCode
-                        let groupKey = [firstItem.itemKind, firstItem.variantKey, cleaned(firstItem.gradingCompany) ?? "", cleaned(firstItem.grade) ?? ""].joined(separator: "|")
-                        let lineID = [groupKey, direction.rawValue, counterparty ?? "", description ?? "", currencyCode, (unitPrice.map { String(format: "%.6f", $0) } ?? ""), String(Int(date.timeIntervalSince1970))].joined(separator: "|")
-                        
-                        dispositionLine = HoldingLine(
-                            id: lineID + "|\(lot.id.uuidString)", item: firstItem, itemKind: firstItem.itemKind,
-                            variantKey: firstItem.variantKey, gradingCompany: cleaned(firstItem.gradingCompany), grade: cleaned(firstItem.grade),
-                            quantity: lot.quantityRemaining, date: date, direction: direction, unitPrice: unitPrice,
-                            currencyCode: currencyCode, counterparty: counterparty, description: description, lotIDs: [lot.id]
-                        )
-                    }
-                },
-                onRemoveFromCollection: {
-                    removeCurrentCardFromCollection()
-                },
-                onAddToDeck: addToDeckAction.map { action in
-                    { action(card, wishlistVariantKeys.first ?? "normal", 1) }
                 }
             )
+
+            CardFriendTradeMatchesSection(card: card, directContext: directTradeContext)
         }
     }
 
@@ -369,81 +305,17 @@ struct CardDetailSheet: View {
         }
     }
 
-    // MARK: - Action buttons
-
-    @ViewBuilder
-    private func collectionActionButton(for card: Card) -> some View {
-        if let variantKey = singleAvailableVariantKey {
-            Button { addToCollectionVariant(card: card, variantKey: variantKey) } label: {
-                cardActionBody(title: "Collection", systemImage: "plus.circle.fill", tint: DebugPalette.success)
-            }
-            .buttonStyle(.plain)
-        } else {
-            Menu {
-                variantSelectionMenuContent(for: card, sectionHeader: "Select Variant", showWishlistCheckmarks: false) { addToCollectionVariant(card: card, variantKey: $0) }
-            } label: {
-                cardActionBody(title: "Collection", systemImage: "plus.circle.fill", tint: DebugPalette.success)
-            }
-            .menuStyle(.button).menuIndicator(.hidden)
-        }
+    private var allHoldingLines: [HoldingLine] {
+        groupedHoldings
+            .flatMap(\.lines)
+            .sorted { $0.date > $1.date }
     }
 
-    @ViewBuilder
-    private func wishlistActionButton(for card: Card) -> some View {
-        if isCurrentCardWishlisted {
-            Button { removeCurrentCardFromWishlist() } label: {
-                cardActionBody(title: "Wish List", systemImage: "star.fill", tint: Self.wishlistActiveStarColor)
-            }
-            .buttonStyle(.plain)
-        } else if let variantKey = singleAvailableVariantKey {
-            Button { addToWishlist(variantKey: variantKey) } label: {
-                cardActionBody(title: "Wish List", systemImage: "star", tint: DebugPalette.gold)
-            }
-            .buttonStyle(.plain)
-        } else {
-            Menu {
-                variantSelectionMenuContent(for: card, sectionHeader: "Select Variant", showWishlistCheckmarks: true, onSelect: addToWishlist)
-            } label: {
-                cardActionBody(title: "Wish List", systemImage: "star", tint: DebugPalette.gold)
-            }
-            .menuStyle(.button).menuIndicator(.hidden)
-        }
-    }
-
-    private var shareActionButton: some View {
-        Button { showCardShare = true } label: {
-            cardActionBody(title: "Share", systemImage: "square.and.arrow.up", tint: Color(red: 0.36, green: 0.61, blue: 0.97))
-        }
-        .buttonStyle(.plain)
-    }
-
-    private func removeCurrentCardFromCollection() {
-        for item in collectionItems {
-            modelContext.delete(item)
-        }
-        try? modelContext.save()
-        Haptics.success()
-    }
-
-    private func performTradeAction(card: Card, quantity: Int) {
-        tradeAction?(card, quantity)
-    }
-
-    private func cardActionBody(title: String, systemImage: String, tint: Color) -> some View {
-        VStack(spacing: 5) {
-            Image(systemName: systemImage)
-                .font(.system(size: 20, weight: .semibold))
-                .foregroundStyle(tint)
-            Text(title)
-                .font(.system(size: 9, weight: .semibold))
-                .foregroundStyle(tint)
-                .lineLimit(1)
-                .minimumScaleFactor(0.6)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 12)
-        .glassCardStyle(cornerRadius: 14, interactive: false)
-        .accessibilityLabel(title)
+    private func openRemoveFromCollectionFlow(for card: Card) {
+        let lines = allHoldingLines
+        guard !lines.isEmpty else { return }
+        dispositionFlowPayload = CollectionDispositionFlowPayload(lines: lines, cardDisplayName: card.cardName)
+        Haptics.lightImpact()
     }
 
     // MARK: - eBay
@@ -613,14 +485,8 @@ struct CardDetailSheet: View {
 
             Spacer()
 
-            HStack(spacing: 6) {
-                holdingActionButton(systemImage: "pencil", title: "Edit acquisition", tint: .primary, usesNeutralFill: true) {
-                    editingLine = line
-                }
-
-                holdingActionButton(systemImage: "tag.fill", title: "Mark disposition", tint: DebugPalette.chartLine) {
-                    dispositionLine = line
-                }
+            holdingActionButton(systemImage: "pencil", title: "Edit acquisition", tint: .primary, usesNeutralFill: true) {
+                editingLine = line
             }
         }
         .padding(.horizontal, 12)

@@ -1776,7 +1776,7 @@ private struct DeckPickerDetailSheet: View {
     let onAdd: (Card, String, Int) -> Void
 
     var body: some View {
-        CardDetailSheet(cards: cards, startIndex: startIndex, addToDeckAction: onAdd)
+        CardBrowseDetailView(cards: cards, startIndex: startIndex, addToDeckAction: onAdd)
             .environment(services)
     }
 }
