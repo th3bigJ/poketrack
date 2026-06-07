@@ -73,6 +73,13 @@ struct AccountProfileView: View {
         .navigationTitle("Profile")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Done") {
+                    isPresented = false
+                }
+                .foregroundStyle(.primary)
+                .fontWeight(.bold)
+            }
             if profile != nil {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {

@@ -788,15 +788,6 @@ struct SocialRootView: View {
                 isPresented: $showAccountProfile,
                 externalProfile: $profile
             )
-            .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button("Done") {
-                        showAccountProfile = false
-                    }
-                    .foregroundStyle(.primary)
-                    .fontWeight(.bold)
-                }
-            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .systemGroupedBackground))
