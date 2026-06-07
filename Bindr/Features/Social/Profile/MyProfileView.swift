@@ -69,7 +69,7 @@ struct MyProfileView: View {
     }
 
     private var availableProfileTabs: [ProfileTab] {
-        [.posts, .wishlist, .friends]
+        [.posts, .wishlist]
     }
 
     private var profileTabContentTopGap: CGFloat {
@@ -217,10 +217,14 @@ struct MyProfileView: View {
                     .background(Color.primary.opacity(0.08))
                 
                 statButton(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends") {
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-                        profileTabBinding.wrappedValue = .friends
+                    if let selectedTab {
+                        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                            selectedTab.wrappedValue = .friends
+                        }
+                        Haptics.selectionChanged()
+                    } else {
+                        Haptics.lightImpact()
                     }
-                    Haptics.selectionChanged()
                 }
             }
             .padding(.vertical, 4)
