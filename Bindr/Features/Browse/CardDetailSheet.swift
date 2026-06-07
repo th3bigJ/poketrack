@@ -255,7 +255,7 @@ struct CardDetailSheet: View {
                 isWishlisted: isCurrentCardWishlisted,
                 tradeActionLabel: offerTradeOnly
                     ? nil
-                    : (showsCollectionSection(for: card) ? "Trade List" : (tradeAction != nil ? tradeActionLabel : nil)),
+                    : (showsCollectionSection(for: card) ? "Available for Trade" : (tradeAction != nil ? tradeActionLabel : nil)),
                 offerTradeOnly: offerTradeOnly,
                 onSaveToCollection: {
                     if let variantKey = singleAvailableVariantKey {

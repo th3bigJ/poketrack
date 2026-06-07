@@ -98,7 +98,7 @@ struct OnboardingNotificationsView: View {
             OnboardingFeatureRow(
                 icon: "arrow.left.arrow.right",
                 title: "Trade offers",
-                description: "New offers and replies on your trade listings."
+                description: "New offers and replies for cards you have marked available."
             )
             OnboardingFeatureRow(
                 icon: "sparkles",

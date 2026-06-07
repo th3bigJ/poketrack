@@ -33,7 +33,7 @@ struct OnboardingPremiumView: View {
                     badgeBlock
                     OnboardingHeadline(
                         title: "Unlock the full experience.",
-                        subtitle: "Unlimited everything — scans, collection, binders, and trade listings — plus full price history and offline mode."
+                        subtitle: "Unlimited everything — scans, collection, binders, and available-card trade tools — plus full price history and offline mode."
                     )
                     featureBullets
                     planPicker

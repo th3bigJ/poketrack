@@ -58,7 +58,12 @@ struct OnboardingWelcomeView: View {
             OnboardingFeatureRow(
                 icon: "rectangle.stack.badge.plus",
                 title: "Deck Builder",
-                description: "Build from scratch or import from PTCGL. Real-time legality checking."
+                description: "Build from scratch, import/export TCG Live lists, and prep official tournament deck sheets."
+            )
+            OnboardingFeatureRow(
+                icon: "scalemass",
+                title: "Local Trade Calculator",
+                description: "Compare card and cash values in person, then update your collection when the trade is done."
             )
             OnboardingFeatureRow(
                 icon: "chart.line.uptrend.xyaxis",
@@ -67,8 +72,8 @@ struct OnboardingWelcomeView: View {
             )
             OnboardingFeatureRow(
                 icon: "arrow.left.arrow.right",
-                title: "Trade Network",
-                description: "Find trade partners, list extras, and get alerts when wishlist cards appear."
+                title: "Trade Wall",
+                description: "Find suggested matches, wishlist opportunities, and friends' available cards."
             )
         }
     }

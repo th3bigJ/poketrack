@@ -68,11 +68,11 @@ struct FriendsListView: View {
         }
     }
     private var tradeSuggestionBody: String {
-        guard let seed = services.pendingTradeSeed else { return "Suggestions update as your friends sync their wishlists and trade lists." }
+        guard let seed = services.pendingTradeSeed else { return "Suggestions update as friends sync wishlists and available cards." }
         let cardName = tradeSeedCardName ?? seed.cardID
         switch seed.preferredSide {
         case .theirSide:
-            return "Based on your wishlist card \(cardName), these friends have it on their trade list."
+            return "Based on your wishlist card \(cardName), these friends have it marked available."
         case .mySide:
             return "Based on your collection card \(cardName), these friends currently want it in their wishlist."
         }
@@ -365,7 +365,7 @@ struct FriendsListView: View {
                     .stroke(BindrPalette.binderGold.opacity(0.22), lineWidth: 1)
             }
         } else {
-            Text("Suggestions update as your friends sync their wishlists and trade lists.")
+            Text("Suggestions update as friends sync wishlists and available cards.")
                 .font(.system(size: 12))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)

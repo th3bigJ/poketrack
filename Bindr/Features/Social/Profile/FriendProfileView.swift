@@ -29,6 +29,7 @@ struct FriendProfileView: View {
     @State private var isMutating = false
     @State private var errorMessage: String?
     @State private var selectedTab: ProfileTab
+    @Namespace private var tabNamespace
     @State private var sharedWishlistCardIDs: [String] = []
     @State private var friendCollectionCardIDs: [String] = []
     @State private var isLoadingCollection = false
@@ -170,21 +171,29 @@ struct FriendProfileView: View {
 
         return VStack(alignment: .leading, spacing: BindrSpacing.md) {
             HStack(alignment: .top, spacing: BindrSpacing.md) {
-                ProfileAvatarView(profile: profile, size: 64)
-                    .overlay(Circle().stroke(accent, lineWidth: 3))
+                ZStack(alignment: .bottomTrailing) {
+                    ProfileAvatarView(profile: profile, size: 72)
+                        .clipShape(Circle())
+                        .shadow(color: accent.opacity(0.35), radius: 8, x: 0, y: 4)
+                        .overlay(Circle().stroke(accent, lineWidth: 2))
+                        .padding(2)
+                        .overlay(Circle().stroke(accent.opacity(0.2), lineWidth: 1))
+                }
 
-                VStack(alignment: .leading, spacing: BindrSpacing.sm) {
+                VStack(alignment: .leading, spacing: 3) {
                     HStack(alignment: .center, spacing: BindrSpacing.sm) {
                         Text(profile.displayName ?? profile.username)
-                            .font(.system(size: 18, weight: .heavy))
+                            .font(.system(size: 20, weight: .black))
+                            .tracking(-0.3)
                             .foregroundStyle(Color.primary)
                             .lineLimit(1)
                             .minimumScaleFactor(0.8)
                         PremiumBadgeView(profile: profile, size: 14)
                     }
                     Text("@\(profile.username)")
-                        .font(.system(size: 12))
-                        .foregroundStyle(Color.secondary)
+                        .font(.system(.subheadline, design: .rounded))
+                        .fontWeight(.medium)
+                        .foregroundStyle(Color.secondary.opacity(0.8))
                 }
 
                 Spacer()
@@ -222,13 +231,34 @@ struct FriendProfileView: View {
                 let deckCount = profile.collectionDeckCount ?? 0
                 let binderCount = profile.collectionBinderCount ?? 0
                 let friendCount = publicFriendCount ?? profile.friendCount ?? 0
-                statColumn(value: "\(cardCount)", label: cardCount == 1 ? "Card" : "Cards")
-                statColumn(value: "\(deckCount)", label: deckCount == 1 ? "Deck" : "Decks")
-                statColumn(value: "\(binderCount)", label: binderCount == 1 ? "Binder" : "Binders")
-                statColumn(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
+                
+                statBlock(value: "\(cardCount)", label: cardCount == 1 ? "Card" : "Cards")
+                
+                Divider()
+                    .frame(height: 24)
+                    .background(Color.primary.opacity(0.08))
+                
+                statBlock(value: "\(deckCount)", label: deckCount == 1 ? "Deck" : "Decks")
+                
+                Divider()
+                    .frame(height: 24)
+                    .background(Color.primary.opacity(0.08))
+                
+                statBlock(value: "\(binderCount)", label: binderCount == 1 ? "Binder" : "Binders")
+                
+                Divider()
+                    .frame(height: 24)
+                    .background(Color.primary.opacity(0.08))
+                
+                statBlock(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
             }
-            .padding(.vertical, BindrSpacing.md)
-            .glassCardStyle(cornerRadius: 12, interactive: false)
+            .padding(.vertical, 4)
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
+            }
         }
         .padding(BindrSpacing.lg)
         .background {
@@ -429,21 +459,28 @@ struct FriendProfileView: View {
     }
 
     private var tabPicker: some View {
-        // Equal-width segmented bar that mirrors the top-level Feed/Friends/
-        // Profile picker treatment: Title Case, accent-filled active pill,
-        // primary-colour inactive text so contrast holds in light mode.
         HStack(spacing: 0) {
             ForEach(ProfileTab.allCases, id: \.self) { tab in
+                let isSelected = selectedTab == tab
                 Button {
-                    Haptics.selectionChanged()
-                    selectedTab = tab
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                        selectedTab = tab
+                    }
+                    Haptics.lightImpact()
                 } label: {
                     Text(tabTitle(tab))
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(selectedTab == tab ? Color.white : Color.primary.opacity(0.7))
+                        .font(.system(size: 13, weight: isSelected ? .bold : .semibold))
+                        .foregroundStyle(isSelected ? Color.white : Color.primary.opacity(0.6))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 9)
-                        .background(selectedTab == tab ? accentColor : .clear, in: Capsule())
+                        .background {
+                            if isSelected {
+                                Capsule()
+                                    .fill(accentColor)
+                                    .matchedGeometryEffect(id: "friendProfileTabHighlight", in: tabNamespace)
+                                    .shadow(color: accentColor.opacity(0.25), radius: 6, x: 0, y: 3)
+                            }
+                        }
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
@@ -519,30 +556,28 @@ struct FriendProfileView: View {
     private func rolePill(_ title: String, accent: Color? = nil) -> some View {
         let tint = accent ?? accentColor
         return Text(title.uppercased())
-            .font(.system(size: 10, weight: .bold))
-            .tracking(0.4)
+            .font(.system(size: 9, weight: .bold))
+            .tracking(1.0)
             .foregroundStyle(tint)
-            .lineLimit(1)
-            .minimumScaleFactor(0.8)
-            .padding(.horizontal, 6)
-            .padding(.vertical, 2)
-            .background(tint.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
+            .background(tint.opacity(0.08))
+            .clipShape(Capsule())
             .overlay {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .stroke(tint.opacity(0.19), lineWidth: 1)
+                Capsule()
+                    .stroke(tint.opacity(0.2), lineWidth: 1)
             }
     }
 
-    private func statColumn(value: String, label: String) -> some View {
-        VStack(spacing: 3) {
+    private func statBlock(value: String, label: String) -> some View {
+        VStack(spacing: 4) {
             Text(value)
-                .font(.system(size: 16, weight: .heavy))
+                .font(.system(size: 17, weight: .black))
                 .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.65)
             Text(label)
-                .font(.system(size: 10))
-                .foregroundStyle(Color.secondary.opacity(0.7))
+                .font(.system(size: 10, weight: .bold))
+                .tracking(0.5)
+                .foregroundStyle(.secondary.opacity(0.8))
         }
         .frame(maxWidth: .infinity)
     }

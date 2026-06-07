@@ -91,7 +91,7 @@ struct TradesView: View {
             HStack(spacing: 10) {
                 tradeOpportunityButton(
                     title: "Trade Wall",
-                    subtitle: "Suggested & trade lists",
+                    subtitle: "Matches & wishlist finds",
                     systemImage: "sparkles",
                     count: nil,
                     isExpanded: expandedSection == .wall
@@ -250,7 +250,7 @@ struct TradesView: View {
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Color.secondary)
             Text(showsCompletedTrades
-                 ? "Offer a trade from a friend's trade list or wishlist to get started."
+                 ? "Start from a Trade Wall opportunity, a friend's wishlist, or a friend's available cards."
                  : "Your active pending/countered/accepted trades will appear here.")
                 .font(.system(size: 13))
                 .foregroundStyle(Color.secondary.opacity(0.7))

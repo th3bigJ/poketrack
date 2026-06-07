@@ -22,6 +22,7 @@ struct CreateBinderSheet: View {
     @State private var texture = BinderTexture.leather
     @State private var showCardPreview = true
     @State private var showValueOnCover = true
+    @State private var showPriceOverlay = false
     @State private var titleTextColor = BinderTitleTextColor.gold
     @State private var titleFontStyle = BinderTitleFontStyle.serif
 
@@ -34,6 +35,7 @@ struct CreateBinderSheet: View {
             texture: texture,
             showCardPreview: showCardPreview,
             showValueOnCover: showValueOnCover,
+            showPriceOverlay: showPriceOverlay,
             titleTextColor: titleTextColor,
             titleFontStyle: titleFontStyle
         )
@@ -210,6 +212,17 @@ struct CreateBinderSheet: View {
                                     }
                                 }
                                 .tint(.accentColor)
+
+                                Toggle(isOn: $showPriceOverlay) {
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text("Show card prices")
+                                            .font(.subheadline.weight(.medium))
+                                        Text("Add subtle market-price badges on binder pages")
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                }
+                                .tint(.accentColor)
                             }
                             .padding(16)
                             .background(Color(uiColor: .secondarySystemGroupedBackground))
@@ -246,10 +259,12 @@ struct CreateBinderSheet: View {
             texture: texture,
             showCardPreview: showCardPreview,
             showValueOnCover: showValueOnCover,
+            showPriceOverlay: showPriceOverlay,
             titleTextColor: titleTextColor,
             titleFontStyle: titleFontStyle
         )
         modelContext.insert(binder)
+        try? modelContext.save()
         dismiss()
     }
 

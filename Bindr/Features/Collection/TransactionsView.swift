@@ -74,12 +74,34 @@ struct TransactionsView: View {
         }
     }
 
-    private var displayedLedgerLines: [LedgerLine] {
-        Array(filteredLedgerLines.prefix(loadedTransactionCount))
+    private var groupedActivityEntries: [ActivityLedgerEntry] {
+        var grouped: [UUID: [LedgerLine]] = [:]
+        var ungrouped: [LedgerLine] = []
+
+        for line in filteredLedgerLines {
+            if let groupID = line.transactionGroupId,
+               line.channel == "trade",
+               line.counterparty == "Local trade" {
+                grouped[groupID, default: []].append(line)
+            } else {
+                ungrouped.append(line)
+            }
+        }
+
+        let tradeGroups = grouped.values.map { lines in
+            ActivityTradeGroup(lines: lines.sorted { $0.occurredAt > $1.occurredAt })
+        }
+
+        return (ungrouped.map(ActivityLedgerEntry.line) + tradeGroups.map(ActivityLedgerEntry.trade))
+            .sorted { $0.occurredAt > $1.occurredAt }
+    }
+
+    private var displayedActivityEntries: [ActivityLedgerEntry] {
+        Array(groupedActivityEntries.prefix(loadedTransactionCount))
     }
 
     private var hasMoreTransactions: Bool {
-        displayedLedgerLines.count < filteredLedgerLines.count
+        displayedActivityEntries.count < groupedActivityEntries.count
     }
 
     private var boughtTotal: Double {
@@ -244,46 +266,52 @@ struct TransactionsView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
-            if displayedLedgerLines.isEmpty {
+            if displayedActivityEntries.isEmpty {
                 ContentUnavailableView.search(text: transactionSearchText)
                     .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 12, trailing: 16))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
             }
 
-            ForEach(displayedLedgerLines, id: \.persistentModelID) { line in
-                transactionRow(for: line)
+            ForEach(displayedActivityEntries) { entry in
+                activityRow(for: entry)
                     .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        openTransactionDetail(for: line)
+                        if case .line(let line) = entry {
+                            openTransactionDetail(for: line)
+                        }
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                         Button(role: .destructive) {
-                            deleteLedgerLine(line)
+                            deleteActivityEntry(entry)
                         } label: {
                             Label("Delete", systemImage: "trash")
                         }
                         .tint(.red)
 
-                        Button {
-                            editingLedgerLine = line
-                        } label: {
-                            Label("Edit", systemImage: "pencil")
+                        if case .line(let line) = entry {
+                            Button {
+                                editingLedgerLine = line
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                            .tint(.blue)
                         }
-                        .tint(.blue)
                     }
                     .contextMenu {
-                        Button {
-                            editingLedgerLine = line
-                        } label: {
-                            Label("Edit", systemImage: "pencil")
+                        if case .line(let line) = entry {
+                            Button {
+                                editingLedgerLine = line
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
                         }
 
                         Button(role: .destructive) {
-                            deleteLedgerLine(line)
+                            deleteActivityEntry(entry)
                         } label: {
                             Label("Delete", systemImage: "trash")
                         }
@@ -341,7 +369,7 @@ struct TransactionsView: View {
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(dashboardPrimaryText)
                 Spacer()
-                Text("\(rangeFilteredLines.count) transactions")
+                Text("\(groupedActivityEntries.count) transactions")
                     .font(.caption.weight(.medium))
                     .foregroundStyle(dashboardSecondaryText)
             }
@@ -385,6 +413,64 @@ struct TransactionsView: View {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
         )
+    }
+
+    @ViewBuilder
+    private func activityRow(for entry: ActivityLedgerEntry) -> some View {
+        switch entry {
+        case .line(let line):
+            transactionRow(for: line)
+        case .trade(let group):
+            tradeGroupRow(for: group)
+        }
+    }
+
+    private func tradeGroupRow(for group: ActivityTradeGroup) -> some View {
+        let summary = tradeSummary(for: group.lines)
+        let netCash = group.lines.reduce(0) { $0 + signedCashValue(for: $1) }
+
+        return VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top, spacing: 12) {
+                transactionThumbnail(for: group.thumbnailLine)
+
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack(spacing: 8) {
+                        infoChip(label: "Local Trade", tone: .orange)
+                        infoChip(label: "\(group.lines.count) entries")
+                        Spacer(minLength: 8)
+
+                        VStack(alignment: .trailing, spacing: 5) {
+                            Text(group.occurredAt, format: .dateTime.day().month(.abbreviated).year())
+                                .font(.caption.weight(.medium))
+                                .foregroundStyle(dashboardSecondaryText)
+                                .multilineTextAlignment(.trailing)
+                            if abs(netCash) > 0.001 {
+                                Text(formatSignedCurrency(netCash))
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(colorForSignedValue(netCash))
+                            }
+                        }
+                    }
+
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Local trade")
+                            .font(.headline)
+                            .foregroundStyle(dashboardPrimaryText)
+                            .lineLimit(1)
+                        Text(summary)
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(dashboardSecondaryText)
+                            .lineLimit(2)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .glassCardStyle(cornerRadius: 20)
     }
 
     private func transactionRow(for line: LedgerLine) -> some View {
@@ -436,6 +522,52 @@ struct TransactionsView: View {
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .glassCardStyle(cornerRadius: 20)
+    }
+
+    private func tradeSummary(for lines: [LedgerLine]) -> String {
+        let gave = lines
+            .filter { isTradeGaveLine($0) }
+            .map(tradeSummaryPart)
+        let received = lines
+            .filter { isTradeReceivedLine($0) }
+            .map(tradeSummaryPart)
+
+        let gaveText = gave.isEmpty ? "nothing" : gave.joined(separator: " + ")
+        let receivedText = received.isEmpty ? "nothing" : received.joined(separator: " + ")
+        return "\(gaveText) for \(receivedText)"
+    }
+
+    private func tradeSummaryPart(for line: LedgerLine) -> String {
+        if line.productKind == ProductKind.other.rawValue,
+           let value = moneySummary(for: line) {
+            return value
+        }
+
+        let title = primaryTitle(for: line)
+        if line.quantity > 1 {
+            return "\(line.quantity)x \(title)"
+        }
+        return title
+    }
+
+    private func isTradeGaveLine(_ line: LedgerLine) -> Bool {
+        guard let direction = LedgerDirection(rawValue: line.direction) else { return false }
+        switch direction {
+        case .tradedOut, .bought:
+            return true
+        default:
+            return false
+        }
+    }
+
+    private func isTradeReceivedLine(_ line: LedgerLine) -> Bool {
+        guard let direction = LedgerDirection(rawValue: line.direction) else { return false }
+        switch direction {
+        case .tradedIn, .sold:
+            return true
+        default:
+            return false
+        }
     }
 
     private func infoChip(label: String, tone: Color? = nil) -> some View {
@@ -802,6 +934,17 @@ struct TransactionsView: View {
         }
     }
 
+    private func deleteActivityEntry(_ entry: ActivityLedgerEntry) {
+        switch entry {
+        case .line(let line):
+            deleteLedgerLine(line)
+        case .trade(let group):
+            for line in group.lines {
+                deleteLedgerLine(line)
+            }
+        }
+    }
+
     private func markActions(for line: LedgerLine) -> [TransactionMarkAction] {
         var actions: [TransactionMarkAction] = [
             .bought, .sold, .packed, .tradedIn, .tradedOut, .giftedIn, .giftedOut, .adjustmentIn, .adjustmentOut
@@ -869,6 +1012,51 @@ struct TransactionsView: View {
         .compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }
         .joined(separator: " ")
         .lowercased()
+    }
+}
+
+private enum ActivityLedgerEntry: Identifiable {
+    case line(LedgerLine)
+    case trade(ActivityTradeGroup)
+
+    var id: String {
+        switch self {
+        case .line(let line):
+            return "line-\(line.id.uuidString)"
+        case .trade(let group):
+            return "trade-\(group.id.uuidString)"
+        }
+    }
+
+    var occurredAt: Date {
+        switch self {
+        case .line(let line):
+            return line.occurredAt
+        case .trade(let group):
+            return group.occurredAt
+        }
+    }
+}
+
+private struct ActivityTradeGroup: Identifiable {
+    let id: UUID
+    let lines: [LedgerLine]
+
+    init(lines: [LedgerLine]) {
+        self.lines = lines
+        self.id = lines.compactMap(\.transactionGroupId).first ?? UUID()
+    }
+
+    var occurredAt: Date {
+        lines.map(\.occurredAt).max() ?? Date.distantPast
+    }
+
+    var thumbnailLine: LedgerLine {
+        lines.first { line in
+            LedgerDirection(rawValue: line.direction) == .tradedIn && line.cardID != nil
+        } ?? lines.first { line in
+            line.cardID != nil
+        } ?? lines[0]
     }
 }
 

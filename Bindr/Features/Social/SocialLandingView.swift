@@ -68,7 +68,7 @@ struct SocialLandingView: View {
             }
             .multilineTextAlignment(.leading)
 
-            Text("Share your collection, discover suggested trades, and react to friends' pulls. Sign in with iCloud to join the network.")
+            Text("Share your collection, spot trade opportunities, and react to friends' pulls. Sign in with iCloud to join the network.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -90,20 +90,20 @@ struct SocialLandingView: View {
                 // SocialFeatureCard default — no per-tile pastel mixing.
                 SocialFeatureCard(
                     icon: "arrow.left.arrow.right",
-                    title: "Trade Network",
-                    description: "Auto-find suggested trades based on wishlists and trade lists.",
+                    title: "Trade Wall",
+                    description: "See suggested matches, wishlist opportunities, and friends' available cards in one place.",
                     index: 1
                 )
                 SocialFeatureCard(
                     icon: "sparkles",
                     title: "Activity feed",
-                    description: "See pulls, binders, and trades as they happen in real-time.",
+                    description: "See pulls, binder shares, and accepted trades as they happen.",
                     index: 2
                 )
                 SocialFeatureCard(
                     icon: "star",
                     title: "Wishlist alerts",
-                    description: "Be notified the moment a card you want becomes available for trade.",
+                    description: "Know when a friend has a card from your wishlist available.",
                     index: 3
                 )
                 SocialFeatureCard(

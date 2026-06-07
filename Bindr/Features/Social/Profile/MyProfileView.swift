@@ -2,10 +2,13 @@ import SwiftUI
 import SwiftData
 
 struct MyProfileView: View {
-    enum ProfileTab: String, CaseIterable {
+    enum ProfileTab: String, CaseIterable, Identifiable {
         case posts
         case wishlist
         case collection
+        case friends
+
+        var id: String { rawValue }
     }
 
     let profile: SocialProfile
@@ -22,18 +25,17 @@ struct MyProfileView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentCard) private var presentCard
 
+    @Namespace private var profileTabNamespace
+
     @State private var cardCount: Int = 0
     @State private var binderCount: Int = 0
     @State private var deckCount: Int = 0
     @State private var acceptedFriendCount: Int?
-    @State private var favoriteCard: Card?
-    @State private var favoriteCardPrice: Double?
     @State private var myActivity: [SocialFeedService.FeedItem] = []
     @State private var localSelectedProfileTab: ProfileTab = .posts
     @State private var isProfileCardSelectMode = false
     @State private var selectedProfileCardIDs: Set<String> = []
     @State private var profileCardsByID: [String: Card] = [:]
-    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
 
     private var roleTitles: [String] {
         (profile.profileRoles ?? []).map { role in
@@ -62,7 +64,12 @@ struct MyProfileView: View {
     }
 
     private var activeProfileTab: ProfileTab {
-        profileTabBinding.wrappedValue
+        let tab = profileTabBinding.wrappedValue
+        return availableProfileTabs.contains(tab) ? tab : .posts
+    }
+
+    private var availableProfileTabs: [ProfileTab] {
+        [.posts, .wishlist, .friends]
     }
 
     private var profileTabContentTopGap: CGFloat {
@@ -101,6 +108,12 @@ struct MyProfileView: View {
         .task {
             await refreshProfileContent()
         }
+        .onAppear {
+            normalizeProfileTab()
+        }
+        .onChange(of: activeProfileTab) { _, _ in
+            normalizeProfileTab()
+        }
     }
     
     // MARK: - Subviews
@@ -128,52 +141,95 @@ struct MyProfileView: View {
         VStack(alignment: .leading, spacing: BindrSpacing.md) {
             HStack(alignment: .top, spacing: BindrSpacing.md) {
                 ZStack(alignment: .bottomTrailing) {
-                    ProfileAvatarView(profile: profile, size: 64)
-                        .overlay(Circle().stroke(themeColor, lineWidth: 3))
+                    ProfileAvatarView(profile: profile, size: 72)
+                        .clipShape(Circle())
+                        .shadow(color: themeColor.opacity(0.35), radius: 8, x: 0, y: 4)
+                        .overlay(Circle().stroke(themeColor, lineWidth: 2))
+                        .padding(2)
+                        .overlay(Circle().stroke(themeColor.opacity(0.2), lineWidth: 1))
                     Circle()
                         .fill(Color(hex: "52C97C"))
                         .frame(width: 18, height: 18)
-                        .overlay(Circle().stroke(Color(uiColor: .systemBackground), lineWidth: 3))
+                        .overlay(Circle().stroke(Color(uiColor: .systemBackground), lineWidth: 2.5))
+                        .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 1)
                 }
 
-                VStack(alignment: .leading, spacing: BindrSpacing.sm) {
+                VStack(alignment: .leading, spacing: 3) {
                     HStack(alignment: .center, spacing: BindrSpacing.sm) {
                         Text(profile.displayName ?? profile.username)
-                            .font(.system(size: 18, weight: .heavy))
+                            .font(.system(size: 20, weight: .black))
+                            .tracking(-0.3)
                             .foregroundStyle(Color.primary)
                             .lineLimit(1)
                             .minimumScaleFactor(0.8)
                         PremiumBadgeView(profile: profile, size: 14)
                     }
-                    if !roleTitles.isEmpty {
-                        HStack(spacing: BindrSpacing.sm) {
-                            ForEach(roleTitles, id: \.self) { title in
-                                rolePill(title)
-                            }
-                        }
-                    }
+                    Text("@\(profile.username)")
+                        .font(.system(.subheadline, design: .rounded))
+                        .fontWeight(.medium)
+                        .foregroundStyle(Color.secondary.opacity(0.8))
                 }
 
                 Spacer()
+            }
 
+            if !roleTitles.isEmpty {
+                HStack(spacing: BindrSpacing.sm) {
+                    ForEach(roleTitles, id: \.self) { title in
+                        rolePill(title)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
 
             if let bio = profile.bio, !bio.isEmpty {
                 Text(bio)
-                    .font(.system(size: 13))
-                    .lineSpacing(3)
-                    .foregroundStyle(Color.secondary)
+                    .font(.system(size: 13, weight: .regular))
+                    .lineSpacing(4)
+                    .foregroundStyle(Color.primary.opacity(0.85))
             }
 
             HStack(spacing: 0) {
                 let friendCount = displayedFriendCount
-                statColumn(value: "\(displayedCardCount)", label: displayedCardCount == 1 ? "Card" : "Cards")
-                statColumn(value: "\(displayedDeckCount)", label: displayedDeckCount == 1 ? "Deck" : "Decks")
-                statColumn(value: "\(displayedBinderCount)", label: displayedBinderCount == 1 ? "Binder" : "Binders")
-                statColumn(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
+                
+                statButton(value: "\(displayedCardCount)", label: displayedCardCount == 1 ? "Card" : "Cards") {
+                    Haptics.lightImpact()
+                }
+                
+                Divider()
+                    .frame(height: 24)
+                    .background(Color.primary.opacity(0.08))
+                
+                statButton(value: "\(displayedDeckCount)", label: displayedDeckCount == 1 ? "Deck" : "Decks") {
+                    Haptics.lightImpact()
+                }
+                
+                Divider()
+                    .frame(height: 24)
+                    .background(Color.primary.opacity(0.08))
+                
+                statButton(value: "\(displayedBinderCount)", label: displayedBinderCount == 1 ? "Binder" : "Binders") {
+                    Haptics.lightImpact()
+                }
+                
+                Divider()
+                    .frame(height: 24)
+                    .background(Color.primary.opacity(0.08))
+                
+                statButton(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends") {
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                        profileTabBinding.wrappedValue = .friends
+                    }
+                    Haptics.selectionChanged()
+                }
             }
-            .padding(.vertical, BindrSpacing.md)
-            .glassCardStyle(cornerRadius: 12, interactive: false)
+            .padding(.vertical, 4)
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
+            }
         }
         .padding(BindrSpacing.lg)
         .background {
@@ -252,27 +308,35 @@ struct MyProfileView: View {
         case .posts: return "Posts"
         case .wishlist: return "Wishlist"
         case .collection: return "Collection"
+        case .friends: return "Friends"
         }
     }
 
     private var profileTabPicker: some View {
-        // Equal-width segmented picker, mirrors the Feed/Friends/Profile bar
-        // up top: Title-Case labels, accent-filled active pill, primary text
-        // for inactive segments so contrast holds in light mode.
         HStack(spacing: 0) {
-            ForEach(ProfileTab.allCases, id: \.self) { tab in
+            ForEach(availableProfileTabs, id: \.self) { tab in
+                let isSelected = activeProfileTab == tab
                 Button {
-                    Haptics.selectionChanged()
-                    profileTabBinding.wrappedValue = tab
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                        profileTabBinding.wrappedValue = tab
+                    }
+                    Haptics.lightImpact()
                 } label: {
                     Text(profileTabTitle(tab))
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(activeProfileTab == tab ? Color.white : Color.primary.opacity(0.7))
+                        .font(.system(size: 13, weight: isSelected ? .bold : .semibold))
+                        .foregroundStyle(isSelected ? Color.white : Color.primary.opacity(0.6))
                         .frame(maxWidth: .infinity)
                         .lineLimit(1)
                         .minimumScaleFactor(0.75)
                         .padding(.vertical, 9)
-                        .background(activeProfileTab == tab ? themeColor : .clear, in: Capsule())
+                        .background {
+                            if isSelected {
+                                Capsule()
+                                    .fill(themeColor)
+                                    .matchedGeometryEffect(id: "profileTabHighlight", in: profileTabNamespace)
+                                    .shadow(color: themeColor.opacity(0.25), radius: 6, x: 0, y: 3)
+                            }
+                        }
                         .contentShape(Capsule())
                 }
                 .buttonStyle(.plain)
@@ -316,10 +380,18 @@ struct MyProfileView: View {
                 }
             case .collection:
                 EmptyView()
+            case .friends:
+                friendsTabContent
             }
         }
         .padding(.top, profileTabContentTopGap)
         .padding(.horizontal, BindrSpacing.lg)
+    }
+
+    private func normalizeProfileTab() {
+        if profileTabBinding.wrappedValue == .collection {
+            profileTabBinding.wrappedValue = .posts
+        }
     }
 
     private func isRenderableCardIDForProfileGrid(_ cardID: String) -> Bool {
@@ -351,30 +423,46 @@ struct MyProfileView: View {
 
     private func rolePill(_ title: String) -> some View {
         Text(title.uppercased())
-            .font(.system(size: 10, weight: .bold))
-            .tracking(0.4)
+            .font(.system(size: 9, weight: .bold))
+            .tracking(1.0)
             .foregroundStyle(themeColor)
-            .padding(.horizontal, 6)
-            .padding(.vertical, 2)
-            .background(themeColor.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
+            .background(themeColor.opacity(0.08))
+            .clipShape(Capsule())
             .overlay {
-                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .stroke(themeColor.opacity(0.19), lineWidth: 1)
+                Capsule()
+                    .stroke(themeColor.opacity(0.2), lineWidth: 1)
             }
     }
 
-    private func statColumn(value: String, label: String) -> some View {
-        VStack(spacing: 3) {
-            Text(value)
-                .font(.system(size: 16, weight: .heavy))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.65)
-            Text(label)
-                .font(.system(size: 10))
-                .foregroundStyle(Color.secondary.opacity(0.7))
+    private func statButton(value: String, label: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(spacing: 4) {
+                Text(value)
+                    .font(.system(size: 17, weight: .black))
+                    .foregroundStyle(.primary)
+                Text(label)
+                    .font(.system(size: 10, weight: .bold))
+                    .tracking(0.5)
+                    .foregroundStyle(.secondary.opacity(0.8))
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 10)
+            .contentShape(Rectangle())
         }
-        .frame(maxWidth: .infinity)
+        .buttonStyle(StatButtonStyle())
+    }
+
+    private var friendsTabContent: some View {
+        FriendsListView(
+            onOpenSearch: onOpenFriendsSearch ?? {},
+            onOpenQR: onOpenFriendsQR ?? {},
+            onOpenUsername: onOpenFriendUsername ?? { _ in },
+            onSelectFriendForTrade: onSelectFriendForTrade,
+            embedInParentScrollView: true
+        )
+        .padding(.top, profileTabContentTopGap)
     }
 
     private func emptyProfileCard(_ text: String) -> some View {
@@ -386,134 +474,6 @@ struct MyProfileView: View {
             .glassCardStyle(cornerRadius: 14, interactive: false)
     }
     
-    private func favoritePokemonTile(name: String, dex: Int?) -> some View {
-        HStack(spacing: 16) {
-            // Icon/Sprite
-            ZStack {
-                Circle()
-                    .fill(Color.primary.opacity(0.06))
-                    .frame(width: 60, height: 60)
-                
-                if let urlString = profile.favoritePokemonImageURL, let url = URL(string: urlString) {
-                    CachedAsyncImage(url: url) { image in
-                        image.resizable().scaledToFit()
-                    } placeholder: {
-                        ProgressView().scaleEffect(0.8)
-                    }
-                    .frame(width: 44, height: 44)
-                } else {
-                    Image(systemName: "hare.fill")
-                        .font(.title2)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            
-            VStack(alignment: .leading, spacing: 4) {
-                HStack(alignment: .firstTextBaseline, spacing: 6) {
-                    Text(name)
-                        .font(.system(size: 18, weight: .bold))
-                    if let dex = dex {
-                        Text("#\(String(format: "%03d", dex))")
-                            .font(.system(size: 14, weight: .medium, design: .monospaced))
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                
-                // Type Badges (Neutral Glass)
-                HStack(spacing: 6) {
-                    // We don't have types in the profile easily, 
-                    // so we'll show "Pokémon" as a generic tag or try to derive if possible.
-                    // For now, let's just show a glass tag as requested.
-                    glassTag(text: "Pokémon")
-                }
-            }
-            
-            Spacer()
-        }
-        .padding(12)
-        .background(
-            RoundedRectangle(cornerRadius: 16)
-                .fill(.thinMaterial)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.primary.opacity(0.07), lineWidth: 1)
-                )
-        )
-    }
-    
-    private func favoriteCardTile(name: String) -> some View {
-        HStack(spacing: 16) {
-            // Card Thumbnail
-            if let imageURL = profile.favoriteCardImageURL, let url = URL(string: imageURL) {
-                CachedAsyncImage(url: url) { image in
-                    image.resizable().aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    Color.gray.opacity(0.1)
-                }
-                .frame(width: 62, height: 87)
-                .clipShape(RoundedRectangle(cornerRadius: 6))
-                .shadow(color: .black.opacity(0.2), radius: 4, y: 2)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.primary.opacity(0.12), lineWidth: 0.5)
-                )
-            }
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(name)
-                    .font(.system(size: 18, weight: .bold))
-                    .lineLimit(1)
-                
-                if let setCode = profile.favoriteCardSetCode {
-                    Text(setCode)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-                
-                if let price = favoriteCardPrice {
-                    Text(formattedValue(price))
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundStyle(.primary)
-                        .padding(.top, 2)
-                }
-            }
-            
-            Spacer()
-        }
-        .padding(12)
-        .background(
-            RoundedRectangle(cornerRadius: 16)
-                .fill(.thinMaterial)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16)
-                        .stroke(Color.primary.opacity(0.07), lineWidth: 1)
-                )
-        )
-    }
-    
-    private func glassTag(text: String) -> some View {
-        Text(text.uppercased())
-            .font(.system(size: 10, weight: .bold))
-            .padding(.horizontal, 8)
-            .padding(.vertical, 4)
-            .background(
-                Capsule()
-                    .fill(Color.primary.opacity(0.06))
-            )
-            .overlay(
-                Capsule()
-                    .stroke(Color.primary.opacity(0.1), lineWidth: 1)
-            )
-    }
-    
-    private func formattedValue(_ usd: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = services.priceDisplay.currency == .gbp ? "£" : "$"
-        let val = services.priceDisplay.currency == .gbp ? usd * services.pricing.usdToGbp : usd
-        return formatter.string(from: NSNumber(value: val)) ?? "$0"
-    }
-
     // MARK: - Data Fetching
     
     private func fetchStats() {
@@ -524,17 +484,6 @@ struct MyProfileView: View {
 
     private func refreshProfileContent() async {
         fetchStats()
-        if let cardID = profile.favoriteCardID {
-            favoriteCard = await services.cardData.loadCard(masterCardId: cardID)
-            if let card = favoriteCard {
-                favoriteCardPrice = await services.pricing.usdPrice(for: card, printing: "normal")
-            } else {
-                favoriteCardPrice = nil
-            }
-        } else {
-            favoriteCard = nil
-            favoriteCardPrice = nil
-        }
         do {
             myActivity = try await services.socialFeed.fetchActivityForUser(userID: profile.id, limit: 50)
         } catch {
@@ -547,5 +496,13 @@ struct MyProfileView: View {
     
     private var groupedActivity: [GroupedFeedItem] {
         myActivity.map { GroupedFeedItem(id: $0.id, primary: $0, interactions: []) }
+    }
+}
+
+private struct StatButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .background(configuration.isPressed ? Color.primary.opacity(0.05) : Color.clear)
+            .contentShape(Rectangle())
     }
 }

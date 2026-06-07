@@ -48,6 +48,7 @@ struct BinderDetailView: View {
     @State private var isSharedPublished = false
     @State private var currentPage = 0
     @State private var viewingSlot: BinderSlot? = nil
+    @State private var detailCard: Card? = nil
     @State private var isPageTurning = false
     @State private var draggedSlotPosition: Int? = nil
     @State private var isClosing = false
@@ -265,13 +266,24 @@ struct BinderDetailView: View {
         .toolbar(.hidden, for: .navigationBar)
         .overlay {
             if let slot = viewingSlot, let card = cardsByID[slot.cardID] {
-                BinderCardViewer(card: card) {
-                    viewingSlot = nil
-                }
+                BinderCardViewer(
+                    card: card,
+                    onViewDetails: {
+                        viewingSlot = nil
+                        detailCard = card
+                    },
+                    onDismiss: {
+                        viewingSlot = nil
+                    }
+                )
                 .ignoresSafeArea(.all)
                 .zIndex(50)
                 .transition(.identity)
             }
+        }
+        .sheet(item: $detailCard) { card in
+            CardDetailSheet(cards: [card], startIndex: 0)
+                .environment(services)
         }
         .animation(.easeInOut(duration: 0.25), value: viewingSlot?.id)
         .onAppear {
@@ -418,8 +430,18 @@ struct BinderDetailView: View {
                 },
                 trailing: {
                     HStack(spacing: 8) {
-                        Button {
-                            showShareSettings = true
+                        Menu {
+                            Button {
+                                showShareSettings = true
+                            } label: {
+                                Label(isSharedPublished ? "Manage Social Post" : "Post to Bindr Social", systemImage: "person.2.fill")
+                            }
+
+                            Button {
+                                renderAndShareSnapshot()
+                            } label: {
+                                Label("Share Page Image", systemImage: "photo")
+                            }
                         } label: {
                             Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
                                 .font(.system(size: 17, weight: .semibold))
@@ -428,7 +450,8 @@ struct BinderDetailView: View {
                         .modifier(ChromeGlassCircleGlyphModifier())
                         .frame(width: 48, height: 48)
                         .contentShape(Rectangle())
-                        .accessibilityLabel(isSharedPublished ? "Shared binder settings" : "Share binder")
+                        .menuOrder(.fixed)
+                        .accessibilityLabel("Share binder")
 
                         Button {
                             withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
@@ -944,6 +967,8 @@ struct BinderDetailView: View {
         let card = cardsByID[slot.cardID]
         let imageURL = card.map { AppConfiguration.imageURL(relativePath: $0.displayImageSrc) }
         let cardCornerRadius: CGFloat = 4
+        let priceKey = slotValueKey(slot)
+        let usdPrice = slotUSDValues[priceKey]
         Button {
             if !isEditing { viewingSlot = slot }
         } label: {
@@ -971,9 +996,55 @@ struct BinderDetailView: View {
                         ),
                         lineWidth: 1
                     )
+
+                // Price badge — compact capsule at the bottom of the card
+                if binder.showPriceOverlay, let usd = usdPrice, usd > 0 {
+                    priceBadge(usd: usd)
+                }
             }
         }
         .buttonStyle(BinderCardButtonStyle())
+    }
+
+    private func priceBadge(usd: Double) -> some View {
+        let text = compactPriceLabel(usd: usd)
+        return Text(text)
+            .font(.system(size: 8, weight: .bold, design: .monospaced))
+            .foregroundStyle(.white)
+            .padding(.horizontal, 5)
+            .padding(.vertical, 2.5)
+            .background(
+                Capsule()
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                Color.black.opacity(0.72),
+                                Color.black.opacity(0.58)
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .overlay(
+                        Capsule()
+                            .stroke(Color.white.opacity(0.15), lineWidth: 0.5)
+                    )
+            )
+            .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+            .padding([.bottom, .trailing], 3)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+    }
+
+    /// Compact price format matching the app currency but dropping the symbol
+    /// when space is tight so the capsule stays tiny. Returns e.g. "£12.50" or
+    /// "$1,299" (whole amounts above 1000 drop decimals).
+    private func compactPriceLabel(usd: Double) -> String {
+        let display = services.priceDisplay.currency
+        let amount = display == .gbp ? usd * services.pricing.usdToGbp : usd
+        if amount >= 1000 {
+            return String(format: "\(display.symbol)%.0f", amount)
+        }
+        return String(format: "\(display.symbol)%.2f", amount)
     }
 
     // MARK: - Edit mode
@@ -1328,6 +1399,145 @@ struct BinderDetailView: View {
         return anyResolved ? total : nil
     }
 
+    // MARK: - Share as image
+
+    /// Renders the currently visible binder page (or cover) as a snapshot image
+    /// with a "Bindr" branded watermark, then opens the system share sheet.
+    private func renderAndShareSnapshot() {
+        let pageSize = binderPageSize(in: UIScreen.main.bounds.size)
+        let isCover = entryFromGrid && currentPage == 0
+
+        let snapshotView = ZStack {
+            if isCover {
+                let coverRect = coverFrame(in: pageSize)
+                let value: String? = (binder.showValueOnCover && !binder.slotList.isEmpty)
+                    ? formattedTotalValue
+                    : nil
+                Color(uiColor: .systemBackground)
+                BinderCoverView(
+                    binder: binder,
+                    compact: false,
+                    valueText: value
+                )
+                .peekingURLsOverride(preloadedPeekingURLs)
+                .frame(width: coverRect.width, height: coverRect.height)
+            } else {
+                pageSurface(pageIdx: cardPageIndex(for: currentPage), pageSize: pageSize)
+            }
+        }
+        .frame(width: pageSize.width, height: pageSize.height)
+
+        let scale = UIScreen.main.scale
+        let renderer = ImageRenderer(
+            content: snapshotView
+                .environment(\.colorScheme, .light)
+        )
+        renderer.scale = scale
+
+        guard let baseImage = renderer.uiImage else { return }
+        let subtitle = isCover ? binder.title : "\(binder.title) · Page \(cardPageIndex(for: currentPage) + 1)"
+        let watermarked = applyBindrWatermark(to: baseImage, subtitle: subtitle)
+
+        presentShareSheet(image: watermarked)
+    }
+
+    /// Presents the system share sheet (UIActivityViewController) from the
+    /// topmost UIKit view controller. This approach is more reliable than
+    /// embedding it in a SwiftUI sheet, especially on iPad.
+    private func presentShareSheet(image: UIImage) {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let rootVC = windowScene.windows.first(where: { $0.isKeyWindow })?.rootViewController
+        else { return }
+
+        let activityVC = UIActivityViewController(
+            activityItems: [image],
+            applicationActivities: nil
+        )
+
+        var topVC = rootVC
+        while let presented = topVC.presentedViewController {
+            topVC = presented
+        }
+
+        if let popover = activityVC.popoverPresentationController {
+            popover.sourceView = topVC.view
+            popover.sourceRect = CGRect(
+                x: topVC.view.bounds.midX,
+                y: topVC.view.bounds.midY,
+                width: 0,
+                height: 0
+            )
+            popover.permittedArrowDirections = []
+        }
+
+        topVC.present(activityVC, animated: true)
+    }
+
+    /// Applies a "Bindr" branded tag to the bottom-right of the snapshot.
+    private func applyBindrWatermark(to image: UIImage, subtitle: String) -> UIImage {
+        let imageSize = image.size
+        let scale = image.scale
+
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
+        defer { UIGraphicsEndImageContext() }
+
+        guard let ctx = UIGraphicsGetCurrentContext() else { return image }
+
+        image.draw(at: .zero)
+
+        let watermarkText = "Bindr"
+        let fontSize: CGFloat = max(imageSize.width * 0.045, 16)
+        let subtitleFontSize: CGFloat = max(fontSize * 0.42, 9)
+        let padding: CGFloat = fontSize * 0.8
+        let tagSize = CGSize(width: min(imageSize.width * 0.72, fontSize * 8.2), height: fontSize * 2.4)
+        let tagOrigin = CGPoint(
+            x: imageSize.width - tagSize.width - padding,
+            y: imageSize.height - tagSize.height - padding
+        )
+        let tagRect = CGRect(origin: tagOrigin, size: tagSize)
+
+        let bgPath = UIBezierPath(roundedRect: tagRect, cornerRadius: fontSize * 0.5)
+        ctx.setFillColor(UIColor.black.withAlphaComponent(0.55).cgColor)
+        ctx.addPath(bgPath.cgPath)
+        ctx.fillPath()
+
+        ctx.setStrokeColor(UIColor.white.withAlphaComponent(0.25).cgColor)
+        ctx.setLineWidth(0.5)
+        ctx.addPath(bgPath.cgPath)
+        ctx.strokePath()
+
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: fontSize, weight: .bold),
+            .foregroundColor: UIColor.white.withAlphaComponent(0.9),
+            .paragraphStyle: paragraphStyle
+        ]
+        let subtitleAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: subtitleFontSize, weight: .semibold),
+            .foregroundColor: UIColor.white.withAlphaComponent(0.72),
+            .paragraphStyle: paragraphStyle
+        ]
+
+        let textSize = watermarkText.size(withAttributes: attributes)
+        let textOrigin = CGPoint(
+            x: tagRect.midX - textSize.width / 2,
+            y: tagRect.minY + fontSize * 0.35
+        )
+        watermarkText.draw(at: textOrigin, withAttributes: attributes)
+
+        let clippedSubtitle = subtitle.count > 38 ? String(subtitle.prefix(35)) + "..." : subtitle
+        let subtitleRect = CGRect(
+            x: tagRect.minX + fontSize * 0.45,
+            y: textOrigin.y + textSize.height + 1,
+            width: tagRect.width - fontSize * 0.9,
+            height: subtitleFontSize * 1.3
+        )
+        clippedSubtitle.draw(in: subtitleRect, withAttributes: subtitleAttributes)
+
+        return UIGraphicsGetImageFromCurrentImageContext() ?? image
+    }
+
 }
 
 // MARK: - Button style for cards (lift on press)
@@ -1392,6 +1602,7 @@ struct BinderPageFramePreferenceKey: PreferenceKey {
 
 private struct BinderCardViewer: View {
     let card: Card
+    let onViewDetails: () -> Void
     let onDismiss: () -> Void
 
     @State private var offset: CGSize = .zero
@@ -1413,16 +1624,35 @@ private struct BinderCardViewer: View {
                 .ignoresSafeArea()
                 .onTapGesture { dismiss() }
 
-            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 600, height: 840)) { img in
-                img.resizable().scaledToFit()
-            } placeholder: {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .fill(Color(uiColor: .systemGray4))
-                    .aspectRatio(5/7, contentMode: .fit)
-                    .overlay { ProgressView() }
+            VStack(spacing: 18) {
+                CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 600, height: 840)) { img in
+                    img.resizable().scaledToFit()
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(Color(uiColor: .systemGray4))
+                        .aspectRatio(5/7, contentMode: .fit)
+                        .overlay { ProgressView() }
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .shadow(color: .black.opacity(0.4), radius: 20, x: 0, y: 8)
+
+                Button {
+                    onViewDetails()
+                } label: {
+                    Label("View Card Details", systemImage: "info.circle.fill")
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 13)
+                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                .stroke(Color.white.opacity(0.24), lineWidth: 1)
+                        }
+                }
+                .buttonStyle(.plain)
+                .padding(.horizontal, 6)
             }
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .shadow(color: .black.opacity(0.4), radius: 20, x: 0, y: 8)
             .padding(.horizontal, 32)
             .offset(offset)
             .rotationEffect(.degrees(rotation))
@@ -1623,6 +1853,22 @@ struct BinderStylePickerSheet: View {
                                         }
                                     } icon: {
                                         Image(systemName: "sterlingsign.circle")
+                                            .foregroundStyle(bindrAccent)
+                                    }
+                                }
+                                .tint(bindrAccent)
+
+                                Toggle(isOn: $binder.showPriceOverlay) {
+                                    Label {
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text("Show card prices")
+                                                .font(.subheadline.weight(.semibold))
+                                            Text("Adds subtle market-price badges to binder page cards")
+                                                .font(.caption)
+                                                .foregroundStyle(.secondary)
+                                        }
+                                    } icon: {
+                                        Image(systemName: "tag")
                                             .foregroundStyle(bindrAccent)
                                     }
                                 }

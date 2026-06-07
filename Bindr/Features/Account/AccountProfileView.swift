@@ -72,6 +72,20 @@ struct AccountProfileView: View {
         }
         .navigationTitle("Profile")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            if profile != nil {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        Haptics.lightImpact()
+                        navigationPath.append(Destination.editProfile)
+                    } label: {
+                        Image(systemName: "pencil")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
+                }
+            }
+        }
         .navigationDestination(for: Destination.self) { destination in
             switch destination {
             case .editProfile:

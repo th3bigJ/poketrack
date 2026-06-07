@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 /// Root page for the More tab.
 /// Styled using standard iOS grouped List elements with colorful glyph backdrops for a premium native look and feel.
@@ -48,6 +49,12 @@ struct MoreView: View {
                                 systemImage: "list.bullet.rectangle.fill",
                                 color: .orange,
                                 destination: .transactions
+                            )
+                            MoreMenuRow(
+                                title: "Trade Calculator",
+                                systemImage: "scalemass.fill",
+                                color: BindrPalette.binderGold,
+                                destination: .tradeCalculator
                             )
                             MoreMenuRow(
                                 title: "Grading Opportunities",
@@ -127,6 +134,8 @@ struct MoreView: View {
                 DecksRootView()
             case .transactions:
                 TransactionsView()
+            case .tradeCalculator:
+                TradeCalculatorView()
             case .themes:
                 ThemesView()
             case .gradingOpportunities:
@@ -430,5 +439,949 @@ private struct MoreMenuRow: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+    }
+}
+
+// MARK: - Trade Calculator
+
+private struct TradeCalculatorView: View {
+    private enum CashField: Hashable {
+        case mine
+        case theirs
+    }
+
+    @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.bindrAccent) private var bindrAccent
+    @Environment(\.colorScheme) private var colorScheme
+    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
+
+    @State private var theirCards: [NewTradeItemInput] = []
+    @State private var myCards: [NewTradeItemInput] = []
+    @State private var theirCashText = ""
+    @State private var myCashText = ""
+    @State private var isMyCardPickerPresented = false
+    @State private var isTheirCardPickerPresented = false
+    @State private var valuationCardCacheByID: [String: Card] = [:]
+    @State private var myCardsValueUSD: Double = 0
+    @State private var theirCardsValueUSD: Double = 0
+    @State private var isValuationLoading = false
+    @State private var isCompletingTrade = false
+    @State private var showCompleteConfirmation = false
+    @State private var errorMessage: String?
+    @State private var successMessage: String?
+    @FocusState private var focusedCashField: CashField?
+
+    private var valuationSignature: String {
+        let myKey = myCards
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }
+            .sorted()
+            .joined(separator: ";")
+        let theirKey = theirCards
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }
+            .sorted()
+            .joined(separator: ";")
+        return "\(myKey)__\(theirKey)__\(services.priceDisplay.currency.rawValue)__\(services.pricing.usdToGbp)"
+    }
+
+    private var myTotalUSD: Double {
+        myCardsValueUSD + displayAmountToUSD(parsedCash(myCashText))
+    }
+
+    private var theirTotalUSD: Double {
+        theirCardsValueUSD + displayAmountToUSD(parsedCash(theirCashText))
+    }
+
+    private var balanceUSD: Double {
+        theirTotalUSD - myTotalUSD
+    }
+
+    private var hasAnyTradeValue: Bool {
+        myTotalUSD > 0 || theirTotalUSD > 0 || !myCards.isEmpty || !theirCards.isEmpty
+    }
+
+    private var canCompleteTrade: Bool {
+        hasAnyTradeValue && !isCompletingTrade
+    }
+
+    private var fairnessTitle: String {
+        guard hasAnyTradeValue else { return "Build a trade" }
+        if abs(balanceUSD) < 0.01 { return "Looks even" }
+        return balanceUSD > 0 ? "You receive more value" : "They receive more value"
+    }
+
+    private var fairnessSubtitle: String {
+        guard hasAnyTradeValue else {
+            return "Add your cards from collection, then search the catalogue for what they are offering."
+        }
+        if abs(balanceUSD) < 0.01 {
+            return "Both sides are currently balanced."
+        }
+        return "\(formattedDisplayAmountUSD(abs(balanceUSD))) difference"
+    }
+
+    private var fairnessColor: Color {
+        guard hasAnyTradeValue else { return BindrPalette.deckBlue }
+        if abs(balanceUSD) < 0.01 { return BindrPalette.ownedGreen }
+        return balanceUSD > 0 ? BindrPalette.ownedGreen : BindrPalette.alertRed
+    }
+
+    var body: some View {
+        List {
+            summarySection
+            theirSideSection
+            mySideSection
+        }
+        .listStyle(.insetGrouped)
+        .scrollDismissesKeyboard(.interactively)
+        .navigationTitle("Trade Calculator")
+        .navigationBarTitleDisplayMode(.inline)
+        .tint(.primary)
+        .sheet(isPresented: $isMyCardPickerPresented) {
+            TradeCardPickerView(
+                ownerUserID: currentUserID,
+                navigationTitle: "My Collection"
+            ) { selected in
+                append(selected, to: .mine)
+            }
+            .environment(services)
+        }
+        .sheet(isPresented: $isTheirCardPickerPresented) {
+            ManualTradeCardPickerView { selected in
+                append(selected, to: .theirs)
+            }
+            .environment(services)
+        }
+        .confirmationDialog(
+            "Complete this local trade?",
+            isPresented: $showCompleteConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Complete Trade") {
+                Task { await completeLocalTrade() }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Card changes will update your collection. Cash is counted for the trade value only.")
+        }
+        .alert("Trade Calculator", isPresented: calculatorAlertPresented, actions: {
+            Button("OK") {
+                errorMessage = nil
+                successMessage = nil
+            }
+        }, message: {
+            Text(errorMessage ?? successMessage ?? "")
+        })
+        .task(id: valuationSignature) {
+            await refreshTradeValues()
+        }
+    }
+
+    private var summarySection: some View {
+        Section {
+            VStack(alignment: .leading, spacing: 14) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(fairnessTitle)
+                        .font(.system(size: 18, weight: .heavy))
+                        .foregroundStyle(.primary)
+                    Text(fairnessSubtitle)
+                        .font(.system(size: 13))
+                        .foregroundStyle(.secondary)
+                }
+
+                HStack(spacing: 10) {
+                    valuePill(title: "My side", value: formattedDisplayAmountUSD(myTotalUSD), fill: mySideFill, stroke: bindrAccent.opacity(colorScheme == .dark ? 0.65 : 0.35))
+                    valuePill(title: "Their side", value: formattedDisplayAmountUSD(theirTotalUSD), fill: neutralSideFill, stroke: Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.04))
+                }
+
+                if canCompleteTrade || isCompletingTrade {
+                    Button {
+                        showCompleteConfirmation = true
+                    } label: {
+                        HStack(spacing: 8) {
+                            if isCompletingTrade {
+                                ProgressView()
+                                    .scaleEffect(0.8)
+                            } else {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .font(.system(size: 15, weight: .bold))
+                            }
+                            Text(isCompletingTrade ? "Completing..." : "Complete trade")
+                                .font(.system(size: 14, weight: .bold))
+                        }
+                        .foregroundStyle(.primary)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .background(bindrAccent.opacity(colorScheme == .dark ? 0.34 : 0.16), in: Capsule())
+                        .overlay {
+                            Capsule()
+                                .stroke(bindrAccent.opacity(colorScheme == .dark ? 0.8 : 0.4), lineWidth: 1)
+                        }
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(isCompletingTrade)
+                }
+            }
+            .padding(.vertical, 4)
+        } footer: {
+            Text("Prices are estimates from the current catalogue market data. Completing a local trade updates card inventory only; cash is included in the trade value but is not added to collection.")
+        }
+    }
+
+    private var calculatorAlertPresented: Binding<Bool> {
+        Binding(
+            get: { errorMessage != nil || successMessage != nil },
+            set: { isPresented in
+                if !isPresented {
+                    errorMessage = nil
+                    successMessage = nil
+                }
+            }
+        )
+    }
+
+    private var mySideFill: Color {
+        bindrAccent.opacity(colorScheme == .dark ? 0.28 : 0.14)
+    }
+
+    private var neutralSideFill: Color {
+        colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.05)
+    }
+
+    private var theirSideSection: some View {
+        calculatorSideSection(
+            title: "Their Side",
+            footer: "Search the catalogue for cards they are offering, even if they do not use Bindr.",
+            cards: $theirCards,
+            cashText: $theirCashText,
+            cashLabel: "They add cash",
+            totalLabel: "Their total",
+            focusedField: .theirs,
+            addTitle: "Add Their Cards",
+            addAction: { isTheirCardPickerPresented = true }
+        )
+    }
+
+    private var mySideSection: some View {
+        calculatorSideSection(
+            title: "My Side",
+            footer: "Cards are selected from your collection.",
+            cards: $myCards,
+            cashText: $myCashText,
+            cashLabel: "I add cash",
+            totalLabel: "My total",
+            focusedField: .mine,
+            addTitle: "Add My Cards",
+            addAction: { isMyCardPickerPresented = true }
+        )
+    }
+
+    private func calculatorSideSection(
+        title: String,
+        footer: String,
+        cards: Binding<[NewTradeItemInput]>,
+        cashText: Binding<String>,
+        cashLabel: String,
+        totalLabel: String,
+        focusedField: CashField,
+        addTitle: String,
+        addAction: @escaping () -> Void
+    ) -> some View {
+        Section {
+            if cards.wrappedValue.isEmpty {
+                Text("No cards selected")
+                    .font(.system(size: 13))
+                    .foregroundStyle(.secondary)
+                    .italic()
+            } else {
+                ForEach(cards.wrappedValue) { item in
+                    TradeCalculatorCardRow(
+                        item: item,
+                        onQuantityChange: { quantity in
+                            updateQuantity(for: item, in: cards, quantity: quantity)
+                        },
+                        onRemove: {
+                            remove(item, from: cards)
+                        }
+                    )
+                }
+            }
+
+            Button(action: addAction) {
+                Label(addTitle, systemImage: "plus.circle")
+                    .font(.system(size: 14))
+            }
+
+            cashRow(label: cashLabel, text: cashText, focusedField: focusedField)
+            totalRow(label: totalLabel, valueUSD: focusedField == .mine ? myTotalUSD : theirTotalUSD)
+        } header: {
+            Text(title)
+        } footer: {
+            Text(footer)
+        }
+    }
+
+    private func cashRow(label: String, text: Binding<String>, focusedField: CashField) -> some View {
+        HStack {
+            Text(label)
+                .font(.system(size: 14))
+                .foregroundStyle(.primary)
+            Spacer()
+            HStack(spacing: 4) {
+                Text(services.priceDisplay.currency.symbol)
+                    .font(.system(size: 14))
+                    .foregroundStyle(.secondary)
+                TextField("0.00", text: text)
+                    .keyboardType(.decimalPad)
+                    .focused($focusedCashField, equals: focusedField)
+                    .multilineTextAlignment(.trailing)
+                    .font(.system(size: 14))
+                    .frame(width: 90)
+            }
+        }
+    }
+
+    private func totalRow(label: String, valueUSD: Double) -> some View {
+        HStack {
+            Text(label)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.primary)
+            Spacer()
+            if isValuationLoading {
+                ProgressView()
+                    .scaleEffect(0.8)
+            } else {
+                Text(formattedDisplayAmountUSD(valueUSD))
+                    .font(.system(size: 14, weight: .bold))
+                    .foregroundStyle(.primary)
+            }
+        }
+    }
+
+    private func valuePill(title: String, value: String, fill: Color, stroke: Color) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.system(size: 11, weight: .semibold))
+                .foregroundStyle(.secondary)
+            Text(value)
+                .font(.system(size: 16, weight: .heavy, design: .rounded))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
+        .background(fill, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(stroke, lineWidth: 1)
+        }
+    }
+
+    private enum TradeCalculatorSide {
+        case mine
+        case theirs
+    }
+
+    private func append(_ selected: [NewTradeItemInput], to side: TradeCalculatorSide) {
+        switch side {
+        case .mine:
+            for item in selected {
+                appendOrIncrement(item, in: &myCards)
+            }
+        case .theirs:
+            for item in selected {
+                appendOrIncrement(item, in: &theirCards)
+            }
+        }
+    }
+
+    private func appendOrIncrement(_ item: NewTradeItemInput, in cards: inout [NewTradeItemInput]) {
+        if let index = cards.firstIndex(where: { $0.cardID == item.cardID && $0.variantKey == item.variantKey }) {
+            let existing = cards[index]
+            cards[index] = NewTradeItemInput(
+                cardID: existing.cardID,
+                variantKey: existing.variantKey,
+                quantity: existing.quantity + max(item.quantity, 1)
+            )
+        } else {
+            cards.append(item)
+        }
+    }
+
+    private func updateQuantity(
+        for item: NewTradeItemInput,
+        in cards: Binding<[NewTradeItemInput]>,
+        quantity: Int
+    ) {
+        guard let index = cards.wrappedValue.firstIndex(where: { $0.id == item.id }) else { return }
+        cards.wrappedValue[index] = NewTradeItemInput(
+            cardID: item.cardID,
+            variantKey: item.variantKey,
+            quantity: max(quantity, 1)
+        )
+    }
+
+    private func remove(_ item: NewTradeItemInput, from cards: Binding<[NewTradeItemInput]>) {
+        cards.wrappedValue.removeAll { $0.id == item.id }
+    }
+
+    private var currentUserID: UUID {
+        if case .signedIn(let id, _) = services.socialAuth.authState {
+            return id
+        }
+        return UUID()
+    }
+
+    private func refreshTradeValues() async {
+        isValuationLoading = true
+        defer { isValuationLoading = false }
+
+        var nextMyValueUSD: Double = 0
+        var nextTheirValueUSD: Double = 0
+
+        for item in myCards {
+            guard let usd = await usdValue(for: item) else { continue }
+            nextMyValueUSD += usd * Double(max(item.quantity, 1))
+        }
+        for item in theirCards {
+            guard let usd = await usdValue(for: item) else { continue }
+            nextTheirValueUSD += usd * Double(max(item.quantity, 1))
+        }
+
+        myCardsValueUSD = nextMyValueUSD
+        theirCardsValueUSD = nextTheirValueUSD
+    }
+
+    private func usdValue(for item: NewTradeItemInput) async -> Double? {
+        guard let card = await loadCardForValuation(id: item.cardID) else { return nil }
+        if let exactVariant = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+            return exactVariant
+        }
+        return await services.pricing.usdPrice(for: card, printing: item.variantKey)
+    }
+
+    private func loadCardForValuation(id: String) async -> Card? {
+        if let cached = valuationCardCacheByID[id] {
+            return cached
+        }
+        guard let loaded = await services.cardData.loadCard(masterCardId: id) else {
+            return nil
+        }
+        valuationCardCacheByID[id] = loaded
+        return loaded
+    }
+
+    private func completeLocalTrade() async {
+        focusedCashField = nil
+        errorMessage = nil
+        successMessage = nil
+
+        guard hasAnyTradeValue else {
+            errorMessage = "Add cards or cash before completing the trade."
+            return
+        }
+        let hasCardChanges = !myCards.isEmpty || !theirCards.isEmpty
+        let ledger = services.collectionLedger
+        if hasCardChanges, ledger == nil {
+            errorMessage = "Collection isn't ready. Try again."
+            return
+        }
+
+        isCompletingTrade = true
+        defer { isCompletingTrade = false }
+
+        do {
+            let outgoing = try await resolvedOutgoingItems()
+            try validateProjectedCollectionCapacity(outgoing: outgoing)
+            let theirNames = await tradeSummaryNames(for: theirCards)
+            let myNames = await tradeSummaryNames(for: myCards)
+            let occurredAt = Date()
+            let transactionGroupID = UUID()
+
+            if let ledger {
+                for (item, quantity, card) in outgoing {
+                    let unitUSD = await usdUnitValue(for: card, variantKey: item.variantKey)
+                    try ledger.recordSingleCardDisposition(
+                        item: item,
+                        kind: .traded,
+                        quantity: quantity,
+                        currencyCode: currencyCode,
+                        cardDisplayName: card.cardName,
+                        unitPrice: unitUSD.map(displayAmountFromUSD),
+                        counterparty: "Local trade",
+                        notes: theirNames.isEmpty ? nil : "Received \(theirNames)",
+                        transactionGroupId: transactionGroupID
+                    )
+                }
+
+                for tradeItem in theirCards {
+                    guard let card = await loadCardForValuation(id: tradeItem.cardID) else { continue }
+                    let unitUSD = await usdUnitValue(for: card, variantKey: tradeItem.variantKey)
+                    try ledger.recordSingleCardAcquisition(
+                        cardID: tradeItem.cardID,
+                        variantKey: tradeItem.variantKey,
+                        kind: .trade,
+                        quantity: max(tradeItem.quantity, 1),
+                        occurredAt: occurredAt,
+                        currencyCode: currencyCode,
+                        cardDisplayName: card.cardName,
+                        unitPrice: unitUSD.map(displayAmountFromUSD),
+                        gradingCompany: nil,
+                        grade: nil,
+                        packedOpenedFrom: nil,
+                        tradeCounterparty: "Local trade",
+                        tradeGaveAway: myNames.isEmpty ? nil : myNames,
+                        giftFrom: nil,
+                        boughtFrom: nil,
+                        transactionGroupId: transactionGroupID
+                    )
+                }
+            }
+            try recordLocalTradeCashActivity(occurredAt: occurredAt, transactionGroupID: transactionGroupID)
+
+            myCards = []
+            theirCards = []
+            myCashText = ""
+            theirCashText = ""
+            myCardsValueUSD = 0
+            theirCardsValueUSD = 0
+            Haptics.success()
+            successMessage = hasCardChanges ? "Trade completed. Your collection has been updated." : "Trade completed."
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func recordLocalTradeCashActivity(occurredAt: Date, transactionGroupID: UUID) throws {
+        let theirCash = parsedCash(theirCashText)
+        let myCash = parsedCash(myCashText)
+        guard theirCash > 0 || myCash > 0 else { return }
+
+        let reference = "local-trade-\(transactionGroupID.uuidString)"
+        if theirCash > 0 {
+            modelContext.insert(
+                LedgerLine(
+                    occurredAt: occurredAt,
+                    direction: LedgerDirection.sold.rawValue,
+                    productKind: ProductKind.other.rawValue,
+                    lineDescription: "Local trade cash received",
+                    quantity: 1,
+                    unitPrice: theirCash,
+                    currencyCode: currencyCode,
+                    counterparty: "Local trade",
+                    channel: "trade",
+                    externalRef: reference,
+                    transactionGroupId: transactionGroupID
+                )
+            )
+        }
+        if myCash > 0 {
+            modelContext.insert(
+                LedgerLine(
+                    occurredAt: occurredAt,
+                    direction: LedgerDirection.bought.rawValue,
+                    productKind: ProductKind.other.rawValue,
+                    lineDescription: "Local trade cash paid",
+                    quantity: 1,
+                    unitPrice: myCash,
+                    currencyCode: currencyCode,
+                    counterparty: "Local trade",
+                    channel: "trade",
+                    externalRef: "\(reference)-out",
+                    transactionGroupId: transactionGroupID
+                )
+            )
+        }
+        try modelContext.save()
+    }
+
+    private func resolvedOutgoingItems() async throws -> [(item: CollectionItem, quantity: Int, card: Card)] {
+        var resolved: [(CollectionItem, Int, Card)] = []
+        for tradeItem in myCards {
+            guard let item = collectionItem(for: tradeItem) else {
+                throw LocalTradeError.missingOwnedCard(cardID: tradeItem.cardID)
+            }
+            let quantity = max(tradeItem.quantity, 1)
+            guard let card = await loadCardForValuation(id: tradeItem.cardID) else {
+                throw LocalTradeError.missingCardData
+            }
+            guard item.quantity >= quantity else {
+                throw LocalTradeError.insufficientQuantity(cardName: card.cardName, available: item.quantity, requested: quantity)
+            }
+            resolved.append((item, quantity, card))
+        }
+        return resolved
+    }
+
+    private func validateProjectedCollectionCapacity(outgoing: [(item: CollectionItem, quantity: Int, card: Card)]) throws {
+        guard !services.store.isPremium else { return }
+
+        var projectedCount = collectionItems.count
+        for row in outgoing where row.quantity >= row.item.quantity {
+            projectedCount -= 1
+        }
+
+        for item in theirCards {
+            let alreadyExists = collectionItems.contains { existing in
+                existing.cardID == item.cardID
+                    && existing.variantKey == item.variantKey
+                    && existing.itemKind == ProductKind.singleCard.rawValue
+            }
+            let depletedOutgoingSameStack = outgoing.contains { row in
+                row.quantity >= row.item.quantity
+                    && row.item.cardID == item.cardID
+                    && row.item.variantKey == item.variantKey
+                    && row.item.itemKind == ProductKind.singleCard.rawValue
+            }
+            if !alreadyExists || depletedOutgoingSameStack {
+                projectedCount += 1
+            }
+        }
+
+        if projectedCount > CollectionFreeTier.maxItems {
+            throw CollectionLedgerError.freeTierLimitReached
+        }
+    }
+
+    private func collectionItem(for tradeItem: NewTradeItemInput) -> CollectionItem? {
+        collectionItems.first { item in
+            item.itemKind == ProductKind.singleCard.rawValue
+                && item.cardID == tradeItem.cardID
+                && item.variantKey == tradeItem.variantKey
+                && item.quantity > 0
+        }
+    }
+
+    private func tradeSummaryNames(for items: [NewTradeItemInput]) async -> String {
+        var names: [String] = []
+        for item in items {
+            guard let card = await loadCardForValuation(id: item.cardID) else { continue }
+            let quantity = max(item.quantity, 1)
+            names.append(quantity > 1 ? "\(quantity)x \(card.cardName)" : card.cardName)
+        }
+        return names.joined(separator: ", ")
+    }
+
+    private func usdUnitValue(for card: Card, variantKey: String) async -> Double? {
+        if let exactVariant = await services.pricing.usdPriceForVariant(for: card, variantKey: variantKey) {
+            return exactVariant
+        }
+        return await services.pricing.usdPrice(for: card, printing: variantKey)
+    }
+
+    private func parsedCash(_ text: String) -> Double {
+        Double(text.replacingOccurrences(of: ",", with: ".")) ?? 0
+    }
+
+    private func displayAmountToUSD(_ amount: Double) -> Double {
+        switch services.priceDisplay.currency {
+        case .usd:
+            return amount
+        case .gbp:
+            let fx = max(services.pricing.usdToGbp, 0.0001)
+            return amount / fx
+        }
+    }
+
+    private func formattedDisplayAmountUSD(_ amountUSD: Double) -> String {
+        services.priceDisplay.currency.format(amountUSD: amountUSD, usdToGbp: services.pricing.usdToGbp)
+    }
+
+    private var currencyCode: String {
+        services.priceDisplay.currency == .gbp ? "GBP" : "USD"
+    }
+
+    private func displayAmountFromUSD(_ amountUSD: Double) -> Double {
+        switch services.priceDisplay.currency {
+        case .usd:
+            return amountUSD
+        case .gbp:
+            return amountUSD * services.pricing.usdToGbp
+        }
+    }
+}
+
+private enum LocalTradeError: LocalizedError {
+    case missingOwnedCard(cardID: String)
+    case insufficientQuantity(cardName: String, available: Int, requested: Int)
+    case missingCardData
+
+    var errorDescription: String? {
+        switch self {
+        case .missingOwnedCard:
+            return "One of your selected cards is no longer in your collection."
+        case .insufficientQuantity(let cardName, let available, let requested):
+            return "You only have \(available) of \(cardName), but this trade needs \(requested)."
+        case .missingCardData:
+            return "Card data is still loading. Try again in a moment."
+        }
+    }
+}
+
+private struct TradeCalculatorCardRow: View {
+    @Environment(AppServices.self) private var services
+
+    let item: NewTradeItemInput
+    let onQuantityChange: (Int) -> Void
+    let onRemove: () -> Void
+
+    @State private var card: Card?
+    @State private var rowValueUSD: Double?
+
+    var body: some View {
+        HStack(spacing: 12) {
+            ZStack {
+                if let imageURLString = card?.displayImageSrc {
+                    CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
+                        image.resizable().aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        shimmer
+                    }
+                } else {
+                    shimmer
+                }
+            }
+            .frame(width: 36, height: 50)
+            .clipShape(RoundedRectangle(cornerRadius: 4))
+
+            Text(card?.cardName ?? item.cardID)
+                .font(.system(size: 14, weight: .semibold))
+                .lineLimit(2)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            VStack(alignment: .trailing, spacing: 8) {
+                Text(rowValueText)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.trailing)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+
+                HStack(spacing: 8) {
+                    quantityButton(systemImage: "minus", isDisabled: item.quantity <= 1) {
+                        onQuantityChange(max(item.quantity - 1, 1))
+                    }
+
+                    Text("Qty \(item.quantity)")
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .frame(minWidth: 42)
+
+                    quantityButton(systemImage: "plus") {
+                        onQuantityChange(item.quantity + 1)
+                    }
+
+                    Button(role: .destructive, action: onRemove) {
+                        Image(systemName: "trash")
+                            .font(.system(size: 14, weight: .semibold))
+                            .frame(width: 26, height: 26)
+                    }
+                    .buttonStyle(.borderless)
+                }
+            }
+            .fixedSize(horizontal: true, vertical: false)
+        }
+        .task(id: valueLookupSignature) {
+            if card == nil {
+                card = await services.cardData.loadCard(masterCardId: item.cardID)
+            }
+            await refreshRowValue()
+        }
+    }
+
+    private func quantityButton(
+        systemImage: String,
+        isDisabled: Bool = false,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            Image(systemName: systemImage)
+                .font(.system(size: 13, weight: .bold))
+                .foregroundStyle(isDisabled ? Color.secondary.opacity(0.45) : Color.primary)
+                .frame(width: 26, height: 26)
+                .background(Color.primary.opacity(0.08), in: Circle())
+        }
+        .buttonStyle(.borderless)
+        .disabled(isDisabled)
+    }
+
+    private var shimmer: some View {
+        RoundedRectangle(cornerRadius: 4)
+            .fill(Color.white.opacity(0.05))
+    }
+
+    private var valueLookupSignature: String {
+        "\(item.cardID)|\(item.variantKey)|\(item.quantity)|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)"
+    }
+
+    private var rowValueText: String {
+        guard let rowValueUSD else { return "-" }
+        return services.priceDisplay.currency.format(amountUSD: rowValueUSD, usdToGbp: services.pricing.usdToGbp)
+    }
+
+    private func refreshRowValue() async {
+        guard let card else {
+            rowValueUSD = nil
+            return
+        }
+        let variantUSD = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey)
+        let unitUSD: Double?
+        if let variantUSD {
+            unitUSD = variantUSD
+        } else {
+            unitUSD = await services.pricing.usdPrice(for: card, printing: item.variantKey)
+        }
+        if let unitUSD {
+            rowValueUSD = unitUSD * Double(max(item.quantity, 1))
+        } else {
+            rowValueUSD = nil
+        }
+    }
+}
+
+private struct ManualTradeCardPickerView: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.dismiss) private var dismiss
+
+    let onConfirm: ([NewTradeItemInput]) -> Void
+
+    @State private var searchText = ""
+    @State private var results: [Card] = []
+    @State private var selectedCardIDs: Set<String> = []
+    @State private var isSearching = false
+
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 0) {
+                searchField
+                    .padding(.horizontal, 12)
+                    .padding(.top, 12)
+                    .padding(.bottom, 8)
+
+                Group {
+                    if isSearching {
+                        ProgressView("Searching cards...")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else if searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        ContentUnavailableView(
+                            "Search Catalogue",
+                            systemImage: "magnifyingglass",
+                            description: Text("Find the cards the other trader is offering.")
+                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else if results.isEmpty {
+                        ContentUnavailableView(
+                            "No Cards Found",
+                            systemImage: "rectangle.stack",
+                            description: Text("Try a card name, set code, or card number.")
+                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else {
+                        resultList
+                    }
+                }
+            }
+            .navigationTitle("Their Cards")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add (\(selectedCardIDs.count))") {
+                        let selected = results
+                            .filter { selectedCardIDs.contains($0.masterCardId) }
+                            .map { NewTradeItemInput(cardID: $0.masterCardId) }
+                        onConfirm(selected)
+                        dismiss()
+                    }
+                    .disabled(selectedCardIDs.isEmpty)
+                }
+            }
+        }
+        .tint(.primary)
+        .task(id: searchText) {
+            await search()
+        }
+    }
+
+    private var searchField: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(Color.secondary.opacity(0.5))
+            TextField("Search cards...", text: $searchText)
+                .font(.system(size: 13))
+                .foregroundStyle(Color.primary)
+                .tint(BindrPalette.binderGold)
+                .autocorrectionDisabled()
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 11)
+        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Color.primary.opacity(0.09), lineWidth: 1)
+        }
+    }
+
+    private var resultList: some View {
+        List(results) { card in
+            Button {
+                if selectedCardIDs.contains(card.masterCardId) {
+                    selectedCardIDs.remove(card.masterCardId)
+                } else {
+                    selectedCardIDs.insert(card.masterCardId)
+                }
+            } label: {
+                HStack(spacing: 12) {
+                    CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: card.displayImageSrc)) { image in
+                        image.resizable().aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color.white.opacity(0.05))
+                    }
+                    .frame(width: 38, height: 52)
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(card.cardName)
+                            .font(.system(size: 14, weight: .semibold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                        Text("\(card.setCode) #\(card.cardNumber)")
+                            .font(.system(size: 12))
+                            .foregroundStyle(.secondary)
+                    }
+
+                    Spacer()
+
+                    Image(systemName: selectedCardIDs.contains(card.masterCardId) ? "checkmark.circle.fill" : "circle")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundStyle(selectedCardIDs.contains(card.masterCardId) ? BindrPalette.binderGold : Color.secondary.opacity(0.45))
+                }
+            }
+            .buttonStyle(.plain)
+        }
+        .listStyle(.plain)
+    }
+
+    private func search() async {
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard query.count >= 2 else {
+            results = []
+            selectedCardIDs = []
+            return
+        }
+
+        isSearching = true
+        defer { isSearching = false }
+        let found = await services.cardData.search(query: query)
+        guard !Task.isCancelled else { return }
+        results = Array(found.prefix(80))
+        selectedCardIDs = selectedCardIDs.intersection(Set(results.map(\.masterCardId)))
     }
 }

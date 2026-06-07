@@ -96,7 +96,7 @@ struct PremiumUpgradeView: View {
 
             OnboardingHeadline(
                 title: "Unlock the full experience.",
-                subtitle: "Advanced tools to track value, discover suggested trades, and manage your binders with a professional edge."
+                subtitle: "Advanced tools to track value, spot Trade Wall opportunities, and manage your binders with a professional edge."
             )
         }
     }
@@ -356,4 +356,3 @@ private struct ChromeGlassCapsuleButton: View {
         .buttonStyle(.plain)
     }
 }
-

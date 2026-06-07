@@ -42,7 +42,8 @@ final class CollectionLedgerService {
         /// Gift: who gave the card.
         giftFrom: String?,
         /// Bought: seller / store (logged on ``LedgerLine/counterparty``).
-        boughtFrom: String?
+        boughtFrom: String?,
+        transactionGroupId: UUID? = nil
     ) throws {
         guard quantity > 0 else { return }
         if !store.isPremium {
@@ -84,7 +85,7 @@ final class CollectionLedgerService {
             counterparty: counterparty,
             channel: channel,
             externalRef: nil,
-            transactionGroupId: nil
+            transactionGroupId: transactionGroupId
         )
         modelContext.insert(line)
 
@@ -162,7 +163,8 @@ final class CollectionLedgerService {
         unitPrice: Double? = nil,
         counterparty: String? = nil,
         notes: String? = nil,
-        preferredLotIDs: Set<UUID> = []
+        preferredLotIDs: Set<UUID> = [],
+        transactionGroupId: UUID? = nil
     ) throws {
         guard item.itemKind == ProductKind.singleCard.rawValue || item.itemKind == ProductKind.gradedItem.rawValue else {
             throw CollectionLedgerError.notSingleCardStack
@@ -192,7 +194,7 @@ final class CollectionLedgerService {
             counterparty: cleanCounterparty,
             channel: dispositionChannel(for: kind),
             externalRef: nil,
-            transactionGroupId: nil
+            transactionGroupId: transactionGroupId
         )
         modelContext.insert(line)
 

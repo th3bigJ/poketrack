@@ -7,6 +7,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
     case binders
     case decks
     case transactions
+    case tradeCalculator
     case themes
     case gradingOpportunities
 
@@ -19,6 +20,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
         case .binders: return "Binders"
         case .decks: return "Deck Builder"
         case .transactions: return "Transactions"
+        case .tradeCalculator: return "Trade Calculator"
         case .themes: return "Themes"
         case .gradingOpportunities: return "Grading Opportunities"
         }

@@ -100,8 +100,6 @@ struct SuggestedTradesView: View {
             let friends = try await services.socialFriend.fetchFriends()
             guard !friends.isEmpty else { return }
 
-            let friendIDs = friends.map(\.id)
-
             var friendWishlistMap: [UUID: [String]] = [:]
             await withTaskGroup(of: (UUID, [String]).self) { group in
                 for friend in friends {
@@ -117,7 +115,6 @@ struct SuggestedTradesView: View {
                 }
             }
 
-            let myWishlist = Set<String>(services.wishlist?.items.map(\.cardID) ?? [])
             let myOwnedCardIDs = Set<String>(collectionItems.compactMap { item in
                 guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
                 return item.cardID

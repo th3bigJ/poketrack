@@ -181,7 +181,7 @@ struct TradeWallView: View {
                 Text("Nothing on the trade wall yet")
                     .font(.system(size: 15, weight: .bold))
                     .foregroundStyle(.primary)
-                Text("Suggested matches and cards or sealed products your friends have on their trade lists will appear here.")
+                Text("Suggested matches, wishlist opportunities, and cards your friends have marked available will appear here.")
                     .font(.system(size: 13))
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -218,8 +218,6 @@ struct TradeWallView: View {
                 return
             }
 
-            let friendIDs = friends.map(\.id)
-
             var friendWishlistMap: [UUID: [String]] = [:]
             await withTaskGroup(of: (UUID, [String]).self) { group in
                 for friend in friends {
@@ -235,7 +233,6 @@ struct TradeWallView: View {
                 }
             }
 
-            let myWishlist = Set<String>(services.wishlist?.items.map(\.cardID) ?? [])
             let myOwnedCardIDs = Set<String>(collectionItems.compactMap { item in
                 guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
                 return item.cardID

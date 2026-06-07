@@ -283,6 +283,10 @@ enum BinderEmbossMode: String, CaseIterable, Identifiable, Codable {
     /// When `true`, the binder cover can show its value label. User-toggleable
     /// from the create/edit sheet. Defaults to `true` to preserve current behaviour.
     var showValueOnCover: Bool = true
+    /// When `true`, filled binder slots show a subtle market-price badge on
+    /// the card face. Defaults to `false` so existing binders keep the cleaner
+    /// visual look unless the user opts in.
+    var showPriceOverlay: Bool = false
     /// Cover title/subtitle/value color. Stored as ``BinderTitleTextColor`` raw value.
     var titleTextColor: String = BinderTitleTextColor.gold.rawValue
     /// Cover title/subtitle/value font design. Stored as ``BinderTitleFontStyle`` raw value.
@@ -309,6 +313,7 @@ enum BinderEmbossMode: String, CaseIterable, Identifiable, Codable {
         texture: BinderTexture = .leather,
         showCardPreview: Bool = true,
         showValueOnCover: Bool = true,
+        showPriceOverlay: Bool = false,
         titleTextColor: BinderTitleTextColor = .gold,
         titleFontStyle: BinderTitleFontStyle = .serif
     ) {
@@ -320,6 +325,7 @@ enum BinderEmbossMode: String, CaseIterable, Identifiable, Codable {
         self.texture = texture.rawValue
         self.showCardPreview = showCardPreview
         self.showValueOnCover = showValueOnCover
+        self.showPriceOverlay = showPriceOverlay
         self.titleTextColor = titleTextColor.rawValue
         self.titleFontStyle = titleFontStyle.rawValue
         self.createdAt = Date()

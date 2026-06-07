@@ -20,6 +20,7 @@ struct BindersRootView: View {
     /// gutter — keeps padding in lockstep with header changes (e.g. font
     /// scaling) without hard-coding a constant.
     @State private var bindersHeaderHeight: CGFloat = 64
+    @State private var refreshTrigger = 0
 
     // MARK: Custom-presentation state
     //
@@ -64,6 +65,7 @@ struct BindersRootView: View {
         // header; `bindersHeader` itself paints `.ultraThinMaterial`.
         ZStack(alignment: .top) {
             content
+                .id(refreshTrigger)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .safeAreaInset(edge: .top, spacing: 0) {
                     Color.clear.frame(height: bindersHeaderHeight)
@@ -115,9 +117,20 @@ struct BindersRootView: View {
         .coordinateSpace(name: "bindersRoot")
         .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
-        .sheet(isPresented: $showCreateSheet) {
+        .sheet(isPresented: $showCreateSheet, onDismiss: {
+            gridResolvedURLs = [:]
+            gridResolvedValues = [:]
+            modelContext.processPendingChanges()
+            refreshTrigger += 1
+        }) {
             CreateBinderSheet()
                 .environment(services)
+        }
+        .onChange(of: showCreateSheet) { _, isPresented in
+            if !isPresented {
+                modelContext.processPendingChanges()
+                refreshTrigger += 1
+            }
         }
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
@@ -367,6 +380,14 @@ private struct BinderCardCell: View {
     @State private var totalUSDValue: Double = 0
     @State private var hasLoadedValue: Bool = false
 
+    private var reloadSignature: String {
+        let slotSignature = binder.slotList
+            .sorted { $0.position < $1.position }
+            .map { "\($0.position)|\($0.cardID)|\($0.variantKey)" }
+            .joined(separator: ";")
+        return "\(binder.id.uuidString)|\(binder.title)|\(binder.showCardPreview)|\(binder.showValueOnCover)|\(binder.showPriceOverlay)|\(slotSignature)"
+    }
+
     var body: some View {
         BinderCoverView(
             binder: binder,
@@ -378,7 +399,10 @@ private struct BinderCardCell: View {
         // (card sizes, text, spacing) are identical. 
         .subtitleOverride(subtitleText)
         .peekingURLsOverride(cardURLs)
-        .task {
+        .task(id: reloadSignature) {
+            cardURLs = nil
+            totalUSDValue = 0
+            hasLoadedValue = false
             await loadCardURLs()
             await refreshTotalValue()
             onValueLoaded?(displayedValueText)
