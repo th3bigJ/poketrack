@@ -7,6 +7,7 @@ struct PokemonCatalogSyncPhase {
     let store: CatalogStore
 
     private let pokemonNationalDexAuxBlobKey = "pokemon_national_dex_json"
+    private let variantsCatalogAuxBlobKey = VariantsCatalogService.auxBlobKey
 
     func syncCatalogIfNeeded(progress: CatalogSyncProgressReporter) async {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
@@ -113,6 +114,29 @@ struct PokemonCatalogSyncPhase {
         } catch {
             try? await store.setMeta("sync_failed", "1")
         }
+    }
+
+    func refreshVariantsCatalog() async {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
+        let url = AppConfiguration.r2CatalogURL(path: "variants.json")
+        do {
+            var request = URLRequest(url: url)
+            if let prevEtag = await store.meta(VariantsCatalogService.etagMetaKey), !prevEtag.isEmpty {
+                request.setValue(prevEtag, forHTTPHeaderField: "If-None-Match")
+            }
+            let (data, response) = try await session.data(for: request)
+            guard let http = response as? HTTPURLResponse else { return }
+            if http.statusCode == 304 {
+                try? await store.touchAuxBlobFetchedAt(key: variantsCatalogAuxBlobKey)
+                return
+            }
+            guard (200...299).contains(http.statusCode), !data.isEmpty else { return }
+            guard (try? JSONDecoder().decode(VariantsCatalog.self, from: data)) != nil else { return }
+            try? await store.upsertAuxBlob(key: variantsCatalogAuxBlobKey, data: data)
+            if let etag = http.value(forHTTPHeaderField: "ETag") ?? http.value(forHTTPHeaderField: "Etag") {
+                try? await store.setMeta(VariantsCatalogService.etagMetaKey, etag)
+            }
+        } catch {}
     }
 
     func refreshNationalDexMetadata() async {

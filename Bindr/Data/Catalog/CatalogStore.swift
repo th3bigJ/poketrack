@@ -232,8 +232,8 @@ final class CatalogStore: @unchecked Sendable {
         stmt = nil
         guard storedVersion < currentVersion else { return }
 
-        // Clear sync fingerprints so CatalogSyncCoordinator re-downloads card JSON for both brands.
-        let clear = "DELETE FROM sync_meta WHERE key IN ('catalog_sets_sha256', 'catalog_etag', 'onepiece_catalog_row_fingerprint', 'onepiece_catalog_sets_sha256', 'onepiece_catalog_sets_etag');"
+        // Clear sync fingerprints so CatalogSyncCoordinator re-downloads card JSON.
+        let clear = "DELETE FROM sync_meta WHERE key IN ('catalog_sets_sha256', 'catalog_etag');"
         var mErr: UnsafeMutablePointer<CChar>?
         sqlite3_exec(db, clear, nil, nil, &mErr)
         if let e = mErr { sqlite3_free(e) }
@@ -244,7 +244,7 @@ final class CatalogStore: @unchecked Sendable {
         if let e = uErr { sqlite3_free(e) }
     }
 
-    /// v2: `brand` column (`pokemon` | `onepiece`) so franchises can be purged independently.
+    /// v2: `brand` column so catalog data can be purged by franchise.
     private func migrateBrandPartitionIfNeededLocked() throws {
         guard let db else { throw CatalogStoreError.notOpen }
         if tableHasColumnLocked(db, table: "catalog_sets", column: "brand") { return }
@@ -468,16 +468,6 @@ final class CatalogStore: @unchecked Sendable {
                             "catalog_import_at",
                             "pokemon_national_dex_json",
                             "pokemon_national_dex_etag",
-                        ]
-                    case .onePiece:
-                        keys = [
-                            "onepiece_catalog_sets_sha256",
-                            "onepiece_catalog_sets_etag",
-                            "onepiece_catalog_row_fingerprint",
-                            "onepiece_character_names_json",
-                            "onepiece_character_names_etag",
-                            "onepiece_character_subtypes_json",
-                            "onepiece_character_subtypes_etag",
                         ]
                     }
                     for key in keys {
@@ -1142,7 +1132,7 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    /// Per-set price history JSON (`pricing/price-history/…` or ONE PIECE `pricing/history/…`), refreshed with daily market pricing after 03:00 local.
+    /// Per-set price history JSON (`pricing/price-history/…`), refreshed with daily market pricing after 03:00 local.
     func upsertPriceHistory(setCode: String, json: Data, brand: TCGBrand) async throws {
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             queue.async {
@@ -1194,7 +1184,7 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    /// Per-set price trends JSON (`pricing/price-trends/…` or ONE PIECE `pricing/trends/…`), refreshed with daily market pricing after 03:00 local.
+    /// Per-set price trends JSON (`pricing/price-trends/…`), refreshed with daily market pricing after 03:00 local.
     func upsertPriceTrends(setCode: String, json: Data, brand: TCGBrand) async throws {
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<Void, Error>) in
             queue.async {

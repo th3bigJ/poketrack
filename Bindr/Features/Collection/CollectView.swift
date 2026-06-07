@@ -64,9 +64,7 @@ struct CollectView: View {
         min(max(gridOptions.columnCount, 1), 4)
     }
 
-    private var activeBrand: TCGBrand {
-        selectedBrand ?? services.brandSettings.selectedCatalogBrand
-    }
+    private var activeBrand: TCGBrand { .pokemon }
 
     private func setNameKey(brand: TCGBrand, setCode: String) -> String {
         "\(brand.rawValue)|\(setCode)"

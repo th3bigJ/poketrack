@@ -42,14 +42,8 @@ struct CardScannerView: View {
     @State private var selectedVariantsByResultID: [UUID: String] = [:]
     /// Quantity selected per variant for each scanned card (resultID -> variantKey -> qty).
     @State private var selectedVariantQuantitiesByResultID: [UUID: [String: Int]] = [:]
-    @State private var showOnePieceDebugSheet = false
     @State private var showScanLimitPaywall = false
     @State private var showQuantityWarning = false
-
-    /// Show ONE PIECE debug affordance when the active scanner brand is ONE PIECE.
-    private var showOnePieceDebugButton: Bool {
-        viewModel.scanBrand == .onePiece
-    }
 
     private var captureMode: ScannerCaptureMode {
         ScannerCaptureMode(rawValue: captureModeRawValue) ?? .auto
@@ -223,22 +217,6 @@ struct CardScannerView: View {
                         HStack {
                             Spacer(minLength: 0)
                             HStack(spacing: 12) {
-                                if showOnePieceDebugButton {
-                                    Button {
-                                        if !isCameraPaused {
-                                            isCameraPaused = true
-                                            viewModel.stopSession()
-                                        }
-                                        showOnePieceDebugSheet = true
-                                    } label: {
-                                        Image(systemName: "info.circle")
-                                            .font(.system(size: 30))
-                                            .foregroundStyle(.white, .black.opacity(0.45))
-                                    }
-                                    .buttonStyle(.plain)
-                                    .accessibilityLabel("ONE PIECE scan debug")
-                                }
-
                                 if !viewModel.scanResults.isEmpty {
                                     Button {
                                         guard canAddCurrentScannedCard else { return }
@@ -356,43 +334,6 @@ struct CardScannerView: View {
             }
             .onChange(of: showBulkAddSheet) { _, isShowing in
                 if isShowing { viewModel.stopSession() }
-            }
-            .onChange(of: showOnePieceDebugSheet) { _, isShowing in
-                if isShowing {
-                    if !isCameraPaused { isCameraPaused = true }
-                    viewModel.stopSession()
-                }
-            }
-            .sheet(isPresented: $showOnePieceDebugSheet) {
-                NavigationStack {
-                    ScrollView {
-                        VStack(alignment: .leading, spacing: 16) {
-                            if let debugImage = viewModel.onePieceDebugImage {
-                                OnePieceDebugPreviewCard(
-                                    image: debugImage,
-                                    ocrFraction: viewModel.onePieceOCRFraction,
-                                    effectBandStart: viewModel.onePieceEffectBandStart,
-                                    effectBandEnd: viewModel.onePieceEffectBandEnd
-                                )
-                            }
-
-                            Text(viewModel.onePieceDebugText)
-                                .font(.system(.footnote, design: .monospaced))
-                                .foregroundStyle(.primary)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        }
-                        .padding()
-                    }
-                    .navigationTitle("ONE PIECE debug")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") { showOnePieceDebugSheet = false }
-                        }
-                    }
-                }
-                .presentationDetents([.medium, .large])
-                .presentationDragIndicator(.visible)
             }
             .sheet(isPresented: $showBulkAddSheet, onDismiss: {
                 if !isCameraPaused { viewModel.startSession() }
@@ -561,78 +502,6 @@ struct CardScannerView: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(mode == .auto ? "Auto capture" : "Manual capture")
-    }
-}
-
-private struct OnePieceDebugPreviewCard: View {
-    let image: UIImage
-    let ocrFraction: CGFloat
-    let effectBandStart: CGFloat
-    let effectBandEnd: CGFloat
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("Captured image with OCR area")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.primary)
-
-            GeometryReader { geo in
-                let width = geo.size.width
-                let imageAspect = max(image.size.width, 1) / max(image.size.height, 1)
-                let height = width / imageAspect
-                let footerHeight = height * ocrFraction
-                let effectY = height * effectBandStart
-                let effectHeight = height * (effectBandEnd - effectBandStart)
-
-                ZStack(alignment: .top) {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: width, height: height)
-                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-
-                    Rectangle()
-                        .fill(Color.cyan.opacity(0.16))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 0, style: .continuous)
-                                .stroke(Color.cyan, lineWidth: 2)
-                        )
-                        .frame(width: width, height: effectHeight)
-                        .offset(y: effectY)
-
-                    Text("OCR ranks with this 60-82% effect band")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 6)
-                        .background(.black.opacity(0.6), in: Capsule())
-                        .offset(y: max(effectY + 8, 8))
-
-                    VStack {
-                        Spacer(minLength: 0)
-
-                        Rectangle()
-                            .fill(Color.orange.opacity(0.18))
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 0, style: .continuous)
-                                    .stroke(Color.orange, lineWidth: 2)
-                            )
-                            .frame(width: width, height: footerHeight)
-                            .overlay(alignment: .top) {
-                                Text("OCR filters with this bottom 18% strip")
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(.white)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 6)
-                                    .background(.black.opacity(0.6), in: Capsule())
-                                    .padding(.top, 8)
-                            }
-                    }
-                }
-                .frame(width: width, height: height)
-            }
-            .aspectRatio(max(image.size.width, 1) / max(image.size.height, 1), contentMode: .fit)
-        }
     }
 }
 
@@ -824,7 +693,6 @@ private struct ScannerBrandPickPanel: View {
     private func brandPickerImage(_ brand: TCGBrand) -> Image {
         switch brand {
         case .pokemon: Image("BrandPokemonLogo")
-        case .onePiece: Image("BrandOnePieceLogo")
         }
     }
 }

@@ -110,67 +110,32 @@ final class PTCGLService {
         let setNameLookup = buildSetNameLookup(from: sets)
         
         output += "DECK LIST: \(deck.title)\n"
-        output += "TCG: \(deck.tcgBrand == .pokemon ? "Pokémon" : "One Piece")\n"
+        output += "TCG: Pokémon\n"
         output += "Format: \(deck.deckFormat.displayName)\n"
         output += "Total Cards: \(deck.totalCardCount)\n\n"
-        
-        if deck.tcgBrand == .onePiece {
-            let leaders = cards.filter { $0.opCategory == .leader }
-            let characters = cards.filter { $0.opCategory == .character }
-            let events = cards.filter { $0.opCategory == .event }
-            let stages = cards.filter { $0.opCategory == .stage }
-            
-            if !leaders.isEmpty {
-                output += "LEADER (\(leaders.reduce(0) { $0 + $1.quantity })):\n"
-                for card in leaders {
-                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
-                }
-                output += "\n"
+
+        let pokemon = cards.filter { $0.pokemonCategory == .pokemon }
+        let trainers = cards.filter { $0.pokemonCategory == .trainer }
+        let energy = cards.filter { $0.pokemonCategory == .energy }
+
+        if !pokemon.isEmpty {
+            output += "POKÉMON (\(pokemon.reduce(0) { $0 + $1.quantity })):\n"
+            for card in pokemon {
+                output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
             }
-            if !characters.isEmpty {
-                output += "CHARACTERS (\(characters.reduce(0) { $0 + $1.quantity })):\n"
-                for card in characters {
-                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
-                }
-                output += "\n"
+            output += "\n"
+        }
+        if !trainers.isEmpty {
+            output += "TRAINER (\(trainers.reduce(0) { $0 + $1.quantity })):\n"
+            for card in trainers {
+                output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
             }
-            if !events.isEmpty {
-                output += "EVENTS (\(events.reduce(0) { $0 + $1.quantity })):\n"
-                for card in events {
-                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
-                }
-                output += "\n"
-            }
-            if !stages.isEmpty {
-                output += "STAGES (\(stages.reduce(0) { $0 + $1.quantity })):\n"
-                for card in stages {
-                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
-                }
-            }
-        } else {
-            let pokemon = cards.filter { $0.pokemonCategory == .pokemon }
-            let trainers = cards.filter { $0.pokemonCategory == .trainer }
-            let energy = cards.filter { $0.pokemonCategory == .energy }
-            
-            if !pokemon.isEmpty {
-                output += "POKÉMON (\(pokemon.reduce(0) { $0 + $1.quantity })):\n"
-                for card in pokemon {
-                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
-                }
-                output += "\n"
-            }
-            if !trainers.isEmpty {
-                output += "TRAINER (\(trainers.reduce(0) { $0 + $1.quantity })):\n"
-                for card in trainers {
-                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
-                }
-                output += "\n"
-            }
-            if !energy.isEmpty {
-                output += "ENERGY (\(energy.reduce(0) { $0 + $1.quantity })):\n"
-                for card in energy {
-                    output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
-                }
+            output += "\n"
+        }
+        if !energy.isEmpty {
+            output += "ENERGY (\(energy.reduce(0) { $0 + $1.quantity })):\n"
+            for card in energy {
+                output += formatLeagueCard(card, nameBySetKey: setNameLookup, cardsByMasterId: cardsByMasterId) + "\n"
             }
         }
         

@@ -558,8 +558,6 @@ enum BrowseHomeTab: String, CaseIterable, Identifiable {
 enum BrowseInlineDetailRoute: Hashable {
     case set(TCGSet)
     case dex(dexId: Int, displayName: String)
-    case onePieceCharacter(String)
-    case onePieceSubtype(String)
 
     var title: String {
         switch self {
@@ -567,8 +565,6 @@ enum BrowseInlineDetailRoute: Hashable {
             return set.name
         case .dex(_, let displayName):
             return displayName
-        case .onePieceCharacter(let name), .onePieceSubtype(let name):
-            return name
         }
     }
 }
@@ -707,7 +703,7 @@ struct BrowseView: View {
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var showWishlistPaywall = false
-    @State private var showMasterSet = false
+    @State private var setCompletionMode: SetCompletionMode = .full
     @State private var lastSelectedSetCodeInSetsTab: String?
     @State private var pendingSetRestoreRowID: String?
     @State private var setRestoreToken: Int = 0
@@ -933,9 +929,12 @@ struct BrowseView: View {
                 await refreshInlineDetailPriceCache()
             }
         }
-        .onChange(of: showMasterSet) { _, _ in
-            guard case .some(.set) = inlineDetailRoute else { return }
-            Task { @MainActor in await rebuildMasterSetVariantRows() }
+        .onChange(of: setCompletionMode) { _, _ in
+            guard inlineDetailRoute != nil else { return }
+            Task { @MainActor in
+                await rebuildMasterSetVariantRows()
+                await refreshInlineDetailPriceCache()
+            }
         }
     }
 
@@ -1128,10 +1127,6 @@ struct BrowseView: View {
                 return "Search \(formattedResultCount) cards in set"
             case .dex:
                 return "Search \(formattedResultCount) cards for Pokémon"
-            case .onePieceCharacter:
-                return "Search \(formattedResultCount) cards for character"
-            case .onePieceSubtype:
-                return "Search \(formattedResultCount) cards for subtype"
             }
         }
         switch selectedTab {
@@ -1140,7 +1135,7 @@ struct BrowseView: View {
         case .sets:
             return "Search sets"
         case .pokemon:
-            return currentBrand == .pokemon ? "Search Pokémon" : "Search characters or subtypes"
+            return "Search Pokémon"
         case .products:
             return "Search products"
         }
@@ -1257,7 +1252,7 @@ struct BrowseView: View {
             if let inlineDetailRoute {
                 inlineDetailContent(route: inlineDetailRoute)
             } else {
-                BrowseSetsTabContent(query: query, showMasterSet: $showMasterSet) { set in
+                BrowseSetsTabContent(query: query, setCompletionMode: $setCompletionMode) { set in
                     HapticManager.impact(.light)
                     lastSelectedSetCodeInSetsTab = set.setCode
                     inlineDetailRoute = .set(set)
@@ -1282,7 +1277,7 @@ struct BrowseView: View {
         let filteredCards = filteredInlineDetailCards
         let isSetRoute: Bool = { if case .set = route { return true }; return false }()
         let isDexRoute: Bool = { if case .dex = route { return true }; return false }()
-        let useMasterGrid = showMasterSet && (isSetRoute || isDexRoute)
+        let useMasterGrid = setCompletionMode.usesVariantGrid && (isSetRoute || isDexRoute)
         let allVariantRows = useMasterGrid ? masterSetVariantRows : []
         let variantOwnedQuantities = ownedQuantityByCardVariant
         let variantOwnedKeys = ownedCardVariantKeys
@@ -1589,12 +1584,29 @@ struct BrowseView: View {
         nextMaster.reserveCapacity(inlineDetailCards.count)
         for card in inlineDetailCards {
             guard let entry = await services.pricing.pricing(for: card) else { continue }
-            if let usd = browseMarketPriceUSD(for: entry) {
+            if let usd = services.variantsCatalog.fullSetSlotMarketUSD(for: entry) {
                 next[card.masterCardId] = usd
             }
-            let masterUSD = allVariantsMarketUSDForEntry(entry)
-            if masterUSD > 0 {
-                nextMaster[card.masterCardId] = masterUSD
+            if setCompletionMode.usesVariantGrid {
+                let keys = await services.pricing.variantKeys(for: card)
+                let eligible = services.variantsCatalog.eligibleVariantKeys(
+                    from: keys,
+                    card: card,
+                    mode: setCompletionMode
+                )
+                let masterUSD = services.variantsCatalog.marketUSD(
+                    for: entry,
+                    mode: setCompletionMode,
+                    eligibleVariantKeys: eligible
+                )
+                if masterUSD > 0 {
+                    nextMaster[card.masterCardId] = masterUSD
+                }
+            } else {
+                let masterUSD = allVariantsMarketUSDForEntry(entry)
+                if masterUSD > 0 {
+                    nextMaster[card.masterCardId] = masterUSD
+                }
             }
         }
         inlineDetailPriceByCardID = next
@@ -2053,42 +2065,11 @@ struct BrowseView: View {
                 if abilityPresence == .yes, hasAbilities == false { return false }
                 if abilityPresence == .no, hasAbilities == true { return false }
             }
-            if filters.opCardTypes.isEmpty == false {
-                let cardTypes = Set((card.category ?? "").split(separator: ",").map {
-                    $0.trimmingCharacters(in: .whitespacesAndNewlines)
-                })
-                if cardTypes.isDisjoint(with: filters.opCardTypes) {
-                    return false
-                }
-            }
-            if filters.opAttributes.isEmpty == false {
-                let attrs = Set(card.opAttributes ?? [])
-                if attrs.isDisjoint(with: filters.opAttributes) { return false }
-            }
-            if filters.opCosts.isEmpty == false {
-                guard let cost = card.opCost, filters.opCosts.contains(cost) else { return false }
-            }
-            if filters.opCounters.isEmpty == false {
-                guard let counter = card.opCounter, filters.opCounters.contains(counter) else { return false }
-            }
-            if filters.opLives.isEmpty == false {
-                guard let life = card.opLife, filters.opLives.contains(life) else { return false }
-            }
-            if filters.opPowers.isEmpty == false {
-                guard let power = card.opPower, filters.opPowers.contains(power) else { return false }
-            }
             return true
         }
     }
 
     private func resolvedCardType(for card: BrowseFilterCard, brand: TCGBrand) -> BrowseCardTypeFilter {
-        if brand == .onePiece {
-            let category = card.category?.lowercased() ?? ""
-            if category.contains("event") {
-                return .trainer
-            }
-            return .pokemon
-        }
         let category = card.category?.lowercased() ?? ""
         if category.contains("trainer") || card.trainerType != nil {
             return .trainer
@@ -2246,10 +2227,6 @@ struct BrowseView: View {
             inlineDetailCards = sortCardsByLocalIdHighestFirst(loaded)
         case .dex(let dexId, _):
             inlineDetailCards = await services.cardData.cards(matchingNationalDex: dexId)
-        case .onePieceCharacter(let name):
-            inlineDetailCards = await services.cardData.cards(matchingOnePieceCharacterName: name)
-        case .onePieceSubtype(let name):
-            inlineDetailCards = await services.cardData.cards(matchingOnePieceSubtype: name)
         }
 
         ImagePrefetcher.shared.prefetchCardWindow(inlineDetailCards, startingAt: 0, count: 24)
@@ -2264,29 +2241,30 @@ struct BrowseView: View {
             if case .dex = inlineDetailRoute { return true }
             return false
         }()
-        guard isSetOrDex else {
+        guard isSetOrDex, setCompletionMode.usesVariantGrid else {
             masterSetVariantRows = []
             return
         }
         var rows: [MasterSetVariantRow] = []
         for card in inlineDetailCards {
             let keys = await services.pricing.variantKeys(for: card)
-            if keys.isEmpty {
-                rows.append(MasterSetVariantRow(id: "\(card.masterCardId)::normal", card: card, variant: "normal"))
-            } else {
-                for key in keys {
-                    rows.append(MasterSetVariantRow(id: "\(card.masterCardId)::\(key)", card: card, variant: key))
-                }
+            let eligible = services.variantsCatalog.eligibleVariantKeys(
+                from: keys,
+                card: card,
+                mode: setCompletionMode
+            )
+            for key in eligible {
+                rows.append(MasterSetVariantRow(id: "\(card.masterCardId)::\(key)", card: card, variant: key))
             }
         }
         masterSetVariantRows = rows
     }
 
-    private func setModeChip(label: String, isMaster: Bool) -> some View {
-        let isSelected = showMasterSet == isMaster
+    private func setModeChip(label: String, mode: SetCompletionMode) -> some View {
+        let isSelected = setCompletionMode == mode
         return Button {
             withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
-                showMasterSet = isMaster
+                setCompletionMode = mode
             }
             Haptics.lightImpact()
         } label: {
@@ -2339,7 +2317,7 @@ struct BrowseView: View {
 
     @ViewBuilder
     private func setSummaryInlineNavigation(for set: TCGSet) -> some View {
-        HStack(spacing: 6) {
+        HStack {
             setAdjacentSetArrow(
                 label: "Previous set",
                 systemImage: "chevron.left",
@@ -2349,12 +2327,16 @@ struct BrowseView: View {
                 navigateToAdjacentSet(from: set, offset: -1)
             }
 
+            Spacer(minLength: 8)
+
             SetLogoAsyncImage(
                 logoSrc: set.logoSrc,
                 height: 32,
                 brand: services.brandSettings.selectedCatalogBrand
             )
-            .frame(maxWidth: 88)
+            .frame(maxWidth: 120)
+
+            Spacer(minLength: 8)
 
             setAdjacentSetArrow(
                 label: "Next set",
@@ -2363,6 +2345,45 @@ struct BrowseView: View {
                 controlSize: 32
             ) {
                 navigateToAdjacentSet(from: set, offset: 1)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func dexSummaryInlineNavigation(for dexId: Int) -> some View {
+        let pokemon = services.cardData.nationalDexPokemon.first { $0.nationalDexNumber == dexId }
+        HStack {
+            setAdjacentSetArrow(
+                label: "Previous Pokémon",
+                systemImage: "chevron.left",
+                enabled: adjacentPokemon(to: dexId, offset: -1) != nil,
+                controlSize: 32
+            ) {
+                navigateToAdjacentPokemon(from: dexId, offset: -1)
+            }
+
+            Spacer(minLength: 8)
+
+            if let pokemon {
+                CachedAsyncImage(
+                    url: AppConfiguration.pokemonArtURL(imageFileName: pokemon.imageUrl)
+                ) { img in
+                    img.resizable().scaledToFit()
+                } placeholder: {
+                    Color.clear
+                }
+                .frame(width: 56, height: 56)
+            }
+
+            Spacer(minLength: 8)
+
+            setAdjacentSetArrow(
+                label: "Next Pokémon",
+                systemImage: "chevron.right",
+                enabled: adjacentPokemon(to: dexId, offset: 1) != nil,
+                controlSize: 32
+            ) {
+                navigateToAdjacentPokemon(from: dexId, offset: 1)
             }
         }
     }
@@ -2391,21 +2412,32 @@ struct BrowseView: View {
     }
 
     private func setProgressBar(for set: TCGSet, cards: [Card]) -> some View {
-        let priceDict = showMasterSet ? inlineDetailMasterPriceByCardID : inlineDetailPriceByCardID
-        let masterTotal = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal ?? cards.count) : (set.cardCountTotal ?? cards.count)
-        let total = masterTotal
+        let priceDict = setCompletionMode.usesVariantGrid ? inlineDetailMasterPriceByCardID : inlineDetailPriceByCardID
+        let total = setCompletionMode.usesVariantGrid
+            ? (masterSetVariantRows.count > 0 ? masterSetVariantRows.count : set.cardCountTotal ?? cards.count)
+            : (set.cardCountTotal ?? cards.count)
         var ownedVariantsByCardID: [String: Set<String>] = [:]
         for item in collectionItems where item.quantity > 0 {
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             guard brand == services.brandSettings.selectedCatalogBrand else { continue }
             let variant = item.variantKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-            ownedVariantsByCardID[item.cardID, default: []].insert(variant.isEmpty ? "normal" : variant)
+            let normalized = variant.isEmpty ? "normal" : variant
+            guard !services.variantsCatalog.isChampionshipVariant(normalized) else { continue }
+            ownedVariantsByCardID[item.cardID, default: []].insert(normalized)
         }
         let ownedCardIDs = Set(ownedVariantsByCardID.keys)
-        // Master set: count each owned variant of a card separately; full set: count the card once.
-        let owned = showMasterSet
-            ? cards.reduce(0) { $0 + (ownedVariantsByCardID[$1.masterCardId]?.count ?? 0) }
-            : cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+        let owned: Int = {
+            switch setCompletionMode {
+            case .full:
+                return cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+            case .master, .grandMaster:
+                return cards.reduce(0) { partial, card in
+                    let ownedVariants = ownedVariantsByCardID[card.masterCardId] ?? []
+                    let counted = ownedVariants.filter { services.variantsCatalog.includesVariant($0, mode: setCompletionMode) }.count
+                    return partial + counted
+                }
+            }
+        }()
         let progress = total > 0 ? min(CGFloat(owned) / CGFloat(total), 1) : 0
         let currency = services.priceDisplay.currency
         let fx = services.pricing.usdToGbp
@@ -2419,17 +2451,18 @@ struct BrowseView: View {
         let trends = inlineDetailSetTrendChanges
 
         return VStack(spacing: 14) {
-            // Chip bar + adjacent-set navigation
-            HStack(alignment: .center, spacing: 8) {
-                setModeChip(label: "Full Set", isMaster: false)
-                setModeChip(label: "Master Set", isMaster: true)
-                Spacer(minLength: 8)
-                setSummaryInlineNavigation(for: set)
+            setSummaryInlineNavigation(for: set)
+
+            HStack(spacing: 8) {
+                setModeChip(label: SetCompletionMode.full.chipLabel, mode: .full)
+                setModeChip(label: SetCompletionMode.master.chipLabel, mode: .master)
+                setModeChip(label: SetCompletionMode.grandMaster.chipLabel, mode: .grandMaster)
+                Spacer(minLength: 0)
             }
 
             // Header
             HStack(alignment: .firstTextBaseline) {
-                Text(showMasterSet ? "Master Set Completion" : "Set Completion")
+                Text(setCompletionMode.completionTitle)
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .foregroundStyle(.primary)
                 Spacer()
@@ -2468,7 +2501,7 @@ struct BrowseView: View {
             // Value row
             HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(showMasterSet ? "MASTER VALUE" : "SET VALUE")
+                    Text(setCompletionMode.valueCaption)
                         .font(.system(size: 10, weight: .semibold, design: .rounded))
                         .foregroundStyle(.secondary)
                     Text(hasPrices ? currency.format(amountUSD: totalValue, usdToGbp: fx) : "—")
@@ -2514,20 +2547,32 @@ struct BrowseView: View {
     }
 
     private func dexProgressBar(dexId: Int, displayName: String, cards: [Card]) -> some View {
-        let priceDict = showMasterSet ? inlineDetailMasterPriceByCardID : inlineDetailPriceByCardID
+        let priceDict = setCompletionMode.usesVariantGrid ? inlineDetailMasterPriceByCardID : inlineDetailPriceByCardID
         var ownedVariantsByCardID: [String: Set<String>] = [:]
         for item in collectionItems where item.quantity > 0 {
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             guard brand == services.brandSettings.selectedCatalogBrand else { continue }
             let variant = item.variantKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-            ownedVariantsByCardID[item.cardID, default: []].insert(variant.isEmpty ? "normal" : variant)
+            let normalized = variant.isEmpty ? "normal" : variant
+            guard !services.variantsCatalog.isChampionshipVariant(normalized) else { continue }
+            ownedVariantsByCardID[item.cardID, default: []].insert(normalized)
         }
         let ownedCardIDs = Set(ownedVariantsByCardID.keys)
-        let masterTotal = masterSetVariantRows.count
-        let displayTotal = showMasterSet ? (masterTotal > 0 ? masterTotal : cards.count) : cards.count
-        let owned = showMasterSet
-            ? cards.reduce(0) { $0 + (ownedVariantsByCardID[$1.masterCardId]?.count ?? 0) }
-            : cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+        let displayTotal = setCompletionMode.usesVariantGrid
+            ? (masterSetVariantRows.count > 0 ? masterSetVariantRows.count : cards.count)
+            : cards.count
+        let owned: Int = {
+            switch setCompletionMode {
+            case .full:
+                return cards.filter { ownedCardIDs.contains($0.masterCardId) }.count
+            case .master, .grandMaster:
+                return cards.reduce(0) { partial, card in
+                    let ownedVariants = ownedVariantsByCardID[card.masterCardId] ?? []
+                    let counted = ownedVariants.filter { services.variantsCatalog.includesVariant($0, mode: setCompletionMode) }.count
+                    return partial + counted
+                }
+            }
+        }()
         let progress = displayTotal > 0 ? min(CGFloat(owned) / CGFloat(displayTotal), 1) : 0
         let currency = services.priceDisplay.currency
         let fx = services.pricing.usdToGbp
@@ -2539,45 +2584,20 @@ struct BrowseView: View {
         let remainingValue = max(totalValue - ownedValue, 0)
         let hasPrices = totalValue > 0
         let trends = inlineDetailSetTrendChanges
-        let pokemon = services.cardData.nationalDexPokemon.first { $0.nationalDexNumber == dexId }
 
         return VStack(spacing: 14) {
-            // Chip bar + navigation
-            HStack(alignment: .center, spacing: 8) {
-                setModeChip(label: "Full Set", isMaster: false)
-                setModeChip(label: "Master Set", isMaster: true)
-                Spacer(minLength: 8)
-                setAdjacentSetArrow(
-                    label: "Previous Pokémon",
-                    systemImage: "chevron.left",
-                    enabled: adjacentPokemon(to: dexId, offset: -1) != nil,
-                    controlSize: 32
-                ) {
-                    navigateToAdjacentPokemon(from: dexId, offset: -1)
-                }
-                if let pokemon {
-                    CachedAsyncImage(
-                        url: AppConfiguration.pokemonArtURL(imageFileName: pokemon.imageUrl)
-                    ) { img in
-                        img.resizable().scaledToFit()
-                    } placeholder: {
-                        Color.clear
-                    }
-                    .frame(width: 56, height: 56)
-                }
-                setAdjacentSetArrow(
-                    label: "Next Pokémon",
-                    systemImage: "chevron.right",
-                    enabled: adjacentPokemon(to: dexId, offset: 1) != nil,
-                    controlSize: 32
-                ) {
-                    navigateToAdjacentPokemon(from: dexId, offset: 1)
-                }
+            dexSummaryInlineNavigation(for: dexId)
+
+            HStack(spacing: 8) {
+                setModeChip(label: SetCompletionMode.full.chipLabel, mode: .full)
+                setModeChip(label: SetCompletionMode.master.chipLabel, mode: .master)
+                setModeChip(label: SetCompletionMode.grandMaster.chipLabel, mode: .grandMaster)
+                Spacer(minLength: 0)
             }
 
             // Header
             HStack(alignment: .firstTextBaseline) {
-                Text(showMasterSet ? "Master Set Completion" : "Card Completion")
+                Text(setCompletionMode.dexCompletionTitle)
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .foregroundStyle(.primary)
                 Spacer()
@@ -2616,7 +2636,7 @@ struct BrowseView: View {
             // Value row
             HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(showMasterSet ? "MASTER VALUE" : "CARD VALUE")
+                    Text(setCompletionMode.dexValueCaption)
                         .font(.system(size: 10, weight: .semibold, design: .rounded))
                         .foregroundStyle(.secondary)
                     Text(hasPrices ? currency.format(amountUSD: totalValue, usdToGbp: fx) : "—")
@@ -2721,12 +2741,15 @@ private struct BrowseSetsTabContent: View {
     @Query private var collectionItems: [CollectionItem]
 
     let query: String
-    @Binding var showMasterSet: Bool
+    @Binding var setCompletionMode: SetCompletionMode
     let onSelectSet: (TCGSet) -> Void
 
     @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
     /// Master-set collected counts: each owned card+variant combination counts separately.
     @State private var variantCollectedCountBySetCode: [String: Int] = [:]
+    @State private var grandMasterCollectedCountBySetCode: [String: Int] = [:]
+    @State private var variantSlotTotalBySetCode: [String: Int] = [:]
+    @State private var grandMasterSlotTotalBySetCode: [String: Int] = [:]
     @State private var setMarketValueUSDByKey: [String: Double] = [:]
     @State private var loadedSetMarketValueKeys: Set<String> = []
     @State private var loadingSetMarketValueKeys: Set<String> = []
@@ -2744,26 +2767,14 @@ private struct BrowseSetsTabContent: View {
 
     private var groupedSets: [(title: String, sets: [TCGSet])] {
         let grouped = Dictionary(grouping: filteredSets, by: browseSeriesTitle(for:))
-        switch services.brandSettings.selectedCatalogBrand {
-        case .pokemon:
-            return grouped
-                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-                .sorted { lhs, rhs in
-                    let lhsNewest = lhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
-                    let rhsNewest = rhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
-                    if lhsNewest != rhsNewest { return lhsNewest > rhsNewest }
-                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-                }
-        case .onePiece:
-            return grouped
-                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-                .sorted { lhs, rhs in
-                    let li = onePieceSeriesOrderIndex(lhs.title)
-                    let ri = onePieceSeriesOrderIndex(rhs.title)
-                    if li != ri { return li < ri }
-                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-                }
-        }
+        return grouped
+            .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
+            .sorted { lhs, rhs in
+                let lhsNewest = lhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
+                let rhsNewest = rhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
+                if lhsNewest != rhsNewest { return lhsNewest > rhsNewest }
+                return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+            }
     }
 
     private var collectionProgressTaskKey: Int {
@@ -2787,7 +2798,7 @@ private struct BrowseSetsTabContent: View {
 
     var body: some View {
         Group {
-            masterSetChipBar
+            setCompletionModeChipBar
 
             if filteredSets.isEmpty {
                 ContentUnavailableView(
@@ -2833,7 +2844,7 @@ private struct BrowseSetsTabContent: View {
                                                     .foregroundStyle(.primary)
                                                     .lineLimit(2)
                                                 Spacer(minLength: 6)
-                                                Text(showMasterSet ? "Master Set Value" : "Full Set Value")
+                                                Text(setCompletionMode.listValueLabel)
                                                     .font(.caption2.weight(.semibold))
                                                     .foregroundStyle(.secondary)
                                                     .lineLimit(1)
@@ -2898,19 +2909,17 @@ private struct BrowseSetsTabContent: View {
         .task(id: collectionProgressTaskKey) {
             await refreshCollectedCounts()
         }
+        .task(id: variantSlotTotalsTaskKey) {
+            await refreshVariantSlotTotals()
+        }
         .task(id: setLogoPrefetchTaskKey) {
             prefetchSetLogos()
         }
     }
 
     private func browseSeriesTitle(for set: TCGSet) -> String {
-        switch services.brandSettings.selectedCatalogBrand {
-        case .pokemon:
-            let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
-            return (title?.isEmpty == false ? title! : "Other")
-        case .onePiece:
-            return normalizedOnePieceSeriesTitle(set.seriesName)
-        }
+        let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
+        return (title?.isEmpty == false ? title! : "Other")
     }
 
     private func sortSetsNewestFirst(_ sets: [TCGSet]) -> [TCGSet] {
@@ -2922,20 +2931,12 @@ private struct BrowseSetsTabContent: View {
         }
     }
 
-    private func normalizedOnePieceSeriesTitle(_ raw: String?) -> String {
-        let title = raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let lower = title.lowercased()
-        if lower.contains("booster pack") { return "Booster Pack" }
-        if lower.contains("extra booster") { return "Extra Boosters" }
-        if lower.contains("starter") { return "Starter deck" }
-        if lower.contains("premium booster") { return "Premium Booster" }
-        if lower.contains("promo") { return "Promo" }
-        return title.isEmpty ? "Other" : title
+    private var variantSlotTotalsTaskKey: String {
+        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(setCompletionMode.rawValue)|\(services.cardData.sets.count)"
     }
 
-
     private func setMarketValueTaskID(for set: TCGSet) -> String {
-        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())|\(showMasterSet ? "master" : "full")"
+        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())|\(setCompletionMode.rawValue)"
     }
 
     private func setMarketValueKey(for set: TCGSet) -> String {
@@ -2968,16 +2969,27 @@ private struct BrowseSetsTabContent: View {
 
         for card in cards {
             guard let entry = await services.pricing.pricing(for: card) else { continue }
-            if showMasterSet {
-                let variantTotal = allVariantsMarketUSD(for: entry)
+            if setCompletionMode.usesVariantGrid {
+                let keys = await services.pricing.variantKeys(for: card)
+                let eligible = services.variantsCatalog.eligibleVariantKeys(
+                    from: keys,
+                    card: card,
+                    mode: setCompletionMode
+                )
+                let variantTotal = services.variantsCatalog.marketUSD(
+                    for: entry,
+                    mode: setCompletionMode,
+                    eligibleVariantKeys: eligible
+                )
                 if variantTotal > 0 {
                     totalUSD += variantTotal
                     pricedCardCount += 1
                 }
             } else {
-                guard let browseUSD = browseMarketPriceUSD(for: entry), browseUSD > 0 else { continue }
-                totalUSD += browseUSD
-                pricedCardCount += 1
+                if let browseUSD = services.variantsCatalog.fullSetSlotMarketUSD(for: entry) {
+                    totalUSD += browseUSD
+                    pricedCardCount += 1
+                }
             }
         }
 
@@ -3003,7 +3015,8 @@ private struct BrowseSetsTabContent: View {
     private func refreshCollectedCounts() async {
         let activeSetCodes = Set(services.cardData.sets.map { $0.setCode.lowercased() })
         var uniqueCardKeysBySetCode: [String: Set<String>] = [:]
-        var uniqueVariantKeysBySetCode: [String: Set<String>] = [:]
+        var masterVariantKeysBySetCode: [String: Set<String>] = [:]
+        var grandMasterVariantKeysBySetCode: [String: Set<String>] = [:]
 
         for item in collectionItems where item.quantity > 0 {
             guard let identity = await resolveCollectionCardIdentity(
@@ -3012,14 +3025,47 @@ private struct BrowseSetsTabContent: View {
             ) else { continue }
             uniqueCardKeysBySetCode[identity.setCode, default: []].insert(identity.uniqueCardKey)
 
-            // Master set: count each owned variant of a card as its own slot.
             let variant = item.variantKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
             let variantToken = variant.isEmpty ? "normal" : variant
-            uniqueVariantKeysBySetCode[identity.setCode, default: []].insert("\(identity.uniqueCardKey)::\(variantToken)")
+            guard !services.variantsCatalog.isChampionshipVariant(variantToken) else { continue }
+
+            if services.variantsCatalog.includesVariant(variantToken, mode: .master) {
+                masterVariantKeysBySetCode[identity.setCode, default: []]
+                    .insert("\(identity.uniqueCardKey)::\(variantToken)")
+            }
+            if services.variantsCatalog.includesVariant(variantToken, mode: .grandMaster) {
+                grandMasterVariantKeysBySetCode[identity.setCode, default: []]
+                    .insert("\(identity.uniqueCardKey)::\(variantToken)")
+            }
         }
 
         uniqueCollectedCountBySetCode = uniqueCardKeysBySetCode.mapValues(\.count)
-        variantCollectedCountBySetCode = uniqueVariantKeysBySetCode.mapValues(\.count)
+        variantCollectedCountBySetCode = masterVariantKeysBySetCode.mapValues(\.count)
+        grandMasterCollectedCountBySetCode = grandMasterVariantKeysBySetCode.mapValues(\.count)
+    }
+
+    @MainActor
+    private func refreshVariantSlotTotals() async {
+        guard setCompletionMode != .full else { return }
+        var nextTotals: [String: Int] = [:]
+        for set in services.cardData.sets {
+            let setCode = set.setCode.lowercased()
+            let total = await services.variantsCatalog.variantSlotCount(
+                forSetCode: set.setCode,
+                mode: setCompletionMode,
+                cardData: services.cardData,
+                pricing: services.pricing
+            )
+            nextTotals[setCode] = total
+        }
+        switch setCompletionMode {
+        case .full:
+            break
+        case .master:
+            variantSlotTotalBySetCode = nextTotals
+        case .grandMaster:
+            grandMasterSlotTotalBySetCode = nextTotals
+        }
     }
 
     private func resolveCollectionCardIdentity(
@@ -3061,33 +3107,23 @@ private struct BrowseSetsTabContent: View {
         return (setCode, trimmed.lowercased())
     }
 
-    private func onePieceSeriesOrderIndex(_ title: String) -> Int {
-        switch title {
-        case "Booster Pack": return 0
-        case "Extra Boosters": return 1
-        case "Starter deck": return 2
-        case "Premium Booster": return 3
-        case "Promo": return 4
-        default: return 5
-        }
-    }
-
-    private var masterSetChipBar: some View {
+    private var setCompletionModeChipBar: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 12) {
-                masterSetChip(label: "Full Set", isMaster: false)
-                masterSetChip(label: "Master Set", isMaster: true)
+                ForEach(SetCompletionMode.allCases, id: \.self) { mode in
+                    setCompletionModeChip(label: mode.chipLabel, mode: mode)
+                }
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 4)
         }
     }
 
-    private func masterSetChip(label: String, isMaster: Bool) -> some View {
-        let isSelected = showMasterSet == isMaster
+    private func setCompletionModeChip(label: String, mode: SetCompletionMode) -> some View {
+        let isSelected = setCompletionMode == mode
         return Button {
             withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
-                showMasterSet = isMaster
+                setCompletionMode = mode
             }
             Haptics.lightImpact()
         } label: {
@@ -3106,11 +3142,18 @@ private struct BrowseSetsTabContent: View {
 
     private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
         let setCode = set.setCode.lowercased()
-        let collected = showMasterSet
-            ? (variantCollectedCountBySetCode[setCode] ?? 0)
-            : (uniqueCollectedCountBySetCode[setCode] ?? 0)
-        let total = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal) : set.cardCountTotal
-        return (collected, total)
+        switch setCompletionMode {
+        case .full:
+            return (uniqueCollectedCountBySetCode[setCode] ?? 0, set.cardCountTotal)
+        case .master:
+            let collected = variantCollectedCountBySetCode[setCode] ?? 0
+            let total = variantSlotTotalBySetCode[setCode] ?? set.masterSetTotal ?? set.cardCountTotal
+            return (collected, total)
+        case .grandMaster:
+            let collected = grandMasterCollectedCountBySetCode[setCode] ?? 0
+            let total = grandMasterSlotTotalBySetCode[setCode] ?? set.masterSetTotal ?? set.cardCountTotal
+            return (collected, total)
+        }
     }
 
     private func prefetchSetLogos() {
@@ -3131,8 +3174,6 @@ private struct BrowsePokemonTabContent: View {
 
     @State private var rows: [NationalDexPokemon] = []
     @State private var isLoading = true
-    @State private var characterRows: [String] = []
-    @State private var subtypeRows: [String] = []
     @State private var ownedNationalDexIDs: Set<Int> = []
     @State private var dexCollectionProgress: [Int: (owned: Int, total: Int)] = [:]
     @State private var hideCollectedPokemon = false
@@ -3163,18 +3204,6 @@ private struct BrowsePokemonTabContent: View {
         return filtered
     }
 
-    private var filteredCharacterRows: [String] {
-        let normalizedQuery = normalizedBrowseSearchText(query)
-        guard !normalizedQuery.isEmpty else { return characterRows }
-        return characterRows.filter { normalizedBrowseSearchText($0).contains(normalizedQuery) }
-    }
-
-    private var filteredSubtypeRows: [String] {
-        let normalizedQuery = normalizedBrowseSearchText(query)
-        guard !normalizedQuery.isEmpty else { return subtypeRows }
-        return subtypeRows.filter { normalizedBrowseSearchText($0).contains(normalizedQuery) }
-    }
-
     private var ownedDexTaskKey: Int {
         var h = Hasher()
         h.combine(services.brandSettings.selectedCatalogBrand.rawValue)
@@ -3196,21 +3225,19 @@ private struct BrowsePokemonTabContent: View {
     var body: some View {
         Group {
             if isLoading {
-                ProgressView(activeTitle)
+                ProgressView("Loading Pokémon…")
                     .frame(maxWidth: .infinity, minHeight: 280)
                     .padding(.horizontal, 16)
-            } else if services.brandSettings.selectedCatalogBrand == .pokemon {
-                pokemonBody
             } else {
-                onePieceBody
+                pokemonBody
             }
         }
         .onAppear {
-            scheduleRowLoad(for: services.brandSettings.selectedCatalogBrand)
+            scheduleRowLoad()
         }
-        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, newBrand in
+        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, _ in
             selectedGeneration = nil
-            scheduleRowLoad(for: newBrand)
+            scheduleRowLoad()
         }
         .onChange(of: query) { _, newQuery in
             if !newQuery.isEmpty { selectedGeneration = nil }
@@ -3221,14 +3248,10 @@ private struct BrowsePokemonTabContent: View {
     }
 
     @MainActor
-    private func scheduleRowLoad(for _: TCGBrand) {
+    private func scheduleRowLoad() {
         Task { @MainActor in
             await loadRows()
         }
-    }
-
-    private var activeTitle: String {
-        services.brandSettings.selectedCatalogBrand == .pokemon ? "Loading Pokémon…" : "Loading characters…"
     }
 
     @Environment(\.colorScheme) private var colorScheme
@@ -3347,71 +3370,14 @@ private struct BrowsePokemonTabContent: View {
         }
     }
 
-    @ViewBuilder
-    private var onePieceBody: some View {
-        if characterRows.isEmpty && subtypeRows.isEmpty {
-            ContentUnavailableView(
-                "No browse lists",
-                systemImage: "list.bullet",
-                description: Text("Character names and subtypes will appear here after the ONE PIECE catalog sync completes.")
-            )
-            .frame(maxWidth: .infinity, minHeight: 280)
-            .padding(.horizontal, 16)
-        } else if filteredCharacterRows.isEmpty && filteredSubtypeRows.isEmpty {
-            ContentUnavailableView(
-                "No matches",
-                systemImage: "magnifyingglass",
-                description: Text("Try a different search term.")
-            )
-            .frame(maxWidth: .infinity, minHeight: 280)
-            .padding(.horizontal, 16)
-        } else {
-            LazyVStack(alignment: .leading, spacing: 20) {
-                if !filteredCharacterRows.isEmpty {
-                        listSection(title: "Characters", rows: filteredCharacterRows) { row in
-                        Button {
-                            onSelectRoute(.onePieceCharacter(row))
-                        } label: {
-                            browseListRow(title: row)
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
-
-                if !filteredSubtypeRows.isEmpty {
-                    listSection(title: "Subtypes", rows: filteredSubtypeRows) { row in
-                        Button {
-                            onSelectRoute(.onePieceSubtype(row))
-                        } label: {
-                            browseListRow(title: row)
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
-            }
-            .padding(.bottom, 16)
-        }
-    }
-
     private func loadRows() async {
         isLoading = true
         defer { isLoading = false }
 
-        if services.brandSettings.selectedCatalogBrand == .pokemon {
-            characterRows = []
-            subtypeRows = []
-            if services.cardData.nationalDexPokemon.isEmpty {
-                await services.cardData.loadNationalDexPokemon()
-            }
-            rows = services.cardData.nationalDexPokemonSorted()
-        } else {
-            rows = []
-            if services.cardData.onePieceCharacterNames.isEmpty || services.cardData.onePieceCharacterSubtypes.isEmpty {
-                await services.cardData.loadOnePieceBrowseMetadata()
-            }
-            characterRows = services.cardData.onePieceCharacterNames
-            subtypeRows = services.cardData.onePieceCharacterSubtypes
+        if services.cardData.nationalDexPokemon.isEmpty {
+            await services.cardData.loadNationalDexPokemon()
         }
+        rows = services.cardData.nationalDexPokemonSorted()
     }
 
     @MainActor
@@ -3466,57 +3432,17 @@ private struct BrowsePokemonTabContent: View {
         return "\(progress.owned) of \(progress.total) collected"
     }
 
-    private func listSection<RowContent: View>(
-        title: String,
-        rows: [String],
-        @ViewBuilder rowBuilder: @escaping (String) -> RowContent
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(title)
-                .font(.title3.weight(.bold))
-                .foregroundStyle(.primary)
-                .padding(.horizontal, 16)
-
-            LazyVStack(spacing: 0) {
-                ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
-                    rowBuilder(row)
-                    Divider()
-                        .padding(.leading, 32)
-                }
-            }
-        }
-    }
-
-    private func browseListRow(title: String) -> some View {
-        HStack(spacing: 12) {
-            Text(title)
-                .foregroundStyle(.primary)
-            Spacer(minLength: 0)
-            Image(systemName: "chevron.right")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.tertiary)
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
-        .contentShape(Rectangle())
-    }
 }
 
 private struct BrowseGridCardCell: View {
-    /// Grid display size (~2× retina); Pokémon catalog images are usually lighter than ONE PIECE full-art PNGs on R2.
     private static let thumbnailSize = CGSize(width: 220, height: 308)
-    /// Slightly smaller decode for ONE PIECE (`priceKey` cards) to shorten download+decode time while staying sharp on screen.
-    private static let onePieceThumbnailDecodeSize = CGSize(width: 200, height: 280)
 
     let card: Card
     let gridOptions: BrowseGridOptions
     let setName: String?
 
     private var imageDecodeSize: CGSize {
-        if card.masterCardId.contains("::") {
-            return Self.onePieceThumbnailDecodeSize
-        }
-        return Self.thumbnailSize
+        Self.thumbnailSize
     }
 
     var body: some View {
@@ -4514,258 +4440,6 @@ struct DexCardsView: View {
     }
 }
 
-// MARK: - ONE PIECE browse detail
-
-struct OnePieceCharacterCardsView: View {
-    @Environment(AppServices.self) private var services
-    @Environment(\.presentCard) private var presentCard
-    @Environment(\.colorScheme) private var colorScheme
-    @Query private var collectionItems: [CollectionItem]
-    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
-
-    let characterName: String
-
-    @State private var cards: [Card] = []
-    @State private var isLoading = true
-    @State private var query = ""
-    @State private var filters = BrowseCardGridFilters()
-
-    private var setNameByCode: [String: String] {
-        firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
-    }
-
-    private var ownedCardIDs: Set<String> {
-        return Set(collectionItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-    }
-
-    private var ownedQuantityByCardID: [String: Int] {
-        collectionItems.reduce(into: [:]) { result, item in
-            guard item.quantity > 0 else { return }
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            guard brand == services.brandSettings.selectedCatalogBrand else { return }
-            result[item.cardID, default: 0] += item.quantity
-        }
-    }
-
-    private var wishlistedCardIDs: Set<String> {
-        Set(wishlistItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-    }
-
-    private var filteredCards: [Card] {
-        filterBrowseCards(
-            cards,
-            query: query,
-            filters: filters,
-            ownedCardIDs: ownedCardIDs,
-            brand: services.brandSettings.selectedCatalogBrand,
-            sets: services.cardData.sets
-        )
-    }
-
-    var body: some View {
-        ScrollView {
-            if isLoading {
-                ProgressView().padding()
-            } else {
-                VStack(spacing: 12) {
-                    BrowseInlineSearchField(title: "Search cards for character", text: $query)
-                        .padding(.horizontal)
-                        .padding(.top, 2)
-                    if filteredCards.isEmpty {
-                        ContentUnavailableView(
-                            "No matching cards",
-                            systemImage: "person.text.rectangle",
-                            description: Text(query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "No ONE PIECE cards matched \(characterName)." : "Try a different card name or number.")
-                        )
-                        .padding(.horizontal)
-                        .padding(.bottom)
-                    } else {
-                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
-                            let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
-                            Button {
-                                presentCard(card, filteredCards)
-                            } label: {
-                                CardGridCell(
-                                    card: card,
-                                    services: services,
-                                    colorScheme: colorScheme,
-                                    gridOptions: services.browseGridOptions.options,
-                                    setName: setNameByCode[card.setCode],
-                                    isOwned: ownedCardIDs.contains(card.masterCardId),
-                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
-                                    ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
-                                )
-                            }
-                            .buttonStyle(CardCellButtonStyle())
-                            .onAppear {
-                                ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
-                            }
-                        }
-                        .padding(.horizontal)
-                        .padding(.bottom)
-                    }
-                }
-            }
-        }
-        .toolbar(.hidden, for: .navigationBar)
-        .safeAreaInset(edge: .top) {
-            BrowseDetailNavBar(
-                title: characterName,
-                isFilterActive: filters.isVisiblyCustomized,
-                isGridOptionsActive: !services.browseGridOptions.options.isDefault
-            ) {
-                BrowseGridFiltersMenuContent(
-                    brand: services.brandSettings.selectedCatalogBrand,
-                    filters: $filters,
-                    energyOptions: cardEnergyOptions(cards),
-                    rarityOptions: cardRarityOptions(cards),
-                    trainerTypeOptions: cardTrainerTypeOptions(cards),
-                    config: FilterMenuConfig(showGridOptions: false)
-                )
-            } gridMenuContent: {
-                BrowseGridOptionsMenuContent()
-            }
-        }
-        .task(id: characterName) {
-            isLoading = true
-            cards = await services.cardData.cards(matchingOnePieceCharacterName: characterName)
-            ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
-            isLoading = false
-        }
-    }
-}
-
-struct OnePieceSubtypeCardsView: View {
-    @Environment(AppServices.self) private var services
-    @Environment(\.presentCard) private var presentCard
-    @Environment(\.colorScheme) private var colorScheme
-    @Query private var collectionItems: [CollectionItem]
-    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
-
-    let subtypeName: String
-
-    @State private var cards: [Card] = []
-    @State private var isLoading = true
-    @State private var query = ""
-    @State private var filters = BrowseCardGridFilters()
-
-    private var setNameByCode: [String: String] {
-        firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
-    }
-
-    private var ownedCardIDs: Set<String> {
-        return Set(collectionItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-    }
-
-    private var ownedQuantityByCardID: [String: Int] {
-        collectionItems.reduce(into: [:]) { result, item in
-            guard item.quantity > 0 else { return }
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            guard brand == services.brandSettings.selectedCatalogBrand else { return }
-            result[item.cardID, default: 0] += item.quantity
-        }
-    }
-
-    private var wishlistedCardIDs: Set<String> {
-        Set(wishlistItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-    }
-
-    private var filteredCards: [Card] {
-        filterBrowseCards(
-            cards,
-            query: query,
-            filters: filters,
-            ownedCardIDs: ownedCardIDs,
-            brand: services.brandSettings.selectedCatalogBrand,
-            sets: services.cardData.sets
-        )
-    }
-
-    var body: some View {
-        ScrollView {
-            if isLoading {
-                ProgressView().padding()
-            } else {
-                VStack(spacing: 12) {
-                    BrowseInlineSearchField(title: "Search cards for subtype", text: $query)
-                        .padding(.horizontal)
-                        .padding(.top, 2)
-                    if filteredCards.isEmpty {
-                        ContentUnavailableView(
-                            "No matching cards",
-                            systemImage: "line.3.horizontal.decrease.circle",
-                            description: Text(query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "No ONE PIECE cards matched \(subtypeName)." : "Try a different card name or number.")
-                        )
-                        .padding(.horizontal)
-                        .padding(.bottom)
-                    } else {
-                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
-                            let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
-                            Button {
-                                presentCard(card, filteredCards)
-                            } label: {
-                                CardGridCell(
-                                    card: card,
-                                    services: services,
-                                    colorScheme: colorScheme,
-                                    gridOptions: services.browseGridOptions.options,
-                                    setName: setNameByCode[card.setCode],
-                                    isOwned: ownedCardIDs.contains(card.masterCardId),
-                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
-                                    ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
-                                )
-                            }
-                            .buttonStyle(CardCellButtonStyle())
-                            .onAppear {
-                                ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
-                            }
-                        }
-                        .padding(.horizontal)
-                        .padding(.bottom)
-                    }
-                }
-            }
-        }
-        .toolbar(.hidden, for: .navigationBar)
-        .safeAreaInset(edge: .top) {
-            BrowseDetailNavBar(
-                title: subtypeName,
-                isFilterActive: filters.isVisiblyCustomized,
-                isGridOptionsActive: !services.browseGridOptions.options.isDefault
-            ) {
-                BrowseGridFiltersMenuContent(
-                    brand: services.brandSettings.selectedCatalogBrand,
-                    filters: $filters,
-                    energyOptions: cardEnergyOptions(cards),
-                    rarityOptions: cardRarityOptions(cards),
-                    trainerTypeOptions: cardTrainerTypeOptions(cards),
-                    config: FilterMenuConfig(showGridOptions: false)
-                )
-            } gridMenuContent: {
-                BrowseGridOptionsMenuContent()
-            }
-        }
-        .task(id: subtypeName) {
-            isLoading = true
-            cards = await services.cardData.cards(matchingOnePieceSubtype: subtypeName)
-            ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
-            isLoading = false
-        }
-    }
-}
-
 private struct BrowseDetailNavBar<FilterMenuContent: View, GridMenuContent: View>: View {
     let title: String
     let isFilterActive: Bool
@@ -4937,60 +4611,14 @@ struct BrowseGridFiltersMenuContent: View {
 
         if !isAllBrands && config.showBrandFilters {
         Section("Filters") {
-            if brand == .onePiece {
-                filterMenu(title: "Card type", summary: selectionSummary(for: filters.opCardTypes), systemImage: "square.stack.3d.up") {
-                    ForEach(opCardTypeAllOptions, id: \.self) { cardType in
-                        Toggle(cardType, isOn: stringBinding(for: cardType, keyPath: \.opCardTypes))
-                    }
+            filterMenu(title: "Card type", summary: selectionSummary(for: filters.cardTypes), systemImage: "square.stack.3d.up") {
+                ForEach(BrowseCardTypeFilter.pokemonOptions) { type in
+                    Toggle(type.title, isOn: cardTypeBinding(for: type))
                 }
-
-                filterMenu(title: "Attribute", summary: selectionSummary(for: filters.opAttributes), systemImage: "tag") {
-                    ForEach(opAttributeAllOptions, id: \.self) { attr in
-                        Toggle(attr, isOn: stringBinding(for: attr, keyPath: \.opAttributes))
-                    }
-                }
-
-                filterMenu(
-                    title: "Stats",
-                    summary: combinedSelectionSummary(
-                        ("Cost", filters.opCosts.count),
-                        ("Counter", filters.opCounters.count),
-                        ("Life", filters.opLives.count),
-                        ("Power", filters.opPowers.count)
-                    ),
-                    systemImage: "chart.bar.xaxis"
-                ) {
-                    filterMenu(title: "Cost", summary: selectionSummary(for: filters.opCosts), systemImage: "number.circle") {
-                        ForEach(opCostAllOptions, id: \.self) { cost in
-                            Toggle("\(cost)", isOn: intBinding(for: cost, keyPath: \.opCosts))
-                        }
-                    }
-                    filterMenu(title: "Counter", summary: selectionSummary(for: filters.opCounters), systemImage: "plusminus.circle") {
-                        ForEach(opCounterAllOptions, id: \.self) { counter in
-                            Toggle("\(counter)", isOn: intBinding(for: counter, keyPath: \.opCounters))
-                        }
-                    }
-                    filterMenu(title: "Life", summary: selectionSummary(for: filters.opLives), systemImage: "heart.circle") {
-                        ForEach(opLifeAllOptions, id: \.self) { life in
-                            Toggle("\(life)", isOn: intBinding(for: life, keyPath: \.opLives))
-                        }
-                    }
-                    filterMenu(title: "Power", summary: selectionSummary(for: filters.opPowers), systemImage: "bolt.circle") {
-                        ForEach(opPowerAllOptions, id: \.self) { power in
-                            Toggle("\(power)", isOn: intBinding(for: power, keyPath: \.opPowers))
-                        }
-                    }
-                }
-            } else {
-                filterMenu(title: "Card type", summary: selectionSummary(for: filters.cardTypes), systemImage: "square.stack.3d.up") {
-                    ForEach(BrowseCardTypeFilter.pokemonOptions) { type in
-                        Toggle(type.title, isOn: cardTypeBinding(for: type))
-                    }
-                }
-                filterMenu(title: "Legal", summary: selectionSummary(for: filters.legalities), systemImage: "checkmark.shield") {
-                    ForEach(BrowseCardLegalityFilter.allCases) { legality in
-                        Toggle(legality.title, isOn: legalityBinding(for: legality))
-                    }
+            }
+            filterMenu(title: "Legal", summary: selectionSummary(for: filters.legalities), systemImage: "checkmark.shield") {
+                ForEach(BrowseCardLegalityFilter.allCases) { legality in
+                    Toggle(legality.title, isOn: legalityBinding(for: legality))
                 }
             }
 
@@ -5004,35 +4632,33 @@ struct BrowseGridFiltersMenuContent: View {
                 }
             }
 
-            if brand == .pokemon {
-                filterMenu(title: "Trainer type", summary: selectionSummary(for: filters.trainerTypes), systemImage: "person.crop.square") {
-                    if trainerTypeOptions.isEmpty {
-                        Text("No trainer types available")
-                    } else {
-                        ForEach(trainerTypeOptions, id: \.self) { trainerType in
-                            Toggle(trainerType, isOn: stringBinding(for: trainerType, keyPath: \.trainerTypes))
-                        }
+            filterMenu(title: "Trainer type", summary: selectionSummary(for: filters.trainerTypes), systemImage: "person.crop.square") {
+                if trainerTypeOptions.isEmpty {
+                    Text("No trainer types available")
+                } else {
+                    ForEach(trainerTypeOptions, id: \.self) { trainerType in
+                        Toggle(trainerType, isOn: stringBinding(for: trainerType, keyPath: \.trainerTypes))
                     }
                 }
-                filterMenu(title: "Weakness", summary: selectionSummary(for: filters.weaknessTypes), systemImage: "shield.lefthalf.filled") {
-                    ForEach(pokemonWeaknessFilterAllOptions, id: \.self) { weakness in
-                        Toggle(weakness, isOn: stringBinding(for: weakness, keyPath: \.weaknessTypes))
-                    }
+            }
+            filterMenu(title: "Weakness", summary: selectionSummary(for: filters.weaknessTypes), systemImage: "shield.lefthalf.filled") {
+                ForEach(pokemonWeaknessFilterAllOptions, id: \.self) { weakness in
+                    Toggle(weakness, isOn: stringBinding(for: weakness, keyPath: \.weaknessTypes))
                 }
-                filterMenu(title: "Resistance", summary: selectionSummary(for: filters.resistanceTypes), systemImage: "shield.righthalf.filled") {
-                    ForEach(pokemonResistanceFilterAllOptions, id: \.self) { resistance in
-                        Toggle(resistance, isOn: stringBinding(for: resistance, keyPath: \.resistanceTypes))
-                    }
+            }
+            filterMenu(title: "Resistance", summary: selectionSummary(for: filters.resistanceTypes), systemImage: "shield.righthalf.filled") {
+                ForEach(pokemonResistanceFilterAllOptions, id: \.self) { resistance in
+                    Toggle(resistance, isOn: stringBinding(for: resistance, keyPath: \.resistanceTypes))
                 }
-                filterMenu(title: "Subtype", summary: selectionSummary(for: filters.pokemonSubtypes), systemImage: "square.grid.2x2") {
-                    ForEach(pokemonSubtypeAllOptions, id: \.self) { subtype in
-                        Toggle(subtype, isOn: stringBinding(for: subtype, keyPath: \.pokemonSubtypes))
-                    }
+            }
+            filterMenu(title: "Subtype", summary: selectionSummary(for: filters.pokemonSubtypes), systemImage: "square.grid.2x2") {
+                ForEach(pokemonSubtypeAllOptions, id: \.self) { subtype in
+                    Toggle(subtype, isOn: stringBinding(for: subtype, keyPath: \.pokemonSubtypes))
                 }
-                filterMenu(title: "Ability", summary: filters.abilityPresence?.title, systemImage: "wand.and.rays") {
-                    ForEach(BrowseCardAbilityPresenceFilter.allCases) { option in
-                        Toggle(option.title, isOn: abilityPresenceBinding(for: option))
-                    }
+            }
+            filterMenu(title: "Ability", summary: filters.abilityPresence?.title, systemImage: "wand.and.rays") {
+                ForEach(BrowseCardAbilityPresenceFilter.allCases) { option in
+                    Toggle(option.title, isOn: abilityPresenceBinding(for: option))
                 }
             }
 
@@ -5319,7 +4945,7 @@ func browseFilterTrainerTypeOptions(_ cards: [BrowseFilterCard]) -> [String] {
 private func browseMarketPriceUSD(for entry: CardPricingEntry?) -> Double? {
     guard let entry else { return nil }
     if let scrydex = entry.scrydex, !scrydex.isEmpty {
-        return scrydex.values.compactMap { $0.rawMarketEstimateUSD() }.max()
+        return scrydex.values.compactMap { $0.rawMarketEstimateUSD() }.filter { $0 > 0 }.min()
     }
     return entry.tcgplayerMarketEstimateUSD()
 }
@@ -5442,31 +5068,6 @@ func filterBrowseCards(
             if abilityPresence == .yes, hasAbilities == false { return false }
             if abilityPresence == .no, hasAbilities == true { return false }
         }
-        if filters.opCardTypes.isEmpty == false {
-            let cardTypes = Set((card.category ?? "").split(separator: ",").map {
-                $0.trimmingCharacters(in: .whitespacesAndNewlines)
-            })
-            if cardTypes.isDisjoint(with: filters.opCardTypes) {
-                return false
-            }
-        }
-        if filters.opAttributes.isEmpty == false {
-            let attrs = Set(card.opAttributes ?? [])
-            if attrs.isDisjoint(with: filters.opAttributes) { return false }
-        }
-        if filters.opCosts.isEmpty == false {
-            guard let cost = card.opCost, filters.opCosts.contains(cost) else { return false }
-        }
-        if filters.opCounters.isEmpty == false {
-            guard let counter = card.opCounter, filters.opCounters.contains(counter) else { return false }
-        }
-        if filters.opLives.isEmpty == false {
-            guard let life = card.opLife, filters.opLives.contains(life) else { return false }
-        }
-        if filters.opPowers.isEmpty == false {
-            let power = card.hp
-            guard let power, filters.opPowers.contains(power) else { return false }
-        }
         return true
     }
 
@@ -5550,9 +5151,6 @@ private func resolvedBrowseCardType(for card: Card, brand: TCGBrand) -> BrowseCa
     }
     if category.contains("energy") || card.energyType != nil {
         return .energy
-    }
-    if brand == .onePiece, category.contains("event") {
-        return .trainer
     }
     return .pokemon
 }

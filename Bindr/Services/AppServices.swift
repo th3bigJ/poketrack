@@ -20,6 +20,7 @@ final class AppServices {
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let cardData: CardDataService
+    let variantsCatalog = VariantsCatalogService()
     let sealedProducts = SealedProductService()
     let pricing = PricingService()
     let cloudSettings: CloudSettingsService
@@ -170,6 +171,7 @@ final class AppServices {
             }
         }
         Task { await refreshCatalogCardsLastUpdatedAtFromStore() }
+        Task { await variantsCatalog.reloadFromStore() }
         Task {
             // Delay social init until after the launch wordmark animation (~1.8s)
             // so that network callbacks don't hitch the main thread mid-animation.
@@ -343,6 +345,7 @@ final class AppServices {
                 progressHandler: nil
             )
             await brandsManifest.refresh()
+            await variantsCatalog.reloadFromStore()
         }
     }
 
@@ -371,11 +374,6 @@ final class AppServices {
         print("[Launch] primeLaunchCatalogFromLocalCache: loadSets start")
         await cardData.loadSets(preferSyncedCatalog: true)
         print("[Launch] primeLaunchCatalogFromLocalCache: loadSets done \(ContinuousClock().now - t)")
-        if brandSettings.enabledBrands.contains(.onePiece) {
-            await cardData.loadOnePieceBrowseMetadata()
-        } else {
-            cardData.clearOnePieceBrowseMetadata()
-        }
         let t2 = ContinuousClock().now
         print("[Launch] primeLaunchCatalogFromLocalCache: sealedProducts start")
         await sealedProducts.loadFromLocalIfAvailable(launchMode: true)
@@ -406,14 +404,7 @@ final class AppServices {
         await brandsManifest.refresh()
         if updateBootstrapProgressUI {
             bootstrapShowsDownloadProgressUI = true
-            let enabled = brandSettings.enabledBrands
-            if enabled.count == 1, enabled.contains(.onePiece) {
-                bootstrapMessage = "Updating ONE PIECE card data…"
-            } else if enabled.count == 1, enabled.contains(.pokemon) {
-                bootstrapMessage = "Updating Pokémon card data…"
-            } else {
-                bootstrapMessage = "Updating card data, please wait."
-            }
+            bootstrapMessage = "Updating Pokémon card data…"
             bootstrapStatus = "Preparing downloads…"
             bootstrapProgress = 0
             bootstrapDownloadedBytes = 0
@@ -457,17 +448,8 @@ final class AppServices {
         }
         await cardData.loadSets(preferSyncedCatalog: true)
 
-        if brandSettings.enabledBrands.contains(.pokemon) {
-            await cardData.loadNationalDexPokemon()
-        } else {
-            cardData.clearNationalDexForDisabledPokemon()
-        }
-
-        if brandSettings.enabledBrands.contains(.onePiece) {
-            await cardData.loadOnePieceBrowseMetadata()
-        } else {
-            cardData.clearOnePieceBrowseMetadata()
-        }
+        await cardData.loadNationalDexPokemon()
+        await variantsCatalog.reloadFromStore()
 
         await sealedProducts.reloadFromLocal()
 
@@ -524,24 +506,12 @@ final class AppServices {
         catalogDownloadProgress = 0.84
         await cardData.loadSets(preferSyncedCatalog: true)
 
-        if brandSettings.enabledBrands.contains(.pokemon) {
-            catalogDownloadStatus = "Loading Pokémon index…"
-            catalogDownloadProgress = 0.92
-            await cardData.loadNationalDexPokemon()
-        } else {
-            cardData.clearNationalDexForDisabledPokemon()
-            catalogDownloadProgress = 0.94
-        }
+        catalogDownloadStatus = "Loading Pokémon index…"
+        catalogDownloadProgress = 0.92
+        await cardData.loadNationalDexPokemon()
+        await variantsCatalog.reloadFromStore()
 
-        if brandSettings.enabledBrands.contains(.onePiece) {
-            catalogDownloadStatus = "Loading ONE PIECE browse lists…"
-            catalogDownloadProgress = 0.97
-            await cardData.loadOnePieceBrowseMetadata()
-        } else {
-            cardData.clearOnePieceBrowseMetadata()
-            catalogDownloadProgress = 0.98
-        }
-
+        catalogDownloadProgress = 0.97
         await sealedProducts.reloadFromLocal()
 
         // Force-recheck after catalog sync so any new sets, pokémon, or sealed products are fetched.
@@ -584,6 +554,7 @@ final class AppServices {
         catalogDownloadProgress = 1
         catalogDownloadStatus = changed ? "Card and market data updated." : "Already up to date."
         await cardData.reloadAfterBrandChange()
+        await variantsCatalog.reloadFromStore()
         isCatalogDownloadInProgress = false
         await refreshCatalogCardsLastUpdatedAtFromStore()
     }

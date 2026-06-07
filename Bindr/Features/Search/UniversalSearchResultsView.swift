@@ -58,29 +58,12 @@ struct UniversalSearchResultsView: View {
         return services.cardData.searchPokemon(matching: trimmed)
     }
 
-    private var showOnePieceBrowseSections: Bool {
-        isAllCardsScope && selectedBrand == .onePiece
-    }
-
-    private var matchingOnePieceCharacters: [String] {
-        guard showOnePieceBrowseSections else { return [] }
-        return services.cardData.searchOnePieceCharacterNames(matching: trimmed)
-    }
-
-    private var matchingOnePieceSubtypes: [String] {
-        guard showOnePieceBrowseSections else { return [] }
-        return services.cardData.searchOnePieceCharacterSubtypes(matching: trimmed)
-    }
-
     private var emptyStateDescription: String {
         if sourceScope == .myCollection {
             return "Type to search your collection."
         }
         if showPokemonDexSection {
             return "Type to find cards, sets, and Pokémon."
-        }
-        if showOnePieceBrowseSections {
-            return "Type to find cards, sets, characters, and subtypes."
         }
         return "Type to find cards and sets."
     }
@@ -173,32 +156,6 @@ struct UniversalSearchResultsView: View {
                             }
                         }
 
-                        if sourceScope == .allCards && !matchingOnePieceCharacters.isEmpty {
-                            sectionHeader("Characters")
-                            VStack(spacing: 0) {
-                                ForEach(matchingOnePieceCharacters, id: \.self) { name in
-                                    NavigationLink(value: SearchNavRoot.onePieceCharacter(name: name, brand: selectedBrand)) {
-                                        searchListRow(title: name)
-                                    }
-                                    .buttonStyle(.plain)
-                                    Divider().padding(.leading, 16)
-                                }
-                            }
-                        }
-
-                        if sourceScope == .allCards && !matchingOnePieceSubtypes.isEmpty {
-                            sectionHeader("Subtypes")
-                            VStack(spacing: 0) {
-                                ForEach(matchingOnePieceSubtypes, id: \.self) { subtype in
-                                    NavigationLink(value: SearchNavRoot.onePieceSubtype(name: subtype, brand: selectedBrand)) {
-                                        searchListRow(title: subtype)
-                                    }
-                                    .buttonStyle(.plain)
-                                    Divider().padding(.leading, 16)
-                                }
-                            }
-                        }
-
                         // MARK: Cards
                         cardsSectionHeader
                         if isSearching && cards.isEmpty {
@@ -266,10 +223,6 @@ struct UniversalSearchResultsView: View {
             guard !Task.isCancelled else { return }
             if showPokemonDexSection, services.cardData.nationalDexPokemon.isEmpty {
                 await services.cardData.loadNationalDexPokemon()
-            }
-            if showOnePieceBrowseSections,
-               services.cardData.onePieceCharacterNames.isEmpty || services.cardData.onePieceCharacterSubtypes.isEmpty {
-                await services.cardData.loadOnePieceBrowseMetadata()
             }
             isSearching = true
             defer { isSearching = false }

@@ -43,7 +43,6 @@ struct DashboardView: View {
     @State private var hasPreparedInitialDashboardData = false
     @State private var liveTotalGbp: Double? = nil
     @State private var livePokemonGbp: Double = 0
-    @State private var liveOnePieceGbp: Double = 0
     @State private var liveCardsGbp: Double = 0
     @State private var liveSealedGbp: Double = 0
     @State private var totalCostBasis: Double = 0
@@ -81,7 +80,6 @@ struct DashboardView: View {
         return BrandSnapshot(
             total: t,
             pokemon: livePokemonGbp,
-            onePiece: liveOnePieceGbp,
             cards: liveCardsGbp,
             sealed: liveSealedGbp
         )
@@ -90,9 +88,8 @@ struct DashboardView: View {
     private var displayTotal: Double {
         let point = selectedPoint
         switch selectedBrand {
-        case .pokemon:  return point?.pokemon ?? livePokemonGbp
-        case .onePiece: return point?.onePiece ?? liveOnePieceGbp
-        case nil:       return point?.total ?? liveTotalGbp ?? 0
+        case .pokemon: return point?.pokemon ?? livePokemonGbp
+        case nil:      return point?.total ?? liveTotalGbp ?? 0
         }
     }
 
@@ -108,10 +105,7 @@ struct DashboardView: View {
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
     private var activeMarketTrend: MarketTrendMetrics? {
         guard let marketTrendData else { return nil }
-        switch activeBrand {
-        case .pokemon: return marketTrendData.pokemon
-        case .onePiece: return marketTrendData.onepiece
-        }
+        return marketTrendData.pokemon
     }
 
     private var visibleCollectionItems: [CollectionItem] {
@@ -204,7 +198,6 @@ struct DashboardView: View {
                     date: day,
                     total: snapshot.totalGbp,
                     pokemon: snapshot.pokemonGbp,
-                    onePiece: snapshot.onePieceGbp,
                     cards: snapshot.cardsGbp > 0 || snapshot.sealedGbp > 0 ? snapshot.cardsGbp : snapshot.totalGbp,
                     sealed: snapshot.cardsGbp > 0 || snapshot.sealedGbp > 0 ? snapshot.sealedGbp : 0
                 )
@@ -217,7 +210,6 @@ struct DashboardView: View {
                 date: today,
                 total: live,
                 pokemon: livePokemonGbp,
-                onePiece: liveOnePieceGbp,
                 cards: liveCardsGbp,
                 sealed: liveSealedGbp
             )
@@ -237,7 +229,6 @@ struct DashboardView: View {
                     date: $0.weekStart,
                     total: $0.totalGbp,
                     pokemon: $0.pokemonGbp,
-                    onePiece: $0.onePieceGbp,
                     cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
                     sealed: hasExplicitSplit ? $0.sealedGbp : 0
                 )
@@ -256,7 +247,6 @@ struct DashboardView: View {
                     date: $0.monthStart,
                     total: $0.totalGbp,
                     pokemon: $0.pokemonGbp,
-                    onePiece: $0.onePieceGbp,
                     cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
                     sealed: hasExplicitSplit ? $0.sealedGbp : 0
                 )
@@ -275,13 +265,11 @@ struct DashboardView: View {
             let total: Double
             switch brand {
             case .pokemon: total = point.pokemon
-            case .onePiece: total = point.onePiece
             }
             return ChartPoint(
                 date: point.date,
                 total: total,
                 pokemon: point.pokemon,
-                onePiece: point.onePiece,
                 cards: point.cards,
                 sealed: point.sealed
             )
@@ -524,7 +512,7 @@ struct DashboardView: View {
                 Text(timeGreeting)
                     .font(.subheadline.weight(.medium))
                     .foregroundStyle(.secondary)
-                
+
                 HStack(spacing: 0) {
                     Text("Welcome back, ")
                     Text("Trainer.")
@@ -533,7 +521,7 @@ struct DashboardView: View {
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundStyle(dashboardPrimaryText)
             }
-            
+
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.bottom, 4)
@@ -1041,7 +1029,6 @@ struct DashboardView: View {
         if let persisted = svc.todayPersistedSnapshot() {
             liveTotalGbp = persisted.total
             livePokemonGbp = persisted.pokemon
-            liveOnePieceGbp = persisted.onePiece
             liveCardsGbp = persisted.cards
             liveSealedGbp = persisted.sealed
         } else if collectionItems.count > 0 {
@@ -1111,20 +1098,13 @@ struct DashboardView: View {
             guard !item.cardID.hasPrefix("sealed:"), !item.cardID.contains("::") else { return nil }
             return item.cardID
         }
-        let onePieceCollectionIDs = collectionItems.compactMap { item -> String? in
-            guard item.cardID.contains("::") else { return nil }
-            return item.cardID
-        }
-        async let pokemonCards = services.cardData.loadCards(masterCardIDs: pokemonCollectionIDs, catalogBrand: .pokemon)
-        async let onePieceCards = services.cardData.loadCards(masterCardIDs: onePieceCollectionIDs, catalogBrand: .onePiece)
-        let (pCards, opCards) = await (pokemonCards, onePieceCards)
-        await services.pricing.indexPricingForCards(pCards + opCards)
-        print("[Dashboard⏱]   indexPricingForCards: \(ContinuousClock().now - _tIndex) cards=\(pCards.count + opCards.count)")
+        let pokemonCards = await services.cardData.loadCards(masterCardIDs: pokemonCollectionIDs, catalogBrand: .pokemon)
+        await services.pricing.indexPricingForCards(pokemonCards)
+        print("[Dashboard⏱]   indexPricingForCards: \(ContinuousClock().now - _tIndex) cards=\(pokemonCards.count)")
 
         let _t3 = ContinuousClock().now
         var totalValue = 0.0
         var pokemonValue = 0.0
-        var onePieceValue = 0.0
         var cardsValue = 0.0
         var sealedValue = 0.0
         var totalCost = 0.0
@@ -1146,10 +1126,7 @@ struct DashboardView: View {
                 let gbp = priceUSD * Double(item.quantity) * services.pricing.usdToGbp
                 totalValue += gbp
                 sealedValue += gbp
-                switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-                case .pokemon:  pokemonValue += gbp
-                case .onePiece: onePieceValue += gbp
-                }
+                pokemonValue += gbp
             } else if !item.cardID.hasPrefix("sealed:") {
                 let gradeKey: String = {
                     guard let company = item.gradingCompany else { return "raw" }
@@ -1165,10 +1142,7 @@ struct DashboardView: View {
                     let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
                     totalValue += gbp
                     cardsValue += gbp
-                    switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-                    case .pokemon:  pokemonValue += gbp
-                    case .onePiece: onePieceValue += gbp
-                    }
+                    pokemonValue += gbp
                 } else {
                     // Cache miss — collect for fallback card load (rare: externalId/tcgdex_id needed).
                     cacheMissIDs.append(item.cardID)
@@ -1179,15 +1153,10 @@ struct DashboardView: View {
         // Fallback: load full Card objects only for items that missed the ID-based cache lookup.
         if !cacheMissIDs.isEmpty {
             let pokemonMissIDs = cacheMissIDs.filter { !$0.contains("::") }
-            let onePieceMissIDs = cacheMissIDs.filter { $0.contains("::") }
-            async let pMiss = services.cardData.loadCards(masterCardIDs: pokemonMissIDs, catalogBrand: .pokemon)
-            async let opMiss = services.cardData.loadCards(masterCardIDs: onePieceMissIDs, catalogBrand: .onePiece)
-            let (pm, opm) = await (pMiss, opMiss)
-            let allMissedCards = pm + opm
-            // Index loaded cards so future calls (FX recompute, market reload) avoid this fallback.
-            await services.pricing.indexPricingForCards(allMissedCards)
-            let cardByID = Dictionary(allMissedCards.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
-            print("[Dashboard⏱]   cache miss fallback: \(cacheMissIDs.count) cards loaded=\(pm.count + opm.count)")
+            let pm = await services.cardData.loadCards(masterCardIDs: pokemonMissIDs, catalogBrand: .pokemon)
+            await services.pricing.indexPricingForCards(pm)
+            let cardByID = Dictionary(pm.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
+            print("[Dashboard⏱]   cache miss fallback: \(cacheMissIDs.count) cards loaded=\(pm.count)")
             for item in collectionItems where cacheMissIDs.contains(item.cardID) {
                 guard item.quantity > 0, item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
                 guard let card = cardByID[item.cardID] else { continue }
@@ -1205,17 +1174,13 @@ struct DashboardView: View {
                 let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
                 totalValue += gbp
                 cardsValue += gbp
-                switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-                case .pokemon:  pokemonValue += gbp
-                case .onePiece: onePieceValue += gbp
-                }
+                pokemonValue += gbp
             }
         }
 
         print("[Dashboard⏱]   pricing loop: \(ContinuousClock().now - _t3) cards=\(collectionItems.count) misses=\(cacheMissIDs.count)")
         liveTotalGbp = totalValue > 0 ? totalValue : nil
         livePokemonGbp = pokemonValue
-        liveOnePieceGbp = onePieceValue
         liveCardsGbp = cardsValue
         liveSealedGbp = sealedValue
         totalCostBasis = totalCost
@@ -1309,12 +1274,9 @@ struct DashboardView: View {
                 return CardMetadataCache(namesByID: nextNames, setNamesByCardID: nextSets, imageURLsByID: nextImages)
             }
 
-            let pokemonIDs = missingIDs.filter { !$0.contains("::") && !$0.hasPrefix("sealed:") }
-            let onePieceIDs = missingIDs.filter { $0.contains("::") }
+            let pokemonIDs = missingIDs.filter { !$0.hasPrefix("sealed:") }
 
-            async let pokemonCards = cardData.loadCards(masterCardIDs: Array(pokemonIDs), catalogBrand: .pokemon)
-            async let onePieceCards = cardData.loadCards(masterCardIDs: Array(onePieceIDs), catalogBrand: .onePiece)
-            let allCards = await pokemonCards + onePieceCards
+            let allCards = await cardData.loadCards(masterCardIDs: Array(pokemonIDs), catalogBrand: .pokemon)
 
             for card in allCards {
                 let cardID = card.masterCardId
@@ -1577,19 +1539,16 @@ struct DashboardView: View {
 
 private struct MarketTrendDailyBlob: Decodable {
     let pokemon: MarketTrendMetrics
-    let onepiece: MarketTrendMetrics
     let updatedAt: Date?
 
     private enum CodingKeys: String, CodingKey {
         case pokemon
-        case onepiece
         case updatedAt
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         pokemon = try container.decode(MarketTrendMetrics.self, forKey: .pokemon)
-        onepiece = try container.decode(MarketTrendMetrics.self, forKey: .onepiece)
 
         if let rawUpdatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) {
             updatedAt = Self.iso8601WithFractional.date(from: rawUpdatedAt)
@@ -1680,7 +1639,6 @@ private struct ChartPoint: Identifiable {
     let date: Date
     let total: Double
     let pokemon: Double
-    let onePiece: Double
     let cards: Double?
     let sealed: Double?
 }

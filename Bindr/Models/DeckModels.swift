@@ -2,8 +2,7 @@ import SwiftData
 import Foundation
 
 // Format rules:
-// Pokémon:   60 cards total, max 4 copies per card name (basic energy exempt)
-// One Piece: 51 cards total (50 main deck + 1 Leader), max 4 copies per set+card number
+// Pokémon: 60 cards total, max 4 copies per card name (basic energy exempt)
 
 // MARK: - Expanded legal set whitelist (Black & White onward, April 2011+)
 let expandedLegalSetKeys: Set<String> = [
@@ -67,38 +66,11 @@ private func deckModelIsBasicPokemon(_ card: DeckCard) -> Bool {
     return false
 }
 
-private func onePieceDeckCopyLimitIdentity(for card: DeckCard) -> (key: String, label: String) {
-    let trimmedSet = card.setKey.trimmingCharacters(in: .whitespacesAndNewlines)
-    let rawID = card.cardID.trimmingCharacters(in: .whitespacesAndNewlines)
-    let lowerRawID = rawID.lowercased()
-
-    // ONE PIECE master ids are typically `setCode::cardNumber::variant`.
-    if lowerRawID.contains("::") {
-        let parts = lowerRawID.split(separator: "::", omittingEmptySubsequences: false)
-        if parts.count >= 2 {
-            let setCode = String(parts[0])
-            let cardNumber = String(parts[1])
-            if !setCode.isEmpty, !cardNumber.isEmpty {
-                let readableSet = trimmedSet.isEmpty ? setCode.uppercased() : trimmedSet
-                let readableNumber = cardNumber.uppercased()
-                return ("\(setCode)::\(cardNumber)", "\(card.cardName) [\(readableSet) #\(readableNumber)]")
-            }
-        }
-    }
-
-    // Fallback for legacy rows with non-standard ids.
-    if !trimmedSet.isEmpty {
-        return ("\(trimmedSet.lowercased())::\(lowerRawID)", "\(card.cardName) [\(trimmedSet)]")
-    }
-    return (lowerRawID, card.cardName)
-}
-
 enum DeckFormat: String, Codable, CaseIterable {
     case pokemonStandard  = "pokemon_standard"
     case pokemonExpanded  = "pokemon_expanded"
     case pokemonUnlimited = "pokemon_unlimited"
     case pokemonGLC       = "pokemon_glc"
-    case onePiece         = "onepiece_standard"
 
     var displayName: String {
         switch self {
@@ -106,16 +78,12 @@ enum DeckFormat: String, Codable, CaseIterable {
         case .pokemonExpanded:  return "Expanded"
         case .pokemonUnlimited: return "Unlimited"
         case .pokemonGLC:       return "GLC"
-        case .onePiece:         return "Standard"
         }
     }
 
     /// Minimum (and for most formats, exact) deck size.
     var deckSize: Int {
-        switch self {
-        case .onePiece: return 51
-        default:        return 60
-        }
+        return 60
     }
 
     /// When true the deck size is a minimum; any count ≥ deckSize is legal.
@@ -137,7 +105,6 @@ enum DeckFormat: String, Codable, CaseIterable {
         case .pokemonExpanded:  return expandedLegalSetKeys
         case .pokemonGLC:       return expandedLegalSetKeys
         case .pokemonUnlimited: return nil
-        case .onePiece:         return nil
         }
     }
 
@@ -188,12 +155,6 @@ enum DeckFormat: String, Codable, CaseIterable {
                 • Black & White sets onward
                 • Ban list applies
                 """
-        case .onePiece:
-            return """
-                • 51 cards total (50 main deck + 1 Leader)
-                • Max 4 copies per set + card number
-                • Exactly 1 Leader required
-                """
         }
     }
 
@@ -207,10 +168,7 @@ enum DeckFormat: String, Codable, CaseIterable {
     }
 
     static func formats(for brand: TCGBrand) -> [DeckFormat] {
-        switch brand {
-        case .pokemon:  return [.pokemonStandard, .pokemonExpanded, .pokemonUnlimited, .pokemonGLC]
-        case .onePiece: return [.onePiece]
-        }
+        return [.pokemonStandard, .pokemonExpanded, .pokemonUnlimited, .pokemonGLC]
     }
 }
 
@@ -256,36 +214,6 @@ enum DeckFormat: String, Codable, CaseIterable {
             }
         } else if total != fmt.deckSize {
             issues.append("Deck must have exactly \(fmt.deckSize) cards (currently \(total))")
-        }
-
-        guard tcgBrand == .pokemon else {
-            if tcgBrand == .onePiece {
-                let leaderCount = cardList.filter {
-                    ($0.catalogCategory ?? "").lowercased().contains("leader")
-                }.reduce(0) { $0 + $1.quantity }
-                if leaderCount != 1 {
-                    issues.append("Deck must have exactly 1 Leader (have \(leaderCount))")
-                }
-
-                let groupedByIdentity = Dictionary(grouping: cardList, by: { onePieceDeckCopyLimitIdentity(for: $0).key })
-                for entries in groupedByIdentity.values {
-                    let qty = entries.reduce(0) { $0 + $1.quantity }
-                    if qty > fmt.maxCopiesPerCard {
-                        let label = onePieceDeckCopyLimitIdentity(for: entries[0]).label
-                        issues.append("\(label): max \(fmt.maxCopiesPerCard) copies (have \(qty))")
-                    }
-                }
-                return issues
-            }
-
-            let grouped = Dictionary(grouping: cardList, by: { $0.cardName })
-            for (name, entries) in grouped {
-                let qty = entries.reduce(0) { $0 + $1.quantity }
-                if qty > fmt.maxCopiesPerCard {
-                    issues.append("\(name): max \(fmt.maxCopiesPerCard) copies (have \(qty))")
-                }
-            }
-            return issues
         }
 
         // Must contain at least one Basic Pokémon
@@ -401,11 +329,8 @@ enum DeckFormat: String, Codable, CaseIterable {
     var catalogSubtype: String?
     /// Canonical Pokémon stage from catalog (e.g. `Basic`, `Stage 1`, `Stage 2`) so stage summaries survive older deck rows that predate `catalogSubtype`.
     var catalogStage: String?
-    /// ONE PIECE: DON!! cost to play. Nil for Leaders.
     var opCost: Int? = nil
-    /// ONE PIECE: power value (reuses Card.hp field).
     var opPower: Int? = nil
-    /// ONE PIECE: counter value (e.g. 1000, 2000). Nil when not present.
     var opCounter: Int? = nil
     var deck: Deck?
 
@@ -462,7 +387,6 @@ enum DeckFormat: String, Codable, CaseIterable {
 
 extension DeckCard {
     enum PokemonCategory { case pokemon, trainer, energy }
-    enum OPCategory      { case leader, character, event, stage }
 
     var pokemonCategory: PokemonCategory {
         if isEnergyCard { return .energy }
@@ -475,14 +399,6 @@ extension DeckCard {
         if trainerType != nil { return .trainer }
         if isBasicPokemon || isRuleBox || isRadiant { return .pokemon }
         return .pokemon
-    }
-
-    var opCategory: OPCategory {
-        let c = catalogCategory?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
-        if c.contains("leader")    { return .leader }
-        if c.contains("event")     { return .event }
-        if c.contains("stage")     { return .stage }
-        return .character
     }
 }
 

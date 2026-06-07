@@ -137,7 +137,7 @@ struct CardPricingPanel: View {
         return out
     }
 
-    /// ONE PIECE: show variant chips only when the catalog row includes a `variant` (R2 history uses placeholder `default`).
+    /// Show variant chips only when the catalog row includes a `variant` key.
     private var shouldShowVariantChips: Bool {
         guard !displayedVariants.isEmpty else { return false }
         if card.masterCardId.contains("::") {
@@ -536,8 +536,7 @@ struct CardPricingPanel: View {
         }
         let scrydexKeys = Set(keys)
 
-        // Pick default variant: ONE PIECE uses the catalog `variant` for this row (each print is its own card); Pokémon
-        // prefers keys that exist in both history and Scrydex.
+        // Pick default variant: prefer keys that exist in both history and Scrydex.
         let preferredVariants = ["holofoil", "normal", "reverseHolofoil"]
         let defaultVariant: String?
         if card.masterCardId.contains("::") {

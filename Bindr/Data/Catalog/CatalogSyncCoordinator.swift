@@ -180,36 +180,28 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             let blobPhase = DailyBlobSyncPhase(session: session, store: store)
             let pricingCount = await pricingPhase.estimatedFileCount(enabledBrands: enabledBrands)
             let blobCount = await blobPhase.estimatedFileCount(enabledBrands: enabledBrands)
-            let catalogCount = 2 // sets.json + one placeholder for per-set cards
+            let catalogCount = 3 // sets.json, variants.json, + one placeholder for per-set cards
             await progress.addPlannedFiles(catalogCount + pricingCount + blobCount)
         }
 
-        // Open the store once before branching so both catalog phases start with an open DB.
-        if enabledBrands.contains(.pokemon) || enabledBrands.contains(.onePiece) {
+        // Open the store once before the catalog phase starts.
+        if enabledBrands.contains(.pokemon) {
             try? await store.open()
         }
 
-        // Run catalog version check (Pokémon-only) before both phases so neither
-        // phase races on the ETags that checkAndApply clears.
+        // Run catalog version check before the catalog phase so it doesn't race ETags.
         if enabledBrands.contains(.pokemon) {
             await progress.setStatus("Checking card catalog…")
             await checkAndApplyCatalogVersionIfNeeded(store: store)
         }
 
-        // Both catalog phases fetch entirely independent URLs and write to separate
-        // SQLite namespaces, so they can run concurrently.
-        async let pokemonCatalogDone: Void = {
-            guard enabledBrands.contains(.pokemon) else { return }
+        if enabledBrands.contains(.pokemon) {
             let phase = PokemonCatalogSyncPhase(session: session, store: store)
             await phase.syncCatalogIfNeeded(progress: progress)
+            await phase.refreshVariantsCatalog()
+            await progress.completeFile(byteCount: 0)
             await phase.refreshNationalDexMetadata()
-        }()
-        async let onePieceCatalogDone: Void = {
-            guard enabledBrands.contains(.onePiece) else { return }
-            let phase = OnePieceCatalogSyncPhase(session: session, store: store)
-            await phase.syncCatalogIfNeeded(progress: progress)
-        }()
-        _ = await (pokemonCatalogDone, onePieceCatalogDone)
+        }
 
         if !enabledBrands.isEmpty {
             try? await store.open()
@@ -226,12 +218,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
         let store = CatalogStore.shared
         try? await store.open()
-        switch brand {
-        case .pokemon:
-            await PokemonCatalogSyncPhase(session: session, store: store).fillMissingSetCards()
-        case .onePiece:
-            break
-        }
+        await PokemonCatalogSyncPhase(session: session, store: store).fillMissingSetCards()
     }
 
     func forceCardDataRefresh(
@@ -248,10 +235,9 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
         var downloaded: Int64 = 0
         if enabledBrands.contains(.pokemon) {
-            downloaded += await PokemonCatalogSyncPhase(session: session, store: store).syncCatalogCardDeltas(progress: progress)
-        }
-        if enabledBrands.contains(.onePiece) {
-            downloaded += await OnePieceCatalogSyncPhase(session: session, store: store).syncCatalogCardDeltas(progress: progress)
+            let phase = PokemonCatalogSyncPhase(session: session, store: store)
+            downloaded += await phase.syncCatalogCardDeltas(progress: progress)
+            await phase.refreshVariantsCatalog()
         }
 
         let pricingPhase = MarketPricingSyncPhase(session: session, store: store)
@@ -377,6 +363,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         // and new content only for sets that actually changed.
         try? await store.setMeta("catalog_sets_sha256", "")
         try? await store.setMeta("catalog_etag", "")
+        try? await store.setMeta(VariantsCatalogService.etagMetaKey, "")
 
         // Clear pricing sync date so the period refresh runs unconditionally on next launch,
         // re-fetching sealed products list, market trend, and per-set price trends.

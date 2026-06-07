@@ -48,7 +48,7 @@ struct OnboardingWelcomeView: View {
             OnboardingFeatureRow(
                 icon: "rectangle.grid.3x2",
                 title: "Full Catalog",
-                description: "Every set, variant, and alt art across Pokémon and ONE PIECE in one place."
+                description: "Every set, variant, and alt art across Pokémon in one place."
             )
             OnboardingFeatureRow(
                 icon: "books.vertical",

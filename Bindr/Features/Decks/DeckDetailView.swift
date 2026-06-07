@@ -6,58 +6,35 @@ import UIKit
 
 private enum DeckCardGroup: String, CaseIterable, Identifiable {
     var id: String { rawValue }
-    // Pokémon TCG groups
     case pokemon  = "pokemon"
     case trainer  = "trainer"
     case energy   = "energy"
-    // One Piece groups
-    case opLeader    = "op_leader"
-    case opCharacter = "op_character"
-    case opEvent     = "op_event"
-    case opStage     = "op_stage"
 
     var displayName: String {
         switch self {
-        case .pokemon:      return "Pokémon"
-        case .trainer:      return "Trainers"
-        case .energy:       return "Energy"
-        case .opLeader:     return "Leader"
-        case .opCharacter:  return "Characters"
-        case .opEvent:      return "Events"
-        case .opStage:      return "Stages"
+        case .pokemon:  return "Pokémon"
+        case .trainer:  return "Trainers"
+        case .energy:   return "Energy"
         }
     }
 
     func matches(_ card: DeckCard) -> Bool {
         switch self {
-        case .pokemon:      return card.pokemonCategory == .pokemon
-        case .trainer:      return card.pokemonCategory == .trainer
-        case .energy:       return card.pokemonCategory == .energy
-        case .opLeader:     return card.opCategory == .leader
-        case .opCharacter:  return card.opCategory == .character
-        case .opEvent:      return card.opCategory == .event
-        case .opStage:      return card.opCategory == .stage
+        case .pokemon:  return card.pokemonCategory == .pokemon
+        case .trainer:  return card.pokemonCategory == .trainer
+        case .energy:   return card.pokemonCategory == .energy
         }
     }
 
     var pickerFilter: BrowseCardTypeFilter {
         switch self {
-        case .pokemon:      return .pokemon
-        case .trainer:      return .trainer
-        case .energy:       return .energy
-        case .opLeader:     return .opLeader
-        case .opCharacter:  return .opCharacter
-        case .opEvent:      return .opEvent
-        case .opStage:      return .opStage
+        case .pokemon:  return .pokemon
+        case .trainer:  return .trainer
+        case .energy:   return .energy
         }
     }
 
-    static func groups(for brand: TCGBrand) -> [DeckCardGroup] {
-        switch brand {
-        case .pokemon:  return [.pokemon, .trainer, .energy]
-        case .onePiece: return [.opLeader, .opCharacter, .opEvent, .opStage]
-        }
-    }
+    static var allGroups: [DeckCardGroup] { [.pokemon, .trainer, .energy] }
 }
 
 /// Full deck swipe order for ``CardBrowseDetailView`` paging (matches Pokémon → Trainers → Energy on screen).
@@ -148,7 +125,6 @@ struct DeckDetailView: View {
         return result
     }
 
-    // Pokémon TCG card lists
     private var pokemonCards: [DeckCard] { deck.cardList.filter { $0.pokemonCategory == .pokemon }.sorted { $0.cardName < $1.cardName } }
     private var trainerCards: [DeckCard] { deck.cardList.filter { $0.pokemonCategory == .trainer }.sorted { $0.cardName < $1.cardName } }
     private var energyCards:  [DeckCard] { deck.cardList.filter { $0.pokemonCategory == .energy  }.sorted { $0.cardName < $1.cardName } }
@@ -157,23 +133,8 @@ struct DeckDetailView: View {
     private var trainerCount: Int { trainerCards.reduce(0) { $0 + $1.quantity } }
     private var energyCount:  Int { energyCards.reduce(0)  { $0 + $1.quantity } }
 
-    // One Piece card lists
-    private var opLeaderCards:    [DeckCard] { deck.cardList.filter { $0.opCategory == .leader    }.sorted { $0.cardName < $1.cardName } }
-    private var opCharacterCards: [DeckCard] { deck.cardList.filter { $0.opCategory == .character }.sorted { $0.cardName < $1.cardName } }
-    private var opEventCards:     [DeckCard] { deck.cardList.filter { $0.opCategory == .event     }.sorted { $0.cardName < $1.cardName } }
-    private var opStageCards:     [DeckCard] { deck.cardList.filter { $0.opCategory == .stage     }.sorted { $0.cardName < $1.cardName } }
-
-    private var opLeaderCount:    Int { opLeaderCards.reduce(0)    { $0 + $1.quantity } }
-    private var opCharacterCount: Int { opCharacterCards.reduce(0) { $0 + $1.quantity } }
-    private var opEventCount:     Int { opEventCards.reduce(0)     { $0 + $1.quantity } }
-    private var opStageCount:     Int { opStageCards.reduce(0)     { $0 + $1.quantity } }
-
-    /// Same order as the decklist sections (for horizontal paging in the detail sheet).
     private var orderedDeckRowsForSwipe: [DeckCard] {
-        if deck.tcgBrand == .onePiece {
-            return opLeaderCards + opCharacterCards + opEventCards + opStageCards
-        }
-        return pokemonCards + trainerCards + energyCards
+        pokemonCards + trainerCards + energyCards
     }
 
     private var validationColor: Color {
@@ -189,7 +150,6 @@ struct DeckDetailView: View {
         !deck.cardList.isEmpty
     }
 
-    private var isOnePiece: Bool { deck.tcgBrand == .onePiece }
     private var shareAutoSyncSignature: String {
         let cardsSignature = deck.cardList
             .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)|\($0.cardName)" }
@@ -208,16 +168,9 @@ struct DeckDetailView: View {
 
                 Divider().padding(.horizontal, 16)
 
-                if isOnePiece {
-                    cardGroupSection(group: .opLeader,    cards: opLeaderCards)
-                    cardGroupSection(group: .opCharacter, cards: opCharacterCards)
-                    cardGroupSection(group: .opEvent,     cards: opEventCards)
-                    cardGroupSection(group: .opStage,     cards: opStageCards)
-                } else {
-                    cardGroupSection(group: .pokemon, cards: pokemonCards)
-                    cardGroupSection(group: .trainer, cards: trainerCards)
-                    cardGroupSection(group: .energy,  cards: energyCards)
-                }
+                cardGroupSection(group: .pokemon, cards: pokemonCards)
+                cardGroupSection(group: .trainer, cards: trainerCards)
+                cardGroupSection(group: .energy,  cards: energyCards)
 
                 Spacer(minLength: 40)
             }
@@ -366,11 +319,7 @@ struct DeckDetailView: View {
                     HapticManager.impact(.light)
                     showShareActions = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                        if isOnePiece {
-                            showOfficialDeckListUnavailable = true
-                        } else {
-                            showOfficialDeckListSheet = true
-                        }
+                        showOfficialDeckListSheet = true
                     }
                 }
                 Spacer(minLength: 0)
@@ -434,27 +383,14 @@ struct DeckDetailView: View {
                 }
                 .frame(height: 8)
 
-                if isOnePiece {
-                    HStack(spacing: 0) {
-                        summaryPill(label: "Leader",     count: opLeaderCount,    color: .red)
-                        Spacer()
-                        summaryPill(label: "Characters", count: opCharacterCount, color: .blue)
-                        Spacer()
-                        summaryPill(label: "Events",     count: opEventCount,     color: .purple)
-                        Spacer()
-                        summaryPill(label: "Stages",     count: opStageCount,     color: .green)
-                    }
-                    .padding(.top, 4)
-                } else {
-                    HStack(spacing: 0) {
-                        summaryPill(label: "Pokémon", count: pokemonCount, color: .blue)
-                        Spacer()
-                        summaryPill(label: "Trainers", count: trainerCount, color: .purple)
-                        Spacer()
-                        summaryPill(label: "Energy", count: energyCount, color: .orange)
-                    }
-                    .padding(.top, 4)
+                HStack(spacing: 0) {
+                    summaryPill(label: "Pokémon", count: pokemonCount, color: .blue)
+                    Spacer()
+                    summaryPill(label: "Trainers", count: trainerCount, color: .purple)
+                    Spacer()
+                    summaryPill(label: "Energy", count: energyCount, color: .orange)
                 }
+                .padding(.top, 4)
             }
 
             if hasExpandableSummaryDetail {
@@ -483,16 +419,10 @@ struct DeckDetailView: View {
             if isSummaryExpanded && hasExpandableSummaryDetail {
                 VStack(alignment: .leading, spacing: 18) {
                     Divider()
-                    if isOnePiece {
-                        opCharacterBreakdown
-                        opEventBreakdown
-                        opStageBreakdown
-                    } else {
-                        typeBreakdown
-                        subtypeBreakdown
-                        if !trainerCards.isEmpty { trainerBreakdown }
-                        if !energyCards.isEmpty  { energyBreakdown }
-                    }
+                    typeBreakdown
+                    subtypeBreakdown
+                    if !trainerCards.isEmpty { trainerBreakdown }
+                    if !energyCards.isEmpty  { energyBreakdown }
                     Divider()
                     valueRow
                 }
@@ -743,167 +673,6 @@ struct DeckDetailView: View {
             chips.append(EnergySummaryChip(id: "special", label: "Special", count: specialCount, circleType: nil))
         }
         return chips
-    }
-
-    // MARK: One Piece breakdowns
-
-    /// A reusable chip row used across all OP breakdown sections.
-    private func opChips(_ items: [(label: String, count: Int)]) -> some View {
-        FlowRow(spacing: 8) {
-            ForEach(items, id: \.label) { item in
-                HStack(spacing: 4) {
-                    Text(item.label).font(.caption2).foregroundStyle(.primary)
-                    Text("×\(item.count)").font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
-                }
-                .padding(.horizontal, 8).padding(.vertical, 4)
-                .background(Capsule().fill(Color(uiColor: .tertiarySystemFill)))
-            }
-        }
-    }
-
-    /// Weighted average cost across a list of DeckCards (using opCost per card × quantity).
-    private func averageCost(_ cards: [DeckCard]) -> Double? {
-        let totalQty = cards.reduce(0) { $0 + $1.quantity }
-        guard totalQty > 0 else { return nil }
-        let withCost = cards.filter { $0.opCost != nil }
-        guard !withCost.isEmpty else { return nil }
-        let sum = withCost.reduce(0.0) { $0 + Double($1.opCost!) * Double($1.quantity) }
-        let qty = withCost.reduce(0) { $0 + $1.quantity }
-        return sum / Double(qty)
-    }
-
-    /// Weighted average power across a list of DeckCards (using opPower × quantity).
-    private func averagePower(_ cards: [DeckCard]) -> Double? {
-        let withPower = cards.filter { $0.opPower != nil }
-        guard !withPower.isEmpty else { return nil }
-        let sum = withPower.reduce(0.0) { $0 + Double($1.opPower!) * Double($1.quantity) }
-        let qty = withPower.reduce(0) { $0 + $1.quantity }
-        return sum / Double(qty)
-    }
-
-    /// Color counts (from elementTypes) across a list of DeckCards, quantity-weighted.
-    private func colorCounts(_ cards: [DeckCard]) -> [(label: String, count: Int)] {
-        var counts: [String: Int] = [:]
-        for card in cards {
-            for color in (card.elementTypes ?? []) where !color.isEmpty && color != "-" {
-                counts[color, default: 0] += card.quantity
-            }
-        }
-        return counts.map { ($0.key, $0.value) }.sorted { $0.count > $1.count }
-    }
-
-    /// Subtype counts from catalogSubtype CSV, quantity-weighted.
-    private func opSubtypeCounts(_ cards: [DeckCard]) -> [(label: String, count: Int)] {
-        var counts: [String: Int] = [:]
-        for card in cards {
-            let tokens = (card.catalogSubtype ?? "")
-                .split(separator: ",")
-                .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-                .filter { !$0.isEmpty }
-            for token in tokens {
-                counts[token, default: 0] += card.quantity
-            }
-        }
-        return counts.map { ($0.key, $0.value) }.sorted { $0.count > $1.count }
-    }
-
-    @ViewBuilder
-    private var opCharacterBreakdown: some View {
-        if !opCharacterCards.isEmpty {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Characters").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
-
-                let avgCost  = averageCost(opCharacterCards)
-                let avgPower = averagePower(opCharacterCards)
-                let withCounter = opCharacterCards.filter { $0.opCounter != nil }.reduce(0) { $0 + $1.quantity }
-                let subtypes = opSubtypeCounts(opCharacterCards)
-                let colors   = colorCounts(opCharacterCards)
-
-                HStack(spacing: 16) {
-                    if let c = avgCost {
-                        VStack(spacing: 1) {
-                            Text(String(format: "%.1f", c)).font(.caption.weight(.bold))
-                            Text("Avg cost").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                    if let p = avgPower {
-                        VStack(spacing: 1) {
-                            Text(String(format: "%.0f", p)).font(.caption.weight(.bold))
-                            Text("Avg power").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                    if withCounter > 0 {
-                        VStack(spacing: 1) {
-                            Text("\(withCounter)").font(.caption.weight(.bold))
-                            Text("With counter").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                }
-
-                if !subtypes.isEmpty {
-                    opChips(subtypes)
-                }
-                if !colors.isEmpty {
-                    opChips(colors)
-                }
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var opEventBreakdown: some View {
-        if !opEventCards.isEmpty {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Events").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
-
-                let avgCost  = averageCost(opEventCards)
-                let subtypes = opSubtypeCounts(opEventCards)
-                let colors   = colorCounts(opEventCards)
-
-                if let c = avgCost {
-                    HStack(spacing: 16) {
-                        VStack(spacing: 1) {
-                            Text(String(format: "%.1f", c)).font(.caption.weight(.bold))
-                            Text("Avg cost").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                }
-                if !subtypes.isEmpty {
-                    opChips(subtypes)
-                }
-                if !colors.isEmpty {
-                    opChips(colors)
-                }
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var opStageBreakdown: some View {
-        if !opStageCards.isEmpty {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Stages").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
-
-                let avgCost  = averageCost(opStageCards)
-                let subtypes = opSubtypeCounts(opStageCards)
-                let colors   = colorCounts(opStageCards)
-
-                if let c = avgCost {
-                    HStack(spacing: 16) {
-                        VStack(spacing: 1) {
-                            Text(String(format: "%.1f", c)).font(.caption.weight(.bold))
-                            Text("Avg cost").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                }
-                if !subtypes.isEmpty {
-                    opChips(subtypes)
-                }
-                if !colors.isEmpty {
-                    opChips(colors)
-                }
-            }
-        }
     }
 
     // MARK: Value row

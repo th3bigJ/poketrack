@@ -20,7 +20,7 @@ struct MoreView: View {
     var body: some View {
         ZStack(alignment: .top) {
             ScrollView {
-                VStack(spacing: BindrSpacing.lg) {
+                VStack(spacing: 0) {
                     Color.clear.frame(height: rootFloatingChromeInset)
 
                     Button {
@@ -82,6 +82,7 @@ struct MoreView: View {
                         }
                     }
                     .padding(.horizontal, BindrSpacing.lg)
+                    .padding(.top, BindrSpacing.lg)
                 }
                 .padding(.bottom, 120)
             }

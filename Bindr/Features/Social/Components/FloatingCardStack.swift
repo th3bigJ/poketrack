@@ -342,10 +342,10 @@ struct HeroCard: Identifiable, Hashable {
             glow: Color(hex: "A78BFA")
         ),
         HeroCard(
-            title: "Luffy SEC",
-            subtitle: "ONE PIECE OP07",
-            symbol: "sparkle",
-            rarityBadge: "MANGA",
+            title: "Charizard ex",
+            subtitle: "Obsidian Flames • 125/197",
+            symbol: "flame.fill",
+            rarityBadge: "ULTRA RARE",
             gradientTop: Color(hex: "EF1F2F"),
             gradientBottom: Color(hex: "7B0E18"),
             glow: Color(hex: "FF4A57")

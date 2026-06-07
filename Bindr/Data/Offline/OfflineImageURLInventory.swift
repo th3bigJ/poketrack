@@ -14,58 +14,33 @@ enum OfflineImageURLInventory {
             rows.append((key, url))
         }
 
-        switch brand {
-        case .pokemon:
-            let cards = try await CatalogStore.shared.fetchAllCards(for: .pokemon)
-            for c in cards {
-                append(c.displayImageSrc, AppConfiguration.imageURL(relativePath: c.displayImageSrc))
+        let cards = try await CatalogStore.shared.fetchAllCards(for: .pokemon)
+        for c in cards {
+            append(c.displayImageSrc, AppConfiguration.imageURL(relativePath: c.displayImageSrc))
+        }
+        let sets = try await CatalogStore.shared.fetchAllSets(for: .pokemon)
+        for s in sets {
+            let logo = s.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !logo.isEmpty, let u = AppConfiguration.setLogoURLCandidates(logoSrc: logo).first {
+                append(logo, u)
             }
-            let sets = try await CatalogStore.shared.fetchAllSets(for: .pokemon)
-            for s in sets {
-                let logo = s.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !logo.isEmpty, let u = AppConfiguration.setLogoURLCandidates(logoSrc: logo).first {
-                    append(logo, u)
-                }
-                if let sym = s.symbolSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !sym.isEmpty,
-                   let u = AppConfiguration.setSymbolURLCandidates(symbolSrc: sym).first {
-                    append(sym, u)
-                }
+            if let sym = s.symbolSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !sym.isEmpty,
+               let u = AppConfiguration.setSymbolURLCandidates(symbolSrc: sym).first {
+                append(sym, u)
             }
-            for row in nationalDexPokemon {
-                let rel = AppConfiguration.pokemonArtRelativePath(imageFileName: row.imageUrl)
-                if rel.hasPrefix("http"), let u = URL(string: rel) {
-                    append(rel, u)
-                } else {
-                    append(rel, AppConfiguration.pokemonArtURL(imageFileName: row.imageUrl))
-                }
+        }
+        for row in nationalDexPokemon {
+            let rel = AppConfiguration.pokemonArtRelativePath(imageFileName: row.imageUrl)
+            if rel.hasPrefix("http"), let u = URL(string: rel) {
+                append(rel, u)
+            } else {
+                append(rel, AppConfiguration.pokemonArtURL(imageFileName: row.imageUrl))
             }
-            for product in sealedProducts where product.tcg == "pokemon" {
-                guard let url = product.image?.resolvedURL else { continue }
-                let key = AppConfiguration.offlineImageKey(for: url) ?? url.absoluteString
-                append(key, url)
-            }
-
-        case .onePiece:
-            let cards = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
-            for c in cards {
-                append(c.displayImageSrc, AppConfiguration.imageURL(relativePath: c.displayImageSrc))
-            }
-            let sets = try await CatalogStore.shared.fetchAllSets(for: .onePiece)
-            for s in sets {
-                let logo = s.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !logo.isEmpty, let u = AppConfiguration.setLogoURLCandidates(logoSrc: logo).first {
-                    append(logo, u)
-                }
-                if let sym = s.symbolSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !sym.isEmpty,
-                   let u = AppConfiguration.setSymbolURLCandidates(symbolSrc: sym).first {
-                    append(sym, u)
-                }
-            }
-            for product in sealedProducts where product.tcg == "one_piece" {
-                guard let url = product.image?.resolvedURL else { continue }
-                let key = AppConfiguration.offlineImageKey(for: url) ?? url.absoluteString
-                append(key, url)
-            }
+        }
+        for product in sealedProducts where product.tcg == "pokemon" {
+            guard let url = product.image?.resolvedURL else { continue }
+            let key = AppConfiguration.offlineImageKey(for: url) ?? url.absoluteString
+            append(key, url)
         }
 
         return rows

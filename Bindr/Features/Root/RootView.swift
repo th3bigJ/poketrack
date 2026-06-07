@@ -827,28 +827,14 @@ struct RootView: View {
                             SearchExperienceView(query: $universalQuery)
                             .navigationDestination(for: SearchNavRoot.self) { root in
                                 switch root {
-                                case .set(let s, let brand):
+                                case .set(let s, _):
                                     SetCardsView(set: s)
                                         .onAppear {
-                                            services.brandSettings.selectedCatalogBrand = brand
                                             searchFieldFocused = false
                                         }
-                                case .dex(let dexId, let displayName, let brand):
+                                case .dex(let dexId, let displayName, _):
                                     DexCardsView(dexId: dexId, displayName: displayName)
                                         .onAppear {
-                                            services.brandSettings.selectedCatalogBrand = brand
-                                            searchFieldFocused = false
-                                        }
-                                case .onePieceCharacter(let name, let brand):
-                                    OnePieceCharacterCardsView(characterName: name)
-                                        .onAppear {
-                                            services.brandSettings.selectedCatalogBrand = brand
-                                            searchFieldFocused = false
-                                        }
-                                case .onePieceSubtype(let name, let brand):
-                                    OnePieceSubtypeCardsView(subtypeName: name)
-                                        .onAppear {
-                                            services.brandSettings.selectedCatalogBrand = brand
                                             searchFieldFocused = false
                                         }
                                 }
@@ -1218,7 +1204,7 @@ struct RootView: View {
                 switch route {
                 case .set(_):
                     return .cardNumber
-                case .dex(_, _), .onePieceCharacter(_), .onePieceSubtype(_):
+                case .dex(_, _):
                     return .newestSet
                 }
             }

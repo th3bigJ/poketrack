@@ -23,15 +23,9 @@ enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable, Cod
 }
 
 enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable, Codable {
-    // Pokémon TCG
     case pokemon
     case trainer
     case energy
-    // One Piece
-    case opLeader
-    case opCharacter
-    case opEvent
-    case opStage
 
     var id: String { rawValue }
 
@@ -39,24 +33,9 @@ enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable, Codable
 
     var title: String {
         switch self {
-        case .pokemon:      return "Pokemon"
-        case .trainer:      return "Trainer"
-        case .energy:       return "Energy"
-        case .opLeader:     return "Leader"
-        case .opCharacter:  return "Character"
-        case .opEvent:      return "Event"
-        case .opStage:      return "Stage"
-        }
-    }
-
-    /// The One Piece catalog category string this filter maps to.
-    var opCategoryString: String? {
-        switch self {
-        case .opLeader:    return "Leader"
-        case .opCharacter: return "Character"
-        case .opEvent:     return "Event"
-        case .opStage:     return "Stage"
-        default:           return nil
+        case .pokemon: return "Pokemon"
+        case .trainer: return "Trainer"
+        case .energy:  return "Energy"
         }
     }
 }
@@ -96,13 +75,6 @@ enum BrowseCardAbilityPresenceFilter: String, CaseIterable, Identifiable, Sendab
     }
 }
 
-/// Fixed One Piece filter options — catalog-defined, don't change between sets.
-let opCardTypeAllOptions: [String] = ["Character", "Event", "Leader", "Stage"]
-let opAttributeAllOptions: [String] = ["Slash", "Strike", "Ranged", "Special", "Wisdom"]
-let opCostAllOptions: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-let opCounterAllOptions: [Int] = [1000, 2000]
-let opLifeAllOptions: [Int] = [3, 4, 5, 6]
-let opPowerAllOptions: [Int] = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
 let pokemonSubtypeAllOptions: [String] = [
     "Basic",
     "Stage 1",
@@ -251,13 +223,6 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var pokemonSubtypes: Set<String> = []
     var abilityPresence: BrowseCardAbilityPresenceFilter? = nil
     var legalities: Set<BrowseCardLegalityFilter> = []
-    /// ONE PIECE card type filter (Character / Event / Leader / Stage).
-    var opCardTypes: Set<String> = []
-    var opAttributes: Set<String> = []
-    var opCosts: Set<Int> = []
-    var opCounters: Set<Int> = []
-    var opLives: Set<Int> = []
-    var opPowers: Set<Int> = []
     /// Product type filters (supports grouped options like Collections / Special).
     var productTypes: Set<String> = []
 
@@ -278,12 +243,6 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
             || !pokemonSubtypes.isEmpty
             || abilityPresence != nil
             || !legalities.isEmpty
-            || !opCardTypes.isEmpty
-            || !opAttributes.isEmpty
-            || !opCosts.isEmpty
-            || !opCounters.isEmpty
-            || !opLives.isEmpty
-            || !opPowers.isEmpty
     }
 
     var hasActiveProductFieldFilters: Bool {
@@ -320,12 +279,6 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         case pokemonSubtypes
         case abilityPresence
         case legalities
-        case opCardTypes
-        case opAttributes
-        case opCosts
-        case opCounters
-        case opLives
-        case opPowers
         case productTypes
     }
 
@@ -346,12 +299,6 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         pokemonSubtypes = try container.decodeIfPresent(Set<String>.self, forKey: .pokemonSubtypes) ?? []
         abilityPresence = try container.decodeIfPresent(BrowseCardAbilityPresenceFilter.self, forKey: .abilityPresence)
         legalities = try container.decodeIfPresent(Set<BrowseCardLegalityFilter>.self, forKey: .legalities) ?? []
-        opCardTypes = try container.decodeIfPresent(Set<String>.self, forKey: .opCardTypes) ?? []
-        opAttributes = try container.decodeIfPresent(Set<String>.self, forKey: .opAttributes) ?? []
-        opCosts = try container.decodeIfPresent(Set<Int>.self, forKey: .opCosts) ?? []
-        opCounters = try container.decodeIfPresent(Set<Int>.self, forKey: .opCounters) ?? []
-        opLives = try container.decodeIfPresent(Set<Int>.self, forKey: .opLives) ?? []
-        opPowers = try container.decodeIfPresent(Set<Int>.self, forKey: .opPowers) ?? []
         productTypes = try container.decodeIfPresent(Set<String>.self, forKey: .productTypes) ?? []
     }
 }

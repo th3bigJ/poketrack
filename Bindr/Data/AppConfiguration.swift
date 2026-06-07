@@ -3,6 +3,7 @@ import Foundation
 /// Builds URLs for your public R2 (or other) CDN. Intended layout when **catalog prefix** is `data`:
 /// - `…/data/sets.json`
 /// - `…/data/pokemon.json` (National Dex browse: `nationalDexNumber`, `name`, `imageUrl`, optional `generation`)
+/// - `…/data/variants.json` (master / grand master / championship variant allow-lists for set completion)
 /// - `…/data/cards/{setCode}.json`
 /// - `…/data/tcg/pricing/card-pricing/{setCode}.json` (per-set card pricing; see `r2CardPricingSetJSONURL`)
 /// - Card images in JSON as `cards/…` resolve under **assets prefix** (default: bucket root → `…/cards/…`).
@@ -111,47 +112,6 @@ enum AppConfiguration {
     /// When N increases the app re-downloads sets, series, and all card JSONs.
     static var r2CatalogVersionURL: URL {
         url(prefix: "", path: "version.md")
-    }
-
-    // MARK: - One Piece TCG (same bucket; prefix is `onepiece/`, not `tcg/onepiece/`)
-
-    /// R2 key prefix for One Piece. Layout (under bucket root):
-    /// - Sets index: `onepiece/sets/data/sets.json`
-    /// - Set images: `onepiece/sets/images/…`
-    /// - Card JSON: `onepiece/cards/data/{setCode}.json` (confirm stems with your export)
-    /// - Card images: `onepiece/cards/images/…`
-    /// - Market pricing (per set, keys = catalog `priceKey`): `onepiece/pricing/market/{SET}.json`
-    /// - History / trends: `onepiece/pricing/history/{set}.json`, `onepiece/pricing/trends/{set}.json` (see `PricingService`)
-    static let r2OnePieceCatalogRoot = "onepiece"
-
-    /// Build `…/onepiece/<path>` on the same host as `r2BaseURL`.
-    static func r2OnePieceURL(path: String) -> URL {
-        url(prefix: r2OnePieceCatalogRoot, path: path)
-    }
-
-    /// ONE PIECE browse metadata lists:
-    /// - `onepiece/character-names.json`
-    /// - `onepiece/character-subtypes.json`
-    static func r2OnePieceBrowseMetadataURL(path: String) -> URL {
-        r2OnePieceURL(path: path)
-    }
-
-    /// Per-set market pricing JSON for ONE PIECE: `onepiece/pricing/market/{setCode}.json` (keys are `priceKey` strings like `OP01::OP01-001::normal`).
-    static func r2OnePieceMarketPricingSetURL(setCodeStem: String) -> URL {
-        let stem = setCodeStem.trimmingCharacters(in: .whitespacesAndNewlines)
-        return r2OnePieceURL(path: "pricing/market/\(stem).json")
-    }
-
-    /// Per-set price history for ONE PIECE charts: `onepiece/pricing/history/{setCode}.json`
-    static func r2OnePiecePricingHistoryURL(setCodeStem: String) -> URL {
-        let stem = setCodeStem.trimmingCharacters(in: .whitespacesAndNewlines)
-        return r2OnePieceURL(path: "pricing/history/\(stem).json")
-    }
-
-    /// Per-set price trends for ONE PIECE badges: `onepiece/pricing/trends/{setCode}.json`
-    static func r2OnePiecePriceTrendsURL(setCodeStem: String) -> URL {
-        let stem = setCodeStem.trimmingCharacters(in: .whitespacesAndNewlines)
-        return r2OnePieceURL(path: "pricing/trends/\(stem).json")
     }
 
     /// Hosted list of franchises (order = carousel / Account). Default: `brands/data/brands.json` under ``r2BaseURL``.

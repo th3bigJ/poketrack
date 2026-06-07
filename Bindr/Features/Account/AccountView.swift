@@ -25,19 +25,7 @@ struct SettingsView: View {
 
     private var gameSection: some View {
         Section("Game & Catalog") {
-            NavigationLink {
-                CatalogSettingsPage()
-                    .environment(services)
-            } label: {
-                Label("Card Catalogs", systemImage: "square.stack.3d.up.fill")
-            }
-
-            NavigationLink {
-                ActiveGameSettingsPage()
-                    .environment(services)
-            } label: {
-                Label("Active Game", systemImage: "gamecontroller.fill")
-            }
+            Label("Pokémon TCG", systemImage: "square.stack.3d.up.fill")
         }
     }
 
@@ -145,128 +133,6 @@ struct SettingsView: View {
         }
     }
 
-}
-
-// MARK: - Catalog Settings Page
-
-private struct CatalogSettingsPage: View {
-    @Environment(AppServices.self) private var services
-    @State private var brandPendingDisable: TCGBrand?
-
-    private var brandsAvailableToAdd: [TCGBrand] {
-        services.brandsManifest.brandsAvailableToAdd(enabled: services.brandSettings.enabledBrands)
-    }
-
-    private var sortedEnabled: [TCGBrand] {
-        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
-    }
-
-    var body: some View {
-        List {
-            Section {
-                ForEach(sortedEnabled) { brand in
-                    Text(brand.displayTitle)
-                }
-                .onDelete(perform: requestBrandRemoval)
-                .deleteDisabled(services.brandSettings.enabledBrands.count <= 1)
-            } footer: {
-                Text("Removing a game deletes its downloaded catalog from this device and hides those cards from browse, wishlist, and collection until you add the game again.")
-            }
-        }
-        .listStyle(.insetGrouped)
-        .navigationTitle("Card Catalogs")
-        .navigationBarTitleDisplayMode(.large)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    ForEach(brandsAvailableToAdd) { brand in
-                        Button(brand.displayTitle) { addBrand(brand) }
-                    }
-                } label: {
-                    Image(systemName: "plus")
-                }
-                .disabled(brandsAvailableToAdd.isEmpty)
-            }
-        }
-        .alert(
-            "Remove catalog?",
-            isPresented: Binding(
-                get: { brandPendingDisable != nil },
-                set: { if !$0 { brandPendingDisable = nil } }
-            ),
-            presenting: brandPendingDisable
-        ) { brand in
-            Button("Cancel", role: .cancel) { brandPendingDisable = nil }
-            Button("Delete downloaded data", role: .destructive) {
-                services.brandSettings.setEnabled(brand, isOn: false)
-                Task {
-                    do { try await BrandCatalogMaintenance.purgeLocalData(for: brand) }
-                    catch { }
-                }
-                services.pricing.clearSetPricingMemoryCache()
-                if services.brandSettings.enabledBrands.contains(.pokemon) {
-                    Task { await services.cardData.loadNationalDexPokemon() }
-                } else {
-                    services.cardData.clearNationalDexForDisabledPokemon()
-                }
-                Task { await services.cardData.reloadAfterBrandChange() }
-                brandPendingDisable = nil
-            }
-        } message: { brand in
-            Text("This removes the \(brand.displayTitle) catalog from this device. Wishlist and collection entries for that game are hidden until you add it again and download.")
-        }
-        .onChange(of: services.brandSettings.enabledBrands) { _, new in
-            if !new.contains(.pokemon) {
-                services.cardData.clearNationalDexForDisabledPokemon()
-            }
-        }
-    }
-
-    private func addBrand(_ brand: TCGBrand) {
-        services.brandSettings.setEnabled(brand, isOn: true)
-        Task { await services.performCatalogSyncAfterEnablingBrands() }
-    }
-
-    private func requestBrandRemoval(at offsets: IndexSet) {
-        let sorted = services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
-        guard let index = offsets.first, sorted.indices.contains(index) else { return }
-        brandPendingDisable = sorted[index]
-    }
-}
-
-// MARK: - Active Game Settings Page
-
-private struct ActiveGameSettingsPage: View {
-    @Environment(AppServices.self) private var services
-
-    private var sortedEnabled: [TCGBrand] {
-        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
-    }
-
-    var body: some View {
-        List {
-            Section {
-                Picker(
-                    "Active Game",
-                    selection: Binding(
-                        get: { services.brandSettings.selectedCatalogBrand },
-                        set: { services.brandSettings.selectedCatalogBrand = $0 }
-                    )
-                ) {
-                    ForEach(sortedEnabled) { brand in
-                        Text(brand.displayTitle).tag(brand)
-                    }
-                }
-                .pickerStyle(.inline)
-                .labelsHidden()
-            } footer: {
-                Text("Changes which card game is used across browse, collection, and search.")
-            }
-        }
-        .listStyle(.insetGrouped)
-        .navigationTitle("Active Game")
-        .navigationBarTitleDisplayMode(.large)
-    }
 }
 
 // MARK: - Offline Settings Page

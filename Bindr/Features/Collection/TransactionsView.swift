@@ -21,7 +21,7 @@ struct TransactionsView: View {
     @State private var loadedTransactionCount: Int = 50
     @State private var transactionSearchText: String = ""
 
-    private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
+    private var activeBrand: TCGBrand { .pokemon }
 
     private var visibleLedgerLines: [LedgerLine] {
         ledgerLines.filter { line in
@@ -256,13 +256,13 @@ struct TransactionsView: View {
 
     private var transactionList: some View {
         List {
-            transactionSearchField
-                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+            pnlSummaryCard
+                .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
-            pnlSummaryCard
-                .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
+            transactionSearchField
+                .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 

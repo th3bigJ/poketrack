@@ -62,8 +62,7 @@ struct PremiumBadgeView: View {
 
 // MARK: - StrawHatEmblemView
 
-/// Vector-drawn Luffy-style straw hat badge for ONE PIECE premium users.
-/// Rendered entirely with SwiftUI shapes — no images, scales perfectly.
+/// Vector-drawn straw hat emblem. Rendered entirely with SwiftUI shapes — no images, scales perfectly.
 struct StrawHatEmblemView: View {
     @Environment(\.bindrAccent) private var accent
     var size: CGFloat = 14

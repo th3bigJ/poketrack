@@ -23,7 +23,6 @@ struct SnapshotValue: Sendable {
     let date: Date
     let totalGbp: Double
     let pokemonGbp: Double
-    let onePieceGbp: Double
     let cardsGbp: Double
     let sealedGbp: Double
 }
@@ -32,7 +31,6 @@ struct WeeklyAverageValue: Sendable {
     let weekStart: Date
     let totalGbp: Double
     let pokemonGbp: Double
-    let onePieceGbp: Double
     let cardsGbp: Double
     let sealedGbp: Double
 }
@@ -41,7 +39,6 @@ struct MonthlyAverageValue: Sendable {
     let monthStart: Date
     let totalGbp: Double
     let pokemonGbp: Double
-    let onePieceGbp: Double
     let cardsGbp: Double
     let sealedGbp: Double
 }
@@ -104,19 +101,19 @@ final class CollectionValueService {
                 sortBy: [SortDescriptor(\.date, order: .forward)]
             )))?.map {
                 SnapshotValue(date: $0.date, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                              onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+                              cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
             } ?? []
             let weekly = (try? ctx.fetch(FetchDescriptor<CollectionWeeklyAverage>(
                 sortBy: [SortDescriptor(\.weekStart, order: .forward)]
             )))?.map {
                 WeeklyAverageValue(weekStart: $0.weekStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                                   onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+                                   cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
             } ?? []
             let monthly = (try? ctx.fetch(FetchDescriptor<CollectionMonthlyAverage>(
                 sortBy: [SortDescriptor(\.monthStart, order: .forward)]
             )))?.map {
                 MonthlyAverageValue(monthStart: $0.monthStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                                    onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+                                    cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
             } ?? []
             return (snaps, weekly, monthly)
         }.value
@@ -130,7 +127,6 @@ final class CollectionValueService {
     private enum LastKnownValueKey {
         static let total   = "collectionValue.lastKnown.total"
         static let pokemon = "collectionValue.lastKnown.pokemon"
-        static let onePiece = "collectionValue.lastKnown.onePiece"
         static let cards = "collectionValue.lastKnown.cards"
         static let sealed = "collectionValue.lastKnown.sealed"
         static let date    = "collectionValue.lastKnown.date"
@@ -147,7 +143,6 @@ final class CollectionValueService {
         return BrandSnapshot(
             total: total,
             pokemon: defaults.double(forKey: LastKnownValueKey.pokemon),
-            onePiece: defaults.double(forKey: LastKnownValueKey.onePiece),
             cards: defaults.double(forKey: LastKnownValueKey.cards),
             sealed: defaults.double(forKey: LastKnownValueKey.sealed)
         )
@@ -164,12 +159,11 @@ final class CollectionValueService {
     func persistLastKnownValue(_ snapshot: BrandSnapshot) {
         guard snapshot.total > 0 else { return }
         let defaults = UserDefaults.standard
-        defaults.set(snapshot.total,    forKey: LastKnownValueKey.total)
-        defaults.set(snapshot.pokemon,  forKey: LastKnownValueKey.pokemon)
-        defaults.set(snapshot.onePiece, forKey: LastKnownValueKey.onePiece)
-        defaults.set(snapshot.cards,    forKey: LastKnownValueKey.cards)
-        defaults.set(snapshot.sealed,   forKey: LastKnownValueKey.sealed)
-        defaults.set(Date(),            forKey: LastKnownValueKey.date)
+        defaults.set(snapshot.total,   forKey: LastKnownValueKey.total)
+        defaults.set(snapshot.pokemon, forKey: LastKnownValueKey.pokemon)
+        defaults.set(snapshot.cards,   forKey: LastKnownValueKey.cards)
+        defaults.set(snapshot.sealed,  forKey: LastKnownValueKey.sealed)
+        defaults.set(Date(),           forKey: LastKnownValueKey.date)
     }
 
     private func saveYesterdaySnapshotFromPersistedValueIfNeeded() {
@@ -180,11 +174,10 @@ final class CollectionValueService {
         guard cal.startOfDay(for: savedDate) == yesterday else { return }
         guard !snapshotExists(for: yesterday) else { return }
 
-        let total    = defaults.double(forKey: LastKnownValueKey.total)
-        let pokemon  = defaults.double(forKey: LastKnownValueKey.pokemon)
-        let onePiece = defaults.double(forKey: LastKnownValueKey.onePiece)
-        let cards    = defaults.double(forKey: LastKnownValueKey.cards)
-        let sealed   = defaults.double(forKey: LastKnownValueKey.sealed)
+        let total   = defaults.double(forKey: LastKnownValueKey.total)
+        let pokemon = defaults.double(forKey: LastKnownValueKey.pokemon)
+        let cards   = defaults.double(forKey: LastKnownValueKey.cards)
+        let sealed  = defaults.double(forKey: LastKnownValueKey.sealed)
         guard total > 0 else { return }
 
         print("[CollectionValue] Saving yesterday's snapshot from persisted value → \(yesterday.formatted(date: .abbreviated, time: .omitted)) total=\(total)")
@@ -192,7 +185,7 @@ final class CollectionValueService {
             date: yesterday,
             totalGbp: total,
             pokemonGbp: pokemon,
-            onePieceGbp: onePiece,
+            onePieceGbp: 0,
             cardsGbp: cards,
             sealedGbp: sealed
         )
@@ -268,7 +261,7 @@ final class CollectionValueService {
                 date: date,
                 totalGbp: value.total,
                 pokemonGbp: value.pokemon,
-                onePieceGbp: value.onePiece,
+                onePieceGbp: 0,
                 cardsGbp: value.cards,
                 sealedGbp: value.sealed
             )
@@ -298,7 +291,7 @@ final class CollectionValueService {
             date: today,
             totalGbp: liveSnapshot.total,
             pokemonGbp: liveSnapshot.pokemon,
-            onePieceGbp: liveSnapshot.onePiece,
+            onePieceGbp: 0,
             cardsGbp: liveSnapshot.cards,
             sealedGbp: liveSnapshot.sealed
         )
@@ -381,7 +374,7 @@ final class CollectionValueService {
             date: today,
             totalGbp: snapshot.total,
             pokemonGbp: snapshot.pokemon,
-            onePieceGbp: snapshot.onePiece,
+            onePieceGbp: 0,
             cardsGbp: snapshot.cards,
             sealedGbp: snapshot.sealed
         )
@@ -429,7 +422,7 @@ final class CollectionValueService {
             date: today,
             totalGbp: result.total,
             pokemonGbp: result.pokemon,
-            onePieceGbp: result.onePiece,
+            onePieceGbp: 0,
             cardsGbp: result.cards,
             sealedGbp: result.sealed
         )
@@ -471,7 +464,7 @@ final class CollectionValueService {
                     abs(existing.sealedGbp - avg.sealed) > 0.01 {
                     existing.totalGbp = avg.total
                     existing.pokemonGbp = avg.pokemon
-                    existing.onePieceGbp = avg.onePiece
+                    existing.onePieceGbp = 0
                     existing.cardsGbp = avg.cards
                     existing.sealedGbp = avg.sealed
                     print("[CollectionValue] Updated weekly avg for week of \(weekStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
@@ -481,7 +474,7 @@ final class CollectionValueService {
                     weekStart: weekStart,
                     totalGbp: avg.total,
                     pokemonGbp: avg.pokemon,
-                    onePieceGbp: avg.onePiece,
+                    onePieceGbp: 0,
                     cardsGbp: avg.cards,
                     sealedGbp: avg.sealed
                 )
@@ -526,7 +519,7 @@ final class CollectionValueService {
                     abs(existing.sealedGbp - avg.sealed) > 0.01 {
                     existing.totalGbp = avg.total
                     existing.pokemonGbp = avg.pokemon
-                    existing.onePieceGbp = avg.onePiece
+                    existing.onePieceGbp = 0
                     existing.cardsGbp = avg.cards
                     existing.sealedGbp = avg.sealed
                     print("[CollectionValue] Updated monthly avg for \(monthStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
@@ -536,7 +529,7 @@ final class CollectionValueService {
                     monthStart: monthStart,
                     totalGbp: avg.total,
                     pokemonGbp: avg.pokemon,
-                    onePieceGbp: avg.onePiece,
+                    onePieceGbp: 0,
                     cardsGbp: avg.cards,
                     sealedGbp: avg.sealed
                 )
@@ -561,27 +554,12 @@ final class CollectionValueService {
     // MARK: - Value computation
 
     private func computeValue(for items: [CollectionItem], on date: Date) async -> BrandSnapshot {
-        var pokemonItems: [CollectionItem] = []
-        var onePieceItems: [CollectionItem] = []
-
-        for item in items {
-            switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-            case .pokemon:  pokemonItems.append(item)
-            case .onePiece: onePieceItems.append(item)
-            }
-        }
-
-        let pokemonItemsCopy = pokemonItems
-        let onePieceItemsCopy = onePieceItems
-        async let p = computeBrandValue(items: pokemonItemsCopy, brand: .pokemon, on: date)
-        async let o = computeBrandValue(items: onePieceItemsCopy, brand: .onePiece, on: date)
-        let (pv, ov) = await (p, o)
+        let pv = await computeBrandValue(items: items, brand: .pokemon, on: date)
         return BrandSnapshot(
-            total: pv.total + ov.total,
+            total: pv.total,
             pokemon: pv.total,
-            onePiece: ov.total,
-            cards: pv.cards + ov.cards,
-            sealed: pv.sealed + ov.sealed
+            cards: pv.cards,
+            sealed: pv.sealed
         )
     }
 
@@ -679,14 +657,13 @@ final class CollectionValueService {
     // MARK: - Helpers
 
     private func average(of snapshots: [BrandSnapshot]) -> BrandSnapshot {
-        guard !snapshots.isEmpty else { return BrandSnapshot(total: 0, pokemon: 0, onePiece: 0, cards: 0, sealed: 0) }
+        guard !snapshots.isEmpty else { return BrandSnapshot(total: 0, pokemon: 0, cards: 0, sealed: 0) }
         let count = Double(snapshots.count)
         return BrandSnapshot(
-            total:    snapshots.map(\.total).reduce(0, +) / count,
-            pokemon:  snapshots.map(\.pokemon).reduce(0, +) / count,
-            onePiece: snapshots.map(\.onePiece).reduce(0, +) / count,
-            cards:    snapshots.map(\.cards).reduce(0, +) / count,
-            sealed:   snapshots.map(\.sealed).reduce(0, +) / count
+            total:   snapshots.map(\.total).reduce(0, +) / count,
+            pokemon: snapshots.map(\.pokemon).reduce(0, +) / count,
+            cards:   snapshots.map(\.cards).reduce(0, +) / count,
+            sealed:  snapshots.map(\.sealed).reduce(0, +) / count
         )
     }
 
@@ -721,7 +698,7 @@ final class CollectionValueService {
     private func loadAll() {
         snapshots = fetchAllSnapshots().map {
             SnapshotValue(date: $0.date, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                          onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+                          cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
         }
         weeklyAverages = {
             let d = FetchDescriptor<CollectionWeeklyAverage>(
@@ -729,7 +706,7 @@ final class CollectionValueService {
             )
             return ((try? modelContext.fetch(d)) ?? []).map {
                 WeeklyAverageValue(weekStart: $0.weekStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                                   onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+                                   cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
             }
         }()
         monthlyAverages = {
@@ -738,7 +715,7 @@ final class CollectionValueService {
             )
             return ((try? modelContext.fetch(d)) ?? []).map {
                 MonthlyAverageValue(monthStart: $0.monthStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                                    onePieceGbp: $0.onePieceGbp, cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
+                                    cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
             }
         }()
     }
@@ -750,7 +727,6 @@ final class CollectionValueService {
 struct BrandSnapshot {
     var total: Double
     var pokemon: Double
-    var onePiece: Double
     var cards: Double
     var sealed: Double
 }
@@ -761,7 +737,6 @@ extension CollectionValueSnapshot {
         return BrandSnapshot(
             total: totalGbp,
             pokemon: pokemonGbp,
-            onePiece: onePieceGbp,
             cards: hasExplicitSplit ? cardsGbp : totalGbp,
             sealed: hasExplicitSplit ? sealedGbp : 0
         )
@@ -774,7 +749,6 @@ extension SnapshotValue {
         return BrandSnapshot(
             total: totalGbp,
             pokemon: pokemonGbp,
-            onePiece: onePieceGbp,
             cards: hasExplicitSplit ? cardsGbp : totalGbp,
             sealed: hasExplicitSplit ? sealedGbp : 0
         )

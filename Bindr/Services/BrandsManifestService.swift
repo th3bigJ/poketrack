@@ -71,20 +71,6 @@ final class BrandsManifestService {
         return AppConfiguration.imageURL(relativePath: key)
     }
 
-    func sortBrands(_ brands: Set<TCGBrand>) -> [TCGBrand] {
-        let order = orderedBrands
-        return brands.sorted { a, b in
-            let ia = order.firstIndex(of: a) ?? Int.max
-            let ib = order.firstIndex(of: b) ?? Int.max
-            if ia != ib { return ia < ib }
-            return a.menuOrder < b.menuOrder
-        }
-    }
-
-    func brandsAvailableToAdd(enabled: Set<TCGBrand>) -> [TCGBrand] {
-        orderedBrands.filter { !enabled.contains($0) }
-    }
-
     // MARK: - UserDefaults persistence
 
     private func loadFromCache() {

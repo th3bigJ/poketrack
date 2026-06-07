@@ -24,7 +24,7 @@ struct CardPricingEntry: Codable, Hashable {
 }
 
 extension CardPricingEntry {
-    /// USD market line from TCGplayer fields when `scrydex` is absent (ONE PIECE market exports use this shape).
+    /// USD market line from TCGplayer fields when `scrydex` is absent.
     func tcgplayerMarketEstimateUSD() -> Double? {
         guard let tcg = tcgplayer, case .object(let o) = tcg else { return nil }
         func num(_ key: String) -> Double? {
@@ -139,7 +139,7 @@ struct CardPriceHistory {
         return CardPriceHistory(series: series)
     }
 
-    /// ONE PIECE exports use variant key `default` in JSON; the catalog row’s `variant` is the real product line label.
+    /// Remaps a variant placeholder key in JSON to the real display variant label.
     func remappingVariantPlaceholder(_ placeholder: String, to displayVariant: String) -> CardPriceHistory {
         guard placeholder != displayVariant else { return self }
         var newSeries: [String: Series] = [:]

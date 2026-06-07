@@ -112,7 +112,7 @@ struct SplashView: View {
 
     private var strapline: some View {
         VStack(spacing: 6) {
-            Text("Scan Pokémon and One Piece cards.")
+            Text("Scan Pokémon cards.")
             Text("Track prices, build your collection,")
             Text("and join the community.")
         }

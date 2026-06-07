@@ -17,8 +17,7 @@ struct CollectionListView: View {
     var onWishlistFilterOptionsChange: (([String], [String], [String]) -> Void)?
 
     private var visibleCollectionItems: [CollectionItem] {
-        let enabled = services.brandSettings.enabledBrands
-        return items.filter { enabled.contains(TCGBrand.inferredFromMasterCardId($0.cardID)) }
+        items
     }
 
     @State private var cardsByCardID: [String: Card] = [:]
@@ -45,8 +44,7 @@ struct CollectionListView: View {
     }
 
     private var collectionSignature: String {
-        let brandKey = services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
-        return visibleCollectionItems.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§") + "|" + brandKey
+        visibleCollectionItems.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§")
     }
 
     private var orderedCards: [Card] {
@@ -61,8 +59,6 @@ struct CollectionListView: View {
         Group {
             if items.isEmpty {
                 emptyState
-            } else if visibleCollectionItems.isEmpty {
-                hiddenByBrandEmptyState
             } else {
                 collectionScrollGrid
             }
@@ -85,21 +81,6 @@ struct CollectionListView: View {
                     "No collection yet",
                     systemImage: "square.stack.3d.up.slash",
                     description: Text("Add cards from card details with the + button.")
-                )
-                .frame(minHeight: 280)
-            }
-        }
-    }
-
-    private var hiddenByBrandEmptyState: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                Color.clear.frame(height: rootFloatingChromeInset)
-
-                ContentUnavailableView(
-                    "No visible collection items",
-                    systemImage: "line.3.horizontal.decrease.circle",
-                    description: Text("Turn a game back on under Account → Card catalog to see collection cards for that game.")
                 )
                 .frame(minHeight: 280)
             }

@@ -36,10 +36,6 @@ private enum BinderPickerBrowseRoute: Hashable {
     case set(TCGSet)
     case pokemon
     case dex(dexId: Int, displayName: String)
-    case onePieceCharacters
-    case onePieceCharacter(String)
-    case onePieceSubtypes
-    case onePieceSubtype(String)
 }
 
 struct BinderSlotPickerView: View {
@@ -319,30 +315,6 @@ struct BinderSlotPickerView: View {
                         loadCards: { await loadPokemonDexCards(dexId: dexId) },
                         onToggle: { card in toggleBasketCard(card) }
                     )
-                case .onePieceCharacters:
-                    BinderPickerOnePieceBrowseListView(mode: .characters)
-                case .onePieceCharacter(let name):
-                    BinderPickerCatalogCardsView(
-                        path: $browsePath,
-                        title: name,
-                        searchPlaceholder: "Search cards for character",
-                        selectedBrand: .onePiece,
-                        basketCardIDs: basketCardIDs,
-                        loadCards: { await loadOnePieceCharacterCards(name: name) },
-                        onToggle: { card in toggleBasketCard(card) }
-                    )
-                case .onePieceSubtypes:
-                    BinderPickerOnePieceBrowseListView(mode: .subtypes)
-                case .onePieceSubtype(let name):
-                    BinderPickerCatalogCardsView(
-                        path: $browsePath,
-                        title: name,
-                        searchPlaceholder: "Search cards for subtype",
-                        selectedBrand: .onePiece,
-                        basketCardIDs: basketCardIDs,
-                        loadCards: { await loadOnePieceSubtypeCards(name: name) },
-                        onToggle: { card in toggleBasketCard(card) }
-                    )
                 }
             }
             .toolbar {
@@ -533,19 +505,8 @@ struct BinderSlotPickerView: View {
                 NavigationLink(value: BinderPickerBrowseRoute.sets) {
                     shortcutChip(title: "Sets")
                 }
-
-                switch selectedBrand {
-                case .pokemon:
-                    NavigationLink(value: BinderPickerBrowseRoute.pokemon) {
-                        shortcutChip(title: "Pokémon")
-                    }
-                case .onePiece:
-                    NavigationLink(value: BinderPickerBrowseRoute.onePieceCharacters) {
-                        shortcutChip(title: "Characters")
-                    }
-                    NavigationLink(value: BinderPickerBrowseRoute.onePieceSubtypes) {
-                        shortcutChip(title: "Subtypes")
-                    }
+                NavigationLink(value: BinderPickerBrowseRoute.pokemon) {
+                    shortcutChip(title: "Pokémon")
                 }
             }
         }
@@ -930,38 +891,11 @@ struct BinderSlotPickerView: View {
                 if abilityPresence == .yes, hasAbilities == false { return false }
                 if abilityPresence == .no, hasAbilities == true { return false }
             }
-            if filters.opCardTypes.isEmpty == false {
-                let cardTypes = Set((card.category ?? "").split(separator: ",").map {
-                    $0.trimmingCharacters(in: .whitespacesAndNewlines)
-                })
-                if cardTypes.isDisjoint(with: filters.opCardTypes) { return false }
-            }
-            if filters.opAttributes.isEmpty == false {
-                let attrs = Set(card.opAttributes ?? [])
-                if attrs.isDisjoint(with: filters.opAttributes) { return false }
-            }
-            if filters.opCosts.isEmpty == false {
-                guard let cost = card.opCost, filters.opCosts.contains(cost) else { return false }
-            }
-            if filters.opCounters.isEmpty == false {
-                guard let counter = card.opCounter, filters.opCounters.contains(counter) else { return false }
-            }
-            if filters.opLives.isEmpty == false {
-                guard let life = card.opLife, filters.opLives.contains(life) else { return false }
-            }
-            if filters.opPowers.isEmpty == false {
-                guard let power = card.opPower, filters.opPowers.contains(power) else { return false }
-            }
             return true
         }
     }
 
     private func resolvedCardType(for card: BrowseFilterCard) -> BrowseCardTypeFilter {
-        if selectedBrand == .onePiece {
-            let category = card.category?.lowercased() ?? ""
-            if category.contains("event") { return .trainer }
-            return .pokemon
-        }
         let category = card.category?.lowercased() ?? ""
         if category.contains("trainer") || card.trainerType != nil { return .trainer }
         if category.contains("energy") || card.energyType != nil { return .energy }
@@ -1037,40 +971,6 @@ struct BinderSlotPickerView: View {
             try await CatalogStore.shared.open()
             let cards = try await CatalogStore.shared.fetchAllCards(for: .pokemon)
             return sortCardsByReleaseDateNewestFirst(cards.filter { $0.dexIds?.contains(dexId) == true })
-        } catch {
-            return []
-        }
-    }
-
-    private func loadOnePieceCharacterCards(name: String) async -> [Card] {
-        let normalized = name.trimmingCharacters(in: .whitespacesAndNewlines)
-            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
-        do {
-            try await CatalogStore.shared.open()
-            let cards = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
-            let matches = cards.filter {
-                $0.cardName.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current) == normalized
-            }
-            return sortCardsByReleaseDateNewestFirst(matches)
-        } catch {
-            return []
-        }
-    }
-
-    private func loadOnePieceSubtypeCards(name: String) async -> [Card] {
-        let normalized = name.trimmingCharacters(in: .whitespacesAndNewlines)
-            .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
-        do {
-            try await CatalogStore.shared.open()
-            let cards = try await CatalogStore.shared.fetchAllCards(for: .onePiece)
-            let matches = cards.filter { card in
-                let values = (card.subtypes ?? []) + [card.subtype].compactMap { $0 }
-                return values.contains {
-                    $0.trimmingCharacters(in: .whitespacesAndNewlines)
-                        .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current) == normalized
-                }
-            }
-            return sortCardsByReleaseDateNewestFirst(matches)
         } catch {
             return []
         }
@@ -1256,26 +1156,14 @@ private struct BinderPickerSetsView: View {
 
     private var groupedSets: [(title: String, sets: [TCGSet])] {
         let grouped = Dictionary(grouping: filteredSets, by: seriesTitle)
-        switch brand {
-        case .pokemon:
-            return grouped
-                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-                .sorted { lhs, rhs in
-                    let lhsOldest = lhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
-                    let rhsOldest = rhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
-                    if lhsOldest != rhsOldest { return lhsOldest > rhsOldest }
-                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-                }
-        case .onePiece:
-            return grouped
-                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-                .sorted { lhs, rhs in
-                    let lhsIndex = onePieceSeriesOrderIndex(lhs.title)
-                    let rhsIndex = onePieceSeriesOrderIndex(rhs.title)
-                    if lhsIndex != rhsIndex { return lhsIndex < rhsIndex }
-                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-                }
-        }
+        return grouped
+            .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
+            .sorted { lhs, rhs in
+                let lhsOldest = lhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
+                let rhsOldest = rhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
+                if lhsOldest != rhsOldest { return lhsOldest > rhsOldest }
+                return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+            }
     }
 
     var body: some View {
@@ -1351,20 +1239,8 @@ private struct BinderPickerSetsView: View {
     }
 
     private func seriesTitle(for set: TCGSet) -> String {
-        switch brand {
-        case .pokemon:
-            let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
-            return (title?.isEmpty == false ? title! : "Other")
-        case .onePiece:
-            let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            let lower = title.lowercased()
-            if lower.contains("booster pack") { return "Booster Pack" }
-            if lower.contains("extra booster") { return "Extra Boosters" }
-            if lower.contains("starter") { return "Starter deck" }
-            if lower.contains("premium booster") { return "Premium Booster" }
-            if lower.contains("promo") { return "Promo" }
-            return title.isEmpty ? "Other" : title
-        }
+        let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
+        return (title?.isEmpty == false ? title! : "Other")
     }
 
     private func sortSetsNewestFirst(_ sets: [TCGSet]) -> [TCGSet] {
@@ -1373,17 +1249,6 @@ private struct BinderPickerSetsView: View {
             let rhsDate = rhs.releaseDate ?? ""
             if lhsDate != rhsDate { return lhsDate > rhsDate }
             return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
-        }
-    }
-
-    private func onePieceSeriesOrderIndex(_ title: String) -> Int {
-        switch title {
-        case "Booster Pack": return 0
-        case "Extra Boosters": return 1
-        case "Starter deck": return 2
-        case "Premium Booster": return 3
-        case "Promo": return 4
-        default: return 5
         }
     }
 
@@ -1455,56 +1320,7 @@ private struct BinderPickerPokemonBrowseView: View {
     }
 }
 
-// MARK: - One Piece browse
-
-private struct BinderPickerOnePieceBrowseListView: View {
-    @Environment(AppServices.self) private var services
-    let mode: Mode
-    @State private var query = ""
-
-    enum Mode {
-        case characters
-        case subtypes
-    }
-
-    private var rows: [String] {
-        switch mode {
-        case .characters: return services.cardData.onePieceCharacterNames
-        case .subtypes: return services.cardData.onePieceCharacterSubtypes
-        }
-    }
-
-    private var filteredRows: [String] {
-        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        guard !trimmed.isEmpty else { return rows }
-        return rows.filter { $0.lowercased().contains(trimmed) }
-    }
-
-    var body: some View {
-        List {
-            Section {
-                BrowseInlineSearchField(title: mode == .characters ? "Search characters" : "Search subtypes", text: $query)
-                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                    .listRowBackground(Color.clear)
-            }
-            ForEach(filteredRows, id: \.self) { row in
-                NavigationLink(value: mode == .characters ? BinderPickerBrowseRoute.onePieceCharacter(row) : BinderPickerBrowseRoute.onePieceSubtype(row)) {
-                    Text(row)
-                }
-            }
-        }
-        .listStyle(.plain)
-        .navigationTitle(mode == .characters ? "Browse characters" : "Browse subtypes")
-        .navigationBarTitleDisplayMode(.inline)
-        .task {
-            if services.cardData.onePieceCharacterNames.isEmpty || services.cardData.onePieceCharacterSubtypes.isEmpty {
-                await services.cardData.loadOnePieceBrowseMetadata()
-            }
-        }
-    }
-}
-
-// MARK: - Catalog cards view (set / dex / character)
+// MARK: - Catalog cards view (set / dex)
 
 private struct BinderPickerCatalogCardsView: View {
     @Environment(AppServices.self) private var services

@@ -73,8 +73,6 @@ struct SharedDeckView: View {
         content.payload["format"]?.stringValue ?? "Standard"
     }
 
-    private var isOnePiece: Bool { tcgBrand == .onePiece }
-
     // Pokémon TCG card lists
     private var pokemonCards: [SharedCardRow] {
         entries.filter { SharedPokemonCategory.category(for: cardsByID[$0.cardID]) == .pokemon }
@@ -93,29 +91,6 @@ struct SharedDeckView: View {
     private var trainerCount: Int { trainerCards.reduce(0) { $0 + $1.quantity } }
     private var energyCount:  Int { energyCards.reduce(0)  { $0 + $1.quantity } }
 
-    // One Piece card lists
-    private var opLeaderCards: [SharedCardRow] {
-        entries.filter { SharedOPCategory.category(for: cardsByID[$0.cardID]) == .leader }
-            .sorted { resolvedName(for: $0) < resolvedName(for: $1) }
-    }
-    private var opCharacterCards: [SharedCardRow] {
-        entries.filter { SharedOPCategory.category(for: cardsByID[$0.cardID]) == .character }
-            .sorted { resolvedName(for: $0) < resolvedName(for: $1) }
-    }
-    private var opEventCards: [SharedCardRow] {
-        entries.filter { SharedOPCategory.category(for: cardsByID[$0.cardID]) == .event }
-            .sorted { resolvedName(for: $0) < resolvedName(for: $1) }
-    }
-    private var opStageCards: [SharedCardRow] {
-        entries.filter { SharedOPCategory.category(for: cardsByID[$0.cardID]) == .stage }
-            .sorted { resolvedName(for: $0) < resolvedName(for: $1) }
-    }
-
-    private var opLeaderCount:    Int { opLeaderCards.reduce(0)    { $0 + $1.quantity } }
-    private var opCharacterCount: Int { opCharacterCards.reduce(0) { $0 + $1.quantity } }
-    private var opEventCount:     Int { opEventCards.reduce(0)     { $0 + $1.quantity } }
-    private var opStageCount:     Int { opStageCards.reduce(0)     { $0 + $1.quantity } }
-
     private var totalCardCount: Int {
         entries.reduce(0) { $0 + $1.quantity }
     }
@@ -130,16 +105,9 @@ struct SharedDeckView: View {
 
                 Divider().padding(.horizontal, 16)
 
-                if isOnePiece {
-                    cardGroupSection(title: "Leader",      cards: opLeaderCards)
-                    cardGroupSection(title: "Characters",  cards: opCharacterCards)
-                    cardGroupSection(title: "Events",      cards: opEventCards)
-                    cardGroupSection(title: "Stages",      cards: opStageCards)
-                } else {
-                    cardGroupSection(title: "Pokémon",     cards: pokemonCards)
-                    cardGroupSection(title: "Trainers",    cards: trainerCards)
-                    cardGroupSection(title: "Energy",      cards: energyCards)
-                }
+                cardGroupSection(title: "Pokémon",     cards: pokemonCards)
+                cardGroupSection(title: "Trainers",    cards: trainerCards)
+                cardGroupSection(title: "Energy",      cards: energyCards)
 
                 Spacer(minLength: 40)
             }
@@ -168,27 +136,14 @@ struct SharedDeckView: View {
                         .foregroundStyle(services.theme.accentColor)
                 }
 
-                if isOnePiece {
-                    HStack(spacing: 0) {
-                        summaryPill(label: "Leader",     count: opLeaderCount,    color: .red)
-                        Spacer()
-                        summaryPill(label: "Characters", count: opCharacterCount, color: .blue)
-                        Spacer()
-                        summaryPill(label: "Events",     count: opEventCount,     color: .purple)
-                        Spacer()
-                        summaryPill(label: "Stages",     count: opStageCount,     color: .green)
-                    }
-                    .padding(.top, 4)
-                } else {
-                    HStack(spacing: 0) {
-                        summaryPill(label: "Pokémon",  count: pokemonCount,  color: .blue)
-                        Spacer()
-                        summaryPill(label: "Trainers", count: trainerCount,  color: .purple)
-                        Spacer()
-                        summaryPill(label: "Energy",   count: energyCount,   color: .orange)
-                    }
-                    .padding(.top, 4)
+                HStack(spacing: 0) {
+                    summaryPill(label: "Pokémon",  count: pokemonCount,  color: .blue)
+                    Spacer()
+                    summaryPill(label: "Trainers", count: trainerCount,  color: .purple)
+                    Spacer()
+                    summaryPill(label: "Energy",   count: energyCount,   color: .orange)
                 }
+                .padding(.top, 4)
             }
 
             if !entries.isEmpty {
@@ -217,16 +172,10 @@ struct SharedDeckView: View {
             if isSummaryExpanded && !entries.isEmpty {
                 VStack(alignment: .leading, spacing: 18) {
                     Divider()
-                    if isOnePiece {
-                        opCharacterBreakdown
-                        opEventBreakdown
-                        opStageBreakdown
-                    } else {
-                        typeBreakdown
-                        subtypeBreakdown
-                        if !trainerCards.isEmpty { trainerBreakdown }
-                        if !energyCards.isEmpty  { energyBreakdown }
-                    }
+                    typeBreakdown
+                    subtypeBreakdown
+                    if !trainerCards.isEmpty { trainerBreakdown }
+                    if !energyCards.isEmpty  { energyBreakdown }
                     if content.includeValue, let marketValueUSD = content.payload["market_value_usd"]?.doubleValue {
                         Divider()
                         valueRow(value: marketValueUSD)
@@ -452,170 +401,6 @@ struct SharedDeckView: View {
         return chips
     }
 
-    // MARK: - One Piece Breakdown
-
-    @ViewBuilder
-    private var opCharacterBreakdown: some View {
-        if !opCharacterCards.isEmpty {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Characters").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
-
-                let avgCost  = averageCost(opCharacterCards)
-                let avgPower = averagePower(opCharacterCards)
-                let withCounter = opCharacterCards.filter { cardsByID[$0.cardID]?.opCounter != nil }.reduce(0) { $0 + $1.quantity }
-                let subtypes = opSubtypeCounts(opCharacterCards)
-                let colors   = colorCounts(opCharacterCards)
-
-                HStack(spacing: 16) {
-                    if let c = avgCost {
-                        VStack(spacing: 1) {
-                            Text(String(format: "%.1f", c)).font(.caption.weight(.bold))
-                            Text("Avg cost").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                    if let p = avgPower {
-                        VStack(spacing: 1) {
-                            Text(String(format: "%.0f", p)).font(.caption.weight(.bold))
-                            Text("Avg power").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                    if withCounter > 0 {
-                        VStack(spacing: 1) {
-                            Text("\(withCounter)").font(.caption.weight(.bold))
-                            Text("With counter").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                }
-
-                if !subtypes.isEmpty {
-                    opChips(subtypes)
-                }
-                if !colors.isEmpty {
-                    opChips(colors)
-                }
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var opEventBreakdown: some View {
-        if !opEventCards.isEmpty {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Events").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
-
-                let avgCost  = averageCost(opEventCards)
-                let subtypes = opSubtypeCounts(opEventCards)
-                let colors   = colorCounts(opEventCards)
-
-                if let c = avgCost {
-                    HStack(spacing: 16) {
-                        VStack(spacing: 1) {
-                            Text(String(format: "%.1f", c)).font(.caption.weight(.bold))
-                            Text("Avg cost").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                }
-                if !subtypes.isEmpty {
-                    opChips(subtypes)
-                }
-                if !colors.isEmpty {
-                    opChips(colors)
-                }
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var opStageBreakdown: some View {
-        if !opStageCards.isEmpty {
-            VStack(alignment: .leading, spacing: 10) {
-                Text("Stages").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
-
-                let avgCost  = averageCost(opStageCards)
-                let subtypes = opSubtypeCounts(opStageCards)
-                let colors   = colorCounts(opStageCards)
-
-                if let c = avgCost {
-                    HStack(spacing: 16) {
-                        VStack(spacing: 1) {
-                            Text(String(format: "%.1f", c)).font(.caption.weight(.bold))
-                            Text("Avg cost").font(.caption2).foregroundStyle(.secondary)
-                        }
-                    }
-                }
-                if !subtypes.isEmpty {
-                    opChips(subtypes)
-                }
-                if !colors.isEmpty {
-                    opChips(colors)
-                }
-            }
-        }
-    }
-
-    private func opChips(_ items: [(label: String, count: Int)]) -> some View {
-        FlowRow(spacing: 8) {
-            ForEach(items, id: \.label) { item in
-                HStack(spacing: 4) {
-                    Text(item.label).font(.caption2).foregroundStyle(.primary)
-                    Text("×\(item.count)").font(.caption2.weight(.semibold)).foregroundStyle(.secondary)
-                }
-                .padding(.horizontal, 8).padding(.vertical, 4)
-                .background(Capsule().fill(Color(uiColor: .tertiarySystemFill)))
-            }
-        }
-    }
-
-    private func averageCost(_ rows: [SharedCardRow]) -> Double? {
-        let totalQty = rows.reduce(0) { $0 + $1.quantity }
-        guard totalQty > 0 else { return nil }
-        let withCost = rows.filter { cardsByID[$0.cardID]?.opCost != nil }
-        guard !withCost.isEmpty else { return nil }
-        let sum = withCost.reduce(0.0) { $0 + Double(cardsByID[$1.cardID]!.opCost!) * Double($1.quantity) }
-        let qty = withCost.reduce(0) { $0 + $1.quantity }
-        return sum / Double(qty)
-    }
-
-    private func averagePower(_ rows: [SharedCardRow]) -> Double? {
-        let withPower = rows.filter { cardsByID[$0.cardID]?.hp != nil }
-        guard !withPower.isEmpty else { return nil }
-        let sum = withPower.reduce(0.0) {
-            let card = cardsByID[$1.cardID]!
-            let power = card.hp ?? 0
-            return $0 + Double(power) * Double($1.quantity)
-        }
-        let qty = withPower.reduce(0) { $0 + $1.quantity }
-        return sum / Double(qty)
-    }
-
-    private func colorCounts(_ rows: [SharedCardRow]) -> [(label: String, count: Int)] {
-        var counts: [String: Int] = [:]
-        for row in rows {
-            if let card = cardsByID[row.cardID] {
-                for color in (card.elementTypes ?? []) where !color.isEmpty && color != "-" {
-                    counts[color, default: 0] += row.quantity
-                }
-            }
-        }
-        return counts.map { ($0.key, $0.value) }.sorted { $0.count > $1.count }
-    }
-
-    private func opSubtypeCounts(_ rows: [SharedCardRow]) -> [(label: String, count: Int)] {
-        var counts: [String: Int] = [:]
-        for row in rows {
-            if let card = cardsByID[row.cardID] {
-                let tokens = (card.subtype ?? "")
-                    .split(separator: ",")
-                    .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-                    .filter { !$0.isEmpty }
-                for token in tokens {
-                    counts[token, default: 0] += row.quantity
-                }
-            }
-        }
-        return counts.map { ($0.key, $0.value) }.sorted { $0.count > $1.count }
-    }
-
     // MARK: - Value Row
 
     private func valueRow(value: Double) -> some View {
@@ -816,18 +601,3 @@ private enum SharedPokemonCategory {
     }
 }
 
-private enum SharedOPCategory {
-    case leader
-    case character
-    case event
-    case stage
-
-    static func category(for card: Card?) -> SharedOPCategory {
-        guard let card else { return .character }
-        let c = card.category?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
-        if c.contains("leader") { return .leader }
-        if c.contains("event")  { return .event }
-        if c.contains("stage")  { return .stage }
-        return .character
-    }
-}

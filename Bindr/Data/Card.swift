@@ -73,15 +73,10 @@ struct BrowseFilterCard: Codable, Identifiable, Hashable, Sendable {
     let weakness: String?
     let resistance: String?
     let pricingVariants: [String]?
-    /// ONE PIECE: attribute values e.g. ["Slash", "Strike"].
     let opAttributes: [String]?
-    /// ONE PIECE: card cost (DON!! cost to play), nil for Leaders.
     let opCost: Int?
-    /// ONE PIECE: counter value e.g. 1000 or 2000, nil when none.
     let opCounter: Int?
-    /// ONE PIECE: leader life points.
     let opLife: Int?
-    /// ONE PIECE: power value (stored as `hp` on Card, exposed separately here for clarity).
     let opPower: Int?
     var ref: CardRef {
         CardRef(masterCardId: masterCardId, setCode: setCode)
@@ -128,15 +123,10 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     let flavorText: String?
     /// Available pricing variant keys for this card, e.g. ["holofoil", "reverseHolofoil"].
     let pricingVariants: [String]?
-    /// ONE PIECE: TCGplayer product id when market/history JSON rows are keyed by id (not `priceKey`).
     let tcgplayerProductId: String?
-    /// ONE PIECE: attribute values e.g. ["Slash", "Strike"].
     let opAttributes: [String]?
-    /// ONE PIECE: card cost (DON!! cost to play), nil for Leaders.
     let opCost: Int?
-    /// ONE PIECE: counter value e.g. 1000 or 2000, nil when none.
     let opCounter: Int?
-    /// ONE PIECE: leader life points.
     let opLife: Int?
     let printedNumber: String?
 

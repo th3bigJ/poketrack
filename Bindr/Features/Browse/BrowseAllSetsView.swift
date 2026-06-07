@@ -104,8 +104,12 @@ struct BrowseAllSetsView: View {
     @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
     @State private var isFirstAppear = true
 
-    // Master set toggle
-    @State private var showMasterSet = false
+    // Set completion mode
+    @State private var setCompletionMode: SetCompletionMode = .full
+    @State private var variantCollectedCountBySetCode: [String: Int] = [:]
+    @State private var grandMasterCollectedCountBySetCode: [String: Int] = [:]
+    @State private var variantSlotTotalBySetCode: [String: Int] = [:]
+    @State private var grandMasterSlotTotalBySetCode: [String: Int] = [:]
 
     private var filteredSets: [TCGSet] {
         let sets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
@@ -121,26 +125,14 @@ struct BrowseAllSetsView: View {
 
     private var groupedSets: [(title: String, sets: [TCGSet])] {
         let grouped = Dictionary(grouping: filteredSets, by: browseSeriesTitle(for:))
-        switch services.brandSettings.selectedCatalogBrand {
-        case .pokemon:
-            return grouped
-                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-                .sorted { lhs, rhs in
-                    let lhsOldest = lhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
-                    let rhsOldest = rhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
-                    if lhsOldest != rhsOldest { return lhsOldest > rhsOldest }
-                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-                }
-        case .onePiece:
-            return grouped
-                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-                .sorted { lhs, rhs in
-                    let li = onePieceSeriesOrderIndex(lhs.title)
-                    let ri = onePieceSeriesOrderIndex(rhs.title)
-                    if li != ri { return li < ri }
-                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-                }
-        }
+        return grouped
+            .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
+            .sorted { lhs, rhs in
+                let lhsOldest = lhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
+                let rhsOldest = rhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
+                if lhsOldest != rhsOldest { return lhsOldest > rhsOldest }
+                return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+            }
     }
 
     var body: some View {
@@ -169,8 +161,9 @@ struct BrowseAllSetsView: View {
 
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack(spacing: 12) {
-                                    masterSetChip(label: "Full Set", isMaster: false)
-                                    masterSetChip(label: "Master Set", isMaster: true)
+                                    ForEach(SetCompletionMode.allCases, id: \.self) { mode in
+                                        setCompletionModeChip(label: mode.chipLabel, mode: mode)
+                                    }
                                 }
                                 .padding(.horizontal, 16)
                             }
@@ -216,7 +209,7 @@ struct BrowseAllSetsView: View {
                                                                     .foregroundStyle(.primary)
                                                                     .lineLimit(2)
                                                                 Spacer(minLength: 6)
-                                                                Text(showMasterSet ? "Master Set Value" : "Full Set Value")
+                                                                Text(setCompletionMode.listValueLabel)
                                                                     .font(.caption2.weight(.semibold))
                                                                     .foregroundStyle(.secondary)
                                                                     .lineLimit(1)
@@ -303,25 +296,41 @@ struct BrowseAllSetsView: View {
         .onChange(of: collectionItems.count) { _, _ in
             Task { await refreshCollectedCounts() }
         }
+        .task(id: variantSlotTotalsTaskKey) {
+            await refreshVariantSlotTotals()
+        }
+    }
+
+    private var variantSlotTotalsTaskKey: String {
+        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(setCompletionMode.rawValue)|\(services.cardData.sets.count)"
     }
 
     private var globalProgressHeader: some View {
         let allSets = services.cardData.sets
-        
-        // Better: let's calculate based on unique card IDs in collection that match the current brand.
+
         let brandOwned = collectionItems.filter { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand
+            return brand == services.brandSettings.selectedCatalogBrand && item.quantity > 0
         }
-        let uniqueOwnedCount = Set(brandOwned.map(\.cardID)).count
-        
+
+        let uniqueOwnedCount: Int = {
+            switch setCompletionMode {
+            case .full:
+                return Set(brandOwned.map(\.cardID)).count
+            case .master:
+                return variantCollectedCountBySetCode.values.reduce(0, +)
+            case .grandMaster:
+                return grandMasterCollectedCountBySetCode.values.reduce(0, +)
+            }
+        }()
+
         let totalCardsInCatalog = allSets.reduce(0) { acc, set in
-            acc + (showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal ?? 0) : (set.cardCountTotal ?? 0))
+            acc + (setProgress(for: set).total ?? 0)
         }
 
         return VStack(spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
-                Text(showMasterSet ? "Master Set Completion" : "Overall Completion")
+                Text(globalCompletionTitle)
                     .font(.system(size: 12, weight: .bold, design: .rounded))
                     .foregroundStyle(.secondary)
                 
@@ -358,11 +367,19 @@ struct BrowseAllSetsView: View {
         }
     }
 
-    private func masterSetChip(label: String, isMaster: Bool) -> some View {
-        let isSelected = showMasterSet == isMaster
+    private var globalCompletionTitle: String {
+        switch setCompletionMode {
+        case .full: return "Overall Completion"
+        case .master: return "Master Set Completion"
+        case .grandMaster: return "Grand Master Completion"
+        }
+    }
+
+    private func setCompletionModeChip(label: String, mode: SetCompletionMode) -> some View {
+        let isSelected = setCompletionMode == mode
         return Button {
             withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
-                showMasterSet = isMaster
+                setCompletionMode = mode
             }
             Haptics.lightImpact()
         } label: {
@@ -380,13 +397,25 @@ struct BrowseAllSetsView: View {
     }
 
     private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
-        let collected = uniqueCollectedCountBySetCode[set.setCode.lowercased()] ?? 0
-        let total = showMasterSet ? (set.masterSetTotal ?? set.cardCountTotal) : set.cardCountTotal
-        return (collected, total)
+        let setCode = set.setCode.lowercased()
+        switch setCompletionMode {
+        case .full:
+            return (uniqueCollectedCountBySetCode[setCode] ?? 0, set.cardCountTotal)
+        case .master:
+            return (
+                variantCollectedCountBySetCode[setCode] ?? 0,
+                variantSlotTotalBySetCode[setCode] ?? set.masterSetTotal ?? set.cardCountTotal
+            )
+        case .grandMaster:
+            return (
+                grandMasterCollectedCountBySetCode[setCode] ?? 0,
+                grandMasterSlotTotalBySetCode[setCode] ?? set.masterSetTotal ?? set.cardCountTotal
+            )
+        }
     }
 
     private func setMarketValueTaskID(for set: TCGSet) -> String {
-        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())"
+        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())|\(setCompletionMode.rawValue)"
     }
 
     private func setMarketValueKey(for set: TCGSet) -> String {
@@ -419,9 +448,28 @@ struct BrowseAllSetsView: View {
 
         for card in cards {
             guard let entry = await services.pricing.pricing(for: card) else { continue }
-            guard let cheapestUSD = cheapestVariantMarketUSD(for: entry), cheapestUSD > 0 else { continue }
-            totalUSD += cheapestUSD
-            pricedCardCount += 1
+            if setCompletionMode.usesVariantGrid {
+                let keys = await services.pricing.variantKeys(for: card)
+                let eligible = services.variantsCatalog.eligibleVariantKeys(
+                    from: keys,
+                    card: card,
+                    mode: setCompletionMode
+                )
+                let variantTotal = services.variantsCatalog.marketUSD(
+                    for: entry,
+                    mode: setCompletionMode,
+                    eligibleVariantKeys: eligible
+                )
+                if variantTotal > 0 {
+                    totalUSD += variantTotal
+                    pricedCardCount += 1
+                }
+            } else {
+                if let cheapestUSD = services.variantsCatalog.fullSetSlotMarketUSD(for: entry) {
+                    totalUSD += cheapestUSD
+                    pricedCardCount += 1
+                }
+            }
         }
 
         if pricedCardCount > 0 {
@@ -432,23 +480,12 @@ struct BrowseAllSetsView: View {
         loadedSetMarketValueKeys.insert(key)
     }
 
-    private func cheapestVariantMarketUSD(for entry: CardPricingEntry) -> Double? {
-        if let scrydex = entry.scrydex, !scrydex.isEmpty {
-            return scrydex.values
-                .compactMap { $0.marketEstimateUSD() }
-                .filter { $0 > 0 }
-                .min()
-        }
-        if let usd = entry.tcgplayerMarketEstimateUSD(), usd > 0 {
-            return usd
-        }
-        return nil
-    }
-
     @MainActor
     private func refreshCollectedCounts() async {
         let activeSetCodes = Set(services.cardData.sets.map { $0.setCode.lowercased() })
         var uniqueCardKeysBySetCode: [String: Set<String>] = [:]
+        var masterVariantKeysBySetCode: [String: Set<String>] = [:]
+        var grandMasterVariantKeysBySetCode: [String: Set<String>] = [:]
 
         for item in collectionItems where item.quantity > 0 {
             guard let identity = await resolveCollectionCardIdentity(
@@ -456,9 +493,48 @@ struct BrowseAllSetsView: View {
                 activeSetCodes: activeSetCodes
             ) else { continue }
             uniqueCardKeysBySetCode[identity.setCode, default: []].insert(identity.uniqueCardKey)
+
+            let variant = item.variantKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            let variantToken = variant.isEmpty ? "normal" : variant
+            guard !services.variantsCatalog.isChampionshipVariant(variantToken) else { continue }
+
+            if services.variantsCatalog.includesVariant(variantToken, mode: .master) {
+                masterVariantKeysBySetCode[identity.setCode, default: []]
+                    .insert("\(identity.uniqueCardKey)::\(variantToken)")
+            }
+            if services.variantsCatalog.includesVariant(variantToken, mode: .grandMaster) {
+                grandMasterVariantKeysBySetCode[identity.setCode, default: []]
+                    .insert("\(identity.uniqueCardKey)::\(variantToken)")
+            }
         }
 
         uniqueCollectedCountBySetCode = uniqueCardKeysBySetCode.mapValues(\.count)
+        variantCollectedCountBySetCode = masterVariantKeysBySetCode.mapValues(\.count)
+        grandMasterCollectedCountBySetCode = grandMasterVariantKeysBySetCode.mapValues(\.count)
+    }
+
+    @MainActor
+    private func refreshVariantSlotTotals() async {
+        guard setCompletionMode != .full else { return }
+        var nextTotals: [String: Int] = [:]
+        for set in services.cardData.sets {
+            let setCode = set.setCode.lowercased()
+            let total = await services.variantsCatalog.variantSlotCount(
+                forSetCode: set.setCode,
+                mode: setCompletionMode,
+                cardData: services.cardData,
+                pricing: services.pricing
+            )
+            nextTotals[setCode] = total
+        }
+        switch setCompletionMode {
+        case .full:
+            break
+        case .master:
+            variantSlotTotalBySetCode = nextTotals
+        case .grandMaster:
+            grandMasterSlotTotalBySetCode = nextTotals
+        }
     }
 
     private func resolveCollectionCardIdentity(
@@ -493,13 +569,8 @@ struct BrowseAllSetsView: View {
     }
 
     private func browseSeriesTitle(for set: TCGSet) -> String {
-        switch services.brandSettings.selectedCatalogBrand {
-        case .pokemon:
-            let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
-            return (title?.isEmpty == false ? title! : "Other")
-        case .onePiece:
-            return normalizedOnePieceSeriesTitle(set.seriesName)
-        }
+        let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
+        return (title?.isEmpty == false ? title! : "Other")
     }
 
     private func sortSetsNewestFirst(_ sets: [TCGSet]) -> [TCGSet] {
@@ -511,27 +582,6 @@ struct BrowseAllSetsView: View {
         }
     }
 
-    private func normalizedOnePieceSeriesTitle(_ raw: String?) -> String {
-        let title = raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-        let lower = title.lowercased()
-        if lower.contains("booster pack") { return "Booster Pack" }
-        if lower.contains("extra booster") { return "Extra Boosters" }
-        if lower.contains("starter") { return "Starter deck" }
-        if lower.contains("premium booster") { return "Premium Booster" }
-        if lower.contains("promo") { return "Promo" }
-        return title.isEmpty ? "Other" : title
-    }
-
-    private func onePieceSeriesOrderIndex(_ title: String) -> Int {
-        switch title {
-        case "Booster Pack": return 0
-        case "Extra Boosters": return 1
-        case "Starter deck": return 2
-        case "Premium Booster": return 3
-        case "Promo": return 4
-        default: return 5
-        }
-    }
 }
 
 // MARK: - Sealed tab for Browse Sets
