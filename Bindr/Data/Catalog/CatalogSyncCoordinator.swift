@@ -147,7 +147,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         }
 
         let periodStart = DailyMarketPricingSchedule.currentPeriodStart(now: Date(), calendar: .current)
-        var dailyKeys: [String] = [DailyBlobKey.priceTrends, DailyBlobKey.marketTrend]
+        var dailyKeys: [String] = [DailyBlobKey.priceTrends, DailyBlobKey.marketTrend, DailyBlobKey.upcomingReleases]
         if enabledBrands.contains(.pokemon) {
             dailyKeys.append(contentsOf: [
                 DailyBlobKey.pokedataEnglishPokemonProducts,
@@ -372,7 +372,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         // Clear ETags and reset fetched_at for daily blobs so they re-download on next sync
         // even if they were already fetched earlier today (the freshness gate checks fetched_at,
         // not the ETag, so clearing the ETag alone is not enough).
-        for key in [DailyBlobKey.pokedataEnglishPokemonProducts, DailyBlobKey.marketTrend, DailyBlobKey.priceTrends] {
+        for key in [
+            DailyBlobKey.pokedataEnglishPokemonProducts,
+            DailyBlobKey.marketTrend,
+            DailyBlobKey.priceTrends,
+            DailyBlobKey.upcomingReleases,
+        ] {
             try? await store.setMeta("daily_blob_http_etag_" + key, "")
             await store.staleDailyBlobFetchedAt(key: key)
         }
@@ -403,6 +408,7 @@ enum DailyBlobKey {
     static let pokedataEnglishPokemonProducts = "pokedata_english_pokemon_products"
     static let priceTrends = "price_trends"
     static let marketTrend = "market_trend"
+    static let upcomingReleases = "upcoming_releases"
     static let sealedPrices = "sealed_prices"
     static let sealedPriceHistory = "sealed_price_history"
     /// UTC date key (`YYYY-MM-DD`) for the newest sealed daily bucket merged into `sealedPrices`.
@@ -413,4 +419,5 @@ enum DailyBlobPath {
     static let pokedataEnglishPokemonProducts = "data/pokedata-english-pokemon-products.json"
     static let priceTrends = "data/price-trends.json"
     static let marketTrend = "new_pricing/market-trend.json"
+    static let upcomingReleases = "upcoming.json"
 }

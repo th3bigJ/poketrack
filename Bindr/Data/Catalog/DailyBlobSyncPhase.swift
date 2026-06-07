@@ -8,7 +8,7 @@ struct DailyBlobSyncPhase {
     func estimatedFileCount(enabledBrands: Set<TCGBrand>, forceRefresh: Bool = false) async -> Int {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
         let periodStart = DailyMarketPricingSchedule.currentPeriodStart(now: Date(), calendar: .current)
-        var keys: [String] = [DailyBlobKey.priceTrends, DailyBlobKey.marketTrend]
+        var keys: [String] = [DailyBlobKey.priceTrends, DailyBlobKey.marketTrend, DailyBlobKey.upcomingReleases]
         if enabledBrands.contains(.pokemon) { keys.insert(DailyBlobKey.pokedataEnglishPokemonProducts, at: 0) }
         if forceRefresh { return keys.count }
         var stale = 0
@@ -29,6 +29,7 @@ struct DailyBlobSyncPhase {
         var keys: [(String, URL)] = [
             (DailyBlobKey.priceTrends, AppConfiguration.r2MarketURL(path: DailyBlobPath.priceTrends)),
             (DailyBlobKey.marketTrend, AppConfiguration.r2MarketURL(path: DailyBlobPath.marketTrend)),
+            (DailyBlobKey.upcomingReleases, AppConfiguration.r2CatalogURL(path: DailyBlobPath.upcomingReleases)),
         ]
         if enabledBrands.contains(.pokemon) {
             keys.insert((DailyBlobKey.pokedataEnglishPokemonProducts, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonProducts)), at: 0)

@@ -687,6 +687,7 @@ struct BrowseView: View {
     @State private var inlineDetailCards: [Card] = []
     @State private var inlineDetailPriceByCardID: [String: Double] = [:]
     @State private var inlineDetailMasterPriceByCardID: [String: Double] = [:]
+    @State private var inlineDetailVariantPriceByCardID: [String: [String: Double]] = [:]
     @State private var masterSetVariantRows: [MasterSetVariantRow] = []
     @State private var inlineDetailSetTrendChanges: (change1d: Double?, change7d: Double?, change30d: Double?) = (nil, nil, nil)
     @State private var inlineDetailQuery = ""
@@ -912,6 +913,8 @@ struct BrowseView: View {
                 isInlineDetailPresented = (newValue != nil)
                 inlineDetailQuery = ""
                 inlineDetailPriceByCardID = [:]
+                inlineDetailMasterPriceByCardID = [:]
+                inlineDetailVariantPriceByCardID = [:]
                 inlineDetailSetTrendChanges = (nil, nil, nil)
                 if selectedTab == .sets {
                     pendingSetRestoreRowID = browseAuxTopAnchorID()
@@ -1576,14 +1579,21 @@ struct BrowseView: View {
         guard isInlineDetailPresented, !inlineDetailCards.isEmpty else {
             inlineDetailPriceByCardID = [:]
             inlineDetailMasterPriceByCardID = [:]
+            inlineDetailVariantPriceByCardID = [:]
             return
         }
         var next: [String: Double] = [:]
         var nextMaster: [String: Double] = [:]
+        var nextVariantPrices: [String: [String: Double]] = [:]
         next.reserveCapacity(inlineDetailCards.count)
         nextMaster.reserveCapacity(inlineDetailCards.count)
+        nextVariantPrices.reserveCapacity(inlineDetailCards.count)
         for card in inlineDetailCards {
             guard let entry = await services.pricing.pricing(for: card) else { continue }
+            let variantPrices = services.variantsCatalog.variantPriceMap(for: entry)
+            if !variantPrices.isEmpty {
+                nextVariantPrices[card.masterCardId] = variantPrices
+            }
             if let usd = services.variantsCatalog.fullSetSlotMarketUSD(for: entry) {
                 next[card.masterCardId] = usd
             }
@@ -1611,7 +1621,24 @@ struct BrowseView: View {
         }
         inlineDetailPriceByCardID = next
         inlineDetailMasterPriceByCardID = nextMaster
+        inlineDetailVariantPriceByCardID = nextVariantPrices
         await refreshInlineDetailSetTrends()
+    }
+
+    private func inlineDetailCollectedValueUSD(
+        cards: [Card],
+        ownedVariantsByCardID: [String: Set<String>]
+    ) -> Double {
+        cards.reduce(0) { partial, card in
+            let ownedVariants = ownedVariantsByCardID[card.masterCardId] ?? []
+            guard !ownedVariants.isEmpty else { return partial }
+            let variantPrices = inlineDetailVariantPriceByCardID[card.masterCardId] ?? [:]
+            return partial + services.variantsCatalog.collectedMarketUSD(
+                variantPriceMap: variantPrices,
+                ownedVariantKeys: ownedVariants,
+                mode: setCompletionMode
+            )
+        }
     }
 
     private func allVariantsMarketUSDForEntry(_ entry: CardPricingEntry) -> Double {
@@ -2442,10 +2469,10 @@ struct BrowseView: View {
         let currency = services.priceDisplay.currency
         let fx = services.pricing.usdToGbp
         let totalValue = priceDict.values.reduce(0, +)
-        let ownedValue = cards
-            .filter { ownedCardIDs.contains($0.masterCardId) }
-            .compactMap { priceDict[$0.masterCardId] }
-            .reduce(0, +)
+        let ownedValue = inlineDetailCollectedValueUSD(
+            cards: cards,
+            ownedVariantsByCardID: ownedVariantsByCardID
+        )
         let remainingValue = max(totalValue - ownedValue, 0)
         let hasPrices = totalValue > 0
         let trends = inlineDetailSetTrendChanges
@@ -2577,10 +2604,10 @@ struct BrowseView: View {
         let currency = services.priceDisplay.currency
         let fx = services.pricing.usdToGbp
         let totalValue = priceDict.values.reduce(0, +)
-        let ownedValue = cards
-            .filter { ownedCardIDs.contains($0.masterCardId) }
-            .compactMap { priceDict[$0.masterCardId] }
-            .reduce(0, +)
+        let ownedValue = inlineDetailCollectedValueUSD(
+            cards: cards,
+            ownedVariantsByCardID: ownedVariantsByCardID
+        )
         let remainingValue = max(totalValue - ownedValue, 0)
         let hasPrices = totalValue > 0
         let trends = inlineDetailSetTrendChanges

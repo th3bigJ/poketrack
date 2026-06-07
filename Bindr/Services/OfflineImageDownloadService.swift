@@ -152,13 +152,30 @@ final class OfflineImageDownloadService {
 
     /// Network + disk write off the main actor so many images can load in parallel.
     private nonisolated static func downloadAndSave(key: String, url: URL, brand: TCGBrand) async -> Bool {
-        do {
-            let data = try await fetchImageData(from: url)
-            try OfflineImageStore.shared.save(data: data, relativePath: key, brand: brand)
-            return true
-        } catch {
-            return false
+        var urls = [url]
+        if key.contains("upcoming/") {
+            let imageSrc: String
+            if let range = key.range(of: "upcoming/") {
+                imageSrc = String(key[range.lowerBound...])
+            } else {
+                imageSrc = key
+            }
+            let candidates = AppConfiguration.upcomingReleaseImageURLCandidates(imageSrc: imageSrc)
+            if !candidates.isEmpty {
+                urls = candidates
+            }
         }
+
+        for candidate in urls {
+            do {
+                let data = try await fetchImageData(from: candidate)
+                try OfflineImageStore.shared.save(data: data, relativePath: key, brand: brand)
+                return true
+            } catch {
+                continue
+            }
+        }
+        return false
     }
 
     private nonisolated static func fetchImageData(from url: URL) async throws -> Data {

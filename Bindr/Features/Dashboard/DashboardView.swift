@@ -64,6 +64,7 @@ struct DashboardView: View {
     private var setNamesByCardID: [String: String] { cardMetadata.setNamesByCardID }
     private var cardImageURLsByID: [String: URL] { cardMetadata.imageURLsByID }
     @State private var marketTrendData: MarketTrendDailyBlob? = nil
+    @State private var upcomingReleases: [UpcomingRelease] = []
     @State private var editingRecentLedgerLine: LedgerLine?
     @State private var selectedCardForDetail: Card? = nil
     @State private var selectedSealedProductForDetail: SealedProduct? = nil
@@ -333,6 +334,9 @@ struct DashboardView: View {
                 if let trend = activeMarketTrend {
                     marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
                 }
+                if !upcomingReleases.isEmpty {
+                    dashboardCard { upcomingReleasesSection }
+                }
                 recentActivityCard
             }
             .padding(.horizontal, 16)
@@ -376,16 +380,24 @@ struct DashboardView: View {
         .task(id: dashboardDataSignature) {
             guard hasFiredInitialLoadComplete else { return }
             guard visibleCollectionItems.count > 0 || allLedgerLines.count > 0 else { return }
-            // Defer card metadata + market trend just past the overlay fade so they don't
+            // Defer card metadata just past the overlay fade so it doesn't
             // compete with the first interactive frame.
             try? await Task.sleep(nanoseconds: 500_000_000)
             guard !Task.isCancelled else { return }
             let t = ContinuousClock().now
             await resolveDashboardMetadata()
             print("[Dashboard⏱] resolveDashboardMetadata: \(ContinuousClock().now - t)")
+        }
+        .task(id: supplementalDashboardDataTrigger) {
+            guard hasFiredInitialLoadComplete else { return }
+            guard services.isLaunchCatalogPipelineComplete else { return }
+            guard !services.isCatalogDownloadInProgress else { return }
+            try? await Task.sleep(nanoseconds: 300_000_000)
+            guard !Task.isCancelled else { return }
             let t2 = ContinuousClock().now
             await loadMarketTrendBlob()
             print("[Dashboard⏱] loadMarketTrendBlob: \(ContinuousClock().now - t2)")
+            await loadUpcomingReleases()
         }
         .task(id: services.dashboardMarketReloadToken) {
             guard services.dashboardMarketReloadToken > 0 else { return }
@@ -396,6 +408,7 @@ struct DashboardView: View {
             await computeLiveValue()
             chartRefreshID += 1
             await loadMarketTrendBlob()
+            await loadUpcomingReleases()
         }
         .task(id: "\(services.collectionInventoryRevision):\(hasFiredInitialLoadComplete)") {
             guard hasFiredInitialLoadComplete else { return }
@@ -420,10 +433,14 @@ struct DashboardView: View {
                     )
                 }
                 await loadMarketTrendBlob()
+                await loadUpcomingReleases()
             }
         }
         .onAppear {
             selectedBrand = activeBrand
+            if services.isLaunchCatalogPipelineComplete, !services.isCatalogDownloadInProgress {
+                Task { await loadUpcomingReleases() }
+            }
         }
         .task(id: "\(dashboardDataRevision):\(activeBrand.rawValue)") {
             recomputeCollectionStats()
@@ -734,6 +751,85 @@ struct DashboardView: View {
         }
     }
 
+    private var upcomingReleasesSection: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Upcoming Releases")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(upcomingReleases) { release in
+                        upcomingReleaseTile(release)
+                    }
+                }
+                .padding(.vertical, 2)
+            }
+        }
+    }
+
+    private func upcomingReleaseTile(_ release: UpcomingRelease) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(dashboardCardInsetBackground)
+
+                if let imageURL = release.imageURL {
+                    CachedAsyncImage(
+                        url: imageURL,
+                        targetSize: CGSize(width: 280, height: 280)
+                    ) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .padding(8)
+                    } placeholder: {
+                        ProgressView()
+                            .scaleEffect(0.7)
+                            .tint(services.theme.accentColor)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    Image(systemName: "photo")
+                        .font(.title2.weight(.semibold))
+                        .foregroundStyle(dashboardSecondaryText.opacity(0.7))
+                }
+            }
+            .frame(width: 148, height: 148)
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(dashboardBorder.opacity(0.55), lineWidth: 1)
+            )
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(release.name.trimmingCharacters(in: .whitespacesAndNewlines))
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                    .frame(width: 148, height: 40, alignment: .topLeading)
+
+                Text(release.type.trimmingCharacters(in: .whitespacesAndNewlines))
+                    .font(.caption2.weight(.bold))
+                    .foregroundStyle(services.theme.accentColor)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(
+                        Capsule(style: .continuous)
+                            .fill(services.theme.accentColor.opacity(0.14))
+                    )
+
+                Text(release.releaseDate.formatted(.dateTime.month(.abbreviated).day().year()))
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(dashboardSecondaryText)
+            }
+            .frame(width: 148, alignment: .leading)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(release.name), \(release.type), releases \(release.releaseDate.formatted(date: .long, time: .omitted))")
+    }
+
     private func insightMetricTile(
         icon: String,
         iconColor: Color,
@@ -870,6 +966,16 @@ struct DashboardView: View {
         h.combine(dashboardDataRevision)
         for line in recentLines { h.combine(line.id) }
         return h.finalize()
+    }
+
+    /// Re-runs when launch handoff or catalog sync finish so daily blobs load on first paint.
+    private var supplementalDashboardDataTrigger: String {
+        [
+            hasFiredInitialLoadComplete,
+            services.isLaunchCatalogPipelineComplete,
+            services.isCatalogDownloadInProgress,
+            services.dashboardMarketReloadToken,
+        ].map { "\($0)" }.joined(separator: "|")
     }
 
     private func dashboardActivityRow(line: LedgerLine) -> some View {
@@ -1484,6 +1590,10 @@ struct DashboardView: View {
         } catch {
             marketTrendData = nil
         }
+    }
+
+    private func loadUpcomingReleases() async {
+        upcomingReleases = await UpcomingReleasesService.loadReleasesPreferringNetwork()
     }
 
     private func formatTrendPercent(_ value: Double?) -> String {

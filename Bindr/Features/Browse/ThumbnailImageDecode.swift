@@ -23,6 +23,10 @@ enum ThumbnailImageDecode {
             return UIImage(data: data)
         }
 
-        return UIImage(cgImage: cgImage, scale: scale, orientation: .up)
+        let image = UIImage(cgImage: cgImage, scale: scale, orientation: .up)
+        if image.size.width > 0, image.size.height > 0 {
+            return image
+        }
+        return UIImage(data: data)
     }
 }

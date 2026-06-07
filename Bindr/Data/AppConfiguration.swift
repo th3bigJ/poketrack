@@ -312,6 +312,46 @@ enum AppConfiguration {
         return url(prefix: r2AssetsPathPrefix, path: path)
     }
 
+    /// Upcoming release artwork from `upcoming.json` (`image`, e.g. `upcoming/pitchBlack.jpg`).
+    /// Files are hosted at bucket root: `…/upcoming/<file>`.
+    static func upcomingReleaseImageURL(imageSrc: String) -> URL? {
+        let path = normalizedSetLogoPath(imageSrc)
+        guard !path.isEmpty else { return nil }
+        return imageURL(relativePath: path)
+    }
+
+    /// Candidate URLs for offline pack sync — exact JSON path first, then common extension swaps.
+    static func upcomingReleaseImageURLCandidates(imageSrc: String) -> [URL] {
+        let path = normalizedSetLogoPath(imageSrc)
+        guard !path.isEmpty else { return [] }
+
+        var urls: [URL] = []
+        func appendPath(_ relativePath: String) {
+            let primary = imageURL(relativePath: relativePath)
+            let catalog = r2CatalogURL(path: relativePath)
+            if !urls.contains(primary) { urls.append(primary) }
+            if !urls.contains(catalog) { urls.append(catalog) }
+        }
+
+        appendPath(path)
+
+        let nsPath = path as NSString
+        let ext = nsPath.pathExtension.lowercased()
+        guard !ext.isEmpty else { return urls }
+
+        let stem = nsPath.deletingPathExtension
+        for alternate in ["png", "jpg", "jpeg", "webp"] where alternate != ext {
+            appendPath("\(stem).\(alternate)")
+        }
+        return urls
+    }
+
+    /// Canonical offline-store key for an upcoming release image path from JSON.
+    static func upcomingReleaseOfflineKey(imageSrc: String) -> String? {
+        let path = normalizedSetLogoPath(imageSrc)
+        return path.isEmpty ? nil : path
+    }
+
     /// Returns the canonical relative path (offline store key) for an R2 image URL, or nil if the
     /// URL does not belong to our CDN. Strips base URL and optional assets prefix.
     static func offlineImageKey(for url: URL) -> String? {

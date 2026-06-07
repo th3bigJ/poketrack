@@ -43,6 +43,19 @@ enum OfflineImageURLInventory {
             append(key, url)
         }
 
+        if let data = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.upcomingReleases),
+           let releases = UpcomingReleasesService.decode(data) {
+            for release in releases {
+                let imageSrc = release.image.trimmingCharacters(in: .whitespacesAndNewlines)
+                guard !imageSrc.isEmpty,
+                      let url = AppConfiguration.upcomingReleaseImageURL(imageSrc: imageSrc) else { continue }
+                let key = AppConfiguration.upcomingReleaseOfflineKey(imageSrc: imageSrc)
+                    ?? AppConfiguration.offlineImageKey(for: url)
+                    ?? imageSrc
+                append(key, url)
+            }
+        }
+
         return rows
     }
 }

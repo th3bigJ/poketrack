@@ -124,6 +124,45 @@ final class VariantsCatalogService {
         }
     }
 
+    /// Normalized variant key → market USD for a card's pricing entry.
+    func variantPriceMap(for entry: CardPricingEntry) -> [String: Double] {
+        if let scrydex = entry.scrydex, !scrydex.isEmpty {
+            var map: [String: Double] = [:]
+            for (key, pricing) in scrydex {
+                guard !isChampionshipVariant(key) else { continue }
+                guard let usd = pricing.marketEstimateUSD(), usd > 0 else { continue }
+                map[normalizedVariantKey(key)] = usd
+            }
+            if !map.isEmpty { return map }
+        }
+        if let usd = entry.tcgplayerMarketEstimateUSD(), usd > 0 {
+            return [normalizedVariantKey("normal"): usd]
+        }
+        return [:]
+    }
+
+    /// Sum of market USD for owned variants — one copy per variant slot (duplicates ignored).
+    func collectedMarketUSD(
+        variantPriceMap priceMap: [String: Double],
+        ownedVariantKeys: Set<String>,
+        mode: SetCompletionMode
+    ) -> Double {
+        guard !priceMap.isEmpty, !ownedVariantKeys.isEmpty else { return 0 }
+
+        switch mode {
+        case .full:
+            let ownedPrices = ownedVariantKeys.compactMap { priceMap[normalizedVariantKey($0)] }.filter { $0 > 0 }
+            // Full set tracks one slot per card; value the cheapest owned variant for that slot.
+            return ownedPrices.min() ?? 0
+        case .master, .grandMaster:
+            return ownedVariantKeys.reduce(0) { partial, key in
+                guard includesVariant(key, mode: mode) else { return partial }
+                guard let usd = priceMap[normalizedVariantKey(key)], usd > 0 else { return partial }
+                return partial + usd
+            }
+        }
+    }
+
     private func apply(_ decoded: VariantsCatalog) {
         catalog = decoded
         masterSetKeys = decoded.normalizedMasterSet()
