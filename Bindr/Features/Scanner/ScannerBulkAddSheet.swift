@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-/// Bulk add all scanned cards to the collection in one action.
+/// Bulk add all scanned cards to the collection or trade in one action.
 struct ScannerBulkAddSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(AppServices.self) private var services
@@ -9,8 +9,11 @@ struct ScannerBulkAddSheet: View {
     let results: [ScanResult]
     @Binding var selectedVariantsByResultID: [UUID: String]
     @Binding var selectedVariantQuantitiesByResultID: [UUID: [String: Int]]
+    var purpose: CardScannerPurpose = .collection
     /// Called on the main actor after a successful add, before the sheet dismisses (clear scan session).
     var onSuccessClearSession: () -> Void = {}
+    /// Called after a successful trade add, before the scanner dismisses.
+    var onTradeAddComplete: () -> Void = {}
 
     /// Per-card + per-variant acquisition (default `.packed` when unset).
     @State private var acquisitionByResultID: [UUID: [String: CollectionAcquisitionKind]] = [:]
@@ -33,6 +36,15 @@ struct ScannerBulkAddSheet: View {
         services.priceDisplay.currency.symbol
     }
 
+    private var addsToTrade: Bool {
+        if case .trade = purpose { return true }
+        return false
+    }
+
+    private var navigationTitle: String {
+        addsToTrade ? "Add to trade" : "Add to collection"
+    }
+
     var body: some View {
         NavigationStack {
             List {
@@ -45,7 +57,8 @@ struct ScannerBulkAddSheet: View {
                             variantQuantities: variantQuantitiesBinding(for: result),
                             acquisitionByVariant: acquisitionByVariantBinding(for: result),
                             pricesByVariant: pricesByVariantBinding(for: result),
-                            currencySymbol: currencySymbol
+                            currencySymbol: currencySymbol,
+                            showsAcquisitionDetails: !addsToTrade
                         )
                     }
                 } header: {
@@ -61,7 +74,7 @@ struct ScannerBulkAddSheet: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
-            .navigationTitle("Add to collection")
+            .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .tint(.primary)
             .toolbar {
@@ -169,7 +182,7 @@ struct ScannerBulkAddSheet: View {
                 Text("\(successCount) card\(successCount == 1 ? "" : "s") added")
                     .font(.title2.weight(.bold))
                     .foregroundStyle(.white)
-                Text("Successfully added to your collection")
+                Text(addsToTrade ? "Successfully added to trade" : "Successfully added to your collection")
                     .font(.subheadline)
                     .foregroundStyle(.white.opacity(0.75))
             }
@@ -181,6 +194,10 @@ struct ScannerBulkAddSheet: View {
 
     private func save() {
         errorMessage = nil
+        if addsToTrade {
+            saveToTrade()
+            return
+        }
         guard let ledger = services.collectionLedger else {
             errorMessage = "Collection isn't ready. Try again."
             return
@@ -309,6 +326,42 @@ struct ScannerBulkAddSheet: View {
             dismiss()
         }
     }
+
+    private func saveToTrade() {
+        guard case .trade(let onAdd) = purpose else { return }
+
+        var items: [NewTradeItemInput] = []
+        for result in results {
+            let variantQuantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
+            for (variantKey, quantity) in variantQuantities where quantity > 0 {
+                items.append(
+                    NewTradeItemInput(
+                        cardID: result.card.masterCardId,
+                        variantKey: variantKey,
+                        quantity: quantity
+                    )
+                )
+            }
+        }
+
+        guard !items.isEmpty else {
+            errorMessage = "Select at least one card to add."
+            return
+        }
+
+        onAdd(items)
+        successCount = items.reduce(0) { $0 + max($1.quantity, 1) }
+        HapticManager.impact(.medium)
+        withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
+            showSuccess = true
+        }
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(1.0))
+            onSuccessClearSession()
+            onTradeAddComplete()
+            dismiss()
+        }
+    }
 }
 
 // MARK: - Card row
@@ -323,6 +376,7 @@ private struct BulkAddCardRow: View {
     @Binding var acquisitionByVariant: [String: CollectionAcquisitionKind]
     @Binding var pricesByVariant: [String: String]
     let currencySymbol: String
+    var showsAcquisitionDetails: Bool = true
 
     @State private var priceHint: String = "—"
 
@@ -442,7 +496,7 @@ private struct BulkAddCardRow: View {
                 }
             }
 
-            if qty > 0 {
+            if qty > 0, showsAcquisitionDetails {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("How acquired")
                         .font(.caption)

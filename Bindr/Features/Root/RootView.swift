@@ -732,6 +732,15 @@ struct RootView: View {
                                 moreNavigationPath = NavigationPath()
                                 moreNavigationPath.append(SideMenuPage.decks)
                                 selectedTab = .more
+                            }, onOpenActionableTrades: { tradeID in
+                                if let tradeID,
+                                   let url = URL(string: "bindr://social/trades/\(tradeID.uuidString)") {
+                                    handleSocialDeepLink(url)
+                                } else if let url = URL(string: "bindr://social/trades") {
+                                    handleSocialDeepLink(url)
+                                } else {
+                                    selectedTab = .social
+                                }
                             }, onInitialLoadStatusChange: { status in
                                 dashboardLaunchStatus = status
                             }, onInitialLoadComplete: {

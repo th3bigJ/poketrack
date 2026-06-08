@@ -706,7 +706,7 @@ struct BrowseView: View {
     @State private var showWishlistPaywall = false
     @State private var setCompletionMode: SetCompletionMode = .full
     @State private var lastSelectedSetCodeInSetsTab: String?
-    @State private var pendingSetRestoreRowID: String?
+    @State private var setsTabScrollRestore: SetsTabScrollRestore?
     @State private var setRestoreToken: Int = 0
     @State private var pendingCardContextRequest: CardContextActionRequest?
     @State private var browseAppearStartedAt: CFAbsoluteTime?
@@ -917,8 +917,13 @@ struct BrowseView: View {
                 inlineDetailVariantPriceByCardID = [:]
                 inlineDetailSetTrendChanges = (nil, nil, nil)
                 if selectedTab == .sets {
-                    pendingSetRestoreRowID = browseAuxTopAnchorID()
-                    setRestoreToken += 1
+                    if newValue != nil {
+                        setsTabScrollRestore = .scrollToTop
+                        setRestoreToken += 1
+                    } else if let setCode = lastSelectedSetCodeInSetsTab {
+                        setsTabScrollRestore = .scrollToSetRow(setCode: setCode)
+                        setRestoreToken += 1
+                    }
                 }
                 await loadInlineDetailIfNeeded(route: newValue)
             }
@@ -1232,12 +1237,25 @@ struct BrowseView: View {
                 .scrollTargetLayout()
             }
             .onChange(of: setRestoreToken) { _, _ in
-                guard let rowID = pendingSetRestoreRowID else { return }
-                DispatchQueue.main.async {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        proxy.scrollTo(rowID, anchor: .center)
+                guard let restore = setsTabScrollRestore else { return }
+                setsTabScrollRestore = nil
+                Task { @MainActor in
+                    switch restore {
+                    case .scrollToTop:
+                        await Task.yield()
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            proxy.scrollTo(browseAuxTopAnchorID(), anchor: .top)
+                        }
+                    case .scrollToSetRow(let setCode):
+                        let rowID = browseSetRowScrollID(setCode: setCode)
+                        for attempt in 0..<6 {
+                            if attempt > 0 {
+                                try? await Task.sleep(for: .milliseconds(40))
+                            }
+                            await Task.yield()
+                            proxy.scrollTo(rowID, anchor: .center)
+                        }
                     }
-                    pendingSetRestoreRowID = nil
                 }
             }
             .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
@@ -2752,6 +2770,11 @@ struct BrowseView: View {
         }
         .frame(height: 8)
     }
+}
+
+private enum SetsTabScrollRestore: Equatable {
+    case scrollToTop
+    case scrollToSetRow(setCode: String)
 }
 
 private func browseSetRowScrollID(setCode: String) -> String {

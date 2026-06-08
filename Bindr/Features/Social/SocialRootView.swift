@@ -27,6 +27,7 @@ struct SocialRootView: View {
         case comment(id: UUID)
         case wishlistMatch(id: UUID)
         case trade(id: UUID)
+        case tradesList
         case tradeQR(userID: UUID?, username: String?)
 
         static func parse(from url: URL) -> SocialDeepLinkDestination? {
@@ -102,7 +103,7 @@ struct SocialRootView: View {
                 if pathComponents.count >= 2, let id = UUID(uuidString: String(pathComponents[1])) {
                     return .trade(id: id)
                 }
-                return .feed
+                return .tradesList
             case "trade":
                 guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
                     return .feed
@@ -700,6 +701,9 @@ struct SocialRootView: View {
             selectedTab = .trades
             socialNavigationPath = NavigationPath()
             socialNavigationPath.append(SocialDestination.tradeDetail(tradeID: id))
+        case .tradesList:
+            selectedTab = .trades
+            socialNavigationPath = NavigationPath()
         case .tradeQR(let userID, let username):
             selectedTab = .trades
             do {

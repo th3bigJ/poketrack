@@ -495,6 +495,7 @@ private struct TradeCalculatorView: View {
     @State private var myCashText = ""
     @State private var isMyCardPickerPresented = false
     @State private var isTheirCardPickerPresented = false
+    @State private var activeScannerSide: TradeCalculatorSide?
     @State private var valuationCardCacheByID: [String: Card] = [:]
     @State private var myCardsValueUSD: Double = 0
     @State private var theirCardsValueUSD: Double = 0
@@ -585,12 +586,23 @@ private struct TradeCalculatorView: View {
             }
             .environment(services)
         }
-        .confirmationDialog(
+        .fullScreenCover(item: $activeScannerSide) { side in
+            CardScannerView(
+                purpose: .trade { items in
+                    append(items, to: side)
+                },
+                onMatch: { _ in },
+                onDismiss: {
+                    activeScannerSide = nil
+                }
+            )
+            .environment(services)
+        }
+        .alert(
             "Complete this local trade?",
-            isPresented: $showCompleteConfirmation,
-            titleVisibility: .visible
+            isPresented: $showCompleteConfirmation
         ) {
-            Button("Complete Trade") {
+            Button("Complete") {
                 Task { await completeLocalTrade() }
             }
             Button("Cancel", role: .cancel) {}
@@ -691,7 +703,8 @@ private struct TradeCalculatorView: View {
             totalLabel: "Their total",
             focusedField: .theirs,
             addTitle: "Add Their Cards",
-            addAction: { isTheirCardPickerPresented = true }
+            addAction: { isTheirCardPickerPresented = true },
+            scanAction: { activeScannerSide = .theirs }
         )
     }
 
@@ -705,7 +718,8 @@ private struct TradeCalculatorView: View {
             totalLabel: "My total",
             focusedField: .mine,
             addTitle: "Add My Cards",
-            addAction: { isMyCardPickerPresented = true }
+            addAction: { isMyCardPickerPresented = true },
+            scanAction: { activeScannerSide = .mine }
         )
     }
 
@@ -718,7 +732,8 @@ private struct TradeCalculatorView: View {
         totalLabel: String,
         focusedField: CashField,
         addTitle: String,
-        addAction: @escaping () -> Void
+        addAction: @escaping () -> Void,
+        scanAction: @escaping () -> Void
     ) -> some View {
         Section {
             if cards.wrappedValue.isEmpty {
@@ -740,9 +755,34 @@ private struct TradeCalculatorView: View {
                 }
             }
 
-            Button(action: addAction) {
-                Label(addTitle, systemImage: "plus.circle")
-                    .font(.system(size: 14))
+            HStack(spacing: 12) {
+                Button(action: addAction) {
+                    Label(addTitle, systemImage: "plus.circle")
+                        .font(.system(size: 14))
+                }
+                .buttonStyle(.plain)
+
+                Spacer(minLength: 0)
+
+                Button(action: scanAction) {
+                    Group {
+                        if #available(iOS 26.0, *) {
+                            Image(systemName: "camera")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundStyle(.secondary)
+                                .frame(width: 32, height: 32)
+                                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
+                        } else {
+                            Image(systemName: "camera")
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundStyle(.secondary)
+                                .frame(width: 32, height: 32)
+                                .background(.thinMaterial, in: Circle())
+                        }
+                    }
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Scan cards for \(title.lowercased())")
             }
 
             cashRow(label: cashLabel, text: cashText, focusedField: focusedField)
@@ -812,9 +852,11 @@ private struct TradeCalculatorView: View {
         }
     }
 
-    private enum TradeCalculatorSide {
+    private enum TradeCalculatorSide: String, Identifiable {
         case mine
         case theirs
+
+        var id: String { rawValue }
     }
 
     private func append(_ selected: [NewTradeItemInput], to side: TradeCalculatorSide) {

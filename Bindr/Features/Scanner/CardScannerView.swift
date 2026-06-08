@@ -23,8 +23,14 @@ private enum ScannerCaptureMode: String {
     }
 }
 
+enum CardScannerPurpose {
+    case collection
+    case trade(onAdd: ([NewTradeItemInput]) -> Void)
+}
+
 struct CardScannerView: View {
     @Environment(AppServices.self) private var services
+    var purpose: CardScannerPurpose = .collection
     var onMatch: (Card) -> Void
     var onDismiss: () -> Void
 
@@ -64,6 +70,13 @@ struct CardScannerView: View {
         let resultID = viewModel.scanResults[currentResultIndex].id
         let quantities = selectedVariantQuantitiesByResultID[resultID] ?? [:]
         return quantities.values.contains(where: { $0 > 0 })
+    }
+
+    private var addActionTitle: String {
+        switch purpose {
+        case .collection: return "Add to collection"
+        case .trade: return "Add to trade"
+        }
     }
 
     var body: some View {
@@ -223,7 +236,7 @@ struct CardScannerView: View {
                                         showBulkAddSheet = true
                                         HapticManager.impact(.medium)
                                     } label: {
-                                        Text("Add to collection")
+                                        Text(addActionTitle)
                                             .font(.subheadline.weight(.semibold))
                                             .foregroundStyle(.white)
                                             .padding(.horizontal, 14)
@@ -237,7 +250,7 @@ struct CardScannerView: View {
                                     }
                                     .buttonStyle(.plain)
                                     .disabled(!canAddCurrentScannedCard)
-                                    .accessibilityLabel("Add to collection")
+                                    .accessibilityLabel(addActionTitle)
                                 }
                             }
                             .padding(.trailing, 16)
@@ -342,11 +355,17 @@ struct CardScannerView: View {
                     results: viewModel.scanResults,
                     selectedVariantsByResultID: $selectedVariantsByResultID,
                     selectedVariantQuantitiesByResultID: $selectedVariantQuantitiesByResultID,
+                    purpose: purpose,
                     onSuccessClearSession: {
                         viewModel.clearAllScanResults()
                         selectedVariantsByResultID = [:]
                         selectedVariantQuantitiesByResultID = [:]
                         currentResultIndex = 0
+                    },
+                    onTradeAddComplete: {
+                        if case .trade = purpose {
+                            onDismiss()
+                        }
                     }
                 )
                 .environment(services)

@@ -107,6 +107,12 @@ struct TradeWithItems: Identifiable, Sendable {
         trade.initiatorID == currentUserID ? trade.receiverID : trade.initiatorID
     }
 
+    /// True when the current user is the receiver of a pending or countered offer and must respond.
+    func needsResponse(from currentUserID: UUID) -> Bool {
+        guard trade.status == .pending || trade.status == .countered else { return false }
+        return trade.receiverID == currentUserID
+    }
+
     private static func consolidatedItems(_ items: [TradeItem]) -> [TradeItem] {
         var orderedKeys: [String] = []
         var byKey: [String: TradeItem] = [:]

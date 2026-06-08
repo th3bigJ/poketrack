@@ -17,6 +17,8 @@ struct DashboardView: View {
     var onOpenSealedProducts: (() -> Void)? = nil
     var onOpenWishlist: (() -> Void)? = nil
     var onOpenBrowse: (() -> Void)? = nil
+    /// Opens Social → Trades. Pass a trade ID to jump straight to that offer; pass nil for the trades list.
+    var onOpenActionableTrades: ((UUID?) -> Void)? = nil
     var onInitialLoadStatusChange: ((String) -> Void)? = nil
     var onInitialLoadComplete: (() -> Void)? = nil
 
@@ -68,6 +70,7 @@ struct DashboardView: View {
     @State private var editingRecentLedgerLine: LedgerLine?
     @State private var selectedCardForDetail: Card? = nil
     @State private var selectedSealedProductForDetail: SealedProduct? = nil
+    @State private var actionableTrades: [(id: UUID, status: TradeStatus, updatedAt: Date?)] = []
 
     // Cached collection stats — updated via task when collectionItems/brand changes,
     // so SwiftUI body evaluation never pays the O(n) cost of iterating 997+ items.
@@ -329,6 +332,9 @@ struct DashboardView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 18) {
                 heroSection
+                if !actionableTrades.isEmpty {
+                    tradeActionNotificationCard
+                }
                 valueAndHistoryCard
                 dashboardCard { collectionSummaryInsightCard }
                 if let trend = activeMarketTrend {
@@ -468,6 +474,21 @@ struct DashboardView: View {
             if phase == .background, let snapshot = liveSnapshot {
                 services.collectionValue?.persistLastKnownValue(snapshot)
             }
+            if phase == .active {
+                Task { await refreshActionableTrades() }
+            }
+        }
+        .onChange(of: services.trade.lastMutationAt) { _, _ in
+            Task { await refreshActionableTrades() }
+        }
+        .onChange(of: services.socialAuth.authState) { _, _ in
+            Task { await refreshActionableTrades() }
+        }
+        .task(id: hasFiredInitialLoadComplete) {
+            guard hasFiredInitialLoadComplete else { return }
+            try? await Task.sleep(nanoseconds: 800_000_000)
+            guard !Task.isCancelled else { return }
+            await refreshActionableTrades()
         }
         // Refresh ledger lines and collection items when SwiftData saves (e.g. CloudKit sync or
         // card added mid-session). Debounce so rapid batch saves only trigger one fetch. The 2s
@@ -549,6 +570,101 @@ struct DashboardView: View {
         if hour < 12 { return "Good morning" }
         if hour < 17 { return "Good afternoon" }
         return "Good evening"
+    }
+
+    private var tradeActionCardTint: Color {
+        guard actionableTrades.count == 1 else { return services.theme.accentColor }
+        switch actionableTrades[0].status {
+        case .pending: return Color(hex: "E8B84B")
+        case .countered: return Color(hex: "E8934B")
+        default: return services.theme.accentColor
+        }
+    }
+
+    private var tradeActionCardTitle: String {
+        guard actionableTrades.count == 1 else {
+            return "\(actionableTrades.count) trades need your response"
+        }
+        switch actionableTrades[0].status {
+        case .pending: return "New trade offer"
+        case .countered: return "Counter offer received"
+        default: return "Trade needs your response"
+        }
+    }
+
+    private var tradeActionCardSubtitle: String {
+        if actionableTrades.count == 1 {
+            return "Tap to review and respond"
+        }
+        return "Tap to review your open trade offers"
+    }
+
+    private var tradeActionNotificationCard: some View {
+        Button {
+            Haptics.lightImpact()
+            if actionableTrades.count == 1 {
+                onOpenActionableTrades?(actionableTrades[0].id)
+            } else {
+                onOpenActionableTrades?(nil)
+            }
+        } label: {
+            HStack(spacing: 12) {
+                Circle()
+                    .fill(tradeActionCardTint.opacity(0.15))
+                    .frame(width: 40, height: 40)
+                    .overlay {
+                        Image(systemName: "arrow.left.arrow.right")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundStyle(tradeActionCardTint)
+                    }
+
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(tradeActionCardTitle)
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(dashboardPrimaryText)
+                        .multilineTextAlignment(.leading)
+                    Text(tradeActionCardSubtitle)
+                        .font(.system(size: 13))
+                        .foregroundStyle(dashboardSecondaryText)
+                }
+
+                Spacer(minLength: 0)
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(dashboardSecondaryText.opacity(0.7))
+            }
+            .padding(16)
+            .glassCardStyle(cornerRadius: 16, interactive: true)
+            .overlay {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(tradeActionCardTint.opacity(0.25), lineWidth: 1)
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(tradeActionCardTitle). \(tradeActionCardSubtitle)")
+    }
+
+    private func refreshActionableTrades() async {
+        guard case .signedIn(let uid, _) = services.socialAuth.authState else {
+            actionableTrades = []
+            return
+        }
+        do {
+            let trades = try await services.trade.fetchMyTrades()
+            actionableTrades = trades
+                .filter { $0.needsResponse(from: uid) }
+                .map { (
+                    id: $0.id,
+                    status: $0.trade.status,
+                    updatedAt: $0.trade.updatedAt ?? $0.trade.createdAt
+                ) }
+                .sorted { ($0.updatedAt ?? .distantPast) > ($1.updatedAt ?? .distantPast) }
+        } catch is CancellationError {
+        } catch let error as URLError where error.code == .cancelled {
+        } catch {
+            // Keep the last known actionable trades on transient network errors.
+        }
     }
 
     private var valueAndHistoryCard: some View {
@@ -961,9 +1077,13 @@ struct DashboardView: View {
     private var dashboardDataSignature: Int {
         // Keep this O(1) / O(recent-lines) — never iterate all collection items here.
         // dashboardDataRevision captures inventory reloads; recentLines covers activity changes.
+        // hasFiredInitialLoadComplete must be included so the task re-fires once the launch
+        // handoff completes — without it, the task exits early on first fire (guard returns)
+        // and never retries because the rest of the signature hasn't changed.
         var h = Hasher()
         h.combine(activeBrand.rawValue)
         h.combine(dashboardDataRevision)
+        h.combine(hasFiredInitialLoadComplete)
         for line in recentLines { h.combine(line.id) }
         return h.finalize()
     }
