@@ -155,7 +155,7 @@ final class CardFriendTradeMatchService {
         return normalizedAliasSet(values)
     }
 
-    private static func normalizedAliasSet(_ values: String?...) -> Set<String> {
+    private static func normalizedAliasSet(_ values: [String?]) -> Set<String> {
         Set(
             values
                 .compactMap { $0 }
