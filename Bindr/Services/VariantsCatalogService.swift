@@ -4,8 +4,8 @@ import Observation
 @Observable
 @MainActor
 final class VariantsCatalogService {
-    static let auxBlobKey = "variants_catalog_json"
-    static let etagMetaKey = "catalog_variants_etag"
+    nonisolated static let auxBlobKey = "variants_catalog_json"
+    nonisolated static let etagMetaKey = "catalog_variants_etag"
 
     private(set) var catalog: VariantsCatalog = .fallback
 

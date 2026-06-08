@@ -5,8 +5,11 @@ import StoreKit
 @Observable
 @MainActor
 final class StoreKitService {
+    private static let premiumEntitlementDefaultsKey = "Bindr.store.premiumEntitlement"
+
     /// Raw entitlement from StoreKit (before DEBUG overrides).
     private var premiumEntitlement = false
+    private(set) var isCheckingEntitlements = false
 
     /// Effective premium flag for the app. In **Debug** builds, use **Force free tier** on Account to test without Premium.
     var isPremium: Bool {
@@ -31,10 +34,12 @@ final class StoreKitService {
     #endif
 
     init() {
+        premiumEntitlement = UserDefaults.standard.bool(forKey: Self.premiumEntitlementDefaultsKey)
         #if DEBUG
         debugForceFreeTier = UserDefaults.standard.bool(forKey: Self.forceFreeTierDefaultsKey)
         #endif
         updatesTask = Task { await observeTransactions() }
+        Task { await checkEntitlements() }
     }
 
     func loadProducts() async {
@@ -56,6 +61,10 @@ final class StoreKitService {
     }
 
     func checkEntitlements() async {
+        guard !isCheckingEntitlements else { return }
+        isCheckingEntitlements = true
+        defer { isCheckingEntitlements = false }
+
         // Drain the async sequence on a background executor so StoreKit's
         // network round-trip doesn't hold @MainActor while Apple's servers respond.
         let premium = await Task.detached(priority: .userInitiated) {
@@ -69,7 +78,7 @@ final class StoreKitService {
             }
             return found
         }.value
-        premiumEntitlement = premium
+        setPremiumEntitlement(premium)
     }
 
     func purchase(annual: Bool = false) async throws {
@@ -89,7 +98,8 @@ final class StoreKitService {
         case .success(let verification):
             guard case .verified(let t) = verification else { return }
             if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
-                premiumEntitlement = true
+                setPremiumEntitlement(true)
+                await t.finish()
             }
         case .userCancelled:
             break
@@ -110,9 +120,15 @@ final class StoreKitService {
         for await update in StoreKit.Transaction.updates {
             guard case .verified(let t) = update else { continue }
             if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
-                premiumEntitlement = true
+                await checkEntitlements()
+                await t.finish()
             }
         }
+    }
+
+    private func setPremiumEntitlement(_ isPremium: Bool) {
+        premiumEntitlement = isPremium
+        UserDefaults.standard.set(isPremium, forKey: Self.premiumEntitlementDefaultsKey)
     }
 }
 

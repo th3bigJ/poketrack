@@ -2,9 +2,10 @@ import SwiftUI
 
 struct TradeStatusBadge: View {
     let status: TradeStatus
+    var label: String?
 
     var body: some View {
-        Text(status.displayName)
+        Text(label ?? status.displayName)
             .font(.system(size: 10, weight: .bold))
             .tracking(0.3)
             .foregroundStyle(color)

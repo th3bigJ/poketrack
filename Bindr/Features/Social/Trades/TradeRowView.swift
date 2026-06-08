@@ -12,6 +12,16 @@ struct TradeRowView: View {
     private var theirItems: [TradeItem] { tradeWithItems.theirItems(currentUserID: currentUserID) }
     private var myCash: Double { tradeWithItems.myCash(currentUserID: currentUserID) }
     private var theirCash: Double { tradeWithItems.theirCash(currentUserID: currentUserID) }
+    private var statusLabel: String? {
+        guard trade.status == .accepted else { return nil }
+        if tradeWithItems.myCompleted(currentUserID: currentUserID) {
+            return "Waiting"
+        }
+        if tradeWithItems.theirCompleted(currentUserID: currentUserID) {
+            return "Ready"
+        }
+        return nil
+    }
 
     var body: some View {
         HStack(spacing: 12) {
@@ -60,7 +70,7 @@ struct TradeRowView: View {
             Spacer(minLength: 0)
 
             VStack(alignment: .trailing, spacing: 4) {
-                TradeStatusBadge(status: trade.status)
+                TradeStatusBadge(status: trade.status, label: statusLabel)
                 if let date = trade.updatedAt {
                     Text(date, formatter: relativeDateFormatter)
                         .font(.system(size: 10))

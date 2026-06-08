@@ -71,6 +71,20 @@ final class TradeService {
         }
     }
 
+    private struct TradeCompletionPatch: Encodable {
+        let status: String?
+        let initiatorCompleted: Bool?
+        let receiverCompleted: Bool?
+        let updatedAt: Date
+
+        enum CodingKeys: String, CodingKey {
+            case status
+            case initiatorCompleted = "initiator_completed"
+            case receiverCompleted = "receiver_completed"
+            case updatedAt = "updated_at"
+        }
+    }
+
     private struct TradeCancelPatch: Encodable {
         let initiatorID: UUID
         let receiverID: UUID
@@ -91,6 +105,8 @@ final class TradeService {
         let status: String
         let cashInitiator: Double
         let cashReceiver: Double
+        let initiatorCompleted: Bool
+        let receiverCompleted: Bool
         let updatedAt: Date
 
         enum CodingKeys: String, CodingKey {
@@ -99,6 +115,8 @@ final class TradeService {
             case status
             case cashInitiator = "cash_initiator"
             case cashReceiver = "cash_receiver"
+            case initiatorCompleted = "initiator_completed"
+            case receiverCompleted = "receiver_completed"
             case updatedAt = "updated_at"
         }
     }
@@ -179,7 +197,8 @@ final class TradeService {
         initiatorCards: [NewTradeItemInput],
         receiverCards: [NewTradeItemInput],
         cashInitiator: Double,
-        cashReceiver: Double
+        cashReceiver: Double,
+        initialStatus: TradeStatus = .pending
     ) async throws -> Trade {
         let uid = try signedInUserID()
         let token = try signedInAccessToken()
@@ -187,7 +206,7 @@ final class TradeService {
         let tradeBody = TradeInsertRequest(
             initiatorID: uid,
             receiverID: receiverID,
-            status: "pending",
+            status: initialStatus.rawValue,
             cashInitiator: cashInitiator,
             cashReceiver: cashReceiver
         )
@@ -242,6 +261,8 @@ final class TradeService {
             status: "countered",
             cashInitiator: cashInitiator,
             cashReceiver: cashReceiver,
+            initiatorCompleted: false,
+            receiverCompleted: false,
             updatedAt: Date()
         )
         let updated: [Trade] = try await execute(
@@ -330,15 +351,41 @@ final class TradeService {
     }
 
     func completeTrade(id: UUID) async throws {
+        let uid = try signedInUserID()
         let token = try signedInAccessToken()
-        let body = TradeStatusPatch(status: "complete", updatedAt: Date())
-        _ = try await execute(
+
+        let existing: TradeWithItems = try await fetchTrade(id: id)
+        let current = existing.trade
+        let isInitiator = current.initiatorID == uid
+        let otherSideAlreadyCompleted = isInitiator ? current.receiverCompleted : current.initiatorCompleted
+
+        let body = TradeCompletionPatch(
+            status: otherSideAlreadyCompleted ? "complete" : current.status.rawValue,
+            initiatorCompleted: isInitiator ? true : nil,
+            receiverCompleted: isInitiator ? nil : true,
+            updatedAt: Date()
+        )
+        let updatedTrades: [Trade] = try await execute(
             path: "/rest/v1/trades?id=eq.\(id.uuidString)",
             method: "PATCH",
             accessToken: token,
             body: body,
-            extraHeaders: ["Prefer": "return=minimal"]
-        ) as EmptyResponse
+            extraHeaders: ["Prefer": "return=representation"]
+        )
+
+        if let updated = updatedTrades.first,
+           updated.status != .complete,
+           updated.initiatorCompleted,
+           updated.receiverCompleted {
+            let completionBody = TradeStatusPatch(status: "complete", updatedAt: Date())
+            _ = try await execute(
+                path: "/rest/v1/trades?id=eq.\(id.uuidString)",
+                method: "PATCH",
+                accessToken: token,
+                body: completionBody,
+                extraHeaders: ["Prefer": "return=minimal"]
+            ) as EmptyResponse
+        }
         markMutation()
     }
 

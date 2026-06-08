@@ -72,7 +72,7 @@ enum UpcomingReleasesService {
     /// Prefer the live CDN JSON so corrected `image` paths appear without waiting for the next daily sync.
     static func loadReleasesPreferringNetwork() async -> [UpcomingRelease] {
         let url = AppConfiguration.r2CatalogURL(path: DailyBlobPath.upcomingReleases)
-        var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
 
         guard let (data, response) = try? await AppURLSession.catalog.data(for: request),
               let http = response as? HTTPURLResponse,

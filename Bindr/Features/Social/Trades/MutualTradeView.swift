@@ -353,9 +353,9 @@ struct MutualTradeView: View {
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 48))
                 .foregroundStyle(.green)
-            Text("Trade Complete!")
+            Text("Trade Agreed!")
                 .font(.title3.weight(.bold))
-            Text("Cards have been exchanged between you and @\(otherUsername).")
+            Text("Confirm completion from Active trades once both sides have exchanged cards and cash.")
                 .font(.system(size: 14)).foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
         }
@@ -493,12 +493,13 @@ struct MutualTradeView: View {
             initiatorCards: myGiveInputs,
             receiverCards: theirGiveInputs,
             cashInitiator: giveCash,
-            cashReceiver: receiveCash
+            cashReceiver: receiveCash,
+            initialStatus: .accepted
         )
 
         try await services.tradeSession.markCompleted(sessionID: sessionID, tradeRecordID: trade.id)
         session = try await services.tradeSession.fetchSession(id: sessionID)
-        successMessage = "Trade completed successfully!"
+        successMessage = "Trade agreed. Both traders still need to confirm completion after the exchange."
     }
 
     private func cancelTrade() async {

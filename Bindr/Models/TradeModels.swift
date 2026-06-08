@@ -45,6 +45,8 @@ struct Trade: Codable, Hashable, Identifiable, Sendable {
     let status: TradeStatus
     let cashInitiator: Double
     let cashReceiver: Double
+    let initiatorCompleted: Bool
+    let receiverCompleted: Bool
     let createdAt: Date?
     let updatedAt: Date?
 
@@ -55,8 +57,48 @@ struct Trade: Codable, Hashable, Identifiable, Sendable {
         case status
         case cashInitiator = "cash_initiator"
         case cashReceiver = "cash_receiver"
+        case initiatorCompleted = "initiator_completed"
+        case receiverCompleted = "receiver_completed"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+    }
+
+    init(
+        id: UUID,
+        initiatorID: UUID,
+        receiverID: UUID,
+        status: TradeStatus,
+        cashInitiator: Double,
+        cashReceiver: Double,
+        initiatorCompleted: Bool = false,
+        receiverCompleted: Bool = false,
+        createdAt: Date?,
+        updatedAt: Date?
+    ) {
+        self.id = id
+        self.initiatorID = initiatorID
+        self.receiverID = receiverID
+        self.status = status
+        self.cashInitiator = cashInitiator
+        self.cashReceiver = cashReceiver
+        self.initiatorCompleted = initiatorCompleted
+        self.receiverCompleted = receiverCompleted
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        initiatorID = try container.decode(UUID.self, forKey: .initiatorID)
+        receiverID = try container.decode(UUID.self, forKey: .receiverID)
+        status = try container.decode(TradeStatus.self, forKey: .status)
+        cashInitiator = try container.decode(Double.self, forKey: .cashInitiator)
+        cashReceiver = try container.decode(Double.self, forKey: .cashReceiver)
+        initiatorCompleted = try container.decodeIfPresent(Bool.self, forKey: .initiatorCompleted) ?? false
+        receiverCompleted = try container.decodeIfPresent(Bool.self, forKey: .receiverCompleted) ?? false
+        createdAt = try container.decodeIfPresent(Date.self, forKey: .createdAt)
+        updatedAt = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
     }
 }
 
@@ -105,6 +147,14 @@ struct TradeWithItems: Identifiable, Sendable {
 
     func counterpartID(currentUserID: UUID) -> UUID {
         trade.initiatorID == currentUserID ? trade.receiverID : trade.initiatorID
+    }
+
+    func myCompleted(currentUserID: UUID) -> Bool {
+        trade.initiatorID == currentUserID ? trade.initiatorCompleted : trade.receiverCompleted
+    }
+
+    func theirCompleted(currentUserID: UUID) -> Bool {
+        trade.initiatorID == currentUserID ? trade.receiverCompleted : trade.initiatorCompleted
     }
 
     /// True when the current user is the receiver of a pending or countered offer and must respond.

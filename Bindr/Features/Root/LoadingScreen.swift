@@ -569,6 +569,7 @@ struct LaunchWordmarkView: View {
 
         if !hasFiredRevealComplete {
             hasFiredRevealComplete = true
+            Haptics.premiumPulse()
             onRevealComplete()
         }
     }

@@ -40,6 +40,13 @@ struct TradeDetailView: View {
         services.theme.accentColor
     }
 
+    private var toolbarStatusText: String {
+        if let tradeWithItems {
+            return tradeStatusText(tradeWithItems)
+        }
+        return trade?.status.displayName ?? "Pending"
+    }
+
     var body: some View {
         ZStack {
             // Immersive Adaptive Background
@@ -77,7 +84,7 @@ struct TradeDetailView: View {
         .safeAreaInset(edge: .top, spacing: 0) {
             ZStack {
                 VStack(spacing: 0) {
-                    Text(trade?.status.rawValue.uppercased() ?? "PENDING")
+                    Text(toolbarStatusText.uppercased())
                         .font(.system(size: 10, weight: .black))
                         .tracking(2)
                         .foregroundStyle(themeColor)
@@ -130,10 +137,10 @@ struct TradeDetailView: View {
             Text("This will close the trade for both sides.")
         }
         .alert("Mark this trade as complete?", isPresented: $showConfirmComplete) {
-            Button("Mark Complete") { Task { await performComplete() } }
+            Button("Confirm") { Task { await performComplete() } }
             Button("Not Yet", role: .cancel) { }
         } message: {
-            Text("Use this only after cards and cash have been exchanged.")
+            Text("Use this only after your side of the exchange is done. The trade completes after both traders confirm.")
         }
     }
 
@@ -160,7 +167,7 @@ struct TradeDetailView: View {
                     )
                     
                     // CENTRAL LINK CORE
-                    centralLinkCore(twi.trade.status)
+                    centralLinkCore(twi)
                         .padding(.vertical, -30)
                         .zIndex(10)
                     
@@ -283,7 +290,7 @@ struct TradeDetailView: View {
         .padding(.horizontal, 16)
     }
 
-    private func centralLinkCore(_ status: TradeStatus) -> some View {
+    private func centralLinkCore(_ twi: TradeWithItems) -> some View {
         ZStack {
             // Pulsing Connection Lines
             VStack(spacing: 0) {
@@ -309,7 +316,7 @@ struct TradeDetailView: View {
             }
             
             // Status Tag
-            Text(status.rawValue.uppercased())
+            Text(tradeStatusText(twi).uppercased())
                 .font(.system(size: 10, weight: .black))
                 .tracking(2)
                 .padding(.horizontal, 10)
@@ -339,6 +346,8 @@ struct TradeDetailView: View {
     private func actionButtons(_ twi: TradeWithItems) -> some View {
         let status = twi.trade.status
         let resolvedUID = currentUserID ?? UUID()
+        let iConfirmedCompletion = twi.myCompleted(currentUserID: resolvedUID)
+        let theyConfirmedCompletion = twi.theirCompleted(currentUserID: resolvedUID)
 
         VStack(spacing: 12) {
             if status == .pending || status == .countered {
@@ -397,32 +406,66 @@ struct TradeDetailView: View {
                     .buttonStyle(.plain)
                 }
             } else if status == .accepted {
-                HStack(spacing: 12) {
-                    Button { showConfirmComplete = true } label: {
-                        HStack {
-                            Image(systemName: "checkmark.seal.fill")
-                            Text("Complete")
-                                .fontWeight(.bold)
+                if iConfirmedCompletion {
+                    VStack(spacing: 8) {
+                        HStack(spacing: 8) {
+                            Image(systemName: theyConfirmedCompletion ? "checkmark.circle.fill" : "clock.fill")
+                            Text(theyConfirmedCompletion ? "Finalizing trade" : "Waiting for their confirmation")
+                                .font(.system(size: 15, weight: .bold))
                         }
                         .frame(maxWidth: .infinity)
                         .frame(height: 56)
-                        .foregroundStyle(Color(hex: "52C97C"))
+                        .foregroundStyle(theyConfirmedCompletion ? Color(hex: "52C97C") : Color(hex: "E8B84B"))
                         .glassCardStyle(cornerRadius: 18, interactive: true)
-                    }
-                    .buttonStyle(.plain)
 
-                    Button { showConfirmCancel = true } label: {
-                        Image(systemName: "xmark.circle")
-                            .font(.system(size: 20))
-                            .frame(width: 56, height: 56)
-                            .foregroundStyle(Color(hex: "E05252"))
-                            .glassCardStyle(cornerRadius: 18, interactive: true)
+                        if !theyConfirmedCompletion {
+                            Text("You confirmed your side. The trade will complete once they confirm theirs.")
+                                .font(.system(size: 12))
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
                     }
-                    .buttonStyle(.plain)
+                } else {
+                    HStack(spacing: 12) {
+                        Button { showConfirmComplete = true } label: {
+                            HStack {
+                                Image(systemName: "checkmark.seal.fill")
+                                Text(theyConfirmedCompletion ? "Confirm & Complete" : "Confirm My Side")
+                                    .fontWeight(.bold)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 56)
+                            .foregroundStyle(Color(hex: "52C97C"))
+                            .glassCardStyle(cornerRadius: 18, interactive: true)
+                        }
+                        .buttonStyle(.plain)
+
+                        Button { showConfirmCancel = true } label: {
+                            Image(systemName: "xmark.circle")
+                                .font(.system(size: 20))
+                                .frame(width: 56, height: 56)
+                                .foregroundStyle(Color(hex: "E05252"))
+                                .glassCardStyle(cornerRadius: 18, interactive: true)
+                        }
+                        .buttonStyle(.plain)
+                    }
                 }
             }
         }
         .disabled(isMutating)
+    }
+
+    private func tradeStatusText(_ twi: TradeWithItems) -> String {
+        guard twi.trade.status == .accepted, let uid = currentUserID else {
+            return twi.trade.status.displayName
+        }
+        if twi.myCompleted(currentUserID: uid) {
+            return "Waiting for them"
+        }
+        if twi.theirCompleted(currentUserID: uid) {
+            return "They confirmed"
+        }
+        return twi.trade.status.displayName
     }
 
     private struct MenuItem: Identifiable {

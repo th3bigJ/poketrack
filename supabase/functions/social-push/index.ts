@@ -384,17 +384,17 @@ function buildCandidate(payload: WebhookPayload): PushCandidate | null {
 
       if (status === "cancelled") {
         return {
-          userID: initiatorID,
+          userID: receiverID,
           category: "trade_updates",
           title: "Trade cancelled",
-          body: "A trade was cancelled.",
+          body: "Your trade partner cancelled a trade.",
           deepLink: `bindr://social/trades/${tradeID}`,
           metadata: {
             trade_id: tradeID,
             initiator_id: initiatorID,
             receiver_id: receiverID,
             status,
-            recipients: [initiatorID, receiverID],
+            recipients: [receiverID],
           },
         }
       }

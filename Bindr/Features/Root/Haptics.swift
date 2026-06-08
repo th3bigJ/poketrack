@@ -28,6 +28,17 @@ enum Haptics {
         rigidImpactGenerator.impactOccurred()
     }
 
+    /// Polished two-step pulse for brand moments like the launch wordmark reveal.
+    static func premiumPulse() {
+        lightImpactGenerator.prepare()
+        mediumImpactGenerator.prepare()
+        lightImpactGenerator.impactOccurred(intensity: 0.55)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.12) {
+            mediumImpactGenerator.prepare()
+            mediumImpactGenerator.impactOccurred(intensity: 0.75)
+        }
+    }
+
     /// Tab selection and other discrete picks (matches system tab bar feel).
     static func selectionChanged() {
         selectionGenerator.prepare()
