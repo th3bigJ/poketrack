@@ -136,7 +136,23 @@ final class CardFriendTradeMatchService {
     }
 
     private static func aliasCardIDs(for card: Card) -> Set<String> {
-        normalizedAliasSet(card.masterCardId, card.externalId, card.tcgdex_id, card.localId)
+        var values: [String?] = [card.masterCardId, card.externalId, card.tcgdex_id]
+
+        // `localId` is only unique within a set (e.g. "114" appears in many sets).
+        // Include set-scoped aliases so trade matching cannot false-positive across sets.
+        let setCode = card.setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        if !setCode.isEmpty {
+            if let localId = card.localId?.trimmingCharacters(in: .whitespacesAndNewlines), !localId.isEmpty {
+                values.append("\(setCode)-\(localId)")
+                values.append("\(setCode)::\(localId)")
+            }
+            let cardNumber = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            if !cardNumber.isEmpty {
+                values.append("\(setCode)::\(cardNumber)")
+            }
+        }
+
+        return normalizedAliasSet(values)
     }
 
     private static func normalizedAliasSet(_ values: String?...) -> Set<String> {
