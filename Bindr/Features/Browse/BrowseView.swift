@@ -4069,6 +4069,7 @@ struct SetCardsView: View {
                     .padding(.horizontal, 16)
                 }
             }
+            .id(set.id)
 
             if isMultiSelectActive && !selectedCardIDs.isEmpty {
                 multiSelectActionBar
@@ -4441,6 +4442,7 @@ struct DexCardsView: View {
                 }
             }
         }
+        .id(dexId)
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
             BrowseDetailNavBar(

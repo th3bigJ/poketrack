@@ -16,7 +16,7 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
         switch self {
         case .dashboard: return "Dashboard"
         case .browse: return "Explore"
-        case .collect: return "My Collection"
+        case .collect: return "Collection"
         case .social: return "Social"
         case .more: return "More"
         }
