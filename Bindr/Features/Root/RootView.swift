@@ -1061,6 +1061,8 @@ struct RootView: View {
                          : isCollectFilterContextActive ? isCollectFilterActive : false
         let filterContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent)
                                     : isCollectFilterContextActive ? AnyView(collectFilterMenuContent) : nil
+        let gridContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(browseGridMenuContent)
+                                  : isCollectFilterContextActive ? AnyView(collectGridMenuContent) : nil
         UniversalSearchBar(
             text: $universalQuery,
             isFocused: $searchFieldFocused,
@@ -1069,6 +1071,7 @@ struct RootView: View {
             isFilterEnabled: filterEnabled,
             isFilterActive: filterActive,
             filterMenuContent: filterContent,
+            gridMenuContent: gridContent,
             collapsedLeadingButton: browseLeadingButton,
             trailingButton: chromeTrailingButton,
             extraTrailingButton: chromeExtraTrailingButton,
@@ -1155,8 +1158,9 @@ struct RootView: View {
                 showRandomSort: false,
                 showCardNumberSort: false,
                 showHideOwned: false,
+                showOwnedOnly: false,
                 showShowDuplicates: true,
-                showGridOptions: true,
+                showGridOptions: false,
                 defaultSortBy: .price
             )
         BrowseGridFiltersMenuContent(
@@ -1166,9 +1170,37 @@ struct RootView: View {
             rarityOptions: collectFilterRarityOptions,
             trainerTypeOptions: collectFilterTrainerTypeOptions,
             isAllBrands: isCollectAllBrands,
-            gridOptions: $collectFilters.gridOptions,
             config: collectConfig
         )
+    }
+
+    @ViewBuilder
+    private var collectGridMenuContent: some View {
+        if collectContentTypeTab == .products {
+            BrowseGridOptionsMenuContent(
+                gridOptions: $collectFilters.gridOptions,
+                nameToggleTitle: "Show product name",
+                showCardIDToggle: false,
+                showOwnedToggle: false
+            )
+        } else {
+            BrowseGridOptionsMenuContent(gridOptions: $collectFilters.gridOptions)
+        }
+    }
+
+    @ViewBuilder
+    private var browseGridMenuContent: some View {
+        let isSealedTab = browseHomeTab == .products && browseInlineDetailRoute == nil
+        if isSealedTab {
+            BrowseGridOptionsMenuContent(
+                gridOptions: $browseFilters.productsGridOptions,
+                nameToggleTitle: "Show product name",
+                showCardIDToggle: false,
+                showOwnedToggle: false
+            )
+        } else {
+            BrowseGridOptionsMenuContent()
+        }
     }
 
     @ViewBuilder
@@ -1193,7 +1225,7 @@ struct RootView: View {
             }
         }()
 
-        let browseConfig = FilterMenuConfig(defaultSortBy: defaultSortBy)
+        let browseConfig = FilterMenuConfig(showGridOptions: false, defaultSortBy: defaultSortBy)
 
         BrowseGridFiltersMenuContent(
             brand: services.brandSettings.selectedCatalogBrand,
@@ -1202,7 +1234,6 @@ struct RootView: View {
             rarityOptions: activeBrowseFilterRarityOptions,
             trainerTypeOptions: activeBrowseFilterTrainerTypeOptions,
             isAllBrands: false,
-            gridOptions: isSealedTab ? $browseFilters.productsGridOptions : nil,
             config: isSealedTab ? .products : browseConfig
         )
     }

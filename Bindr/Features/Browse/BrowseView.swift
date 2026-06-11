@@ -1302,9 +1302,15 @@ struct BrowseView: View {
         let allVariantRows = useMasterGrid ? masterSetVariantRows : []
         let variantOwnedQuantities = ownedQuantityByCardVariant
         let variantOwnedKeys = ownedCardVariantKeys
-        let variantRows = inlineDetailFilters.hideOwned
-            ? allVariantRows.filter { !variantOwnedKeys.contains("\($0.card.masterCardId)::\($0.variant)") }
-            : allVariantRows
+        let variantRows: [MasterSetVariantRow] = {
+            if inlineDetailFilters.ownedOnly {
+                return allVariantRows.filter { variantOwnedKeys.contains("\($0.card.masterCardId)::\($0.variant)") }
+            }
+            if inlineDetailFilters.hideOwned {
+                return allVariantRows.filter { !variantOwnedKeys.contains("\($0.card.masterCardId)::\($0.variant)") }
+            }
+            return allVariantRows
+        }()
         let ownedQuantities = ownedQuantityByCardID
         if inlineDetailLoading {
             ProgressView("Loading cards…")
@@ -2055,6 +2061,9 @@ struct BrowseView: View {
                 return false
             }
             if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) {
+                return false
+            }
+            if filters.ownedOnly && !ownedCardIDs.contains(card.masterCardId) {
                 return false
             }
             if brand == .pokemon,
@@ -4518,7 +4527,7 @@ private struct BrowseDetailNavBar<FilterMenuContent: View, GridMenuContent: View
 
                 Spacer(minLength: 0)
 
-                HStack(spacing: 10) {
+                HStack(spacing: 12) {
                     Menu {
                         gridMenuContent()
                     } label: {
@@ -4580,6 +4589,7 @@ struct FilterMenuConfig {
     var showRarity: Bool = true
     var showRarePlusOnly: Bool = true
     var showHideOwned: Bool = true
+    var showOwnedOnly: Bool = true
     var showShowDuplicates: Bool = false
     var showGridOptions: Bool = true
     var defaultSortBy: BrowseCardGridSortOption = .random
@@ -4595,6 +4605,7 @@ struct FilterMenuConfig {
         showRandomSort: false,
         showCardNumberSort: false,
         showHideOwned: false,
+        showOwnedOnly: false,
         showShowDuplicates: true,
         defaultSortBy: .price
     )
@@ -4606,7 +4617,7 @@ struct FilterMenuConfig {
         showRarePlusOnly: false,
         showHideOwned: false,
         showShowDuplicates: false,
-        showGridOptions: true,
+        showGridOptions: false,
         defaultSortBy: .newestSet,
         gridNameToggleTitle: "Show product name",
         showGridCardIDToggle: false,
@@ -4723,7 +4734,7 @@ struct BrowseGridFiltersMenuContent: View {
             }
         }
 
-        if config.showRarity || config.showRarePlusOnly || config.showHideOwned || config.showShowDuplicates {
+        if config.showRarity || config.showRarePlusOnly || config.showHideOwned || config.showOwnedOnly || config.showShowDuplicates {
             Section("Collection") {
                 if config.showRarity {
                     filterMenu(title: "Rarity", summary: selectionSummary(for: filters.rarities), systemImage: "sparkles") {
@@ -4742,8 +4753,13 @@ struct BrowseGridFiltersMenuContent: View {
                     }
                 }
                 if config.showHideOwned {
-                    Toggle(isOn: $filters.hideOwned) {
+                    Toggle(isOn: hideOwnedBinding) {
                         Label("Hide owned", systemImage: "eye.slash")
+                    }
+                }
+                if config.showOwnedOnly {
+                    Toggle(isOn: ownedOnlyBinding) {
+                        Label("Owned only", systemImage: "checkmark.circle")
                     }
                 }
                 if config.showShowDuplicates {
@@ -4824,6 +4840,26 @@ struct BrowseGridFiltersMenuContent: View {
             set: { isOn in
                 if isOn { filters[keyPath: keyPath].insert(value) }
                 else { filters[keyPath: keyPath].remove(value) }
+            }
+        )
+    }
+
+    private var hideOwnedBinding: Binding<Bool> {
+        Binding(
+            get: { filters.hideOwned },
+            set: { isOn in
+                filters.hideOwned = isOn
+                if isOn { filters.ownedOnly = false }
+            }
+        )
+    }
+
+    private var ownedOnlyBinding: Binding<Bool> {
+        Binding(
+            get: { filters.ownedOnly },
+            set: { isOn in
+                filters.ownedOnly = isOn
+                if isOn { filters.hideOwned = false }
             }
         )
     }
@@ -5065,6 +5101,9 @@ func filterBrowseCards(
             return false
         }
         if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) {
+            return false
+        }
+        if filters.ownedOnly && !ownedCardIDs.contains(card.masterCardId) {
             return false
         }
         if brand == .pokemon,

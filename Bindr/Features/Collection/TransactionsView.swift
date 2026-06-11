@@ -20,6 +20,7 @@ struct TransactionsView: View {
     @State private var holdingsCollectionValue: Double = 0
     @State private var loadedTransactionCount: Int = 50
     @State private var transactionSearchText: String = ""
+    @State private var transactionFilters = ActivityTransactionFilters()
 
     private var activeBrand: TCGBrand { .pokemon }
 
@@ -66,12 +67,25 @@ struct TransactionsView: View {
 
     private var filteredLedgerLines: [LedgerLine] {
         let query = transactionSearchText.trimmingCharacters(in: .whitespacesAndNewlines)
-        let base = rangeFilteredLines
-        guard !query.isEmpty else { return base }
+        var lines = rangeFilteredLines
+
+        if !transactionFilters.types.isEmpty {
+            lines = lines.filter { matchesTypeFilter($0) }
+        }
+
+        if !transactionFilters.items.isEmpty {
+            lines = lines.filter { matchesItemFilter($0) }
+        }
+
+        guard !query.isEmpty else { return lines }
         let normalizedQuery = query.lowercased()
-        return base.filter { line in
+        return lines.filter { line in
             searchableText(for: line).localizedCaseInsensitiveContains(normalizedQuery)
         }
+    }
+
+    private var hasActiveTransactionFilters: Bool {
+        transactionFilters.hasActiveFilters
     }
 
     private var groupedActivityEntries: [ActivityLedgerEntry] {
@@ -176,6 +190,12 @@ struct TransactionsView: View {
         .onChange(of: activeBrand) { _, _ in
             loadedTransactionCount = 50
         }
+        .onChange(of: transactionFilters) { _, _ in
+            loadedTransactionCount = 50
+        }
+        .onChange(of: transactionSearchText) { _, _ in
+            loadedTransactionCount = 50
+        }
         .sheet(isPresented: $showAddActivity) {
             AddManualActivityView()
         }
@@ -261,13 +281,13 @@ struct TransactionsView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
-            transactionSearchField
+            transactionSearchAndFilterRow
                 .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
             if displayedActivityEntries.isEmpty {
-                ContentUnavailableView.search(text: transactionSearchText)
+                transactionEmptyResultsView
                     .listRowInsets(EdgeInsets(top: 24, leading: 16, bottom: 12, trailing: 16))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
@@ -337,29 +357,45 @@ struct TransactionsView: View {
         .scrollContentBackground(.hidden)
     }
 
-    private var transactionSearchField: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "magnifyingglass")
-                .foregroundStyle(.secondary)
+    private var transactionSearchAndFilterRow: some View {
+        HStack(spacing: 8) {
+            BrowseInlineSearchField(title: "Search transactions", text: $transactionSearchText)
 
-            TextField("Search transactions", text: $transactionSearchText)
-                .textInputAutocapitalization(.never)
-                .autocorrectionDisabled()
-
-            if !transactionSearchText.isEmpty {
-                Button {
-                    transactionSearchText = ""
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundStyle(.tertiary)
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Clear search")
+            Menu {
+                ActivityTransactionFiltersMenuContent(filters: $transactionFilters)
+            } label: {
+                Image(systemName: hasActiveTransactionFilters
+                    ? "line.3.horizontal.decrease.circle.fill"
+                    : "line.3.horizontal.decrease.circle")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(hasActiveTransactionFilters ? services.theme.accentColor : .primary)
+                    .modifier(ChromeGlassCircleGlyphModifier())
             }
+            .buttonStyle(.plain)
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+            .accessibilityLabel("Filter transactions")
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 10)
-        .modifier(GlassSearchFieldModifier())
+    }
+
+    @ViewBuilder
+    private var transactionEmptyResultsView: some View {
+        let trimmedQuery = transactionSearchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !trimmedQuery.isEmpty {
+            ContentUnavailableView.search(text: transactionSearchText)
+        } else if hasActiveTransactionFilters {
+            ContentUnavailableView(
+                "No matching transactions",
+                systemImage: "line.3.horizontal.decrease.circle",
+                description: Text("Try changing your type or item filters.")
+            )
+        } else {
+            ContentUnavailableView(
+                "No transactions",
+                systemImage: "list.bullet.rectangle",
+                description: Text("Transactions for this period will appear here.")
+            )
+        }
     }
 
     private var pnlSummaryCard: some View {
@@ -1013,6 +1049,39 @@ struct TransactionsView: View {
         .joined(separator: " ")
         .lowercased()
     }
+
+    private func matchesTypeFilter(_ line: LedgerLine) -> Bool {
+        guard !transactionFilters.types.isEmpty else { return true }
+        if transactionFilters.types.contains(.localTrade),
+           line.channel == "trade",
+           line.counterparty == "Local trade" {
+            return true
+        }
+        return transactionFilters.types.contains(activityTypeFilter(for: line))
+    }
+
+    private func matchesItemFilter(_ line: LedgerLine) -> Bool {
+        guard !transactionFilters.items.isEmpty else { return true }
+        guard let kind = ProductKind(rawValue: line.productKind) else { return false }
+        return transactionFilters.items.contains(kind)
+    }
+
+    private func activityTypeFilter(for line: LedgerLine) -> ActivityTypeFilter {
+        if isOpenedSealedLine(line) { return .opened }
+        guard let direction = LedgerDirection(rawValue: line.direction) else { return .adjustmentIn }
+        switch direction {
+        case .bought: return .bought
+        case .packed: return .packed
+        case .sold: return .sold
+        case .tradedIn: return .tradeIn
+        case .tradedOut: return .tradeOut
+        case .giftedIn: return .giftIn
+        case .giftedOut: return .giftOut
+        case .adjustmentIn: return .adjustmentIn
+        case .adjustmentOut: return .adjustmentOut
+        case .importedIn: return .imported
+        }
+    }
 }
 
 private enum ActivityLedgerEntry: Identifiable {
@@ -1079,4 +1148,144 @@ private enum ActivityPnLRange: CaseIterable, Identifiable {
 private enum ActivityPalette {
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
+}
+
+private enum ActivityTypeFilter: String, CaseIterable, Identifiable, Hashable, Sendable {
+    case bought
+    case sold
+    case packed
+    case opened
+    case tradeIn
+    case tradeOut
+    case localTrade
+    case giftIn
+    case giftOut
+    case adjustmentIn
+    case adjustmentOut
+    case imported
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .bought: return "Bought"
+        case .sold: return "Sold"
+        case .packed: return "Packed"
+        case .opened: return "Opened"
+        case .tradeIn: return "Trade In"
+        case .tradeOut: return "Trade Out"
+        case .localTrade: return "Local Trade"
+        case .giftIn: return "Gift In"
+        case .giftOut: return "Gift Out"
+        case .adjustmentIn: return "Adjustment In"
+        case .adjustmentOut: return "Adjustment Out"
+        case .imported: return "Imported"
+        }
+    }
+}
+
+private struct ActivityTransactionFilters: Equatable, Sendable {
+    var types: Set<ActivityTypeFilter> = []
+    var items: Set<ProductKind> = []
+
+    var hasActiveFilters: Bool {
+        !types.isEmpty || !items.isEmpty
+    }
+}
+
+private struct ActivityTransactionFiltersMenuContent: View {
+    @Binding var filters: ActivityTransactionFilters
+
+    var body: some View {
+        if filters.hasActiveFilters {
+            Section {
+                Button(role: .destructive) {
+                    filters = ActivityTransactionFilters()
+                } label: {
+                    Label("Reset filters", systemImage: "arrow.counterclockwise.circle")
+                }
+            }
+        }
+
+        Section("Type") {
+            Menu {
+                ForEach(ActivityTypeFilter.allCases) { type in
+                    Toggle(type.title, isOn: typeBinding(for: type))
+                }
+            } label: {
+                Label(
+                    menuTitle("Type", summary: selectionSummary(for: filters.types.map(\.title))),
+                    systemImage: "arrow.left.arrow.right.circle"
+                )
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+        }
+
+        Section("Item") {
+            Menu {
+                ForEach(ProductKind.allCases, id: \.rawValue) { kind in
+                    Toggle(productKindTitle(for: kind), isOn: itemBinding(for: kind))
+                }
+            } label: {
+                Label(
+                    menuTitle("Item", summary: selectionSummary(for: filters.items.map(productKindTitle(for:)))),
+                    systemImage: "square.stack.3d.up"
+                )
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+        }
+    }
+
+    private func typeBinding(for type: ActivityTypeFilter) -> Binding<Bool> {
+        Binding(
+            get: { filters.types.contains(type) },
+            set: { isOn in
+                if isOn {
+                    filters.types.insert(type)
+                } else {
+                    filters.types.remove(type)
+                }
+            }
+        )
+    }
+
+    private func itemBinding(for kind: ProductKind) -> Binding<Bool> {
+        Binding(
+            get: { filters.items.contains(kind) },
+            set: { isOn in
+                if isOn {
+                    filters.items.insert(kind)
+                } else {
+                    filters.items.remove(kind)
+                }
+            }
+        )
+    }
+
+    private func menuTitle(_ title: String, summary: String?) -> String {
+        guard let summary, !summary.isEmpty else { return title }
+        return "\(title): \(summary)"
+    }
+
+    private func selectionSummary(for values: [String]) -> String? {
+        guard !values.isEmpty else { return nil }
+        let sorted = values.sorted()
+        if sorted.count <= 2 {
+            return sorted.joined(separator: ", ")
+        }
+        return "\(sorted.prefix(2).joined(separator: ", ")) +\(sorted.count - 2)"
+    }
+
+    private func productKindTitle(for kind: ProductKind) -> String {
+        switch kind {
+        case .singleCard: return "Single card"
+        case .gradedItem: return "Graded item"
+        case .sealedProduct: return "Sealed product"
+        case .boosterPack: return "Booster pack"
+        case .etb: return "ETB"
+        case .other: return "Other"
+        }
+    }
 }

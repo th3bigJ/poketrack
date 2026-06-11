@@ -30,6 +30,7 @@ struct UniversalSearchBar: View {
     var isFilterEnabled: Bool = true
     var isFilterActive: Bool = false
     var filterMenuContent: AnyView? = nil
+    var gridMenuContent: AnyView? = nil
 
     /// When set, replaces the collapsed leading camera button with a custom button.
     var collapsedLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
@@ -122,25 +123,7 @@ struct UniversalSearchBar: View {
                     HStack {
                         collapsedSearchButtonLiquid
                         Spacer(minLength: 0)
-                        if let extraTrailingButton {
-                            trailingButtonLiquid(
-                                symbol: extraTrailingButton.symbol,
-                                accessibilityLabel: extraTrailingButton.accessibilityLabel,
-                                action: extraTrailingButton.action
-                            )
-                        }
-                        if let trailingButton {
-                            trailingButtonLiquid(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
-                        } else if let filterMenuContent, isFilterEnabled {
-                            chromeMenuButton(
-                                symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
-                                tint: filterTint,
-                                accessibilityLabel: "Filters",
-                                content: { filterMenuContent }
-                            )
-                        } else {
-                            filterButtonLiquid
-                        }
+                        collapsedTrailingControlsLiquid
                         }
                     }
                 }
@@ -200,25 +183,7 @@ struct UniversalSearchBar: View {
                     HStack {
                         collapsedSearchButtonFallback
                         Spacer(minLength: 0)
-                        if let extraTrailingButton {
-                            trailingButtonFallback(
-                                symbol: extraTrailingButton.symbol,
-                                accessibilityLabel: extraTrailingButton.accessibilityLabel,
-                                action: extraTrailingButton.action
-                            )
-                        }
-                        if let trailingButton {
-                            trailingButtonFallback(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
-                        } else if let filterMenuContent, isFilterEnabled {
-                            chromeMenuButton(
-                                symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
-                                tint: filterTint,
-                                accessibilityLabel: "Filters",
-                                content: { filterMenuContent }
-                            )
-                        } else {
-                            filterButtonFallback
-                        }
+                        collapsedTrailingControlsFallback
                     }
                 }
             }
@@ -271,6 +236,83 @@ struct UniversalSearchBar: View {
         .frame(width: 48, height: 48)
         .contentShape(Rectangle())
         .accessibilityLabel(accessibilityLabel)
+    }
+
+    @available(iOS 26.0, *)
+    private var collapsedTrailingControlsLiquid: some View {
+        HStack(spacing: 12) {
+            if let extraTrailingButton {
+                trailingButtonLiquid(
+                    symbol: extraTrailingButton.symbol,
+                    accessibilityLabel: extraTrailingButton.accessibilityLabel,
+                    action: extraTrailingButton.action
+                )
+            }
+            if let trailingButton {
+                trailingButtonLiquid(
+                    symbol: trailingButton.symbol,
+                    accessibilityLabel: trailingButton.accessibilityLabel,
+                    action: trailingButton.action
+                )
+            } else {
+                if let gridMenuContent, isFilterEnabled {
+                    chromeMenuButton(
+                        symbol: "slider.horizontal.3",
+                        tint: .primary,
+                        accessibilityLabel: "Grid options",
+                        content: { gridMenuContent }
+                    )
+                }
+                if let filterMenuContent, isFilterEnabled {
+                    chromeMenuButton(
+                        symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
+                        tint: filterTint,
+                        accessibilityLabel: "Filters",
+                        content: { filterMenuContent }
+                    )
+                } else {
+                    filterButtonLiquid
+                }
+            }
+        }
+    }
+
+    private var collapsedTrailingControlsFallback: some View {
+        HStack(spacing: 12) {
+            if let extraTrailingButton {
+                trailingButtonFallback(
+                    symbol: extraTrailingButton.symbol,
+                    accessibilityLabel: extraTrailingButton.accessibilityLabel,
+                    action: extraTrailingButton.action
+                )
+            }
+            if let trailingButton {
+                trailingButtonFallback(
+                    symbol: trailingButton.symbol,
+                    accessibilityLabel: trailingButton.accessibilityLabel,
+                    action: trailingButton.action
+                )
+            } else {
+                if let gridMenuContent, isFilterEnabled {
+                    chromeMenuButton(
+                        symbol: "slider.horizontal.3",
+                        tint: .primary,
+                        accessibilityLabel: "Grid options",
+                        content: { gridMenuContent }
+                    )
+                }
+                if let filterMenuContent, isFilterEnabled {
+                    chromeMenuButton(
+                        symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
+                        tint: filterTint,
+                        accessibilityLabel: "Filters",
+                        content: { filterMenuContent }
+                    )
+                } else {
+                    filterButtonFallback
+                }
+            }
+        }
     }
 
     @available(iOS 26.0, *)

@@ -777,7 +777,7 @@ final class AppServices {
         collectionSync.scheduleUpload()
         // Keep launch social sync cheap: do not materialize full SwiftData tables on
         // @MainActor while the launch overlay is coming down.
-        let cardCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
+        let cardCount = modelContext.collectionTotalCardQuantity()
         let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         let deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
         let totalValue = collectionValue?.snapshots.last?.totalGbp ?? 0

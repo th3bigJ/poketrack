@@ -510,7 +510,7 @@ struct EditProfileView: View {
         isSaving = true
         let resolvedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
         let roleValues = profileRoles.map(\.rawValue).sorted()
-        let collectionCardCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
+        let collectionCardCount = modelContext.collectionTotalCardQuantity()
         let collectionBinderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         let collectionDeckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
         let collectionTotalValue = services.collectionValue?.snapshots.last?.totalGbp ?? 0

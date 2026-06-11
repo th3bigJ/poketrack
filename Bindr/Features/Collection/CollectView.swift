@@ -518,6 +518,10 @@ struct CollectView: View {
         }
     }
 
+    private var collectionOwnedCardIDs: Set<String> {
+        Set(visibleCollectionItems.map(\.cardID))
+    }
+
     private var filteredCollectionItems: [CollectionItem] {
         var items = visibleCollectionItems
         if collectionFilters.showDuplicates {
@@ -531,7 +535,7 @@ struct CollectView: View {
             guard needsCardFiltering else { return [] }
             let filteredCards = filterBrowseCards(
                 resolvedCollectionCards, query: collectionQuery, filters: collectionFilters,
-                ownedCardIDs: Set(items.map { $0.cardID }),
+                ownedCardIDs: collectionOwnedCardIDs,
                 brand: activeBrand, sets: services.cardData.sets
             )
             return Set(filteredCards.map { $0.masterCardId })
@@ -825,7 +829,7 @@ struct CollectView: View {
             guard needsCardFiltering else { return [] }
             let filteredCards = filterBrowseCards(
                 resolvedWishlistCards, query: wishlistQuery, filters: wishlistFilters,
-                ownedCardIDs: [], brand: activeBrand, sets: services.cardData.sets
+                ownedCardIDs: collectionOwnedCardIDs, brand: activeBrand, sets: services.cardData.sets
             )
             return Set(filteredCards.map { $0.masterCardId })
         }()

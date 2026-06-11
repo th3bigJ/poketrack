@@ -481,7 +481,7 @@ struct MyProfileView: View {
     // MARK: - Data Fetching
     
     private func fetchStats() {
-        cardCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
+        cardCount = modelContext.collectionTotalCardQuantity()
         binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
     }

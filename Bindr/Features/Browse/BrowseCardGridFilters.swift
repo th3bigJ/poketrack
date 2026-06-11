@@ -214,6 +214,7 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var cardTypes: Set<BrowseCardTypeFilter> = []
     var rarePlusOnly = false
     var hideOwned = false
+    var ownedOnly = false
     var showDuplicates = false
     var energyTypes: Set<String> = []
     var rarities: Set<String> = []
@@ -234,6 +235,7 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         !cardTypes.isEmpty
             || rarePlusOnly
             || hideOwned
+            || ownedOnly
             || showDuplicates
             || !energyTypes.isEmpty
             || !rarities.isEmpty
@@ -270,6 +272,7 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         case cardTypes
         case rarePlusOnly
         case hideOwned
+        case ownedOnly
         case showDuplicates
         case energyTypes
         case rarities
@@ -290,6 +293,7 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         cardTypes = try container.decodeIfPresent(Set<BrowseCardTypeFilter>.self, forKey: .cardTypes) ?? []
         rarePlusOnly = try container.decodeIfPresent(Bool.self, forKey: .rarePlusOnly) ?? false
         hideOwned = try container.decodeIfPresent(Bool.self, forKey: .hideOwned) ?? false
+        ownedOnly = try container.decodeIfPresent(Bool.self, forKey: .ownedOnly) ?? false
         showDuplicates = try container.decodeIfPresent(Bool.self, forKey: .showDuplicates) ?? false
         energyTypes = try container.decodeIfPresent(Set<String>.self, forKey: .energyTypes) ?? []
         rarities = try container.decodeIfPresent(Set<String>.self, forKey: .rarities) ?? []

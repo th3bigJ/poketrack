@@ -308,3 +308,13 @@ final class SaleAllocation {
         self.costLot = costLot
     }
 }
+
+// MARK: - Collection stats
+
+extension ModelContext {
+    /// Total owned units (sum of `quantity` on each row), matching dashboard "Total Cards".
+    func collectionTotalCardQuantity() -> Int {
+        guard let items = try? fetch(FetchDescriptor<CollectionItem>()) else { return 0 }
+        return items.reduce(0) { $0 + max($1.quantity, 0) }
+    }
+}
