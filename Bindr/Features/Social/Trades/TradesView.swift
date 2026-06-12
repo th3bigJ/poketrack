@@ -429,8 +429,12 @@ struct TradesView: View {
             modelContext.insert(line)
         }
 
-        try? modelContext.save()
-        UserDefaults.standard.set(true, forKey: settlementKey)
+        do {
+            try modelContext.save()
+            UserDefaults.standard.set(true, forKey: settlementKey)
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 
     private func appendCardNote(cardID: String, variantKey: String, note: String) {

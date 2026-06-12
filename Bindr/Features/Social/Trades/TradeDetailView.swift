@@ -116,6 +116,9 @@ struct TradeDetailView: View {
             services.setupCollectionLedger(modelContext: modelContext)
             await refresh()
         }
+        .task(id: tradeWithItems?.trade.status) {
+            await pollAcceptedTradeUntilComplete()
+        }
         .task(id: services.trade.lastMutationAt) {
             await refresh()
         }
@@ -589,6 +592,15 @@ struct TradeDetailView: View {
         }
     }
 
+    private func pollAcceptedTradeUntilComplete() async {
+        guard tradeWithItems?.trade.status == .accepted else { return }
+        while !Task.isCancelled {
+            try? await Task.sleep(nanoseconds: 3_000_000_000)
+            guard tradeWithItems?.trade.status == .accepted else { return }
+            await refresh()
+        }
+    }
+
     private func performAccept() async {
         isMutating = true
         defer { isMutating = false }
@@ -616,11 +628,7 @@ struct TradeDetailView: View {
         isMutating = true
         defer { isMutating = false }
         do {
-            let snapshot = tradeWithItems
             try await services.trade.completeTrade(id: tradeID)
-            if let snapshot {
-                await applyLocalTradeSettlementIfNeeded(snapshot)
-            }
             await refresh()
         } catch {
             errorMessage = error.localizedDescription
@@ -806,8 +814,12 @@ struct TradeDetailView: View {
             modelContext.insert(line)
         }
 
-        try? modelContext.save()
-        UserDefaults.standard.set(true, forKey: settlementKey)
+        do {
+            try modelContext.save()
+            UserDefaults.standard.set(true, forKey: settlementKey)
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 
     private func appendCardNote(cardID: String, variantKey: String, note: String) {
