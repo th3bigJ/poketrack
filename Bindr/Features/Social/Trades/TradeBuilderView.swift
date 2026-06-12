@@ -16,6 +16,7 @@ struct TradeBuilderView: View {
     let initialMyCards: [TradeItem]
     let existingTradeID: UUID?
     let originalTrade: Trade?
+    let mySideOnly: Bool
     var onComplete: (() -> Void)? = nil
 
     @State private var theirCards: [NewTradeItemInput]
@@ -42,6 +43,7 @@ struct TradeBuilderView: View {
         initialMyCards: [TradeItem],
         existingTradeID: UUID? = nil,
         originalTrade: Trade? = nil,
+        mySideOnly: Bool = false,
         onComplete: (() -> Void)? = nil
     ) {
         self.receiverID = receiverID
@@ -49,6 +51,7 @@ struct TradeBuilderView: View {
         self.initialMyCards = initialMyCards
         self.existingTradeID = existingTradeID
         self.originalTrade = originalTrade
+        self.mySideOnly = mySideOnly
         self.onComplete = onComplete
         self._theirCards = State(initialValue: initialTheirCards.map {
             NewTradeItemInput(cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
@@ -222,11 +225,17 @@ struct TradeBuilderView: View {
                 })
             }
             if !isCounterFlow {
-                Button {
-                    isTheirCardPickerPresented = true
-                } label: {
-                    Label("Add Cards", systemImage: "plus.circle")
-                        .font(.system(size: 14))
+                if mySideOnly {
+                    Label("They add their side when they respond", systemImage: "person.crop.circle.badge.plus")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                } else {
+                    Button {
+                        isTheirCardPickerPresented = true
+                    } label: {
+                        Label("Add Cards", systemImage: "plus.circle")
+                            .font(.system(size: 14))
+                    }
                 }
             }
 
@@ -235,7 +244,7 @@ struct TradeBuilderView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(.primary)
                 Spacer()
-                if isCounterFlow {
+                if isCounterFlow || mySideOnly {
                     Text("\(services.priceDisplay.currency.symbol)\(cashReceiverText.isEmpty ? "0.00" : cashReceiverText)")
                         .font(.system(size: 14, weight: .semibold, design: .monospaced))
                         .foregroundStyle(.secondary)
@@ -271,7 +280,9 @@ struct TradeBuilderView: View {
         } header: {
             Text(receiverProfile.map { "Their Side (@\($0.username))" } ?? "Their Side")
         } footer: {
-            Text("Cards you are requesting from them. Total includes cards + cash.")
+            Text(mySideOnly
+                 ? "Send your side first. They can add their side when they respond."
+                 : "Cards you are requesting from them. Total includes cards + cash.")
         }
     }
 

@@ -129,18 +129,23 @@ struct QRTradeView: View {
                     isLoading = false
                     return
                 }
-                let session = try await services.tradeSession.createSession(participantID: profile.id)
+                openTrade(with: profile)
                 isLoading = false
-                navigationPath.wrappedValue.append(SocialDestination.mutualTrade(
-                    sessionID: session.id,
-                    otherUserID: profile.id,
-                    otherUsername: profile.username
-                ))
             } catch {
                 errorMessage = error.localizedDescription
                 isLoading = false
             }
         }
+    }
+
+    @MainActor
+    private func openTrade(with profile: SocialProfile) {
+        navigationPath.wrappedValue.append(SocialDestination.tradeBuilder(
+            receiverID: profile.id,
+            theirCards: [],
+            myCards: [],
+            mySideOnly: true
+        ))
     }
 
     private enum ScannedTradeIdentity {

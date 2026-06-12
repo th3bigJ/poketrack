@@ -460,13 +460,14 @@ struct SocialRootView: View {
                         FriendsCollectionView()
                     case .tradeDetail(let tradeID):
                         TradeDetailView(navigationPath: $socialNavigationPath, tradeID: tradeID)
-                    case .tradeBuilder(let receiverID, let theirCards, let myCards, let existingTradeID, let originalTrade):
+                    case .tradeBuilder(let receiverID, let theirCards, let myCards, let existingTradeID, let originalTrade, let mySideOnly):
                         TradeBuilderView(
                             receiverID: receiverID,
                             initialTheirCards: theirCards,
                             initialMyCards: myCards,
                             existingTradeID: existingTradeID,
-                            originalTrade: originalTrade
+                            originalTrade: originalTrade,
+                            mySideOnly: mySideOnly
                         )
                     }
                 }
@@ -717,17 +718,21 @@ struct SocialRootView: View {
                 }
                 guard let profile else { return }
                 guard profile.id != services.socialAuth.currentUserID else { return }
-                let session = try await services.tradeSession.createSession(participantID: profile.id)
                 socialNavigationPath = NavigationPath()
-                socialNavigationPath.append(SocialDestination.mutualTrade(
-                    sessionID: session.id,
-                    otherUserID: profile.id,
-                    otherUsername: profile.username
-                ))
+                openQRTrade(with: profile)
             } catch {
                 print("[SocialRootView] Failed to route trade QR deep link: \(error.localizedDescription)")
             }
         }
+    }
+
+    private func openQRTrade(with profile: SocialProfile) {
+        socialNavigationPath.append(SocialDestination.tradeBuilder(
+            receiverID: profile.id,
+            theirCards: [],
+            myCards: [],
+            mySideOnly: true
+        ))
     }
 
     private func feedContentSummary(from sharedContent: SharedContent) -> SocialFeedService.FeedContentSummary {

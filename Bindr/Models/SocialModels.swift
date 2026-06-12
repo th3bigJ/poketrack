@@ -190,7 +190,7 @@ enum SocialDestination: Hashable {
     case friendsCollection
     case tradeDetail(tradeID: UUID)
     case mutualTrade(sessionID: UUID, otherUserID: UUID, otherUsername: String)
-    case tradeBuilder(receiverID: UUID, theirCards: [TradeItem], myCards: [TradeItem], existingTradeID: UUID? = nil, originalTrade: Trade? = nil)
+    case tradeBuilder(receiverID: UUID, theirCards: [TradeItem], myCards: [TradeItem], existingTradeID: UUID? = nil, originalTrade: Trade? = nil, mySideOnly: Bool = false)
 }
 
 struct Friendship: Codable, Identifiable, Sendable {
