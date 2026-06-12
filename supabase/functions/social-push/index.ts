@@ -383,18 +383,46 @@ function buildCandidate(payload: WebhookPayload): PushCandidate | null {
       }
 
       if (status === "cancelled") {
+        const cancelledBy = asString(record.cancelled_by_user_id)
+        const oldInitiatorID = asString(oldRecord.initiator_id)
+        const oldReceiverID = asString(oldRecord.receiver_id)
+
+        let recipientID: string | null = null
+        let body = "Your trade partner cancelled a trade."
+
+        if (isUUID(cancelledBy)) {
+          recipientID =
+            cancelledBy === initiatorID ? receiverID
+            : cancelledBy === receiverID ? initiatorID
+            : null
+        } else if (
+          isUUID(oldInitiatorID) &&
+          isUUID(oldReceiverID) &&
+          (initiatorID !== oldInitiatorID || receiverID !== oldReceiverID)
+        ) {
+          // Legacy cancel patches rotated roles so initiator_id became the canceller.
+          recipientID = receiverID
+        } else if (isUUID(oldInitiatorID) && isUUID(oldReceiverID)) {
+          // Legacy/system cancel (e.g. 24h expiry): notify the offer sender only.
+          recipientID = oldInitiatorID
+          body = "A trade offer expired after 24 hours."
+        }
+
+        if (!isUUID(recipientID) || recipientID === cancelledBy) return null
+
         return {
-          userID: receiverID,
+          userID: recipientID,
           category: "trade_updates",
           title: "Trade cancelled",
-          body: "Your trade partner cancelled a trade.",
+          body,
           deepLink: `bindr://social/trades/${tradeID}`,
           metadata: {
             trade_id: tradeID,
             initiator_id: initiatorID,
             receiver_id: receiverID,
+            cancelled_by_user_id: cancelledBy,
             status,
-            recipients: [receiverID],
+            recipients: [recipientID],
           },
         }
       }

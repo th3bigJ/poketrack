@@ -936,14 +936,14 @@ struct DashboardView: View {
                             .fill(services.theme.accentColor.opacity(0.14))
                     )
 
-                Text(release.releaseDate.formatted(.dateTime.month(.abbreviated).day().year()))
+                Text(release.releaseDateLabel)
                     .font(.caption.weight(.medium))
                     .foregroundStyle(dashboardSecondaryText)
             }
             .frame(width: 148, alignment: .leading)
         }
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(release.name), \(release.type), releases \(release.releaseDate.formatted(date: .long, time: .omitted))")
+        .accessibilityLabel("\(release.name), \(release.type), releases \(release.releaseDateAccessibilityLabel)")
     }
 
     private func insightMetricTile(

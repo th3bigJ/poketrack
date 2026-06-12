@@ -143,7 +143,7 @@ struct TradeDetailView: View {
             Button("Confirm") { Task { await performComplete() } }
             Button("Not Yet", role: .cancel) { }
         } message: {
-            Text("Use this only after your side of the exchange is done. The trade completes after both traders confirm.")
+            Text("Use this only after your side of the exchange is done. Your collection updates when you confirm. The trade completes after both traders confirm.")
         }
     }
 
@@ -422,7 +422,7 @@ struct TradeDetailView: View {
                         .glassCardStyle(cornerRadius: 18, interactive: true)
 
                         if !theyConfirmedCompletion {
-                            Text("You confirmed your side. The trade will complete once they confirm theirs.")
+                            Text("Your collection has been updated. The trade will complete once they confirm theirs.")
                                 .font(.system(size: 12))
                                 .foregroundStyle(.secondary)
                                 .multilineTextAlignment(.center)
@@ -582,8 +582,8 @@ struct TradeDetailView: View {
                 theirProfile = try await theirFetch
                 myProfile = try await myFetch
 
-                // If trade is completed, apply local settlement (checks UserDefaults internally to execute exactly once)
-                if twi.trade.status == .complete {
+                // Apply local settlement only after this user confirms their side (UserDefaults prevents double-apply).
+                if twi.shouldSettleCollection(for: uid) {
                     await applyLocalTradeSettlementIfNeeded(twi)
                 }
             }
@@ -616,8 +616,7 @@ struct TradeDetailView: View {
         isMutating = true
         defer { isMutating = false }
         do {
-            let counterpartID = tradeWithItems?.counterpartID(currentUserID: currentUserID ?? UUID())
-            try await services.trade.cancelTrade(id: tradeID, counterpartID: counterpartID)
+            try await services.trade.cancelTrade(id: tradeID)
             await refresh()
         } catch {
             errorMessage = error.localizedDescription

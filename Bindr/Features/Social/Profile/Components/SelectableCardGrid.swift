@@ -5,6 +5,7 @@ struct SelectableCardGrid: View {
     @Binding var isSelectMode: Bool
     @Binding var selectedCardIDs: Set<String>
     let cardLoader: (String) async -> Card?
+    var sealedProductLoader: ((String) async -> SealedProduct?)? = nil
     var onCardTap: ((String) -> Void)? = nil
 
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 8), count: 3)
@@ -28,7 +29,8 @@ struct SelectableCardGrid: View {
                     cardID: id,
                     isSelectMode: isSelectMode,
                     isSelected: selectedCardIDs.contains(id),
-                    cardLoader: cardLoader
+                    cardLoader: cardLoader,
+                    sealedProductLoader: sealedProductLoader
                 ) {
                     if isSelectMode {
                         if selectedCardIDs.contains(id) {
@@ -69,24 +71,46 @@ struct SelectableCardGrid: View {
 }
 
 private struct SelectableCardCell: View {
+    private static let thumbnailSize = CGSize(width: 220, height: 308)
+
     let cardID: String
     let isSelectMode: Bool
     let isSelected: Bool
     let cardLoader: (String) async -> Card?
+    var sealedProductLoader: ((String) async -> SealedProduct?)? = nil
     let onTap: () -> Void
 
     @State private var card: Card?
+    @State private var sealedProduct: SealedProduct?
     @State private var isLoading = true
+
+    private var isSealedItem: Bool {
+        cardID.hasPrefix("sealed:")
+    }
 
     var body: some View {
         Button(action: onTap) {
             ZStack(alignment: .topTrailing) {
-                ZStack {
-                    if let imageURL = card?.displayImageURL {
-                        CachedAsyncImage(url: imageURL) { image in
+                Group {
+                    if let card, !card.displayImageSrc.isEmpty {
+                        CachedAsyncImage(
+                            url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
+                            targetSize: Self.thumbnailSize
+                        ) { image in
                             image
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .scaledToFit()
+                        } placeholder: {
+                            shimmer
+                        }
+                    } else if let sealedProduct, let imageURL = sealedProduct.imageURL {
+                        CachedAsyncImage(
+                            url: imageURL,
+                            targetSize: Self.thumbnailSize
+                        ) { image in
+                            image
+                                .resizable()
+                                .scaledToFit()
                         } placeholder: {
                             shimmer
                         }
@@ -96,6 +120,7 @@ private struct SelectableCardCell: View {
                         placeholderView
                     }
                 }
+                .frame(maxWidth: .infinity)
                 .aspectRatio(5/7, contentMode: .fit)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .overlay {
@@ -119,7 +144,12 @@ private struct SelectableCardCell: View {
         .task(id: cardID) {
             isLoading = true
             card = nil
-            card = await cardLoader(cardID)
+            sealedProduct = nil
+            if isSealedItem, let sealedProductLoader {
+                sealedProduct = await sealedProductLoader(cardID)
+            } else {
+                card = await cardLoader(cardID)
+            }
             isLoading = false
         }
     }

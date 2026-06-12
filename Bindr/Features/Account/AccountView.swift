@@ -341,6 +341,7 @@ private struct DevToolsSettingsPage: View {
 private struct PremiumSettingsPage: View {
     @Environment(AppServices.self) private var services
     @State private var showPaywall = false
+    @State private var restoreAlertMessage: String?
 
     var body: some View {
         List {
@@ -357,10 +358,17 @@ private struct PremiumSettingsPage: View {
                 }
 
                 Button {
-                    Task { try? await services.store.restore() }
+                    Task { await runRestore() }
                 } label: {
-                    Label("Restore Purchases", systemImage: "arrow.clockwise")
+                    HStack {
+                        Label("Restore Purchases", systemImage: "arrow.clockwise")
+                        Spacer()
+                        if services.store.isRestoring {
+                            ProgressView()
+                        }
+                    }
                 }
+                .disabled(services.store.isRestoring)
             }
         }
         .listStyle(.insetGrouped)
@@ -370,6 +378,28 @@ private struct PremiumSettingsPage: View {
             PaywallSheet()
                 .environment(services)
                 .presentationDragIndicator(.visible)
+        }
+        .alert("Restore Purchases", isPresented: Binding(
+            get: { restoreAlertMessage != nil },
+            set: { if !$0 { restoreAlertMessage = nil } }
+        )) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(restoreAlertMessage ?? "")
+        }
+    }
+
+    private func runRestore() async {
+        do {
+            try await services.store.restore()
+            if services.store.isPremium {
+                restoreAlertMessage = "Your Premium subscription has been restored."
+            } else {
+                restoreAlertMessage = services.store.restoreMessage
+                    ?? "No active subscription was found for this Apple ID."
+            }
+        } catch {
+            restoreAlertMessage = error.localizedDescription
         }
     }
 }

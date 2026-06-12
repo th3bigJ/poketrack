@@ -22,6 +22,8 @@ final class StoreKitService {
     private(set) var products: [Product] = []
     private(set) var annualProduct: Product?
     private(set) var purchaseError: String?
+    private(set) var isRestoring = false
+    private(set) var restoreMessage: String?
 
     private var updatesTask: Task<Void, Never>?
 
@@ -62,6 +64,12 @@ final class StoreKitService {
 
     func checkEntitlements() async {
         guard !isCheckingEntitlements else { return }
+        await fetchAndApplyEntitlements()
+    }
+
+    /// Always re-reads StoreKit entitlements. Used by restore so a concurrent launch-time
+    /// entitlement check cannot cause the refresh to be skipped.
+    private func fetchAndApplyEntitlements() async {
         isCheckingEntitlements = true
         defer { isCheckingEntitlements = false }
 
@@ -112,8 +120,18 @@ final class StoreKitService {
 
     func restore() async throws {
         purchaseError = nil
+        restoreMessage = nil
+        isRestoring = true
+        defer { isRestoring = false }
+
         try await AppStore.sync()
-        await checkEntitlements()
+        await fetchAndApplyEntitlements()
+
+        if premiumEntitlement {
+            restoreMessage = nil
+        } else {
+            restoreMessage = "No active subscription was found for this Apple ID."
+        }
     }
 
     private func observeTransactions() async {

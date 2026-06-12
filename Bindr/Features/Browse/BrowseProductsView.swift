@@ -782,7 +782,6 @@ private struct SealedProductDetailPage: View {
     @State private var showWishlistAlert = false
     @State private var isWishlisted = false
     @State private var showShareSheet = false
-    @State private var isMenuExpanded = false
     @State private var editingItem: CollectionItem?
     @State private var markAsSession: SealedCollectionMarkAsSession?
 
@@ -1174,68 +1173,50 @@ private struct SealedProductDetailPage: View {
     }
 
     private var actionButtons: some View {
-        HStack(spacing: 12) {
-            Button {
-                toggleWishlist()
-            } label: {
-                Image(systemName: isWishlisted ? "star.fill" : "star")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundStyle(Color(red: 0.98, green: 0.78, blue: 0.18))
-                    .frame(width: 56, height: 56)
-                    .glassCardStyle(cornerRadius: 18, interactive: true)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel(isWishlisted ? "Remove from wishlist" : "Add to wishlist")
-
-            Button {
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                    isMenuExpanded.toggle()
+        VStack(spacing: 10) {
+            HStack(spacing: 12) {
+                Button {
+                    toggleWishlist()
+                } label: {
+                    Image(systemName: isWishlisted ? "star.fill" : "star")
+                        .font(.system(size: 20, weight: .medium))
+                        .foregroundStyle(SealedActionPalette.gold)
+                        .frame(width: 56, height: 56)
+                        .glassCardStyle(cornerRadius: 18, interactive: true)
                 }
-                Haptics.lightImpact()
-            } label: {
-                HStack(spacing: 12) {
-                    HStack(spacing: 12) {
-                        Image(systemName: isOwned ? "folder.fill" : "plus.circle.fill")
-                            .font(.system(size: 18, weight: .bold))
-                        Text(isOwned ? "Manage..." : "Add to...")
-                            .font(.system(size: 17, weight: .bold, design: .rounded))
-                            .fixedSize()
+                .buttonStyle(.plain)
+                .accessibilityLabel(isWishlisted ? "Remove from Wish List" : "Add to Wish List")
+
+                HStack(spacing: 8) {
+                    sealedCollectionButton(
+                        title: "Collection",
+                        systemImage: "plus.circle.fill",
+                        tint: SealedActionPalette.success,
+                        action: { showAddSheet = true }
+                    )
+
+                    if isOwned {
+                        sealedCollectionButton(
+                            title: "Collection",
+                            systemImage: "minus.circle.fill",
+                            tint: SealedActionPalette.danger,
+                            action: openRemoveFromCollectionFlow
+                        )
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    Image(systemName: "chevron.up")
-                        .font(.system(size: 11, weight: .bold))
-                        .opacity(0.4)
-                        .rotationEffect(.degrees(isMenuExpanded ? 180 : 0))
                 }
-                .padding(.horizontal, 20)
                 .frame(maxWidth: .infinity)
-                .frame(height: 56)
-                .foregroundStyle(isOwned ? Color(red: 0.36, green: 0.61, blue: 0.97) : SealedPricingPalette.success)
-                .glassCardStyle(cornerRadius: 18, interactive: true)
-            }
-            .buttonStyle(.plain)
 
-            Button { showShareSheet = true } label: {
-                Image(systemName: "square.and.arrow.up")
-                    .font(.system(size: 20, weight: .medium))
-                    .foregroundStyle(Color(red: 0.36, green: 0.61, blue: 0.97))
-                    .frame(width: 56, height: 56)
-                    .glassCardStyle(cornerRadius: 18, interactive: true)
+                Button { showShareSheet = true } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .font(.system(size: 20, weight: .medium))
+                        .foregroundStyle(SealedActionPalette.share)
+                        .frame(width: 56, height: 56)
+                        .glassCardStyle(cornerRadius: 18, interactive: true)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Share")
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Share")
-        }
-        .frame(maxWidth: .infinity)
-        .overlay(alignment: .bottom) {
-            if isMenuExpanded {
-                sealedActionMenu
-                    .transition(.asymmetric(
-                        insertion: .scale(scale: 0.9, anchor: .bottom).combined(with: .opacity).combined(with: .move(edge: .bottom)),
-                        removal: .scale(scale: 0.9, anchor: .bottom).combined(with: .opacity).combined(with: .move(edge: .bottom))
-                    ))
-                    .offset(y: -74)
-                    .zIndex(100)
-            }
+            .padding(.horizontal, 4)
         }
     }
 
@@ -1243,43 +1224,36 @@ private struct SealedProductDetailPage: View {
         collectionItems.contains { $0.itemKind == ProductKind.sealedProduct.rawValue && $0.quantity > 0 }
     }
 
-    private var sealedActionMenu: some View {
-        VStack(spacing: 0) {
-            menuRow(label: "Add to Collection", subLabel: isOwned ? "Add more copies" : "Add to your collection", icon: "plus.circle.fill", color: SealedPricingPalette.success) {
-                showAddSheet = true
-            }
-        }
-        .frame(width: 280)
-        .glassCardStyle(cornerRadius: 26, interactive: true)
-        .shadow(color: .black.opacity(colorScheme == .dark ? 0.3 : 0.15), radius: 25, y: 15)
-    }
-
-    private func menuRow(label: String, subLabel: String, icon: String, color: Color, action: @escaping () -> Void) -> some View {
+    private func sealedCollectionButton(
+        title: String,
+        systemImage: String,
+        tint: Color,
+        action: @escaping () -> Void
+    ) -> some View {
         Button {
-            Haptics.selectionChanged()
+            Haptics.lightImpact()
             action()
-            withAnimation(.spring(response: 0.25)) { isMenuExpanded = false }
         } label: {
-            HStack(spacing: 16) {
-                Image(systemName: icon)
-                    .font(.system(size: 18, weight: .medium))
-                    .foregroundStyle(color)
-                    .frame(width: 24)
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(label)
-                        .font(.system(size: 16, weight: .semibold, design: .rounded))
-                        .foregroundStyle(.primary)
-                    Text(subLabel)
-                        .font(.system(size: 12))
-                        .foregroundStyle(.secondary)
-                }
-                Spacer()
+            HStack(spacing: 8) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 18, weight: .bold))
+                Text(title)
+                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 14)
-            .contentShape(Rectangle())
+            .foregroundStyle(tint)
+            .frame(maxWidth: .infinity)
+            .frame(height: 56)
+            .glassCardStyle(cornerRadius: 18, interactive: true)
         }
         .buttonStyle(.plain)
+        .accessibilityLabel("\(systemImage.contains("plus") ? "Add to" : "Remove from") collection")
+    }
+
+    private func openRemoveFromCollectionFlow() {
+        guard let item = visibleCollectionItems.first else { return }
+        markAsSession = SealedCollectionMarkAsSession(item: item, initialAction: .sold)
     }
 
     private var shareItems: [Any] {
@@ -1765,6 +1739,13 @@ private struct SealedProductPricingPanel: View {
     }
 }
 
+private enum SealedActionPalette {
+    static let success = Color(red: 0.22, green: 0.81, blue: 0.44)
+    static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
+    static let gold = Color(red: 0.98, green: 0.78, blue: 0.18)
+    static let share = Color(red: 0.36, green: 0.61, blue: 0.97)
+}
+
 private enum SealedPricingPalette {
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
@@ -2217,6 +2198,7 @@ struct AddSealedToCollectionSheet: View {
     @State private var occurredAt: Date = Date()
     @State private var priceText: String = ""
     @State private var errorMessage: String?
+    @State private var showPaywall = false
 
     private var currencyCode: String {
         switch services.priceDisplay.currency {
@@ -2300,6 +2282,9 @@ struct AddSealedToCollectionSheet: View {
             }
         }
         .tint(headerButtonColor)
+        .sheet(isPresented: $showPaywall) {
+            PaywallSheet().environment(services)
+        }
     }
 
     private func parseRequiredPrice(_ text: String) throws -> Double {
@@ -2341,6 +2326,9 @@ struct AddSealedToCollectionSheet: View {
             errorMessage = "Enter a unit price."
         } catch AddSealedToCollectionValidation.invalidPrice {
             errorMessage = "Enter a valid unit price."
+        } catch CollectionLedgerError.freeTierLimitReached {
+            errorMessage = CollectionLedgerError.freeTierLimitReached.errorDescription
+            showPaywall = true
         } catch {
             errorMessage = error.localizedDescription
         }

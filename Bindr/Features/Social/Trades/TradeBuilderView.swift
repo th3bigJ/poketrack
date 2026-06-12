@@ -452,6 +452,12 @@ struct TradeBuilderView: View {
     }
 
     private func usdValue(for item: NewTradeItemInput) async -> Double? {
+        if let productID = SealedProduct.parseCollectionProductID(item.cardID) {
+            if services.sealedProducts.products.isEmpty {
+                await services.sealedProducts.loadFromLocalIfAvailable()
+            }
+            return services.sealedProducts.marketPriceUSD(for: productID)
+        }
         guard let card = await loadCardForValuation(id: item.cardID) else { return nil }
         if let exactVariant = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
             return exactVariant
@@ -499,12 +505,19 @@ struct BuilderCardRow: View {
     let cardLoader: (String) async -> Card?
 
     @State private var card: Card?
+    @State private var sealedProduct: SealedProduct?
     @State private var rowValueUSD: Double?
 
     var body: some View {
         HStack(spacing: 10) {
             ZStack {
-                if let imageURLString = card?.displayImageSrc {
+                if let imageURL = sealedProduct?.imageURL {
+                    CachedAsyncImage(url: imageURL) { image in
+                        image.resizable().aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        shimmer
+                    }
+                } else if let imageURLString = card?.displayImageSrc {
                     CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
                     } placeholder: {
@@ -518,10 +531,10 @@ struct BuilderCardRow: View {
             .clipShape(RoundedRectangle(cornerRadius: 4))
 
             VStack(alignment: .leading, spacing: 2) {
-                Text(card?.cardName ?? item.cardID)
+                Text(displayName)
                     .font(.system(size: 13, weight: .semibold))
                     .lineLimit(2)
-                if item.variantKey != "normal" {
+                if item.variantKey != "normal", item.variantKey != "sealed" {
                     Text(item.variantKey)
                         .font(.system(size: 11))
                         .foregroundStyle(.secondary)
@@ -541,11 +554,20 @@ struct BuilderCardRow: View {
                 .multilineTextAlignment(.trailing)
         }
         .task(id: valueLookupSignature) {
-            if card == nil {
+            if sealedProduct == nil, let productID = SealedProduct.parseCollectionProductID(item.cardID) {
+                if services.sealedProducts.products.isEmpty {
+                    await services.sealedProducts.loadFromLocalIfAvailable()
+                }
+                sealedProduct = services.sealedProducts.products.first(where: { $0.id == productID })
+            } else if card == nil {
                 card = await cardLoader(item.cardID)
             }
             await refreshRowValue()
         }
+    }
+
+    private var displayName: String {
+        sealedProduct?.name ?? card?.cardName ?? item.cardID
     }
 
     private var shimmer: some View {
@@ -563,6 +585,18 @@ struct BuilderCardRow: View {
     }
 
     private func refreshRowValue() async {
+        if let productID = SealedProduct.parseCollectionProductID(item.cardID) {
+            if services.sealedProducts.products.isEmpty {
+                await services.sealedProducts.loadFromLocalIfAvailable()
+            }
+            if let unitUSD = services.sealedProducts.marketPriceUSD(for: productID) {
+                rowValueUSD = unitUSD * Double(max(item.quantity, 1))
+            } else {
+                rowValueUSD = nil
+            }
+            return
+        }
+
         guard let card else {
             rowValueUSD = nil
             return
@@ -597,12 +631,11 @@ struct TradeCardPickerView: View {
     @State private var selectedCardIDs: Set<String> = []
     @State private var cardNameByID: [String: String] = [:]
     @State private var cardCacheByID: [String: Card] = [:]
+    @State private var sealedProductCacheByID: [String: SealedProduct] = [:]
     @State private var isLoading = false
     @State private var isIndexingNames = false
     @State private var searchText = ""
-    @State private var visibleCount = 60
 
-    private let pageSize = 60
     private var isCurrentUserPicker: Bool { ownerUserID == currentUserID }
 
     private var filteredCardIDs: [String] {
@@ -615,36 +648,24 @@ struct TradeCardPickerView: View {
         }
     }
 
-    private var visibleCardIDs: [String] {
-        Array(filteredCardIDs.prefix(visibleCount))
-    }
-
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                if !collectionCardIDs.isEmpty {
-                    searchField
-                        .padding(.horizontal, 12)
-                        .padding(.top, 12)
-                        .padding(.bottom, 8)
-                }
-
-                Group {
-                    if isLoading {
-                        ProgressView("Loading collection...")
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    } else if collectionCardIDs.isEmpty {
-                        ContentUnavailableView(
-                            emptyTitle,
-                            systemImage: "rectangle.stack",
-                            description: Text(emptyDescription)
-                        )
+            Group {
+                if isLoading {
+                    ProgressView("Loading collection...")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    } else {
-                        cardGrid
-                    }
+                } else if collectionCardIDs.isEmpty {
+                    ContentUnavailableView(
+                        emptyTitle,
+                        systemImage: "rectangle.stack",
+                        description: Text(emptyDescription)
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    cardGrid
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -653,7 +674,12 @@ struct TradeCardPickerView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Add (\(selectedCardIDs.count))") {
-                        let selected = selectedCardIDs.map { NewTradeItemInput(cardID: $0) }
+                        let selected = selectedCardIDs.map { cardID in
+                            NewTradeItemInput(
+                                cardID: cardID,
+                                variantKey: cardID.hasPrefix("sealed:") ? "sealed" : "normal"
+                            )
+                        }
                         onConfirm(selected)
                         dismiss()
                     }
@@ -664,7 +690,6 @@ struct TradeCardPickerView: View {
         .tint(.primary)
         .task { await loadCollection() }
         .onChange(of: searchText) { _, _ in
-            visibleCount = pageSize
             let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !trimmed.isEmpty else { return }
             Task { await indexCardNamesIfNeeded() }
@@ -688,49 +713,84 @@ struct TradeCardPickerView: View {
 
     private var cardGrid: some View {
         ScrollView {
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: 3), spacing: 8) {
-                ForEach(visibleCardIDs, id: \.self) { cardID in
-                    SelectablePickerCard(
-                        cardID: cardID,
-                        isSelected: selectedCardIDs.contains(cardID),
-                        cachedCard: cardCacheByID[cardID],
-                        cardLoader: { id in await loadCard(for: id) }
-                    ) {
-                        if selectedCardIDs.contains(cardID) {
-                            selectedCardIDs.remove(cardID)
-                        } else {
-                            selectedCardIDs.insert(cardID)
-                        }
-                    }
-                    .onAppear {
-                        loadMoreCardsIfNeeded(currentCardID: cardID)
-                    }
-                }
-            }
-            .padding(12)
+            VStack(spacing: 0) {
+                searchField
+                    .padding(.horizontal, 12)
+                    .padding(.top, 12)
+                    .padding(.bottom, 8)
 
-            if visibleCount < filteredCardIDs.count {
-                ProgressView()
+                SelectableCardGrid(
+                    cardIDs: filteredCardIDs,
+                    isSelectMode: .constant(true),
+                    selectedCardIDs: $selectedCardIDs,
+                    cardLoader: { id in await loadCard(for: id) },
+                    sealedProductLoader: { id in await loadSealedProduct(for: id) }
+                )
+                .padding(.horizontal, 12)
+
+                if isIndexingNames {
+                    HStack(spacing: 8) {
+                        ProgressView()
+                        Text("Indexing card names...")
+                            .font(.system(size: 12))
+                            .foregroundStyle(.secondary)
+                    }
                     .padding(.bottom, 12)
-            } else if isIndexingNames {
-                HStack(spacing: 8) {
-                    ProgressView()
-                    Text("Indexing card names...")
-                        .font(.system(size: 12))
-                        .foregroundStyle(.secondary)
                 }
-                .padding(.bottom, 12)
             }
+            .padding(.bottom, 12)
         }
     }
 
     private func loadCollection() async {
         isLoading = true
         defer { isLoading = false }
-        collectionCardIDs = dedupeCardIDs(collectionItems.compactMap { item in
-            guard item.quantity > 0 else { return nil }
-            return item.cardID
-        })
+
+        if isCurrentUserPicker {
+            await services.sealedProducts.loadFromLocalIfAvailable()
+            collectionCardIDs = dedupeCardIDs(collectionItems.compactMap { item in
+                guard item.quantity > 0 else { return nil }
+                return item.cardID
+            })
+        } else {
+            do {
+                let snapshot = try await services.collectionSync.fetchFriendCollection(userID: ownerUserID)
+                collectionCardIDs = dedupeCardIDs(snapshot.collection.compactMap { entry in
+                    guard entry.qty > 0, !entry.cardID.isEmpty else { return nil }
+                    return entry.cardID
+                })
+            } catch CollectionSyncError.httpError(404) {
+                collectionCardIDs = []
+            } catch {
+                collectionCardIDs = []
+            }
+        }
+
+        await warmInitialCards()
+    }
+
+    private func warmInitialCards() async {
+        let batch = Array(collectionCardIDs.prefix(36))
+        var cards: [Card] = []
+        var sealedImageURLs: [URL] = []
+
+        for cardID in batch {
+            if cardID.hasPrefix("sealed:") {
+                if let product = await loadSealedProduct(for: cardID),
+                   let imageURL = product.imageURL {
+                    sealedImageURLs.append(imageURL)
+                }
+            } else if let card = await loadCard(for: cardID) {
+                cards.append(card)
+            }
+        }
+
+        if !cards.isEmpty {
+            ImagePrefetcher.shared.prefetchInitialBatch(cards, count: cards.count)
+        }
+        if !sealedImageURLs.isEmpty {
+            ImagePrefetcher.shared.prefetch(sealedImageURLs, priority: .userInitiated)
+        }
     }
 
     private func dedupeCardIDs(_ ids: [String]) -> [String] {
@@ -764,16 +824,8 @@ struct TradeCardPickerView: View {
         }
     }
 
-    private func loadMoreCardsIfNeeded(currentCardID: String) {
-        guard visibleCount < filteredCardIDs.count else { return }
-        let triggerIndex = max(visibleCount - 15, 0)
-        guard filteredCardIDs.indices.contains(triggerIndex) else { return }
-        if filteredCardIDs[triggerIndex] == currentCardID {
-            visibleCount = min(visibleCount + pageSize, filteredCardIDs.count)
-        }
-    }
-
     private func loadCard(for cardID: String) async -> Card? {
+        if cardID.hasPrefix("sealed:") { return nil }
         if let cached = cardCacheByID[cardID] {
             return cached
         }
@@ -785,6 +837,24 @@ struct TradeCardPickerView: View {
         return loaded
     }
 
+    private func loadSealedProduct(for cardID: String) async -> SealedProduct? {
+        if let cached = sealedProductCacheByID[cardID] {
+            return cached
+        }
+        guard let productID = SealedProduct.parseCollectionProductID(cardID) else {
+            return nil
+        }
+        if services.sealedProducts.products.isEmpty {
+            await services.sealedProducts.loadFromLocalIfAvailable()
+        }
+        guard let product = services.sealedProducts.products.first(where: { $0.id == productID }) else {
+            return nil
+        }
+        sealedProductCacheByID[cardID] = product
+        cardNameByID[cardID] = product.name
+        return product
+    }
+
     private func indexCardNamesIfNeeded() async {
         let missingIDs = collectionCardIDs.filter { cardNameByID[$0] == nil }
         guard !missingIDs.isEmpty else { return }
@@ -793,56 +863,10 @@ struct TradeCardPickerView: View {
 
         for cardID in missingIDs {
             guard !Task.isCancelled else { return }
-            _ = await loadCard(for: cardID)
-        }
-    }
-}
-
-private struct SelectablePickerCard: View {
-    let cardID: String
-    let isSelected: Bool
-    let cachedCard: Card?
-    let cardLoader: (String) async -> Card?
-    let onTap: () -> Void
-
-    @State private var card: Card?
-
-    var body: some View {
-        Button(action: onTap) {
-            ZStack(alignment: .topTrailing) {
-                ZStack {
-                    if let imageURLString = card?.displayImageSrc {
-                        CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
-                            image.resizable().aspectRatio(contentMode: .fill)
-                        } placeholder: {
-                            RoundedRectangle(cornerRadius: 8).fill(Color.white.opacity(0.05))
-                        }
-                    } else {
-                        RoundedRectangle(cornerRadius: 8).fill(Color.white.opacity(0.05))
-                    }
-                }
-                .aspectRatio(5/7, contentMode: .fit)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .overlay {
-                    if isSelected {
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color(hex: "E8B84B"), lineWidth: 2.5)
-                    }
-                }
-
-                Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 18, weight: .bold))
-                    .foregroundStyle(isSelected ? Color(hex: "E8B84B") : Color.white.opacity(0.6))
-                    .shadow(color: .black.opacity(0.4), radius: 3)
-                    .padding(4)
-            }
-        }
-        .buttonStyle(.plain)
-        .task {
-            if let cachedCard {
-                card = cachedCard
+            if cardID.hasPrefix("sealed:") {
+                _ = await loadSealedProduct(for: cardID)
             } else {
-                card = await cardLoader(cardID)
+                _ = await loadCard(for: cardID)
             }
         }
     }

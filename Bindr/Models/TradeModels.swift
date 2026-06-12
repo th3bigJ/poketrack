@@ -157,6 +157,17 @@ struct TradeWithItems: Identifiable, Sendable {
         trade.initiatorID == currentUserID ? trade.receiverCompleted : trade.initiatorCompleted
     }
 
+    /// Collection changes apply only after the current user confirms their side of the exchange.
+    func shouldSettleCollection(for currentUserID: UUID) -> Bool {
+        if myCompleted(currentUserID: currentUserID) {
+            return true
+        }
+        // Trades marked complete before per-side confirmation shipped.
+        return trade.status == .complete
+            && !trade.initiatorCompleted
+            && !trade.receiverCompleted
+    }
+
     /// True when the current user is the receiver of a pending or countered offer and must respond.
     func needsResponse(from currentUserID: UUID) -> Bool {
         guard trade.status == .pending || trade.status == .countered else { return false }

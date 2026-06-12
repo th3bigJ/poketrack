@@ -43,16 +43,13 @@ struct PremiumUpgradeView: View {
                     
                     Spacer()
                     
-                    ChromeGlassCapsuleButton(label: "Restore") {
-                        Task {
-                            do {
-                                try await services.store.restore()
-                                if services.store.isPremium { dismiss() }
-                            } catch {
-                                restoreError = error.localizedDescription
-                            }
-                        }
+                    ChromeGlassCapsuleButton(
+                        label: "Restore",
+                        isLoading: services.store.isRestoring
+                    ) {
+                        Task { await runRestore() }
                     }
+                    .disabled(services.store.isRestoring)
                 }
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
@@ -321,22 +318,44 @@ struct PremiumUpgradeView: View {
         }
         return "Configure in App Store Connect to enable purchase."
     }
+
+    private func runRestore() async {
+        restoreError = nil
+        do {
+            try await services.store.restore()
+            if services.store.isPremium {
+                dismiss()
+            } else if let message = services.store.restoreMessage {
+                restoreError = message
+            }
+        } catch {
+            restoreError = error.localizedDescription
+        }
+    }
 }
 
 // MARK: - Premium-specific Capsule Glass button
 private struct ChromeGlassCapsuleButton: View {
     let label: String
+    var isLoading: Bool = false
     let action: () -> Void
 
     private var glassStroke: Color { Color.primary.opacity(0.1) }
 
     var body: some View {
         Button(action: { Haptics.lightImpact(); action() }) {
-            Text(label)
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(.primary)
-                .padding(.horizontal, 14)
-                .frame(height: 36)
+            Group {
+                if isLoading {
+                    ProgressView()
+                        .controlSize(.small)
+                } else {
+                    Text(label)
+                        .font(.system(size: 13, weight: .semibold))
+                }
+            }
+            .foregroundStyle(.primary)
+            .padding(.horizontal, 14)
+            .frame(height: 36)
                 .background {
                     if #available(iOS 26.0, *) {
                         Capsule()

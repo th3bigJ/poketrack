@@ -916,14 +916,9 @@ struct BrowseView: View {
                 inlineDetailMasterPriceByCardID = [:]
                 inlineDetailVariantPriceByCardID = [:]
                 inlineDetailSetTrendChanges = (nil, nil, nil)
-                if selectedTab == .sets {
-                    if newValue != nil {
-                        setsTabScrollRestore = .scrollToTop
-                        setRestoreToken += 1
-                    } else if let setCode = lastSelectedSetCodeInSetsTab {
-                        setsTabScrollRestore = .scrollToSetRow(setCode: setCode)
-                        setRestoreToken += 1
-                    }
+                if selectedTab == .sets, newValue == nil, let setCode = lastSelectedSetCodeInSetsTab {
+                    setsTabScrollRestore = .scrollToSetRow(setCode: setCode)
+                    setRestoreToken += 1
                 }
                 await loadInlineDetailIfNeeded(route: newValue)
             }
@@ -1223,38 +1218,63 @@ struct BrowseView: View {
 
     private var auxiliaryTabScrollView: some View {
         ScrollViewReader { proxy in
+            Group {
+                if isInlineDetailPresented, inlineDetailRoute != nil {
+                    auxiliaryInlineDetailScrollView
+                } else {
+                    auxiliaryTabListScrollView(proxy: proxy)
+                }
+            }
+        }
+    }
+
+    /// Sets / Pokémon list browsing — scroll position is independent from inline set/dex grids.
+    private func auxiliaryTabListScrollView(proxy: ScrollViewProxy) -> some View {
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 0) {
+                Color.clear
+                    .frame(height: rootFloatingChromeInset)
+                    .id(browseAuxTopAnchorID())
+                browseTabsRow
+                browseSearchRow
+                browseSetSummaryRow
+                browseResultCountRow
+                activeTabContent
+            }
+            .scrollTargetLayout()
+        }
+        .onChange(of: setRestoreToken) { _, _ in
+            guard let restore = setsTabScrollRestore else { return }
+            setsTabScrollRestore = nil
+            Task { @MainActor in
+                guard case .scrollToSetRow(let setCode) = restore else { return }
+                let rowID = browseSetRowScrollID(setCode: setCode)
+                for attempt in 0..<6 {
+                    if attempt > 0 {
+                        try? await Task.sleep(for: .milliseconds(40))
+                    }
+                    await Task.yield()
+                    proxy.scrollTo(rowID, anchor: .center)
+                }
+            }
+        }
+        .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
+    }
+
+    /// Inline set/dex card grid — own `ScrollView` so grid scrolling does not move the sets list underneath.
+    private var auxiliaryInlineDetailScrollView: some View {
+        VStack(spacing: 0) {
+            Color.clear
+                .frame(height: rootFloatingChromeInset)
             ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
-                    Color.clear
-                        .frame(height: rootFloatingChromeInset)
-                        .id(browseAuxTopAnchorID())
-                    browseTabsRow
                     browseSearchRow
                     browseSetSummaryRow
                     browseResultCountRow
-                    activeTabContent
-                }
-                .scrollTargetLayout()
-            }
-            .onChange(of: setRestoreToken) { _, _ in
-                guard let restore = setsTabScrollRestore else { return }
-                setsTabScrollRestore = nil
-                Task { @MainActor in
-                    switch restore {
-                    case .scrollToTop:
-                        await Task.yield()
-                        withAnimation(.easeInOut(duration: 0.2)) {
-                            proxy.scrollTo(browseAuxTopAnchorID(), anchor: .top)
-                        }
-                    case .scrollToSetRow(let setCode):
-                        let rowID = browseSetRowScrollID(setCode: setCode)
-                        for attempt in 0..<6 {
-                            if attempt > 0 {
-                                try? await Task.sleep(for: .milliseconds(40))
-                            }
-                            await Task.yield()
-                            proxy.scrollTo(rowID, anchor: .center)
-                        }
+                    if let inlineDetailRoute {
+                        inlineDetailContent(route: inlineDetailRoute)
                     }
                 }
             }
@@ -1270,23 +1290,15 @@ struct BrowseView: View {
         case .cards:
             browseCardsContent
         case .sets:
-            if let inlineDetailRoute {
-                inlineDetailContent(route: inlineDetailRoute)
-            } else {
-                BrowseSetsTabContent(query: query, setCompletionMode: $setCompletionMode) { set in
-                    HapticManager.impact(.light)
-                    lastSelectedSetCodeInSetsTab = set.setCode
-                    inlineDetailRoute = .set(set)
-                }
+            BrowseSetsTabContent(query: query, setCompletionMode: $setCompletionMode) { set in
+                HapticManager.impact(.light)
+                lastSelectedSetCodeInSetsTab = set.setCode
+                inlineDetailRoute = .set(set)
             }
         case .pokemon:
-            if let inlineDetailRoute {
-                inlineDetailContent(route: inlineDetailRoute)
-            } else {
-                BrowsePokemonTabContent(query: query) { route in
-                    HapticManager.impact(.light)
-                    inlineDetailRoute = route
-                }
+            BrowsePokemonTabContent(query: query) { route in
+                HapticManager.impact(.light)
+                inlineDetailRoute = route
             }
         case .products:
             BrowseProductsTabContent(query: query, filters: filters, gridOptions: gridOptions)
@@ -2782,7 +2794,6 @@ struct BrowseView: View {
 }
 
 private enum SetsTabScrollRestore: Equatable {
-    case scrollToTop
     case scrollToSetRow(setCode: String)
 }
 

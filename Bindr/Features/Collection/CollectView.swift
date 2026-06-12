@@ -79,7 +79,7 @@ struct CollectView: View {
         services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
     }
 
-    private var setReleaseDateByCode: [String: String] {
+    private func buildSetReleaseDateByCode() -> [String: String] {
         var map: [String: String] = [:]
         map.reserveCapacity(services.cardData.sets.count)
         for set in services.cardData.sets where map[set.setCode] == nil {
@@ -580,20 +580,7 @@ struct CollectView: View {
                 collectionDisplayName(for: $0).localizedCaseInsensitiveCompare(collectionDisplayName(for: $1)) == .orderedAscending
             }
         case .newestSet, .cardNumber:
-            return items.sorted { lhs, rhs in
-                compareNewestSetOrdering(
-                    lhsReleaseDateKey: releaseDateSortKey(for: lhs, cardLookup: cardsByCardID),
-                    rhsReleaseDateKey: releaseDateSortKey(for: rhs, cardLookup: cardsByCardID),
-                    lhsSetCode: cardsByCardID[lhs.cardID]?.setCode,
-                    rhsSetCode: cardsByCardID[rhs.cardID]?.setCode,
-                    lhsCardNumber: cardsByCardID[lhs.cardID]?.cardNumber,
-                    rhsCardNumber: cardsByCardID[rhs.cardID]?.cardNumber,
-                    lhsDisplayName: collectionDisplayName(for: lhs),
-                    rhsDisplayName: collectionDisplayName(for: rhs),
-                    lhsStableID: lhs.cardID,
-                    rhsStableID: rhs.cardID
-                )
-            }
+            return sortCollectionItemsByNewestSet(items)
         case .price:
             return items.sorted { lhs, rhs in
                 let lhsPrice = collectionDisplayPrice(for: lhs)
@@ -873,20 +860,7 @@ struct CollectView: View {
                 wishlistDisplayName(for: $0).localizedCaseInsensitiveCompare(wishlistDisplayName(for: $1)) == .orderedAscending
             }
         case .newestSet, .cardNumber:
-            return items.sorted { lhs, rhs in
-                compareNewestSetOrdering(
-                    lhsReleaseDateKey: releaseDateSortKey(for: lhs, cardLookup: wishlistCardsByID),
-                    rhsReleaseDateKey: releaseDateSortKey(for: rhs, cardLookup: wishlistCardsByID),
-                    lhsSetCode: wishlistCardsByID[lhs.cardID]?.setCode,
-                    rhsSetCode: wishlistCardsByID[rhs.cardID]?.setCode,
-                    lhsCardNumber: wishlistCardsByID[lhs.cardID]?.cardNumber,
-                    rhsCardNumber: wishlistCardsByID[rhs.cardID]?.cardNumber,
-                    lhsDisplayName: wishlistDisplayName(for: lhs),
-                    rhsDisplayName: wishlistDisplayName(for: rhs),
-                    lhsStableID: lhs.cardID,
-                    rhsStableID: rhs.cardID
-                )
-            }
+            return sortWishlistItemsByNewestSet(items)
         case .price:
             return items.sorted { lhs, rhs in
                 let lhsPrice = wishlistDisplayPrice(for: lhs)
@@ -1027,22 +1001,88 @@ struct CollectView: View {
         return lhsNumber.localizedStandardCompare(rhsNumber) == .orderedAscending
     }
 
-    private func releaseDateSortKey(for item: CollectionItem, cardLookup: [String: Card]) -> String {
+    private func releaseDateSortKey(
+        for item: CollectionItem,
+        card: Card?,
+        releaseDateBySetCode: [String: String]
+    ) -> String {
         if let product = sealedProduct(for: item) {
             guard let releaseDate = product.releaseDate else { return "" }
             return Self.sealedReleaseDateSortFormatter.string(from: releaseDate)
         }
-        guard let card = cardLookup[item.cardID] else { return "" }
-        return setReleaseDateByCode[card.setCode] ?? ""
+        guard let card else { return "" }
+        return releaseDateBySetCode[card.setCode] ?? ""
     }
 
-    private func releaseDateSortKey(for item: WishlistItem, cardLookup: [String: Card]) -> String {
+    private func releaseDateSortKey(
+        for item: WishlistItem,
+        card: Card?,
+        releaseDateBySetCode: [String: String]
+    ) -> String {
         if let product = sealedProduct(for: item) {
             guard let releaseDate = product.releaseDate else { return "" }
             return Self.sealedReleaseDateSortFormatter.string(from: releaseDate)
         }
-        guard let card = cardLookup[item.cardID] else { return "" }
-        return setReleaseDateByCode[card.setCode] ?? ""
+        guard let card else { return "" }
+        return releaseDateBySetCode[card.setCode] ?? ""
+    }
+
+    private func sortCollectionItemsByNewestSet(_ items: [CollectionItem]) -> [CollectionItem] {
+        guard !items.isEmpty else { return items }
+        let releaseDateBySetCode = buildSetReleaseDateByCode()
+        let keyed = items.map { item -> (item: CollectionItem, releaseDateKey: String, setCode: String, cardNumber: String, displayName: String) in
+            let card = cardsByCardID[item.cardID]
+            return (
+                item: item,
+                releaseDateKey: releaseDateSortKey(for: item, card: card, releaseDateBySetCode: releaseDateBySetCode),
+                setCode: card?.setCode ?? "",
+                cardNumber: card?.cardNumber ?? "",
+                displayName: collectionDisplayName(for: item)
+            )
+        }
+        return keyed.sorted { lhs, rhs in
+            compareNewestSetOrdering(
+                lhsReleaseDateKey: lhs.releaseDateKey,
+                rhsReleaseDateKey: rhs.releaseDateKey,
+                lhsSetCode: lhs.setCode,
+                rhsSetCode: rhs.setCode,
+                lhsCardNumber: lhs.cardNumber,
+                rhsCardNumber: rhs.cardNumber,
+                lhsDisplayName: lhs.displayName,
+                rhsDisplayName: rhs.displayName,
+                lhsStableID: lhs.item.cardID,
+                rhsStableID: rhs.item.cardID
+            )
+        }.map(\.item)
+    }
+
+    private func sortWishlistItemsByNewestSet(_ items: [WishlistItem]) -> [WishlistItem] {
+        guard !items.isEmpty else { return items }
+        let releaseDateBySetCode = buildSetReleaseDateByCode()
+        let keyed = items.map { item -> (item: WishlistItem, releaseDateKey: String, setCode: String, cardNumber: String, displayName: String) in
+            let card = wishlistCardsByID[item.cardID]
+            return (
+                item: item,
+                releaseDateKey: releaseDateSortKey(for: item, card: card, releaseDateBySetCode: releaseDateBySetCode),
+                setCode: card?.setCode ?? "",
+                cardNumber: card?.cardNumber ?? "",
+                displayName: wishlistDisplayName(for: item)
+            )
+        }
+        return keyed.sorted { lhs, rhs in
+            compareNewestSetOrdering(
+                lhsReleaseDateKey: lhs.releaseDateKey,
+                rhsReleaseDateKey: rhs.releaseDateKey,
+                lhsSetCode: lhs.setCode,
+                rhsSetCode: rhs.setCode,
+                lhsCardNumber: lhs.cardNumber,
+                rhsCardNumber: rhs.cardNumber,
+                lhsDisplayName: lhs.displayName,
+                rhsDisplayName: rhs.displayName,
+                lhsStableID: lhs.item.cardID,
+                rhsStableID: rhs.item.cardID
+            )
+        }.map(\.item)
     }
 
     private func compareNewestSetOrdering(

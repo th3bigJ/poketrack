@@ -86,16 +86,21 @@ final class TradeService {
     }
 
     private struct TradeCancelPatch: Encodable {
-        let initiatorID: UUID
-        let receiverID: UUID
         let status: String
+        let cancelledByUserID: UUID?
         let updatedAt: Date
 
         enum CodingKeys: String, CodingKey {
-            case initiatorID = "initiator_id"
-            case receiverID = "receiver_id"
             case status
+            case cancelledByUserID = "cancelled_by_user_id"
             case updatedAt = "updated_at"
+        }
+
+        func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+            try container.encode(status, forKey: .status)
+            try container.encode(updatedAt, forKey: .updatedAt)
+            try container.encodeIfPresent(cancelledByUserID, forKey: .cancelledByUserID)
         }
     }
 
@@ -148,7 +153,7 @@ final class TradeService {
             if (trade.status == .pending || trade.status == .countered),
                let updatedAt = trade.updatedAt,
                now.timeIntervalSince(updatedAt) > 86400 {
-                try? await cancelTrade(id: trade.id)
+                try? await cancelExpiredTrade(id: trade.id)
             }
         }
 
@@ -179,7 +184,7 @@ final class TradeService {
         if (trade.status == .pending || trade.status == .countered),
            let updatedAt = trade.updatedAt,
            now.timeIntervalSince(updatedAt) > 86400 {
-            try? await cancelTrade(id: id)
+            try? await cancelExpiredTrade(id: id)
             return try await fetchTrade(id: id) // Re-fetch to get cancelled status
         }
 
@@ -321,32 +326,28 @@ final class TradeService {
         markMutation()
     }
 
-    func cancelTrade(id: UUID, counterpartID: UUID? = nil) async throws {
+    func cancelTrade(id: UUID) async throws {
+        try await patchTradeCancelled(id: id, cancelledByUserID: try signedInUserID())
+    }
+
+    private func cancelExpiredTrade(id: UUID) async throws {
+        try await patchTradeCancelled(id: id, cancelledByUserID: nil)
+    }
+
+    private func patchTradeCancelled(id: UUID, cancelledByUserID: UUID?) async throws {
         let token = try signedInAccessToken()
-        if let counterpartID, let uid = try? signedInUserID() {
-            let body = TradeCancelPatch(
-                initiatorID: uid,
-                receiverID: counterpartID,
-                status: "cancelled",
-                updatedAt: Date()
-            )
-            _ = try await execute(
-                path: "/rest/v1/trades?id=eq.\(id.uuidString)",
-                method: "PATCH",
-                accessToken: token,
-                body: body,
-                extraHeaders: ["Prefer": "return=minimal"]
-            ) as EmptyResponse
-        } else {
-            let body = TradeStatusPatch(status: "cancelled", updatedAt: Date())
-            _ = try await execute(
-                path: "/rest/v1/trades?id=eq.\(id.uuidString)",
-                method: "PATCH",
-                accessToken: token,
-                body: body,
-                extraHeaders: ["Prefer": "return=minimal"]
-            ) as EmptyResponse
-        }
+        let body = TradeCancelPatch(
+            status: "cancelled",
+            cancelledByUserID: cancelledByUserID,
+            updatedAt: Date()
+        )
+        _ = try await execute(
+            path: "/rest/v1/trades?id=eq.\(id.uuidString)",
+            method: "PATCH",
+            accessToken: token,
+            body: body,
+            extraHeaders: ["Prefer": "return=minimal"]
+        ) as EmptyResponse
         markMutation()
     }
 

@@ -308,8 +308,9 @@ struct TradesView: View {
     }
 
     private func applyCompletedTradeSettlementsIfNeeded() async {
+        guard let uid = currentUserID else { return }
         services.setupCollectionLedger(modelContext: modelContext)
-        for tradeWithItems in completedTrades {
+        for tradeWithItems in trades where tradeWithItems.shouldSettleCollection(for: uid) {
             await applyLocalTradeSettlementIfNeeded(tradeWithItems)
         }
     }
