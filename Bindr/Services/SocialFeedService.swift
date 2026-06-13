@@ -314,13 +314,9 @@ final class SocialFeedService {
     /// Background poll for unread alerts without full state refresh
     func refreshUnreadCounts() async {
         guard authService.isSignedIn else { return }
-        do {
-            let alerts = try await fetchUserActivity(limit: 20)
-            let seen = seenIDs(for: .alerts)
-            unreadAlertsCount = alerts.filter { !seen.contains($0.id) }.count
-        } catch {
-            print("Failed to background refresh alerts: \(error)")
-        }
+        guard let alerts = try? await fetchUserActivity(limit: 20) else { return }
+        let seen = seenIDs(for: .alerts)
+        unreadAlertsCount = alerts.filter { !seen.contains($0.id) }.count
     }
 
     func fetchFeed(refresh: Bool = true, pageSize: Int = 20, scope: FeedScope? = nil) async throws -> [FeedItem] {
@@ -465,41 +461,27 @@ final class SocialFeedService {
             voteType: type
         )
         
-        print("DEBUG: postVote started - type: \(type), contentID: \(contentID)")
-        do {
-            _ = try await execute(
-                path: "/rest/v1/reactions",
-                method: "POST",
-                accessToken: try signedInAccessToken(),
-                body: payload,
-                extraHeaders: [
-                    "Prefer": "return=minimal"
-                ]
-            ) as EmptyResponse
-            print("DEBUG: postVote success")
-        } catch {
-            print("DEBUG: postVote failed: \(error)")
-            throw error
-        }
+        _ = try await execute(
+            path: "/rest/v1/reactions",
+            method: "POST",
+            accessToken: try signedInAccessToken(),
+            body: payload,
+            extraHeaders: [
+                "Prefer": "return=minimal"
+            ]
+        ) as EmptyResponse
     }
 
     func removeVote(from contentID: UUID) async throws {
         let userID = try signedInUserID()
-        print("DEBUG: removeVote started - contentID: \(contentID)")
-        do {
-            _ = try await execute(
-                path: "/rest/v1/reactions?content_id=eq.\(contentID.uuidString)&user_id=eq.\(userID.uuidString)",
-                method: "DELETE",
-                accessToken: try signedInAccessToken(),
-                extraHeaders: [
-                    "Prefer": "return=minimal"
-                ]
-            ) as EmptyResponse
-            print("DEBUG: removeVote success")
-        } catch {
-            print("DEBUG: removeVote failed: \(error)")
-            throw error
-        }
+        _ = try await execute(
+            path: "/rest/v1/reactions?content_id=eq.\(contentID.uuidString)&user_id=eq.\(userID.uuidString)",
+            method: "DELETE",
+            accessToken: try signedInAccessToken(),
+            extraHeaders: [
+                "Prefer": "return=minimal"
+            ]
+        ) as EmptyResponse
     }
 
     func toggleVote(type: ReactionType, to contentID: UUID) async throws {

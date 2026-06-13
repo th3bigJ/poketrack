@@ -294,7 +294,6 @@ final class SocialProfileService {
         } catch {
             let errorMsg = error.localizedDescription
             if errorMsg.contains("premium_badge_style") {
-                print("[SocialProfileService] Supabase profiles schema lacks 'premium_badge_style'. Retrying save without it...")
                 let fallbackPayload = UpsertProfileRequest(
                     id: userID,
                     appleUserID: appleUserID,
@@ -403,7 +402,6 @@ final class SocialProfileService {
         } catch {
             let errorMsg = error.localizedDescription
             if errorMsg.contains("premium_badge_style") {
-                print("[SocialProfileService] Supabase profiles schema lacks 'premium_badge_style'. Retrying update without it...")
                 let fallbackPayload = UpdateProfileRequest(
                     displayName: displayName?.trimmedNilIfEmpty,
                     bio: bio?.trimmedNilIfEmpty,

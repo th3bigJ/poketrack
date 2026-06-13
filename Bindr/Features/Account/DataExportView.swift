@@ -172,7 +172,7 @@ struct DataExportView: View {
             exportURL = tempURL
             showShareSheet = true
         } catch {
-            print("Failed to write CSV: \(error)")
+            return
         }
     }
     

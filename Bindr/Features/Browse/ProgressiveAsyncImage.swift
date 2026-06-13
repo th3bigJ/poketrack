@@ -30,6 +30,14 @@ private final class ProgressiveImageLoader {
         "\(url.absoluteString)|full|@\(scale)"
     }
 
+    private static func decode(data: Data, scale: CGFloat, maxPixelSize: CGFloat) -> UIImage? {
+        ThumbnailImageDecode.downsampled(
+            data: data,
+            targetSize: CGSize(width: maxPixelSize, height: maxPixelSize),
+            scale: scale
+        )
+    }
+
     func load(lowResURL: URL?, highResURL: URL?, localLowResURL: URL? = nil) async {
         // Skip reload only when URLs match, we already have an image, AND there's no local
         // file to try — if localLowResURL is provided we always reload to serve from disk.
@@ -64,7 +72,7 @@ private final class ProgressiveImageLoader {
         if let highURL = highResURL {
             let highRequest = URLRequest(url: highURL, cachePolicy: .returnCacheDataElseLoad)
             if let cached = AppURLSession.imageURLCache.cachedResponse(for: highRequest),
-               let ui = UIImage(data: cached.data) {
+               let ui = Self.decode(data: cached.data, scale: scale, maxPixelSize: BindrImageSizing.detailMaxPixelSize) {
                 let key = Self.cacheKey(url: highURL, scale: scale)
                 await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
@@ -76,7 +84,8 @@ private final class ProgressiveImageLoader {
         }
 
         // Serve low-res from offline pack if available
-        if let localURL = localLowResURL, let data = try? Data(contentsOf: localURL), let ui = UIImage(data: data) {
+        if let localURL = localLowResURL, let data = try? Data(contentsOf: localURL),
+           let ui = Self.decode(data: data, scale: scale, maxPixelSize: BindrImageSizing.detailMaxPixelSize) {
             await MainActor.run { [weak self] in
                 guard self?.currentLowURL == lowResURL else { return }
                 self?.state = .loadingHigh(ui)
@@ -99,7 +108,7 @@ private final class ProgressiveImageLoader {
         if let lowURL = lowResURL {
             let lowRequest = URLRequest(url: lowURL, cachePolicy: .returnCacheDataElseLoad)
             if let cached = AppURLSession.imageURLCache.cachedResponse(for: lowRequest),
-               let ui = UIImage(data: cached.data) {
+               let ui = Self.decode(data: cached.data, scale: scale, maxPixelSize: BindrImageSizing.detailMaxPixelSize) {
                 let key = Self.cacheKey(url: lowURL, scale: scale)
                 await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
@@ -133,6 +142,7 @@ private final class ProgressiveImageLoader {
         }
 
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+        let scale = await MainActor.run { UIScreen.main.scale }
 
         do {
             let (data, response) = try await AppURLSession.images.data(for: request)
@@ -141,7 +151,7 @@ private final class ProgressiveImageLoader {
             AppURLSession.imageURLCache.storeCachedResponse(
                 CachedURLResponse(response: response, data: data), for: request)
 
-            guard let ui = UIImage(data: data) else {
+            guard let ui = Self.decode(data: data, scale: scale, maxPixelSize: BindrImageSizing.detailMaxPixelSize) else {
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
                     guard self?.currentLowURL == url else { return }
@@ -149,7 +159,6 @@ private final class ProgressiveImageLoader {
                 }
                 return
             }
-            let scale = await MainActor.run { UIScreen.main.scale }
             let key = Self.cacheKey(url: url, scale: scale)
             await DecodedImageMemoryCache.shared.set(ui, for: key)
 
@@ -181,6 +190,7 @@ private final class ProgressiveImageLoader {
         guard let url else { return }
 
         let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+        let scale = await MainActor.run { UIScreen.main.scale }
 
         do {
             let (data, response) = try await AppURLSession.images.data(for: request)
@@ -189,8 +199,7 @@ private final class ProgressiveImageLoader {
             AppURLSession.imageURLCache.storeCachedResponse(
                 CachedURLResponse(response: response, data: data), for: request)
 
-            if let ui = UIImage(data: data) {
-                let scale = await MainActor.run { UIScreen.main.scale }
+            if let ui = Self.decode(data: data, scale: scale, maxPixelSize: BindrImageSizing.detailMaxPixelSize) {
                 let key = Self.cacheKey(url: url, scale: scale)
                 await DecodedImageMemoryCache.shared.set(ui, for: key)
                 await MainActor.run { [weak self] in
@@ -242,12 +251,14 @@ struct ProgressiveAsyncImage<Placeholder: View>: View {
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
+                    .bindrRasterizedForDisplay()
                     .transition(.opacity.animation(.easeOut(duration: 0.2)))
 
             case .highReady(let image):
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
+                    .bindrRasterizedForDisplay()
                     .transition(.opacity.animation(.easeInOut(duration: 0.25)))
             case .failed:
                 placeholder()

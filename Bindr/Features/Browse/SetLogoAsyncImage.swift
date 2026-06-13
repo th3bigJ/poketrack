@@ -24,7 +24,10 @@ struct SetLogoAsyncImage: View {
             if trimmed.isEmpty {
                 Color.clear
             } else {
-                CachedAsyncImage(url: primaryURL) { image in
+                CachedAsyncImage(
+                    url: primaryURL,
+                    targetSize: BindrImageSizing.squareLogo(side: height)
+                ) { image in
                     image
                         .resizable()
                         .scaledToFit()
@@ -43,8 +46,7 @@ struct SetSymbolAsyncImage: View {
     let height: CGFloat
     let brand: TCGBrand
 
-    @State private var candidateIndex = 0
-    @State private var lastFailureHandledAtIndex: Int?
+    @State private var loader = SetSymbolImageLoader()
 
     private var trimmed: String {
         symbolSrc.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -59,40 +61,53 @@ struct SetSymbolAsyncImage: View {
         Group {
             if trimmed.isEmpty {
                 Color.clear
-            } else if candidateIndex < urls.count, !urls.isEmpty {
-                AsyncImage(url: urls[candidateIndex]) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    case .failure:
-                        let nextIndex = candidateIndex + 1
-                        if nextIndex < urls.count {
-                            Color.clear
-                                .onAppear {
-                                    guard lastFailureHandledAtIndex != candidateIndex else { return }
-                                    lastFailureHandledAtIndex = candidateIndex
-                                    candidateIndex = nextIndex
-                                }
-                        } else {
-                            Color.clear
-                        }
-                    case .empty:
-                        Color.clear
-                    @unknown default:
-                        Color.clear
-                    }
-                }
-                .id("\(trimmed)-\(candidateIndex)")
+            } else if let ui = loader.image {
+                Image(uiImage: ui)
+                    .resizable()
+                    .scaledToFit()
+                    .bindrRasterizedForDisplay()
             } else {
                 Color.clear
             }
         }
         .frame(maxWidth: .infinity, minHeight: height, maxHeight: height)
-        .onChange(of: trimmed) { _, _ in
-            candidateIndex = 0
-            lastFailureHandledAtIndex = nil
+        .task(id: trimmed) {
+            await loader.load(urls: urls, targetSize: BindrImageSizing.squareLogo(side: height))
+        }
+    }
+}
+
+@Observable
+private final class SetSymbolImageLoader {
+    var image: UIImage?
+
+    func load(urls: [URL], targetSize: CGSize) async {
+        image = nil
+        guard !urls.isEmpty else { return }
+
+        let scale = await MainActor.run { UIScreen.main.scale }
+
+        for url in urls {
+            guard !Task.isCancelled else { return }
+
+            let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 20)
+            var data: Data?
+
+            if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
+                data = cached.data
+            } else {
+                data = try? await AppURLSession.images.data(for: request).0
+            }
+
+            guard let data,
+                  let decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: targetSize, scale: scale)
+            else { continue }
+
+            await MainActor.run {
+                guard !Task.isCancelled else { return }
+                self.image = decoded
+            }
+            return
         }
     }
 }

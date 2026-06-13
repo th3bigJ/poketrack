@@ -141,24 +141,11 @@ struct RootView: View {
     // come back on subsequent launches.
     private static let onboardingReplayMigrationKey = "bindr_onboarding_replay_v3"
 
-    // MARK: - Launch timing
-    private let launchStart = ContinuousClock().now
-    @State private var launchElapsedTenths: Int = 0
-    @State private var launchTimerTask: Task<Void, Never>? = nil
+    // MARK: - Post-launch scheduling
     @State private var hasScheduledPostLaunchServices = false
     /// Shared handle for imperative CALayer fade — bypasses SwiftUI's updateUIView
     /// scheduling so CloudKit/@MainActor merges can't delay the overlay disappearing.
     @State private var launchFadeHandle = LaunchFadeHandle()
-
-    private var launchElapsedLabel: String {
-        String(format: "%.1fs", Double(launchElapsedTenths) / 10.0)
-    }
-
-    private func launchLog(_ msg: String) {
-        let elapsed = ContinuousClock().now - launchStart
-        let secs = Double(elapsed.components.seconds) + Double(elapsed.components.attoseconds) / 1e18
-        print(String(format: "[Launch %.2fs] %@", secs, msg))
-    }
 
     private func schedulePostLaunchServicesIfNeeded() {
         guard !hasScheduledPostLaunchServices else { return }
@@ -166,7 +153,6 @@ struct RootView: View {
         Task { @MainActor in
             try? await Task.sleep(nanoseconds: 3_000_000_000)    // 3s: let launch fully settle
             guard !Task.isCancelled else { return }
-            LaunchTraceProfiler.flushToFile()
             if services.brandSettings.hasCompletedBrandOnboarding {
                 await services.socialPush.updateRegistrationState()
             }
@@ -419,8 +405,6 @@ struct RootView: View {
                 duration: 0.45,
                 onFadeComplete: {
                     // Fallback path (isVisible flipped directly rather than via handle).
-                    // Timer is already cancelled before the fade starts (see onChange above).
-                    launchLog("overlay fade complete (fallback path) — app is ready")
                     Task { @MainActor in
                         isLaunchOverlayVisible = false
                         services.runDeferredLaunchServicesIfNeeded()
@@ -435,40 +419,13 @@ struct RootView: View {
             .zIndex(1)
         }
         .onChange(of: services.isReady) { _, ready in
-            launchLog("services.isReady → \(ready)")
             if ready && !hasInsertedMainContent {
-                launchLog("inserting mainContent (isReady)")
                 hasInsertedMainContent = true
                 services.setupCollectionValue(modelContext: modelContext)
             }
         }
-        .onChange(of: services.isCloudKitImportComplete) { _, complete in
-            launchLog("isCloudKitImportComplete → \(complete)")
-        }
-        .onChange(of: hasRevealedLaunchWordmark) { _, revealed in
-            launchLog("hasRevealedLaunchWordmark → \(revealed)")
-        }
-        .onChange(of: services.isLaunchCatalogPipelineComplete) { _, complete in
-            launchLog("isLaunchCatalogPipelineComplete → \(complete)")
-        }
-        .onChange(of: hasInsertedMainContent) { _, inserted in
-            if inserted { launchLog("mainContent inserted") }
-        }
-        .onChange(of: isDashboardDataReady) { _, ready in
-            if ready { launchLog("isDashboardDataReady → true") }
-        }
         .onChange(of: isLaunchSequenceComplete) { _, complete in
             if complete {
-                launchLog("isLaunchSequenceComplete — fading overlay")
-                LaunchTraceProfiler.mark("isLaunchSequenceComplete — fading overlay")
-                // Stop the 100ms elapsed-time timer BEFORE starting the CALayer fade.
-                // The timer mutates @State (launchElapsedTenths) every 100ms, causing
-                // RootView.body to re-evaluate. During a 450ms fade that means 4–5
-                // spurious full body re-renders while SwiftUI is also compositing the
-                // fade animation — visibly janky on devices with large collections.
-                launchTimerTask?.cancel()
-                launchTimerTask = nil
-
                 // Disable hit-testing immediately so the dashboard is interactive
                 // even before the fade animation completes. The CALayer fade runs on
                 // the render server and its completion is dispatched via
@@ -476,7 +433,6 @@ struct RootView: View {
                 // work, the overlay stays invisible but still intercepts touches for
                 // several seconds. Flipping hit-testing here avoids that gap entirely.
                 isLaunchOverlayHitTestingEnabled = false
-                LaunchTraceProfiler.mark("hit-testing disabled")
 
                 // Trigger the CALayer fade imperatively — this starts the animation on
                 // the render server immediately without touching any SwiftUI @State.
@@ -485,12 +441,9 @@ struct RootView: View {
                 // causing a multi-second main-thread freeze proportional to collection size.
                 // It is flipped in the completion block instead, after the fade is done
                 // and the overlay is being removed from the hit-test tree.
-                launchLog("isLaunchSequenceComplete — calling triggerFadeIfNeeded")
                 launchFadeHandle.triggerFadeIfNeeded(
                     duration: 0.45,
                     completion: {
-                        launchLog("overlay fade complete — app is ready")
-                        LaunchTraceProfiler.mark("overlay fade complete")
                         Task { @MainActor in
                             // Flip the fallback flag now that the fade is visually done.
                             // This is the first @State mutation after launch — SwiftUI's
@@ -532,14 +485,8 @@ struct RootView: View {
             selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
         })
         .task {
-            // Start watching for CloudKit's initial import event immediately —
-            // before any other launch work so the monitor is registered before
-            // the notification fires.
-            LaunchTraceProfiler.begin("beginCloudKitReadinessMonitoring")
             services.beginCloudKitReadinessMonitoring()
-            LaunchTraceProfiler.end("beginCloudKitReadinessMonitoring")
             if services.isReady && !hasInsertedMainContent {
-                launchLog("inserting mainContent immediately (already ready at launch)")
                 hasInsertedMainContent = true
                 services.setupCollectionValue(modelContext: modelContext)
             }
@@ -562,21 +509,10 @@ struct RootView: View {
             //   - Wait for the BINDR letter reveal (~1.8 s) to avoid hitching the
             //     animation, then run the catalog pipeline.
 
-            launchLog("root .task started")
-            LaunchTraceProfiler.mark("RootView.task launched")
-            launchTimerTask = Task { @MainActor in
-                while !Task.isCancelled {
-                    try? await Task.sleep(nanoseconds: 100_000_000)
-                    launchElapsedTenths += 1
-                }
-            }
-
             // Wait for the wordmark reveal before showing onboarding or kicking off catalog work.
             while !hasRevealedLaunchWordmark {
                 try? await Task.sleep(nanoseconds: 50_000_000)
             }
-            launchLog("wordmark revealed")
-            LaunchTraceProfiler.mark("wordmark revealed")
             await Task.yield()
 
             if !services.brandSettings.hasCompletedBrandOnboarding {
@@ -586,27 +522,16 @@ struct RootView: View {
 
                 // First-run: bootstrap in background while user goes through onboarding.
                 if !services.brandSettings.hasCompletedInitialAppBootstrap {
-                    launchLog("bootstrap() starting (first-run)")
-                    LaunchTraceProfiler.begin("bootstrap (first-run)")
                     await services.bootstrap()
-                    LaunchTraceProfiler.end("bootstrap (first-run)")
-                    launchLog("bootstrap() done")
                 }
                 // Wait for onboarding to finish — wordmark appears afterward.
                 while showOnboardingImmediate {
                     try? await Task.sleep(nanoseconds: 50_000_000)
                 }
-                launchLog("onboarding dismissed")
             }
 
-            launchLog("starting catalog pipeline")
-
             if services.isReady {
-                launchLog("bootstrapCatalogInBackgroundIfNeeded starting")
-                LaunchTraceProfiler.begin("bootstrapCatalogInBackgroundIfNeeded")
                 await services.bootstrapCatalogInBackgroundIfNeeded()
-                LaunchTraceProfiler.end("bootstrapCatalogInBackgroundIfNeeded")
-                launchLog("bootstrapCatalogInBackgroundIfNeeded done")
             }
             // Push registration and wishlist/ledger setup are intentionally scheduled
             // from the overlay fade completion, with a short post-launch delay, so
@@ -654,14 +579,12 @@ struct RootView: View {
             LaunchWordmarkView(
                 progress: launchProgressState,
                 isSyncingCloudKit: hasRevealedLaunchWordmark && !services.isCloudKitImportComplete && launchProgressState == nil,
-                onRevealComplete: { hasRevealedLaunchWordmark = true },
-                elapsedLabel: launchElapsedLabel
+                onRevealComplete: { hasRevealedLaunchWordmark = true }
             )
         } else {
             LaunchWordmarkView(
                 progress: brandOnboardingProgressState,
-                onRevealComplete: { hasRevealedLaunchWordmark = true },
-                elapsedLabel: launchElapsedLabel
+                onRevealComplete: { hasRevealedLaunchWordmark = true }
             )
             .task {
                 guard services.brandSettings.hasCompletedBrandOnboarding,
@@ -935,14 +858,12 @@ struct RootView: View {
             }
         }
         .onAppear {
-            launchLog("mainContent .onAppear")
             chromeScroll.configureForTab(selectedTab)
             collectSelectedBrand = services.brandSettings.selectedCatalogBrand
             // setupCollectionValue is called from onChange(of: services.isReady) which
             // fires before mainContent is inserted. Call here only as a safety net for
             // any code path where isReady was already true before onAppear.
             if services.collectionValue == nil {
-                launchLog("setupCollectionValue (onAppear fallback)")
                 services.setupCollectionValue(modelContext: modelContext)
             }
         }

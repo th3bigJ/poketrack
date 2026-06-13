@@ -124,17 +124,13 @@ struct PremiumUpgradeView: View {
                         .font(.system(size: 11, weight: .bold))
                         .foregroundStyle(accent)
                     
-                    Text("Premium badges")
+                    Text("Premium badge")
                         .font(.system(size: 14, weight: .medium))
                         .foregroundStyle(.primary)
                     
                     Spacer()
                     
-                    HStack(spacing: -5) {
-                        PokeballEmblemView(size: 20)
-                        StrawHatEmblemView(size: 20)
-                            .offset(y: 1)
-                    }
+                    PokeballEmblemView(size: 20)
                     .padding(.trailing, 2)
                 }
             }

@@ -288,13 +288,7 @@ struct EditProfileView: View {
                                 Haptics.lightImpact()
                             } label: {
                                 HStack(spacing: 8) {
-                                    Group {
-                                        if style == .pokeball {
-                                            PokeballEmblemView(size: 22)
-                                        } else {
-                                            StrawHatEmblemView(size: 22)
-                                        }
-                                    }
+                                    PokeballEmblemView(size: 22)
                                     VStack(alignment: .leading, spacing: 1) {
                                         Text(style.displayName)
                                             .font(.system(size: 13, weight: .semibold))
@@ -549,11 +543,8 @@ struct EditProfileView: View {
                     collectionTotalValue: collectionTotalValue,
                     premiumBadgeStyle: capturedBadgeStyle
                 )
-                print("[EditProfileView] Calling onSave…")
                 try await onSave(payload)
-                print("[EditProfileView] onSave succeeded")
             } catch {
-                print("[EditProfileView] onSave FAILED: \(error)")
                 await MainActor.run {
                     errorMessage = error.localizedDescription
                     showErrorAlert = true

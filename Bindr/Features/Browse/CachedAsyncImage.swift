@@ -154,6 +154,7 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
                ui.size.width > 0,
                ui.size.height > 0 {
                 content(Image(uiImage: ui))
+                    .bindrRasterizedForDisplay()
             } else {
                 placeholder()
             }
@@ -172,7 +173,7 @@ struct CachedCardThumbnailImage: View {
     @State private var loader = ImageLoader()
     @Environment(\.offlineImageContext) private var offlineContext
 
-    init(url: URL?, targetSize: CGSize? = nil) {
+    init(url: URL?, targetSize: CGSize? = BindrImageSizing.cardGridThumbnail) {
         self.url = url
         self.targetSize = targetSize
     }
@@ -202,6 +203,7 @@ struct CachedCardThumbnailImage: View {
                 Image(uiImage: ui)
                     .resizable()
                     .scaledToFit()
+                    .bindrRasterizedForDisplay()
             } else {
                 Color.gray.opacity(0.12)
                     .aspectRatio(5 / 7, contentMode: .fit)

@@ -488,11 +488,7 @@ struct MyProfileView: View {
 
     private func refreshProfileContent() async {
         fetchStats()
-        do {
-            myActivity = try await services.socialFeed.fetchActivityForUser(userID: profile.id, limit: 50)
-        } catch {
-            print("Error fetching my activity: \(error)")
-        }
+        myActivity = (try? await services.socialFeed.fetchActivityForUser(userID: profile.id, limit: 50)) ?? []
         acceptedFriendCount = try? await services.socialFriend.fetchAcceptedFriendCount(for: profile.id)
     }
 

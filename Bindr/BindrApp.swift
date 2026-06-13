@@ -79,13 +79,33 @@ struct BindrApp: App {
     nonisolated static let storeExistedAtLaunch: Bool = FileManager.default.fileExists(atPath: Self.storeURL.path)
 
     init() {
+        Self.suppressCoreDataDebugLogging()
         Self.configureTabBarAppearance()
+    }
+
+    /// Core Data / SwiftData emit verbose WAL checkpoint logs when SQL debug is
+    /// enabled in the run scheme. Silence that noise in Debug builds.
+    nonisolated private static func suppressCoreDataDebugLogging() {
+        #if DEBUG
+        let settings: [String: String] = [
+            "com.apple.CoreData.Logging.stderr": "0",
+            "com.apple.CoreData.SQLDebug": "0",
+            "com.apple.CoreData.ConcurrencyDebug": "0",
+            "com.apple.CoreData.MigrationDebug": "0",
+            "com.apple.CoreData.CloudKitDebug": "0",
+        ]
+        for (key, value) in settings {
+            UserDefaults.standard.set(value, forKey: key)
+            setenv(key, value, 1)
+        }
+        #endif
     }
 
     /// CloudKit-backed store. SwiftData merges CloudKit records on @MainActor; the
     /// CloudKitIdleMonitor keeps the launch overlay visible until those merges complete,
     /// so the freeze is hidden behind the overlay rather than felt on the dashboard.
     nonisolated private static func makeModelContainer() -> ModelContainer {
+        suppressCoreDataDebugLogging()
         let schema = Schema([
             WishlistItem.self,
             CollectionItem.self,
@@ -178,14 +198,6 @@ struct BindrApp: App {
         .joined(separator: "\n")
 
         UserDefaults.standard.set(diagnostic, forKey: cloudKitLastErrorDefaultsKey)
-
-        print("[PokeTrack] SwiftData model container failure during \(stage)")
-        print("[PokeTrack] iCloud account present: \(iCloudToken != nil)")
-        print("[PokeTrack] domain=\(nsError.domain) code=\(nsError.code)")
-        print("[PokeTrack] description=\(nsError.localizedDescription)")
-        if !nsError.userInfo.isEmpty {
-            print("[PokeTrack] userInfo=\(nsError.userInfo)")
-        }
     }
 
     /// Match tab bar glass density to multi-select pill buttons.
@@ -232,7 +244,7 @@ struct BindrApp: App {
                     RootView()
                         .modelContainer(modelContainer)
                 } else {
-                    LaunchWordmarkView(elapsedLabel: "")
+                    LaunchWordmarkView()
                         .task {
                             // Build the ModelContainer off the main thread so opening the
                             // CloudKit-backed SQLite store doesn't freeze the launch animation.

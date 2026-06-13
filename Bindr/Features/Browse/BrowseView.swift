@@ -709,20 +709,12 @@ struct BrowseView: View {
     @State private var setsTabScrollRestore: SetsTabScrollRestore?
     @State private var setRestoreToken: Int = 0
     @State private var pendingCardContextRequest: CardContextActionRequest?
-    @State private var browseAppearStartedAt: CFAbsoluteTime?
-    @State private var browseFirstPaintLogged = false
 
     private var inlineDetailPriceCacheTaskKey: Int {
         var h = Hasher()
         h.combine(currentBrand.rawValue)
         for card in inlineDetailCards { h.combine(card.masterCardId) }
         return h.finalize()
-    }
-
-    private func perfLog(_ message: String) {
-#if DEBUG
-        print("[Perf][Browse] \(message)")
-#endif
     }
 
     private var collectionOwnershipSnapshotKey: Int {
@@ -827,19 +819,11 @@ struct BrowseView: View {
             isViewVisible = true
             isInlineDetailPresented = (inlineDetailRoute != nil)
             currentBrand = services.brandSettings.selectedCatalogBrand
-            if browseAppearStartedAt == nil {
-                browseAppearStartedAt = CFAbsoluteTimeGetCurrent()
-            }
             if isBrowseBodyReady == false {
                 Task { @MainActor in
                     await Task.yield()
                     guard isViewVisible else { return }
                     isBrowseBodyReady = true
-                    if browseFirstPaintLogged == false, let started = browseAppearStartedAt {
-                        browseFirstPaintLogged = true
-                        let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - started) * 1000)
-                        perfLog("first-paint brand=\(currentBrand.rawValue) elapsed=\(elapsedMs)ms")
-                    }
                 }
             }
             let brandSnapshot = services.brandSettings.selectedCatalogBrand
@@ -1014,7 +998,6 @@ struct BrowseView: View {
         ownedCardIDsSnapshot: Set<String>,
         shouldUseCatalogFeedOnStartup: Bool
     ) async {
-        let startedAt = CFAbsoluteTimeGetCurrent()
         guard isViewVisible else { return }
         if loadedBrand != selectedBrand {
             shuffledRefs = []
@@ -1066,11 +1049,6 @@ struct BrowseView: View {
                 usingCatalogFeed: false
             )
         }
-        let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
-        perfLog(
-            "initialize brand=\(selectedBrand.rawValue) tab=\(selectedTabSnapshot.rawValue) " +
-            "catalogMode=\(shouldUseCatalogFeedOnStartup) rows=\(browseFeedSnapshot.rows.count) elapsed=\(elapsedMs)ms"
-        )
     }
 
     @ViewBuilder

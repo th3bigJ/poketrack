@@ -375,13 +375,10 @@ struct DashboardView: View {
             // handoff so taps stay responsive right after the overlay fades.
             try? await Task.sleep(nanoseconds: 2_000_000_000)
             guard !Task.isCancelled else { return }
-            print("[Dashboard⏱] runBackfillIfNeeded start")
-            let t = ContinuousClock().now
             await svc.runBackfillIfNeeded(
                 collectionItems: collectionItems,
                 preferredTodaySnapshot: liveSnapshot
             )
-            print("[Dashboard⏱] runBackfillIfNeeded: \(ContinuousClock().now - t)")
         }
         .task(id: dashboardDataSignature) {
             guard hasFiredInitialLoadComplete else { return }
@@ -390,9 +387,7 @@ struct DashboardView: View {
             // compete with the first interactive frame.
             try? await Task.sleep(nanoseconds: 500_000_000)
             guard !Task.isCancelled else { return }
-            let t = ContinuousClock().now
             await resolveDashboardMetadata()
-            print("[Dashboard⏱] resolveDashboardMetadata: \(ContinuousClock().now - t)")
         }
         .task(id: supplementalDashboardDataTrigger) {
             guard hasFiredInitialLoadComplete else { return }
@@ -400,9 +395,7 @@ struct DashboardView: View {
             guard !services.isCatalogDownloadInProgress else { return }
             try? await Task.sleep(nanoseconds: 300_000_000)
             guard !Task.isCancelled else { return }
-            let t2 = ContinuousClock().now
             await loadMarketTrendBlob()
-            print("[Dashboard⏱] loadMarketTrendBlob: \(ContinuousClock().now - t2)")
             await loadUpcomingReleases()
         }
         .task(id: services.dashboardMarketReloadToken) {
@@ -463,11 +456,8 @@ struct DashboardView: View {
             // Skip recompute if the rate change is < 0.5% (daily FX moves are tiny).
             let delta = abs(new - old) / max(old, 1e-9)
             guard delta >= 0.005 else { return }
-            print("[Dashboard] usdToGbp changed \(String(format: "%.4f", old))→\(String(format: "%.4f", new)) (\(String(format: "%.2f", delta * 100))%) — recomputing live value")
             Task {
-                let t = ContinuousClock().now
                 await computeLiveValue()
-                print("[Dashboard] usdToGbp recompute done: \(ContinuousClock().now - t)")
             }
         }
         .onChange(of: scenePhase) { _, phase in
@@ -1239,17 +1229,10 @@ struct DashboardView: View {
         isPreparingInitialDashboardData = true
         defer { isPreparingInitialDashboardData = false }
 
-        let launchStart = ContinuousClock().now
-        LaunchTraceProfiler.begin("prepareInitialDashboardData")
-
         onInitialLoadStatusChange?("Loading your collection...")
-        LaunchTraceProfiler.begin("reloadDashboardInventory")
         await reloadDashboardInventory(deferForLaunch: false)
-        LaunchTraceProfiler.end("reloadDashboardInventory")
 
-        LaunchTraceProfiler.begin("recomputeCollectionStats")
         recomputeCollectionStats()
-        LaunchTraceProfiler.end("recomputeCollectionStats")
 
         onInitialLoadStatusChange?("Checking saved pricing...")
         if let persisted = svc.todayPersistedSnapshot() {
@@ -1258,19 +1241,14 @@ struct DashboardView: View {
             liveCardsGbp = persisted.cards
             liveSealedGbp = persisted.sealed
         } else if collectionItems.count > 0 {
-            print("[Dashboard⏱] no persisted snapshot — computing live value")
             onInitialLoadStatusChange?("Calculating your collection value...")
-            LaunchTraceProfiler.begin("computeLiveValue")
             await computeLiveValue()
-            LaunchTraceProfiler.end("computeLiveValue")
         }
 
         // Value is established — unblock the launch overlay immediately.
         // loadAllFromStore, resolveDashboardMetadata, and loadMarketTrendBlob are
         // driven by the existing .task(id:) handlers above and run after the fade.
         hasPreparedInitialDashboardData = true
-        LaunchTraceProfiler.end("prepareInitialDashboardData")
-        print("[Dashboard⏱] prepareInitialDashboardData: \(ContinuousClock().now - launchStart)")
         fireInitialLoadCompleteIfReady()
     }
 
@@ -1285,7 +1263,6 @@ struct DashboardView: View {
             guard !Task.isCancelled else { return }
         }
 
-        let t = ContinuousClock().now
         var wishlistDescriptor = FetchDescriptor<WishlistItem>(
             sortBy: [SortDescriptor(\.dateAdded, order: .reverse)]
         )
@@ -1301,34 +1278,26 @@ struct DashboardView: View {
         allLedgerLines = (try? modelContext.fetch(ledgerDescriptor)) ?? []
         binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         dashboardDataRevision += 1
-        print("[Dashboard⏱] reloadDashboardInventory: \(ContinuousClock().now - t) collection=\(collectionItems.count) wishlist=\(wishlistItems.count) binders=\(binderCount)")
     }
 
     private func computeLiveValue() async {
         isLoadingValue = true
         defer { isLoadingValue = false }
-        let _t0 = ContinuousClock().now
         await services.sealedProducts.loadFromLocalIfAvailable()
-        print("[Dashboard⏱]   sealedProducts.loadFromLocal: \(ContinuousClock().now - _t0)")
 
         // Pre-warm the full pricing cache (one SQLite scan, decode off @MainActor).
-        let _t2 = ContinuousClock().now
         await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
-        print("[Dashboard⏱]   prefetchPokemonCardPricing: \(ContinuousClock().now - _t2)")
 
         // Build the masterCardId→pricing index for all collection cards so the pricing
         // loop below hits the O(1) fast path instead of falling back to per-card SQLite
         // fetches. indexPricingForCards is a no-op for cards already in the index.
-        let _tIndex = ContinuousClock().now
         let pokemonCollectionIDs = collectionItems.compactMap { item -> String? in
             guard !item.cardID.hasPrefix("sealed:"), !item.cardID.contains("::") else { return nil }
             return item.cardID
         }
         let pokemonCards = await services.cardData.loadCards(masterCardIDs: pokemonCollectionIDs, catalogBrand: .pokemon)
         await services.pricing.indexPricingForCards(pokemonCards)
-        print("[Dashboard⏱]   indexPricingForCards: \(ContinuousClock().now - _tIndex) cards=\(pokemonCards.count)")
 
-        let _t3 = ContinuousClock().now
         var totalValue = 0.0
         var pokemonValue = 0.0
         var cardsValue = 0.0
@@ -1382,7 +1351,6 @@ struct DashboardView: View {
             let pm = await services.cardData.loadCards(masterCardIDs: pokemonMissIDs, catalogBrand: .pokemon)
             await services.pricing.indexPricingForCards(pm)
             let cardByID = Dictionary(pm.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
-            print("[Dashboard⏱]   cache miss fallback: \(cacheMissIDs.count) cards loaded=\(pm.count)")
             for item in collectionItems where cacheMissIDs.contains(item.cardID) {
                 guard item.quantity > 0, item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
                 guard let card = cardByID[item.cardID] else { continue }
@@ -1404,7 +1372,6 @@ struct DashboardView: View {
             }
         }
 
-        print("[Dashboard⏱]   pricing loop: \(ContinuousClock().now - _t3) cards=\(collectionItems.count) misses=\(cacheMissIDs.count)")
         liveTotalGbp = totalValue > 0 ? totalValue : nil
         livePokemonGbp = pokemonValue
         liveCardsGbp = cardsValue
@@ -1422,7 +1389,6 @@ struct DashboardView: View {
     private func fireInitialLoadCompleteIfReady() {
         guard !hasFiredInitialLoadComplete else { return }
         hasFiredInitialLoadComplete = true
-        print("[Launch] dashboard initial load complete — firing onInitialLoadComplete")
         onInitialLoadComplete?()
         // Load chart history just past the overlay fade. loadAllFromStore reads on a background
         // ModelContext, so this only needs to clear the first interactive frame.
@@ -1648,7 +1614,6 @@ struct DashboardView: View {
             HapticManager.notification(.success)
         } catch {
             HapticManager.notification(.error)
-            print("[Dashboard] Failed to mark ledger line: \(error.localizedDescription)")
         }
     }
 

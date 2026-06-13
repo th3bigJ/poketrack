@@ -290,7 +290,6 @@ struct LaunchWordmarkView: View {
     var progress: LaunchProgressState? = nil
     var isSyncingCloudKit: Bool = false
     var onRevealComplete: () -> Void = {}
-    var elapsedLabel: String = "0.0s"
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
@@ -639,12 +638,12 @@ struct LoadingScreen: View {
 }
 
 #Preview("Idle") {
-    LaunchWordmarkView(elapsedLabel: "0.8s")
+    LaunchWordmarkView()
         .environment(\.bindrAccent, Color(hex: "4f46e5"))
 }
 
 #Preview("CloudKit syncing") {
-    LaunchWordmarkView(isSyncingCloudKit: true, elapsedLabel: "3.2s")
+    LaunchWordmarkView(isSyncingCloudKit: true)
         .environment(\.bindrAccent, Color(hex: "4f46e5"))
 }
 
@@ -657,8 +656,7 @@ struct LoadingScreen: View {
             downloadedBytes: 3_200_000,
             totalBytes: 5_100_000,
             hasByteProgress: true
-        ),
-        elapsedLabel: "7.1s"
+        )
     )
     .environment(\.bindrAccent, Color(hex: "4f46e5"))
 }

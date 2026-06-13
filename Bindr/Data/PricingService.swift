@@ -85,7 +85,6 @@ final class PricingService {
         // to preserve any entries already in the cache, then flip the prefetch flag.
         // Avoid iterating 800+ entries one-by-one on @MainActor; use merging(_:uniquingKeysWith:)
         // which is a single O(n) pass done as a value-type operation before the assignment lands.
-        print("[Pricing] prefetchAllPokemonCardPricing: merging \(decoded.count) entries into cache (had \(pokemonCardPricingCache.count))")
         let merged = decoded.merging(pokemonCardPricingCache) { _, existing in existing }
         pokemonCardPricingCache = merged
         pokemonAllPricingPrefetched = true

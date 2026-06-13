@@ -43,7 +43,6 @@ final class CloudKitIdleMonitor {
             self?.handleRemoteChange()
         }
         armDisplayLink()
-        print("[CloudKit] idle monitor armed")
     }
 
     func stop() {
@@ -97,10 +96,6 @@ final class CloudKitIdleMonitor {
         consecutiveCleanFrames += 1
 
         if consecutiveCleanFrames >= requiredCleanFrames {
-            let note = hasSeenNotification
-                ? String(format: "%.1fs after last notification/hitch", CFAbsoluteTimeGetCurrent() - lastRemoteChangeTime)
-                : "no notifications received"
-            print("[CloudKit] idle confirmed (\(note))")
             let shouldFinalize = onIdle()
             if shouldFinalize {
                 tearDown()

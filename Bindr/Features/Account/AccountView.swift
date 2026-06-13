@@ -8,11 +8,12 @@ struct SettingsView: View {
 
     var body: some View {
         List {
-            gameSection
             storageSection
             premiumSection
             socialSection
+            #if DEBUG
             devToolsSection
+            #endif
             aboutSection
         }
         .listStyle(.insetGrouped)
@@ -20,14 +21,6 @@ struct SettingsView: View {
         .background(Color(uiColor: .systemGroupedBackground))
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
-    }
-
-    // MARK: - Game & Catalog
-
-    private var gameSection: some View {
-        Section("Game & Catalog") {
-            Label("Pokémon TCG", systemImage: "square.stack.3d.up.fill")
-        }
     }
 
     // MARK: - Storage & Pricing
@@ -111,6 +104,7 @@ struct SettingsView: View {
 
     // MARK: - Developer
 
+    #if DEBUG
     private var devToolsSection: some View {
         Section("Developer") {
             NavigationLink {
@@ -121,6 +115,7 @@ struct SettingsView: View {
             }
         }
     }
+    #endif
 
     // MARK: - About
 
@@ -437,6 +432,7 @@ private struct DataSyncSettingsPage: View {
 
 // MARK: - Developer Tools Page
 
+#if DEBUG
 private struct DevToolsSettingsPage: View {
     @Environment(AppServices.self) private var services
 
@@ -480,6 +476,7 @@ private struct DevToolsSettingsPage: View {
         .navigationBarTitleDisplayMode(.large)
     }
 }
+#endif
 
 // MARK: - Premium Settings Page
 

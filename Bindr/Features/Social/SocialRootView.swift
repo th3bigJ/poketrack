@@ -687,22 +687,18 @@ struct SocialRootView: View {
             socialNavigationPath = NavigationPath()
         case .tradeQR(let userID, let username):
             selectedTab = .trades
-            do {
-                let profile: SocialProfile?
-                if let userID {
-                    profile = try await services.socialProfile.fetchProfile(id: userID)
-                } else if let username {
-                    profile = try await services.socialFriend.fetchProfile(username: username)
-                } else {
-                    profile = nil
-                }
-                guard let profile else { return }
-                guard profile.id != services.socialAuth.currentUserID else { return }
-                socialNavigationPath = NavigationPath()
-                openQRTrade(with: profile)
-            } catch {
-                print("[SocialRootView] Failed to route trade QR deep link: \(error.localizedDescription)")
+            let profile: SocialProfile?
+            if let userID {
+                profile = try? await services.socialProfile.fetchProfile(id: userID)
+            } else if let username {
+                profile = try? await services.socialFriend.fetchProfile(username: username)
+            } else {
+                profile = nil
             }
+            guard let profile else { return }
+            guard profile.id != services.socialAuth.currentUserID else { return }
+            socialNavigationPath = NavigationPath()
+            openQRTrade(with: profile)
         }
     }
 

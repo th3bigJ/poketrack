@@ -233,12 +233,7 @@ struct AccountProfileView: View {
     }
     
     private func handleProfileSave(payload: SocialProfileFormPayload) async throws {
-        print("[ProfileSave] Starting save. Profile exists: \(profile != nil)")
-        print("[ProfileSave] Auth state: \(services.socialAuth.authState)")
-        print("[ProfileSave] Access token present: \(services.socialAuth.accessToken != nil)")
-
         if profile == nil {
-            print("[ProfileSave] → calling saveProfile (create)")
             let saved = try await services.socialProfile.saveProfile(
                 username: payload.username,
                 displayName: payload.displayName,
@@ -261,10 +256,8 @@ struct AccountProfileView: View {
                 collectionTotalValue: payload.collectionTotalValue,
                 premiumBadgeStyle: payload.premiumBadgeStyle
             )
-            print("[ProfileSave] saveProfile succeeded: \(saved.username)")
             profile = saved
         } else {
-            print("[ProfileSave] → calling updateProfile")
             let updated = try await services.socialProfile.updateProfile(
                 displayName: payload.displayName,
                 bio: payload.bio,
@@ -286,7 +279,6 @@ struct AccountProfileView: View {
                 collectionTotalValue: payload.collectionTotalValue,
                 premiumBadgeStyle: payload.premiumBadgeStyle
             )
-            print("[ProfileSave] updateProfile succeeded: \(updated.username)")
             profile = updated
         }
         

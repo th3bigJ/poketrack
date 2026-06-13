@@ -266,9 +266,6 @@ final class StoreKitService {
 
         let nsError = error as NSError
         if nsError.domain == "SKInternalErrorDomain" || nsError.domain == SKErrorDomain {
-            #if DEBUG
-            print("[StoreKit] \(nsError.domain) code \(nsError.code): \(nsError)")
-            #endif
             if testFlight {
                 return "Couldn't complete the purchase. Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account, then try again."
             }

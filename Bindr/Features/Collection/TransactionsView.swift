@@ -966,7 +966,6 @@ struct TransactionsView: View {
             HapticManager.notification(.success)
         } catch {
             HapticManager.notification(.error)
-            print("[Transactions] Failed to delete ledger line: \(error.localizedDescription)")
         }
     }
 
@@ -1032,7 +1031,6 @@ struct TransactionsView: View {
             HapticManager.notification(.success)
         } catch {
             HapticManager.notification(.error)
-            print("[Transactions] Failed to mark ledger line: \(error.localizedDescription)")
         }
     }
 

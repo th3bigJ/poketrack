@@ -1340,7 +1340,7 @@ private struct SealedProductDetailPage: View {
         renderer.scale = 1
         guard let uiImage = renderer.uiImage else { return }
         Task.detached(priority: .utility) {
-            let colors = uiImage.sealedAuraColors(maxColors: 3)
+            let colors = uiImage.bindrAuraColors(maxColors: 3)
             guard !colors.isEmpty else { return }
             await MainActor.run {
                 self.auraColors = colors
@@ -2395,53 +2395,5 @@ struct NormalizedProductIndex: Equatable {
     func setName(at index: Int) -> String {
         guard index >= 0, index < setNames.count else { return "" }
         return setNames[index]
-    }
-}
-
-private extension UIImage {
-    func sealedAuraColors(maxColors: Int) -> [Color] {
-        guard maxColors > 0, let cgImage else { return [] }
-        let sampleWidth = 44, sampleHeight = 62, bytesPerPixel = 4
-        let bytesPerRow = sampleWidth * bytesPerPixel
-        var raw = [UInt8](repeating: 0, count: sampleHeight * bytesPerRow)
-        guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
-              let context = CGContext(data: &raw, width: sampleWidth, height: sampleHeight,
-                                     bitsPerComponent: 8, bytesPerRow: bytesPerRow, space: colorSpace,
-                                     bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)
-        else { return [] }
-        context.interpolationQuality = .medium
-        context.draw(cgImage, in: CGRect(x: 0, y: 0, width: sampleWidth, height: sampleHeight))
-        struct AuraBin: Hashable { let r, g, b: Int }
-        var histogram: [AuraBin: Double] = [:]
-        let step = 32.0
-        for y in 0..<sampleHeight {
-            for x in 0..<sampleWidth {
-                let i = y * bytesPerRow + x * bytesPerPixel
-                let r = Double(raw[i]), g = Double(raw[i+1]), b = Double(raw[i+2]), a = Double(raw[i+3]) / 255.0
-                guard a > 0.6 else { continue }
-                let maxC = max(r, g, b) / 255.0, minC = min(r, g, b) / 255.0
-                let saturation = maxC == 0 ? 0.0 : (maxC - minC) / maxC
-                let brightness = maxC
-                guard saturation >= 0.22, brightness >= 0.18, brightness <= 0.94 else { continue }
-                let bin = AuraBin(r: Int(floor(r/step)), g: Int(floor(g/step)), b: Int(floor(b/step)))
-                histogram[bin, default: 0] += 0.3 + saturation * 1.6 + brightness * 0.2
-            }
-        }
-        let sortedBins = histogram.sorted { $0.value > $1.value }.map(\.key)
-        guard !sortedBins.isEmpty else { return [] }
-        var selected: [SIMD3<Double>] = []
-        for bin in sortedBins {
-            let c = SIMD3<Double>((Double(bin.r)+0.5)*step/255, (Double(bin.g)+0.5)*step/255, (Double(bin.b)+0.5)*step/255)
-            if selected.allSatisfy({ existing in let d = c - existing; return sqrt(d.x*d.x+d.y*d.y+d.z*d.z) > 0.22 }) {
-                selected.append(c)
-            }
-            if selected.count == maxColors { break }
-        }
-        if selected.isEmpty, let f = sortedBins.first {
-            selected = [SIMD3<Double>((Double(f.r)+0.5)*step/255, (Double(f.g)+0.5)*step/255, (Double(f.b)+0.5)*step/255)]
-        }
-        if selected.count == 1, let f = selected.first { selected += [f*0.86, f*0.72] }
-        else if selected.count == 2 { selected.append(selected[1]*0.7 + selected[0]*0.3) }
-        return selected.prefix(maxColors).map { Color(red: $0.x, green: $0.y, blue: $0.z) }
     }
 }

@@ -179,7 +179,6 @@ struct AddManualActivityView: View {
             dismiss()
         } catch {
             HapticManager.notification(.error)
-            print("[Transactions] Failed to save manual activity: \(error.localizedDescription)")
         }
     }
 

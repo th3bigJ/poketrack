@@ -139,12 +139,6 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     /// Token for the currently active OCR/search request. Replaced on each new scan and on cancel.
     private var activeScanRequestID = UUID()
 
-    private func perfLog(_ message: String) {
-#if DEBUG
-        print("[Perf][Scanner] \(message)")
-#endif
-    }
-
     // MARK: - Setup
 
     @MainActor func configure(cardDataService: CardDataService, storeService: StoreKitService) {
@@ -618,12 +612,6 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         numberCandidates: [String], rawOCRBlob: String?,
         requestID: UUID
     ) async {
-        let startedAt = CFAbsoluteTimeGetCurrent()
-        var outcome = "unknown"
-        defer {
-            let elapsedMs = Int((CFAbsoluteTimeGetCurrent() - startedAt) * 1000)
-            perfLog("brand=\(scanBrand.rawValue) outcome=\(outcome) elapsed=\(elapsedMs)ms")
-        }
         guard let service = cardDataService else { return }
         /// Must match the brand the user picked in the scanner — not `BrandSettings.selectedCatalogBrand` (browse tab).
         let brand = scanBrand
@@ -667,7 +655,6 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         )
 
         guard let top = ranked.first else {
-            outcome = "no_match"
             await MainActor.run { [weak self] in
                 guard let self, self.activeScanRequestID == requestID else { return }
                 self.scanState = .idle
@@ -677,7 +664,6 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
 
         let alternatives = Array(ranked.dropFirst().prefix(30))
-        outcome = "ranked_candidate"
 
         await MainActor.run { [weak self] in
             guard let self else { return }
@@ -1114,8 +1100,7 @@ extension CardScannerViewModel: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput,
                      didFinishProcessingPhoto photo: AVCapturePhoto,
                      error: Error?) {
-        if let error {
-            print("[Scanner] capture error: \(error)")
+        if error != nil {
             DispatchQueue.main.async { [weak self] in
                 self?.isCapturing = false
                 self?.lastErrorMessage = "Could not capture photo. Try again."

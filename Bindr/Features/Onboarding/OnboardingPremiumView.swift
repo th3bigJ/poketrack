@@ -220,23 +220,19 @@ struct OnboardingPremiumView: View {
         .glassCardStyle(cornerRadius: BindrRadius.md, interactive: false)
     }
 
-    /// Special grid cell showing both Pokéball and Straw Hat premium badges
+    /// Special grid cell showing the Pokéball premium badge
     private func pokeballGridItem() -> some View {
         HStack(spacing: 8) {
-            HStack(spacing: -6) {
-                PokeballEmblemView(size: 20)
-                StrawHatEmblemView(size: 20)
-                    .offset(y: 1)
-            }
-            .frame(width: 34, height: 32, alignment: .center)
+            PokeballEmblemView(size: 20)
+                .frame(width: 34, height: 32, alignment: .center)
 
             VStack(alignment: .leading, spacing: 3) {
-                Text("Premium Badges")
+                Text("Premium Badge")
                     .font(.system(size: 12, weight: .bold))
                     .foregroundStyle(.primary)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
-                Text("Pokéball & Straw Hat styles")
+                Text("Pokéball style")
                     .font(.system(size: 10))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)

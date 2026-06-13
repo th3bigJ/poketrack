@@ -69,7 +69,6 @@ final class CollectionSyncService {
 
         let localEmpty = UserLibraryBackupCodec.localLibraryIsEmpty(ctx)
         guard force || localEmpty else {
-            print("[CollectionSync] skip restore — local library already present")
             return false
         }
 
@@ -79,11 +78,9 @@ final class CollectionSyncService {
 
         do {
             guard let snapshot = try await fetchOwnSnapshot() else {
-                print("[CollectionSync] no cloud backup found")
                 return false
             }
             guard snapshot.hasAnyData else {
-                print("[CollectionSync] cloud backup is empty — nothing to restore")
                 return false
             }
 
@@ -95,11 +92,9 @@ final class CollectionSyncService {
             lastRestoredCardCount = restoredCards
             lastRestoredAt = Date()
             lastRestoredSummary = snapshot.backupSummaryLine
-            print("[CollectionSync] restored library from cloud backup — \(snapshot.backupSummaryLine)")
             return restoredCards > 0 || snapshot.hasAnyData
         } catch {
             lastRestoreError = error.localizedDescription
-            print("[CollectionSync] restore failed: \(error.localizedDescription)")
             return false
         }
     }
@@ -147,7 +142,6 @@ final class CollectionSyncService {
         do {
             let snapshot = try UserLibraryBackupCodec.build(userID: userID, modelContext: ctx)
             guard force || snapshot.hasAnyData else {
-                print("[CollectionSync] skip upload — local library is empty")
                 lastUploadError = "Nothing to back up yet."
                 return false
             }
@@ -168,7 +162,6 @@ final class CollectionSyncService {
             lastUploadError = nil
             lastUploadedAt = Date()
             lastUploadedSummary = snapshot.backupSummaryLine
-            print("[CollectionSync] uploaded library backup — \(snapshot.backupSummaryLine)")
             return true
         } catch {
             lastUploadError = error.localizedDescription

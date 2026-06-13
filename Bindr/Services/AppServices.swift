@@ -182,10 +182,7 @@ final class AppServices {
             while !brandSettings.hasCompletedBrandOnboarding {
                 try? await Task.sleep(nanoseconds: 500_000_000)
             }
-            print("[Launch] init Task: restoreSession start")
-            let _t = ContinuousClock().now
             await socialAuth.restoreSession()
-            print("[Launch] init Task: restoreSession done \(ContinuousClock().now - _t)")
             // syncSocialLibrariesIfPossible is intentionally omitted here.
             // setupWishlistAndLedger (called from RootView's launch task) already
             // runs a sync pass and is awaited before the overlay closes. Running it
@@ -204,8 +201,7 @@ final class AppServices {
     func bootstrap() async {
         guard !isReady, !isBootstrapping else { return }
         isBootstrapping = true
-        LaunchTraceProfiler.begin("bootstrap")
-        defer { isBootstrapping = false; LaunchTraceProfiler.end("bootstrap") }
+        defer { isBootstrapping = false }
 
         let bootstrapTask = Task { [weak self] in
             guard let self else { return }
@@ -239,8 +235,6 @@ final class AppServices {
 
     /// Returning-user launch path: quickly prime local catalog data, then refresh network-backed data in the background.
     func bootstrapCatalogInBackgroundIfNeeded() async {
-        LaunchTraceProfiler.begin("bootstrapCatalogInBackgroundIfNeeded")
-        defer { LaunchTraceProfiler.end("bootstrapCatalogInBackgroundIfNeeded") }
         while !hasResolvedLaunchCatalogRefreshRequirement {
             try? await Task.sleep(nanoseconds: 50_000_000)
         }
@@ -371,14 +365,8 @@ final class AppServices {
 
     /// Fast, local-only readiness pass so Browse/Collect can render without waiting on remote checks.
     private func primeLaunchCatalogFromLocalCache() async {
-        let t = ContinuousClock().now
-        print("[Launch] primeLaunchCatalogFromLocalCache: loadSets start")
         await cardData.loadSets(preferSyncedCatalog: true)
-        print("[Launch] primeLaunchCatalogFromLocalCache: loadSets done \(ContinuousClock().now - t)")
-        let t2 = ContinuousClock().now
-        print("[Launch] primeLaunchCatalogFromLocalCache: sealedProducts start")
         await sealedProducts.loadFromLocalIfAvailable(launchMode: true)
-        print("[Launch] primeLaunchCatalogFromLocalCache: sealedProducts done \(ContinuousClock().now - t2)")
         pendingLightBrowseTabEntry = true
     }
 
@@ -631,26 +619,20 @@ final class AppServices {
 
     /// Call this from your root view with the model context
     func setupWishlist(modelContext: ModelContext) {
-        print("[Launch] setupWishlist start")
-        let t = ContinuousClock().now
         socialSyncModelContext = modelContext
         if wishlist == nil {
             wishlist = WishlistService(modelContext: modelContext, store: store)
         }
-        print("[Launch] setupWishlist done: \(ContinuousClock().now - t)")
         Task { await syncSocialLibrariesIfPossible() }
     }
 
     func setupCollectionLedger(modelContext: ModelContext) {
-        print("[Launch] setupCollectionLedger start")
-        let t = ContinuousClock().now
         bindCollectionSync(modelContext: modelContext)
         if collectionLedger == nil {
             let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
             ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
             collectionLedger = ledger
         }
-        print("[Launch] setupCollectionLedger done: \(ContinuousClock().now - t)")
         Task { await syncSocialLibrariesIfPossible() }
     }
 
@@ -658,20 +640,14 @@ final class AppServices {
     /// Called from RootView's launch task so the overlay stays up until this completes.
     func setupWishlistAndLedger(modelContext: ModelContext) async {
         bindCollectionSync(modelContext: modelContext)
-        print("[Launch] setupWishlist start")
-        let t = ContinuousClock().now
         if wishlist == nil {
             wishlist = WishlistService(modelContext: modelContext, store: store)
         }
-        print("[Launch] setupWishlist done: \(ContinuousClock().now - t)")
-        print("[Launch] setupCollectionLedger start")
-        let t2 = ContinuousClock().now
         if collectionLedger == nil {
             let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
             ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
             collectionLedger = ledger
         }
-        print("[Launch] setupCollectionLedger done: \(ContinuousClock().now - t2)")
         bindCollectionSync(modelContext: modelContext)
         await attemptCloudBackupRestoreIfStillEmpty()
         await syncSocialLibrariesIfPossible()
@@ -692,7 +668,6 @@ final class AppServices {
         guard !isCloudKitImportComplete else { return }
 
         guard FileManager.default.ubiquityIdentityToken != nil else {
-            print("[CloudKit] no iCloud account — opening immediately")
             markCloudKitImportComplete()
             return
         }
@@ -701,7 +676,6 @@ final class AppServices {
         if !isFreshInstall {
             // Existing installs should not hold the launch overlay for CloudKit catch-up.
             // We keep syncing in the background, but let the user in once local launch gates clear.
-            print("[CloudKit] existing install — skipping launch gate and syncing in background")
             markCloudKitImportComplete()
             return
         }
@@ -711,19 +685,15 @@ final class AppServices {
         let quietWindow: TimeInterval = 6.0
         let timeout: TimeInterval = 120.0
 
-        print("[CloudKit] fresh install — idle monitor armed (quietWindow=\(quietWindow)s, timeout=\(timeout)s)")
-
         let monitor = CloudKitIdleMonitor(quietWindow: quietWindow) { [weak self] in
             guard let self else { return true }
             guard self.isLaunchCatalogPipelineComplete else {
-                print("[CloudKit] idle detected before launch catalog pipeline finished — continuing monitor")
                 return false
             }
             // Prevent same-tick completion when the catalog gate just flipped; allow a
             // brief post-pipeline settling window for late main-thread merges.
             if let completedAt = self.launchCatalogPipelineCompletedAt,
                Date().timeIntervalSince(completedAt) < 2.0 {
-                print("[CloudKit] idle detected immediately after pipeline completion — waiting briefly")
                 return false
             }
             self.markCloudKitImportComplete()
@@ -734,7 +704,6 @@ final class AppServices {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + timeout) { [weak self] in
             guard let self, !self.isCloudKitImportComplete else { return }
-            print("[CloudKit] timeout (\(timeout)s) — opening anyway")
             self.markCloudKitImportComplete()
         }
     }
@@ -775,14 +744,12 @@ final class AppServices {
 
     private func attemptCloudBackupRestoreIfStillEmpty() async {
         guard let modelContext = socialSyncModelContext else {
-            print("[CollectionSync] defer restore — model context not ready yet")
             return
         }
         // Brief pause so any final CloudKit merge batch can land first.
         try? await Task.sleep(for: .seconds(3))
         guard UserLibraryBackupCodec.localLibraryIsEmpty(modelContext) else { return }
         guard socialAuth.isSignedIn else {
-            print("[CollectionSync] defer restore — not signed in to Bindr account")
             return
         }
         _ = await restoreCollectionFromCloudBackup()
@@ -817,8 +784,6 @@ final class AppServices {
 
     private func syncSocialLibrariesIfPossible() async {
         guard let modelContext = socialSyncModelContext else { return }
-        let t = ContinuousClock().now
-        print("[Launch] syncSocialLibrariesIfPossible starting")
         // Keep launch social sync cheap: do not materialize full SwiftData tables on
         // @MainActor while the launch overlay is coming down.
         let cardCount = modelContext.collectionTotalCardQuantity()
@@ -839,6 +804,5 @@ final class AppServices {
                 totalValue: totalValue
             )
         }
-        print("[Launch] syncSocialLibrariesIfPossible done: \(ContinuousClock().now - t)")
     }
 }

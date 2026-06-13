@@ -551,7 +551,10 @@ private struct CardStackPreview: View {
         
         Group {
             if let url {
-                CachedAsyncImage(url: url) { image in
+                CachedAsyncImage(
+                    url: url,
+                    targetSize: BindrImageSizing.compactCardThumbnail
+                ) { image in
                     image.resizable().aspectRatio(contentMode: .fill)
                 } placeholder: {
                     RoundedRectangle(cornerRadius: 4).fill(Color.gray.opacity(0.1))

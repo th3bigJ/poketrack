@@ -180,7 +180,6 @@ final class CollectionValueService {
         let sealed  = defaults.double(forKey: LastKnownValueKey.sealed)
         guard total > 0 else { return }
 
-        print("[CollectionValue] Saving yesterday's snapshot from persisted value → \(yesterday.formatted(date: .abbreviated, time: .omitted)) total=\(total)")
         let snapshot = CollectionValueSnapshot(
             date: yesterday,
             totalGbp: total,
@@ -201,28 +200,18 @@ final class CollectionValueService {
         preferredTodaySnapshot: BrandSnapshot? = nil
     ) async {
         guard !isBackfilling else { return }
-        let _t0 = ContinuousClock().now
         await sealedProducts.loadFromLocalIfAvailable()
-        print("[CollectionValue] runBackfillIfNeeded: sealedProducts.loadFromLocal \(ContinuousClock().now - _t0)")
-        let _t1 = ContinuousClock().now
         purgeZeroValueSnapshots()
         saveYesterdaySnapshotFromPersistedValueIfNeeded()
-        print("[CollectionValue] runBackfillIfNeeded: purge+yesterday \(ContinuousClock().now - _t1)")
-        let _t2 = ContinuousClock().now
         await captureTodaySnapshotIfMissing(
             collectionItems: collectionItems,
             preferredSnapshot: preferredTodaySnapshot
         )
-        print("[CollectionValue] runBackfillIfNeeded: captureTodaySnapshot \(ContinuousClock().now - _t2)")
-        let _t3 = ContinuousClock().now
         await fillSnapshotGapsIfNeeded(collectionItems: collectionItems)
-        print("[CollectionValue] runBackfillIfNeeded: fillGaps \(ContinuousClock().now - _t3)")
-        let _t4 = ContinuousClock().now
         let freshSnapshots = fetchAllSnapshots()
         aggregateWeeklyIfNeeded(using: freshSnapshots)
         aggregateMonthlyIfNeeded(using: freshSnapshots)
         loadAll()
-        print("[CollectionValue] runBackfillIfNeeded: aggregate+load \(ContinuousClock().now - _t4)")
     }
 
     /// Fills gaps between the oldest existing snapshot and yesterday using the closest available
@@ -250,7 +239,6 @@ final class CollectionValueService {
         }
         guard !missingDays.isEmpty else { return }
 
-        print("[CollectionValue] Filling \(missingDays.count) missing snapshot gap(s)")
         isBackfilling = true
         defer { isBackfilling = false }
 
@@ -276,12 +264,10 @@ final class CollectionValueService {
     /// so recomputing older snapshots would silently overwrite them with today's prices anyway.
     func forceRecalculate(liveSnapshot: BrandSnapshot, collectionItems: [CollectionItem]) async {
         guard !isBackfilling, liveSnapshot.total > 0 else {
-            print("[CollectionValue] forceRecalculate skipped — isBackfilling=\(isBackfilling) total=\(liveSnapshot.total)")
             return
         }
         isBackfilling = true
         defer { isBackfilling = false }
-        print("[CollectionValue] forceRecalculate starting — snapshots=\(snapshots.count) weekly=\(weeklyAverages.count) monthly=\(monthlyAverages.count)")
 
         // Replace today's snapshot with the fresh live value.
         let cal = Calendar.current
@@ -306,13 +292,11 @@ final class CollectionValueService {
         aggregateWeeklyIfNeeded(using: freshSnapshots)
         aggregateMonthlyIfNeeded(using: freshSnapshots)
         loadAll()
-        print("[CollectionValue] forceRecalculate done — snapshots=\(snapshots.count) weekly=\(weeklyAverages.count) monthly=\(monthlyAverages.count)")
     }
 
     private func purgeAllSnapshots() {
         let all = fetchAllSnapshots()
         guard !all.isEmpty else { return }
-        print("[CollectionValue] Purging \(all.count) daily snapshot(s) for recomputation")
         for s in all { modelContext.delete(s) }
         try? modelContext.save()
     }
@@ -326,7 +310,6 @@ final class CollectionValueService {
         )
         let toDelete = (try? modelContext.fetch(descriptor)) ?? []
         guard !toDelete.isEmpty else { return }
-        print("[CollectionValue] Purging \(toDelete.count) today snapshot(s) for recalculation")
         for s in toDelete { modelContext.delete(s) }
         try? modelContext.save()
     }
@@ -335,7 +318,6 @@ final class CollectionValueService {
         let descriptor = FetchDescriptor<CollectionWeeklyAverage>()
         let all = (try? modelContext.fetch(descriptor)) ?? []
         guard !all.isEmpty else { return }
-        print("[CollectionValue] Purging \(all.count) weekly average(s) for recalculation")
         for r in all { modelContext.delete(r) }
         try? modelContext.save()
     }
@@ -344,7 +326,6 @@ final class CollectionValueService {
         let descriptor = FetchDescriptor<CollectionMonthlyAverage>()
         let all = (try? modelContext.fetch(descriptor)) ?? []
         guard !all.isEmpty else { return }
-        print("[CollectionValue] Purging \(all.count) monthly average(s) for recalculation")
         for r in all { modelContext.delete(r) }
         try? modelContext.save()
     }
@@ -400,7 +381,6 @@ final class CollectionValueService {
             return true
         }
         guard hasInventory else {
-            print("[CollectionValue] Skipping daily snapshot (no inventory).")
             return
         }
 
@@ -413,11 +393,9 @@ final class CollectionValueService {
             isBackfilling = false
         }
         guard result.total > 0 else {
-            print("[CollectionValue] Skipping daily snapshot (value is zero).")
             return
         }
 
-        print("[CollectionValue] Saving snapshot for \(today.formatted(date: .abbreviated, time: .omitted)) → total=\(result.total)")
         let snapshot = CollectionValueSnapshot(
             date: today,
             totalGbp: result.total,
@@ -467,7 +445,6 @@ final class CollectionValueService {
                     existing.onePieceGbp = 0
                     existing.cardsGbp = avg.cards
                     existing.sealedGbp = avg.sealed
-                    print("[CollectionValue] Updated weekly avg for week of \(weekStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
                 }
             } else {
                 let record = CollectionWeeklyAverage(
@@ -479,7 +456,6 @@ final class CollectionValueService {
                     sealedGbp: avg.sealed
                 )
                 modelContext.insert(record)
-                print("[CollectionValue] Saved weekly avg for week of \(weekStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
             }
         }
         try? modelContext.save()
@@ -522,7 +498,6 @@ final class CollectionValueService {
                     existing.onePieceGbp = 0
                     existing.cardsGbp = avg.cards
                     existing.sealedGbp = avg.sealed
-                    print("[CollectionValue] Updated monthly avg for \(monthStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
                 }
             } else {
                 let record = CollectionMonthlyAverage(
@@ -534,7 +509,6 @@ final class CollectionValueService {
                     sealedGbp: avg.sealed
                 )
                 modelContext.insert(record)
-                print("[CollectionValue] Saved monthly avg for \(monthStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
             }
         }
         try? modelContext.save()
@@ -690,7 +664,6 @@ final class CollectionValueService {
         )
         let zeros = (try? modelContext.fetch(descriptor)) ?? []
         guard !zeros.isEmpty else { return }
-        print("[CollectionValue] Purging \(zeros.count) zero-value snapshot(s)")
         for s in zeros { modelContext.delete(s) }
         try? modelContext.save()
     }

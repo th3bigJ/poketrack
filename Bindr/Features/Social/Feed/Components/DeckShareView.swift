@@ -36,7 +36,10 @@ struct DeckShareView: View {
     }
     
     private func thumbnail(cardID: String) -> some View {
-        AsyncImage(url: AppConfiguration.imageURL(relativePath: "cards/thumbnails/\(cardID).jpg")) { image in
+        CachedAsyncImage(
+            url: AppConfiguration.imageURL(relativePath: "cards/thumbnails/\(cardID).jpg"),
+            targetSize: BindrImageSizing.compactCardThumbnail
+        ) { image in
             image
                 .resizable()
                 .aspectRatio(contentMode: .fill)
