@@ -156,6 +156,7 @@ private struct FriendQRScannerSheet: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Done") { dismiss() }
+                        .foregroundStyle(.primary)
                 }
             }
             .navigationTitle("Scan QR")

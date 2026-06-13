@@ -206,6 +206,7 @@ private struct QRTradeScannerSheet: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Done") { dismiss() }
+                        .foregroundStyle(.primary)
                 }
             }
             .navigationTitle("Scan QR")
