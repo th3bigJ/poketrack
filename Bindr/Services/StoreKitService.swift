@@ -6,7 +6,6 @@ import StoreKit
 @MainActor
 final class StoreKitService {
     private static let premiumEntitlementDefaultsKey = "Bindr.store.premiumEntitlement"
-    private static let sandboxSetupAcknowledgedKey = "Bindr.store.sandboxSetupAcknowledged"
     /// Set after the user explicitly subscribes or taps Restore Purchases — blocks silent
     /// entitlement sync on fresh installs until then.
     private static let explicitActivationCompleteKey = "Bindr.store.premiumExplicitActivationComplete"
@@ -30,6 +29,8 @@ final class StoreKitService {
 
     private(set) var products: [Product] = []
     private(set) var annualProduct: Product?
+    /// App Store storefront country (e.g. `GBR`) — drives placeholder currency when products are still loading.
+    private(set) var storefrontCountryCode: String?
     private(set) var purchaseError: String?
     private(set) var isRestoring = false
     private(set) var restoreMessage: String?
@@ -39,26 +40,22 @@ final class StoreKitService {
         AppDistribution.requiresSandboxIAP
     }
 
-    /// TestFlight purchases stay disabled until the tester confirms they've signed into a Sandbox Apple ID.
-    var sandboxSetupAcknowledged: Bool {
-        get { UserDefaults.standard.bool(forKey: Self.sandboxSetupAcknowledgedKey) }
-        set { UserDefaults.standard.set(newValue, forKey: Self.sandboxSetupAcknowledgedKey) }
-    }
-
-    var canAttemptSandboxPurchase: Bool {
-        !requiresSandboxAccount || sandboxSetupAcknowledged
-    }
-
     var hasPurchaseOptions: Bool {
         !products.isEmpty
     }
 
     /// Localized plan prices for paywalls — always matches the App Store storefront currency.
     var subscriptionPricing: PremiumSubscriptionPricing {
-        PremiumSubscriptionPricing(monthlyProduct: products.first, annualProduct: annualProduct)
+        PremiumSubscriptionPricing(
+            monthlyProduct: products.first,
+            annualProduct: annualProduct,
+            storefrontCountryCode: storefrontCountryCode
+        )
     }
 
     private var updatesTask: Task<Void, Never>?
+    /// Drops stale entitlement fetches when the user restores while launch sync is still running.
+    private var entitlementFetchGeneration = 0
 
     #if DEBUG
     static let forceFreeTierDefaultsKey = "Bindr.debug.forceFreeTier"
@@ -80,8 +77,15 @@ final class StoreKitService {
         #endif
         updatesTask = Task { await observeTransactions() }
         Task {
+            if let storefront = await Storefront.current {
+                storefrontCountryCode = storefront.countryCode
+            }
             await finishUnfinishedTransactions()
-            await checkEntitlements()
+            // Fresh installs must activate via Subscribe or Restore — a background
+            // entitlement pass here can race the user's restore and look like a no-op.
+            if !requiresExplicitPremiumActivation {
+                await checkEntitlements()
+            }
         }
     }
 
@@ -94,6 +98,10 @@ final class StoreKitService {
     }
 
     func loadProducts() async {
+        if let storefront = await Storefront.current {
+            storefrontCountryCode = storefront.countryCode
+        }
+
         // Fetch from App Store off @MainActor — network latency must not block the main thread.
         do {
             let fetched = try await Task.detached(priority: .utility) {
@@ -120,8 +128,14 @@ final class StoreKitService {
     /// Always re-reads StoreKit entitlements. Used by restore so a concurrent launch-time
     /// entitlement check cannot cause the refresh to be skipped.
     private func fetchAndApplyEntitlements(fromExplicitUserAction: Bool) async {
+        entitlementFetchGeneration += 1
+        let generation = entitlementFetchGeneration
         isCheckingEntitlements = true
-        defer { isCheckingEntitlements = false }
+        defer {
+            if generation == entitlementFetchGeneration {
+                isCheckingEntitlements = false
+            }
+        }
 
         // Drain the async sequence on a background executor so StoreKit's
         // network round-trip doesn't hold @MainActor while Apple's servers respond.
@@ -136,6 +150,8 @@ final class StoreKitService {
             }
             return found
         }.value
+
+        guard generation == entitlementFetchGeneration else { return }
 
         if premium {
             if requiresExplicitPremiumActivation && !fromExplicitUserAction {
@@ -154,12 +170,6 @@ final class StoreKitService {
 
     func purchase(annual: Bool = false) async throws {
         purchaseError = nil
-
-        guard canAttemptSandboxPurchase else {
-            let message = PurchaseError.sandboxSetupRequired.errorDescription ?? "Sandbox setup required."
-            purchaseError = message
-            throw PurchaseError.sandboxSetupRequired
-        }
 
         let product: Product?
         if annual {
@@ -199,26 +209,20 @@ final class StoreKitService {
         purchaseError = nil
         restoreMessage = nil
 
-        // Restore must stay tappable (App Store guideline). On TestFlight, Apple may
-        // prompt for Sandbox sign-in during AppStore.sync — don't block on our toggle.
+        // Read entitlements from StoreKit's local cache — does not call AppStore.sync(),
+        // so it avoids the system "Sign in to Apple Account" / password sheet.
+        // StoreKit 2 keeps subscriptions available here for the signed-in store account.
         isRestoring = true
         defer { isRestoring = false }
 
-        do {
-            try await AppStore.sync()
-        } catch {
-            let message = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
-            purchaseError = message
-            throw PurchaseError.storeKit(message)
-        }
         await fetchAndApplyEntitlements(fromExplicitUserAction: true)
 
         if premiumEntitlement {
             restoreMessage = nil
         } else {
             restoreMessage = requiresSandboxAccount
-                ? "No active subscription was found. Make sure you're signed into a Sandbox Apple ID under Settings → App Store → Sandbox Account."
-                : "No active subscription was found for this Apple ID."
+                ? "No active subscription was found on this device. Subscribe here, or sign into a Sandbox Apple ID under Settings → App Store → Sandbox Account if you purchased on another tester account."
+                : "No active subscription was found for this Apple ID on this device."
         }
     }
 
@@ -256,14 +260,19 @@ final class StoreKitService {
     }
 
     /// TestFlight accepts sandbox transactions only; App Store accepts production only.
+    /// Installs with a sandbox receipt (TestFlight / Xcode) always accept sandbox entitlements
+    /// even if runtime channel detection falls back to `.appStore`.
     nonisolated private static func acceptsTransactionEnvironment(_ environment: StoreKit.AppStore.Environment) -> Bool {
         switch AppDistribution.channel {
+        case .debug:
+            return true
         case .testFlight:
             return environment == .sandbox
         case .appStore:
+            if AppDistribution.hasSandboxAppStoreReceipt {
+                return environment == .sandbox
+            }
             return environment == .production
-        case .debug:
-            return true
         }
     }
 
@@ -312,15 +321,12 @@ final class StoreKitService {
 
 enum PurchaseError: LocalizedError {
     case productUnavailable
-    case sandboxSetupRequired
     case storeKit(String)
 
     var errorDescription: String? {
         switch self {
         case .productUnavailable:
             return "Premium is not available yet. Configure the in-app purchase in App Store Connect."
-        case .sandboxSetupRequired:
-            return "Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account, then confirm below."
         case .storeKit(let message):
             return message
         }

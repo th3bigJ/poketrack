@@ -26,13 +26,14 @@ enum AppDistribution {
         isTestFlight
     }
 
-    private static var isTestFlightBuild: Bool {
-        if isSandboxAppStoreReceipt { return true }
-        return embeddedProvisioningProfileContainsTestFlightMarker
+    /// True when the on-device App Store receipt is Apple's sandbox receipt (TestFlight / local testing).
+    static var hasSandboxAppStoreReceipt: Bool {
+        Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
     }
 
-    private static var isSandboxAppStoreReceipt: Bool {
-        Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
+    private static var isTestFlightBuild: Bool {
+        if hasSandboxAppStoreReceipt { return true }
+        return embeddedProvisioningProfileContainsTestFlightMarker
     }
 
     /// TestFlight builds include `beta-reports-active` in the embedded profile.

@@ -503,18 +503,11 @@ private struct DevToolsSettingsPage: View {
 private struct PremiumSettingsPage: View {
     @Environment(AppServices.self) private var services
     @State private var showPaywall = false
-    @State private var restoreAlertMessage: String?
+    @State private var showRestoreAlert = false
+    @State private var restoreAlertMessage = ""
 
     var body: some View {
         List {
-            if services.store.requiresSandboxAccount {
-                Section {
-                    TestFlightSandboxNotice()
-                        .listRowInsets(EdgeInsets())
-                        .listRowBackground(Color.clear)
-                }
-            }
-
             Section {
                 if services.store.isPremium {
                     Label("Premium active", systemImage: "checkmark.seal.fill")
@@ -525,10 +518,10 @@ private struct PremiumSettingsPage: View {
                     } label: {
                         Label("Unlock Premium", systemImage: "crown.fill")
                     }
-                    .disabled(!services.store.canAttemptSandboxPurchase)
                 }
 
                 Button {
+                    Haptics.lightImpact()
                     Task { await runRestore() }
                 } label: {
                     HStack {
@@ -540,10 +533,6 @@ private struct PremiumSettingsPage: View {
                     }
                 }
                 .disabled(services.store.isRestoring)
-            } footer: {
-                if services.store.requiresSandboxAccount {
-                    Text("Restore always works on TestFlight. Subscribe needs a Sandbox Apple ID — sign in under Settings → App Store → Sandbox Account, then confirm above.")
-                }
             }
         }
         .listStyle(.insetGrouped)
@@ -554,13 +543,10 @@ private struct PremiumSettingsPage: View {
                 .environment(services)
                 .presentationDragIndicator(.visible)
         }
-        .alert("Restore Purchases", isPresented: Binding(
-            get: { restoreAlertMessage != nil },
-            set: { if !$0 { restoreAlertMessage = nil } }
-        )) {
+        .alert("Restore Purchases", isPresented: $showRestoreAlert) {
             Button("OK", role: .cancel) {}
         } message: {
-            Text(restoreAlertMessage ?? "")
+            Text(restoreAlertMessage)
         }
     }
 
@@ -574,7 +560,8 @@ private struct PremiumSettingsPage: View {
                     ?? "No active subscription was found for this Apple ID."
             }
         } catch {
-            restoreAlertMessage = error.localizedDescription
+            restoreAlertMessage = services.store.purchaseError ?? error.localizedDescription
         }
+        showRestoreAlert = true
     }
 }

@@ -28,6 +28,8 @@ struct OnboardingPremiumView: View {
     @State private var purchaseError: String?
     @State private var restoreMessage: String?
     @State private var hasLoadedProducts = false
+    @State private var showRestoreAlert = false
+    @State private var restoreAlertMessage = ""
 
     private var isAlreadySubscribed: Bool {
         services.store.isPremium
@@ -48,9 +50,6 @@ struct OnboardingPremiumView: View {
                             title: "Unlock the full experience.",
                             subtitle: "Unlimited everything — scans, collection, binders, and available-card trade tools — plus full price history and offline mode."
                         )
-                        if services.store.requiresSandboxAccount {
-                            TestFlightSandboxNotice()
-                        }
                         featureBullets
                         planPicker
                         if let purchaseError {
@@ -85,7 +84,6 @@ struct OnboardingPremiumView: View {
                             isLoading: isPurchasing,
                             disabled: !hasLoadedProducts
                                 || !services.store.hasPurchaseOptions
-                                || !services.store.canAttemptSandboxPurchase
                         ) {
                             Task { await runPurchase() }
                         }
@@ -97,6 +95,7 @@ struct OnboardingPremiumView: View {
                     } else {
                         VStack(spacing: BindrSpacing.xs) {
                             Button {
+                                Haptics.lightImpact()
                                 Task { await runRestore() }
                             } label: {
                                 HStack(spacing: 6) {
@@ -128,6 +127,11 @@ struct OnboardingPremiumView: View {
             }
             hasLoadedProducts = true
         }
+        .alert("Restore Purchases", isPresented: $showRestoreAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(restoreAlertMessage)
+        }
     }
 
     // MARK: - Badge
@@ -152,18 +156,18 @@ struct OnboardingPremiumView: View {
             squarePlanTile(
                 isAnnual: false,
                 label: "Monthly",
-                price: pricing.monthlyDisplayPrice,
-                breakdown: pricing.monthlyBreakdown,
+                price: hasLoadedProducts ? pricing.monthlyDisplayPrice : "…",
+                breakdown: hasLoadedProducts ? pricing.monthlyBreakdown : " ",
                 meta: nil
             )
 
             squarePlanTile(
                 isAnnual: true,
                 label: "Annual",
-                price: pricing.annualDisplayPrice,
-                breakdown: pricing.annualMonthlyBreakdown,
-                meta: pricing.annualSavingsBadge,
-                subMeta: pricing.annualSavingsDetail
+                price: hasLoadedProducts ? pricing.annualDisplayPrice : "…",
+                breakdown: hasLoadedProducts ? pricing.annualMonthlyBreakdown : " ",
+                meta: hasLoadedProducts ? pricing.annualSavingsBadge : nil,
+                subMeta: hasLoadedProducts ? pricing.annualSavingsDetail : nil
             )
         }
         .padding(.top, 4)
@@ -330,13 +334,18 @@ struct OnboardingPremiumView: View {
         do {
             try await services.store.restore()
             if services.store.isPremium {
-                restoreMessage = nil
+                restoreAlertMessage = "Your Premium subscription has been restored."
+                showRestoreAlert = true
             } else {
-                restoreMessage = services.store.restoreMessage
+                restoreAlertMessage = services.store.restoreMessage
                     ?? "No active subscription was found for this Apple ID."
+                restoreMessage = restoreAlertMessage
+                showRestoreAlert = true
             }
         } catch {
-            restoreMessage = services.store.purchaseError ?? error.localizedDescription
+            restoreAlertMessage = services.store.purchaseError ?? error.localizedDescription
+            restoreMessage = restoreAlertMessage
+            showRestoreAlert = true
         }
     }
 }

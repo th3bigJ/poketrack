@@ -58,9 +58,6 @@ struct PremiumUpgradeView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: BindrSpacing.lg) {
                         heroBlock
-                        if services.store.requiresSandboxAccount {
-                            TestFlightSandboxNotice()
-                        }
                         benefitsList
                         planPickerBlock
                         Color.clear.frame(height: 10)
@@ -268,7 +265,7 @@ struct PremiumUpgradeView: View {
             OnboardingPrimaryButton(
                 title: subscribeTitle,
                 isLoading: isPurchasing,
-                disabled: !services.store.hasPurchaseOptions || !services.store.canAttemptSandboxPurchase
+                disabled: !services.store.hasPurchaseOptions
             ) {
                 Task { await runPurchase() }
             }
@@ -303,9 +300,6 @@ struct PremiumUpgradeView: View {
     }
 
     private var footerNote: String {
-        if services.store.requiresSandboxAccount {
-            return "Sandbox subscription · auto-renews in test until cancelled in Settings."
-        }
         if let product = services.store.products.first {
             return "\(product.displayName) · auto-renews until cancelled."
         }
@@ -334,8 +328,9 @@ struct PremiumUpgradeView: View {
             try await services.store.restore()
             if services.store.isPremium {
                 dismiss()
-            } else if let message = services.store.restoreMessage {
-                restoreError = message
+            } else {
+                restoreError = services.store.restoreMessage
+                    ?? "No active subscription was found for this Apple ID."
             }
         } catch is CancellationError {
             return
