@@ -249,6 +249,7 @@ struct CreateBinderSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .tint(.primary)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create") {
