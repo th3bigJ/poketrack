@@ -271,7 +271,7 @@ private struct DataSyncSettingsPage: View {
                     Task { await runCloudBackupUpload() }
                 } label: {
                     HStack {
-                        Label("Back up everything to R2", systemImage: "icloud.and.arrow.up.fill")
+                        Label("Back Up Everything to Cloud", systemImage: "icloud.and.arrow.up.fill")
                         Spacer()
                         if isBackingUp || services.collectionSync.isUploading {
                             ProgressView()
@@ -298,10 +298,8 @@ private struct DataSyncSettingsPage: View {
                         .font(.caption)
                         .foregroundStyle(.orange)
                 }
-            } header: {
-                Text("R2 cloud backup")
             } footer: {
-                Text("Uploads your collection, binders, decks, ledger, wishlist, and value history to Bindr’s cloud backup. Use this on a debug/Xcode build before moving to TestFlight or the App Store, then restore on the production build.")
+                Text("Saves your full library to the cloud under your Bindr account. Sign in with the same account on any device to restore your data.")
             }
 
             Section {
@@ -313,7 +311,7 @@ private struct DataSyncSettingsPage: View {
                     }
                 } label: {
                     HStack {
-                        Label("Restore from cloud backup", systemImage: "arrow.triangle.2.circlepath.icloud")
+                        Label("Restore from Cloud Backup", systemImage: "arrow.triangle.2.circlepath.icloud")
                         Spacer()
                         if isRestoring || services.collectionSync.isRestoring {
                             ProgressView()
@@ -335,10 +333,8 @@ private struct DataSyncSettingsPage: View {
                         .font(.caption)
                         .foregroundStyle(.orange)
                 }
-            } header: {
-                Text("Restore")
             } footer: {
-                Text("Restores your full library from R2 into this device. After restoring on TestFlight or App Store, iCloud Production will sync the data from here.")
+                Text("Downloads your latest cloud backup to this device. If you already have a library here, you'll be asked before anything is replaced.")
             }
         }
         .listStyle(.insetGrouped)
@@ -354,7 +350,7 @@ private struct DataSyncSettingsPage: View {
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("This removes your current collection, binders, decks, and ledger on this device and replaces them with the cloud backup.")
+            Text("This replaces your current collection, binders, decks, ledger, and wishlist on this device with your cloud backup.")
         }
     }
 
@@ -430,11 +426,11 @@ private struct DataSyncSettingsPage: View {
     @ViewBuilder private var statusFooter: some View {
         switch services.cloudSettings.syncStatus {
         case .cloudKitFallback:
-            Text("This build is using local-only storage because the CloudKit store could not be opened on this device yet.")
+            Text("iCloud sync isn't available on this device right now. Your data is stored locally on this device.")
         case .cloudKitConnected:
-            Text("Your wishlist, collection, and ledger data are stored locally and synced through your private iCloud database. After reinstalling, data may take several minutes to finish syncing from iCloud.")
+            Text("Your collection, wishlist, and ledger sync automatically through iCloud. After reinstalling, it may take a few minutes for everything to appear.")
         case .iCloudAccountUnavailable:
-            Text("You can still use the app offline, but CloudKit sync stays off until this device is signed into iCloud.")
+            Text("Sign in to iCloud in Settings to sync your data across devices.")
         }
     }
 }

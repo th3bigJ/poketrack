@@ -3,10 +3,24 @@ import Security
 
 enum KeychainStorage {
     private static let service = "app1xy.bindr"
+    private static let installMarkerKey = "bindrInstallMarker"
     private static let appleUserAccount = "appleUserIdentifier"
     private static let socialAccessTokenAccount = "socialSupabaseAccessToken"
     private static let socialRefreshTokenAccount = "socialSupabaseRefreshToken"
     private static let socialUserIDAccount = "socialSupabaseUserID"
+
+    /// iOS can keep Keychain items after the app is deleted; UserDefaults does not.
+    /// If the install marker is missing but social credentials remain, treat it as a reinstall and wipe auth.
+    static func clearSocialSessionIfReinstalled() {
+        guard UserDefaults.standard.string(forKey: installMarkerKey) == nil else { return }
+
+        if readSocialRefreshToken() != nil {
+            deleteSocialSession()
+            deleteAppleUserIdentifier()
+        }
+
+        UserDefaults.standard.set(UUID().uuidString, forKey: installMarkerKey)
+    }
 
     static func saveAppleUserIdentifier(_ value: String) {
         let data = Data(value.utf8)

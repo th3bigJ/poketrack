@@ -135,6 +135,8 @@ final class SocialAuthService {
     }
 
     func restoreSession() async {
+        KeychainStorage.clearSocialSessionIfReinstalled()
+
         guard let refreshToken = KeychainStorage.readSocialRefreshToken() else {
             return
         }
