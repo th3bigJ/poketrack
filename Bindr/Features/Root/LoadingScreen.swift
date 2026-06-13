@@ -292,7 +292,6 @@ struct LaunchWordmarkView: View {
     var onRevealComplete: () -> Void = {}
 
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.bindrAccent) private var bindrAccent
     @State private var logoVisible = false
     @State private var statusVisible = false
     @State private var hasStartedAnimation = false
@@ -306,6 +305,16 @@ struct LaunchWordmarkView: View {
 
     private var foreground: Color { colorScheme == .dark ? .white : Color(white: 0.08) }
     private var subtle: Color { foreground.opacity(0.38) }
+    private var launchBrandPrimary: Color { Color(red: 0.93, green: 0.16, blue: 0.62) }
+    private var launchBrandSecondary: Color { Color(red: 0.49, green: 0.34, blue: 1.00) }
+    private var launchBrandCyan: Color { Color(red: 0.08, green: 0.78, blue: 0.94) }
+    private var launchBrandGradient: LinearGradient {
+        LinearGradient(
+            colors: [launchBrandCyan, launchBrandSecondary, launchBrandPrimary],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+    }
 
     private var byteProgressText: String {
         guard let p = progress, p.totalBytes > 0 else { return "" }
@@ -323,8 +332,8 @@ struct LaunchWordmarkView: View {
 
             RadialGradient(
                 colors: [
-                    bindrAccent.opacity(colorScheme == .dark ? 0.18 : 0.10),
-                    bindrAccent.opacity(colorScheme == .dark ? 0.06 : 0.04),
+                    launchBrandPrimary.opacity(colorScheme == .dark ? 0.18 : 0.10),
+                    launchBrandSecondary.opacity(colorScheme == .dark ? 0.06 : 0.04),
                     .clear
                 ],
                 center: .init(x: 0.5, y: 0.35),
@@ -335,7 +344,7 @@ struct LaunchWordmarkView: View {
 
             RadialGradient(
                 colors: [
-                    bindrAccent.opacity(colorScheme == .dark ? 0.10 : 0.06),
+                    launchBrandCyan.opacity(colorScheme == .dark ? 0.10 : 0.06),
                     .clear
                 ],
                 center: .topTrailing,
@@ -429,23 +438,14 @@ struct LaunchWordmarkView: View {
                     .frame(width: 36, height: 36)
                     .background(
                         Circle()
-                            .fill(
-                                LinearGradient(
-                                    colors: [
-                                        bindrAccent.opacity(colorScheme == .dark ? 0.55 : 0.45),
-                                        bindrAccent.opacity(colorScheme == .dark ? 0.28 : 0.22)
-                                    ],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
+                            .fill(launchBrandGradient.opacity(colorScheme == .dark ? 0.58 : 0.48))
                     )
                     .overlay {
                         Circle()
                             .strokeBorder(Color.white.opacity(colorScheme == .dark ? 0.18 : 0.42), lineWidth: 0.8)
                     }
                 if progress == nil {
-                    PulseDots(color: bindrAccent.opacity(0.75))
+                    PulseDots(color: launchBrandPrimary.opacity(0.78))
                 }
             }
             .frame(width: 36, alignment: .center)
@@ -477,7 +477,7 @@ struct LaunchWordmarkView: View {
 
                 if let progress {
                     VStack(spacing: 7) {
-                        CAProgressBar(fraction: progress.fraction, fillColor: bindrAccent, height: 4)
+                        CAProgressBar(fraction: progress.fraction, fillColor: launchBrandPrimary, height: 4)
                             .frame(width: 220)
                             .clipShape(Capsule())
 

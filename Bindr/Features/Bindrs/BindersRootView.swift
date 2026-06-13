@@ -694,16 +694,6 @@ struct BinderOpenContainer: View {
                     width: max(coverTargetFrame.width, 1),
                     height: max(coverTargetFrame.height, 1)
                 )
-                .overlay {
-                    if openingSparkVisible && binder.colour == BinderColourPalette.logoColourName {
-                        BinderOpeningSparkOverlay(
-                            isExpanded: openingSparkExpanded,
-                            reduceMotion: reduceMotion
-                        )
-                        .id(openingSparkID)
-                        .allowsHitTesting(false)
-                    }
-                }
                 // Animated lift shadow — grows from a tight contact
                 // shadow at the source frame (binder sitting on the
                 // grid) to a deep, diffuse shadow at the page frame
@@ -733,6 +723,8 @@ struct BinderOpenContainer: View {
                 )
                 .opacity(coverOpacity)
                 .allowsHitTesting(false)
+
+                openingSparkLayer(rootGeo: rootGeo)
             }
             .ignoresSafeArea(.all)
             // Free-scroll layouts don't host a ``PageCurlView`` and so never
@@ -1034,73 +1026,123 @@ struct BinderOpenContainer: View {
             }
         }
     }
+
+    @ViewBuilder
+    private func openingSparkLayer(rootGeo: GeometryProxy) -> some View {
+        if openingSparkVisible && binder.colour == BinderColourPalette.logoColourName {
+            BinderOpeningSparkOverlay(
+                isExpanded: openingSparkExpanded,
+                reduceMotion: reduceMotion
+            )
+            .id(openingSparkID)
+            .frame(
+                width: max(coverTargetFrame.width, 1),
+                height: max(coverTargetFrame.height, 1)
+            )
+            .scaleEffect(coverScale * breathingScale, anchor: .center)
+            .position(
+                x: coverCenter.x - rootGeo.frame(in: .named("bindersRoot")).origin.x,
+                y: coverCenter.y - rootGeo.frame(in: .named("bindersRoot")).origin.y
+            )
+            .allowsHitTesting(false)
+            .transition(.opacity)
+            .zIndex(2)
+        }
+    }
 }
 
 private struct BinderOpeningSparkOverlay: View {
     let isExpanded: Bool
     let reduceMotion: Bool
 
-    private struct Particle: Identifiable {
-        let id = UUID()
-        let symbol: String
-        let color: Color
-        let start: UnitPoint
-        let end: UnitPoint
-        let size: CGFloat
-        let rotation: Double
-        let endScale: CGFloat
-    }
-
-    private var particles: [Particle] {
-        let colors = BinderColourPalette.logoGradientColors
-        return [
-            Particle(symbol: "sparkle", color: colors[0], start: UnitPoint(x: 0.50, y: 0.24), end: UnitPoint(x: 0.34, y: 0.14), size: 15, rotation: -20, endScale: 0.96),
-            Particle(symbol: "star.fill", color: colors[3], start: UnitPoint(x: 0.68, y: 0.34), end: UnitPoint(x: 0.88, y: 0.22), size: 12, rotation: 22, endScale: 0.82),
-            Particle(symbol: "sparkle", color: colors[2], start: UnitPoint(x: 0.35, y: 0.56), end: UnitPoint(x: 0.18, y: 0.52), size: 12, rotation: -12, endScale: 0.86),
-            Particle(symbol: "circle.fill", color: colors[0], start: UnitPoint(x: 0.63, y: 0.68), end: UnitPoint(x: 0.82, y: 0.78), size: 7, rotation: 0, endScale: 0.72),
-            Particle(symbol: "sparkle", color: colors[3], start: UnitPoint(x: 0.48, y: 0.78), end: UnitPoint(x: 0.42, y: 0.94), size: 11, rotation: 24, endScale: 0.84),
-            Particle(symbol: "circle.fill", color: colors[1], start: UnitPoint(x: 0.28, y: 0.32), end: UnitPoint(x: 0.14, y: 0.25), size: 6, rotation: 0, endScale: 0.74)
-        ]
-    }
-
     var body: some View {
         GeometryReader { proxy in
+            let lineWidth = max(3, proxy.size.width * 0.018)
             ZStack {
                 if reduceMotion {
-                    RoundedRectangle(cornerRadius: proxy.size.height * 0.035, style: .continuous)
-                        .stroke(BinderColourPalette.logoGradient, lineWidth: 2)
-                        .scaleEffect(isExpanded ? 1.035 : 0.98)
-                        .opacity(isExpanded ? 0 : 0.45)
-                        .blur(radius: 0.6)
+                    ShootingStarTrail(progress: 0.82)
+                        .stroke(
+                            BinderColourPalette.logoGradient,
+                            style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round)
+                        )
+                        .shadow(color: BinderColourPalette.logoBaseColor.opacity(0.35), radius: 8)
+                        .opacity(isExpanded ? 0 : 0.7)
                 } else {
-                    RoundedRectangle(cornerRadius: proxy.size.height * 0.035, style: .continuous)
-                        .stroke(BinderColourPalette.logoGradient, lineWidth: 2)
-                        .scaleEffect(isExpanded ? 1.055 : 0.96)
-                        .opacity(isExpanded ? 0 : 0.34)
-                        .blur(radius: 0.4)
+                    ShootingStarTrail(progress: isExpanded ? 1 : 0.08)
+                        .stroke(
+                            BinderColourPalette.logoGradient,
+                            style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round)
+                        )
+                        .shadow(color: BinderColourPalette.logoBaseColor.opacity(0.45), radius: 10)
+                        .shadow(color: Color.pink.opacity(0.26), radius: 14)
+                        .opacity(isExpanded ? 0.95 : 0)
 
-                    ForEach(particles) { particle in
-                        Image(systemName: particle.symbol)
-                            .font(.system(size: particle.size, weight: .bold))
-                            .foregroundStyle(particle.color)
-                            .shadow(color: particle.color.opacity(0.35), radius: 5, x: 0, y: 0)
-                            .scaleEffect(isExpanded ? particle.endScale : 0.24)
-                            .rotationEffect(.degrees(isExpanded ? particle.rotation : 0))
-                            .position(
-                                point(
-                                    isExpanded ? particle.end : particle.start,
-                                    in: proxy.size
-                                )
-                            )
-                            .opacity(isExpanded ? 0 : 1)
-                    }
+                    ShootingStarHead()
+                        .fill(.white)
+                        .frame(width: lineWidth * 3.6, height: lineWidth * 3.6)
+                        .shadow(color: .white.opacity(0.8), radius: 6)
+                        .shadow(color: Color.pink.opacity(0.55), radius: 12)
+                        .position(headPosition(in: proxy.size))
+                        .scaleEffect(isExpanded ? 1 : 0.2)
+                        .opacity(isExpanded ? 1 : 0)
                 }
             }
         }
         .compositingGroup()
     }
 
-    private func point(_ unitPoint: UnitPoint, in size: CGSize) -> CGPoint {
-        CGPoint(x: unitPoint.x * size.width, y: unitPoint.y * size.height)
+    private func headPosition(in size: CGSize) -> CGPoint {
+        let progress = isExpanded ? 1.0 : 0.08
+        let start = CGPoint(x: size.width * -0.08, y: size.height * 0.66)
+        let control1 = CGPoint(x: size.width * 0.22, y: size.height * 0.88)
+        let control2 = CGPoint(x: size.width * 0.82, y: size.height * 0.05)
+        let end = CGPoint(x: size.width * 1.08, y: size.height * 0.32)
+        return cubicPoint(progress: progress, start: start, control1: control1, control2: control2, end: end)
+    }
+
+    private func cubicPoint(progress: Double, start: CGPoint, control1: CGPoint, control2: CGPoint, end: CGPoint) -> CGPoint {
+        let t = CGFloat(progress)
+        let mt = 1 - t
+        return CGPoint(
+            x: mt * mt * mt * start.x + 3 * mt * mt * t * control1.x + 3 * mt * t * t * control2.x + t * t * t * end.x,
+            y: mt * mt * mt * start.y + 3 * mt * mt * t * control1.y + 3 * mt * t * t * control2.y + t * t * t * end.y
+        )
+    }
+}
+
+private struct ShootingStarTrail: Shape {
+    var progress: Double
+
+    var animatableData: Double {
+        get { progress }
+        set { progress = newValue }
+    }
+
+    func path(in rect: CGRect) -> Path {
+        let start = CGPoint(x: rect.minX - rect.width * 0.08, y: rect.minY + rect.height * 0.66)
+        let control1 = CGPoint(x: rect.minX + rect.width * 0.22, y: rect.minY + rect.height * 0.88)
+        let control2 = CGPoint(x: rect.minX + rect.width * 0.82, y: rect.minY + rect.height * 0.05)
+        let end = CGPoint(x: rect.maxX + rect.width * 0.08, y: rect.minY + rect.height * 0.32)
+
+        var fullPath = Path()
+        fullPath.move(to: start)
+        fullPath.addCurve(to: end, control1: control1, control2: control2)
+        return fullPath.trimmedPath(from: max(0, progress - 0.52), to: min(1, progress))
+    }
+}
+
+private struct ShootingStarHead: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.midX + rect.width * 0.18, y: rect.midY - rect.height * 0.18))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.midX + rect.width * 0.18, y: rect.midY + rect.height * 0.18))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.midX - rect.width * 0.18, y: rect.midY + rect.height * 0.18))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.midY))
+        path.addLine(to: CGPoint(x: rect.midX - rect.width * 0.18, y: rect.midY - rect.height * 0.18))
+        path.closeSubpath()
+        return path
     }
 }
