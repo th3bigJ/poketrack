@@ -107,9 +107,14 @@
           ],
           "localizations" : [
             {
-              "description" : "",
-              "displayName" : "",
+              "description" : "Unlimited wishlist and Premium features in Bindr.",
+              "displayName" : "Bindr Premium Annual",
               "locale" : "en_US"
+            },
+            {
+              "description" : "Unlimited wishlist and Premium features in Bindr.",
+              "displayName" : "Bindr Premium Annual",
+              "locale" : "en_GB"
             }
           ],
           "productID" : "app1xy.bindr.premium.annual",

@@ -35,6 +35,9 @@ struct OnboardingPremiumView: View {
                         title: "Unlock the full experience.",
                         subtitle: "Unlimited everything — scans, collection, binders, and available-card trade tools — plus full price history and offline mode."
                     )
+                    if services.store.requiresSandboxAccount {
+                        TestFlightSandboxNotice()
+                    }
                     featureBullets
                     planPicker
                     Color.clear.frame(height: 12)
@@ -49,7 +52,7 @@ struct OnboardingPremiumView: View {
                     OnboardingPrimaryButton(
                         title: subscribeTitle,
                         isLoading: isPurchasing,
-                        disabled: services.store.products.isEmpty
+                        disabled: !services.store.hasPurchaseOptions
                     ) {
                         Task { await runPurchase() }
                     }
@@ -84,23 +87,27 @@ struct OnboardingPremiumView: View {
 
     // MARK: - Plan picker
 
+    private var pricing: PremiumSubscriptionPricing {
+        services.store.subscriptionPricing
+    }
+
     private var planPicker: some View {
         HStack(spacing: BindrSpacing.md) {
             squarePlanTile(
                 isAnnual: false,
                 label: "Monthly",
-                price: services.store.products.first?.displayPrice ?? "£2.99",
-                breakdown: "£2.99 / mo",
+                price: pricing.monthlyDisplayPrice,
+                breakdown: pricing.monthlyBreakdown,
                 meta: nil
             )
-            
+
             squarePlanTile(
                 isAnnual: true,
                 label: "Annual",
-                price: services.store.annualProduct?.displayPrice ?? "£24.99",
-                breakdown: "£2.08 / mo",
-                meta: "Save 30%",
-                subMeta: "Save £10.89/yr"
+                price: pricing.annualDisplayPrice,
+                breakdown: pricing.annualMonthlyBreakdown,
+                meta: pricing.annualSavingsBadge,
+                subMeta: pricing.annualSavingsDetail
             )
         }
         .padding(.top, 4)
@@ -246,9 +253,7 @@ struct OnboardingPremiumView: View {
     // MARK: - Purchase
 
     private var subscribeTitle: String {
-        let price = selectAnnual
-            ? (services.store.annualProduct?.displayPrice ?? "£24.99")
-            : (services.store.products.first?.displayPrice ?? "£2.99")
+        let price = pricing.displayPrice(annual: selectAnnual)
         return "Subscribe · \(price)"
     }
 

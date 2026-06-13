@@ -25,6 +25,20 @@ final class StoreKitService {
     private(set) var isRestoring = false
     private(set) var restoreMessage: String?
 
+    /// TestFlight builds bill through Apple's sandbox — testers must sign in under Settings → App Store → Sandbox Account.
+    var requiresSandboxAccount: Bool {
+        AppDistribution.isTestFlight
+    }
+
+    var hasPurchaseOptions: Bool {
+        !products.isEmpty
+    }
+
+    /// Localized plan prices for paywalls — always matches the App Store storefront currency.
+    var subscriptionPricing: PremiumSubscriptionPricing {
+        PremiumSubscriptionPricing(monthlyProduct: products.first, annualProduct: annualProduct)
+    }
+
     private var updatesTask: Task<Void, Never>?
 
     #if DEBUG
@@ -41,7 +55,10 @@ final class StoreKitService {
         debugForceFreeTier = UserDefaults.standard.bool(forKey: Self.forceFreeTierDefaultsKey)
         #endif
         updatesTask = Task { await observeTransactions() }
-        Task { await checkEntitlements() }
+        Task {
+            await finishUnfinishedTransactions()
+            await checkEntitlements()
+        }
     }
 
     func loadProducts() async {
@@ -55,8 +72,9 @@ final class StoreKitService {
             }.value
             products = fetched.filter { $0.id == AppConfiguration.premiumProductID }
             annualProduct = fetched.first { $0.id == AppConfiguration.premiumAnnualProductID }
+            purchaseError = nil
         } catch {
-            purchaseError = error.localizedDescription
+            purchaseError = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
             products = []
             annualProduct = nil
         }
@@ -91,6 +109,7 @@ final class StoreKitService {
 
     func purchase(annual: Bool = false) async throws {
         purchaseError = nil
+
         let product: Product?
         if annual {
             product = annualProduct ?? products.first
@@ -101,20 +120,26 @@ final class StoreKitService {
             await loadProducts()
             throw PurchaseError.productUnavailable
         }
-        let result = try await product.purchase()
-        switch result {
-        case .success(let verification):
-            guard case .verified(let t) = verification else { return }
-            if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
-                setPremiumEntitlement(true)
-                await t.finish()
+        do {
+            let result = try await product.purchase()
+            switch result {
+            case .success(let verification):
+                guard case .verified(let t) = verification else { return }
+                if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
+                    setPremiumEntitlement(true)
+                    await t.finish()
+                }
+            case .userCancelled:
+                break
+            case .pending:
+                break
+            @unknown default:
+                break
             }
-        case .userCancelled:
-            break
-        case .pending:
-            break
-        @unknown default:
-            break
+        } catch {
+            let message = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
+            purchaseError = message
+            throw PurchaseError.storeKit(message)
         }
     }
 
@@ -124,13 +149,33 @@ final class StoreKitService {
         isRestoring = true
         defer { isRestoring = false }
 
-        try await AppStore.sync()
+        do {
+            try await AppStore.sync()
+        } catch {
+            let message = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
+            purchaseError = message
+            throw PurchaseError.storeKit(message)
+        }
         await fetchAndApplyEntitlements()
 
         if premiumEntitlement {
             restoreMessage = nil
         } else {
-            restoreMessage = "No active subscription was found for this Apple ID."
+            restoreMessage = requiresSandboxAccount
+                ? "No active subscription was found. Make sure you're signed into a Sandbox Apple ID under Settings → App Store → Sandbox Account."
+                : "No active subscription was found for this Apple ID."
+        }
+    }
+
+    /// Clears any transactions left open by a crash or network drop so new purchases can proceed.
+    private func finishUnfinishedTransactions() async {
+        for await result in StoreKit.Transaction.unfinished {
+            guard case .verified(let transaction) = result else { continue }
+            if transaction.productID == AppConfiguration.premiumProductID
+                || transaction.productID == AppConfiguration.premiumAnnualProductID {
+                setPremiumEntitlement(true)
+            }
+            await transaction.finish()
         }
     }
 
@@ -148,15 +193,54 @@ final class StoreKitService {
         premiumEntitlement = isPremium
         UserDefaults.standard.set(isPremium, forKey: Self.premiumEntitlementDefaultsKey)
     }
+
+    private static func userFacingMessage(for error: Error, testFlight: Bool) -> String {
+        if let purchaseError = error as? PurchaseError {
+            return purchaseError.errorDescription ?? error.localizedDescription
+        }
+
+        if let storeKitError = error as? StoreKitError {
+            switch storeKitError {
+            case .networkError:
+                return "Couldn't reach the App Store. Check your connection and try again."
+            case .notAvailableInStorefront:
+                return "Premium isn't available in your App Store region yet."
+            case .notEntitled:
+                return testFlight
+                    ? "No active subscription was found. Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account."
+                    : "No active subscription was found for this Apple ID."
+            case .userCancelled:
+                return error.localizedDescription
+            default:
+                break
+            }
+        }
+
+        let nsError = error as NSError
+        if nsError.domain == "SKInternalErrorDomain" || nsError.domain == SKErrorDomain {
+            #if DEBUG
+            print("[StoreKit] \(nsError.domain) code \(nsError.code): \(nsError)")
+            #endif
+            if testFlight {
+                return "Couldn't complete the purchase. Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account, then try again."
+            }
+            return "Apple couldn't complete the purchase. If this keeps happening, sign out and back into the App Store, or try again later."
+        }
+
+        return error.localizedDescription
+    }
 }
 
 enum PurchaseError: LocalizedError {
     case productUnavailable
+    case storeKit(String)
 
     var errorDescription: String? {
         switch self {
         case .productUnavailable:
             return "Premium is not available yet. Configure the in-app purchase in App Store Connect."
+        case .storeKit(let message):
+            return message
         }
     }
 }

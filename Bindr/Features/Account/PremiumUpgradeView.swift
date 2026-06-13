@@ -58,6 +58,9 @@ struct PremiumUpgradeView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: BindrSpacing.lg) {
                         heroBlock
+                        if services.store.requiresSandboxAccount {
+                            TestFlightSandboxNotice()
+                        }
                         benefitsList
                         planPickerBlock
                         Color.clear.frame(height: 10)
@@ -157,34 +160,30 @@ struct PremiumUpgradeView: View {
 
     // MARK: Plan Picker
 
+    private var pricing: PremiumSubscriptionPricing {
+        services.store.subscriptionPricing
+    }
+
     private var planPickerBlock: some View {
         HStack(spacing: BindrSpacing.md) {
             squarePlanTile(
                 plan: .monthly,
                 label: "Monthly",
-                price: monthlyPrice,
-                breakdown: "£2.99 / mo",
+                price: pricing.monthlyDisplayPrice,
+                breakdown: pricing.monthlyBreakdown,
                 meta: nil
             )
-            
+
             squarePlanTile(
                 plan: .annual,
                 label: "Annual",
-                price: annualPrice,
-                breakdown: "£2.08 / mo",
-                meta: "Save 30%",
-                subMeta: "Save £10.89/yr"
+                price: pricing.annualDisplayPrice,
+                breakdown: pricing.annualMonthlyBreakdown,
+                meta: pricing.annualSavingsBadge,
+                subMeta: pricing.annualSavingsDetail
             )
         }
         .padding(.top, 8)
-    }
-
-    private var monthlyPrice: String {
-        services.store.products.first?.displayPrice ?? "£2.99"
-    }
-
-    private var annualPrice: String {
-        services.store.annualProduct?.displayPrice ?? "£24.99"
     }
 
     private func squarePlanTile(
@@ -273,14 +272,9 @@ struct PremiumUpgradeView: View {
             OnboardingPrimaryButton(
                 title: subscribeTitle,
                 isLoading: isPurchasing,
-                disabled: services.store.products.isEmpty
+                disabled: !services.store.hasPurchaseOptions
             ) {
-                Task {
-                    isPurchasing = true
-                    defer { isPurchasing = false }
-                    try? await services.store.purchase(annual: selectedPlan == .annual)
-                    if services.store.isPremium { dismiss() }
-                }
+                Task { await runPurchase() }
             }
             .padding(.horizontal, BindrSpacing.lg)
 
@@ -308,15 +302,34 @@ struct PremiumUpgradeView: View {
     }
 
     private var subscribeTitle: String {
-        let price = selectedPlan == .annual ? annualPrice : monthlyPrice
+        let price = pricing.displayPrice(annual: selectedPlan == .annual)
         return "Subscribe · \(price)"
     }
 
     private var footerNote: String {
+        if services.store.requiresSandboxAccount {
+            return "Sandbox subscription · auto-renews in test until cancelled in Settings."
+        }
         if let product = services.store.products.first {
             return "\(product.displayName) · auto-renews until cancelled."
         }
         return "Configure in App Store Connect to enable purchase."
+    }
+
+    private func runPurchase() async {
+        restoreError = nil
+        isPurchasing = true
+        defer { isPurchasing = false }
+        do {
+            try await services.store.purchase(annual: selectedPlan == .annual)
+            if services.store.isPremium { dismiss() }
+        } catch is CancellationError {
+            return
+        } catch PurchaseError.productUnavailable {
+            return
+        } catch {
+            // `StoreKitService.purchase` already sets `purchaseError` with a friendly message.
+        }
     }
 
     private func runRestore() async {
@@ -328,8 +341,10 @@ struct PremiumUpgradeView: View {
             } else if let message = services.store.restoreMessage {
                 restoreError = message
             }
+        } catch is CancellationError {
+            return
         } catch {
-            restoreError = error.localizedDescription
+            restoreError = services.store.purchaseError ?? error.localizedDescription
         }
     }
 }
