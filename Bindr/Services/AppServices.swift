@@ -17,6 +17,8 @@ final class AppServices {
     }
 
     private let launchDailyRefreshTimeoutNanoseconds: UInt64 = 5_000_000_000
+    /// First-install catalog sync can take minutes; don't switch to "Finishing update…" too early.
+    private let initialBootstrapTimeoutNanoseconds: UInt64 = 60_000_000_000
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let cardData: CardDataService
@@ -54,6 +56,8 @@ final class AppServices {
 
     private(set) var isReady = false
     private(set) var isBootstrapping = false
+    /// Joins concurrent callers onto one bootstrap run (prefetch + catalog pipeline).
+    private var bootstrapInFlight: Task<Void, Never>?
     /// Set when the returning-user daily refresh path has deferred work that should run
     /// after the launch overlay fades. RootView calls `runDeferredLaunchServicesIfNeeded()`
     /// from the fade completion block to avoid blocking the fade animation.
@@ -207,33 +211,53 @@ final class AppServices {
     }
 
     func bootstrap() async {
-        guard !isReady, !isBootstrapping else { return }
-        await awaitCatalogPrefetchIfNeeded()
+        if isReady { return }
+        if let bootstrapInFlight {
+            await bootstrapInFlight.value
+            return
+        }
+
+        let task = Task { [weak self] in
+            guard let self else { return }
+            await self.performBootstrap()
+        }
+        bootstrapInFlight = task
+        await task.value
+        bootstrapInFlight = nil
+    }
+
+    private func performBootstrap() async {
+        guard !isReady else { return }
         isBootstrapping = true
         defer { isBootstrapping = false }
 
-        let bootstrapTask = Task { [weak self] in
+        bootstrapShowsDownloadProgressUI = true
+        bootstrapMessage = "Updating Pokémon card data…"
+        bootstrapStatus = "Preparing downloads…"
+        bootstrapProgress = max(bootstrapProgress, 0.02)
+
+        await awaitCatalogPrefetchIfNeeded()
+
+        let pipelineTask = Task { [weak self] in
             guard let self else { return }
             await self.runStartupCatalogPipeline(updateBootstrapProgressUI: true)
         }
-        
-        // Enforce a strict launch gate: if timeout is reached, keep showing
-        // the launch surface and wait for the blocking bootstrap task to finish.
+
         let completedWithinTimeout = await waitForTaskOrTimeout(
-            bootstrapTask,
-            timeoutNanoseconds: 8_000_000_000 // 8 seconds
+            pipelineTask,
+            timeoutNanoseconds: initialBootstrapTimeoutNanoseconds
         )
-        
+
         if !completedWithinTimeout {
-            // Prime local cached/bundled catalog datasets while waiting, then
-            // hold the gate until bootstrap fully completes.
             await primeLaunchCatalogFromLocalCache()
             bootstrapStatus = "Finishing update…"
-            await bootstrapTask.value
+            bootstrapProgress = max(bootstrapProgress, 0.05)
+            bootstrapShowsDownloadProgressUI = true
+            await pipelineTask.value
         }
 
         await ensureMarketPricingReadyIfNeeded(updateProgressUI: true)
-        
+
         brandSettings.markInitialAppBootstrapCompleted()
         pendingLightBrowseTabEntry = true
         isLaunchCatalogPipelineComplete = true
@@ -447,10 +471,14 @@ final class AppServices {
         if updateBootstrapProgressUI {
             bootstrapShowsDownloadProgressUI = true
             bootstrapMessage = "Updating Pokémon card data…"
-            bootstrapStatus = "Preparing downloads…"
-            bootstrapProgress = 0
-            bootstrapDownloadedBytes = 0
-            bootstrapEstimatedTotalBytes = 0
+            let isContinuingBootstrap = bootstrapProgress > 0.001
+                || bootstrapStatus == "Finishing update…"
+            if !isContinuingBootstrap {
+                bootstrapStatus = "Preparing downloads…"
+                bootstrapProgress = 0
+                bootstrapDownloadedBytes = 0
+                bootstrapEstimatedTotalBytes = 0
+            }
             await Task.yield()
             await Task.yield()
         }
@@ -464,11 +492,9 @@ final class AppServices {
         if updateBootstrapProgressUI {
             progressHandler = { [weak self] snapshot in
                 guard let self else { return }
-                if snapshot.downloadedBytes > 0 {
-                    self.bootstrapShowsDownloadProgressUI = true
-                } else if snapshot.fractionCompleted > 0 {
-                    // Daily pricing refresh often completes files with 0 bytes (304 / unchanged);
-                    // still show the determinate bar from file-fraction progress.
+                if snapshot.downloadedBytes > 0
+                    || snapshot.fractionCompleted > 0
+                    || snapshot.totalFiles > 0 {
                     self.bootstrapShowsDownloadProgressUI = true
                 }
                 self.bootstrapStatus = snapshot.status

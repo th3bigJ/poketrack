@@ -50,7 +50,7 @@ struct PremiumLineCardBadge: View {
                         .tracking(geo.size.width * 0.02)
                         .foregroundStyle(lineColor)
 
-                    BindrBrandLogoView(maxWidth: geo.size.width * 0.78, showsDarkBackdrop: false)
+                    BindrBrandLogoView(maxWidth: geo.size.width * 0.78)
                         .padding(.vertical, geo.size.width * 0.02)
                 }
                 .padding(.vertical, geo.size.width * 0.12)

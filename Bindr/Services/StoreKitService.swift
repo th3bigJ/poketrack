@@ -203,17 +203,38 @@ final class StoreKitService {
             purchaseError = message
             throw PurchaseError.storeKit(message)
         }
+
+        // StoreKit may show "You're currently subscribed" without returning `.success`
+        // (e.g. user dismisses the sheet). Sync with Apple and re-read entitlements.
+        if !premiumEntitlement {
+            try? await AppStore.sync()
+            await fetchAndApplyEntitlements(fromExplicitUserAction: true)
+        }
     }
 
     func restore() async throws {
         purchaseError = nil
         restoreMessage = nil
 
-        // Read entitlements from StoreKit's local cache — does not call AppStore.sync(),
-        // so it avoids the system "Sign in to Apple Account" / password sheet.
-        // StoreKit 2 keeps subscriptions available here for the signed-in store account.
         isRestoring = true
         defer { isRestoring = false }
+
+        await fetchAndApplyEntitlements(fromExplicitUserAction: true)
+        if premiumEntitlement {
+            restoreMessage = nil
+            return
+        }
+
+        // Local `currentEntitlements` can be empty on a fresh install even when the
+        // Apple ID has an active subscription — sync before reporting "not found".
+        do {
+            try await AppStore.sync()
+        } catch {
+            let message = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
+            restoreMessage = message
+            purchaseError = message
+            throw PurchaseError.storeKit(message)
+        }
 
         await fetchAndApplyEntitlements(fromExplicitUserAction: true)
 

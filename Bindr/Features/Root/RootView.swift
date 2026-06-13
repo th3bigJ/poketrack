@@ -524,13 +524,17 @@ struct RootView: View {
                     showOnboardingImmediate = true
                 }
 
-                // First-run: bootstrap in background while user goes through onboarding.
+                // First-run: start bootstrap while onboarding is visible; join it after onboarding.
                 if !services.brandSettings.hasCompletedInitialAppBootstrap {
-                    await services.bootstrap()
+                    Task { await services.bootstrap() }
                 }
-                // Wait for onboarding to finish — wordmark appears afterward.
+
                 while showOnboardingImmediate {
                     try? await Task.sleep(nanoseconds: 50_000_000)
+                }
+
+                if !services.isReady {
+                    await services.bootstrap()
                 }
             }
 
@@ -590,11 +594,6 @@ struct RootView: View {
                 progress: brandOnboardingProgressState,
                 onRevealComplete: { hasRevealedLaunchWordmark = true }
             )
-            .task {
-                guard services.brandSettings.hasCompletedBrandOnboarding,
-                      !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
-                await services.bootstrap()
-            }
         }
     }
 
