@@ -126,15 +126,7 @@ struct BindrOnboardingFlow: View {
         didFinish = true
         Haptics.success()
         services.brandSettings.completeBrandOnboarding()
-        if services.offlineImageSettings.isOfflinePackEnabled(for: .pokemon) {
-            Task {
-                await services.offlineImageDownload.runFullDownloadIfNeeded(
-                    brand: .pokemon,
-                    nationalDexPokemon: services.cardData.nationalDexPokemon,
-                    sealedProducts: services.sealedProducts.products
-                )
-            }
-        }
+        services.schedulePostBootstrapOfflineImageDownload(for: .pokemon)
         onWillDismiss?()
         withAnimation(.easeInOut(duration: 0.3)) {
             isPresented = false

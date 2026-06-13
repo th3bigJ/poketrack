@@ -17,8 +17,6 @@ final class AppServices {
     }
 
     private let launchDailyRefreshTimeoutNanoseconds: UInt64 = 5_000_000_000
-    /// First-install catalog sync can take minutes; don't switch to "Finishing update…" too early.
-    private let initialBootstrapTimeoutNanoseconds: UInt64 = 60_000_000_000
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let cardData: CardDataService
@@ -127,8 +125,6 @@ final class AppServices {
     private(set) var catalogDownloadDownloadedBytes: Int64 = 0
     private(set) var catalogDownloadEstimatedTotalBytes: Int64 = 0
     private(set) var catalogCardsLastUpdatedAt: Date?
-    /// Background prefetch started during onboarding; bootstrap awaits this before syncing.
-    private var catalogPrefetchTask: Task<Void, Never>?
 
     init() {
         let socialAuth = SocialAuthService()
@@ -159,13 +155,6 @@ final class AppServices {
         self.offlineImageSettings = offlineImageSettings
         self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
         self.essentialAssetsDownload = EssentialAssetsDownloadService()
-        // First-run: begin network sync immediately so catalog data is being downloaded
-        // while the user reads through the splash and onboarding screens (~15-30s of user time).
-        // bootstrap() is idempotent — when it runs after onboarding it will find all files
-        // already cached and complete near-instantly.
-        if !brandSettings.hasCompletedInitialAppBootstrap {
-            prefetchCatalogInBackground(for: brandSettings.enabledBrands)
-        }
         if brandSettings.hasCompletedInitialAppBootstrap {
             isReady = true
             isLaunchCatalogPipelineComplete = false
@@ -193,6 +182,11 @@ final class AppServices {
             try? await Task.sleep(nanoseconds: 2_000_000_000)
             while !brandSettings.hasCompletedBrandOnboarding {
                 try? await Task.sleep(nanoseconds: 500_000_000)
+            }
+            // First-run catalog bootstrap owns SQLite + R2; defer session restore until it finishes
+            // so MainActor work cannot interleave with download progress on the post-onboarding screen.
+            while !brandSettings.hasCompletedInitialAppBootstrap && !isReady {
+                try? await Task.sleep(nanoseconds: 200_000_000)
             }
             await socialAuth.restoreSession()
             // syncSocialLibrariesIfPossible is intentionally omitted here.
@@ -236,27 +230,7 @@ final class AppServices {
         bootstrapStatus = "Preparing downloads…"
         bootstrapProgress = max(bootstrapProgress, 0.02)
 
-        await awaitCatalogPrefetchIfNeeded()
-
-        let pipelineTask = Task { [weak self] in
-            guard let self else { return }
-            await self.runStartupCatalogPipeline(updateBootstrapProgressUI: true)
-        }
-
-        let completedWithinTimeout = await waitForTaskOrTimeout(
-            pipelineTask,
-            timeoutNanoseconds: initialBootstrapTimeoutNanoseconds
-        )
-
-        if !completedWithinTimeout {
-            await primeLaunchCatalogFromLocalCache()
-            bootstrapStatus = "Finishing update…"
-            bootstrapProgress = max(bootstrapProgress, 0.05)
-            bootstrapShowsDownloadProgressUI = true
-            await pipelineTask.value
-        }
-
-        await ensureMarketPricingReadyIfNeeded(updateProgressUI: true)
+        await runStartupCatalogPipeline(updateBootstrapProgressUI: true)
 
         brandSettings.markInitialAppBootstrapCompleted()
         pendingLightBrowseTabEntry = true
@@ -366,28 +340,22 @@ final class AppServices {
         }
     }
 
-    /// Silently pre-fetches catalog data for the selected brand in the background during onboarding,
-    /// so the post-onboarding bootstrap has less network work to do. Fire-and-forget; no UI feedback.
-    func prefetchCatalogInBackground(for brands: Set<TCGBrand>) {
-        guard catalogPrefetchTask == nil else { return }
-        catalogPrefetchTask = Task(priority: .background) { [weak self] in
+    /// After first-run bootstrap completes, download offline image packs if the user enabled them during onboarding.
+    func schedulePostBootstrapOfflineImageDownload(for brand: TCGBrand) {
+        guard offlineImageSettings.isOfflinePackEnabled(for: brand) else { return }
+        Task { @MainActor [weak self] in
             guard let self else { return }
-            await CatalogSyncCoordinator.shared.syncAllIfNeeded(
-                enabledBrands: brands,
-                progressHandler: nil
-            )
-            await brandsManifest.refresh()
-            await variantsCatalog.reloadFromStore()
-            await MainActor.run {
-                self.catalogPrefetchTask = nil
+            if let bootstrapInFlight {
+                await bootstrapInFlight.value
+            } else if !isReady {
+                await bootstrap()
             }
-        }
-    }
-
-    private func awaitCatalogPrefetchIfNeeded() async {
-        if let prefetch = catalogPrefetchTask {
-            await prefetch.value
-            catalogPrefetchTask = nil
+            guard isReady else { return }
+            await offlineImageDownload.runFullDownloadIfNeeded(
+                brand: brand,
+                nationalDexPokemon: cardData.nationalDexPokemon,
+                sealedProducts: sealedProducts.products
+            )
         }
     }
 
@@ -471,14 +439,8 @@ final class AppServices {
         if updateBootstrapProgressUI {
             bootstrapShowsDownloadProgressUI = true
             bootstrapMessage = "Updating Pokémon card data…"
-            let isContinuingBootstrap = bootstrapProgress > 0.001
-                || bootstrapStatus == "Finishing update…"
-            if !isContinuingBootstrap {
-                bootstrapStatus = "Preparing downloads…"
-                bootstrapProgress = 0
-                bootstrapDownloadedBytes = 0
-                bootstrapEstimatedTotalBytes = 0
-            }
+            bootstrapStatus = "Downloading card catalog…"
+            bootstrapProgress = max(bootstrapProgress, 0.04)
             await Task.yield()
             await Task.yield()
         }

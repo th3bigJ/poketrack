@@ -524,7 +524,8 @@ struct RootView: View {
                     showOnboardingImmediate = true
                 }
 
-                // First-run: start bootstrap while onboarding is visible; join it after onboarding.
+                // Overlap the catalog download with onboarding, but only after onboarding is visible
+                // (avoids racing the wordmark animation and keeps side effects off the pre-onboarding path).
                 if !services.brandSettings.hasCompletedInitialAppBootstrap {
                     Task { await services.bootstrap() }
                 }
@@ -532,10 +533,10 @@ struct RootView: View {
                 while showOnboardingImmediate {
                     try? await Task.sleep(nanoseconds: 50_000_000)
                 }
+            }
 
-                if !services.isReady {
-                    await services.bootstrap()
-                }
+            if !services.brandSettings.hasCompletedInitialAppBootstrap {
+                await services.bootstrap()
             }
 
             if services.isReady {

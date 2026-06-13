@@ -309,10 +309,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     }
 
     func fillMissingSetCards(for brand: TCGBrand) async {
-        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
-        let store = CatalogStore.shared
-        try? await store.open()
-        await PokemonCatalogSyncPhase(session: session, store: store).fillMissingSetCards()
+        await syncGate.run {
+            guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
+            let store = CatalogStore.shared
+            try? await store.open()
+            await PokemonCatalogSyncPhase(session: self.session, store: store).fillMissingSetCards()
+        }
     }
 
     func forceCardDataRefresh(

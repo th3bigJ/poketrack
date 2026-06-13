@@ -66,10 +66,6 @@ final class StoreKitService {
     #endif
 
     init() {
-        // Always start non‑Premium until StoreKit confirms an active subscription.
-        // A cached UserDefaults flag (from Xcode debug, an old TestFlight test, or a
-        // race before checkEntitlements finishes) must not unlock Premium or skip
-        // onboarding — that cache is written by setPremiumEntitlement but never read here.
         premiumEntitlement = false
         migrateExplicitActivationIfNeeded()
         #if DEBUG
@@ -81,8 +77,6 @@ final class StoreKitService {
                 storefrontCountryCode = storefront.countryCode
             }
             await finishUnfinishedTransactions()
-            // Fresh installs must activate via Subscribe or Restore — a background
-            // entitlement pass here can race the user's restore and look like a no-op.
             if !requiresExplicitPremiumActivation {
                 await checkEntitlements()
             }
@@ -102,7 +96,6 @@ final class StoreKitService {
             storefrontCountryCode = storefront.countryCode
         }
 
-        // Fetch from App Store off @MainActor — network latency must not block the main thread.
         do {
             let fetched = try await Task.detached(priority: .utility) {
                 try await Product.products(for: [
@@ -122,50 +115,7 @@ final class StoreKitService {
 
     func checkEntitlements() async {
         guard !isCheckingEntitlements else { return }
-        await fetchAndApplyEntitlements(fromExplicitUserAction: false)
-    }
-
-    /// Always re-reads StoreKit entitlements. Used by restore so a concurrent launch-time
-    /// entitlement check cannot cause the refresh to be skipped.
-    private func fetchAndApplyEntitlements(fromExplicitUserAction: Bool) async {
-        entitlementFetchGeneration += 1
-        let generation = entitlementFetchGeneration
-        isCheckingEntitlements = true
-        defer {
-            if generation == entitlementFetchGeneration {
-                isCheckingEntitlements = false
-            }
-        }
-
-        // Drain the async sequence on a background executor so StoreKit's
-        // network round-trip doesn't hold @MainActor while Apple's servers respond.
-        let premium = await Task.detached(priority: .userInitiated) {
-            var found = false
-            for await result in StoreKit.Transaction.currentEntitlements {
-                guard case .verified(let t) = result else { continue }
-                guard Self.isPremiumProduct(t.productID) else { continue }
-                guard Self.acceptsTransactionEnvironment(t.environment) else { continue }
-                found = true
-                break
-            }
-            return found
-        }.value
-
-        guard generation == entitlementFetchGeneration else { return }
-
-        if premium {
-            if requiresExplicitPremiumActivation && !fromExplicitUserAction {
-                // Fresh install: keep free until Subscribe or Restore Purchases.
-                setPremiumEntitlement(false)
-                return
-            }
-            setPremiumEntitlement(true)
-            if fromExplicitUserAction {
-                markExplicitPremiumActivationComplete()
-            }
-        } else {
-            setPremiumEntitlement(false)
-        }
+        await refreshPremiumAccess(fromExplicitUserAction: false)
     }
 
     func purchase(annual: Bool = false) async throws {
@@ -186,8 +136,7 @@ final class StoreKitService {
             switch result {
             case .success(let verification):
                 guard case .verified(let t) = verification else { return }
-                guard Self.isPremiumProduct(t.productID),
-                      Self.acceptsTransactionEnvironment(t.environment) else { return }
+                guard Self.transactionQualifies(t, relaxEnvironment: true) else { return }
                 setPremiumEntitlement(true)
                 markExplicitPremiumActivationComplete()
                 await t.finish()
@@ -201,14 +150,15 @@ final class StoreKitService {
         } catch {
             let message = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
             purchaseError = message
+            if !premiumEntitlement {
+                await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: true)
+            }
+            if premiumEntitlement { return }
             throw PurchaseError.storeKit(message)
         }
 
-        // StoreKit may show "You're currently subscribed" without returning `.success`
-        // (e.g. user dismisses the sheet). Sync with Apple and re-read entitlements.
         if !premiumEntitlement {
-            try? await AppStore.sync()
-            await fetchAndApplyEntitlements(fromExplicitUserAction: true)
+            await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: true)
         }
     }
 
@@ -219,31 +169,143 @@ final class StoreKitService {
         isRestoring = true
         defer { isRestoring = false }
 
-        await fetchAndApplyEntitlements(fromExplicitUserAction: true)
+        await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: false)
         if premiumEntitlement {
             restoreMessage = nil
             return
         }
 
-        // Local `currentEntitlements` can be empty on a fresh install even when the
-        // Apple ID has an active subscription — sync before reporting "not found".
+        var syncErrorMessage: String?
         do {
             try await AppStore.sync()
         } catch {
-            let message = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
-            restoreMessage = message
-            purchaseError = message
-            throw PurchaseError.storeKit(message)
+            syncErrorMessage = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
         }
 
-        await fetchAndApplyEntitlements(fromExplicitUserAction: true)
-
+        await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: false)
         if premiumEntitlement {
             restoreMessage = nil
+            return
+        }
+
+        if let syncErrorMessage {
+            restoreMessage = """
+            Couldn't sync with the App Store (\(syncErrorMessage)). \
+            If Subscribe shows you're already subscribed, tap Subscribe once — we'll activate Premium from your Apple ID.
+            """
         } else {
             restoreMessage = requiresSandboxAccount
                 ? "No active subscription was found on this device. Subscribe here, or sign into a Sandbox Apple ID under Settings → App Store → Sandbox Account if you purchased on another tester account."
                 : "No active subscription was found for this Apple ID on this device."
+        }
+    }
+
+    /// Re-reads Premium access from every StoreKit source Apple exposes.
+    private func refreshPremiumAccess(
+        fromExplicitUserAction: Bool,
+        attemptStoreSync: Bool = false
+    ) async {
+        entitlementFetchGeneration += 1
+        let generation = entitlementFetchGeneration
+        isCheckingEntitlements = true
+        defer {
+            if generation == entitlementFetchGeneration {
+                isCheckingEntitlements = false
+            }
+        }
+
+        if attemptStoreSync {
+            try? await AppStore.sync()
+        }
+
+        let found = await detectActivePremiumSubscription(fromExplicitUserAction: fromExplicitUserAction)
+        guard generation == entitlementFetchGeneration else { return }
+        applyPremiumState(found: found, fromExplicitUserAction: fromExplicitUserAction)
+    }
+
+    private func detectActivePremiumSubscription(fromExplicitUserAction: Bool) async -> Bool {
+        let relaxEnvironment = fromExplicitUserAction && AppDistribution.channel != .appStore
+
+        if await scanCurrentEntitlements(relaxEnvironment: relaxEnvironment) {
+            return true
+        }
+        if await scanSubscriptionProductStatus(relaxEnvironment: relaxEnvironment) {
+            return true
+        }
+        if await scanLatestPremiumTransactions(relaxEnvironment: relaxEnvironment) {
+            return true
+        }
+        return false
+    }
+
+    private func scanCurrentEntitlements(relaxEnvironment: Bool) async -> Bool {
+        await Task.detached(priority: .userInitiated) {
+            for await result in StoreKit.Transaction.currentEntitlements {
+                guard case .verified(let transaction) = result else { continue }
+                if Self.transactionQualifies(transaction, relaxEnvironment: relaxEnvironment) {
+                    return true
+                }
+            }
+            return false
+        }.value
+    }
+
+    private func scanSubscriptionProductStatus(relaxEnvironment: Bool) async -> Bool {
+        if products.isEmpty, annualProduct == nil {
+            await loadProducts()
+        }
+
+        var candidates = products
+        if let annualProduct {
+            candidates.append(annualProduct)
+        }
+
+        for product in candidates {
+            guard Self.isPremiumProduct(product.id),
+                  let statuses = try? await product.subscription?.status else { continue }
+
+            for status in statuses {
+                switch status.state {
+                case .subscribed, .inGracePeriod, .inBillingRetryPeriod:
+                    if case .verified(let transaction) = status.transaction,
+                       Self.transactionQualifies(transaction, relaxEnvironment: relaxEnvironment) {
+                        return true
+                    }
+                default:
+                    continue
+                }
+            }
+        }
+        return false
+    }
+
+    private func scanLatestPremiumTransactions(relaxEnvironment: Bool) async -> Bool {
+        let productIDs = [
+            AppConfiguration.premiumProductID,
+            AppConfiguration.premiumAnnualProductID
+        ]
+
+        for productID in productIDs {
+            guard let result = await StoreKit.Transaction.latest(for: productID),
+                  case .verified(let transaction) = result,
+                  Self.transactionQualifies(transaction, relaxEnvironment: relaxEnvironment) else { continue }
+            return true
+        }
+        return false
+    }
+
+    private func applyPremiumState(found: Bool, fromExplicitUserAction: Bool) {
+        if found {
+            if requiresExplicitPremiumActivation && !fromExplicitUserAction {
+                setPremiumEntitlement(false)
+                return
+            }
+            setPremiumEntitlement(true)
+            if fromExplicitUserAction {
+                markExplicitPremiumActivationComplete()
+            }
+        } else {
+            setPremiumEntitlement(false)
         }
     }
 
@@ -252,7 +314,7 @@ final class StoreKitService {
         for await result in StoreKit.Transaction.unfinished {
             guard case .verified(let transaction) = result else { continue }
             if Self.isPremiumProduct(transaction.productID),
-               Self.acceptsTransactionEnvironment(transaction.environment),
+               Self.transactionQualifies(transaction, relaxEnvironment: !requiresExplicitPremiumActivation),
                !requiresExplicitPremiumActivation {
                 setPremiumEntitlement(true)
             }
@@ -263,21 +325,36 @@ final class StoreKitService {
     private func observeTransactions() async {
         for await update in StoreKit.Transaction.updates {
             guard case .verified(let t) = update else { continue }
-            if Self.isPremiumProduct(t.productID),
-               Self.acceptsTransactionEnvironment(t.environment) {
-                if requiresExplicitPremiumActivation {
-                    await t.finish()
-                    continue
-                }
-                await checkEntitlements()
+            guard Self.isPremiumProduct(t.productID) else { continue }
+
+            if requiresExplicitPremiumActivation {
                 await t.finish()
+                continue
             }
+
+            if Self.transactionQualifies(t, relaxEnvironment: false) {
+                await refreshPremiumAccess(fromExplicitUserAction: false)
+            }
+            await t.finish()
         }
     }
 
     nonisolated private static func isPremiumProduct(_ productID: String) -> Bool {
         productID == AppConfiguration.premiumProductID
             || productID == AppConfiguration.premiumAnnualProductID
+    }
+
+    nonisolated private static func transactionQualifies(
+        _ transaction: StoreKit.Transaction,
+        relaxEnvironment: Bool
+    ) -> Bool {
+        guard isPremiumProduct(transaction.productID) else { return false }
+        guard transaction.revocationDate == nil else { return false }
+        guard relaxEnvironment || acceptsTransactionEnvironment(transaction.environment) else { return false }
+        if let expiration = transaction.expirationDate, expiration < Date() {
+            return false
+        }
+        return true
     }
 
     /// TestFlight accepts sandbox transactions only; App Store accepts production only.
@@ -324,11 +401,32 @@ final class StoreKitService {
         }
 
         let nsError = error as NSError
+        if nsError.domain == SKErrorDomain {
+            switch SKError.Code(rawValue: nsError.code) {
+            case .cloudServiceNetworkConnectionFailed, .cloudServiceRevoked:
+                return "Couldn't reach the App Store. Check your connection and try again."
+            case .cloudServicePermissionDenied:
+                return testFlight
+                    ? "App Store access was denied. Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account."
+                    : "App Store access was denied. Check Settings → Apple Account → Media & Purchases."
+            case .paymentCancelled:
+                return "Purchase cancelled."
+            default:
+                break
+            }
+        }
+
         if nsError.domain == "SKInternalErrorDomain" || nsError.domain == SKErrorDomain {
             if testFlight {
-                return "Couldn't complete the purchase. Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account, then try again."
+                return "Unable to complete request. Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account, then try again."
             }
-            return "Apple couldn't complete the purchase. If this keeps happening, sign out and back into the App Store, or try again later."
+            return "Unable to complete request. Sign out and back into the App Store in Settings, then try again."
+        }
+
+        if error.localizedDescription.localizedCaseInsensitiveContains("unable to complete") {
+            return testFlight
+                ? "Unable to complete request. Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account, then try again."
+                : "Unable to complete request. Sign out and back into the App Store in Settings, then try again."
         }
 
         return error.localizedDescription

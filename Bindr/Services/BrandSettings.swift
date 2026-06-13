@@ -30,11 +30,7 @@ final class BrandSettings {
         if defaults.object(forKey: Self.initialAppBootstrapKey) != nil {
             hasCompletedInitialAppBootstrap = defaults.bool(forKey: Self.initialAppBootstrapKey)
         } else {
-            let bootstrap = onboarding && Self.hasExistingCatalogDatabaseFile()
-            hasCompletedInitialAppBootstrap = bootstrap
-            if bootstrap {
-                defaults.set(true, forKey: Self.initialAppBootstrapKey)
-            }
+            hasCompletedInitialAppBootstrap = false
         }
     }
 
@@ -48,19 +44,5 @@ final class BrandSettings {
 
     func setEnabled(_ brand: TCGBrand, isOn: Bool) {
         // No-op: only Pokemon is supported.
-    }
-
-    private static func hasExistingCatalogDatabaseFile() -> Bool {
-        guard let base = try? FileManager.default.url(
-            for: .applicationSupportDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: false
-        ) else { return false }
-        let path = base.appendingPathComponent("Bindr/catalog.sqlite", isDirectory: false).path
-        guard let attrs = try? FileManager.default.attributesOfItem(atPath: path),
-              let size = attrs[.size] as? NSNumber
-        else { return false }
-        return size.int64Value > 8_192
     }
 }
