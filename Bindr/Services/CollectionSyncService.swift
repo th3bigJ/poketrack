@@ -87,7 +87,7 @@ final class CollectionSyncService {
             let restoredCards = try UserLibraryBackupCodec.apply(
                 snapshot,
                 modelContext: ctx,
-                replaceExisting: force
+                replaceExisting: true
             )
             lastRestoredCardCount = restoredCards
             lastRestoredAt = Date()

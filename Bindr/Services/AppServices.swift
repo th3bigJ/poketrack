@@ -69,6 +69,8 @@ final class AppServices {
     private var cloudKitImportPollTask: Task<Void, Never>?
     private var cloudKitRestoreTimeoutWorkItem: DispatchWorkItem?
     private var hasArmedCloudKitRestoreTimeout = false
+    private var cloudKitLateImportPollTask: Task<Void, Never>?
+    private var hasAttemptedAutomaticCloudBackupRestore = false
     /// Timestamp used to avoid finalizing CloudKit readiness on the exact frame
     /// the launch catalog pipeline flips complete.
     private var launchCatalogPipelineCompletedAt: Date?
@@ -192,9 +194,6 @@ final class AppServices {
                 try? await Task.sleep(nanoseconds: 200_000_000)
             }
             await socialAuth.restoreSession()
-            if case .signedIn = socialAuth.authState {
-                await attemptCloudBackupRestoreIfStillEmpty()
-            }
             // syncSocialLibrariesIfPossible is intentionally omitted here.
             // setupWishlistAndLedger (called from RootView's launch task) already
             // runs a sync pass and is awaited before the overlay closes. Running it
@@ -696,7 +695,6 @@ final class AppServices {
             collectionLedger = ledger
         }
         bindCollectionSync(modelContext: modelContext)
-        await attemptCloudBackupRestoreIfStillEmpty()
         await syncSocialLibrariesIfPossible()
     }
 
@@ -730,14 +728,14 @@ final class AppServices {
         // change notification. Keep the overlay up through that quiet period; a
         // longer honest launch is better than revealing a frozen dashboard.
         let quietWindow: TimeInterval = 12.0
-        let timeoutAfterCatalog: TimeInterval = 180.0
+        let timeoutAfterCatalog: TimeInterval = 300.0
 
         startCloudKitImportPolling()
 
         let monitor = CloudKitIdleMonitor(
             quietWindow: quietWindow,
             requireRemoteChangeBeforeIdle: true,
-            maxWaitWithoutNotification: 60
+            maxWaitWithoutNotification: 120
         ) { [weak self] in
             guard let self else { return true }
             guard self.isLaunchCatalogPipelineComplete else {
@@ -809,15 +807,16 @@ final class AppServices {
     }
 
     private func handleLateCloudKitImport() async {
-        if libraryHasLocalData {
-            collectionInventoryRevision += 1
-            if let observer = cloudKitObserver {
-                NotificationCenter.default.removeObserver(observer)
-                cloudKitObserver = nil
-            }
-            return
+        // CloudKit merges can arrive in bursts; give SwiftData time to materialize rows.
+        try? await Task.sleep(for: .seconds(5))
+        guard libraryHasLocalData else { return }
+        collectionInventoryRevision += 1
+        if let observer = cloudKitObserver {
+            NotificationCenter.default.removeObserver(observer)
+            cloudKitObserver = nil
         }
-        await attemptCloudBackupRestoreIfStillEmpty()
+        cloudKitLateImportPollTask?.cancel()
+        cloudKitLateImportPollTask = nil
     }
 
     private func markCloudKitImportComplete() {
@@ -835,9 +834,44 @@ final class AppServices {
         cloudKitImportPollTask = nil
         cloudKitRestoreTimeoutWorkItem?.cancel()
         cloudKitRestoreTimeoutWorkItem = nil
-        await attemptCloudBackupRestoreIfStillEmpty()
         isCloudKitImportComplete = true
+
+        let isFreshInstall = !BindrApp.storeExistedAtLaunch
+        let iCloudAvailable = FileManager.default.ubiquityIdentityToken != nil
+            && !cloudSettings.isCloudKitFallbackActive
+
+        if isFreshInstall, iCloudAvailable, !libraryHasLocalData {
+            beginExtendedCloudKitRecoveryThenR2Fallback()
+        } else {
+            await attemptCloudBackupRestoreIfStillEmpty()
+            beginPostLaunchCloudKitRecoveryIfNeeded()
+        }
+    }
+
+    /// After reinstall, iCloud can take several minutes. Poll before falling back to R2
+    /// so we don't merge an R2 snapshot on top of a late iCloud import (duplicates).
+    private func beginExtendedCloudKitRecoveryThenR2Fallback() {
         beginPostLaunchCloudKitRecoveryIfNeeded()
+
+        guard !libraryHasLocalData else { return }
+
+        cloudKitLateImportPollTask?.cancel()
+        cloudKitLateImportPollTask = Task { [weak self] in
+            guard let self else { return }
+            let pollInterval: Duration = .seconds(3)
+            let maxPolls = 100 // ~5 minutes
+
+            for _ in 0..<maxPolls {
+                try? await Task.sleep(for: pollInterval)
+                if Task.isCancelled { return }
+                if self.libraryHasLocalData {
+                    self.collectionInventoryRevision += 1
+                    return
+                }
+            }
+
+            await self.attemptCloudBackupRestoreIfStillEmpty()
+        }
     }
 
     /// Pulls the social cloud backup (R2) when iCloud restore did not repopulate the collection.
@@ -845,7 +879,10 @@ final class AppServices {
         let restored = await collectionSync.restoreFromCloudBackupIfNeeded(force: force)
         if restored {
             collectionInventoryRevision += 1
-            collectionSync.scheduleUpload()
+            // Only push to R2 after an explicit user-initiated replace restore.
+            if force {
+                collectionSync.scheduleUpload()
+            }
         }
         return restored
     }
@@ -859,12 +896,15 @@ final class AppServices {
         guard let modelContext = socialSyncModelContext else {
             return
         }
-        // Brief pause so any final CloudKit merge batch can land first.
-        try? await Task.sleep(for: .seconds(3))
-        guard UserLibraryBackupCodec.localLibraryIsEmpty(modelContext) else { return }
         guard socialAuth.isSignedIn else {
             return
         }
+        guard !hasAttemptedAutomaticCloudBackupRestore else { return }
+        hasAttemptedAutomaticCloudBackupRestore = true
+
+        // Brief pause so any final CloudKit merge batch can land first.
+        try? await Task.sleep(for: .seconds(5))
+        guard UserLibraryBackupCodec.localLibraryIsEmpty(modelContext) else { return }
         _ = await restoreCollectionFromCloudBackup()
     }
 

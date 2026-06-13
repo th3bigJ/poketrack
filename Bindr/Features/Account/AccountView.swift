@@ -286,7 +286,7 @@ private struct DataSyncSettingsPage: View {
         case .cloudKitFallback:
             Text("iCloud sync isn't available on this device right now. Your data is stored locally on this device.")
         case .cloudKitConnected:
-            Text("Your collection, wishlist, and ledger sync automatically through iCloud. After reinstalling, stay on Wi‑Fi and wait on the launch screen — restore can take a few minutes. If data still does not appear, sign in to your Bindr account and use Backup & Restore.")
+            Text("Your collection, wishlist, and ledger sync automatically through iCloud. After reinstalling, stay on Wi‑Fi and wait several minutes on the launch screen — restore can take up to 5 minutes. Bindr cloud backup (below) is only used if iCloud does not restore your data.")
         case .iCloudAccountUnavailable:
             Text("Sign in to iCloud in Settings to sync your data across devices.")
         }
@@ -374,7 +374,7 @@ private struct BackupRestoreSettingsPage: View {
                         .foregroundStyle(.orange)
                 }
             } footer: {
-                Text("Downloads your latest cloud backup to this device. If you already have a library here, you'll be asked before anything is replaced.")
+                Text("Downloads your latest cloud backup and replaces the library on this device. If you already have cards here, you'll be asked before anything is replaced. After reinstall, wait for iCloud to finish before restoring from R2 to avoid duplicates.")
             }
         }
         .listStyle(.insetGrouped)

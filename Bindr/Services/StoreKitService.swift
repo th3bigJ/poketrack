@@ -66,8 +66,13 @@ final class StoreKitService {
     #endif
 
     init() {
-        premiumEntitlement = false
         migrateExplicitActivationIfNeeded()
+        if UserDefaults.standard.bool(forKey: Self.explicitActivationCompleteKey),
+           UserDefaults.standard.bool(forKey: Self.premiumEntitlementDefaultsKey) {
+            premiumEntitlement = true
+        } else {
+            premiumEntitlement = false
+        }
         #if DEBUG
         debugForceFreeTier = UserDefaults.standard.bool(forKey: Self.forceFreeTierDefaultsKey)
         #endif
@@ -211,6 +216,7 @@ final class StoreKitService {
 
     private func detectActivePremiumSubscription(fromExplicitUserAction: Bool) async -> Bool {
         let relaxEnvironment = fromExplicitUserAction
+            || UserDefaults.standard.bool(forKey: Self.explicitActivationCompleteKey)
 
         if await scanCurrentEntitlements(relaxEnvironment: relaxEnvironment) {
             return true
@@ -290,7 +296,10 @@ final class StoreKitService {
             if fromExplicitUserAction {
                 markExplicitPremiumActivationComplete()
             }
-        } else {
+        } else if fromExplicitUserAction || !UserDefaults.standard.bool(forKey: Self.explicitActivationCompleteKey) {
+            // Silent background checks must not revoke Premium that the user
+            // explicitly activated via Subscribe or Restore (e.g. onboarding restore
+            // followed by a deferred launch entitlement pass that misses sandbox).
             setPremiumEntitlement(false)
         }
     }
