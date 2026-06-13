@@ -539,10 +539,10 @@ private struct PremiumSettingsPage: View {
                         }
                     }
                 }
-                .disabled(services.store.isRestoring || !services.store.canAttemptSandboxPurchase)
+                .disabled(services.store.isRestoring)
             } footer: {
                 if services.store.requiresSandboxAccount {
-                    Text("Restore and subscribe use Apple's sandbox on TestFlight. Confirm your Sandbox Account above before testing purchases.")
+                    Text("Restore always works on TestFlight. Subscribe needs a Sandbox Apple ID — sign in under Settings → App Store → Sandbox Account, then confirm above.")
                 }
             }
         }

@@ -24,11 +24,13 @@ struct OnboardingPremiumView: View {
 
     @State private var selectAnnual: Bool = true
     @State private var isPurchasing: Bool = false
+    @State private var isRestoring: Bool = false
     @State private var purchaseError: String?
-    @State private var hasResolvedEntitlements = false
+    @State private var restoreMessage: String?
+    @State private var hasLoadedProducts = false
 
     private var isAlreadySubscribed: Bool {
-        hasResolvedEntitlements && services.store.isPremium
+        services.store.isPremium
     }
 
     var body: some View {
@@ -51,6 +53,20 @@ struct OnboardingPremiumView: View {
                         }
                         featureBullets
                         planPicker
+                        if let purchaseError {
+                            Text(purchaseError)
+                                .font(.footnote)
+                                .foregroundStyle(BindrPalette.alertRed)
+                                .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                        }
+                        if let restoreMessage {
+                            Text(restoreMessage)
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                                .frame(maxWidth: .infinity)
+                        }
                     }
                     Color.clear.frame(height: 12)
                 }
@@ -66,8 +82,8 @@ struct OnboardingPremiumView: View {
                     } else {
                         OnboardingPrimaryButton(
                             title: subscribeTitle,
-                            isLoading: isPurchasing || !hasResolvedEntitlements,
-                            disabled: !hasResolvedEntitlements
+                            isLoading: isPurchasing,
+                            disabled: !hasLoadedProducts
                                 || !services.store.hasPurchaseOptions
                                 || !services.store.canAttemptSandboxPurchase
                         ) {
@@ -79,19 +95,38 @@ struct OnboardingPremiumView: View {
                     if isAlreadySubscribed {
                         EmptyView()
                     } else {
-                        OnboardingSecondaryLink(title: "Maybe later", action: onFinish)
+                        VStack(spacing: BindrSpacing.xs) {
+                            Button {
+                                Task { await runRestore() }
+                            } label: {
+                                HStack(spacing: 6) {
+                                    if isRestoring {
+                                        ProgressView()
+                                            .controlSize(.small)
+                                    }
+                                    Text("Restore Purchases")
+                                        .font(.system(size: 14, weight: .semibold))
+                                }
+                                .foregroundStyle(accent)
+                                .padding(.vertical, BindrSpacing.sm)
+                                .frame(maxWidth: .infinity)
+                            }
+                            .buttonStyle(.plain)
+                            .disabled(isRestoring || isPurchasing)
+
+                            OnboardingSecondaryLink(title: "Maybe later", action: onFinish)
+                        }
                     }
                 }
             )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task {
-            await services.store.checkEntitlements()
-            hasResolvedEntitlements = true
-            guard !services.store.isPremium else { return }
+            // Fresh installs stay free until the user subscribes or taps Restore — no launch-time sync here.
             if services.store.products.isEmpty {
                 await services.store.loadProducts()
             }
+            hasLoadedProducts = true
         }
     }
 
@@ -277,6 +312,7 @@ struct OnboardingPremiumView: View {
     private func runPurchase() async {
         isPurchasing = true
         purchaseError = nil
+        restoreMessage = nil
         defer { isPurchasing = false }
         do {
             try await services.store.purchase(annual: selectAnnual)
@@ -284,5 +320,23 @@ struct OnboardingPremiumView: View {
             purchaseError = error.localizedDescription
         }
         if services.store.isPremium { onFinish() }
+    }
+
+    private func runRestore() async {
+        isRestoring = true
+        purchaseError = nil
+        restoreMessage = nil
+        defer { isRestoring = false }
+        do {
+            try await services.store.restore()
+            if services.store.isPremium {
+                restoreMessage = nil
+            } else {
+                restoreMessage = services.store.restoreMessage
+                    ?? "No active subscription was found for this Apple ID."
+            }
+        } catch {
+            restoreMessage = services.store.purchaseError ?? error.localizedDescription
+        }
     }
 }

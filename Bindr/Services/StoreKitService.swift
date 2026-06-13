@@ -7,10 +7,18 @@ import StoreKit
 final class StoreKitService {
     private static let premiumEntitlementDefaultsKey = "Bindr.store.premiumEntitlement"
     private static let sandboxSetupAcknowledgedKey = "Bindr.store.sandboxSetupAcknowledged"
+    /// Set after the user explicitly subscribes or taps Restore Purchases — blocks silent
+    /// entitlement sync on fresh installs until then.
+    private static let explicitActivationCompleteKey = "Bindr.store.premiumExplicitActivationComplete"
 
     /// Raw entitlement from StoreKit (before DEBUG overrides).
     private var premiumEntitlement = false
     private(set) var isCheckingEntitlements = false
+
+    /// Fresh installs stay free until the user purchases or restores — not from launch-time StoreKit sync.
+    private var requiresExplicitPremiumActivation: Bool {
+        !UserDefaults.standard.bool(forKey: Self.explicitActivationCompleteKey)
+    }
 
     /// Effective premium flag for the app. In **Debug** builds, use **Force free tier** on Account to test without Premium.
     var isPremium: Bool {
@@ -66,6 +74,7 @@ final class StoreKitService {
         // race before checkEntitlements finishes) must not unlock Premium or skip
         // onboarding — that cache is written by setPremiumEntitlement but never read here.
         premiumEntitlement = false
+        migrateExplicitActivationIfNeeded()
         #if DEBUG
         debugForceFreeTier = UserDefaults.standard.bool(forKey: Self.forceFreeTierDefaultsKey)
         #endif
@@ -73,6 +82,14 @@ final class StoreKitService {
         Task {
             await finishUnfinishedTransactions()
             await checkEntitlements()
+        }
+    }
+
+    /// Grandfather existing Premium subscribers upgrading to this build; fresh installs stay gated.
+    private func migrateExplicitActivationIfNeeded() {
+        guard !UserDefaults.standard.bool(forKey: Self.explicitActivationCompleteKey) else { return }
+        if UserDefaults.standard.bool(forKey: Self.premiumEntitlementDefaultsKey) {
+            UserDefaults.standard.set(true, forKey: Self.explicitActivationCompleteKey)
         }
     }
 
@@ -97,12 +114,12 @@ final class StoreKitService {
 
     func checkEntitlements() async {
         guard !isCheckingEntitlements else { return }
-        await fetchAndApplyEntitlements()
+        await fetchAndApplyEntitlements(fromExplicitUserAction: false)
     }
 
     /// Always re-reads StoreKit entitlements. Used by restore so a concurrent launch-time
     /// entitlement check cannot cause the refresh to be skipped.
-    private func fetchAndApplyEntitlements() async {
+    private func fetchAndApplyEntitlements(fromExplicitUserAction: Bool) async {
         isCheckingEntitlements = true
         defer { isCheckingEntitlements = false }
 
@@ -119,7 +136,20 @@ final class StoreKitService {
             }
             return found
         }.value
-        setPremiumEntitlement(premium)
+
+        if premium {
+            if requiresExplicitPremiumActivation && !fromExplicitUserAction {
+                // Fresh install: keep free until Subscribe or Restore Purchases.
+                setPremiumEntitlement(false)
+                return
+            }
+            setPremiumEntitlement(true)
+            if fromExplicitUserAction {
+                markExplicitPremiumActivationComplete()
+            }
+        } else {
+            setPremiumEntitlement(false)
+        }
     }
 
     func purchase(annual: Bool = false) async throws {
@@ -149,6 +179,7 @@ final class StoreKitService {
                 guard Self.isPremiumProduct(t.productID),
                       Self.acceptsTransactionEnvironment(t.environment) else { return }
                 setPremiumEntitlement(true)
+                markExplicitPremiumActivationComplete()
                 await t.finish()
             case .userCancelled:
                 break
@@ -168,12 +199,8 @@ final class StoreKitService {
         purchaseError = nil
         restoreMessage = nil
 
-        guard canAttemptSandboxPurchase else {
-            let message = PurchaseError.sandboxSetupRequired.errorDescription ?? "Sandbox setup required."
-            purchaseError = message
-            throw PurchaseError.sandboxSetupRequired
-        }
-
+        // Restore must stay tappable (App Store guideline). On TestFlight, Apple may
+        // prompt for Sandbox sign-in during AppStore.sync — don't block on our toggle.
         isRestoring = true
         defer { isRestoring = false }
 
@@ -184,7 +211,7 @@ final class StoreKitService {
             purchaseError = message
             throw PurchaseError.storeKit(message)
         }
-        await fetchAndApplyEntitlements()
+        await fetchAndApplyEntitlements(fromExplicitUserAction: true)
 
         if premiumEntitlement {
             restoreMessage = nil
@@ -200,7 +227,8 @@ final class StoreKitService {
         for await result in StoreKit.Transaction.unfinished {
             guard case .verified(let transaction) = result else { continue }
             if Self.isPremiumProduct(transaction.productID),
-               Self.acceptsTransactionEnvironment(transaction.environment) {
+               Self.acceptsTransactionEnvironment(transaction.environment),
+               !requiresExplicitPremiumActivation {
                 setPremiumEntitlement(true)
             }
             await transaction.finish()
@@ -212,6 +240,10 @@ final class StoreKitService {
             guard case .verified(let t) = update else { continue }
             if Self.isPremiumProduct(t.productID),
                Self.acceptsTransactionEnvironment(t.environment) {
+                if requiresExplicitPremiumActivation {
+                    await t.finish()
+                    continue
+                }
                 await checkEntitlements()
                 await t.finish()
             }
@@ -238,6 +270,10 @@ final class StoreKitService {
     private func setPremiumEntitlement(_ isPremium: Bool) {
         premiumEntitlement = isPremium
         UserDefaults.standard.set(isPremium, forKey: Self.premiumEntitlementDefaultsKey)
+    }
+
+    private func markExplicitPremiumActivationComplete() {
+        UserDefaults.standard.set(true, forKey: Self.explicitActivationCompleteKey)
     }
 
     private static func userFacingMessage(for error: Error, testFlight: Bool) -> String {
