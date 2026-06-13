@@ -25,21 +25,33 @@ struct OnboardingPremiumView: View {
     @State private var selectAnnual: Bool = true
     @State private var isPurchasing: Bool = false
     @State private var purchaseError: String?
+    @State private var hasResolvedEntitlements = false
+
+    private var isAlreadySubscribed: Bool {
+        hasResolvedEntitlements && services.store.isPremium
+    }
 
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
                 VStack(alignment: .leading, spacing: BindrSpacing.lg) {
                     badgeBlock
-                    OnboardingHeadline(
-                        title: "Unlock the full experience.",
-                        subtitle: "Unlimited everything — scans, collection, binders, and available-card trade tools — plus full price history and offline mode."
-                    )
-                    if services.store.requiresSandboxAccount {
-                        TestFlightSandboxNotice()
+                    if isAlreadySubscribed {
+                        OnboardingHeadline(
+                            title: "You're all set.",
+                            subtitle: "Your Premium subscription is active on this Apple ID — unlimited scans, binders, price history, and offline mode are ready to go."
+                        )
+                    } else {
+                        OnboardingHeadline(
+                            title: "Unlock the full experience.",
+                            subtitle: "Unlimited everything — scans, collection, binders, and available-card trade tools — plus full price history and offline mode."
+                        )
+                        if services.store.requiresSandboxAccount {
+                            TestFlightSandboxNotice()
+                        }
+                        featureBullets
+                        planPicker
                     }
-                    featureBullets
-                    planPicker
                     Color.clear.frame(height: 12)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
@@ -49,25 +61,34 @@ struct OnboardingPremiumView: View {
 
             OnboardingFooterBar(
                 primary: {
-                    OnboardingPrimaryButton(
-                        title: subscribeTitle,
-                        isLoading: isPurchasing,
-                        disabled: !services.store.hasPurchaseOptions || !services.store.canAttemptSandboxPurchase
-                    ) {
-                        Task { await runPurchase() }
+                    if isAlreadySubscribed {
+                        OnboardingPrimaryButton(title: "Continue", action: onFinish)
+                    } else {
+                        OnboardingPrimaryButton(
+                            title: subscribeTitle,
+                            isLoading: isPurchasing || !hasResolvedEntitlements,
+                            disabled: !hasResolvedEntitlements
+                                || !services.store.hasPurchaseOptions
+                                || !services.store.canAttemptSandboxPurchase
+                        ) {
+                            Task { await runPurchase() }
+                        }
                     }
                 },
                 secondary: {
-                    OnboardingSecondaryLink(title: "Maybe later", action: onFinish)
+                    if isAlreadySubscribed {
+                        EmptyView()
+                    } else {
+                        OnboardingSecondaryLink(title: "Maybe later", action: onFinish)
+                    }
                 }
             )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task {
-            if services.store.isPremium {
-                onFinish()
-                return
-            }
+            await services.store.checkEntitlements()
+            hasResolvedEntitlements = true
+            guard !services.store.isPremium else { return }
             if services.store.products.isEmpty {
                 await services.store.loadProducts()
             }

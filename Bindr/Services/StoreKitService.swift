@@ -61,13 +61,11 @@ final class StoreKitService {
     #endif
 
     init() {
-        // TestFlight must re-verify Premium from sandbox StoreKit — don't inherit a cached
-        // entitlement written by an Xcode debug install on the same device.
-        if AppDistribution.isTestFlight {
-            premiumEntitlement = false
-        } else {
-            premiumEntitlement = UserDefaults.standard.bool(forKey: Self.premiumEntitlementDefaultsKey)
-        }
+        // Always start non‑Premium until StoreKit confirms an active subscription.
+        // A cached UserDefaults flag (from Xcode debug, an old TestFlight test, or a
+        // race before checkEntitlements finishes) must not unlock Premium or skip
+        // onboarding — that cache is written by setPremiumEntitlement but never read here.
+        premiumEntitlement = false
         #if DEBUG
         debugForceFreeTier = UserDefaults.standard.bool(forKey: Self.forceFreeTierDefaultsKey)
         #endif

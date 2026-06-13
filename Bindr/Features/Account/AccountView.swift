@@ -47,6 +47,13 @@ struct SettingsView: View {
             } label: {
                 syncStatusLabel
             }
+
+            NavigationLink {
+                BackupRestoreSettingsPage()
+                    .environment(services)
+            } label: {
+                Label("Backup and Restore", systemImage: "arrow.triangle.2.circlepath.icloud")
+            }
         }
     }
 
@@ -237,12 +244,6 @@ private struct PricingSettingsPage: View {
 
 private struct DataSyncSettingsPage: View {
     @Environment(AppServices.self) private var services
-    @Environment(\.modelContext) private var modelContext
-    @State private var isRestoring = false
-    @State private var isBackingUp = false
-    @State private var restoreMessage: String?
-    @State private var backupMessage: String?
-    @State private var showReplaceRestoreConfirmation = false
 
     var body: some View {
         List {
@@ -260,7 +261,51 @@ private struct DataSyncSettingsPage: View {
             } footer: {
                 statusFooter
             }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("iCloud Sync")
+        .navigationBarTitleDisplayMode(.large)
+    }
 
+    private var syncStatusRow: some View {
+        switch services.cloudSettings.syncStatus {
+        case .cloudKitConnected:
+            return Label("iCloud connected", systemImage: "checkmark.icloud.fill")
+                .foregroundStyle(.green)
+        case .cloudKitFallback:
+            return Label("CloudKit sync failed", systemImage: "exclamationmark.icloud.fill")
+                .foregroundStyle(.orange)
+        case .iCloudAccountUnavailable:
+            return Label("iCloud not available", systemImage: "exclamationmark.icloud.fill")
+                .foregroundStyle(.orange)
+        }
+    }
+
+    @ViewBuilder private var statusFooter: some View {
+        switch services.cloudSettings.syncStatus {
+        case .cloudKitFallback:
+            Text("iCloud sync isn't available on this device right now. Your data is stored locally on this device.")
+        case .cloudKitConnected:
+            Text("Your collection, wishlist, and ledger sync automatically through iCloud. After reinstalling, it may take a few minutes for everything to appear.")
+        case .iCloudAccountUnavailable:
+            Text("Sign in to iCloud in Settings to sync your data across devices.")
+        }
+    }
+}
+
+// MARK: - Backup & Restore Settings Page
+
+private struct BackupRestoreSettingsPage: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
+    @State private var isRestoring = false
+    @State private var isBackingUp = false
+    @State private var restoreMessage: String?
+    @State private var backupMessage: String?
+    @State private var showReplaceRestoreConfirmation = false
+
+    var body: some View {
+        List {
             Section {
                 Button {
                     Task { await runCloudBackupUpload() }
@@ -333,7 +378,7 @@ private struct DataSyncSettingsPage: View {
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("iCloud Sync")
+        .navigationTitle("Backup and Restore")
         .navigationBarTitleDisplayMode(.large)
         .confirmationDialog(
             "Replace local library?",
@@ -401,31 +446,6 @@ private struct DataSyncSettingsPage: View {
             restoreMessage = error
         } else {
             restoreMessage = "No cloud backup found, or your library is already on this device."
-        }
-    }
-
-    private var syncStatusRow: some View {
-        switch services.cloudSettings.syncStatus {
-        case .cloudKitConnected:
-            return Label("iCloud connected", systemImage: "checkmark.icloud.fill")
-                .foregroundStyle(.green)
-        case .cloudKitFallback:
-            return Label("CloudKit sync failed", systemImage: "exclamationmark.icloud.fill")
-                .foregroundStyle(.orange)
-        case .iCloudAccountUnavailable:
-            return Label("iCloud not available", systemImage: "exclamationmark.icloud.fill")
-                .foregroundStyle(.orange)
-        }
-    }
-
-    @ViewBuilder private var statusFooter: some View {
-        switch services.cloudSettings.syncStatus {
-        case .cloudKitFallback:
-            Text("iCloud sync isn't available on this device right now. Your data is stored locally on this device.")
-        case .cloudKitConnected:
-            Text("Your collection, wishlist, and ledger sync automatically through iCloud. After reinstalling, it may take a few minutes for everything to appear.")
-        case .iCloudAccountUnavailable:
-            Text("Sign in to iCloud in Settings to sync your data across devices.")
         }
     }
 }

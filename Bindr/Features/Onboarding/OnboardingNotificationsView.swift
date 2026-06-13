@@ -24,6 +24,8 @@ struct OnboardingNotificationsView: View {
 
     let onContinue: () -> Void
 
+    @State private var didContinue = false
+
     var body: some View {
         VStack(spacing: 0) {
             ScrollView {
@@ -71,16 +73,25 @@ struct OnboardingNotificationsView: View {
                             }
 
                             await services.socialPush.refreshAuthorizationStatus()
-                            onContinue()
+                            continueOnce()
                         }
                     }
                 },
                 secondary: {
-                    OnboardingSecondaryLink(title: "Not now", action: onContinue)
+                    OnboardingSecondaryLink(title: "Not now", action: continueOnce)
                 }
             )
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    /// Notifications runs an async permission flow; guard so a second tap
+    /// (or "Not now" while the dialog is open) can't advance twice and
+    /// skip the Premium step entirely.
+    private func continueOnce() {
+        guard !didContinue else { return }
+        didContinue = true
+        onContinue()
     }
 
     private var notificationPeeks: some View {

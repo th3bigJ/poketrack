@@ -16,6 +16,7 @@ struct BindrOnboardingFlow: View {
     @Binding var isPresented: Bool
     var onWillDismiss: (() -> Void)? = nil
     @State private var step: BindrOnboardingStep = .welcome
+    @State private var didFinish = false
 
     var body: some View {
         ZStack {
@@ -114,6 +115,8 @@ struct BindrOnboardingFlow: View {
     }
 
     private func finish() {
+        guard !didFinish else { return }
+        didFinish = true
         Haptics.success()
         services.brandSettings.completeBrandOnboarding()
         if services.offlineImageSettings.isOfflinePackEnabled(for: .pokemon) {
