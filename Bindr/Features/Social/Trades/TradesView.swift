@@ -42,6 +42,14 @@ struct TradesView: View {
         trades.filter { $0.trade.status == .complete }
     }
 
+    private var tradesAwaitingMe: Int {
+        guard let currentUserID else { return 0 }
+        return openTrades.filter { trade in
+            trade.needsResponse(from: currentUserID)
+                || (trade.trade.status == .accepted && !trade.myCompleted(currentUserID: currentUserID))
+        }.count
+    }
+
     private var displayedTrades: [TradeWithItems] {
         showsCompletedTrades ? (openTrades + completedTrades) : openTrades
     }
@@ -123,42 +131,13 @@ struct TradesView: View {
             }
 
             if expandedSection == .active {
-                VStack(spacing: 0) {
-                    Toggle("Show Completed", isOn: $showsCompletedTrades)
-                        .font(.caption.weight(.semibold))
-                        .toggleStyle(.switch)
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 12)
-
-                    if isLoading && displayedTrades.isEmpty {
-                        ProgressView()
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 26)
-                    } else if displayedTrades.isEmpty && !isLoading {
-                        openTradesEmptyState
-                            .padding(.horizontal, 16)
-                    } else {
-                        tradesList
-                            .padding(.horizontal, 16)
-                    }
-                }
+                activeTradesPanel
+                    .padding(.horizontal, 16)
             }
         }
     }
 
     // MARK: - Shared Header Helpers
-
-    private func sectionHeader(title: String) -> some View {
-        HStack(spacing: 6) {
-            Text(title)
-                .font(.system(size: 11, weight: .bold))
-                .tracking(0.7)
-                .foregroundStyle(.secondary)
-            Spacer()
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
-    }
 
     private func tradeOpportunityButton(
         title: String,
@@ -207,7 +186,7 @@ struct TradesView: View {
                 Spacer(minLength: 0)
             }
             .padding(12)
-            .frame(maxWidth: .infinity, minHeight: 64)
+            .frame(maxWidth: .infinity, minHeight: 56)
             .background(isExpanded ? accent : Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
@@ -219,8 +198,58 @@ struct TradesView: View {
 
     // MARK: - Trades List
 
+    private var activeTradesPanel: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .center, spacing: 12) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("Active trades")
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundStyle(.primary)
+                    Text(activeTradesSummary)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                HStack(spacing: 6) {
+                    Text("Completed")
+                        .font(.system(size: 11, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                    Toggle("", isOn: $showsCompletedTrades)
+                        .labelsHidden()
+                        .toggleStyle(.switch)
+                        .scaleEffect(0.82)
+                        .frame(width: 44, height: 28)
+                }
+            }
+
+            if isLoading && displayedTrades.isEmpty {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 26)
+            } else if displayedTrades.isEmpty && !isLoading {
+                openTradesEmptyState
+            } else {
+                tradesList
+            }
+        }
+    }
+
+    private var activeTradesSummary: String {
+        var parts: [String] = []
+        parts.append("\(openTrades.count) open")
+        if tradesAwaitingMe > 0 {
+            parts.append(tradesAwaitingMe == 1 ? "1 needs action" : "\(tradesAwaitingMe) need action")
+        }
+        if showsCompletedTrades {
+            parts.append("\(completedTrades.count) complete")
+        }
+        return parts.joined(separator: " · ")
+    }
+
     private var tradesList: some View {
-        LazyVStack(spacing: 8) {
+        LazyVStack(spacing: 10) {
             ForEach(displayedTrades) { tradeWithItems in
                 Button {
                     navigationPath.append(SocialDestination.tradeDetail(tradeID: tradeWithItems.id))
@@ -232,11 +261,6 @@ struct TradesView: View {
                     )
                 }
                 .buttonStyle(.plain)
-                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .stroke(Color.primary.opacity(0.06), lineWidth: 1)
-                }
             }
         }
     }

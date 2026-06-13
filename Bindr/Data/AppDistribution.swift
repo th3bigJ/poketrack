@@ -26,13 +26,7 @@ enum AppDistribution {
         isTestFlight
     }
 
-    /// True when the on-device App Store receipt is Apple's sandbox receipt (TestFlight / local testing).
-    static var hasSandboxAppStoreReceipt: Bool {
-        Bundle.main.appStoreReceiptURL?.lastPathComponent == "sandboxReceipt"
-    }
-
     private static var isTestFlightBuild: Bool {
-        if hasSandboxAppStoreReceipt { return true }
         return embeddedProvisioningProfileContainsTestFlightMarker
     }
 

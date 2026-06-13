@@ -49,21 +49,7 @@ struct TradeDetailView: View {
 
     var body: some View {
         ZStack {
-            // Immersive Adaptive Background
-            Color(uiColor: colorScheme == .dark ? .black : .systemBackground)
-                .ignoresSafeArea()
-            
-            // Atmospheric Scanlines (Adaptive contrast)
-            Rectangle()
-                .fill(
-                    LinearGradient(
-                        colors: [.clear, (colorScheme == .dark ? Color.white : Color.black).opacity(0.03), .clear],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                )
-                .frame(height: 2)
-                .offset(y: -100)
+            Color(uiColor: colorScheme == .dark ? .black : .systemGroupedBackground)
                 .ignoresSafeArea()
 
             if isLoading && tradeWithItems == nil {
@@ -82,35 +68,35 @@ struct TradeDetailView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top, spacing: 0) {
-            ZStack {
-                VStack(spacing: 0) {
-                    Text(toolbarStatusText.uppercased())
-                        .font(.system(size: 10, weight: .black))
-                        .tracking(2)
-                        .foregroundStyle(themeColor)
-                    Text("TRADE SESSION")
-                        .font(.system(size: 8, weight: .bold))
-                        .tracking(1)
-                        .foregroundStyle(.secondary.opacity(0.5))
+            HStack(spacing: 12) {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    HapticManager.impact(.light)
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
                 }
-
-                HStack {
-                    ChromeGlassCircleButton(accessibilityLabel: "Back") {
-                        HapticManager.impact(.light)
-                        dismiss()
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
-                    }
-                    Spacer()
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Active Trade")
+                        .font(.system(size: 17, weight: .heavy))
+                        .foregroundStyle(.primary)
+                    Text(toolbarStatusText)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                }
+                
+                Spacer()
+                
+                if let trade {
+                    TradeStatusBadge(status: trade.status, label: toolbarStatusText)
                 }
             }
-            .frame(maxWidth: .infinity)
-            .frame(height: 48)
             .padding(.horizontal, 16)
             .padding(.top, 8)
             .padding(.bottom, 10)
+            .background(.ultraThinMaterial)
         }
         .task {
             services.setupCollectionLedger(modelContext: modelContext)
@@ -158,102 +144,175 @@ struct TradeDetailView: View {
 
         return VStack(spacing: 0) {
             ScrollView(showsIndicators: false) {
-                VStack(spacing: 0) {
-                    // TOP POD: Their Side
-                    tradePod(
-                        label: "THEIR OFFER",
-                        profile: theirProfile,
-                        items: theirItems,
-                        cash: theirCash,
-                        totalValueUSD: theirTotalUSD,
-                        alignment: .top
-                    )
-                    
-                    // CENTRAL LINK CORE
-                    centralLinkCore(twi)
-                        .padding(.vertical, -30)
-                        .zIndex(10)
-                    
-                    // BOTTOM POD: My Side
-                    tradePod(
-                        label: "MY OFFER",
+                VStack(alignment: .leading, spacing: 16) {
+                    tradeSummaryCard(twi, myTotalUSD: myTotalUSD, theirTotalUSD: theirTotalUSD)
+
+                    tradeSection(
+                        title: "You give",
+                        detail: tradeSideDetail(items: myItems, cash: myCash),
                         profile: myProfile,
                         items: myItems,
                         cash: myCash,
                         totalValueUSD: myTotalUSD,
-                        alignment: .bottom
+                        tint: BindrPalette.alertRed,
+                        emptyText: "Nothing from your side yet."
+                    )
+
+                    tradeSection(
+                        title: "You receive",
+                        detail: tradeSideDetail(items: theirItems, cash: theirCash),
+                        profile: theirProfile,
+                        items: theirItems,
+                        cash: theirCash,
+                        totalValueUSD: theirTotalUSD,
+                        tint: BindrPalette.ownedGreen,
+                        emptyText: "Nothing from their side yet."
                     )
                 }
-                .padding(.vertical, 20)
+                .padding(.horizontal, 16)
+                .padding(.top, 18)
+                .padding(.bottom, 18)
             }
             
-            // ACTION FOOTER - Pinned to bottom, no overlap
-            VStack(spacing: 12) {
-                actionButtons(twi)
-            }
-            .padding(20)
-            .padding(.bottom, 10) // Extra space for safe area
-            .background {
-                ZStack {
-                    (colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground))
-                        .opacity(0.8)
-                        .blur(radius: 20)
-                    LinearGradient(
-                        colors: [.clear, (colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground))],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                }
-                .ignoresSafeArea()
-            }
+            actionFooter(twi)
         }
         .task(id: valuationSignature(for: twi)) {
             await refreshTradeValues(for: twi)
         }
     }
 
-    private func tradePod(
-        label: String,
+    private func tradeSummaryCard(_ twi: TradeWithItems, myTotalUSD: Double, theirTotalUSD: Double) -> some View {
+        let resolvedUID = currentUserID ?? UUID()
+        let iConfirmedCompletion = twi.myCompleted(currentUserID: resolvedUID)
+        let theyConfirmedCompletion = twi.theirCompleted(currentUserID: resolvedUID)
+        let partnerName = theirProfile?.displayName ?? theirProfile.map { "@\($0.username)" } ?? "Trade partner"
+
+        return VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .top, spacing: 12) {
+                if let theirProfile {
+                    ProfileAvatarView(profile: theirProfile, size: 46)
+                } else {
+                    Circle()
+                        .fill(Color(uiColor: .secondarySystemBackground))
+                        .frame(width: 46, height: 46)
+                }
+                
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(partnerName)
+                        .font(.system(size: 19, weight: .heavy))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                    Text(statusHelpText(twi))
+                        .font(.system(size: 13))
+                        .lineSpacing(3)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                
+                Spacer(minLength: 0)
+            }
+            
+            HStack(spacing: 10) {
+                valuePill(title: "You give", amountUSD: myTotalUSD, tint: BindrPalette.alertRed)
+                Image(systemName: "arrow.left.arrow.right")
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(.secondary.opacity(0.7))
+                valuePill(title: "You receive", amountUSD: theirTotalUSD, tint: BindrPalette.ownedGreen)
+            }
+            
+            if twi.trade.status == .accepted {
+                HStack {
+                    completionStep(title: "You", isComplete: iConfirmedCompletion)
+                    Rectangle()
+                        .fill(Color.primary.opacity(0.12))
+                        .frame(height: 1)
+                    completionStep(title: "Them", isComplete: theyConfirmedCompletion)
+                }
+                .padding(.top, 2)
+            }
+        }
+        .padding(16)
+        .glassCardStyle(cornerRadius: 18, interactive: false)
+    }
+
+    private func valuePill(title: String, amountUSD: Double, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.system(size: 10, weight: .bold))
+                .tracking(0.6)
+                .textCase(.uppercase)
+                .foregroundStyle(.secondary)
+            
+            if isValuationLoading {
+                ProgressView()
+                    .tint(tint)
+                    .scaleEffect(0.8)
+                    .frame(height: 18, alignment: .leading)
+            } else {
+                Text(formattedDisplayAmountUSD(amountUSD))
+                    .font(.system(size: 16, weight: .black, design: .rounded))
+                    .foregroundStyle(tint)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
+        .background(tint.opacity(colorScheme == .dark ? 0.16 : 0.10), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(tint.opacity(0.18), lineWidth: 1)
+        }
+    }
+
+    private func completionStep(title: String, isComplete: Bool) -> some View {
+        HStack(spacing: 6) {
+            Image(systemName: isComplete ? "checkmark.circle.fill" : "circle")
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(isComplete ? BindrPalette.ownedGreen : Color.secondary.opacity(0.55))
+            Text(title)
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(isComplete ? .primary : .secondary)
+        }
+    }
+
+    private func tradeSection(
+        title: String,
+        detail: String,
         profile: SocialProfile?,
         items: [TradeItem],
         cash: Double,
         totalValueUSD: Double,
-        alignment: VerticalAlignment
+        tint: Color,
+        emptyText: String
     ) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Pod Header
-            HStack {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(label)
-                        .font(.system(size: 10, weight: .black))
-                        .tracking(1.5)
-                        .foregroundStyle(themeColor.opacity(0.6))
-                    
-                    if let profile {
-                        Text(profile.displayName ?? "@\(profile.username)")
-                            .font(.system(size: 17, weight: .bold))
-                            .foregroundStyle(.primary)
-                    }
+            HStack(alignment: .top, spacing: 10) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(title)
+                        .font(.system(size: 18, weight: .heavy))
+                        .foregroundStyle(.primary)
+                    Text(detail)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(.secondary)
                 }
                 
                 Spacer()
                 
-                VStack(alignment: .trailing, spacing: 4) {
-                    if isValuationLoading {
-                        ProgressView().tint(themeColor).scaleEffect(0.7)
-                    } else {
-                        Text(formattedDisplayAmountUSD(totalValueUSD))
-                            .font(.system(size: 17, weight: .black, design: .monospaced))
-                            .foregroundStyle(themeColor)
+                VStack(alignment: .trailing, spacing: 3) {
+                    Text(isValuationLoading ? "Checking..." : formattedDisplayAmountUSD(totalValueUSD))
+                        .font(.system(size: 14, weight: .black, design: .rounded))
+                        .foregroundStyle(tint)
+                    if let profile {
+                        Text(profile.displayName ?? "@\(profile.username)")
+                            .font(.system(size: 11, weight: .medium))
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
                     }
-                    Text("\(items.count) CARDS")
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundStyle(.secondary)
                 }
             }
-            .padding(.bottom, 8)
             
-            // Item Scroll
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     if cash > 0 {
@@ -261,72 +320,77 @@ struct TradeDetailView: View {
                     }
                     
                     if items.isEmpty && cash == 0 {
-                        Text("NO ASSETS STAGED")
-                            .font(.system(size: 12, weight: .bold, design: .monospaced))
-                            .foregroundStyle(.secondary.opacity(0.3))
-                            .frame(height: 120)
+                        emptyTradeSide(text: emptyText)
                     } else {
                         ForEach(items) { item in
-                            TradeCardTile(item: item, themeColor: themeColor, cardLoader: { id in await services.cardData.loadCard(masterCardId: id) })
+                            TradeCardTile(item: item, themeColor: tint, cardLoader: { id in await services.cardData.loadCard(masterCardId: id) })
                         }
                     }
                 }
             }
         }
-        .padding(20)
-        .background {
-            ZStack {
-                RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .fill(.thinMaterial)
-                
-                RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .stroke(
-                        LinearGradient(
-                            colors: [themeColor.opacity(0.3), .clear],
-                            startPoint: alignment == .top ? .bottom : .top,
-                            endPoint: alignment == .top ? .top : .bottom
-                        ),
-                        lineWidth: 1
-                    )
-            }
-        }
-        .padding(.horizontal, 16)
+        .padding(16)
+        .glassCardStyle(cornerRadius: 18, interactive: false)
     }
 
-    private func centralLinkCore(_ twi: TradeWithItems) -> some View {
-        ZStack {
-            // Pulsing Connection Lines
-            VStack(spacing: 0) {
-                Rectangle()
-                    .fill(LinearGradient(colors: [.clear, themeColor.opacity(0.5)], startPoint: .top, endPoint: .bottom))
-                    .frame(width: 2, height: 60)
-                
-                Circle()
-                    .stroke(themeColor.opacity(0.5), lineWidth: 2)
-                    .frame(width: 40, height: 40)
-                    .overlay {
-                        Circle()
-                            .fill(themeColor.opacity(0.1))
-                        
-                        Image(systemName: "bolt.fill")
-                            .font(.system(size: 14))
-                            .foregroundStyle(themeColor)
-                    }
-                
-                Rectangle()
-                    .fill(LinearGradient(colors: [themeColor.opacity(0.5), .clear], startPoint: .top, endPoint: .bottom))
-                    .frame(width: 2, height: 60)
+    private func emptyTradeSide(text: String) -> some View {
+        Text(text)
+            .font(.system(size: 12, weight: .semibold))
+            .foregroundStyle(.secondary)
+            .frame(width: 190, height: 118)
+            .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.04), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+    }
+
+    private func actionFooter(_ twi: TradeWithItems) -> some View {
+        VStack(spacing: 12) {
+            actionButtons(twi)
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 14)
+        .padding(.bottom, 18)
+        .background {
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .ignoresSafeArea()
+                .overlay(alignment: .top) {
+                    Rectangle()
+                        .fill(Color.primary.opacity(0.08))
+                        .frame(height: 1)
+                }
+        }
+    }
+
+    private func tradeSideDetail(items: [TradeItem], cash: Double) -> String {
+        let quantity = items.reduce(0) { $0 + max($1.quantity, 1) }
+        var parts: [String] = []
+        if quantity > 0 {
+            parts.append("\(quantity) card\(quantity == 1 ? "" : "s")")
+        }
+        if cash > 0 {
+            parts.append("\(services.priceDisplay.currency.symbol)\(String(format: "%.2f", cash))")
+        }
+        return parts.isEmpty ? "No items" : parts.joined(separator: " + ")
+    }
+
+    private func statusHelpText(_ twi: TradeWithItems) -> String {
+        guard let uid = currentUserID else { return "Review the cards and values before taking action." }
+        switch twi.trade.status {
+        case .pending:
+            return twi.needsResponse(from: uid) ? "This offer is waiting for your response." : "This offer is waiting for their response."
+        case .countered:
+            return twi.needsResponse(from: uid) ? "They sent a counter offer. Review it before accepting." : "Your counter offer is waiting for them."
+        case .accepted:
+            if twi.myCompleted(currentUserID: uid) {
+                return "You confirmed your side. The trade completes once they confirm."
             }
-            
-            // Status Tag
-            Text(tradeStatusText(twi).uppercased())
-                .font(.system(size: 10, weight: .black))
-                .tracking(2)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 4)
-                .background(themeColor, in: Capsule())
-                .foregroundStyle(colorScheme == .dark ? .black : .white)
-                .offset(x: 60)
+            if twi.theirCompleted(currentUserID: uid) {
+                return "They confirmed their side. Confirm yours when the exchange is done."
+            }
+            return "Both sides accepted. Confirm your side once the real-world exchange is done."
+        case .complete:
+            return "This trade is complete and your records have been updated where applicable."
+        case .cancelled:
+            return "This trade has been closed."
         }
     }
 
@@ -336,7 +400,7 @@ struct TradeDetailView: View {
                 .font(.system(size: 24))
                 .foregroundStyle(themeColor)
             
-            Text("\(services.priceDisplay.currency.symbol)\(amount, format: .number.precision(.fractionLength(2)))")
+            Text("\(services.priceDisplay.currency.symbol)\(String(format: "%.2f", amount))")
                 .font(.system(size: 13, weight: .black, design: .monospaced))
                 .foregroundStyle(.primary)
         }
@@ -924,24 +988,5 @@ private struct TradeCardTile: View {
     private var shimmer: some View {
         RoundedRectangle(cornerRadius: 8)
             .fill(Color.white.opacity(0.05))
-    }
-}
-
-// MARK: - Button Style
-
-private struct TradeActionButtonStyle: ButtonStyle {
-    let color: Color
-    let isBusy: Bool
-
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.system(size: 15, weight: .semibold))
-            .foregroundStyle(isBusy ? Color.secondary : Color.primary)
-            .padding(.vertical, 12)
-            .glassCardStyle(cornerRadius: 12, interactive: true)
-            .overlay {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(color.opacity(configuration.isPressed ? 0.48 : 0.32), lineWidth: 1)
-            }
     }
 }

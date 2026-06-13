@@ -316,7 +316,6 @@ enum UserLibraryBackupCodec {
         let saleAllocations = try modelContext.fetch(FetchDescriptor<SaleAllocation>())
         let binders = try modelContext.fetch(FetchDescriptor<Binder>())
         let decks = try modelContext.fetch(FetchDescriptor<Deck>())
-        let deckCards = try modelContext.fetch(FetchDescriptor<DeckCard>())
         let valueSnapshots = try modelContext.fetch(FetchDescriptor<CollectionValueSnapshot>())
         let weeklyAverages = try modelContext.fetch(FetchDescriptor<CollectionWeeklyAverage>())
         let monthlyAverages = try modelContext.fetch(FetchDescriptor<CollectionMonthlyAverage>())

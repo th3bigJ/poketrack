@@ -108,23 +108,7 @@ struct QRProfileView: View {
 
     private func scannedProfileUsername(from rawString: String) -> String? {
         guard let url = URL(string: rawString) else { return nil }
-        if let username = SocialFriendService.parseProfileUsername(from: url) {
-            return username
-        }
-        return tradeQRCodeUsername(from: url)
-    }
-
-    private func tradeQRCodeUsername(from url: URL) -> String? {
-        guard url.scheme?.lowercased() == "bindr",
-              url.host?.lowercased() == "social",
-              url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/")).lowercased() == "trade",
-              let components = URLComponents(url: url, resolvingAgainstBaseURL: false),
-              let rawUsername = components.queryItems?.first(where: { $0.name.lowercased() == "username" })?.value
-        else {
-            return nil
-        }
-        let username = rawUsername.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        return username.isEmpty ? nil : username
+        return SocialFriendService.parseProfileUsername(from: url)
     }
 }
 
@@ -133,7 +117,7 @@ private struct FriendQRScannerSheet: View {
 
     let onScan: (String) -> Void
 
-    @State private var message = "Point your camera at a Bindr QR code."
+    @State private var message = "Point your camera at a Bindr friend QR code."
 
     var body: some View {
         NavigationStack {

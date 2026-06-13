@@ -260,8 +260,6 @@ final class StoreKitService {
     }
 
     /// TestFlight accepts sandbox transactions only; App Store accepts production only.
-    /// Installs with a sandbox receipt (TestFlight / Xcode) always accept sandbox entitlements
-    /// even if runtime channel detection falls back to `.appStore`.
     nonisolated private static func acceptsTransactionEnvironment(_ environment: StoreKit.AppStore.Environment) -> Bool {
         switch AppDistribution.channel {
         case .debug:
@@ -269,9 +267,6 @@ final class StoreKitService {
         case .testFlight:
             return environment == .sandbox
         case .appStore:
-            if AppDistribution.hasSandboxAppStoreReceipt {
-                return environment == .sandbox
-            }
             return environment == .production
         }
     }
