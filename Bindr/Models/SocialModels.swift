@@ -184,7 +184,6 @@ enum SocialDestination: Hashable {
     case friends
     case search
     case qrProfile
-    case qrTrade
     case friendProfile(username: String)
     case friendCollection(username: String)
     case friendsCollection

@@ -272,7 +272,7 @@ struct PremiumUpgradeView: View {
             OnboardingPrimaryButton(
                 title: subscribeTitle,
                 isLoading: isPurchasing,
-                disabled: !services.store.hasPurchaseOptions
+                disabled: !services.store.hasPurchaseOptions || !services.store.canAttemptSandboxPurchase
             ) {
                 Task { await runPurchase() }
             }

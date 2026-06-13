@@ -644,7 +644,7 @@ final class AppServices {
     func setupCollectionLedger(modelContext: ModelContext) {
         print("[Launch] setupCollectionLedger start")
         let t = ContinuousClock().now
-        socialSyncModelContext = modelContext
+        bindCollectionSync(modelContext: modelContext)
         if collectionLedger == nil {
             let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
             ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
@@ -657,7 +657,7 @@ final class AppServices {
     /// Sets up wishlist + ledger and awaits a single social sync pass.
     /// Called from RootView's launch task so the overlay stays up until this completes.
     func setupWishlistAndLedger(modelContext: ModelContext) async {
-        socialSyncModelContext = modelContext
+        bindCollectionSync(modelContext: modelContext)
         print("[Launch] setupWishlist start")
         let t = ContinuousClock().now
         if wishlist == nil {
@@ -672,7 +672,8 @@ final class AppServices {
             collectionLedger = ledger
         }
         print("[Launch] setupCollectionLedger done: \(ContinuousClock().now - t2)")
-        collectionSync.setup(modelContext: modelContext)
+        bindCollectionSync(modelContext: modelContext)
+        await attemptCloudBackupRestoreIfStillEmpty()
         await syncSocialLibrariesIfPossible()
     }
 
@@ -707,8 +708,8 @@ final class AppServices {
         // SwiftData CloudKit merges can arrive several seconds after the last remote
         // change notification. Keep the overlay up through that quiet period; a
         // longer honest launch is better than revealing a frozen dashboard.
-        let quietWindow: TimeInterval = 4.0
-        let timeout: TimeInterval = 45.0
+        let quietWindow: TimeInterval = 6.0
+        let timeout: TimeInterval = 120.0
 
         print("[CloudKit] fresh install — idle monitor armed (quietWindow=\(quietWindow)s, timeout=\(timeout)s)")
 
@@ -739,17 +740,61 @@ final class AppServices {
     }
 
     private func markCloudKitImportComplete() {
+        Task { await finishCloudKitImportAndAttemptRestore() }
+    }
+
+    /// Waits for the R2 cloud backup restore attempt before opening the launch gate so
+    /// TestFlight/reinstall users don't land on an empty dashboard when iCloud Production
+    /// has no data yet.
+    private func finishCloudKitImportAndAttemptRestore() async {
         guard !isCloudKitImportComplete else { return }
-        isCloudKitImportComplete = true
         cloudKitIdleMonitor?.stop()
         cloudKitIdleMonitor = nil
         if let observer = cloudKitObserver {
             NotificationCenter.default.removeObserver(observer)
             cloudKitObserver = nil
         }
+        await attemptCloudBackupRestoreIfStillEmpty()
+        isCloudKitImportComplete = true
+    }
+
+    /// Pulls the social cloud backup (R2) when iCloud restore did not repopulate the collection.
+    func restoreCollectionFromCloudBackup(force: Bool = false) async -> Bool {
+        let restored = await collectionSync.restoreFromCloudBackupIfNeeded(force: force)
+        if restored {
+            collectionInventoryRevision += 1
+            collectionSync.scheduleUpload()
+        }
+        return restored
+    }
+
+    /// Uploads the full local library to R2 immediately (collection, binders, decks, ledger, value history).
+    func backupLibraryToCloud() async -> Bool {
+        await collectionSync.backupEverythingNow()
+    }
+
+    private func attemptCloudBackupRestoreIfStillEmpty() async {
+        guard let modelContext = socialSyncModelContext else {
+            print("[CollectionSync] defer restore — model context not ready yet")
+            return
+        }
+        // Brief pause so any final CloudKit merge batch can land first.
+        try? await Task.sleep(for: .seconds(3))
+        guard UserLibraryBackupCodec.localLibraryIsEmpty(modelContext) else { return }
+        guard socialAuth.isSignedIn else {
+            print("[CollectionSync] defer restore — not signed in to Bindr account")
+            return
+        }
+        _ = await restoreCollectionFromCloudBackup()
+    }
+
+    private func bindCollectionSync(modelContext: ModelContext) {
+        socialSyncModelContext = modelContext
+        collectionSync.setup(modelContext: modelContext)
     }
 
     func setupCollectionValue(modelContext: ModelContext) {
+        bindCollectionSync(modelContext: modelContext)
         guard collectionValue == nil else { return }
         let service = CollectionValueService(
             modelContext: modelContext,
@@ -774,10 +819,14 @@ final class AppServices {
         guard let modelContext = socialSyncModelContext else { return }
         let t = ContinuousClock().now
         print("[Launch] syncSocialLibrariesIfPossible starting")
-        collectionSync.scheduleUpload()
         // Keep launch social sync cheap: do not materialize full SwiftData tables on
         // @MainActor while the launch overlay is coming down.
         let cardCount = modelContext.collectionTotalCardQuantity()
+        let wishlistCount = (try? modelContext.fetchCount(FetchDescriptor<WishlistItem>())) ?? 0
+        // Only upload when we have data — never overwrite cloud backup with an empty snapshot.
+        if cardCount > 0 || wishlistCount > 0 {
+            collectionSync.scheduleUpload()
+        }
         let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         let deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
         let totalValue = collectionValue?.snapshots.last?.totalGbp ?? 0

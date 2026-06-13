@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 // MARK: - Root Settings Page
 
@@ -241,6 +242,12 @@ private struct PricingSettingsPage: View {
 
 private struct DataSyncSettingsPage: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
+    @State private var isRestoring = false
+    @State private var isBackingUp = false
+    @State private var restoreMessage: String?
+    @State private var backupMessage: String?
+    @State private var showReplaceRestoreConfirmation = false
 
     var body: some View {
         List {
@@ -258,10 +265,152 @@ private struct DataSyncSettingsPage: View {
             } footer: {
                 statusFooter
             }
+
+            Section {
+                Button {
+                    Task { await runCloudBackupUpload() }
+                } label: {
+                    HStack {
+                        Label("Back up everything to R2", systemImage: "icloud.and.arrow.up.fill")
+                        Spacer()
+                        if isBackingUp || services.collectionSync.isUploading {
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(
+                    isBackingUp
+                    || services.collectionSync.isUploading
+                    || !services.socialAuth.isSignedIn
+                )
+
+                if let backupMessage {
+                    Text(backupMessage)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else if let lastUploadedAt = services.collectionSync.lastUploadedAt,
+                          let summary = services.collectionSync.lastUploadedSummary {
+                    Text("Last backed up \(lastUploadedAt.formatted(date: .abbreviated, time: .shortened)) — \(summary)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else if let error = services.collectionSync.lastUploadError {
+                    Text(error)
+                        .font(.caption)
+                        .foregroundStyle(.orange)
+                }
+            } header: {
+                Text("R2 cloud backup")
+            } footer: {
+                Text("Uploads your collection, binders, decks, ledger, wishlist, and value history to Bindr’s cloud backup. Use this on a debug/Xcode build before moving to TestFlight or the App Store, then restore on the production build.")
+            }
+
+            Section {
+                Button {
+                    if localLibraryHasData {
+                        showReplaceRestoreConfirmation = true
+                    } else {
+                        Task { await runCloudBackupRestore(force: false) }
+                    }
+                } label: {
+                    HStack {
+                        Label("Restore from cloud backup", systemImage: "arrow.triangle.2.circlepath.icloud")
+                        Spacer()
+                        if isRestoring || services.collectionSync.isRestoring {
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(isRestoring || services.collectionSync.isRestoring || !services.socialAuth.isSignedIn)
+
+                if let restoreMessage {
+                    Text(restoreMessage)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else if let lastRestoredAt = services.collectionSync.lastRestoredAt {
+                    Text(restoreStatusLine(lastRestoredAt: lastRestoredAt))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else if let error = services.collectionSync.lastRestoreError {
+                    Text(error)
+                        .font(.caption)
+                        .foregroundStyle(.orange)
+                }
+            } header: {
+                Text("Restore")
+            } footer: {
+                Text("Restores your full library from R2 into this device. After restoring on TestFlight or App Store, iCloud Production will sync the data from here.")
+            }
         }
         .listStyle(.insetGrouped)
         .navigationTitle("iCloud Sync")
         .navigationBarTitleDisplayMode(.large)
+        .confirmationDialog(
+            "Replace local library?",
+            isPresented: $showReplaceRestoreConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Replace with cloud backup", role: .destructive) {
+                Task { await runCloudBackupRestore(force: true) }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("This removes your current collection, binders, decks, and ledger on this device and replaces them with the cloud backup.")
+        }
+    }
+
+    private var localLibraryHasData: Bool {
+        !UserLibraryBackupCodec.localLibraryIsEmpty(modelContext)
+    }
+
+    private func restoreStatusLine(lastRestoredAt: Date) -> String {
+        if let summary = services.collectionSync.lastRestoredSummary {
+            return "Last restored \(lastRestoredAt.formatted(date: .abbreviated, time: .shortened)) — \(summary)"
+        }
+        return "Last restored \(lastRestoredAt.formatted(date: .abbreviated, time: .shortened)) — \(services.collectionSync.lastRestoredCardCount) cards"
+    }
+
+    private func runCloudBackupUpload() async {
+        isBackingUp = true
+        backupMessage = nil
+        defer { isBackingUp = false }
+
+        guard services.socialAuth.isSignedIn else {
+            backupMessage = "Sign in to your Bindr account first."
+            return
+        }
+
+        let uploaded = await services.backupLibraryToCloud()
+        if uploaded, let summary = services.collectionSync.lastUploadedSummary {
+            backupMessage = "Backed up \(summary)."
+        } else if let error = services.collectionSync.lastUploadError {
+            backupMessage = error
+        } else {
+            backupMessage = "Nothing to back up yet."
+        }
+    }
+
+    private func runCloudBackupRestore(force: Bool) async {
+        isRestoring = true
+        restoreMessage = nil
+        defer { isRestoring = false }
+
+        guard services.socialAuth.isSignedIn else {
+            restoreMessage = "Sign in to your Bindr account first."
+            return
+        }
+
+        let restored = await services.restoreCollectionFromCloudBackup(force: force)
+        if restored {
+            if let summary = services.collectionSync.lastRestoredSummary {
+                restoreMessage = "Restored \(summary)."
+            } else {
+                restoreMessage = "Restored \(services.collectionSync.lastRestoredCardCount) cards from cloud backup."
+            }
+        } else if let error = services.collectionSync.lastRestoreError {
+            restoreMessage = error
+        } else {
+            restoreMessage = "No cloud backup found, or your library is already on this device."
+        }
     }
 
     private var syncStatusRow: some View {
@@ -345,6 +494,14 @@ private struct PremiumSettingsPage: View {
 
     var body: some View {
         List {
+            if services.store.requiresSandboxAccount {
+                Section {
+                    TestFlightSandboxNotice()
+                        .listRowInsets(EdgeInsets())
+                        .listRowBackground(Color.clear)
+                }
+            }
+
             Section {
                 if services.store.isPremium {
                     Label("Premium active", systemImage: "checkmark.seal.fill")
@@ -355,6 +512,7 @@ private struct PremiumSettingsPage: View {
                     } label: {
                         Label("Unlock Premium", systemImage: "crown.fill")
                     }
+                    .disabled(!services.store.canAttemptSandboxPurchase)
                 }
 
                 Button {
@@ -368,7 +526,11 @@ private struct PremiumSettingsPage: View {
                         }
                     }
                 }
-                .disabled(services.store.isRestoring)
+                .disabled(services.store.isRestoring || !services.store.canAttemptSandboxPurchase)
+            } footer: {
+                if services.store.requiresSandboxAccount {
+                    Text("Restore and subscribe use Apple's sandbox on TestFlight. Confirm your Sandbox Account above before testing purchases.")
+                }
             }
         }
         .listStyle(.insetGrouped)

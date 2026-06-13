@@ -40,7 +40,7 @@
 		<string>com.bindr.catalog.dailyrefresh</string>
 	</array>
 	<key>BINDR_COLLECTION_SYNC_WORKER_URL</key>
-	<string> https://collection-sync.jordanhardcastle0.workers.dev</string>
+	<string>https://collection-sync.jordanhardcastle0.workers.dev</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

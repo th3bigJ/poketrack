@@ -64,6 +64,33 @@ async function handlePut(request: Request, env: Env, callerID: string): Promise<
   }
 
   const key = snapshotKey(callerID);
+
+  // Never overwrite a non-empty backup with an empty library — protects against
+  // fresh installs uploading before iCloud restore completes.
+  try {
+    const parsed = JSON.parse(body) as {
+      collection?: unknown[];
+      wishlist?: unknown[];
+      library?: Record<string, unknown[] | undefined>;
+    };
+    if (!snapshotHasData(parsed)) {
+      const existing = await env.COLLECTION_BUCKET.get(key);
+      if (existing) {
+        const existingBody = await existing.text();
+        const existingParsed = JSON.parse(existingBody) as {
+          collection?: unknown[];
+          wishlist?: unknown[];
+          library?: Record<string, unknown[] | undefined>;
+        };
+        if (snapshotHasData(existingParsed)) {
+          return json({ error: "Refusing to overwrite non-empty backup with empty snapshot" }, 409);
+        }
+      }
+    }
+  } catch {
+    return json({ error: "Invalid JSON" }, 400);
+  }
+
   await env.COLLECTION_BUCKET.put(key, body, {
     httpMetadata: { contentType: "application/json" },
     customMetadata: { updatedAt: new Date().toISOString() },
@@ -104,6 +131,18 @@ async function handleGet(env: Env, callerID: string, targetUserID: string): Prom
 
 function snapshotKey(userID: string): string {
   return `user-collections/${userID.toLowerCase()}/collection.json`;
+}
+
+function snapshotHasData(parsed: {
+  collection?: unknown[];
+  wishlist?: unknown[];
+  library?: Record<string, unknown[] | undefined>;
+}): boolean {
+  if ((parsed.collection?.length ?? 0) > 0) return true;
+  if ((parsed.wishlist?.length ?? 0) > 0) return true;
+  const library = parsed.library;
+  if (!library) return false;
+  return Object.values(library).some((value) => Array.isArray(value) && value.length > 0);
 }
 
 function bearerToken(request: Request): string | null {

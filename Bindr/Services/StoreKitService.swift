@@ -6,6 +6,7 @@ import StoreKit
 @MainActor
 final class StoreKitService {
     private static let premiumEntitlementDefaultsKey = "Bindr.store.premiumEntitlement"
+    private static let sandboxSetupAcknowledgedKey = "Bindr.store.sandboxSetupAcknowledged"
 
     /// Raw entitlement from StoreKit (before DEBUG overrides).
     private var premiumEntitlement = false
@@ -27,7 +28,17 @@ final class StoreKitService {
 
     /// TestFlight builds bill through Apple's sandbox — testers must sign in under Settings → App Store → Sandbox Account.
     var requiresSandboxAccount: Bool {
-        AppDistribution.isTestFlight
+        AppDistribution.requiresSandboxIAP
+    }
+
+    /// TestFlight purchases stay disabled until the tester confirms they've signed into a Sandbox Apple ID.
+    var sandboxSetupAcknowledged: Bool {
+        get { UserDefaults.standard.bool(forKey: Self.sandboxSetupAcknowledgedKey) }
+        set { UserDefaults.standard.set(newValue, forKey: Self.sandboxSetupAcknowledgedKey) }
+    }
+
+    var canAttemptSandboxPurchase: Bool {
+        !requiresSandboxAccount || sandboxSetupAcknowledged
     }
 
     var hasPurchaseOptions: Bool {
@@ -50,7 +61,13 @@ final class StoreKitService {
     #endif
 
     init() {
-        premiumEntitlement = UserDefaults.standard.bool(forKey: Self.premiumEntitlementDefaultsKey)
+        // TestFlight must re-verify Premium from sandbox StoreKit — don't inherit a cached
+        // entitlement written by an Xcode debug install on the same device.
+        if AppDistribution.isTestFlight {
+            premiumEntitlement = false
+        } else {
+            premiumEntitlement = UserDefaults.standard.bool(forKey: Self.premiumEntitlementDefaultsKey)
+        }
         #if DEBUG
         debugForceFreeTier = UserDefaults.standard.bool(forKey: Self.forceFreeTierDefaultsKey)
         #endif
@@ -97,10 +114,10 @@ final class StoreKitService {
             var found = false
             for await result in StoreKit.Transaction.currentEntitlements {
                 guard case .verified(let t) = result else { continue }
-                if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
-                    found = true
-                    break
-                }
+                guard Self.isPremiumProduct(t.productID) else { continue }
+                guard Self.acceptsTransactionEnvironment(t.environment) else { continue }
+                found = true
+                break
             }
             return found
         }.value
@@ -109,6 +126,12 @@ final class StoreKitService {
 
     func purchase(annual: Bool = false) async throws {
         purchaseError = nil
+
+        guard canAttemptSandboxPurchase else {
+            let message = PurchaseError.sandboxSetupRequired.errorDescription ?? "Sandbox setup required."
+            purchaseError = message
+            throw PurchaseError.sandboxSetupRequired
+        }
 
         let product: Product?
         if annual {
@@ -125,10 +148,10 @@ final class StoreKitService {
             switch result {
             case .success(let verification):
                 guard case .verified(let t) = verification else { return }
-                if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
-                    setPremiumEntitlement(true)
-                    await t.finish()
-                }
+                guard Self.isPremiumProduct(t.productID),
+                      Self.acceptsTransactionEnvironment(t.environment) else { return }
+                setPremiumEntitlement(true)
+                await t.finish()
             case .userCancelled:
                 break
             case .pending:
@@ -146,6 +169,13 @@ final class StoreKitService {
     func restore() async throws {
         purchaseError = nil
         restoreMessage = nil
+
+        guard canAttemptSandboxPurchase else {
+            let message = PurchaseError.sandboxSetupRequired.errorDescription ?? "Sandbox setup required."
+            purchaseError = message
+            throw PurchaseError.sandboxSetupRequired
+        }
+
         isRestoring = true
         defer { isRestoring = false }
 
@@ -171,8 +201,8 @@ final class StoreKitService {
     private func finishUnfinishedTransactions() async {
         for await result in StoreKit.Transaction.unfinished {
             guard case .verified(let transaction) = result else { continue }
-            if transaction.productID == AppConfiguration.premiumProductID
-                || transaction.productID == AppConfiguration.premiumAnnualProductID {
+            if Self.isPremiumProduct(transaction.productID),
+               Self.acceptsTransactionEnvironment(transaction.environment) {
                 setPremiumEntitlement(true)
             }
             await transaction.finish()
@@ -182,10 +212,28 @@ final class StoreKitService {
     private func observeTransactions() async {
         for await update in StoreKit.Transaction.updates {
             guard case .verified(let t) = update else { continue }
-            if t.productID == AppConfiguration.premiumProductID || t.productID == AppConfiguration.premiumAnnualProductID {
+            if Self.isPremiumProduct(t.productID),
+               Self.acceptsTransactionEnvironment(t.environment) {
                 await checkEntitlements()
                 await t.finish()
             }
+        }
+    }
+
+    nonisolated private static func isPremiumProduct(_ productID: String) -> Bool {
+        productID == AppConfiguration.premiumProductID
+            || productID == AppConfiguration.premiumAnnualProductID
+    }
+
+    /// TestFlight accepts sandbox transactions only; App Store accepts production only.
+    nonisolated private static func acceptsTransactionEnvironment(_ environment: StoreKit.AppStore.Environment) -> Bool {
+        switch AppDistribution.channel {
+        case .testFlight:
+            return environment == .sandbox
+        case .appStore:
+            return environment == .production
+        case .debug:
+            return true
         }
     }
 
@@ -233,12 +281,15 @@ final class StoreKitService {
 
 enum PurchaseError: LocalizedError {
     case productUnavailable
+    case sandboxSetupRequired
     case storeKit(String)
 
     var errorDescription: String? {
         switch self {
         case .productUnavailable:
             return "Premium is not available yet. Configure the in-app purchase in App Store Connect."
+        case .sandboxSetupRequired:
+            return "Sign in with a Sandbox Apple ID under Settings → App Store → Sandbox Account, then confirm below."
         case .storeKit(let message):
             return message
         }

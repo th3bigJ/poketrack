@@ -2,60 +2,7 @@ import Foundation
 import Observation
 import SwiftData
 
-/// Snapshot format written to R2: `user-collections/{userID}/collection.json`
-struct FriendCollectionSnapshot: Codable {
-    struct CardEntry: Codable {
-        let cardID: String
-        let variantKey: String
-        let qty: Int
-
-        enum CodingKeys: String, CodingKey {
-            case cardID = "cardID"
-            case variantKey
-            case qty
-        }
-    }
-
-    struct WishlistEntry: Codable {
-        let cardID: String
-        let variantKey: String
-
-        enum CodingKeys: String, CodingKey {
-            case cardID
-            case cardIDSnake = "card_id"
-            case variantKey
-            case variantKeySnake = "variant_key"
-        }
-
-        init(cardID: String, variantKey: String) {
-            self.cardID = cardID
-            self.variantKey = variantKey
-        }
-
-        init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            cardID = try container.decodeIfPresent(String.self, forKey: .cardID)
-                ?? container.decodeIfPresent(String.self, forKey: .cardIDSnake)
-                ?? ""
-            variantKey = try container.decodeIfPresent(String.self, forKey: .variantKey)
-                ?? container.decodeIfPresent(String.self, forKey: .variantKeySnake)
-                ?? "normal"
-        }
-
-        func encode(to encoder: Encoder) throws {
-            var container = encoder.container(keyedBy: CodingKeys.self)
-            try container.encode(cardID, forKey: .cardID)
-            try container.encode(variantKey, forKey: .variantKey)
-        }
-    }
-
-    let userID: String
-    let updatedAt: String
-    let collection: [CardEntry]
-    let wishlist: [WishlistEntry]
-}
-
-/// Uploads the signed-in user's collection snapshot to R2 via the collection-sync
+/// Uploads the signed-in user's full library snapshot to R2 via the collection-sync
 /// Cloudflare Worker, and fetches snapshots for friends when building trades.
 @Observable
 @MainActor
@@ -67,6 +14,13 @@ final class CollectionSyncService {
 
     private(set) var lastUploadError: String?
     private(set) var lastUploadedAt: Date?
+    private(set) var lastUploadedSummary: String?
+    private(set) var lastRestoreError: String?
+    private(set) var lastRestoredAt: Date?
+    private(set) var lastRestoredCardCount: Int = 0
+    private(set) var lastRestoredSummary: String?
+    private(set) var isRestoring = false
+    private(set) var isUploading = false
 
     init(authService: SocialAuthService) {
         self.authService = authService
@@ -76,7 +30,7 @@ final class CollectionSyncService {
         self.modelContext = modelContext
     }
 
-    /// Call whenever the collection or wishlist changes. Upload is debounced 30s.
+    /// Call whenever library data changes. Upload is debounced 30s.
     func scheduleUpload() {
         guard case .signedIn = authService.authState else { return }
         debounceTask?.cancel()
@@ -84,12 +38,74 @@ final class CollectionSyncService {
             guard let self else { return }
             try? await Task.sleep(for: debounceDelay)
             guard !Task.isCancelled else { return }
-            await self.uploadSnapshot()
+            _ = await self.uploadSnapshot(force: false)
+        }
+    }
+
+    /// Immediately uploads the full local library to R2.
+    @discardableResult
+    func backupEverythingNow() async -> Bool {
+        debounceTask?.cancel()
+        return await uploadSnapshot(force: true)
+    }
+
+    /// Downloads the signed-in user's own cloud backup (R2 snapshot).
+    func fetchOwnSnapshot() async throws -> UserLibraryBackup? {
+        guard case .signedIn(let userID, _) = authService.authState else {
+            throw CollectionSyncError.notSignedIn
+        }
+        do {
+            return try await fetchFriendCollection(userID: userID)
+        } catch CollectionSyncError.httpError(404) {
+            return nil
+        }
+    }
+
+    /// Restores the full library from R2 when local data is empty, or when `force` is true.
+    @discardableResult
+    func restoreFromCloudBackupIfNeeded(force: Bool = false) async -> Bool {
+        guard let ctx = modelContext else { return false }
+        guard case .signedIn = authService.authState else { return false }
+
+        let localEmpty = UserLibraryBackupCodec.localLibraryIsEmpty(ctx)
+        guard force || localEmpty else {
+            print("[CollectionSync] skip restore — local library already present")
+            return false
+        }
+
+        isRestoring = true
+        lastRestoreError = nil
+        defer { isRestoring = false }
+
+        do {
+            guard let snapshot = try await fetchOwnSnapshot() else {
+                print("[CollectionSync] no cloud backup found")
+                return false
+            }
+            guard snapshot.hasAnyData else {
+                print("[CollectionSync] cloud backup is empty — nothing to restore")
+                return false
+            }
+
+            let restoredCards = try UserLibraryBackupCodec.apply(
+                snapshot,
+                modelContext: ctx,
+                replaceExisting: force
+            )
+            lastRestoredCardCount = restoredCards
+            lastRestoredAt = Date()
+            lastRestoredSummary = snapshot.backupSummaryLine
+            print("[CollectionSync] restored library from cloud backup — \(snapshot.backupSummaryLine)")
+            return restoredCards > 0 || snapshot.hasAnyData
+        } catch {
+            lastRestoreError = error.localizedDescription
+            print("[CollectionSync] restore failed: \(error.localizedDescription)")
+            return false
         }
     }
 
     /// Fetch another user's snapshot for use in trade builder.
-    func fetchFriendCollection(userID: UUID) async throws -> FriendCollectionSnapshot {
+    func fetchFriendCollection(userID: UUID) async throws -> UserLibraryBackup {
         guard let url = AppConfiguration.collectionSyncGetURL(userID: userID) else {
             throw CollectionSyncError.missingConfiguration
         }
@@ -104,22 +120,37 @@ final class CollectionSyncService {
             let code = (response as? HTTPURLResponse)?.statusCode ?? -1
             throw CollectionSyncError.httpError(code)
         }
-        return try JSONDecoder().decode(FriendCollectionSnapshot.self, from: data)
+        return try JSONDecoder().decode(UserLibraryBackup.self, from: data)
     }
 
     // MARK: - Private
 
-    private func uploadSnapshot() async {
+    @discardableResult
+    private func uploadSnapshot(force: Bool) async -> Bool {
         guard let url = AppConfiguration.collectionSyncPutURL else {
             lastUploadError = "Worker URL not configured."
-            return
+            return false
         }
-        guard let token = authService.accessToken, !token.isEmpty else { return }
-        guard case .signedIn(let userID, _) = authService.authState else { return }
-        guard let ctx = modelContext else { return }
+        guard let token = authService.accessToken, !token.isEmpty else {
+            lastUploadError = "Sign in to your Bindr account first."
+            return false
+        }
+        guard case .signedIn(let userID, _) = authService.authState else { return false }
+        guard let ctx = modelContext else {
+            lastUploadError = "Library not ready yet."
+            return false
+        }
+
+        isUploading = true
+        defer { isUploading = false }
 
         do {
-            let snapshot = try buildSnapshot(userID: userID, modelContext: ctx)
+            let snapshot = try UserLibraryBackupCodec.build(userID: userID, modelContext: ctx)
+            guard force || snapshot.hasAnyData else {
+                print("[CollectionSync] skip upload — local library is empty")
+                lastUploadError = "Nothing to back up yet."
+                return false
+            }
             let data = try JSONEncoder().encode(snapshot)
 
             var request = URLRequest(url: url)
@@ -132,40 +163,17 @@ final class CollectionSyncService {
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
                 let code = (response as? HTTPURLResponse)?.statusCode ?? -1
                 lastUploadError = "Upload failed with status \(code)."
-                return
+                return false
             }
             lastUploadError = nil
             lastUploadedAt = Date()
+            lastUploadedSummary = snapshot.backupSummaryLine
+            print("[CollectionSync] uploaded library backup — \(snapshot.backupSummaryLine)")
+            return true
         } catch {
             lastUploadError = error.localizedDescription
+            return false
         }
-    }
-
-    private func buildSnapshot(userID: UUID, modelContext: ModelContext) throws -> FriendCollectionSnapshot {
-        let collectionItems = try modelContext.fetch(FetchDescriptor<CollectionItem>())
-        let wishlistItems = try modelContext.fetch(FetchDescriptor<WishlistItem>())
-
-        let collection: [FriendCollectionSnapshot.CardEntry] = collectionItems.compactMap { item in
-            guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
-            return FriendCollectionSnapshot.CardEntry(
-                cardID: item.cardID,
-                variantKey: item.variantKey,
-                qty: item.quantity
-            )
-        }
-
-        let wishlist: [FriendCollectionSnapshot.WishlistEntry] = wishlistItems.compactMap { item in
-            guard !item.cardID.isEmpty else { return nil }
-            return FriendCollectionSnapshot.WishlistEntry(cardID: item.cardID, variantKey: item.variantKey)
-        }
-
-        let formatter = ISO8601DateFormatter()
-        return FriendCollectionSnapshot(
-            userID: userID.uuidString.lowercased(),
-            updatedAt: formatter.string(from: Date()),
-            collection: collection,
-            wishlist: wishlist
-        )
     }
 }
 

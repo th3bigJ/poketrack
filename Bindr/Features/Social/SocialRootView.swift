@@ -306,30 +306,15 @@ struct SocialRootView: View {
                 }
             }
         case .trades:
-            Menu {
-                Button {
-                    Haptics.lightImpact()
-                    services.pendingTradeSeed = nil
-                    services.isCreatingNewTrade = true
-                    socialNavigationPath.append(SocialDestination.friends)
-                } label: {
-                    Label("Select a Friend", systemImage: "person.2")
-                }
-
-                Button {
-                    Haptics.lightImpact()
-                    socialNavigationPath.append(SocialDestination.qrTrade)
-                } label: {
-                    Label("Scan QR Code", systemImage: "qrcode.viewfinder")
-                }
+            ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
+                Haptics.lightImpact()
+                services.pendingTradeSeed = nil
+                services.isCreatingNewTrade = true
+                socialNavigationPath.append(SocialDestination.friends)
             } label: {
-                ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
-                    // handled by Menu
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                }
+                Image(systemName: "plus")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.primary)
             }
         case .friends:
             if services.pendingTradeSeed != nil || services.isCreatingNewTrade {
@@ -440,11 +425,6 @@ struct SocialRootView: View {
                         QRProfileView(username: profile.username) { scannedUsername in
                             socialNavigationPath.append(SocialDestination.friendProfile(username: scannedUsername))
                         }
-                    case .qrTrade:
-                        QRTradeView(
-                            currentUsername: profile.username,
-                            navigationPath: $socialNavigationPath
-                        )
                     case .mutualTrade(let sessionID, let otherUserID, let otherUsername):
                         MutualTradeView(
                             navigationPath: $socialNavigationPath,
