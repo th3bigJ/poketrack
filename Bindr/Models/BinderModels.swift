@@ -142,7 +142,7 @@ struct BinderColourPalette {
 
     static func color(named name: String) -> Color {
         if name == logoColourName { return logoBaseColor }
-        options.first(where: { $0.name == name })?.color
+        return options.first(where: { $0.name == name })?.color
             ?? options[0].color
     }
 
