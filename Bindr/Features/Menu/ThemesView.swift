@@ -78,7 +78,7 @@ struct ThemesView: View {
     private var accentCard: some View {
         cardSection(
             title: "Accent Color",
-            footer: "Used for buttons, links, and highlights. Select a color that reflects your style."
+            footer: "Used for buttons, links, highlights, and the app background glow. Select a theme that reflects your style."
         ) {
             // Fixed-6 grid keeps the swatches geometric rather than
             // sprawling — adaptive sizing wraps unpredictably on the
@@ -87,7 +87,7 @@ struct ThemesView: View {
                 columns: Array(repeating: GridItem(.flexible(), spacing: BindrSpacing.sm), count: 6),
                 spacing: BindrSpacing.sm
             ) {
-                ForEach(ThemeSettings.presetColors, id: \.self) { hex in
+                ForEach(ThemeSettings.accentThemeOptions, id: \.self) { hex in
                     ColorSwatch(
                         hex: hex,
                         isSelected: normalizedAccentHex == normalizeHex(hex)
@@ -110,12 +110,12 @@ struct ThemesView: View {
     }
 
     private var isUsingCustomAccent: Bool {
-        !ThemeSettings.presetColors.contains(where: { normalizeHex($0) == normalizedAccentHex })
+        !ThemeSettings.accentThemeOptions.contains(where: { normalizeHex($0) == normalizedAccentHex })
     }
 
     private var customAccentBinding: Binding<Color> {
         Binding(
-            get: { Color(hex: services.theme.accentColorHex) },
+            get: { services.theme.accentColor },
             set: { newColor in
                 services.theme.accentColorHex = hexString(from: newColor)
             }
@@ -209,11 +209,14 @@ private struct ColorSwatch: View {
     let isSelected: Bool
     let action: () -> Void
 
+    private var isLogoTheme: Bool {
+        hex == ThemeSettings.logoThemeID
+    }
+
     var body: some View {
         Button(action: action) {
             ZStack {
-                Circle()
-                    .fill(Color(hex: hex))
+                swatchFill
                     .frame(width: 36, height: 36)
 
                 if isSelected {
@@ -230,8 +233,33 @@ private struct ColorSwatch: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("Accent color \(hex)")
+        .accessibilityLabel(isLogoTheme ? "Bindr logo theme" : "Accent color \(hex)")
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+    }
+
+    @ViewBuilder
+    private var swatchFill: some View {
+        if isLogoTheme {
+            Circle()
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            Color(hex: "22d3ee"),
+                            Color(hex: "6366f1"),
+                            Color(hex: "ec4899")
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .overlay {
+                    Circle()
+                        .stroke(Color.white.opacity(colorScheme == .dark ? 0.22 : 0.48), lineWidth: 1)
+                }
+        } else {
+            Circle()
+                .fill(Color(hex: hex))
+        }
     }
 }
 

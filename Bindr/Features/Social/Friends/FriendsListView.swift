@@ -211,10 +211,16 @@ struct FriendsListView: View {
                 } label: {
                     Text(tab.rawValue)
                         .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(selectedTab == tab ? Color.black : Color.secondary)
+                        .foregroundStyle(selectedTab == tab ? Color.white : Color.secondary)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
-                        .background(selectedTab == tab ? bindrAccent : Color(uiColor: .secondarySystemBackground), in: Capsule())
+                        .background {
+                            Capsule()
+                                .bindrAccentFill(
+                                    selectedTab == tab ? bindrAccent : Color(uiColor: .secondarySystemBackground),
+                                    usesLogoGradient: selectedTab == tab
+                                )
+                        }
                         .overlay {
                             Capsule()
                                 .stroke(selectedTab == tab ? .clear : Color.primary.opacity(0.09), lineWidth: 1)

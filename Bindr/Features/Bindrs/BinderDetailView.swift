@@ -1801,21 +1801,27 @@ struct BinderStylePickerSheet: View {
 
                                 Divider()
 
-                                Picker("Title text color", selection: $binder.titleTextColor) {
-                                    ForEach(BinderTitleTextColor.allCases) { option in
-                                        Text(option.displayName).tag(option.rawValue)
-                                    }
-                                }
-                                .pickerStyle(.segmented)
-                                .tint(colorScheme == .dark ? .white : .black)
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text("COVER TEXT")
+                                        .font(.caption.weight(.bold))
+                                        .foregroundStyle(.secondary)
 
-                                Picker("Title font", selection: $binder.titleFontStyle) {
-                                    ForEach(BinderTitleFontStyle.allCases) { option in
-                                        Text(option.displayName).tag(option.rawValue)
+                                    Picker("Title text color", selection: $binder.titleTextColor) {
+                                        ForEach(BinderTitleTextColor.allCases) { option in
+                                            Text(option.displayName).tag(option.rawValue)
+                                        }
                                     }
+                                    .pickerStyle(.segmented)
+                                    .tint(colorScheme == .dark ? .white : .black)
+
+                                    Picker("Title font", selection: $binder.titleFontStyle) {
+                                        ForEach(BinderTitleFontStyle.allCases) { option in
+                                            Text(option.displayName).tag(option.rawValue)
+                                        }
+                                    }
+                                    .pickerStyle(.segmented)
+                                    .tint(colorScheme == .dark ? .white : .black)
                                 }
-                                .pickerStyle(.segmented)
-                                .tint(colorScheme == .dark ? .white : .black)
 
                                 Divider()
 
@@ -2209,9 +2215,7 @@ struct BinderStylePickerSheet: View {
         return Button {
             binder.colour = swatch.name
         } label: {
-            Circle()
-                .fill(swatch.color)
-                .frame(width: 36, height: 36)
+            binderColourSwatch(name: swatch.name, color: swatch.color, size: 36)
                 .overlay {
                     Circle()
                         .stroke(isSelected ? Color.primary.opacity(0.35) : Color.white.opacity(0.2), lineWidth: isSelected ? 2 : 1)
@@ -2227,6 +2231,18 @@ struct BinderStylePickerSheet: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(BinderColourPalette.displayName(for: swatch.name))
+    }
+
+    private func binderColourSwatch(name: String, color: Color, size: CGFloat) -> some View {
+        Circle()
+            .fill(color)
+            .overlay {
+                if name == BinderColourPalette.logoColourName {
+                    Circle()
+                        .fill(BinderColourPalette.logoGradient)
+                }
+            }
+            .frame(width: size, height: size)
     }
 
     private func textureButton(_ texture: BinderTexture) -> some View {

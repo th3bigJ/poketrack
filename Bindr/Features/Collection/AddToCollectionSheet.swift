@@ -42,14 +42,21 @@ struct AddToCollectionSheet: View {
 
     let card: Card
     let availableVariantKeys: [String]
+    var onSaved: (() -> Void)?
 
     @State private var selectedVariantKey: String
     @State private var acquisitionKind: CollectionAcquisitionKind = .packed
     @State private var quantity: Int = 1
 
-    init(card: Card, variantKey: String, availableVariantKeys: [String] = ["normal"]) {
+    init(
+        card: Card,
+        variantKey: String,
+        availableVariantKeys: [String] = ["normal"],
+        onSaved: (() -> Void)? = nil
+    ) {
         self.card = card
         self.availableVariantKeys = availableVariantKeys.isEmpty ? ["normal"] : availableVariantKeys
+        self.onSaved = onSaved
         _selectedVariantKey = State(initialValue: variantKey)
     }
 
@@ -317,6 +324,7 @@ struct AddToCollectionSheet: View {
             case .imported:
                 break
             }
+            onSaved?()
             dismiss()
         } catch AddToCollectionValidation.missingPrice {
             errorMessage = "Enter a unit price."

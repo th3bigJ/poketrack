@@ -113,6 +113,8 @@ private struct CardBrowseDetailPage: View {
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
+    @State private var collectionSuccessSparkTrigger = 0
+    @State private var wishlistSuccessSparkTrigger = 0
     @State private var imageAppeared = false
     @State private var extractedAuraColors: [Color] = []
     @State private var auraSourceImageArea: CGFloat = 0
@@ -274,7 +276,17 @@ private struct CardBrowseDetailPage: View {
             CollectionDispositionFlowSheet(lines: payload.lines, cardDisplayName: payload.cardDisplayName)
         }
         .sheet(item: $addToCollectionPayload) { payload in
-            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey, availableVariantKeys: payload.availableVariantKeys)
+            AddToCollectionSheet(
+                card: payload.card,
+                variantKey: payload.variantKey,
+                availableVariantKeys: payload.availableVariantKeys,
+                onSaved: {
+                    Task { @MainActor in
+                        try? await Task.sleep(for: .milliseconds(280))
+                        collectionSuccessSparkTrigger += 1
+                    }
+                }
+            )
                 .environment(services)
         }
         .sheet(isPresented: $showCardShare) {
@@ -557,6 +569,7 @@ private struct CardBrowseDetailPage: View {
                 )
             }
             .buttonStyle(.plain)
+            .bindrSuccessSpark(trigger: collectionSuccessSparkTrigger)
         } else {
             Menu {
                 variantSelectionMenuContent(
@@ -573,6 +586,7 @@ private struct CardBrowseDetailPage: View {
             }
             .menuStyle(.button)
             .menuIndicator(.hidden)
+            .bindrSuccessSpark(trigger: collectionSuccessSparkTrigger)
         }
     }
 
@@ -600,6 +614,7 @@ private struct CardBrowseDetailPage: View {
                 )
             }
             .buttonStyle(.plain)
+            .bindrSuccessSpark(trigger: wishlistSuccessSparkTrigger)
         } else {
             Menu {
                 variantSelectionMenuContent(
@@ -616,6 +631,7 @@ private struct CardBrowseDetailPage: View {
             }
             .menuStyle(.button)
             .menuIndicator(.hidden)
+            .bindrSuccessSpark(trigger: wishlistSuccessSparkTrigger)
         }
     }
 
@@ -1052,6 +1068,7 @@ private struct CardBrowseDetailPage: View {
         do {
             try wl.addItem(cardID: card.masterCardId, variantKey: variantKey, notes: "")
             isCurrentCardWishlisted = true
+            wishlistSuccessSparkTrigger += 1
             HapticManager.notification(.success)
         } catch let error as WishlistError {
             switch error {

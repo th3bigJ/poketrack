@@ -395,20 +395,20 @@ final class AppServices {
 
             Task {
                 await task.value
-                lock.lock()
-                defer { lock.unlock() }
-                guard !resumed else { return }
-                resumed = true
-                continuation.resume(returning: true)
+                lock.withLock {
+                    guard !resumed else { return }
+                    resumed = true
+                    continuation.resume(returning: true)
+                }
             }
 
             Task {
                 try? await Task.sleep(nanoseconds: timeoutNanoseconds)
-                lock.lock()
-                defer { lock.unlock() }
-                guard !resumed else { return }
-                resumed = true
-                continuation.resume(returning: false)
+                lock.withLock {
+                    guard !resumed else { return }
+                    resumed = true
+                    continuation.resume(returning: false)
+                }
             }
         }
     }

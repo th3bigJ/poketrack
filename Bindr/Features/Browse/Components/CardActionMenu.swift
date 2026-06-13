@@ -11,6 +11,8 @@ struct CardActionMenu: View {
     let onAddToWishlist: () -> Void
     let onRemoveFromWishlist: () -> Void
     let onShareAction: () -> Void
+    var collectionSuccessTrigger: Int = 0
+    var wishlistSuccessTrigger: Int = 0
 
     private struct Palette {
         static let success = Color(red: 0.22, green: 0.81, blue: 0.44)
@@ -51,6 +53,7 @@ struct CardActionMenu: View {
                 .glassCardStyle(cornerRadius: 18, interactive: true)
         }
         .buttonStyle(.plain)
+        .bindrSuccessSpark(trigger: wishlistSuccessTrigger)
         .accessibilityLabel(isWishlisted ? "Remove from Wish List" : "Add to Wish List")
     }
 
@@ -73,7 +76,8 @@ struct CardActionMenu: View {
                 title: "Collection",
                 systemImage: "plus.circle.fill",
                 tint: Palette.success,
-                action: { onSaveToCollection(variantKey) }
+                action: { onSaveToCollection(variantKey) },
+                successTrigger: collectionSuccessTrigger
             )
         } else {
             Menu {
@@ -93,6 +97,7 @@ struct CardActionMenu: View {
             }
             .menuStyle(.button)
             .menuIndicator(.hidden)
+            .bindrSuccessSpark(trigger: collectionSuccessTrigger)
         }
     }
 
@@ -109,7 +114,8 @@ struct CardActionMenu: View {
         title: String,
         systemImage: String,
         tint: Color,
-        action: @escaping () -> Void
+        action: @escaping () -> Void,
+        successTrigger: Int = 0
     ) -> some View {
         Button {
             Haptics.lightImpact()
@@ -118,6 +124,7 @@ struct CardActionMenu: View {
             collectionButtonLabel(title: title, systemImage: systemImage, tint: tint)
         }
         .buttonStyle(.plain)
+        .bindrSuccessSpark(trigger: successTrigger)
         .accessibilityLabel("\(systemImage.contains("plus") ? "Add to" : "Remove from") collection")
     }
 

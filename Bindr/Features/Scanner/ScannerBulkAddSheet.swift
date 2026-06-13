@@ -23,6 +23,7 @@ struct ScannerBulkAddSheet: View {
     @State private var isSaving = false
     @State private var successCount = 0
     @State private var showSuccess = false
+    @State private var successSparkTrigger = 0
     @State private var showPaywall = false
 
     private var currencyCode: String {
@@ -179,6 +180,7 @@ struct ScannerBulkAddSheet: View {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 56))
                     .foregroundStyle(.green)
+                    .bindrSuccessSpark(trigger: successSparkTrigger)
                 Text("\(successCount) card\(successCount == 1 ? "" : "s") added")
                     .font(.title2.weight(.bold))
                     .foregroundStyle(.white)
@@ -321,6 +323,8 @@ struct ScannerBulkAddSheet: View {
             showSuccess = true
         }
         Task { @MainActor in
+            await Task.yield()
+            successSparkTrigger += 1
             try? await Task.sleep(for: .seconds(1.4))
             onSuccessClearSession()
             dismiss()
@@ -356,6 +360,8 @@ struct ScannerBulkAddSheet: View {
             showSuccess = true
         }
         Task { @MainActor in
+            await Task.yield()
+            successSparkTrigger += 1
             try? await Task.sleep(for: .seconds(1.0))
             onSuccessClearSession()
             onTradeAddComplete()

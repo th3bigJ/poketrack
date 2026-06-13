@@ -544,7 +544,7 @@ struct DashboardView: View {
                 HStack(spacing: 0) {
                     Text("Welcome back, ")
                     Text("Trainer.")
-                        .foregroundStyle(services.theme.accentColor)
+                        .bindrAccentForeground(services.theme.accentColor)
                 }
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundStyle(dashboardPrimaryText)
@@ -730,7 +730,14 @@ struct DashboardView: View {
                         )
                         .foregroundStyle(
                             LinearGradient(
-                                colors: [services.theme.accentColor.opacity(0.3), services.theme.accentColor.opacity(0.03)],
+                                colors: services.theme.isLogoThemeSelected
+                                    ? [
+                                        ThemeSettings.logoThemeColors[0].opacity(0.30),
+                                        ThemeSettings.logoThemeColors[2].opacity(0.18),
+                                        ThemeSettings.logoThemeColors[3].opacity(0.08),
+                                        .clear
+                                    ]
+                                    : [services.theme.accentColor.opacity(0.3), services.theme.accentColor.opacity(0.03)],
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
@@ -741,7 +748,11 @@ struct DashboardView: View {
                             y: .value("Value", point.total)
                         )
                         .interpolationMethod(.catmullRom)
-                        .foregroundStyle(services.theme.accentColor)
+                        .foregroundStyle(services.theme.isLogoThemeSelected ? ThemeSettings.logoThemeGradient : LinearGradient(
+                            colors: [services.theme.accentColor, services.theme.accentColor],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ))
                         .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
 
                         if let sel = selectedPoint, sel.date == point.date {
@@ -834,7 +845,7 @@ struct DashboardView: View {
                     icon: "rectangle.stack.fill",
                     iconColor: DashboardPalette.blue,
                     value: "\(uniqueCardsCount)",
-                    label: "Unique Cards",
+                    label: "Unique",
                     action: onOpenCollection
                 )
 
@@ -918,12 +929,15 @@ struct DashboardView: View {
 
                 Text(release.type.trimmingCharacters(in: .whitespacesAndNewlines))
                     .font(.caption2.weight(.bold))
-                    .foregroundStyle(services.theme.accentColor)
+                    .bindrAccentForeground(services.theme.accentColor)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
                     .background(
                         Capsule(style: .continuous)
-                            .fill(services.theme.accentColor.opacity(0.14))
+                            .bindrAccentFill(
+                                services.theme.accentColor.opacity(0.14),
+                                logoOpacity: colorScheme == .dark ? 0.26 : 0.18
+                            )
                     )
 
                 Text(release.releaseDateLabel)
@@ -1032,7 +1046,7 @@ struct DashboardView: View {
                     if let onViewAllActivity {
                         Button("View All") { onViewAllActivity() }
                             .font(.subheadline.weight(.medium))
-                            .foregroundStyle(services.theme.accentColor)
+                            .bindrAccentForeground(services.theme.accentColor)
                     }
                 }
 
@@ -1102,16 +1116,24 @@ struct DashboardView: View {
                     if badgeText(for: line) != nil {
                         Text(badgeText(for: line) ?? "")
                             .font(.caption2.weight(.semibold))
-                            .foregroundStyle(services.theme.accentColor)
+                            .bindrAccentForeground(services.theme.accentColor)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 4)
                             .background(
                                 Capsule(style: .continuous)
-                                    .fill(activityBadgeBackground)
+                                    .bindrAccentFill(
+                                        activityBadgeBackground,
+                                        logoOpacity: colorScheme == .dark ? 0.24 : 0.16
+                                    )
                             )
                             .overlay {
                                 Capsule(style: .continuous)
-                                    .stroke(services.theme.accentColor.opacity(0.28), lineWidth: 1)
+                                    .stroke(
+                                        services.theme.isLogoThemeSelected
+                                            ? ThemeSettings.logoThemeColors[3].opacity(0.34)
+                                            : services.theme.accentColor.opacity(0.28),
+                                        lineWidth: 1
+                                    )
                             }
                     }
 

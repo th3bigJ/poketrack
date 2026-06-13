@@ -48,7 +48,7 @@ struct TradeDetailView: View {
     }
 
     var body: some View {
-        ZStack {
+        ZStack(alignment: .top) {
             Color(uiColor: colorScheme == .dark ? .black : .systemGroupedBackground)
                 .ignoresSafeArea()
 
@@ -65,39 +65,12 @@ struct TradeDetailView: View {
                     description: Text("The link could not be established.")
                 )
             }
+
+            tradeHeader
         }
         .toolbar(.hidden, for: .navigationBar)
-        .safeAreaInset(edge: .top, spacing: 0) {
-            HStack(spacing: 12) {
-                ChromeGlassCircleButton(accessibilityLabel: "Back") {
-                    HapticManager.impact(.light)
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                }
-                
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Active Trade")
-                        .font(.system(size: 17, weight: .heavy))
-                        .foregroundStyle(.primary)
-                    Text(toolbarStatusText)
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(.secondary)
-                }
-                
-                Spacer()
-                
-                if let trade {
-                    TradeStatusBadge(status: trade.status, label: toolbarStatusText)
-                }
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, 8)
-            .padding(.bottom, 10)
-            .background(.ultraThinMaterial)
-        }
+        .toolbar(.visible, for: .tabBar)
+        .toolbarBackground(.hidden, for: .tabBar)
         .task {
             services.setupCollectionLedger(modelContext: modelContext)
             await refresh()
@@ -130,6 +103,25 @@ struct TradeDetailView: View {
             Button("Not Yet", role: .cancel) { }
         } message: {
             Text("Use this only after your side of the exchange is done. Your collection updates when you confirm. The trade completes after both traders confirm.")
+        }
+    }
+
+    private var tradeHeader: some View {
+        BindrPageHeader(title: "Active Trade") {
+            HStack(spacing: 8) {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    HapticManager.impact(.light)
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+            }
+        } trailing: {
+            if let trade {
+                TradeStatusBadge(status: trade.status, label: toolbarStatusText)
+            }
         }
     }
 
@@ -170,8 +162,8 @@ struct TradeDetailView: View {
                     )
                 }
                 .padding(.horizontal, 16)
-                .padding(.top, 18)
-                .padding(.bottom, 18)
+                .padding(.top, 84)
+                .padding(.bottom, 10)
             }
             
             actionFooter(twi)
@@ -346,18 +338,8 @@ struct TradeDetailView: View {
             actionButtons(twi)
         }
         .padding(.horizontal, 16)
-        .padding(.top, 14)
-        .padding(.bottom, 18)
-        .background {
-            Rectangle()
-                .fill(.ultraThinMaterial)
-                .ignoresSafeArea()
-                .overlay(alignment: .top) {
-                    Rectangle()
-                        .fill(Color.primary.opacity(0.08))
-                        .frame(height: 1)
-                }
-        }
+        .padding(.top, 8)
+        .padding(.bottom, 8)
     }
 
     private func tradeSideDetail(items: [TradeItem], cash: Double) -> String {

@@ -591,6 +591,11 @@ struct BinderOpenContainer: View {
     /// changes during the header / stats-bar chrome reveal from shifting
     /// the close-morph destination mid-animation.
     @State private var stablePageFrame: CGRect = .zero
+    /// Opening-only flourish for the special Bindr gradient binder colour.
+    /// Kept local to the morphing overlay so it rides with the cover.
+    @State private var openingSparkVisible = false
+    @State private var openingSparkExpanded = false
+    @State private var openingSparkID = 0
 
     /// Spring used for both the opening morph and the closing collapse.
     /// Critical damping (1.0) so the cover arrives at its destination with
@@ -689,6 +694,16 @@ struct BinderOpenContainer: View {
                     width: max(coverTargetFrame.width, 1),
                     height: max(coverTargetFrame.height, 1)
                 )
+                .overlay {
+                    if openingSparkVisible && binder.colour == BinderColourPalette.logoColourName {
+                        BinderOpeningSparkOverlay(
+                            isExpanded: openingSparkExpanded,
+                            reduceMotion: reduceMotion
+                        )
+                        .id(openingSparkID)
+                        .allowsHitTesting(false)
+                    }
+                }
                 // Animated lift shadow — grows from a tight contact
                 // shadow at the source frame (binder sitting on the
                 // grid) to a deep, diffuse shadow at the page frame
@@ -831,6 +846,8 @@ struct BinderOpenContainer: View {
             coverCenter = sourceCenter
             coverOpacity = 1
             liftIntensity = 0
+            openingSparkVisible = false
+            openingSparkExpanded = false
         }
 
         // Reduce-Motion path: the morph itself becomes a quick
@@ -860,6 +877,7 @@ struct BinderOpenContainer: View {
             // than a 16 ms sleep on variable-refresh-rate displays.
             await Task.yield()
             await MainActor.run {
+                playOpeningSparkIfNeeded()
                 withAnimation(morphAnimation) {
                     coverScale = 1.0
                     coverCenter = pageCenter
@@ -932,6 +950,8 @@ struct BinderOpenContainer: View {
             detailOpacity = 0
             breathingScale = 1.0
             liftIntensity = 1
+            openingSparkVisible = false
+            openingSparkExpanded = false
             isClosing = true
         }
 
@@ -987,5 +1007,100 @@ struct BinderOpenContainer: View {
                 onDismissComplete()
             }
         }
+    }
+
+    private func playOpeningSparkIfNeeded() {
+        guard binder.colour == BinderColourPalette.logoColourName else { return }
+        let nextSparkID = openingSparkID + 1
+        openingSparkID = nextSparkID
+        openingSparkVisible = true
+        openingSparkExpanded = false
+
+        if reduceMotion {
+            withAnimation(.easeOut(duration: 0.28)) {
+                openingSparkExpanded = true
+            }
+        } else {
+            withAnimation(.spring(response: 0.55, dampingFraction: 0.86)) {
+                openingSparkExpanded = true
+            }
+        }
+
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(reduceMotion ? 360 : 760))
+            guard openingSparkID == nextSparkID else { return }
+            withAnimation(.easeOut(duration: 0.18)) {
+                openingSparkVisible = false
+            }
+        }
+    }
+}
+
+private struct BinderOpeningSparkOverlay: View {
+    let isExpanded: Bool
+    let reduceMotion: Bool
+
+    private struct Particle: Identifiable {
+        let id = UUID()
+        let symbol: String
+        let color: Color
+        let start: UnitPoint
+        let end: UnitPoint
+        let size: CGFloat
+        let rotation: Double
+        let endScale: CGFloat
+    }
+
+    private var particles: [Particle] {
+        let colors = BinderColourPalette.logoGradientColors
+        return [
+            Particle(symbol: "sparkle", color: colors[0], start: UnitPoint(x: 0.50, y: 0.24), end: UnitPoint(x: 0.34, y: 0.14), size: 15, rotation: -20, endScale: 0.96),
+            Particle(symbol: "star.fill", color: colors[3], start: UnitPoint(x: 0.68, y: 0.34), end: UnitPoint(x: 0.88, y: 0.22), size: 12, rotation: 22, endScale: 0.82),
+            Particle(symbol: "sparkle", color: colors[2], start: UnitPoint(x: 0.35, y: 0.56), end: UnitPoint(x: 0.18, y: 0.52), size: 12, rotation: -12, endScale: 0.86),
+            Particle(symbol: "circle.fill", color: colors[0], start: UnitPoint(x: 0.63, y: 0.68), end: UnitPoint(x: 0.82, y: 0.78), size: 7, rotation: 0, endScale: 0.72),
+            Particle(symbol: "sparkle", color: colors[3], start: UnitPoint(x: 0.48, y: 0.78), end: UnitPoint(x: 0.42, y: 0.94), size: 11, rotation: 24, endScale: 0.84),
+            Particle(symbol: "circle.fill", color: colors[1], start: UnitPoint(x: 0.28, y: 0.32), end: UnitPoint(x: 0.14, y: 0.25), size: 6, rotation: 0, endScale: 0.74)
+        ]
+    }
+
+    var body: some View {
+        GeometryReader { proxy in
+            ZStack {
+                if reduceMotion {
+                    RoundedRectangle(cornerRadius: proxy.size.height * 0.035, style: .continuous)
+                        .stroke(BinderColourPalette.logoGradient, lineWidth: 2)
+                        .scaleEffect(isExpanded ? 1.035 : 0.98)
+                        .opacity(isExpanded ? 0 : 0.45)
+                        .blur(radius: 0.6)
+                } else {
+                    RoundedRectangle(cornerRadius: proxy.size.height * 0.035, style: .continuous)
+                        .stroke(BinderColourPalette.logoGradient, lineWidth: 2)
+                        .scaleEffect(isExpanded ? 1.055 : 0.96)
+                        .opacity(isExpanded ? 0 : 0.34)
+                        .blur(radius: 0.4)
+
+                    ForEach(particles) { particle in
+                        Image(systemName: particle.symbol)
+                            .font(.system(size: particle.size, weight: .bold))
+                            .foregroundStyle(particle.color)
+                            .shadow(color: particle.color.opacity(0.35), radius: 5, x: 0, y: 0)
+                            .scaleEffect(isExpanded ? particle.endScale : 0.24)
+                            .rotationEffect(.degrees(isExpanded ? particle.rotation : 0))
+                            .position(
+                                point(
+                                    isExpanded ? particle.end : particle.start,
+                                    in: proxy.size
+                                )
+                            )
+                            .opacity(isExpanded ? 0 : 1)
+                    }
+                }
+            }
+        }
+        .compositingGroup()
+    }
+
+    private func point(_ unitPoint: UnitPoint, in size: CGSize) -> CGPoint {
+        CGPoint(x: unitPoint.x * size.width, y: unitPoint.y * size.height)
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 /// whatever shape they need (rounded binder covers, inset card backs, etc.).
 struct BinderTextureView: View {
     let baseColour: Color
+    let baseGradientColors: [Color]?
     let texture: BinderTexture
     let seed: Int
 
@@ -16,11 +17,36 @@ struct BinderTextureView: View {
     /// thumbnail cells). Skips fine-detail passes that disappear at small sizes.
     var compact: Bool = false
 
+    init(
+        baseColour: Color,
+        baseGradientColors: [Color]? = nil,
+        texture: BinderTexture,
+        seed: Int,
+        compact: Bool = false
+    ) {
+        self.baseColour = baseColour
+        self.baseGradientColors = baseGradientColors
+        self.texture = texture
+        self.seed = seed
+        self.compact = compact
+    }
+
     var body: some View {
         Canvas(opaque: false, rendersAsynchronously: false) { ctx, size in
             let rect = CGRect(origin: .zero, size: size)
             // Base fill — dyed surface behind the grain/weave pass.
-            ctx.fill(Path(rect), with: .color(baseColour))
+            if let baseGradientColors {
+                ctx.fill(
+                    Path(rect),
+                    with: .linearGradient(
+                        Gradient(colors: baseGradientColors),
+                        startPoint: CGPoint(x: rect.minX, y: rect.minY),
+                        endPoint: CGPoint(x: rect.maxX, y: rect.maxY)
+                    )
+                )
+            } else {
+                ctx.fill(Path(rect), with: .color(baseColour))
+            }
 
             // Subtle colour variation: slightly darker towards bottom-right,
             // lifts the "flat paint" feeling even before the texture renders.
@@ -331,6 +357,7 @@ extension BinderTextureView {
     init(binder: Binder, compact: Bool = false) {
         self.init(
             baseColour: binder.resolvedColour,
+            baseGradientColors: BinderColourPalette.gradientColors(named: binder.colour),
             texture: binder.textureKind,
             seed: binder.textureSeed,
             compact: compact
@@ -347,6 +374,7 @@ extension BinderTextureView {
     ) {
         self.init(
             baseColour: BinderColourPalette.color(named: colourName),
+            baseGradientColors: BinderColourPalette.gradientColors(named: colourName),
             texture: texture,
             seed: seed,
             compact: compact

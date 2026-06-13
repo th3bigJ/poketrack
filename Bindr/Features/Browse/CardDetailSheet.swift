@@ -25,6 +25,8 @@ struct CardDetailSheet: View {
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
+    @State private var collectionSuccessSparkTrigger = 0
+    @State private var wishlistSuccessSparkTrigger = 0
     @State private var auraColorsByCardID: [String: [Color]] = [:]
     @State private var auraSourceImageAreaByCardID: [String: CGFloat] = [:]
     @State private var pushedSet: TCGSet? = nil
@@ -130,7 +132,17 @@ struct CardDetailSheet: View {
             CollectionDispositionFlowSheet(lines: payload.lines, cardDisplayName: payload.cardDisplayName)
         }
         .sheet(item: $addToCollectionPayload) { payload in
-            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey, availableVariantKeys: payload.availableVariantKeys)
+            AddToCollectionSheet(
+                card: payload.card,
+                variantKey: payload.variantKey,
+                availableVariantKeys: payload.availableVariantKeys,
+                onSaved: {
+                    Task { @MainActor in
+                        try? await Task.sleep(for: .milliseconds(280))
+                        collectionSuccessSparkTrigger += 1
+                    }
+                }
+            )
                 .environment(services)
         }
         .sheet(isPresented: $showCardShare) {
@@ -263,7 +275,9 @@ struct CardDetailSheet: View {
                 },
                 onShareAction: {
                     showCardShare = true
-                }
+                },
+                collectionSuccessTrigger: collectionSuccessSparkTrigger,
+                wishlistSuccessTrigger: wishlistSuccessSparkTrigger
             )
 
             CardFriendTradeMatchesSection(card: card, directContext: directTradeContext)
@@ -737,6 +751,7 @@ struct CardDetailSheet: View {
         do {
             try wl.addItem(cardID: currentCard.masterCardId, variantKey: variantKey, notes: "")
             isCurrentCardWishlisted = true
+            wishlistSuccessSparkTrigger += 1
             HapticManager.notification(.success)
         } catch let error as WishlistError {
             switch error {

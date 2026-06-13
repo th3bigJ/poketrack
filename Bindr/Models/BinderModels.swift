@@ -83,6 +83,20 @@ struct BinderPageLayout: Codable, Hashable {
 /// textures in ``BinderTexture``. Each colour is the _base_ hue; the texture renderer
 /// derives highlights, grain lines, and shadows from this base.
 struct BinderColourPalette {
+    static let logoColourName = "bindr"
+    static let logoGradientColors = [
+        Color(hex: "22d3ee"),
+        Color(hex: "6366f1"),
+        Color(hex: "8b5cf6"),
+        Color(hex: "ec4899")
+    ]
+    static let logoGradient = LinearGradient(
+        colors: logoGradientColors,
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+    static let logoBaseColor = Color(hex: "8b5cf6")
+
     static let options: [(name: String, color: Color)] = [
         ("obsidian", Color(red: 0.11, green: 0.12, blue: 0.14)),
         ("navy", Color(red: 0.12, green: 0.22, blue: 0.44)),
@@ -124,16 +138,22 @@ struct BinderColourPalette {
 
     /// The subset of the palette surfaced to users in the picker (curated, no
     /// duplicates). Twelve options — fits a 6×2 or 4×3 grid cleanly.
-    static let pickerOptions: [(name: String, color: Color)] = Array(options.prefix(12))
+    static let pickerOptions: [(name: String, color: Color)] = [(logoColourName, logoBaseColor)] + Array(options.prefix(11))
 
     static func color(named name: String) -> Color {
+        if name == logoColourName { return logoBaseColor }
         options.first(where: { $0.name == name })?.color
-            ?? pickerOptions[0].color
+            ?? options[0].color
+    }
+
+    static func gradientColors(named name: String) -> [Color]? {
+        name == logoColourName ? logoGradientColors : nil
     }
 
     /// Human-readable label for a colour name ("navy" → "Navy").
     static func displayName(for colourName: String) -> String {
-        let key = colourName.isEmpty ? pickerOptions[0].name : colourName
+        if colourName == logoColourName { return "Bindr" }
+        let key = colourName.isEmpty ? options[0].name : colourName
         return key.prefix(1).uppercased() + key.dropFirst()
     }
 }

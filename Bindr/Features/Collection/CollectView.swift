@@ -325,7 +325,7 @@ struct CollectView: View {
             .padding(.vertical, 5)
             .background(
                 Capsule(style: .continuous)
-                    .fill(isSelected ? services.theme.accentColor : Color.clear)
+                    .bindrAccentFill(isSelected ? services.theme.accentColor : Color.clear, usesLogoGradient: isSelected)
             )
             .overlay(
                 Capsule(style: .continuous)

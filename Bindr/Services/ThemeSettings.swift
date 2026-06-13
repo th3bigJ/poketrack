@@ -20,6 +20,19 @@ final class ThemeSettings {
     }
 
     private let cloudSettings: CloudSettingsService
+    static let logoThemeID = "bindr-logo"
+    static let logoThemeAccentHex = "8b5cf6"
+    static let logoThemeColors = [
+        Color(hex: "22d3ee"),
+        Color(hex: "6366f1"),
+        Color(hex: "8b5cf6"),
+        Color(hex: "ec4899")
+    ]
+    static let logoThemeGradient = LinearGradient(
+        colors: logoThemeColors,
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
     private let accentColorKey = "user_accent_color_hex"
     private let appearanceKey = "user_app_appearance"
     private let backgroundGlowKey = "user_background_glow_enabled"
@@ -43,7 +56,11 @@ final class ThemeSettings {
     }
     
     var accentColor: Color {
-        Color(hex: accentColorHex)
+        isLogoThemeSelected ? Color(hex: Self.logoThemeAccentHex) : Color(hex: accentColorHex)
+    }
+
+    var isLogoThemeSelected: Bool {
+        accentColorHex == Self.logoThemeID
     }
     
     var colorScheme: ColorScheme? {
@@ -76,4 +93,6 @@ final class ThemeSettings {
         "ec4899", // Pink
         "71717a"  // Zinc
     ]
+
+    static let accentThemeOptions = [logoThemeID] + presetColors
 }

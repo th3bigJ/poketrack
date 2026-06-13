@@ -128,6 +128,8 @@ struct BinderCoverView: View {
                                 }
                             }
                             .frame(height: 145 * scale)
+                        } else {
+                            placeholderPeekingFan(scale: scale)
                         }
 
                         Spacer(minLength: 12 * scale)
@@ -158,6 +160,16 @@ struct BinderCoverView: View {
             .onChange(of: binder.embossMode) { Task { await refreshAssets() } }
             .onChange(of: binder.embossedPokemonImageUrl) { Task { await refreshAssets() } }
         }
+    }
+
+    private func placeholderPeekingFan(scale: CGFloat) -> some View {
+        HStack(spacing: -70 * scale) {
+            ForEach(0..<3, id: \.self) { index in
+                placeholderPeekingCard(scale: scale, index: index, totalCount: 3)
+            }
+        }
+        .frame(height: 145 * scale)
+        .opacity(0.82)
     }
 
     private func refreshAssets() async {
@@ -506,6 +518,56 @@ struct BinderCoverView: View {
         .rotationEffect(.degrees(rotation), anchor: .bottom)
         .offset(x: xOffset, y: yOffset)
         .zIndex(-Double(index))
+    }
+
+    private func placeholderPeekingCard(scale: CGFloat, index: Int, totalCount: Int) -> some View {
+        let middleIndex = Double(totalCount - 1) / 2.0
+        let relativeIndex = Double(index) - middleIndex
+        let rotation = relativeIndex * 15.0
+        let xOffset = relativeIndex * 8 * scale
+        let yOffset = abs(relativeIndex) * 12 * scale
+        let tint = BinderColourPalette.color(named: binder.colour)
+
+        return RoundedRectangle(cornerRadius: 6 * scale, style: .continuous)
+            .fill(
+                LinearGradient(
+                    colors: placeholderCardColors(tint: tint, index: index),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            )
+            .overlay {
+                RoundedRectangle(cornerRadius: 6 * scale, style: .continuous)
+                    .stroke(Color.white.opacity(0.35), lineWidth: 0.8 * scale)
+            }
+            .overlay(alignment: .topTrailing) {
+                Image(systemName: "sparkle")
+                    .font(.system(size: 11 * scale, weight: .bold))
+                    .foregroundStyle(Color.white.opacity(0.72))
+                    .padding(7 * scale)
+            }
+            .shadow(color: .black.opacity(0.25), radius: 3 * scale, x: -2 * scale, y: 2 * scale)
+            .aspectRatio(5/7, contentMode: .fit)
+            .rotationEffect(.degrees(rotation), anchor: .bottom)
+            .offset(x: xOffset, y: yOffset)
+            .zIndex(-Double(index))
+    }
+
+    private func placeholderCardColors(tint: Color, index: Int) -> [Color] {
+        if binder.colour == BinderColourPalette.logoColourName {
+            let colors = BinderColourPalette.logoGradientColors
+            return [
+                colors[index % colors.count].opacity(0.90),
+                colors[(index + 1) % colors.count].opacity(0.72),
+                Color.white.opacity(0.55)
+            ]
+        }
+
+        return [
+            tint.opacity(0.72),
+            tint.opacity(0.44),
+            Color.white.opacity(0.50)
+        ]
     }
 }
 

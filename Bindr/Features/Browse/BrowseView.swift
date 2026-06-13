@@ -33,9 +33,14 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
                         .background {
                             if isSelected {
                                 Capsule()
-                                    .fill(services.theme.accentColor)
+                                    .bindrAccentFill(services.theme.accentColor)
                                     .matchedGeometryEffect(id: "highlight", in: namespace)
-                                    .shadow(color: services.theme.accentColor.opacity(0.2), radius: 4, x: 0, y: 2)
+                                    .shadow(
+                                        color: (services.theme.isLogoThemeSelected ? Color(hex: "ec4899") : services.theme.accentColor).opacity(0.22),
+                                        radius: 4,
+                                        x: 0,
+                                        y: 2
+                                    )
                             }
                         }
                 }
@@ -2318,7 +2323,10 @@ struct BrowseView: View {
                 .padding(.vertical, 6)
                 .background {
                     Capsule()
-                        .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
+                        .bindrAccentFill(
+                            isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06),
+                            usesLogoGradient: isSelected
+                        )
                 }
                 .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
         }
@@ -3181,7 +3189,7 @@ private struct BrowseSetsTabContent: View {
                 .padding(.vertical, 8)
                 .background {
                     Capsule()
-                        .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(0.12))
+                        .bindrAccentFill(isSelected ? services.theme.accentColor : Color.primary.opacity(0.12), usesLogoGradient: isSelected)
                 }
                 .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
         }
@@ -3330,7 +3338,10 @@ private struct BrowsePokemonTabContent: View {
                 .padding(.vertical, 8)
                 .background {
                     Capsule()
-                        .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
+                        .bindrAccentFill(
+                            isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06),
+                            usesLogoGradient: isSelected
+                        )
                 }
                 .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
         }

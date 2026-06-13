@@ -188,12 +188,7 @@ struct CardPricingPanel: View {
                 chartView
                     .padding(.top, 4)
 
-                Picker("Range", selection: $chartRange) {
-                    ForEach(ChartRange.allCases, id: \.self) { r in
-                        Text(r.rawValue).tag(r)
-                    }
-                }
-                .pickerStyle(.segmented)
+                chartRangePicker
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
                 .padding(.bottom, 4)
@@ -279,7 +274,11 @@ struct CardPricingPanel: View {
                             .font(.caption.weight(.semibold))
                             .padding(.horizontal, 12)
                             .padding(.vertical, 6)
-                            .background(Capsule().fill(chipBackground(selected: selected.wrappedValue == key)))
+                            .background {
+                                let isSelected = selected.wrappedValue == key
+                                Capsule()
+                                    .bindrAccentFill(chipBackground(selected: isSelected), usesLogoGradient: isSelected)
+                            }
                             .foregroundStyle(chipForeground(selected: selected.wrappedValue == key))
                     }
                     .buttonStyle(.plain)
@@ -288,6 +287,44 @@ struct CardPricingPanel: View {
             .padding(.horizontal, 16)
             .padding(.vertical, 4)
         }
+    }
+
+    private var chartRangePicker: some View {
+        HStack(spacing: 0) {
+            ForEach(ChartRange.allCases, id: \.self) { range in
+                let isSelected = chartRange == range
+                Button {
+                    guard chartRange != range else { return }
+                    withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
+                        chartRange = range
+                    }
+                    Haptics.lightImpact()
+                } label: {
+                    Text(range.rawValue)
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.82))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .background {
+                            if isSelected {
+                                Capsule(style: .continuous)
+                                    .bindrAccentFill(services.theme.accentColor)
+                                    .shadow(
+                                        color: (services.theme.isLogoThemeSelected ? Color(hex: "ec4899") : services.theme.accentColor).opacity(0.20),
+                                        radius: 4,
+                                        y: 2
+                                    )
+                            }
+                        }
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(3)
+        .background(
+            Capsule(style: .continuous)
+                .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
+        )
     }
 
     // MARK: - Chart
@@ -303,7 +340,11 @@ struct CardPricingPanel: View {
                 y: .value("Price", point.price)
             )
             .interpolationMethod(.catmullRom)
-            .foregroundStyle(services.theme.accentColor)
+            .foregroundStyle(services.theme.isLogoThemeSelected ? ThemeSettings.logoThemeGradient : LinearGradient(
+                colors: [services.theme.accentColor, services.theme.accentColor],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            ))
             .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
 
             AreaMark(
@@ -313,7 +354,14 @@ struct CardPricingPanel: View {
             )
             .interpolationMethod(.catmullRom)
             .foregroundStyle(LinearGradient(
-                colors: [services.theme.accentColor.opacity(0.28), services.theme.accentColor.opacity(0.03)],
+                colors: services.theme.isLogoThemeSelected
+                    ? [
+                        ThemeSettings.logoThemeColors[0].opacity(0.28),
+                        ThemeSettings.logoThemeColors[2].opacity(0.16),
+                        ThemeSettings.logoThemeColors[3].opacity(0.07),
+                        .clear
+                    ]
+                    : [services.theme.accentColor.opacity(0.28), services.theme.accentColor.opacity(0.03)],
                 startPoint: .top, endPoint: .bottom
             ))
         }
@@ -364,7 +412,7 @@ struct CardPricingPanel: View {
 
                         if let yPos = proxy.position(forY: scrub.price) {
                             Circle()
-                                .fill(services.theme.accentColor)
+                                .bindrAccentFill(services.theme.accentColor)
                                 .frame(width: 8, height: 8)
                                 .offset(x: x - 4, y: plotFrame.origin.y + yPos - 4)
                                 .allowsHitTesting(false)

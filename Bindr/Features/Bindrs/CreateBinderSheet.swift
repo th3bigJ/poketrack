@@ -46,12 +46,17 @@ struct CreateBinderSheet: View {
             ScrollView {
                 VStack(spacing: 24) {
                     // 1. Premium Preview
-                    BinderCoverView(
-                        binder: transientBinder,
-                        compact: false,
-                        valueText: showValueOnCover ? "$0.00" : nil
-                    )
-                    .subtitleOverride("\(services.brandSettings.selectedCatalogBrand.displayTitle) · 0 cards · \(layout.displayName)")
+                    GeometryReader { proxy in
+                        BinderCoverView(
+                            binder: transientBinder,
+                            compact: false,
+                            valueText: showValueOnCover ? "$0.00" : nil
+                        )
+                        .subtitleOverride("\(services.brandSettings.selectedCatalogBrand.displayTitle) · 0 cards · \(layout.displayName)")
+                        .frame(width: min(proxy.size.width * 0.62, 260))
+                        .frame(maxWidth: .infinity)
+                    }
+                    .frame(height: 320)
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
 
@@ -127,9 +132,7 @@ struct CreateBinderSheet: View {
                                 // Color Grid
                                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 12) {
                                     ForEach(BinderColourPalette.pickerOptions, id: \.name) { swatch in
-                                        Circle()
-                                            .fill(swatch.color)
-                                            .frame(width: 32, height: 32)
+                                        binderColourSwatch(name: swatch.name, color: swatch.color, size: 32)
                                             .overlay {
                                                 if colourName == swatch.name {
                                                     Image(systemName: "checkmark")
@@ -151,25 +154,33 @@ struct CreateBinderSheet: View {
                                 }
                                 .pickerStyle(.segmented)
 
-                                Picker("Title text color", selection: $titleTextColor) {
-                                    ForEach(BinderTitleTextColor.allCases) { option in
-                                        Text(option.displayName).tag(option)
-                                    }
-                                }
-                                .pickerStyle(.segmented)
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text("COVER TEXT")
+                                        .font(.caption.bold())
+                                        .foregroundStyle(.secondary)
 
-                                Picker("Title font", selection: $titleFontStyle) {
-                                    ForEach(BinderTitleFontStyle.allCases) { option in
-                                        Text(option.displayName).tag(option)
+                                    Picker("Title text color", selection: $titleTextColor) {
+                                        ForEach(BinderTitleTextColor.allCases) { option in
+                                            Text(option.displayName).tag(option)
+                                        }
                                     }
+                                    .pickerStyle(.segmented)
+
+                                    Picker("Title font", selection: $titleFontStyle) {
+                                        ForEach(BinderTitleFontStyle.allCases) { option in
+                                            Text(option.displayName).tag(option)
+                                        }
+                                    }
+                                    .pickerStyle(.segmented)
                                 }
-                                .pickerStyle(.segmented)
                                 
                                 // Selected Style Label
                                 HStack(spacing: 4) {
-                                    Circle()
-                                        .fill(BinderColourPalette.color(named: colourName))
-                                        .frame(width: 8, height: 8)
+                                    binderColourSwatch(
+                                        name: colourName,
+                                        color: BinderColourPalette.color(named: colourName),
+                                        size: 8
+                                    )
                                     Text("Style: ")
                                         .foregroundStyle(.secondary)
                                     Text("\(BinderColourPalette.displayName(for: colourName)) \(texture.displayName)")
@@ -301,6 +312,18 @@ struct CreateBinderSheet: View {
         case (2, 2): return Image(systemName: "square.grid.2x2.fill")
         default: return Image(systemName: "square.grid.3x3.fill")
         }
+    }
+
+    private func binderColourSwatch(name: String, color: Color, size: CGFloat) -> some View {
+        Circle()
+            .fill(color)
+            .overlay {
+                if name == BinderColourPalette.logoColourName {
+                    Circle()
+                        .fill(BinderColourPalette.logoGradient)
+                }
+            }
+            .frame(width: size, height: size)
     }
 }
 

@@ -187,7 +187,13 @@ struct TradesView: View {
             }
             .padding(12)
             .frame(maxWidth: .infinity, minHeight: 56)
-            .background(isExpanded ? accent : Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .background {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .bindrAccentFill(
+                        isExpanded ? accent : Color(uiColor: .secondarySystemBackground),
+                        usesLogoGradient: isExpanded
+                    )
+            }
             .overlay {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(isExpanded ? Color.white.opacity(0.18) : Color.primary.opacity(0.07), lineWidth: 1)

@@ -3,6 +3,7 @@ import SwiftUI
 struct FeedPillFilter: View {
     @Binding var selectedScope: SocialFeedService.FeedScope
     var unreadScopes: Set<SocialFeedService.FeedScope> = []
+    @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
@@ -41,13 +42,15 @@ struct FeedPillFilter: View {
                 if isSelected {
                     Capsule()
                         .fill(
-                            LinearGradient(
-                                colors: [Color(hex: "6366f1"), Color(hex: "4f46e5")],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
+                            services.theme.isLogoThemeSelected
+                                ? ThemeSettings.logoThemeGradient
+                                : LinearGradient(
+                                    colors: [Color(hex: "6366f1"), Color(hex: "4f46e5")],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
                         )
-                        .shadow(color: Color(hex: "6366f1").opacity(0.4), radius: 8, y: 3)
+                        .shadow(color: (services.theme.isLogoThemeSelected ? Color(hex: "ec4899") : Color(hex: "6366f1")).opacity(0.4), radius: 8, y: 3)
                 } else {
                     Capsule()
                         .fill(Color.secondary.opacity(0.1))
