@@ -278,25 +278,26 @@ final class TradeService {
             extraHeaders: ["Prefer": "return=representation"]
         )
 
-        // Replace only the current user's own offer lines. The other party's
-        // items (what we're requesting) are locked/read-only in the counter UI
-        // and must not be touched — re-inserting them would duplicate them when
-        // Supabase RLS silently blocks the broad DELETE (which only permits
-        // deleting rows where owner_id = auth.uid()).
-        _ = try await execute(
-            path: "/rest/v1/trade_items?trade_id=eq.\(tradeID.uuidString)&owner_id=eq.\(uid.uuidString)",
-            method: "DELETE",
-            accessToken: token,
-            extraHeaders: ["Prefer": "return=minimal"]
-        ) as EmptyResponse
+        // Replace both sides of the offer. Own rows use the owner policy; the
+        // counterparty's requested items use trade_items_delete_counterparty.
+        for ownerID in [uid, otherPartyID] {
+            _ = try await execute(
+                path: "/rest/v1/trade_items?trade_id=eq.\(tradeID.uuidString)&owner_id=eq.\(ownerID.uuidString)",
+                method: "DELETE",
+                accessToken: token,
+                extraHeaders: ["Prefer": "return=minimal"]
+            ) as EmptyResponse
+        }
 
-        // Only insert the counter-maker's own (new) offer lines. The other
-        // party's rows remain in the table unchanged.
         let myItemsToInsert = Self.consolidatedInputs(newInitiatorCards).map {
             TradeItemInsertRequest(tradeID: tradeID, ownerID: uid, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
         }
+        let theirItemsToInsert = Self.consolidatedInputs(newReceiverCards).map {
+            TradeItemInsertRequest(tradeID: tradeID, ownerID: otherPartyID, cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity)
+        }
 
-        for batch in myItemsToInsert.chunked(into: maxBatchSize) {
+        for batch in (myItemsToInsert + theirItemsToInsert).chunked(into: maxBatchSize) {
+            guard !batch.isEmpty else { continue }
             _ = try await execute(
                 path: "/rest/v1/trade_items",
                 method: "POST",

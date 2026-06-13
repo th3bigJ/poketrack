@@ -40,7 +40,7 @@ struct PremiumLineCardBadge: View {
 
                 // Inner top eyebrow line — small horizontal mark that
                 // mimics a card's title row.
-                VStack(spacing: geo.size.width * 0.06) {
+                VStack(spacing: geo.size.width * 0.05) {
                     Capsule()
                         .fill(lineColor.opacity(0.55))
                         .frame(width: geo.size.width * 0.32, height: 2)
@@ -50,17 +50,10 @@ struct PremiumLineCardBadge: View {
                         .tracking(geo.size.width * 0.02)
                         .foregroundStyle(lineColor)
 
-                    Text("BINDR")
-                        .font(.system(size: geo.size.width * 0.20, weight: .bold, design: .default))
-                        .tracking(geo.size.width * 0.012)
-                        .foregroundStyle(lineColor)
-
-                    // Inner bottom mark — symmetry with the eyebrow line.
-                    Capsule()
-                        .fill(lineColor.opacity(0.55))
-                        .frame(width: geo.size.width * 0.18, height: 2)
+                    BindrBrandLogoView(maxWidth: geo.size.width * 0.78, showsDarkBackdrop: false)
+                        .padding(.vertical, geo.size.width * 0.02)
                 }
-                .padding(.vertical, geo.size.width * 0.18)
+                .padding(.vertical, geo.size.width * 0.12)
             }
         }
         .aspectRatio(110.0 / 140.0, contentMode: .fit)

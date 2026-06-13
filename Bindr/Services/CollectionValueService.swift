@@ -57,6 +57,14 @@ final class CollectionValueService {
     private(set) var monthlyAverages: [MonthlyAverageValue] = []
     private(set) var isBackfilling = false
 
+    /// Called after daily / weekly / monthly value history is persisted so the
+    /// debounced R2 library snapshot stays current.
+    var onValueHistoryChanged: (() -> Void)?
+
+    private func notifyValueHistoryChanged() {
+        onValueHistoryChanged?()
+    }
+
     // MARK: - Live partial-period averages (current incomplete week / month)
 
     /// Average of daily snapshots in the current (incomplete) week, including today's live value if provided.
@@ -191,9 +199,8 @@ final class CollectionValueService {
         modelContext.insert(snapshot)
         try? modelContext.save()
         loadAll()
+        notifyValueHistoryChanged()
     }
-
-    // MARK: - Public entry point
 
     func runBackfillIfNeeded(
         collectionItems: [CollectionItem],
@@ -209,9 +216,12 @@ final class CollectionValueService {
         )
         await fillSnapshotGapsIfNeeded(collectionItems: collectionItems)
         let freshSnapshots = fetchAllSnapshots()
-        aggregateWeeklyIfNeeded(using: freshSnapshots)
-        aggregateMonthlyIfNeeded(using: freshSnapshots)
+        let weeklyChanged = aggregateWeeklyIfNeeded(using: freshSnapshots)
+        let monthlyChanged = aggregateMonthlyIfNeeded(using: freshSnapshots)
         loadAll()
+        if weeklyChanged || monthlyChanged {
+            notifyValueHistoryChanged()
+        }
     }
 
     /// Fills gaps between the oldest existing snapshot and yesterday using the closest available
@@ -257,6 +267,7 @@ final class CollectionValueService {
         }
         try? modelContext.save()
         loadAll()
+        notifyValueHistoryChanged()
     }
 
     /// Replaces today's snapshot with the given live value and re-aggregates weekly/monthly averages.
@@ -292,6 +303,7 @@ final class CollectionValueService {
         aggregateWeeklyIfNeeded(using: freshSnapshots)
         aggregateMonthlyIfNeeded(using: freshSnapshots)
         loadAll()
+        notifyValueHistoryChanged()
     }
 
     private func purgeAllSnapshots() {
@@ -333,9 +345,12 @@ final class CollectionValueService {
     /// Re-aggregates weekly and monthly averages from current daily snapshots and reloads.
     /// Call after updating today's snapshot to keep chart averages current.
     func aggregateCurrentPeriods() {
-        aggregateWeeklyIfNeeded()
-        aggregateMonthlyIfNeeded()
+        let weeklyChanged = aggregateWeeklyIfNeeded()
+        let monthlyChanged = aggregateMonthlyIfNeeded()
         loadAll()
+        if weeklyChanged || monthlyChanged {
+            notifyValueHistoryChanged()
+        }
     }
 
     /// Updates today's snapshot to the given value if it has changed by more than 1p.
@@ -362,6 +377,7 @@ final class CollectionValueService {
         modelContext.insert(record)
         try? modelContext.save()
         loadAll()
+        notifyValueHistoryChanged()
         return true
     }
 
@@ -407,15 +423,19 @@ final class CollectionValueService {
         modelContext.insert(snapshot)
         try? modelContext.save()
         loadAll()
+        notifyValueHistoryChanged()
     }
 
     // MARK: - Weekly aggregation
 
-    private func aggregateWeeklyIfNeeded(using allSnapshots: [CollectionValueSnapshot]? = nil) {
+    @discardableResult
+    private func aggregateWeeklyIfNeeded(using allSnapshots: [CollectionValueSnapshot]? = nil) -> Bool {
         let cal = weekCalendar
 
         let allSnapshots = allSnapshots ?? fetchAllSnapshots()
-        guard !allSnapshots.isEmpty else { return }
+        guard !allSnapshots.isEmpty else { return false }
+
+        var didChange = false
 
         // Group ALL snapshots by ISO week start, including the current week
         var byWeek: [Date: [CollectionValueSnapshot]] = [:]
@@ -445,6 +465,7 @@ final class CollectionValueService {
                     existing.onePieceGbp = 0
                     existing.cardsGbp = avg.cards
                     existing.sealedGbp = avg.sealed
+                    didChange = true
                 }
             } else {
                 let record = CollectionWeeklyAverage(
@@ -456,18 +477,24 @@ final class CollectionValueService {
                     sealedGbp: avg.sealed
                 )
                 modelContext.insert(record)
+                didChange = true
             }
         }
+        guard didChange else { return false }
         try? modelContext.save()
+        return true
     }
 
     // MARK: - Monthly aggregation
 
-    private func aggregateMonthlyIfNeeded(using allSnapshots: [CollectionValueSnapshot]? = nil) {
+    @discardableResult
+    private func aggregateMonthlyIfNeeded(using allSnapshots: [CollectionValueSnapshot]? = nil) -> Bool {
         let cal = Calendar.current
 
         let allSnapshots = allSnapshots ?? fetchAllSnapshots()
-        guard !allSnapshots.isEmpty else { return }
+        guard !allSnapshots.isEmpty else { return false }
+
+        var didChange = false
 
         // Group ALL snapshots by month start, including the current month
         var byMonth: [Date: [CollectionValueSnapshot]] = [:]
@@ -498,6 +525,7 @@ final class CollectionValueService {
                     existing.onePieceGbp = 0
                     existing.cardsGbp = avg.cards
                     existing.sealedGbp = avg.sealed
+                    didChange = true
                 }
             } else {
                 let record = CollectionMonthlyAverage(
@@ -509,9 +537,12 @@ final class CollectionValueService {
                     sealedGbp: avg.sealed
                 )
                 modelContext.insert(record)
+                didChange = true
             }
         }
+        guard didChange else { return false }
         try? modelContext.save()
+        return true
     }
 
     private func snapshotExists(for date: Date) -> Bool {

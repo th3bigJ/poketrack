@@ -224,6 +224,7 @@ struct ImportPTCGLSheet: View {
         let deck = Deck(title: name, brand: .pokemon, format: .pokemonStandard)
         deck.cards = pendingDeckCards
         modelContext.insert(deck)
+        services.scheduleLibraryCloudBackup()
         pendingDeckCards = []
         pendingDeckName = ""
         dismiss()

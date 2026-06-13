@@ -35,6 +35,25 @@ enum DailyMarketPricingSchedule {
     }
 }
 
+/// Ensures only one catalog/pricing sync touches SQLite at a time. Concurrent
+/// `syncAllIfNeeded` calls (e.g. onboarding prefetch + bootstrap) previously
+/// raced and could mark pricing complete before all set files landed.
+private actor CatalogSyncSerialGate {
+    private var inFlight: Task<Void, Never>?
+
+    func run(_ operation: @Sendable @escaping () async -> Void) async {
+        while let inFlight {
+            await inFlight.value
+        }
+        let task = Task {
+            await operation()
+        }
+        inFlight = task
+        await task.value
+        inFlight = nil
+    }
+}
+
 struct CatalogSyncProgressSnapshot: Sendable {
     let status: String
     let completedFiles: Int
@@ -109,6 +128,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     static let shared = CatalogSyncCoordinator()
 
     private let session: URLSession
+    private let syncGate = CatalogSyncSerialGate()
 
     enum ConditionalJSONFetchResult {
         case downloaded(Data)
@@ -169,6 +189,18 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         enabledBrands: Set<TCGBrand>,
         progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)? = nil
     ) async {
+        await syncGate.run {
+            await self.performSyncAllIfNeeded(
+                enabledBrands: enabledBrands,
+                progressHandler: progressHandler
+            )
+        }
+    }
+
+    private func performSyncAllIfNeeded(
+        enabledBrands: Set<TCGBrand>,
+        progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)?
+    ) async {
         let store = CatalogStore.shared
         let progress = CatalogSyncProgressReporter(handler: progressHandler)
 
@@ -195,21 +227,83 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             await checkAndApplyCatalogVersionIfNeeded(store: store)
         }
 
-        if enabledBrands.contains(.pokemon) {
-            let phase = PokemonCatalogSyncPhase(session: session, store: store)
-            await phase.syncCatalogIfNeeded(progress: progress)
-            await phase.refreshVariantsCatalog()
-            await progress.completeFile(byteCount: 0)
-            await phase.refreshNationalDexMetadata()
-        }
+        let pricingPhase = MarketPricingSyncPhase(session: session, store: store)
+        let blobPhase = DailyBlobSyncPhase(session: session, store: store)
+        let pricingContext = await pricingPhase.prepareSyncContext(
+            forceRefresh: false,
+            enabledBrands: enabledBrands
+        )
 
-        if !enabledBrands.isEmpty {
+        if enabledBrands.contains(.pokemon) {
+            let pokemonPhase = PokemonCatalogSyncPhase(session: session, store: store)
+
+            async let catalogFinished: Void = {
+                await pokemonPhase.syncCatalogIfNeeded(progress: progress)
+                await pokemonPhase.refreshVariantsCatalog()
+                await progress.completeFile(byteCount: 0)
+                await pokemonPhase.refreshNationalDexMetadata()
+            }()
+
+            async let independentPricingFinished: Int64 = {
+                guard let pricingContext else { return 0 }
+                await progress.setStatus("Refreshing pricing data…")
+                return await pricingPhase.syncCatalogIndependentFiles(
+                    progress: progress,
+                    context: pricingContext,
+                    enabledBrands: enabledBrands,
+                    forceRefresh: false
+                )
+            }()
+
+            async let blobFinished: Int64 = {
+                guard !enabledBrands.isEmpty else { return 0 }
+                return await blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands)
+            }()
+
+            await catalogFinished
+
+            async let postCatalogPricingFinished: Int64 = {
+                guard let pricingContext else { return 0 }
+                return await pricingPhase.syncPostCatalogSetFiles(
+                    progress: progress,
+                    context: pricingContext,
+                    enabledBrands: enabledBrands
+                )
+            }()
+
+            let independentBytes = await independentPricingFinished
+            let postCatalogBytes = await postCatalogPricingFinished
+            let blobBytes = await blobFinished
+            if let pricingContext {
+                await pricingPhase.finalizeSyncContext(
+                    pricingContext,
+                    enabledBrands: enabledBrands,
+                    downloaded: independentBytes + postCatalogBytes
+                )
+            }
+            _ = blobBytes
+        } else if !enabledBrands.isEmpty {
             try? await store.open()
-            let pricingPhase = MarketPricingSyncPhase(session: session, store: store)
-            let blobPhase = DailyBlobSyncPhase(session: session, store: store)
-            async let pricingResult = pricingPhase.syncAllIfNeeded(progress: progress, enabledBrands: enabledBrands)
-            async let blobResult = blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands)
-            _ = await (pricingResult, blobResult)
+            if let pricingContext {
+                await progress.setStatus("Refreshing pricing data…")
+                let independentBytes = await pricingPhase.syncCatalogIndependentFiles(
+                    progress: progress,
+                    context: pricingContext,
+                    enabledBrands: enabledBrands,
+                    forceRefresh: false
+                )
+                let postCatalogBytes = await pricingPhase.syncPostCatalogSetFiles(
+                    progress: progress,
+                    context: pricingContext,
+                    enabledBrands: enabledBrands
+                )
+                await pricingPhase.finalizeSyncContext(
+                    pricingContext,
+                    enabledBrands: enabledBrands,
+                    downloaded: independentBytes + postCatalogBytes
+                )
+            }
+            _ = await blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands)
         }
         await progress.setStatus("Finishing card setup…")
     }

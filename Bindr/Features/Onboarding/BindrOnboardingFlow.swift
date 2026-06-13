@@ -2,11 +2,12 @@ import SwiftUI
 
 // MARK: - BindrOnboardingFlow
 //
-// 4-screen first-run experience:
+// 5-screen first-run experience:
 //   1. Welcome                                     — `OnboardingWelcomeView`
 //   2. Enable offline collection                   — `OnboardingOfflineModeView`
 //   3. Enable notifications                        — `OnboardingNotificationsView`
-//   4. Premium subscription upsell                 — `OnboardingPremiumView`
+//   4. Social sign-in                              — `OnboardingSocialView`
+//   5. Premium subscription upsell                 — `OnboardingPremiumView`
 
 struct BindrOnboardingFlow: View {
     @Environment(AppServices.self) private var services
@@ -58,6 +59,12 @@ struct BindrOnboardingFlow: View {
             case .notifications:
                 OnboardingNotificationsView(onContinue: { advance() })
                     .transition(stepTransition)
+            case .social:
+                OnboardingSocialView(
+                    onContinue: { advance() },
+                    onSkip: { advance() }
+                )
+                .transition(stepTransition)
             case .premium:
                 OnboardingPremiumView(onFinish: { finish() })
                     .transition(stepTransition)
@@ -141,7 +148,8 @@ enum BindrOnboardingStep: Int, CaseIterable {
     case welcome       = 0
     case offline       = 1
     case notifications = 2
-    case premium       = 3
+    case social        = 3
+    case premium       = 4
 
     var next: BindrOnboardingStep? {
         BindrOnboardingStep(rawValue: rawValue + 1)

@@ -927,6 +927,7 @@ struct DeckCardPickerView: View {
         for selection in basket {
             addCardToDeck(card: selection.card, variantKey: selection.variantKey, quantity: selection.quantity)
         }
+        services.scheduleLibraryCloudBackup()
         HapticManager.impact(.light)
     }
 

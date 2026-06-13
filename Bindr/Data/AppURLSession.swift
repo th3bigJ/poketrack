@@ -30,11 +30,14 @@ enum AppURLSession {
         return URLSession(configuration: config)
     }()
 
-    /// Catalog/pricing downloads — separate session so catalog traffic does not evict the image cache,
-    /// but kept to a low connection limit so it doesn't starve image loading on the same CDN host.
+    /// Parallel catalog/pricing downloads from R2. Kept below the image session (6) so thumbnails
+    /// still load while a large first-sync runs, but high enough to saturate the network.
+    static let catalogParallelDownloads = 8
+
+    /// Catalog/pricing downloads — separate session so catalog traffic does not evict the image cache.
     static let catalog: URLSession = {
         let config = URLSessionConfiguration.default
-        config.httpMaximumConnectionsPerHost = 4
+        config.httpMaximumConnectionsPerHost = catalogParallelDownloads
         config.timeoutIntervalForRequest = 20
         config.timeoutIntervalForResource = 600
         config.urlCache = nil

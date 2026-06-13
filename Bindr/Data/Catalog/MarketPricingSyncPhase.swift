@@ -2,13 +2,18 @@ import Foundation
 
 /// Handles per-set market pricing, price history, trends, and bucket sync for all enabled brands.
 struct MarketPricingSyncPhase {
-    // Combined files cut total requests from ~43,000 to ~410. Use more concurrent connections
-    // so the history backfill completes in seconds rather than minutes. Catalog session is
-    // capped at 4 connections per host, so additional Swift tasks queue behind those slots
-    // without opening extra sockets — safe to set higher than the connection limit.
-    private static let maxConcurrentBackfillRequests = 8
     let session: URLSession
     let store: CatalogStore
+
+    /// Snapshot of which pricing work is needed after one-time meta resets.
+    struct SyncContext: Sendable {
+        let shouldRunPeriodRefresh: Bool
+        let shouldRunAuxBackfill: Bool
+        let needsHistoryBackfill: Bool
+        let needsSealedHistoryBackfill: Bool
+        let needsSealedDailyRefresh: Bool
+        let forceRefresh: Bool
+    }
 
     /// Returns the number of files this phase will download, without doing any work.
     /// Used by the coordinator to pre-announce the total so the progress bar starts correctly.
@@ -68,11 +73,122 @@ struct MarketPricingSyncPhase {
         enabledBrands: Set<TCGBrand>,
         forceRefresh: Bool = false
     ) async -> Int64 {
+        guard let context = await prepareSyncContext(forceRefresh: forceRefresh, enabledBrands: enabledBrands) else { return 0 }
+
+        await progress.setStatus("Refreshing pricing data…")
+        let independent = await syncCatalogIndependentFiles(
+            progress: progress,
+            context: context,
+            enabledBrands: enabledBrands,
+            forceRefresh: forceRefresh
+        )
+        let postCatalog = await syncPostCatalogSetFiles(
+            progress: progress,
+            context: context,
+            enabledBrands: enabledBrands
+        )
+        let downloaded = independent + postCatalog
+        await finalizeSyncContext(context, enabledBrands: enabledBrands, downloaded: downloaded)
+        return downloaded
+    }
+
+    /// Bucket and history downloads that never touch `catalog_cards`. Safe to run while the
+    /// catalog phase is still downloading per-set card JSON.
+    func syncCatalogIndependentFiles(
+        progress: CatalogSyncProgressReporter,
+        context: SyncContext,
+        enabledBrands: Set<TCGBrand>,
+        forceRefresh: Bool
+    ) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
+        guard enabledBrands.contains(.pokemon) else { return 0 }
+
+        if context.shouldRunPeriodRefresh {
+            await store.unmarkBucketProcessed(key: todaySealedBucketKey())
+            async let dailyBuckets = syncPricingBuckets(progress: progress, forceRefresh: forceRefresh)
+            async let sealedBuckets = syncSealedPricingBuckets(progress: progress, forceRefresh: forceRefresh)
+            async let historyBackfill: Int64 = {
+                guard context.needsHistoryBackfill else { return 0 }
+                let bytes = await syncPricingHistoryBackfill(progress: progress)
+                try? await store.setMeta("pricing_history_backfill_v1", "1")
+                return bytes
+            }()
+            async let sealedHistoryBackfill: Int64 = {
+                guard context.needsSealedHistoryBackfill else { return 0 }
+                let bytes = await syncSealedPricingHistoryBackfill(progress: progress)
+                try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
+                return bytes
+            }()
+            let results = await (dailyBuckets, sealedBuckets, historyBackfill, sealedHistoryBackfill)
+            return results.0 + results.1 + results.2 + results.3
+        }
+
+        if context.shouldRunAuxBackfill {
+            async let dailyBuckets = syncPricingBuckets(progress: progress)
+            async let sealedBuckets = syncSealedPricingBuckets(progress: progress)
+            async let historyBackfill: Int64 = {
+                guard context.needsHistoryBackfill else { return 0 }
+                let bytes = await syncPricingHistoryBackfill(progress: progress)
+                try? await store.setMeta("pricing_history_backfill_v1", "1")
+                return bytes
+            }()
+            async let sealedHistoryBackfill: Int64 = {
+                guard context.needsSealedHistoryBackfill else { return 0 }
+                let bytes = await syncSealedPricingHistoryBackfill(progress: progress)
+                try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
+                return bytes
+            }()
+            let results = await (dailyBuckets, sealedBuckets, historyBackfill, sealedHistoryBackfill)
+            return results.0 + results.1 + results.2 + results.3
+        }
+
+        if context.needsHistoryBackfill || context.needsSealedHistoryBackfill {
+            async let historyBackfill: Int64 = {
+                guard context.needsHistoryBackfill else { return 0 }
+                let bytes = await syncPricingHistoryBackfill(progress: progress)
+                try? await store.setMeta("pricing_history_backfill_v1", "1")
+                return bytes
+            }()
+            async let sealedHistoryBackfill: Int64 = {
+                guard context.needsSealedHistoryBackfill else { return 0 }
+                let bytes = await syncSealedPricingHistoryBackfill(progress: progress)
+                try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
+                return bytes
+            }()
+            let results = await (historyBackfill, sealedHistoryBackfill)
+            return results.0 + results.1
+        }
+
+        if context.needsSealedDailyRefresh {
+            return await syncSealedPricingBuckets(progress: progress, forceRefresh: forceRefresh)
+        }
+        return 0
+    }
+
+    /// Per-set pricing that reads/writes `catalog_cards` or needs the set list in SQLite.
+    func syncPostCatalogSetFiles(
+        progress: CatalogSyncProgressReporter,
+        context: SyncContext,
+        enabledBrands: Set<TCGBrand>
+    ) async -> Int64 {
+        guard enabledBrands.contains(.pokemon) else { return 0 }
+        guard context.shouldRunPeriodRefresh || context.shouldRunAuxBackfill else { return 0 }
+
+        if context.shouldRunPeriodRefresh {
+            async let cardDeltas = syncPokemonCardDeltas(progress: progress)
+            async let marketTrends = syncPokemonMarketPricingFullRefresh(progress: progress)
+            let results = await (cardDeltas, marketTrends)
+            return results.0 + results.1
+        }
+
+        return await syncPokemonHistoryTrendsOnly(progress: progress)
+    }
+
+    func prepareSyncContext(forceRefresh: Bool, enabledBrands: Set<TCGBrand>) async -> SyncContext? {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return nil }
+
         let needsBackfillRetryReset = (await store.meta("pricing_backfill_retry_v2")) != "1"
         if needsBackfillRetryReset {
-            // Prior versions could mark missing weekly/monthly buckets as processed even when
-            // the fetch failed. Clear those markers once so backfill can retry successfully.
             for key in BucketDateMath.allWeeklyKeys(from: 2020) + BucketDateMath.allMonthlyKeys(from: 2020) {
                 await store.unmarkBucketProcessed(key: key)
                 await store.unmarkBucketProcessed(key: "sealed/\(key)")
@@ -83,8 +199,6 @@ struct MarketPricingSyncPhase {
         }
         let needsDailyBucketRetryReset = (await store.meta("pricing_daily_bucket_retry_v1")) != "1"
         if needsDailyBucketRetryReset {
-            // Same bug for combined daily buckets (card + sealed): a failed download could still
-            // be marked processed, so later period refreshes skipped re-downloading those dates.
             for dateKey in BucketDateMath.last31DailyKeys() {
                 await store.unmarkBucketProcessed(key: dateKey)
                 await store.unmarkBucketProcessed(key: "sealed/\(dateKey)")
@@ -96,6 +210,7 @@ struct MarketPricingSyncPhase {
             try? await store.setMeta("pricing_history_backfill_v1", "")
             try? await store.setMeta("sealed_pricing_history_backfill_v1", "")
         }
+
         let last = await lastSyncDate()
         let needsPeriodRefresh = DailyMarketPricingSchedule.needsRefreshAfterNewPeriod(lastSync: last)
         let auxSqliteV1 = await store.meta("pricing_aux_sqlite_v1")
@@ -105,71 +220,37 @@ struct MarketPricingSyncPhase {
         let needsSealedDailyRefresh = await needsSealedDailyRefresh(enabledBrands: enabledBrands)
         let shouldRunPeriodRefresh = forceRefresh || needsPeriodRefresh
         let shouldRunAuxBackfill = !forceRefresh && needsAuxBackfill
-        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill || needsSealedHistoryBackfill || needsSealedDailyRefresh else { return 0 }
 
-        await progress.setStatus("Refreshing pricing data…")
-        if shouldRunPeriodRefresh {
-            var downloaded: Int64 = 0
-            if enabledBrands.contains(.pokemon) {
-                await store.unmarkBucketProcessed(key: todaySealedBucketKey())
-                downloaded += await syncPokemonCardDeltas(progress: progress)
-                downloaded += await syncPokemonMarketPricingFullRefresh(progress: progress)
-                downloaded += await syncPricingBuckets(progress: progress, forceRefresh: forceRefresh)
-                downloaded += await syncSealedPricingBuckets(progress: progress, forceRefresh: forceRefresh)
-                if needsHistoryBackfill {
-                    downloaded += await syncPricingHistoryBackfill(progress: progress)
-                    try? await store.setMeta("pricing_history_backfill_v1", "1")
-                }
-                if needsSealedHistoryBackfill {
-                    downloaded += await syncSealedPricingHistoryBackfill(progress: progress)
-                    try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
-                }
-            }
+        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill || needsSealedHistoryBackfill || needsSealedDailyRefresh else {
+            return nil
+        }
+
+        return SyncContext(
+            shouldRunPeriodRefresh: shouldRunPeriodRefresh,
+            shouldRunAuxBackfill: shouldRunAuxBackfill,
+            needsHistoryBackfill: needsHistoryBackfill,
+            needsSealedHistoryBackfill: needsSealedHistoryBackfill,
+            needsSealedDailyRefresh: needsSealedDailyRefresh,
+            forceRefresh: forceRefresh
+        )
+    }
+
+    func finalizeSyncContext(
+        _ context: SyncContext,
+        enabledBrands: Set<TCGBrand>,
+        downloaded: Int64
+    ) async {
+        if context.shouldRunPeriodRefresh {
             let sealedPricesCurrent = await hasCurrentSealedPrices()
             if !enabledBrands.contains(.pokemon) || sealedPricesCurrent {
                 try? await store.setMeta("pricing_last_synced_at", String(Date().timeIntervalSince1970))
             }
             try? await store.setMeta("pricing_aux_sqlite_v1", "1")
             try? await store.setMeta("pricing_normalized_v1", "1")
-            return downloaded
-        } else if shouldRunAuxBackfill {
-            var downloaded: Int64 = 0
-            if enabledBrands.contains(.pokemon) {
-                downloaded += await syncPokemonHistoryTrendsOnly(progress: progress)
-                downloaded += await syncPricingBuckets(progress: progress)
-                downloaded += await syncSealedPricingBuckets(progress: progress)
-                if needsHistoryBackfill {
-                    downloaded += await syncPricingHistoryBackfill(progress: progress)
-                    try? await store.setMeta("pricing_history_backfill_v1", "1")
-                }
-                if needsSealedHistoryBackfill {
-                    downloaded += await syncSealedPricingHistoryBackfill(progress: progress)
-                    try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
-                }
-            }
-            if downloaded > 0 {
-                try? await store.setMeta("pricing_aux_sqlite_v1", "1")
-                try? await store.setMeta("pricing_normalized_v1", "1")
-            }
-            return downloaded
-        } else if needsHistoryBackfill || needsSealedHistoryBackfill {
-            var downloaded: Int64 = 0
-            if enabledBrands.contains(.pokemon) {
-                if needsHistoryBackfill {
-                    downloaded += await syncPricingHistoryBackfill(progress: progress)
-                    try? await store.setMeta("pricing_history_backfill_v1", "1")
-                }
-                if needsSealedHistoryBackfill {
-                    downloaded += await syncSealedPricingHistoryBackfill(progress: progress)
-                    try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
-                }
-            }
-            return downloaded
-        } else if needsSealedDailyRefresh {
-            guard enabledBrands.contains(.pokemon) else { return 0 }
-            return await syncSealedPricingBuckets(progress: progress, forceRefresh: forceRefresh)
+        } else if context.shouldRunAuxBackfill, downloaded > 0 {
+            try? await store.setMeta("pricing_aux_sqlite_v1", "1")
+            try? await store.setMeta("pricing_normalized_v1", "1")
         }
-        return 0
     }
 
     private func todaySealedBucketKey() -> String {
@@ -219,30 +300,27 @@ struct MarketPricingSyncPhase {
         guard !sets.isEmpty else { return 0 }
         await progress.addPlannedFiles(sets.count)
         let sess = session
+        let store = store
+        let byteCounts = await CatalogParallelDownloadPool.map(sets) { set in
+            let code = set.setCode
+            let cardsURL = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
+            let result = await CatalogSyncCoordinator.fetchJSONWithETag(
+                url: cardsURL,
+                etagMetaKey: CatalogSyncCoordinator.etagMetaKey(brand: .pokemon, kind: "cards", setCode: code),
+                store: store,
+                session: sess
+            )
+            guard case .downloaded(let data) = result,
+                  let cards = try? JSONDecoder().decode([Card].self, from: data)
+            else { return Int64(0) }
+            try? await store.deleteCards(forSet: code, brand: .pokemon)
+            try? await store.insertCards(cards, setCode: code, brand: .pokemon)
+            return Int64(data.count)
+        }
         var totalDownloaded: Int64 = 0
-        await withTaskGroup(of: Int64.self) { group in
-            for set in sets {
-                let code = set.setCode
-                group.addTask {
-                    let cardsURL = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
-                    let result = await CatalogSyncCoordinator.fetchJSONWithETag(
-                        url: cardsURL,
-                        etagMetaKey: CatalogSyncCoordinator.etagMetaKey(brand: .pokemon, kind: "cards", setCode: code),
-                        store: self.store,
-                        session: sess
-                    )
-                    guard case .downloaded(let data) = result,
-                          let cards = try? JSONDecoder().decode([Card].self, from: data)
-                    else { return 0 }
-                    try? await self.store.deleteCards(forSet: code, brand: .pokemon)
-                    try? await self.store.insertCards(cards, setCode: code, brand: .pokemon)
-                    return Int64(data.count)
-                }
-            }
-            for await byteCount in group {
-                await progress.completeFile(byteCount: byteCount)
-                totalDownloaded += byteCount
-            }
+        for byteCount in byteCounts {
+            await progress.completeFile(byteCount: byteCount)
+            totalDownloaded += byteCount
         }
         if totalDownloaded > 0 {
             try? await store.setMeta("catalog_cards_last_updated_at", String(Date().timeIntervalSince1970))
@@ -257,33 +335,30 @@ struct MarketPricingSyncPhase {
         var downloaded: Int64 = 0
         await progress.addPlannedFiles(sets.count)
         let sess = session
-        await withTaskGroup(of: Int64.self) { group in
-            for set in sets {
-                let code = set.setCode
-                group.addTask {
-                    var totalBytes: Int64 = 0
-                    for tStem in AppConfiguration.pricingFileStemVariants(for: code) {
-                        let tURL = AppConfiguration.r2PriceTrendsURL(setCode: tStem)
-                        let tResult = await CatalogSyncCoordinator.fetchJSONWithETag(
-                            url: tURL,
-                            etagMetaKey: CatalogSyncCoordinator.etagMetaKey(brand: .pokemon, kind: "trends", setCode: code),
-                            store: self.store,
-                            session: sess
-                        )
-                        if case .downloaded(let tData) = tResult {
-                            try? await self.store.upsertPriceTrends(setCode: code, json: tData, brand: .pokemon)
-                            totalBytes += Int64(tData.count)
-                            break
-                        }
-                        if case .unchanged = tResult { break }
-                    }
-                    return totalBytes
+        let store = store
+        let byteCounts = await CatalogParallelDownloadPool.map(sets) { set in
+            let code = set.setCode
+            var totalBytes: Int64 = 0
+            for tStem in AppConfiguration.pricingFileStemVariants(for: code) {
+                let tURL = AppConfiguration.r2PriceTrendsURL(setCode: tStem)
+                let tResult = await CatalogSyncCoordinator.fetchJSONWithETag(
+                    url: tURL,
+                    etagMetaKey: CatalogSyncCoordinator.etagMetaKey(brand: .pokemon, kind: "trends", setCode: code),
+                    store: store,
+                    session: sess
+                )
+                if case .downloaded(let tData) = tResult {
+                    try? await store.upsertPriceTrends(setCode: code, json: tData, brand: .pokemon)
+                    totalBytes += Int64(tData.count)
+                    break
                 }
+                if case .unchanged = tResult { break }
             }
-            for await byteCount in group {
-                await progress.completeFile(byteCount: byteCount)
-                downloaded += byteCount
-            }
+            return totalBytes
+        }
+        for byteCount in byteCounts {
+            await progress.completeFile(byteCount: byteCount)
+            downloaded += byteCount
         }
         return downloaded
     }
@@ -371,7 +446,7 @@ struct MarketPricingSyncPhase {
 
         await withTaskGroup(of: DailyBucketResult.self) { group in
             var iterator = missingDateKeys.makeIterator()
-            for _ in 0..<min(Self.maxConcurrentBackfillRequests, missingDateKeys.count) {
+            for _ in 0..<min(CatalogParallelDownloadPool.maxConcurrent, missingDateKeys.count) {
                 if let key = iterator.next() { group.addTask { await fetchDailyBucket(dateKey: key) } }
             }
             for await result in group {
@@ -469,7 +544,7 @@ struct MarketPricingSyncPhase {
 
         await withTaskGroup(of: BackfillResult.self) { group in
             var iterator = allKeys.makeIterator()
-            for _ in 0..<min(Self.maxConcurrentBackfillRequests, allKeys.count) {
+            for _ in 0..<min(CatalogParallelDownloadPool.maxConcurrent, allKeys.count) {
                 if let (key, type) = iterator.next() {
                     group.addTask { await fetchBucket(periodKey: key, periodType: type) }
                 }
@@ -544,7 +619,7 @@ struct MarketPricingSyncPhase {
 
         await withTaskGroup(of: SealedDailyResult.self) { group in
             var iterator = missingDailyKeys.makeIterator()
-            for _ in 0..<min(Self.maxConcurrentBackfillRequests, missingDailyKeys.count) {
+            for _ in 0..<min(CatalogParallelDownloadPool.maxConcurrent, missingDailyKeys.count) {
                 if let key = iterator.next() {
                     let dateKey = String(key.dropFirst("sealed/".count))
                     group.addTask { await fetchSealedDaily(compositeKey: key, dateKey: dateKey) }
@@ -639,7 +714,7 @@ struct MarketPricingSyncPhase {
 
         await withTaskGroup(of: SealedBackfillResult.self) { group in
             var iterator = allSealedKeys.makeIterator()
-            for _ in 0..<min(Self.maxConcurrentBackfillRequests, allSealedKeys.count) {
+            for _ in 0..<min(CatalogParallelDownloadPool.maxConcurrent, allSealedKeys.count) {
                 if let (key, isWeekly) = iterator.next() {
                     group.addTask { await fetchSealedBucket(compositeKey: key, isWeekly: isWeekly) }
                 }

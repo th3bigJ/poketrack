@@ -169,7 +169,21 @@ struct BinderDetailView: View {
             .sorted { $0.position < $1.position }
             .map { "\($0.position)|\($0.cardID)|\($0.variantKey)|\($0.cardName)" }
             .joined(separator: ";")
-        return "\(binder.title)|\(slotSignature)"
+        return [
+            binder.title,
+            binder.colour,
+            binder.texture,
+            binder.pageLayout,
+            binder.showCardPreview ? "1" : "0",
+            binder.showValueOnCover ? "1" : "0",
+            binder.showPriceOverlay ? "1" : "0",
+            binder.titleTextColor,
+            binder.titleFontStyle,
+            binder.embossedCardID ?? "",
+            binder.embossedPokemonImageUrl ?? "",
+            binder.embossMode,
+            slotSignature
+        ].joined(separator: "|")
     }
 
     /// Number of card pages (the playmat surfaces). Doesn't count the
@@ -379,6 +393,7 @@ struct BinderDetailView: View {
         .onChange(of: binder.slotList.count) { Task { await loadCards() } }
         .onChange(of: shareAutoSyncSignature) { _, _ in
             services.socialShare.scheduleAutoSync(binder: binder)
+            services.scheduleLibraryCloudBackup()
             Task { await refreshShareStatus() }
         }
         .onChange(of: cardsByID.count) { Task { await refreshSlotValues() } }

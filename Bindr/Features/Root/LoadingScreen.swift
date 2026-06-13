@@ -293,12 +293,10 @@ struct LaunchWordmarkView: View {
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
-    @State private var animStates: [Bool] = [false, false, false, false, false]
-    @State private var taglineVisible = false
+    @State private var logoVisible = false
     @State private var statusVisible = false
     @State private var hasStartedAnimation = false
     @State private var hasFiredRevealComplete = false
-    private let fullWord = "BINDR"
     private let loadingStatusMessages = [
         "Syncing iCloud",
         "Loading Cards",
@@ -348,15 +346,9 @@ struct LaunchWordmarkView: View {
             .ignoresSafeArea()
 
             VStack(spacing: 10) {
-                wordmarkView
-
-                Text("Share your Collection")
-                    .font(.system(size: 12, weight: .medium))
-                    .foregroundStyle(subtle)
-                    .tracking(3.5)
-                    .textCase(.uppercase)
-                    .opacity(taglineVisible ? 1 : 0)
-                    .offset(y: taglineVisible ? 0 : 6)
+                BindrBrandLogoView(maxWidth: 300)
+                    .scaleEffect(logoVisible ? 1 : 0.92)
+                    .opacity(logoVisible ? 1 : 0)
             }
             .padding(.horizontal, 40)
             .offset(y: -58)
@@ -388,38 +380,6 @@ struct LaunchWordmarkView: View {
             }
         }
     }
-
-    // MARK: Wordmark
-
-    private var wordmarkView: some View {
-        HStack(spacing: 0) {
-            ForEach(0..<fullWord.count, id: \.self) { i in
-                Text(String(fullWord[fullWord.index(fullWord.startIndex, offsetBy: i)]))
-                    .font(.custom("BebasNeue-Regular", size: 80))
-                    .offset(y: animStates[i] ? 0 : 20)
-                    .opacity(animStates[i] ? 1 : 0)
-                    .animation(
-                        .spring(response: 0.50, dampingFraction: 0.70)
-                            .delay(Double(i) * 0.08),
-                        value: animStates[i]
-                    )
-            }
-        }
-        .foregroundStyle(
-            LinearGradient(
-                colors: [
-                    foreground.opacity(0.96),
-                    foreground.opacity(0.78),
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        )
-        .drawingGroup(opaque: false, colorMode: .linear)
-        .geometryGroup()
-    }
-
-    // MARK: Status area
 
     @ViewBuilder
     private var statusArea: some View {
@@ -547,18 +507,11 @@ struct LaunchWordmarkView: View {
     // MARK: Animation sequence
 
     private func runRevealAnimation() async {
-        // Stagger all letters simultaneously (spring handles individual delays)
-        for i in 0..<fullWord.count {
-            animStates[i] = true
+        withAnimation(.spring(response: 0.62, dampingFraction: 0.78)) {
+            logoVisible = true
         }
 
-        try? await Task.sleep(nanoseconds: 380_000_000)
-
-        withAnimation(.easeOut(duration: 0.45)) {
-            taglineVisible = true
-        }
-
-        try? await Task.sleep(nanoseconds: 300_000_000)
+        try? await Task.sleep(nanoseconds: 520_000_000)
 
         withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
             statusVisible = true

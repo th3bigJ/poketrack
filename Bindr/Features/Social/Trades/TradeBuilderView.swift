@@ -220,22 +220,20 @@ struct TradeBuilderView: View {
                 ForEach(theirCards) { item in
                     BuilderCardRow(item: item, cardLoader: { id in await services.cardData.loadCard(masterCardId: id) })
                 }
-                .onDelete(perform: isCounterFlow ? nil : { indices in
+                .onDelete { indices in
                     theirCards.remove(atOffsets: indices)
-                })
+                }
             }
-            if !isCounterFlow {
-                if mySideOnly {
-                    Label("They add their side when they respond", systemImage: "person.crop.circle.badge.plus")
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(.secondary)
-                } else {
-                    Button {
-                        isTheirCardPickerPresented = true
-                    } label: {
-                        Label("Add Cards", systemImage: "plus.circle")
-                            .font(.system(size: 14))
-                    }
+            if mySideOnly && !isCounterFlow {
+                Label("They add their side when they respond", systemImage: "person.crop.circle.badge.plus")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(.secondary)
+            } else {
+                Button {
+                    isTheirCardPickerPresented = true
+                } label: {
+                    Label("Add Cards", systemImage: "plus.circle")
+                        .font(.system(size: 14))
                 }
             }
 
@@ -244,7 +242,7 @@ struct TradeBuilderView: View {
                     .font(.system(size: 14))
                     .foregroundStyle(.primary)
                 Spacer()
-                if isCounterFlow || mySideOnly {
+                if mySideOnly && !isCounterFlow {
                     Text("\(services.priceDisplay.currency.symbol)\(cashReceiverText.isEmpty ? "0.00" : cashReceiverText)")
                         .font(.system(size: 14, weight: .semibold, design: .monospaced))
                         .foregroundStyle(.secondary)
@@ -280,8 +278,10 @@ struct TradeBuilderView: View {
         } header: {
             Text(receiverProfile.map { "Their Side (@\($0.username))" } ?? "Their Side")
         } footer: {
-            Text(mySideOnly
+            Text(mySideOnly && !isCounterFlow
                  ? "Send your side first. They can add their side when they respond."
+                 : isCounterFlow
+                 ? "Adjust what you want from them as well as what you are offering."
                  : "Cards you are requesting from them. Total includes cards + cash.")
         }
     }

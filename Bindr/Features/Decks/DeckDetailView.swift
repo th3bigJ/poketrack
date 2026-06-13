@@ -155,7 +155,7 @@ struct DeckDetailView: View {
             .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)|\($0.cardName)" }
             .sorted()
             .joined(separator: ";")
-        return "\(deck.title)|\(deck.deckFormat.rawValue)|\(cardsSignature)"
+        return "\(deck.title)|\(deck.deckFormat.rawValue)|\(deck.mainCardID ?? "")|\(cardsSignature)"
     }
 
     var body: some View {
@@ -220,6 +220,7 @@ struct DeckDetailView: View {
         }
         .onChange(of: shareAutoSyncSignature) { _, _ in
             services.socialShare.scheduleAutoSync(deck: deck)
+            services.scheduleLibraryCloudBackup()
         }
     }
 
@@ -561,6 +562,7 @@ struct DeckDetailView: View {
 
         if didChange {
             try? modelContext.save()
+            services.scheduleLibraryCloudBackup()
         }
     }
 
@@ -582,6 +584,7 @@ struct DeckDetailView: View {
 
         if didChange {
             try? modelContext.save()
+            services.scheduleLibraryCloudBackup()
         }
     }
 

@@ -90,22 +90,22 @@ struct PokemonCatalogSyncPhase {
             }
 
             let sess = session
-            try await withThrowingTaskGroup(of: (String, Data?).self) { group in
-                for set in setsToDownload {
-                    let code = set.setCode
-                    group.addTask {
-                        let cardsURL = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
-                        let cardsData = try? await sess.data(from: cardsURL).0
-                        return (code, cardsData)
-                    }
+            let store = store
+            let byteCounts = try await CatalogParallelDownloadPool.map(setsToDownload) { set in
+                let code = set.setCode
+                let cardsURL = AppConfiguration.r2CatalogURL(path: "cards/\(code).json")
+                let cardsData = try? await sess.data(from: cardsURL).0
+                if let cardsData, let cards = try? JSONDecoder().decode([Card].self, from: cardsData) {
+                    try await store.insertCards(cards, setCode: code, brand: .pokemon)
+                    return Int64(cardsData.count)
                 }
-                for try await (code, cardsData) in group {
-                    if let cardsData, let cards = try? JSONDecoder().decode([Card].self, from: cardsData) {
-                        try await store.insertCards(cards, setCode: code, brand: .pokemon)
-                        await progress.completeFile(byteCount: Int64(cardsData.count))
-                    } else {
-                        await progress.completeFile()
-                    }
+                return Int64(0)
+            }
+            for byteCount in byteCounts {
+                if byteCount > 0 {
+                    await progress.completeFile(byteCount: byteCount)
+                } else {
+                    await progress.completeFile()
                 }
             }
 

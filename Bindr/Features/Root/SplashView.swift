@@ -82,7 +82,7 @@ struct SplashView: View {
     }
 
     private var brandMark: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 14) {
             Text("welcome to")
                 .font(.system(size: 12, weight: .medium))
                 .italic()
@@ -92,19 +92,7 @@ struct SplashView: View {
                 .offset(y: animStates[0] ? 0 : 10)
                 .opacity(animStates[0] ? 1 : 0)
 
-            Text("BINDR")
-                .font(.custom("BebasNeue-Regular", size: 70))
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [
-                            (isDark ? Color.white : Color.black).opacity(0.96),
-                            (isDark ? Color.white : Color.black).opacity(0.70)
-                        ],
-                        startPoint: .top,
-                        endPoint: .bottom
-                    )
-                )
-                .tracking(8)
+            BindrBrandLogoView(maxWidth: 260)
                 .offset(y: animStates[1] ? 0 : 15)
                 .opacity(animStates[1] ? 1 : 0)
         }

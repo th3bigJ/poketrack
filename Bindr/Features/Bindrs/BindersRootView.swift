@@ -122,6 +122,7 @@ struct BindersRootView: View {
             gridResolvedValues = [:]
             modelContext.processPendingChanges()
             refreshTrigger += 1
+            services.scheduleLibraryCloudBackup()
         }) {
             CreateBinderSheet()
                 .environment(services)
@@ -139,6 +140,7 @@ struct BindersRootView: View {
         .alert("Delete Binder?", isPresented: $showDeleteConfirm, presenting: binderToDelete) { binder in
             Button("Delete \"\(binder.title)\"", role: .destructive) {
                 modelContext.delete(binder)
+                services.scheduleLibraryCloudBackup()
             }
             Button("Cancel", role: .cancel) {}
         } message: { binder in

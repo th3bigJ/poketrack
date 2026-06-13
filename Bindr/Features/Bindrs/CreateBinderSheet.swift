@@ -265,6 +265,7 @@ struct CreateBinderSheet: View {
         )
         modelContext.insert(binder)
         try? modelContext.save()
+        services.scheduleLibraryCloudBackup()
         dismiss()
     }
 

@@ -516,6 +516,10 @@ struct RootView: View {
             await Task.yield()
 
             if !services.brandSettings.hasCompletedBrandOnboarding {
+                // Hold the wordmark on screen briefly after the reveal animation
+                // so first-run users can read it before onboarding takes over.
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+
                 withAnimation(.easeInOut(duration: 0.28)) {
                     showOnboardingImmediate = true
                 }

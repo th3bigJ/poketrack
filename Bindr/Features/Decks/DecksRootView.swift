@@ -83,6 +83,7 @@ struct DecksRootView: View {
         .alert("Delete Deck?", isPresented: $showDeleteConfirm, presenting: deckToDelete) { deck in
             Button("Delete", role: .destructive) {
                 modelContext.delete(deck)
+                services.scheduleLibraryCloudBackup()
             }
             Button("Cancel", role: .cancel) {}
         } message: { deck in
@@ -264,6 +265,7 @@ struct DecksRootView: View {
             cardCopy.deck = copy
             modelContext.insert(cardCopy)
         }
+        services.scheduleLibraryCloudBackup()
     }
 
     private func handleCreateTap() {

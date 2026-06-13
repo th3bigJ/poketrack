@@ -72,6 +72,7 @@ struct CreateDeckSheet: View {
             format: selectedFormat
         )
         modelContext.insert(deck)
+        services.scheduleLibraryCloudBackup()
         dismiss()
     }
 }

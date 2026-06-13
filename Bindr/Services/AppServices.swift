@@ -104,6 +104,12 @@ final class AppServices {
 
     func notifyCollectionInventoryChanged() {
         collectionInventoryRevision += 1
+        scheduleLibraryCloudBackup()
+    }
+
+    /// Schedules a debounced R2 upload of the full library snapshot (collection,
+    /// binders, decks, ledger, wishlist, value history). Requires sign-in.
+    func scheduleLibraryCloudBackup() {
         collectionSync.scheduleUpload()
     }
 
@@ -117,6 +123,8 @@ final class AppServices {
     private(set) var catalogDownloadDownloadedBytes: Int64 = 0
     private(set) var catalogDownloadEstimatedTotalBytes: Int64 = 0
     private(set) var catalogCardsLastUpdatedAt: Date?
+    /// Background prefetch started during onboarding; bootstrap awaits this before syncing.
+    private var catalogPrefetchTask: Task<Void, Never>?
 
     init() {
         let socialAuth = SocialAuthService()
@@ -200,6 +208,7 @@ final class AppServices {
 
     func bootstrap() async {
         guard !isReady, !isBootstrapping else { return }
+        await awaitCatalogPrefetchIfNeeded()
         isBootstrapping = true
         defer { isBootstrapping = false }
 
@@ -222,6 +231,8 @@ final class AppServices {
             bootstrapStatus = "Finishing update…"
             await bootstrapTask.value
         }
+
+        await ensureMarketPricingReadyIfNeeded(updateProgressUI: true)
         
         brandSettings.markInitialAppBootstrapCompleted()
         pendingLightBrowseTabEntry = true
@@ -240,6 +251,7 @@ final class AppServices {
         }
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
             await primeLaunchCatalogFromLocalCache()
+            await ensureMarketPricingReadyIfNeeded(updateProgressUI: !isLaunchCatalogPipelineComplete)
             isLaunchCatalogPipelineComplete = true
             launchCatalogPipelineCompletedAt = Date()
             return
@@ -333,7 +345,8 @@ final class AppServices {
     /// Silently pre-fetches catalog data for the selected brand in the background during onboarding,
     /// so the post-onboarding bootstrap has less network work to do. Fire-and-forget; no UI feedback.
     func prefetchCatalogInBackground(for brands: Set<TCGBrand>) {
-        Task(priority: .background) { [weak self] in
+        guard catalogPrefetchTask == nil else { return }
+        catalogPrefetchTask = Task(priority: .background) { [weak self] in
             guard let self else { return }
             await CatalogSyncCoordinator.shared.syncAllIfNeeded(
                 enabledBrands: brands,
@@ -341,25 +354,65 @@ final class AppServices {
             )
             await brandsManifest.refresh()
             await variantsCatalog.reloadFromStore()
+            await MainActor.run {
+                self.catalogPrefetchTask = nil
+            }
         }
+    }
+
+    private func awaitCatalogPrefetchIfNeeded() async {
+        if let prefetch = catalogPrefetchTask {
+            await prefetch.value
+            catalogPrefetchTask = nil
+        }
+    }
+
+    /// Runs another catalog pass when local pricing metadata shows the first sync
+    /// did not finish (common after concurrent prefetch + bootstrap on first launch).
+    private func ensureMarketPricingReadyIfNeeded(updateProgressUI: Bool) async {
+        let needsRefresh = await CatalogSyncCoordinator.shared.requiresDailyBlockingRefreshAsync(
+            enabledBrands: brandSettings.enabledBrands
+        )
+        guard needsRefresh else { return }
+
+        if updateProgressUI {
+            bootstrapMessage = "Updating market data…"
+            bootstrapStatus = "Downloading pricing…"
+            bootstrapShowsDownloadProgressUI = true
+            bootstrapProgress = max(bootstrapProgress, 0.05)
+        }
+
+        await runStartupCatalogPipeline(
+            updateBootstrapProgressUI: updateProgressUI,
+            includeDeferredLaunchServices: false
+        )
     }
 
     private func waitForTaskOrTimeout(
         _ task: Task<Void, Never>,
         timeoutNanoseconds: UInt64
     ) async -> Bool {
-        await withTaskGroup(of: Bool.self) { group in
-            group.addTask {
+        await withCheckedContinuation { continuation in
+            let lock = NSLock()
+            var resumed = false
+
+            Task {
                 await task.value
-                return true
+                lock.lock()
+                defer { lock.unlock() }
+                guard !resumed else { return }
+                resumed = true
+                continuation.resume(returning: true)
             }
-            group.addTask {
+
+            Task {
                 try? await Task.sleep(nanoseconds: timeoutNanoseconds)
-                return false
+                lock.lock()
+                defer { lock.unlock() }
+                guard !resumed else { return }
+                resumed = true
+                continuation.resume(returning: false)
             }
-            let first = await group.next() ?? false
-            group.cancelAll()
-            return first
         }
     }
 
@@ -769,6 +822,7 @@ final class AppServices {
             cardData: cardData,
             sealedProducts: sealedProducts
         )
+        service.onValueHistoryChanged = { [weak self] in self?.scheduleLibraryCloudBackup() }
         collectionValue = service
     }
 
@@ -788,13 +842,14 @@ final class AppServices {
         // @MainActor while the launch overlay is coming down.
         let cardCount = modelContext.collectionTotalCardQuantity()
         let wishlistCount = (try? modelContext.fetchCount(FetchDescriptor<WishlistItem>())) ?? 0
-        // Only upload when we have data — never overwrite cloud backup with an empty snapshot.
-        if cardCount > 0 || wishlistCount > 0 {
-            collectionSync.scheduleUpload()
-        }
         let binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         let deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
+        let valueSnapshotCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionValueSnapshot>())) ?? 0
         let totalValue = collectionValue?.snapshots.last?.totalGbp ?? 0
+        // Only upload when we have data — never overwrite cloud backup with an empty snapshot.
+        if cardCount > 0 || wishlistCount > 0 || binderCount > 0 || deckCount > 0 || valueSnapshotCount > 0 {
+            scheduleLibraryCloudBackup()
+        }
 
         Task {
             try? await socialProfile.updateCollectionStats(
