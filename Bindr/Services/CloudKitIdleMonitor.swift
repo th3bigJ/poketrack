@@ -28,9 +28,23 @@ final class CloudKitIdleMonitor {
     private let requiredCleanFrames = 15
     /// Seconds of silence after last notification/hitch before declaring idle.
     private let quietWindow: CFTimeInterval
+    /// When true, do not finalize until at least one remote-change notification arrives.
+    /// Prevents fresh installs from declaring import complete before CloudKit starts.
+    private let requireRemoteChangeBeforeIdle: Bool
+    /// Gives up waiting for the first remote-change notification after this many seconds.
+    /// Used on fresh installs so brand-new users without iCloud data are not blocked forever.
+    private let maxWaitWithoutNotification: CFTimeInterval?
+    private let monitoringStartedAt = CFAbsoluteTimeGetCurrent()
 
-    init(quietWindow: CFTimeInterval = 12.0, onIdle: @escaping () -> Bool) {
+    init(
+        quietWindow: CFTimeInterval = 12.0,
+        requireRemoteChangeBeforeIdle: Bool = false,
+        maxWaitWithoutNotification: CFTimeInterval? = nil,
+        onIdle: @escaping () -> Bool
+    ) {
         self.quietWindow = quietWindow
+        self.requireRemoteChangeBeforeIdle = requireRemoteChangeBeforeIdle
+        self.maxWaitWithoutNotification = maxWaitWithoutNotification
         self.onIdle = onIdle
     }
 
@@ -82,6 +96,19 @@ final class CloudKitIdleMonitor {
                 lastRemoteChangeTime = CFAbsoluteTimeGetCurrent()
             }
             return
+        }
+
+        if requireRemoteChangeBeforeIdle, !hasSeenNotification {
+            if let maxWaitWithoutNotification {
+                let elapsed = CFAbsoluteTimeGetCurrent() - monitoringStartedAt
+                if elapsed < maxWaitWithoutNotification {
+                    consecutiveCleanFrames = 0
+                    return
+                }
+            } else {
+                consecutiveCleanFrames = 0
+                return
+            }
         }
 
         // If we've seen notifications, enforce the quiet window.

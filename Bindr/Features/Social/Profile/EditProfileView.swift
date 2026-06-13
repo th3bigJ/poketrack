@@ -430,28 +430,6 @@ struct EditProfileView: View {
                 }
             }
 
-            Section {
-                Button {
-                    save()
-                } label: {
-                    if isSaving {
-                        HStack(spacing: 8) {
-                            ProgressView()
-                            Text("Saving…")
-                        }
-                        .frame(maxWidth: .infinity)
-                    } else {
-                        Text("Save Profile")
-                            .font(.headline)
-                            .frame(maxWidth: .infinity)
-                    }
-                }
-                .buttonStyle(.borderedProminent)
-                .disabled(!canSave)
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
-            }
-
             if existingProfile != nil {
                 Section {
                     Button("Sign Out", role: .destructive) {

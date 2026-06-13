@@ -151,15 +151,22 @@ final class StoreKitService {
             let message = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
             purchaseError = message
             if !premiumEntitlement {
-                await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: true)
+                _ = await syncPremiumFromAppStore()
             }
             if premiumEntitlement { return }
             throw PurchaseError.storeKit(message)
         }
 
         if !premiumEntitlement {
-            await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: true)
+            _ = await syncPremiumFromAppStore()
         }
+    }
+
+    /// Same entitlement refresh Subscribe uses after purchase / "already subscribed".
+    @discardableResult
+    func syncPremiumFromAppStore() async -> Bool {
+        await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: true)
+        return premiumEntitlement
     }
 
     func restore() async throws {
@@ -169,35 +176,14 @@ final class StoreKitService {
         isRestoring = true
         defer { isRestoring = false }
 
-        await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: false)
-        if premiumEntitlement {
+        if await syncPremiumFromAppStore() {
             restoreMessage = nil
             return
         }
 
-        var syncErrorMessage: String?
-        do {
-            try await AppStore.sync()
-        } catch {
-            syncErrorMessage = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
-        }
-
-        await refreshPremiumAccess(fromExplicitUserAction: true, attemptStoreSync: false)
-        if premiumEntitlement {
-            restoreMessage = nil
-            return
-        }
-
-        if let syncErrorMessage {
-            restoreMessage = """
-            Couldn't sync with the App Store (\(syncErrorMessage)). \
-            If Subscribe shows you're already subscribed, tap Subscribe once — we'll activate Premium from your Apple ID.
-            """
-        } else {
-            restoreMessage = requiresSandboxAccount
-                ? "No active subscription was found on this device. Subscribe here, or sign into a Sandbox Apple ID under Settings → App Store → Sandbox Account if you purchased on another tester account."
-                : "No active subscription was found for this Apple ID on this device."
-        }
+        restoreMessage = requiresSandboxAccount
+            ? "No active subscription was found on this device. Subscribe here, or sign into a Sandbox Apple ID under Settings → App Store → Sandbox Account if you purchased on another tester account."
+            : "No active subscription was found for this Apple ID on this device."
     }
 
     /// Re-reads Premium access from every StoreKit source Apple exposes.
@@ -224,7 +210,7 @@ final class StoreKitService {
     }
 
     private func detectActivePremiumSubscription(fromExplicitUserAction: Bool) async -> Bool {
-        let relaxEnvironment = fromExplicitUserAction && AppDistribution.channel != .appStore
+        let relaxEnvironment = fromExplicitUserAction
 
         if await scanCurrentEntitlements(relaxEnvironment: relaxEnvironment) {
             return true

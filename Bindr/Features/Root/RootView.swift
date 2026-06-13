@@ -485,10 +485,10 @@ struct RootView: View {
             selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
         })
         .task {
+            services.setupCollectionValue(modelContext: modelContext)
             services.beginCloudKitReadinessMonitoring()
             if services.isReady && !hasInsertedMainContent {
                 hasInsertedMainContent = true
-                services.setupCollectionValue(modelContext: modelContext)
             }
         }
         .task {

@@ -286,7 +286,7 @@ private struct DataSyncSettingsPage: View {
         case .cloudKitFallback:
             Text("iCloud sync isn't available on this device right now. Your data is stored locally on this device.")
         case .cloudKitConnected:
-            Text("Your collection, wishlist, and ledger sync automatically through iCloud. After reinstalling, it may take a few minutes for everything to appear.")
+            Text("Your collection, wishlist, and ledger sync automatically through iCloud. After reinstalling, stay on Wi‑Fi and wait on the launch screen — restore can take a few minutes. If data still does not appear, sign in to your Bindr account and use Backup & Restore.")
         case .iCloudAccountUnavailable:
             Text("Sign in to iCloud in Settings to sync your data across devices.")
         }

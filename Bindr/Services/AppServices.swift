@@ -66,6 +66,9 @@ final class AppServices {
     private(set) var isCloudKitImportComplete = false
     private var cloudKitObserver: NSObjectProtocol?
     private var cloudKitIdleMonitor: CloudKitIdleMonitor?
+    private var cloudKitImportPollTask: Task<Void, Never>?
+    private var cloudKitRestoreTimeoutWorkItem: DispatchWorkItem?
+    private var hasArmedCloudKitRestoreTimeout = false
     /// Timestamp used to avoid finalizing CloudKit readiness on the exact frame
     /// the launch catalog pipeline flips complete.
     private var launchCatalogPipelineCompletedAt: Date?
@@ -189,6 +192,9 @@ final class AppServices {
                 try? await Task.sleep(nanoseconds: 200_000_000)
             }
             await socialAuth.restoreSession()
+            if case .signedIn = socialAuth.authState {
+                await attemptCloudBackupRestoreIfStillEmpty()
+            }
             // syncSocialLibrariesIfPossible is intentionally omitted here.
             // setupWishlistAndLedger (called from RootView's launch task) already
             // runs a sync pass and is awaited before the overlay closes. Running it
@@ -723,30 +729,95 @@ final class AppServices {
         // SwiftData CloudKit merges can arrive several seconds after the last remote
         // change notification. Keep the overlay up through that quiet period; a
         // longer honest launch is better than revealing a frozen dashboard.
-        let quietWindow: TimeInterval = 6.0
-        let timeout: TimeInterval = 120.0
+        let quietWindow: TimeInterval = 12.0
+        let timeoutAfterCatalog: TimeInterval = 180.0
 
-        let monitor = CloudKitIdleMonitor(quietWindow: quietWindow) { [weak self] in
+        startCloudKitImportPolling()
+
+        let monitor = CloudKitIdleMonitor(
+            quietWindow: quietWindow,
+            requireRemoteChangeBeforeIdle: true,
+            maxWaitWithoutNotification: 60
+        ) { [weak self] in
             guard let self else { return true }
             guard self.isLaunchCatalogPipelineComplete else {
                 return false
             }
+            self.armCloudKitRestoreTimeoutIfNeeded(after: timeoutAfterCatalog)
             // Prevent same-tick completion when the catalog gate just flipped; allow a
             // brief post-pipeline settling window for late main-thread merges.
             if let completedAt = self.launchCatalogPipelineCompletedAt,
                Date().timeIntervalSince(completedAt) < 2.0 {
                 return false
             }
+            if self.libraryHasLocalData {
+                self.markCloudKitImportComplete()
+                return true
+            }
             self.markCloudKitImportComplete()
             return true
         }
         self.cloudKitIdleMonitor = monitor
         monitor.start()
+    }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + timeout) { [weak self] in
+    private func armCloudKitRestoreTimeoutIfNeeded(after delay: TimeInterval) {
+        guard !hasArmedCloudKitRestoreTimeout else { return }
+        hasArmedCloudKitRestoreTimeout = true
+        let work = DispatchWorkItem { [weak self] in
             guard let self, !self.isCloudKitImportComplete else { return }
             self.markCloudKitImportComplete()
         }
+        cloudKitRestoreTimeoutWorkItem = work
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: work)
+    }
+
+    private func startCloudKitImportPolling() {
+        cloudKitImportPollTask?.cancel()
+        cloudKitImportPollTask = Task { [weak self] in
+            while !Task.isCancelled {
+                try? await Task.sleep(for: .seconds(2))
+                guard let self else { return }
+                if self.isCloudKitImportComplete { return }
+                if self.libraryHasLocalData {
+                    self.markCloudKitImportComplete()
+                    return
+                }
+            }
+        }
+    }
+
+    private var libraryHasLocalData: Bool {
+        guard let modelContext = socialSyncModelContext else { return false }
+        return !UserLibraryBackupCodec.localLibraryIsEmpty(modelContext)
+    }
+
+    private func beginPostLaunchCloudKitRecoveryIfNeeded() {
+        guard !cloudSettings.isCloudKitFallbackActive else { return }
+        guard !libraryHasLocalData else { return }
+        guard cloudKitObserver == nil else { return }
+
+        cloudKitObserver = NotificationCenter.default.addObserver(
+            forName: .NSPersistentStoreRemoteChange,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor in
+                await self?.handleLateCloudKitImport()
+            }
+        }
+    }
+
+    private func handleLateCloudKitImport() async {
+        if libraryHasLocalData {
+            collectionInventoryRevision += 1
+            if let observer = cloudKitObserver {
+                NotificationCenter.default.removeObserver(observer)
+                cloudKitObserver = nil
+            }
+            return
+        }
+        await attemptCloudBackupRestoreIfStillEmpty()
     }
 
     private func markCloudKitImportComplete() {
@@ -760,12 +831,13 @@ final class AppServices {
         guard !isCloudKitImportComplete else { return }
         cloudKitIdleMonitor?.stop()
         cloudKitIdleMonitor = nil
-        if let observer = cloudKitObserver {
-            NotificationCenter.default.removeObserver(observer)
-            cloudKitObserver = nil
-        }
+        cloudKitImportPollTask?.cancel()
+        cloudKitImportPollTask = nil
+        cloudKitRestoreTimeoutWorkItem?.cancel()
+        cloudKitRestoreTimeoutWorkItem = nil
         await attemptCloudBackupRestoreIfStillEmpty()
         isCloudKitImportComplete = true
+        beginPostLaunchCloudKitRecoveryIfNeeded()
     }
 
     /// Pulls the social cloud backup (R2) when iCloud restore did not repopulate the collection.

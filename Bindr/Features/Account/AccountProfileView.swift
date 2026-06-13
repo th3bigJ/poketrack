@@ -5,6 +5,7 @@ import Security
 
 struct AccountProfileView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Binding var navigationPath: NavigationPath
     @Binding var isPresented: Bool
     @Binding var externalProfile: SocialProfile?
@@ -18,6 +19,10 @@ struct AccountProfileView: View {
     enum Destination: Hashable {
         case editProfile
         case friendProfile(username: String)
+    }
+
+    private var toolbarButtonColor: Color {
+        colorScheme == .dark ? .white : .black
     }
 
     init(
@@ -72,12 +77,13 @@ struct AccountProfileView: View {
         }
         .navigationTitle("Profile")
         .navigationBarTitleDisplayMode(.inline)
+        .tint(toolbarButtonColor)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Done") {
                     isPresented = false
                 }
-                .foregroundStyle(.primary)
+                .foregroundStyle(toolbarButtonColor)
                 .fontWeight(.bold)
             }
             if profile != nil {
@@ -88,7 +94,7 @@ struct AccountProfileView: View {
                     } label: {
                         Image(systemName: "pencil")
                             .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(toolbarButtonColor)
                     }
                 }
             }
