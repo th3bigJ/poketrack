@@ -1248,22 +1248,21 @@ struct BrowseView: View {
 
     /// Inline set/dex card grid — own `ScrollView` so grid scrolling does not move the sets list underneath.
     private var auxiliaryInlineDetailScrollView: some View {
-        VStack(spacing: 0) {
-            Color.clear
-                .frame(height: rootFloatingChromeInset)
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 0) {
-                    browseSearchRow
-                    browseSetSummaryRow
-                    browseResultCountRow
-                    if let inlineDetailRoute {
-                        inlineDetailContent(route: inlineDetailRoute)
-                    }
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 0) {
+                // Spacer scrolls away so cards pass under the floating glass chrome, matching the Cards tab.
+                Color.clear
+                    .frame(height: rootFloatingChromeInset)
+                browseSearchRow
+                browseSetSummaryRow
+                browseResultCountRow
+                if let inlineDetailRoute {
+                    inlineDetailContent(route: inlineDetailRoute)
                 }
             }
-            .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            }
+        }
+        .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
     }
 
@@ -4087,6 +4086,7 @@ struct SetCardsView: View {
         }
         .animation(.spring(response: 0.35, dampingFraction: 0.85), value: isMultiSelectActive && !selectedCardIDs.isEmpty)
         .toolbar(.hidden, for: .navigationBar)
+        .toolbarBackground(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
             BrowseDetailNavBar(
                 title: set.name,
@@ -4453,6 +4453,7 @@ struct DexCardsView: View {
         }
         .id(dexId)
         .toolbar(.hidden, for: .navigationBar)
+        .toolbarBackground(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
             BrowseDetailNavBar(
                 title: displayName,
@@ -4510,24 +4511,17 @@ private struct BrowseDetailNavBar<FilterMenuContent: View, GridMenuContent: View
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
-        ZStack {
-            Text(title)
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
-                .padding(.horizontal, 64)
-
-            HStack {
+        BindrPageHeader(
+            title: title,
+            leading: {
                 ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
                 }
-
-                Spacer(minLength: 0)
-
-                HStack(spacing: 12) {
+            },
+            trailing: {
+                HStack(spacing: 8) {
                     Menu {
                         gridMenuContent()
                     } label: {
@@ -4561,9 +4555,7 @@ private struct BrowseDetailNavBar<FilterMenuContent: View, GridMenuContent: View
                     .accessibilityLabel("Filters")
                 }
             }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        )
     }
 }
 

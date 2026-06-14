@@ -2,12 +2,13 @@ import SwiftUI
 
 // MARK: - BindrOnboardingFlow
 //
-// 5-screen first-run experience:
+// 6-screen first-run experience:
 //   1. Welcome                                     — `OnboardingWelcomeView`
-//   2. Enable offline collection                   — `OnboardingOfflineModeView`
-//   3. Enable notifications                        — `OnboardingNotificationsView`
-//   4. Social sign-in                              — `OnboardingSocialView`
-//   5. Premium subscription upsell                 — `OnboardingPremiumView`
+//   2. Theme & accent color                        — `OnboardingThemeView`
+//   3. Enable offline collection                   — `OnboardingOfflineModeView`
+//   4. Enable notifications                        — `OnboardingNotificationsView`
+//   5. Social sign-in                              — `OnboardingSocialView`
+//   6. Premium subscription upsell                 — `OnboardingPremiumView`
 
 struct BindrOnboardingFlow: View {
     @Environment(AppServices.self) private var services
@@ -49,6 +50,12 @@ struct BindrOnboardingFlow: View {
             case .welcome:
                 OnboardingWelcomeView(onContinue: { advance() })
                     .transition(stepTransition)
+            case .theme:
+                OnboardingThemeView(
+                    onContinue: { advance() },
+                    onSkip: { advance() }
+                )
+                .transition(stepTransition)
             case .offline:
                 OnboardingOfflineModeView(
                     brand: .pokemon,
@@ -138,10 +145,11 @@ struct BindrOnboardingFlow: View {
 
 enum BindrOnboardingStep: Int, CaseIterable {
     case welcome       = 0
-    case offline       = 1
-    case notifications = 2
-    case social        = 3
-    case premium       = 4
+    case theme         = 1
+    case offline       = 2
+    case notifications = 3
+    case social        = 4
+    case premium       = 5
 
     var next: BindrOnboardingStep? {
         BindrOnboardingStep(rawValue: rawValue + 1)

@@ -712,11 +712,10 @@ struct BinderDetailView: View {
         let slotSpacing: CGFloat = 8
         // These must match the chrome inside `pageSurface`:
         //   .padding(.leading, 32)  + .padding(.trailing, 14) = 46pt
-        //   .padding(.top, 38)      + .padding(.bottom, 14)   = 52pt
-        // The leading inset reserves the binder-ring spine; the top inset
-        // reserves the readable foil title plate.
+        //   .padding(.top, 14)     + .padding(.bottom, 14)   = 28pt
+        // The leading inset reserves the binder-ring spine.
         let surfaceHorizontalChrome: CGFloat = 46
-        let surfaceVerticalChrome: CGFloat = 52
+        let surfaceVerticalChrome: CGFloat = 28
         let cardAspectRatio: CGFloat = 5.0 / 7.0
 
         let maxWidth = max(available.width - horizontalPadding, 240)
@@ -809,18 +808,8 @@ struct BinderDetailView: View {
             // Soft drop shadow under the surface.
             .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
 
-            // 2. Foil title plate. It still feels pressed into the binder,
-            //    but it has enough contrast to survive screenshots and shares.
-            VStack(spacing: 0) {
-                foilStampedTitle
-                    .padding(.top, 8)
-                    .padding(.leading, 32) // skip past the ring spine
-                    .padding(.trailing, 14)
-                Spacer(minLength: 0)
-            }
-
-            // 3. Card grid — leading padding bumped to 32 to clear the ring
-            //    spine; top padding reserves the title plate above the cards.
+            // 2. Card grid — leading padding bumped to 32 to clear the ring
+            //    spine; top/bottom padding match for even vertical margins.
             LazyVGrid(
                 columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
                 spacing: 8
@@ -839,10 +828,10 @@ struct BinderDetailView: View {
             }
             .padding(.leading, 32)
             .padding(.trailing, 14)
-            .padding(.top, 38)
+            .padding(.top, 14)
             .padding(.bottom, 14)
 
-            // 4. Three-ring binder spine on the left edge — the single change
+            // 3. Three-ring binder spine on the left edge — the single change
             //    that turns the page from "felt mat" into "actual binder".
             //    Sits above the grid so the rings appear in the gutter even
             //    when cards crowd toward the edge.
@@ -852,7 +841,7 @@ struct BinderDetailView: View {
                 Spacer(minLength: 0)
             }
 
-            // 5. Page-turn dimming overlay (existing behaviour)
+            // 4. Page-turn dimming overlay (existing behaviour)
             if isPageTurning {
                 RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
                     .fill(Color.black.opacity(colorScheme == .dark ? 0.22 : 0.12))
@@ -943,67 +932,6 @@ struct BinderDetailView: View {
                 )
                 .frame(width: 14, height: 14)
         }
-    }
-
-    // MARK: - Foil-stamped title
-
-    /// Binder title rendered as a small foil nameplate. The old version was
-    /// intentionally subtle, but that made shared binder screenshots hard to
-    /// read on darker or gradient covers.
-    private var foilStampedTitle: some View {
-        let title = binder.title.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        let accent = binder.resolvedColour
-        return Text(title.isEmpty ? "BINDER" : title)
-            .font(.system(size: 13, weight: .black, design: .serif))
-            .tracking(1.8)
-            .foregroundStyle(
-                LinearGradient(
-                    colors: [
-                        Color.white.opacity(0.98),
-                        Color.white.opacity(0.90),
-                        accent.opacity(0.95)
-                    ],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-            )
-            .lineLimit(1)
-            .minimumScaleFactor(0.55)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 4)
-            .background {
-                Capsule()
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                Color.black.opacity(0.38),
-                                Color.black.opacity(0.20)
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                    )
-                    .overlay {
-                        Capsule()
-                            .stroke(
-                                LinearGradient(
-                                    colors: [
-                                        Color.white.opacity(0.30),
-                                        accent.opacity(0.70),
-                                        Color.white.opacity(0.12)
-                                    ],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                ),
-                                lineWidth: 1
-                            )
-                    }
-                    .shadow(color: Color.black.opacity(0.30), radius: 5, x: 0, y: 2)
-            }
-            .shadow(color: Color.black.opacity(0.70), radius: 0.8, x: 0, y: 1)
-            .shadow(color: accent.opacity(0.45), radius: 5, x: 0, y: 0)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .allowsHitTesting(false)
     }
 
     @ViewBuilder

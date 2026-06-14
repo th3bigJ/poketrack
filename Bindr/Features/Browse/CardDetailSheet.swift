@@ -668,20 +668,22 @@ struct CardDetailSheet: View {
     }
 
     private func detailTextBlock(title: String, body: String) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 8) {
             Text(title).font(.headline).foregroundStyle(.primary)
-            Text(body).font(.subheadline).foregroundStyle(.secondary)
+            Text(body)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(12)
+                .background(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .fill(sectionInsetBackground)
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .stroke(sectionBorder, lineWidth: 1)
+                )
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(12)
-        .background(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(sectionInsetBackground)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .stroke(sectionBorder, lineWidth: 1)
-        )
     }
 
     private func labelValueRow(label: String, value: String) -> some View {

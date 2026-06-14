@@ -55,16 +55,14 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     /// Last error surfaced to the user.
     var lastErrorMessage: String?
 
-    /// Quality readout from live frame analysis (0–1). Drives the auto-capture indicator.
+    /// Quality readout from live frame analysis (0–1). Drives the reticle alignment indicator.
     var frameQuality: Double = 0
 
     /// Franchise to match against; set before capture from the scanner UI.
     var scanBrand: TCGBrand = .pokemon
 
-    /// When `true`, user must pick a franchise first (multi-brand); auto-capture stays off.
+    /// When `true`, user must pick a franchise first (multi-brand).
     var requiresBrandSelection: Bool = false
-    /// When false, live auto-capture is disabled (manual shutter mode).
-    var autoCaptureEnabled: Bool = true
 
     // MARK: - Callbacks
     var onMatch: ((ScanResult) -> Void)?
@@ -127,14 +125,6 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
     private let ciContext = CIContext(options: nil)
 
-    // Auto-capture state
-    private var autoCaptureFrameCount = 0       // consecutive good frames
-    private let autoCaptureThreshold = 8        // frames needed before firing
-    /// Same value as `CardScannerReticle` green / "Hold steady" threshold.
-    private let autoCaptureMinQuality: Double = 0.45
-    private var lastAutoCaptureTime: Date = .distantPast
-    /// Minimum time after a finished scan (or attempted capture) before auto-capture can run again.
-    private let autoCaptureMinInterval: TimeInterval = 2.0
     private var isAnalysingFrame = false        // prevent overlapping Vision calls
     /// Token for the currently active OCR/search request. Replaced on each new scan and on cancel.
     private var activeScanRequestID = UUID()
@@ -163,12 +153,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
     }
 
-    /// Resets error state and resumes live preview (camera stays live between scans now,
-    /// so this is mainly used to clear an error and re-enable auto-capture).
+    /// Resets error state and resumes live preview.
     func clearError() {
         lastErrorMessage = nil
         scanState = .idle
-        autoCaptureFrameCount = 0
     }
 
     /// Cancels the current OCR/search cycle and returns scanner UI to idle.
@@ -177,7 +165,6 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         scanState = .idle
         isCapturing = false
         lastErrorMessage = nil
-        autoCaptureFrameCount = 0
     }
 
     /// User chose a different catalog match for an existing scan (same OCR). Previous pick moves into alternatives.
@@ -198,21 +185,18 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     func undoLastScan() {
         guard !scanResults.isEmpty else { return }
         scanResults.removeFirst()
-        autoCaptureFrameCount = 0
     }
 
     /// Removes a specific scan result by id. No-op when id is not found.
     func removeScanResult(id: UUID) {
         guard let idx = scanResults.firstIndex(where: { $0.id == id }) else { return }
         scanResults.remove(at: idx)
-        autoCaptureFrameCount = 0
     }
 
     /// Clears the entire current scan list (e.g. after bulk-adding every card to the collection).
     func clearAllScanResults() {
         guard !scanResults.isEmpty else { return }
         scanResults.removeAll()
-        autoCaptureFrameCount = 0
         lastErrorMessage = nil
         scanState = .idle
     }
@@ -230,7 +214,6 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
         lastErrorMessage = nil
         isCapturing = true
-        autoCaptureFrameCount = 0  // reset so we don't double-fire
         let settings = AVCapturePhotoSettings()
         photoOutput.capturePhoto(with: settings, delegate: self)
     }
@@ -670,9 +653,6 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             guard self.activeScanRequestID == requestID else { return }
             scanState = .idle
             lastErrorMessage = nil
-            autoCaptureFrameCount = 0
-            // Enforce cooldown before another auto-capture (do not reset to `.distantPast` — that caused double scans).
-            lastAutoCaptureTime = Date()
             // Skip duplicate of the most recent result (same physical card still in frame).
             if let newest = scanResults.first, newest.card.masterCardId == top.masterCardId {
                 return
@@ -685,7 +665,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     }
 }
 
-// MARK: - Auto-capture (AVCaptureVideoDataOutputSampleBufferDelegate)
+// MARK: - Live frame analysis (AVCaptureVideoDataOutputSampleBufferDelegate)
 
 extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
@@ -694,19 +674,11 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
             DispatchQueue.main.async { [weak self] in self?.frameQuality = 0 }
             return
         }
-        guard autoCaptureEnabled else {
-            DispatchQueue.main.async { [weak self] in
-                self?.frameQuality = 0
-                self?.autoCaptureFrameCount = 0
-            }
-            return
-        }
         guard !requiresBrandSelection else {
             DispatchQueue.main.async { [weak self] in self?.frameQuality = 0 }
             return
         }
         guard !isAnalysingFrame else { return }
-        guard Date().timeIntervalSince(lastAutoCaptureTime) >= autoCaptureMinInterval else { return }
 
         isAnalysingFrame = true
         defer { isAnalysingFrame = false }
@@ -731,19 +703,7 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         let quality = frameQualityScore(observations, visionOrientation: visionOrientation)
 
         DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            self.frameQuality = quality
-
-            if quality >= self.autoCaptureMinQuality {
-                self.autoCaptureFrameCount += 1
-                if self.autoCaptureFrameCount >= self.autoCaptureThreshold {
-                    self.autoCaptureFrameCount = 0
-                    self.lastAutoCaptureTime = Date()
-                    self.capturePhoto()
-                }
-            } else {
-                if self.autoCaptureFrameCount > 0 { self.autoCaptureFrameCount -= 1 }
-            }
+            self?.frameQuality = quality
         }
     }
 

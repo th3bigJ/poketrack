@@ -11,18 +11,6 @@ private enum ScannerCardFrameLayout {
     static let cardAspectHeightOverWidth: CGFloat = 1.395
 }
 
-private enum ScannerCaptureMode: String {
-    case auto
-    case manual
-
-    var title: String {
-        switch self {
-        case .auto: return "Auto"
-        case .manual: return "Manual"
-        }
-    }
-}
-
 enum CardScannerPurpose {
     case collection
     case trade(onAdd: ([NewTradeItemInput]) -> Void)
@@ -43,7 +31,6 @@ struct CardScannerView: View {
     @State private var showBulkAddSheet = false
     @State private var isCameraPaused = false
     @State private var wasCameraPausedBeforeDetail = false
-    @AppStorage("scanner.captureMode") private var captureModeRawValue: String = ScannerCaptureMode.auto.rawValue
     /// Variant selected in the overlay bar at the moment the user swiped up, keyed by ScanResult.id.
     @State private var selectedVariantsByResultID: [UUID: String] = [:]
     /// Quantity selected per variant for each scanned card (resultID -> variantKey -> qty).
@@ -51,15 +38,7 @@ struct CardScannerView: View {
     @State private var showScanLimitPaywall = false
     @State private var showQuantityWarning = false
 
-    private var captureMode: ScannerCaptureMode {
-        ScannerCaptureMode(rawValue: captureModeRawValue) ?? .auto
-    }
-
-    private var isManualCaptureMode: Bool {
-        captureMode == .manual
-    }
-
-    private var canTriggerManualCapture: Bool {
+    private var canTriggerCapture: Bool {
         guard !permissionDenied, !isCameraPaused, !viewModel.isCapturing, viewModel.isCameraReady else { return false }
         if case .scanning = viewModel.scanState { return false }
         return true
@@ -120,37 +99,6 @@ struct CardScannerView: View {
                     if permissionDenied { permissionDeniedOverlay }
 
                     VStack {
-                        HStack(spacing: 0) {
-                            if captureMode == .auto {
-                                Button {
-                                    isCameraPaused.toggle()
-                                    if isCameraPaused {
-                                        viewModel.stopSession()
-                                    } else {
-                                        viewModel.startSession()
-                                    }
-                                    HapticManager.impact(.light)
-                                } label: {
-                                    Image(systemName: isCameraPaused ? "play.circle.fill" : "pause.circle.fill")
-                                        .font(.system(size: 30))
-                                        .foregroundStyle(.white, .black.opacity(0.45))
-                                        .animation(.easeInOut(duration: 0.2), value: isCameraPaused)
-                                }
-                                .buttonStyle(.plain)
-                                .accessibilityLabel(isCameraPaused ? "Resume camera" : "Pause camera")
-                                .frame(width: 40, alignment: .leading)
-                            } else {
-                                Color.clear.frame(width: 40, height: 1)
-                            }
-
-                            Spacer(minLength: 0)
-                            captureModeToggle
-                            Spacer(minLength: 0)
-                            Color.clear.frame(width: 40, height: 1)
-                        }
-                        .padding(.top, ScannerSheetLayout.statusBarHeight + 4)
-                        .padding(.horizontal, 16)
-
                         if showQuantityWarning {
                             Label("Add at least 1 card before scanning the next", systemImage: "exclamationmark.triangle.fill")
                                 .font(.subheadline.weight(.medium))
@@ -160,7 +108,7 @@ struct CardScannerView: View {
                                 .padding(.vertical, 10)
                                 .background(Color.orange.opacity(0.88), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                                 .padding(.horizontal, 24)
-                                .padding(.top, 4)
+                                .padding(.top, ScannerSheetLayout.statusBarHeight + 48)
                                 .transition(.move(edge: .top).combined(with: .opacity))
                                 .onAppear {
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
@@ -179,7 +127,7 @@ struct CardScannerView: View {
                                     .padding(.vertical, 10)
                                     .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                                     .padding(.horizontal, 24)
-                                    .padding(.top, 4)
+                                    .padding(.top, ScannerSheetLayout.statusBarHeight + 48)
                             }
                             .buttonStyle(.plain)
                             .transition(.move(edge: .top).combined(with: .opacity))
@@ -189,30 +137,28 @@ struct CardScannerView: View {
                     }
                     .allowsHitTesting(!permissionDenied)
 
-                    if isManualCaptureMode {
-                        VStack {
-                            Spacer(minLength: 0)
-                            Button {
-                                guard canTriggerManualCapture else { return }
-                                viewModel.capturePhoto()
-                                HapticManager.impact(.medium)
-                            } label: {
-                                ZStack {
-                                    Circle()
-                                        .fill(.white.opacity(0.92))
-                                        .frame(width: 68, height: 68)
-                                    Circle()
-                                        .stroke(Color.black.opacity(0.28), lineWidth: 3)
-                                        .frame(width: 56, height: 56)
-                                }
+                    VStack {
+                        Spacer(minLength: 0)
+                        Button {
+                            guard canTriggerCapture else { return }
+                            viewModel.capturePhoto()
+                            HapticManager.impact(.medium)
+                        } label: {
+                            ZStack {
+                                Circle()
+                                    .fill(.white.opacity(0.92))
+                                    .frame(width: 68, height: 68)
+                                Circle()
+                                    .stroke(Color.black.opacity(0.28), lineWidth: 3)
+                                    .frame(width: 56, height: 56)
                             }
-                            .buttonStyle(.plain)
-                            .disabled(!canTriggerManualCapture)
-                            .accessibilityLabel("Take photo")
-                            .padding(.bottom, 14)
                         }
-                        .allowsHitTesting(!permissionDenied)
+                        .buttonStyle(.plain)
+                        .disabled(!canTriggerCapture)
+                        .accessibilityLabel("Take photo")
+                        .padding(.bottom, 14)
                     }
+                    .allowsHitTesting(!permissionDenied)
 
                     // Value scanned label — bottom-leading of camera area
                     if !viewModel.scanResults.isEmpty {
@@ -377,7 +323,6 @@ struct CardScannerView: View {
         .ignoresSafeArea()
         .onAppear {
             viewModel.configure(cardDataService: services.cardData, storeService: services.store)
-            viewModel.autoCaptureEnabled = (captureMode == .auto)
             let selectedBrand = services.brandSettings.selectedCatalogBrand
             viewModel.scanBrand = selectedBrand
             viewModel.requiresBrandSelection = false
@@ -401,10 +346,6 @@ struct CardScannerView: View {
             } else {
                 viewModel.startSession()
             }
-        }
-        .onChange(of: captureModeRawValue) { _, newRaw in
-            let mode = ScannerCaptureMode(rawValue: newRaw) ?? .auto
-            viewModel.autoCaptureEnabled = (mode == .auto)
         }
         .onChange(of: selectedVariantQuantitiesByResultID) { _, _ in
             if showQuantityWarning, viewModel.captureBlocker?() == false {
@@ -490,38 +431,6 @@ struct CardScannerView: View {
         }
     }
 
-    private var captureModeToggle: some View {
-        HStack(spacing: 4) {
-            captureModeChip(.auto)
-            captureModeChip(.manual)
-        }
-        .padding(4)
-        .background(.thinMaterial, in: Capsule())
-        .overlay(
-            Capsule()
-                .strokeBorder(Color.white.opacity(0.22), lineWidth: 1)
-        )
-    }
-
-    private func captureModeChip(_ mode: ScannerCaptureMode) -> some View {
-        let isSelected = captureMode == mode
-        return Button {
-            captureModeRawValue = mode.rawValue
-            HapticManager.selection()
-        } label: {
-            Text(mode.title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(isSelected ? .black : .white)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 7)
-                .background(
-                    Capsule()
-                        .fill(isSelected ? Color.white : Color.clear)
-                )
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(mode == .auto ? "Auto capture" : "Manual capture")
-    }
 }
 
 // MARK: - Layout constants
@@ -723,8 +632,8 @@ private struct ScannerIdleInstructions: View {
 
     private let steps: [(icon: String, iconColor: Color, iconBackground: Color, title: String, subtitle: String)] = [
         ("viewfinder.rectangular", Color.blue.opacity(0.9), Color.blue.opacity(0.28), "Align card to the frame above", "Position the card within the frame"),
+        ("camera.circle.fill", Color.orange.opacity(0.9), Color.orange.opacity(0.28), "Tap the shutter to scan", "Wait for the green frame, then capture"),
         ("square.on.square",       Color.green.opacity(0.9), Color.green.opacity(0.28), "Select variant and add to collection", "Choose the correct card and save"),
-        ("doc.text.magnifyingglass", Color.indigo.opacity(0.9), Color.indigo.opacity(0.28), "Scroll to browse all variants", "Tap card image for full card details"),
     ]
 
     var body: some View {
