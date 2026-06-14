@@ -71,16 +71,14 @@ struct CardScannerView: View {
                     if case .idle = viewModel.scanState {
                         CardScannerReticle(
                             frameQuality: viewModel.frameQuality,
-                            isCapturing: viewModel.isCapturing,
-                            hideQualityPill: false
+                            isCapturing: viewModel.isCapturing
                         ) { rect in
                             viewModel.cardNormalizedRect = rect
                         }
                     } else if case .scanning = viewModel.scanState {
                         CardScannerReticle(
                             frameQuality: viewModel.frameQuality,
-                            isCapturing: false,
-                            hideQualityPill: true
+                            isCapturing: false
                         ) { rect in
                             viewModel.cardNormalizedRect = rect
                         }
@@ -859,8 +857,6 @@ private struct CardScannerReticle: View {
 
     var frameQuality: Double
     var isCapturing: Bool
-    /// Hides the lower pill until a scan brand is chosen (multi-brand flow).
-    var hideQualityPill: Bool = false
     var onRectChanged: (CGRect) -> Void
 
     var body: some View {
@@ -889,14 +885,6 @@ private struct CardScannerReticle: View {
                     .frame(width: cardW, height: cardH)
                     .position(x: cardX, y: cardCenterY)
                     .animation(.easeInOut(duration: 0.25), value: frameQuality)
-
-                VStack {
-                    Spacer().frame(height: cardCenterY + cardH / 2 + 12)
-                    if !hideQualityPill {
-                        qualityLabel.position(x: cardX, y: 0)
-                    }
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             }
             .onAppear { reportNormalizedReticleRect(geo: geo, cardX: cardX, cardY: cardY, cardW: cardW, cardH: cardH) }
             .onChange(of: geo.size) { _, _ in
@@ -918,23 +906,4 @@ private struct CardScannerReticle: View {
         return Color.white.opacity(0.6)
     }
 
-    @ViewBuilder
-    private var qualityLabel: some View {
-        if isCapturing {
-            Label("Capturing…", systemImage: "camera.fill")
-                .font(.caption.weight(.semibold)).foregroundStyle(.white)
-                .padding(.horizontal, 10).padding(.vertical, 5)
-                .background(.thinMaterial, in: Capsule())
-        } else if frameQuality >= Self.qualityGood {
-            Label("Hold steady", systemImage: "checkmark.circle.fill")
-                .font(.caption.weight(.semibold)).foregroundStyle(.green)
-                .padding(.horizontal, 10).padding(.vertical, 5)
-                .background(.thinMaterial, in: Capsule())
-        } else {
-            Text("Align card in frame")
-                .font(.caption.weight(.medium)).foregroundStyle(.white.opacity(0.7))
-                .padding(.horizontal, 10).padding(.vertical, 5)
-                .background(.black.opacity(0.3), in: Capsule())
-        }
-    }
 }
