@@ -223,7 +223,7 @@ struct BindersRootView: View {
                                 }
                             }
                         }
-                        .buttonStyle(.plain)
+                        .buttonStyle(NoHighlightButtonStyle())
                         .aspectRatio(0.707, contentMode: .fill)
                         .contextMenu {
                             Button(role: .destructive) {
@@ -234,10 +234,6 @@ struct BindersRootView: View {
                             }
                             .tint(.red)
                         }
-                        // Hide the source cell while it's being presented —
-                        // the morphing overlay covers its position so a
-                        // duplicate underneath would just create flicker.
-                        .opacity(presentingBinderID == binder.id ? 0 : 1)
                         // Sweep non-selected binders out of the way based
                         // on their grid position relative to the tapped
                         // cell. ``sweepOffset`` returns ``.zero`` while
@@ -247,6 +243,17 @@ struct BindersRootView: View {
                             .spring(response: 0.4, dampingFraction: 0.82),
                             value: isPresentingBinder
                         )
+                        // Hide the tapped source cell without animation. If
+                        // it fades while the morph overlay appears, the two
+                        // identical binder covers briefly stack and read as a
+                        // bright flash.
+                        .opacity(presentingBinderID == binder.id ? 0 : 1)
+                        .transaction { transaction in
+                            if presentingBinderID == binder.id {
+                                transaction.animation = nil
+                                transaction.disablesAnimations = true
+                            }
+                        }
                         // Each cell publishes its frame in screen coords so
                         // the open animation knows where to morph from /
                         // collapse back to. We only emit when the frame has
@@ -479,6 +486,14 @@ private struct BindersHeaderHeightKey: PreferenceKey {
     static var defaultValue: CGFloat = 64
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = max(value, nextValue())
+    }
+}
+
+/// Removes default tap/press visual feedback for binder covers. The open
+/// morph is already the feedback; an extra button highlight reads as a flash.
+private struct NoHighlightButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
     }
 }
 
@@ -730,8 +745,8 @@ struct BinderOpenContainer: View {
                 try? await Task.sleep(nanoseconds: 250_000_000)
                 if !hasStartedOpen {
                     let size = rootGeo.size
-                    let fallbackHeight = min(size.height * 0.78, size.width * 1.4)
-                    let fallbackWidth = min(size.width - 32, fallbackHeight / 1.4)
+                    let fallbackHeight = min(size.height * 0.78, (size.width - 32) / Self.coverAspect)
+                    let fallbackWidth = min(size.width - 32, fallbackHeight * Self.coverAspect)
                     // Express the fallback rect in "bindersRoot" space (same as cell
                     // frames and the page-frame preference) so coverTargetFrame →
                     // pageCenter → .position correction all stay consistent.
@@ -792,17 +807,41 @@ struct BinderOpenContainer: View {
         )
     }
 
+    /// Source rectangle normalised to the cover's natural aspect ratio. Grid
+    /// cells are intended to be A4, but SwiftUI's measured button frame can
+    /// drift by a few pixels during layout. Fitting the cover inside that
+    /// measured frame keeps the morph scale uniform and avoids tiny height
+    /// pops at the start or end of the animation.
+    private var sourceCoverFrame: CGRect {
+        guard sourceFrame.width > 0, sourceFrame.height > 0 else { return sourceFrame }
+        let aspect = Self.coverAspect
+        let sourceAspect = sourceFrame.width / sourceFrame.height
+        let width: CGFloat
+        let height: CGFloat
+        if sourceAspect < aspect {
+            width = sourceFrame.width
+            height = width / aspect
+        } else {
+            height = sourceFrame.height
+            width = height * aspect
+        }
+        return CGRect(
+            x: sourceFrame.midX - width / 2,
+            y: sourceFrame.midY - height / 2,
+            width: width,
+            height: height
+        )
+    }
+
     /// Scale that maps the rendered cover (always at ``coverTargetFrame``
-    /// dimensions) down to the source grid cell. Width-based: both
-    /// rectangles share the cover aspect, so width is enough to derive
-    /// the full transform.
+    /// dimensions) down to the normalised source grid cover.
     private var sourceScale: CGFloat {
         guard coverTargetFrame.width > 0 else { return 1.0 }
-        return max(0.05, sourceFrame.width / coverTargetFrame.width)
+        return max(0.05, sourceCoverFrame.width / coverTargetFrame.width)
     }
 
     private var sourceCenter: CGPoint {
-        CGPoint(x: sourceFrame.midX, y: sourceFrame.midY)
+        CGPoint(x: sourceCoverFrame.midX, y: sourceCoverFrame.midY)
     }
 
     private var pageCenter: CGPoint {

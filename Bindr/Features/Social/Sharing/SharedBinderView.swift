@@ -73,6 +73,11 @@ struct SharedBinderView: View {
         return raw.isEmpty ? "navy" : raw
     }
 
+    private var displayTitle: String {
+        let trimmed = content.title.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? "BINDER" : trimmed.uppercased()
+    }
+
     /// Texture seed from the publisher. Falls back to a stable default so the
     /// pattern is at least deterministic if the payload is missing the field.
     private var seed: Int {
@@ -166,7 +171,7 @@ struct SharedBinderView: View {
         let cardAspectRatio: CGFloat = 5/7
         let slotSpacing: CGFloat = 8
         let surfaceHorizontalChrome: CGFloat = 28 // 14 padding * 2
-        let surfaceVerticalChrome: CGFloat = 28   // 14 padding * 2
+        let surfaceVerticalChrome: CGFloat = 52   // 38 title strip + 14 bottom padding
         let rows = Int(ceil(Double(slotsPerPage) / Double(cols)))
         
         let totalGridSpacingX = CGFloat(max(cols - 1, 0)) * slotSpacing
@@ -281,7 +286,15 @@ struct SharedBinderView: View {
             }
             .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
 
-            // 2. Card grid on top of the playmat.
+            // 2. Readable binder nameplate on top of the playmat.
+            VStack(spacing: 0) {
+                sharedBinderTitleNameplate
+                    .padding(.top, 8)
+                    .padding(.horizontal, 14)
+                Spacer(minLength: 0)
+            }
+
+            // 3. Card grid on top of the playmat.
             LazyVGrid(
                 columns: Array(repeating: GridItem(.flexible(), spacing: slotSpacing), count: cols),
                 spacing: slotSpacing
@@ -298,7 +311,8 @@ struct SharedBinderView: View {
                 }
             }
             .padding(.horizontal, 14)
-            .padding(.vertical, 14)
+            .padding(.top, 38)
+            .padding(.bottom, 14)
         }
     }
 
@@ -309,13 +323,17 @@ struct SharedBinderView: View {
     /// layout.
     private var freeScrollSurface: some View {
         ScrollView {
-            LazyVGrid(
-                columns: Array(repeating: GridItem(.flexible(), spacing: 6), count: cols),
-                spacing: 6
-            ) {
-                ForEach(entries) { entry in
-                    cardCell(entry: entry)
-                        .aspectRatio(5/7, contentMode: .fit)
+            VStack(spacing: 10) {
+                sharedBinderTitleNameplate
+
+                LazyVGrid(
+                    columns: Array(repeating: GridItem(.flexible(), spacing: 6), count: cols),
+                    spacing: 6
+                ) {
+                    ForEach(entries) { entry in
+                        cardCell(entry: entry)
+                            .aspectRatio(5/7, contentMode: .fit)
+                    }
                 }
             }
             .padding(14)
@@ -336,6 +354,61 @@ struct SharedBinderView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }
+    }
+
+    private var sharedBinderTitleNameplate: some View {
+        let accent = BinderColourPalette.color(named: colourName)
+        return Text(displayTitle)
+            .font(.system(size: 13, weight: .black, design: .serif))
+            .tracking(1.8)
+            .foregroundStyle(
+                LinearGradient(
+                    colors: [
+                        Color.white.opacity(0.98),
+                        Color.white.opacity(0.90),
+                        accent.opacity(0.95)
+                    ],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+            )
+            .lineLimit(1)
+            .minimumScaleFactor(0.55)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 4)
+            .background {
+                Capsule()
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                Color.black.opacity(0.38),
+                                Color.black.opacity(0.20)
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .overlay {
+                        Capsule()
+                            .stroke(
+                                LinearGradient(
+                                    colors: [
+                                        Color.white.opacity(0.30),
+                                        accent.opacity(0.70),
+                                        Color.white.opacity(0.12)
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ),
+                                lineWidth: 1
+                            )
+                    }
+                    .shadow(color: Color.black.opacity(0.30), radius: 5, x: 0, y: 2)
+            }
+            .shadow(color: Color.black.opacity(0.70), radius: 0.8, x: 0, y: 1)
+            .shadow(color: accent.opacity(0.45), radius: 5, x: 0, y: 0)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .allowsHitTesting(false)
     }
 
     private func positions(for page: Int) -> [Int] {

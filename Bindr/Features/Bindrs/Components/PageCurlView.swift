@@ -74,7 +74,12 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
                 [coord.controllers[clampedPage]],
                 direction: clampedPage >= (coord.lastPage ?? 0) ? .forward : .reverse,
                 animated: isPageShift
-            )
+            ) { _ in
+                guard isPageShift else { return }
+                DispatchQueue.main.async {
+                    isTurning = false
+                }
+            }
             coord.lastPage = clampedPage
         }
     }

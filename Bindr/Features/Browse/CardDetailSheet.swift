@@ -672,6 +672,16 @@ struct CardDetailSheet: View {
             Text(title).font(.headline).foregroundStyle(.primary)
             Text(body).font(.subheadline).foregroundStyle(.secondary)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(12)
+        .background(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .fill(sectionInsetBackground)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                .stroke(sectionBorder, lineWidth: 1)
+        )
     }
 
     private func labelValueRow(label: String, value: String) -> some View {
@@ -882,10 +892,10 @@ struct CardDetailSheet: View {
     // MARK: - Styling
 
     private var sectionInsetBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
+        colorScheme == .dark ? Color.white.opacity(0.055) : Color.black.opacity(0.065)
     }
     private var sectionBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.08)
+        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.10)
     }
 }
 

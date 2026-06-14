@@ -46,6 +46,7 @@ struct BinderDetailView: View {
     @State private var showColourPicker = false
     @State private var showShareSettings = false
     @State private var isSharedPublished = false
+    @State private var isModeTransitioning = false
     @State private var currentPage = 0
     @State private var viewingSlot: BinderSlot? = nil
     @State private var detailCard: Card? = nil
@@ -116,10 +117,12 @@ struct BinderDetailView: View {
                 currentPage = 0
             }
 
-            // Wait for the curl-back to settle before handing control
-            // back to the host's collapse overlay.
+            // Wait for the slowed page curl to settle before handing control
+            // back to the host's collapse overlay. The PageCurlView layer speed
+            // stretches the turn to roughly 1.1s; cutting away earlier makes
+            // the close feel like a size snap.
             Task {
-                try? await Task.sleep(nanoseconds: 600_000_000)
+                try? await Task.sleep(nanoseconds: 1_120_000_000)
                 await MainActor.run {
                     isClosing = true
                     triggerHostDismiss()
@@ -224,56 +227,30 @@ struct BinderDetailView: View {
                 .opacity(isChromeVisible ? 1 : 0)
                 .offset(y: isChromeVisible ? 0 : -20)
                 .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
-            if !isEditing && (isSharedPublished || !likers.isEmpty) {
-                // Share/likers/weekly-change row — sits between the title
-                // and the binder pages so it doesn't crowd the editing
-                // surface. Tied to the same chrome flag as the header so
-                // it appears together with the rest of the UI after the
-                // cover-to-first-page curl.
-                BinderSocialRow(
-                    isPublished: isSharedPublished,
-                    likers: likers,
-                    totalLikeCount: totalLikeCount,
-                    onShareTap: { showShareSettings = true },
-                    onLikersTap: nil
-                )
-                .opacity(isChromeVisible ? 1 : 0)
-                .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
-            }
-            if isEditing {
-                editContent
-            } else {
-                ZStack(alignment: .bottom) {
-                    viewContent
-                        // Lock swipe gestures while the open sequence is
-                        // still running. Without this guard a fast user
-                        // can flick the page mid-morph, racing against
-                        // the auto cover→page-1 advance and leaving the
-                        // ``UIPageViewController`` in a confused state.
-                        // Once chrome lands the user is firmly in the
-                        // detail view and the page-curl is theirs again.
-                        .allowsHitTesting(isChromeVisible)
-                    
-                    VStack(spacing: 12) {
-                        if !layout.isFreeScroll {
-                            swipeHint
-                                // Hide the swipe hint until the chrome has
-                                // arrived too — there's nothing to swipe to
-                                // during the cover-hold so promising one is
-                                // a lie.
-                                .opacity(isChromeVisible ? 1 : 0)
-                                .animation(.easeOut(duration: 0.3), value: isChromeVisible)
-                        }
-                        
-                        bottomStatsBar
-                            .opacity(isChromeVisible ? 1 : 0)
-                            .offset(y: isChromeVisible ? 0 : 20)
-                            .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
-                    }
-                    .allowsHitTesting(isChromeVisible)
-                    .ignoresSafeArea(.container, edges: .bottom)
+            ZStack(alignment: .top) {
+                if !isEditing || isModeTransitioning {
+                    viewModeContent
+                        .opacity(isEditing ? 0 : 1)
+                        .scaleEffect(isEditing ? 0.982 : 1, anchor: .center)
+                        .offset(y: isEditing ? -10 : 0)
+                        .allowsHitTesting(!isEditing && isChromeVisible)
+                        .accessibilityHidden(isEditing)
+                        .compositingGroup()
+                }
+
+                if isEditing || isModeTransitioning {
+                    editContent
+                        .opacity(isEditing ? 1 : 0)
+                        .scaleEffect(isEditing ? 1 : 1.018, anchor: .top)
+                        .offset(y: isEditing ? 0 : 22)
+                        .allowsHitTesting(isEditing)
+                        .accessibilityHidden(!isEditing)
+                        .compositingGroup()
                 }
             }
+            .animation(.spring(response: 0.44, dampingFraction: 0.9), value: isEditing)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
         }
         .background(Color(uiColor: .systemBackground))
         .navigationBarTitleDisplayMode(.inline)
@@ -428,6 +405,56 @@ struct BinderDetailView: View {
 
     // MARK: - Header
 
+    private func setEditing(_ editing: Bool) {
+        guard editing != isEditing else { return }
+        isModeTransitioning = true
+        withAnimation(.spring(response: 0.44, dampingFraction: 0.9)) {
+            isEditing = editing
+        }
+
+        Task {
+            try? await Task.sleep(nanoseconds: 560_000_000)
+            await MainActor.run {
+                if isEditing == editing {
+                    isModeTransitioning = false
+                }
+            }
+        }
+    }
+
+    private var viewModeContent: some View {
+        ZStack(alignment: .bottom) {
+            viewContent
+                // Lock swipe gestures while the open sequence is
+                // still running. Without this guard a fast user
+                // can flick the page mid-morph, racing against
+                // the auto cover→page-1 advance and leaving the
+                // ``UIPageViewController`` in a confused state.
+                // Once chrome lands the user is firmly in the
+                // detail view and the page-curl is theirs again.
+                .allowsHitTesting(isChromeVisible)
+
+            VStack(spacing: 12) {
+                if !layout.isFreeScroll {
+                    swipeHint
+                        // Hide the swipe hint until the chrome has
+                        // arrived too — there's nothing to swipe to
+                        // during the cover-hold so promising one is
+                        // a lie.
+                        .opacity(isChromeVisible ? 1 : 0)
+                        .animation(.easeOut(duration: 0.3), value: isChromeVisible)
+                }
+
+                bottomStatsBar
+                    .opacity(isChromeVisible ? 1 : 0)
+                    .offset(y: isChromeVisible ? 0 : 20)
+                    .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
+            }
+            .allowsHitTesting(isChromeVisible)
+            .ignoresSafeArea(.container, edges: .bottom)
+        }
+    }
+
     /// Uses ``BindrPageHeader`` (the same component Social/Binders/Decks list
     /// pages use) so the binder detail screen's chrome lines up perfectly
     /// with the rest of the app's glass treatment. The colour-accent capsule
@@ -458,9 +485,9 @@ struct BinderDetailView: View {
                                 Label("Share Page Image", systemImage: "photo")
                             }
                         } label: {
-                            Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                            Image(systemName: "square.and.arrow.up")
                                 .font(.system(size: 17, weight: .semibold))
-                                .foregroundStyle(isSharedPublished ? .green : headerIconColor)
+                                .foregroundStyle(headerIconColor)
                         }
                         .modifier(ChromeGlassCircleGlyphModifier())
                         .frame(width: 48, height: 48)
@@ -469,9 +496,7 @@ struct BinderDetailView: View {
                         .accessibilityLabel("Share binder")
 
                         Button {
-                            withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
-                                isEditing.toggle()
-                            }
+                            setEditing(!isEditing)
                         } label: {
                             Image(systemName: isEditing ? "checkmark" : "pencil")
                                 .font(.system(size: 17, weight: .semibold))
@@ -687,11 +712,11 @@ struct BinderDetailView: View {
         let slotSpacing: CGFloat = 8
         // These must match the chrome inside `pageSurface`:
         //   .padding(.leading, 32)  + .padding(.trailing, 14) = 46pt
-        //   .padding(.top, 30)      + .padding(.bottom, 14)   = 44pt
+        //   .padding(.top, 38)      + .padding(.bottom, 14)   = 52pt
         // The leading inset reserves the binder-ring spine; the top inset
-        // reserves the foil-stamped title strip.
+        // reserves the readable foil title plate.
         let surfaceHorizontalChrome: CGFloat = 46
-        let surfaceVerticalChrome: CGFloat = 44
+        let surfaceVerticalChrome: CGFloat = 52
         let cardAspectRatio: CGFloat = 5.0 / 7.0
 
         let maxWidth = max(available.width - horizontalPadding, 240)
@@ -784,20 +809,18 @@ struct BinderDetailView: View {
             // Soft drop shadow under the surface.
             .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
 
-            // 2. Foil-stamped binder title — sits in the top strip above the
-            //    grid. Tinted with the binder's accent so each binder feels
-            //    distinct, with a layered shadow stack to read as embossed
-            //    foil pressed into the playmat.
+            // 2. Foil title plate. It still feels pressed into the binder,
+            //    but it has enough contrast to survive screenshots and shares.
             VStack(spacing: 0) {
                 foilStampedTitle
-                    .padding(.top, 10)
+                    .padding(.top, 8)
                     .padding(.leading, 32) // skip past the ring spine
                     .padding(.trailing, 14)
                 Spacer(minLength: 0)
             }
 
             // 3. Card grid — leading padding bumped to 32 to clear the ring
-            //    spine; top padding bumped to 30 to clear the title strip.
+            //    spine; top padding reserves the title plate above the cards.
             LazyVGrid(
                 columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
                 spacing: 8
@@ -816,7 +839,7 @@ struct BinderDetailView: View {
             }
             .padding(.leading, 32)
             .padding(.trailing, 14)
-            .padding(.top, 30)
+            .padding(.top, 38)
             .padding(.bottom, 14)
 
             // 4. Three-ring binder spine on the left edge — the single change
@@ -924,34 +947,61 @@ struct BinderDetailView: View {
 
     // MARK: - Foil-stamped title
 
-    /// Binder title rendered as if it's been pressed into the playmat with
-    /// coloured foil. Tinted with `binder.resolvedColour`, with a layered
-    /// shadow stack (subtle white highlight above + dark shadow below + soft
-    /// outer glow in the accent colour) that reads as embossed metallic ink.
+    /// Binder title rendered as a small foil nameplate. The old version was
+    /// intentionally subtle, but that made shared binder screenshots hard to
+    /// read on darker or gradient covers.
     private var foilStampedTitle: some View {
-        let title = binder.title.uppercased()
+        let title = binder.title.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         let accent = binder.resolvedColour
-        return Text(title)
-            .font(.system(size: 11, weight: .black, design: .serif))
-            .tracking(2.6)
+        return Text(title.isEmpty ? "BINDER" : title)
+            .font(.system(size: 13, weight: .black, design: .serif))
+            .tracking(1.8)
             .foregroundStyle(
                 LinearGradient(
                     colors: [
-                        accent.opacity(0.95),
-                        accent.opacity(0.55)
+                        Color.white.opacity(0.98),
+                        Color.white.opacity(0.90),
+                        accent.opacity(0.95)
                     ],
-                    startPoint: .top,
-                    endPoint: .bottom
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
                 )
             )
             .lineLimit(1)
-            .minimumScaleFactor(0.6)
-            // Embossed look: tiny white highlight above the strokes, a darker
-            // shadow below, plus a soft accent-coloured halo around the whole
-            // word so the foil "glows" against the felt.
-            .shadow(color: Color.white.opacity(0.20), radius: 0.4, x: 0, y: -0.6)
-            .shadow(color: Color.black.opacity(0.55), radius: 0.5, x: 0, y: 0.7)
-            .shadow(color: accent.opacity(0.35), radius: 4, x: 0, y: 0)
+            .minimumScaleFactor(0.55)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 4)
+            .background {
+                Capsule()
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                Color.black.opacity(0.38),
+                                Color.black.opacity(0.20)
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .overlay {
+                        Capsule()
+                            .stroke(
+                                LinearGradient(
+                                    colors: [
+                                        Color.white.opacity(0.30),
+                                        accent.opacity(0.70),
+                                        Color.white.opacity(0.12)
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ),
+                                lineWidth: 1
+                            )
+                    }
+                    .shadow(color: Color.black.opacity(0.30), radius: 5, x: 0, y: 2)
+            }
+            .shadow(color: Color.black.opacity(0.70), radius: 0.8, x: 0, y: 1)
+            .shadow(color: accent.opacity(0.45), radius: 5, x: 0, y: 0)
             .frame(maxWidth: .infinity, alignment: .center)
             .allowsHitTesting(false)
     }

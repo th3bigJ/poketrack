@@ -150,6 +150,10 @@ final class CloudSettingsService {
         return store.bool(forKey: key)
     }
 
+    func hasValue(forKey key: String) -> Bool {
+        store.object(forKey: key) != nil
+    }
+
     func integer(forKey key: String) -> Int {
         Int(store.longLong(forKey: key))
     }

@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 import Observation
 
@@ -33,24 +34,30 @@ final class ThemeSettings {
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
+    private static let localDefaultsPrefix = "Bindr.theme."
     private let accentColorKey = "user_accent_color_hex"
     private let appearanceKey = "user_app_appearance"
     private let backgroundGlowKey = "user_background_glow_enabled"
+    private var acceptsFirstCloudThemeRefresh = false
 
     var accentColorHex: String {
         didSet {
+            acceptsFirstCloudThemeRefresh = false
+            Self.saveLocal(accentColorHex, forKey: accentColorKey)
             cloudSettings.set(accentColorHex, forKey: accentColorKey)
         }
     }
 
     var appearance: AppAppearance {
         didSet {
+            Self.saveLocal(appearance.rawValue, forKey: appearanceKey)
             cloudSettings.set(appearance.rawValue, forKey: appearanceKey)
         }
     }
 
     var backgroundGlowEnabled: Bool {
         didSet {
+            Self.saveLocal(backgroundGlowEnabled, forKey: backgroundGlowKey)
             cloudSettings.set(backgroundGlowEnabled, forKey: backgroundGlowKey)
         }
     }
@@ -73,13 +80,48 @@ final class ThemeSettings {
     
     init(cloudSettings: CloudSettingsService) {
         self.cloudSettings = cloudSettings
-        // Default to a premium blue/indigo
-        self.accentColorHex = cloudSettings.string(forKey: accentColorKey) ?? "4f46e5"
 
-        let savedAppearance = cloudSettings.string(forKey: appearanceKey) ?? AppAppearance.system.rawValue
+        let localAccent = Self.localString(forKey: accentColorKey)
+        let localAppearance = Self.localString(forKey: appearanceKey)
+        let localGlow = Self.localBool(forKey: backgroundGlowKey)
+        self.acceptsFirstCloudThemeRefresh = localAccent == nil
+
+        // Default to a premium blue/indigo
+        self.accentColorHex = localAccent
+            ?? cloudSettings.string(forKey: accentColorKey)
+            ?? "4f46e5"
+
+        let savedAppearance = localAppearance
+            ?? cloudSettings.string(forKey: appearanceKey)
+            ?? AppAppearance.system.rawValue
         self.appearance = AppAppearance(rawValue: savedAppearance) ?? .system
 
-        self.backgroundGlowEnabled = cloudSettings.boolOrDefault(forKey: backgroundGlowKey, default: true)
+        if let localGlow {
+            self.backgroundGlowEnabled = localGlow
+        } else if cloudSettings.hasValue(forKey: backgroundGlowKey) {
+            self.backgroundGlowEnabled = cloudSettings.bool(forKey: backgroundGlowKey)
+        } else {
+            self.backgroundGlowEnabled = true
+        }
+
+        Self.saveLocal(accentColorHex, forKey: accentColorKey)
+        Self.saveLocal(appearance.rawValue, forKey: appearanceKey)
+        Self.saveLocal(backgroundGlowEnabled, forKey: backgroundGlowKey)
+
+        NotificationCenter.default.addObserver(
+            forName: .cloudSettingsDidChange,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor [weak self] in
+                guard let self, self.acceptsFirstCloudThemeRefresh else { return }
+                guard let cloudAccent = self.cloudSettings.string(forKey: self.accentColorKey) else { return }
+                self.acceptsFirstCloudThemeRefresh = false
+                if self.accentColorHex != cloudAccent {
+                    self.accentColorHex = cloudAccent
+                }
+            }
+        }
     }
     
     static let presetColors = [
@@ -95,4 +137,25 @@ final class ThemeSettings {
     ]
 
     static let accentThemeOptions = [logoThemeID] + presetColors
+
+    private static func localKey(_ key: String) -> String {
+        localDefaultsPrefix + key
+    }
+
+    private static func saveLocal(_ value: String, forKey key: String) {
+        UserDefaults.standard.set(value, forKey: localKey(key))
+    }
+
+    private static func saveLocal(_ value: Bool, forKey key: String) {
+        UserDefaults.standard.set(value, forKey: localKey(key))
+    }
+
+    private static func localString(forKey key: String) -> String? {
+        UserDefaults.standard.string(forKey: localKey(key))
+    }
+
+    private static func localBool(forKey key: String) -> Bool? {
+        guard UserDefaults.standard.object(forKey: localKey(key)) != nil else { return nil }
+        return UserDefaults.standard.bool(forKey: localKey(key))
+    }
 }
