@@ -1604,9 +1604,12 @@ private struct BinderCardViewer: View {
     @State private var rotation: Double = 0
     @State private var opacity: Double = 1
 
-    private var imageURL: URL? {
-        let src = card.displayImageSrc
-        return AppConfiguration.imageURL(relativePath: src)
+    private var lowResImageURL: URL? {
+        AppConfiguration.imageURL(relativePath: card.displayImageSrc)
+    }
+
+    private var highResImageURL: URL? {
+        card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) }
     }
 
     private var dragDistance: CGFloat {
@@ -1666,9 +1669,10 @@ private struct BinderCardViewer: View {
                 }
 
                 VStack(spacing: 14) {
-                    CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 650, height: 910)) { img in
-                        img.resizable().scaledToFit()
-                    } placeholder: {
+                    ProgressiveAsyncImage(
+                        lowResURL: lowResImageURL,
+                        highResURL: highResImageURL
+                    ) {
                         RoundedRectangle(cornerRadius: 18, style: .continuous)
                             .fill(Color(uiColor: .systemGray4))
                             .aspectRatio(5/7, contentMode: .fit)
