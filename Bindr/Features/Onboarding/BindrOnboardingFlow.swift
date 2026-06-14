@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 // MARK: - BindrOnboardingFlow
 //
@@ -12,6 +13,7 @@ import SwiftUI
 
 struct BindrOnboardingFlow: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var accent
 
@@ -132,11 +134,18 @@ struct BindrOnboardingFlow: View {
         guard !didFinish else { return }
         didFinish = true
         Haptics.success()
-        services.brandSettings.completeBrandOnboarding()
-        services.schedulePostBootstrapOfflineImageDownload(for: .pokemon)
-        onWillDismiss?()
-        withAnimation(.easeInOut(duration: 0.3)) {
-            isPresented = false
+        Task { @MainActor in
+            if services.socialAuth.isSignedIn {
+                await services.restoreCloudBackupAfterSignIn(modelContext: modelContext)
+            } else {
+                services.markLaunchCloudBackupRestoreSkipped()
+            }
+            services.brandSettings.completeBrandOnboarding()
+            services.schedulePostBootstrapOfflineImageDownload(for: .pokemon)
+            onWillDismiss?()
+            withAnimation(.easeInOut(duration: 0.3)) {
+                isPresented = false
+            }
         }
     }
 }

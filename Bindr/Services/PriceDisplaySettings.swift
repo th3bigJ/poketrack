@@ -42,46 +42,41 @@ enum PriceDisplayCurrency: String, CaseIterable, Identifiable, Sendable {
 @MainActor
 final class PriceDisplaySettings {
     private static let defaultsKey = "priceDisplayCurrency"
-    private let cloudSettings: CloudSettingsService
 
     var currency: PriceDisplayCurrency {
         didSet {
             guard currency != oldValue else { return }
             UserDefaults.standard.set(currency.rawValue, forKey: Self.defaultsKey)
-            cloudSettings.saveCurrency(currency)
+            AppPreferencesBackup.notifyDidChange()
         }
     }
 
-    init(cloudSettings: CloudSettingsService) {
-        self.cloudSettings = cloudSettings
-
-        let localRaw = UserDefaults.standard.string(forKey: Self.defaultsKey)
-        if let cloudCurrency = cloudSettings.loadCurrency() {
-            currency = cloudCurrency
-            UserDefaults.standard.set(cloudCurrency.rawValue, forKey: Self.defaultsKey)
-        } else if let localRaw, let parsed = PriceDisplayCurrency(rawValue: localRaw) {
+    init() {
+        if let localRaw = UserDefaults.standard.string(forKey: Self.defaultsKey),
+           let parsed = PriceDisplayCurrency(rawValue: localRaw) {
             currency = parsed
-            cloudSettings.saveCurrency(parsed)
         } else {
             currency = .gbp
-            cloudSettings.saveCurrency(.gbp)
+            UserDefaults.standard.set(currency.rawValue, forKey: Self.defaultsKey)
         }
 
         NotificationCenter.default.addObserver(
-            forName: .cloudSettingsDidChange,
+            forName: .appPreferencesDidRestore,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             Task { @MainActor [weak self] in
-                guard let self else { return }
-                guard let cloudCurrency = self.cloudSettings.loadCurrency() else { return }
-                if self.currency != cloudCurrency {
-                    self.currency = cloudCurrency
-                }
+                self?.reloadFromUserDefaults()
             }
         }
     }
 
+    func reloadFromUserDefaults() {
+        guard let localRaw = UserDefaults.standard.string(forKey: Self.defaultsKey),
+              let parsed = PriceDisplayCurrency(rawValue: localRaw),
+              parsed != currency else { return }
+        currency = parsed
+    }
 }
 
 @Observable
@@ -97,8 +92,6 @@ final class BrowseGridOptionsSettings {
         static let columnCount = "browseGridColumnCount"
     }
 
-    private let cloudSettings: CloudSettingsService
-
     var options: BrowseGridOptions {
         didSet {
             let sanitized = Self.sanitize(options)
@@ -108,36 +101,28 @@ final class BrowseGridOptionsSettings {
             }
             guard options != oldValue else { return }
             saveToLocalDefaults(options)
-            cloudSettings.saveBrowseGridOptions(options)
+            AppPreferencesBackup.notifyDidChange()
         }
     }
 
-    init(cloudSettings: CloudSettingsService) {
-        self.cloudSettings = cloudSettings
-
-        let localOptions = Self.loadFromLocalDefaults()
-        if let cloudOptions = cloudSettings.loadBrowseGridOptions() {
-            let sanitized = Self.sanitize(cloudOptions)
-            options = sanitized
-            saveToLocalDefaults(sanitized)
-        } else {
-            options = localOptions
-            cloudSettings.saveBrowseGridOptions(localOptions)
-        }
+    init() {
+        options = Self.loadFromLocalDefaults()
 
         NotificationCenter.default.addObserver(
-            forName: .cloudSettingsDidChange,
+            forName: .appPreferencesDidRestore,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             Task { @MainActor [weak self] in
-                guard let self else { return }
-                guard let cloudOptions = self.cloudSettings.loadBrowseGridOptions() else { return }
-                let sanitized = Self.sanitize(cloudOptions)
-                if self.options != sanitized {
-                    self.options = sanitized
-                }
+                self?.reloadFromUserDefaults()
             }
+        }
+    }
+
+    func reloadFromUserDefaults() {
+        let loaded = Self.loadFromLocalDefaults()
+        if options != loaded {
+            options = loaded
         }
     }
 
@@ -273,6 +258,24 @@ final class CollectionFiltersSettings {
         tradeListFilters  = Self.loadTradeListFilters()
         gridOptions       = Self.loadGridOptions()
         folderGridOptions = Self.loadFolderGridOptions()
+
+        NotificationCenter.default.addObserver(
+            forName: .appPreferencesDidRestore,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor [weak self] in
+                self?.reloadFromUserDefaults()
+            }
+        }
+    }
+
+    func reloadFromUserDefaults() {
+        collectionFilters = Self.loadCollectionFilters()
+        wishlistFilters = Self.loadWishlistFilters()
+        tradeListFilters = Self.loadTradeListFilters()
+        gridOptions = Self.loadGridOptions()
+        folderGridOptions = Self.loadFolderGridOptions()
     }
 
     // MARK: - Load
@@ -336,6 +339,7 @@ final class CollectionFiltersSettings {
         let d = UserDefaults.standard
         d.set(sanitized.sortBy.rawValue, forKey: Keys.collectionSortBy)
         d.set(sanitized.showDuplicates, forKey: Keys.collectionShowDups)
+        AppPreferencesBackup.notifyDidChange()
     }
 
     private func saveWishlistFilters(_ f: BrowseCardGridFilters) {
@@ -346,6 +350,7 @@ final class CollectionFiltersSettings {
         }
         encodeDefaultsJSON(sanitized, key: Keys.wishlistFiltersJSON)
         UserDefaults.standard.set(sanitized.sortBy.rawValue, forKey: Keys.wishlistSortBy)
+        AppPreferencesBackup.notifyDidChange()
     }
 
     private func saveTradeListFilters(_ f: BrowseCardGridFilters) {
@@ -355,6 +360,7 @@ final class CollectionFiltersSettings {
             return
         }
         encodeDefaultsJSON(sanitized, key: Keys.tradeListFiltersJSON)
+        AppPreferencesBackup.notifyDidChange()
     }
 
     private func saveGridOptions(_ options: BrowseGridOptions) {
@@ -365,6 +371,7 @@ final class CollectionFiltersSettings {
         d.set(options.showPricing,  forKey: Keys.gridShowPricing)
         d.set(options.showOwned,    forKey: Keys.gridShowOwned)
         d.set(options.columnCount,  forKey: Keys.gridColumnCount)
+        AppPreferencesBackup.notifyDidChange()
     }
 
     private static func loadFolderGridOptions() -> BrowseGridOptions {
@@ -390,6 +397,7 @@ final class CollectionFiltersSettings {
         d.set(options.showPricing,  forKey: Keys.folderGridShowPricing)
         d.set(options.showOwned,    forKey: Keys.folderGridShowOwned)
         d.set(options.columnCount,  forKey: Keys.folderGridColumnCount)
+        AppPreferencesBackup.notifyDidChange()
     }
 
     // MARK: - Helpers
@@ -511,6 +519,28 @@ final class BrowseFiltersSettings {
         pokemonInlineFilters = Self.loadBrowseFilters(key: Keys.pokemonInlineFiltersJSON)
         productsInlineFilters = Self.loadBrowseFilters(key: Keys.productsInlineFiltersJSON)
         productsGridOptions = Self.loadProductsGridOptions()
+
+        NotificationCenter.default.addObserver(
+            forName: .appPreferencesDidRestore,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            Task { @MainActor [weak self] in
+                self?.reloadFromUserDefaults()
+            }
+        }
+    }
+
+    func reloadFromUserDefaults() {
+        cardsFilters = Self.loadBrowseFilters(key: Keys.cardsFiltersJSON)
+        setsFilters = Self.loadBrowseFilters(key: Keys.setsFiltersJSON)
+        pokemonFilters = Self.loadBrowseFilters(key: Keys.pokemonFiltersJSON)
+        productsFilters = Self.loadBrowseFilters(key: Keys.productsFiltersJSON)
+        cardsInlineFilters = Self.loadBrowseFilters(key: Keys.cardsInlineFiltersJSON)
+        setsInlineFilters = Self.loadBrowseFilters(key: Keys.setsInlineFiltersJSON)
+        pokemonInlineFilters = Self.loadBrowseFilters(key: Keys.pokemonInlineFiltersJSON)
+        productsInlineFilters = Self.loadBrowseFilters(key: Keys.productsInlineFiltersJSON)
+        productsGridOptions = Self.loadProductsGridOptions()
     }
 
     private static func loadBrowseFilters(key: String) -> BrowseCardGridFilters {
@@ -530,6 +560,7 @@ final class BrowseFiltersSettings {
     private func saveBrowseFilters(_ filters: BrowseCardGridFilters, key: String) {
         let sanitized = Self.sanitizeBrowseFilters(filters)
         encodeDefaultsJSON(sanitized, key: key)
+        AppPreferencesBackup.notifyDidChange()
     }
 
     private static func sanitizeBrowseFilters(_ filters: BrowseCardGridFilters) -> BrowseCardGridFilters {
@@ -563,6 +594,7 @@ final class BrowseFiltersSettings {
     private func saveProductsGridOptions(_ options: BrowseGridOptions) {
         let sanitized = Self.sanitizeGridOptions(options)
         encodeDefaultsJSON(sanitized, key: Keys.productsGridOptionsJSON)
+        AppPreferencesBackup.notifyDidChange()
     }
 
     private static func sanitizeGridOptions(_ options: BrowseGridOptions) -> BrowseGridOptions {

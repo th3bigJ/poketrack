@@ -144,15 +144,12 @@ struct FeedItemView: View {
                     if let summary = group.interactionSummary {
                         Text(summary)
                             .font(.system(size: 11))
-                            .foregroundStyle(.secondary.opacity(colorScheme == .dark ? 0.6 : 0.8))
+                            .foregroundStyle(.secondary.opacity(colorScheme == .dark ? 0.6 : 0.75))
                             .padding(.horizontal, 16)
                             .padding(.top, 4)
                             .padding(.bottom, 8)
                     }
 
-                    Divider()
-                        .opacity(colorScheme == .dark ? 0.08 : 0.15)
-                    
                     InteractionBar(
                         item: item,
                         refreshToken: commentsRefreshToken,
@@ -161,10 +158,15 @@ struct FeedItemView: View {
                     .padding(.horizontal, 16)
                     .padding(.vertical, 10)
                 }
+                .overlay(alignment: .top) {
+                    Rectangle()
+                        .fill(colorScheme == .dark ? Color.primary.opacity(0.06) : BindrPalette.feedCardBorder)
+                        .frame(height: 1)
+                }
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .glassCardStyle(cornerRadius: 16, interactive: false)
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .feedPostCardStyle(cornerRadius: 20)
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
         }) {
@@ -271,9 +273,13 @@ struct FeedItemView: View {
                     .font(.system(size: 10, weight: .semibold))
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
-                    .background(Color.primary.opacity(0.04))
+                    .background(
+                        colorScheme == .dark
+                            ? Color.primary.opacity(0.06)
+                            : BindrPalette.feedTagBackground
+                    )
                     .foregroundStyle(.secondary)
-                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                    .clipShape(Capsule())
             }
         }
     }
@@ -407,10 +413,10 @@ struct FeedItemView: View {
             return Color(hex: "5B9CF6")
         case .sharedContent:
             switch item.content?.contentType {
-            case .binder: return Color(hex: "E8B84B")
-            case .deck: return Color(hex: "5B9CF6")
-            case .wishlist: return Color(hex: "A78BFA")
-            default: return Color(hex: "E8B84B")
+            case .binder: return BindrPalette.binderGold
+            case .deck: return BindrPalette.feedDeckPurple
+            case .wishlist: return BindrPalette.wishlistViolet
+            default: return BindrPalette.binderGold
             }
         case .friendship:
             return Color(hex: "52C97C")
@@ -450,11 +456,11 @@ private struct TypePill: View {
     var body: some View {
         Text(label)
             .font(.system(size: 9, weight: .bold))
-            .tracking(0.5)
-            .foregroundStyle(color.opacity(0.8))
-            .padding(.horizontal, 6)
-            .padding(.vertical, 2)
-            .background(color.opacity(0.08), in: RoundedRectangle(cornerRadius: 3, style: .continuous))
+            .tracking(0.4)
+            .foregroundStyle(color.opacity(0.85))
+            .padding(.horizontal, 7)
+            .padding(.vertical, 3)
+            .background(color.opacity(0.12), in: RoundedRectangle(cornerRadius: 5, style: .continuous))
     }
 }
 
@@ -481,67 +487,29 @@ private struct CardStackPreview: View {
         let placeholderCount = stackColors.prefix(4).count
         let count = thumbnailIDs.isEmpty ? placeholderCount : thumbnailIDs.count
 
-        ZStack(alignment: .bottomTrailing) {
-            ZStack(alignment: .leading) {
-                if !thumbnailIDs.isEmpty {
-                    ForEach(Array(thumbnailIDs.enumerated()), id: \.offset) { index, _ in
-                        let url = index < cardImageURLs.count ? cardImageURLs[index] : nil
-                        cardImage(at: index, url: url)
-                    }
-                } else {
-                    ForEach(Array(stackColors.prefix(4).enumerated()), id: \.offset) { index, color in
-                        RoundedRectangle(cornerRadius: 4, style: .continuous)
-                            .fill(color)
-                            .frame(width: size * 0.7, height: size)
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                                    .stroke(Color.primary.opacity(0.15), lineWidth: 1)
-                            }
-                            .offset(x: CGFloat(index) * 6)
-                            .zIndex(Double(index))
-                    }
+        ZStack(alignment: .leading) {
+            if !thumbnailIDs.isEmpty {
+                ForEach(Array(thumbnailIDs.enumerated()), id: \.offset) { index, _ in
+                    let url = index < cardImageURLs.count ? cardImageURLs[index] : nil
+                    cardImage(at: index, url: url)
+                }
+            } else {
+                ForEach(Array(stackColors.prefix(4).enumerated()), id: \.offset) { index, color in
+                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+                        .fill(color)
+                        .frame(width: size * 0.7, height: size)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                .stroke(Color.primary.opacity(0.15), lineWidth: 1)
+                        }
+                        .offset(x: CGFloat(index) * 6)
+                        .zIndex(Double(index))
                 }
             }
-            .frame(width: size * 0.7 + CGFloat(max(count - 1, 0)) * 6, height: size)
-
-            countBadge
-                .padding(6)
         }
+        .frame(width: size * 0.7 + CGFloat(max(count - 1, 0)) * 6, height: size)
         .task(id: thumbnailIDs.joined(separator: ",")) {
             await resolveCardImageURLs()
-        }
-    }
-
-    /// Total-card chip overlaid on the topmost preview card. Only renders for
-    /// multi-card containers (binders, decks, wishlists, folders, collections,
-    /// digests) — never for single-card pulls or unknown payloads.
-    @ViewBuilder
-    private var countBadge: some View {
-        if isMultiCardContent, let total = item.content?.cardCount, total > 1 {
-            Text("\(total)")
-                .font(.system(size: 10, weight: .heavy))
-                .monospacedDigit()
-                .foregroundStyle(.white)
-                .padding(.horizontal, 7)
-                .padding(.vertical, 3)
-                .background {
-                    Capsule()
-                        .fill(.thinMaterial)
-                }
-                .overlay {
-                    Capsule()
-                        .stroke(Color.white.opacity(0.3), lineWidth: 0.5)
-                }
-                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
-        }
-    }
-
-    private var isMultiCardContent: Bool {
-        switch item.content?.contentType {
-        case .binder, .deck, .wishlist, .collection, .folder, .dailyDigest:
-            return true
-        case .pull, .none:
-            return false
         }
     }
 
@@ -645,7 +613,7 @@ struct InteractionBar: View {
                 Text("\(aggregate.score)")
                     .font(.system(size: 13, weight: .bold))
                     .monospacedDigit()
-                    .foregroundStyle(aggregate.myVoteType != nil ? Color.cyan : Color.primary.opacity(0.8))
+                    .foregroundStyle(Color.secondary.opacity(0.85))
                 
                 voteButton(type: .downvote)
             }
@@ -663,7 +631,7 @@ struct InteractionBar: View {
                     Text("\(commentCount)")
                         .font(.system(size: 13, weight: .bold))
                 }
-                .foregroundStyle(Color.secondary.opacity(0.8))
+                .foregroundStyle(Color.secondary.opacity(0.75))
             }
             .buttonStyle(.plain)
         }
@@ -676,12 +644,15 @@ struct InteractionBar: View {
     private func voteButton(type: ReactionType) -> some View {
         let isActive = aggregate.myVoteType == type
         let symbol = type == .upvote ? "arrow.up" : "arrow.down"
-        let activeColor = Color.cyan
 
         return Image(systemName: symbol)
             .font(.system(size: 14, weight: isActive ? .heavy : .semibold))
-            .foregroundStyle(isActive ? activeColor : Color.secondary.opacity(0.5))
-            .scaleEffect(isActive ? 1.1 : 1.0)
+            .foregroundStyle(
+                isActive
+                    ? Color.primary.opacity(0.85)
+                    : Color.secondary.opacity(0.45)
+            )
+            .scaleEffect(isActive ? 1.05 : 1.0)
             .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isActive)
             .contentShape(Rectangle())
             .onTapGesture {
@@ -845,7 +816,7 @@ private struct ExpandableDescription: View {
         VStack(alignment: .leading, spacing: 6) {
             Text(text)
                 .font(.system(size: 14))
-                .foregroundStyle(.secondary.opacity(0.8))
+                .foregroundStyle(.primary.opacity(0.9))
                 .lineLimit(isExpanded ? nil : collapsedLineLimit)
                 .fixedSize(horizontal: false, vertical: true)
                 .background(fullHeightProbe)

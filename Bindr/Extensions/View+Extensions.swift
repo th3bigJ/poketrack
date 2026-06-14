@@ -19,6 +19,12 @@ extension View {
         self.modifier(GlassCardModifier(cornerRadius: cornerRadius, interactive: interactive))
     }
 
+    /// Flat white post card used in the social feed — light grey border on a
+    /// white fill in light mode, grouped background in dark mode.
+    func feedPostCardStyle(cornerRadius: CGFloat = 20) -> some View {
+        modifier(FeedPostCardModifier(cornerRadius: cornerRadius))
+    }
+
     /// Primary toolbar button style — semibold, neutral `.primary` colour.
     ///
     /// Use on Close / Done / Cancel buttons in sheet toolbars so they read
@@ -63,6 +69,32 @@ extension View {
 final class GlassReadySignal {
     static let shared = GlassReadySignal()
     var isReady = false
+}
+
+struct FeedPostCardModifier: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
+    let cornerRadius: CGFloat
+
+    func body(content: Content) -> some View {
+        content
+            .background {
+                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                    .fill(
+                        colorScheme == .dark
+                            ? Color(uiColor: .secondarySystemGroupedBackground)
+                            : .white
+                    )
+            }
+            .overlay {
+                RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                    .stroke(
+                        colorScheme == .dark
+                            ? Color.primary.opacity(0.08)
+                            : BindrPalette.feedCardBorder,
+                        lineWidth: 1
+                    )
+            }
+    }
 }
 
 struct GlassCardModifier: ViewModifier {

@@ -1,4 +1,5 @@
 import AuthenticationServices
+import SwiftData
 import SwiftUI
 
 // MARK: - OnboardingSocialView
@@ -9,6 +10,7 @@ import SwiftUI
 
 struct OnboardingSocialView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var accent
 
@@ -18,6 +20,7 @@ struct OnboardingSocialView: View {
     @State private var currentNonce: String?
     @State private var errorMessage: String?
     @State private var isSigningIn = false
+    @State private var isRestoringLibrary = false
     @State private var didContinue = false
 
     private var isConfigured: Bool {
@@ -65,7 +68,17 @@ struct OnboardingSocialView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .task {
             await services.socialAuth.restoreSession()
+            if services.socialAuth.isSignedIn {
+                await restoreLibraryFromCloud()
+            }
         }
+    }
+
+    private func restoreLibraryFromCloud() async {
+        guard !isRestoringLibrary else { return }
+        isRestoringLibrary = true
+        defer { isRestoringLibrary = false }
+        await services.restoreCloudBackupAfterSignIn(modelContext: modelContext)
     }
 
     // MARK: - Footer
@@ -82,6 +95,9 @@ struct OnboardingSocialView: View {
 
             if !isConfigured {
                 OnboardingPrimaryButton(title: "Continue", action: continueOnce)
+            } else if isRestoringLibrary || services.collectionSync.isRestoring {
+                OnboardingPrimaryButton(title: "Restoring library…", action: {})
+                    .disabled(true)
             } else if isSignedIn {
                 OnboardingPrimaryButton(title: "Continue", action: continueOnce)
             } else {
@@ -124,14 +140,22 @@ struct OnboardingSocialView: View {
 
     private var signedInBanner: some View {
         HStack(spacing: BindrSpacing.md) {
-            Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 22))
-                .foregroundStyle(BindrPalette.ownedGreen)
+            if isRestoringLibrary || services.collectionSync.isRestoring {
+                ProgressView()
+            } else {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 22))
+                    .foregroundStyle(BindrPalette.ownedGreen)
+            }
 
             VStack(alignment: .leading, spacing: 2) {
-                Text("Signed in with Apple")
+                Text(isRestoringLibrary || services.collectionSync.isRestoring
+                     ? "Restoring your library…"
+                     : "Signed in with Apple")
                     .font(.system(size: 15, weight: .semibold))
-                Text("Your social profile is ready to set up.")
+                Text(isRestoringLibrary || services.collectionSync.isRestoring
+                     ? "Downloading your cloud backup before you continue."
+                     : "Your social profile is ready to set up.")
                     .font(.system(size: 13))
                     .foregroundStyle(.secondary)
             }
@@ -196,7 +220,10 @@ struct OnboardingSocialView: View {
                 appleUserIdentifier: credential.user
             )
             await services.socialPush.updateRegistrationState()
-            continueOnce()
+            await restoreLibraryFromCloud()
+            if !didContinue {
+                continueOnce()
+            }
         } catch {
             if let authError = error as? ASAuthorizationError, authError.code == .canceled {
                 return

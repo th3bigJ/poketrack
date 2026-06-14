@@ -1,7 +1,6 @@
 import Foundation
 import Observation
 import SwiftData
-import CoreData
 
 @Observable
 @MainActor
@@ -23,7 +22,6 @@ final class AppServices {
     let variantsCatalog = VariantsCatalogService()
     let sealedProducts = SealedProductService()
     let pricing = PricingService()
-    let cloudSettings: CloudSettingsService
     let priceDisplay: PriceDisplaySettings
     let browseGridOptions: BrowseGridOptionsSettings
     let store = StoreKitService()
@@ -60,19 +58,10 @@ final class AppServices {
     /// after the launch overlay fades. RootView calls `runDeferredLaunchServicesIfNeeded()`
     /// from the fade completion block to avoid blocking the fade animation.
     private(set) var shouldRunDeferredLaunchServices = false
-    /// True once the initial CloudKit import event has completed (or timed out / not applicable).
-    /// Held in the launch gate so the overlay never closes while CloudKit is doing its
-    /// initial @MainActor import callbacks, which would stall the fade animation.
-    private(set) var isCloudKitImportComplete = false
-    private var cloudKitObserver: NSObjectProtocol?
-    private var cloudKitIdleMonitor: CloudKitIdleMonitor?
-    private var cloudKitImportPollTask: Task<Void, Never>?
-    private var cloudKitRestoreTimeoutWorkItem: DispatchWorkItem?
-    private var hasArmedCloudKitRestoreTimeout = false
-    private var cloudKitLateImportPollTask: Task<Void, Never>?
+    /// Fresh installs stay on the launch overlay until Bindr cloud backup restore finishes (or is skipped).
+    private(set) var isLaunchCloudBackupRestoreComplete = BindrApp.storeExistedAtLaunch
     private var hasAttemptedAutomaticCloudBackupRestore = false
-    /// Timestamp used to avoid finalizing CloudKit readiness on the exact frame
-    /// the launch catalog pipeline flips complete.
+    private var cloudBackupRestoreInFlight: Task<Void, Never>?
     private var launchCatalogPipelineCompletedAt: Date?
     /// Until `true`, the root UI should not mount the main tab shell (Browse, etc.) so the cold launch catalog pipeline does not race the same SQLite + network work on the main actor.
     private(set) var isLaunchCatalogPipelineComplete = false
@@ -114,8 +103,7 @@ final class AppServices {
         scheduleLibraryCloudBackup()
     }
 
-    /// Schedules a debounced R2 upload of the full library snapshot (collection,
-    /// binders, decks, ledger, wishlist, value history). Requires sign-in.
+    /// Schedules a debounced R2 upload — account backup + friend trade snapshots.
     func scheduleLibraryCloudBackup() {
         collectionSync.scheduleUpload()
     }
@@ -139,10 +127,8 @@ final class AppServices {
         self.socialFriend = socialFriend
         self.socialFeed = SocialFeedService(authService: socialAuth, friendService: socialFriend)
         self.socialPush = SocialPushService(authService: socialAuth, profileService: socialProfile)
-        let cloudSettings = CloudSettingsService()
-        self.cloudSettings = cloudSettings
-        self.priceDisplay = PriceDisplaySettings(cloudSettings: cloudSettings)
-        self.browseGridOptions = BrowseGridOptionsSettings(cloudSettings: cloudSettings)
+        self.priceDisplay = PriceDisplaySettings()
+        self.browseGridOptions = BrowseGridOptionsSettings()
         let brandSettings = BrandSettings()
         self.brandSettings = brandSettings
         self.cardData = CardDataService(brandSettings: brandSettings)
@@ -155,7 +141,7 @@ final class AppServices {
             cardDataService: cardData,
             pricingService: pricing
         )
-        self.theme = ThemeSettings(cloudSettings: cloudSettings)
+        self.theme = ThemeSettings()
         let offlineImageSettings = OfflineImageSettings()
         self.offlineImageSettings = offlineImageSettings
         self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
@@ -199,6 +185,14 @@ final class AppServices {
             // runs a sync pass and is awaited before the overlay closes. Running it
             // again here does a full modelContext.fetch(CollectionItem) on the main
             // thread which blocks the fade animation for several seconds.
+        }
+
+        NotificationCenter.default.addObserver(
+            forName: .appPreferencesDidChange,
+            object: nil,
+            queue: .main
+        ) { [weak self] _ in
+            self?.scheduleLibraryCloudBackup()
         }
     }
 
@@ -698,214 +692,80 @@ final class AppServices {
         await syncSocialLibrariesIfPossible()
     }
 
-    /// Keeps the launch overlay visible until SwiftData's CloudKit merge is done.
-    ///
-    /// CloudKit always syncs on every launch — for existing installs this is a small
-    /// catch-up; for fresh installs this is a full restore. Either way, SwiftData posts
-    /// mergeChanges work items to @MainActor that freeze the UI. We use CloudKitIdleMonitor
-    /// to detect when those merges have finished (main thread idle + no recent notifications),
-    /// then close the overlay. The freeze is hidden behind the overlay, not felt on the dashboard.
-    ///
-    /// - Parameters:
-    ///   - quietWindow: seconds of silence after last notification/hitch before declaring idle.
-    ///     Use a shorter window for existing installs (small catch-up) vs fresh installs (full restore).
-    func beginCloudKitReadinessMonitoring() {
-        guard !isCloudKitImportComplete else { return }
-
-        guard FileManager.default.ubiquityIdentityToken != nil else {
-            markCloudKitImportComplete()
+    /// Replaces the local library from Bindr cloud backup (R2).
+    /// Call when the user signs in during onboarding (or restores an existing session).
+    /// Blocks the dashboard until the Bindr cloud backup has been applied.
+    func restoreCloudBackupAfterSignIn(modelContext: ModelContext? = nil) async {
+        if let cloudBackupRestoreInFlight {
+            await cloudBackupRestoreInFlight.value
             return
         }
 
-        let isFreshInstall = !BindrApp.storeExistedAtLaunch
-        if !isFreshInstall {
-            // Existing installs should not hold the launch overlay for CloudKit catch-up.
-            // We keep syncing in the background, but let the user in once local launch gates clear.
-            markCloudKitImportComplete()
+        let task = Task { @MainActor in
+            await self.performCloudBackupRestoreAfterSignIn(modelContext: modelContext)
+        }
+        cloudBackupRestoreInFlight = task
+        await task.value
+        cloudBackupRestoreInFlight = nil
+    }
+
+    private func performCloudBackupRestoreAfterSignIn(modelContext: ModelContext?) async {
+        guard !BindrApp.storeExistedAtLaunch else {
+            isLaunchCloudBackupRestoreComplete = true
             return
         }
-        // SwiftData CloudKit merges can arrive several seconds after the last remote
-        // change notification. Keep the overlay up through that quiet period; a
-        // longer honest launch is better than revealing a frozen dashboard.
-        let quietWindow: TimeInterval = 12.0
-        let timeoutAfterCatalog: TimeInterval = 300.0
+        guard socialAuth.isSignedIn else { return }
 
-        startCloudKitImportPolling()
-
-        let monitor = CloudKitIdleMonitor(
-            quietWindow: quietWindow,
-            requireRemoteChangeBeforeIdle: true,
-            maxWaitWithoutNotification: 120
-        ) { [weak self] in
-            guard let self else { return true }
-            guard self.isLaunchCatalogPipelineComplete else {
-                return false
-            }
-            self.armCloudKitRestoreTimeoutIfNeeded(after: timeoutAfterCatalog)
-            // Prevent same-tick completion when the catalog gate just flipped; allow a
-            // brief post-pipeline settling window for late main-thread merges.
-            if let completedAt = self.launchCatalogPipelineCompletedAt,
-               Date().timeIntervalSince(completedAt) < 2.0 {
-                return false
-            }
-            if self.libraryHasLocalData {
-                self.markCloudKitImportComplete()
-                return true
-            }
-            self.markCloudKitImportComplete()
-            return true
-        }
-        self.cloudKitIdleMonitor = monitor
-        monitor.start()
-    }
-
-    private func armCloudKitRestoreTimeoutIfNeeded(after delay: TimeInterval) {
-        guard !hasArmedCloudKitRestoreTimeout else { return }
-        hasArmedCloudKitRestoreTimeout = true
-        let work = DispatchWorkItem { [weak self] in
-            guard let self, !self.isCloudKitImportComplete else { return }
-            self.markCloudKitImportComplete()
-        }
-        cloudKitRestoreTimeoutWorkItem = work
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: work)
-    }
-
-    private func startCloudKitImportPolling() {
-        cloudKitImportPollTask?.cancel()
-        cloudKitImportPollTask = Task { [weak self] in
-            while !Task.isCancelled {
-                try? await Task.sleep(for: .seconds(2))
-                guard let self else { return }
-                if self.isCloudKitImportComplete { return }
-                if self.libraryHasLocalData {
-                    self.markCloudKitImportComplete()
-                    return
-                }
+        if let modelContext {
+            bindCollectionSync(modelContext: modelContext)
+        } else if socialSyncModelContext == nil {
+            for _ in 0..<60 {
+                try? await Task.sleep(for: .milliseconds(250))
+                if socialSyncModelContext != nil { break }
             }
         }
-    }
 
-    private var libraryHasLocalData: Bool {
-        guard let modelContext = socialSyncModelContext else { return false }
-        return !UserLibraryBackupCodec.localLibraryIsEmpty(modelContext)
-    }
-
-    private func beginPostLaunchCloudKitRecoveryIfNeeded() {
-        guard !cloudSettings.isCloudKitFallbackActive else { return }
-        guard !libraryHasLocalData else { return }
-        guard cloudKitObserver == nil else { return }
-
-        cloudKitObserver = NotificationCenter.default.addObserver(
-            forName: .NSPersistentStoreRemoteChange,
-            object: nil,
-            queue: .main
-        ) { [weak self] _ in
-            Task { @MainActor in
-                await self?.handleLateCloudKitImport()
-            }
+        guard socialSyncModelContext != nil else {
+            isLaunchCloudBackupRestoreComplete = true
+            return
         }
-    }
-
-    private func handleLateCloudKitImport() async {
-        // CloudKit merges can arrive in bursts; give SwiftData time to materialize rows.
-        try? await Task.sleep(for: .seconds(5))
-        guard libraryHasLocalData else { return }
-        collectionInventoryRevision += 1
-        if let observer = cloudKitObserver {
-            NotificationCenter.default.removeObserver(observer)
-            cloudKitObserver = nil
+        guard !hasAttemptedAutomaticCloudBackupRestore else {
+            isLaunchCloudBackupRestoreComplete = true
+            return
         }
-        cloudKitLateImportPollTask?.cancel()
-        cloudKitLateImportPollTask = nil
+
+        hasAttemptedAutomaticCloudBackupRestore = true
+        _ = await restoreCollectionFromCloudBackup(force: true)
+        isLaunchCloudBackupRestoreComplete = true
     }
 
-    private func markCloudKitImportComplete() {
-        Task { await finishCloudKitImportAndAttemptRestore() }
+    /// Call when onboarding finishes without a Bindr sign-in — nothing to restore from R2.
+    func markLaunchCloudBackupRestoreSkipped() {
+        isLaunchCloudBackupRestoreComplete = true
     }
 
-    /// Waits for the R2 cloud backup restore attempt before opening the launch gate so
-    /// TestFlight/reinstall users don't land on an empty dashboard when iCloud Production
-    /// has no data yet.
-    private func finishCloudKitImportAndAttemptRestore() async {
-        guard !isCloudKitImportComplete else { return }
-        cloudKitIdleMonitor?.stop()
-        cloudKitIdleMonitor = nil
-        cloudKitImportPollTask?.cancel()
-        cloudKitImportPollTask = nil
-        cloudKitRestoreTimeoutWorkItem?.cancel()
-        cloudKitRestoreTimeoutWorkItem = nil
-        isCloudKitImportComplete = true
-
-        let isFreshInstall = !BindrApp.storeExistedAtLaunch
-        let iCloudAvailable = FileManager.default.ubiquityIdentityToken != nil
-            && !cloudSettings.isCloudKitFallbackActive
-
-        if isFreshInstall, iCloudAvailable, !libraryHasLocalData {
-            beginExtendedCloudKitRecoveryThenR2Fallback()
-        } else {
-            await attemptCloudBackupRestoreIfStillEmpty()
-            beginPostLaunchCloudKitRecoveryIfNeeded()
-        }
+    func libraryInventoryCounts(modelContext: ModelContext) -> LibraryInventoryCounts {
+        LibraryInventoryCounts.load(from: modelContext)
     }
 
-    /// After reinstall, iCloud can take several minutes. Poll before falling back to R2
-    /// so we don't merge an R2 snapshot on top of a late iCloud import (duplicates).
-    private func beginExtendedCloudKitRecoveryThenR2Fallback() {
-        beginPostLaunchCloudKitRecoveryIfNeeded()
-
-        guard !libraryHasLocalData else { return }
-
-        cloudKitLateImportPollTask?.cancel()
-        cloudKitLateImportPollTask = Task { [weak self] in
-            guard let self else { return }
-            let pollInterval: Duration = .seconds(3)
-            let maxPolls = 100 // ~5 minutes
-
-            for _ in 0..<maxPolls {
-                try? await Task.sleep(for: pollInterval)
-                if Task.isCancelled { return }
-                if self.libraryHasLocalData {
-                    self.collectionInventoryRevision += 1
-                    return
-                }
-            }
-
-            await self.attemptCloudBackupRestoreIfStillEmpty()
-        }
-    }
-
-    /// Pulls the social cloud backup (R2) when iCloud restore did not repopulate the collection.
+    /// Replaces the local library from Bindr cloud backup (R2).
     func restoreCollectionFromCloudBackup(force: Bool = false) async -> Bool {
         let restored = await collectionSync.restoreFromCloudBackupIfNeeded(force: force)
         if restored {
-            collectionInventoryRevision += 1
-            // Only push to R2 after an explicit user-initiated replace restore.
-            if force {
-                collectionSync.scheduleUpload()
-            }
+            await refreshLibraryUIAfterCloudBackupRestore()
         }
         return restored
     }
 
-    /// Uploads the full local library to R2 immediately (collection, binders, decks, ledger, value history).
+    /// Uploads the full local library to Bindr cloud backup immediately.
     func backupLibraryToCloud() async -> Bool {
         await collectionSync.backupEverythingNow()
     }
 
-    private func attemptCloudBackupRestoreIfStillEmpty() async {
-        guard let modelContext = socialSyncModelContext else {
-            return
-        }
-        guard socialAuth.isSignedIn else {
-            return
-        }
-        guard !hasAttemptedAutomaticCloudBackupRestore else { return }
-        hasAttemptedAutomaticCloudBackupRestore = true
-
-        // Brief pause so any final CloudKit merge batch can land first.
-        try? await Task.sleep(for: .seconds(5))
-        guard UserLibraryBackupCodec.localLibraryIsEmpty(modelContext) else { return }
-        _ = await restoreCollectionFromCloudBackup()
+    private func refreshLibraryUIAfterCloudBackupRestore() async {
+        await collectionValue?.loadAllFromStore()
+        collectionInventoryRevision += 1
+        scheduleLibraryCloudBackup()
     }
 
     private func bindCollectionSync(modelContext: ModelContext) {

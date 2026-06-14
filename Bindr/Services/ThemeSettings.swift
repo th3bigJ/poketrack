@@ -20,7 +20,6 @@ final class ThemeSettings {
         }
     }
 
-    private let cloudSettings: CloudSettingsService
     static let logoThemeID = "bindr-logo"
     static let logoThemeAccentHex = "8b5cf6"
     static let logoThemeColors = [
@@ -38,27 +37,25 @@ final class ThemeSettings {
     private let accentColorKey = "user_accent_color_hex"
     private let appearanceKey = "user_app_appearance"
     private let backgroundGlowKey = "user_background_glow_enabled"
-    private var acceptsFirstCloudThemeRefresh = false
 
     var accentColorHex: String {
         didSet {
-            acceptsFirstCloudThemeRefresh = false
             Self.saveLocal(accentColorHex, forKey: accentColorKey)
-            cloudSettings.set(accentColorHex, forKey: accentColorKey)
+            AppPreferencesBackup.notifyDidChange()
         }
     }
 
     var appearance: AppAppearance {
         didSet {
             Self.saveLocal(appearance.rawValue, forKey: appearanceKey)
-            cloudSettings.set(appearance.rawValue, forKey: appearanceKey)
+            AppPreferencesBackup.notifyDidChange()
         }
     }
 
     var backgroundGlowEnabled: Bool {
         didSet {
             Self.saveLocal(backgroundGlowEnabled, forKey: backgroundGlowKey)
-            cloudSettings.set(backgroundGlowEnabled, forKey: backgroundGlowKey)
+            AppPreferencesBackup.notifyDidChange()
         }
     }
     
@@ -78,28 +75,14 @@ final class ThemeSettings {
         }
     }
     
-    init(cloudSettings: CloudSettingsService) {
-        self.cloudSettings = cloudSettings
+    init() {
+        self.accentColorHex = Self.localString(forKey: accentColorKey) ?? "4f46e5"
 
-        let localAccent = Self.localString(forKey: accentColorKey)
-        let localAppearance = Self.localString(forKey: appearanceKey)
-        let localGlow = Self.localBool(forKey: backgroundGlowKey)
-        self.acceptsFirstCloudThemeRefresh = localAccent == nil
-
-        // Default to a premium blue/indigo
-        self.accentColorHex = localAccent
-            ?? cloudSettings.string(forKey: accentColorKey)
-            ?? "4f46e5"
-
-        let savedAppearance = localAppearance
-            ?? cloudSettings.string(forKey: appearanceKey)
-            ?? AppAppearance.system.rawValue
+        let savedAppearance = Self.localString(forKey: appearanceKey) ?? AppAppearance.system.rawValue
         self.appearance = AppAppearance(rawValue: savedAppearance) ?? .system
 
-        if let localGlow {
+        if let localGlow = Self.localBool(forKey: backgroundGlowKey) {
             self.backgroundGlowEnabled = localGlow
-        } else if cloudSettings.hasValue(forKey: backgroundGlowKey) {
-            self.backgroundGlowEnabled = cloudSettings.bool(forKey: backgroundGlowKey)
         } else {
             self.backgroundGlowEnabled = true
         }
@@ -109,18 +92,27 @@ final class ThemeSettings {
         Self.saveLocal(backgroundGlowEnabled, forKey: backgroundGlowKey)
 
         NotificationCenter.default.addObserver(
-            forName: .cloudSettingsDidChange,
+            forName: .appPreferencesDidRestore,
             object: nil,
             queue: .main
         ) { [weak self] _ in
             Task { @MainActor [weak self] in
-                guard let self, self.acceptsFirstCloudThemeRefresh else { return }
-                guard let cloudAccent = self.cloudSettings.string(forKey: self.accentColorKey) else { return }
-                self.acceptsFirstCloudThemeRefresh = false
-                if self.accentColorHex != cloudAccent {
-                    self.accentColorHex = cloudAccent
-                }
+                self?.reloadFromUserDefaults()
             }
+        }
+    }
+
+    func reloadFromUserDefaults() {
+        if let accent = Self.localString(forKey: accentColorKey), accent != accentColorHex {
+            accentColorHex = accent
+        }
+        if let raw = Self.localString(forKey: appearanceKey),
+           let parsed = AppAppearance(rawValue: raw),
+           parsed != appearance {
+            appearance = parsed
+        }
+        if let glow = Self.localBool(forKey: backgroundGlowKey), glow != backgroundGlowEnabled {
+            backgroundGlowEnabled = glow
         }
     }
     

@@ -47,6 +47,23 @@ struct OfflineImageContext: Sendable {
     /// image view task IDs ensures visible cells reload from disk once download finishes.
     let packDataRevision: Int
 
+    /// Token included in grid thumbnail task IDs so cells reload when offline pack state changes.
+    var gridReloadToken: String {
+        "\(isOfflineEnabled)|\(packDataRevision)"
+    }
+
+    /// Snapshot from live services — safe to compute in grid cells that already hold `AppServices`.
+    @MainActor
+    static func snapshot(from services: AppServices) -> OfflineImageContext {
+        OfflineImageContext(
+            isOfflineEnabled: services.offlineImageSettings.isOfflinePackEnabled(
+                for: services.brandSettings.selectedCatalogBrand
+            ),
+            brand: services.brandSettings.selectedCatalogBrand,
+            packDataRevision: services.offlineImageDownload.packDataRevision
+        )
+    }
+
     /// Returns the on-disk file URL for a remote image URL when offline mode is active.
     func localURL(for remoteURL: URL) -> URL? {
         guard let brand else { return nil }

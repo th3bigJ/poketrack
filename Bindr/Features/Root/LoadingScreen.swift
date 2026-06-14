@@ -308,7 +308,6 @@ final class _CYCyclingTitleView: UIView {
 
 struct LaunchWordmarkView: View {
     var progress: LaunchProgressState? = nil
-    var isSyncingCloudKit: Bool = false
     var onRevealComplete: () -> Void = {}
 
     @Environment(\.colorScheme) private var colorScheme
@@ -316,12 +315,6 @@ struct LaunchWordmarkView: View {
     @State private var statusVisible = false
     @State private var hasStartedAnimation = false
     @State private var hasFiredRevealComplete = false
-    private let loadingStatusMessages = [
-        "Syncing iCloud",
-        "Loading Cards",
-        "Updating Pricing",
-        "Loading Dashboard"
-    ]
 
     private var foreground: Color { colorScheme == .dark ? .white : Color(white: 0.08) }
     private var subtle: Color { foreground.opacity(0.38) }
@@ -337,12 +330,8 @@ struct LaunchWordmarkView: View {
     }
 
     private var byteProgressText: String {
-        guard let p = progress, p.totalBytes > 0 else { return "" }
-        let f = ByteCountFormatter()
-        f.allowedUnits = [.useKB, .useMB]
-        f.countStyle = .file
-        f.includesUnit = true
-        return "\(f.string(fromByteCount: p.downloadedBytes)) / \(f.string(fromByteCount: p.totalBytes))"
+        guard let p = progress else { return "" }
+        return byteProgressText(for: p)
     }
 
     var body: some View {
@@ -403,11 +392,6 @@ struct LaunchWordmarkView: View {
             hasStartedAnimation = true
             await runRevealAnimation()
         }
-        .onChange(of: isSyncingCloudKit) { _, syncing in
-            if syncing && statusVisible {
-                // Already visible — content swap handled by statusArea's own transition
-            }
-        }
     }
 
     @ViewBuilder
@@ -415,21 +399,7 @@ struct LaunchWordmarkView: View {
         if let p = progress {
             catalogProgressView(p)
                 .transition(.opacity.combined(with: .move(edge: .bottom)))
-        } else if isSyncingCloudKit {
-            cloudKitSyncView
-                .transition(.opacity.combined(with: .move(edge: .bottom)))
         }
-    }
-
-    // MARK: CloudKit sync indicator
-
-    private var cloudKitSyncView: some View {
-        launchStatusPanel(
-            title: loadingStatusMessages.first ?? "Syncing iCloud",
-            status: "Preparing data…",
-            icon: "icloud.and.arrow.down.fill",
-            progress: nil
-        )
     }
 
     // MARK: Catalog download progress
@@ -448,7 +418,7 @@ struct LaunchWordmarkView: View {
         title: String,
         status: String,
         icon: String,
-        progress: LaunchProgressState?
+        progress: LaunchProgressState
     ) -> some View {
         VStack(spacing: 10) {
             VStack(spacing: 8) {
@@ -464,29 +434,16 @@ struct LaunchWordmarkView: View {
                         Circle()
                             .strokeBorder(Color.white.opacity(colorScheme == .dark ? 0.18 : 0.42), lineWidth: 0.8)
                     }
-                if progress == nil {
-                    PulseDots(color: launchBrandPrimary.opacity(0.78))
-                }
             }
             .frame(width: 36, alignment: .center)
 
             VStack(alignment: .center, spacing: 4) {
-                if progress == nil {
-                    CYCyclingTitle(
-                        messages: loadingStatusMessages,
-                        color: UIColor(foreground.opacity(0.92)),
-                        font: .systemFont(ofSize: 16, weight: .bold)
-                    )
-                    .frame(height: 24)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                } else {
-                    Text(title)
-                        .font(.system(size: 16, weight: .bold, design: .rounded))
-                        .foregroundStyle(foreground.opacity(0.92))
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.85)
-                        .multilineTextAlignment(.center)
-                }
+                Text(title)
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .foregroundStyle(foreground.opacity(0.92))
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
+                    .multilineTextAlignment(.center)
 
                 Text(status)
                     .font(.system(size: 13, weight: .medium))
@@ -495,38 +452,45 @@ struct LaunchWordmarkView: View {
                     .minimumScaleFactor(0.85)
                     .multilineTextAlignment(.center)
 
-                if let progress {
-                    VStack(spacing: 7) {
-                        CAProgressBar(
-                            fraction: progress.fraction,
-                            fillColor: launchBrandPrimary,
-                            fillGradientColors: [launchBrandCyan, launchBrandSecondary, launchBrandPrimary],
-                            height: 4
-                        )
-                            .frame(width: 220)
-                            .clipShape(Capsule())
+                VStack(spacing: 7) {
+                    CAProgressBar(
+                        fraction: progress.fraction,
+                        fillColor: launchBrandPrimary,
+                        fillGradientColors: [launchBrandCyan, launchBrandSecondary, launchBrandPrimary],
+                        height: 4
+                    )
+                    .frame(width: 220)
+                    .clipShape(Capsule())
 
-                        HStack(spacing: 6) {
-                            Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
-                                .font(.system(size: 12, weight: .bold, design: .rounded))
-                                .foregroundStyle(foreground.opacity(0.70))
-                            if !byteProgressText.isEmpty {
-                                Text("·")
-                                    .foregroundStyle(subtle)
-                                Text(byteProgressText)
-                                    .font(.system(size: 12, weight: .medium))
-                                    .foregroundStyle(subtle)
-                            }
+                    HStack(spacing: 6) {
+                        Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(foreground.opacity(0.70))
+                        if progress.totalBytes > 0 {
+                            Text("·")
+                                .foregroundStyle(subtle)
+                            Text(byteProgressText(for: progress))
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundStyle(subtle)
                         }
-                        .frame(width: 220, alignment: .center)
                     }
-                    .padding(.top, 4)
+                    .frame(width: 220, alignment: .center)
                 }
+                .padding(.top, 4)
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
         .padding(.horizontal, 10)
         .frame(width: 320, alignment: .center)
+    }
+
+    private func byteProgressText(for progress: LaunchProgressState) -> String {
+        guard progress.totalBytes > 0 else { return "" }
+        let f = ByteCountFormatter()
+        f.allowedUnits = [.useKB, .useMB]
+        f.countStyle = .file
+        f.includesUnit = true
+        return "\(f.string(fromByteCount: progress.downloadedBytes)) / \(f.string(fromByteCount: progress.totalBytes))"
     }
 
     // MARK: Animation sequence
@@ -617,11 +581,6 @@ struct LoadingScreen: View {
 
 #Preview("Idle") {
     LaunchWordmarkView()
-        .environment(\.bindrAccent, Color(hex: "4f46e5"))
-}
-
-#Preview("CloudKit syncing") {
-    LaunchWordmarkView(isSyncingCloudKit: true)
         .environment(\.bindrAccent, Color(hex: "4f46e5"))
 }
 

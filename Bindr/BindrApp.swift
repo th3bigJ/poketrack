@@ -72,13 +72,12 @@ final class BindrPushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotific
 struct BindrApp: App {
     @UIApplicationDelegateAdaptor(BindrPushAppDelegate.self) private var pushAppDelegate
 
-    nonisolated static let cloudKitFallbackDefaultsKey = "cloudKitFallbackActive"
-    nonisolated static let cloudKitLastErrorDefaultsKey = "cloudKitLastError"
-    /// True if the SQLite store already existed when the app launched.
-    /// False means this is a fresh install (or after deletion) — CloudKit restore is needed.
-    nonisolated static let storeExistedAtLaunch: Bool = FileManager.default.fileExists(atPath: Self.storeURL.path)
+    /// Captured in ``BindrApp/init()`` before SwiftData creates the store file.
+    /// Must not use lazy `static let` — that would run after the empty store is created on first launch.
+    nonisolated(unsafe) private(set) static var storeExistedAtLaunch = false
 
     init() {
+        Self.storeExistedAtLaunch = FileManager.default.fileExists(atPath: Self.storeURL.path)
         Self.suppressCoreDataDebugLogging()
         Self.configureTabBarAppearance()
     }
@@ -92,7 +91,6 @@ struct BindrApp: App {
             "com.apple.CoreData.SQLDebug": "0",
             "com.apple.CoreData.ConcurrencyDebug": "0",
             "com.apple.CoreData.MigrationDebug": "0",
-            "com.apple.CoreData.CloudKitDebug": "0",
         ]
         for (key, value) in settings {
             UserDefaults.standard.set(value, forKey: key)
@@ -101,9 +99,7 @@ struct BindrApp: App {
         #endif
     }
 
-    /// CloudKit-backed store. SwiftData merges CloudKit records on @MainActor; the
-    /// CloudKitIdleMonitor keeps the launch overlay visible until those merges complete,
-    /// so the freeze is hidden behind the overlay rather than felt on the dashboard.
+    /// Local SwiftData store. Library backup and cross-device recovery use Bindr Cloud (R2).
     nonisolated private static func makeModelContainer() -> ModelContainer {
         suppressCoreDataDebugLogging()
         let schema = Schema([
@@ -122,39 +118,23 @@ struct BindrApp: App {
         ])
 
         do {
-            let container = try makePersistentContainer(schema: schema, cloudKitDatabase: .automatic)
-            UserDefaults.standard.set(false, forKey: cloudKitFallbackDefaultsKey)
-            UserDefaults.standard.removeObject(forKey: cloudKitLastErrorDefaultsKey)
-            return container
+            return try makePersistentContainer(schema: schema)
         } catch {
-            logModelContainerIssue(stage: "initial CloudKit load", error: error)
+            logModelContainerIssue(stage: "initial local store load", error: error)
             destroyPersistentStoreFiles()
             do {
-                let container = try makePersistentContainer(schema: schema, cloudKitDatabase: .automatic)
-                UserDefaults.standard.set(false, forKey: cloudKitFallbackDefaultsKey)
-                UserDefaults.standard.removeObject(forKey: cloudKitLastErrorDefaultsKey)
-                return container
+                return try makePersistentContainer(schema: schema)
             } catch {
-                logModelContainerIssue(stage: "CloudKit reload after store reset", error: error)
-                do {
-                    let container = try makePersistentContainer(schema: schema, cloudKitDatabase: .none)
-                    UserDefaults.standard.set(true, forKey: cloudKitFallbackDefaultsKey)
-                    return container
-                } catch {
-                    fatalError("Could not create fallback SwiftData store: \(error)")
-                }
+                fatalError("Could not create SwiftData store: \(error)")
             }
         }
     }
 
-    nonisolated private static func makePersistentContainer(
-        schema: Schema,
-        cloudKitDatabase: ModelConfiguration.CloudKitDatabase
-    ) throws -> ModelContainer {
+    nonisolated private static func makePersistentContainer(schema: Schema) throws -> ModelContainer {
         let configuration = ModelConfiguration(
             schema: schema,
             url: storeURL,
-            cloudKitDatabase: cloudKitDatabase
+            cloudKitDatabase: .none
         )
         return try ModelContainer(for: schema, configurations: [configuration])
     }
@@ -185,10 +165,8 @@ struct BindrApp: App {
 
     nonisolated private static func logModelContainerIssue(stage: String, error: Error) {
         let nsError = error as NSError
-        let iCloudToken = FileManager.default.ubiquityIdentityToken
         let diagnostic = [
             "stage=\(stage)",
-            "iCloudAccount=\(iCloudToken != nil ? "signed-in" : "not-signed-in")",
             "domain=\(nsError.domain)",
             "code=\(nsError.code)",
             "description=\(nsError.localizedDescription)",
@@ -196,8 +174,9 @@ struct BindrApp: App {
         ]
         .compactMap { $0 }
         .joined(separator: "\n")
-
-        UserDefaults.standard.set(diagnostic, forKey: cloudKitLastErrorDefaultsKey)
+        #if DEBUG
+        print("Bindr SwiftData store issue:\n\(diagnostic)")
+        #endif
     }
 
     /// Match tab bar glass density to multi-select pill buttons.
@@ -246,8 +225,6 @@ struct BindrApp: App {
                 } else {
                     LaunchWordmarkView()
                         .task {
-                            // Build the ModelContainer off the main thread so opening the
-                            // CloudKit-backed SQLite store doesn't freeze the launch animation.
                             let container = await Task.detached(priority: .userInitiated) {
                                 BindrApp.makeModelContainer()
                             }.value
@@ -256,10 +233,6 @@ struct BindrApp: App {
                 }
             }
             .task {
-                // Liquid Glass initialises quickly; enabling it is cheap. (An earlier "8–9s glass"
-                // freeze was actually the offline-image reconcile blocking the main thread — see
-                // OfflineImageDownloadService.) Flip glass on after one short settle so the cards
-                // come up glassy on the first interactive frame rather than popping in late.
                 try? await Task.sleep(for: .milliseconds(300))
                 GlassReadySignal.shared.isReady = true
             }

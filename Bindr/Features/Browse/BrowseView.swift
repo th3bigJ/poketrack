@@ -98,45 +98,6 @@ struct CardGridCell: View {
         resolvedColorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.06)
     }
 
-    private var primaryTypeColor: Color? {
-        let types = card.elementTypes ?? []
-        let primary = types.first(where: { type in
-            !type.isEmpty && type != "-" && type != "Colorless"
-        }) ?? types.first(where: { !$0.isEmpty && $0 != "-" })
-        guard let primary else { return nil }
-        return Self.pokemonTypeColor(primary)
-    }
-
-    private var nameStripBackground: LinearGradient {
-        let accent = primaryTypeColor ?? (resolvedColorScheme == .dark ? Color.white : Color.black)
-        let baseStrong = resolvedColorScheme == .dark ? 0.22 : 0.16
-        let baseWeak = resolvedColorScheme == .dark ? 0.06 : 0.03
-        return LinearGradient(
-            stops: [
-                .init(color: accent.opacity(baseWeak), location: 0.0),
-                .init(color: accent.opacity(baseWeak * 1.6), location: 0.5),
-                .init(color: accent.opacity(baseStrong), location: 1.0)
-            ],
-            startPoint: .top,
-            endPoint: .bottom
-        )
-    }
-
-    private var footerBackground: LinearGradient {
-        let accent = primaryTypeColor ?? (resolvedColorScheme == .dark ? Color.white : Color.black)
-        let baseStrong = resolvedColorScheme == .dark ? 0.18 : 0.12
-        let baseWeak = resolvedColorScheme == .dark ? 0.04 : 0.02
-        return LinearGradient(
-            stops: [
-                .init(color: accent.opacity(baseStrong), location: 0.0),
-                .init(color: accent.opacity(baseWeak * 1.5), location: 0.6),
-                .init(color: accent.opacity(baseWeak), location: 1.0)
-            ],
-            startPoint: .top,
-            endPoint: .bottom
-        )
-    }
-
     private var showsFooter: Bool {
         (gridOptions.showSetName && !(setName?.isEmpty ?? true))
             || (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
@@ -190,9 +151,29 @@ struct CardGridCell: View {
         return number.isEmpty ? card.setCode : number
     }
 
+    private var offlineImageContext: OfflineImageContext {
+        OfflineImageContext.snapshot(from: services)
+    }
+
+    private var resolvedImageURL: URL? {
+        safeImageURL(relativePath: card.displayImageSrc)
+    }
+
+    private var imageLocalURL: URL? {
+        guard let resolvedImageURL else { return nil }
+        return offlineImageContext.localURL(for: resolvedImageURL)
+    }
+
+    private var footnoteAvatarLocalURL: URL? {
+        guard let footnoteLeadingAvatarURL else { return nil }
+        return offlineImageContext.localURL(for: footnoteLeadingAvatarURL)
+    }
+
     var body: some View {
         CardGridCellLayout(
             card: card,
+            cardName: card.cardName,
+            services: services,
             gridOptions: gridOptions,
             setName: setName,
             isOwned: isOwned,
@@ -202,14 +183,13 @@ struct CardGridCell: View {
             variantPricingKey: variantPricingKey,
             footnote: footnote,
             footnoteLeadingAvatarURL: footnoteLeadingAvatarURL,
+            footnoteAvatarLocalURL: footnoteAvatarLocalURL,
             postPriceFootnote: postPriceFootnote,
             overridePrice: overridePrice,
             gradeLabel: gradeLabel,
             tileBackground: tileBackground,
             tileBorder: tileBorder,
             dividerColor: dividerColor,
-            nameStripBackground: nameStripBackground,
-            footerBackground: footerBackground,
             showsFooter: showsFooter,
             showsOwnedUI: showsOwnedUI,
             visibleOwnedCountBadge: visibleOwnedCountBadge,
@@ -220,7 +200,9 @@ struct CardGridCell: View {
             trailingCardID: trailingCardID,
             accentColor: resolvedServices.theme.accentColor,
             colorScheme: resolvedColorScheme,
-            imageURL: safeImageURL(relativePath: card.displayImageSrc)
+            imageURL: resolvedImageURL,
+            imageLocalURL: imageLocalURL,
+            imageReloadToken: offlineImageContext.gridReloadToken
         )
     }
 
@@ -248,6 +230,8 @@ struct CardGridCell: View {
 /// to resolve environment values during LazyVStack row measurement.
 private struct CardGridCellLayout: View {
     let card: Card
+    let cardName: String
+    let services: AppServices
     let gridOptions: BrowseGridOptions
     let setName: String?
     let isOwned: Bool
@@ -257,14 +241,13 @@ private struct CardGridCellLayout: View {
     let variantPricingKey: String?
     let footnote: String?
     var footnoteLeadingAvatarURL: URL? = nil
+    let footnoteAvatarLocalURL: URL?
     let postPriceFootnote: String?
     let overridePrice: Double?
     let gradeLabel: String?
     let tileBackground: Color
     let tileBorder: Color
     let dividerColor: Color
-    let nameStripBackground: LinearGradient
-    let footerBackground: LinearGradient
     let showsFooter: Bool
     let showsOwnedUI: Bool
     let visibleOwnedCountBadge: Int?
@@ -276,38 +259,51 @@ private struct CardGridCellLayout: View {
     let accentColor: Color
     let colorScheme: ColorScheme
     let imageURL: URL?
+    let imageLocalURL: URL?
+    let imageReloadToken: String
+
+    private var primaryTextColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
+
+    private var secondaryTextColor: Color {
+        colorScheme == .dark ? Color.white.opacity(0.62) : Color.black.opacity(0.55)
+    }
+
+    private var tertiaryTextColor: Color {
+        colorScheme == .dark ? Color.white.opacity(0.45) : Color.black.opacity(0.38)
+    }
 
     var body: some View {
         VStack(spacing: 0) {
             if gridOptions.showCardName {
-                ZStack {
-                    tileBackground
-                    nameStripBackground
-                    VStack(spacing: 1) {
-                        Text(card.cardName)
-                            .font(.caption2.weight(.semibold))
+                VStack(spacing: 1) {
+                    Text(cardName)
+                        .font(.caption2.weight(.semibold))
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        .multilineTextAlignment(.center)
+                        .foregroundStyle(primaryTextColor)
+                    if let variantLabel, !variantLabel.isEmpty {
+                        Text(variantLabel)
+                            .font(.system(size: 9, weight: .medium))
                             .lineLimit(1)
                             .truncationMode(.tail)
                             .multilineTextAlignment(.center)
-                            .foregroundStyle(.primary)
-                        if let variantLabel, !variantLabel.isEmpty {
-                            Text(variantLabel)
-                                .font(.system(size: 9, weight: .medium))
-                                .lineLimit(1)
-                                .truncationMode(.tail)
-                                .multilineTextAlignment(.center)
-                                .foregroundStyle(.secondary)
-                        }
+                            .foregroundStyle(secondaryTextColor)
                     }
-                    .padding(.vertical, 7)
-                    .padding(.horizontal, 8)
                 }
-                .fixedSize(horizontal: false, vertical: true)
+                .padding(.vertical, 7)
+                .padding(.horizontal, 8)
+                .frame(maxWidth: .infinity)
+                .background(tileBackground)
                 dividerLine
             }
 
             BrowseCardThumbnailView(
                 imageURL: imageURL,
+                imageLocalURL: imageLocalURL,
+                imageReloadToken: imageReloadToken,
                 isOwned: isOwned,
                 isWishlisted: isWishlisted,
                 ownedCountBadge: visibleOwnedCountBadge,
@@ -317,36 +313,34 @@ private struct CardGridCellLayout: View {
 
             if showsFooter {
                 dividerLine
-                ZStack {
-                    tileBackground
-                    footerBackground
-                    VStack(spacing: 3) {
-                        if gridOptions.showSetName, let setName, !setName.isEmpty {
-                            footerText(setName, style: .secondary)
-                        }
-                        if gridOptions.showOwned, let footnote, !footnote.isEmpty {
-                            footnoteRow(footnote)
-                        }
-                        if gridOptions.showSetID {
-                            footerText(trailingCardID, style: .tertiary)
-                        }
-                        if gridOptions.showPricing {
-                            BrowseGridPriceText(
-                                card: card,
-                                overridePrice: overridePrice,
-                                gradeLabel: gradeLabel,
-                                usesAccentColor: true,
-                                variantKey: variantPricingKey
-                            )
-                        }
-                        if let postPriceFootnote, !postPriceFootnote.isEmpty {
-                            footerText(postPriceFootnote, style: .secondary)
-                        }
+                VStack(spacing: 3) {
+                    if gridOptions.showSetName, let setName, !setName.isEmpty {
+                        footerText(setName, color: secondaryTextColor)
                     }
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 7)
+                    if gridOptions.showOwned, let footnote, !footnote.isEmpty {
+                        footnoteRow(footnote)
+                    }
+                    if gridOptions.showSetID {
+                        footerText(trailingCardID, color: tertiaryTextColor)
+                    }
+                    if gridOptions.showPricing {
+                        BrowseGridPriceText(
+                            services: services,
+                            card: card,
+                            overridePrice: overridePrice,
+                            gradeLabel: gradeLabel,
+                            usesAccentColor: true,
+                            variantKey: variantPricingKey
+                        )
+                    }
+                    if let postPriceFootnote, !postPriceFootnote.isEmpty {
+                        footerText(postPriceFootnote, color: secondaryTextColor)
+                    }
                 }
-                .fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 7)
+                .frame(maxWidth: .infinity)
+                .background(tileBackground)
             }
         }
         .background(tileBackground)
@@ -381,42 +375,49 @@ private struct CardGridCellLayout: View {
             .frame(height: 1)
     }
 
-    private func footerText(_ text: String, style: HierarchicalShapeStyle) -> some View {
+    private func footerText(_ text: String, color: Color) -> some View {
         Text(text)
             .font(.caption2)
             .lineLimit(1)
             .multilineTextAlignment(.center)
-            .foregroundStyle(style)
+            .foregroundStyle(color)
     }
 
     @ViewBuilder
     private func footnoteRow(_ text: String) -> some View {
         if let url = footnoteLeadingAvatarURL {
             HStack(spacing: 3) {
-                CachedAsyncImage(url: url) { image in
-                    image.resizable().scaledToFill()
-                } placeholder: {
-                    Circle().fill(Color.secondary.opacity(0.25))
-                }
+                GridCardThumbnailImage(
+                    url: url,
+                    localURL: footnoteAvatarLocalURL,
+                    reloadToken: imageReloadToken,
+                    targetSize: CGSize(width: 22, height: 22)
+                )
                 .frame(width: 11, height: 11)
                 .clipShape(Circle())
-                footerText(text, style: .secondary)
+                footerText(text, color: secondaryTextColor)
             }
         } else {
-            footerText(text, style: .secondary)
+            footerText(text, color: secondaryTextColor)
         }
     }
 }
 
 private struct BrowseCardThumbnailView: View {
     let imageURL: URL?
+    let imageLocalURL: URL?
+    let imageReloadToken: String
     var isOwned = false
     var isWishlisted = false
     var ownedCountBadge: Int? = nil
     var accentColor: Color = .accentColor
 
     var body: some View {
-        CachedCardThumbnailImage(url: imageURL)
+        GridCardThumbnailImage(
+            url: imageURL,
+            localURL: imageLocalURL,
+            reloadToken: imageReloadToken
+        )
             .overlay(alignment: .bottomTrailing) {
                 if let ownedCountBadge, ownedCountBadge >= 1 {
                     ownedBadge(count: ownedCountBadge)
@@ -471,13 +472,12 @@ struct MasterSetVariantRow: Identifiable {
     let variant: String
 }
 
-/// Card grid safe for iOS 26.
+/// Multi-column card grid with lazy row loading.
 ///
-/// LazyVStack/LazyVGrid are avoided entirely — both traverse their full subgraph during
-/// measureEstimates on iOS 26, corrupting the attribute graph. A plain VStack is safe.
-/// Perf is acceptable because the browse feed is paginated (18 cards/page) and callers
-/// that show full sets are bounded in practice. The crash fix lives in CardGridCell, which
-/// now receives services/colorScheme as plain stored properties instead of @Environment.
+/// Uses `LazyVStack` so only visible rows are built — critical for collection/browse
+/// grids that can hold thousands of cards. Earlier iOS 26 crashes during
+/// `measureEstimates` were caused by `@Environment` reads inside `CardGridCell`'s
+/// subtree, not by lazy layout itself. Cells now receive plain stored values only.
 struct EagerVGrid<Item: Identifiable, Cell: View>: View {
     let items: [Item]
     let columns: Int
@@ -584,12 +584,11 @@ private struct BrowseCardGridButton: View {
     let isMultiSelectActive: Bool
     let services: AppServices
     let colorScheme: ColorScheme
+    let browseFeedCards: [Card]
+    let onPresentCard: (Card, [Card]) -> Void
     @Binding var multiSelectedCardIDs: Set<String>
     let onQuickAddRequested: (Card, CardContextAction) -> Void
     let onSelectMultipleRequested: (Card) -> Void
-
-    @Environment(\.presentCard) private var presentCard
-    @Environment(\.browseFeedCards) private var browseFeedCards
 
     private var isSelected: Bool {
         multiSelectedCardIDs.contains(row.card.masterCardId)
@@ -605,7 +604,7 @@ private struct BrowseCardGridButton: View {
                     HapticManager.impact(.light)
                 }
             } else {
-                presentCard(row.card, browseFeedCards)
+                onPresentCard(row.card, browseFeedCards)
             }
         } label: {
             CardGridCell(
@@ -1072,6 +1071,8 @@ struct BrowseView: View {
                     isMultiSelectActive: isMultiSelectActive,
                     services: services,
                     colorScheme: colorScheme,
+                    browseFeedCards: snapshot.cards,
+                    onPresentCard: presentCard,
                     multiSelectedCardIDs: $multiSelectedCardIDs,
                     onQuickAddRequested: beginQuickAdd(card:action:),
                     onSelectMultipleRequested: beginSelectMultiple(with:)
@@ -3493,6 +3494,8 @@ private struct BrowsePokemonTabContent: View {
 }
 
 private struct BrowseGridCardCell: View {
+    @Environment(AppServices.self) private var services
+
     private static let thumbnailSize = CGSize(width: 220, height: 308)
 
     let card: Card
@@ -3542,7 +3545,7 @@ private struct BrowseGridCardCell: View {
             }
 
             if gridOptions.showPricing {
-                BrowseGridPriceText(card: card)
+                BrowseGridPriceText(services: services, card: card)
             }
         }
     }
@@ -3573,7 +3576,7 @@ private struct PokemonOwnedPokeBallBadge: View {
 }
 
 private struct BrowseGridPriceText: View {
-    @Environment(AppServices.self) private var services
+    let services: AppServices
 
     let card: Card
     /// When set, displayed directly without a live lookup (used by collection grid for grade-correct pricing).

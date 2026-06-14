@@ -13,7 +13,7 @@ struct WishlistView: View {
     @Binding var isActive: Bool
     var onFilterOptionsChange: (([String], [String], [String]) -> Void)?
 
-    /// Items for games that are still enabled in Account (same rows stay in iCloud; UI hides the rest).
+    /// Items for games that are still enabled in Account (hidden rows stay in local storage).
     private var visibleWishlistItems: [WishlistItem] {
         let enabled = services.brandSettings.enabledBrands
         return items.filter { enabled.contains(TCGBrand.inferredFromMasterCardId($0.cardID)) }
@@ -102,11 +102,6 @@ struct WishlistView: View {
             VStack(spacing: 16) {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
-                if services.cloudSettings.syncStatus != .cloudKitConnected {
-                    iCloudBanner
-                        .padding(.horizontal, 16)
-                }
-
                 wishlistTopBar
                     .padding(.horizontal, 16)
 
@@ -125,11 +120,6 @@ struct WishlistView: View {
             VStack(spacing: 16) {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
-                if services.cloudSettings.syncStatus != .cloudKitConnected {
-                    iCloudBanner
-                        .padding(.horizontal, 16)
-                }
-
                 wishlistTopBar
                     .padding(.horizontal, 16)
 
@@ -147,12 +137,6 @@ struct WishlistView: View {
         ScrollView {
             VStack(spacing: 0) {
                 Color.clear.frame(height: rootFloatingChromeInset)
-
-                if services.cloudSettings.syncStatus != .cloudKitConnected {
-                    iCloudBanner
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 12)
-                }
 
                 wishlistTopBar
                     .padding(.horizontal, 16)
@@ -187,45 +171,6 @@ struct WishlistView: View {
             Text("Wishlist")
                 .font(.largeTitle.bold())
             Spacer()
-        }
-    }
-
-    private var iCloudBanner: some View {
-        HStack(spacing: 12) {
-            Image(systemName: "exclamationmark.icloud")
-                .foregroundStyle(.orange)
-            VStack(alignment: .leading, spacing: 4) {
-                Text(iCloudBannerTitle)
-                    .font(.headline)
-                Text(iCloudBannerMessage)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-            Spacer(minLength: 0)
-        }
-        .padding(12)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-    }
-
-    private var iCloudBannerTitle: String {
-        switch services.cloudSettings.syncStatus {
-        case .cloudKitConnected:
-            return "iCloud connected"
-        case .cloudKitFallback:
-            return "CloudKit sync failed"
-        case .iCloudAccountUnavailable:
-            return "iCloud not available"
-        }
-    }
-
-    private var iCloudBannerMessage: String {
-        switch services.cloudSettings.syncStatus {
-        case .cloudKitConnected:
-            return "Your wishlist syncs through your private iCloud database."
-        case .cloudKitFallback:
-            return "This device is signed into iCloud, but the app could not open its CloudKit store and is using local-only storage."
-        case .iCloudAccountUnavailable:
-            return "Sign into iCloud to sync your wishlist across devices."
         }
     }
 

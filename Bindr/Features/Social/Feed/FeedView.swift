@@ -21,6 +21,7 @@ struct GroupedFeedItem: Identifiable {
 
 struct FeedView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     var selectedTab: Binding<SocialTab>? = nil
     var headerInset: CGFloat = 0
 
@@ -80,6 +81,7 @@ struct FeedView: View {
                 }
             }
         }
+        .background(feedCanvasBackground)
         .onChange(of: services.socialFeed.selectedScope) { _, _ in
             Task { await refresh() }
         }
@@ -89,6 +91,16 @@ struct FeedView: View {
         .onAppear {
             services.socialFeed.clearUnreadState()
             services.socialPush.clearAppBadgeCount()
+        }
+    }
+
+    @ViewBuilder
+    private var feedCanvasBackground: some View {
+        if colorScheme == .dark {
+            Color.clear
+        } else {
+            BindrPalette.feedSurface
+                .ignoresSafeArea()
         }
     }
 
@@ -181,12 +193,12 @@ struct FeedView: View {
                         } header: {
                             Text(section.title)
                                 .font(.system(size: 11, weight: .bold))
-                                .tracking(0.8)
-                                .foregroundStyle(.secondary.opacity(0.5))
+                                .tracking(0.9)
+                                .foregroundStyle(Color.secondary.opacity(colorScheme == .dark ? 0.55 : 0.65))
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.top, 4)
-                                .padding(.bottom, 4)
-                                .padding(.horizontal, 4)
+                                .padding(.top, 8)
+                                .padding(.bottom, 6)
+                                .padding(.horizontal, 2)
                         }
                     }
 
@@ -202,7 +214,7 @@ struct FeedView: View {
                             .padding()
                     }
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 16)
                 .padding(.top, 0)
                 .padding(.bottom, 100)
             }
@@ -363,9 +375,9 @@ struct ShimmerCard: View {
                     .frame(width: 40, height: 16)
             }
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 12)
-        .glassCardStyle(cornerRadius: 14, interactive: false)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 14)
+        .feedPostCardStyle(cornerRadius: 20)
         .onAppear {
             withAnimation(.linear(duration: 1.4).repeatForever(autoreverses: false)) {
                 phase = 1.3

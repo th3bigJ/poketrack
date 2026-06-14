@@ -42,10 +42,10 @@ struct SettingsView: View {
             }
 
             NavigationLink {
-                DataSyncSettingsPage()
+                LibraryStorageSettingsPage()
                     .environment(services)
             } label: {
-                syncStatusLabel
+                Label("Library Storage", systemImage: "internaldrive")
             }
 
             NavigationLink {
@@ -54,27 +54,6 @@ struct SettingsView: View {
             } label: {
                 Label("Backup and Restore", systemImage: "arrow.triangle.2.circlepath.icloud")
             }
-        }
-    }
-
-    private var syncStatusLabel: some View {
-        HStack {
-            Label("iCloud Sync", systemImage: syncIconName)
-                .foregroundStyle(syncColor)
-        }
-    }
-
-    private var syncIconName: String {
-        switch services.cloudSettings.syncStatus {
-        case .cloudKitConnected: "checkmark.icloud.fill"
-        case .cloudKitFallback, .iCloudAccountUnavailable: "exclamationmark.icloud.fill"
-        }
-    }
-
-    private var syncColor: Color {
-        switch services.cloudSettings.syncStatus {
-        case .cloudKitConnected: .green
-        case .cloudKitFallback, .iCloudAccountUnavailable: .orange
         }
     }
 
@@ -240,55 +219,53 @@ private struct PricingSettingsPage: View {
     }
 }
 
-// MARK: - Data Sync Settings Page
+// MARK: - Library Storage Settings Page
 
-private struct DataSyncSettingsPage: View {
+private struct LibraryStorageSettingsPage: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
+    @State private var inventory = LibraryInventoryCounts()
 
     var body: some View {
         List {
             Section {
-                syncStatusRow
-                if case .iCloudAccountUnavailable = services.cloudSettings.syncStatus {
-                    Button("Open iOS Settings") {
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            UIApplication.shared.open(url)
-                        }
-                    }
-                }
-            } header: {
-                Text("Status")
+                Label("Stored on this device", systemImage: "internaldrive.fill")
+                    .foregroundStyle(.green)
             } footer: {
-                statusFooter
+                Text("Your library is saved locally on this iPhone or iPad. Bindr Cloud Backup keeps your library and app preferences online for reinstall and disaster recovery — use Backup and Restore in Settings to manage it.")
+            }
+
+            Section {
+                inventoryRow("Collection cards", count: inventory.collectionCards, systemImage: "square.stack.3d.up.fill")
+                inventoryRow("Wishlist", count: inventory.wishlistItems, systemImage: "heart.fill")
+                inventoryRow("Binders", count: inventory.binders, systemImage: "book.closed.fill")
+                inventoryRow("Decks", count: inventory.decks, systemImage: "rectangle.stack.fill")
+                inventoryRow("Activity ledger", count: inventory.ledgerLines, systemImage: "list.bullet.rectangle")
+                inventoryRow("Daily value snapshots", count: inventory.dailyValueSnapshots, systemImage: "chart.line.uptrend.xyaxis")
+                inventoryRow("Weekly averages", count: inventory.weeklyAverages, systemImage: "calendar")
+                inventoryRow("Monthly averages", count: inventory.monthlyAverages, systemImage: "calendar.badge.clock")
+            } header: {
+                Text("On this device")
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("iCloud Sync")
+        .navigationTitle("Library Storage")
         .navigationBarTitleDisplayMode(.large)
+        .task { reloadInventory() }
+        .onChange(of: services.collectionInventoryRevision) { _, _ in reloadInventory() }
     }
 
-    private var syncStatusRow: some View {
-        switch services.cloudSettings.syncStatus {
-        case .cloudKitConnected:
-            return Label("iCloud connected", systemImage: "checkmark.icloud.fill")
-                .foregroundStyle(.green)
-        case .cloudKitFallback:
-            return Label("CloudKit sync failed", systemImage: "exclamationmark.icloud.fill")
-                .foregroundStyle(.orange)
-        case .iCloudAccountUnavailable:
-            return Label("iCloud not available", systemImage: "exclamationmark.icloud.fill")
-                .foregroundStyle(.orange)
-        }
+    private func reloadInventory() {
+        inventory = services.libraryInventoryCounts(modelContext: modelContext)
     }
 
-    @ViewBuilder private var statusFooter: some View {
-        switch services.cloudSettings.syncStatus {
-        case .cloudKitFallback:
-            Text("iCloud sync isn't available on this device right now. Your data is stored locally on this device.")
-        case .cloudKitConnected:
-            Text("Your collection, wishlist, and ledger sync automatically through iCloud. After reinstalling, stay on Wi‑Fi and wait several minutes on the launch screen — restore can take up to 5 minutes. Bindr cloud backup (below) is only used if iCloud does not restore your data.")
-        case .iCloudAccountUnavailable:
-            Text("Sign in to iCloud in Settings to sync your data across devices.")
+    private func inventoryRow(_ title: String, count: Int, systemImage: String) -> some View {
+        LabeledContent {
+            Text("\(count)")
+                .foregroundStyle(count > 0 ? .primary : .secondary)
+                .monospacedDigit()
+        } label: {
+            Label(title, systemImage: systemImage)
         }
     }
 }
@@ -311,7 +288,7 @@ private struct BackupRestoreSettingsPage: View {
                     Task { await runCloudBackupUpload() }
                 } label: {
                     HStack {
-                        Label("Back Up Everything to Cloud", systemImage: "icloud.and.arrow.up.fill")
+                        Label("Publish Library to Bindr Cloud", systemImage: "icloud.and.arrow.up.fill")
                         Spacer()
                         if isBackingUp || services.collectionSync.isUploading {
                             ProgressView()
@@ -339,7 +316,7 @@ private struct BackupRestoreSettingsPage: View {
                         .foregroundStyle(.orange)
                 }
             } footer: {
-                Text("Saves your full library to the cloud under your Bindr account. Sign in with the same account on any device to restore your data.")
+                Text("Your account backup: collection, wishlist, binders, decks, ledger, value history, and app preferences (theme, currency, grid and filter settings). Uploads automatically when your library or preferences change. After reinstall, everything restores when you're signed in to Bindr.")
             }
 
             Section {
@@ -374,7 +351,7 @@ private struct BackupRestoreSettingsPage: View {
                         .foregroundStyle(.orange)
                 }
             } footer: {
-                Text("Downloads your latest cloud backup and replaces the library on this device. If you already have cards here, you'll be asked before anything is replaced. After reinstall, wait for iCloud to finish before restoring from R2 to avoid duplicates.")
+                Text("Replaces everything on this device with your latest Bindr cloud backup — collection, wishlist, binders, decks, ledger, and value history. Happens automatically after reinstall when you're signed in; tap above to restore manually.")
             }
         }
         .listStyle(.insetGrouped)

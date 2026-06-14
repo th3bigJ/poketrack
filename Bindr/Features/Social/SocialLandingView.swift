@@ -68,7 +68,7 @@ struct SocialLandingView: View {
             }
             .multilineTextAlignment(.leading)
 
-            Text("Share your collection, spot trade opportunities, and react to friends' pulls. Sign in with iCloud to join the network.")
+            Text("Share your collection, spot trade opportunities, and react to friends' pulls. Sign in with Apple to join the network.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)

@@ -199,7 +199,7 @@ struct RootView: View {
             && !showOnboardingImmediate
             && services.brandSettings.hasCompletedBrandOnboarding
             && isDashboardDataReady
-            && services.isCloudKitImportComplete
+            && services.isLaunchCloudBackupRestoreComplete
     }
 
     private var launchProgressState: LaunchProgressState? {
@@ -217,7 +217,23 @@ struct RootView: View {
         }
 
         if services.isLaunchCatalogPipelineComplete,
-           services.isCloudKitImportComplete,
+           !services.isLaunchCloudBackupRestoreComplete,
+           !showSplash,
+           !showOnboardingImmediate,
+           services.brandSettings.hasCompletedBrandOnboarding {
+            return LaunchProgressState(
+                message: "Restoring your library",
+                status: services.collectionSync.isRestoring
+                    ? "Downloading your cloud backup…"
+                    : "Preparing restore…",
+                fraction: 1,
+                downloadedBytes: 0,
+                totalBytes: 0,
+                hasByteProgress: false
+            )
+        }
+
+        if services.isLaunchCatalogPipelineComplete,
            !isDashboardDataReady,
            !showSplash,
            !showOnboardingImmediate,
@@ -486,7 +502,6 @@ struct RootView: View {
         })
         .task {
             services.setupCollectionValue(modelContext: modelContext)
-            services.beginCloudKitReadinessMonitoring()
             if services.isReady && !hasInsertedMainContent {
                 hasInsertedMainContent = true
             }
@@ -587,7 +602,6 @@ struct RootView: View {
         } else if services.isReady {
             LaunchWordmarkView(
                 progress: launchProgressState,
-                isSyncingCloudKit: hasRevealedLaunchWordmark && !services.isCloudKitImportComplete && launchProgressState == nil,
                 onRevealComplete: { hasRevealedLaunchWordmark = true }
             )
         } else {
@@ -922,6 +936,9 @@ struct RootView: View {
         .onChange(of: services.socialAuth.authState) { _, _ in
             Task {
                 await services.socialPush.updateRegistrationState()
+                if services.socialAuth.isSignedIn {
+                    await services.restoreCloudBackupAfterSignIn(modelContext: modelContext)
+                }
             }
         }
         .onOpenURL { url in

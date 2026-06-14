@@ -165,6 +165,61 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
     }
 }
 
+/// Environment-free thumbnail for card grids.
+/// iOS 26 corrupts the attribute graph when `@Environment` is read during
+/// `ForEach` / dynamic-container update passes (see `CardGridCell`).
+struct GridCardThumbnailImage: View {
+    private let url: URL?
+    private let localURL: URL?
+    private let reloadToken: String
+    private let targetSize: CGSize?
+
+    @State private var loader = ImageLoader()
+
+    init(
+        url: URL?,
+        localURL: URL? = nil,
+        reloadToken: String = "",
+        targetSize: CGSize? = BindrImageSizing.cardGridThumbnail
+    ) {
+        self.url = url
+        self.localURL = localURL
+        self.reloadToken = reloadToken
+        self.targetSize = targetSize
+    }
+
+    private var taskID: String {
+        "\(url?.absoluteString ?? "")|\(reloadToken)"
+    }
+
+    private var hasRenderableImage: Bool {
+        guard let ui = loader.image else { return false }
+        guard ui.size.width.isFinite, ui.size.height.isFinite else { return false }
+        guard ui.size.width > 0, ui.size.height > 0 else { return false }
+        if let cg = ui.cgImage {
+            guard cg.width > 0, cg.height > 0 else { return false }
+        }
+        return true
+    }
+
+    var body: some View {
+        Group {
+            if hasRenderableImage, let ui = loader.image {
+                Image(uiImage: ui)
+                    .resizable()
+                    .scaledToFit()
+                    .bindrRasterizedForDisplay()
+            } else {
+                Color.gray.opacity(0.12)
+                    .aspectRatio(5 / 7, contentMode: .fit)
+            }
+        }
+        .task(id: taskID) {
+            await loader.load(url: url, localURL: localURL, targetSize: targetSize)
+        }
+    }
+}
+
 /// Stable, non-generic thumbnail loader for card grids.
 /// Avoids closure-based image rendering in high-churn LazyVGrid paths.
 struct CachedCardThumbnailImage: View {

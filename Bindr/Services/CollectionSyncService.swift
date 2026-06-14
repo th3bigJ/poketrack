@@ -2,8 +2,15 @@ import Foundation
 import Observation
 import SwiftData
 
-/// Uploads the signed-in user's full library snapshot to R2 via the collection-sync
-/// Cloudflare Worker, and fetches snapshots for friends when building trades.
+/// Publishes library snapshots to R2 and reads friends' snapshots for social features.
+///
+/// **Two roles, one R2 file per user:**
+/// - **Social + backup (automatic upload)** — Friends/trades read your snapshot via GET.
+///   Your library uploads on a debounce whenever it changes. This is your account backup.
+/// - **Restore (R2)** — After reinstall or on demand, `restoreFromCloudBackupIfNeeded`
+///   replaces the local library from your published snapshot.
+///
+/// **Bindr Cloud (R2)** — full library backup, app preferences, restore, and friend trade snapshots.
 @Observable
 @MainActor
 final class CollectionSyncService {
@@ -140,6 +147,7 @@ final class CollectionSyncService {
         defer { isUploading = false }
 
         do {
+            try CollectionLibraryDedup.consolidateDuplicateStacks(in: ctx)
             let snapshot = try UserLibraryBackupCodec.build(userID: userID, modelContext: ctx)
             guard force || snapshot.hasAnyData else {
                 lastUploadError = "Nothing to back up yet."

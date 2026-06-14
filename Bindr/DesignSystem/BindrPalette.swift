@@ -41,4 +41,16 @@ enum BindrPalette {
     /// Errors, destructive confirmation, alert badges, friend-removal CTA.
     /// (Replaces hardcoded `Color(hex: "E05252")`.)
     static let alertRed = Color(hex: "E05252")
+
+    /// Social feed canvas — cool light grey behind white post cards.
+    static let feedSurface = Color(hex: "F5F5F7")
+
+    /// Hairline border around feed post cards in light mode.
+    static let feedCardBorder = Color(hex: "E5E5EA")
+
+    /// Hashtag pill background on feed posts.
+    static let feedTagBackground = Color(hex: "EFEFF4")
+
+    /// Deck badge + card-count chip in the social feed.
+    static let feedDeckPurple = Color(hex: "8B5CF6")
 }

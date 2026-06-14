@@ -177,6 +177,10 @@ struct DashboardView: View {
         colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
     }
 
+    private var dashboardTileBackground: Color {
+        colorScheme == .dark ? dashboardCardInsetBackground : .white
+    }
+
     private var dashboardBorder: Color {
         colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
     }
@@ -889,7 +893,7 @@ struct DashboardView: View {
         VStack(alignment: .leading, spacing: 10) {
             ZStack {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(dashboardCardInsetBackground)
+                    .fill(dashboardTileBackground)
 
                 if let imageURL = release.imageURL {
                     CachedAsyncImage(
@@ -979,7 +983,7 @@ struct DashboardView: View {
             .padding(.vertical, 10)
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(dashboardCardInsetBackground)
+                    .fill(dashboardTileBackground)
                     .overlay(
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                             .stroke(dashboardBorder.opacity(0.6), lineWidth: 1)
@@ -1003,7 +1007,7 @@ struct DashboardView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 10)
         .padding(.horizontal, 12)
-        .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .background(dashboardTileBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)

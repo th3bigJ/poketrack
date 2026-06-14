@@ -4,8 +4,9 @@ import SwiftData
 /// Full user library snapshot stored at `user-collections/{userID}/collection.json`.
 /// Schema v1: top-level `collection` + `wishlist` only (trade friend previews).
 /// Schema v2: adds `library` with binders, decks, ledger, and value history.
+/// Schema v3: adds `preferences` (theme, currency, grid, filters, offline toggles).
 struct UserLibraryBackup: Codable {
-    static let currentSchemaVersion = 2
+    static let currentSchemaVersion = 3
 
     struct CardEntry: Codable {
         let cardID: String
@@ -238,6 +239,7 @@ struct UserLibraryBackup: Codable {
     let collection: [CardEntry]
     let wishlist: [WishlistEntry]
     let library: LibraryPayload?
+    let preferences: AppPreferencesBackup?
 
     init(
         schemaVersion: Int = UserLibraryBackup.currentSchemaVersion,
@@ -245,7 +247,8 @@ struct UserLibraryBackup: Codable {
         updatedAt: String,
         collection: [CardEntry],
         wishlist: [WishlistEntry],
-        library: LibraryPayload? = nil
+        library: LibraryPayload? = nil,
+        preferences: AppPreferencesBackup? = nil
     ) {
         self.schemaVersion = schemaVersion
         self.userID = userID
@@ -253,6 +256,7 @@ struct UserLibraryBackup: Codable {
         self.collection = collection
         self.wishlist = wishlist
         self.library = library
+        self.preferences = preferences
     }
 
     init(from decoder: Decoder) throws {
@@ -263,6 +267,17 @@ struct UserLibraryBackup: Codable {
         collection = try container.decodeIfPresent([CardEntry].self, forKey: .collection) ?? []
         wishlist = try container.decodeIfPresent([WishlistEntry].self, forKey: .wishlist) ?? []
         library = try container.decodeIfPresent(LibraryPayload.self, forKey: .library)
+        preferences = try container.decodeIfPresent(AppPreferencesBackup.self, forKey: .preferences)
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case schemaVersion
+        case userID
+        case updatedAt
+        case collection
+        case wishlist
+        case library
+        case preferences
     }
 
     var hasAnyData: Bool {
@@ -340,8 +355,9 @@ enum UserLibraryBackupCodec {
                 sealedStatus: item.sealedStatus
             )
         }
+        let consolidatedCollection = consolidateCollectionItemRecords(collectionRecords)
 
-        let legacyCollection: [UserLibraryBackup.CardEntry] = collectionItems.compactMap { item in
+        let legacyCollection: [UserLibraryBackup.CardEntry] = consolidatedCollection.records.compactMap { item in
             guard item.quantity > 0, !item.cardID.isEmpty else { return nil }
             return UserLibraryBackup.CardEntry(
                 cardID: item.cardID,
@@ -397,9 +413,11 @@ enum UserLibraryBackupCodec {
         }
 
         let costLotRecords = costLots.map { lot in
-            UserLibraryBackup.CostLotRecord(
+            let rawExportID = lot.collectionItem.flatMap { exportIDByCollectionItem[ObjectIdentifier($0)] }
+            let mappedExportID = rawExportID.flatMap { consolidatedCollection.exportIDRemap[$0] ?? $0 }
+            return UserLibraryBackup.CostLotRecord(
                 id: lot.id,
-                collectionItemExportID: lot.collectionItem.flatMap { exportIDByCollectionItem[ObjectIdentifier($0)] },
+                collectionItemExportID: mappedExportID,
                 sourceLedgerLineID: lot.sourceLedgerLine?.id,
                 quantityRemaining: lot.quantityRemaining,
                 unitCost: lot.unitCost,
@@ -527,7 +545,7 @@ enum UserLibraryBackupCodec {
         }
 
         let library = UserLibraryBackup.LibraryPayload(
-            collectionItems: collectionRecords,
+            collectionItems: consolidatedCollection.records,
             wishlistItems: wishlistRecords,
             ledgerLines: ledgerRecords,
             costLots: costLotRecords,
@@ -546,7 +564,8 @@ enum UserLibraryBackupCodec {
             updatedAt: encodeDate(Date()),
             collection: legacyCollection,
             wishlist: legacyWishlist,
-            library: library
+            library: library,
+            preferences: AppPreferencesBackup.capture()
         )
     }
 
@@ -560,11 +579,18 @@ enum UserLibraryBackupCodec {
             try clearLibrary(modelContext: modelContext)
         }
 
+        let restoredCount: Int
         if let library = snapshot.library, snapshot.schemaVersion >= 2 {
-            return try applyFullLibrary(library, modelContext: modelContext)
+            restoredCount = try applyFullLibrary(library, modelContext: modelContext)
+        } else {
+            restoredCount = try applyLegacySnapshot(snapshot, modelContext: modelContext)
         }
 
-        return try applyLegacySnapshot(snapshot, modelContext: modelContext)
+        if let preferences = snapshot.preferences, !preferences.isEmpty {
+            preferences.apply()
+        }
+
+        return restoredCount
     }
 
     static func localLibraryIsEmpty(_ modelContext: ModelContext) -> Bool {
@@ -601,18 +627,30 @@ enum UserLibraryBackupCodec {
     ) throws -> Int {
         var restoredCards = 0
         let restoreDate = Date()
+        var mergedByKey: [String: Int] = [:]
+        var variantByCard: [String: String] = [:]
 
         for entry in snapshot.collection where entry.qty > 0 && !entry.cardID.isEmpty {
+            let variantKey = entry.variantKey.isEmpty ? "normal" : entry.variantKey
+            let key = "\(entry.cardID)\u{1F}\(variantKey)"
+            mergedByKey[key, default: 0] += entry.qty
+            variantByCard[key] = variantKey
+        }
+
+        for (key, qty) in mergedByKey {
+            let cardID = key.split(separator: "\u{1F}", maxSplits: 1).first.map(String.init) ?? ""
+            guard !cardID.isEmpty else { continue }
+            let variantKey = variantByCard[key] ?? "normal"
             let item = CollectionItem(
-                cardID: entry.cardID,
-                variantKey: entry.variantKey.isEmpty ? "normal" : entry.variantKey,
+                cardID: cardID,
+                variantKey: variantKey,
                 dateAcquired: restoreDate,
                 purchasePrice: nil,
-                quantity: entry.qty,
+                quantity: qty,
                 notes: "Restored from cloud backup"
             )
             modelContext.insert(item)
-            restoredCards += entry.qty
+            restoredCards += qty
         }
 
         let existingWishlist = try modelContext.fetch(FetchDescriptor<WishlistItem>())
@@ -648,7 +686,8 @@ enum UserLibraryBackupCodec {
         var binderByID: [UUID: Binder] = [:]
         var deckByID: [UUID: Deck] = [:]
 
-        for record in library.collectionItems where record.quantity > 0 && !record.cardID.isEmpty {
+        let consolidated = consolidateCollectionItemRecords(library.collectionItems)
+        for record in consolidated.records where record.quantity > 0 && !record.cardID.isEmpty {
             let item = CollectionItem(
                 cardID: record.cardID,
                 variantKey: record.variantKey.isEmpty ? "normal" : record.variantKey,
@@ -696,13 +735,14 @@ enum UserLibraryBackupCodec {
         }
 
         for record in library.costLots {
+            let mappedExportID = record.collectionItemExportID.flatMap { consolidated.exportIDRemap[$0] ?? $0 }
             let lot = CostLot(
                 id: record.id,
                 quantityRemaining: record.quantityRemaining,
                 unitCost: record.unitCost,
                 currencyCode: record.currencyCode,
                 createdAt: decodeDate(record.createdAt),
-                collectionItem: record.collectionItemExportID.flatMap { collectionItemByExportID[$0] },
+                collectionItem: mappedExportID.flatMap { collectionItemByExportID[$0] },
                 sourceLedgerLine: record.sourceLedgerLineID.flatMap { ledgerLineByID[$0] }
             )
             modelContext.insert(lot)
@@ -852,5 +892,60 @@ enum UserLibraryBackupCodec {
 
         try modelContext.save()
         return restoredCards
+    }
+
+    /// Collapses duplicate rows in an R2 snapshot before restore or upload.
+    private static func consolidateCollectionItemRecords(
+        _ records: [UserLibraryBackup.CollectionItemRecord]
+    ) -> (records: [UserLibraryBackup.CollectionItemRecord], exportIDRemap: [UUID: UUID]) {
+        var canonicalByKey: [String: UserLibraryBackup.CollectionItemRecord] = [:]
+        var exportIDRemap: [UUID: UUID] = [:]
+
+        for record in records where record.quantity > 0 && !record.cardID.isEmpty {
+            let key = collectionRecordStackKey(record)
+            if let existing = canonicalByKey[key] {
+                exportIDRemap[record.exportID] = existing.exportID
+                canonicalByKey[key] = UserLibraryBackup.CollectionItemRecord(
+                    exportID: existing.exportID,
+                    cardID: existing.cardID,
+                    variantKey: existing.variantKey,
+                    dateAcquired: min(existing.dateAcquired, record.dateAcquired),
+                    purchasePrice: existing.purchasePrice ?? record.purchasePrice,
+                    quantity: existing.quantity + record.quantity,
+                    notes: mergedNotes(existing.notes, record.notes),
+                    itemKind: existing.itemKind,
+                    gradingCompany: existing.gradingCompany,
+                    grade: existing.grade,
+                    certNumber: existing.certNumber,
+                    sealedProductId: existing.sealedProductId,
+                    sealedStatus: existing.sealedStatus
+                )
+            } else {
+                canonicalByKey[key] = record
+            }
+        }
+
+        return (Array(canonicalByKey.values), exportIDRemap)
+    }
+
+    private static func collectionRecordStackKey(_ record: UserLibraryBackup.CollectionItemRecord) -> String {
+        [
+            record.itemKind,
+            record.cardID,
+            record.variantKey.isEmpty ? "normal" : record.variantKey,
+            record.gradingCompany ?? "",
+            record.grade ?? "",
+            record.certNumber ?? "",
+            record.sealedProductId ?? "",
+            record.sealedStatus ?? "",
+        ].joined(separator: "\u{1F}")
+    }
+
+    private static func mergedNotes(_ lhs: String, _ rhs: String) -> String {
+        let left = lhs.trimmingCharacters(in: .whitespacesAndNewlines)
+        let right = rhs.trimmingCharacters(in: .whitespacesAndNewlines)
+        if left.isEmpty { return right }
+        if right.isEmpty || left == right { return left }
+        return "\(left)\n\(right)"
     }
 }
