@@ -831,45 +831,102 @@ struct DashboardView: View {
     }
 
     private var collectionSummaryInsightCard: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            Text("Collection Summary")
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(dashboardPrimaryText)
+        VStack(alignment: .leading, spacing: 16) {
+            Text("COLLECTION OVERVIEW")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(dashboardSecondaryText)
+                .tracking(0.6)
 
-            HStack(spacing: 8) {
-                insightMetricTile(
-                    icon: "square.stack.3d.up.fill",
-                    iconColor: DashboardPalette.purple,
-                    value: "\(totalCardsCount)",
-                    label: "Total Cards",
-                    action: onOpenCollection
-                )
+            HStack(alignment: .center, spacing: 0) {
+                Button {
+                    onOpenCollection?()
+                } label: {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(formatCollectionCount(totalCardsCount))
+                            .font(.system(size: 36, weight: .bold, design: .rounded))
+                            .foregroundStyle(DashboardPalette.purple)
+                            .minimumScaleFactor(0.65)
+                            .lineLimit(1)
 
-                insightMetricTile(
-                    icon: "rectangle.stack.fill",
-                    iconColor: DashboardPalette.blue,
-                    value: "\(uniqueCardsCount)",
-                    label: "Unique",
-                    action: onOpenCollection
-                )
+                        Text("Total Cards")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(dashboardPrimaryText)
+                    }
+                }
+                .buttonStyle(DashboardPressStyle())
+                .disabled(onOpenCollection == nil)
 
-                insightMetricTile(
-                    icon: "shippingbox.fill",
-                    iconColor: DashboardPalette.success,
-                    value: "\(sealedProductsCount)",
-                    label: "Sealed",
-                    action: onOpenSealedProducts
-                )
+                Rectangle()
+                    .fill(dashboardBorder.opacity(colorScheme == .dark ? 0.35 : 0.55))
+                    .frame(width: 1, height: 72)
+                    .padding(.horizontal, 14)
 
-                insightMetricTile(
-                    icon: "star.fill",
-                    iconColor: DashboardPalette.gold,
-                    value: "\(wishlistedCardsCount)",
-                    label: "Wishlisted",
-                    action: onOpenWishlist
-                )
+                HStack(spacing: 0) {
+                    collectionOverviewStatColumn(
+                        icon: "rectangle.stack.fill",
+                        iconColor: DashboardPalette.blue,
+                        count: uniqueCardsCount,
+                        label: "Unique",
+                        action: onOpenCollection
+                    )
+
+                    collectionOverviewStatColumn(
+                        icon: "shippingbox.fill",
+                        iconColor: DashboardPalette.success,
+                        count: sealedProductsCount,
+                        label: "Sealed",
+                        action: onOpenSealedProducts
+                    )
+
+                    collectionOverviewStatColumn(
+                        icon: "star.fill",
+                        iconColor: DashboardPalette.gold,
+                        count: wishlistedCardsCount,
+                        label: "Wishlist",
+                        action: onOpenWishlist
+                    )
+                }
+                .frame(maxWidth: .infinity)
             }
         }
+    }
+
+    private func collectionOverviewStatColumn(
+        icon: String,
+        iconColor: Color,
+        count: Int,
+        label: String,
+        action: (() -> Void)?
+    ) -> some View {
+        Button {
+            action?()
+        } label: {
+            VStack(spacing: 6) {
+                Image(systemName: icon)
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(iconColor)
+
+                Text(formatCollectionCount(count))
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(1)
+
+                Text(label)
+                    .font(.caption)
+                    .foregroundStyle(dashboardSecondaryText)
+            }
+            .frame(maxWidth: .infinity)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(DashboardPressStyle())
+        .disabled(action == nil)
+    }
+
+    private func formatCollectionCount(_ count: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: count)) ?? "\(count)"
     }
 
     private var upcomingReleasesSection: some View {
@@ -954,74 +1011,17 @@ struct DashboardView: View {
         .accessibilityLabel("\(release.name), \(release.type), releases \(release.releaseDateAccessibilityLabel)")
     }
 
-    private func insightMetricTile(
-        icon: String,
-        iconColor: Color,
-        value: String,
-        label: String,
-        action: (() -> Void)?
-    ) -> some View {
-        Button {
-            action?()
-        } label: {
-            VStack(spacing: 8) {
-                Image(systemName: icon)
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(iconColor)
-                Text(value)
-                    .font(.title3.weight(.bold))
-                    .foregroundStyle(dashboardPrimaryText)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.75)
-                Text(label)
-                    .font(.caption)
-                    .foregroundStyle(dashboardSecondaryText)
-                    .multilineTextAlignment(.center)
-            }
-            .frame(maxWidth: .infinity, minHeight: 104)
-            .padding(.horizontal, 8)
-            .padding(.vertical, 10)
-            .background(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(dashboardTileBackground)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(dashboardBorder.opacity(0.6), lineWidth: 1)
-                    )
-            )
-        }
-        .buttonStyle(DashboardPressStyle())
-        .disabled(action == nil)
-    }
-
-
-    private func trendCell(title: String, value: Double?) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(dashboardSecondaryText)
-            Text(formatTrendPercent(value))
-                .font(.title3.weight(.bold))
-                .foregroundStyle(trendColor(value))
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, 10)
-        .padding(.horizontal, 12)
-        .background(dashboardTileBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
-        )
-    }
-
     private func marketTrendCard(trend: MarketTrendMetrics, updatedAt: Date?) -> some View {
         dashboardCard {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 16) {
                 HStack(alignment: .firstTextBaseline) {
-                    Text("Market Trend")
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(dashboardPrimaryText)
-                    Spacer()
+                    Text("MARKET TREND")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(dashboardSecondaryText)
+                        .tracking(0.6)
+
+                    Spacer(minLength: 8)
+
                     if let updatedAt {
                         Text(updatedAt.formatted(date: .abbreviated, time: .shortened))
                             .font(.caption)
@@ -1029,14 +1029,73 @@ struct DashboardView: View {
                     }
                 }
 
-                HStack(spacing: 10) {
-                    trendCell(title: "31D", value: trend.change31Days)
-                    trendCell(title: "7D", value: trend.change7Days)
-                    trendCell(title: "1D", value: trend.change1Day)
-                }
+                HStack(alignment: .center, spacing: 0) {
+                    marketTrendPrimaryColumn(
+                        value: trend.change31Days,
+                        label: "Last 31 Days"
+                    )
 
+                    marketTrendDivider
+
+                    marketTrendSecondaryColumn(
+                        value: trend.change7Days,
+                        label: "7 Days"
+                    )
+
+                    marketTrendDivider
+
+                    marketTrendSecondaryColumn(
+                        value: trend.change1Day,
+                        label: "1 Day"
+                    )
+                }
             }
         }
+    }
+
+    private var marketTrendDivider: some View {
+        Rectangle()
+            .fill(dashboardBorder.opacity(colorScheme == .dark ? 0.35 : 0.55))
+            .frame(width: 1, height: 52)
+            .padding(.horizontal, 12)
+    }
+
+    private func marketTrendPrimaryColumn(value: Double?, label: String) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(formatTrendPercent(value))
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundStyle(trendColor(value))
+                .minimumScaleFactor(0.65)
+                .lineLimit(1)
+
+            Text(label)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func marketTrendSecondaryColumn(value: Double?, label: String) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(spacing: 4) {
+                if let value, value != 0 {
+                    Image(systemName: value > 0 ? "arrow.up" : "arrow.down")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(trendColor(value))
+                }
+
+                Text(formatTrendPercent(value))
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(trendColor(value))
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(1)
+            }
+
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(dashboardSecondaryText)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var recentActivityCard: some View {
