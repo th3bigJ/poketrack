@@ -1620,6 +1620,8 @@ private struct BinderCardViewer: View {
     let onViewDetails: () -> Void
     let onDismiss: () -> Void
 
+    @Environment(\.bindrAccent) private var bindrAccent
+    @Environment(\.colorScheme) private var colorScheme
     @State private var offset: CGSize = .zero
     @State private var rotation: Double = 0
     @State private var opacity: Double = 1
@@ -1635,40 +1637,105 @@ private struct BinderCardViewer: View {
 
     var body: some View {
         ZStack {
-            Color.black.opacity(0.72 * opacity)
+            Color.black.opacity((colorScheme == .dark ? 0.78 : 0.64) * opacity)
                 .ignoresSafeArea()
                 .onTapGesture { dismiss() }
 
-            VStack(spacing: 18) {
-                CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 600, height: 840)) { img in
-                    img.resizable().scaledToFit()
-                } placeholder: {
-                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .fill(Color(uiColor: .systemGray4))
-                        .aspectRatio(5/7, contentMode: .fit)
-                        .overlay { ProgressView() }
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-                .shadow(color: .black.opacity(0.4), radius: 20, x: 0, y: 8)
+            RadialGradient(
+                colors: [
+                    bindrAccent.opacity(colorScheme == .dark ? 0.30 : 0.22),
+                    bindrAccent.opacity(colorScheme == .dark ? 0.12 : 0.08),
+                    .clear
+                ],
+                center: .center,
+                startRadius: 20,
+                endRadius: 380
+            )
+            .ignoresSafeArea()
+            .opacity(opacity)
 
-                Button {
-                    onViewDetails()
-                } label: {
-                    Label("View Card Details", systemImage: "info.circle.fill")
-                        .font(.system(size: 15, weight: .bold))
+            VStack(spacing: 16) {
+                HStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: 3) {
+                        Text(card.cardName)
+                            .font(.system(size: 20, weight: .heavy, design: .rounded))
+                            .foregroundStyle(.white)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.75)
+                        Text("Binder card")
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(.white.opacity(0.58))
+                            .textCase(.uppercase)
+                            .tracking(1.4)
+                    }
+
+                    Spacer(minLength: 12)
+
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 14, weight: .bold))
+                            .foregroundStyle(.white)
+                            .frame(width: 40, height: 40)
+                            .background(.ultraThinMaterial, in: Circle())
+                            .overlay {
+                                Circle()
+                                    .stroke(Color.white.opacity(0.22), lineWidth: 1)
+                            }
+                    }
+                    .buttonStyle(.plain)
+                }
+
+                VStack(spacing: 14) {
+                    CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 650, height: 910)) { img in
+                        img.resizable().scaledToFit()
+                    } placeholder: {
+                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                            .fill(Color(uiColor: .systemGray4))
+                            .aspectRatio(5/7, contentMode: .fit)
+                            .overlay { ProgressView().tint(.white) }
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                            .stroke(Color.white.opacity(0.30), lineWidth: 1)
+                    }
+                    .shadow(color: bindrAccent.opacity(0.22), radius: 26, x: 0, y: 8)
+                    .shadow(color: .black.opacity(0.45), radius: 24, x: 0, y: 14)
+
+                    Button {
+                        onViewDetails()
+                    } label: {
+                        HStack(spacing: 10) {
+                            Image(systemName: "info.circle.fill")
+                                .font(.system(size: 16, weight: .bold))
+                            Text("View Card Details")
+                                .font(.system(size: 16, weight: .heavy, design: .rounded))
+                        }
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 13)
-                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                .stroke(Color.white.opacity(0.24), lineWidth: 1)
+                        .padding(.vertical, 15)
+                        .background {
+                            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                .bindrAccentFill(bindrAccent, logoOpacity: 0.96)
                         }
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                .stroke(Color.white.opacity(0.28), lineWidth: 1)
+                        }
+                        .shadow(color: bindrAccent.opacity(0.28), radius: 14, x: 0, y: 6)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .buttonStyle(.plain)
-                .padding(.horizontal, 6)
+                .padding(12)
+                .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                        .stroke(Color.white.opacity(0.18), lineWidth: 1)
+                }
             }
-            .padding(.horizontal, 32)
+            .padding(.horizontal, 24)
             .offset(offset)
             .rotationEffect(.degrees(rotation))
             .opacity(opacity)

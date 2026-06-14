@@ -591,11 +591,6 @@ struct BinderOpenContainer: View {
     /// changes during the header / stats-bar chrome reveal from shifting
     /// the close-morph destination mid-animation.
     @State private var stablePageFrame: CGRect = .zero
-    /// Opening-only flourish for the special Bindr gradient binder colour.
-    /// Kept local to the morphing overlay so it rides with the cover.
-    @State private var openingSparkVisible = false
-    @State private var openingSparkExpanded = false
-    @State private var openingSparkID = 0
 
     /// Spring used for both the opening morph and the closing collapse.
     /// Critical damping (1.0) so the cover arrives at its destination with
@@ -723,8 +718,6 @@ struct BinderOpenContainer: View {
                 )
                 .opacity(coverOpacity)
                 .allowsHitTesting(false)
-
-                openingSparkLayer(rootGeo: rootGeo)
             }
             .ignoresSafeArea(.all)
             // Free-scroll layouts don't host a ``PageCurlView`` and so never
@@ -838,8 +831,6 @@ struct BinderOpenContainer: View {
             coverCenter = sourceCenter
             coverOpacity = 1
             liftIntensity = 0
-            openingSparkVisible = false
-            openingSparkExpanded = false
         }
 
         // Reduce-Motion path: the morph itself becomes a quick
@@ -869,7 +860,6 @@ struct BinderOpenContainer: View {
             // than a 16 ms sleep on variable-refresh-rate displays.
             await Task.yield()
             await MainActor.run {
-                playOpeningSparkIfNeeded()
                 withAnimation(morphAnimation) {
                     coverScale = 1.0
                     coverCenter = pageCenter
@@ -942,8 +932,6 @@ struct BinderOpenContainer: View {
             detailOpacity = 0
             breathingScale = 1.0
             liftIntensity = 1
-            openingSparkVisible = false
-            openingSparkExpanded = false
             isClosing = true
         }
 
@@ -999,150 +987,5 @@ struct BinderOpenContainer: View {
                 onDismissComplete()
             }
         }
-    }
-
-    private func playOpeningSparkIfNeeded() {
-        guard binder.colour == BinderColourPalette.logoColourName else { return }
-        let nextSparkID = openingSparkID + 1
-        openingSparkID = nextSparkID
-        openingSparkVisible = true
-        openingSparkExpanded = false
-
-        if reduceMotion {
-            withAnimation(.easeOut(duration: 0.28)) {
-                openingSparkExpanded = true
-            }
-        } else {
-            withAnimation(.spring(response: 0.55, dampingFraction: 0.86)) {
-                openingSparkExpanded = true
-            }
-        }
-
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(reduceMotion ? 360 : 760))
-            guard openingSparkID == nextSparkID else { return }
-            withAnimation(.easeOut(duration: 0.18)) {
-                openingSparkVisible = false
-            }
-        }
-    }
-
-    @ViewBuilder
-    private func openingSparkLayer(rootGeo: GeometryProxy) -> some View {
-        if openingSparkVisible && binder.colour == BinderColourPalette.logoColourName {
-            BinderOpeningSparkOverlay(
-                isExpanded: openingSparkExpanded,
-                reduceMotion: reduceMotion
-            )
-            .id(openingSparkID)
-            .frame(
-                width: max(coverTargetFrame.width, 1),
-                height: max(coverTargetFrame.height, 1)
-            )
-            .scaleEffect(coverScale * breathingScale, anchor: .center)
-            .position(
-                x: coverCenter.x - rootGeo.frame(in: .named("bindersRoot")).origin.x,
-                y: coverCenter.y - rootGeo.frame(in: .named("bindersRoot")).origin.y
-            )
-            .allowsHitTesting(false)
-            .transition(.opacity)
-            .zIndex(2)
-        }
-    }
-}
-
-private struct BinderOpeningSparkOverlay: View {
-    let isExpanded: Bool
-    let reduceMotion: Bool
-
-    var body: some View {
-        GeometryReader { proxy in
-            let lineWidth = max(3, proxy.size.width * 0.018)
-            ZStack {
-                if reduceMotion {
-                    ShootingStarTrail(progress: 0.82)
-                        .stroke(
-                            BinderColourPalette.logoGradient,
-                            style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round)
-                        )
-                        .shadow(color: BinderColourPalette.logoBaseColor.opacity(0.35), radius: 8)
-                        .opacity(isExpanded ? 0 : 0.7)
-                } else {
-                    ShootingStarTrail(progress: isExpanded ? 1 : 0.08)
-                        .stroke(
-                            BinderColourPalette.logoGradient,
-                            style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round)
-                        )
-                        .shadow(color: BinderColourPalette.logoBaseColor.opacity(0.45), radius: 10)
-                        .shadow(color: Color.pink.opacity(0.26), radius: 14)
-                        .opacity(isExpanded ? 0.95 : 0)
-
-                    ShootingStarHead()
-                        .fill(.white)
-                        .frame(width: lineWidth * 3.6, height: lineWidth * 3.6)
-                        .shadow(color: .white.opacity(0.8), radius: 6)
-                        .shadow(color: Color.pink.opacity(0.55), radius: 12)
-                        .position(headPosition(in: proxy.size))
-                        .scaleEffect(isExpanded ? 1 : 0.2)
-                        .opacity(isExpanded ? 1 : 0)
-                }
-            }
-        }
-        .compositingGroup()
-    }
-
-    private func headPosition(in size: CGSize) -> CGPoint {
-        let progress = isExpanded ? 1.0 : 0.08
-        let start = CGPoint(x: size.width * -0.08, y: size.height * 0.66)
-        let control1 = CGPoint(x: size.width * 0.22, y: size.height * 0.88)
-        let control2 = CGPoint(x: size.width * 0.82, y: size.height * 0.05)
-        let end = CGPoint(x: size.width * 1.08, y: size.height * 0.32)
-        return cubicPoint(progress: progress, start: start, control1: control1, control2: control2, end: end)
-    }
-
-    private func cubicPoint(progress: Double, start: CGPoint, control1: CGPoint, control2: CGPoint, end: CGPoint) -> CGPoint {
-        let t = CGFloat(progress)
-        let mt = 1 - t
-        return CGPoint(
-            x: mt * mt * mt * start.x + 3 * mt * mt * t * control1.x + 3 * mt * t * t * control2.x + t * t * t * end.x,
-            y: mt * mt * mt * start.y + 3 * mt * mt * t * control1.y + 3 * mt * t * t * control2.y + t * t * t * end.y
-        )
-    }
-}
-
-private struct ShootingStarTrail: Shape {
-    var progress: Double
-
-    var animatableData: Double {
-        get { progress }
-        set { progress = newValue }
-    }
-
-    func path(in rect: CGRect) -> Path {
-        let start = CGPoint(x: rect.minX - rect.width * 0.08, y: rect.minY + rect.height * 0.66)
-        let control1 = CGPoint(x: rect.minX + rect.width * 0.22, y: rect.minY + rect.height * 0.88)
-        let control2 = CGPoint(x: rect.minX + rect.width * 0.82, y: rect.minY + rect.height * 0.05)
-        let end = CGPoint(x: rect.maxX + rect.width * 0.08, y: rect.minY + rect.height * 0.32)
-
-        var fullPath = Path()
-        fullPath.move(to: start)
-        fullPath.addCurve(to: end, control1: control1, control2: control2)
-        return fullPath.trimmedPath(from: max(0, progress - 0.52), to: min(1, progress))
-    }
-}
-
-private struct ShootingStarHead: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: CGPoint(x: rect.midX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.midX + rect.width * 0.18, y: rect.midY - rect.height * 0.18))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.midY))
-        path.addLine(to: CGPoint(x: rect.midX + rect.width * 0.18, y: rect.midY + rect.height * 0.18))
-        path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: rect.midX - rect.width * 0.18, y: rect.midY + rect.height * 0.18))
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.midY))
-        path.addLine(to: CGPoint(x: rect.midX - rect.width * 0.18, y: rect.midY - rect.height * 0.18))
-        path.closeSubpath()
-        return path
     }
 }

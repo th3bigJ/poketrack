@@ -9,14 +9,14 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
 
     var id: String { rawValue }
 
-    /// Tabs that appear in the tab bar (5 tabs: Dashboard, Explore, Collect, Social, More).
+    /// Tabs that appear in the tab bar (5 tabs: Home, Explore, Collect, Social, More).
     static let visibleTabs: [AppTab] = [.dashboard, .browse, .collect, .social, .more]
 
     var title: String {
         switch self {
-        case .dashboard: return "Dashboard"
+        case .dashboard: return "Home"
         case .browse: return "Explore"
-        case .collect: return "Collection"
+        case .collect: return "Collect"
         case .social: return "Social"
         case .more: return "More"
         }

@@ -57,13 +57,7 @@ struct TactileBrandButtonStyle: ButtonStyle {
             .frame(height: 54)
             .background {
                 RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: [accent, accent.opacity(0.85)],
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        )
-                    )
+                    .bindrAccentFill(accent, logoOpacity: 0.96)
             }
             .shadow(color: accent.opacity(colorScheme == .dark ? 0.35 : 0.18), radius: 12, x: 0, y: 6)
             .opacity(disabled ? 0.5 : (configuration.isPressed ? 0.90 : 1.0))

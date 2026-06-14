@@ -119,7 +119,7 @@ struct PremiumUpgradeView: View {
                 HStack(spacing: BindrSpacing.md) {
                     Image(systemName: "checkmark")
                         .font(.system(size: 11, weight: .bold))
-                        .foregroundStyle(accent)
+                        .bindrAccentForeground(accent)
                     
                     Text("Premium badge")
                         .font(.system(size: 14, weight: .medium))
@@ -144,7 +144,7 @@ struct PremiumUpgradeView: View {
         HStack(spacing: BindrSpacing.md) {
             Image(systemName: "checkmark")
                 .font(.system(size: 11, weight: .bold))
-                .foregroundStyle(accent)
+                .bindrAccentForeground(accent)
             Text(label)
                 .font(.system(size: 14, weight: .medium))
                 .foregroundStyle(.primary)
@@ -211,7 +211,7 @@ struct PremiumUpgradeView: View {
                 if let subMeta {
                     Text(subMeta)
                         .font(.system(size: 11, weight: .bold))
-                        .foregroundStyle(accent)
+                        .bindrAccentForeground(accent)
                         .padding(.top, 2)
                 } else {
                     Spacer().frame(height: 16)
@@ -221,14 +221,22 @@ struct PremiumUpgradeView: View {
             .padding(.horizontal, BindrSpacing.sm)
             .frame(maxWidth: .infinity)
             .background {
-                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
-                    .fill(isSelected
-                          ? accent.opacity(colorScheme == .dark ? 0.14 : 0.08)
-                          : Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.04))
+                if isSelected {
+                    RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                        .bindrAccentFill(
+                            accent.opacity(colorScheme == .dark ? 0.14 : 0.08),
+                            logoOpacity: colorScheme == .dark ? 0.16 : 0.10
+                        )
+                } else {
+                    RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.04))
+                }
             }
             .overlay {
-                RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
-                    .stroke(isSelected ? accent : Color.clear, lineWidth: 2)
+                if isSelected {
+                    RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
+                        .bindrAccentStroke(accent, lineWidth: 2)
+                }
             }
             .overlay(alignment: .top) {
                 if let meta {
@@ -237,7 +245,10 @@ struct PremiumUpgradeView: View {
                         .foregroundStyle(.white)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
-                        .background(accent.gradient, in: Capsule())
+                        .background {
+                            Capsule()
+                                .bindrAccentFill(accent, logoOpacity: 0.96)
+                        }
                         .offset(y: -13) // Drawn ON TOP of the border stroke to cleanly mask the line
                 }
             }

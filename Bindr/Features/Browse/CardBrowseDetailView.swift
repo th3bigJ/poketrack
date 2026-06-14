@@ -115,6 +115,7 @@ private struct CardBrowseDetailPage: View {
     @State private var showWishlistAlert = false
     @State private var collectionSuccessSparkTrigger = 0
     @State private var wishlistSuccessSparkTrigger = 0
+    @State private var collectionAddSuccessPresentation: AddToCollectionSuccessPresentation?
     @State private var imageAppeared = false
     @State private var extractedAuraColors: [Color] = []
     @State private var auraSourceImageArea: CGFloat = 0
@@ -280,11 +281,8 @@ private struct CardBrowseDetailPage: View {
                 card: payload.card,
                 variantKey: payload.variantKey,
                 availableVariantKeys: payload.availableVariantKeys,
-                onSaved: {
-                    Task { @MainActor in
-                        try? await Task.sleep(for: .milliseconds(280))
-                        collectionSuccessSparkTrigger += 1
-                    }
+                onSaved: { context in
+                    scheduleCollectionAddSuccess(context)
                 }
             )
                 .environment(services)
@@ -303,6 +301,32 @@ private struct CardBrowseDetailPage: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(wishlistAlertMessage ?? "")
+        }
+        .overlay {
+            if let collectionAddSuccessPresentation {
+                AddToCollectionSuccessOverlay(presentation: collectionAddSuccessPresentation)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeOut(duration: 0.18), value: collectionAddSuccessPresentation?.id)
+    }
+
+    private func scheduleCollectionAddSuccess(_ context: AddToCollectionSuccessContext) {
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(360))
+            let presentation = await makeAddToCollectionSuccessPresentation(for: context, services: services)
+            collectionSuccessSparkTrigger += 1
+
+            withAnimation(.easeOut(duration: 0.18)) {
+                collectionAddSuccessPresentation = presentation
+            }
+
+            let activeID = presentation.id
+            try? await Task.sleep(for: .milliseconds(presentation.isSpecial ? 1_150 : 900))
+            guard collectionAddSuccessPresentation?.id == activeID else { return }
+            withAnimation(.easeOut(duration: 0.16)) {
+                collectionAddSuccessPresentation = nil
+            }
         }
     }
 

@@ -26,29 +26,35 @@ struct PremiumLineCardBadge: View {
     var fillBackground: Bool = true
 
     private var lineColor: Color { tint ?? accent }
+    private var usesThemeGradient: Bool { tint == nil }
 
     var body: some View {
         GeometryReader { geo in
             ZStack {
                 if fillBackground {
                     RoundedRectangle(cornerRadius: geo.size.width * 0.16, style: .continuous)
-                        .fill(lineColor.opacity(colorScheme == .dark ? 0.10 : 0.07))
+                        .bindrAccentFill(
+                            lineColor.opacity(colorScheme == .dark ? 0.10 : 0.07),
+                            usesLogoGradient: usesThemeGradient,
+                            logoOpacity: colorScheme == .dark ? 0.12 : 0.08
+                        )
                 }
 
                 RoundedRectangle(cornerRadius: geo.size.width * 0.16, style: .continuous)
-                    .stroke(lineColor, lineWidth: 1.5)
+                    .bindrAccentStroke(lineColor, lineWidth: 1.5, usesLogoGradient: usesThemeGradient)
 
                 // Inner top eyebrow line — small horizontal mark that
                 // mimics a card's title row.
                 VStack(spacing: geo.size.width * 0.05) {
                     Capsule()
-                        .fill(lineColor.opacity(0.55))
+                        .bindrAccentFill(
+                            lineColor.opacity(0.55),
+                            usesLogoGradient: usesThemeGradient,
+                            logoOpacity: 0.55
+                        )
                         .frame(width: geo.size.width * 0.32, height: 2)
 
-                    Text("PREMIUM")
-                        .font(.system(size: geo.size.width * 0.10, weight: .semibold, design: .rounded))
-                        .tracking(geo.size.width * 0.02)
-                        .foregroundStyle(lineColor)
+                    premiumEyebrow(width: geo.size.width)
 
                     BindrBrandLogoView(maxWidth: geo.size.width * 0.78)
                         .padding(.vertical, geo.size.width * 0.02)
@@ -57,5 +63,18 @@ struct PremiumLineCardBadge: View {
             }
         }
         .aspectRatio(110.0 / 140.0, contentMode: .fit)
+    }
+
+    @ViewBuilder
+    private func premiumEyebrow(width: CGFloat) -> some View {
+        let label = Text("PREMIUM")
+            .font(.system(size: width * 0.10, weight: .semibold, design: .rounded))
+            .tracking(width * 0.02)
+
+        if usesThemeGradient {
+            label.bindrAccentForeground(lineColor)
+        } else {
+            label.foregroundStyle(lineColor)
+        }
     }
 }

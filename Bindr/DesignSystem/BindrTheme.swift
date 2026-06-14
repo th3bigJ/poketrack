@@ -141,6 +141,25 @@ struct BindrAccentShapeFill<S: Shape>: View {
     }
 }
 
+struct BindrAccentShapeStroke<S: Shape>: View {
+    let shape: S
+    let fallback: Color
+    let lineWidth: CGFloat
+    let usesLogoGradient: Bool
+    let logoOpacity: Double
+
+    @Environment(AppServices.self) private var services: AppServices?
+
+    var body: some View {
+        if usesLogoGradient && services?.theme.isLogoThemeSelected == true {
+            shape.stroke(ThemeSettings.logoThemeGradient, lineWidth: lineWidth)
+                .opacity(logoOpacity)
+        } else {
+            shape.stroke(fallback, lineWidth: lineWidth)
+        }
+    }
+}
+
 struct BindrAccentForeground: ViewModifier {
     let fallback: Color
 
@@ -166,6 +185,21 @@ extension Shape {
         BindrAccentShapeFill(
             shape: self,
             fallback: fallback,
+            usesLogoGradient: usesLogoGradient,
+            logoOpacity: logoOpacity
+        )
+    }
+
+    func bindrAccentStroke(
+        _ fallback: Color,
+        lineWidth: CGFloat = 1,
+        usesLogoGradient: Bool = true,
+        logoOpacity: Double = 1
+    ) -> some View {
+        BindrAccentShapeStroke(
+            shape: self,
+            fallback: fallback,
+            lineWidth: lineWidth,
             usesLogoGradient: usesLogoGradient,
             logoOpacity: logoOpacity
         )

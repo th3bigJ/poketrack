@@ -19,10 +19,14 @@ struct LaunchProgressState: Equatable {
 final class _CAProgressBarView: UIView {
     private let trackLayer = CALayer()
     private let fillLayer = CALayer()
+    private let fillGradientLayer = CAGradientLayer()
     private let shimmerLayer = CAGradientLayer()
 
     var fillColor: UIColor = .systemBlue {
-        didSet { fillLayer.backgroundColor = fillColor.cgColor }
+        didSet { updateFillColors() }
+    }
+    var fillGradientColors: [UIColor] = [] {
+        didSet { updateFillColors() }
     }
     var trackColor: UIColor = UIColor.tertiarySystemFill {
         didSet { trackLayer.backgroundColor = trackColor.cgColor }
@@ -37,7 +41,12 @@ final class _CAProgressBarView: UIView {
     private func setup() {
         layer.addSublayer(trackLayer)
         trackLayer.addSublayer(fillLayer)
+        fillLayer.addSublayer(fillGradientLayer)
         fillLayer.addSublayer(shimmerLayer)
+        fillLayer.masksToBounds = true
+
+        fillGradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        fillGradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
 
         shimmerLayer.colors = [
             UIColor.clear.cgColor,
@@ -58,9 +67,16 @@ final class _CAProgressBarView: UIView {
         trackLayer.masksToBounds = true
         trackLayer.backgroundColor = trackColor.cgColor
         fillLayer.cornerRadius = r
-        fillLayer.backgroundColor = fillColor.cgColor
+        updateFillColors()
+        fillGradientLayer.frame = fillLayer.bounds
         shimmerLayer.frame = CGRect(x: 0, y: 0, width: bounds.width * 2, height: h)
         startShimmer()
+    }
+
+    private func updateFillColors() {
+        let colors = fillGradientColors.isEmpty ? [fillColor, fillColor] : fillGradientColors
+        fillGradientLayer.colors = colors.map(\.cgColor)
+        fillLayer.backgroundColor = colors.first?.cgColor ?? fillColor.cgColor
     }
 
     private var shimmerStarted = false
@@ -84,11 +100,13 @@ final class _CAProgressBarView: UIView {
             CATransaction.setAnimationDuration(0.4)
             CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: .easeOut))
             fillLayer.frame = CGRect(x: 0, y: 0, width: targetWidth, height: bounds.height)
+            fillGradientLayer.frame = fillLayer.bounds
             CATransaction.commit()
         } else {
             CATransaction.begin()
             CATransaction.setDisableActions(true)
             fillLayer.frame = CGRect(x: 0, y: 0, width: targetWidth, height: bounds.height)
+            fillGradientLayer.frame = fillLayer.bounds
             CATransaction.commit()
         }
     }
@@ -97,6 +115,7 @@ final class _CAProgressBarView: UIView {
 struct CAProgressBar: UIViewRepresentable {
     var fraction: Double
     var fillColor: Color
+    var fillGradientColors: [Color] = []
     var height: CGFloat = 6
 
     func makeUIView(context: Context) -> _CAProgressBarView {
@@ -108,6 +127,7 @@ struct CAProgressBar: UIViewRepresentable {
 
     func updateUIView(_ uiView: _CAProgressBarView, context: Context) {
         uiView.fillColor = UIColor(fillColor)
+        uiView.fillGradientColors = fillGradientColors.map { UIColor($0) }
         uiView.trackColor = UIColor(Color(uiColor: .tertiarySystemFill))
         uiView.setFraction(fraction, animated: true)
     }
@@ -477,7 +497,12 @@ struct LaunchWordmarkView: View {
 
                 if let progress {
                     VStack(spacing: 7) {
-                        CAProgressBar(fraction: progress.fraction, fillColor: launchBrandPrimary, height: 4)
+                        CAProgressBar(
+                            fraction: progress.fraction,
+                            fillColor: launchBrandPrimary,
+                            fillGradientColors: [launchBrandCyan, launchBrandSecondary, launchBrandPrimary],
+                            height: 4
+                        )
                             .frame(width: 220)
                             .clipShape(Capsule())
 

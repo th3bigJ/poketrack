@@ -42,7 +42,7 @@ struct AddToCollectionSheet: View {
 
     let card: Card
     let availableVariantKeys: [String]
-    var onSaved: (() -> Void)?
+    var onSaved: ((AddToCollectionSuccessContext) -> Void)?
 
     @State private var selectedVariantKey: String
     @State private var acquisitionKind: CollectionAcquisitionKind = .packed
@@ -52,7 +52,7 @@ struct AddToCollectionSheet: View {
         card: Card,
         variantKey: String,
         availableVariantKeys: [String] = ["normal"],
-        onSaved: (() -> Void)? = nil
+        onSaved: ((AddToCollectionSuccessContext) -> Void)? = nil
     ) {
         self.card = card
         self.availableVariantKeys = availableVariantKeys.isEmpty ? ["normal"] : availableVariantKeys
@@ -70,6 +70,7 @@ struct AddToCollectionSheet: View {
 
     @State private var errorMessage: String?
     @State private var showPaywall = false
+    @State private var isSaving = false
 
     private var currencyCode: String {
         switch services.priceDisplay.currency {
@@ -162,16 +163,19 @@ struct AddToCollectionSheet: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
+            .disabled(isSaving)
             .navigationTitle("Add to collection")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
                         .foregroundStyle(headerButtonColor)
+                        .disabled(isSaving)
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Add") { save() }
+                    Button(isSaving ? "Adding..." : "Add") { save() }
                         .foregroundStyle(headerButtonColor)
+                        .disabled(isSaving)
                 }
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
@@ -181,6 +185,7 @@ struct AddToCollectionSheet: View {
             }
         }
         .tint(headerButtonColor)
+        .interactiveDismissDisabled(isSaving)
         .sheet(isPresented: $showPaywall) {
             PaywallSheet().environment(services)
         }
@@ -239,104 +244,123 @@ struct AddToCollectionSheet: View {
         cardCondition == .graded ? "10" : nil
     }
 
+    @MainActor
     private func save() {
+        guard !isSaving else { return }
         errorMessage = nil
         guard let ledger = services.collectionLedger else {
             errorMessage = "Collection isn't ready. Try again."
             return
         }
 
+        isSaving = true
         do {
-            switch acquisitionKind {
-            case .bought:
-                let unit = try parseRequiredPrice(priceText)
-                try ledger.recordSingleCardAcquisition(
-                    cardID: card.masterCardId,
-                    variantKey: selectedVariantKey,
-                    kind: .bought,
-                    quantity: quantity,
-                    occurredAt: occurredAt,
-                    currencyCode: currencyCode,
-                    cardDisplayName: card.cardName,
-                    unitPrice: unit,
-                    gradingCompany: resolvedGradingCompany,
-                    grade: resolvedGrade,
-                    packedOpenedFrom: nil,
-                    tradeCounterparty: nil,
-                    tradeGaveAway: nil,
-                    giftFrom: nil,
-                    boughtFrom: nil
-                )
-            case .packed:
-                try ledger.recordSingleCardAcquisition(
-                    cardID: card.masterCardId,
-                    variantKey: selectedVariantKey,
-                    kind: .packed,
-                    quantity: quantity,
-                    occurredAt: occurredAt,
-                    currencyCode: currencyCode,
-                    cardDisplayName: card.cardName,
-                    unitPrice: nil,
-                    gradingCompany: resolvedGradingCompany,
-                    grade: resolvedGrade,
-                    packedOpenedFrom: nil,
-                    tradeCounterparty: nil,
-                    tradeGaveAway: nil,
-                    giftFrom: nil,
-                    boughtFrom: nil
-                )
-            case .gifted:
-                try ledger.recordSingleCardAcquisition(
-                    cardID: card.masterCardId,
-                    variantKey: selectedVariantKey,
-                    kind: .gifted,
-                    quantity: quantity,
-                    occurredAt: occurredAt,
-                    currencyCode: currencyCode,
-                    cardDisplayName: card.cardName,
-                    unitPrice: nil,
-                    gradingCompany: resolvedGradingCompany,
-                    grade: resolvedGrade,
-                    packedOpenedFrom: nil,
-                    tradeCounterparty: nil,
-                    tradeGaveAway: nil,
-                    giftFrom: nil,
-                    boughtFrom: nil
-                )
-            case .trade:
-                try ledger.recordSingleCardAcquisition(
-                    cardID: card.masterCardId,
-                    variantKey: selectedVariantKey,
-                    kind: .trade,
-                    quantity: quantity,
-                    occurredAt: occurredAt,
-                    currencyCode: currencyCode,
-                    cardDisplayName: card.cardName,
-                    unitPrice: nil,
-                    gradingCompany: resolvedGradingCompany,
-                    grade: resolvedGrade,
-                    packedOpenedFrom: nil,
-                    tradeCounterparty: nil,
-                    tradeGaveAway: nil,
-                    giftFrom: nil,
-                    boughtFrom: nil
-                )
-            case .imported:
-                break
-            }
-            onSaved?()
+            try recordAcquisition(using: ledger)
+            Haptics.success()
+            onSaved?(AddToCollectionSuccessContext(
+                card: card,
+                variantKey: selectedVariantKey,
+                variantLabel: variantLabel(selectedVariantKey),
+                gradeKey: cardCondition == .graded ? gradingCompany.priceGradeKey : "raw"
+            ))
             dismiss()
         } catch AddToCollectionValidation.missingPrice {
             errorMessage = "Enter a unit price."
+            isSaving = false
         } catch AddToCollectionValidation.invalidPrice {
             errorMessage = "Enter a valid unit price."
+            isSaving = false
         } catch CollectionLedgerError.freeTierLimitReached {
             errorMessage = CollectionLedgerError.freeTierLimitReached.errorDescription
             showPaywall = true
+            isSaving = false
         } catch {
             errorMessage = error.localizedDescription
+            isSaving = false
         }
     }
+
+    @MainActor
+    private func recordAcquisition(using ledger: CollectionLedgerService) throws {
+        switch acquisitionKind {
+        case .bought:
+            let unit = try parseRequiredPrice(priceText)
+            try ledger.recordSingleCardAcquisition(
+                cardID: card.masterCardId,
+                variantKey: selectedVariantKey,
+                kind: .bought,
+                quantity: quantity,
+                occurredAt: occurredAt,
+                currencyCode: currencyCode,
+                cardDisplayName: card.cardName,
+                unitPrice: unit,
+                gradingCompany: resolvedGradingCompany,
+                grade: resolvedGrade,
+                packedOpenedFrom: nil,
+                tradeCounterparty: nil,
+                tradeGaveAway: nil,
+                giftFrom: nil,
+                boughtFrom: nil
+            )
+        case .packed:
+            try ledger.recordSingleCardAcquisition(
+                cardID: card.masterCardId,
+                variantKey: selectedVariantKey,
+                kind: .packed,
+                quantity: quantity,
+                occurredAt: occurredAt,
+                currencyCode: currencyCode,
+                cardDisplayName: card.cardName,
+                unitPrice: nil,
+                gradingCompany: resolvedGradingCompany,
+                grade: resolvedGrade,
+                packedOpenedFrom: nil,
+                tradeCounterparty: nil,
+                tradeGaveAway: nil,
+                giftFrom: nil,
+                boughtFrom: nil
+            )
+        case .gifted:
+            try ledger.recordSingleCardAcquisition(
+                cardID: card.masterCardId,
+                variantKey: selectedVariantKey,
+                kind: .gifted,
+                quantity: quantity,
+                occurredAt: occurredAt,
+                currencyCode: currencyCode,
+                cardDisplayName: card.cardName,
+                unitPrice: nil,
+                gradingCompany: resolvedGradingCompany,
+                grade: resolvedGrade,
+                packedOpenedFrom: nil,
+                tradeCounterparty: nil,
+                tradeGaveAway: nil,
+                giftFrom: nil,
+                boughtFrom: nil
+            )
+        case .trade:
+            try ledger.recordSingleCardAcquisition(
+                cardID: card.masterCardId,
+                variantKey: selectedVariantKey,
+                kind: .trade,
+                quantity: quantity,
+                occurredAt: occurredAt,
+                currencyCode: currencyCode,
+                cardDisplayName: card.cardName,
+                unitPrice: nil,
+                gradingCompany: resolvedGradingCompany,
+                grade: resolvedGrade,
+                packedOpenedFrom: nil,
+                tradeCounterparty: nil,
+                tradeGaveAway: nil,
+                giftFrom: nil,
+                boughtFrom: nil
+            )
+        case .imported:
+            break
+        }
+    }
+
 }
 
 private enum AddToCollectionValidation: Error {
