@@ -50,7 +50,6 @@ struct UniversalSearchBar: View {
     @State private var filterMenuHapticSentForCurrentTouch = false
 
     /// Hairline on material fallback — `primary` adapts with light/dark (old fixed white stroke looked wrong on light mode).
-    private var glassStroke: Color { Color.primary.opacity(0.1) }
     private var filterTint: Color { .primary }
     private var leadingSymbolName: String { "chevron.left" }
 
@@ -90,10 +89,8 @@ struct UniversalSearchBar: View {
                             Image(systemName: leadingSymbolName)
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(.primary)
-                                .frame(width: 44, height: 44)
-                                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
+                                .searchBarCircleChrome()
                                 .contentTransition(.symbolEffect(.replace))
-                                .contentShape(Circle())
                         }
                         .buttonStyle(.plain)
                         .frame(width: 48, height: 48)
@@ -106,7 +103,7 @@ struct UniversalSearchBar: View {
                             .padding(.trailing, 8)
                             .frame(height: 44)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .glassEffect(.clear.tint(nil), in: Capsule())
+                            .searchFieldCapsuleChrome(darkGlass: .clear)
                             .transition(.move(edge: .leading).combined(with: .opacity))
 
                         cameraButtonLiquid
@@ -142,14 +139,8 @@ struct UniversalSearchBar: View {
                         Image(systemName: leadingSymbolName)
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(.primary)
-                            .frame(width: 44, height: 44)
-                            .background(.thinMaterial, in: Circle())
-                            .overlay {
-                                Circle()
-                                    .strokeBorder(glassStroke, lineWidth: 0.5)
-                            }
+                            .searchBarCircleChrome()
                             .contentTransition(.symbolEffect(.replace))
-                            .contentShape(Circle())
                     }
                     .buttonStyle(.plain)
                     .frame(width: 48, height: 48)
@@ -162,11 +153,7 @@ struct UniversalSearchBar: View {
                         .padding(.trailing, 8)
                         .frame(height: 44)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(.thinMaterial, in: Capsule())
-                        .overlay {
-                            Capsule()
-                                .strokeBorder(glassStroke, lineWidth: 0.5)
-                        }
+                        .searchFieldCapsuleChrome(darkGlass: .clear)
                         .transition(.move(edge: .leading).combined(with: .opacity))
 
                     cameraButtonFallback
@@ -203,9 +190,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
-                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
-                .contentShape(Circle())
+                                .searchBarCircleChrome()
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -224,13 +209,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
-                .background(.thinMaterial, in: Circle())
-                .overlay {
-                    Circle()
-                        .strokeBorder(glassStroke, lineWidth: 0.5)
-                }
-                .contentShape(Circle())
+                            .searchBarCircleChrome()
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -379,22 +358,14 @@ struct UniversalSearchBar: View {
         Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isFilterEnabled ? AnyShapeStyle(filterTint) : AnyShapeStyle(.secondary))
-            .frame(width: 44, height: 44)
-            .glassEffect(.clear.tint(nil).interactive(), in: Circle())
-            .contentShape(Circle())
+                                .searchBarCircleChrome()
     }
 
     private var filterGlyphFallback: some View {
         Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isFilterEnabled ? AnyShapeStyle(filterTint) : AnyShapeStyle(.secondary))
-            .frame(width: 44, height: 44)
-            .background(.thinMaterial, in: Circle())
-            .overlay {
-                Circle()
-                    .strokeBorder(glassStroke, lineWidth: 0.5)
-            }
-            .contentShape(Circle())
+                            .searchBarCircleChrome()
     }
 
     private func chromeMenuButton<Content: View>(
@@ -427,9 +398,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
-                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
-                .contentShape(Circle())
+                                .searchBarCircleChrome()
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -442,13 +411,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
-                .background(.thinMaterial, in: Circle())
-                .overlay {
-                    Circle()
-                        .strokeBorder(glassStroke, lineWidth: 0.5)
-                }
-                .contentShape(Circle())
+                            .searchBarCircleChrome()
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -465,9 +428,7 @@ struct UniversalSearchBar: View {
             Image(systemName: "camera.fill")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
-                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
-                .contentShape(Circle())
+                                .searchBarCircleChrome()
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -483,13 +444,7 @@ struct UniversalSearchBar: View {
             Image(systemName: "camera.fill")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
-                .background(.thinMaterial, in: Circle())
-                .overlay {
-                    Circle()
-                        .strokeBorder(glassStroke, lineWidth: 0.5)
-                }
-                .contentShape(Circle())
+                            .searchBarCircleChrome()
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -541,26 +496,8 @@ struct UniversalSearchBar: View {
 
 /// Same circle glyph treatment as ``ChromeGlassCircleButton`` (for `Menu` labels and other non-`Button` wrappers).
 struct ChromeGlassCircleGlyphModifier: ViewModifier {
-    private var glassStroke: Color { Color.primary.opacity(0.1) }
-
     func body(content: Content) -> some View {
-        Group {
-            if #available(iOS 26.0, *) {
-                content
-                    .frame(width: 44, height: 44)
-                    .glassEffect(.clear.tint(nil).interactive(), in: Circle())
-                    .contentShape(Circle())
-            } else {
-                content
-                    .frame(width: 44, height: 44)
-                    .background(.thinMaterial, in: Circle())
-                    .overlay {
-                        Circle()
-                            .strokeBorder(glassStroke, lineWidth: 0.5)
-                    }
-                    .contentShape(Circle())
-            }
-        }
+        content.searchBarCircleChrome()
     }
 }
 

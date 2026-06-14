@@ -5,7 +5,6 @@ struct BrowseInlineSearchField: View {
     let title: String
     @Binding var text: String
     private let trailingContent: AnyView?
-    @Environment(\.colorScheme) private var colorScheme
 
     init(title: String, text: Binding<String>) {
         self.title = title
@@ -45,40 +44,7 @@ struct BrowseInlineSearchField: View {
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 10)
-        .modifier(GlassSearchFieldModifier())
-    }
-}
-
-// MARK: - Glass search field background
-
-struct GlassSearchFieldModifier: ViewModifier {
-    @Environment(\.colorScheme) private var colorScheme
-
-    func body(content: Content) -> some View {
-        Group {
-            if #available(iOS 26.0, *) {
-                content
-                    .background(
-                        Capsule(style: .continuous)
-                            .fill(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.04))
-                    )
-                    .glassEffect(.regular.tint(nil).interactive(), in: Capsule(style: .continuous))
-                    .overlay(
-                        Capsule(style: .continuous)
-                            .stroke(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.12), lineWidth: 1)
-                    )
-            } else {
-                content
-                    .background(
-                        Capsule(style: .continuous)
-                            .fill(.thinMaterial)
-                    )
-                    .overlay(
-                        Capsule(style: .continuous)
-                            .stroke(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.1), lineWidth: 1)
-                    )
-            }
-        }
+        .searchFieldCapsuleChrome()
     }
 }
 

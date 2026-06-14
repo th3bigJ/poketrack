@@ -239,7 +239,7 @@ struct CardPricingPanel: View {
     // MARK: - Chip styles (system adaptive — matches Settings-style pills)
 
     private func chipBackground(selected: Bool) -> Color {
-        selected ? services.theme.accentColor : chipIdleBackground
+        selected ? services.theme.accentColor : BindrGlassStyle.insetFill(colorScheme)
     }
 
     private func chipForeground(selected: Bool) -> Color {
@@ -255,11 +255,7 @@ struct CardPricingPanel: View {
     }
 
     private var panelDivider: Color {
-        colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
-    }
-
-    private var chipIdleBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.04)
+        BindrGlassStyle.insetBorder(colorScheme)
     }
 
     // MARK: - Chip picker
@@ -321,10 +317,7 @@ struct CardPricingPanel: View {
             }
         }
         .padding(3)
-        .background(
-            Capsule(style: .continuous)
-                .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
-        )
+        .glassPillTrackStyle()
     }
 
     // MARK: - Chart

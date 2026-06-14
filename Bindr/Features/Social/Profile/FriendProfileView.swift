@@ -48,38 +48,36 @@ struct FriendProfileView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            profileTopBar
-
-            Group {
-                if isLoading {
-                    ProgressView("Loading profile…")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if let profile {
-                    ScrollView {
-                        VStack(spacing: 0) {
-                            profileHeader(profile)
-                            tabPicker
-                                .padding(.top, BindrSpacing.lg)
-                            tabContent(profile)
-                        }
-                        .padding(.top, BindrSpacing.lg)
-                        .padding(.bottom, 32)
-                    }
-                    .background(Color(uiColor: .systemBackground))
-                } else {
-                    ContentUnavailableView(
-                        "Profile Not Found",
-                        systemImage: "person.crop.circle.badge.exclamationmark",
-                        description: Text("This username does not exist or is no longer available.")
-                    )
+        Group {
+            if isLoading {
+                ProgressView("Loading profile…")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if let profile {
+                ScrollView {
+                    VStack(spacing: 0) {
+                        profileHeader(profile)
+                        tabPicker
+                            .padding(.top, BindrSpacing.lg)
+                        tabContent(profile)
+                    }
+                    .padding(.top, BindrSpacing.lg)
+                    .padding(.bottom, 32)
                 }
+            } else {
+                ContentUnavailableView(
+                    "Profile Not Found",
+                    systemImage: "person.crop.circle.badge.exclamationmark",
+                    description: Text("This username does not exist or is no longer available.")
+                )
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
+        .background(BindrPageBackground().ignoresSafeArea())
         .tint(.primary)
         .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top, spacing: 0) {
+            profileTopBar
+        }
         .onChange(of: relationship) { _, _ in
             Task { @MainActor in
                 attemptLaunchPendingSeededTradeIfPossible()

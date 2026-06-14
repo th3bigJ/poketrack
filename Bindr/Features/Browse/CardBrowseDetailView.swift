@@ -107,7 +107,7 @@ private struct CardBrowseDetailPage: View {
     @State private var editingLine: HoldingLine?
     @State private var dispositionFlowPayload: CollectionDispositionFlowPayload?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
-    @State private var showCardShare = false
+    @State private var shareCard: Card? = nil
     @State private var wishlistVariantKeys: [String] = ["normal"]
     @State private var isCurrentCardWishlisted = false
     @State private var showWishlistPaywall = false
@@ -236,7 +236,7 @@ private struct CardBrowseDetailPage: View {
                 VStack(alignment: .leading, spacing: 14) {
                     cardHeroSection
 
-                    CardPricingPanel(card: card)
+                    CardPricingPanel(card: card, useGlass: true)
                         .glassCardStyle(cornerRadius: 26, interactive: false)
                     recentSoldOnEbayButton
                         .glassCardStyle(cornerRadius: 26, interactive: false)
@@ -287,8 +287,8 @@ private struct CardBrowseDetailPage: View {
             )
                 .environment(services)
         }
-        .sheet(isPresented: $showCardShare) {
-            SocialShareSheet(item: .card)
+        .sheet(item: $shareCard) { card in
+            SocialShareSheet(item: .cardDetail(card))
                 .environment(services)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
@@ -397,7 +397,7 @@ private struct CardBrowseDetailPage: View {
                     .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.secondary)
                     .frame(width: 32, height: 32)
-                    .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05), in: Circle())
+                    .glassInsetCircleStyle()
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 14)
@@ -412,11 +412,7 @@ private struct CardBrowseDetailPage: View {
     private var ebayWordmarkBadge: some View {
         ebayWordmark
             .frame(width: 74, height: 42)
-            .background(Color.white.opacity(colorScheme == .dark ? 0.08 : 0.70), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.05), lineWidth: 1)
-            }
+            .glassInsetStyle(cornerRadius: 12)
     }
 
     private var ebayWordmark: some View {
@@ -661,7 +657,7 @@ private struct CardBrowseDetailPage: View {
 
     private var shareActionButton: some View {
         Button {
-            showCardShare = true
+            shareCard = card
         } label: {
             cardActionBody(
                 title: "Share",
@@ -767,24 +763,14 @@ private struct CardBrowseDetailPage: View {
                 }
                 .padding(.horizontal, 12)
                 .padding(.vertical, 8)
-                .background(
-                    Capsule()
-                        .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.05))
-                )
+                .glassInsetStyle(cornerRadius: 18)
                 .foregroundStyle(.primary)
             }
             .buttonStyle(.plain)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
-        .background(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(sectionInsetBackground.opacity(0.4))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .stroke(Color.white.opacity(0.06), lineWidth: 1)
-                )
-        )
+        .glassInsetStyle(cornerRadius: 18)
     }
 
     private var cardDetailsSection: some View {
@@ -808,10 +794,7 @@ private struct CardBrowseDetailPage: View {
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(10)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                            .fill(sectionInsetBackground)
-                                    )
+                                    .glassInsetStyle(cornerRadius: 16)
                                 }
                                 if row.count < 2 {
                                     Color.clear.frame(maxWidth: .infinity)
@@ -854,10 +837,7 @@ private struct CardBrowseDetailPage: View {
                                 }
                             }
                             .padding(12)
-                            .background(
-                                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                                    .fill(sectionInsetBackground)
-                            )
+                            .glassInsetStyle(cornerRadius: 18)
                         }
                     }
                 }
@@ -896,10 +876,7 @@ private struct CardBrowseDetailPage: View {
                                         .foregroundStyle(.secondary)
                                 }
                                 .padding(12)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                                        .fill(sectionInsetBackground)
-                                )
+                                .glassInsetStyle(cornerRadius: 18)
                             }
                         }
                     }
@@ -927,14 +904,7 @@ private struct CardBrowseDetailPage: View {
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(12)
-                .background(
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .fill(sectionInsetBackground)
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .stroke(sectionBorder, lineWidth: 1)
-                )
+                .glassInsetStyle(cornerRadius: 18)
         }
     }
 
@@ -1231,14 +1201,6 @@ private struct CardBrowseDetailPage: View {
             }
         }
     }
-
-    private var sectionInsetBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.055) : Color.black.opacity(0.065)
-    }
-
-    private var sectionBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.10)
-    }
 }
 
 private struct DetailSurface<Content: View>: View {
@@ -1260,24 +1222,7 @@ private struct DetailSurface<Content: View>: View {
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .fill(surfaceBackground)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 26, style: .continuous)
-                .stroke(surfaceBorder, lineWidth: 1)
-        )
-    }
-
-    @Environment(\.colorScheme) private var colorScheme
-
-    private var surfaceBackground: Color {
-        colorScheme == .dark ? .black : .white
-    }
-
-    private var surfaceBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
+        .glassCardStyle(cornerRadius: 26, interactive: false)
     }
 }
 

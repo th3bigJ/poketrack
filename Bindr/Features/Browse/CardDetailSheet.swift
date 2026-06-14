@@ -19,7 +19,7 @@ struct CardDetailSheet: View {
     @State private var editingLine: HoldingLine?
     @State private var dispositionFlowPayload: CollectionDispositionFlowPayload?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
-    @State private var showCardShare = false
+    @State private var shareCard: Card? = nil
     @State private var wishlistVariantKeys: [String] = ["normal"]
     @State private var isCurrentCardWishlisted = false
     @State private var showWishlistPaywall = false
@@ -143,8 +143,8 @@ struct CardDetailSheet: View {
             )
                 .environment(services)
         }
-        .sheet(isPresented: $showCardShare) {
-            SocialShareSheet(item: .card)
+        .sheet(item: $shareCard) { card in
+            SocialShareSheet(item: .cardDetail(card))
                 .environment(services)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
@@ -298,7 +298,7 @@ struct CardDetailSheet: View {
                     removeCurrentCardFromWishlist()
                 },
                 onShareAction: {
-                    showCardShare = true
+                    shareCard = card
                 },
                 collectionSuccessTrigger: collectionSuccessSparkTrigger,
                 wishlistSuccessTrigger: wishlistSuccessSparkTrigger
@@ -378,7 +378,7 @@ struct CardDetailSheet: View {
                     .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.secondary)
                     .frame(width: 32, height: 32)
-                    .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05), in: Circle())
+                    .glassInsetCircleStyle()
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 14)
@@ -393,11 +393,7 @@ struct CardDetailSheet: View {
     private var ebayWordmarkBadge: some View {
         ebayWordmark
             .frame(width: 74, height: 42)
-            .background(Color.white.opacity(colorScheme == .dark ? 0.08 : 0.70), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.05), lineWidth: 1)
-            }
+            .glassInsetStyle(cornerRadius: 12)
     }
 
     private var ebayWordmark: some View {
@@ -529,14 +525,7 @@ struct CardDetailSheet: View {
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 12)
-        .background(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(.ultraThinMaterial)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .stroke(sectionBorder.opacity(0.7), lineWidth: 1)
-                )
-        )
+        .glassInsetStyle(cornerRadius: 18)
     }
 
     private var separatorDot: some View {
@@ -553,16 +542,21 @@ struct CardDetailSheet: View {
         action: @escaping () -> Void
     ) -> some View {
         Button(action: action) {
-            Image(systemName: systemImage)
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundStyle(tint)
-                .frame(width: 40, height: 40)
-                .background(
-                    Circle()
-                        .fill(usesNeutralFill
-                            ? (colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.055))
-                            : tint.opacity(0.12))
-                )
+            Group {
+                if usesNeutralFill {
+                    Image(systemName: systemImage)
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(tint)
+                        .frame(width: 40, height: 40)
+                        .glassInsetCircleStyle()
+                } else {
+                    Image(systemName: systemImage)
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(tint)
+                        .frame(width: 40, height: 40)
+                        .background(Circle().fill(tint.opacity(0.12)))
+                }
+            }
         }
         .buttonStyle(.plain)
         .accessibilityLabel(title)
@@ -604,7 +598,7 @@ struct CardDetailSheet: View {
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(10)
-                                    .background(RoundedRectangle(cornerRadius: 16, style: .continuous).fill(sectionInsetBackground))
+                                    .glassInsetStyle(cornerRadius: 16)
                                 }
                                 if row.count < 2 { Color.clear.frame(maxWidth: .infinity) }
                             }
@@ -631,7 +625,7 @@ struct CardDetailSheet: View {
                                 }
                             }
                             .padding(12)
-                            .background(RoundedRectangle(cornerRadius: 18, style: .continuous).fill(sectionInsetBackground))
+                            .glassInsetStyle(cornerRadius: 18)
                         }
                     }
                 }
@@ -656,7 +650,7 @@ struct CardDetailSheet: View {
                                     Text(text).font(.subheadline).foregroundStyle(.secondary)
                                 }
                                 .padding(12)
-                                .background(RoundedRectangle(cornerRadius: 18, style: .continuous).fill(sectionInsetBackground))
+                                .glassInsetStyle(cornerRadius: 18)
                             }
                         }
                     }
@@ -675,14 +669,7 @@ struct CardDetailSheet: View {
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(12)
-                .background(
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .fill(sectionInsetBackground)
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .stroke(sectionBorder, lineWidth: 1)
-                )
+                .glassInsetStyle(cornerRadius: 18)
         }
     }
 
@@ -892,13 +879,6 @@ struct CardDetailSheet: View {
     }
 
     // MARK: - Styling
-
-    private var sectionInsetBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.055) : Color.black.opacity(0.065)
-    }
-    private var sectionBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.10)
-    }
 }
 
 // MARK: - Supporting types (local copies)

@@ -6,7 +6,12 @@ import SwiftData
 enum SocialShareItem {
     case binder(Binder)
     case deck(Deck)
+  /// Generic new post — user picks a card from collection / wishlist.
     case card
+  /// Opened from a card detail share action — card is fixed for card-type posts.
+    case cardDetail(Card)
+  /// Opened from a sealed product detail share action.
+    case sealedProductDetail(SealedProduct)
 }
 
 // MARK: - Post Tag
@@ -127,16 +132,71 @@ struct SocialShareSheet: View {
             _selectedDeck = State(initialValue: d)
         case .card:
             _selectedTag = State(initialValue: .pull)
+        case .cardDetail(let card):
+            _selectedTag = State(initialValue: .pull)
+            _cardsByID = State(initialValue: [card.masterCardId: card])
+            _setCodesByID = State(initialValue: [card.masterCardId: card.setCode])
+        case .sealedProductDetail:
+            _selectedTag = State(initialValue: .pull)
         }
     }
+
+    private var preselectedCard: Card? {
+        if case .cardDetail(let card) = item { return card }
+        return nil
+    }
+
+    private var preselectedSealedProduct: SealedProduct? {
+        if case .sealedProductDetail(let product) = item { return product }
+        return nil
+    }
+
+    private var usesFixedItemPreview: Bool {
+        if let product = preselectedSealedProduct {
+            switch selectedTag {
+            case .pull, .bought, .trade:
+                return true
+            case .want:
+                return wishlistItems.contains {
+                    $0.cardID == product.collectionCardID && $0.variantKey == sealedVariantKey
+                }
+            case .binder, .deck:
+                return false
+            }
+        }
+        guard let card = preselectedCard else { return false }
+        switch selectedTag {
+        case .pull, .bought, .trade:
+            return true
+        case .want:
+            return wishlistItems.contains { $0.cardID == card.masterCardId }
+        case .binder, .deck:
+            return false
+        }
+    }
+
+    private var sealedVariantKey: String { "sealed" }
 
     private var accent: Color { services.theme.accentColor }
     private var headerButtonColor: Color { colorScheme == .dark ? .white : .black }
 
     private var canPost: Bool {
         switch selectedTag {
-        case .pull, .bought, .trade: return selectedCollectionItem != nil
-        case .want:                  return selectedWishlistItem != nil
+        case .pull, .bought, .trade:
+            if preselectedCard != nil || preselectedSealedProduct != nil { return true }
+            return selectedCollectionItem != nil
+        case .want:
+            if let card = preselectedCard,
+               wishlistItems.contains(where: { $0.cardID == card.masterCardId }) {
+                return true
+            }
+            if let product = preselectedSealedProduct,
+               wishlistItems.contains(where: {
+                   $0.cardID == product.collectionCardID && $0.variantKey == sealedVariantKey
+               }) {
+                return true
+            }
+            return selectedWishlistItem != nil
         case .binder:                return selectedBinder != nil
         case .deck:                  return selectedDeck != nil
         }
@@ -266,10 +326,22 @@ struct SocialShareSheet: View {
         .sheet(isPresented: $showPaywall) {
             PaywallSheet().environment(services)
         }
-        .task { await loadCards() }
-        .onChange(of: singleCards) { _, _ in Task { await loadCards() } }
-        .onChange(of: wishlistItems) { _, _ in Task { await loadCards() } }
-        .onChange(of: selectedTag) { _, _ in errorMessage = nil }
+        .task {
+            await loadCards()
+            applyPreselectedSelection()
+        }
+        .onChange(of: singleCards) { _, _ in
+            applyPreselectedSelection()
+            Task { await loadCards() }
+        }
+        .onChange(of: wishlistItems) { _, _ in
+            applyPreselectedSelection()
+            Task { await loadCards() }
+        }
+        .onChange(of: selectedTag) { _, _ in
+            errorMessage = nil
+            applyPreselectedSelection()
+        }
     }
 
     // MARK: - Drag Handle
@@ -366,11 +438,88 @@ struct SocialShareSheet: View {
 
     private var cardImagePicker: some View {
         VStack(alignment: .leading, spacing: 10) {
-            sectionLabel(selectedTag == .want ? "SELECT FROM WISHLIST" : "SELECT FROM COLLECTION")
-            if selectedTag == .want {
-                wishlistImagePicker
+            if usesFixedItemPreview, let product = preselectedSealedProduct {
+                fixedPreselectedSealedPreview(for: product)
+            } else if usesFixedItemPreview, let card = preselectedCard {
+                fixedPreselectedCardPreview(for: card)
             } else {
-                collectionImagePicker
+                sectionLabel(selectedTag == .want ? "SELECT FROM WISHLIST" : "SELECT FROM COLLECTION")
+                if selectedTag == .want {
+                    wishlistImagePicker
+                } else {
+                    collectionImagePicker
+                }
+            }
+        }
+    }
+
+    private func fixedPreselectedSealedPreview(for product: SealedProduct) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            sectionLabel("PRODUCT")
+            HStack {
+                Spacer(minLength: 0)
+                CachedAsyncImage(url: product.imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    Color(uiColor: .tertiarySystemFill)
+                }
+                .frame(width: 120, height: 168)
+                .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .stroke(accent, lineWidth: 2.5)
+                }
+                Spacer(minLength: 0)
+            }
+            Text(product.name)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.primary)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .multilineTextAlignment(.center)
+        }
+        .onAppear {
+            let cardID = product.collectionCardID
+            if selectedTag == .want {
+                selectedWishlistItem = wishlistItems.first {
+                    $0.cardID == cardID && $0.variantKey == sealedVariantKey
+                }
+            } else {
+                selectedCollectionItem = collectionItemMatchingSealed(product)
+            }
+        }
+    }
+
+    private func fixedPreselectedCardPreview(for card: Card) -> some View {
+        let variantKey = resolvedVariantKey(for: card)
+        let imageURL = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
+        return VStack(alignment: .leading, spacing: 10) {
+            sectionLabel("CARD")
+            HStack {
+                Spacer(minLength: 0)
+                CachedCardThumbnailImage(url: imageURL, targetSize: CGSize(width: 120, height: 168))
+                    .frame(width: 120, height: 168)
+                    .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .stroke(accent, lineWidth: 2.5)
+                    }
+                Spacer(minLength: 0)
+            }
+            Text(card.cardName)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.primary)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .multilineTextAlignment(.center)
+        }
+        .onAppear {
+            if selectedTag == .want {
+                selectedWishlistItem = wishlistItems.first {
+                    $0.cardID == card.masterCardId && $0.variantKey == variantKey
+                } ?? wishlistItems.first { $0.cardID == card.masterCardId }
+            } else {
+                selectedCollectionItem = collectionItemMatching(card, variantKey: variantKey)
             }
         }
     }
@@ -595,19 +744,48 @@ struct SocialShareSheet: View {
         do {
             switch selectedTag {
             case .pull, .bought, .trade:
-                guard let item = selectedCollectionItem else { return }
-                let name = cardsByID[item.cardID]?.cardName ?? item.cardID
+                let cardID: String
+                let variantKey: String
+                if let item = selectedCollectionItem {
+                    cardID = item.cardID
+                    variantKey = item.variantKey
+                } else if let card = preselectedCard {
+                    cardID = card.masterCardId
+                    variantKey = resolvedVariantKey(for: card)
+                } else if let product = preselectedSealedProduct {
+                    cardID = product.collectionCardID
+                    variantKey = sealedVariantKey
+                } else {
+                    return
+                }
+                let name: String
+                if let product = preselectedSealedProduct, cardID == product.collectionCardID {
+                    name = product.name
+                } else {
+                    name = cardsByID[cardID]?.cardName ?? cardID
+                }
                 let taggedMessage = tagPrefix + (postText.isEmpty ? "" : " \(postText)")
                 // Prefer human-readable set name; fall back to set code only
                 // if the catalog hasn't loaded yet.
-                let resolvedSetName = setNamesByID[item.cardID] ?? setCodesByID[item.cardID]
+                let resolvedSetName = preselectedSealedProduct?.setName
+                    ?? setNamesByID[cardID]
+                    ?? setCodesByID[cardID]
                 _ = try await services.socialShare.publishPull(
-                    collectionItem: item, cardName: name, setName: resolvedSetName,
-                    message: taggedMessage, visibility: visibility
+                    cardID: cardID,
+                    variantKey: variantKey,
+                    cardName: name,
+                    setName: resolvedSetName,
+                    message: taggedMessage,
+                    visibility: visibility
                 )
             case .want:
                 guard let item = selectedWishlistItem else { return }
-                let name = cardsByID[item.cardID]?.cardName ?? item.cardID
+                let name: String
+                if let product = preselectedSealedProduct, item.cardID == product.collectionCardID {
+                    name = product.name
+                } else {
+                    name = cardsByID[item.cardID]?.cardName ?? item.cardID
+                }
                 _ = try await services.socialShare.publishWant(
                     wishlistItem: item, cardName: name, message: postText, visibility: visibility
                 )
@@ -638,14 +816,91 @@ struct SocialShareSheet: View {
         }
     }
 
-    private func loadCards() async {
-        let ids = Set(singleCards.map(\.cardID) + wishlistItems.map(\.cardID))
-            .filter { cardsByID[$0] == nil }
-        guard !ids.isEmpty else { return }
+    private func applyPreselectedSelection() {
+        if let product = preselectedSealedProduct {
+            let cardID = product.collectionCardID
+            switch selectedTag {
+            case .pull, .bought, .trade:
+                if selectedCollectionItem?.cardID != cardID {
+                    selectedCollectionItem = collectionItemMatchingSealed(product)
+                }
+            case .want:
+                if selectedWishlistItem?.cardID != cardID {
+                    selectedWishlistItem = wishlistItems.first {
+                        $0.cardID == cardID && $0.variantKey == sealedVariantKey
+                    }
+                }
+            case .binder, .deck:
+                break
+            }
+            return
+        }
 
+        guard let card = preselectedCard else { return }
+        let variantKey = resolvedVariantKey(for: card)
+        switch selectedTag {
+        case .pull, .bought, .trade:
+            if selectedCollectionItem?.cardID != card.masterCardId {
+                selectedCollectionItem = collectionItemMatching(card, variantKey: variantKey)
+            }
+        case .want:
+            if selectedWishlistItem?.cardID != card.masterCardId {
+                selectedWishlistItem = wishlistItems.first {
+                    $0.cardID == card.masterCardId && $0.variantKey == variantKey
+                } ?? wishlistItems.first { $0.cardID == card.masterCardId }
+            }
+        case .binder, .deck:
+            break
+        }
+    }
+
+    private func collectionItemMatchingSealed(_ product: SealedProduct) -> CollectionItem? {
+        let cardID = product.collectionCardID
+        return collectionItems.first {
+            $0.cardID == cardID && $0.variantKey == sealedVariantKey
+        } ?? collectionItems.first { $0.cardID == cardID }
+    }
+
+    private func collectionItemMatching(_ card: Card, variantKey: String) -> CollectionItem? {
+        singleCards.first {
+            $0.cardID == card.masterCardId && $0.variantKey == variantKey
+        } ?? singleCards.first { $0.cardID == card.masterCardId }
+    }
+
+    private func resolvedVariantKey(for card: Card) -> String {
+        if let item = singleCards.first(where: { $0.cardID == card.masterCardId && $0.variantKey == "normal" }) {
+            return item.variantKey
+        }
+        if let item = singleCards.first(where: { $0.cardID == card.masterCardId }) {
+            return item.variantKey
+        }
+        if let wish = wishlistItems.first(where: { $0.cardID == card.masterCardId }) {
+            return wish.variantKey
+        }
+        return "normal"
+    }
+
+    private func loadCards() async {
         let setNameByCode = Dictionary(
             uniqueKeysWithValues: services.cardData.sets.map { ($0.setCode, $0.name) }
         )
+
+        if let card = preselectedCard,
+           setNamesByID[card.masterCardId] == nil,
+           let name = setNameByCode[card.setCode] {
+            setNamesByID[card.masterCardId] = name
+        }
+
+        var ids = Set(singleCards.map(\.cardID) + wishlistItems.map(\.cardID))
+        if let card = preselectedCard {
+            ids.insert(card.masterCardId)
+        }
+        ids = ids.filter { cardsByID[$0] == nil }
+        guard !ids.isEmpty else {
+            prefetchImages()
+            return
+        }
+
         let cardDataService = services.cardData
         var loaded: [Card] = []
         await withTaskGroup(of: Card?.self) { group in

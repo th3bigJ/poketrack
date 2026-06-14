@@ -273,27 +273,28 @@ final class SocialShareService {
     }
 
     func publishPull(
-        collectionItem: CollectionItem,
+        cardID: String,
+        variantKey: String,
         cardName: String,
         setName: String?,
         message: String,
         visibility: SharedContentVisibility
     ) async throws -> SharedContent {
-        let localID = "pull-\(collectionItem.cardID)-\(collectionItem.variantKey)-\(Int(Date().timeIntervalSince1970))"
+        let localID = "pull-\(cardID)-\(variantKey)-\(Int(Date().timeIntervalSince1970))"
         var payload: [String: JSONValue] = [
             "payload_version": .number(1),
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
             "local_content_id": .string(localID),
-            "card_id": .string(collectionItem.cardID),
+            "card_id": .string(cardID),
             "card_name": .string(cardName),
-            "variant_key": .string(collectionItem.variantKey)
+            "variant_key": .string(variantKey)
         ]
         if let setName { payload["set_name"] = .string(setName) }
         let encoded = EncodedPayload(
             payload: payload,
             title: cardName,
             cardCount: 1,
-            brand: TCGBrand.inferredFromMasterCardId(collectionItem.cardID).rawValue,
+            brand: TCGBrand.inferredFromMasterCardId(cardID).rawValue,
             localContentID: localID
         )
         return try await upsertSharedContent(

@@ -781,7 +781,7 @@ private struct SealedProductDetailPage: View {
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var isWishlisted = false
-    @State private var showShareSheet = false
+    @State private var shareProduct: SealedProduct? = nil
     @State private var editingItem: CollectionItem?
     @State private var markAsSession: SealedCollectionMarkAsSession?
 
@@ -834,8 +834,11 @@ private struct SealedProductDetailPage: View {
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet().environment(services)
         }
-        .sheet(isPresented: $showShareSheet) {
-            ShareSheet(items: shareItems)
+        .sheet(item: $shareProduct) { product in
+            SocialShareSheet(item: .sealedProductDetail(product))
+                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.hidden)
         }
         .sheet(isPresented: Binding(get: { editingItem != nil }, set: { if !$0 { editingItem = nil } })) {
             if let editingItem {
@@ -976,8 +979,7 @@ private struct SealedProductDetailPage: View {
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(RoundedRectangle(cornerRadius: 16, style: .continuous)
-            .fill(sectionInsetBackground.opacity(0.55)))
+        .glassInsetStyle(cornerRadius: 16)
     }
 
     private var detailsSection: some View {
@@ -1007,8 +1009,7 @@ private struct SealedProductDetailPage: View {
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(10)
-                            .background(RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                .fill(sectionInsetBackground))
+                            .glassInsetStyle(cornerRadius: 16)
                         }
                         if row.count < 2 { Color.clear.frame(maxWidth: .infinity) }
                     }
@@ -1022,10 +1023,6 @@ private struct SealedProductDetailPage: View {
             return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
         }
         return product.releaseDateRaw.flatMap { $0.isEmpty ? nil : $0 } ?? "Unknown"
-    }
-
-    private var sectionInsetBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
     }
 
     private var recentSoldOnEbayButton: some View {
@@ -1048,7 +1045,7 @@ private struct SealedProductDetailPage: View {
                     .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.secondary)
                     .frame(width: 32, height: 32)
-                    .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05), in: Circle())
+                    .glassInsetCircleStyle()
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 14)
@@ -1063,11 +1060,7 @@ private struct SealedProductDetailPage: View {
     private var ebayWordmarkBadge: some View {
         ebayWordmark
             .frame(width: 74, height: 42)
-            .background(Color.white.opacity(colorScheme == .dark ? 0.08 : 0.70), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.05), lineWidth: 1)
-            }
+            .glassInsetStyle(cornerRadius: 12)
     }
 
     private var ebayWordmark: some View {
@@ -1206,7 +1199,7 @@ private struct SealedProductDetailPage: View {
                 }
                 .frame(maxWidth: .infinity)
 
-                Button { showShareSheet = true } label: {
+                Button { shareProduct = product } label: {
                     Image(systemName: "square.and.arrow.up")
                         .font(.system(size: 20, weight: .medium))
                         .foregroundStyle(SealedActionPalette.share)
@@ -1254,12 +1247,6 @@ private struct SealedProductDetailPage: View {
     private func openRemoveFromCollectionFlow() {
         guard let item = visibleCollectionItems.first else { return }
         markAsSession = SealedCollectionMarkAsSession(item: item, initialAction: .sold)
-    }
-
-    private var shareItems: [Any] {
-        var items: [Any] = [product.name]
-        if let url = product.imageURL { items.append(url) }
-        return items
     }
 
     private func toggleWishlist() {

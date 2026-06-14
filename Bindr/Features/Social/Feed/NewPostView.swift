@@ -399,7 +399,8 @@ struct NewPostView: View {
                 // only when the catalog hasn't been loaded yet.
                 let resolvedSetName = setNamesByID[item.cardID] ?? setCodesByID[item.cardID]
                 _ = try await services.socialShare.publishPull(
-                    collectionItem: item,
+                    cardID: item.cardID,
+                    variantKey: item.variantKey,
                     cardName: name,
                     setName: resolvedSetName,
                     message: message,

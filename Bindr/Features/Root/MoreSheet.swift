@@ -1396,11 +1396,7 @@ private struct ManualTradeCardPickerView: View {
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 11)
-        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color.primary.opacity(0.09), lineWidth: 1)
-        }
+        .inlineSearchFieldChrome(cornerRadius: 14)
     }
 
     private var resultList: some View {
