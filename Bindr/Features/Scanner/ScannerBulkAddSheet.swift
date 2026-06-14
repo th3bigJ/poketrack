@@ -4,6 +4,8 @@ import UIKit
 /// Bulk add all scanned cards to the collection or trade in one action.
 struct ScannerBulkAddSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.bindrAccent) private var accent
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
 
     let results: [ScanResult]
@@ -48,8 +50,14 @@ struct ScannerBulkAddSheet: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                Section {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("\(results.count) card\(results.count == 1 ? "" : "s") scanned")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 4)
+
                     ForEach(results) { result in
                         BulkAddCardRow(
                             result: result,
@@ -62,40 +70,43 @@ struct ScannerBulkAddSheet: View {
                             showsAcquisitionDetails: !addsToTrade
                         )
                     }
-                } header: {
-                    Text("\(results.count) card\(results.count == 1 ? "" : "s") scanned")
-                }
 
-                if let errorMessage {
-                    Section {
+                    if let errorMessage {
                         Label(errorMessage, systemImage: "exclamationmark.circle.fill")
                             .font(.footnote)
-                            .foregroundStyle(.red)
+                            .foregroundStyle(BindrPalette.alertRed)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(14)
+                            .glassCardStyle(cornerRadius: BindrRadius.lg, interactive: false)
                     }
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 28)
             }
             .scrollDismissesKeyboard(.interactively)
+            .bindrPageBackground()
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.inline)
-            .tint(.primary)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
-                        .foregroundStyle(.primary)
+                        .glassToolbarButton()
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     if isSaving {
                         ProgressView().controlSize(.small)
                     } else {
                         Button("Add") { save() }
-                            .fontWeight(.semibold)
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundStyle(canSave ? accent : .secondary)
                             .disabled(!canSave)
-                            .foregroundStyle(.primary)
                     }
                 }
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
                     Button("Done") { dismissDecimalKeyboard() }
+                        .glassToolbarButton()
                 }
             }
             .overlay {
@@ -104,9 +115,12 @@ struct ScannerBulkAddSheet: View {
                 }
             }
             .sheet(isPresented: $showPaywall) {
-                PaywallSheet().environment(services)
+                PaywallSheet()
+                    .environment(services)
+                    .bindrTheme(accent: services.theme.accentColor)
             }
         }
+        .bindrTheme(accent: services.theme.accentColor)
     }
 
     private func dismissDecimalKeyboard() {
@@ -175,20 +189,34 @@ struct ScannerBulkAddSheet: View {
 
     private var successOverlay: some View {
         ZStack {
-            Color.black.opacity(0.45).ignoresSafeArea()
+            Color.black.opacity(colorScheme == .dark ? 0.38 : 0.22)
+                .ignoresSafeArea()
+
             VStack(spacing: 16) {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.system(size: 56))
-                    .foregroundStyle(.green)
+                    .foregroundStyle(BindrPalette.ownedGreen)
                     .bindrSuccessSpark(trigger: successSparkTrigger)
-                Text("\(successCount) card\(successCount == 1 ? "" : "s") added")
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(.white)
-                Text(addsToTrade ? "Successfully added to trade" : "Successfully added to your collection")
-                    .font(.subheadline)
-                    .foregroundStyle(.white.opacity(0.75))
+
+                VStack(spacing: 6) {
+                    Text("\(successCount) card\(successCount == 1 ? "" : "s") added")
+                        .font(.system(size: 19, weight: .bold, design: .rounded))
+
+                    Text(addsToTrade ? "Successfully added to trade" : "Successfully added to your collection")
+                        .font(.system(size: 13, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.horizontal, 22)
+                .padding(.vertical, 14)
+                .background(.regularMaterial, in: Capsule())
+                .overlay {
+                    Capsule()
+                        .bindrAccentStroke(accent.opacity(0.45), lineWidth: 1)
+                }
             }
-            .transition(.scale(scale: 0.85).combined(with: .opacity))
+            .padding(.horizontal, 28)
+            .transition(.scale(scale: 0.92).combined(with: .opacity))
         }
     }
 
@@ -373,6 +401,7 @@ struct ScannerBulkAddSheet: View {
 // MARK: - Card row
 
 private struct BulkAddCardRow: View {
+    @Environment(\.bindrAccent) private var accent
     @Environment(AppServices.self) private var services
 
     let result: ScanResult
@@ -393,32 +422,33 @@ private struct BulkAddCardRow: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top, spacing: 12) {
                 CachedAsyncImage(
                     url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                    targetSize: CGSize(width: 44, height: 62)
+                    targetSize: CGSize(width: 52, height: 72)
                 ) { img in
                     img.resizable().aspectRatio(contentMode: .fill)
                 } placeholder: {
-                    RoundedRectangle(cornerRadius: 6, style: .continuous)
+                    RoundedRectangle(cornerRadius: BindrRadius.sm, style: .continuous)
                         .fill(Color(uiColor: .tertiarySystemFill))
                 }
-                .frame(width: 44, height: 62)
-                .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
-                .shadow(color: .black.opacity(0.2), radius: 4, y: 2)
+                .frame(width: 52, height: 72)
+                .clipShape(RoundedRectangle(cornerRadius: BindrRadius.sm, style: .continuous))
+                .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
 
-                VStack(alignment: .leading, spacing: 3) {
+                VStack(alignment: .leading, spacing: 4) {
                     Text(card.cardName)
-                        .font(.subheadline.weight(.semibold))
+                        .font(.headline)
                         .lineLimit(2)
                     Text(setDisplayName + " · #" + card.cardNumber)
-                        .font(.caption2)
-                        .foregroundStyle(.tertiary)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
                     if activeAcquisitionKind != .bought {
                         Label {
                             Text("Market \(priceHint)")
-                                .font(.caption)
+                                .font(.caption.weight(.medium))
                         } icon: {
                             Image(systemName: "chart.line.uptrend.xyaxis")
                                 .font(.caption2)
@@ -432,15 +462,17 @@ private struct BulkAddCardRow: View {
 
             VStack(alignment: .leading, spacing: 8) {
                 Text("Variants")
-                    .font(.caption)
+                    .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
+                    .textCase(.uppercase)
 
                 ForEach(variants, id: \.self) { key in
                     variantQuantityRow(for: key)
                 }
             }
         }
-        .padding(.vertical, 4)
+        .padding(16)
+        .glassCardStyle(cornerRadius: BindrRadius.lg, interactive: false)
         .onAppear {
             if selectedVariantKey.isEmpty {
                 selectedVariantKey = variants.first ?? "normal"
@@ -477,8 +509,9 @@ private struct BulkAddCardRow: View {
                     } label: {
                         Image(systemName: "minus")
                             .font(.caption.weight(.bold))
-                            .frame(width: 28, height: 28)
-                            .background(Circle().fill(Color.primary.opacity(0.1)))
+                            .frame(width: 32, height: 32)
+                            .background(.thinMaterial, in: Circle())
+                            .overlay(Circle().strokeBorder(Color.primary.opacity(0.08), lineWidth: 1))
                     }
                     .buttonStyle(.plain)
                     .disabled(qty <= 0)
@@ -495,8 +528,9 @@ private struct BulkAddCardRow: View {
                     } label: {
                         Image(systemName: "plus")
                             .font(.caption.weight(.bold))
-                            .frame(width: 28, height: 28)
-                            .background(Circle().fill(Color.primary.opacity(0.1)))
+                            .frame(width: 32, height: 32)
+                            .background(.thinMaterial, in: Circle())
+                            .overlay(Circle().strokeBorder(Color.primary.opacity(0.08), lineWidth: 1))
                     }
                     .buttonStyle(.plain)
                 }
@@ -540,12 +574,16 @@ private struct BulkAddCardRow: View {
                 }
             }
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 9)
-        .background(
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill((selectedVariantKey == key ? Color.primary.opacity(0.12) : Color.primary.opacity(0.06)))
-        )
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
+        .background {
+            RoundedRectangle(cornerRadius: BindrRadius.md, style: .continuous)
+                .fill(qty > 0 ? accent.opacity(0.10) : Color.primary.opacity(0.05))
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: BindrRadius.md, style: .continuous)
+                .strokeBorder(qty > 0 ? accent.opacity(0.22) : Color.clear, lineWidth: 1)
+        }
     }
 
     private func loadPriceHint() async {

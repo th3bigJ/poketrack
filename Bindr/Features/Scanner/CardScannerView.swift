@@ -313,6 +313,7 @@ struct CardScannerView: View {
                     }
                 )
                 .environment(services)
+                .bindrTheme(accent: services.theme.accentColor)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
                 .presentationCornerRadius(24)
