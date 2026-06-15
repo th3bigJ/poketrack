@@ -47,6 +47,14 @@ struct MyProfileView: View {
         }
     }
 
+    private var visibleRoleTitles: [String] {
+        Array(roleTitles.prefix(3))
+    }
+
+    private var hiddenRoleCount: Int {
+        max(roleTitles.count - visibleRoleTitles.count, 0)
+    }
+
     /// Accent colour driven by the user's chosen avatar background (their
     /// "theme colour"). Falls back to the original gold so anyone who hasn't
     /// picked a colour yet still sees the polished default. Used everywhere
@@ -173,10 +181,13 @@ struct MyProfileView: View {
                 Spacer()
             }
 
-            if !roleTitles.isEmpty {
+            if !visibleRoleTitles.isEmpty {
                 HStack(spacing: BindrSpacing.sm) {
-                    ForEach(roleTitles, id: \.self) { title in
+                    ForEach(visibleRoleTitles, id: \.self) { title in
                         rolePill(title)
+                    }
+                    if hiddenRoleCount > 0 {
+                        rolePill("+\(hiddenRoleCount)")
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -228,7 +239,7 @@ struct MyProfileView: View {
                 }
             }
             .padding(.vertical, 4)
-            .background(.ultraThinMaterial)
+            .background(statsStripBackground, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
@@ -432,7 +443,7 @@ struct MyProfileView: View {
             .foregroundStyle(themeColor)
             .padding(.horizontal, 10)
             .padding(.vertical, 4)
-            .background(themeColor.opacity(0.08))
+            .background(rolePillBackground, in: Capsule())
             .clipShape(Capsule())
             .overlay {
                 Capsule()
@@ -456,6 +467,14 @@ struct MyProfileView: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(StatButtonStyle())
+    }
+
+    private var rolePillBackground: Color {
+        colorScheme == .dark ? themeColor.opacity(0.12) : Color.white.opacity(0.82)
+    }
+
+    private var statsStripBackground: Color {
+        colorScheme == .dark ? Color.white.opacity(0.08) : Color.white.opacity(0.86)
     }
 
     private var friendsTabContent: some View {

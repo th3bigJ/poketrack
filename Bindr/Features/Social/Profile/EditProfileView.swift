@@ -47,6 +47,8 @@ struct EditProfileView: View {
     @Environment(\.dismiss) private var dismiss
 
     private enum ProfileRole: String, CaseIterable, Identifiable {
+        static let maxSelections = 3
+
         case collector = "collector"
         case tcgPlayer = "tcg_player"
         case trader = "trader"
@@ -366,12 +368,21 @@ struct EditProfileView: View {
                     Toggle(role.title, isOn: Binding(
                         get: { profileRoles.contains(role) },
                         set: { isOn in
-                            if isOn { profileRoles.insert(role) } else { profileRoles.remove(role) }
+                            if isOn {
+                                guard profileRoles.count < ProfileRole.maxSelections else {
+                                    Haptics.warning()
+                                    return
+                                }
+                                profileRoles.insert(role)
+                            } else {
+                                profileRoles.remove(role)
+                            }
                         }
                     ))
+                    .disabled(!profileRoles.contains(role) && profileRoles.count >= ProfileRole.maxSelections)
                 }
             } footer: {
-                Text("Choose the tags that best describe how you collect, trade, and play.")
+                Text("Choose up to \(ProfileRole.maxSelections) tags that best describe how you collect, trade, and play.")
             }
 
             Section {
@@ -514,7 +525,7 @@ struct EditProfileView: View {
         errorMessage = nil
         isSaving = true
         let resolvedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
-        let roleValues = profileRoles.map(\.rawValue).sorted()
+        let roleValues = Array(profileRoles.map(\.rawValue).sorted().prefix(ProfileRole.maxSelections))
         let collectionCardCount = modelContext.collectionTotalCardQuantity()
         let collectionBinderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
         let collectionDeckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0

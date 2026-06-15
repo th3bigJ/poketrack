@@ -3,6 +3,7 @@ import SwiftUI
 struct FriendProfileView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
 
     let username: String
     var navigationPath: Binding<NavigationPath>? = nil
@@ -197,10 +198,16 @@ struct FriendProfileView: View {
 
             // Full-width so the favourite card can sit above the row without
             // squeezing role/status pills into two-line labels.
-            if !roleTitles.isEmpty || hasRelationshipStatusPill {
+            let visibleRoleTitles = Array(roleTitles.prefix(3))
+            let hiddenRoleCount = max(roleTitles.count - visibleRoleTitles.count, 0)
+
+            if !visibleRoleTitles.isEmpty || hiddenRoleCount > 0 || hasRelationshipStatusPill {
                 HStack(spacing: BindrSpacing.sm) {
-                    ForEach(roleTitles, id: \.self) { title in
+                    ForEach(visibleRoleTitles, id: \.self) { title in
                         rolePill(title, accent: accent)
+                    }
+                    if hiddenRoleCount > 0 {
+                        rolePill("+\(hiddenRoleCount)", accent: accent)
                     }
                     relationshipStatusPill
                 }
@@ -248,7 +255,7 @@ struct FriendProfileView: View {
                 statBlock(value: "\(friendCount)", label: friendCount == 1 ? "Friend" : "Friends")
             }
             .padding(.vertical, 4)
-            .background(.ultraThinMaterial)
+            .background(statsStripBackground, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
@@ -556,7 +563,7 @@ struct FriendProfileView: View {
             .foregroundStyle(tint)
             .padding(.horizontal, 10)
             .padding(.vertical, 4)
-            .background(tint.opacity(0.08))
+            .background(rolePillBackground(tint), in: Capsule())
             .clipShape(Capsule())
             .overlay {
                 Capsule()
@@ -594,6 +601,14 @@ struct FriendProfileView: View {
             default: return role.replacingOccurrences(of: "_", with: " ").capitalized
             }
         }
+    }
+
+    private func rolePillBackground(_ tint: Color) -> Color {
+        colorScheme == .dark ? tint.opacity(0.12) : Color.white.opacity(0.82)
+    }
+
+    private var statsStripBackground: Color {
+        colorScheme == .dark ? Color.white.opacity(0.08) : Color.white.opacity(0.86)
     }
 
     private var groupedActivity: [GroupedFeedItem] {
