@@ -4581,6 +4581,7 @@ struct FilterMenuConfig {
     var showRandomSort: Bool = true
     var showCardNumberSort: Bool = true
     var showBrandFilters: Bool = true
+    var showCardFilters: Bool = true
     var showRarity: Bool = true
     var showRarePlusOnly: Bool = true
     var showHideOwned: Bool = true
@@ -4608,6 +4609,7 @@ struct FilterMenuConfig {
         showAcquiredDateSort: false,
         showCardNumberSort: false,
         showBrandFilters: false,
+        showCardFilters: false,
         showRarity: false,
         showRarePlusOnly: false,
         showHideOwned: false,
@@ -4667,7 +4669,7 @@ struct BrowseGridFiltersMenuContent: View {
             .menuOrder(.fixed)
         }
 
-        if !isAllBrands && config.showBrandFilters {
+        if !isAllBrands && config.showCardFilters {
         Section("Filters") {
             filterMenu(title: "Card type", summary: selectionSummary(for: filters.cardTypes), systemImage: "square.stack.3d.up") {
                 ForEach(BrowseCardTypeFilter.pokemonOptions) { type in

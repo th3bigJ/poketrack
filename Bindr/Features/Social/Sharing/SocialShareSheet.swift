@@ -34,6 +34,231 @@ private enum PostTag: String, CaseIterable, Identifiable {
     }
 }
 
+// MARK: - Social Post Card Picker
+
+private enum SocialPostCardPickerSource {
+    case collection
+    case wishlist
+
+    var navigationTitle: String {
+        switch self {
+        case .collection: return "Pick My Card"
+        case .wishlist: return "Pick Wishlist Card"
+        }
+    }
+
+    var emptyTitle: String {
+        switch self {
+        case .collection: return "Collection Empty"
+        case .wishlist: return "Wishlist Empty"
+        }
+    }
+
+    var emptyDescription: String {
+        switch self {
+        case .collection: return "Add cards to your collection to post a pull, purchase, or trade."
+        case .wishlist: return "Add cards to your wishlist to post an I Want update."
+        }
+    }
+}
+
+private struct SocialPostCardPickerView: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.dismiss) private var dismiss
+    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
+
+    let source: SocialPostCardPickerSource
+    let initialSelectedCardID: String?
+    let onConfirm: (String) -> Void
+
+    @State private var cardIDs: [String] = []
+    @State private var selectedCardIDs: Set<String> = []
+    @State private var cardNameByID: [String: String] = [:]
+    @State private var cardCacheByID: [String: Card] = [:]
+    @State private var isLoading = false
+    @State private var isIndexingNames = false
+    @State private var searchText = ""
+
+    private var filteredCardIDs: [String] {
+        let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return cardIDs }
+        let query = trimmed.localizedLowercase
+        return cardIDs.filter { cardID in
+            guard let cardName = cardNameByID[cardID] else { return false }
+            return cardName.localizedLowercase.contains(query)
+        }
+    }
+
+    var body: some View {
+        NavigationStack {
+            Group {
+                if isLoading {
+                    ProgressView("Loading cards...")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else if cardIDs.isEmpty {
+                    ContentUnavailableView(
+                        source.emptyTitle,
+                        systemImage: "rectangle.stack",
+                        description: Text(source.emptyDescription)
+                    )
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    cardGrid
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .navigationTitle(source.navigationTitle)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Cancel") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add (\(selectedCardIDs.count))") {
+                        guard let selectedID = selectedCardIDs.first else { return }
+                        onConfirm(selectedID)
+                        dismiss()
+                    }
+                    .disabled(selectedCardIDs.isEmpty)
+                }
+            }
+        }
+        .tint(.primary)
+        .task { await loadCards() }
+        .onChange(of: selectedCardIDs) { oldValue, newValue in
+            guard newValue.count > 1 else { return }
+            if let newest = newValue.subtracting(oldValue).first {
+                selectedCardIDs = [newest]
+            } else if let first = newValue.first {
+                selectedCardIDs = [first]
+            }
+        }
+        .onChange(of: searchText) { _, _ in
+            let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmed.isEmpty else { return }
+            Task { await indexCardNamesIfNeeded() }
+        }
+    }
+
+    private var cardGrid: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                searchField
+                    .padding(.horizontal, 12)
+                    .padding(.top, 12)
+                    .padding(.bottom, 8)
+
+                SelectableCardGrid(
+                    cardIDs: filteredCardIDs,
+                    isSelectMode: .constant(true),
+                    selectedCardIDs: $selectedCardIDs,
+                    cardLoader: { id in await loadCard(for: id) }
+                )
+                .padding(.horizontal, 12)
+
+                if isIndexingNames {
+                    HStack(spacing: 8) {
+                        ProgressView()
+                        Text("Indexing card names...")
+                            .font(.system(size: 12))
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(.bottom, 12)
+                }
+            }
+            .padding(.bottom, 12)
+        }
+    }
+
+    private var searchField: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(Color.secondary.opacity(0.5))
+            TextField("Search cards...", text: $searchText)
+                .font(.system(size: 13))
+                .foregroundStyle(Color.primary)
+                .tint(services.theme.accentColor)
+                .autocorrectionDisabled()
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 11)
+        .inlineSearchFieldChrome(cornerRadius: 14)
+    }
+
+    private func loadCards() async {
+        isLoading = true
+        defer { isLoading = false }
+
+        switch source {
+        case .collection:
+            cardIDs = dedupeCardIDs(collectionItems.compactMap { item in
+                guard item.quantity > 0, item.itemKind == ProductKind.singleCard.rawValue else { return nil }
+                return item.cardID
+            })
+        case .wishlist:
+            cardIDs = dedupeCardIDs(wishlistItems.compactMap { item in
+                item.cardID.isEmpty ? nil : item.cardID
+            })
+        }
+
+        if let initialSelectedCardID, cardIDs.contains(initialSelectedCardID) {
+            selectedCardIDs = [initialSelectedCardID]
+        }
+
+        await warmInitialCards()
+    }
+
+    private func warmInitialCards() async {
+        let batch = Array(cardIDs.prefix(36))
+        var cards: [Card] = []
+        for cardID in batch {
+            if let card = await loadCard(for: cardID) {
+                cards.append(card)
+            }
+        }
+        if !cards.isEmpty {
+            ImagePrefetcher.shared.prefetchInitialBatch(cards, count: cards.count)
+        }
+    }
+
+    private func loadCard(for cardID: String) async -> Card? {
+        if let cached = cardCacheByID[cardID] {
+            return cached
+        }
+        guard let loaded = await services.cardData.loadCard(masterCardId: cardID) else {
+            return nil
+        }
+        cardCacheByID[cardID] = loaded
+        cardNameByID[cardID] = loaded.cardName
+        return loaded
+    }
+
+    private func indexCardNamesIfNeeded() async {
+        let missingIDs = cardIDs.filter { cardNameByID[$0] == nil }
+        guard !missingIDs.isEmpty else { return }
+        isIndexingNames = true
+        defer { isIndexingNames = false }
+
+        for cardID in missingIDs {
+            guard !Task.isCancelled else { return }
+            _ = await loadCard(for: cardID)
+        }
+    }
+
+    private func dedupeCardIDs(_ ids: [String]) -> [String] {
+        var ordered: [String] = []
+        var seen: Set<String> = []
+        for id in ids where !id.isEmpty {
+            if seen.insert(id).inserted {
+                ordered.append(id)
+            }
+        }
+        return ordered
+    }
+}
+
 // MARK: - Flow Layout
 
 private struct FlowLayout: Layout {
@@ -120,6 +345,7 @@ struct SocialShareSheet: View {
     @State private var isBusy = false
     @State private var errorMessage: String? = nil
     @State private var showPaywall = false
+    @State private var showCardPicker = false
 
     init(item: SocialShareItem) {
         self.item = item
@@ -326,6 +552,23 @@ struct SocialShareSheet: View {
         .sheet(isPresented: $showPaywall) {
             PaywallSheet().environment(services)
         }
+        .sheet(isPresented: $showCardPicker) {
+            SocialPostCardPickerView(
+                source: selectedTag == .want ? .wishlist : .collection,
+                initialSelectedCardID: selectedCardPickerInitialID,
+                onConfirm: { selectedCardID in
+                    if selectedTag == .want {
+                        selectedWishlistItem = wishlistItems.first { $0.cardID == selectedCardID }
+                    } else {
+                        selectedCollectionItem = singleCards.first { $0.cardID == selectedCardID }
+                    }
+                    HapticManager.selection()
+                }
+            )
+            .environment(services)
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
+        }
         .task {
             await loadCards()
             applyPreselectedSelection()
@@ -444,13 +687,91 @@ struct SocialShareSheet: View {
                 fixedPreselectedCardPreview(for: card)
             } else {
                 sectionLabel(selectedTag == .want ? "SELECT FROM WISHLIST" : "SELECT FROM COLLECTION")
-                if selectedTag == .want {
-                    wishlistImagePicker
-                } else {
-                    collectionImagePicker
-                }
+                selectedCardPickerRow
             }
         }
+    }
+
+    private var selectedCardPickerInitialID: String? {
+        selectedTag == .want ? selectedWishlistItem?.cardID : selectedCollectionItem?.cardID
+    }
+
+    private var selectedCardPickerRow: some View {
+        let selectedID = selectedCardPickerInitialID
+        let card = selectedID.flatMap { cardsByID[$0] }
+        return Button {
+            showCardPicker = true
+        } label: {
+            HStack(spacing: 12) {
+                if let card {
+                    CachedCardThumbnailImage(
+                        url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
+                        targetSize: CGSize(width: 72, height: 101)
+                    )
+                    .frame(width: 52, height: 72)
+                    .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 7, style: .continuous)
+                            .stroke(accent.opacity(0.55), lineWidth: 1)
+                    }
+                } else {
+                    Image(systemName: "plus.circle")
+                        .font(.system(size: 24, weight: .medium))
+                        .foregroundStyle(accent)
+                        .frame(width: 52, height: 52)
+                        .background(accent.opacity(0.10), in: Circle())
+                }
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(card?.cardName ?? "Add Card")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                    Text(card == nil ? pickerEmptySubtitle : selectedVariantSubtitle)
+                        .font(.system(size: 12, weight: .medium))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+
+                Spacer(minLength: 0)
+
+                Text(card == nil ? "Choose" : "Change")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(accent)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 8)
+                    .background(accent.opacity(0.10), in: Capsule())
+            }
+            .padding(12)
+            .background(Color.primary.opacity(0.045), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+            }
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var pickerEmptySubtitle: String {
+        selectedTag == .want ? "Pick from your wishlist" : "Pick from your collection"
+    }
+
+    private var selectedVariantSubtitle: String {
+        let variant = selectedTag == .want ? selectedWishlistItem?.variantKey : selectedCollectionItem?.variantKey
+        guard let variant, variant != "normal" else {
+            return selectedTag == .want ? "Wishlist" : "Collection"
+        }
+        return displayName(forVariantKey: variant)
+    }
+
+    private func displayName(forVariantKey key: String) -> String {
+        let spaced = key
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
     }
 
     private func fixedPreselectedSealedPreview(for product: SealedProduct) -> some View {

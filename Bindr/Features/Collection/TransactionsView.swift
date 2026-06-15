@@ -399,11 +399,24 @@ struct TransactionsView: View {
     }
 
     private var pnlSummaryCard: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .firstTextBaseline) {
-                Text("Summary")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(dashboardPrimaryText)
+                HStack(spacing: 10) {
+                    Image(systemName: "chart.line.uptrend.xyaxis")
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(.white)
+                        .frame(width: 32, height: 32)
+                        .background(services.theme.accentColor.gradient, in: Circle())
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Summary")
+                            .font(.title3.weight(.semibold))
+                            .foregroundStyle(dashboardPrimaryText)
+                        Text(pnlRange.title)
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(services.theme.accentColor)
+                    }
+                }
                 Spacer()
                 Text("\(groupedActivityEntries.count) transactions")
                     .font(.caption.weight(.medium))
@@ -428,18 +441,34 @@ struct TransactionsView: View {
         }
         .padding(18)
         .glassCardStyle(cornerRadius: 24, interactive: true)
+        .overlay(alignment: .topTrailing) {
+            Circle()
+                .fill(services.theme.accentColor.opacity(colorScheme == .dark ? 0.20 : 0.12))
+                .frame(width: 96, height: 96)
+                .blur(radius: 28)
+                .offset(x: 22, y: -26)
+                .allowsHitTesting(false)
+        }
     }
 
     private func summaryValueCell(title: String, value: Double, emphasize: Bool) -> some View {
-        VStack(alignment: .leading, spacing: 5) {
-            Text(title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(dashboardSecondaryText)
-            Text(formatSignedCurrency(value))
-                .font(emphasize ? .headline.weight(.bold) : .subheadline.weight(.semibold))
+        HStack(spacing: 10) {
+            Image(systemName: summaryIcon(for: title))
+                .font(.system(size: 13, weight: .bold))
                 .foregroundStyle(colorForSignedValue(value))
-                .lineLimit(1)
-                .minimumScaleFactor(0.75)
+                .frame(width: 28, height: 28)
+                .background(colorForSignedValue(value).opacity(colorScheme == .dark ? 0.16 : 0.11), in: Circle())
+
+            VStack(alignment: .leading, spacing: 5) {
+                Text(title)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(dashboardSecondaryText)
+                Text(formatSignedCurrency(value))
+                    .font(emphasize ? .headline.weight(.bold) : .subheadline.weight(.semibold))
+                    .foregroundStyle(colorForSignedValue(value))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 10)
@@ -449,6 +478,16 @@ struct TransactionsView: View {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
         )
+    }
+
+    private func summaryIcon(for title: String) -> String {
+        switch title {
+        case "Bought": return "cart.fill"
+        case "Sold": return "tag.fill"
+        case "Collection Value": return "rectangle.stack.fill"
+        case "Profit": return "sparkles"
+        default: return "chart.bar.fill"
+        }
     }
 
     @ViewBuilder
@@ -507,6 +546,12 @@ struct TransactionsView: View {
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .glassCardStyle(cornerRadius: 20)
+        .overlay(alignment: .leading) {
+            Capsule()
+                .fill(ActivityPalette.trade)
+                .frame(width: 4)
+                .padding(.vertical, 14)
+        }
     }
 
     private func transactionRow(for line: LedgerLine) -> some View {
@@ -558,6 +603,12 @@ struct TransactionsView: View {
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .glassCardStyle(cornerRadius: 20)
+        .overlay(alignment: .leading) {
+            Capsule()
+                .fill(directionColor(for: line))
+                .frame(width: 4)
+                .padding(.vertical, 14)
+        }
     }
 
     private func tradeSummary(for lines: [LedgerLine]) -> String {
@@ -1146,6 +1197,7 @@ private enum ActivityPnLRange: CaseIterable, Identifiable {
 private enum ActivityPalette {
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
+    static let trade = Color(red: 0.55, green: 0.38, blue: 1.0)
 }
 
 private enum ActivityTypeFilter: String, CaseIterable, Identifiable, Hashable, Sendable {

@@ -128,6 +128,37 @@ struct EditProfileView: View {
         return true
     }
 
+    private var previewProfile: SocialProfile {
+        SocialProfile(
+            id: existingProfile?.id ?? UUID(),
+            appleUserID: nil,
+            username: username,
+            displayName: displayName,
+            avatarURL: nil,
+            bio: bio,
+            profileRoles: [],
+            favoritePokemonDex: favoritePokemon?.dexNumber,
+            favoritePokemonName: favoritePokemon?.name,
+            favoritePokemonImageURL: favoritePokemon?.imageURL,
+            favoriteCardID: favoriteCard?.cardID,
+            favoriteCardName: favoriteCard?.cardName,
+            favoriteCardSetCode: favoriteCard?.setCode,
+            favoriteCardImageURL: favoriteCard?.imageURL,
+            favoriteDeckArchetype: favoriteDeckArchetype,
+            pinnedCardID: nil,
+            friendCount: 0,
+            avatarBackgroundColor: avatarBackgroundColor,
+            avatarOutlineStyle: avatarOutlineStyle,
+            collectionCardCount: 0,
+            collectionBinderCount: 0,
+            collectionDeckCount: 0,
+            collectionTotalValue: 0,
+            createdAt: nil,
+            isPremium: nil,
+            premiumBadgeStyle: premiumBadgeStyle.rawValue
+        )
+    }
+
 
 
     var body: some View {
@@ -151,43 +182,27 @@ struct EditProfileView: View {
             }
 
             Section {
-                HStack {
-                    Spacer()
-                    ProfileAvatarView(
-                        profile: SocialProfile(
-                            id: existingProfile?.id ?? UUID(),
-                            appleUserID: nil,
-                            username: username,
-                            displayName: displayName,
-                            avatarURL: nil,
-                            bio: bio,
-                            profileRoles: [],
-                            favoritePokemonDex: favoritePokemon?.dexNumber,
-                            favoritePokemonName: favoritePokemon?.name,
-                            favoritePokemonImageURL: favoritePokemon?.imageURL,
-                            favoriteCardID: favoriteCard?.cardID,
-                            favoriteCardName: favoriteCard?.cardName,
-                            favoriteCardSetCode: favoriteCard?.setCode,
-                            favoriteCardImageURL: favoriteCard?.imageURL,
-                            favoriteDeckArchetype: favoriteDeckArchetype,
-                            pinnedCardID: nil,
-                            friendCount: 0,
-                            avatarBackgroundColor: avatarBackgroundColor,
-                            avatarOutlineStyle: avatarOutlineStyle,
-                            collectionCardCount: 0,
-                            collectionBinderCount: 0,
-                            collectionDeckCount: 0,
-                            collectionTotalValue: 0,
-                            createdAt: nil,
-                            isPremium: nil,
-                            premiumBadgeStyle: premiumBadgeStyle.rawValue
-                        ),
-                        size: 100
-                    )
-                    Spacer()
+                HStack(spacing: 14) {
+                    ProfileAvatarView(profile: previewProfile, size: 72)
+
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(displayName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Profile preview" : displayName)
+                            .font(.headline.weight(.semibold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                        Text(username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Choose a username below" : "@\(username)")
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                        Text("Updates as you customise your avatar.")
+                            .font(.caption)
+                            .foregroundStyle(.tertiary)
+                            .lineLimit(1)
+                    }
+
+                    Spacer(minLength: 0)
                 }
-                .padding(.vertical, 8)
-                .listRowBackground(Color.clear)
+                .padding(.vertical, 6)
             }
 
             Section {

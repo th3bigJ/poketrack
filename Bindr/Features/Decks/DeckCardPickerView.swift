@@ -80,6 +80,87 @@ private func deckPickerReleaseDateIsTournamentLegal(_ releaseDate: String?, now:
     return legalDate <= now
 }
 
+private func deckPickerNormalizedSearchText(_ value: String?) -> String {
+    guard let value else { return "" }
+    let scalars = value.lowercased().unicodeScalars.compactMap { scalar -> Character? in
+        if CharacterSet.alphanumerics.contains(scalar) || CharacterSet.whitespacesAndNewlines.contains(scalar) {
+            return Character(scalar)
+        }
+        return nil
+    }
+    return String(scalars)
+        .split(whereSeparator: \.isWhitespace)
+        .joined(separator: " ")
+}
+
+private func deckPickerNormalizedFilterTokens(_ values: Set<String>) -> [String] {
+    values
+        .map(deckPickerNormalizedSearchText)
+        .filter { !$0.isEmpty }
+}
+
+private func deckPickerTextContainsAnyToken(_ value: String?, normalizedTokens: [String]) -> Bool {
+    guard !normalizedTokens.isEmpty else { return true }
+    let normalizedValue = deckPickerNormalizedSearchText(value)
+    guard !normalizedValue.isEmpty else { return false }
+    return normalizedTokens.contains { normalizedValue.contains($0) }
+}
+
+private func deckPickerCardMatchesSubtypeFilters(
+    stage: String?,
+    subtype: String?,
+    subtypes: [String]?,
+    selectedSubtypes: Set<String>
+) -> Bool {
+    let selectedTokens = Set(selectedSubtypes.map(deckPickerNormalizedSearchText).filter { !$0.isEmpty })
+    guard !selectedTokens.isEmpty else { return true }
+
+    let cardSubtypeTokens = Set(([stage, subtype] + (subtypes ?? []))
+        .map(deckPickerNormalizedSearchText)
+        .filter { !$0.isEmpty })
+    guard !cardSubtypeTokens.isEmpty else { return false }
+
+    func compact(_ token: String) -> String {
+        token.replacingOccurrences(of: " ", with: "")
+    }
+
+    return selectedTokens.contains { selected in
+        let compactSelected = compact(selected)
+        return cardSubtypeTokens.contains { token in
+            token == selected
+                || token.contains(selected)
+                || compact(token) == compactSelected
+                || compact(token).contains(compactSelected)
+        }
+    }
+}
+
+private func deckPickerCardMatchesLegalityFilters(
+    selectedLegalities: Set<BrowseCardLegalityFilter>,
+    setCode: String,
+    releaseDate: String?,
+    category: String?,
+    energyType: String?,
+    regulationMark: String?,
+    cardName: String
+) -> Bool {
+    selectedLegalities.contains { legality in
+        let format = legality.deckFormat
+        if let legalSets = format.legalSetKeys, !legalSets.contains(setCode) { return false }
+        if format == .pokemonStandard, !deckPickerReleaseDateIsTournamentLegal(releaseDate) { return false }
+        if !deckPickerHasLegalRegulationMark(
+            format: format,
+            category: category,
+            energyType: energyType,
+            regulationMark: regulationMark
+        ) {
+            return false
+        }
+        if format.isBanned(cardName: cardName) { return false }
+        return true
+    }
+}
+
 private struct DeckPickerCatalogSnapshot {
     let sets: [TCGSet]
     let refs: [CardRef]
@@ -530,7 +611,7 @@ struct DeckCardPickerView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.primary)
                 }
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Menu {
@@ -557,7 +638,7 @@ struct DeckCardPickerView: View {
                         Image(systemName: filters.isVisiblyCustomized
                               ? "line.3.horizontal.decrease.circle.fill"
                               : "line.3.horizontal.decrease.circle")
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                     }
                 }
             }
@@ -1251,11 +1332,23 @@ struct DeckCardPickerView: View {
     }
 
     private func filterBrowseFilterCards(_ cards: [BrowseFilterCard]) -> [BrowseFilterCard] {
+        let normalizedWeaknessTypes = deckPickerNormalizedFilterTokens(filters.weaknessTypes)
+        let normalizedResistanceTypes = deckPickerNormalizedFilterTokens(filters.resistanceTypes)
         return cards.filter { card in
             if !filters.cardTypes.isEmpty,
                !filters.cardTypes.contains(resolvedCardType(for: card)) { return false }
             if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) { return false }
             if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) { return false }
+            if !filters.legalities.isEmpty,
+               !deckPickerCardMatchesLegalityFilters(
+                    selectedLegalities: filters.legalities,
+                    setCode: card.setCode,
+                    releaseDate: releaseDateBySetCode[card.setCode],
+                    category: card.category,
+                    energyType: card.energyType,
+                    regulationMark: card.regulationMark,
+                    cardName: card.cardName
+               ) { return false }
             if !filters.energyTypes.isEmpty {
                 if Set(resolvedEnergyTypes(for: card)).isDisjoint(with: filters.energyTypes) { return false }
             }
@@ -1266,6 +1359,17 @@ struct DeckCardPickerView: View {
             if !filters.trainerTypes.isEmpty {
                 let t = card.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                 if t.isEmpty || !filters.trainerTypes.contains(t) { return false }
+            }
+            if !deckPickerTextContainsAnyToken(card.weakness, normalizedTokens: normalizedWeaknessTypes) { return false }
+            if !deckPickerTextContainsAnyToken(card.resistance, normalizedTokens: normalizedResistanceTypes) { return false }
+            if !filters.pokemonSubtypes.isEmpty {
+                guard resolvedCardType(for: card) == .pokemon else { return false }
+                guard deckPickerCardMatchesSubtypeFilters(
+                    stage: card.stage,
+                    subtype: card.subtype,
+                    subtypes: card.subtypes,
+                    selectedSubtypes: filters.pokemonSubtypes
+                ) else { return false }
             }
             if let abilityPresence = filters.abilityPresence {
                 let hasAbilities = (card.abilities?.isEmpty == false)
@@ -1278,12 +1382,24 @@ struct DeckCardPickerView: View {
 
     /// Same rules as ``filterBrowseFilterCards`` but for resolved ``Card`` models (collection tab).
     private func passesPickerFilters(_ card: Card) -> Bool {
+        let normalizedWeaknessTypes = deckPickerNormalizedFilterTokens(filters.weaknessTypes)
+        let normalizedResistanceTypes = deckPickerNormalizedFilterTokens(filters.resistanceTypes)
         if !filters.cardTypes.isEmpty,
            !filters.cardTypes.contains(resolvedBrowseCardTypeForPicker(card)) {
             return false
         }
         if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) { return false }
         if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) { return false }
+        if !filters.legalities.isEmpty,
+           !deckPickerCardMatchesLegalityFilters(
+                selectedLegalities: filters.legalities,
+                setCode: card.setCode,
+                releaseDate: releaseDateBySetCode[card.setCode],
+                category: card.category,
+                energyType: card.energyType,
+                regulationMark: card.regulationMark,
+                cardName: card.cardName
+           ) { return false }
         if !filters.energyTypes.isEmpty {
             if Set(resolvedEnergyTypesForPickerCard(card)).isDisjoint(with: filters.energyTypes) { return false }
         }
@@ -1294,6 +1410,17 @@ struct DeckCardPickerView: View {
         if !filters.trainerTypes.isEmpty {
             let t = card.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             if t.isEmpty || !filters.trainerTypes.contains(t) { return false }
+        }
+        if !deckPickerTextContainsAnyToken(card.weakness, normalizedTokens: normalizedWeaknessTypes) { return false }
+        if !deckPickerTextContainsAnyToken(card.resistance, normalizedTokens: normalizedResistanceTypes) { return false }
+        if !filters.pokemonSubtypes.isEmpty {
+            guard resolvedBrowseCardTypeForPicker(card) == .pokemon else { return false }
+            guard deckPickerCardMatchesSubtypeFilters(
+                stage: card.stage,
+                subtype: card.subtype,
+                subtypes: card.subtypes,
+                selectedSubtypes: filters.pokemonSubtypes
+            ) else { return false }
         }
         if let abilityPresence = filters.abilityPresence {
             let hasAbilities = (card.abilities?.isEmpty == false)
