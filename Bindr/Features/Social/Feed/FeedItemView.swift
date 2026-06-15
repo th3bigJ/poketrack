@@ -8,6 +8,7 @@ struct FeedItemView: View {
     let group: GroupedFeedItem
     var showsInteractionBar: Bool = true
     var isCardTapEnabled: Bool = true
+    var onPostEdited: ((UUID, String, Date?) -> Void)? = nil
 
     private var item: SocialFeedService.FeedItem { group.primary }
 
@@ -22,6 +23,12 @@ struct FeedItemView: View {
     @State private var showEditSheet = false
     @State private var editDescription = ""
     @State private var isProcessing = false
+    @State private var editErrorMessage: String?
+    @State private var showEditErrorAlert = false
+
+    private var canEditPost: Bool {
+        isMyItem && item.content != nil && item.type != .friendship
+    }
 
     private var canOpenComments: Bool {
         item.content != nil && item.type != .friendship
@@ -74,7 +81,7 @@ struct FeedItemView: View {
                 Spacer()
                 
                 HStack(spacing: 12) {
-                    if isMyItem {
+                    if canEditPost {
                         postMenuButton
                     }
                     
@@ -215,14 +222,7 @@ struct FeedItemView: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Save") {
-                            if let contentID = item.content?.id {
-                                Task {
-                                    isProcessing = true
-                                    try? await services.socialFeed.updateSharedContent(id: contentID, description: editDescription)
-                                    isProcessing = false
-                                    showEditSheet = false
-                                }
-                            }
+                            saveEditedPost()
                         }
                         .bold()
                         .disabled(isProcessing)
@@ -231,19 +231,50 @@ struct FeedItemView: View {
             }
             .presentationDetents([.medium])
         }
+        .alert("Couldn't Save Post", isPresented: $showEditErrorAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(editErrorMessage ?? "Something went wrong while saving your changes.")
+        }
+    }
+
+    private func saveEditedPost() {
+        guard let contentID = item.content?.id else { return }
+        guard !isProcessing else { return }
+        isProcessing = true
+        let capturedDescription = editDescription
+        Task {
+            do {
+                let result = try await services.socialFeed.updateSharedContent(
+                    id: contentID,
+                    description: capturedDescription
+                )
+                await MainActor.run {
+                    onPostEdited?(contentID, result.description, result.updatedAt)
+                    isProcessing = false
+                    showEditSheet = false
+                    Haptics.success()
+                }
+            } catch {
+                await MainActor.run {
+                    editErrorMessage = error.localizedDescription
+                    showEditErrorAlert = true
+                    isProcessing = false
+                    Haptics.error()
+                }
+            }
+        }
     }
 
     private var postMenuButton: some View {
         Menu {
-            if let content = item.content {
-                Button {
-                    editDescription = content.description ?? ""
-                    showEditSheet = true
-                } label: {
-                    Label("Edit Caption", systemImage: "pencil")
-                }
+            Button {
+                editDescription = item.content?.description ?? ""
+                showEditSheet = true
+            } label: {
+                Label("Edit Post", systemImage: "pencil")
             }
-            
+
             Button(role: .destructive) {
                 showDeleteAlert = true
             } label: {
@@ -373,17 +404,14 @@ struct FeedItemView: View {
     }
 
     private var isEdited: Bool {
-        // We consider it edited if it has a manual description edit or if the
-        // service reports a significant time gap between creation and last update.
-        // For now, we'll check if the description starts with "Edited Post" (as seen in user data)
-        // or if we add real updatedAt support to the feed summary.
-        return item.content?.description?.contains("Edited Post") ?? false
+        guard let updatedAt = item.content?.updatedAt else { return false }
+        return updatedAt.timeIntervalSince(item.createdAt) > 1
     }
 
     private var cleanedDescription: String? {
         guard let description = item.content?.description else { return nil }
-        return description.replacingOccurrences(of: "Edited Post", with: "")
-            .trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimmed = description.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? nil : trimmed
     }
 
     private var badgeText: String? {

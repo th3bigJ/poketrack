@@ -91,6 +91,10 @@ struct OfficialDeckListSheet: View {
                 Section {
                     Toggle("Save player information for future deck lists", isOn: $savePlayerInfoForFuture)
                         .tint(accent)
+                } footer: {
+                    Text("This information is saved on device only and is not shared or backed up to our servers.")
+                        .font(.caption)
+                        .foregroundStyle(.red)
                 }
             }
             .onAppear(perform: loadSavedPlayerInfoIfNeeded)

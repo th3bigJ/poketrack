@@ -5,7 +5,7 @@ import Observation
 /// Computes and stores daily snapshots, completed-week averages, and completed-month averages.
 ///
 /// Daily rules:
-/// - No historical backfill.
+/// - Backfill missing snapshots for the last ~90 days using historical card prices.
 /// - Capture at most one snapshot for today when the app runs.
 ///
 /// Weekly rules:
@@ -214,6 +214,7 @@ final class CollectionValueService {
             collectionItems: collectionItems,
             preferredSnapshot: preferredTodaySnapshot
         )
+        await backfillRecentDailySnapshotsIfNeeded(collectionItems: collectionItems)
         await fillSnapshotGapsIfNeeded(collectionItems: collectionItems)
         let freshSnapshots = fetchAllSnapshots()
         let weeklyChanged = aggregateWeeklyIfNeeded(using: freshSnapshots)
@@ -222,6 +223,46 @@ final class CollectionValueService {
         if weeklyChanged || monthlyChanged {
             notifyValueHistoryChanged()
         }
+    }
+
+    /// Fills missing daily snapshots in the last ~90 days using historical prices for each day.
+    private func backfillRecentDailySnapshotsIfNeeded(collectionItems: [CollectionItem]) async {
+        let cal = Calendar.current
+        let today = cal.startOfDay(for: Date())
+        let yesterday = cal.date(byAdding: .day, value: -1, to: today)!
+        let cutoff = cal.date(byAdding: .day, value: -BucketDateMath.dailyPricingHistoryDays, to: today)!
+
+        let existingDays = Set(snapshots.map { cal.startOfDay(for: $0.date) })
+
+        var cursor = cutoff
+        var missingDays: [Date] = []
+        while cursor <= yesterday {
+            if !existingDays.contains(cursor) {
+                missingDays.append(cursor)
+            }
+            cursor = cal.date(byAdding: .day, value: 1, to: cursor)!
+        }
+        guard !missingDays.isEmpty else { return }
+
+        isBackfilling = true
+        defer { isBackfilling = false }
+
+        for date in missingDays {
+            let value = await computeValue(for: collectionItems, on: date)
+            guard value.total > 0 else { continue }
+            let record = CollectionValueSnapshot(
+                date: date,
+                totalGbp: value.total,
+                pokemonGbp: value.pokemon,
+                onePieceGbp: 0,
+                cardsGbp: value.cards,
+                sealedGbp: value.sealed
+            )
+            modelContext.insert(record)
+        }
+        try? modelContext.save()
+        loadAll()
+        notifyValueHistoryChanged()
     }
 
     /// Fills gaps between the oldest existing snapshot and yesterday using the closest available
@@ -271,7 +312,7 @@ final class CollectionValueService {
     }
 
     /// Replaces today's snapshot with the given live value and re-aggregates weekly/monthly averages.
-    /// Historical daily snapshots are left untouched — we only have 31 days of per-card price history
+    /// Historical daily snapshots are left untouched — we only have ~90 days of per-card price history
     /// so recomputing older snapshots would silently overwrite them with today's prices anyway.
     func forceRecalculate(liveSnapshot: BrandSnapshot, collectionItems: [CollectionItem]) async {
         guard !isBackfilling, liveSnapshot.total > 0 else {

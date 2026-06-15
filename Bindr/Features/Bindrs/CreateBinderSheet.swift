@@ -246,6 +246,7 @@ struct CreateBinderSheet: View {
             }
             .navigationTitle("New Binder")
             .navigationBarTitleDisplayMode(.inline)
+            .tint(.primary)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
@@ -256,6 +257,7 @@ struct CreateBinderSheet: View {
                         create()
                     }
                     .bold()
+                    .foregroundStyle(.primary)
                     .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
             }

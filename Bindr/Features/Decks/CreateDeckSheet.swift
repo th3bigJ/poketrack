@@ -46,6 +46,7 @@ struct CreateDeckSheet: View {
             }
             .navigationTitle("New Deck")
             .navigationBarTitleDisplayMode(.inline)
+            .tint(.primary)
             .onAppear {
                 let activeBrand = services.brandSettings.selectedCatalogBrand
                 selectedBrand = activeBrand
@@ -59,6 +60,7 @@ struct CreateDeckSheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create") { create() }
                         .bold()
+                        .foregroundStyle(.primary)
                         .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
             }

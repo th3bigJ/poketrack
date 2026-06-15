@@ -157,14 +157,13 @@ struct DecksRootView: View {
 
     private var decksListView: some View {
         ScrollView {
-            LazyVStack(spacing: 0) {
+            LazyVStack(spacing: BindrSpacing.sm) {
                 ForEach(visibleDecks) { deck in
                     NavigationLink(value: deck) {
                         DeckListRow(deck: deck)
-                            .padding(14)
+                            .padding(BindrSpacing.md)
                             .glassCardStyle(cornerRadius: 16)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
+                            .padding(.horizontal, BindrSpacing.lg)
                     }
                     .buttonStyle(.plain)
                     .simultaneousGesture(

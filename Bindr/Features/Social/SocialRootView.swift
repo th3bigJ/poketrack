@@ -682,7 +682,8 @@ struct SocialRootView: View {
             contentType: sharedContent.contentType,
             description: sharedContent.description,
             cardCount: sharedContent.cardCount,
-            brand: sharedContent.brand
+            brand: sharedContent.brand,
+            updatedAt: sharedContent.updatedAt
         )
     }
 

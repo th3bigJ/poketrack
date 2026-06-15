@@ -1002,10 +1002,10 @@ struct BinderDetailView: View {
     private func priceBadge(usd: Double) -> some View {
         let text = compactPriceLabel(usd: usd)
         return Text(text)
-            .font(.system(size: 8, weight: .bold, design: .monospaced))
+            .font(.system(size: 10, weight: .bold, design: .monospaced))
             .foregroundStyle(.white)
-            .padding(.horizontal, 5)
-            .padding(.vertical, 2.5)
+            .padding(.horizontal, 6)
+            .padding(.vertical, 3)
             .background(
                 Capsule()
                     .fill(

@@ -374,7 +374,17 @@ struct MyProfileView: View {
                     emptyProfileCard("Your shared posts will appear here.")
                 } else {
                     ForEach(groupedActivity) { group in
-                        FeedItemView(group: group)
+                        FeedItemView(
+                            group: group,
+                            onPostEdited: { contentID, description, updatedAt in
+                                myActivity = services.socialFeed.applyingDescriptionUpdate(
+                                    to: myActivity,
+                                    contentID: contentID,
+                                    description: description,
+                                    updatedAt: updatedAt
+                                )
+                            }
+                        )
                     }
                 }
             case .wishlist:

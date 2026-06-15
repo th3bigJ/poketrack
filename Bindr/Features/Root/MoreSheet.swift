@@ -7,8 +7,6 @@ struct MoreView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var accent
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
-
     @Binding var navigationPath: NavigationPath
 
     @State private var showProfile = false
@@ -18,14 +16,11 @@ struct MoreView: View {
     @State private var acceptedFriendCount: Int? = nil
 
     var body: some View {
-        ZStack(alignment: .top) {
-            ScrollView {
-                VStack(spacing: 0) {
-                    Color.clear.frame(height: rootFloatingChromeInset)
+        ScrollView {
+            VStack(spacing: 0) {
+                MoreBrandHeroCard()
 
-                    MoreBrandHeroCard()
-
-                    VStack(spacing: BindrSpacing.xl) {
+                VStack(spacing: BindrSpacing.xl) {
                         MoreMenuSection(title: "Collection Tools") {
                             MoreMenuRow(
                                 title: "Binders",
@@ -87,12 +82,6 @@ struct MoreView: View {
                     .padding(.top, BindrSpacing.lg)
                 }
                 .padding(.bottom, 120)
-            }
-            
-            // Clean, perfect glassmorphic header matching all other main tabs
-            BindrPageHeader(
-                title: "More"
-            )
         }
         .bindrPageBackground()
         .tint(.primary)
@@ -160,10 +149,11 @@ struct MoreView: View {
 
 private struct MoreBrandHeroCard: View {
     var body: some View {
-        BindrBrandLogoView(maxWidth: 230)
+        BindrBrandLogoView(maxWidth: 190)
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 18)
-        .padding(.horizontal, BindrSpacing.lg)
+            .padding(.top, BindrSpacing.sm)
+            .padding(.bottom, BindrSpacing.md)
+            .padding(.horizontal, BindrSpacing.lg)
     }
 }
 

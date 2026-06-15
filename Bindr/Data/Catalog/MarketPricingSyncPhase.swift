@@ -42,8 +42,8 @@ struct MarketPricingSyncPhase {
             count += pokemonSetCount * 2  // card deltas + market pricing
         }
         if shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill {
-            // Daily pricing buckets (up to 31) + sealed buckets (up to 31)
-            let dailyCandidates = BucketDateMath.last31DailyKeys()
+            // Daily pricing buckets (up to 90) + sealed buckets (up to 90)
+            let dailyCandidates = BucketDateMath.last90DailyKeys()
             var missingDaily = await store.unprocessedBucketKeys(from: dailyCandidates)
             if forceRefresh {
                 let today = BucketDateMath.todayUTCKey()
@@ -204,6 +204,14 @@ struct MarketPricingSyncPhase {
                 await store.unmarkBucketProcessed(key: "sealed/\(dateKey)")
             }
             try? await store.setMeta("pricing_daily_bucket_retry_v1", "1")
+        }
+        let needsDailyBucketRetryResetV2 = (await store.meta("pricing_daily_bucket_retry_v2")) != "1"
+        if needsDailyBucketRetryResetV2 {
+            for dateKey in BucketDateMath.last90DailyKeys() {
+                await store.unmarkBucketProcessed(key: dateKey)
+                await store.unmarkBucketProcessed(key: "sealed/\(dateKey)")
+            }
+            try? await store.setMeta("pricing_daily_bucket_retry_v2", "1")
         }
         let needsNormalizedMigration = (await store.meta("pricing_normalized_v1")) != "1"
         if needsNormalizedMigration {
@@ -395,7 +403,7 @@ struct MarketPricingSyncPhase {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
 
         let todayDateKey = BucketDateMath.todayUTCKey()
-        let candidateDateKeys = BucketDateMath.last31DailyKeys()
+        let candidateDateKeys = BucketDateMath.last90DailyKeys()
         var missingDateKeys = await store.unprocessedBucketKeys(from: candidateDateKeys)
         // Today's bucket may already be marked processed (e.g. before a new set was added to R2).
         // Force refresh must re-download it so `card_prices` picks up new cards like me4.
@@ -589,7 +597,7 @@ struct MarketPricingSyncPhase {
     private func syncSealedPricingBuckets(progress: CatalogSyncProgressReporter, forceRefresh: Bool = false) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
         let todayKey = BucketDateMath.todayUTCKey()
-        let candidateDailyKeys = BucketDateMath.last31DailyKeys().map { "sealed/\($0)" }
+        let candidateDailyKeys = BucketDateMath.last90DailyKeys().map { "sealed/\($0)" }
         var missingDailyKeys = await store.unprocessedBucketKeys(from: candidateDailyKeys)
         appendTodaySealedBucketIfNeeded(&missingDailyKeys)
         guard !missingDailyKeys.isEmpty else { return 0 }
@@ -668,7 +676,9 @@ struct MarketPricingSyncPhase {
                 var daily = window["daily"] ?? []
                 for point in newPoints { daily.removeAll { $0.first == point.first }; daily.append(point) }
                 daily.sort { ($0.first ?? "") < ($1.first ?? "") }
-                if daily.count > 31 { daily = Array(daily.suffix(31)) }
+                if daily.count > BucketDateMath.dailyPricingHistoryDays {
+                    daily = Array(daily.suffix(BucketDateMath.dailyPricingHistoryDays))
+                }
                 window["daily"] = daily
                 window["weekly"] = BucketDateMath.weeklyAverages(from: daily, limit: 52)
                 window["monthly"] = BucketDateMath.monthlyAverages(from: daily, limit: 60)

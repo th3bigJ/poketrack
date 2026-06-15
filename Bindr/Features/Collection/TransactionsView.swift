@@ -473,7 +473,7 @@ struct TransactionsView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, 10)
         .padding(.horizontal, 12)
-        .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .background(dashboardTileBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
         .overlay(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
@@ -546,12 +546,6 @@ struct TransactionsView: View {
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .glassCardStyle(cornerRadius: 20)
-        .overlay(alignment: .leading) {
-            Capsule()
-                .fill(ActivityPalette.trade)
-                .frame(width: 4)
-                .padding(.vertical, 14)
-        }
     }
 
     private func transactionRow(for line: LedgerLine) -> some View {
@@ -603,12 +597,6 @@ struct TransactionsView: View {
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
         .glassCardStyle(cornerRadius: 20)
-        .overlay(alignment: .leading) {
-            Capsule()
-                .fill(directionColor(for: line))
-                .frame(width: 4)
-                .padding(.vertical, 14)
-        }
     }
 
     private func tradeSummary(for lines: [LedgerLine]) -> String {
@@ -983,6 +971,10 @@ struct TransactionsView: View {
 
     private var dashboardCardInsetBackground: Color {
         colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
+    }
+
+    private var dashboardTileBackground: Color {
+        colorScheme == .dark ? dashboardCardInsetBackground : .white
     }
 
     private var dashboardBorder: Color {

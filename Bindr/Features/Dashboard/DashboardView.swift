@@ -196,7 +196,7 @@ struct DashboardView: View {
     private var dailyPoints: [ChartPoint] {
         let svc = services.collectionValue
         let cal = Calendar.current
-        let cutoff = cal.date(byAdding: .day, value: -31, to: cal.startOfDay(for: Date()))!
+        let cutoff = cal.date(byAdding: .day, value: -BucketDateMath.dailyPricingHistoryDays, to: cal.startOfDay(for: Date()))!
         var pointsByDay: [Date: ChartPoint] = [:]
         if let svc {
             for snapshot in svc.snapshots {

@@ -7,6 +7,13 @@ struct BinderSlotPickerSelection {
     let cardName: String
 }
 
+private struct BinderVariantPickerContext: Identifiable {
+    let id = UUID()
+    let card: Card
+    /// When set, the card is already in the basket and the user is changing its variant.
+    let selectedVariantKey: String?
+}
+
 private enum BinderPickerSource: String, CaseIterable, Identifiable {
     case allCards
     case collection
@@ -75,6 +82,7 @@ struct BinderSlotPickerView: View {
     @State private var cachedCollectionEntries: [BinderPickerEntry] = []
     @State private var cachedWishlistEntries: [BinderPickerEntry] = []
     @State private var cachedPriceByCardID: [String: Double] = [:]
+    @State private var variantPickerContext: BinderVariantPickerContext? = nil
 
     private static let initialBatchSize = 36
     private static let pageSize = 24
@@ -200,6 +208,10 @@ struct BinderSlotPickerView: View {
         }
     }
 
+    private var basketVariantByCardID: [String: String] {
+        Dictionary(uniqueKeysWithValues: basket.map { ($0.cardID, $0.variantKey) })
+    }
+
     private var overwriteCount: Int {
         let end = startPosition + basket.count
         guard end > startPosition else { return 0 }
@@ -247,13 +259,14 @@ struct BinderSlotPickerView: View {
                             } else {
                                 EagerVGrid(items: visibleEntries, columns: gridOptions.columnCount, spacing: 12) { entry in
                                     Button {
-                                        toggleBasket(entry: entry)
+                                        handleEntryTap(entry)
                                     } label: {
                                         BinderPickerCardCell(
                                             entry: entry,
                                             setName: setNameByCode[entry.card.setCode],
                                             gridOptions: gridOptions,
-                                            isSelected: basketCardIDs.contains(entry.card.masterCardId)
+                                            isSelected: basketCardIDs.contains(entry.card.masterCardId),
+                                            selectedVariantKey: basketVariantByCardID[entry.card.masterCardId]
                                         )
                                     }
                                     .buttonStyle(CardCellButtonStyle())
@@ -297,11 +310,12 @@ struct BinderSlotPickerView: View {
                         searchPlaceholder: "Search cards in set",
                         selectedBrand: selectedBrand,
                         basketCardIDs: basketCardIDs,
+                        basketVariantByCardID: basketVariantByCardID,
                         loadCards: {
                             let loaded = await services.cardData.loadCards(forSetCode: set.setCode, catalogBrand: selectedBrand)
                             return sortCardsByLocalIdHighestFirst(loaded)
                         },
-                        onToggle: { card in toggleBasketCard(card) }
+                        onCardTap: handleCardTap
                     )
                 case .pokemon:
                     BinderPickerPokemonBrowseView()
@@ -312,8 +326,9 @@ struct BinderSlotPickerView: View {
                         searchPlaceholder: "Search cards for Pokémon",
                         selectedBrand: .pokemon,
                         basketCardIDs: basketCardIDs,
+                        basketVariantByCardID: basketVariantByCardID,
                         loadCards: { await loadPokemonDexCards(dexId: dexId) },
-                        onToggle: { card in toggleBasketCard(card) }
+                        onCardTap: handleCardTap
                     )
                 }
             }
@@ -413,6 +428,19 @@ struct BinderSlotPickerView: View {
             .safeAreaInset(edge: .bottom) {
                 basketBar
             }
+            .sheet(item: $variantPickerContext) { context in
+                BinderCardVariantPickerSheet(
+                    card: context.card,
+                    selectedVariantKey: context.selectedVariantKey,
+                    onSelect: { variantKey in
+                        addCardToBasket(card: context.card, variantKey: variantKey)
+                    },
+                    onRemove: context.selectedVariantKey == nil ? nil : {
+                        removeCardFromBasket(context.card)
+                        variantPickerContext = nil
+                    }
+                )
+            }
         }
         .tint(.primary)
     }
@@ -484,7 +512,7 @@ struct BinderSlotPickerView: View {
             BrowseInlineSearchField(title: searchPlaceholder, text: $query)
 
             HStack {
-                Text("Tap cards to fill from slot \(startPosition + 1).")
+                Text("Tap cards to fill from slot \(startPosition + 1). Choose a variant when a card has more than one.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Spacer()
@@ -570,22 +598,88 @@ struct BinderSlotPickerView: View {
 
     // MARK: - Basket operations
 
-    private func toggleBasket(entry: BinderPickerEntry) {
-        toggleBasketCard(entry.card, variantKey: entry.variantKey)
+    private func handleEntryTap(_ entry: BinderPickerEntry) {
+        Task {
+            let keys = await resolvedVariantKeys(for: entry.card)
+            await MainActor.run {
+                applyEntryTap(entry: entry, variantKeys: keys)
+            }
+        }
     }
 
-    private func toggleBasketCard(_ card: Card, variantKey: String? = nil) {
+    private func handleCardTap(_ card: Card) {
+        Task {
+            let keys = await resolvedVariantKeys(for: card)
+            await MainActor.run {
+                applyCardTap(card: card, variantKeys: keys, presetVariantKey: nil)
+            }
+        }
+    }
+
+    private func resolvedVariantKeys(for card: Card) async -> [String] {
+        var keys = await services.pricing.variantKeys(for: card)
+        if keys.isEmpty, let pricingVariants = card.pricingVariants, !pricingVariants.isEmpty {
+            keys = pricingVariants
+        }
+        if keys.isEmpty {
+            keys = ["normal"]
+        }
+        return keys
+    }
+
+    private func applyEntryTap(entry: BinderPickerEntry, variantKeys: [String]) {
+        let usesPresetVariant = source == .collection || source == .wishlist
+        applyCardTap(
+            card: entry.card,
+            variantKeys: variantKeys,
+            presetVariantKey: usesPresetVariant ? entry.variantKey : nil
+        )
+    }
+
+    private func applyCardTap(card: Card, variantKeys: [String], presetVariantKey: String?) {
         if let idx = basket.firstIndex(where: { $0.cardID == card.masterCardId }) {
-            basket.remove(at: idx)
-            basketCardIDs.remove(card.masterCardId)
+            if variantKeys.count > 1 {
+                variantPickerContext = BinderVariantPickerContext(
+                    card: card,
+                    selectedVariantKey: basket[idx].variantKey
+                )
+            } else {
+                removeCardFromBasket(card)
+            }
+            return
+        }
+
+        if variantKeys.count == 1 {
+            addCardToBasket(card: card, variantKey: presetVariantKey ?? variantKeys[0])
+        } else if let presetVariantKey {
+            addCardToBasket(card: card, variantKey: presetVariantKey)
+        } else {
+            variantPickerContext = BinderVariantPickerContext(card: card, selectedVariantKey: nil)
+        }
+    }
+
+    private func addCardToBasket(card: Card, variantKey: String) {
+        if let idx = basket.firstIndex(where: { $0.cardID == card.masterCardId }) {
+            basket[idx] = BinderSlotPickerSelection(
+                cardID: card.masterCardId,
+                variantKey: variantKey,
+                cardName: card.cardName
+            )
         } else {
             basket.append(BinderSlotPickerSelection(
                 cardID: card.masterCardId,
-                variantKey: variantKey ?? card.pricingVariants?.first ?? "normal",
+                variantKey: variantKey,
                 cardName: card.cardName
             ))
             basketCardIDs.insert(card.masterCardId)
         }
+        variantPickerContext = nil
+    }
+
+    private func removeCardFromBasket(_ card: Card) {
+        guard let idx = basket.firstIndex(where: { $0.cardID == card.masterCardId }) else { return }
+        basket.remove(at: idx)
+        basketCardIDs.remove(card.masterCardId)
     }
 
     // MARK: - Data loading
@@ -1100,10 +1194,18 @@ private struct BinderPickerCardCell: View {
     let setName: String?
     let gridOptions: BrowseGridOptions
     let isSelected: Bool
+    let selectedVariantKey: String?
 
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
+
+    private var footnote: String? {
+        if isSelected, let selectedVariantKey {
+            return displayVariant(selectedVariantKey)
+        }
+        return entry.footnote
+    }
 
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -1113,7 +1215,7 @@ private struct BinderPickerCardCell: View {
                 colorScheme: colorScheme,
                 gridOptions: gridOptions,
                 setName: setName,
-                footnote: entry.footnote
+                footnote: footnote
             )
 
             Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
@@ -1134,6 +1236,16 @@ private struct BinderPickerCardCell: View {
                     lineWidth: isSelected ? 2 : 1
                 )
         }
+    }
+
+    private func displayVariant(_ variantKey: String) -> String {
+        let spaced = variantKey
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
     }
 }
 
@@ -1330,8 +1442,9 @@ private struct BinderPickerCatalogCardsView: View {
     let searchPlaceholder: String
     let selectedBrand: TCGBrand
     let basketCardIDs: Set<String>
+    let basketVariantByCardID: [String: String]
     let loadCards: () async -> [Card]
-    let onToggle: (Card) -> Void
+    let onCardTap: (Card) -> Void
 
     @State private var cards: [Card] = []
     @State private var isLoading = true
@@ -1382,7 +1495,7 @@ private struct BinderPickerCatalogCardsView: View {
                         LazyVGrid(columns: columns, spacing: 12) {
                             ForEach(filteredCards) { card in
                                 Button {
-                                    onToggle(card)
+                                    onCardTap(card)
                                 } label: {
                                     BinderPickerCardCell(
                                         entry: BinderPickerEntry(
@@ -1394,7 +1507,8 @@ private struct BinderPickerCatalogCardsView: View {
                                         ),
                                         setName: setNameByCode[card.setCode],
                                         gridOptions: services.browseGridOptions.options,
-                                        isSelected: basketCardIDs.contains(card.masterCardId)
+                                        isSelected: basketCardIDs.contains(card.masterCardId),
+                                        selectedVariantKey: basketVariantByCardID[card.masterCardId]
                                     )
                                 }
                                 .buttonStyle(CardCellButtonStyle())
@@ -1422,5 +1536,156 @@ private struct BinderPickerCatalogCardsView: View {
             cards = await loadCards()
             isLoading = false
         }
+    }
+}
+
+// MARK: - Variant picker
+
+private struct BinderCardVariantPickerSheet: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.bindrAccent) private var bindrAccent
+
+    let card: Card
+    let selectedVariantKey: String?
+    let onSelect: (String) -> Void
+    let onRemove: (() -> Void)?
+
+    @State private var variantKeys: [String] = []
+    @State private var priceTextByVariant: [String: String] = [:]
+    @State private var isLoading = true
+
+    var body: some View {
+        NavigationStack {
+            Group {
+                if isLoading {
+                    ProgressView("Loading variants…")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    ScrollView {
+                        VStack(spacing: 12) {
+                            Text("Choose the printing so binder prices match the card you own.")
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 16)
+                                .padding(.top, 4)
+
+                            VStack(spacing: 8) {
+                                ForEach(variantKeys, id: \.self) { key in
+                                    variantRow(key)
+                                }
+                            }
+                            .padding(.horizontal, 16)
+
+                            if let onRemove {
+                                Button(role: .destructive) {
+                                    onRemove()
+                                } label: {
+                                    Text("Remove from basket")
+                                        .font(.subheadline.weight(.semibold))
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.vertical, 12)
+                                }
+                                .buttonStyle(.plain)
+                                .padding(.horizontal, 16)
+                                .padding(.top, 8)
+                            }
+                        }
+                        .padding(.bottom, 24)
+                    }
+                }
+            }
+            .navigationTitle(card.cardName)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                }
+            }
+        }
+        .presentationDetents([.medium, .large])
+        .presentationDragIndicator(.visible)
+        .task(id: card.masterCardId) {
+            await loadVariants()
+        }
+    }
+
+    private func variantRow(_ key: String) -> some View {
+        let isSelected = selectedVariantKey == key
+
+        return Button {
+            onSelect(key)
+            dismiss()
+        } label: {
+            HStack(spacing: 12) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(displayVariant(key))
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.primary)
+                    Text("Market price")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer(minLength: 8)
+
+                Text(priceTextByVariant[key] ?? "—")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .monospacedDigit()
+
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.body.weight(.semibold))
+                        .foregroundStyle(bindrAccent)
+                }
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 12)
+            .glassCardStyle(cornerRadius: 14, interactive: true)
+            .overlay {
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .strokeBorder(isSelected ? bindrAccent.opacity(0.55) : Color.clear, lineWidth: 1.5)
+            }
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func loadVariants() async {
+        isLoading = true
+        var keys = await services.pricing.variantKeys(for: card)
+        if keys.isEmpty, let pricingVariants = card.pricingVariants, !pricingVariants.isEmpty {
+            keys = pricingVariants
+        }
+        if keys.isEmpty {
+            keys = ["normal"]
+        }
+
+        var prices: [String: String] = [:]
+        for key in keys {
+            if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: key, grade: "raw") {
+                prices[key] = services.priceDisplay.currency.format(
+                    amountUSD: usd,
+                    usdToGbp: services.pricing.usdToGbp
+                )
+            } else {
+                prices[key] = "—"
+            }
+        }
+
+        variantKeys = keys
+        priceTextByVariant = prices
+        isLoading = false
+    }
+
+    private func displayVariant(_ variantKey: String) -> String {
+        let spaced = variantKey
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
     }
 }

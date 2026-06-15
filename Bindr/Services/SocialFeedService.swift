@@ -51,6 +51,7 @@ final class SocialFeedService {
         let description: String?
         let cardCount: Int?
         let brand: String?
+        let updatedAt: Date?
     }
 
     struct FeedItem: Identifiable, Sendable {
@@ -121,6 +122,7 @@ final class SocialFeedService {
         let cardCount: Int?
         let brand: String?
         let publishedAt: Date?
+        let updatedAt: Date?
         let actor: SocialProfile?
 
         enum CodingKeys: String, CodingKey {
@@ -133,7 +135,29 @@ final class SocialFeedService {
             case cardCount = "card_count"
             case brand
             case publishedAt = "published_at"
+            case updatedAt = "updated_at"
             case actor
+        }
+    }
+
+    private struct SharedContentDescriptionUpdate: Encodable {
+        let description: String?
+        let updatedAt: Date
+
+        enum CodingKeys: String, CodingKey {
+            case description
+            case updatedAt = "updated_at"
+        }
+    }
+
+    private struct SharedContentDescriptionPatchRow: Decodable {
+        let id: UUID
+        let description: String?
+        let updatedAt: Date?
+
+        enum CodingKeys: String, CodingKey {
+            case id, description
+            case updatedAt = "updated_at"
         }
     }
 
@@ -365,7 +389,7 @@ final class SocialFeedService {
     }
 
     func fetchActivityForUser(userID: UUID, limit: Int = 20) async throws -> [FeedItem] {
-        let path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,description,card_count,brand,payload,published_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)&owner_id=eq.\(userID.uuidString)"
+        let path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,description,card_count,brand,payload,published_at,updated_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)&owner_id=eq.\(userID.uuidString)"
         let rows: [SharedContentFeedRow] = try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())
         let blockedUserIDs = try await fetchBlockedUserIDs()
         return rows.compactMap { row -> FeedItem? in
@@ -378,7 +402,8 @@ final class SocialFeedService {
                 contentType: row.contentType,
                 description: row.description,
                 cardCount: row.cardCount,
-                brand: row.brand
+                brand: row.brand,
+                updatedAt: row.updatedAt
             )
             let type: FeedItemType = {
                 switch row.contentType {
@@ -641,57 +666,43 @@ final class SocialFeedService {
         items.removeAll { $0.id == id.uuidString || $0.content?.id == id }
     }
 
-    /// Updates the description/caption of a shared content post.
-    func updateSharedContent(id: UUID, description: String) async throws {
-        let path = "/rest/v1/shared_content?id=eq.\(id.uuidString)"
-        let body = ["description": description]
-        let _: EmptyResponse = try await execute(
+    /// Updates the description/caption of a shared content post owned by the signed-in user.
+    @discardableResult
+    func updateSharedContent(id: UUID, description: String) async throws -> (description: String, updatedAt: Date) {
+        let userID = try signedInUserID()
+        let trimmed = description.trimmingCharacters(in: .whitespacesAndNewlines)
+        let resolvedDescription = trimmed.isEmpty ? nil : trimmed
+        let now = Date()
+        let path = "/rest/v1/shared_content?id=eq.\(id.uuidString)&owner_id=eq.\(userID.uuidString)&select=id,description,updated_at"
+        let body = SharedContentDescriptionUpdate(description: resolvedDescription, updatedAt: now)
+        let rows: [SharedContentDescriptionPatchRow] = try await execute(
             path: path,
             method: "PATCH",
             accessToken: try signedInAccessToken(),
             body: body,
-            extraHeaders: ["Prefer": "return=minimal"]
+            extraHeaders: ["Prefer": "return=representation"]
         )
-        
-        // Update local items
-        for index in items.indices {
-            if items[index].content?.id == id {
-                let oldItem = items[index]
-                let oldContent = oldItem.content!
-                let newContent = FeedContentSummary(
-                    id: oldContent.id,
-                    ownerID: oldContent.ownerID,
-                    title: oldContent.title,
-                    contentType: oldContent.contentType,
-                    description: description,
-                    cardCount: oldContent.cardCount,
-                    brand: oldContent.brand
-                )
-                
-                items[index] = FeedItem(
-                    id: oldItem.id,
-                    type: oldItem.type,
-                    createdAt: oldItem.createdAt,
-                    actor: oldItem.actor,
-                    content: newContent,
-                    voteType: oldItem.voteType,
-                    commentBody: oldItem.commentBody,
-                    friendshipID: oldItem.friendshipID,
-                    wishlistCardID: oldItem.wishlistCardID,
-                    pullCardID: oldItem.pullCardID,
-                    pullCardName: oldItem.pullCardName,
-                    pullSetName: oldItem.pullSetName,
-                    pullValue: oldItem.pullValue,
-                    pullRarity: oldItem.pullRarity,
-                    digestCollectionCount: oldItem.digestCollectionCount,
-                    digestWishlistCount: oldItem.digestWishlistCount,
-                    thumbnails: oldItem.thumbnails,
-                    binderColour: oldItem.binderColour,
-                    binderTexture: oldItem.binderTexture,
-                    binderSeed: oldItem.binderSeed
-                )
-            }
+        guard let row = rows.first else {
+            throw SocialFeedError.invalidResponse
         }
+        let updatedAt = row.updatedAt ?? now
+        let savedDescription = row.description ?? resolvedDescription ?? ""
+        applyDescriptionUpdate(contentID: id, description: savedDescription, updatedAt: updatedAt)
+        return (savedDescription, updatedAt)
+    }
+
+    /// Applies a caption update to an in-memory feed list (e.g. profile activity).
+    func applyingDescriptionUpdate(
+        to items: [FeedItem],
+        contentID: UUID,
+        description: String,
+        updatedAt: Date?
+    ) -> [FeedItem] {
+        items.map { $0.applyingDescriptionUpdate(contentID: contentID, description: description, updatedAt: updatedAt) }
+    }
+
+    private func applyDescriptionUpdate(contentID: UUID, description: String, updatedAt: Date) {
+        items = applyingDescriptionUpdate(to: items, contentID: contentID, description: description, updatedAt: updatedAt)
     }
 
     private func flattenComments(
@@ -748,7 +759,8 @@ final class SocialFeedService {
                 contentType: row.contentType,
                 description: row.description,
                 cardCount: row.cardCount,
-                brand: row.brand
+                brand: row.brand,
+                updatedAt: row.updatedAt
             )
             let type: FeedItemType = {
                 switch row.contentType {
@@ -815,7 +827,8 @@ final class SocialFeedService {
                 contentType: content.contentType,
                 description: content.description,
                 cardCount: content.cardCount,
-                brand: content.brand
+                brand: content.brand,
+                updatedAt: nil
             )
             let thumbnails = Self.thumbnailsFromPayload(content.payload, includeThumbnailsKey: true)
             return FeedItem(
@@ -892,7 +905,8 @@ final class SocialFeedService {
                 contentType: content.contentType,
                 description: content.description,
                 cardCount: content.cardCount,
-                brand: content.brand
+                brand: content.brand,
+                updatedAt: nil
             )
             return FeedItem(
                 id: "comment-\(row.id.uuidString)",
@@ -938,7 +952,8 @@ final class SocialFeedService {
                 contentType: content.contentType,
                 description: content.description,
                 cardCount: content.cardCount,
-                brand: content.brand
+                brand: content.brand,
+                updatedAt: nil
             )
             return FeedItem(
                 id: "wishlist-\(row.id.uuidString)",
@@ -970,7 +985,7 @@ final class SocialFeedService {
 
     private func fetchSharedContentRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [SharedContentFeedRow] {
         let beforeFilter = before.map { "&published_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,description,card_count,brand,payload,published_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,description,card_count,brand,payload,published_at,updated_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -1198,6 +1213,48 @@ final class SocialFeedService {
             formatter.timeStyle = .none
             return formatter.string(from: date)
         }
+    }
+}
+
+extension SocialFeedService.FeedItem {
+    func applyingDescriptionUpdate(
+        contentID: UUID,
+        description: String,
+        updatedAt: Date?
+    ) -> SocialFeedService.FeedItem {
+        guard content?.id == contentID, let oldContent = content else { return self }
+        let newContent = SocialFeedService.FeedContentSummary(
+            id: oldContent.id,
+            ownerID: oldContent.ownerID,
+            title: oldContent.title,
+            contentType: oldContent.contentType,
+            description: description,
+            cardCount: oldContent.cardCount,
+            brand: oldContent.brand,
+            updatedAt: updatedAt ?? oldContent.updatedAt
+        )
+        return SocialFeedService.FeedItem(
+            id: id,
+            type: type,
+            createdAt: createdAt,
+            actor: actor,
+            content: newContent,
+            voteType: voteType,
+            commentBody: commentBody,
+            friendshipID: friendshipID,
+            wishlistCardID: wishlistCardID,
+            pullCardID: pullCardID,
+            pullCardName: pullCardName,
+            pullSetName: pullSetName,
+            pullValue: pullValue,
+            pullRarity: pullRarity,
+            digestCollectionCount: digestCollectionCount,
+            digestWishlistCount: digestWishlistCount,
+            thumbnails: thumbnails,
+            binderColour: binderColour,
+            binderTexture: binderTexture,
+            binderSeed: binderSeed
+        )
     }
 }
 

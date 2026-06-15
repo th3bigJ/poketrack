@@ -139,6 +139,14 @@ struct EditProfileView: View {
         existingProfile != nil
     }
 
+    private var usernameSubtitle: String {
+        let trimmed = username.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.isEmpty {
+            return "Choose a username below"
+        }
+        return "@\(trimmed)"
+    }
+
     private var canSave: Bool {
         if isSaving { return false }
         if username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -184,21 +192,22 @@ struct EditProfileView: View {
     var body: some View {
         Form {
             Section {
-                TextField("Username", text: $username)
-                    .textInputAutocapitalization(.never)
-                    .autocorrectionDisabled()
-                    .disabled(isUsernameLocked)
+                if !isUsernameLocked {
+                    TextField("Username", text: $username)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                }
 
-                TextField("Display name", text: $displayName)
+                TextField("Screen name", text: $displayName)
 
                 TextField("Bio", text: $bio, axis: .vertical)
                     .lineLimit(3...6)
             } header: {
                 Text("Profile")
             } footer: {
-                Text(isUsernameLocked
-                     ? "Username is locked after first save."
-                     : "Choose your public username. You cannot change it later.")
+                if !isUsernameLocked {
+                    Text("Choose your public username. You cannot change it later.")
+                }
             }
 
             Section {
@@ -210,7 +219,7 @@ struct EditProfileView: View {
                             .font(.headline.weight(.semibold))
                             .foregroundStyle(.primary)
                             .lineLimit(1)
-                        Text(username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Choose a username below" : "@\(username)")
+                        Text(usernameSubtitle)
                             .font(.subheadline.weight(.medium))
                             .foregroundStyle(.secondary)
                             .lineLimit(1)
@@ -235,7 +244,7 @@ struct EditProfileView: View {
                         columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 6),
                         spacing: 10
                     ) {
-                        ForEach(ThemeSettings.presetColors, id: \.self) { hex in
+                        ForEach(ThemeSettings.avatarBackgroundColors, id: \.self) { hex in
                             let isSelected = avatarBackgroundColor == hex
                             Button {
                                 avatarBackgroundColor = hex

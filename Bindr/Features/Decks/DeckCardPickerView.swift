@@ -558,8 +558,20 @@ struct DeckCardPickerView: View {
                     .scrollDismissesKeyboard(.interactively)
                 }
             }
-            .navigationTitle("Add Cards")
-            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(.hidden, for: .navigationBar)
+            .toolbarBackground(.hidden, for: .navigationBar)
+            .safeAreaInset(edge: .top) {
+                BindrPageHeader(
+                    title: "Add Cards",
+                    leading: {
+                        Button("Cancel") { dismiss() }
+                            .glassToolbarButton()
+                    },
+                    trailing: {
+                        deckPickerToolbarTrailingControls
+                    }
+                )
+            }
             .navigationDestination(for: DeckPickerBrowseRoute.self) { route in
                 switch route {
                 case .sets:
@@ -606,49 +618,6 @@ struct DeckCardPickerView: View {
                             openDetailForCard(card, swipeContext: swipeCards)
                         }
                     )
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
-                        .foregroundStyle(.primary)
-                }
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    Menu {
-                        BrowseGridFiltersMenuContent(
-                            brand: deck.tcgBrand,
-                            filters: $filters,
-                            energyOptions: energyOptions,
-                            rarityOptions: rarityOptions,
-                            trainerTypeOptions: trainerTypeOptions,
-                            gridOptions: $gridOptions,
-                            config: FilterMenuConfig(
-                                showSortBy: true,
-                                showAcquiredDateSort: false,
-                                showBrandFilters: false,
-                                showRarity: true,
-                                showRarePlusOnly: true,
-                                showHideOwned: source == .allCards,
-                                showShowDuplicates: false,
-                                showGridOptions: true,
-                                defaultSortBy: .newestSet
-                            )
-                        )
-                    } label: {
-                        Image(systemName: filters.isVisiblyCustomized
-                              ? "line.3.horizontal.decrease.circle.fill"
-                              : "line.3.horizontal.decrease.circle")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
-                            .modifier(ChromeGlassCircleGlyphModifier())
-                    }
-                    .buttonStyle(.plain)
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-                    .menuIndicator(.hidden)
-                    .frame(width: 48, height: 48)
-                    .contentShape(Rectangle())
-                    .accessibilityLabel("Filters")
                 }
             }
             .task(id: deck.format) {
@@ -724,7 +693,68 @@ struct DeckCardPickerView: View {
                 }
             }
         }
+        .tint(.primary)
         .presentationDetents([.large])
+    }
+
+    private var deckPickerFilterMenuConfig: FilterMenuConfig {
+        FilterMenuConfig(
+            showSortBy: true,
+            showAcquiredDateSort: false,
+            showBrandFilters: false,
+            showRarity: true,
+            showRarePlusOnly: true,
+            showHideOwned: source == .allCards,
+            showShowDuplicates: false,
+            showGridOptions: false,
+            defaultSortBy: .newestSet
+        )
+    }
+
+    @ViewBuilder
+    private var deckPickerToolbarTrailingControls: some View {
+        HStack(spacing: 8) {
+            Menu {
+                BrowseGridOptionsMenuContent(gridOptions: $gridOptions)
+            } label: {
+                Image(systemName: "slider.horizontal.3")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.primary)
+                    .modifier(ChromeGlassCircleGlyphModifier())
+            }
+            .buttonStyle(.plain)
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+            .menuIndicator(.hidden)
+            .frame(width: 48, height: 48)
+            .contentShape(Rectangle())
+            .accessibilityLabel("Grid options")
+
+            Menu {
+                BrowseGridFiltersMenuContent(
+                    brand: deck.tcgBrand,
+                    filters: $filters,
+                    energyOptions: energyOptions,
+                    rarityOptions: rarityOptions,
+                    trainerTypeOptions: trainerTypeOptions,
+                    config: deckPickerFilterMenuConfig
+                )
+            } label: {
+                Image(systemName: filters.isVisiblyCustomized
+                      ? "line.3.horizontal.decrease.circle.fill"
+                      : "line.3.horizontal.decrease.circle")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.primary)
+                    .modifier(ChromeGlassCircleGlyphModifier())
+            }
+            .buttonStyle(.plain)
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+            .menuIndicator(.hidden)
+            .frame(width: 48, height: 48)
+            .contentShape(Rectangle())
+            .accessibilityLabel("Filters")
+        }
     }
 
     // MARK: - Header

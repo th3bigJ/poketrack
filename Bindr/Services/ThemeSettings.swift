@@ -128,6 +128,24 @@ final class ThemeSettings {
         "71717a"  // Zinc
     ]
 
+    static let avatarBackgroundColors = presetColors + [
+        "22c55e", // Green
+        "84cc16", // Lime
+        "eab308", // Yellow
+        "f97316", // Orange
+        "14b8a6", // Teal
+        "0ea5e9", // Sky
+        "a855f7", // Purple
+        "d946ef", // Fuchsia
+        "f43f5e", // Rose
+        "78716c", // Stone
+        "475569", // Slate
+        "1e3a5f", // Navy
+        "be123c", // Crimson
+        "65a30d", // Olive
+        "0891b2", // Deep Cyan
+    ]
+
     static let accentThemeOptions = [logoThemeID] + presetColors
 
     private static func localKey(_ key: String) -> String {

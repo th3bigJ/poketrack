@@ -48,15 +48,26 @@ enum BucketDateMath {
         return String(dateKey.prefix(7))
     }
 
-    static func last31DailyKeys(relativeTo now: Date = Date()) -> [String] {
+    /// Rolling window of daily price buckets kept locally (~3 months).
+    static let dailyPricingHistoryDays = 90
+
+    static func lastDailyKeys(count: Int, relativeTo now: Date = Date()) -> [String] {
         var cal = Calendar(identifier: .gregorian)
         cal.timeZone = TimeZone(identifier: "UTC")!
-        return (0..<31).compactMap { offset -> String? in
+        return (0..<count).compactMap { offset -> String? in
             guard let date = cal.date(byAdding: .day, value: -offset, to: now) else { return nil }
             let comps = cal.dateComponents([.year, .month, .day], from: date)
             guard let y = comps.year, let m = comps.month, let d = comps.day else { return nil }
             return String(format: "%04d-%02d-%02d", y, m, d)
         }.reversed()
+    }
+
+    static func last31DailyKeys(relativeTo now: Date = Date()) -> [String] {
+        lastDailyKeys(count: 31, relativeTo: now)
+    }
+
+    static func last90DailyKeys(relativeTo now: Date = Date()) -> [String] {
+        lastDailyKeys(count: dailyPricingHistoryDays, relativeTo: now)
     }
 
     static func allWeeklyKeys(from startYear: Int, relativeTo now: Date = Date()) -> [String] {
