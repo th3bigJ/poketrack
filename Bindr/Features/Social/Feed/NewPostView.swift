@@ -5,6 +5,7 @@ import SwiftData
 
 private enum PostType: String, CaseIterable, Identifiable {
     case pull = "Card Pull"
+    case showcase = "Showcase"
     case want = "I Want"
     case binder = "Binder"
     case deck = "Deck"
@@ -14,6 +15,7 @@ private enum PostType: String, CaseIterable, Identifiable {
     var icon: String {
         switch self {
         case .pull:   return "sparkles"
+        case .showcase: return "star"
         case .want:   return "heart"
         case .binder: return "books.vertical"
         case .deck:   return "rectangle.stack"
@@ -23,6 +25,7 @@ private enum PostType: String, CaseIterable, Identifiable {
     var accentColor: Color {
         switch self {
         case .pull:   return Color(hex: "52C97C")
+        case .showcase: return Color(hex: "5B9CF6")
         case .want:   return Color(hex: "A78BFA")
         case .binder: return Color(hex: "E8B84B")
         case .deck:   return Color(hex: "5B9CF6")
@@ -68,7 +71,7 @@ struct NewPostView: View {
 
     private var canPost: Bool {
         switch selectedType {
-        case .pull:   return selectedCollectionItem != nil
+        case .pull, .showcase: return selectedCollectionItem != nil
         case .want:   return selectedWishlistItem != nil
         case .binder: return selectedBinder != nil
         case .deck:   return selectedDeck != nil
@@ -187,7 +190,7 @@ struct NewPostView: View {
             sectionLabel(contentSectionLabel)
 
             switch selectedType {
-            case .pull:
+            case .pull, .showcase:
                 cardList(items: singleCards, selected: $selectedCollectionItem)
             case .want:
                 wishlistList(selected: $selectedWishlistItem)
@@ -201,7 +204,7 @@ struct NewPostView: View {
 
     private var contentSectionLabel: String {
         switch selectedType {
-        case .pull:   return "SELECT CARD FROM COLLECTION"
+        case .pull, .showcase: return "SELECT CARD FROM COLLECTION"
         case .want:   return "SELECT CARD FROM WISHLIST"
         case .binder: return "SELECT BINDER"
         case .deck:   return "SELECT DECK"
@@ -392,7 +395,7 @@ struct NewPostView: View {
         defer { isBusy = false }
         do {
             switch selectedType {
-            case .pull:
+            case .pull, .showcase:
                 guard let item = selectedCollectionItem else { return }
                 let name = cardNamesByID[item.cardID] ?? item.cardID
                 // Prefer the human-readable set name; fall back to the set code

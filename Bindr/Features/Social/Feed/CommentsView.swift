@@ -298,7 +298,7 @@ struct CommentsView: View {
                         }
                         .padding(.horizontal, 14)
                         .padding(.vertical, 10)
-                        .background(Color(uiColor: .secondarySystemBackground),
+                        .background(Color(uiColor: .systemBackground),
                                     in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                         .overlay {
                             RoundedRectangle(cornerRadius: 12, style: .continuous)
@@ -318,7 +318,7 @@ struct CommentsView: View {
                     }
                     .padding(.horizontal, 14)
                     .padding(.vertical, 14)
-                    .background(Color(uiColor: .secondarySystemBackground),
+                    .background(Color(uiColor: .systemBackground),
                                 in: RoundedRectangle(cornerRadius: 12, style: .continuous))
                 }
             } else {
@@ -364,7 +364,7 @@ struct CommentsView: View {
             }
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
-            .background(Color(uiColor: .secondarySystemBackground),
+            .background(Color(uiColor: .systemBackground),
                         in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)

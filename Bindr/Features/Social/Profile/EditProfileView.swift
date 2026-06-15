@@ -49,6 +49,15 @@ struct EditProfileView: View {
     private enum ProfileRole: String, CaseIterable, Identifiable {
         case collector = "collector"
         case tcgPlayer = "tcg_player"
+        case trader = "trader"
+        case binderBuilder = "binder_builder"
+        case deckBuilder = "deck_builder"
+        case sealedCollector = "sealed_collector"
+        case wishlistHunter = "wishlist_hunter"
+        case grader = "grader"
+        case shopOwner = "shop_owner"
+        case tradeShowVendor = "trade_show_vendor"
+        case casual = "casual"
 
         var id: String { rawValue }
 
@@ -56,6 +65,15 @@ struct EditProfileView: View {
             switch self {
             case .collector: return "Collector"
             case .tcgPlayer: return "TCG Player"
+            case .trader: return "Trader"
+            case .binderBuilder: return "Binder Builder"
+            case .deckBuilder: return "Deck Builder"
+            case .sealedCollector: return "Sealed Collector"
+            case .wishlistHunter: return "Wishlist Hunter"
+            case .grader: return "Grader"
+            case .shopOwner: return "Shop Owner"
+            case .tradeShowVendor: return "Trade Show Vendor"
+            case .casual: return "Casual"
             }
         }
     }
@@ -353,7 +371,7 @@ struct EditProfileView: View {
                     ))
                 }
             } footer: {
-                Text("You can choose both Collector and TCG Player.")
+                Text("Choose the tags that best describe how you collect, trade, and play.")
             }
 
             Section {

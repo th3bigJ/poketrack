@@ -638,8 +638,17 @@ struct DeckCardPickerView: View {
                         Image(systemName: filters.isVisiblyCustomized
                               ? "line.3.horizontal.decrease.circle.fill"
                               : "line.3.horizontal.decrease.circle")
+                            .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(.primary)
+                            .modifier(ChromeGlassCircleGlyphModifier())
                     }
+                    .buttonStyle(.plain)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
+                    .menuIndicator(.hidden)
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+                    .accessibilityLabel("Filters")
                 }
             }
             .task(id: deck.format) {

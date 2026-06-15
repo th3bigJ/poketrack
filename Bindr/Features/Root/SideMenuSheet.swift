@@ -10,6 +10,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
     case tradeCalculator
     case themes
     case gradingOpportunities
+    case myAccount
 
     var id: String { rawValue }
 
@@ -23,6 +24,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
         case .tradeCalculator: return "Trade Calculator"
         case .themes: return "Themes"
         case .gradingOpportunities: return "Grading Opportunities"
+        case .myAccount: return "My Account"
         }
     }
 }

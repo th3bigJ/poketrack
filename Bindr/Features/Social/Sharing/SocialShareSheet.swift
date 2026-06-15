@@ -18,6 +18,7 @@ enum SocialShareItem {
 
 private enum PostTag: String, CaseIterable, Identifiable {
     case pull    = "Card Pull"
+    case showcase = "Showcase"
     case bought  = "Bought"
     case trade   = "Trade"
     case want    = "I Want"
@@ -28,7 +29,7 @@ private enum PostTag: String, CaseIterable, Identifiable {
 
     var showsCardPicker: Bool {
         switch self {
-        case .pull, .bought, .trade, .want: return true
+        case .pull, .showcase, .bought, .trade, .want: return true
         case .binder, .deck:               return false
         }
     }
@@ -380,7 +381,7 @@ struct SocialShareSheet: View {
     private var usesFixedItemPreview: Bool {
         if let product = preselectedSealedProduct {
             switch selectedTag {
-            case .pull, .bought, .trade:
+            case .pull, .showcase, .bought, .trade:
                 return true
             case .want:
                 return wishlistItems.contains {
@@ -392,7 +393,7 @@ struct SocialShareSheet: View {
         }
         guard let card = preselectedCard else { return false }
         switch selectedTag {
-        case .pull, .bought, .trade:
+        case .pull, .showcase, .bought, .trade:
             return true
         case .want:
             return wishlistItems.contains { $0.cardID == card.masterCardId }
@@ -408,7 +409,7 @@ struct SocialShareSheet: View {
 
     private var canPost: Bool {
         switch selectedTag {
-        case .pull, .bought, .trade:
+        case .pull, .showcase, .bought, .trade:
             if preselectedCard != nil || preselectedSealedProduct != nil { return true }
             return selectedCollectionItem != nil
         case .want:
@@ -1064,7 +1065,7 @@ struct SocialShareSheet: View {
         defer { isBusy = false }
         do {
             switch selectedTag {
-            case .pull, .bought, .trade:
+            case .pull, .showcase, .bought, .trade:
                 let cardID: String
                 let variantKey: String
                 if let item = selectedCollectionItem {
@@ -1141,7 +1142,7 @@ struct SocialShareSheet: View {
         if let product = preselectedSealedProduct {
             let cardID = product.collectionCardID
             switch selectedTag {
-            case .pull, .bought, .trade:
+            case .pull, .showcase, .bought, .trade:
                 if selectedCollectionItem?.cardID != cardID {
                     selectedCollectionItem = collectionItemMatchingSealed(product)
                 }
@@ -1160,7 +1161,7 @@ struct SocialShareSheet: View {
         guard let card = preselectedCard else { return }
         let variantKey = resolvedVariantKey(for: card)
         switch selectedTag {
-        case .pull, .bought, .trade:
+        case .pull, .showcase, .bought, .trade:
             if selectedCollectionItem?.cardID != card.masterCardId {
                 selectedCollectionItem = collectionItemMatching(card, variantKey: variantKey)
             }

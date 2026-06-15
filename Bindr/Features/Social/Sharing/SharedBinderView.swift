@@ -138,7 +138,11 @@ struct SharedBinderView: View {
             }
 
             Capsule()
-                .fill(BinderColourPalette.color(named: colourName))
+                .fill(
+                    colourName == BinderColourPalette.logoColourName
+                        ? AnyShapeStyle(BinderColourPalette.logoGradient)
+                        : AnyShapeStyle(BinderColourPalette.color(named: colourName))
+                )
                 .frame(width: 40, height: 3)
                 .opacity(0.8)
         }

@@ -68,6 +68,19 @@ struct CardScannerView: View {
                     CameraPreviewView(session: viewModel.session)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
 
+                    LinearGradient(
+                        colors: [
+                            .black.opacity(0.58),
+                            .black.opacity(0.18),
+                            .clear
+                        ],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                    .frame(height: 170)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .allowsHitTesting(false)
+
                     if case .idle = viewModel.scanState {
                         CardScannerReticle(
                             frameQuality: viewModel.frameQuality,
@@ -93,6 +106,17 @@ struct CardScannerView: View {
                     }
 
                     scannerScanningOverlay(geo: geo)
+
+                    ScannerTopStatusPill(
+                        brand: viewModel.scanBrand.displayTitle,
+                        scannedCount: viewModel.scanResults.count,
+                        isReady: viewModel.isCameraReady,
+                        frameQuality: viewModel.frameQuality
+                    )
+                    .padding(.top, ScannerSheetLayout.statusBarHeight + 8)
+                    .padding(.leading, 16)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .allowsHitTesting(false)
 
                     if permissionDenied { permissionDeniedOverlay }
 
@@ -144,15 +168,30 @@ struct CardScannerView: View {
                         } label: {
                             ZStack {
                                 Circle()
-                                    .fill(.white.opacity(0.92))
-                                    .frame(width: 68, height: 68)
+                                    .fill(.ultraThinMaterial)
+                                    .frame(width: 76, height: 76)
+                                    .overlay(
+                                        Circle()
+                                            .strokeBorder(Color.white.opacity(0.26), lineWidth: 1)
+                                    )
+                                    .shadow(color: .black.opacity(0.28), radius: 18, y: 8)
                                 Circle()
-                                    .stroke(Color.black.opacity(0.28), lineWidth: 3)
-                                    .frame(width: 56, height: 56)
+                                    .fill(.white.opacity(canTriggerCapture ? 0.96 : 0.42))
+                                    .frame(width: 60, height: 60)
+                                Circle()
+                                    .strokeBorder(
+                                        canTriggerCapture ? services.theme.accentColor.opacity(0.72) : Color.white.opacity(0.18),
+                                        lineWidth: 3
+                                    )
+                                    .frame(width: 60, height: 60)
+                                Image(systemName: "viewfinder")
+                                    .font(.system(size: 20, weight: .semibold))
+                                    .foregroundStyle(canTriggerCapture ? Color.black.opacity(0.72) : Color.black.opacity(0.28))
                             }
                         }
                         .buttonStyle(.plain)
                         .disabled(!canTriggerCapture)
+                        .opacity(canTriggerCapture ? 1 : 0.72)
                         .accessibilityLabel("Take photo")
                         .padding(.bottom, 14)
                     }
@@ -209,7 +248,7 @@ struct CardScannerView: View {
 
                 // Bottom 30% — results overlay or idle instructions
                 ZStack {
-                    Color.black
+                    ScannerBottomPanelBackground()
 
                     if viewModel.scanResults.isEmpty {
                         ScannerIdleInstructions()
@@ -250,13 +289,11 @@ struct CardScannerView: View {
                 if case .scanning = viewModel.scanState {
                     EmptyView()
                 } else {
-                    Button(action: onDismiss) {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.system(size: 30))
-                            .foregroundStyle(.white, .black.opacity(0.5))
+                    ChromeGlassCircleButton(accessibilityLabel: "Close scanner", action: onDismiss) {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 17, weight: .semibold))
+                            .foregroundStyle(.primary)
                     }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("Close scanner")
                     .padding(.top, ScannerSheetLayout.statusBarHeight + 8)
                     .padding(.trailing, 16)
                 }
@@ -441,6 +478,88 @@ private enum ScannerSheetLayout {
             .first?.windows.first?.safeAreaInsets.top ?? 54
     }
     static let deviceCornerRadius: CGFloat = (UIScreen.main.value(forKey: "displayCornerRadius") as? CGFloat) ?? 44
+}
+
+// MARK: - Scanner chrome
+
+private struct ScannerTopStatusPill: View {
+    let brand: String
+    let scannedCount: Int
+    let isReady: Bool
+    let frameQuality: Double
+
+    private var statusText: String {
+        if !isReady { return "Warming camera" }
+        if frameQuality >= 0.45 { return "Ready to scan" }
+        if frameQuality >= 0.2 { return "Hold steady" }
+        return "Align card"
+    }
+
+    private var statusColor: Color {
+        if !isReady { return .orange }
+        if frameQuality >= 0.45 { return .green }
+        if frameQuality >= 0.2 { return .yellow }
+        return .white.opacity(0.72)
+    }
+
+    var body: some View {
+        HStack(spacing: 10) {
+            ZStack {
+                Circle()
+                    .fill(statusColor.opacity(0.18))
+                    .frame(width: 34, height: 34)
+                Image(systemName: isReady ? "viewfinder.circle.fill" : "camera.metering.unknown")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(statusColor)
+            }
+
+            VStack(alignment: .leading, spacing: 1) {
+                Text(statusText)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.white)
+                Text(scannedCount == 0 ? brand : "\(scannedCount) scanned")
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.white.opacity(0.62))
+            }
+        }
+        .padding(.leading, 8)
+        .padding(.trailing, 13)
+        .padding(.vertical, 7)
+        .background(.ultraThinMaterial, in: Capsule())
+        .overlay(Capsule().strokeBorder(Color.white.opacity(0.16), lineWidth: 1))
+        .shadow(color: .black.opacity(0.22), radius: 16, y: 8)
+    }
+}
+
+private struct ScannerBottomPanelBackground: View {
+    var body: some View {
+        ZStack {
+            Color.black
+            LinearGradient(
+                colors: [
+                    Color(red: 0.05, green: 0.10, blue: 0.13).opacity(0.95),
+                    Color(red: 0.03, green: 0.03, blue: 0.05),
+                    .black
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            RadialGradient(
+                colors: [
+                    Color.cyan.opacity(0.18),
+                    Color.purple.opacity(0.08),
+                    .clear
+                ],
+                center: .topLeading,
+                startRadius: 20,
+                endRadius: 360
+            )
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .opacity(0.08)
+        }
+        .ignoresSafeArea(edges: .bottom)
+    }
 }
 
 // MARK: - Value scanned label
@@ -630,9 +749,9 @@ private struct ScannerIdleInstructions: View {
     @State private var appeared = false
 
     private let steps: [(icon: String, iconColor: Color, iconBackground: Color, title: String, subtitle: String)] = [
-        ("viewfinder.rectangular", Color.blue.opacity(0.9), Color.blue.opacity(0.28), "Align card to the frame above", "Position the card within the frame"),
-        ("camera.circle.fill", Color.orange.opacity(0.9), Color.orange.opacity(0.28), "Tap the shutter to scan", "Wait for the green frame, then capture"),
-        ("square.on.square",       Color.green.opacity(0.9), Color.green.opacity(0.28), "Select variant and add to collection", "Choose the correct card and save"),
+        ("viewfinder.rectangular", Color.cyan.opacity(0.95), Color.cyan.opacity(0.18), "Frame the card", "Keep borders inside the guide"),
+        ("camera.circle.fill", Color.white.opacity(0.95), Color.white.opacity(0.14), "Tap the shutter", "Scan when the guide turns green"),
+        ("checkmark.seal.fill", Color.green.opacity(0.95), Color.green.opacity(0.18), "Confirm variant", "Pick quantity, then save"),
     ]
 
     var body: some View {
@@ -643,7 +762,26 @@ private struct ScannerIdleInstructions: View {
         VStack(spacing: 0) {
             Spacer(minLength: 0)
 
-            VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
+                HStack(spacing: 10) {
+                    Image(systemName: "sparkles")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(width: 36, height: 36)
+                        .background(Color.white.opacity(0.12), in: Circle())
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Ready when you are")
+                            .font(.headline.weight(.semibold))
+                            .foregroundStyle(Color.white.opacity(0.96))
+                        Text("Scan multiple cards, then add them together.")
+                            .font(.caption)
+                            .foregroundStyle(Color.white.opacity(0.62))
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
+                .padding(.bottom, 4)
+
                 ForEach(Array(steps.enumerated()), id: \.offset) { i, step in
                     HStack(spacing: 14) {
                         ZStack {
@@ -657,16 +795,16 @@ private struct ScannerIdleInstructions: View {
 
                         VStack(alignment: .leading, spacing: 3) {
                             Text(step.title)
-                                .font(.headline.weight(.semibold))
+                                .font(.subheadline.weight(.semibold))
                                 .foregroundStyle(Color.white.opacity(0.95))
                             Text(step.subtitle)
-                                .font(.subheadline)
+                                .font(.caption)
                                 .foregroundStyle(Color.white.opacity(0.65))
                         }
                         Spacer(minLength: 0)
                     }
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 14)
+                    .padding(.vertical, 12)
                     .background(Color.clear)
                     .overlay(alignment: .bottom) {
                         if i < steps.count - 1 {

@@ -106,12 +106,17 @@ final class SocialShareService {
         let cardID: String
         let variantKey: String
         let cardName: String
+        let position: Int
     }
 
     private struct BinderSyncSnapshot: Sendable {
         let id: UUID
         let title: String
         let brandRawValue: String
+        let colour: String
+        let textureRawValue: String
+        let textureSeed: Int
+        let pageLayout: String
         let slots: [BinderSlotSnapshot]
     }
 
@@ -360,8 +365,17 @@ final class SocialShareService {
             id: binder.id,
             title: binder.title,
             brandRawValue: binder.tcgBrand.rawValue,
-            slots: binder.slotList.map {
-                BinderSlotSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, cardName: $0.cardName)
+            colour: binder.colour,
+            textureRawValue: binder.textureKind.rawValue,
+            textureSeed: binder.textureSeed,
+            pageLayout: binder.pageLayout,
+            slots: binder.slotList.sorted { $0.position < $1.position }.map {
+                BinderSlotSnapshot(
+                    cardID: $0.cardID,
+                    variantKey: $0.variantKey,
+                    cardName: $0.cardName,
+                    position: $0.position
+                )
             }
         )
         scheduleAutoSync(for: .binder(binder.id)) { [weak self] in
@@ -793,7 +807,8 @@ final class SocialShareService {
                 "cardID": .string(slot.cardID),
                 "variantKey": .string(slot.variantKey),
                 "quantity": .number(1),
-                "cardName": .string(slot.cardName)
+                "cardName": .string(slot.cardName),
+                "position": .number(Double(slot.position))
             ]
             if includeValue,
                let card = await cardDataService.loadCard(masterCardId: slot.cardID),
@@ -808,9 +823,12 @@ final class SocialShareService {
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
             "local_content_id": .string(snapshot.id.uuidString),
             "brand": .string(snapshot.brandRawValue),
+            "colour": .string(snapshot.colour),
+            "texture": .string(snapshot.textureRawValue),
+            "seed": .number(Double(snapshot.textureSeed)),
+            "page_layout": .string(snapshot.pageLayout),
             "items": .array(rows.map(JSONValue.object))
         ]
-        // Note: snapshot doesn't have colour/texture yet, but we should add it to snapshot if we want it to sync
         if includeValue {
             payload["market_value_usd"] = .number(totalValue)
         }

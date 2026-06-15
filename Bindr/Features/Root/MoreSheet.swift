@@ -23,12 +23,7 @@ struct MoreView: View {
                 VStack(spacing: 0) {
                     Color.clear.frame(height: rootFloatingChromeInset)
 
-                    Button {
-                        showProfile = true
-                    } label: {
-                        MoreProfileHeroCard(profile: profile, friendCountOverride: acceptedFriendCount)
-                    }
-                    .buttonStyle(.plain)
+                    MoreBrandHeroCard()
 
                     VStack(spacing: BindrSpacing.xl) {
                         MoreMenuSection(title: "Collection Tools") {
@@ -71,13 +66,20 @@ struct MoreView: View {
                                 color: .purple,
                                 destination: .themes
                             )
-                            Divider()
-                                .padding(.leading, 60)
                             MoreMenuRow(
                                 title: "Settings",
                                 systemImage: "gearshape.fill",
                                 color: .gray,
                                 destination: .account
+                            )
+                        }
+
+                        MoreMenuSection(title: "My Account") {
+                            MoreMenuRow(
+                                title: "Account, Data & Privacy",
+                                systemImage: "person.crop.circle.badge.checkmark",
+                                color: .gray,
+                                destination: .myAccount
                             )
                         }
                     }
@@ -132,6 +134,9 @@ struct MoreView: View {
                 ThemesView()
             case .gradingOpportunities:
                 GradingOpportunitiesView()
+            case .myAccount:
+                MyAccountPrivacyView()
+                    .environment(services)
             }
         }
     }
@@ -150,6 +155,15 @@ struct MoreView: View {
         } else {
             acceptedFriendCount = nil
         }
+    }
+}
+
+private struct MoreBrandHeroCard: View {
+    var body: some View {
+        BindrBrandLogoView(maxWidth: 230)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 18)
+        .padding(.horizontal, BindrSpacing.lg)
     }
 }
 

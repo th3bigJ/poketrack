@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ScanResultBar: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.bindrAccent) private var accent
 
     let result: ScanResult
     /// Only the centered page should show expanded UI; others stay compact while off-screen.
@@ -45,12 +46,19 @@ struct ScanResultBar: View {
             .padding(.top, 10)
             .padding(.horizontal, 16)
 
-            Text("Select variant and add to collection")
-                .font(.subheadline.weight(.medium))
-                .foregroundStyle(.primary)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.top, 10)
-                .padding(.horizontal, 16)
+            HStack(spacing: 8) {
+                Image(systemName: "slider.horizontal.3")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(accent)
+                    .frame(width: 24, height: 24)
+                    .background(accent.opacity(0.12), in: Circle())
+                Text("Select variant and quantity")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.top, 10)
+            .padding(.horizontal, 16)
 
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 8) {
@@ -227,7 +235,7 @@ struct ScanResultBar: View {
         return HStack(spacing: 10) {
             Text(variantDisplayName(key))
                 .font(.subheadline.weight(.medium))
-                .foregroundStyle(.primary)
+                .foregroundStyle(isSelected ? accent : .primary)
                 .lineLimit(1)
             Spacer(minLength: 6)
             Text(priceText(for: key))
@@ -241,11 +249,11 @@ struct ScanResultBar: View {
         .padding(.vertical, 5)
         .background(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(isSelected ? Color.primary.opacity(0.12) : Color.primary.opacity(0.07))
+                .fill(isSelected ? accent.opacity(0.14) : Color.primary.opacity(0.07))
         )
         .overlay(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .strokeBorder(isSelected ? Color.primary.opacity(0.16) : Color.clear, lineWidth: 1)
+                .strokeBorder(isSelected ? accent.opacity(0.5) : Color.clear, lineWidth: 1)
         )
     }
 

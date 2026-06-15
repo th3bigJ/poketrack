@@ -117,6 +117,72 @@ struct SettingsView: View {
 
 }
 
+// MARK: - My Account & Privacy
+
+struct MyAccountPrivacyView: View {
+    @Environment(AppServices.self) private var services
+    @AppStorage("Bindr.privacy.shareWishlist") private var shareWishlist = true
+    @AppStorage("Bindr.privacy.shareCollection") private var shareCollection = true
+    @AppStorage("Bindr.privacy.shareBinders") private var shareBinders = true
+    @AppStorage("Bindr.privacy.shareDecks") private var shareDecks = true
+    @State private var showDeleteConfirmation = false
+
+    var body: some View {
+        List {
+            Section {
+                Label(services.socialAuth.isSignedIn ? "Signed in to Bindr" : "Not signed in", systemImage: "person.crop.circle.fill")
+                    .foregroundStyle(services.socialAuth.isSignedIn ? BindrPalette.ownedGreen : .secondary)
+            } footer: {
+                Text("Manage what parts of your collection can appear on your social profile and shared posts.")
+            }
+
+            Section {
+                Toggle("Share wishlist", isOn: $shareWishlist)
+                Toggle("Share collection", isOn: $shareCollection)
+                Toggle("Share binders", isOn: $shareBinders)
+                Toggle("Share decks", isOn: $shareDecks)
+            } header: {
+                Text("Social Sharing")
+            }
+
+            Section {
+                NavigationLink {
+                    BackupRestoreSettingsPage()
+                        .environment(services)
+                } label: {
+                    Label("Backup and Restore", systemImage: "arrow.triangle.2.circlepath.icloud")
+                }
+
+                Button(role: .destructive) {
+                    showDeleteConfirmation = true
+                } label: {
+                    Label("Delete Account and Data", systemImage: "trash.fill")
+                }
+                .disabled(!services.socialAuth.isSignedIn)
+            } header: {
+                Text("Account Data")
+            } footer: {
+                Text("Account deletion should remove your Bindr account, social profile, posts, comments, shared content, and cloud backup data.")
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("My Account")
+        .navigationBarTitleDisplayMode(.large)
+        .confirmationDialog(
+            "Delete account and data?",
+            isPresented: $showDeleteConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button("Delete Account and Data", role: .destructive) {
+                // Hook this up to the account deletion endpoint when the backend action is ready.
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("This will permanently delete your Bindr account data once the server-side deletion action is connected.")
+        }
+    }
+}
+
 // MARK: - Offline Settings Page
 
 private struct OfflineSettingsPage: View {
