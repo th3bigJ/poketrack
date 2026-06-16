@@ -14,6 +14,7 @@ struct DecksRootView: View {
     @State private var deckToDelete: Deck?
     @State private var showDeleteConfirm = false
     @State private var newDeckMenuHapticSentForCurrentTouch = false
+    @State private var hasReconciledSharedDecks = false
     /// Measured height of the translucent floating header. Read back through
     /// the preference key so `safeAreaInset` reserves exactly the right top
     /// gutter as the header changes — keeps the deck list aligned without
@@ -89,14 +90,14 @@ struct DecksRootView: View {
         } message: { deck in
             Text("This will permanently remove \"\(deck.title)\".")
         }
-        .task(id: decks.map(\.id).map(\.uuidString).sorted().joined(separator: ",")) {
-            do {
-                try await services.socialShare.reconcileDeletedDecks(localDeckIDs: Set(decks.map(\.id)))
-            } catch {
-                // Silent best-effort cleanup.
-            }
+        .task(id: deckReconcileSignature) {
+            await reconcileSharedDecksAfterFirstPaint()
         }
         .background(BindrPageBackground().ignoresSafeArea())
+    }
+
+    private var deckReconcileSignature: String {
+        decks.map(\.id.uuidString).sorted().joined(separator: ",")
     }
 
     private var emptyDecksView: some View {
@@ -284,6 +285,22 @@ struct DecksRootView: View {
             showImportSheet = true
         }
     }
+
+    private func reconcileSharedDecksAfterFirstPaint() async {
+        guard services.socialAuth.isSignedIn else { return }
+        if hasReconciledSharedDecks {
+            try? await Task.sleep(for: .seconds(2))
+        } else {
+            hasReconciledSharedDecks = true
+            try? await Task.sleep(for: .milliseconds(900))
+        }
+        guard !Task.isCancelled else { return }
+        do {
+            try await services.socialShare.reconcileDeletedDecks(localDeckIDs: Set(decks.map(\.id)))
+        } catch {
+            // Silent best-effort cleanup.
+        }
+    }
 }
 
 private struct DeckListRow: View {
@@ -323,6 +340,8 @@ private struct DeckListRow: View {
                     thumbnailURL = nil
                     return
                 }
+                try? await Task.sleep(for: .milliseconds(120))
+                guard !Task.isCancelled else { return }
                 if let deckCard = deck.cardList.first(where: { $0.cardID == cardID }) {
                     let localPath = deckCard.imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
                     if !localPath.isEmpty {
