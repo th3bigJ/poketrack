@@ -77,6 +77,8 @@ struct MoreView: View {
                                 destination: .myAccount
                             )
                         }
+
+                        MoreLegalDisclaimerCard()
                     }
                     .padding(.horizontal, BindrSpacing.lg)
                     .padding(.top, BindrSpacing.lg)
@@ -126,6 +128,8 @@ struct MoreView: View {
             case .myAccount:
                 MyAccountPrivacyView()
                     .environment(services)
+            case .legalDisclaimer:
+                DisclaimerView()
             }
         }
     }
@@ -154,6 +158,42 @@ private struct MoreBrandHeroCard: View {
             .padding(.top, BindrSpacing.sm)
             .padding(.bottom, BindrSpacing.md)
             .padding(.horizontal, BindrSpacing.lg)
+    }
+}
+
+private struct MoreLegalDisclaimerCard: View {
+    var body: some View {
+        NavigationLink(value: SideMenuPage.legalDisclaimer) {
+            VStack(alignment: .leading, spacing: BindrSpacing.sm) {
+                HStack(spacing: 10) {
+                    Image(systemName: "doc.text.magnifyingglass")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                        .frame(width: 28, height: 28)
+                        .background(Color.secondary.opacity(0.10), in: Circle())
+
+                    Text("Legal Disclaimer")
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(.primary)
+
+                    Spacer(minLength: 0)
+
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(Color.secondary.opacity(0.45))
+                }
+
+                Text("Bindr is an independent app and is not affiliated with or endorsed by The Pokemon Company, Nintendo, Creatures Inc. or GAME FREAK.")
+                    .font(.system(size: 12, weight: .medium))
+                    .lineSpacing(3)
+                    .foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+        }
+        .buttonStyle(.plain)
     }
 }
 

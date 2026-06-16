@@ -141,6 +141,8 @@ struct ProfileHeroHeader: View {
     }
 }
 
+
+
 struct ProfileAvatarView: View {
     let profile: SocialProfile
     let size: CGFloat
@@ -233,6 +235,3 @@ struct ProfileAvatarView: View {
             }
     }
 }
-
-
-

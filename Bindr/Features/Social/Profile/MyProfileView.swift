@@ -42,6 +42,15 @@ struct MyProfileView: View {
             switch role {
             case "collector": return "Collector"
             case "tcg_player": return "TCG Player"
+            case "trader": return "Trader"
+            case "binder_builder": return "Binder Builder"
+            case "deck_builder": return "Deck Builder"
+            case "sealed_collector": return "Sealed"
+            case "wishlist_hunter": return "Wishlist"
+            case "grader": return "Grader"
+            case "shop_owner": return "Shop"
+            case "trade_show_vendor": return "Shows"
+            case "casual": return "Casual"
             default: return role.replacingOccurrences(of: "_", with: " ").capitalized
             }
         }
@@ -182,13 +191,16 @@ struct MyProfileView: View {
             }
 
             if !visibleRoleTitles.isEmpty {
-                HStack(spacing: BindrSpacing.sm) {
-                    ForEach(visibleRoleTitles, id: \.self) { title in
-                        rolePill(title)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: BindrSpacing.sm) {
+                        ForEach(visibleRoleTitles, id: \.self) { title in
+                            rolePill(title)
+                        }
+                        if hiddenRoleCount > 0 {
+                            rolePill("+\(hiddenRoleCount)")
+                        }
                     }
-                    if hiddenRoleCount > 0 {
-                        rolePill("+\(hiddenRoleCount)")
-                    }
+                    .padding(.vertical, 1)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -447,18 +459,41 @@ struct MyProfileView: View {
     }
 
     private func rolePill(_ title: String) -> some View {
-        Text(title.uppercased())
-            .font(.system(size: 9, weight: .bold))
-            .tracking(1.0)
-            .foregroundStyle(themeColor)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 4)
-            .background(rolePillBackground, in: Capsule())
-            .clipShape(Capsule())
-            .overlay {
-                Capsule()
-                    .stroke(themeColor.opacity(0.2), lineWidth: 1)
-            }
+        HStack(spacing: 5) {
+            Image(systemName: roleIcon(for: title))
+                .font(.system(size: 9, weight: .black))
+            Text(title.uppercased())
+                .font(.system(size: 9, weight: .bold))
+                .tracking(1.0)
+                .lineLimit(1)
+        }
+        .foregroundStyle(themeColor)
+        .padding(.horizontal, 10)
+        .frame(height: 24)
+        .background(rolePillBackground, in: Capsule())
+        .clipShape(Capsule())
+        .overlay {
+            Capsule()
+                .stroke(themeColor.opacity(0.2), lineWidth: 1)
+        }
+        .fixedSize(horizontal: true, vertical: true)
+    }
+
+    private func roleIcon(for title: String) -> String {
+        switch title {
+        case "Collector": return "sparkles"
+        case "TCG Player": return "bolt.fill"
+        case "Trader": return "arrow.left.arrow.right"
+        case "Binder Builder": return "rectangle.stack.fill"
+        case "Deck Builder": return "square.stack.3d.up.fill"
+        case "Sealed": return "shippingbox.fill"
+        case "Wishlist": return "star.fill"
+        case "Grader": return "seal.fill"
+        case "Shop": return "storefront.fill"
+        case "Shows": return "ticket.fill"
+        case "Casual": return "face.smiling.fill"
+        default: return "tag.fill"
+        }
     }
 
     private func statButton(value: String, label: String, action: @escaping () -> Void) -> some View {

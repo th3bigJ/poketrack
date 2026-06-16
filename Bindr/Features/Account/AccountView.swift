@@ -14,7 +14,6 @@ struct SettingsView: View {
             #if DEBUG
             devToolsSection
             #endif
-            aboutSection
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
@@ -102,18 +101,6 @@ struct SettingsView: View {
         }
     }
     #endif
-
-    // MARK: - About
-
-    private var aboutSection: some View {
-        Section("About") {
-            NavigationLink {
-                DisclaimerView()
-            } label: {
-                Label("Legal Disclaimer", systemImage: "doc.text.fill")
-            }
-        }
-    }
 
 }
 

@@ -202,14 +202,17 @@ struct FriendProfileView: View {
             let hiddenRoleCount = max(roleTitles.count - visibleRoleTitles.count, 0)
 
             if !visibleRoleTitles.isEmpty || hiddenRoleCount > 0 || hasRelationshipStatusPill {
-                HStack(spacing: BindrSpacing.sm) {
-                    ForEach(visibleRoleTitles, id: \.self) { title in
-                        rolePill(title, accent: accent)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: BindrSpacing.sm) {
+                        ForEach(visibleRoleTitles, id: \.self) { title in
+                            rolePill(title, accent: accent)
+                        }
+                        if hiddenRoleCount > 0 {
+                            rolePill("+\(hiddenRoleCount)", accent: accent)
+                        }
+                        relationshipStatusPill
                     }
-                    if hiddenRoleCount > 0 {
-                        rolePill("+\(hiddenRoleCount)", accent: accent)
-                    }
-                    relationshipStatusPill
+                    .padding(.vertical, 1)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -385,14 +388,16 @@ struct FriendProfileView: View {
             .tracking(0.3)
             .foregroundStyle(color)
             .lineLimit(1)
-            .minimumScaleFactor(0.8)
+            .minimumScaleFactor(0.72)
+            .allowsTightening(true)
             .padding(.horizontal, 7)
-            .padding(.vertical, 3)
+            .frame(height: 24)
             .background(color.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 4, style: .continuous)
                     .stroke(color.opacity(0.22), lineWidth: 1)
             }
+            .fixedSize(horizontal: false, vertical: true)
     }
 
     /// Renders a primary action (Add Friend / Accept + Decline) below the bio
@@ -557,18 +562,24 @@ struct FriendProfileView: View {
 
     private func rolePill(_ title: String, accent: Color? = nil) -> some View {
         let tint = accent ?? accentColor
-        return Text(title.uppercased())
-            .font(.system(size: 9, weight: .bold))
-            .tracking(1.0)
-            .foregroundStyle(tint)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 4)
-            .background(rolePillBackground(tint), in: Capsule())
-            .clipShape(Capsule())
-            .overlay {
-                Capsule()
-                    .stroke(tint.opacity(0.2), lineWidth: 1)
-            }
+        return HStack(spacing: 5) {
+            Image(systemName: roleIcon(for: title))
+                .font(.system(size: 9, weight: .black))
+            Text(title.uppercased())
+                .font(.system(size: 9, weight: .bold))
+                .tracking(1.0)
+                .lineLimit(1)
+        }
+        .foregroundStyle(tint)
+        .padding(.horizontal, 10)
+        .frame(height: 24)
+        .background(rolePillBackground(tint), in: Capsule())
+        .clipShape(Capsule())
+        .overlay {
+            Capsule()
+                .stroke(tint.opacity(0.2), lineWidth: 1)
+        }
+        .fixedSize(horizontal: true, vertical: true)
     }
 
     private func statBlock(value: String, label: String) -> some View {
@@ -598,8 +609,34 @@ struct FriendProfileView: View {
             switch role {
             case "collector": return "Collector"
             case "tcg_player": return "TCG Player"
+            case "trader": return "Trader"
+            case "binder_builder": return "Binder Builder"
+            case "deck_builder": return "Deck Builder"
+            case "sealed_collector": return "Sealed"
+            case "wishlist_hunter": return "Wishlist"
+            case "grader": return "Grader"
+            case "shop_owner": return "Shop"
+            case "trade_show_vendor": return "Shows"
+            case "casual": return "Casual"
             default: return role.replacingOccurrences(of: "_", with: " ").capitalized
             }
+        }
+    }
+
+    private func roleIcon(for title: String) -> String {
+        switch title {
+        case "Collector": return "sparkles"
+        case "TCG Player": return "bolt.fill"
+        case "Trader": return "arrow.left.arrow.right"
+        case "Binder Builder": return "rectangle.stack.fill"
+        case "Deck Builder": return "square.stack.3d.up.fill"
+        case "Sealed": return "shippingbox.fill"
+        case "Wishlist": return "star.fill"
+        case "Grader": return "seal.fill"
+        case "Shop": return "storefront.fill"
+        case "Shows": return "ticket.fill"
+        case "Casual": return "face.smiling.fill"
+        default: return "tag.fill"
         }
     }
 

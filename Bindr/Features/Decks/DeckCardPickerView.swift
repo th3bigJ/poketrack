@@ -564,8 +564,13 @@ struct DeckCardPickerView: View {
                 BindrPageHeader(
                     title: "Add Cards",
                     leading: {
-                        Button("Cancel") { dismiss() }
-                            .glassToolbarButton()
+                        ChromeGlassCircleButton(accessibilityLabel: "Cancel") {
+                            dismiss()
+                        } label: {
+                            Image(systemName: "xmark")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                        }
                     },
                     trailing: {
                         deckPickerToolbarTrailingControls
