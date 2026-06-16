@@ -562,14 +562,10 @@ struct FriendProfileView: View {
 
     private func rolePill(_ title: String, accent: Color? = nil) -> some View {
         let tint = accent ?? accentColor
-        return HStack(spacing: 5) {
-            Image(systemName: roleIcon(for: title))
-                .font(.system(size: 9, weight: .black))
-            Text(title.uppercased())
-                .font(.system(size: 9, weight: .bold))
-                .tracking(1.0)
-                .lineLimit(1)
-        }
+        return Text(title.uppercased())
+            .font(.system(size: 9, weight: .bold))
+            .tracking(1.0)
+            .lineLimit(1)
         .foregroundStyle(tint)
         .padding(.horizontal, 10)
         .frame(height: 24)
@@ -620,23 +616,6 @@ struct FriendProfileView: View {
             case "casual": return "Casual"
             default: return role.replacingOccurrences(of: "_", with: " ").capitalized
             }
-        }
-    }
-
-    private func roleIcon(for title: String) -> String {
-        switch title {
-        case "Collector": return "sparkles"
-        case "TCG Player": return "bolt.fill"
-        case "Trader": return "arrow.left.arrow.right"
-        case "Binder Builder": return "rectangle.stack.fill"
-        case "Deck Builder": return "square.stack.3d.up.fill"
-        case "Sealed": return "shippingbox.fill"
-        case "Wishlist": return "star.fill"
-        case "Grader": return "seal.fill"
-        case "Shop": return "storefront.fill"
-        case "Shows": return "ticket.fill"
-        case "Casual": return "face.smiling.fill"
-        default: return "tag.fill"
         }
     }
 

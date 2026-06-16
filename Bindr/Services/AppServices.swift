@@ -192,7 +192,9 @@ final class AppServices {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.scheduleLibraryCloudBackup()
+            Task { @MainActor [weak self] in
+                self?.scheduleLibraryCloudBackup()
+            }
         }
     }
 
