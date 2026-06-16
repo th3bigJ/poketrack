@@ -1378,7 +1378,15 @@ struct DeckCardPickerView: View {
     private func filterBrowseFilterCards(_ cards: [BrowseFilterCard]) -> [BrowseFilterCard] {
         let normalizedWeaknessTypes = deckPickerNormalizedFilterTokens(filters.weaknessTypes)
         let normalizedResistanceTypes = deckPickerNormalizedFilterTokens(filters.resistanceTypes)
+        let setSeriesNameByCode = seriesNameBySetCode(from: catalogSets)
         return cards.filter { card in
+            if cardMatchesSeriesNamesFilter(
+                setCode: card.setCode,
+                selectedSeriesNames: filters.seriesNames,
+                seriesNameBySetCode: setSeriesNameByCode
+            ) == false {
+                return false
+            }
             if !filters.cardTypes.isEmpty,
                !filters.cardTypes.contains(resolvedCardType(for: card)) { return false }
             if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) { return false }
@@ -1428,6 +1436,14 @@ struct DeckCardPickerView: View {
     private func passesPickerFilters(_ card: Card) -> Bool {
         let normalizedWeaknessTypes = deckPickerNormalizedFilterTokens(filters.weaknessTypes)
         let normalizedResistanceTypes = deckPickerNormalizedFilterTokens(filters.resistanceTypes)
+        let setSeriesNameByCode = seriesNameBySetCode(from: catalogSets)
+        if cardMatchesSeriesNamesFilter(
+            setCode: card.setCode,
+            selectedSeriesNames: filters.seriesNames,
+            seriesNameBySetCode: setSeriesNameByCode
+        ) == false {
+            return false
+        }
         if !filters.cardTypes.isEmpty,
            !filters.cardTypes.contains(resolvedBrowseCardTypeForPicker(card)) {
             return false

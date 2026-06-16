@@ -209,6 +209,7 @@ final class CollectionValueService {
         guard !isBackfilling else { return }
         await sealedProducts.loadFromLocalIfAvailable()
         purgeZeroValueSnapshots()
+        purgeSyntheticPreHistoryBackfill()
         saveYesterdaySnapshotFromPersistedValueIfNeeded()
         await captureTodaySnapshotIfMissing(
             collectionItems: collectionItems,
@@ -226,15 +227,18 @@ final class CollectionValueService {
     }
 
     /// Fills missing daily snapshots in the last ~90 days using historical prices for each day.
+    /// Never creates snapshots before the user's oldest existing daily snapshot.
     private func backfillRecentDailySnapshotsIfNeeded(collectionItems: [CollectionItem]) async {
         let cal = Calendar.current
         let today = cal.startOfDay(for: Date())
         let yesterday = cal.date(byAdding: .day, value: -1, to: today)!
         let cutoff = cal.date(byAdding: .day, value: -BucketDateMath.dailyPricingHistoryDays, to: today)!
 
+        guard let oldestExisting = snapshots.map({ cal.startOfDay(for: $0.date) }).min() else { return }
+
         let existingDays = Set(snapshots.map { cal.startOfDay(for: $0.date) })
 
-        var cursor = cutoff
+        var cursor = max(cutoff, oldestExisting)
         var missingDays: [Date] = []
         while cursor <= yesterday {
             if !existingDays.contains(cursor) {
@@ -248,8 +252,11 @@ final class CollectionValueService {
         defer { isBackfilling = false }
 
         for date in missingDays {
-            let value = await computeValue(for: collectionItems, on: date)
-            guard value.total > 0 else { continue }
+            guard let value = await computeValue(
+                for: collectionItems,
+                on: date,
+                allowLiveFallback: false
+            ), value.total > 0 else { continue }
             let record = CollectionValueSnapshot(
                 date: date,
                 totalGbp: value.total,
@@ -294,8 +301,11 @@ final class CollectionValueService {
         defer { isBackfilling = false }
 
         for date in missingDays {
-            let value = await computeValue(for: collectionItems, on: date)
-            guard value.total > 0 else { continue }
+            guard let value = await computeValue(
+                for: collectionItems,
+                on: date,
+                allowLiveFallback: false
+            ), value.total > 0 else { continue }
             let record = CollectionValueSnapshot(
                 date: date,
                 totalGbp: value.total,
@@ -446,7 +456,11 @@ final class CollectionValueService {
             result = preferredSnapshot
         } else {
             isBackfilling = true
-            result = await computeValue(for: collectionItems, on: today)
+            guard let computed = await computeValue(for: collectionItems, on: today) else {
+                isBackfilling = false
+                return
+            }
+            result = computed
             isBackfilling = false
         }
         guard result.total > 0 else {
@@ -492,6 +506,14 @@ final class CollectionValueService {
         for record in liveWeeklyRecords {
             let ws = cal.date(from: cal.dateComponents([.yearForWeekOfYear, .weekOfYear], from: record.weekStart))!
             existingByWeekStart[ws] = record
+        }
+
+        for record in liveWeeklyRecords {
+            let ws = cal.date(from: cal.dateComponents([.yearForWeekOfYear, .weekOfYear], from: record.weekStart))!
+            if byWeek[ws] == nil {
+                modelContext.delete(record)
+                didChange = true
+            }
         }
 
         for (weekStart, days) in byWeek {
@@ -555,6 +577,15 @@ final class CollectionValueService {
             existingByMonthStart[ms] = record
         }
 
+        for record in liveMonthlyRecords {
+            let comps = cal.dateComponents([.year, .month], from: record.monthStart)
+            let ms = cal.date(from: comps)!
+            if byMonth[ms] == nil {
+                modelContext.delete(record)
+                didChange = true
+            }
+        }
+
         for (monthStart, days) in byMonth {
             let avg = average(of: days.map(\.asBrandSnapshot))
             if let existing = existingByMonthStart[monthStart] {
@@ -599,8 +630,18 @@ final class CollectionValueService {
 
     // MARK: - Value computation
 
-    private func computeValue(for items: [CollectionItem], on date: Date) async -> BrandSnapshot {
-        let pv = await computeBrandValue(items: items, brand: .pokemon, on: date)
+    private func computeValue(
+        for items: [CollectionItem],
+        on date: Date,
+        allowLiveFallback: Bool = true
+    ) async -> BrandSnapshot? {
+        let pv = await computeBrandValue(
+            items: items,
+            brand: .pokemon,
+            on: date,
+            allowLiveFallback: allowLiveFallback
+        )
+        guard !pv.usedLiveFallback || allowLiveFallback else { return nil }
         return BrandSnapshot(
             total: pv.total,
             pokemon: pv.total,
@@ -609,10 +650,16 @@ final class CollectionValueService {
         )
     }
 
-    private func computeBrandValue(items: [CollectionItem], brand: TCGBrand, on date: Date) async -> (total: Double, cards: Double, sealed: Double) {
+    private func computeBrandValue(
+        items: [CollectionItem],
+        brand: TCGBrand,
+        on date: Date,
+        allowLiveFallback: Bool = true
+    ) async -> (total: Double, cards: Double, sealed: Double, usedLiveFallback: Bool) {
         var total = 0.0
         var cards = 0.0
         var sealed = 0.0
+        var usedLiveFallback = false
 
         // Batch-load all non-sealed cards in a single SQLite query instead of one per item.
         let cardIDs = items.compactMap { item -> String? in
@@ -631,8 +678,12 @@ final class CollectionValueService {
                item.sealedStatus == SealedInventoryStatus.opened.rawValue {
                 continue
             }
-            if let sealedProductID = sealedProductID(for: item),
-               let sealedPriceUSD = sealedProducts.marketPriceUSD(for: sealedProductID) {
+            if let sealedProductID = sealedProductID(for: item) {
+                guard allowLiveFallback,
+                      let sealedPriceUSD = sealedProducts.marketPriceUSD(for: sealedProductID) else {
+                    usedLiveFallback = true
+                    continue
+                }
                 let gbp = sealedPriceUSD * Double(item.quantity) * pricing.usdToGbp
                 total += gbp
                 sealed += gbp
@@ -640,12 +691,22 @@ final class CollectionValueService {
             }
             guard let card = cardByID[item.cardID] else { continue }
             let grade = resolvedGradeKey(for: item)
-            let usd = await usdPrice(for: card, variantKey: item.variantKey, grade: grade, on: date)
-            let gbp = usd * Double(item.quantity) * pricing.usdToGbp
+            let priceResult = await usdPrice(
+                for: card,
+                variantKey: item.variantKey,
+                grade: grade,
+                on: date,
+                allowLiveFallback: allowLiveFallback
+            )
+            if priceResult.usedLiveFallback {
+                usedLiveFallback = true
+                if !allowLiveFallback { continue }
+            }
+            let gbp = priceResult.usd * Double(item.quantity) * pricing.usdToGbp
             total += gbp
             cards += gbp
         }
-        return (total: total, cards: cards, sealed: sealed)
+        return (total: total, cards: cards, sealed: sealed, usedLiveFallback: usedLiveFallback)
     }
 
     private func sealedProductID(for item: CollectionItem) -> Int? {
@@ -667,11 +728,26 @@ final class CollectionValueService {
         }
     }
 
-    private func usdPrice(for card: Card, variantKey: String, grade: String, on date: Date) async -> Double {
+    private struct PriceResult {
+        let usd: Double
+        let usedLiveFallback: Bool
+    }
+
+    private func usdPrice(
+        for card: Card,
+        variantKey: String,
+        grade: String,
+        on date: Date,
+        allowLiveFallback: Bool = true
+    ) async -> PriceResult {
         if let historicalPrice = await historicalUsdPrice(for: card, variantKey: variantKey, grade: grade, on: date) {
-            return historicalPrice
+            return PriceResult(usd: historicalPrice, usedLiveFallback: false)
         }
-        return await pricing.usdPriceForVariantAndGrade(for: card, variantKey: variantKey, grade: grade) ?? 0
+        guard allowLiveFallback else {
+            return PriceResult(usd: 0, usedLiveFallback: true)
+        }
+        let live = await pricing.usdPriceForVariantAndGrade(for: card, variantKey: variantKey, grade: grade) ?? 0
+        return PriceResult(usd: live, usedLiveFallback: live > 0)
     }
 
     private func historicalUsdPrice(for card: Card, variantKey: String, grade: String, on date: Date) async -> Double? {
@@ -738,6 +814,43 @@ final class CollectionValueService {
         guard !zeros.isEmpty else { return }
         for s in zeros { modelContext.delete(s) }
         try? modelContext.save()
+    }
+
+    /// Removes synthetic backfill snapshots that were created before the user's first real daily capture.
+    ///
+    /// Real snapshots captured by the app store `cardsGbp` and `sealedGbp` as zero until the split
+    /// was added. Synthetic backfill writes both fields from historical pricing, so any snapshot
+    /// dated before that first real capture with a non-zero cards/sealed split is false data.
+    private func purgeSyntheticPreHistoryBackfill() {
+        let cal = Calendar.current
+        let legacySnapshots = snapshots.filter {
+            $0.cardsGbp == 0 && $0.sealedGbp == 0 && $0.totalGbp > 0
+        }
+        guard let firstRealDay = legacySnapshots.map({ cal.startOfDay(for: $0.date) }).min() else {
+            return
+        }
+
+        let descriptor = FetchDescriptor<CollectionValueSnapshot>()
+        let all = (try? modelContext.fetch(descriptor)) ?? []
+        let stale = all.filter { snapshot in
+            cal.startOfDay(for: snapshot.date) < firstRealDay
+                && (snapshot.cardsGbp > 0 || snapshot.sealedGbp > 0)
+        }
+        guard !stale.isEmpty else { return }
+
+        for snapshot in stale {
+            modelContext.delete(snapshot)
+        }
+        try? modelContext.save()
+        loadAll()
+
+        purgeAllWeeklyAverages()
+        purgeAllMonthlyAverages()
+        let freshSnapshots = fetchAllSnapshots()
+        aggregateWeeklyIfNeeded(using: freshSnapshots)
+        aggregateMonthlyIfNeeded(using: freshSnapshots)
+        loadAll()
+        notifyValueHistoryChanged()
     }
 
     private func loadAll() {

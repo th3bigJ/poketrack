@@ -15,7 +15,10 @@ final class AppServices {
         let preferredSide: TradePrefillSide
     }
 
-    private let launchDailyRefreshTimeoutNanoseconds: UInt64 = 5_000_000_000
+    /// How long the launch overlay stays up when a daily refresh is pending before the app
+    /// opens on cached data and continues syncing in the background.
+    private let launchDailyRefreshBriefDisplayNanoseconds: UInt64 = 3_000_000_000
+    private var backgroundCatalogRefreshInFlight: Task<Void, Never>?
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let cardData: CardDataService
@@ -250,52 +253,30 @@ final class AppServices {
         }
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
             await primeLaunchCatalogFromLocalCache()
-            await ensureMarketPricingReadyIfNeeded(updateProgressUI: !isLaunchCatalogPipelineComplete)
+            scheduleBackgroundDailyCatalogRefreshIfNeeded()
             isLaunchCatalogPipelineComplete = true
             launchCatalogPipelineCompletedAt = Date()
             return
         }
         shouldRunBackgroundCatalogRefreshOnLaunch = false
-        // First launch after the daily 03:00 boundary: block app shell until pricing/trends are refreshed
-        // and stored locally to avoid visible value changes after the user is already in the app.
+        // First launch after the daily 03:00 boundary (or a retry when the prior sync
+        // did not finish): show a short loading state on cached data, then open the app
+        // while the network refresh continues in the background.
         if !isLaunchCatalogPipelineComplete {
             bootstrapMessage = "Updating Market data…"
             bootstrapStatus = "Checking for updates…"
             bootstrapProgress = 0
             bootstrapDownloadedBytes = 0
             bootstrapEstimatedTotalBytes = 0
-            bootstrapShowsDownloadProgressUI = true
-            // Start the network task immediately so the connection handshake overlaps
-            // with local SQLite reads in primeLaunchCatalogFromLocalCache.
-            let blockingTask = Task { @MainActor [weak self] in
-                guard let self else { return }
-                await self.runStartupCatalogPipeline(
-                    updateBootstrapProgressUI: true,
-                    includeDeferredLaunchServices: false
-                )
-                self.pendingLightBrowseTabEntry = true
-            }
+            bootstrapShowsDownloadProgressUI = false
+            scheduleBackgroundDailyCatalogRefreshIfNeeded()
             await primeLaunchCatalogFromLocalCache()
-            let completedWithinTimeout = await waitForTaskOrTimeout(
-                blockingTask,
-                timeoutNanoseconds: launchDailyRefreshTimeoutNanoseconds
-            )
-            if !completedWithinTimeout {
-                // Keep the launch gate up until the blocking refresh fully completes.
-                // Previously we marked the launch pipeline complete here even after
-                // timeout, which let the splash/overlay dismiss while this task was
-                // still running.
-                bootstrapStatus = "Finishing update…"
-                await blockingTask.value
-            }
-            // Invalidate any persisted collection value snapshot saved earlier today
-            // (e.g. before 03:00 with yesterday's prices) so the dashboard recomputes
-            // with the freshly-downloaded pricing rather than reusing the stale cache.
-            collectionValue?.invalidatePersistedSnapshot()
+            try? await Task.sleep(nanoseconds: launchDailyRefreshBriefDisplayNanoseconds)
             isLaunchCatalogPipelineComplete = true
             launchCatalogPipelineCompletedAt = Date()
         } else {
             await primeLaunchCatalogFromLocalCache()
+            scheduleBackgroundDailyCatalogRefreshIfNeeded()
         }
         // runDeferredLaunchServices is intentionally NOT called here.
         // RootView calls runDeferredLaunchServicesIfNeeded() from the overlay
@@ -360,52 +341,36 @@ final class AppServices {
         }
     }
 
-    /// Runs another catalog pass when local pricing metadata shows the first sync
-    /// did not finish (common after concurrent prefetch + bootstrap on first launch).
-    private func ensureMarketPricingReadyIfNeeded(updateProgressUI: Bool) async {
-        let needsRefresh = await CatalogSyncCoordinator.shared.requiresDailyBlockingRefreshAsync(
-            enabledBrands: brandSettings.enabledBrands
-        )
-        guard needsRefresh else { return }
+    /// Starts (or joins) a background daily catalog refresh when local metadata says
+    /// pricing or daily blobs are still stale for the current 03:00 period.
+    private func scheduleBackgroundDailyCatalogRefreshIfNeeded() {
+        guard backgroundCatalogRefreshInFlight == nil else { return }
+        backgroundCatalogRefreshInFlight = Task { @MainActor [weak self] in
+            guard let self else { return }
+            defer { self.backgroundCatalogRefreshInFlight = nil }
 
-        if updateProgressUI {
-            bootstrapMessage = "Updating market data…"
-            bootstrapStatus = "Downloading pricing…"
-            bootstrapShowsDownloadProgressUI = true
-            bootstrapProgress = max(bootstrapProgress, 0.05)
-        }
+            let needsRefresh = await CatalogSyncCoordinator.shared.requiresDailyBlockingRefreshAsync(
+                enabledBrands: self.brandSettings.enabledBrands
+            )
+            guard needsRefresh else { return }
 
-        await runStartupCatalogPipeline(
-            updateBootstrapProgressUI: updateProgressUI,
-            includeDeferredLaunchServices: false
-        )
-    }
+            await self.runStartupCatalogPipeline(
+                updateBootstrapProgressUI: false,
+                includeDeferredLaunchServices: false
+            )
+            self.pendingLightBrowseTabEntry = true
 
-    private func waitForTaskOrTimeout(
-        _ task: Task<Void, Never>,
-        timeoutNanoseconds: UInt64
-    ) async -> Bool {
-        await withCheckedContinuation { continuation in
-            let lock = NSLock()
-            var resumed = false
+            let stillStale = await CatalogSyncCoordinator.shared.requiresDailyBlockingRefreshAsync(
+                enabledBrands: self.brandSettings.enabledBrands
+            )
+            guard !stillStale else { return }
 
-            Task {
-                await task.value
-                lock.withLock {
-                    guard !resumed else { return }
-                    resumed = true
-                    continuation.resume(returning: true)
-                }
-            }
-
-            Task {
-                try? await Task.sleep(nanoseconds: timeoutNanoseconds)
-                lock.withLock {
-                    guard !resumed else { return }
-                    resumed = true
-                    continuation.resume(returning: false)
-                }
-            }
+            // Fresh pricing landed — invalidate any pre-03:00 snapshot saved earlier today
+            // and nudge the dashboard to recompute with the new data.
+            self.collectionValue?.invalidatePersistedSnapshot()
+            await self.sealedProducts.reloadFromLocal()
+            self.pricing.clearSetPricingMemoryCache()
+            self.requestDashboardMarketReload()
         }
     }
 

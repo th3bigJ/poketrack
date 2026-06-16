@@ -960,7 +960,15 @@ struct BinderSlotPickerView: View {
     }
 
     private func filterBrowseFilterCards(_ cards: [BrowseFilterCard]) -> [BrowseFilterCard] {
-        cards.filter { card in
+        let setSeriesNameByCode = seriesNameBySetCode(from: services.cardData.sets)
+        return cards.filter { card in
+            if cardMatchesSeriesNamesFilter(
+                setCode: card.setCode,
+                selectedSeriesNames: filters.seriesNames,
+                seriesNameBySetCode: setSeriesNameByCode
+            ) == false {
+                return false
+            }
             if selectedBrand == .pokemon,
                filters.cardTypes.isEmpty == false,
                filters.cardTypes.contains(resolvedCardType(for: card)) == false {

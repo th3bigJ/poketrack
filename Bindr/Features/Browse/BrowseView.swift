@@ -2036,6 +2036,7 @@ struct BrowseView: View {
     ) -> [BrowseFilterCard] {
         let normalizedQuery = normalizedBrowseSearchText(query)
         let setReleaseDateByCode = firstValueMap(services.cardData.sets, key: \.setCode) { $0.releaseDate ?? "" }
+        let setSeriesNameByCode = seriesNameBySetCode(from: services.cardData.sets)
         let normalizedWeaknessTypes = normalizedBrowseFilterTokens(filters.weaknessTypes)
         let normalizedResistanceTypes = normalizedBrowseFilterTokens(filters.resistanceTypes)
         return cards.filter { card in
@@ -2047,6 +2048,13 @@ struct BrowseView: View {
                 || (card.subtypes?.contains { normalizedBrowseSearchText($0).contains(normalizedQuery) } == true)
             guard matchesQuery else { return false }
 
+            if cardMatchesSeriesNamesFilter(
+                setCode: card.setCode,
+                selectedSeriesNames: filters.seriesNames,
+                seriesNameBySetCode: setSeriesNameByCode
+            ) == false {
+                return false
+            }
             if brand == .pokemon,
                filters.cardTypes.isEmpty == false,
                filters.cardTypes.contains(resolvedCardType(for: card, brand: brand)) == false {
@@ -4671,6 +4679,16 @@ struct BrowseGridFiltersMenuContent: View {
 
         if !isAllBrands && config.showCardFilters {
         Section("Filters") {
+            filterMenu(title: "Series", summary: selectionSummary(for: filters.seriesNames), systemImage: "books.vertical") {
+                let seriesOptions = browseFilterSeriesOptions(from: services.cardData.sets)
+                if seriesOptions.isEmpty {
+                    Text("No series available")
+                } else {
+                    ForEach(seriesOptions, id: \.self) { series in
+                        Toggle(series, isOn: stringBinding(for: series, keyPath: \.seriesNames))
+                    }
+                }
+            }
             filterMenu(title: "Card type", summary: selectionSummary(for: filters.cardTypes), systemImage: "square.stack.3d.up") {
                 ForEach(BrowseCardTypeFilter.pokemonOptions) { type in
                     Toggle(type.title, isOn: cardTypeBinding(for: type))
@@ -5078,6 +5096,7 @@ func filterBrowseCards(
 ) -> [Card] {
     let normalizedQuery = normalizedBrowseSearchText(query)
     let setReleaseDateByCode = firstValueMap(sets, key: \.setCode) { $0.releaseDate ?? "" }
+    let setSeriesNameByCode = seriesNameBySetCode(from: sets)
     let normalizedWeaknessTypes = normalizedBrowseFilterTokens(filters.weaknessTypes)
     let normalizedResistanceTypes = normalizedBrowseFilterTokens(filters.resistanceTypes)
     let filtered = cards.filter { card in
@@ -5089,6 +5108,13 @@ func filterBrowseCards(
             || (card.subtypes?.contains { normalizedBrowseSearchText($0).contains(normalizedQuery) } == true)
         guard matchesQuery else { return false }
 
+        if cardMatchesSeriesNamesFilter(
+            setCode: card.setCode,
+            selectedSeriesNames: filters.seriesNames,
+            seriesNameBySetCode: setSeriesNameByCode
+        ) == false {
+            return false
+        }
         if brand == .pokemon,
            filters.cardTypes.isEmpty == false,
            filters.cardTypes.contains(resolvedBrowseCardType(for: card, brand: brand)) == false {

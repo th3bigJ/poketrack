@@ -224,6 +224,8 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var pokemonSubtypes: Set<String> = []
     var abilityPresence: BrowseCardAbilityPresenceFilter? = nil
     var legalities: Set<BrowseCardLegalityFilter> = []
+    /// When non-empty, only cards whose set belongs to one of these series names are shown.
+    var seriesNames: Set<String> = []
     /// Product type filters (supports grouped options like Collections / Special).
     var productTypes: Set<String> = []
 
@@ -245,6 +247,7 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
             || !pokemonSubtypes.isEmpty
             || abilityPresence != nil
             || !legalities.isEmpty
+            || !seriesNames.isEmpty
     }
 
     var hasActiveProductFieldFilters: Bool {
@@ -282,6 +285,7 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         case pokemonSubtypes
         case abilityPresence
         case legalities
+        case seriesNames
         case productTypes
     }
 
@@ -303,8 +307,50 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
         pokemonSubtypes = try container.decodeIfPresent(Set<String>.self, forKey: .pokemonSubtypes) ?? []
         abilityPresence = try container.decodeIfPresent(BrowseCardAbilityPresenceFilter.self, forKey: .abilityPresence)
         legalities = try container.decodeIfPresent(Set<BrowseCardLegalityFilter>.self, forKey: .legalities) ?? []
+        seriesNames = try container.decodeIfPresent(Set<String>.self, forKey: .seriesNames) ?? []
         productTypes = try container.decodeIfPresent(Set<String>.self, forKey: .productTypes) ?? []
     }
+}
+
+func browseFilterSeriesOptions(from sets: [TCGSet]) -> [String] {
+    let grouped = Dictionary(grouping: sets) { set -> String? in
+        let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        return title.isEmpty ? nil : title
+    }
+    return grouped.compactMap { key, groupedSets -> (title: String, newestReleaseDate: String)? in
+        guard let key else { return nil }
+        let newestReleaseDate = groupedSets.compactMap(\.releaseDate).max() ?? ""
+        return (title: key, newestReleaseDate: newestReleaseDate)
+    }
+    .sorted { lhs, rhs in
+        if lhs.newestReleaseDate != rhs.newestReleaseDate {
+            return lhs.newestReleaseDate > rhs.newestReleaseDate
+        }
+        return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+    }
+    .map(\.title)
+}
+
+func seriesNameBySetCode(from sets: [TCGSet]) -> [String: String] {
+    var result: [String: String] = [:]
+    result.reserveCapacity(sets.count)
+    for set in sets {
+        if result[set.setCode] == nil {
+            result[set.setCode] = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        }
+    }
+    return result
+}
+
+func cardMatchesSeriesNamesFilter(
+    setCode: String,
+    selectedSeriesNames: Set<String>,
+    seriesNameBySetCode: [String: String]
+) -> Bool {
+    guard !selectedSeriesNames.isEmpty else { return true }
+    let series = seriesNameBySetCode[setCode] ?? ""
+    guard !series.isEmpty else { return false }
+    return selectedSeriesNames.contains(series)
 }
 
 struct BrowseGridOptions: Equatable, Sendable, Codable {
