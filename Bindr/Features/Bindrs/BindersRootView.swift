@@ -62,7 +62,7 @@ struct BindersRootView: View {
         // content scrolls under a translucent floating header rather than
         // sitting beneath an opaque title bar. `safeAreaInset` reserves the
         // top space so the first row of binders doesn't slip under the
-        // header; `bindersHeader` itself paints `.ultraThinMaterial`.
+        // header; `bindersHeader` itself stays transparent (glass discs only).
         ZStack(alignment: .top) {
             content
                 .id(refreshTrigger)

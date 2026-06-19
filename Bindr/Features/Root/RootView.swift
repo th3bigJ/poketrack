@@ -1027,30 +1027,13 @@ struct RootView: View {
         .zIndex(20)
     }
 
-    /// Glass panel behind scrollable search content only — the header row stays
-    /// transparent so back / scanner discs blur the dimmed app behind them.
+    /// Scrollable search content sits directly on the dimmed backdrop — no full-screen
+    /// glass sheet, which was washing out card thumbnails and search results.
     @ViewBuilder
     private var searchOverlayContentGlassBackground: some View {
-        Group {
-            if #available(iOS 26.0, *) {
-                GlassEffectContainer(spacing: 12) {
-                    ZStack(alignment: .top) {
-                        Color.clear
-                            .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
-                        searchOverlayNavigationStack
-                    }
-                }
-            } else {
-                ZStack(alignment: .top) {
-                    Color.clear
-                        .background(.thinMaterial, in: ContainerRelativeShape())
-                    searchOverlayNavigationStack
-                }
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .clipShape(ContainerRelativeShape())
-        .ignoresSafeArea(edges: .bottom)
+        searchOverlayNavigationStack
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea(edges: .bottom)
     }
 
     @ViewBuilder
@@ -1088,7 +1071,7 @@ struct RootView: View {
             if searchNavigationPath.isEmpty {
                 universalSearchBarControl(
                     circleButtonsUseGlass: true,
-                    searchFieldUseGlass: false,
+                    searchFieldUseGlass: true,
                     showsBackButtonWhenOpen: true
                 )
                 .padding(.horizontal, 16)

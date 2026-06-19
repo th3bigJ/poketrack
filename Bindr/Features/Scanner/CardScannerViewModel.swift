@@ -128,7 +128,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     private var isAnalysingFrame = false        // prevent overlapping Vision calls
     /// Low-pass filtered quality so the status pill does not flicker frame-to-frame.
     private var smoothedFrameQuality: Double = 0
-    private static let frameQualitySmoothingFactor: Double = 0.10
+    private static let frameQualitySmoothingFactor: Double = 0.16
     /// Token for the currently active OCR/search request. Replaced on each new scan and on cancel.
     private var activeScanRequestID = UUID()
 
@@ -749,15 +749,15 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
             let intersection = bb.intersection(visionReticle)
             guard !intersection.isNull, intersection.width > 0, intersection.height > 0 else { continue }
             let overlapRatio = (intersection.width * intersection.height) / (visionReticle.width * visionReticle.height)
-            guard overlapRatio > 0.2 else { continue }
+            guard overlapRatio > 0.15 else { continue }
 
             let w = bb.width
             let h = bb.height
             let wh = w / max(h, 0.001)
             let aspectDiff = min(abs(wh - expectedNarrow), abs(wh - expectedWide))
-            guard aspectDiff < 0.55 else { continue }
+            guard aspectDiff < 0.65 else { continue }
 
-            let aspectScore = max(0.0, 1.0 - aspectDiff / 0.55)
+            let aspectScore = max(0.0, 1.0 - aspectDiff / 0.65)
             let fillScore   = min(1.0, overlapRatio / 0.6)
             let confScore   = Double(obs.confidence)
             let score = confScore * 0.35 + aspectScore * 0.40 + fillScore * 0.25

@@ -259,7 +259,9 @@ struct BinderDetailView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
             .safeAreaInset(edge: .top, spacing: 0) {
-                Color.clear.frame(height: binderHeaderHeight)
+                if !isEditing {
+                    Color.clear.frame(height: binderHeaderHeight)
+                }
             }
 
             binderHeader
@@ -526,6 +528,9 @@ struct BinderDetailView: View {
                     .foregroundStyle(.primary)
                     .modifier(ChromeGlassCircleGlyphModifier())
             }
+            .buttonStyle(.plain)
+            .menuIndicator(.hidden)
+            .tint(.primary)
             .frame(width: 48, height: 48)
             .contentShape(Rectangle())
             .menuOrder(.fixed)
@@ -1061,6 +1066,10 @@ struct BinderDetailView: View {
     private var editContent: some View {
         ScrollView {
             VStack(spacing: 16) {
+                // Reserve space for the floating header without a `safeAreaInset`
+                // band — content scrolls underneath so the glass buttons blur it.
+                Color.clear.frame(height: binderHeaderHeight)
+
                 editToolbar
 
                 if layout.isFreeScroll {
@@ -1071,7 +1080,8 @@ struct BinderDetailView: View {
                     }
                 }
             }
-            .padding(12)
+            .padding(.horizontal, 12)
+            .padding(.bottom, 12)
         }
         .scrollContentBackground(.hidden)
     }
@@ -1652,14 +1662,14 @@ private struct BinderCardViewer: View {
 
     var body: some View {
         ZStack {
-            Color.black.opacity((colorScheme == .dark ? 0.78 : 0.64) * opacity)
+            Color.black.opacity((colorScheme == .dark ? 0.90 : 0.82) * opacity)
                 .ignoresSafeArea()
                 .onTapGesture { dismiss() }
 
             RadialGradient(
                 colors: [
-                    bindrAccent.opacity(colorScheme == .dark ? 0.30 : 0.22),
-                    bindrAccent.opacity(colorScheme == .dark ? 0.12 : 0.08),
+                    bindrAccent.opacity(colorScheme == .dark ? 0.14 : 0.10),
+                    bindrAccent.opacity(colorScheme == .dark ? 0.05 : 0.03),
                     .clear
                 ],
                 center: .center,

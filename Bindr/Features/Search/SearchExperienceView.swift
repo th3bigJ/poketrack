@@ -123,9 +123,9 @@ struct SearchExperienceView: View {
                             VStack(spacing: 8) {
                                 Image(systemName: category.symbol)
                                     .font(.system(size: 16, weight: .semibold))
-                                    .foregroundStyle(services.theme.accentColor)
+                                    .foregroundStyle(.primary)
                                     .frame(width: 32, height: 32)
-                                    .background(services.theme.accentColor.opacity(0.12), in: Circle())
+                                    .background(Color.primary.opacity(0.06), in: Circle())
                                 Text(category.title)
                                     .font(.caption.weight(.semibold))
                                     .foregroundStyle(.primary)

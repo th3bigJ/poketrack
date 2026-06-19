@@ -131,7 +131,7 @@ struct UniversalSearchBar: View {
                             .frame(height: 44)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .searchFieldCapsuleChrome(
-                                darkGlass: .clear,
+                                darkGlass: searchFieldUseGlass ? .clearInteractive : .clear,
                                 forceNativeGlass: searchFieldUseGlass
                             )
                             .transition(.move(edge: .leading).combined(with: .opacity))
@@ -185,7 +185,7 @@ struct UniversalSearchBar: View {
                         .frame(height: 44)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .searchFieldCapsuleChrome(
-                            darkGlass: .clear,
+                            darkGlass: searchFieldUseGlass ? .clearInteractive : .clear,
                             forceNativeGlass: searchFieldUseGlass
                         )
                         .transition(.move(edge: .leading).combined(with: .opacity))

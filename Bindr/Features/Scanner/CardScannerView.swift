@@ -92,14 +92,16 @@ struct CardScannerView: View {
                     if case .idle = viewModel.scanState {
                         CardScannerReticle(
                             frameQuality: viewModel.frameQuality,
-                            isCapturing: viewModel.isCapturing
+                            isCapturing: viewModel.isCapturing,
+                            showsAlignmentLabel: true
                         ) { rect in
                             viewModel.cardNormalizedRect = rect
                         }
                     } else if case .scanning = viewModel.scanState {
                         CardScannerReticle(
                             frameQuality: viewModel.frameQuality,
-                            isCapturing: false
+                            isCapturing: false,
+                            showsAlignmentLabel: false
                         ) { rect in
                             viewModel.cardNormalizedRect = rect
                         }
@@ -301,8 +303,9 @@ struct CardScannerView: View {
                     ChromeGlassCircleButton(accessibilityLabel: "Close scanner", action: onDismiss) {
                         Image(systemName: "xmark")
                             .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(.white)
                     }
+                    .environment(\.colorScheme, .dark)
                     .padding(.top, ScannerSheetLayout.statusBarHeight + 8)
                     .padding(.trailing, 16)
                 }
@@ -557,12 +560,12 @@ private struct ScannerTopStatusPill: View {
             guard isReady else { return }
             switch alignmentTier {
             case .align:
-                if quality >= 0.28 { alignmentTier = .holdSteady }
+                if quality >= 0.22 { alignmentTier = .holdSteady }
             case .holdSteady:
-                if quality >= 0.50 { alignmentTier = .ready }
-                else if quality < 0.14 { alignmentTier = .align }
+                if quality >= 0.36 { alignmentTier = .ready }
+                else if quality < 0.10 { alignmentTier = .align }
             case .ready:
-                if quality < 0.38 { alignmentTier = .holdSteady }
+                if quality < 0.28 { alignmentTier = .holdSteady }
             }
         }
     }
@@ -1019,11 +1022,12 @@ private struct ScannerUndoBelowFrameButton: View {
 // MARK: - Reticle
 
 private struct CardScannerReticle: View {
-    private static let qualityGood: Double = 0.45
-    private static let qualityWarming: Double = 0.2
+    private static let qualityGood: Double = 0.34
+    private static let qualityWarming: Double = 0.14
 
     var frameQuality: Double
     var isCapturing: Bool
+    var showsAlignmentLabel: Bool = true
     var onRectChanged: (CGRect) -> Void
 
     var body: some View {
@@ -1065,6 +1069,15 @@ private struct CardScannerReticle: View {
                     .position(x: cardX, y: cardCenterY)
                     .shadow(color: borderColor.opacity(0.55), radius: isCapturing ? 8 : 5)
                     .animation(.easeInOut(duration: 0.25), value: frameQuality)
+
+                if showsAlignmentLabel {
+                    VStack {
+                        Spacer().frame(height: cardCenterY + cardH / 2 + 12)
+                        qualityLabel
+                            .position(x: cardX, y: 0)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                }
             }
             .onAppear { reportNormalizedReticleRect(geo: geo, cardX: cardX, cardY: cardY, cardW: cardW, cardH: cardH) }
             .onChange(of: geo.size) { _, _ in
@@ -1084,6 +1097,39 @@ private struct CardScannerReticle: View {
         if frameQuality >= Self.qualityGood { return .green }
         if frameQuality >= Self.qualityWarming { return Color.yellow.opacity(0.8) }
         return Color.white.opacity(0.6)
+    }
+
+    @ViewBuilder
+    private var qualityLabel: some View {
+        if isCapturing {
+            Label("Capturing…", systemImage: "camera.fill")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.white)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(.thinMaterial, in: Capsule())
+        } else if frameQuality >= Self.qualityGood {
+            Label("Ready to scan", systemImage: "checkmark.circle.fill")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.green)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(.thinMaterial, in: Capsule())
+        } else if frameQuality >= Self.qualityWarming {
+            Label("Hold steady", systemImage: "viewfinder")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.yellow)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(.thinMaterial, in: Capsule())
+        } else {
+            Text("Align card in frame")
+                .font(.caption.weight(.medium))
+                .foregroundStyle(.white.opacity(0.7))
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(.black.opacity(0.3), in: Capsule())
+        }
     }
 
 }

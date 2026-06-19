@@ -3,8 +3,8 @@ import SwiftUI
 /// Shared top-of-page header used by Social, Binders, and Deck Builder so
 /// they all match the Dashboard's translucent floating-chrome look. Centers
 /// the title, hosts a leading slot (typically Back) and a trailing slot
-/// (typically the page's primary action), and applies the same
-/// ultra-thin-material backdrop the floating search bar uses at root level.
+/// (typically the page's primary action). Only the circle buttons carry
+/// glass — the bar between them stays fully transparent.
 ///
 /// Two slots is intentional — anything more elaborate (multiple action
 /// buttons, animated swap-in/swap-out groups) goes inside the trailing
@@ -42,13 +42,7 @@ struct BindrPageHeader<Leading: View, Trailing: View>: View {
         // solid stripe — that solid stripe was the source of the "opaque
         // header" complaint.
         Group {
-            if #available(iOS 26.0, *) {
-                GlassEffectContainer(spacing: 0) {
-                    contentLayout
-                }
-            } else {
-                contentLayout
-            }
+            contentLayout
         }
     }
 

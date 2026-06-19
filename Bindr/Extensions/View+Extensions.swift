@@ -188,10 +188,7 @@ struct SearchFieldChromeModifier: ViewModifier {
         case .capsule:
             if #available(iOS 26.0, *), forceNativeGlass {
                 content
-                    .glassEffect(
-                        Glass.regular.tint(nil).interactive(),
-                        in: Capsule(style: .continuous)
-                    )
+                    .glassEffect(darkGlassEffect, in: Capsule(style: .continuous))
                     .overlay { Capsule(style: .continuous).stroke(glassBorderColor, lineWidth: 1) }
             } else if colorScheme == .light {
                 content
@@ -215,7 +212,7 @@ struct SearchFieldChromeModifier: ViewModifier {
             let rect = RoundedRectangle(cornerRadius: radius, style: .continuous)
             if #available(iOS 26.0, *), forceNativeGlass {
                 content
-                    .glassEffect(Glass.regular.tint(nil).interactive(), in: rect)
+                    .glassEffect(darkGlassEffect, in: rect)
                     .overlay { rect.stroke(glassBorderColor, lineWidth: 1) }
             } else if colorScheme == .light {
                 content
