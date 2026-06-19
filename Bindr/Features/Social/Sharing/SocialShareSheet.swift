@@ -1178,7 +1178,7 @@ struct SocialShareSheet: View {
                 )
             case .binder:
                 guard let binder = selectedBinder else { return }
-                _ = try await services.socialShare.publishBinder(
+                _ = try await services.socialShare.publishBinderPost(
                     binder,
                     title: binder.title,
                     description: postText,
@@ -1187,7 +1187,7 @@ struct SocialShareSheet: View {
                 )
             case .deck:
                 guard let deck = selectedDeck else { return }
-                _ = try await services.socialShare.publishDeck(
+                _ = try await services.socialShare.publishDeckPost(
                     deck, title: deck.title, description: postText, visibility: visibility, includeValue: false
                 )
             }

@@ -87,9 +87,9 @@ struct CreateBinderSheet: View {
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                         }
 
-                        // 3. Layout Section
+                        // 3. Page layout + card prices
                         VStack(alignment: .leading, spacing: 12) {
-                            Text("LAYOUT")
+                            Text("PAGE LAYOUT")
                                 .font(.caption.bold())
                                 .foregroundStyle(.secondary)
                             
@@ -120,16 +120,26 @@ struct CreateBinderSheet: View {
                                 .buttonStyle(.plain)
                                 .gridCellColumns(3)
                             }
+
+                            Toggle(isOn: $showPriceOverlay) {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Show card prices")
+                                        .font(.subheadline.weight(.medium))
+                                    Text("Add subtle market-price badges on binder pages")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .tint(.accentColor)
                         }
 
-                        // 4. Style Section (Colors + Texture Info)
+                        // 4. Binder style (colour + texture)
                         VStack(alignment: .leading, spacing: 12) {
-                            Text("STYLE")
+                            Text("BINDER STYLE")
                                 .font(.caption.bold())
                                 .foregroundStyle(.secondary)
                             
                             VStack(spacing: 20) {
-                                // Color Grid
                                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 12) {
                                     ForEach(BinderColourPalette.pickerOptions, id: \.name) { swatch in
                                         binderColourSwatch(name: swatch.name, color: swatch.color, size: 32)
@@ -146,7 +156,6 @@ struct CreateBinderSheet: View {
                                     }
                                 }
                                 
-                                // Texture Segment/Picker
                                 Picker("Texture", selection: $texture) {
                                     ForEach(BinderTexture.allCases) { tex in
                                         Text(tex.displayName).tag(tex)
@@ -154,27 +163,6 @@ struct CreateBinderSheet: View {
                                 }
                                 .pickerStyle(.segmented)
 
-                                VStack(alignment: .leading, spacing: 8) {
-                                    Text("COVER TEXT")
-                                        .font(.caption.bold())
-                                        .foregroundStyle(.secondary)
-
-                                    Picker("Title text color", selection: $titleTextColor) {
-                                        ForEach(BinderTitleTextColor.allCases) { option in
-                                            Text(option.displayName).tag(option)
-                                        }
-                                    }
-                                    .pickerStyle(.segmented)
-
-                                    Picker("Title font", selection: $titleFontStyle) {
-                                        ForEach(BinderTitleFontStyle.allCases) { option in
-                                            Text(option.displayName).tag(option)
-                                        }
-                                    }
-                                    .pickerStyle(.segmented)
-                                }
-                                
-                                // Selected Style Label
                                 HStack(spacing: 4) {
                                     binderColourSwatch(
                                         name: colourName,
@@ -193,11 +181,9 @@ struct CreateBinderSheet: View {
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
 
-                        // 5. Cover Options — toggle the fanned card preview on
-                        //    the front of the binder. Some users prefer the
-                        //    clean material look; keep both options available.
+                        // 5. Front cover + cover text
                         VStack(alignment: .leading, spacing: 12) {
-                            Text("COVER")
+                            Text("FRONT COVER")
                                 .font(.caption.bold())
                                 .foregroundStyle(.secondary)
 
@@ -224,16 +210,26 @@ struct CreateBinderSheet: View {
                                 }
                                 .tint(.accentColor)
 
-                                Toggle(isOn: $showPriceOverlay) {
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text("Show card prices")
-                                            .font(.subheadline.weight(.medium))
-                                        Text("Add subtle market-price badges on binder pages")
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
+                                Divider()
+
+                                VStack(alignment: .leading, spacing: 8) {
+                                    Text("Cover text")
+                                        .font(.subheadline.weight(.semibold))
+
+                                    Picker("Title text color", selection: $titleTextColor) {
+                                        ForEach(BinderTitleTextColor.allCases) { option in
+                                            Text(option.displayName).tag(option)
+                                        }
                                     }
+                                    .pickerStyle(.segmented)
+
+                                    Picker("Title font", selection: $titleFontStyle) {
+                                        ForEach(BinderTitleFontStyle.allCases) { option in
+                                            Text(option.displayName).tag(option)
+                                        }
+                                    }
+                                    .pickerStyle(.segmented)
                                 }
-                                .tint(.accentColor)
                             }
                             .padding(16)
                             .background(Color(uiColor: .secondarySystemGroupedBackground))

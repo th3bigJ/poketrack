@@ -143,7 +143,8 @@ struct BinderColourPalette {
     ]
 
     /// The subset of the palette surfaced to users in the picker (curated, no
-    /// duplicates). Named choices are supplemented by a full colour picker.
+    /// duplicates). A custom colour circle at the end of the grid opens the
+    /// system colour picker.
     static let pickerOptions: [(name: String, color: Color)] = [(logoColourName, logoBaseColor)] + Array(options.prefix(18))
 
     static func color(named name: String) -> Color {

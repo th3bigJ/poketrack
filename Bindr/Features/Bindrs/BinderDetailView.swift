@@ -73,6 +73,10 @@ struct BinderDetailView: View {
     /// to the host's collapse — quick "I tapped the wrong binder" backs
     /// shouldn't feel like a 2-second penalty.
     @State private var firstCardPageLandedAt: Date? = nil
+    /// Measured height of the floating header. Drives a clear `safeAreaInset`
+    /// spacer so edit-mode scroll content clears the overlay without painting
+    /// an opaque bar across the playmat.
+    @State private var binderHeaderHeight: CGFloat = 64
 
     /// Back-button handler for the binder detail screen. Mirrors the open
     /// sequence: when entered from the grid we curl back to the cover (page
@@ -157,7 +161,6 @@ struct BinderDetailView: View {
     @State private var totalLikeCount: Int = 0
 
     private var layout: BinderPageLayout { binder.layout }
-    private var headerIconColor: Color { colorScheme == .dark ? .white : .black }
 
     private var sortedSlots: [BinderSlot] {
         binder.slotList.sorted { $0.position < $1.position }
@@ -222,35 +225,54 @@ struct BinderDetailView: View {
 
     var body: some View {
         ZStack(alignment: .top) {
-            if !isEditing || isModeTransitioning {
-                viewModeContent
-                    .opacity(isEditing ? 0 : 1)
-                    .offset(y: isEditing ? -6 : 0)
-                    .allowsHitTesting(!isEditing && isChromeVisible)
-                    .accessibilityHidden(isEditing)
-                    .compositingGroup()
-                    .animation(
-                        isEditing
-                            ? .easeOut(duration: 0.18)
-                            : .spring(response: 0.4, dampingFraction: 0.8).delay(0.08),
-                        value: isEditing
-                    )
+            ZStack(alignment: .top) {
+                if !isEditing || isModeTransitioning {
+                    viewModeContent
+                        .opacity(isEditing ? 0 : 1)
+                        .offset(y: isEditing ? -6 : 0)
+                        .allowsHitTesting(!isEditing && isChromeVisible)
+                        .accessibilityHidden(isEditing)
+                        .compositingGroup()
+                        .animation(
+                            isEditing
+                                ? .easeOut(duration: 0.18)
+                                : .spring(response: 0.4, dampingFraction: 0.8).delay(0.08),
+                            value: isEditing
+                        )
+                }
+
+                if isEditing || isModeTransitioning {
+                    editContent
+                        .opacity(isEditing ? 1 : 0)
+                        .offset(y: isEditing ? 0 : 18)
+                        .allowsHitTesting(isEditing)
+                        .accessibilityHidden(!isEditing)
+                        .compositingGroup()
+                        .animation(
+                            isEditing
+                                ? .spring(response: 0.4, dampingFraction: 0.8).delay(0.08)
+                                : .easeOut(duration: 0.18),
+                            value: isEditing
+                        )
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
+            .safeAreaInset(edge: .top, spacing: 0) {
+                Color.clear.frame(height: binderHeaderHeight)
             }
 
-            if isEditing || isModeTransitioning {
-                editContent
-                    .opacity(isEditing ? 1 : 0)
-                    .offset(y: isEditing ? 0 : 18)
-                    .allowsHitTesting(isEditing)
-                    .accessibilityHidden(!isEditing)
-                    .compositingGroup()
-                    .animation(
-                        isEditing
-                            ? .spring(response: 0.4, dampingFraction: 0.8).delay(0.08)
-                            : .easeOut(duration: 0.18),
-                        value: isEditing
-                    )
-            }
+            binderHeader
+                .background(
+                    GeometryReader { geo in
+                        Color.clear.preference(key: BinderHeaderHeightKey.self, value: geo.size.height)
+                    }
+                )
+                .onPreferenceChange(BinderHeaderHeightKey.self) { binderHeaderHeight = $0 }
+                .opacity(isChromeVisible ? 1 : 0)
+                .offset(y: isChromeVisible ? 0 : -20)
+                .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
+                .allowsHitTesting(isChromeVisible)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .clipped()
@@ -260,12 +282,6 @@ struct BinderDetailView: View {
             } else {
                 Color(uiColor: .systemBackground)
             }
-        }
-        .safeAreaInset(edge: .top, spacing: 0) {
-            binderHeader
-                .opacity(isChromeVisible ? 1 : 0)
-                .offset(y: isChromeVisible ? 0 : -20)
-                .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
@@ -469,7 +485,9 @@ struct BinderDetailView: View {
 
     /// Uses ``BindrPageHeader`` (the same component Social/Binders/Decks list
     /// pages use) so the binder detail screen's chrome lines up perfectly
-    /// with the rest of the app's glass treatment.
+    /// with the rest of the app's glass treatment. Floated in a `ZStack`
+    /// overlay — not placed inside `safeAreaInset` — so the bar stays
+    /// transparent and only the glass discs blur the playmat underneath.
     private var binderHeader: some View {
         BindrPageHeader(
             title: binder.title,
@@ -480,49 +498,47 @@ struct BinderDetailView: View {
                         .foregroundStyle(.primary)
                 }
             },
-            trailing: {
-                HStack(spacing: 8) {
-                    Menu {
-                        Button {
-                            showShareSettings = true
-                        } label: {
-                            Label(isSharedPublished ? "Manage Social Post" : "Post to Bindr Social", systemImage: "person.2.fill")
-                        }
-
-                        Button {
-                            renderAndShareSnapshot()
-                        } label: {
-                            Label("Share Page Image", systemImage: "photo")
-                        }
-                    } label: {
-                        Image(systemName: "square.and.arrow.up")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(headerIconColor)
-                    }
-                    .modifier(ChromeGlassCircleGlyphModifier())
-                    .frame(width: 48, height: 48)
-                    .contentShape(Rectangle())
-                    .menuOrder(.fixed)
-                    .accessibilityLabel("Share binder")
-
-                    Button {
-                        setEditing(!isEditing)
-                    } label: {
-                        Image(systemName: isEditing ? "checkmark" : "pencil")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(headerIconColor)
-                    }
-                    .modifier(ChromeGlassCircleGlyphModifier())
-                    .frame(width: 48, height: 48)
-                    .contentShape(Rectangle())
-                    .accessibilityLabel(isEditing ? "Done editing binder" : "Edit binder")
-                }
-            }
+            trailing: { binderHeaderTrailingButtons }
         )
         // Push the header down so it sits below the status bar.
         // Fall back to 47pt (standard notch height) if the inset
         // isn't reported correctly.
         .padding(.top, entryFromGrid ? (topSafeAreaInset > 0 ? topSafeAreaInset : 47) : 0)
+    }
+
+    private var binderHeaderTrailingButtons: some View {
+        HStack(spacing: 8) {
+            Menu {
+                Button {
+                    showShareSettings = true
+                } label: {
+                    Label(isSharedPublished ? "Manage Social Post" : "Post to Bindr Social", systemImage: "person.2.fill")
+                }
+
+                Button {
+                    renderAndShareSnapshot()
+                } label: {
+                    Label("Share Page Image", systemImage: "photo")
+                }
+            } label: {
+                Image(systemName: "square.and.arrow.up")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.primary)
+                    .modifier(ChromeGlassCircleGlyphModifier())
+            }
+            .frame(width: 48, height: 48)
+            .contentShape(Rectangle())
+            .menuOrder(.fixed)
+            .accessibilityLabel("Share binder")
+
+            ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done editing binder" : "Edit binder") {
+                setEditing(!isEditing)
+            } label: {
+                Image(systemName: isEditing ? "checkmark" : "pencil")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundStyle(.primary)
+            }
+        }
     }
 
     // MARK: - Bottom stats bar (Cards · Page Value · Binder Value)
@@ -1592,6 +1608,15 @@ private struct BinderSlotDropDelegate: DropDelegate {
 /// morph overlay over the same rectangle. The host reads it through a
 /// `.onPreferenceChange` and animates the matched-geometry cover from the
 /// grid cell frame to this rect, then back when the binder is closed.
+/// Preference key used by ``BinderDetailView`` to read its floating header
+/// height back into a clear `safeAreaInset` spacer.
+private struct BinderHeaderHeightKey: PreferenceKey {
+    static var defaultValue: CGFloat = 64
+    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
+        value = max(value, nextValue())
+    }
+}
+
 struct BinderPageFramePreferenceKey: PreferenceKey {
     static var defaultValue: CGRect = .zero
     static func reduce(value: inout CGRect, nextValue: () -> CGRect) {
@@ -1864,82 +1889,68 @@ struct BinderStylePickerSheet: View {
                     .padding(.horizontal, 24)
 
                     VStack(alignment: .leading, spacing: 16) {
+                        stylePanel(title: "Page layout", icon: "square.grid.3x3") {
+                            VStack(alignment: .leading, spacing: 12) {
+                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                                    ForEach(layoutOptions, id: \.self) { option in
+                                        layoutButton(for: option)
+                                    }
+
+                                    Button {
+                                        binder.pageLayout = BinderPageLayout.freeScroll.rawValue
+                                    } label: {
+                                        HStack {
+                                            Image(systemName: "square.grid.3x3")
+                                            Text("Free flow")
+                                        }
+                                        .font(.system(size: 13, weight: .medium))
+                                        .frame(maxWidth: .infinity)
+                                        .padding(.vertical, 12)
+                                        .background(layout.isFreeScroll ? bindrAccent.opacity(0.1) : Color(uiColor: .tertiarySystemGroupedBackground))
+                                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                                        .overlay {
+                                            if layout.isFreeScroll {
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .stroke(bindrAccent, lineWidth: 1)
+                                            }
+                                        }
+                                    }
+                                    .buttonStyle(.plain)
+                                    .gridCellColumns(3)
+                                }
+
+                                Toggle(isOn: $binder.showPriceOverlay) {
+                                    Label {
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            Text("Show card prices")
+                                                .font(.subheadline.weight(.semibold))
+                                            Text("Adds subtle market-price badges to binder page cards")
+                                                .font(.caption)
+                                                .foregroundStyle(.secondary)
+                                        }
+                                    } icon: {
+                                        Image(systemName: "tag")
+                                            .foregroundStyle(bindrAccent)
+                                    }
+                                }
+                                .tint(bindrAccent)
+                            }
+                        }
+
                         stylePanel(title: "Binder style", icon: "swatchpalette") {
                             VStack(alignment: .leading, spacing: 16) {
                                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 14) {
                                     ForEach(BinderColourPalette.pickerOptions, id: \.name) { swatch in
                                         colorSwatchButton(swatch)
                                     }
+                                    customColourPickerButton
                                 }
-
-                                ColorPicker(
-                                    "Custom binder colour",
-                                    selection: binderColourBinding,
-                                    supportsOpacity: false
-                                )
-                                .font(.subheadline.weight(.semibold))
 
                                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                                     ForEach(BinderTexture.allCases) { texture in
                                         textureButton(texture)
                                     }
                                 }
-                            }
-                        }
-
-                        stylePanel(title: "Cover text", icon: "textformat") {
-                            VStack(alignment: .leading, spacing: 12) {
-                                ColorPicker(
-                                    "Text colour",
-                                    selection: coverTextColorBinding,
-                                    supportsOpacity: false
-                                )
-                                .font(.subheadline.weight(.semibold))
-
-                                Button("Match binder tint") {
-                                    binder.titleTextColor = BinderTitleTextColor.gold.rawValue
-                                }
-                                .font(.caption.weight(.semibold))
-                                .foregroundStyle(bindrAccent)
-                                .buttonStyle(.plain)
-
-                                Picker("Title font", selection: $binder.titleFontStyle) {
-                                    ForEach(BinderTitleFontStyle.allCases) { option in
-                                        Text(option.displayName).tag(option.rawValue)
-                                    }
-                                }
-                                .pickerStyle(.segmented)
-                                .tint(colorScheme == .dark ? .white : .black)
-                            }
-                        }
-
-                        stylePanel(title: "Page layout", icon: "square.grid.3x3") {
-                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                                ForEach(layoutOptions, id: \.self) { option in
-                                    layoutButton(for: option)
-                                }
-
-                                Button {
-                                    binder.pageLayout = BinderPageLayout.freeScroll.rawValue
-                                } label: {
-                                    HStack {
-                                        Image(systemName: "square.grid.3x3")
-                                        Text("Free flow")
-                                    }
-                                    .font(.system(size: 13, weight: .medium))
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 12)
-                                    .background(layout.isFreeScroll ? bindrAccent.opacity(0.1) : Color(uiColor: .tertiarySystemGroupedBackground))
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .overlay {
-                                        if layout.isFreeScroll {
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(bindrAccent, lineWidth: 1)
-                                        }
-                                    }
-                                }
-                                .buttonStyle(.plain)
-                                .gridCellColumns(3)
                             }
                         }
 
@@ -1967,21 +1978,34 @@ struct BinderStylePickerSheet: View {
                                 }
                                 .tint(bindrAccent)
 
-                                Toggle(isOn: $binder.showPriceOverlay) {
-                                    Label {
-                                        VStack(alignment: .leading, spacing: 2) {
-                                            Text("Show card prices")
-                                                .font(.subheadline.weight(.semibold))
-                                            Text("Adds subtle market-price badges to binder page cards")
-                                                .font(.caption)
-                                                .foregroundStyle(.secondary)
-                                        }
-                                    } icon: {
-                                        Image(systemName: "tag")
-                                            .foregroundStyle(bindrAccent)
+                                Divider()
+
+                                VStack(alignment: .leading, spacing: 12) {
+                                    Text("Cover text")
+                                        .font(.subheadline.weight(.semibold))
+
+                                    ColorPicker(
+                                        "Text colour",
+                                        selection: coverTextColorBinding,
+                                        supportsOpacity: false
+                                    )
+                                    .font(.subheadline.weight(.semibold))
+
+                                    Button("Match binder tint") {
+                                        binder.titleTextColor = BinderTitleTextColor.gold.rawValue
                                     }
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(bindrAccent)
+                                    .buttonStyle(.plain)
+
+                                    Picker("Title font", selection: $binder.titleFontStyle) {
+                                        ForEach(BinderTitleFontStyle.allCases) { option in
+                                            Text(option.displayName).tag(option.rawValue)
+                                        }
+                                    }
+                                    .pickerStyle(.segmented)
+                                    .tint(colorScheme == .dark ? .white : .black)
                                 }
-                                .tint(bindrAccent)
                             }
                         }
 
@@ -2312,6 +2336,11 @@ struct BinderStylePickerSheet: View {
         }
     }
 
+    private var isCustomBinderColour: Bool {
+        let normalized = binder.colour.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        return normalized.count == 6 || normalized.count == 8
+    }
+
     private func colorSwatchButton(_ swatch: (name: String, color: Color)) -> some View {
         let isSelected = binder.colour == swatch.name
         return Button {
@@ -2333,6 +2362,57 @@ struct BinderStylePickerSheet: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(BinderColourPalette.displayName(for: swatch.name))
+    }
+
+    /// Last swatch in the colour grid — opens the system colour picker while
+    /// matching the size and selection chrome of the preset circles.
+    private var customColourPickerButton: some View {
+        let isSelected = isCustomBinderColour
+        let displayColor = BinderColourPalette.color(named: binder.colour)
+
+        return ColorPicker(
+            selection: binderColourBinding,
+            supportsOpacity: false
+        ) {
+            Group {
+                if isSelected {
+                    binderColourSwatch(name: binder.colour, color: displayColor, size: 36)
+                } else {
+                    Circle()
+                        .fill(Color(uiColor: .tertiarySystemFill))
+                        .overlay {
+                            Circle()
+                                .strokeBorder(
+                                    AngularGradient(
+                                        colors: [.red, .orange, .yellow, .green, .mint, .cyan, .blue, .purple, .red],
+                                        center: .center
+                                    ),
+                                    lineWidth: 2.5
+                                )
+                        }
+                        .overlay {
+                            Image(systemName: "eyedropper.halffull")
+                                .font(.system(size: 13, weight: .semibold))
+                                .foregroundStyle(.secondary)
+                        }
+                }
+            }
+            .overlay {
+                Circle()
+                    .stroke(isSelected ? Color.primary.opacity(0.35) : Color.white.opacity(0.2), lineWidth: isSelected ? 2 : 1)
+            }
+            .overlay {
+                if isSelected {
+                    Image(systemName: "checkmark")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.white)
+                        .shadow(color: .black.opacity(0.35), radius: 1, x: 0, y: 1)
+                }
+            }
+            .frame(width: 36, height: 36)
+        }
+        .labelsHidden()
+        .accessibilityLabel("Custom binder colour")
     }
 
     private func binderColourSwatch(name: String, color: Color, size: CGFloat) -> some View {

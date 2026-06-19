@@ -12,7 +12,6 @@ enum SideMenuPage: String, Identifiable, Hashable {
     case gradingOpportunities
     case myAccount
     case backupRestore
-    case dataExport
     case libraryStorage
     case legalDisclaimer
 
@@ -30,7 +29,6 @@ enum SideMenuPage: String, Identifiable, Hashable {
         case .gradingOpportunities: return "Grading Opportunities"
         case .myAccount: return "Account & Privacy"
         case .backupRestore: return "Backup and Restore"
-        case .dataExport: return "Export Data"
         case .libraryStorage: return "Library Storage"
         case .legalDisclaimer: return "Legal Disclaimer"
         }

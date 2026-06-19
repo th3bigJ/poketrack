@@ -126,6 +126,9 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     private let ciContext = CIContext(options: nil)
 
     private var isAnalysingFrame = false        // prevent overlapping Vision calls
+    /// Low-pass filtered quality so the status pill does not flicker frame-to-frame.
+    private var smoothedFrameQuality: Double = 0
+    private static let frameQualitySmoothingFactor: Double = 0.10
     /// Token for the currently active OCR/search request. Replaced on each new scan and on cancel.
     private var activeScanRequestID = UUID()
 
@@ -671,11 +674,19 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         // Don't analyse while a capture or OCR pass is in flight
         guard !isCapturing, case .idle = scanState else {
-            DispatchQueue.main.async { [weak self] in self?.frameQuality = 0 }
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                self.smoothedFrameQuality = 0
+                self.frameQuality = 0
+            }
             return
         }
         guard !requiresBrandSelection else {
-            DispatchQueue.main.async { [weak self] in self?.frameQuality = 0 }
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                self.smoothedFrameQuality = 0
+                self.frameQuality = 0
+            }
             return
         }
         guard !isAnalysingFrame else { return }
@@ -703,7 +714,14 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         let quality = frameQualityScore(observations, visionOrientation: visionOrientation)
 
         DispatchQueue.main.async { [weak self] in
-            self?.frameQuality = quality
+            guard let self else { return }
+            if quality <= 0 {
+                self.smoothedFrameQuality = 0
+            } else {
+                let factor = Self.frameQualitySmoothingFactor
+                self.smoothedFrameQuality = self.smoothedFrameQuality * (1 - factor) + quality * factor
+            }
+            self.frameQuality = self.smoothedFrameQuality
         }
     }
 

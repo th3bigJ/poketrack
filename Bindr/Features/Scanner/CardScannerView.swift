@@ -480,7 +480,7 @@ struct CardScannerView: View {
 
 // MARK: - Layout constants
 
-private enum ScannerSheetLayout {
+enum ScannerSheetLayout {
     static var statusBarHeight: CGFloat {
         UIApplication.shared.connectedScenes
             .compactMap { $0 as? UIWindowScene }
@@ -497,18 +497,30 @@ private struct ScannerTopStatusPill: View {
     let isReady: Bool
     let frameQuality: Double
 
+    private enum AlignmentTier: Int {
+        case align
+        case holdSteady
+        case ready
+    }
+
+    @State private var alignmentTier: AlignmentTier = .align
+
     private var statusText: String {
         if !isReady { return "Warming camera" }
-        if frameQuality >= 0.45 { return "Ready to scan" }
-        if frameQuality >= 0.2 { return "Hold steady" }
-        return "Align card"
+        switch alignmentTier {
+        case .ready: return "Ready to scan"
+        case .holdSteady: return "Hold steady"
+        case .align: return "Align card"
+        }
     }
 
     private var statusColor: Color {
         if !isReady { return .orange }
-        if frameQuality >= 0.45 { return .green }
-        if frameQuality >= 0.2 { return .yellow }
-        return .white.opacity(0.72)
+        switch alignmentTier {
+        case .ready: return .green
+        case .holdSteady: return .yellow
+        case .align: return .white.opacity(0.72)
+        }
     }
 
     var body: some View {
@@ -537,6 +549,22 @@ private struct ScannerTopStatusPill: View {
         .background(.ultraThinMaterial, in: Capsule())
         .overlay(Capsule().strokeBorder(Color.white.opacity(0.16), lineWidth: 1))
         .shadow(color: .black.opacity(0.22), radius: 16, y: 8)
+        .animation(.easeInOut(duration: 0.35), value: alignmentTier)
+        .onChange(of: isReady) { _, ready in
+            if !ready { alignmentTier = .align }
+        }
+        .onChange(of: frameQuality) { _, quality in
+            guard isReady else { return }
+            switch alignmentTier {
+            case .align:
+                if quality >= 0.28 { alignmentTier = .holdSteady }
+            case .holdSteady:
+                if quality >= 0.50 { alignmentTier = .ready }
+                else if quality < 0.14 { alignmentTier = .align }
+            case .ready:
+                if quality < 0.38 { alignmentTier = .holdSteady }
+            }
+        }
     }
 }
 

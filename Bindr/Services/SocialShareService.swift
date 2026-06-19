@@ -243,6 +243,31 @@ final class SocialShareService {
         )
     }
 
+    /// Publishes a new feed post for a binder snapshot. Unlike ``publishBinder``,
+    /// each call creates a distinct post (same binder can be posted many times).
+    func publishBinderPost(
+        _ binder: Binder,
+        title: String,
+        description: String,
+        visibility: SharedContentVisibility,
+        includeValue: Bool
+    ) async throws -> SharedContent {
+        let localID = "binder-\(binder.id.uuidString)-\(Int(Date().timeIntervalSince1970))"
+        let encoded = try await encodeBinderPayload(
+            binder,
+            includeValue: includeValue,
+            feedPostLocalID: localID
+        )
+        return try await createSharedContent(
+            type: .binder,
+            encoded: encoded,
+            title: normalizedTitle(title, fallback: binder.title),
+            description: normalizedDescription(description),
+            visibility: visibility,
+            includeValue: includeValue
+        )
+    }
+
     func publishDeck(
         _ deck: Deck,
         title: String,
@@ -257,6 +282,34 @@ final class SocialShareService {
         return try await upsertSharedContent(
             type: .deck,
             localContentID: encoded.localContentID,
+            encoded: encoded,
+            title: normalizedTitle(title, fallback: deck.title),
+            description: normalizedDescription(description),
+            visibility: visibility,
+            includeValue: includeValue
+        )
+    }
+
+    /// Publishes a new feed post for a deck snapshot. Unlike ``publishDeck``,
+    /// each call creates a distinct post (same deck can be posted many times).
+    func publishDeckPost(
+        _ deck: Deck,
+        title: String,
+        description: String,
+        visibility: SharedContentVisibility,
+        includeValue: Bool
+    ) async throws -> SharedContent {
+        guard storeService.isPremium else {
+            throw SocialShareError.deckSharingRequiresPremium
+        }
+        let localID = "deck-\(deck.id.uuidString)-\(Int(Date().timeIntervalSince1970))"
+        let encoded = try await encodeDeckPayload(
+            deck,
+            includeValue: includeValue,
+            feedPostLocalID: localID
+        )
+        return try await createSharedContent(
+            type: .deck,
             encoded: encoded,
             title: normalizedTitle(title, fallback: deck.title),
             description: normalizedDescription(description),
@@ -344,9 +397,8 @@ final class SocialShareService {
             brand: TCGBrand.inferredFromMasterCardId(first.cardID).rawValue,
             localContentID: localID
         )
-        return try await upsertSharedContent(
+        return try await createSharedContent(
             type: .pull,
-            localContentID: localID,
             encoded: encoded,
             title: first.cardName,
             description: message.isEmpty ? nil : message,
@@ -383,12 +435,7 @@ final class SocialShareService {
         guard let first = cards.first else {
             throw SocialShareError.invalidResponse
         }
-        let localID: String
-        if cards.count == 1 {
-            localID = "want-\(first.cardID)-\(first.variantKey)"
-        } else {
-            localID = "want-\(first.cardID)-\(Int(Date().timeIntervalSince1970))"
-        }
+        let localID = "want-\(first.cardID)-\(first.variantKey)-\(Int(Date().timeIntervalSince1970))"
         let items = cards.map { card in
             JSONValue.object([
                 "cardID": .string(card.cardID),
@@ -413,9 +460,8 @@ final class SocialShareService {
             brand: TCGBrand.inferredFromMasterCardId(first.cardID).rawValue,
             localContentID: localID
         )
-        return try await upsertSharedContent(
+        return try await createSharedContent(
             type: .wishlist,
-            localContentID: localID,
             encoded: encoded,
             title: first.cardName,
             description: message.isEmpty ? nil : message,
@@ -656,6 +702,38 @@ final class SocialShareService {
         }
     }
 
+    private func createSharedContent(
+        type: SharedContentType,
+        encoded: EncodedPayload,
+        title: String,
+        description: String?,
+        visibility: SharedContentVisibility,
+        includeValue: Bool
+    ) async throws -> SharedContent {
+        let userID = try signedInUserID()
+        let accessToken = try signedInAccessToken()
+        let payload = SharedContentUpsertRequest(
+            ownerID: userID,
+            contentType: type,
+            title: title,
+            description: description,
+            visibility: visibility,
+            payload: encoded.payload,
+            includeValue: includeValue,
+            cardCount: encoded.cardCount,
+            brand: encoded.brand,
+            updatedAt: Date()
+        )
+        let created: [SharedContent] = try await execute(
+            path: "/rest/v1/shared_content?select=*",
+            method: "POST",
+            accessToken: accessToken,
+            body: payload,
+            extraHeaders: ["Prefer": "return=representation"]
+        )
+        return try created.first.unwrapOrThrow(SocialShareError.invalidResponse)
+    }
+
     private func upsertSharedContent(
         type: SharedContentType,
         localContentID: String,
@@ -823,7 +901,11 @@ final class SocialShareService {
         )
     }
 
-    private func encodeBinderPayload(_ binder: Binder, includeValue: Bool) async throws -> EncodedPayload {
+    private func encodeBinderPayload(
+        _ binder: Binder,
+        includeValue: Bool,
+        feedPostLocalID: String? = nil
+    ) async throws -> EncodedPayload {
         // Sort by position so subscribers can rebuild the original page order
         // even when SwiftData hands us slots out of order.
         let sortedSlots = binder.slotList.sorted { $0.position < $1.position }
@@ -849,10 +931,11 @@ final class SocialShareService {
             }
             rows.append(row)
         }
+        let localContentID = feedPostLocalID ?? binder.id.uuidString
         var payload: [String: JSONValue] = [
             "payload_version": .number(1),
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
-            "local_content_id": .string(binder.id.uuidString),
+            "local_content_id": .string(localContentID),
             "brand": .string(binder.tcgBrand.rawValue),
             "colour": .string(binder.colour),
             "texture": .string(binder.textureKind.rawValue),
@@ -863,6 +946,9 @@ final class SocialShareService {
             "page_layout": .string(binder.pageLayout),
             "items": .array(rows.map(JSONValue.object))
         ]
+        if feedPostLocalID != nil {
+            payload["binder_id"] = .string(binder.id.uuidString)
+        }
         if includeValue {
             payload["market_value_usd"] = .number(totalValue)
         }
@@ -871,7 +957,7 @@ final class SocialShareService {
             title: binder.title,
             cardCount: rows.count,
             brand: binder.tcgBrand.rawValue,
-            localContentID: binder.id.uuidString
+            localContentID: localContentID
         )
     }
 
@@ -917,7 +1003,11 @@ final class SocialShareService {
         )
     }
 
-    private func encodeDeckPayload(_ deck: Deck, includeValue: Bool) async throws -> EncodedPayload {
+    private func encodeDeckPayload(
+        _ deck: Deck,
+        includeValue: Bool,
+        feedPostLocalID: String? = nil
+    ) async throws -> EncodedPayload {
         var rows: [[String: JSONValue]] = []
         var totalCardCount = 0
         var totalValue: Double = 0
@@ -950,15 +1040,19 @@ final class SocialShareService {
             if thumbnailIDs.count >= 4 { break }
         }
         
+        let localContentID = feedPostLocalID ?? deck.id.uuidString
         var payload: [String: JSONValue] = [
             "payload_version": .number(1),
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
-            "local_content_id": .string(deck.id.uuidString),
+            "local_content_id": .string(localContentID),
             "brand": .string(deck.tcgBrand.rawValue),
             "format": .string(deck.deckFormat.displayName),
             "cards": .array(rows.map(JSONValue.object)),
             "thumbnails": .array(thumbnailIDs.map(JSONValue.string))
         ]
+        if feedPostLocalID != nil {
+            payload["deck_id"] = .string(deck.id.uuidString)
+        }
         if includeValue {
             payload["market_value_usd"] = .number(totalValue)
         }
@@ -967,7 +1061,7 @@ final class SocialShareService {
             title: deck.title,
             cardCount: totalCardCount,
             brand: deck.tcgBrand.rawValue,
-            localContentID: deck.id.uuidString
+            localContentID: localContentID
         )
     }
 

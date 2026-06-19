@@ -155,14 +155,19 @@ struct ScanResultBar: View {
             showWrongCardSheet = true
             HapticManager.impact(.light)
         } label: {
-            Image(systemName: "questionmark")
-                .font(.system(size: 13, weight: .bold))
+            HStack(spacing: 5) {
+                Image(systemName: "questionmark.circle.fill")
+                    .font(.system(size: 13, weight: .semibold))
+                Text("Wrong card?")
+                    .font(.caption.weight(.semibold))
+            }
             .foregroundStyle(.primary)
-            .frame(width: 34, height: 34)
-            .glassInsetCircleStyle()
+            .padding(.horizontal, 10)
+            .padding(.vertical, 7)
+            .glassInsetStyle(cornerRadius: 12)
         }
         .buttonStyle(.plain)
-        .contentShape(Circle())
+        .contentShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         .accessibilityLabel("Wrong card?")
     }
 
@@ -302,13 +307,21 @@ struct ScannerWrongCardAlternativesSheet: View {
             Group {
                 if alternatives.isEmpty {
                     ContentUnavailableView(
-                        "No other matches",
+                        "No alternatives found",
                         systemImage: "rectangle.dashed",
                         description: Text("There aren't other catalog candidates for this scan. Try scanning again with clearer lighting or a steadier frame.")
                     )
                 } else {
                     ScrollView {
                         LazyVStack(spacing: 0) {
+                            Text("Pick the correct card from these alternatives.")
+                                .font(.subheadline)
+                                .foregroundStyle(Color(uiColor: .secondaryLabel))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 16)
+                                .padding(.top, 4)
+                                .padding(.bottom, 12)
+
                             ForEach(Array(alternatives.enumerated()), id: \.offset) { idx, card in
                                 Button {
                                     HapticManager.selection()
@@ -365,7 +378,7 @@ struct ScannerWrongCardAlternativesSheet: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color(uiColor: .systemGroupedBackground))
-            .navigationTitle("Other matches")
+            .navigationTitle("Wrong card?")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -375,6 +388,6 @@ struct ScannerWrongCardAlternativesSheet: View {
         }
         .presentationDetents([.medium, .large])
         .presentationDragIndicator(.visible)
-        .presentationCornerRadius(24)
+        .presentationCornerRadius(ScannerSheetLayout.deviceCornerRadius)
     }
 }

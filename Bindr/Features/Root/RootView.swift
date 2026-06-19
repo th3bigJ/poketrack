@@ -1012,8 +1012,6 @@ struct RootView: View {
                 Color.black.opacity(colorScheme == .light ? 0.14 : 0.30)
                     .ignoresSafeArea()
 
-                searchOverlayGlassBackground(geo: geo)
-
                 searchOverlayForeground
                     .transition(
                         .asymmetric(
@@ -1029,27 +1027,59 @@ struct RootView: View {
         .zIndex(20)
     }
 
+    /// Glass panel behind scrollable search content only — the header row stays
+    /// transparent so back / scanner discs blur the dimmed app behind them.
     @ViewBuilder
-    private func searchOverlayGlassBackground(geo: GeometryProxy) -> some View {
+    private var searchOverlayContentGlassBackground: some View {
         Group {
             if #available(iOS 26.0, *) {
                 GlassEffectContainer(spacing: 12) {
-                    Color.clear
-                        .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
+                    ZStack(alignment: .top) {
+                        Color.clear
+                            .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
+                        searchOverlayNavigationStack
+                    }
                 }
             } else {
-                Color.clear
-                    .background(.thinMaterial, in: ContainerRelativeShape())
+                ZStack(alignment: .top) {
+                    Color.clear
+                        .background(.thinMaterial, in: ContainerRelativeShape())
+                    searchOverlayNavigationStack
+                }
             }
         }
-        .frame(
-            width: geo.size.width,
-            height: geo.size.height + geo.safeAreaInsets.top + geo.safeAreaInsets.bottom
-        )
-        .offset(y: (geo.safeAreaInsets.bottom - geo.safeAreaInsets.top) / 2)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .clipShape(ContainerRelativeShape())
-        .contentShape(ContainerRelativeShape())
-        .ignoresSafeArea()
+        .ignoresSafeArea(edges: .bottom)
+    }
+
+    @ViewBuilder
+    private var searchOverlayNavigationStack: some View {
+        NavigationStack(path: $searchNavigationPath) {
+            SearchExperienceView(
+                query: $universalQuery,
+                onOpenCategory: openSearchCategory
+            )
+            .navigationDestination(for: SearchNavRoot.self) { root in
+                switch root {
+                case .set(let s, _):
+                    SetCardsView(set: s)
+                        .onAppear {
+                            searchFieldFocused = false
+                        }
+                case .dex(let dexId, let displayName, _):
+                    DexCardsView(dexId: dexId, displayName: displayName)
+                        .onAppear {
+                            searchFieldFocused = false
+                        }
+                }
+            }
+        }
+        .environment(\.rootFloatingChromeInset, 0)
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .background(Color.clear)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .ignoresSafeArea(.keyboard)
     }
 
     @ViewBuilder
@@ -1057,39 +1087,20 @@ struct RootView: View {
         VStack(spacing: 0) {
             if searchNavigationPath.isEmpty {
                 universalSearchBarControl(
-                    usesNativeGlassChrome: false,
+                    circleButtonsUseGlass: true,
+                    searchFieldUseGlass: false,
                     showsBackButtonWhenOpen: true
                 )
                 .padding(.horizontal, 16)
                 .padding(.top, RootChromeEnvironment.searchBarTopInset)
                 .padding(.bottom, RootChromeEnvironment.searchBarBottomInset)
+                .background(Color.clear)
             }
 
-            NavigationStack(path: $searchNavigationPath) {
-                SearchExperienceView(
-                    query: $universalQuery,
-                    onOpenCategory: openSearchCategory
-                )
-                .navigationDestination(for: SearchNavRoot.self) { root in
-                    switch root {
-                    case .set(let s, _):
-                        SetCardsView(set: s)
-                            .onAppear {
-                                searchFieldFocused = false
-                            }
-                    case .dex(let dexId, let displayName, _):
-                        DexCardsView(dexId: dexId, displayName: displayName)
-                            .onAppear {
-                                searchFieldFocused = false
-                            }
-                    }
-                }
+            ZStack(alignment: .top) {
+                searchOverlayContentGlassBackground
             }
-            .environment(\.rootFloatingChromeInset, 0)
-            .toolbarBackground(.hidden, for: .navigationBar)
-            .background(Color.clear)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .ignoresSafeArea(.keyboard)
         }
         .environment(\.presentCard, { card, list in
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
@@ -1132,6 +1143,8 @@ struct RootView: View {
 
     private func universalSearchBarControl(
         usesNativeGlassChrome: Bool = false,
+        circleButtonsUseGlass: Bool = false,
+        searchFieldUseGlass: Bool = false,
         showsBackButtonWhenOpen: Bool = true
     ) -> some View {
         let browseLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? =
@@ -1157,6 +1170,8 @@ struct RootView: View {
             filterMenuContent: filterContent,
             gridMenuContent: gridContent,
             usesNativeGlassChrome: usesNativeGlassChrome,
+            circleButtonsUseGlass: circleButtonsUseGlass,
+            searchFieldUseGlass: searchFieldUseGlass,
             showsBackButtonWhenOpen: showsBackButtonWhenOpen,
             collapsedLeadingButton: browseLeadingButton,
             trailingButton: chromeTrailingButton,

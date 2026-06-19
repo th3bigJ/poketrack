@@ -309,11 +309,12 @@ struct BinderSlotPickerView: View {
                         title: set.name,
                         searchPlaceholder: "Search cards in set",
                         selectedBrand: selectedBrand,
+                        catalogSortBy: .cardNumber,
                         basketCardIDs: basketCardIDs,
                         basketVariantByCardID: basketVariantByCardID,
                         loadCards: {
                             let loaded = await services.cardData.loadCards(forSetCode: set.setCode, catalogBrand: selectedBrand)
-                            return sortCardsByLocalIdHighestFirst(loaded)
+                            return sortCardsByCardNumberAscending(loaded)
                         },
                         onCardTap: handleCardTap
                     )
@@ -325,6 +326,7 @@ struct BinderSlotPickerView: View {
                         title: displayName,
                         searchPlaceholder: "Search cards for Pokémon",
                         selectedBrand: .pokemon,
+                        catalogSortBy: .newestSet,
                         basketCardIDs: basketCardIDs,
                         basketVariantByCardID: basketVariantByCardID,
                         loadCards: { await loadPokemonDexCards(dexId: dexId) },
@@ -1090,23 +1092,10 @@ struct BinderSlotPickerView: View {
         }
     }
 
-    private func sortCardsByLocalIdHighestFirst(_ cards: [Card]) -> [Card] {
+    private func sortCardsByCardNumberAscending(_ cards: [Card]) -> [Card] {
         cards.sorted { lhs, rhs in
-            let lhsValue = localIdNumericSortValue(lhs.localId)
-            let rhsValue = localIdNumericSortValue(rhs.localId)
-            if lhsValue != rhsValue { return lhsValue > rhsValue }
-            return lhs.masterCardId > rhs.masterCardId
+            lhs.cardNumber.localizedStandardCompare(rhs.cardNumber) == .orderedAscending
         }
-    }
-
-    private func localIdNumericSortValue(_ raw: String?) -> Int {
-        guard let raw = raw?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else {
-            return Int.min
-        }
-        if let value = Int(raw) { return value }
-        let digits = raw.prefix { $0.isNumber }
-        if let value = Int(String(digits)), !digits.isEmpty { return value }
-        return Int.min
     }
 
     private func sortedEntries(_ entries: [BinderPickerEntry]) -> [BinderPickerEntry] {
@@ -1449,6 +1438,7 @@ private struct BinderPickerCatalogCardsView: View {
     let title: String
     let searchPlaceholder: String
     let selectedBrand: TCGBrand
+    let catalogSortBy: BrowseCardGridSortOption
     let basketCardIDs: Set<String>
     let basketVariantByCardID: [String: String]
     let loadCards: () async -> [Card]
@@ -1476,7 +1466,9 @@ private struct BinderPickerCatalogCardsView: View {
     }
 
     private var filteredCards: [Card] {
-        filterBrowseCards(cards, query: query, filters: filters, ownedCardIDs: ownedCardIDs, brand: selectedBrand, sets: services.cardData.sets)
+        var browseFilters = filters
+        browseFilters.sortBy = catalogSortBy
+        return filterBrowseCards(cards, query: query, filters: browseFilters, ownedCardIDs: ownedCardIDs, brand: selectedBrand, sets: services.cardData.sets)
     }
 
     private func safeColumnCount(_ count: Int) -> Int {

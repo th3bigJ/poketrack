@@ -86,12 +86,6 @@ struct MoreView: View {
                                 destination: .backupRestore
                             )
                             MoreMenuRow(
-                                title: "Export Data",
-                                systemImage: "square.and.arrow.up",
-                                color: .green,
-                                destination: .dataExport
-                            )
-                            MoreMenuRow(
                                 title: "Library Storage",
                                 systemImage: "internaldrive.fill",
                                 color: .orange,
@@ -151,9 +145,6 @@ struct MoreView: View {
                     .environment(services)
             case .backupRestore:
                 BackupRestoreSettingsPage()
-                    .environment(services)
-            case .dataExport:
-                DataExportView()
                     .environment(services)
             case .libraryStorage:
                 LibraryStorageSettingsPage()
