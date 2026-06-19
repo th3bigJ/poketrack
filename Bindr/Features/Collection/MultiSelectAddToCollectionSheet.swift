@@ -188,6 +188,7 @@ struct MultiSelectAddToCollectionSheet: View {
             return
         }
 
+        var savedCandidates: [WishlistRemovalCandidate] = []
         do {
             let unitPrice: Double? = acquisitionKind == .bought ? try parseRequiredPrice(priceText) : nil
 
@@ -247,13 +248,21 @@ struct MultiSelectAddToCollectionSheet: View {
                 case .trade, .imported:
                     break
                 }
+                savedCandidates.append(
+                    WishlistRemovalCandidate(cardID: card.masterCardId, cardName: card.cardName)
+                )
             }
             dismiss()
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(250))
+                services.requestWishlistRemovalPrompt(for: savedCandidates)
+            }
         } catch MultiSelectCollectionValidation.missingPrice {
             errorMessage = "Enter a unit price."
         } catch MultiSelectCollectionValidation.invalidPrice {
             errorMessage = "Enter a valid unit price."
         } catch {
+            services.requestWishlistRemovalPrompt(for: savedCandidates)
             errorMessage = error.localizedDescription
         }
     }

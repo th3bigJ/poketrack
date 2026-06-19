@@ -407,7 +407,15 @@ struct CardContextActionSheet: View {
                 boughtFrom: nil
             )
             Haptics.success()
+            let candidate = WishlistRemovalCandidate(
+                cardID: request.card.masterCardId,
+                cardName: request.card.cardName
+            )
             dismiss()
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(250))
+                services.requestWishlistRemovalPrompt(for: [candidate])
+            }
         } catch AddToCollectionValidation.missingPrice {
             errorMessage = "Enter a unit price."
         } catch AddToCollectionValidation.invalidPrice {

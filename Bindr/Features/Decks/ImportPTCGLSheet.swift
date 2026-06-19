@@ -194,7 +194,7 @@ struct ImportPTCGLSheet: View {
                         elementTypes: card.elementTypes,
                         trainerType: card.trainerType,
                         isEnergy: card.category?.lowercased() == "energy",
-                        imageLowSrc: card.imageLowSrc,
+                        imageLowSrc: card.displayImageSrc,
                         catalogCategory: card.category,
                         catalogSubtype: card.subtype,
                         catalogStage: card.stage

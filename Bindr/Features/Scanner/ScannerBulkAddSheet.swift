@@ -252,6 +252,7 @@ struct ScannerBulkAddSheet: View {
         isSaving = true
         var saved = 0
         var firstError: String?
+        var savedCandidates: [WishlistRemovalCandidate] = []
 
         for result in results {
             let variantQuantities = selectedVariantQuantitiesByResultID[result.id] ?? [:]
@@ -329,6 +330,12 @@ struct ScannerBulkAddSheet: View {
                         continue
                     }
                     saved += quantity
+                    savedCandidates.append(
+                        WishlistRemovalCandidate(
+                            cardID: result.card.masterCardId,
+                            cardName: result.card.cardName
+                        )
+                    )
                 } catch CollectionLedgerError.freeTierLimitReached {
                     if firstError == nil { firstError = CollectionLedgerError.freeTierLimitReached.errorDescription }
                     showPaywall = true
@@ -341,6 +348,7 @@ struct ScannerBulkAddSheet: View {
         isSaving = false
 
         if let firstError {
+            services.requestWishlistRemovalPrompt(for: savedCandidates)
             errorMessage = firstError
             return
         }
@@ -356,6 +364,8 @@ struct ScannerBulkAddSheet: View {
             try? await Task.sleep(for: .seconds(1.4))
             onSuccessClearSession()
             dismiss()
+            try? await Task.sleep(for: .milliseconds(250))
+            services.requestWishlistRemovalPrompt(for: savedCandidates)
         }
     }
 

@@ -452,31 +452,33 @@ struct LaunchWordmarkView: View {
                     .minimumScaleFactor(0.85)
                     .multilineTextAlignment(.center)
 
-                VStack(spacing: 7) {
-                    CAProgressBar(
-                        fraction: progress.fraction,
-                        fillColor: launchBrandPrimary,
-                        fillGradientColors: [launchBrandCyan, launchBrandSecondary, launchBrandPrimary],
-                        height: 4
-                    )
-                    .frame(width: 220)
-                    .clipShape(Capsule())
+                if progress.hasByteProgress {
+                    VStack(spacing: 7) {
+                        CAProgressBar(
+                            fraction: progress.fraction,
+                            fillColor: launchBrandPrimary,
+                            fillGradientColors: [launchBrandCyan, launchBrandSecondary, launchBrandPrimary],
+                            height: 4
+                        )
+                        .frame(width: 220)
+                        .clipShape(Capsule())
 
-                    HStack(spacing: 6) {
-                        Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
-                            .font(.system(size: 12, weight: .bold, design: .rounded))
-                            .foregroundStyle(foreground.opacity(0.70))
-                        if progress.totalBytes > 0 {
-                            Text("·")
-                                .foregroundStyle(subtle)
-                            Text(byteProgressText(for: progress))
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundStyle(subtle)
+                        HStack(spacing: 6) {
+                            Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
+                                .font(.system(size: 12, weight: .bold, design: .rounded))
+                                .foregroundStyle(foreground.opacity(0.70))
+                            if progress.totalBytes > 0 {
+                                Text("·")
+                                    .foregroundStyle(subtle)
+                                Text(byteProgressText(for: progress))
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundStyle(subtle)
+                            }
                         }
+                        .frame(width: 220, alignment: .center)
                     }
-                    .frame(width: 220, alignment: .center)
+                    .padding(.top, 4)
                 }
-                .padding(.top, 4)
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }

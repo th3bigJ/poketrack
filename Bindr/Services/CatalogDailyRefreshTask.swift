@@ -28,7 +28,7 @@ enum CatalogDailyRefreshTask {
         var enabledBrands = Set(rawBrands.compactMap(TCGBrand.init(rawValue:)))
         if enabledBrands.isEmpty { enabledBrands = [.pokemon] }
         let syncTask = Task(priority: .utility) {
-            await CatalogSyncCoordinator.shared.syncAllIfNeeded(enabledBrands: enabledBrands)
+            _ = await CatalogSyncCoordinator.shared.syncAllIfNeeded(enabledBrands: enabledBrands)
             task.setTaskCompleted(success: true)
         }
 

@@ -671,7 +671,7 @@ struct TransactionsView: View {
                     next[cardID] = card.cardName
                 }
                 if nextImages[cardID] == nil {
-                    nextImages[cardID] = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                    nextImages[cardID] = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
                 }
             }
         }

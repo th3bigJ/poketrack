@@ -1559,7 +1559,7 @@ struct DashboardView: View {
                 let cardID = card.masterCardId
                 nextNames[cardID] = card.cardName
                 if nextImages[cardID] == nil {
-                    nextImages[cardID] = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                    nextImages[cardID] = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
                 }
                 let brand = TCGBrand.inferredFromMasterCardId(cardID)
                 if let setName = setsByBrandAndCode["\(brand.rawValue)|\(card.setCode)"] {

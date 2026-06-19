@@ -479,6 +479,16 @@ struct RootView: View {
         .onChange(of: showSplash) { _, presented in
             if !presented { evaluatePremiumUpsellIfNeeded() }
         }
+        .alert("Remove from Wishlist?", isPresented: wishlistRemovalPromptIsPresented) {
+            Button("Keep", role: .cancel) {
+                services.resolveWishlistRemovalPrompt(remove: false)
+            }
+            Button("Remove", role: .destructive) {
+                services.resolveWishlistRemovalPrompt(remove: true)
+            }
+        } message: {
+            Text(services.wishlistRemovalPrompt?.message ?? "")
+        }
         .environment(\.offlineImageContext, OfflineImageContext(
             isOfflineEnabled: services.offlineImageSettings.isOfflinePackEnabled(
                 for: services.brandSettings.selectedCatalogBrand
@@ -580,12 +590,48 @@ struct RootView: View {
             }
         }
         .bindrTheme(accent: services.theme.accentColor)
+        .alert(
+            "Data is taking longer than expected",
+            isPresented: Binding(
+                get: { services.shouldOfferSavedDataLaunch },
+                set: { presented in
+                    if !presented {
+                        services.keepWaitingForLaunchRefresh()
+                    }
+                }
+            )
+        ) {
+            Button("Load Saved Data") {
+                services.loadSavedDataForLaunch()
+            }
+            Button("Keep Waiting", role: .cancel) {
+                services.keepWaitingForLaunchRefresh()
+            }
+        } message: {
+            Text(savedLaunchDataDescription)
+        }
         .preferredColorScheme(services.theme.colorScheme)
     }
 
     /// Current app version string (e.g., "1.2.3")
     private var currentAppVersion: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
+    }
+
+    private var savedLaunchDataDescription: String {
+        guard let date = services.savedDataLaunchDate else {
+            return "Saved card data is available on this device."
+        }
+        let formatted = date.formatted(
+            .dateTime
+                .day()
+                .month(.wide)
+                .year()
+                .hour()
+                .minute()
+                .locale(Locale(identifier: "en_GB"))
+        )
+        return "Saved card data from \(formatted) is available."
     }
 
     private var chromeSearchBarTopInset: CGFloat { RootChromeEnvironment.searchBarTopInset }
@@ -975,6 +1021,7 @@ struct RootView: View {
                 .clipShape(ContainerRelativeShape())
                 .contentShape(ContainerRelativeShape())
                 .ignoresSafeArea()
+                .ignoresSafeArea(.keyboard)
                 .transition(
                     .asymmetric(
                         insertion: .offset(y: 8)
@@ -985,6 +1032,7 @@ struct RootView: View {
                 )
             }
         }
+        .ignoresSafeArea(.keyboard)
         .zIndex(20)
     }
 
@@ -994,54 +1042,23 @@ struct RootView: View {
             Group {
                 if #available(iOS 26.0, *) {
                     GlassEffectContainer(spacing: 12) {
-                        ZStack {
-                            searchLogoGlow(geo: geo)
-                            Color.clear
-                                .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
-                        }
+                        Color.clear
+                            .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
                     }
                 } else {
-                    ZStack {
-                        searchLogoGlow(geo: geo)
-                        Color.clear
-                            .background(.thinMaterial, in: ContainerRelativeShape())
-                    }
+                    Color.clear
+                        .background(.thinMaterial, in: ContainerRelativeShape())
                 }
             }
 
             VStack(spacing: 0) {
                 if searchNavigationPath.isEmpty {
-                    HStack {
-                        Button {
-                            Haptics.lightImpact()
-                            searchNavigationPath = NavigationPath()
-                            universalQuery = ""
-                            withAnimation(.easeOut(duration: 0.2)) {
-                                isSearchExperiencePresented = false
-                            }
-                            searchFieldFocused = false
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(.primary)
-                                .searchBarCircleChrome(forceNativeGlass: true)
-                        }
-                        .buttonStyle(.plain)
-                        .frame(width: 48, height: 48)
-                        .contentShape(Rectangle())
-                        .accessibilityLabel("Back")
-
-                        Spacer()
-                    }
-                    .padding(.horizontal, 12)
-                    .padding(.top, geo.safeAreaInsets.top + 8)
-
                     universalSearchBarControl(
                         usesNativeGlassChrome: true,
-                        showsBackButtonWhenOpen: false
+                        showsBackButtonWhenOpen: true
                     )
                     .padding(.horizontal, 12)
-                    .padding(.top, 4)
+                    .padding(.top, geo.safeAreaInsets.top + 8)
                     .padding(.bottom, 4)
                 }
 
@@ -1069,6 +1086,7 @@ struct RootView: View {
                 .toolbarBackground(.hidden, for: .navigationBar)
                 .background(Color.clear)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                .ignoresSafeArea(.keyboard)
             }
             .environment(\.presentCard, { card, list in
                 UIImpactFeedbackGenerator(style: .medium).impactOccurred()
@@ -1089,18 +1107,8 @@ struct RootView: View {
                 let safeIndex = min(max(index, 0), max(list.count - 1, 0))
                 selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
             })
+            .ignoresSafeArea(.keyboard)
         }
-    }
-
-    private func searchLogoGlow(geo: GeometryProxy) -> some View {
-        Image("BindrBrandLogo")
-            .resizable()
-            .scaledToFit()
-            .frame(width: min(geo.size.width * 0.9, 420))
-            .blur(radius: 50)
-            .opacity(colorScheme == .dark ? 0.22 : 0.18)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
     }
 
     @ViewBuilder
@@ -1325,6 +1333,17 @@ struct RootView: View {
             services.socialPush.queueDeepLink(url: url)
         }
         selectedTab = .social
+    }
+
+    private var wishlistRemovalPromptIsPresented: Binding<Bool> {
+        Binding(
+            get: { services.wishlistRemovalPrompt != nil },
+            set: { isPresented in
+                if !isPresented, services.wishlistRemovalPrompt != nil {
+                    services.resolveWishlistRemovalPrompt(remove: false)
+                }
+            }
+        )
     }
 
     private func openSearchCategory(_ category: SearchIdleCategory) {

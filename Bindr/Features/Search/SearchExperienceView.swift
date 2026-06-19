@@ -146,14 +146,6 @@ struct SearchExperienceView: View {
     private var idleContent: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text("Find something brilliant")
-                        .font(.title3.weight(.bold))
-                    Text("Search the catalogue or jump straight into a collection.")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-
                 LazyVGrid(
                     columns: Array(repeating: GridItem(.flexible(), spacing: 12), count: 2),
                     spacing: 12
@@ -180,7 +172,9 @@ struct SearchExperienceView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(14)
                             .clearGlassCardStyle(cornerRadius: 16, interactive: true)
+                            .contentShape(Rectangle())
                         }
+                        .frame(maxWidth: .infinity)
                         .buttonStyle(.plain)
                     }
                 }
@@ -232,8 +226,10 @@ struct SearchExperienceView: View {
                                 .lineLimit(1)
                             Spacer()
                             }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                             .contentShape(Rectangle())
                         }
+                        .frame(maxWidth: .infinity)
                         .buttonStyle(.plain)
 
                         Button {
@@ -289,6 +285,8 @@ struct SearchExperienceView: View {
                                     .lineLimit(1)
                                     .frame(width: 82, alignment: .leading)
                             }
+                            .frame(width: 82, alignment: .leading)
+                            .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
                     }
@@ -331,7 +329,10 @@ struct SearchExperienceView: View {
                                 .foregroundStyle(.tertiary)
                         }
                         .padding(.vertical, 10)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .contentShape(Rectangle())
                     }
+                    .frame(maxWidth: .infinity)
                     .buttonStyle(.plain)
                     if set.id != recentSets.last?.id {
                         Divider()

@@ -2,6 +2,23 @@ import Foundation
 import Observation
 import SwiftData
 
+struct WishlistRemovalCandidate: Hashable {
+    let cardID: String
+    let cardName: String
+}
+
+struct WishlistRemovalPrompt: Identifiable {
+    let id = UUID()
+    let candidates: [WishlistRemovalCandidate]
+
+    var message: String {
+        if candidates.count == 1, let candidate = candidates.first {
+            return "\(candidate.cardName) is on your wishlist. Remove it now?"
+        }
+        return "\(candidates.count) of the cards you added are on your wishlist. Remove them now?"
+    }
+}
+
 @Observable
 @MainActor
 final class AppServices {
@@ -15,10 +32,13 @@ final class AppServices {
         let preferredSide: TradePrefillSide
     }
 
-    /// How long the launch overlay stays up when a daily refresh is pending before the app
-    /// opens on cached data and continues syncing in the background.
-    private let launchDailyRefreshBriefDisplayNanoseconds: UInt64 = 3_000_000_000
-    private var backgroundCatalogRefreshInFlight: Task<Void, Never>?
+    private let slowLaunchRefreshThreshold: Duration = .seconds(8)
+    private var backgroundCatalogRefreshInFlight: Task<CatalogSyncOutcome, Never>?
+    private var launchRefreshOutcome: CatalogSyncOutcome?
+    private var launchRefreshLastMeaningfulProgressAt: ContinuousClock.Instant?
+    private var launchRefreshLastCompletedFiles = 0
+    private var launchUsingSavedData = false
+    private var hasOfferedSavedDataThisLaunch = false
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let cardData: CardDataService
@@ -45,6 +65,8 @@ final class AppServices {
 
     // Wishlist service - initialized after model context is available
     private(set) var wishlist: WishlistService?
+    private(set) var wishlistRemovalPrompt: WishlistRemovalPrompt?
+    private var queuedWishlistRemovalPrompts: [WishlistRemovalPrompt] = []
 
     /// Collection + ledger (SwiftData) — initialized with `ModelContext`.
     private(set) var collectionLedger: CollectionLedgerService?
@@ -89,6 +111,8 @@ final class AppServices {
     private(set) var bootstrapProgress: Double = 0
     private(set) var bootstrapDownloadedBytes: Int64 = 0
     private(set) var bootstrapEstimatedTotalBytes: Int64 = 0
+    private(set) var shouldOfferSavedDataLaunch = false
+    private(set) var savedDataLaunchDate: Date?
 
     /// Incremented by the settings recalculate button so DashboardView reloads market trend/movers.
     private(set) var dashboardMarketReloadToken: Int = 0
@@ -229,12 +253,12 @@ final class AppServices {
         isBootstrapping = true
         defer { isBootstrapping = false }
 
-        bootstrapShowsDownloadProgressUI = true
+        bootstrapShowsDownloadProgressUI = false
         bootstrapMessage = "Updating Pokémon card data…"
         bootstrapStatus = "Preparing downloads…"
         bootstrapProgress = max(bootstrapProgress, 0.02)
 
-        await runStartupCatalogPipeline(updateBootstrapProgressUI: true)
+        _ = await runStartupCatalogPipeline(updateBootstrapProgressUI: true)
 
         brandSettings.markInitialAppBootstrapCompleted()
         pendingLightBrowseTabEntry = true
@@ -259,9 +283,8 @@ final class AppServices {
             return
         }
         shouldRunBackgroundCatalogRefreshOnLaunch = false
-        // First launch after the daily 03:00 boundary (or a retry when the prior sync
-        // did not finish): show a short loading state on cached data, then open the app
-        // while the network refresh continues in the background.
+        // First launch after the daily boundary: prime cached data immediately, then
+        // wait for the refresh unless it stalls/fails and the user chooses saved data.
         if !isLaunchCatalogPipelineComplete {
             bootstrapMessage = "Updating Market data…"
             bootstrapStatus = "Checking for updates…"
@@ -269,9 +292,33 @@ final class AppServices {
             bootstrapDownloadedBytes = 0
             bootstrapEstimatedTotalBytes = 0
             bootstrapShowsDownloadProgressUI = false
-            scheduleBackgroundDailyCatalogRefreshIfNeeded()
             await primeLaunchCatalogFromLocalCache()
-            try? await Task.sleep(nanoseconds: launchDailyRefreshBriefDisplayNanoseconds)
+            let hasSavedData = await CatalogStore.shared.hasUsableCachedData(for: brandSettings.enabledBrands)
+            savedDataLaunchDate = hasSavedData ? await CatalogStore.shared.savedCardDataDate() : nil
+            launchUsingSavedData = false
+            hasOfferedSavedDataThisLaunch = false
+            shouldOfferSavedDataLaunch = false
+            launchRefreshOutcome = nil
+            launchRefreshLastCompletedFiles = 0
+            launchRefreshLastMeaningfulProgressAt = .now
+
+            scheduleBackgroundDailyCatalogRefreshIfNeeded()
+            while launchRefreshOutcome == nil && !launchUsingSavedData {
+                if hasSavedData,
+                   !hasOfferedSavedDataThisLaunch,
+                   let lastProgress = launchRefreshLastMeaningfulProgressAt,
+                   ContinuousClock.now - lastProgress >= slowLaunchRefreshThreshold {
+                    hasOfferedSavedDataThisLaunch = true
+                    shouldOfferSavedDataLaunch = true
+                }
+                try? await Task.sleep(for: .milliseconds(200))
+            }
+
+            if let outcome = launchRefreshOutcome,
+               hasSavedData,
+               outcome.status == .failed || outcome.status == .partial {
+                launchUsingSavedData = true
+            }
             isLaunchCatalogPipelineComplete = true
             launchCatalogPipelineCompletedAt = Date()
         } else {
@@ -285,6 +332,15 @@ final class AppServices {
         Task(priority: .background) { [weak self] in
             await self?.resumeOfflineDownloadsIfNeeded()
         }
+    }
+
+    func keepWaitingForLaunchRefresh() {
+        shouldOfferSavedDataLaunch = false
+    }
+
+    func loadSavedDataForLaunch() {
+        shouldOfferSavedDataLaunch = false
+        launchUsingSavedData = true
     }
 
     /// Called by RootView after the launch overlay fade completes so that
@@ -345,17 +401,20 @@ final class AppServices {
     /// pricing or daily blobs are still stale for the current 03:00 period.
     private func scheduleBackgroundDailyCatalogRefreshIfNeeded() {
         guard backgroundCatalogRefreshInFlight == nil else { return }
-        backgroundCatalogRefreshInFlight = Task { @MainActor [weak self] in
-            guard let self else { return }
-            defer { self.backgroundCatalogRefreshInFlight = nil }
+        let task = Task { @MainActor [weak self] in
+            guard let self else {
+                return CatalogSyncOutcome(status: .failed, downloadedBytes: 0)
+            }
 
             let needsRefresh = await CatalogSyncCoordinator.shared.requiresDailyBlockingRefreshAsync(
                 enabledBrands: self.brandSettings.enabledBrands
             )
-            guard needsRefresh else { return }
+            guard needsRefresh else {
+                return CatalogSyncOutcome(status: .unchanged, downloadedBytes: 0)
+            }
 
-            await self.runStartupCatalogPipeline(
-                updateBootstrapProgressUI: false,
+            let outcome = await self.runStartupCatalogPipeline(
+                updateBootstrapProgressUI: true,
                 includeDeferredLaunchServices: false
             )
             self.pendingLightBrowseTabEntry = true
@@ -363,7 +422,7 @@ final class AppServices {
             let stillStale = await CatalogSyncCoordinator.shared.requiresDailyBlockingRefreshAsync(
                 enabledBrands: self.brandSettings.enabledBrands
             )
-            guard !stillStale else { return }
+            guard !stillStale else { return outcome }
 
             // Fresh pricing landed — invalidate any pre-03:00 snapshot saved earlier today
             // and nudge the dashboard to recompute with the new data.
@@ -371,6 +430,14 @@ final class AppServices {
             await self.sealedProducts.reloadFromLocal()
             self.pricing.clearSetPricingMemoryCache()
             self.requestDashboardMarketReload()
+            return outcome
+        }
+        backgroundCatalogRefreshInFlight = task
+        Task { @MainActor [weak self] in
+            let outcome = await task.value
+            guard let self else { return }
+            self.launchRefreshOutcome = outcome
+            self.backgroundCatalogRefreshInFlight = nil
         }
     }
 
@@ -400,10 +467,10 @@ final class AppServices {
     private func runStartupCatalogPipeline(
         updateBootstrapProgressUI: Bool,
         includeDeferredLaunchServices: Bool = true
-    ) async {
+    ) async -> CatalogSyncOutcome {
         await brandsManifest.refresh()
         if updateBootstrapProgressUI {
-            bootstrapShowsDownloadProgressUI = true
+            bootstrapShowsDownloadProgressUI = false
             bootstrapMessage = "Updating Pokémon card data…"
             bootstrapStatus = "Downloading card catalog…"
             bootstrapProgress = max(bootstrapProgress, 0.04)
@@ -420,9 +487,12 @@ final class AppServices {
         if updateBootstrapProgressUI {
             progressHandler = { [weak self] snapshot in
                 guard let self else { return }
-                if snapshot.downloadedBytes > 0
-                    || snapshot.fractionCompleted > 0
-                    || snapshot.totalFiles > 0 {
+                if snapshot.downloadedBytes > self.bootstrapDownloadedBytes
+                    || snapshot.completedFiles > self.launchRefreshLastCompletedFiles {
+                    self.launchRefreshLastMeaningfulProgressAt = .now
+                    self.launchRefreshLastCompletedFiles = snapshot.completedFiles
+                }
+                if snapshot.downloadedBytes > 0 {
                     self.bootstrapShowsDownloadProgressUI = true
                 }
                 self.bootstrapStatus = snapshot.status
@@ -433,7 +503,7 @@ final class AppServices {
         } else {
             progressHandler = nil
         }
-        await CatalogSyncCoordinator.shared.syncAllIfNeeded(
+        let outcome = await CatalogSyncCoordinator.shared.syncAllIfNeeded(
             enabledBrands: brandSettings.enabledBrands,
             progressHandler: progressHandler
         )
@@ -462,10 +532,12 @@ final class AppServices {
             await store.checkEntitlements()
         }
         if updateBootstrapProgressUI {
-            bootstrapProgress = 1.0
+            if bootstrapShowsDownloadProgressUI {
+                bootstrapProgress = 1.0
+            }
             bootstrapStatus = "Card data is ready."
         }
-
+        return outcome
     }
 
     /// Runs after the user turns **on** a catalog in Account: network sync + reload browse data, with UI progress (`RootView` overlay).
@@ -486,7 +558,7 @@ final class AppServices {
         /// Network import is only part of the story; reserve the tail for SQLite + dex so the bar is not stuck at 100% early.
         let syncPhaseWeight = 0.82
 
-        await CatalogSyncCoordinator.shared.syncAllIfNeeded(enabledBrands: brandSettings.enabledBrands) { [weak self] snapshot in
+        _ = await CatalogSyncCoordinator.shared.syncAllIfNeeded(enabledBrands: brandSettings.enabledBrands) { [weak self] snapshot in
             guard let self else { return }
             if snapshot.downloadedBytes > 0 {
                 self.catalogDownloadShowsByteProgressUI = true
@@ -631,6 +703,42 @@ final class AppServices {
             wishlist = WishlistService(modelContext: modelContext, store: store)
         }
         Task { await syncSocialLibrariesIfPossible() }
+    }
+
+    func requestWishlistRemovalPrompt(for candidates: [WishlistRemovalCandidate]) {
+        guard let wishlist else { return }
+
+        var seenCardIDs = Set<String>()
+        let wishlisted = candidates.filter { candidate in
+            guard seenCardIDs.insert(candidate.cardID).inserted else { return false }
+            return wishlist.isInWishlist(cardID: candidate.cardID)
+        }
+        guard !wishlisted.isEmpty else { return }
+
+        let prompt = WishlistRemovalPrompt(candidates: wishlisted)
+        if wishlistRemovalPrompt == nil {
+            wishlistRemovalPrompt = prompt
+        } else {
+            queuedWishlistRemovalPrompts.append(prompt)
+        }
+    }
+
+    func resolveWishlistRemovalPrompt(remove: Bool) {
+        guard let prompt = wishlistRemovalPrompt else { return }
+
+        if remove, let wishlist {
+            for candidate in prompt.candidates {
+                try? wishlist.removeAllItems(forCardID: candidate.cardID)
+            }
+        }
+
+        wishlistRemovalPrompt = nil
+        guard !queuedWishlistRemovalPrompts.isEmpty else { return }
+        let nextPrompt = queuedWishlistRemovalPrompts.removeFirst()
+        Task { @MainActor [weak self] in
+            await Task.yield()
+            self?.wishlistRemovalPrompt = nextPrompt
+        }
     }
 
     func setupCollectionLedger(modelContext: ModelContext) {

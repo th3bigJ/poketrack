@@ -613,9 +613,7 @@ struct DeckDetailView: View {
         var didChange = false
         for deckCard in deck.cardList {
             guard let card = await services.cardData.loadCard(masterCardId: deckCard.cardID) else { continue }
-            let catalogLow = card.imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
-            let catalogHigh = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            let preferredPath = !catalogLow.isEmpty ? catalogLow : catalogHigh
+            let preferredPath = card.displayImageSrc.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !preferredPath.isEmpty else { continue }
 
             if deckCard.imageLowSrc != preferredPath {
@@ -969,6 +967,12 @@ private enum DeckCardGridLayoutMetrics {
 
 // MARK: - Card grid cell (view + edit)
 
+private extension DeckCard {
+    /// The persisted deck image path is populated from `Card.displayImageSrc`
+    /// so deck rendering follows the same front-art selection as the catalog.
+    var displayImageSrc: String { imageLowSrc }
+}
+
 private struct DeckCardGridCell: View {
     @Bindable var deckCard: DeckCard
     /// Copies of this deck line still not covered by the collection (after allocating owned playsets across lines).
@@ -983,7 +987,7 @@ private struct DeckCardGridCell: View {
     var onViewCardTap: (() -> Void)? = nil
 
     private var imageURL: URL? {
-        let path = deckCard.imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+        let path = deckCard.displayImageSrc.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !path.isEmpty else { return nil }
         return AppConfiguration.imageURL(relativePath: path)
     }

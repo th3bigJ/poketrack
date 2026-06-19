@@ -41,16 +41,15 @@ enum DailyMarketPricingSchedule {
 private actor CatalogSyncSerialGate {
     private var inFlight: Task<Void, Never>?
 
-    func run(_ operation: @Sendable @escaping () async -> Void) async {
+    func run<T: Sendable>(_ operation: @Sendable @escaping () async -> T) async -> T {
         while let inFlight {
             await inFlight.value
         }
-        let task = Task {
-            await operation()
-        }
-        inFlight = task
-        await task.value
+        let task = Task { await operation() }
+        inFlight = Task { _ = await task.value }
+        let result = await task.value
         inFlight = nil
+        return result
     }
 }
 
@@ -61,6 +60,18 @@ struct CatalogSyncProgressSnapshot: Sendable {
     let downloadedBytes: Int64
     let estimatedTotalBytes: Int64
     let fractionCompleted: Double
+}
+
+struct CatalogSyncOutcome: Sendable {
+    enum Status: Sendable, Equatable {
+        case completed
+        case unchanged
+        case partial
+        case failed
+    }
+
+    let status: Status
+    let downloadedBytes: Int64
 }
 
 actor CatalogSyncProgressReporter {
@@ -188,19 +199,34 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     func syncAllIfNeeded(
         enabledBrands: Set<TCGBrand>,
         progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)? = nil
-    ) async {
-        await syncGate.run {
+    ) async -> CatalogSyncOutcome {
+        let neededBefore = await requiresDailyBlockingRefreshAsync(enabledBrands: enabledBrands)
+        let result = await syncGate.run {
             await self.performSyncAllIfNeeded(
                 enabledBrands: enabledBrands,
                 progressHandler: progressHandler
             )
         }
+        guard neededBefore else {
+            return CatalogSyncOutcome(status: .unchanged, downloadedBytes: result)
+        }
+        let stillNeeded = await requiresDailyBlockingRefreshAsync(enabledBrands: enabledBrands)
+        if !stillNeeded {
+            return CatalogSyncOutcome(
+                status: result > 0 ? .completed : .unchanged,
+                downloadedBytes: result
+            )
+        }
+        return CatalogSyncOutcome(
+            status: result > 0 ? .partial : .failed,
+            downloadedBytes: result
+        )
     }
 
     private func performSyncAllIfNeeded(
         enabledBrands: Set<TCGBrand>,
         progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)?
-    ) async {
+    ) async -> Int64 {
         let store = CatalogStore.shared
         let progress = CatalogSyncProgressReporter(handler: progressHandler)
 
@@ -217,6 +243,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         }
 
         // Open the store once before the catalog phase starts.
+        var downloadedBytes: Int64 = 0
         if enabledBrands.contains(.pokemon) {
             try? await store.open()
         }
@@ -274,6 +301,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             let independentBytes = await independentPricingFinished
             let postCatalogBytes = await postCatalogPricingFinished
             let blobBytes = await blobFinished
+            downloadedBytes = independentBytes + postCatalogBytes + blobBytes
             if let pricingContext {
                 await pricingPhase.finalizeSyncContext(
                     pricingContext,
@@ -281,7 +309,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     downloaded: independentBytes + postCatalogBytes
                 )
             }
-            _ = blobBytes
         } else if !enabledBrands.isEmpty {
             try? await store.open()
             if let pricingContext {
@@ -302,10 +329,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     enabledBrands: enabledBrands,
                     downloaded: independentBytes + postCatalogBytes
                 )
+                downloadedBytes += independentBytes + postCatalogBytes
             }
-            _ = await blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands)
+            downloadedBytes += await blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands)
         }
         await progress.setStatus("Finishing card setup…")
+        return downloadedBytes
     }
 
     func fillMissingSetCards(for brand: TCGBrand) async {

@@ -366,6 +366,7 @@ struct TradesView: View {
 
         guard !UserDefaults.standard.bool(forKey: settlementKey) else { return }
         guard let ledger = services.collectionLedger else { return }
+        var acquiredWishlistCandidates: [WishlistRemovalCandidate] = []
 
         for item in myItems {
             let quantity = max(item.quantity, 1)
@@ -424,6 +425,9 @@ struct TradesView: View {
                     giftFrom: nil,
                     boughtFrom: isCashPurchase ? counterparty : nil
                 )
+                acquiredWishlistCandidates.append(
+                    WishlistRemovalCandidate(cardID: item.cardID, cardName: cardName)
+                )
                 let note = isCashPurchase ? "Bought from \(counterparty)" : "Traded from \(counterparty)"
                 appendCardNote(cardID: item.cardID, variantKey: item.variantKey, note: note)
             } catch {
@@ -463,6 +467,7 @@ struct TradesView: View {
         do {
             try modelContext.save()
             UserDefaults.standard.set(true, forKey: settlementKey)
+            services.requestWishlistRemovalPrompt(for: acquiredWishlistCandidates)
         } catch {
             errorMessage = error.localizedDescription
         }

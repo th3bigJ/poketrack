@@ -590,6 +590,7 @@ private struct TradeCalculatorView: View {
     @State private var isValuationLoading = false
     @State private var isCompletingTrade = false
     @State private var activeAlert: TradeCalculatorAlert?
+    @State private var completedTradeWishlistCandidates: [WishlistRemovalCandidate] = []
     @FocusState private var focusedCashField: CashField?
 
     private var valuationSignature: String {
@@ -705,7 +706,11 @@ private struct TradeCalculatorView: View {
                 return Alert(
                     title: Text(title),
                     message: Text(message),
-                    dismissButton: .default(Text("OK"))
+                    dismissButton: .default(Text("OK")) {
+                        guard !completedTradeWishlistCandidates.isEmpty else { return }
+                        services.requestWishlistRemovalPrompt(for: completedTradeWishlistCandidates)
+                        completedTradeWishlistCandidates = []
+                    }
                 )
             }
         }
@@ -1031,6 +1036,7 @@ private struct TradeCalculatorView: View {
     private func completeLocalTrade() async {
         focusedCashField = nil
         activeAlert = nil
+        completedTradeWishlistCandidates = []
 
         guard hasAnyTradeValue else {
             activeAlert = .result(
@@ -1050,6 +1056,7 @@ private struct TradeCalculatorView: View {
         }
 
         isCompletingTrade = true
+        var acquiredWishlistCandidates: [WishlistRemovalCandidate] = []
         defer {
             isCompletingTrade = false
             focusedCashField = nil
@@ -1103,6 +1110,9 @@ private struct TradeCalculatorView: View {
                         boughtFrom: nil,
                         transactionGroupId: transactionGroupID
                     )
+                    acquiredWishlistCandidates.append(
+                        WishlistRemovalCandidate(cardID: tradeItem.cardID, cardName: card.cardName)
+                    )
                 }
             }
             try recordLocalTradeCashActivity(occurredAt: occurredAt, transactionGroupID: transactionGroupID)
@@ -1113,6 +1123,7 @@ private struct TradeCalculatorView: View {
             theirCashText = ""
             myCardsValueUSD = 0
             theirCardsValueUSD = 0
+            completedTradeWishlistCandidates = acquiredWishlistCandidates
             Haptics.success()
             activeAlert = .result(
                 title: "Trade Complete",
@@ -1121,6 +1132,7 @@ private struct TradeCalculatorView: View {
                     : "Trade completed."
             )
         } catch {
+            completedTradeWishlistCandidates = []
             activeAlert = .result(
                 title: "Trade Calculator",
                 message: error.localizedDescription

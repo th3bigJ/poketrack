@@ -327,6 +327,12 @@ private struct CardBrowseDetailPage: View {
             withAnimation(.easeOut(duration: 0.16)) {
                 collectionAddSuccessPresentation = nil
             }
+            services.requestWishlistRemovalPrompt(for: [
+                WishlistRemovalCandidate(
+                    cardID: context.card.masterCardId,
+                    cardName: context.card.cardName
+                )
+            ])
         }
     }
 

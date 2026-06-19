@@ -963,7 +963,7 @@ struct DeckCardPickerView: View {
             if existing.opCost == nil { existing.opCost = card.opCost }
             if existing.opPower == nil { existing.opPower = card.hp }
             if existing.opCounter == nil { existing.opCounter = card.opCounter }
-            if existing.imageLowSrc.isEmpty, !card.imageLowSrc.isEmpty { existing.imageLowSrc = card.imageLowSrc }
+            if existing.imageLowSrc.isEmpty, !card.displayImageSrc.isEmpty { existing.imageLowSrc = card.displayImageSrc }
         } else if effectiveMax > 0 {
             let deckCard = DeckCard(
                 cardID: card.masterCardId,
@@ -981,7 +981,7 @@ struct DeckCardPickerView: View {
                 elementTypes: card.elementTypes,
                 trainerType: card.trainerType,
                 isEnergy: card.category == "Energy",
-                imageLowSrc: card.imageLowSrc,
+                imageLowSrc: card.displayImageSrc,
                 catalogCategory: card.category,
                 catalogSubtype: Self.catalogSubtypeString(from: card),
                 catalogStage: Self.catalogStageString(from: card),

@@ -388,6 +388,36 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    func hasUsableCachedData(for brands: Set<TCGBrand>) async -> Bool {
+        guard !brands.isEmpty else { return false }
+        try? await open()
+        for brand in brands {
+            if (try? await hasAnyCards(for: brand)) == true {
+                return true
+            }
+        }
+        return false
+    }
+
+    func savedCardDataDate() async -> Date? {
+        try? await open()
+        for key in ["catalog_cards_last_updated_at", "catalog_import_at"] {
+            if let raw = await meta(key), let timestamp = Double(raw) {
+                return Date(timeIntervalSince1970: timestamp)
+            }
+        }
+        guard let directory = try? FileManager.default.url(
+            for: .applicationSupportDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: false
+        ) else { return nil }
+        let url = directory
+            .appendingPathComponent("Bindr", isDirectory: true)
+            .appendingPathComponent("catalog.sqlite")
+        return try? url.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate
+    }
+
     /// Returns set codes that are registered in `catalog_sets` but have no rows in `catalog_cards` for the given brand.
     /// Used to detect sets whose card download failed during a previous sync (e.g. new set added but network timed out).
     func fetchSetCodesWithNoCards(for brand: TCGBrand) async throws -> [String] {

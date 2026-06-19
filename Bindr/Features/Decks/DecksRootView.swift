@@ -342,15 +342,8 @@ private struct DeckListRow: View {
                 }
                 try? await Task.sleep(for: .milliseconds(120))
                 guard !Task.isCancelled else { return }
-                if let deckCard = deck.cardList.first(where: { $0.cardID == cardID }) {
-                    let localPath = deckCard.imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
-                    if !localPath.isEmpty {
-                        thumbnailURL = AppConfiguration.imageURL(relativePath: localPath)
-                        return
-                    }
-                }
                 if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                    thumbnailURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                    thumbnailURL = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
                 } else {
                     thumbnailURL = nil
                 }
