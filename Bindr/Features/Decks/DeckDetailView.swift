@@ -57,6 +57,7 @@ private struct EnergySummaryChip: Identifiable {
 struct DeckDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
     @Bindable var deck: Deck
     @Query private var collectionItems: [CollectionItem]
@@ -72,6 +73,7 @@ struct DeckDetailView: View {
     @State private var showShareActions = false
     @State private var showOfficialDeckListSheet = false
     @State private var showOfficialDeckListUnavailable = false
+    @State private var hasSettledAfterFirstPaint = false
 
     private static func catalogSubtypeString(from card: Card) -> String? {
         if let s = card.subtype?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
@@ -206,12 +208,20 @@ struct DeckDetailView: View {
         } message: {
             Text("PDF deck lists are available for Pokémon TCG decks. Use Copy to TCG Live for other games.")
         }
-        .task(id: deck.cardList.map(\.cardID).sorted().joined()) {
-            await backfillDeckCatalogMetadataIfNeeded()
-            await syncDeckImagePathsFromCatalog()
-            await refreshValue()
+        .task {
+            // Let NavigationStack commit the destination and complete its push
+            // before starting catalogue reads. These tasks can touch thousands
+            // of rows, so launching them during the transition makes the deck
+            // detail screen feel as though it ignored the user's tap.
+            await Task.yield()
+            try? await Task.sleep(for: .milliseconds(450))
+            guard !Task.isCancelled else { return }
+            hasSettledAfterFirstPaint = true
         }
-        .task(id: "\(deck.tcgBrand.rawValue)|\(deck.deckFormat.rawValue)") {
+        .task(id: deferredDeckMaintenanceTaskID) {
+            guard hasSettledAfterFirstPaint else { return }
+            await refreshDeckAfterFirstPaint()
+            guard !Task.isCancelled else { return }
             await DeckPickerPrewarm.prewarm(
                 brand: deck.tcgBrand,
                 format: deck.deckFormat,
@@ -222,6 +232,18 @@ struct DeckDetailView: View {
             services.socialShare.scheduleAutoSync(deck: deck)
             services.scheduleLibraryCloudBackup()
         }
+    }
+
+    private var deferredDeckMaintenanceTaskID: String {
+        guard hasSettledAfterFirstPaint else { return "waiting-for-first-paint" }
+        let cardIDs = deck.cardList.map(\.cardID).sorted().joined(separator: "|")
+        return "\(deck.tcgBrand.rawValue)|\(deck.deckFormat.rawValue)|\(cardIDs)"
+    }
+
+    private func refreshDeckAfterFirstPaint() async {
+        await backfillDeckCatalogMetadataIfNeeded()
+        await syncDeckImagePathsFromCatalog()
+        await refreshValue()
     }
 
     // MARK: - Summary
@@ -438,7 +460,27 @@ struct DeckDetailView: View {
             }
         }
         .padding(16)
-        .glassCardStyle(cornerRadius: 16)
+        .background(
+            colorScheme == .light
+                ? Color.white
+                : Color(uiColor: .secondarySystemGroupedBackground),
+            in: RoundedRectangle(cornerRadius: 16, style: .continuous)
+        )
+        .overlay {
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(
+                    colorScheme == .light
+                        ? Color.black.opacity(0.08)
+                        : Color.white.opacity(0.08),
+                    lineWidth: 1
+                )
+        }
+        .shadow(
+            color: Color.black.opacity(colorScheme == .light ? 0.07 : 0.16),
+            radius: 10,
+            x: 0,
+            y: 4
+        )
     }
 
     private func summaryPill(label: String, count: Int, color: Color) -> some View {
@@ -921,8 +963,8 @@ private extension DeckCard {
 private enum DeckCardGridLayoutMetrics {
     /// No extra spacer needed now that the missing-count hint is shown on-card.
     static let neededSectionHeight: CGFloat = 0
-    /// Matches ``ChromeGlassCircleButton`` outer frame height in the − / + row.
-    static let editControlsRowHeight: CGFloat = 48
+    /// Compact native-sized quantity controls beneath each deck card.
+    static let editControlsRowHeight: CGFloat = 36
 }
 
 // MARK: - Card grid cell (view + edit)
@@ -1007,24 +1049,34 @@ private struct DeckCardGridCell: View {
                 .accessibilityHidden(copiesNeededFromCollection == 0)
                 .accessibilityLabel("\(copiesNeededFromCollection) copies needed from your collection to complete this deck slot")
 
-                HStack(spacing: 16) {
-                    ChromeGlassCircleButton(accessibilityLabel: "Remove one copy") {
+                HStack(spacing: 10) {
+                    Button {
                         HapticManager.impact(.light)
                         onQuantityChange(deckCard.quantity - 1)
                     } label: {
                         Image(systemName: "minus")
-                            .font(.system(size: 17, weight: .semibold))
+                            .font(.system(size: 13, weight: .semibold))
                             .foregroundStyle(Color.primary)
+                            .frame(width: 32, height: 32)
+                            .glassInsetCircleStyle()
                     }
+                    .buttonStyle(.plain)
+                    .contentShape(Circle())
+                    .accessibilityLabel("Remove one copy")
 
-                    ChromeGlassCircleButton(accessibilityLabel: "Add one copy") {
+                    Button {
                         HapticManager.impact(.light)
                         onQuantityChange(deckCard.quantity + 1)
                     } label: {
                         Image(systemName: "plus")
-                            .font(.system(size: 17, weight: .semibold))
+                            .font(.system(size: 13, weight: .semibold))
                             .foregroundStyle(deckCard.quantity >= maxCopies ? Color.secondary : Color.primary)
+                            .frame(width: 32, height: 32)
+                            .glassInsetCircleStyle()
                     }
+                    .buttonStyle(.plain)
+                    .contentShape(Circle())
+                    .accessibilityLabel("Add one copy")
                     .disabled(deckCard.quantity >= maxCopies)
                 }
                 .frame(maxWidth: .infinity)

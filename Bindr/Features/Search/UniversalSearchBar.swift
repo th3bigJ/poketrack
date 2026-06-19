@@ -31,6 +31,12 @@ struct UniversalSearchBar: View {
     var isFilterActive: Bool = false
     var filterMenuContent: AnyView? = nil
     var gridMenuContent: AnyView? = nil
+    /// Uses native glass in both colour schemes and relies on an ancestor
+    /// `GlassEffectContainer` when embedded in the search overlay.
+    var usesNativeGlassChrome: Bool = false
+    /// The full-screen search overlay owns a separate back button above the
+    /// search pill; other search presentations keep the inline back control.
+    var showsBackButtonWhenOpen: Bool = true
 
     /// When set, replaces the collapsed leading camera button with a custom button.
     var collapsedLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
@@ -45,6 +51,7 @@ struct UniversalSearchBar: View {
     var onBack: () -> Void
     var onCamera: () -> Void
     var onFilter: () -> Void
+    var onSubmitSearch: () -> Void = {}
 
     /// `Menu` swallows `TapGesture`; use a zero-distance `DragGesture` so we get a touch-down haptic when the filter menu opens.
     @State private var filterMenuHapticSentForCurrentTouch = false
@@ -81,29 +88,46 @@ struct UniversalSearchBar: View {
 
     @available(iOS 26.0, *)
     private var liquidGlassBar: some View {
-        GlassEffectContainer(spacing: 10) {
+        Group {
+            if usesNativeGlassChrome {
+                liquidGlassBarContent
+            } else {
+                GlassEffectContainer(spacing: 10) {
+                    liquidGlassBarContent
+                }
+            }
+        }
+    }
+
+    @available(iOS 26.0, *)
+    private var liquidGlassBarContent: some View {
             Group {
                 if isSearchOpen {
                             HStack(spacing: 6) {
-                        Button(action: hapticBackThen(onBack)) {
-                            Image(systemName: leadingSymbolName)
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(.primary)
-                                .searchBarCircleChrome()
-                                .contentTransition(.symbolEffect(.replace))
+                        if showsBackButtonWhenOpen {
+                            Button(action: hapticBackThen(onBack)) {
+                                Image(systemName: leadingSymbolName)
+                                    .font(.system(size: 17, weight: .medium))
+                                    .foregroundStyle(.primary)
+                                    .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
+                                    .contentTransition(.symbolEffect(.replace))
+                            }
+                            .buttonStyle(.plain)
+                            .frame(width: 48, height: 48)
+                            .contentShape(Rectangle())
+                            .accessibilityLabel(leadingAccessibilityLabel)
+                            .transition(.opacity.combined(with: .scale))
                         }
-                        .buttonStyle(.plain)
-                        .frame(width: 48, height: 48)
-                        .contentShape(Rectangle())
-                        .accessibilityLabel(leadingAccessibilityLabel)
-                        .transition(.opacity.combined(with: .scale))
 
                         searchFieldInner
                             .padding(.leading, 14)
                             .padding(.trailing, 8)
                             .frame(height: 44)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .searchFieldCapsuleChrome(darkGlass: .clear)
+                            .searchFieldCapsuleChrome(
+                                darkGlass: .clear,
+                                forceNativeGlass: usesNativeGlassChrome
+                            )
                             .transition(.move(edge: .leading).combined(with: .opacity))
 
                         cameraButtonLiquid
@@ -126,7 +150,6 @@ struct UniversalSearchBar: View {
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-        }
     }
 
     // MARK: - Materials (fallback)
@@ -135,25 +158,30 @@ struct UniversalSearchBar: View {
         Group {
             if isSearchOpen {
                             HStack(spacing: 6) {
-                    Button(action: hapticBackThen(onBack)) {
-                        Image(systemName: leadingSymbolName)
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
-                            .searchBarCircleChrome()
-                            .contentTransition(.symbolEffect(.replace))
+                    if showsBackButtonWhenOpen {
+                        Button(action: hapticBackThen(onBack)) {
+                            Image(systemName: leadingSymbolName)
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                                .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
+                                .contentTransition(.symbolEffect(.replace))
+                        }
+                        .buttonStyle(.plain)
+                        .frame(width: 48, height: 48)
+                        .contentShape(Rectangle())
+                        .accessibilityLabel(leadingAccessibilityLabel)
+                        .transition(.opacity.combined(with: .scale))
                     }
-                    .buttonStyle(.plain)
-                    .frame(width: 48, height: 48)
-                    .contentShape(Rectangle())
-                    .accessibilityLabel(leadingAccessibilityLabel)
-                    .transition(.opacity.combined(with: .scale))
 
                     searchFieldInner
                         .padding(.leading, 14)
                         .padding(.trailing, 8)
                         .frame(height: 44)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .searchFieldCapsuleChrome(darkGlass: .clear)
+                        .searchFieldCapsuleChrome(
+                            darkGlass: .clear,
+                            forceNativeGlass: usesNativeGlassChrome
+                        )
                         .transition(.move(edge: .leading).combined(with: .opacity))
 
                     cameraButtonFallback
@@ -190,7 +218,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                                .searchBarCircleChrome()
+                                .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -209,7 +237,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                            .searchBarCircleChrome()
+                            .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -358,14 +386,14 @@ struct UniversalSearchBar: View {
         Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isFilterEnabled ? AnyShapeStyle(filterTint) : AnyShapeStyle(.secondary))
-                                .searchBarCircleChrome()
+                                .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
     }
 
     private var filterGlyphFallback: some View {
         Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isFilterEnabled ? AnyShapeStyle(filterTint) : AnyShapeStyle(.secondary))
-                            .searchBarCircleChrome()
+                            .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
     }
 
     private func chromeMenuButton<Content: View>(
@@ -398,7 +426,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                                .searchBarCircleChrome()
+                                .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -411,7 +439,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                            .searchBarCircleChrome()
+                            .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -428,7 +456,7 @@ struct UniversalSearchBar: View {
             Image(systemName: "camera.fill")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                                .searchBarCircleChrome()
+                                .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -444,7 +472,7 @@ struct UniversalSearchBar: View {
             Image(systemName: "camera.fill")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                            .searchBarCircleChrome()
+                            .searchBarCircleChrome(forceNativeGlass: usesNativeGlassChrome)
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -471,6 +499,7 @@ struct UniversalSearchBar: View {
             .focused($isFocused)
             .foregroundStyle(.primary)
             .submitLabel(.search)
+            .onSubmit(onSubmitSearch)
             .accessibilityLabel("Search cards, sets, Pokemon, sealed products")
             .frame(maxWidth: .infinity, alignment: .leading)
 

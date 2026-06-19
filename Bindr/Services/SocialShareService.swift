@@ -42,6 +42,13 @@ final class SocialShareService {
         let isPublished: Bool
     }
 
+    struct PostCardInput: Sendable {
+        let cardID: String
+        let variantKey: String
+        let cardName: String
+        let setName: String?
+    }
+
     private struct APIErrorPayload: Decodable {
         let message: String?
         let hint: String?
@@ -285,28 +292,63 @@ final class SocialShareService {
         message: String,
         visibility: SharedContentVisibility
     ) async throws -> SharedContent {
-        let localID = "pull-\(cardID)-\(variantKey)-\(Int(Date().timeIntervalSince1970))"
+        try await publishPull(
+            cards: [
+                PostCardInput(
+                    cardID: cardID,
+                    variantKey: variantKey,
+                    cardName: cardName,
+                    setName: setName
+                )
+            ],
+            message: message,
+            visibility: visibility
+        )
+    }
+
+    func publishPull(
+        cards: [PostCardInput],
+        message: String,
+        visibility: SharedContentVisibility
+    ) async throws -> SharedContent {
+        guard let first = cards.first else {
+            throw SocialShareError.invalidResponse
+        }
+        let localID = "pull-\(first.cardID)-\(first.variantKey)-\(Int(Date().timeIntervalSince1970))"
+        let items = cards.map { card in
+            var object: [String: JSONValue] = [
+                "cardID": .string(card.cardID),
+                "variantKey": .string(card.variantKey),
+                "cardName": .string(card.cardName)
+            ]
+            if let setName = card.setName {
+                object["setName"] = .string(setName)
+            }
+            return JSONValue.object(object)
+        }
         var payload: [String: JSONValue] = [
             "payload_version": .number(1),
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
             "local_content_id": .string(localID),
-            "card_id": .string(cardID),
-            "card_name": .string(cardName),
-            "variant_key": .string(variantKey)
+            "card_id": .string(first.cardID),
+            "card_name": .string(first.cardName),
+            "variant_key": .string(first.variantKey),
+            "items": .array(items),
+            "thumbnails": .array(cards.map { .string($0.cardID) })
         ]
-        if let setName { payload["set_name"] = .string(setName) }
+        if let setName = first.setName { payload["set_name"] = .string(setName) }
         let encoded = EncodedPayload(
             payload: payload,
-            title: cardName,
-            cardCount: 1,
-            brand: TCGBrand.inferredFromMasterCardId(cardID).rawValue,
+            title: first.cardName,
+            cardCount: cards.count,
+            brand: TCGBrand.inferredFromMasterCardId(first.cardID).rawValue,
             localContentID: localID
         )
         return try await upsertSharedContent(
             type: .pull,
             localContentID: localID,
             encoded: encoded,
-            title: cardName,
+            title: first.cardName,
             description: message.isEmpty ? nil : message,
             visibility: visibility,
             includeValue: false
@@ -319,29 +361,63 @@ final class SocialShareService {
         message: String,
         visibility: SharedContentVisibility
     ) async throws -> SharedContent {
-        let localID = "want-\(wishlistItem.cardID)-\(wishlistItem.variantKey)"
+        try await publishWant(
+            cards: [
+                PostCardInput(
+                    cardID: wishlistItem.cardID,
+                    variantKey: wishlistItem.variantKey,
+                    cardName: cardName,
+                    setName: nil
+                )
+            ],
+            message: message,
+            visibility: visibility
+        )
+    }
+
+    func publishWant(
+        cards: [PostCardInput],
+        message: String,
+        visibility: SharedContentVisibility
+    ) async throws -> SharedContent {
+        guard let first = cards.first else {
+            throw SocialShareError.invalidResponse
+        }
+        let localID: String
+        if cards.count == 1 {
+            localID = "want-\(first.cardID)-\(first.variantKey)"
+        } else {
+            localID = "want-\(first.cardID)-\(Int(Date().timeIntervalSince1970))"
+        }
+        let items = cards.map { card in
+            JSONValue.object([
+                "cardID": .string(card.cardID),
+                "variantKey": .string(card.variantKey),
+                "cardName": .string(card.cardName)
+            ])
+        }
         let payload: [String: JSONValue] = [
             "payload_version": .number(1),
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
             "local_content_id": .string(localID),
-            "items": .array([.object([
-                "cardID": .string(wishlistItem.cardID),
-                "variantKey": .string(wishlistItem.variantKey),
-                "cardName": .string(cardName)
-            ])])
+            "card_id": .string(first.cardID),
+            "card_name": .string(first.cardName),
+            "variant_key": .string(first.variantKey),
+            "items": .array(items),
+            "thumbnails": .array(cards.map { .string($0.cardID) })
         ]
         let encoded = EncodedPayload(
             payload: payload,
-            title: cardName,
-            cardCount: 1,
-            brand: TCGBrand.inferredFromMasterCardId(wishlistItem.cardID).rawValue,
+            title: first.cardName,
+            cardCount: cards.count,
+            brand: TCGBrand.inferredFromMasterCardId(first.cardID).rawValue,
             localContentID: localID
         )
         return try await upsertSharedContent(
             type: .wishlist,
             localContentID: localID,
             encoded: encoded,
-            title: cardName,
+            title: first.cardName,
             description: message.isEmpty ? nil : message,
             visibility: visibility,
             includeValue: false

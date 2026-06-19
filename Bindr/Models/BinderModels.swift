@@ -110,6 +110,12 @@ struct BinderColourPalette {
         ("cobalt", Color(red: 0.10, green: 0.28, blue: 0.62)),
         ("olive", Color(red: 0.38, green: 0.42, blue: 0.18)),
         ("midnight", Color(red: 0.08, green: 0.10, blue: 0.22)),
+        ("sapphire", Color(red: 0.08, green: 0.34, blue: 0.68)),
+        ("ruby", Color(red: 0.68, green: 0.08, blue: 0.22)),
+        ("copper", Color(red: 0.62, green: 0.32, blue: 0.16)),
+        ("lavender", Color(red: 0.48, green: 0.36, blue: 0.68)),
+        ("blush", Color(red: 0.72, green: 0.34, blue: 0.46)),
+        ("ice", Color(red: 0.34, green: 0.62, blue: 0.68)),
         // Legacy colour names — kept so existing binders keep a sensible hue after the
         // palette shift. Map older names to the closest new tone.
         ("red", Color(red: 0.58, green: 0.12, blue: 0.14)),
@@ -137,13 +143,19 @@ struct BinderColourPalette {
     ]
 
     /// The subset of the palette surfaced to users in the picker (curated, no
-    /// duplicates). Twelve options — fits a 6×2 or 4×3 grid cleanly.
-    static let pickerOptions: [(name: String, color: Color)] = [(logoColourName, logoBaseColor)] + Array(options.prefix(11))
+    /// duplicates). Named choices are supplemented by a full colour picker.
+    static let pickerOptions: [(name: String, color: Color)] = [(logoColourName, logoBaseColor)] + Array(options.prefix(18))
 
     static func color(named name: String) -> Color {
         if name == logoColourName { return logoBaseColor }
-        return options.first(where: { $0.name == name })?.color
-            ?? options[0].color
+        if let named = options.first(where: { $0.name == name })?.color {
+            return named
+        }
+        let normalized = name.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        if normalized.count == 6 || normalized.count == 8 {
+            return Color(hex: normalized)
+        }
+        return options[0].color
     }
 
     static func gradientColors(named name: String) -> [Color]? {
@@ -153,6 +165,8 @@ struct BinderColourPalette {
     /// Human-readable label for a colour name ("navy" → "Navy").
     static func displayName(for colourName: String) -> String {
         if colourName == logoColourName { return "Bindr" }
+        let normalized = colourName.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        if normalized.count == 6 || normalized.count == 8 { return "Custom" }
         let key = colourName.isEmpty ? options[0].name : colourName
         return key.prefix(1).uppercased() + key.dropFirst()
     }
@@ -373,6 +387,13 @@ enum BinderEmbossMode: String, CaseIterable, Identifiable, Codable {
 
     var titleTextColorKind: BinderTitleTextColor {
         BinderTitleTextColor(rawValue: titleTextColor) ?? .gold
+    }
+
+    var customTitleTextColor: Color? {
+        guard BinderTitleTextColor(rawValue: titleTextColor) == nil else { return nil }
+        let normalized = titleTextColor.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        guard normalized.count == 6 || normalized.count == 8 else { return nil }
+        return Color(hex: normalized)
     }
 
     var titleFontStyleKind: BinderTitleFontStyle {

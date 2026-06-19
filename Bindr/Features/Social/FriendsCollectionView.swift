@@ -51,6 +51,7 @@ struct FriendsCollectionView: View {
         let cardID: String
         let variantKey: String
         let owners: [SocialProfile]
+        let quantity: Int
         var ownerCount: Int { owners.count }
     }
 
@@ -194,7 +195,8 @@ struct FriendsCollectionView: View {
 
     @ViewBuilder
     private func cardCell(for card: Card, at index: Int) -> some View {
-        let owners = allEntries.first(where: { $0.cardID == card.masterCardId })?.owners ?? []
+        let entry = allEntries.first(where: { $0.cardID == card.masterCardId })
+        let owners = entry?.owners ?? []
         let footnote: String? = gridOptions.showOwned ? ownerLabel(owners) : nil
         let avatarURL: URL? = gridOptions.showOwned && owners.count == 1
             ? owners[0].avatarURL.flatMap { URL(string: $0) }
@@ -209,6 +211,8 @@ struct FriendsCollectionView: View {
                 colorScheme: colorScheme,
                 gridOptions: gridOptions,
                 setName: services.cardData.sets.first { $0.setCode == card.setCode }?.name,
+                ownedCountBadge: entry?.quantity,
+                alwaysShowOwnedCountBadge: true,
                 footnote: footnote,
                 footnoteLeadingAvatarURL: avatarURL,
                 overridePrice: priceByCardID[card.masterCardId]
@@ -265,7 +269,8 @@ struct FriendsCollectionView: View {
             }
 
             // Fetch all snapshots concurrently
-            var cardToOwners: [String: [SocialProfile]] = [:]
+            var cardToOwners: [String: [UUID: SocialProfile]] = [:]
+            var quantityByCardID: [String: Int] = [:]
             await withTaskGroup(of: (SocialProfile, FriendCollectionSnapshot?).self) { group in
                 for friend in friends {
                     group.addTask {
@@ -276,13 +281,20 @@ struct FriendsCollectionView: View {
                 for await (friend, snapshot) in group {
                     guard let snapshot else { continue }
                     for entry in snapshot.collection where !entry.cardID.isEmpty {
-                        cardToOwners[entry.cardID, default: []].append(friend)
+                        cardToOwners[entry.cardID, default: [:]][friend.id] = friend
+                        quantityByCardID[entry.cardID, default: 0] += max(entry.qty, 0)
                     }
                 }
             }
 
             allEntries = cardToOwners.map { cardID, owners in
-                FriendCardEntry(id: cardID, cardID: cardID, variantKey: "normal", owners: owners)
+                FriendCardEntry(
+                    id: cardID,
+                    cardID: cardID,
+                    variantKey: "normal",
+                    owners: Array(owners.values),
+                    quantity: quantityByCardID[cardID] ?? 0
+                )
             }
 
             // Load card data

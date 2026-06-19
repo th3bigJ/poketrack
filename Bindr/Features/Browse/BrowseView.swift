@@ -75,6 +75,7 @@ struct CardGridCell: View {
     var isOwned = false
     var isWishlisted = false
     var ownedCountBadge: Int? = nil
+    var alwaysShowOwnedCountBadge = false
     var variantLabel: String? = nil
     var variantPricingKey: String? = nil
     var footnote: String? = nil
@@ -91,7 +92,7 @@ struct CardGridCell: View {
     }
 
     private var tileBorder: Color {
-        resolvedColorScheme == .dark ? Color.white.opacity(0.20) : Color.black.opacity(0.16)
+        resolvedColorScheme == .dark ? Color.white.opacity(0.20) : Color.black.opacity(0.22)
     }
 
     private var dividerColor: Color {
@@ -111,7 +112,7 @@ struct CardGridCell: View {
         if ownedCountBadge > 1 {
             return min(max(ownedCountBadge, 2), 999)
         }
-        if isOwned && ownedCountBadge == 1 {
+        if (isOwned || alwaysShowOwnedCountBadge) && ownedCountBadge == 1 {
             return 1
         }
         return nil
@@ -307,7 +308,8 @@ private struct CardGridCellLayout: View {
                 isOwned: isOwned,
                 isWishlisted: isWishlisted,
                 ownedCountBadge: visibleOwnedCountBadge,
-                accentColor: accentColor
+                accentColor: accentColor,
+                colorScheme: colorScheme
             )
             .aspectRatio(5/7, contentMode: .fit)
 
@@ -355,7 +357,7 @@ private struct CardGridCellLayout: View {
                     .stroke(
                         LinearGradient(
                             colors: [
-                                Color.white.opacity(colorScheme == .dark ? 0.10 : 0.32),
+                                Color.white.opacity(colorScheme == .dark ? 0.10 : 0.16),
                                 .clear
                             ],
                             startPoint: .top,
@@ -367,6 +369,14 @@ private struct CardGridCellLayout: View {
                     .allowsHitTesting(false)
             }
         }
+        .shadow(
+            color: colorScheme == .light && !isOwned && !isWishlisted
+                ? Color.black.opacity(0.08)
+                : .clear,
+            radius: 5,
+            x: 0,
+            y: 2
+        )
     }
 
     private var dividerLine: some View {
@@ -411,6 +421,7 @@ private struct BrowseCardThumbnailView: View {
     var isWishlisted = false
     var ownedCountBadge: Int? = nil
     var accentColor: Color = .accentColor
+    let colorScheme: ColorScheme
 
     var body: some View {
         GridCardThumbnailImage(
@@ -418,6 +429,8 @@ private struct BrowseCardThumbnailView: View {
             localURL: imageLocalURL,
             reloadToken: imageReloadToken
         )
+            .saturation(colorScheme == .light ? 1.08 : 1)
+            .contrast(colorScheme == .light ? 1.06 : 1)
             .overlay(alignment: .bottomTrailing) {
                 if let ownedCountBadge, ownedCountBadge >= 1 {
                     ownedBadge(count: ownedCountBadge)

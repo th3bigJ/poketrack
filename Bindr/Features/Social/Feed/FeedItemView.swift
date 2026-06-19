@@ -1,5 +1,10 @@
 import SwiftUI
 
+private struct PresentedPostCards: Identifiable {
+    let id = UUID()
+    let cards: [Card]
+}
+
 // MARK: - FeedItemView
 
 struct FeedItemView: View {
@@ -14,10 +19,9 @@ struct FeedItemView: View {
 
     @State private var isCommentsPresented = false
     @State private var commentsRefreshToken = 0
-    /// Resolved card for pull-type posts. When non-nil a ``CardDetailSheet``
-    /// is presented directly — skipping the Comments → View Content →
-    /// SharedContentView chain that makes single-card pulls feel buried.
-    @State private var presentedPullCard: Card?
+    /// Resolved cards for pull-type posts. These open directly in a swipeable
+    /// card detail sheet, avoiding the Comments → Shared Content detour.
+    @State private var presentedPostCards: PresentedPostCards?
 
     @State private var showDeleteAlert = false
     @State private var showEditSheet = false
@@ -126,14 +130,21 @@ struct FeedItemView: View {
                     .contentShape(Rectangle())
                     .onTapGesture {
                         guard isCardTapEnabled else { return }
-                        // Pull posts are a single card — jump straight to the
-                        // card detail sheet without the extra two screens.
-                        if item.type == .pull,
-                           let cardID = item.pullCardID ?? item.thumbnails?.first {
+                        if item.type == .pull {
+                            let cardIDs = item.thumbnails?.isEmpty == false
+                                ? item.thumbnails ?? []
+                                : item.pullCardID.map { [$0] } ?? []
+                            guard !cardIDs.isEmpty else { return }
                             Haptics.lightImpact()
                             Task {
-                                if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                                    presentedPullCard = card
+                                var orderedCards: [Card] = []
+                                for cardID in cardIDs {
+                                    if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                                        orderedCards.append(card)
+                                    }
+                                }
+                                if !orderedCards.isEmpty {
+                                    presentedPostCards = PresentedPostCards(cards: orderedCards)
                                 }
                             }
                         } else if canOpenComments {
@@ -186,10 +197,8 @@ struct FeedItemView: View {
                 .presentationDragIndicator(.visible)
             }
         }
-        // Direct card detail for pull posts — bypasses the
-        // Comments → View Content → SharedContentView chain.
-        .sheet(item: $presentedPullCard) { card in
-            CardDetailSheet(cards: [card], startIndex: 0)
+        .sheet(item: $presentedPostCards) { selection in
+            CardDetailSheet(cards: selection.cards, startIndex: 0)
                 .environment(services)
         }
         .alert("Delete Post?", isPresented: $showDeleteAlert) {

@@ -133,13 +133,6 @@ struct MyAccountPrivacyView: View {
             }
 
             Section {
-                NavigationLink {
-                    BackupRestoreSettingsPage()
-                        .environment(services)
-                } label: {
-                    Label("Backup and Restore", systemImage: "arrow.triangle.2.circlepath.icloud")
-                }
-
                 Button(role: .destructive) {
                     showDeleteConfirmation = true
                 } label: {
@@ -147,13 +140,13 @@ struct MyAccountPrivacyView: View {
                 }
                 .disabled(!services.socialAuth.isSignedIn)
             } header: {
-                Text("Account Data")
+                Text("Account")
             } footer: {
                 Text("Account deletion should remove your Bindr account, social profile, posts, comments, shared content, and cloud backup data.")
             }
         }
         .listStyle(.insetGrouped)
-        .navigationTitle("My Account")
+        .navigationTitle("Account & Privacy")
         .navigationBarTitleDisplayMode(.large)
         .confirmationDialog(
             "Delete account and data?",
@@ -274,7 +267,7 @@ private struct PricingSettingsPage: View {
 
 // MARK: - Library Storage Settings Page
 
-private struct LibraryStorageSettingsPage: View {
+struct LibraryStorageSettingsPage: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @State private var inventory = LibraryInventoryCounts()
@@ -325,7 +318,7 @@ private struct LibraryStorageSettingsPage: View {
 
 // MARK: - Backup & Restore Settings Page
 
-private struct BackupRestoreSettingsPage: View {
+struct BackupRestoreSettingsPage: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @State private var isRestoring = false

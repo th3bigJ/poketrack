@@ -62,9 +62,13 @@ struct BinderCoverView: View {
     /// so the gradient reads as a subtle wash of colour.
     private var defaultTitleAccent: Color { tintedWhite(intensity: 0.30) }
     private var ornamentColor: Color {
-        binder.titleTextColorKind == .gold ? defaultTitleAccent : binder.titleTextColorKind.swiftUIColor
+        if let custom = binder.customTitleTextColor { return custom }
+        return binder.titleTextColorKind == .gold ? defaultTitleAccent : binder.titleTextColorKind.swiftUIColor
     }
     private var titleTextStyle: AnyShapeStyle {
+        if let custom = binder.customTitleTextColor {
+            return AnyShapeStyle(custom)
+        }
         if binder.titleTextColorKind == .gold {
             return AnyShapeStyle(
                 LinearGradient(
@@ -97,8 +101,8 @@ struct BinderCoverView: View {
                 // Embossed cover art (sits "in" the material)
                 if !binder.showCardPreview, let url = embossedURL {
                     embossedArtLayer(url: url, scale: scale)
-                        .padding(.leading, 28 * scale) // Stay clear of the spine.
-                        .padding(.trailing, 12 * scale)
+                        .padding(.leading, 32 * scale)
+                        .padding(.trailing, 14 * scale)
                 }
 
                 // Foreground content — ornament at top, title in upper portion,
@@ -349,16 +353,18 @@ struct BinderCoverView: View {
                 if isCharacter {
                     // A logo-like character stamp: strong silhouette, material
                     // tint, and opposing edges to read as pressed relief.
-                    img.resizable()
-                        .aspectRatio(contentMode: .fit)
+                    surfaceTint
+                        .opacity(0.28)
                         .frame(width: artWidth)
-                        .grayscale(1)
-                        .contrast(maskContrast)
-                        .brightness(-1)
-                        .blur(radius: 1.1 * scale)
-                        .opacity(0.34)
+                        .aspectRatio(contentMode: .fit)
+                        .mask(
+                            img.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: artWidth)
+                        )
+                        .blur(radius: 0.8 * scale)
                         .offset(x: shadowOffset, y: shadowOffset)
-                        .blendMode(.multiply)
+                        .blendMode(.softLight)
 
                     img.resizable()
                         .aspectRatio(contentMode: .fit)
@@ -379,9 +385,6 @@ struct BinderCoverView: View {
                             img.resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: artWidth)
-                                .grayscale(1)
-                                .contrast(maskContrast)
-                                .luminanceToAlpha()
                         )
                         .blendMode(.overlay)
 
@@ -475,8 +478,8 @@ struct BinderCoverView: View {
                 .blendMode(.overlay)
                 .allowsHitTesting(false)
             }
-            .drawingGroup()
-            .offset(y: isCharacter ? 48 * scale : 90 * scale)
+            .compositingGroup()
+            .offset(y: (isCharacter ? 30 : 62) * scale)
         } placeholder: {
             ProgressView().controlSize(.small).opacity(0.3)
         }

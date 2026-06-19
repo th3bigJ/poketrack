@@ -158,7 +158,6 @@ struct BinderDetailView: View {
 
     private var layout: BinderPageLayout { binder.layout }
     private var headerIconColor: Color { colorScheme == .dark ? .white : .black }
-    private var editTagColor: Color { colorScheme == .dark ? .white : .black }
 
     private var sortedSlots: [BinderSlot] {
         binder.slotList.sorted { $0.position < $1.position }
@@ -231,28 +230,41 @@ struct BinderDetailView: View {
                 if !isEditing || isModeTransitioning {
                     viewModeContent
                         .opacity(isEditing ? 0 : 1)
-                        .scaleEffect(isEditing ? 0.982 : 1, anchor: .center)
-                        .offset(y: isEditing ? -10 : 0)
+                        .offset(y: isEditing ? -6 : 0)
                         .allowsHitTesting(!isEditing && isChromeVisible)
                         .accessibilityHidden(isEditing)
                         .compositingGroup()
+                        .animation(
+                            isEditing
+                                ? .easeOut(duration: 0.18)
+                                : .spring(response: 0.4, dampingFraction: 0.8).delay(0.08),
+                            value: isEditing
+                        )
                 }
 
                 if isEditing || isModeTransitioning {
                     editContent
                         .opacity(isEditing ? 1 : 0)
-                        .scaleEffect(isEditing ? 1 : 1.018, anchor: .top)
-                        .offset(y: isEditing ? 0 : 22)
+                        .offset(y: isEditing ? 0 : 18)
                         .allowsHitTesting(isEditing)
                         .accessibilityHidden(!isEditing)
                         .compositingGroup()
+                        .animation(
+                            isEditing
+                                ? .spring(response: 0.4, dampingFraction: 0.8).delay(0.08)
+                                : .easeOut(duration: 0.18),
+                            value: isEditing
+                        )
                 }
             }
-            .animation(.spring(response: 0.44, dampingFraction: 0.9), value: isEditing)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
         }
-        .background(Color(uiColor: .systemBackground))
+        .background {
+            if !isEditing {
+                Color(uiColor: .systemBackground)
+            }
+        }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
         .overlay {
@@ -408,12 +420,10 @@ struct BinderDetailView: View {
     private func setEditing(_ editing: Bool) {
         guard editing != isEditing else { return }
         isModeTransitioning = true
-        withAnimation(.spring(response: 0.44, dampingFraction: 0.9)) {
-            isEditing = editing
-        }
+        isEditing = editing
 
         Task {
-            try? await Task.sleep(nanoseconds: 560_000_000)
+            try? await Task.sleep(nanoseconds: 520_000_000)
             await MainActor.run {
                 if isEditing == editing {
                     isModeTransitioning = false
@@ -520,8 +530,9 @@ struct BinderDetailView: View {
             Capsule()
                 .fill(binder.resolvedColour)
                 .frame(width: 40, height: 3)
-                .opacity(0.8)
+                .opacity(isEditing ? 0 : 0.8)
                 .padding(.bottom, 4)
+                .animation(.easeOut(duration: 0.18), value: isEditing)
         }
     }
 
@@ -1066,19 +1077,17 @@ struct BinderDetailView: View {
                 showEditTitle = true
             } label: {
                 Label("Rename", systemImage: "pencil")
-                    .font(.caption.weight(.semibold))
-                    .lineLimit(1)
+                    .editBinderToolbarPill()
             }
-            .buttonStyle(.bordered)
+            .buttonStyle(.plain)
 
             Button {
                 showColourPicker = true
             } label: {
                 Label("Binder Style", systemImage: "paintpalette")
-                    .font(.caption.weight(.semibold))
-                    .lineLimit(1)
+                    .editBinderToolbarPill()
             }
-            .buttonStyle(.bordered)
+            .buttonStyle(.plain)
 
             Spacer()
 
@@ -1087,14 +1096,11 @@ struct BinderDetailView: View {
                     addPage()
                 } label: {
                     Label("Add Page", systemImage: "plus.rectangle.on.rectangle")
-                        .font(.caption.weight(.semibold))
-                        .lineLimit(1)
+                        .editBinderToolbarPill()
                 }
-                .buttonStyle(.bordered)
+                .buttonStyle(.plain)
             }
         }
-        .controlSize(.regular)
-        .tint(editTagColor)
     }
 
     private func editPageSection(pageIdx: Int) -> some View {
@@ -1533,6 +1539,19 @@ struct BinderDetailView: View {
 
 }
 
+private extension View {
+    func editBinderToolbarPill() -> some View {
+        self
+            .font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(.primary)
+            .lineLimit(1)
+            .padding(.horizontal, 13)
+            .padding(.vertical, 9)
+            .glassPillTrackStyle()
+            .contentShape(Capsule())
+    }
+}
+
 // MARK: - Button style for cards (lift on press)
 
 private struct BinderCardButtonStyle: ButtonStyle {
@@ -1788,8 +1807,10 @@ struct BinderStylePickerSheet: View {
     @Environment(\.bindrAccent) private var bindrAccent
     @Bindable var binder: Binder
     @State private var cardURLs: [URL?]? = nil
-    @State private var slotImageURLs: [String: URL] = [:]
     @State private var pokemonQuery = ""
+    @State private var embossedCardQuery = ""
+    @State private var embossedCardCandidates: [Card] = []
+    @State private var isSearchingEmbossedCards = false
     @State private var coverDisplayMode: CoverDisplayMode = .cards
     private let layoutOptions: [BinderPageLayout] = [
         .fixed(rows: 2, columns: 2),
@@ -1814,6 +1835,25 @@ struct BinderStylePickerSheet: View {
 
     private var hasEmbossSelection: Bool {
         binder.embossedCardID != nil || binder.embossedPokemonImageUrl != nil
+    }
+
+    private var coverTextColorBinding: Binding<Color> {
+        Binding(
+            get: {
+                binder.customTitleTextColor
+                    ?? (binder.titleTextColorKind == .gold
+                        ? BinderColourPalette.color(named: binder.colour)
+                        : binder.titleTextColorKind.swiftUIColor)
+            },
+            set: { binder.titleTextColor = hexString(from: $0, fallback: binder.titleTextColor) }
+        )
+    }
+
+    private var binderColourBinding: Binding<Color> {
+        Binding(
+            get: { BinderColourPalette.color(named: binder.colour) },
+            set: { binder.colour = hexString(from: $0, fallback: binder.colour) }
+        )
     }
 
     var body: some View {
@@ -1842,65 +1882,74 @@ struct BinderStylePickerSheet: View {
                                     }
                                 }
 
+                                ColorPicker(
+                                    "Custom binder colour",
+                                    selection: binderColourBinding,
+                                    supportsOpacity: false
+                                )
+                                .font(.subheadline.weight(.semibold))
+
                                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                                     ForEach(BinderTexture.allCases) { texture in
                                         textureButton(texture)
                                     }
                                 }
+                            }
+                        }
 
-                                Divider()
+                        stylePanel(title: "Cover text", icon: "textformat") {
+                            VStack(alignment: .leading, spacing: 12) {
+                                ColorPicker(
+                                    "Text colour",
+                                    selection: coverTextColorBinding,
+                                    supportsOpacity: false
+                                )
+                                .font(.subheadline.weight(.semibold))
 
-                                VStack(alignment: .leading, spacing: 8) {
-                                    Text("COVER TEXT")
-                                        .font(.caption.weight(.bold))
-                                        .foregroundStyle(.secondary)
+                                Button("Match binder tint") {
+                                    binder.titleTextColor = BinderTitleTextColor.gold.rawValue
+                                }
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(bindrAccent)
+                                .buttonStyle(.plain)
 
-                                    Picker("Title text color", selection: $binder.titleTextColor) {
-                                        ForEach(BinderTitleTextColor.allCases) { option in
-                                            Text(option.displayName).tag(option.rawValue)
-                                        }
+                                Picker("Title font", selection: $binder.titleFontStyle) {
+                                    ForEach(BinderTitleFontStyle.allCases) { option in
+                                        Text(option.displayName).tag(option.rawValue)
                                     }
-                                    .pickerStyle(.segmented)
-                                    .tint(colorScheme == .dark ? .white : .black)
+                                }
+                                .pickerStyle(.segmented)
+                                .tint(colorScheme == .dark ? .white : .black)
+                            }
+                        }
 
-                                    Picker("Title font", selection: $binder.titleFontStyle) {
-                                        ForEach(BinderTitleFontStyle.allCases) { option in
-                                            Text(option.displayName).tag(option.rawValue)
-                                        }
-                                    }
-                                    .pickerStyle(.segmented)
-                                    .tint(colorScheme == .dark ? .white : .black)
+                        stylePanel(title: "Page layout", icon: "square.grid.3x3") {
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                                ForEach(layoutOptions, id: \.self) { option in
+                                    layoutButton(for: option)
                                 }
 
-                                Divider()
-
-                                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                                    ForEach(layoutOptions, id: \.self) { option in
-                                        layoutButton(for: option)
+                                Button {
+                                    binder.pageLayout = BinderPageLayout.freeScroll.rawValue
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "square.grid.3x3")
+                                        Text("Free flow")
                                     }
-
-                                    Button {
-                                        binder.pageLayout = BinderPageLayout.freeScroll.rawValue
-                                    } label: {
-                                        HStack {
-                                            Image(systemName: "square.grid.3x3")
-                                            Text("Free flow")
-                                        }
-                                        .font(.system(size: 13, weight: .medium))
-                                        .frame(maxWidth: .infinity)
-                                        .padding(.vertical, 12)
-                                        .background(layout.isFreeScroll ? bindrAccent.opacity(0.1) : Color(uiColor: .tertiarySystemGroupedBackground))
-                                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                                        .overlay {
-                                            if layout.isFreeScroll {
-                                                RoundedRectangle(cornerRadius: 10)
-                                                    .stroke(bindrAccent, lineWidth: 1)
-                                            }
+                                    .font(.system(size: 13, weight: .medium))
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 12)
+                                    .background(layout.isFreeScroll ? bindrAccent.opacity(0.1) : Color(uiColor: .tertiarySystemGroupedBackground))
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .overlay {
+                                        if layout.isFreeScroll {
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(bindrAccent, lineWidth: 1)
                                         }
                                     }
-                                    .buttonStyle(.plain)
-                                    .gridCellColumns(3)
                                 }
+                                .buttonStyle(.plain)
+                                .gridCellColumns(3)
                             }
                         }
 
@@ -2055,11 +2104,26 @@ struct BinderStylePickerSheet: View {
                                                 }
                                             }
                                         }
-                                    } else if !binder.slotList.isEmpty {
+                                    } else {
                                         VStack(alignment: .leading, spacing: 10) {
                                             Text("Full card")
                                                 .font(.caption.weight(.semibold))
                                                 .foregroundStyle(.secondary)
+
+                                            HStack {
+                                                Image(systemName: "magnifyingglass")
+                                                    .foregroundStyle(.secondary)
+                                                TextField("Search all eligible cards", text: $embossedCardQuery)
+                                                    .textInputAutocapitalization(.never)
+                                                    .autocorrectionDisabled()
+                                                if isSearchingEmbossedCards {
+                                                    ProgressView()
+                                                        .controlSize(.small)
+                                                }
+                                            }
+                                            .padding(12)
+                                            .background(Color(uiColor: .tertiarySystemGroupedBackground))
+                                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
 
                                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 82), spacing: 10)], spacing: 10) {
                                                 Button {
@@ -2093,13 +2157,13 @@ struct BinderStylePickerSheet: View {
                                                 }
                                                 .buttonStyle(.plain)
 
-                                                ForEach(binder.slotList) { slot in
+                                                ForEach(embossedCardCandidates) { card in
                                                     Button {
-                                                        binder.embossedCardID = slot.cardID
+                                                        binder.embossedCardID = card.masterCardId
                                                         binder.embossedPokemonImageUrl = nil
                                                     } label: {
                                                         VStack(spacing: 5) {
-                                                            let url = slotImageURLs[slot.cardID]
+                                                            let url = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
                                                             CachedAsyncImage(url: url, targetSize: CGSize(width: 132, height: 184)) { img in
                                                                 img.resizable()
                                                                     .aspectRatio(contentMode: .fill)
@@ -2112,7 +2176,7 @@ struct BinderStylePickerSheet: View {
                                                                 RoundedRectangle(cornerRadius: 7, style: .continuous)
                                                                     .stroke(Color.primary.opacity(0.08), lineWidth: 1)
                                                             }
-                                                            Text(slot.cardName)
+                                                            Text(card.cardName)
                                                                 .font(.caption2)
                                                                 .lineLimit(1)
                                                         }
@@ -2120,13 +2184,13 @@ struct BinderStylePickerSheet: View {
                                                         .padding(8)
                                                         .frame(maxWidth: .infinity)
                                                         .background(
-                                                            binder.embossedCardID == slot.cardID
+                                                            binder.embossedCardID == card.masterCardId
                                                                 ? bindrAccent.opacity(0.14)
                                                                 : Color(uiColor: .tertiarySystemGroupedBackground),
                                                             in: RoundedRectangle(cornerRadius: 12, style: .continuous)
                                                         )
                                                         .overlay {
-                                                            if binder.embossedCardID == slot.cardID {
+                                                            if binder.embossedCardID == card.masterCardId {
                                                                 RoundedRectangle(cornerRadius: 12, style: .continuous)
                                                                     .stroke(bindrAccent, lineWidth: 1.5)
                                                             }
@@ -2135,11 +2199,10 @@ struct BinderStylePickerSheet: View {
                                                     .buttonStyle(.plain)
                                                 }
                                             }
+                                            .task(id: embossedCardQuery) {
+                                                await refreshEmbossedCardCandidates()
+                                            }
                                         }
-                                    } else {
-                                        Text("Add cards to this binder to select cover art.")
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
                                     }
                                 }
                             }
@@ -2153,7 +2216,7 @@ struct BinderStylePickerSheet: View {
             .task {
                 syncCoverDisplayModeFromBinder()
                 await loadCardURLs()
-                await loadSlotImageURLs()
+                await refreshEmbossedCardCandidates()
             }
             .onChange(of: coverDisplayMode) { _, mode in
                 applyCoverDisplayMode(mode)
@@ -2397,13 +2460,56 @@ struct BinderStylePickerSheet: View {
         cardURLs = urls
     }
 
-    private func loadSlotImageURLs() async {
-        var result: [String: URL] = [:]
-        for slot in binder.slotList {
-            if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
-                result[slot.cardID] = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
-            }
+    private func hexString(from color: Color, fallback: String) -> String {
+        let uiColor = UIColor(color)
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        guard uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+            return fallback
         }
-        slotImageURLs = result
+        return String(
+            format: "%02x%02x%02x",
+            Int(round(red * 255)),
+            Int(round(green * 255)),
+            Int(round(blue * 255))
+        )
+    }
+
+    private func refreshEmbossedCardCandidates() async {
+        let query = embossedCardQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+        isSearchingEmbossedCards = !query.isEmpty
+        defer { isSearchingEmbossedCards = false }
+
+        let cards: [Card]
+        if query.isEmpty {
+            var resolved: [Card] = []
+            var seen = Set<String>()
+            for slot in binder.slotList.sorted(by: { $0.position < $1.position }) {
+                guard seen.insert(slot.cardID).inserted,
+                      let card = await services.cardData.loadCard(masterCardId: slot.cardID)
+                else { continue }
+                resolved.append(card)
+            }
+            cards = resolved
+        } else {
+            try? await Task.sleep(for: .milliseconds(250))
+            guard !Task.isCancelled else { return }
+            cards = await services.cardData.searchByName(
+                query: query,
+                catalogBrand: binder.tcgBrand
+            )
+        }
+
+        guard !Task.isCancelled else { return }
+        var seen = Set<String>()
+        embossedCardCandidates = cards
+            .filter {
+                !$0.displayImageSrc.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                    && seen.insert($0.masterCardId).inserted
+            }
+            .prefix(60)
+            .map { $0 }
     }
 }

@@ -3,8 +3,10 @@ import AVFoundation
 
 private enum ScannerCardFrameLayout {
     static let verticalCenterBias: CGFloat = 8
-    /// Fraction of total screen height used by the camera preview.
-    static let cameraHeightFraction: CGFloat = 0.66
+    /// Stable content height for the controls/results area below the camera.
+    static let bottomPanelContentHeight: CGFloat = 264
+    /// Keeps the preview usable when the scanner is presented on a compact-height device.
+    static let minimumCameraContentHeight: CGFloat = 360
     /// Alignment frame width as a fraction of preview width. Slightly smaller than full-card fill helps autofocus lock on the subject.
     static let reticleWidthFraction: CGFloat = 0.52
     /// Pokémon TCG–style aspect (tall card).
@@ -60,10 +62,16 @@ struct CardScannerView: View {
 
     var body: some View {
         GeometryReader { geo in
-            let cameraHeight = geo.size.height * ScannerCardFrameLayout.cameraHeightFraction
+            let preferredBottomPanelHeight =
+                ScannerCardFrameLayout.bottomPanelContentHeight + geo.safeAreaInsets.bottom
+            let minimumCameraHeight =
+                ScannerCardFrameLayout.minimumCameraContentHeight + geo.safeAreaInsets.top
+            let availableBottomPanelHeight = max(0, geo.size.height - minimumCameraHeight)
+            let bottomPanelHeight = min(preferredBottomPanelHeight, availableBottomPanelHeight)
+            let cameraHeight = geo.size.height - bottomPanelHeight
 
             VStack(spacing: 0) {
-                // Top 70% — camera preview + reticle
+                // Camera preview + reticle. The remaining height is reserved for the safe-area-aware bottom panel.
                 ZStack(alignment: .top) {
                     CameraPreviewView(session: viewModel.session)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -168,24 +176,25 @@ struct CardScannerView: View {
                         } label: {
                             ZStack {
                                 Circle()
-                                    .fill(.ultraThinMaterial)
-                                    .frame(width: 76, height: 76)
+                                    .fill(Color.black.opacity(0.24))
+                                    .frame(width: 72, height: 72)
+                                    .background(.ultraThinMaterial, in: Circle())
                                     .overlay(
                                         Circle()
-                                            .strokeBorder(Color.white.opacity(0.26), lineWidth: 1)
+                                            .strokeBorder(Color.white.opacity(0.34), lineWidth: 1)
                                     )
-                                    .shadow(color: .black.opacity(0.28), radius: 18, y: 8)
+                                    .shadow(color: .black.opacity(0.34), radius: 16, y: 7)
                                 Circle()
                                     .fill(.white.opacity(canTriggerCapture ? 0.96 : 0.42))
-                                    .frame(width: 60, height: 60)
+                                    .frame(width: 56, height: 56)
                                 Circle()
                                     .strokeBorder(
-                                        canTriggerCapture ? services.theme.accentColor.opacity(0.72) : Color.white.opacity(0.18),
-                                        lineWidth: 3
+                                        canTriggerCapture ? services.theme.accentColor.opacity(0.82) : Color.white.opacity(0.18),
+                                        lineWidth: 2.5
                                     )
-                                    .frame(width: 60, height: 60)
-                                Image(systemName: "viewfinder")
-                                    .font(.system(size: 20, weight: .semibold))
+                                    .frame(width: 56, height: 56)
+                                Image(systemName: "camera.shutter.button.fill")
+                                    .font(.system(size: 18, weight: .semibold))
                                     .foregroundStyle(canTriggerCapture ? Color.black.opacity(0.72) : Color.black.opacity(0.28))
                             }
                         }
@@ -537,26 +546,34 @@ private struct ScannerBottomPanelBackground: View {
             Color.black
             LinearGradient(
                 colors: [
-                    Color(red: 0.05, green: 0.10, blue: 0.13).opacity(0.95),
-                    Color(red: 0.03, green: 0.03, blue: 0.05),
+                    Color.black.opacity(0.68),
+                    Color(red: 0.035, green: 0.045, blue: 0.065),
                     .black
                 ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
+                startPoint: .top,
+                endPoint: .bottom
             )
             RadialGradient(
                 colors: [
-                    Color.cyan.opacity(0.18),
-                    Color.purple.opacity(0.08),
+                    Color.cyan.opacity(0.10),
+                    Color.purple.opacity(0.04),
                     .clear
                 ],
-                center: .topLeading,
+                center: .top,
                 startRadius: 20,
                 endRadius: 360
             )
             Rectangle()
                 .fill(.ultraThinMaterial)
-                .opacity(0.08)
+                .opacity(0.05)
+        }
+        .overlay(alignment: .top) {
+            LinearGradient(
+                colors: [.black.opacity(0.70), .clear],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .frame(height: 28)
         }
         .ignoresSafeArea(edges: .bottom)
     }
@@ -748,10 +765,10 @@ private struct ScannerBrandPickPanel: View {
 private struct ScannerIdleInstructions: View {
     @State private var appeared = false
 
-    private let steps: [(icon: String, iconColor: Color, iconBackground: Color, title: String, subtitle: String)] = [
-        ("viewfinder.rectangular", Color.cyan.opacity(0.95), Color.cyan.opacity(0.18), "Frame the card", "Keep borders inside the guide"),
-        ("camera.circle.fill", Color.white.opacity(0.95), Color.white.opacity(0.14), "Tap the shutter", "Scan when the guide turns green"),
-        ("checkmark.seal.fill", Color.green.opacity(0.95), Color.green.opacity(0.18), "Confirm variant", "Pick quantity, then save"),
+    private let steps: [(icon: String, title: String)] = [
+        ("viewfinder", "Frame"),
+        ("hand.raised.fill", "Hold steady"),
+        ("camera.shutter.button.fill", "Scan"),
     ]
 
     var body: some View {
@@ -762,76 +779,51 @@ private struct ScannerIdleInstructions: View {
         VStack(spacing: 0) {
             Spacer(minLength: 0)
 
-            VStack(alignment: .leading, spacing: 0) {
-                HStack(spacing: 10) {
-                    Image(systemName: "sparkles")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundStyle(.white)
-                        .frame(width: 36, height: 36)
-                        .background(Color.white.opacity(0.12), in: Circle())
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Ready when you are")
-                            .font(.headline.weight(.semibold))
-                            .foregroundStyle(Color.white.opacity(0.96))
-                        Text("Scan multiple cards, then add them together.")
-                            .font(.caption)
-                            .foregroundStyle(Color.white.opacity(0.62))
-                    }
+            VStack(spacing: 14) {
+                VStack(spacing: 3) {
+                    Text("Ready to scan")
+                        .font(.headline.weight(.semibold))
+                        .foregroundStyle(Color.white.opacity(0.96))
+                    Text("Keep the full card inside the guide.")
+                        .font(.caption)
+                        .foregroundStyle(Color.white.opacity(0.62))
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 16)
-                .padding(.bottom, 4)
 
-                ForEach(Array(steps.enumerated()), id: \.offset) { i, step in
-                    HStack(spacing: 14) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                .fill(step.iconBackground)
-                                .frame(width: 54, height: 54)
+                HStack(spacing: 0) {
+                    ForEach(Array(steps.enumerated()), id: \.offset) { index, step in
+                        VStack(spacing: 7) {
                             Image(systemName: step.icon)
-                                .font(.system(size: 24, weight: .semibold))
-                                .foregroundStyle(step.iconColor)
-                        }
-
-                        VStack(alignment: .leading, spacing: 3) {
+                                .font(.system(size: 16, weight: .semibold))
+                                .foregroundStyle(index == 2 ? Color.white : Color.cyan.opacity(0.92))
+                                .frame(width: 34, height: 34)
+                                .background(Color.white.opacity(0.09), in: Circle())
                             Text(step.title)
-                                .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(Color.white.opacity(0.95))
-                            Text(step.subtitle)
-                                .font(.caption)
-                                .foregroundStyle(Color.white.opacity(0.65))
+                                .font(.caption2.weight(.semibold))
+                                .foregroundStyle(Color.white.opacity(0.72))
+                                .lineLimit(1)
                         }
-                        Spacer(minLength: 0)
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-                    .background(Color.clear)
-                    .overlay(alignment: .bottom) {
-                        if i < steps.count - 1 {
+                        .frame(maxWidth: .infinity)
+
+                        if index < steps.count - 1 {
                             Rectangle()
-                                .fill(Color.white.opacity(0.08))
-                                .frame(height: 1)
-                                .padding(.leading, 84)
+                                .fill(Color.white.opacity(0.10))
+                                .frame(width: 22, height: 1)
+                                .offset(y: -10)
                         }
                     }
-                    .opacity(appeared ? 1 : 0)
-                    .offset(y: appeared ? 0 : 10)
-                    .animation(
-                        .spring(response: 0.5, dampingFraction: 0.8)
-                            .delay(Double(i) * 0.08),
-                        value: appeared
-                    )
                 }
             }
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 26, style: .continuous))
+            .padding(.horizontal, 18)
+            .padding(.vertical, 16)
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
             .overlay {
-                RoundedRectangle(cornerRadius: 26, style: .continuous)
-                    .strokeBorder(Color.white.opacity(0.14), lineWidth: 1)
+                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    .strokeBorder(Color.white.opacity(0.12), lineWidth: 1)
             }
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 16)
             .padding(.bottom, max(safeBottom, 12))
             .opacity(appeared ? 1 : 0)
-            .offset(y: appeared ? 0 : 12)
+            .offset(y: appeared ? 0 : 8)
             .animation(.spring(response: 0.42, dampingFraction: 0.86), value: appeared)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -906,9 +898,17 @@ private struct ScannerResultsOverlay: View {
         .frame(width: screenWidth)
         .frame(maxHeight: .infinity, alignment: .top)
         .background {
-            Rectangle()
-                .fill(.regularMaterial)
-                .ignoresSafeArea(edges: .bottom)
+            ZStack(alignment: .top) {
+                Rectangle()
+                    .fill(.regularMaterial)
+                LinearGradient(
+                    colors: [Color.black.opacity(0.14), .clear],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 26)
+            }
+            .ignoresSafeArea(edges: .bottom)
         }
     }
 
@@ -1020,9 +1020,22 @@ private struct CardScannerReticle: View {
                     )
 
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .strokeBorder(borderColor, lineWidth: isCapturing ? 2.5 : 2)
+                    .strokeBorder(borderColor.opacity(0.32), lineWidth: 1)
                     .frame(width: cardW, height: cardH)
                     .position(x: cardX, y: cardCenterY)
+
+                ScannerReticleCorners(cornerLength: 30)
+                    .stroke(
+                        borderColor,
+                        style: StrokeStyle(
+                            lineWidth: isCapturing ? 4 : 3,
+                            lineCap: .round,
+                            lineJoin: .round
+                        )
+                    )
+                    .frame(width: cardW, height: cardH)
+                    .position(x: cardX, y: cardCenterY)
+                    .shadow(color: borderColor.opacity(0.55), radius: isCapturing ? 8 : 5)
                     .animation(.easeInOut(duration: 0.25), value: frameQuality)
             }
             .onAppear { reportNormalizedReticleRect(geo: geo, cardX: cardX, cardY: cardY, cardW: cardW, cardH: cardH) }
@@ -1045,4 +1058,31 @@ private struct CardScannerReticle: View {
         return Color.white.opacity(0.6)
     }
 
+}
+
+private struct ScannerReticleCorners: Shape {
+    let cornerLength: CGFloat
+
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        let length = min(cornerLength, min(rect.width, rect.height) * 0.25)
+
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY + length))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.minX + length, y: rect.minY))
+
+        path.move(to: CGPoint(x: rect.maxX - length, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + length))
+
+        path.move(to: CGPoint(x: rect.maxX, y: rect.maxY - length))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.maxX - length, y: rect.maxY))
+
+        path.move(to: CGPoint(x: rect.minX + length, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY - length))
+
+        return path
+    }
 }

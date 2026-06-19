@@ -1,10 +1,13 @@
 import SwiftUI
 
 struct SelectableCardGrid: View {
+    @Environment(AppServices.self) private var services
+
     let cardIDs: [String]
     @Binding var isSelectMode: Bool
     @Binding var selectedCardIDs: Set<String>
     let cardLoader: (String) async -> Card?
+    var quantityByCardID: [String: Int] = [:]
     var sealedProductLoader: ((String) async -> SealedProduct?)? = nil
     var onCardTap: ((String) -> Void)? = nil
 
@@ -29,6 +32,8 @@ struct SelectableCardGrid: View {
                     cardID: id,
                     isSelectMode: isSelectMode,
                     isSelected: selectedCardIDs.contains(id),
+                    quantity: quantityByCardID[id],
+                    accentColor: services.theme.accentColor,
                     cardLoader: cardLoader,
                     sealedProductLoader: sealedProductLoader
                 ) {
@@ -76,6 +81,8 @@ private struct SelectableCardCell: View {
     let cardID: String
     let isSelectMode: Bool
     let isSelected: Bool
+    let quantity: Int?
+    let accentColor: Color
     let cardLoader: (String) async -> Card?
     var sealedProductLoader: ((String) async -> SealedProduct?)? = nil
     let onTap: () -> Void
@@ -136,6 +143,18 @@ private struct SelectableCardCell: View {
                         .foregroundStyle(isSelected ? Color(hex: "E8B84B") : Color.white.opacity(0.7))
                         .shadow(color: .black.opacity(0.5), radius: 3)
                         .padding(4)
+                } else if let quantity, quantity > 0 {
+                    ZStack {
+                        Circle()
+                            .fill(accentColor)
+                            .frame(width: 24, height: 24)
+                        Text("×\(quantity)")
+                            .font(.system(size: 9, weight: .bold))
+                            .foregroundStyle(.white)
+                            .monospacedDigit()
+                    }
+                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                    .padding(6)
                 }
             }
         }

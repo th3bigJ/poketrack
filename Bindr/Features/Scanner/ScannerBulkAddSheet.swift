@@ -425,7 +425,7 @@ private struct BulkAddCardRow: View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top, spacing: 12) {
                 CachedAsyncImage(
-                    url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                    url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
                     targetSize: CGSize(width: 52, height: 72)
                 ) { img in
                     img.resizable().aspectRatio(contentMode: .fill)

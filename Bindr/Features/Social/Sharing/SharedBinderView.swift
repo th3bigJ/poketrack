@@ -21,6 +21,7 @@ struct SharedBinderView: View {
     @State private var cardsByID: [String: Card] = [:]
     @State private var presentedCard: Card?
     @State private var currentPage: Int = 0
+    @State private var showsValues = true
 
     private struct BinderCardEntry: Identifiable {
         let id: String
@@ -30,6 +31,7 @@ struct SharedBinderView: View {
         let cardID: String
         let cardName: String
         let variantKey: String
+        let marketValueUSD: Double?
     }
 
     /// Decoded binder slots. Each entry retains its publisher-side `position`
@@ -56,7 +58,8 @@ struct SharedBinderView: View {
                 position: position,
                 cardID: cardID,
                 cardName: object["cardName"]?.stringValue ?? "",
-                variantKey: object["variantKey"]?.stringValue ?? "normal"
+                variantKey: object["variantKey"]?.stringValue ?? "normal",
+                marketValueUSD: object["market_value_usd"]?.doubleValue
             )
         }
         return decoded.sorted { $0.position < $1.position }
@@ -103,6 +106,14 @@ struct SharedBinderView: View {
         return max(1, Int(ceil(Double(maxPos + 1) / Double(slotsPerPage))))
     }
 
+    private var totalMarketValueUSD: Double? {
+        content.payload["market_value_usd"]?.doubleValue
+    }
+
+    private var hasSharedValues: Bool {
+        content.includeValue && (totalMarketValueUSD != nil || entries.contains { $0.marketValueUSD != nil })
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             titleHeader
@@ -135,6 +146,49 @@ struct SharedBinderView: View {
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
+            }
+
+            if hasSharedValues {
+                HStack(spacing: 12) {
+                    if showsValues, let totalMarketValueUSD {
+                        VStack(alignment: .leading, spacing: 1) {
+                            Text(formatPrice(totalMarketValueUSD))
+                                .font(.subheadline.weight(.bold))
+                                .monospacedDigit()
+                            Text("Binder value")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+
+                    Spacer(minLength: 0)
+
+                    Button {
+                        withAnimation(.easeInOut(duration: 0.2)) {
+                            showsValues.toggle()
+                        }
+                        HapticManager.selection()
+                    } label: {
+                        Label(
+                            showsValues ? "Hide values" : "Show values",
+                            systemImage: showsValues ? "eye.slash" : "eye"
+                        )
+                        .font(.caption.weight(.semibold))
+                        .padding(.horizontal, 11)
+                        .padding(.vertical, 7)
+                        .background(Color.primary.opacity(0.07), in: Capsule())
+                    }
+                    .buttonStyle(.plain)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 10)
+                .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+                }
+                .transition(.opacity)
             }
 
             Capsule()
@@ -356,7 +410,7 @@ struct SharedBinderView: View {
         Button {
             if let card { presentedCard = card }
         } label: {
-            ZStack(alignment: .topTrailing) {
+            ZStack(alignment: .bottomTrailing) {
                 CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 220, height: 308)) { img in
                     img.resizable().scaledToFit()
                 } placeholder: {
@@ -380,6 +434,24 @@ struct SharedBinderView: View {
                         ),
                         lineWidth: 1
                     )
+
+                if hasSharedValues, showsValues, let marketValueUSD = entry.marketValueUSD {
+                    Text(formatPrice(marketValueUSD))
+                        .font(.system(size: 9, weight: .bold, design: .rounded))
+                        .foregroundStyle(.white)
+                        .monospacedDigit()
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 4)
+                        .background(Color.black.opacity(0.72), in: Capsule())
+                        .overlay {
+                            Capsule()
+                                .stroke(Color.white.opacity(0.18), lineWidth: 0.5)
+                        }
+                        .padding(5)
+                        .transition(.opacity.combined(with: .scale(scale: 0.92)))
+                }
             }
             .shadow(color: .black.opacity(0.4), radius: 4, x: 0, y: 2)
         }
@@ -410,5 +482,12 @@ struct SharedBinderView: View {
                 cardsByID[entry.cardID] = card
             }
         }
+    }
+
+    private func formatPrice(_ amountUSD: Double) -> String {
+        services.priceDisplay.currency.format(
+            amountUSD: amountUSD,
+            usdToGbp: services.pricing.usdToGbp
+        )
     }
 }

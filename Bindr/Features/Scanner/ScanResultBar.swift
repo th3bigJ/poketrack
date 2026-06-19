@@ -34,27 +34,27 @@ struct ScanResultBar: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            HStack(alignment: .top, spacing: 14) {
+            HStack(alignment: .center, spacing: 12) {
                 cardThumbnail
                 cardInfo
-                Spacer(minLength: 8)
-                VStack(alignment: .trailing, spacing: 8) {
+                Spacer(minLength: 4)
+                HStack(spacing: 8) {
                     wrongCardButton
                     deleteCardButton
                 }
             }
-            .padding(.top, 10)
+            .padding(.top, 12)
             .padding(.horizontal, 16)
 
             HStack(spacing: 8) {
                 Image(systemName: "slider.horizontal.3")
-                    .font(.caption.weight(.bold))
+                    .font(.system(size: 11, weight: .bold))
                     .foregroundStyle(accent)
-                    .frame(width: 24, height: 24)
+                    .frame(width: 22, height: 22)
                     .background(accent.opacity(0.12), in: Circle())
                 Text("Select variant and quantity")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.primary)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top, 10)
@@ -102,19 +102,23 @@ struct ScanResultBar: View {
 
     private var cardThumbnail: some View {
         CachedAsyncImage(
-            url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-            targetSize: CGSize(width: 52, height: 72)
+            url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
+            targetSize: CGSize(width: 58, height: 81)
         ) { img in
             img.resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 52, height: 72)
-                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .frame(width: 58, height: 81)
+                .clipShape(RoundedRectangle(cornerRadius: 9, style: .continuous))
         } placeholder: {
-            RoundedRectangle(cornerRadius: 8, style: .continuous)
+            RoundedRectangle(cornerRadius: 9, style: .continuous)
                 .fill(Color.primary.opacity(0.08))
-                .frame(width: 52, height: 72)
+                .frame(width: 58, height: 81)
         }
-        .shadow(color: .black.opacity(0.4), radius: 6, y: 3)
+        .overlay {
+            RoundedRectangle(cornerRadius: 9, style: .continuous)
+                .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+        }
+        .shadow(color: .black.opacity(0.22), radius: 5, y: 3)
         .onTapGesture {
             guard isCurrentPage else { return }
             onOpenDetails()
@@ -127,18 +131,18 @@ struct ScanResultBar: View {
     // MARK: - Card info
 
     private var cardInfo: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 3) {
             Text(card.cardName)
-                .font(.headline)
+                .font(.headline.weight(.bold))
                 .foregroundStyle(.primary)
-                .lineLimit(1)
+                .lineLimit(2)
             Text(setDisplayName + " · #" + card.cardNumber)
-                .font(.subheadline)
+                .font(.caption)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
             if let rarity = card.rarity {
                 Text(rarity)
-                    .font(.caption)
+                    .font(.caption2)
                     .foregroundStyle(.tertiary)
                     .lineLimit(1)
             }
@@ -151,20 +155,15 @@ struct ScanResultBar: View {
             showWrongCardSheet = true
             HapticManager.impact(.light)
         } label: {
-            HStack(spacing: 7) {
-                Image(systemName: "questionmark.circle.fill")
-                    .font(.system(size: 15, weight: .semibold))
-                Text("Wrong card?")
-                    .font(.subheadline.weight(.semibold))
-            }
+            Image(systemName: "questionmark")
+                .font(.system(size: 13, weight: .bold))
             .foregroundStyle(.primary)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .frame(width: 128)
-            .background(.thinMaterial, in: Capsule())
-            .overlay(Capsule().strokeBorder(Color.white.opacity(0.14), lineWidth: 1))
+            .frame(width: 34, height: 34)
+            .glassInsetCircleStyle()
         }
         .buttonStyle(.plain)
+        .contentShape(Circle())
+        .accessibilityLabel("Wrong card?")
     }
 
     private var deleteCardButton: some View {
@@ -173,20 +172,15 @@ struct ScanResultBar: View {
             onDelete()
             HapticManager.impact(.light)
         } label: {
-            HStack(spacing: 6) {
-                Image(systemName: "trash")
-                    .font(.system(size: 13, weight: .semibold))
-                Text("Delete")
-                    .font(.caption.weight(.semibold))
-            }
+            Image(systemName: "trash")
+                .font(.system(size: 12, weight: .semibold))
             .foregroundStyle(Color.red.opacity(0.95))
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .frame(width: 128)
-            .background(Color.red.opacity(0.12), in: Capsule())
-            .overlay(Capsule().strokeBorder(Color.red.opacity(0.25), lineWidth: 1))
+            .frame(width: 34, height: 34)
+            .background(Color.red.opacity(0.10), in: Circle())
+            .overlay(Circle().strokeBorder(Color.red.opacity(0.20), lineWidth: 1))
         }
         .buttonStyle(.plain)
+        .contentShape(Circle())
         .accessibilityLabel("Delete scanned card")
     }
 
@@ -202,8 +196,8 @@ struct ScanResultBar: View {
             } label: {
                 Image(systemName: "minus")
                     .font(.caption.weight(.bold))
-                    .frame(width: 34, height: 34)
-                    .background(Circle().fill(Color.primary.opacity(0.1)))
+                    .frame(width: 32, height: 32)
+                    .glassInsetCircleStyle()
             }
             .buttonStyle(.plain)
             .disabled(quantity <= 0)
@@ -220,8 +214,8 @@ struct ScanResultBar: View {
             } label: {
                 Image(systemName: "plus")
                     .font(.caption.weight(.bold))
-                    .frame(width: 34, height: 34)
-                    .background(Circle().fill(Color.primary.opacity(0.1)))
+                    .frame(width: 32, height: 32)
+                    .glassInsetCircleStyle()
             }
             .buttonStyle(.plain)
         }
@@ -246,14 +240,14 @@ struct ScanResultBar: View {
             quantitySelector(for: key)
         }
         .padding(.horizontal, 10)
-        .padding(.vertical, 5)
-        .background(
+        .padding(.vertical, 6)
+        .background {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(isSelected ? accent.opacity(0.14) : Color.primary.opacity(0.07))
-        )
+                .fill(isSelected ? accent.opacity(0.14) : Color.primary.opacity(0.045))
+        }
         .overlay(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .strokeBorder(isSelected ? accent.opacity(0.5) : Color.clear, lineWidth: 1)
+                .strokeBorder(isSelected ? accent.opacity(0.45) : Color.primary.opacity(0.06), lineWidth: 1)
         )
     }
 
@@ -322,7 +316,7 @@ struct ScannerWrongCardAlternativesSheet: View {
                                 } label: {
                                     HStack(spacing: 14) {
                                         CachedAsyncImage(
-                                            url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                                            url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
                                             targetSize: CGSize(width: 44, height: 62)
                                         ) { img in
                                             img

@@ -69,12 +69,33 @@ struct MoreView: View {
                             )
                         }
 
-                        MoreMenuSection(title: "My Account") {
+                        MoreMenuSection(title: "Account & Privacy") {
                             MoreMenuRow(
-                                title: "Account, Data & Privacy",
+                                title: "Account & Privacy",
                                 systemImage: "person.crop.circle.badge.checkmark",
                                 color: .gray,
                                 destination: .myAccount
+                            )
+                        }
+
+                        MoreMenuSection(title: "Data") {
+                            MoreMenuRow(
+                                title: "Backup and Restore",
+                                systemImage: "arrow.triangle.2.circlepath.icloud",
+                                color: .blue,
+                                destination: .backupRestore
+                            )
+                            MoreMenuRow(
+                                title: "Export Data",
+                                systemImage: "square.and.arrow.up",
+                                color: .green,
+                                destination: .dataExport
+                            )
+                            MoreMenuRow(
+                                title: "Library Storage",
+                                systemImage: "internaldrive.fill",
+                                color: .orange,
+                                destination: .libraryStorage
                             )
                         }
 
@@ -128,6 +149,15 @@ struct MoreView: View {
             case .myAccount:
                 MyAccountPrivacyView()
                     .environment(services)
+            case .backupRestore:
+                BackupRestoreSettingsPage()
+                    .environment(services)
+            case .dataExport:
+                DataExportView()
+                    .environment(services)
+            case .libraryStorage:
+                LibraryStorageSettingsPage()
+                    .environment(services)
             case .legalDisclaimer:
                 DisclaimerView()
             }
@@ -173,7 +203,7 @@ private struct MoreLegalDisclaimerCard: View {
                         .background(Color.secondary.opacity(0.10), in: Circle())
 
                     Text("Legal Disclaimer")
-                        .font(.system(size: 15, weight: .bold))
+                        .font(.system(size: 15, weight: .regular))
                         .foregroundStyle(.primary)
 
                     Spacer(minLength: 0)
@@ -184,7 +214,7 @@ private struct MoreLegalDisclaimerCard: View {
                 }
 
                 Text("Bindr is an independent app and is not affiliated with or endorsed by The Pokemon Company, Nintendo, Creatures Inc. or GAME FREAK.")
-                    .font(.system(size: 12, weight: .medium))
+                    .font(.system(size: 12, weight: .regular))
                     .lineSpacing(3)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -527,6 +557,20 @@ private struct TradeCalculatorView: View {
         case theirs
     }
 
+    private enum TradeCalculatorAlert: Identifiable {
+        case confirmation
+        case result(title: String, message: String)
+
+        var id: String {
+            switch self {
+            case .confirmation:
+                return "confirmation"
+            case .result(let title, let message):
+                return "result|\(title)|\(message)"
+            }
+        }
+    }
+
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.bindrAccent) private var bindrAccent
@@ -545,9 +589,7 @@ private struct TradeCalculatorView: View {
     @State private var theirCardsValueUSD: Double = 0
     @State private var isValuationLoading = false
     @State private var isCompletingTrade = false
-    @State private var showCompleteConfirmation = false
-    @State private var errorMessage: String?
-    @State private var successMessage: String?
+    @State private var activeAlert: TradeCalculatorAlert?
     @FocusState private var focusedCashField: CashField?
 
     private var valuationSignature: String {
@@ -642,25 +684,31 @@ private struct TradeCalculatorView: View {
             )
             .environment(services)
         }
-        .alert(
-            "Complete this local trade?",
-            isPresented: $showCompleteConfirmation
-        ) {
-            Button("Complete") {
-                Task { await completeLocalTrade() }
+        .alert(item: $activeAlert) { alert in
+            switch alert {
+            case .confirmation:
+                return Alert(
+                    title: Text("Complete this local trade?"),
+                    message: Text("Card changes will update your collection. Cash is counted for the trade value only."),
+                    primaryButton: .default(Text("Complete")) {
+                        activeAlert = nil
+                        Task {
+                            await Task.yield()
+                            try? await Task.sleep(for: .milliseconds(250))
+                            guard !Task.isCancelled else { return }
+                            await completeLocalTrade()
+                        }
+                    },
+                    secondaryButton: .cancel()
+                )
+            case .result(let title, let message):
+                return Alert(
+                    title: Text(title),
+                    message: Text(message),
+                    dismissButton: .default(Text("OK"))
+                )
             }
-            Button("Cancel", role: .cancel) {}
-        } message: {
-            Text("Card changes will update your collection. Cash is counted for the trade value only.")
         }
-        .alert("Trade Calculator", isPresented: calculatorAlertPresented, actions: {
-            Button("OK") {
-                errorMessage = nil
-                successMessage = nil
-            }
-        }, message: {
-            Text(errorMessage ?? successMessage ?? "")
-        })
         .task(id: valuationSignature) {
             await refreshTradeValues()
         }
@@ -685,7 +733,7 @@ private struct TradeCalculatorView: View {
 
                 if canCompleteTrade || isCompletingTrade {
                     Button {
-                        showCompleteConfirmation = true
+                        activeAlert = .confirmation
                     } label: {
                         HStack(spacing: 8) {
                             if isCompletingTrade {
@@ -715,18 +763,6 @@ private struct TradeCalculatorView: View {
         } footer: {
             Text("Prices are estimates from the current catalogue market data. Completing a local trade updates card inventory only; cash is included in the trade value but is not added to collection.")
         }
-    }
-
-    private var calculatorAlertPresented: Binding<Bool> {
-        Binding(
-            get: { errorMessage != nil || successMessage != nil },
-            set: { isPresented in
-                if !isPresented {
-                    errorMessage = nil
-                    successMessage = nil
-                }
-            }
-        )
     }
 
     private var mySideFill: Color {
@@ -994,22 +1030,33 @@ private struct TradeCalculatorView: View {
 
     private func completeLocalTrade() async {
         focusedCashField = nil
-        errorMessage = nil
-        successMessage = nil
+        activeAlert = nil
 
         guard hasAnyTradeValue else {
-            errorMessage = "Add cards or cash before completing the trade."
+            activeAlert = .result(
+                title: "Trade Calculator",
+                message: "Add cards or cash before completing the trade."
+            )
             return
         }
         let hasCardChanges = !myCards.isEmpty || !theirCards.isEmpty
         let ledger = services.collectionLedger
         if hasCardChanges, ledger == nil {
-            errorMessage = "Collection isn't ready. Try again."
+            activeAlert = .result(
+                title: "Trade Calculator",
+                message: "Collection isn't ready. Try again."
+            )
             return
         }
 
         isCompletingTrade = true
-        defer { isCompletingTrade = false }
+        defer {
+            isCompletingTrade = false
+            focusedCashField = nil
+            isMyCardPickerPresented = false
+            isTheirCardPickerPresented = false
+            activeScannerSide = nil
+        }
 
         do {
             let outgoing = try await resolvedOutgoingItems()
@@ -1067,9 +1114,17 @@ private struct TradeCalculatorView: View {
             myCardsValueUSD = 0
             theirCardsValueUSD = 0
             Haptics.success()
-            successMessage = hasCardChanges ? "Trade completed. Your collection has been updated." : "Trade completed."
+            activeAlert = .result(
+                title: "Trade Complete",
+                message: hasCardChanges
+                    ? "Your collection has been updated."
+                    : "Trade completed."
+            )
         } catch {
-            errorMessage = error.localizedDescription
+            activeAlert = .result(
+                title: "Trade Calculator",
+                message: error.localizedDescription
+            )
         }
     }
 

@@ -33,6 +33,7 @@ struct FriendProfileView: View {
     @Namespace private var tabNamespace
     @State private var sharedWishlistCardIDs: [String] = []
     @State private var friendCollectionCardIDs: [String] = []
+    @State private var friendCollectionQuantityByCardID: [String: Int] = [:]
     @State private var isLoadingCollection = false
     @State private var collectionLoadError: String? = nil
     @State private var resolvedSharedCardsByID: [String: Card] = [:]
@@ -547,6 +548,7 @@ struct FriendProfileView: View {
                         isSelectMode: .constant(false),
                         selectedCardIDs: .constant([]),
                         cardLoader: { id in await loadSharedCard(id) },
+                        quantityByCardID: friendCollectionQuantityByCardID,
                         onCardTap: { tappedID in
                             Task { await openCardDetail(tappedID: tappedID, orderedIDs: friendCollectionCardIDs) }
                         }
@@ -671,6 +673,7 @@ struct FriendProfileView: View {
                 } else {
                     sharedWishlistCardIDs = []
                     friendCollectionCardIDs = []
+                    friendCollectionQuantityByCardID = [:]
                     resolvedSharedCardsByID = [:]
                 }
             }
@@ -694,21 +697,28 @@ struct FriendProfileView: View {
         defer { isLoadingCollection = false }
         do {
             let snapshot = try await services.collectionSync.fetchFriendCollection(userID: userID)
-            let collectionIDs = snapshot.collection.compactMap { entry -> String? in
-                guard !entry.cardID.isEmpty else { return nil }
-                return entry.cardID
+            var collectionIDs: [String] = []
+            var collectionQuantityByCardID: [String: Int] = [:]
+            var seenCollectionIDs: Set<String> = []
+            for entry in snapshot.collection where !entry.cardID.isEmpty {
+                collectionQuantityByCardID[entry.cardID, default: 0] += max(entry.qty, 0)
+                if seenCollectionIDs.insert(entry.cardID).inserted {
+                    collectionIDs.append(entry.cardID)
+                }
             }
             let wishlistIDs = snapshot.wishlist.compactMap { entry -> String? in
                 guard !entry.cardID.isEmpty else { return nil }
                 return entry.cardID
             }
             friendCollectionCardIDs = collectionIDs
+            friendCollectionQuantityByCardID = collectionQuantityByCardID
             sharedWishlistCardIDs = wishlistIDs
             Task { @MainActor in
                 await warmSharedCardCache(ids: collectionIDs + wishlistIDs)
             }
         } catch CollectionSyncError.httpError(404) {
             friendCollectionCardIDs = []
+            friendCollectionQuantityByCardID = [:]
             sharedWishlistCardIDs = []
         } catch {
             collectionLoadError = error.localizedDescription

@@ -35,18 +35,55 @@ extension View {
     }
 
     /// Pill search field chrome — white fill in light mode, glass/material in dark.
-    func searchFieldCapsuleChrome(darkGlass: SearchFieldChromeGlass = .regularInteractive) -> some View {
-        modifier(SearchFieldChromeModifier(shape: .capsule, cornerRadius: nil, darkGlass: darkGlass))
+    func searchFieldCapsuleChrome(
+        darkGlass: SearchFieldChromeGlass = .regularInteractive,
+        forceNativeGlass: Bool = false
+    ) -> some View {
+        modifier(
+            SearchFieldChromeModifier(
+                shape: .capsule,
+                cornerRadius: nil,
+                darkGlass: darkGlass,
+                forceNativeGlass: forceNativeGlass
+            )
+        )
     }
 
     /// Rounded inline search field chrome — white fill in light mode, glass/material in dark.
     func inlineSearchFieldChrome(cornerRadius: CGFloat = 14, darkGlass: SearchFieldChromeGlass = .regularInteractive) -> some View {
-        modifier(SearchFieldChromeModifier(shape: .rounded, cornerRadius: cornerRadius, darkGlass: darkGlass))
+        modifier(
+            SearchFieldChromeModifier(
+                shape: .rounded,
+                cornerRadius: cornerRadius,
+                darkGlass: darkGlass,
+                forceNativeGlass: false
+            )
+        )
     }
 
     /// Circle chrome for search bar accessory buttons — white in light mode, glass in dark.
-    func searchBarCircleChrome(interactive: Bool = true) -> some View {
-        modifier(SearchBarCircleChromeModifier(interactive: interactive))
+    func searchBarCircleChrome(interactive: Bool = true, forceNativeGlass: Bool = false) -> some View {
+        modifier(
+            SearchBarCircleChromeModifier(
+                interactive: interactive,
+                forceNativeGlass: forceNativeGlass
+            )
+        )
+    }
+
+    /// Unfilled iOS 26 Liquid Glass surface for content nested inside a larger glass panel.
+    func clearGlassCardStyle(cornerRadius: CGFloat = 16, interactive: Bool = true) -> some View {
+        modifier(ClearGlassCardModifier(cornerRadius: cornerRadius, interactive: interactive))
+    }
+
+    /// Full regular Liquid Glass panel without an opaque or tinted base fill.
+    func nativeGlassPanelStyle(cornerRadius: CGFloat = 24) -> some View {
+        modifier(NativeGlassPanelModifier(cornerRadius: cornerRadius))
+    }
+
+    /// Edge-to-edge regular Liquid Glass clipped to the app window's display shape.
+    func nativeGlassFullscreenStyle() -> some View {
+        modifier(NativeGlassFullscreenModifier())
     }
 
     /// Flat white post card used in the social feed — light grey border on a
@@ -142,13 +179,21 @@ struct SearchFieldChromeModifier: ViewModifier {
     let shape: SearchFieldChromeShape
     let cornerRadius: CGFloat?
     let darkGlass: SearchFieldChromeGlass
+    let forceNativeGlass: Bool
 
     @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
         switch shape {
         case .capsule:
-            if colorScheme == .light {
+            if #available(iOS 26.0, *), forceNativeGlass {
+                content
+                    .glassEffect(
+                        Glass.regular.tint(nil).interactive(),
+                        in: Capsule(style: .continuous)
+                    )
+                    .overlay { Capsule(style: .continuous).stroke(glassBorderColor, lineWidth: 1) }
+            } else if colorScheme == .light {
                 content
                     .background { Capsule(style: .continuous).fill(.white) }
                     .overlay { Capsule(style: .continuous).stroke(borderColor, lineWidth: 1) }
@@ -168,7 +213,11 @@ struct SearchFieldChromeModifier: ViewModifier {
         case .rounded:
             let radius = cornerRadius ?? 14
             let rect = RoundedRectangle(cornerRadius: radius, style: .continuous)
-            if colorScheme == .light {
+            if #available(iOS 26.0, *), forceNativeGlass {
+                content
+                    .glassEffect(Glass.regular.tint(nil).interactive(), in: rect)
+                    .overlay { rect.stroke(glassBorderColor, lineWidth: 1) }
+            } else if colorScheme == .light {
                 content
                     .background { rect.fill(.white) }
                     .overlay { rect.stroke(borderColor, lineWidth: 1) }
@@ -192,6 +241,10 @@ struct SearchFieldChromeModifier: ViewModifier {
         return Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.12)
     }
 
+    private var glassBorderColor: Color {
+        Color.primary.opacity(colorScheme == .dark ? 0.10 : 0.08)
+    }
+
     @available(iOS 26.0, *)
     private var darkGlassEffect: Glass {
         switch darkGlass {
@@ -207,6 +260,7 @@ struct SearchFieldChromeModifier: ViewModifier {
 
 struct SearchBarCircleChromeModifier: ViewModifier {
     var interactive: Bool = true
+    var forceNativeGlass: Bool = false
 
     @Environment(\.colorScheme) private var colorScheme
 
@@ -214,7 +268,15 @@ struct SearchBarCircleChromeModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         Group {
-            if colorScheme == .light {
+            if #available(iOS 26.0, *), forceNativeGlass {
+                content
+                    .frame(width: 44, height: 44)
+                    .glassEffect(
+                        interactive ? Glass.clear.tint(nil).interactive() : Glass.clear.tint(nil),
+                        in: Circle()
+                    )
+                    .contentShape(Circle())
+            } else if colorScheme == .light {
                 content
                     .frame(width: 44, height: 44)
                     .background(Circle().fill(.white))
@@ -237,6 +299,67 @@ struct SearchBarCircleChromeModifier: ViewModifier {
                             .strokeBorder(glassStroke, lineWidth: 0.5)
                     }
                     .contentShape(Circle())
+            }
+        }
+    }
+}
+
+private struct ClearGlassCardModifier: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
+    let cornerRadius: CGFloat
+    let interactive: Bool
+
+    func body(content: Content) -> some View {
+        let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+        Group {
+            if #available(iOS 26.0, *) {
+                content
+                    .glassEffect(
+                        interactive ? Glass.clear.tint(nil).interactive() : Glass.clear.tint(nil),
+                        in: shape
+                    )
+                    .overlay {
+                        shape.stroke(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
+                    }
+            } else {
+                content
+                    .background(.thinMaterial, in: shape)
+                    .overlay {
+                        shape.stroke(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
+                    }
+            }
+        }
+    }
+}
+
+private struct NativeGlassPanelModifier: ViewModifier {
+    let cornerRadius: CGFloat
+
+    func body(content: Content) -> some View {
+        let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+        Group {
+            if #available(iOS 26.0, *) {
+                GlassEffectContainer(spacing: 12) {
+                    content
+                        .glassEffect(Glass.regular.tint(nil), in: shape)
+                }
+            } else {
+                content.background(.thinMaterial, in: shape)
+            }
+        }
+    }
+}
+
+private struct NativeGlassFullscreenModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        Group {
+            if #available(iOS 26.0, *) {
+                GlassEffectContainer(spacing: 12) {
+                    content
+                        .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
+                }
+            } else {
+                content.background(.thinMaterial, in: ContainerRelativeShape())
             }
         }
     }

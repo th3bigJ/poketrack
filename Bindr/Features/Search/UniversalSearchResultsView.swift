@@ -10,6 +10,8 @@ struct UniversalSearchResultsView: View {
     let query: String
     let selectedBrand: TCGBrand
     let sourceScope: SearchSourceScope
+    let idleContent: AnyView
+    let onCommitSearch: () -> Void
 
     @State private var matchingSets: [SearchSetMatch] = []
     @State private var cards: [Card] = []
@@ -68,12 +70,8 @@ struct UniversalSearchResultsView: View {
     var body: some View {
         Group {
             if trimmed.isEmpty {
-                ContentUnavailableView(
-                    "Search",
-                    systemImage: "magnifyingglass",
-                    description: Text(emptyStateDescription)
-                )
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                idleContent
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             } else {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 24, pinnedViews: []) {
@@ -102,6 +100,7 @@ struct UniversalSearchResultsView: View {
                                         .contentShape(Rectangle())
                                     }
                                     .buttonStyle(.plain)
+                                    .simultaneousGesture(TapGesture().onEnded(onCommitSearch))
                                     Divider().padding(.leading, 16)
                                 }
                             }
@@ -145,6 +144,7 @@ struct UniversalSearchResultsView: View {
                                         .contentShape(Rectangle())
                                     }
                                     .buttonStyle(.plain)
+                                    .simultaneousGesture(TapGesture().onEnded(onCommitSearch))
                                     Divider().padding(.leading, 16)
                                 }
                             }
@@ -164,7 +164,11 @@ struct UniversalSearchResultsView: View {
                         } else {
                             LazyVGrid(columns: cardColumns, spacing: 12) {
                                 ForEach(displayedCards) { card in
-                                    Button { presentCard(card, displayedCards) } label: {
+                                    Button {
+                                        onCommitSearch()
+                                        SearchHistoryStore.recordViewedCard(card.masterCardId)
+                                        presentCard(card, displayedCards)
+                                    } label: {
                                         CardGridCell(card: card, services: services, colorScheme: colorScheme)
                                     }
                                     .buttonStyle(CardCellButtonStyle())
@@ -178,6 +182,7 @@ struct UniversalSearchResultsView: View {
                 .scrollDismissesKeyboard(.interactively)
             }
         }
+        .background(Color.clear)
         .toolbarBackground(.hidden, for: .navigationBar)
         .task(id: query) {
             if liveTrimmed.isEmpty {

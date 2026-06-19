@@ -545,7 +545,7 @@ struct TransactionsView: View {
         .padding(.horizontal, 14)
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassCardStyle(cornerRadius: 20)
+        .glassCardStyle(cornerRadius: 20, interactive: false)
     }
 
     private func transactionRow(for line: LedgerLine) -> some View {
@@ -596,7 +596,7 @@ struct TransactionsView: View {
         .padding(.horizontal, 14)
         .padding(.vertical, 12)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassCardStyle(cornerRadius: 20)
+        .glassCardStyle(cornerRadius: 20, interactive: false)
     }
 
     private func tradeSummary(for lines: [LedgerLine]) -> String {

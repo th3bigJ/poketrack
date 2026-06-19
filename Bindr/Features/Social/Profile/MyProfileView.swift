@@ -487,7 +487,6 @@ struct MyProfileView: View {
                     .foregroundStyle(.secondary.opacity(0.8))
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 10)
             .contentShape(Rectangle())
         }
         .buttonStyle(StatButtonStyle())
