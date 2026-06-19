@@ -17,15 +17,6 @@ enum SearchIdleCategory: String, CaseIterable, Identifiable {
         }
     }
 
-    var subtitle: String {
-        switch self {
-        case .cards: return "Browse the catalogue"
-        case .sets: return "Explore expansions"
-        case .pokemon: return "Search by Pokédex"
-        case .sealed: return "Boxes, packs and more"
-        }
-    }
-
     var symbol: String {
         switch self {
         case .cards: return "rectangle.stack.fill"
@@ -81,7 +72,6 @@ enum SearchSourceScope: String, CaseIterable, Identifiable {
 
 struct SearchExperienceView: View {
     @Environment(AppServices.self) private var services
-    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Environment(\.presentCard) private var presentCard
 
     @Binding var query: String
@@ -89,43 +79,21 @@ struct SearchExperienceView: View {
 
     @State private var recentSearches: [String] = SearchHistoryStore.strings(forKey: SearchHistoryStore.recentSearchesKey)
     @State private var recentlyViewedCardIDs: [String] = SearchHistoryStore.strings(forKey: SearchHistoryStore.recentlyViewedCardsKey)
-    @State private var sourceScope: SearchSourceScope = .allCards
     @State private var recentlyViewedCards: [Card] = []
     @State private var recentSets: [TCGSet] = []
 
     var body: some View {
-        VStack(spacing: 0) {
-            VStack(spacing: 10) {
-                HStack {
-                    Text(services.brandSettings.selectedCatalogBrand.displayTitle)
-                        .font(.subheadline.weight(.semibold))
-                    Spacer()
-                }
-                .padding(.horizontal, 2)
-
-                Picker("Search source", selection: $sourceScope) {
-                    ForEach(SearchSourceScope.allCases) { scope in
-                        Text(scope.title).tag(scope)
-                    }
-                }
-                .pickerStyle(.segmented)
+        UniversalSearchResultsView(
+            query: query,
+            selectedBrand: services.brandSettings.selectedCatalogBrand,
+            sourceScope: .allCards,
+            idleContent: AnyView(idleContent),
+            onCommitSearch: {
+                SearchHistoryStore.addSearch(query)
+                recentSearches = SearchHistoryStore.strings(forKey: SearchHistoryStore.recentSearchesKey)
             }
-            .padding(.horizontal, 16)
-            .padding(.top, rootFloatingChromeInset + 12)
-            .padding(.bottom, 10)
-
-            UniversalSearchResultsView(
-                query: query,
-                selectedBrand: services.brandSettings.selectedCatalogBrand,
-                sourceScope: sourceScope,
-                idleContent: AnyView(idleContent),
-                onCommitSearch: {
-                    SearchHistoryStore.addSearch(query)
-                    recentSearches = SearchHistoryStore.strings(forKey: SearchHistoryStore.recentSearchesKey)
-                }
-            )
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        }
+        )
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Color.clear)
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
@@ -146,35 +114,30 @@ struct SearchExperienceView: View {
     private var idleContent: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                LazyVGrid(
-                    columns: Array(repeating: GridItem(.flexible(), spacing: 12), count: 2),
-                    spacing: 12
-                ) {
+                HStack(spacing: 10) {
                     ForEach(SearchIdleCategory.allCases) { category in
                         Button {
                             Haptics.lightImpact()
                             onOpenCategory(category)
                         } label: {
-                            VStack(alignment: .leading, spacing: 10) {
+                            VStack(spacing: 8) {
                                 Image(systemName: category.symbol)
-                                    .font(.system(size: 18, weight: .semibold))
+                                    .font(.system(size: 16, weight: .semibold))
                                     .foregroundStyle(services.theme.accentColor)
-                                    .frame(width: 36, height: 36)
+                                    .frame(width: 32, height: 32)
                                     .background(services.theme.accentColor.opacity(0.12), in: Circle())
                                 Text(category.title)
-                                    .font(.subheadline.weight(.semibold))
+                                    .font(.caption.weight(.semibold))
                                     .foregroundStyle(.primary)
-                                Text(category.subtitle)
-                                    .font(.caption2)
-                                    .foregroundStyle(.secondary)
                                     .lineLimit(1)
+                                    .minimumScaleFactor(0.85)
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(14)
-                            .clearGlassCardStyle(cornerRadius: 16, interactive: true)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                            .padding(.horizontal, 6)
+                            .clearGlassCardStyle(cornerRadius: 14, interactive: true)
                             .contentShape(Rectangle())
                         }
-                        .frame(maxWidth: .infinity)
                         .buttonStyle(.plain)
                     }
                 }

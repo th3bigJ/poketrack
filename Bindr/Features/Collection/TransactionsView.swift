@@ -502,7 +502,7 @@ struct TransactionsView: View {
 
     private func tradeGroupRow(for group: ActivityTradeGroup) -> some View {
         let summary = tradeSummary(for: group.lines)
-        let netCash = group.lines.reduce(0) { $0 + signedCashValue(for: $1) }
+        let netCash = tradeNetCash(for: group.lines)
 
         return VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .top, spacing: 12) {
@@ -925,6 +925,17 @@ struct TransactionsView: View {
             .currency(code: line.currencyCode)
             .precision(.fractionLength(2))
         )
+    }
+
+    private func isTradeCashLine(_ line: LedgerLine) -> Bool {
+        line.productKind == ProductKind.other.rawValue
+    }
+
+    /// Net cash movement for a local trade — only explicit cash lines, not card market values.
+    private func tradeNetCash(for lines: [LedgerLine]) -> Double {
+        lines
+            .filter(isTradeCashLine)
+            .reduce(0) { $0 + signedCashValue(for: $1) }
     }
 
     private func signedCashValue(for line: LedgerLine) -> Double {

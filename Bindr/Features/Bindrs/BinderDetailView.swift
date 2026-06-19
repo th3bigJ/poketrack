@@ -221,49 +221,51 @@ struct BinderDetailView: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
+        ZStack(alignment: .top) {
+            if !isEditing || isModeTransitioning {
+                viewModeContent
+                    .opacity(isEditing ? 0 : 1)
+                    .offset(y: isEditing ? -6 : 0)
+                    .allowsHitTesting(!isEditing && isChromeVisible)
+                    .accessibilityHidden(isEditing)
+                    .compositingGroup()
+                    .animation(
+                        isEditing
+                            ? .easeOut(duration: 0.18)
+                            : .spring(response: 0.4, dampingFraction: 0.8).delay(0.08),
+                        value: isEditing
+                    )
+            }
+
+            if isEditing || isModeTransitioning {
+                editContent
+                    .opacity(isEditing ? 1 : 0)
+                    .offset(y: isEditing ? 0 : 18)
+                    .allowsHitTesting(isEditing)
+                    .accessibilityHidden(!isEditing)
+                    .compositingGroup()
+                    .animation(
+                        isEditing
+                            ? .spring(response: 0.4, dampingFraction: 0.8).delay(0.08)
+                            : .easeOut(duration: 0.18),
+                        value: isEditing
+                    )
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .clipped()
+        .background {
+            if isEditing {
+                BindrPageBackground().ignoresSafeArea()
+            } else {
+                Color(uiColor: .systemBackground)
+            }
+        }
+        .safeAreaInset(edge: .top, spacing: 0) {
             binderHeader
                 .opacity(isChromeVisible ? 1 : 0)
                 .offset(y: isChromeVisible ? 0 : -20)
                 .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
-            ZStack(alignment: .top) {
-                if !isEditing || isModeTransitioning {
-                    viewModeContent
-                        .opacity(isEditing ? 0 : 1)
-                        .offset(y: isEditing ? -6 : 0)
-                        .allowsHitTesting(!isEditing && isChromeVisible)
-                        .accessibilityHidden(isEditing)
-                        .compositingGroup()
-                        .animation(
-                            isEditing
-                                ? .easeOut(duration: 0.18)
-                                : .spring(response: 0.4, dampingFraction: 0.8).delay(0.08),
-                            value: isEditing
-                        )
-                }
-
-                if isEditing || isModeTransitioning {
-                    editContent
-                        .opacity(isEditing ? 1 : 0)
-                        .offset(y: isEditing ? 0 : 18)
-                        .allowsHitTesting(isEditing)
-                        .accessibilityHidden(!isEditing)
-                        .compositingGroup()
-                        .animation(
-                            isEditing
-                                ? .spring(response: 0.4, dampingFraction: 0.8).delay(0.08)
-                                : .easeOut(duration: 0.18),
-                            value: isEditing
-                        )
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .clipped()
-        }
-        .background {
-            if !isEditing {
-                Color(uiColor: .systemBackground)
-            }
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
@@ -467,73 +469,60 @@ struct BinderDetailView: View {
 
     /// Uses ``BindrPageHeader`` (the same component Social/Binders/Decks list
     /// pages use) so the binder detail screen's chrome lines up perfectly
-    /// with the rest of the app's glass treatment. The colour-accent capsule
-    /// stays as a per-binder flourish below the title.
+    /// with the rest of the app's glass treatment.
     private var binderHeader: some View {
-        VStack(spacing: 4) {
-            BindrPageHeader(
-                title: binder.title,
-                leading: {
-                    ChromeGlassCircleButton(accessibilityLabel: "Back") { handleBackTap() } label: {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
-                    }
-                },
-                trailing: {
-                    HStack(spacing: 8) {
-                        Menu {
-                            Button {
-                                showShareSettings = true
-                            } label: {
-                                Label(isSharedPublished ? "Manage Social Post" : "Post to Bindr Social", systemImage: "person.2.fill")
-                            }
-
-                            Button {
-                                renderAndShareSnapshot()
-                            } label: {
-                                Label("Share Page Image", systemImage: "photo")
-                            }
+        BindrPageHeader(
+            title: binder.title,
+            leading: {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") { handleBackTap() } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+            },
+            trailing: {
+                HStack(spacing: 8) {
+                    Menu {
+                        Button {
+                            showShareSettings = true
                         } label: {
-                            Image(systemName: "square.and.arrow.up")
-                                .font(.system(size: 17, weight: .semibold))
-                                .foregroundStyle(headerIconColor)
+                            Label(isSharedPublished ? "Manage Social Post" : "Post to Bindr Social", systemImage: "person.2.fill")
                         }
-                        .modifier(ChromeGlassCircleGlyphModifier())
-                        .frame(width: 48, height: 48)
-                        .contentShape(Rectangle())
-                        .menuOrder(.fixed)
-                        .accessibilityLabel("Share binder")
 
                         Button {
-                            setEditing(!isEditing)
+                            renderAndShareSnapshot()
                         } label: {
-                            Image(systemName: isEditing ? "checkmark" : "pencil")
-                                .font(.system(size: 17, weight: .semibold))
-                                .foregroundStyle(headerIconColor)
+                            Label("Share Page Image", systemImage: "photo")
                         }
-                        .modifier(ChromeGlassCircleGlyphModifier())
-                        .frame(width: 48, height: 48)
-                        .contentShape(Rectangle())
-                        .accessibilityLabel(isEditing ? "Done editing binder" : "Edit binder")
+                    } label: {
+                        Image(systemName: "square.and.arrow.up")
+                            .font(.system(size: 17, weight: .semibold))
+                            .foregroundStyle(headerIconColor)
                     }
-                }
-            )
-            // Push the header down so it sits below the status bar. 
-            // Fall back to 47pt (standard notch height) if the inset 
-            // isn't reported correctly.
-            .padding(.top, entryFromGrid ? (topSafeAreaInset > 0 ? topSafeAreaInset : 47) : 0)
+                    .modifier(ChromeGlassCircleGlyphModifier())
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+                    .menuOrder(.fixed)
+                    .accessibilityLabel("Share binder")
 
-            // Per-binder colour-accent capsule sits below the shared header
-            // so the chrome layout stays uniform but each binder still gets
-            // its identifying flourish.
-            Capsule()
-                .fill(binder.resolvedColour)
-                .frame(width: 40, height: 3)
-                .opacity(isEditing ? 0 : 0.8)
-                .padding(.bottom, 4)
-                .animation(.easeOut(duration: 0.18), value: isEditing)
-        }
+                    Button {
+                        setEditing(!isEditing)
+                    } label: {
+                        Image(systemName: isEditing ? "checkmark" : "pencil")
+                            .font(.system(size: 17, weight: .semibold))
+                            .foregroundStyle(headerIconColor)
+                    }
+                    .modifier(ChromeGlassCircleGlyphModifier())
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+                    .accessibilityLabel(isEditing ? "Done editing binder" : "Edit binder")
+                }
+            }
+        )
+        // Push the header down so it sits below the status bar.
+        // Fall back to 47pt (standard notch height) if the inset
+        // isn't reported correctly.
+        .padding(.top, entryFromGrid ? (topSafeAreaInset > 0 ? topSafeAreaInset : 47) : 0)
     }
 
     // MARK: - Bottom stats bar (Cards · Page Value · Binder Value)
@@ -1068,6 +1057,7 @@ struct BinderDetailView: View {
             }
             .padding(12)
         }
+        .scrollContentBackground(.hidden)
     }
 
     private var editToolbar: some View {

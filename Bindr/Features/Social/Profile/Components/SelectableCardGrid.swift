@@ -97,53 +97,55 @@ private struct SelectableCardCell: View {
 
     var body: some View {
         Button(action: onTap) {
-            ZStack(alignment: .topTrailing) {
-                Group {
-                    if let card, !card.displayImageSrc.isEmpty {
-                        CachedAsyncImage(
-                            url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
-                            targetSize: Self.thumbnailSize
-                        ) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                        } placeholder: {
-                            shimmer
-                        }
-                    } else if let sealedProduct, let imageURL = sealedProduct.imageURL {
-                        CachedAsyncImage(
-                            url: imageURL,
-                            targetSize: Self.thumbnailSize
-                        ) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                        } placeholder: {
-                            shimmer
-                        }
-                    } else if isLoading {
+            Group {
+                if let card, !card.displayImageSrc.isEmpty {
+                    CachedAsyncImage(
+                        url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
+                        targetSize: Self.thumbnailSize
+                    ) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: {
                         shimmer
-                    } else {
-                        placeholderView
                     }
-                }
-                .frame(maxWidth: .infinity)
-                .aspectRatio(5/7, contentMode: .fit)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .overlay {
-                    if isSelected {
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color(hex: "E8B84B"), lineWidth: 2.5)
+                } else if let sealedProduct, let imageURL = sealedProduct.imageURL {
+                    CachedAsyncImage(
+                        url: imageURL,
+                        targetSize: Self.thumbnailSize
+                    ) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: {
+                        shimmer
                     }
+                } else if isLoading {
+                    shimmer
+                } else {
+                    placeholderView
                 }
-
+            }
+            .frame(maxWidth: .infinity)
+            .aspectRatio(5/7, contentMode: .fit)
+            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .overlay {
+                if isSelected {
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color(hex: "E8B84B"), lineWidth: 2.5)
+                }
+            }
+            .overlay(alignment: .topTrailing) {
                 if isSelectMode {
                     Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                         .font(.system(size: 18, weight: .bold))
                         .foregroundStyle(isSelected ? Color(hex: "E8B84B") : Color.white.opacity(0.7))
                         .shadow(color: .black.opacity(0.5), radius: 3)
                         .padding(4)
-                } else if let quantity, quantity > 0 {
+                }
+            }
+            .overlay(alignment: .bottomTrailing) {
+                if !isSelectMode, let quantity, quantity > 0 {
                     ZStack {
                         Circle()
                             .fill(accentColor)

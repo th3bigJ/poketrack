@@ -557,9 +557,25 @@ private struct TradeCalculatorView: View {
         case theirs
     }
 
+    private enum TradeCalculatorAlert: Identifiable {
+        case confirmation
+        case result(title: String, message: String)
+
+        var id: String {
+            switch self {
+            case .confirmation:
+                return "confirmation"
+            case .result(let title, let message):
+                return "result|\(title)|\(message)"
+            }
+        }
+    }
+
     @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.bindrAccent) private var bindrAccent
     @Environment(\.colorScheme) private var colorScheme
+    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
 
     @State private var theirCards: [NewTradeItemInput] = []
     @State private var myCards: [NewTradeItemInput] = []
@@ -572,6 +588,9 @@ private struct TradeCalculatorView: View {
     @State private var myCardsValueUSD: Double = 0
     @State private var theirCardsValueUSD: Double = 0
     @State private var isValuationLoading = false
+    @State private var isCompletingTrade = false
+    @State private var activeAlert: TradeCalculatorAlert?
+    @State private var completedTradeWishlistCandidates: [WishlistRemovalCandidate] = []
     @FocusState private var focusedCashField: CashField?
 
     private var valuationSignature: String {
@@ -602,6 +621,10 @@ private struct TradeCalculatorView: View {
         myTotalUSD > 0 || theirTotalUSD > 0 || !myCards.isEmpty || !theirCards.isEmpty
     }
 
+    private var canCompleteTrade: Bool {
+        hasAnyTradeValue && !isCompletingTrade
+    }
+
     private var fairnessTitle: String {
         guard hasAnyTradeValue else { return "Build a trade" }
         if abs(balanceUSD) < 0.01 { return "Looks even" }
@@ -629,6 +652,9 @@ private struct TradeCalculatorView: View {
             summarySection
             theirSideSection
             mySideSection
+            if canCompleteTrade || isCompletingTrade {
+                completeTradeSection
+            }
         }
         .listStyle(.insetGrouped)
         .scrollDismissesKeyboard(.interactively)
@@ -661,6 +687,35 @@ private struct TradeCalculatorView: View {
                 }
             )
             .environment(services)
+        }
+        .alert(item: $activeAlert) { alert in
+            switch alert {
+            case .confirmation:
+                return Alert(
+                    title: Text("Complete this local trade?"),
+                    message: Text("Your collection will be updated. Only cash entered above is recorded as a monetary transaction — card value changes are reflected in your collection value."),
+                    primaryButton: .default(Text("Complete")) {
+                        activeAlert = nil
+                        Task {
+                            await Task.yield()
+                            try? await Task.sleep(for: .milliseconds(250))
+                            guard !Task.isCancelled else { return }
+                            await completeLocalTrade()
+                        }
+                    },
+                    secondaryButton: .cancel()
+                )
+            case .result(let title, let message):
+                return Alert(
+                    title: Text(title),
+                    message: Text(message),
+                    dismissButton: .default(Text("OK")) {
+                        guard !completedTradeWishlistCandidates.isEmpty else { return }
+                        services.requestWishlistRemovalPrompt(for: completedTradeWishlistCandidates)
+                        completedTradeWishlistCandidates = []
+                    }
+                )
+            }
         }
         .task(id: valuationSignature) {
             await refreshTradeValues()
@@ -743,6 +798,40 @@ private struct TradeCalculatorView: View {
             Text(fairnessTitle + " · " + fairnessSubtitle)
                 .font(.system(size: 12, weight: .medium))
                 .foregroundStyle(fairnessColor)
+        }
+    }
+
+    private var completeTradeSection: some View {
+        Section {
+            Button {
+                activeAlert = .confirmation
+            } label: {
+                HStack(spacing: 8) {
+                    if isCompletingTrade {
+                        ProgressView()
+                            .scaleEffect(0.8)
+                    } else {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 15, weight: .bold))
+                    }
+                    Text(isCompletingTrade ? "Completing..." : "Complete trade")
+                        .font(.system(size: 15, weight: .bold))
+                }
+                .foregroundStyle(.primary)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 12)
+                .background(bindrAccent.opacity(colorScheme == .dark ? 0.34 : 0.16), in: Capsule())
+                .overlay {
+                    Capsule()
+                        .stroke(bindrAccent.opacity(colorScheme == .dark ? 0.8 : 0.4), lineWidth: 1)
+                }
+            }
+            .buttonStyle(.plain)
+            .disabled(isCompletingTrade)
+            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+            .listRowBackground(Color.clear)
+        } footer: {
+            Text("Completing updates your card inventory. Cash is logged separately in Activity only when you enter an amount above.")
         }
     }
 
@@ -992,6 +1081,242 @@ private struct TradeCalculatorView: View {
 
     private func formattedDisplayAmountUSD(_ amountUSD: Double) -> String {
         services.priceDisplay.currency.format(amountUSD: amountUSD, usdToGbp: services.pricing.usdToGbp)
+    }
+
+    private var currencyCode: String {
+        services.priceDisplay.currency == .gbp ? "GBP" : "USD"
+    }
+
+    private func completeLocalTrade() async {
+        focusedCashField = nil
+        activeAlert = nil
+        completedTradeWishlistCandidates = []
+
+        guard hasAnyTradeValue else {
+            activeAlert = .result(
+                title: "Trade Calculator",
+                message: "Add cards or cash before completing the trade."
+            )
+            return
+        }
+        let hasCardChanges = !myCards.isEmpty || !theirCards.isEmpty
+        let ledger = services.collectionLedger
+        if hasCardChanges, ledger == nil {
+            activeAlert = .result(
+                title: "Trade Calculator",
+                message: "Collection isn't ready. Try again."
+            )
+            return
+        }
+
+        isCompletingTrade = true
+        var acquiredWishlistCandidates: [WishlistRemovalCandidate] = []
+        defer {
+            isCompletingTrade = false
+            focusedCashField = nil
+            isMyCardPickerPresented = false
+            isTheirCardPickerPresented = false
+            activeScannerSide = nil
+        }
+
+        do {
+            let outgoing = try await resolvedOutgoingItems()
+            try validateProjectedCollectionCapacity(outgoing: outgoing)
+            let theirNames = await tradeSummaryNames(for: theirCards)
+            let myNames = await tradeSummaryNames(for: myCards)
+            let occurredAt = Date()
+            let transactionGroupID = UUID()
+
+            if let ledger {
+                for (item, quantity, card) in outgoing {
+                    try ledger.recordSingleCardDisposition(
+                        item: item,
+                        kind: .traded,
+                        quantity: quantity,
+                        currencyCode: currencyCode,
+                        cardDisplayName: card.cardName,
+                        unitPrice: nil,
+                        counterparty: "Local trade",
+                        notes: theirNames.isEmpty ? nil : "Received \(theirNames)",
+                        transactionGroupId: transactionGroupID
+                    )
+                }
+
+                for tradeItem in theirCards {
+                    guard let card = await loadCardForValuation(id: tradeItem.cardID) else { continue }
+                    try ledger.recordSingleCardAcquisition(
+                        cardID: tradeItem.cardID,
+                        variantKey: tradeItem.variantKey,
+                        kind: .trade,
+                        quantity: max(tradeItem.quantity, 1),
+                        occurredAt: occurredAt,
+                        currencyCode: currencyCode,
+                        cardDisplayName: card.cardName,
+                        unitPrice: nil,
+                        gradingCompany: nil,
+                        grade: nil,
+                        packedOpenedFrom: nil,
+                        tradeCounterparty: "Local trade",
+                        tradeGaveAway: myNames.isEmpty ? nil : myNames,
+                        giftFrom: nil,
+                        boughtFrom: nil,
+                        transactionGroupId: transactionGroupID
+                    )
+                    acquiredWishlistCandidates.append(
+                        WishlistRemovalCandidate(cardID: tradeItem.cardID, cardName: card.cardName)
+                    )
+                }
+            }
+            try recordLocalTradeCashActivity(occurredAt: occurredAt, transactionGroupID: transactionGroupID)
+
+            myCards = []
+            theirCards = []
+            myCashText = ""
+            theirCashText = ""
+            myCardsValueUSD = 0
+            theirCardsValueUSD = 0
+            completedTradeWishlistCandidates = acquiredWishlistCandidates
+            Haptics.success()
+            activeAlert = .result(
+                title: "Trade Complete",
+                message: hasCardChanges
+                    ? "Your collection has been updated."
+                    : "Trade completed."
+            )
+        } catch {
+            completedTradeWishlistCandidates = []
+            activeAlert = .result(
+                title: "Trade Calculator",
+                message: error.localizedDescription
+            )
+        }
+    }
+
+    private func recordLocalTradeCashActivity(occurredAt: Date, transactionGroupID: UUID) throws {
+        let theirCash = parsedCash(theirCashText)
+        let myCash = parsedCash(myCashText)
+        guard theirCash > 0 || myCash > 0 else { return }
+
+        let reference = "local-trade-\(transactionGroupID.uuidString)"
+        if theirCash > 0 {
+            modelContext.insert(
+                LedgerLine(
+                    occurredAt: occurredAt,
+                    direction: LedgerDirection.sold.rawValue,
+                    productKind: ProductKind.other.rawValue,
+                    lineDescription: "Local trade cash received",
+                    quantity: 1,
+                    unitPrice: theirCash,
+                    currencyCode: currencyCode,
+                    counterparty: "Local trade",
+                    channel: "trade",
+                    externalRef: reference,
+                    transactionGroupId: transactionGroupID
+                )
+            )
+        }
+        if myCash > 0 {
+            modelContext.insert(
+                LedgerLine(
+                    occurredAt: occurredAt,
+                    direction: LedgerDirection.bought.rawValue,
+                    productKind: ProductKind.other.rawValue,
+                    lineDescription: "Local trade cash paid",
+                    quantity: 1,
+                    unitPrice: myCash,
+                    currencyCode: currencyCode,
+                    counterparty: "Local trade",
+                    channel: "trade",
+                    externalRef: "\(reference)-out",
+                    transactionGroupId: transactionGroupID
+                )
+            )
+        }
+        try modelContext.save()
+    }
+
+    private func resolvedOutgoingItems() async throws -> [(item: CollectionItem, quantity: Int, card: Card)] {
+        var resolved: [(CollectionItem, Int, Card)] = []
+        for tradeItem in myCards {
+            guard let item = collectionItem(for: tradeItem) else {
+                throw LocalTradeError.missingOwnedCard(cardID: tradeItem.cardID)
+            }
+            let quantity = max(tradeItem.quantity, 1)
+            guard let card = await loadCardForValuation(id: tradeItem.cardID) else {
+                throw LocalTradeError.missingCardData
+            }
+            guard item.quantity >= quantity else {
+                throw LocalTradeError.insufficientQuantity(cardName: card.cardName, available: item.quantity, requested: quantity)
+            }
+            resolved.append((item, quantity, card))
+        }
+        return resolved
+    }
+
+    private func validateProjectedCollectionCapacity(outgoing: [(item: CollectionItem, quantity: Int, card: Card)]) throws {
+        guard !services.store.isPremium else { return }
+
+        var projectedCount = collectionItems.count
+        for row in outgoing where row.quantity >= row.item.quantity {
+            projectedCount -= 1
+        }
+
+        for item in theirCards {
+            let alreadyExists = collectionItems.contains { existing in
+                existing.cardID == item.cardID
+                    && existing.variantKey == item.variantKey
+                    && existing.itemKind == ProductKind.singleCard.rawValue
+            }
+            let depletedOutgoingSameStack = outgoing.contains { row in
+                row.quantity >= row.item.quantity
+                    && row.item.cardID == item.cardID
+                    && row.item.variantKey == item.variantKey
+                    && row.item.itemKind == ProductKind.singleCard.rawValue
+            }
+            if !alreadyExists || depletedOutgoingSameStack {
+                projectedCount += 1
+            }
+        }
+
+        if projectedCount > CollectionFreeTier.maxItems {
+            throw CollectionLedgerError.freeTierLimitReached
+        }
+    }
+
+    private func collectionItem(for tradeItem: NewTradeItemInput) -> CollectionItem? {
+        collectionItems.first { item in
+            item.itemKind == ProductKind.singleCard.rawValue
+                && item.cardID == tradeItem.cardID
+                && item.variantKey == tradeItem.variantKey
+                && item.quantity > 0
+        }
+    }
+
+    private func tradeSummaryNames(for items: [NewTradeItemInput]) async -> String {
+        var names: [String] = []
+        for item in items {
+            guard let card = await loadCardForValuation(id: item.cardID) else { continue }
+            let quantity = max(item.quantity, 1)
+            names.append(quantity > 1 ? "\(quantity)x \(card.cardName)" : card.cardName)
+        }
+        return names.joined(separator: ", ")
+    }
+}
+
+private enum LocalTradeError: LocalizedError {
+    case missingOwnedCard(cardID: String)
+    case insufficientQuantity(cardName: String, available: Int, requested: Int)
+    case missingCardData
+
+    var errorDescription: String? {
+        switch self {
+        case .missingOwnedCard:
+            return "One of your selected cards is no longer in your collection."
+        case .insufficientQuantity(let cardName, let available, let requested):
+            return "You only have \(available) of \(cardName), but this trade needs \(requested)."
+        case .missingCardData:
+            return "Card data is still loading. Try again in a moment."
+        }
     }
 }
 

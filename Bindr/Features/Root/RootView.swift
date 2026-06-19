@@ -1008,28 +1008,21 @@ struct RootView: View {
     @ViewBuilder
     private var searchOverlay: some View {
         GeometryReader { geo in
-            ZStack {
+            ZStack(alignment: .top) {
                 Color.black.opacity(colorScheme == .light ? 0.14 : 0.30)
                     .ignoresSafeArea()
 
-                searchFullscreenComposition(geo: geo)
-                .frame(
-                    width: geo.size.width,
-                    height: geo.size.height + geo.safeAreaInsets.top + geo.safeAreaInsets.bottom
-                )
-                .offset(y: (geo.safeAreaInsets.bottom - geo.safeAreaInsets.top) / 2)
-                .clipShape(ContainerRelativeShape())
-                .contentShape(ContainerRelativeShape())
-                .ignoresSafeArea()
-                .ignoresSafeArea(.keyboard)
-                .transition(
-                    .asymmetric(
-                        insertion: .offset(y: 8)
-                            .combined(with: .scale(scale: 0.985, anchor: .center))
-                            .combined(with: .opacity),
-                        removal: .opacity
+                searchOverlayGlassBackground(geo: geo)
+
+                searchOverlayForeground
+                    .transition(
+                        .asymmetric(
+                            insertion: .offset(y: 8)
+                                .combined(with: .scale(scale: 0.985, anchor: .center))
+                                .combined(with: .opacity),
+                            removal: .opacity
+                        )
                     )
-                )
             }
         }
         .ignoresSafeArea(.keyboard)
@@ -1037,78 +1030,87 @@ struct RootView: View {
     }
 
     @ViewBuilder
-    private func searchFullscreenComposition(geo: GeometryProxy) -> some View {
-        ZStack {
-            Group {
-                if #available(iOS 26.0, *) {
-                    GlassEffectContainer(spacing: 12) {
-                        Color.clear
-                            .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
-                    }
-                } else {
+    private func searchOverlayGlassBackground(geo: GeometryProxy) -> some View {
+        Group {
+            if #available(iOS 26.0, *) {
+                GlassEffectContainer(spacing: 12) {
                     Color.clear
-                        .background(.thinMaterial, in: ContainerRelativeShape())
+                        .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
                 }
+            } else {
+                Color.clear
+                    .background(.thinMaterial, in: ContainerRelativeShape())
+            }
+        }
+        .frame(
+            width: geo.size.width,
+            height: geo.size.height + geo.safeAreaInsets.top + geo.safeAreaInsets.bottom
+        )
+        .offset(y: (geo.safeAreaInsets.bottom - geo.safeAreaInsets.top) / 2)
+        .clipShape(ContainerRelativeShape())
+        .contentShape(ContainerRelativeShape())
+        .ignoresSafeArea()
+    }
+
+    @ViewBuilder
+    private var searchOverlayForeground: some View {
+        VStack(spacing: 0) {
+            if searchNavigationPath.isEmpty {
+                universalSearchBarControl(
+                    usesNativeGlassChrome: false,
+                    showsBackButtonWhenOpen: true
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, RootChromeEnvironment.searchBarTopInset)
+                .padding(.bottom, RootChromeEnvironment.searchBarBottomInset)
             }
 
-            VStack(spacing: 0) {
-                if searchNavigationPath.isEmpty {
-                    universalSearchBarControl(
-                        usesNativeGlassChrome: true,
-                        showsBackButtonWhenOpen: true
-                    )
-                    .padding(.horizontal, 12)
-                    .padding(.top, geo.safeAreaInsets.top + 8)
-                    .padding(.bottom, 4)
-                }
-
-                NavigationStack(path: $searchNavigationPath) {
-                    SearchExperienceView(
-                        query: $universalQuery,
-                        onOpenCategory: openSearchCategory
-                    )
-                    .navigationDestination(for: SearchNavRoot.self) { root in
-                        switch root {
-                        case .set(let s, _):
-                            SetCardsView(set: s)
-                                .onAppear {
-                                    searchFieldFocused = false
-                                }
-                        case .dex(let dexId, let displayName, _):
-                            DexCardsView(dexId: dexId, displayName: displayName)
-                                .onAppear {
-                                    searchFieldFocused = false
-                                }
-                        }
+            NavigationStack(path: $searchNavigationPath) {
+                SearchExperienceView(
+                    query: $universalQuery,
+                    onOpenCategory: openSearchCategory
+                )
+                .navigationDestination(for: SearchNavRoot.self) { root in
+                    switch root {
+                    case .set(let s, _):
+                        SetCardsView(set: s)
+                            .onAppear {
+                                searchFieldFocused = false
+                            }
+                    case .dex(let dexId, let displayName, _):
+                        DexCardsView(dexId: dexId, displayName: displayName)
+                            .onAppear {
+                                searchFieldFocused = false
+                            }
                     }
                 }
-                .environment(\.rootFloatingChromeInset, 0)
-                .toolbarBackground(.hidden, for: .navigationBar)
-                .background(Color.clear)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                .ignoresSafeArea(.keyboard)
             }
-            .environment(\.presentCard, { card, list in
-                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                SearchHistoryStore.recordViewedCard(card.masterCardId)
-                let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
-                selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
-            })
-            .environment(\.presentCardAtIndex, { list, index in
-                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                let safeIndex = min(max(index, 0), max(list.count - 1, 0))
-                if list.indices.contains(safeIndex) {
-                    SearchHistoryStore.recordViewedCard(list[safeIndex].masterCardId)
-                }
-                selectedCardPresentation = CardPresentationContext(cards: list, startIndex: safeIndex)
-            })
-            .environment(\.presentSealedProduct, { _, list, index in
-                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                let safeIndex = min(max(index, 0), max(list.count - 1, 0))
-                selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
-            })
+            .environment(\.rootFloatingChromeInset, 0)
+            .toolbarBackground(.hidden, for: .navigationBar)
+            .background(Color.clear)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .ignoresSafeArea(.keyboard)
         }
+        .environment(\.presentCard, { card, list in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            SearchHistoryStore.recordViewedCard(card.masterCardId)
+            let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
+            selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
+        })
+        .environment(\.presentCardAtIndex, { list, index in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
+            if list.indices.contains(safeIndex) {
+                SearchHistoryStore.recordViewedCard(list[safeIndex].masterCardId)
+            }
+            selectedCardPresentation = CardPresentationContext(cards: list, startIndex: safeIndex)
+        })
+        .environment(\.presentSealedProduct, { _, list, index in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
+            selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
+        })
+        .ignoresSafeArea(.keyboard)
     }
 
     @ViewBuilder

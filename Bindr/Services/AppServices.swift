@@ -32,7 +32,7 @@ final class AppServices {
         let preferredSide: TradePrefillSide
     }
 
-    private let slowLaunchRefreshThreshold: Duration = .seconds(8)
+    private let slowLaunchRefreshThreshold: Duration = .seconds(15)
     private var backgroundCatalogRefreshInFlight: Task<CatalogSyncOutcome, Never>?
     private var launchRefreshOutcome: CatalogSyncOutcome?
     private var launchRefreshLastMeaningfulProgressAt: ContinuousClock.Instant?
