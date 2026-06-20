@@ -9,6 +9,9 @@ enum RootChromeEnvironment {
     static let searchBarControlHeight: CGFloat = 48
     static let searchBarStackHeight: CGFloat = searchBarTopInset + searchBarControlHeight + searchBarBottomInset
     static let floatingContentTopInset: CGFloat = searchBarStackHeight
+    /// Tighter leading inset for the full-screen search overlay — omits the bar's
+    /// bottom padding so category tiles sit closer under the field.
+    static let searchOverlayContentTopInset: CGFloat = searchBarTopInset + searchBarControlHeight
 }
 
 private struct RootFloatingChromeInsetKey: EnvironmentKey {

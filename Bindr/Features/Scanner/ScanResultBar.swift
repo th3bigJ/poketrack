@@ -33,8 +33,8 @@ struct ScanResultBar: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            HStack(alignment: .center, spacing: 12) {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .top, spacing: 12) {
                 cardThumbnail
                 cardInfo
                 Spacer(minLength: 4)
@@ -43,7 +43,7 @@ struct ScanResultBar: View {
                     deleteCardButton
                 }
             }
-            .padding(.top, 12)
+            .padding(.top, 4)
             .padding(.horizontal, 16)
 
             HStack(spacing: 8) {
@@ -56,23 +56,17 @@ struct ScanResultBar: View {
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(.secondary)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.top, 12)
+            .padding(.horizontal, 16)
+
+            VStack(spacing: 8) {
+                ForEach(variants, id: \.self) { key in
+                    variantRow(key)
+                }
+            }
             .padding(.top, 10)
             .padding(.horizontal, 16)
-
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 8) {
-                    ForEach(variants, id: \.self) { key in
-                        variantRow(key)
-                    }
-                }
-                .padding(.bottom, 24)
-            }
-            .frame(maxHeight: 180)
-            .padding(.top, 8)
-            .padding(.horizontal, 16)
-
-            Spacer(minLength: 0)
+            .padding(.bottom, 4)
         }
         .onAppear {
             for key in variants where (selectedVariantQuantities[key] ?? 0) < 0 {
@@ -244,15 +238,12 @@ struct ScanResultBar: View {
                 .frame(minWidth: 68, alignment: .trailing)
             quantitySelector(for: key)
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 6)
-        .background {
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(isSelected ? accent.opacity(0.14) : Color.primary.opacity(0.045))
-        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .glassInsetStyle(cornerRadius: 12)
         .overlay(
             RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .strokeBorder(isSelected ? accent.opacity(0.45) : Color.primary.opacity(0.06), lineWidth: 1)
+                .strokeBorder(isSelected ? accent.opacity(0.45) : Color.clear, lineWidth: 1.5)
         )
     }
 

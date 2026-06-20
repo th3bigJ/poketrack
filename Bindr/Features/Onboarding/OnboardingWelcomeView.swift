@@ -62,7 +62,7 @@ struct OnboardingWelcomeView: View {
             )
             OnboardingFeatureRow(
                 icon: "scalemass",
-                title: "Local Trade Calculator",
+                title: "Local Trade",
                 description: "Compare card and cash values in person, then update your collection when the trade is done."
             )
             OnboardingFeatureRow(

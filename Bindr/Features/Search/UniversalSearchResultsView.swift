@@ -76,8 +76,6 @@ struct UniversalSearchResultsView: View {
             } else {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 24, pinnedViews: []) {
-                        Color.clear.frame(height: rootFloatingChromeInset)
-
                         if sourceScope == .allCards && !matchingSets.isEmpty {
                             sectionHeader("Sets")
                             VStack(spacing: 0) {
@@ -88,6 +86,7 @@ struct UniversalSearchResultsView: View {
                                                 .frame(width: 72, height: 36)
                                             VStack(alignment: .leading, spacing: 2) {
                                                 Text(set.set.name)
+                                                    .font(.subheadline.weight(.semibold))
                                                     .foregroundStyle(.primary)
                                                 Text(set.brand.displayTitle + " · " + set.set.setCode.uppercased())
                                                     .font(.caption)
@@ -99,14 +98,19 @@ struct UniversalSearchResultsView: View {
                                                 .foregroundStyle(.tertiary)
                                         }
                                         .padding(.vertical, 10)
-                                        .padding(.horizontal, 16)
                                         .contentShape(Rectangle())
                                     }
                                     .buttonStyle(.plain)
                                     .simultaneousGesture(TapGesture().onEnded(onCommitSearch))
-                                    Divider().padding(.leading, 16)
+                                    if set.id != matchingSets.last?.id {
+                                        Divider()
+                                            .overlay(sectionDividerColor)
+                                    }
                                 }
                             }
+                            .padding(16)
+                            .glassCardStyle(cornerRadius: 16, interactive: false)
+                            .padding(.horizontal, 16)
                         }
 
                         // MARK: Pokémon
@@ -127,11 +131,12 @@ struct UniversalSearchResultsView: View {
                                             ) { img in
                                                 img.resizable().scaledToFit()
                                             } placeholder: {
-                                                Color.gray.opacity(0.12)
+                                                Color.primary.opacity(0.06)
                                             }
                                             .frame(width: 44, height: 44)
                                             VStack(alignment: .leading, spacing: 2) {
                                                 Text(mon.displayName)
+                                                    .font(.subheadline.weight(.semibold))
                                                     .foregroundStyle(.primary)
                                                 Text("#\(mon.nationalDexNumber)")
                                                     .font(.caption)
@@ -143,14 +148,19 @@ struct UniversalSearchResultsView: View {
                                                 .foregroundStyle(.tertiary)
                                         }
                                         .padding(.vertical, 8)
-                                        .padding(.horizontal, 16)
                                         .contentShape(Rectangle())
                                     }
                                     .buttonStyle(.plain)
                                     .simultaneousGesture(TapGesture().onEnded(onCommitSearch))
-                                    Divider().padding(.leading, 16)
+                                    if mon.id != matchingPokemon.last?.id {
+                                        Divider()
+                                            .overlay(sectionDividerColor)
+                                    }
                                 }
                             }
+                            .padding(16)
+                            .glassCardStyle(cornerRadius: 16, interactive: false)
+                            .padding(.horizontal, 16)
                         }
 
                         // MARK: Cards
@@ -180,12 +190,13 @@ struct UniversalSearchResultsView: View {
                             .padding(.horizontal, 16)
                         }
                     }
-                    .padding(.vertical, 12)
+                    .padding(.bottom, 12)
                 }
+                .safeAreaPadding(.top, rootFloatingChromeInset)
                 .scrollDismissesKeyboard(.interactively)
             }
         }
-        .background(Color.clear)
+        .bindrPageBackground()
         .toolbarBackground(.hidden, for: .navigationBar)
         .task(id: query) {
             if liveTrimmed.isEmpty {
@@ -292,10 +303,14 @@ struct UniversalSearchResultsView: View {
         return brandCards.filter { ownedIDs.contains($0.masterCardId) }
     }
 
+    private var sectionDividerColor: Color {
+        colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
+    }
+
     private func sectionHeader(_ title: String) -> some View {
         Text(title)
-            .font(.footnote.weight(.semibold))
-            .foregroundStyle(.secondary)
+            .font(.title3.weight(.semibold))
+            .foregroundStyle(.primary)
             .padding(.horizontal, 16)
             .padding(.top, 4)
     }
@@ -303,8 +318,8 @@ struct UniversalSearchResultsView: View {
     private var cardsSectionHeader: some View {
         HStack(alignment: .firstTextBaseline, spacing: 12) {
             Text("Cards")
-                .font(.footnote.weight(.semibold))
-                .foregroundStyle(.secondary)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(.primary)
 
             Spacer()
 
@@ -317,7 +332,8 @@ struct UniversalSearchResultsView: View {
                             .controlSize(.small)
                     } else {
                         Text("View all")
-                            .font(.footnote.weight(.semibold))
+                            .font(.subheadline.weight(.medium))
+                            .bindrAccentForeground(services.theme.accentColor)
                     }
                 }
                 .buttonStyle(.plain)

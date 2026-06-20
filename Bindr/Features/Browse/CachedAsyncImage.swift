@@ -269,3 +269,63 @@ struct CachedCardThumbnailImage: View {
         }
     }
 }
+
+// MARK: - Export snapshot loading
+
+/// Loads card images for ``ImageRenderer`` exports. ``CachedAsyncImage`` loads
+/// asynchronously, so snapshots taken immediately would otherwise show placeholders.
+enum ExportImageLoader {
+    private static func cacheKey(url: URL, localURL: URL?, targetSize: CGSize?, scale: CGFloat) -> String {
+        let source = localURL?.path(percentEncoded: false) ?? url.absoluteString
+        let w = targetSize?.width ?? 0
+        let h = targetSize?.height ?? 0
+        return "\(source)|\(w)x\(h)|@\(scale)"
+    }
+
+    private static func decode(data: Data, targetSize: CGSize?, scale: CGFloat) -> UIImage? {
+        ThumbnailImageDecode.downsampled(data: data, targetSize: targetSize, scale: scale)
+    }
+
+    static func load(
+        url: URL,
+        targetSize: CGSize,
+        offlineContext: OfflineImageContext?
+    ) async -> UIImage? {
+        let scale = await MainActor.run { UIScreen.main.scale }
+        let localURL = offlineContext?.localURL(for: url)
+        let key = cacheKey(url: url, localURL: localURL, targetSize: targetSize, scale: scale)
+
+        if let cached = await DecodedImageMemoryCache.shared.image(for: key) {
+            return cached
+        }
+
+        var decoded: UIImage?
+
+        if let localURL, let data = try? Data(contentsOf: localURL) {
+            decoded = decode(data: data, targetSize: targetSize, scale: scale)
+        }
+
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+        if decoded == nil, let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
+            decoded = decode(data: cached.data, targetSize: targetSize, scale: scale)
+        }
+
+        if decoded == nil {
+            do {
+                let refreshRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+                let (data, response) = try await AppURLSession.images.data(for: refreshRequest)
+                let cachedResponse = CachedURLResponse(response: response, data: data)
+                if decode(data: data, targetSize: targetSize, scale: scale) != nil {
+                    AppURLSession.imageURLCache.storeCachedResponse(cachedResponse, for: request)
+                }
+                decoded = decode(data: data, targetSize: targetSize, scale: scale)
+            } catch { }
+        }
+
+        if let decoded {
+            await DecodedImageMemoryCache.shared.set(decoded, for: key)
+        }
+
+        return decoded
+    }
+}

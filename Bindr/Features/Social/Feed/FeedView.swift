@@ -666,15 +666,12 @@ private struct SocialAlertsPreviewView: View {
 
     private var filteredActivityItems: [GroupedFeedItem] {
         items.filter { group in
-            let typeMatch: Bool = {
-                switch group.primary.type {
-                case .vote, .comment, .friendship:
-                    return true
-                default:
-                    return !group.interactions.isEmpty
-                }
-            }()
-            guard typeMatch else { return false }
+            let alertGroup = SocialFeedService.AlertFeedGroup(
+                id: group.id,
+                primary: group.primary,
+                interactions: group.interactions
+            )
+            guard SocialFeedService.isAlertEligible(alertGroup) else { return false }
             if selectedTab == .new {
                 return !seenIDs.contains(group.primary.id)
             }

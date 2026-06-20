@@ -41,7 +41,7 @@ struct MoreView: View {
                                 destination: .transactions
                             )
                             MoreMenuRow(
-                                title: "Trade Calculator",
+                                title: "Local Trade",
                                 systemImage: "scalemass.fill",
                                 color: BindrPalette.binderGold,
                                 destination: .tradeCalculator
@@ -540,7 +540,7 @@ private struct MoreMenuRow: View {
     }
 }
 
-// MARK: - Trade Calculator
+// MARK: - Local Trade
 
 private struct TradeCalculatorView: View {
     private enum CashField: Hashable {
@@ -649,7 +649,7 @@ private struct TradeCalculatorView: View {
         }
         .listStyle(.insetGrouped)
         .scrollDismissesKeyboard(.interactively)
-        .navigationTitle("Trade Calculator")
+        .navigationTitle("Local Trade")
         .navigationBarTitleDisplayMode(.inline)
         .tint(.primary)
         .sheet(isPresented: $isMyCardPickerPresented) {
@@ -1085,7 +1085,7 @@ private struct TradeCalculatorView: View {
 
         guard hasAnyTradeValue else {
             activeAlert = .result(
-                title: "Trade Calculator",
+                title: "Local Trade",
                 message: "Add cards or cash before completing the trade."
             )
             return
@@ -1094,7 +1094,7 @@ private struct TradeCalculatorView: View {
         let ledger = services.collectionLedger
         if hasCardChanges, ledger == nil {
             activeAlert = .result(
-                title: "Trade Calculator",
+                title: "Local Trade",
                 message: "Collection isn't ready. Try again."
             )
             return
@@ -1177,7 +1177,7 @@ private struct TradeCalculatorView: View {
         } catch {
             completedTradeWishlistCandidates = []
             activeAlert = .result(
-                title: "Trade Calculator",
+                title: "Local Trade",
                 message: error.localizedDescription
             )
         }

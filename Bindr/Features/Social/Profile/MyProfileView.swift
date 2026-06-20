@@ -391,13 +391,8 @@ struct MyProfileView: View {
                     ForEach(groupedActivity) { group in
                         FeedItemView(
                             group: group,
-                            onPostEdited: { contentID, description, updatedAt in
-                                myActivity = services.socialFeed.applyingDescriptionUpdate(
-                                    to: myActivity,
-                                    contentID: contentID,
-                                    description: description,
-                                    updatedAt: updatedAt
-                                )
+                            onPostEdited: {
+                                Task { await reloadMyActivity() }
                             }
                         )
                     }
@@ -535,6 +530,10 @@ struct MyProfileView: View {
         fetchStats()
         myActivity = (try? await services.socialFeed.fetchActivityForUser(userID: profile.id, limit: 50)) ?? []
         acceptedFriendCount = try? await services.socialFriend.fetchAcceptedFriendCount(for: profile.id)
+    }
+
+    private func reloadMyActivity() async {
+        myActivity = (try? await services.socialFeed.fetchActivityForUser(userID: profile.id, limit: 50)) ?? []
     }
 
     // MARK: - Grouping Logic

@@ -72,6 +72,7 @@ enum SearchSourceScope: String, CaseIterable, Identifiable {
 
 struct SearchExperienceView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentCard) private var presentCard
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
@@ -95,7 +96,7 @@ struct SearchExperienceView: View {
             }
         )
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background(Color.clear)
+        .bindrPageBackground()
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
@@ -115,8 +116,6 @@ struct SearchExperienceView: View {
     private var idleContent: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                Color.clear.frame(height: rootFloatingChromeInset)
-
                 HStack(spacing: 10) {
                     ForEach(SearchIdleCategory.allCases) { category in
                         Button {
@@ -125,10 +124,8 @@ struct SearchExperienceView: View {
                         } label: {
                             VStack(spacing: 8) {
                                 Image(systemName: category.symbol)
-                                    .font(.system(size: 16, weight: .semibold))
-                                    .foregroundStyle(.primary)
-                                    .frame(width: 32, height: 32)
-                                    .background(Color.primary.opacity(0.06), in: Circle())
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundStyle(categoryIconColor(category))
                                 Text(category.title)
                                     .font(.caption.weight(.semibold))
                                     .foregroundStyle(.primary)
@@ -136,9 +133,9 @@ struct SearchExperienceView: View {
                                     .minimumScaleFactor(0.85)
                             }
                             .frame(maxWidth: .infinity)
-                            .padding(.vertical, 12)
+                            .padding(.vertical, 14)
                             .padding(.horizontal, 6)
-                            .clearGlassCardStyle(cornerRadius: 14, interactive: true)
+                            .glassCardStyle(cornerRadius: 16, interactive: true)
                             .contentShape(Rectangle())
                         }
                         .buttonStyle(.plain)
@@ -156,24 +153,37 @@ struct SearchExperienceView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.top, 12)
             .padding(.bottom, 28)
         }
-        .background(Color.clear)
+        .safeAreaPadding(.top, rootFloatingChromeInset)
         .scrollDismissesKeyboard(.interactively)
     }
 
+    private var sectionDividerColor: Color {
+        colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
+    }
+
+    private func categoryIconColor(_ category: SearchIdleCategory) -> Color {
+        switch category {
+        case .cards: return SearchPalette.blue
+        case .sets: return SearchPalette.purple
+        case .pokemon: return SearchPalette.gold
+        case .sealed: return SearchPalette.success
+        }
+    }
+
     private var recentSearchesSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 14) {
             HStack {
-                Text("Recent searches")
-                    .font(.headline)
+                Text("Recent Searches")
+                    .font(.title3.weight(.semibold))
                 Spacer()
                 Button("Clear") {
                     recentSearches = []
                     UserDefaults.standard.set([], forKey: SearchHistoryStore.recentSearchesKey)
                 }
-                .font(.caption.weight(.semibold))
+                .font(.subheadline.weight(.medium))
+                .bindrAccentForeground(services.theme.accentColor)
                 .buttonStyle(.plain)
             }
 
@@ -185,12 +195,14 @@ struct SearchExperienceView: View {
                             SearchHistoryStore.addSearch(recent)
                         } label: {
                             HStack(spacing: 10) {
-                            Image(systemName: "clock.arrow.circlepath")
-                                .foregroundStyle(.secondary)
-                            Text(recent)
-                                .foregroundStyle(.primary)
-                                .lineLimit(1)
-                            Spacer()
+                                Image(systemName: "clock.arrow.circlepath")
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                Text(recent)
+                                    .font(.subheadline)
+                                    .foregroundStyle(.primary)
+                                    .lineLimit(1)
+                                Spacer()
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .contentShape(Rectangle())
@@ -210,21 +222,22 @@ struct SearchExperienceView: View {
                         .buttonStyle(.plain)
                         .accessibilityLabel("Remove \(recent)")
                     }
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 10)
                     if recent != recentSearches.last {
-                        Divider().padding(.leading, 44)
+                        Divider()
+                            .overlay(sectionDividerColor)
                     }
                 }
             }
-            .background(Color.primary.opacity(0.045), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
         }
+        .padding(16)
+        .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
     private var recentlyViewedSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Recently viewed")
-                .font(.headline)
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Recently Viewed")
+                .font(.title3.weight(.semibold))
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
@@ -257,14 +270,17 @@ struct SearchExperienceView: View {
                         .buttonStyle(.plain)
                     }
                 }
+                .padding(.vertical, 2)
             }
         }
+        .padding(16)
+        .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
     private var exploreSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Explore recent sets")
-                .font(.headline)
+        VStack(alignment: .leading, spacing: 14) {
+            Text("Explore Recent Sets")
+                .font(.title3.weight(.semibold))
 
             VStack(spacing: 0) {
                 ForEach(recentSets) { set in
@@ -302,10 +318,13 @@ struct SearchExperienceView: View {
                     .buttonStyle(.plain)
                     if set.id != recentSets.last?.id {
                         Divider()
+                            .overlay(sectionDividerColor)
                     }
                 }
             }
         }
+        .padding(16)
+        .glassCardStyle(cornerRadius: 16, interactive: false)
     }
 
     @MainActor
@@ -318,4 +337,11 @@ struct SearchExperienceView: View {
         }
         recentlyViewedCards = cards
     }
+}
+
+private enum SearchPalette {
+    static let purple = Color(red: 0.58, green: 0.33, blue: 1.0)
+    static let blue = Color(red: 0.24, green: 0.58, blue: 1.0)
+    static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
+    static let gold = Color(red: 0.99, green: 0.72, blue: 0.22)
 }

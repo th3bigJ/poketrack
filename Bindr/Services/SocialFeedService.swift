@@ -350,6 +350,7 @@ final class SocialFeedService {
         } catch {
             // Keep the existing feed; pull-to-refresh remains available.
         }
+        await refreshUnreadCounts()
     }
 
     /// Background poll for unread alerts without full state refresh
@@ -357,7 +358,48 @@ final class SocialFeedService {
         guard authService.isSignedIn else { return }
         guard let alerts = try? await fetchUserActivity(limit: 20) else { return }
         let seen = seenIDs(for: .alerts)
-        unreadAlertsCount = alerts.filter { !seen.contains($0.id) }.count
+        let grouped = groupItemsForAlerts(alerts)
+        unreadAlertsCount = grouped.filter { group in
+            Self.isAlertEligible(group) && !seen.contains(group.primary.id)
+        }.count
+    }
+
+    /// Groups raw alert activity the same way ``SocialAlertsSheet`` does so the
+    /// bell badge count matches what the alerts sheet can actually display.
+    func groupItemsForAlerts(_ items: [FeedItem]) -> [AlertFeedGroup] {
+        var groups: [AlertFeedGroup] = []
+        var contentIndex: [UUID: Int] = [:]
+        for item in items {
+            switch item.type {
+            case .vote, .comment:
+                if let contentID = item.content?.id, let idx = contentIndex[contentID] {
+                    groups[idx].interactions.append(item)
+                    continue
+                }
+                groups.append(AlertFeedGroup(id: item.id, primary: item, interactions: []))
+            default:
+                let idx = groups.count
+                groups.append(AlertFeedGroup(id: item.id, primary: item, interactions: []))
+                if let contentID = item.content?.id { contentIndex[contentID] = idx }
+            }
+        }
+        return groups
+    }
+
+    /// Whether a grouped alert row should appear in the bell badge / alerts sheet.
+    static func isAlertEligible(_ group: AlertFeedGroup) -> Bool {
+        switch group.primary.type {
+        case .vote, .comment, .friendship, .wishlistMatch:
+            return true
+        default:
+            return !group.interactions.isEmpty
+        }
+    }
+
+    struct AlertFeedGroup: Identifiable {
+        let id: String
+        let primary: FeedItem
+        var interactions: [FeedItem]
     }
 
     func fetchFeed(refresh: Bool = true, pageSize: Int = 20, scope: FeedScope? = nil) async throws -> [FeedItem] {
@@ -755,65 +797,71 @@ final class SocialFeedService {
         let friendIDs = Set(friends?.map(\.id) ?? [])
         
         var merged: [FeedItem] = []
-        let sharedRows = try await fetchSharedContentRows(before: before, limit: limit, scope: scope)
-        merged.append(contentsOf: sharedRows.compactMap { row in
-            guard let timestamp = row.publishedAt else { return nil }
-            
-            switch scope {
-            case .following:
-                guard friendIDs.contains(row.ownerID) else { return nil }
-            case .everyone, .alerts:
-                break
-            case .mine:
-                guard row.ownerID == currentUserID else { return nil }
-            }
-            
-            guard !blockedUserIDs.contains(row.ownerID) else { return nil }
-            let content = FeedContentSummary(
-                id: row.id,
-                ownerID: row.ownerID,
-                title: row.title,
-                contentType: row.contentType,
-                description: row.description,
-                cardCount: row.cardCount,
-                brand: row.brand,
-                updatedAt: row.updatedAt
-            )
-            let type: FeedItemType = {
-                switch row.contentType {
-                case .pull: return .pull
-                case .dailyDigest: return .dailyDigest
-                default: return .sharedContent
+        // Alerts are driven by interaction rows (votes, comments, friendships,
+        // wishlist matches). Bare shared-content posts — including ones the
+        // current user just published — are excluded here; counting them in
+        // `refreshUnreadCounts` caused a bell badge with nothing in the sheet.
+        if scope != .alerts {
+            let sharedRows = try await fetchSharedContentRows(before: before, limit: limit, scope: scope)
+            merged.append(contentsOf: sharedRows.compactMap { row in
+                guard let timestamp = row.publishedAt else { return nil }
+                
+                switch scope {
+                case .following:
+                    guard friendIDs.contains(row.ownerID) else { return nil }
+                case .everyone, .alerts:
+                    break
+                case .mine:
+                    guard row.ownerID == currentUserID else { return nil }
                 }
-            }()
+                
+                guard !blockedUserIDs.contains(row.ownerID) else { return nil }
+                let content = FeedContentSummary(
+                    id: row.id,
+                    ownerID: row.ownerID,
+                    title: row.title,
+                    contentType: row.contentType,
+                    description: row.description,
+                    cardCount: row.cardCount,
+                    brand: row.brand,
+                    updatedAt: row.updatedAt
+                )
+                let type: FeedItemType = {
+                    switch row.contentType {
+                    case .pull: return .pull
+                    case .dailyDigest: return .dailyDigest
+                    default: return .sharedContent
+                    }
+                }()
 
-            // See `thumbnailsFromPayload` — inlining this chain alongside the
-            // other ~15 `FeedItem(...)` arguments times out the type checker.
-            let thumbnails = Self.thumbnailsFromPayload(row.payload, includeThumbnailsKey: true)
+                // See `thumbnailsFromPayload` — inlining this chain alongside the
+                // other ~15 `FeedItem(...)` arguments times out the type checker.
+                let thumbnails = Self.thumbnailsFromPayload(row.payload, includeThumbnailsKey: true)
 
-            return FeedItem(
-                id: "shared-\(row.id.uuidString)",
-                type: type,
-                createdAt: timestamp,
-                actor: row.actor,
-                content: content,
-                voteType: nil,
-                commentBody: nil,
-                friendshipID: nil,
-                wishlistCardID: nil,
-                pullCardID: row.payload?["card_id"]?.stringValue,
-                pullCardName: row.payload?["card_name"]?.stringValue,
-                pullSetName: row.payload?["set_name"]?.stringValue,
-                pullValue: row.payload?["card_value"]?.doubleValue,
-                pullRarity: row.payload?["rarity"]?.stringValue,
-                digestCollectionCount: row.payload?["collection_count"]?.intValue,
-                digestWishlistCount: row.payload?["wishlist_count"]?.intValue,
-                thumbnails: thumbnails,
-                binderColour: row.payload?["colour"]?.stringValue,
-                binderTexture: row.payload?["texture"]?.stringValue,
-                binderSeed: row.payload?["seed"]?.intValue
-            )
-        })
+                return FeedItem(
+                    id: "shared-\(row.id.uuidString)",
+                    type: type,
+                    createdAt: timestamp,
+                    actor: row.actor,
+                    content: content,
+                    voteType: nil,
+                    commentBody: nil,
+                    friendshipID: nil,
+                    wishlistCardID: nil,
+                    pullCardID: row.payload?["card_id"]?.stringValue,
+                    pullCardName: row.payload?["card_name"]?.stringValue,
+                    pullSetName: row.payload?["set_name"]?.stringValue,
+                    pullValue: row.payload?["card_value"]?.doubleValue,
+                    pullRarity: row.payload?["rarity"]?.stringValue,
+                    digestCollectionCount: row.payload?["collection_count"]?.intValue,
+                    digestWishlistCount: row.payload?["wishlist_count"]?.intValue,
+                    thumbnails: thumbnails,
+                    binderColour: row.payload?["colour"]?.stringValue,
+                    binderTexture: row.payload?["texture"]?.stringValue,
+                    binderSeed: row.payload?["seed"]?.intValue
+                )
+            })
+        }
 
         guard includeActivityRows else {
             merged.sort { $0.createdAt > $1.createdAt }

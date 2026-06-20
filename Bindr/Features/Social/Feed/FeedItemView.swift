@@ -13,7 +13,7 @@ struct FeedItemView: View {
     let group: GroupedFeedItem
     var showsInteractionBar: Bool = true
     var isCardTapEnabled: Bool = true
-    var onPostEdited: ((UUID, String, Date?) -> Void)? = nil
+    var onPostEdited: (() -> Void)? = nil
 
     private var item: SocialFeedService.FeedItem { group.primary }
 
@@ -25,13 +25,13 @@ struct FeedItemView: View {
 
     @State private var showDeleteAlert = false
     @State private var showEditSheet = false
-    @State private var editDescription = ""
     @State private var isProcessing = false
-    @State private var editErrorMessage: String?
-    @State private var showEditErrorAlert = false
 
     private var canEditPost: Bool {
-        isMyItem && item.content != nil && item.type != .friendship
+        isMyItem
+            && item.content != nil
+            && item.type != .friendship
+            && item.type != .dailyDigest
     }
 
     private var canOpenComments: Bool {
@@ -216,61 +216,18 @@ struct FeedItemView: View {
             Text("This will permanently remove this post from the feed.")
         }
         .sheet(isPresented: $showEditSheet) {
-            NavigationStack {
-                Form {
-                    Section("Caption") {
-                        TextField("What's on your mind?", text: $editDescription, axis: .vertical)
-                            .lineLimit(3...10)
+            if let contentID = item.content?.id {
+                SocialShareSheet(
+                    item: .card,
+                    editingContentID: contentID,
+                    onPostSaved: {
+                        onPostEdited?()
+                        Haptics.success()
                     }
-                }
-                .navigationTitle("Edit Post")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button("Cancel") { showEditSheet = false }
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Save") {
-                            saveEditedPost()
-                        }
-                        .bold()
-                        .disabled(isProcessing)
-                    }
-                }
-            }
-            .presentationDetents([.medium])
-        }
-        .alert("Couldn't Save Post", isPresented: $showEditErrorAlert) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text(editErrorMessage ?? "Something went wrong while saving your changes.")
-        }
-    }
-
-    private func saveEditedPost() {
-        guard let contentID = item.content?.id else { return }
-        guard !isProcessing else { return }
-        isProcessing = true
-        let capturedDescription = editDescription
-        Task {
-            do {
-                let result = try await services.socialFeed.updateSharedContent(
-                    id: contentID,
-                    description: capturedDescription
                 )
-                await MainActor.run {
-                    onPostEdited?(contentID, result.description, result.updatedAt)
-                    isProcessing = false
-                    showEditSheet = false
-                    Haptics.success()
-                }
-            } catch {
-                await MainActor.run {
-                    editErrorMessage = error.localizedDescription
-                    showEditErrorAlert = true
-                    isProcessing = false
-                    Haptics.error()
-                }
+                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.hidden)
             }
         }
     }
@@ -278,7 +235,6 @@ struct FeedItemView: View {
     private var postMenuButton: some View {
         Menu {
             Button {
-                editDescription = item.content?.description ?? ""
                 showEditSheet = true
             } label: {
                 Label("Edit Post", systemImage: "pencil")

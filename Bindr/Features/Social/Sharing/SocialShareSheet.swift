@@ -318,6 +318,8 @@ struct SocialShareSheet: View {
     @Environment(\.colorScheme) private var colorScheme
 
     let item: SocialShareItem
+    let editingContentID: UUID?
+    var onPostSaved: (() -> Void)? = nil
 
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse)      private var wishlistItems: [WishlistItem]
@@ -339,9 +341,16 @@ struct SocialShareSheet: View {
     @State private var errorMessage: String? = nil
     @State private var showPaywall = false
     @State private var showCardPicker = false
+    @State private var editingContent: SharedContent?
+    @State private var isLoadingEditContent = false
+    @State private var fallbackCardInputs: [SocialShareService.PostCardInput] = []
 
-    init(item: SocialShareItem) {
+    private var isEditing: Bool { editingContentID != nil }
+
+    init(item: SocialShareItem, editingContentID: UUID? = nil, onPostSaved: (() -> Void)? = nil) {
         self.item = item
+        self.editingContentID = editingContentID
+        self.onPostSaved = onPostSaved
         switch item {
         case .binder(let b):
             _selectedTag    = State(initialValue: .binder)
@@ -403,7 +412,8 @@ struct SocialShareSheet: View {
         switch selectedTag {
         case .pull, .showcase, .bought, .trade:
             if preselectedCard != nil || preselectedSealedProduct != nil { return true }
-            return !selectedCollectionItems.isEmpty
+            if !selectedCollectionItems.isEmpty { return true }
+            return !fallbackCardInputs.isEmpty
         case .want:
             if let card = preselectedCard,
                wishlistItems.contains(where: { $0.cardID == card.masterCardId }) {
@@ -415,7 +425,8 @@ struct SocialShareSheet: View {
                }) {
                 return true
             }
-            return !selectedWishlistItems.isEmpty
+            if !selectedWishlistItems.isEmpty { return true }
+            return !fallbackCardInputs.isEmpty
         case .binder:                return selectedBinder != nil
         case .deck:                  return selectedDeck != nil
         }
@@ -553,6 +564,7 @@ struct SocialShareSheet: View {
                 source: selectedTag == .want ? .wishlist : .collection,
                 initialSelectedCardIDs: selectedCardPickerInitialIDs,
                 onConfirm: { selectedCardIDs in
+                    fallbackCardInputs = []
                     if selectedTag == .want {
                         selectedWishlistItems = selectedCardIDs.compactMap { selectedCardID in
                             wishlistItems.first { $0.cardID == selectedCardID }
@@ -571,7 +583,11 @@ struct SocialShareSheet: View {
         }
         .task {
             await loadCards()
-            applyPreselectedSelection()
+            if let editingContentID {
+                await loadEditingContent(id: editingContentID)
+            } else {
+                applyPreselectedSelection()
+            }
         }
         .task(id: binderValuePreferenceTaskID) {
             await loadBinderValuePreference()
@@ -586,6 +602,14 @@ struct SocialShareSheet: View {
         }
         .onChange(of: selectedTag) { _, _ in
             errorMessage = nil
+            guard !isLoadingEditContent else { return }
+            if isEditing {
+                fallbackCardInputs = []
+                selectedCollectionItems = []
+                selectedWishlistItems = []
+                selectedBinder = nil
+                selectedDeck = nil
+            }
             applyPreselectedSelection()
         }
     }
@@ -605,7 +629,7 @@ struct SocialShareSheet: View {
 
     private var header: some View {
         ZStack {
-            Text("New Post")
+            Text(isEditing ? "Edit Post" : "New Post")
                 .font(.system(size: 17, weight: .semibold))
                 .foregroundStyle(.primary)
 
@@ -625,13 +649,13 @@ struct SocialShareSheet: View {
                 Spacer()
 
                 Button { Task { await post() } } label: {
-                    if isBusy {
+                    if isBusy || isLoadingEditContent {
                         ProgressView()
                             .scaleEffect(0.8)
                             .frame(width: 60, height: 44)
                             .modifier(GlassCapsuleModifier())
                     } else {
-                        Text("Post")
+                        Text(isEditing ? "Save" : "Post")
                             .font(.system(size: 15, weight: .semibold))
                             .foregroundStyle(headerButtonColor)
                             .frame(height: 44)
@@ -643,7 +667,7 @@ struct SocialShareSheet: View {
                 .buttonStyle(.plain)
                 .frame(height: 48)
                 .contentShape(Rectangle())
-                .disabled(!canPost || isBusy)
+                .disabled(!canPost || isBusy || isLoadingEditContent)
             }
         }
         .padding(.horizontal, 16)
@@ -697,18 +721,20 @@ struct SocialShareSheet: View {
 
     private var selectedCardPickerInitialIDs: Set<String> {
         if selectedTag == .want {
-            return Set(selectedWishlistItems.map(\.cardID))
+            let ids = selectedWishlistItems.map(\.cardID)
+            return ids.isEmpty ? Set(fallbackCardInputs.map(\.cardID)) : Set(ids)
         }
-        return Set(selectedCollectionItems.map(\.cardID))
+        let ids = selectedCollectionItems.map(\.cardID)
+        return ids.isEmpty ? Set(fallbackCardInputs.map(\.cardID)) : Set(ids)
     }
 
     private var selectedCardPickerRow: some View {
         let selectedItemsCount = selectedTag == .want
-            ? selectedWishlistItems.count
-            : selectedCollectionItems.count
+            ? (selectedWishlistItems.isEmpty ? fallbackCardInputs.count : selectedWishlistItems.count)
+            : (selectedCollectionItems.isEmpty ? fallbackCardInputs.count : selectedCollectionItems.count)
         let selectedID = selectedTag == .want
-            ? selectedWishlistItems.first?.cardID
-            : selectedCollectionItems.first?.cardID
+            ? (selectedWishlistItems.first?.cardID ?? fallbackCardInputs.first?.cardID)
+            : (selectedCollectionItems.first?.cardID ?? fallbackCardInputs.first?.cardID)
         let card = selectedID.flatMap { cardsByID[$0] }
         return Button {
             showCardPicker = true
@@ -734,7 +760,7 @@ struct SocialShareSheet: View {
                 }
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(selectedItemsCount > 1 ? "\(selectedItemsCount) cards selected" : card?.cardName ?? "Add Card")
+                    Text(selectedItemsCount > 1 ? "\(selectedItemsCount) cards selected" : card?.cardName ?? fallbackCardInputs.first?.cardName ?? "Add Card")
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundStyle(.primary)
                         .lineLimit(2)
@@ -768,13 +794,15 @@ struct SocialShareSheet: View {
     }
 
     private var selectedCardSubtitle: String {
-        let count = selectedTag == .want ? selectedWishlistItems.count : selectedCollectionItems.count
+        let count = selectedTag == .want
+            ? (selectedWishlistItems.isEmpty ? fallbackCardInputs.count : selectedWishlistItems.count)
+            : (selectedCollectionItems.isEmpty ? fallbackCardInputs.count : selectedCollectionItems.count)
         if count > 1 {
             return selectedTag == .want ? "From your wishlist" : "From your collection"
         }
         let variant = selectedTag == .want
-            ? selectedWishlistItems.first?.variantKey
-            : selectedCollectionItems.first?.variantKey
+            ? (selectedWishlistItems.first?.variantKey ?? fallbackCardInputs.first?.variantKey)
+            : (selectedCollectionItems.first?.variantKey ?? fallbackCardInputs.first?.variantKey)
         guard let variant, variant != "normal" else {
             return selectedTag == .want ? "Wishlist" : "Collection"
         }
@@ -1118,86 +1146,318 @@ struct SocialShareSheet: View {
         errorMessage = nil
         defer { isBusy = false }
         do {
-            switch selectedTag {
-            case .pull, .showcase, .bought, .trade:
-                let cards: [SocialShareService.PostCardInput]
-                if !selectedCollectionItems.isEmpty {
-                    cards = selectedCollectionItems.map { item in
-                        SocialShareService.PostCardInput(
-                            cardID: item.cardID,
-                            variantKey: item.variantKey,
-                            cardName: cardsByID[item.cardID]?.cardName ?? item.cardID,
-                            setName: setNamesByID[item.cardID] ?? setCodesByID[item.cardID]
-                        )
-                    }
-                } else if let card = preselectedCard {
-                    cards = [
-                        SocialShareService.PostCardInput(
-                            cardID: card.masterCardId,
-                            variantKey: resolvedVariantKey(for: card),
-                            cardName: card.cardName,
-                            setName: setNamesByID[card.masterCardId] ?? card.setCode
-                        )
-                    ]
-                } else if let product = preselectedSealedProduct {
-                    cards = [
-                        SocialShareService.PostCardInput(
-                            cardID: product.collectionCardID,
-                            variantKey: sealedVariantKey,
-                            cardName: product.name,
-                            setName: product.setName
-                        )
-                    ]
-                } else {
-                    return
-                }
-                let taggedMessage = tagPrefix + (postText.isEmpty ? "" : " \(postText)")
-                _ = try await services.socialShare.publishPull(
-                    cards: cards,
-                    message: taggedMessage,
-                    visibility: visibility
-                )
-            case .want:
-                guard !selectedWishlistItems.isEmpty else { return }
-                let cards = selectedWishlistItems.map { item in
-                    SocialShareService.PostCardInput(
-                        cardID: item.cardID,
-                        variantKey: item.variantKey,
-                        cardName: cardsByID[item.cardID]?.cardName
-                            ?? (preselectedSealedProduct?.collectionCardID == item.cardID
-                                ? preselectedSealedProduct?.name
-                                : nil)
-                            ?? item.cardID,
-                        setName: setNamesByID[item.cardID] ?? setCodesByID[item.cardID]
-                    )
-                }
-                _ = try await services.socialShare.publishWant(
-                    cards: cards,
-                    message: postText,
-                    visibility: visibility
-                )
-            case .binder:
-                guard let binder = selectedBinder else { return }
-                _ = try await services.socialShare.publishBinderPost(
-                    binder,
-                    title: binder.title,
-                    description: postText,
-                    visibility: visibility,
-                    includeValue: includeBinderValues
-                )
-            case .deck:
-                guard let deck = selectedDeck else { return }
-                _ = try await services.socialShare.publishDeckPost(
-                    deck, title: deck.title, description: postText, visibility: visibility, includeValue: false
-                )
+            if let editingContentID, let existing = editingContent {
+                try await saveEditedPost(id: editingContentID, existing: existing)
+            } else {
+                try await createNewPost()
             }
             await services.socialFeed.refreshAfterContentPublished()
+            onPostSaved?()
             dismiss()
         } catch {
             if case SocialShareService.SocialShareError.freeTierLimitReached = error { showPaywall = true }
             else if case SocialShareService.SocialShareError.deckSharingRequiresPremium = error { showPaywall = true }
             errorMessage = error.localizedDescription
         }
+    }
+
+    private func createNewPost() async throws {
+        switch selectedTag {
+        case .pull, .showcase, .bought, .trade:
+            let cards = try resolvedPullCardInputs()
+            let taggedMessage = tagPrefix + (postText.isEmpty ? "" : " \(postText)")
+            _ = try await services.socialShare.publishPull(
+                cards: cards,
+                message: taggedMessage,
+                visibility: visibility
+            )
+        case .want:
+            let cards = try resolvedWantCardInputs()
+            _ = try await services.socialShare.publishWant(
+                cards: cards,
+                message: postText,
+                visibility: visibility
+            )
+        case .binder:
+            guard let binder = selectedBinder else { return }
+            _ = try await services.socialShare.publishBinderPost(
+                binder,
+                title: binder.title,
+                description: postText,
+                visibility: visibility,
+                includeValue: includeBinderValues
+            )
+        case .deck:
+            guard let deck = selectedDeck else { return }
+            _ = try await services.socialShare.publishDeckPost(
+                deck, title: deck.title, description: postText, visibility: visibility, includeValue: false
+            )
+        }
+    }
+
+    private func saveEditedPost(id: UUID, existing: SharedContent) async throws {
+        switch selectedTag {
+        case .pull, .showcase, .bought, .trade:
+            let cards = try resolvedPullCardInputs()
+            let taggedMessage = tagPrefix + (postText.isEmpty ? "" : " \(postText)")
+            editingContent = try await services.socialShare.updatePullPost(
+                id: id,
+                existing: existing,
+                cards: cards,
+                message: taggedMessage,
+                visibility: visibility
+            )
+        case .want:
+            let cards = try resolvedWantCardInputs()
+            editingContent = try await services.socialShare.updateWantPost(
+                id: id,
+                existing: existing,
+                cards: cards,
+                message: postText,
+                visibility: visibility
+            )
+        case .binder:
+            guard let binder = selectedBinder else { return }
+            editingContent = try await services.socialShare.updateBinderPost(
+                id: id,
+                existing: existing,
+                binder: binder,
+                title: binder.title,
+                description: postText,
+                visibility: visibility,
+                includeValue: includeBinderValues
+            )
+        case .deck:
+            guard let deck = selectedDeck else { return }
+            editingContent = try await services.socialShare.updateDeckPost(
+                id: id,
+                existing: existing,
+                deck: deck,
+                title: deck.title,
+                description: postText,
+                visibility: visibility,
+                includeValue: false
+            )
+        }
+    }
+
+    private func resolvedPullCardInputs() throws -> [SocialShareService.PostCardInput] {
+        if !selectedCollectionItems.isEmpty {
+            return selectedCollectionItems.map { item in
+                SocialShareService.PostCardInput(
+                    cardID: item.cardID,
+                    variantKey: item.variantKey,
+                    cardName: cardsByID[item.cardID]?.cardName ?? item.cardID,
+                    setName: setNamesByID[item.cardID] ?? setCodesByID[item.cardID]
+                )
+            }
+        }
+        if let card = preselectedCard {
+            return [
+                SocialShareService.PostCardInput(
+                    cardID: card.masterCardId,
+                    variantKey: resolvedVariantKey(for: card),
+                    cardName: card.cardName,
+                    setName: setNamesByID[card.masterCardId] ?? card.setCode
+                )
+            ]
+        }
+        if let product = preselectedSealedProduct {
+            return [
+                SocialShareService.PostCardInput(
+                    cardID: product.collectionCardID,
+                    variantKey: sealedVariantKey,
+                    cardName: product.name,
+                    setName: product.setName
+                )
+            ]
+        }
+        if !fallbackCardInputs.isEmpty {
+            return fallbackCardInputs
+        }
+        throw SocialShareService.SocialShareError.invalidResponse
+    }
+
+    private func resolvedWantCardInputs() throws -> [SocialShareService.PostCardInput] {
+        if !selectedWishlistItems.isEmpty {
+            return selectedWishlistItems.map { item in
+                SocialShareService.PostCardInput(
+                    cardID: item.cardID,
+                    variantKey: item.variantKey,
+                    cardName: cardsByID[item.cardID]?.cardName
+                        ?? (preselectedSealedProduct?.collectionCardID == item.cardID
+                            ? preselectedSealedProduct?.name
+                            : nil)
+                        ?? item.cardID,
+                    setName: setNamesByID[item.cardID] ?? setCodesByID[item.cardID]
+                )
+            }
+        }
+        if !fallbackCardInputs.isEmpty {
+            return fallbackCardInputs
+        }
+        throw SocialShareService.SocialShareError.invalidResponse
+    }
+
+    private func loadEditingContent(id: UUID) async {
+        isLoadingEditContent = true
+        defer { isLoadingEditContent = false }
+        do {
+            guard let content = try await services.socialShare.fetchSharedContent(id: id) else {
+                errorMessage = "Couldn't load this post."
+                return
+            }
+            editingContent = content
+            populateFromExisting(content)
+            await loadCards()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func populateFromExisting(_ content: SharedContent) {
+        visibility = content.visibility
+        includeBinderValues = content.includeValue
+        fallbackCardInputs = []
+        selectedCollectionItems = []
+        selectedWishlistItems = []
+        selectedBinder = nil
+        selectedDeck = nil
+
+        switch content.contentType {
+        case .pull:
+            selectedTag = parsePullTag(from: content.description)
+            postText = strippedMessage(from: content.description, tag: selectedTag)
+            let selections = Self.cardSelections(from: content.payload)
+            selectedCollectionItems = selections.compactMap { cardID, variantKey in
+                singleCards.first { $0.cardID == cardID && $0.variantKey == variantKey }
+            }
+            fallbackCardInputs = selections.compactMap { cardID, variantKey in
+                if singleCards.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey }) {
+                    return nil
+                }
+                return SocialShareService.PostCardInput(
+                    cardID: cardID,
+                    variantKey: variantKey,
+                    cardName: content.payload["card_name"]?.stringValue ?? cardID,
+                    setName: content.payload["set_name"]?.stringValue
+                )
+            }
+        case .wishlist:
+            selectedTag = .want
+            postText = content.description ?? ""
+            let selections = Self.cardSelections(from: content.payload)
+            selectedWishlistItems = selections.compactMap { cardID, variantKey in
+                wishlistItems.first { $0.cardID == cardID && $0.variantKey == variantKey }
+            }
+            fallbackCardInputs = selections.compactMap { cardID, variantKey in
+                if wishlistItems.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey }) {
+                    return nil
+                }
+                return SocialShareService.PostCardInput(
+                    cardID: cardID,
+                    variantKey: variantKey,
+                    cardName: content.payload["card_name"]?.stringValue ?? cardID,
+                    setName: content.payload["set_name"]?.stringValue
+                )
+            }
+        case .binder:
+            selectedTag = .binder
+            postText = content.description ?? ""
+            if let binderID = Self.binderID(from: content.payload) {
+                selectedBinder = binders.first { $0.id == binderID }
+            }
+        case .deck:
+            selectedTag = .deck
+            postText = content.description ?? ""
+            if let deckID = Self.deckID(from: content.payload) {
+                selectedDeck = decks.first { $0.id == deckID }
+            }
+        case .collection, .dailyDigest, .folder:
+            break
+        }
+    }
+
+    private func parsePullTag(from description: String?) -> PostTag {
+        guard let description = description?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+            return .pull
+        }
+        if description.hasPrefix("#bought") { return .bought }
+        if description.hasPrefix("#trade") { return .trade }
+        return .pull
+    }
+
+    private func strippedMessage(from description: String?, tag: PostTag) -> String {
+        guard var text = description?.trimmingCharacters(in: .whitespacesAndNewlines) else { return "" }
+        let prefix: String
+        switch tag {
+        case .bought: prefix = "#bought"
+        case .trade: prefix = "#trade"
+        default: prefix = ""
+        }
+        guard !prefix.isEmpty, text.hasPrefix(prefix) else { return text }
+        text = String(text.dropFirst(prefix.count)).trimmingCharacters(in: .whitespacesAndNewlines)
+        return text
+    }
+
+    private static func cardSelections(from payload: [String: JSONValue]) -> [(cardID: String, variantKey: String)] {
+        if let items = payload["items"]?.arrayValue {
+            let parsed = items.compactMap { item -> (String, String)? in
+                guard case .object(let object) = item else { return nil }
+                let cardID = object["cardID"]?.stringValue ?? object["card_id"]?.stringValue
+                let variantKey = object["variantKey"]?.stringValue ?? object["variant_key"]?.stringValue
+                guard let cardID, let variantKey else { return nil }
+                return (cardID, variantKey)
+            }
+            if !parsed.isEmpty { return parsed }
+        }
+        if let cardID = payload["card_id"]?.stringValue,
+           let variantKey = payload["variant_key"]?.stringValue {
+            return [(cardID, variantKey)]
+        }
+        return []
+    }
+
+    private static func binderID(from payload: [String: JSONValue]) -> UUID? {
+        if let raw = payload["binder_id"]?.stringValue, let id = UUID(uuidString: raw) {
+            return id
+        }
+        if let localID = payload["local_content_id"]?.stringValue {
+            if localID.hasPrefix("binder-"),
+               let id = uuidFromPrefixedLocalContentID(localID, prefix: "binder-") {
+                return id
+            }
+            if let id = UUID(uuidString: localID) {
+                return id
+            }
+        }
+        return nil
+    }
+
+    private static func deckID(from payload: [String: JSONValue]) -> UUID? {
+        if let raw = payload["deck_id"]?.stringValue, let id = UUID(uuidString: raw) {
+            return id
+        }
+        if let localID = payload["local_content_id"]?.stringValue {
+            if localID.hasPrefix("deck-"),
+               let id = uuidFromPrefixedLocalContentID(localID, prefix: "deck-") {
+                return id
+            }
+            if let id = UUID(uuidString: localID) {
+                return id
+            }
+        }
+        return nil
+    }
+
+    private static func uuidFromPrefixedLocalContentID(_ localID: String, prefix: String) -> UUID? {
+        guard localID.hasPrefix(prefix) else { return nil }
+        let remainder = String(localID.dropFirst(prefix.count))
+        guard let lastDash = remainder.lastIndex(of: "-") else {
+            return UUID(uuidString: remainder)
+        }
+        let uuidPart = String(remainder[..<lastDash])
+        return UUID(uuidString: uuidPart)
     }
 
     private var tagPrefix: String {
@@ -1301,6 +1561,7 @@ struct SocialShareSheet: View {
         }
 
         var ids = Set(singleCards.map(\.cardID) + wishlistItems.map(\.cardID))
+        ids.formUnion(fallbackCardInputs.map(\.cardID))
         if let card = preselectedCard {
             ids.insert(card.masterCardId)
         }

@@ -1060,7 +1060,7 @@ struct RootView: View {
         }
         .environment(
             \.rootFloatingChromeInset,
-            searchNavigationPath.isEmpty ? chromeFloatingInset : 0
+            searchNavigationPath.isEmpty ? RootChromeEnvironment.searchOverlayContentTopInset : 0
         )
         .toolbarBackground(.hidden, for: .navigationBar)
         .background(Color.clear)

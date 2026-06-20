@@ -470,6 +470,176 @@ final class SocialShareService {
         )
     }
 
+    // MARK: - Post updates
+
+    func updatePullPost(
+        id: UUID,
+        existing: SharedContent,
+        cards: [PostCardInput],
+        message: String,
+        visibility: SharedContentVisibility
+    ) async throws -> SharedContent {
+        guard let first = cards.first else {
+            throw SocialShareError.invalidResponse
+        }
+        let items = cards.map { card in
+            var object: [String: JSONValue] = [
+                "cardID": .string(card.cardID),
+                "variantKey": .string(card.variantKey),
+                "cardName": .string(card.cardName)
+            ]
+            if let setName = card.setName {
+                object["setName"] = .string(setName)
+            }
+            return JSONValue.object(object)
+        }
+        var payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "card_id": .string(first.cardID),
+            "card_name": .string(first.cardName),
+            "variant_key": .string(first.variantKey),
+            "items": .array(items),
+            "thumbnails": .array(cards.map { .string($0.cardID) })
+        ]
+        if let setName = first.setName { payload["set_name"] = .string(setName) }
+        payload = preservingLocalContentID(in: payload, from: existing)
+        let encoded = EncodedPayload(
+            payload: payload,
+            title: first.cardName,
+            cardCount: cards.count,
+            brand: TCGBrand.inferredFromMasterCardId(first.cardID).rawValue,
+            localContentID: payload["local_content_id"]?.stringValue ?? first.cardID
+        )
+        return try await patchSharedContent(
+            id: id,
+            type: .pull,
+            encoded: encoded,
+            title: first.cardName,
+            description: message.isEmpty ? nil : message,
+            visibility: visibility,
+            includeValue: false
+        )
+    }
+
+    func updateWantPost(
+        id: UUID,
+        existing: SharedContent,
+        cards: [PostCardInput],
+        message: String,
+        visibility: SharedContentVisibility
+    ) async throws -> SharedContent {
+        guard let first = cards.first else {
+            throw SocialShareError.invalidResponse
+        }
+        let items = cards.map { card in
+            JSONValue.object([
+                "cardID": .string(card.cardID),
+                "variantKey": .string(card.variantKey),
+                "cardName": .string(card.cardName)
+            ])
+        }
+        var payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "card_id": .string(first.cardID),
+            "card_name": .string(first.cardName),
+            "variant_key": .string(first.variantKey),
+            "items": .array(items),
+            "thumbnails": .array(cards.map { .string($0.cardID) })
+        ]
+        payload = preservingLocalContentID(in: payload, from: existing)
+        let encoded = EncodedPayload(
+            payload: payload,
+            title: first.cardName,
+            cardCount: cards.count,
+            brand: TCGBrand.inferredFromMasterCardId(first.cardID).rawValue,
+            localContentID: payload["local_content_id"]?.stringValue ?? first.cardID
+        )
+        return try await patchSharedContent(
+            id: id,
+            type: .wishlist,
+            encoded: encoded,
+            title: first.cardName,
+            description: message.isEmpty ? nil : message,
+            visibility: visibility,
+            includeValue: false
+        )
+    }
+
+    func updateBinderPost(
+        id: UUID,
+        existing: SharedContent,
+        binder: Binder,
+        title: String,
+        description: String,
+        visibility: SharedContentVisibility,
+        includeValue: Bool
+    ) async throws -> SharedContent {
+        let feedPostLocalID = existing.payload["local_content_id"]?.stringValue
+        let encoded = try await encodeBinderPayload(
+            binder,
+            includeValue: includeValue,
+            feedPostLocalID: feedPostLocalID?.hasPrefix("binder-") == true ? feedPostLocalID : nil
+        )
+        var payload = encoded.payload
+        payload = preservingLocalContentID(in: payload, from: existing)
+        let merged = EncodedPayload(
+            payload: payload,
+            title: encoded.title,
+            cardCount: encoded.cardCount,
+            brand: encoded.brand,
+            localContentID: payload["local_content_id"]?.stringValue ?? encoded.localContentID
+        )
+        return try await patchSharedContent(
+            id: id,
+            type: .binder,
+            encoded: merged,
+            title: normalizedTitle(title, fallback: binder.title),
+            description: normalizedDescription(description),
+            visibility: visibility,
+            includeValue: includeValue
+        )
+    }
+
+    func updateDeckPost(
+        id: UUID,
+        existing: SharedContent,
+        deck: Deck,
+        title: String,
+        description: String,
+        visibility: SharedContentVisibility,
+        includeValue: Bool
+    ) async throws -> SharedContent {
+        guard storeService.isPremium else {
+            throw SocialShareError.deckSharingRequiresPremium
+        }
+        let feedPostLocalID = existing.payload["local_content_id"]?.stringValue
+        let encoded = try await encodeDeckPayload(
+            deck,
+            includeValue: includeValue,
+            feedPostLocalID: feedPostLocalID?.hasPrefix("deck-") == true ? feedPostLocalID : nil
+        )
+        var payload = encoded.payload
+        payload = preservingLocalContentID(in: payload, from: existing)
+        let merged = EncodedPayload(
+            payload: payload,
+            title: encoded.title,
+            cardCount: encoded.cardCount,
+            brand: encoded.brand,
+            localContentID: payload["local_content_id"]?.stringValue ?? encoded.localContentID
+        )
+        return try await patchSharedContent(
+            id: id,
+            type: .deck,
+            encoded: merged,
+            title: normalizedTitle(title, fallback: deck.title),
+            description: normalizedDescription(description),
+            visibility: visibility,
+            includeValue: includeValue
+        )
+    }
+
     func unpublishBinder(_ binder: Binder) async throws {
         try await unpublish(type: .binder, localContentID: binder.id.uuidString)
     }
@@ -700,6 +870,74 @@ final class SocialShareService {
             }
             self?.pendingSyncTasks[key] = nil
         }
+    }
+
+    private struct SharedContentPatchRequest: Encodable {
+        let contentType: SharedContentType
+        let title: String
+        let description: String?
+        let visibility: SharedContentVisibility
+        let payload: [String: JSONValue]
+        let includeValue: Bool
+        let cardCount: Int
+        let brand: String?
+        let updatedAt: Date
+
+        enum CodingKeys: String, CodingKey {
+            case contentType = "content_type"
+            case title
+            case description
+            case visibility
+            case payload
+            case includeValue = "include_value"
+            case cardCount = "card_count"
+            case brand
+            case updatedAt = "updated_at"
+        }
+    }
+
+    private func preservingLocalContentID(
+        in payload: [String: JSONValue],
+        from existing: SharedContent
+    ) -> [String: JSONValue] {
+        var merged = payload
+        if let existingLocalID = existing.payload["local_content_id"]?.stringValue {
+            merged["local_content_id"] = .string(existingLocalID)
+        }
+        return merged
+    }
+
+    private func patchSharedContent(
+        id: UUID,
+        type: SharedContentType,
+        encoded: EncodedPayload,
+        title: String,
+        description: String?,
+        visibility: SharedContentVisibility,
+        includeValue: Bool
+    ) async throws -> SharedContent {
+        let userID = try signedInUserID()
+        let accessToken = try signedInAccessToken()
+        let body = SharedContentPatchRequest(
+            contentType: type,
+            title: title,
+            description: description,
+            visibility: visibility,
+            payload: encoded.payload,
+            includeValue: includeValue,
+            cardCount: encoded.cardCount,
+            brand: encoded.brand,
+            updatedAt: Date()
+        )
+        let path = "/rest/v1/shared_content?id=eq.\(id.uuidString)&owner_id=eq.\(userID.uuidString)&select=*"
+        let updated: [SharedContent] = try await execute(
+            path: path,
+            method: "PATCH",
+            accessToken: accessToken,
+            body: body,
+            extraHeaders: ["Prefer": "return=representation"]
+        )
+        return try updated.first.unwrapOrThrow(SocialShareError.invalidResponse)
     }
 
     private func createSharedContent(

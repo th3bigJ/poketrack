@@ -4,7 +4,10 @@ import AVFoundation
 private enum ScannerCardFrameLayout {
     static let verticalCenterBias: CGFloat = 8
     /// Stable content height for the controls/results area below the camera.
-    static let bottomPanelContentHeight: CGFloat = 264
+    static let bottomPanelContentHeight: CGFloat = 288
+    static let bottomSheetTopCornerRadius: CGFloat = 28
+    /// Space below the capture button where sheet content should not start (idle + results).
+    static let sheetTopContentInset: CGFloat = 36
     /// Keeps the preview usable when the scanner is presented on a compact-height device.
     static let minimumCameraContentHeight: CGFloat = 360
     /// Alignment frame width as a fraction of preview width. Slightly smaller than full-card fill helps autofocus lock on the subject.
@@ -169,45 +172,6 @@ struct CardScannerView: View {
                     }
                     .allowsHitTesting(!permissionDenied)
 
-                    VStack {
-                        Spacer(minLength: 0)
-                        Button {
-                            guard canTriggerCapture else { return }
-                            viewModel.capturePhoto()
-                            HapticManager.impact(.medium)
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .fill(Color.black.opacity(0.24))
-                                    .frame(width: 72, height: 72)
-                                    .background(.ultraThinMaterial, in: Circle())
-                                    .overlay(
-                                        Circle()
-                                            .strokeBorder(Color.white.opacity(0.34), lineWidth: 1)
-                                    )
-                                    .shadow(color: .black.opacity(0.34), radius: 16, y: 7)
-                                Circle()
-                                    .fill(.white.opacity(canTriggerCapture ? 0.96 : 0.42))
-                                    .frame(width: 56, height: 56)
-                                Circle()
-                                    .strokeBorder(
-                                        canTriggerCapture ? services.theme.accentColor.opacity(0.82) : Color.white.opacity(0.18),
-                                        lineWidth: 2.5
-                                    )
-                                    .frame(width: 56, height: 56)
-                                Image(systemName: "camera.shutter.button.fill")
-                                    .font(.system(size: 18, weight: .semibold))
-                                    .foregroundStyle(canTriggerCapture ? Color.black.opacity(0.72) : Color.black.opacity(0.28))
-                            }
-                        }
-                        .buttonStyle(.plain)
-                        .disabled(!canTriggerCapture)
-                        .opacity(canTriggerCapture ? 1 : 0.72)
-                        .accessibilityLabel("Take photo")
-                        .padding(.bottom, 14)
-                    }
-                    .allowsHitTesting(!permissionDenied)
-
                     // Value scanned label — bottom-leading of camera area
                     if !viewModel.scanResults.isEmpty {
                         ScannerValueLabel(
@@ -257,9 +221,13 @@ struct CardScannerView: View {
                 .frame(height: cameraHeight)
                 .clipped()
 
-                // Bottom 30% — results overlay or idle instructions
+                // Bottom sheet — idle instructions or scan results
                 ZStack {
-                    ScannerBottomPanelBackground()
+                    if viewModel.scanResults.isEmpty {
+                        ScannerBottomPanelBackground()
+                    } else {
+                        ScannerResultsPanelBackground()
+                    }
 
                     if viewModel.scanResults.isEmpty {
                         ScannerIdleInstructions()
@@ -287,14 +255,39 @@ struct CardScannerView: View {
                                 viewModel.replaceScanResult(id: id, with: picked)
                             }
                         )
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                 }
                 .frame(maxWidth: .infinity)
                 .frame(maxHeight: .infinity)
+                .clipShape(
+                    UnevenRoundedRectangle(
+                        cornerRadii: RectangleCornerRadii(
+                            topLeading: ScannerCardFrameLayout.bottomSheetTopCornerRadius,
+                            bottomLeading: 0,
+                            bottomTrailing: 0,
+                            topTrailing: ScannerCardFrameLayout.bottomSheetTopCornerRadius
+                        ),
+                        style: .continuous
+                    )
+                )
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay(alignment: .bottom) {
+                if !permissionDenied {
+                    ScannerCaptureButton(
+                        canCapture: canTriggerCapture,
+                        accentColor: services.theme.accentColor
+                    ) {
+                        guard canTriggerCapture else { return }
+                        viewModel.capturePhoto()
+                        HapticManager.impact(.medium)
+                    }
+                    .padding(.bottom, bottomPanelHeight - 40)
+                    .allowsHitTesting(!permissionDenied)
+                }
+            }
             .ignoresSafeArea()
             .overlay(alignment: .topTrailing) {
                 if case .scanning = viewModel.scanState {
@@ -548,42 +541,88 @@ private struct ScannerTopStatusPill: View {
     }
 }
 
+private struct ScannerResultsPanelBackground: View {
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .fill(.regularMaterial)
+            Color(uiColor: .systemGroupedBackground)
+                .opacity(0.72)
+        }
+        .ignoresSafeArea(edges: .bottom)
+    }
+}
+
 private struct ScannerBottomPanelBackground: View {
     var body: some View {
         ZStack {
-            Color.black
+            Color(red: 0.07, green: 0.07, blue: 0.09)
             LinearGradient(
                 colors: [
-                    Color.black.opacity(0.68),
-                    Color(red: 0.035, green: 0.045, blue: 0.065),
-                    .black
+                    Color(red: 0.11, green: 0.11, blue: 0.13),
+                    Color(red: 0.05, green: 0.05, blue: 0.07)
                 ],
                 startPoint: .top,
                 endPoint: .bottom
             )
-            RadialGradient(
-                colors: [
-                    Color.cyan.opacity(0.10),
-                    Color.purple.opacity(0.04),
-                    .clear
-                ],
-                center: .top,
-                startRadius: 20,
-                endRadius: 360
-            )
-            Rectangle()
-                .fill(.ultraThinMaterial)
-                .opacity(0.05)
         }
         .overlay(alignment: .top) {
             LinearGradient(
-                colors: [.black.opacity(0.70), .clear],
+                colors: [Color.black.opacity(0.35), .clear],
                 startPoint: .top,
                 endPoint: .bottom
             )
-            .frame(height: 28)
+            .frame(height: 24)
+            .allowsHitTesting(false)
         }
         .ignoresSafeArea(edges: .bottom)
+    }
+}
+
+// MARK: - Capture button
+
+private struct ScannerCaptureButton: View {
+    let canCapture: Bool
+    let accentColor: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            ZStack {
+                Circle()
+                    .strokeBorder(Color.white.opacity(canCapture ? 0.20 : 0.08), lineWidth: 4)
+                    .frame(width: 80, height: 80)
+
+                Circle()
+                    .strokeBorder(
+                        LinearGradient(
+                            colors: [
+                                .white.opacity(canCapture ? 0.95 : 0.30),
+                                accentColor.opacity(canCapture ? 0.88 : 0.22),
+                                Color.purple.opacity(canCapture ? 0.72 : 0.18)
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: 3
+                    )
+                    .frame(width: 68, height: 68)
+                    .shadow(color: accentColor.opacity(canCapture ? 0.40 : 0), radius: 10)
+
+                Circle()
+                    .fill(.white.opacity(canCapture ? 1 : 0.42))
+                    .frame(width: 56, height: 56)
+                    .shadow(color: .black.opacity(0.18), radius: 6, y: 2)
+
+                Image(systemName: "camera.fill")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundStyle(Color.black.opacity(canCapture ? 0.72 : 0.28))
+            }
+        }
+        .buttonStyle(.plain)
+        .disabled(!canCapture)
+        .opacity(canCapture ? 1 : 0.76)
+        .accessibilityLabel("Take photo")
     }
 }
 
@@ -773,74 +812,109 @@ private struct ScannerBrandPickPanel: View {
 private struct ScannerIdleInstructions: View {
     @State private var appeared = false
 
-    private let steps: [(icon: String, title: String)] = [
-        ("viewfinder", "Frame"),
-        ("hand.raised.fill", "Hold steady"),
-        ("camera.shutter.button.fill", "Scan"),
+    private struct Step {
+        let icon: String
+        let iconColor: Color
+        let title: String
+        let description: String
+    }
+
+    private let steps: [Step] = [
+        Step(
+            icon: "viewfinder",
+            iconColor: Color(red: 0.35, green: 0.78, blue: 1.0),
+            title: "Frame",
+            description: "Place the card in the guide"
+        ),
+        Step(
+            icon: "hand.raised.fill",
+            iconColor: Color(red: 0.35, green: 0.78, blue: 1.0),
+            title: "Hold steady",
+            description: "Keep your phone still"
+        ),
+        Step(
+            icon: "camera.fill",
+            iconColor: .white,
+            title: "Scan",
+            description: "We'll capture your card"
+        )
     ]
 
     var body: some View {
-        let safeBottom = UIApplication.shared.connectedScenes
-            .compactMap { $0 as? UIWindowScene }
-            .first?.windows.first?.safeAreaInsets.bottom ?? 0
-
         VStack(spacing: 0) {
             Spacer(minLength: 0)
+                .frame(height: ScannerCardFrameLayout.sheetTopContentInset)
 
-            VStack(spacing: 14) {
-                VStack(spacing: 3) {
-                    Text("Ready to scan")
-                        .font(.headline.weight(.semibold))
-                        .foregroundStyle(Color.white.opacity(0.96))
-                    Text("Keep the full card inside the guide.")
-                        .font(.caption)
-                        .foregroundStyle(Color.white.opacity(0.62))
-                }
+            Capsule()
+                .fill(Color.white.opacity(0.22))
+                .frame(width: 36, height: 5)
+                .padding(.top, 10)
 
-                HStack(spacing: 0) {
-                    ForEach(Array(steps.enumerated()), id: \.offset) { index, step in
-                        VStack(spacing: 7) {
-                            Image(systemName: step.icon)
-                                .font(.system(size: 16, weight: .semibold))
-                                .foregroundStyle(index == 2 ? Color.white : Color.cyan.opacity(0.92))
-                                .frame(width: 34, height: 34)
-                                .background(Color.white.opacity(0.09), in: Circle())
-                            Text(step.title)
-                                .font(.caption2.weight(.semibold))
-                                .foregroundStyle(Color.white.opacity(0.72))
-                                .lineLimit(1)
-                        }
-                        .frame(maxWidth: .infinity)
+            VStack(spacing: 4) {
+                Text("Ready to scan")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(.white)
+                Text("Keep the full card inside the guide.")
+                    .font(.subheadline)
+                    .foregroundStyle(.white.opacity(0.52))
+            }
+            .multilineTextAlignment(.center)
+            .padding(.top, 18)
+            .padding(.horizontal, 24)
 
-                        if index < steps.count - 1 {
-                            Rectangle()
-                                .fill(Color.white.opacity(0.10))
-                                .frame(width: 22, height: 1)
-                                .offset(y: -10)
-                        }
+            HStack(alignment: .top, spacing: 0) {
+                ForEach(Array(steps.enumerated()), id: \.offset) { index, step in
+                    instructionStep(step)
+
+                    if index < steps.count - 1 {
+                        Rectangle()
+                            .fill(Color.white.opacity(0.12))
+                            .frame(width: 22, height: 1)
+                            .padding(.top, 22)
                     }
                 }
             }
-            .padding(.horizontal, 18)
-            .padding(.vertical, 16)
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-            .overlay {
-                RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .strokeBorder(Color.white.opacity(0.12), lineWidth: 1)
-            }
-            .padding(.horizontal, 16)
-            .padding(.bottom, max(safeBottom, 12))
-            .opacity(appeared ? 1 : 0)
-            .offset(y: appeared ? 0 : 8)
-            .animation(.spring(response: 0.42, dampingFraction: 0.86), value: appeared)
+            .padding(.horizontal, 10)
+            .padding(.top, 22)
+            .padding(.bottom, 12)
+
+            Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onAppear { appeared = true }
+        .opacity(appeared ? 1 : 0)
+        .offset(y: appeared ? 0 : 10)
+        .onAppear {
+            withAnimation(.spring(response: 0.42, dampingFraction: 0.86)) { appeared = true }
+        }
         .onDisappear { appeared = false }
+    }
+
+    @ViewBuilder
+    private func instructionStep(_ step: Step) -> some View {
+        VStack(spacing: 8) {
+            Image(systemName: step.icon)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundStyle(step.iconColor)
+                .frame(width: 44, height: 44)
+                .background(Color.white.opacity(0.08), in: Circle())
+
+            Text(step.title)
+                .font(.caption.weight(.bold))
+                .foregroundStyle(.white)
+
+            Text(step.description)
+                .font(.caption2)
+                .foregroundStyle(.white.opacity(0.48))
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .lineLimit(2)
+                .minimumScaleFactor(0.85)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 
-// MARK: - Results overlay (no sheet, drawn directly over camera)
+// MARK: - Results overlay
 
 private struct ScannerResultsOverlay: View {
     @Environment(AppServices.self) private var services
@@ -854,12 +928,21 @@ private struct ScannerResultsOverlay: View {
     let onDeleteResult: (UUID) -> Void
     let onPickAlternative: (UUID, Card) -> Void
 
+    private var safeBottom: CGFloat {
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .first?.windows.first?.safeAreaInsets.bottom ?? 0
+    }
+
     var body: some View {
         let count = results.count
         let screenWidth = UIScreen.main.bounds.width
 
-        VStack(spacing: 8) {
-            ZStack {
+        VStack(spacing: 0) {
+            Spacer(minLength: 0)
+                .frame(height: ScannerCardFrameLayout.sheetTopContentInset)
+
+            ZStack(alignment: .top) {
                 ForEach(Array(results.enumerated()), id: \.element.id) { i, result in
                     let offset = CGFloat(i - currentResultIndex) * (screenWidth + 12) + barDragOffset
                     ScanResultBar(
@@ -879,45 +962,45 @@ private struct ScannerResultsOverlay: View {
                             set: { selectedVariantQuantitiesByResultID[result.id] = $0 }
                         )
                     )
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(width: screenWidth)
+                    .frame(width: screenWidth, alignment: .top)
                     .offset(x: offset)
-                    .scaleEffect(i == currentResultIndex ? 1.0 : 0.95)
-                    .opacity(abs(i - currentResultIndex) <= 1 ? (i == currentResultIndex ? 1 : 0.6) : 0)
+                    .opacity(abs(i - currentResultIndex) <= 1 ? (i == currentResultIndex ? 1 : 0.55) : 0)
+                    .allowsHitTesting(i == currentResultIndex)
                 }
             }
-            .fixedSize(horizontal: false, vertical: true)
-            .frame(width: screenWidth)
+            .frame(width: screenWidth, alignment: .top)
+            .clipped()
             .contentShape(Rectangle())
             .simultaneousGesture(horizontalPageGesture(count: count))
 
-            // Page dots
-            HStack(spacing: 5) {
-                ForEach(0..<count, id: \.self) { i in
-                    Circle()
-                        .fill(i == currentResultIndex ? Color.primary : Color.primary.opacity(0.3))
-                        .frame(width: i == currentResultIndex ? 6 : 4,
-                               height: i == currentResultIndex ? 6 : 4)
-                        .animation(.spring(response: 0.2), value: currentResultIndex)
-                }
-            }
-            .padding(.bottom, 2)
+            Spacer(minLength: 0)
+
+            pageIndicator(count: count)
+                .padding(.top, 8)
+                .padding(.bottom, max(safeBottom, 12))
         }
-        .frame(width: screenWidth)
-        .frame(maxHeight: .infinity, alignment: .top)
-        .background {
-            ZStack(alignment: .top) {
-                Rectangle()
-                    .fill(.regularMaterial)
-                LinearGradient(
-                    colors: [Color.black.opacity(0.14), .clear],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 26)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+
+    @ViewBuilder
+    private func pageIndicator(count: Int) -> some View {
+        HStack(spacing: 6) {
+            ForEach(0..<count, id: \.self) { i in
+                Circle()
+                    .fill(
+                        i == currentResultIndex
+                            ? services.theme.accentColor
+                            : Color.primary.opacity(0.22)
+                    )
+                    .frame(
+                        width: i == currentResultIndex ? 7 : 5,
+                        height: i == currentResultIndex ? 7 : 5
+                    )
             }
-            .ignoresSafeArea(edges: .bottom)
         }
+        .animation(.spring(response: 0.25, dampingFraction: 0.82), value: currentResultIndex)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Scanned card \(currentResultIndex + 1) of \(count)")
     }
 
     private func horizontalPageGesture(count: Int) -> some Gesture {

@@ -518,7 +518,7 @@ struct BinderDetailView: View {
                 }
 
                 Button {
-                    renderAndShareSnapshot()
+                    Task { await renderAndShareSnapshot() }
                 } label: {
                     Label("Share Page Image", systemImage: "photo")
                 }
@@ -775,7 +775,12 @@ struct BinderDetailView: View {
         return CGSize(width: width, height: height)
     }
 
-    private func pageSurface(pageIdx: Int, pageSize: CGSize) -> some View {
+    private func pageSurface(
+        pageIdx: Int,
+        pageSize: CGSize,
+        forExport: Bool = false,
+        slotImages: [String: UIImage] = [:]
+    ) -> some View {
         let positions = positions(for: pageIdx)
         // Corner radius for the binder playmat. Bumped from 14 → 22 to match
         // the mockup's pronounced, card-like rounding — the smaller radius read
@@ -784,50 +789,13 @@ struct BinderDetailView: View {
 
         return ZStack {
             // 1. Base: binder colour + procedural cross-hatch weave (felt/baize).
-            //    We override to `.linen` here so the *interior* of every binder
-            //    has a consistent playmat texture regardless of cover material.
-            BinderTextureView(
-                colourName: binder.colour,
-                texture: .linen,
-                seed: binder.textureSeed,
-                compact: false
-            )
-            // Slight all-over darkening so cards pop against the surface.
-            .overlay(Color.black.opacity(0.22))
-            // Radial vignette — centre lighter, edges darker. Makes the
-            // surface feel recessed and focuses the eye on the cards.
-            .overlay {
-                RadialGradient(
-                    gradient: Gradient(stops: [
-                        .init(color: .black.opacity(0), location: 0.0),
-                        .init(color: .black.opacity(0.14), location: 0.6),
-                        .init(color: .black.opacity(0.30), location: 1.0)
-                    ]),
-                    center: .center,
-                    startRadius: 40,
-                    endRadius: max(pageSize.width, pageSize.height) * 0.65
-                )
+            Group {
+                if forExport {
+                    binderExportPlaymat(pageSize: pageSize)
+                } else {
+                    binderLivePlaymat(pageSize: pageSize, surfaceRadius: surfaceRadius)
+                }
             }
-            // Faint inner border, a few pixels in — suggests material wear
-            // along the playmat edge.
-            .overlay {
-                RoundedRectangle(cornerRadius: surfaceRadius - 4, style: .continuous)
-                    .inset(by: 4)
-                    .stroke(Color.white.opacity(0.05), lineWidth: 1)
-            }
-            .clipShape(RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous))
-            // Inset shadow on all four edges to reinforce the recessed feel.
-            .overlay {
-                RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
-                    .stroke(Color.black.opacity(0.55), lineWidth: 6)
-                    .blur(radius: 5)
-                    .mask(
-                        RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
-                    )
-                    .allowsHitTesting(false)
-            }
-            // Soft drop shadow under the surface.
-            .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
 
             // 2. Card grid — leading padding bumped to 32 to clear the ring
             //    spine; top/bottom padding match for even vertical margins.
@@ -839,7 +807,11 @@ struct BinderDetailView: View {
                     let slot = sortedSlots.first { $0.position == pos }
                     Group {
                         if let slot {
-                            viewSlotCell(slot: slot)
+                            if forExport {
+                                exportSlotCell(slot: slot, image: slotImages[slot.cardID])
+                            } else {
+                                viewSlotCell(slot: slot)
+                            }
                         } else {
                             emptySlotCell(position: pos)
                         }
@@ -863,14 +835,77 @@ struct BinderDetailView: View {
             }
 
             // 4. Page-turn dimming overlay (existing behaviour)
-            if isPageTurning {
+            if !forExport && isPageTurning {
                 RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
                     .fill(Color.black.opacity(colorScheme == .dark ? 0.22 : 0.12))
                     .allowsHitTesting(false)
             }
         }
         .frame(width: pageSize.width, height: pageSize.height)
-        .clipped()
+        .modifier(ClipIfEnabled(shouldClip: !forExport))
+    }
+
+    @ViewBuilder
+    private func binderExportPlaymat(pageSize: CGSize) -> some View {
+        BinderTextureView(
+            colourName: binder.colour,
+            texture: .linen,
+            seed: binder.textureSeed,
+            compact: false
+        )
+        .overlay(Color.black.opacity(0.22))
+        .overlay {
+            RadialGradient(
+                gradient: Gradient(stops: [
+                    .init(color: .black.opacity(0), location: 0.0),
+                    .init(color: .black.opacity(0.14), location: 0.6),
+                    .init(color: .black.opacity(0.30), location: 1.0)
+                ]),
+                center: .center,
+                startRadius: 40,
+                endRadius: max(pageSize.width, pageSize.height) * 0.65
+            )
+        }
+        .frame(width: pageSize.width, height: pageSize.height)
+    }
+
+    @ViewBuilder
+    private func binderLivePlaymat(pageSize: CGSize, surfaceRadius: CGFloat) -> some View {
+        BinderTextureView(
+            colourName: binder.colour,
+            texture: .linen,
+            seed: binder.textureSeed,
+            compact: false
+        )
+        .overlay(Color.black.opacity(0.22))
+        .overlay {
+            RadialGradient(
+                gradient: Gradient(stops: [
+                    .init(color: .black.opacity(0), location: 0.0),
+                    .init(color: .black.opacity(0.14), location: 0.6),
+                    .init(color: .black.opacity(0.30), location: 1.0)
+                ]),
+                center: .center,
+                startRadius: 40,
+                endRadius: max(pageSize.width, pageSize.height) * 0.65
+            )
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: surfaceRadius - 4, style: .continuous)
+                .inset(by: 4)
+                .stroke(Color.white.opacity(0.05), lineWidth: 1)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
+                .stroke(Color.black.opacity(0.55), lineWidth: 6)
+                .blur(radius: 5)
+                .mask(
+                    RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
+                )
+                .allowsHitTesting(false)
+        }
+        .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
     }
 
     private var swipeHint: some View {
@@ -1018,6 +1053,45 @@ struct BinderDetailView: View {
             }
         }
         .buttonStyle(BinderCardButtonStyle())
+    }
+
+    @ViewBuilder
+    private func exportSlotCell(slot: BinderSlot, image: UIImage?) -> some View {
+        let cardCornerRadius: CGFloat = 4
+        let priceKey = slotValueKey(slot)
+        let usdPrice = slotUSDValues[priceKey]
+
+        ZStack(alignment: .topTrailing) {
+            Group {
+                if let image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
+                        .fill(Color(uiColor: .systemGray5))
+                }
+            }
+            .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
+
+            RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
+                .inset(by: 0.5)
+                .stroke(
+                    LinearGradient(
+                        colors: [
+                            Color.white.opacity(0.22),
+                            Color.white.opacity(0.0)
+                        ],
+                        startPoint: .top,
+                        endPoint: .center
+                    ),
+                    lineWidth: 1
+                )
+
+            if binder.showPriceOverlay, let usd = usdPrice, usd > 0 {
+                priceBadge(usd: usd)
+            }
+        }
     }
 
     private func priceBadge(usd: Double) -> some View {
@@ -1416,44 +1490,184 @@ struct BinderDetailView: View {
 
     // MARK: - Share as image
 
+    private var binderExportBrandingHeight: CGFloat { 52 }
+
     /// Renders the currently visible binder page (or cover) as a snapshot image
-    /// with a "Bindr" branded watermark, then opens the system share sheet.
-    private func renderAndShareSnapshot() {
+    /// with the Bindr wordmark in a row below, then opens the system share sheet.
+    @MainActor
+    private func renderAndShareSnapshot() async {
         let pageSize = binderPageSize(in: UIScreen.main.bounds.size)
         let isCover = entryFromGrid && currentPage == 0
+        let offlineContext = OfflineImageContext.snapshot(from: services)
+        let cardTargetSize = CGSize(width: 220, height: 308)
+        let brandingHeight = binderExportBrandingHeight
 
-        let snapshotView = ZStack {
-            if isCover {
-                let coverRect = coverFrame(in: pageSize)
-                let value: String? = (binder.showValueOnCover && !binder.slotList.isEmpty)
-                    ? formattedTotalValue
-                    : nil
-                Color(uiColor: .systemBackground)
-                BinderCoverView(
-                    binder: binder,
-                    compact: false,
-                    valueText: value
-                )
-                .peekingURLsOverride(preloadedPeekingURLs)
-                .frame(width: coverRect.width, height: coverRect.height)
-            } else {
-                pageSurface(pageIdx: cardPageIndex(for: currentPage), pageSize: pageSize)
+        var slotImages: [String: UIImage] = [:]
+        if !isCover {
+            let pageIdx = cardPageIndex(for: currentPage)
+            let positions = positions(for: pageIdx)
+            for pos in positions {
+                guard let slot = sortedSlots.first(where: { $0.position == pos }) else { continue }
+                var card = cardsByID[slot.cardID]
+                if card == nil {
+                    card = await services.cardData.loadCard(masterCardId: slot.cardID)
+                }
+                guard let card else { continue }
+                let url = AppConfiguration.imageURL(relativePath: card.displayImageSrc)
+                if let image = await ExportImageLoader.load(
+                    url: url,
+                    targetSize: cardTargetSize,
+                    offlineContext: offlineContext
+                ) {
+                    slotImages[slot.cardID] = image
+                }
             }
         }
-        .frame(width: pageSize.width, height: pageSize.height)
+
+        var peekingImages: [UIImage?] = []
+        var embossedImage: UIImage?
+        if isCover {
+            var peekingURLs = preloadedPeekingURLs
+            if binder.showCardPreview, peekingURLs == nil {
+                var urls: [URL?] = []
+                for slot in binder.slotList.prefix(3) {
+                    var card = cardsByID[slot.cardID]
+                    if card == nil {
+                        card = await services.cardData.loadCard(masterCardId: slot.cardID)
+                    }
+                    if let card {
+                        urls.append(AppConfiguration.imageURL(relativePath: card.displayImageSrc))
+                    } else {
+                        urls.append(nil)
+                    }
+                }
+                peekingURLs = urls
+            }
+
+            for url in peekingURLs ?? [] {
+                guard let url else {
+                    peekingImages.append(nil)
+                    continue
+                }
+                let image = await ExportImageLoader.load(
+                    url: url,
+                    targetSize: CGSize(width: 420, height: 588),
+                    offlineContext: offlineContext
+                )
+                peekingImages.append(image)
+            }
+
+            if !binder.showCardPreview {
+                if binder.embossModeKind == .character,
+                   let imageUrl = binder.embossedPokemonImageUrl {
+                    let url = AppConfiguration.pokemonArtURL(imageFileName: imageUrl)
+                    embossedImage = await ExportImageLoader.load(
+                        url: url,
+                        targetSize: CGSize(width: 570, height: 760),
+                        offlineContext: offlineContext
+                    )
+                } else if let cardID = binder.embossedCardID {
+                    var card = cardsByID[cardID]
+                    if card == nil {
+                        card = await services.cardData.loadCard(masterCardId: cardID)
+                    }
+                    if let card {
+                        let path = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false
+                            ? card.imageHighSrc!.trimmingCharacters(in: .whitespacesAndNewlines)
+                            : card.displayImageSrc
+                        let url = AppConfiguration.imageURL(relativePath: path)
+                        embossedImage = await ExportImageLoader.load(
+                            url: url,
+                            targetSize: CGSize(width: 444, height: 592),
+                            offlineContext: offlineContext
+                        )
+                    }
+                }
+            }
+        }
+
+        let totalSize = CGSize(width: pageSize.width, height: pageSize.height + brandingHeight)
+        let snapshotView = binderExportSnapshot(
+            pageSize: pageSize,
+            brandingHeight: brandingHeight,
+            isCover: isCover,
+            slotImages: slotImages,
+            peekingImages: peekingImages,
+            embossedImage: embossedImage
+        )
+        .frame(width: totalSize.width, height: totalSize.height)
+        .environment(\.colorScheme, .dark)
 
         let scale = UIScreen.main.scale
-        let renderer = ImageRenderer(
-            content: snapshotView
-                .environment(\.colorScheme, .light)
-        )
+        let renderer = ImageRenderer(content: snapshotView)
         renderer.scale = scale
 
-        guard let baseImage = renderer.uiImage else { return }
-        let subtitle = isCover ? binder.title : "\(binder.title) · Page \(cardPageIndex(for: currentPage) + 1)"
-        let watermarked = applyBindrWatermark(to: baseImage, subtitle: subtitle)
+        guard let image = renderer.uiImage else { return }
+        presentShareSheet(image: image)
+    }
 
-        presentShareSheet(image: watermarked)
+    @ViewBuilder
+    private func binderExportSnapshot(
+        pageSize: CGSize,
+        brandingHeight: CGFloat,
+        isCover: Bool,
+        slotImages: [String: UIImage],
+        peekingImages: [UIImage?],
+        embossedImage: UIImage?
+    ) -> some View {
+        VStack(spacing: 0) {
+            Group {
+                if isCover {
+                    let coverRect = coverFrame(in: pageSize)
+                    let value: String? = (binder.showValueOnCover && !binder.slotList.isEmpty)
+                        ? formattedTotalValue
+                        : nil
+
+                    ZStack {
+                        binderExportPlaymat(pageSize: pageSize)
+                        BinderCoverView(
+                            binder: binder,
+                            compact: false,
+                            valueText: value
+                        )
+                        .peekingImagesOverride(peekingImages.isEmpty ? nil : peekingImages)
+                        .embossedImageOverride(embossedImage)
+                        .frame(width: coverRect.width, height: coverRect.height)
+                        .position(x: coverRect.midX, y: coverRect.midY)
+                    }
+                    .frame(width: pageSize.width, height: pageSize.height)
+                } else {
+                    pageSurface(
+                        pageIdx: cardPageIndex(for: currentPage),
+                        pageSize: pageSize,
+                        forExport: true,
+                        slotImages: slotImages
+                    )
+                }
+            }
+
+            binderExportBrandingRow(pageWidth: pageSize.width)
+                .frame(height: brandingHeight)
+                .frame(maxWidth: .infinity)
+                .background {
+                    binderExportPlaymat(pageSize: CGSize(width: pageSize.width, height: brandingHeight))
+                }
+        }
+        .background {
+            binderExportPlaymat(pageSize: pageSize)
+        }
+    }
+
+    private func binderExportBrandingRow(pageWidth: CGFloat) -> some View {
+        HStack {
+            Spacer(minLength: 0)
+            Image("BindrWordmarkLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(height: max(pageWidth * 0.07, 24))
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, 12)
     }
 
     /// Presents the system share sheet (UIActivityViewController) from the
@@ -1488,71 +1702,18 @@ struct BinderDetailView: View {
         topVC.present(activityVC, animated: true)
     }
 
-    /// Applies a "Bindr" branded tag to the bottom-right of the snapshot.
-    private func applyBindrWatermark(to image: UIImage, subtitle: String) -> UIImage {
-        let imageSize = image.size
-        let scale = image.scale
+}
 
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
-        defer { UIGraphicsEndImageContext() }
+private struct ClipIfEnabled: ViewModifier {
+    let shouldClip: Bool
 
-        guard let ctx = UIGraphicsGetCurrentContext() else { return image }
-
-        image.draw(at: .zero)
-
-        let watermarkText = "Bindr"
-        let fontSize: CGFloat = max(imageSize.width * 0.045, 16)
-        let subtitleFontSize: CGFloat = max(fontSize * 0.42, 9)
-        let padding: CGFloat = fontSize * 0.8
-        let tagSize = CGSize(width: min(imageSize.width * 0.72, fontSize * 8.2), height: fontSize * 2.4)
-        let tagOrigin = CGPoint(
-            x: imageSize.width - tagSize.width - padding,
-            y: imageSize.height - tagSize.height - padding
-        )
-        let tagRect = CGRect(origin: tagOrigin, size: tagSize)
-
-        let bgPath = UIBezierPath(roundedRect: tagRect, cornerRadius: fontSize * 0.5)
-        ctx.setFillColor(UIColor.black.withAlphaComponent(0.55).cgColor)
-        ctx.addPath(bgPath.cgPath)
-        ctx.fillPath()
-
-        ctx.setStrokeColor(UIColor.white.withAlphaComponent(0.25).cgColor)
-        ctx.setLineWidth(0.5)
-        ctx.addPath(bgPath.cgPath)
-        ctx.strokePath()
-
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: fontSize, weight: .bold),
-            .foregroundColor: UIColor.white.withAlphaComponent(0.9),
-            .paragraphStyle: paragraphStyle
-        ]
-        let subtitleAttributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.systemFont(ofSize: subtitleFontSize, weight: .semibold),
-            .foregroundColor: UIColor.white.withAlphaComponent(0.72),
-            .paragraphStyle: paragraphStyle
-        ]
-
-        let textSize = watermarkText.size(withAttributes: attributes)
-        let textOrigin = CGPoint(
-            x: tagRect.midX - textSize.width / 2,
-            y: tagRect.minY + fontSize * 0.35
-        )
-        watermarkText.draw(at: textOrigin, withAttributes: attributes)
-
-        let clippedSubtitle = subtitle.count > 38 ? String(subtitle.prefix(35)) + "..." : subtitle
-        let subtitleRect = CGRect(
-            x: tagRect.minX + fontSize * 0.45,
-            y: textOrigin.y + textSize.height + 1,
-            width: tagRect.width - fontSize * 0.9,
-            height: subtitleFontSize * 1.3
-        )
-        clippedSubtitle.draw(in: subtitleRect, withAttributes: subtitleAttributes)
-
-        return UIGraphicsGetImageFromCurrentImageContext() ?? image
+    func body(content: Content) -> some View {
+        if shouldClip {
+            content.clipped()
+        } else {
+            content
+        }
     }
-
 }
 
 private extension View {
