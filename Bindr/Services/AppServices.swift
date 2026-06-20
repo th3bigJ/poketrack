@@ -837,6 +837,35 @@ final class AppServices {
         await collectionSync.backupEverythingNow()
     }
 
+    enum AccountDeletionError: LocalizedError {
+        case localLibraryNotReady
+
+        var errorDescription: String? {
+            switch self {
+            case .localLibraryNotReady:
+                return "Your library is still loading. Try again in a moment."
+            }
+        }
+    }
+
+    /// Deletes the Bindr account remotely, clears local library data, and signs out.
+    func deleteAccountAndAllData() async throws {
+        collectionSync.cancelPendingUpload()
+        try await socialAuth.deleteAccount()
+
+        guard let modelContext = socialSyncModelContext else {
+            throw AccountDeletionError.localLibraryNotReady
+        }
+
+        try UserLibraryBackupCodec.clearLocalLibrary(modelContext: modelContext)
+        await refreshLibraryUIAfterLocalClear()
+    }
+
+    private func refreshLibraryUIAfterLocalClear() async {
+        await collectionValue?.loadAllFromStore()
+        collectionInventoryRevision += 1
+    }
+
     private func refreshLibraryUIAfterCloudBackupRestore() async {
         await collectionValue?.loadAllFromStore()
         collectionInventoryRevision += 1

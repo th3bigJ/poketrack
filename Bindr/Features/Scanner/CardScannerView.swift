@@ -6,8 +6,10 @@ private enum ScannerCardFrameLayout {
     /// Stable content height for the controls/results area below the camera.
     static let bottomPanelContentHeight: CGFloat = 288
     static let bottomSheetTopCornerRadius: CGFloat = 28
-    /// Space below the capture button where sheet content should not start (idle + results).
-    static let sheetTopContentInset: CGFloat = 36
+    /// Top inset for the bottom sheet drag handle (capture button sits fully in the camera area).
+    static let sheetTopContentInset: CGFloat = 16
+    /// Gap between the bottom of the capture button and the top edge of the bottom sheet.
+    static let captureButtonBottomGap: CGFloat = 12
     /// Keeps the preview usable when the scanner is presented on a compact-height device.
     static let minimumCameraContentHeight: CGFloat = 360
     /// Alignment frame width as a fraction of preview width. Slightly smaller than full-card fill helps autofocus lock on the subject.
@@ -284,7 +286,7 @@ struct CardScannerView: View {
                         viewModel.capturePhoto()
                         HapticManager.impact(.medium)
                     }
-                    .padding(.bottom, bottomPanelHeight - 40)
+                    .padding(.bottom, bottomPanelHeight + ScannerCardFrameLayout.captureButtonBottomGap)
                     .allowsHitTesting(!permissionDenied)
                 }
             }
@@ -977,7 +979,7 @@ private struct ScannerResultsOverlay: View {
 
             pageIndicator(count: count)
                 .padding(.top, 8)
-                .padding(.bottom, max(safeBottom, 12))
+                .padding(.bottom, max(safeBottom + 20, 28))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }

@@ -593,6 +593,10 @@ enum UserLibraryBackupCodec {
         return restoredCount
     }
 
+    static func clearLocalLibrary(modelContext: ModelContext) throws {
+        try clearLibrary(modelContext: modelContext)
+    }
+
     static func localLibraryIsEmpty(_ modelContext: ModelContext) -> Bool {
         let checks: [() -> Int] = [
             { modelContext.collectionTotalCardQuantity() },

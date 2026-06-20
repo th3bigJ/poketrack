@@ -113,6 +113,8 @@ struct MyAccountPrivacyView: View {
     @AppStorage("Bindr.privacy.shareBinders") private var shareBinders = true
     @AppStorage("Bindr.privacy.shareDecks") private var shareDecks = true
     @State private var showDeleteConfirmation = false
+    @State private var isDeletingAccount = false
+    @State private var deleteAccountError: String?
 
     var body: some View {
         List {
@@ -136,13 +138,25 @@ struct MyAccountPrivacyView: View {
                 Button(role: .destructive) {
                     showDeleteConfirmation = true
                 } label: {
-                    Label("Delete Account and Data", systemImage: "trash.fill")
+                    HStack {
+                        Label("Delete Account and Data", systemImage: "trash.fill")
+                        Spacer()
+                        if isDeletingAccount {
+                            ProgressView()
+                        }
+                    }
                 }
-                .disabled(!services.socialAuth.isSignedIn)
+                .disabled(!services.socialAuth.isSignedIn || isDeletingAccount)
+
+                if let deleteAccountError {
+                    Text(deleteAccountError)
+                        .font(.footnote)
+                        .foregroundStyle(.red)
+                }
             } header: {
                 Text("Account")
             } footer: {
-                Text("Account deletion should remove your Bindr account, social profile, posts, comments, shared content, and cloud backup data.")
+                Text("Permanently deletes your Bindr account, social profile, posts, comments, trades, friendships, and cloud backup. Your local collection, binders, decks, ledger, and wishlist on this device are also removed.")
             }
         }
         .listStyle(.insetGrouped)
@@ -154,11 +168,24 @@ struct MyAccountPrivacyView: View {
             titleVisibility: .visible
         ) {
             Button("Delete Account and Data", role: .destructive) {
-                // Hook this up to the account deletion endpoint when the backend action is ready.
+                Task { await deleteAccountAndData() }
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("This will permanently delete your Bindr account data once the server-side deletion action is connected.")
+            Text("This cannot be undone. Your account, cloud backup, and all local library data on this device will be permanently deleted.")
+        }
+    }
+
+    @MainActor
+    private func deleteAccountAndData() async {
+        isDeletingAccount = true
+        deleteAccountError = nil
+        defer { isDeletingAccount = false }
+
+        do {
+            try await services.deleteAccountAndAllData()
+        } catch {
+            deleteAccountError = error.localizedDescription
         }
     }
 }

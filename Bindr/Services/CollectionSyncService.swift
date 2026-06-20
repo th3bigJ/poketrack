@@ -49,6 +49,11 @@ final class CollectionSyncService {
         }
     }
 
+    func cancelPendingUpload() {
+        debounceTask?.cancel()
+        debounceTask = nil
+    }
+
     /// Immediately uploads the full local library to R2.
     @discardableResult
     func backupEverythingNow() async -> Bool {

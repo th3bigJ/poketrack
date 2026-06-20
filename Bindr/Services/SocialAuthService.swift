@@ -50,6 +50,7 @@ final class SocialAuthService {
         case missingConfiguration
         case invalidResponse
         case missingSession
+        case notSignedIn
         case requestFailed(String)
 
         var errorDescription: String? {
@@ -60,6 +61,8 @@ final class SocialAuthService {
                 return "Could not understand the authentication response."
             case .missingSession:
                 return "Authentication completed but no session was returned. Check email confirmation settings in Supabase Auth."
+            case .notSignedIn:
+                return "Sign in to your Bindr account first."
             case .requestFailed(let message):
                 return message
             }
@@ -185,6 +188,50 @@ final class SocialAuthService {
         Task {
             try? await sendSignOutRequest(accessToken: existingAccessToken)
         }
+    }
+
+    /// Permanently deletes the signed-in Bindr account, all server-side data, and cloud backup.
+    func deleteAccount() async throws {
+        try ensureConfigured()
+        guard let token = accessToken, !token.isEmpty else {
+            throw SocialAuthError.notSignedIn
+        }
+
+        isBusy = true
+        defer { isBusy = false }
+        statusMessage = "Deleting account…"
+
+        let url = try makeURL(path: "/functions/v1/delete-account")
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue(publishableKey, forHTTPHeaderField: "apikey")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard let http = response as? HTTPURLResponse else {
+            throw SocialAuthError.invalidResponse
+        }
+        guard (200..<300).contains(http.statusCode) else {
+            if let payload = try? JSONDecoder().decode(DeleteAccountErrorPayload.self, from: data) {
+                throw SocialAuthError.requestFailed(payload.error ?? "Account deletion failed with status \(http.statusCode).")
+            }
+            if let payload = try? JSONDecoder().decode(AuthErrorPayload.self, from: data) {
+                throw SocialAuthError.requestFailed(payload.errorDescription ?? payload.msg ?? "Account deletion failed with status \(http.statusCode).")
+            }
+            throw SocialAuthError.requestFailed("Account deletion failed with status \(http.statusCode).")
+        }
+
+        accessToken = nil
+        refreshToken = nil
+        authState = .signedOut
+        statusMessage = nil
+        KeychainStorage.deleteSocialSession()
+    }
+
+    private struct DeleteAccountErrorPayload: Decodable {
+        let error: String?
     }
 
     private func applyAuthResponse(_ response: AuthResponse) throws {

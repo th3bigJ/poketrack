@@ -8,6 +8,7 @@
  * Routes:
  *   PUT /user-collection          — upload the caller's snapshot
  *   GET /user-collection?userID=  — download a snapshot (self or friend)
+ *   DELETE /user-collection       — delete the caller's snapshot
  */
 
 export interface Env {
@@ -42,6 +43,10 @@ export default {
       const targetUserID = url.searchParams.get("userID");
       if (!targetUserID) return corsResponse(json({ error: "Missing userID" }, 400));
       return corsResponse(await handleGet(env, callerID, targetUserID));
+    }
+
+    if (request.method === "DELETE" && url.pathname === "/user-collection") {
+      return corsResponse(await handleDelete(env, callerID));
     }
 
     return corsResponse(json({ error: "Not found" }, 404));
@@ -96,6 +101,16 @@ async function handlePut(request: Request, env: Env, callerID: string): Promise<
     customMetadata: { updatedAt: new Date().toISOString() },
   });
 
+  return json({ ok: true });
+}
+
+// ---------------------------------------------------------------------------
+// DELETE — remove the caller's snapshot
+// ---------------------------------------------------------------------------
+
+async function handleDelete(env: Env, callerID: string): Promise<Response> {
+  const key = snapshotKey(callerID);
+  await env.COLLECTION_BUCKET.delete(key);
   return json({ ok: true });
 }
 
@@ -209,7 +224,7 @@ function json(body: unknown, status = 200): Response {
 function corsResponse(response: Response): Response {
   const headers = new Headers(response.headers);
   headers.set("Access-Control-Allow-Origin", "*");
-  headers.set("Access-Control-Allow-Methods", "GET, PUT, OPTIONS");
+  headers.set("Access-Control-Allow-Methods", "GET, PUT, DELETE, OPTIONS");
   headers.set("Access-Control-Allow-Headers", "Authorization, Content-Type");
   return new Response(response.body, { status: response.status, headers });
 }
