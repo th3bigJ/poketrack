@@ -1449,7 +1449,8 @@ private struct ManualTradeCardPickerView: View {
 
     @State private var searchText = ""
     @State private var results: [Card] = []
-    @State private var selectedCardIDs: Set<String> = []
+    /// Persists across search changes so backspacing to find the next card does not drop prior picks.
+    @State private var selectedCardsByID: [String: Card] = [:]
     @State private var isSearching = false
 
     var body: some View {
@@ -1490,14 +1491,12 @@ private struct ManualTradeCardPickerView: View {
                     Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Add (\(selectedCardIDs.count))") {
-                        let selected = results
-                            .filter { selectedCardIDs.contains($0.masterCardId) }
-                            .map { NewTradeItemInput(cardID: $0.masterCardId) }
+                    Button("Add (\(selectedCardsByID.count))") {
+                        let selected = selectedCardsByID.values.map { NewTradeItemInput(cardID: $0.masterCardId) }
                         onConfirm(selected)
                         dismiss()
                     }
-                    .disabled(selectedCardIDs.isEmpty)
+                    .disabled(selectedCardsByID.isEmpty)
                 }
             }
         }
@@ -1526,10 +1525,10 @@ private struct ManualTradeCardPickerView: View {
     private var resultList: some View {
         List(results) { card in
             Button {
-                if selectedCardIDs.contains(card.masterCardId) {
-                    selectedCardIDs.remove(card.masterCardId)
+                if selectedCardsByID[card.masterCardId] != nil {
+                    selectedCardsByID.removeValue(forKey: card.masterCardId)
                 } else {
-                    selectedCardIDs.insert(card.masterCardId)
+                    selectedCardsByID[card.masterCardId] = card
                 }
             } label: {
                 HStack(spacing: 12) {
@@ -1554,9 +1553,9 @@ private struct ManualTradeCardPickerView: View {
 
                     Spacer()
 
-                    Image(systemName: selectedCardIDs.contains(card.masterCardId) ? "checkmark.circle.fill" : "circle")
+                    Image(systemName: selectedCardsByID[card.masterCardId] != nil ? "checkmark.circle.fill" : "circle")
                         .font(.system(size: 20, weight: .bold))
-                        .foregroundStyle(selectedCardIDs.contains(card.masterCardId) ? BindrPalette.binderGold : Color.secondary.opacity(0.45))
+                        .foregroundStyle(selectedCardsByID[card.masterCardId] != nil ? BindrPalette.binderGold : Color.secondary.opacity(0.45))
                 }
             }
             .buttonStyle(.plain)
@@ -1568,7 +1567,6 @@ private struct ManualTradeCardPickerView: View {
         let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard query.count >= 2 else {
             results = []
-            selectedCardIDs = []
             return
         }
 
@@ -1577,6 +1575,5 @@ private struct ManualTradeCardPickerView: View {
         let found = await services.cardData.search(query: query)
         guard !Task.isCancelled else { return }
         results = Array(found.prefix(80))
-        selectedCardIDs = selectedCardIDs.intersection(Set(results.map(\.masterCardId)))
     }
 }
