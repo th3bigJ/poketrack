@@ -1009,7 +1009,7 @@ struct RootView: View {
     private var searchOverlay: some View {
         GeometryReader { geo in
             ZStack(alignment: .top) {
-                Color.black.opacity(colorScheme == .light ? 0.14 : 0.30)
+                BindrPageBackground()
                     .ignoresSafeArea()
 
                 searchOverlayForeground
@@ -1058,7 +1058,10 @@ struct RootView: View {
                 }
             }
         }
-        .environment(\.rootFloatingChromeInset, 0)
+        .environment(
+            \.rootFloatingChromeInset,
+            searchNavigationPath.isEmpty ? chromeFloatingInset : 0
+        )
         .toolbarBackground(.hidden, for: .navigationBar)
         .background(Color.clear)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -1067,7 +1070,9 @@ struct RootView: View {
 
     @ViewBuilder
     private var searchOverlayForeground: some View {
-        VStack(spacing: 0) {
+        ZStack(alignment: .top) {
+            searchOverlayContentGlassBackground
+
             if searchNavigationPath.isEmpty {
                 universalSearchBarControl(
                     circleButtonsUseGlass: true,
@@ -1077,14 +1082,9 @@ struct RootView: View {
                 .padding(.horizontal, 16)
                 .padding(.top, RootChromeEnvironment.searchBarTopInset)
                 .padding(.bottom, RootChromeEnvironment.searchBarBottomInset)
-                .background(Color.clear)
             }
-
-            ZStack(alignment: .top) {
-                searchOverlayContentGlassBackground
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .environment(\.presentCard, { card, list in
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             SearchHistoryStore.recordViewedCard(card.masterCardId)

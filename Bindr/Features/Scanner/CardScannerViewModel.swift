@@ -10,6 +10,13 @@ enum ScanState {
     case scanning
 }
 
+/// Stable alignment readout for scanner chrome (reticle + status pill).
+enum ScannerAlignmentTier: Int, Sendable, Equatable {
+    case align
+    case holdSteady
+    case ready
+}
+
 enum FreeTierScanLimit {
     static let maxScansPerMonth = 20
 }
@@ -55,8 +62,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     /// Last error surfaced to the user.
     var lastErrorMessage: String?
 
-    /// Quality readout from live frame analysis (0–1). Drives the reticle alignment indicator.
+    /// Quality readout from live frame analysis (0–1). Smoothed for internal tier logic.
     var frameQuality: Double = 0
+    /// Debounced alignment tier shared by the reticle and status pill.
+    var alignmentTier: ScannerAlignmentTier = .align
 
     /// Franchise to match against; set before capture from the scanner UI.
     var scanBrand: TCGBrand = .pokemon
@@ -126,9 +135,13 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     private let ciContext = CIContext(options: nil)
 
     private var isAnalysingFrame = false        // prevent overlapping Vision calls
-    /// Low-pass filtered quality so the status pill does not flicker frame-to-frame.
+    /// Low-pass filtered quality so alignment UI does not flicker frame-to-frame.
     private var smoothedFrameQuality: Double = 0
-    private static let frameQualitySmoothingFactor: Double = 0.16
+    private static let frameQualitySmoothingFactor: Double = 0.10
+    private static let frameQualityDecayFactor: Double = 0.82
+    private static let alignmentTierDebounceInterval: CFTimeInterval = 0.35
+    private var pendingAlignmentTier: ScannerAlignmentTier?
+    private var pendingAlignmentTierTimestamp: CFTimeInterval = 0
     /// Token for the currently active OCR/search request. Replaced on each new scan and on cancel.
     private var activeScanRequestID = UUID()
 
@@ -168,6 +181,50 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         scanState = .idle
         isCapturing = false
         lastErrorMessage = nil
+    }
+
+    private func resetAlignmentTier() {
+        alignmentTier = .align
+        pendingAlignmentTier = nil
+    }
+
+    private func updateAlignmentTier(for smoothedQuality: Double) {
+        guard isCameraReady, !isCapturing, case .idle = scanState, !requiresBrandSelection else {
+            resetAlignmentTier()
+            return
+        }
+
+        let candidate = Self.candidateAlignmentTier(current: alignmentTier, quality: smoothedQuality)
+        if candidate == alignmentTier {
+            pendingAlignmentTier = nil
+            return
+        }
+
+        let now = CACurrentMediaTime()
+        if pendingAlignmentTier != candidate {
+            pendingAlignmentTier = candidate
+            pendingAlignmentTierTimestamp = now
+            return
+        }
+
+        if now - pendingAlignmentTierTimestamp >= Self.alignmentTierDebounceInterval {
+            alignmentTier = candidate
+            pendingAlignmentTier = nil
+        }
+    }
+
+    /// Hysteresis thresholds — wider gaps than raw quality bands to avoid yellow/green flicker.
+    private static func candidateAlignmentTier(current: ScannerAlignmentTier, quality: Double) -> ScannerAlignmentTier {
+        switch current {
+        case .align:
+            return quality >= 0.28 ? .holdSteady : .align
+        case .holdSteady:
+            if quality >= 0.42 { return .ready }
+            if quality < 0.12 { return .align }
+            return .holdSteady
+        case .ready:
+            return quality < 0.30 ? .holdSteady : .ready
+        }
     }
 
     /// User chose a different catalog match for an existing scan (same OCR). Previous pick moves into alternatives.
@@ -678,6 +735,7 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
                 guard let self else { return }
                 self.smoothedFrameQuality = 0
                 self.frameQuality = 0
+                self.resetAlignmentTier()
             }
             return
         }
@@ -686,6 +744,7 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
                 guard let self else { return }
                 self.smoothedFrameQuality = 0
                 self.frameQuality = 0
+                self.resetAlignmentTier()
             }
             return
         }
@@ -716,12 +775,14 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
             if quality <= 0 {
-                self.smoothedFrameQuality = 0
+                // Decay gradually instead of snapping to zero when Vision misses a frame.
+                self.smoothedFrameQuality *= Self.frameQualityDecayFactor
             } else {
                 let factor = Self.frameQualitySmoothingFactor
                 self.smoothedFrameQuality = self.smoothedFrameQuality * (1 - factor) + quality * factor
             }
             self.frameQuality = self.smoothedFrameQuality
+            self.updateAlignmentTier(for: self.smoothedFrameQuality)
         }
     }
 

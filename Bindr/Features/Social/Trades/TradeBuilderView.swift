@@ -618,6 +618,19 @@ struct BuilderCardRow: View {
 
 // MARK: - TradeCardPickerView
 
+private struct TradeCollectionPickerEntry: Hashable, Identifiable {
+    var id: String { "\(cardID)|\(variantKey)" }
+    let cardID: String
+    let variantKey: String
+    let quantity: Int
+
+    static func normalizedVariantKey(cardID: String, variantKey: String) -> String {
+        if cardID.hasPrefix("sealed:") { return "sealed" }
+        let trimmed = variantKey.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? "normal" : trimmed
+    }
+}
+
 struct TradeCardPickerView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
@@ -627,8 +640,8 @@ struct TradeCardPickerView: View {
     let navigationTitle: String
     let onConfirm: ([NewTradeItemInput]) -> Void
 
-    @State private var collectionCardIDs: [String] = []
-    @State private var selectedCardIDs: Set<String> = []
+    @State private var collectionEntries: [TradeCollectionPickerEntry] = []
+    @State private var selectedEntryIDs: Set<String> = []
     @State private var cardNameByID: [String: String] = [:]
     @State private var cardCacheByID: [String: Card] = [:]
     @State private var sealedProductCacheByID: [String: SealedProduct] = [:]
@@ -638,13 +651,21 @@ struct TradeCardPickerView: View {
 
     private var isCurrentUserPicker: Bool { ownerUserID == currentUserID }
 
-    private var filteredCardIDs: [String] {
+    private var entryByID: [String: TradeCollectionPickerEntry] {
+        Dictionary(uniqueKeysWithValues: collectionEntries.map { ($0.id, $0) })
+    }
+
+    private var entryQuantityByPickerRowID: [String: Int] {
+        Dictionary(uniqueKeysWithValues: collectionEntries.map { ($0.id, $0.quantity) })
+    }
+
+    private var filteredEntryIDs: [String] {
         let trimmed = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return collectionCardIDs }
+        guard !trimmed.isEmpty else { return collectionEntries.map(\.id) }
         let query = trimmed.localizedLowercase
-        return collectionCardIDs.filter { cardID in
-            guard let cardName = cardNameByID[cardID] else { return false }
-            return cardName.localizedLowercase.contains(query)
+        return collectionEntries.compactMap { entry in
+            guard let cardName = cardNameByID[entry.cardID] else { return nil }
+            return cardName.localizedLowercase.contains(query) ? entry.id : nil
         }
     }
 
@@ -654,7 +675,7 @@ struct TradeCardPickerView: View {
                 if isLoading {
                     ProgressView("Loading collection...")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if collectionCardIDs.isEmpty {
+                } else if collectionEntries.isEmpty {
                     ContentUnavailableView(
                         emptyTitle,
                         systemImage: "rectangle.stack",
@@ -673,17 +694,18 @@ struct TradeCardPickerView: View {
                     Button("Cancel") { dismiss() }
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Add (\(selectedCardIDs.count))") {
-                        let selected = selectedCardIDs.map { cardID in
-                            NewTradeItemInput(
-                                cardID: cardID,
-                                variantKey: cardID.hasPrefix("sealed:") ? "sealed" : "normal"
+                    Button("Add (\(selectedEntryIDs.count))") {
+                        let selected = selectedEntryIDs.compactMap { entryID -> NewTradeItemInput? in
+                            guard let entry = entryByID[entryID] else { return nil }
+                            return NewTradeItemInput(
+                                cardID: entry.cardID,
+                                variantKey: entry.variantKey
                             )
                         }
                         onConfirm(selected)
                         dismiss()
                     }
-                    .disabled(selectedCardIDs.isEmpty)
+                    .disabled(selectedEntryIDs.isEmpty)
                 }
             }
         }
@@ -720,11 +742,14 @@ struct TradeCardPickerView: View {
                     .padding(.bottom, 8)
 
                 SelectableCardGrid(
-                    cardIDs: filteredCardIDs,
+                    cardIDs: filteredEntryIDs,
                     isSelectMode: .constant(true),
-                    selectedCardIDs: $selectedCardIDs,
-                    cardLoader: { id in await loadCard(for: id) },
-                    sealedProductLoader: { id in await loadSealedProduct(for: id) }
+                    selectedCardIDs: $selectedEntryIDs,
+                    cardLoader: { pickerRowID in await loadCard(for: cardID(fromPickerRowID: pickerRowID)) },
+                    quantityByCardID: entryQuantityByPickerRowID,
+                    sealedProductLoader: { pickerRowID in
+                        await loadSealedProduct(for: cardID(fromPickerRowID: pickerRowID))
+                    }
                 )
                 .padding(.horizontal, 12)
 
@@ -748,21 +773,35 @@ struct TradeCardPickerView: View {
 
         if isCurrentUserPicker {
             await services.sealedProducts.loadFromLocalIfAvailable()
-            collectionCardIDs = dedupeCardIDs(collectionItems.compactMap { item in
+            collectionEntries = dedupeEntries(collectionItems.compactMap { item in
                 guard item.quantity > 0 else { return nil }
-                return item.cardID
+                return TradeCollectionPickerEntry(
+                    cardID: item.cardID,
+                    variantKey: TradeCollectionPickerEntry.normalizedVariantKey(
+                        cardID: item.cardID,
+                        variantKey: item.variantKey
+                    ),
+                    quantity: item.quantity
+                )
             })
         } else {
             do {
                 let snapshot = try await services.collectionSync.fetchFriendCollection(userID: ownerUserID)
-                collectionCardIDs = dedupeCardIDs(snapshot.collection.compactMap { entry in
+                collectionEntries = dedupeEntries(snapshot.collection.compactMap { entry in
                     guard entry.qty > 0, !entry.cardID.isEmpty else { return nil }
-                    return entry.cardID
+                    return TradeCollectionPickerEntry(
+                        cardID: entry.cardID,
+                        variantKey: TradeCollectionPickerEntry.normalizedVariantKey(
+                            cardID: entry.cardID,
+                            variantKey: entry.variantKey
+                        ),
+                        quantity: entry.qty
+                    )
                 })
             } catch CollectionSyncError.httpError(404) {
-                collectionCardIDs = []
+                collectionEntries = []
             } catch {
-                collectionCardIDs = []
+                collectionEntries = []
             }
         }
 
@@ -770,7 +809,7 @@ struct TradeCardPickerView: View {
     }
 
     private func warmInitialCards() async {
-        let batch = Array(collectionCardIDs.prefix(36))
+        let batch = Array(dedupeCardIDs(collectionEntries.map(\.cardID)).prefix(36))
         var cards: [Card] = []
         var sealedImageURLs: [URL] = []
 
@@ -793,6 +832,17 @@ struct TradeCardPickerView: View {
         }
     }
 
+    private func dedupeEntries(_ entries: [TradeCollectionPickerEntry]) -> [TradeCollectionPickerEntry] {
+        var ordered: [TradeCollectionPickerEntry] = []
+        var seen: Set<String> = []
+        for entry in entries where !entry.cardID.isEmpty {
+            if seen.insert(entry.id).inserted {
+                ordered.append(entry)
+            }
+        }
+        return ordered
+    }
+
     private func dedupeCardIDs(_ ids: [String]) -> [String] {
         var ordered: [String] = []
         var seen: Set<String> = []
@@ -802,6 +852,10 @@ struct TradeCardPickerView: View {
             }
         }
         return ordered
+    }
+
+    private func cardID(fromPickerRowID pickerRowID: String) -> String {
+        pickerRowID.split(separator: "|", maxSplits: 1).first.map(String.init) ?? pickerRowID
     }
 
     private var searchField: some View {
@@ -852,7 +906,7 @@ struct TradeCardPickerView: View {
     }
 
     private func indexCardNamesIfNeeded() async {
-        let missingIDs = collectionCardIDs.filter { cardNameByID[$0] == nil }
+        let missingIDs = dedupeCardIDs(collectionEntries.map(\.cardID)).filter { cardNameByID[$0] == nil }
         guard !missingIDs.isEmpty else { return }
         isIndexingNames = true
         defer { isIndexingNames = false }

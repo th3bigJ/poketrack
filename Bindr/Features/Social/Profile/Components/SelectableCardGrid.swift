@@ -27,7 +27,7 @@ struct SelectableCardGrid: View {
 
     var body: some View {
         LazyVGrid(columns: columns, spacing: 8) {
-            ForEach(Array(visibleIDs.enumerated()), id: \.offset) { _, id in
+            ForEach(visibleIDs, id: \.self) { id in
                 SelectableCardCell(
                     cardID: id,
                     isSelectMode: isSelectMode,

@@ -6,6 +6,7 @@ struct UniversalSearchResultsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentCard) private var presentCard
+    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     let query: String
     let selectedBrand: TCGBrand
@@ -75,6 +76,8 @@ struct UniversalSearchResultsView: View {
             } else {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 24, pinnedViews: []) {
+                        Color.clear.frame(height: rootFloatingChromeInset)
+
                         if sourceScope == .allCards && !matchingSets.isEmpty {
                             sectionHeader("Sets")
                             VStack(spacing: 0) {

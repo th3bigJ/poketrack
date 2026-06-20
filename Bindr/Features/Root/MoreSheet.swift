@@ -1275,12 +1275,20 @@ private struct TradeCalculatorView: View {
     }
 
     private func collectionItem(for tradeItem: NewTradeItemInput) -> CollectionItem? {
-        collectionItems.first { item in
+        let ownedStacks = collectionItems.filter { item in
             item.itemKind == ProductKind.singleCard.rawValue
                 && item.cardID == tradeItem.cardID
-                && item.variantKey == tradeItem.variantKey
                 && item.quantity > 0
         }
+        if let exact = ownedStacks.first(where: { $0.variantKey == tradeItem.variantKey }) {
+            return exact
+        }
+        // If the user only owns one stack for this card, use it even when an older
+        // trade row still has a stale/default variant key.
+        if ownedStacks.count == 1 {
+            return ownedStacks[0]
+        }
+        return nil
     }
 
     private func tradeSummaryNames(for items: [NewTradeItemInput]) async -> String {

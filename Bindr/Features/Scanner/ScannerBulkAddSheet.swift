@@ -48,6 +48,10 @@ struct ScannerBulkAddSheet: View {
         addsToTrade ? "Add to trade" : "Add to collection"
     }
 
+    private var headerButtonColor: Color {
+        colorScheme == .dark ? .white : .black
+    }
+
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -99,7 +103,7 @@ struct ScannerBulkAddSheet: View {
                     } else {
                         Button("Add") { save() }
                             .font(.system(size: 15, weight: .semibold))
-                            .foregroundStyle(canSave ? accent : .secondary)
+                            .foregroundStyle(canSave ? headerButtonColor : .secondary)
                             .disabled(!canSave)
                     }
                 }
@@ -121,6 +125,7 @@ struct ScannerBulkAddSheet: View {
             }
         }
         .bindrTheme(accent: services.theme.accentColor)
+        .tint(headerButtonColor)
     }
 
     private func dismissDecimalKeyboard() {

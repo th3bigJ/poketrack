@@ -91,7 +91,7 @@ struct CardScannerView: View {
 
                     if case .idle = viewModel.scanState {
                         CardScannerReticle(
-                            frameQuality: viewModel.frameQuality,
+                            alignmentTier: viewModel.alignmentTier,
                             isCapturing: viewModel.isCapturing,
                             showsAlignmentLabel: true
                         ) { rect in
@@ -99,7 +99,7 @@ struct CardScannerView: View {
                         }
                     } else if case .scanning = viewModel.scanState {
                         CardScannerReticle(
-                            frameQuality: viewModel.frameQuality,
+                            alignmentTier: viewModel.alignmentTier,
                             isCapturing: false,
                             showsAlignmentLabel: false
                         ) { rect in
@@ -121,7 +121,7 @@ struct CardScannerView: View {
                         brand: viewModel.scanBrand.displayTitle,
                         scannedCount: viewModel.scanResults.count,
                         isReady: viewModel.isCameraReady,
-                        frameQuality: viewModel.frameQuality
+                        alignmentTier: viewModel.alignmentTier
                     )
                     .padding(.top, ScannerSheetLayout.statusBarHeight + 8)
                     .padding(.leading, 16)
@@ -498,15 +498,7 @@ private struct ScannerTopStatusPill: View {
     let brand: String
     let scannedCount: Int
     let isReady: Bool
-    let frameQuality: Double
-
-    private enum AlignmentTier: Int {
-        case align
-        case holdSteady
-        case ready
-    }
-
-    @State private var alignmentTier: AlignmentTier = .align
+    let alignmentTier: ScannerAlignmentTier
 
     private var statusText: String {
         if !isReady { return "Warming camera" }
@@ -553,21 +545,6 @@ private struct ScannerTopStatusPill: View {
         .overlay(Capsule().strokeBorder(Color.white.opacity(0.16), lineWidth: 1))
         .shadow(color: .black.opacity(0.22), radius: 16, y: 8)
         .animation(.easeInOut(duration: 0.35), value: alignmentTier)
-        .onChange(of: isReady) { _, ready in
-            if !ready { alignmentTier = .align }
-        }
-        .onChange(of: frameQuality) { _, quality in
-            guard isReady else { return }
-            switch alignmentTier {
-            case .align:
-                if quality >= 0.22 { alignmentTier = .holdSteady }
-            case .holdSteady:
-                if quality >= 0.36 { alignmentTier = .ready }
-                else if quality < 0.10 { alignmentTier = .align }
-            case .ready:
-                if quality < 0.28 { alignmentTier = .holdSteady }
-            }
-        }
     }
 }
 
@@ -1022,10 +999,7 @@ private struct ScannerUndoBelowFrameButton: View {
 // MARK: - Reticle
 
 private struct CardScannerReticle: View {
-    private static let qualityGood: Double = 0.34
-    private static let qualityWarming: Double = 0.14
-
-    var frameQuality: Double
+    var alignmentTier: ScannerAlignmentTier
     var isCapturing: Bool
     var showsAlignmentLabel: Bool = true
     var onRectChanged: (CGRect) -> Void
@@ -1068,7 +1042,7 @@ private struct CardScannerReticle: View {
                     .frame(width: cardW, height: cardH)
                     .position(x: cardX, y: cardCenterY)
                     .shadow(color: borderColor.opacity(0.55), radius: isCapturing ? 8 : 5)
-                    .animation(.easeInOut(duration: 0.25), value: frameQuality)
+                    .animation(.easeInOut(duration: 0.35), value: alignmentTier)
 
                 if showsAlignmentLabel {
                     VStack {
@@ -1094,9 +1068,11 @@ private struct CardScannerReticle: View {
 
     private var borderColor: Color {
         if isCapturing { return .white }
-        if frameQuality >= Self.qualityGood { return .green }
-        if frameQuality >= Self.qualityWarming { return Color.yellow.opacity(0.8) }
-        return Color.white.opacity(0.6)
+        switch alignmentTier {
+        case .ready: return .green
+        case .holdSteady: return Color.yellow.opacity(0.8)
+        case .align: return Color.white.opacity(0.6)
+        }
     }
 
     @ViewBuilder
@@ -1108,27 +1084,30 @@ private struct CardScannerReticle: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5)
                 .background(.thinMaterial, in: Capsule())
-        } else if frameQuality >= Self.qualityGood {
-            Label("Ready to scan", systemImage: "checkmark.circle.fill")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.green)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(.thinMaterial, in: Capsule())
-        } else if frameQuality >= Self.qualityWarming {
-            Label("Hold steady", systemImage: "viewfinder")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.yellow)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(.thinMaterial, in: Capsule())
         } else {
-            Text("Align card in frame")
-                .font(.caption.weight(.medium))
-                .foregroundStyle(.white.opacity(0.7))
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(.black.opacity(0.3), in: Capsule())
+            switch alignmentTier {
+            case .ready:
+                Label("Ready to scan", systemImage: "checkmark.circle.fill")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.green)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(.thinMaterial, in: Capsule())
+            case .holdSteady:
+                Label("Hold steady", systemImage: "viewfinder")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.yellow)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(.thinMaterial, in: Capsule())
+            case .align:
+                Text("Align card in frame")
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.white.opacity(0.7))
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(.black.opacity(0.3), in: Capsule())
+            }
         }
     }
 

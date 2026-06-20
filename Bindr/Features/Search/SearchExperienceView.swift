@@ -73,6 +73,7 @@ enum SearchSourceScope: String, CaseIterable, Identifiable {
 struct SearchExperienceView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
+    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     @Binding var query: String
     let onOpenCategory: (SearchIdleCategory) -> Void
@@ -114,6 +115,8 @@ struct SearchExperienceView: View {
     private var idleContent: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
+                Color.clear.frame(height: rootFloatingChromeInset)
+
                 HStack(spacing: 10) {
                     ForEach(SearchIdleCategory.allCases) { category in
                         Button {
