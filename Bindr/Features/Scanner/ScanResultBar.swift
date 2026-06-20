@@ -293,10 +293,14 @@ struct ScannerWrongCardAlternativesSheet: View {
             ?? card.setCode.uppercased()
     }
 
+    private var sortedAlternatives: [Card] {
+        services.cardData.cardsSortedByReleaseDateNewestFirst(alternatives)
+    }
+
     var body: some View {
         NavigationStack {
             Group {
-                if alternatives.isEmpty {
+                if sortedAlternatives.isEmpty {
                     ContentUnavailableView(
                         "No alternatives found",
                         systemImage: "rectangle.dashed",
@@ -313,7 +317,7 @@ struct ScannerWrongCardAlternativesSheet: View {
                                 .padding(.top, 4)
                                 .padding(.bottom, 12)
 
-                            ForEach(Array(alternatives.enumerated()), id: \.offset) { idx, card in
+                            ForEach(Array(sortedAlternatives.enumerated()), id: \.offset) { idx, card in
                                 Button {
                                     HapticManager.selection()
                                     onSelect(card)
@@ -358,7 +362,7 @@ struct ScannerWrongCardAlternativesSheet: View {
                                 }
                                 .buttonStyle(.plain)
 
-                                if idx < alternatives.count - 1 {
+                                if idx < sortedAlternatives.count - 1 {
                                     Divider()
                                         .padding(.leading, 74)
                                 }

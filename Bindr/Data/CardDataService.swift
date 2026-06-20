@@ -245,7 +245,7 @@ final class CardDataService {
     }
 
     /// Newest-released sets first; within one set, `cardNumber` ascending (catalog order).
-    private func sortCardsByReleaseDateNewestFirst(_ cards: [Card]) -> [Card] {
+    func cardsSortedByReleaseDateNewestFirst(_ cards: [Card]) -> [Card] {
         guard !cards.isEmpty else { return cards }
         let dates = releaseDateBySetCode
         return cards.sorted { a, b in
@@ -334,7 +334,7 @@ final class CardDataService {
             let cards = await loadCards(forSetCode: set.setCode)
             out.append(contentsOf: cards.filter { $0.dexIds?.contains(dexId) == true })
         }
-        return sortCardsByReleaseDateNewestFirst(out)
+        return cardsSortedByReleaseDateNewestFirst(out)
     }
 
     func search(query: String) async -> [Card] {
@@ -395,7 +395,7 @@ final class CardDataService {
                 return tokens.allSatisfy { name.contains($0) }
             }
         }.value
-        return sortCardsByReleaseDateNewestFirst(filtered)
+        return cardsSortedByReleaseDateNewestFirst(filtered)
     }
 
     private func linearSubstringSearch(normalizedQuery q: String) async -> [Card] {
@@ -417,7 +417,7 @@ final class CardDataService {
                 return blob.contains(q)
             }
         }.value
-        return sortCardsByReleaseDateNewestFirst(filtered)
+        return cardsSortedByReleaseDateNewestFirst(filtered)
     }
 
     // MARK: - Scanner (search without changing browse `selectedCatalogBrand`)
@@ -493,7 +493,7 @@ final class CardDataService {
             let loaded = await loadCards(forSetCode: setCode, catalogBrand: catalogBrand)
             out.append(contentsOf: loaded.filter { ids.contains($0.masterCardId) })
         }
-        return sortCardsByReleaseDateNewestFirst(out)
+        return cardsSortedByReleaseDateNewestFirst(out)
     }
 
     private func cardsPreservingSoftMatchOrder(_ ranked: [(ref: CardRef, tokenHits: Int)], catalogBrand: TCGBrand) async -> [Card] {
