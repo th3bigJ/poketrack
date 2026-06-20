@@ -437,6 +437,7 @@ struct NewPostView: View {
                     includeValue: false
                 )
             }
+            await services.socialFeed.refreshAfterContentPublished()
             Haptics.success()
             dismiss()
         } catch {

@@ -1191,6 +1191,7 @@ struct SocialShareSheet: View {
                     deck, title: deck.title, description: postText, visibility: visibility, includeValue: false
                 )
             }
+            await services.socialFeed.refreshAfterContentPublished()
             dismiss()
         } catch {
             if case SocialShareService.SocialShareError.freeTierLimitReached = error { showPaywall = true }

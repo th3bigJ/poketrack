@@ -131,6 +131,9 @@ struct MyProfileView: View {
         .onChange(of: activeProfileTab) { _, _ in
             normalizeProfileTab()
         }
+        .onChange(of: services.socialFeed.contentPublishedRevision) { _, _ in
+            Task { await refreshProfileContent() }
+        }
     }
     
     // MARK: - Subviews

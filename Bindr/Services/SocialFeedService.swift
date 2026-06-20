@@ -321,6 +321,9 @@ final class SocialFeedService {
     }
     private(set) var unreadCount = 0
     private(set) var unreadAlertsCount = 0
+    /// Bumped after new shared content is published so profile and other
+    /// social surfaces can reload without leaving the tab.
+    private(set) var contentPublishedRevision = 0
 
     private var cursorDate: Date?
     private let feedSeenStorageKeyPrefix = "social.feed.seen.ids"
@@ -333,6 +336,20 @@ final class SocialFeedService {
 
     var hasUnread: Bool {
         unreadCount > 0 || unreadAlertsCount > 0
+    }
+
+    /// Reloads the main feed after the user publishes new content.
+    func refreshAfterContentPublished() async {
+        contentPublishedRevision += 1
+        do {
+            _ = try await fetchFeed(refresh: true, pageSize: 30, scope: selectedScope)
+        } catch is CancellationError {
+            return
+        } catch let error as URLError where error.code == .cancelled {
+            return
+        } catch {
+            // Keep the existing feed; pull-to-refresh remains available.
+        }
     }
 
     /// Background poll for unread alerts without full state refresh
