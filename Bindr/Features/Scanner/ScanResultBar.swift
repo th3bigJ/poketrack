@@ -59,15 +59,19 @@ struct ScanResultBar: View {
             .padding(.top, 12)
             .padding(.horizontal, 16)
 
-            VStack(spacing: 8) {
-                ForEach(variants, id: \.self) { key in
-                    variantRow(key)
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 8) {
+                    ForEach(variants, id: \.self) { key in
+                        variantRow(key)
+                    }
                 }
+                .padding(.top, 10)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 4)
             }
-            .padding(.top, 10)
-            .padding(.horizontal, 16)
-            .padding(.bottom, 4)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .frame(maxHeight: .infinity, alignment: .top)
         .onAppear {
             for key in variants where (selectedVariantQuantities[key] ?? 0) < 0 {
                 selectedVariantQuantities[key] = 0

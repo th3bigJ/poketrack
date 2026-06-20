@@ -1075,7 +1075,6 @@ struct RootView: View {
 
             if searchNavigationPath.isEmpty {
                 universalSearchBarControl(
-                    circleButtonsUseGlass: true,
                     searchFieldUseGlass: true,
                     showsBackButtonWhenOpen: true
                 )
@@ -1126,7 +1125,6 @@ struct RootView: View {
 
     private func universalSearchBarControl(
         usesNativeGlassChrome: Bool = false,
-        circleButtonsUseGlass: Bool = false,
         searchFieldUseGlass: Bool = false,
         showsBackButtonWhenOpen: Bool = true
     ) -> some View {
@@ -1153,7 +1151,6 @@ struct RootView: View {
             filterMenuContent: filterContent,
             gridMenuContent: gridContent,
             usesNativeGlassChrome: usesNativeGlassChrome,
-            circleButtonsUseGlass: circleButtonsUseGlass,
             searchFieldUseGlass: searchFieldUseGlass,
             showsBackButtonWhenOpen: showsBackButtonWhenOpen,
             collapsedLeadingButton: browseLeadingButton,

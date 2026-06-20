@@ -9,7 +9,7 @@ private enum ScannerCardFrameLayout {
     /// Top inset for the bottom sheet drag handle (capture button sits fully in the camera area).
     static let sheetTopContentInset: CGFloat = 16
     /// Gap between the bottom of the capture button and the top edge of the bottom sheet.
-    static let captureButtonBottomGap: CGFloat = 12
+    static let captureButtonBottomGap: CGFloat = 28
     /// Keeps the preview usable when the scanner is presented on a compact-height device.
     static let minimumCameraContentHeight: CGFloat = 360
     /// Alignment frame width as a fraction of preview width. Slightly smaller than full-card fill helps autofocus lock on the subject.
@@ -941,47 +941,63 @@ private struct ScannerResultsOverlay: View {
         let screenWidth = UIScreen.main.bounds.width
 
         VStack(spacing: 0) {
-            Spacer(minLength: 0)
+            Color.clear
                 .frame(height: ScannerCardFrameLayout.sheetTopContentInset)
 
             ZStack(alignment: .top) {
-                ForEach(Array(results.enumerated()), id: \.element.id) { i, result in
-                    let offset = CGFloat(i - currentResultIndex) * (screenWidth + 12) + barDragOffset
-                    ScanResultBar(
-                        result: result,
-                        isCurrentPage: i == currentResultIndex,
-                        onPickAlternative: { picked in
-                            onPickAlternative(result.id, picked)
-                        },
-                        onOpenDetails: onOpenDetails,
-                        onDelete: { onDeleteResult(result.id) },
-                        selectedVariant: Binding(
-                            get: { selectedVariantsByResultID[result.id] ?? "" },
-                            set: { selectedVariantsByResultID[result.id] = $0 }
-                        ),
-                        selectedVariantQuantities: Binding(
-                            get: { selectedVariantQuantitiesByResultID[result.id] ?? [:] },
-                            set: { selectedVariantQuantitiesByResultID[result.id] = $0 }
-                        )
-                    )
-                    .frame(width: screenWidth, alignment: .top)
-                    .offset(x: offset)
-                    .opacity(abs(i - currentResultIndex) <= 1 ? (i == currentResultIndex ? 1 : 0.55) : 0)
-                    .allowsHitTesting(i == currentResultIndex)
+                ForEach(Array(results.enumerated()), id: \.element.id) { index, result in
+                    resultPage(result: result, index: index, screenWidth: screenWidth)
                 }
             }
-            .frame(width: screenWidth, alignment: .top)
+            .frame(width: screenWidth)
+            .frame(maxHeight: .infinity, alignment: .top)
             .clipped()
             .contentShape(Rectangle())
             .simultaneousGesture(horizontalPageGesture(count: count))
-
-            Spacer(minLength: 0)
 
             pageIndicator(count: count)
                 .padding(.top, 8)
                 .padding(.bottom, max(safeBottom + 20, 28))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+
+    @ViewBuilder
+    private func resultPage(result: ScanResult, index: Int, screenWidth: CGFloat) -> some View {
+        let offset = CGFloat(index - currentResultIndex) * (screenWidth + 12) + barDragOffset
+        let isCurrentPage = index == currentResultIndex
+        let isAdjacentPage = abs(index - currentResultIndex) <= 1
+
+        ScanResultBar(
+            result: result,
+            isCurrentPage: isCurrentPage,
+            onPickAlternative: { picked in
+                onPickAlternative(result.id, picked)
+            },
+            onOpenDetails: onOpenDetails,
+            onDelete: { onDeleteResult(result.id) },
+            selectedVariant: variantBinding(for: result),
+            selectedVariantQuantities: variantQuantitiesBinding(for: result)
+        )
+        .frame(width: screenWidth)
+        .frame(maxHeight: .infinity, alignment: .top)
+        .offset(x: offset)
+        .opacity(isAdjacentPage ? (isCurrentPage ? 1 : 0.55) : 0)
+        .allowsHitTesting(isCurrentPage)
+    }
+
+    private func variantBinding(for result: ScanResult) -> Binding<String> {
+        Binding(
+            get: { selectedVariantsByResultID[result.id] ?? "" },
+            set: { selectedVariantsByResultID[result.id] = $0 }
+        )
+    }
+
+    private func variantQuantitiesBinding(for result: ScanResult) -> Binding<[String: Int]> {
+        Binding(
+            get: { selectedVariantQuantitiesByResultID[result.id] ?? [:] },
+            set: { selectedVariantQuantitiesByResultID[result.id] = $0 }
+        )
     }
 
     @ViewBuilder

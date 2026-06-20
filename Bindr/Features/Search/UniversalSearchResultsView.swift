@@ -75,7 +75,7 @@ struct UniversalSearchResultsView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             } else {
                 ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 24, pinnedViews: []) {
+                    LazyVStack(alignment: .leading, spacing: RootChromeEnvironment.searchOverlaySectionSpacing, pinnedViews: []) {
                         if sourceScope == .allCards && !matchingSets.isEmpty {
                             sectionHeader("Sets")
                             VStack(spacing: 0) {

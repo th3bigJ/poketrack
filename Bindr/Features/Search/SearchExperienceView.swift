@@ -115,7 +115,7 @@ struct SearchExperienceView: View {
 
     private var idleContent: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: RootChromeEnvironment.searchOverlaySectionSpacing) {
                 HStack(spacing: 10) {
                     ForEach(SearchIdleCategory.allCases) { category in
                         Button {

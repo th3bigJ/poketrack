@@ -6,6 +6,15 @@ enum BinderRingGuide {
     static let normalizedYPositions: [CGFloat] = [0.30, 0.50, 0.70]
 }
 
+private enum BinderCoverEmbossMetrics {
+    /// Standard trading-card width:height ratio used across the app.
+    static let cardAspectRatio: CGFloat = 5.0 / 7.0
+
+    static func cardHeight(forWidth width: CGFloat) -> CGFloat {
+        width / cardAspectRatio
+    }
+}
+
 /// A premium representation of a binder cover, featuring procedural textures,
 /// a reinforced spine, an ornamental tinted header, and an optional fan of
 /// "peeking" card-back thumbnails. Designed in an A4 portrait ratio so it
@@ -364,27 +373,49 @@ struct BinderCoverView: View {
     // MARK: - Embossed art layer
 
     /// Resizes source art to the embossed footprint.
-    private func embossedSourceImage(_ img: Image, width: CGFloat) -> some View {
-        img.resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: width)
+    private func embossedSourceImage(_ img: Image, width: CGFloat, isCharacter: Bool) -> some View {
+        Group {
+            if isCharacter {
+                img.resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: width)
+            } else {
+                img.resizable()
+                    .aspectRatio(BinderCoverEmbossMetrics.cardAspectRatio, contentMode: .fit)
+                    .frame(width: width)
+            }
+        }
     }
 
     /// Luminance mask that knocks out dark / black backgrounds so only the
     /// art silhouette embosses into the binder texture.
     private func embossedLuminanceMask(_ img: Image, width: CGFloat, isCharacter: Bool) -> some View {
-        img.resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: width)
-            .grayscale(1)
-            .contrast(isCharacter ? 6.0 : 2.4)
-            .brightness(isCharacter ? 0.18 : -0.08)
+        Group {
+            if isCharacter {
+                img.resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: width)
+            } else {
+                img.resizable()
+                    .aspectRatio(BinderCoverEmbossMetrics.cardAspectRatio, contentMode: .fit)
+                    .frame(width: width)
+            }
+        }
+        .grayscale(1)
+        .contrast(isCharacter ? 6.0 : 2.4)
+        .brightness(isCharacter ? 0.18 : -0.08)
     }
 
     private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
-        CachedAsyncImage(
+        let isCharacter = binder.embossModeKind == .character
+        let artWidth = (isCharacter ? 190 : 148) * scale
+        let pixelScale = 3.0
+        let targetWidth = Int(artWidth * pixelScale)
+        let targetHeight = Int((isCharacter ? artWidth : BinderCoverEmbossMetrics.cardHeight(forWidth: artWidth)) * pixelScale)
+
+        return CachedAsyncImage(
             url: url,
-            targetSize: CGSize(width: Int(((binder.embossModeKind == .character ? 190 : 148) * scale) * 3), height: Int(((binder.embossModeKind == .character ? 190 : 148) * scale) * 4))
+            targetSize: CGSize(width: targetWidth, height: targetHeight)
         ) { img in
             embossedArtLayer(image: img, scale: scale)
         } placeholder: {
@@ -396,7 +427,7 @@ struct BinderCoverView: View {
     private func embossedArtLayer(image img: Image, scale: CGFloat) -> some View {
         let isCharacter = binder.embossModeKind == .character
         let artWidth: CGFloat = (isCharacter ? 190 : 148) * scale
-        let cardHeight = artWidth * (5.0 / 7.0)
+        let cardHeight = BinderCoverEmbossMetrics.cardHeight(forWidth: artWidth)
         let lightOffset: CGFloat = (isCharacter ? 2.2 : 1.5) * scale
         let shadowOffset: CGFloat = (isCharacter ? 2.4 : 1.7) * scale
         let maskContrast: CGFloat = isCharacter ? 3.4 : 1.65
@@ -415,7 +446,7 @@ struct BinderCoverView: View {
                         .offset(x: shadowOffset, y: shadowOffset)
                         .blendMode(.softLight)
 
-                    embossedSourceImage(img, width: artWidth)
+                    embossedSourceImage(img, width: artWidth, isCharacter: true)
                         .grayscale(1)
                         .contrast(maskContrast)
                         .brightness(1)
@@ -432,7 +463,7 @@ struct BinderCoverView: View {
                         .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: true))
                         .blendMode(.overlay)
 
-                    embossedSourceImage(img, width: artWidth)
+                    embossedSourceImage(img, width: artWidth, isCharacter: true)
                         .grayscale(1)
                         .contrast(2.2)
                         .brightness(-0.06)
@@ -468,7 +499,7 @@ struct BinderCoverView: View {
                         .blendMode(.overlay)
                         .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
 
-                    embossedSourceImage(img, width: artWidth)
+                    embossedSourceImage(img, width: artWidth, isCharacter: false)
                         .grayscale(1)
                         .contrast(maskContrast)
                         .brightness(-1)
@@ -478,7 +509,7 @@ struct BinderCoverView: View {
                         .blendMode(.multiply)
                         .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
 
-                    embossedSourceImage(img, width: artWidth)
+                    embossedSourceImage(img, width: artWidth, isCharacter: false)
                         .grayscale(1)
                         .contrast(maskContrast)
                         .brightness(1)
@@ -488,7 +519,7 @@ struct BinderCoverView: View {
                         .blendMode(.screen)
                         .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
 
-                    embossedSourceImage(img, width: artWidth)
+                    embossedSourceImage(img, width: artWidth, isCharacter: false)
                         .grayscale(1)
                         .contrast(0.8)
                         .blur(radius: 0.6 * scale)
@@ -498,7 +529,7 @@ struct BinderCoverView: View {
 
                     // Sharp detail layer to make the card text, frames, and illustration
                     // sharp and legible rather than a muddy blur.
-                    embossedSourceImage(img, width: artWidth)
+                    embossedSourceImage(img, width: artWidth, isCharacter: false)
                         .grayscale(1)
                         .contrast(1.6)
                         .brightness(-0.04)
@@ -516,13 +547,14 @@ struct BinderCoverView: View {
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
-                .frame(width: isCharacter ? artWidth : artWidth, height: isCharacter ? artWidth : cardHeight)
+                .frame(width: artWidth, height: isCharacter ? nil : cardHeight)
                 .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: isCharacter))
                 .blendMode(.overlay)
                 .allowsHitTesting(false)
             }
             .compositingGroup()
             .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: isCharacter))
+            .frame(width: artWidth, height: isCharacter ? nil : cardHeight)
             .offset(y: 48 * scale)
     }
 

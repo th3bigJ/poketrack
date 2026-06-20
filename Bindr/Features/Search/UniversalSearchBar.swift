@@ -34,9 +34,6 @@ struct UniversalSearchBar: View {
     /// When `true`, skips the local `GlassEffectContainer` wrapper because an
     /// ancestor already owns glass morphing (e.g. a page header).
     var usesNativeGlassChrome: Bool = false
-    /// Circle accessory buttons (back, camera, filter). `true` = Liquid Glass
-    /// in all colour schemes; `false` = white discs in light mode.
-    var circleButtonsUseGlass: Bool = false
     /// Search field capsule. `true` = Liquid Glass in all colour schemes;
     /// `false` = solid white fill in light mode (matches collapsed root bar).
     var searchFieldUseGlass: Bool = false
@@ -115,7 +112,7 @@ struct UniversalSearchBar: View {
                                 Image(systemName: leadingSymbolName)
                                     .font(.system(size: 17, weight: .medium))
                                     .foregroundStyle(.primary)
-                                    .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                                    .modifier(ChromeGlassCircleGlyphModifier())
                                     .contentTransition(.symbolEffect(.replace))
                             }
                             .buttonStyle(.plain)
@@ -169,7 +166,7 @@ struct UniversalSearchBar: View {
                             Image(systemName: leadingSymbolName)
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(.primary)
-                                .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                                .modifier(ChromeGlassCircleGlyphModifier())
                                 .contentTransition(.symbolEffect(.replace))
                         }
                         .buttonStyle(.plain)
@@ -224,7 +221,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                                .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                                .modifier(ChromeGlassCircleGlyphModifier())
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -243,7 +240,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                            .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                            .modifier(ChromeGlassCircleGlyphModifier())
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -392,14 +389,14 @@ struct UniversalSearchBar: View {
         Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isFilterEnabled ? AnyShapeStyle(filterTint) : AnyShapeStyle(.secondary))
-                                .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                                .modifier(ChromeGlassCircleGlyphModifier())
     }
 
     private var filterGlyphFallback: some View {
         Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isFilterEnabled ? AnyShapeStyle(filterTint) : AnyShapeStyle(.secondary))
-                            .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                            .modifier(ChromeGlassCircleGlyphModifier())
     }
 
     private func chromeMenuButton<Content: View>(
@@ -432,7 +429,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                                .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                                .modifier(ChromeGlassCircleGlyphModifier())
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -445,7 +442,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                            .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                            .modifier(ChromeGlassCircleGlyphModifier())
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -462,7 +459,7 @@ struct UniversalSearchBar: View {
             Image(systemName: "camera.fill")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                                .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                                .modifier(ChromeGlassCircleGlyphModifier())
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -478,7 +475,7 @@ struct UniversalSearchBar: View {
             Image(systemName: "camera.fill")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                            .searchBarCircleChrome(forceNativeGlass: circleButtonsUseGlass)
+                            .modifier(ChromeGlassCircleGlyphModifier())
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
