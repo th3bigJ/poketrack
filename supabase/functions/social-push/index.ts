@@ -31,7 +31,7 @@ const supabase = createClient(
 )
 
 const APNS_TOPIC = Deno.env.get("APNS_TOPIC") ?? ""
-const APNS_ENV = Deno.env.get("APNS_ENV") ?? "sandbox"
+const APNS_ENV = Deno.env.get("APNS_ENV") ?? "production"
 const APNS_TEAM_ID = Deno.env.get("APNS_TEAM_ID") ?? ""
 const APNS_KEY_ID = Deno.env.get("APNS_KEY_ID") ?? ""
 const APNS_PRIVATE_KEY = Deno.env.get("APNS_PRIVATE_KEY") ?? ""

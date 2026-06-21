@@ -661,6 +661,7 @@ private struct BrowseCardGridButton: View {
 struct BrowseView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
+    @Environment(\.presentCardAtIndex) private var presentCardAtIndex
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
@@ -1346,10 +1347,15 @@ struct BrowseView: View {
                 }
 
                 if useMasterGrid {
+                    let masterGridPresentationCards = variantRows.map(\.card)
                     EagerVGrid(items: variantRows, columns: safeColumnCount, spacing: 12) { row in
                         let variantCompositeKey = "\(row.card.masterCardId)::\(row.variant)"
                         Button {
-                            presentCard(row.card, filteredCards)
+                            if let index = variantRows.firstIndex(where: { $0.id == row.id }) {
+                                presentCardAtIndex(masterGridPresentationCards, index)
+                            } else {
+                                presentCard(row.card, masterGridPresentationCards)
+                            }
                         } label: {
                             CardGridCell(
                                 card: row.card,
@@ -1423,10 +1429,16 @@ struct BrowseView: View {
     }
 
     private var filteredInlineDetailCards: [Card] {
+        var filters = inlineDetailFilters
+        if setCompletionMode.usesVariantGrid {
+            // Master/grand-master grids apply owned filters per variant slot, not per card.
+            filters.hideOwned = false
+            filters.ownedOnly = false
+        }
         let filtered = filterBrowseCards(
             inlineDetailCards,
             query: inlineDetailQuery,
-            filters: inlineDetailFilters,
+            filters: filters,
             ownedCardIDs: ownedCardIDsCache,
             brand: currentBrand,
             sets: services.cardData.sets,
