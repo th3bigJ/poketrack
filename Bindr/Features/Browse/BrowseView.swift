@@ -4269,13 +4269,45 @@ struct SetCardsView: View {
 
     @MainActor
     private func refreshPriceCache() async {
+        guard !cards.isEmpty else {
+            priceByCardID = [:]
+            return
+        }
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        await services.pricing.indexPricingForCards(cards)
+
         var next: [String: Double] = [:]
         next.reserveCapacity(cards.count)
+        var misses: [Card] = []
+        misses.reserveCapacity(8)
+
         for card in cards {
-            guard let entry = await services.pricing.pricing(for: card),
-                  let usd = browseMarketPriceUSD(for: entry) else { continue }
-            next[card.masterCardId] = usd
+            if services.pricing.isPricingIndexed(for: card) {
+                if let usd = browseMarketPriceUSD(for: services.pricing.cachedPricingEntry(for: card)) {
+                    next[card.masterCardId] = usd
+                }
+            } else {
+                misses.append(card)
+            }
         }
+
+        if !misses.isEmpty {
+            await withTaskGroup(of: (String, Double?).self) { group in
+                for card in misses {
+                    group.addTask {
+                        guard let entry = await services.pricing.pricing(for: card),
+                              let usd = browseMarketPriceUSD(for: entry) else {
+                            return (card.masterCardId, nil)
+                        }
+                        return (card.masterCardId, usd)
+                    }
+                }
+                for await (id, usd) in group {
+                    if let usd { next[id] = usd }
+                }
+            }
+        }
+
         priceByCardID = next
         await refreshSetTrends()
     }
@@ -4528,13 +4560,45 @@ struct DexCardsView: View {
 
     @MainActor
     private func refreshPriceCache() async {
+        guard !cards.isEmpty else {
+            priceByCardID = [:]
+            return
+        }
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        await services.pricing.indexPricingForCards(cards)
+
         var next: [String: Double] = [:]
         next.reserveCapacity(cards.count)
+        var misses: [Card] = []
+        misses.reserveCapacity(8)
+
         for card in cards {
-            guard let entry = await services.pricing.pricing(for: card),
-                  let usd = browseMarketPriceUSD(for: entry) else { continue }
-            next[card.masterCardId] = usd
+            if services.pricing.isPricingIndexed(for: card) {
+                if let usd = browseMarketPriceUSD(for: services.pricing.cachedPricingEntry(for: card)) {
+                    next[card.masterCardId] = usd
+                }
+            } else {
+                misses.append(card)
+            }
         }
+
+        if !misses.isEmpty {
+            await withTaskGroup(of: (String, Double?).self) { group in
+                for card in misses {
+                    group.addTask {
+                        guard let entry = await services.pricing.pricing(for: card),
+                              let usd = browseMarketPriceUSD(for: entry) else {
+                            return (card.masterCardId, nil)
+                        }
+                        return (card.masterCardId, usd)
+                    }
+                }
+                for await (id, usd) in group {
+                    if let usd { next[id] = usd }
+                }
+            }
+        }
+
         priceByCardID = next
     }
 }

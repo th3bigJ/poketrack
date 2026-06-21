@@ -46,11 +46,13 @@ final class PricingService {
     /// `cachedUsdPriceForCardID` can do O(1) lookups without knowing externalId/tcgdex_id.
     /// Call this after `prefetchAllPokemonCardPricing` and a bulk card load both complete.
     func indexPricingForCards(_ cards: [Card]) async {
+        var seen = Set<String>()
         var i = 0
         for card in cards {
+            let key = card.masterCardId.lowercased()
+            guard seen.insert(key).inserted else { continue }
             i += 1
             if i % 200 == 0 { await Task.yield() }
-            let key = card.masterCardId.lowercased()
             if let existing = pokemonPricingByMasterCardID[key], existing != nil {
                 continue
             }
@@ -65,6 +67,26 @@ final class PricingService {
             }
             pokemonPricingByMasterCardID[key] = found
         }
+    }
+
+    /// Pricing entry from the warm in-memory cache after prefetch + index. Returns `nil` when
+    /// the card has not been indexed yet (caller should fall back to `pricing(for:)`).
+    func cachedPricingEntry(for card: Card) -> CardPricingEntry? {
+        let masterKey = card.masterCardId.lowercased()
+        if let idx = pokemonPricingByMasterCardID.index(forKey: masterKey) {
+            return pokemonPricingByMasterCardID[idx].value
+        }
+        for key in Self.pricingLookupKeys(for: card) {
+            if let idx = pokemonCardPricingCache.index(forKey: key.lowercased()) {
+                return pokemonCardPricingCache[idx].value
+            }
+        }
+        return nil
+    }
+
+    /// Whether pricing for this card is present in the warm cache (including cached "no price").
+    func isPricingIndexed(for card: Card) -> Bool {
+        pokemonPricingByMasterCardID.index(forKey: card.masterCardId.lowercased()) != nil
     }
 
     /// Bulk-populate the Pokemon card pricing cache from a single SQLite query covering all sets.

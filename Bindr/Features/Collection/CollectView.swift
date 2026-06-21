@@ -124,14 +124,6 @@ struct CollectView: View {
             if missingCardData { return true }
         }
 
-        if collectionFilters.sortBy == .price {
-            if isResolvingCollectionPrices { return true }
-            let missingPriceResolution = visibleCollectionCardItems.contains {
-                !collectionResolvedPriceItemKeys.contains(collectionItemKey($0))
-            }
-            if missingPriceResolution { return true }
-        }
-
         return false
     }
 
@@ -158,14 +150,6 @@ struct CollectView: View {
         if wishlistSortNeedsResolvedCards || wishlistHasCardFilterDependencies {
             let missingCardData = cardItems.contains { wishlistCardsByID[$0.cardID] == nil }
             if missingCardData { return true }
-        }
-
-        if wishlistFilters.sortBy == .price {
-            if isResolvingWishlistPrices { return true }
-            let missingPriceResolution = cardItems.contains {
-                !wishlistResolvedPriceItemKeys.contains(wishlistItemKey($0))
-            }
-            if missingPriceResolution { return true }
         }
 
         return false
@@ -465,13 +449,23 @@ struct CollectView: View {
                         guard selectedContentTypeTab == .cards else { return }
                         ImagePrefetcher.shared.prefetchCardWindow(collectionDisplayedCards, startingAt: indexed.index + 1)
                         guard indexed.index >= max(collectionDisplayedGroups.count - safeColumnCount, 0) else { return }
-                        guard collectionFilters.sortBy != .price else { return }
+                        guard collectionFilters.sortBy != .price || !isResolvingCollectionPrices else { return }
                         Task { await loadMoreCollectionItemsIfNeeded() }
                     }
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 8)
-            if isLoadingMoreCollectionItems {
+            if isResolvingCollectionPrices {
+                HStack(spacing: 8) {
+                    ProgressView()
+                        .controlSize(.small)
+                    Text("Updating prices…")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
+            } else if isLoadingMoreCollectionItems {
                 ProgressView()
                     .frame(maxWidth: .infinity)
                     .padding(.top, 12)
@@ -729,14 +723,6 @@ struct CollectView: View {
 
     private func resolveCollectionCards() async {
         let needsDeepPriceResolve = collectionFilters.sortBy == .price
-        if needsDeepPriceResolve {
-            isResolvingCollectionPrices = true
-        }
-        defer {
-            if needsDeepPriceResolve {
-                isResolvingCollectionPrices = false
-            }
-        }
 
         let cardItems = visibleCollectionItems.filter { sealedProduct(for: $0) == nil }
         let missingIDs = Array(Set(cardItems.map(\.cardID).filter { cardsByCardID[$0] == nil }))
@@ -752,7 +738,14 @@ struct CollectView: View {
         }
         cardsByCardID = next
 
-        let cardsToPrice = cardItems.compactMap { next[$0.cardID] }
+        var uniqueCardsByID: [String: Card] = [:]
+        uniqueCardsByID.reserveCapacity(cardItems.count)
+        for item in cardItems {
+            if let card = next[item.cardID] {
+                uniqueCardsByID[card.masterCardId] = card
+            }
+        }
+        let cardsToPrice = Array(uniqueCardsByID.values)
         await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
         await services.pricing.indexPricingForCards(cardsToPrice)
 
@@ -773,25 +766,38 @@ struct CollectView: View {
             }
         }
 
-        if needsDeepPriceResolve {
-            await resolveMissingCollectionSortPrices(
-                cardItems: cardItems,
-                cardsByID: next,
-                itemPrices: &nextPrices,
-                cardPrices: &nextCardPrices
-            )
-        }
-
         collectionPriceByItemKey = nextPrices
         collectionSortPriceByCardID = nextCardPrices
         collectionResolvedPriceItemKeys = resolvedPriceKeys
 
+        collectFilterEnergyOptions = cardEnergyOptions(Array(uniqueCardsByID.values))
+        collectFilterRarityOptions = cardRarityOptions(Array(uniqueCardsByID.values))
+        collectFilterTrainerTypeOptions = cardTrainerTypeOptions(Array(uniqueCardsByID.values))
+        refreshCollectionFeed()
+
         let cards = collectionDisplayedCards
         ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
-        collectFilterEnergyOptions = cardEnergyOptions(cards)
-        collectFilterRarityOptions = cardRarityOptions(cards)
-        collectFilterTrainerTypeOptions = cardTrainerTypeOptions(cards)
-        refreshCollectionFeed()
+
+        guard needsDeepPriceResolve else { return }
+
+        let cardItemsSnapshot = cardItems
+        let cardsByIDSnapshot = next
+        Task { @MainActor in
+            isResolvingCollectionPrices = true
+            defer { isResolvingCollectionPrices = false }
+
+            var itemPrices = nextPrices
+            var cardPrices = nextCardPrices
+            await resolveMissingCollectionSortPrices(
+                cardItems: cardItemsSnapshot,
+                cardsByID: cardsByIDSnapshot,
+                itemPrices: &itemPrices,
+                cardPrices: &cardPrices
+            )
+            collectionPriceByItemKey = itemPrices
+            collectionSortPriceByCardID = cardPrices
+            refreshCollectionFeed()
+        }
     }
 
     private func resolveMissingCollectionSortPrices(
@@ -810,10 +816,10 @@ struct CollectView: View {
 
         await withTaskGroup(of: (String, Double?).self) { group in
             for (cardID, card) in cardsNeedingLookup {
-                group.addTask { @MainActor in
-                    let specs = cardItems
-                        .filter { $0.cardID == cardID }
-                        .map { (variantKey: $0.variantKey, grade: self.collectionGradeKey(for: $0)) }
+                let specs = cardItems
+                    .filter { $0.cardID == cardID }
+                    .map { (variantKey: $0.variantKey, grade: collectionGradeKey(for: $0)) }
+                group.addTask {
                     let price = await self.services.pricing.resolveBestMarketSortUSD(for: card, specs: specs)
                     return (cardID, price)
                 }
@@ -848,9 +854,13 @@ struct CollectView: View {
 
         let initialEnd: Int
         if collectionFilters.sortBy == .price {
-            // Price sort must show one continuous ranked list — paginating caused a
-            // priced top section then an alphabetically-fallback tail as more rows loaded.
-            initialEnd = groups.count
+            if isResolvingCollectionPrices {
+                // Show the first screen while SQLite fallbacks finish in the background.
+                initialEnd = min(Self.collectionInitialBatchSize, groups.count)
+            } else {
+                // Full ranked list once every price is resolved.
+                initialEnd = groups.count
+            }
         } else {
             initialEnd = min(Self.collectionInitialBatchSize, groups.count)
         }
@@ -956,6 +966,17 @@ struct CollectView: View {
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 8)
+            if isResolvingWishlistPrices {
+                HStack(spacing: 8) {
+                    ProgressView()
+                        .controlSize(.small)
+                    Text("Updating prices…")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.top, 8)
+            }
         }
     }
 
@@ -1096,14 +1117,6 @@ struct CollectView: View {
 
     private func resolveWishlistCards() async {
         let needsDeepPriceResolve = wishlistFilters.sortBy == .price
-        if needsDeepPriceResolve {
-            isResolvingWishlistPrices = true
-        }
-        defer {
-            if needsDeepPriceResolve {
-                isResolvingWishlistPrices = false
-            }
-        }
 
         let cardItems = visibleWishlistItems.filter { sealedProduct(for: $0) == nil }
         let missingIDs = Array(Set(cardItems.map(\.cardID).filter { wishlistCardsByID[$0] == nil }))
@@ -1119,7 +1132,14 @@ struct CollectView: View {
         }
         wishlistCardsByID = next
 
-        let cardsToPrice = cardItems.compactMap { next[$0.cardID] }
+        var uniqueCardsByID: [String: Card] = [:]
+        uniqueCardsByID.reserveCapacity(cardItems.count)
+        for item in cardItems {
+            if let card = next[item.cardID] {
+                uniqueCardsByID[card.masterCardId] = card
+            }
+        }
+        let cardsToPrice = Array(uniqueCardsByID.values)
         await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
         await services.pricing.indexPricingForCards(cardsToPrice)
 
@@ -1139,20 +1159,31 @@ struct CollectView: View {
             }
         }
 
-        if needsDeepPriceResolve {
-            await resolveMissingWishlistSortPrices(
-                cardItems: cardItems,
-                cardsByID: next,
-                itemPrices: &nextPrices,
-                cardPrices: &nextCardPrices
-            )
-        }
-
         wishlistPriceByItemKey = nextPrices
         wishlistSortPriceByCardID = nextCardPrices
         wishlistResolvedPriceItemKeys = resolvedPriceKeys
 
         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: 0, count: 24)
+
+        guard needsDeepPriceResolve else { return }
+
+        let cardItemsSnapshot = cardItems
+        let cardsByIDSnapshot = next
+        Task { @MainActor in
+            isResolvingWishlistPrices = true
+            defer { isResolvingWishlistPrices = false }
+
+            var itemPrices = nextPrices
+            var cardPrices = nextCardPrices
+            await resolveMissingWishlistSortPrices(
+                cardItems: cardItemsSnapshot,
+                cardsByID: cardsByIDSnapshot,
+                itemPrices: &itemPrices,
+                cardPrices: &cardPrices
+            )
+            wishlistPriceByItemKey = itemPrices
+            wishlistSortPriceByCardID = cardPrices
+        }
     }
 
     private func resolveMissingWishlistSortPrices(
@@ -1171,10 +1202,10 @@ struct CollectView: View {
 
         await withTaskGroup(of: (String, Double?).self) { group in
             for (cardID, card) in cardsNeedingLookup {
-                group.addTask { @MainActor in
-                    let specs = cardItems
-                        .filter { $0.cardID == cardID }
-                        .map { (variantKey: $0.variantKey, grade: "raw") }
+                let specs = cardItems
+                    .filter { $0.cardID == cardID }
+                    .map { (variantKey: $0.variantKey, grade: "raw") }
+                group.addTask {
                     let price = await self.services.pricing.resolveBestMarketSortUSD(for: card, specs: specs)
                     return (cardID, price)
                 }
