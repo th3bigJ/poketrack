@@ -51,7 +51,9 @@ final class PricingService {
             i += 1
             if i % 200 == 0 { await Task.yield() }
             let key = card.masterCardId.lowercased()
-            guard pokemonPricingByMasterCardID[key] == nil else { continue }
+            if let existing = pokemonPricingByMasterCardID[key], existing != nil {
+                continue
+            }
             let lookupKeys = Self.pricingLookupKeys(for: card)
             var found: CardPricingEntry? = nil
             for lk in lookupKeys {
@@ -425,6 +427,79 @@ final class PricingService {
                 guard let entry = pokemonCardPricingCache[idx].value else { return nil }
                 return Self.resolveUsdPrice(entry: entry, variantKey: variantKey, grade: grade)
             }
+        }
+        return nil
+    }
+
+    /// Highest cached USD price across all variants — used when sorting a collection grid group.
+    func cachedBestUsdPriceForCard(for card: Card, grade: String = "raw") -> Double? {
+        let keys = Self.pricingLookupKeys(for: card)
+        for key in keys {
+            if let idx = pokemonCardPricingCache.index(forKey: key.lowercased()) {
+                guard let entry = pokemonCardPricingCache[idx].value else { continue }
+                if let scrydex = entry.scrydex, !scrydex.isEmpty {
+                    let prices = scrydex.values.compactMap { Self.usdForScrydexVariant($0, grade: grade) }
+                    if let best = prices.max() { return best }
+                }
+                if grade == "raw", let tcg = entry.tcgplayerMarketEstimateUSD() {
+                    return tcg
+                }
+            }
+        }
+        return nil
+    }
+
+    /// Best cached USD price for sort/display — tries the owned variant first, then any variant in the entry.
+    func cachedMarketSortUSD(for card: Card, variantKey: String, grade: String) -> Double? {
+        if let direct = cachedUsdPriceForVariantAndGrade(for: card, variantKey: variantKey, grade: grade) {
+            return direct
+        }
+        if let best = cachedBestUsdPriceForCard(for: card, grade: grade) {
+            return best
+        }
+        let keys = Self.pricingLookupKeys(for: card)
+        for key in keys {
+            if let idx = pokemonCardPricingCache.index(forKey: key.lowercased()) {
+                return Self.marketSortUSD(from: pokemonCardPricingCache[idx].value, variantKey: variantKey, grade: grade)
+            }
+        }
+        return nil
+    }
+
+    /// Resolves the best USD sort price for a card, falling back to SQLite when the bulk cache misses.
+    func resolveBestMarketSortUSD(
+        for card: Card,
+        specs: [(variantKey: String, grade: String)]
+    ) async -> Double? {
+        var best: Double?
+        for spec in specs {
+            if let price = cachedMarketSortUSD(for: card, variantKey: spec.variantKey, grade: spec.grade) {
+                best = max(best ?? 0, price)
+            }
+        }
+        if best != nil { return best }
+
+        guard let entry = await pricing(for: card) else { return nil }
+        for spec in specs {
+            if let price = Self.marketSortUSD(from: entry, variantKey: spec.variantKey, grade: spec.grade) {
+                best = max(best ?? 0, price)
+            }
+        }
+        if best != nil { return best }
+        return Self.marketSortUSD(from: entry, variantKey: "normal", grade: "raw")
+    }
+
+    static func marketSortUSD(from entry: CardPricingEntry?, variantKey: String, grade: String) -> Double? {
+        guard let entry else { return nil }
+        if let direct = resolveUsdPrice(entry: entry, variantKey: variantKey, grade: grade) {
+            return direct
+        }
+        if let scrydex = entry.scrydex, !scrydex.isEmpty {
+            let prices = scrydex.values.compactMap { usdForScrydexVariant($0, grade: grade) }.filter { $0 > 0 }
+            if let best = prices.max() { return best }
+        }
+        if grade == "raw" {
+            return entry.tcgplayerMarketEstimateUSD()
         }
         return nil
     }

@@ -7,6 +7,7 @@ struct BindersRootView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
+    @EnvironmentObject private var chromeScroll: ChromeScrollCoordinator
     @Query(sort: \Binder.createdAt, order: .reverse) private var binders: [Binder]
 
     @Binding var showCreateSheet: Bool
@@ -115,9 +116,15 @@ struct BindersRootView: View {
         .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
         // Hide the tab bar for the whole presentation (including close
-        // animation). Must live on this navigation destination — applying it
-        // on the overlay child does not reach the TabView chrome.
+        // animation). RootView also watches ``ChromeScrollCoordinator.overlaySuppressesTabBar``
+        // because nested `.toolbar` modifiers alone don't always reach TabView chrome.
         .toolbar(presentedBinder != nil ? .hidden : .visible, for: .tabBar)
+        .onChange(of: presentedBinder != nil) { _, isPresented in
+            chromeScroll.setOverlaySuppressesTabBar(isPresented)
+        }
+        .onDisappear {
+            chromeScroll.setOverlaySuppressesTabBar(false)
+        }
         .sheet(isPresented: $showCreateSheet, onDismiss: {
             gridResolvedURLs = [:]
             gridResolvedValues = [:]
@@ -658,7 +665,7 @@ struct BinderOpenContainer: View {
                     preloadedPeekingURLs: peekingURLs,
                     preloadedValueText: valueText,
                     topSafeAreaInset: rootGeo.safeAreaInsets.top,
-                    bottomSafeAreaInset: rootGeo.safeAreaInsets.bottom
+                    bottomSafeAreaInset: RootChromeEnvironment.floatingTabBarContentInset
                 )
                 .environment(services)
                 .opacity(isClosing ? 0 : detailOpacity)

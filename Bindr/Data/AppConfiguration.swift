@@ -274,10 +274,7 @@ enum AppConfiguration {
     /// Default folder `images/pokemon` (alongside `images/sets/…`). Override with `BINDR_R2_POKEMON_IMAGE_PREFIX` (empty = assets root + filename only).
     static func pokemonArtURL(imageFileName: String) -> URL {
         let trimmed = imageFileName.trimmingCharacters(in: .whitespacesAndNewlines)
-        if trimmed.hasPrefix("http") {
-            return URL(string: trimmed)!
-        }
-        if trimmed.contains("/") {
+        if trimmed.contains("/") || trimmed.hasPrefix("http") {
             return imageURL(relativePath: trimmed)
         }
         let folder = plistOrEnvTrimmed("BINDR_R2_POKEMON_IMAGE_PREFIX") ?? "images/pokemon"
@@ -290,8 +287,10 @@ enum AppConfiguration {
     /// Same path logic as ``pokemonArtURL`` but returns the catalog-relative key used for offline packs (no host).
     static func pokemonArtRelativePath(imageFileName: String) -> String {
         let trimmed = imageFileName.trimmingCharacters(in: .whitespacesAndNewlines)
-        if trimmed.hasPrefix("http") {
-            return trimmed
+        if trimmed.hasPrefix("http"),
+           let url = resolvedImageURL(stored: trimmed),
+           let key = offlineImageKey(for: url) {
+            return key
         }
         if trimmed.contains("/") {
             return trimmed.hasPrefix("/") ? String(trimmed.dropFirst()) : trimmed
@@ -305,11 +304,37 @@ enum AppConfiguration {
 
     /// Images and logos from JSON relative paths (`cards/foo.png`, `sets/logo/...`).
     static func imageURL(relativePath: String) -> URL {
-        if relativePath.hasPrefix("http") {
-            return URL(string: relativePath)!
+        resolvedImageURL(stored: relativePath) ?? assetURL(relativePath: relativePath)
+    }
+
+    /// Resolves a stored absolute or relative image URL against the current CDN base.
+    /// Profile and catalog JSON often persist absolute URLs from an old R2 / Cloudflare host
+    /// after a custom-domain migration — rebuild them from the path on the configured CDN.
+    static func resolvedImageURL(stored: String?) -> URL? {
+        guard let raw = stored?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else {
+            return nil
         }
-        let path = relativePath.hasPrefix("/") ? String(relativePath.dropFirst()) : relativePath
-        return url(prefix: r2AssetsPathPrefix, path: path)
+        if !raw.hasPrefix("http") {
+            return assetURL(relativePath: raw)
+        }
+        guard let url = URL(string: raw) else { return nil }
+        if url.host == r2BaseURL.host {
+            return url
+        }
+        var path = url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        let basePath = r2BaseURL.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        if !basePath.isEmpty, path.hasPrefix(basePath) {
+            path = String(path.dropFirst(basePath.count))
+                .trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        }
+        guard !path.isEmpty else { return nil }
+        return assetURL(relativePath: path)
+    }
+
+    private static func assetURL(relativePath path: String) -> URL {
+        let trimmed = path.trimmingCharacters(in: .whitespacesAndNewlines)
+        let normalized = trimmed.hasPrefix("/") ? String(trimmed.dropFirst()) : trimmed
+        return url(prefix: r2AssetsPathPrefix, path: normalized)
     }
 
     /// Upcoming release artwork from `upcoming.json` (`image`, e.g. `upcoming/pitchBlack.jpg`).

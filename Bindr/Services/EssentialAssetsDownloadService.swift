@@ -106,11 +106,7 @@ final class EssentialAssetsDownloadService {
         if brand == .pokemon {
             for row in nationalDexPokemon {
                 let rel = AppConfiguration.pokemonArtRelativePath(imageFileName: row.imageUrl)
-                if rel.hasPrefix("http"), let u = URL(string: rel) {
-                    append(rel, u)
-                } else {
-                    append(rel, AppConfiguration.pokemonArtURL(imageFileName: row.imageUrl))
-                }
+                append(rel, AppConfiguration.pokemonArtURL(imageFileName: row.imageUrl))
             }
         }
 

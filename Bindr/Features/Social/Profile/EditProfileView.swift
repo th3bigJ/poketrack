@@ -401,7 +401,7 @@ struct EditProfileView: View {
                     HStack(spacing: 12) {
                         if let favoritePokemon {
                             if let imageURL = favoritePokemon.imageURL,
-                               let url = URL(string: imageURL) {
+                               let url = AppConfiguration.resolvedImageURL(stored: imageURL) {
                                 CachedAsyncImage(url: url) { image in
                                     image.resizable().scaledToFit()
                                 } placeholder: {
@@ -436,7 +436,7 @@ struct EditProfileView: View {
                     HStack(spacing: 12) {
                         if let favoriteCard {
                             if let imageURL = favoriteCard.imageURL,
-                               let url = URL(string: imageURL) {
+                               let url = AppConfiguration.resolvedImageURL(stored: imageURL) {
                                 CachedAsyncImage(url: url) { image in
                                     image.resizable().scaledToFit()
                                 } placeholder: {
@@ -624,7 +624,7 @@ private struct FavoritePokemonPickerView: View {
                                 selection = FavoritePokemonSelection(
                                     dexNumber: item.nationalDexNumber,
                                     name: item.displayName,
-                                    imageURL: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl).absoluteString
+                                    imageURL: AppConfiguration.pokemonArtRelativePath(imageFileName: item.imageUrl)
                                 )
                                 dismiss()
                             } label: {
@@ -716,7 +716,7 @@ private struct FavoriteCardPickerView: View {
                                     cardID: card.masterCardId,
                                     cardName: card.cardName,
                                     setCode: card.setCode,
-                                    imageURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc).absoluteString
+                                    imageURL: card.displayImageSrc
                                 )
                                 dismiss()
                             } label: {

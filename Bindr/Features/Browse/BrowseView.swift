@@ -141,10 +141,7 @@ struct CardGridCell: View {
     }
 
     private func safeImageURL(relativePath: String) -> URL? {
-        let trimmed = relativePath.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return nil }
-        if trimmed.hasPrefix("http") { return URL(string: trimmed) }
-        return AppConfiguration.imageURL(relativePath: trimmed)
+        AppConfiguration.resolvedImageURL(stored: relativePath)
     }
 
     private var trailingCardID: String {

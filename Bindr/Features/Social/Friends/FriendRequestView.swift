@@ -14,7 +14,7 @@ struct FriendRequestView: View {
         List {
             Section("Request") {
                 HStack(spacing: 12) {
-                    avatar(urlString: request.requester.avatarURL)
+                    ProfileAvatarView(profile: request.requester, size: 48)
                     VStack(alignment: .leading, spacing: 2) {
                         Text(request.requester.displayName ?? request.requester.username)
                             .font(.headline)
@@ -56,27 +56,6 @@ struct FriendRequestView: View {
         .listStyle(.insetGrouped)
         .navigationTitle("Friend Request")
         .navigationBarTitleDisplayMode(.inline)
-    }
-
-    private func avatar(urlString: String?) -> some View {
-        Group {
-            if let urlString, let url = URL(string: urlString) {
-                CachedAsyncImage(url: url, targetSize: CGSize(width: 48, height: 48)) { image in
-                    image.resizable().aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    Circle().fill(Color.secondary.opacity(0.18))
-                }
-            } else {
-                Circle()
-                    .fill(Color.secondary.opacity(0.18))
-                    .overlay {
-                        Image(systemName: "person.fill")
-                            .foregroundStyle(.secondary)
-                    }
-            }
-        }
-        .frame(width: 48, height: 48)
-        .clipShape(Circle())
     }
 
     private func respond(accepted: Bool) async {

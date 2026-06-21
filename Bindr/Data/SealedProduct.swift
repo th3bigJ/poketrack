@@ -18,19 +18,7 @@ struct SealedProductImage: Codable, Hashable, Sendable {
                 return AppConfiguration.imageURL(relativePath: key)
             }
         }
-
-        guard let publicURL,
-              let url = URL(string: publicURL.trimmingCharacters(in: .whitespacesAndNewlines))
-        else { return nil }
-
-        if url.host == AppConfiguration.r2BaseURL.host {
-            return url
-        }
-
-        // Legacy absolute URL on another host — rebuild from its path on the current CDN.
-        let path = url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
-        guard !path.isEmpty else { return nil }
-        return AppConfiguration.imageURL(relativePath: path)
+        return AppConfiguration.resolvedImageURL(stored: publicURL)
     }
 }
 

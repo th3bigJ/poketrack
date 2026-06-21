@@ -1394,17 +1394,17 @@ struct DashboardView: View {
         await svc.loadAllFromStore()
         applyValuePlaceholder(from: svc)
 
-        if collectionItems.count > 0 {
-            onInitialLoadStatusChange?("Calculating your collection value...")
-            if await computeLiveValue() {
-                chartRefreshID += 1
-            }
-        }
-
-        // Value is established — unblock the launch overlay immediately.
-        // resolveDashboardMetadata and loadMarketTrendBlob run after the fade.
+        // Unblock the launch overlay with the persisted placeholder — live pricing runs after fade.
         hasPreparedInitialDashboardData = true
         fireInitialLoadCompleteIfReady()
+
+        if collectionItems.count > 0 {
+            Task { @MainActor in
+                if await computeLiveValue() {
+                    chartRefreshID += 1
+                }
+            }
+        }
     }
 
     /// Instant placeholder while live pricing loads — never treated as authoritative.

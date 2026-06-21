@@ -304,7 +304,7 @@ struct FriendProfileView: View {
                 // below remains as the personalised visual anchor.)
 
                 if let imageURL = profile.favoriteCardImageURL,
-                   let url = URL(string: imageURL) {
+                   let url = profile.resolvedFavoriteCardImageURL {
                     CachedAsyncImage(url: url) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
                     } placeholder: {
@@ -334,8 +334,8 @@ struct FriendProfileView: View {
     }
 
     private func favoriteCardImageExists(_ profile: SocialProfile) -> Bool {
-        guard let imageURL = profile.favoriteCardImageURL else { return false }
-        return URL(string: imageURL) != nil
+        guard profile.favoriteCardImageURL != nil else { return false }
+        return profile.resolvedFavoriteCardImageURL != nil
     }
 
     /// Accent colour driven by the friend's chosen avatar background. Falls

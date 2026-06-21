@@ -425,9 +425,7 @@ extension Card {
     }
 
     var displayImageURL: URL? {
-        let path = displayImageSrc.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !path.isEmpty else { return nil }
-        return AppConfiguration.imageURL(relativePath: path)
+        AppConfiguration.resolvedImageURL(stored: displayImageSrc)
     }
 
     private var shouldPreferHighResDisplayImage: Bool {

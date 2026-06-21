@@ -45,7 +45,7 @@ struct FriendSearchView: View {
                             FriendProfileView(username: result.profile.username)
                         } label: {
                             HStack(spacing: 12) {
-                                avatar(urlString: result.profile.avatarURL)
+                                ProfileAvatarView(profile: result.profile, size: 42)
                                 VStack(alignment: .leading, spacing: 2) {
                                     Text(result.profile.displayName ?? result.profile.username)
                                         .font(.body.weight(.semibold))
@@ -118,27 +118,6 @@ struct FriendSearchView: View {
                     .foregroundStyle(.red)
             }
         }
-    }
-
-    private func avatar(urlString: String?) -> some View {
-        Group {
-            if let urlString, let url = URL(string: urlString) {
-                CachedAsyncImage(url: url, targetSize: CGSize(width: 42, height: 42)) { image in
-                    image.resizable().aspectRatio(contentMode: .fill)
-                } placeholder: {
-                    Circle().fill(Color.secondary.opacity(0.18))
-                }
-            } else {
-                Circle()
-                    .fill(Color.secondary.opacity(0.18))
-                    .overlay {
-                        Image(systemName: "person.fill")
-                            .foregroundStyle(.secondary)
-                    }
-            }
-        }
-        .frame(width: 42, height: 42)
-        .clipShape(Circle())
     }
 
     private func runSearch() async {

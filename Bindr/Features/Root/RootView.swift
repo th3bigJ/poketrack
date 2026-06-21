@@ -633,6 +633,7 @@ struct RootView: View {
     private var chromeFloatingInset: CGFloat { RootChromeEnvironment.floatingContentTopInset }
     private var chromeSearchBarHiddenOffset: CGFloat { -(chromeFloatingInset + 18) }
     private var chromeContentTopInset: CGFloat { isSearchDetailActive ? 0 : chromeFloatingInset }
+    private var isTabBarHidden: Bool { isSearchExperiencePresented || chromeScroll.overlaySuppressesTabBar }
 
     @ViewBuilder
     private var launchOverlayContent: some View {
@@ -708,7 +709,7 @@ struct RootView: View {
                             })
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isSearchExperiencePresented ? .hidden : .automatic, for: .tabBar)
+                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
                         .tabItem { Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.symbolName) }
                         .tag(AppTab.dashboard)
 
@@ -735,7 +736,7 @@ struct RootView: View {
                             }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isSearchExperiencePresented ? .hidden : .automatic, for: .tabBar)
+                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
                         .tabItem { Label(AppTab.browse.title, systemImage: AppTab.browse.symbolName) }
                         .tag(AppTab.browse)
 
@@ -757,7 +758,7 @@ struct RootView: View {
                             }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isSearchExperiencePresented ? .hidden : .automatic, for: .tabBar)
+                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
                         .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
                         .tag(AppTab.collect)
 
@@ -769,7 +770,7 @@ struct RootView: View {
                             }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isSearchExperiencePresented ? .hidden : .automatic, for: .tabBar)
+                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
                         .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
                         .tag(AppTab.social)
 
@@ -781,12 +782,12 @@ struct RootView: View {
                             }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isSearchExperiencePresented ? .hidden : .automatic, for: .tabBar)
+                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
                         .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
                         .tag(AppTab.more)
                     }
                     .bindrDisableTabBarMinimize()
-                    .toolbar(isSearchExperiencePresented ? .hidden : .automatic, for: .tabBar)
+                    .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
                     if isSearchExperiencePresented {
                         searchOverlay
                     }

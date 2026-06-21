@@ -176,8 +176,7 @@ struct FriendsCollectionView: View {
         let owners = entry?.owners ?? []
         let footnote: String? = gridOptions.showOwned ? ownerLabel(owners) : nil
         let avatarURL: URL? = gridOptions.showOwned && owners.count == 1
-            ? owners[0].avatarURL.flatMap { URL(string: $0) }
-                ?? owners[0].favoritePokemonImageURL.flatMap { URL(string: $0) }
+            ? owners[0].resolvedAvatarURL ?? owners[0].resolvedFavoritePokemonImageURL
             : nil
         Button {
             presentCardAtIndex(displayedCards, index)

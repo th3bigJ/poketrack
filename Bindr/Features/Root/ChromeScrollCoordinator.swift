@@ -5,6 +5,9 @@ import SwiftUI
 @MainActor
 final class ChromeScrollCoordinator: ObservableObject {
     @Published private(set) var barsVisible: Bool = true
+    /// When true, a full-screen overlay (e.g. binder detail) owns the bottom
+    /// of the screen and RootView should hide the tab bar entirely.
+    @Published private(set) var overlaySuppressesTabBar: Bool = false
 
     /// Only the Cards (Browse) tab should drive hide-on-scroll. `TabView` keeps off-screen tabs alive, so `UIScrollView` KVO can still fire on Account — ignore unless this is `true`.
     private(set) var acceptsScrollChromeUpdates: Bool = true
@@ -53,6 +56,11 @@ final class ChromeScrollCoordinator: ObservableObject {
         lastOffsetY = 0
         suppressScrollChromeUntil = nil
         setBarsVisible(true)
+    }
+
+    func setOverlaySuppressesTabBar(_ suppress: Bool) {
+        guard overlaySuppressesTabBar != suppress else { return }
+        overlaySuppressesTabBar = suppress
     }
 
     /// `offsetY` is distance scrolled **down** from the rest position at the top (0 = at top, larger = scrolled down). Matches `max(0, -anchorMinY)` from a scroll anchor or UIKit-like `contentOffset.y`.

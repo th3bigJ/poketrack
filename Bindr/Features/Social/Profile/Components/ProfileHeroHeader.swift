@@ -80,7 +80,7 @@ struct ProfileHeroHeader: View {
                         .offset(x: -8, y: 4)
                     
                     // Main Card
-                    if let imageURL = profile.favoriteCardImageURL, let url = URL(string: imageURL) {
+                    if let url = profile.resolvedFavoriteCardImageURL {
                         CachedAsyncImage(url: url) { image in
                             image
                                 .resizable()
@@ -150,7 +150,7 @@ struct ProfileAvatarView: View {
     
     var body: some View {
         ZStack {
-            if let avatarURL = profile.avatarURL, let url = URL(string: avatarURL) {
+            if let url = profile.resolvedAvatarURL {
                 // Custom uploaded avatar (fallback)
                 CachedAsyncImage(url: url) { image in
                     image.resizable().aspectRatio(contentMode: .fill)
@@ -165,7 +165,7 @@ struct ProfileAvatarView: View {
                     .fill(avatarBackground)
                     .frame(width: size, height: size)
                 
-                if let imageURL = profile.favoritePokemonImageURL, let url = URL(string: imageURL) {
+                if let url = profile.resolvedFavoritePokemonImageURL {
                     CachedAsyncImage(url: url) { image in
                         image.resizable().scaledToFit()
                     } placeholder: {

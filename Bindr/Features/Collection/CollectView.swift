@@ -14,7 +14,9 @@ struct CollectView: View {
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var collectionPriceByItemKey: [String: Double] = [:]
+    @State private var collectionSortPriceByCardID: [String: Double] = [:]
     @State private var collectionResolvedPriceItemKeys: Set<String> = []
+    @State private var isResolvingCollectionPrices = false
     @State private var selectedSealedProduct: SealedProduct?
     @State private var cachedSetNameByBrandAndCode: [String: String] = [:]
     @State private var sealedProductByIDCache: [Int: SealedProduct] = [:]
@@ -30,6 +32,9 @@ struct CollectView: View {
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     @State private var wishlistCardsByID: [String: Card] = [:]
     @State private var wishlistPriceByItemKey: [String: Double] = [:]
+    @State private var wishlistSortPriceByCardID: [String: Double] = [:]
+    @State private var wishlistResolvedPriceItemKeys: Set<String> = []
+    @State private var isResolvingWishlistPrices = false
 
     @State private var pendingCardContextRequest: CardContextActionRequest?
 
@@ -120,8 +125,45 @@ struct CollectView: View {
         }
 
         if collectionFilters.sortBy == .price {
+            if isResolvingCollectionPrices { return true }
             let missingPriceResolution = visibleCollectionCardItems.contains {
                 !collectionResolvedPriceItemKeys.contains(collectionItemKey($0))
+            }
+            if missingPriceResolution { return true }
+        }
+
+        return false
+    }
+
+    private var wishlistSortNeedsResolvedCards: Bool {
+        switch wishlistFilters.sortBy {
+        case .cardName, .newestSet, .cardNumber, .price:
+            return true
+        case .acquiredDateNewest, .random:
+            return false
+        }
+    }
+
+    private var wishlistHasCardFilterDependencies: Bool {
+        let trimmedQuery = wishlistQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+        return !trimmedQuery.isEmpty || wishlistFilters.hasActiveCardFieldFilters
+    }
+
+    private var isWishlistWaitingForCurrentSortOrFilters: Bool {
+        guard selectedContentTypeTab == .cards else { return false }
+        guard selectedSegment == .wishlist else { return false }
+        let cardItems = visibleWishlistItems.filter { sealedProduct(for: $0) == nil }
+        guard !cardItems.isEmpty else { return false }
+
+        if wishlistSortNeedsResolvedCards || wishlistHasCardFilterDependencies {
+            let missingCardData = cardItems.contains { wishlistCardsByID[$0.cardID] == nil }
+            if missingCardData { return true }
+        }
+
+        if wishlistFilters.sortBy == .price {
+            if isResolvingWishlistPrices { return true }
+            let missingPriceResolution = cardItems.contains {
+                !wishlistResolvedPriceItemKeys.contains(wishlistItemKey($0))
             }
             if missingPriceResolution { return true }
         }
@@ -184,7 +226,15 @@ struct CollectView: View {
         .task(id: collectionSignature) {
             await resolveCollectionCards()
         }
+        .task(id: collectionFilters.sortBy) {
+            guard collectionFilters.sortBy == .price else { return }
+            await resolveCollectionCards()
+        }
         .task(id: wishlistSignature) {
+            await resolveWishlistCards()
+        }
+        .task(id: wishlistFilters.sortBy) {
+            guard wishlistFilters.sortBy == .price else { return }
             await resolveWishlistCards()
         }
         .task(id: setNameCacheKey) {
@@ -212,6 +262,7 @@ struct CollectView: View {
         .onChange(of: collectionQuery) { _, _ in refreshCollectionFeed() }
         .onChange(of: collectionFilters) { _, _ in refreshCollectionFeed() }
         .onChange(of: collectionPriceByItemKey) { _, _ in refreshCollectionFeed() }
+        .onChange(of: collectionSortPriceByCardID) { _, _ in refreshCollectionFeed() }
         .onChange(of: cardsByCardID) { _, _ in refreshCollectionFeed() }
         .onChange(of: sealedProductByCollectionCardIDCache) { _, _ in refreshCollectionFeed() }
         .sheet(item: $selectedSealedProduct) { product in
@@ -414,6 +465,7 @@ struct CollectView: View {
                         guard selectedContentTypeTab == .cards else { return }
                         ImagePrefetcher.shared.prefetchCardWindow(collectionDisplayedCards, startingAt: indexed.index + 1)
                         guard indexed.index >= max(collectionDisplayedGroups.count - safeColumnCount, 0) else { return }
+                        guard collectionFilters.sortBy != .price else { return }
                         Task { await loadMoreCollectionItemsIfNeeded() }
                     }
             }
@@ -529,7 +581,18 @@ struct CollectView: View {
     }
 
     private var filteredCollectionItems: [CollectionItem] {
-        var items = visibleCollectionItems
+        filterCollectionItems(from: visibleCollectionItems)
+    }
+
+    private var filteredCollectionItemsForSelectedType: [CollectionItem] {
+        filteredCollectionItems.filter { item in
+            let isSealed = sealedProduct(for: item) != nil
+            return selectedContentTypeTab == .products ? isSealed : !isSealed
+        }
+    }
+
+    private func filterCollectionItems(from items: [CollectionItem]) -> [CollectionItem] {
+        var items = items
         if collectionFilters.showDuplicates {
             let rawCardTotals = Dictionary(
                 grouping: items.filter { !usesIndividualCollectionGridCell($0) },
@@ -572,14 +635,7 @@ struct CollectView: View {
                 return filteredIDs.contains(item.cardID)
             }
         }
-        return applySortToCollectionItems(items, filters: collectionFilters)
-    }
-
-    private var filteredCollectionItemsForSelectedType: [CollectionItem] {
-        filteredCollectionItems.filter { item in
-            let isSealed = sealedProduct(for: item) != nil
-            return selectedContentTypeTab == .products ? isSealed : !isSealed
-        }
+        return items
     }
 
     private var indexedDisplayedCollectionGroups: [IndexedGridItem<CollectionGridGroup>] {
@@ -597,7 +653,55 @@ struct CollectView: View {
     }
 
     private func collectionDisplayPrice(for group: CollectionGridGroup) -> Double? {
-        group.items.compactMap { collectionPriceByItemKey[collectionItemKey($0)] }.max()
+        group.items.compactMap { collectionDisplayPrice(for: $0) }.max()
+    }
+
+    private func sortCollectionGroups(_ groups: [CollectionGridGroup]) -> [CollectionGridGroup] {
+        switch collectionFilters.sortBy {
+        case .acquiredDateNewest:
+            return groups.sorted {
+                let lhsDate = $0.items.map(\.dateAcquired).max() ?? .distantPast
+                let rhsDate = $1.items.map(\.dateAcquired).max() ?? .distantPast
+                if lhsDate != rhsDate { return lhsDate > rhsDate }
+                return $0.cardID.localizedStandardCompare($1.cardID) == .orderedAscending
+            }
+        case .random:
+            return groups
+        case .cardName:
+            return groups.sorted {
+                collectionDisplayName(for: $0.representativeItem)
+                    .localizedCaseInsensitiveCompare(collectionDisplayName(for: $1.representativeItem)) == .orderedAscending
+            }
+        case .newestSet, .cardNumber:
+            return groups.sorted { lhs, rhs in
+                let lhsItem = lhs.representativeItem
+                let rhsItem = rhs.representativeItem
+                let lhsCard = cardsByCardID[lhs.cardID]
+                let rhsCard = cardsByCardID[rhs.cardID]
+                let releaseDateBySetCode = buildSetReleaseDateByCode()
+                return compareNewestSetOrdering(
+                    lhsReleaseDateKey: releaseDateSortKey(for: lhsItem, card: lhsCard, releaseDateBySetCode: releaseDateBySetCode),
+                    rhsReleaseDateKey: releaseDateSortKey(for: rhsItem, card: rhsCard, releaseDateBySetCode: releaseDateBySetCode),
+                    lhsSetCode: lhsCard?.setCode ?? "",
+                    rhsSetCode: rhsCard?.setCode ?? "",
+                    lhsCardNumber: lhsCard?.cardNumber ?? "",
+                    rhsCardNumber: rhsCard?.cardNumber ?? "",
+                    lhsDisplayName: collectionDisplayName(for: lhsItem),
+                    rhsDisplayName: collectionDisplayName(for: rhsItem),
+                    lhsStableID: lhs.cardID,
+                    rhsStableID: rhs.cardID
+                )
+            }
+        case .price:
+            return groups.sorted { lhs, rhs in
+                comparePricedItems(
+                    lhsPrice: collectionDisplayPrice(for: lhs),
+                    rhsPrice: collectionDisplayPrice(for: rhs),
+                    lhsCard: cardsByCardID[lhs.cardID],
+                    rhsCard: cardsByCardID[rhs.cardID]
+                )
+            }
+        }
     }
 
     private func collectionAccessibilityLabel(for card: Card, group: CollectionGridGroup) -> String {
@@ -606,35 +710,6 @@ struct CollectView: View {
         }
         let variant = group.variantKeys.first ?? "normal"
         return "\(card.cardName), \(group.totalQuantity) copies, \(variant)"
-    }
-
-    private func applySortToCollectionItems(_ items: [CollectionItem], filters: BrowseCardGridFilters) -> [CollectionItem] {
-        switch filters.sortBy {
-        case .acquiredDateNewest, .random:
-            return items
-        case .cardName:
-            return items.sorted {
-                collectionDisplayName(for: $0).localizedCaseInsensitiveCompare(collectionDisplayName(for: $1)) == .orderedAscending
-            }
-        case .newestSet, .cardNumber:
-            return sortCollectionItemsByNewestSet(items)
-        case .price:
-            return items.sorted { lhs, rhs in
-                let lhsPrice = collectionDisplayPrice(for: lhs)
-                let rhsPrice = collectionDisplayPrice(for: rhs)
-                switch (lhsPrice, rhsPrice) {
-                case let (l?, r?):
-                    if l != r { return l > r }
-                case (.some, nil):
-                    return true
-                case (nil, .some):
-                    return false
-                case (nil, nil):
-                    break
-                }
-                return collectionDisplayName(for: lhs).localizedCaseInsensitiveCompare(collectionDisplayName(for: rhs)) == .orderedAscending
-            }
-        }
     }
 
     private var resolvedCollectionCards: [Card] {
@@ -653,6 +728,16 @@ struct CollectView: View {
     }
 
     private func resolveCollectionCards() async {
+        let needsDeepPriceResolve = collectionFilters.sortBy == .price
+        if needsDeepPriceResolve {
+            isResolvingCollectionPrices = true
+        }
+        defer {
+            if needsDeepPriceResolve {
+                isResolvingCollectionPrices = false
+            }
+        }
+
         let cardItems = visibleCollectionItems.filter { sealedProduct(for: $0) == nil }
         let missingIDs = Array(Set(cardItems.map(\.cardID).filter { cardsByCardID[$0] == nil }))
         var next = cardsByCardID
@@ -668,23 +753,37 @@ struct CollectView: View {
         cardsByCardID = next
 
         let cardsToPrice = cardItems.compactMap { next[$0.cardID] }
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
         await services.pricing.indexPricingForCards(cardsToPrice)
 
         var nextPrices: [String: Double] = [:]
+        var nextCardPrices: [String: Double] = [:]
         var resolvedPriceKeys: Set<String> = []
         for item in cardItems {
             guard let card = next[item.cardID] else { continue }
             resolvedPriceKeys.insert(collectionItemKey(item))
             let gradeKey = collectionGradeKey(for: item)
-            if let usd = services.pricing.cachedUsdPriceForVariantAndGrade(
+            if let usd = services.pricing.cachedMarketSortUSD(
                 for: card,
                 variantKey: item.variantKey,
                 grade: gradeKey
             ) {
                 nextPrices[collectionItemKey(item)] = usd
+                nextCardPrices[item.cardID] = max(nextCardPrices[item.cardID] ?? 0, usd)
             }
         }
+
+        if needsDeepPriceResolve {
+            await resolveMissingCollectionSortPrices(
+                cardItems: cardItems,
+                cardsByID: next,
+                itemPrices: &nextPrices,
+                cardPrices: &nextCardPrices
+            )
+        }
+
         collectionPriceByItemKey = nextPrices
+        collectionSortPriceByCardID = nextCardPrices
         collectionResolvedPriceItemKeys = resolvedPriceKeys
 
         let cards = collectionDisplayedCards
@@ -693,6 +792,43 @@ struct CollectView: View {
         collectFilterRarityOptions = cardRarityOptions(cards)
         collectFilterTrainerTypeOptions = cardTrainerTypeOptions(cards)
         refreshCollectionFeed()
+    }
+
+    private func resolveMissingCollectionSortPrices(
+        cardItems: [CollectionItem],
+        cardsByID: [String: Card],
+        itemPrices: inout [String: Double],
+        cardPrices: inout [String: Double]
+    ) async {
+        var cardsNeedingLookup: [String: Card] = [:]
+        for item in cardItems {
+            guard itemPrices[collectionItemKey(item)] == nil,
+                  let card = cardsByID[item.cardID] else { continue }
+            cardsNeedingLookup[item.cardID] = card
+        }
+        guard !cardsNeedingLookup.isEmpty else { return }
+
+        await withTaskGroup(of: (String, Double?).self) { group in
+            for (cardID, card) in cardsNeedingLookup {
+                group.addTask { @MainActor in
+                    let specs = cardItems
+                        .filter { $0.cardID == cardID }
+                        .map { (variantKey: $0.variantKey, grade: self.collectionGradeKey(for: $0)) }
+                    let price = await self.services.pricing.resolveBestMarketSortUSD(for: card, specs: specs)
+                    return (cardID, price)
+                }
+            }
+            for await (cardID, price) in group {
+                guard let price else { continue }
+                cardPrices[cardID] = max(cardPrices[cardID] ?? 0, price)
+                for item in cardItems where item.cardID == cardID {
+                    let itemKey = collectionItemKey(item)
+                    if itemPrices[itemKey] == nil {
+                        itemPrices[itemKey] = price
+                    }
+                }
+            }
+        }
     }
 
     private func refreshCollectContent() async {
@@ -706,18 +842,18 @@ struct CollectView: View {
 
     private func refreshCollectionFeed() {
         let filtered = filteredCollectionItemsForSelectedType
-        let groups = groupCollectionItemsForGrid(filtered)
-        let filteredIDs = groups.map(\.id)
-        let previousIDs = collectionFilteredGroupsForSelectedTypeCache.map(\.id)
+        let groups = sortCollectionGroups(groupCollectionItemsForGrid(filtered))
 
         collectionFilteredGroupsForSelectedTypeCache = groups
 
-        if filteredIDs == previousIDs && !collectionDisplayedGroups.isEmpty {
-            collectionDisplayedCards = collectionDisplayedGroups.compactMap { cardsByCardID[$0.cardID] }
-            return
+        let initialEnd: Int
+        if collectionFilters.sortBy == .price {
+            // Price sort must show one continuous ranked list — paginating caused a
+            // priced top section then an alphabetically-fallback tail as more rows loaded.
+            initialEnd = groups.count
+        } else {
+            initialEnd = min(Self.collectionInitialBatchSize, groups.count)
         }
-
-        let initialEnd = min(Self.collectionInitialBatchSize, groups.count)
         collectionDisplayedGroups = Array(groups.prefix(initialEnd))
         collectionNextIndex = initialEnd
         collectionDisplayedCards = collectionDisplayedGroups.compactMap { cardsByCardID[$0.cardID] }
@@ -765,7 +901,19 @@ struct CollectView: View {
         if let product = sealedProduct(for: item) {
             return services.sealedProducts.marketPriceUSD(for: product.id)
         }
-        return collectionPriceByItemKey[collectionItemKey(item)]
+        if let cached = collectionPriceByItemKey[collectionItemKey(item)] {
+            return cached
+        }
+        if let cardPrice = collectionSortPriceByCardID[item.cardID] {
+            return cardPrice
+        }
+        guard let card = cardsByCardID[item.cardID] else { return nil }
+        let gradeKey = collectionGradeKey(for: item)
+        return services.pricing.cachedMarketSortUSD(
+            for: card,
+            variantKey: item.variantKey,
+            grade: gradeKey
+        )
     }
 
     // MARK: - Wishlist Content
@@ -781,6 +929,15 @@ struct CollectView: View {
                 image: "line.3.horizontal.decrease.circle",
                 description: "No \(activeBrand.displayTitle) cards on your wishlist yet."
             )
+        } else if isWishlistWaitingForCurrentSortOrFilters {
+            VStack(spacing: 12) {
+                ProgressView()
+                Text("Applying your filters and sort...")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 40)
         } else if filteredWishlistItemsForSelectedType.isEmpty {
             emptyState(
                 title: "No matching \(selectedContentTypeTab.title.lowercased())",
@@ -912,19 +1069,12 @@ struct CollectView: View {
             return sortWishlistItemsByNewestSet(items)
         case .price:
             return items.sorted { lhs, rhs in
-                let lhsPrice = wishlistDisplayPrice(for: lhs)
-                let rhsPrice = wishlistDisplayPrice(for: rhs)
-                switch (lhsPrice, rhsPrice) {
-                case let (l?, r?):
-                    if l != r { return l > r }
-                case (.some, nil):
-                    return true
-                case (nil, .some):
-                    return false
-                case (nil, nil):
-                    break
-                }
-                return wishlistDisplayName(for: lhs).localizedCaseInsensitiveCompare(wishlistDisplayName(for: rhs)) == .orderedAscending
+                comparePricedItems(
+                    lhsPrice: wishlistDisplayPrice(for: lhs),
+                    rhsPrice: wishlistDisplayPrice(for: rhs),
+                    lhsCard: wishlistCardsByID[lhs.cardID],
+                    rhsCard: wishlistCardsByID[rhs.cardID]
+                )
             }
         }
     }
@@ -945,6 +1095,16 @@ struct CollectView: View {
     }
 
     private func resolveWishlistCards() async {
+        let needsDeepPriceResolve = wishlistFilters.sortBy == .price
+        if needsDeepPriceResolve {
+            isResolvingWishlistPrices = true
+        }
+        defer {
+            if needsDeepPriceResolve {
+                isResolvingWishlistPrices = false
+            }
+        }
+
         let cardItems = visibleWishlistItems.filter { sealedProduct(for: $0) == nil }
         let missingIDs = Array(Set(cardItems.map(\.cardID).filter { wishlistCardsByID[$0] == nil }))
         var next = wishlistCardsByID
@@ -960,22 +1120,76 @@ struct CollectView: View {
         wishlistCardsByID = next
 
         let cardsToPrice = cardItems.compactMap { next[$0.cardID] }
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
         await services.pricing.indexPricingForCards(cardsToPrice)
 
         var nextPrices: [String: Double] = [:]
+        var nextCardPrices: [String: Double] = [:]
+        var resolvedPriceKeys: Set<String> = []
         for item in cardItems {
             guard let card = next[item.cardID] else { continue }
-            if let usd = services.pricing.cachedUsdPriceForVariantAndGrade(
+            resolvedPriceKeys.insert(wishlistItemKey(item))
+            if let usd = services.pricing.cachedMarketSortUSD(
                 for: card,
                 variantKey: item.variantKey,
                 grade: "raw"
             ) {
                 nextPrices[wishlistItemKey(item)] = usd
+                nextCardPrices[item.cardID] = max(nextCardPrices[item.cardID] ?? 0, usd)
             }
         }
+
+        if needsDeepPriceResolve {
+            await resolveMissingWishlistSortPrices(
+                cardItems: cardItems,
+                cardsByID: next,
+                itemPrices: &nextPrices,
+                cardPrices: &nextCardPrices
+            )
+        }
+
         wishlistPriceByItemKey = nextPrices
+        wishlistSortPriceByCardID = nextCardPrices
+        wishlistResolvedPriceItemKeys = resolvedPriceKeys
 
         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: 0, count: 24)
+    }
+
+    private func resolveMissingWishlistSortPrices(
+        cardItems: [WishlistItem],
+        cardsByID: [String: Card],
+        itemPrices: inout [String: Double],
+        cardPrices: inout [String: Double]
+    ) async {
+        var cardsNeedingLookup: [String: Card] = [:]
+        for item in cardItems {
+            guard itemPrices[wishlistItemKey(item)] == nil,
+                  let card = cardsByID[item.cardID] else { continue }
+            cardsNeedingLookup[item.cardID] = card
+        }
+        guard !cardsNeedingLookup.isEmpty else { return }
+
+        await withTaskGroup(of: (String, Double?).self) { group in
+            for (cardID, card) in cardsNeedingLookup {
+                group.addTask { @MainActor in
+                    let specs = cardItems
+                        .filter { $0.cardID == cardID }
+                        .map { (variantKey: $0.variantKey, grade: "raw") }
+                    let price = await self.services.pricing.resolveBestMarketSortUSD(for: card, specs: specs)
+                    return (cardID, price)
+                }
+            }
+            for await (cardID, price) in group {
+                guard let price else { continue }
+                cardPrices[cardID] = max(cardPrices[cardID] ?? 0, price)
+                for item in cardItems where item.cardID == cardID {
+                    let itemKey = wishlistItemKey(item)
+                    if itemPrices[itemKey] == nil {
+                        itemPrices[itemKey] = price
+                    }
+                }
+            }
+        }
     }
 
     private func removeFromWishlist(_ item: WishlistItem) {
@@ -1004,7 +1218,18 @@ struct CollectView: View {
         if let product = sealedProduct(for: item) {
             return services.sealedProducts.marketPriceUSD(for: product.id)
         }
-        return wishlistPriceByItemKey[wishlistItemKey(item)]
+        if let cached = wishlistPriceByItemKey[wishlistItemKey(item)] {
+            return cached
+        }
+        if let cardPrice = wishlistSortPriceByCardID[item.cardID] {
+            return cardPrice
+        }
+        guard let card = wishlistCardsByID[item.cardID] else { return nil }
+        return services.pricing.cachedMarketSortUSD(
+            for: card,
+            variantKey: item.variantKey,
+            grade: "raw"
+        )
     }
 
     private func collectionItemKey(_ item: CollectionItem) -> String {
@@ -1087,35 +1312,6 @@ struct CollectView: View {
         }
         guard let card else { return "" }
         return releaseDateBySetCode[card.setCode] ?? ""
-    }
-
-    private func sortCollectionItemsByNewestSet(_ items: [CollectionItem]) -> [CollectionItem] {
-        guard !items.isEmpty else { return items }
-        let releaseDateBySetCode = buildSetReleaseDateByCode()
-        let keyed = items.map { item -> (item: CollectionItem, releaseDateKey: String, setCode: String, cardNumber: String, displayName: String) in
-            let card = cardsByCardID[item.cardID]
-            return (
-                item: item,
-                releaseDateKey: releaseDateSortKey(for: item, card: card, releaseDateBySetCode: releaseDateBySetCode),
-                setCode: card?.setCode ?? "",
-                cardNumber: card?.cardNumber ?? "",
-                displayName: collectionDisplayName(for: item)
-            )
-        }
-        return keyed.sorted { lhs, rhs in
-            compareNewestSetOrdering(
-                lhsReleaseDateKey: lhs.releaseDateKey,
-                rhsReleaseDateKey: rhs.releaseDateKey,
-                lhsSetCode: lhs.setCode,
-                rhsSetCode: rhs.setCode,
-                lhsCardNumber: lhs.cardNumber,
-                rhsCardNumber: rhs.cardNumber,
-                lhsDisplayName: lhs.displayName,
-                rhsDisplayName: rhs.displayName,
-                lhsStableID: lhs.item.cardID,
-                rhsStableID: rhs.item.cardID
-            )
-        }.map(\.item)
     }
 
     private func sortWishlistItemsByNewestSet(_ items: [WishlistItem]) -> [WishlistItem] {

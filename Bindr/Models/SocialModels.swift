@@ -32,6 +32,18 @@ struct SocialProfile: Codable, Identifiable, Sendable {
         isPremium ?? false
     }
 
+    var resolvedAvatarURL: URL? {
+        AppConfiguration.resolvedImageURL(stored: avatarURL)
+    }
+
+    var resolvedFavoritePokemonImageURL: URL? {
+        AppConfiguration.resolvedImageURL(stored: favoritePokemonImageURL)
+    }
+
+    var resolvedFavoriteCardImageURL: URL? {
+        AppConfiguration.resolvedImageURL(stored: favoriteCardImageURL)
+    }
+
     /// Decoded badge style, defaulting to .pokeball for premium users.
     var badgeStyle: PremiumBadgeStyle {
         if let localRaw = UserDefaults.standard.string(forKey: "bindr_badge_style_\(id.uuidString)"),

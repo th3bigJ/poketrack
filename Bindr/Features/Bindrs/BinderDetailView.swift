@@ -548,9 +548,9 @@ struct BinderDetailView: View {
 
     /// Bottom inset for the swipe hint + stats row. The host passes
     /// ``bottomSafeAreaInset`` when the presentation ignores the system
-    /// safe area so we still clear the home indicator.
+    /// safe area so we still clear the home indicator and tab bar.
     private var bottomOverlayInset: CGFloat {
-        max(bottomSafeAreaInset, 8)
+        max(bottomSafeAreaInset, RootChromeEnvironment.floatingTabBarContentInset, 8)
     }
 
     // MARK: - Bottom stats bar (Cards · Page Value · Binder Value)

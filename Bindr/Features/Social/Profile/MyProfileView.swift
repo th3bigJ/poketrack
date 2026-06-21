@@ -303,7 +303,7 @@ struct MyProfileView: View {
 
                 // Favourite card peek below remains as the personalised visual anchor.
                 if let imageURL = profile.favoriteCardImageURL,
-                   let url = URL(string: imageURL) {
+                   let url = profile.resolvedFavoriteCardImageURL {
                     CachedAsyncImage(url: url) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
                     } placeholder: {

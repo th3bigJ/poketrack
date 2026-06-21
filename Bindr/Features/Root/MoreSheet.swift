@@ -371,8 +371,7 @@ private struct MoreProfileHeroCard: View {
 
     @ViewBuilder
     private var favoriteCardPeek: some View {
-        if let imageURL = profile?.favoriteCardImageURL,
-           let url = URL(string: imageURL) {
+        if let profile, let url = profile.resolvedFavoriteCardImageURL {
             CachedAsyncImage(url: url) { image in
                 image.resizable().aspectRatio(contentMode: .fill)
             } placeholder: {

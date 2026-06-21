@@ -9,6 +9,9 @@ enum RootChromeEnvironment {
     static let searchBarControlHeight: CGFloat = 48
     static let searchBarStackHeight: CGFloat = searchBarTopInset + searchBarControlHeight + searchBarBottomInset
     static let floatingContentTopInset: CGFloat = searchBarStackHeight
+    /// Bottom scroll padding so content clears the tab bar pill and home indicator.
+    /// Matches `.padding(.bottom, 120)` on More and Trades root scroll views.
+    static let floatingTabBarContentInset: CGFloat = 120
     /// Vertical gap between stacked sections on the universal search overlay
     /// (category tiles, recent searches, recently viewed, result groups).
     static let searchOverlaySectionSpacing: CGFloat = 18
