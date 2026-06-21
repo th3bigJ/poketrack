@@ -114,6 +114,9 @@ struct OnboardingPremiumView: View {
                             .disabled(isRestoring || isPurchasing)
 
                             OnboardingSecondaryLink(title: "Maybe later", action: onFinish)
+
+                            PremiumPaywallLegalFooter(disclosureText: subscribeCopy.footerNote)
+                                .padding(.top, BindrSpacing.xs)
                         }
                     }
                 }
@@ -158,7 +161,10 @@ struct OnboardingPremiumView: View {
                 label: "Monthly",
                 price: hasLoadedProducts ? pricing.monthlyDisplayPrice : "…",
                 breakdown: hasLoadedProducts ? pricing.monthlyBreakdown : " ",
-                meta: nil
+                meta: hasLoadedProducts
+                    ? pricing.trialBadge(annual: false, introEligible: services.store.isIntroOfferEligible(annual: false))
+                    : nil,
+                subMeta: nil
             )
 
             squarePlanTile(
@@ -166,7 +172,10 @@ struct OnboardingPremiumView: View {
                 label: "Annual",
                 price: hasLoadedProducts ? pricing.annualDisplayPrice : "…",
                 breakdown: hasLoadedProducts ? pricing.annualMonthlyBreakdown : " ",
-                meta: hasLoadedProducts ? pricing.annualSavingsBadge : nil,
+                meta: hasLoadedProducts
+                    ? (pricing.trialBadge(annual: true, introEligible: services.store.isIntroOfferEligible(annual: true))
+                       ?? pricing.annualSavingsBadge)
+                    : nil,
                 subMeta: hasLoadedProducts ? pricing.annualSavingsDetail : nil
             )
         }
@@ -308,9 +317,15 @@ struct OnboardingPremiumView: View {
 
     // MARK: - Purchase
 
+    private var subscribeCopy: PremiumSubscribeCopy {
+        pricing.subscribeCopy(
+            annual: selectAnnual,
+            introEligible: services.store.isIntroOfferEligible(annual: selectAnnual)
+        )
+    }
+
     private var subscribeTitle: String {
-        let price = pricing.displayPrice(annual: selectAnnual)
-        return "Subscribe · \(price)"
+        subscribeCopy.ctaTitle
     }
 
     private func runPurchase() async {

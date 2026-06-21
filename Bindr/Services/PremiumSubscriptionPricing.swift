@@ -1,6 +1,13 @@
 import Foundation
 import StoreKit
 
+/// Paywall button label, plan badge, and subscription disclosure derived from StoreKit.
+struct PremiumSubscribeCopy: Equatable {
+    let ctaTitle: String
+    let footerNote: String
+    let trialBadge: String?
+}
+
 /// Localized premium plan copy derived from StoreKit `Product` prices so every
 /// string uses the same App Store currency (no hard-coded currency symbols in views).
 struct PremiumSubscriptionPricing {
@@ -58,6 +65,43 @@ struct PremiumSubscriptionPricing {
         annual ? annualDisplayPrice : monthlyDisplayPrice
     }
 
+    func product(annual: Bool) -> Product? {
+        annual ? annualProduct : monthlyProduct
+    }
+
+    func subscribeCopy(annual: Bool, introEligible: Bool) -> PremiumSubscribeCopy {
+        let product = product(annual: annual)
+        let price = displayPrice(annual: annual)
+        let billingPeriod = Self.billingPeriodLabel(for: product)
+
+        guard introEligible,
+              let offer = product?.subscription?.introductoryOffer,
+              offer.paymentMode == .freeTrial else {
+            let name = product?.displayName ?? "Bindr Premium"
+            return PremiumSubscribeCopy(
+                ctaTitle: "Subscribe · \(price)",
+                footerNote: "\(name) auto-renews until cancelled in iOS Settings → Apple ID → Subscriptions.",
+                trialBadge: nil
+            )
+        }
+
+        let trialPeriod = Self.localizedPeriodDescription(
+            period: offer.period,
+            count: offer.periodCount
+        )
+        let badge = "\(trialPeriod) free"
+
+        return PremiumSubscribeCopy(
+            ctaTitle: "Start Free Trial",
+            footerNote: "\(trialPeriod) free, then \(price)/\(billingPeriod). Auto-renews until cancelled in iOS Settings → Apple ID → Subscriptions. One introductory offer per Apple ID.",
+            trialBadge: badge
+        )
+    }
+
+    func trialBadge(annual: Bool, introEligible: Bool) -> String? {
+        subscribeCopy(annual: annual, introEligible: introEligible).trialBadge
+    }
+
     /// Formats placeholder tiers before StoreKit products arrive, or if loading failed.
     private func formatPlaceholderAmount(_ amount: Decimal) -> String {
         if let referenceProduct {
@@ -112,6 +156,36 @@ struct PremiumSubscriptionPricing {
         case "CAD": return Locale(identifier: "en_CA")
         case "NZD": return Locale(identifier: "en_NZ")
         default: return Locale.current
+        }
+    }
+
+    static func localizedPeriodDescription(
+        period: Product.SubscriptionPeriod,
+        count: Int = 1
+    ) -> String {
+        let value = period.value * count
+        switch period.unit {
+        case .day:
+            return value == 1 ? "1 day" : "\(value) days"
+        case .week:
+            return value == 1 ? "1 week" : "\(value) weeks"
+        case .month:
+            return value == 1 ? "1 month" : "\(value) months"
+        case .year:
+            return value == 1 ? "1 year" : "\(value) years"
+        @unknown default:
+            return value == 1 ? "1 period" : "\(value) periods"
+        }
+    }
+
+    static func billingPeriodLabel(for product: Product?) -> String {
+        guard let unit = product?.subscription?.subscriptionPeriod.unit else { return "period" }
+        switch unit {
+        case .month: return "month"
+        case .year: return "year"
+        case .week: return "week"
+        case .day: return "day"
+        @unknown default: return "period"
         }
     }
 }

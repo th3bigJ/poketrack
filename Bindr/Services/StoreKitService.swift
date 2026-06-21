@@ -29,6 +29,9 @@ final class StoreKitService {
 
     private(set) var products: [Product] = []
     private(set) var annualProduct: Product?
+    /// Cached from `Product.Subscription.isEligibleForIntroOffer` after products load.
+    private(set) var introOfferEligibleMonthly = false
+    private(set) var introOfferEligibleAnnual = false
     /// App Store storefront country (e.g. `GBR`) — drives placeholder currency when products are still loading.
     private(set) var storefrontCountryCode: String?
     private(set) var purchaseError: String?
@@ -111,10 +114,29 @@ final class StoreKitService {
             products = fetched.filter { $0.id == AppConfiguration.premiumProductID }
             annualProduct = fetched.first { $0.id == AppConfiguration.premiumAnnualProductID }
             purchaseError = nil
+            await refreshIntroOfferEligibility()
         } catch {
             purchaseError = Self.userFacingMessage(for: error, testFlight: requiresSandboxAccount)
             products = []
             annualProduct = nil
+            introOfferEligibleMonthly = false
+            introOfferEligibleAnnual = false
+        }
+    }
+
+    func isIntroOfferEligible(annual: Bool) -> Bool {
+        annual ? introOfferEligibleAnnual : introOfferEligibleMonthly
+    }
+
+    private func refreshIntroOfferEligibility() async {
+        introOfferEligibleMonthly = false
+        introOfferEligibleAnnual = false
+
+        if let monthly = products.first, let subscription = monthly.subscription {
+            introOfferEligibleMonthly = await subscription.isEligibleForIntroOffer
+        }
+        if let annual = annualProduct, let subscription = annual.subscription {
+            introOfferEligibleAnnual = await subscription.isEligibleForIntroOffer
         }
     }
 

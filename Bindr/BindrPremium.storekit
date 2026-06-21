@@ -58,8 +58,21 @@
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "D8558961",
+          "introductoryOffer" : {
+            "billingPlanType" : "BILLED_UPFRONT",
+            "internalID" : "056B3C44",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
           "introductoryOffers" : [
-
+            {
+              "billingPlanType" : "BILLED_UPFRONT",
+              "internalID" : "056B3C44",
+              "numberOfPeriods" : 1,
+              "paymentMode" : "free",
+              "subscriptionPeriod" : "P1W"
+            }
           ],
           "localizations" : [
             {
@@ -102,8 +115,21 @@
           "familyShareable" : false,
           "groupNumber" : 1,
           "internalID" : "9BB93AA1",
+          "introductoryOffer" : {
+            "billingPlanType" : "BILLED_UPFRONT",
+            "internalID" : "A02DC63A",
+            "numberOfPeriods" : 1,
+            "paymentMode" : "free",
+            "subscriptionPeriod" : "P1W"
+          },
           "introductoryOffers" : [
-
+            {
+              "billingPlanType" : "BILLED_UPFRONT",
+              "internalID" : "A02DC63A",
+              "numberOfPeriods" : 1,
+              "paymentMode" : "free",
+              "subscriptionPeriod" : "P1W"
+            }
           ],
           "localizations" : [
             {

@@ -164,7 +164,8 @@ struct PremiumUpgradeView: View {
                 label: "Monthly",
                 price: pricing.monthlyDisplayPrice,
                 breakdown: pricing.monthlyBreakdown,
-                meta: nil
+                meta: pricing.trialBadge(annual: false, introEligible: services.store.isIntroOfferEligible(annual: false)),
+                subMeta: nil
             )
 
             squarePlanTile(
@@ -172,7 +173,8 @@ struct PremiumUpgradeView: View {
                 label: "Annual",
                 price: pricing.annualDisplayPrice,
                 breakdown: pricing.annualMonthlyBreakdown,
-                meta: pricing.annualSavingsBadge,
+                meta: pricing.trialBadge(annual: true, introEligible: services.store.isIntroOfferEligible(annual: true))
+                    ?? pricing.annualSavingsBadge,
                 subMeta: pricing.annualSavingsDetail
             )
         }
@@ -282,10 +284,7 @@ struct PremiumUpgradeView: View {
             }
             .padding(.horizontal, BindrSpacing.lg)
 
-            Text(footerNote)
-                .font(.system(size: 12))
-                .foregroundStyle(.secondary)
-                .multilineTextAlignment(.center)
+            PremiumPaywallLegalFooter(disclosureText: subscribeCopy.footerNote)
                 .padding(.horizontal, BindrSpacing.lg)
                 .padding(.bottom, BindrSpacing.sm)
         }
@@ -305,16 +304,15 @@ struct PremiumUpgradeView: View {
         }
     }
 
-    private var subscribeTitle: String {
-        let price = pricing.displayPrice(annual: selectedPlan == .annual)
-        return "Subscribe · \(price)"
+    private var subscribeCopy: PremiumSubscribeCopy {
+        pricing.subscribeCopy(
+            annual: selectedPlan == .annual,
+            introEligible: services.store.isIntroOfferEligible(annual: selectedPlan == .annual)
+        )
     }
 
-    private var footerNote: String {
-        if let product = services.store.products.first {
-            return "\(product.displayName) · auto-renews until cancelled."
-        }
-        return "Configure in App Store Connect to enable purchase."
+    private var subscribeTitle: String {
+        subscribeCopy.ctaTitle
     }
 
     private func runPurchase() async {

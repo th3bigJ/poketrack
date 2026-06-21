@@ -15,6 +15,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
     case backupRestore
     case libraryStorage
     case legalDisclaimer
+    case privacyPolicy
 
     var id: String { rawValue }
 
@@ -33,6 +34,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
         case .backupRestore: return "Backup and Restore"
         case .libraryStorage: return "Library Storage"
         case .legalDisclaimer: return "Legal Disclaimer"
+        case .privacyPolicy: return "Privacy Policy"
         }
     }
 }

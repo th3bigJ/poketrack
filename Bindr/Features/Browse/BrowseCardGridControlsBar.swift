@@ -30,62 +30,59 @@ struct BrowseCardGridControlsBar: View {
     var showGridOwnedToggle: Bool = false
 
     var body: some View {
-        VStack(spacing: 10) {
+        HStack(spacing: 8) {
             BrowseInlineSearchField(title: searchTitle, text: $query)
+                .frame(maxWidth: .infinity)
 
-            HStack(spacing: 8) {
-                Spacer(minLength: 0)
-
-                Menu {
-                    BrowseGridOptionsMenuContent(
-                        gridOptions: $gridOptions,
-                        nameToggleTitle: gridNameToggleTitle,
-                        showCardIDToggle: showGridCardIDToggle,
-                        showOwnedToggle: showGridOwnedToggle
-                    )
-                } label: {
-                    Image(systemName: "slider.horizontal.3")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                        .modifier(ChromeGlassCircleGlyphModifier())
-                }
-                .buttonStyle(.plain)
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-                .menuIndicator(.hidden)
-                .frame(width: 48, height: 48)
-                .contentShape(Rectangle())
-                .accessibilityLabel("Grid options")
-
-                Menu {
-                    BrowseGridFiltersMenuContent(
-                        brand: brand,
-                        filters: $filters,
-                        energyOptions: energyOptions,
-                        rarityOptions: rarityOptions,
-                        trainerTypeOptions: trainerTypeOptions,
-                        isAllBrands: isAllBrands,
-                        gridOptions: $gridOptions,
-                        config: filterConfig
-                    )
-                } label: {
-                    Image(
-                        systemName: filters.isVisiblyCustomized
-                            ? "line.3.horizontal.decrease.circle.fill"
-                            : "line.3.horizontal.decrease.circle"
-                    )
+            Menu {
+                BrowseGridOptionsMenuContent(
+                    gridOptions: $gridOptions,
+                    nameToggleTitle: gridNameToggleTitle,
+                    showCardIDToggle: showGridCardIDToggle,
+                    showOwnedToggle: showGridOwnedToggle
+                )
+            } label: {
+                Image(systemName: "slider.horizontal.3")
                     .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(filters.isVisiblyCustomized ? services.theme.accentColor : .primary)
+                    .foregroundStyle(.primary)
                     .modifier(ChromeGlassCircleGlyphModifier())
-                }
-                .buttonStyle(.plain)
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-                .menuIndicator(.hidden)
-                .frame(width: 48, height: 48)
-                .contentShape(Rectangle())
-                .accessibilityLabel("Filters")
             }
+            .buttonStyle(.plain)
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+            .menuIndicator(.hidden)
+            .frame(width: 48, height: 48)
+            .contentShape(Rectangle())
+            .accessibilityLabel("Grid options")
+
+            Menu {
+                BrowseGridFiltersMenuContent(
+                    brand: brand,
+                    filters: $filters,
+                    energyOptions: energyOptions,
+                    rarityOptions: rarityOptions,
+                    trainerTypeOptions: trainerTypeOptions,
+                    isAllBrands: isAllBrands,
+                    gridOptions: $gridOptions,
+                    config: filterConfig
+                )
+            } label: {
+                Image(
+                    systemName: filters.isVisiblyCustomized
+                        ? "line.3.horizontal.decrease.circle.fill"
+                        : "line.3.horizontal.decrease.circle"
+                )
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(filters.isVisiblyCustomized ? services.theme.accentColor : .primary)
+                .modifier(ChromeGlassCircleGlyphModifier())
+            }
+            .buttonStyle(.plain)
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+            .menuIndicator(.hidden)
+            .frame(width: 48, height: 48)
+            .contentShape(Rectangle())
+            .accessibilityLabel("Filters")
         }
     }
 }

@@ -7,6 +7,7 @@ struct MoreView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var accent
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.openURL) private var openURL
     @Binding var navigationPath: NavigationPath
 
     @State private var showProfile = false
@@ -99,7 +100,40 @@ struct MoreView: View {
                             )
                         }
 
-                        MoreLegalDisclaimerCard()
+                        VStack(spacing: 0) {
+                            MoreMenuRow(
+                                title: "Legal Disclaimer",
+                                systemImage: "doc.text.magnifyingglass",
+                                color: .gray,
+                                destination: .legalDisclaimer
+                            )
+
+                            Divider()
+                                .overlay(Color.primary.opacity(colorScheme == .dark ? 0.16 : 0.08))
+                                .padding(.leading, 60)
+
+                            MoreMenuRow(
+                                title: "Privacy Policy",
+                                systemImage: "hand.raised.fill",
+                                color: .blue,
+                                destination: .privacyPolicy
+                            )
+
+                            Divider()
+                                .overlay(Color.primary.opacity(colorScheme == .dark ? 0.16 : 0.08))
+                                .padding(.leading, 60)
+
+                            MoreMenuActionRow(
+                                title: "Contact Us",
+                                systemImage: "envelope.fill",
+                                color: .teal
+                            ) {
+                                openURL(BindrSupport.contactMailURL)
+                            }
+                        }
+                        .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+
+                        MoreSocialLinksRow()
                     }
                     .padding(.horizontal, BindrSpacing.lg)
                     .padding(.top, BindrSpacing.lg)
@@ -160,6 +194,8 @@ struct MoreView: View {
                     .environment(services)
             case .legalDisclaimer:
                 DisclaimerView()
+            case .privacyPolicy:
+                PrivacyPolicyView()
             }
         }
     }
@@ -188,42 +224,6 @@ private struct MoreBrandHeroCard: View {
             .padding(.top, BindrSpacing.sm)
             .padding(.bottom, BindrSpacing.md)
             .padding(.horizontal, BindrSpacing.lg)
-    }
-}
-
-private struct MoreLegalDisclaimerCard: View {
-    var body: some View {
-        NavigationLink(value: SideMenuPage.legalDisclaimer) {
-            VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-                HStack(spacing: 10) {
-                    Image(systemName: "doc.text.magnifyingglass")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(.secondary)
-                        .frame(width: 28, height: 28)
-                        .background(Color.secondary.opacity(0.10), in: Circle())
-
-                    Text("Legal Disclaimer")
-                        .font(.system(size: 15, weight: .regular))
-                        .foregroundStyle(.primary)
-
-                    Spacer(minLength: 0)
-
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 13, weight: .semibold))
-                        .foregroundStyle(Color.secondary.opacity(0.45))
-                }
-
-                Text("Bindr is an independent app and is not affiliated with or endorsed by The Pokemon Company, Nintendo, Creatures Inc. or GAME FREAK.")
-                    .font(.system(size: 12, weight: .regular))
-                    .lineSpacing(3)
-                    .foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            .padding(16)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        }
-        .buttonStyle(.plain)
     }
 }
 
@@ -524,28 +524,174 @@ private struct MoreMenuRow: View {
 
     var body: some View {
         NavigationLink(value: destination) {
-            HStack(spacing: 14) {
-                Image(systemName: systemImage)
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundColor(.white)
-                    .frame(width: 30, height: 30)
-                    .background(color.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-
-                Text(title)
-                    .font(.body)
-                    .foregroundStyle(.primary)
-
-                Spacer(minLength: 0)
-
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(Color.secondary.opacity(0.45))
-            }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 13)
-            .contentShape(Rectangle())
+            MoreMenuRowLabel(title: title, systemImage: systemImage, color: color, trailingSymbol: "chevron.right")
         }
         .buttonStyle(.plain)
+    }
+}
+
+private struct MoreMenuActionRow: View {
+    let title: String
+    let systemImage: String
+    let color: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            MoreMenuRowLabel(title: title, systemImage: systemImage, color: color, trailingSymbol: "arrow.up.right")
+        }
+        .buttonStyle(.plain)
+        .accessibilityHint("Opens Mail to compose a message")
+    }
+}
+
+private struct MoreMenuRowLabel: View {
+    let title: String
+    let systemImage: String
+    let color: Color
+    let trailingSymbol: String
+
+    var body: some View {
+        HStack(spacing: 14) {
+            Image(systemName: systemImage)
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundColor(.white)
+                .frame(width: 30, height: 30)
+                .background(color.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+
+            Text(title)
+                .font(.body)
+                .foregroundStyle(.primary)
+
+            Spacer(minLength: 0)
+
+            Image(systemName: trailingSymbol)
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundStyle(Color.secondary.opacity(0.45))
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 13)
+        .contentShape(Rectangle())
+    }
+}
+
+private enum BindrSupport {
+    static let email = "info@bindr-tcg.com"
+
+    static var contactMailURL: URL {
+        var components = URLComponents()
+        components.scheme = "mailto"
+        components.path = email
+        components.queryItems = [
+            URLQueryItem(name: "subject", value: "Bindr Support")
+        ]
+        return components.url!
+    }
+}
+
+private enum MoreSocialIcon {
+    case system(String)
+    case brandText(String)
+}
+
+private enum MoreSocialLink: String, CaseIterable, Identifiable {
+    case email
+    case instagram
+    case x
+    case tiktok
+    case youtube
+
+    var id: String { rawValue }
+
+    var accessibilityLabel: String {
+        switch self {
+        case .email: return "Email"
+        case .instagram: return "Instagram"
+        case .x: return "X"
+        case .tiktok: return "TikTok"
+        case .youtube: return "YouTube"
+        }
+    }
+
+    /// Set real profile URLs here when available. `nil` keeps the icon visible as a placeholder.
+    var destination: URL? {
+        switch self {
+        case .email:
+            return BindrSupport.contactMailURL
+        case .instagram:
+            return nil
+        case .x:
+            return nil
+        case .tiktok:
+            return nil
+        case .youtube:
+            return nil
+        }
+    }
+
+    var icon: MoreSocialIcon {
+        switch self {
+        case .email:
+            return .system("envelope.fill")
+        case .instagram:
+            return .brandText("IG")
+        case .x:
+            return .brandText("X")
+        case .tiktok:
+            return .system("music.note")
+        case .youtube:
+            return .system("play.rectangle.fill")
+        }
+    }
+}
+
+private struct MoreSocialLinksRow: View {
+    @Environment(\.openURL) private var openURL
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(MoreSocialLink.allCases) { link in
+                socialButton(link)
+                if link != MoreSocialLink.allCases.last {
+                    Spacer(minLength: 0)
+                }
+            }
+        }
+        .padding(.horizontal, BindrSpacing.sm)
+        .padding(.vertical, BindrSpacing.md)
+    }
+
+    @ViewBuilder
+    private func socialButton(_ link: MoreSocialLink) -> some View {
+        let isEnabled = link.destination != nil
+
+        Button {
+            guard let url = link.destination else { return }
+            openURL(url)
+        } label: {
+            socialIcon(link)
+                .frame(width: 48, height: 48)
+                .modifier(ChromeGlassCircleGlyphModifier())
+        }
+        .buttonStyle(.plain)
+        .opacity(isEnabled ? 1 : 0.45)
+        .disabled(!isEnabled)
+        .accessibilityLabel(link.accessibilityLabel)
+        .accessibilityHint(isEnabled ? "Opens \(link.accessibilityLabel)" : "Coming soon")
+    }
+
+    @ViewBuilder
+    private func socialIcon(_ link: MoreSocialLink) -> some View {
+        switch link.icon {
+        case .system(let name):
+            Image(systemName: name)
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+        case .brandText(let text):
+            Text(text)
+                .font(.system(size: 16, weight: .black))
+                .foregroundStyle(.primary)
+        }
     }
 }
 
