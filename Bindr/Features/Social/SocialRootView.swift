@@ -499,7 +499,6 @@ struct SocialRootView: View {
                     }
             )
         }
-        .bindrPageBackground(ignoresSafeArea: false)
     }
 
     private func handleTabSwipe(translation: CGSize) {

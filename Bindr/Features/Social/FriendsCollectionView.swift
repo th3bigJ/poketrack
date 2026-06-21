@@ -88,7 +88,7 @@ struct FriendsCollectionView: View {
             showRandomSort: false,
             showHideOwned: false,
             showShowDuplicates: false,
-            showGridOptions: true,
+            showGridOptions: false,
             defaultSortBy: .cardName,
             showGridOwnedToggle: false
         )
@@ -103,9 +103,17 @@ struct FriendsCollectionView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                BrowseInlineSearchField(
-                    title: isLoading ? "Loading…" : "Search \(sortedFilteredCards.count) cards",
-                    text: $query
+                BrowseCardGridControlsBar(
+                    searchTitle: isLoading ? "Loading…" : (sortedFilteredCards.count == 1 ? "Search 1 card" : "Search \(sortedFilteredCards.count) cards"),
+                    query: $query,
+                    filters: $filters,
+                    gridOptions: gridOptionsBinding,
+                    brand: services.brandSettings.selectedCatalogBrand,
+                    energyOptions: energyOptions,
+                    rarityOptions: rarityOptions,
+                    trainerTypeOptions: trainerTypeOptions,
+                    filterConfig: filterConfig,
+                    showGridOwnedToggle: true
                 )
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
@@ -141,30 +149,6 @@ struct FriendsCollectionView: View {
         .scrollDismissesKeyboard(.immediately)
         .navigationTitle("Friends' Collections")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    Toggle(isOn: gridOptionsBinding.showOwned) {
-                        Label("Show owner", systemImage: "person.circle")
-                    }
-                    Divider()
-                    BrowseGridFiltersMenuContent(
-                        brand: services.brandSettings.selectedCatalogBrand,
-                        filters: $filters,
-                        energyOptions: energyOptions,
-                        rarityOptions: rarityOptions,
-                        trainerTypeOptions: trainerTypeOptions,
-                        isAllBrands: false,
-                        gridOptions: gridOptionsBinding,
-                        config: filterConfig
-                    )
-                } label: {
-                    Image(systemName: filters.isVisiblyCustomized ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
-                        .symbolRenderingMode(.hierarchical)
-                        .foregroundStyle(filters.isVisiblyCustomized ? services.theme.accentColor : .primary)
-                }
-            }
-        }
         .task { await load() }
         .onChange(of: query) { _, _ in refreshFeed() }
         .onChange(of: filters) { _, _ in refreshFeed() }

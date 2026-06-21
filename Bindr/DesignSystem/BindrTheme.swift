@@ -362,10 +362,12 @@ struct BindrPageBackground: View {
 
     @ViewBuilder
     private var standardAccentGlow: some View {
+        // Light mode needs stronger opacities — accent tints wash out on white
+        // backgrounds where the same values read clearly in dark mode.
         LinearGradient(
             colors: [
-                accent.opacity(colorScheme == .dark ? 0.075 : 0.065),
-                accent.opacity(colorScheme == .dark ? 0.035 : 0.032),
+                accent.opacity(colorScheme == .dark ? 0.075 : 0.12),
+                accent.opacity(colorScheme == .dark ? 0.035 : 0.058),
                 .clear
             ],
             startPoint: .top,
@@ -374,7 +376,7 @@ struct BindrPageBackground: View {
 
         RadialGradient(
             colors: [
-                accent.opacity(colorScheme == .dark ? 0.055 : 0.042),
+                accent.opacity(colorScheme == .dark ? 0.055 : 0.085),
                 .clear
             ],
             center: .topTrailing,
@@ -385,7 +387,7 @@ struct BindrPageBackground: View {
 
         RadialGradient(
             colors: [
-                accent.opacity(colorScheme == .dark ? 0.04 : 0.03),
+                accent.opacity(colorScheme == .dark ? 0.04 : 0.062),
                 .clear
             ],
             center: .bottomLeading,
@@ -404,9 +406,9 @@ struct BindrPageBackground: View {
 
         LinearGradient(
             colors: [
-                cyan.opacity(colorScheme == .dark ? 0.105 : 0.090),
-                violet.opacity(colorScheme == .dark ? 0.080 : 0.066),
-                pink.opacity(colorScheme == .dark ? 0.074 : 0.058),
+                cyan.opacity(colorScheme == .dark ? 0.105 : 0.14),
+                violet.opacity(colorScheme == .dark ? 0.080 : 0.105),
+                pink.opacity(colorScheme == .dark ? 0.074 : 0.095),
                 .clear
             ],
             startPoint: .topLeading,
@@ -415,8 +417,8 @@ struct BindrPageBackground: View {
 
         RadialGradient(
             colors: [
-                cyan.opacity(colorScheme == .dark ? 0.105 : 0.080),
-                blue.opacity(colorScheme == .dark ? 0.050 : 0.040),
+                cyan.opacity(colorScheme == .dark ? 0.105 : 0.13),
+                blue.opacity(colorScheme == .dark ? 0.050 : 0.068),
                 .clear
             ],
             center: .topLeading,
@@ -427,8 +429,8 @@ struct BindrPageBackground: View {
 
         RadialGradient(
             colors: [
-                pink.opacity(colorScheme == .dark ? 0.110 : 0.082),
-                violet.opacity(colorScheme == .dark ? 0.052 : 0.038),
+                pink.opacity(colorScheme == .dark ? 0.110 : 0.13),
+                violet.opacity(colorScheme == .dark ? 0.052 : 0.068),
                 .clear
             ],
             center: .topTrailing,

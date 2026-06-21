@@ -81,7 +81,6 @@ struct FeedView: View {
                 }
             }
         }
-        .background(feedCanvasBackground)
         .onChange(of: services.socialFeed.selectedScope) { _, _ in
             Task { await refresh() }
         }
@@ -91,16 +90,6 @@ struct FeedView: View {
         .onAppear {
             services.socialFeed.clearUnreadState()
             services.socialPush.clearAppBadgeCount()
-        }
-    }
-
-    @ViewBuilder
-    private var feedCanvasBackground: some View {
-        if colorScheme == .dark {
-            Color.clear
-        } else {
-            BindrPalette.feedSurface
-                .ignoresSafeArea()
         }
     }
 

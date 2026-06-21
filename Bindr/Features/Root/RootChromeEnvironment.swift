@@ -11,10 +11,12 @@ enum RootChromeEnvironment {
     static let floatingContentTopInset: CGFloat = searchBarStackHeight
     /// Vertical gap between stacked sections on the universal search overlay
     /// (category tiles, recent searches, recently viewed, result groups).
-    static let searchOverlaySectionSpacing: CGFloat = 24
+    static let searchOverlaySectionSpacing: CGFloat = 18
+    /// Extra breathing room between the floating search bar and the first row.
+    static let searchOverlayTopContentGap: CGFloat = 12
     /// Scroll inset for the full-screen search overlay — clears the floating bar
-    /// stack plus one section gap so the first row aligns with spacing below.
-    static let searchOverlayContentTopInset: CGFloat = searchBarStackHeight + searchOverlaySectionSpacing
+    /// stack plus a modest gap before the first section.
+    static let searchOverlayContentTopInset: CGFloat = searchBarStackHeight + searchOverlayTopContentGap
 }
 
 private struct RootFloatingChromeInsetKey: EnvironmentKey {

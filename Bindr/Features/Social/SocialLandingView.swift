@@ -48,7 +48,6 @@ struct SocialLandingView: View {
             ctaPanel
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .bindrPageBackground(ignoresSafeArea: false)
     }
 
     // MARK: Hero

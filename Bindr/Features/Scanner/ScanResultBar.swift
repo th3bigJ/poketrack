@@ -43,31 +43,31 @@ struct ScanResultBar: View {
                     deleteCardButton
                 }
             }
-            .padding(.top, 4)
+            .padding(.top, 2)
             .padding(.horizontal, 16)
 
-            HStack(spacing: 8) {
+            HStack(spacing: 6) {
                 Image(systemName: "slider.horizontal.3")
-                    .font(.system(size: 11, weight: .bold))
+                    .font(.system(size: 10, weight: .bold))
                     .foregroundStyle(accent)
-                    .frame(width: 22, height: 22)
+                    .frame(width: 20, height: 20)
                     .background(accent.opacity(0.12), in: Circle())
                 Text("Select variant and quantity")
-                    .font(.caption.weight(.semibold))
+                    .font(.caption2.weight(.semibold))
                     .foregroundStyle(.secondary)
             }
-            .padding(.top, 12)
+            .padding(.top, 8)
             .padding(.horizontal, 16)
 
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 8) {
+                VStack(spacing: 5) {
                     ForEach(variants, id: \.self) { key in
                         variantRow(key)
                     }
                 }
-                .padding(.top, 10)
+                .padding(.top, 6)
                 .padding(.horizontal, 16)
-                .padding(.bottom, 4)
+                .padding(.bottom, 2)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
@@ -190,7 +190,7 @@ struct ScanResultBar: View {
     private func quantitySelector(for key: String) -> some View {
         let quantity = max(0, selectedVariantQuantities[key] ?? 0)
 
-        return HStack(spacing: 10) {
+        return HStack(spacing: 8) {
             Button {
                 guard quantity > 0 else { return }
                 selectedVariant = key
@@ -198,17 +198,17 @@ struct ScanResultBar: View {
                 HapticManager.impact(.light)
             } label: {
                 Image(systemName: "minus")
-                    .font(.caption.weight(.bold))
-                    .frame(width: 32, height: 32)
+                    .font(.caption2.weight(.bold))
+                    .frame(width: 28, height: 28)
                     .glassInsetCircleStyle()
             }
             .buttonStyle(.plain)
             .disabled(quantity <= 0)
 
             Text("\(quantity)")
-                .font(.subheadline.weight(.semibold))
+                .font(.caption.weight(.semibold))
                 .monospacedDigit()
-                .frame(minWidth: 22)
+                .frame(minWidth: 18)
 
             Button {
                 selectedVariant = key
@@ -216,8 +216,8 @@ struct ScanResultBar: View {
                 HapticManager.impact(.light)
             } label: {
                 Image(systemName: "plus")
-                    .font(.caption.weight(.bold))
-                    .frame(width: 32, height: 32)
+                    .font(.caption2.weight(.bold))
+                    .frame(width: 28, height: 28)
                     .glassInsetCircleStyle()
             }
             .buttonStyle(.plain)
@@ -229,24 +229,24 @@ struct ScanResultBar: View {
     private func variantRow(_ key: String) -> some View {
         let isSelected = (selectedVariantQuantities[key] ?? 0) > 0
 
-        return HStack(spacing: 10) {
+        return HStack(spacing: 8) {
             Text(variantDisplayName(key))
-                .font(.subheadline.weight(.medium))
+                .font(.caption.weight(.medium))
                 .foregroundStyle(isSelected ? accent : .primary)
                 .lineLimit(1)
-            Spacer(minLength: 6)
+            Spacer(minLength: 4)
             Text(priceText(for: key))
-                .font(.headline.weight(.semibold))
+                .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.primary)
                 .monospacedDigit()
-                .frame(minWidth: 68, alignment: .trailing)
+                .frame(minWidth: 60, alignment: .trailing)
             quantitySelector(for: key)
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .glassInsetStyle(cornerRadius: 12)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 5)
+        .glassInsetStyle(cornerRadius: 10)
         .overlay(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .strokeBorder(isSelected ? accent.opacity(0.45) : Color.clear, lineWidth: 1.5)
         )
     }

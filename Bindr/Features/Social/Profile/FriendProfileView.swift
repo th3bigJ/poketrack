@@ -60,7 +60,7 @@ struct FriendProfileView: View {
                         profileHeader(profile)
                         tabPicker
                             .padding(.top, BindrSpacing.lg)
-                        tabContent(profile)
+                        tabContent
                     }
                     .padding(.top, BindrSpacing.lg)
                     .padding(.bottom, 32)
@@ -503,61 +503,77 @@ struct FriendProfileView: View {
     }
 
     @ViewBuilder
-    private func tabContent(_ profile: SocialProfile) -> some View {
+    private var tabContent: some View {
         VStack(spacing: BindrSpacing.md) {
             switch selectedTab {
             case .posts:
-                if groupedActivity.isEmpty {
-                    emptyCard("No shared posts yet.")
-                } else {
-                    ForEach(groupedActivity) { group in
-                        FeedItemView(group: group)
-                    }
-                }
+                postsTabContent
             case .wishlist:
-                let ids = resolvedWishlistCardIDs()
-                if canViewWishlist, !ids.isEmpty {
-                    SelectableCardGrid(
-                        cardIDs: ids,
-                        isSelectMode: .constant(false),
-                        selectedCardIDs: .constant([]),
-                        cardLoader: { id in await loadSharedCard(id) },
-                        onCardTap: { tappedID in
-                            Task { await openCardDetail(tappedID: tappedID, orderedIDs: ids) }
-                        }
-                    )
-                } else if !canViewWishlist {
-                    emptyCard("This user's wishlist is private.")
-                } else {
-                    emptyCard("No wishlist items yet.")
-                }
+                wishlistTabContent
             case .collection:
-                if !canViewWishlist {
-                    emptyCard("Become friends to view this user's collection.")
-                } else if isLoadingCollection {
-                    ProgressView("Loading collection…")
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 40)
-                } else if let error = collectionLoadError {
-                    emptyCard("Couldn't load collection: \(error)")
-                } else if friendCollectionCardIDs.isEmpty {
-                    emptyCard("This friend hasn't synced their collection yet.")
-                } else {
-                    SelectableCardGrid(
-                        cardIDs: friendCollectionCardIDs,
-                        isSelectMode: .constant(false),
-                        selectedCardIDs: .constant([]),
-                        cardLoader: { id in await loadSharedCard(id) },
-                        quantityByCardID: friendCollectionQuantityByCardID,
-                        onCardTap: { tappedID in
-                            Task { await openCardDetail(tappedID: tappedID, orderedIDs: friendCollectionCardIDs) }
-                        }
-                    )
-                }
+                collectionTabContent
             }
         }
         .padding(.top, BindrSpacing.xl)
-        .padding(.horizontal, BindrSpacing.lg)
+        .padding(.horizontal, selectedTab == .posts ? BindrSpacing.lg : 0)
+    }
+
+    @ViewBuilder
+    private var postsTabContent: some View {
+        if groupedActivity.isEmpty {
+            emptyCard("No shared posts yet.")
+        } else {
+            ForEach(groupedActivity) { group in
+                FeedItemView(group: group)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var wishlistTabContent: some View {
+        let ids = resolvedWishlistCardIDs()
+        if canViewWishlist, !ids.isEmpty {
+            FriendBrowsableCardGrid(
+                cardIDs: ids,
+                cardLoader: { await loadSharedCard($0) },
+                onCardTap: { tappedID, orderedIDs in
+                    Task { await openCardDetail(tappedID: tappedID, orderedIDs: orderedIDs) }
+                }
+            )
+        } else if !canViewWishlist {
+            emptyCard("This user's wishlist is private.")
+                .padding(.horizontal, BindrSpacing.lg)
+        } else {
+            emptyCard("No wishlist items yet.")
+                .padding(.horizontal, BindrSpacing.lg)
+        }
+    }
+
+    @ViewBuilder
+    private var collectionTabContent: some View {
+        if !canViewWishlist {
+            emptyCard("Become friends to view this user's collection.")
+                .padding(.horizontal, BindrSpacing.lg)
+        } else if isLoadingCollection {
+            ProgressView("Loading collection…")
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 40)
+        } else if let error = collectionLoadError {
+            emptyCard("Couldn't load collection: \(error)")
+                .padding(.horizontal, BindrSpacing.lg)
+        } else if friendCollectionCardIDs.isEmpty {
+            emptyCard("This friend hasn't synced their collection yet.")
+                .padding(.horizontal, BindrSpacing.lg)
+        } else {
+            FriendBrowsableCardGrid(
+                cardIDs: friendCollectionCardIDs,
+                quantityByCardID: friendCollectionQuantityByCardID,
+                cardLoader: { await loadSharedCard($0) },
+                onCardTap: { tappedID, orderedIDs in
+                    Task { await openCardDetail(tappedID: tappedID, orderedIDs: orderedIDs) }
+                }
+            )
+        }
     }
 
     // MARK: - Helpers

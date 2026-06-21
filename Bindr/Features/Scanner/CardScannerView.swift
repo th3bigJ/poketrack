@@ -4,7 +4,7 @@ import AVFoundation
 private enum ScannerCardFrameLayout {
     static let verticalCenterBias: CGFloat = 8
     /// Stable content height for the controls/results area below the camera.
-    static let bottomPanelContentHeight: CGFloat = 288
+    static let bottomPanelContentHeight: CGFloat = 300
     static let bottomSheetTopCornerRadius: CGFloat = 28
     /// Top inset for the bottom sheet drag handle (capture button sits fully in the camera area).
     static let sheetTopContentInset: CGFloat = 16
@@ -956,8 +956,8 @@ private struct ScannerResultsOverlay: View {
             .simultaneousGesture(horizontalPageGesture(count: count))
 
             pageIndicator(count: count)
-                .padding(.top, 8)
-                .padding(.bottom, max(safeBottom + 20, 28))
+                .padding(.top, 2)
+                .padding(.bottom, max(safeBottom + 4, 8))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }

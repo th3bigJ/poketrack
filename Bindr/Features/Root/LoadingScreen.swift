@@ -341,8 +341,8 @@ struct LaunchWordmarkView: View {
 
             RadialGradient(
                 colors: [
-                    launchBrandPrimary.opacity(colorScheme == .dark ? 0.18 : 0.10),
-                    launchBrandSecondary.opacity(colorScheme == .dark ? 0.06 : 0.04),
+                    launchBrandPrimary.opacity(colorScheme == .dark ? 0.18 : 0.16),
+                    launchBrandSecondary.opacity(colorScheme == .dark ? 0.06 : 0.07),
                     .clear
                 ],
                 center: .init(x: 0.5, y: 0.35),
@@ -353,7 +353,7 @@ struct LaunchWordmarkView: View {
 
             RadialGradient(
                 colors: [
-                    launchBrandCyan.opacity(colorScheme == .dark ? 0.10 : 0.06),
+                    launchBrandCyan.opacity(colorScheme == .dark ? 0.10 : 0.11),
                     .clear
                 ],
                 center: .topTrailing,
