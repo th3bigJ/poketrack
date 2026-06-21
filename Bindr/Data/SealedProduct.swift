@@ -9,15 +9,28 @@ struct SealedProductImage: Codable, Hashable, Sendable {
         case publicURL = "public_url"
     }
 
+    /// Prefer ``r2Key`` on the configured CDN. ``publicURL`` in the catalog JSON is often a stale
+    /// absolute mirror (e.g. old R2 `.dev` hosts) after the Cloudflare custom domain changes.
     var resolvedURL: URL? {
-        if let publicURL,
-           let url = URL(string: publicURL.trimmingCharacters(in: .whitespacesAndNewlines)) {
+        if let r2Key {
+            let key = r2Key.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !key.isEmpty {
+                return AppConfiguration.imageURL(relativePath: key)
+            }
+        }
+
+        guard let publicURL,
+              let url = URL(string: publicURL.trimmingCharacters(in: .whitespacesAndNewlines))
+        else { return nil }
+
+        if url.host == AppConfiguration.r2BaseURL.host {
             return url
         }
-        if let r2Key {
-            return AppConfiguration.imageURL(relativePath: r2Key)
-        }
-        return nil
+
+        // Legacy absolute URL on another host — rebuild from its path on the current CDN.
+        let path = url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        guard !path.isEmpty else { return nil }
+        return AppConfiguration.imageURL(relativePath: path)
     }
 }
 

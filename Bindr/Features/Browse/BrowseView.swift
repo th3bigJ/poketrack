@@ -1031,10 +1031,13 @@ struct BrowseView: View {
             catalogNextIndex = 0
             isLoadingInitial = true
 
-            // The root startup pipeline already refreshes catalog data.
-            // Browse only needs to ensure the selected brand's sets are present.
-            services.cardData.resetBrowseFeedSessionOnly()
-            await services.cardData.loadSets(preferSyncedCatalog: true)
+            let catalogJustWarmed = services.consumeLightBrowseTabEntryIfNeeded()
+            if catalogJustWarmed {
+                // Bootstrap already loaded sets + first browse page.
+            } else {
+                services.cardData.resetBrowseFeedSessionOnly()
+                await services.cardData.loadSets(preferSyncedCatalog: true)
+            }
             guard isViewVisible else { return }
             cachedSetNameByCode = firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
             loadedBrand = selectedBrand
@@ -1061,12 +1064,9 @@ struct BrowseView: View {
                 ownedCardIDs: ownedCardIDsSnapshot,
                 shouldUseCatalogFeed: shouldUseCatalogFeedOnStartup
             )
-        } else {
-            await ensureAllBrowseFilterCardsLoaded(
-                showsPreparingBanner: false,
-                usingCatalogFeed: false
-            )
         }
+        // Default shuffled feed does not need the full catalog index — filter cards load
+        // lazily when the user applies search or filters (`handleBrowseFiltersChanged`).
     }
 
     @ViewBuilder
@@ -2869,6 +2869,10 @@ private struct BrowseSetsTabContent: View {
     private var collectionProgressTaskKey: Int {
         var h = Hasher()
         h.combine(services.brandSettings.selectedCatalogBrand.rawValue)
+        h.combine(services.collectionInventoryRevision)
+        // Recompute when the catalog finishes loading — numeric card IDs (e.g. TCGPlayer)
+        // resolve via `loadCard`, which needs `cardData.sets` populated to map into set codes.
+        for set in services.cardData.sets { h.combine(set.setCode) }
         for item in collectionItems {
             h.combine(item.cardID)
             h.combine(item.quantity)

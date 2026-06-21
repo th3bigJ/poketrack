@@ -162,9 +162,9 @@ struct RootView: View {
 
     // MARK: - Splash Flow
     @State private var showSplash = false
-    /// True while a first-run user is in the onboarding flow. The main app
-    /// bootstraps in the background during onboarding; once complete we show
-    /// the wordmark + progress until the pipeline finishes, then reveal the app.
+    /// True while a first-run user is in the onboarding flow. Catalog bootstrap
+    /// starts after onboarding so the post-onboarding loading screen can show
+    /// progress from 0% through completion.
     @State private var showOnboardingImmediate = false
     /// Flips once the BINDR letter-reveal stagger has played + breathing
     /// pulse has started. Distinct from "ready to dismiss" — the wordmark
@@ -534,8 +534,8 @@ struct RootView: View {
             // ── Bootstrap strategy depends on launch path ─────────────────
             //
             // First-run: user sees the same wordmark splash as returning users,
-            // then onboarding appears after the reveal. Bootstrap runs while
-            // onboarding is on screen when needed.
+            // then onboarding appears after the reveal. Bootstrap runs once
+            // onboarding finishes so download progress is visible from 0%.
             //
             // Returning-user: wordmark shows immediately.
             //   - Wait for the BINDR letter reveal (~1.8 s) to avoid hitching the
@@ -554,12 +554,6 @@ struct RootView: View {
 
                 withAnimation(.easeInOut(duration: 0.28)) {
                     showOnboardingImmediate = true
-                }
-
-                // Overlap the catalog download with onboarding, but only after onboarding is visible
-                // (avoids racing the wordmark animation and keeps side effects off the pre-onboarding path).
-                if !services.brandSettings.hasCompletedInitialAppBootstrap {
-                    Task { await services.bootstrap() }
                 }
 
                 while showOnboardingImmediate {

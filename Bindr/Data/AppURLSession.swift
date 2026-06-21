@@ -32,7 +32,7 @@ enum AppURLSession {
 
     /// Parallel catalog/pricing downloads from R2. Kept below the image session (6) so thumbnails
     /// still load while a large first-sync runs, but high enough to saturate the network.
-    static let catalogParallelDownloads = 8
+    static let catalogParallelDownloads = 12
 
     /// Catalog/pricing downloads — separate session so catalog traffic does not evict the image cache.
     static let catalog: URLSession = {

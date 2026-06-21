@@ -347,7 +347,7 @@ struct PrivacyPolicyView: View {
                 }
             }
 
-        case .contact(let email, let context):
+        case .contact(_, let context):
             VStack(alignment: .leading, spacing: 4) {
                 Text(context)
                     .font(.system(size: 14))

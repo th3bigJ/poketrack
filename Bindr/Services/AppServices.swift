@@ -73,6 +73,8 @@ final class AppServices {
 
     /// Daily value snapshots (SwiftData) — initialized with `ModelContext`.
     private(set) var collectionValue: CollectionValueService?
+    /// After a cloud backup restore, today's value must not be recomputed until catalog pricing is fully local.
+    private(set) var needsCollectionValueRecalcAfterRestore = false
     private var socialSyncModelContext: ModelContext?
 
     private(set) var isReady = false
@@ -253,12 +255,20 @@ final class AppServices {
         isBootstrapping = true
         defer { isBootstrapping = false }
 
-        bootstrapShowsDownloadProgressUI = false
+        bootstrapShowsDownloadProgressUI = true
         bootstrapMessage = "Updating Pokémon card data…"
         bootstrapStatus = "Preparing downloads…"
-        bootstrapProgress = max(bootstrapProgress, 0.02)
+        bootstrapProgress = 0
+        bootstrapDownloadedBytes = 0
+        bootstrapEstimatedTotalBytes = 0
+        // Paint 0% on the post-onboarding loading screen before sync work begins.
+        await Task.yield()
+        await Task.yield()
 
-        _ = await runStartupCatalogPipeline(updateBootstrapProgressUI: true)
+        _ = await runStartupCatalogPipeline(
+            updateBootstrapProgressUI: true,
+            includeDeferredLaunchServices: false
+        )
 
         brandSettings.markInitialAppBootstrapCompleted()
         pendingLightBrowseTabEntry = true
@@ -276,10 +286,12 @@ final class AppServices {
             try? await Task.sleep(nanoseconds: 50_000_000)
         }
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
-            await primeLaunchCatalogFromLocalCache()
+            if !isLaunchCatalogPipelineComplete {
+                await primeLaunchCatalogFromLocalCache()
+                isLaunchCatalogPipelineComplete = true
+                launchCatalogPipelineCompletedAt = Date()
+            }
             scheduleBackgroundDailyCatalogRefreshIfNeeded()
-            isLaunchCatalogPipelineComplete = true
-            launchCatalogPipelineCompletedAt = Date()
             return
         }
         shouldRunBackgroundCatalogRefreshOnLaunch = false
@@ -470,18 +482,14 @@ final class AppServices {
     ) async -> CatalogSyncOutcome {
         await brandsManifest.refresh()
         if updateBootstrapProgressUI {
-            bootstrapShowsDownloadProgressUI = false
             bootstrapMessage = "Updating Pokémon card data…"
             bootstrapStatus = "Downloading card catalog…"
-            bootstrapProgress = max(bootstrapProgress, 0.04)
-            await Task.yield()
             await Task.yield()
         }
 
-        // Give the network sync phase 95% of the bar. The remaining post-sync
-        // steps (loadSets, dex, browse lists) are local SQLite reads that take
-        // milliseconds — they don't warrant visible bar segments.
-        let weightSync: Double = 0.95
+        // Network sync fills most of the bar; reserve the tail for local SQLite work
+        // so the post-onboarding screen keeps moving instead of stalling near the end.
+        let syncPhaseWeight = 0.82
 
         let progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)?
         if updateBootstrapProgressUI {
@@ -498,7 +506,8 @@ final class AppServices {
                 self.bootstrapStatus = snapshot.status
                 self.bootstrapDownloadedBytes = snapshot.downloadedBytes
                 self.bootstrapEstimatedTotalBytes = max(snapshot.estimatedTotalBytes, snapshot.downloadedBytes)
-                self.bootstrapProgress = min(max(snapshot.fractionCompleted * weightSync, 0), weightSync)
+                let raw = min(max(snapshot.fractionCompleted, 0), 1)
+                self.bootstrapProgress = raw * syncPhaseWeight
             }
         } else {
             progressHandler = nil
@@ -509,14 +518,27 @@ final class AppServices {
         )
 
         if updateBootstrapProgressUI {
-            bootstrapProgress = weightSync
-            bootstrapStatus = "Finishing up…"
+            bootstrapStatus = "Refreshing catalog…"
+            bootstrapProgress = 0.84
         }
         await cardData.loadSets(preferSyncedCatalog: true)
 
+        if updateBootstrapProgressUI {
+            bootstrapStatus = "Preparing browse…"
+            bootstrapProgress = 0.88
+        }
+        await cardData.warmBrowseFeedForLaunch()
+
+        if updateBootstrapProgressUI {
+            bootstrapStatus = "Loading Pokémon index…"
+            bootstrapProgress = 0.92
+        }
         await cardData.loadNationalDexPokemon()
         await variantsCatalog.reloadFromStore()
 
+        if updateBootstrapProgressUI {
+            bootstrapProgress = 0.97
+        }
         await sealedProducts.reloadFromLocal()
 
         // Kick off essential asset downloads (set logos, symbols, pokémon art, sealed product images)
@@ -532,11 +554,14 @@ final class AppServices {
             await store.checkEntitlements()
         }
         if updateBootstrapProgressUI {
-            if bootstrapShowsDownloadProgressUI {
-                bootstrapProgress = 1.0
-            }
+            bootstrapProgress = 1.0
             bootstrapStatus = "Card data is ready."
         }
+
+        // Warm pricing cache before `isReady` so the dashboard can compute collection value
+        // immediately after the launch overlay dismisses.
+        await pricing.prefetchPokemonCardPricing(forSetCodes: [])
+
         return outcome
     }
 
@@ -558,7 +583,9 @@ final class AppServices {
         /// Network import is only part of the story; reserve the tail for SQLite + dex so the bar is not stuck at 100% early.
         let syncPhaseWeight = 0.82
 
-        _ = await CatalogSyncCoordinator.shared.syncAllIfNeeded(enabledBrands: brandSettings.enabledBrands) { [weak self] snapshot in
+        _ = await CatalogSyncCoordinator.shared.syncAllIfNeeded(
+            enabledBrands: brandSettings.enabledBrands,
+            progressHandler: { [weak self] snapshot in
             guard let self else { return }
             if snapshot.downloadedBytes > 0 {
                 self.catalogDownloadShowsByteProgressUI = true
@@ -568,7 +595,9 @@ final class AppServices {
             self.catalogDownloadEstimatedTotalBytes = max(snapshot.estimatedTotalBytes, snapshot.downloadedBytes)
             let raw = min(max(snapshot.fractionCompleted, 0), 1)
             self.catalogDownloadProgress = raw * syncPhaseWeight
-        }
+            },
+            deferDeepHistoryBackfill: false
+        )
 
         catalogDownloadStatus = "Refreshing catalog…"
         catalogDownloadProgress = 0.84
@@ -867,8 +896,20 @@ final class AppServices {
     }
 
     private func refreshLibraryUIAfterCloudBackupRestore() async {
+        markCollectionValueRecalcAfterRestorePending()
         await collectionValue?.loadAllFromStore()
         collectionInventoryRevision += 1
+    }
+
+    /// Clears stale in-memory pricing and defers today's value recompute until catalog data is ready.
+    func markCollectionValueRecalcAfterRestorePending() {
+        needsCollectionValueRecalcAfterRestore = true
+        pricing.clearSetPricingMemoryCache()
+        collectionValue?.invalidatePersistedSnapshot()
+    }
+
+    func markCollectionValueRecalcAfterRestoreComplete() {
+        needsCollectionValueRecalcAfterRestore = false
         scheduleLibraryCloudBackup()
     }
 

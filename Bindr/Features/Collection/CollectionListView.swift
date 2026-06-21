@@ -51,8 +51,16 @@ struct CollectionListView: View {
         visibleCollectionItems.compactMap { cardsByCardID[$0.cardID] }
     }
 
+    private var filteredCollectionGroups: [CollectionGridGroup] {
+        groupCollectionItemsForGrid(filteredCollectionItems)
+    }
+
     private var filteredOrderedCards: [Card] {
-        filteredCollectionItems.compactMap { cardsByCardID[$0.cardID] }
+        filteredCollectionGroups.compactMap { cardsByCardID[$0.cardID] }
+    }
+
+    private func groupCollectionItemsForGrid(_ items: [CollectionItem]) -> [CollectionGridGroup] {
+        CollectionGridGrouping.groupedItems(items, isSealed: { _ in false })
     }
 
     var body: some View {
@@ -92,9 +100,9 @@ struct CollectionListView: View {
             VStack(spacing: 0) {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
-                EagerVGrid(items: filteredCollectionItems, columns: columnCount, spacing: 12) { item in
-                    let index = filteredCollectionItems.firstIndex(where: { $0.id == item.id }) ?? 0
-                    collectionCell(for: item)
+                EagerVGrid(items: filteredCollectionGroups, columns: columnCount, spacing: 12) { group in
+                    let index = filteredCollectionGroups.firstIndex(where: { $0.id == group.id }) ?? 0
+                    collectionCell(for: group)
                         .onAppear {
                             ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: index + 1)
                         }
@@ -106,17 +114,24 @@ struct CollectionListView: View {
     }
 
     @ViewBuilder
-    private func collectionCell(for item: CollectionItem) -> some View {
+    private func collectionCell(for group: CollectionGridGroup) -> some View {
+        let item = group.representativeItem
         if let card = cardsByCardID[item.cardID] {
             Button {
                 let cards = filteredOrderedCards
                 let index = cards.firstIndex(where: { $0.masterCardId == card.masterCardId }) ?? 0
                 presentCardAtIndex(cards, index)
             } label: {
-                CardGridCell(card: card, services: services, colorScheme: colorScheme, footnote: collectionFootnote(for: item))
+                CardGridCell(
+                    card: card,
+                    services: services,
+                    colorScheme: colorScheme,
+                    ownedCountBadge: group.totalQuantity,
+                    footnote: collectionFootnote(for: group)
+                )
             }
             .buttonStyle(CardCellButtonStyle())
-            .accessibilityLabel("\(card.cardName), \(item.quantity) copies, \(item.variantKey)")
+            .accessibilityLabel(collectionAccessibilityLabel(for: card, group: group))
         } else {
             VStack(spacing: 4) {
                 RoundedRectangle(cornerRadius: 8)
@@ -134,10 +149,23 @@ struct CollectionListView: View {
         }
     }
 
-    private func collectionFootnote(for item: CollectionItem) -> String {
-        let v = item.variantKey
-            .replacingOccurrences(of: "_", with: " ")
-        return "×\(item.quantity) · \(v)"
+    private func collectionFootnote(for group: CollectionGridGroup) -> String {
+        if group.variantKeys.count > 1 {
+            return "×\(group.totalQuantity) · \(group.variantKeys.count) variants"
+        }
+        let variant = group.variantKeys.first ?? itemVariantLabel(group.representativeItem)
+        return "×\(group.totalQuantity) · \(variant)"
+    }
+
+    private func itemVariantLabel(_ item: CollectionItem) -> String {
+        item.variantKey.replacingOccurrences(of: "_", with: " ")
+    }
+
+    private func collectionAccessibilityLabel(for card: Card, group: CollectionGridGroup) -> String {
+        if group.variantKeys.count > 1 {
+            return "\(card.cardName), \(group.totalQuantity) copies, \(group.variantKeys.count) variants"
+        }
+        return "\(card.cardName), \(group.totalQuantity) copies, \(group.variantKeys.first ?? "normal")"
     }
 
     private func resolveCollectionCards() async {

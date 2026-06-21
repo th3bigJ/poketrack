@@ -89,22 +89,47 @@ struct DashboardView: View {
         )
     }
 
+    /// Today's live value first; falls back to today's saved SwiftData snapshot while recomputing.
+    private var todayLiveSnapshot: BrandSnapshot? {
+        liveSnapshot ?? services.collectionValue?.brandSnapshot(for: Date())
+    }
+
+    private var displayedBrandSnapshot: BrandSnapshot? {
+        todayLiveSnapshot
+    }
+
+    /// True when the hero total reflects a live recompute this session, not only a stored snapshot.
+    private var isShowingLiveTodayValue: Bool {
+        liveSnapshot != nil
+    }
+
+    /// Subtitle beneath the hero total — shows the scrubbed chart date while dragging, otherwise today's label.
+    private var displayValueSubtitle: String {
+        if let point = selectedPoint {
+            if chartRange == .daily, Calendar.current.isDateInToday(point.date) {
+                return "Today"
+            }
+            return rangeLabel(for: point.date)
+        }
+        return isShowingLiveTodayValue ? "Today's value" : "Last saved value"
+    }
+
     private var displayTotal: Double {
         let point = selectedPoint
         switch selectedBrand {
-        case .pokemon: return point?.pokemon ?? livePokemonGbp
-        case nil:      return point?.total ?? liveTotalGbp ?? 0
+        case .pokemon: return point?.pokemon ?? displayedBrandSnapshot?.pokemon ?? 0
+        case nil:      return point?.total ?? displayedBrandSnapshot?.total ?? 0
         }
     }
 
-    private var isScrubbingOrLoaded: Bool { selectedPoint != nil || liveTotalGbp != nil }
+    private var isScrubbingOrLoaded: Bool { selectedPoint != nil || displayedBrandSnapshot != nil }
     private var displayCardsValue: Double {
         if let point = selectedPoint, let cards = point.cards { return cards }
-        return liveCardsGbp
+        return displayedBrandSnapshot?.cards ?? liveCardsGbp
     }
     private var displaySealedValue: Double {
         if let point = selectedPoint, let sealed = point.sealed { return sealed }
-        return liveSealedGbp
+        return displayedBrandSnapshot?.sealed ?? liveSealedGbp
     }
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
     private var activeMarketTrend: MarketTrendMetrics? {
@@ -211,15 +236,15 @@ struct DashboardView: View {
                 )
             }
         }
-        if let live = liveTotalGbp {
+        if let snap = todayLiveSnapshot {
             let today = cal.startOfDay(for: Date())
-            // Always use today's live value so the chart matches the summary value card.
+            // Always pin today's live/saved value on the chart so it matches the hero total.
             pointsByDay[today] = ChartPoint(
                 date: today,
-                total: live,
-                pokemon: livePokemonGbp,
-                cards: liveCardsGbp,
-                sealed: liveSealedGbp
+                total: snap.total,
+                pokemon: snap.pokemon,
+                cards: snap.cards,
+                sealed: snap.sealed
             )
         }
         return pointsByDay.keys.sorted().compactMap { pointsByDay[$0] }
@@ -307,14 +332,21 @@ struct DashboardView: View {
         let points = activePoints
         guard points.count >= 2 else { return nil }
 
+        let cal = Calendar.current
+        let today = cal.startOfDay(for: Date())
+
         let currentIndex: Int
         if let sel = selectedPoint, let idx = points.firstIndex(where: { $0.date == sel.date }) {
             guard idx > 0 else { return nil }
             currentIndex = idx
+        } else if let todayIdx = points.firstIndex(where: { cal.isDate($0.date, inSameDayAs: today) }) {
+            // Compare from today's point when present — not the last stored day before today.
+            currentIndex = todayIdx
         } else {
             currentIndex = points.count - 1
         }
 
+        guard currentIndex > 0 else { return nil }
         let current = points[currentIndex].total
         let previous = points[currentIndex - 1].total
         guard previous > 0 else { return nil }
@@ -361,14 +393,37 @@ struct DashboardView: View {
             guard services.isLaunchCatalogPipelineComplete else { return }
             await prepareInitialDashboardData()
         }
-        .task(id: "\(collectionItems.count):\(services.isLaunchCatalogPipelineComplete)") {
-            guard collectionItems.count > 0, services.isLaunchCatalogPipelineComplete else { return }
-            guard hasFiredInitialLoadComplete, !hasPreparedInitialDashboardData else { return }
-            // Let the first interactive frame settle before recomputing the live value.
-            try? await Task.sleep(nanoseconds: 1_000_000_000)
-            guard !Task.isCancelled, !hasPreparedInitialDashboardData else { return }
-            await computeLiveValue()
-            hasPreparedInitialDashboardData = true
+        .task(id: "\(services.needsCollectionValueRecalcAfterRestore):\(services.isLaunchCatalogPipelineComplete):\(services.isBootstrapping):\(collectionItems.count)") {
+            guard services.needsCollectionValueRecalcAfterRestore else { return }
+            guard services.isLaunchCatalogPipelineComplete, !services.isBootstrapping else { return }
+            guard collectionItems.count > 0, services.collectionValue != nil else { return }
+
+            isLoadingValue = true
+            defer { isLoadingValue = false }
+
+            for attempt in 0..<10 {
+                let delayNs = UInt64(400_000_000 + attempt * 400_000_000)
+                try? await Task.sleep(nanoseconds: delayNs)
+                guard !Task.isCancelled else { return }
+
+                await reloadDashboardInventory(deferForLaunch: false)
+                await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+                if await computeLiveValue(validateAgainstRestore: attempt >= 2) {
+                    if let snap = liveSnapshot {
+                        await services.collectionValue?.forceRecalculate(
+                            liveSnapshot: snap,
+                            collectionItems: collectionItems
+                        )
+                    }
+                    services.markCollectionValueRecalcAfterRestoreComplete()
+                    chartRefreshID += 1
+                    return
+                }
+            }
+
+            _ = await computeLiveValue(validateAgainstRestore: false)
+            services.markCollectionValueRecalcAfterRestoreComplete()
+            chartRefreshID += 1
         }
         .task(id: backfillTrigger) {
             guard collectionItems.count > 0,
@@ -381,7 +436,7 @@ struct DashboardView: View {
             guard !Task.isCancelled else { return }
             await svc.runBackfillIfNeeded(
                 collectionItems: collectionItems,
-                preferredTodaySnapshot: liveSnapshot
+                preferredTodaySnapshot: liveSnapshot ?? displayedBrandSnapshot
             )
         }
         .task(id: dashboardDataSignature) {
@@ -415,7 +470,6 @@ struct DashboardView: View {
         }
         .task(id: "\(services.collectionInventoryRevision):\(hasFiredInitialLoadComplete)") {
             guard hasFiredInitialLoadComplete else { return }
-            guard services.collectionInventoryRevision > 0 else { return }
             await reloadDashboardInventory(deferForLaunch: false)
             recomputeCollectionStats()
             await computeLiveValue()
@@ -456,6 +510,13 @@ struct DashboardView: View {
             selectedPoint = nil
             selectedBrand = activeBrand
         }
+        .onChange(of: services.isBootstrapping) { _, bootstrapping in
+            guard !bootstrapping, hasFiredInitialLoadComplete, collectionItems.count > 0 else { return }
+            Task {
+                await computeLiveValue()
+                chartRefreshID += 1
+            }
+        }
         .onChange(of: services.pricing.usdToGbp) { old, new in
             // Skip recompute if the rate change is < 0.5% (daily FX moves are tiny).
             let delta = abs(new - old) / max(old, 1e-9)
@@ -469,7 +530,14 @@ struct DashboardView: View {
                 services.collectionValue?.persistLastKnownValue(snapshot)
             }
             if phase == .active {
-                Task { await refreshActionableTrades() }
+                Task {
+                    await refreshActionableTrades()
+                    guard hasFiredInitialLoadComplete,
+                          services.isLaunchCatalogPipelineComplete,
+                          collectionItems.count > 0 else { return }
+                    await computeLiveValue()
+                    chartRefreshID += 1
+                }
             }
         }
         .onChange(of: services.trade.lastMutationAt) { _, _ in
@@ -519,7 +587,9 @@ struct DashboardView: View {
                     collectionItems = freshItems
                 }
                 recomputeCollectionStats()
-                await computeLiveValue()
+                if await computeLiveValue() {
+                    chartRefreshID += 1
+                }
             }
         }
         .sheet(item: $selectedCardForDetail) { card in
@@ -671,7 +741,7 @@ struct DashboardView: View {
                             .font(.headline)
                             .foregroundStyle(dashboardSecondaryText)
 
-                        if isLoadingValue && liveTotalGbp == nil {
+                        if (isLoadingValue || services.needsCollectionValueRecalcAfterRestore) && displayedBrandSnapshot == nil {
                             ProgressView()
                                 .tint(services.theme.accentColor)
                         } else if isScrubbingOrLoaded {
@@ -679,6 +749,9 @@ struct DashboardView: View {
                                 .font(.system(size: 30, weight: .bold, design: .rounded))
                                 .foregroundStyle(dashboardPrimaryText)
                                 .contentTransition(.numericText())
+                            Text(displayValueSubtitle)
+                                .font(.caption.weight(.medium))
+                                .foregroundStyle(dashboardSecondaryText)
                             HStack(spacing: 12) {
                                 Text("Cards \(formatCurrency(displayCardsValue))")
                                 Text("Sealed \(formatCurrency(displaySealedValue))")
@@ -1316,25 +1389,33 @@ struct DashboardView: View {
 
         onInitialLoadStatusChange?("Loading your collection...")
         await reloadDashboardInventory(deferForLaunch: false)
-
         recomputeCollectionStats()
 
-        onInitialLoadStatusChange?("Checking saved pricing...")
-        if let persisted = svc.todayPersistedSnapshot() {
-            liveTotalGbp = persisted.total
-            livePokemonGbp = persisted.pokemon
-            liveCardsGbp = persisted.cards
-            liveSealedGbp = persisted.sealed
-        } else if collectionItems.count > 0 {
+        await svc.loadAllFromStore()
+        applyValuePlaceholder(from: svc)
+
+        if collectionItems.count > 0 {
             onInitialLoadStatusChange?("Calculating your collection value...")
-            await computeLiveValue()
+            if await computeLiveValue() {
+                chartRefreshID += 1
+            }
         }
 
         // Value is established — unblock the launch overlay immediately.
-        // loadAllFromStore, resolveDashboardMetadata, and loadMarketTrendBlob are
-        // driven by the existing .task(id:) handlers above and run after the fade.
+        // resolveDashboardMetadata and loadMarketTrendBlob run after the fade.
         hasPreparedInitialDashboardData = true
         fireInitialLoadCompleteIfReady()
+    }
+
+    /// Instant placeholder while live pricing loads — never treated as authoritative.
+    private func applyValuePlaceholder(from svc: CollectionValueService) {
+        let placeholder = svc.brandSnapshot(for: Date())
+            ?? svc.todayPersistedSnapshot()
+        guard let placeholder, placeholder.total > 0 else { return }
+        liveTotalGbp = placeholder.total
+        livePokemonGbp = placeholder.pokemon
+        liveCardsGbp = placeholder.cards
+        liveSealedGbp = placeholder.sealed
     }
 
     private func reloadDashboardInventory(deferForLaunch: Bool) async {
@@ -1365,110 +1446,45 @@ struct DashboardView: View {
         dashboardDataRevision += 1
     }
 
-    private func computeLiveValue() async {
+    @discardableResult
+    private func computeLiveValue(validateAgainstRestore: Bool = false) async -> Bool {
         isLoadingValue = true
         defer { isLoadingValue = false }
-        await services.sealedProducts.loadFromLocalIfAvailable()
 
-        // Pre-warm the full pricing cache (one SQLite scan, decode off @MainActor).
+        await services.sealedProducts.loadFromLocalIfAvailable()
         await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
 
-        // Build the masterCardId→pricing index for all collection cards so the pricing
-        // loop below hits the O(1) fast path instead of falling back to per-card SQLite
-        // fetches. indexPricingForCards is a no-op for cards already in the index.
-        let pokemonCollectionIDs = collectionItems.compactMap { item -> String? in
-            guard !item.cardID.hasPrefix("sealed:"), !item.cardID.contains("::") else { return nil }
-            return item.cardID
+        guard let svc = services.collectionValue else { return liveTotalGbp != nil }
+        guard let snap = await svc.computeLiveSnapshot(for: collectionItems), snap.total > 0 else {
+            return liveTotalGbp != nil
         }
-        let pokemonCards = await services.cardData.loadCards(masterCardIDs: pokemonCollectionIDs, catalogBrand: .pokemon)
-        await services.pricing.indexPricingForCards(pokemonCards)
 
-        var totalValue = 0.0
-        var pokemonValue = 0.0
-        var cardsValue = 0.0
-        var sealedValue = 0.0
+        if validateAgainstRestore,
+           let anchorTotal = svc.latestSnapshotTotalBeforeToday(),
+           anchorTotal > 0,
+           snap.total < anchorTotal * 0.75 {
+            return false
+        }
+
         var totalCost = 0.0
-        var cacheMissIDs: [String] = []
-
-        // Yield every 100 items so the main thread stays responsive during large collections.
-        var yieldCounter = 0
         for item in collectionItems {
-            yieldCounter += 1
-            if yieldCounter % 100 == 0 { await Task.yield() }
-
             guard item.quantity > 0 else { continue }
             guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
             totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)
-
-            if sealedProductID(for: item) != nil {
-                guard let pid = sealedProductID(for: item),
-                      let priceUSD = services.sealedProducts.marketPriceUSD(for: pid) else { continue }
-                let gbp = priceUSD * Double(item.quantity) * services.pricing.usdToGbp
-                totalValue += gbp
-                sealedValue += gbp
-                pokemonValue += gbp
-            } else if !item.cardID.hasPrefix("sealed:") {
-                let gradeKey: String = {
-                    guard let company = item.gradingCompany else { return "raw" }
-                    switch company.uppercased() {
-                    case "PSA": return "psa10"
-                    case "ACE": return "ace10"
-                    default: return "raw"
-                    }
-                }()
-                if let usdPrice = services.pricing.cachedUsdPriceForCardID(
-                    item.cardID, variantKey: item.variantKey, grade: gradeKey
-                ) {
-                    let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
-                    totalValue += gbp
-                    cardsValue += gbp
-                    pokemonValue += gbp
-                } else {
-                    // Cache miss — collect for fallback card load (rare: externalId/tcgdex_id needed).
-                    cacheMissIDs.append(item.cardID)
-                }
-            }
         }
 
-        // Fallback: load full Card objects only for items that missed the ID-based cache lookup.
-        if !cacheMissIDs.isEmpty {
-            let pokemonMissIDs = cacheMissIDs.filter { !$0.contains("::") }
-            let pm = await services.cardData.loadCards(masterCardIDs: pokemonMissIDs, catalogBrand: .pokemon)
-            await services.pricing.indexPricingForCards(pm)
-            let cardByID = Dictionary(pm.map { ($0.masterCardId, $0) }, uniquingKeysWith: { f, _ in f })
-            for item in collectionItems where cacheMissIDs.contains(item.cardID) {
-                guard item.quantity > 0, item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
-                guard let card = cardByID[item.cardID] else { continue }
-                let gradeKey: String = {
-                    guard let company = item.gradingCompany else { return "raw" }
-                    switch company.uppercased() {
-                    case "PSA": return "psa10"
-                    case "ACE": return "ace10"
-                    default: return "raw"
-                    }
-                }()
-                let usdPrice = services.pricing.cachedUsdPriceForVariantAndGrade(
-                    for: card, variantKey: item.variantKey, grade: gradeKey
-                ) ?? 0
-                let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
-                totalValue += gbp
-                cardsValue += gbp
-                pokemonValue += gbp
-            }
-        }
-
-        liveTotalGbp = totalValue > 0 ? totalValue : nil
-        livePokemonGbp = pokemonValue
-        liveCardsGbp = cardsValue
-        liveSealedGbp = sealedValue
+        liveTotalGbp = snap.total
+        livePokemonGbp = snap.pokemon
+        liveCardsGbp = snap.cards
+        liveSealedGbp = snap.sealed
         totalCostBasis = totalCost
 
-        // Keep today's snapshot current throughout the day so the chart always shows live data.
-        if let snap = liveSnapshot {
-            let changed = services.collectionValue?.updateTodaySnapshot(snap) ?? false
-            if changed { services.collectionValue?.aggregateCurrentPeriods() }
-            services.collectionValue?.persistLastKnownValue(snap)
-        }
+        let changed = svc.updateTodaySnapshot(snap)
+        if changed { svc.aggregateCurrentPeriods() }
+        svc.persistLastKnownValue(snap)
+        await svc.loadAllFromStore()
+        chartRefreshID += 1
+        return true
     }
 
     private func fireInitialLoadCompleteIfReady() {
@@ -1717,6 +1733,7 @@ struct DashboardView: View {
     private func xAxisLabel(for date: Date) -> String {
         switch chartRange {
         case .daily:
+            if Calendar.current.isDateInToday(date) { return "Today" }
             return date.formatted(.dateTime.day().month(.abbreviated))
         case .weekly:
             let day = Calendar.current.component(.day, from: date)

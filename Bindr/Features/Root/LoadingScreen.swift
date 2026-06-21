@@ -329,11 +329,6 @@ struct LaunchWordmarkView: View {
         )
     }
 
-    private var byteProgressText: String {
-        guard let p = progress else { return "" }
-        return byteProgressText(for: p)
-    }
-
     var body: some View {
         ZStack {
             // Background — same radial glow as BindrPageBackground
@@ -463,19 +458,10 @@ struct LaunchWordmarkView: View {
                         .frame(width: 220)
                         .clipShape(Capsule())
 
-                        HStack(spacing: 6) {
-                            Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
-                                .font(.system(size: 12, weight: .bold, design: .rounded))
-                                .foregroundStyle(foreground.opacity(0.70))
-                            if progress.totalBytes > 0 {
-                                Text("·")
-                                    .foregroundStyle(subtle)
-                                Text(byteProgressText(for: progress))
-                                    .font(.system(size: 12, weight: .medium))
-                                    .foregroundStyle(subtle)
-                            }
-                        }
-                        .frame(width: 220, alignment: .center)
+                        Text("\(Int((min(max(progress.fraction, 0), 1) * 100).rounded()))%")
+                            .font(.system(size: 12, weight: .bold, design: .rounded))
+                            .foregroundStyle(foreground.opacity(0.70))
+                            .frame(width: 220, alignment: .center)
                     }
                     .padding(.top, 4)
                 }
@@ -484,15 +470,6 @@ struct LaunchWordmarkView: View {
         }
         .padding(.horizontal, 10)
         .frame(width: 320, alignment: .center)
-    }
-
-    private func byteProgressText(for progress: LaunchProgressState) -> String {
-        guard progress.totalBytes > 0 else { return "" }
-        let f = ByteCountFormatter()
-        f.allowedUnits = [.useKB, .useMB]
-        f.countStyle = .file
-        f.includesUnit = true
-        return "\(f.string(fromByteCount: progress.downloadedBytes)) / \(f.string(fromByteCount: progress.totalBytes))"
     }
 
     // MARK: Animation sequence

@@ -70,36 +70,6 @@ struct MoreView: View {
                             )
                         }
 
-                        MoreMenuSection(title: "Account & Privacy") {
-                            MoreMenuRow(
-                                title: services.store.isPremium ? "Premium" : "Unlock Premium",
-                                systemImage: "crown.fill",
-                                color: .yellow,
-                                destination: .subscription
-                            )
-                            MoreMenuRow(
-                                title: "Account & Privacy",
-                                systemImage: "person.crop.circle.badge.checkmark",
-                                color: .gray,
-                                destination: .myAccount
-                            )
-                        }
-
-                        MoreMenuSection(title: "Data") {
-                            MoreMenuRow(
-                                title: "Backup and Restore",
-                                systemImage: "arrow.triangle.2.circlepath.icloud",
-                                color: .blue,
-                                destination: .backupRestore
-                            )
-                            MoreMenuRow(
-                                title: "Library Storage",
-                                systemImage: "internaldrive.fill",
-                                color: .orange,
-                                destination: .libraryStorage
-                            )
-                        }
-
                         VStack(spacing: 0) {
                             MoreMenuRow(
                                 title: "Legal Disclaimer",
@@ -494,29 +464,7 @@ private struct MoreProfileHeroCard: View {
     }
 }
 
-private struct MoreMenuSection<Content: View>: View {
-    let title: String
-    let content: Content
-
-    init(title: String, @ViewBuilder content: () -> Content) {
-        self.title = title
-        self.content = content()
-    }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: BindrSpacing.sm) {
-            Text(title)
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(Color.secondary)
-                .padding(.horizontal, BindrSpacing.md)
-
-            VStack(spacing: 0) {
-                content
-            }
-            .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        }
-    }
-}
+private typealias MoreMenuSection = BindrMenuSection
 
 private struct MoreMenuRow: View {
     let title: String
@@ -547,35 +495,7 @@ private struct MoreMenuActionRow: View {
     }
 }
 
-private struct MoreMenuRowLabel: View {
-    let title: String
-    let systemImage: String
-    let color: Color
-    let trailingSymbol: String
-
-    var body: some View {
-        HStack(spacing: 14) {
-            Image(systemName: systemImage)
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundColor(.white)
-                .frame(width: 30, height: 30)
-                .background(color.gradient, in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-
-            Text(title)
-                .font(.body)
-                .foregroundStyle(.primary)
-
-            Spacer(minLength: 0)
-
-            Image(systemName: trailingSymbol)
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundStyle(Color.secondary.opacity(0.45))
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 13)
-        .contentShape(Rectangle())
-    }
-}
+private typealias MoreMenuRowLabel = BindrMenuRowLabel
 
 private enum BindrSupport {
     static let email = "info@bindr-tcg.com"

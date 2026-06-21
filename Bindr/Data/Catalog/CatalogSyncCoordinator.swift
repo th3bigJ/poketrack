@@ -140,6 +140,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
     private let session: URLSession
     private let syncGate = CatalogSyncSerialGate()
+    private var deferredHistoryBackfillTask: Task<Void, Never>?
 
     enum ConditionalJSONFetchResult {
         case downloaded(Data)
@@ -198,13 +199,15 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
     func syncAllIfNeeded(
         enabledBrands: Set<TCGBrand>,
-        progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)? = nil
+        progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)? = nil,
+        deferDeepHistoryBackfill: Bool = true
     ) async -> CatalogSyncOutcome {
         let neededBefore = await requiresDailyBlockingRefreshAsync(enabledBrands: enabledBrands)
         let result = await syncGate.run {
             await self.performSyncAllIfNeeded(
                 enabledBrands: enabledBrands,
-                progressHandler: progressHandler
+                progressHandler: progressHandler,
+                deferDeepHistoryBackfill: deferDeepHistoryBackfill
             )
         }
         guard neededBefore else {
@@ -223,9 +226,25 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         )
     }
 
+    /// Runs weekly/monthly history backfill after essential pricing is local so first launch is not blocked.
+    func scheduleDeferredDeepHistoryBackfillIfNeeded() {
+        guard deferredHistoryBackfillTask == nil else { return }
+        deferredHistoryBackfillTask = Task(priority: .utility) { [weak self] in
+            guard let self else { return }
+            _ = await self.syncGate.run {
+                let store = CatalogStore.shared
+                try? await store.open()
+                let phase = MarketPricingSyncPhase(session: self.session, store: store)
+                return await phase.syncDeferredDeepHistoryBackfill(progress: nil)
+            }
+            self.deferredHistoryBackfillTask = nil
+        }
+    }
+
     private func performSyncAllIfNeeded(
         enabledBrands: Set<TCGBrand>,
-        progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)?
+        progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)?,
+        deferDeepHistoryBackfill: Bool
     ) async -> Int64 {
         let store = CatalogStore.shared
         let progress = CatalogSyncProgressReporter(handler: progressHandler)
@@ -236,7 +255,10 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             try? await store.open()
             let pricingPhase = MarketPricingSyncPhase(session: session, store: store)
             let blobPhase = DailyBlobSyncPhase(session: session, store: store)
-            let pricingCount = await pricingPhase.estimatedFileCount(enabledBrands: enabledBrands)
+            let pricingCount = await pricingPhase.estimatedFileCount(
+                enabledBrands: enabledBrands,
+                deferDeepHistoryBackfill: deferDeepHistoryBackfill
+            )
             let blobCount = await blobPhase.estimatedFileCount(enabledBrands: enabledBrands)
             let catalogCount = 3 // sets.json, variants.json, + one placeholder for per-set cards
             await progress.addPlannedFiles(catalogCount + pricingCount + blobCount)
@@ -278,7 +300,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     progress: progress,
                     context: pricingContext,
                     enabledBrands: enabledBrands,
-                    forceRefresh: false
+                    forceRefresh: false,
+                    deferDeepHistoryBackfill: deferDeepHistoryBackfill
                 )
             }()
 
@@ -317,7 +340,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     progress: progress,
                     context: pricingContext,
                     enabledBrands: enabledBrands,
-                    forceRefresh: false
+                    forceRefresh: false,
+                    deferDeepHistoryBackfill: deferDeepHistoryBackfill
                 )
                 let postCatalogBytes = await pricingPhase.syncPostCatalogSetFiles(
                     progress: progress,
@@ -334,6 +358,9 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             downloadedBytes += await blobPhase.syncIfNeeded(progress: progress, enabledBrands: enabledBrands)
         }
         await progress.setStatus("Finishing card setup…")
+        if deferDeepHistoryBackfill {
+            scheduleDeferredDeepHistoryBackfillIfNeeded()
+        }
         return downloadedBytes
     }
 
@@ -405,7 +432,11 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
         let pricingPhase = MarketPricingSyncPhase(session: session, store: store)
         let blobPhase = DailyBlobSyncPhase(session: session, store: store)
-        let pricingCount = await pricingPhase.estimatedFileCount(enabledBrands: enabledBrands, forceRefresh: true)
+        let pricingCount = await pricingPhase.estimatedFileCount(
+            enabledBrands: enabledBrands,
+            forceRefresh: true,
+            deferDeepHistoryBackfill: false
+        )
         let blobCount = await blobPhase.estimatedFileCount(enabledBrands: enabledBrands, forceRefresh: true)
         await progress.addPlannedFiles(pricingCount + blobCount)
 

@@ -302,18 +302,23 @@ final class CardDataService {
     /// Resolves `refs` to full `Card` models in **the same order** as `refs` (for paginated grids).
     func cardsInOrder(refs: [CardRef]) async -> [Card] {
         guard !refs.isEmpty else { return [] }
-        var bySet: [String: Set<String>] = [:]
-        for ref in refs {
-            bySet[ref.setCode, default: []].insert(ref.masterCardId)
+        let brand = brandSettings.selectedCatalogBrand
+        let loaded = await loadCards(masterCardIDs: refs.map(\.masterCardId), catalogBrand: brand)
+        var cardByID: [String: Card] = [:]
+        cardByID.reserveCapacity(loaded.count)
+        for card in loaded {
+            cardByID[card.masterCardId] = card
         }
-        var cardByKey: [String: Card] = [:]
-        for (setCode, ids) in bySet {
-            let loaded = await loadCards(forSetCode: setCode)
-            for c in loaded where ids.contains(c.masterCardId) {
-                cardByKey["\(c.setCode)|\(c.masterCardId)"] = c
-            }
-        }
-        return refs.compactMap { cardByKey["\($0.setCode)|\($0.masterCardId)"] }
+        return refs.compactMap { cardByID[$0.masterCardId] }
+    }
+
+    /// Builds the shuffled browse feed and prefetches the first grid page during launch bootstrap
+    /// so the Browse tab can paint immediately on first visit.
+    func warmBrowseFeedForLaunch(initialCardCount: Int = 36) async {
+        let refs = await browseFeedCardRefs(forceReshuffle: false)
+        guard !refs.isEmpty else { return }
+        let batch = Array(refs.prefix(initialCardCount))
+        _ = await loadCards(masterCardIDs: batch.map(\.masterCardId), catalogBrand: brandSettings.selectedCatalogBrand)
     }
 
     /// Substring match on Pokédex rows (`pokemon.json`): kebab-case `name`, display title, or dex number string.

@@ -19,8 +19,8 @@ struct CollectView: View {
     @State private var cachedSetNameByBrandAndCode: [String: String] = [:]
     @State private var sealedProductByIDCache: [Int: SealedProduct] = [:]
     @State private var sealedProductByCollectionCardIDCache: [String: SealedProduct] = [:]
-    @State private var collectionFilteredItemsForSelectedTypeCache: [CollectionItem] = []
-    @State private var collectionDisplayedItems: [CollectionItem] = []
+    @State private var collectionFilteredGroupsForSelectedTypeCache: [CollectionGridGroup] = []
+    @State private var collectionDisplayedGroups: [CollectionGridGroup] = []
     @State private var collectionDisplayedCards: [Card] = []
     @State private var collectionNextIndex = 0
     @State private var isLoadingMoreCollectionItems = false
@@ -234,8 +234,18 @@ struct CollectView: View {
     }
 
     private func refreshSetNameCache() async {
-        var map: [String: String] = [:]
+        var map: [String: String] = cachedSetNameByBrandAndCode
         for brand in services.brandSettings.enabledBrands {
+            if brand == services.brandSettings.selectedCatalogBrand,
+               !services.cardData.sets.isEmpty {
+                for set in services.cardData.sets {
+                    let key = setNameKey(brand: brand, setCode: set.setCode)
+                    if map[key] == nil {
+                        map[key] = set.name
+                    }
+                }
+                continue
+            }
             guard let sets = try? await CatalogStore.shared.fetchAllSets(for: brand) else { continue }
             for set in sets {
                 let key = setNameKey(brand: brand, setCode: set.setCode)
@@ -342,10 +352,7 @@ struct CollectView: View {
     private var activeFilteredCount: Int {
         switch selectedSegment {
         case .collection:
-            if selectedContentTypeTab == .cards {
-                return Set(collectionFilteredItemsForSelectedTypeCache.map(\.cardID)).count
-            }
-            return collectionFilteredItemsForSelectedTypeCache.count
+            return collectionFilteredGroupsForSelectedTypeCache.count
         case .wishlist:
             if selectedContentTypeTab == .cards {
                 return Set(filteredWishlistItemsForSelectedType.map(\.cardID)).count
@@ -392,7 +399,7 @@ struct CollectView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 40)
-        } else if collectionFilteredItemsForSelectedTypeCache.isEmpty {
+        } else if collectionFilteredGroupsForSelectedTypeCache.isEmpty {
             emptyState(
                 title: "No matching \(selectedContentTypeTab.title.lowercased())",
                 image: "magnifyingglass",
@@ -401,12 +408,12 @@ struct CollectView: View {
                     : "Try a different product name, series, or year."
             )
         } else {
-            EagerVGrid(items: indexedDisplayedCollectionItems, columns: safeColumnCount, spacing: 12) { indexed in
+            EagerVGrid(items: indexedDisplayedCollectionGroups, columns: safeColumnCount, spacing: 12) { indexed in
                 collectionCell(for: indexed.item, at: indexed.index)
                     .onAppear {
                         guard selectedContentTypeTab == .cards else { return }
                         ImagePrefetcher.shared.prefetchCardWindow(collectionDisplayedCards, startingAt: indexed.index + 1)
-                        guard indexed.index >= max(collectionDisplayedItems.count - safeColumnCount, 0) else { return }
+                        guard indexed.index >= max(collectionDisplayedGroups.count - safeColumnCount, 0) else { return }
                         Task { await loadMoreCollectionItemsIfNeeded() }
                     }
             }
@@ -421,7 +428,13 @@ struct CollectView: View {
     }
 
     @ViewBuilder
-    private func collectionCell(for item: CollectionItem, at index: Int) -> some View {
+    private func collectionCell(for group: CollectionGridGroup, at index: Int) -> some View {
+        let item = group.representativeItem
+        let variantKeys = group.variantKeys
+        let preferredVariantKey = group.preferredVariantKey
+        let contextItem = group.item(forVariantKey: preferredVariantKey) ?? item
+        let contextOwnedQuantity = group.quantity(forVariantKey: preferredVariantKey)
+
         if let product = sealedProduct(for: item) {
             Button { selectedSealedProduct = product } label: {
                 SealedProductGridCell(
@@ -430,7 +443,7 @@ struct CollectView: View {
                     priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
                     isOwned: false,
                     isWishlisted: wishlistedSealedCollectionCardIDs.contains(product.collectionCardID),
-                    ownedCountBadge: item.quantity > 1 ? item.quantity : nil
+                    ownedCountBadge: group.totalQuantity > 1 ? group.totalQuantity : nil
                 )
                 .contentShape(Rectangle())
             }
@@ -442,17 +455,10 @@ struct CollectView: View {
                     Label("Mark as Opened", systemImage: "shippingbox")
                 }
             }
-            .accessibilityLabel("\(product.name), \(item.quantity) owned")
+            .accessibilityLabel("\(product.name), \(group.totalQuantity) owned")
         } else if let card = cardsByCardID[item.cardID] {
             Button {
-                // Build the presentable card list from the current displayed items
-                // at tap-time rather than relying on ``collectionDisplayedCards``
-                // (a @State that can lag behind ``collectionDisplayedItems`` if
-                // ``cardsByCardID`` changed between the last render and this tap).
-                // Using ``firstIndex`` by masterCardId is safe: the card is
-                // guaranteed to be in the tap-time list because we're inside the
-                // `cardsByCardID[item.cardID] != nil` branch.
-                let tapTimeCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+                let tapTimeCards = collectionDisplayedGroups.compactMap { cardsByCardID[$0.cardID] }
                 let cardIndex = tapTimeCards.firstIndex(where: { $0.masterCardId == card.masterCardId }) ?? 0
                 presentCardAtIndex(tapTimeCards, cardIndex)
             } label: {
@@ -462,8 +468,8 @@ struct CollectView: View {
                     colorScheme: colorScheme,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
-                    ownedCountBadge: item.quantity,
-                    overridePrice: collectionPriceByItemKey[collectionItemKey(item)],
+                    ownedCountBadge: group.totalQuantity,
+                    overridePrice: collectionDisplayPrice(for: group),
                     gradeLabel: collectionGradeLabel(for: item)
                 )
             }
@@ -472,10 +478,10 @@ struct CollectView: View {
                 Button {
                     pendingCardContextRequest = CardContextActionRequest(
                         card: card,
-                        availableVariantKeys: [item.variantKey],
-                        initialVariantKey: item.variantKey,
-                        ownedQuantity: item.quantity,
-                        collectionItem: item,
+                        availableVariantKeys: variantKeys,
+                        initialVariantKey: preferredVariantKey,
+                        ownedQuantity: contextOwnedQuantity,
+                        collectionItem: contextItem,
                         initialAction: .collection
                     )
                 } label: {
@@ -484,10 +490,10 @@ struct CollectView: View {
                 Button {
                     pendingCardContextRequest = CardContextActionRequest(
                         card: card,
-                        availableVariantKeys: [item.variantKey],
-                        initialVariantKey: item.variantKey,
-                        ownedQuantity: item.quantity,
-                        collectionItem: item,
+                        availableVariantKeys: variantKeys,
+                        initialVariantKey: preferredVariantKey,
+                        ownedQuantity: contextOwnedQuantity,
+                        collectionItem: contextItem,
                         initialAction: .wishlist
                     )
                 } label: {
@@ -496,17 +502,17 @@ struct CollectView: View {
                 Button {
                     pendingCardContextRequest = CardContextActionRequest(
                         card: card,
-                        availableVariantKeys: [item.variantKey],
-                        initialVariantKey: item.variantKey,
-                        ownedQuantity: item.quantity,
-                        collectionItem: item,
+                        availableVariantKeys: variantKeys,
+                        initialVariantKey: preferredVariantKey,
+                        ownedQuantity: contextOwnedQuantity,
+                        collectionItem: contextItem,
                         initialAction: .markAs
                     )
                 } label: {
                     Label("Mark as", systemImage: "tag")
                 }
             }
-            .accessibilityLabel("\(card.cardName), \(item.quantity) copies, \(item.variantKey)")
+            .accessibilityLabel(collectionAccessibilityLabel(for: card, group: group))
         } else {
             VStack(spacing: 4) {
                 RoundedRectangle(cornerRadius: 8)
@@ -525,7 +531,18 @@ struct CollectView: View {
     private var filteredCollectionItems: [CollectionItem] {
         var items = visibleCollectionItems
         if collectionFilters.showDuplicates {
-            items = items.filter { $0.quantity >= 2 }
+            let rawCardTotals = Dictionary(
+                grouping: items.filter { !usesIndividualCollectionGridCell($0) },
+                by: \.cardID
+            ).mapValues { group in
+                group.reduce(0) { $0 + max($1.quantity, 0) }
+            }
+            items = items.filter { item in
+                if usesIndividualCollectionGridCell(item) {
+                    return item.quantity >= 2
+                }
+                return rawCardTotals[item.cardID, default: item.quantity] >= 2
+            }
         }
         let trimmedQuery = collectionQuery.trimmingCharacters(in: .whitespacesAndNewlines)
         let hasCardFieldFilters = collectionFilters.hasActiveCardFieldFilters
@@ -565,10 +582,30 @@ struct CollectView: View {
         }
     }
 
-    private var indexedDisplayedCollectionItems: [IndexedGridItem<CollectionItem>] {
-        Array(collectionDisplayedItems.enumerated()).map { offset, item in
-            IndexedGridItem(index: offset, item: item)
+    private var indexedDisplayedCollectionGroups: [IndexedGridItem<CollectionGridGroup>] {
+        Array(collectionDisplayedGroups.enumerated()).map { offset, group in
+            IndexedGridItem(index: offset, item: group)
         }
+    }
+
+    private func groupCollectionItemsForGrid(_ items: [CollectionItem]) -> [CollectionGridGroup] {
+        CollectionGridGrouping.groupedItems(items, isSealed: { sealedProduct(for: $0) != nil })
+    }
+
+    private func usesIndividualCollectionGridCell(_ item: CollectionItem) -> Bool {
+        sealedProduct(for: item) != nil || CollectionGridGrouping.isGradedItem(item)
+    }
+
+    private func collectionDisplayPrice(for group: CollectionGridGroup) -> Double? {
+        group.items.compactMap { collectionPriceByItemKey[collectionItemKey($0)] }.max()
+    }
+
+    private func collectionAccessibilityLabel(for card: Card, group: CollectionGridGroup) -> String {
+        if group.variantKeys.count > 1 {
+            return "\(card.cardName), \(group.totalQuantity) copies, \(group.variantKeys.count) variants"
+        }
+        let variant = group.variantKeys.first ?? "normal"
+        return "\(card.cardName), \(group.totalQuantity) copies, \(variant)"
     }
 
     private func applySortToCollectionItems(_ items: [CollectionItem], filters: BrowseCardGridFilters) -> [CollectionItem] {
@@ -616,21 +653,34 @@ struct CollectView: View {
     }
 
     private func resolveCollectionCards() async {
+        let cardItems = visibleCollectionItems.filter { sealedProduct(for: $0) == nil }
+        let missingIDs = Array(Set(cardItems.map(\.cardID).filter { cardsByCardID[$0] == nil }))
         var next = cardsByCardID
-        for item in visibleCollectionItems {
-            if sealedProduct(for: item) != nil { continue }
-            if next[item.cardID] != nil { continue }
-            if let c = await services.cardData.loadCard(masterCardId: item.cardID) { next[item.cardID] = c }
+        if !missingIDs.isEmpty {
+            let loaded = await services.cardData.loadCards(
+                masterCardIDs: missingIDs,
+                catalogBrand: activeBrand
+            )
+            for card in loaded {
+                next[card.masterCardId] = card
+            }
         }
         cardsByCardID = next
 
+        let cardsToPrice = cardItems.compactMap { next[$0.cardID] }
+        await services.pricing.indexPricingForCards(cardsToPrice)
+
         var nextPrices: [String: Double] = [:]
         var resolvedPriceKeys: Set<String> = []
-        for item in visibleCollectionItems {
+        for item in cardItems {
             guard let card = next[item.cardID] else { continue }
             resolvedPriceKeys.insert(collectionItemKey(item))
             let gradeKey = collectionGradeKey(for: item)
-            if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: item.variantKey, grade: gradeKey) {
+            if let usd = services.pricing.cachedUsdPriceForVariantAndGrade(
+                for: card,
+                variantKey: item.variantKey,
+                grade: gradeKey
+            ) {
                 nextPrices[collectionItemKey(item)] = usd
             }
         }
@@ -656,35 +706,34 @@ struct CollectView: View {
 
     private func refreshCollectionFeed() {
         let filtered = filteredCollectionItemsForSelectedType
-        let filteredIDs = filtered.map(\.id)
-        let previousIDs = collectionFilteredItemsForSelectedTypeCache.map(\.id)
+        let groups = groupCollectionItemsForGrid(filtered)
+        let filteredIDs = groups.map(\.id)
+        let previousIDs = collectionFilteredGroupsForSelectedTypeCache.map(\.id)
 
-        collectionFilteredItemsForSelectedTypeCache = filtered
+        collectionFilteredGroupsForSelectedTypeCache = groups
 
-        if filteredIDs == previousIDs && !collectionDisplayedItems.isEmpty {
-            // Only prices or card metadata changed — keep the current scroll position
-            // and just refresh the cards array so cells render updated data.
-            collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+        if filteredIDs == previousIDs && !collectionDisplayedGroups.isEmpty {
+            collectionDisplayedCards = collectionDisplayedGroups.compactMap { cardsByCardID[$0.cardID] }
             return
         }
 
-        let initialEnd = min(Self.collectionInitialBatchSize, filtered.count)
-        collectionDisplayedItems = Array(filtered.prefix(initialEnd))
+        let initialEnd = min(Self.collectionInitialBatchSize, groups.count)
+        collectionDisplayedGroups = Array(groups.prefix(initialEnd))
         collectionNextIndex = initialEnd
-        collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+        collectionDisplayedCards = collectionDisplayedGroups.compactMap { cardsByCardID[$0.cardID] }
     }
 
     @MainActor
     private func loadMoreCollectionItemsIfNeeded() async {
         guard !isLoadingMoreCollectionItems else { return }
-        guard collectionNextIndex < collectionFilteredItemsForSelectedTypeCache.count else { return }
+        guard collectionNextIndex < collectionFilteredGroupsForSelectedTypeCache.count else { return }
         isLoadingMoreCollectionItems = true
         defer { isLoadingMoreCollectionItems = false }
-        let end = min(collectionNextIndex + Self.collectionPageSize, collectionFilteredItemsForSelectedTypeCache.count)
-        let more = collectionFilteredItemsForSelectedTypeCache[collectionNextIndex..<end]
-        collectionDisplayedItems.append(contentsOf: more)
+        let end = min(collectionNextIndex + Self.collectionPageSize, collectionFilteredGroupsForSelectedTypeCache.count)
+        let more = collectionFilteredGroupsForSelectedTypeCache[collectionNextIndex..<end]
+        collectionDisplayedGroups.append(contentsOf: more)
         collectionNextIndex = end
-        collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+        collectionDisplayedCards = collectionDisplayedGroups.compactMap { cardsByCardID[$0.cardID] }
     }
 
     private func sealedProduct(for item: CollectionItem) -> SealedProduct? {
@@ -896,18 +945,31 @@ struct CollectView: View {
     }
 
     private func resolveWishlistCards() async {
+        let cardItems = visibleWishlistItems.filter { sealedProduct(for: $0) == nil }
+        let missingIDs = Array(Set(cardItems.map(\.cardID).filter { wishlistCardsByID[$0] == nil }))
         var next = wishlistCardsByID
-        for item in visibleWishlistItems {
-            if sealedProduct(for: item) != nil { continue }
-            if next[item.cardID] != nil { continue }
-            if let c = await services.cardData.loadCard(masterCardId: item.cardID) { next[item.cardID] = c }
+        if !missingIDs.isEmpty {
+            let loaded = await services.cardData.loadCards(
+                masterCardIDs: missingIDs,
+                catalogBrand: activeBrand
+            )
+            for card in loaded {
+                next[card.masterCardId] = card
+            }
         }
         wishlistCardsByID = next
 
+        let cardsToPrice = cardItems.compactMap { next[$0.cardID] }
+        await services.pricing.indexPricingForCards(cardsToPrice)
+
         var nextPrices: [String: Double] = [:]
-        for item in visibleWishlistItems {
+        for item in cardItems {
             guard let card = next[item.cardID] else { continue }
-            if let usd = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+            if let usd = services.pricing.cachedUsdPriceForVariantAndGrade(
+                for: card,
+                variantKey: item.variantKey,
+                grade: "raw"
+            ) {
                 nextPrices[wishlistItemKey(item)] = usd
             }
         }

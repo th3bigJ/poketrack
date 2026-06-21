@@ -7,82 +7,98 @@ struct SettingsView: View {
     @Environment(AppServices.self) private var services
 
     var body: some View {
-        List {
-            storageSection
-            socialSection
-            #if DEBUG
-            devToolsSection
-            #endif
+        ScrollView {
+            VStack(spacing: BindrSpacing.xl) {
+                BindrMenuSection(title: "Account") {
+                    BindrMenuNavigationRow(
+                        title: services.store.isPremium ? "Premium" : "Unlock Premium",
+                        systemImage: "crown.fill",
+                        color: .yellow
+                    ) {
+                        PremiumSettingsPage()
+                            .environment(services)
+                    }
+
+                    BindrMenuNavigationRow(
+                        title: "Account & Privacy",
+                        systemImage: "person.crop.circle.badge.checkmark",
+                        color: .gray
+                    ) {
+                        MyAccountPrivacyView()
+                            .environment(services)
+                    }
+                }
+
+                BindrMenuSection(title: "Storage & Pricing") {
+                    BindrMenuNavigationRow(
+                        title: "Offline Mode",
+                        systemImage: "arrow.down.circle.fill",
+                        color: .blue
+                    ) {
+                        OfflineSettingsPage()
+                            .environment(services)
+                    }
+
+                    BindrMenuNavigationRow(
+                        title: "Pricing & Currency",
+                        systemImage: "dollarsign.circle.fill",
+                        color: .green
+                    ) {
+                        PricingSettingsPage()
+                            .environment(services)
+                    }
+
+                    BindrMenuNavigationRow(
+                        title: "Library Storage",
+                        systemImage: "internaldrive.fill",
+                        color: .orange
+                    ) {
+                        LibraryStorageSettingsPage()
+                            .environment(services)
+                    }
+
+                    BindrMenuNavigationRow(
+                        title: "Backup and Restore",
+                        systemImage: "arrow.triangle.2.circlepath.icloud",
+                        color: .cyan
+                    ) {
+                        BackupRestoreSettingsPage()
+                            .environment(services)
+                    }
+                }
+
+                BindrMenuSection(title: "Social") {
+                    BindrMenuNavigationRow(
+                        title: "Notifications",
+                        systemImage: "bell.badge.fill",
+                        color: .red
+                    ) {
+                        NotificationPreferencesView()
+                            .environment(services)
+                    }
+                }
+
+                #if DEBUG
+                BindrMenuSection(title: "Developer") {
+                    BindrMenuNavigationRow(
+                        title: "Developer Tools",
+                        systemImage: "hammer.fill",
+                        color: .purple
+                    ) {
+                        DevToolsSettingsPage()
+                            .environment(services)
+                    }
+                }
+                #endif
+            }
+            .padding(.horizontal, BindrSpacing.lg)
+            .padding(.top, BindrSpacing.lg)
+            .padding(.bottom, BindrSpacing.xxl)
         }
-        .listStyle(.insetGrouped)
-        .scrollContentBackground(.hidden)
-        .background(Color(uiColor: .systemGroupedBackground))
+        .bindrPageBackground()
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
     }
-
-    // MARK: - Storage & Pricing
-
-    private var storageSection: some View {
-        Section("Storage & Pricing") {
-            NavigationLink {
-                OfflineSettingsPage()
-                    .environment(services)
-            } label: {
-                Label("Offline Mode", systemImage: "arrow.down.circle.fill")
-            }
-
-            NavigationLink {
-                PricingSettingsPage()
-                    .environment(services)
-            } label: {
-                Label("Pricing & Currency", systemImage: "dollarsign.circle.fill")
-            }
-
-            NavigationLink {
-                LibraryStorageSettingsPage()
-                    .environment(services)
-            } label: {
-                Label("Library Storage", systemImage: "internaldrive")
-            }
-
-            NavigationLink {
-                BackupRestoreSettingsPage()
-                    .environment(services)
-            } label: {
-                Label("Backup and Restore", systemImage: "arrow.triangle.2.circlepath.icloud")
-            }
-        }
-    }
-
-    // MARK: - Social
-
-    private var socialSection: some View {
-        Section("Social") {
-            NavigationLink {
-                NotificationPreferencesView()
-                    .environment(services)
-            } label: {
-                Label("Notifications", systemImage: "bell.badge.fill")
-            }
-        }
-    }
-
-    // MARK: - Developer
-
-    #if DEBUG
-    private var devToolsSection: some View {
-        Section("Developer") {
-            NavigationLink {
-                DevToolsSettingsPage()
-                    .environment(services)
-            } label: {
-                Label("Developer Tools", systemImage: "hammer.fill")
-            }
-        }
-    }
-    #endif
-
 }
 
 // MARK: - My Account & Privacy

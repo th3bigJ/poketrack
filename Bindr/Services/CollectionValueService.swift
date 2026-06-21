@@ -140,7 +140,8 @@ final class CollectionValueService {
         static let date    = "collectionValue.lastKnown.date"
     }
 
-    /// Returns the persisted value if it was saved today, so startup can skip a full recompute.
+    /// Returns the last in-memory value persisted when the app moved to the background today.
+    /// Used only as a launch placeholder while live pricing is recomputed.
     func todayPersistedSnapshot() -> BrandSnapshot? {
         let defaults = UserDefaults.standard
         guard let savedDate = defaults.object(forKey: LastKnownValueKey.date) as? Date else { return nil }
@@ -154,6 +155,34 @@ final class CollectionValueService {
             cards: defaults.double(forKey: LastKnownValueKey.cards),
             sealed: defaults.double(forKey: LastKnownValueKey.sealed)
         )
+    }
+
+    /// Most recent daily snapshot strictly before today — used to sanity-check post-restore recomputes.
+    func latestSnapshotTotalBeforeToday() -> Double? {
+        let cal = Calendar.current
+        let today = cal.startOfDay(for: Date())
+        return snapshots
+            .filter { cal.startOfDay(for: $0.date) < today }
+            .max(by: { $0.date < $1.date })?
+            .totalGbp
+    }
+
+    func brandSnapshot(for date: Date) -> BrandSnapshot? {
+        let cal = Calendar.current
+        let day = cal.startOfDay(for: date)
+        guard let snap = snapshots.first(where: { cal.startOfDay(for: $0.date) == day }),
+              snap.totalGbp > 0 else { return nil }
+        return BrandSnapshot(
+            total: snap.totalGbp,
+            pokemon: snap.pokemonGbp,
+            cards: snap.cardsGbp,
+            sealed: snap.sealedGbp
+        )
+    }
+
+    /// Today's live market value using current catalog pricing (same path as saved daily snapshots).
+    func computeLiveSnapshot(for collectionItems: [CollectionItem]) async -> BrandSnapshot? {
+        await computeValue(for: collectionItems, on: Date(), allowLiveFallback: true)
     }
 
     /// Clears the persisted snapshot so the next call to `todayPersistedSnapshot()` returns nil
@@ -438,6 +467,10 @@ final class CollectionValueService {
     ) async {
         let cal = Calendar.current
         let today = cal.startOfDay(for: Date())
+        if let preferredSnapshot, preferredSnapshot.total > 0, snapshotExists(for: today) {
+            _ = updateTodaySnapshot(preferredSnapshot)
+            return
+        }
         guard !snapshotExists(for: today) else { return }
 
         let hasInventory = collectionItems.contains { item in

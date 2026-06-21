@@ -17,7 +17,13 @@ struct MarketPricingSyncPhase {
 
     /// Returns the number of files this phase will download, without doing any work.
     /// Used by the coordinator to pre-announce the total so the progress bar starts correctly.
-    func estimatedFileCount(enabledBrands: Set<TCGBrand>, forceRefresh: Bool = false) async -> Int {
+    /// When `deferDeepHistoryBackfill` is true, weekly/monthly buckets from 2020 are excluded —
+    /// those run in a background pass so first launch is not blocked on ~800 large files.
+    func estimatedFileCount(
+        enabledBrands: Set<TCGBrand>,
+        forceRefresh: Bool = false,
+        deferDeepHistoryBackfill: Bool = false
+    ) async -> Int {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
         guard enabledBrands.contains(.pokemon) else { return 0 }
         var count = 0
@@ -55,23 +61,51 @@ struct MarketPricingSyncPhase {
             appendTodaySealedBucketIfNeeded(&missingSealed)
             count += missingSealed.count
         }
-        if needsHistoryBackfill {
-            let processed = await store.processedBucketKeys(withPrefix: "20")
-            count += BucketDateMath.allWeeklyKeys(from: 2020).filter { !processed.contains($0) }.count
-            count += BucketDateMath.allMonthlyKeys(from: 2020).filter { !processed.contains($0) }.count
-        }
-        if needsSealedHistoryBackfill {
-            let processed = await store.processedBucketKeys(withPrefix: "sealed/")
-            count += BucketDateMath.allWeeklyKeys(from: 2020).map { "sealed/\($0)" }.filter { !processed.contains($0) }.count
-            count += BucketDateMath.allMonthlyKeys(from: 2020).map { "sealed/\($0)" }.filter { !processed.contains($0) }.count
+        if !deferDeepHistoryBackfill {
+            if needsHistoryBackfill {
+                let processed = await store.processedBucketKeys(withPrefix: "20")
+                count += BucketDateMath.allWeeklyKeys(from: 2020).filter { !processed.contains($0) }.count
+                count += BucketDateMath.allMonthlyKeys(from: 2020).filter { !processed.contains($0) }.count
+            }
+            if needsSealedHistoryBackfill {
+                let processed = await store.processedBucketKeys(withPrefix: "sealed/")
+                count += BucketDateMath.allWeeklyKeys(from: 2020).map { "sealed/\($0)" }.filter { !processed.contains($0) }.count
+                count += BucketDateMath.allMonthlyKeys(from: 2020).map { "sealed/\($0)" }.filter { !processed.contains($0) }.count
+            }
         }
         return count
+    }
+
+    /// Weekly/monthly card + sealed history from 2020. Intended for a background pass after
+    /// essential catalog and daily pricing are local (90-day charts work without this).
+    func syncDeferredDeepHistoryBackfill(progress: CatalogSyncProgressReporter?) async -> Int64 {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
+        let needsHistoryBackfill = (await store.meta("pricing_history_backfill_v1")) != "1"
+        let needsSealedHistoryBackfill = (await store.meta("sealed_pricing_history_backfill_v1")) != "1"
+        guard needsHistoryBackfill || needsSealedHistoryBackfill else { return 0 }
+
+        let reporter = progress ?? CatalogSyncProgressReporter(handler: nil)
+        async let cardHistory: Int64 = {
+            guard needsHistoryBackfill else { return 0 }
+            let bytes = await syncPricingHistoryBackfill(progress: reporter)
+            try? await store.setMeta("pricing_history_backfill_v1", "1")
+            return bytes
+        }()
+        async let sealedHistory: Int64 = {
+            guard needsSealedHistoryBackfill else { return 0 }
+            let bytes = await syncSealedPricingHistoryBackfill(progress: reporter)
+            try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
+            return bytes
+        }()
+        let results = await (cardHistory, sealedHistory)
+        return results.0 + results.1
     }
 
     func syncAllIfNeeded(
         progress: CatalogSyncProgressReporter,
         enabledBrands: Set<TCGBrand>,
-        forceRefresh: Bool = false
+        forceRefresh: Bool = false,
+        deferDeepHistoryBackfill: Bool = false
     ) async -> Int64 {
         guard let context = await prepareSyncContext(forceRefresh: forceRefresh, enabledBrands: enabledBrands) else { return 0 }
 
@@ -80,7 +114,8 @@ struct MarketPricingSyncPhase {
             progress: progress,
             context: context,
             enabledBrands: enabledBrands,
-            forceRefresh: forceRefresh
+            forceRefresh: forceRefresh,
+            deferDeepHistoryBackfill: deferDeepHistoryBackfill
         )
         let postCatalog = await syncPostCatalogSetFiles(
             progress: progress,
@@ -98,23 +133,27 @@ struct MarketPricingSyncPhase {
         progress: CatalogSyncProgressReporter,
         context: SyncContext,
         enabledBrands: Set<TCGBrand>,
-        forceRefresh: Bool
+        forceRefresh: Bool,
+        deferDeepHistoryBackfill: Bool = false
     ) async -> Int64 {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return 0 }
         guard enabledBrands.contains(.pokemon) else { return 0 }
+
+        let runHistoryBackfill = !deferDeepHistoryBackfill && context.needsHistoryBackfill
+        let runSealedHistoryBackfill = !deferDeepHistoryBackfill && context.needsSealedHistoryBackfill
 
         if context.shouldRunPeriodRefresh {
             await store.unmarkBucketProcessed(key: todaySealedBucketKey())
             async let dailyBuckets = syncPricingBuckets(progress: progress, forceRefresh: forceRefresh)
             async let sealedBuckets = syncSealedPricingBuckets(progress: progress, forceRefresh: forceRefresh)
             async let historyBackfill: Int64 = {
-                guard context.needsHistoryBackfill else { return 0 }
+                guard runHistoryBackfill else { return 0 }
                 let bytes = await syncPricingHistoryBackfill(progress: progress)
                 try? await store.setMeta("pricing_history_backfill_v1", "1")
                 return bytes
             }()
             async let sealedHistoryBackfill: Int64 = {
-                guard context.needsSealedHistoryBackfill else { return 0 }
+                guard runSealedHistoryBackfill else { return 0 }
                 let bytes = await syncSealedPricingHistoryBackfill(progress: progress)
                 try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
                 return bytes
@@ -127,13 +166,13 @@ struct MarketPricingSyncPhase {
             async let dailyBuckets = syncPricingBuckets(progress: progress)
             async let sealedBuckets = syncSealedPricingBuckets(progress: progress)
             async let historyBackfill: Int64 = {
-                guard context.needsHistoryBackfill else { return 0 }
+                guard runHistoryBackfill else { return 0 }
                 let bytes = await syncPricingHistoryBackfill(progress: progress)
                 try? await store.setMeta("pricing_history_backfill_v1", "1")
                 return bytes
             }()
             async let sealedHistoryBackfill: Int64 = {
-                guard context.needsSealedHistoryBackfill else { return 0 }
+                guard runSealedHistoryBackfill else { return 0 }
                 let bytes = await syncSealedPricingHistoryBackfill(progress: progress)
                 try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
                 return bytes
@@ -142,15 +181,15 @@ struct MarketPricingSyncPhase {
             return results.0 + results.1 + results.2 + results.3
         }
 
-        if context.needsHistoryBackfill || context.needsSealedHistoryBackfill {
+        if runHistoryBackfill || runSealedHistoryBackfill {
             async let historyBackfill: Int64 = {
-                guard context.needsHistoryBackfill else { return 0 }
+                guard runHistoryBackfill else { return 0 }
                 let bytes = await syncPricingHistoryBackfill(progress: progress)
                 try? await store.setMeta("pricing_history_backfill_v1", "1")
                 return bytes
             }()
             async let sealedHistoryBackfill: Int64 = {
-                guard context.needsSealedHistoryBackfill else { return 0 }
+                guard runSealedHistoryBackfill else { return 0 }
                 let bytes = await syncSealedPricingHistoryBackfill(progress: progress)
                 try? await store.setMeta("sealed_pricing_history_backfill_v1", "1")
                 return bytes
@@ -549,6 +588,18 @@ struct MarketPricingSyncPhase {
 
         var totalBytes: Int64 = 0
         var pendingPoints: [CatalogStore.PriceHistoryPoint] = []
+        var pendingFlushTasks: [Task<Void, Never>] = []
+
+        func enqueueFlush(_ points: [CatalogStore.PriceHistoryPoint]) {
+            guard !points.isEmpty else { return }
+            pendingFlushTasks.append(Task {
+                let bySet = Dictionary(grouping: points) { BucketDateMath.setCodeFromCardId($0.cardKey) }
+                for (setCode, pts) in bySet {
+                    let storageSetCode = BucketDateMath.normalizedSetCode(setCode)
+                    try? await store.upsertPriceHistoryPoints(brand: .pokemon, setCode: storageSetCode, points: pts)
+                }
+            })
+        }
 
         await withTaskGroup(of: BackfillResult.self) { group in
             var iterator = allKeys.makeIterator()
@@ -567,21 +618,19 @@ struct MarketPricingSyncPhase {
                     try? await store.markBucketProcessed(key: result.key)
                 }
                 await progress.completeFile(byteCount: result.bytes)
-                if pendingPoints.count > 10_000 {
-                    let bySet = Dictionary(grouping: pendingPoints) { BucketDateMath.setCodeFromCardId($0.cardKey) }
-                    for (setCode, pts) in bySet {
-                        try? await store.upsertPriceHistoryPoints(brand: .pokemon, setCode: setCode, points: pts)
-                    }
+                if pendingPoints.count > 50_000 {
+                    enqueueFlush(pendingPoints)
                     pendingPoints.removeAll(keepingCapacity: true)
                 }
             }
         }
 
         if !pendingPoints.isEmpty {
-            let bySet = Dictionary(grouping: pendingPoints) { BucketDateMath.setCodeFromCardId($0.cardKey) }
-            for (setCode, pts) in bySet {
-                try? await store.upsertPriceHistoryPoints(brand: .pokemon, setCode: setCode, points: pts)
-            }
+            enqueueFlush(pendingPoints)
+            pendingPoints.removeAll(keepingCapacity: true)
+        }
+        for task in pendingFlushTasks {
+            await task.value
         }
 
         return totalBytes

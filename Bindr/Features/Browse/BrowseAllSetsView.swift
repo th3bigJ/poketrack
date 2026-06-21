@@ -68,7 +68,6 @@ struct BrowseAllSetsView: View {
 
     // Collected counts
     @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
-    @State private var isFirstAppear = true
 
     // Set completion mode
     @State private var setCompletionMode: SetCompletionMode = .full
@@ -251,20 +250,24 @@ struct BrowseAllSetsView: View {
             }
         }
         .toolbarBackground(.hidden, for: .navigationBar)
-        .onAppear {
-            if isFirstAppear {
-                Task {
-                    await refreshCollectedCounts()
-                    isFirstAppear = false
-                }
-            }
-        }
-        .onChange(of: collectionItems.count) { _, _ in
-            Task { await refreshCollectedCounts() }
+        .task(id: collectionProgressTaskKey) {
+            await refreshCollectedCounts()
         }
         .task(id: variantSlotTotalsTaskKey) {
             await refreshVariantSlotTotals()
         }
+    }
+
+    private var collectionProgressTaskKey: Int {
+        var h = Hasher()
+        h.combine(services.brandSettings.selectedCatalogBrand.rawValue)
+        h.combine(services.collectionInventoryRevision)
+        for set in services.cardData.sets { h.combine(set.setCode) }
+        for item in collectionItems {
+            h.combine(item.cardID)
+            h.combine(item.quantity)
+        }
+        return h.finalize()
     }
 
     private var variantSlotTotalsTaskKey: String {
