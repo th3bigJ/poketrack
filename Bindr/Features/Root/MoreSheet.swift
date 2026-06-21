@@ -71,6 +71,12 @@ struct MoreView: View {
 
                         MoreMenuSection(title: "Account & Privacy") {
                             MoreMenuRow(
+                                title: services.store.isPremium ? "Premium" : "Unlock Premium",
+                                systemImage: "crown.fill",
+                                color: .yellow,
+                                destination: .subscription
+                            )
+                            MoreMenuRow(
                                 title: "Account & Privacy",
                                 systemImage: "person.crop.circle.badge.checkmark",
                                 color: .gray,
@@ -142,6 +148,9 @@ struct MoreView: View {
                 GradingOpportunitiesView()
             case .myAccount:
                 MyAccountPrivacyView()
+                    .environment(services)
+            case .subscription:
+                PremiumSettingsPage()
                     .environment(services)
             case .backupRestore:
                 BackupRestoreSettingsPage()

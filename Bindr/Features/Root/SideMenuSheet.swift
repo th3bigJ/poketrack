@@ -11,6 +11,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
     case themes
     case gradingOpportunities
     case myAccount
+    case subscription
     case backupRestore
     case libraryStorage
     case legalDisclaimer
@@ -28,6 +29,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
         case .themes: return "Themes"
         case .gradingOpportunities: return "Grading Opportunities"
         case .myAccount: return "Account & Privacy"
+        case .subscription: return "Premium"
         case .backupRestore: return "Backup and Restore"
         case .libraryStorage: return "Library Storage"
         case .legalDisclaimer: return "Legal Disclaimer"

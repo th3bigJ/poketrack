@@ -9,7 +9,6 @@ struct SettingsView: View {
     var body: some View {
         List {
             storageSection
-            premiumSection
             socialSection
             #if DEBUG
             devToolsSection
@@ -52,24 +51,6 @@ struct SettingsView: View {
                     .environment(services)
             } label: {
                 Label("Backup and Restore", systemImage: "arrow.triangle.2.circlepath.icloud")
-            }
-        }
-    }
-
-    // MARK: - Premium
-
-    private var premiumSection: some View {
-        Section("Subscription") {
-            NavigationLink {
-                PremiumSettingsPage()
-                    .environment(services)
-            } label: {
-                if services.store.isPremium {
-                    Label("Premium", systemImage: "crown.fill")
-                        .foregroundStyle(.yellow)
-                } else {
-                    Label("Unlock Premium", systemImage: "crown.fill")
-                }
             }
         }
     }
@@ -550,7 +531,7 @@ private struct DevToolsSettingsPage: View {
 
 // MARK: - Premium Settings Page
 
-private struct PremiumSettingsPage: View {
+struct PremiumSettingsPage: View {
     @Environment(AppServices.self) private var services
     @State private var showPaywall = false
     @State private var showRestoreAlert = false
