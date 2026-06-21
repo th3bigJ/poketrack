@@ -480,8 +480,8 @@ struct BinderDetailView: View {
                     .offset(y: isChromeVisible ? 0 : 20)
                     .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
             }
+            .padding(.bottom, bottomOverlayInset)
             .allowsHitTesting(isChromeVisible)
-            .ignoresSafeArea(.container, edges: .bottom)
         }
     }
 
@@ -546,6 +546,13 @@ struct BinderDetailView: View {
         }
     }
 
+    /// Bottom inset for the swipe hint + stats row. The host passes
+    /// ``bottomSafeAreaInset`` when the presentation ignores the system
+    /// safe area so we still clear the home indicator.
+    private var bottomOverlayInset: CGFloat {
+        max(bottomSafeAreaInset, 8)
+    }
+
     // MARK: - Bottom stats bar (Cards · Page Value · Binder Value)
 
     private var bottomStatsBar: some View {
@@ -578,7 +585,6 @@ struct BinderDetailView: View {
                 .shadow(color: Color.black.opacity(colorScheme == .dark ? 0.25 : 0.1), radius: 15, x: 0, y: 8)
         )
         .padding(.horizontal, 16)
-        .padding(.bottom, 16)
     }
 
     private func statCell(value: String, label: String) -> some View {

@@ -32,7 +32,9 @@ struct FriendProfileView: View {
     @State private var selectedTab: ProfileTab
     @Namespace private var tabNamespace
     @State private var sharedWishlistCardIDs: [String] = []
+    @State private var friendWishlistDateByCardID: [String: Date] = [:]
     @State private var friendCollectionCardIDs: [String] = []
+    @State private var friendCollectionDateByCardID: [String: Date] = [:]
     @State private var friendCollectionQuantityByCardID: [String: Int] = [:]
     @State private var isLoadingCollection = false
     @State private var collectionLoadError: String? = nil
@@ -535,6 +537,7 @@ struct FriendProfileView: View {
         if canViewWishlist, !ids.isEmpty {
             FriendBrowsableCardGrid(
                 cardIDs: ids,
+                dateByCardID: friendWishlistDateByCardID,
                 cardLoader: { await loadSharedCard($0) },
                 onCardTap: { tappedID, orderedIDs in
                     Task { await openCardDetail(tappedID: tappedID, orderedIDs: orderedIDs) }
@@ -568,6 +571,7 @@ struct FriendProfileView: View {
             FriendBrowsableCardGrid(
                 cardIDs: friendCollectionCardIDs,
                 quantityByCardID: friendCollectionQuantityByCardID,
+                dateByCardID: friendCollectionDateByCardID,
                 cardLoader: { await loadSharedCard($0) },
                 onCardTap: { tappedID, orderedIDs in
                     Task { await openCardDetail(tappedID: tappedID, orderedIDs: orderedIDs) }
@@ -688,7 +692,9 @@ struct FriendProfileView: View {
                     }
                 } else {
                     sharedWishlistCardIDs = []
+                    friendWishlistDateByCardID = [:]
                     friendCollectionCardIDs = []
+                    friendCollectionDateByCardID = [:]
                     friendCollectionQuantityByCardID = [:]
                     resolvedSharedCardsByID = [:]
                 }
@@ -713,29 +719,24 @@ struct FriendProfileView: View {
         defer { isLoadingCollection = false }
         do {
             let snapshot = try await services.collectionSync.fetchFriendCollection(userID: userID)
-            var collectionIDs: [String] = []
             var collectionQuantityByCardID: [String: Int] = [:]
-            var seenCollectionIDs: Set<String> = []
             for entry in snapshot.collection where !entry.cardID.isEmpty {
                 collectionQuantityByCardID[entry.cardID, default: 0] += max(entry.qty, 0)
-                if seenCollectionIDs.insert(entry.cardID).inserted {
-                    collectionIDs.append(entry.cardID)
-                }
             }
-            let wishlistIDs = snapshot.wishlist.compactMap { entry -> String? in
-                guard !entry.cardID.isEmpty else { return nil }
-                return entry.cardID
-            }
-            friendCollectionCardIDs = collectionIDs
+            friendCollectionCardIDs = snapshot.collectionCardIDsByNewestAcquired()
+            friendCollectionDateByCardID = snapshot.collectionDateByCardID()
             friendCollectionQuantityByCardID = collectionQuantityByCardID
-            sharedWishlistCardIDs = wishlistIDs
+            sharedWishlistCardIDs = snapshot.wishlistCardIDsByNewestAdded()
+            friendWishlistDateByCardID = snapshot.wishlistDateByCardID()
             Task { @MainActor in
-                await warmSharedCardCache(ids: collectionIDs + wishlistIDs)
+                await warmSharedCardCache(ids: friendCollectionCardIDs + sharedWishlistCardIDs)
             }
         } catch CollectionSyncError.httpError(404) {
             friendCollectionCardIDs = []
+            friendCollectionDateByCardID = [:]
             friendCollectionQuantityByCardID = [:]
             sharedWishlistCardIDs = []
+            friendWishlistDateByCardID = [:]
         } catch {
             collectionLoadError = error.localizedDescription
         }
@@ -776,7 +777,9 @@ struct FriendProfileView: View {
             try await services.socialFriend.removeFriend(userID: userID)
             relationship = .none
             sharedWishlistCardIDs = []
+            friendWishlistDateByCardID = [:]
             friendCollectionCardIDs = []
+            friendCollectionDateByCardID = [:]
             resolvedSharedCardsByID = [:]
             Haptics.success()
         } catch {
@@ -792,7 +795,9 @@ struct FriendProfileView: View {
             try await services.socialFriend.block(userID: userID)
             relationship = .blocked
             sharedWishlistCardIDs = []
+            friendWishlistDateByCardID = [:]
             friendCollectionCardIDs = []
+            friendCollectionDateByCardID = [:]
             resolvedSharedCardsByID = [:]
         } catch {
             errorMessage = error.localizedDescription

@@ -12,6 +12,8 @@ struct FriendsCollectionView: View {
     @State private var allEntries: [FriendCardEntry] = []
     @State private var cardsByID: [String: Card] = [:]
     @State private var priceByCardID: [String: Double] = [:]
+    @State private var acquiredDateByCardID: [String: Date] = [:]
+    @State private var stableCardOrder: [String] = []
     @State private var isLoading = false
     @State private var loadError: String?
 
@@ -24,7 +26,7 @@ struct FriendsCollectionView: View {
     @State private var query = ""
     @State private var filters: BrowseCardGridFilters = {
         var f = BrowseCardGridFilters()
-        f.sortBy = .cardName
+        f.sortBy = .acquiredDateNewest
         return f
     }()
     private var gridOptions: BrowseGridOptions {
@@ -72,26 +74,17 @@ struct FriendsCollectionView: View {
     }
 
     private var sortedFilteredCards: [Card] {
-        switch filters.sortBy {
-        case .cardName:
-            return filteredCards.sorted { $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending }
-        case .price:
-            return filteredCards.sorted { (priceByCardID[$0.masterCardId] ?? 0) > (priceByCardID[$1.masterCardId] ?? 0) }
-        default:
-            return filteredCards
-        }
+        FriendBrowsableCardSort.sortedCards(
+            filteredCards,
+            sortBy: filters.sortBy,
+            priceByCardID: priceByCardID,
+            dateByCardID: acquiredDateByCardID,
+            stableOrderIDs: stableCardOrder
+        )
     }
 
     private var filterConfig: FilterMenuConfig {
-        FilterMenuConfig(
-            showAcquiredDateSort: false,
-            showRandomSort: false,
-            showHideOwned: false,
-            showShowDuplicates: false,
-            showGridOptions: false,
-            defaultSortBy: .cardName,
-            showGridOwnedToggle: false
-        )
+        .friendBrowsable
     }
 
     private var gridOptionsBinding: Binding<BrowseGridOptions> {
@@ -248,6 +241,8 @@ struct FriendsCollectionView: View {
             guard !friends.isEmpty else {
                 allEntries = []
                 cardsByID = [:]
+                acquiredDateByCardID = [:]
+                stableCardOrder = []
                 refreshFeed()
                 return
             }
@@ -255,6 +250,7 @@ struct FriendsCollectionView: View {
             // Fetch all snapshots concurrently
             var cardToOwners: [String: [UUID: SocialProfile]] = [:]
             var quantityByCardID: [String: Int] = [:]
+            var newestAcquiredByCardID: [String: Date] = [:]
             await withTaskGroup(of: (SocialProfile, FriendCollectionSnapshot?).self) { group in
                 for friend in friends {
                     group.addTask {
@@ -264,11 +260,23 @@ struct FriendsCollectionView: View {
                 }
                 for await (friend, snapshot) in group {
                     guard let snapshot else { continue }
+                    let friendDates = snapshot.collectionDateByCardID()
                     for entry in snapshot.collection where !entry.cardID.isEmpty {
                         cardToOwners[entry.cardID, default: [:]][friend.id] = friend
                         quantityByCardID[entry.cardID, default: 0] += max(entry.qty, 0)
+                        if let date = friendDates[entry.cardID] {
+                            newestAcquiredByCardID[entry.cardID] = max(newestAcquiredByCardID[entry.cardID] ?? .distantPast, date)
+                        }
                     }
                 }
+            }
+
+            acquiredDateByCardID = newestAcquiredByCardID
+            stableCardOrder = newestAcquiredByCardID.keys.sorted { lhs, rhs in
+                let lDate = newestAcquiredByCardID[lhs] ?? .distantPast
+                let rDate = newestAcquiredByCardID[rhs] ?? .distantPast
+                if lDate != rDate { return lDate > rDate }
+                return lhs.localizedStandardCompare(rhs) == .orderedAscending
             }
 
             allEntries = cardToOwners.map { cardID, owners in

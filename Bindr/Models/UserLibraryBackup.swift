@@ -953,3 +953,119 @@ enum UserLibraryBackupCodec {
         return "\(left)\n\(right)"
     }
 }
+
+// MARK: - Friend grid date helpers
+
+extension UserLibraryBackup {
+    private static let snapshotDateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return formatter
+    }()
+
+    static func parsedSnapshotDate(_ raw: String?) -> Date? {
+        guard let raw, !raw.isEmpty else { return nil }
+        return snapshotDateFormatter.date(from: raw) ?? ISO8601DateFormatter().date(from: raw)
+    }
+
+    /// Newest acquisition date per card ID from a friend's cloud snapshot.
+    func collectionDateByCardID() -> [String: Date] {
+        var dates: [String: Date] = [:]
+        if let items = library?.collectionItems {
+            for item in items where !item.cardID.isEmpty {
+                guard let parsed = Self.parsedSnapshotDate(item.dateAcquired) else { continue }
+                dates[item.cardID] = max(dates[item.cardID] ?? .distantPast, parsed)
+            }
+        }
+        return dates
+    }
+
+    /// Newest date-added per card ID from a friend's cloud snapshot.
+    func wishlistDateByCardID() -> [String: Date] {
+        var dates: [String: Date] = [:]
+        if let items = library?.wishlistItems, !items.isEmpty {
+            for item in items where !item.cardID.isEmpty {
+                guard let parsed = Self.parsedSnapshotDate(item.dateAdded) else { continue }
+                dates[item.cardID] = max(dates[item.cardID] ?? .distantPast, parsed)
+            }
+        } else {
+            for entry in wishlist where !entry.cardID.isEmpty {
+                guard let parsed = Self.parsedSnapshotDate(entry.dateAdded) else { continue }
+                dates[entry.cardID] = max(dates[entry.cardID] ?? .distantPast, parsed)
+            }
+        }
+        return dates
+    }
+
+    func collectionCardIDsByNewestAcquired() -> [String] {
+        orderedUniqueCardIDs(from: collection.map(\.cardID))
+            .sorted { lhs, rhs in
+                compareSnapshotDates(
+                    collectionDateByCardID()[lhs],
+                    collectionDateByCardID()[rhs],
+                    lhs: lhs,
+                    rhs: rhs
+                )
+            }
+    }
+
+    func wishlistCardIDsByNewestAdded() -> [String] {
+        let dates = wishlistDateByCardID()
+        let orderedIDs = orderedUniqueCardIDs(from: wishlist.map(\.cardID))
+        return orderedIDs.sorted { lhs, rhs in
+            compareSnapshotDates(dates[lhs], dates[rhs], lhs: lhs, rhs: rhs)
+        }
+    }
+
+    private func orderedUniqueCardIDs(from rawIDs: [String]) -> [String] {
+        var seen = Set<String>()
+        var ordered: [String] = []
+        for id in rawIDs where !id.isEmpty {
+            if seen.insert(id).inserted {
+                ordered.append(id)
+            }
+        }
+        return ordered
+    }
+
+    private func compareSnapshotDates(_ lhs: Date?, _ rhs: Date?, lhs lhsID: String, rhs rhsID: String) -> Bool {
+        let lDate = lhs ?? .distantPast
+        let rDate = rhs ?? .distantPast
+        if lDate != rDate { return lDate > rDate }
+        return lhsID.localizedStandardCompare(rhsID) == .orderedAscending
+    }
+}
+
+enum FriendBrowsableCardSort {
+    static func sortedCards(
+        _ cards: [Card],
+        sortBy: BrowseCardGridSortOption,
+        priceByCardID: [String: Double],
+        dateByCardID: [String: Date],
+        stableOrderIDs: [String]
+    ) -> [Card] {
+        switch sortBy {
+        case .acquiredDateNewest:
+            let orderIndex = Dictionary(uniqueKeysWithValues: stableOrderIDs.enumerated().map { ($1, $0) })
+            return cards.sorted { lhs, rhs in
+                let lDate = dateByCardID[lhs.masterCardId] ?? .distantPast
+                let rDate = dateByCardID[rhs.masterCardId] ?? .distantPast
+                if lDate != rDate { return lDate > rDate }
+                let lIndex = orderIndex[lhs.masterCardId] ?? Int.max
+                let rIndex = orderIndex[rhs.masterCardId] ?? Int.max
+                if lIndex != rIndex { return lIndex < rIndex }
+                return lhs.masterCardId.localizedStandardCompare(rhs.masterCardId) == .orderedAscending
+            }
+        case .cardName:
+            return cards.sorted {
+                $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending
+            }
+        case .price:
+            return cards.sorted {
+                (priceByCardID[$0.masterCardId] ?? 0) > (priceByCardID[$1.masterCardId] ?? 0)
+            }
+        default:
+            return cards
+        }
+    }
+}

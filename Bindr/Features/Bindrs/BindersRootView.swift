@@ -106,9 +106,6 @@ struct BindersRootView: View {
                 .ignoresSafeArea(.all)
                 .zIndex(50)
                 .transition(.identity)
-                // Hide the tab bar while a binder is open so it doesn't 
-                // sit above the full-screen view.
-                .toolbar(isPresentingBinder ? .hidden : .visible, for: .tabBar)
             }
         }
         // All cell frames and the page-frame preference are reported in this
@@ -117,6 +114,10 @@ struct BindersRootView: View {
         .coordinateSpace(name: "bindersRoot")
         .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
+        // Hide the tab bar for the whole presentation (including close
+        // animation). Must live on this navigation destination — applying it
+        // on the overlay child does not reach the TabView chrome.
+        .toolbar(presentedBinder != nil ? .hidden : .visible, for: .tabBar)
         .sheet(isPresented: $showCreateSheet, onDismiss: {
             gridResolvedURLs = [:]
             gridResolvedValues = [:]

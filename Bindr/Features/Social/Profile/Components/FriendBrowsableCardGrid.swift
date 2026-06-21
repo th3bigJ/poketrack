@@ -7,6 +7,8 @@ struct FriendBrowsableCardGrid: View {
 
     let cardIDs: [String]
     var quantityByCardID: [String: Int] = [:]
+    var dateByCardID: [String: Date] = [:]
+    var filterConfig: FilterMenuConfig = .friendBrowsable
     let cardLoader: (String) async -> Card?
     let onCardTap: (String, [String]) -> Void
 
@@ -17,7 +19,7 @@ struct FriendBrowsableCardGrid: View {
     @State private var query = ""
     @State private var filters: BrowseCardGridFilters = {
         var f = BrowseCardGridFilters()
-        f.sortBy = .cardName
+        f.sortBy = .acquiredDateNewest
         return f
     }()
     @State private var cardsByID: [String: Card] = [:]
@@ -63,18 +65,13 @@ struct FriendBrowsableCardGrid: View {
     }
 
     private var sortedFilteredCards: [Card] {
-        switch filters.sortBy {
-        case .cardName:
-            return filteredCards.sorted {
-                $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending
-            }
-        case .price:
-            return filteredCards.sorted {
-                (priceByCardID[$0.masterCardId] ?? 0) > (priceByCardID[$1.masterCardId] ?? 0)
-            }
-        default:
-            return filteredCards
-        }
+        FriendBrowsableCardSort.sortedCards(
+            filteredCards,
+            sortBy: filters.sortBy,
+            priceByCardID: priceByCardID,
+            dateByCardID: dateByCardID,
+            stableOrderIDs: cardIDs
+        )
     }
 
     var body: some View {
@@ -87,7 +84,8 @@ struct FriendBrowsableCardGrid: View {
                 brand: services.brandSettings.selectedCatalogBrand,
                 energyOptions: energyOptions,
                 rarityOptions: rarityOptions,
-                trainerTypeOptions: trainerTypeOptions
+                trainerTypeOptions: trainerTypeOptions,
+                filterConfig: filterConfig
             )
             .padding(.horizontal, 16)
             .padding(.bottom, 10)
@@ -205,7 +203,7 @@ struct FriendBrowsableCardGrid: View {
             }
         }
         priceByCardID = next
-        if filters.sortBy == .price {
+        if filters.sortBy == .price || filters.sortBy == .acquiredDateNewest {
             refreshFeed()
         }
     }

@@ -4655,6 +4655,17 @@ struct FilterMenuConfig {
         showGridOwnedToggle: false,
         showSealedProductTypeFilter: true
     )
+    static let friendBrowsable = FilterMenuConfig(
+        showAcquiredDateSort: true,
+        showRandomSort: false,
+        showCardNumberSort: false,
+        showHideOwned: false,
+        showOwnedOnly: false,
+        showShowDuplicates: false,
+        showGridOptions: false,
+        defaultSortBy: .acquiredDateNewest,
+        showGridOwnedToggle: false
+    )
 }
 
 struct BrowseGridFiltersMenuContent: View {
