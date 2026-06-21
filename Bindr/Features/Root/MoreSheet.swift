@@ -133,7 +133,9 @@ struct MoreView: View {
                         }
                         .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
 
-                        MoreSocialLinksRow()
+                        MoreMenuSection(title: "Connect with us") {
+                            MoreSocialLinksRow()
+                        }
                     }
                     .padding(.horizontal, BindrSpacing.lg)
                     .padding(.top, BindrSpacing.lg)
@@ -589,11 +591,6 @@ private enum BindrSupport {
     }
 }
 
-private enum MoreSocialIcon {
-    case system(String)
-    case brandText(String)
-}
-
 private enum MoreSocialLink: String, CaseIterable, Identifiable {
     case email
     case instagram
@@ -613,34 +610,104 @@ private enum MoreSocialLink: String, CaseIterable, Identifiable {
         }
     }
 
-    /// Set real profile URLs here when available. `nil` keeps the icon visible as a placeholder.
+    /// Social profile URLs for Bindr's official accounts.
     var destination: URL? {
         switch self {
         case .email:
             return BindrSupport.contactMailURL
         case .instagram:
-            return nil
+            return URL(string: "https://www.instagram.com/Bindr_tcg")
         case .x:
-            return nil
+            return URL(string: "https://x.com/Bindr_tcg")
         case .tiktok:
-            return nil
+            return URL(string: "https://www.tiktok.com/@Bindr_tcg")
         case .youtube:
-            return nil
+            return URL(string: "https://www.youtube.com/@Bindr_tcg")
         }
     }
+}
 
-    var icon: MoreSocialIcon {
-        switch self {
+private struct MoreSocialBrandIcon: View {
+    let link: MoreSocialLink
+
+    @Environment(\.bindrAccent) private var accent
+
+    var body: some View {
+        switch link {
         case .email:
-            return .system("envelope.fill")
+            Circle()
+                .fill(accent.gradient)
+                .overlay {
+                    Image(systemName: "envelope.fill")
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundStyle(.white)
+                }
         case .instagram:
-            return .brandText("IG")
+            Circle()
+                .fill(
+                    AngularGradient(
+                        colors: [
+                            Color(hex: "833AB4"),
+                            Color(hex: "FD1D1D"),
+                            Color(hex: "F77737"),
+                            Color(hex: "FCAF45"),
+                            Color(hex: "833AB4")
+                        ],
+                        center: .center
+                    )
+                )
+                .overlay { InstagramGlyph() }
         case .x:
-            return .brandText("X")
+            Circle()
+                .fill(.black)
+                .overlay {
+                    Text("X")
+                        .font(.system(size: 17, weight: .black))
+                        .foregroundStyle(.white)
+                }
         case .tiktok:
-            return .system("music.note")
+            Circle()
+                .fill(.black)
+                .overlay {
+                    Image(systemName: "music.note")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(.white)
+                }
         case .youtube:
-            return .system("play.rectangle.fill")
+            Circle()
+                .fill(.white)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 5, style: .continuous)
+                        .fill(Color(hex: "FF0000"))
+                        .frame(width: 26, height: 18)
+                        .overlay {
+                            Image(systemName: "play.fill")
+                                .font(.system(size: 8, weight: .bold))
+                                .foregroundStyle(.white)
+                                .offset(x: 1)
+                        }
+                }
+                .overlay {
+                    Circle()
+                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 0.5)
+                }
+        }
+    }
+}
+
+private struct InstagramGlyph: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 5, style: .continuous)
+                .strokeBorder(.white, lineWidth: 2)
+                .frame(width: 22, height: 22)
+            Circle()
+                .strokeBorder(.white, lineWidth: 2)
+                .frame(width: 8, height: 8)
+            Circle()
+                .fill(.white)
+                .frame(width: 3, height: 3)
+                .offset(x: 7, y: -7)
         }
     }
 }
@@ -652,13 +719,10 @@ private struct MoreSocialLinksRow: View {
         HStack(spacing: 0) {
             ForEach(MoreSocialLink.allCases) { link in
                 socialButton(link)
-                if link != MoreSocialLink.allCases.last {
-                    Spacer(minLength: 0)
-                }
             }
         }
-        .padding(.horizontal, BindrSpacing.sm)
-        .padding(.vertical, BindrSpacing.md)
+        .padding(.horizontal, BindrSpacing.md)
+        .padding(.vertical, BindrSpacing.lg)
     }
 
     @ViewBuilder
@@ -669,29 +733,23 @@ private struct MoreSocialLinksRow: View {
             guard let url = link.destination else { return }
             openURL(url)
         } label: {
-            socialIcon(link)
-                .frame(width: 48, height: 48)
-                .modifier(ChromeGlassCircleGlyphModifier())
+            VStack(spacing: 8) {
+                MoreSocialBrandIcon(link: link)
+                    .frame(width: 44, height: 44)
+
+                Text(link.accessibilityLabel)
+                    .font(.system(size: 12, weight: .regular))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .frame(maxWidth: .infinity)
         }
         .buttonStyle(.plain)
         .opacity(isEnabled ? 1 : 0.45)
         .disabled(!isEnabled)
         .accessibilityLabel(link.accessibilityLabel)
         .accessibilityHint(isEnabled ? "Opens \(link.accessibilityLabel)" : "Coming soon")
-    }
-
-    @ViewBuilder
-    private func socialIcon(_ link: MoreSocialLink) -> some View {
-        switch link.icon {
-        case .system(let name):
-            Image(systemName: name)
-                .font(.system(size: 17, weight: .medium))
-                .foregroundStyle(.primary)
-        case .brandText(let text):
-            Text(text)
-                .font(.system(size: 16, weight: .black))
-                .foregroundStyle(.primary)
-        }
     }
 }
 
