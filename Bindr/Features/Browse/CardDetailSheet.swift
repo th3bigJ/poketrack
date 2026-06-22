@@ -49,7 +49,6 @@ struct CardDetailSheet: View {
     @State private var collectionAddSuccessPresentation: AddToCollectionSuccessPresentation?
     @State private var auraColorsByCardID: [String: [Color]] = [:]
     @State private var auraSourceImageAreaByCardID: [String: CGFloat] = [:]
-    @State private var pushedSet: TCGSet? = nil
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
@@ -166,9 +165,6 @@ struct CardDetailSheet: View {
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
                 .environment(services)
-        }
-        .sheet(item: $pushedSet) { set in
-            NavigationStack { SetCardsView(set: set) }
         }
         .alert("Wishlist", isPresented: $showWishlistAlert) {
             Button("OK", role: .cancel) {}
@@ -347,16 +343,13 @@ struct CardDetailSheet: View {
     @ViewBuilder
     private func centeredSetBlock(for card: Card) -> some View {
         if let set = set(for: card) {
-            Button { pushedSet = set } label: {
-                SetLogoAsyncImage(
-                    logoSrc: set.logoSrc,
-                    height: 34,
-                    brand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
-                )
-                .frame(maxWidth: 140, minHeight: 40)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Open \(set.name)")
+            SetLogoAsyncImage(
+                logoSrc: set.logoSrc,
+                height: 34,
+                brand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
+            )
+            .frame(maxWidth: 140, minHeight: 40)
+            .accessibilityLabel(set.name)
         } else if let setCode = cleaned(card.setCode) {
             Text(setCode)
                 .font(.subheadline.weight(.medium))

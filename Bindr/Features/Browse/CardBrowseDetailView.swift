@@ -17,7 +17,6 @@ struct CardBrowseDetailView: View {
     var directTradeContext: CardTradeContext? = nil
 
     @State private var index: Int
-    @State private var pushedSet: TCGSet? = nil
 
     init(
         cards: [Card],
@@ -54,10 +53,7 @@ struct CardBrowseDetailView: View {
                             addToDeckAction: addToDeckAction,
                             showsCollectionAction: showsHeaderChromeActions,
                             showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
-                            directTradeContext: directTradeContext,
-                            onOpenSet: {
-                                pushedSet = services.cardData.sets.first { $0.setCode == card.setCode }
-                            }
+                            directTradeContext: directTradeContext
                         )
                         .tag(i)
                     }
@@ -72,11 +68,6 @@ struct CardBrowseDetailView: View {
         }
         .onChange(of: index) { _, _ in
             HapticManager.selection()
-        }
-        .sheet(item: $pushedSet) { set in
-            NavigationStack {
-                SetCardsView(set: set)
-            }
         }
         .presentationBackground(pageChromeBackground)
         .presentationDragIndicator(.visible)
@@ -102,7 +93,6 @@ private struct CardBrowseDetailPage: View {
     let showsCollectionAction: Bool
     let showsWishlistAction: Bool
     let directTradeContext: CardTradeContext?
-    let onOpenSet: () -> Void
 
     @State private var editingLine: HoldingLine?
     @State private var dispositionFlowPayload: CollectionDispositionFlowPayload?
@@ -128,8 +118,7 @@ private struct CardBrowseDetailPage: View {
         addToDeckAction: ((Card, String, Int) -> Void)?,
         showsCollectionAction: Bool,
         showsWishlistAction: Bool,
-        directTradeContext: CardTradeContext?,
-        onOpenSet: @escaping () -> Void
+        directTradeContext: CardTradeContext?
     ) {
         self.card = card
         self.set = set
@@ -137,7 +126,6 @@ private struct CardBrowseDetailPage: View {
         self.showsCollectionAction = showsCollectionAction
         self.showsWishlistAction = showsWishlistAction
         self.directTradeContext = directTradeContext
-        self.onOpenSet = onOpenSet
         let cardID = card.masterCardId
         _collectionItems = Query(
             filter: #Predicate<CollectionItem> { $0.cardID == cardID },
@@ -547,16 +535,13 @@ private struct CardBrowseDetailPage: View {
     @ViewBuilder
     private var centeredSetBlock: some View {
         if let set {
-            Button(action: onOpenSet) {
-                SetLogoAsyncImage(
-                    logoSrc: set.logoSrc,
-                    height: 34,
-                    brand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
-                )
-                .frame(maxWidth: 140, minHeight: 40)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Open \(set.name)")
+            SetLogoAsyncImage(
+                logoSrc: set.logoSrc,
+                height: 34,
+                brand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
+            )
+            .frame(maxWidth: 140, minHeight: 40)
+            .accessibilityLabel(set.name)
         } else if let setCode = cleaned(card.setCode) {
             Text(setCode)
                 .font(.subheadline.weight(.medium))
