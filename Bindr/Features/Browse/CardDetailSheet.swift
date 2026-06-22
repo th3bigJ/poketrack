@@ -2,12 +2,31 @@ import SwiftData
 import SwiftUI
 import UIKit
 
+private struct CardDetailCollectionScope<Content: View>: View {
+    @Query private var collectionItems: [CollectionItem]
+    private let content: ([CollectionItem]) -> Content
+
+    init(
+        cardID: String,
+        @ViewBuilder content: @escaping ([CollectionItem]) -> Content
+    ) {
+        _collectionItems = Query(
+            filter: #Predicate<CollectionItem> { $0.cardID == cardID },
+            sort: [SortDescriptor(\.variantKey)]
+        )
+        self.content = content
+    }
+
+    var body: some View {
+        content(collectionItems)
+    }
+}
+
 struct CardDetailSheet: View {
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
-    @Query private var collectionItems: [CollectionItem]
 
     let cards: [Card]
     /// When opened from a specific friend context (profile, trade wall), trade goes directly to them.
@@ -44,24 +63,19 @@ struct CardDetailSheet: View {
         let clamped = cards.isEmpty ? 0 : min(max(0, startIndex), cards.count - 1)
         _index = State(initialValue: clamped)
         _scrollIndex = State(initialValue: clamped)
-        let cardID = cards.isEmpty ? "" : cards[clamped].masterCardId
-        _collectionItems = Query(
-            filter: #Predicate<CollectionItem> { $0.cardID == cardID },
-            sort: [SortDescriptor(\.variantKey)]
-        )
     }
 
     private var currentCard: Card { cards[index] }
     private func set(for card: Card) -> TCGSet? { services.cardData.sets.first { $0.setCode == card.setCode } }
 
-    private var visibleCollectionItems: [CollectionItem] {
+    private func visibleCollectionItems(_ collectionItems: [CollectionItem]) -> [CollectionItem] {
         collectionItems.filter { $0.quantity > 0 }
     }
 
-    private func showsCollectionSection(for card: Card) -> Bool {
+    private func showsCollectionSection(for card: Card, collectionItems: [CollectionItem]) -> Bool {
         let brand = TCGBrand.inferredFromMasterCardId(card.masterCardId)
         guard services.brandSettings.enabledBrands.contains(brand) else { return false }
-        return !visibleCollectionItems.isEmpty
+        return !visibleCollectionItems(collectionItems).isEmpty
     }
 
     private var singleAvailableVariantKey: String? {
@@ -218,34 +232,38 @@ struct CardDetailSheet: View {
 
     private func cardPage(for pageCard: Card) -> some View {
         let facts = summaryFacts(for: pageCard)
-        return ScrollView {
-            VStack(alignment: .leading, spacing: 14) {
-                cardHeroSection(for: pageCard)
-                CardPricingPanel(card: pageCard, useGlass: true)
-                    .glassCardStyle(cornerRadius: 26, interactive: false)
-                recentSoldOnEbayButton(for: pageCard)
-                    .glassCardStyle(cornerRadius: 26, interactive: false)
-                if showsCollectionSection(for: pageCard) { collectionSection }
-                if !facts.isEmpty || pageCard.attacks != nil || pageCard.abilities != nil || cleaned(pageCard.rules) != nil || cleaned(pageCard.flavorText) != nil {
-                    cardDetailsSection(for: pageCard, facts: facts)
+        return CardDetailCollectionScope(cardID: pageCard.masterCardId) { collectionItems in
+            ScrollView {
+                VStack(alignment: .leading, spacing: 14) {
+                    cardHeroSection(for: pageCard, collectionItems: collectionItems)
+                    CardPricingPanel(card: pageCard, useGlass: true)
+                        .glassCardStyle(cornerRadius: 26, interactive: false)
+                    recentSoldOnEbayButton(for: pageCard)
+                        .glassCardStyle(cornerRadius: 26, interactive: false)
+                    if showsCollectionSection(for: pageCard, collectionItems: collectionItems) {
+                        collectionSection(collectionItems: collectionItems)
+                    }
+                    if !facts.isEmpty || pageCard.attacks != nil || pageCard.abilities != nil || cleaned(pageCard.rules) != nil || cleaned(pageCard.flavorText) != nil {
+                        cardDetailsSection(for: pageCard, facts: facts)
+                    }
                 }
+                .padding(.horizontal, 12)
+                .padding(.bottom, 24)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
             }
-            .padding(.horizontal, 12)
-            .padding(.bottom, 24)
-            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .scrollContentBackground(.hidden)
+            .scrollIndicators(.hidden)
         }
-        .scrollContentBackground(.hidden)
-        .scrollIndicators(.hidden)
     }
 
     // MARK: - Hero
 
-    private func cardHeroSection(for card: Card) -> some View {
+    private func cardHeroSection(for card: Card, collectionItems: [CollectionItem]) -> some View {
         VStack(spacing: 10) {
             cardImage(for: card)
                 .padding(.top, 20)
                 .padding(.horizontal, 6)
-            cardMetaRow(for: card)
+            cardMetaRow(for: card, collectionItems: collectionItems)
         }
     }
 
@@ -278,12 +296,12 @@ struct CardDetailSheet: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func cardMetaRow(for card: Card) -> some View {
+    private func cardMetaRow(for card: Card, collectionItems: [CollectionItem]) -> some View {
         VStack(spacing: 12) {
             titleBlock(for: card)
             
             CardActionMenu(
-                isOwned: showsCollectionSection(for: card),
+                isOwned: showsCollectionSection(for: card, collectionItems: collectionItems),
                 isWishlisted: isCurrentCardWishlisted,
                 availableVariantKeys: wishlistVariantKeys,
                 card: card,
@@ -291,7 +309,7 @@ struct CardDetailSheet: View {
                     addToCollectionVariant(card: card, variantKey: variantKey)
                 },
                 onRemoveFromCollection: {
-                    openRemoveFromCollectionFlow(for: card)
+                    openRemoveFromCollectionFlow(for: card, collectionItems: collectionItems)
                 },
                 onAddToWishlist: {
                     if let variantKey = singleAvailableVariantKey {
@@ -349,14 +367,14 @@ struct CardDetailSheet: View {
         }
     }
 
-    private var allHoldingLines: [HoldingLine] {
-        groupedHoldings
+    private func allHoldingLines(collectionItems: [CollectionItem]) -> [HoldingLine] {
+        groupedHoldings(collectionItems: collectionItems)
             .flatMap(\.lines)
             .sorted { $0.date > $1.date }
     }
 
-    private func openRemoveFromCollectionFlow(for card: Card) {
-        let lines = allHoldingLines
+    private func openRemoveFromCollectionFlow(for card: Card, collectionItems: [CollectionItem]) {
+        let lines = allHoldingLines(collectionItems: collectionItems)
         guard !lines.isEmpty else { return }
         dispositionFlowPayload = CollectionDispositionFlowPayload(lines: lines, cardDisplayName: card.cardName)
         Haptics.lightImpact()
@@ -429,10 +447,12 @@ struct CardDetailSheet: View {
 
     // MARK: - Collection section
 
-    private var collectionSection: some View {
+    private func collectionSection(collectionItems: [CollectionItem]) -> some View {
         DebugDetailSurface(title: "Collection") {
             VStack(alignment: .leading, spacing: 14) {
-                ForEach(groupedHoldings) { group in holdingCard(for: group) }
+                ForEach(groupedHoldings(collectionItems: collectionItems)) { group in
+                    holdingCard(for: group)
+                }
             }
         }
     }
@@ -719,9 +739,9 @@ struct CardDetailSheet: View {
 
     // MARK: - Grouped holdings
 
-    private var groupedHoldings: [HoldingGroup] {
+    private func groupedHoldings(collectionItems: [CollectionItem]) -> [HoldingGroup] {
         var groups: [String: HoldingGroup] = [:]
-        for item in visibleCollectionItems {
+        for item in visibleCollectionItems(collectionItems) {
             for lot in (item.costLots ?? []).filter({ $0.quantityRemaining > 0 }) {
                 let line = lot.sourceLedgerLine
                 let direction = line.flatMap { LedgerDirection(rawValue: $0.direction) } ?? .bought

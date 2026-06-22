@@ -709,7 +709,7 @@ struct RootView: View {
                             })
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+                        .bindrTabBarHidden(isTabBarHidden)
                         .tabItem { Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.symbolName) }
                         .tag(AppTab.dashboard)
 
@@ -736,7 +736,7 @@ struct RootView: View {
                             }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+                        .bindrTabBarHidden(isTabBarHidden)
                         .tabItem { Label(AppTab.browse.title, systemImage: AppTab.browse.symbolName) }
                         .tag(AppTab.browse)
 
@@ -758,7 +758,7 @@ struct RootView: View {
                             }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+                        .bindrTabBarHidden(isTabBarHidden)
                         .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
                         .tag(AppTab.collect)
 
@@ -770,7 +770,7 @@ struct RootView: View {
                             }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+                        .bindrTabBarHidden(isTabBarHidden)
                         .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
                         .tag(AppTab.social)
 
@@ -782,12 +782,12 @@ struct RootView: View {
                             }
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+                        .bindrTabBarHidden(isTabBarHidden)
                         .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
                         .tag(AppTab.more)
                     }
                     .bindrDisableTabBarMinimize()
-                    .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+                    .bindrTabBarHidden(isTabBarHidden)
                     if isSearchExperiencePresented {
                         searchOverlay
                     }
@@ -1456,6 +1456,15 @@ struct RootView: View {
 }
 
 private extension View {
+    @ViewBuilder
+    func bindrTabBarHidden(_ isHidden: Bool) -> some View {
+        if isHidden {
+            self.toolbar(.hidden, for: .tabBar)
+        } else {
+            self
+        }
+    }
+
     @ViewBuilder
     func bindrDisableTabBarMinimize() -> some View {
         if #available(iOS 26.0, *) {

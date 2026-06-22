@@ -5,6 +5,7 @@ import Observation
 @MainActor
 final class CardDataService {
     private let pokemonNationalDexAuxBlobKey = "pokemon_national_dex_json"
+    private let worker: CardCatalogWorker
     private(set) var sets: [TCGSet] = []
     /// From R2 `pokemon.json` (see `nationalDexNumber`); sorted ascending when loaded.
     private(set) var nationalDexPokemon: [NationalDexPokemon] = []
@@ -24,11 +25,13 @@ final class CardDataService {
     init(
         brandSettings: BrandSettings,
         session: URLSession = .shared,
-        fileManager: FileManager = .default
+        fileManager: FileManager = .default,
+        worker: CardCatalogWorker = CardCatalogWorker()
     ) {
         self.brandSettings = brandSettings
         self.session = session
         self.fileManager = fileManager
+        self.worker = worker
     }
 
     /// Call after the user switches the browse brand (carousel or account). Clears caches and reloads `sets` + search index.
@@ -53,23 +56,15 @@ final class CardDataService {
         isLoading = true
         lastError = nil
         defer { isLoading = false }
-        do {
-            try await CatalogStore.shared.open()
-            let brand = brandSettings.selectedCatalogBrand
-            let rows = try await CatalogStore.shared.fetchAllSets(for: brand)
-            guard !rows.isEmpty else {
-                lastError = "No \(brand.displayTitle) catalog on this device. Turn the game on under Card catalog and download while online."
-                sets = []
-                return
-            }
-            sets = rows.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
-            lastError = nil
-            // FTS5 table is populated during card inserts, so search is ready immediately.
-            isSearchIndexReady = true
-        } catch {
-            lastError = error.localizedDescription
-            sets = []
-        }
+
+        let brand = brandSettings.selectedCatalogBrand
+        let result = await worker.catalogSetsResult(for: brand)
+        guard brand == brandSettings.selectedCatalogBrand else { return }
+
+        sets = result.sets
+        lastError = result.errorMessage
+        // FTS5 is populated during card inserts, so a non-empty catalogue is search-ready.
+        isSearchIndexReady = !result.sets.isEmpty
     }
 
     /// Loads Pokédex rows from SQLite first (synced from R2 by ``CatalogSyncCoordinator``).
@@ -134,7 +129,7 @@ final class CardDataService {
 
     /// Pokémon rows for browsing (R2 list), already sorted by `nationalDexNumber`.
     func nationalDexPokemonSorted() -> [NationalDexPokemon] {
-        nationalDexPokemon.sorted { $0.nationalDexNumber < $1.nationalDexNumber }
+        nationalDexPokemon
     }
 
     /// Clears Pokédex rows when the user disables the Pokémon brand (saves memory; reloaded on next `loadNationalDexPokemon()`).
@@ -236,7 +231,7 @@ final class CardDataService {
 
     /// All sets sorted by `releaseDate` descending (newest first). String compare on ISO-ish dates from catalog.
     func allSetsSortedByReleaseDateNewestFirst() -> [TCGSet] {
-        sets.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+        sets
     }
 
     /// Lookup for ordering cards: `setCode` → `releaseDate` string (ISO-ish; same compare as `sets` ordering).
@@ -429,13 +424,8 @@ final class CardDataService {
 
     /// Loads set list for a brand without mutating browse state.
     func catalogSets(for brand: TCGBrand) async -> [TCGSet] {
-        do {
-            try await CatalogStore.shared.open()
-            let rows = try await CatalogStore.shared.fetchAllSets(for: brand)
-            return rows.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
-        } catch {
-            return []
-        }
+        let result = await worker.catalogSetsResult(for: brand)
+        return result.sets
     }
 
     @ObservationIgnored private var cardsForCatalogBrandCache: [String: [Card]] = [:]

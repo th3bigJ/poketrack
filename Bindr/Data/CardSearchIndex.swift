@@ -1,7 +1,7 @@
 import CryptoKit
 import Foundation
 
-struct CardRef: Hashable, Codable {
+struct CardRef: Hashable, Codable, Sendable {
     var masterCardId: String
     var setCode: String
 }
