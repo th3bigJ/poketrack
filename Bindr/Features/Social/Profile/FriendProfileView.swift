@@ -303,7 +303,7 @@ struct FriendProfileView: View {
                 // bar and looked like a rendering glitch. Favourite card peek
                 // below remains as the personalised visual anchor.)
 
-                if let imageURL = profile.favoriteCardImageURL,
+                if profile.favoriteCardImageURL != nil,
                    let url = profile.resolvedFavoriteCardImageURL {
                     CachedAsyncImage(url: url) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
