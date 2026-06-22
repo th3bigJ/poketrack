@@ -120,7 +120,7 @@ struct BindersRootView: View {
         // All cell frames and the page-frame preference are reported in this
         // named space so the morph overlay and source positions share a single
         // consistent coordinate origin.
-        .coordinateSpace(name: "bindersRoot")
+        .coordinateSpace(.named("bindersRoot"))
         .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
         // Hide the tab bar for the whole presentation (including close
@@ -300,24 +300,39 @@ struct BindersRootView: View {
     /// morph + cover hold + hand-off to ``BinderDetailView``.
     private func beginBinderOpen(_ binder: Binder) {
         guard presentedBinder == nil else { return }
-        guard let frame = binderCellFrames[binder.id],
-              frame.width > 0,
-              frame.height > 0 else {
+        if let frame = binderCellFrames[binder.id],
+           frame.width > 0,
+           frame.height > 0 {
+            presentBinder(binder, sourceFrame: frame)
+        } else {
             // Geometry preferences normally arrive before the cover is
             // tappable. If a tap wins that race, wait one render turn and
-            // open only when the real cover frame exists—never invent a
-            // fallback position that would visibly jump.
+            // open only when the real cover frame exists.
             Task { @MainActor in
                 await Task.yield()
-                guard presentedBinder == nil,
-                      let resolvedFrame = binderCellFrames[binder.id],
-                      resolvedFrame.width > 0,
-                      resolvedFrame.height > 0 else { return }
-                presentBinder(binder, sourceFrame: resolvedFrame)
+                guard presentedBinder == nil else { return }
+                if let resolvedFrame = binderCellFrames[binder.id],
+                   resolvedFrame.width > 0,
+                   resolvedFrame.height > 0 {
+                    presentBinder(binder, sourceFrame: resolvedFrame)
+                } else {
+                    // Fallback to a default frame in the center of the viewport
+                    // so the binder still opens even if GeometryReader/preference fails
+                    // (common in preview canvas or simulator).
+                    #if DEBUG
+                    print("⚠️ BindersRootView: Warning - cell frame not found or zero size. Using center fallback.")
+                    #endif
+                    let screenBounds = UIScreen.main.bounds
+                    let fallbackFrame = CGRect(
+                        x: screenBounds.midX - 79,
+                        y: screenBounds.midY - 111,
+                        width: 158,
+                        height: 223
+                    )
+                    presentBinder(binder, sourceFrame: fallbackFrame)
+                }
             }
-            return
         }
-        presentBinder(binder, sourceFrame: frame)
     }
 
     private func presentBinder(_ binder: Binder, sourceFrame: CGRect) {

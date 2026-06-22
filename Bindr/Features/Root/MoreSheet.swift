@@ -78,20 +78,12 @@ struct MoreView: View {
                                 destination: .legalDisclaimer
                             )
 
-                            Divider()
-                                .overlay(Color.primary.opacity(colorScheme == .dark ? 0.16 : 0.08))
-                                .padding(.leading, 60)
-
                             MoreMenuRow(
                                 title: "Privacy Policy",
                                 systemImage: "hand.raised.fill",
                                 color: .blue,
                                 destination: .privacyPolicy
                             )
-
-                            Divider()
-                                .overlay(Color.primary.opacity(colorScheme == .dark ? 0.16 : 0.08))
-                                .padding(.leading, 60)
 
                             MoreMenuActionRow(
                                 title: "Contact Us",
