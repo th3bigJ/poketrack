@@ -98,7 +98,7 @@ struct CardScannerView: View {
                         CardScannerReticle(
                             alignmentTier: viewModel.alignmentTier,
                             isCapturing: viewModel.isCapturing,
-                            showsAlignmentLabel: true
+                            showsAlignmentLabel: false
                         ) { rect in
                             viewModel.cardNormalizedRect = rect
                         }
@@ -369,7 +369,10 @@ struct CardScannerView: View {
             let selectedBrand = services.brandSettings.selectedCatalogBrand
             viewModel.scanBrand = selectedBrand
             viewModel.requiresBrandSelection = false
-            viewModel.onMatch = { _ in
+            viewModel.onMatch = { result in
+                let defaultVariant = result.card.pricingVariants?.first ?? "normal"
+                selectedVariantsByResultID[result.id] = defaultVariant
+                selectedVariantQuantitiesByResultID[result.id] = [defaultVariant: 1]
                 HapticManager.impact(.medium)
                 currentResultIndex = 0
             }
