@@ -570,23 +570,27 @@ struct DashboardView: View {
                 allLedgerLines = (try? modelContext.fetch(d)) ?? []
 
                 // If a CollectionItem was added, removed, or had its quantity changed, reload inventory
-                // and recompute live value.
-                let freshItems = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
-                let freshSignature = freshItems.reduce(into: (count: 0, totalQty: 0)) {
-                    $0.count += 1
-                    $0.totalQty += $1.quantity
+                // and recompute live value. Use fetchCount first to avoid loading all rows when only
+                // a quantity on an existing item changed (same count); fall back to full fetch only then.
+                let freshCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
+                let currentCount = collectionItems.count
+                let currentTotalQty = collectionItems.reduce(0, { $0 + $1.quantity })
+                let signatureChanged: Bool
+                var freshItems: [CollectionItem]? = nil
+                if freshCount != currentCount {
+                    signatureChanged = true
+                } else {
+                    let all = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
+                    let freshQty = all.reduce(0, { $0 + $1.quantity })
+                    signatureChanged = freshQty != currentTotalQty
+                    if signatureChanged { freshItems = all }
                 }
-                let currentSignature = collectionItems.reduce(into: (count: 0, totalQty: 0)) {
-                    $0.count += 1
-                    $0.totalQty += $1.quantity
-                }
-                guard freshSignature != currentSignature else { return }
+                guard signatureChanged else { return }
                 await reloadDashboardInventory(deferForLaunch: false)
                 // If a concurrent reload was in-flight, reloadDashboardInventory returns early
-                // without updating collectionItems. Use freshItems directly so computeLiveValue
-                // always sees the latest collection regardless.
-                if collectionItems.count != freshSignature.count || collectionItems.reduce(0, { $0 + $1.quantity }) != freshSignature.totalQty {
-                    collectionItems = freshItems
+                // without updating collectionItems. Use the already-fetched items as fallback.
+                if collectionItems.count != freshCount {
+                    collectionItems = freshItems ?? (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
                 }
                 recomputeCollectionStats()
                 if await computeLiveValue() {

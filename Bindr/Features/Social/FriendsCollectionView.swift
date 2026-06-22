@@ -29,6 +29,10 @@ struct FriendsCollectionView: View {
         f.sortBy = .acquiredDateNewest
         return f
     }()
+    private var setNameByCode: [String: String] {
+        Dictionary(uniqueKeysWithValues: services.cardData.sets.map { ($0.setCode, $0.name) })
+    }
+
     private var gridOptions: BrowseGridOptions {
         get { (try? JSONDecoder().decode(BrowseGridOptions.self, from: gridOptionsData)) ?? {
             var o = BrowseGridOptions(); o.showOwned = true; return o
@@ -186,7 +190,7 @@ struct FriendsCollectionView: View {
                 services: services,
                 colorScheme: colorScheme,
                 gridOptions: gridOptions,
-                setName: services.cardData.sets.first { $0.setCode == card.setCode }?.name,
+                setName: setNameByCode[card.setCode],
                 ownedCountBadge: entry?.quantity,
                 alwaysShowOwnedCountBadge: true,
                 footnote: footnote,

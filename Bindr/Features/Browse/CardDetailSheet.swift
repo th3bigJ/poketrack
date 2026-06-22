@@ -8,6 +8,7 @@ struct CardDetailSheet: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
     @Environment(\.suppressTabBarForModalChrome) private var suppressTabBarForModalChrome
+    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
 
     let cards: [Card]
     /// When opened from a specific friend context (profile, trade wall), trade goes directly to them.
@@ -33,6 +34,12 @@ struct CardDetailSheet: View {
     @State private var collectionAddSuccessPresentation: AddToCollectionSuccessPresentation?
     @State private var auraColorsByCardID: [String: [Color]] = [:]
     @State private var auraSourceImageAreaByCardID: [String: CGFloat] = [:]
+    // Deferred so the aura blur doesn't compete with the sheet open/close animation.
+    @State private var isAuraReady = false
+
+    // Keyed by "cardID:revision" to invalidate when the collection changes.
+    @State private var collectionItemsCache: [String: [CollectionItem]] = [:]
+    @State private var ledgerLinesCache: [String: [LedgerLine]] = [:]
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
@@ -62,25 +69,35 @@ struct CardDetailSheet: View {
     private func set(for card: Card) -> TCGSet? { services.cardData.sets.first { $0.setCode == card.setCode } }
 
     private func scopedCollectionItems(for cardID: String) -> [CollectionItem] {
-        _ = services.collectionInventoryRevision
+        let revision = services.collectionInventoryRevision
+        let key = "\(cardID):\(revision)"
+        if let cached = collectionItemsCache[key] { return cached }
         let descriptor = FetchDescriptor<CollectionItem>(
             predicate: #Predicate<CollectionItem> { item in
                 item.cardID == cardID && item.quantity > 0
             },
             sortBy: [SortDescriptor(\.variantKey)]
         )
-        return (try? modelContext.fetch(descriptor)) ?? []
+        let result = (try? modelContext.fetch(descriptor)) ?? []
+        // Defer the cache write so it doesn't mutate @State during body evaluation.
+        Task { @MainActor in collectionItemsCache = [key: result] }
+        return result
     }
 
     private func scopedLedgerLines(for cardID: String) -> [LedgerLine] {
-        _ = services.collectionInventoryRevision
+        let revision = services.collectionInventoryRevision
+        let key = "\(cardID):\(revision)"
+        if let cached = ledgerLinesCache[key] { return cached }
         let descriptor = FetchDescriptor<LedgerLine>(
             predicate: #Predicate<LedgerLine> { line in
                 line.cardID == cardID
             },
             sortBy: [SortDescriptor(\.occurredAt, order: .reverse)]
         )
-        return (try? modelContext.fetch(descriptor)) ?? []
+        let result = (try? modelContext.fetch(descriptor)) ?? []
+        // Defer the cache write so it doesn't mutate @State during body evaluation.
+        Task { @MainActor in ledgerLinesCache = [key: result] }
+        return result
     }
 
     private func showsCollectionSection(for card: Card) -> Bool {
@@ -149,6 +166,18 @@ struct CardDetailSheet: View {
                 suppressTabBarForModalChrome?()
             }
             applyInitialScrollPositionIfNeeded()
+            // Defer aura blur past the ~0.35s sheet presentation animation so it
+            // doesn't compete with Core Animation and cause dropped frames on open.
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(400))
+                isAuraReady = true
+            }
+        }
+        .onDisappear {
+            isAuraReady = false
+            if managesTabBarChrome {
+                restoreTabBarAfterPresentation()
+            }
         }
         .sheet(item: $editingLine) { line in
             EditCollectionItemSheet(
@@ -232,19 +261,32 @@ struct CardDetailSheet: View {
         scrollIndex = index
     }
 
+    private func restoreTabBarAfterPresentation() {
+        if let restoreTabBarChrome {
+            restoreTabBarChrome()
+        } else {
+            services.suppressTabBarUntilTintRestored = false
+            services.isCardDetailPresentationActive = false
+            services.isSealedDetailPresentationActive = false
+            BindrApp.reapplyTabBarAppearanceAfterPresentation(accent: services.theme.accentColor)
+        }
+    }
+
     private func cardPage(for pageCard: Card, pageHeight: CGFloat) -> some View {
         let facts = summaryFacts(for: pageCard)
+        let isInCollection = showsCollectionSection(for: pageCard)
+        let hasDetails = !facts.isEmpty || pageCard.attacks != nil || pageCard.abilities != nil || cleaned(pageCard.rules) != nil || cleaned(pageCard.flavorText) != nil
         return ScrollView {
             VStack(alignment: .leading, spacing: 14) {
-                cardHeroSection(for: pageCard)
+                cardHeroSection(for: pageCard, isInCollection: isInCollection)
                 CardPricingPanel(card: pageCard, useGlass: true)
                     .glassCardStyle(cornerRadius: 26, interactive: false)
                 recentSoldOnEbayButton(for: pageCard)
                     .glassCardStyle(cornerRadius: 26, interactive: false)
-                if showsCollectionSection(for: pageCard) {
+                if isInCollection {
                     collectionSection(for: pageCard)
                 }
-                if !facts.isEmpty || pageCard.attacks != nil || pageCard.abilities != nil || cleaned(pageCard.rules) != nil || cleaned(pageCard.flavorText) != nil {
+                if hasDetails {
                     cardDetailsSection(for: pageCard, facts: facts)
                 }
             }
@@ -260,26 +302,28 @@ struct CardDetailSheet: View {
 
     // MARK: - Hero
 
-    private func cardHeroSection(for card: Card) -> some View {
+    private func cardHeroSection(for card: Card, isInCollection: Bool) -> some View {
         VStack(spacing: 10) {
             cardImage(for: card)
                 .padding(.top, 20)
                 .padding(.horizontal, 6)
-            cardMetaRow(for: card)
+            cardMetaRow(for: card, isInCollection: isInCollection)
         }
     }
 
     private func cardImage(for card: Card) -> some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 30, style: .continuous)
-                .fill(LinearGradient(
-                    colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.52 : 0.36) },
-                    startPoint: .topLeading, endPoint: .bottomTrailing
-                ))
-                .frame(maxWidth: .infinity)
-                .aspectRatio(5 / 7, contentMode: .fit)
-                .blur(radius: colorScheme == .dark ? 40 : 32)
-                .scaleEffect(1.05)
+            if isAuraReady {
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .fill(LinearGradient(
+                        colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.52 : 0.36) },
+                        startPoint: .topLeading, endPoint: .bottomTrailing
+                    ))
+                    .frame(maxWidth: .infinity)
+                    .aspectRatio(5 / 7, contentMode: .fit)
+                    .blur(radius: colorScheme == .dark ? 40 : 32)
+                    .scaleEffect(1.05)
+            }
 
             ProgressiveAsyncImage(
                 lowResURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
@@ -298,12 +342,12 @@ struct CardDetailSheet: View {
         .frame(maxWidth: .infinity)
     }
 
-    private func cardMetaRow(for card: Card) -> some View {
+    private func cardMetaRow(for card: Card, isInCollection: Bool) -> some View {
         VStack(spacing: 12) {
             titleBlock(for: card)
-            
+
             CardActionMenu(
-                isOwned: showsCollectionSection(for: card),
+                isOwned: isInCollection,
                 isWishlisted: isCurrentCardWishlisted,
                 availableVariantKeys: wishlistVariantKeys,
                 card: card,

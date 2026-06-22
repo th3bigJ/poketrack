@@ -110,6 +110,7 @@ private struct CardBrowseDetailPage: View {
     @State private var imageAppeared = false
     @State private var extractedAuraColors: [Color] = []
     @State private var auraSourceImageArea: CGFloat = 0
+    @State private var isAuraReady = false
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
@@ -253,9 +254,15 @@ private struct CardBrowseDetailPage: View {
         .id(card.masterCardId)
         .background(pageBackground.ignoresSafeArea())
         .task(id: card.masterCardId) {
+            isAuraReady = false
             extractedAuraColors = []
             auraSourceImageArea = 0
             await loadWishlistVariantKeys()
+            // Defer aura blur past the ~0.35s push animation so it doesn't compete
+            // with Core Animation during the navigation transition.
+            try? await Task.sleep(for: .milliseconds(400))
+            guard !Task.isCancelled else { return }
+            isAuraReady = true
         }
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
@@ -345,34 +352,36 @@ private struct CardBrowseDetailPage: View {
 
     private var cardImageToMetaFadeAura: some View {
         VStack(spacing: 0) {
-            RoundedRectangle(cornerRadius: 34, style: .continuous)
-                .fill(
-                    LinearGradient(
-                        colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.62 : 0.42) },
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
+            if isAuraReady {
+                RoundedRectangle(cornerRadius: 34, style: .continuous)
+                    .fill(
+                        LinearGradient(
+                            colors: cardAuraColors.map { $0.opacity(colorScheme == .dark ? 0.62 : 0.42) },
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
                     )
-                )
-                .frame(maxWidth: .infinity)
-                .aspectRatio(5 / 7, contentMode: .fit)
-                .blur(radius: colorScheme == .dark ? 32 : 26)
-                .scaleEffect(1.16)
+                    .frame(maxWidth: .infinity)
+                    .aspectRatio(5 / 7, contentMode: .fit)
+                    .blur(radius: colorScheme == .dark ? 32 : 26)
+                    .scaleEffect(1.16)
 
-            LinearGradient(
-                colors: [
-                    cardAuraColors[0].opacity(colorScheme == .dark ? 0.34 : 0.20),
-                    cardAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
-                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.14 : 0.09),
-                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.08 : 0.05),
-                    cardAuraColors[2].opacity(colorScheme == .dark ? 0.04 : 0.02),
-                    .clear
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .frame(height: 330)
-            .blur(radius: colorScheme == .dark ? 20 : 15)
-            .offset(y: -8)
+                LinearGradient(
+                    colors: [
+                        cardAuraColors[0].opacity(colorScheme == .dark ? 0.34 : 0.20),
+                        cardAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
+                        cardAuraColors[2].opacity(colorScheme == .dark ? 0.14 : 0.09),
+                        cardAuraColors[2].opacity(colorScheme == .dark ? 0.08 : 0.05),
+                        cardAuraColors[2].opacity(colorScheme == .dark ? 0.04 : 0.02),
+                        .clear
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 330)
+                .blur(radius: colorScheme == .dark ? 20 : 15)
+                .offset(y: -8)
+            }
         }
         .allowsHitTesting(false)
     }
@@ -446,6 +455,7 @@ private struct CardBrowseDetailPage: View {
 
     private var cardImage: some View {
         ZStack {
+            if isAuraReady {
             // Type-driven aura to echo colors from each card art while keeping contrast subtle.
             RoundedRectangle(cornerRadius: 30, style: .continuous)
                 .fill(
@@ -459,6 +469,7 @@ private struct CardBrowseDetailPage: View {
                 .aspectRatio(5 / 7, contentMode: .fit)
                 .blur(radius: colorScheme == .dark ? 30 : 24)
                 .scaleEffect(1.12)
+            }
 
             ProgressiveAsyncImage(
                 lowResURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc),

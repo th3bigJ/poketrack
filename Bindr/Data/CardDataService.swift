@@ -329,10 +329,15 @@ final class CardDataService {
 
     /// All cards in the catalog that include a dex id (for species detail).
     func cards(matchingNationalDex dexId: Int) async -> [Card] {
-        var out: [Card] = []
-        for set in sets {
-            let cards = await loadCards(forSetCode: set.setCode)
-            out.append(contentsOf: cards.filter { $0.dexIds?.contains(dexId) == true })
+        let allSets = sets
+        let out: [Card] = await withTaskGroup(of: [Card].self) { group in
+            for set in allSets {
+                let code = set.setCode
+                group.addTask { await self.loadCards(forSetCode: code).filter { $0.dexIds?.contains(dexId) == true } }
+            }
+            var collected: [Card] = []
+            for await batch in group { collected.append(contentsOf: batch) }
+            return collected
         }
         return cardsSortedByReleaseDateNewestFirst(out)
     }

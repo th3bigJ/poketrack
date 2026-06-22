@@ -500,8 +500,13 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
         let endIndex: Int
     }
 
-    private func makeRows(cols: Int) -> [RowRange] {
-        stride(from: 0, to: items.count, by: cols).map { rowStart in
+    @State private var cachedRows: [RowRange] = []
+    @State private var cachedCount: Int = -1
+    @State private var cachedColumns: Int = -1
+
+    private func buildRows() -> [RowRange] {
+        let cols = max(columns, 1)
+        return stride(from: 0, to: items.count, by: cols).map { rowStart in
             let rowEnd = min(rowStart + cols, items.count)
             return RowRange(id: "\(items[rowStart].id)|\(rowStart)", startIndex: rowStart, endIndex: rowEnd)
         }
@@ -509,9 +514,10 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
 
     var body: some View {
         let cols = max(columns, 1)
-        let rows = makeRows(cols: cols)
+        // Use cachedRows when available; fall back to building inline on first render.
+        let displayRows: [RowRange] = (cachedCount == items.count && cachedColumns == columns) ? cachedRows : buildRows()
         LazyVStack(spacing: spacing) {
-            ForEach(rows) { row in
+            ForEach(displayRows) { row in
                 HStack(spacing: spacing) {
                     ForEach(row.startIndex..<row.endIndex, id: \.self) { idx in
                         cell(items[idx]).frame(maxWidth: .infinity)
@@ -526,6 +532,23 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .onAppear {
+            if cachedCount != items.count || cachedColumns != columns {
+                cachedRows = buildRows()
+                cachedCount = items.count
+                cachedColumns = columns
+            }
+        }
+        .onChange(of: items.count) { _, newCount in
+            cachedRows = buildRows()
+            cachedCount = newCount
+            cachedColumns = columns
+        }
+        .onChange(of: columns) { _, newCols in
+            cachedRows = buildRows()
+            cachedCount = items.count
+            cachedColumns = newCols
+        }
     }
 }
 
@@ -792,6 +815,11 @@ struct BrowseView: View {
     private static let catalogInitialBatchSize = 36
     private static let pageSize = 18
     private static let prefetchBuffer = 8
+    private static let resultCountFormatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.numberStyle = .decimal
+        return f
+    }()
 
     var body: some View {
         Group {
@@ -1071,13 +1099,14 @@ struct BrowseView: View {
         let snapshot = browseFeedSnapshot
         let usesCatalogFeed = isUsingCatalogFeedSelection
         let ownedQuantities = ownedQuantityByCardID
+        let wishlistedIDs = visibleWishlistedCardIDs
         VStack(spacing: 0) {
             EagerVGrid(items: snapshot.rows, columns: safeColumnCount, spacing: 12) { row in
                 BrowseCardGridButton(
                     row: row,
                     gridOptions: gridOptions,
                     isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
-                    isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
+                    isWishlisted: wishlistedIDs.contains(row.card.masterCardId),
                     ownedCountBadge: ownedQuantities[row.card.masterCardId],
                     isMultiSelectActive: isMultiSelectActive,
                     services: services,
@@ -1113,9 +1142,7 @@ struct BrowseView: View {
     }
 
     private var formattedResultCount: String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter.string(from: NSNumber(value: visibleBrowseResultCount)) ?? "\(visibleBrowseResultCount)"
+        Self.resultCountFormatter.string(from: NSNumber(value: visibleBrowseResultCount)) ?? "\(visibleBrowseResultCount)"
     }
 
     private var browseSearchPlaceholder: String {
@@ -1318,6 +1345,7 @@ struct BrowseView: View {
             return allVariantRows
         }()
         let ownedQuantities = ownedQuantityByCardID
+        let wishlistedIDs = visibleWishlistedCardIDs
         if inlineDetailLoading {
             ProgressView("Loading cards…")
                 .frame(maxWidth: .infinity, minHeight: 280)
@@ -1361,7 +1389,7 @@ struct BrowseView: View {
                                 gridOptions: gridOptions,
                                 setName: cachedSetNameByCode[row.card.setCode],
                                 isOwned: variantOwnedKeys.contains(variantCompositeKey),
-                                isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
+                                isWishlisted: wishlistedIDs.contains(row.card.masterCardId),
                                 ownedCountBadge: variantOwnedQuantities[variantCompositeKey],
                                 variantLabel: variantTitle(row.variant),
                                 variantPricingKey: row.variant
@@ -1388,7 +1416,7 @@ struct BrowseView: View {
                                 gridOptions: gridOptions,
                                 setName: cachedSetNameByCode[card.setCode],
                                 isOwned: ownedCardIDsCache.contains(card.masterCardId),
-                                isWishlisted: visibleWishlistedCardIDs.contains(card.masterCardId),
+                                isWishlisted: wishlistedIDs.contains(card.masterCardId),
                                 ownedCountBadge: ownedQuantities[card.masterCardId]
                             )
                             .overlay(alignment: .topTrailing) {

@@ -5,6 +5,9 @@ import Observation
 @MainActor
 final class PricingService {
     private static let usdToGbpDefaultsKey = "pricing.usd_to_gbp.last_known"
+    private static let ptSuffixRegex = try! NSRegularExpression(pattern: #"^([a-z]+)(\d+)pt(\d+)$"#)
+    private static let numericSuffixRegex = try! NSRegularExpression(pattern: #"^([a-z]+)(\d+)$"#)
+    private static let trailingDigitsRegex = try! NSRegularExpression(pattern: #"\d+$"#)
     private(set) var usdToGbp: Double = 0.79
     private(set) var lastFXError: String?
 
@@ -348,8 +351,8 @@ final class PricingService {
             return dottedSetPrefixToPtCollapsed(s)
         }
         if s.contains("pt") {
-            if let regex = try? NSRegularExpression(pattern: #"^([a-z]+)(\d+)pt(\d+)$"#, options: []),
-               let m = regex.firstMatch(in: s, range: NSRange(s.startIndex..., in: s)),
+            let regex = PricingService.ptSuffixRegex
+            if let m = regex.firstMatch(in: s, range: NSRange(s.startIndex..., in: s)),
                m.numberOfRanges == 4,
                let r1 = Range(m.range(at: 1), in: s),
                let r2 = Range(m.range(at: 2), in: s),
@@ -372,7 +375,8 @@ final class PricingService {
         let b = String(dotted[dotted.index(after: dot)...])
         guard b.allSatisfy({ $0.isNumber }) else { return dotted }
         var collapsed = a
-        if let range = a.range(of: #"\d+$"#, options: .regularExpression) {
+        let trailingMatch = PricingService.trailingDigitsRegex.firstMatch(in: a, range: NSRange(a.startIndex..., in: a))
+        if let tm = trailingMatch, let range = Range(tm.range, in: a) {
             let p = String(a[..<range.lowerBound])
             let tail = String(a[range])
             if let n = Int(tail) {
@@ -385,8 +389,8 @@ final class PricingService {
     /// Collapses `me03`→`me3`, keeps `sm4`, `base1`, etc.
     private static func normalizeTcgdxSetPrefix(_ s: String) -> String {
         let lower = s.lowercased()
-        guard let regex = try? NSRegularExpression(pattern: #"^([a-z]+)(\d+)$"#, options: []),
-              let m = regex.firstMatch(in: lower, range: NSRange(lower.startIndex..., in: lower)),
+        let regex = PricingService.numericSuffixRegex
+        guard let m = regex.firstMatch(in: lower, range: NSRange(lower.startIndex..., in: lower)),
               m.numberOfRanges == 3,
               let r1 = Range(m.range(at: 1), in: lower),
               let r2 = Range(m.range(at: 2), in: lower) else {

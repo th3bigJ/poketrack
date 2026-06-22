@@ -154,6 +154,8 @@ final class CollectionItem {
         self.sealedProductId = sealedProductId
         self.sealedStatus = sealedStatus
     }
+
+    #Index<CollectionItem>([\.cardID], [\.variantKey], [\.cardID, \.variantKey])
 }
 
 // MARK: - Ledger (immutable history lines)
@@ -238,6 +240,8 @@ final class LedgerLine {
         self.externalRef = externalRef
         self.transactionGroupId = transactionGroupId
     }
+
+    #Index<LedgerLine>([\.cardID], [\.variantKey], [\.cardID, \.variantKey])
 }
 
 // MARK: - Cost lots (basis for P/L)

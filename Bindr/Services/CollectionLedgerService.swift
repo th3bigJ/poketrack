@@ -47,10 +47,18 @@ final class CollectionLedgerService {
     ) throws {
         guard quantity > 0 else { return }
         if !store.isPremium {
-            let existing = try modelContext.fetch(FetchDescriptor<CollectionItem>())
-            let isNewStack = !existing.contains { $0.cardID == cardID && $0.variantKey == variantKey && $0.itemKind == (gradingCompany != nil ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue) && $0.gradingCompany == gradingCompany && $0.grade == grade }
-            if isNewStack && existing.count >= CollectionFreeTier.maxItems {
-                throw CollectionLedgerError.freeTierLimitReached
+            let itemKindValue = (gradingCompany != nil ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue)
+            var stackDesc = FetchDescriptor<CollectionItem>(
+                predicate: #Predicate { $0.cardID == cardID && $0.variantKey == variantKey && $0.itemKind == itemKindValue }
+            )
+            stackDesc.fetchLimit = 1
+            let matchingStacks = try modelContext.fetch(stackDesc)
+            let isNewStack = !matchingStacks.contains { $0.gradingCompany == gradingCompany && $0.grade == grade }
+            if isNewStack {
+                let totalCount = try modelContext.fetchCount(FetchDescriptor<CollectionItem>())
+                if totalCount >= CollectionFreeTier.maxItems {
+                    throw CollectionLedgerError.freeTierLimitReached
+                }
             }
         }
 

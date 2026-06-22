@@ -48,8 +48,13 @@ final class OfflineImageDownloadService {
 
     /// After catalog sync adds/removes cards, refresh local files for every brand with the pack enabled.
     func reconcileAfterCatalogSync(enabledBrands: Set<TCGBrand>, nationalDexPokemon: [NationalDexPokemon], sealedProducts: [SealedProduct]) async {
-        for brand in enabledBrands where settings.isOfflinePackEnabled(for: brand) {
-            await performDownload(brand: brand, nationalDexPokemon: nationalDexPokemon, sealedProducts: sealedProducts, pruneOrphans: true)
+        let brands = enabledBrands.filter { settings.isOfflinePackEnabled(for: $0) }
+        await withTaskGroup(of: Void.self) { group in
+            for brand in brands {
+                group.addTask {
+                    await self.performDownload(brand: brand, nationalDexPokemon: nationalDexPokemon, sealedProducts: sealedProducts, pruneOrphans: true)
+                }
+            }
         }
     }
 

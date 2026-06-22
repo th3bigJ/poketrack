@@ -28,6 +28,7 @@ struct FeedView: View {
     @State private var isInitialLoading = false
     @State private var isLoadingMore = false
     @State private var errorMessage: String?
+    @State private var feedSections: [FeedSection] = []
 
     private var groupedItems: [GroupedFeedItem] {
         // Only show actual content posts (binders, pulls, etc) in the main Feed list.
@@ -84,10 +85,14 @@ struct FeedView: View {
         .onChange(of: services.socialFeed.selectedScope) { _, _ in
             Task { await refresh() }
         }
+        .onChange(of: services.socialFeed.items.count) { _, _ in
+            feedSections = groupRowsByDate(groupedItems)
+        }
         .task {
             await refresh()
         }
         .onAppear {
+            feedSections = groupRowsByDate(groupedItems)
             services.socialFeed.clearUnreadState()
             services.socialPush.clearAppBadgeCount()
         }
@@ -158,8 +163,7 @@ struct FeedView: View {
     }
 
     private var feedList: some View {
-        let rows = groupedItems
-        let sections = groupRowsByDate(rows)
+        let lastRowID = groupedItems.last?.id
 
         return ScrollView {
             // The picker lives OUTSIDE the padded LazyVStack so it inherits
@@ -170,12 +174,12 @@ struct FeedView: View {
                 tabPickerHeader
 
                 LazyVStack(spacing: 16) {
-                    ForEach(sections, id: \.title) { section in
+                    ForEach(feedSections, id: \.title) { section in
                         Section {
                             ForEach(section.rows) { group in
                                 FeedItemView(group: group)
                                     .onAppear {
-                                        guard group.id == rows.last?.id else { return }
+                                        guard group.id == lastRowID else { return }
                                         Task { await loadMore() }
                                     }
                             }

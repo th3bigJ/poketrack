@@ -678,8 +678,9 @@ struct RootView: View {
                         NavigationStack {
                             DashboardView(onViewAllActivity: {
                                 suppressMorePathReset = true
-                                moreNavigationPath = NavigationPath()
-                                moreNavigationPath.append(SideMenuPage.transactions)
+                                var path = NavigationPath()
+                                path.append(SideMenuPage.transactions)
+                                moreNavigationPath = path
                                 selectedTab = .more
                             }, onOpenScanner: {
                                 showCardScanner = true
@@ -700,8 +701,9 @@ struct RootView: View {
                                 selectedTab = .collect
                             }, onOpenBrowse: {
                                 suppressMorePathReset = true
-                                moreNavigationPath = NavigationPath()
-                                moreNavigationPath.append(SideMenuPage.decks)
+                                var path = NavigationPath()
+                                path.append(SideMenuPage.decks)
+                                moreNavigationPath = path
                                 selectedTab = .more
                             }, onOpenActionableTrades: { tradeID in
                                 if let tradeID,

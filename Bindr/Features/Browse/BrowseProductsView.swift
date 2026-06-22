@@ -690,8 +690,10 @@ private struct SealedThumbnailView: View {
 struct SealedProductBrowseDetailView: View {
     let products: [SealedProduct]
 
+    @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var bindrAccent
     @Environment(\.suppressTabBarForModalChrome) private var suppressTabBarForModalChrome
+    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
     @Environment(\.colorScheme) private var colorScheme
     @State private var scrollIndex: Int?
     @State private var auraColorsByProductID: [Int: [Color]] = [:]
@@ -747,6 +749,9 @@ struct SealedProductBrowseDetailView: View {
         .onAppear {
             suppressTabBarForModalChrome?()
         }
+        .onDisappear {
+            restoreTabBarAfterPresentation()
+        }
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
@@ -768,6 +773,17 @@ struct SealedProductBrowseDetailView: View {
         }
         .ignoresSafeArea()
     }
+
+    private func restoreTabBarAfterPresentation() {
+        if let restoreTabBarChrome {
+            restoreTabBarChrome()
+        } else {
+            services.suppressTabBarUntilTintRestored = false
+            services.isCardDetailPresentationActive = false
+            services.isSealedDetailPresentationActive = false
+            BindrApp.reapplyTabBarAppearanceAfterPresentation(accent: services.theme.accentColor)
+        }
+    }
 }
 
 private struct SealedProductDetailPage: View {
@@ -781,6 +797,7 @@ private struct SealedProductDetailPage: View {
     var onAuraColors: (([Color]) -> Void)? = nil
 
     @State private var auraColors: [Color] = []
+    @State private var isAuraReady = false
     @State private var showAddSheet = false
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
@@ -832,7 +849,13 @@ private struct SealedProductDetailPage: View {
             auraBackground
                 .ignoresSafeArea()
         )
-        .onAppear { refreshWishlistState() }
+        .onAppear {
+            refreshWishlistState()
+            Task { @MainActor in
+                try? await Task.sleep(for: .milliseconds(400))
+                isAuraReady = true
+            }
+        }
         .sheet(isPresented: $showAddSheet) {
             AddSealedToCollectionSheet(product: product).environment(services)
         }
@@ -885,32 +908,34 @@ private struct SealedProductDetailPage: View {
 
     private var auraBackground: some View {
         VStack(spacing: 0) {
-            RoundedRectangle(cornerRadius: 34, style: .continuous)
-                .fill(LinearGradient(
-                    colors: resolvedAuraColors.map { $0.opacity(colorScheme == .dark ? 0.62 : 0.42) },
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ))
-                .frame(maxWidth: .infinity)
-                .aspectRatio(4 / 3, contentMode: .fit)
-                .blur(radius: colorScheme == .dark ? 32 : 26)
-                .scaleEffect(1.16)
+            if isAuraReady {
+                RoundedRectangle(cornerRadius: 34, style: .continuous)
+                    .fill(LinearGradient(
+                        colors: resolvedAuraColors.map { $0.opacity(colorScheme == .dark ? 0.62 : 0.42) },
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+                    .frame(maxWidth: .infinity)
+                    .aspectRatio(4 / 3, contentMode: .fit)
+                    .blur(radius: colorScheme == .dark ? 32 : 26)
+                    .scaleEffect(1.16)
 
-            LinearGradient(
-                colors: [
-                    resolvedAuraColors[0].opacity(colorScheme == .dark ? 0.34 : 0.20),
-                    resolvedAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
-                    resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.14 : 0.09),
-                    resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.08 : 0.05),
-                    resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.04 : 0.02),
-                    .clear
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .frame(height: 330)
-            .blur(radius: colorScheme == .dark ? 20 : 15)
-            .offset(y: -8)
+                LinearGradient(
+                    colors: [
+                        resolvedAuraColors[0].opacity(colorScheme == .dark ? 0.34 : 0.20),
+                        resolvedAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
+                        resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.14 : 0.09),
+                        resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.08 : 0.05),
+                        resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.04 : 0.02),
+                        .clear
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: 330)
+                .blur(radius: colorScheme == .dark ? 20 : 15)
+                .offset(y: -8)
+            }
         }
         .allowsHitTesting(false)
     }
@@ -1312,16 +1337,18 @@ private struct SealedProductDetailPage: View {
             RoundedRectangle(cornerRadius: 18, style: .continuous)
                 .stroke(Color.white.opacity(colorScheme == .dark ? 0.16 : 0.22), lineWidth: 1)
         )
-        .background(
-            RoundedRectangle(cornerRadius: 30, style: .continuous)
-                .fill(LinearGradient(
-                    colors: resolvedAuraColors.map { $0.opacity(colorScheme == .dark ? 0.78 : 0.56) },
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ))
-                .blur(radius: colorScheme == .dark ? 30 : 24)
-                .scaleEffect(1.12)
-        )
+        .background {
+            if isAuraReady {
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .fill(LinearGradient(
+                        colors: resolvedAuraColors.map { $0.opacity(colorScheme == .dark ? 0.78 : 0.56) },
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+                    .blur(radius: colorScheme == .dark ? 30 : 24)
+                    .scaleEffect(1.12)
+            }
+        }
         .frame(maxWidth: .infinity)
     }
 
