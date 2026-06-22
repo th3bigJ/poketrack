@@ -356,6 +356,10 @@ struct BindrPageBackground: View {
         ZStack {
             Color(uiColor: .systemBackground)
 
+            if services?.theme.backgroundStyle == .celestial {
+                celestialBackground
+            }
+
             if services?.theme.backgroundGlowEnabled ?? true {
                 if services?.theme.isLogoThemeSelected == true {
                     logoThemeGlow
@@ -370,6 +374,24 @@ struct BindrPageBackground: View {
             Color.primary.opacity(0.005)
                 .blendMode(colorScheme == .dark ? .overlay : .multiply)
         }
+    }
+
+    private var celestialBackground: some View {
+        GeometryReader { geo in
+            Image("CelestialBackground")
+                .resizable()
+                .scaledToFill()
+                .frame(width: geo.size.width, height: geo.size.height)
+                .clipped()
+                .saturation(colorScheme == .dark ? 0.72 : 0.92)
+                .brightness(colorScheme == .dark ? -0.28 : 0)
+                .opacity(colorScheme == .dark ? 0.62 : 0.78)
+                .overlay {
+                    (colorScheme == .dark ? Color.black.opacity(0.42) : Color.white.opacity(0.12))
+                }
+        }
+        .clipped()
+        .allowsHitTesting(false)
     }
 
     @ViewBuilder

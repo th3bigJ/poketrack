@@ -13,6 +13,7 @@ struct ThemeCustomizationSections: View {
         VStack(spacing: BindrSpacing.xl) {
             appearanceCard
             glowCard
+            backgroundStyleCard
             accentCard
         }
     }
@@ -51,6 +52,48 @@ struct ThemeCustomizationSections: View {
             .onChange(of: services.theme.backgroundGlowEnabled) {
                 Haptics.lightImpact()
             }
+        }
+    }
+
+    // MARK: Background style
+
+    private var backgroundStyleCard: some View {
+        themeCardSection(
+            title: "Background Style",
+            footer: "Choose the atmosphere used across Bindr. Celestial adapts automatically for light and dark mode."
+        ) {
+            Picker(
+                "Background Style",
+                selection: Bindable(services.theme).backgroundStyle
+            ) {
+                ForEach(ThemeSettings.BackgroundStyle.allCases) { style in
+                    Text(style.displayName).tag(style)
+                }
+            }
+            .pickerStyle(.segmented)
+            .onChange(of: services.theme.backgroundStyle) {
+                Haptics.lightImpact()
+            }
+
+            backgroundStylePreview
+                .frame(height: 112)
+                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(Color.primary.opacity(0.10), lineWidth: 1)
+                }
+        }
+    }
+
+    @ViewBuilder
+    private var backgroundStylePreview: some View {
+        switch services.theme.backgroundStyle {
+        case .classic:
+            BindrPageBackground()
+        case .celestial:
+            Image("CelestialBackground")
+                .resizable()
+                .scaledToFill()
         }
     }
 

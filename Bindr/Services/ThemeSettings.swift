@@ -20,6 +20,20 @@ final class ThemeSettings {
         }
     }
 
+    enum BackgroundStyle: String, CaseIterable, Identifiable {
+        case classic
+        case celestial
+
+        var id: String { rawValue }
+
+        var displayName: String {
+            switch self {
+            case .classic: return "Classic"
+            case .celestial: return "Celestial"
+            }
+        }
+    }
+
     static let logoThemeID = "bindr-logo"
     static let logoThemeAccentHex = "8b5cf6"
     static let logoThemeColors = [
@@ -51,6 +65,7 @@ final class ThemeSettings {
     private let accentColorKey = "user_accent_color_hex"
     private let appearanceKey = "user_app_appearance"
     private let backgroundGlowKey = "user_background_glow_enabled"
+    private let backgroundStyleKey = "user_background_style"
 
     var accentColorHex: String {
         didSet {
@@ -69,6 +84,13 @@ final class ThemeSettings {
     var backgroundGlowEnabled: Bool {
         didSet {
             Self.saveLocal(backgroundGlowEnabled, forKey: backgroundGlowKey)
+            AppPreferencesBackup.notifyDidChange()
+        }
+    }
+
+    var backgroundStyle: BackgroundStyle {
+        didSet {
+            Self.saveLocal(backgroundStyle.rawValue, forKey: backgroundStyleKey)
             AppPreferencesBackup.notifyDidChange()
         }
     }
@@ -139,9 +161,13 @@ final class ThemeSettings {
             self.backgroundGlowEnabled = true
         }
 
+        let savedBackgroundStyle = Self.localString(forKey: backgroundStyleKey) ?? BackgroundStyle.classic.rawValue
+        self.backgroundStyle = BackgroundStyle(rawValue: savedBackgroundStyle) ?? .classic
+
         Self.saveLocal(accentColorHex, forKey: accentColorKey)
         Self.saveLocal(appearance.rawValue, forKey: appearanceKey)
         Self.saveLocal(backgroundGlowEnabled, forKey: backgroundGlowKey)
+        Self.saveLocal(backgroundStyle.rawValue, forKey: backgroundStyleKey)
 
         NotificationCenter.default.addObserver(
             forName: .appPreferencesDidRestore,
@@ -165,6 +191,11 @@ final class ThemeSettings {
         }
         if let glow = Self.localBool(forKey: backgroundGlowKey), glow != backgroundGlowEnabled {
             backgroundGlowEnabled = glow
+        }
+        if let raw = Self.localString(forKey: backgroundStyleKey),
+           let parsed = BackgroundStyle(rawValue: raw),
+           parsed != backgroundStyle {
+            backgroundStyle = parsed
         }
     }
     

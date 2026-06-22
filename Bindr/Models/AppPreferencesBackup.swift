@@ -8,6 +8,7 @@ struct AppPreferencesBackup: Codable, Equatable {
     var themeAccentColorHex: String?
     var themeAppearance: String?
     var themeBackgroundGlowEnabled: Bool?
+    var themeBackgroundStyle: String?
     var offlineStrictMode: Bool?
     var offlinePackPokemonEnabled: Bool?
     var collectionFilters: BrowseCardGridFilters?
@@ -33,6 +34,7 @@ struct AppPreferencesBackup: Codable, Equatable {
             themeAccentColorHex: defaults.string(forKey: Keys.themeAccentColorHex),
             themeAppearance: defaults.string(forKey: Keys.themeAppearance),
             themeBackgroundGlowEnabled: boolIfPresent(defaults, key: Keys.themeBackgroundGlowEnabled),
+            themeBackgroundStyle: defaults.string(forKey: Keys.themeBackgroundStyle),
             offlineStrictMode: boolIfPresent(defaults, key: Keys.offlineStrictMode),
             offlinePackPokemonEnabled: boolIfPresent(defaults, key: Keys.offlinePackPokemon),
             collectionFilters: decodeJSON(BrowseCardGridFilters.self, key: Keys.collectionFiltersJSON, defaults: defaults),
@@ -71,6 +73,9 @@ struct AppPreferencesBackup: Codable, Equatable {
         }
         if let themeBackgroundGlowEnabled {
             defaults.set(themeBackgroundGlowEnabled, forKey: Keys.themeBackgroundGlowEnabled)
+        }
+        if let themeBackgroundStyle {
+            defaults.set(themeBackgroundStyle, forKey: Keys.themeBackgroundStyle)
         }
 
         if let offlineStrictMode {
@@ -125,6 +130,7 @@ struct AppPreferencesBackup: Codable, Equatable {
         static let themeAccentColorHex = themePrefix + "user_accent_color_hex"
         static let themeAppearance = themePrefix + "user_app_appearance"
         static let themeBackgroundGlowEnabled = themePrefix + "user_background_glow_enabled"
+        static let themeBackgroundStyle = themePrefix + "user_background_style"
         static let offlineStrictMode = "offline_strict_no_cdn"
         static let offlinePackPokemon = "offline_pack_pokemon"
         static let collectionFiltersJSON = "collectFiltersJSON"

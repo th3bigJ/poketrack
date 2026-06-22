@@ -17,7 +17,7 @@ struct OnboardingThemeView: View {
                 VStack(alignment: .leading, spacing: BindrSpacing.xl) {
                     OnboardingHeadline(
                         title: "Make it\nyours.",
-                        subtitle: "Choose light or dark mode, toggle the background glow, and pick an accent color — you can change these anytime in Settings."
+                        subtitle: "Choose light or dark mode, set your background style and glow, then pick an accent color — you can change these anytime in Settings."
                     )
 
                     ThemeCustomizationSections()
