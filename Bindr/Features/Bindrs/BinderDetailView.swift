@@ -62,11 +62,6 @@ struct BinderDetailView: View {
     /// first card page (page 1). Tracks whether we're still in the entry
     /// "cover" moment so chrome can fade in at the right point.
     @State private var hasAutoAdvancedFromCover = false
-    /// When the cover auto-curls into the first card page, start the
-    /// wider inner page just a little smaller and ease it to full size.
-    /// This softens the portrait-cover → landscape-grid size change
-    /// without cropping the cover itself.
-    @State private var innerPageRevealScale: CGFloat = 1
     /// Wall-clock moment (`CACurrentMediaTime` reference) at which the
     /// auto page-curl from the cover finished. Used by ``handleBackTap``
     /// to decide whether to play the full reverse curl or skip straight
@@ -352,7 +347,6 @@ struct BinderDetailView: View {
                     try? await Task.sleep(nanoseconds: 1_400_000_000)
                     await MainActor.run {
                         guard !hasAutoAdvancedFromCover else { return }
-                        innerPageRevealScale = 0.94
                         hasAutoAdvancedFromCover = true
                         if cardPageCount > 0 {
                             currentPage = 1
@@ -364,14 +358,6 @@ struct BinderDetailView: View {
                         // open morph lands.
                         UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     }
-
-                    try? await Task.sleep(nanoseconds: 180_000_000)
-                    await MainActor.run {
-                        withAnimation(.easeOut(duration: 0.55)) {
-                            innerPageRevealScale = 1
-                        }
-                    }
-
                     // Stamp the moment the page-curl landed so
                     // ``handleBackTap`` can decide whether a back tap
                     // counts as a "quick back" (skip the reverse curl).
@@ -652,7 +638,6 @@ struct BinderDetailView: View {
                     coverPageSurface(pageSize: pageSize)
                 } else {
                     pageSurface(pageIdx: cardPageIndex(for: pageIdx), pageSize: pageSize)
-                        .scaleEffect(innerPageScale(for: pageIdx), anchor: .center)
                 }
             }
             .frame(width: pageSize.width, height: pageSize.height)
@@ -727,10 +712,6 @@ struct BinderDetailView: View {
             width: coverWidth,
             height: coverHeight
         )
-    }
-
-    private func innerPageScale(for pageIdx: Int) -> CGFloat {
-        entryFromGrid && pageIdx == 1 && hasAutoAdvancedFromCover ? innerPageRevealScale : 1
     }
 
     private func binderPageSize(in available: CGSize) -> CGSize {

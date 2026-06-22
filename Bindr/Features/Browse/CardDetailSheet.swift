@@ -254,6 +254,7 @@ struct CardDetailSheet: View {
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
         }
+        .id(pageCard.masterCardId)
     }
 
     // MARK: - Hero

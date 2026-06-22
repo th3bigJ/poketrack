@@ -52,10 +52,8 @@ struct BindersRootView: View {
     /// Stable grid cell frame captured at the exact moment of tapping.
     /// Persistent across the entire presentation, preventing coordinate resetting or unmounting.
     @State private var activeSourceFrame: CGRect = .zero
-    /// The tapped grid cover stays visible until the morph overlay has been
-    /// positioned over the exact same frame. Both visibility changes happen
-    /// in one animation-disabled transaction so there is no empty or shifted
-    /// first frame between the grid and the opening animation.
+    /// Keeps the tapped grid cover visible until the morph overlay is
+    /// positioned and opaque over the exact same frame.
     @State private var sourceCoverIsHidden = false
 
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
@@ -120,13 +118,13 @@ struct BindersRootView: View {
         // All cell frames and the page-frame preference are reported in this
         // named space so the morph overlay and source positions share a single
         // consistent coordinate origin.
-        .coordinateSpace(.named("bindersRoot"))
+        .coordinateSpace(name: "bindersRoot")
         .bindrPageBackground()
         .toolbar(.hidden, for: .navigationBar)
         // Hide the tab bar for the whole presentation (including close
         // animation). RootView also watches ``ChromeScrollCoordinator.overlaySuppressesTabBar``
         // because nested `.toolbar` modifiers alone don't always reach TabView chrome.
-        .toolbar(presentedBinder != nil ? .hidden : .automatic, for: .tabBar)
+        .toolbar(presentedBinder != nil ? .hidden : .visible, for: .tabBar)
         .onChange(of: presentedBinder != nil) { _, isPresented in
             chromeScroll.setOverlaySuppressesTabBar(isPresented)
         }
@@ -210,54 +208,47 @@ struct BindersRootView: View {
                 // touch more vertical spacing between rows.
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 158), spacing: 14)], spacing: 16) {
                     ForEach(visibleBinders) { binder in
-                        // Use a plain ZStack + onTapGesture rather than Button+contextMenu.
-                        // On iOS 26 the context menu long-press recogniser conflicts with
-                        // the Button tap action, causing the open gesture to flash and die.
-                        // Separating tap and context-menu onto a plain view eliminates the
-                        // gesture competition entirely.
-                        ZStack(alignment: .topTrailing) {
-                            BinderCardCell(
-                                binder: binder,
-                                onURLsLoaded: { urls in
-                                    gridResolvedURLs[binder.id] = urls
-                                },
-                                onValueLoaded: { val in
-                                    gridResolvedValues[binder.id] = val
-                                }
-                            )
-                            .background(
-                                GeometryReader { coverGeo in
-                                    Color.clear.preference(
-                                        key: BinderCellFramePreferenceKey.self,
-                                        value: [
-                                            binder.id: coverGeo.frame(in: .named("bindersRoot"))
-                                        ]
-                                    )
-                                }
-                            )
+                        Button {
+                            beginBinderOpen(binder)
+                        } label: {
+                            ZStack(alignment: .topTrailing) {
+                                BinderCardCell(
+                                    binder: binder,
+                                    onURLsLoaded: { urls in
+                                        gridResolvedURLs[binder.id] = urls
+                                    },
+                                    onValueLoaded: { val in
+                                        gridResolvedValues[binder.id] = val
+                                    }
+                                )
+                                .background(
+                                    GeometryReader { coverGeo in
+                                        Color.clear.preference(
+                                            key: BinderCellFramePreferenceKey.self,
+                                            value: [
+                                                binder.id: coverGeo.frame(in: .named("bindersRoot"))
+                                            ]
+                                        )
+                                    }
+                                )
 
-                            if isEditing {
-                                Button {
-                                    binderToDelete = binder
-                                    showDeleteConfirm = true
-                                } label: {
-                                    Image(systemName: "minus.circle.fill")
-                                        .font(.title3)
-                                        .foregroundStyle(.red)
-                                        .background(Circle().fill(.white).padding(2))
+                                if isEditing {
+                                    Button {
+                                        binderToDelete = binder
+                                        showDeleteConfirm = true
+                                    } label: {
+                                        Image(systemName: "minus.circle.fill")
+                                            .font(.title3)
+                                            .foregroundStyle(.red)
+                                            .background(Circle().fill(.white).padding(2))
+                                    }
+                                    .transition(.scale.combined(with: .opacity))
+                                    .padding(8)
                                 }
-                                .transition(.scale.combined(with: .opacity))
-                                .padding(8)
                             }
                         }
+                        .buttonStyle(NoHighlightButtonStyle())
                         .aspectRatio(0.707, contentMode: .fill)
-                        .contentShape(Rectangle())
-                        // Tap fires binder open; entirely separate from the
-                        // long-press that activates the context menu.
-                        .onTapGesture {
-                            guard !isEditing else { return }
-                            beginBinderOpen(binder)
-                        }
                         .contextMenu {
                             Button(role: .destructive) {
                                 binderToDelete = binder
@@ -307,46 +298,16 @@ struct BindersRootView: View {
     /// morph + cover hold + hand-off to ``BinderDetailView``.
     private func beginBinderOpen(_ binder: Binder) {
         guard presentedBinder == nil else { return }
-        if let frame = binderCellFrames[binder.id],
-           frame.width > 0,
-           frame.height > 0 {
-            presentBinder(binder, sourceFrame: frame)
-        } else {
-            // Geometry preferences normally arrive before the cover is
-            // tappable. If a tap wins that race, wait one render turn and
-            // open only when the real cover frame exists.
-            Task { @MainActor in
-                await Task.yield()
-                guard presentedBinder == nil else { return }
-                if let resolvedFrame = binderCellFrames[binder.id],
-                   resolvedFrame.width > 0,
-                   resolvedFrame.height > 0 {
-                    presentBinder(binder, sourceFrame: resolvedFrame)
-                } else {
-                    // Fallback to a default frame in the center of the viewport
-                    // so the binder still opens even if GeometryReader/preference fails
-                    // (common in preview canvas or simulator).
-                    #if DEBUG
-                    print("⚠️ BindersRootView: Warning - cell frame not found or zero size. Using center fallback.")
-                    #endif
-                    let screenBounds = UIScreen.main.bounds
-                    let fallbackFrame = CGRect(
-                        x: screenBounds.midX - 79,
-                        y: screenBounds.midY - 111,
-                        width: 158,
-                        height: 223
-                    )
-                    presentBinder(binder, sourceFrame: fallbackFrame)
-                }
-            }
-        }
-    }
-
-    private func presentBinder(_ binder: Binder, sourceFrame: CGRect) {
-        guard presentedBinder == nil else { return }
         presentingBinderID = binder.id
-        activeSourceFrame = sourceFrame
         sourceCoverIsHidden = false
+
+        // Capture a stable, persistent grid frame snapshot at the exact moment of tap!
+        if let frame = binderCellFrames[binder.id] {
+            activeSourceFrame = frame
+        } else {
+            // Fallback to a safe screen frame if not resolved yet
+            activeSourceFrame = CGRect(x: 100, y: 200, width: 160, height: 230)
+        }
 
         // Stagger the sweep slightly ahead of the morph so the user sees
         // the others moving as the tapped cover lifts off the table — the
@@ -542,6 +503,14 @@ private struct BindersHeaderHeightKey: PreferenceKey {
     }
 }
 
+/// Removes default tap/press visual feedback for binder covers. The open
+/// morph is already the feedback; an extra button highlight reads as a flash.
+private struct NoHighlightButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+    }
+}
+
 /// Per-binder grid-cell frame, in screen/global coordinates. Each
 /// ``BinderCardCell`` publishes its own frame via this key; the parent
 /// merges them into a `[UUID: CGRect]` and uses the result to drive both
@@ -633,6 +602,10 @@ struct BinderOpenContainer: View {
     /// `true` once we've kicked off the morph. Guards against repeating it
     /// when the page-frame preference changes again later.
     @State private var hasStartedOpen = false
+    /// Debounces the page-frame preference while the detail chrome settles.
+    /// The first layout pass reports the cover too high; the morph should
+    /// begin only after the final open-cover frame has remained unchanged.
+    @State private var destinationSettleTask: Task<Void, Never>?
     /// `true` once the close sequence is in flight. Hides
     /// ``BinderDetailView`` while the overlay collapses.
     @State private var isClosing = false
@@ -718,8 +691,15 @@ struct BinderOpenContainer: View {
                     
                     pageFrame = newFrame
                     if !hasStartedOpen {
-                        hasStartedOpen = true
-                        startOpenMorph()
+                        destinationSettleTask?.cancel()
+                        destinationSettleTask = Task { @MainActor in
+                            try? await Task.sleep(nanoseconds: 80_000_000)
+                            guard !Task.isCancelled,
+                                  !hasStartedOpen,
+                                  pageFrame == newFrame else { return }
+                            hasStartedOpen = true
+                            startOpenMorph()
+                        }
                     }
                 }
 
@@ -791,7 +771,7 @@ struct BinderOpenContainer: View {
             // path entirely.
             .task {
                 try? await Task.sleep(nanoseconds: 250_000_000)
-                if !hasStartedOpen {
+                if !hasStartedOpen && pageFrame == .zero {
                     let size = rootGeo.size
                     let fallbackHeight = min(size.height * 0.78, (size.width - 32) / Self.coverAspect)
                     let fallbackWidth = min(size.width - 32, fallbackHeight * Self.coverAspect)
@@ -855,15 +835,34 @@ struct BinderOpenContainer: View {
         )
     }
 
-    /// Exact visible grid-cover frame captured by ``BinderCardCell``.
-    /// Do not fit or normalise it here: even a few points of re-centering
-    /// become visible during the atomic grid-to-overlay handoff.
+    /// Source rectangle normalised to the cover's natural aspect ratio. Grid
+    /// cells are intended to be A4, but SwiftUI's measured button frame can
+    /// drift by a few pixels during layout. Fitting the cover inside that
+    /// measured frame keeps the morph scale uniform and avoids tiny height
+    /// pops at the start or end of the animation.
     private var sourceCoverFrame: CGRect {
-        sourceFrame
+        guard sourceFrame.width > 0, sourceFrame.height > 0 else { return sourceFrame }
+        let aspect = Self.coverAspect
+        let sourceAspect = sourceFrame.width / sourceFrame.height
+        let width: CGFloat
+        let height: CGFloat
+        if sourceAspect < aspect {
+            width = sourceFrame.width
+            height = width / aspect
+        } else {
+            height = sourceFrame.height
+            width = height * aspect
+        }
+        return CGRect(
+            x: sourceFrame.midX - width / 2,
+            y: sourceFrame.midY - height / 2,
+            width: width,
+            height: height
+        )
     }
 
     /// Scale that maps the rendered cover (always at ``coverTargetFrame``
-    /// dimensions) down to the exact captured source grid cover.
+    /// dimensions) down to the normalised source grid cover.
     private var sourceScale: CGFloat {
         guard coverTargetFrame.width > 0 else { return 1.0 }
         return max(0.05, sourceCoverFrame.width / coverTargetFrame.width)
@@ -915,31 +914,38 @@ struct BinderOpenContainer: View {
                 await MainActor.run {
                     withAnimation(.easeOut(duration: 0.2)) {
                         coverOpacity = 0
-                        detailOpacity = 1
                     }
                 }
             }
             return
         }
 
-        Task { @MainActor in
-            // Commit the atomic grid-cover → overlay-cover swap before
-            // starting the spring. Because both covers occupy the exact
-            // same captured frame, this render turn is visually seamless.
+        Task {
+            // Yield to the next main-actor run-loop turn so the
+            // no-animation snap is committed in its own render pass
+            // before the spring starts. Task.yield() is more precise
+            // than a 16 ms sleep on variable-refresh-rate displays.
             await Task.yield()
-            guard !Task.isCancelled else { return }
-            withAnimation(morphAnimation) {
-                coverScale = 1.0
-                coverCenter = pageCenter
-                liftIntensity = 1
+            await MainActor.run {
+                withAnimation(morphAnimation) {
+                    coverScale = 1.0
+                    coverCenter = pageCenter
+                    liftIntensity = 1
+                }
             }
 
             // Soft haptic at the moment the cover lands — sells the
             // "binder placed in front of you" beat. ``.soft`` is the
             // gentle thud Apple uses when a sheet finishes presenting.
             try? await Task.sleep(nanoseconds: 380_000_000)
-            guard !Task.isCancelled else { return }
-            UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+            await MainActor.run {
+                var handoffTx = Transaction(animation: nil)
+                handoffTx.disablesAnimations = true
+                withTransaction(handoffTx) {
+                    detailOpacity = 1
+                }
+                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+            }
 
             // Fade the overlay out shortly after the spring lands. The
             // ``BinderDetailView`` cover (page 0) is already underneath at
@@ -948,26 +954,27 @@ struct BinderOpenContainer: View {
             // shadow gradually instead of it "dropping" the moment the
             // overlay disappears — the hand-off reads as one continuous motion.
             try? await Task.sleep(nanoseconds: 30_000_000)
-            guard !Task.isCancelled else { return }
-            withAnimation(.easeOut(duration: 0.25)) {
-                coverOpacity = 0
-                detailOpacity = 1
-                liftIntensity = 0
-            }
-            // Subtle breath during the cover hold — single ease in/
-            // out cycle so the binder reads as "alive" without
-            // becoming a gimmick. Stops as soon as the page-curl
-            // auto-advance fires (we explicitly clamp it).
-            withAnimation(.easeInOut(duration: 0.45).delay(0.05)) {
-                breathingScale = 1.012
+            await MainActor.run {
+                withAnimation(.easeOut(duration: 0.25)) {
+                    coverOpacity = 0
+                    liftIntensity = 0
+                }
+                // Subtle breath during the cover hold — single ease in/
+                // out cycle so the binder reads as "alive" without
+                // becoming a gimmick. Stops as soon as the page-curl
+                // auto-advance fires (we explicitly clamp it).
+                withAnimation(.easeInOut(duration: 0.45).delay(0.05)) {
+                    breathingScale = 1.012
+                }
             }
 
             // Settle the breath back to 1.0 just before the auto-curl
             // would start, so the curl doesn't inherit a non-1 scale.
             try? await Task.sleep(nanoseconds: 600_000_000)
-            guard !Task.isCancelled else { return }
-            withAnimation(.easeInOut(duration: 0.35)) {
-                breathingScale = 1.0
+            await MainActor.run {
+                withAnimation(.easeInOut(duration: 0.35)) {
+                    breathingScale = 1.0
+                }
             }
         }
     }
