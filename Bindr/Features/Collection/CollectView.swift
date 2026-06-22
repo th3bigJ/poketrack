@@ -497,7 +497,7 @@ struct CollectView: View {
                     gridOptions: gridOptions,
                     setName: setName(for: card),
                     ownedCountBadge: item.quantity,
-                    footnote: collectionFootnote(for: item),
+                    variantLabel: collectionVariantLabel(for: item),
                     overridePrice: collectionDisplayPrice(for: item),
                     gradeLabel: collectionGradeLabel(for: item)
                 )
@@ -553,16 +553,13 @@ struct CollectView: View {
         }
     }
 
-    private func collectionFootnote(for item: CollectionItem) -> String? {
+    private func collectionVariantLabel(for item: CollectionItem) -> String? {
         guard sealedProduct(for: item) == nil else { return nil }
-        guard CollectionGridGrouping.isGradedItem(item) == false else {
-            if let label = collectionGradeLabel(for: item) {
-                return "×\(item.quantity) · \(label)"
-            }
-            return item.quantity > 1 ? "×\(item.quantity)" : nil
+        guard gridOptions.showOwned else { return nil }
+        if CollectionGridGrouping.isGradedItem(item) {
+            return collectionGradeLabel(for: item)
         }
-        let variant = itemVariantLabel(item)
-        return item.quantity > 1 ? "×\(item.quantity) · \(variant)" : variant
+        return itemVariantLabel(item)
     }
 
     private func itemVariantLabel(_ item: CollectionItem) -> String {
