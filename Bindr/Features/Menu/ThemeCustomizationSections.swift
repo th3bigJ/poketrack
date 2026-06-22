@@ -60,40 +60,87 @@ struct ThemeCustomizationSections: View {
     private var backgroundStyleCard: some View {
         themeCardSection(
             title: "Background Style",
-            footer: "Choose the atmosphere used across Bindr. Celestial adapts automatically for light and dark mode."
+            footer: "Choose an atmosphere for Bindr. Every style adapts automatically to light and dark mode."
         ) {
-            Picker(
-                "Background Style",
-                selection: Bindable(services.theme).backgroundStyle
+            LazyVGrid(
+                columns: Array(repeating: GridItem(.flexible(), spacing: BindrSpacing.sm), count: 2),
+                spacing: BindrSpacing.sm
             ) {
                 ForEach(ThemeSettings.BackgroundStyle.allCases) { style in
-                    Text(style.displayName).tag(style)
+                    backgroundStyleButton(style)
                 }
             }
-            .pickerStyle(.segmented)
-            .onChange(of: services.theme.backgroundStyle) {
-                Haptics.lightImpact()
-            }
-
-            backgroundStylePreview
-                .frame(height: 112)
-                .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .overlay {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .stroke(Color.primary.opacity(0.10), lineWidth: 1)
-                }
         }
     }
 
+    private func backgroundStyleButton(_ style: ThemeSettings.BackgroundStyle) -> some View {
+        let isSelected = services.theme.backgroundStyle == style
+
+        return Button {
+            services.theme.backgroundStyle = style
+            Haptics.lightImpact()
+        } label: {
+            ZStack(alignment: .bottomLeading) {
+                backgroundStylePreview(style)
+
+                LinearGradient(
+                    colors: [.clear, .black.opacity(0.52)],
+                    startPoint: .center,
+                    endPoint: .bottom
+                )
+
+                HStack(spacing: 6) {
+                    Image(systemName: style.symbolName)
+                    Text(style.displayName)
+                        .lineLimit(1)
+                    Spacer(minLength: 0)
+                    if isSelected {
+                        Image(systemName: "checkmark.circle.fill")
+                    }
+                }
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(.white)
+                .padding(10)
+            }
+            .frame(height: 76)
+            .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 15, style: .continuous)
+                    .stroke(isSelected ? accent : Color.primary.opacity(0.10), lineWidth: isSelected ? 2 : 1)
+            }
+            .contentShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? [.isSelected] : [])
+    }
+
     @ViewBuilder
-    private var backgroundStylePreview: some View {
-        switch services.theme.backgroundStyle {
+    private func backgroundStylePreview(_ style: ThemeSettings.BackgroundStyle) -> some View {
+        switch style {
         case .classic:
-            BindrPageBackground()
+            Color(uiColor: .systemBackground)
+                .overlay {
+                    LinearGradient(
+                        colors: [Color.primary.opacity(0.03), accent.opacity(0.10)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                }
         case .celestial:
             Image("CelestialBackground")
                 .resizable()
                 .scaledToFill()
+        case .grass, .fire, .water, .electric, .psychic, .dark, .fairy, .steel:
+            LinearGradient(
+                colors: style.atmosphereColors,
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .overlay {
+                Image(systemName: style.symbolName)
+                    .font(.system(size: 28, weight: .light))
+                    .foregroundStyle(.white.opacity(0.28))
+            }
         }
     }
 

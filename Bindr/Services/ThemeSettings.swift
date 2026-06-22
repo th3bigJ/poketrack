@@ -23,6 +23,14 @@ final class ThemeSettings {
     enum BackgroundStyle: String, CaseIterable, Identifiable {
         case classic
         case celestial
+        case grass
+        case fire
+        case water
+        case electric
+        case psychic
+        case dark
+        case fairy
+        case steel
 
         var id: String { rawValue }
 
@@ -30,6 +38,54 @@ final class ThemeSettings {
             switch self {
             case .classic: return "Classic"
             case .celestial: return "Celestial"
+            case .grass: return "Grass"
+            case .fire: return "Fire"
+            case .water: return "Water"
+            case .electric: return "Electric"
+            case .psychic: return "Psychic"
+            case .dark: return "Dark"
+            case .fairy: return "Fairy"
+            case .steel: return "Steel"
+            }
+        }
+
+        var symbolName: String {
+            switch self {
+            case .classic: return "circle.lefthalf.filled"
+            case .celestial: return "sparkles"
+            case .grass: return "leaf.fill"
+            case .fire: return "flame.fill"
+            case .water: return "drop.fill"
+            case .electric: return "bolt.fill"
+            case .psychic: return "eye.fill"
+            case .dark: return "moon.stars.fill"
+            case .fairy: return "wand.and.stars"
+            case .steel: return "hexagon.fill"
+            }
+        }
+
+        var atmosphereColors: [Color] {
+            switch self {
+            case .classic:
+                return [Color(hex: "f8fafc"), Color(hex: "e2e8f0")]
+            case .celestial:
+                return [Color(hex: "38bdf8"), Color(hex: "a78bfa"), Color(hex: "f472b6")]
+            case .grass:
+                return [Color(hex: "16a34a"), Color(hex: "84cc16"), Color(hex: "0f766e")]
+            case .fire:
+                return [Color(hex: "dc2626"), Color(hex: "f97316"), Color(hex: "facc15")]
+            case .water:
+                return [Color(hex: "0284c7"), Color(hex: "22d3ee"), Color(hex: "2563eb")]
+            case .electric:
+                return [Color(hex: "facc15"), Color(hex: "f59e0b"), Color(hex: "7c3aed")]
+            case .psychic:
+                return [Color(hex: "7c3aed"), Color(hex: "db2777"), Color(hex: "4f46e5")]
+            case .dark:
+                return [Color(hex: "111827"), Color(hex: "312e81"), Color(hex: "7f1d1d")]
+            case .fairy:
+                return [Color(hex: "f472b6"), Color(hex: "c084fc"), Color(hex: "67e8f9")]
+            case .steel:
+                return [Color(hex: "475569"), Color(hex: "cbd5e1"), Color(hex: "0e7490")]
             }
         }
     }

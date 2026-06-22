@@ -146,20 +146,11 @@ struct FeedPostCardModifier: ViewModifier {
         content
             .background {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .fill(
-                        colorScheme == .dark
-                            ? Color(uiColor: .secondarySystemGroupedBackground)
-                            : .white
-                    )
+                    .fill(BindrGlassStyle.primarySurfaceFill(colorScheme))
             }
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(
-                        colorScheme == .dark
-                            ? Color.primary.opacity(0.08)
-                            : BindrPalette.feedCardBorder,
-                        lineWidth: 1
-                    )
+                    .stroke(BindrGlassStyle.surfaceBorder(colorScheme), lineWidth: 1)
             }
     }
 }
@@ -363,8 +354,26 @@ private struct NativeGlassFullscreenModifier: ViewModifier {
 }
 
 enum BindrGlassStyle {
+    static func primarySurfaceFill(_ colorScheme: ColorScheme) -> Color {
+        colorScheme == .dark
+            ? Color(hex: "242428").opacity(0.94)
+            : Color.white.opacity(0.96)
+    }
+
+    static func secondarySurfaceFill(_ colorScheme: ColorScheme) -> Color {
+        colorScheme == .dark
+            ? Color(hex: "303036").opacity(0.78)
+            : Color.black.opacity(0.035)
+    }
+
+    static func surfaceBorder(_ colorScheme: ColorScheme) -> Color {
+        colorScheme == .dark
+            ? Color.white.opacity(0.12)
+            : Color.black.opacity(0.09)
+    }
+
     static func insetFill(_ colorScheme: ColorScheme) -> Color {
-        Color.primary.opacity(colorScheme == .dark ? 0.06 : 0.04)
+        secondarySurfaceFill(colorScheme)
     }
 
     static func insetBorder(_ colorScheme: ColorScheme) -> Color {
@@ -437,16 +446,16 @@ struct GlassCardModifier: ViewModifier {
                 if #available(iOS 26.0, *), glassReady {
                     let base = Glass.regular.tint(nil)
                     RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                        .fill(BindrGlassStyle.insetFill(colorScheme))
+                        .fill(BindrGlassStyle.primarySurfaceFill(colorScheme))
                         .glassEffect(interactive ? base.interactive() : base, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
                 } else {
                     RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                        .fill(.thinMaterial)
+                        .fill(BindrGlassStyle.primarySurfaceFill(colorScheme))
                 }
             }
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                    .stroke(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
+                    .stroke(BindrGlassStyle.surfaceBorder(colorScheme), lineWidth: 1)
             }
             .overlay {
                 // Subtle inner top highlight

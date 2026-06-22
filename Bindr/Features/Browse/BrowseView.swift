@@ -88,11 +88,11 @@ struct CardGridCell: View {
     private var resolvedColorScheme: ColorScheme { colorScheme }
 
     private var tileBackground: Color {
-        resolvedColorScheme == .dark ? .black : .white
+        BindrGlassStyle.primarySurfaceFill(resolvedColorScheme)
     }
 
     private var tileBorder: Color {
-        resolvedColorScheme == .dark ? Color.white.opacity(0.20) : Color.black.opacity(0.22)
+        BindrGlassStyle.surfaceBorder(resolvedColorScheme)
     }
 
     private var dividerColor: Color {

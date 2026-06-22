@@ -197,19 +197,19 @@ struct DashboardView: View {
     }
 
     private var dashboardCardBackground: Color {
-        colorScheme == .dark ? .black : .white
+        BindrGlassStyle.primarySurfaceFill(colorScheme)
     }
 
     private var dashboardCardInsetBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
+        BindrGlassStyle.secondarySurfaceFill(colorScheme)
     }
 
     private var dashboardTileBackground: Color {
-        colorScheme == .dark ? dashboardCardInsetBackground : .white
+        colorScheme == .dark ? dashboardCardInsetBackground : BindrGlassStyle.primarySurfaceFill(colorScheme)
     }
 
     private var dashboardBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
+        BindrGlassStyle.surfaceBorder(colorScheme)
     }
 
     private var dashboardDividerColor: Color {

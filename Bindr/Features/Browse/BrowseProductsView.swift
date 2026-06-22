@@ -468,11 +468,11 @@ struct SealedProductGridCell: View {
     var ownedCountBadge: Int? = nil
 
     private var tileBackground: Color {
-        colorScheme == .dark ? .black : .white
+        BindrGlassStyle.primarySurfaceFill(colorScheme)
     }
 
     private var tileBorder: Color {
-        colorScheme == .dark ? Color.white.opacity(0.20) : Color.black.opacity(0.16)
+        BindrGlassStyle.surfaceBorder(colorScheme)
     }
 
     private var insetBackground: Color {

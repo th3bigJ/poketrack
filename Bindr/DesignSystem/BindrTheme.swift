@@ -356,8 +356,8 @@ struct BindrPageBackground: View {
         ZStack {
             Color(uiColor: .systemBackground)
 
-            if services?.theme.backgroundStyle == .celestial {
-                celestialBackground
+            if let style = services?.theme.backgroundStyle {
+                backgroundLayer(for: style)
             }
 
             if services?.theme.backgroundGlowEnabled ?? true {
@@ -373,6 +373,18 @@ struct BindrPageBackground: View {
             // Subtle Noise/Grain Overlay (Simulated via opacity jitter)
             Color.primary.opacity(0.005)
                 .blendMode(colorScheme == .dark ? .overlay : .multiply)
+        }
+    }
+
+    @ViewBuilder
+    private func backgroundLayer(for style: ThemeSettings.BackgroundStyle) -> some View {
+        switch style {
+        case .classic:
+            EmptyView()
+        case .celestial:
+            celestialBackground
+        case .grass, .fire, .water, .electric, .psychic, .dark, .fairy, .steel:
+            elementalBackground(style)
         }
     }
 
@@ -392,6 +404,69 @@ struct BindrPageBackground: View {
         }
         .clipped()
         .allowsHitTesting(false)
+    }
+
+    private func elementalBackground(_ style: ThemeSettings.BackgroundStyle) -> some View {
+        GeometryReader { geo in
+            let colors = style.atmosphereColors
+
+            ZStack {
+                LinearGradient(
+                    colors: [
+                        colors[0].opacity(colorScheme == .dark ? 0.38 : 0.24),
+                        colors[1].opacity(colorScheme == .dark ? 0.24 : 0.18),
+                        colors[2].opacity(colorScheme == .dark ? 0.32 : 0.21)
+                    ],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+
+                RadialGradient(
+                    colors: [
+                        colors[1].opacity(colorScheme == .dark ? 0.28 : 0.23),
+                        .clear
+                    ],
+                    center: .topTrailing,
+                    startRadius: 0,
+                    endRadius: max(geo.size.width, geo.size.height) * 0.72
+                )
+
+                RadialGradient(
+                    colors: [
+                        colors[0].opacity(colorScheme == .dark ? 0.22 : 0.17),
+                        .clear
+                    ],
+                    center: .bottomLeading,
+                    startRadius: 0,
+                    endRadius: max(geo.size.width, geo.size.height) * 0.62
+                )
+
+                ForEach(Array(elementalMotifs.enumerated()), id: \.offset) { index, point in
+                    Image(systemName: index.isMultiple(of: 3) ? "sparkles" : style.symbolName)
+                        .font(.system(size: point.size, weight: .light))
+                        .foregroundStyle(Color.white.opacity(colorScheme == .dark ? 0.075 : 0.16))
+                        .rotationEffect(.degrees(point.rotation))
+                        .position(
+                            x: geo.size.width * point.x,
+                            y: geo.size.height * point.y
+                        )
+                }
+            }
+        }
+        .clipped()
+        .allowsHitTesting(false)
+    }
+
+    private var elementalMotifs: [(x: CGFloat, y: CGFloat, size: CGFloat, rotation: Double)] {
+        [
+            (0.12, 0.15, 20, -18),
+            (0.82, 0.11, 13, 12),
+            (0.70, 0.34, 25, 22),
+            (0.18, 0.49, 12, -10),
+            (0.88, 0.68, 18, 18),
+            (0.30, 0.82, 24, -24),
+            (0.74, 0.93, 12, 8)
+        ]
     }
 
     @ViewBuilder
