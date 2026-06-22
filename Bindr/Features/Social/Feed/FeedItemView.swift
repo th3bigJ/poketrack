@@ -10,6 +10,7 @@ private struct PresentedPostCards: Identifiable {
 struct FeedItemView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
     let group: GroupedFeedItem
     var showsInteractionBar: Bool = true
     var isCardTapEnabled: Bool = true
@@ -187,6 +188,7 @@ struct FeedItemView: View {
         .feedPostCardStyle(cornerRadius: 20)
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
+            restoreTabBarChrome?()
         }) {
             if let content = item.content {
                 NavigationStack {
@@ -197,7 +199,9 @@ struct FeedItemView: View {
                 .presentationDragIndicator(.visible)
             }
         }
-        .sheet(item: $presentedPostCards) { selection in
+        .sheet(item: $presentedPostCards, onDismiss: {
+            restoreTabBarChrome?()
+        }) { selection in
             CardDetailSheet(cards: selection.cards, startIndex: 0)
                 .environment(services)
         }

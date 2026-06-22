@@ -132,7 +132,7 @@ struct SharedBinderView: View {
         .sheet(item: $presentedCard) { card in
             // Reuse the standard browse detail screen so tapping a card here
             // matches tapping a card anywhere else in the app.
-            CardDetailSheet(cards: [card], startIndex: 0)
+            CardDetailSheet(cards: [card], startIndex: 0, managesTabBarChrome: false)
                 .environment(services)
         }
     }

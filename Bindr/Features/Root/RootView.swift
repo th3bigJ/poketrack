@@ -122,6 +122,8 @@ struct RootView: View {
     @State private var collectTabVisited = false
     @State private var socialTabVisited = false
     @State private var moreTabVisited = false
+    /// Drives `TabView.tint` — nudged after sheet dismiss so SwiftUI re-applies the accent.
+    @State private var tabBarTintColor: Color = Color(hex: "4f46e5")
 
     // MARK: - Premium upsell auto-popup
     // Weekly cadence (per the product spec). The upsell defers itself until
@@ -633,7 +635,15 @@ struct RootView: View {
     private var chromeFloatingInset: CGFloat { RootChromeEnvironment.floatingContentTopInset }
     private var chromeSearchBarHiddenOffset: CGFloat { -(chromeFloatingInset + 18) }
     private var chromeContentTopInset: CGFloat { isSearchDetailActive ? 0 : chromeFloatingInset }
-    private var isTabBarHidden: Bool { isSearchExperiencePresented || chromeScroll.overlaySuppressesTabBar }
+    private var isTabBarHidden: Bool {
+        isSearchExperiencePresented
+            || chromeScroll.overlaySuppressesTabBar
+            || services.suppressTabBarUntilTintRestored
+            || selectedCardPresentation != nil
+            || selectedSealedProductPresentation != nil
+            || services.isCardDetailPresentationActive
+            || services.isSealedDetailPresentationActive
+    }
 
     @ViewBuilder
     private var launchOverlayContent: some View {
@@ -787,6 +797,7 @@ struct RootView: View {
                         .tag(AppTab.more)
                     }
                     .bindrDisableTabBarMinimize()
+                    .tint(tabBarTintColor)
                     .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
                     .toolbarBackground(.hidden, for: .tabBar)
                     if isSearchExperiencePresented {
@@ -840,6 +851,8 @@ struct RootView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
         // Shared app backdrop shows through translucent chrome/material.
         .bindrPageBackground()
+        .environment(\.restoreTabBarChrome, restoreTabBarGlassAppearance)
+        .environment(\.suppressTabBarForModalChrome, suppressTabBarForModalChrome)
         .overlay {
             if services.isCatalogDownloadInProgress {
                 ZStack {
@@ -890,12 +903,18 @@ struct RootView: View {
         .onAppear {
             chromeScroll.configureForTab(selectedTab)
             collectSelectedBrand = services.brandSettings.selectedCatalogBrand
+            tabBarTintColor = services.theme.accentColor
+            BindrApp.applyTabBarTint(accent: services.theme.accentColor)
             // setupCollectionValue is called from onChange(of: services.isReady) which
             // fires before mainContent is inserted. Call here only as a safety net for
             // any code path where isReady was already true before onAppear.
             if services.collectionValue == nil {
                 services.setupCollectionValue(modelContext: modelContext)
             }
+        }
+        .onChange(of: services.theme.accentColorHex) { _, _ in
+            tabBarTintColor = services.theme.accentColor
+            BindrApp.applyTabBarTint(accent: services.theme.accentColor)
         }
         .onChange(of: selectedTab) { _, tab in
             Haptics.selectionChanged()
@@ -960,12 +979,23 @@ struct RootView: View {
             guard let queuedURL else { return }
             handleSocialDeepLink(queuedURL)
         }
+        .onChange(of: selectedCardPresentation?.id) { _, newID in
+            if newID != nil {
+                suppressTabBarForModalChrome()
+            }
+        }
+        .onChange(of: selectedSealedProductPresentation?.id) { _, newID in
+            if newID != nil {
+                suppressTabBarForModalChrome()
+            }
+        }
         .sheet(item: $selectedCardPresentation, onDismiss: restoreTabBarGlassAppearance) { ctx in
             CardDetailSheet(
                 cards: ctx.cards,
                 startIndex: ctx.startIndex
             )
             .environment(services)
+            .bindrTheme(accent: services.theme.accentColor)
         }
         .sheet(item: $selectedSealedProductPresentation, onDismiss: restoreTabBarGlassAppearance) { ctx in
             if ctx.products.isEmpty {
@@ -1307,8 +1337,35 @@ struct RootView: View {
         )
     }
 
+    private func suppressTabBarForModalChrome() {
+        services.suppressTabBarUntilTintRestored = true
+    }
+
     private func restoreTabBarGlassAppearance() {
-        BindrApp.applyTabBarAppearance()
+        let accent = services.theme.accentColor
+        // Stay hidden while tint is fixed off-screen, then reveal in the correct color.
+        services.suppressTabBarUntilTintRestored = true
+        tabBarTintColor = accent
+        BindrApp.applyTabBarTint(accent: accent)
+        refreshTabBarSwiftUITint(accent)
+        Task { @MainActor in
+            await Task.yield()
+            services.isCardDetailPresentationActive = false
+            services.isSealedDetailPresentationActive = false
+            services.suppressTabBarUntilTintRestored = false
+            BindrApp.applyTabBarTint(accent: accent)
+        }
+    }
+
+    private func refreshTabBarSwiftUITint(_ accent: Color) {
+        var transaction = Transaction()
+        transaction.disablesAnimations = true
+        withTransaction(transaction) {
+            tabBarTintColor = accent.opacity(0.999)
+        }
+        withTransaction(transaction) {
+            tabBarTintColor = accent
+        }
     }
 
     private func launchTradeFlowFromCollectionCard(_ card: Card) {

@@ -12,6 +12,7 @@ struct BinderDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.bindrAccent) private var bindrAccent
+    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
     @Bindable var binder: Binder
 
     /// When `true`, the binder was opened from the Binders grid and should
@@ -29,6 +30,10 @@ struct BinderDetailView: View {
     var preloadedPeekingURLs: [URL?]? = nil
     /// Pre-resolved binder value text passed from the grid.
     var preloadedValueText: String? = nil
+    /// Top safe-area inset passed by the host when the presentation ignores
+    /// the system safe area (``BinderOpenContainer``). ``safeAreaInset`` alone
+    /// cannot push the header below the status bar in that case.
+    var topSafeAreaInset: CGFloat = 0
     /// The bottom safe-area inset of the screen (home indicator area), passed
     /// in by the host so the bottom stats row doesn't sit under the home bar.
     var bottomSafeAreaInset: CGFloat = 0
@@ -246,22 +251,24 @@ struct BinderDetailView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .clipped()
-        .safeAreaInset(edge: .top, spacing: 0) {
+            // Reserve top space for the floating header — same pattern as
+            // ``BindersRootView`` / ``DecksRootView`` so the page-curl
+            // centres below the chrome instead of sliding under it.
+            .safeAreaInset(edge: .top, spacing: 0) {
+                Color.clear.frame(height: binderHeaderReservedHeight)
+            }
+
             binderHeader
+                .padding(.top, headerTopPadding)
                 .opacity(isChromeVisible ? 1 : 0)
                 .offset(y: isChromeVisible ? 0 : -20)
                 .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
                 .allowsHitTesting(isChromeVisible)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .clipped()
         .background {
-            if isEditing {
-                BindrPageBackground().ignoresSafeArea()
-            } else {
-                Color(uiColor: .systemBackground)
-            }
+            BindrPageBackground().ignoresSafeArea()
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
@@ -282,7 +289,7 @@ struct BinderDetailView: View {
                 .transition(.identity)
             }
         }
-        .sheet(item: $detailCard) { card in
+        .sheet(item: $detailCard, onDismiss: { restoreTabBarChrome?() }) { card in
             CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
         }
@@ -460,11 +467,36 @@ struct BinderDetailView: View {
         .padding(.bottom, bottomOverlayInset)
     }
 
+    /// Height of the clear top spacer that keeps binder pages below the
+    /// floating header. Matches ``BindrPageHeader``'s fixed 66pt stack.
+    private var binderHeaderReservedHeight: CGFloat {
+        RootChromeEnvironment.searchBarStackHeight + headerTopPadding
+    }
+
+    /// Extra top padding when the host ignores safe area. The grid
+    /// presentation (``BinderOpenContainer``) fills the physical screen, so
+    /// the overlaid header must be pushed below the status bar manually.
+    /// Prefer the host-passed inset; fall back to the key window when the
+    /// ``GeometryReader`` inside an ``ignoresSafeArea`` container reports 0.
+    private var headerTopPadding: CGFloat {
+        guard entryFromGrid else { return 0 }
+        if topSafeAreaInset > 0 { return topSafeAreaInset }
+        return Self.windowSafeAreaTop
+    }
+
+    private static var windowSafeAreaTop: CGFloat {
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap(\.windows)
+            .first(where: \.isKeyWindow)?
+            .safeAreaInsets.top ?? 47
+    }
+
     /// Uses ``BindrPageHeader`` (the same component Social/Binders/Decks list
     /// pages use) so the binder detail screen's chrome lines up perfectly
-    /// with the rest of the app's glass treatment. Hosted in a top
-    /// ``safeAreaInset`` — same pattern as ``DeckDetailView`` — so the
-    /// buttons land below the status bar without manual inset math.
+    /// with the rest of the app's glass treatment. Floated in a top
+    /// ``ZStack`` overlay — same pattern as ``BindersRootView`` — with
+    /// ``headerTopPadding`` when the grid presentation ignores safe area.
     private var binderHeader: some View {
         BindrPageHeader(
             title: binder.title,

@@ -3,6 +3,7 @@ import SwiftUI
 struct CommentsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
 
     let content: SocialFeedService.FeedContentSummary
     let sourceItem: SocialFeedService.FeedItem?
@@ -145,8 +146,10 @@ struct CommentsView: View {
                     .environment(services)
             }
         }
-        .sheet(item: $presentedPullCard) { card in
-            CardDetailSheet(cards: [card], startIndex: 0)
+        .sheet(item: $presentedPullCard, onDismiss: {
+            restoreTabBarChrome?()
+        }) { card in
+            CardDetailSheet(cards: [card], startIndex: 0, managesTabBarChrome: false)
                 .environment(services)
         }
     }

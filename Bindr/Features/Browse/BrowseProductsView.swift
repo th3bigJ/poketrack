@@ -690,6 +690,8 @@ private struct SealedThumbnailView: View {
 struct SealedProductBrowseDetailView: View {
     let products: [SealedProduct]
 
+    @Environment(\.bindrAccent) private var bindrAccent
+    @Environment(\.suppressTabBarForModalChrome) private var suppressTabBarForModalChrome
     @Environment(\.colorScheme) private var colorScheme
     @State private var scrollIndex: Int?
     @State private var auraColorsByProductID: [Int: [Color]] = [:]
@@ -742,6 +744,9 @@ struct SealedProductBrowseDetailView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(sheetBackground)
+        .onAppear {
+            suppressTabBarForModalChrome?()
+        }
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)

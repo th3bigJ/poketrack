@@ -30,6 +30,14 @@ private struct SealedProductPresenterKey: EnvironmentKey {
     static let defaultValue: (SealedProduct, [SealedProduct], Int) -> Void = { _, _, _ in }
 }
 
+private struct RestoreTabBarChromeKey: EnvironmentKey {
+    static let defaultValue: (() -> Void)? = nil
+}
+
+private struct SuppressTabBarForModalChromeKey: EnvironmentKey {
+    static let defaultValue: (() -> Void)? = nil
+}
+
 extension EnvironmentValues {
     /// Present card detail; pass the **same ordered array** the user is browsing so paging matches that filter.
     var presentCard: (Card, [Card]) -> Void {
@@ -53,5 +61,17 @@ extension EnvironmentValues {
     var presentSealedProduct: (SealedProduct, [SealedProduct], Int) -> Void {
         get { self[SealedProductPresenterKey.self] }
         set { self[SealedProductPresenterKey.self] = newValue }
+    }
+
+    /// Re-applies tab bar accent tint after a modal dismisses (provided by `RootView`).
+    var restoreTabBarChrome: (() -> Void)? {
+        get { self[RestoreTabBarChromeKey.self] }
+        set { self[RestoreTabBarChromeKey.self] = newValue }
+    }
+
+    /// Hides the tab bar while a card/product sheet is showing (provided by `RootView`).
+    var suppressTabBarForModalChrome: (() -> Void)? {
+        get { self[SuppressTabBarForModalChromeKey.self] }
+        set { self[SuppressTabBarForModalChromeKey.self] = newValue }
     }
 }

@@ -136,6 +136,7 @@ struct SocialRootView: View {
     @State private var deepLinkedSharedContent: SharedContent?
     @State private var deepLinkedCommentsContent: SocialFeedService.FeedContentSummary?
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
+    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
 
     private var isConfigured: Bool {
         AppConfiguration.supabaseURL != nil && !AppConfiguration.supabasePublishableKey.isEmpty
@@ -166,7 +167,9 @@ struct SocialRootView: View {
                     .environment(services)
             }
         }
-        .sheet(item: $deepLinkedCommentsContent) { content in
+        .sheet(item: $deepLinkedCommentsContent, onDismiss: {
+            restoreTabBarChrome?()
+        }) { content in
             NavigationStack {
                 CommentsView(content: content)
                     .environment(services)

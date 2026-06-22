@@ -86,6 +86,7 @@ private struct CardBrowseDetailPage: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
     @Query private var collectionItems: [CollectionItem]
+    @Query private var ledgerLines: [LedgerLine]
 
     let card: Card
     let set: TCGSet?
@@ -130,6 +131,10 @@ private struct CardBrowseDetailPage: View {
         _collectionItems = Query(
             filter: #Predicate<CollectionItem> { $0.cardID == scopedCardID },
             sort: [SortDescriptor(\.variantKey)]
+        )
+        _ledgerLines = Query(
+            filter: #Predicate<LedgerLine> { $0.cardID == scopedCardID },
+            sort: [SortDescriptor(\.occurredAt, order: .reverse)]
         )
     }
 
@@ -924,86 +929,11 @@ private struct CardBrowseDetailPage: View {
     }
 
     private var groupedHoldings: [HoldingGroup] {
-        var groups: [String: HoldingGroup] = [:]
-
-        for item in visibleCollectionItems where item.cardID == card.masterCardId {
-            for lot in (item.costLots ?? []).filter({ $0.quantityRemaining > 0 }) {
-                let line = lot.sourceLedgerLine
-                if let lineCardID = cleaned(line?.cardID), lineCardID != card.masterCardId {
-                    continue
-                }
-                let direction = line.flatMap { LedgerDirection(rawValue: $0.direction) } ?? .bought
-                let date = line?.occurredAt ?? item.dateAcquired
-                let counterparty = cleaned(line?.counterparty)
-                let description = cleaned(line?.lineDescription)
-                let unitPrice = line?.unitPrice
-                let currencyCode = line?.currencyCode ?? "USD"
-                let groupKey = [
-                    item.itemKind,
-                    item.variantKey,
-                    cleaned(item.gradingCompany) ?? "",
-                    cleaned(item.grade) ?? ""
-                ].joined(separator: "|")
-
-                let lineID = [
-                    groupKey,
-                    direction.rawValue,
-                    counterparty ?? "",
-                    description ?? "",
-                    currencyCode,
-                    (unitPrice.map { String(format: "%.6f", $0) } ?? ""),
-                    String(Int(date.timeIntervalSince1970))
-                ].joined(separator: "|")
-                let holdingLine = HoldingLine(
-                    id: lineID + "|\(lot.id.uuidString)",
-                    item: item,
-                    itemKind: item.itemKind,
-                    variantKey: item.variantKey,
-                    gradingCompany: cleaned(item.gradingCompany),
-                    grade: cleaned(item.grade),
-                    quantity: lot.quantityRemaining,
-                    date: date,
-                    direction: direction,
-                    unitPrice: unitPrice,
-                    currencyCode: currencyCode,
-                    counterparty: counterparty,
-                    description: description,
-                    lotIDs: [lot.id]
-                )
-
-                if var existingGroup = groups[groupKey] {
-                    existingGroup.totalQuantity += lot.quantityRemaining
-                    if let existingLineIndex = existingGroup.lines.firstIndex(where: { $0.identityKey == holdingLine.identityKey }) {
-                        existingGroup.lines[existingLineIndex].quantity += lot.quantityRemaining
-                        existingGroup.lines[existingLineIndex].lotIDs.insert(lot.id)
-                    } else {
-                        existingGroup.lines.append(holdingLine)
-                    }
-                    groups[groupKey] = existingGroup
-                } else {
-                    groups[groupKey] = HoldingGroup(
-                        id: groupKey,
-                        primaryItem: item,
-                        itemKind: item.itemKind,
-                        variantKey: item.variantKey,
-                        gradingCompany: cleaned(item.gradingCompany),
-                        grade: cleaned(item.grade),
-                        totalQuantity: lot.quantityRemaining,
-                        lines: [holdingLine]
-                    )
-                }
-            }
-        }
-
-        return groups.values
-            .map { group in
-                var mutable = group
-                mutable.lines.sort { $0.date > $1.date }
-                return mutable
-            }
-            .sorted { lhs, rhs in
-                (lhs.lines.first?.date ?? .distantPast) > (rhs.lines.first?.date ?? .distantPast)
-            }
+        HoldingGroup.grouped(
+            for: card.masterCardId,
+            from: collectionItems,
+            ledgerLines: ledgerLines
+        )
     }
 
     @ViewBuilder
@@ -1299,6 +1229,250 @@ struct HoldingLine: Identifiable {
         case .tradedIn, .tradedOut: return "Trade"
         case .giftedIn, .giftedOut: return "With"
         case .packed, .adjustmentIn, .adjustmentOut, .importedIn: return "Source"
+        }
+    }
+}
+
+extension HoldingGroup {
+    /// Builds holding groups for the collection detail box from **active cost lots** (`quantityRemaining > 0`).
+    /// Sold, traded, and gifted copies are depleted via FIFO on disposition, so they no longer appear here.
+    /// Activity still shows the full ledger history.
+    static func grouped(
+        for cardID: String,
+        from collectionItems: [CollectionItem],
+        ledgerLines: [LedgerLine] = []
+    ) -> [HoldingGroup] {
+        func cleaned(_ text: String?) -> String? {
+            guard let text else { return nil }
+            let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+            return trimmed.isEmpty ? nil : trimmed
+        }
+
+        var groups: [String: HoldingGroup] = [:]
+
+        for item in collectionItems where item.cardID == cardID && item.quantity > 0 {
+            let groupKey = stackGroupKey(for: item, cleaned: cleaned)
+            let activeLots = activeCostLots(
+                for: item,
+                cardID: cardID,
+                from: ledgerLines,
+                cleaned: cleaned
+            )
+
+            if activeLots.isEmpty {
+                let holdingLine = HoldingLine(
+                    id: "owned|\(groupKey)|\(item.persistentModelID)",
+                    item: item,
+                    itemKind: item.itemKind,
+                    variantKey: item.variantKey,
+                    gradingCompany: cleaned(item.gradingCompany),
+                    grade: cleaned(item.grade),
+                    quantity: item.quantity,
+                    date: item.dateAcquired,
+                    direction: item.notes.localizedCaseInsensitiveContains("restored from cloud backup")
+                        ? .importedIn
+                        : .bought,
+                    unitPrice: item.purchasePrice,
+                    currencyCode: "USD",
+                    counterparty: nil,
+                    description: cleaned(item.notes),
+                    lotIDs: []
+                )
+                merge(holdingLine, quantity: item.quantity, into: &groups, groupKey: groupKey, item: item)
+                continue
+            }
+
+            for lot in activeLots {
+                let holdingLine = holdingLine(for: lot, item: item, cleaned: cleaned)
+                merge(holdingLine, quantity: lot.quantityRemaining, into: &groups, groupKey: groupKey, item: item)
+            }
+        }
+
+        return groups.values
+            .map { group in
+                var mutable = group
+                mutable.lines.sort { $0.date > $1.date }
+                return mutable
+            }
+            .sorted { lhs, rhs in
+                (lhs.lines.first?.date ?? .distantPast) > (rhs.lines.first?.date ?? .distantPast)
+            }
+    }
+
+    private static func stackGroupKey(
+        for item: CollectionItem,
+        cleaned: (String?) -> String?
+    ) -> String {
+        [
+            item.itemKind,
+            item.variantKey,
+            cleaned(item.gradingCompany) ?? "",
+            cleaned(item.grade) ?? ""
+        ].joined(separator: "|")
+    }
+
+    private static func activeCostLots(
+        for item: CollectionItem,
+        cardID: String,
+        from ledgerLines: [LedgerLine],
+        cleaned: (String?) -> String?
+    ) -> [CostLot] {
+        var lots: [CostLot] = []
+        var seen = Set<UUID>()
+
+        func add(_ lot: CostLot) {
+            guard seen.insert(lot.id).inserted else { return }
+            guard lot.quantityRemaining > 0 else { return }
+            guard lotMatchesStack(lot, item: item, cardID: cardID, cleaned: cleaned) else { return }
+            lots.append(lot)
+        }
+
+        for lot in item.costLots ?? [] {
+            add(lot)
+        }
+
+        for line in ledgerLines where cleaned(line.cardID) == cardID && ledgerLineMatchesItemStack(line, item: item, cleaned: cleaned) {
+            for lot in line.createdCostLots ?? [] {
+                add(lot)
+            }
+        }
+
+        return lots.sorted { lhs, rhs in
+            let lhsDate = lhs.sourceLedgerLine?.occurredAt ?? lhs.createdAt
+            let rhsDate = rhs.sourceLedgerLine?.occurredAt ?? rhs.createdAt
+            return lhsDate > rhsDate
+        }
+    }
+
+    private static func ledgerLineMatchesItemStack(
+        _ line: LedgerLine,
+        item: CollectionItem,
+        cleaned: (String?) -> String?
+    ) -> Bool {
+        let lineVariant = cleaned(line.variantKey) ?? "normal"
+        let itemVariant = item.variantKey.isEmpty ? "normal" : item.variantKey
+        guard lineVariant == itemVariant else { return false }
+        guard line.productKind == item.itemKind else { return false }
+        return cleaned(line.gradingCompany) == cleaned(item.gradingCompany)
+            && cleaned(line.grade) == cleaned(item.grade)
+    }
+
+    /// A cost lot only belongs on this card page when its source ledger line matches the stack.
+    private static func lotMatchesStack(
+        _ lot: CostLot,
+        item: CollectionItem,
+        cardID: String,
+        cleaned: (String?) -> String?
+    ) -> Bool {
+        guard let line = lot.sourceLedgerLine else {
+            return lot.collectionItem?.persistentModelID == item.persistentModelID
+        }
+
+        if let lineCardID = cleaned(line.cardID), lineCardID != cardID {
+            return false
+        }
+
+        return ledgerLineMatchesItemStack(line, item: item, cleaned: cleaned)
+    }
+
+    private static func holdingLine(
+        for lot: CostLot,
+        item: CollectionItem,
+        cleaned: (String?) -> String?
+    ) -> HoldingLine {
+        if let line = lot.sourceLedgerLine {
+            return holdingLine(
+                for: line,
+                item: item,
+                quantity: lot.quantityRemaining,
+                lotIDs: [lot.id],
+                cleaned: cleaned
+            )
+        }
+
+        return HoldingLine(
+            id: "lot|\(lot.id.uuidString)",
+            item: item,
+            itemKind: item.itemKind,
+            variantKey: item.variantKey,
+            gradingCompany: cleaned(item.gradingCompany),
+            grade: cleaned(item.grade),
+            quantity: lot.quantityRemaining,
+            date: lot.createdAt,
+            direction: .bought,
+            unitPrice: lot.unitCost > 0 ? lot.unitCost : item.purchasePrice,
+            currencyCode: lot.currencyCode,
+            counterparty: nil,
+            description: cleaned(item.notes),
+            lotIDs: [lot.id]
+        )
+    }
+
+    private static func holdingLine(
+        for line: LedgerLine,
+        item: CollectionItem,
+        quantity: Int,
+        lotIDs: Set<UUID>,
+        cleaned: (String?) -> String?
+    ) -> HoldingLine {
+        let direction = LedgerDirection(rawValue: line.direction) ?? .bought
+        let counterparty = cleaned(line.counterparty)
+        let description = cleaned(line.lineDescription)
+        let lineID = [
+            stackGroupKey(for: item, cleaned: cleaned),
+            direction.rawValue,
+            counterparty ?? "",
+            description ?? "",
+            line.currencyCode,
+            (line.unitPrice.map { String(format: "%.6f", $0) } ?? ""),
+            String(Int(line.occurredAt.timeIntervalSince1970))
+        ].joined(separator: "|")
+
+        return HoldingLine(
+            id: lineID + "|ledger|\(line.id.uuidString)",
+            item: item,
+            itemKind: item.itemKind,
+            variantKey: item.variantKey,
+            gradingCompany: cleaned(item.gradingCompany),
+            grade: cleaned(item.grade),
+            quantity: quantity,
+            date: line.occurredAt,
+            direction: direction,
+            unitPrice: line.unitPrice,
+            currencyCode: line.currencyCode,
+            counterparty: counterparty,
+            description: description,
+            lotIDs: lotIDs
+        )
+    }
+
+    private static func merge(
+        _ holdingLine: HoldingLine,
+        quantity: Int,
+        into groups: inout [String: HoldingGroup],
+        groupKey: String,
+        item: CollectionItem
+    ) {
+        if var existingGroup = groups[groupKey] {
+            existingGroup.totalQuantity += quantity
+            if let existingLineIndex = existingGroup.lines.firstIndex(where: { $0.identityKey == holdingLine.identityKey }) {
+                existingGroup.lines[existingLineIndex].quantity += quantity
+                existingGroup.lines[existingLineIndex].lotIDs.formUnion(holdingLine.lotIDs)
+            } else {
+                existingGroup.lines.append(holdingLine)
+            }
+            groups[groupKey] = existingGroup
+        } else {
+            groups[groupKey] = HoldingGroup(
+                id: groupKey,
+                primaryItem: item,
+                itemKind: item.itemKind,
+                variantKey: item.variantKey,
+                gradingCompany: holdingLine.gradingCompany,
+                grade: holdingLine.grade,
+                totalQuantity: quantity,
+                lines: [holdingLine]
+            )
         }
     }
 }

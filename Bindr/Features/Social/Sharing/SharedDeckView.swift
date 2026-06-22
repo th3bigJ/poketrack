@@ -119,7 +119,7 @@ struct SharedDeckView: View {
             await loadCards()
         }
         .sheet(item: $presentedCard) { card in
-            CardDetailSheet(cards: [card], startIndex: 0)
+            CardDetailSheet(cards: [card], startIndex: 0, managesTabBarChrome: false)
                 .environment(services)
         }
     }

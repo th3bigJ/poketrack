@@ -82,7 +82,7 @@ struct BindrApp: App {
         // App launch runs on the main thread; configure tab bar before the first frame.
         dispatchPrecondition(condition: .onQueue(.main))
         MainActor.assumeIsolated {
-            Self.applyTabBarAppearance()
+            Self.applyTabBarGlassAppearance()
         }
     }
 
@@ -184,9 +184,42 @@ struct BindrApp: App {
     }
 
     /// Match tab bar glass density to multi-select pill buttons.
-    /// Re-call after sheet dismiss — presentation can reset the tab bar to the default opaque grey.
+    /// Launch uses glass-only appearance; accent icon tint is applied from `RootView` once
+    /// the live theme is known, and again after sheets dismiss.
     @MainActor
-    static func applyTabBarAppearance() {
+    static func applyTabBarGlassAppearance() {
+        let appearance = makeTabBarGlassAppearance()
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+        applyTabBarGlassAppearance(appearance, toLiveTabBarsIn: foregroundWindows())
+    }
+    @MainActor
+    static func applyTabBarTint(accent: Color) {
+        let selectedColor = UIColor(accent)
+        let appearance = makeTabBarGlassAppearance(selectedAccent: accent)
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+        UITabBar.appearance().tintColor = selectedColor
+        applyTabBarTint(appearance, selectedColor: selectedColor, toLiveTabBarsIn: foregroundWindows())
+    }
+
+    /// Glass background plus optional accent tint.
+    @MainActor
+    static func applyTabBarAppearance(accent: Color? = nil) {
+        applyTabBarGlassAppearance()
+        if let accent {
+            applyTabBarTint(accent: accent)
+        }
+    }
+
+    /// Sheet dismiss can reset the live tab bar tint; apply immediately when safe.
+    @MainActor
+    static func reapplyTabBarAppearanceAfterPresentation(accent: Color) {
+        applyTabBarTint(accent: accent)
+    }
+
+    @MainActor
+    private static func makeTabBarGlassAppearance(selectedAccent: Color? = nil) -> UITabBarAppearance {
         let appearance = UITabBarAppearance()
         appearance.configureWithTransparentBackground()
         appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
@@ -203,8 +236,106 @@ struct BindrApp: App {
                 : UIColor.black.withAlphaComponent(0.10)
         }
 
-        UITabBar.appearance().standardAppearance = appearance
-        UITabBar.appearance().scrollEdgeAppearance = appearance
+        if let selectedAccent {
+            let selectedColor = UIColor(selectedAccent)
+            for layout in [
+                appearance.stackedLayoutAppearance,
+                appearance.inlineLayoutAppearance,
+                appearance.compactInlineLayoutAppearance,
+            ] {
+                layout.selected.iconColor = selectedColor
+                layout.selected.titleTextAttributes = [.foregroundColor: selectedColor]
+            }
+        }
+
+        return appearance
+    }
+
+    @MainActor
+    private static func foregroundWindows() -> [UIWindow] {
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .filter { $0.activationState == .foregroundActive || $0.activationState == .foregroundInactive }
+            .flatMap(\.windows)
+    }
+
+    @MainActor
+    private static func applyTabBarGlassAppearance(
+        _ appearance: UITabBarAppearance,
+        toLiveTabBarsIn windows: [UIWindow]
+    ) {
+        for tabBar in liveTabBars(in: windows) {
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = appearance
+            tabBar.isTranslucent = true
+        }
+    }
+
+    @MainActor
+    private static func applyTabBarTint(
+        _ appearance: UITabBarAppearance,
+        selectedColor: UIColor,
+        toLiveTabBarsIn windows: [UIWindow]
+    ) {
+        for tabBar in liveTabBars(in: windows) where tabBar.window != nil {
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = appearance
+            tabBar.tintColor = selectedColor
+            tabBar.isTranslucent = true
+        }
+    }
+
+    @MainActor
+    private static func liveTabBars(in windows: [UIWindow]) -> [UITabBar] {
+        var tabBars: [UITabBar] = []
+        for window in windows {
+            if let root = window.rootViewController {
+                tabBars.append(contentsOf: collectTabBars(in: root.view))
+                tabBars.append(contentsOf: collectTabBars(from: root))
+            }
+        }
+        var applied = Set<ObjectIdentifier>()
+        return tabBars.filter { applied.insert(ObjectIdentifier($0)).inserted }
+    }
+
+    @MainActor
+    private static func collectTabBars(from viewController: UIViewController) -> [UITabBar] {
+        var result: [UITabBar] = []
+        var queue: [UIViewController] = [viewController]
+        while let current = queue.popLast() {
+            if let tabBarController = current as? UITabBarController {
+                result.append(tabBarController.tabBar)
+            } else if let tabBarController = current.tabBarController {
+                result.append(tabBarController.tabBar)
+            }
+            queue.append(contentsOf: current.children)
+        }
+        return result
+    }
+
+    @MainActor
+    private static func tabBarController(in viewController: UIViewController) -> UITabBarController? {
+        if let tabBarController = viewController as? UITabBarController {
+            return tabBarController
+        }
+        for child in viewController.children {
+            if let found = tabBarController(in: child) {
+                return found
+            }
+        }
+        return nil
+    }
+
+    @MainActor
+    private static func collectTabBars(in view: UIView) -> [UITabBar] {
+        var result: [UITabBar] = []
+        if let tabBar = view as? UITabBar {
+            result.append(tabBar)
+        }
+        for subview in view.subviews {
+            result.append(contentsOf: collectTabBars(in: subview))
+        }
+        return result
     }
 
     @Environment(\.scenePhase) private var scenePhase

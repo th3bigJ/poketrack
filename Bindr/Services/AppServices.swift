@@ -97,6 +97,10 @@ final class AppServices {
     private var hasResolvedLaunchCatalogRefreshRequirement = true
     /// Mirrors card-detail root overlay behavior for sealed detail sheets so underlying UI is fully obscured.
     var isSealedDetailPresentationActive = false
+    /// Mirrors card-detail sheets presented from nested surfaces (e.g. Dashboard).
+    var isCardDetailPresentationActive = false
+    /// Hides the tab bar while a modal resets its tint so users never see a grey flash.
+    var suppressTabBarUntilTintRestored = false
     /// Temporary handoff when trade starts from non-social surfaces (e.g. Collect tab),
     /// then the user chooses a friend profile to complete the trade composer.
     var pendingTradeSeed: PendingTradeSeed?
@@ -777,6 +781,7 @@ final class AppServices {
             ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
             collectionLedger = ledger
         }
+        _ = try? CollectionCostLotRepair.relinkActiveLots(in: modelContext)
         Task { await syncSocialLibrariesIfPossible() }
     }
 
@@ -792,6 +797,7 @@ final class AppServices {
             ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
             collectionLedger = ledger
         }
+        _ = try? CollectionCostLotRepair.relinkActiveLots(in: modelContext)
         bindCollectionSync(modelContext: modelContext)
         await syncSocialLibrariesIfPossible()
     }

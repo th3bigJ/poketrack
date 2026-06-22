@@ -27,6 +27,8 @@ struct DashboardView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
+    @Environment(\.suppressTabBarForModalChrome) private var suppressTabBarForModalChrome
 
     // Manual @State instead of @Query so CloudKit background syncs don't trigger
     // DashboardView body re-renders. @Query fires on every SwiftData save — including
@@ -592,19 +594,37 @@ struct DashboardView: View {
                 }
             }
         }
-        .sheet(item: $selectedCardForDetail, onDismiss: { BindrApp.applyTabBarAppearance() }) { card in
+        .sheet(item: $selectedCardForDetail, onDismiss: restoreTabBarAfterSheet) { card in
             CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
+                .bindrTheme(accent: services.theme.accentColor)
         }
-        .sheet(item: $selectedSealedProductForDetail, onDismiss: { BindrApp.applyTabBarAppearance() }) { product in
+        .sheet(item: $selectedSealedProductForDetail, onDismiss: restoreTabBarAfterSheet) { product in
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)
         }
+        .onChange(of: selectedCardForDetail?.id) { _, cardID in
+            services.isCardDetailPresentationActive = cardID != nil
+            if cardID != nil {
+                suppressTabBarForModalChrome?()
+            }
+        }
         .onChange(of: selectedSealedProductForDetail?.id) { _, productID in
-            services.isSealedDetailPresentationActive = (productID != nil)
+            services.isSealedDetailPresentationActive = productID != nil
+            if productID != nil {
+                suppressTabBarForModalChrome?()
+            }
         }
         .sheet(item: $editingRecentLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
+        }
+    }
+
+    private func restoreTabBarAfterSheet() {
+        if let restoreTabBarChrome {
+            restoreTabBarChrome()
+        } else {
+            BindrApp.reapplyTabBarAppearanceAfterPresentation(accent: services.theme.accentColor)
         }
     }
 

@@ -895,6 +895,7 @@ enum UserLibraryBackupCodec {
         }
 
         try modelContext.save()
+        try CollectionCostLotRepair.relinkActiveLots(in: modelContext)
         return restoredCards
     }
 

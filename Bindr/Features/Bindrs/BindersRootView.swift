@@ -668,6 +668,9 @@ struct BinderOpenContainer: View {
     var body: some View {
         GeometryReader { rootGeo in
             ZStack {
+                BindrPageBackground()
+                    .ignoresSafeArea()
+
                 // Underlying detail view — stays mounted for the whole
                 // presentation. Hidden during the very last collapse so the
                 // page-area doesn't poke out behind the morphing cover.
@@ -677,6 +680,7 @@ struct BinderOpenContainer: View {
                     onCustomDismiss: { beginClose() },
                     preloadedPeekingURLs: peekingURLs,
                     preloadedValueText: valueText,
+                    topSafeAreaInset: rootGeo.safeAreaInsets.top,
                     bottomSafeAreaInset: rootGeo.safeAreaInsets.bottom
                 )
                 .environment(services)

@@ -126,7 +126,7 @@ struct SharedContentView: View {
         .sheet(item: $presentedCard) { card in
             // Reuse the standard browse detail screen so the experience matches
             // tapping a card from the Browse tab — same chrome, same actions.
-            CardDetailSheet(cards: [card], startIndex: 0)
+            CardDetailSheet(cards: [card], startIndex: 0, managesTabBarChrome: false)
                 .environment(services)
         }
     }

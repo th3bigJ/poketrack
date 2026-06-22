@@ -11,7 +11,6 @@ struct CardFriendTradeMatchesSection: View {
     var directContext: CardTradeContext? = nil
 
     @State private var contexts: [CardTradeContext] = []
-    @State private var isLoading = false
     @State private var isSignedIn = false
 
     var body: some View {
@@ -22,8 +21,6 @@ struct CardFriendTradeMatchesSection: View {
                 ForEach(Array(contexts.enumerated()), id: \.offset) { _, context in
                     CardTradeContextRow(card: card, context: context)
                 }
-            } else if isLoading {
-                tradeLoadingRow
             }
         }
         .onAppear {
@@ -41,39 +38,21 @@ struct CardFriendTradeMatchesSection: View {
         }
     }
 
-    private var tradeLoadingRow: some View {
-        HStack(spacing: 12) {
-            ProgressView()
-                .controlSize(.small)
-            Text("Checking friend trades…")
-                .font(.system(size: 14, weight: .medium, design: .rounded))
-                .foregroundStyle(.secondary)
-            Spacer(minLength: 0)
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
-        .glassCardStyle(cornerRadius: 18, interactive: false)
-    }
-
     @MainActor
     private func loadMatches() async {
         if directContext != nil {
             contexts = []
-            isLoading = false
             return
         }
 
         guard services.socialAuth.isSignedIn else {
             contexts = []
-            isLoading = false
             return
         }
 
-        isLoading = true
         contexts = await services.cardFriendTradeMatches.tradeContexts(for: card, services: services) { card, side in
             services.launchTradeFromCardDetail(cardID: card.masterCardId, preferredSide: side)
             dismiss()
         }
-        isLoading = false
     }
 }
