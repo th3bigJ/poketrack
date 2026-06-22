@@ -126,7 +126,7 @@ struct BindersRootView: View {
         // Hide the tab bar for the whole presentation (including close
         // animation). RootView also watches ``ChromeScrollCoordinator.overlaySuppressesTabBar``
         // because nested `.toolbar` modifiers alone don't always reach TabView chrome.
-        .toolbar(presentedBinder != nil ? .hidden : .visible, for: .tabBar)
+        .toolbar(presentedBinder != nil ? .hidden : .automatic, for: .tabBar)
         .onChange(of: presentedBinder != nil) { _, isPresented in
             chromeScroll.setOverlaySuppressesTabBar(isPresented)
         }
@@ -210,47 +210,54 @@ struct BindersRootView: View {
                 // touch more vertical spacing between rows.
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 158), spacing: 14)], spacing: 16) {
                     ForEach(visibleBinders) { binder in
-                        Button {
-                            beginBinderOpen(binder)
-                        } label: {
-                            ZStack(alignment: .topTrailing) {
-                                BinderCardCell(
-                                    binder: binder,
-                                    onURLsLoaded: { urls in
-                                        gridResolvedURLs[binder.id] = urls
-                                    },
-                                    onValueLoaded: { val in
-                                        gridResolvedValues[binder.id] = val
-                                    }
-                                )
-                                .background(
-                                    GeometryReader { coverGeo in
-                                        Color.clear.preference(
-                                            key: BinderCellFramePreferenceKey.self,
-                                            value: [
-                                                binder.id: coverGeo.frame(in: .named("bindersRoot"))
-                                            ]
-                                        )
-                                    }
-                                )
-
-                                if isEditing {
-                                    Button {
-                                        binderToDelete = binder
-                                        showDeleteConfirm = true
-                                    } label: {
-                                        Image(systemName: "minus.circle.fill")
-                                            .font(.title3)
-                                            .foregroundStyle(.red)
-                                            .background(Circle().fill(.white).padding(2))
-                                    }
-                                    .transition(.scale.combined(with: .opacity))
-                                    .padding(8)
+                        // Use a plain ZStack + onTapGesture rather than Button+contextMenu.
+                        // On iOS 26 the context menu long-press recogniser conflicts with
+                        // the Button tap action, causing the open gesture to flash and die.
+                        // Separating tap and context-menu onto a plain view eliminates the
+                        // gesture competition entirely.
+                        ZStack(alignment: .topTrailing) {
+                            BinderCardCell(
+                                binder: binder,
+                                onURLsLoaded: { urls in
+                                    gridResolvedURLs[binder.id] = urls
+                                },
+                                onValueLoaded: { val in
+                                    gridResolvedValues[binder.id] = val
                                 }
+                            )
+                            .background(
+                                GeometryReader { coverGeo in
+                                    Color.clear.preference(
+                                        key: BinderCellFramePreferenceKey.self,
+                                        value: [
+                                            binder.id: coverGeo.frame(in: .named("bindersRoot"))
+                                        ]
+                                    )
+                                }
+                            )
+
+                            if isEditing {
+                                Button {
+                                    binderToDelete = binder
+                                    showDeleteConfirm = true
+                                } label: {
+                                    Image(systemName: "minus.circle.fill")
+                                        .font(.title3)
+                                        .foregroundStyle(.red)
+                                        .background(Circle().fill(.white).padding(2))
+                                }
+                                .transition(.scale.combined(with: .opacity))
+                                .padding(8)
                             }
                         }
-                        .buttonStyle(NoHighlightButtonStyle())
                         .aspectRatio(0.707, contentMode: .fill)
+                        .contentShape(Rectangle())
+                        // Tap fires binder open; entirely separate from the
+                        // long-press that activates the context menu.
+                        .onTapGesture {
+                            guard !isEditing else { return }
+                            beginBinderOpen(binder)
+                        }
                         .contextMenu {
                             Button(role: .destructive) {
                                 binderToDelete = binder
@@ -532,14 +539,6 @@ private struct BindersHeaderHeightKey: PreferenceKey {
     static var defaultValue: CGFloat = 64
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = max(value, nextValue())
-    }
-}
-
-/// Removes default tap/press visual feedback for binder covers. The open
-/// morph is already the feedback; an extra button highlight reads as a flash.
-private struct NoHighlightButtonStyle: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
     }
 }
 
