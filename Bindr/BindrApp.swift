@@ -79,7 +79,11 @@ struct BindrApp: App {
     init() {
         Self.storeExistedAtLaunch = FileManager.default.fileExists(atPath: Self.storeURL.path)
         Self.suppressCoreDataDebugLogging()
-        Self.configureTabBarAppearance()
+        // App launch runs on the main thread; configure tab bar before the first frame.
+        dispatchPrecondition(condition: .onQueue(.main))
+        MainActor.assumeIsolated {
+            Self.applyTabBarAppearance()
+        }
     }
 
     /// Core Data / SwiftData emit verbose WAL checkpoint logs when SQL debug is
@@ -180,7 +184,9 @@ struct BindrApp: App {
     }
 
     /// Match tab bar glass density to multi-select pill buttons.
-    private static func configureTabBarAppearance() {
+    /// Re-call after sheet dismiss — presentation can reset the tab bar to the default opaque grey.
+    @MainActor
+    static func applyTabBarAppearance() {
         let appearance = UITabBarAppearance()
         appearance.configureWithTransparentBackground()
         appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)

@@ -4,21 +4,27 @@ import UIKit
 
 private struct CardDetailCollectionScope<Content: View>: View {
     @Query private var collectionItems: [CollectionItem]
+    private let cardID: String
     private let content: ([CollectionItem]) -> Content
 
     init(
         cardID: String,
         @ViewBuilder content: @escaping ([CollectionItem]) -> Content
     ) {
+        self.cardID = cardID
+        let scopedCardID = cardID
         _collectionItems = Query(
-            filter: #Predicate<CollectionItem> { $0.cardID == cardID },
+            filter: #Predicate<CollectionItem> { $0.cardID == scopedCardID },
             sort: [SortDescriptor(\.variantKey)]
         )
         self.content = content
     }
 
     var body: some View {
-        content(collectionItems)
+        // SwiftData @Query can briefly return rows from a prior card when this scope is reused.
+        let scopedItems = collectionItems.filter { $0.cardID == cardID }
+        content(scopedItems)
+            .id(cardID)
     }
 }
 
@@ -65,6 +71,12 @@ struct CardDetailSheet: View {
     }
 
     private var currentCard: Card { cards[index] }
+
+    /// Forces a fresh detail sheet when presenting a different card or card list.
+    private var sheetContentIdentity: String {
+        cards.map(\.masterCardId).joined(separator: "\u{1F}")
+    }
+
     private func set(for card: Card) -> TCGSet? { services.cardData.sets.first { $0.setCode == card.setCode } }
 
     private func visibleCollectionItems(_ collectionItems: [CollectionItem]) -> [CollectionItem] {
@@ -109,10 +121,9 @@ struct CardDetailSheet: View {
         GeometryReader { geo in
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 0) {
-                    ForEach(Array(cards.indices), id: \.self) { i in
-                        cardPage(for: cards[i])
+                    ForEach(cards, id: \.masterCardId) { pageCard in
+                        cardPage(for: pageCard)
                             .frame(width: geo.size.width, height: geo.size.height)
-                            .id(i)
                     }
                 }
                 .scrollTargetLayout()
@@ -127,6 +138,7 @@ struct CardDetailSheet: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .id(sheetContentIdentity)
         .background(sheetBackground)
         .task(id: currentCard.masterCardId) {
             await loadWishlistVariantKeys()
@@ -178,6 +190,9 @@ struct CardDetailSheet: View {
             }
         }
         .animation(.easeOut(duration: 0.18), value: collectionAddSuccessPresentation?.id)
+        .presentationBackground {
+            sheetBackground
+        }
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
@@ -237,7 +252,7 @@ struct CardDetailSheet: View {
                     recentSoldOnEbayButton(for: pageCard)
                         .glassCardStyle(cornerRadius: 26, interactive: false)
                     if showsCollectionSection(for: pageCard, collectionItems: collectionItems) {
-                        collectionSection(collectionItems: collectionItems)
+                        collectionSection(for: pageCard, collectionItems: collectionItems)
                     }
                     if !facts.isEmpty || pageCard.attacks != nil || pageCard.abilities != nil || cleaned(pageCard.rules) != nil || cleaned(pageCard.flavorText) != nil {
                         cardDetailsSection(for: pageCard, facts: facts)
@@ -250,7 +265,6 @@ struct CardDetailSheet: View {
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
         }
-        .id(pageCard.masterCardId)
     }
 
     // MARK: - Hero
@@ -361,14 +375,14 @@ struct CardDetailSheet: View {
         }
     }
 
-    private func allHoldingLines(collectionItems: [CollectionItem]) -> [HoldingLine] {
-        groupedHoldings(collectionItems: collectionItems)
+    private func allHoldingLines(for card: Card, collectionItems: [CollectionItem]) -> [HoldingLine] {
+        groupedHoldings(for: card, collectionItems: collectionItems)
             .flatMap(\.lines)
             .sorted { $0.date > $1.date }
     }
 
     private func openRemoveFromCollectionFlow(for card: Card, collectionItems: [CollectionItem]) {
-        let lines = allHoldingLines(collectionItems: collectionItems)
+        let lines = allHoldingLines(for: card, collectionItems: collectionItems)
         guard !lines.isEmpty else { return }
         dispositionFlowPayload = CollectionDispositionFlowPayload(lines: lines, cardDisplayName: card.cardName)
         Haptics.lightImpact()
@@ -441,10 +455,10 @@ struct CardDetailSheet: View {
 
     // MARK: - Collection section
 
-    private func collectionSection(collectionItems: [CollectionItem]) -> some View {
+    private func collectionSection(for card: Card, collectionItems: [CollectionItem]) -> some View {
         DebugDetailSurface(title: "Collection") {
             VStack(alignment: .leading, spacing: 14) {
-                ForEach(groupedHoldings(collectionItems: collectionItems)) { group in
+                ForEach(groupedHoldings(for: card, collectionItems: collectionItems)) { group in
                     holdingCard(for: group)
                 }
             }
@@ -733,11 +747,15 @@ struct CardDetailSheet: View {
 
     // MARK: - Grouped holdings
 
-    private func groupedHoldings(collectionItems: [CollectionItem]) -> [HoldingGroup] {
+    private func groupedHoldings(for card: Card, collectionItems: [CollectionItem]) -> [HoldingGroup] {
+        let expectedCardID = card.masterCardId
         var groups: [String: HoldingGroup] = [:]
-        for item in visibleCollectionItems(collectionItems) {
+        for item in visibleCollectionItems(collectionItems) where item.cardID == expectedCardID {
             for lot in (item.costLots ?? []).filter({ $0.quantityRemaining > 0 }) {
                 let line = lot.sourceLedgerLine
+                if let lineCardID = cleaned(line?.cardID), lineCardID != expectedCardID {
+                    continue
+                }
                 let direction = line.flatMap { LedgerDirection(rawValue: $0.direction) } ?? .bought
                 let date = line?.occurredAt ?? item.dateAcquired
                 let counterparty = cleaned(line?.counterparty)

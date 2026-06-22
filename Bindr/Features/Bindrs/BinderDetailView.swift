@@ -29,9 +29,6 @@ struct BinderDetailView: View {
     var preloadedPeekingURLs: [URL?]? = nil
     /// Pre-resolved binder value text passed from the grid.
     var preloadedValueText: String? = nil
-    /// The top safe-area inset of the screen, passed in by the host when
-    /// ``entryFromGrid`` is true so the header doesn't overlap the status bar.
-    var topSafeAreaInset: CGFloat = 0
     /// The bottom safe-area inset of the screen (home indicator area), passed
     /// in by the host so the bottom stats row doesn't sit under the home bar.
     var bottomSafeAreaInset: CGFloat = 0
@@ -68,10 +65,6 @@ struct BinderDetailView: View {
     /// to the host's collapse — quick "I tapped the wrong binder" backs
     /// shouldn't feel like a 2-second penalty.
     @State private var firstCardPageLandedAt: Date? = nil
-    /// Measured height of the floating header. Drives a clear `safeAreaInset`
-    /// spacer so edit-mode scroll content clears the overlay without painting
-    /// an opaque bar across the playmat.
-    @State private var binderHeaderHeight: CGFloat = 64
 
     /// Back-button handler for the binder detail screen. Mirrors the open
     /// sequence: when entered from the grid we curl back to the cover (page
@@ -253,26 +246,16 @@ struct BinderDetailView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
-            .safeAreaInset(edge: .top, spacing: 0) {
-                if !isEditing {
-                    Color.clear.frame(height: binderHeaderHeight)
-                }
-            }
-
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .clipped()
+        .safeAreaInset(edge: .top, spacing: 0) {
             binderHeader
-                .background(
-                    GeometryReader { geo in
-                        Color.clear.preference(key: BinderHeaderHeightKey.self, value: geo.size.height)
-                    }
-                )
-                .onPreferenceChange(BinderHeaderHeightKey.self) { binderHeaderHeight = $0 }
                 .opacity(isChromeVisible ? 1 : 0)
                 .offset(y: isChromeVisible ? 0 : -20)
                 .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
                 .allowsHitTesting(isChromeVisible)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .clipped()
         .background {
             if isEditing {
                 BindrPageBackground().ignoresSafeArea()
@@ -439,43 +422,49 @@ struct BinderDetailView: View {
     }
 
     private var viewModeContent: some View {
-        ZStack(alignment: .bottom) {
-            viewContent
-                // Lock swipe gestures while the open sequence is
-                // still running. Without this guard a fast user
-                // can flick the page mid-morph, racing against
-                // the auto cover→page-1 advance and leaving the
-                // ``UIPageViewController`` in a confused state.
-                // Once chrome lands the user is firmly in the
-                // detail view and the page-curl is theirs again.
-                .allowsHitTesting(isChromeVisible)
-
-            VStack(spacing: 12) {
-                if !layout.isFreeScroll {
-                    swipeHint
-                        // Hide the swipe hint until the chrome has
-                        // arrived too — there's nothing to swipe to
-                        // during the cover-hold so promising one is
-                        // a lie.
-                        .opacity(isChromeVisible ? 1 : 0)
-                        .animation(.easeOut(duration: 0.3), value: isChromeVisible)
-                }
-
-                bottomStatsBar
-                    .opacity(isChromeVisible ? 1 : 0)
-                    .offset(y: isChromeVisible ? 0 : 20)
-                    .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
-            }
-            .padding(.bottom, bottomOverlayInset)
+        viewContent
+            // Lock swipe gestures while the open sequence is
+            // still running. Without this guard a fast user
+            // can flick the page mid-morph, racing against
+            // the auto cover→page-1 advance and leaving the
+            // ``UIPageViewController`` in a confused state.
+            // Once chrome lands the user is firmly in the
+            // detail view and the page-curl is theirs again.
             .allowsHitTesting(isChromeVisible)
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                bottomChromeStack
+                    .allowsHitTesting(isChromeVisible)
+            }
+    }
+
+    /// Swipe hint + stats row, pinned to the bottom of the screen.
+    /// ``safeAreaInset`` shrinks the page-curl area above so the binder
+    /// centres in the remaining space instead of floating over the chrome.
+    private var bottomChromeStack: some View {
+        VStack(spacing: 8) {
+            if !layout.isFreeScroll {
+                swipeHint
+                    // Hide the swipe hint until the chrome has
+                    // arrived too — there's nothing to swipe to
+                    // during the cover-hold so promising one is
+                    // a lie.
+                    .opacity(isChromeVisible ? 1 : 0)
+                    .animation(.easeOut(duration: 0.3), value: isChromeVisible)
+            }
+
+            bottomStatsBar
+                .opacity(isChromeVisible ? 1 : 0)
+                .offset(y: isChromeVisible ? 0 : 20)
+                .animation(.spring(response: 0.45, dampingFraction: 0.8), value: isChromeVisible)
         }
+        .padding(.bottom, bottomOverlayInset)
     }
 
     /// Uses ``BindrPageHeader`` (the same component Social/Binders/Decks list
     /// pages use) so the binder detail screen's chrome lines up perfectly
-    /// with the rest of the app's glass treatment. Floated in a `ZStack`
-    /// overlay — not placed inside `safeAreaInset` — so the bar stays
-    /// transparent and only the glass discs blur the playmat underneath.
+    /// with the rest of the app's glass treatment. Hosted in a top
+    /// ``safeAreaInset`` — same pattern as ``DeckDetailView`` — so the
+    /// buttons land below the status bar without manual inset math.
     private var binderHeader: some View {
         BindrPageHeader(
             title: binder.title,
@@ -488,10 +477,6 @@ struct BinderDetailView: View {
             },
             trailing: { binderHeaderTrailingButtons }
         )
-        // Push the header down so it sits below the status bar.
-        // Fall back to 47pt (standard notch height) if the inset
-        // isn't reported correctly.
-        .padding(.top, entryFromGrid ? (topSafeAreaInset > 0 ? topSafeAreaInset : 47) : 0)
     }
 
     private var binderHeaderTrailingButtons: some View {
@@ -534,9 +519,10 @@ struct BinderDetailView: View {
 
     /// Bottom inset for the swipe hint + stats row. The host passes
     /// ``bottomSafeAreaInset`` when the presentation ignores the system
-    /// safe area so we still clear the home indicator and tab bar.
+    /// safe area so we still clear the home indicator. The tab bar is
+    /// hidden while a binder is open, so we do not reserve its inset.
     private var bottomOverlayInset: CGFloat {
-        max(bottomSafeAreaInset, RootChromeEnvironment.floatingTabBarContentInset, 8)
+        max(bottomSafeAreaInset, 8)
     }
 
     // MARK: - Bottom stats bar (Cards · Page Value · Binder Value)
@@ -625,7 +611,6 @@ struct BinderDetailView: View {
 
     private func pagedViewContent(geo: GeometryProxy) -> some View {
         let pageSize = binderPageSize(in: geo.size)
-        let pageVerticalOffset: CGFloat = -40
         return VStack(spacing: 0) {
             PageCurlView(
                 pageCount: totalPageCount,
@@ -641,14 +626,13 @@ struct BinderDetailView: View {
                 }
             }
             .frame(width: pageSize.width, height: pageSize.height)
-            .offset(y: pageVerticalOffset) // Shift binder up so it is visually balanced between header and floating bottom bar.
             .background(
                 GeometryReader { pgGeo in
                     let layoutFrame = pgGeo.frame(in: .named("bindersRoot"))
                     let reportedFrame = isCoverPage(currentPage)
                         ? coverFrame(in: pageSize, pageOrigin: layoutFrame.origin)
                         : layoutFrame
-                    let visualFrame = reportedFrame.offsetBy(dx: 0, dy: pageVerticalOffset)
+                    let visualFrame = reportedFrame
                     Color.clear.preference(
                         key: BinderPageFramePreferenceKey.self,
                         value: visualFrame
@@ -1127,10 +1111,6 @@ struct BinderDetailView: View {
     private var editContent: some View {
         ScrollView {
             VStack(spacing: 16) {
-                // Reserve space for the floating header without a `safeAreaInset`
-                // band — content scrolls underneath so the glass buttons blur it.
-                Color.clear.frame(height: binderHeaderHeight)
-
                 editToolbar
 
                 if layout.isFreeScroll {
@@ -1766,15 +1746,6 @@ private struct BinderSlotDropDelegate: DropDelegate {
 /// morph overlay over the same rectangle. The host reads it through a
 /// `.onPreferenceChange` and animates the matched-geometry cover from the
 /// grid cell frame to this rect, then back when the binder is closed.
-/// Preference key used by ``BinderDetailView`` to read its floating header
-/// height back into a clear `safeAreaInset` spacer.
-private struct BinderHeaderHeightKey: PreferenceKey {
-    static var defaultValue: CGFloat = 64
-    static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
-        value = max(value, nextValue())
-    }
-}
-
 struct BinderPageFramePreferenceKey: PreferenceKey {
     static var defaultValue: CGRect = .zero
     static func reduce(value: inout CGRect, nextValue: () -> CGRect) {

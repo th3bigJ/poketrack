@@ -592,11 +592,11 @@ struct DashboardView: View {
                 }
             }
         }
-        .sheet(item: $selectedCardForDetail) { card in
+        .sheet(item: $selectedCardForDetail, onDismiss: { BindrApp.applyTabBarAppearance() }) { card in
             CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
         }
-        .sheet(item: $selectedSealedProductForDetail) { product in
+        .sheet(item: $selectedSealedProductForDetail, onDismiss: { BindrApp.applyTabBarAppearance() }) { product in
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)
         }

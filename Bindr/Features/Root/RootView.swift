@@ -788,6 +788,7 @@ struct RootView: View {
                     }
                     .bindrDisableTabBarMinimize()
                     .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+                    .toolbarBackground(.hidden, for: .tabBar)
                     if isSearchExperiencePresented {
                         searchOverlay
                     }
@@ -959,14 +960,14 @@ struct RootView: View {
             guard let queuedURL else { return }
             handleSocialDeepLink(queuedURL)
         }
-        .sheet(item: $selectedCardPresentation) { ctx in
+        .sheet(item: $selectedCardPresentation, onDismiss: restoreTabBarGlassAppearance) { ctx in
             CardDetailSheet(
                 cards: ctx.cards,
                 startIndex: ctx.startIndex
             )
             .environment(services)
         }
-        .sheet(item: $selectedSealedProductPresentation) { ctx in
+        .sheet(item: $selectedSealedProductPresentation, onDismiss: restoreTabBarGlassAppearance) { ctx in
             if ctx.products.isEmpty {
                 ContentUnavailableView("No product", systemImage: "shippingbox")
             } else {
@@ -1304,6 +1305,10 @@ struct RootView: View {
             isAllBrands: false,
             config: isSealedTab ? .products : browseConfig
         )
+    }
+
+    private func restoreTabBarGlassAppearance() {
+        BindrApp.applyTabBarAppearance()
     }
 
     private func launchTradeFlowFromCollectionCard(_ card: Card) {

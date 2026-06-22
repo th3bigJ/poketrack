@@ -677,8 +677,7 @@ struct BinderOpenContainer: View {
                     onCustomDismiss: { beginClose() },
                     preloadedPeekingURLs: peekingURLs,
                     preloadedValueText: valueText,
-                    topSafeAreaInset: rootGeo.safeAreaInsets.top,
-                    bottomSafeAreaInset: RootChromeEnvironment.floatingTabBarContentInset
+                    bottomSafeAreaInset: rootGeo.safeAreaInsets.bottom
                 )
                 .environment(services)
                 .opacity(isClosing ? 0 : detailOpacity)

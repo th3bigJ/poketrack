@@ -529,11 +529,7 @@ struct UniversalSearchBar: View {
 /// Same circle glyph treatment as ``ChromeGlassCircleButton`` (for `Menu` labels and other non-`Button` wrappers).
 struct ChromeGlassCircleGlyphModifier: ViewModifier {
     func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            content.searchBarCircleChrome(forceNativeGlass: true)
-        } else {
-            content.searchBarCircleChrome()
-        }
+        content.searchBarCircleChrome()
     }
 }
 

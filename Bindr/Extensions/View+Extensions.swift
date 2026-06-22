@@ -61,12 +61,11 @@ extension View {
         )
     }
 
-    /// Circle chrome for search bar accessory buttons — white in light mode, glass in dark.
-    func searchBarCircleChrome(interactive: Bool = true, forceNativeGlass: Bool = false) -> some View {
+    /// Circle chrome for floating header / search accessory buttons — translucent material in light mode, clear glass in dark.
+    func searchBarCircleChrome(interactive: Bool = true) -> some View {
         modifier(
             SearchBarCircleChromeModifier(
-                interactive: interactive,
-                forceNativeGlass: forceNativeGlass
+                interactive: interactive
             )
         )
     }
@@ -257,7 +256,6 @@ struct SearchFieldChromeModifier: ViewModifier {
 
 struct SearchBarCircleChromeModifier: ViewModifier {
     var interactive: Bool = true
-    var forceNativeGlass: Bool = false
 
     @Environment(\.colorScheme) private var colorScheme
 
@@ -265,19 +263,14 @@ struct SearchBarCircleChromeModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         Group {
-            if #available(iOS 26.0, *), forceNativeGlass {
+            if colorScheme == .light {
                 content
                     .frame(width: 44, height: 44)
-                    .glassEffect(
-                        interactive ? Glass.clear.tint(nil).interactive() : Glass.clear.tint(nil),
-                        in: Circle()
-                    )
-                    .contentShape(Circle())
-            } else if colorScheme == .light {
-                content
-                    .frame(width: 44, height: 44)
-                    .background(Circle().fill(.white))
-                    .overlay(Circle().stroke(BindrPalette.feedCardBorder, lineWidth: 1))
+                    .background(.ultraThinMaterial, in: Circle())
+                    .overlay {
+                        Circle()
+                            .strokeBorder(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 0.5)
+                    }
                     .contentShape(Circle())
             } else if #available(iOS 26.0, *) {
                 content

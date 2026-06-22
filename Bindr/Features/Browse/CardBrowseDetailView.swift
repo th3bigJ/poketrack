@@ -46,7 +46,7 @@ struct CardBrowseDetailView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 TabView(selection: $index) {
-                    ForEach(Array(cards.enumerated()), id: \.element.id) { i, card in
+                    ForEach(Array(cards.enumerated()), id: \.element.masterCardId) { i, card in
                         CardBrowseDetailPage(
                             card: card,
                             set: services.cardData.sets.first { $0.setCode == card.setCode },
@@ -126,15 +126,15 @@ private struct CardBrowseDetailPage: View {
         self.showsCollectionAction = showsCollectionAction
         self.showsWishlistAction = showsWishlistAction
         self.directTradeContext = directTradeContext
-        let cardID = card.masterCardId
+        let scopedCardID = card.masterCardId
         _collectionItems = Query(
-            filter: #Predicate<CollectionItem> { $0.cardID == cardID },
+            filter: #Predicate<CollectionItem> { $0.cardID == scopedCardID },
             sort: [SortDescriptor(\.variantKey)]
         )
     }
 
     private var visibleCollectionItems: [CollectionItem] {
-        collectionItems.filter { $0.quantity > 0 }
+        collectionItems.filter { $0.cardID == card.masterCardId && $0.quantity > 0 }
     }
 
     private var showsCollectionSection: Bool {
@@ -245,6 +245,7 @@ private struct CardBrowseDetailPage: View {
             .scrollIndicators(.hidden)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .id(card.masterCardId)
         .background(pageBackground.ignoresSafeArea())
         .task(id: card.masterCardId) {
             extractedAuraColors = []
@@ -925,9 +926,12 @@ private struct CardBrowseDetailPage: View {
     private var groupedHoldings: [HoldingGroup] {
         var groups: [String: HoldingGroup] = [:]
 
-        for item in visibleCollectionItems {
+        for item in visibleCollectionItems where item.cardID == card.masterCardId {
             for lot in (item.costLots ?? []).filter({ $0.quantityRemaining > 0 }) {
                 let line = lot.sourceLedgerLine
+                if let lineCardID = cleaned(line?.cardID), lineCardID != card.masterCardId {
+                    continue
+                }
                 let direction = line.flatMap { LedgerDirection(rawValue: $0.direction) } ?? .bought
                 let date = line?.occurredAt ?? item.dateAcquired
                 let counterparty = cleaned(line?.counterparty)

@@ -1,10 +1,10 @@
 import SwiftUI
 
 extension SocialProfile {
-    /// First name when available, otherwise the username — used in trade context copy.
+    /// Display name when set, otherwise the username — used in trade context copy.
     var shortDisplayName: String {
         if let displayName = displayName?.trimmingCharacters(in: .whitespacesAndNewlines), !displayName.isEmpty {
-            return displayName.split(separator: " ").first.map(String.init) ?? displayName
+            return displayName
         }
         return username
     }
