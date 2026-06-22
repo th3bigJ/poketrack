@@ -52,29 +52,26 @@ struct MultiSelectAddToCollectionSheet: View {
                 }
 
                 Section {
-                    Picker("Purchase type", selection: $acquisitionKind) {
-                        ForEach(CollectionAcquisitionKind.manualAddCases, id: \.self) { kind in
-                            Text(kind.title).tag(kind)
-                        }
-                    }
-                    .pickerStyle(.segmented)
+                    GreySegmentedPicker(
+                        selection: $acquisitionKind,
+                        items: CollectionAcquisitionKind.manualAddCases,
+                        title: \.title
+                    )
                 }
 
                 Section {
-                    Picker("Condition", selection: $cardCondition) {
-                        ForEach(CardCondition.allCases, id: \.self) { condition in
-                            Text(condition.title).tag(condition)
-                        }
-                    }
-                    .pickerStyle(.segmented)
+                    GreySegmentedPicker(
+                        selection: $cardCondition,
+                        items: CardCondition.allCases,
+                        title: \.title
+                    )
 
                     if cardCondition == .graded {
-                        Picker("Grading company", selection: $gradingCompany) {
-                            ForEach(GradingCompany.allCases, id: \.self) { company in
-                                Text(company.title).tag(company)
-                            }
-                        }
-                        .pickerStyle(.segmented)
+                        GreySegmentedPicker(
+                            selection: $gradingCompany,
+                            items: GradingCompany.allCases,
+                            title: \.title
+                        )
                     }
                 } footer: {
                     if cardCondition == .graded {

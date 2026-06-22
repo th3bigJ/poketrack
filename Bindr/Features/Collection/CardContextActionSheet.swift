@@ -234,29 +234,26 @@ struct CardContextActionSheet: View {
     @ViewBuilder
     private var collectionFields: some View {
         Section {
-            Picker("How acquired", selection: $acquisitionKind) {
-                ForEach(CollectionAcquisitionKind.manualAddCases, id: \.self) { kind in
-                    Text(kind.title).tag(kind)
-                }
-            }
-            .pickerStyle(.segmented)
+            GreySegmentedPicker(
+                selection: $acquisitionKind,
+                items: CollectionAcquisitionKind.manualAddCases,
+                title: \.title
+            )
         }
 
         Section {
-            Picker("Condition", selection: $cardCondition) {
-                ForEach(CardCondition.allCases, id: \.self) { c in
-                    Text(c.title).tag(c)
-                }
-            }
-            .pickerStyle(.segmented)
+            GreySegmentedPicker(
+                selection: $cardCondition,
+                items: CardCondition.allCases,
+                title: \.title
+            )
 
             if cardCondition == .graded {
-                Picker("Grading company", selection: $gradingCompany) {
-                    ForEach(GradingCompany.allCases, id: \.self) { c in
-                        Text(c.title).tag(c)
-                    }
-                }
-                .pickerStyle(.segmented)
+                GreySegmentedPicker(
+                    selection: $gradingCompany,
+                    items: GradingCompany.allCases,
+                    title: \.title
+                )
             }
         } footer: {
             if cardCondition == .graded {
@@ -309,12 +306,11 @@ struct CardContextActionSheet: View {
     @ViewBuilder
     private var markAsFields: some View {
         Section {
-            Picker("Status", selection: $dispositionKind) {
-                ForEach(CollectionDispositionKind.allCases, id: \.self) { kind in
-                    Text(kind.title).tag(kind)
-                }
-            }
-            .pickerStyle(.segmented)
+            GreySegmentedPicker(
+                selection: $dispositionKind,
+                items: CollectionDispositionKind.allCases,
+                title: \.title
+            )
         }
 
         Section {

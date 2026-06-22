@@ -1636,12 +1636,11 @@ struct HoldingDispositionSheet: View {
                 }
 
                 Section {
-                    Picker("Status", selection: $dispositionKind) {
-                        ForEach(CollectionDispositionKind.allCases, id: \.self) { kind in
-                            Text(kind.title).tag(kind)
-                        }
-                    }
-                    .pickerStyle(.segmented)
+                    GreySegmentedPicker(
+                        selection: $dispositionKind,
+                        items: CollectionDispositionKind.allCases,
+                        title: \.title
+                    )
                 }
 
                 Section {

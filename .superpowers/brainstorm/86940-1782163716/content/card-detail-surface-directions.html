@@ -1,0 +1,192 @@
+<style>
+  .direction-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+  .direction {
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 22px;
+    padding: 12px;
+    transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .direction:hover { transform: translateY(-2px); }
+  .direction.selected {
+    border-color: #4f7ff5;
+    box-shadow: 0 10px 30px rgba(79,127,245,.18);
+  }
+  .phone {
+    min-height: 610px;
+    padding: 20px 14px;
+    border-radius: 32px;
+    background: #eee5e3;
+    color: #141414;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  .phone h4 {
+    margin: 0 0 5px;
+    font-size: 22px;
+    text-align: center;
+  }
+  .set-name {
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .actions {
+    display: grid;
+    grid-template-columns: 46px 1fr 46px;
+    gap: 9px;
+    margin-bottom: 14px;
+  }
+  .action, .primary-action {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-weight: 700;
+  }
+  .primary-action { gap: 7px; }
+  .surface {
+    border-radius: 22px;
+    padding: 16px;
+    margin-top: 11px;
+  }
+  .price-label { text-align: center; color: #888; font-size: 12px; }
+  .price { text-align: center; font-size: 34px; font-weight: 750; margin: 3px 0 10px; }
+  .pills { display:flex; gap:7px; flex-wrap:wrap; margin: 9px 0; }
+  .pill { padding: 6px 11px; border-radius: 99px; font-size: 12px; font-weight: 700; }
+  .chart {
+    height: 116px;
+    margin-top: 12px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .chart::before {
+    content: "";
+    position: absolute;
+    left: 8px; right: 8px; bottom: 24px; height: 3px;
+    background: #4384f4;
+    border-radius: 99px;
+    transform: rotate(-3deg);
+    box-shadow: 58px -18px 0 -1px #4384f4, 116px -11px 0 -1px #4384f4;
+  }
+  .segmented { display:grid; grid-template-columns:repeat(3,1fr); padding:4px; border-radius:14px; margin-top:12px; }
+  .segment { text-align:center; padding:8px; border-radius:11px; font-weight:650; font-size:13px; }
+  .ebay { display:grid; grid-template-columns:52px 1fr 32px; gap:10px; align-items:center; }
+  .logo { font-size:18px; font-weight:800; letter-spacing:-2px; }
+  .row-title { font-size:14px; font-weight:750; }
+  .row-sub { font-size:11px; color:#888; margin-top:3px; }
+  .detail-title { font-size:17px; font-weight:750; margin-bottom:11px; }
+  .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .detail-cell { padding:11px; border-radius:13px; }
+  .detail-label { color:#8b8b91; font-size:10px; font-weight:650; }
+  .detail-value { font-size:12px; font-weight:700; margin-top:3px; }
+
+  /* A: one neutral material family */
+  .a .action, .a .primary-action, .a .surface { background:#fbf8f7; border:1px solid rgba(255,255,255,.9); }
+  .a .pill, .a .segmented, .a .detail-cell { background:#eee9e8; }
+  .a .pill.active, .a .segment.active { background:#4384f4; color:white; }
+  .a .primary-action { color:#2fcf70; }
+  .a .chart { background:#f6f2f1; }
+
+  /* B: stronger hierarchy */
+  .b .action, .b .primary-action { background:#ffffff; border:1px solid #e3dcda; }
+  .b .surface { background:#fff; box-shadow:0 7px 22px rgba(79,55,49,.07); }
+  .b .pill, .b .segmented, .b .detail-cell { background:#f3efee; }
+  .b .pill.active, .b .segment.active { background:#222; color:white; }
+  .b .primary-action { background:#2fcf70; color:white; }
+  .b .chart { background:#faf8f7; }
+
+  /* C: translucent glass */
+  .c .phone { background:linear-gradient(145deg,#efe2df,#e6e5ee); }
+  .c .action, .c .primary-action, .c .surface {
+    background:rgba(255,255,255,.52);
+    border:1px solid rgba(255,255,255,.8);
+    box-shadow:0 8px 24px rgba(73,59,69,.08);
+  }
+  .c .pill, .c .segmented, .c .detail-cell { background:rgba(255,255,255,.48); }
+  .c .pill.active, .c .segment.active { background:rgba(67,132,244,.9); color:white; }
+  .c .primary-action { color:#229b58; }
+  .c .chart { background:rgba(255,255,255,.26); }
+
+  .direction-copy { padding: 14px 5px 4px; }
+  .direction-copy h3 { margin-bottom: 5px; }
+  .recommend {
+    display:inline-block; margin-left:7px; padding:3px 7px; border-radius:99px;
+    background:#dfe9ff; color:#315fc6; font-size:10px; vertical-align:2px;
+  }
+  @media (max-width: 980px) {
+    .direction-grid { grid-template-columns: 1fr; }
+    .phone { min-height: 560px; }
+  }
+</style>
+
+<h2>Choose the surface language for card details</h2>
+<p class="subtitle">All three options fix the mismatched whites, greys, borders and button treatments. Click the direction that feels most like Bindr.</p>
+
+<div class="direction-grid">
+  <div class="direction a" data-choice="a-unified-neutral" onclick="toggleSelect(this)">
+    <div class="phone">
+      <h4>Fossil Excavator</h4>
+      <div class="set-name">DIAMOND &amp; PEARL · MYSTERIOUS TREASURES</div>
+      <div class="actions">
+        <div class="action">☆</div><div class="primary-action">⊕ Collection</div><div class="action">↥</div>
+      </div>
+      <div class="surface">
+        <div class="price-label">Market Price</div><div class="price">£0.44</div>
+        <div class="pills"><div class="pill active">Normal</div><div class="pill">Reverse Holofoil</div><div class="pill active">Raw</div></div>
+        <div class="chart"></div>
+        <div class="segmented"><div class="segment active">1M</div><div class="segment">3M</div><div class="segment">1Y</div></div>
+      </div>
+      <div class="surface ebay"><div class="logo">eBay</div><div><div class="row-title">Recent Sold on eBay</div><div class="row-sub">Open sold listings for this card</div></div><div>↗</div></div>
+      <div class="surface"><div class="detail-title">Card Details</div><div class="detail-grid"><div class="detail-cell"><div class="detail-label">Number</div><div class="detail-value">111/123</div></div><div class="detail-cell"><div class="detail-label">Rarity</div><div class="detail-value">Uncommon</div></div></div></div>
+    </div>
+    <div class="direction-copy"><h3>A · Unified neutral <span class="recommend">Recommended</span></h3><p>One warm card material, one inset material, consistent borders. Accent colour only communicates selection or action.</p></div>
+  </div>
+
+  <div class="direction b" data-choice="b-strong-hierarchy" onclick="toggleSelect(this)">
+    <div class="phone">
+      <h4>Fossil Excavator</h4>
+      <div class="set-name">DIAMOND &amp; PEARL · MYSTERIOUS TREASURES</div>
+      <div class="actions">
+        <div class="action">☆</div><div class="primary-action">⊕ Collection</div><div class="action">↥</div>
+      </div>
+      <div class="surface">
+        <div class="price-label">Market Price</div><div class="price">£0.44</div>
+        <div class="pills"><div class="pill active">Normal</div><div class="pill">Reverse Holofoil</div><div class="pill active">Raw</div></div>
+        <div class="chart"></div>
+        <div class="segmented"><div class="segment active">1M</div><div class="segment">3M</div><div class="segment">1Y</div></div>
+      </div>
+      <div class="surface ebay"><div class="logo">eBay</div><div><div class="row-title">Recent Sold on eBay</div><div class="row-sub">Open sold listings for this card</div></div><div>↗</div></div>
+      <div class="surface"><div class="detail-title">Card Details</div><div class="detail-grid"><div class="detail-cell"><div class="detail-label">Number</div><div class="detail-value">111/123</div></div><div class="detail-cell"><div class="detail-label">Rarity</div><div class="detail-value">Uncommon</div></div></div></div>
+    </div>
+    <div class="direction-copy"><h3>B · Strong hierarchy</h3><p>Bright white cards and a filled primary button. Crisp and obvious, but more conventional and slightly less subtle.</p></div>
+  </div>
+
+  <div class="direction c" data-choice="c-soft-glass" onclick="toggleSelect(this)">
+    <div class="phone">
+      <h4>Fossil Excavator</h4>
+      <div class="set-name">DIAMOND &amp; PEARL · MYSTERIOUS TREASURES</div>
+      <div class="actions">
+        <div class="action">☆</div><div class="primary-action">⊕ Collection</div><div class="action">↥</div>
+      </div>
+      <div class="surface">
+        <div class="price-label">Market Price</div><div class="price">£0.44</div>
+        <div class="pills"><div class="pill active">Normal</div><div class="pill">Reverse Holofoil</div><div class="pill active">Raw</div></div>
+        <div class="chart"></div>
+        <div class="segmented"><div class="segment active">1M</div><div class="segment">3M</div><div class="segment">1Y</div></div>
+      </div>
+      <div class="surface ebay"><div class="logo">eBay</div><div><div class="row-title">Recent Sold on eBay</div><div class="row-sub">Open sold listings for this card</div></div><div>↗</div></div>
+      <div class="surface"><div class="detail-title">Card Details</div><div class="detail-grid"><div class="detail-cell"><div class="detail-label">Number</div><div class="detail-value">111/123</div></div><div class="detail-cell"><div class="detail-label">Rarity</div><div class="detail-value">Uncommon</div></div></div></div>
+    </div>
+    <div class="direction-copy"><h3>C · Soft glass</h3><p>Translucent surfaces throughout. Atmospheric and premium, though contrast is more sensitive to card artwork and themes.</p></div>
+  </div>
+</div>

@@ -34,6 +34,59 @@ enum GradingCompany: String, CaseIterable, Sendable {
     }
 }
 
+/// Button-backed replacement for the native segmented picker. It preserves the
+/// quiet white-on-grey system appearance while giving every segment an explicit
+/// full-width hit target on physical devices.
+struct GreySegmentedPicker<SelectionValue: Hashable>: View {
+    @Binding var selection: SelectionValue
+    let items: [SelectionValue]
+    let title: (SelectionValue) -> String
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(items, id: \.self) { item in
+                let isSelected = selection == item
+
+                Button {
+                    guard selection != item else { return }
+                    selection = item
+                    Haptics.selectionChanged()
+                } label: {
+                    Text(title(item))
+                        .font(.system(size: 13, weight: isSelected ? .semibold : .regular))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
+                        .frame(maxWidth: .infinity, minHeight: 32)
+                        .contentShape(Rectangle())
+                        .background {
+                            if isSelected {
+                                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                    .fill(selectedBackground)
+                                    .shadow(color: .black.opacity(colorScheme == .dark ? 0.18 : 0.10), radius: 1.5, y: 1)
+                            }
+                        }
+                }
+                .buttonStyle(.plain)
+                .contentShape(Rectangle())
+                .accessibilityAddTraits(isSelected ? .isSelected : [])
+            }
+        }
+        .padding(2)
+        .background(trackBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+    }
+
+    private var trackBackground: Color {
+        Color(uiColor: colorScheme == .dark ? .tertiarySystemFill : .systemGray5)
+    }
+
+    private var selectedBackground: Color {
+        Color(uiColor: colorScheme == .dark ? .secondarySystemFill : .systemBackground)
+    }
+}
+
 /// Add a card to the collection with purchase type–specific fields.
 struct AddToCollectionSheet: View {
     @Environment(\.dismiss) private var dismiss
@@ -107,29 +160,26 @@ struct AddToCollectionSheet: View {
                 }
 
                 Section {
-                    Picker("Purchase type", selection: $acquisitionKind) {
-                        ForEach(CollectionAcquisitionKind.manualAddCases, id: \.self) { kind in
-                            Text(kind.title).tag(kind)
-                        }
-                    }
-                    .pickerStyle(.segmented)
+                    GreySegmentedPicker(
+                        selection: $acquisitionKind,
+                        items: CollectionAcquisitionKind.manualAddCases,
+                        title: \.title
+                    )
                 }
 
                 Section {
-                    Picker("Condition", selection: $cardCondition) {
-                        ForEach(CardCondition.allCases, id: \.self) { condition in
-                            Text(condition.title).tag(condition)
-                        }
-                    }
-                    .pickerStyle(.segmented)
+                    GreySegmentedPicker(
+                        selection: $cardCondition,
+                        items: CardCondition.allCases,
+                        title: \.title
+                    )
 
                     if cardCondition == .graded {
-                        Picker("Grading company", selection: $gradingCompany) {
-                            ForEach(GradingCompany.allCases, id: \.self) { company in
-                                Text(company.title).tag(company)
-                            }
-                        }
-                        .pickerStyle(.segmented)
+                        GreySegmentedPicker(
+                            selection: $gradingCompany,
+                            items: GradingCompany.allCases,
+                            title: \.title
+                        )
                     }
                 } footer: {
                     if cardCondition == .graded {
