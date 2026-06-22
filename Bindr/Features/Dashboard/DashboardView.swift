@@ -1551,9 +1551,13 @@ struct DashboardView: View {
         }
 
         guard let cardID = cleaned(line.cardID) else { return }
+        if let cached = services.cardData.cachedCard(masterCardId: cardID) {
+            selectedCardForDetail = cached
+            return
+        }
         Task {
             if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                await MainActor.run { selectedCardForDetail = card }
+                selectedCardForDetail = card
             }
         }
     }

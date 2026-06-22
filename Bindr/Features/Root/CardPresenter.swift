@@ -5,6 +5,28 @@ struct CardPresentationContext: Identifiable {
     let id = UUID()
     let cards: [Card]
     let startIndex: Int
+
+    /// How many neighbors to include on each side of the tapped card for horizontal paging.
+    private static let swipeWindowRadius = 24
+
+    init(cards: [Card], startIndex: Int) {
+        self.cards = cards
+        self.startIndex = startIndex
+    }
+
+    /// Presents a swipeable window around `startIndex` so the sheet does not build thousands of pages.
+    init(windowedFrom allCards: [Card], startIndex: Int, radius: Int = CardPresentationContext.swipeWindowRadius) {
+        guard !allCards.isEmpty else {
+            cards = []
+            self.startIndex = 0
+            return
+        }
+        let safeIndex = min(max(startIndex, 0), allCards.count - 1)
+        let lower = max(0, safeIndex - radius)
+        let upper = min(allCards.count - 1, safeIndex + radius)
+        cards = Array(allCards[lower...upper])
+        self.startIndex = safeIndex - lower
+    }
 }
 
 /// Identifies one sealed detail session: swipe horizontally within this ordered list.

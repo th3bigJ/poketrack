@@ -504,7 +504,7 @@ struct RootView: View {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             SearchHistoryStore.recordViewedCard(card.masterCardId)
             let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
-            selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
+            selectedCardPresentation = CardPresentationContext(windowedFrom: list, startIndex: idx)
         })
         .environment(\.presentCardAtIndex, { list, index in
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
@@ -512,7 +512,7 @@ struct RootView: View {
             if list.indices.contains(safeIndex) {
                 SearchHistoryStore.recordViewedCard(list[safeIndex].masterCardId)
             }
-            selectedCardPresentation = CardPresentationContext(cards: list, startIndex: safeIndex)
+            selectedCardPresentation = CardPresentationContext(windowedFrom: list, startIndex: safeIndex)
         })
         .environment(\.presentSealedProduct, { _, list, index in
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
@@ -1114,7 +1114,7 @@ struct RootView: View {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             SearchHistoryStore.recordViewedCard(card.masterCardId)
             let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
-            selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
+            selectedCardPresentation = CardPresentationContext(windowedFrom: list, startIndex: idx)
         })
         .environment(\.presentCardAtIndex, { list, index in
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
@@ -1122,7 +1122,7 @@ struct RootView: View {
             if list.indices.contains(safeIndex) {
                 SearchHistoryStore.recordViewedCard(list[safeIndex].masterCardId)
             }
-            selectedCardPresentation = CardPresentationContext(cards: list, startIndex: safeIndex)
+            selectedCardPresentation = CardPresentationContext(windowedFrom: list, startIndex: safeIndex)
         })
         .environment(\.presentSealedProduct, { _, list, index in
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()

@@ -8,8 +8,6 @@ struct CardDetailSheet: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
     @Environment(\.suppressTabBarForModalChrome) private var suppressTabBarForModalChrome
-    @Query(sort: [SortDescriptor(\CollectionItem.variantKey)]) private var allCollectionItems: [CollectionItem]
-    @Query(sort: [SortDescriptor(\LedgerLine.occurredAt, order: .reverse)]) private var allLedgerLines: [LedgerLine]
 
     let cards: [Card]
     /// When opened from a specific friend context (profile, trade wall), trade goes directly to them.
@@ -56,17 +54,33 @@ struct CardDetailSheet: View {
 
     /// Forces a fresh detail sheet when presenting a different card or card list.
     private var sheetContentIdentity: String {
-        cards.map(\.masterCardId).joined(separator: "\u{1F}")
+        guard !cards.isEmpty else { return "empty" }
+        let safeIndex = min(max(index, 0), cards.count - 1)
+        return "\(cards.count)-\(safeIndex)-\(cards[safeIndex].masterCardId)"
     }
 
     private func set(for card: Card) -> TCGSet? { services.cardData.sets.first { $0.setCode == card.setCode } }
 
     private func scopedCollectionItems(for cardID: String) -> [CollectionItem] {
-        allCollectionItems.filter { $0.cardID == cardID && $0.quantity > 0 }
+        _ = services.collectionInventoryRevision
+        let descriptor = FetchDescriptor<CollectionItem>(
+            predicate: #Predicate<CollectionItem> { item in
+                item.cardID == cardID && item.quantity > 0
+            },
+            sortBy: [SortDescriptor(\.variantKey)]
+        )
+        return (try? modelContext.fetch(descriptor)) ?? []
     }
 
     private func scopedLedgerLines(for cardID: String) -> [LedgerLine] {
-        allLedgerLines.filter { cleaned($0.cardID) == cardID }
+        _ = services.collectionInventoryRevision
+        let descriptor = FetchDescriptor<LedgerLine>(
+            predicate: #Predicate<LedgerLine> { line in
+                line.cardID == cardID
+            },
+            sortBy: [SortDescriptor(\.occurredAt, order: .reverse)]
+        )
+        return (try? modelContext.fetch(descriptor)) ?? []
     }
 
     private func showsCollectionSection(for card: Card) -> Bool {
@@ -134,7 +148,6 @@ struct CardDetailSheet: View {
             if managesTabBarChrome {
                 suppressTabBarForModalChrome?()
             }
-            services.setupCollectionLedger(modelContext: modelContext)
             applyInitialScrollPositionIfNeeded()
         }
         .sheet(item: $editingLine) { line in
@@ -216,19 +229,7 @@ struct CardDetailSheet: View {
     private func applyInitialScrollPositionIfNeeded() {
         guard !hasAppliedInitialScrollPosition else { return }
         hasAppliedInitialScrollPosition = true
-        let targetIndex = index
-
-        Task { @MainActor in
-            scrollIndex = nil
-            await Task.yield()
-            await Task.yield()
-
-            var transaction = Transaction(animation: nil)
-            transaction.disablesAnimations = true
-            withTransaction(transaction) {
-                scrollIndex = targetIndex
-            }
-        }
+        scrollIndex = index
     }
 
     private func cardPage(for pageCard: Card, pageHeight: CGFloat) -> some View {

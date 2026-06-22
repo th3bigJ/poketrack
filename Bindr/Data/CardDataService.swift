@@ -511,10 +511,18 @@ final class CardDataService {
         return try await CatalogStore.shared.fetchCards(setCode: setCode, brand: brand)
     }
 
+    /// Returns a card already resident in the in-memory cache (no I/O).
+    func cachedCard(masterCardId: String) -> Card? {
+        cardByMasterID[masterCardId]
+    }
+
     /// Resolves one card by `masterCardId` from SQLite (franchise inferred from the id shape).
     func loadCard(masterCardId: String) async -> Card? {
         if masterCardId.hasPrefix("sealed:") {
             return nil
+        }
+        if let cached = cardByMasterID[masterCardId] {
+            return cached
         }
         let inferred = TCGBrand.inferredFromMasterCardId(masterCardId)
         do {

@@ -776,11 +776,10 @@ final class AppServices {
 
     func setupCollectionLedger(modelContext: ModelContext) {
         bindCollectionSync(modelContext: modelContext)
-        if collectionLedger == nil {
-            let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
-            ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
-            collectionLedger = ledger
-        }
+        guard collectionLedger == nil else { return }
+        let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
+        ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }
+        collectionLedger = ledger
         _ = try? CollectionCostLotRepair.relinkActiveLots(in: modelContext)
         Task { await syncSocialLibrariesIfPossible() }
     }
