@@ -307,6 +307,14 @@ enum AppConfiguration {
         resolvedImageURL(stored: relativePath) ?? assetURL(relativePath: relativePath)
     }
 
+    /// Previous custom domains for the public R2 bucket (catalog JSON may still embed absolute URLs).
+    private static let legacyR2Hosts: Set<String> = ["www.bindr-tcg.com"]
+
+    private static func isR2CDNHost(_ host: String?) -> Bool {
+        guard let host else { return false }
+        return host == r2BaseURL.host || legacyR2Hosts.contains(host)
+    }
+
     /// Resolves a stored absolute or relative image URL against the current CDN base.
     /// Profile and catalog JSON often persist absolute URLs from an old R2 / Cloudflare host
     /// after a custom-domain migration — rebuild them from the path on the configured CDN.
@@ -384,10 +392,10 @@ enum AppConfiguration {
         // Use url.path (percent-decoded by Foundation) so the key matches
         // the raw imageLowSrc string stored in the manifest — appendingPathComponent
         // percent-encodes spaces/specials, so absoluteString comparison fails.
-        guard url.host == r2BaseURL.host else { return nil }
+        guard isR2CDNHost(url.host) else { return nil }
         let basePath = r2BaseURL.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
         var relative = url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
-        if !basePath.isEmpty, relative.hasPrefix(basePath) {
+        if url.host == r2BaseURL.host, !basePath.isEmpty, relative.hasPrefix(basePath) {
             relative = String(relative.dropFirst(basePath.count))
                 .trimmingCharacters(in: CharacterSet(charactersIn: "/"))
         }

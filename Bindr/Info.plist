@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BINDR_R2_BASE_URL</key>
-	<string>https://www.bindr-tcg.com</string>
+	<string>https://cdn.bindr-tcg.com</string>
 	<key>BINDR_R2_CATALOG_PREFIX</key>
 	<string>data</string>
 	<key>BINDR_R2_PRICING_PREFIX</key>
