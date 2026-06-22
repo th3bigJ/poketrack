@@ -144,6 +144,13 @@ struct ScanResultBar: View {
                     .foregroundStyle(.tertiary)
                     .lineLimit(1)
             }
+            if result.isUncertain {
+                Label("Low confidence — confirm match", systemImage: "exclamationmark.triangle.fill")
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(.orange)
+                    .lineLimit(1)
+                    .padding(.top, 1)
+            }
         }
     }
 

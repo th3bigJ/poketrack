@@ -226,7 +226,7 @@ final class CollectionValueService {
             sealedGbp: sealed
         )
         modelContext.insert(snapshot)
-        try? modelContext.save()
+        modelContext.saveLogging()
         loadAll()
         notifyValueHistoryChanged()
     }
@@ -296,7 +296,7 @@ final class CollectionValueService {
             )
             modelContext.insert(record)
         }
-        try? modelContext.save()
+        modelContext.saveLogging()
         loadAll()
         notifyValueHistoryChanged()
     }
@@ -345,7 +345,7 @@ final class CollectionValueService {
             )
             modelContext.insert(record)
         }
-        try? modelContext.save()
+        modelContext.saveLogging()
         loadAll()
         notifyValueHistoryChanged()
     }
@@ -373,7 +373,7 @@ final class CollectionValueService {
             sealedGbp: liveSnapshot.sealed
         )
         modelContext.insert(todayRecord)
-        try? modelContext.save()
+        modelContext.saveLogging()
         loadAll()
 
         // Re-aggregate weekly/monthly from the full set of daily snapshots (history intact + new today).
@@ -390,7 +390,7 @@ final class CollectionValueService {
         let all = fetchAllSnapshots()
         guard !all.isEmpty else { return }
         for s in all { modelContext.delete(s) }
-        try? modelContext.save()
+        modelContext.saveLogging()
     }
 
     private func purgeTodaySnapshot() {
@@ -403,7 +403,7 @@ final class CollectionValueService {
         let toDelete = (try? modelContext.fetch(descriptor)) ?? []
         guard !toDelete.isEmpty else { return }
         for s in toDelete { modelContext.delete(s) }
-        try? modelContext.save()
+        modelContext.saveLogging()
     }
 
     private func purgeAllWeeklyAverages() {
@@ -411,7 +411,7 @@ final class CollectionValueService {
         let all = (try? modelContext.fetch(descriptor)) ?? []
         guard !all.isEmpty else { return }
         for r in all { modelContext.delete(r) }
-        try? modelContext.save()
+        modelContext.saveLogging()
     }
 
     private func purgeAllMonthlyAverages() {
@@ -419,7 +419,7 @@ final class CollectionValueService {
         let all = (try? modelContext.fetch(descriptor)) ?? []
         guard !all.isEmpty else { return }
         for r in all { modelContext.delete(r) }
-        try? modelContext.save()
+        modelContext.saveLogging()
     }
 
     /// Re-aggregates weekly and monthly averages from current daily snapshots and reloads.
@@ -455,7 +455,7 @@ final class CollectionValueService {
             sealedGbp: snapshot.sealed
         )
         modelContext.insert(record)
-        try? modelContext.save()
+        modelContext.saveLogging()
         loadAll()
         notifyValueHistoryChanged()
         return true
@@ -509,7 +509,7 @@ final class CollectionValueService {
             sealedGbp: result.sealed
         )
         modelContext.insert(snapshot)
-        try? modelContext.save()
+        modelContext.saveLogging()
         loadAll()
         notifyValueHistoryChanged()
     }
@@ -577,7 +577,7 @@ final class CollectionValueService {
             }
         }
         guard didChange else { return false }
-        try? modelContext.save()
+        modelContext.saveLogging()
         return true
     }
 
@@ -646,7 +646,7 @@ final class CollectionValueService {
             }
         }
         guard didChange else { return false }
-        try? modelContext.save()
+        modelContext.saveLogging()
         return true
     }
 
@@ -846,7 +846,7 @@ final class CollectionValueService {
         let zeros = (try? modelContext.fetch(descriptor)) ?? []
         guard !zeros.isEmpty else { return }
         for s in zeros { modelContext.delete(s) }
-        try? modelContext.save()
+        modelContext.saveLogging()
     }
 
     /// Removes synthetic backfill snapshots that were created before the user's first real daily capture.
@@ -874,7 +874,7 @@ final class CollectionValueService {
         for snapshot in stale {
             modelContext.delete(snapshot)
         }
-        try? modelContext.save()
+        modelContext.saveLogging()
         loadAll()
 
         purgeAllWeeklyAverages()

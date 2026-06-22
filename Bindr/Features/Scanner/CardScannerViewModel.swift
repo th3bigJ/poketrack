@@ -36,11 +36,15 @@ struct ScanResult: Identifiable {
     let card: Card
     /// Other ranked catalog matches for the same OCR pass (excludes `card`). User can pick one via "Wrong card?".
     let alternativeCards: [Card]
+    /// True when the winning match rested on weak evidence or barely beat the runner-up.
+    /// The UI nudges the user to confirm via "Wrong card?" rather than silently trusting it.
+    let isUncertain: Bool
 
-    init(id: UUID = UUID(), card: Card, alternativeCards: [Card] = []) {
+    init(id: UUID = UUID(), card: Card, alternativeCards: [Card] = [], isUncertain: Bool = false) {
         self.id = id
         self.card = card
         self.alternativeCards = alternativeCards
+        self.isUncertain = isUncertain
     }
 }
 
@@ -517,10 +521,12 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             return
         }
 
+        let hasFooterNumber = fields.numberCandidates.contains { $0.isFooter }
         let hasNarrowSignal = [
             fields.name.map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ?? false,
             fields.hp.map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ?? false,
             fields.centerSearchHint.map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ?? false,
+            hasFooterNumber,
         ].contains(true)
 
         guard hasNarrowSignal else {
@@ -531,7 +537,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             return
         }
 
-        let numberCandidates = CardOCRFieldExtractor.extractCardNumberCandidates(from: sortedLines)
+        let numberCandidates = fields.numberCandidates
         let rawBlob = sortedLines.joined(separator: "\n")
 
         Task { [weak self] in
@@ -652,7 +658,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     private func runSearch(
         cardName: String?, hp: String?, setNumber: String?,
         illustrator: String?, centerHint: String?,
-        numberCandidates: [String], rawOCRBlob: String?,
+        numberCandidates: [ScannerNumberCandidate], rawOCRBlob: String?,
         requestID: UUID
     ) async {
         guard let service = cardDataService else { return }
@@ -681,6 +687,21 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             pool = []
         }
 
+        // #1 — Always let the collector number contribute candidates, even when the
+        // (possibly wrong) name search already returned a non-empty pool. The footer
+        // number + set is nearly a primary key, so the correct card must get a chance
+        // to be ranked rather than being excluded by an imperfect name read.
+        let fractionQueries = numberCandidates
+            .filter { $0.normalized.contains("/") }
+            .map(\.normalized)
+        var numberQuerySeen = Set<String>()
+        for q in fractionQueries where numberQuerySeen.insert(q).inserted {
+            if numberQuerySeen.count > 3 { break }
+            let hits = await searchCardsCached(service: service, kind: .exact, query: q, brand: brand, cache: &searchCache)
+            pool.append(contentsOf: hits)
+        }
+        pool = Self.dedupCards(pool)
+
         if pool.isEmpty {
             pool = await mixedFallbackPool(
                 service: service, cleanedName: cleanedName, hp: hp,
@@ -690,14 +711,13 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             )
         }
 
-        let ranked = ScannerCompositeRanker.rank(
+        let scored = ScannerCompositeRanker.rankScored(
             pool, ocrName: cleanedName ?? rawName, ocrHP: hp,
-            ocrCenterHint: centerHint, primaryCardNumber: setNumber,
-            extraNumberCandidates: numberCandidates,
+            ocrCenterHint: centerHint, numberCandidates: numberCandidates,
             ocrIllustrator: illustrator, rawOCRBlob: rawOCRBlob
         )
 
-        guard let top = ranked.first else {
+        guard let top = scored.first else {
             await MainActor.run { [weak self] in
                 guard let self, self.activeScanRequestID == requestID else { return }
                 self.scanState = .idle
@@ -706,7 +726,11 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             return
         }
 
-        let alternatives = Array(ranked.dropFirst().prefix(30))
+        // #8 — Flag low-confidence wins (weak absolute score or thin margin over the runner-up)
+        // so the UI can prompt the user to confirm instead of silently trusting a guess.
+        let runnerUpScore = scored.dropFirst().first?.score ?? 0
+        let isUncertain = ScannerCompositeRanker.isAmbiguous(topScore: top.score, runnerUpScore: runnerUpScore)
+        let alternatives = Array(scored.dropFirst().prefix(30).map(\.card))
 
         await MainActor.run { [weak self] in
             guard let self else { return }
@@ -714,10 +738,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             scanState = .idle
             lastErrorMessage = nil
             // Skip duplicate of the most recent result (same physical card still in frame).
-            if let newest = scanResults.first, newest.card.masterCardId == top.masterCardId {
+            if let newest = scanResults.first, newest.card.masterCardId == top.card.masterCardId {
                 return
             }
-            let result = ScanResult(card: top, alternativeCards: alternatives)
+            let result = ScanResult(card: top.card, alternativeCards: alternatives, isUncertain: isUncertain)
             scanResults.insert(result, at: 0)
             incrementMonthlyScanCount()
             onMatch?(result)
@@ -874,60 +898,86 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
 private enum ScannerCompositeRanker {
     private static let attackContributionCap = 380_000
 
-    static func mergedNumberCandidates(primary: String?, extras: [String]) -> [String] {
-        var seen = Set<String>()
-        var out: [String] = []
-        if let p = primary?.trimmingCharacters(in: .whitespacesAndNewlines), !p.isEmpty {
-            seen.insert(p); out.append(p)
-        }
-        for e in extras {
-            let t = e.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !t.isEmpty, !seen.contains(t) else { continue }
-            seen.insert(t); out.append(t)
-        }
-        return out
+    /// Below this absolute score the winning match rests on weak evidence (e.g. a single token).
+    static let minConfidentScore = 150_000
+    /// Minimum relative gap to the runner-up before we trust the winner outright.
+    static let minConfidentMarginRatio = 0.12
+
+    /// #8 — whether the top match is too weak or too close to the runner-up to trust silently.
+    static func isAmbiguous(topScore: Int, runnerUpScore: Int) -> Bool {
+        if topScore < minConfidentScore { return true }
+        guard runnerUpScore > 0 else { return false }
+        let margin = Double(topScore - runnerUpScore) / Double(max(topScore, 1))
+        return margin < minConfidentMarginRatio
     }
 
     static func rank(
         _ cards: [Card], ocrName: String?, ocrHP: String?, ocrCenterHint: String?,
-        primaryCardNumber: String?, extraNumberCandidates: [String],
+        numberCandidates: [ScannerNumberCandidate],
         ocrIllustrator: String? = nil, rawOCRBlob: String?
     ) -> [Card] {
+        rankScored(
+            cards, ocrName: ocrName, ocrHP: ocrHP, ocrCenterHint: ocrCenterHint,
+            numberCandidates: numberCandidates, ocrIllustrator: ocrIllustrator, rawOCRBlob: rawOCRBlob
+        ).map(\.card)
+    }
+
+    /// Ranks `cards` and returns each with its composite score. Every card is scored **exactly once**
+    /// (then sorted) — the previous comparator recomputed both sides' full score on every comparison.
+    static func rankScored(
+        _ cards: [Card], ocrName: String?, ocrHP: String?, ocrCenterHint: String?,
+        numberCandidates: [ScannerNumberCandidate],
+        ocrIllustrator: String? = nil, rawOCRBlob: String?
+    ) -> [(card: Card, score: Int)] {
         let ocrCenter = ocrCenterHint?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
-        let merged = mergedNumberCandidates(primary: primaryCardNumber, extras: extraNumberCandidates)
-        return cards.sorted { a, b in
-            let ta = totalRankScore(card: a, ocrName: ocrName, ocrHP: ocrHP, ocrCenter: ocrCenter,
-                                   numberCandidates: merged, ocrIllustrator: ocrIllustrator, rawOCRBlob: rawOCRBlob)
-            let tb = totalRankScore(card: b, ocrName: ocrName, ocrHP: ocrHP, ocrCenter: ocrCenter,
-                                   numberCandidates: merged, ocrIllustrator: ocrIllustrator, rawOCRBlob: rawOCRBlob)
-            if ta != tb { return ta > tb }
-            return a.masterCardId < b.masterCardId
+        let ocrNameTokens = significantTokens(ocrName?.lowercased() ?? "")
+        let ocrArtistTokens = significantTokens(ocrIllustrator?.lowercased() ?? "")
+        let ocrFamilies = suffixFamilies(in: SearchTokenizer.tokens(from: rawOCRBlob?.lowercased() ?? ""))
+
+        let scored: [(card: Card, score: Int)] = cards.map { card in
+            (card, totalRankScore(
+                card: card, ocrNameTokens: ocrNameTokens, ocrHP: ocrHP, ocrCenter: ocrCenter,
+                numberCandidates: numberCandidates, ocrArtistTokens: ocrArtistTokens, ocrFamilies: ocrFamilies
+            ))
+        }
+        return scored.sorted { a, b in
+            if a.score != b.score { return a.score > b.score }
+            return a.card.masterCardId < b.card.masterCardId
         }
     }
 
     private static func totalRankScore(
-        card: Card, ocrName: String?, ocrHP: String?, ocrCenter: String,
-        numberCandidates: [String], ocrIllustrator: String? = nil, rawOCRBlob: String?
+        card: Card, ocrNameTokens: Set<String>, ocrHP: String?, ocrCenter: String,
+        numberCandidates: [ScannerNumberCandidate], ocrArtistTokens: Set<String>, ocrFamilies: Set<String>
     ) -> Int {
-        let name = nameScore(ocrName: ocrName, card: card)
+        let name = nameScore(ocrTokens: ocrNameTokens, card: card)
         let hp = hpScore(ocrHP: ocrHP, card: card)
         let rawCenter = centerTextScore(ocrCenter: ocrCenter, card: card)
         let capped = min(rawCenter, attackContributionCap)
-        let num = bestNumberScore(card: card, candidates: numberCandidates)
-        let artist = artistScore(ocrIllustrator: ocrIllustrator, card: card)
-        let x = exNameConsistencyScore(ocrBlob: rawOCRBlob, card: card)
-        return name + hp + capped + num + artist + x
+        let num = numberScore(card: card, candidates: numberCandidates)
+        let artist = artistScore(ocrTokens: ocrArtistTokens, card: card)
+        let suffix = suffixConsistencyScore(card: card, ocrFamilies: ocrFamilies)
+        return name + hp + capped + num + artist + suffix
     }
 
-    static func nameScore(ocrName: String?, card: Card) -> Int {
-        let ocr = significantTokens(ocrName?.lowercased() ?? "")
+    /// #5 — token intersection with fuzzy (edit-distance) recovery for OCR slips
+    /// (`Charrnander` ≈ `Charmander`), with exact matches still preferred.
+    static func nameScore(ocrTokens ocr: Set<String>, card: Card) -> Int {
         let name = significantTokens(card.cardName.lowercased())
         guard !ocr.isEmpty, !name.isEmpty else { return 0 }
-        let inter = ocr.intersection(name)
-        guard !inter.isEmpty else { return 0 }
         if ocr == name { return 320_000 }
-        let recall = Double(inter.count) / Double(max(name.count, 1))
-        let precision = Double(inter.count) / Double(max(ocr.count, 1))
+
+        let exact = ocr.intersection(name)
+        let unmatchedName = name.subtracting(exact)
+        let unmatchedOCR = ocr.subtracting(exact)
+        var fuzzy = 0
+        for nt in unmatchedName where unmatchedOCR.contains(where: { tokensFuzzyEqual($0, nt) }) {
+            fuzzy += 1
+        }
+        let effective = Double(exact.count) + Double(fuzzy) * 0.85
+        guard effective > 0 else { return 0 }
+        let recall = effective / Double(max(name.count, 1))
+        let precision = effective / Double(max(ocr.count, 1))
         return Int((recall * 0.7 + precision * 0.3) * 260_000)
     }
 
@@ -940,14 +990,22 @@ private enum ScannerCompositeRanker {
         return 0
     }
 
-    private static func bestNumberScore(card: Card, candidates: [String]) -> Int {
-        candidates.reduce(0) { best, c in
-            max(best, ScannerCardNumberRanker.score(ocr: c, catalog: card.cardNumber))
+    /// #4 — number evidence weighted by trust: footer readings are authoritative,
+    /// fractions found elsewhere on the card are sharply discounted and confidence-scaled,
+    /// so a stray rules-text fraction can no longer outweigh name + HP + attack evidence.
+    private static func numberScore(card: Card, candidates: [ScannerNumberCandidate]) -> Int {
+        var best = 0
+        for c in candidates {
+            let base = ScannerCardNumberRanker.score(ocr: c.normalized, catalog: card.cardNumber)
+            guard base > 0 else { continue }
+            let trust = c.isFooter ? 1.0 : 0.16
+            let confidence = 0.6 + 0.4 * Double(c.confidence)
+            best = max(best, Int(Double(base) * trust * confidence))
         }
+        return best
     }
 
-    static func artistScore(ocrIllustrator: String?, card: Card) -> Int {
-        let ocr = significantTokens(ocrIllustrator?.lowercased() ?? "")
+    static func artistScore(ocrTokens ocr: Set<String>, card: Card) -> Int {
         let artist = significantTokens(card.artist?.lowercased() ?? "")
         guard !ocr.isEmpty, !artist.isEmpty else { return 0 }
         let inter = ocr.intersection(artist)
@@ -956,13 +1014,67 @@ private enum ScannerCompositeRanker {
         return Int(Double(inter.count) / Double(max(artist.count, 1)) * 200_000)
     }
 
-    private static func exNameConsistencyScore(ocrBlob: String?, card: Card) -> Int {
-        let blob = ocrBlob?.lowercased() ?? ""
-        let cn = card.cardName.lowercased()
-        let cardMentionsEx = cn.contains(" ex")
-        let ocrMentionsEx = blob.contains(" ex") || (blob.range(of: #"\bex\b"#, options: .regularExpression) != nil)
-        if cardMentionsEx && ocrMentionsEx { return 150_000 }
-        return 0
+    // MARK: - Suffix families (#9)
+
+    /// Printing-suffix families that distinguish otherwise identical names
+    /// (Charizard vs Charizard ex vs Charizard VMAX). Ordered most-specific first.
+    private static let suffixFamilyTokens = ["vmax", "vstar", "break", "gx", "ex", "v"]
+
+    private static func suffixFamilies(in tokens: [String]) -> Set<String> {
+        let set = Set(tokens)
+        return Set(suffixFamilyTokens.filter { set.contains($0) })
+    }
+
+    private static func cardSuffixFamily(_ card: Card) -> String? {
+        let tokens = Set(SearchTokenizer.tokens(from: card.cardName.lowercased()))
+        return suffixFamilyTokens.first { tokens.contains($0) }
+    }
+
+    /// Scores suffix-family agreement symmetrically: rewards a match, penalizes a contradiction
+    /// (card is plain but OCR shows a strong special suffix, or vice-versa). A lone `v` is treated
+    /// as too noisy to penalize on.
+    private static func suffixConsistencyScore(card: Card, ocrFamilies: Set<String>) -> Int {
+        let strongOCR = ocrFamilies.subtracting(["v"])
+        if let cardFamily = cardSuffixFamily(card) {
+            if ocrFamilies.contains(cardFamily) { return 150_000 }
+            if !strongOCR.isEmpty { return -130_000 }
+            return 0
+        } else {
+            return strongOCR.isEmpty ? 0 : -110_000
+        }
+    }
+
+    // MARK: - Fuzzy token matching
+
+    /// Edit-distance match for OCR slips. Only fuzzes tokens of length ≥ 4 to avoid
+    /// collapsing distinct short names; allows 1 edit up to length 6, otherwise 2.
+    private static func tokensFuzzyEqual(_ a: String, _ b: String) -> Bool {
+        if a == b { return true }
+        let maxLen = max(a.count, b.count)
+        guard maxLen >= 4 else { return false }
+        if abs(a.count - b.count) > 2 { return false }
+        let allowed = maxLen <= 6 ? 1 : 2
+        return editDistance(Array(a), Array(b), max: allowed) <= allowed
+    }
+
+    /// Levenshtein distance with an early-out once `max` is exceeded.
+    private static func editDistance(_ a: [Character], _ b: [Character], max: Int) -> Int {
+        let n = a.count, m = b.count
+        if abs(n - m) > max { return max + 1 }
+        var prev = Array(0...m)
+        var curr = [Int](repeating: 0, count: m + 1)
+        for i in 1...n {
+            curr[0] = i
+            var rowMin = curr[0]
+            for j in 1...m {
+                let cost = a[i - 1] == b[j - 1] ? 0 : 1
+                curr[j] = Swift.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost)
+                rowMin = Swift.min(rowMin, curr[j])
+            }
+            if rowMin > max { return max + 1 }
+            swap(&prev, &curr)
+        }
+        return prev[m]
     }
 
     static func centerTextScore(ocrCenter: String, card: Card) -> Int {

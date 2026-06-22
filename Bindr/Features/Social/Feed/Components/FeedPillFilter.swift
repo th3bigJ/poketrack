@@ -42,15 +42,15 @@ struct FeedPillFilter: View {
                 if isSelected {
                     Capsule()
                         .fill(
-                            services.theme.isLogoThemeSelected
-                                ? ThemeSettings.logoThemeGradient
+                            services.theme.isGradientThemeSelected
+                                ? services.theme.activeGradient
                                 : LinearGradient(
                                     colors: [Color(hex: "6366f1"), Color(hex: "4f46e5")],
                                     startPoint: .topLeading,
                                     endPoint: .bottomTrailing
                                 )
                         )
-                        .shadow(color: (services.theme.isLogoThemeSelected ? Color(hex: "ec4899") : Color(hex: "6366f1")).opacity(0.4), radius: 8, y: 3)
+                        .shadow(color: (services.theme.isGradientThemeSelected ? services.theme.secondaryAccentColor : Color(hex: "6366f1")).opacity(0.4), radius: 8, y: 3)
                 } else {
                     Capsule()
                         .fill(Color.secondary.opacity(0.1))

@@ -33,6 +33,20 @@ final class ThemeSettings {
         startPoint: .topLeading,
         endPoint: .bottomTrailing
     )
+
+    static let auroraCalmThemeID = "aurora-calm"
+    static let auroraCalmThemeAccentHex = "c0392b"
+    static let auroraCalmColors = [
+        Color(hex: "1e356d"),
+        Color(hex: "6a225f"),
+        Color(hex: "c0392b")
+    ]
+    static let auroraCalmGradient = LinearGradient(
+        colors: auroraCalmColors,
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+
     private static let localDefaultsPrefix = "Bindr.theme."
     private let accentColorKey = "user_accent_color_hex"
     private let appearanceKey = "user_app_appearance"
@@ -60,11 +74,49 @@ final class ThemeSettings {
     }
     
     var accentColor: Color {
-        isLogoThemeSelected ? Color(hex: Self.logoThemeAccentHex) : Color(hex: accentColorHex)
+        if isLogoThemeSelected {
+            return Color(hex: Self.logoThemeAccentHex)
+        } else if isAuroraCalmThemeSelected {
+            return Color(hex: Self.auroraCalmThemeAccentHex)
+        } else {
+            return Color(hex: accentColorHex)
+        }
+    }
+
+    var secondaryAccentColor: Color {
+        if isLogoThemeSelected {
+            return Color(hex: "ec4899")
+        } else if isAuroraCalmThemeSelected {
+            return Color(hex: "c0392b")
+        } else {
+            return accentColor
+        }
     }
 
     var isLogoThemeSelected: Bool {
         accentColorHex == Self.logoThemeID
+    }
+
+    var isAuroraCalmThemeSelected: Bool {
+        accentColorHex == Self.auroraCalmThemeID
+    }
+
+    var isGradientThemeSelected: Bool {
+        isLogoThemeSelected || isAuroraCalmThemeSelected
+    }
+
+    var activeGradientColors: [Color] {
+        if isAuroraCalmThemeSelected {
+            return Self.auroraCalmColors
+        }
+        return Self.logoThemeColors
+    }
+
+    var activeGradient: LinearGradient {
+        if isAuroraCalmThemeSelected {
+            return Self.auroraCalmGradient
+        }
+        return Self.logoThemeGradient
     }
     
     var colorScheme: ColorScheme? {
@@ -146,7 +198,7 @@ final class ThemeSettings {
         "0891b2", // Deep Cyan
     ]
 
-    static let accentThemeOptions = [logoThemeID] + presetColors
+    static let accentThemeOptions = [logoThemeID, auroraCalmThemeID] + presetColors
 
     private static func localKey(_ key: String) -> String {
         localDefaultsPrefix + key

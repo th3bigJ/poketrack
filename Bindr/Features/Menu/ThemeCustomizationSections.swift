@@ -158,6 +158,10 @@ struct ThemeColorSwatch: View {
         hex == ThemeSettings.logoThemeID
     }
 
+    private var isAuroraCalmTheme: Bool {
+        hex == ThemeSettings.auroraCalmThemeID
+    }
+
     var body: some View {
         Button(action: action) {
             ZStack {
@@ -178,7 +182,7 @@ struct ThemeColorSwatch: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .accessibilityLabel(isLogoTheme ? "Bindr logo theme" : "Accent color \(hex)")
+        .accessibilityLabel(isLogoTheme ? "Bindr logo theme" : isAuroraCalmTheme ? "Aurora Calm theme" : "Accent color \(hex)")
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
     }
 
@@ -186,17 +190,14 @@ struct ThemeColorSwatch: View {
     private var swatchFill: some View {
         if isLogoTheme {
             Circle()
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            Color(hex: "22d3ee"),
-                            Color(hex: "6366f1"),
-                            Color(hex: "ec4899")
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    )
-                )
+                .fill(ThemeSettings.logoThemeGradient)
+                .overlay {
+                    Circle()
+                        .stroke(Color.white.opacity(colorScheme == .dark ? 0.22 : 0.48), lineWidth: 1)
+                }
+        } else if isAuroraCalmTheme {
+            Circle()
+                .fill(ThemeSettings.auroraCalmGradient)
                 .overlay {
                     Circle()
                         .stroke(Color.white.opacity(colorScheme == .dark ? 0.22 : 0.48), lineWidth: 1)

@@ -74,13 +74,13 @@ struct AddToCollectionSuccessOverlay: View {
     @State private var shimmerTravel: CGFloat = -1.2
     @State private var burstExpanded = false
 
-    private var isLogoTheme: Bool {
-        services?.theme.isLogoThemeSelected == true
+    private var isGradientTheme: Bool {
+        services?.theme.isGradientThemeSelected == true
     }
 
     private var burstColors: [Color] {
-        if isLogoTheme {
-            return ThemeSettings.logoThemeColors
+        if isGradientTheme, let theme = services?.theme {
+            return theme.activeGradientColors
         }
         return [accent, BindrPalette.binderGold, BindrPalette.ownedGreen]
     }

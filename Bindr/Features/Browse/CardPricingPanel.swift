@@ -306,7 +306,7 @@ struct CardPricingPanel: View {
                                 Capsule(style: .continuous)
                                     .bindrAccentFill(services.theme.accentColor)
                                     .shadow(
-                                        color: (services.theme.isLogoThemeSelected ? Color(hex: "ec4899") : services.theme.accentColor).opacity(0.20),
+                                        color: (services.theme.isGradientThemeSelected ? services.theme.secondaryAccentColor : services.theme.accentColor).opacity(0.20),
                                         radius: 4,
                                         y: 2
                                     )
@@ -333,7 +333,7 @@ struct CardPricingPanel: View {
                 y: .value("Price", point.price)
             )
             .interpolationMethod(.catmullRom)
-            .foregroundStyle(services.theme.isLogoThemeSelected ? ThemeSettings.logoThemeGradient : LinearGradient(
+            .foregroundStyle(services.theme.isGradientThemeSelected ? services.theme.activeGradient : LinearGradient(
                 colors: [services.theme.accentColor, services.theme.accentColor],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
@@ -347,11 +347,11 @@ struct CardPricingPanel: View {
             )
             .interpolationMethod(.catmullRom)
             .foregroundStyle(LinearGradient(
-                colors: services.theme.isLogoThemeSelected
+                colors: services.theme.isGradientThemeSelected
                     ? [
-                        ThemeSettings.logoThemeColors[0].opacity(0.28),
-                        ThemeSettings.logoThemeColors[2].opacity(0.16),
-                        ThemeSettings.logoThemeColors[3].opacity(0.07),
+                        services.theme.activeGradientColors[0].opacity(0.28),
+                        services.theme.activeGradientColors[services.theme.activeGradientColors.count > 2 ? 2 : 1].opacity(0.16),
+                        services.theme.activeGradientColors[services.theme.activeGradientColors.count - 1].opacity(0.07),
                         .clear
                     ]
                     : [services.theme.accentColor.opacity(0.28), services.theme.accentColor.opacity(0.03)],

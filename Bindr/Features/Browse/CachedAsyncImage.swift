@@ -3,18 +3,36 @@ import UIKit
 
 actor DecodedImageMemoryCache {
     static let shared = DecodedImageMemoryCache()
-    private var storage: [String: UIImage] = [:]
-    private let maxEntries = 1200
+
+    /// `NSCache` evicts by cost under memory pressure (and on `UIApplication`'s memory warnings)
+    /// automatically, which a plain dictionary with FIFO eviction does not. Cost is the decoded
+    /// pixel byte count so a few full-res images can't crowd out thousands of thumbnails — and
+    /// vice-versa — without needing separate caches.
+    private let storage: NSCache<NSString, UIImage>
+
+    init() {
+        let cache = NSCache<NSString, UIImage>()
+        cache.countLimit = 1200
+        cache.totalCostLimit = 256 * 1024 * 1024 // ~256 MB of decoded pixels
+        storage = cache
+    }
 
     func image(for key: String) -> UIImage? {
-        storage[key]
+        storage.object(forKey: key as NSString)
     }
 
     func set(_ image: UIImage, for key: String) {
-        storage[key] = image
-        if storage.count > maxEntries, let keyToRemove = storage.keys.first {
-            storage.removeValue(forKey: keyToRemove)
+        storage.setObject(image, forKey: key as NSString, cost: image.estimatedDecodedByteCount)
+    }
+}
+
+private extension UIImage {
+    /// Approximate decoded size in bytes, used as the `NSCache` cost.
+    var estimatedDecodedByteCount: Int {
+        if let cg = cgImage {
+            return max(1, cg.bytesPerRow * cg.height)
         }
+        return max(1, Int(size.width * scale * size.height * scale) * 4)
     }
 }
 

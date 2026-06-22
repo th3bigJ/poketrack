@@ -25,6 +25,7 @@ struct CreateBinderSheet: View {
     @State private var showPriceOverlay = false
     @State private var titleTextColor = BinderTitleTextColor.gold
     @State private var titleFontStyle = BinderTitleFontStyle.serif
+    @State private var showSaveError = false
 
     private var transientBinder: Binder {
         Binder(
@@ -257,6 +258,11 @@ struct CreateBinderSheet: View {
                     .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
             }
+            .alert("Couldn't save binder", isPresented: $showSaveError) {
+                Button("OK", role: .cancel) {}
+            } message: {
+                Text("Your binder wasn't saved. Make sure your device has free storage, then tap Create to try again.")
+            }
         }
     }
 
@@ -274,7 +280,13 @@ struct CreateBinderSheet: View {
             titleFontStyle: titleFontStyle
         )
         modelContext.insert(binder)
-        try? modelContext.save()
+        // Only treat the binder as created once the on-device save actually succeeds.
+        // On failure, discard the pending insert so the form stays intact for a clean retry.
+        guard modelContext.saveLogging() else {
+            modelContext.rollback()
+            showSaveError = true
+            return
+        }
         services.scheduleLibraryCloudBackup()
         dismiss()
     }

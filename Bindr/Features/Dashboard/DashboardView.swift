@@ -807,11 +807,11 @@ struct DashboardView: View {
                         )
                         .foregroundStyle(
                             LinearGradient(
-                                colors: services.theme.isLogoThemeSelected
+                                colors: services.theme.isGradientThemeSelected
                                     ? [
-                                        ThemeSettings.logoThemeColors[0].opacity(0.30),
-                                        ThemeSettings.logoThemeColors[2].opacity(0.18),
-                                        ThemeSettings.logoThemeColors[3].opacity(0.08),
+                                        services.theme.activeGradientColors[0].opacity(0.30),
+                                        services.theme.activeGradientColors[services.theme.activeGradientColors.count > 2 ? 2 : 1].opacity(0.18),
+                                        services.theme.activeGradientColors[services.theme.activeGradientColors.count - 1].opacity(0.08),
                                         .clear
                                     ]
                                     : [services.theme.accentColor.opacity(0.3), services.theme.accentColor.opacity(0.03)],
@@ -825,7 +825,7 @@ struct DashboardView: View {
                             y: .value("Value", point.total)
                         )
                         .interpolationMethod(.catmullRom)
-                        .foregroundStyle(services.theme.isLogoThemeSelected ? ThemeSettings.logoThemeGradient : LinearGradient(
+                        .foregroundStyle(services.theme.isGradientThemeSelected ? services.theme.activeGradient : LinearGradient(
                             colors: [services.theme.accentColor, services.theme.accentColor],
                             startPoint: .topLeading,
                             endPoint: .bottomTrailing
@@ -1265,8 +1265,8 @@ struct DashboardView: View {
                             .overlay {
                                 Capsule(style: .continuous)
                                     .stroke(
-                                        services.theme.isLogoThemeSelected
-                                            ? ThemeSettings.logoThemeColors[3].opacity(0.34)
+                                        services.theme.isGradientThemeSelected
+                                            ? services.theme.secondaryAccentColor.opacity(0.34)
                                             : services.theme.accentColor.opacity(0.28),
                                         lineWidth: 1
                                     )

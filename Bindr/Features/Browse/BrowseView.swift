@@ -36,7 +36,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
                                     .bindrAccentFill(services.theme.accentColor)
                                     .matchedGeometryEffect(id: "highlight", in: namespace)
                                     .shadow(
-                                        color: (services.theme.isLogoThemeSelected ? Color(hex: "ec4899") : services.theme.accentColor).opacity(0.22),
+                                        color: (services.theme.isGradientThemeSelected ? services.theme.secondaryAccentColor : services.theme.accentColor).opacity(0.22),
                                         radius: 4,
                                         x: 0,
                                         y: 2

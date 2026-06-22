@@ -603,7 +603,7 @@ struct DeckDetailView: View {
         }
 
         if didChange {
-            try? modelContext.save()
+            modelContext.saveLogging()
             services.scheduleLibraryCloudBackup()
         }
     }
@@ -623,7 +623,7 @@ struct DeckDetailView: View {
         }
 
         if didChange {
-            try? modelContext.save()
+            modelContext.saveLogging()
             services.scheduleLibraryCloudBackup()
         }
     }

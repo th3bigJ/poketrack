@@ -394,10 +394,14 @@ struct CollectView: View {
         }
     }
 
-    private var formattedActiveFilteredCount: String {
+    private static let activeFilteredCountFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        return formatter.string(from: NSNumber(value: activeFilteredCount)) ?? "\(activeFilteredCount)"
+        return formatter
+    }()
+
+    private var formattedActiveFilteredCount: String {
+        Self.activeFilteredCountFormatter.string(from: NSNumber(value: activeFilteredCount)) ?? "\(activeFilteredCount)"
     }
 
     // MARK: - Content View
@@ -1191,7 +1195,7 @@ struct CollectView: View {
 
     private func removeFromWishlist(_ item: WishlistItem) {
         modelContext.delete(item)
-        try? modelContext.save()
+        modelContext.saveLogging()
     }
 
     private func sealedProduct(for item: WishlistItem) -> SealedProduct? {

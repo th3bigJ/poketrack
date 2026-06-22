@@ -149,8 +149,8 @@ struct BindrAccentShapeFill<S: Shape>: View {
     @Environment(AppServices.self) private var services: AppServices?
 
     var body: some View {
-        if usesLogoGradient && services?.theme.isLogoThemeSelected == true {
-            shape.fill(ThemeSettings.logoThemeGradient)
+        if usesLogoGradient && services?.theme.isGradientThemeSelected == true {
+            shape.fill(services?.theme.activeGradient ?? ThemeSettings.logoThemeGradient)
                 .opacity(logoOpacity)
         } else {
             shape.fill(fallback)
@@ -168,8 +168,8 @@ struct BindrAccentShapeStroke<S: Shape>: View {
     @Environment(AppServices.self) private var services: AppServices?
 
     var body: some View {
-        if usesLogoGradient && services?.theme.isLogoThemeSelected == true {
-            shape.stroke(ThemeSettings.logoThemeGradient, lineWidth: lineWidth)
+        if usesLogoGradient && services?.theme.isGradientThemeSelected == true {
+            shape.stroke(services?.theme.activeGradient ?? ThemeSettings.logoThemeGradient, lineWidth: lineWidth)
                 .opacity(logoOpacity)
         } else {
             shape.stroke(fallback, lineWidth: lineWidth)
@@ -183,8 +183,8 @@ struct BindrAccentForeground: ViewModifier {
     @Environment(AppServices.self) private var services: AppServices?
 
     func body(content: Content) -> some View {
-        if services?.theme.isLogoThemeSelected == true {
-            content.foregroundStyle(ThemeSettings.logoThemeGradient)
+        if let theme = services?.theme, theme.isGradientThemeSelected {
+            content.foregroundStyle(theme.activeGradient)
         } else {
             content.foregroundStyle(fallback)
         }
@@ -235,7 +235,7 @@ struct BindrSuccessSparkModifier<Trigger: Equatable>: ViewModifier {
     func body(content: Content) -> some View {
         content
             .overlay {
-                if isShowing && services?.theme.isLogoThemeSelected == true {
+                if isShowing && services?.theme.isGradientThemeSelected == true {
                     BindrSuccessSparkBurst(isExpanded: isExpanded, reduceMotion: reduceMotion)
                         .id(burstID)
                         .allowsHitTesting(false)
@@ -249,7 +249,7 @@ struct BindrSuccessSparkModifier<Trigger: Equatable>: ViewModifier {
     }
 
     private func play() {
-        guard services?.theme.isLogoThemeSelected == true else { return }
+        guard services?.theme.isGradientThemeSelected == true else { return }
         let nextBurstID = burstID + 1
         burstID = nextBurstID
         isExpanded = false
@@ -285,14 +285,24 @@ private struct BindrSuccessSparkBurst: View {
     let isExpanded: Bool
     let reduceMotion: Bool
 
+    @Environment(AppServices.self) private var services: AppServices?
+
+    private var colors: [Color] {
+        services?.theme.activeGradientColors ?? ThemeSettings.logoThemeColors
+    }
+
+    private var gradient: LinearGradient {
+        services?.theme.activeGradient ?? ThemeSettings.logoThemeGradient
+    }
+
     private var particles: [BindrSparkParticle] {
-        let colors = ThemeSettings.logoThemeColors
+        let colors = colors
         return [
             BindrSparkParticle(symbol: "sparkle", color: colors[0], x: -34, y: -28, size: 13, rotation: -18, endScale: 0.95),
-            BindrSparkParticle(symbol: "star.fill", color: colors[3], x: 32, y: -26, size: 11, rotation: 20, endScale: 0.86),
-            BindrSparkParticle(symbol: "circle.fill", color: colors[1], x: -28, y: 24, size: 7, rotation: 0, endScale: 0.72),
-            BindrSparkParticle(symbol: "sparkle", color: colors[2], x: 34, y: 22, size: 10, rotation: 24, endScale: 0.82),
-            BindrSparkParticle(symbol: "circle.fill", color: colors[3], x: 0, y: -38, size: 6, rotation: 0, endScale: 0.74)
+            BindrSparkParticle(symbol: "star.fill", color: colors[colors.count > 3 ? 3 : colors.count - 1], x: 32, y: -26, size: 11, rotation: 20, endScale: 0.86),
+            BindrSparkParticle(symbol: "circle.fill", color: colors[colors.count > 1 ? 1 : 0], x: -28, y: 24, size: 7, rotation: 0, endScale: 0.72),
+            BindrSparkParticle(symbol: "sparkle", color: colors[colors.count > 2 ? 2 : 0], x: 34, y: 22, size: 10, rotation: 24, endScale: 0.82),
+            BindrSparkParticle(symbol: "circle.fill", color: colors[colors.count > 3 ? 3 : colors.count - 1], x: 0, y: -38, size: 6, rotation: 0, endScale: 0.74)
         ]
     }
 
@@ -300,13 +310,13 @@ private struct BindrSuccessSparkBurst: View {
         ZStack {
             if reduceMotion {
                 Circle()
-                    .stroke(ThemeSettings.logoThemeGradient, lineWidth: 2)
+                    .stroke(gradient, lineWidth: 2)
                     .frame(width: isExpanded ? 62 : 38, height: isExpanded ? 62 : 38)
                     .opacity(isExpanded ? 0 : 0.42)
                     .blur(radius: 0.5)
             } else {
                 Circle()
-                    .stroke(ThemeSettings.logoThemeGradient, lineWidth: 2)
+                    .stroke(gradient, lineWidth: 2)
                     .frame(width: isExpanded ? 76 : 24, height: isExpanded ? 76 : 24)
                     .opacity(isExpanded ? 0 : 0.36)
 
@@ -349,6 +359,8 @@ struct BindrPageBackground: View {
             if services?.theme.backgroundGlowEnabled ?? true {
                 if services?.theme.isLogoThemeSelected == true {
                     logoThemeGlow
+                } else if services?.theme.isAuroraCalmThemeSelected == true {
+                    auroraCalmThemeGlow
                 } else {
                     standardAccentGlow
                 }
@@ -431,6 +443,48 @@ struct BindrPageBackground: View {
             colors: [
                 pink.opacity(colorScheme == .dark ? 0.110 : 0.13),
                 violet.opacity(colorScheme == .dark ? 0.052 : 0.068),
+                .clear
+            ],
+            center: .topTrailing,
+            startRadius: 10,
+            endRadius: 470
+        )
+        .offset(x: 110, y: -110)
+    }
+
+    @ViewBuilder
+    private var auroraCalmThemeGlow: some View {
+        let darkBlue = Color(hex: "1e356d")
+        let plum = Color(hex: "6a225f")
+        let crimson = Color(hex: "c0392b")
+
+        LinearGradient(
+            colors: [
+                darkBlue.opacity(colorScheme == .dark ? 0.08 : 0.11),
+                plum.opacity(colorScheme == .dark ? 0.070 : 0.095),
+                crimson.opacity(colorScheme == .dark ? 0.065 : 0.085),
+                .clear
+            ],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+
+        RadialGradient(
+            colors: [
+                darkBlue.opacity(colorScheme == .dark ? 0.090 : 0.11),
+                plum.opacity(colorScheme == .dark ? 0.045 : 0.062),
+                .clear
+            ],
+            center: .topLeading,
+            startRadius: 0,
+            endRadius: 430
+        )
+        .offset(x: -90, y: -100)
+
+        RadialGradient(
+            colors: [
+                crimson.opacity(colorScheme == .dark ? 0.095 : 0.11),
+                plum.opacity(colorScheme == .dark ? 0.048 : 0.062),
                 .clear
             ],
             center: .topTrailing,

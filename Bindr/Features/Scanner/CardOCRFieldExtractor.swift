@@ -1,6 +1,109 @@
 import Foundation
 import Vision
 
+/// A collector-number reading recovered from OCR, carrying the trust signals the ranker needs.
+/// `isFooter` marks numbers found in the bottom strip of the card (authoritative);
+/// fractions found elsewhere (rules / flavor text) are kept but discounted.
+struct ScannerNumberCandidate: Equatable, Sendable {
+    /// Original OCR substring (for debugging).
+    let raw: String
+    /// Normalized form, e.g. `"062/193"`, `"tg05/tg30"`, `"swsh123"`.
+    let normalized: String
+    /// True when the reading sits in the bottom band of the card.
+    let isFooter: Bool
+    /// Vision confidence for the source transcription (0…1).
+    let confidence: Float
+}
+
+/// Normalizes OCR collector-number readings: unifies separators and repairs the most
+/// common OCR character confusions (`O→0`, `l/I→1`, `S→5`, `B→8`, …) in numeric context.
+/// Supports clean fractions (`062/193`), spaced/odd separators (`062 / 193`, `062|193`),
+/// alphanumeric fractions (`TG05/TG30`, `GG01/GG70`) and promo codes (`SWSH123`).
+enum ScannerNumberNormalizer {
+    private static let confusable: [Character: Character] = [
+        "o": "0", "q": "0", "i": "1", "l": "1", "z": "2", "s": "5", "b": "8", "g": "9",
+    ]
+    private static let confusableLetters = Set("oqilzsbg")
+
+    private static let numericFractionRegex = try! NSRegularExpression(
+        pattern: #"(?<![a-z])([0-9oilzqsbg]{1,4})/([0-9oilzqsbg]{1,4})(?![a-z])"#)
+    private static let alphaNumFractionRegex = try! NSRegularExpression(
+        pattern: #"(?<![a-z0-9])([a-z]{1,4}[0-9oilzqsbg]{1,3})/([a-z]{1,4}[0-9oilzqsbg]{1,3})(?![a-z0-9])"#)
+    private static let promoRegex = try! NSRegularExpression(
+        pattern: #"(?<![a-z0-9])([a-z]{2,5}[0-9oilzqsbg]{2,4})(?![a-z0-9])"#)
+
+    /// Returns every normalized collector-number form found in `raw`.
+    static func candidates(in raw: String, includePromo: Bool) -> [String] {
+        let lower = raw.lowercased()
+        // Collapse any slash-like separator (and surrounding spaces) into a single '/'.
+        let unified = lower.replacingOccurrences(
+            of: #"[ \t]*[/|\\⁄∕÷]+[ \t]*"#, with: "/", options: .regularExpression)
+        let full = NSRange(location: 0, length: (unified as NSString).length)
+        var out: [String] = []
+        var seen = Set<String>()
+        func add(_ s: String) {
+            guard !s.isEmpty, seen.insert(s).inserted else { return }
+            out.append(s)
+        }
+
+        // Alphanumeric fractions first (TG05/TG30) so the numeric pass can skip them.
+        alphaNumFractionRegex.enumerateMatches(in: unified, range: full) { m, _, _ in
+            guard let m,
+                  let l = Range(m.range(at: 1), in: unified),
+                  let r = Range(m.range(at: 2), in: unified) else { return }
+            let left = splitHeadTail(unified[l])
+            let right = splitHeadTail(unified[r])
+            // Genuine alpha set codes only — skip when the "letters" are really digit confusions (O62).
+            guard left.head.contains(where: { !confusableLetters.contains($0) }) else { return }
+            guard left.tail.contains(where: \.isNumber), right.tail.contains(where: \.isNumber) else { return }
+            add("\(left.head)\(left.tail)/\(right.head)\(right.tail)")
+        }
+
+        numericFractionRegex.enumerateMatches(in: unified, range: full) { m, _, _ in
+            guard let m,
+                  let lr = Range(m.range(at: 1), in: unified),
+                  let rr = Range(m.range(at: 2), in: unified),
+                  let whole = Range(m.range, in: unified) else { return }
+            // Reject pure-letter false positives like "ol/sb".
+            guard unified[whole].contains(where: \.isNumber) else { return }
+            let left = digitizeAll(unified[lr])
+            let right = digitizeAll(unified[rr])
+            guard left.allSatisfy(\.isNumber), right.allSatisfy(\.isNumber) else { return }
+            guard !left.isEmpty, right.count >= 2 else { return }
+            add("\(left)/\(right)")
+        }
+
+        if includePromo {
+            promoRegex.enumerateMatches(in: unified, range: full) { m, _, _ in
+                guard let m, let rr = Range(m.range(at: 1), in: unified) else { return }
+                let parts = splitHeadTail(unified[rr])
+                guard parts.head.contains(where: { !confusableLetters.contains($0) }),
+                      parts.tail.contains(where: \.isNumber) else { return }
+                add("\(parts.head)\(parts.tail)")
+            }
+        }
+        return out
+    }
+
+    private static func digitizeAll(_ s: Substring) -> String {
+        String(s.map { confusable[$0] ?? $0 })
+    }
+
+    /// Keeps a leading letter run intact and repairs confusable characters in the trailing run.
+    private static func splitHeadTail(_ s: Substring) -> (head: String, tail: String) {
+        var head = "", tail = "", inTail = false
+        for ch in s {
+            if !inTail && ch.isLetter {
+                head.append(ch)
+            } else {
+                inTail = true
+                tail.append(confusable[ch] ?? ch)
+            }
+        }
+        return (head, tail)
+    }
+}
+
 /// Pulls **name**, **HP**, and **collection number** out of Vision OCR even though string order is arbitrary.
 /// Center-band text is **Pokémon attacks** or, for Trainers, long **rules** (no attacks).
 ///
@@ -27,6 +130,8 @@ enum CardOCRFieldExtractor {
         var illustrator: String?
         /// Middle of the card: **attack names** on Pokémon, or **rules** on Trainers (often long; search uses partial token match).
         var centerSearchHint: String?
+        /// Every collector-number reading with position + confidence trust signals.
+        var numberCandidates: [ScannerNumberCandidate] = []
     }
 
     // MARK: - Regex
@@ -88,6 +193,9 @@ enum CardOCRFieldExtractor {
     private static let centerBandMinY: CGFloat = 0.15
     private static let centerBandMaxY: CGFloat = 0.50
 
+    /// Bottom strip where the authoritative collector number is printed (Vision Y near 0).
+    private static let footerBandMaxY: CGFloat = 0.18
+
     /// Name is usually on the left side of the title row.
     private static let nameLeftMaxX: CGFloat = 0.58
     /// HP is usually on the right.
@@ -138,13 +246,46 @@ enum CardOCRFieldExtractor {
             return ExtractedFields(name: nil, hp: nil, setNumber: nil, illustrator: nil, centerSearchHint: nil)
         }
 
-        let setNumber = extractSetNumber(from: lines)
+        let numberCandidates = extractNumberCandidates(from: observations)
+        let setNumber = numberCandidates.first(where: { $0.isFooter && $0.normalized.contains("/") })?.normalized
+            ?? numberCandidates.first(where: { $0.normalized.contains("/") })?.normalized
+            ?? extractSetNumber(from: lines)
         let hp = extractHP(from: lines)
         let name = extractName(from: lines)
         let illustrator = extractIllustrator(from: lines)
         let centerSearchHint = extractCenterSearchHint(from: lines)
 
-        return ExtractedFields(name: name, hp: hp, setNumber: setNumber, illustrator: illustrator, centerSearchHint: centerSearchHint)
+        return ExtractedFields(
+            name: name, hp: hp, setNumber: setNumber, illustrator: illustrator,
+            centerSearchHint: centerSearchHint, numberCandidates: numberCandidates
+        )
+    }
+
+    /// Collector-number readings across every observation, keeping position (footer vs elsewhere)
+    /// and confidence. Considers Vision's top 3 transcriptions because tiny collector numbers
+    /// are frequently misread in the first candidate.
+    static func extractNumberCandidates(from observations: [VNRecognizedTextObservation]) -> [ScannerNumberCandidate] {
+        var out: [ScannerNumberCandidate] = []
+        var seen = Set<String>()
+        for obs in observations {
+            let transcriptions = obs.topCandidates(3)
+            guard !transcriptions.isEmpty else { continue }
+            let isFooter = obs.boundingBox.midY <= footerBandMaxY
+            for (idx, t) in transcriptions.enumerated() {
+                let confidence = t.confidence * (idx == 0 ? 1.0 : 0.8)
+                for normalized in ScannerNumberNormalizer.candidates(in: t.string, includePromo: isFooter) {
+                    let key = "\(normalized)|\(isFooter)"
+                    guard seen.insert(key).inserted else { continue }
+                    out.append(ScannerNumberCandidate(
+                        raw: t.string, normalized: normalized, isFooter: isFooter, confidence: confidence
+                    ))
+                }
+            }
+        }
+        return out.sorted { a, b in
+            if a.isFooter != b.isFooter { return a.isFooter }
+            return a.confidence > b.confidence
+        }
     }
 
     /// Reading order for debug: top → bottom, then left → right.
