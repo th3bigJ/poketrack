@@ -998,11 +998,12 @@ extension UserLibraryBackup {
     }
 
     func collectionCardIDsByNewestAcquired() -> [String] {
-        orderedUniqueCardIDs(from: collection.map(\.cardID))
+        let dates = collectionDateByCardID()
+        return orderedUniqueCardIDs(from: collection.map(\.cardID))
             .sorted { lhs, rhs in
                 compareSnapshotDates(
-                    collectionDateByCardID()[lhs],
-                    collectionDateByCardID()[rhs],
+                    dates[lhs],
+                    dates[rhs],
                     lhs: lhs,
                     rhs: rhs
                 )

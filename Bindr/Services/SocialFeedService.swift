@@ -1104,6 +1104,9 @@ final class SocialFeedService {
         if scope == .mine {
             let userID = try signedInUserID()
             path += "&sender_id=eq.\(userID.uuidString)"
+        } else if scope == .alerts {
+            let userID = try signedInUserID()
+            path += "&matcher_id=eq.\(userID.uuidString)"
         }
         
         return try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())

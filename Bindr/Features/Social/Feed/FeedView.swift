@@ -493,9 +493,7 @@ struct SocialAlertsSheet: View {
         isLoading = true
         defer { isLoading = false }
         do {
-            let fetchedActivity = try await services.socialFeed
-                .fetchUserActivity(limit: 40)
-                .filter { $0.type != .wishlistMatch }
+            let fetchedActivity = try await services.socialFeed.fetchUserActivity(limit: 40)
             let fetchedTrades = try await services.trade.fetchMyTrades()
             activity = fetchedActivity
             tradeUpdates = buildTradeAlerts(from: fetchedTrades)
