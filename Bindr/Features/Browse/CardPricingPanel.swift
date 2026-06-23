@@ -5,16 +5,9 @@ import UIKit
 // MARK: - Chart range
 
 private enum ChartRange: String, CaseIterable {
-    case oneDay = "1D"
-    case sevenDays = "7D"
-    case oneMonth = "1M"
-    case threeMonths = "3M"
-    case oneYear = "1Y"
-    case all = "ALL"
-
-    /// Ranges exposed in the card-detail picker. The other cases stay in the
-    /// enum so the resolve logic keeps working, they're just not shown.
-    static let selectable: [ChartRange] = [.oneMonth, .oneYear, .all]
+    case daily = "Daily"
+    case weekly = "Weekly"
+    case monthly = "Monthly"
 }
 
 // MARK: - Main panel
@@ -54,7 +47,7 @@ struct CardPricingPanel: View {
     @State private var history: CardPriceHistory? = nil
     @State private var trends: CardPriceTrends? = nil  // single entry (first/best match)
     @State private var isLoading = false
-    @State private var chartRange: ChartRange = .oneMonth
+    @State private var chartRange: ChartRange = .daily
     @State private var scrubPoint: PriceDataPoint? = nil
 
     private var activeChartAccent: Color {
@@ -106,38 +99,15 @@ struct CardPricingPanel: View {
 
     private var resolvedChart: (points: [PriceDataPoint], resolution: ChartDataResolution) {
         let dailyWithToday = (chartSeries?.daily ?? []).pinningTodayPrice(livePriceUSD)
-        let daily2 = Array(dailyWithToday.suffix(2))
-        let daily7 = Array(dailyWithToday.suffix(7))
-        let daily31 = Array(dailyWithToday.suffix(31))
         let weeklySource = chartSeries.flatMap { $0.weekly.isEmpty ? nil : $0.weekly } ?? weeklyFromDaily(dailyWithToday)
-        let weekly13 = Array(weeklySource.suffix(13))
         let monthlySource = chartSeries.flatMap { $0.monthly.isEmpty ? nil : $0.monthly } ?? monthlyFromDaily(dailyWithToday)
-        let monthly12 = Array(monthlySource.suffix(12))
 
         switch chartRange {
-        case .oneDay:
-            if !daily2.isEmpty { return (daily2, .daily) }
-            if !daily7.isEmpty { return (daily7, .daily) }
-            if !weekly13.isEmpty { return (weekly13, .weekly) }
-        case .sevenDays:
-            if !daily7.isEmpty { return (daily7, .daily) }
-            if !weekly13.isEmpty { return (weekly13, .weekly) }
-            if !monthly12.isEmpty { return (monthly12, .monthly) }
-        case .oneMonth:
-            if !daily31.isEmpty { return (daily31, .daily) }
-            if !weekly13.isEmpty { return (weekly13, .weekly) }
-            if !monthly12.isEmpty { return (monthly12, .monthly) }
-        case .threeMonths:
-            if !weekly13.isEmpty { return (weekly13, .weekly) }
-            if !daily31.isEmpty { return (daily31, .daily) }
-            if !monthly12.isEmpty { return (monthly12, .monthly) }
-        case .oneYear:
-            if !monthly12.isEmpty { return (monthly12, .monthly) }
-            if !weekly13.isEmpty { return (weekly13, .weekly) }
-            if !daily31.isEmpty { return (daily31, .daily) }
-        case .all:
+        case .daily:
             if !dailyWithToday.isEmpty { return (dailyWithToday, .daily) }
+        case .weekly:
             if !weeklySource.isEmpty { return (weeklySource, .weekly) }
+        case .monthly:
             if !monthlySource.isEmpty { return (monthlySource, .monthly) }
         }
         return ([], .daily)
@@ -372,7 +342,7 @@ struct CardPricingPanel: View {
 
     private var chartRangePicker: some View {
         HStack(spacing: 0) {
-            ForEach(ChartRange.selectable, id: \.self) { range in
+            ForEach(ChartRange.allCases, id: \.self) { range in
                 let isSelected = chartRange == range
                 Button {
                     guard chartRange != range else { return }

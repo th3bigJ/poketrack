@@ -130,7 +130,6 @@ struct CardDetailContentView: View {
             let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
             ScrollView {
                 VStack(alignment: .leading, spacing: 6) {
-                    navigationChrome
                     heroSection(
                         contentWidth: contentWidth,
                         collectionItems: collectionItems,
@@ -162,7 +161,7 @@ struct CardDetailContentView: View {
                     }
                 }
                 .padding(.horizontal, 16)
-                .padding(.top, 14)
+                .padding(.top, 18)
                 .padding(.bottom, 8)
             }
             .scrollIndicators(.hidden)
@@ -206,34 +205,6 @@ struct CardDetailContentView: View {
         // Reserve room for the price block, range picker and inter-section spacing.
         let reserved: CGFloat = heroHeight + 248
         return min(130, max(100, viewportHeight - reserved))
-    }
-
-    private var navigationChrome: some View {
-        HStack {
-            detailCircleButton(
-                systemImage: "chevron.left",
-                accessibilityLabel: "Close card details",
-                action: actions.onDismiss
-            )
-
-            Spacer()
-
-            if showsWishlistAction {
-                detailCircleButton(
-                    systemImage: isWishlisted ? "star.fill" : "star",
-                    accessibilityLabel: isWishlisted ? "Remove from wishlist" : "Add to wishlist",
-                    foreground: isWishlisted ? Color(red: 0.98, green: 0.78, blue: 0.18) : .primary,
-                    action: actions.onToggleWishlist
-                )
-            }
-
-            detailCircleButton(
-                systemImage: "square.and.arrow.up",
-                accessibilityLabel: "Share card",
-                action: actions.onShare
-            )
-        }
-        .frame(height: 42)
     }
 
     private func heroSection(
@@ -292,43 +263,60 @@ struct CardDetailContentView: View {
         .frame(width: width)
     }
 
+    @ViewBuilder
     private var titleBlock: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        let number = cleaned(card.printedNumber) ?? cleaned(card.cardNumber)
+        let rarity = cleaned(card.rarity)
+
+        VStack(alignment: .leading, spacing: 8) {
             Text(card.cardName)
                 .font(.system(size: 22, weight: .bold, design: .rounded))
                 .foregroundStyle(.primary)
+                .multilineTextAlignment(.center)
                 .lineLimit(2)
                 .minimumScaleFactor(0.75)
-
-            HStack(alignment: .center, spacing: 8) {
-                if let number = cleaned(card.printedNumber) ?? cleaned(card.cardNumber) {
-                    Text("#\(number)")
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                }
-                if let rarity = cleaned(card.rarity) {
-                    Text(rarity.uppercased())
-                        .font(.system(size: 10, weight: .bold))
-                        .foregroundStyle(.secondary)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 3)
-                        .background(
-                            Capsule()
-                                .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
-                        )
-                }
-            }
+                .frame(maxWidth: .infinity, alignment: .center)
 
             if let set {
                 SetLogoAsyncImage(
                     logoSrc: set.logoSrc,
-                    height: 22,
+                    height: 34,
                     brand: TCGBrand.inferredFromMasterCardId(card.masterCardId),
-                    alignment: .leading
+                    alignment: .center
                 )
-                .frame(height: 26)
+                .frame(height: 40)
                 .accessibilityLabel(set.name)
-                .padding(.vertical, 4)
+            }
+
+            if number != nil || rarity != nil {
+                HStack(alignment: .center, spacing: 8) {
+                    if let number {
+                        Text("#\(number)")
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                    }
+                    if let rarity {
+                        Text(rarity.uppercased())
+                            .font(.system(size: 10, weight: .bold))
+                            .foregroundStyle(.secondary)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 3)
+                            .background(
+                                Capsule()
+                                    .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
+                            )
+                    }
+                }
+            }
+
+            if let artist = cleaned(card.artist) {
+                Text("Illus. \(artist)")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.85)
+                    .frame(maxWidth: .infinity, alignment: .center)
             }
         }
     }
@@ -463,6 +451,8 @@ struct CardDetailContentView: View {
     }
 
     private static let collectionGreen = Color(red: 0.12, green: 0.67, blue: 0.28)
+    private static let removeRed = Color(red: 0.88, green: 0.22, blue: 0.24)
+    private static let wishlistGold = Color(red: 0.98, green: 0.78, blue: 0.18)
 
       /// Remove appears when the card is already in the collection; add stays available for extra copies.
     @ViewBuilder
@@ -477,14 +467,10 @@ struct CardDetailContentView: View {
                     addToDeckAction(card, preferredVariantKey, 1)
                     Haptics.lightImpact()
                 } label: {
-                    compactActionLabel(
-                        title: "Add to Deck",
-                        systemImage: "plus.circle.fill",
-                        tint: services.theme.chartAccentColor,
-                        filled: true
-                    )
+                    iconActionLabel(systemImage: "plus", tint: services.theme.chartAccentColor, filled: true)
                 }
                 .buttonStyle(.plain)
+                .accessibilityLabel("Add to deck")
             } else if showsCollectionActions {
                 addToCollectionButton(isOwned: owned)
 
@@ -492,29 +478,41 @@ struct CardDetailContentView: View {
                     Button {
                         actions.onRemoveFromCollection()
                     } label: {
-                        Image(systemName: "minus")
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundStyle(Color(red: 0.88, green: 0.22, blue: 0.24))
-                            .frame(width: 44, height: 44)
-                            .background(
-                                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                    .fill(Color(red: 0.95, green: 0.27, blue: 0.27).opacity(0.12))
-                            )
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                    .stroke(Color(red: 0.95, green: 0.27, blue: 0.27).opacity(0.30), lineWidth: 1)
-                            )
+                        iconActionLabel(systemImage: "minus", tint: Self.removeRed, filled: false)
                     }
                     .buttonStyle(.plain)
-                    .accessibilityLabel("Remove from Collection")
+                    .accessibilityLabel("Remove from collection")
                 }
             }
+
+            if showsWishlistAction {
+                Button {
+                    actions.onToggleWishlist()
+                } label: {
+                    iconActionLabel(
+                        systemImage: isWishlisted ? "star.fill" : "star",
+                        tint: isWishlisted ? Self.wishlistGold : .primary,
+                        filled: isWishlisted
+                    )
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(isWishlisted ? "Remove from wishlist" : "Add to wishlist")
+            }
+
+            Button {
+                actions.onShare()
+            } label: {
+                iconActionLabel(systemImage: "square.and.arrow.up", tint: .primary, filled: false)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Share card")
         }
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     @ViewBuilder
     private func addToCollectionButton(isOwned: Bool) -> some View {
-        let title = isOwned ? "Add Copy" : "Add to Collection"
+        let label = isOwned ? "Add copy to collection" : "Add to collection"
         if availableVariantKeys.count > 1 {
             Menu {
                 ForEach(availableVariantKeys, id: \.self) { key in
@@ -523,42 +521,37 @@ struct CardDetailContentView: View {
                     }
                 }
             } label: {
-                compactActionLabel(
-                    title: title,
-                    systemImage: "plus.circle.fill",
-                    tint: Self.collectionGreen,
-                    filled: true
-                )
+                iconActionLabel(systemImage: "plus", tint: Self.collectionGreen, filled: true)
             }
+            .accessibilityLabel(label)
         } else {
             Button {
                 actions.onAddToCollection(preferredVariantKey)
             } label: {
-                compactActionLabel(
-                    title: title,
-                    systemImage: "plus.circle.fill",
-                    tint: Self.collectionGreen,
-                    filled: true
-                )
+                iconActionLabel(systemImage: "plus", tint: Self.collectionGreen, filled: true)
             }
             .buttonStyle(.plain)
+            .accessibilityLabel(label)
         }
     }
 
-    private func compactActionLabel(
-        title: String,
+    private func iconActionLabel(
         systemImage: String,
         tint: Color,
         filled: Bool
     ) -> some View {
-        Label(title, systemImage: systemImage)
-            .font(.subheadline.weight(.semibold))
-            .lineLimit(1)
-            .minimumScaleFactor(0.8)
+        Image(systemName: systemImage)
+            .font(.system(size: 16, weight: .bold))
             .foregroundStyle(filled ? Color.white : tint)
-            .padding(.horizontal, 20)
-            .frame(height: 44)
-            .background(filled ? tint : tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .frame(width: 44, height: 44)
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(filled ? tint : tint.opacity(0.12))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(tint.opacity(filled ? 0 : 0.30), lineWidth: 1)
+            )
     }
 
     private var detailsSection: some View {
@@ -687,19 +680,6 @@ struct CardDetailContentView: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-    }
-
-    private func detailCircleButton(
-        systemImage: String,
-        accessibilityLabel: String,
-        foreground: Color = .primary,
-        action: @escaping () -> Void
-    ) -> some View {
-        ChromeGlassCircleButton(accessibilityLabel: accessibilityLabel, action: action) {
-            Image(systemName: systemImage)
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(foreground)
-        }
     }
 
     private func fullWidthActionLabel(

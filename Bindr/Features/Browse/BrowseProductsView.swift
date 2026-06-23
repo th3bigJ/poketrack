@@ -1152,9 +1152,9 @@ private struct SealedProductDetailPage: View {
 }
 
 private enum SealedChartRange: String, CaseIterable {
-    case oneMonth = "1M"
-    case oneYear = "1Y"
-    case all = "ALL"
+    case daily = "Daily"
+    case weekly = "Weekly"
+    case monthly = "Monthly"
 }
 
 private enum SealedChartDataResolution {
@@ -1172,7 +1172,7 @@ private struct SealedProductPricingPanel: View {
     @State private var history: SealedProductHistorySeries?
     @State private var currentPrice = "—"
     @State private var livePriceUSD: Double?
-    @State private var chartRange: SealedChartRange = .oneMonth
+    @State private var chartRange: SealedChartRange = .daily
     @State private var scrubPoint: PriceDataPoint? = nil
     @State private var isLoading = false
 
@@ -1182,24 +1182,15 @@ private struct SealedProductPricingPanel: View {
 
     private var resolvedChart: (points: [PriceDataPoint], resolution: SealedChartDataResolution) {
         let dailyWithToday = chartDailyPoints
-        let daily31 = Array(dailyWithToday.suffix(31))
         let weeklySource = history.flatMap { $0.weekly.isEmpty ? nil : $0.weekly } ?? weeklyFromDaily(dailyWithToday)
-        let weekly13 = Array(weeklySource.suffix(13))
         let monthlySource = history.flatMap { $0.monthly.isEmpty ? nil : $0.monthly } ?? monthlyFromDaily(dailyWithToday)
-        let monthly12 = Array(monthlySource.suffix(12))
 
         switch chartRange {
-        case .oneMonth:
-            if !daily31.isEmpty { return (daily31, .daily) }
-            if !weekly13.isEmpty { return (weekly13, .weekly) }
-            if !monthly12.isEmpty { return (monthly12, .monthly) }
-        case .oneYear:
-            if !monthly12.isEmpty { return (monthly12, .monthly) }
-            if !weekly13.isEmpty { return (weekly13, .weekly) }
-            if !daily31.isEmpty { return (daily31, .daily) }
-        case .all:
+        case .daily:
             if !dailyWithToday.isEmpty { return (dailyWithToday, .daily) }
+        case .weekly:
             if !weeklySource.isEmpty { return (weeklySource, .weekly) }
+        case .monthly:
             if !monthlySource.isEmpty { return (monthlySource, .monthly) }
         }
         return ([], .daily)
