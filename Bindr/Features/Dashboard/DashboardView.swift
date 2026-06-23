@@ -1042,7 +1042,7 @@ struct DashboardView: View {
         VStack(alignment: .leading, spacing: 10) {
             ZStack {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(dashboardTileBackground)
+                    .fill(Color.white)
 
                 if let imageURL = release.imageURL {
                     CachedAsyncImage(
