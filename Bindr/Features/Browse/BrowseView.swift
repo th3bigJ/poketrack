@@ -127,7 +127,6 @@ struct CardGridCell: View {
 
     private var showsFooter: Bool {
         (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
-            || gridOptions.showSetID
             || !(postPriceFootnote?.isEmpty ?? true)
     }
 
@@ -281,6 +280,7 @@ private struct CardGridCellLayout: View {
     private var showsTopLeadingOverlay: Bool {
         gridOptions.showCardName
             || (gridOptions.showSetName && !(setName?.isEmpty ?? true))
+            || gridOptions.showSetID
     }
 
     var body: some View {
@@ -310,17 +310,7 @@ private struct CardGridCellLayout: View {
             }
             .overlay(alignment: .bottomLeading) {
                 if gridOptions.showPricing {
-                    BrowseGridPriceText(
-                        services: services,
-                        accentColor: accentColor,
-                        card: card,
-                        overridePrice: overridePrice,
-                        gradeLabel: gradeLabel,
-                        usesAccentColor: true,
-                        variantKey: variantPricingKey,
-                        alignment: .leading
-                    )
-                    .cardGridImageOverlayStyle()
+                    bottomLeadingPriceOverlay
                 }
             }
 
@@ -328,9 +318,6 @@ private struct CardGridCellLayout: View {
                 VStack(spacing: 3) {
                     if gridOptions.showOwned, let footnote, !footnote.isEmpty {
                         footnoteRow(footnote)
-                    }
-                    if gridOptions.showSetID {
-                        footerText(trailingCardID, color: tertiaryTextColor)
                     }
                     if let postPriceFootnote, !postPriceFootnote.isEmpty {
                         footerText(postPriceFootnote, color: secondaryTextColor)
@@ -368,7 +355,31 @@ private struct CardGridCellLayout: View {
                     .truncationMode(.tail)
                     .foregroundStyle(secondaryTextColor)
             }
+            if gridOptions.showSetID {
+                Text(trailingCardID)
+                    .font(.caption2)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .foregroundStyle(tertiaryTextColor)
+            }
         }
+        .multilineTextAlignment(.leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .cardGridImageOverlayStyle()
+    }
+
+    @ViewBuilder
+    private var bottomLeadingPriceOverlay: some View {
+        BrowseGridPriceText(
+            services: services,
+            accentColor: accentColor,
+            card: card,
+            overridePrice: overridePrice,
+            gradeLabel: gradeLabel,
+            variantKey: variantPricingKey,
+            alignment: .leading,
+            overlayTextColor: primaryTextColor
+        )
         .multilineTextAlignment(.leading)
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardGridImageOverlayStyle()
@@ -3592,7 +3603,9 @@ private struct BrowseGridCardCell: View {
         .aspectRatio(5/7, contentMode: .fit)
         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
         .overlay(alignment: .topLeading) {
-            if gridOptions.showCardName || (gridOptions.showSetName && !(setName?.isEmpty ?? true)) {
+            if gridOptions.showCardName
+                || (gridOptions.showSetName && !(setName?.isEmpty ?? true))
+                || gridOptions.showSetID {
                 VStack(alignment: .leading, spacing: 1) {
                     if gridOptions.showCardName {
                         Text(card.cardName)
@@ -3606,6 +3619,13 @@ private struct BrowseGridCardCell: View {
                             .lineLimit(1)
                             .foregroundStyle(.secondary)
                     }
+                    if gridOptions.showSetID {
+                        let cardID = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
+                        Text(cardID.isEmpty ? card.setCode : cardID)
+                            .font(.caption2)
+                            .lineLimit(1)
+                            .foregroundStyle(.tertiary)
+                    }
                 }
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -3618,18 +3638,12 @@ private struct BrowseGridCardCell: View {
                     services: services,
                     accentColor: services.theme.accentColor,
                     card: card,
-                    alignment: .leading
+                    alignment: .leading,
+                    overlayTextColor: .primary
                 )
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .cardGridImageOverlayStyle()
-            }
-        }
-        .overlay(alignment: .bottom) {
-            if gridOptions.showSetID {
-                Text(card.setCode)
-                    .font(.caption2)
-                    .lineLimit(1)
-                    .foregroundStyle(.secondary)
-                    .cardGridImageOverlayStyle()
             }
         }
     }
@@ -3674,6 +3688,8 @@ private struct BrowseGridPriceText: View {
     /// When set, show the price for this specific variant only (no range).
     var variantKey: String? = nil
     var alignment: HorizontalAlignment = .center
+    /// When set, used for image-overlay pricing instead of accent/secondary colors.
+    var overlayTextColor: Color? = nil
 
     /// `nil` until the pricing task finishes; then a single price, a `low - high` range, or an em dash when unknown.
     @State private var priceLine: String?
@@ -3686,7 +3702,8 @@ private struct BrowseGridPriceText: View {
         gradeLabel: String? = nil,
         usesAccentColor: Bool = false,
         variantKey: String? = nil,
-        alignment: HorizontalAlignment = .center
+        alignment: HorizontalAlignment = .center,
+        overlayTextColor: Color? = nil
     ) {
         self.services = services
         self.accentColor = accentColor
@@ -3696,6 +3713,7 @@ private struct BrowseGridPriceText: View {
         self.usesAccentColor = usesAccentColor
         self.variantKey = variantKey
         self.alignment = alignment
+        self.overlayTextColor = overlayTextColor
         self.taskKey = Self.makeTaskKey(
             card: card,
             overridePrice: overridePrice,
@@ -3727,7 +3745,13 @@ private struct BrowseGridPriceText: View {
                             .padding(.vertical, 1.5)
                             .background(accentColor, in: RoundedRectangle(cornerRadius: 3))
                     }
-                    if usesAccentColor {
+                    if let overlayTextColor {
+                        Text(priceLine)
+                            .font(.caption2.weight(.semibold))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
+                            .foregroundStyle(overlayTextColor)
+                    } else if usesAccentColor {
                         Text(priceLine)
                             .font(.caption2.weight(.semibold))
                             .lineLimit(1)
@@ -5148,6 +5172,8 @@ struct BrowseGridOptionsMenuContent: View {
     var showCardIDToggle: Bool = true
     var showColumns: Bool = true
     var showOwnedToggle: Bool = true
+    var ownedToggleTitle: String = "Owned"
+    var ownedToggleSystemImage: String = "checkmark.circle"
 
     var body: some View {
         Toggle(isOn: gridOptionBinding(\.showCardName)) {
@@ -5163,7 +5189,7 @@ struct BrowseGridOptionsMenuContent: View {
         }
         if showOwnedToggle, gridOptions != nil {
             Toggle(isOn: gridOptionBinding(\.showOwned)) {
-                Label("Owned", systemImage: "checkmark.circle")
+                Label(ownedToggleTitle, systemImage: ownedToggleSystemImage)
             }
         }
         Toggle(isOn: gridOptionBinding(\.showPricing)) {

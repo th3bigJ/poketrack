@@ -1283,7 +1283,11 @@ struct RootView: View {
                 showOwnedToggle: false
             )
         } else {
-            BrowseGridOptionsMenuContent(gridOptions: $collectFilters.gridOptions)
+            BrowseGridOptionsMenuContent(
+                gridOptions: $collectFilters.gridOptions,
+                ownedToggleTitle: "Show variant",
+                ownedToggleSystemImage: "tag"
+            )
         }
     }
 

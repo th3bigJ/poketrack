@@ -1097,11 +1097,22 @@ struct DashboardView: View {
                     .tint(services.theme.accentColor)
                     .frame(maxWidth: .infinity, alignment: .leading)
             } else {
-                VStack(spacing: 14) {
-                    ForEach(progressSnapshots) { snapshot in
-                        progressTrackingRow(snapshot)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 20) {
+                        ForEach(progressSnapshots) { snapshot in
+                            DashboardProgressRingTile(
+                                snapshot: snapshot,
+                                accentColor: services.theme.accentColor,
+                                colorScheme: colorScheme
+                            ) {
+                                progressTracker.remove(id: snapshot.targetID)
+                                progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+                            }
+                        }
                     }
+                    .padding(.vertical, 4)
                 }
+                .padding(.horizontal, -16)
             }
         }
     }
@@ -1136,75 +1147,6 @@ struct DashboardView: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(DashboardPressStyle())
-    }
-
-    private func progressTrackingRow(_ snapshot: DashboardProgressSnapshot) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .top, spacing: 10) {
-                progressTrackingArtwork(snapshot.artworkURL)
-                    .frame(width: 34, height: 34)
-
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(snapshot.title)
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(dashboardPrimaryText)
-                        .lineLimit(2)
-
-                    Text("\(snapshot.modeLabel) · \(snapshot.collected) / \(snapshot.total)")
-                        .font(.caption)
-                        .foregroundStyle(dashboardSecondaryText)
-                }
-
-                Spacer(minLength: 0)
-
-                Text("\(Int(snapshot.progress * 100))%")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(services.theme.accentColor)
-            }
-
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    Capsule()
-                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
-                    Capsule()
-                        .fill(
-                            LinearGradient(
-                                colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.72)],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .frame(width: max(geo.size.width * snapshot.progress, snapshot.progress > 0 ? 6 : 0))
-                }
-            }
-            .frame(height: 6)
-        }
-        .contextMenu {
-            Button(role: .destructive) {
-                progressTracker.remove(id: snapshot.targetID)
-                progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
-            } label: {
-                Label("Stop Tracking", systemImage: "xmark.circle")
-            }
-        }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("\(snapshot.title), \(snapshot.modeLabel), \(snapshot.collected) of \(snapshot.total) collected")
-    }
-
-    @ViewBuilder
-    private func progressTrackingArtwork(_ url: URL?) -> some View {
-        if let url {
-            CachedAsyncImage(url: url, targetSize: CGSize(width: 68, height: 68)) { image in
-                image.resizable().scaledToFit()
-            } placeholder: {
-                Color.primary.opacity(0.06)
-            }
-        } else {
-            Image(systemName: "square.stack.3d.up.fill")
-                .font(.system(size: 14, weight: .semibold))
-                .foregroundStyle(dashboardSecondaryText)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }
     }
 
     private var upcomingReleasesSection: some View {
