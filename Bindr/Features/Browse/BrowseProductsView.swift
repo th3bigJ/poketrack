@@ -467,31 +467,13 @@ struct SealedProductGridCell: View {
     let isWishlisted: Bool
     var ownedCountBadge: Int? = nil
 
-    private var tileBackground: Color {
-        BindrGlassStyle.primarySurfaceFill(colorScheme)
-    }
-
-    private var tileBorder: Color {
-        BindrGlassStyle.surfaceBorder(colorScheme)
-    }
-
-    private var insetBackground: Color {
-        colorScheme == .dark ? Color.white.opacity(0.03) : Color.black.opacity(0.02)
-    }
-
-    private var dividerColor: Color {
-        colorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.06)
-    }
-
     private var showsFooter: Bool {
         (gridOptions.showSetName && !(product.setName ?? "").isEmpty)
             || gridOptions.showSetID
             || gridOptions.showPricing
     }
 
-    private var cardCornerRadius: CGFloat {
-        showsFooter ? 18 : 0
-    }
+    private var imageCornerRadius: CGFloat { 8 }
 
     private var imageHeight: CGFloat {
         let columns = min(max(gridOptions.columnCount, 1), 4)
@@ -501,41 +483,6 @@ struct SealedProductGridCell: View {
         case 3: return 80
         default: return 65
         }
-    }
-
-    /// Sealed products don't carry an element type, but we still want the
-    /// chrome to feel "alive" — using the app's theme accent at low opacity
-    /// gives the strip and footer the same colour-extending-from-the-card
-    /// feel that ``CardGridCell`` gets from the Pokémon type, without picking
-    /// a colour out of thin air.
-    private var stripBackground: LinearGradient {
-        let accent = services.theme.accentColor
-        let strong = colorScheme == .dark ? 0.18 : 0.12
-        let weak = colorScheme == .dark ? 0.04 : 0.02
-        return LinearGradient(
-            stops: [
-                .init(color: accent.opacity(weak), location: 0.0),
-                .init(color: accent.opacity(weak * 1.6), location: 0.5),
-                .init(color: accent.opacity(strong), location: 1.0)
-            ],
-            startPoint: .top,
-            endPoint: .bottom
-        )
-    }
-
-    private var footerAccentBackground: LinearGradient {
-        let accent = services.theme.accentColor
-        let strong = colorScheme == .dark ? 0.16 : 0.10
-        let weak = colorScheme == .dark ? 0.04 : 0.02
-        return LinearGradient(
-            stops: [
-                .init(color: accent.opacity(strong), location: 0.0),
-                .init(color: accent.opacity(weak * 1.5), location: 0.6),
-                .init(color: accent.opacity(weak), location: 1.0)
-            ],
-            startPoint: .top,
-            endPoint: .bottom
-        )
     }
 
     var body: some View {
@@ -549,11 +496,6 @@ struct SealedProductGridCell: View {
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 7)
                     .padding(.horizontal, 8)
-                    .background(tileBackground)
-                    .background(stripBackground)
-                    .overlay(alignment: .bottom) {
-                        Rectangle().fill(dividerColor).frame(height: 1)
-                    }
             }
 
             SealedThumbnailView(
@@ -564,7 +506,16 @@ struct SealedProductGridCell: View {
             )
             .frame(maxWidth: .infinity)
             .frame(height: imageHeight)
-            .clipped()
+            .clipShape(RoundedRectangle(cornerRadius: imageCornerRadius, style: .continuous))
+            .overlay {
+                if isOwned || isWishlisted {
+                    RoundedRectangle(cornerRadius: imageCornerRadius, style: .continuous)
+                        .stroke(
+                            isOwned ? services.theme.accentColor : Color.yellow,
+                            lineWidth: 1.8
+                        )
+                }
+            }
 
             if showsFooter {
                 VStack(spacing: 3) {
@@ -605,41 +556,9 @@ struct SealedProductGridCell: View {
                 .padding(.horizontal, 8)
                 .padding(.vertical, 7)
                 .frame(maxWidth: .infinity)
-                .background(tileBackground)
-                .background(footerAccentBackground)
-                .overlay(alignment: .top) {
-                    Rectangle().fill(dividerColor).frame(height: 1)
-                }
             }
         }
-        .background(tileBackground)
         .contentShape(Rectangle())
-        .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
-                .stroke(isOwned ? services.theme.accentColor : isWishlisted ? Color.yellow : tileBorder, lineWidth: isOwned || isWishlisted ? 1.8 : 1.2)
-        }
-        .overlay {
-            // Inner top highlight — matches CardGridCell + dashboard glass
-            // styling. Skipped on owned state so the accent border isn't
-            // muted by the white inner stroke.
-            if !isOwned && !isWishlisted && cardCornerRadius > 0 {
-                RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
-                    .stroke(
-                        LinearGradient(
-                            colors: [
-                                Color.white.opacity(colorScheme == .dark ? 0.10 : 0.32),
-                                .clear
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        ),
-                        lineWidth: 1
-                    )
-                    .padding(0.5)
-                    .allowsHitTesting(false)
-            }
-        }
     }
 }
 

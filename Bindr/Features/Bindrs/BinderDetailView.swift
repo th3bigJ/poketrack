@@ -2202,9 +2202,9 @@ struct BinderStylePickerSheet: View {
                                                     .textInputAutocapitalization(.never)
                                                     .autocorrectionDisabled()
                                             }
-                                            .padding(12)
-                                            .background(Color(uiColor: .tertiarySystemGroupedBackground))
-                                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                            .padding(.horizontal, 14)
+                                            .padding(.vertical, 10)
+                                            .inlineSearchFieldChrome(cornerRadius: 12)
 
                                             let allPokemon = services.cardData.nationalDexPokemonSorted()
                                             let filteredPokemon: [NationalDexPokemon] = {
@@ -2304,9 +2304,9 @@ struct BinderStylePickerSheet: View {
                                                         .controlSize(.small)
                                                 }
                                             }
-                                            .padding(12)
-                                            .background(Color(uiColor: .tertiarySystemGroupedBackground))
-                                            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                                            .padding(.horizontal, 14)
+                                            .padding(.vertical, 10)
+                                            .inlineSearchFieldChrome(cornerRadius: 12)
 
                                             LazyVGrid(columns: [GridItem(.adaptive(minimum: 82), spacing: 10)], spacing: 10) {
                                                 Button {

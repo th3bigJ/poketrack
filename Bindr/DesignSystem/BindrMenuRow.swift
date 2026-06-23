@@ -20,7 +20,6 @@ struct BindrMenuSection<Content: View>: View {
             VStack(spacing: 0) {
                 content
             }
-            .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
         }
     }
 }

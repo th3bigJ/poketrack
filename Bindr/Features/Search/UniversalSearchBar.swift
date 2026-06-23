@@ -127,10 +127,7 @@ struct UniversalSearchBar: View {
                             .padding(.trailing, 8)
                             .frame(height: 44)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .searchFieldCapsuleChrome(
-                                darkGlass: searchFieldUseGlass ? .clearInteractive : .clear,
-                                forceNativeGlass: searchFieldUseGlass
-                            )
+                            .searchFieldCapsuleChrome(darkGlass: .regularInteractive)
                             .transition(.move(edge: .leading).combined(with: .opacity))
 
                         cameraButtonLiquid
@@ -181,10 +178,7 @@ struct UniversalSearchBar: View {
                         .padding(.trailing, 8)
                         .frame(height: 44)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .searchFieldCapsuleChrome(
-                            darkGlass: searchFieldUseGlass ? .clearInteractive : .clear,
-                            forceNativeGlass: searchFieldUseGlass
-                        )
+                        .searchFieldCapsuleChrome(darkGlass: .regularInteractive)
                         .transition(.move(edge: .leading).combined(with: .opacity))
 
                     cameraButtonFallback
@@ -529,11 +523,7 @@ struct UniversalSearchBar: View {
 /// Same circle glyph treatment as ``ChromeGlassCircleButton`` (for `Menu` labels and other non-`Button` wrappers).
 struct ChromeGlassCircleGlyphModifier: ViewModifier {
     func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            content.searchBarCircleChrome(forceNativeGlass: true)
-        } else {
-            content.searchBarCircleChrome()
-        }
+        content.searchBarCircleChrome()
     }
 }
 

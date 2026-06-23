@@ -184,7 +184,6 @@ struct FeedItemView: View {
                 }
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .feedPostCardStyle(cornerRadius: 20)
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
@@ -273,11 +272,7 @@ struct FeedItemView: View {
                     .font(.system(size: 10, weight: .semibold))
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
-                    .background(
-                        colorScheme == .dark
-                            ? Color.primary.opacity(0.06)
-                            : BindrPalette.feedTagBackground
-                    )
+                    .background(Color.primary.opacity(0.06))
                     .foregroundStyle(.secondary)
                     .clipShape(Capsule())
             }

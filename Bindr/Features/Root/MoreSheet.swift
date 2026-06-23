@@ -70,7 +70,7 @@ struct MoreView: View {
                             )
                         }
 
-                        VStack(spacing: 0) {
+                        MoreMenuSection(title: "Legal & Support") {
                             MoreMenuRow(
                                 title: "Legal Disclaimer",
                                 systemImage: "doc.text.magnifyingglass",
@@ -93,7 +93,6 @@ struct MoreView: View {
                                 openURL(BindrSupport.contactMailURL)
                             }
                         }
-                        .background(Color(uiColor: .secondarySystemGroupedBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
 
                         MoreMenuSection(title: "Connect with us") {
                             MoreSocialLinksRow()

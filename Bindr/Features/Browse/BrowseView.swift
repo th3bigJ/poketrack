@@ -87,18 +87,6 @@ struct CardGridCell: View {
     private var resolvedServices: AppServices { services }
     private var resolvedColorScheme: ColorScheme { colorScheme }
 
-    private var tileBackground: Color {
-        BindrGlassStyle.primarySurfaceFill(resolvedColorScheme)
-    }
-
-    private var tileBorder: Color {
-        BindrGlassStyle.surfaceBorder(resolvedColorScheme)
-    }
-
-    private var dividerColor: Color {
-        resolvedColorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.06)
-    }
-
     private var showsFooter: Bool {
         (gridOptions.showSetName && !(setName?.isEmpty ?? true))
             || (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
@@ -118,10 +106,6 @@ struct CardGridCell: View {
         return nil
     }
 
-    private var showsOwnedUI: Bool {
-        gridOptions.showOwned && isOwned
-    }
-
     private var wishlistBorderColor: Color {
         Color(red: 0.99, green: 0.72, blue: 0.22)
     }
@@ -129,16 +113,14 @@ struct CardGridCell: View {
     private var cardBorderColor: Color {
         if isOwned { return resolvedServices.theme.accentColor }
         if isWishlisted { return wishlistBorderColor }
-        return tileBorder
+        return .clear
     }
 
     private var cardBorderWidth: CGFloat {
-        (isOwned || isWishlisted) ? 1.8 : 1.2
+        (isOwned || isWishlisted) ? 1.8 : 0
     }
 
-    private var cardCornerRadius: CGFloat {
-        (gridOptions.showCardName || showsFooter) ? 18 : 0
-    }
+    private var cardImageCornerRadius: CGFloat { 8 }
 
     private func safeImageURL(relativePath: String) -> URL? {
         AppConfiguration.resolvedImageURL(stored: relativePath)
@@ -176,7 +158,6 @@ struct CardGridCell: View {
             setName: setName,
             isOwned: isOwned,
             isWishlisted: isWishlisted,
-            ownedCountBadge: ownedCountBadge,
             variantLabel: variantLabel,
             variantPricingKey: variantPricingKey,
             footnote: footnote,
@@ -185,16 +166,11 @@ struct CardGridCell: View {
             postPriceFootnote: postPriceFootnote,
             overridePrice: overridePrice,
             gradeLabel: gradeLabel,
-            tileBackground: tileBackground,
-            tileBorder: tileBorder,
-            dividerColor: dividerColor,
             showsFooter: showsFooter,
-            showsOwnedUI: showsOwnedUI,
             visibleOwnedCountBadge: visibleOwnedCountBadge,
             cardBorderColor: cardBorderColor,
             cardBorderWidth: cardBorderWidth,
-            cardCornerRadius: cardCornerRadius,
-            wishlistBorderColor: wishlistBorderColor,
+            cardImageCornerRadius: cardImageCornerRadius,
             trailingCardID: trailingCardID,
             accentColor: resolvedServices.theme.accentColor,
             colorScheme: resolvedColorScheme,
@@ -234,7 +210,6 @@ private struct CardGridCellLayout: View {
     let setName: String?
     let isOwned: Bool
     let isWishlisted: Bool
-    let ownedCountBadge: Int?
     let variantLabel: String?
     let variantPricingKey: String?
     let footnote: String?
@@ -243,16 +218,11 @@ private struct CardGridCellLayout: View {
     let postPriceFootnote: String?
     let overridePrice: Double?
     let gradeLabel: String?
-    let tileBackground: Color
-    let tileBorder: Color
-    let dividerColor: Color
     let showsFooter: Bool
-    let showsOwnedUI: Bool
     let visibleOwnedCountBadge: Int?
     let cardBorderColor: Color
     let cardBorderWidth: CGFloat
-    let cardCornerRadius: CGFloat
-    let wishlistBorderColor: Color
+    let cardImageCornerRadius: CGFloat
     let trailingCardID: String
     let accentColor: Color
     let colorScheme: ColorScheme
@@ -294,8 +264,6 @@ private struct CardGridCellLayout: View {
                 .padding(.vertical, 7)
                 .padding(.horizontal, 8)
                 .frame(maxWidth: .infinity)
-                .background(tileBackground)
-                dividerLine
             }
 
             BrowseCardThumbnailView(
@@ -309,9 +277,15 @@ private struct CardGridCellLayout: View {
                 colorScheme: colorScheme
             )
             .aspectRatio(5/7, contentMode: .fit)
+            .clipShape(RoundedRectangle(cornerRadius: cardImageCornerRadius, style: .continuous))
+            .overlay {
+                if isOwned || isWishlisted {
+                    RoundedRectangle(cornerRadius: cardImageCornerRadius, style: .continuous)
+                        .stroke(cardBorderColor, lineWidth: cardBorderWidth)
+                }
+            }
 
             if showsFooter {
-                dividerLine
                 VStack(spacing: 3) {
                     if gridOptions.showSetName, let setName, !setName.isEmpty {
                         footerText(setName, color: secondaryTextColor)
@@ -339,47 +313,8 @@ private struct CardGridCellLayout: View {
                 .padding(.horizontal, 8)
                 .padding(.vertical, 7)
                 .frame(maxWidth: .infinity)
-                .background(tileBackground)
             }
         }
-        .background(tileBackground)
-        .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
-                .stroke(cardBorderColor, lineWidth: cardBorderWidth)
-        }
-        .overlay {
-            if !isOwned && !isWishlisted && cardCornerRadius > 0 {
-                RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
-                    .stroke(
-                        LinearGradient(
-                            colors: [
-                                Color.white.opacity(colorScheme == .dark ? 0.10 : 0.16),
-                                .clear
-                            ],
-                            startPoint: .top,
-                            endPoint: .bottom
-                        ),
-                        lineWidth: 1
-                    )
-                    .padding(0.5)
-                    .allowsHitTesting(false)
-            }
-        }
-        .shadow(
-            color: colorScheme == .light && !isOwned && !isWishlisted
-                ? Color.black.opacity(0.08)
-                : .clear,
-            radius: 5,
-            x: 0,
-            y: 2
-        )
-    }
-
-    private var dividerLine: some View {
-        Rectangle()
-            .fill(dividerColor)
-            .frame(height: 1)
     }
 
     private func footerText(_ text: String, color: Color) -> some View {
