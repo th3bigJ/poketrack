@@ -16,6 +16,7 @@ struct BindersRootView: View {
     @State private var binderToDelete: Binder?
     @State private var presentedBinder: Binder?
     @State private var showDeleteConfirm = false
+    @State private var editingStyleBinder: Binder?
     /// Measured height of the translucent floating header. Read by
     /// `safeAreaInset` so scroll content reserves exactly the right top
     /// gutter — keeps padding in lockstep with header changes (e.g. font
@@ -151,6 +152,10 @@ struct BindersRootView: View {
             PaywallSheet()
                 .environment(services)
         }
+        .sheet(item: $editingStyleBinder) { binder in
+            BinderStylePickerSheet(binder: binder)
+                .environment(services)
+        }
         .alert("Delete Binder?", isPresented: $showDeleteConfirm, presenting: binderToDelete) { binder in
             Button("Delete \"\(binder.title)\"", role: .destructive) {
                 modelContext.delete(binder)
@@ -250,6 +255,12 @@ struct BindersRootView: View {
                         .buttonStyle(NoHighlightButtonStyle())
                         .aspectRatio(0.707, contentMode: .fill)
                         .contextMenu {
+                            Button {
+                                editingStyleBinder = binder
+                            } label: {
+                                Label("Edit Binder", systemImage: "pencil")
+                            }
+
                             Button(role: .destructive) {
                                 binderToDelete = binder
                                 showDeleteConfirm = true

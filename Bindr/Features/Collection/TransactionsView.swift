@@ -6,6 +6,7 @@ struct TransactionsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     @Query private var collectionItems: [CollectionItem]
     @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var ledgerLines: [LedgerLine]
@@ -116,6 +117,40 @@ struct TransactionsView: View {
 
     private var hasMoreTransactions: Bool {
         displayedActivityEntries.count < groupedActivityEntries.count
+    }
+
+    private struct ActivitySection: Identifiable {
+        let id: String
+        let title: String
+        let entries: [ActivityLedgerEntry]
+    }
+
+    private var sectionedActivityEntries: [ActivitySection] {
+        let cal = Calendar.current
+
+        var groups: [Date: [ActivityLedgerEntry]] = [:]
+        for entry in displayedActivityEntries {
+            let components = cal.dateComponents([.year, .month, .day], from: entry.occurredAt)
+            if let midnight = cal.date(from: components) {
+                groups[midnight, default: []].append(entry)
+            }
+        }
+
+        let sortedDates = groups.keys.sorted(by: >)
+        return sortedDates.map { date in
+            let entriesForDate = groups[date] ?? []
+            let title: String
+            if cal.isDateInToday(date) {
+                title = "TODAY"
+            } else if cal.isDateInYesterday(date) {
+                title = "YESTERDAY"
+            } else {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "d MMM yyyy"
+                title = formatter.string(from: date).uppercased()
+            }
+            return ActivitySection(id: title, title: title, entries: entriesForDate)
+        }
     }
 
     private var boughtTotal: Double {
@@ -293,49 +328,63 @@ struct TransactionsView: View {
                     .listRowSeparator(.hidden)
             }
 
-            ForEach(displayedActivityEntries) { entry in
-                activityRow(for: entry)
-                    .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        if case .line(let line) = entry {
-                            openTransactionDetail(for: line)
-                        }
+            ForEach(sectionedActivityEntries) { section in
+                Section(header:
+                    HStack {
+                        Text(section.title)
+                            .font(.caption.weight(.bold))
+                            .tracking(1.1)
+                            .foregroundStyle(.secondary.opacity(0.8))
+                        Spacer()
                     }
-                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                        Button(role: .destructive) {
-                            deleteActivityEntry(entry)
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
-                        .tint(.red)
-
-                        if case .line(let line) = entry {
-                            Button {
-                                editingLedgerLine = line
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
+                    .padding(.top, 8)
+                    .padding(.bottom, 4)
+                ) {
+                    ForEach(section.entries) { entry in
+                        activityRow(for: entry)
+                            .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                if case .line(let line) = entry {
+                                    openTransactionDetail(for: line)
+                                }
                             }
-                            .tint(.blue)
-                        }
-                    }
-                    .contextMenu {
-                        if case .line(let line) = entry {
-                            Button {
-                                editingLedgerLine = line
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
-                            }
-                        }
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                Button(role: .destructive) {
+                                    deleteActivityEntry(entry)
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                                .tint(.red)
 
-                        Button(role: .destructive) {
-                            deleteActivityEntry(entry)
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
+                                if case .line(let line) = entry {
+                                    Button {
+                                        editingLedgerLine = line
+                                    } label: {
+                                        Label("Edit", systemImage: "pencil")
+                                    }
+                                    .tint(.blue)
+                                }
+                            }
+                            .contextMenu {
+                                if case .line(let line) = entry {
+                                    Button {
+                                        editingLedgerLine = line
+                                    } label: {
+                                        Label("Edit", systemImage: "pencil")
+                                    }
+                                }
+
+                                Button(role: .destructive) {
+                                    deleteActivityEntry(entry)
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                            }
                     }
+                }
             }
 
             if hasMoreTransactions {
@@ -352,9 +401,16 @@ struct TransactionsView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
             }
+
+            Color.clear
+                .frame(height: rootFloatingChromeInset)
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
+        .background(Color.clear)
     }
 
     private var transactionSearchAndFilterRow: some View {
@@ -376,6 +432,16 @@ struct TransactionsView: View {
             .menuOrder(.fixed)
             .accessibilityLabel("Filter transactions")
         }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.02))
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .stroke(services.theme.accentColor.opacity(0.15), lineWidth: 1)
+        )
     }
 
     @ViewBuilder
@@ -429,6 +495,9 @@ struct TransactionsView: View {
                 title: { $0.title }
             )
 
+            Divider()
+                .background(services.theme.accentColor.opacity(0.12))
+
             HStack(spacing: 10) {
                 summaryValueCell(title: "Bought", value: -boughtTotal, emphasize: false)
                 summaryValueCell(title: "Sold", value: soldTotal, emphasize: false)
@@ -451,20 +520,34 @@ struct TransactionsView: View {
         }
     }
 
+    private func colorForStatType(title: String) -> Color {
+        switch title {
+        case "Sold", "Profit":
+            return ActivityPalette.success
+        case "Collection Value":
+            return services.theme.accentColor
+        case "Bought":
+            return .secondary
+        default:
+            return .secondary
+        }
+    }
+
     private func summaryValueCell(title: String, value: Double, emphasize: Bool) -> some View {
-        HStack(spacing: 10) {
+        let statColor = colorForStatType(title: title)
+        return HStack(spacing: 10) {
             Image(systemName: summaryIcon(for: title))
                 .font(.system(size: 13, weight: .bold))
-                .foregroundStyle(colorForSignedValue(value))
+                .foregroundStyle(statColor)
                 .frame(width: 28, height: 28)
-                .background(colorForSignedValue(value).opacity(colorScheme == .dark ? 0.16 : 0.11), in: Circle())
+                .background(statColor.opacity(colorScheme == .dark ? 0.16 : 0.11), in: Circle())
 
             VStack(alignment: .leading, spacing: 5) {
                 Text(title)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(dashboardSecondaryText)
                 Text(formatSignedCurrency(value))
-                    .font(emphasize ? .headline.weight(.bold) : .subheadline.weight(.semibold))
+                    .font(.system(size: emphasize ? 22 : 18, weight: .bold, design: .rounded))
                     .foregroundStyle(colorForSignedValue(value))
                     .lineLimit(1)
                     .minimumScaleFactor(0.75)
@@ -510,14 +593,14 @@ struct TransactionsView: View {
 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(spacing: 8) {
-                        infoChip(label: "Local Trade", tone: .orange)
+                        infoChip(label: "Local Trade", tone: .purple)
                         infoChip(label: "\(group.lines.count) entries")
                         Spacer(minLength: 8)
 
                         VStack(alignment: .trailing, spacing: 5) {
                             Text(group.occurredAt, format: .dateTime.day().month(.abbreviated).year())
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(dashboardSecondaryText)
+                                .font(.system(size: 11))
+                                .foregroundStyle(dashboardSecondaryText.opacity(0.8))
                                 .multilineTextAlignment(.trailing)
                             if abs(netCash) > 0.001 {
                                 Text(formatSignedCurrency(netCash))
@@ -529,7 +612,7 @@ struct TransactionsView: View {
 
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Local trade")
-                            .font(.headline)
+                            .font(.system(size: 17, weight: .bold))
                             .foregroundStyle(dashboardPrimaryText)
                             .lineLimit(1)
                         Text(summary)
@@ -547,8 +630,8 @@ struct TransactionsView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .overlay(alignment: .bottom) {
             Rectangle()
-                .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
-                .frame(height: 1)
+                .fill(services.theme.accentColor.opacity(0.12))
+                .frame(height: 0.5)
         }
     }
 
@@ -568,8 +651,8 @@ struct TransactionsView: View {
                         HStack(spacing: 8) {
                             VStack(alignment: .trailing, spacing: 5) {
                                 Text(line.occurredAt, format: .dateTime.day().month(.abbreviated).year())
-                                    .font(.caption.weight(.medium))
-                                    .foregroundStyle(dashboardSecondaryText)
+                                    .font(.system(size: 11))
+                                    .foregroundStyle(dashboardSecondaryText.opacity(0.8))
                                     .multilineTextAlignment(.trailing)
                                 if let value = moneySummary(for: line) {
                                     Text(value)
@@ -584,14 +667,14 @@ struct TransactionsView: View {
 
                     HStack(spacing: 8) {
                         Text(primaryTitle(for: line))
-                            .font(.headline)
+                            .font(.system(size: 17, weight: .bold))
                             .foregroundStyle(dashboardPrimaryText)
                             .lineLimit(1)
                             .truncationMode(.tail)
                         Spacer(minLength: 0)
                         Image(systemName: "chevron.right")
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(dashboardSecondaryText)
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundStyle(dashboardSecondaryText.opacity(0.5))
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -602,8 +685,8 @@ struct TransactionsView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .overlay(alignment: .bottom) {
             Rectangle()
-                .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
-                .frame(height: 1)
+                .fill(services.theme.accentColor.opacity(0.12))
+                .frame(height: 0.5)
         }
     }
 
@@ -703,7 +786,7 @@ struct TransactionsView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                .frame(width: 40, height: 56)
+                .frame(width: 48, height: 67)
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -717,7 +800,7 @@ struct TransactionsView: View {
                 } placeholder: {
                     thumbnailFallback(for: line)
                 }
-                .frame(width: 40, height: 56)
+                .frame(width: 48, height: 67)
                 .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay(
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -748,7 +831,7 @@ struct TransactionsView: View {
     private func thumbnailFallback(for line: LedgerLine) -> some View {
         RoundedRectangle(cornerRadius: 10, style: .continuous)
             .fill(dashboardCardInsetBackground)
-            .frame(width: 40, height: 56)
+            .frame(width: 48, height: 67)
             .overlay {
                 Image(systemName: directionIcon(for: line))
                     .font(.headline.weight(.semibold))
@@ -913,10 +996,18 @@ struct TransactionsView: View {
         if isOpenedSealedLine(line) { return .orange }
         guard let direction = LedgerDirection(rawValue: line.direction) else { return .secondary }
         switch direction {
-        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn, .importedIn:
+        case .bought:
+            return .blue
+        case .packed:
             return .green
-        case .sold, .tradedOut, .giftedOut, .adjustmentOut:
+        case .sold:
             return .orange
+        case .tradedIn, .tradedOut:
+            return .purple
+        case .giftedIn, .giftedOut:
+            return .pink
+        case .adjustmentIn, .adjustmentOut, .importedIn:
+            return .secondary
         }
     }
 

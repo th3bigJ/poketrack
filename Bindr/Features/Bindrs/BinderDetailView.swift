@@ -707,7 +707,7 @@ struct BinderDetailView: View {
             .position(x: coverRect.midX, y: coverRect.midY)
             .contextMenu {
                 Button {
-                    setEditing(true)
+                    showColourPicker = true
                 } label: {
                     Label("Edit Binder", systemImage: "pencil")
                 }

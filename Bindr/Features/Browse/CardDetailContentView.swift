@@ -628,8 +628,8 @@ struct CardDetailContentView: View {
     ) -> some View {
         VStack(alignment: .leading, spacing: 6) {
             Text("Your Collection")
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(Self.collectionGreen)
+                .font(.caption)
+                .foregroundStyle(.secondary)
 
             ForEach(groupedHoldings(collectionItems: collectionItems, ledgerLines: ledgerLines)) { group in
                 let primaryLine = group.lines.first
