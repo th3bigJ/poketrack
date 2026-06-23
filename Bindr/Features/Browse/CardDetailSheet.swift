@@ -176,6 +176,7 @@ struct CardDetailSheet: View {
             .navigationDestination(item: $selectedSet) { set in
                 SetCardsView(set: set)
             }
+            .toolbar(.hidden, for: .navigationBar)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .id(sheetContentIdentity)

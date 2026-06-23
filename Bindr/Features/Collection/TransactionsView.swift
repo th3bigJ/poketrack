@@ -546,7 +546,9 @@ struct TransactionsView: View {
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .overlay(alignment: .bottom) {
-            Divider().overlay(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
+            Rectangle()
+                .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
+                .frame(height: 1)
         }
     }
 
@@ -599,7 +601,9 @@ struct TransactionsView: View {
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .overlay(alignment: .bottom) {
-            Divider().overlay(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
+            Rectangle()
+                .fill(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
+                .frame(height: 1)
         }
     }
 
@@ -872,8 +876,8 @@ struct TransactionsView: View {
         case .tradedOut: return "Trade Out"
         case .giftedIn: return "Gift In"
         case .giftedOut: return "Gift Out"
-        case .adjustmentIn: return "Adjustment In"
-        case .adjustmentOut: return "Adjustment Out"
+        case .adjustmentIn: return "Adj. In"
+        case .adjustmentOut: return "Adj. Out"
         case .importedIn: return "Imported"
         }
     }

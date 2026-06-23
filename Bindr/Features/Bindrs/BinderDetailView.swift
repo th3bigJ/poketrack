@@ -705,6 +705,13 @@ struct BinderDetailView: View {
             .peekingURLsOverride(preloadedPeekingURLs)
             .frame(width: coverRect.width, height: coverRect.height)
             .position(x: coverRect.midX, y: coverRect.midY)
+            .contextMenu {
+                Button {
+                    setEditing(true)
+                } label: {
+                    Label("Edit Binder", systemImage: "pencil")
+                }
+            }
         }
         .frame(width: pageSize.width, height: pageSize.height)
         .clipped()

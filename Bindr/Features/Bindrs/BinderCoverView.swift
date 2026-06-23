@@ -102,6 +102,17 @@ struct BinderCoverView: View {
                 .clipShape(RoundedRectangle(cornerRadius: geo.size.height * 0.03, style: .continuous))
                 .shadow(color: .black.opacity(0.15), radius: geo.size.height * 0.015, x: 0, y: geo.size.height * 0.008)
 
+                // Full bleed art layer (when showCardPreview is false)
+                if !binder.showCardPreview {
+                    Group {
+                        if let embossedImageOverride {
+                            fullBleedArtLayer(image: Image(uiImage: embossedImageOverride), geo: geo, scale: scale)
+                        } else if let url = embossedURL {
+                            fullBleedArtLayer(url: url, geo: geo, scale: scale)
+                        }
+                    }
+                }
+
                 // Foreground content — ornament at top, title in upper portion,
                 // optional card fan in the middle, value at the bottom.
                 // Leading padding matches the card-grid page's leading inset (32pt =
@@ -164,22 +175,6 @@ struct BinderCoverView: View {
 
                 // Spine overlay (stays on left)
                 spineOverlay(scale: scale)
-            }
-            // Embossed art sits in the material, centred in the content area
-            // (same 32 / 14 inset as title + card grid) so it aligns with the
-            // binder body rather than hugging the leading edge of the ZStack.
-            .overlay {
-                if !binder.showCardPreview {
-                    if let embossedImageOverride {
-                        embossedArtLayer(image: Image(uiImage: embossedImageOverride), scale: scale)
-                            .padding(.leading, 32 * scale)
-                            .padding(.trailing, 14 * scale)
-                    } else if let url = embossedURL {
-                        embossedArtLayer(url: url, scale: scale)
-                            .padding(.leading, 32 * scale)
-                            .padding(.trailing, 14 * scale)
-                    }
-                }
             }
             .task {
                 await refreshAssets()
@@ -294,7 +289,8 @@ struct BinderCoverView: View {
                 .lineLimit(2)
                 .minimumScaleFactor(0.7)
                 .opacity(binder.title.isEmpty ? 0.5 : 1)
-                .shadow(color: .black.opacity(0.4), radius: 1.5 * scale, x: 0, y: 1 * scale)
+                .shadow(color: .black.opacity(0.75), radius: 2 * scale, x: 0, y: 1.5 * scale)
+                .shadow(color: .black.opacity(0.50), radius: 8 * scale, x: 0, y: 4 * scale)
 
             let generatedSubtitle = "\(binder.slotList.count) \(binder.slotList.count == 1 ? "card" : "cards")"
             if let override = subtitleOverride {
@@ -305,6 +301,8 @@ struct BinderCoverView: View {
                     .multilineTextAlignment(.center)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
+                    .shadow(color: .black.opacity(0.75), radius: 2 * scale, x: 0, y: 1.5 * scale)
+                    .shadow(color: .black.opacity(0.50), radius: 8 * scale, x: 0, y: 4 * scale)
             } else {
                 Text(generatedSubtitle.uppercased())
                     .font(.system(size: 14 * scale, weight: .semibold, design: binder.titleFontStyleKind.fontDesign))
@@ -313,6 +311,8 @@ struct BinderCoverView: View {
                     .multilineTextAlignment(.center)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
+                    .shadow(color: .black.opacity(0.75), radius: 2 * scale, x: 0, y: 1.5 * scale)
+                    .shadow(color: .black.opacity(0.50), radius: 8 * scale, x: 0, y: 4 * scale)
             }
         }
         .padding(.horizontal, 8 * scale)
@@ -324,7 +324,8 @@ struct BinderCoverView: View {
         Text(text)
             .font(.system(size: 44 * scale, weight: .bold, design: binder.titleFontStyleKind.fontDesign))
             .foregroundStyle(titleTextStyle)
-            .shadow(color: .black.opacity(0.45), radius: 1.5 * scale, x: 0, y: 1 * scale)
+            .shadow(color: .black.opacity(0.75), radius: 2 * scale, x: 0, y: 1.5 * scale)
+            .shadow(color: .black.opacity(0.50), radius: 8 * scale, x: 0, y: 4 * scale)
             .lineLimit(1)
             .minimumScaleFactor(0.6)
             .padding(.horizontal, 8 * scale)
@@ -361,183 +362,70 @@ struct BinderCoverView: View {
         .allowsHitTesting(false)
     }
 
-    // MARK: - Embossed art layer
+    // MARK: - Full bleed cover art layer
 
-    /// Resizes source art to the embossed footprint.
-    private func embossedSourceImage(_ img: Image, width: CGFloat) -> some View {
-        img.resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: width)
-    }
-
-    /// Luminance mask that knocks out dark / black backgrounds so only the
-    /// art silhouette embosses into the binder texture.
-    private func embossedLuminanceMask(_ img: Image, width: CGFloat, isCharacter: Bool) -> some View {
-        embossedSourceImage(img, width: width)
-            .grayscale(1)
-            .contrast(isCharacter ? 6.0 : 2.4)
-            .brightness(isCharacter ? 0.18 : -0.08)
-    }
-
-    /// Invisible layout anchor that matches the embossed card footprint.
-    private func embossedCardFootprint(_ img: Image, width: CGFloat) -> some View {
-        embossedSourceImage(img, width: width)
-            .hidden()
-    }
-
-    private func embossedArtLayer(url: URL, scale: CGFloat) -> some View {
-        let isCharacter = binder.embossModeKind == .character
-        let artWidth = (isCharacter ? 190 : 148) * scale
-        let pixelScale = 3.0
-        let targetWidth = Int(artWidth * pixelScale)
-        // Use a square decode budget so card art keeps its natural aspect ratio
-        // instead of being cropped to a fixed 5:7 box during downsample.
-        let targetHeight = Int(artWidth * pixelScale)
+    private func fullBleedArtLayer(url: URL, geo: GeometryProxy, scale: CGFloat) -> some View {
+        // Use cover frame size for the decode target size, scaled for retina display
+        let targetSize = CGSize(width: geo.size.width * 2.0, height: geo.size.height * 2.0)
 
         return CachedAsyncImage(
             url: url,
-            targetSize: CGSize(width: targetWidth, height: targetHeight)
+            targetSize: targetSize
         ) { img in
-            embossedArtLayer(image: img, scale: scale)
+            fullBleedArtLayer(image: img, geo: geo, scale: scale)
         } placeholder: {
             ProgressView().controlSize(.small).opacity(0.3)
+                .frame(width: geo.size.width, height: geo.size.height)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 
-    private func embossedArtLayer(image img: Image, scale: CGFloat) -> some View {
+    private func fullBleedArtLayer(image img: Image, geo: GeometryProxy, scale: CGFloat) -> some View {
         let isCharacter = binder.embossModeKind == .character
-        let artWidth: CGFloat = (isCharacter ? 190 : 148) * scale
-        let lightOffset: CGFloat = (isCharacter ? 2.2 : 1.5) * scale
-        let shadowOffset: CGFloat = (isCharacter ? 2.4 : 1.7) * scale
-        let maskContrast: CGFloat = isCharacter ? 3.4 : 1.65
-        let surfaceTint = BinderColourPalette.color(named: binder.colour)
-
+        
         return ZStack {
-                if isCharacter {
-                    // A logo-like character stamp: strong silhouette, material
-                    // tint, and opposing edges to read as pressed relief.
-                    surfaceTint
-                        .opacity(0.28)
-                        .frame(width: artWidth)
-                        .aspectRatio(contentMode: .fit)
-                        .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: true))
-                        .blur(radius: 0.8 * scale)
-                        .offset(x: shadowOffset, y: shadowOffset)
-                        .blendMode(.softLight)
+            img
+                .resizable()
+                .aspectRatio(contentMode: isCharacter ? .fit : .fill)
+                .frame(width: geo.size.width, height: geo.size.height)
+                .scaleEffect(isCharacter ? 1.15 : 1.0)
+                .clipped()
+            
+            themeTintOverlay(geo: geo)
+            
+            BinderTextureView(
+                baseColour: .clear,
+                baseGradientColors: nil,
+                texture: binder.textureKind,
+                seed: binder.textureSeed,
+                compact: compact
+            )
+            .frame(width: geo.size.width, height: geo.size.height)
+        }
+        .clipShape(RoundedRectangle(cornerRadius: geo.size.height * 0.03, style: .continuous))
+    }
 
-                    embossedSourceImage(img, width: artWidth)
-                        .grayscale(1)
-                        .contrast(maskContrast)
-                        .brightness(1)
-                        .blur(radius: 0.8 * scale)
-                        .opacity(0.44)
-                        .offset(x: -lightOffset, y: -lightOffset)
-                        .blendMode(.screen)
-                        .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: true))
-
-                    surfaceTint
-                        .opacity(0.20)
-                        .frame(width: artWidth)
-                        .aspectRatio(contentMode: .fit)
-                        .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: true))
-                        .blendMode(.overlay)
-
-                    embossedSourceImage(img, width: artWidth)
-                        .grayscale(1)
-                        .contrast(2.2)
-                        .brightness(-0.06)
-                        .opacity(0.12)
-                        .blendMode(.screen)
-                        .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: true))
-                } else {
-                    // Full cards become a pressed plaque. The source art is
-                    // softened so card text does not read as a flat grey image.
-                    // Plaque tint uses the binder colour so it blends with the
-                    // chosen texture instead of leaving a flat black rectangle.
-                    embossedCardFootprint(img, width: artWidth)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 13 * scale, style: .continuous)
-                                .fill(surfaceTint.opacity(0.14))
-                                .blur(radius: 0.6 * scale)
-                                .blendMode(.softLight)
-                                .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
-                        }
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 13 * scale, style: .continuous)
-                                .stroke(
-                                    LinearGradient(
-                                        colors: [
-                                            Color.white.opacity(0.18),
-                                            Color.clear,
-                                            Color.black.opacity(0.20)
-                                        ],
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    ),
-                                    lineWidth: 1.2 * scale
-                                )
-                                .blendMode(.overlay)
-                                .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
-                        }
-
-                    embossedSourceImage(img, width: artWidth)
-                        .grayscale(1)
-                        .contrast(maskContrast)
-                        .brightness(-1)
-                        .blur(radius: 1.2 * scale)
-                        .opacity(0.24)
-                        .offset(x: shadowOffset, y: shadowOffset)
-                        .blendMode(.multiply)
-                        .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
-
-                    embossedSourceImage(img, width: artWidth)
-                        .grayscale(1)
-                        .contrast(maskContrast)
-                        .brightness(1)
-                        .blur(radius: 1.0 * scale)
-                        .opacity(0.25)
-                        .offset(x: -lightOffset, y: -lightOffset)
-                        .blendMode(.screen)
-                        .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
-
-                    embossedSourceImage(img, width: artWidth)
-                        .grayscale(1)
-                        .contrast(0.8)
-                        .blur(radius: 0.6 * scale)
-                        .opacity(0.08)
-                        .blendMode(.overlay)
-                        .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
-
-                    // Sharp detail layer to make the card text, frames, and illustration
-                    // sharp and legible rather than a muddy blur.
-                    embossedSourceImage(img, width: artWidth)
-                        .grayscale(1)
-                        .contrast(1.6)
-                        .brightness(-0.04)
-                        .opacity(0.18)
-                        .blendMode(.softLight)
-                        .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: false))
-                }
-
-                LinearGradient(
-                    colors: [
-                        Color.white.opacity(isCharacter ? 0.12 : 0.08),
-                        Color.clear,
-                        Color.black.opacity(isCharacter ? 0.10 : 0.08)
-                    ],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-                .frame(width: artWidth)
-                .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: isCharacter))
-                .blendMode(.overlay)
-                .allowsHitTesting(false)
-            }
-            .compositingGroup()
-            .mask(embossedLuminanceMask(img, width: artWidth, isCharacter: isCharacter))
-            .frame(width: artWidth)
-            .offset(y: 48 * scale)
+    @ViewBuilder
+    private func themeTintOverlay(geo: GeometryProxy) -> some View {
+        let surfaceColor = BinderColourPalette.color(named: binder.colour)
+        let gradientColors = BinderColourPalette.gradientColors(named: binder.colour)
+        let colors = gradientColors ?? [surfaceColor, surfaceColor]
+        
+        let topColor = colors.first ?? surfaceColor
+        let bottomColor = colors.last ?? surfaceColor
+        
+        let overlayGradient = LinearGradient(
+            colors: [
+                topColor.opacity(0.55),
+                topColor.opacity(0.15),
+                bottomColor.opacity(0.15),
+                bottomColor.opacity(0.60)
+            ],
+            startPoint: .top,
+            endPoint: .bottom
+        )
+        
+        Rectangle()
+            .fill(overlayGradient)
     }
 
     // MARK: - Peeking card thumbnail
