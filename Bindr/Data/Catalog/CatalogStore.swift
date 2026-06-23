@@ -1602,6 +1602,287 @@ final class CatalogStore: @unchecked Sendable {
             }
         }
     }
+
+    func auxBlobFetchedAt(key: String) async -> Date? {
+        await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: nil); return }
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                guard sqlite3_prepare_v2(handle, "SELECT fetched_at FROM catalog_aux_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: nil); return
+                }
+                key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                guard sqlite3_step(stmt) == SQLITE_ROW else {
+                    continuation.resume(returning: nil)
+                    return
+                }
+                continuation.resume(returning: Date(timeIntervalSince1970: sqlite3_column_double(stmt, 0)))
+            }
+        }
+    }
+
+    /// Snapshot of when each remote dataset was last written to local SQLite — for Library Storage diagnostics.
+    func fetchDownloadStatus() async -> CatalogDownloadStatus {
+        try? await open()
+        return await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else {
+                    continuation.resume(returning: CatalogDownloadStatus(sections: [], queriedAt: Date()))
+                    return
+                }
+
+                func metaDate(_ key: String) -> Date? {
+                    self.metaCacheLock.withLock {
+                        guard let raw = self.metaCache[key], let timestamp = Double(raw) else { return nil }
+                        return Date(timeIntervalSince1970: timestamp)
+                    }
+                }
+
+                func blobFetchedAt(_ key: String) -> Date? {
+                    var stmt: OpaquePointer?
+                    defer { sqlite3_finalize(stmt) }
+                    guard sqlite3_prepare_v2(handle, "SELECT fetched_at FROM daily_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                        return nil
+                    }
+                    key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                    guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+                    return Date(timeIntervalSince1970: sqlite3_column_double(stmt, 0))
+                }
+
+                func auxFetchedAt(_ key: String) -> Date? {
+                    var stmt: OpaquePointer?
+                    defer { sqlite3_finalize(stmt) }
+                    guard sqlite3_prepare_v2(handle, "SELECT fetched_at FROM catalog_aux_blobs WHERE key = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+                        return nil
+                    }
+                    key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                    guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+                    return Date(timeIntervalSince1970: sqlite3_column_double(stmt, 0))
+                }
+
+                func scalarDouble(_ sql: String) -> Double? {
+                    var stmt: OpaquePointer?
+                    defer { sqlite3_finalize(stmt) }
+                    guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else { return nil }
+                    guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+                    let value = sqlite3_column_double(stmt, 0)
+                    return value > 0 ? value : nil
+                }
+
+                func scalarInt(_ sql: String) -> Int? {
+                    var stmt: OpaquePointer?
+                    defer { sqlite3_finalize(stmt) }
+                    guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else { return nil }
+                    guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+                    return Int(sqlite3_column_int64(stmt, 0))
+                }
+
+                func latestBucket(processedAtSQL: String, keySQL: String) -> (key: String, at: Date)? {
+                    var stmt: OpaquePointer?
+                    defer { sqlite3_finalize(stmt) }
+                    guard sqlite3_prepare_v2(handle, processedAtSQL, -1, &stmt, nil) == SQLITE_OK else { return nil }
+                    guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+                    let at = Date(timeIntervalSince1970: sqlite3_column_double(stmt, 0))
+                    guard let keyCStr = sqlite3_column_text(stmt, 1) else { return (key: "", at: at) }
+                    return (key: String(cString: keyCStr), at: at)
+                }
+
+                let todayUTC = BucketDateMath.todayUTCKey()
+                let pricingLastSync = metaDate("pricing_last_synced_at")
+                let pricingSyncStale = DailyMarketPricingSchedule.needsRefreshAfterNewPeriod(lastSync: pricingLastSync)
+                let sealedAsOf = self.metaCacheLock.withLock { self.metaCache[DailyBlobKey.sealedPricesAsOfDate] }
+                let sealedAsOfStale = sealedAsOf != todayUTC
+
+                let setCount = scalarInt("SELECT COUNT(*) FROM catalog_sets WHERE brand = 'pokemon';") ?? 0
+                let cardCount = scalarInt("SELECT COUNT(*) FROM catalog_cards WHERE brand = 'pokemon';") ?? 0
+                let livePriceCount = scalarInt("SELECT COUNT(*) FROM card_prices WHERE brand = 'pokemon';") ?? 0
+                let livePriceFetchedAt = scalarDouble("SELECT MAX(fetched_at) FROM card_prices WHERE brand = 'pokemon';")
+                    .map { Date(timeIntervalSince1970: $0) }
+                let trendsFetchedAt = scalarDouble("SELECT MAX(fetched_at) FROM card_price_trends WHERE brand = 'pokemon';")
+                    .map { Date(timeIntervalSince1970: $0) }
+
+                let latestCardDaily = latestBucket(
+                    processedAtSQL: """
+                    SELECT processed_at, bucket_key FROM processed_pricing_buckets
+                    WHERE length(bucket_key) = 10
+                    ORDER BY bucket_key DESC LIMIT 1;
+                    """,
+                    keySQL: ""
+                )
+                let latestSealedDaily = latestBucket(
+                    processedAtSQL: """
+                    SELECT processed_at, bucket_key FROM processed_pricing_buckets
+                    WHERE bucket_key LIKE 'sealed/____-__-__'
+                    ORDER BY bucket_key DESC LIMIT 1;
+                    """,
+                    keySQL: ""
+                )
+                let dailyBucketCount = scalarInt("""
+                    SELECT COUNT(*) FROM processed_pricing_buckets WHERE length(bucket_key) = 10;
+                    """) ?? 0
+
+                let historyBackfillDone = self.metaCacheLock.withLock { self.metaCache["pricing_history_backfill_v1"] } == "1"
+                let sealedHistoryBackfillDone = self.metaCacheLock.withLock { self.metaCache["sealed_pricing_history_backfill_v1"] } == "1"
+
+                func entry(
+                    id: String,
+                    title: String,
+                    systemImage: String,
+                    lastDownloaded: Date?,
+                    detail: String? = nil,
+                    isStale: Bool = false
+                ) -> CatalogDownloadStatusEntry {
+                    CatalogDownloadStatusEntry(
+                        id: id,
+                        title: title,
+                        systemImage: systemImage,
+                        lastDownloaded: lastDownloaded,
+                        detail: detail,
+                        isStale: isStale || lastDownloaded == nil
+                    )
+                }
+
+                let catalogEntries: [CatalogDownloadStatusEntry] = [
+                    entry(
+                        id: "catalog_sets",
+                        title: "Sets index",
+                        systemImage: "square.grid.2x2",
+                        lastDownloaded: metaDate("catalog_import_at"),
+                        detail: setCount > 0 ? "\(setCount) sets" : nil
+                    ),
+                    entry(
+                        id: "catalog_cards",
+                        title: "Card data",
+                        systemImage: "rectangle.stack.fill",
+                        lastDownloaded: metaDate("catalog_cards_last_updated_at"),
+                        detail: cardCount > 0 ? "\(cardCount.formatted()) cards" : nil
+                    ),
+                    entry(
+                        id: "variants_catalog",
+                        title: "Print variants",
+                        systemImage: "sparkles.rectangle.stack",
+                        lastDownloaded: auxFetchedAt("variants_catalog_json")
+                    ),
+                    entry(
+                        id: "national_dex",
+                        title: "National Pokédex",
+                        systemImage: "list.number",
+                        lastDownloaded: auxFetchedAt("pokemon_national_dex_json")
+                    ),
+                ]
+
+                let pricingEntries: [CatalogDownloadStatusEntry] = [
+                    entry(
+                        id: "pricing_sync",
+                        title: "Pricing sync",
+                        systemImage: "arrow.triangle.2.circlepath",
+                        lastDownloaded: pricingLastSync,
+                        detail: pricingSyncStale ? "Waiting for today's refresh" : "Up to date for this period",
+                        isStale: pricingSyncStale
+                    ),
+                    entry(
+                        id: "live_card_pricing",
+                        title: "Live card prices",
+                        systemImage: "tag.fill",
+                        lastDownloaded: livePriceFetchedAt,
+                        detail: livePriceCount > 0 ? "\(livePriceCount.formatted()) price rows" : nil
+                    ),
+                    entry(
+                        id: "daily_pricing_history",
+                        title: "Daily price history",
+                        systemImage: "chart.xyaxis.line",
+                        lastDownloaded: latestCardDaily?.at,
+                        detail: {
+                            var parts: [String] = []
+                            if let key = latestCardDaily?.key, !key.isEmpty { parts.append("latest \(key)") }
+                            if dailyBucketCount > 0 { parts.append("\(dailyBucketCount) days local") }
+                            return parts.isEmpty ? nil : parts.joined(separator: " · ")
+                        }(),
+                        isStale: latestCardDaily?.key != todayUTC
+                    ),
+                    entry(
+                        id: "per_set_trends",
+                        title: "Per-set price trends",
+                        systemImage: "chart.line.uptrend.xyaxis",
+                        lastDownloaded: trendsFetchedAt
+                    ),
+                    entry(
+                        id: "deep_history_backfill",
+                        title: "Weekly / monthly history",
+                        systemImage: "calendar",
+                        lastDownloaded: historyBackfillDone ? trendsFetchedAt ?? pricingLastSync : nil,
+                        detail: historyBackfillDone ? "Full backfill complete" : "Still downloading in background"
+                    ),
+                ]
+
+                let marketEntries: [CatalogDownloadStatusEntry] = [
+                    entry(
+                        id: "market_trend",
+                        title: "Market trend",
+                        systemImage: "waveform.path.ecg",
+                        lastDownloaded: blobFetchedAt(DailyBlobKey.marketTrend)
+                    ),
+                    entry(
+                        id: "price_trends_blob",
+                        title: "Price trends summary",
+                        systemImage: "chart.bar.fill",
+                        lastDownloaded: blobFetchedAt(DailyBlobKey.priceTrends)
+                    ),
+                ]
+
+                let sealedEntries: [CatalogDownloadStatusEntry] = [
+                    entry(
+                        id: "sealed_catalog",
+                        title: "Sealed product catalog",
+                        systemImage: "shippingbox.fill",
+                        lastDownloaded: blobFetchedAt(DailyBlobKey.pokedataEnglishPokemonProducts)
+                    ),
+                    entry(
+                        id: "sealed_live_prices",
+                        title: "Live sealed prices",
+                        systemImage: "seal.fill",
+                        lastDownloaded: blobFetchedAt(DailyBlobKey.sealedPrices),
+                        detail: sealedAsOf.map { "priced as \($0)" },
+                        isStale: sealedAsOfStale
+                    ),
+                    entry(
+                        id: "sealed_daily_history",
+                        title: "Sealed daily history",
+                        systemImage: "chart.xyaxis.line",
+                        lastDownloaded: latestSealedDaily?.at ?? blobFetchedAt(DailyBlobKey.sealedPriceHistory),
+                        detail: latestSealedDaily.map { "latest \($0.key.replacingOccurrences(of: "sealed/", with: ""))" }
+                    ),
+                    entry(
+                        id: "sealed_deep_history",
+                        title: "Sealed weekly / monthly",
+                        systemImage: "calendar.badge.clock",
+                        lastDownloaded: sealedHistoryBackfillDone ? blobFetchedAt(DailyBlobKey.sealedPriceHistory) : nil,
+                        detail: sealedHistoryBackfillDone ? "Full backfill complete" : "Still downloading in background"
+                    ),
+                ]
+
+                let otherEntries: [CatalogDownloadStatusEntry] = [
+                    entry(
+                        id: "upcoming_releases",
+                        title: "Upcoming releases",
+                        systemImage: "calendar.badge.plus",
+                        lastDownloaded: blobFetchedAt(DailyBlobKey.upcomingReleases)
+                    ),
+                ]
+
+                let sections: [(section: CatalogDownloadStatusSection, entries: [CatalogDownloadStatusEntry])] = [
+                    (.catalog, catalogEntries),
+                    (.pricing, pricingEntries),
+                    (.market, marketEntries),
+                    (.sealed, sealedEntries),
+                    (.other, otherEntries),
+                ]
+
+                continuation.resume(returning: CatalogDownloadStatus(sections: sections, queriedAt: Date()))
+            }
+        }
+    }
 }
 
 enum CatalogStoreError: Error {

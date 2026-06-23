@@ -122,6 +122,7 @@ private enum SealedProductSQLiteLoader {
 @MainActor
 final class SealedProductService {
     private(set) var products: [SealedProduct] = []
+    private(set) var productsByID: [Int: SealedProduct] = [:]
     private(set) var marketPriceByID: [Int: Double] = [:]
     private(set) var historyByID: [Int: SealedProductHistorySeries] = [:]
     private(set) var isLoading = false
@@ -220,7 +221,12 @@ final class SealedProductService {
                     return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
                 }
             }.value
-            if !sorted.isEmpty { products = sorted }
+            if !sorted.isEmpty {
+                products = sorted
+                var index = [Int: SealedProduct](minimumCapacity: sorted.count)
+                for p in sorted { index[p.id] = p }
+                productsByID = index
+            }
             lastError = nil
         } catch {
             if products.isEmpty {
@@ -247,7 +253,12 @@ final class SealedProductService {
     }
 
     private func applyLocalCache(_ cache: SealedProductSQLiteLoader.LocalCache) {
-        if let parsedProducts = cache.products { products = parsedProducts }
+        if let parsedProducts = cache.products {
+            products = parsedProducts
+            var index = [Int: SealedProduct](minimumCapacity: parsedProducts.count)
+            for p in parsedProducts { index[p.id] = p }
+            productsByID = index
+        }
         if let parsedPrices = cache.marketPriceByID { marketPriceByID = parsedPrices }
         if let parsedHistory = cache.historyByID { historyByID = parsedHistory }
         lastError = nil

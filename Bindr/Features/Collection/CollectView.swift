@@ -51,6 +51,7 @@ struct CollectView: View {
 
     @State private var collectionQuery = ""
     @State private var wishlistQuery = ""
+    @State private var cachedWishlistedSealedCollectionCardIDs: Set<String> = []
     private static let collectionInitialBatchSize = 36
     private static let collectionPageSize = 18
     private static let sealedReleaseDateSortFormatter: DateFormatter = {
@@ -163,14 +164,12 @@ struct CollectView: View {
         return false
     }
 
-    private var sealedProductsSignature: Int {
-        var h = Hasher()
-        for p in services.sealedProducts.products { h.combine(p.id) }
-        return h.finalize()
-    }
+    private var sealedProductsSignature: Int { services.sealedProducts.products.count }
 
-    private var wishlistedSealedCollectionCardIDs: Set<String> {
-        Set(wishlistItems.compactMap { item in
+    private var wishlistedSealedCollectionCardIDs: Set<String> { cachedWishlistedSealedCollectionCardIDs }
+
+    private func refreshWishlistedSealedCollectionCardIDs() {
+        cachedWishlistedSealedCollectionCardIDs = Set(wishlistItems.compactMap { item in
             guard SealedProduct.parseCollectionProductID(item.cardID) != nil else { return nil }
             return item.cardID
         })
@@ -232,6 +231,7 @@ struct CollectView: View {
                 selectedBrand = services.brandSettings.selectedCatalogBrand
             }
             refreshSealedProductCaches()
+            refreshWishlistedSealedCollectionCardIDs()
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
@@ -244,6 +244,7 @@ struct CollectView: View {
         .onChange(of: collectionSortPriceByCardID) { _, _ in refreshCollectionFeedIfReady() }
         .onChange(of: cardsByCardID) { _, _ in refreshCollectionFeedIfReady() }
         .onChange(of: sealedProductByCollectionCardIDCache) { _, _ in refreshCollectionFeedIfReady() }
+        .onChange(of: wishlistItems) { _, _ in refreshWishlistedSealedCollectionCardIDs() }
         .sheet(item: $selectedSealedProduct) { product in
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)

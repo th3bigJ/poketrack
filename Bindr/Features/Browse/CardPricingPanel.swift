@@ -36,6 +36,7 @@ struct CardPricingPanel: View {
     @State private var selectedGrade: String? = nil
 
     @State private var currentPrice: String = "—"
+    @State private var livePriceUSD: Double?
     @State private var history: CardPriceHistory? = nil
     @State private var trends: CardPriceTrends? = nil  // single entry (first/best match)
     @State private var isLoading = false
@@ -79,11 +80,12 @@ struct CardPricingPanel: View {
     }
 
     private var resolvedChart: (points: [PriceDataPoint], resolution: ChartDataResolution) {
-        guard let series = chartSeries else { return ([], .daily) }
-
-        let daily31 = Array(series.daily.suffix(31))
-        let weekly13 = Array((series.weekly.isEmpty ? weeklyFromDaily(series.daily) : series.weekly).suffix(13))
-        let monthly12 = Array((series.monthly.isEmpty ? monthlyFromDaily(series.daily) : series.monthly).suffix(12))
+        let dailyWithToday = (chartSeries?.daily ?? []).pinningTodayPrice(livePriceUSD)
+        let daily31 = Array(dailyWithToday.suffix(31))
+        let weeklySource = chartSeries.flatMap { $0.weekly.isEmpty ? nil : $0.weekly } ?? weeklyFromDaily(dailyWithToday)
+        let weekly13 = Array(weeklySource.suffix(13))
+        let monthlySource = chartSeries.flatMap { $0.monthly.isEmpty ? nil : $0.monthly } ?? monthlyFromDaily(dailyWithToday)
+        let monthly12 = Array(monthlySource.suffix(12))
 
         switch chartRange {
         case .oneMonth:
@@ -611,13 +613,16 @@ struct CardPricingPanel: View {
 
     private func refreshPrice() async {
         currentPrice = "—"
+        livePriceUSD = nil
         guard let variant = selectedVariant, !variant.isEmpty else { return }
         let grade = selectedGrade ?? "raw"
         if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: variant, grade: grade) {
+            livePriceUSD = usd
             currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
             return
         }
         if let usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: variant, grade: grade) {
+            livePriceUSD = usd
             currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
         }
     }

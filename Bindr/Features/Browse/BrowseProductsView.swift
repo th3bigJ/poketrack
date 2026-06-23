@@ -1465,16 +1465,22 @@ private struct SealedProductPricingPanel: View {
 
     @State private var history: SealedProductHistorySeries?
     @State private var currentPrice = "—"
+    @State private var livePriceUSD: Double?
     @State private var chartRange: SealedChartRange = .oneMonth
     @State private var scrubPoint: PriceDataPoint? = nil
     @State private var isLoading = false
 
-    private var resolvedChart: (points: [PriceDataPoint], resolution: SealedChartDataResolution) {
-        guard let history else { return ([], .daily) }
+    private var chartDailyPoints: [PriceDataPoint] {
+        (history?.daily ?? []).pinningTodayPrice(livePriceUSD)
+    }
 
-        let daily31 = Array(history.daily.suffix(31))
-        let weekly13 = Array((history.weekly.isEmpty ? weeklyFromDaily(history.daily) : history.weekly).suffix(13))
-        let monthly12 = Array((history.monthly.isEmpty ? monthlyFromDaily(history.daily) : history.monthly).suffix(12))
+    private var resolvedChart: (points: [PriceDataPoint], resolution: SealedChartDataResolution) {
+        let dailyWithToday = chartDailyPoints
+        let daily31 = Array(dailyWithToday.suffix(31))
+        let weeklySource = history.flatMap { $0.weekly.isEmpty ? nil : $0.weekly } ?? weeklyFromDaily(dailyWithToday)
+        let weekly13 = Array(weeklySource.suffix(13))
+        let monthlySource = history.flatMap { $0.monthly.isEmpty ? nil : $0.monthly } ?? monthlyFromDaily(dailyWithToday)
+        let monthly12 = Array(monthlySource.suffix(12))
 
         switch chartRange {
         case .oneMonth:
@@ -1509,9 +1515,9 @@ private struct SealedProductPricingPanel: View {
         }
     }
 
-    private var change1d: Double? { pctChange(Array(history?.daily.suffix(2) ?? [])) }
-    private var change7d: Double? { pctChange(Array(history?.daily.suffix(8) ?? [])) }
-    private var change30d: Double? { pctChange(Array(history?.daily.suffix(31) ?? [])) }
+    private var change1d: Double? { pctChange(Array(chartDailyPoints.suffix(2))) }
+    private var change7d: Double? { pctChange(Array(chartDailyPoints.suffix(8))) }
+    private var change30d: Double? { pctChange(Array(chartDailyPoints.suffix(31))) }
 
     private func pctChange(_ pts: [PriceDataPoint]) -> Double? {
         guard pts.count >= 2, pts.first!.price > 0 else { return nil }
@@ -1672,7 +1678,12 @@ private struct SealedProductPricingPanel: View {
     }
 
     private func refreshPrice() {
-        guard let usd = services.sealedProducts.marketPriceUSD(for: productID) else { currentPrice = "—"; return }
+        guard let usd = services.sealedProducts.marketPriceUSD(for: productID) else {
+            currentPrice = "—"
+            livePriceUSD = nil
+            return
+        }
+        livePriceUSD = usd
         currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
     }
 
@@ -1698,6 +1709,17 @@ private struct SealedProductPricingPanel: View {
         }
     }
 
+    private static let weekShortFormatter: DateFormatter = {
+        let f = DateFormatter(); f.dateFormat = "dd/MM"; f.timeZone = TimeZone(identifier: "UTC"); return f
+    }()
+    private static let weekFullFormatter: DateFormatter = {
+        let f = DateFormatter(); f.dateFormat = "dd/MM/yy"; f.timeZone = TimeZone(identifier: "UTC"); return f
+    }()
+    private static let iso8601Cal: Calendar = {
+        var c = Calendar(identifier: .iso8601); c.timeZone = TimeZone(identifier: "UTC")!; return c
+    }()
+    private static let shortMonthSymbols: [String] = DateFormatter().shortMonthSymbols
+
     private func scrubLabel(_ label: String) -> String {
         switch resolvedChart.resolution {
         case .daily: return dailyToFullUK(label)
@@ -1705,7 +1727,7 @@ private struct SealedProductPricingPanel: View {
         case .monthly:
             let parts = label.components(separatedBy: "-")
             guard parts.count == 2, let month = Int(parts[1]) else { return label }
-            return "\(DateFormatter().shortMonthSymbols[month - 1]) \(parts[0])"
+            return "\(Self.shortMonthSymbols[month - 1]) \(parts[0])"
         }
     }
 
@@ -1723,28 +1745,24 @@ private struct SealedProductPricingPanel: View {
 
     private func weekLabelToShortUK(_ label: String) -> String {
         guard let date = weekLabelToDate(label) else { return label }
-        let fmt = DateFormatter(); fmt.dateFormat = "dd/MM"; fmt.timeZone = TimeZone(identifier: "UTC")
-        return fmt.string(from: date)
+        return Self.weekShortFormatter.string(from: date)
     }
 
     private func weekLabelToFullUK(_ label: String) -> String {
         guard let date = weekLabelToDate(label) else { return label }
-        let fmt = DateFormatter(); fmt.dateFormat = "dd/MM/yy"; fmt.timeZone = TimeZone(identifier: "UTC")
-        return fmt.string(from: date)
+        return Self.weekFullFormatter.string(from: date)
     }
 
     private func weekLabelToDate(_ label: String) -> Date? {
         let parts = label.components(separatedBy: "-W")
         guard parts.count == 2, let year = Int(parts[0]), let week = Int(parts[1]) else { return nil }
-        var cal = Calendar(identifier: .iso8601)
-        cal.timeZone = TimeZone(identifier: "UTC")!
-        return cal.date(from: DateComponents(weekOfYear: week, yearForWeekOfYear: year))
+        return Self.iso8601Cal.date(from: DateComponents(weekOfYear: week, yearForWeekOfYear: year))
     }
 
     private func monthLabelToShort(_ label: String) -> String {
         let p = label.components(separatedBy: "-")
         guard p.count == 2, let month = Int(p[1]) else { return label }
-        return DateFormatter().shortMonthSymbols[month - 1]
+        return Self.shortMonthSymbols[month - 1]
     }
 
     private func nearestPoint(to label: String, in points: [PriceDataPoint]) -> PriceDataPoint? {

@@ -74,6 +74,12 @@ struct DeckDetailView: View {
     @State private var showOfficialDeckListSheet = false
     @State private var showOfficialDeckListUnavailable = false
     @State private var hasSettledAfterFirstPaint = false
+    @State private var cachedPokemonCards: [DeckCard] = []
+    @State private var cachedTrainerCards: [DeckCard] = []
+    @State private var cachedEnergyCards: [DeckCard] = []
+    @State private var cachedPokemonCount: Int = 0
+    @State private var cachedTrainerCount: Int = 0
+    @State private var cachedEnergyCount: Int = 0
 
     private static func catalogSubtypeString(from card: Card) -> String? {
         if let s = card.subtype?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
@@ -127,16 +133,28 @@ struct DeckDetailView: View {
         return result
     }
 
-    private var pokemonCards: [DeckCard] { deck.cardList.filter { $0.pokemonCategory == .pokemon }.sorted { $0.cardName < $1.cardName } }
-    private var trainerCards: [DeckCard] { deck.cardList.filter { $0.pokemonCategory == .trainer }.sorted { $0.cardName < $1.cardName } }
-    private var energyCards:  [DeckCard] { deck.cardList.filter { $0.pokemonCategory == .energy  }.sorted { $0.cardName < $1.cardName } }
+    private var pokemonCards: [DeckCard] { cachedPokemonCards }
+    private var trainerCards: [DeckCard] { cachedTrainerCards }
+    private var energyCards:  [DeckCard] { cachedEnergyCards }
 
-    private var pokemonCount: Int { pokemonCards.reduce(0) { $0 + $1.quantity } }
-    private var trainerCount: Int { trainerCards.reduce(0) { $0 + $1.quantity } }
-    private var energyCount:  Int { energyCards.reduce(0)  { $0 + $1.quantity } }
+    private var pokemonCount: Int { cachedPokemonCount }
+    private var trainerCount: Int { cachedTrainerCount }
+    private var energyCount:  Int { cachedEnergyCount }
 
     private var orderedDeckRowsForSwipe: [DeckCard] {
-        pokemonCards + trainerCards + energyCards
+        cachedPokemonCards + cachedTrainerCards + cachedEnergyCards
+    }
+
+    private func recomputeDeckCardSections() {
+        let pokemon = deck.cardList.filter { $0.pokemonCategory == .pokemon }.sorted { $0.cardName < $1.cardName }
+        let trainer = deck.cardList.filter { $0.pokemonCategory == .trainer }.sorted { $0.cardName < $1.cardName }
+        let energy  = deck.cardList.filter { $0.pokemonCategory == .energy  }.sorted { $0.cardName < $1.cardName }
+        cachedPokemonCards = pokemon
+        cachedTrainerCards = trainer
+        cachedEnergyCards  = energy
+        cachedPokemonCount = pokemon.reduce(0) { $0 + $1.quantity }
+        cachedTrainerCount = trainer.reduce(0) { $0 + $1.quantity }
+        cachedEnergyCount  = energy.reduce(0)  { $0 + $1.quantity }
     }
 
     private var validationColor: Color {
@@ -209,6 +227,7 @@ struct DeckDetailView: View {
             Text("PDF deck lists are available for Pokémon TCG decks. Use Copy to TCG Live for other games.")
         }
         .task {
+            recomputeDeckCardSections()
             // Let NavigationStack commit the destination and complete its push
             // before starting catalogue reads. These tasks can touch thousands
             // of rows, so launching them during the transition makes the deck
@@ -229,6 +248,7 @@ struct DeckDetailView: View {
             )
         }
         .onChange(of: shareAutoSyncSignature) { _, _ in
+            recomputeDeckCardSections()
             services.socialShare.scheduleAutoSync(deck: deck)
             services.scheduleLibraryCloudBackup()
         }

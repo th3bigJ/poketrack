@@ -20,6 +20,7 @@ final class PricingService {
     @ObservationIgnored private var pokemonPricingByMasterCardID: [String: CardPricingEntry?] = [:]
     @ObservationIgnored private var pokemonPricingPrefetchedSets: Set<String> = []
     @ObservationIgnored private var pokemonAllPricingPrefetched: Bool = false
+    private(set) var isAllPokemonPricingPrefetched: Bool = false
 
     private let session: URLSession
     private let fileManager: FileManager
@@ -43,6 +44,7 @@ final class PricingService {
         pokemonPricingByMasterCardID.removeAll(keepingCapacity: false)
         pokemonPricingPrefetchedSets.removeAll(keepingCapacity: false)
         pokemonAllPricingPrefetched = false
+        isAllPokemonPricingPrefetched = false
     }
 
     /// Build a masterCardId-keyed index from already-loaded Card objects so that
@@ -115,6 +117,7 @@ final class PricingService {
         let merged = decoded.merging(pokemonCardPricingCache) { _, existing in existing }
         pokemonCardPricingCache = merged
         pokemonAllPricingPrefetched = true
+        isAllPokemonPricingPrefetched = true
     }
 
     func prefetchPokemonCardPricing(forSetCodes setCodes: Set<String>) async {

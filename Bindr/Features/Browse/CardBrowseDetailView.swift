@@ -1098,11 +1098,7 @@ private struct CardBrowseDetailPage: View {
     }
 
     private func currencyFormatter(code: String) -> NumberFormatter {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = code
-        formatter.maximumFractionDigits = 2
-        return formatter
+        holdingLineCurrencyFormatter(code: code)
     }
 
     private var pageBackground: Color {
@@ -1173,6 +1169,14 @@ struct HoldingGroup: Identifiable {
     var lines: [HoldingLine]
 }
 
+private var _holdingLineCurrencyFormatters: [String: NumberFormatter] = [:]
+private func holdingLineCurrencyFormatter(code: String) -> NumberFormatter {
+    if let existing = _holdingLineCurrencyFormatters[code] { return existing }
+    let f = NumberFormatter(); f.numberStyle = .currency; f.currencyCode = code
+    _holdingLineCurrencyFormatters[code] = f
+    return f
+}
+
 struct HoldingLine: Identifiable {
     let id: String
     let item: CollectionItem
@@ -1206,10 +1210,7 @@ struct HoldingLine: Identifiable {
 
     var priceText: String? {
         guard let unitPrice, unitPrice > 0 else { return nil }
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = currencyCode
-        return formatter.string(from: NSNumber(value: unitPrice))
+        return holdingLineCurrencyFormatter(code: currencyCode).string(from: NSNumber(value: unitPrice))
     }
 
     var directionTitle: String {

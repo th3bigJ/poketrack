@@ -56,6 +56,7 @@ struct DashboardView: View {
     @State private var chartRange: ChartRange = .daily
     @State private var chartRefreshID: Int = 0
     @State private var selectedBrand: TCGBrand? = nil
+    @State private var lastLiveValueComputedAt: Date? = nil
     // Grouped into a single struct so all three update in one SwiftUI render pass,
     // avoiding three sequential body re-evaluations over the full collection.
     private struct CardMetadataCache {
@@ -74,8 +75,17 @@ struct DashboardView: View {
     @State private var selectedSealedProductForDetail: SealedProduct? = nil
     @State private var actionableTrades: [(id: UUID, status: TradeStatus, updatedAt: Date?)] = []
 
+    // Cached chart data — updated only when chartRefreshID changes so body re-evaluations
+    // from unrelated @State writes don't rebuild snapshot arrays.
+    @State private var cachedDailyPoints: [ChartPoint] = []
+    @State private var cachedWeeklyPoints: [ChartPoint] = []
+    @State private var cachedMonthlyPoints: [ChartPoint] = []
+    @State private var cachedActivePoints: [ChartPoint] = []
+
     // Cached collection stats — updated via task when collectionItems/brand changes,
     // so SwiftUI body evaluation never pays the O(n) cost of iterating 997+ items.
+    @State private var cachedVisibleCollectionItems: [CollectionItem] = []
+    @State private var cachedVisibleCardCollectionItems: [CollectionItem] = []
     @State private var cachedTotalCardsCount: Int = 0
     @State private var cachedUniqueCardsCount: Int = 0
     @State private var cachedSealedProductsCount: Int = 0
@@ -139,13 +149,8 @@ struct DashboardView: View {
         return marketTrendData.pokemon
     }
 
-    private var visibleCollectionItems: [CollectionItem] {
-        collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
-    }
-
-    private var visibleCardCollectionItems: [CollectionItem] {
-        visibleCollectionItems.filter { sealedProductID(for: $0) == nil }
-    }
+    private var visibleCollectionItems: [CollectionItem] { cachedVisibleCollectionItems }
+    private var visibleCardCollectionItems: [CollectionItem] { cachedVisibleCardCollectionItems }
 
     private var visibleWishlistItems: [WishlistItem] {
         wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
@@ -168,8 +173,11 @@ struct DashboardView: View {
 
     private func recomputeCollectionStats() {
         let visible = collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
+        let visibleCards = visible.filter { sealedProductID(for: $0) == nil }
+        cachedVisibleCollectionItems = visible
+        cachedVisibleCardCollectionItems = visibleCards
         cachedTotalCardsCount = visible.reduce(0) { $0 + max($1.quantity, 0) }
-        cachedUniqueCardsCount = Set(visible.filter { sealedProductID(for: $0) == nil }.map(\.cardID)).count
+        cachedUniqueCardsCount = Set(visibleCards.map(\.cardID)).count
         cachedSealedProductsCount = visible.reduce(0) { total, item in
             guard sealedProductID(for: item) != nil else { return total }
             guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { return total }
@@ -220,15 +228,28 @@ struct DashboardView: View {
         "\(services.collectionValue == nil ? "nil" : "ready"):\(collectionItems.count):\(services.isLaunchCatalogPipelineComplete)"
     }
 
-    private var dailyPoints: [ChartPoint] {
+    private var dailyPoints: [ChartPoint] { cachedDailyPoints }
+    private var weeklyPoints: [ChartPoint] { cachedWeeklyPoints }
+    private var monthlyPoints: [ChartPoint] { cachedMonthlyPoints }
+
+    private func recomputeChartData() async {
         let svc = services.collectionValue
-        let cal = Calendar.current
-        let cutoff = cal.date(byAdding: .day, value: -BucketDateMath.dailyPricingHistoryDays, to: cal.startOfDay(for: Date()))!
-        var pointsByDay: [Date: ChartPoint] = [:]
-        if let svc {
-            for snapshot in svc.snapshots {
+        let todaySnap = todayLiveSnapshot
+        let snapshots = svc?.snapshots ?? []
+        let weeklyAverages = svc?.weeklyAverages ?? []
+        let monthlyAverages = svc?.monthlyAverages ?? []
+
+        // Capture inputs on @MainActor, then compute off-thread.
+        let (daily, weekly, monthly) = await Task.detached(priority: .userInitiated) {
+            let cal = Calendar.current
+            let now = cal.startOfDay(for: Date())
+
+            // Daily
+            let dailyCutoff = cal.date(byAdding: .day, value: -BucketDateMath.dailyPricingHistoryDays, to: now)!
+            var pointsByDay: [Date: ChartPoint] = [:]
+            for snapshot in snapshots {
                 let day = cal.startOfDay(for: snapshot.date)
-                guard day >= cutoff else { continue }
+                guard day >= dailyCutoff else { continue }
                 pointsByDay[day] = ChartPoint(
                     date: day,
                     total: snapshot.totalGbp,
@@ -237,66 +258,66 @@ struct DashboardView: View {
                     sealed: snapshot.cardsGbp > 0 || snapshot.sealedGbp > 0 ? snapshot.sealedGbp : 0
                 )
             }
-        }
-        if let snap = todayLiveSnapshot {
-            let today = cal.startOfDay(for: Date())
-            // Always pin today's live/saved value on the chart so it matches the hero total.
-            pointsByDay[today] = ChartPoint(
-                date: today,
-                total: snap.total,
-                pokemon: snap.pokemon,
-                cards: snap.cards,
-                sealed: snap.sealed
-            )
-        }
-        return pointsByDay.keys.sorted().compactMap { pointsByDay[$0] }
-    }
-
-    private var weeklyPoints: [ChartPoint] {
-        guard let svc = services.collectionValue else { return [] }
-        let cal = Calendar.current
-        let cutoff = cal.date(byAdding: .year, value: -1, to: cal.startOfDay(for: Date()))!
-        return svc.weeklyAverages
-            .filter { $0.weekStart >= cutoff }
-            .map {
-                let hasExplicitSplit = $0.cardsGbp > 0 || $0.sealedGbp > 0
-                return ChartPoint(
-                    date: $0.weekStart,
-                    total: $0.totalGbp,
-                    pokemon: $0.pokemonGbp,
-                    cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
-                    sealed: hasExplicitSplit ? $0.sealedGbp : 0
+            if let snap = todaySnap {
+                // Always pin today's live/saved value on the chart so it matches the hero total.
+                pointsByDay[now] = ChartPoint(
+                    date: now,
+                    total: snap.total,
+                    pokemon: snap.pokemon,
+                    cards: snap.cards,
+                    sealed: snap.sealed
                 )
             }
+            let dailyResult = pointsByDay.keys.sorted().compactMap { pointsByDay[$0] }
+
+            // Weekly
+            let weeklyCutoff = cal.date(byAdding: .year, value: -1, to: now)!
+            let weeklyResult = weeklyAverages
+                .filter { $0.weekStart >= weeklyCutoff }
+                .map {
+                    let hasExplicitSplit = $0.cardsGbp > 0 || $0.sealedGbp > 0
+                    return ChartPoint(
+                        date: $0.weekStart,
+                        total: $0.totalGbp,
+                        pokemon: $0.pokemonGbp,
+                        cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
+                        sealed: hasExplicitSplit ? $0.sealedGbp : 0
+                    )
+                }
+
+            // Monthly
+            let monthlyCutoff = cal.date(byAdding: .year, value: -5, to: now)!
+            let monthlyResult = monthlyAverages
+                .filter { $0.monthStart >= monthlyCutoff }
+                .map {
+                    let hasExplicitSplit = $0.cardsGbp > 0 || $0.sealedGbp > 0
+                    return ChartPoint(
+                        date: $0.monthStart,
+                        total: $0.totalGbp,
+                        pokemon: $0.pokemonGbp,
+                        cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
+                        sealed: hasExplicitSplit ? $0.sealedGbp : 0
+                    )
+                }
+
+            return (dailyResult, weeklyResult, monthlyResult)
+        }.value
+
+        cachedDailyPoints = daily
+        cachedWeeklyPoints = weekly
+        cachedMonthlyPoints = monthly
+        recomputeActivePoints()
     }
 
-    private var monthlyPoints: [ChartPoint] {
-        guard let svc = services.collectionValue else { return [] }
-        let cal = Calendar.current
-        let cutoff = cal.date(byAdding: .year, value: -5, to: cal.startOfDay(for: Date()))!
-        return svc.monthlyAverages
-            .filter { $0.monthStart >= cutoff }
-            .map {
-                let hasExplicitSplit = $0.cardsGbp > 0 || $0.sealedGbp > 0
-                return ChartPoint(
-                    date: $0.monthStart,
-                    total: $0.totalGbp,
-                    pokemon: $0.pokemonGbp,
-                    cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
-                    sealed: hasExplicitSplit ? $0.sealedGbp : 0
-                )
-            }
-    }
-
-    private var activePoints: [ChartPoint] {
+    private func recomputeActivePoints() {
         let base: [ChartPoint]
         switch chartRange {
-        case .daily: base = dailyPoints
-        case .weekly: base = weeklyPoints
-        case .monthly: base = monthlyPoints
+        case .daily: base = cachedDailyPoints
+        case .weekly: base = cachedWeeklyPoints
+        case .monthly: base = cachedMonthlyPoints
         }
-        guard let brand = selectedBrand else { return base }
-        return base.map { point in
+        guard let brand = selectedBrand else { cachedActivePoints = base; return }
+        cachedActivePoints = base.map { point in
             let total: Double
             switch brand {
             case .pokemon: total = point.pokemon
@@ -311,11 +332,13 @@ struct DashboardView: View {
         }
     }
 
-    private var chartMin: Double { (activePoints.map(\.total).min() ?? 0) * 0.95 }
-    private var chartMax: Double { (activePoints.map(\.total).max() ?? 0) * 1.05 }
+    private var activePoints: [ChartPoint] { cachedActivePoints }
+
+    private var chartMin: Double { (cachedActivePoints.map(\.total).min() ?? 0) * 0.95 }
+    private var chartMax: Double { (cachedActivePoints.map(\.total).max() ?? 0) * 1.05 }
 
     private var chartXAxisDates: [Date] {
-        let points = activePoints
+        let points = cachedActivePoints
         guard points.count > 1 else { return points.map(\.date) }
         let maxLabels = 5
         if points.count <= maxLabels { return points.map(\.date) }
@@ -331,7 +354,7 @@ struct DashboardView: View {
     }
 
     private var periodChange: (amount: Double, pct: Double, label: String)? {
-        let points = activePoints
+        let points = cachedActivePoints
         guard points.count >= 2 else { return nil }
 
         let cal = Calendar.current
@@ -485,32 +508,33 @@ struct DashboardView: View {
                 guard !Task.isCancelled else { return }
                 await reloadDashboardInventory(deferForLaunch: false)
                 await computeLiveValue()
+                chartRefreshID += 1
                 if let snap = liveSnapshot {
                     await services.collectionValue?.forceRecalculate(
                         liveSnapshot: snap,
                         collectionItems: collectionItems
                     )
                 }
-                await loadMarketTrendBlob()
-                await loadUpcomingReleases()
             }
         }
         .onAppear {
             selectedBrand = activeBrand
-            if services.isLaunchCatalogPipelineComplete, !services.isCatalogDownloadInProgress {
-                Task { await loadUpcomingReleases() }
-            }
         }
         .task(id: "\(dashboardDataRevision):\(activeBrand.rawValue)") {
             recomputeCollectionStats()
         }
+        .task(id: chartRefreshID) {
+            await recomputeChartData()
+        }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
             selectedPoint = nil
+            recomputeActivePoints()
         }
         .onChange(of: chartRange) { _, _ in
             selectedPoint = nil
             selectedBrand = activeBrand
+            recomputeActivePoints()
         }
         .onChange(of: services.isBootstrapping) { _, bootstrapping in
             guard !bootstrapping, hasFiredInitialLoadComplete, collectionItems.count > 0 else { return }
@@ -537,6 +561,10 @@ struct DashboardView: View {
                     guard hasFiredInitialLoadComplete,
                           services.isLaunchCatalogPipelineComplete,
                           collectionItems.count > 0 else { return }
+                    // Throttle pricing recomputes to once per 5 minutes on foreground to
+                    // avoid sustained CPU work on every lock/unlock cycle.
+                    if let last = lastLiveValueComputedAt,
+                       Date().timeIntervalSince(last) < 300 { return }
                     await computeLiveValue()
                     chartRefreshID += 1
                 }
@@ -1020,10 +1048,14 @@ struct DashboardView: View {
         .disabled(action == nil)
     }
 
+    private static let collectionCountFormatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.numberStyle = .decimal
+        return f
+    }()
+
     private func formatCollectionCount(_ count: Int) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter.string(from: NSNumber(value: count)) ?? "\(count)"
+        Self.collectionCountFormatter.string(from: NSNumber(value: count)) ?? "\(count)"
     }
 
     private var upcomingReleasesSection: some View {
@@ -1258,7 +1290,6 @@ struct DashboardView: View {
             hasFiredInitialLoadComplete,
             services.isLaunchCatalogPipelineComplete,
             services.isCatalogDownloadInProgress,
-            services.dashboardMarketReloadToken,
         ].map { "\($0)" }.joined(separator: "|")
     }
 
@@ -1352,17 +1383,16 @@ struct DashboardView: View {
         }
 
         guard line.productKind == ProductKind.sealedProduct.rawValue else { return nil }
-        Task { await services.sealedProducts.loadFromLocalIfAvailable() }
 
         if let rawID = cleaned(line.sealedProductId),
            let productID = Int(rawID),
-           let imageURL = services.sealedProducts.products.first(where: { $0.id == productID })?.imageURL {
+           let imageURL = services.sealedProducts.productsByID[productID]?.imageURL {
             return imageURL
         }
 
         if let cardID = cleaned(line.cardID),
            let productID = SealedProduct.parseCollectionProductID(cardID),
-           let imageURL = services.sealedProducts.products.first(where: { $0.id == productID })?.imageURL {
+           let imageURL = services.sealedProducts.productsByID[productID]?.imageURL {
             return imageURL
         }
 
@@ -1475,8 +1505,12 @@ struct DashboardView: View {
         isLoadingValue = true
         defer { isLoadingValue = false }
 
-        await services.sealedProducts.loadFromLocalIfAvailable()
-        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        if services.sealedProducts.products.isEmpty {
+            await services.sealedProducts.loadFromLocalIfAvailable()
+        }
+        if !services.pricing.isAllPokemonPricingPrefetched {
+            await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        }
 
         guard let svc = services.collectionValue else { return liveTotalGbp != nil }
         guard let snap = await svc.computeLiveSnapshot(for: collectionItems), snap.total > 0 else {
@@ -1507,7 +1541,7 @@ struct DashboardView: View {
         if changed { svc.aggregateCurrentPeriods() }
         svc.persistLastKnownValue(snap)
         await svc.loadAllFromStore()
-        chartRefreshID += 1
+        lastLiveValueComputedAt = Date()
         return true
     }
 
@@ -1547,7 +1581,7 @@ struct DashboardView: View {
             Task {
                 await services.sealedProducts.loadFromLocalIfAvailable()
                 guard let productID = sealedProductID(for: line),
-                      let product = services.sealedProducts.products.first(where: { $0.id == productID })
+                      let product = services.sealedProducts.productsByID[productID]
                 else { return }
                 await MainActor.run { selectedSealedProductForDetail = product }
             }
@@ -1772,12 +1806,16 @@ struct DashboardView: View {
         }
     }
 
+    private static let currencyFormatter: NumberFormatter = {
+        let f = NumberFormatter()
+        f.numberStyle = .currency
+        f.currencyCode = "GBP"
+        f.maximumFractionDigits = 2
+        return f
+    }()
+
     private func formatCurrency(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = "GBP"
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: value)) ?? "£\(String(format: "%.2f", value))"
+        Self.currencyFormatter.string(from: NSNumber(value: value)) ?? "£\(String(format: "%.2f", value))"
     }
 
     private func formatCurrencyShort(_ value: Double) -> String {

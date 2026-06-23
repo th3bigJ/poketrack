@@ -2036,24 +2036,29 @@ struct BrowseView: View {
         case .price:
             let refs = filtered.map(\.ref)
             let cards = await services.cardData.cardsInOrder(refs: refs)
-            let pricedCards: [(card: Card, price: Double?)] = await withTaskGroup(of: (Card, Double?).self) { group in
-                for card in cards {
-                    group.addTask {
-                        if Task.isCancelled { return (card, nil) }
-                        let entry = await services.pricing.pricing(for: card)
-                        return (card, browseMarketPriceUSD(for: entry))
+            // Batch pricing lookups 8 at a time to avoid spawning 500+ concurrent tasks
+            // which saturates the thread pool and heats the device.
+            var pricedCards: [(card: Card, price: Double?)] = []
+            pricedCards.reserveCapacity(cards.count)
+            let batchSize = 8
+            var offset = 0
+            while offset < cards.count {
+                guard !Task.isCancelled else { break }
+                let batch = Array(cards[offset..<min(offset + batchSize, cards.count)])
+                let batchResults: [(Card, Double?)] = await withTaskGroup(of: (Card, Double?).self) { group in
+                    for card in batch {
+                        group.addTask {
+                            if Task.isCancelled { return (card, nil) }
+                            let entry = await services.pricing.pricing(for: card)
+                            return (card, browseMarketPriceUSD(for: entry))
+                        }
                     }
+                    var r: [(Card, Double?)] = []
+                    for await result in group { r.append(result) }
+                    return r
                 }
-                var results: [(card: Card, price: Double?)] = []
-                results.reserveCapacity(cards.count)
-                for await result in group {
-                    results.append(result)
-                    if Task.isCancelled {
-                        group.cancelAll()
-                        break
-                    }
-                }
-                return results
+                pricedCards.append(contentsOf: batchResults)
+                offset += batchSize
             }
             return pricedCards.sorted { lhs, rhs in
                 switch (lhs.price, rhs.price) {
@@ -4320,19 +4325,25 @@ struct SetCardsView: View {
         }
 
         if !misses.isEmpty {
-            await withTaskGroup(of: (String, Double?).self) { group in
-                for card in misses {
-                    group.addTask {
-                        guard let entry = await services.pricing.pricing(for: card),
-                              let usd = browseMarketPriceUSD(for: entry) else {
-                            return (card.masterCardId, nil)
+            var offset = 0
+            while offset < misses.count {
+                guard !Task.isCancelled else { break }
+                let batch = Array(misses[offset..<min(offset + 8, misses.count)])
+                await withTaskGroup(of: (String, Double?).self) { group in
+                    for card in batch {
+                        group.addTask {
+                            guard let entry = await services.pricing.pricing(for: card),
+                                  let usd = browseMarketPriceUSD(for: entry) else {
+                                return (card.masterCardId, nil)
+                            }
+                            return (card.masterCardId, usd)
                         }
-                        return (card.masterCardId, usd)
+                    }
+                    for await (id, usd) in group {
+                        if let usd { next[id] = usd }
                     }
                 }
-                for await (id, usd) in group {
-                    if let usd { next[id] = usd }
-                }
+                offset += 8
             }
         }
 
@@ -4611,19 +4622,25 @@ struct DexCardsView: View {
         }
 
         if !misses.isEmpty {
-            await withTaskGroup(of: (String, Double?).self) { group in
-                for card in misses {
-                    group.addTask {
-                        guard let entry = await services.pricing.pricing(for: card),
-                              let usd = browseMarketPriceUSD(for: entry) else {
-                            return (card.masterCardId, nil)
+            var offset = 0
+            while offset < misses.count {
+                guard !Task.isCancelled else { break }
+                let batch = Array(misses[offset..<min(offset + 8, misses.count)])
+                await withTaskGroup(of: (String, Double?).self) { group in
+                    for card in batch {
+                        group.addTask {
+                            guard let entry = await services.pricing.pricing(for: card),
+                                  let usd = browseMarketPriceUSD(for: entry) else {
+                                return (card.masterCardId, nil)
+                            }
+                            return (card.masterCardId, usd)
                         }
-                        return (card.masterCardId, usd)
+                    }
+                    for await (id, usd) in group {
+                        if let usd { next[id] = usd }
                     }
                 }
-                for await (id, usd) in group {
-                    if let usd { next[id] = usd }
-                }
+                offset += 8
             }
         }
 

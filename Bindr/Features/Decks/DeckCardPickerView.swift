@@ -1898,16 +1898,18 @@ private struct DeckPickerCatalogCardsView: View {
     @State private var debouncedQuery = ""
     @State private var displayedEntries: [DeckPickerEntry] = []
     @State private var displayedFilteredCards: [Card] = []
+    @State private var ownedCardIDs: Set<String> = []
+    @State private var deckCardIDs: Set<String> = []
+    @State private var setNameByCode: [String: String] = [:]
 
-    private var ownedCardIDs: Set<String> { Set(collectionItems.map(\.cardID)) }
-    private var deckCardIDs: Set<String> { Set(deck.cardList.map(\.cardID)) }
-
-    private var setNameByCode: [String: String] {
-        var result: [String: String] = [:]
-        for set in services.cardData.sets where result[set.setCode] == nil {
-            result[set.setCode] = set.name
+    private func rebuildCachedLookups() {
+        ownedCardIDs = Set(collectionItems.map(\.cardID))
+        deckCardIDs = Set(deck.cardList.map(\.cardID))
+        var names: [String: String] = [:]
+        for set in services.cardData.sets where names[set.setCode] == nil {
+            names[set.setCode] = set.name
         }
-        return result
+        setNameByCode = names
     }
 
     @MainActor
@@ -2000,9 +2002,11 @@ private struct DeckPickerCatalogCardsView: View {
             rebuildDisplayedContent()
         }
         .onChange(of: collectionItems) { _, _ in
+            rebuildCachedLookups()
             rebuildDisplayedContent()
         }
         .task {
+            rebuildCachedLookups()
             isLoading = true
             cards = await loadCards()
             isLoading = false

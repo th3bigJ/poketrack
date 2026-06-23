@@ -295,6 +295,14 @@ struct LibraryStorageSettingsPage: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @State private var inventory = LibraryInventoryCounts()
+    @State private var downloadStatus: CatalogDownloadStatus? = nil
+    @State private var isLoadingDownloadStatus = false
+
+    private static let relativeFormatter: RelativeDateTimeFormatter = {
+        let f = RelativeDateTimeFormatter()
+        f.unitsStyle = .abbreviated
+        return f
+    }()
 
     var body: some View {
         List {
@@ -317,16 +325,53 @@ struct LibraryStorageSettingsPage: View {
             } header: {
                 Text("On this device")
             }
+
+            if let status = downloadStatus {
+                ForEach(status.sections, id: \.section.rawValue) { pair in
+                    Section {
+                        ForEach(pair.entries) { entry in
+                            downloadStatusRow(entry)
+                        }
+                    } header: {
+                        Text(pair.section.rawValue)
+                    }
+                }
+                Section {} footer: {
+                    Text("Checked \(Self.relativeFormatter.localizedString(for: status.queriedAt, relativeTo: Date()))")
+                        .foregroundStyle(.tertiary)
+                }
+            } else {
+                Section {
+                    if isLoadingDownloadStatus {
+                        HStack {
+                            ProgressView()
+                            Text("Checking downloads…")
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                } header: {
+                    Text("Data downloads")
+                }
+            }
         }
         .listStyle(.insetGrouped)
         .navigationTitle("Library Storage")
         .navigationBarTitleDisplayMode(.large)
-        .task { reloadInventory() }
+        .task {
+            reloadInventory()
+            await reloadDownloadStatus()
+        }
         .onChange(of: services.collectionInventoryRevision) { _, _ in reloadInventory() }
     }
 
     private func reloadInventory() {
         inventory = services.libraryInventoryCounts(modelContext: modelContext)
+    }
+
+    private func reloadDownloadStatus() async {
+        isLoadingDownloadStatus = true
+        downloadStatus = await services.cardData.fetchDownloadStatus()
+        isLoadingDownloadStatus = false
     }
 
     private func inventoryRow(_ title: String, count: Int, systemImage: String) -> some View {
@@ -336,6 +381,35 @@ struct LibraryStorageSettingsPage: View {
                 .monospacedDigit()
         } label: {
             Label(title, systemImage: systemImage)
+        }
+    }
+
+    @ViewBuilder
+    private func downloadStatusRow(_ entry: CatalogDownloadStatusEntry) -> some View {
+        LabeledContent {
+            VStack(alignment: .trailing, spacing: 2) {
+                if let date = entry.lastDownloaded {
+                    Text(Self.relativeFormatter.localizedString(for: date, relativeTo: Date()))
+                        .foregroundStyle(entry.isStale ? .orange : .secondary)
+                        .font(.subheadline)
+                } else {
+                    Text("Never")
+                        .foregroundStyle(.red)
+                        .font(.subheadline)
+                }
+                if let detail = entry.detail {
+                    Text(detail)
+                        .foregroundStyle(.tertiary)
+                        .font(.caption)
+                }
+            }
+        } label: {
+            Label {
+                Text(entry.title)
+            } icon: {
+                Image(systemName: entry.systemImage)
+                    .foregroundStyle(entry.isStale ? .orange : (entry.lastDownloaded == nil ? .red : .secondary))
+            }
         }
     }
 }

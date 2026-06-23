@@ -102,6 +102,17 @@ struct PriceDataPoint: Identifiable, Sendable {
     let price: Double
 }
 
+extension Array where Element == PriceDataPoint {
+    /// Replaces or appends today's UTC daily bucket so the chart end matches the live market headline.
+    func pinningTodayPrice(_ todayUSD: Double?) -> [PriceDataPoint] {
+        guard let todayUSD, todayUSD > 0 else { return self }
+        let todayKey = BucketDateMath.todayUTCKey()
+        var points = filter { $0.label != todayKey }
+        points.append(PriceDataPoint(id: todayKey, label: todayKey, price: todayUSD))
+        return points.sorted { $0.label < $1.label }
+    }
+}
+
 /// Decoded from `pricing/price-history/{setCode}.json`.
 /// Structure: `{ cardKey: { variant: { grade: { daily, weekly, monthly } } } }`
 struct CardPriceHistory {
