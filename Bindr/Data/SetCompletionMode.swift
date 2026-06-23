@@ -1,7 +1,7 @@
 import Foundation
 
 /// How set / Pokédex completion is measured in Browse.
-enum SetCompletionMode: String, CaseIterable, Equatable, Sendable {
+enum SetCompletionMode: String, CaseIterable, Equatable, Sendable, Codable {
     case full
     case master
     case grandMaster

@@ -157,7 +157,7 @@ struct FriendsCollectionView: View {
     private var cardGrid: some View {
         LazyVStack(spacing: 0) {
             EagerVGrid(items: Array(displayedCards.enumerated().map { IndexedCard(index: $0, card: $1) }),
-                       columns: safeColumnCount, spacing: 12) { indexed in
+                       columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { indexed in
                 cardCell(for: indexed.card, at: indexed.index)
                     .onAppear {
                         ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: indexed.index + 1)
@@ -165,7 +165,7 @@ struct FriendsCollectionView: View {
                         Task { await loadMoreIfNeeded() }
                     }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, BindrSpacing.cardGridScreenInset)
             .padding(.bottom, 8)
 
             if isLoadingMore {
@@ -189,6 +189,7 @@ struct FriendsCollectionView: View {
                 card: card,
                 services: services,
                 colorScheme: colorScheme,
+                accentColor: services.theme.accentColor,
                 gridOptions: gridOptions,
                 setName: setNameByCode[card.setCode],
                 ownedCountBadge: entry?.quantity,

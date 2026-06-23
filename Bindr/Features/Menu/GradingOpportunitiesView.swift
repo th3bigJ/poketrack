@@ -160,7 +160,7 @@ struct GradingOpportunitiesView: View {
                     .frame(minHeight: 280)
                     .padding(.horizontal, 16)
                 } else {
-                    EagerVGrid(items: displayedOpportunities, columns: safeColumnCount, spacing: 12) { item in
+                    EagerVGrid(items: displayedOpportunities, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { item in
                         Button {
                             presentCard(item.card, displayedCards)
                         } label: {
@@ -168,6 +168,7 @@ struct GradingOpportunitiesView: View {
                                 card: item.card,
                                 services: services,
                                 colorScheme: colorScheme,
+                                accentColor: services.theme.accentColor,
                                 gridOptions: gradingGridOptions,
                                 setName: setName(for: item.card),
                                 postPriceFootnote: footnote(for: item),
@@ -177,7 +178,7 @@ struct GradingOpportunitiesView: View {
                         }
                         .buttonStyle(CardCellButtonStyle())
                     }
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                     .padding(.bottom, 8)
                 }
             }

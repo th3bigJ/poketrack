@@ -65,6 +65,10 @@ struct DashboardView: View {
     @State private var selectedCardForDetail: Card? = nil
     @State private var selectedSealedProductForDetail: SealedProduct? = nil
     @State private var actionableTrades: [(id: UUID, status: TradeStatus, updatedAt: Date?)] = []
+    @State private var progressTracker = DashboardProgressTrackerStore.load()
+    @State private var progressSnapshots: [DashboardProgressSnapshot] = []
+    @State private var isLoadingProgressSnapshots = false
+    @State private var showProgressTrackerSheet = false
 
     // Cached chart data — updated only when chartRefreshID changes so body re-evaluations
     // from unrelated @State writes don't rebuild snapshot arrays.
@@ -602,6 +606,39 @@ struct DashboardView: View {
         .sheet(item: $editingRecentLedgerLine) { line in
             AddManualActivityView(ledgerLineToEdit: line)
         }
+        .sheet(isPresented: $showProgressTrackerSheet) {
+            DashboardProgressTrackerSheet { target in
+                progressTracker.add(target)
+                Task { await refreshProgressSnapshots() }
+            }
+            .environment(services)
+            .bindrTheme(accent: services.theme.accentColor)
+        }
+        .task(id: progressSnapshotTaskKey) {
+            await refreshProgressSnapshots()
+        }
+    }
+
+    private var progressSnapshotTaskKey: String {
+        let targetKey = progressTracker.targets
+            .map { "\($0.id.uuidString)|\($0.completionMode.rawValue)" }
+            .joined(separator: ";")
+        return "\(targetKey)|\(collectionItems.count)|\(dashboardDataRevision)"
+    }
+
+    @MainActor
+    private func refreshProgressSnapshots() async {
+        guard !progressTracker.targets.isEmpty else {
+            progressSnapshots = []
+            return
+        }
+        isLoadingProgressSnapshots = true
+        defer { isLoadingProgressSnapshots = false }
+        progressSnapshots = await DashboardProgressEngine.snapshots(
+            for: progressTracker.targets,
+            collectionItems: collectionItems,
+            services: services
+        )
     }
 
     private var dashboardPageOne: some View {
@@ -620,6 +657,18 @@ struct DashboardView: View {
 
             if let trend = activeMarketTrend {
                 marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
+            }
+
+            if !progressTracker.targets.isEmpty {
+                Rectangle()
+                    .fill(dashboardDividerColor)
+                    .frame(height: 1)
+                    .padding(.top, 8)
+
+                progressTrackingSection
+            } else {
+                progressTrackingAddButton
+                    .padding(.top, 12)
             }
 
             Spacer(minLength: 0)
@@ -1019,6 +1068,143 @@ struct DashboardView: View {
 
     private func formatCollectionCount(_ count: Int) -> String {
         Self.collectionCountFormatter.string(from: NSNumber(value: count)) ?? "\(count)"
+    }
+
+    private var progressTrackingSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("TRACK PROGRESS")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(dashboardSecondaryText)
+                    .tracking(0.6)
+
+                Spacer(minLength: 8)
+
+                Button {
+                    Haptics.lightImpact()
+                    showProgressTrackerSheet = true
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundStyle(services.theme.accentColor)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Track another set or Pokémon")
+            }
+
+            if isLoadingProgressSnapshots && progressSnapshots.isEmpty {
+                ProgressView()
+                    .tint(services.theme.accentColor)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            } else {
+                VStack(spacing: 14) {
+                    ForEach(progressSnapshots) { snapshot in
+                        progressTrackingRow(snapshot)
+                    }
+                }
+            }
+        }
+    }
+
+    private var progressTrackingAddButton: some View {
+        Button {
+            Haptics.lightImpact()
+            showProgressTrackerSheet = true
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "chart.line.uptrend.xyaxis")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(services.theme.accentColor)
+                    .frame(width: 28)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Track Set / Pokémon")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(dashboardPrimaryText)
+                    Text("Follow full, master, or grand master completion")
+                        .font(.caption)
+                        .foregroundStyle(dashboardSecondaryText)
+                }
+
+                Spacer(minLength: 0)
+
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(dashboardSecondaryText.opacity(0.7))
+            }
+            .padding(.vertical, 6)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(DashboardPressStyle())
+    }
+
+    private func progressTrackingRow(_ snapshot: DashboardProgressSnapshot) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top, spacing: 10) {
+                progressTrackingArtwork(snapshot.artworkURL)
+                    .frame(width: 34, height: 34)
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(snapshot.title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(dashboardPrimaryText)
+                        .lineLimit(2)
+
+                    Text("\(snapshot.modeLabel) · \(snapshot.collected) / \(snapshot.total)")
+                        .font(.caption)
+                        .foregroundStyle(dashboardSecondaryText)
+                }
+
+                Spacer(minLength: 0)
+
+                Text("\(Int(snapshot.progress * 100))%")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(services.theme.accentColor)
+            }
+
+            GeometryReader { geo in
+                ZStack(alignment: .leading) {
+                    Capsule()
+                        .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
+                    Capsule()
+                        .fill(
+                            LinearGradient(
+                                colors: [services.theme.accentColor, services.theme.accentColor.opacity(0.72)],
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .frame(width: max(geo.size.width * snapshot.progress, snapshot.progress > 0 ? 6 : 0))
+                }
+            }
+            .frame(height: 6)
+        }
+        .contextMenu {
+            Button(role: .destructive) {
+                progressTracker.remove(id: snapshot.targetID)
+                progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+            } label: {
+                Label("Stop Tracking", systemImage: "xmark.circle")
+            }
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("\(snapshot.title), \(snapshot.modeLabel), \(snapshot.collected) of \(snapshot.total) collected")
+    }
+
+    @ViewBuilder
+    private func progressTrackingArtwork(_ url: URL?) -> some View {
+        if let url {
+            CachedAsyncImage(url: url, targetSize: CGSize(width: 68, height: 68)) { image in
+                image.resizable().scaledToFit()
+            } placeholder: {
+                Color.primary.opacity(0.06)
+            }
+        } else {
+            Image(systemName: "square.stack.3d.up.fill")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(dashboardSecondaryText)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
     }
 
     private var upcomingReleasesSection: some View {

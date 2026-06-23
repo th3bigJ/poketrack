@@ -15,8 +15,9 @@ extension View {
         }
     }
 
+    /// Containerless — content sits directly on the page background.
     func glassCardStyle(cornerRadius: CGFloat = 16, interactive: Bool = true) -> some View {
-        self.modifier(GlassCardModifier(cornerRadius: cornerRadius, interactive: interactive))
+        self
     }
 
     /// Secondary inset surface inside a glass card — fact rows, attack blocks, list rows.
@@ -75,22 +76,27 @@ extension View {
         )
     }
 
-    /// Unfilled iOS 26 Liquid Glass surface for content nested inside a larger glass panel.
+    /// Containerless — no glass panel wrapper.
     func clearGlassCardStyle(cornerRadius: CGFloat = 16, interactive: Bool = true) -> some View {
-        modifier(ClearGlassCardModifier(cornerRadius: cornerRadius, interactive: interactive))
+        self
     }
 
-    /// Full regular Liquid Glass panel without an opaque or tinted base fill.
+    /// Containerless grid tile — card art and labels on the page background.
+    func gridTileGlassStyle(cornerRadius: CGFloat, colorScheme: ColorScheme) -> some View {
+        self
+    }
+
+    /// Containerless — no glass panel wrapper.
     func nativeGlassPanelStyle(cornerRadius: CGFloat = 24) -> some View {
-        modifier(NativeGlassPanelModifier(cornerRadius: cornerRadius))
+        self
     }
 
-    /// Edge-to-edge regular Liquid Glass clipped to the app window's display shape.
+    /// Containerless — no glass panel wrapper.
     func nativeGlassFullscreenStyle() -> some View {
-        modifier(NativeGlassFullscreenModifier())
+        self
     }
 
-    /// Social feed post container — content sits directly on the page background.
+    /// Containerless feed post — no card wrapper around each row.
     func feedPostCardStyle(cornerRadius: CGFloat = 20) -> some View {
         self
     }
@@ -130,15 +136,6 @@ extension View {
             }
         }
     }
-}
-
-// Shared flag so ALL GlassCardModifier instances flip together in one render pass,
-// avoiding N separate re-renders (one per card) each costing another glass-init hit.
-@Observable
-@MainActor
-final class GlassReadySignal {
-    static let shared = GlassReadySignal()
-    var isReady = false
 }
 
 enum SearchFieldChromeGlass {
@@ -236,67 +233,6 @@ struct SearchBarCircleChromeModifier: ViewModifier {
     }
 }
 
-private struct ClearGlassCardModifier: ViewModifier {
-    @Environment(\.colorScheme) private var colorScheme
-    let cornerRadius: CGFloat
-    let interactive: Bool
-
-    func body(content: Content) -> some View {
-        let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-        Group {
-            if #available(iOS 26.0, *) {
-                content
-                    .glassEffect(
-                        interactive ? Glass.clear.tint(nil).interactive() : Glass.clear.tint(nil),
-                        in: shape
-                    )
-                    .overlay {
-                        shape.stroke(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
-                    }
-            } else {
-                content
-                    .background(.thinMaterial, in: shape)
-                    .overlay {
-                        shape.stroke(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
-                    }
-            }
-        }
-    }
-}
-
-private struct NativeGlassPanelModifier: ViewModifier {
-    let cornerRadius: CGFloat
-
-    func body(content: Content) -> some View {
-        let shape = RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-        Group {
-            if #available(iOS 26.0, *) {
-                GlassEffectContainer(spacing: 12) {
-                    content
-                        .glassEffect(Glass.regular.tint(nil), in: shape)
-                }
-            } else {
-                content.background(.thinMaterial, in: shape)
-            }
-        }
-    }
-}
-
-private struct NativeGlassFullscreenModifier: ViewModifier {
-    func body(content: Content) -> some View {
-        Group {
-            if #available(iOS 26.0, *) {
-                GlassEffectContainer(spacing: 12) {
-                    content
-                        .glassEffect(Glass.regular.tint(nil), in: ContainerRelativeShape())
-                }
-            } else {
-                content.background(.thinMaterial, in: ContainerRelativeShape())
-            }
-        }
-    }
-}
-
 enum BindrGlassStyle {
     static func primarySurfaceFill(_ colorScheme: ColorScheme) -> Color {
         .clear
@@ -372,25 +308,6 @@ struct GlassPillTrackModifier: ViewModifier {
             .overlay {
                 Capsule(style: .continuous)
                     .stroke(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
-            }
-    }
-}
-
-struct GlassCardModifier: ViewModifier {
-    @Environment(\.colorScheme) var colorScheme
-    let cornerRadius: CGFloat
-    let interactive: Bool
-
-    func body(content: Content) -> some View {
-        let glassReady = GlassReadySignal.shared.isReady
-        return content
-            .background {
-                if #available(iOS 26.0, *), glassReady {
-                    let base = Glass.regular.tint(nil)
-                    RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                        .fill(Color.clear)
-                        .glassEffect(interactive ? base.interactive() : base, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
-                }
             }
     }
 }

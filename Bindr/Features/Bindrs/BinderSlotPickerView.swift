@@ -257,7 +257,7 @@ struct BinderSlotPickerView: View {
                                     .frame(maxWidth: .infinity, minHeight: 280)
                                     .padding(.top, 24)
                             } else {
-                                EagerVGrid(items: visibleEntries, columns: gridOptions.columnCount, spacing: 12) { entry in
+                                EagerVGrid(items: visibleEntries, columns: gridOptions.columnCount, spacing: BindrSpacing.cardGrid) { entry in
                                     Button {
                                         handleEntryTap(entry)
                                     } label: {
@@ -1210,6 +1210,7 @@ private struct BinderPickerCardCell: View {
                 card: entry.card,
                 services: services,
                 colorScheme: colorScheme,
+                accentColor: services.theme.accentColor,
                 gridOptions: gridOptions,
                 setName: setName,
                 footnote: footnote

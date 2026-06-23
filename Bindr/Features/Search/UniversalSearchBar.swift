@@ -19,7 +19,7 @@ private func hapticFilterThen(_ action: @escaping () -> Void) -> () -> Void {
 /// Pill search field with trailing filter while collapsed. A back
 /// chevron only appears while the search overlay is open; there is no burger
 /// menu — the overflow menu lives in the bottom nav's **More** tab.
-/// On supported OS versions uses **Liquid Glass** ([`glassEffect`](https://developer.apple.com/documentation/swiftui/view/glasseffect(_:in:)), [`GlassEffectContainer`](https://developer.apple.com/documentation/swiftui/glasseffectcontainer)); otherwise falls back to system materials.
+/// On supported OS versions uses **Liquid Glass** ([`glassEffect`](https://developer.apple.com/documentation/swiftui/view/glasseffect(_:in:))); otherwise falls back to system materials.
 struct UniversalSearchBar: View {
     @Binding var text: String
     @FocusState.Binding var isFocused: Bool
@@ -31,9 +31,6 @@ struct UniversalSearchBar: View {
     var isFilterActive: Bool = false
     var filterMenuContent: AnyView? = nil
     var gridMenuContent: AnyView? = nil
-    /// When `true`, skips the local `GlassEffectContainer` wrapper because an
-    /// ancestor already owns glass morphing (e.g. a page header).
-    var usesNativeGlassChrome: Bool = false
     /// Search field capsule. `true` = Liquid Glass in all colour schemes;
     /// `false` = solid white fill in light mode (matches collapsed root bar).
     var searchFieldUseGlass: Bool = false
@@ -91,15 +88,7 @@ struct UniversalSearchBar: View {
 
     @available(iOS 26.0, *)
     private var liquidGlassBar: some View {
-        Group {
-            if usesNativeGlassChrome {
-                liquidGlassBarContent
-            } else {
-                GlassEffectContainer(spacing: 10) {
-                    liquidGlassBarContent
-                }
-            }
-        }
+        liquidGlassBarContent
     }
 
     @available(iOS 26.0, *)

@@ -369,10 +369,6 @@ struct BindrApp: App {
                         }
                 }
             }
-            .task {
-                try? await Task.sleep(for: .milliseconds(300))
-                GlassReadySignal.shared.isReady = true
-            }
         }
     }
 }

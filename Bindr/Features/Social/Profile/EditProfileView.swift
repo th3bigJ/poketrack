@@ -724,6 +724,7 @@ private struct FavoriteCardPickerView: View {
                                     card: card,
                                     services: services,
                                     colorScheme: colorScheme,
+                                    accentColor: services.theme.accentColor,
                                     gridOptions: BrowseGridOptions()
                                 )
                                 .padding(6)

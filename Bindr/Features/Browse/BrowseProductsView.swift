@@ -558,6 +558,7 @@ struct SealedProductGridCell: View {
                 .frame(maxWidth: .infinity)
             }
         }
+        .frame(maxWidth: .infinity)
         .contentShape(Rectangle())
     }
 }

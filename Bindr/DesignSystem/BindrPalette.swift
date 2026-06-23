@@ -53,4 +53,19 @@ enum BindrPalette {
 
     /// Deck badge + card-count chip in the social feed.
     static let feedDeckPurple = Color(hex: "8B5CF6")
+
+    /// Pull-type label on feed posts (bright mint green).
+    static let feedPullGreen = Color(hex: "4ADE80")
+
+    /// Binder-type label on feed posts (warm orange).
+    static let feedBinderOrange = Color(hex: "FB923C")
+
+    /// Hashtag text on feed posts.
+    static let feedHashtagPurple = Color(hex: "A388EE")
+
+    /// Username / timestamp meta line on feed posts (dark mode).
+    static let feedMetaText = Color(hex: "9DA1C2")
+
+    /// Hairline divider between flat feed rows (dark mode).
+    static let feedRowDivider = Color(hex: "1E1E3A")
 }

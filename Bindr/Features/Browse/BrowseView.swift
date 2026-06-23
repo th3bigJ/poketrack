@@ -68,8 +68,9 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
 /// item-update passes or lazy-container sizing. Plain stored lets are safe everywhere.
 struct CardGridCell: View {
     let card: Card
-    let services: AppServices
+    @ObservationIgnored private let services: AppServices
     let colorScheme: ColorScheme
+    let accentColor: Color
     var gridOptions = BrowseGridOptions()
     var setName: String? = nil
     var isOwned = false
@@ -84,14 +85,49 @@ struct CardGridCell: View {
     var overridePrice: Double? = nil
     var gradeLabel: String? = nil
 
-    private var resolvedServices: AppServices { services }
+    init(
+        card: Card,
+        services: AppServices,
+        colorScheme: ColorScheme,
+        accentColor: Color,
+        gridOptions: BrowseGridOptions = BrowseGridOptions(),
+        setName: String? = nil,
+        isOwned: Bool = false,
+        isWishlisted: Bool = false,
+        ownedCountBadge: Int? = nil,
+        alwaysShowOwnedCountBadge: Bool = false,
+        variantLabel: String? = nil,
+        variantPricingKey: String? = nil,
+        footnote: String? = nil,
+        footnoteLeadingAvatarURL: URL? = nil,
+        postPriceFootnote: String? = nil,
+        overridePrice: Double? = nil,
+        gradeLabel: String? = nil
+    ) {
+        self.card = card
+        self.services = services
+        self.colorScheme = colorScheme
+        self.accentColor = accentColor
+        self.gridOptions = gridOptions
+        self.setName = setName
+        self.isOwned = isOwned
+        self.isWishlisted = isWishlisted
+        self.ownedCountBadge = ownedCountBadge
+        self.alwaysShowOwnedCountBadge = alwaysShowOwnedCountBadge
+        self.variantLabel = variantLabel
+        self.variantPricingKey = variantPricingKey
+        self.footnote = footnote
+        self.footnoteLeadingAvatarURL = footnoteLeadingAvatarURL
+        self.postPriceFootnote = postPriceFootnote
+        self.overridePrice = overridePrice
+        self.gradeLabel = gradeLabel
+    }
+
     private var resolvedColorScheme: ColorScheme { colorScheme }
 
     private var showsFooter: Bool {
-        (gridOptions.showSetName && !(setName?.isEmpty ?? true))
-            || (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
+        (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
             || gridOptions.showSetID
-            || gridOptions.showPricing
             || !(postPriceFootnote?.isEmpty ?? true)
     }
 
@@ -111,7 +147,7 @@ struct CardGridCell: View {
     }
 
     private var cardBorderColor: Color {
-        if isOwned { return resolvedServices.theme.accentColor }
+        if isOwned { return accentColor }
         if isWishlisted { return wishlistBorderColor }
         return .clear
     }
@@ -172,7 +208,7 @@ struct CardGridCell: View {
             cardBorderWidth: cardBorderWidth,
             cardImageCornerRadius: cardImageCornerRadius,
             trailingCardID: trailingCardID,
-            accentColor: resolvedServices.theme.accentColor,
+            accentColor: accentColor,
             colorScheme: resolvedColorScheme,
             imageURL: resolvedImageURL,
             imageLocalURL: imageLocalURL,
@@ -242,30 +278,13 @@ private struct CardGridCellLayout: View {
         colorScheme == .dark ? Color.white.opacity(0.45) : Color.black.opacity(0.38)
     }
 
+    private var showsTopLeadingOverlay: Bool {
+        gridOptions.showCardName
+            || (gridOptions.showSetName && !(setName?.isEmpty ?? true))
+    }
+
     var body: some View {
         VStack(spacing: 0) {
-            if gridOptions.showCardName {
-                VStack(spacing: 1) {
-                    Text(cardName)
-                        .font(.caption2.weight(.semibold))
-                        .lineLimit(1)
-                        .truncationMode(.tail)
-                        .multilineTextAlignment(.center)
-                        .foregroundStyle(primaryTextColor)
-                    if let variantLabel, !variantLabel.isEmpty {
-                        Text(variantLabel)
-                            .font(.system(size: 9, weight: .medium))
-                            .lineLimit(1)
-                            .truncationMode(.tail)
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(secondaryTextColor)
-                    }
-                }
-                .padding(.vertical, 7)
-                .padding(.horizontal, 8)
-                .frame(maxWidth: .infinity)
-            }
-
             BrowseCardThumbnailView(
                 imageURL: imageURL,
                 imageLocalURL: imageLocalURL,
@@ -284,27 +303,34 @@ private struct CardGridCellLayout: View {
                         .stroke(cardBorderColor, lineWidth: cardBorderWidth)
                 }
             }
+            .overlay(alignment: .topLeading) {
+                if showsTopLeadingOverlay {
+                    topLeadingOverlay
+                }
+            }
+            .overlay(alignment: .bottomLeading) {
+                if gridOptions.showPricing {
+                    BrowseGridPriceText(
+                        services: services,
+                        accentColor: accentColor,
+                        card: card,
+                        overridePrice: overridePrice,
+                        gradeLabel: gradeLabel,
+                        usesAccentColor: true,
+                        variantKey: variantPricingKey,
+                        alignment: .leading
+                    )
+                    .cardGridImageOverlayStyle()
+                }
+            }
 
             if showsFooter {
                 VStack(spacing: 3) {
-                    if gridOptions.showSetName, let setName, !setName.isEmpty {
-                        footerText(setName, color: secondaryTextColor)
-                    }
                     if gridOptions.showOwned, let footnote, !footnote.isEmpty {
                         footnoteRow(footnote)
                     }
                     if gridOptions.showSetID {
                         footerText(trailingCardID, color: tertiaryTextColor)
-                    }
-                    if gridOptions.showPricing {
-                        BrowseGridPriceText(
-                            services: services,
-                            card: card,
-                            overridePrice: overridePrice,
-                            gradeLabel: gradeLabel,
-                            usesAccentColor: true,
-                            variantKey: variantPricingKey
-                        )
                     }
                     if let postPriceFootnote, !postPriceFootnote.isEmpty {
                         footerText(postPriceFootnote, color: secondaryTextColor)
@@ -315,6 +341,37 @@ private struct CardGridCellLayout: View {
                 .frame(maxWidth: .infinity)
             }
         }
+        .frame(maxWidth: .infinity)
+    }
+
+    @ViewBuilder
+    private var topLeadingOverlay: some View {
+        VStack(alignment: .leading, spacing: 1) {
+            if gridOptions.showCardName {
+                Text(cardName)
+                    .font(.caption2.weight(.semibold))
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .foregroundStyle(primaryTextColor)
+                if let variantLabel, !variantLabel.isEmpty {
+                    Text(variantLabel)
+                        .font(.system(size: 9, weight: .medium))
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+                        .foregroundStyle(secondaryTextColor)
+                }
+            }
+            if gridOptions.showSetName, let setName, !setName.isEmpty {
+                Text(setName)
+                    .font(.caption2)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .foregroundStyle(secondaryTextColor)
+            }
+        }
+        .multilineTextAlignment(.leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .cardGridImageOverlayStyle()
     }
 
     private func footerText(_ text: String, color: Color) -> some View {
@@ -342,6 +399,25 @@ private struct CardGridCellLayout: View {
         } else {
             footerText(text, color: secondaryTextColor)
         }
+    }
+}
+
+private struct CardGridImageOverlayStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .padding(.horizontal, 5)
+            .padding(.vertical, 3)
+            .background {
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                    .fill(.ultraThinMaterial)
+            }
+            .padding(BindrSpacing.xs)
+    }
+}
+
+private extension View {
+    func cardGridImageOverlayStyle() -> some View {
+        modifier(CardGridImageOverlayStyle())
     }
 }
 
@@ -417,73 +493,28 @@ struct MasterSetVariantRow: Identifiable {
     let variant: String
 }
 
-/// Multi-column card grid with lazy row loading.
+/// Multi-column card grid with lazy cell loading.
 ///
-/// Uses `LazyVStack` so only visible rows are built — critical for collection/browse
-/// grids that can hold thousands of cards. Earlier iOS 26 crashes during
-/// `measureEstimates` were caused by `@Environment` reads inside `CardGridCell`'s
-/// subtree, not by lazy layout itself. Cells now receive plain stored values only.
+/// Uses native `LazyVGrid` so only visible cells are built. Earlier iOS 26 crashes during
+/// `measureEstimates` were caused by `@Environment` / `@Observable` reads inside grid cells
+/// and by hand-rolled `LazyVStack` row measurement — cells now receive plain stored values only.
 struct EagerVGrid<Item: Identifiable, Cell: View>: View {
     let items: [Item]
     let columns: Int
     let spacing: CGFloat
     @ViewBuilder let cell: (Item) -> Cell
 
-    private struct RowRange: Identifiable {
-        let id: String
-        let startIndex: Int
-        let endIndex: Int
-    }
-
-    @State private var cachedRows: [RowRange] = []
-    @State private var cachedCount: Int = -1
-    @State private var cachedColumns: Int = -1
-
-    private func buildRows() -> [RowRange] {
-        let cols = max(columns, 1)
-        return stride(from: 0, to: items.count, by: cols).map { rowStart in
-            let rowEnd = min(rowStart + cols, items.count)
-            return RowRange(id: "\(items[rowStart].id)|\(rowStart)", startIndex: rowStart, endIndex: rowEnd)
-        }
-    }
-
     var body: some View {
         let cols = max(columns, 1)
-        // Use cachedRows when available; fall back to building inline on first render.
-        let displayRows: [RowRange] = (cachedCount == items.count && cachedColumns == columns) ? cachedRows : buildRows()
-        LazyVStack(spacing: spacing) {
-            ForEach(displayRows) { row in
-                HStack(spacing: spacing) {
-                    ForEach(row.startIndex..<row.endIndex, id: \.self) { idx in
-                        cell(items[idx]).frame(maxWidth: .infinity)
-                    }
-                    if row.endIndex - row.startIndex < cols {
-                        ForEach(0..<(cols - (row.endIndex - row.startIndex)), id: \.self) { _ in
-                            Color.clear.frame(maxWidth: .infinity)
-                        }
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+        LazyVGrid(
+            columns: Array(repeating: GridItem(.flexible(), spacing: spacing), count: cols),
+            spacing: spacing
+        ) {
+            ForEach(items) { item in
+                cell(item)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .onAppear {
-            if cachedCount != items.count || cachedColumns != columns {
-                cachedRows = buildRows()
-                cachedCount = items.count
-                cachedColumns = columns
-            }
-        }
-        .onChange(of: items.count) { _, newCount in
-            cachedRows = buildRows()
-            cachedCount = newCount
-            cachedColumns = columns
-        }
-        .onChange(of: columns) { _, newCols in
-            cachedRows = buildRows()
-            cachedCount = items.count
-            cachedColumns = newCols
-        }
     }
 }
 
@@ -550,13 +581,46 @@ private struct BrowseCardGridButton: View {
     let isWishlisted: Bool
     let ownedCountBadge: Int?
     let isMultiSelectActive: Bool
-    let services: AppServices
+    @ObservationIgnored private let services: AppServices
+    let accentColor: Color
     let colorScheme: ColorScheme
     let browseFeedCards: [Card]
     let onPresentCard: (Card, [Card]) -> Void
     @Binding var multiSelectedCardIDs: Set<String>
     let onQuickAddRequested: (Card, CardContextAction) -> Void
     let onSelectMultipleRequested: (Card) -> Void
+
+    init(
+        row: BrowseCardRow,
+        gridOptions: BrowseGridOptions,
+        isOwned: Bool,
+        isWishlisted: Bool,
+        ownedCountBadge: Int?,
+        isMultiSelectActive: Bool,
+        services: AppServices,
+        accentColor: Color,
+        colorScheme: ColorScheme,
+        browseFeedCards: [Card],
+        onPresentCard: @escaping (Card, [Card]) -> Void,
+        multiSelectedCardIDs: Binding<Set<String>>,
+        onQuickAddRequested: @escaping (Card, CardContextAction) -> Void,
+        onSelectMultipleRequested: @escaping (Card) -> Void
+    ) {
+        self.row = row
+        self.gridOptions = gridOptions
+        self.isOwned = isOwned
+        self.isWishlisted = isWishlisted
+        self.ownedCountBadge = ownedCountBadge
+        self.isMultiSelectActive = isMultiSelectActive
+        self.services = services
+        self.accentColor = accentColor
+        self.colorScheme = colorScheme
+        self.browseFeedCards = browseFeedCards
+        self.onPresentCard = onPresentCard
+        self._multiSelectedCardIDs = multiSelectedCardIDs
+        self.onQuickAddRequested = onQuickAddRequested
+        self.onSelectMultipleRequested = onSelectMultipleRequested
+    }
 
     private var isSelected: Bool {
         multiSelectedCardIDs.contains(row.card.masterCardId)
@@ -579,6 +643,7 @@ private struct BrowseCardGridButton: View {
                 card: row.card,
                 services: services,
                 colorScheme: colorScheme,
+                accentColor: accentColor,
                 gridOptions: gridOptions,
                 setName: row.setName,
                 isOwned: isOwned,
@@ -1035,8 +1100,9 @@ struct BrowseView: View {
         let usesCatalogFeed = isUsingCatalogFeedSelection
         let ownedQuantities = ownedQuantityByCardID
         let wishlistedIDs = visibleWishlistedCardIDs
+        let accentColor = services.theme.accentColor
         VStack(spacing: 0) {
-            EagerVGrid(items: snapshot.rows, columns: safeColumnCount, spacing: 12) { row in
+            EagerVGrid(items: snapshot.rows, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { row in
                 BrowseCardGridButton(
                     row: row,
                     gridOptions: gridOptions,
@@ -1045,6 +1111,7 @@ struct BrowseView: View {
                     ownedCountBadge: ownedQuantities[row.card.masterCardId],
                     isMultiSelectActive: isMultiSelectActive,
                     services: services,
+                    accentColor: accentColor,
                     colorScheme: colorScheme,
                     browseFeedCards: snapshot.cards,
                     onPresentCard: presentCard,
@@ -1067,7 +1134,7 @@ struct BrowseView: View {
             }
         }
         .environment(\.browseFeedCards, snapshot.cards)
-        .padding(.horizontal, 16)
+        .padding(.horizontal, BindrSpacing.cardGridScreenInset)
         .padding(.bottom, isMultiSelectActive && !multiSelectedCardIDs.isEmpty ? 96 : 16)
         .onChange(of: snapshot.rows.count) { _, newValue in
             if newValue < lastAutoLoadRowCount {
@@ -1281,6 +1348,7 @@ struct BrowseView: View {
         }()
         let ownedQuantities = ownedQuantityByCardID
         let wishlistedIDs = visibleWishlistedCardIDs
+        let accentColor = services.theme.accentColor
         if inlineDetailLoading {
             ProgressView("Loading cards…")
                 .frame(maxWidth: .infinity, minHeight: 280)
@@ -1308,7 +1376,7 @@ struct BrowseView: View {
 
                 if useMasterGrid {
                     let masterGridPresentationCards = variantRows.map(\.card)
-                    EagerVGrid(items: variantRows, columns: safeColumnCount, spacing: 12) { row in
+                    EagerVGrid(items: variantRows, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { row in
                         let variantCompositeKey = "\(row.card.masterCardId)::\(row.variant)"
                         Button {
                             if let index = variantRows.firstIndex(where: { $0.id == row.id }) {
@@ -1321,6 +1389,7 @@ struct BrowseView: View {
                                 card: row.card,
                                 services: services,
                                 colorScheme: colorScheme,
+                                accentColor: accentColor,
                                 gridOptions: gridOptions,
                                 setName: cachedSetNameByCode[row.card.setCode],
                                 isOwned: variantOwnedKeys.contains(variantCompositeKey),
@@ -1332,10 +1401,10 @@ struct BrowseView: View {
                         }
                         .buttonStyle(CardCellButtonStyle())
                     }
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                     .padding(.bottom, 16)
                 } else {
-                    EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: 12) { card in
+                    EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { card in
                         let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
                         Button {
                             if isMultiSelectActive {
@@ -1348,6 +1417,7 @@ struct BrowseView: View {
                                 card: card,
                                 services: services,
                                 colorScheme: colorScheme,
+                                accentColor: accentColor,
                                 gridOptions: gridOptions,
                                 setName: cachedSetNameByCode[card.setCode],
                                 isOwned: ownedCardIDsCache.contains(card.masterCardId),
@@ -1381,7 +1451,7 @@ struct BrowseView: View {
                             ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                         }
                     }
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                     .padding(.bottom, isMultiSelectActive && !multiSelectedCardIDs.isEmpty ? 96 : 16)
                 }
             }
@@ -3384,7 +3454,7 @@ private struct BrowsePokemonTabContent: View {
                     .toggleStyle(.switch)
                     .padding(.horizontal, 16)
 
-                EagerVGrid(items: filteredPokemonRows, columns: pokemonColumnCount, spacing: 12) { item in
+                EagerVGrid(items: filteredPokemonRows, columns: pokemonColumnCount, spacing: BindrSpacing.cardGrid) { item in
                     Button {
                         onSelectRoute(.dex(dexId: item.nationalDexNumber, displayName: item.displayName))
                     } label: {
@@ -3509,45 +3579,57 @@ private struct BrowseGridCardCell: View {
     }
 
     var body: some View {
-        VStack(spacing: 4) {
-            CachedAsyncImage(
-                url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
-                targetSize: imageDecodeSize
-            ) { img in
-                img.resizable().scaledToFit()
-            } placeholder: {
-                Color.gray.opacity(0.12)
-                    .aspectRatio(5/7, contentMode: .fit)
+        CachedAsyncImage(
+            url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
+            targetSize: imageDecodeSize
+        ) { img in
+            img.resizable().scaledToFit()
+        } placeholder: {
+            Color.gray.opacity(0.12)
+                .aspectRatio(5/7, contentMode: .fit)
+        }
+        .frame(maxWidth: .infinity)
+        .aspectRatio(5/7, contentMode: .fit)
+        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        .overlay(alignment: .topLeading) {
+            if gridOptions.showCardName || (gridOptions.showSetName && !(setName?.isEmpty ?? true)) {
+                VStack(alignment: .leading, spacing: 1) {
+                    if gridOptions.showCardName {
+                        Text(card.cardName)
+                            .font(.caption2.weight(.semibold))
+                            .lineLimit(1)
+                            .foregroundStyle(.primary)
+                    }
+                    if gridOptions.showSetName, let setName, !setName.isEmpty {
+                        Text(setName)
+                            .font(.caption2)
+                            .lineLimit(1)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .cardGridImageOverlayStyle()
             }
-            .frame(maxWidth: .infinity)
-            .aspectRatio(5/7, contentMode: .fit)
-
-            if gridOptions.showCardName {
-                Text(card.cardName)
-                    .font(.caption2)
-                    .lineLimit(1)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.primary)
+        }
+        .overlay(alignment: .bottomLeading) {
+            if gridOptions.showPricing {
+                BrowseGridPriceText(
+                    services: services,
+                    accentColor: services.theme.accentColor,
+                    card: card,
+                    alignment: .leading
+                )
+                .cardGridImageOverlayStyle()
             }
-
-            if gridOptions.showSetName, let setName, !setName.isEmpty {
-                Text(setName)
-                    .font(.caption2)
-                    .lineLimit(1)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
-            }
-
+        }
+        .overlay(alignment: .bottom) {
             if gridOptions.showSetID {
                 Text(card.setCode)
                     .font(.caption2)
                     .lineLimit(1)
-                    .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
-            }
-
-            if gridOptions.showPricing {
-                BrowseGridPriceText(services: services, card: card)
+                    .cardGridImageOverlayStyle()
             }
         }
     }
@@ -3578,7 +3660,9 @@ private struct PokemonOwnedPokeBallBadge: View {
 }
 
 private struct BrowseGridPriceText: View {
-    let services: AppServices
+    @ObservationIgnored private let services: AppServices
+    let accentColor: Color
+    let taskKey: String
 
     let card: Card
     /// When set, displayed directly without a live lookup (used by collection grid for grade-correct pricing).
@@ -3589,9 +3673,47 @@ private struct BrowseGridPriceText: View {
     var usesAccentColor: Bool = false
     /// When set, show the price for this specific variant only (no range).
     var variantKey: String? = nil
+    var alignment: HorizontalAlignment = .center
 
     /// `nil` until the pricing task finishes; then a single price, a `low - high` range, or an em dash when unknown.
     @State private var priceLine: String?
+
+    init(
+        services: AppServices,
+        accentColor: Color,
+        card: Card,
+        overridePrice: Double? = nil,
+        gradeLabel: String? = nil,
+        usesAccentColor: Bool = false,
+        variantKey: String? = nil,
+        alignment: HorizontalAlignment = .center
+    ) {
+        self.services = services
+        self.accentColor = accentColor
+        self.card = card
+        self.overridePrice = overridePrice
+        self.gradeLabel = gradeLabel
+        self.usesAccentColor = usesAccentColor
+        self.variantKey = variantKey
+        self.alignment = alignment
+        self.taskKey = Self.makeTaskKey(
+            card: card,
+            overridePrice: overridePrice,
+            variantKey: variantKey,
+            currencyRawValue: services.priceDisplay.currency.rawValue,
+            usdToGbp: services.pricing.usdToGbp
+        )
+    }
+
+    private static func makeTaskKey(
+        card: Card,
+        overridePrice: Double?,
+        variantKey: String?,
+        currencyRawValue: String,
+        usdToGbp: Double
+    ) -> String {
+        "\(card.id)|\(overridePrice ?? -1)|\(variantKey ?? "")|\(currencyRawValue)|\(usdToGbp)"
+    }
 
     var body: some View {
         Group {
@@ -3603,14 +3725,14 @@ private struct BrowseGridPriceText: View {
                             .foregroundStyle(.white)
                             .padding(.horizontal, 3)
                             .padding(.vertical, 1.5)
-                            .background(services.theme.accentColor, in: RoundedRectangle(cornerRadius: 3))
+                            .background(accentColor, in: RoundedRectangle(cornerRadius: 3))
                     }
                     if usesAccentColor {
                         Text(priceLine)
                             .font(.caption2.weight(.semibold))
                             .lineLimit(1)
                             .minimumScaleFactor(0.7)
-                            .foregroundStyle(services.theme.accentColor)
+                            .foregroundStyle(accentColor)
                     } else {
                         Text(priceLine)
                             .font(.caption2.weight(.semibold))
@@ -3619,15 +3741,15 @@ private struct BrowseGridPriceText: View {
                             .foregroundStyle(.secondary)
                     }
                 }
-                .multilineTextAlignment(.center)
+                .frame(maxWidth: alignment == .leading ? nil : .infinity, alignment: alignment == .leading ? .leading : .center)
             } else {
                 Text(" ")
                     .font(.caption2.weight(.semibold))
                     .redacted(reason: .placeholder)
             }
         }
-        .task(id: taskID) {
-            if let cached = await BrowseGridPriceLineCache.shared.value(for: taskID) {
+        .task(id: taskKey) {
+            if let cached = await BrowseGridPriceLineCache.shared.value(for: taskKey) {
                 priceLine = cached
                 return
             }
@@ -3637,17 +3759,17 @@ private struct BrowseGridPriceText: View {
             if let usd = overridePrice {
                 let line = currency.format(amountUSD: usd, usdToGbp: fx)
                 priceLine = line
-                await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                await BrowseGridPriceLineCache.shared.set(line, for: taskKey)
                 return
             }
             guard let entry = await services.pricing.pricing(for: card) else {
                 if let fallbackUSD = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: variantKey ?? "holofoil", grade: "raw") {
                     let line = currency.format(amountUSD: fallbackUSD, usdToGbp: fx)
                     priceLine = line
-                    await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                    await BrowseGridPriceLineCache.shared.set(line, for: taskKey)
                 } else {
                     priceLine = "—"
-                    await BrowseGridPriceLineCache.shared.set("—", for: taskID)
+                    await BrowseGridPriceLineCache.shared.set("—", for: taskKey)
                 }
                 return
             }
@@ -3658,7 +3780,7 @@ private struct BrowseGridPriceText: View {
                 }
                 let line = usd.map { currency.format(amountUSD: $0, usdToGbp: fx) } ?? "—"
                 priceLine = line
-                await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                await BrowseGridPriceLineCache.shared.set(line, for: taskKey)
                 return
             }
             guard let range = resolvedMarketPriceRange(entry) else {
@@ -3672,29 +3794,25 @@ private struct BrowseGridPriceText: View {
                 if let fallbackUSD {
                     let line = currency.format(amountUSD: fallbackUSD, usdToGbp: fx)
                     priceLine = line
-                    await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                    await BrowseGridPriceLineCache.shared.set(line, for: taskKey)
                 } else {
                     priceLine = "—"
-                    await BrowseGridPriceLineCache.shared.set("—", for: taskID)
+                    await BrowseGridPriceLineCache.shared.set("—", for: taskKey)
                 }
                 return
             }
             if abs(range.max - range.min) < 0.005 {
                 let line = currency.format(amountUSD: range.min, usdToGbp: fx)
                 priceLine = line
-                await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                await BrowseGridPriceLineCache.shared.set(line, for: taskKey)
             } else {
                 let low = currency.format(amountUSD: range.min, usdToGbp: fx)
                 let high = currency.format(amountUSD: range.max, usdToGbp: fx)
                 let line = "\(low) - \(high)"
                 priceLine = line
-                await BrowseGridPriceLineCache.shared.set(line, for: taskID)
+                await BrowseGridPriceLineCache.shared.set(line, for: taskKey)
             }
         }
-    }
-
-    private var taskID: String {
-        "\(card.id)|\(overridePrice ?? -1)|\(variantKey ?? "")|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)"
     }
 
     /// Min/max raw (ungraded) market USD across Scrydex variants on the card.
@@ -4005,6 +4123,7 @@ struct SetCardsView: View {
     }
 
     var body: some View {
+        let accentColor = services.theme.accentColor
         ZStack(alignment: .bottom) {
             ScrollView {
                 if isLoading {
@@ -4029,7 +4148,7 @@ struct SetCardsView: View {
                             )
                             .padding(.bottom)
                         } else {
-                            EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
+                            EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: BindrSpacing.cardGrid) { card in
                                 let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
                                 let isSelected = selectedCardIDs.contains(card.masterCardId)
                                 Button {
@@ -4043,6 +4162,7 @@ struct SetCardsView: View {
                                         card: card,
                                         services: services,
                                         colorScheme: colorScheme,
+                                        accentColor: accentColor,
                                         gridOptions: services.browseGridOptions.options,
                                         setName: set.name,
                                         isOwned: ownedCardIDs.contains(card.masterCardId),
@@ -4079,7 +4199,7 @@ struct SetCardsView: View {
                             .padding(.bottom, isMultiSelectActive && !selectedCardIDs.isEmpty ? 88 : 0)
                         }
                     }
-                    .padding(.horizontal, 16)
+                    .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                 }
             }
             .id(set.id)
@@ -4450,6 +4570,7 @@ struct DexCardsView: View {
     }
 
     var body: some View {
+        let accentColor = services.theme.accentColor
         ScrollView {
             if isLoading {
                 ProgressView().padding()
@@ -4467,7 +4588,7 @@ struct DexCardsView: View {
                         .padding(.horizontal)
                         .padding(.bottom)
                     } else {
-                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
+                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: BindrSpacing.cardGrid) { card in
                             let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
                             Button {
                                 presentCard(card, filteredCards)
@@ -4476,6 +4597,7 @@ struct DexCardsView: View {
                                     card: card,
                                     services: services,
                                     colorScheme: colorScheme,
+                                    accentColor: accentColor,
                                     gridOptions: services.browseGridOptions.options,
                                     setName: setNameByCode[card.setCode],
                                     isOwned: ownedCardIDs.contains(card.masterCardId),
@@ -4488,7 +4610,7 @@ struct DexCardsView: View {
                                 ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                             }
                         }
-                        .padding(.horizontal)
+                        .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                         .padding(.bottom)
                     }
                 }

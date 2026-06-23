@@ -100,14 +100,14 @@ struct CollectionListView: View {
             VStack(spacing: 0) {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
-                EagerVGrid(items: filteredCollectionGroups, columns: columnCount, spacing: 12) { group in
+                EagerVGrid(items: filteredCollectionGroups, columns: columnCount, spacing: BindrSpacing.cardGrid) { group in
                     let index = filteredCollectionGroups.firstIndex(where: { $0.id == group.id }) ?? 0
                     collectionCell(for: group)
                         .onAppear {
                             ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: index + 1)
                         }
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                 .padding(.bottom, 8)
             }
         }
@@ -126,6 +126,7 @@ struct CollectionListView: View {
                     card: card,
                     services: services,
                     colorScheme: colorScheme,
+                    accentColor: services.theme.accentColor,
                     ownedCountBadge: group.totalQuantity,
                     footnote: collectionFootnote(for: group)
                 )

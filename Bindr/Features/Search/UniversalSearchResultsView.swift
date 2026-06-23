@@ -65,7 +65,7 @@ struct UniversalSearchResultsView: View {
         return "Type to find cards and sets."
     }
 
-    private let cardColumns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+    private let cardColumns = [GridItem(.adaptive(minimum: 110), spacing: BindrSpacing.cardGrid)]
     private var displayedCards: [Card] { showAllCards ? cards : Array(cards.prefix(previewCardLimit)) }
 
     var body: some View {
@@ -175,19 +175,19 @@ struct UniversalSearchResultsView: View {
                                 .font(.subheadline)
                                 .padding(.horizontal, 16)
                         } else {
-                            LazyVGrid(columns: cardColumns, spacing: 12) {
+                            LazyVGrid(columns: cardColumns, spacing: BindrSpacing.cardGrid) {
                                 ForEach(displayedCards) { card in
                                     Button {
                                         onCommitSearch()
                                         SearchHistoryStore.recordViewedCard(card.masterCardId)
                                         presentCard(card, displayedCards)
                                     } label: {
-                                        CardGridCell(card: card, services: services, colorScheme: colorScheme)
+                                        CardGridCell(card: card, services: services, colorScheme: colorScheme, accentColor: services.theme.accentColor)
                                     }
                                     .buttonStyle(CardCellButtonStyle())
                                 }
                             }
-                            .padding(.horizontal, 16)
+                            .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                         }
                     }
                     .padding(.bottom, 12)

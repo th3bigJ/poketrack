@@ -354,8 +354,8 @@ func cardMatchesSeriesNamesFilter(
 }
 
 struct BrowseGridOptions: Equatable, Sendable, Codable {
-    var showCardName = true
-    var showSetName = true
+    var showCardName = false
+    var showSetName = false
     var showSetID = false
     var showPricing = true
     var showOwned = true

@@ -446,7 +446,7 @@ struct CollectView: View {
                     : "Try a different product name, series, or year."
             )
         } else {
-            EagerVGrid(items: indexedDisplayedCollectionItems, columns: safeColumnCount, spacing: 12) { indexed in
+            EagerVGrid(items: indexedDisplayedCollectionItems, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { indexed in
                 collectionCell(for: indexed.item, at: indexed.index)
                     .onAppear {
                         guard selectedContentTypeTab == .cards else { return }
@@ -456,7 +456,7 @@ struct CollectView: View {
                         Task { await loadMoreCollectionItemsIfNeeded() }
                     }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, BindrSpacing.cardGridScreenInset)
             .padding(.bottom, 8)
             if isLoadingMoreCollectionItems {
                 ProgressView()
@@ -499,6 +499,7 @@ struct CollectView: View {
                     card: card,
                     services: services,
                     colorScheme: colorScheme,
+                    accentColor: services.theme.accentColor,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
                     ownedCountBadge: item.quantity,
@@ -942,14 +943,14 @@ struct CollectView: View {
                     : "Try a different product name, series, or year."
             )
         } else {
-            EagerVGrid(items: indexedFilteredWishlistItemsForSelectedType, columns: safeColumnCount, spacing: 12) { indexed in
+            EagerVGrid(items: indexedFilteredWishlistItemsForSelectedType, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { indexed in
                 wishlistCell(for: indexed.item)
                     .onAppear {
                         guard selectedContentTypeTab == .cards else { return }
                         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: indexed.index + 1)
                     }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, BindrSpacing.cardGridScreenInset)
             .padding(.bottom, 8)
         }
     }
@@ -982,6 +983,7 @@ struct CollectView: View {
                     card: card,
                     services: services,
                     colorScheme: colorScheme,
+                    accentColor: services.theme.accentColor,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
                     footnote: nil

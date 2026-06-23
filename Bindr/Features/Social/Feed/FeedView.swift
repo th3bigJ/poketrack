@@ -131,12 +131,16 @@ struct FeedView: View {
             VStack(spacing: 0) {
                 tabPickerHeader
 
-                VStack(spacing: 12) {
-                    ForEach(0..<4, id: \.self) { _ in
+                VStack(spacing: 0) {
+                    ForEach(0..<4, id: \.self) { index in
                         ShimmerCard()
+                        if index < 3 {
+                            Rectangle()
+                                .fill(Color.primary.opacity(0.06))
+                                .frame(height: 1)
+                        }
                     }
                 }
-                .padding(.horizontal, 16)
                 .padding(.top, 8)
             }
         }
@@ -173,7 +177,7 @@ struct FeedView: View {
             VStack(spacing: 0) {
                 tabPickerHeader
 
-                LazyVStack(spacing: 16) {
+                LazyVStack(spacing: 0) {
                     ForEach(feedSections, id: \.title) { section in
                         Section {
                             ForEach(section.rows) { group in
@@ -189,9 +193,9 @@ struct FeedView: View {
                                 .tracking(0.9)
                                 .foregroundStyle(Color.secondary.opacity(colorScheme == .dark ? 0.55 : 0.65))
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .padding(.top, 8)
-                                .padding(.bottom, 6)
-                                .padding(.horizontal, 2)
+                                .padding(.top, 12)
+                                .padding(.bottom, 8)
+                                .padding(.horizontal, 16)
                         }
                     }
 
@@ -207,7 +211,6 @@ struct FeedView: View {
                             .padding()
                     }
                 }
-                .padding(.horizontal, 16)
                 .padding(.top, 0)
                 .padding(.bottom, 100)
             }
@@ -318,59 +321,64 @@ private struct ShimmerFill: View {
 /// and users perceive the app as "ready in the right shape" instead of staring
 /// at a generic spinner.
 struct ShimmerCard: View {
+    @Environment(\.colorScheme) private var colorScheme
     @State private var phase: CGFloat = -0.3
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            // Header row: avatar + name + timestamp
-            HStack(spacing: 10) {
+        VStack(alignment: .leading, spacing: 0) {
+            // Header row: avatar + name + timestamp + type label
+            HStack(alignment: .top, spacing: 10) {
                 ShimmerFill(phase: phase, cornerRadius: 17)
                     .frame(width: 34, height: 34)
                 VStack(alignment: .leading, spacing: 4) {
                     ShimmerFill(phase: phase, cornerRadius: 3)
-                        .frame(width: 110, height: 11)
+                        .frame(width: 110, height: 13)
                     ShimmerFill(phase: phase, cornerRadius: 3)
-                        .frame(width: 70, height: 9)
+                        .frame(width: 90, height: 10)
                 }
-                Spacer(minLength: 0)
+                Spacer(minLength: 8)
+                ShimmerFill(phase: phase, cornerRadius: 3)
+                    .frame(width: 36, height: 10)
             }
+            .padding(.horizontal, 16)
+            .padding(.top, 16)
+            .padding(.bottom, 10)
 
-            // Content row: text column · card stack
-            HStack(alignment: .top, spacing: 0) {
+            // Content row: text column · card preview
+            HStack(alignment: .top, spacing: 12) {
                 VStack(alignment: .leading, spacing: 6) {
                     ShimmerFill(phase: phase, cornerRadius: 4)
                         .frame(maxWidth: .infinity)
                         .frame(height: 14)
                     ShimmerFill(phase: phase, cornerRadius: 4)
-                        .frame(maxWidth: 200, alignment: .leading)
-                        .frame(height: 11)
-                    ShimmerFill(phase: phase, cornerRadius: 4)
-                        .frame(maxWidth: 140, alignment: .leading)
-                        .frame(height: 11)
+                        .frame(maxWidth: 160, alignment: .leading)
+                        .frame(height: 12)
                 }
                 .padding(.leading, 16)
-                .padding(.trailing, 12)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-                ShimmerFill(phase: phase, cornerRadius: 4)
+                ShimmerFill(phase: phase, cornerRadius: 6)
                     .frame(width: 56, height: 80)
                     .padding(.trailing, 16)
             }
+            .padding(.bottom, 12)
 
             // Vote bar
-            HStack(spacing: 6) {
-                ShimmerFill(phase: phase, cornerRadius: 12)
-                    .frame(width: 44, height: 24)
-                ShimmerFill(phase: phase, cornerRadius: 12)
-                    .frame(width: 44, height: 24)
+            HStack(spacing: 10) {
+                ShimmerFill(phase: phase, cornerRadius: 3)
+                    .frame(width: 14, height: 14)
+                ShimmerFill(phase: phase, cornerRadius: 3)
+                    .frame(width: 16, height: 12)
+                ShimmerFill(phase: phase, cornerRadius: 3)
+                    .frame(width: 14, height: 14)
                 Spacer()
-                ShimmerFill(phase: phase, cornerRadius: 6)
-                    .frame(width: 40, height: 16)
+                ShimmerFill(phase: phase, cornerRadius: 3)
+                    .frame(width: 36, height: 14)
             }
+            .padding(.horizontal, 16)
+            .padding(.top, 8)
+            .padding(.bottom, 14)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-        .feedPostCardStyle(cornerRadius: 20)
         .onAppear {
             withAnimation(.linear(duration: 1.4).repeatForever(autoreverses: false)) {
                 phase = 1.3

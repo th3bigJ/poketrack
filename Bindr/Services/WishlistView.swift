@@ -23,7 +23,7 @@ struct WishlistView: View {
     @State private var showPaywall = false
     @State private var errorMessage: String?
 
-    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+    private let columns = [GridItem(.adaptive(minimum: 110), spacing: BindrSpacing.cardGrid)]
 
     /// Reload when membership, card ids, or enabled games change.
     private var wishlistSignature: String {
@@ -142,7 +142,7 @@ struct WishlistView: View {
                     .padding(.horizontal, 16)
                     .padding(.bottom, 12)
 
-                LazyVGrid(columns: columns, spacing: 12) {
+                LazyVGrid(columns: columns, spacing: BindrSpacing.cardGrid) {
                     ForEach(Array(filteredItems.enumerated()), id: \.element.item.id) { index, pair in
                         wishlistCell(for: pair.item)
                             .onAppear {
@@ -150,7 +150,7 @@ struct WishlistView: View {
                             }
                     }
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                 .padding(.bottom, 8)
 
                 if !services.store.isPremium && items.count >= WishlistFreeTier.maxItems {
@@ -180,7 +180,7 @@ struct WishlistView: View {
             Button {
                 presentCard(card, orderedCards)
             } label: {
-                CardGridCell(card: card, services: services, colorScheme: colorScheme, footnote: item.variantKey)
+                CardGridCell(card: card, services: services, colorScheme: colorScheme, accentColor: services.theme.accentColor, footnote: item.variantKey)
             }
             .buttonStyle(CardCellButtonStyle())
             .contextMenu {

@@ -47,78 +47,68 @@ struct FeedItemView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             // Header
-            HStack(alignment: .top, spacing: 12) {
+            HStack(alignment: .top, spacing: 10) {
                 if let username = item.actor?.username {
                     NavigationLink(value: SocialDestination.friendProfile(username: username)) {
-                        ProfileAvatarView(profile: item.actor!, size: 32)
-                            .overlay(Circle().stroke(Color.primary.opacity(0.1), lineWidth: 0.5))
+                        ProfileAvatarView(profile: item.actor!, size: 34)
                     }
                     .buttonStyle(.plain)
                 }
 
-                VStack(alignment: .leading, spacing: 1) {
+                VStack(alignment: .leading, spacing: 2) {
                     Text(cardTitle)
                         .font(.system(size: 15, weight: .bold))
                         .foregroundStyle(.primary)
                         .lineLimit(1)
-                    
+
                     HStack(spacing: 4) {
-                        Text(actorName)
+                        Text(metaUsername)
                             .font(.system(size: 11, weight: .medium))
-                            .foregroundStyle(.secondary)
-                        
+                            .foregroundStyle(metaTextColor)
+
                         if let actor = item.actor {
                             PremiumBadgeView(profile: actor, size: 10)
                         }
-                        
+
                         if isEdited {
                             Text("• Edited")
-                                .font(.system(size: 10))
-                                .foregroundStyle(.secondary.opacity(0.3))
+                                .font(.system(size: 11))
+                                .foregroundStyle(metaTextColor.opacity(0.7))
                         }
-                        
+
                         Text("• \(SocialFeedService.shortRelativeDate(item.createdAt))")
-                            .font(.system(size: 10))
-                            .foregroundStyle(.secondary.opacity(0.5))
+                            .font(.system(size: 11))
+                            .foregroundStyle(metaTextColor.opacity(0.7))
                     }
                 }
-                
-                Spacer()
-                
-                HStack(spacing: 12) {
+
+                Spacer(minLength: 8)
+
+                HStack(spacing: 10) {
                     if canEditPost {
                         postMenuButton
                     }
-                    
+
                     if let badgeText = badgeText {
-                        TypePill(label: badgeText, color: typeAccentColor)
+                        TypeLabel(label: badgeText, color: typeAccentColor)
                     }
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.top, 14)
+            .padding(.top, 16)
             .padding(.bottom, 10)
 
-            // Content
-            // The description area and the card preview have separate tap
-            // targets. For pull posts (single card) the card image goes
-            // directly to ``CardDetailSheet`` — no Comments → View Content
-            // → SharedContentView detour needed. Every other post type and
-            // tapping the description area still opens comments as before.
-            HStack(alignment: .top, spacing: 0) {
-                VStack(alignment: .leading, spacing: 4) {
+            // Content — description left, card preview right
+            HStack(alignment: .top, spacing: 12) {
+                VStack(alignment: .leading, spacing: 6) {
                     if let description = cleanedDescription, !description.isEmpty {
                         ExpandableDescription(text: description, collapsedLineLimit: 4)
-                            .padding(.top, 2)
                     }
-
-                    Spacer(minLength: 8)
 
                     hashtagRow
                 }
                 .padding(.leading, 16)
-                .padding(.trailing, 12)
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
                 .contentShape(Rectangle())
                 .onTapGesture {
                     guard isCardTapEnabled, canOpenComments else { return }
@@ -126,8 +116,8 @@ struct FeedItemView: View {
                     isCommentsPresented = true
                 }
 
-                CardStackPreview(item: item, size: 110)
-                    .padding(.trailing, 22)
+                CardStackPreview(item: item, size: 100)
+                    .padding(.trailing, 16)
                     .contentShape(Rectangle())
                     .onTapGesture {
                         guard isCardTapEnabled else { return }
@@ -154,37 +144,27 @@ struct FeedItemView: View {
                         }
                     }
             }
-            .frame(minHeight: 110)
-            .padding(.bottom, 14)
+            .frame(minHeight: 100)
+            .padding(.bottom, 12)
 
             // Footer
             if showsInteractionBar, item.type != .friendship {
-                VStack(spacing: 0) {
-                    if let summary = group.interactionSummary {
-                        Text(summary)
-                            .font(.system(size: 11))
-                            .foregroundStyle(.secondary.opacity(colorScheme == .dark ? 0.6 : 0.75))
-                            .padding(.horizontal, 16)
-                            .padding(.top, 4)
-                            .padding(.bottom, 8)
-                    }
-
-                    InteractionBar(
-                        item: item,
-                        refreshToken: commentsRefreshToken,
-                        onOpenComments: { isCommentsPresented = true }
-                    )
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 10)
-                }
+                InteractionBar(
+                    item: item,
+                    refreshToken: commentsRefreshToken,
+                    onOpenComments: { isCommentsPresented = true }
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 14)
                 .overlay(alignment: .top) {
-                    Rectangle()
-                        .fill(colorScheme == .dark ? Color.primary.opacity(0.06) : BindrPalette.feedCardBorder)
-                        .frame(height: 1)
+                    feedDivider
                 }
             }
         }
-        .feedPostCardStyle(cornerRadius: 20)
+        .overlay(alignment: .bottom) {
+            feedDivider
+        }
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
             restoreTabBarChrome?()
@@ -257,6 +237,20 @@ struct FeedItemView: View {
         }
     }
 
+    private var metaUsername: String {
+        item.actor?.username ?? item.actor?.displayName ?? "Trainer"
+    }
+
+    private var metaTextColor: Color {
+        colorScheme == .dark ? BindrPalette.feedMetaText : Color.secondary
+    }
+
+    private var feedDivider: some View {
+        Rectangle()
+            .fill(colorScheme == .dark ? BindrPalette.feedRowDivider : BindrPalette.feedCardBorder)
+            .frame(height: 1)
+    }
+
     private var hashtagRow: some View {
         HStack(spacing: 6) {
             let tags: [String] = {
@@ -266,22 +260,17 @@ struct FeedItemView: View {
                 if t.isEmpty { t = ["Collection", "Trainer"] }
                 return t
             }()
-            
+
             ForEach(tags.prefix(2), id: \.self) { tag in
                 Text("#\(tag)")
-                    .font(.system(size: 10, weight: .semibold))
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(Color.primary.opacity(0.06))
-                    .foregroundStyle(.secondary)
-                    .clipShape(Capsule())
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundStyle(
+                        colorScheme == .dark
+                            ? BindrPalette.feedHashtagPurple
+                            : BindrPalette.feedDeckPurple
+                    )
             }
         }
-    }
-
-
-    private var actorName: String {
-        item.actor?.displayName ?? item.actor?.username ?? "Trainer"
     }
 
     private var isActorPremium: Bool {
@@ -400,24 +389,24 @@ struct FeedItemView: View {
     private var typeAccentColor: Color {
         switch item.type {
         case .pull:
-            return Color(hex: "52C97C")
+            return BindrPalette.feedPullGreen
         case .dailyDigest:
-            return Color(hex: "5B9CF6")
+            return BindrPalette.deckBlue
         case .sharedContent:
             switch item.content?.contentType {
-            case .binder: return BindrPalette.binderGold
+            case .binder: return BindrPalette.feedBinderOrange
             case .deck: return BindrPalette.feedDeckPurple
             case .wishlist: return BindrPalette.wishlistViolet
-            default: return BindrPalette.binderGold
+            default: return BindrPalette.feedBinderOrange
             }
         case .friendship:
-            return Color(hex: "52C97C")
+            return BindrPalette.feedPullGreen
         case .wishlistMatch:
-            return Color(hex: "A78BFA")
+            return BindrPalette.wishlistViolet
         case .vote:
-            return Color(hex: "E8B84B")
+            return BindrPalette.binderGold
         case .comment:
-            return Color(hex: "5B9CF6")
+            return BindrPalette.deckBlue
         }
     }
 
@@ -441,18 +430,15 @@ struct FeedItemView: View {
     }
 }
 
-private struct TypePill: View {
+private struct TypeLabel: View {
     let label: String
     let color: Color
 
     var body: some View {
         Text(label)
-            .font(.system(size: 9, weight: .bold))
-            .tracking(0.4)
-            .foregroundStyle(color.opacity(0.85))
-            .padding(.horizontal, 7)
-            .padding(.vertical, 3)
-            .background(color.opacity(0.12), in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+            .font(.system(size: 10, weight: .bold))
+            .tracking(0.6)
+            .foregroundStyle(color)
     }
 }
 
@@ -487,11 +473,11 @@ private struct CardStackPreview: View {
                 }
             } else {
                 ForEach(Array(stackColors.prefix(4).enumerated()), id: \.offset) { index, color in
-                    RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    RoundedRectangle(cornerRadius: 6, style: .continuous)
                         .fill(color)
                         .frame(width: size * 0.7, height: size)
                         .overlay {
-                            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                            RoundedRectangle(cornerRadius: 6, style: .continuous)
                                 .stroke(Color.primary.opacity(0.15), lineWidth: 1)
                         }
                         .offset(x: CGFloat(index) * 6)
@@ -517,14 +503,14 @@ private struct CardStackPreview: View {
                 ) { image in
                     image.resizable().aspectRatio(contentMode: .fill)
                 } placeholder: {
-                    RoundedRectangle(cornerRadius: 4).fill(Color.gray.opacity(0.1))
+                    RoundedRectangle(cornerRadius: 6, style: .continuous).fill(Color.gray.opacity(0.1))
                 }
             } else {
-                RoundedRectangle(cornerRadius: 4).fill(Color.gray.opacity(0.1))
+                RoundedRectangle(cornerRadius: 6, style: .continuous).fill(Color.gray.opacity(0.1))
             }
         }
         .frame(width: size * 0.7, height: size)
-        .clipShape(RoundedRectangle(cornerRadius: 4))
+        .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         .overlay {
             // Subtle Holo Glint
             LinearGradient(
@@ -533,9 +519,10 @@ private struct CardStackPreview: View {
                 endPoint: .bottomTrailing
             )
             .blendMode(.plusLighter)
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
         }
         .overlay {
-            RoundedRectangle(cornerRadius: 4, style: .continuous)
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
                 .stroke(Color.white.opacity(0.12), lineWidth: 0.5)
         }
         .rotationEffect(.degrees(rotation))
@@ -597,16 +584,16 @@ struct InteractionBar: View {
     @State private var voteErrorMessage: String?
 
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 0) {
             // Left: Votes
-            HStack(spacing: 12) {
+            HStack(spacing: 10) {
                 voteButton(type: .upvote)
-                
+
                 Text("\(aggregate.score)")
-                    .font(.system(size: 13, weight: .bold))
+                    .font(.system(size: 13, weight: .semibold))
                     .monospacedDigit()
-                    .foregroundStyle(Color.secondary.opacity(0.85))
-                
+                    .foregroundStyle(metaIconColor)
+
                 voteButton(type: .downvote)
             }
 
@@ -617,13 +604,13 @@ struct InteractionBar: View {
                 Haptics.lightImpact()
                 onOpenComments()
             } label: {
-                HStack(spacing: 6) {
+                HStack(spacing: 5) {
                     Image(systemName: "bubble.right")
-                        .font(.system(size: 13, weight: .semibold))
+                        .font(.system(size: 13, weight: .regular))
                     Text("\(commentCount)")
-                        .font(.system(size: 13, weight: .bold))
+                        .font(.system(size: 13, weight: .semibold))
                 }
-                .foregroundStyle(Color.secondary.opacity(0.75))
+                .foregroundStyle(metaIconColor)
             }
             .buttonStyle(.plain)
         }
@@ -633,16 +620,22 @@ struct InteractionBar: View {
         }
     }
 
+    private var metaIconColor: Color {
+        colorScheme == .dark
+            ? BindrPalette.feedMetaText
+            : Color.secondary.opacity(0.75)
+    }
+
     private func voteButton(type: ReactionType) -> some View {
         let isActive = aggregate.myVoteType == type
         let symbol = type == .upvote ? "arrow.up" : "arrow.down"
 
         return Image(systemName: symbol)
-            .font(.system(size: 14, weight: isActive ? .heavy : .semibold))
+            .font(.system(size: 14, weight: isActive ? .bold : .regular))
             .foregroundStyle(
                 isActive
-                    ? Color.primary.opacity(0.85)
-                    : Color.secondary.opacity(0.45)
+                    ? Color.primary.opacity(0.9)
+                    : metaIconColor
             )
             .scaleEffect(isActive ? 1.05 : 1.0)
             .animation(.spring(response: 0.3, dampingFraction: 0.6), value: isActive)
@@ -808,7 +801,7 @@ private struct ExpandableDescription: View {
         VStack(alignment: .leading, spacing: 6) {
             Text(text)
                 .font(.system(size: 14))
-                .foregroundStyle(.primary.opacity(0.9))
+                .foregroundStyle(.primary)
                 .lineLimit(isExpanded ? nil : collapsedLineLimit)
                 .fixedSize(horizontal: false, vertical: true)
                 .background(fullHeightProbe)

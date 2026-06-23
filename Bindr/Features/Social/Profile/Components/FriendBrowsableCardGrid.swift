@@ -139,7 +139,7 @@ struct FriendBrowsableCardGrid: View {
             EagerVGrid(
                 items: Array(displayedCards.enumerated().map { IndexedFriendCard(index: $0.offset, card: $0.element) }),
                 columns: safeColumnCount,
-                spacing: 12
+                spacing: BindrSpacing.cardGrid
             ) { indexed in
                 cardCell(for: indexed.card)
                     .onAppear {
@@ -148,7 +148,7 @@ struct FriendBrowsableCardGrid: View {
                         Task { await loadMoreIfNeeded() }
                     }
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, BindrSpacing.cardGridScreenInset)
             .padding(.bottom, 8)
 
             if isLoadingMore {
@@ -169,6 +169,7 @@ struct FriendBrowsableCardGrid: View {
                 card: card,
                 services: services,
                 colorScheme: colorScheme,
+                accentColor: services.theme.accentColor,
                 gridOptions: gridOptions,
                 setName: services.cardData.sets.first { $0.setCode == card.setCode }?.name,
                 ownedCountBadge: quantityByCardID[card.masterCardId],
