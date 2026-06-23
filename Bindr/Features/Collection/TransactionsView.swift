@@ -119,40 +119,6 @@ struct TransactionsView: View {
         displayedActivityEntries.count < groupedActivityEntries.count
     }
 
-    private struct ActivitySection: Identifiable {
-        let id: String
-        let title: String
-        let entries: [ActivityLedgerEntry]
-    }
-
-    private var sectionedActivityEntries: [ActivitySection] {
-        let cal = Calendar.current
-
-        var groups: [Date: [ActivityLedgerEntry]] = [:]
-        for entry in displayedActivityEntries {
-            let components = cal.dateComponents([.year, .month, .day], from: entry.occurredAt)
-            if let midnight = cal.date(from: components) {
-                groups[midnight, default: []].append(entry)
-            }
-        }
-
-        let sortedDates = groups.keys.sorted(by: >)
-        return sortedDates.map { date in
-            let entriesForDate = groups[date] ?? []
-            let title: String
-            if cal.isDateInToday(date) {
-                title = "TODAY"
-            } else if cal.isDateInYesterday(date) {
-                title = "YESTERDAY"
-            } else {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "d MMM yyyy"
-                title = formatter.string(from: date).uppercased()
-            }
-            return ActivitySection(id: title, title: title, entries: entriesForDate)
-        }
-    }
-
     private var boughtTotal: Double {
         rangeFilteredLines.reduce(0) { partial, line in
             guard LedgerDirection(rawValue: line.direction) == .bought, let unitPrice = line.unitPrice else { return partial }
@@ -328,63 +294,49 @@ struct TransactionsView: View {
                     .listRowSeparator(.hidden)
             }
 
-            ForEach(sectionedActivityEntries) { section in
-                Section(header:
-                    HStack {
-                        Text(section.title)
-                            .font(.caption.weight(.bold))
-                            .tracking(1.1)
-                            .foregroundStyle(.secondary.opacity(0.8))
-                        Spacer()
+            ForEach(displayedActivityEntries) { entry in
+                activityRow(for: entry)
+                    .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                    .listRowBackground(Color.clear)
+                    .listRowSeparator(.hidden)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        if case .line(let line) = entry {
+                            openTransactionDetail(for: line)
+                        }
                     }
-                    .padding(.top, 8)
-                    .padding(.bottom, 4)
-                ) {
-                    ForEach(section.entries) { entry in
-                        activityRow(for: entry)
-                            .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
-                            .listRowBackground(Color.clear)
-                            .listRowSeparator(.hidden)
-                            .contentShape(Rectangle())
-                            .onTapGesture {
-                                if case .line(let line) = entry {
-                                    openTransactionDetail(for: line)
-                                }
-                            }
-                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                Button(role: .destructive) {
-                                    deleteActivityEntry(entry)
-                                } label: {
-                                    Label("Delete", systemImage: "trash")
-                                }
-                                .tint(.red)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                        Button(role: .destructive) {
+                            deleteActivityEntry(entry)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                        .tint(.red)
 
-                                if case .line(let line) = entry {
-                                    Button {
-                                        editingLedgerLine = line
-                                    } label: {
-                                        Label("Edit", systemImage: "pencil")
-                                    }
-                                    .tint(.blue)
-                                }
+                        if case .line(let line) = entry {
+                            Button {
+                                editingLedgerLine = line
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
                             }
-                            .contextMenu {
-                                if case .line(let line) = entry {
-                                    Button {
-                                        editingLedgerLine = line
-                                    } label: {
-                                        Label("Edit", systemImage: "pencil")
-                                    }
-                                }
-
-                                Button(role: .destructive) {
-                                    deleteActivityEntry(entry)
-                                } label: {
-                                    Label("Delete", systemImage: "trash")
-                                }
-                            }
+                            .tint(.blue)
+                        }
                     }
-                }
+                    .contextMenu {
+                        if case .line(let line) = entry {
+                            Button {
+                                editingLedgerLine = line
+                            } label: {
+                                Label("Edit", systemImage: "pencil")
+                            }
+                        }
+
+                        Button(role: .destructive) {
+                            deleteActivityEntry(entry)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
             }
 
             if hasMoreTransactions {
@@ -416,6 +368,7 @@ struct TransactionsView: View {
     private var transactionSearchAndFilterRow: some View {
         HStack(spacing: 8) {
             BrowseInlineSearchField(title: "Search transactions", text: $transactionSearchText)
+                .frame(maxWidth: .infinity)
 
             Menu {
                 ActivityTransactionFiltersMenuContent(filters: $transactionFilters)
@@ -432,16 +385,6 @@ struct TransactionsView: View {
             .menuOrder(.fixed)
             .accessibilityLabel("Filter transactions")
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.02))
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .stroke(services.theme.accentColor.opacity(0.15), lineWidth: 1)
-        )
     }
 
     @ViewBuilder
@@ -554,13 +497,6 @@ struct TransactionsView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, 10)
-        .padding(.horizontal, 12)
-        .background(dashboardTileBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
-        )
     }
 
     private func summaryIcon(for title: String) -> String {

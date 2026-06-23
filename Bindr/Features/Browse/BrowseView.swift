@@ -48,14 +48,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
             }
         }
         .padding(4)
-        .background {
-            Capsule()
-                .fill(.thinMaterial)
-                .overlay {
-                    Capsule()
-                        .strokeBorder(Color.primary.opacity(0.1), lineWidth: 0.5)
-                }
-        }
+        .glassSegmentedTrackStyle()
     }
 }
 
@@ -277,7 +270,7 @@ private struct CardGridCellLayout: View {
         colorScheme == .dark ? Color.white.opacity(0.45) : Color.black.opacity(0.38)
     }
 
-    private var showsTopLeadingOverlay: Bool {
+    private var showsMetadataHeader: Bool {
         gridOptions.showCardName
             || (gridOptions.showSetName && !(setName?.isEmpty ?? true))
             || gridOptions.showSetID
@@ -285,6 +278,10 @@ private struct CardGridCellLayout: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            if showsMetadataHeader {
+                metadataHeader
+            }
+
             BrowseCardThumbnailView(
                 imageURL: imageURL,
                 imageLocalURL: imageLocalURL,
@@ -301,11 +298,6 @@ private struct CardGridCellLayout: View {
                 if isOwned || isWishlisted {
                     RoundedRectangle(cornerRadius: cardImageCornerRadius, style: .continuous)
                         .stroke(cardBorderColor, lineWidth: cardBorderWidth)
-                }
-            }
-            .overlay(alignment: .topLeading) {
-                if showsTopLeadingOverlay {
-                    topLeadingOverlay
                 }
             }
             .overlay(alignment: .bottomLeading) {
@@ -328,24 +320,25 @@ private struct CardGridCellLayout: View {
                 .frame(maxWidth: .infinity)
             }
         }
+        .padding(.bottom, BindrSpacing.xs)
         .frame(maxWidth: .infinity)
     }
 
     @ViewBuilder
-    private var topLeadingOverlay: some View {
+    private var metadataHeader: some View {
         VStack(alignment: .leading, spacing: 1) {
             if gridOptions.showCardName {
                 Text(cardName)
                     .font(.caption2.weight(.semibold))
                     .lineLimit(1)
                     .truncationMode(.tail)
-                    .foregroundStyle(primaryTextColor)
+                    .foregroundStyle(.primary)
                 if let variantLabel, !variantLabel.isEmpty {
                     Text(variantLabel)
                         .font(.system(size: 9, weight: .medium))
                         .lineLimit(1)
                         .truncationMode(.tail)
-                        .foregroundStyle(secondaryTextColor)
+                        .foregroundStyle(.secondary)
                 }
             }
             if gridOptions.showSetName, let setName, !setName.isEmpty {
@@ -353,19 +346,20 @@ private struct CardGridCellLayout: View {
                     .font(.caption2)
                     .lineLimit(1)
                     .truncationMode(.tail)
-                    .foregroundStyle(secondaryTextColor)
+                    .foregroundStyle(.secondary)
             }
             if gridOptions.showSetID {
                 Text(trailingCardID)
                     .font(.caption2)
                     .lineLimit(1)
                     .truncationMode(.tail)
-                    .foregroundStyle(tertiaryTextColor)
+                    .foregroundStyle(.tertiary)
             }
         }
         .multilineTextAlignment(.leading)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .cardGridImageOverlayStyle()
+        .padding(.horizontal, 8)
+        .padding(.bottom, 4)
     }
 
     @ViewBuilder
@@ -378,11 +372,9 @@ private struct CardGridCellLayout: View {
             gradeLabel: gradeLabel,
             variantKey: variantPricingKey,
             alignment: .leading,
-            overlayTextColor: primaryTextColor
+            overlayTextColor: .white
         )
-        .multilineTextAlignment(.leading)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .cardGridImageOverlayStyle()
+        .cardGridPriceBadgeStyle()
     }
 
     private func footerText(_ text: String, color: Color) -> some View {
@@ -410,25 +402,6 @@ private struct CardGridCellLayout: View {
         } else {
             footerText(text, color: secondaryTextColor)
         }
-    }
-}
-
-private struct CardGridImageOverlayStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding(.horizontal, 5)
-            .padding(.vertical, 3)
-            .background {
-                RoundedRectangle(cornerRadius: 5, style: .continuous)
-                    .fill(.ultraThinMaterial)
-            }
-            .padding(BindrSpacing.xs)
-    }
-}
-
-private extension View {
-    func cardGridImageOverlayStyle() -> some View {
-        modifier(CardGridImageOverlayStyle())
     }
 }
 
@@ -518,7 +491,7 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
     var body: some View {
         let cols = max(columns, 1)
         LazyVGrid(
-            columns: Array(repeating: GridItem(.flexible(), spacing: spacing), count: cols),
+            columns: Array(repeating: GridItem(.flexible(), spacing: CardGridLayout.columnSpacing), count: cols),
             spacing: spacing
         ) {
             ForEach(items) { item in
@@ -2400,14 +2373,8 @@ struct BrowseView: View {
                 .font(.system(size: 12, weight: .bold, design: .rounded))
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
-                .background {
-                    Capsule()
-                        .bindrAccentFill(
-                            isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06),
-                            usesLogoGradient: isSelected
-                        )
-                }
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
+                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
+                .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
         }
         .buttonStyle(.plain)
         .animation(.easeInOut(duration: 0.15), value: isSelected)
@@ -3270,11 +3237,8 @@ private struct BrowseSetsTabContent: View {
                 .font(.system(size: 13, weight: .bold, design: .rounded))
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                .background {
-                    Capsule()
-                        .bindrAccentFill(isSelected ? services.theme.accentColor : Color.primary.opacity(0.12), usesLogoGradient: isSelected)
-                }
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
+                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
+                .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
         }
         .buttonStyle(.plain)
     }
@@ -3393,8 +3357,6 @@ private struct BrowsePokemonTabContent: View {
         }
     }
 
-    @Environment(\.colorScheme) private var colorScheme
-
     private var generationTagBar: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 12) {
@@ -3419,14 +3381,8 @@ private struct BrowsePokemonTabContent: View {
                 .font(.system(size: 13, weight: .bold, design: .rounded))
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                .background {
-                    Capsule()
-                        .bindrAccentFill(
-                            isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06),
-                            usesLogoGradient: isSelected
-                        )
-                }
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
+                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
+                .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
         }
         .buttonStyle(.plain)
     }
@@ -3501,8 +3457,7 @@ private struct BrowsePokemonTabContent: View {
                                     .minimumScaleFactor(0.7)
                             }
                         }
-                        .padding(6)
-                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
+                        .padding(.horizontal, 2)
                     }
                     .buttonStyle(.plain)
                 }
@@ -3589,23 +3544,15 @@ private struct BrowseGridCardCell: View {
         Self.thumbnailSize
     }
 
+    private var showsMetadataHeader: Bool {
+        gridOptions.showCardName
+            || (gridOptions.showSetName && !(setName?.isEmpty ?? true))
+            || gridOptions.showSetID
+    }
+
     var body: some View {
-        CachedAsyncImage(
-            url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
-            targetSize: imageDecodeSize
-        ) { img in
-            img.resizable().scaledToFit()
-        } placeholder: {
-            Color.gray.opacity(0.12)
-                .aspectRatio(5/7, contentMode: .fit)
-        }
-        .frame(maxWidth: .infinity)
-        .aspectRatio(5/7, contentMode: .fit)
-        .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-        .overlay(alignment: .topLeading) {
-            if gridOptions.showCardName
-                || (gridOptions.showSetName && !(setName?.isEmpty ?? true))
-                || gridOptions.showSetID {
+        VStack(spacing: 0) {
+            if showsMetadataHeader {
                 VStack(alignment: .leading, spacing: 1) {
                     if gridOptions.showCardName {
                         Text(card.cardName)
@@ -3629,21 +3576,33 @@ private struct BrowseGridCardCell: View {
                 }
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .cardGridImageOverlayStyle()
+                .padding(.horizontal, 8)
+                .padding(.bottom, 4)
             }
-        }
-        .overlay(alignment: .bottomLeading) {
-            if gridOptions.showPricing {
-                BrowseGridPriceText(
-                    services: services,
-                    accentColor: services.theme.accentColor,
-                    card: card,
-                    alignment: .leading,
-                    overlayTextColor: .primary
-                )
-                .multilineTextAlignment(.leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .cardGridImageOverlayStyle()
+
+            CachedAsyncImage(
+                url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
+                targetSize: imageDecodeSize
+            ) { img in
+                img.resizable().scaledToFit()
+            } placeholder: {
+                Color.gray.opacity(0.12)
+                    .aspectRatio(5/7, contentMode: .fit)
+            }
+            .frame(maxWidth: .infinity)
+            .aspectRatio(5/7, contentMode: .fit)
+            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+            .overlay(alignment: .bottomLeading) {
+                if gridOptions.showPricing {
+                    BrowseGridPriceText(
+                        services: services,
+                        accentColor: services.theme.accentColor,
+                        card: card,
+                        alignment: .leading,
+                        overlayTextColor: .white
+                    )
+                    .cardGridPriceBadgeStyle()
+                }
             }
         }
     }

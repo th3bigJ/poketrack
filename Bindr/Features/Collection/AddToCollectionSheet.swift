@@ -42,7 +42,8 @@ struct GreySegmentedPicker<SelectionValue: Hashable>: View {
     let items: [SelectionValue]
     let title: (SelectionValue) -> String
 
-    @Environment(\.colorScheme) private var colorScheme
+    @Environment(AppServices.self) private var services
+    @Namespace private var namespace
 
     var body: some View {
         HStack(spacing: 0) {
@@ -51,12 +52,14 @@ struct GreySegmentedPicker<SelectionValue: Hashable>: View {
 
                 Button {
                     guard selection != item else { return }
-                    selection = item
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                        selection = item
+                    }
                     Haptics.selectionChanged()
                 } label: {
                     Text(title(item))
-                        .font(.system(size: 13, weight: isSelected ? .semibold : .regular))
-                        .foregroundStyle(.primary)
+                        .font(.system(size: 13, weight: isSelected ? .bold : .medium))
+                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.6))
                         .lineLimit(1)
                         .minimumScaleFactor(0.8)
                         .frame(maxWidth: .infinity, minHeight: 32)
@@ -64,8 +67,14 @@ struct GreySegmentedPicker<SelectionValue: Hashable>: View {
                         .background {
                             if isSelected {
                                 RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                    .fill(selectedBackground)
-                                    .shadow(color: .black.opacity(colorScheme == .dark ? 0.18 : 0.10), radius: 1.5, y: 1)
+                                    .bindrAccentFill(services.theme.accentColor)
+                                    .matchedGeometryEffect(id: "highlight", in: namespace)
+                                    .shadow(
+                                        color: (services.theme.isGradientThemeSelected ? services.theme.secondaryAccentColor : services.theme.accentColor).opacity(0.22),
+                                        radius: 4,
+                                        x: 0,
+                                        y: 2
+                                    )
                             }
                         }
                 }
@@ -74,16 +83,7 @@ struct GreySegmentedPicker<SelectionValue: Hashable>: View {
                 .accessibilityAddTraits(isSelected ? .isSelected : [])
             }
         }
-        .padding(2)
-        .background(trackBackground, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-    }
-
-    private var trackBackground: Color {
-        Color(uiColor: colorScheme == .dark ? .tertiarySystemFill : .systemGray5)
-    }
-
-    private var selectedBackground: Color {
-        Color(uiColor: colorScheme == .dark ? .secondarySystemFill : .systemBackground)
+        .glassSegmentedTrackStyle(cornerRadius: 10)
     }
 }
 

@@ -48,9 +48,11 @@ struct BrowseInlineSearchField: View {
     }
 }
 
-private enum BrowseAllSetsTab: String, CaseIterable {
+private enum BrowseAllSetsTab: String, CaseIterable, Identifiable {
     case cards = "Cards"
     case sealed = "Sealed"
+
+    var id: String { rawValue }
 }
 
 struct BrowseAllSetsView: View {
@@ -111,12 +113,11 @@ struct BrowseAllSetsView: View {
             } else {
                 ScrollView {
                     VStack(spacing: 12) {
-                        Picker("Tab", selection: $selectedTab) {
-                            ForEach(BrowseAllSetsTab.allCases, id: \.self) { tab in
-                                Text(tab.rawValue).tag(tab)
-                            }
-                        }
-                        .pickerStyle(.segmented)
+                        SlidingSegmentedPicker(
+                            selection: $selectedTab,
+                            items: BrowseAllSetsTab.allCases,
+                            title: { $0.rawValue }
+                        )
                         .padding(.horizontal)
                         .padding(.top)
 
@@ -356,11 +357,8 @@ struct BrowseAllSetsView: View {
                 .font(.system(size: 13, weight: .bold, design: .rounded))
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                .background {
-                    Capsule()
-                        .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
-                }
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.8))
+                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
+                .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
         }
         .buttonStyle(.plain)
     }

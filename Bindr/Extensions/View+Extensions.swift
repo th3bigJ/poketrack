@@ -35,6 +35,17 @@ extension View {
         modifier(GlassPillTrackModifier())
     }
 
+    /// Frosted track behind tab/segment selectors (`SlidingSegmentedPicker`, form pickers).
+    /// Pass a corner radius for rounded-rect tracks; omit for capsule tracks.
+    func glassSegmentedTrackStyle(cornerRadius: CGFloat? = nil) -> some View {
+        modifier(GlassSegmentedTrackModifier(cornerRadius: cornerRadius))
+    }
+
+    /// Liquid Glass capsule for filter chips such as Full / Master / Grand Master set modes.
+    func glassFilterChipStyle(isSelected: Bool, accentColor: Color) -> some View {
+        modifier(GlassFilterChipModifier(isSelected: isSelected, accentColor: accentColor))
+    }
+
     /// Pill search field chrome — Liquid Glass on iOS 26+, material fallback on earlier OS versions.
     func searchFieldCapsuleChrome(
         darkGlass: SearchFieldChromeGlass = .regularInteractive,
@@ -99,6 +110,11 @@ extension View {
     /// Containerless feed post — no card wrapper around each row.
     func feedPostCardStyle(cornerRadius: CGFloat = 20) -> some View {
         self
+    }
+
+    /// Dark capsule badge for prices overlaid on card/sealed grid thumbnails.
+    func cardGridPriceBadgeStyle() -> some View {
+        modifier(CardGridPriceBadgeStyle())
     }
 
     /// Primary toolbar button style — semibold, neutral `.primary` colour.
@@ -297,17 +313,119 @@ struct GlassInsetCircleModifier: ViewModifier {
 }
 
 struct GlassPillTrackModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content.modifier(GlassSegmentedTrackModifier(cornerRadius: nil, appliesPadding: false))
+    }
+}
+
+struct GlassSegmentedTrackModifier: ViewModifier {
+    /// `nil` = capsule track; otherwise rounded rect (e.g. form sheets).
+    var cornerRadius: CGFloat? = nil
+    /// When `false`, the caller already applied inner padding (pill toolbar chips).
+    var appliesPadding: Bool = true
+
     @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
+        if let cornerRadius {
+            if appliesPadding {
+                applyChrome(to: content.padding(2), in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            } else {
+                applyChrome(to: content, in: RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
+            }
+        } else if appliesPadding {
+            applyChrome(to: content.padding(4), in: Capsule(style: .continuous))
+        } else {
+            applyChrome(to: content, in: Capsule(style: .continuous))
+        }
+    }
+
+    @ViewBuilder
+    private func applyChrome<V: View, S: InsettableShape>(to content: V, in shape: S) -> some View {
+        if #available(iOS 26.0, *) {
+            content
+                .glassEffect(Glass.clear.tint(nil).interactive(), in: shape)
+                .overlay {
+                    shape.strokeBorder(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
+                }
+        } else {
+            content
+                .background { shape.fill(.thinMaterial) }
+                .overlay {
+                    shape.strokeBorder(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
+                }
+        }
+    }
+}
+
+struct GlassFilterChipModifier: ViewModifier {
+    let isSelected: Bool
+    let accentColor: Color
+
+    @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        if isSelected {
+            content
+                .background {
+                    Capsule(style: .continuous)
+                        .bindrAccentFill(accentColor)
+                        .shadow(
+                            color: (services.theme.isGradientThemeSelected ? services.theme.secondaryAccentColor : accentColor).opacity(0.22),
+                            radius: 4,
+                            x: 0,
+                            y: 2
+                        )
+                }
+        } else if #available(iOS 26.0, *) {
+            content
+                .glassEffect(Glass.clear.tint(nil).interactive(), in: Capsule(style: .continuous))
+                .overlay {
+                    Capsule(style: .continuous)
+                        .strokeBorder(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
+                }
+        } else {
+            content
+                .background {
+                    ZStack {
+                        Capsule(style: .continuous)
+                            .fill(.thinMaterial)
+                        Capsule(style: .continuous)
+                            .fill(BindrGlassStyle.chipTrackFill(colorScheme))
+                    }
+                }
+                .overlay {
+                    Capsule(style: .continuous)
+                        .strokeBorder(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
+                }
+        }
+    }
+}
+
+struct CardGridPriceBadgeStyle: ViewModifier {
+    func body(content: Content) -> some View {
         content
+            .padding(.horizontal, 6)
+            .padding(.vertical, 3)
             .background {
                 Capsule(style: .continuous)
-                    .fill(BindrGlassStyle.chipTrackFill(colorScheme))
+                    .fill(
+                        LinearGradient(
+                            colors: [
+                                Color.black.opacity(0.72),
+                                Color.black.opacity(0.58)
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                    )
+                    .overlay(
+                        Capsule(style: .continuous)
+                            .stroke(Color.white.opacity(0.15), lineWidth: 0.5)
+                    )
             }
-            .overlay {
-                Capsule(style: .continuous)
-                    .stroke(BindrGlassStyle.insetBorder(colorScheme), lineWidth: 1)
-            }
+            .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+            .padding(CardGridLayout.overlayInset)
     }
 }

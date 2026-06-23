@@ -65,7 +65,7 @@ struct UniversalSearchResultsView: View {
         return "Type to find cards and sets."
     }
 
-    private let cardColumns = [GridItem(.adaptive(minimum: 110), spacing: BindrSpacing.cardGrid)]
+    private let cardColumns = [GridItem(.adaptive(minimum: 110), spacing: BindrSpacing.cardGridColumn)]
     private var displayedCards: [Card] { showAllCards ? cards : Array(cards.prefix(previewCardLimit)) }
 
     var body: some View {

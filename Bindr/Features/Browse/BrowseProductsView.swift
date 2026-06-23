@@ -316,11 +316,8 @@ struct BrowseProductsTabContent: View {
                         .font(.system(size: 13, weight: .bold, design: .rounded))
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
-                        .background {
-                            Capsule()
-                                .fill(selectedSet == nil ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
-                        }
-                        .foregroundStyle(selectedSet == nil ? .white : .primary.opacity(0.8))
+                        .foregroundStyle(selectedSet == nil ? .white : .primary.opacity(0.85))
+                        .glassFilterChipStyle(isSelected: selectedSet == nil, accentColor: services.theme.accentColor)
                 }
                 .buttonStyle(.plain)
 
@@ -353,10 +350,7 @@ struct BrowseProductsTabContent: View {
                         }
                         .padding(.horizontal, 12)
                         .padding(.vertical, 8)
-                        .background {
-                            Capsule()
-                                .fill(isSelected ? services.theme.accentColor : Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.06))
-                        }
+                        .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
                     }
                     .buttonStyle(.plain)
                 }
@@ -364,8 +358,6 @@ struct BrowseProductsTabContent: View {
             .padding(.horizontal, 16)
         }
     }
-
-    @Environment(\.colorScheme) private var colorScheme
 
     private func recomputeDisplayedProducts() {
         displayedProducts = filteredProducts
@@ -467,10 +459,10 @@ struct SealedProductGridCell: View {
     let isWishlisted: Bool
     var ownedCountBadge: Int? = nil
 
-    private var showsFooter: Bool {
-        (gridOptions.showSetName && !(product.setName ?? "").isEmpty)
+    private var showsMetadataHeader: Bool {
+        gridOptions.showCardName
+            || (gridOptions.showSetName && !(product.setName ?? "").isEmpty)
             || gridOptions.showSetID
-            || gridOptions.showPricing
     }
 
     private var imageCornerRadius: CGFloat { 8 }
@@ -487,15 +479,8 @@ struct SealedProductGridCell: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            if gridOptions.showCardName {
-                Text(product.name)
-                    .font(.caption2.weight(.semibold))
-                    .lineLimit(2)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.primary)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 7)
-                    .padding(.horizontal, 8)
+            if showsMetadataHeader {
+                metadataHeader
             }
 
             SealedThumbnailView(
@@ -516,50 +501,62 @@ struct SealedProductGridCell: View {
                         )
                 }
             }
-
-            if showsFooter {
-                VStack(spacing: 3) {
-                    if gridOptions.showSetName, let setName = product.setName, !setName.isEmpty {
-                        Text(setName)
-                            .font(.caption2)
-                            .lineLimit(1)
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(.secondary)
-                            .frame(maxWidth: .infinity)
-                    }
-
-                    if gridOptions.showSetID {
-                        Text("#\(product.id)")
-                            .font(.caption2)
-                            .lineLimit(1)
-                            .multilineTextAlignment(.center)
-                            .foregroundStyle(.tertiary)
-                            .frame(maxWidth: .infinity)
-                    }
-
-                    if gridOptions.showPricing {
-                        if let priceUSD {
-                            Text(services.priceDisplay.currency.format(amountUSD: priceUSD, usdToGbp: services.pricing.usdToGbp))
-                                .font(.caption2.weight(.semibold))
-                                .foregroundStyle(services.theme.accentColor)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.7)
-                                .frame(maxWidth: .infinity)
-                        } else {
-                            Text("—")
-                                .font(.caption2.weight(.semibold))
-                                .foregroundStyle(.secondary)
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
+            .overlay(alignment: .bottomLeading) {
+                if gridOptions.showPricing {
+                    sealedPriceOverlay
                 }
-                .padding(.horizontal, 8)
-                .padding(.vertical, 7)
-                .frame(maxWidth: .infinity)
             }
         }
+        .padding(.bottom, BindrSpacing.xs)
         .frame(maxWidth: .infinity)
         .contentShape(Rectangle())
+    }
+
+    private var metadataHeader: some View {
+        VStack(alignment: .leading, spacing: 1) {
+            if gridOptions.showCardName {
+                Text(product.name)
+                    .font(.caption2.weight(.semibold))
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .foregroundStyle(.primary)
+            }
+            if gridOptions.showSetName, let setName = product.setName, !setName.isEmpty {
+                Text(setName)
+                    .font(.caption2)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .foregroundStyle(.secondary)
+            }
+            if gridOptions.showSetID {
+                Text("#\(product.id)")
+                    .font(.caption2)
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .multilineTextAlignment(.leading)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 8)
+        .padding(.bottom, 4)
+    }
+
+    @ViewBuilder
+    private var sealedPriceOverlay: some View {
+        if let priceUSD {
+            Text(services.priceDisplay.currency.format(amountUSD: priceUSD, usdToGbp: services.pricing.usdToGbp))
+                .font(.caption2.weight(.semibold))
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .foregroundStyle(.white)
+                .cardGridPriceBadgeStyle()
+        } else {
+            Text("—")
+                .font(.caption2.weight(.semibold))
+                .foregroundStyle(.white)
+                .cardGridPriceBadgeStyle()
+        }
     }
 }
 

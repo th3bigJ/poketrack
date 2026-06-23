@@ -4,7 +4,6 @@ import SwiftData
 struct TradeWallView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.bindrAccent) private var accent
-    @Environment(\.colorScheme) private var colorScheme
     @Binding var navigationPath: NavigationPath
     @Query private var collectionItems: [CollectionItem]
 
@@ -116,7 +115,7 @@ struct TradeWallView: View {
     // MARK: - Grid
 
     private var unifiedGrid: some View {
-        EagerVGrid(items: gridItems, columns: 3, spacing: 8) { item in
+        EagerVGrid(items: gridItems, columns: 3, spacing: BindrSpacing.cardGrid) { item in
             switch item {
             case .suggested(let entry):
                 Button {
@@ -127,7 +126,7 @@ struct TradeWallView: View {
                         matchType: entry.matchType
                     )
                 } label: {
-                    TradeWallSuggestedCell(entry: entry, colorScheme: colorScheme)
+                    TradeWallSuggestedCell(entry: entry)
                 }
                 .buttonStyle(TradeWallCellButtonStyle())
 
@@ -136,7 +135,7 @@ struct TradeWallView: View {
                     Haptics.lightImpact()
                     cardDetailSession = CardDetailSession(card: entry.card, owner: entry.owner, matchType: nil)
                 } label: {
-                    TradeWallCardCell(entry: entry, colorScheme: colorScheme)
+                    TradeWallCardCell(entry: entry)
                 }
                 .buttonStyle(TradeWallCellButtonStyle())
 
@@ -145,7 +144,7 @@ struct TradeWallView: View {
                     Haptics.lightImpact()
                     selectedSealedProduct = entry.product
                 } label: {
-                    TradeWallSealedCell(entry: entry, colorScheme: colorScheme)
+                    TradeWallSealedCell(entry: entry)
                 }
                 .buttonStyle(TradeWallCellButtonStyle())
 
@@ -154,12 +153,12 @@ struct TradeWallView: View {
                     Haptics.lightImpact()
                     navigationPath.append(SocialDestination.friendsCollection)
                 } label: {
-                    TradeWallSeeAllCell(profile: profile, colorScheme: colorScheme)
+                    TradeWallSeeAllCell(profile: profile)
                 }
                 .buttonStyle(TradeWallCellButtonStyle())
             }
         }
-        .padding(.horizontal, 8)
+        .padding(.horizontal, BindrSpacing.cardGridScreenInset)
         .padding(.bottom, 8)
     }
 
@@ -372,65 +371,90 @@ private struct TradeWallStatusBadge: View {
 
 private struct TradeWallCellFooter: View {
     let owner: SocialProfile
-    let itemName: String
     let tag: TradeWallStatusTag
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            HStack(alignment: .top, spacing: 7) {
+            HStack(alignment: .center, spacing: 7) {
                 ProfileAvatarView(profile: owner, size: 24)
                     .overlay(
                         Circle().stroke(Color.primary.opacity(0.10), lineWidth: 1)
                     )
-                    .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 1)
 
-                VStack(alignment: .leading, spacing: 2) {
-                    Text(owner.displayName ?? owner.username)
-                        .font(.system(size: 9, weight: .semibold))
-                        .foregroundStyle(.secondary)
-                        .lineLimit(1)
-                    Text(itemName)
-                        .font(.system(size: 11, weight: .bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                Text(owner.displayName ?? owner.username)
+                    .font(.system(size: 9, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
 
             TradeWallStatusBadge(tag: tag)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.horizontal, 7)
-        .padding(.vertical, 7)
+        .padding(.horizontal, 8)
+        .padding(.top, 6)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
+}
+
+@ViewBuilder
+private func tradeWallItemHeader(name: String, setName: String? = nil) -> some View {
+    VStack(alignment: .leading, spacing: 1) {
+        Text(name)
+            .font(.caption2.weight(.semibold))
+            .lineLimit(1)
+            .truncationMode(.tail)
+            .foregroundStyle(.primary)
+
+        if let setName, !setName.isEmpty {
+            Text(setName)
+                .font(.caption2)
+                .lineLimit(1)
+                .truncationMode(.tail)
+                .foregroundStyle(.secondary)
+        }
+    }
+    .multilineTextAlignment(.leading)
+    .frame(maxWidth: .infinity, alignment: .leading)
+    .padding(.horizontal, 8)
+    .padding(.bottom, 4)
+}
+
+@ViewBuilder
+private func tradeWallCardImage(url: URL?, placeholderIcon: String) -> some View {
+    CachedAsyncImage(url: url) { image in
+        image
+            .resizable()
+            .scaledToFit()
+    } placeholder: {
+        tradeWallImagePlaceholder(icon: placeholderIcon)
+    }
+    .aspectRatio(5/7, contentMode: .fit)
+    .frame(maxWidth: .infinity)
+    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
 }
 
 // MARK: - TradeWallSuggestedCell
 
 private struct TradeWallSuggestedCell: View {
     let entry: TradeWallView.SuggestedWallEntry
-    let colorScheme: ColorScheme
 
     var body: some View {
-        tradeWallCellChrome(colorScheme: colorScheme) {
-            CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: entry.card.displayImageSrc)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } placeholder: {
-                tradeWallImagePlaceholder(icon: "photo")
-            }
-            .aspectRatio(5/7, contentMode: .fit)
-            .frame(maxWidth: .infinity)
-            .clipped()
+        VStack(alignment: .leading, spacing: 0) {
+            tradeWallItemHeader(name: entry.card.cardName)
+
+            tradeWallCardImage(
+                url: AppConfiguration.imageURL(relativePath: entry.card.displayImageSrc),
+                placeholderIcon: "photo"
+            )
 
             TradeWallCellFooter(
                 owner: entry.owner,
-                itemName: entry.card.cardName,
                 tag: .suggested(entry.matchType)
             )
         }
+        .padding(.bottom, BindrSpacing.xs)
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -439,27 +463,23 @@ private struct TradeWallSuggestedCell: View {
 /// Compact trade wall cell for the 3-column grid.
 private struct TradeWallCardCell: View {
     let entry: TradeWallView.WallEntry
-    let colorScheme: ColorScheme
 
     var body: some View {
-        tradeWallCellChrome(colorScheme: colorScheme) {
-            CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: entry.card.displayImageSrc)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } placeholder: {
-                tradeWallImagePlaceholder(icon: "photo")
-            }
-            .aspectRatio(5/7, contentMode: .fit)
-            .frame(maxWidth: .infinity)
-            .clipped()
+        VStack(alignment: .leading, spacing: 0) {
+            tradeWallItemHeader(name: entry.card.cardName, setName: entry.setName)
+
+            tradeWallCardImage(
+                url: AppConfiguration.imageURL(relativePath: entry.card.displayImageSrc),
+                placeholderIcon: "photo"
+            )
 
             TradeWallCellFooter(
                 owner: entry.owner,
-                itemName: entry.card.cardName,
                 tag: .inCollection
             )
         }
+        .padding(.bottom, BindrSpacing.xs)
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -467,27 +487,20 @@ private struct TradeWallCardCell: View {
 
 private struct TradeWallSealedCell: View {
     let entry: TradeWallView.SealedWallEntry
-    let colorScheme: ColorScheme
 
     var body: some View {
-        tradeWallCellChrome(colorScheme: colorScheme) {
-            CachedAsyncImage(url: entry.product.imageURL) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            } placeholder: {
-                tradeWallImagePlaceholder(icon: "shippingbox")
-            }
-            .aspectRatio(5/7, contentMode: .fit)
-            .frame(maxWidth: .infinity)
-            .clipped()
+        VStack(alignment: .leading, spacing: 0) {
+            tradeWallItemHeader(name: entry.product.name, setName: entry.product.setName)
+
+            tradeWallCardImage(url: entry.product.imageURL, placeholderIcon: "shippingbox")
 
             TradeWallCellFooter(
                 owner: entry.owner,
-                itemName: entry.product.name,
                 tag: .inCollection
             )
         }
+        .padding(.bottom, BindrSpacing.xs)
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -495,76 +508,33 @@ private struct TradeWallSealedCell: View {
 
 private struct TradeWallSeeAllCell: View {
     let profile: SocialProfile
-    let colorScheme: ColorScheme
 
     var body: some View {
-        tradeWallCellChrome(colorScheme: colorScheme) {
-            // Invisible footer rendered underneath to match the exact height of
-            // card cells (image area + footer). The ZStack overlays the content
-            // centred over both layers.
-            ZStack(alignment: .top) {
-                VStack(spacing: 0) {
-                    Rectangle()
-                        .fill(Color.clear)
-                        .aspectRatio(5/7, contentMode: .fit)
-                        .frame(maxWidth: .infinity)
-                    TradeWallCellFooter(
-                        owner: profile,
-                        itemName: "",
-                        tag: .inCollection
-                    )
-                    .hidden()
-                }
+        VStack(alignment: .leading, spacing: 0) {
+            tradeWallItemHeader(name: "See all", setName: "friends' cards")
 
-                // Visible content centred over the full cell height
-                VStack(spacing: 12) {
-                    Image(systemName: "person.2.fill")
-                        .font(.system(size: 28, weight: .medium))
-                        .foregroundStyle(Color.primary.opacity(0.3))
+            ZStack {
+                tradeWallImagePlaceholder(icon: "person.2.fill")
+                    .aspectRatio(5/7, contentMode: .fit)
+                    .frame(maxWidth: .infinity)
+                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
 
-                    VStack(spacing: 3) {
-                        Text("See all")
-                            .font(.system(size: 13, weight: .bold))
-                            .foregroundStyle(.primary)
-                        Text("friends' cards")
-                            .font(.system(size: 13, weight: .bold))
-                            .foregroundStyle(.primary)
-                    }
-
+                VStack(spacing: 8) {
                     Image(systemName: "chevron.right.circle.fill")
                         .font(.system(size: 22))
-                        .foregroundStyle(Color.primary.opacity(0.25))
+                        .foregroundStyle(Color.primary.opacity(0.28))
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+
+            TradeWallCellFooter(owner: profile, tag: .inCollection)
+                .hidden()
         }
+        .padding(.bottom, BindrSpacing.xs)
+        .frame(maxWidth: .infinity)
     }
 }
 
-// MARK: - Trade wall cell chrome
-
-@ViewBuilder
-private func tradeWallCellChrome<Content: View>(
-    colorScheme: ColorScheme,
-    @ViewBuilder content: () -> Content
-) -> some View {
-    VStack(spacing: 0) {
-        content()
-    }
-    .background(.thinMaterial)
-    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-    .overlay {
-        RoundedRectangle(cornerRadius: 12, style: .continuous)
-            .stroke(
-                Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08),
-                lineWidth: 0.5
-            )
-    }
-    .shadow(
-        color: .black.opacity(colorScheme == .dark ? 0.32 : 0.10),
-        radius: 6, x: 0, y: 3
-    )
-}
+// MARK: - Trade wall placeholders
 
 private func tradeWallImagePlaceholder(icon: String) -> some View {
     Rectangle()

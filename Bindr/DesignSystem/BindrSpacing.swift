@@ -25,16 +25,20 @@ enum BindrSpacing {
     static let xxl: CGFloat = 24
     static let xxxl: CGFloat = 32
 
-    /// Gap between card tiles in browse/collection grids.
-    static let cardGrid: CGFloat = xs
+    /// Vertical gap between card grid rows — wide enough that name/set labels read with the card below.
+    static let cardGrid: CGFloat = md
+    /// Horizontal gap between card grid columns — kept tighter so tiles stay large.
+    static let cardGridColumn: CGFloat = xs
     /// Screen-edge inset for card grids — keeps tiles large with minimal side gap.
     static let cardGridScreenInset: CGFloat = xs
 }
 
 /// Shared layout metrics for card thumbnail grids (browse, collection, wishlist, binders).
 enum CardGridLayout {
-    /// Gap between cells and columns — tight so cards fill the row.
-    static let cellSpacing: CGFloat = BindrSpacing.xs
+    /// Vertical gap between rows.
+    static let cellSpacing: CGFloat = BindrSpacing.cardGrid
+    /// Horizontal gap between columns.
+    static let columnSpacing: CGFloat = BindrSpacing.cardGridColumn
     /// Screen-edge inset for card grids.
     static let horizontalInset: CGFloat = BindrSpacing.xs
     /// Inset for price / badge overlays on the card image.

@@ -766,6 +766,7 @@ private struct TradeCalculatorView: View {
             VStack(spacing: 20) {
                 summarySection
                 theirSideSection
+                tradeVersusSection
                 mySideSection
                 if canCompleteTrade || isCompletingTrade {
                     completeTradeSection
@@ -842,89 +843,68 @@ private struct TradeCalculatorView: View {
     }
 
     private var summarySection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 0) {
-                // My Side (Left)
-                VStack(spacing: 8) {
-                    Text("YOU")
-                        .font(.system(size: 10, weight: .black))
-                        .tracking(1.5)
-                        .foregroundStyle(bindrAccent)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 3)
-                        .background(bindrAccent.opacity(0.12), in: Capsule())
-                    
-                    Text(formattedDisplayAmountUSD(myTotalUSD))
-                        .font(.system(size: 24, weight: .black, design: .rounded))
-                        .foregroundStyle(bindrAccent)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.7)
-                }
-                .frame(maxWidth: .infinity)
-                
-                // Middle VS + Difference
-                VStack(spacing: 6) {
-                    ZStack {
-                        Circle()
-                            .fill(LinearGradient(
-                                colors: [Color.cyan, Color.purple],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ))
-                            .frame(width: 38, height: 38)
-                            .shadow(color: Color.purple.opacity(0.35), radius: 6, x: 0, y: 3)
-                        
-                        Text("VS")
-                            .font(.system(size: 13, weight: .black))
-                            .foregroundStyle(.white)
-                    }
-                    
-                    if hasAnyTradeValue {
-                        Text(differenceBadgeText)
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundStyle(differenceColor)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 3)
-                            .background(differenceColor.opacity(0.12), in: Capsule())
-                            .overlay {
-                                Capsule()
-                                    .stroke(differenceColor.opacity(0.24), lineWidth: 1)
-                            }
-                    }
-                }
-                .frame(width: 100)
-                
-                // Their Side (Right)
-                VStack(spacing: 8) {
-                    Text("THEM")
-                        .font(.system(size: 10, weight: .black))
-                        .tracking(1.5)
-                        .foregroundStyle(.secondary)
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 3)
-                        .background(Color.primary.opacity(0.08), in: Capsule())
-                    
-                    Text(formattedDisplayAmountUSD(theirTotalUSD))
-                        .font(.system(size: 24, weight: .black, design: .rounded))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.7)
-                }
-                .frame(maxWidth: .infinity)
+        Text(fairnessTitle + " · " + fairnessSubtitle)
+            .font(.system(size: 13, weight: .semibold))
+            .foregroundStyle(fairnessColor)
+            .frame(maxWidth: .infinity, alignment: .center)
+            .multilineTextAlignment(.center)
+            .padding(18)
+            .glassCardStyle(cornerRadius: 24, interactive: false)
+    }
+
+    private var tradeVersusSection: some View {
+        HStack(alignment: .center, spacing: 0) {
+            VStack(spacing: 8) {
+                Text("YOU")
+                    .font(.system(size: 10, weight: .black))
+                    .tracking(1.5)
+                    .foregroundStyle(bindrAccent)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 3)
+                    .background(bindrAccent.opacity(0.12), in: Capsule())
+
+                Text(formattedDisplayAmountUSD(myTotalUSD))
+                    .font(.system(size: 24, weight: .black, design: .rounded))
+                    .foregroundStyle(bindrAccent)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
             }
-            .padding(.vertical, 10)
+            .frame(maxWidth: .infinity)
 
-            Divider()
-                .overlay(colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10))
+            ZStack {
+                Circle()
+                    .fill(LinearGradient(
+                        colors: [Color.cyan, Color.purple],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ))
+                    .frame(width: 38, height: 38)
+                    .shadow(color: Color.purple.opacity(0.35), radius: 6, x: 0, y: 3)
 
-            Text(fairnessTitle + " · " + fairnessSubtitle)
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(fairnessColor)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .multilineTextAlignment(.center)
+                Text("VS")
+                    .font(.system(size: 13, weight: .black))
+                    .foregroundStyle(.white)
+            }
+            .padding(.horizontal, 12)
+
+            VStack(spacing: 8) {
+                Text("THEM")
+                    .font(.system(size: 10, weight: .black))
+                    .tracking(1.5)
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 3)
+                    .background(Color.primary.opacity(0.08), in: Capsule())
+
+                Text(formattedDisplayAmountUSD(theirTotalUSD))
+                    .font(.system(size: 24, weight: .black, design: .rounded))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+            }
+            .frame(maxWidth: .infinity)
         }
-        .padding(18)
-        .glassCardStyle(cornerRadius: 24, interactive: false)
+        .padding(.vertical, 4)
     }
 
     private var completeTradeSection: some View {
@@ -957,20 +937,6 @@ private struct TradeCalculatorView: View {
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
-    }
-
-    private var differenceBadgeText: String {
-        if abs(balanceUSD) < 0.01 { return "EVEN" }
-        return formattedDisplayAmountUSD(abs(balanceUSD))
-    }
-
-    private var differenceColor: Color {
-        if abs(balanceUSD) < 0.01 { return BindrPalette.ownedGreen }
-        return balanceUSD > 0 ? BindrPalette.ownedGreen : BindrPalette.alertRed
-    }
-
-    private var mySideFill: Color {
-        bindrAccent.opacity(colorScheme == .dark ? 0.28 : 0.14)
     }
 
     private var theirSideSection: some View {

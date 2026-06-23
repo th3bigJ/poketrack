@@ -458,6 +458,7 @@ struct DashboardView: View {
             guard hasFiredInitialLoadComplete else { return }
             await reloadDashboardInventory(deferForLaunch: false)
             recomputeCollectionStats()
+            chartRefreshID += 1
             await computeLiveValue()
             chartRefreshID += 1
         }
@@ -651,20 +652,12 @@ struct DashboardView: View {
 
             collectionSummaryInsightCard
 
-            Rectangle()
-                .fill(dashboardDividerColor)
-                .frame(height: 1)
-
             if let trend = activeMarketTrend {
                 marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
+                    .padding(.top, 16)
             }
 
             if !progressTracker.targets.isEmpty {
-                Rectangle()
-                    .fill(dashboardDividerColor)
-                    .frame(height: 1)
-                    .padding(.top, 8)
-
                 progressTrackingSection
             } else {
                 progressTrackingAddButton
@@ -688,10 +681,6 @@ struct DashboardView: View {
             if !upcomingReleases.isEmpty {
                 upcomingReleasesSection
             }
-
-            Rectangle()
-                .fill(dashboardDividerColor)
-                .frame(height: 1)
 
             newsAndUpdatesSection
 
@@ -963,6 +952,7 @@ struct DashboardView: View {
                                 )
                         }
                 }
+                .id(chartRefreshID)
             }
         }
     }
@@ -978,7 +968,7 @@ struct DashboardView: View {
                 Button {
                     onOpenCollection?()
                 } label: {
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .center, spacing: 4) {
                         Text(formatCollectionCount(totalCardsCount))
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                             .foregroundStyle(DashboardPalette.purple)
@@ -989,42 +979,36 @@ struct DashboardView: View {
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(dashboardPrimaryText)
                     }
+                    .frame(maxWidth: .infinity)
                 }
                 .buttonStyle(DashboardPressStyle())
                 .disabled(onOpenCollection == nil)
 
-                Rectangle()
-                    .fill(dashboardBorder.opacity(colorScheme == .dark ? 0.35 : 0.55))
-                    .frame(width: 1, height: 58)
-                    .padding(.horizontal, 10)
+                collectionOverviewStatColumn(
+                    icon: "rectangle.stack.fill",
+                    iconColor: DashboardPalette.blue,
+                    count: uniqueCardsCount,
+                    label: "Unique",
+                    action: onOpenCollection
+                )
 
-                HStack(spacing: 0) {
-                    collectionOverviewStatColumn(
-                        icon: "rectangle.stack.fill",
-                        iconColor: DashboardPalette.blue,
-                        count: uniqueCardsCount,
-                        label: "Unique",
-                        action: onOpenCollection
-                    )
+                collectionOverviewStatColumn(
+                    icon: "shippingbox.fill",
+                    iconColor: DashboardPalette.success,
+                    count: sealedProductsCount,
+                    label: "Sealed",
+                    action: onOpenSealedProducts
+                )
 
-                    collectionOverviewStatColumn(
-                        icon: "shippingbox.fill",
-                        iconColor: DashboardPalette.success,
-                        count: sealedProductsCount,
-                        label: "Sealed",
-                        action: onOpenSealedProducts
-                    )
-
-                    collectionOverviewStatColumn(
-                        icon: "star.fill",
-                        iconColor: DashboardPalette.gold,
-                        count: wishlistedCardsCount,
-                        label: "Wishlist",
-                        action: onOpenWishlist
-                    )
-                }
-                .frame(maxWidth: .infinity)
+                collectionOverviewStatColumn(
+                    icon: "star.fill",
+                    iconColor: DashboardPalette.gold,
+                    count: wishlistedCardsCount,
+                    label: "Wishlist",
+                    action: onOpenWishlist
+                )
             }
+            .frame(maxWidth: .infinity, alignment: .center)
         }
     }
 
@@ -1071,7 +1055,7 @@ struct DashboardView: View {
     }
 
     private var progressTrackingSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 6) {
             HStack(alignment: .firstTextBaseline) {
                 Text("TRACK PROGRESS")
                     .font(.caption.weight(.semibold))
@@ -1095,23 +1079,25 @@ struct DashboardView: View {
             if isLoadingProgressSnapshots && progressSnapshots.isEmpty {
                 ProgressView()
                     .tint(services.theme.accentColor)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .frame(maxWidth: .infinity, alignment: .center)
             } else {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        ForEach(progressSnapshots) { snapshot in
-                            DashboardProgressRingTile(
-                                snapshot: snapshot,
-                                accentColor: services.theme.accentColor,
-                                colorScheme: colorScheme
-                            ) {
-                                progressTracker.remove(id: snapshot.targetID)
-                                progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+                GeometryReader { geo in
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            ForEach(progressSnapshots) { snapshot in
+                                DashboardProgressRingTile(
+                                    snapshot: snapshot,
+                                    accentColor: services.theme.accentColor
+                                ) {
+                                    progressTracker.remove(id: snapshot.targetID)
+                                    progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+                                }
                             }
                         }
+                        .frame(minWidth: geo.size.width, alignment: .center)
                     }
-                    .padding(.vertical, 4)
                 }
+                .frame(height: 132)
                 .padding(.horizontal, -16)
             }
         }
@@ -1318,32 +1304,22 @@ struct DashboardView: View {
                     label: "Last 31 Days"
                 )
 
-                marketTrendDivider
-
                 marketTrendSecondaryColumn(
                     value: trend.change7Days,
                     label: "7 Days"
                 )
-
-                marketTrendDivider
 
                 marketTrendSecondaryColumn(
                     value: trend.change1Day,
                     label: "1 Day"
                 )
             }
+            .frame(maxWidth: .infinity, alignment: .center)
         }
     }
 
-    private var marketTrendDivider: some View {
-        Rectangle()
-            .fill(dashboardBorder.opacity(colorScheme == .dark ? 0.35 : 0.55))
-            .frame(width: 1, height: 42)
-            .padding(.horizontal, 8)
-    }
-
     private func marketTrendPrimaryColumn(value: Double?, label: String) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .center, spacing: 4) {
             Text(formatTrendPercent(value))
                 .font(.system(size: 24, weight: .bold, design: .rounded))
                 .foregroundStyle(trendColor(value))
@@ -1353,12 +1329,13 @@ struct DashboardView: View {
             Text(label)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(dashboardPrimaryText)
+                .multilineTextAlignment(.center)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     private func marketTrendSecondaryColumn(value: Double?, label: String) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .center, spacing: 4) {
             HStack(spacing: 4) {
                 if let value, value != 0 {
                     Image(systemName: value > 0 ? "arrow.up" : "arrow.down")
@@ -1376,8 +1353,9 @@ struct DashboardView: View {
             Text(label)
                 .font(.caption)
                 .foregroundStyle(dashboardSecondaryText)
+                .multilineTextAlignment(.center)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     private var recentActivityCard: some View {
@@ -1603,6 +1581,8 @@ struct DashboardView: View {
 
         await svc.loadAllFromStore()
         applyValuePlaceholder(from: svc)
+        // Paint the chart from persisted snapshots now — don't wait for live pricing prefetch.
+        chartRefreshID += 1
 
         // Unblock the launch overlay with the persisted placeholder — live pricing runs after fade.
         hasPreparedInitialDashboardData = true
@@ -1710,6 +1690,7 @@ struct DashboardView: View {
             try? await Task.sleep(for: .milliseconds(500))
             guard let svc = services.collectionValue else { return }
             await svc.loadAllFromStore()
+            chartRefreshID += 1
         }
     }
 

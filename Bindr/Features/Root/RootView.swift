@@ -323,13 +323,7 @@ struct RootView: View {
     private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
         switch selectedTab {
         case .dashboard: return ("magnifyingglass", "Search", {
-            withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                isSearchExperiencePresented = true
-            }
-            Task { @MainActor in
-                await Task.yield()
-                searchFieldFocused = true
-            }
+            presentSearchExperience()
         })
         default: return nil
         }
@@ -635,6 +629,48 @@ struct RootView: View {
     private var chromeFloatingInset: CGFloat { RootChromeEnvironment.floatingContentTopInset }
     private var chromeSearchBarHiddenOffset: CGFloat { -(chromeFloatingInset + 18) }
     private var chromeContentTopInset: CGFloat { isSearchDetailActive ? 0 : chromeFloatingInset }
+
+    private static let searchPresentationAnimation: Animation = .spring(response: 0.44, dampingFraction: 0.86)
+    private static let searchFocusDelay: Duration = .milliseconds(140)
+
+    private var searchOverlayPageTransition: AnyTransition {
+        .asymmetric(
+            insertion: .move(edge: .bottom).combined(with: .opacity),
+            removal: .move(edge: .bottom).combined(with: .opacity)
+        )
+    }
+
+    private var searchOverlayBarTransition: AnyTransition {
+        .asymmetric(
+            insertion: .move(edge: .top).combined(with: .opacity),
+            removal: .move(edge: .top).combined(with: .opacity)
+        )
+    }
+
+    @MainActor
+    private func presentSearchExperience(focusField: Bool = true) {
+        withAnimation(Self.searchPresentationAnimation) {
+            isSearchExperiencePresented = true
+        }
+        guard focusField else { return }
+        Task { @MainActor in
+            try? await Task.sleep(for: Self.searchFocusDelay)
+            guard isSearchExperiencePresented else { return }
+            searchFieldFocused = true
+        }
+    }
+
+    @MainActor
+    private func dismissSearchExperience(clearQuery: Bool = true) {
+        searchNavigationPath = NavigationPath()
+        if clearQuery {
+            universalQuery = ""
+        }
+        searchFieldFocused = false
+        withAnimation(Self.searchPresentationAnimation) {
+            isSearchExperiencePresented = false
+        }
+    }
     private var isTabBarHidden: Bool {
         isSearchExperiencePresented
             || chromeScroll.overlaySuppressesTabBar
@@ -807,7 +843,7 @@ struct RootView: View {
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .animation(.spring(response: 0.38, dampingFraction: 0.88), value: isSearchExperiencePresented)
+                .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
                 .environment(\.rootFloatingChromeInset, chromeContentTopInset)
 
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
@@ -818,9 +854,10 @@ struct RootView: View {
                             topInset: chromeSearchBarTopInset,
                             bottomInset: chromeSearchBarBottomInset
                         )
-                        .transition(.identity)
+                        .transition(.opacity.combined(with: .offset(y: -10)))
                     }
                 }
+                .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
                     .sheet(isPresented: $showPremiumAutoSheet) {
                         // Same `PaywallSheet` wrapper everywhere else uses,
                         // so the user-initiated path and the auto-popup path
@@ -896,9 +933,7 @@ struct RootView: View {
             if isFocused {
                 Haptics.lightImpact()
                 if !isSearchExperiencePresented {
-                    withAnimation(.spring(response: 0.38, dampingFraction: 0.88)) {
-                        isSearchExperiencePresented = true
-                    }
+                    presentSearchExperience(focusField: false)
                 }
             }
         }
@@ -1035,35 +1070,55 @@ struct RootView: View {
 
     @ViewBuilder
     private var searchOverlay: some View {
-        GeometryReader { geo in
-            ZStack(alignment: .top) {
-                BindrPageBackground()
-                    .ignoresSafeArea()
+        ZStack(alignment: .top) {
+            BindrPageBackground()
+                .ignoresSafeArea()
+                .transition(.opacity)
 
-                searchOverlayForeground
-                    .transition(
-                        .asymmetric(
-                            insertion: .offset(y: 8)
-                                .combined(with: .scale(scale: 0.985, anchor: .center))
-                                .combined(with: .opacity),
-                            removal: .opacity
-                        )
-                    )
+            searchOverlayNavigationStack
+                .transition(searchOverlayPageTransition)
+
+            if searchNavigationPath.isEmpty {
+                overlaySearchBar
+                    .transition(searchOverlayBarTransition)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .environment(\.presentCard, { card, list in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            SearchHistoryStore.recordViewedCard(card.masterCardId)
+            let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
+            selectedCardPresentation = CardPresentationContext(windowedFrom: list, startIndex: idx)
+        })
+        .environment(\.presentCardAtIndex, { list, index in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
+            if list.indices.contains(safeIndex) {
+                SearchHistoryStore.recordViewedCard(list[safeIndex].masterCardId)
+            }
+            selectedCardPresentation = CardPresentationContext(windowedFrom: list, startIndex: safeIndex)
+        })
+        .environment(\.presentSealedProduct, { _, list, index in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
+            selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
+        })
         .ignoresSafeArea(.keyboard)
         .zIndex(20)
     }
 
-    /// Scrollable search content sits directly on the dimmed backdrop — no full-screen
-    /// glass sheet, which was washing out card thumbnails and search results.
-    @ViewBuilder
-    private var searchOverlayContentGlassBackground: some View {
-        searchOverlayNavigationStack
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .ignoresSafeArea(edges: .bottom)
+    private var overlaySearchBar: some View {
+        universalSearchBarControl(
+            searchFieldUseGlass: true,
+            showsBackButtonWhenOpen: true
+        )
+        .padding(.horizontal, 16)
+        .padding(.top, RootChromeEnvironment.searchBarTopInset)
+        .padding(.bottom, RootChromeEnvironment.searchBarBottomInset)
     }
 
+    /// Scrollable search content sits directly on the dimmed backdrop — no full-screen
+    /// glass sheet, which was washing out card thumbnails and search results.
     @ViewBuilder
     private var searchOverlayNavigationStack: some View {
         NavigationStack(path: $searchNavigationPath) {
@@ -1093,44 +1148,7 @@ struct RootView: View {
         .toolbarBackground(.hidden, for: .navigationBar)
         .background(Color.clear)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .ignoresSafeArea(.keyboard)
-    }
-
-    @ViewBuilder
-    private var searchOverlayForeground: some View {
-        ZStack(alignment: .top) {
-            searchOverlayContentGlassBackground
-
-            if searchNavigationPath.isEmpty {
-                universalSearchBarControl(
-                    searchFieldUseGlass: true,
-                    showsBackButtonWhenOpen: true
-                )
-                .padding(.horizontal, 16)
-                .padding(.top, RootChromeEnvironment.searchBarTopInset)
-                .padding(.bottom, RootChromeEnvironment.searchBarBottomInset)
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .environment(\.presentCard, { card, list in
-            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-            SearchHistoryStore.recordViewedCard(card.masterCardId)
-            let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
-            selectedCardPresentation = CardPresentationContext(windowedFrom: list, startIndex: idx)
-        })
-        .environment(\.presentCardAtIndex, { list, index in
-            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
-            if list.indices.contains(safeIndex) {
-                SearchHistoryStore.recordViewedCard(list[safeIndex].masterCardId)
-            }
-            selectedCardPresentation = CardPresentationContext(windowedFrom: list, startIndex: safeIndex)
-        })
-        .environment(\.presentSealedProduct, { _, list, index in
-            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-            let safeIndex = min(max(index, 0), max(list.count - 1, 0))
-            selectedSealedProductPresentation = SealedProductPresentationContext(products: list, startIndex: safeIndex)
-        })
+        .ignoresSafeArea(edges: .bottom)
         .ignoresSafeArea(.keyboard)
     }
 
@@ -1147,8 +1165,8 @@ struct RootView: View {
             .frame(maxWidth: .infinity, alignment: .top)
             .allowsHitTesting(visible)
             .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
-            .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
-            .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
+            .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
+            .animation(Self.searchPresentationAnimation, value: isSearchDetailActive)
     }
 
     private func universalSearchBarControl(
@@ -1183,21 +1201,10 @@ struct RootView: View {
             trailingButton: chromeTrailingButton,
             extraTrailingButton: chromeExtraTrailingButton,
             onActivateSearch: {
-                withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                    isSearchExperiencePresented = true
-                }
-                Task { @MainActor in
-                    await Task.yield()
-                    searchFieldFocused = true
-                }
+                presentSearchExperience()
             },
             onBack: {
-                searchNavigationPath = NavigationPath()
-                universalQuery = ""
-                withAnimation(.easeOut(duration: 0.2)) {
-                    isSearchExperiencePresented = false
-                }
-                searchFieldFocused = false
+                dismissSearchExperience()
             },
             onCamera: {
                 searchFieldFocused = false
@@ -1424,7 +1431,7 @@ struct RootView: View {
         }
         universalQuery = ""
         searchFieldFocused = false
-        withAnimation(.easeOut(duration: 0.2)) {
+        withAnimation(Self.searchPresentationAnimation) {
             isSearchExperiencePresented = false
             selectedTab = .browse
         }

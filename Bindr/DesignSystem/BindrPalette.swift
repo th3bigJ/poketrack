@@ -46,7 +46,7 @@ enum BindrPalette {
     static let feedSurface = Color(hex: "F5F5F7")
 
     /// Hairline border around feed post cards in light mode.
-    static let feedCardBorder = Color(hex: "E5E5EA")
+    static let feedCardBorder = Color(hex: "D1D1D6")
 
     /// Hashtag pill background on feed posts.
     static let feedTagBackground = Color(hex: "EFEFF4")
@@ -67,5 +67,5 @@ enum BindrPalette {
     static let feedMetaText = Color(hex: "9DA1C2")
 
     /// Hairline divider between flat feed rows (dark mode).
-    static let feedRowDivider = Color(hex: "1E1E3A")
+    static let feedRowDivider = Color(hex: "2A2A48")
 }

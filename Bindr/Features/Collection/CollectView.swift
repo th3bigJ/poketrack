@@ -361,20 +361,10 @@ struct CollectView: View {
                     .font(.caption.weight(.semibold))
                     .lineLimit(1)
             }
-            .foregroundStyle(isSelected ? .white : .secondary)
+            .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
             .padding(.horizontal, 8)
             .padding(.vertical, 5)
-            .background(
-                Capsule(style: .continuous)
-                    .bindrAccentFill(isSelected ? services.theme.accentColor : Color.clear, usesLogoGradient: isSelected)
-            )
-            .overlay(
-                Capsule(style: .continuous)
-                    .strokeBorder(
-                        isSelected ? services.theme.accentColor.opacity(0.55) : Color.white.opacity(0.16),
-                        lineWidth: 1
-                    )
-            )
+            .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
         }
         .buttonStyle(.plain)
         .accessibilityLabel(tab.title)

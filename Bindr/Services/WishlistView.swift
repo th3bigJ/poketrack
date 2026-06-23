@@ -23,7 +23,7 @@ struct WishlistView: View {
     @State private var showPaywall = false
     @State private var errorMessage: String?
 
-    private let columns = [GridItem(.adaptive(minimum: 110), spacing: BindrSpacing.cardGrid)]
+    private let columns = [GridItem(.adaptive(minimum: 110), spacing: BindrSpacing.cardGridColumn)]
 
     /// Reload when membership, card ids, or enabled games change.
     private var wishlistSignature: String {
