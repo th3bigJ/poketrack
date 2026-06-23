@@ -320,8 +320,6 @@ struct LibraryStorageSettingsPage: View {
                 inventoryRow("Decks", count: inventory.decks, systemImage: "rectangle.stack.fill")
                 inventoryRow("Activity ledger", count: inventory.ledgerLines, systemImage: "list.bullet.rectangle")
                 inventoryRow("Daily value snapshots", count: inventory.dailyValueSnapshots, systemImage: "chart.line.uptrend.xyaxis")
-                inventoryRow("Weekly averages", count: inventory.weeklyAverages, systemImage: "calendar")
-                inventoryRow("Monthly averages", count: inventory.monthlyAverages, systemImage: "calendar.badge.clock")
             } header: {
                 Text("On this device")
             }

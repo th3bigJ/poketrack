@@ -2,14 +2,6 @@ import SwiftUI
 import SwiftData
 import Charts
 
-private enum ChartRange: String, CaseIterable, Identifiable {
-    case daily = "Daily"
-    case weekly = "Weekly"
-    case monthly = "Monthly"
-
-    var id: String { rawValue }
-}
-
 struct DashboardView: View {
     var onViewAllActivity: (() -> Void)? = nil
     var onOpenScanner: (() -> Void)? = nil
@@ -53,7 +45,6 @@ struct DashboardView: View {
     @State private var isLoadingValue = false
     @State private var hasFiredInitialLoadComplete = false
     @State private var selectedPoint: ChartPoint? = nil
-    @State private var chartRange: ChartRange = .daily
     @State private var chartRefreshID: Int = 0
     @State private var selectedBrand: TCGBrand? = nil
     @State private var lastLiveValueComputedAt: Date? = nil
@@ -78,8 +69,6 @@ struct DashboardView: View {
     // Cached chart data — updated only when chartRefreshID changes so body re-evaluations
     // from unrelated @State writes don't rebuild snapshot arrays.
     @State private var cachedDailyPoints: [ChartPoint] = []
-    @State private var cachedWeeklyPoints: [ChartPoint] = []
-    @State private var cachedMonthlyPoints: [ChartPoint] = []
     @State private var cachedActivePoints: [ChartPoint] = []
 
     // Cached collection stats — updated via task when collectionItems/brand changes,
@@ -150,7 +139,7 @@ struct DashboardView: View {
     /// Subtitle beneath the hero total — shows the scrubbed chart date while dragging, otherwise today's label.
     private var displayValueSubtitle: String {
         if let point = selectedPoint {
-            if chartRange == .daily, Calendar.current.isDateInToday(point.date) {
+            if Calendar.current.isDateInToday(point.date) {
                 return "Today"
             }
             return rangeLabel(for: point.date)
@@ -260,28 +249,18 @@ struct DashboardView: View {
         "\(services.collectionValue == nil ? "nil" : "ready"):\(collectionItems.count):\(services.isLaunchCatalogPipelineComplete)"
     }
 
-    private var dailyPoints: [ChartPoint] { cachedDailyPoints }
-    private var weeklyPoints: [ChartPoint] { cachedWeeklyPoints }
-    private var monthlyPoints: [ChartPoint] { cachedMonthlyPoints }
-
     private func recomputeChartData() async {
         let svc = services.collectionValue
         let todaySnap = todayLiveSnapshot
         let snapshots = svc?.snapshots ?? []
-        let weeklyAverages = svc?.weeklyAverages ?? []
-        let monthlyAverages = svc?.monthlyAverages ?? []
 
-        // Capture inputs on @MainActor, then compute off-thread.
-        let (daily, weekly, monthly) = await Task.detached(priority: .userInitiated) {
+        let daily = await Task.detached(priority: .userInitiated) {
             let cal = Calendar.current
             let now = cal.startOfDay(for: Date())
 
-            // Daily
-            let dailyCutoff = cal.date(byAdding: .day, value: -BucketDateMath.dailyPricingHistoryDays, to: now)!
             var pointsByDay: [Date: ChartPoint] = [:]
             for snapshot in snapshots {
                 let day = cal.startOfDay(for: snapshot.date)
-                guard day >= dailyCutoff else { continue }
                 pointsByDay[day] = ChartPoint(
                     date: day,
                     total: snapshot.totalGbp,
@@ -300,54 +279,15 @@ struct DashboardView: View {
                     sealed: snap.sealed
                 )
             }
-            let dailyResult = pointsByDay.keys.sorted().compactMap { pointsByDay[$0] }
-
-            // Weekly
-            let weeklyCutoff = cal.date(byAdding: .year, value: -1, to: now)!
-            let weeklyResult = weeklyAverages
-                .filter { $0.weekStart >= weeklyCutoff }
-                .map {
-                    let hasExplicitSplit = $0.cardsGbp > 0 || $0.sealedGbp > 0
-                    return ChartPoint(
-                        date: $0.weekStart,
-                        total: $0.totalGbp,
-                        pokemon: $0.pokemonGbp,
-                        cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
-                        sealed: hasExplicitSplit ? $0.sealedGbp : 0
-                    )
-                }
-
-            // Monthly
-            let monthlyCutoff = cal.date(byAdding: .year, value: -5, to: now)!
-            let monthlyResult = monthlyAverages
-                .filter { $0.monthStart >= monthlyCutoff }
-                .map {
-                    let hasExplicitSplit = $0.cardsGbp > 0 || $0.sealedGbp > 0
-                    return ChartPoint(
-                        date: $0.monthStart,
-                        total: $0.totalGbp,
-                        pokemon: $0.pokemonGbp,
-                        cards: hasExplicitSplit ? $0.cardsGbp : $0.totalGbp,
-                        sealed: hasExplicitSplit ? $0.sealedGbp : 0
-                    )
-                }
-
-            return (dailyResult, weeklyResult, monthlyResult)
+            return pointsByDay.keys.sorted().compactMap { pointsByDay[$0] }
         }.value
 
         cachedDailyPoints = daily
-        cachedWeeklyPoints = weekly
-        cachedMonthlyPoints = monthly
         recomputeActivePoints()
     }
 
     private func recomputeActivePoints() {
-        let base: [ChartPoint]
-        switch chartRange {
-        case .daily: base = cachedDailyPoints
-        case .weekly: base = cachedWeeklyPoints
-        case .monthly: base = cachedMonthlyPoints
-        }
+        let base = cachedDailyPoints
         guard let brand = selectedBrand else { cachedActivePoints = base; return }
         cachedActivePoints = base.map { point in
             let total: Double
@@ -411,14 +351,7 @@ struct DashboardView: View {
         let amount = current - previous
         let pct = (amount / previous) * 100
 
-        let label: String
-        switch chartRange {
-        case .daily: label = "vs prev day"
-        case .weekly: label = "vs prev week"
-        case .monthly: label = "vs prev month"
-        }
-
-        return (amount, pct, label)
+        return (amount, pct, "vs prev day")
     }
 
     var body: some View {
@@ -553,11 +486,6 @@ struct DashboardView: View {
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
             selectedPoint = nil
-            recomputeActivePoints()
-        }
-        .onChange(of: chartRange) { _, _ in
-            selectedPoint = nil
-            selectedBrand = activeBrand
             recomputeActivePoints()
         }
         .onChange(of: services.isBootstrapping) { _, bootstrapping in
@@ -914,15 +842,6 @@ struct DashboardView: View {
             }
 
             if !activePoints.isEmpty {
-                HStack {
-                    SlidingSegmentedPicker(
-                        selection: $chartRange,
-                        items: ChartRange.allCases,
-                        title: { $0.rawValue }
-                    )
-                    .frame(maxWidth: 240)
-                }
-
                 Chart(activePoints) { point in
                         AreaMark(
                             x: .value("Date", point.date),
@@ -1646,8 +1565,7 @@ struct DashboardView: View {
         liveSealedGbp = snap.sealed
         totalCostBasis = totalCost
 
-        let changed = svc.updateTodaySnapshot(snap)
-        if changed { svc.aggregateCurrentPeriods() }
+        _ = svc.updateTodaySnapshot(snap)
         svc.persistLastKnownValue(snap)
         await svc.loadAllFromStore()
         lastLiveValueComputedAt = Date()
@@ -1890,29 +1808,12 @@ struct DashboardView: View {
     }
 
     private func rangeLabel(for date: Date) -> String {
-        switch chartRange {
-        case .daily:
-            return date.formatted(date: .abbreviated, time: .omitted)
-        case .weekly:
-            let end = Calendar.current.date(byAdding: .day, value: 6, to: date) ?? date
-            return "w/c \(date.formatted(.dateTime.day().month(.abbreviated))) - \(end.formatted(.dateTime.day().month(.abbreviated)))"
-        case .monthly:
-            return date.formatted(.dateTime.month(.wide).year())
-        }
+        date.formatted(date: .abbreviated, time: .omitted)
     }
 
     private func xAxisLabel(for date: Date) -> String {
-        switch chartRange {
-        case .daily:
-            if Calendar.current.isDateInToday(date) { return "Today" }
-            return date.formatted(.dateTime.day().month(.abbreviated))
-        case .weekly:
-            let day = Calendar.current.component(.day, from: date)
-            let month = Calendar.current.component(.month, from: date)
-            return "\(day)/\(month)"
-        case .monthly:
-            return date.formatted(.dateTime.month(.abbreviated).year())
-        }
+        if Calendar.current.isDateInToday(date) { return "Today" }
+        return date.formatted(.dateTime.day().month(.abbreviated))
     }
 
     private static let currencyFormatter: NumberFormatter = {

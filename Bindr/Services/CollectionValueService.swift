@@ -2,41 +2,16 @@ import Foundation
 import SwiftData
 import Observation
 
-/// Computes and stores daily snapshots, completed-week averages, and completed-month averages.
+/// Computes and stores one daily collection value snapshot per calendar day.
 ///
 /// Daily rules:
 /// - Backfill missing snapshots for the last ~90 days using historical card prices.
 /// - Capture at most one snapshot for today when the app runs.
-///
-/// Weekly rules:
-/// - A week average is written once the week (Mon–Sun) is fully complete and the user opens
-///   the app on or after the following Monday.
-/// - The *current incomplete week* average is computed live from existing daily snapshots.
-///
-/// Monthly rules:
-/// - A month average is written once the month is fully complete (user opens on or after the 1st
-///   of the following month).
-/// - The *current incomplete month* average is computed live from existing daily snapshots.
+/// - All daily snapshots are retained indefinitely (no rolling cap).
 /// Sendable value copies of SwiftData model objects — used for cross-actor transfer out of
 /// background ModelContext fetches so the main thread is never blocked by SQLite reads.
 struct SnapshotValue: Sendable {
     let date: Date
-    let totalGbp: Double
-    let pokemonGbp: Double
-    let cardsGbp: Double
-    let sealedGbp: Double
-}
-
-struct WeeklyAverageValue: Sendable {
-    let weekStart: Date
-    let totalGbp: Double
-    let pokemonGbp: Double
-    let cardsGbp: Double
-    let sealedGbp: Double
-}
-
-struct MonthlyAverageValue: Sendable {
-    let monthStart: Date
     let totalGbp: Double
     let pokemonGbp: Double
     let cardsGbp: Double
@@ -53,37 +28,13 @@ final class CollectionValueService {
     private let sealedProducts: SealedProductService
 
     private(set) var snapshots: [SnapshotValue] = []
-    private(set) var weeklyAverages: [WeeklyAverageValue] = []
-    private(set) var monthlyAverages: [MonthlyAverageValue] = []
     private(set) var isBackfilling = false
 
-    /// Called after daily / weekly / monthly value history is persisted so the
-    /// debounced R2 library snapshot stays current.
+    /// Called after daily value history is persisted so the debounced R2 library snapshot stays current.
     var onValueHistoryChanged: (() -> Void)?
 
     private func notifyValueHistoryChanged() {
         onValueHistoryChanged?()
-    }
-
-    // MARK: - Live partial-period averages (current incomplete week / month)
-
-    /// Average of daily snapshots in the current (incomplete) week, including today's live value if provided.
-    func currentWeekAverage(liveToday: BrandSnapshot?) -> BrandSnapshot {
-        let cal = weekCalendar
-        let today = cal.startOfDay(for: Date())
-        let weekStart = cal.date(from: cal.dateComponents([.yearForWeekOfYear, .weekOfYear], from: today))!
-        let daysInWeek = snapshots.filter { $0.date >= weekStart && $0.date < today }
-        return average(of: daysInWeek.map(\.asBrandSnapshot) + (liveToday.map { [$0] } ?? []))
-    }
-
-    /// Average of daily snapshots in the current (incomplete) month, including today's live value if provided.
-    func currentMonthAverage(liveToday: BrandSnapshot?) -> BrandSnapshot {
-        let cal = Calendar.current
-        let today = cal.startOfDay(for: Date())
-        let comps = cal.dateComponents([.year, .month], from: today)
-        let monthStart = cal.date(from: comps)!
-        let daysInMonth = snapshots.filter { $0.date >= monthStart && $0.date < today }
-        return average(of: daysInMonth.map(\.asBrandSnapshot) + (liveToday.map { [$0] } ?? []))
     }
 
     // MARK: - Init
@@ -103,31 +54,28 @@ final class CollectionValueService {
 
     func loadAllFromStore() async {
         let container = modelContainer
-        let (snaps, weekly, monthly) = await Task.detached(priority: .userInitiated) {
+        let snaps = await Task.detached(priority: .userInitiated) {
             let ctx = ModelContext(container)
-            let snaps = (try? ctx.fetch(FetchDescriptor<CollectionValueSnapshot>(
+            return (try? ctx.fetch(FetchDescriptor<CollectionValueSnapshot>(
                 sortBy: [SortDescriptor(\.date, order: .forward)]
             )))?.map {
                 SnapshotValue(date: $0.date, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
                               cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
             } ?? []
-            let weekly = (try? ctx.fetch(FetchDescriptor<CollectionWeeklyAverage>(
-                sortBy: [SortDescriptor(\.weekStart, order: .forward)]
-            )))?.map {
-                WeeklyAverageValue(weekStart: $0.weekStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                                   cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
-            } ?? []
-            let monthly = (try? ctx.fetch(FetchDescriptor<CollectionMonthlyAverage>(
-                sortBy: [SortDescriptor(\.monthStart, order: .forward)]
-            )))?.map {
-                MonthlyAverageValue(monthStart: $0.monthStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                                    cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
-            } ?? []
-            return (snaps, weekly, monthly)
         }.value
         snapshots = snaps
-        weeklyAverages = weekly
-        monthlyAverages = monthly
+    }
+
+    /// Removes legacy weekly/monthly average rows. Called on backfill and before R2 upload.
+    func purgeLegacyPeriodAverages() {
+        let weeklyDescriptor = FetchDescriptor<CollectionWeeklyAverage>()
+        let monthlyDescriptor = FetchDescriptor<CollectionMonthlyAverage>()
+        let weekly = (try? modelContext.fetch(weeklyDescriptor)) ?? []
+        let monthly = (try? modelContext.fetch(monthlyDescriptor)) ?? []
+        guard !weekly.isEmpty || !monthly.isEmpty else { return }
+        for record in weekly { modelContext.delete(record) }
+        for record in monthly { modelContext.delete(record) }
+        modelContext.saveLogging()
     }
 
     // MARK: - Persisted last-known value (for yesterday's snapshot on new-day launch)
@@ -237,6 +185,7 @@ final class CollectionValueService {
     ) async {
         guard !isBackfilling else { return }
         await sealedProducts.loadFromLocalIfAvailable()
+        purgeLegacyPeriodAverages()
         purgeZeroValueSnapshots()
         purgeSyntheticPreHistoryBackfill()
         saveYesterdaySnapshotFromPersistedValueIfNeeded()
@@ -246,13 +195,7 @@ final class CollectionValueService {
         )
         await backfillRecentDailySnapshotsIfNeeded(collectionItems: collectionItems)
         await fillSnapshotGapsIfNeeded(collectionItems: collectionItems)
-        let freshSnapshots = fetchAllSnapshots()
-        let weeklyChanged = aggregateWeeklyIfNeeded(using: freshSnapshots)
-        let monthlyChanged = aggregateMonthlyIfNeeded(using: freshSnapshots)
         loadAll()
-        if weeklyChanged || monthlyChanged {
-            notifyValueHistoryChanged()
-        }
     }
 
     /// Fills missing daily snapshots in the last ~90 days using historical prices for each day.
@@ -350,7 +293,7 @@ final class CollectionValueService {
         notifyValueHistoryChanged()
     }
 
-    /// Replaces today's snapshot with the given live value and re-aggregates weekly/monthly averages.
+    /// Replaces today's snapshot with the given live value.
     /// Historical daily snapshots are left untouched — we only have ~90 days of per-card price history
     /// so recomputing older snapshots would silently overwrite them with today's prices anyway.
     func forceRecalculate(liveSnapshot: BrandSnapshot, collectionItems: [CollectionItem]) async {
@@ -360,7 +303,6 @@ final class CollectionValueService {
         isBackfilling = true
         defer { isBackfilling = false }
 
-        // Replace today's snapshot with the fresh live value.
         let cal = Calendar.current
         let today = cal.startOfDay(for: Date())
         purgeTodaySnapshot()
@@ -374,14 +316,6 @@ final class CollectionValueService {
         )
         modelContext.insert(todayRecord)
         modelContext.saveLogging()
-        loadAll()
-
-        // Re-aggregate weekly/monthly from the full set of daily snapshots (history intact + new today).
-        purgeAllWeeklyAverages()
-        purgeAllMonthlyAverages()
-        let freshSnapshots = fetchAllSnapshots()
-        aggregateWeeklyIfNeeded(using: freshSnapshots)
-        aggregateMonthlyIfNeeded(using: freshSnapshots)
         loadAll()
         notifyValueHistoryChanged()
     }
@@ -404,33 +338,6 @@ final class CollectionValueService {
         guard !toDelete.isEmpty else { return }
         for s in toDelete { modelContext.delete(s) }
         modelContext.saveLogging()
-    }
-
-    private func purgeAllWeeklyAverages() {
-        let descriptor = FetchDescriptor<CollectionWeeklyAverage>()
-        let all = (try? modelContext.fetch(descriptor)) ?? []
-        guard !all.isEmpty else { return }
-        for r in all { modelContext.delete(r) }
-        modelContext.saveLogging()
-    }
-
-    private func purgeAllMonthlyAverages() {
-        let descriptor = FetchDescriptor<CollectionMonthlyAverage>()
-        let all = (try? modelContext.fetch(descriptor)) ?? []
-        guard !all.isEmpty else { return }
-        for r in all { modelContext.delete(r) }
-        modelContext.saveLogging()
-    }
-
-    /// Re-aggregates weekly and monthly averages from current daily snapshots and reloads.
-    /// Call after updating today's snapshot to keep chart averages current.
-    func aggregateCurrentPeriods() {
-        let weeklyChanged = aggregateWeeklyIfNeeded()
-        let monthlyChanged = aggregateMonthlyIfNeeded()
-        loadAll()
-        if weeklyChanged || monthlyChanged {
-            notifyValueHistoryChanged()
-        }
     }
 
     /// Updates today's snapshot to the given value if it has changed by more than 1p.
@@ -512,142 +419,6 @@ final class CollectionValueService {
         modelContext.saveLogging()
         loadAll()
         notifyValueHistoryChanged()
-    }
-
-    // MARK: - Weekly aggregation
-
-    @discardableResult
-    private func aggregateWeeklyIfNeeded(using allSnapshots: [CollectionValueSnapshot]? = nil) -> Bool {
-        let cal = weekCalendar
-
-        let allSnapshots = allSnapshots ?? fetchAllSnapshots()
-        guard !allSnapshots.isEmpty else { return false }
-
-        var didChange = false
-
-        // Group ALL snapshots by ISO week start, including the current week
-        var byWeek: [Date: [CollectionValueSnapshot]] = [:]
-        for snap in allSnapshots {
-            let ws = cal.date(from: cal.dateComponents([.yearForWeekOfYear, .weekOfYear], from: snap.date))!
-            byWeek[ws, default: []].append(snap)
-        }
-
-        // Build a lookup of existing records by week start so we can upsert.
-        // Fetch live @Model objects here so we can mutate them through modelContext.
-        let liveWeeklyRecords = (try? modelContext.fetch(FetchDescriptor<CollectionWeeklyAverage>())) ?? []
-        var existingByWeekStart: [Date: CollectionWeeklyAverage] = [:]
-        for record in liveWeeklyRecords {
-            let ws = cal.date(from: cal.dateComponents([.yearForWeekOfYear, .weekOfYear], from: record.weekStart))!
-            existingByWeekStart[ws] = record
-        }
-
-        for record in liveWeeklyRecords {
-            let ws = cal.date(from: cal.dateComponents([.yearForWeekOfYear, .weekOfYear], from: record.weekStart))!
-            if byWeek[ws] == nil {
-                modelContext.delete(record)
-                didChange = true
-            }
-        }
-
-        for (weekStart, days) in byWeek {
-            let avg = average(of: days.map(\.asBrandSnapshot))
-            if let existing = existingByWeekStart[weekStart] {
-                // Only update if value changed meaningfully (avoids constant churn on current week)
-                if abs(existing.totalGbp - avg.total) > 0.01 ||
-                    abs(existing.cardsGbp - avg.cards) > 0.01 ||
-                    abs(existing.sealedGbp - avg.sealed) > 0.01 {
-                    existing.totalGbp = avg.total
-                    existing.pokemonGbp = avg.pokemon
-                    existing.onePieceGbp = 0
-                    existing.cardsGbp = avg.cards
-                    existing.sealedGbp = avg.sealed
-                    didChange = true
-                }
-            } else {
-                let record = CollectionWeeklyAverage(
-                    weekStart: weekStart,
-                    totalGbp: avg.total,
-                    pokemonGbp: avg.pokemon,
-                    onePieceGbp: 0,
-                    cardsGbp: avg.cards,
-                    sealedGbp: avg.sealed
-                )
-                modelContext.insert(record)
-                didChange = true
-            }
-        }
-        guard didChange else { return false }
-        modelContext.saveLogging()
-        return true
-    }
-
-    // MARK: - Monthly aggregation
-
-    @discardableResult
-    private func aggregateMonthlyIfNeeded(using allSnapshots: [CollectionValueSnapshot]? = nil) -> Bool {
-        let cal = Calendar.current
-
-        let allSnapshots = allSnapshots ?? fetchAllSnapshots()
-        guard !allSnapshots.isEmpty else { return false }
-
-        var didChange = false
-
-        // Group ALL snapshots by month start, including the current month
-        var byMonth: [Date: [CollectionValueSnapshot]] = [:]
-        for snap in allSnapshots {
-            let comps = cal.dateComponents([.year, .month], from: snap.date)
-            let ms = cal.date(from: comps)!
-            byMonth[ms, default: []].append(snap)
-        }
-
-        // Build a lookup of existing records by month start so we can upsert.
-        // Fetch live @Model objects here so we can mutate them through modelContext.
-        let liveMonthlyRecords = (try? modelContext.fetch(FetchDescriptor<CollectionMonthlyAverage>())) ?? []
-        var existingByMonthStart: [Date: CollectionMonthlyAverage] = [:]
-        for record in liveMonthlyRecords {
-            let comps = cal.dateComponents([.year, .month], from: record.monthStart)
-            let ms = cal.date(from: comps)!
-            existingByMonthStart[ms] = record
-        }
-
-        for record in liveMonthlyRecords {
-            let comps = cal.dateComponents([.year, .month], from: record.monthStart)
-            let ms = cal.date(from: comps)!
-            if byMonth[ms] == nil {
-                modelContext.delete(record)
-                didChange = true
-            }
-        }
-
-        for (monthStart, days) in byMonth {
-            let avg = average(of: days.map(\.asBrandSnapshot))
-            if let existing = existingByMonthStart[monthStart] {
-                if abs(existing.totalGbp - avg.total) > 0.01 ||
-                    abs(existing.cardsGbp - avg.cards) > 0.01 ||
-                    abs(existing.sealedGbp - avg.sealed) > 0.01 {
-                    existing.totalGbp = avg.total
-                    existing.pokemonGbp = avg.pokemon
-                    existing.onePieceGbp = 0
-                    existing.cardsGbp = avg.cards
-                    existing.sealedGbp = avg.sealed
-                    didChange = true
-                }
-            } else {
-                let record = CollectionMonthlyAverage(
-                    monthStart: monthStart,
-                    totalGbp: avg.total,
-                    pokemonGbp: avg.pokemon,
-                    onePieceGbp: 0,
-                    cardsGbp: avg.cards,
-                    sealedGbp: avg.sealed
-                )
-                modelContext.insert(record)
-                didChange = true
-            }
-        }
-        guard didChange else { return false }
-        modelContext.saveLogging()
-        return true
     }
 
     private func snapshotExists(for date: Date) -> Bool {
@@ -811,30 +582,11 @@ final class CollectionValueService {
 
     // MARK: - Helpers
 
-    private func average(of snapshots: [BrandSnapshot]) -> BrandSnapshot {
-        guard !snapshots.isEmpty else { return BrandSnapshot(total: 0, pokemon: 0, cards: 0, sealed: 0) }
-        let count = Double(snapshots.count)
-        return BrandSnapshot(
-            total:   snapshots.map(\.total).reduce(0, +) / count,
-            pokemon: snapshots.map(\.pokemon).reduce(0, +) / count,
-            cards:   snapshots.map(\.cards).reduce(0, +) / count,
-            sealed:  snapshots.map(\.sealed).reduce(0, +) / count
-        )
-    }
-
     private func fetchAllSnapshots() -> [CollectionValueSnapshot] {
         let descriptor = FetchDescriptor<CollectionValueSnapshot>(
             sortBy: [SortDescriptor(\.date, order: .forward)]
         )
         return (try? modelContext.fetch(descriptor)) ?? []
-    }
-
-    /// ISO week calendar: week starts Monday
-    private var weekCalendar: Calendar {
-        var cal = Calendar(identifier: .iso8601)
-        cal.locale = Locale.current
-        cal.timeZone = TimeZone.current
-        return cal
     }
 
     // MARK: - Load / purge
@@ -876,13 +628,6 @@ final class CollectionValueService {
         }
         modelContext.saveLogging()
         loadAll()
-
-        purgeAllWeeklyAverages()
-        purgeAllMonthlyAverages()
-        let freshSnapshots = fetchAllSnapshots()
-        aggregateWeeklyIfNeeded(using: freshSnapshots)
-        aggregateMonthlyIfNeeded(using: freshSnapshots)
-        loadAll()
         notifyValueHistoryChanged()
     }
 
@@ -891,24 +636,6 @@ final class CollectionValueService {
             SnapshotValue(date: $0.date, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
                           cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
         }
-        weeklyAverages = {
-            let d = FetchDescriptor<CollectionWeeklyAverage>(
-                sortBy: [SortDescriptor(\.weekStart, order: .forward)]
-            )
-            return ((try? modelContext.fetch(d)) ?? []).map {
-                WeeklyAverageValue(weekStart: $0.weekStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                                   cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
-            }
-        }()
-        monthlyAverages = {
-            let d = FetchDescriptor<CollectionMonthlyAverage>(
-                sortBy: [SortDescriptor(\.monthStart, order: .forward)]
-            )
-            return ((try? modelContext.fetch(d)) ?? []).map {
-                MonthlyAverageValue(monthStart: $0.monthStart, totalGbp: $0.totalGbp, pokemonGbp: $0.pokemonGbp,
-                                    cardsGbp: $0.cardsGbp, sealedGbp: $0.sealedGbp)
-            }
-        }()
     }
 
 }

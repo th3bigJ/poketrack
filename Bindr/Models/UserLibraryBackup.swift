@@ -323,7 +323,15 @@ enum UserLibraryBackupCodec {
         iso8601.date(from: raw) ?? ISO8601DateFormatter().date(from: raw) ?? Date()
     }
 
+    static func purgeLegacyCollectionValuePeriodAverages(modelContext: ModelContext) throws {
+        try modelContext.delete(model: CollectionWeeklyAverage.self)
+        try modelContext.delete(model: CollectionMonthlyAverage.self)
+        try modelContext.save()
+    }
+
     static func build(userID: UUID, modelContext: ModelContext) throws -> UserLibraryBackup {
+        try purgeLegacyCollectionValuePeriodAverages(modelContext: modelContext)
+
         let collectionItems = try modelContext.fetch(FetchDescriptor<CollectionItem>())
         let wishlistItems = try modelContext.fetch(FetchDescriptor<WishlistItem>())
         let ledgerLines = try modelContext.fetch(FetchDescriptor<LedgerLine>())
@@ -332,8 +340,6 @@ enum UserLibraryBackupCodec {
         let binders = try modelContext.fetch(FetchDescriptor<Binder>())
         let decks = try modelContext.fetch(FetchDescriptor<Deck>())
         let valueSnapshots = try modelContext.fetch(FetchDescriptor<CollectionValueSnapshot>())
-        let weeklyAverages = try modelContext.fetch(FetchDescriptor<CollectionWeeklyAverage>())
-        let monthlyAverages = try modelContext.fetch(FetchDescriptor<CollectionMonthlyAverage>())
 
         var exportIDByCollectionItem = [ObjectIdentifier: UUID]()
         let collectionRecords: [UserLibraryBackup.CollectionItemRecord] = collectionItems.map { item in
@@ -522,28 +528,6 @@ enum UserLibraryBackupCodec {
             )
         }
 
-        let weeklyRecords = weeklyAverages.map {
-            UserLibraryBackup.PeriodAverageRecord(
-                periodStart: encodeDate($0.weekStart),
-                totalGbp: $0.totalGbp,
-                pokemonGbp: $0.pokemonGbp,
-                onePieceGbp: $0.onePieceGbp,
-                cardsGbp: $0.cardsGbp,
-                sealedGbp: $0.sealedGbp
-            )
-        }
-
-        let monthlyRecords = monthlyAverages.map {
-            UserLibraryBackup.PeriodAverageRecord(
-                periodStart: encodeDate($0.monthStart),
-                totalGbp: $0.totalGbp,
-                pokemonGbp: $0.pokemonGbp,
-                onePieceGbp: $0.onePieceGbp,
-                cardsGbp: $0.cardsGbp,
-                sealedGbp: $0.sealedGbp
-            )
-        }
-
         let library = UserLibraryBackup.LibraryPayload(
             collectionItems: consolidatedCollection.records,
             wishlistItems: wishlistRecords,
@@ -555,8 +539,8 @@ enum UserLibraryBackupCodec {
             decks: deckRecords,
             deckCards: deckCardRecords,
             valueSnapshots: valueSnapshotRecords,
-            weeklyAverages: weeklyRecords,
-            monthlyAverages: monthlyRecords
+            weeklyAverages: [],
+            monthlyAverages: []
         )
 
         return UserLibraryBackup(
@@ -859,32 +843,6 @@ enum UserLibraryBackupCodec {
             modelContext.insert(
                 CollectionValueSnapshot(
                     date: decodeDate(record.date),
-                    totalGbp: record.totalGbp,
-                    pokemonGbp: record.pokemonGbp,
-                    onePieceGbp: record.onePieceGbp,
-                    cardsGbp: record.cardsGbp,
-                    sealedGbp: record.sealedGbp
-                )
-            )
-        }
-
-        for record in library.weeklyAverages {
-            modelContext.insert(
-                CollectionWeeklyAverage(
-                    weekStart: decodeDate(record.periodStart),
-                    totalGbp: record.totalGbp,
-                    pokemonGbp: record.pokemonGbp,
-                    onePieceGbp: record.onePieceGbp,
-                    cardsGbp: record.cardsGbp,
-                    sealedGbp: record.sealedGbp
-                )
-            )
-        }
-
-        for record in library.monthlyAverages {
-            modelContext.insert(
-                CollectionMonthlyAverage(
-                    monthStart: decodeDate(record.periodStart),
                     totalGbp: record.totalGbp,
                     pokemonGbp: record.pokemonGbp,
                     onePieceGbp: record.onePieceGbp,
