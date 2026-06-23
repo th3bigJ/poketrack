@@ -68,6 +68,14 @@ struct CardDetailContentView: View {
     let directTradeContext: CardTradeContext?
     let actions: CardDetailContentActions
 
+
+
+    private var hasStats: Bool {
+        card.hp != nil || !cleanedTypes(card.elementTypes).isEmpty || card.weakness != nil || card.resistance != nil || card.retreatCost != nil
+    }
+
+
+
     private func groupedHoldings(
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
@@ -193,7 +201,7 @@ struct CardDetailContentView: View {
     /// Shortens the chart so the hero image, price and chart land on one screen.
     private func chartHeight(contentWidth: CGFloat, viewportHeight: CGFloat) -> CGFloat {
         guard viewportHeight > 0 else { return 180 }
-        let imageWidth = max(0, (contentWidth - 16) * 0.43)
+        let imageWidth = max(0, (contentWidth - 16) * 0.5)
         let heroHeight = imageWidth * 7.0 / 5.0
         // Reserve room for the price block, range picker and inter-section spacing.
         let reserved: CGFloat = heroHeight + 248
@@ -234,21 +242,22 @@ struct CardDetailContentView: View {
         ledgerLines: [LedgerLine]
     ) -> some View {
         let spacing: CGFloat = 16
-        let imageWidth = max(0, (contentWidth - spacing) * 0.43)
+        let imageWidth = max(0, (contentWidth - spacing) * 0.5)
         let imageHeight = imageWidth * 7.0 / 5.0
         return HStack(alignment: .top, spacing: spacing) {
             cardImage(width: imageWidth)
 
-            VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading, spacing: 10) {
                 titleBlock
-                Spacer(minLength: 2)
-                primaryStats
-                Spacer(minLength: 2)
-                secondaryStats
-                Spacer(minLength: 2)
+                
+                if hasStats {
+                    primaryStatsContainer
+                    secondaryStatsContainer
+                }
+                
                 actionBar(collectionItems: collectionItems, ledgerLines: ledgerLines)
             }
-            .frame(minHeight: imageHeight)
+            .frame(minHeight: imageHeight, alignment: .top)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .frame(maxWidth: .infinity)
@@ -284,28 +293,31 @@ struct CardDetailContentView: View {
     }
 
     private var titleBlock: some View {
-        VStack(alignment: .leading, spacing: 3) {
+        VStack(alignment: .leading, spacing: 6) {
             Text(card.cardName)
                 .font(.system(size: 22, weight: .bold, design: .rounded))
                 .foregroundStyle(.primary)
-                .lineLimit(3)
+                .lineLimit(2)
                 .minimumScaleFactor(0.75)
 
-            HStack(alignment: .firstTextBaseline, spacing: 6) {
+            HStack(alignment: .center, spacing: 8) {
                 if let number = cleaned(card.printedNumber) ?? cleaned(card.cardNumber) {
                     Text("#\(number)")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 }
                 if let rarity = cleaned(card.rarity) {
-                    if cleaned(card.printedNumber) != nil || cleaned(card.cardNumber) != nil {
-                        Text("·")
-                    }
-                    Text(rarity)
+                    Text(rarity.uppercased())
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(
+                            Capsule()
+                                .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
+                        )
                 }
             }
-            .font(.footnote.weight(.semibold))
-            .foregroundStyle(.secondary)
-            .lineLimit(1)
-            .minimumScaleFactor(0.85)
 
             if let set {
                 SetLogoAsyncImage(
@@ -316,78 +328,117 @@ struct CardDetailContentView: View {
                 )
                 .frame(height: 26)
                 .accessibilityLabel(set.name)
+                .padding(.vertical, 4)
             }
         }
     }
 
-    private var primaryStats: some View {
-        HStack(spacing: 0) {
-            statColumn(title: "HP", value: card.hp.map(String.init) ?? "—")
-            statDivider
-            typeStatColumn(title: "Type", types: cleanedTypes(card.elementTypes))
-            statDivider
-            affinityStatColumn(title: "Weakness", raw: cleaned(card.weakness))
-        }
-    }
-
-    private var secondaryStats: some View {
-        HStack(spacing: 0) {
-            affinityStatColumn(title: "Resistance", raw: cleaned(card.resistance))
-            statDivider
-            statColumn(title: "Retreat", value: card.retreatCost.map(String.init) ?? "—")
-        }
-    }
-
-    private func typeStatColumn(title: String, types: [String]) -> some View {
-        VStack(spacing: 2) {
-            Text(title)
-                .font(.caption)
-                .foregroundStyle(.secondary)
-            if types.isEmpty {
-                Text("—")
-                    .font(.subheadline.weight(.semibold))
+    private var primaryStatsContainer: some View {
+        VStack(spacing: 6) {
+            HStack(spacing: 0) {
+                Text("HP")
+                    .font(.caption2.weight(.bold))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("Type")
+                    .font(.caption2.weight(.bold))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("Weak.")
+                    .font(.caption2.weight(.bold))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            
+            HStack(spacing: 0) {
+                Text(card.hp.map(String.init) ?? "—")
+                    .font(.subheadline.weight(.bold))
                     .foregroundStyle(.primary)
-                    .frame(height: 24)
-            } else {
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
                 HStack(spacing: 4) {
-                    ForEach(Array(types.prefix(3)), id: \.self) { type in
-                        PokemonTypeBadge(type: type, size: 24)
-                    }
-                }
-                .frame(height: 24)
-            }
-        }
-        .frame(maxWidth: .infinity)
-    }
-
-    /// Weakness / Resistance column: type icon plus its `×2` / `-20` modifier.
-    private func affinityStatColumn(title: String, raw: String?) -> some View {
-        let parsed = parseAffinity(raw)
-        return VStack(spacing: 2) {
-            Text(title)
-                .font(.caption)
-                .foregroundStyle(.secondary)
-            if let parsed {
-                HStack(spacing: 4) {
-                    PokemonTypeBadge(type: parsed.type, size: 24)
-                    if let modifier = parsed.modifier {
-                        Text(modifier)
-                            .font(.subheadline.weight(.semibold))
+                    let types = cleanedTypes(card.elementTypes)
+                    if types.isEmpty {
+                        Text("—")
+                            .font(.subheadline.weight(.bold))
                             .foregroundStyle(.primary)
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
+                    } else {
+                        ForEach(Array(types.prefix(2)), id: \.self) { type in
+                            PokemonTypeBadge(type: type, size: 20)
+                        }
                     }
                 }
-                .frame(height: 24)
-            } else {
-                Text("—")
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.primary)
-                    .frame(height: 24)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                HStack(spacing: 4) {
+                    if let parsed = parseAffinity(card.weakness) {
+                        PokemonTypeBadge(type: parsed.type, size: 20)
+                        if let modifier = parsed.modifier {
+                            Text(modifier)
+                                .font(.subheadline.weight(.bold))
+                                .foregroundStyle(.primary)
+                        }
+                    } else {
+                        Text("—")
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(.primary)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
-        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.06))
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
+
+    private var secondaryStatsContainer: some View {
+        VStack(spacing: 6) {
+            HStack(spacing: 0) {
+                Text("Resistance")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text("Retreat")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            
+            HStack(spacing: 0) {
+                HStack(spacing: 4) {
+                    if let parsed = parseAffinity(card.resistance) {
+                        PokemonTypeBadge(type: parsed.type, size: 20)
+                        if let modifier = parsed.modifier {
+                            Text(modifier)
+                                .font(.subheadline.weight(.bold))
+                                .foregroundStyle(.primary)
+                        }
+                    } else {
+                        Text("—")
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(.primary)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
+                Text(card.retreatCost.map(String.init) ?? "—")
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(.primary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.06))
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+
+
 
     private func cleanedTypes(_ values: [String]?) -> [String] {
         (values ?? []).compactMap { cleaned($0) }
@@ -419,22 +470,22 @@ struct CardDetailContentView: View {
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
     ) -> some View {
-        if let addToDeckAction {
-            Button {
-                addToDeckAction(card, preferredVariantKey, 1)
-                Haptics.lightImpact()
-            } label: {
-                fullWidthActionLabel(
-                    title: "Add to Deck",
-                    systemImage: "plus.circle.fill",
-                    tint: services.theme.chartAccentColor,
-                    filled: true
-                )
-            }
-            .buttonStyle(.plain)
-        } else if showsCollectionActions {
-            let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-            HStack(spacing: 8) {
+        let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
+        HStack(spacing: 8) {
+            if let addToDeckAction {
+                Button {
+                    addToDeckAction(card, preferredVariantKey, 1)
+                    Haptics.lightImpact()
+                } label: {
+                    compactActionLabel(
+                        title: "Add to Deck",
+                        systemImage: "plus.circle.fill",
+                        tint: services.theme.chartAccentColor,
+                        filled: true
+                    )
+                }
+                .buttonStyle(.plain)
+            } else if showsCollectionActions {
                 addToCollectionButton(isOwned: owned)
 
                 if owned {
@@ -472,7 +523,7 @@ struct CardDetailContentView: View {
                     }
                 }
             } label: {
-                fullWidthActionLabel(
+                compactActionLabel(
                     title: title,
                     systemImage: "plus.circle.fill",
                     tint: Self.collectionGreen,
@@ -483,7 +534,7 @@ struct CardDetailContentView: View {
             Button {
                 actions.onAddToCollection(preferredVariantKey)
             } label: {
-                fullWidthActionLabel(
+                compactActionLabel(
                     title: title,
                     systemImage: "plus.circle.fill",
                     tint: Self.collectionGreen,
@@ -492,6 +543,22 @@ struct CardDetailContentView: View {
             }
             .buttonStyle(.plain)
         }
+    }
+
+    private func compactActionLabel(
+        title: String,
+        systemImage: String,
+        tint: Color,
+        filled: Bool
+    ) -> some View {
+        Label(title, systemImage: systemImage)
+            .font(.subheadline.weight(.semibold))
+            .lineLimit(1)
+            .minimumScaleFactor(0.8)
+            .foregroundStyle(filled ? Color.white : tint)
+            .padding(.horizontal, 20)
+            .frame(height: 44)
+            .background(filled ? tint : tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 
     private var detailsSection: some View {

@@ -741,19 +741,18 @@ struct BinderDetailView: View {
         let surfaceHorizontalChrome: CGFloat = 46
         let surfaceVerticalChrome: CGFloat = 28
         let cardAspectRatio: CGFloat = 5.0 / 7.0
+        let coverAspect: CGFloat = 0.707
 
         let maxWidth = max(available.width - horizontalPadding, 240)
         let maxHeight = max(available.height - verticalPadding, 320)
 
-        let gridAspectRatio = CGFloat(cols) * cardAspectRatio / CGFloat(rows)
-        let pageAspectRatio = (gridAspectRatio * 1.04)
-
-        var width = min(maxWidth, maxHeight * pageAspectRatio)
-        var height = width / pageAspectRatio
+        // Lock pageAspectRatio to coverAspect (0.707)
+        var width = min(maxWidth, maxHeight * coverAspect)
+        var height = width / coverAspect
 
         if height > maxHeight {
             height = maxHeight
-            width = height * pageAspectRatio
+            width = height * coverAspect
         }
 
         let totalGridSpacingX = CGFloat(max(cols - 1, 0)) * slotSpacing
@@ -763,16 +762,17 @@ struct BinderDetailView: View {
         let gridHeight = cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
         let desiredHeight = gridHeight + surfaceVerticalChrome
 
-        if desiredHeight < height {
-            height = desiredHeight
-        } else {
-            // Grid wants more vertical room than is available — shrink cells so
-            // the whole thing fits without clipping the top/bottom rows.
-            let availableForGrid = height - surfaceVerticalChrome
-            let shrunkCellHeight = max((availableForGrid - totalGridSpacingY) / CGFloat(rows), 40)
-            let shrunkCellWidth = shrunkCellHeight * cardAspectRatio
-            let shrunkContentWidth = shrunkCellWidth * CGFloat(cols) + totalGridSpacingX
-            width = min(width, shrunkContentWidth + surfaceHorizontalChrome)
+        if desiredHeight > height {
+            // Grid wants more vertical room than is available — shrink both width and height
+            // proportionally to maintain the 0.707 aspect ratio exactly.
+            let R = CGFloat(rows) / (CGFloat(cols) * cardAspectRatio)
+            if R * coverAspect > 1.0 {
+                let maxAllowedH = (R * (surfaceHorizontalChrome + totalGridSpacingX) - totalGridSpacingY - surfaceVerticalChrome) / (R * coverAspect - 1.0)
+                if maxAllowedH < height {
+                    height = maxAllowedH
+                    width = height * coverAspect
+                }
+            }
         }
 
         return CGSize(width: width, height: height)

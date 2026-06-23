@@ -44,6 +44,8 @@ struct CardDetailSheet: View {
     @State private var collectionItemsCache: [String: [CollectionItem]] = [:]
     @State private var ledgerLinesCache: [String: [LedgerLine]] = [:]
 
+
+
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
     init(
@@ -353,7 +355,7 @@ struct CardDetailSheet: View {
             VStack(alignment: .leading, spacing: 14) {
                 cardHeroSection(for: pageCard, isInCollection: isInCollection)
                 CardPricingPanel(card: pageCard, useGlass: true)
-                    .glassCardStyle(cornerRadius: 26, interactive: false)
+                .glassCardStyle(cornerRadius: 26, interactive: false)
                 recentSoldOnEbayButton(for: pageCard)
                     .glassCardStyle(cornerRadius: 26, interactive: false)
                 if isInCollection {

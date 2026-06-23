@@ -17,15 +17,15 @@ private enum ChartRange: String, CaseIterable {
     static let selectable: [ChartRange] = [.oneMonth, .oneYear, .all]
 }
 
-private enum ChartDataResolution {
-    case daily
-    case weekly
-    case monthly
-}
-
 // MARK: - Main panel
 
 struct CardPricingPanel: View {
+    private enum ChartDataResolution {
+        case daily
+        case weekly
+        case monthly
+    }
+
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
 
