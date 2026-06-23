@@ -27,4 +27,9 @@ struct CatalogDownloadStatus: Sendable, Equatable {
     var isEmpty: Bool {
         sections.allSatisfy { $0.entries.isEmpty }
     }
+
+    static func == (lhs: CatalogDownloadStatus, rhs: CatalogDownloadStatus) -> Bool {
+        guard lhs.queriedAt == rhs.queriedAt, lhs.sections.count == rhs.sections.count else { return false }
+        return zip(lhs.sections, rhs.sections).allSatisfy { l, r in l.section == r.section && l.entries == r.entries }
+    }
 }
