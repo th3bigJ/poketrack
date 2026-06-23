@@ -691,31 +691,14 @@ struct SealedProductBrowseDetailView: View {
     let products: [SealedProduct]
 
     @Environment(AppServices.self) private var services
-    @Environment(\.bindrAccent) private var bindrAccent
     @Environment(\.suppressTabBarForModalChrome) private var suppressTabBarForModalChrome
     @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
-    @Environment(\.colorScheme) private var colorScheme
     @State private var scrollIndex: Int?
-    @State private var auraColorsByProductID: [Int: [Color]] = [:]
 
     init(products: [SealedProduct], startProductID: Int) {
         self.products = products
         let start = products.firstIndex(where: { $0.id == startProductID }) ?? 0
         _scrollIndex = State(initialValue: start)
-    }
-
-    private var currentProductID: Int? {
-        guard let i = scrollIndex, products.indices.contains(i) else { return nil }
-        return products[i].id
-    }
-
-    private var currentAuraColors: [Color] {
-        let extracted = currentProductID.flatMap { auraColorsByProductID[$0] } ?? []
-        if extracted.count >= 3 { return Array(extracted.prefix(3)) }
-        if let first = extracted.first { return [first, first.opacity(0.74), first.opacity(0.52)] }
-        return [Color(red: 0.50, green: 0.60, blue: 0.74),
-                Color(red: 0.63, green: 0.52, blue: 0.76),
-                Color(red: 0.72, green: 0.60, blue: 0.68)]
     }
 
     var body: some View {
@@ -724,10 +707,7 @@ struct SealedProductBrowseDetailView: View {
                 LazyHStack(spacing: 0) {
                     ForEach(Array(products.indices), id: \.self) { i in
                         SealedProductDetailPage(
-                            product: products[i],
-                            onAuraColors: { colors in
-                                auraColorsByProductID[products[i].id] = colors
-                            }
+                            product: products[i]
                         )
                         .frame(width: geo.size.width, height: geo.size.height)
                         .id(i)
@@ -745,33 +725,23 @@ struct SealedProductBrowseDetailView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(sheetBackground)
+        .background {
+            CardDetailTypeBackground(accent: services.theme.accentColor)
+                .ignoresSafeArea()
+        }
         .onAppear {
             suppressTabBarForModalChrome?()
         }
         .onDisappear {
             restoreTabBarAfterPresentation()
         }
-        .presentationDragIndicator(.visible)
+        .presentationBackground {
+            CardDetailTypeBackground(accent: services.theme.accentColor)
+                .ignoresSafeArea()
+        }
+        .presentationDragIndicator(.hidden)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
-    }
-
-    private var sheetBackground: some View {
-        ZStack {
-            colorScheme == .dark ? Color.black : Color.white
-            currentAuraColors[0].opacity(colorScheme == .dark ? 0.30 : 0.16)
-            LinearGradient(
-                colors: [
-                    currentAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
-                    .clear,
-                    currentAuraColors[2].opacity(colorScheme == .dark ? 0.24 : 0.14),
-                ],
-                startPoint: .topTrailing,
-                endPoint: .bottomLeading
-            )
-        }
-        .ignoresSafeArea()
     }
 
     private func restoreTabBarAfterPresentation() {
@@ -791,13 +761,11 @@ private struct SealedProductDetailPage: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
+    @Environment(\.dismiss) private var dismiss
     @Query private var collectionItems: [CollectionItem]
 
     let product: SealedProduct
-    var onAuraColors: (([Color]) -> Void)? = nil
 
-    @State private var auraColors: [Color] = []
-    @State private var isAuraReady = false
     @State private var showAddSheet = false
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
@@ -807,54 +775,77 @@ private struct SealedProductDetailPage: View {
     @State private var editingItem: CollectionItem?
     @State private var markAsSession: SealedCollectionMarkAsSession?
 
-    init(product: SealedProduct, onAuraColors: (([Color]) -> Void)? = nil) {
+    init(product: SealedProduct) {
         self.product = product
-        self.onAuraColors = onAuraColors
         let cardID = SealedProduct.collectionCardID(productID: product.id)
         _collectionItems = Query(filter: #Predicate<CollectionItem> { $0.cardID == cardID })
     }
 
     private var collectionCardID: String { SealedProduct.collectionCardID(productID: product.id) }
 
+    private var sectionDivider: some View {
+        Rectangle()
+            .fill(Color.primary.opacity(0.07))
+            .frame(height: 1)
+    }
+
+    private var dragPill: some View {
+        Capsule(style: .continuous)
+            .fill(Color.primary.opacity(colorScheme == .dark ? 0.35 : 0.22))
+            .frame(width: 38, height: 5)
+            .padding(.top, 8)
+            .allowsHitTesting(false)
+    }
+
+    private func heroImageHeight(viewportHeight: CGFloat) -> CGFloat {
+        guard viewportHeight > 0 else { return 240 }
+        return min(280, max(180, viewportHeight * 0.3))
+    }
+
     var body: some View {
         GeometryReader { geo in
             ScrollView {
-                VStack(alignment: .leading, spacing: 14) {
-                    heroAndMeta
+                VStack(alignment: .leading, spacing: 6) {
+                    navigationChrome
+
+                    productHeroSection(viewportHeight: geo.size.height)
+                        .padding(.top, 4)
+
+                    titleBlock
+                        .padding(.top, 6)
+
+                    actionButtons
+                        .padding(.vertical, 4)
 
                     SealedProductPricingPanel(productID: product.id)
-                        .glassCardStyle(cornerRadius: 26, interactive: false)
-                        .padding(.horizontal, 12)
-
-                    recentSoldOnEbayButton
-                        .glassCardStyle(cornerRadius: 26, interactive: false)
-                        .padding(.horizontal, 12)
+                        .padding(.vertical, 4)
 
                     if !visibleCollectionItems.isEmpty {
+                        sectionDivider
                         collectionSection
-                            .padding(.horizontal, 12)
+                            .padding(.vertical, 4)
                     }
 
+                    sectionDivider
+                    recentSoldOnEbayRow
+                        .padding(.vertical, 4)
+
+                    sectionDivider
                     detailsSection
-                        .padding(.horizontal, 12)
+                        .padding(.vertical, 4)
                 }
-                .frame(maxWidth: .infinity, minHeight: geo.size.height, alignment: .topLeading)
-                .padding(.bottom, 24)
+                .padding(.horizontal, 16)
+                .padding(.top, 14)
+                .padding(.bottom, 8)
             }
             .scrollContentBackground(.hidden)
             .scrollIndicators(.hidden)
+            .overlay(alignment: .top) { dragPill }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(
-            auraBackground
-                .ignoresSafeArea()
-        )
+        .background(.clear)
         .onAppear {
             refreshWishlistState()
-            Task { @MainActor in
-                try? await Task.sleep(for: .milliseconds(400))
-                isAuraReady = true
-            }
         }
         .sheet(isPresented: $showAddSheet) {
             AddSealedToCollectionSheet(product: product).environment(services)
@@ -883,61 +874,133 @@ private struct SealedProductDetailPage: View {
         }
     }
 
-    private var heroAndMeta: some View {
-        VStack(spacing: 12) {
-            productHeroSection
-                .padding(.top, 20)
-                .padding(.horizontal, 24)
-
-            VStack(spacing: 4) {
-                Text(product.name)
-                    .font(.system(size: 24, weight: .bold, design: .rounded))
+    private var navigationChrome: some View {
+        HStack {
+            ChromeGlassCircleButton(accessibilityLabel: "Close details") {
+                dismiss()
+            } label: {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 17, weight: .semibold))
                     .foregroundStyle(.primary)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                centeredSetBlock
             }
-            .frame(maxWidth: .infinity, alignment: .center)
-            .padding(.horizontal, 16)
 
-            actionButtons
-                .padding(.horizontal, 12)
-                .padding(.bottom, 12)
+            Spacer()
+
+            ChromeGlassCircleButton(accessibilityLabel: isWishlisted ? "Remove from Wish List" : "Add to Wish List") {
+                toggleWishlist()
+            } label: {
+                Image(systemName: isWishlisted ? "star.fill" : "star")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundStyle(isWishlisted ? Color(red: 0.98, green: 0.78, blue: 0.18) : .primary)
+            }
+
+            ChromeGlassCircleButton(accessibilityLabel: "Share") {
+                shareProduct = product
+            } label: {
+                Image(systemName: "square.and.arrow.up")
+                    .font(.system(size: 17, weight: .semibold))
+                    .foregroundStyle(.primary)
+            }
+        }
+        .frame(height: 42)
+    }
+
+    private func productHeroSection(viewportHeight: CGFloat) -> some View {
+        CachedAsyncImage(url: product.imageURL, targetSize: CGSize(width: 800, height: 800)) { image in
+            image
+                .resizable()
+                .scaledToFit()
+        } placeholder: {
+            Color(uiColor: .tertiarySystemFill)
+                .aspectRatio(1, contentMode: .fit)
+        }
+        .frame(height: heroImageHeight(viewportHeight: viewportHeight))
+        .frame(maxWidth: .infinity)
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Color.white.opacity(colorScheme == .dark ? 0.15 : 0.40), lineWidth: 1)
+        )
+        .shadow(color: .black.opacity(0.18), radius: 10, y: 6)
+    }
+
+    private var titleBlock: some View {
+        VStack(spacing: 4) {
+            Text(product.name)
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .foregroundStyle(.primary)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, alignment: .center)
+            centeredSetBlock
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+    }
+
+    @ViewBuilder
+    private var centeredSetBlock: some View {
+        if let set = matchedSet, !set.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            SetLogoAsyncImage(
+                logoSrc: set.logoSrc,
+                height: 22,
+                brand: services.brandSettings.selectedCatalogBrand
+            )
+            .frame(maxWidth: 140, minHeight: 26)
+        } else if let series = displaySeries {
+            Text(series)
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .frame(maxWidth: .infinity, alignment: .center)
+        } else {
+            Color.clear
+                .frame(width: 140, height: 26)
         }
     }
 
-    private var auraBackground: some View {
-        VStack(spacing: 0) {
-            if isAuraReady {
-                RoundedRectangle(cornerRadius: 34, style: .continuous)
-                    .fill(LinearGradient(
-                        colors: resolvedAuraColors.map { $0.opacity(colorScheme == .dark ? 0.62 : 0.42) },
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ))
-                    .frame(maxWidth: .infinity)
-                    .aspectRatio(4 / 3, contentMode: .fit)
-                    .blur(radius: colorScheme == .dark ? 32 : 26)
-                    .scaleEffect(1.16)
+    private var collectionButton: some View {
+        Button {
+            Haptics.lightImpact()
+            showAddSheet = true
+        } label: {
+            Label(isOwned ? "Add Copy" : "Add to Collection", systemImage: "plus.circle.fill")
+                .font(.subheadline.weight(.semibold))
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .foregroundStyle(.white)
+                .padding(.horizontal, 20)
+                .frame(maxWidth: .infinity)
+                .frame(height: 44)
+                .background(Color(red: 0.12, green: 0.67, blue: 0.28), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
+    }
 
-                LinearGradient(
-                    colors: [
-                        resolvedAuraColors[0].opacity(colorScheme == .dark ? 0.34 : 0.20),
-                        resolvedAuraColors[1].opacity(colorScheme == .dark ? 0.24 : 0.14),
-                        resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.14 : 0.09),
-                        resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.08 : 0.05),
-                        resolvedAuraColors[2].opacity(colorScheme == .dark ? 0.04 : 0.02),
-                        .clear
-                    ],
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-                .frame(height: 330)
-                .blur(radius: colorScheme == .dark ? 20 : 15)
-                .offset(y: -8)
+    private var actionButtons: some View {
+        HStack(spacing: 8) {
+            collectionButton
+
+            if isOwned {
+                Button {
+                    openRemoveFromCollectionFlow()
+                } label: {
+                    Image(systemName: "minus")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundStyle(Color(red: 0.88, green: 0.22, blue: 0.24))
+                        .frame(width: 44, height: 44)
+                        .background(
+                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .fill(Color(red: 0.95, green: 0.27, blue: 0.27).opacity(0.12))
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .stroke(Color(red: 0.95, green: 0.27, blue: 0.27).opacity(0.30), lineWidth: 1)
+                        )
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Remove from Collection")
             }
         }
-        .allowsHitTesting(false)
     }
 
     private var visibleCollectionItems: [CollectionItem] {
@@ -947,73 +1010,65 @@ private struct SealedProductDetailPage: View {
     }
 
     private var collectionSection: some View {
-        SealedDetailSurface(title: "My Collection") {
-            VStack(spacing: 10) {
-                ForEach(visibleCollectionItems, id: \.persistentModelID) { item in
-                    collectionItemCard(item)
-                }
-            }
-        }
-    }
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Your Collection")
+                .font(.caption)
+                .foregroundStyle(.secondary)
 
-    private func collectionItemCard(_ item: CollectionItem) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("\(item.quantity) × Sealed")
-                .font(.headline)
-                .foregroundStyle(.primary)
+            ForEach(visibleCollectionItems, id: \.persistentModelID) { item in
+                Button {
+                    editingItem = item
+                } label: {
+                    HStack(spacing: 12) {
+                        Text("Sealed")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(services.theme.accentColor)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 4)
+                            .background(services.theme.accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 9))
 
-            let sources = activeHoldingSources(for: item)
-            if sources.isEmpty {
-                Text("No source details recorded yet.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            } else {
-                VStack(spacing: 8) {
-                    ForEach(sources) { source in
-                        sourceRow(source, item: item)
+                        collectionValue(label: "Qty", value: "\(item.quantity)")
+                        collectionValue(
+                            label: "Paid",
+                            value: item.purchasePrice.map { formatCurrency(amount: $0, code: services.priceDisplay.currency == .gbp ? "GBP" : "USD") } ?? "—"
+                        )
+                        collectionValue(
+                            label: "Added",
+                            value: item.dateAcquired.formatted(date: .abbreviated, time: .omitted)
+                        )
+
+                        Image(systemName: "chevron.right")
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.secondary)
                     }
+                    .padding(.vertical, 4)
+                    .contentShape(Rectangle())
                 }
-            }
-
-            if let notes = cleaned(item.notes) {
-                Text(notes).font(.subheadline).foregroundStyle(.secondary)
+                .buttonStyle(.plain)
             }
         }
-        .padding(.vertical, 6)
     }
 
-    private func sourceRow(_ source: SealedHoldingSource, item: CollectionItem) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .center, spacing: 10) {
-                infoBadge(label: source.directionTitle, tint: source.tint)
-                Text("Qty \(source.quantity)")
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(.secondary)
-                if let priceText = source.priceText {
-                    labelValueRow(label: "Price", value: priceText)
-                }
-                Spacer(minLength: 8)
-                Text(source.date.formatted(date: .abbreviated, time: .omitted))
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(.secondary)
-            }
-            HStack(spacing: 12) {
-                Spacer(minLength: 8)
-                Button("Edit") { editingItem = item }
-                    .buttonStyle(.bordered)
-                    .tint(colorScheme == .dark ? .white : .black)
-                Button("Mark As") { markAsSession = SealedCollectionMarkAsSession(item: item, initialAction: .opened) }
-                    .buttonStyle(.borderedProminent)
-                    .tint(SealedPricingPalette.actionBlue)
-            }
+    private func collectionValue(label: String, value: String) -> some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            Text(value)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
         }
-        .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassInsetStyle(cornerRadius: 16)
     }
 
     private var detailsSection: some View {
-        SealedDetailSurface(title: "Details") {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Details")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
             let facts: [(String, String)] = [
                 ("Release", releaseDateDisplay),
                 ("Type", product.typeDisplayName),
@@ -1022,27 +1077,21 @@ private struct SealedProductDetailPage: View {
                 product.year.map { ("Year", String($0)) },
             ].compactMap { $0 }
 
-            let rows = stride(from: 0, to: facts.count, by: 2).map {
-                Array(facts[$0..<min($0 + 2, facts.count)])
-            }
-            VStack(spacing: 10) {
-                ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
-                    HStack(spacing: 12) {
-                        ForEach(row, id: \.0) { fact in
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(fact.0)
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(.secondary)
-                                Text(fact.1)
-                                    .font(.subheadline.weight(.medium))
-                                    .foregroundStyle(.primary)
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(10)
-                            .glassInsetStyle(cornerRadius: 16)
-                        }
-                        if row.count < 2 { Color.clear.frame(maxWidth: .infinity) }
+            LazyVGrid(
+                columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 3),
+                spacing: 10
+            ) {
+                ForEach(facts, id: \.0) { fact in
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(fact.0)
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                        Text(fact.1)
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
                     }
+                    .frame(maxWidth: .infinity, minHeight: 48, alignment: .topLeading)
                 }
             }
         }
@@ -1055,43 +1104,31 @@ private struct SealedProductDetailPage: View {
         return product.releaseDateRaw.flatMap { $0.isEmpty ? nil : $0 } ?? "Unknown"
     }
 
-    private var recentSoldOnEbayButton: some View {
+    private var recentSoldOnEbayRow: some View {
         Button {
             guard let url = ebayRecentSoldURL else { return }
             openURL(url)
         } label: {
-            HStack(spacing: 14) {
-                ebayWordmarkBadge
-                VStack(alignment: .leading, spacing: 3) {
-                    Text("Recent Sold on eBay")
-                        .font(.system(size: 16, weight: .semibold, design: .rounded))
+            HStack(spacing: 10) {
+                ebayWordmark
+                VStack(alignment: .leading, spacing: 1) {
+                    Text("View on eBay")
+                        .font(.subheadline.weight(.semibold))
                         .foregroundStyle(.primary)
-                    Text("Open sold listings for this product")
+                    Text("See latest listings and sold items")
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
-                Spacer(minLength: 0)
+                Spacer()
                 Image(systemName: "arrow.up.right")
-                    .font(.system(size: 13, weight: .bold))
                     .foregroundStyle(.secondary)
-                    .frame(width: 32, height: 32)
-                    .glassInsetCircleStyle()
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 14)
-            .frame(minHeight: 76)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.vertical, 6)
+            .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .contentShape(RoundedRectangle(cornerRadius: 26, style: .continuous))
-        .accessibilityLabel("Open recent sold listings on eBay")
     }
 
-    private var ebayWordmarkBadge: some View {
-        ebayWordmark
-            .frame(width: 74, height: 42)
-            .glassInsetStyle(cornerRadius: 12)
-    }
 
     private var ebayWordmark: some View {
         HStack(spacing: 0) {
@@ -1100,7 +1137,8 @@ private struct SealedProductDetailPage: View {
             Text("a").foregroundStyle(Color(red: 0.97, green: 0.74, blue: 0.06))
             Text("y").foregroundStyle(Color(red: 0.44, green: 0.68, blue: 0.11))
         }
-        .font(.system(size: 24, weight: .bold, design: .rounded))
+        .font(.system(size: 20, weight: .bold, design: .rounded))
+        .frame(width: 74, alignment: .leading)
     }
 
     private var ebayRecentSoldURL: URL? {
@@ -1124,64 +1162,6 @@ private struct SealedProductDetailPage: View {
         return components?.url
     }
 
-    private func labelValueRow(label: String, value: String) -> some View {
-        HStack(spacing: 4) {
-            Text(label + ":").font(.caption.weight(.semibold)).foregroundStyle(.secondary)
-            Text(value).font(.caption.weight(.medium)).foregroundStyle(.primary)
-        }
-    }
-
-    private func infoBadge(label: String, tint: Color) -> some View {
-        Text(label)
-            .font(.caption.weight(.semibold))
-            .foregroundStyle(tint)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
-            .background(Capsule(style: .continuous).fill(tint.opacity(0.14)))
-    }
-
-    private func activeHoldingSources(for item: CollectionItem) -> [SealedHoldingSource] {
-        (item.costLots ?? [])
-            .filter { $0.quantityRemaining > 0 }
-            .sorted { $0.createdAt > $1.createdAt }
-            .map { lot in
-                let line = lot.sourceLedgerLine
-                let direction = line.flatMap { LedgerDirection(rawValue: $0.direction) } ?? .bought
-                let tint: Color
-                switch direction {
-                case .sold, .tradedOut, .giftedOut, .adjustmentOut: tint = SealedPricingPalette.danger
-                default: tint = SealedPricingPalette.success
-                }
-                return SealedHoldingSource(
-                    id: line?.id ?? UUID(),
-                    quantity: lot.quantityRemaining,
-                    date: line?.occurredAt ?? item.dateAcquired,
-                    directionTitle: directionTitle(for: direction),
-                    tint: tint,
-                    priceText: line.flatMap { l in
-                        guard let p = l.unitPrice, p > 0 else { return nil }
-                        return formatCurrency(amount: p, code: l.currencyCode)
-                    },
-                    description: cleaned(line?.lineDescription)
-                )
-            }
-    }
-
-    private func directionTitle(for direction: LedgerDirection) -> String {
-        switch direction {
-        case .bought: return "Bought"
-        case .packed: return "Packed"
-        case .tradedIn: return "Traded In"
-        case .giftedIn: return "Gifted"
-        case .importedIn: return "Imported"
-        case .adjustmentIn: return "Adjusted In"
-        case .sold: return "Sold"
-        case .tradedOut: return "Traded Out"
-        case .giftedOut: return "Gifted Out"
-        case .adjustmentOut: return "Adjusted Out"
-        }
-    }
-
     private func formatCurrency(amount: Double, code: String) -> String {
         let fmt = NumberFormatter()
         fmt.numberStyle = .currency
@@ -1190,88 +1170,8 @@ private struct SealedProductDetailPage: View {
         return fmt.string(from: NSNumber(value: amount)) ?? String(format: "%.2f", amount)
     }
 
-    private func cleaned(_ text: String?) -> String? {
-        guard let t = text?.trimmingCharacters(in: .whitespacesAndNewlines), !t.isEmpty else { return nil }
-        return t
-    }
-
-    private var actionButtons: some View {
-        VStack(spacing: 10) {
-            HStack(spacing: 12) {
-                Button {
-                    toggleWishlist()
-                } label: {
-                    Image(systemName: isWishlisted ? "star.fill" : "star")
-                        .font(.system(size: 20, weight: .medium))
-                        .foregroundStyle(SealedActionPalette.gold)
-                        .frame(width: 56, height: 56)
-                        .glassCardStyle(cornerRadius: 18, interactive: true)
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel(isWishlisted ? "Remove from Wish List" : "Add to Wish List")
-
-                HStack(spacing: 8) {
-                    sealedCollectionButton(
-                        title: "Collection",
-                        systemImage: "plus.circle.fill",
-                        tint: SealedActionPalette.success,
-                        action: { showAddSheet = true }
-                    )
-
-                    if isOwned {
-                        sealedCollectionButton(
-                            title: "Collection",
-                            systemImage: "minus.circle.fill",
-                            tint: SealedActionPalette.danger,
-                            action: openRemoveFromCollectionFlow
-                        )
-                    }
-                }
-                .frame(maxWidth: .infinity)
-
-                Button { shareProduct = product } label: {
-                    Image(systemName: "square.and.arrow.up")
-                        .font(.system(size: 20, weight: .medium))
-                        .foregroundStyle(SealedActionPalette.share)
-                        .frame(width: 56, height: 56)
-                        .glassCardStyle(cornerRadius: 18, interactive: true)
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Share")
-            }
-            .padding(.horizontal, 4)
-        }
-    }
-
     private var isOwned: Bool {
         collectionItems.contains { $0.itemKind == ProductKind.sealedProduct.rawValue && $0.quantity > 0 }
-    }
-
-    private func sealedCollectionButton(
-        title: String,
-        systemImage: String,
-        tint: Color,
-        action: @escaping () -> Void
-    ) -> some View {
-        Button {
-            Haptics.lightImpact()
-            action()
-        } label: {
-            HStack(spacing: 8) {
-                Image(systemName: systemImage)
-                    .font(.system(size: 18, weight: .bold))
-                Text(title)
-                    .font(.system(size: 17, weight: .bold, design: .rounded))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.8)
-            }
-            .foregroundStyle(tint)
-            .frame(maxWidth: .infinity)
-            .frame(height: 56)
-            .glassCardStyle(cornerRadius: 18, interactive: true)
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel("\(systemImage.contains("plus") ? "Add to" : "Remove from") collection")
     }
 
     private func openRemoveFromCollectionFlow() {
@@ -1312,84 +1212,6 @@ private struct SealedProductDetailPage: View {
         isWishlisted = wishlist.items.contains { $0.cardID == collectionCardID && $0.variantKey == "sealed" }
     }
 
-    private var resolvedAuraColors: [Color] {
-        if auraColors.count >= 3 { return Array(auraColors.prefix(3)) }
-        if let first = auraColors.first { return [first, first.opacity(0.74), first.opacity(0.52)] }
-        return [
-            Color(red: 0.50, green: 0.60, blue: 0.74),
-            Color(red: 0.63, green: 0.52, blue: 0.76),
-            Color(red: 0.72, green: 0.60, blue: 0.68)
-        ]
-    }
-
-    private var productHeroSection: some View {
-        CachedAsyncImage(url: product.imageURL, targetSize: CGSize(width: 800, height: 800)) { image in
-            image
-                .resizable()
-                .scaledToFit()
-                .onAppear { extractAuraColors(from: image) }
-        } placeholder: {
-            Color(uiColor: .tertiarySystemFill)
-                .aspectRatio(3 / 4, contentMode: .fit)
-        }
-        .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .stroke(Color.white.opacity(colorScheme == .dark ? 0.16 : 0.22), lineWidth: 1)
-        )
-        .background {
-            if isAuraReady {
-                RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    .fill(LinearGradient(
-                        colors: resolvedAuraColors.map { $0.opacity(colorScheme == .dark ? 0.78 : 0.56) },
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ))
-                    .blur(radius: colorScheme == .dark ? 30 : 24)
-                    .scaleEffect(1.12)
-            }
-        }
-        .frame(maxWidth: .infinity)
-    }
-
-    @MainActor
-    private func extractAuraColors(from image: Image) {
-        guard auraColors.isEmpty else { return }
-        let renderer = ImageRenderer(content: image.resizable().frame(width: 44, height: 62))
-        renderer.scale = 1
-        guard let uiImage = renderer.uiImage else { return }
-        Task.detached(priority: .utility) {
-            let colors = uiImage.bindrAuraColors(maxColors: 3)
-            guard !colors.isEmpty else { return }
-            await MainActor.run {
-                self.auraColors = colors
-                self.onAuraColors?(colors)
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var centeredSetBlock: some View {
-        if let set = matchedSet, !set.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            SetLogoAsyncImage(
-                logoSrc: set.logoSrc,
-                height: 34,
-                brand: services.brandSettings.selectedCatalogBrand
-            )
-            .frame(maxWidth: 140, minHeight: 40)
-        } else if let series = displaySeries {
-            Text(series)
-                .font(.subheadline.weight(.medium))
-                .foregroundStyle(.secondary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.8)
-                .frame(maxWidth: .infinity, alignment: .center)
-        } else {
-            Color.clear
-                .frame(width: 140, height: 40)
-        }
-    }
-
     private var matchedSet: TCGSet? {
         let sets = services.cardData.sets
         if let setName = normalized(product.setName) {
@@ -1412,43 +1234,10 @@ private struct SealedProductDetailPage: View {
     private func normalized(_ value: String?) -> String? { trimmed(value)?.lowercased() }
 }
 
-private struct SealedDetailSurface<Content: View>: View {
-    let title: String
-    let content: Content
-
-    init(title: String, @ViewBuilder content: () -> Content) {
-        self.title = title
-        self.content = content()
-    }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(title)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(Color.primary)
-            content
-        }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .glassCardStyle(cornerRadius: 26, interactive: false)
-    }
-
-}
-
-private struct SealedHoldingSource: Identifiable {
-    let id: UUID
-    let quantity: Int
-    let date: Date
-    let directionTitle: String
-    let tint: Color
-    let priceText: String?
-    let description: String?
-}
-
 private enum SealedChartRange: String, CaseIterable {
     case oneMonth = "1M"
-    case threeMonths = "3M"
     case oneYear = "1Y"
+    case all = "ALL"
 }
 
 private enum SealedChartDataResolution {
@@ -1487,14 +1276,14 @@ private struct SealedProductPricingPanel: View {
             if !daily31.isEmpty { return (daily31, .daily) }
             if !weekly13.isEmpty { return (weekly13, .weekly) }
             if !monthly12.isEmpty { return (monthly12, .monthly) }
-        case .threeMonths:
-            if !weekly13.isEmpty { return (weekly13, .weekly) }
-            if !daily31.isEmpty { return (daily31, .daily) }
-            if !monthly12.isEmpty { return (monthly12, .monthly) }
         case .oneYear:
             if !monthly12.isEmpty { return (monthly12, .monthly) }
             if !weekly13.isEmpty { return (weekly13, .weekly) }
             if !daily31.isEmpty { return (daily31, .daily) }
+        case .all:
+            if !dailyWithToday.isEmpty { return (dailyWithToday, .daily) }
+            if !weeklySource.isEmpty { return (weeklySource, .weekly) }
+            if !monthlySource.isEmpty { return (monthlySource, .monthly) }
         }
         return ([], .daily)
     }
@@ -1525,44 +1314,36 @@ private struct SealedProductPricingPanel: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            Text(scrubPoint != nil ? scrubLabel(scrubPoint!.label) : "Market Price")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-                .padding(.top, 12)
-                .animation(.none, value: scrubPoint?.label)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .center, spacing: 16) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(scrubPoint != nil ? scrubLabel(scrubPoint!.label) : "Market Price")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .animation(.none, value: scrubPoint?.label)
 
-            Text(scrubPoint != nil
-                 ? services.priceDisplay.currency.format(amountUSD: scrubPoint!.price, usdToGbp: services.pricing.usdToGbp)
-                 : currentPrice)
-                .font(.system(size: 28, weight: .bold))
-                .foregroundStyle(.primary)
-                .padding(.top, 2)
-                .animation(.none, value: scrubPoint?.price)
+                    Text(scrubPoint != nil
+                         ? services.priceDisplay.currency.format(amountUSD: scrubPoint!.price, usdToGbp: services.pricing.usdToGbp)
+                         : currentPrice)
+                        .font(.system(size: 34, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                        .animation(.none, value: scrubPoint?.price)
 
-            if change1d != nil || change7d != nil || change30d != nil {
-                HStack(spacing: 12) {
-                    changeBadge(label: "1D", value: change1d)
-                    changeBadge(label: "7D", value: change7d)
-                    changeBadge(label: "1M", value: change30d)
+                    if let dailyChange = change1d {
+                        HStack(spacing: 5) {
+                            Image(systemName: dailyChange >= 0 ? "arrow.up" : "arrow.down")
+                            Text("\(String(format: "%.1f%%", abs(dailyChange))) today")
+                        }
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(dailyChange >= 0 ? SealedPricingPalette.success : SealedPricingPalette.danger)
+                    }
                 }
-                .padding(.top, 8)
-                .padding(.bottom, 4)
+                Spacer(minLength: 0)
             }
 
             if !resolvedChart.points.isEmpty {
+                chartRangePicker
                 chartView
-                    .padding(.top, 4)
-
-                Picker("Range", selection: $chartRange) {
-                    ForEach(SealedChartRange.allCases, id: \.self) { r in
-                        Text(r.rawValue).tag(r)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-                .padding(.bottom, 4)
             } else if isLoading {
                 ProgressView()
                     .tint(.primary)
@@ -1571,8 +1352,7 @@ private struct SealedProductPricingPanel: View {
                 Spacer().frame(height: 16)
             }
         }
-        .padding(.horizontal, 6)
-        .padding(.vertical, 4)
+        .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .task(id: "\(productID)|\(services.priceDisplay.currency.rawValue)|\(services.pricing.usdToGbp)") {
             isLoading = true
@@ -1584,8 +1364,41 @@ private struct SealedProductPricingPanel: View {
         .onChange(of: services.pricing.usdToGbp) { _, _ in refreshPrice() }
     }
 
+    private var chartRangePicker: some View {
+        HStack(spacing: 0) {
+            ForEach(SealedChartRange.allCases, id: \.self) { range in
+                let isSelected = chartRange == range
+                Button {
+                    guard chartRange != range else { return }
+                    withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
+                        chartRange = range
+                    }
+                    Haptics.lightImpact()
+                } label: {
+                    Text(range.rawValue)
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.82))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 8)
+                        .background {
+                            if isSelected {
+                                Capsule(style: .continuous)
+                                    .fill(services.theme.accentColor)
+                                    .shadow(
+                                        color: services.theme.accentColor.opacity(0.20),
+                                        radius: 4,
+                                        y: 2
+                                    )
+                            }
+                        }
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+
     private var panelDivider: Color {
-        colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
+        BindrGlassStyle.insetBorder(colorScheme)
     }
 
     private var chartView: some View {
@@ -1595,53 +1408,35 @@ private struct SealedProductPricingPanel: View {
         let maxP = (prices.max() ?? 1) * 1.03
 
         return Chart(points) { point in
-            LineMark(
-                x: .value("Date", point.label),
-                y: .value("Price", point.price)
-            )
-            .interpolationMethod(.catmullRom)
-            .foregroundStyle(services.theme.accentColor)
-            .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
-
             AreaMark(
                 x: .value("Date", point.label),
                 yStart: .value("Min", minP),
                 yEnd: .value("Price", point.price)
             )
-            .interpolationMethod(.catmullRom)
-            .foregroundStyle(LinearGradient(
-                colors: [services.theme.accentColor.opacity(0.28), services.theme.accentColor.opacity(0.03)],
-                startPoint: .top, endPoint: .bottom
-            ))
+            .interpolationMethod(.linear)
+            .foregroundStyle(
+                LinearGradient(
+                    colors: [
+                        services.theme.accentColor.opacity(0.70),
+                        services.theme.accentColor.opacity(0.28),
+                        .clear
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+
+            LineMark(
+                x: .value("Date", point.label),
+                y: .value("Price", point.price)
+            )
+            .interpolationMethod(.linear)
+            .foregroundStyle(services.theme.accentColor)
+            .lineStyle(StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .round))
         }
         .chartYScale(domain: minP...maxP)
-        .chartXAxis {
-            let stride = max(1, points.count / 4)
-            let lastIndex = points.count - 1
-            let visibleLabels = Set(points.enumerated().compactMap { i, p -> String? in
-                (i == 0 || i == lastIndex || i % stride == 0) ? p.label : nil
-            })
-            AxisMarks(values: points.map(\.label)) { value in
-                if let label = value.as(String.self), visibleLabels.contains(label) {
-                    let isFirst = label == points.first?.label
-                    let isLast  = label == points.last?.label
-                    AxisValueLabel(truncatedLabel(label), anchor: isFirst ? .topLeading : isLast ? .topTrailing : .top)
-                        .foregroundStyle(Color(uiColor: .label))
-                        .font(.system(size: 9))
-                }
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4])).foregroundStyle(panelDivider)
-            }
-        }
-        .chartYAxis {
-            AxisMarks(position: .trailing) { value in
-                if let price = value.as(Double.self) {
-                    AxisValueLabel(services.priceDisplay.currency.formatAxisTick(usd: price, usdToGbp: services.pricing.usdToGbp))
-                        .foregroundStyle(Color(uiColor: .label))
-                        .font(.system(size: 9))
-                }
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4])).foregroundStyle(panelDivider)
-            }
-        }
+        .chartXAxis(.hidden)
+        .chartYAxis(.hidden)
         .chartOverlay { proxy in
             GeometryReader { geo in
                 if let plotAnchor = proxy.plotFrame {
@@ -1673,8 +1468,8 @@ private struct SealedProductPricingPanel: View {
                 }
             }
         }
-        .frame(height: 160)
-        .padding(.horizontal, 16)
+        .frame(height: 130)
+        .padding(.horizontal, -16)
     }
 
     private func refreshPrice() {
