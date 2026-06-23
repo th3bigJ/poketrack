@@ -18,6 +18,19 @@ struct CardBrowseDetailView: View {
 
     @State private var index: Int
 
+    @MainActor
+    private var activeTypeAccent: Color {
+        guard !cards.isEmpty else { return services.theme.chartAccentColor }
+        let safeIndex = min(max(index, 0), cards.count - 1)
+        let type = (cards[safeIndex].elementTypes ?? [])
+            .first?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        if let type, let accent = PokemonTypeBadge.backgroundAccent(for: type) {
+            return accent
+        }
+        return services.theme.chartAccentColor
+    }
+
     init(
         cards: [Card],
         startIndex: Int,
@@ -47,14 +60,20 @@ struct CardBrowseDetailView: View {
             } else {
                 TabView(selection: $index) {
                     ForEach(Array(cards.enumerated()), id: \.element.masterCardId) { i, card in
-                        CardBrowseDetailPage(
-                            card: card,
-                            set: services.cardData.sets.first { $0.setCode == card.setCode },
-                            addToDeckAction: addToDeckAction,
-                            showsCollectionAction: showsHeaderChromeActions,
-                            showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
-                            directTradeContext: directTradeContext
-                        )
+                        CardDetailCollectionScope(card: card) { collectionItems, ledgerLines in
+                            CardBrowseDetailPage(
+                                card: card,
+                                set: services.cardData.sets.first { $0.setCode == card.setCode },
+                                collectionItems: collectionItems,
+                                ledgerLines: ledgerLines,
+                                addToDeckAction: addToDeckAction,
+                                showsCollectionAction: showsHeaderChromeActions,
+                                showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
+                                directTradeContext: directTradeContext
+                            )
+                            .id(card.masterCardId)
+                        }
+                        .id(card.masterCardId)
                         .tag(i)
                     }
                 }
@@ -62,21 +81,23 @@ struct CardBrowseDetailView: View {
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(pageChromeBackground)
+        .background {
+            CardDetailTypeBackground(accent: activeTypeAccent)
+                .ignoresSafeArea()
+        }
         .task(id: index) {
             ImagePrefetcher.shared.prefetchHighResForDetailView(cards, currentIndex: index, window: 2)
         }
         .onChange(of: index) { _, _ in
             HapticManager.selection()
         }
-        .presentationBackground(pageChromeBackground)
-        .presentationDragIndicator(.visible)
+        .presentationBackground {
+            CardDetailTypeBackground(accent: activeTypeAccent)
+                .ignoresSafeArea()
+        }
+        .presentationDragIndicator(.hidden)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
-    }
-
-    private var pageChromeBackground: Color {
-        colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground)
     }
 }
 
@@ -85,11 +106,12 @@ private struct CardBrowseDetailPage: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
-    @Query private var collectionItems: [CollectionItem]
-    @Query private var ledgerLines: [LedgerLine]
+    @Environment(\.dismiss) private var dismiss
 
     let card: Card
     let set: TCGSet?
+    let collectionItems: [CollectionItem]
+    let ledgerLines: [LedgerLine]
     let addToDeckAction: ((Card, String, Int) -> Void)?
     let showsCollectionAction: Bool
     let showsWishlistAction: Bool
@@ -111,12 +133,16 @@ private struct CardBrowseDetailPage: View {
     @State private var extractedAuraColors: [Color] = []
     @State private var auraSourceImageArea: CGFloat = 0
     @State private var isAuraReady = false
+    @State private var fullscreenCard: Card?
+    @State private var selectedSet: TCGSet?
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
     init(
         card: Card,
         set: TCGSet?,
+        collectionItems: [CollectionItem],
+        ledgerLines: [LedgerLine],
         addToDeckAction: ((Card, String, Int) -> Void)?,
         showsCollectionAction: Bool,
         showsWishlistAction: Bool,
@@ -124,19 +150,12 @@ private struct CardBrowseDetailPage: View {
     ) {
         self.card = card
         self.set = set
+        self.collectionItems = collectionItems
+        self.ledgerLines = ledgerLines
         self.addToDeckAction = addToDeckAction
         self.showsCollectionAction = showsCollectionAction
         self.showsWishlistAction = showsWishlistAction
         self.directTradeContext = directTradeContext
-        let scopedCardID = card.masterCardId
-        _collectionItems = Query(
-            filter: #Predicate<CollectionItem> { $0.cardID == scopedCardID },
-            sort: [SortDescriptor(\.variantKey)]
-        )
-        _ledgerLines = Query(
-            filter: #Predicate<LedgerLine> { $0.cardID == scopedCardID },
-            sort: [SortDescriptor(\.occurredAt, order: .reverse)]
-        )
     }
 
     private var visibleCollectionItems: [CollectionItem] {
@@ -160,6 +179,17 @@ private struct CardBrowseDetailPage: View {
             return "normal"
         }
         return wishlistVariantKeys.first ?? "normal"
+    }
+
+    @MainActor
+    private var cardTypeAccent: Color {
+        let type = (card.elementTypes ?? [])
+            .first?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        if let type, let accent = PokemonTypeBadge.backgroundAccent(for: type) {
+            return accent
+        }
+        return services.theme.chartAccentColor
     }
 
     private var summaryFacts: [(String, String)] {
@@ -225,34 +255,50 @@ private struct CardBrowseDetailPage: View {
     }
 
     var body: some View {
-        GeometryReader { geo in
-            ScrollView {
-                VStack(alignment: .leading, spacing: 14) {
-                    cardHeroSection
-
-                    CardPricingPanel(card: card, useGlass: true)
-                        .glassCardStyle(cornerRadius: 26, interactive: false)
-                    recentSoldOnEbayButton
-                        .glassCardStyle(cornerRadius: 26, interactive: false)
-
-                    if showsCollectionSection {
-                        collectionSection
+        NavigationStack {
+            CardDetailContentView(
+                card: card,
+                set: set,
+                availableVariantKeys: wishlistVariantKeys,
+                isWishlisted: isCurrentCardWishlisted,
+                showsCollectionActions: showsCollectionAction,
+                showsWishlistAction: showsWishlistAction,
+                addToDeckAction: addToDeckAction,
+                directTradeContext: directTradeContext,
+                actions: CardDetailContentActions(
+                    onDismiss: { dismiss() },
+                    onToggleWishlist: {
+                        if isCurrentCardWishlisted {
+                            removeCurrentCardFromWishlist()
+                        } else {
+                            addToWishlist(variantKey: singleAvailableVariantKey ?? wishlistVariantKeys.first ?? "normal")
+                        }
+                    },
+                    onShare: { shareCard = card },
+                    onOpenImage: { fullscreenCard = card },
+                    onOpenSet: set.map { pageSet in
+                        { selectedSet = pageSet }
+                    },
+                    onAddToCollection: addToCollectionVariant(variantKey:),
+                    onRemoveFromCollection: openRemoveFromCollectionFlow,
+                    onOpenHolding: { editingLine = $0 },
+                    onOpenEbay: {
+                        if let url = ebayRecentSoldURL {
+                            openURL(url)
+                        }
                     }
-
-                    if !summaryFacts.isEmpty || card.attacks != nil || card.abilities != nil || cleaned(card.rules) != nil || cleaned(card.flavorText) != nil {
-                        cardDetailsSection
-                    }
-                }
-                .padding(.horizontal, 12)
-                .padding(.bottom, 24)
-                .frame(maxWidth: .infinity, minHeight: geo.size.height, alignment: .topLeading)
+                )
+            )
+            .navigationDestination(item: $selectedSet) { selectedSet in
+                SetCardsView(set: selectedSet)
             }
-            .scrollContentBackground(.hidden)
-            .scrollIndicators(.hidden)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .id(card.masterCardId)
-        .background(pageBackground.ignoresSafeArea())
+        .background {
+            CardDetailTypeBackground(accent: cardTypeAccent)
+                .ignoresSafeArea()
+        }
         .task(id: card.masterCardId) {
             isAuraReady = false
             extractedAuraColors = []
@@ -297,6 +343,11 @@ private struct CardBrowseDetailPage: View {
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
                 .environment(services)
+        }
+        .fullScreenCover(item: $fullscreenCard) { fullscreenCard in
+            CardDetailFullscreenImageView(card: fullscreenCard) {
+                self.fullscreenCard = nil
+            }
         }
         .alert("Wishlist", isPresented: $showWishlistAlert) {
             Button("OK", role: .cancel) {}
@@ -473,7 +524,7 @@ private struct CardBrowseDetailPage: View {
 
             ProgressiveAsyncImage(
                 lowResURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
-                highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) },
+                highResURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
                 onImageLoaded: updateAuraColors(from:)
             ) {
                 Color(uiColor: .tertiarySystemFill)

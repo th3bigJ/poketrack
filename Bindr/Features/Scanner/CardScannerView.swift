@@ -225,11 +225,7 @@ struct CardScannerView: View {
 
                 // Bottom sheet — idle instructions or scan results
                 ZStack {
-                    if viewModel.scanResults.isEmpty {
-                        ScannerBottomPanelBackground()
-                    } else {
-                        ScannerResultsPanelBackground()
-                    }
+                    ScannerDockBackground(accentColor: services.theme.chartAccentColor)
 
                     if viewModel.scanResults.isEmpty {
                         ScannerIdleInstructions()
@@ -546,41 +542,56 @@ private struct ScannerTopStatusPill: View {
     }
 }
 
-private struct ScannerResultsPanelBackground: View {
+private struct ScannerDockBackground: View {
+    let accentColor: Color
+
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(.regularMaterial)
-            Color(uiColor: .systemGroupedBackground)
-                .opacity(0.72)
-        }
-        .ignoresSafeArea(edges: .bottom)
-    }
-}
+                .fill(.ultraThinMaterial)
 
-private struct ScannerBottomPanelBackground: View {
-    var body: some View {
-        ZStack {
-            Color(red: 0.07, green: 0.07, blue: 0.09)
+            Color(red: 0.055, green: 0.055, blue: 0.075)
+                .opacity(0.90)
+
             LinearGradient(
                 colors: [
-                    Color(red: 0.11, green: 0.11, blue: 0.13),
-                    Color(red: 0.05, green: 0.05, blue: 0.07)
+                    accentColor.opacity(0.18),
+                    accentColor.opacity(0.07),
+                    .clear
+                ],
+                startPoint: .top,
+                endPoint: .bottomTrailing
+            )
+
+            LinearGradient(
+                colors: [
+                    Color.white.opacity(0.10),
+                    Color.white.opacity(0.025),
+                    .clear
                 ],
                 startPoint: .top,
                 endPoint: .bottom
             )
         }
         .overlay(alignment: .top) {
-            LinearGradient(
-                colors: [Color.black.opacity(0.35), .clear],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .frame(height: 24)
-            .allowsHitTesting(false)
+            Rectangle()
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            accentColor.opacity(0.46),
+                            Color.white.opacity(0.16),
+                            accentColor.opacity(0.10)
+                        ],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .frame(height: 1)
+                .opacity(0.7)
         }
+        .shadow(color: accentColor.opacity(0.16), radius: 22, y: -8)
         .ignoresSafeArea(edges: .bottom)
+        .allowsHitTesting(false)
     }
 }
 
@@ -829,19 +840,19 @@ private struct ScannerIdleInstructions: View {
             icon: "viewfinder",
             iconColor: Color(red: 0.35, green: 0.78, blue: 1.0),
             title: "Frame",
-            description: "Place the card in the guide"
+            description: "Fit all four corners"
         ),
         Step(
             icon: "hand.raised.fill",
             iconColor: Color(red: 0.35, green: 0.78, blue: 1.0),
             title: "Hold steady",
-            description: "Keep your phone still"
+            description: "Hold still for focus"
         ),
         Step(
             icon: "camera.fill",
             iconColor: .white,
             title: "Scan",
-            description: "We'll capture your card"
+            description: "Tap shutter to identify"
         )
     ]
 
@@ -859,9 +870,6 @@ private struct ScannerIdleInstructions: View {
                 Text("Ready to scan")
                     .font(.headline.weight(.bold))
                     .foregroundStyle(.white)
-                Text("Keep the full card inside the guide.")
-                    .font(.subheadline)
-                    .foregroundStyle(.white.opacity(0.52))
             }
             .multilineTextAlignment(.center)
             .padding(.top, 18)

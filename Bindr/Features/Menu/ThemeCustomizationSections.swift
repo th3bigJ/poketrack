@@ -81,8 +81,6 @@ struct ThemeCustomizationSections: View {
             Haptics.lightImpact()
         } label: {
             ZStack(alignment: .bottomLeading) {
-                backgroundStylePreview(style)
-
                 LinearGradient(
                     colors: [.clear, .black.opacity(0.52)],
                     startPoint: .center,
@@ -102,7 +100,13 @@ struct ThemeCustomizationSections: View {
                 .foregroundStyle(.white)
                 .padding(10)
             }
+            .frame(maxWidth: .infinity)
             .frame(height: 76)
+            .background {
+                backgroundStylePreview(style)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .clipped()
+            }
             .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 15, style: .continuous)
@@ -130,7 +134,7 @@ struct ThemeCustomizationSections: View {
             Image("CelestialBackground")
                 .resizable()
                 .scaledToFill()
-        case .grass, .fire, .water, .electric, .psychic, .dark, .fairy, .steel:
+        case .grass, .fire, .water, .electric, .psychic, .dark, .fairy, .steel, .dragon:
             LinearGradient(
                 colors: style.atmosphereColors,
                 startPoint: .topLeading,

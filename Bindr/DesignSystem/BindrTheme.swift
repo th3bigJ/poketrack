@@ -128,13 +128,13 @@ extension View {
 
     /// Shared page backdrop used across top-level screens. Keeps native
     /// `systemBackground` as base, then adds a very subtle accent wash.
-    func bindrPageBackground(ignoresSafeArea: Bool = true) -> some View {
+    func bindrPageBackground(typeAccent: Color? = nil, ignoresSafeArea: Bool = true) -> some View {
         background {
             if ignoresSafeArea {
-                BindrPageBackground()
+                BindrPageBackground(typeAccent: typeAccent)
                     .ignoresSafeArea()
             } else {
-                BindrPageBackground()
+                BindrPageBackground(typeAccent: typeAccent)
             }
         }
     }
@@ -352,21 +352,30 @@ struct BindrPageBackground: View {
     @Environment(\.bindrAccent) private var accent
     @Environment(AppServices.self) private var services: AppServices?
 
+    /// When set (e.g. on the card detail screen), the backdrop ignores the user's
+    /// chosen theme/background style and washes the page with this colour instead —
+    /// used to tint each card by its Pokémon type. `nil` keeps normal app theming.
+    var typeAccent: Color? = nil
+
     var body: some View {
         ZStack {
             Color(uiColor: .systemBackground)
 
-            if let style = services?.theme.backgroundStyle {
-                backgroundLayer(for: style)
-            }
+            if let typeAccent {
+                accentGlow(typeAccent)
+            } else {
+                if let style = services?.theme.backgroundStyle {
+                    backgroundLayer(for: style)
+                }
 
-            if services?.theme.backgroundGlowEnabled ?? true {
-                if services?.theme.isLogoThemeSelected == true {
-                    logoThemeGlow
-                } else if services?.theme.isAuroraCalmThemeSelected == true {
-                    auroraCalmThemeGlow
-                } else {
-                    standardAccentGlow
+                if services?.theme.backgroundGlowEnabled ?? true {
+                    if services?.theme.isLogoThemeSelected == true {
+                        logoThemeGlow
+                    } else if services?.theme.isAuroraCalmThemeSelected == true {
+                        auroraCalmThemeGlow
+                    } else {
+                        standardAccentGlow
+                    }
                 }
             }
 
@@ -383,7 +392,7 @@ struct BindrPageBackground: View {
             EmptyView()
         case .celestial:
             celestialBackground
-        case .grass, .fire, .water, .electric, .psychic, .dark, .fairy, .steel:
+        case .grass, .fire, .water, .electric, .psychic, .dark, .fairy, .steel, .dragon:
             elementalBackground(style)
         }
     }
@@ -471,6 +480,11 @@ struct BindrPageBackground: View {
 
     @ViewBuilder
     private var standardAccentGlow: some View {
+        accentGlow(accent)
+    }
+
+    @ViewBuilder
+    private func accentGlow(_ accent: Color) -> some View {
         // Light mode needs stronger opacities — accent tints wash out on white
         // backgrounds where the same values read clearly in dark mode.
         LinearGradient(

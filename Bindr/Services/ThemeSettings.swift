@@ -31,6 +31,7 @@ final class ThemeSettings {
         case dark
         case fairy
         case steel
+        case dragon
 
         var id: String { rawValue }
 
@@ -46,6 +47,7 @@ final class ThemeSettings {
             case .dark: return "Dark"
             case .fairy: return "Fairy"
             case .steel: return "Steel"
+            case .dragon: return "Dragon"
             }
         }
 
@@ -61,6 +63,7 @@ final class ThemeSettings {
             case .dark: return "moon.stars.fill"
             case .fairy: return "wand.and.stars"
             case .steel: return "hexagon.fill"
+            case .dragon: return "hurricane"
             }
         }
 
@@ -86,6 +89,35 @@ final class ThemeSettings {
                 return [Color(hex: "f472b6"), Color(hex: "c084fc"), Color(hex: "67e8f9")]
             case .steel:
                 return [Color(hex: "475569"), Color(hex: "cbd5e1"), Color(hex: "0e7490")]
+            case .dragon:
+                return [Color(hex: "312e81"), Color(hex: "991b1b"), Color(hex: "d97706")]
+            }
+        }
+
+        var chartColor: Color {
+            switch self {
+            case .classic:
+                return .clear
+            case .celestial:
+                return Color(hex: "8b5cf6")
+            case .grass:
+                return Color(hex: "22c55e")
+            case .fire:
+                return Color(hex: "f97316")
+            case .water:
+                return Color(hex: "0ea5e9")
+            case .electric:
+                return Color(hex: "f59e0b")
+            case .psychic:
+                return Color(hex: "a855f7")
+            case .dark:
+                return Color(hex: "818cf8")
+            case .fairy:
+                return Color(hex: "ec4899")
+            case .steel:
+                return Color(hex: "64748b")
+            case .dragon:
+                return Color(hex: "c2410c")
             }
         }
     }
@@ -195,6 +227,10 @@ final class ThemeSettings {
             return Self.auroraCalmGradient
         }
         return Self.logoThemeGradient
+    }
+
+    var chartAccentColor: Color {
+        backgroundStyle == .classic ? accentColor : backgroundStyle.chartColor
     }
     
     var colorScheme: ColorScheme? {

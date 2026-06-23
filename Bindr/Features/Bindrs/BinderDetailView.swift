@@ -648,7 +648,7 @@ struct BinderDetailView: View {
                 pageCount: totalPageCount,
                 currentPage: $currentPage,
                 isTurning: $isPageTurning,
-                pageBackgroundColor: .systemBackground,
+                pageBackgroundColor: .clear,
                 contentVersion: binder.slotList.count
             ) { pageIdx in
                 if isCoverPage(pageIdx) {
@@ -693,10 +693,10 @@ struct BinderDetailView: View {
         let coverRect = coverFrame(in: pageSize)
 
         return ZStack {
-            // The page itself is the system background — same colour
-            // ``PageCurlView`` is initialised with — so the cover sits
-            // visually flush within the curl's "page" rectangle.
-            Color(uiColor: .systemBackground)
+            // The page is transparent so the themed app background shows
+            // through the margins around the A4 cover — letting the binder
+            // sit flush on the theme instead of a white sheet.
+            Color.clear
             BinderCoverView(
                 binder: binder,
                 compact: false,
@@ -846,6 +846,7 @@ struct BinderDetailView: View {
         }
         .frame(width: pageSize.width, height: pageSize.height)
         .modifier(ClipIfEnabled(shouldClip: !forExport))
+        .opacity(!forExport && isCoverPage(currentPage) && !isPageTurning ? 0 : 1)
     }
 
     @ViewBuilder

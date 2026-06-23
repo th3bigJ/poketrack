@@ -428,6 +428,15 @@ extension Card {
         AppConfiguration.resolvedImageURL(stored: displayImageSrc)
     }
 
+    /// Highest-quality artwork available, used for full-screen viewing.
+    /// Prefers the high-res source, falling back to the standard display image.
+    var highResImageSrc: String {
+        if let high = imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !high.isEmpty {
+            return high
+        }
+        return displayImageSrc
+    }
+
     private var shouldPreferHighResDisplayImage: Bool {
         guard setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() == "me4" else {
             return false

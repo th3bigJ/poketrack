@@ -123,7 +123,7 @@ struct SharedBinderView: View {
                 pagedSurface
             }
         }
-        .background(Color(uiColor: .systemBackground))
+        .bindrPageBackground()
         .navigationTitle(content.title)
         .navigationBarTitleDisplayMode(.inline)
         .task {
@@ -256,7 +256,7 @@ struct SharedBinderView: View {
                     pageCount: pageCount,
                     currentPage: $currentPage,
                     isTurning: $isPageTurning,
-                    pageBackgroundColor: .systemBackground,
+                    pageBackgroundColor: .clear,
                     contentVersion: cardsByID.count
                 ) { pageIdx in
                     pageSurface(pageIdx: pageIdx, pageSize: pageSize)

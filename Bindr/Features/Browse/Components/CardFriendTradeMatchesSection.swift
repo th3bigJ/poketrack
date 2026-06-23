@@ -9,6 +9,8 @@ struct CardFriendTradeMatchesSection: View {
     let card: Card
     /// When set, skips the friend lookup and shows this row only.
     var directContext: CardTradeContext? = nil
+    /// Optional compact limit for space-constrained surfaces such as card detail.
+    var maximumMatches: Int? = nil
 
     @State private var contexts: [CardTradeContext] = []
     @State private var isSignedIn = false
@@ -18,7 +20,7 @@ struct CardFriendTradeMatchesSection: View {
             if let directContext {
                 CardTradeContextRow(card: card, context: directContext)
             } else if !contexts.isEmpty {
-                ForEach(Array(contexts.enumerated()), id: \.offset) { _, context in
+                ForEach(Array(visibleContexts.enumerated()), id: \.offset) { _, context in
                     CardTradeContextRow(card: card, context: context)
                 }
             }
@@ -36,6 +38,11 @@ struct CardFriendTradeMatchesSection: View {
             isSignedIn = services.socialAuth.isSignedIn
             Task { await loadMatches() }
         }
+    }
+
+    private var visibleContexts: [CardTradeContext] {
+        guard let maximumMatches else { return contexts }
+        return Array(contexts.prefix(maximumMatches))
     }
 
     @MainActor

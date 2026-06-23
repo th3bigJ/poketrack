@@ -7,10 +7,13 @@ struct CardDetailSheet: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openURL) private var openURL
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.suppressTabBarForModalChrome) private var suppressTabBarForModalChrome
     @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
 
     let cards: [Card]
+    /// Stable session key for `.id` — set from `startIndex` at init, never updated while paging.
+    private let initialSessionCardID: String
     /// When opened from a specific friend context (profile, trade wall), trade goes directly to them.
     var directTradeContext: CardTradeContext? = nil
     /// When `false`, skip tab bar suppression — use for card detail nested inside another sheet
@@ -18,8 +21,6 @@ struct CardDetailSheet: View {
     var managesTabBarChrome: Bool = true
 
     @State private var index: Int
-    @State private var scrollIndex: Int?
-    @State private var hasAppliedInitialScrollPosition = false
     @State private var editingLine: HoldingLine?
     @State private var dispositionFlowPayload: CollectionDispositionFlowPayload?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
@@ -32,6 +33,8 @@ struct CardDetailSheet: View {
     @State private var collectionSuccessSparkTrigger = 0
     @State private var wishlistSuccessSparkTrigger = 0
     @State private var collectionAddSuccessPresentation: AddToCollectionSuccessPresentation?
+    @State private var fullscreenCard: Card?
+    @State private var selectedSet: TCGSet?
     @State private var auraColorsByCardID: [String: [Color]] = [:]
     @State private var auraSourceImageAreaByCardID: [String: CGFloat] = [:]
     // Deferred so the aura blur doesn't compete with the sheet open/close animation.
@@ -53,20 +56,42 @@ struct CardDetailSheet: View {
         self.directTradeContext = directTradeContext
         self.managesTabBarChrome = managesTabBarChrome
         let clamped = cards.isEmpty ? 0 : min(max(0, startIndex), cards.count - 1)
+        initialSessionCardID = cards.isEmpty ? "empty" : cards[clamped].masterCardId
         _index = State(initialValue: clamped)
-        _scrollIndex = State(initialValue: clamped)
     }
 
     private var currentCard: Card { cards[index] }
 
-    /// Forces a fresh detail sheet when presenting a different card or card list.
-    private var sheetContentIdentity: String {
-        guard !cards.isEmpty else { return "empty" }
+    /// Type-derived backdrop wash for the current card (nil → app theme fallback).
+    private var currentTypeAccent: Color? {
+        guard !cards.isEmpty else { return nil }
         let safeIndex = min(max(index, 0), cards.count - 1)
-        return "\(cards.count)-\(safeIndex)-\(cards[safeIndex].masterCardId)"
+        guard let first = (cards[safeIndex].elementTypes ?? []).compactMap({ cleaned($0) }).first else { return nil }
+        return PokemonTypeBadge.backgroundAccent(for: first)
+    }
+
+    private var resolvedCurrentTypeAccent: Color {
+        currentTypeAccent ?? services.theme.chartAccentColor
+    }
+
+    /// Forces a fresh detail sheet when presenting a different card or card list.
+    /// Keys on session only so horizontal paging never rebuilds the hierarchy.
+    private var sheetContentIdentity: String {
+        "\(cards.count)-\(initialSessionCardID)"
     }
 
     private func set(for card: Card) -> TCGSet? { services.cardData.sets.first { $0.setCode == card.setCode } }
+
+    @MainActor
+    private func typeAccent(for card: Card) -> Color {
+        let type = (card.elementTypes ?? [])
+            .compactMap(cleaned)
+            .first
+        if let type, let accent = PokemonTypeBadge.backgroundAccent(for: type) {
+            return accent
+        }
+        return services.theme.chartAccentColor
+    }
 
     private func scopedCollectionItems(for cardID: String) -> [CollectionItem] {
         let revision = services.collectionInventoryRevision
@@ -135,29 +160,27 @@ struct CardDetailSheet: View {
     }
 
     var body: some View {
-        GeometryReader { geo in
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 0) {
-                    ForEach(Array(cards.indices), id: \.self) { i in
-                        cardPage(for: cards[i], pageHeight: geo.size.height)
-                            .frame(width: geo.size.width, height: geo.size.height)
-                            .id(i)
+        NavigationStack {
+            GeometryReader { geo in
+                TabView(selection: $index) {
+                    ForEach(Array(cards.enumerated()), id: \.element.masterCardId) { i, card in
+                        cardPage(for: card, pageHeight: geo.size.height)
+                            .tag(i)
                     }
                 }
-                .scrollTargetLayout()
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .frame(width: geo.size.width, height: geo.size.height)
             }
-            .scrollTargetBehavior(.paging)
-            .scrollPosition(id: $scrollIndex)
-            .scrollContentBackground(.hidden)
-            .onChange(of: scrollIndex) { _, i in
-                guard let i else { return }
-                index = i
-                HapticManager.selection()
+            .navigationDestination(item: $selectedSet) { set in
+                SetCardsView(set: set)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .id(sheetContentIdentity)
-        .background(sheetBackground)
+        .background {
+            CardDetailTypeBackground(accent: resolvedCurrentTypeAccent)
+                .ignoresSafeArea()
+        }
         .task(id: currentCard.masterCardId) {
             await loadWishlistVariantKeys()
         }
@@ -165,13 +188,15 @@ struct CardDetailSheet: View {
             if managesTabBarChrome {
                 suppressTabBarForModalChrome?()
             }
-            applyInitialScrollPositionIfNeeded()
             // Defer aura blur past the ~0.35s sheet presentation animation so it
             // doesn't compete with Core Animation and cause dropped frames on open.
             Task { @MainActor in
                 try? await Task.sleep(for: .milliseconds(400))
                 isAuraReady = true
             }
+        }
+        .onChange(of: index) { _, _ in
+            HapticManager.selection()
         }
         .onDisappear {
             isAuraReady = false
@@ -210,6 +235,11 @@ struct CardDetailSheet: View {
             PaywallSheet()
                 .environment(services)
         }
+        .fullScreenCover(item: $fullscreenCard) { card in
+            CardDetailFullscreenImageView(card: card) {
+                fullscreenCard = nil
+            }
+        }
         .alert("Wishlist", isPresented: $showWishlistAlert) {
             Button("OK", role: .cancel) {}
         } message: {
@@ -223,9 +253,10 @@ struct CardDetailSheet: View {
         }
         .animation(.easeOut(duration: 0.18), value: collectionAddSuccessPresentation?.id)
         .presentationBackground {
-            sheetBackground
+            CardDetailTypeBackground(accent: resolvedCurrentTypeAccent)
+                .ignoresSafeArea()
         }
-        .presentationDragIndicator(.visible)
+        .presentationDragIndicator(.hidden)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
     }
@@ -255,12 +286,6 @@ struct CardDetailSheet: View {
         }
     }
 
-    private func applyInitialScrollPositionIfNeeded() {
-        guard !hasAppliedInitialScrollPosition else { return }
-        hasAppliedInitialScrollPosition = true
-        scrollIndex = index
-    }
-
     private func restoreTabBarAfterPresentation() {
         if let restoreTabBarChrome {
             restoreTabBarChrome()
@@ -273,6 +298,54 @@ struct CardDetailSheet: View {
     }
 
     private func cardPage(for pageCard: Card, pageHeight: CGFloat) -> some View {
+        CardDetailContentView(
+            card: pageCard,
+            set: set(for: pageCard),
+            availableVariantKeys: wishlistVariantKeys,
+            isWishlisted: isCurrentCardWishlisted,
+            showsCollectionActions: true,
+            showsWishlistAction: true,
+            addToDeckAction: nil,
+            directTradeContext: directTradeContext,
+            actions: CardDetailContentActions(
+                onDismiss: { dismiss() },
+                onToggleWishlist: {
+                    if isCurrentCardWishlisted {
+                        removeCurrentCardFromWishlist()
+                    } else {
+                        addToWishlist(variantKey: singleAvailableVariantKey ?? wishlistVariantKeys.first ?? "normal")
+                    }
+                },
+                onShare: { shareCard = pageCard },
+                onOpenImage: { fullscreenCard = pageCard },
+                onOpenSet: set(for: pageCard).map { pageSet in
+                    { selectedSet = pageSet }
+                },
+                onAddToCollection: { variantKey in
+                    addToCollectionVariant(card: pageCard, variantKey: variantKey)
+                },
+                onRemoveFromCollection: {
+                    openRemoveFromCollectionFlow(for: pageCard)
+                },
+                onOpenHolding: { line in
+                    editingLine = line
+                },
+                onOpenEbay: {
+                    if let url = ebayRecentSoldURL(for: pageCard) {
+                        openURL(url)
+                    }
+                }
+            )
+        )
+        .frame(minHeight: pageHeight)
+        .background {
+            CardDetailTypeBackground(accent: typeAccent(for: pageCard))
+                .ignoresSafeArea()
+        }
+        .id(pageCard.masterCardId)
+    }
+
+    private func legacyCardPage(for pageCard: Card, pageHeight: CGFloat) -> some View {
         let facts = summaryFacts(for: pageCard)
         let isInCollection = showsCollectionSection(for: pageCard)
         let hasDetails = !facts.isEmpty || pageCard.attacks != nil || pageCard.abilities != nil || cleaned(pageCard.rules) != nil || cleaned(pageCard.flavorText) != nil
@@ -327,7 +400,7 @@ struct CardDetailSheet: View {
 
             ProgressiveAsyncImage(
                 lowResURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
-                highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) },
+                highResURL: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
                 onImageLoaded: { updateAuraColors(from: $0, cardID: card.masterCardId) }
             ) {
                 Color(uiColor: .tertiarySystemFill)

@@ -542,10 +542,12 @@ struct TransactionsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 12)
+        .padding(.horizontal, 4)
+        .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassCardStyle(cornerRadius: 20, interactive: false)
+        .overlay(alignment: .bottom) {
+            Divider().overlay(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
+        }
     }
 
     private func transactionRow(for line: LedgerLine) -> some View {
@@ -593,10 +595,12 @@ struct TransactionsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 12)
+        .padding(.horizontal, 4)
+        .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .glassCardStyle(cornerRadius: 20, interactive: false)
+        .overlay(alignment: .bottom) {
+            Divider().overlay(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
+        }
     }
 
     private func tradeSummary(for lines: [LedgerLine]) -> String {

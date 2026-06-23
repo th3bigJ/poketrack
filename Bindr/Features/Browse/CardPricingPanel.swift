@@ -5,9 +5,16 @@ import UIKit
 // MARK: - Chart range
 
 private enum ChartRange: String, CaseIterable {
+    case oneDay = "1D"
+    case sevenDays = "7D"
     case oneMonth = "1M"
     case threeMonths = "3M"
     case oneYear = "1Y"
+    case all = "ALL"
+
+    /// Ranges exposed in the card-detail picker. The other cases stay in the
+    /// enum so the resolve logic keeps working, they're just not shown.
+    static let selectable: [ChartRange] = [.oneMonth, .oneYear, .all]
 }
 
 private enum ChartDataResolution {
@@ -27,6 +34,13 @@ struct CardPricingPanel: View {
     var initialVariant: String? = nil
     /// When true, skips the panel's own background so the caller can apply glass styling.
     var useGlass: Bool = false
+    /// Fixed chart height. When nil, the chart expands to fill available vertical space
+    /// (used by the one-screen card detail layout).
+    var chartHeight: CGFloat? = 220
+    /// Card-type accent supplied by the detail screen. Falls back to the active app theme.
+    var chartAccent: Color? = nil
+    /// Changing this value forces the panel to reload pricing (e.g. the detail footer's refresh button).
+    var reloadToken: Int = 0
 
     // Scrydex variant keys (e.g. "holofoil", "normal")
     @State private var variantKeys: [String] = []
@@ -42,6 +56,17 @@ struct CardPricingPanel: View {
     @State private var isLoading = false
     @State private var chartRange: ChartRange = .oneMonth
     @State private var scrubPoint: PriceDataPoint? = nil
+
+    private var activeChartAccent: Color {
+        if let chartAccent {
+            return chartAccent
+        }
+        if let firstType = (card.elementTypes ?? []).compactMap({ $0.trimmingCharacters(in: .whitespacesAndNewlines) }).first(where: { !$0.isEmpty }),
+           let accentColor = PokemonTypeBadge.backgroundAccent(for: firstType) {
+            return accentColor
+        }
+        return services.theme.chartAccentColor
+    }
 
     // All variant names present in history
     private var historyVariants: [String] {
@@ -81,6 +106,8 @@ struct CardPricingPanel: View {
 
     private var resolvedChart: (points: [PriceDataPoint], resolution: ChartDataResolution) {
         let dailyWithToday = (chartSeries?.daily ?? []).pinningTodayPrice(livePriceUSD)
+        let daily2 = Array(dailyWithToday.suffix(2))
+        let daily7 = Array(dailyWithToday.suffix(7))
         let daily31 = Array(dailyWithToday.suffix(31))
         let weeklySource = chartSeries.flatMap { $0.weekly.isEmpty ? nil : $0.weekly } ?? weeklyFromDaily(dailyWithToday)
         let weekly13 = Array(weeklySource.suffix(13))
@@ -88,6 +115,14 @@ struct CardPricingPanel: View {
         let monthly12 = Array(monthlySource.suffix(12))
 
         switch chartRange {
+        case .oneDay:
+            if !daily2.isEmpty { return (daily2, .daily) }
+            if !daily7.isEmpty { return (daily7, .daily) }
+            if !weekly13.isEmpty { return (weekly13, .weekly) }
+        case .sevenDays:
+            if !daily7.isEmpty { return (daily7, .daily) }
+            if !weekly13.isEmpty { return (weekly13, .weekly) }
+            if !monthly12.isEmpty { return (monthly12, .monthly) }
         case .oneMonth:
             if !daily31.isEmpty { return (daily31, .daily) }
             if !weekly13.isEmpty { return (weekly13, .weekly) }
@@ -100,6 +135,10 @@ struct CardPricingPanel: View {
             if !monthly12.isEmpty { return (monthly12, .monthly) }
             if !weekly13.isEmpty { return (weekly13, .weekly) }
             if !daily31.isEmpty { return (daily31, .daily) }
+        case .all:
+            if !dailyWithToday.isEmpty { return (dailyWithToday, .daily) }
+            if !weeklySource.isEmpty { return (weeklySource, .weekly) }
+            if !monthlySource.isEmpty { return (monthlySource, .monthly) }
         }
         return ([], .daily)
     }
@@ -149,51 +188,36 @@ struct CardPricingPanel: View {
     }
 
     var body: some View {
-        VStack(spacing: 0) {
-            // Market price / scrub date label
-            Text(scrubPoint != nil ? scrubLabel(scrubPoint!.label) : "Market Price")
-                .font(.caption)
-                .foregroundStyle(.secondary)
-                .padding(.top, 12)
-                .animation(.none, value: scrubPoint?.label)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .center, spacing: 16) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(scrubPoint != nil ? scrubLabel(scrubPoint!.label) : "Market Price")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .animation(.none, value: scrubPoint?.label)
 
-            Text(scrubPoint != nil ? services.priceDisplay.currency.format(amountUSD: scrubPoint!.price, usdToGbp: services.pricing.usdToGbp) : currentPrice)
-                .font(.system(size: 28, weight: .bold))
-                .foregroundStyle(.primary)
-                .padding(.top, 2)
-                .animation(.none, value: scrubPoint?.price)
+                    Text(scrubPoint != nil ? services.priceDisplay.currency.format(amountUSD: scrubPoint!.price, usdToGbp: services.pricing.usdToGbp) : currentPrice)
+                        .font(.system(size: 34, weight: .bold, design: .rounded))
+                        .foregroundStyle(.primary)
+                        .animation(.none, value: scrubPoint?.price)
 
-            // % change badges
-            if let trendChanges = currentTrendChanges {
-                HStack(spacing: 12) {
-                    changeBadge(label: "1D", value: trendChanges.change1d)
-                    changeBadge(label: "7D", value: trendChanges.change7d)
-                    changeBadge(label: "1M", value: trendChanges.change30d)
+                    if let dailyChange = currentTrendChanges?.change1d {
+                        HStack(spacing: 5) {
+                            Image(systemName: dailyChange >= 0 ? "arrow.up" : "arrow.down")
+                            Text("\(String(format: "%.1f%%", abs(dailyChange))) today")
+                        }
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(dailyChange >= 0 ? PricingPanelPalette.success : PricingPanelPalette.danger)
+                    }
                 }
-                .padding(.top, 8)
-                .padding(.bottom, 4)
+
+                Spacer(minLength: 0)
+                variantAndGradeMenu
             }
 
-            // Variant and grade tags
-            if shouldShowVariantChips {
-                chipPicker(keys: displayedVariants, selected: $selectedVariant) { variantDisplayName($0) }
-                    .padding(.top, 12)
-            }
-
-            if !gradesForVariant.isEmpty {
-                chipPicker(keys: gradesForVariant, selected: $selectedGrade) { gradeDisplayName($0) }
-                    .padding(.top, 6)
-            }
-
-            // Chart
             if !resolvedChart.points.isEmpty {
-                chartView
-                    .padding(.top, 4)
-
                 chartRangePicker
-                .padding(.horizontal, 16)
-                .padding(.top, 8)
-                .padding(.bottom, 4)
+                chartView
             } else if isLoading {
                 ProgressView()
                     .tint(.primary)
@@ -202,8 +226,7 @@ struct CardPricingPanel: View {
                 Spacer().frame(height: 16)
             }
         }
-        .padding(.horizontal, 6)
-        .padding(.vertical, 4)
+        .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             Group {
@@ -218,6 +241,10 @@ struct CardPricingPanel: View {
             }
         )
         .task(id: card.masterCardId) {
+            await load()
+        }
+        .task(id: reloadToken) {
+            guard reloadToken != 0 else { return }
             await load()
         }
         .onChange(of: selectedVariant) { _, variant in
@@ -236,6 +263,62 @@ struct CardPricingPanel: View {
         .onChange(of: services.pricing.usdToGbp) { _, _ in
             Task { await refreshPrice() }
         }
+    }
+
+    @ViewBuilder
+    private var variantAndGradeMenu: some View {
+        if shouldShowVariantChips || !gradesForVariant.isEmpty {
+            Menu {
+                if shouldShowVariantChips {
+                    Section("Variant") {
+                        ForEach(displayedVariants, id: \.self) { key in
+                            Button {
+                                selectedVariant = key
+                            } label: {
+                                if selectedVariant == key {
+                                    Label(variantDisplayName(key), systemImage: "checkmark")
+                                } else {
+                                    Text(variantDisplayName(key))
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if !gradesForVariant.isEmpty {
+                    Section("Grade") {
+                        ForEach(gradesForVariant, id: \.self) { key in
+                            Button {
+                                selectedGrade = key
+                            } label: {
+                                if selectedGrade == key {
+                                    Label(gradeDisplayName(key), systemImage: "checkmark")
+                                } else {
+                                    Text(gradeDisplayName(key))
+                                }
+                            }
+                        }
+                    }
+                }
+            } label: {
+                HStack(spacing: 6) {
+                    Text(selectionMenuTitle)
+                        .font(.subheadline.weight(.semibold))
+                        .lineLimit(1)
+                    Image(systemName: "chevron.down")
+                        .font(.caption2.weight(.bold))
+                }
+                .foregroundStyle(.primary)
+                .padding(.vertical, 4)
+                .contentShape(Rectangle())
+            }
+        }
+    }
+
+    private var selectionMenuTitle: String {
+        let variant = selectedVariant.map(variantDisplayName) ?? "Variant"
+        guard let selectedGrade else { return variant }
+        return "\(variant) (\(gradeDisplayName(selectedGrade)))"
     }
 
     // MARK: - Chip styles (system adaptive — matches Settings-style pills)
@@ -289,7 +372,7 @@ struct CardPricingPanel: View {
 
     private var chartRangePicker: some View {
         HStack(spacing: 0) {
-            ForEach(ChartRange.allCases, id: \.self) { range in
+            ForEach(ChartRange.selectable, id: \.self) { range in
                 let isSelected = chartRange == range
                 Button {
                     guard chartRange != range else { return }
@@ -306,9 +389,9 @@ struct CardPricingPanel: View {
                         .background {
                             if isSelected {
                                 Capsule(style: .continuous)
-                                    .bindrAccentFill(services.theme.accentColor)
+                                    .fill(activeChartAccent)
                                     .shadow(
-                                        color: (services.theme.isGradientThemeSelected ? services.theme.secondaryAccentColor : services.theme.accentColor).opacity(0.20),
+                                        color: activeChartAccent.opacity(0.20),
                                         radius: 4,
                                         y: 2
                                     )
@@ -318,8 +401,6 @@ struct CardPricingPanel: View {
                 .buttonStyle(.plain)
             }
         }
-        .padding(3)
-        .glassPillTrackStyle()
     }
 
     // MARK: - Chart
@@ -330,66 +411,35 @@ struct CardPricingPanel: View {
         let minP = (prices.min() ?? 0) * 0.97
         let maxP = (prices.max() ?? 1) * 1.03
         return Chart(points) { point in
-            LineMark(
-                x: .value("Date", point.label),
-                y: .value("Price", point.price)
-            )
-            .interpolationMethod(.catmullRom)
-            .foregroundStyle(services.theme.isGradientThemeSelected ? services.theme.activeGradient : LinearGradient(
-                colors: [services.theme.accentColor, services.theme.accentColor],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            ))
-            .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
-
             AreaMark(
                 x: .value("Date", point.label),
                 yStart: .value("Min", minP),
                 yEnd: .value("Price", point.price)
             )
-            .interpolationMethod(.catmullRom)
-            .foregroundStyle(LinearGradient(
-                colors: services.theme.isGradientThemeSelected
-                    ? [
-                        services.theme.activeGradientColors[0].opacity(0.28),
-                        services.theme.activeGradientColors[services.theme.activeGradientColors.count > 2 ? 2 : 1].opacity(0.16),
-                        services.theme.activeGradientColors[services.theme.activeGradientColors.count - 1].opacity(0.07),
+            .interpolationMethod(.linear)
+            .foregroundStyle(
+                LinearGradient(
+                    colors: [
+                        activeChartAccent.opacity(0.70),
+                        activeChartAccent.opacity(0.28),
                         .clear
-                    ]
-                    : [services.theme.accentColor.opacity(0.28), services.theme.accentColor.opacity(0.03)],
-                startPoint: .top, endPoint: .bottom
-            ))
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+
+            LineMark(
+                x: .value("Date", point.label),
+                y: .value("Price", point.price)
+            )
+            .interpolationMethod(.linear)
+            .foregroundStyle(activeChartAccent)
+            .lineStyle(StrokeStyle(lineWidth: 4, lineCap: .round, lineJoin: .round))
         }
         .chartYScale(domain: minP...maxP)
-        .chartXAxis {
-            let stride = max(1, points.count / 4)
-            let lastIndex = points.count - 1
-            let visibleLabels = Set(points.enumerated().compactMap { i, p -> String? in
-                (i == 0 || i == lastIndex || i % stride == 0) ? p.label : nil
-            })
-            AxisMarks(values: points.map(\.label)) { value in
-                if let label = value.as(String.self), visibleLabels.contains(label) {
-                    let isFirst = label == points.first?.label
-                    let isLast = label == points.last?.label
-                    AxisValueLabel(truncatedLabel(label), anchor: isFirst ? .topLeading : isLast ? .topTrailing : .top)
-                        .foregroundStyle(Color(uiColor: .label))
-                        .font(.system(size: 9))
-                }
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
-                    .foregroundStyle(panelDivider)
-            }
-        }
-        .chartYAxis {
-            AxisMarks(position: .trailing) { value in
-                if let price = value.as(Double.self) {
-                    AxisValueLabel(services.priceDisplay.currency.formatAxisTick(usd: price, usdToGbp: services.pricing.usdToGbp))
-                        .foregroundStyle(Color(uiColor: .label))
-                        .font(.system(size: 9))
-                }
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
-                    .foregroundStyle(panelDivider)
-            }
-        }
+        .chartXAxis(.hidden)
+        .chartYAxis(.hidden)
         .chartOverlay { proxy in
             GeometryReader { geo in
                 if let plotAnchor = proxy.plotFrame {
@@ -407,7 +457,7 @@ struct CardPricingPanel: View {
 
                         if let yPos = proxy.position(forY: scrub.price) {
                             Circle()
-                                .bindrAccentFill(services.theme.accentColor)
+                                .fill(activeChartAccent)
                                 .frame(width: 8, height: 8)
                                 .offset(x: x - 4, y: plotFrame.origin.y + yPos - 4)
                                 .allowsHitTesting(false)
@@ -433,8 +483,8 @@ struct CardPricingPanel: View {
                 }
             }
         }
-        .frame(height: 160)
-        .padding(.horizontal, 16)
+        .modifier(ChartSizing(height: chartHeight))
+        .padding(.horizontal, -16)
     }
 
     // Axis tick labels (short)
@@ -664,4 +714,17 @@ private enum PricingPanelPalette {
     static let chartLine = Color(red: 0.12, green: 0.52, blue: 1.0)
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
+}
+
+/// Applies a fixed chart height, or lets the chart fill available vertical space when `height` is nil.
+private struct ChartSizing: ViewModifier {
+    let height: CGFloat?
+
+    func body(content: Content) -> some View {
+        if let height {
+            content.frame(height: height)
+        } else {
+            content.frame(maxHeight: .infinity)
+        }
+    }
 }

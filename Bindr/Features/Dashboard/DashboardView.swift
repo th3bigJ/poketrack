@@ -91,6 +91,38 @@ struct DashboardView: View {
     @State private var cachedSealedProductsCount: Int = 0
     @State private var cachedWishlistedCardsCount: Int = 0
 
+    private struct NewsUpdate: Identifiable {
+        let id: String
+        let icon: String
+        let title: String
+        let summary: String
+        let label: String
+    }
+
+    private static let placeholderNewsUpdates: [NewsUpdate] = [
+        NewsUpdate(
+            id: "elemental-themes",
+            icon: "paintpalette.fill",
+            title: "Elemental themes have arrived",
+            summary: "Personalise Bindr with Grass, Fire, Water, Dragon and more.",
+            label: "NEW"
+        ),
+        NewsUpdate(
+            id: "scanner-refresh",
+            icon: "viewfinder",
+            title: "A sharper scanner experience",
+            summary: "Cleaner controls and improved matching make adding cards feel faster.",
+            label: "UPDATE"
+        ),
+        NewsUpdate(
+            id: "community-roadmap",
+            icon: "megaphone.fill",
+            title: "More from the Bindr team",
+            summary: "News, announcements and community updates will appear here.",
+            label: "COMING SOON"
+        )
+    ]
+
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
         return BrandSnapshot(
@@ -390,27 +422,19 @@ struct DashboardView: View {
     }
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(alignment: .leading, spacing: 18) {
-                heroSection
-                if !actionableTrades.isEmpty {
-                    tradeActionNotificationCard
-                }
-                valueAndHistoryCard
-                dashboardCard { collectionSummaryInsightCard }
-                if let trend = activeMarketTrend {
-                    marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
-                }
-                if !upcomingReleases.isEmpty {
-                    dashboardCard { upcomingReleasesSection }
-                }
-                recentActivityCard
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVStack(spacing: 0) {
+                dashboardPageOne
+                    .containerRelativeFrame(.vertical, alignment: .top)
+                    .id(0)
+
+                dashboardPageTwo
+                    .containerRelativeFrame(.vertical, alignment: .top)
+                    .id(1)
             }
-            .padding(.horizontal, 16)
-            .padding(.top, 18)
-            .padding(.bottom, 32)
+            .scrollTargetLayout()
         }
-        .safeAreaPadding(.top, rootFloatingChromeInset)
+        .scrollTargetBehavior(.paging)
         .background(dashboardBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
         .task(id: "\(services.collectionValue != nil):\(services.isLaunchCatalogPipelineComplete)") {
@@ -652,6 +676,56 @@ struct DashboardView: View {
         }
     }
 
+    private var dashboardPageOne: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            heroSection
+            valueAndHistoryCard
+
+            Spacer()
+                .frame(height: 28)
+
+            collectionSummaryInsightCard
+
+            Rectangle()
+                .fill(dashboardDividerColor)
+                .frame(height: 1)
+
+            if let trend = activeMarketTrend {
+                marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, rootFloatingChromeInset + 10)
+        .padding(.bottom, RootChromeEnvironment.floatingTabBarContentInset - 18)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+
+    private var dashboardPageTwo: some View {
+        VStack(alignment: .leading, spacing: 18) {
+            if !actionableTrades.isEmpty {
+                tradeActionNotificationCard
+            }
+
+            if !upcomingReleases.isEmpty {
+                upcomingReleasesSection
+            }
+
+            Rectangle()
+                .fill(dashboardDividerColor)
+                .frame(height: 1)
+
+            newsAndUpdatesSection
+
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, rootFloatingChromeInset + 14)
+        .padding(.bottom, RootChromeEnvironment.floatingTabBarContentInset - 12)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+
     private func restoreTabBarAfterSheet() {
         if let restoreTabBarChrome {
             restoreTabBarChrome()
@@ -784,89 +858,85 @@ struct DashboardView: View {
     }
 
     private var valueAndHistoryCard: some View {
-        dashboardCard {
-            let _ = chartRefreshID  // force re-evaluation when recalculate completes
-            VStack(alignment: .leading, spacing: 12) {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Total Collection Value")
+        let _ = chartRefreshID  // force re-evaluation when recalculate completes
+        return VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Total Collection Value")
+                        .font(.headline)
+                        .foregroundStyle(dashboardSecondaryText)
+
+                    if (isLoadingValue || services.needsCollectionValueRecalcAfterRestore) && displayedBrandSnapshot == nil {
+                        ProgressView()
+                            .tint(services.theme.accentColor)
+                    } else if isScrubbingOrLoaded {
+                        Text(formatCurrency(displayTotal))
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
+                            .foregroundStyle(dashboardPrimaryText)
+                            .contentTransition(.numericText())
+                        Text(displayValueSubtitle)
+                            .font(.caption.weight(.medium))
+                            .foregroundStyle(dashboardSecondaryText)
+                        HStack(spacing: 12) {
+                            Text("Cards \(formatCurrency(displayCardsValue))")
+                            Text("Sealed \(formatCurrency(displaySealedValue))")
+                        }
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(dashboardSecondaryText)
+                    } else {
+                        Text("No pricing data yet")
                             .font(.headline)
                             .foregroundStyle(dashboardSecondaryText)
-
-                        if (isLoadingValue || services.needsCollectionValueRecalcAfterRestore) && displayedBrandSnapshot == nil {
-                            ProgressView()
-                                .tint(services.theme.accentColor)
-                        } else if isScrubbingOrLoaded {
-                            Text(formatCurrency(displayTotal))
-                                .font(.system(size: 30, weight: .bold, design: .rounded))
-                                .foregroundStyle(dashboardPrimaryText)
-                                .contentTransition(.numericText())
-                            Text(displayValueSubtitle)
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(dashboardSecondaryText)
-                            HStack(spacing: 12) {
-                                Text("Cards \(formatCurrency(displayCardsValue))")
-                                Text("Sealed \(formatCurrency(displaySealedValue))")
-                            }
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(dashboardSecondaryText)
-                        } else {
-                            Text("No pricing data yet")
-                                .font(.headline)
-                                .foregroundStyle(dashboardSecondaryText)
-                        }
-                    }
-
-                    Spacer(minLength: 16)
-
-                    VStack(alignment: .trailing, spacing: 6) {
-                        if let change = periodChange {
-                            Text((change.amount >= 0 ? "+" : "") + formatCurrency(change.amount))
-                                .font(.title3.weight(.bold))
-                                .foregroundStyle(change.amount >= 0 ? DashboardPalette.success : DashboardPalette.danger)
-                                .contentTransition(.numericText())
-
-                            Text(String(format: "%.1f%% %@", change.pct, change.label))
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(dashboardSecondaryText)
-                        } else if let gain = portfolioGain {
-                            Text((gain >= 0 ? "+" : "") + formatCurrency(gain))
-                                .font(.title3.weight(.bold))
-                                .foregroundStyle(portfolioGainColor)
-                            Text("all-time gain")
-                                .font(.caption.weight(.medium))
-                                .foregroundStyle(dashboardSecondaryText)
-                        }
                     }
                 }
 
-                if !activePoints.isEmpty {
-                    HStack {
-                        Spacer()
-                        SlidingSegmentedPicker(
-                            selection: $chartRange,
-                            items: ChartRange.allCases,
-                            title: { $0.rawValue }
-                        )
-                        .frame(maxWidth: 240)
-                    }
+                Spacer(minLength: 16)
 
-                    Chart(activePoints) { point in
+                VStack(alignment: .trailing, spacing: 6) {
+                    if let change = periodChange {
+                        Text((change.amount >= 0 ? "+" : "") + formatCurrency(change.amount))
+                            .font(.title3.weight(.bold))
+                            .foregroundStyle(change.amount >= 0 ? DashboardPalette.success : DashboardPalette.danger)
+                            .contentTransition(.numericText())
+
+                        Text(String(format: "%.1f%% %@", change.pct, change.label))
+                            .font(.caption.weight(.medium))
+                            .foregroundStyle(dashboardSecondaryText)
+                    } else if let gain = portfolioGain {
+                        Text((gain >= 0 ? "+" : "") + formatCurrency(gain))
+                            .font(.title3.weight(.bold))
+                            .foregroundStyle(portfolioGainColor)
+                        Text("all-time gain")
+                            .font(.caption.weight(.medium))
+                            .foregroundStyle(dashboardSecondaryText)
+                    }
+                }
+            }
+
+            if !activePoints.isEmpty {
+                HStack {
+                    SlidingSegmentedPicker(
+                        selection: $chartRange,
+                        items: ChartRange.allCases,
+                        title: { $0.rawValue }
+                    )
+                    .frame(maxWidth: 240)
+                }
+
+                Chart(activePoints) { point in
                         AreaMark(
                             x: .value("Date", point.date),
                             yStart: .value("Min", chartMin),
                             yEnd: .value("Value", point.total)
                         )
+                        .interpolationMethod(.linear)
                         .foregroundStyle(
                             LinearGradient(
-                                colors: services.theme.isGradientThemeSelected
-                                    ? [
-                                        services.theme.activeGradientColors[0].opacity(0.30),
-                                        services.theme.activeGradientColors[services.theme.activeGradientColors.count > 2 ? 2 : 1].opacity(0.18),
-                                        services.theme.activeGradientColors[services.theme.activeGradientColors.count - 1].opacity(0.08),
-                                        .clear
-                                    ]
-                                    : [services.theme.accentColor.opacity(0.3), services.theme.accentColor.opacity(0.03)],
+                                colors: [
+                                    services.theme.chartAccentColor.opacity(0.70),
+                                    services.theme.chartAccentColor.opacity(0.28),
+                                    .clear
+                                ],
                                 startPoint: .top,
                                 endPoint: .bottom
                             )
@@ -876,12 +946,8 @@ struct DashboardView: View {
                             x: .value("Date", point.date),
                             y: .value("Value", point.total)
                         )
-                        .interpolationMethod(.catmullRom)
-                        .foregroundStyle(services.theme.isGradientThemeSelected ? services.theme.activeGradient : LinearGradient(
-                            colors: [services.theme.accentColor, services.theme.accentColor],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        ))
+                        .interpolationMethod(.linear)
+                        .foregroundStyle(services.theme.chartAccentColor)
                         .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
 
                         if let sel = selectedPoint, sel.date == point.date {
@@ -897,33 +963,12 @@ struct DashboardView: View {
                             .foregroundStyle(dashboardPrimaryText)
                         }
                     }
-                    .chartYAxis {
-                        AxisMarks(position: .leading, values: .automatic(desiredCount: 4)) { value in
-                            AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
-                                .foregroundStyle(dashboardDividerColor)
-                            AxisValueLabel {
-                                if let d = value.as(Double.self) {
-                                    Text(formatCurrencyShort(d))
-                                        .font(.caption2)
-                                        .foregroundStyle(dashboardSecondaryText)
-                                }
-                            }
-                        }
-                    }
-                    .chartXAxis {
-                        AxisMarks(values: chartXAxisDates) { value in
-                            AxisValueLabel {
-                                if let d = value.as(Date.self) {
-                                    Text(xAxisLabel(for: d))
-                                        .font(.caption2)
-                                        .foregroundStyle(dashboardSecondaryText)
-                                }
-                            }
-                        }
-                    }
+                    .chartYAxis(.hidden)
+                    .chartXAxis(.hidden)
                     .chartYScale(domain: chartMin...max(chartMax, chartMin + 1))
-                    .frame(height: 220)
-                    .chartOverlay { proxy in
+                .frame(height: 140)
+                .padding(.horizontal, -16)
+                .chartOverlay { proxy in
                         GeometryReader { geo in
                             Rectangle()
                                 .fill(Color.clear)
@@ -949,14 +994,13 @@ struct DashboardView: View {
                                         }
                                 )
                         }
-                    }
                 }
             }
         }
     }
 
     private var collectionSummaryInsightCard: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 8) {
             Text("COLLECTION OVERVIEW")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(dashboardSecondaryText)
@@ -968,7 +1012,7 @@ struct DashboardView: View {
                 } label: {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(formatCollectionCount(totalCardsCount))
-                            .font(.system(size: 36, weight: .bold, design: .rounded))
+                            .font(.system(size: 30, weight: .bold, design: .rounded))
                             .foregroundStyle(DashboardPalette.purple)
                             .minimumScaleFactor(0.65)
                             .lineLimit(1)
@@ -983,8 +1027,8 @@ struct DashboardView: View {
 
                 Rectangle()
                     .fill(dashboardBorder.opacity(colorScheme == .dark ? 0.35 : 0.55))
-                    .frame(width: 1, height: 72)
-                    .padding(.horizontal, 14)
+                    .frame(width: 1, height: 58)
+                    .padding(.horizontal, 10)
 
                 HStack(spacing: 0) {
                     collectionOverviewStatColumn(
@@ -1026,9 +1070,9 @@ struct DashboardView: View {
         Button {
             action?()
         } label: {
-            VStack(spacing: 6) {
+            VStack(spacing: 3) {
                 Image(systemName: icon)
-                    .font(.system(size: 18, weight: .semibold))
+                    .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(iconColor)
 
                 Text(formatCollectionCount(count))
@@ -1140,44 +1184,106 @@ struct DashboardView: View {
         .accessibilityLabel("\(release.name), \(release.type), releases \(release.releaseDateAccessibilityLabel)")
     }
 
-    private func marketTrendCard(trend: MarketTrendMetrics, updatedAt: Date?) -> some View {
-        dashboardCard {
-            VStack(alignment: .leading, spacing: 16) {
-                HStack(alignment: .firstTextBaseline) {
-                    Text("MARKET TREND")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(dashboardSecondaryText)
-                        .tracking(0.6)
+    private var newsAndUpdatesSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("News & Updates")
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
 
-                    Spacer(minLength: 8)
+                Spacer(minLength: 8)
 
-                    if let updatedAt {
-                        Text(updatedAt.formatted(date: .abbreviated, time: .shortened))
-                            .font(.caption)
-                            .foregroundStyle(dashboardSecondaryText)
+                Text("BINDR")
+                    .font(.caption2.weight(.bold))
+                    .tracking(0.8)
+                    .bindrAccentForeground(services.theme.chartAccentColor)
+            }
+
+            VStack(spacing: 0) {
+                ForEach(Array(Self.placeholderNewsUpdates.enumerated()), id: \.element.id) { index, item in
+                    newsUpdateRow(item)
+
+                    if index < Self.placeholderNewsUpdates.count - 1 {
+                        Divider()
+                            .overlay(dashboardDividerColor)
+                            .padding(.leading, 46)
                     }
                 }
+            }
+        }
+    }
 
-                HStack(alignment: .center, spacing: 0) {
-                    marketTrendPrimaryColumn(
-                        value: trend.change31Days,
-                        label: "Last 31 Days"
-                    )
+    private func newsUpdateRow(_ item: NewsUpdate) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            Image(systemName: item.icon)
+                .font(.system(size: 15, weight: .semibold))
+                .foregroundStyle(services.theme.chartAccentColor)
+                .frame(width: 34, height: 34)
+                .background(services.theme.chartAccentColor.opacity(0.13), in: Circle())
 
-                    marketTrendDivider
+            VStack(alignment: .leading, spacing: 3) {
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    Text(item.title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(dashboardPrimaryText)
+                        .lineLimit(1)
 
-                    marketTrendSecondaryColumn(
-                        value: trend.change7Days,
-                        label: "7 Days"
-                    )
+                    Spacer(minLength: 4)
 
-                    marketTrendDivider
-
-                    marketTrendSecondaryColumn(
-                        value: trend.change1Day,
-                        label: "1 Day"
-                    )
+                    Text(item.label)
+                        .font(.system(size: 9, weight: .bold))
+                        .tracking(0.4)
+                        .foregroundStyle(services.theme.chartAccentColor)
                 }
+
+                Text(item.summary)
+                    .font(.caption)
+                    .foregroundStyle(dashboardSecondaryText)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
+            }
+        }
+        .padding(.vertical, 10)
+        .contentShape(Rectangle())
+        .accessibilityElement(children: .combine)
+    }
+
+    private func marketTrendCard(trend: MarketTrendMetrics, updatedAt: Date?) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .firstTextBaseline) {
+                Text("MARKET TREND")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(dashboardSecondaryText)
+                    .tracking(0.6)
+
+                Spacer(minLength: 8)
+
+                if let updatedAt {
+                    Text(updatedAt.formatted(date: .abbreviated, time: .shortened))
+                        .font(.caption)
+                        .foregroundStyle(dashboardSecondaryText)
+                }
+            }
+
+            HStack(alignment: .center, spacing: 0) {
+                marketTrendPrimaryColumn(
+                    value: trend.change31Days,
+                    label: "Last 31 Days"
+                )
+
+                marketTrendDivider
+
+                marketTrendSecondaryColumn(
+                    value: trend.change7Days,
+                    label: "7 Days"
+                )
+
+                marketTrendDivider
+
+                marketTrendSecondaryColumn(
+                    value: trend.change1Day,
+                    label: "1 Day"
+                )
             }
         }
     }
@@ -1185,14 +1291,14 @@ struct DashboardView: View {
     private var marketTrendDivider: some View {
         Rectangle()
             .fill(dashboardBorder.opacity(colorScheme == .dark ? 0.35 : 0.55))
-            .frame(width: 1, height: 52)
-            .padding(.horizontal, 12)
+            .frame(width: 1, height: 42)
+            .padding(.horizontal, 8)
     }
 
     private func marketTrendPrimaryColumn(value: Double?, label: String) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(formatTrendPercent(value))
-                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .font(.system(size: 24, weight: .bold, design: .rounded))
                 .foregroundStyle(trendColor(value))
                 .minimumScaleFactor(0.65)
                 .lineLimit(1)
@@ -1228,37 +1334,35 @@ struct DashboardView: View {
     }
 
     private var recentActivityCard: some View {
-        dashboardCard {
-            VStack(alignment: .leading, spacing: 14) {
-                HStack {
-                    Text("Recent Activity")
-                        .font(.title3.weight(.semibold))
-                        .foregroundStyle(dashboardPrimaryText)
-                    Spacer()
-                    if let onViewAllActivity {
-                        Button("View All") { onViewAllActivity() }
-                            .font(.subheadline.weight(.medium))
-                            .bindrAccentForeground(services.theme.accentColor)
-                    }
+        VStack(alignment: .leading, spacing: 14) {
+            HStack {
+                Text("Recent Activity")
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
+                Spacer()
+                if let onViewAllActivity {
+                    Button("View All") { onViewAllActivity() }
+                        .font(.subheadline.weight(.medium))
+                        .bindrAccentForeground(services.theme.accentColor)
                 }
+            }
 
-                if recentLines.isEmpty {
-                    Text("No transactions yet.")
-                        .font(.subheadline)
-                        .foregroundStyle(dashboardSecondaryText)
-                } else {
-                    VStack(spacing: 0) {
-                        ForEach(recentLines) { line in
-                            Button {
-                                openRecentActivityDetail(for: line)
-                            } label: {
-                                dashboardActivityRow(line: line)
-                            }
-                            .buttonStyle(.plain)
-                            if line.id != recentLines.last?.id {
-                                Divider()
-                                    .overlay(dashboardDividerColor)
-                            }
+            if recentLines.isEmpty {
+                Text("No transactions yet.")
+                    .font(.subheadline)
+                    .foregroundStyle(dashboardSecondaryText)
+            } else {
+                VStack(spacing: 0) {
+                    ForEach(recentLines) { line in
+                        Button {
+                            openRecentActivityDetail(for: line)
+                        } label: {
+                            dashboardActivityRow(line: line)
+                        }
+                        .buttonStyle(.plain)
+                        if line.id != recentLines.last?.id {
+                            Divider()
+                                .overlay(dashboardDividerColor)
                         }
                     }
                 }
@@ -1429,10 +1533,15 @@ struct DashboardView: View {
             )
     }
 
-    private func dashboardCard<Content: View>(@ViewBuilder content: () -> Content) -> some View {
-        content()
-            .padding(16)
-            .glassCardStyle(cornerRadius: 16, interactive: false)
+    private func dashboardSection<Content: View>(@ViewBuilder content: () -> Content) -> some View {
+        VStack(alignment: .leading, spacing: 18) {
+            content()
+
+            Rectangle()
+                .fill(dashboardDividerColor)
+                .frame(height: 1)
+        }
+        .padding(.top, 8)
     }
 
     private func prepareInitialDashboardData() async {

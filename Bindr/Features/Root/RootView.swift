@@ -1352,9 +1352,13 @@ struct RootView: View {
         refreshTabBarSwiftUITint(accent)
         Task { @MainActor in
             await Task.yield()
-            services.isCardDetailPresentationActive = false
-            services.isSealedDetailPresentationActive = false
-            services.suppressTabBarUntilTintRestored = false
+            // Animate the flag flip so the tab bar slides smoothly back into
+            // place when a card detail is dismissed, instead of popping in.
+            withAnimation(.spring(response: 0.42, dampingFraction: 0.88)) {
+                services.isCardDetailPresentationActive = false
+                services.isSealedDetailPresentationActive = false
+                services.suppressTabBarUntilTintRestored = false
+            }
             BindrApp.applyTabBarTint(accent: accent)
         }
     }

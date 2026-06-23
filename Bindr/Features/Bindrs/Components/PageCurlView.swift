@@ -25,6 +25,7 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
         )
         vc.isDoubleSided = false
         vc.view.backgroundColor = pageBackgroundColor
+        vc.view.isOpaque = pageBackgroundColor.cgColor.alpha >= 1
         vc.view.layer.speed = 0.55
         vc.dataSource = context.coordinator
         vc.delegate = context.coordinator
@@ -87,7 +88,7 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
     private func makeHosting(index: Int) -> UIViewController {
         let hosting = UIHostingController(rootView: pageContent(index))
         hosting.view.backgroundColor = pageBackgroundColor
-        hosting.view.isOpaque = true
+        hosting.view.isOpaque = pageBackgroundColor.cgColor.alpha >= 1
         return hosting
     }
 

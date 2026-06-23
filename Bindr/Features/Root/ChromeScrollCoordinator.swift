@@ -60,7 +60,11 @@ final class ChromeScrollCoordinator: ObservableObject {
 
     func setOverlaySuppressesTabBar(_ suppress: Bool) {
         guard overlaySuppressesTabBar != suppress else { return }
-        overlaySuppressesTabBar = suppress
+        // Animate so the tab bar slides smoothly back into place when an
+        // overlay (e.g. a binder) is dismissed, instead of popping in.
+        withAnimation(.spring(response: 0.42, dampingFraction: 0.88)) {
+            overlaySuppressesTabBar = suppress
+        }
     }
 
     /// `offsetY` is distance scrolled **down** from the rest position at the top (0 = at top, larger = scrolled down). Matches `max(0, -anchorMinY)` from a scroll anchor or UIKit-like `contentOffset.y`.

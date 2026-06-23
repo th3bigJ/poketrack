@@ -331,7 +331,11 @@ struct BindersRootView: View {
     /// other binders back into place and tears down the overlay.
     private func finishBinderClose() {
         // Overlay has landed. Now we can safely remove the presenter.
-        presentedBinder = nil
+        // Animate so the nested tab-bar toolbar reveal stays in sync with the
+        // smooth slide driven by ``ChromeScrollCoordinator``.
+        withAnimation(.spring(response: 0.42, dampingFraction: 0.88)) {
+            presentedBinder = nil
+        }
         presentingBinderID = nil
         sourceCoverIsHidden = false
     }

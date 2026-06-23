@@ -763,15 +763,20 @@ private struct TradeCalculatorView: View {
     }
 
     var body: some View {
-        List {
-            summarySection
-            theirSideSection
-            mySideSection
-            if canCompleteTrade || isCompletingTrade {
-                completeTradeSection
+        ScrollView {
+            VStack(spacing: 20) {
+                summarySection
+                theirSideSection
+                mySideSection
+                if canCompleteTrade || isCompletingTrade {
+                    completeTradeSection
+                }
             }
+            .padding(.horizontal, 16)
+            .padding(.top, 16)
+            .padding(.bottom, 24)
         }
-        .listStyle(.insetGrouped)
+        .bindrPageBackground()
         .scrollDismissesKeyboard(.interactively)
         .navigationTitle("Local Trade")
         .navigationBarTitleDisplayMode(.inline)
@@ -838,7 +843,7 @@ private struct TradeCalculatorView: View {
     }
 
     private var summarySection: some View {
-        Section {
+        VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 0) {
                 // My Side (Left)
                 VStack(spacing: 8) {
@@ -909,15 +914,22 @@ private struct TradeCalculatorView: View {
                 .frame(maxWidth: .infinity)
             }
             .padding(.vertical, 10)
-        } footer: {
+
+            Divider()
+                .overlay(colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10))
+
             Text(fairnessTitle + " · " + fairnessSubtitle)
-                .font(.system(size: 12, weight: .medium))
+                .font(.system(size: 13, weight: .semibold))
                 .foregroundStyle(fairnessColor)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .multilineTextAlignment(.center)
         }
+        .padding(18)
+        .glassCardStyle(cornerRadius: 24, interactive: false)
     }
 
     private var completeTradeSection: some View {
-        Section {
+        VStack(alignment: .leading, spacing: 12) {
             Button {
                 activeAlert = .confirmation
             } label: {
@@ -929,24 +941,22 @@ private struct TradeCalculatorView: View {
                         Image(systemName: "checkmark.circle.fill")
                             .font(.system(size: 15, weight: .bold))
                     }
-                    Text(isCompletingTrade ? "Completing..." : "Complete trade")
+                    Text(isCompletingTrade ? "Completing..." : "Complete Trade")
                         .font(.system(size: 15, weight: .bold))
                 }
-                .foregroundStyle(.primary)
+                .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 12)
-                .background(bindrAccent.opacity(colorScheme == .dark ? 0.34 : 0.16), in: Capsule())
-                .overlay {
-                    Capsule()
-                        .stroke(bindrAccent.opacity(colorScheme == .dark ? 0.8 : 0.4), lineWidth: 1)
-                }
+                .padding(.vertical, 14)
+                .background(bindrAccent.gradient, in: Capsule())
+                .shadow(color: bindrAccent.opacity(0.35), radius: 8, x: 0, y: 4)
             }
             .buttonStyle(.plain)
             .disabled(isCompletingTrade)
-            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-            .listRowBackground(Color.clear)
-        } footer: {
+
             Text("Completing updates your card inventory. Cash is logged separately in Activity only when you enter an amount above.")
+                .font(.system(size: 11))
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 
@@ -1006,62 +1016,81 @@ private struct TradeCalculatorView: View {
         addAction: @escaping () -> Void,
         scanAction: @escaping () -> Void
     ) -> some View {
-        Section {
-            if cards.wrappedValue.isEmpty {
-                Text("No cards selected")
-                    .font(.system(size: 13))
-                    .foregroundStyle(.secondary)
-                    .italic()
-            } else {
-                ForEach(cards.wrappedValue) { item in
-                    TradeCalculatorCardRow(
-                        item: item,
-                        onQuantityChange: { quantity in
-                            updateQuantity(for: item, in: cards, quantity: quantity)
-                        },
-                        onRemove: {
-                            remove(item, from: cards)
+        VStack(alignment: .leading, spacing: 14) {
+            // Header
+            Text(title.uppercased())
+                .font(.caption.weight(.bold))
+                .tracking(1.0)
+                .foregroundStyle(bindrAccent)
+
+            // Items List inside Inset Glass Box
+            VStack(spacing: 12) {
+                if cards.wrappedValue.isEmpty {
+                    HStack {
+                        Spacer()
+                        Text("No cards selected")
+                            .font(.system(size: 13))
+                            .foregroundStyle(.secondary)
+                            .italic()
+                        Spacer()
+                    }
+                    .padding(.vertical, 8)
+                } else {
+                    ForEach(cards.wrappedValue) { item in
+                        TradeCalculatorCardRow(
+                            item: item,
+                            onQuantityChange: { quantity in
+                                updateQuantity(for: item, in: cards, quantity: quantity)
+                            },
+                            onRemove: {
+                                remove(item, from: cards)
+                            }
+                        )
+                        if item.id != cards.wrappedValue.last?.id {
+                            Divider()
+                                .overlay(colorScheme == .dark ? Color.white.opacity(0.08) : Color.black.opacity(0.08))
                         }
-                    )
+                    }
                 }
             }
+            .padding(12)
+            .glassInsetStyle(cornerRadius: 16)
 
+            // Actions row (Add + Camera)
             HStack(spacing: 12) {
                 Button(action: addAction) {
-                    Label(addTitle, systemImage: "plus.circle")
-                        .font(.system(size: 14))
+                    Label(addTitle, systemImage: "plus.circle.fill")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(bindrAccent)
                 }
                 .buttonStyle(.plain)
 
                 Spacer(minLength: 0)
 
                 Button(action: scanAction) {
-                    Group {
-                        if #available(iOS 26.0, *) {
-                            Image(systemName: "camera")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundStyle(.secondary)
-                                .frame(width: 32, height: 32)
-                                .glassEffect(.clear.tint(nil).interactive(), in: Circle())
-                        } else {
-                            Image(systemName: "camera")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundStyle(.secondary)
-                                .frame(width: 32, height: 32)
-                                .background(.thinMaterial, in: Circle())
-                        }
-                    }
+                    Image(systemName: "camera.fill")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(bindrAccent)
+                        .frame(width: 36, height: 36)
+                        .background(bindrAccent.opacity(0.12), in: Circle())
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Scan cards for \(title.lowercased())")
             }
 
+            Divider()
+                .overlay(colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10))
+
+            // Cash Row
             cashRow(label: cashLabel, text: cashText, focusedField: focusedField)
-        } header: {
-            Text(title)
-        } footer: {
+
+            // Footer Description
             Text(footer)
+                .font(.system(size: 11))
+                .foregroundStyle(.secondary)
         }
+        .padding(18)
+        .glassCardStyle(cornerRadius: 24, interactive: false)
     }
 
     private func cashRow(label: String, text: Binding<String>, focusedField: CashField) -> some View {
@@ -1072,14 +1101,21 @@ private struct TradeCalculatorView: View {
             Spacer()
             HStack(spacing: 4) {
                 Text(services.priceDisplay.currency.symbol)
-                    .font(.system(size: 14))
+                    .font(.system(size: 14, weight: .bold))
                     .foregroundStyle(.secondary)
                 TextField("0.00", text: text)
                     .keyboardType(.decimalPad)
                     .focused($focusedCashField, equals: focusedField)
                     .multilineTextAlignment(.trailing)
-                    .font(.system(size: 14))
-                    .frame(width: 90)
+                    .font(.system(size: 14, weight: .bold))
+                    .frame(width: 70)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(Color.primary.opacity(0.06), in: RoundedRectangle(cornerRadius: 10))
+            .overlay {
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.primary.opacity(0.1), lineWidth: 1)
             }
         }
     }

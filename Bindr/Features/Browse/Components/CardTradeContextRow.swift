@@ -69,9 +69,8 @@ struct CardTradeContextRow: View {
             }
             .buttonStyle(.plain)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
-        .glassCardStyle(cornerRadius: 18, interactive: false)
+        .padding(.vertical, 4)
+        .contentShape(Rectangle())
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(context.message). Trade.")
         .accessibilityAddTraits(.isButton)

@@ -19,6 +19,8 @@ struct SetLogoAsyncImage: View {
         urls.first
     }
 
+    var alignment: Alignment = .center
+
     var body: some View {
         Group {
             if trimmed.isEmpty {
@@ -36,7 +38,8 @@ struct SetLogoAsyncImage: View {
                 }
             }
         }
-        .frame(maxWidth: .infinity, minHeight: height, maxHeight: height)
+        .frame(maxWidth: .infinity, alignment: alignment)
+        .frame(height: height)
     }
 }
 
