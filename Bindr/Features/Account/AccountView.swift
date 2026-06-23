@@ -370,7 +370,7 @@ struct LibraryStorageSettingsPage: View {
 
     private func reloadDownloadStatus() async {
         isLoadingDownloadStatus = true
-        downloadStatus = await services.cardData.fetchDownloadStatus()
+        downloadStatus = await CatalogStore.shared.fetchDownloadStatus()
         isLoadingDownloadStatus = false
     }
 
