@@ -14,6 +14,9 @@ struct BrowseProductsTabContent: View {
     let gridOptions: BrowseGridOptions
 
     @State private var displayedProducts: [SealedProduct] = []
+    @State private var cachedOwnedCardIDs: Set<String> = []
+    @State private var cachedOwnedQuantities: [String: Int] = [:]
+    @State private var cachedWishlistedCardIDs: Set<String> = []
     @State private var addToCollectionProduct: SealedProduct?
     @State private var showWishlistPaywall = false
     @State private var showWishlistAlert = false
@@ -49,23 +52,24 @@ struct BrowseProductsTabContent: View {
         min(max(gridOptions.columnCount, 1), 4)
     }
 
-    private var ownedCollectionCardIDs: Set<String> {
-        Set(collectionItems.compactMap { item in
+    private var ownedCollectionCardIDs: Set<String> { cachedOwnedCardIDs }
+    private var ownedQuantityByProductID: [String: Int] { cachedOwnedQuantities }
+    private var wishlistedCollectionCardIDs: Set<String> { cachedWishlistedCardIDs }
+
+    private func rebuildOwnershipCaches() {
+        cachedOwnedCardIDs = Set(collectionItems.compactMap { item in
             guard item.itemKind == ProductKind.sealedProduct.rawValue else { return nil }
             return item.cardID
         })
-    }
-
-    private var ownedQuantityByProductID: [String: Int] {
-        collectionItems.reduce(into: [:]) { result, item in
+        cachedOwnedQuantities = collectionItems.reduce(into: [:]) { result, item in
             guard item.quantity > 0 else { return }
             guard item.itemKind == ProductKind.sealedProduct.rawValue else { return }
             result[item.cardID, default: 0] += item.quantity
         }
     }
 
-    private var wishlistedCollectionCardIDs: Set<String> {
-        Set(wishlistItems.map(\.cardID).filter { SealedProduct.parseCollectionProductID($0) != nil })
+    private func rebuildWishlistCache() {
+        cachedWishlistedCardIDs = Set(wishlistItems.map(\.cardID).filter { SealedProduct.parseCollectionProductID($0) != nil })
     }
 
     private var filteredProducts: [SealedProduct] {
@@ -271,9 +275,13 @@ struct BrowseProductsTabContent: View {
             // grid render. The heavy lifting is dispatched off the main
             // actor inside `recomputeCarouselSets`, so the tab is interactive
             // immediately and the carousel populates a frame or two later.
+            rebuildOwnershipCaches()
+            rebuildWishlistCache()
             await recomputeCarouselSets()
             recomputeDisplayedProducts()
         }
+        .onChange(of: collectionItems) { _, _ in rebuildOwnershipCaches() }
+        .onChange(of: wishlistItems) { _, _ in rebuildWishlistCache() }
         .onChange(of: query) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: filters) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: selectedSet) { _, _ in recomputeDisplayedProducts() }
@@ -1314,10 +1322,12 @@ private struct SealedProductPricingPanel: View {
         let prices = points.map(\.price)
         let minP = (prices.min() ?? 0) * 0.97
         let maxP = (prices.max() ?? 1) * 1.03
+        let resolution = resolvedChart.resolution
 
         return Chart(points) { point in
+            let date = chartDate(for: point, resolution: resolution)
             AreaMark(
-                x: .value("Date", point.label),
+                x: .value("Date", date),
                 yStart: .value("Min", minP),
                 yEnd: .value("Price", point.price)
             )
@@ -1335,7 +1345,7 @@ private struct SealedProductPricingPanel: View {
             )
 
             LineMark(
-                x: .value("Date", point.label),
+                x: .value("Date", date),
                 y: .value("Price", point.price)
             )
             .interpolationMethod(.linear)
@@ -1349,7 +1359,8 @@ private struct SealedProductPricingPanel: View {
             GeometryReader { geo in
                 if let plotAnchor = proxy.plotFrame {
                     let plotFrame = geo[plotAnchor]
-                    if let scrub = scrubPoint, let xPos = proxy.position(forX: scrub.label) {
+                    if let scrub = scrubPoint,
+                       let xPos = proxy.position(forX: chartDate(for: scrub, resolution: resolution)) {
                         let x = xPos + plotFrame.origin.x
                         Rectangle()
                             .fill(panelDivider)
@@ -1367,8 +1378,8 @@ private struct SealedProductPricingPanel: View {
                             .onChanged { value in
                                 let x = value.location.x - plotFrame.origin.x
                                 guard x >= 0, x <= plotFrame.width else { return }
-                                if let label: String = proxy.value(atX: x) {
-                                    scrubPoint = nearestPoint(to: label, in: points)
+                                if let date: Date = proxy.value(atX: x) {
+                                    scrubPoint = nearestPoint(to: date, in: points, resolution: resolution)
                                 }
                             }
                             .onEnded { _ in scrubPoint = nil }
@@ -1378,6 +1389,17 @@ private struct SealedProductPricingPanel: View {
         }
         .frame(height: 130)
         .padding(.horizontal, -16)
+    }
+
+    private func chartDate(for point: PriceDataPoint, resolution: SealedChartDataResolution) -> Date {
+        switch resolution {
+        case .daily:
+            return BucketDateMath.date(fromDailyKey: point.label) ?? .distantPast
+        case .weekly:
+            return weekLabelToDate(point.label) ?? .distantPast
+        case .monthly:
+            return BucketDateMath.date(fromMonthKey: point.label) ?? .distantPast
+        }
     }
 
     private func refreshPrice() {
@@ -1468,14 +1490,12 @@ private struct SealedProductPricingPanel: View {
         return Self.shortMonthSymbols[month - 1]
     }
 
-    private func nearestPoint(to label: String, in points: [PriceDataPoint]) -> PriceDataPoint? {
+    private func nearestPoint(to date: Date, in points: [PriceDataPoint], resolution: SealedChartDataResolution) -> PriceDataPoint? {
         guard !points.isEmpty else { return nil }
-        if let exact = points.first(where: { $0.label == label }) { return exact }
-        let sorted = points.sorted { $0.label < $1.label }
-        for (i, p) in sorted.enumerated() {
-            if p.label > label { return i == 0 ? p : sorted[i - 1] }
+        return points.min {
+            abs(chartDate(for: $0, resolution: resolution).timeIntervalSince(date))
+                < abs(chartDate(for: $1, resolution: resolution).timeIntervalSince(date))
         }
-        return sorted.last
     }
 }
 

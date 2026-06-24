@@ -92,13 +92,20 @@ struct CardPricingPanel: View {
         return "\(variant)/\(grade)"
     }
 
+    /// Live `card_prices` headline, else today's stored daily bucket — never yesterday's price on today's label.
+    private var todayChartPriceUSD: Double? {
+        if let livePriceUSD, livePriceUSD > 0 { return livePriceUSD }
+        let todayKey = BucketDateMath.todayUTCKey()
+        return chartSeries?.daily.first(where: { $0.label == todayKey })?.price
+    }
+
     private var chartSeries: CardPriceHistory.Series? {
         guard let history, let key = activeSeriesKey else { return nil }
         return history.series[key]
     }
 
     private var resolvedChart: (points: [PriceDataPoint], resolution: ChartDataResolution) {
-        let dailyWithToday = (chartSeries?.daily ?? []).pinningTodayPrice(livePriceUSD)
+        let dailyWithToday = (chartSeries?.daily ?? []).pinningTodayPrice(todayChartPriceUSD)
         let weeklySource = chartSeries.flatMap { $0.weekly.isEmpty ? nil : $0.weekly } ?? weeklyFromDaily(dailyWithToday)
         let monthlySource = chartSeries.flatMap { $0.monthly.isEmpty ? nil : $0.monthly } ?? monthlyFromDaily(dailyWithToday)
 
@@ -380,9 +387,11 @@ struct CardPricingPanel: View {
         let prices = points.map(\.price)
         let minP = (prices.min() ?? 0) * 0.97
         let maxP = (prices.max() ?? 1) * 1.03
+        let resolution = resolvedChart.resolution
         return Chart(points) { point in
+            let date = chartDate(for: point, resolution: resolution)
             AreaMark(
-                x: .value("Date", point.label),
+                x: .value("Date", date),
                 yStart: .value("Min", minP),
                 yEnd: .value("Price", point.price)
             )
@@ -400,7 +409,7 @@ struct CardPricingPanel: View {
             )
 
             LineMark(
-                x: .value("Date", point.label),
+                x: .value("Date", date),
                 y: .value("Price", point.price)
             )
             .interpolationMethod(.linear)
@@ -416,7 +425,8 @@ struct CardPricingPanel: View {
                     let plotFrame = geo[plotAnchor]
 
                     // Scrub indicator drawn directly — no chart marks so layout never changes
-                    if let scrub = scrubPoint, let xPos = proxy.position(forX: scrub.label) {
+                    if let scrub = scrubPoint,
+                       let xPos = proxy.position(forX: chartDate(for: scrub, resolution: resolution)) {
                         let x = xPos + plotFrame.origin.x
                         Rectangle()
                             .fill(panelDivider)
@@ -442,8 +452,8 @@ struct CardPricingPanel: View {
                                 .onChanged { value in
                                     let x = value.location.x - plotFrame.origin.x
                                     guard x >= 0, x <= plotFrame.width else { return }
-                                    if let label: String = proxy.value(atX: x) {
-                                        scrubPoint = nearestPoint(to: label, in: points)
+                                    if let date: Date = proxy.value(atX: x) {
+                                        scrubPoint = nearestPoint(to: date, in: points, resolution: resolution)
                                     }
                                 }
                                 .onEnded { _ in
@@ -455,6 +465,17 @@ struct CardPricingPanel: View {
         }
         .modifier(ChartSizing(height: chartHeight))
         .padding(.horizontal, -16)
+    }
+
+    private func chartDate(for point: PriceDataPoint, resolution: ChartDataResolution) -> Date {
+        switch resolution {
+        case .daily:
+            return BucketDateMath.date(fromDailyKey: point.label) ?? .distantPast
+        case .weekly:
+            return weekLabelToDate(point.label) ?? .distantPast
+        case .monthly:
+            return BucketDateMath.date(fromMonthKey: point.label) ?? .distantPast
+        }
     }
 
     // Axis tick labels (short)
@@ -537,16 +558,12 @@ struct CardPricingPanel: View {
         return fmt.shortMonthSymbols[month - 1]
     }
 
-    private func nearestPoint(to label: String, in points: [PriceDataPoint]) -> PriceDataPoint? {
+    private func nearestPoint(to date: Date, in points: [PriceDataPoint], resolution: ChartDataResolution) -> PriceDataPoint? {
         guard !points.isEmpty else { return nil }
-        if let exact = points.first(where: { $0.label == label }) { return exact }
-        let sorted = points.sorted { $0.label < $1.label }
-        for (i, p) in sorted.enumerated() {
-            if p.label > label {
-                return i == 0 ? p : sorted[i - 1]
-            }
+        return points.min {
+            abs(chartDate(for: $0, resolution: resolution).timeIntervalSince(date))
+                < abs(chartDate(for: $1, resolution: resolution).timeIntervalSince(date))
         }
-        return sorted.last
     }
 
     // MARK: - Badge
@@ -578,7 +595,10 @@ struct CardPricingPanel: View {
     private func load() async {
         isLoading = true
         defer { isLoading = false }
+        await loadPricingData()
+    }
 
+    private func loadPricingData() async {
         async let keysTask = services.pricing.variantKeys(for: card)
         async let historyTask = services.pricing.priceHistory(for: card)
         async let trendsTask = services.pricing.priceTrends(for: card)
@@ -624,7 +644,6 @@ struct CardPricingPanel: View {
         }
         selectedVariant = initialVariant ?? defaultVariant
 
-        // Pick default grade directly (don't rely on onChange firing in time)
         let grades = gradesForSelectedVariant(variant: selectedVariant)
         selectedGrade = grades.first(where: { $0 == "raw" }) ?? grades.first
 
@@ -642,7 +661,6 @@ struct CardPricingPanel: View {
             return
         }
         if let usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: variant, grade: grade) {
-            livePriceUSD = usd
             currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
         }
     }

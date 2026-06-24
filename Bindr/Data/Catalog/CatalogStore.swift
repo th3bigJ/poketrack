@@ -1112,6 +1112,40 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    /// Daily bucket keys (`YYYY-MM-DD`) already stored for any of the given card keys.
+    func fetchDailyPeriodKeys(brand: TCGBrand, cardKeys: [String]) async -> Set<String> {
+        let normalizedKeys = cardKeys
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        guard !normalizedKeys.isEmpty else { return [] }
+        return await withCheckedContinuation { continuation in
+            readQueue.async {
+                guard let handle = self.readDb ?? self.db else { continuation.resume(returning: []); return }
+                let placeholders = normalizedKeys.map { _ in "?" }.joined(separator: ",")
+                let sql = """
+                SELECT DISTINCT period_key FROM price_history_points
+                WHERE brand = ? AND period_type = 'daily' AND card_key IN (\(placeholders));
+                """
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                guard sqlite3_prepare_v2(handle, sql, -1, &stmt, nil) == SQLITE_OK else {
+                    continuation.resume(returning: []); return
+                }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                for (i, key) in normalizedKeys.enumerated() {
+                    key.withCString { _ = sqlite3_bind_text(stmt, Int32(i + 2), $0, -1, CatalogSQLite.transient) }
+                }
+                var results = Set<String>()
+                while sqlite3_step(stmt) == SQLITE_ROW {
+                    if let cStr = sqlite3_column_text(stmt, 0) {
+                        results.insert(String(cString: cStr))
+                    }
+                }
+                continuation.resume(returning: results)
+            }
+        }
+    }
+
     /// FTS5 prefix search: returns (masterCardId, setCode) pairs ordered by FTS rank.
     /// The query string is tokenized by FTS5's ascii tokenizer; a trailing `*` enables prefix matching.
     func searchCards(query: String, brand: TCGBrand) async -> [CardRef] {

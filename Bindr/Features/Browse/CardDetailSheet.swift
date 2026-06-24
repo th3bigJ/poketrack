@@ -399,6 +399,7 @@ struct CardDetailSheet: View {
                     .aspectRatio(5 / 7, contentMode: .fit)
                     .blur(radius: colorScheme == .dark ? 40 : 32)
                     .scaleEffect(1.05)
+                    .drawingGroup()
             }
 
             ProgressiveAsyncImage(

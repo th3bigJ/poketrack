@@ -12,6 +12,8 @@ struct MarketPricingSyncPhase {
         let needsHistoryBackfill: Bool
         let needsSealedHistoryBackfill: Bool
         let needsSealedDailyRefresh: Bool
+        /// Daily card-pricing buckets (e.g. today's `YYYY-MM-DD` file) not yet imported into SQLite.
+        let needsRecentDailyBuckets: Bool
         let forceRefresh: Bool
     }
 
@@ -201,6 +203,11 @@ struct MarketPricingSyncPhase {
         if context.needsSealedDailyRefresh {
             return await syncSealedPricingBuckets(progress: progress, forceRefresh: forceRefresh)
         }
+
+        if context.needsRecentDailyBuckets {
+            return await syncPricingBuckets(progress: progress)
+        }
+
         return 0
     }
 
@@ -265,10 +272,12 @@ struct MarketPricingSyncPhase {
         let needsHistoryBackfill = (await store.meta("pricing_history_backfill_v1")) != "1"
         let needsSealedHistoryBackfill = (await store.meta("sealed_pricing_history_backfill_v1")) != "1"
         let needsSealedDailyRefresh = await needsSealedDailyRefresh(enabledBrands: enabledBrands)
+        let unprocessedDaily = await store.unprocessedBucketKeys(from: BucketDateMath.last90DailyKeys())
+        let needsRecentDailyBuckets = !unprocessedDaily.isEmpty
         let shouldRunPeriodRefresh = forceRefresh || needsPeriodRefresh
         let shouldRunAuxBackfill = !forceRefresh && needsAuxBackfill
 
-        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill || needsSealedHistoryBackfill || needsSealedDailyRefresh else {
+        guard shouldRunPeriodRefresh || shouldRunAuxBackfill || needsHistoryBackfill || needsSealedHistoryBackfill || needsSealedDailyRefresh || needsRecentDailyBuckets else {
             return nil
         }
 
@@ -278,6 +287,7 @@ struct MarketPricingSyncPhase {
             needsHistoryBackfill: needsHistoryBackfill,
             needsSealedHistoryBackfill: needsSealedHistoryBackfill,
             needsSealedDailyRefresh: needsSealedDailyRefresh,
+            needsRecentDailyBuckets: needsRecentDailyBuckets,
             forceRefresh: forceRefresh
         )
     }
@@ -449,10 +459,27 @@ struct MarketPricingSyncPhase {
         if forceRefresh, !missingDateKeys.contains(todayDateKey) {
             missingDateKeys.append(todayDateKey)
         }
-        guard !missingDateKeys.isEmpty else { return 0 }
+        let result = await syncDailyPricingBuckets(dateKeys: missingDateKeys, progress: progress)
+        return result.bytes
+    }
+
+    struct DailyPricingBucketSyncResult: Sendable {
+        let bytes: Int64
+        let succeededKeys: Set<String>
+    }
+
+    /// Downloads specific daily pricing buckets from R2 and upserts history points into SQLite.
+    /// Callers re-fetching card-specific gaps should unmark processed keys first.
+    func syncDailyPricingBuckets(dateKeys: [String], progress: CatalogSyncProgressReporter) async -> DailyPricingBucketSyncResult {
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return DailyPricingBucketSyncResult(bytes: 0, succeededKeys: []) }
+        let missingDateKeys = Array(Set(dateKeys)).sorted()
+        guard !missingDateKeys.isEmpty else { return DailyPricingBucketSyncResult(bytes: 0, succeededKeys: []) }
 
         await progress.setStatus("Downloading daily price data…")
         await progress.addPlannedFiles(missingDateKeys.count)
+
+        let todayDateKey = BucketDateMath.todayUTCKey()
+        var succeededKeys = Set<String>()
 
         typealias DailyBucketResult = (
             points: [CatalogStore.PriceHistoryPoint],
@@ -511,6 +538,7 @@ struct MarketPricingSyncPhase {
                 }
                 if result.downloaded {
                     try? await store.markBucketProcessed(key: result.dateKey)
+                    succeededKeys.insert(result.dateKey)
                 }
                 await progress.completeFile(byteCount: result.bytes)
             }
@@ -546,7 +574,8 @@ struct MarketPricingSyncPhase {
             }
         }
 
-        return totalBytes
+        _ = totalBytes
+        return DailyPricingBucketSyncResult(bytes: totalBytes, succeededKeys: succeededKeys)
     }
 
     private func syncPricingHistoryBackfill(progress: CatalogSyncProgressReporter) async -> Int64 {

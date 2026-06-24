@@ -158,9 +158,7 @@ private struct CardBrowseDetailPage: View {
         self.directTradeContext = directTradeContext
     }
 
-    private var visibleCollectionItems: [CollectionItem] {
-        collectionItems.filter { $0.cardID == card.masterCardId && $0.quantity > 0 }
-    }
+    private var visibleCollectionItems: [CollectionItem] { collectionItems }
 
     private var showsCollectionSection: Bool {
         let brand = TCGBrand.inferredFromMasterCardId(card.masterCardId)
@@ -416,6 +414,7 @@ private struct CardBrowseDetailPage: View {
                     .aspectRatio(5 / 7, contentMode: .fit)
                     .blur(radius: colorScheme == .dark ? 32 : 26)
                     .scaleEffect(1.16)
+                    .drawingGroup()
 
                 LinearGradient(
                     colors: [
@@ -432,6 +431,7 @@ private struct CardBrowseDetailPage: View {
                 .frame(height: 330)
                 .blur(radius: colorScheme == .dark ? 20 : 15)
                 .offset(y: -8)
+                .drawingGroup()
             }
         }
         .allowsHitTesting(false)
@@ -520,6 +520,7 @@ private struct CardBrowseDetailPage: View {
                 .aspectRatio(5 / 7, contentMode: .fit)
                 .blur(radius: colorScheme == .dark ? 30 : 24)
                 .scaleEffect(1.12)
+                .drawingGroup()
             }
 
             ProgressiveAsyncImage(

@@ -176,6 +176,11 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             if store.metaSync(DailyBlobKey.sealedPricesAsOfDate) != todayUTC {
                 return true
             }
+
+            let unprocessedDaily = await store.unprocessedBucketKeys(from: BucketDateMath.last90DailyKeys())
+            if !unprocessedDaily.isEmpty {
+                return true
+            }
         }
 
         let periodStart = DailyMarketPricingSchedule.currentPeriodStart(now: Date(), calendar: .current)
@@ -446,6 +451,30 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 
         await progress.setStatus("Pricing refresh complete.")
         return downloaded > 0
+    }
+
+    /// Re-downloads daily pricing buckets missing from a card's local history (e.g. 22/6 and 24/6 present but 23/6 absent).
+    /// Returns the date keys that were successfully downloaded and marked processed.
+    @discardableResult
+    func ensureDailyPricingBuckets(dateKeys: [String]) async -> Set<String> {
+        await syncGate.run {
+            guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return Set<String>() }
+            let keys = Array(Set(dateKeys)).sorted()
+            guard !keys.isEmpty else { return Set<String>() }
+
+            let store = CatalogStore.shared
+            try? await store.open()
+            for key in keys where await store.isBucketProcessed(key: key) {
+                await store.unmarkBucketProcessed(key: key)
+            }
+
+            let phase = MarketPricingSyncPhase(session: self.session, store: store)
+            let result = await phase.syncDailyPricingBuckets(
+                dateKeys: keys,
+                progress: CatalogSyncProgressReporter(handler: nil)
+            )
+            return result.succeededKeys
+        }
     }
 
     // MARK: - Shared helpers (used by phase structs)

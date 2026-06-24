@@ -21,7 +21,7 @@ struct CardDetailCollectionScope<Content: View>: View {
         let cardID = card.masterCardId
         _collectionItems = Query(
             filter: #Predicate<CollectionItem> { item in
-                item.cardID == cardID
+                item.cardID == cardID && item.quantity > 0
             },
             sort: [SortDescriptor(\.variantKey)]
         )
@@ -35,10 +35,7 @@ struct CardDetailCollectionScope<Content: View>: View {
     }
 
     var body: some View {
-        content(
-            collectionItems.filter { $0.quantity > 0 },
-            ledgerLines
-        )
+        content(collectionItems, ledgerLines)
     }
 }
 
@@ -130,6 +127,7 @@ struct CardDetailContentView: View {
             let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
             ScrollView {
                 VStack(alignment: .leading, spacing: 6) {
+                    navigationChrome
                     heroSection(
                         contentWidth: contentWidth,
                         collectionItems: collectionItems,
@@ -161,7 +159,7 @@ struct CardDetailContentView: View {
                     }
                 }
                 .padding(.horizontal, 16)
-                .padding(.top, 18)
+                .padding(.top, 14)
                 .padding(.bottom, 8)
             }
             .scrollIndicators(.hidden)
@@ -205,6 +203,34 @@ struct CardDetailContentView: View {
         // Reserve room for the price block, range picker and inter-section spacing.
         let reserved: CGFloat = heroHeight + 248
         return min(130, max(100, viewportHeight - reserved))
+    }
+
+    private var navigationChrome: some View {
+        HStack(spacing: 8) {
+            Text(card.cardName)
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityAddTraits(.isHeader)
+
+            if showsWishlistAction {
+                detailCircleButton(
+                    systemImage: isWishlisted ? "star.fill" : "star",
+                    accessibilityLabel: isWishlisted ? "Remove from wishlist" : "Add to wishlist",
+                    foreground: isWishlisted ? Self.wishlistGold : .primary,
+                    action: actions.onToggleWishlist
+                )
+            }
+
+            detailCircleButton(
+                systemImage: "square.and.arrow.up",
+                accessibilityLabel: "Share card",
+                action: actions.onShare
+            )
+        }
+        .frame(height: 42)
     }
 
     private func heroSection(
@@ -269,14 +295,6 @@ struct CardDetailContentView: View {
         let rarity = cleaned(card.rarity)
 
         VStack(alignment: .leading, spacing: 8) {
-            Text(card.cardName)
-                .font(.system(size: 22, weight: .bold, design: .rounded))
-                .foregroundStyle(.primary)
-                .multilineTextAlignment(.center)
-                .lineLimit(2)
-                .minimumScaleFactor(0.75)
-                .frame(maxWidth: .infinity, alignment: .center)
-
             if let set {
                 SetLogoAsyncImage(
                     logoSrc: set.logoSrc,
@@ -484,30 +502,7 @@ struct CardDetailContentView: View {
                     .accessibilityLabel("Remove from collection")
                 }
             }
-
-            if showsWishlistAction {
-                Button {
-                    actions.onToggleWishlist()
-                } label: {
-                    iconActionLabel(
-                        systemImage: isWishlisted ? "star.fill" : "star",
-                        tint: isWishlisted ? Self.wishlistGold : .primary,
-                        filled: isWishlisted
-                    )
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel(isWishlisted ? "Remove from wishlist" : "Add to wishlist")
-            }
-
-            Button {
-                actions.onShare()
-            } label: {
-                iconActionLabel(systemImage: "square.and.arrow.up", tint: .primary, filled: false)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Share card")
         }
-        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     @ViewBuilder
@@ -532,6 +527,19 @@ struct CardDetailContentView: View {
             }
             .buttonStyle(.plain)
             .accessibilityLabel(label)
+        }
+    }
+
+    private func detailCircleButton(
+        systemImage: String,
+        accessibilityLabel: String,
+        foreground: Color = .primary,
+        action: @escaping () -> Void
+    ) -> some View {
+        ChromeGlassCircleButton(accessibilityLabel: accessibilityLabel, action: action) {
+            Image(systemName: systemImage)
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(foreground)
         }
     }
 

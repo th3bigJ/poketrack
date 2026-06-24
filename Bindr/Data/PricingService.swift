@@ -255,7 +255,7 @@ final class PricingService {
 
     /// Keys to try for per-set pricing / history JSON lookups.
     /// - **Pokémon market:** `externalId`, `tcgdex_id`, derived ids, `masterCardId`.
-    /// - **Pokémon history / trends:** `tcgdex_id` first (dotted ids match R2), then `externalId`, locals, `masterCardId`.
+    /// - **Pokémon history / trends:** `externalId` first when present (R2 daily buckets use ids like `sm12-241`, not catalog `masterCardId` `10945`), then `tcgdex_id`, locals, `masterCardId`.
     private static func pricingLookupKeys(for card: Card, historyStyle: Bool = false) -> [String] {
         var keys: [String] = []
         func append(_ s: String) {
@@ -263,8 +263,8 @@ final class PricingService {
             if !t.isEmpty, !keys.contains(t) { keys.append(t) }
         }
         if historyStyle {
-            if let t = card.tcgdex_id { append(t) }
             if let e = card.externalId { append(e) }
+            if let t = card.tcgdex_id { append(t) }
         } else {
             if let e = card.externalId { append(e) }
             if let t = card.tcgdex_id { append(t) }
@@ -684,33 +684,61 @@ final class PricingService {
 
     private func loadPokemonPriceHistory(for card: Card) async -> CardPriceHistory? {
         let keys = Self.pricingLookupKeys(for: card, historyStyle: true)
+        let mergedPoints = await Self.mergedPriceHistoryPoints(for: card, keys: keys)
+        guard !mergedPoints.isEmpty else { return nil }
+
+        var seriesMap: [String: (daily: [PriceDataPoint], weekly: [PriceDataPoint], monthly: [PriceDataPoint])] = [:]
+        for pt in mergedPoints {
+            let variant = Self.canonicalVariant(pt.variant)
+            let seriesKey = "\(variant)/\(pt.grade)"
+            let dataPoint = PriceDataPoint(id: pt.periodKey, label: pt.periodKey, price: pt.price)
+            switch pt.periodType {
+            case "daily": seriesMap[seriesKey, default: ([], [], [])].daily.append(dataPoint)
+            case "weekly": seriesMap[seriesKey, default: ([], [], [])].weekly.append(dataPoint)
+            case "monthly": seriesMap[seriesKey, default: ([], [], [])].monthly.append(dataPoint)
+            default: break
+            }
+        }
+        guard !seriesMap.isEmpty else { return nil }
+        var series: [String: CardPriceHistory.Series] = [:]
+        for (k, v) in seriesMap {
+            series[k] = CardPriceHistory.Series(
+                daily: v.daily.sorted { $0.id < $1.id },
+                weekly: v.weekly.sorted { $0.id < $1.id },
+                monthly: v.monthly.sorted { $0.id < $1.id }
+            )
+        }
+        return CardPriceHistory(series: series)
+    }
+
+    /// Merges history from every pricing lookup key. Set-level unified rows are absorbed first so
+    /// pricing ids like `sm12-241` win over catalog `masterCardId` rows; per-key fetches fill any gaps.
+    private static func mergedPriceHistoryPoints(for card: Card, keys: [String]) async -> [CatalogStore.PriceHistoryPoint] {
+        var merged: [CatalogStore.PriceHistoryPoint] = []
+        var seen = Set<String>()
+
+        func absorb(_ points: [CatalogStore.PriceHistoryPoint]) {
+            for pt in points {
+                let variant = canonicalVariant(pt.variant)
+                let id = "\(variant)|\(pt.grade)|\(pt.periodType)|\(pt.periodKey)"
+                guard seen.insert(id).inserted else { continue }
+                merged.append(pt)
+            }
+        }
+
+        let unifiedCandidates = Set(keys.map { unifiedPricingCardKey($0) })
+        for setCode in pricingSetCodesToQuery(for: card) {
+            let setPts = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, setCode: setCode)
+            let matching = setPts.filter { unifiedCandidates.contains(unifiedPricingCardKey($0.cardKey)) }
+            absorb(matching)
+        }
+
         for key in keys {
             let points = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, cardKey: key)
-            guard !points.isEmpty else { continue }
-            var seriesMap: [String: (daily: [PriceDataPoint], weekly: [PriceDataPoint], monthly: [PriceDataPoint])] = [:]
-            for pt in points {
-                let variant = Self.canonicalVariant(pt.variant)
-                let seriesKey = "\(variant)/\(pt.grade)"
-                let dataPoint = PriceDataPoint(id: pt.periodKey, label: pt.periodKey, price: pt.price)
-                switch pt.periodType {
-                case "daily": seriesMap[seriesKey, default: ([], [], [])].daily.append(dataPoint)
-                case "weekly": seriesMap[seriesKey, default: ([], [], [])].weekly.append(dataPoint)
-                case "monthly": seriesMap[seriesKey, default: ([], [], [])].monthly.append(dataPoint)
-                default: break
-                }
-            }
-            guard !seriesMap.isEmpty else { continue }
-            var series: [String: CardPriceHistory.Series] = [:]
-            for (k, v) in seriesMap {
-                series[k] = CardPriceHistory.Series(
-                    daily: v.daily.sorted { $0.id < $1.id },
-                    weekly: v.weekly.sorted { $0.id < $1.id },
-                    monthly: v.monthly.sorted { $0.id < $1.id }
-                )
-            }
-            return CardPriceHistory(series: series)
+            absorb(points)
         }
-        return nil
+
+        return merged
     }
 
     /// Resolves price trends from the per-set file (SQLite after daily sync, else network), looks up by card key.

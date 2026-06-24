@@ -10,6 +10,31 @@ enum BucketDateMath {
         return String(format: "%04d-%02d-%02d", c.year!, c.month!, c.day!)
     }
 
+    /// Parses a daily bucket key (`YYYY-MM-DD`) into midnight UTC.
+    static func date(fromDailyKey key: String) -> Date? {
+        guard key.count == 10 else { return nil }
+        let parts = key.split(separator: "-")
+        guard parts.count == 3,
+              let year = Int(parts[0]),
+              let month = Int(parts[1]),
+              let day = Int(parts[2]) else { return nil }
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        return cal.date(from: DateComponents(year: year, month: month, day: day))
+    }
+
+    /// Parses a monthly bucket key (`YYYY-MM`) into the first day of that month, UTC.
+    static func date(fromMonthKey key: String) -> Date? {
+        guard key.count == 7 else { return nil }
+        let parts = key.split(separator: "-")
+        guard parts.count == 2,
+              let year = Int(parts[0]),
+              let month = Int(parts[1]) else { return nil }
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        return cal.date(from: DateComponents(year: year, month: month, day: 1))
+    }
+
     static func setCodeFromCardId(_ cardId: String) -> String {
         guard let dash = cardId.lastIndex(of: "-") else { return cardId }
         return String(cardId[..<dash])
