@@ -103,6 +103,7 @@ struct RootView: View {
     @State private var collectFilterRarityOptions: [String] = []
     @State private var collectFilterTrainerTypeOptions: [String] = []
     @State private var isSearchExperiencePresented = false
+    @State private var isSearchContentMounted = false
     /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar`; detail uses the same `NavigationStack` bar as Browse (`DexCardsView` / `SetCardsView`).
     @State private var searchNavigationPath = NavigationPath()
     /// Cards tab `NavigationStack` path — hide root chrome when a card detail (or other pushed screen) is showing.
@@ -649,8 +650,14 @@ struct RootView: View {
 
     @MainActor
     private func presentSearchExperience(focusField: Bool = true) {
+        isSearchContentMounted = false
         withAnimation(Self.searchPresentationAnimation) {
             isSearchExperiencePresented = true
+        }
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(180))
+            guard isSearchExperiencePresented else { return }
+            isSearchContentMounted = true
         }
         guard focusField else { return }
         Task { @MainActor in
@@ -667,6 +674,7 @@ struct RootView: View {
             universalQuery = ""
         }
         searchFieldFocused = false
+        isSearchContentMounted = false
         withAnimation(Self.searchPresentationAnimation) {
             isSearchExperiencePresented = false
         }
@@ -988,6 +996,7 @@ struct RootView: View {
                 chromeScroll.forceVisible()
             } else {
                 searchNavigationPath = NavigationPath()
+                isSearchContentMounted = false
             }
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
@@ -1122,10 +1131,16 @@ struct RootView: View {
     @ViewBuilder
     private var searchOverlayNavigationStack: some View {
         NavigationStack(path: $searchNavigationPath) {
-            SearchExperienceView(
-                query: $universalQuery,
-                onOpenCategory: openSearchCategory
-            )
+            Group {
+                if isSearchContentMounted {
+                    SearchExperienceView(
+                        query: $universalQuery,
+                        onOpenCategory: openSearchCategory
+                    )
+                } else {
+                    Color.clear
+                }
+            }
             .navigationDestination(for: SearchNavRoot.self) { root in
                 switch root {
                 case .set(let s, _):

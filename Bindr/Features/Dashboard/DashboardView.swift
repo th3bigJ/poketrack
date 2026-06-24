@@ -44,6 +44,7 @@ struct DashboardView: View {
     @State private var liveSealedGbp: Double = 0
     @State private var totalCostBasis: Double = 0
     @State private var isLoadingValue = false
+    @State private var isComputingLiveValue = false
     @State private var hasFiredInitialLoadComplete = false
     @State private var selectedPoint: ChartPoint? = nil
     @State private var chartRefreshID: Int = 0
@@ -202,26 +203,53 @@ struct DashboardView: View {
 
     private func recomputeCollectionStats() {
         let brand = activeBrand
-        let visible = collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
-        let visibleCards = visible.filter { sealedProductID(for: $0) == nil }
+        var visible: [CollectionItem] = []
+        var visibleCards: [CollectionItem] = []
+        var totalCardsCount = 0
+        var uniqueCardIDs = Set<String>()
+        var sealedProductsCount = 0
+        visible.reserveCapacity(collectionItems.count)
+        visibleCards.reserveCapacity(collectionItems.count)
+
+        for item in collectionItems where TCGBrand.inferredFromMasterCardId(item.cardID) == brand {
+            visible.append(item)
+            totalCardsCount += max(item.quantity, 0)
+
+            if sealedProductID(for: item) != nil {
+                if item.sealedStatus != SealedInventoryStatus.opened.rawValue {
+                    sealedProductsCount += max(item.quantity, 0)
+                }
+            } else {
+                visibleCards.append(item)
+                uniqueCardIDs.insert(item.cardID)
+            }
+        }
+
+        var visibleWishlist: [WishlistItem] = []
+        var wishlistCardIDs = Set<String>()
+        visibleWishlist.reserveCapacity(wishlistItems.count)
+        for item in wishlistItems where TCGBrand.inferredFromMasterCardId(item.cardID) == brand {
+            visibleWishlist.append(item)
+            wishlistCardIDs.insert(item.cardID)
+        }
+
+        var recent: [LedgerLine] = []
+        recent.reserveCapacity(5)
+        for line in allLedgerLines {
+            guard let cardID = cleaned(line.cardID) else { continue }
+            guard TCGBrand.inferredFromMasterCardId(cardID) == brand else { continue }
+            recent.append(line)
+            if recent.count == 5 { break }
+        }
+
         cachedVisibleCollectionItems = visible
         cachedVisibleCardCollectionItems = visibleCards
-        cachedTotalCardsCount = visible.reduce(0) { $0 + max($1.quantity, 0) }
-        cachedUniqueCardsCount = Set(visibleCards.map(\.cardID)).count
-        cachedSealedProductsCount = visible.reduce(0) { total, item in
-            guard sealedProductID(for: item) != nil else { return total }
-            guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { return total }
-            return total + max(item.quantity, 0)
-        }
-        cachedWishlistedCardsCount = Set(wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }.map(\.cardID)).count
-        cachedVisibleWishlistItems = wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
-        cachedRecentLines = Array(
-            allLedgerLines.filter { line in
-                guard let cardID = cleaned(line.cardID) else { return false }
-                return TCGBrand.inferredFromMasterCardId(cardID) == brand
-            }
-            .prefix(5)
-        )
+        cachedTotalCardsCount = totalCardsCount
+        cachedUniqueCardsCount = uniqueCardIDs.count
+        cachedSealedProductsCount = sealedProductsCount
+        cachedWishlistedCardsCount = wishlistCardIDs.count
+        cachedVisibleWishlistItems = visibleWishlist
+        cachedRecentLines = recent
     }
 
     private var portfolioGain: Double? {
@@ -474,6 +502,7 @@ struct DashboardView: View {
                         )
                     }
                     services.markCollectionValueRecalcAfterRestoreComplete()
+                    await services.collectionValue?.loadAllFromStore()
                     chartRefreshID += 1
                     return
                 }
@@ -481,6 +510,7 @@ struct DashboardView: View {
 
             _ = await computeLiveValue(validateAgainstRestore: false)
             services.markCollectionValueRecalcAfterRestoreComplete()
+            await services.collectionValue?.loadAllFromStore()
             chartRefreshID += 1
         }
         .task(id: backfillTrigger) {
@@ -521,14 +551,18 @@ struct DashboardView: View {
             guard !Task.isCancelled else { return }
             await reloadDashboardInventory(deferForLaunch: false)
             await computeLiveValue()
+            await services.collectionValue?.loadAllFromStore()
             chartRefreshID += 1
             await loadUpcomingReleases()
         }
         .task(id: "\(services.collectionInventoryRevision):\(hasFiredInitialLoadComplete)") {
             guard hasFiredInitialLoadComplete else { return }
+            try? await Task.sleep(nanoseconds: 200_000_000)
+            guard !Task.isCancelled else { return }
             await reloadDashboardInventory(deferForLaunch: false)
             recomputeCollectionStats()
             await computeLiveValue()
+            await services.collectionValue?.loadAllFromStore()
             chartRefreshID += 1
         }
         .onChange(of: services.isCatalogDownloadInProgress) { _, inProgress in
@@ -539,6 +573,7 @@ struct DashboardView: View {
                 guard !Task.isCancelled else { return }
                 await reloadDashboardInventory(deferForLaunch: false)
                 await computeLiveValue()
+                await services.collectionValue?.loadAllFromStore()
                 chartRefreshID += 1
                 if let snap = liveSnapshot {
                     await services.collectionValue?.forceRecalculate(
@@ -566,6 +601,7 @@ struct DashboardView: View {
             guard !bootstrapping, hasFiredInitialLoadComplete, collectionItems.count > 0 else { return }
             Task {
                 await computeLiveValue()
+                await services.collectionValue?.loadAllFromStore()
                 chartRefreshID += 1
             }
         }
@@ -592,6 +628,7 @@ struct DashboardView: View {
                     if let last = lastLiveValueComputedAt,
                        Date().timeIntervalSince(last) < 300 { return }
                     await computeLiveValue()
+                    await services.collectionValue?.loadAllFromStore()
                     chartRefreshID += 1
                 }
             }
@@ -653,6 +690,7 @@ struct DashboardView: View {
                 // compute the value once pricing is ready.
                 guard services.pricing.isAllPokemonPricingPrefetched else { return }
                 if await computeLiveValue() {
+                    await services.collectionValue?.loadAllFromStore()
                     chartRefreshID += 1
                 }
             }
@@ -1596,6 +1634,7 @@ struct DashboardView: View {
         if collectionItems.count > 0 {
             Task { @MainActor in
                 if await computeLiveValue() {
+                    await services.collectionValue?.loadAllFromStore()
                     chartRefreshID += 1
                 }
             }
@@ -1644,8 +1683,13 @@ struct DashboardView: View {
 
     @discardableResult
     private func computeLiveValue(validateAgainstRestore: Bool = false) async -> Bool {
+        guard !isComputingLiveValue else { return liveTotalGbp != nil }
+        isComputingLiveValue = true
         isLoadingValue = true
-        defer { isLoadingValue = false }
+        defer {
+            isComputingLiveValue = false
+            isLoadingValue = false
+        }
 
         if services.sealedProducts.products.isEmpty {
             await services.sealedProducts.loadFromLocalIfAvailable()
@@ -1681,7 +1725,6 @@ struct DashboardView: View {
 
         _ = svc.updateTodaySnapshot(snap)
         svc.persistLastKnownValue(snap)
-        await svc.loadAllFromStore()
         lastLiveValueComputedAt = Date()
         return true
     }

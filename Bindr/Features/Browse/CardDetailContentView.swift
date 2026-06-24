@@ -65,10 +65,8 @@ struct CardDetailContentView: View {
     let directTradeContext: CardTradeContext?
     let actions: CardDetailContentActions
 
-    @State private var scrollOffset: CGFloat = 0
-    @State private var showsSwipeHint: Bool = true
+    @State private var isDetailsPageActive: Bool = false
 
-    private let collapseThreshold: CGFloat = 140
     private let actionButtonLandingDiameter: CGFloat = 56
 
     private func groupedHoldings(
@@ -123,7 +121,6 @@ struct CardDetailContentView: View {
         GeometryReader { geo in
             let contentWidth = geo.size.width - 32
             let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-            let collapseProgress = min(1, max(0, scrollOffset / collapseThreshold))
             let pageHeight = geo.size.height - topChromeHeight - swipeHintHeight
             let layout = landingLayoutMetrics(
                 viewportHeight: pageHeight,
@@ -133,8 +130,9 @@ struct CardDetailContentView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 14) {
                     ScrollOffsetAnchor { offset in
-                        if abs(offset - scrollOffset) > 2 {
-                            scrollOffset = offset
+                        let newDetailsPageActive = offset > pageHeight * 0.35
+                        if newDetailsPageActive != isDetailsPageActive {
+                            isDetailsPageActive = newDetailsPageActive
                         }
                     }
 
@@ -142,8 +140,6 @@ struct CardDetailContentView: View {
                         pageHeight: pageHeight,
                         cardWidth: layout.cardWidth,
                         chartHeight: layout.chartHeight,
-                        scrollOffset: scrollOffset,
-                        collapseProgress: collapseProgress,
                         collectionItems: collectionItems,
                         ledgerLines: ledgerLines
                     )
@@ -190,20 +186,14 @@ struct CardDetailContentView: View {
                 .padding(.bottom, 4)
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
-                    if showsSwipeHint {
-                        VStack(spacing: 8) {
-                            sectionDivider
-                            swipeUpHint
-                        }
-                        .padding(.horizontal, 16)
+                if !isDetailsPageActive {
+                    VStack(spacing: 8) {
+                        sectionDivider
+                        swipeUpHint
                     }
+                    .padding(.horizontal, 16)
                 }
-            .onChange(of: scrollOffset) { _, offset in
-                    let newHint = offset < pageHeight * 0.45
-                    if newHint != showsSwipeHint {
-                        withAnimation(.easeOut(duration: 0.22)) { showsSwipeHint = newHint }
-                    }
-                }
+            }
         }
         .background(.clear)
     }
@@ -325,26 +315,20 @@ struct CardDetailContentView: View {
         pageHeight: CGFloat,
         cardWidth: CGFloat,
         chartHeight: CGFloat,
-        scrollOffset: CGFloat,
-        collapseProgress: CGFloat,
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
     ) -> some View {
-        let scale = max(0.72, 1 - (collapseProgress * 0.28))
-        let landingHeight = max(0, pageHeight - scrollOffset)
+        let landingHeight = max(0, pageHeight)
 
         return ZStack(alignment: .top) {
             VStack(spacing: 6) {
                 cardImage(width: cardWidth)
                     .frame(maxWidth: .infinity)
-                    .scaleEffect(scale, anchor: .top)
-                    .opacity(Double(max(0.15, 1 - collapseProgress)))
 
-            actionBar(
-                collectionItems: collectionItems,
-                ledgerLines: ledgerLines
-            )
-                .opacity(Double(max(0, 1 - collapseProgress * 1.1)))
+                actionBar(
+                    collectionItems: collectionItems,
+                    ledgerLines: ledgerLines
+                )
 
                 CardPricingPanel(
                     card: card,
@@ -352,7 +336,6 @@ struct CardDetailContentView: View {
                     chartHeight: chartHeight,
                     chartAccent: resolvedTypeAccent
                 )
-                .opacity(Double(max(0, 1 - collapseProgress * 1.2)))
             }
             .frame(maxWidth: .infinity, alignment: .top)
             .padding(.top, 2)

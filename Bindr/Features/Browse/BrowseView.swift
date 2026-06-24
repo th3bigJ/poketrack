@@ -1356,14 +1356,11 @@ struct BrowseView: View {
 
                 if useMasterGrid {
                     let masterGridPresentationCards = variantRows.map(\.card)
-                    EagerVGrid(items: variantRows, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { row in
+                    EagerVGrid(items: variantRows.indexedIdentifiedValues, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { indexedRow in
+                        let row = indexedRow.value
                         let variantCompositeKey = "\(row.card.masterCardId)::\(row.variant)"
                         Button {
-                            if let index = variantRows.firstIndex(where: { $0.id == row.id }) {
-                                presentCardAtIndex(masterGridPresentationCards, index)
-                            } else {
-                                presentCard(row.card, masterGridPresentationCards)
-                            }
+                            presentCardAtIndex(masterGridPresentationCards, indexedRow.index)
                         } label: {
                             CardGridCell(
                                 card: row.card,
@@ -1384,8 +1381,8 @@ struct BrowseView: View {
                     .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                     .padding(.bottom, 16)
                 } else {
-                    EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { card in
-                        let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                    EagerVGrid(items: filteredCards.indexedIdentifiedValues, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { indexedCard in
+                        let card = indexedCard.value
                         Button {
                             if isMultiSelectActive {
                                 toggleMultiSelectCardID(card.masterCardId)
@@ -1428,7 +1425,7 @@ struct BrowseView: View {
                             }
                         }
                         .onAppear {
-                            ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
+                            ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: indexedCard.index + 1)
                         }
                     }
                     .padding(.horizontal, BindrSpacing.cardGridScreenInset)
@@ -4161,8 +4158,8 @@ struct SetCardsView: View {
                             )
                             .padding(.bottom)
                         } else {
-                            EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: BindrSpacing.cardGrid) { card in
-                                let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                            EagerVGrid(items: filteredCards.indexedIdentifiedValues, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: BindrSpacing.cardGrid) { indexedCard in
+                                let card = indexedCard.value
                                 let isSelected = selectedCardIDs.contains(card.masterCardId)
                                 Button {
                                     if isMultiSelectActive {
@@ -4206,7 +4203,7 @@ struct SetCardsView: View {
                                     }
                                 }
                                 .onAppear {
-                                    ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
+                                    ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: indexedCard.index + 1)
                                 }
                             }
                             .padding(.bottom, isMultiSelectActive && !selectedCardIDs.isEmpty ? 88 : 0)
@@ -4603,8 +4600,8 @@ struct DexCardsView: View {
                         .padding(.horizontal)
                         .padding(.bottom)
                     } else {
-                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: BindrSpacing.cardGrid) { card in
-                            let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                        EagerVGrid(items: filteredCards.indexedIdentifiedValues, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: BindrSpacing.cardGrid) { indexedCard in
+                            let card = indexedCard.value
                             Button {
                                 presentCard(card, filteredCards)
                             } label: {
@@ -4619,12 +4616,12 @@ struct DexCardsView: View {
                                     isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
                                     ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
                                 )
-                            }
-                            .buttonStyle(CardCellButtonStyle())
-                            .onAppear {
-                                ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
-                            }
                         }
+                        .buttonStyle(CardCellButtonStyle())
+                        .onAppear {
+                            ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: indexedCard.index + 1)
+                        }
+                    }
                         .padding(.horizontal, BindrSpacing.cardGridScreenInset)
                         .padding(.bottom)
                     }

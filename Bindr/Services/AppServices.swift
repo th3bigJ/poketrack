@@ -126,6 +126,7 @@ final class AppServices {
     /// Bumped whenever collection inventory changes (add, remove, gift, sell, etc.) so
     /// DashboardView can recompute live collection value without waiting on SwiftData debounce.
     private(set) var collectionInventoryRevision: Int = 0
+    private(set) var wishlistInventoryRevision: Int = 0
 
     func requestDashboardMarketReload() {
         dashboardMarketReloadToken += 1
@@ -133,6 +134,11 @@ final class AppServices {
 
     func notifyCollectionInventoryChanged() {
         collectionInventoryRevision += 1
+        scheduleLibraryCloudBackup()
+    }
+
+    func notifyWishlistInventoryChanged() {
+        wishlistInventoryRevision += 1
         scheduleLibraryCloudBackup()
     }
 
@@ -735,6 +741,7 @@ final class AppServices {
         if wishlist == nil {
             wishlist = WishlistService(modelContext: modelContext, store: store)
         }
+        wishlist?.onWishlistChanged = { [weak self] in self?.notifyWishlistInventoryChanged() }
         Task { await syncSocialLibrariesIfPossible() }
     }
 
@@ -791,6 +798,7 @@ final class AppServices {
         if wishlist == nil {
             wishlist = WishlistService(modelContext: modelContext, store: store)
         }
+        wishlist?.onWishlistChanged = { [weak self] in self?.notifyWishlistInventoryChanged() }
         if collectionLedger == nil {
             let ledger = CollectionLedgerService(modelContext: modelContext, store: store)
             ledger.onCollectionChanged = { [weak self] in self?.notifyCollectionInventoryChanged() }

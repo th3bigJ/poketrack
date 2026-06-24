@@ -137,6 +137,16 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     var cardNormalizedRect: CGRect = .zero
 
     private let ciContext = CIContext(options: nil)
+    private let liveRectangleRequest: VNDetectRectanglesRequest = {
+        let request = VNDetectRectanglesRequest()
+        request.maximumObservations = 8
+        request.minimumConfidence = 0.3
+        request.minimumAspectRatio = 0.4   // width/height; portrait card ≈ 63/88
+        request.maximumAspectRatio = 0.95
+        request.quadratureTolerance = 30
+        request.minimumSize = 0.1
+        return request
+    }()
 
     private var isAnalysingFrame = false        // prevent overlapping Vision calls
     /// Low-pass filtered quality so alignment UI does not flicker frame-to-frame.
@@ -782,18 +792,14 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         // Pass the buffer directly to Vision. Orientation must match AVCaptureConnection.videoRotationAngle
         // (set to 90.0 in setup) so bounding boxes line up with the on-screen reticle.
         let visionOrientation = Self.cgImageOrientation(forVideoRotationAngle: connection.videoRotationAngle)
-        let request = VNDetectRectanglesRequest()
-        request.maximumObservations = 8
-        request.minimumConfidence = 0.3
-        request.minimumAspectRatio = 0.4   // width/height; portrait card ≈ 63/88
-        request.maximumAspectRatio = 0.95
-        request.quadratureTolerance = 30
-        request.minimumSize = 0.1
-
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: visionOrientation, options: [:])
-        try? handler.perform([request])
-
-        let observations = request.results ?? []
+        let observations: [VNRectangleObservation]
+        do {
+            try handler.perform([liveRectangleRequest])
+            observations = liveRectangleRequest.results ?? []
+        } catch {
+            observations = []
+        }
         let quality = frameQualityScore(observations, visionOrientation: visionOrientation)
 
         DispatchQueue.main.async { [weak self] in

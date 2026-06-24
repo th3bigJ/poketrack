@@ -686,10 +686,10 @@ private struct AllSetsAllSealedView: View {
                 .frame(maxWidth: .infinity, minHeight: 280)
                 .padding(.horizontal, 16)
             } else {
-                EagerVGrid(items: displayedProducts, columns: columnCount, spacing: gridSpacing) { product in
+                EagerVGrid(items: displayedProducts.indexedIdentifiedValues, columns: columnCount, spacing: gridSpacing) { indexedProduct in
+                    let product = indexedProduct.value
                     Button {
-                        let index = displayedProducts.firstIndex(where: { $0.id == product.id }) ?? 0
-                        presentSealedProduct(product, displayedProducts, index)
+                        presentSealedProduct(product, displayedProducts, indexedProduct.index)
                     } label: {
                         SealedProductGridCell(
                             product: product,

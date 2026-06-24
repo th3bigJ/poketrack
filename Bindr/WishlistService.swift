@@ -13,6 +13,7 @@ enum WishlistFreeTier {
 final class WishlistService {
     private let modelContext: ModelContext
     private let store: StoreKitService
+    var onWishlistChanged: (() -> Void)?
     
     private(set) var items: [WishlistItem] = []
     private(set) var error: String?
@@ -66,6 +67,7 @@ final class WishlistService {
         do {
             try modelContext.save()
             loadItems() // Refresh
+            onWishlistChanged?()
         } catch {
             throw WishlistError.saveFailed(error)
         }
@@ -78,6 +80,7 @@ final class WishlistService {
         do {
             try modelContext.save()
             loadItems()
+            onWishlistChanged?()
         } catch {
             throw WishlistError.saveFailed(error)
         }
@@ -99,6 +102,7 @@ final class WishlistService {
         do {
             try modelContext.save()
             loadItems()
+            onWishlistChanged?()
         } catch {
             throw WishlistError.saveFailed(error)
         }
@@ -110,6 +114,8 @@ final class WishlistService {
         
         do {
             try modelContext.save()
+            loadItems()
+            onWishlistChanged?()
         } catch {
             throw WishlistError.saveFailed(error)
         }
@@ -117,14 +123,12 @@ final class WishlistService {
     
     /// Check if a specific card + variant is in the wishlist
     func isInWishlist(cardID: String, variantKey: String) -> Bool {
-        let currentItems = (try? fetchItems()) ?? items
-        return currentItems.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey })
+        items.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey })
     }
     
     /// Check if any variant of a card is in the wishlist
     func isInWishlist(cardID: String) -> Bool {
-        let currentItems = (try? fetchItems()) ?? items
-        return currentItems.contains(where: { $0.cardID == cardID })
+        items.contains(where: { $0.cardID == cardID })
     }
 }
 

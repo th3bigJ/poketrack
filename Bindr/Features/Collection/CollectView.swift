@@ -11,7 +11,8 @@ struct CollectView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     // MARK: - Collection State
-    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
+    @State private var collectionItems: [CollectionItem] = []
+    @State private var isLoadingCollectionItems = true
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var collectionPriceByItemKey: [String: Double] = [:]
     @State private var collectionSortPriceByCardID: [String: Double] = [:]
@@ -26,10 +27,12 @@ struct CollectView: View {
     @State private var collectionDisplayedCards: [Card] = []
     @State private var collectionNextIndex = 0
     @State private var isLoadingMoreCollectionItems = false
+    @State private var collectionFeedDebounceTask: Task<Void, Never>? = nil
     @State private var openSealedSession: CollectionOpenSealedSession?
 
     // MARK: - Wishlist State
-    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
+    @State private var wishlistItems: [WishlistItem] = []
+    @State private var isLoadingWishlistItems = true
     @State private var wishlistCardsByID: [String: Card] = [:]
     @State private var wishlistPriceByItemKey: [String: Double] = [:]
     @State private var wishlistSortPriceByCardID: [String: Double] = [:]
@@ -214,6 +217,12 @@ struct CollectView: View {
                 await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
             }
         }
+        .task(id: services.collectionInventoryRevision) {
+            await reloadCollectionItems()
+        }
+        .task(id: services.wishlistInventoryRevision) {
+            await reloadWishlistItems()
+        }
         .task(id: collectionResolveTaskKey) {
             await resolveCollectionCards()
         }
@@ -236,15 +245,14 @@ struct CollectView: View {
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
         }
-        .onChange(of: selectedBrand) { _, _ in refreshCollectionFeed() }
-        .onChange(of: selectedContentTypeTab) { _, _ in refreshCollectionFeed() }
-        .onChange(of: collectionQuery) { _, _ in refreshCollectionFeedIfReady() }
-        .onChange(of: collectionFilters) { _, _ in refreshCollectionFeedIfReady() }
-        .onChange(of: collectionPriceByItemKey) { _, _ in refreshCollectionFeedIfReady() }
-        .onChange(of: collectionSortPriceByCardID) { _, _ in refreshCollectionFeedIfReady() }
-        .onChange(of: cardsByCardID) { _, _ in refreshCollectionFeedIfReady() }
-        .onChange(of: sealedProductByCollectionCardIDCache) { _, _ in refreshCollectionFeedIfReady() }
-        .onChange(of: wishlistItems) { _, _ in refreshWishlistedSealedCollectionCardIDs() }
+        .onChange(of: selectedBrand) { _, _ in scheduleCollectionFeedRefresh() }
+        .onChange(of: selectedContentTypeTab) { _, _ in scheduleCollectionFeedRefresh() }
+        .onChange(of: collectionQuery) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+        .onChange(of: collectionFilters) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+        .onChange(of: collectionPriceByItemKey) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+        .onChange(of: collectionSortPriceByCardID) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+        .onChange(of: cardsByCardID) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+        .onChange(of: sealedProductByCollectionCardIDCache) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
         .sheet(item: $selectedSealedProduct) { product in
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)
@@ -299,6 +307,30 @@ struct CollectView: View {
         }
         sealedProductByIDCache = byID
         sealedProductByCollectionCardIDCache = byCollectionCardID
+    }
+
+    @MainActor
+    private func reloadCollectionItems() async {
+        isLoadingCollectionItems = true
+        defer { isLoadingCollectionItems = false }
+
+        let descriptor = FetchDescriptor<CollectionItem>(
+            sortBy: [SortDescriptor(\.dateAcquired, order: .reverse)]
+        )
+        collectionItems = (try? modelContext.fetch(descriptor)) ?? []
+    }
+
+    @MainActor
+    private func reloadWishlistItems() async {
+        isLoadingWishlistItems = true
+        defer { isLoadingWishlistItems = false }
+
+        let descriptor = FetchDescriptor<WishlistItem>(
+            sortBy: [SortDescriptor(\.dateAdded, order: .reverse)]
+        )
+        wishlistItems = (try? modelContext.fetch(descriptor)) ?? []
+        services.wishlist?.loadItems()
+        refreshWishlistedSealedCollectionCardIDs()
     }
 
     // MARK: - Segmented Control
@@ -409,7 +441,16 @@ struct CollectView: View {
 
     @ViewBuilder
     private var collectionContent: some View {
-        if collectionItems.isEmpty {
+        if isLoadingCollectionItems && collectionItems.isEmpty {
+            VStack(spacing: 12) {
+                ProgressView()
+                Text("Loading collection...")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 40)
+        } else if collectionItems.isEmpty {
             emptyState(title: "No collection yet", image: "square.stack.3d.up.slash",
                        description: "Add cards from card details with the + button.")
         } else if visibleCollectionItems.isEmpty {
@@ -697,9 +738,15 @@ struct CollectView: View {
         "\(wishlistSignature)-\(wishlistFilters.sortBy.rawValue)"
     }
 
-    private func refreshCollectionFeedIfReady() {
-        guard !isResolvingCollectionPrices else { return }
-        refreshCollectionFeed()
+    private func scheduleCollectionFeedRefresh(requireResolvedPrices: Bool = false) {
+        if requireResolvedPrices, isResolvingCollectionPrices { return }
+        collectionFeedDebounceTask?.cancel()
+        collectionFeedDebounceTask = Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 100_000_000)
+            guard !Task.isCancelled else { return }
+            if requireResolvedPrices, isResolvingCollectionPrices { return }
+            refreshCollectionFeed()
+        }
     }
 
     private func resolveCollectionCards() async {
@@ -815,6 +862,8 @@ struct CollectView: View {
 
     private func refreshCollectContent() async {
         await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
+        await reloadCollectionItems()
+        await reloadWishlistItems()
         await refreshSetNameCache()
         refreshSealedProductCaches()
         await resolveCollectionCards()
@@ -906,7 +955,16 @@ struct CollectView: View {
 
     @ViewBuilder
     private var wishlistContent: some View {
-        if wishlistItems.isEmpty {
+        if isLoadingWishlistItems && wishlistItems.isEmpty {
+            VStack(spacing: 12) {
+                ProgressView()
+                Text("Loading wishlist...")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.top, 40)
+        } else if wishlistItems.isEmpty {
             emptyState(title: "Wishlist is empty", image: "star.slash",
                        description: "Add cards from browse or search to track cards you want.")
         } else if visibleWishlistItems.isEmpty {
@@ -1187,8 +1245,13 @@ struct CollectView: View {
     }
 
     private func removeFromWishlist(_ item: WishlistItem) {
-        modelContext.delete(item)
-        modelContext.saveLogging()
+        do {
+            try services.wishlist?.removeItem(item)
+        } catch {
+            modelContext.delete(item)
+            modelContext.saveLogging()
+            services.notifyWishlistInventoryChanged()
+        }
     }
 
     private func sealedProduct(for item: WishlistItem) -> SealedProduct? {

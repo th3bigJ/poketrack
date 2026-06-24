@@ -229,10 +229,10 @@ struct BrowseProductsTabContent: View {
                         .padding(.horizontal, 16)
                         .padding(.bottom, 16)
                     } else {
-                        EagerVGrid(items: displayedProducts, columns: sealedGridColumnCount, spacing: sealedGridSpacing) { product in
+                        EagerVGrid(items: displayedProducts.indexedIdentifiedValues, columns: sealedGridColumnCount, spacing: sealedGridSpacing) { indexedProduct in
+                            let product = indexedProduct.value
                             Button {
-                                let index = displayedProducts.firstIndex(where: { $0.id == product.id }) ?? 0
-                                presentSealedProduct(product, displayedProducts, index)
+                                presentSealedProduct(product, displayedProducts, indexedProduct.index)
                             } label: {
                                 SealedProductGridCell(
                                     product: product,

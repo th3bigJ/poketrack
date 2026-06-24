@@ -7,7 +7,7 @@ struct UniversalSearchResultsView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentCard) private var presentCard
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
-    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
+    @Query private var collectionItems: [CollectionItem]
     let query: String
     let selectedBrand: TCGBrand
     let sourceScope: SearchSourceScope
@@ -26,6 +26,33 @@ struct UniversalSearchResultsView: View {
     @State private var lastSearchSets: [SearchSetMatch] = []
 
     private let previewCardLimit = 9
+
+    init(
+        query: String,
+        selectedBrand: TCGBrand,
+        sourceScope: SearchSourceScope,
+        idleContent: AnyView,
+        onCommitSearch: @escaping () -> Void
+    ) {
+        self.query = query
+        self.selectedBrand = selectedBrand
+        self.sourceScope = sourceScope
+        self.idleContent = idleContent
+        self.onCommitSearch = onCommitSearch
+
+        if sourceScope == .myCollection {
+            _collectionItems = Query(
+                sort: [SortDescriptor(\CollectionItem.dateAcquired, order: .reverse)]
+            )
+        } else {
+            _collectionItems = Query(
+                filter: #Predicate<CollectionItem> { item in
+                    item.cardID == "__bindr_universal_search_no_collection_fetch__"
+                },
+                sort: [SortDescriptor(\CollectionItem.dateAcquired, order: .reverse)]
+            )
+        }
+    }
 
     private struct SearchSetMatch: Identifiable {
         let set: TCGSet

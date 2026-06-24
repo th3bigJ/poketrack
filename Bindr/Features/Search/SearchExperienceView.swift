@@ -101,9 +101,13 @@ struct SearchExperienceView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
         .task(id: recentlyViewedCardIDs) {
+            try? await Task.sleep(nanoseconds: 250_000_000)
+            guard !Task.isCancelled else { return }
             await loadRecentlyViewedCards()
         }
         .task(id: services.brandSettings.selectedCatalogBrand) {
+            try? await Task.sleep(nanoseconds: 250_000_000)
+            guard !Task.isCancelled else { return }
             let sets = await services.cardData.catalogSets(for: services.brandSettings.selectedCatalogBrand)
             recentSets = Array(sets.prefix(4))
         }
