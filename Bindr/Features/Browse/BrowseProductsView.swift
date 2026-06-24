@@ -14,6 +14,7 @@ struct BrowseProductsTabContent: View {
     let gridOptions: BrowseGridOptions
 
     @State private var displayedProducts: [SealedProduct] = []
+    @State private var searchDebounceTask: Task<Void, Never>? = nil
     @State private var cachedOwnedCardIDs: Set<String> = []
     @State private var cachedOwnedQuantities: [String: Int] = [:]
     @State private var cachedWishlistedCardIDs: Set<String> = []
@@ -282,7 +283,14 @@ struct BrowseProductsTabContent: View {
         }
         .onChange(of: collectionItems) { _, _ in rebuildOwnershipCaches() }
         .onChange(of: wishlistItems) { _, _ in rebuildWishlistCache() }
-        .onChange(of: query) { _, _ in recomputeDisplayedProducts() }
+        .onChange(of: query) { _, _ in
+            searchDebounceTask?.cancel()
+            searchDebounceTask = Task {
+                try? await Task.sleep(for: .milliseconds(150))
+                guard !Task.isCancelled else { return }
+                recomputeDisplayedProducts()
+            }
+        }
         .onChange(of: filters) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: selectedSet) { _, _ in recomputeDisplayedProducts() }
         .onChange(of: services.sealedProducts.products) { _, _ in

@@ -287,7 +287,7 @@ final class AppServices {
     /// Returning-user launch path: quickly prime local catalog data, then refresh network-backed data in the background.
     func bootstrapCatalogInBackgroundIfNeeded() async {
         while !hasResolvedLaunchCatalogRefreshRequirement {
-            try? await Task.sleep(nanoseconds: 50_000_000)
+            try? await Task.sleep(nanoseconds: 200_000_000)
         }
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
             if !isLaunchCatalogPipelineComplete {

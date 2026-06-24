@@ -5,43 +5,47 @@ struct DashboardProgressRingTile: View {
     let accentColor: Color
     var onRemove: (() -> Void)? = nil
 
-    private let tileWidth: CGFloat = 124
-    private let artworkSize: CGFloat = 56
+    private let tileWidth: CGFloat = 156
 
     var body: some View {
-        VStack(spacing: 5) {
+        VStack(alignment: .leading, spacing: 10) {
             progressArtwork
-                .frame(width: artworkSize, height: artworkSize)
+                .frame(height: 48)
+                .frame(maxWidth: .infinity)
 
             Text(snapshot.title)
-                .font(.caption.weight(.semibold))
+                .font(.subheadline.weight(.semibold))
                 .foregroundStyle(.primary)
-                .lineLimit(2)
-                .minimumScaleFactor(0.85)
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity)
-
-            Text(snapshot.modeLabel)
-                .font(.caption2)
-                .foregroundStyle(.secondary)
                 .lineLimit(1)
-                .frame(maxWidth: .infinity)
+                .minimumScaleFactor(0.85)
+
+            HStack(spacing: 8) {
+                GeometryReader { geo in
+                    ZStack(alignment: .leading) {
+                        Capsule(style: .continuous)
+                            .fill(Color.primary.opacity(0.10))
+                        Capsule(style: .continuous)
+                            .fill(accentColor)
+                            .frame(width: max(geo.size.width * snapshot.progress, snapshot.progress > 0 ? 4 : 0))
+                    }
+                }
+                .frame(height: 5)
+
+                Text("\(Int(snapshot.progress * 100))%")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(accentColor)
+                    .monospacedDigit()
+                    .frame(width: 34, alignment: .trailing)
+            }
 
             Text("\(snapshot.collected) / \(snapshot.total)")
-                .font(.caption2.weight(.medium))
+                .font(.caption)
                 .foregroundStyle(.secondary)
                 .monospacedDigit()
-                .frame(maxWidth: .infinity)
-
-            Text("\(Int(snapshot.progress * 100))%")
-                .font(.system(size: 11, weight: .bold, design: .rounded))
-                .foregroundStyle(accentColor)
-                .monospacedDigit()
-                .frame(maxWidth: .infinity)
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 10)
-        .frame(width: tileWidth, alignment: .center)
+        .padding(12)
+        .frame(width: tileWidth, alignment: .leading)
+        .glassInsetStyle(cornerRadius: 16)
         .contextMenu {
             if let onRemove {
                 Button(role: .destructive, action: onRemove) {

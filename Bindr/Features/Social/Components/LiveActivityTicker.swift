@@ -183,7 +183,7 @@ struct LiveActivityItem: Identifiable, Hashable {
 // each run their own CADisplayLink-backed animation loop even when off-screen.
 private struct PulseGlow: ViewModifier {
     func body(content: Content) -> some View {
-        TimelineView(.animation(minimumInterval: 1.0 / 30)) { timeline in
+        TimelineView(.animation(minimumInterval: 1.0 / 8)) { timeline in
             let t = timeline.date.timeIntervalSinceReferenceDate
             // 1.2-second sine wave matching the old easeInOut(duration:1.2) period.
             let phase = (sin(t * .pi / 1.2) + 1) / 2  // 0…1

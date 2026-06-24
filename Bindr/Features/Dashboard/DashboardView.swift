@@ -31,6 +31,7 @@ struct DashboardView: View {
     @State private var ledgerRefreshDebounceTask: Task<Void, Never>? = nil
 
     @State private var collectionItems: [CollectionItem] = []
+    @State private var cachedCollectionTotalQuantity: Int = 0
     @State private var wishlistItems: [WishlistItem] = []
     @State private var binderCount = 0
     @State private var dashboardDataRevision = 0
@@ -73,6 +74,8 @@ struct DashboardView: View {
     // from unrelated @State writes don't rebuild snapshot arrays.
     @State private var cachedDailyPoints: [ChartPoint] = []
     @State private var cachedActivePoints: [ChartPoint] = []
+    @State private var cachedChartMin: Double = 0
+    @State private var cachedChartMax: Double = 1
 
     // Cached collection stats — updated via task when collectionItems/brand changes,
     // so SwiftUI body evaluation never pays the O(n) cost of iterating 997+ items.
@@ -82,6 +85,12 @@ struct DashboardView: View {
     @State private var cachedUniqueCardsCount: Int = 0
     @State private var cachedSealedProductsCount: Int = 0
     @State private var cachedWishlistedCardsCount: Int = 0
+    @State private var cachedRecentLines: [LedgerLine] = []
+    @State private var cachedVisibleWishlistItems: [WishlistItem] = []
+    @State private var cachedDisplayValueDateLabel: String = "Today"
+    @State private var cachedValueChange31Days: Double? = nil
+    @State private var cachedValueChange7Days: Double? = nil
+    @State private var cachedValueChange1Day: Double? = nil
 
     private struct NewsUpdate: Identifiable {
         let id: String
@@ -139,17 +148,6 @@ struct DashboardView: View {
         liveSnapshot != nil
     }
 
-    /// Subtitle beneath the hero total — shows the scrubbed chart date while dragging, otherwise today's label.
-    private var displayValueSubtitle: String {
-        if let point = selectedPoint {
-            if Calendar.current.isDateInToday(point.date) {
-                return "Today"
-            }
-            return rangeLabel(for: point.date)
-        }
-        return isShowingLiveTodayValue ? "Today's value" : "Last saved value"
-    }
-
     private var displayTotal: Double {
         let point = selectedPoint
         switch selectedBrand {
@@ -159,32 +157,43 @@ struct DashboardView: View {
     }
 
     private var isScrubbingOrLoaded: Bool { selectedPoint != nil || displayedBrandSnapshot != nil }
+
     private var displayCardsValue: Double {
         if let point = selectedPoint, let cards = point.cards { return cards }
         return displayedBrandSnapshot?.cards ?? liveCardsGbp
     }
+
     private var displaySealedValue: Double {
         if let point = selectedPoint, let sealed = point.sealed { return sealed }
         return displayedBrandSnapshot?.sealed ?? liveSealedGbp
     }
+
+    /// Label beneath the daily change — "Today" when that point is today, otherwise the scrubbed date.
+    private var displayValueDateLabel: String { cachedDisplayValueDateLabel }
+
+    private func recomputeDisplayValueDateLabel() {
+        let date: Date
+        if let selectedPoint {
+            date = selectedPoint.date
+        } else if let todayPoint = activePoints.last(where: { Calendar.current.isDateInToday($0.date) }) {
+            date = todayPoint.date
+        } else if let lastPoint = activePoints.last {
+            date = lastPoint.date
+        } else {
+            cachedDisplayValueDateLabel = "Today"
+            return
+        }
+        cachedDisplayValueDateLabel = Calendar.current.isDateInToday(date) ? "Today" : rangeLabel(for: date)
+    }
+
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
 
     private var visibleCollectionItems: [CollectionItem] { cachedVisibleCollectionItems }
     private var visibleCardCollectionItems: [CollectionItem] { cachedVisibleCardCollectionItems }
 
-    private var visibleWishlistItems: [WishlistItem] {
-        wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
-    }
+    private var visibleWishlistItems: [WishlistItem] { cachedVisibleWishlistItems }
 
-    private var recentLines: [LedgerLine] {
-        Array(
-            allLedgerLines.filter { line in
-                guard let cardID = cleaned(line.cardID) else { return false }
-                return TCGBrand.inferredFromMasterCardId(cardID) == activeBrand
-            }
-            .prefix(5)
-        )
-    }
+    private var recentLines: [LedgerLine] { cachedRecentLines }
 
     private var totalCardsCount: Int { cachedTotalCardsCount }
     private var uniqueCardsCount: Int { cachedUniqueCardsCount }
@@ -192,7 +201,8 @@ struct DashboardView: View {
     private var wishlistedCardsCount: Int { cachedWishlistedCardsCount }
 
     private func recomputeCollectionStats() {
-        let visible = collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
+        let brand = activeBrand
+        let visible = collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
         let visibleCards = visible.filter { sealedProductID(for: $0) == nil }
         cachedVisibleCollectionItems = visible
         cachedVisibleCardCollectionItems = visibleCards
@@ -203,7 +213,15 @@ struct DashboardView: View {
             guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { return total }
             return total + max(item.quantity, 0)
         }
-        cachedWishlistedCardsCount = Set(wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }.map(\.cardID)).count
+        cachedWishlistedCardsCount = Set(wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }.map(\.cardID)).count
+        cachedVisibleWishlistItems = wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
+        cachedRecentLines = Array(
+            allLedgerLines.filter { line in
+                guard let cardID = cleaned(line.cardID) else { return false }
+                return TCGBrand.inferredFromMasterCardId(cardID) == brand
+            }
+            .prefix(5)
+        )
     }
 
     private var portfolioGain: Double? {
@@ -287,26 +305,34 @@ struct DashboardView: View {
 
     private func recomputeActivePoints() {
         let base = cachedDailyPoints
-        guard let brand = selectedBrand else { cachedActivePoints = base; return }
-        cachedActivePoints = base.map { point in
-            let total: Double
-            switch brand {
-            case .pokemon: total = point.pokemon
+        if let brand = selectedBrand {
+            cachedActivePoints = base.map { point in
+                let total: Double
+                switch brand {
+                case .pokemon: total = point.pokemon
+                }
+                return ChartPoint(
+                    date: point.date,
+                    total: total,
+                    pokemon: point.pokemon,
+                    cards: point.cards,
+                    sealed: point.sealed
+                )
             }
-            return ChartPoint(
-                date: point.date,
-                total: total,
-                pokemon: point.pokemon,
-                cards: point.cards,
-                sealed: point.sealed
-            )
+        } else {
+            cachedActivePoints = base
         }
+        let totals = cachedActivePoints.map(\.total)
+        cachedChartMin = (totals.min() ?? 0) * 0.95
+        cachedChartMax = (totals.max() ?? 0) * 1.05
+        recomputeDisplayValueDateLabel()
+        recomputeValueChanges()
     }
 
     private var activePoints: [ChartPoint] { cachedActivePoints }
 
-    private var chartMin: Double { (cachedActivePoints.map(\.total).min() ?? 0) * 0.95 }
-    private var chartMax: Double { (cachedActivePoints.map(\.total).max() ?? 0) * 1.05 }
+    private var chartMin: Double { cachedChartMin }
+    private var chartMax: Double { cachedChartMax }
 
     private var chartXAxisDates: [Date] {
         let points = cachedActivePoints
@@ -364,9 +390,15 @@ struct DashboardView: View {
         return (last.date, last.total)
     }
 
-    private var collectionValueChange31Days: Double? { collectionValuePercentChange(daysBack: 31) }
-    private var collectionValueChange7Days: Double? { collectionValuePercentChange(daysBack: 7) }
-    private var collectionValueChange1Day: Double? { collectionValuePercentChange(daysBack: 1) }
+    private var collectionValueChange31Days: Double? { cachedValueChange31Days }
+    private var collectionValueChange7Days: Double? { cachedValueChange7Days }
+    private var collectionValueChange1Day: Double? { cachedValueChange1Day }
+
+    private func recomputeValueChanges() {
+        cachedValueChange31Days = collectionValuePercentChange(daysBack: 31)
+        cachedValueChange7Days = collectionValuePercentChange(daysBack: 7)
+        cachedValueChange1Day = collectionValuePercentChange(daysBack: 1)
+    }
 
     private func collectionValuePercentChange(daysBack: Int) -> Double? {
         guard daysBack > 0,
@@ -387,18 +419,31 @@ struct DashboardView: View {
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            LazyVStack(spacing: 0) {
-                dashboardPageOne
-                    .containerRelativeFrame(.vertical, alignment: .top)
-                    .id(0)
+            VStack(alignment: .leading, spacing: 22) {
+                heroSection
+                valueAndHistoryCard
+                collectionSummaryInsightCard
 
-                dashboardPageTwo
-                    .containerRelativeFrame(.vertical, alignment: .top)
-                    .id(1)
+                continueCollectingSection
+
+                if !recentLines.isEmpty {
+                    recentActivityCard
+                }
+
+                if !actionableTrades.isEmpty {
+                    tradeActionNotificationCard
+                }
+
+                if !upcomingReleases.isEmpty {
+                    upcomingReleasesSection
+                }
+
+                newsAndUpdatesSection
             }
-            .scrollTargetLayout()
+            .padding(.horizontal, 16)
+            .padding(.top, rootFloatingChromeInset + 10)
+            .padding(.bottom, RootChromeEnvironment.floatingTabBarContentInset)
         }
-        .scrollTargetBehavior(.paging)
         .background(dashboardBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
         .task(id: "\(services.collectionValue != nil):\(services.isLaunchCatalogPipelineComplete)") {
@@ -483,7 +528,6 @@ struct DashboardView: View {
             guard hasFiredInitialLoadComplete else { return }
             await reloadDashboardInventory(deferForLaunch: false)
             recomputeCollectionStats()
-            chartRefreshID += 1
             await computeLiveValue()
             chartRefreshID += 1
         }
@@ -580,19 +624,18 @@ struct DashboardView: View {
                 allLedgerLines = (try? modelContext.fetch(d)) ?? []
 
                 // If a CollectionItem was added, removed, or had its quantity changed, reload inventory
-                // and recompute live value. Use fetchCount first to avoid loading all rows when only
-                // a quantity on an existing item changed (same count); fall back to full fetch only then.
+                // and recompute live value. fetchCount is a cheap SQL COUNT(*). For same-count batches,
+                // compare against cachedCollectionTotalQuantity (maintained by reloadDashboardInventory)
+                // to avoid an extra reduce() over the in-memory array on every CloudKit delivery.
                 let freshCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
-                let currentCount = collectionItems.count
-                let currentTotalQty = collectionItems.reduce(0, { $0 + $1.quantity })
                 let signatureChanged: Bool
                 var freshItems: [CollectionItem]? = nil
-                if freshCount != currentCount {
+                if freshCount != collectionItems.count {
                     signatureChanged = true
                 } else {
                     let all = (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
                     let freshQty = all.reduce(0, { $0 + $1.quantity })
-                    signatureChanged = freshQty != currentTotalQty
+                    signatureChanged = freshQty != cachedCollectionTotalQuantity
                     if signatureChanged { freshItems = all }
                 }
                 guard signatureChanged else { return }
@@ -601,6 +644,7 @@ struct DashboardView: View {
                 // without updating collectionItems. Use the already-fetched items as fallback.
                 if collectionItems.count != freshCount {
                     collectionItems = freshItems ?? (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
+                    cachedCollectionTotalQuantity = collectionItems.reduce(0, { $0 + $1.quantity })
                 }
                 recomputeCollectionStats()
                 // Skip the live-value recompute when pricing hasn't been prefetched —
@@ -672,45 +716,15 @@ struct DashboardView: View {
         )
     }
 
-    private var dashboardPageOne: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            heroSection
-            valueAndHistoryCard
-
-            collectionSummaryInsightCard
-
-            if !progressTracker.targets.isEmpty {
-                progressTrackingSection
-            } else {
-                progressTrackingAddButton
-            }
-
-            Spacer(minLength: 0)
+    private var heroSection: some View {
+        HStack(spacing: 0) {
+            Text("\(timeGreeting), ")
+            Text("Trainer.")
+                .bindrAccentForeground(services.theme.accentColor)
         }
-        .padding(.horizontal, 16)
-        .padding(.top, rootFloatingChromeInset + 10)
-        .padding(.bottom, RootChromeEnvironment.floatingTabBarContentInset - 18)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-    }
-
-    private var dashboardPageTwo: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            if !actionableTrades.isEmpty {
-                tradeActionNotificationCard
-            }
-
-            if !upcomingReleases.isEmpty {
-                upcomingReleasesSection
-            }
-
-            newsAndUpdatesSection
-
-            Spacer(minLength: 0)
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, rootFloatingChromeInset + 14)
-        .padding(.bottom, RootChromeEnvironment.floatingTabBarContentInset - 12)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .font(.title3.weight(.semibold))
+        .foregroundStyle(dashboardPrimaryText)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func restoreTabBarAfterSheet() {
@@ -719,27 +733,6 @@ struct DashboardView: View {
         } else {
             BindrApp.reapplyTabBarAppearanceAfterPresentation(accent: services.theme.accentColor)
         }
-    }
-
-    private var heroSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(timeGreeting)
-                    .font(.subheadline.weight(.medium))
-                    .foregroundStyle(.secondary)
-
-                HStack(spacing: 0) {
-                    Text("Welcome back, ")
-                    Text("Trainer.")
-                        .bindrAccentForeground(services.theme.accentColor)
-                }
-                .font(.system(size: 28, weight: .bold, design: .rounded))
-                .foregroundStyle(dashboardPrimaryText)
-            }
-
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.bottom, 4)
     }
 
     private var timeGreeting: String {
@@ -846,15 +839,16 @@ struct DashboardView: View {
 
     private var valueAndHistoryCard: some View {
         let _ = chartRefreshID  // force re-evaluation when recalculate completes
-        return VStack(alignment: .leading, spacing: 8) {
+        let points = activePoints
+        return VStack(alignment: .leading, spacing: 10) {
             dashboardValueSummary
 
             if !activePoints.isEmpty {
                 collectionValuePeriodRow
             }
 
-            if !activePoints.isEmpty {
-                Chart(activePoints) { point in
+            if !points.isEmpty {
+                Chart(points) { point in
                         AreaMark(
                             x: .value("Date", point.date),
                             yStart: .value("Min", chartMin),
@@ -907,14 +901,17 @@ struct DashboardView: View {
                                 .gesture(
                                     DragGesture(minimumDistance: 0)
                                         .onChanged { value in
-                                            guard let frame = proxy.plotFrame else { return }
+                                            guard points.count > 0,
+                                                  let frame = proxy.plotFrame else { return }
                                             let x = value.location.x - geo[frame].origin.x
-                                            guard let date: Date = proxy.value(atX: x) else { return }
-                                            let nearest = activePoints.min(by: {
-                                                abs($0.date.timeIntervalSince(date)) < abs($1.date.timeIntervalSince(date))
-                                            })
-                                            if nearest?.date != selectedPoint?.date {
-                                                selectedPoint = nearest
+                                            let width = geo[frame].width
+                                            guard width > 0 else { return }
+                                            let fraction = max(0, min(1, x / width))
+                                            let idx = Int((fraction * Double(points.count - 1)).rounded())
+                                            let candidate = points[idx]
+                                            if candidate.date != selectedPoint?.date {
+                                                selectedPoint = candidate
+                                                recomputeDisplayValueDateLabel()
                                                 Haptics.selectionChanged()
                                             }
                                         }
@@ -934,27 +931,26 @@ struct DashboardView: View {
     private var dashboardValueSummary: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Total Collection Value")
-                    .font(.headline)
-                    .foregroundStyle(dashboardSecondaryText)
-
                 if (isLoadingValue || services.needsCollectionValueRecalcAfterRestore) && displayedBrandSnapshot == nil {
                     ProgressView()
                         .tint(services.theme.accentColor)
                 } else if isScrubbingOrLoaded {
                     Text(formatCurrency(displayTotal))
-                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .font(.system(size: 34, weight: .bold, design: .rounded))
                         .foregroundStyle(dashboardPrimaryText)
                         .contentTransition(.numericText())
-                    Text(displayValueSubtitle)
-                        .font(.caption.weight(.medium))
+
+                    Text("Collection Value")
+                        .font(.subheadline.weight(.medium))
                         .foregroundStyle(dashboardSecondaryText)
+
                     HStack(spacing: 12) {
                         Text("Cards \(formatCurrency(displayCardsValue))")
                         Text("Sealed \(formatCurrency(displaySealedValue))")
                     }
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(dashboardSecondaryText)
+                    .contentTransition(.numericText())
                 } else {
                     Text("No pricing data yet")
                         .font(.headline)
@@ -964,13 +960,24 @@ struct DashboardView: View {
 
             Spacer(minLength: 16)
 
-            VStack(alignment: .trailing, spacing: 6) {
-                if let change = periodChangeAmount {
-                    Text((change >= 0 ? "+" : "") + formatCurrency(change))
-                        .font(.title3.weight(.bold))
-                        .foregroundStyle(change >= 0 ? DashboardPalette.success : DashboardPalette.danger)
-                        .contentTransition(.numericText())
-                } else if let gain = portfolioGain {
+            if let change = periodChangeAmount {
+                VStack(alignment: .trailing, spacing: 4) {
+                    HStack(spacing: 4) {
+                        Image(systemName: change >= 0 ? "chart.line.uptrend.xyaxis" : "chart.line.downtrend.xyaxis")
+                            .font(.caption.weight(.bold))
+                        Text((change >= 0 ? "+" : "") + formatCurrency(change))
+                            .font(.title3.weight(.bold))
+                            .contentTransition(.numericText())
+                    }
+                    .foregroundStyle(change >= 0 ? DashboardPalette.success : DashboardPalette.danger)
+
+                    Text(displayValueDateLabel)
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(dashboardSecondaryText)
+                        .contentTransition(.interpolate)
+                }
+            } else if let gain = portfolioGain {
+                VStack(alignment: .trailing, spacing: 4) {
                     Text((gain >= 0 ? "+" : "") + formatCurrency(gain))
                         .font(.title3.weight(.bold))
                         .foregroundStyle(portfolioGainColor)
@@ -995,7 +1002,7 @@ struct DashboardView: View {
 
             collectionValuePeriodColumn(
                 value: collectionValueChange7Days,
-                label: "7 Days"
+                label: "Last 7 Days"
             )
 
             Rectangle()
@@ -1004,7 +1011,7 @@ struct DashboardView: View {
 
             collectionValuePeriodColumn(
                 value: collectionValueChange1Day,
-                label: "1 Day"
+                label: "Last 1 Day"
             )
         }
         .frame(maxWidth: .infinity, alignment: .center)
@@ -1036,8 +1043,8 @@ struct DashboardView: View {
     }
 
     private var collectionSummaryInsightCard: some View {
-        HStack(alignment: .center, spacing: 0) {
-            collectionOverviewStatColumn(
+        HStack(spacing: 10) {
+            collectionOverviewStatTile(
                 icon: "square.stack.3d.up.fill",
                 iconColor: DashboardPalette.purple,
                 count: totalCardsCount,
@@ -1045,7 +1052,7 @@ struct DashboardView: View {
                 action: onOpenCollection
             )
 
-            collectionOverviewStatColumn(
+            collectionOverviewStatTile(
                 icon: "rectangle.stack.fill",
                 iconColor: DashboardPalette.blue,
                 count: uniqueCardsCount,
@@ -1053,7 +1060,7 @@ struct DashboardView: View {
                 action: onOpenCollection
             )
 
-            collectionOverviewStatColumn(
+            collectionOverviewStatTile(
                 icon: "shippingbox.fill",
                 iconColor: DashboardPalette.success,
                 count: sealedProductsCount,
@@ -1061,7 +1068,7 @@ struct DashboardView: View {
                 action: onOpenSealedProducts
             )
 
-            collectionOverviewStatColumn(
+            collectionOverviewStatTile(
                 icon: "star.fill",
                 iconColor: DashboardPalette.gold,
                 count: wishlistedCardsCount,
@@ -1069,10 +1076,9 @@ struct DashboardView: View {
                 action: onOpenWishlist
             )
         }
-        .frame(maxWidth: .infinity, alignment: .center)
     }
 
-    private func collectionOverviewStatColumn(
+    private func collectionOverviewStatTile(
         icon: String,
         iconColor: Color,
         count: Int,
@@ -1082,22 +1088,32 @@ struct DashboardView: View {
         Button {
             action?()
         } label: {
-            VStack(spacing: 3) {
+            VStack(spacing: 6) {
                 Image(systemName: icon)
-                    .font(.system(size: 16, weight: .semibold))
+                    .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(iconColor)
 
                 Text(formatCollectionCount(count))
                     .font(.headline.weight(.bold))
                     .foregroundStyle(dashboardPrimaryText)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.65)
                     .lineLimit(1)
 
                 Text(label)
                     .font(.caption)
                     .foregroundStyle(dashboardSecondaryText)
             }
+            .padding(.vertical, 14)
+            .padding(.horizontal, 4)
             .frame(maxWidth: .infinity)
+            .glassInsetStyle(cornerRadius: 16)
+            .overlay(alignment: .bottom) {
+                RoundedRectangle(cornerRadius: 2, style: .continuous)
+                    .fill(iconColor)
+                    .frame(height: 3)
+                    .padding(.horizontal, 12)
+                    .padding(.bottom, 8)
+            }
             .contentShape(Rectangle())
         }
         .buttonStyle(DashboardPressStyle())
@@ -1114,93 +1130,97 @@ struct DashboardView: View {
         Self.collectionCountFormatter.string(from: NSNumber(value: count)) ?? "\(count)"
     }
 
-    private var progressTrackingSection: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("TRACK PROGRESS")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(dashboardSecondaryText)
-                    .tracking(0.6)
-
-                Spacer(minLength: 8)
-
-                Button {
-                    Haptics.lightImpact()
-                    showProgressTrackerSheet = true
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 18, weight: .semibold))
-                        .foregroundStyle(services.theme.accentColor)
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Track another set or Pokémon")
+    private var continueCollectingSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            dashboardSectionHeader(title: "Continue Collecting") {
+                Haptics.lightImpact()
+                showProgressTrackerSheet = true
             }
 
             if isLoadingProgressSnapshots && progressSnapshots.isEmpty {
                 ProgressView()
                     .tint(services.theme.accentColor)
                     .frame(maxWidth: .infinity, alignment: .center)
-            } else {
-                GeometryReader { geo in
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 0) {
-                            Spacer(minLength: 0)
-                            HStack(spacing: 20) {
-                                ForEach(progressSnapshots) { snapshot in
-                                    DashboardProgressRingTile(
-                                        snapshot: snapshot,
-                                        accentColor: services.theme.accentColor
-                                    ) {
-                                        progressTracker.remove(id: snapshot.targetID)
-                                        progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
-                                    }
-                                }
-                            }
-                            Spacer(minLength: 0)
+            } else if progressSnapshots.isEmpty {
+                Button {
+                    Haptics.lightImpact()
+                    showProgressTrackerSheet = true
+                } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "chart.line.uptrend.xyaxis")
+                            .font(.system(size: 16, weight: .semibold))
+                            .foregroundStyle(services.theme.accentColor)
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("Track a set or Pokémon")
+                                .font(.subheadline.weight(.semibold))
+                                .foregroundStyle(dashboardPrimaryText)
+                            Text("Follow full, master, or grand master completion")
+                                .font(.caption)
+                                .foregroundStyle(dashboardSecondaryText)
                         }
-                        .frame(minWidth: geo.size.width)
+                        Spacer(minLength: 0)
+                        Image(systemName: "chevron.right")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(dashboardSecondaryText.opacity(0.7))
                     }
+                    .padding(16)
+                    .glassInsetStyle(cornerRadius: 16)
                 }
-                .frame(height: 132)
+                .buttonStyle(DashboardPressStyle())
+            } else {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(Array(progressSnapshots.enumerated()), id: \.element.id) { index, snapshot in
+                            DashboardProgressRingTile(
+                                snapshot: snapshot,
+                                accentColor: progressAccentColor(at: index)
+                            ) {
+                                progressTracker.remove(id: snapshot.targetID)
+                                progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 2)
+                }
                 .padding(.horizontal, -16)
             }
         }
     }
 
-    private var progressTrackingAddButton: some View {
-        Button {
-            Haptics.lightImpact()
-            showProgressTrackerSheet = true
-        } label: {
-            HStack(spacing: 12) {
-                Image(systemName: "chart.line.uptrend.xyaxis")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundStyle(services.theme.accentColor)
-                    .frame(width: 28)
+    private func progressAccentColor(at index: Int) -> Color {
+        let palette: [Color] = [
+            DashboardPalette.purple,
+            DashboardPalette.gold,
+            DashboardPalette.blue,
+            services.theme.accentColor
+        ]
+        return palette[index % palette.count]
+    }
 
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Track Set / Pokémon")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(dashboardPrimaryText)
-                    Text("Follow full, master, or grand master completion")
-                        .font(.caption)
-                        .foregroundStyle(dashboardSecondaryText)
+    private func dashboardSectionHeader(title: String, action: @escaping () -> Void) -> some View {
+        HStack(alignment: .firstTextBaseline) {
+            Text(title)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+
+            Spacer(minLength: 8)
+
+            Button(action: action) {
+                HStack(spacing: 2) {
+                    Text("View All")
+                    Image(systemName: "chevron.right")
+                        .font(.caption.weight(.bold))
                 }
-
-                Spacer(minLength: 0)
-
-                Image(systemName: "chevron.right")
-                    .font(.system(size: 13, weight: .semibold))
-                    .foregroundStyle(dashboardSecondaryText.opacity(0.7))
+                .font(.subheadline.weight(.medium))
+                .bindrAccentForeground(services.theme.accentColor)
             }
-            .padding(.vertical, 6)
-            .contentShape(Rectangle())
+            .buttonStyle(.plain)
         }
-        .buttonStyle(DashboardPressStyle())
     }
 
     private var upcomingReleasesSection: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 12) {
             Text("Upcoming Releases")
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(dashboardPrimaryText)
@@ -1213,9 +1233,9 @@ struct DashboardView: View {
                 }
                 .padding(.vertical, 2)
             }
+            .padding(16)
+            .glassInsetStyle(cornerRadius: 20)
         }
-        .padding(16)
-        .glassInsetStyle(cornerRadius: 20)
     }
 
     private func upcomingReleaseTile(_ release: UpcomingRelease) -> some View {
@@ -1309,9 +1329,9 @@ struct DashboardView: View {
                     }
                 }
             }
+            .padding(16)
+            .glassInsetStyle(cornerRadius: 20)
         }
-        .padding(16)
-        .glassInsetStyle(cornerRadius: 20)
     }
 
     private func newsUpdateRow(_ item: NewsUpdate) -> some View {
@@ -1350,39 +1370,42 @@ struct DashboardView: View {
     }
 
     private var recentActivityCard: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline) {
                 Text("Recent Activity")
                     .font(.title3.weight(.semibold))
                     .foregroundStyle(dashboardPrimaryText)
                 Spacer()
                 if let onViewAllActivity {
-                    Button("View All") { onViewAllActivity() }
+                    Button(action: onViewAllActivity) {
+                        HStack(spacing: 2) {
+                            Text("View All")
+                            Image(systemName: "chevron.right")
+                                .font(.caption.weight(.bold))
+                        }
                         .font(.subheadline.weight(.medium))
                         .bindrAccentForeground(services.theme.accentColor)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
 
-            if recentLines.isEmpty {
-                Text("No transactions yet.")
-                    .font(.subheadline)
-                    .foregroundStyle(dashboardSecondaryText)
-            } else {
-                VStack(spacing: 0) {
-                    ForEach(recentLines) { line in
-                        Button {
-                            openRecentActivityDetail(for: line)
-                        } label: {
-                            dashboardActivityRow(line: line)
-                        }
-                        .buttonStyle(.plain)
-                        if line.id != recentLines.last?.id {
-                            Divider()
-                                .overlay(dashboardDividerColor)
-                        }
+            VStack(spacing: 0) {
+                ForEach(recentLines) { line in
+                    Button {
+                        openRecentActivityDetail(for: line)
+                    } label: {
+                        dashboardActivityRow(line: line)
+                    }
+                    .buttonStyle(.plain)
+                    if line.id != recentLines.last?.id {
+                        Divider()
+                            .overlay(dashboardDividerColor)
                     }
                 }
             }
+            .padding(16)
+            .glassInsetStyle(cornerRadius: 20)
         }
     }
 
@@ -1417,61 +1440,52 @@ struct DashboardView: View {
         HStack(spacing: 12) {
             activityLeadingVisual(for: line)
 
-            VStack(alignment: .leading, spacing: 8) {
-                HStack(spacing: 8) {
-                    Text(activityTitle(for: line))
-                        .font(.headline)
-                        .foregroundStyle(dashboardPrimaryText)
-                        .lineLimit(1)
+            VStack(alignment: .leading, spacing: 6) {
+                Text(activityCardName(for: line))
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .lineLimit(1)
 
-                    if badgeText(for: line) != nil {
-                        Text(badgeText(for: line) ?? "")
-                            .font(.caption2.weight(.semibold))
-                            .bindrAccentForeground(services.theme.accentColor)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(
-                                Capsule(style: .continuous)
-                                    .bindrAccentFill(
-                                        activityBadgeBackground,
-                                        logoOpacity: colorScheme == .dark ? 0.24 : 0.16
-                                    )
-                            )
-                            .overlay {
-                                Capsule(style: .continuous)
-                                    .stroke(
-                                        services.theme.isGradientThemeSelected
-                                            ? services.theme.secondaryAccentColor.opacity(0.34)
-                                            : services.theme.accentColor.opacity(0.28),
-                                        lineWidth: 1
-                                    )
-                            }
+                HStack(spacing: 8) {
+                    if let setName = activitySetName(for: line) {
+                        Text(setName)
+                            .font(.caption)
+                            .foregroundStyle(dashboardSecondaryText)
+                            .lineLimit(1)
                     }
 
-                    Spacer(minLength: 8)
+                    if let badge = activityBadgeLabel(for: line) {
+                        Text(badge)
+                            .font(.caption2.weight(.semibold))
+                            .foregroundStyle(DashboardPalette.success)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 3)
+                            .background(DashboardPalette.success.opacity(0.14), in: Capsule(style: .continuous))
+                    }
+                }
+            }
 
-                    Text(line.occurredAt.formatted(date: .abbreviated, time: .omitted))
-                        .font(.caption.weight(.medium))
-                        .foregroundStyle(dashboardSecondaryText)
+            Spacer(minLength: 8)
+
+            VStack(alignment: .trailing, spacing: 4) {
+                if let value = activityDisplayValue(for: line) {
+                    Text(value)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(dashboardPrimaryText)
                 }
 
-                HStack(spacing: 8) {
-                    Text(activitySubtitle(for: line))
-                        .font(.subheadline)
+                HStack(spacing: 4) {
+                    Text(relativeTimeLabel(for: line.occurredAt))
+                        .font(.caption)
                         .foregroundStyle(dashboardSecondaryText)
-                        .lineLimit(1)
-                    Spacer(minLength: 8)
                     Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(dashboardSecondaryText)
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(dashboardSecondaryText.opacity(0.7))
                 }
             }
         }
-        .padding(.vertical, 12)
-    }
-
-    private var activityBadgeBackground: Color {
-        services.theme.accentColor.opacity(colorScheme == .dark ? 0.18 : 0.08)
+        .padding(.vertical, 10)
+        .contentShape(Rectangle())
     }
 
     @ViewBuilder
@@ -1621,6 +1635,7 @@ struct DashboardView: View {
         )
         ledgerDescriptor.fetchLimit = 100
         collectionItems = (try? modelContext.fetch(collectionDescriptor)) ?? []
+        cachedCollectionTotalQuantity = collectionItems.reduce(0, { $0 + $1.quantity })
         wishlistItems = (try? modelContext.fetch(wishlistDescriptor)) ?? []
         allLedgerLines = (try? modelContext.fetch(ledgerDescriptor)) ?? []
         binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
@@ -1779,40 +1794,51 @@ struct DashboardView: View {
         cardMetadata = result
     }
 
-    private func activityTitle(for line: LedgerLine) -> String {
+    private func activityCardName(for line: LedgerLine) -> String {
         if let cardID = cleaned(line.cardID), let cardName = cardNamesByID[cardID] {
-            return "\(line.quantity) x \(cardName)"
+            return cardName
         }
         if let description = cleaned(line.lineDescription) {
-            return "\(line.quantity) x \(description)"
+            return description
         }
         return "Collection update"
     }
 
-    private func activitySubtitle(for line: LedgerLine) -> String {
-        let setName: String? = {
-            if let cardID = cleaned(line.cardID), let setName = setNamesByCardID[cardID] {
-                return setName
-            }
-            return nil
-        }()
+    private func activitySetName(for line: LedgerLine) -> String? {
+        guard let cardID = cleaned(line.cardID) else { return nil }
+        return setNamesByCardID[cardID]
+    }
 
-        if case .some(.bought) = LedgerDirection(rawValue: line.direction),
-           let unitPrice = line.unitPrice {
-            let priceLabel = unitPrice.formatted(
-                .currency(code: line.currencyCode)
-                .precision(.fractionLength(2))
-            )
-            if let setName {
-                return "\(setName) · \(priceLabel)"
-            }
-            return priceLabel
+    private func activityBadgeLabel(for line: LedgerLine) -> String? {
+        guard let direction = LedgerDirection(rawValue: line.direction) else { return nil }
+        switch direction {
+        case .bought, .packed, .importedIn, .giftedIn, .tradedIn, .adjustmentIn:
+            return "Added"
+        case .sold, .giftedOut, .tradedOut, .adjustmentOut:
+            return badgeText(for: line)
         }
+    }
 
-        if let setName {
-            return setName
+    private func activityDisplayValue(for line: LedgerLine) -> String? {
+        transactionMoneySummary(for: line)
+    }
+
+    private func relativeTimeLabel(for date: Date) -> String {
+        let seconds = Date().timeIntervalSince(date)
+        if seconds < 60 { return "Just now" }
+        if seconds < 3600 {
+            let minutes = max(1, Int(seconds / 60))
+            return "\(minutes)m ago"
         }
-        return cleaned(line.lineDescription) ?? line.occurredAt.formatted(date: .abbreviated, time: .omitted)
+        if seconds < 86_400 {
+            let hours = max(1, Int(seconds / 3600))
+            return "\(hours)h ago"
+        }
+        if seconds < 604_800 {
+            let days = max(1, Int(seconds / 86_400))
+            return "\(days)d ago"
+        }
+        return date.formatted(date: .abbreviated, time: .omitted)
     }
 
     private func badgeText(for line: LedgerLine) -> String? {

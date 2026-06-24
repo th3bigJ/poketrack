@@ -5,9 +5,9 @@ import UIKit
 // MARK: - Chart range
 
 private enum ChartRange: String, CaseIterable {
-    case daily = "Daily"
-    case weekly = "Weekly"
-    case monthly = "Monthly"
+    case months3 = "3M"
+    case year1 = "1Y"
+    case all = "ALL"
 }
 
 // MARK: - Main panel
@@ -32,6 +32,8 @@ struct CardPricingPanel: View {
     var chartHeight: CGFloat? = 220
     /// When false, only the market-price headline row is shown (compact sticky header).
     var showsChart: Bool = true
+    /// When false, hides the variant / grade picker (e.g. details-page price headline).
+    var showsVariantMenu: Bool = true
     /// Card-type accent supplied by the detail screen. Falls back to the active app theme.
     var chartAccent: Color? = nil
     /// Changing this value forces the panel to reload pricing (e.g. the detail footer's refresh button).
@@ -49,18 +51,24 @@ struct CardPricingPanel: View {
     @State private var history: CardPriceHistory? = nil
     @State private var trends: CardPriceTrends? = nil  // single entry (first/best match)
     @State private var isLoading = false
-    @State private var chartRange: ChartRange = .daily
+    @State private var chartRange: ChartRange = .months3
     @State private var scrubPoint: PriceDataPoint? = nil
+    @State private var cachedChartAccent: Color = .accentColor
+    @State private var cachedResolvedChart: (points: [PriceDataPoint], resolution: ChartDataResolution) = ([], .daily)
 
-    private var activeChartAccent: Color {
+    private var activeChartAccent: Color { cachedChartAccent }
+
+    private func recomputeChartAccent() {
         if let chartAccent {
-            return chartAccent
+            cachedChartAccent = chartAccent
+            return
         }
         if let firstType = (card.elementTypes ?? []).compactMap({ $0.trimmingCharacters(in: .whitespacesAndNewlines) }).first(where: { !$0.isEmpty }),
            let accentColor = PokemonTypeBadge.backgroundAccent(for: firstType) {
-            return accentColor
+            cachedChartAccent = accentColor
+            return
         }
-        return services.theme.chartAccentColor
+        cachedChartAccent = services.theme.chartAccentColor
     }
 
     // All variant names present in history
@@ -106,35 +114,72 @@ struct CardPricingPanel: View {
         return history.series[key]
     }
 
-    private var resolvedChart: (points: [PriceDataPoint], resolution: ChartDataResolution) {
+    private var resolvedChart: (points: [PriceDataPoint], resolution: ChartDataResolution) { cachedResolvedChart }
+
+    private func recomputeResolvedChart() {
         let dailyWithToday = (chartSeries?.daily ?? []).pinningTodayPrice(todayChartPriceUSD)
-        let weeklySource = chartSeries.flatMap { $0.weekly.isEmpty ? nil : $0.weekly } ?? weeklyFromDaily(dailyWithToday)
-        let monthlySource = chartSeries.flatMap { $0.monthly.isEmpty ? nil : $0.monthly } ?? monthlyFromDaily(dailyWithToday)
+        let weeklySource = chartSeries.flatMap { $0.weekly.isEmpty ? nil : $0.weekly }
+            ?? weeklyFromDaily(dailyWithToday, limit: 52)
+        let monthlySource = chartSeries.flatMap { $0.monthly.isEmpty ? nil : $0.monthly }
+            ?? monthlyFromDaily(dailyWithToday, limit: 120)
+
+        let filtered: [PriceDataPoint]
+        let resolution: ChartDataResolution
 
         switch chartRange {
-        case .daily:
-            if !dailyWithToday.isEmpty { return (dailyWithToday, .daily) }
-        case .weekly:
-            if !weeklySource.isEmpty { return (weeklySource, .weekly) }
-        case .monthly:
-            if !monthlySource.isEmpty { return (monthlySource, .monthly) }
+        case .months3:
+            filtered = dailyPoints(inLastDays: 90, from: dailyWithToday)
+            resolution = .daily
+        case .year1:
+            filtered = weeklyPoints(inLastDays: 365, from: weeklySource)
+            resolution = .weekly
+        case .all:
+            filtered = monthlySource
+            resolution = .monthly
         }
-        return ([], .daily)
+
+        if !filtered.isEmpty {
+            cachedResolvedChart = (filtered, resolution)
+        } else {
+            cachedResolvedChart = ([], resolution)
+        }
     }
 
-    private func weeklyFromDaily(_ daily: [PriceDataPoint]) -> [PriceDataPoint] {
+    private func weeklyFromDaily(_ daily: [PriceDataPoint], limit: Int) -> [PriceDataPoint] {
         let tuples = daily.map { [$0.label, String($0.price)] }
-        return BucketDateMath.weeklyAverages(from: tuples, limit: 13).compactMap { pair in
+        return BucketDateMath.weeklyAverages(from: tuples, limit: limit).compactMap { pair in
             guard pair.count >= 2, let price = Double(pair[1]) else { return nil }
             return PriceDataPoint(id: pair[0], label: pair[0], price: price)
         }
     }
 
-    private func monthlyFromDaily(_ daily: [PriceDataPoint]) -> [PriceDataPoint] {
+    private func monthlyFromDaily(_ daily: [PriceDataPoint], limit: Int) -> [PriceDataPoint] {
         let tuples = daily.map { [$0.label, String($0.price)] }
-        return BucketDateMath.monthlyAverages(from: tuples, limit: 12).compactMap { pair in
+        return BucketDateMath.monthlyAverages(from: tuples, limit: limit).compactMap { pair in
             guard pair.count >= 2, let price = Double(pair[1]) else { return nil }
             return PriceDataPoint(id: pair[0], label: pair[0], price: price)
+        }
+    }
+
+    private func weeklyPoints(inLastDays days: Int, from weekly: [PriceDataPoint]) -> [PriceDataPoint] {
+        guard days > 0 else { return weekly }
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        let cutoff = cal.date(byAdding: .day, value: -days, to: Date()) ?? .distantPast
+        return weekly.filter { point in
+            guard let date = weekLabelToDate(point.label) else { return false }
+            return date >= cutoff
+        }
+    }
+
+    private func dailyPoints(inLastDays days: Int, from daily: [PriceDataPoint]) -> [PriceDataPoint] {
+        guard days > 0 else { return daily }
+        var cal = Calendar(identifier: .gregorian)
+        cal.timeZone = TimeZone(identifier: "UTC")!
+        let cutoff = cal.date(byAdding: .day, value: -days, to: Date()) ?? .distantPast
+        return daily.filter { point in
+            guard let date = BucketDateMath.date(fromDailyKey: point.label) else { return false }
+            return date >= cutoff
         }
     }
 
@@ -190,8 +235,10 @@ struct CardPricingPanel: View {
                     }
                 }
 
-                Spacer(minLength: 0)
-                variantAndGradeMenu
+                if showsVariantMenu {
+                    Spacer(minLength: 0)
+                    variantAndGradeMenu
+                }
             }
 
             if showsChart {
@@ -243,6 +290,12 @@ struct CardPricingPanel: View {
         }
         .onChange(of: services.pricing.usdToGbp) { _, _ in
             Task { await refreshPrice() }
+        }
+        .onChange(of: chartRange) { _, _ in
+            recomputeResolvedChart()
+        }
+        .onChange(of: chartAccent) { _, _ in
+            recomputeChartAccent()
         }
     }
 
@@ -469,6 +522,7 @@ struct CardPricingPanel: View {
         }
         .modifier(ChartSizing(height: chartHeight))
         .padding(.horizontal, -16)
+        .padding(.bottom, 10)
     }
 
     private func chartDate(for point: PriceDataPoint, resolution: ChartDataResolution) -> Date {
@@ -599,6 +653,7 @@ struct CardPricingPanel: View {
     private func load() async {
         isLoading = true
         defer { isLoading = false }
+        recomputeChartAccent()
         await loadPricingData()
     }
 
@@ -662,11 +717,13 @@ struct CardPricingPanel: View {
         if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: variant, grade: grade) {
             livePriceUSD = usd
             currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
+            recomputeResolvedChart()
             return
         }
         if let usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: variant, grade: grade) {
             currentPrice = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
         }
+        recomputeResolvedChart()
     }
 
     private func gradesForSelectedVariant(variant: String?) -> [String] {

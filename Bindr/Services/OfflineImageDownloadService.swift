@@ -130,7 +130,11 @@ final class OfflineImageDownloadService {
             for await _ in group {
                 if Task.isCancelled { group.cancelAll(); return }
                 completed += 1
-                statusLine[brand] = "Downloading… \(completed)/\(total)"
+                // Throttle: writing to @Observable on @MainActor on every image notifies
+                // the entire SwiftUI tree. Update every 25 images (~2.5% steps) instead.
+                if completed.isMultiple(of: 25) || completed == total {
+                    statusLine[brand] = "Downloading… \(completed)/\(total)"
+                }
                 // Flush manifest every 500 saves to persist progress without hammering disk.
                 if completed.isMultiple(of: 500) {
                     try? OfflineImageStore.shared.flushManifest(for: brand)

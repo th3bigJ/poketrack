@@ -66,10 +66,12 @@ struct CardDetailContentView: View {
     let actions: CardDetailContentActions
 
     @State private var scrollOffset: CGFloat = 0
-    @State private var didSnapToDetails = false
+    @State private var showsSwipeHint: Bool = true
 
-    private let snapThreshold: CGFloat = 140
+    private let collapseThreshold: CGFloat = 140
     private let compactHeaderThreshold: CGFloat = 72
+    private let actionButtonLandingDiameter: CGFloat = 56
+    private let actionButtonCompactDiameter: CGFloat = 44
 
     private func groupedHoldings(
         collectionItems: [CollectionItem],
@@ -123,40 +125,34 @@ struct CardDetailContentView: View {
         GeometryReader { geo in
             let contentWidth = geo.size.width - 32
             let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-            let collapseProgress = min(1, max(0, scrollOffset / snapThreshold))
+            let collapseProgress = min(1, max(0, scrollOffset / collapseThreshold))
+            let pageHeight = geo.size.height - topChromeHeight - swipeHintHeight
+            let layout = landingLayoutMetrics(
+                viewportHeight: pageHeight,
+                contentWidth: contentWidth
+            )
 
-            ScrollViewReader { scrollProxy in
-                ScrollView {
+            ScrollView {
                     VStack(alignment: .leading, spacing: 14) {
                         ScrollOffsetAnchor { offset in
-                            scrollOffset = offset
-                            if offset < snapThreshold * 0.35 {
-                                didSnapToDetails = false
+                            if abs(offset - scrollOffset) > 2 {
+                                scrollOffset = offset
                             }
                         }
 
-                        largeHeroSection(
-                            contentWidth: contentWidth,
+                        landingSection(
+                            pageHeight: pageHeight,
+                            cardWidth: layout.cardWidth,
+                            chartHeight: layout.chartHeight,
+                            scrollOffset: scrollOffset,
                             collapseProgress: collapseProgress,
                             collectionItems: collectionItems,
                             ledgerLines: ledgerLines
                         )
 
-                        CardPricingPanel(
-                            card: card,
-                            useGlass: true,
-                            chartHeight: chartHeight(contentWidth: contentWidth, viewportHeight: geo.size.height),
-                            chartAccent: resolvedTypeAccent
-                        )
-                        .opacity(Double(max(0, 1 - collapseProgress * 1.2)))
-
-                        if collapseProgress < 0.45 {
-                            swipeUpHint
-                        }
-
                         Color.clear
                             .frame(height: 1)
-                            .id("detailsSnap")
+                            .id("detailsTop")
 
                         sectionDivider
                         expandedDetailsGrid
@@ -184,49 +180,54 @@ struct CardDetailContentView: View {
                     .padding(.horizontal, 16)
                     .padding(.bottom, 32)
                 }
-                .coordinateSpace(name: "cardDetailScroll")
+                .coordinateSpace(name: "scroll")
                 .scrollIndicators(.hidden)
                 .scrollContentBackground(.hidden)
-                .overlay(alignment: .top) { dragPill }
                 .safeAreaInset(edge: .top, spacing: 0) {
-                    VStack(spacing: 8) {
+                    VStack(spacing: 4) {
+                        dragPill
+
                         navigationChrome
                             .padding(.horizontal, 16)
 
                         if scrollOffset > compactHeaderThreshold {
-                            compactStickyHeader(collapseProgress: collapseProgress)
-                                .padding(.horizontal, 16)
-                                .transition(.move(edge: .top).combined(with: .opacity))
+                            compactStickyHeader(
+                                collectionItems: collectionItems,
+                                ledgerLines: ledgerLines
+                            )
+                            .padding(.horizontal, 16)
                         }
                     }
-                    .padding(.bottom, 8)
-                    .background {
-                        Rectangle()
-                            .fill(.ultraThinMaterial)
-                            .ignoresSafeArea(edges: .top)
+                    .padding(.bottom, 4)
+                }
+                .safeAreaInset(edge: .bottom, spacing: 0) {
+                    if showsSwipeHint {
+                        VStack(spacing: 8) {
+                            sectionDivider
+                            swipeUpHint
+                        }
+                        .padding(.horizontal, 16)
                     }
                 }
-                .animation(.spring(response: 0.34, dampingFraction: 0.86), value: scrollOffset > compactHeaderThreshold)
                 .onChange(of: scrollOffset) { _, offset in
-                    guard !didSnapToDetails else { return }
-                    if offset > 48, offset < snapThreshold {
-                        didSnapToDetails = true
-                        withAnimation(.spring(response: 0.38, dampingFraction: 0.88)) {
-                            scrollProxy.scrollTo("detailsSnap", anchor: .top)
-                        }
+                    let newHint = offset < pageHeight * 0.45
+                    if newHint != showsSwipeHint {
+                        withAnimation(.easeOut(duration: 0.22)) { showsSwipeHint = newHint }
                     }
                 }
-            }
         }
         .background(.clear)
     }
 
-    /// Slim grabber pinned to the very top so the user knows the sheet swipes away.
+    private var topChromeHeight: CGFloat { 56 }
+    private var swipeHintHeight: CGFloat { 34 }
+
+    /// Slim grabber at the top of the header — indicates the sheet can be dismissed.
     private var dragPill: some View {
         Capsule(style: .continuous)
             .fill(Color.primary.opacity(colorScheme == .dark ? 0.35 : 0.22))
             .frame(width: 38, height: 5)
-            .padding(.top, 8)
+            .padding(.top, 4)
             .allowsHitTesting(false)
     }
 
@@ -247,77 +248,153 @@ struct CardDetailContentView: View {
         typeBackgroundAccent ?? services.theme.chartAccentColor
     }
 
-    /// Shortens the chart so the hero image, price and chart land on one screen.
-    private func chartHeight(contentWidth: CGFloat, viewportHeight: CGFloat) -> CGFloat {
-        guard viewportHeight > 0 else { return 180 }
-        let imageWidth = min(contentWidth * 0.52, 240)
-        let heroHeight = imageWidth * 7.0 / 5.0 + 88
-        let reserved: CGFloat = heroHeight + 220
-        return min(150, max(110, viewportHeight - reserved))
+    /// Sizes the card and chart so the landing screen fills the viewport on any device.
+    private func landingLayoutMetrics(
+        viewportHeight: CGFloat,
+        contentWidth: CGFloat
+    ) -> (cardWidth: CGFloat, chartHeight: CGFloat) {
+        guard viewportHeight > 0 else { return (min(contentWidth * 0.88, 240), 120) }
+
+        let actionBarHeight: CGFloat = 60
+        let priceHeadlineHeight: CGFloat = 96
+        let chartChromeHeight: CGFloat = 44
+        let chartBottomInset: CGFloat = 10
+        let sectionSpacing: CGFloat = 6
+        let priceBlockFixed = priceHeadlineHeight + chartChromeHeight + chartBottomInset + sectionSpacing
+
+        var chartHeight: CGFloat = 128
+        var cardWidth: CGFloat = min(contentWidth * 0.92, 360)
+
+        for _ in 0..<2 {
+            let heroAvailable = viewportHeight - priceBlockFixed - chartHeight - actionBarHeight
+            cardWidth = min(contentWidth * 0.92, max(120, heroAvailable) * (5.0 / 7.0), 360)
+            let cardHeight = cardWidth * 7.0 / 5.0
+            let remaining = viewportHeight - priceBlockFixed - actionBarHeight - cardHeight - sectionSpacing
+            chartHeight = max(96, min(172, remaining))
+        }
+
+        return (cardWidth, chartHeight)
     }
 
     private var navigationChrome: some View {
-        Text(card.cardName)
-            .font(.system(size: 22, weight: .bold, design: .rounded))
-            .foregroundStyle(.primary)
-            .lineLimit(1)
-            .minimumScaleFactor(0.7)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .frame(height: 42)
-            .accessibilityAddTraits(.isHeader)
+        HStack(alignment: .center, spacing: 12) {
+            Text(card.cardName)
+                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityAddTraits(.isHeader)
+
+            headerSetLogo
+        }
+        .frame(height: 42)
+    }
+
+    @ViewBuilder
+    private var headerSetLogo: some View {
+        if let set {
+            Group {
+                if let onOpenSet = actions.onOpenSet {
+                    Button(action: onOpenSet) {
+                        setLogoView(logoSrc: set.logoSrc)
+                    }
+                    .buttonStyle(.plain)
+                } else {
+                    setLogoView(logoSrc: set.logoSrc)
+                }
+            }
+            .accessibilityLabel(set.name)
+        } else if let setCode = cleaned(card.setCode) {
+            Text(setCode)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+        }
+    }
+
+    private func setLogoView(logoSrc: String) -> some View {
+        SetLogoAsyncImage(
+            logoSrc: logoSrc,
+            height: 30,
+            brand: TCGBrand.inferredFromMasterCardId(card.masterCardId),
+            alignment: .trailing
+        )
+        .frame(width: 76, height: 30)
     }
 
     private var swipeUpHint: some View {
-        VStack(spacing: 8) {
-            Capsule(style: .continuous)
-                .fill(Color.primary.opacity(colorScheme == .dark ? 0.22 : 0.14))
-                .frame(width: 42, height: 4)
-            Text("Swipe up for details")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.top, 4)
-        .padding(.bottom, 8)
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel("Swipe up for details")
+        Text("Swipe up for details")
+            .font(.caption.weight(.semibold))
+            .foregroundStyle(.secondary)
+            .frame(maxWidth: .infinity)
+            .padding(.bottom, 6)
+            .accessibilityLabel("Swipe up for details")
     }
 
-    private func compactStickyHeader(collapseProgress: CGFloat) -> some View {
-        HStack(alignment: .center, spacing: 12) {
-            cardImage(width: 56)
-                .scaleEffect(0.92 + (collapseProgress * 0.08))
+    private func landingSection(
+        pageHeight: CGFloat,
+        cardWidth: CGFloat,
+        chartHeight: CGFloat,
+        scrollOffset: CGFloat,
+        collapseProgress: CGFloat,
+        collectionItems: [CollectionItem],
+        ledgerLines: [LedgerLine]
+    ) -> some View {
+        let scale = max(0.72, 1 - (collapseProgress * 0.28))
+        let landingHeight = max(0, pageHeight - scrollOffset)
+
+        return ZStack(alignment: .top) {
+            VStack(spacing: 6) {
+                cardImage(width: cardWidth)
+                    .frame(maxWidth: .infinity)
+                    .scaleEffect(scale, anchor: .top)
+                    .opacity(Double(max(0.15, 1 - collapseProgress)))
+
+                actionBar(
+                    collectionItems: collectionItems,
+                    ledgerLines: ledgerLines,
+                    layout: .landing
+                )
+                .opacity(Double(max(0, 1 - collapseProgress * 1.1)))
+
+                CardPricingPanel(
+                    card: card,
+                    useGlass: true,
+                    chartHeight: chartHeight,
+                    chartAccent: resolvedTypeAccent
+                )
+                .opacity(Double(max(0, 1 - collapseProgress * 1.2)))
+            }
+            .frame(maxWidth: .infinity, alignment: .top)
+            .padding(.top, 2)
+        }
+        .frame(height: landingHeight, alignment: .top)
+        .clipped()
+    }
+
+    private func compactStickyHeader(
+        collectionItems: [CollectionItem],
+        ledgerLines: [LedgerLine]
+    ) -> some View {
+        HStack(alignment: .center, spacing: 10) {
+            cardImage(width: 64)
 
             CardPricingPanel(
                 card: card,
                 useGlass: true,
                 showsChart: false,
+                showsVariantMenu: false,
                 chartAccent: resolvedTypeAccent
             )
-            .padding(.vertical, -4)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
+            .frame(maxWidth: .infinity, alignment: .leading)
 
-    private func largeHeroSection(
-        contentWidth: CGFloat,
-        collapseProgress: CGFloat,
-        collectionItems: [CollectionItem],
-        ledgerLines: [LedgerLine]
-    ) -> some View {
-        let largeWidth = min(contentWidth * 0.52, 240)
-        let scale = max(0.72, 1 - (collapseProgress * 0.28))
-        return VStack(spacing: 16) {
-            cardImage(width: largeWidth)
-                .frame(maxWidth: .infinity)
-                .scaleEffect(scale)
-                .opacity(Double(max(0.15, 1 - collapseProgress)))
-
-            actionBar(collectionItems: collectionItems, ledgerLines: ledgerLines)
-                .opacity(Double(max(0, 1 - collapseProgress * 1.1)))
+            actionBar(
+                collectionItems: collectionItems,
+                ledgerLines: ledgerLines,
+                layout: .detailsTrailing
+            )
         }
-        .padding(.top, 4)
-        .animation(.spring(response: 0.34, dampingFraction: 0.88), value: collapseProgress)
     }
 
     private func cardImage(width: CGFloat) -> some View {
@@ -368,8 +445,8 @@ struct CardDetailContentView: View {
                             .minimumScaleFactor(0.8)
                         detailFactValue(label: fact.0, value: fact.1)
                     }
-                    .frame(maxWidth: .infinity, minHeight: 54, alignment: .topLeading)
-                    .padding(10)
+                    .frame(maxWidth: .infinity, minHeight: 62, alignment: .topLeading)
+                    .padding(12)
                     .glassInsetStyle(cornerRadius: 14)
                 }
             }
@@ -524,30 +601,44 @@ struct CardDetailContentView: View {
 
     private static let wishlistGold = Color(red: 0.98, green: 0.78, blue: 0.18)
 
+    private enum ActionBarLayout {
+        case landing
+        case detailsTrailing
+    }
+
     /// Remove appears when the card is already in the collection; add stays available for extra copies.
     @ViewBuilder
     private func actionBar(
         collectionItems: [CollectionItem],
-        ledgerLines: [LedgerLine]
+        ledgerLines: [LedgerLine],
+        layout: ActionBarLayout
     ) -> some View {
         let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-        HStack(spacing: 28) {
+        let diameter = layout == .landing ? actionButtonLandingDiameter : actionButtonCompactDiameter
+        let iconSize: CGFloat = layout == .landing ? 24 : 20
+        let spacing: CGFloat = layout == .landing ? 14 : 8
+
+        let buttons = Group {
             if let addToDeckAction {
                 glassCircleActionButton(
                     accessibilityLabel: "Add to deck",
                     systemImage: "plus",
+                    diameter: diameter,
+                    iconSize: iconSize,
                     action: {
                         addToDeckAction(card, preferredVariantKey, 1)
                         Haptics.lightImpact()
                     }
                 )
             } else if showsCollectionActions {
-                addToCollectionGlassButton(isOwned: owned)
+                addToCollectionGlassButton(isOwned: owned, diameter: diameter, iconSize: iconSize)
 
                 if owned {
                     glassCircleActionButton(
                         accessibilityLabel: "Remove from collection",
                         systemImage: "minus",
+                        diameter: diameter,
+                        iconSize: iconSize,
                         action: actions.onRemoveFromCollection
                     )
                 }
@@ -557,6 +648,8 @@ struct CardDetailContentView: View {
                 glassCircleActionButton(
                     accessibilityLabel: isWishlisted ? "Remove from wish list" : "Add to wish list",
                     systemImage: isWishlisted ? "star.fill" : "star",
+                    diameter: diameter,
+                    iconSize: iconSize,
                     foreground: isWishlisted ? Self.wishlistGold : .primary,
                     action: actions.onToggleWishlist
                 )
@@ -565,14 +658,31 @@ struct CardDetailContentView: View {
             glassCircleActionButton(
                 accessibilityLabel: "Share",
                 systemImage: "square.and.arrow.up",
+                diameter: diameter,
+                iconSize: iconSize,
                 action: actions.onShare
             )
         }
-        .frame(maxWidth: .infinity)
+
+        switch layout {
+        case .landing:
+            HStack(spacing: spacing) {
+                buttons
+            }
+            .frame(maxWidth: .infinity)
+        case .detailsTrailing:
+            HStack(spacing: spacing) {
+                buttons
+            }
+        }
     }
 
     @ViewBuilder
-    private func addToCollectionGlassButton(isOwned: Bool) -> some View {
+    private func addToCollectionGlassButton(
+        isOwned: Bool,
+        diameter: CGFloat,
+        iconSize: CGFloat
+    ) -> some View {
         let label = isOwned ? "Add copy to collection" : "Add to collection"
         if availableVariantKeys.count > 1 {
             Menu {
@@ -582,13 +692,15 @@ struct CardDetailContentView: View {
                     }
                 }
             } label: {
-                glassCircleActionLabel(systemImage: "plus")
+                glassCircleActionLabel(systemImage: "plus", diameter: diameter, iconSize: iconSize)
             }
             .accessibilityLabel(label)
         } else {
             glassCircleActionButton(
                 accessibilityLabel: label,
                 systemImage: "plus",
+                diameter: diameter,
+                iconSize: iconSize,
                 action: { actions.onAddToCollection(preferredVariantKey) }
             )
         }
@@ -597,24 +709,34 @@ struct CardDetailContentView: View {
     private func glassCircleActionButton(
         accessibilityLabel: String,
         systemImage: String,
+        diameter: CGFloat,
+        iconSize: CGFloat,
         foreground: Color = .primary,
         action: @escaping () -> Void
     ) -> some View {
-        ChromeGlassCircleButton(accessibilityLabel: accessibilityLabel, action: action) {
+        Button(action: action) {
             Image(systemName: systemImage)
-                .font(.system(size: 17, weight: .semibold))
+                .font(.system(size: iconSize, weight: .semibold))
                 .foregroundStyle(foreground)
+                .modifier(ChromeGlassCircleGlyphModifier())
         }
+        .buttonStyle(.plain)
+        .frame(width: diameter, height: diameter)
+        .contentShape(Rectangle())
+        .accessibilityLabel(accessibilityLabel)
     }
 
     private func glassCircleActionLabel(
         systemImage: String,
+        diameter: CGFloat,
+        iconSize: CGFloat,
         foreground: Color = .primary
     ) -> some View {
         Image(systemName: systemImage)
-            .font(.system(size: 17, weight: .semibold))
+            .font(.system(size: iconSize, weight: .semibold))
             .foregroundStyle(foreground)
             .modifier(ChromeGlassCircleGlyphModifier())
+            .frame(width: diameter, height: diameter)
     }
 
     private var detailsSection: some View {

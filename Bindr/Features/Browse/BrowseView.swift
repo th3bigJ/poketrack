@@ -731,20 +731,22 @@ struct BrowseView: View {
     @State private var setsTabScrollRestore: SetsTabScrollRestore?
     @State private var setRestoreToken: Int = 0
     @State private var pendingCardContextRequest: CardContextActionRequest?
+    @State private var cachedCollectionItemsTotalQuantity: Int = 0
 
     private var inlineDetailPriceCacheTaskKey: Int {
         var h = Hasher()
         h.combine(currentBrand.rawValue)
-        for card in inlineDetailCards { h.combine(card.masterCardId) }
+        h.combine(inlineDetailCards.count)
+        h.combine(inlineDetailCards.first?.masterCardId)
+        h.combine(inlineDetailCards.last?.masterCardId)
         return h.finalize()
     }
 
     private var collectionOwnershipSnapshotKey: Int {
         var h = Hasher()
-        for item in collectionItems {
-            h.combine(item.cardID)
-            h.combine(item.quantity)
-        }
+        h.combine(collectionItems.count)
+        // Use cached total to avoid O(n) reduce on every @Query-triggered body render.
+        h.combine(cachedCollectionItemsTotalQuantity)
         return h.finalize()
     }
 
@@ -760,29 +762,10 @@ struct BrowseView: View {
         })
     }
 
-    private var ownedQuantityByCardID: [String: Int] {
-        collectionItems.reduce(into: [:]) { result, item in
-            guard item.quantity > 0 else { return }
-            let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            guard itemBrand == services.brandSettings.selectedCatalogBrand else { return }
-            result[item.cardID, default: 0] += item.quantity
-        }
-    }
-
+    @State private var ownedQuantityByCardID: [String: Int] = [:]
     // Keyed by "masterCardId::variantKey" for per-variant ownership in the master set grid.
-    private var ownedQuantityByCardVariant: [String: Int] {
-        collectionItems.reduce(into: [:]) { result, item in
-            guard item.quantity > 0 else { return }
-            let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            guard itemBrand == services.brandSettings.selectedCatalogBrand else { return }
-            let key = "\(item.cardID)::\(item.variantKey)"
-            result[key, default: 0] += item.quantity
-        }
-    }
-
-    private var ownedCardVariantKeys: Set<String> {
-        Set(ownedQuantityByCardVariant.keys)
-    }
+    @State private var ownedQuantityByCardVariant: [String: Int] = [:]
+    @State private var ownedCardVariantKeys: Set<String> = []
 
     private var multiSelectedCards: [Card] {
         var cardsByMasterID: [String: Card] = [:]
@@ -846,6 +829,7 @@ struct BrowseView: View {
             isViewVisible = true
             isInlineDetailPresented = (inlineDetailRoute != nil)
             currentBrand = services.brandSettings.selectedCatalogBrand
+            cachedCollectionItemsTotalQuantity = collectionItems.reduce(0, { $0 + $1.quantity })
             if isBrowseBodyReady == false {
                 Task { @MainActor in
                     await Task.yield()
@@ -863,6 +847,9 @@ struct BrowseView: View {
         }
         .onDisappear {
             isViewVisible = false
+        }
+        .onChange(of: collectionItems) { _, newItems in
+            cachedCollectionItemsTotalQuantity = newItems.reduce(0, { $0 + $1.quantity })
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, newBrand in
             currentBrand = newBrand
@@ -979,11 +966,20 @@ struct BrowseView: View {
         guard isViewVisible else { return }
         await Task.yield()
         guard isViewVisible else { return }
-        ownedCardIDsCache = Set(collectionItems.compactMap { item in
-            guard item.quantity > 0 else { return nil }
-            let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return itemBrand == brand ? item.cardID : nil
-        })
+        var ids = Set<String>(minimumCapacity: collectionItems.count)
+        var qty = [String: Int](minimumCapacity: collectionItems.count)
+        var variantQty = [String: Int](minimumCapacity: collectionItems.count)
+        for item in collectionItems {
+            guard item.quantity > 0 else { continue }
+            guard TCGBrand.inferredFromMasterCardId(item.cardID) == brand else { continue }
+            ids.insert(item.cardID)
+            qty[item.cardID, default: 0] += item.quantity
+            variantQty["\(item.cardID)::\(item.variantKey)", default: 0] += item.quantity
+        }
+        ownedCardIDsCache = ids
+        ownedQuantityByCardID = qty
+        ownedQuantityByCardVariant = variantQty
+        ownedCardVariantKeys = Set(variantQty.keys)
         if isInlineDetailPresented {
             syncFilterMenuState(usingCatalogFeed: false)
         } else {
@@ -1784,7 +1780,7 @@ struct BrowseView: View {
         catalogNextIndex = 0
         refreshBrowseFeedSnapshot(usingCatalogFeed: false)
         isLoadingInitial = false
-        ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: 0, count: 24)
+        ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: 0, count: 12)
         prefetchNextWindow(usingCatalogFeed: false)
         syncFilterMenuState(usingCatalogFeed: false)
     }
@@ -2083,13 +2079,43 @@ struct BrowseView: View {
         let setSeriesNameByCode = seriesNameBySetCode(from: services.cardData.sets)
         let normalizedWeaknessTypes = normalizedBrowseFilterTokens(filters.weaknessTypes)
         let normalizedResistanceTypes = normalizedBrowseFilterTokens(filters.resistanceTypes)
+        let normalizedSubtypeTokens = Set(filters.pokemonSubtypes.map(normalizedBrowseSearchText).filter { !$0.isEmpty })
+
+        // Pre-normalize searchable fields once per card rather than once per comparison.
+        struct NormalizedFilterCardFields {
+            let name: String
+            let number: String
+            let setCode: String
+            let subtype: String
+            let subtypes: [String]
+        }
+        let normalizedFields: [String: NormalizedFilterCardFields] = normalizedQuery.isEmpty ? [:] : {
+            var dict = [String: NormalizedFilterCardFields](minimumCapacity: cards.count)
+            for card in cards {
+                dict[card.masterCardId] = NormalizedFilterCardFields(
+                    name: normalizedBrowseSearchText(card.cardName),
+                    number: normalizedBrowseSearchText(card.cardNumber),
+                    setCode: normalizedBrowseSearchText(card.setCode),
+                    subtype: normalizedBrowseSearchText(card.subtype),
+                    subtypes: (card.subtypes ?? []).map(normalizedBrowseSearchText)
+                )
+            }
+            return dict
+        }()
+
         return cards.filter { card in
-            let matchesQuery = normalizedQuery.isEmpty
-                || normalizedBrowseSearchText(card.cardName).contains(normalizedQuery)
-                || normalizedBrowseSearchText(card.cardNumber).contains(normalizedQuery)
-                || normalizedBrowseSearchText(card.setCode).contains(normalizedQuery)
-                || normalizedBrowseSearchText(card.subtype).contains(normalizedQuery)
-                || (card.subtypes?.contains { normalizedBrowseSearchText($0).contains(normalizedQuery) } == true)
+            let matchesQuery: Bool
+            if normalizedQuery.isEmpty {
+                matchesQuery = true
+            } else if let f = normalizedFields[card.masterCardId] {
+                matchesQuery = f.name.contains(normalizedQuery)
+                    || f.number.contains(normalizedQuery)
+                    || f.setCode.contains(normalizedQuery)
+                    || f.subtype.contains(normalizedQuery)
+                    || f.subtypes.contains { $0.contains(normalizedQuery) }
+            } else {
+                matchesQuery = false
+            }
             guard matchesQuery else { return false }
 
             if cardMatchesSeriesNamesFilter(
@@ -2157,7 +2183,7 @@ struct BrowseView: View {
                 guard resolvedCardType(for: card, brand: brand) == .pokemon else {
                     return false
                 }
-                guard cardMatchesPokemonSubtypeFilters(card, selectedSubtypes: filters.pokemonSubtypes) else {
+                guard cardMatchesPokemonSubtypeFilters(card, precomputedSelectedTokens: normalizedSubtypeTokens) else {
                     return false
                 }
             }
@@ -2198,9 +2224,8 @@ struct BrowseView: View {
         return Array(values)
     }
 
-    private func cardMatchesPokemonSubtypeFilters(_ card: BrowseFilterCard, selectedSubtypes: Set<String>) -> Bool {
-        let selectedTokens = Set(selectedSubtypes.map(normalizedBrowseSearchText).filter { !$0.isEmpty })
-        guard !selectedTokens.isEmpty else { return true }
+    private func cardMatchesPokemonSubtypeFilters(_ card: BrowseFilterCard, precomputedSelectedTokens: Set<String>) -> Bool {
+        guard !precomputedSelectedTokens.isEmpty else { return true }
 
         let cardSubtypeTokens = Set(([card.stage, card.subtype] + (card.subtypes ?? []))
             .map(normalizedBrowseSearchText)
@@ -2211,7 +2236,7 @@ struct BrowseView: View {
             token.replacingOccurrences(of: " ", with: "")
         }
 
-        return selectedTokens.contains { selected in
+        return precomputedSelectedTokens.contains { selected in
             let compactSelected = compact(selected)
             return cardSubtypeTokens.contains { token in
                 token == selected
@@ -2330,7 +2355,7 @@ struct BrowseView: View {
             inlineDetailCards = await services.cardData.cards(matchingNationalDex: dexId)
         }
 
-        ImagePrefetcher.shared.prefetchCardWindow(inlineDetailCards, startingAt: 0, count: 24)
+        ImagePrefetcher.shared.prefetchCardWindow(inlineDetailCards, startingAt: 0, count: 12)
         syncFilterMenuState(usingCatalogFeed: false)
         await rebuildMasterSetVariantRows()
     }
@@ -2856,20 +2881,25 @@ private struct BrowseSetsTabContent: View {
     @State private var loadedSetMarketValueKeys: Set<String> = []
     @State private var loadingSetMarketValueKeys: Set<String> = []
 
-    private var filteredSets: [TCGSet] {
-        let sets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
-        let normalizedQuery = normalizedBrowseSearchText(query)
-        guard !normalizedQuery.isEmpty else { return sets }
-        return sets.filter { set in
-            normalizedBrowseSearchText(set.name).contains(normalizedQuery)
-                || normalizedBrowseSearchText(set.setCode).contains(normalizedQuery)
-                || normalizedBrowseSearchText(set.seriesName).contains(normalizedQuery)
-        }
-    }
+    @State private var filteredSets: [TCGSet] = []
+    @State private var groupedSets: [(title: String, sets: [TCGSet])] = []
 
-    private var groupedSets: [(title: String, sets: [TCGSet])] {
-        let grouped = Dictionary(grouping: filteredSets, by: browseSeriesTitle(for:))
-        return grouped
+    private func rebuildSetGroups() {
+        let allSets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
+        let normalizedQuery = normalizedBrowseSearchText(query)
+        let filtered: [TCGSet]
+        if normalizedQuery.isEmpty {
+            filtered = allSets
+        } else {
+            filtered = allSets.filter { set in
+                normalizedBrowseSearchText(set.name).contains(normalizedQuery)
+                    || normalizedBrowseSearchText(set.setCode).contains(normalizedQuery)
+                    || normalizedBrowseSearchText(set.seriesName).contains(normalizedQuery)
+            }
+        }
+        filteredSets = filtered
+        let grouped = Dictionary(grouping: filtered, by: browseSeriesTitle(for:))
+        groupedSets = grouped
             .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
             .sorted { lhs, rhs in
                 let lhsNewest = lhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
@@ -2883,22 +2913,20 @@ private struct BrowseSetsTabContent: View {
         var h = Hasher()
         h.combine(services.brandSettings.selectedCatalogBrand.rawValue)
         h.combine(services.collectionInventoryRevision)
-        // Recompute when the catalog finishes loading — numeric card IDs (e.g. TCGPlayer)
-        // resolve via `loadCard`, which needs `cardData.sets` populated to map into set codes.
-        for set in services.cardData.sets { h.combine(set.setCode) }
-        for item in collectionItems {
-            h.combine(item.cardID)
-            h.combine(item.quantity)
-        }
+        // sets.count is sufficient to detect catalog load completion — individual
+        // set codes don't need to be hashed since a count change means reload anyway.
+        h.combine(services.cardData.sets.count)
+        // collectionInventoryRevision already tracks quantity changes — count alone
+        // is enough here to avoid an O(n) reduce on every @Query-triggered body render.
+        h.combine(collectionItems.count)
         return h.finalize()
     }
 
     private var setLogoPrefetchTaskKey: Int {
         var h = Hasher()
-        for set in filteredSets {
-            h.combine(set.setCode)
-            h.combine(set.logoSrc)
-        }
+        h.combine(filteredSets.count)
+        h.combine(filteredSets.first?.setCode)
+        h.combine(filteredSets.last?.setCode)
         return h.finalize()
     }
 
@@ -3021,6 +3049,9 @@ private struct BrowseSetsTabContent: View {
         .task(id: setLogoPrefetchTaskKey) {
             prefetchSetLogos()
         }
+        .onAppear { rebuildSetGroups() }
+        .onChange(of: query) { _, _ in rebuildSetGroups() }
+        .onChange(of: services.cardData.sets.count) { _, _ in rebuildSetGroups() }
     }
 
     private func browseSeriesTitle(for set: TCGSet) -> String {
@@ -3903,20 +3934,20 @@ struct SetCardsView: View {
     @State private var pendingCardContextRequest: CardContextActionRequest?
     @State private var setTrendChanges: (change1d: Double?, change7d: Double?, change30d: Double?) = (nil, nil, nil)
 
-    private var ownedCardIDs: Set<String> {
-        return Set(collectionItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-    }
+    @State private var ownedCardIDs: Set<String> = []
+    @State private var ownedQuantityByCardID: [String: Int] = [:]
 
-    private var ownedQuantityByCardID: [String: Int] {
-        collectionItems.reduce(into: [:]) { result, item in
-            guard item.quantity > 0 else { return }
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            guard brand == services.brandSettings.selectedCatalogBrand else { return }
-            result[item.cardID, default: 0] += item.quantity
+    private func rebuildOwnershipCaches() {
+        let brand = services.brandSettings.selectedCatalogBrand
+        var ids = Set<String>(minimumCapacity: collectionItems.count)
+        var qty = [String: Int](minimumCapacity: collectionItems.count)
+        for item in collectionItems {
+            guard TCGBrand.inferredFromMasterCardId(item.cardID) == brand else { continue }
+            ids.insert(item.cardID)
+            if item.quantity > 0 { qty[item.cardID, default: 0] += item.quantity }
         }
+        ownedCardIDs = ids
+        ownedQuantityByCardID = qty
     }
 
     private var wishlistedCardIDs: Set<String> {
@@ -3939,8 +3970,7 @@ struct SetCardsView: View {
     }
 
     private var priceCacheTaskKey: String {
-        let ids = cards.map(\.masterCardId).joined(separator: "|")
-        return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(ids)"
+        "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(cards.count)#\(cards.first?.masterCardId ?? "")#\(cards.last?.masterCardId ?? "")"
     }
 
     private var selectedCards: [Card] {
@@ -4236,7 +4266,7 @@ struct SetCardsView: View {
             isLoading = true
             let loaded = await services.cardData.loadCards(forSetCode: set.setCode)
             cards = sortCardsByLocalIdHighestFirst(loaded)
-            ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
+            ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 12)
             isLoading = false
         }
         .task(id: priceCacheTaskKey) {
@@ -4248,6 +4278,9 @@ struct SetCardsView: View {
                 await refreshPriceCache()
             }
         }
+        .onAppear { rebuildOwnershipCaches() }
+        .onChange(of: collectionItems) { _, _ in rebuildOwnershipCaches() }
+        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, _ in rebuildOwnershipCaches() }
     }
 
     private var multiSelectActionBar: some View {
@@ -4508,24 +4541,24 @@ struct DexCardsView: View {
     @State private var filters = BrowseCardGridFilters()
     @State private var priceByCardID: [String: Double] = [:]
 
+    @State private var ownedCardIDs: Set<String> = []
+    @State private var ownedQuantityByCardID: [String: Int] = [:]
+
     private var setNameByCode: [String: String] {
         firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
     }
 
-    private var ownedCardIDs: Set<String> {
-        return Set(collectionItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
-        })
-    }
-
-    private var ownedQuantityByCardID: [String: Int] {
-        collectionItems.reduce(into: [:]) { result, item in
-            guard item.quantity > 0 else { return }
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            guard brand == services.brandSettings.selectedCatalogBrand else { return }
-            result[item.cardID, default: 0] += item.quantity
+    private func rebuildOwnershipCaches() {
+        let brand = services.brandSettings.selectedCatalogBrand
+        var ids = Set<String>(minimumCapacity: collectionItems.count)
+        var qty = [String: Int](minimumCapacity: collectionItems.count)
+        for item in collectionItems {
+            guard TCGBrand.inferredFromMasterCardId(item.cardID) == brand else { continue }
+            ids.insert(item.cardID)
+            if item.quantity > 0 { qty[item.cardID, default: 0] += item.quantity }
         }
+        ownedCardIDs = ids
+        ownedQuantityByCardID = qty
     }
 
     private var wishlistedCardIDs: Set<String> {
@@ -4548,8 +4581,7 @@ struct DexCardsView: View {
     }
 
     private var priceCacheTaskKey: String {
-        let ids = cards.map(\.masterCardId).joined(separator: "|")
-        return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(ids)"
+        "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(cards.count)#\(cards.first?.masterCardId ?? "")#\(cards.last?.masterCardId ?? "")"
     }
 
     var body: some View {
@@ -4623,7 +4655,7 @@ struct DexCardsView: View {
         .task {
             isLoading = true
             cards = await services.cardData.cards(matchingNationalDex: dexId)
-            ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
+            ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 12)
             isLoading = false
         }
         .task(id: priceCacheTaskKey) {
@@ -4635,6 +4667,9 @@ struct DexCardsView: View {
                 await refreshPriceCache()
             }
         }
+        .onAppear { rebuildOwnershipCaches() }
+        .onChange(of: collectionItems) { _, _ in rebuildOwnershipCaches() }
+        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, _ in rebuildOwnershipCaches() }
     }
 
     @MainActor
@@ -5249,9 +5284,8 @@ private func isCommonOrUncommon(_ rarity: String?) -> Bool {
         || normalized == "rare holo"
 }
 
-private func cardMatchesPokemonSubtypeFilters(_ card: Card, selectedSubtypes: Set<String>) -> Bool {
-    let selectedTokens = Set(selectedSubtypes.map(normalizedBrowseSearchText).filter { !$0.isEmpty })
-    guard !selectedTokens.isEmpty else { return true }
+private func cardMatchesPokemonSubtypeFilters(_ card: Card, precomputedSelectedTokens: Set<String>) -> Bool {
+    guard !precomputedSelectedTokens.isEmpty else { return true }
 
     let cardSubtypeTokens = Set(([card.stage, card.subtype] + (card.subtypes ?? []))
         .map(normalizedBrowseSearchText)
@@ -5262,7 +5296,7 @@ private func cardMatchesPokemonSubtypeFilters(_ card: Card, selectedSubtypes: Se
         token.replacingOccurrences(of: " ", with: "")
     }
 
-    return selectedTokens.contains { selected in
+    return precomputedSelectedTokens.contains { selected in
         let compactSelected = compact(selected)
         return cardSubtypeTokens.contains { token in
             token == selected
@@ -5287,13 +5321,43 @@ func filterBrowseCards(
     let setSeriesNameByCode = seriesNameBySetCode(from: sets)
     let normalizedWeaknessTypes = normalizedBrowseFilterTokens(filters.weaknessTypes)
     let normalizedResistanceTypes = normalizedBrowseFilterTokens(filters.resistanceTypes)
+    let normalizedSubtypeTokens = Set(filters.pokemonSubtypes.map(normalizedBrowseSearchText).filter { !$0.isEmpty })
+
+    // Pre-normalize searchable card fields once per card rather than once per comparison.
+    struct NormalizedCardFields {
+        let name: String
+        let number: String
+        let setCode: String
+        let subtype: String
+        let subtypes: [String]
+    }
+    let normalizedFields: [String: NormalizedCardFields] = normalizedQuery.isEmpty ? [:] : {
+        var dict = [String: NormalizedCardFields](minimumCapacity: cards.count)
+        for card in cards {
+            dict[card.masterCardId] = NormalizedCardFields(
+                name: normalizedBrowseSearchText(card.cardName),
+                number: normalizedBrowseSearchText(card.cardNumber),
+                setCode: normalizedBrowseSearchText(card.setCode),
+                subtype: normalizedBrowseSearchText(card.subtype),
+                subtypes: (card.subtypes ?? []).map(normalizedBrowseSearchText)
+            )
+        }
+        return dict
+    }()
+
     let filtered = cards.filter { card in
-        let matchesQuery = normalizedQuery.isEmpty
-            || normalizedBrowseSearchText(card.cardName).contains(normalizedQuery)
-            || normalizedBrowseSearchText(card.cardNumber).contains(normalizedQuery)
-            || normalizedBrowseSearchText(card.setCode).contains(normalizedQuery)
-            || normalizedBrowseSearchText(card.subtype).contains(normalizedQuery)
-            || (card.subtypes?.contains { normalizedBrowseSearchText($0).contains(normalizedQuery) } == true)
+        let matchesQuery: Bool
+        if normalizedQuery.isEmpty {
+            matchesQuery = true
+        } else if let f = normalizedFields[card.masterCardId] {
+            matchesQuery = f.name.contains(normalizedQuery)
+                || f.number.contains(normalizedQuery)
+                || f.setCode.contains(normalizedQuery)
+                || f.subtype.contains(normalizedQuery)
+                || f.subtypes.contains { $0.contains(normalizedQuery) }
+        } else {
+            matchesQuery = false
+        }
         guard matchesQuery else { return false }
 
         if cardMatchesSeriesNamesFilter(
@@ -5331,10 +5395,14 @@ func filterBrowseCards(
             return false
         }
         if filters.energyTypes.isEmpty == false {
-            let energies = Set(cardEnergyOptions([card]))
-            if energies.isDisjoint(with: filters.energyTypes) {
-                return false
+            var hasMatch = false
+            if let e = card.energyType, !e.isEmpty, filters.energyTypes.contains(e.trimmingCharacters(in: .whitespacesAndNewlines)) {
+                hasMatch = true
             }
+            if !hasMatch, let types = card.elementTypes {
+                hasMatch = types.contains { filters.energyTypes.contains($0.trimmingCharacters(in: .whitespacesAndNewlines)) }
+            }
+            if !hasMatch { return false }
         }
         if filters.rarities.isEmpty == false {
             let rarity = card.rarity?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
@@ -5361,7 +5429,7 @@ func filterBrowseCards(
             guard resolvedBrowseCardType(for: card, brand: brand) == .pokemon else {
                 return false
             }
-            guard cardMatchesPokemonSubtypeFilters(card, selectedSubtypes: filters.pokemonSubtypes) else {
+            guard cardMatchesPokemonSubtypeFilters(card, precomputedSelectedTokens: normalizedSubtypeTokens) else {
                 return false
             }
         }
