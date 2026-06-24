@@ -643,25 +643,20 @@ struct DashboardView: View {
     }
 
     private var dashboardPageOne: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 18) {
             heroSection
             valueAndHistoryCard
-
-            Spacer()
-                .frame(height: 28)
 
             collectionSummaryInsightCard
 
             if let trend = activeMarketTrend {
                 marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
-                    .padding(.top, 16)
             }
 
             if !progressTracker.targets.isEmpty {
                 progressTrackingSection
             } else {
                 progressTrackingAddButton
-                    .padding(.top, 12)
             }
 
             Spacer(minLength: 0)
@@ -791,7 +786,7 @@ struct DashboardView: View {
                     .foregroundStyle(dashboardSecondaryText.opacity(0.7))
             }
             .padding(16)
-            .glassCardStyle(cornerRadius: 16, interactive: true)
+            .dashboardClearGlassContainer(cornerRadius: 16)
             .overlay {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(tradeActionCardTint.opacity(0.25), lineWidth: 1)
@@ -826,58 +821,7 @@ struct DashboardView: View {
     private var valueAndHistoryCard: some View {
         let _ = chartRefreshID  // force re-evaluation when recalculate completes
         return VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Total Collection Value")
-                        .font(.headline)
-                        .foregroundStyle(dashboardSecondaryText)
-
-                    if (isLoadingValue || services.needsCollectionValueRecalcAfterRestore) && displayedBrandSnapshot == nil {
-                        ProgressView()
-                            .tint(services.theme.accentColor)
-                    } else if isScrubbingOrLoaded {
-                        Text(formatCurrency(displayTotal))
-                            .font(.system(size: 30, weight: .bold, design: .rounded))
-                            .foregroundStyle(dashboardPrimaryText)
-                            .contentTransition(.numericText())
-                        Text(displayValueSubtitle)
-                            .font(.caption.weight(.medium))
-                            .foregroundStyle(dashboardSecondaryText)
-                        HStack(spacing: 12) {
-                            Text("Cards \(formatCurrency(displayCardsValue))")
-                            Text("Sealed \(formatCurrency(displaySealedValue))")
-                        }
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(dashboardSecondaryText)
-                    } else {
-                        Text("No pricing data yet")
-                            .font(.headline)
-                            .foregroundStyle(dashboardSecondaryText)
-                    }
-                }
-
-                Spacer(minLength: 16)
-
-                VStack(alignment: .trailing, spacing: 6) {
-                    if let change = periodChange {
-                        Text((change.amount >= 0 ? "+" : "") + formatCurrency(change.amount))
-                            .font(.title3.weight(.bold))
-                            .foregroundStyle(change.amount >= 0 ? DashboardPalette.success : DashboardPalette.danger)
-                            .contentTransition(.numericText())
-
-                        Text(String(format: "%.1f%% %@", change.pct, change.label))
-                            .font(.caption.weight(.medium))
-                            .foregroundStyle(dashboardSecondaryText)
-                    } else if let gain = portfolioGain {
-                        Text((gain >= 0 ? "+" : "") + formatCurrency(gain))
-                            .font(.title3.weight(.bold))
-                            .foregroundStyle(portfolioGainColor)
-                        Text("all-time gain")
-                            .font(.caption.weight(.medium))
-                            .foregroundStyle(dashboardSecondaryText)
-                    }
-                }
-            }
+            dashboardValueSummary
 
             if !activePoints.isEmpty {
                 Chart(activePoints) { point in
@@ -957,6 +901,61 @@ struct DashboardView: View {
         }
     }
 
+    private var dashboardValueSummary: some View {
+        HStack(alignment: .top) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text("Total Collection Value")
+                    .font(.headline)
+                    .foregroundStyle(dashboardSecondaryText)
+
+                if (isLoadingValue || services.needsCollectionValueRecalcAfterRestore) && displayedBrandSnapshot == nil {
+                    ProgressView()
+                        .tint(services.theme.accentColor)
+                } else if isScrubbingOrLoaded {
+                    Text(formatCurrency(displayTotal))
+                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .foregroundStyle(dashboardPrimaryText)
+                        .contentTransition(.numericText())
+                    Text(displayValueSubtitle)
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(dashboardSecondaryText)
+                    HStack(spacing: 12) {
+                        Text("Cards \(formatCurrency(displayCardsValue))")
+                        Text("Sealed \(formatCurrency(displaySealedValue))")
+                    }
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(dashboardSecondaryText)
+                } else {
+                    Text("No pricing data yet")
+                        .font(.headline)
+                        .foregroundStyle(dashboardSecondaryText)
+                }
+            }
+
+            Spacer(minLength: 16)
+
+            VStack(alignment: .trailing, spacing: 6) {
+                if let change = periodChange {
+                    Text((change.amount >= 0 ? "+" : "") + formatCurrency(change.amount))
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(change.amount >= 0 ? DashboardPalette.success : DashboardPalette.danger)
+                        .contentTransition(.numericText())
+
+                    Text(String(format: "%.1f%% %@", change.pct, change.label))
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(dashboardSecondaryText)
+                } else if let gain = portfolioGain {
+                    Text((gain >= 0 ? "+" : "") + formatCurrency(gain))
+                        .font(.title3.weight(.bold))
+                        .foregroundStyle(portfolioGainColor)
+                    Text("all-time gain")
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(dashboardSecondaryText)
+                }
+            }
+        }
+    }
+
     private var collectionSummaryInsightCard: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("COLLECTION OVERVIEW")
@@ -1010,6 +1009,8 @@ struct DashboardView: View {
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
+        .padding(16)
+        .dashboardClearGlassContainer(cornerRadius: 20)
     }
 
     private func collectionOverviewStatColumn(
@@ -1101,6 +1102,8 @@ struct DashboardView: View {
                 .padding(.horizontal, -16)
             }
         }
+        .padding(16)
+        .dashboardClearGlassContainer(cornerRadius: 20)
     }
 
     private var progressTrackingAddButton: some View {
@@ -1131,6 +1134,8 @@ struct DashboardView: View {
             }
             .padding(.vertical, 6)
             .contentShape(Rectangle())
+            .padding(16)
+            .dashboardClearGlassContainer(cornerRadius: 18)
         }
         .buttonStyle(DashboardPressStyle())
     }
@@ -1150,6 +1155,8 @@ struct DashboardView: View {
                 .padding(.vertical, 2)
             }
         }
+        .padding(16)
+        .dashboardClearGlassContainer(cornerRadius: 20)
     }
 
     private func upcomingReleaseTile(_ release: UpcomingRelease) -> some View {
@@ -1244,6 +1251,8 @@ struct DashboardView: View {
                 }
             }
         }
+        .padding(16)
+        .dashboardClearGlassContainer(cornerRadius: 20)
     }
 
     private func newsUpdateRow(_ item: NewsUpdate) -> some View {
@@ -1316,6 +1325,8 @@ struct DashboardView: View {
             }
             .frame(maxWidth: .infinity, alignment: .center)
         }
+        .padding(16)
+        .dashboardClearGlassContainer(cornerRadius: 20)
     }
 
     private func marketTrendPrimaryColumn(value: Double?, label: String) -> some View {
@@ -2131,6 +2142,53 @@ private struct DashboardPressStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.985 : 1)
             .opacity(configuration.isPressed ? 0.92 : 1)
             .animation(.easeOut(duration: 0.16), value: configuration.isPressed)
+    }
+}
+
+private struct DashboardClearGlassContainerModifier: ViewModifier {
+    let cornerRadius: CGFloat
+
+    @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
+
+    private var shape: RoundedRectangle {
+        RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+    }
+
+    private var accentWash: Color {
+        services.theme.isGradientThemeSelected
+            ? services.theme.secondaryAccentColor.opacity(colorScheme == .dark ? 0.08 : 0.05)
+            : services.theme.accentColor.opacity(colorScheme == .dark ? 0.07 : 0.04)
+    }
+
+    func body(content: Content) -> some View {
+        if #available(iOS 26.0, *) {
+            content
+                .glassEffect(Glass.clear.tint(nil).interactive(), in: shape)
+                .background {
+                    shape.fill(accentWash)
+                }
+                .overlay {
+                    shape.strokeBorder(BindrGlassStyle.surfaceBorder(colorScheme), lineWidth: 1)
+                }
+        } else {
+            content
+                .background {
+                    ZStack {
+                        shape.fill(.ultraThinMaterial)
+                        shape.fill(accentWash)
+                    }
+                }
+                .overlay {
+                    shape.strokeBorder(BindrGlassStyle.surfaceBorder(colorScheme), lineWidth: 1)
+                }
+        }
+    }
+}
+
+private extension View {
+    func dashboardClearGlassContainer(cornerRadius: CGFloat) -> some View {
+        modifier(DashboardClearGlassContainerModifier(cornerRadius: cornerRadius))
     }
 }
 

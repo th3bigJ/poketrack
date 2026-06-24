@@ -231,14 +231,18 @@ struct SearchBarCircleChromeModifier: ViewModifier {
                 content
                     .frame(width: 44, height: 44)
                     .glassEffect(
-                        interactive ? Glass.clear.tint(nil).interactive() : Glass.clear.tint(nil),
+                        interactive ? Glass.regular.tint(nil).interactive() : Glass.regular.tint(nil),
                         in: Circle()
                     )
+                    .overlay {
+                        Circle()
+                            .strokeBorder(glassStroke, lineWidth: 0.5)
+                    }
                     .contentShape(Circle())
             } else {
                 content
                     .frame(width: 44, height: 44)
-                    .background(.thinMaterial, in: Circle())
+                    .background(.ultraThinMaterial, in: Circle())
                     .overlay {
                         Circle()
                             .strokeBorder(glassStroke, lineWidth: 0.5)
