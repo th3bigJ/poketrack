@@ -105,8 +105,12 @@ private final class ImageLoader {
 
             if decoded == nil {
                 do {
-                    let refreshRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
-                    let (data, response) = try await AppURLSession.images.data(for: refreshRequest)
+                    // Use returnCacheDataElseLoad so the session-level URLCache is
+                    // consulted before opening a network connection. The manual
+                    // AppURLSession.imageURLCache store below handles persistence for
+                    // responses whose HTTP headers would otherwise prevent caching.
+                    let networkRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+                    let (data, response) = try await AppURLSession.images.data(for: networkRequest)
                     guard !Task.isCancelled else { return }
                     let cachedResponse = CachedURLResponse(response: response, data: data)
                     if decodeImage(from: cachedResponse, targetSize: targetSize, scale: scale) != nil {
@@ -330,8 +334,8 @@ enum ExportImageLoader {
 
         if decoded == nil {
             do {
-                let refreshRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
-                let (data, response) = try await AppURLSession.images.data(for: refreshRequest)
+                let networkRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+                let (data, response) = try await AppURLSession.images.data(for: networkRequest)
                 let cachedResponse = CachedURLResponse(response: response, data: data)
                 if decode(data: data, targetSize: targetSize, scale: scale) != nil {
                     AppURLSession.imageURLCache.storeCachedResponse(cachedResponse, for: request)

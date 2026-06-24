@@ -19,25 +19,29 @@ struct DashboardProgressRingTile: View {
                 .lineLimit(2)
                 .minimumScaleFactor(0.85)
                 .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
 
             Text(snapshot.modeLabel)
                 .font(.caption2)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
+                .frame(maxWidth: .infinity)
 
             Text("\(snapshot.collected) / \(snapshot.total)")
                 .font(.caption2.weight(.medium))
                 .foregroundStyle(.secondary)
                 .monospacedDigit()
+                .frame(maxWidth: .infinity)
 
             Text("\(Int(snapshot.progress * 100))%")
                 .font(.system(size: 11, weight: .bold, design: .rounded))
                 .foregroundStyle(accentColor)
                 .monospacedDigit()
+                .frame(maxWidth: .infinity)
         }
         .padding(.horizontal, 14)
         .padding(.vertical, 10)
-        .frame(width: tileWidth)
+        .frame(width: tileWidth, alignment: .center)
         .contextMenu {
             if let onRemove {
                 Button(role: .destructive, action: onRemove) {

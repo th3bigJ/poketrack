@@ -59,7 +59,6 @@ struct DashboardView: View {
     private var cardNamesByID: [String: String] { cardMetadata.namesByID }
     private var setNamesByCardID: [String: String] { cardMetadata.setNamesByCardID }
     private var cardImageURLsByID: [String: URL] { cardMetadata.imageURLsByID }
-    @State private var marketTrendData: MarketTrendDailyBlob? = nil
     @State private var upcomingReleases: [UpcomingRelease] = []
     @State private var editingRecentLedgerLine: LedgerLine?
     @State private var selectedCardForDetail: Card? = nil
@@ -169,10 +168,6 @@ struct DashboardView: View {
         return displayedBrandSnapshot?.sealed ?? liveSealedGbp
     }
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
-    private var activeMarketTrend: MarketTrendMetrics? {
-        guard let marketTrendData else { return nil }
-        return marketTrendData.pokemon
-    }
 
     private var visibleCollectionItems: [CollectionItem] { cachedVisibleCollectionItems }
     private var visibleCardCollectionItems: [CollectionItem] { cachedVisibleCardCollectionItems }
@@ -329,7 +324,7 @@ struct DashboardView: View {
         return dates
     }
 
-    private var periodChange: (amount: Double, pct: Double, label: String)? {
+    private var periodChangeAmount: Double? {
         let points = cachedActivePoints
         guard points.count >= 2 else { return nil }
 
@@ -341,7 +336,6 @@ struct DashboardView: View {
             guard idx > 0 else { return nil }
             currentIndex = idx
         } else if let todayIdx = points.firstIndex(where: { cal.isDate($0.date, inSameDayAs: today) }) {
-            // Compare from today's point when present — not the last stored day before today.
             currentIndex = todayIdx
         } else {
             currentIndex = points.count - 1
@@ -352,10 +346,43 @@ struct DashboardView: View {
         let previous = points[currentIndex - 1].total
         guard previous > 0 else { return nil }
 
-        let amount = current - previous
-        let pct = (amount / previous) * 100
+        return current - previous
+    }
 
-        return (amount, pct, "vs prev day")
+    /// Reference date/value for period stats — follows chart scrubbing when active.
+    private var collectionValueReference: (date: Date, value: Double)? {
+        let points = cachedActivePoints
+        guard !points.isEmpty else { return nil }
+        let cal = Calendar.current
+        if let sel = selectedPoint {
+            return (sel.date, sel.total)
+        }
+        if let todayPoint = points.last(where: { cal.isDateInToday($0.date) }) {
+            return (todayPoint.date, todayPoint.total)
+        }
+        let last = points[points.count - 1]
+        return (last.date, last.total)
+    }
+
+    private var collectionValueChange31Days: Double? { collectionValuePercentChange(daysBack: 31) }
+    private var collectionValueChange7Days: Double? { collectionValuePercentChange(daysBack: 7) }
+    private var collectionValueChange1Day: Double? { collectionValuePercentChange(daysBack: 1) }
+
+    private func collectionValuePercentChange(daysBack: Int) -> Double? {
+        guard daysBack > 0,
+              let reference = collectionValueReference,
+              reference.value > 0 else { return nil }
+
+        let cal = Calendar.current
+        let referenceDay = cal.startOfDay(for: reference.date)
+        guard let targetDay = cal.date(byAdding: .day, value: -daysBack, to: referenceDay) else { return nil }
+
+        guard let baselinePoint = cachedActivePoints.last(where: { cal.startOfDay(for: $0.date) <= targetDay }),
+              baselinePoint.total > 0,
+              cal.startOfDay(for: baselinePoint.date) < referenceDay
+        else { return nil }
+
+        return ((reference.value - baselinePoint.total) / baselinePoint.total) * 100
     }
 
     var body: some View {
@@ -440,7 +467,6 @@ struct DashboardView: View {
             guard !services.isCatalogDownloadInProgress else { return }
             try? await Task.sleep(nanoseconds: 300_000_000)
             guard !Task.isCancelled else { return }
-            await loadMarketTrendBlob()
             await loadUpcomingReleases()
         }
         .task(id: services.dashboardMarketReloadToken) {
@@ -451,7 +477,6 @@ struct DashboardView: View {
             await reloadDashboardInventory(deferForLaunch: false)
             await computeLiveValue()
             chartRefreshID += 1
-            await loadMarketTrendBlob()
             await loadUpcomingReleases()
         }
         .task(id: "\(services.collectionInventoryRevision):\(hasFiredInitialLoadComplete)") {
@@ -578,6 +603,11 @@ struct DashboardView: View {
                     collectionItems = freshItems ?? (try? modelContext.fetch(FetchDescriptor<CollectionItem>())) ?? []
                 }
                 recomputeCollectionStats()
+                // Skip the live-value recompute when pricing hasn't been prefetched —
+                // computeLiveValue would trigger prefetchPokemonCardPricing (a full SQLite
+                // scan) on every CloudKit batch delivery. The normal launch path will
+                // compute the value once pricing is ready.
+                guard services.pricing.isAllPokemonPricingPrefetched else { return }
                 if await computeLiveValue() {
                     chartRefreshID += 1
                 }
@@ -648,10 +678,6 @@ struct DashboardView: View {
             valueAndHistoryCard
 
             collectionSummaryInsightCard
-
-            if let trend = activeMarketTrend {
-                marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
-            }
 
             if !progressTracker.targets.isEmpty {
                 progressTrackingSection
@@ -786,7 +812,7 @@ struct DashboardView: View {
                     .foregroundStyle(dashboardSecondaryText.opacity(0.7))
             }
             .padding(16)
-            .dashboardClearGlassContainer(cornerRadius: 16)
+            .glassInsetStyle(cornerRadius: 16)
             .overlay {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(tradeActionCardTint.opacity(0.25), lineWidth: 1)
@@ -822,6 +848,10 @@ struct DashboardView: View {
         let _ = chartRefreshID  // force re-evaluation when recalculate completes
         return VStack(alignment: .leading, spacing: 8) {
             dashboardValueSummary
+
+            if !activePoints.isEmpty {
+                collectionValuePeriodRow
+            }
 
             if !activePoints.isEmpty {
                 Chart(activePoints) { point in
@@ -935,15 +965,11 @@ struct DashboardView: View {
             Spacer(minLength: 16)
 
             VStack(alignment: .trailing, spacing: 6) {
-                if let change = periodChange {
-                    Text((change.amount >= 0 ? "+" : "") + formatCurrency(change.amount))
+                if let change = periodChangeAmount {
+                    Text((change >= 0 ? "+" : "") + formatCurrency(change))
                         .font(.title3.weight(.bold))
-                        .foregroundStyle(change.amount >= 0 ? DashboardPalette.success : DashboardPalette.danger)
+                        .foregroundStyle(change >= 0 ? DashboardPalette.success : DashboardPalette.danger)
                         .contentTransition(.numericText())
-
-                    Text(String(format: "%.1f%% %@", change.pct, change.label))
-                        .font(.caption.weight(.medium))
-                        .foregroundStyle(dashboardSecondaryText)
                 } else if let gain = portfolioGain {
                     Text((gain >= 0 ? "+" : "") + formatCurrency(gain))
                         .font(.title3.weight(.bold))
@@ -956,61 +982,94 @@ struct DashboardView: View {
         }
     }
 
-    private var collectionSummaryInsightCard: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("COLLECTION OVERVIEW")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(dashboardSecondaryText)
-                .tracking(0.6)
+    private var collectionValuePeriodRow: some View {
+        HStack(alignment: .center, spacing: 0) {
+            collectionValuePeriodColumn(
+                value: collectionValueChange31Days,
+                label: "Last 31 Days"
+            )
 
-            HStack(alignment: .center, spacing: 0) {
-                Button {
-                    onOpenCollection?()
-                } label: {
-                    VStack(alignment: .center, spacing: 4) {
-                        Text(formatCollectionCount(totalCardsCount))
-                            .font(.system(size: 30, weight: .bold, design: .rounded))
-                            .foregroundStyle(DashboardPalette.purple)
-                            .minimumScaleFactor(0.65)
-                            .lineLimit(1)
+            Rectangle()
+                .fill(dashboardDividerColor)
+                .frame(width: 1, height: 44)
 
-                        Text("Total Cards")
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(dashboardPrimaryText)
-                    }
-                    .frame(maxWidth: .infinity)
-                }
-                .buttonStyle(DashboardPressStyle())
-                .disabled(onOpenCollection == nil)
+            collectionValuePeriodColumn(
+                value: collectionValueChange7Days,
+                label: "7 Days"
+            )
 
-                collectionOverviewStatColumn(
-                    icon: "rectangle.stack.fill",
-                    iconColor: DashboardPalette.blue,
-                    count: uniqueCardsCount,
-                    label: "Unique",
-                    action: onOpenCollection
-                )
+            Rectangle()
+                .fill(dashboardDividerColor)
+                .frame(width: 1, height: 44)
 
-                collectionOverviewStatColumn(
-                    icon: "shippingbox.fill",
-                    iconColor: DashboardPalette.success,
-                    count: sealedProductsCount,
-                    label: "Sealed",
-                    action: onOpenSealedProducts
-                )
-
-                collectionOverviewStatColumn(
-                    icon: "star.fill",
-                    iconColor: DashboardPalette.gold,
-                    count: wishlistedCardsCount,
-                    label: "Wishlist",
-                    action: onOpenWishlist
-                )
-            }
-            .frame(maxWidth: .infinity, alignment: .center)
+            collectionValuePeriodColumn(
+                value: collectionValueChange1Day,
+                label: "1 Day"
+            )
         }
-        .padding(16)
-        .dashboardClearGlassContainer(cornerRadius: 20)
+        .frame(maxWidth: .infinity, alignment: .center)
+        .padding(.top, 2)
+    }
+
+    private func collectionValuePeriodColumn(value: Double?, label: String) -> some View {
+        VStack(alignment: .center, spacing: 4) {
+            HStack(spacing: 4) {
+                if let value, value != 0 {
+                    Image(systemName: value > 0 ? "arrow.up" : "arrow.down")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(trendColor(value))
+                }
+
+                Text(formatTrendPercent(value))
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(trendColor(value))
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(1)
+            }
+
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(dashboardSecondaryText)
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+    }
+
+    private var collectionSummaryInsightCard: some View {
+        HStack(alignment: .center, spacing: 0) {
+            collectionOverviewStatColumn(
+                icon: "square.stack.3d.up.fill",
+                iconColor: DashboardPalette.purple,
+                count: totalCardsCount,
+                label: "Cards",
+                action: onOpenCollection
+            )
+
+            collectionOverviewStatColumn(
+                icon: "rectangle.stack.fill",
+                iconColor: DashboardPalette.blue,
+                count: uniqueCardsCount,
+                label: "Unique",
+                action: onOpenCollection
+            )
+
+            collectionOverviewStatColumn(
+                icon: "shippingbox.fill",
+                iconColor: DashboardPalette.success,
+                count: sealedProductsCount,
+                label: "Sealed",
+                action: onOpenSealedProducts
+            )
+
+            collectionOverviewStatColumn(
+                icon: "star.fill",
+                iconColor: DashboardPalette.gold,
+                count: wishlistedCardsCount,
+                label: "Wishlist",
+                action: onOpenWishlist
+            )
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     private func collectionOverviewStatColumn(
@@ -1084,26 +1143,28 @@ struct DashboardView: View {
             } else {
                 GeometryReader { geo in
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20) {
-                            ForEach(progressSnapshots) { snapshot in
-                                DashboardProgressRingTile(
-                                    snapshot: snapshot,
-                                    accentColor: services.theme.accentColor
-                                ) {
-                                    progressTracker.remove(id: snapshot.targetID)
-                                    progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+                        HStack(spacing: 0) {
+                            Spacer(minLength: 0)
+                            HStack(spacing: 20) {
+                                ForEach(progressSnapshots) { snapshot in
+                                    DashboardProgressRingTile(
+                                        snapshot: snapshot,
+                                        accentColor: services.theme.accentColor
+                                    ) {
+                                        progressTracker.remove(id: snapshot.targetID)
+                                        progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+                                    }
                                 }
                             }
+                            Spacer(minLength: 0)
                         }
-                        .frame(minWidth: geo.size.width, alignment: .center)
+                        .frame(minWidth: geo.size.width)
                     }
                 }
                 .frame(height: 132)
                 .padding(.horizontal, -16)
             }
         }
-        .padding(16)
-        .dashboardClearGlassContainer(cornerRadius: 20)
     }
 
     private var progressTrackingAddButton: some View {
@@ -1134,8 +1195,6 @@ struct DashboardView: View {
             }
             .padding(.vertical, 6)
             .contentShape(Rectangle())
-            .padding(16)
-            .dashboardClearGlassContainer(cornerRadius: 18)
         }
         .buttonStyle(DashboardPressStyle())
     }
@@ -1156,7 +1215,7 @@ struct DashboardView: View {
             }
         }
         .padding(16)
-        .dashboardClearGlassContainer(cornerRadius: 20)
+        .glassInsetStyle(cornerRadius: 20)
     }
 
     private func upcomingReleaseTile(_ release: UpcomingRelease) -> some View {
@@ -1252,7 +1311,7 @@ struct DashboardView: View {
             }
         }
         .padding(16)
-        .dashboardClearGlassContainer(cornerRadius: 20)
+        .glassInsetStyle(cornerRadius: 20)
     }
 
     private func newsUpdateRow(_ item: NewsUpdate) -> some View {
@@ -1288,85 +1347,6 @@ struct DashboardView: View {
         .padding(.vertical, 10)
         .contentShape(Rectangle())
         .accessibilityElement(children: .combine)
-    }
-
-    private func marketTrendCard(trend: MarketTrendMetrics, updatedAt: Date?) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("MARKET TREND")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(dashboardSecondaryText)
-                    .tracking(0.6)
-
-                Spacer(minLength: 8)
-
-                if let updatedAt {
-                    Text(updatedAt.formatted(date: .abbreviated, time: .shortened))
-                        .font(.caption)
-                        .foregroundStyle(dashboardSecondaryText)
-                }
-            }
-
-            HStack(alignment: .center, spacing: 0) {
-                marketTrendPrimaryColumn(
-                    value: trend.change31Days,
-                    label: "Last 31 Days"
-                )
-
-                marketTrendSecondaryColumn(
-                    value: trend.change7Days,
-                    label: "7 Days"
-                )
-
-                marketTrendSecondaryColumn(
-                    value: trend.change1Day,
-                    label: "1 Day"
-                )
-            }
-            .frame(maxWidth: .infinity, alignment: .center)
-        }
-        .padding(16)
-        .dashboardClearGlassContainer(cornerRadius: 20)
-    }
-
-    private func marketTrendPrimaryColumn(value: Double?, label: String) -> some View {
-        VStack(alignment: .center, spacing: 4) {
-            Text(formatTrendPercent(value))
-                .font(.system(size: 24, weight: .bold, design: .rounded))
-                .foregroundStyle(trendColor(value))
-                .minimumScaleFactor(0.65)
-                .lineLimit(1)
-
-            Text(label)
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(dashboardPrimaryText)
-                .multilineTextAlignment(.center)
-        }
-        .frame(maxWidth: .infinity, alignment: .center)
-    }
-
-    private func marketTrendSecondaryColumn(value: Double?, label: String) -> some View {
-        VStack(alignment: .center, spacing: 4) {
-            HStack(spacing: 4) {
-                if let value, value != 0 {
-                    Image(systemName: value > 0 ? "arrow.up" : "arrow.down")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(trendColor(value))
-                }
-
-                Text(formatTrendPercent(value))
-                    .font(.headline.weight(.bold))
-                    .foregroundStyle(trendColor(value))
-                    .minimumScaleFactor(0.7)
-                    .lineLimit(1)
-            }
-
-            Text(label)
-                .font(.caption)
-                .foregroundStyle(dashboardSecondaryText)
-                .multilineTextAlignment(.center)
-        }
-        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     private var recentActivityCard: some View {
@@ -1963,18 +1943,6 @@ struct DashboardView: View {
         return "£\(String(format: "%.1fk", value / 1000))"
     }
 
-    private func loadMarketTrendBlob() async {
-        guard let data = await CatalogStore.shared.dailyBlob(key: DailyBlobKey.marketTrend) else {
-            marketTrendData = nil
-            return
-        }
-        do {
-            marketTrendData = try JSONDecoder().decode(MarketTrendDailyBlob.self, from: data)
-        } catch {
-            marketTrendData = nil
-        }
-    }
-
     private func loadUpcomingReleases() async {
         upcomingReleases = await UpcomingReleasesService.loadReleasesPreferringNetwork()
     }
@@ -2030,103 +1998,6 @@ struct DashboardView: View {
     }
 }
 
-private struct MarketTrendDailyBlob: Decodable {
-    let pokemon: MarketTrendMetrics
-    let updatedAt: Date?
-
-    private enum CodingKeys: String, CodingKey {
-        case pokemon
-        case updatedAt
-    }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        pokemon = try container.decode(MarketTrendMetrics.self, forKey: .pokemon)
-
-        if let rawUpdatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) {
-            updatedAt = Self.iso8601WithFractional.date(from: rawUpdatedAt)
-                ?? Self.iso8601Basic.date(from: rawUpdatedAt)
-        } else {
-            updatedAt = nil
-        }
-    }
-
-    private static let iso8601WithFractional: ISO8601DateFormatter = {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
-        return formatter
-    }()
-
-    private static let iso8601Basic: ISO8601DateFormatter = {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime]
-        return formatter
-    }()
-}
-
-private struct MarketTrendMetrics: Decodable {
-    let change1Day: Double?
-    let change7Days: Double?
-    let change31Days: Double?
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: AnyCodingKey.self)
-        change1Day = container.decodeDouble(forKeys: ["change1Day", "change_1_day", "change1d", "change_1d"])
-        change7Days = container.decodeDouble(forKeys: ["change7Days", "change_7_days", "change7d", "change_7d"])
-        change31Days = container.decodeDouble(forKeys: ["change31Days", "change_31_days", "change31d", "change_31d"])
-    }
-}
-
-private struct AnyCodingKey: CodingKey {
-    var stringValue: String
-    var intValue: Int?
-
-    init?(stringValue: String) {
-        self.stringValue = stringValue
-        self.intValue = nil
-    }
-
-    init?(intValue: Int) {
-        self.stringValue = String(intValue)
-        self.intValue = intValue
-    }
-}
-
-private extension KeyedDecodingContainer where K == AnyCodingKey {
-    func decodeString(forKeys keys: [String]) -> String? {
-        for key in keys {
-            guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
-            do {
-                if let value = try decodeIfPresent(String.self, forKey: codingKey),
-                   !value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    return value
-                }
-            } catch {
-                continue
-            }
-        }
-        return nil
-    }
-
-    func decodeDouble(forKeys keys: [String]) -> Double? {
-        for key in keys {
-            guard let codingKey = AnyCodingKey(stringValue: key) else { continue }
-            do {
-                if let value = try decodeIfPresent(Double.self, forKey: codingKey) {
-                    return value
-                }
-                if let stringValue = try decodeIfPresent(String.self, forKey: codingKey),
-                   let parsed = Double(stringValue) {
-                    return parsed
-                }
-            } catch {
-                continue
-            }
-        }
-        return nil
-    }
-
-}
-
 private struct ChartPoint: Identifiable {
     var id: Date { date }
     let date: Date
@@ -2142,53 +2013,6 @@ private struct DashboardPressStyle: ButtonStyle {
             .scaleEffect(configuration.isPressed ? 0.985 : 1)
             .opacity(configuration.isPressed ? 0.92 : 1)
             .animation(.easeOut(duration: 0.16), value: configuration.isPressed)
-    }
-}
-
-private struct DashboardClearGlassContainerModifier: ViewModifier {
-    let cornerRadius: CGFloat
-
-    @Environment(AppServices.self) private var services
-    @Environment(\.colorScheme) private var colorScheme
-
-    private var shape: RoundedRectangle {
-        RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-    }
-
-    private var accentWash: Color {
-        services.theme.isGradientThemeSelected
-            ? services.theme.secondaryAccentColor.opacity(colorScheme == .dark ? 0.08 : 0.05)
-            : services.theme.accentColor.opacity(colorScheme == .dark ? 0.07 : 0.04)
-    }
-
-    func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            content
-                .glassEffect(Glass.clear.tint(nil).interactive(), in: shape)
-                .background {
-                    shape.fill(accentWash)
-                }
-                .overlay {
-                    shape.strokeBorder(BindrGlassStyle.surfaceBorder(colorScheme), lineWidth: 1)
-                }
-        } else {
-            content
-                .background {
-                    ZStack {
-                        shape.fill(.ultraThinMaterial)
-                        shape.fill(accentWash)
-                    }
-                }
-                .overlay {
-                    shape.strokeBorder(BindrGlassStyle.surfaceBorder(colorScheme), lineWidth: 1)
-                }
-        }
-    }
-}
-
-private extension View {
-    func dashboardClearGlassContainer(cornerRadius: CGFloat) -> some View {
-        modifier(DashboardClearGlassContainerModifier(cornerRadius: cornerRadius))
     }
 }
 

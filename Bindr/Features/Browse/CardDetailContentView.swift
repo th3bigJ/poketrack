@@ -522,58 +522,49 @@ struct CardDetailContentView: View {
         return (raw, nil)
     }
 
-    private static let collectionGreen = Color(red: 0.12, green: 0.67, blue: 0.28)
-    private static let removeRed = Color(red: 0.88, green: 0.22, blue: 0.24)
     private static let wishlistGold = Color(red: 0.98, green: 0.78, blue: 0.18)
 
-      /// Remove appears when the card is already in the collection; add stays available for extra copies.
+    /// Remove appears when the card is already in the collection; add stays available for extra copies.
     @ViewBuilder
     private func actionBar(
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
     ) -> some View {
         let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-        HStack(spacing: 10) {
+        HStack(spacing: 28) {
             if let addToDeckAction {
-                labeledActionButton(
-                    title: "Add to Deck",
+                glassCircleActionButton(
+                    accessibilityLabel: "Add to deck",
                     systemImage: "plus",
-                    tint: services.theme.chartAccentColor,
-                    filled: true,
                     action: {
                         addToDeckAction(card, preferredVariantKey, 1)
                         Haptics.lightImpact()
                     }
                 )
             } else if showsCollectionActions {
-                addToCollectionLabeledButton(isOwned: owned)
+                addToCollectionGlassButton(isOwned: owned)
 
                 if owned {
-                    labeledActionButton(
-                        title: "Remove",
+                    glassCircleActionButton(
+                        accessibilityLabel: "Remove from collection",
                         systemImage: "minus",
-                        tint: Self.removeRed,
-                        filled: false,
                         action: actions.onRemoveFromCollection
                     )
                 }
             }
 
             if showsWishlistAction {
-                labeledActionButton(
-                    title: "Wish List",
+                glassCircleActionButton(
+                    accessibilityLabel: isWishlisted ? "Remove from wish list" : "Add to wish list",
                     systemImage: isWishlisted ? "star.fill" : "star",
-                    tint: isWishlisted ? Self.wishlistGold : .primary,
-                    filled: isWishlisted,
+                    foreground: isWishlisted ? Self.wishlistGold : .primary,
                     action: actions.onToggleWishlist
                 )
             }
 
-            labeledActionButton(
-                title: "Share",
+            glassCircleActionButton(
+                accessibilityLabel: "Share",
                 systemImage: "square.and.arrow.up",
-                tint: Color(red: 0.36, green: 0.61, blue: 0.97),
-                filled: false,
                 action: actions.onShare
             )
         }
@@ -581,8 +572,7 @@ struct CardDetailContentView: View {
     }
 
     @ViewBuilder
-    private func addToCollectionLabeledButton(isOwned: Bool) -> some View {
-        let title = isOwned ? "Add" : "Add"
+    private func addToCollectionGlassButton(isOwned: Bool) -> some View {
         let label = isOwned ? "Add copy to collection" : "Add to collection"
         if availableVariantKeys.count > 1 {
             Menu {
@@ -592,65 +582,39 @@ struct CardDetailContentView: View {
                     }
                 }
             } label: {
-                labeledActionLabel(
-                    title: title,
-                    systemImage: "plus",
-                    tint: Self.collectionGreen,
-                    filled: true
-                )
+                glassCircleActionLabel(systemImage: "plus")
             }
             .accessibilityLabel(label)
         } else {
-            labeledActionButton(
-                title: title,
+            glassCircleActionButton(
+                accessibilityLabel: label,
                 systemImage: "plus",
-                tint: Self.collectionGreen,
-                filled: true,
                 action: { actions.onAddToCollection(preferredVariantKey) }
             )
         }
     }
 
-    private func labeledActionButton(
-        title: String,
+    private func glassCircleActionButton(
+        accessibilityLabel: String,
         systemImage: String,
-        tint: Color,
-        filled: Bool,
+        foreground: Color = .primary,
         action: @escaping () -> Void
     ) -> some View {
-        Button(action: action) {
-            labeledActionLabel(title: title, systemImage: systemImage, tint: tint, filled: filled)
+        ChromeGlassCircleButton(accessibilityLabel: accessibilityLabel, action: action) {
+            Image(systemName: systemImage)
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(foreground)
         }
-        .buttonStyle(.plain)
     }
 
-    private func labeledActionLabel(
-        title: String,
+    private func glassCircleActionLabel(
         systemImage: String,
-        tint: Color,
-        filled: Bool
+        foreground: Color = .primary
     ) -> some View {
-        VStack(spacing: 5) {
-            Image(systemName: systemImage)
-                .font(.system(size: 16, weight: .bold))
-                .foregroundStyle(filled ? Color.white : tint)
-                .frame(width: 44, height: 44)
-                .background(
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .fill(filled ? tint : tint.opacity(0.12))
-                )
-                .overlay(
-                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                        .stroke(tint.opacity(filled ? 0 : 0.30), lineWidth: 1)
-                )
-
-            Text(title)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.8)
-        }
-        .frame(maxWidth: .infinity)
+        Image(systemName: systemImage)
+            .font(.system(size: 17, weight: .semibold))
+            .foregroundStyle(foreground)
+            .modifier(ChromeGlassCircleGlyphModifier())
     }
 
     private var detailsSection: some View {
