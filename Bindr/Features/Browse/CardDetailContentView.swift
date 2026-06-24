@@ -65,13 +65,11 @@ struct CardDetailContentView: View {
     let directTradeContext: CardTradeContext?
     let actions: CardDetailContentActions
 
+    @State private var scrollOffset: CGFloat = 0
+    @State private var didSnapToDetails = false
 
-
-    private var hasStats: Bool {
-        card.hp != nil || !cleanedTypes(card.elementTypes).isEmpty || card.weakness != nil || card.resistance != nil || card.retreatCost != nil
-    }
-
-
+    private let snapThreshold: CGFloat = 140
+    private let compactHeaderThreshold: CGFloat = 72
 
     private func groupedHoldings(
         collectionItems: [CollectionItem],
@@ -125,46 +123,100 @@ struct CardDetailContentView: View {
         GeometryReader { geo in
             let contentWidth = geo.size.width - 32
             let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-            ScrollView {
-                VStack(alignment: .leading, spacing: 6) {
-                    navigationChrome
-                    heroSection(
-                        contentWidth: contentWidth,
-                        collectionItems: collectionItems,
-                        ledgerLines: ledgerLines
-                    )
+            let collapseProgress = min(1, max(0, scrollOffset / snapThreshold))
 
-                    CardPricingPanel(
-                        card: card,
-                        useGlass: true,
-                        chartHeight: chartHeight(contentWidth: contentWidth, viewportHeight: geo.size.height),
-                        chartAccent: resolvedTypeAccent
-                    )
+            ScrollViewReader { scrollProxy in
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 14) {
+                        ScrollOffsetAnchor { offset in
+                            scrollOffset = offset
+                            if offset < snapThreshold * 0.35 {
+                                didSnapToDetails = false
+                            }
+                        }
 
-                    if owned {
-                        sectionDivider
-                        collectionSection(collectionItems: collectionItems, ledgerLines: ledgerLines)
-                    }
-
-                    sectionDivider
-                    ebayRow
-
-                    if addToDeckAction == nil {
-                        sectionDivider
-                        CardFriendTradeMatchesSection(
-                            card: card,
-                            directContext: directTradeContext,
-                            maximumMatches: 1
+                        largeHeroSection(
+                            contentWidth: contentWidth,
+                            collapseProgress: collapseProgress,
+                            collectionItems: collectionItems,
+                            ledgerLines: ledgerLines
                         )
+
+                        CardPricingPanel(
+                            card: card,
+                            useGlass: true,
+                            chartHeight: chartHeight(contentWidth: contentWidth, viewportHeight: geo.size.height),
+                            chartAccent: resolvedTypeAccent
+                        )
+                        .opacity(Double(max(0, 1 - collapseProgress * 1.2)))
+
+                        if collapseProgress < 0.45 {
+                            swipeUpHint
+                        }
+
+                        Color.clear
+                            .frame(height: 1)
+                            .id("detailsSnap")
+
+                        sectionDivider
+                        expandedDetailsGrid
+
+                        if owned {
+                            sectionDivider
+                            collectionSection(collectionItems: collectionItems, ledgerLines: ledgerLines)
+                        }
+
+                        sectionDivider
+                        CardMarketVariantsSection(card: card, availableVariantKeys: availableVariantKeys)
+
+                        sectionDivider
+                        footerLinksSection
+
+                        if addToDeckAction == nil {
+                            sectionDivider
+                            CardFriendTradeMatchesSection(
+                                card: card,
+                                directContext: directTradeContext,
+                                maximumMatches: 1
+                            )
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 32)
+                }
+                .coordinateSpace(name: "cardDetailScroll")
+                .scrollIndicators(.hidden)
+                .scrollContentBackground(.hidden)
+                .overlay(alignment: .top) { dragPill }
+                .safeAreaInset(edge: .top, spacing: 0) {
+                    VStack(spacing: 8) {
+                        navigationChrome
+                            .padding(.horizontal, 16)
+
+                        if scrollOffset > compactHeaderThreshold {
+                            compactStickyHeader(collapseProgress: collapseProgress)
+                                .padding(.horizontal, 16)
+                                .transition(.move(edge: .top).combined(with: .opacity))
+                        }
+                    }
+                    .padding(.bottom, 8)
+                    .background {
+                        Rectangle()
+                            .fill(.ultraThinMaterial)
+                            .ignoresSafeArea(edges: .top)
                     }
                 }
-                .padding(.horizontal, 16)
-                .padding(.top, 14)
-                .padding(.bottom, 8)
+                .animation(.spring(response: 0.34, dampingFraction: 0.86), value: scrollOffset > compactHeaderThreshold)
+                .onChange(of: scrollOffset) { _, offset in
+                    guard !didSnapToDetails else { return }
+                    if offset > 48, offset < snapThreshold {
+                        didSnapToDetails = true
+                        withAnimation(.spring(response: 0.38, dampingFraction: 0.88)) {
+                            scrollProxy.scrollTo("detailsSnap", anchor: .top)
+                        }
+                    }
+                }
             }
-            .scrollIndicators(.hidden)
-            .scrollContentBackground(.hidden)
-            .overlay(alignment: .top) { dragPill }
         }
         .background(.clear)
     }
@@ -198,66 +250,74 @@ struct CardDetailContentView: View {
     /// Shortens the chart so the hero image, price and chart land on one screen.
     private func chartHeight(contentWidth: CGFloat, viewportHeight: CGFloat) -> CGFloat {
         guard viewportHeight > 0 else { return 180 }
-        let imageWidth = max(0, (contentWidth - 16) * 0.5)
-        let heroHeight = imageWidth * 7.0 / 5.0
-        // Reserve room for the price block, range picker and inter-section spacing.
-        let reserved: CGFloat = heroHeight + 248
-        return min(130, max(100, viewportHeight - reserved))
+        let imageWidth = min(contentWidth * 0.52, 240)
+        let heroHeight = imageWidth * 7.0 / 5.0 + 88
+        let reserved: CGFloat = heroHeight + 220
+        return min(150, max(110, viewportHeight - reserved))
     }
 
     private var navigationChrome: some View {
-        HStack(spacing: 8) {
-            Text(card.cardName)
-                .font(.system(size: 22, weight: .bold, design: .rounded))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .accessibilityAddTraits(.isHeader)
-
-            if showsWishlistAction {
-                detailCircleButton(
-                    systemImage: isWishlisted ? "star.fill" : "star",
-                    accessibilityLabel: isWishlisted ? "Remove from wishlist" : "Add to wishlist",
-                    foreground: isWishlisted ? Self.wishlistGold : .primary,
-                    action: actions.onToggleWishlist
-                )
-            }
-
-            detailCircleButton(
-                systemImage: "square.and.arrow.up",
-                accessibilityLabel: "Share card",
-                action: actions.onShare
-            )
-        }
-        .frame(height: 42)
+        Text(card.cardName)
+            .font(.system(size: 22, weight: .bold, design: .rounded))
+            .foregroundStyle(.primary)
+            .lineLimit(1)
+            .minimumScaleFactor(0.7)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(height: 42)
+            .accessibilityAddTraits(.isHeader)
     }
 
-    private func heroSection(
+    private var swipeUpHint: some View {
+        VStack(spacing: 8) {
+            Capsule(style: .continuous)
+                .fill(Color.primary.opacity(colorScheme == .dark ? 0.22 : 0.14))
+                .frame(width: 42, height: 4)
+            Text("Swipe up for details")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.top, 4)
+        .padding(.bottom, 8)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel("Swipe up for details")
+    }
+
+    private func compactStickyHeader(collapseProgress: CGFloat) -> some View {
+        HStack(alignment: .center, spacing: 12) {
+            cardImage(width: 56)
+                .scaleEffect(0.92 + (collapseProgress * 0.08))
+
+            CardPricingPanel(
+                card: card,
+                useGlass: true,
+                showsChart: false,
+                chartAccent: resolvedTypeAccent
+            )
+            .padding(.vertical, -4)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func largeHeroSection(
         contentWidth: CGFloat,
+        collapseProgress: CGFloat,
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
     ) -> some View {
-        let spacing: CGFloat = 16
-        let imageWidth = max(0, (contentWidth - spacing) * 0.5)
-        let imageHeight = imageWidth * 7.0 / 5.0
-        return HStack(alignment: .top, spacing: spacing) {
-            cardImage(width: imageWidth)
+        let largeWidth = min(contentWidth * 0.52, 240)
+        let scale = max(0.72, 1 - (collapseProgress * 0.28))
+        return VStack(spacing: 16) {
+            cardImage(width: largeWidth)
+                .frame(maxWidth: .infinity)
+                .scaleEffect(scale)
+                .opacity(Double(max(0.15, 1 - collapseProgress)))
 
-            VStack(alignment: .leading, spacing: 10) {
-                titleBlock
-                
-                if hasStats {
-                    primaryStatsContainer
-                    secondaryStatsContainer
-                }
-                
-                actionBar(collectionItems: collectionItems, ledgerLines: ledgerLines)
-            }
-            .frame(minHeight: imageHeight, alignment: .top)
-            .frame(maxWidth: .infinity, alignment: .leading)
+            actionBar(collectionItems: collectionItems, ledgerLines: ledgerLines)
+                .opacity(Double(max(0, 1 - collapseProgress * 1.1)))
         }
-        .frame(maxWidth: .infinity)
+        .padding(.top, 4)
+        .animation(.spring(response: 0.34, dampingFraction: 0.88), value: collapseProgress)
     }
 
     private func cardImage(width: CGFloat) -> some View {
@@ -289,159 +349,153 @@ struct CardDetailContentView: View {
         .frame(width: width)
     }
 
+    private var expandedDetailsGrid: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Card Details")
+                .font(.headline)
+                .foregroundStyle(.primary)
+
+            LazyVGrid(
+                columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 4),
+                spacing: 10
+            ) {
+                ForEach(expandedDetailFacts, id: \.0) { fact in
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(fact.0)
+                            .font(.caption.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.8)
+                        detailFactValue(label: fact.0, value: fact.1)
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 54, alignment: .topLeading)
+                    .padding(10)
+                    .glassInsetStyle(cornerRadius: 14)
+                }
+            }
+        }
+    }
+
+    private var expandedDetailFacts: [(String, String)] {
+        var output: [(String, String)] = []
+        appendFact("Number", cleaned(card.printedNumber).map { "#\($0)" } ?? cleaned(card.cardNumber).map { "#\($0)" }, to: &output)
+        appendFact("HP", card.hp.map(String.init), to: &output)
+        appendFact("Rarity", cleaned(card.rarity), to: &output)
+        appendFact("Weakness", cleaned(card.weakness), to: &output)
+        appendFact("Set Name", cleaned(set?.name), to: &output)
+        appendFact("Resistance", cleaned(card.resistance), to: &output)
+        appendFact("Type", cleanedList(card.elementTypes), to: &output)
+        appendFact("Retreat Cost", card.retreatCost.map(String.init), to: &output)
+        return output
+    }
+
     @ViewBuilder
-    private var titleBlock: some View {
-        let number = cleaned(card.printedNumber) ?? cleaned(card.cardNumber)
-        let rarity = cleaned(card.rarity)
-
-        VStack(alignment: .leading, spacing: 8) {
-            if let set {
-                SetLogoAsyncImage(
-                    logoSrc: set.logoSrc,
-                    height: 34,
-                    brand: TCGBrand.inferredFromMasterCardId(card.masterCardId),
-                    alignment: .center
-                )
-                .frame(height: 40)
-                .accessibilityLabel(set.name)
-            }
-
-            if number != nil || rarity != nil {
-                HStack(alignment: .center, spacing: 8) {
-                    if let number {
-                        Text("#\(number)")
-                            .font(.footnote.weight(.semibold))
-                            .foregroundStyle(.secondary)
-                    }
-                    if let rarity {
-                        Text(rarity.uppercased())
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundStyle(.secondary)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 3)
-                            .background(
-                                Capsule()
-                                    .fill(Color.primary.opacity(colorScheme == .dark ? 0.12 : 0.08))
-                            )
+    private func detailFactValue(label: String, value: String) -> some View {
+        switch label {
+        case "Type":
+            let types = cleanedTypes(card.elementTypes)
+            if types.isEmpty {
+                Text("—")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+            } else {
+                HStack(spacing: 4) {
+                    ForEach(Array(types.prefix(2)), id: \.self) { type in
+                        PokemonTypeBadge(type: type, size: 18)
                     }
                 }
             }
-
-            if let artist = cleaned(card.artist) {
-                Text("Illus. \(artist)")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
+        case "Weakness", "Resistance":
+            if let parsed = parseAffinity(value) {
+                HStack(spacing: 4) {
+                    PokemonTypeBadge(type: parsed.type, size: 18)
+                    if let modifier = parsed.modifier {
+                        Text(modifier)
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(.primary)
+                    }
+                }
+            } else {
+                Text(value)
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
                     .lineLimit(2)
-                    .minimumScaleFactor(0.85)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .minimumScaleFactor(0.8)
+            }
+        default:
+            Text(value)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.primary)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
+        }
+    }
+
+    private var footerLinksSection: some View {
+        VStack(spacing: 0) {
+            footerLinkRow(
+                title: "View on eBay",
+                subtitle: "See latest listings and sold items",
+                systemImage: "bag",
+                tint: Color(red: 0.89, green: 0.15, blue: 0.13),
+                action: actions.onOpenEbay
+            )
+            sectionDivider
+            footerLinkRow(
+                title: "Recent Sales",
+                subtitle: "Browse completed eBay sales",
+                systemImage: "clock.arrow.circlepath",
+                tint: services.theme.chartAccentColor,
+                action: actions.onOpenEbay
+            )
+            if let onOpenSet = actions.onOpenSet {
+                sectionDivider
+                footerLinkRow(
+                    title: "Set Information",
+                    subtitle: cleaned(set?.name) ?? card.setCode,
+                    systemImage: "square.stack.3d.up",
+                    tint: Color(red: 0.36, green: 0.61, blue: 0.97),
+                    action: onOpenSet
+                )
             }
         }
     }
 
-    private var primaryStatsContainer: some View {
-        VStack(spacing: 6) {
-            HStack(spacing: 0) {
-                Text("HP")
-                    .font(.caption2.weight(.bold))
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text("Type")
-                    .font(.caption2.weight(.bold))
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text("Weak.")
-                    .font(.caption2.weight(.bold))
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            
-            HStack(spacing: 0) {
-                Text(card.hp.map(String.init) ?? "—")
-                    .font(.subheadline.weight(.bold))
-                    .foregroundStyle(.primary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                HStack(spacing: 4) {
-                    let types = cleanedTypes(card.elementTypes)
-                    if types.isEmpty {
-                        Text("—")
-                            .font(.subheadline.weight(.bold))
-                            .foregroundStyle(.primary)
-                    } else {
-                        ForEach(Array(types.prefix(2)), id: \.self) { type in
-                            PokemonTypeBadge(type: type, size: 20)
-                        }
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                HStack(spacing: 4) {
-                    if let parsed = parseAffinity(card.weakness) {
-                        PokemonTypeBadge(type: parsed.type, size: 20)
-                        if let modifier = parsed.modifier {
-                            Text(modifier)
-                                .font(.subheadline.weight(.bold))
-                                .foregroundStyle(.primary)
-                        }
-                    } else {
-                        Text("—")
-                            .font(.subheadline.weight(.bold))
-                            .foregroundStyle(.primary)
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-            }
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.06))
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-    }
+    private func footerLinkRow(
+        title: String,
+        subtitle: String,
+        systemImage: String,
+        tint: Color,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                Image(systemName: systemImage)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(tint)
+                    .frame(width: 34, height: 34)
+                    .background(tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
 
-    private var secondaryStatsContainer: some View {
-        VStack(spacing: 6) {
-            HStack(spacing: 0) {
-                Text("Resistance")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text("Retreat")
-                    .font(.caption.weight(.bold))
-                    .foregroundStyle(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            
-            HStack(spacing: 0) {
-                HStack(spacing: 4) {
-                    if let parsed = parseAffinity(card.resistance) {
-                        PokemonTypeBadge(type: parsed.type, size: 20)
-                        if let modifier = parsed.modifier {
-                            Text(modifier)
-                                .font(.subheadline.weight(.bold))
-                                .foregroundStyle(.primary)
-                        }
-                    } else {
-                        Text("—")
-                            .font(.subheadline.weight(.bold))
-                            .foregroundStyle(.primary)
-                    }
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(title)
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.primary)
+                    Text(subtitle)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text(card.retreatCost.map(String.init) ?? "—")
-                    .font(.subheadline.weight(.bold))
-                    .foregroundStyle(.primary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+
+                Spacer(minLength: 0)
+
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.tertiary)
             }
+            .padding(.vertical, 10)
+            .contentShape(Rectangle())
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.06))
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .buttonStyle(.plain)
     }
 
 
@@ -479,34 +533,56 @@ struct CardDetailContentView: View {
         ledgerLines: [LedgerLine]
     ) -> some View {
         let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-        HStack(spacing: 8) {
+        HStack(spacing: 10) {
             if let addToDeckAction {
-                Button {
-                    addToDeckAction(card, preferredVariantKey, 1)
-                    Haptics.lightImpact()
-                } label: {
-                    iconActionLabel(systemImage: "plus", tint: services.theme.chartAccentColor, filled: true)
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Add to deck")
+                labeledActionButton(
+                    title: "Add to Deck",
+                    systemImage: "plus",
+                    tint: services.theme.chartAccentColor,
+                    filled: true,
+                    action: {
+                        addToDeckAction(card, preferredVariantKey, 1)
+                        Haptics.lightImpact()
+                    }
+                )
             } else if showsCollectionActions {
-                addToCollectionButton(isOwned: owned)
+                addToCollectionLabeledButton(isOwned: owned)
 
                 if owned {
-                    Button {
-                        actions.onRemoveFromCollection()
-                    } label: {
-                        iconActionLabel(systemImage: "minus", tint: Self.removeRed, filled: false)
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityLabel("Remove from collection")
+                    labeledActionButton(
+                        title: "Remove",
+                        systemImage: "minus",
+                        tint: Self.removeRed,
+                        filled: false,
+                        action: actions.onRemoveFromCollection
+                    )
                 }
             }
+
+            if showsWishlistAction {
+                labeledActionButton(
+                    title: "Wish List",
+                    systemImage: isWishlisted ? "star.fill" : "star",
+                    tint: isWishlisted ? Self.wishlistGold : .primary,
+                    filled: isWishlisted,
+                    action: actions.onToggleWishlist
+                )
+            }
+
+            labeledActionButton(
+                title: "Share",
+                systemImage: "square.and.arrow.up",
+                tint: Color(red: 0.36, green: 0.61, blue: 0.97),
+                filled: false,
+                action: actions.onShare
+            )
         }
+        .frame(maxWidth: .infinity)
     }
 
     @ViewBuilder
-    private func addToCollectionButton(isOwned: Bool) -> some View {
+    private func addToCollectionLabeledButton(isOwned: Bool) -> some View {
+        let title = isOwned ? "Add" : "Add"
         let label = isOwned ? "Add copy to collection" : "Add to collection"
         if availableVariantKeys.count > 1 {
             Menu {
@@ -516,50 +592,65 @@ struct CardDetailContentView: View {
                     }
                 }
             } label: {
-                iconActionLabel(systemImage: "plus", tint: Self.collectionGreen, filled: true)
+                labeledActionLabel(
+                    title: title,
+                    systemImage: "plus",
+                    tint: Self.collectionGreen,
+                    filled: true
+                )
             }
             .accessibilityLabel(label)
         } else {
-            Button {
-                actions.onAddToCollection(preferredVariantKey)
-            } label: {
-                iconActionLabel(systemImage: "plus", tint: Self.collectionGreen, filled: true)
-            }
-            .buttonStyle(.plain)
-            .accessibilityLabel(label)
+            labeledActionButton(
+                title: title,
+                systemImage: "plus",
+                tint: Self.collectionGreen,
+                filled: true,
+                action: { actions.onAddToCollection(preferredVariantKey) }
+            )
         }
     }
 
-    private func detailCircleButton(
+    private func labeledActionButton(
+        title: String,
         systemImage: String,
-        accessibilityLabel: String,
-        foreground: Color = .primary,
+        tint: Color,
+        filled: Bool,
         action: @escaping () -> Void
     ) -> some View {
-        ChromeGlassCircleButton(accessibilityLabel: accessibilityLabel, action: action) {
-            Image(systemName: systemImage)
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(foreground)
+        Button(action: action) {
+            labeledActionLabel(title: title, systemImage: systemImage, tint: tint, filled: filled)
         }
+        .buttonStyle(.plain)
     }
 
-    private func iconActionLabel(
+    private func labeledActionLabel(
+        title: String,
         systemImage: String,
         tint: Color,
         filled: Bool
     ) -> some View {
-        Image(systemName: systemImage)
-            .font(.system(size: 16, weight: .bold))
-            .foregroundStyle(filled ? Color.white : tint)
-            .frame(width: 44, height: 44)
-            .background(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(filled ? tint : tint.opacity(0.12))
-            )
-            .overlay(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(tint.opacity(filled ? 0 : 0.30), lineWidth: 1)
-            )
+        VStack(spacing: 5) {
+            Image(systemName: systemImage)
+                .font(.system(size: 16, weight: .bold))
+                .foregroundStyle(filled ? Color.white : tint)
+                .frame(width: 44, height: 44)
+                .background(
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .fill(filled ? tint : tint.opacity(0.12))
+                )
+                .overlay(
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .stroke(tint.opacity(filled ? 0 : 0.30), lineWidth: 1)
+                )
+
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+        }
+        .frame(maxWidth: .infinity)
     }
 
     private var detailsSection: some View {
@@ -627,10 +718,31 @@ struct CardDetailContentView: View {
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
     ) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 10) {
             Text("Your Collection")
-                .font(.caption)
-                .foregroundStyle(.secondary)
+                .font(.headline)
+                .foregroundStyle(.primary)
+
+            HStack(spacing: 12) {
+                Text("Variant")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text("Qty")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .frame(width: 36, alignment: .leading)
+                Text("Paid")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Text("Added")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Color.clear.frame(width: 12)
+            }
+            .padding(.horizontal, 4)
 
             ForEach(groupedHoldings(collectionItems: collectionItems, ledgerLines: ledgerLines)) { group in
                 let primaryLine = group.lines.first
@@ -641,24 +753,34 @@ struct CardDetailContentView: View {
                 } label: {
                     HStack(spacing: 12) {
                         Text(variantTitle(group.variantKey))
-                            .font(.caption.weight(.bold))
-                            .foregroundStyle(services.theme.chartAccentColor)
-                            .padding(.horizontal, 10)
-                            .padding(.vertical, 4)
-                            .background(services.theme.chartAccentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 9))
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.primary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .lineLimit(1)
 
-                        collectionValue(label: "Qty", value: "\(group.totalQuantity)")
-                        collectionValue(label: "Paid", value: primaryLine?.priceText ?? "—")
-                        collectionValue(
-                            label: "Added",
-                            value: primaryLine?.date.formatted(date: .abbreviated, time: .omitted) ?? "—"
-                        )
+                        Text("\(group.totalQuantity)")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.primary)
+                            .frame(width: 36, alignment: .leading)
+
+                        Text(primaryLine?.priceText ?? "—")
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(.primary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .lineLimit(1)
+
+                        Text(primaryLine?.date.formatted(date: .abbreviated, time: .omitted) ?? "—")
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .lineLimit(1)
 
                         Image(systemName: "chevron.right")
                             .font(.caption.weight(.semibold))
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(.tertiary)
                     }
-                    .padding(.vertical, 4)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 4)
                     .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
@@ -666,95 +788,10 @@ struct CardDetailContentView: View {
         }
     }
 
-    private var ebayRow: some View {
-        Button {
-            actions.onOpenEbay()
-        } label: {
-            HStack(spacing: 10) {
-                ebayWordmark
-                VStack(alignment: .leading, spacing: 1) {
-                    Text("View on eBay")
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.primary)
-                    Text("See latest listings and sold items")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                Spacer()
-                Image(systemName: "arrow.up.right")
-                    .foregroundStyle(.secondary)
-            }
-            .padding(.vertical, 6)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-    }
-
-    private func fullWidthActionLabel(
-        title: String,
-        systemImage: String,
-        tint: Color,
-        filled: Bool
-    ) -> some View {
-        Label(title, systemImage: systemImage)
-            .font(.subheadline.weight(.semibold))
-            .lineLimit(1)
-            .minimumScaleFactor(0.8)
-            .foregroundStyle(filled ? Color.white : tint)
-            .frame(maxWidth: .infinity)
-            .frame(height: 44)
-            .background(filled ? tint : tint.opacity(0.12), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-    }
-
-    private func statColumn(title: String, value: String) -> some View {
-        VStack(spacing: 2) {
-            Text(title)
-                .font(.caption)
-                .foregroundStyle(title == "HP" ? Color.red : .secondary)
-            Text(value)
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.65)
-        }
-        .frame(maxWidth: .infinity)
-    }
-
-    private var statDivider: some View {
-        Rectangle()
-            .fill(Color.primary.opacity(0.10))
-            .frame(width: 1, height: 38)
-    }
-
-    private func collectionValue(label: String, value: String) -> some View {
-        VStack(alignment: .leading, spacing: 3) {
-            Text(label)
-                .font(.caption)
-                .foregroundStyle(.secondary)
-            Text(value)
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-    }
-
     private func detailSectionTitle(_ title: String) -> some View {
         Text(title)
             .font(.headline)
             .foregroundStyle(.primary)
-    }
-
-    private var ebayWordmark: some View {
-        HStack(spacing: 0) {
-            Text("e").foregroundStyle(Color(red: 0.89, green: 0.15, blue: 0.13))
-            Text("B").foregroundStyle(Color(red: 0.00, green: 0.38, blue: 0.75))
-            Text("a").foregroundStyle(Color(red: 0.97, green: 0.74, blue: 0.06))
-            Text("y").foregroundStyle(Color(red: 0.44, green: 0.68, blue: 0.11))
-        }
-        .font(.system(size: 20, weight: .bold, design: .rounded))
-        .frame(width: 74, alignment: .leading)
     }
 
     private func variantTitle(_ key: String) -> String {
@@ -781,6 +818,109 @@ struct CardDetailContentView: View {
 
     private func appendFact(_ label: String, _ value: String?, to output: inout [(String, String)]) {
         if let value { output.append((label, value)) }
+    }
+}
+
+// MARK: - Market variants
+
+private struct CardMarketVariantsSection: View {
+    @Environment(AppServices.self) private var services
+
+    let card: Card
+    let availableVariantKeys: [String]
+
+    private struct VariantRow: Identifiable {
+        let id: String
+        let title: String
+        var price: String
+    }
+
+    @State private var rows: [VariantRow] = []
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Market Variants")
+                .font(.headline)
+                .foregroundStyle(.primary)
+
+            if rows.isEmpty {
+                Text("No variant pricing available")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                    .padding(.vertical, 8)
+            } else {
+                ForEach(rows) { row in
+                    HStack(spacing: 12) {
+                        Text(row.title)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.primary)
+                        Spacer(minLength: 0)
+                        Text(row.price)
+                            .font(.subheadline.weight(.bold))
+                            .foregroundStyle(.primary)
+                    }
+                    .padding(.vertical, 8)
+                }
+            }
+        }
+        .task(id: card.masterCardId) {
+            await loadRows()
+        }
+    }
+
+    private func loadRows() async {
+        var keys = availableVariantKeys.filter { $0 != "default" }
+        if keys.isEmpty {
+            keys = await services.pricing.variantKeys(for: card).filter { $0 != "default" }
+        }
+
+        var loaded: [VariantRow] = []
+        for key in keys {
+            let display = variantDisplayName(key)
+            var priceText = "—"
+            if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: key, grade: "raw") {
+                priceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
+            } else if let usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: key, grade: "raw") {
+                priceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
+            }
+            loaded.append(VariantRow(id: key, title: display, price: priceText))
+        }
+
+        let gradeOrder = ["psa10", "ace10"]
+        for grade in gradeOrder {
+            guard let variant = keys.first else { continue }
+            let title = gradeDisplayName(grade)
+            var priceText = "—"
+            if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: variant, grade: grade) {
+                priceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
+            } else if let usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: variant, grade: grade) {
+                priceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
+            }
+            if priceText != "—" {
+                loaded.append(VariantRow(id: "\(variant)-\(grade)", title: "Graded \(title)", price: priceText))
+            }
+        }
+
+        rows = loaded
+    }
+
+    private func variantDisplayName(_ key: String) -> String {
+        let spaced = key
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
+    }
+
+    private func gradeDisplayName(_ key: String) -> String {
+        switch key {
+        case "raw": return "Raw"
+        case "psa10": return "PSA 10"
+        case "ace10": return "ACE 10"
+        default: return key.uppercased()
+        }
     }
 }
 

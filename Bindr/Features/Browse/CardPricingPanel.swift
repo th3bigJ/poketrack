@@ -30,6 +30,8 @@ struct CardPricingPanel: View {
     /// Fixed chart height. When nil, the chart expands to fill available vertical space
     /// (used by the one-screen card detail layout).
     var chartHeight: CGFloat? = 220
+    /// When false, only the market-price headline row is shown (compact sticky header).
+    var showsChart: Bool = true
     /// Card-type accent supplied by the detail screen. Falls back to the active app theme.
     var chartAccent: Color? = nil
     /// Changing this value forces the panel to reload pricing (e.g. the detail footer's refresh button).
@@ -192,15 +194,17 @@ struct CardPricingPanel: View {
                 variantAndGradeMenu
             }
 
-            if !resolvedChart.points.isEmpty {
-                chartRangePicker
-                chartView
-            } else if isLoading {
-                ProgressView()
-                    .tint(.primary)
-                    .padding(.vertical, 24)
-            } else {
-                Spacer().frame(height: 16)
+            if showsChart {
+                if !resolvedChart.points.isEmpty {
+                    chartRangePicker
+                    chartView
+                } else if isLoading {
+                    ProgressView()
+                        .tint(.primary)
+                        .padding(.vertical, 24)
+                } else {
+                    Spacer().frame(height: 16)
+                }
             }
         }
         .padding(.vertical, 8)
