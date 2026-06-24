@@ -221,8 +221,10 @@ struct CardPricingPanel: View {
                         .animation(.none, value: scrubPoint?.label)
 
                     Text(scrubPoint != nil ? services.priceDisplay.currency.format(amountUSD: scrubPoint!.price, usdToGbp: services.pricing.usdToGbp) : currentPrice)
-                        .font(.system(size: 34, weight: .bold, design: .rounded))
+                        .font(.system(size: showsChart ? 34 : 28, weight: .bold, design: .rounded))
                         .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
                         .animation(.none, value: scrubPoint?.price)
 
                     if let dailyChange = currentTrendChanges?.change1d {

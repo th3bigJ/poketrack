@@ -69,9 +69,7 @@ struct CardDetailContentView: View {
     @State private var showsSwipeHint: Bool = true
 
     private let collapseThreshold: CGFloat = 140
-    private let compactHeaderThreshold: CGFloat = 72
     private let actionButtonLandingDiameter: CGFloat = 56
-    private let actionButtonCompactDiameter: CGFloat = 44
 
     private func groupedHoldings(
         collectionItems: [CollectionItem],
@@ -133,74 +131,65 @@ struct CardDetailContentView: View {
             )
 
             ScrollView {
-                    VStack(alignment: .leading, spacing: 14) {
-                        ScrollOffsetAnchor { offset in
-                            if abs(offset - scrollOffset) > 2 {
-                                scrollOffset = offset
-                            }
+                VStack(alignment: .leading, spacing: 14) {
+                    ScrollOffsetAnchor { offset in
+                        if abs(offset - scrollOffset) > 2 {
+                            scrollOffset = offset
                         }
+                    }
 
-                        landingSection(
-                            pageHeight: pageHeight,
-                            cardWidth: layout.cardWidth,
-                            chartHeight: layout.chartHeight,
-                            scrollOffset: scrollOffset,
-                            collapseProgress: collapseProgress,
-                            collectionItems: collectionItems,
-                            ledgerLines: ledgerLines
+                    landingSection(
+                        pageHeight: pageHeight,
+                        cardWidth: layout.cardWidth,
+                        chartHeight: layout.chartHeight,
+                        scrollOffset: scrollOffset,
+                        collapseProgress: collapseProgress,
+                        collectionItems: collectionItems,
+                        ledgerLines: ledgerLines
+                    )
+
+                    Color.clear
+                        .frame(height: 1)
+                        .id("detailsTop")
+
+                    detailsScrollHeader
+
+                    sectionDivider
+                    expandedDetailsGrid
+
+                    if owned {
+                        sectionDivider
+                        collectionSection(collectionItems: collectionItems, ledgerLines: ledgerLines)
+                    }
+
+                    sectionDivider
+                    footerLinksSection
+
+                    if addToDeckAction == nil {
+                        sectionDivider
+                        CardFriendTradeMatchesSection(
+                            card: card,
+                            directContext: directTradeContext,
+                            maximumMatches: 1
                         )
-
-                        Color.clear
-                            .frame(height: 1)
-                            .id("detailsTop")
-
-                        sectionDivider
-                        expandedDetailsGrid
-
-                        if owned {
-                            sectionDivider
-                            collectionSection(collectionItems: collectionItems, ledgerLines: ledgerLines)
-                        }
-
-                        sectionDivider
-                        CardMarketVariantsSection(card: card, availableVariantKeys: availableVariantKeys)
-
-                        sectionDivider
-                        footerLinksSection
-
-                        if addToDeckAction == nil {
-                            sectionDivider
-                            CardFriendTradeMatchesSection(
-                                card: card,
-                                directContext: directTradeContext,
-                                maximumMatches: 1
-                            )
-                        }
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 32)
                 }
-                .coordinateSpace(name: "scroll")
-                .scrollIndicators(.hidden)
-                .scrollContentBackground(.hidden)
-                .safeAreaInset(edge: .top, spacing: 0) {
-                    VStack(spacing: 4) {
-                        dragPill
+                .padding(.horizontal, 16)
+                .padding(.bottom, 32)
+            }
+            .coordinateSpace(name: "scroll")
+            .scrollIndicators(.hidden)
+            .scrollContentBackground(.hidden)
+            .safeAreaInset(edge: .top, spacing: 0) {
+                VStack(spacing: 4) {
+                    dragPill
 
-                        navigationChrome
-                            .padding(.horizontal, 16)
-
-                        if scrollOffset > compactHeaderThreshold {
-                            compactStickyHeader(
-                                collectionItems: collectionItems,
-                                ledgerLines: ledgerLines
-                            )
-                            .padding(.horizontal, 16)
-                        }
-                    }
-                    .padding(.bottom, 4)
+                    navigationChrome
+                        .padding(.horizontal, 16)
                 }
-                .safeAreaInset(edge: .bottom, spacing: 0) {
+                .padding(.bottom, 4)
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
                     if showsSwipeHint {
                         VStack(spacing: 8) {
                             sectionDivider
@@ -209,7 +198,7 @@ struct CardDetailContentView: View {
                         .padding(.horizontal, 16)
                     }
                 }
-                .onChange(of: scrollOffset) { _, offset in
+            .onChange(of: scrollOffset) { _, offset in
                     let newHint = offset < pageHeight * 0.45
                     if newHint != showsSwipeHint {
                         withAnimation(.easeOut(duration: 0.22)) { showsSwipeHint = newHint }
@@ -351,11 +340,10 @@ struct CardDetailContentView: View {
                     .scaleEffect(scale, anchor: .top)
                     .opacity(Double(max(0.15, 1 - collapseProgress)))
 
-                actionBar(
-                    collectionItems: collectionItems,
-                    ledgerLines: ledgerLines,
-                    layout: .landing
-                )
+            actionBar(
+                collectionItems: collectionItems,
+                ledgerLines: ledgerLines
+            )
                 .opacity(Double(max(0, 1 - collapseProgress * 1.1)))
 
                 CardPricingPanel(
@@ -373,27 +361,20 @@ struct CardDetailContentView: View {
         .clipped()
     }
 
-    private func compactStickyHeader(
-        collectionItems: [CollectionItem],
-        ledgerLines: [LedgerLine]
-    ) -> some View {
-        HStack(alignment: .center, spacing: 10) {
-            cardImage(width: 64)
+    private var detailsScrollHeader: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 12) {
+                cardImage(width: 64)
 
-            CardPricingPanel(
-                card: card,
-                useGlass: true,
-                showsChart: false,
-                showsVariantMenu: false,
-                chartAccent: resolvedTypeAccent
-            )
-            .frame(maxWidth: .infinity, alignment: .leading)
-
-            actionBar(
-                collectionItems: collectionItems,
-                ledgerLines: ledgerLines,
-                layout: .detailsTrailing
-            )
+                CardPricingPanel(
+                    card: card,
+                    useGlass: true,
+                    showsChart: false,
+                    showsVariantMenu: false,
+                    chartAccent: resolvedTypeAccent
+                )
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
     }
 
@@ -601,24 +582,17 @@ struct CardDetailContentView: View {
 
     private static let wishlistGold = Color(red: 0.98, green: 0.78, blue: 0.18)
 
-    private enum ActionBarLayout {
-        case landing
-        case detailsTrailing
-    }
-
-    /// Remove appears when the card is already in the collection; add stays available for extra copies.
     @ViewBuilder
     private func actionBar(
         collectionItems: [CollectionItem],
-        ledgerLines: [LedgerLine],
-        layout: ActionBarLayout
+        ledgerLines: [LedgerLine]
     ) -> some View {
         let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-        let diameter = layout == .landing ? actionButtonLandingDiameter : actionButtonCompactDiameter
-        let iconSize: CGFloat = layout == .landing ? 24 : 20
-        let spacing: CGFloat = layout == .landing ? 14 : 8
+        let diameter = actionButtonLandingDiameter
+        let iconSize: CGFloat = 24
+        let spacing: CGFloat = 14
 
-        let buttons = Group {
+        HStack(spacing: spacing) {
             if let addToDeckAction {
                 glassCircleActionButton(
                     accessibilityLabel: "Add to deck",
@@ -663,18 +637,7 @@ struct CardDetailContentView: View {
                 action: actions.onShare
             )
         }
-
-        switch layout {
-        case .landing:
-            HStack(spacing: spacing) {
-                buttons
-            }
-            .frame(maxWidth: .infinity)
-        case .detailsTrailing:
-            HStack(spacing: spacing) {
-                buttons
-            }
-        }
+        .frame(maxWidth: .infinity)
     }
 
     @ViewBuilder
@@ -904,109 +867,6 @@ struct CardDetailContentView: View {
 
     private func appendFact(_ label: String, _ value: String?, to output: inout [(String, String)]) {
         if let value { output.append((label, value)) }
-    }
-}
-
-// MARK: - Market variants
-
-private struct CardMarketVariantsSection: View {
-    @Environment(AppServices.self) private var services
-
-    let card: Card
-    let availableVariantKeys: [String]
-
-    private struct VariantRow: Identifiable {
-        let id: String
-        let title: String
-        var price: String
-    }
-
-    @State private var rows: [VariantRow] = []
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Market Variants")
-                .font(.headline)
-                .foregroundStyle(.primary)
-
-            if rows.isEmpty {
-                Text("No variant pricing available")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-                    .padding(.vertical, 8)
-            } else {
-                ForEach(rows) { row in
-                    HStack(spacing: 12) {
-                        Text(row.title)
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(.primary)
-                        Spacer(minLength: 0)
-                        Text(row.price)
-                            .font(.subheadline.weight(.bold))
-                            .foregroundStyle(.primary)
-                    }
-                    .padding(.vertical, 8)
-                }
-            }
-        }
-        .task(id: card.masterCardId) {
-            await loadRows()
-        }
-    }
-
-    private func loadRows() async {
-        var keys = availableVariantKeys.filter { $0 != "default" }
-        if keys.isEmpty {
-            keys = await services.pricing.variantKeys(for: card).filter { $0 != "default" }
-        }
-
-        var loaded: [VariantRow] = []
-        for key in keys {
-            let display = variantDisplayName(key)
-            var priceText = "—"
-            if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: key, grade: "raw") {
-                priceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
-            } else if let usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: key, grade: "raw") {
-                priceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
-            }
-            loaded.append(VariantRow(id: key, title: display, price: priceText))
-        }
-
-        let gradeOrder = ["psa10", "ace10"]
-        for grade in gradeOrder {
-            guard let variant = keys.first else { continue }
-            let title = gradeDisplayName(grade)
-            var priceText = "—"
-            if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: variant, grade: grade) {
-                priceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
-            } else if let usd = await services.pricing.latestHistoryPriceUSD(for: card, variantKey: variant, grade: grade) {
-                priceText = services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
-            }
-            if priceText != "—" {
-                loaded.append(VariantRow(id: "\(variant)-\(grade)", title: "Graded \(title)", price: priceText))
-            }
-        }
-
-        rows = loaded
-    }
-
-    private func variantDisplayName(_ key: String) -> String {
-        let spaced = key
-            .replacingOccurrences(of: "_", with: " ")
-            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
-            .trimmingCharacters(in: .whitespaces)
-        return spaced.split(separator: " ")
-            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
-            .joined(separator: " ")
-    }
-
-    private func gradeDisplayName(_ key: String) -> String {
-        switch key {
-        case "raw": return "Raw"
-        case "psa10": return "PSA 10"
-        case "ace10": return "ACE 10"
-        default: return key.uppercased()
-        }
     }
 }
 
