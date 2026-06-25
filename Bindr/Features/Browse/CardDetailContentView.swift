@@ -1046,7 +1046,7 @@ private struct CardDetailActionCircleModifier: ViewModifier {
 
     let tint: Color
 
-    private let visualDiameter: CGFloat = 44
+    private let visualDiameter: CGFloat = 40
 
     func body(content: Content) -> some View {
         if #available(iOS 26.0, *) {
