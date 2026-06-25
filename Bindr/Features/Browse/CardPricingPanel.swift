@@ -38,6 +38,9 @@ struct CardPricingPanel: View {
     var chartAccent: Color? = nil
     /// Changing this value forces the panel to reload pricing (e.g. the detail footer's refresh button).
     var reloadToken: Int = 0
+    /// Reports the resolved market-price string and daily change so a parent can mirror the value
+    /// (e.g. the card-detail collapsed header) without spinning up a second panel that reloads from "—".
+    var onPriceResolved: ((String, Double?) -> Void)? = nil
 
     // Scrydex variant keys (e.g. "holofoil", "normal")
     @State private var variantKeys: [String] = []
@@ -298,6 +301,12 @@ struct CardPricingPanel: View {
         }
         .onChange(of: chartAccent) { _, _ in
             recomputeChartAccent()
+        }
+        .onChange(of: currentPrice) { _, newValue in
+            onPriceResolved?(newValue, currentTrendChanges?.change1d)
+        }
+        .onChange(of: currentTrendChanges?.change1d) { _, newChange in
+            onPriceResolved?(currentPrice, newChange)
         }
     }
 

@@ -71,9 +71,7 @@ struct CardBrowseDetailView: View {
                                 showsWishlistAction: showsHeaderChromeActions || showsWishlistWhenChromeHidden,
                                 directTradeContext: directTradeContext
                             )
-                            .id(card.masterCardId)
                         }
-                        .id(card.masterCardId)
                         .tag(i)
                     }
                 }

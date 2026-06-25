@@ -345,7 +345,6 @@ struct CardDetailSheet: View {
             CardDetailTypeBackground(accent: typeAccent(for: pageCard))
                 .ignoresSafeArea()
         }
-        .id(pageCard.masterCardId)
     }
 
     private func legacyCardPage(for pageCard: Card, pageHeight: CGFloat) -> some View {

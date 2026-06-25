@@ -66,7 +66,11 @@ struct CardDetailContentView: View {
     let actions: CardDetailContentActions
 
     @State private var activePage: CardDetailPage? = .landing
-    @State private var detailsHeaderPrimed = false
+
+    /// Market price + daily change resolved once by the landing chart panel, then mirrored
+    /// by the collapsed details header so the number is already present on swipe (no reload).
+    @State private var resolvedPriceText: String = "—"
+    @State private var resolvedDailyChange: Double? = nil
 
     private let actionButtonLandingDiameter: CGFloat = 48
     private let collapsedCardWidth: CGFloat = 64
@@ -117,10 +121,8 @@ struct CardDetailContentView: View {
         CardDetailCollectionScope(card: card) { collectionItems, ledgerLines in
             scopedBody(collectionItems: collectionItems, ledgerLines: ledgerLines)
         }
-        .id(card.masterCardId)
         .onChange(of: card.masterCardId) { _, _ in
             activePage = .landing
-            detailsHeaderPrimed = false
         }
     }
 
@@ -138,9 +140,9 @@ struct CardDetailContentView: View {
                 contentWidth: contentWidth
             )
             let collapsedCardHeight = collapsedCardWidth * 7 / 5
-            let detailsTopReservedHeight: CGFloat = 28
+            let detailsTopReservedHeight = collapsedCardHeight + 12
             let onDetailsPage = activePage == .details
-            let showsDetailsChrome = onDetailsPage || detailsHeaderPrimed
+            let showsDetailsChrome = onDetailsPage
 
             ScrollView {
                 VStack(spacing: 0) {
@@ -166,27 +168,10 @@ struct CardDetailContentView: View {
                 }
                 .scrollTargetLayout()
             }
-            .scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))
+            .scrollTargetBehavior(CardDetailPageSnapBehavior())
             .scrollPosition(id: $activePage, anchor: .top)
             .scrollIndicators(.hidden)
             .scrollContentBackground(.hidden)
-            .simultaneousGesture(
-                DragGesture(minimumDistance: 6)
-                    .onChanged { value in
-                        if value.translation.height < -8 {
-                            detailsHeaderPrimed = true
-                        }
-                    }
-                    .onEnded { value in
-                        if value.predictedEndTranslation.height < -56 {
-                            revealDetails()
-                        } else if activePage != .details {
-                            withAnimation(.smooth(duration: 0.18)) {
-                                detailsHeaderPrimed = false
-                            }
-                        }
-                    }
-            )
             .safeAreaInset(edge: .top, spacing: 0) {
                 VStack(spacing: 4) {
                     dragPill
@@ -217,7 +202,6 @@ struct CardDetailContentView: View {
                 }
             }
             .onChange(of: activePage) { _, page in
-                detailsHeaderPrimed = page == .details
                 guard page != nil else { return }
                 Haptics.lightImpact()
             }
@@ -350,19 +334,6 @@ struct CardDetailContentView: View {
         .frame(height: swipeHintHeight, alignment: .top)
         .contentShape(Rectangle())
         .onTapGesture(perform: revealDetails)
-        .gesture(
-            DragGesture(minimumDistance: 8)
-                .onChanged { value in
-                    if value.translation.height < -12 {
-                        revealDetails()
-                    }
-                }
-                .onEnded { value in
-                    if value.translation.height < -8 || value.predictedEndTranslation.height < -24 {
-                        revealDetails()
-                    }
-                }
-        )
         .accessibilityAddTraits(.isButton)
         .accessibilityAction {
             revealDetails()
@@ -371,7 +342,6 @@ struct CardDetailContentView: View {
 
     private func revealDetails() {
         guard activePage != .details else { return }
-        detailsHeaderPrimed = true
         withAnimation(.smooth(duration: 0.28)) {
             activePage = .details
         }
@@ -396,7 +366,11 @@ struct CardDetailContentView: View {
                 card: card,
                 useGlass: true,
                 chartHeight: chartHeight,
-                chartAccent: resolvedTypeAccent
+                chartAccent: resolvedTypeAccent,
+                onPriceResolved: { text, change in
+                    resolvedPriceText = text
+                    resolvedDailyChange = change
+                }
             )
 
             Spacer(minLength: 0)
@@ -440,20 +414,43 @@ struct CardDetailContentView: View {
     }
 
     private func detailsPageHeaderRow(collapsedCardHeight: CGFloat) -> some View {
-        HStack(alignment: .top, spacing: 12) {
+        HStack(alignment: .center, spacing: 12) {
             cardImage(width: collapsedCardWidth)
 
-            CardPricingPanel(
-                card: card,
-                useGlass: true,
-                showsChart: false,
-                showsVariantMenu: false,
-                chartAccent: resolvedTypeAccent
-            )
-            .frame(maxWidth: .infinity, alignment: .leading)
+            collapsedPriceLabel
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
         .frame(height: collapsedCardHeight, alignment: .top)
     }
+
+    /// Mirrors the landing chart panel's market price using the value already resolved on
+    /// page one — no second pricing panel, no reload from "—", no chart carried over.
+    private var collapsedPriceLabel: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text("Market Price")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+
+            Text(resolvedPriceText)
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
+                .contentTransition(.numericText())
+
+            if let dailyChange = resolvedDailyChange {
+                HStack(spacing: 5) {
+                    Image(systemName: dailyChange >= 0 ? "arrow.up" : "arrow.down")
+                    Text("\(String(format: "%.1f%%", abs(dailyChange))) today")
+                }
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(dailyChange >= 0 ? Self.priceUpColor : Self.priceDownColor)
+            }
+        }
+    }
+
+    private static let priceUpColor = Color(red: 0.28, green: 0.84, blue: 0.39)
+    private static let priceDownColor = Color(red: 1.0, green: 0.36, blue: 0.34)
 
     private func cardImage(width: CGFloat) -> some View {
         Button {
@@ -1047,6 +1044,21 @@ struct CardDetailTypeBackground: View {
     var body: some View {
         Color(uiColor: .systemBackground)
             .overlay(accent.opacity(colorScheme == .dark ? 0.18 : 0.13))
+    }
+}
+
+private struct CardDetailPageSnapBehavior: ScrollTargetBehavior {
+    func updateTarget(_ target: inout ScrollTarget, context: TargetContext) {
+        let pageHeight = context.containerSize.height
+        guard pageHeight > 0 else { return }
+
+        let proposedY = target.rect.origin.y
+        // Only snap around the landing↔details boundary. Once the gesture lands at or
+        // past the details-page top, leave it untouched so a tall details page (e.g. an
+        // owned card with the "Your Collection" section) scrolls freely all the way to the
+        // friend-trade row at the bottom instead of snapping back up.
+        guard proposedY < pageHeight else { return }
+        target.rect.origin.y = proposedY < pageHeight * 0.42 ? 0 : pageHeight
     }
 }
 
