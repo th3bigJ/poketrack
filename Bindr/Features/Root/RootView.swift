@@ -633,33 +633,28 @@ struct RootView: View {
     private var chromeSearchBarHiddenOffset: CGFloat { -(chromeFloatingInset + 18) }
     private var chromeContentTopInset: CGFloat { isSearchDetailActive ? 0 : chromeFloatingInset }
 
-    private static let searchPresentationAnimation: Animation = .spring(response: 0.44, dampingFraction: 0.86)
+    private static let searchPresentationAnimation: Animation = .easeOut(duration: 0.18)
     private static let searchFocusDelay: Duration = .milliseconds(140)
 
     private var searchOverlayPageTransition: AnyTransition {
         .asymmetric(
-            insertion: .move(edge: .bottom).combined(with: .opacity),
-            removal: .move(edge: .bottom).combined(with: .opacity)
+            insertion: .opacity,
+            removal: .opacity
         )
     }
 
     private var searchOverlayBarTransition: AnyTransition {
         .asymmetric(
-            insertion: .move(edge: .top).combined(with: .opacity),
-            removal: .move(edge: .top).combined(with: .opacity)
+            insertion: .opacity,
+            removal: .opacity
         )
     }
 
     @MainActor
     private func presentSearchExperience(focusField: Bool = true) {
-        isSearchContentMounted = false
+        isSearchContentMounted = true
         withAnimation(Self.searchPresentationAnimation) {
             isSearchExperiencePresented = true
-        }
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(180))
-            guard isSearchExperiencePresented else { return }
-            isSearchContentMounted = true
         }
         guard focusField else { return }
         Task { @MainActor in
@@ -676,7 +671,6 @@ struct RootView: View {
             universalQuery = ""
         }
         searchFieldFocused = false
-        isSearchContentMounted = false
         withAnimation(Self.searchPresentationAnimation) {
             isSearchExperiencePresented = false
         }
@@ -818,7 +812,7 @@ struct RootView: View {
                     services.setupCollectionValue(modelContext: modelContext)
                 }
             }
-            .onChange(of: services.theme.accentColorHex) { _, _ in
+            .onChange(of: services.theme.backgroundStyle) { _, _ in
                 tabBarTintColor = services.theme.accentColor
                 BindrApp.applyTabBarTint(accent: services.theme.accentColor)
             }
@@ -835,7 +829,11 @@ struct RootView: View {
                     chromeScroll.forceVisible()
                 } else {
                     searchNavigationPath = NavigationPath()
-                    isSearchContentMounted = false
+                    Task { @MainActor in
+                        try? await Task.sleep(for: .milliseconds(180))
+                        guard !isSearchExperiencePresented else { return }
+                        isSearchContentMounted = false
+                    }
                 }
             }
             .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in

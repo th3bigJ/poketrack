@@ -8,11 +8,8 @@ import SwiftUI
 //   * Background Glow uses a stock `Toggle` (no oversized custom styling)
 //     with the explainer text rendered as a proper footer below the row,
 //     not floating outside the card.
-//   * Accent color grid is a fixed 6-column layout with tight spacing so
-//     the swatches read as a single geometric block.
-//   * "Select a color that reflects your style." now lives **inside** the
-//     accent card as a footer caption, eliminating the previously orphaned
-//     floating line of subtext.
+//   * Background styles now own their matched tint colors, so the UI presents
+//     one atmosphere choice instead of separate color controls.
 
 struct ThemesView: View {
     @Environment(\.dismiss) private var dismiss

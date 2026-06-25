@@ -7,7 +7,7 @@ import SwiftUI
 // Theming in Bindr was historically split across two sources of truth —
 // `Color.accentColor` (which reads from the empty `AccentColor.colorset`
 // asset, falling back to system blue on most builds) and
-// `services.theme.accentColor` (the user's actual choice from `ThemesView`).
+// `services.theme.accentColor` (the accent derived from the selected atmosphere).
 // The two diverged in 73+ call sites. Sub-sheets and trade flows lost the
 // theme accent entirely because `.tint()` env-propagation through `.sheet { }`
 // is inconsistent across iOS versions.
@@ -26,12 +26,11 @@ import SwiftUI
 //             .bindrTheme(accent: services.theme.accentColor)
 //     }
 //
-// The default value matches `ThemeSettings.init`'s default ("4f46e5", indigo)
-// so previews and isolated harnesses render with the same accent the user
-// sees on first launch.
+// The default value matches the Classic atmosphere so previews and isolated
+// harnesses render with the same accent the user sees on first launch.
 
 private struct BindrAccentColorKey: EnvironmentKey {
-    static let defaultValue: Color = Color(hex: "4f46e5")
+    static let defaultValue: Color = ThemeSettings.BackgroundStyle.classic.accentColor
 }
 
 // MARK: - Offline image context
@@ -102,8 +101,8 @@ extension EnvironmentValues {
 }
 
 extension EnvironmentValues {
-    /// User's chosen theme accent. Prefer this over `Color.accentColor` and
-    /// over reaching directly for `services.theme.accentColor` in deeply
+    /// Atmosphere-derived theme accent. Prefer this over `Color.accentColor`
+    /// and over reaching directly for `services.theme.accentColor` in deeply
     /// nested view code — it survives `.sheet`, `.fullScreenCover`, and
     /// `NavigationStack` boundaries the same on every iOS version.
     var bindrAccent: Color {
@@ -113,7 +112,7 @@ extension EnvironmentValues {
 }
 
 extension View {
-    /// Injects the user's theme accent into the environment so descendants
+    /// Injects the atmosphere-derived theme accent into the environment so descendants
     /// can read `@Environment(\.bindrAccent)`. Also calls SwiftUI's `.tint()`
     /// so system controls (Buttons, Toggles, ProgressView, etc.) pick up the
     /// same color without each call site having to remember to set both.

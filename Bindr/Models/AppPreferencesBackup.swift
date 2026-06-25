@@ -5,7 +5,6 @@ import Foundation
 struct AppPreferencesBackup: Codable, Equatable {
     var priceDisplayCurrency: String?
     var browseGrid: BrowseGridOptions?
-    var themeAccentColorHex: String?
     var themeAppearance: String?
     var themeBackgroundGlowEnabled: Bool?
     var themeBackgroundStyle: String?
@@ -31,7 +30,6 @@ struct AppPreferencesBackup: Codable, Equatable {
         return AppPreferencesBackup(
             priceDisplayCurrency: defaults.string(forKey: Keys.priceDisplayCurrency),
             browseGrid: loadBrowseGridFromLegacyKeys(defaults: defaults),
-            themeAccentColorHex: defaults.string(forKey: Keys.themeAccentColorHex),
             themeAppearance: defaults.string(forKey: Keys.themeAppearance),
             themeBackgroundGlowEnabled: boolIfPresent(defaults, key: Keys.themeBackgroundGlowEnabled),
             themeBackgroundStyle: defaults.string(forKey: Keys.themeBackgroundStyle),
@@ -65,9 +63,6 @@ struct AppPreferencesBackup: Codable, Equatable {
             Self.saveBrowseGrid(browseGrid, defaults: defaults)
         }
 
-        if let themeAccentColorHex {
-            defaults.set(themeAccentColorHex, forKey: Keys.themeAccentColorHex)
-        }
         if let themeAppearance {
             defaults.set(themeAppearance, forKey: Keys.themeAppearance)
         }
@@ -127,7 +122,6 @@ struct AppPreferencesBackup: Codable, Equatable {
         static let browseShowPricing = "browseGridShowPricing"
         static let browseColumnCount = "browseGridColumnCount"
         static let themePrefix = "Bindr.theme."
-        static let themeAccentColorHex = themePrefix + "user_accent_color_hex"
         static let themeAppearance = themePrefix + "user_app_appearance"
         static let themeBackgroundGlowEnabled = themePrefix + "user_background_glow_enabled"
         static let themeBackgroundStyle = themePrefix + "user_background_style"

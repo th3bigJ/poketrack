@@ -96,7 +96,6 @@ struct SearchExperienceView: View {
             }
         )
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .bindrPageBackground()
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)

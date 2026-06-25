@@ -8,6 +8,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
     let items: [SelectionValue]
     let title: (SelectionValue) -> String
 
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
     @Namespace private var namespace
 
@@ -26,7 +27,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
                 } label: {
                     Text(title(item))
                         .font(.system(size: 14, weight: isSelected ? .bold : .medium))
-                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.6))
+                        .foregroundStyle(isSelected ? selectedForegroundColor : .primary.opacity(0.6))
                         .padding(.vertical, 8)
                         .padding(.horizontal, 4)
                         .frame(maxWidth: .infinity)
@@ -49,6 +50,10 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
         }
         .padding(4)
         .glassSegmentedTrackStyle()
+    }
+
+    private var selectedForegroundColor: Color {
+        services.theme.backgroundStyle == .classic && colorScheme == .dark ? .black : .white
     }
 }
 

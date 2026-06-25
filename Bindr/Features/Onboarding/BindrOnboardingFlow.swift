@@ -5,7 +5,7 @@ import SwiftData
 //
 // 6-screen first-run experience:
 //   1. Welcome                                     — `OnboardingWelcomeView`
-//   2. Theme & accent color                        — `OnboardingThemeView`
+//   2. Theme atmosphere                            — `OnboardingThemeView`
 //   3. Enable offline collection                   — `OnboardingOfflineModeView`
 //   4. Enable notifications                        — `OnboardingNotificationsView`
 //   5. Social sign-in                              — `OnboardingSocialView`

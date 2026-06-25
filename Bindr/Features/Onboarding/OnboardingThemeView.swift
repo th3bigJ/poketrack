@@ -2,7 +2,7 @@ import SwiftUI
 
 // MARK: - OnboardingThemeView
 //
-// Step 2. Theme and accent picker — first screen after Welcome.
+// Step 2. Theme atmosphere — first screen after Welcome.
 // Reuses `ThemeCustomizationSections` so choices match Account → Themes.
 
 struct OnboardingThemeView: View {
@@ -17,7 +17,7 @@ struct OnboardingThemeView: View {
                 VStack(alignment: .leading, spacing: BindrSpacing.xl) {
                     OnboardingHeadline(
                         title: "Make it\nyours.",
-                        subtitle: "Choose light or dark mode, set your background style and glow, then pick an accent color — you can change these anytime in Settings."
+                        subtitle: "Choose light or dark mode, set your atmosphere and glow, and Bindr will match the accent for you."
                     )
 
                     ThemeCustomizationSections()

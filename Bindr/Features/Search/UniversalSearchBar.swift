@@ -85,7 +85,7 @@ struct UniversalSearchBar: View {
                 materialFallbackBar
             }
         }
-        .animation(.spring(response: 0.44, dampingFraction: 0.86), value: isSearchOpen)
+        .animation(.easeOut(duration: 0.18), value: isSearchOpen)
     }
 
     // MARK: - Liquid Glass (iOS 26+)

@@ -72,8 +72,9 @@ struct CardDetailContentView: View {
     @State private var resolvedPriceText: String = "—"
     @State private var resolvedDailyChange: Double? = nil
 
-    private let actionButtonLandingDiameter: CGFloat = 48
     private let collapsedCardWidth: CGFloat = 64
+    private let chromeActionButtonDiameter: CGFloat = 48
+    private let chromeActionButtonIconSize: CGFloat = 17
 
     private enum CardDetailPage: String, Hashable {
         case landing
@@ -176,7 +177,7 @@ struct CardDetailContentView: View {
                 VStack(spacing: 4) {
                     dragPill
 
-                    navigationChrome
+                    navigationChrome(owned: owned)
                         .padding(.horizontal, 16)
 
                     if showsDetailsChrome {
@@ -248,7 +249,6 @@ struct CardDetailContentView: View {
     ) -> (cardWidth: CGFloat, chartHeight: CGFloat) {
         guard viewportHeight > 0 else { return (min(contentWidth * 0.88, 240), 120) }
 
-        let actionBarHeight: CGFloat = 60
         let priceHeadlineHeight: CGFloat = 96
         let chartChromeHeight: CGFloat = 44
         let chartBottomInset: CGFloat = 10
@@ -259,61 +259,55 @@ struct CardDetailContentView: View {
         var cardWidth: CGFloat = min(contentWidth * 0.92, 360)
 
         for _ in 0..<2 {
-            let heroAvailable = viewportHeight - priceBlockFixed - chartHeight - actionBarHeight
+            let heroAvailable = viewportHeight - priceBlockFixed - chartHeight
             cardWidth = min(contentWidth * 0.92, max(120, heroAvailable) * (5.0 / 7.0), 360)
             let cardHeight = cardWidth * 7.0 / 5.0
-            let remaining = viewportHeight - priceBlockFixed - actionBarHeight - cardHeight - sectionSpacing
+            let remaining = viewportHeight - priceBlockFixed - cardHeight - sectionSpacing
             chartHeight = max(96, min(172, remaining))
         }
 
         return (cardWidth, chartHeight)
     }
 
-    private var navigationChrome: some View {
+    private func navigationChrome(owned: Bool) -> some View {
         HStack(alignment: .center, spacing: 12) {
+            glassCircleActionButton(
+                accessibilityLabel: "Back",
+                systemImage: "chevron.left",
+                diameter: chromeActionButtonDiameter,
+                iconSize: chromeActionButtonIconSize,
+                action: actions.onDismiss
+            )
+
+            headerTitleBlock
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            headerActionButtons(owned: owned)
+        }
+        .frame(height: chromeActionButtonDiameter)
+    }
+
+    private var headerTitleBlock: some View {
+        VStack(alignment: .leading, spacing: 2) {
             Text(card.cardName)
-                .font(.system(size: 22, weight: .bold, design: .rounded))
+                .font(.system(size: 21, weight: .bold, design: .rounded))
                 .foregroundStyle(.primary)
                 .lineLimit(1)
-                .minimumScaleFactor(0.7)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .minimumScaleFactor(0.72)
                 .accessibilityAddTraits(.isHeader)
 
-            headerSetLogo
-        }
-        .frame(height: 42)
-    }
-
-    @ViewBuilder
-    private var headerSetLogo: some View {
-        if let set {
-            Group {
-                if let onOpenSet = actions.onOpenSet {
-                    Button(action: onOpenSet) {
-                        setLogoView(logoSrc: set.logoSrc)
-                    }
-                    .buttonStyle(.plain)
-                } else {
-                    setLogoView(logoSrc: set.logoSrc)
-                }
+            if let setTitle = headerSetTitle {
+                Text(setTitle)
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.78)
             }
-            .accessibilityLabel(set.name)
-        } else if let setCode = cleaned(card.setCode) {
-            Text(setCode)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
-                .lineLimit(1)
         }
     }
 
-    private func setLogoView(logoSrc: String) -> some View {
-        SetLogoAsyncImage(
-            logoSrc: logoSrc,
-            height: 30,
-            brand: TCGBrand.inferredFromMasterCardId(card.masterCardId),
-            alignment: .trailing
-        )
-        .frame(width: 76, height: 30)
+    private var headerSetTitle: String? {
+        cleaned(set?.name) ?? cleaned(card.setCode)
     }
 
     private var swipeUpHint: some View {
@@ -356,11 +350,6 @@ struct CardDetailContentView: View {
         VStack(spacing: 6) {
             cardImage(width: cardWidth)
                 .frame(maxWidth: .infinity)
-
-            actionBar(
-                collectionItems: collectionItems,
-                ledgerLines: ledgerLines
-            )
 
             CardPricingPanel(
                 card: card,
@@ -655,21 +644,18 @@ struct CardDetailContentView: View {
     }
 
     private static let wishlistGold = Color(red: 0.98, green: 0.78, blue: 0.18)
+    private static let collectionActionGreen = Color(red: 0.28, green: 0.84, blue: 0.39)
 
     @ViewBuilder
-    private func actionBar(
-        collectionItems: [CollectionItem],
-        ledgerLines: [LedgerLine]
-    ) -> some View {
-        let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-        let diameter = actionButtonLandingDiameter
-        let iconSize: CGFloat = 22
-        let spacing: CGFloat = 16
+    private func headerActionButtons(owned: Bool) -> some View {
+        let diameter = chromeActionButtonDiameter
+        let iconSize = chromeActionButtonIconSize
+        let spacing: CGFloat = 10
 
         Group {
             if #available(iOS 26.0, *) {
                 GlassEffectContainer(spacing: spacing) {
-                    actionBarContent(
+                    headerActionButtonContent(
                         owned: owned,
                         diameter: diameter,
                         iconSize: iconSize,
@@ -677,7 +663,7 @@ struct CardDetailContentView: View {
                     )
                 }
             } else {
-                actionBarContent(
+                headerActionButtonContent(
                     owned: owned,
                     diameter: diameter,
                     iconSize: iconSize,
@@ -685,11 +671,10 @@ struct CardDetailContentView: View {
                 )
             }
         }
-        .frame(maxWidth: .infinity)
     }
 
     @ViewBuilder
-    private func actionBarContent(
+    private func headerActionButtonContent(
         owned: Bool,
         diameter: CGFloat,
         iconSize: CGFloat,
@@ -709,16 +694,6 @@ struct CardDetailContentView: View {
                 )
             } else if showsCollectionActions {
                 addToCollectionGlassButton(isOwned: owned, diameter: diameter, iconSize: iconSize)
-
-                if owned {
-                    glassCircleActionButton(
-                        accessibilityLabel: "Remove from collection",
-                        systemImage: "minus",
-                        diameter: diameter,
-                        iconSize: iconSize,
-                        action: actions.onRemoveFromCollection
-                    )
-                }
             }
 
             if showsWishlistAction {
@@ -783,7 +758,7 @@ struct CardDetailContentView: View {
             Image(systemName: systemImage)
                 .font(.system(size: iconSize, weight: .semibold))
                 .foregroundStyle(foreground)
-                .modifier(CardDetailActionCircleModifier(tint: resolvedTypeAccent))
+                .modifier(CardDetailActionCircleModifier(tint: actionTint(for: systemImage)))
         }
         .buttonStyle(.plain)
         .frame(width: diameter, height: diameter)
@@ -800,8 +775,12 @@ struct CardDetailContentView: View {
         Image(systemName: systemImage)
             .font(.system(size: iconSize, weight: .semibold))
             .foregroundStyle(foreground)
-            .modifier(CardDetailActionCircleModifier(tint: resolvedTypeAccent))
+            .modifier(CardDetailActionCircleModifier(tint: actionTint(for: systemImage)))
             .frame(width: diameter, height: diameter)
+    }
+
+    private func actionTint(for systemImage: String) -> Color {
+        systemImage == "plus" ? Self.collectionActionGreen : resolvedTypeAccent
     }
 
     private var detailsSection: some View {

@@ -94,31 +94,40 @@ final class ThemeSettings {
             }
         }
 
-        var chartColor: Color {
+        var accentLightHex: String {
             switch self {
-            case .classic:
-                return .clear
-            case .celestial:
-                return Color(hex: "8b5cf6")
-            case .grass:
-                return Color(hex: "22c55e")
-            case .fire:
-                return Color(hex: "f97316")
-            case .water:
-                return Color(hex: "0ea5e9")
-            case .electric:
-                return Color(hex: "f59e0b")
-            case .psychic:
-                return Color(hex: "a855f7")
-            case .dark:
-                return Color(hex: "818cf8")
-            case .fairy:
-                return Color(hex: "ec4899")
-            case .steel:
-                return Color(hex: "64748b")
-            case .dragon:
-                return Color(hex: "c2410c")
+            case .classic: return "000000"
+            case .celestial: return "D685AD"
+            case .grass: return "2DCD45"
+            case .fire: return "EE8130"
+            case .water: return "149EFF"
+            case .electric: return "FFA751"
+            case .psychic: return "FF6996"
+            case .dark: return "B7B7CE"
+            case .fairy: return "EE99AC"
+            case .steel: return "516395"
+            case .dragon: return "700AEE"
             }
+        }
+
+        var accentDarkHex: String {
+            switch self {
+            case .classic: return "FFFFFF"
+            case .celestial: return "EAAFC8"
+            case .grass: return "7AC74C"
+            case .fire: return "F08030"
+            case .water: return "6390F0"
+            case .electric: return "F7D02C"
+            case .psychic: return "F95587"
+            case .dark: return "B7B7CE"
+            case .fairy: return "D685AD"
+            case .steel: return "B8B8D0"
+            case .dragon: return "6F35FC"
+            }
+        }
+
+        var accentColor: Color {
+            .dynamic(lightHex: accentLightHex, darkHex: accentDarkHex)
         }
     }
 
@@ -150,17 +159,9 @@ final class ThemeSettings {
     )
 
     private static let localDefaultsPrefix = "Bindr.theme."
-    private let accentColorKey = "user_accent_color_hex"
     private let appearanceKey = "user_app_appearance"
     private let backgroundGlowKey = "user_background_glow_enabled"
     private let backgroundStyleKey = "user_background_style"
-
-    var accentColorHex: String {
-        didSet {
-            Self.saveLocal(accentColorHex, forKey: accentColorKey)
-            AppPreferencesBackup.notifyDidChange()
-        }
-    }
 
     var appearance: AppAppearance {
         didSet {
@@ -184,31 +185,19 @@ final class ThemeSettings {
     }
     
     var accentColor: Color {
-        if isLogoThemeSelected {
-            return Color(hex: Self.logoThemeAccentHex)
-        } else if isAuroraCalmThemeSelected {
-            return Color(hex: Self.auroraCalmThemeAccentHex)
-        } else {
-            return Color(hex: accentColorHex)
-        }
+        backgroundStyle.accentColor
     }
 
     var secondaryAccentColor: Color {
-        if isLogoThemeSelected {
-            return Color(hex: "ec4899")
-        } else if isAuroraCalmThemeSelected {
-            return Color(hex: "c0392b")
-        } else {
-            return accentColor
-        }
+        accentColor
     }
 
     var isLogoThemeSelected: Bool {
-        accentColorHex == Self.logoThemeID
+        false
     }
 
     var isAuroraCalmThemeSelected: Bool {
-        accentColorHex == Self.auroraCalmThemeID
+        false
     }
 
     var isGradientThemeSelected: Bool {
@@ -230,7 +219,7 @@ final class ThemeSettings {
     }
 
     var chartAccentColor: Color {
-        backgroundStyle == .classic ? accentColor : backgroundStyle.chartColor
+        accentColor
     }
     
     var colorScheme: ColorScheme? {
@@ -242,8 +231,6 @@ final class ThemeSettings {
     }
     
     init() {
-        self.accentColorHex = Self.localString(forKey: accentColorKey) ?? "4f46e5"
-
         let savedAppearance = Self.localString(forKey: appearanceKey) ?? AppAppearance.system.rawValue
         self.appearance = AppAppearance(rawValue: savedAppearance) ?? .system
 
@@ -256,7 +243,6 @@ final class ThemeSettings {
         let savedBackgroundStyle = Self.localString(forKey: backgroundStyleKey) ?? BackgroundStyle.classic.rawValue
         self.backgroundStyle = BackgroundStyle(rawValue: savedBackgroundStyle) ?? .classic
 
-        Self.saveLocal(accentColorHex, forKey: accentColorKey)
         Self.saveLocal(appearance.rawValue, forKey: appearanceKey)
         Self.saveLocal(backgroundGlowEnabled, forKey: backgroundGlowKey)
         Self.saveLocal(backgroundStyle.rawValue, forKey: backgroundStyleKey)
@@ -273,9 +259,6 @@ final class ThemeSettings {
     }
 
     func reloadFromUserDefaults() {
-        if let accent = Self.localString(forKey: accentColorKey), accent != accentColorHex {
-            accentColorHex = accent
-        }
         if let raw = Self.localString(forKey: appearanceKey),
            let parsed = AppAppearance(rawValue: raw),
            parsed != appearance {
@@ -291,8 +274,8 @@ final class ThemeSettings {
         }
     }
     
-    static let presetColors = [
-        "4f46e5", // Indigo (Default)
+    static let avatarBackgroundColors = [
+        "4f46e5", // Indigo
         "ef4444", // Red
         "f59e0b", // Amber
         "10b981", // Emerald
@@ -300,10 +283,7 @@ final class ThemeSettings {
         "3b82f6", // Blue
         "8b5cf6", // Violet
         "ec4899", // Pink
-        "71717a"  // Zinc
-    ]
-
-    static let avatarBackgroundColors = presetColors + [
+        "71717a", // Zinc
         "22c55e", // Green
         "84cc16", // Lime
         "eab308", // Yellow
@@ -320,8 +300,6 @@ final class ThemeSettings {
         "65a30d", // Olive
         "0891b2", // Deep Cyan
     ]
-
-    static let accentThemeOptions = [logoThemeID, auroraCalmThemeID] + presetColors
 
     private static func localKey(_ key: String) -> String {
         localDefaultsPrefix + key
