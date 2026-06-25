@@ -66,8 +66,9 @@ struct CardDetailContentView: View {
     let actions: CardDetailContentActions
 
     @State private var activePage: CardDetailPage? = .landing
+    @State private var detailsHeaderPrimed = false
 
-    private let actionButtonLandingDiameter: CGFloat = 56
+    private let actionButtonLandingDiameter: CGFloat = 48
     private let collapsedCardWidth: CGFloat = 64
 
     private enum CardDetailPage: String, Hashable {
@@ -119,6 +120,7 @@ struct CardDetailContentView: View {
         .id(card.masterCardId)
         .onChange(of: card.masterCardId) { _, _ in
             activePage = .landing
+            detailsHeaderPrimed = false
         }
     }
 
@@ -136,7 +138,9 @@ struct CardDetailContentView: View {
                 contentWidth: contentWidth
             )
             let collapsedCardHeight = collapsedCardWidth * 7 / 5
+            let detailsTopReservedHeight: CGFloat = 28
             let onDetailsPage = activePage == .details
+            let showsDetailsChrome = onDetailsPage || detailsHeaderPrimed
 
             ScrollView {
                 VStack(spacing: 0) {
@@ -153,6 +157,7 @@ struct CardDetailContentView: View {
                     }
 
                     detailsPage(
+                        topReservedHeight: detailsTopReservedHeight,
                         owned: owned,
                         collectionItems: collectionItems,
                         ledgerLines: ledgerLines
@@ -165,6 +170,23 @@ struct CardDetailContentView: View {
             .scrollPosition(id: $activePage, anchor: .top)
             .scrollIndicators(.hidden)
             .scrollContentBackground(.hidden)
+            .simultaneousGesture(
+                DragGesture(minimumDistance: 6)
+                    .onChanged { value in
+                        if value.translation.height < -8 {
+                            detailsHeaderPrimed = true
+                        }
+                    }
+                    .onEnded { value in
+                        if value.predictedEndTranslation.height < -56 {
+                            revealDetails()
+                        } else if activePage != .details {
+                            withAnimation(.smooth(duration: 0.18)) {
+                                detailsHeaderPrimed = false
+                            }
+                        }
+                    }
+            )
             .safeAreaInset(edge: .top, spacing: 0) {
                 VStack(spacing: 4) {
                     dragPill
@@ -172,25 +194,22 @@ struct CardDetailContentView: View {
                     navigationChrome
                         .padding(.horizontal, 16)
 
-                    if onDetailsPage {
+                    if showsDetailsChrome {
                         detailsPageHeaderRow(collapsedCardHeight: collapsedCardHeight)
-                            .transition(.opacity.combined(with: .move(edge: .top)))
+                            .padding(.horizontal, 16)
+                            .transition(.opacity)
                     }
                 }
                 .padding(.bottom, 4)
                 .background {
                     CardDetailTypeBackground(accent: resolvedTypeAccent)
                 }
-                .animation(.smooth(duration: 0.25), value: onDetailsPage)
+                .animation(.smooth(duration: 0.22), value: showsDetailsChrome)
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 if !onDetailsPage {
-                    VStack(spacing: 8) {
-                        sectionDivider
-                        swipeUpHint
-                    }
+                    swipeUpHintArea
                     .padding(.horizontal, 16)
-                    .padding(.top, 8)
                     .background {
                         CardDetailTypeBackground(accent: resolvedTypeAccent)
                     }
@@ -198,15 +217,19 @@ struct CardDetailContentView: View {
                 }
             }
             .onChange(of: activePage) { _, page in
+                detailsHeaderPrimed = page == .details
                 guard page != nil else { return }
                 Haptics.lightImpact()
             }
+            .background {
+                CardDetailTypeBackground(accent: resolvedTypeAccent)
+                    .ignoresSafeArea()
+            }
         }
-        .background(.clear)
     }
 
     private var topChromeHeight: CGFloat { 56 }
-    private var swipeHintHeight: CGFloat { 34 }
+    private var swipeHintHeight: CGFloat { 64 }
 
     /// Slim grabber at the top of the header — indicates the sheet can be dismissed.
     private var dragPill: some View {
@@ -314,8 +337,44 @@ struct CardDetailContentView: View {
             .font(.caption.weight(.semibold))
             .foregroundStyle(.secondary)
             .frame(maxWidth: .infinity)
-            .padding(.bottom, 6)
             .accessibilityLabel("Swipe up for details")
+    }
+
+    private var swipeUpHintArea: some View {
+        VStack(spacing: 8) {
+            sectionDivider
+            swipeUpHint
+                .padding(.top, 2)
+        }
+        .frame(maxWidth: .infinity)
+        .frame(height: swipeHintHeight, alignment: .top)
+        .contentShape(Rectangle())
+        .onTapGesture(perform: revealDetails)
+        .gesture(
+            DragGesture(minimumDistance: 8)
+                .onChanged { value in
+                    if value.translation.height < -12 {
+                        revealDetails()
+                    }
+                }
+                .onEnded { value in
+                    if value.translation.height < -8 || value.predictedEndTranslation.height < -24 {
+                        revealDetails()
+                    }
+                }
+        )
+        .accessibilityAddTraits(.isButton)
+        .accessibilityAction {
+            revealDetails()
+        }
+    }
+
+    private func revealDetails() {
+        guard activePage != .details else { return }
+        detailsHeaderPrimed = true
+        withAnimation(.smooth(duration: 0.28)) {
+            activePage = .details
+        }
     }
 
     private func landingPage(
@@ -349,6 +408,7 @@ struct CardDetailContentView: View {
     }
 
     private func detailsPage(
+        topReservedHeight: CGFloat,
         owned: Bool,
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
@@ -375,11 +435,8 @@ struct CardDetailContentView: View {
             }
         }
         .padding(.horizontal, 16)
-        .padding(.top, 4)
+        .padding(.top, topReservedHeight)
         .padding(.bottom, 32)
-        .background {
-            CardDetailTypeBackground(accent: resolvedTypeAccent)
-        }
     }
 
     private func detailsPageHeaderRow(collapsedCardHeight: CGFloat) -> some View {
@@ -395,7 +452,6 @@ struct CardDetailContentView: View {
             )
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.horizontal, 16)
         .frame(height: collapsedCardHeight, alignment: .top)
     }
 
@@ -610,9 +666,38 @@ struct CardDetailContentView: View {
     ) -> some View {
         let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
         let diameter = actionButtonLandingDiameter
-        let iconSize: CGFloat = 24
-        let spacing: CGFloat = 14
+        let iconSize: CGFloat = 22
+        let spacing: CGFloat = 16
 
+        Group {
+            if #available(iOS 26.0, *) {
+                GlassEffectContainer(spacing: spacing) {
+                    actionBarContent(
+                        owned: owned,
+                        diameter: diameter,
+                        iconSize: iconSize,
+                        spacing: spacing
+                    )
+                }
+            } else {
+                actionBarContent(
+                    owned: owned,
+                    diameter: diameter,
+                    iconSize: iconSize,
+                    spacing: spacing
+                )
+            }
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    @ViewBuilder
+    private func actionBarContent(
+        owned: Bool,
+        diameter: CGFloat,
+        iconSize: CGFloat,
+        spacing: CGFloat
+    ) -> some View {
         HStack(spacing: spacing) {
             if let addToDeckAction {
                 glassCircleActionButton(
@@ -658,7 +743,6 @@ struct CardDetailContentView: View {
                 action: actions.onShare
             )
         }
-        .frame(maxWidth: .infinity)
     }
 
     @ViewBuilder
@@ -702,7 +786,7 @@ struct CardDetailContentView: View {
             Image(systemName: systemImage)
                 .font(.system(size: iconSize, weight: .semibold))
                 .foregroundStyle(foreground)
-                .modifier(ChromeGlassCircleGlyphModifier())
+                .modifier(CardDetailActionCircleModifier(tint: resolvedTypeAccent))
         }
         .buttonStyle(.plain)
         .frame(width: diameter, height: diameter)
@@ -719,7 +803,7 @@ struct CardDetailContentView: View {
         Image(systemName: systemImage)
             .font(.system(size: iconSize, weight: .semibold))
             .foregroundStyle(foreground)
-            .modifier(ChromeGlassCircleGlyphModifier())
+            .modifier(CardDetailActionCircleModifier(tint: resolvedTypeAccent))
             .frame(width: diameter, height: diameter)
     }
 
@@ -961,17 +1045,79 @@ struct CardDetailTypeBackground: View {
     let accent: Color
 
     var body: some View {
-        ZStack {
-            Color(uiColor: .systemBackground)
-            LinearGradient(
-                colors: [
-                    accent.opacity(colorScheme == .dark ? 0.34 : 0.30),
-                    accent.opacity(colorScheme == .dark ? 0.24 : 0.20),
-                    accent.opacity(colorScheme == .dark ? 0.15 : 0.11)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
+        Color(uiColor: .systemBackground)
+            .overlay(accent.opacity(colorScheme == .dark ? 0.18 : 0.13))
+    }
+}
+
+private struct CardDetailActionCircleModifier: ViewModifier {
+    @Environment(\.colorScheme) private var colorScheme
+
+    let tint: Color
+
+    private let visualDiameter: CGFloat = 44
+
+    func body(content: Content) -> some View {
+        if #available(iOS 26.0, *) {
+            content
+                .frame(width: visualDiameter, height: visualDiameter)
+                .background {
+                    circleFill
+                }
+                .glassEffect(Glass.clear.tint(tint.opacity(colorScheme == .dark ? 0.22 : 0.12)).interactive(), in: Circle())
+                .overlay {
+                    circleRim
+                }
+                .shadow(color: shadowColor, radius: 12, y: 6)
+                .contentShape(Circle())
+        } else {
+            content
+                .frame(width: visualDiameter, height: visualDiameter)
+                .background {
+                    circleFill
+                }
+                .overlay {
+                    circleRim
+                }
+                .shadow(color: shadowColor, radius: 12, y: 6)
+                .contentShape(Circle())
         }
+    }
+
+    private var circleFill: some View {
+        Circle()
+            .fill(.ultraThinMaterial)
+            .overlay {
+                Circle()
+                    .fill(Color.white.opacity(colorScheme == .dark ? 0.04 : 0.22))
+            }
+            .overlay {
+                Circle()
+                    .fill(tint.opacity(colorScheme == .dark ? 0.18 : 0.10))
+            }
+    }
+
+    private var circleRim: some View {
+        Circle()
+            .strokeBorder(borderColor, lineWidth: 0.75)
+            .overlay(alignment: .topLeading) {
+                Circle()
+                    .strokeBorder(.white.opacity(colorScheme == .dark ? 0.12 : 0.48), lineWidth: 1)
+                    .mask(
+                        LinearGradient(
+                            colors: [.white, .clear],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+            }
+    }
+
+    private var borderColor: Color {
+        colorScheme == .dark ? .white.opacity(0.14) : .black.opacity(0.06)
+    }
+
+    private var shadowColor: Color {
+        colorScheme == .dark ? .black.opacity(0.22) : .black.opacity(0.10)
     }
 }
