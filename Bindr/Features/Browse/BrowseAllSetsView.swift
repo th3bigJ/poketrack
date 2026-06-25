@@ -686,38 +686,43 @@ private struct AllSetsAllSealedView: View {
                 .frame(maxWidth: .infinity, minHeight: 280)
                 .padding(.horizontal, 16)
             } else {
-                EagerVGrid(items: displayedProducts.indexedIdentifiedValues, columns: columnCount, spacing: gridSpacing) { indexedProduct in
-                    let product = indexedProduct.value
-                    Button {
-                        presentSealedProduct(product, displayedProducts, indexedProduct.index)
-                    } label: {
-                        SealedProductGridCell(
-                            product: product,
-                            gridOptions: services.browseGridOptions.options,
-                            priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
-                            isOwned: ownedCollectionCardIDs.contains(product.collectionCardID),
-                            isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID)
-                        )
-                        .contentShape(Rectangle())
-                    }
-                    .buttonStyle(CardCellButtonStyle())
-                    .contextMenu {
+                LazyVStack(spacing: 0) {
+                    ForEach(displayedProducts.indexedIdentifiedValues) { indexedProduct in
+                        let product = indexedProduct.value
                         Button {
-                            addToCollectionProduct = product
+                            presentSealedProduct(product, displayedProducts, indexedProduct.index)
                         } label: {
-                            Label("Add to Collection", systemImage: "books.vertical")
-                        }
-                        Button {
-                            toggleWishlist(for: product)
-                        } label: {
-                            Label(
-                                isWishlisted(product) ? "Remove from Wishlist" : "Add to Wishlist",
-                                systemImage: isWishlisted(product) ? "heart.slash" : "heart"
+                            SealedProductRowCell(
+                                product: product,
+                                priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
+                                isOwned: ownedCollectionCardIDs.contains(product.collectionCardID),
+                                isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID)
                             )
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                        .contextMenu {
+                            Button {
+                                addToCollectionProduct = product
+                            } label: {
+                                Label("Add to Collection", systemImage: "books.vertical")
+                            }
+                            Button {
+                                toggleWishlist(for: product)
+                            } label: {
+                                Label(
+                                    isWishlisted(product) ? "Remove from Wishlist" : "Add to Wishlist",
+                                    systemImage: isWishlisted(product) ? "heart.slash" : "heart"
+                                )
+                            }
+                        }
+
+                        if indexedProduct.index < displayedProducts.count - 1 {
+                            Divider()
+                                .padding(.leading, SealedProductRowCell.dividerLeadingInset)
                         }
                     }
                 }
-                .padding(.horizontal, horizontalPadding)
                 .padding(.bottom, 16)
             }
         }

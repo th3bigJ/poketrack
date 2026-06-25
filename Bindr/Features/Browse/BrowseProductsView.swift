@@ -46,12 +46,7 @@ struct BrowseProductsTabContent: View {
     /// re-normalizing every product on every keystroke or view render.
     @State private var normalizedProductIndex: NormalizedProductIndex = .empty
 
-    private let sealedGridHorizontalPadding: CGFloat = 16
-    private let sealedGridSpacing: CGFloat = 12
-
-    private var sealedGridColumnCount: Int {
-        min(max(gridOptions.columnCount, 1), 4)
-    }
+    private let sealedRowDividerLeadingInset: CGFloat = 86
 
     private var ownedCollectionCardIDs: Set<String> { cachedOwnedCardIDs }
     private var ownedQuantityByProductID: [String: Int] { cachedOwnedQuantities }
@@ -229,39 +224,44 @@ struct BrowseProductsTabContent: View {
                         .padding(.horizontal, 16)
                         .padding(.bottom, 16)
                     } else {
-                        EagerVGrid(items: displayedProducts.indexedIdentifiedValues, columns: sealedGridColumnCount, spacing: sealedGridSpacing) { indexedProduct in
-                            let product = indexedProduct.value
-                            Button {
-                                presentSealedProduct(product, displayedProducts, indexedProduct.index)
-                            } label: {
-                                SealedProductGridCell(
-                                    product: product,
-                                    gridOptions: gridOptions,
-                                    priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
-                                    isOwned: ownedCollectionCardIDs.contains(product.collectionCardID),
-                                    isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID),
-                                    ownedCountBadge: ownedQuantityByProductID[product.collectionCardID]
-                                )
-                                .contentShape(Rectangle())
-                            }
-                            .buttonStyle(CardCellButtonStyle())
-                            .contextMenu {
+                        LazyVStack(spacing: 0) {
+                            ForEach(displayedProducts.indexedIdentifiedValues) { indexedProduct in
+                                let product = indexedProduct.value
                                 Button {
-                                    addToCollectionProduct = product
+                                    presentSealedProduct(product, displayedProducts, indexedProduct.index)
                                 } label: {
-                                    Label("Add to Collection", systemImage: "books.vertical")
-                                }
-                                Button {
-                                    toggleWishlist(for: product)
-                                } label: {
-                                    Label(
-                                        isWishlisted(product) ? "Remove from Wishlist" : "Add to Wishlist",
-                                        systemImage: isWishlisted(product) ? "heart.slash" : "heart"
+                                    SealedProductRowCell(
+                                        product: product,
+                                        priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
+                                        isOwned: ownedCollectionCardIDs.contains(product.collectionCardID),
+                                        isWishlisted: wishlistedCollectionCardIDs.contains(product.collectionCardID),
+                                        ownedCountBadge: ownedQuantityByProductID[product.collectionCardID]
                                     )
+                                    .contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
+                                .contextMenu {
+                                    Button {
+                                        addToCollectionProduct = product
+                                    } label: {
+                                        Label("Add to Collection", systemImage: "books.vertical")
+                                    }
+                                    Button {
+                                        toggleWishlist(for: product)
+                                    } label: {
+                                        Label(
+                                            isWishlisted(product) ? "Remove from Wishlist" : "Add to Wishlist",
+                                            systemImage: isWishlisted(product) ? "heart.slash" : "heart"
+                                        )
+                                    }
+                                }
+
+                                if indexedProduct.index < displayedProducts.count - 1 {
+                                    Divider()
+                                        .padding(.leading, sealedRowDividerLeadingInset)
                                 }
                             }
                         }
-                        .padding(.horizontal, sealedGridHorizontalPadding)
                         .padding(.bottom, 16)
                     }
                 }
@@ -572,6 +572,90 @@ struct SealedProductGridCell: View {
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(.white)
                 .cardGridPriceBadgeStyle()
+        }
+    }
+}
+
+struct SealedProductRowCell: View {
+    @Environment(AppServices.self) private var services
+
+    let product: SealedProduct
+    let priceUSD: Double?
+    let isOwned: Bool
+    let isWishlisted: Bool
+    var ownedCountBadge: Int? = nil
+    var showsChevron: Bool = true
+
+    static let dividerLeadingInset: CGFloat = 86
+
+    private let imageSize: CGFloat = 56
+    private let imageCornerRadius: CGFloat = 8
+
+    var body: some View {
+        HStack(spacing: 14) {
+            sealedImage
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(product.name)
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+
+                if let setName = product.setName, !setName.isEmpty {
+                    Text(setName)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+            }
+
+            Spacer(minLength: 8)
+
+            priceLabel
+
+            if showsChevron {
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.tertiary)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 10)
+    }
+
+    private var sealedImage: some View {
+        SealedThumbnailView(
+            imageURL: product.imageURL,
+            isOwned: isOwned,
+            isWishlisted: isWishlisted,
+            ownedCountBadge: ownedCountBadge
+        )
+        .frame(width: imageSize, height: imageSize)
+        .clipShape(RoundedRectangle(cornerRadius: imageCornerRadius, style: .continuous))
+        .overlay {
+            if isOwned || isWishlisted {
+                RoundedRectangle(cornerRadius: imageCornerRadius, style: .continuous)
+                    .stroke(
+                        isOwned ? services.theme.accentColor : Color.yellow,
+                        lineWidth: 1.8
+                    )
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var priceLabel: some View {
+        if let priceUSD {
+            Text(services.priceDisplay.currency.format(amountUSD: priceUSD, usdToGbp: services.pricing.usdToGbp))
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+        } else {
+            Text("—")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.tertiary)
         }
     }
 }

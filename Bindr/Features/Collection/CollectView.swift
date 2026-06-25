@@ -581,11 +581,32 @@ struct CollectView: View {
                     ? "Try a different card name, set code, or number."
                     : "Try a different product name, series, or year."
             )
+        } else if selectedContentTypeTab == .products {
+            LazyVStack(spacing: 0) {
+                ForEach(indexedDisplayedCollectionItems) { indexed in
+                    collectionSealedRow(for: indexed.item)
+                        .onAppear {
+                            guard indexed.index >= max(collectionDisplayedItems.count - 6, 0) else { return }
+                            guard collectionFilters.sortBy != .price else { return }
+                            Task { await loadMoreCollectionItemsIfNeeded() }
+                        }
+
+                    if indexed.index < collectionDisplayedItems.count - 1 {
+                        Divider()
+                            .padding(.leading, SealedProductRowCell.dividerLeadingInset)
+                    }
+                }
+            }
+            .padding(.bottom, 8)
+            if isLoadingMoreCollectionItems {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 12)
+            }
         } else {
             EagerVGrid(items: indexedDisplayedCollectionItems, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { indexed in
                 collectionCell(for: indexed.item, at: indexed.index)
                     .onAppear {
-                        guard selectedContentTypeTab == .cards else { return }
                         ImagePrefetcher.shared.prefetchCardWindow(collectionDisplayedCards, startingAt: indexed.index + 1)
                         guard indexed.index >= max(collectionDisplayedItems.count - safeColumnCount, 0) else { return }
                         guard collectionFilters.sortBy != .price else { return }
@@ -603,12 +624,11 @@ struct CollectView: View {
     }
 
     @ViewBuilder
-    private func collectionCell(for item: CollectionItem, at index: Int) -> some View {
+    private func collectionSealedRow(for item: CollectionItem) -> some View {
         if let product = sealedProduct(for: item) {
             Button { selectedSealedProduct = product } label: {
-                SealedProductGridCell(
+                SealedProductRowCell(
                     product: product,
-                    gridOptions: gridOptions,
                     priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
                     isOwned: false,
                     isWishlisted: wishlistedSealedCollectionCardIDs.contains(product.collectionCardID),
@@ -616,7 +636,7 @@ struct CollectView: View {
                 )
                 .contentShape(Rectangle())
             }
-            .buttonStyle(CardCellButtonStyle())
+            .buttonStyle(.plain)
             .contextMenu {
                 Button {
                     openSealedSession = CollectionOpenSealedSession(item: item, productName: product.name)
@@ -625,6 +645,13 @@ struct CollectView: View {
                 }
             }
             .accessibilityLabel("\(product.name), \(item.quantity) owned")
+        }
+    }
+
+    @ViewBuilder
+    private func collectionCell(for item: CollectionItem, at index: Int) -> some View {
+        if sealedProduct(for: item) != nil {
+            EmptyView()
         } else if let card = cardsByCardID[item.cardID] {
             Button {
                 let tapTimeCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
@@ -1112,11 +1139,22 @@ struct CollectView: View {
                     ? "Try a different card name, set code, or number."
                     : "Try a different product name, series, or year."
             )
+        } else if selectedContentTypeTab == .products {
+            LazyVStack(spacing: 0) {
+                ForEach(indexedFilteredWishlistItemsForSelectedType) { indexed in
+                    wishlistSealedRow(for: indexed.item)
+
+                    if indexed.index < wishlistFilteredItemsForSelectedTypeCache.count - 1 {
+                        Divider()
+                            .padding(.leading, SealedProductRowCell.dividerLeadingInset)
+                    }
+                }
+            }
+            .padding(.bottom, 8)
         } else {
             EagerVGrid(items: indexedFilteredWishlistItemsForSelectedType, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { indexed in
                 wishlistCell(for: indexed.item)
                     .onAppear {
-                        guard selectedContentTypeTab == .cards else { return }
                         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: indexed.index + 1)
                     }
             }
@@ -1126,19 +1164,18 @@ struct CollectView: View {
     }
 
     @ViewBuilder
-    private func wishlistCell(for item: WishlistItem) -> some View {
+    private func wishlistSealedRow(for item: WishlistItem) -> some View {
         if let product = sealedProduct(for: item) {
             Button { selectedSealedProduct = product } label: {
-                SealedProductGridCell(
+                SealedProductRowCell(
                     product: product,
-                    gridOptions: gridOptions,
                     priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
                     isOwned: false,
                     isWishlisted: false
                 )
                 .contentShape(Rectangle())
             }
-            .buttonStyle(CardCellButtonStyle())
+            .buttonStyle(.plain)
             .contextMenu {
                 Button(role: .destructive) {
                     removeFromWishlist(item)
@@ -1147,6 +1184,13 @@ struct CollectView: View {
                 }
             }
             .accessibilityLabel(product.name)
+        }
+    }
+
+    @ViewBuilder
+    private func wishlistCell(for item: WishlistItem) -> some View {
+        if sealedProduct(for: item) != nil {
+            EmptyView()
         } else if let card = wishlistCardsByID[item.cardID] {
             Button { presentCard(card, orderedWishlistCards) } label: {
                 CardGridCell(
