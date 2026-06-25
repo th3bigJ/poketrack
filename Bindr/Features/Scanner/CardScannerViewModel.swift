@@ -154,12 +154,12 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     private let ciContext = CIContext(options: nil)
     private let liveRectangleRequest: VNDetectRectanglesRequest = {
         let request = VNDetectRectanglesRequest()
-        request.maximumObservations = 8
-        request.minimumConfidence = 0.3
+        request.maximumObservations = 4
+        request.minimumConfidence = 0.35
         request.minimumAspectRatio = 0.4   // width/height; portrait card ≈ 63/88
         request.maximumAspectRatio = 0.95
         request.quadratureTolerance = 30
-        request.minimumSize = 0.1
+        request.minimumSize = 0.14
         return request
     }()
 
@@ -170,7 +170,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     private var smoothedFrameQuality: Double = 0
     private static let frameQualitySmoothingFactor: Double = 0.10
     private static let frameQualityDecayFactor: Double = 0.82
-    private static let minimumLiveAnalysisInterval: CFTimeInterval = 0.22
+    private static let minimumLiveAnalysisInterval: CFTimeInterval = 0.45
     private static let alignmentTierDebounceInterval: CFTimeInterval = 0.35
     private var pendingAlignmentTier: ScannerAlignmentTier?
     private var pendingAlignmentTierTimestamp: CFTimeInterval = 0
@@ -841,6 +841,7 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         // Pass the buffer directly to Vision. Orientation must match AVCaptureConnection.videoRotationAngle
         // (set to 90.0 in setup) so bounding boxes line up with the on-screen reticle.
         let visionOrientation = Self.cgImageOrientation(forVideoRotationAngle: connection.videoRotationAngle)
+        liveRectangleRequest.regionOfInterest = Self.visionRegionOfInterest(forUIKitNormalizedRect: cardNormalizedRect)
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: visionOrientation, options: [:])
         let observations: [VNRectangleObservation]
         do {
@@ -865,6 +866,27 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
             self.frameQuality = self.smoothedFrameQuality
             self.updateAlignmentTier(for: self.smoothedFrameQuality)
         }
+    }
+
+    private static func visionRegionOfInterest(forUIKitNormalizedRect rect: CGRect) -> CGRect {
+        guard !rect.isEmpty, rect.width > 0, rect.height > 0 else {
+            return CGRect(x: 0, y: 0, width: 1, height: 1)
+        }
+
+        let padded = rect.insetBy(dx: -rect.width * 0.20, dy: -rect.height * 0.20)
+        let clamped = CGRect(
+            x: max(0, padded.minX),
+            y: max(0, padded.minY),
+            width: min(1, padded.maxX) - max(0, padded.minX),
+            height: min(1, padded.maxY) - max(0, padded.minY)
+        )
+
+        return CGRect(
+            x: clamped.minX,
+            y: 1 - clamped.maxY,
+            width: clamped.width,
+            height: clamped.height
+        )
     }
 
     /// Returns 0–1 quality score.

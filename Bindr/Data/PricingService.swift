@@ -43,6 +43,10 @@ final class PricingService {
         pricingCache.removeAll(keepingCapacity: false)
         historyCache.removeAll(keepingCapacity: false)
         trendsCache.removeAll(keepingCapacity: false)
+        pokemonCardHistoryCache.removeAll(keepingCapacity: false)
+        pokemonSetHistoryPointsCache.removeAll(keepingCapacity: false)
+        pokemonSetHistoryPointsByUnifiedKeyCache.removeAll(keepingCapacity: false)
+        pokemonCardKeyHistoryPointsCache.removeAll(keepingCapacity: false)
         pokemonCardPricingCache.removeAll(keepingCapacity: false)
         pokemonPricingByMasterCardID.removeAll(keepingCapacity: false)
         pokemonPricingPrefetchedSets.removeAll(keepingCapacity: false)
@@ -662,6 +666,10 @@ final class PricingService {
 
     @ObservationIgnored private var historyCache: [String: [String: [String: Any]]] = [:]
     @ObservationIgnored private var trendsCache: [String: [String: [String: Any]]] = [:]
+    @ObservationIgnored private var pokemonCardHistoryCache: [String: CardPriceHistory?] = [:]
+    @ObservationIgnored private var pokemonSetHistoryPointsCache: [String: [CatalogStore.PriceHistoryPoint]] = [:]
+    @ObservationIgnored private var pokemonSetHistoryPointsByUnifiedKeyCache: [String: [String: [CatalogStore.PriceHistoryPoint]]] = [:]
+    @ObservationIgnored private var pokemonCardKeyHistoryPointsCache: [String: [CatalogStore.PriceHistoryPoint]] = [:]
 
     private static func historyTrendsCacheKey(setCode: String, catalogBrand: TCGBrand) -> String {
         return "pk:\(setCode.lowercased())"
@@ -691,8 +699,16 @@ final class PricingService {
 
     private func loadPokemonPriceHistory(for card: Card) async -> CardPriceHistory? {
         let keys = Self.pricingLookupKeys(for: card, historyStyle: true)
-        let mergedPoints = await Self.mergedPriceHistoryPoints(for: card, keys: keys)
-        guard !mergedPoints.isEmpty else { return nil }
+        let cacheKey = Self.cardHistoryCacheKey(for: card, keys: keys)
+        if let idx = pokemonCardHistoryCache.index(forKey: cacheKey) {
+            return pokemonCardHistoryCache[idx].value
+        }
+
+        let mergedPoints = await mergedPriceHistoryPoints(for: card, keys: keys)
+        guard !mergedPoints.isEmpty else {
+            pokemonCardHistoryCache[cacheKey] = nil
+            return nil
+        }
 
         var seriesMap: [String: (daily: [PriceDataPoint], weekly: [PriceDataPoint], monthly: [PriceDataPoint])] = [:]
         for pt in mergedPoints {
@@ -706,7 +722,10 @@ final class PricingService {
             default: break
             }
         }
-        guard !seriesMap.isEmpty else { return nil }
+        guard !seriesMap.isEmpty else {
+            pokemonCardHistoryCache[cacheKey] = nil
+            return nil
+        }
         var series: [String: CardPriceHistory.Series] = [:]
         for (k, v) in seriesMap {
             series[k] = CardPriceHistory.Series(
@@ -715,37 +734,87 @@ final class PricingService {
                 monthly: v.monthly.sorted { $0.id < $1.id }
             )
         }
-        return CardPriceHistory(series: series)
+        let history = CardPriceHistory(series: series)
+        pokemonCardHistoryCache[cacheKey] = history
+        return history
+    }
+
+    private static func cardHistoryCacheKey(for card: Card, keys: [String]) -> String {
+        let keyParts = ([card.masterCardId, card.setCode] + keys)
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() }
+            .filter { !$0.isEmpty }
+        return keyParts.joined(separator: "|")
     }
 
     /// Merges history from every pricing lookup key. Set-level unified rows are absorbed first so
     /// pricing ids like `sm12-241` win over catalog `masterCardId` rows; per-key fetches fill any gaps.
-    private static func mergedPriceHistoryPoints(for card: Card, keys: [String]) async -> [CatalogStore.PriceHistoryPoint] {
+    private func mergedPriceHistoryPoints(for card: Card, keys: [String]) async -> [CatalogStore.PriceHistoryPoint] {
         var merged: [CatalogStore.PriceHistoryPoint] = []
         var seen = Set<String>()
 
         func absorb(_ points: [CatalogStore.PriceHistoryPoint]) {
             for pt in points {
-                let variant = canonicalVariant(pt.variant)
+                let variant = Self.canonicalVariant(pt.variant)
                 let id = "\(variant)|\(pt.grade)|\(pt.periodType)|\(pt.periodKey)"
                 guard seen.insert(id).inserted else { continue }
                 merged.append(pt)
             }
         }
 
-        let unifiedCandidates = Set(keys.map { unifiedPricingCardKey($0) })
-        for setCode in pricingSetCodesToQuery(for: card) {
-            let setPts = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, setCode: setCode)
-            let matching = setPts.filter { unifiedCandidates.contains(unifiedPricingCardKey($0.cardKey)) }
-            absorb(matching)
+        let unifiedCandidates = Set(keys.map { Self.unifiedPricingCardKey($0) })
+        for setCode in Self.pricingSetCodesToQuery(for: card) {
+            let pointsByUnifiedKey = await priceHistoryPointsByUnifiedKeyForPokemonSet(setCode)
+            for candidate in unifiedCandidates {
+                if let matching = pointsByUnifiedKey[candidate] {
+                    absorb(matching)
+                }
+            }
         }
 
         for key in keys {
-            let points = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, cardKey: key)
+            let points = await priceHistoryPointsForPokemonCardKey(key)
             absorb(points)
         }
 
         return merged
+    }
+
+    private func priceHistoryPointsByUnifiedKeyForPokemonSet(_ setCode: String) async -> [String: [CatalogStore.PriceHistoryPoint]] {
+        let normalized = setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !normalized.isEmpty else { return [:] }
+        if let cached = pokemonSetHistoryPointsByUnifiedKeyCache[normalized] {
+            return cached
+        }
+        let points = await priceHistoryPointsForPokemonSet(normalized)
+        var indexed: [String: [CatalogStore.PriceHistoryPoint]] = [:]
+        indexed.reserveCapacity(points.count)
+        for point in points {
+            indexed[Self.unifiedPricingCardKey(point.cardKey), default: []].append(point)
+        }
+        pokemonSetHistoryPointsByUnifiedKeyCache[normalized] = indexed
+        return indexed
+    }
+
+    private func priceHistoryPointsForPokemonSet(_ setCode: String) async -> [CatalogStore.PriceHistoryPoint] {
+        let normalized = setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !normalized.isEmpty else { return [] }
+        if let cached = pokemonSetHistoryPointsCache[normalized] {
+            return cached
+        }
+        let points = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, setCode: normalized)
+        pokemonSetHistoryPointsCache[normalized] = points
+        return points
+    }
+
+    private func priceHistoryPointsForPokemonCardKey(_ cardKey: String) async -> [CatalogStore.PriceHistoryPoint] {
+        let normalized = cardKey.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !normalized.isEmpty else { return [] }
+        if let cached = pokemonCardKeyHistoryPointsCache[normalized] {
+            return cached
+        }
+        let points = await CatalogStore.shared.fetchPriceHistoryPoints(brand: .pokemon, cardKey: normalized)
+        pokemonCardKeyHistoryPointsCache[normalized] = points
+        return points
     }
 
     /// Resolves price trends from the per-set file (SQLite after daily sync, else network), looks up by card key.

@@ -415,24 +415,26 @@ struct RootView: View {
             // render server and cannot be stalled by @MainActor work (CloudKit, SwiftData).
             // launchFadeHandle lets onChange(of: isLaunchSequenceComplete) trigger the
             // fade imperatively, bypassing SwiftUI's updateUIView scheduling delay.
-            RenderThreadFadeContainer(
-                content: launchOverlayContent,
-                isVisible: isLaunchOverlayVisible,
-                duration: 0.45,
-                onFadeComplete: {
-                    // Fallback path (isVisible flipped directly rather than via handle).
-                    Task { @MainActor in
-                        isLaunchOverlayVisible = false
-                        services.runDeferredLaunchServicesIfNeeded()
-                        evaluatePremiumUpsellIfNeeded()
-                        schedulePostLaunchServicesIfNeeded()
-                    }
-                },
-                handle: launchFadeHandle
-            )
-            .allowsHitTesting(isLaunchOverlayHitTestingEnabled)
-            .ignoresSafeArea()
-            .zIndex(1)
+            if isLaunchOverlayVisible {
+                RenderThreadFadeContainer(
+                    content: launchOverlayContent,
+                    isVisible: isLaunchOverlayVisible,
+                    duration: 0.45,
+                    onFadeComplete: {
+                        // Fallback path (isVisible flipped directly rather than via handle).
+                        Task { @MainActor in
+                            isLaunchOverlayVisible = false
+                            services.runDeferredLaunchServicesIfNeeded()
+                            evaluatePremiumUpsellIfNeeded()
+                            schedulePostLaunchServicesIfNeeded()
+                        }
+                    },
+                    handle: launchFadeHandle
+                )
+                .allowsHitTesting(isLaunchOverlayHitTestingEnabled)
+                .ignoresSafeArea()
+                .zIndex(1)
+            }
         }
         .onChange(of: services.isReady) { _, ready in
             if ready && !hasInsertedMainContent {

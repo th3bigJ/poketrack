@@ -62,6 +62,11 @@ struct RenderThreadFadeContainer<Content: View>: UIViewRepresentable {
 
     func makeCoordinator() -> Coordinator { Coordinator(content: content) }
 
+    static func dismantleUIView(_ uiView: _FadeContainerView, coordinator: Coordinator) {
+        uiView.stopAnimationsRecursively()
+        coordinator.hostingController.view.removeFromSuperview()
+    }
+
     final class Coordinator {
         let hostingController: UIHostingController<Content>
         init(content: Content) {
@@ -88,5 +93,17 @@ final class _FadeContainerView: UIView {
         layer.add(anim, forKey: "launchFade")
         layer.opacity = 0
         CATransaction.commit()
+    }
+
+    func stopAnimationsRecursively() {
+        removeAnimations(from: self)
+    }
+
+    private func removeAnimations(from view: UIView) {
+        view.layer.removeAllAnimations()
+        view.layer.sublayers?.forEach { $0.removeAllAnimations() }
+        for subview in view.subviews {
+            removeAnimations(from: subview)
+        }
     }
 }

@@ -39,6 +39,9 @@ struct DashboardView: View {
     @State private var isLoadingDashboardInventory = false
     @State private var isPreparingInitialDashboardData = false
     @State private var hasPreparedInitialDashboardData = false
+    @State private var lastDashboardInventoryReloadAt: Date? = nil
+    @State private var lastHandledInventoryRevision: Int = -1
+    @State private var lastActionableTradesRefreshAt: Date? = nil
     @State private var liveTotalGbp: Double? = nil
     @State private var livePokemonGbp: Double = 0
     @State private var liveCardsGbp: Double = 0
@@ -566,9 +569,14 @@ struct DashboardView: View {
         .task(id: "\(isActive):\(services.collectionInventoryRevision):\(hasFiredInitialLoadComplete)") {
             guard isActive else { return }
             guard hasFiredInitialLoadComplete else { return }
+            let revision = services.collectionInventoryRevision
+            if lastHandledInventoryRevision == revision, !needsFreshTodayCollectionValue {
+                return
+            }
             try? await Task.sleep(nanoseconds: 200_000_000)
             guard !Task.isCancelled else { return }
             await reloadDashboardInventory(deferForLaunch: false)
+            lastHandledInventoryRevision = revision
             recomputeCollectionStats()
             await computeLiveValue()
             await services.collectionValue?.loadAllFromStore()
@@ -621,7 +629,7 @@ struct DashboardView: View {
             if phase == .active {
                 Task {
                     guard isActive else { return }
-                    await refreshActionableTrades()
+                    await refreshActionableTradesIfStale(minimumInterval: 60)
                     guard hasFiredInitialLoadComplete,
                           services.isLaunchCatalogPipelineComplete,
                           collectionItems.count > 0 else { return }
@@ -630,17 +638,17 @@ struct DashboardView: View {
             }
         }
         .onChange(of: services.trade.lastMutationAt) { _, _ in
-            Task { await refreshActionableTrades() }
+            Task { await refreshActionableTrades(force: true) }
         }
         .onChange(of: services.socialAuth.authState) { _, _ in
-            Task { await refreshActionableTrades() }
+            Task { await refreshActionableTrades(force: true) }
         }
         .task(id: hasFiredInitialLoadComplete) {
             guard hasFiredInitialLoadComplete else { return }
             guard isActive else { return }
             try? await Task.sleep(nanoseconds: 800_000_000)
             guard !Task.isCancelled else { return }
-            await refreshActionableTrades()
+            await refreshActionableTradesIfStale(minimumInterval: 60)
         }
         // Refresh ledger lines and collection items when SwiftData saves (e.g. CloudKit sync or
         // card added mid-session). Debounce so rapid batch saves only trigger one fetch. The 5s
@@ -700,9 +708,10 @@ struct DashboardView: View {
             }
             guard hasFiredInitialLoadComplete else { return }
             Task {
-                await reloadDashboardInventory(deferForLaunch: false)
-                recomputeCollectionStats()
-                await refreshActionableTrades()
+                if await reloadDashboardInventoryIfStale(minimumInterval: 60) {
+                    recomputeCollectionStats()
+                }
+                await refreshActionableTradesIfStale(minimumInterval: 60)
                 await recomputeTodayCollectionValueIfStale(force: false)
             }
         }
@@ -865,13 +874,28 @@ struct DashboardView: View {
         .accessibilityLabel("\(tradeActionCardTitle). \(tradeActionCardSubtitle)")
     }
 
-    private func refreshActionableTrades() async {
+    private func refreshActionableTradesIfStale(minimumInterval: TimeInterval) async {
+        if let lastActionableTradesRefreshAt,
+           Date().timeIntervalSince(lastActionableTradesRefreshAt) < minimumInterval {
+            return
+        }
+        await refreshActionableTrades(force: false)
+    }
+
+    private func refreshActionableTrades(force: Bool = false) async {
+        if !force,
+           let lastActionableTradesRefreshAt,
+           Date().timeIntervalSince(lastActionableTradesRefreshAt) < 10 {
+            return
+        }
         guard case .signedIn(let uid, _) = services.socialAuth.authState else {
             actionableTrades = []
+            lastActionableTradesRefreshAt = Date()
             return
         }
         do {
             let trades = try await services.trade.fetchMyTrades()
+            lastActionableTradesRefreshAt = Date()
             actionableTrades = trades
                 .filter { $0.needsResponse(from: uid) }
                 .map { (
@@ -1795,7 +1819,17 @@ struct DashboardView: View {
         wishlistItems = (try? modelContext.fetch(wishlistDescriptor)) ?? []
         allLedgerLines = (try? modelContext.fetch(ledgerDescriptor)) ?? []
         binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
+        lastDashboardInventoryReloadAt = Date()
         dashboardDataRevision += 1
+    }
+
+    private func reloadDashboardInventoryIfStale(minimumInterval: TimeInterval) async -> Bool {
+        if let lastDashboardInventoryReloadAt,
+           Date().timeIntervalSince(lastDashboardInventoryReloadAt) < minimumInterval {
+            return false
+        }
+        await reloadDashboardInventory(deferForLaunch: false)
+        return true
     }
 
     @discardableResult
