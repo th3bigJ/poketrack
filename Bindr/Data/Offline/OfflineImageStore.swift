@@ -25,6 +25,8 @@ final class OfflineImageStore: @unchecked Sendable {
 
     /// Avoid re-reading `manifest.json` from disk for every thumbnail lookup while scrolling.
     private var manifestMemoryCache: [TCGBrand: OfflinePackManifest] = [:]
+    /// Resolved `files/` directory URL per brand — avoids repeated path construction syscalls on every lookup.
+    private var filesDirCache: [TCGBrand: URL] = [:]
 
     private init() {}
 
@@ -81,9 +83,11 @@ final class OfflineImageStore: @unchecked Sendable {
                   let name = manifest.entries[key],
                   !name.isEmpty
             else { return nil }
-            let url = (try? filesDir(for: brand, create: false))?.appendingPathComponent(name, isDirectory: false)
-            guard let url, fm.fileExists(atPath: url.path) else { return nil }
-            return url
+            // Trust the manifest — files are only removed via removeEntry/deleteAll which
+            // also update the manifest, so a present entry means the file exists.
+            let dir = filesDirCache[brand] ?? (try? filesDir(for: brand, create: false))
+            if filesDirCache[brand] == nil { filesDirCache[brand] = dir }
+            return dir?.appendingPathComponent(name, isDirectory: false)
         }
     }
 
@@ -131,6 +135,7 @@ final class OfflineImageStore: @unchecked Sendable {
     func deleteAll(for brand: TCGBrand) throws {
         try io.sync {
             manifestMemoryCache.removeValue(forKey: brand)
+            filesDirCache.removeValue(forKey: brand)
             let dir = try brandDir(for: brand, create: false)
             if fm.fileExists(atPath: dir.path) {
                 try fm.removeItem(at: dir)

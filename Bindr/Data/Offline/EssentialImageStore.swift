@@ -14,36 +14,43 @@ final class EssentialImageStore: @unchecked Sendable {
     private let decoder = JSONDecoder()
 
     private var manifestMemoryCache: [TCGBrand: EssentialManifest] = [:]
+    private var filesDirCache: [TCGBrand: URL] = [:]
 
     private init() {}
 
     // MARK: - Paths
 
-    private func rootDir() throws -> URL {
+    private func rootDir(create: Bool) throws -> URL {
         let base = try fm.url(
             for: .applicationSupportDirectory,
             in: .userDomainMask,
             appropriateFor: nil,
-            create: true
+            create: create
         ).appendingPathComponent("Bindr/OfflineMedia/essential", isDirectory: true)
-        try fm.createDirectory(at: base, withIntermediateDirectories: true)
+        if create {
+            try fm.createDirectory(at: base, withIntermediateDirectories: true)
+        }
         return base
     }
 
-    private func brandDir(for brand: TCGBrand) throws -> URL {
-        let d = try rootDir().appendingPathComponent(brand.rawValue, isDirectory: true)
-        try fm.createDirectory(at: d, withIntermediateDirectories: true)
+    private func brandDir(for brand: TCGBrand, create: Bool) throws -> URL {
+        let d = try rootDir(create: create).appendingPathComponent(brand.rawValue, isDirectory: true)
+        if create {
+            try fm.createDirectory(at: d, withIntermediateDirectories: true)
+        }
         return d
     }
 
-    private func filesDir(for brand: TCGBrand) throws -> URL {
-        let d = try brandDir(for: brand).appendingPathComponent("files", isDirectory: true)
-        try fm.createDirectory(at: d, withIntermediateDirectories: true)
+    private func filesDir(for brand: TCGBrand, create: Bool) throws -> URL {
+        let d = try brandDir(for: brand, create: create).appendingPathComponent("files", isDirectory: true)
+        if create {
+            try fm.createDirectory(at: d, withIntermediateDirectories: true)
+        }
         return d
     }
 
-    private func manifestURL(for brand: TCGBrand) throws -> URL {
-        try brandDir(for: brand).appendingPathComponent("manifest.json", isDirectory: false)
+    private func manifestURL(for brand: TCGBrand, create: Bool = true) throws -> URL {
+        try brandDir(for: brand, create: create).appendingPathComponent("manifest.json", isDirectory: false)
     }
 
     // MARK: - Public API
@@ -56,9 +63,11 @@ final class EssentialImageStore: @unchecked Sendable {
                   let name = manifest.entries[key],
                   !name.isEmpty
             else { return nil }
-            let url = (try? filesDir(for: brand))?.appendingPathComponent(name, isDirectory: false)
-            guard let url, fm.fileExists(atPath: url.path) else { return nil }
-            return url
+            // Trust the manifest — files are only removed via removeEntry/deleteAll which
+            // also update the manifest, so a present entry means the file exists.
+            let dir = filesDirCache[brand] ?? (try? filesDir(for: brand, create: false))
+            if filesDirCache[brand] == nil { filesDirCache[brand] = dir }
+            return dir?.appendingPathComponent(name, isDirectory: false)
         }
     }
 
@@ -71,7 +80,7 @@ final class EssentialImageStore: @unchecked Sendable {
         guard !key.isEmpty else { return }
         let ext = (key as NSString).pathExtension
         let baseName = ext.isEmpty ? stableFileName(for: key) : stableFileName(for: key) + "." + ext
-        let files = try filesDir(for: brand)
+        let files = try filesDir(for: brand, create: true)
         let dest = files.appendingPathComponent(baseName, isDirectory: false)
         try data.write(to: dest, options: .atomic)
         io.sync {
@@ -84,7 +93,7 @@ final class EssentialImageStore: @unchecked Sendable {
     func flushManifest(for brand: TCGBrand) throws {
         let snapshot: EssentialManifest? = io.sync { manifestMemoryCache[brand] }
         guard let snapshot else { return }
-        let url = try manifestURL(for: brand)
+        let url = try manifestURL(for: brand, create: true)
         let data = try encoder.encode(snapshot)
         try data.write(to: url, options: .atomic)
     }
@@ -93,7 +102,7 @@ final class EssentialImageStore: @unchecked Sendable {
 
     private func loadManifestLocked(for brand: TCGBrand) -> EssentialManifest? {
         if let cached = manifestMemoryCache[brand] { return cached }
-        guard let url = try? manifestURL(for: brand),
+        guard let url = try? manifestURL(for: brand, create: false),
               let data = try? Data(contentsOf: url),
               let m = try? decoder.decode(EssentialManifest.self, from: data)
         else { return nil }

@@ -567,21 +567,13 @@ final class CollectionValueService {
 
         guard let dailySeries = series, !dailySeries.daily.isEmpty else { return nil }
 
-        let cal = Calendar.current
-        let targetDay = cal.startOfDay(for: date)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        // Format the target date to "yyyy-MM-dd" once and compare as strings — avoids
+        // DateFormatter/ICU allocation entirely. Labels in dailySeries are already this format.
+        let comps = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        guard let y = comps.year, let m = comps.month, let d = comps.day else { return nil }
+        let targetLabel = String(format: "%04d-%02d-%02d", y, m, d)
 
-        for point in dailySeries.daily {
-            guard let pointDate = dateFormatter.date(from: point.label) else { continue }
-            if cal.startOfDay(for: pointDate) == targetDay {
-                return point.price
-            }
-        }
-
-        // No exact-day history point; caller falls back to current live price for consistency.
-        return nil
+        return dailySeries.daily.first(where: { $0.label == targetLabel })?.price
     }
 
     // MARK: - Helpers
