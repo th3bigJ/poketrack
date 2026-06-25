@@ -9,6 +9,7 @@ struct DashboardView: View {
     var onOpenSealedProducts: (() -> Void)? = nil
     var onOpenWishlist: (() -> Void)? = nil
     var onOpenBrowse: (() -> Void)? = nil
+    var isActive: Bool = true
     /// Opens Social → Trades. Pass a trade ID to jump straight to that offer; pass nil for the trades list.
     var onOpenActionableTrades: ((UUID?) -> Void)? = nil
     var onInitialLoadStatusChange: ((String) -> Void)? = nil
@@ -45,11 +46,17 @@ struct DashboardView: View {
     @State private var totalCostBasis: Double = 0
     @State private var isLoadingValue = false
     @State private var isComputingLiveValue = false
+    @State private var liveValueComputeTask: Task<Bool, Never>?
+    @State private var isManuallyRefreshingCollectionValue = false
     @State private var hasFiredInitialLoadComplete = false
     @State private var selectedPoint: ChartPoint? = nil
     @State private var chartRefreshID: Int = 0
     @State private var selectedBrand: TCGBrand? = nil
     @State private var lastLiveValueComputedAt: Date? = nil
+    /// Yesterday's (or other interim) total shown while today's live pricing recomputes — never written to history.
+    @State private var interimDisplaySnapshot: BrandSnapshot? = nil
+    @State private var hasComputedLiveValueThisSession = false
+    @State private var pricingGenerationAtLastCompute: Int = -1
     // Grouped into a single struct so all three update in one SwiftUI render pass,
     // avoiding three sequential body re-evaluations over the full collection.
     private struct CardMetadataCache {
@@ -135,13 +142,13 @@ struct DashboardView: View {
         )
     }
 
-    /// Today's live value first; falls back to today's saved SwiftData snapshot while recomputing.
-    private var todayLiveSnapshot: BrandSnapshot? {
+    /// Authoritative today value — live recompute or today's saved snapshot only (not interim placeholders).
+    private var authoritativeTodaySnapshot: BrandSnapshot? {
         liveSnapshot ?? services.collectionValue?.brandSnapshot(for: Date())
     }
 
     private var displayedBrandSnapshot: BrandSnapshot? {
-        todayLiveSnapshot
+        authoritativeTodaySnapshot ?? interimDisplaySnapshot
     }
 
     /// True when the hero total reflects a live recompute this session, not only a stored snapshot.
@@ -296,7 +303,7 @@ struct DashboardView: View {
 
     private func recomputeChartData() async {
         let svc = services.collectionValue
-        let todaySnap = todayLiveSnapshot
+        let todaySnap = authoritativeTodaySnapshot
         let snapshots = svc?.snapshots ?? []
 
         let daily = await Task.detached(priority: .userInitiated) {
@@ -487,13 +494,15 @@ struct DashboardView: View {
             isLoadingValue = true
             defer { isLoadingValue = false }
 
+            ensureValuePlaceholderIfNeeded()
+
             for attempt in 0..<10 {
                 let delayNs = UInt64(400_000_000 + attempt * 400_000_000)
                 try? await Task.sleep(nanoseconds: delayNs)
                 guard !Task.isCancelled else { return }
 
                 await reloadDashboardInventory(deferForLaunch: false)
-                await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+                await prefetchPricingForLiveValue()
                 if await computeLiveValue(validateAgainstRestore: attempt >= 2) {
                     if let snap = liveSnapshot {
                         await services.collectionValue?.forceRecalculate(
@@ -513,7 +522,8 @@ struct DashboardView: View {
             await services.collectionValue?.loadAllFromStore()
             chartRefreshID += 1
         }
-        .task(id: backfillTrigger) {
+        .task(id: "\(isActive):\(backfillTrigger)") {
+            guard isActive else { return }
             guard collectionItems.count > 0,
                   services.isLaunchCatalogPipelineComplete,
                   hasFiredInitialLoadComplete,
@@ -524,10 +534,11 @@ struct DashboardView: View {
             guard !Task.isCancelled else { return }
             await svc.runBackfillIfNeeded(
                 collectionItems: collectionItems,
-                preferredTodaySnapshot: liveSnapshot ?? displayedBrandSnapshot
+                preferredTodaySnapshot: hasComputedLiveValueThisSession ? liveSnapshot : nil
             )
         }
-        .task(id: dashboardDataSignature) {
+        .task(id: "\(isActive):\(dashboardDataSignature)") {
+            guard isActive else { return }
             guard hasFiredInitialLoadComplete else { return }
             guard visibleCollectionItems.count > 0 || allLedgerLines.count > 0 else { return }
             // Defer card metadata just past the overlay fade so it doesn't
@@ -536,7 +547,8 @@ struct DashboardView: View {
             guard !Task.isCancelled else { return }
             await resolveDashboardMetadata()
         }
-        .task(id: supplementalDashboardDataTrigger) {
+        .task(id: "\(isActive):\(supplementalDashboardDataTrigger)") {
+            guard isActive else { return }
             guard hasFiredInitialLoadComplete else { return }
             guard services.isLaunchCatalogPipelineComplete else { return }
             guard !services.isCatalogDownloadInProgress else { return }
@@ -544,18 +556,16 @@ struct DashboardView: View {
             guard !Task.isCancelled else { return }
             await loadUpcomingReleases()
         }
-        .task(id: services.dashboardMarketReloadToken) {
+        .task(id: "\(isActive):\(services.dashboardMarketReloadToken):\(hasFiredInitialLoadComplete)") {
+            guard isActive else { return }
             guard services.dashboardMarketReloadToken > 0 else { return }
             guard hasFiredInitialLoadComplete else { return }
             try? await Task.sleep(nanoseconds: 300_000_000)
             guard !Task.isCancelled else { return }
-            await reloadDashboardInventory(deferForLaunch: false)
-            await computeLiveValue()
-            await services.collectionValue?.loadAllFromStore()
-            chartRefreshID += 1
-            await loadUpcomingReleases()
+            await refreshCollectionValueAfterMarketPricingUpdate()
         }
-        .task(id: "\(services.collectionInventoryRevision):\(hasFiredInitialLoadComplete)") {
+        .task(id: "\(isActive):\(services.collectionInventoryRevision):\(hasFiredInitialLoadComplete)") {
+            guard isActive else { return }
             guard hasFiredInitialLoadComplete else { return }
             try? await Task.sleep(nanoseconds: 200_000_000)
             guard !Task.isCancelled else { return }
@@ -568,19 +578,11 @@ struct DashboardView: View {
         .onChange(of: services.isCatalogDownloadInProgress) { _, inProgress in
             guard !inProgress else { return }
             Task {
+                guard isActive else { return }
                 guard hasFiredInitialLoadComplete else { return }
                 try? await Task.sleep(nanoseconds: 500_000_000)
                 guard !Task.isCancelled else { return }
-                await reloadDashboardInventory(deferForLaunch: false)
-                await computeLiveValue()
-                await services.collectionValue?.loadAllFromStore()
-                chartRefreshID += 1
-                if let snap = liveSnapshot {
-                    await services.collectionValue?.forceRecalculate(
-                        liveSnapshot: snap,
-                        collectionItems: collectionItems
-                    )
-                }
+                await refreshCollectionValueAfterMarketPricingUpdate()
             }
         }
         .onAppear {
@@ -598,7 +600,7 @@ struct DashboardView: View {
             recomputeActivePoints()
         }
         .onChange(of: services.isBootstrapping) { _, bootstrapping in
-            guard !bootstrapping, hasFiredInitialLoadComplete, collectionItems.count > 0 else { return }
+            guard isActive, !bootstrapping, hasFiredInitialLoadComplete, collectionItems.count > 0 else { return }
             Task {
                 await computeLiveValue()
                 await services.collectionValue?.loadAllFromStore()
@@ -608,7 +610,7 @@ struct DashboardView: View {
         .onChange(of: services.pricing.usdToGbp) { old, new in
             // Skip recompute if the rate change is < 0.5% (daily FX moves are tiny).
             let delta = abs(new - old) / max(old, 1e-9)
-            guard delta >= 0.005 else { return }
+            guard isActive, delta >= 0.005 else { return }
             Task {
                 await computeLiveValue()
             }
@@ -619,17 +621,12 @@ struct DashboardView: View {
             }
             if phase == .active {
                 Task {
+                    guard isActive else { return }
                     await refreshActionableTrades()
                     guard hasFiredInitialLoadComplete,
                           services.isLaunchCatalogPipelineComplete,
                           collectionItems.count > 0 else { return }
-                    // Throttle pricing recomputes to once per 5 minutes on foreground to
-                    // avoid sustained CPU work on every lock/unlock cycle.
-                    if let last = lastLiveValueComputedAt,
-                       Date().timeIntervalSince(last) < 300 { return }
-                    await computeLiveValue()
-                    await services.collectionValue?.loadAllFromStore()
-                    chartRefreshID += 1
+                    await recomputeTodayCollectionValueIfStale(force: false)
                 }
             }
         }
@@ -641,6 +638,7 @@ struct DashboardView: View {
         }
         .task(id: hasFiredInitialLoadComplete) {
             guard hasFiredInitialLoadComplete else { return }
+            guard isActive else { return }
             try? await Task.sleep(nanoseconds: 800_000_000)
             guard !Task.isCancelled else { return }
             await refreshActionableTrades()
@@ -649,7 +647,7 @@ struct DashboardView: View {
         // card added mid-session). Debounce so rapid batch saves only trigger one fetch. The 2s
         // debounce lets CloudKit finish delivering a batch before we read — avoids partial re-renders.
         .onReceive(NotificationCenter.default.publisher(for: ModelContext.didSave)) { _ in
-            guard hasFiredInitialLoadComplete else { return }
+            guard isActive, hasFiredInitialLoadComplete else { return }
             ledgerRefreshDebounceTask?.cancel()
             ledgerRefreshDebounceTask = Task { @MainActor in
                 try? await Task.sleep(for: .seconds(2))
@@ -695,6 +693,19 @@ struct DashboardView: View {
                 }
             }
         }
+        .onChange(of: isActive) { _, active in
+            if !active {
+                ledgerRefreshDebounceTask?.cancel()
+                return
+            }
+            guard hasFiredInitialLoadComplete else { return }
+            Task {
+                await reloadDashboardInventory(deferForLaunch: false)
+                recomputeCollectionStats()
+                await refreshActionableTrades()
+                await recomputeTodayCollectionValueIfStale(force: false)
+            }
+        }
         .sheet(item: $selectedCardForDetail, onDismiss: restoreTabBarAfterSheet) { card in
             CardDetailSheet(cards: [card], startIndex: 0)
                 .environment(services)
@@ -727,7 +738,8 @@ struct DashboardView: View {
             .environment(services)
             .bindrTheme(accent: services.theme.accentColor)
         }
-        .task(id: progressSnapshotTaskKey) {
+        .task(id: "\(isActive):\(progressSnapshotTaskKey)") {
+            guard isActive else { return }
             await refreshProgressSnapshots()
         }
     }
@@ -969,14 +981,18 @@ struct DashboardView: View {
     private var dashboardValueSummary: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 4) {
-                if (isLoadingValue || services.needsCollectionValueRecalcAfterRestore) && displayedBrandSnapshot == nil {
+                if isLoadingValue && displayedBrandSnapshot == nil {
                     ProgressView()
                         .tint(services.theme.accentColor)
                 } else if isScrubbingOrLoaded {
-                    Text(formatCurrency(displayTotal))
-                        .font(.system(size: 34, weight: .bold, design: .rounded))
-                        .foregroundStyle(dashboardPrimaryText)
-                        .contentTransition(.numericText())
+                    HStack(alignment: .center, spacing: 8) {
+                        Text(formatCurrency(displayTotal))
+                            .font(.system(size: 34, weight: .bold, design: .rounded))
+                            .foregroundStyle(dashboardPrimaryText)
+                            .contentTransition(.numericText())
+
+                        collectionValueReloadButton
+                    }
 
                     Text("Collection Value")
                         .font(.subheadline.weight(.medium))
@@ -990,9 +1006,12 @@ struct DashboardView: View {
                     .foregroundStyle(dashboardSecondaryText)
                     .contentTransition(.numericText())
                 } else {
-                    Text("No pricing data yet")
-                        .font(.headline)
-                        .foregroundStyle(dashboardSecondaryText)
+                    HStack(alignment: .center, spacing: 8) {
+                        Text("No pricing data yet")
+                            .font(.headline)
+                            .foregroundStyle(dashboardSecondaryText)
+                        collectionValueReloadButton
+                    }
                 }
             }
 
@@ -1025,6 +1044,28 @@ struct DashboardView: View {
                 }
             }
         }
+    }
+
+    private var collectionValueReloadButton: some View {
+        Button {
+            Haptics.lightImpact()
+            Task { await refreshCollectionValueManually() }
+        } label: {
+            Group {
+                if isManuallyRefreshingCollectionValue {
+                    ProgressView()
+                        .controlSize(.small)
+                } else {
+                    Image(systemName: "arrow.clockwise")
+                        .font(.body.weight(.semibold))
+                }
+            }
+            .frame(width: 28, height: 28)
+            .foregroundStyle(dashboardSecondaryText)
+        }
+        .buttonStyle(.plain)
+        .disabled(isManuallyRefreshingCollectionValue)
+        .accessibilityLabel("Refresh collection value")
     }
 
     private var collectionValuePeriodRow: some View {
@@ -1632,29 +1673,115 @@ struct DashboardView: View {
         fireInitialLoadCompleteIfReady()
 
         if collectionItems.count > 0 {
-            Task { @MainActor in
-                if await computeLiveValue() {
-                    await services.collectionValue?.loadAllFromStore()
-                    chartRefreshID += 1
-                }
-            }
+            await recomputeTodayCollectionValueIfStale(force: true)
         }
     }
 
     /// Instant placeholder while live pricing loads — never treated as authoritative.
     private func applyValuePlaceholder(from svc: CollectionValueService) {
-        let placeholder = svc.brandSnapshot(for: Date())
-            ?? svc.todayPersistedSnapshot()
-        guard let placeholder, placeholder.total > 0 else { return }
-        liveTotalGbp = placeholder.total
-        livePokemonGbp = placeholder.pokemon
-        liveCardsGbp = placeholder.cards
-        liveSealedGbp = placeholder.sealed
+        if let today = svc.authoritativeTodaySnapshot(), today.total > 0 {
+            liveTotalGbp = today.total
+            livePokemonGbp = today.pokemon
+            liveCardsGbp = today.cards
+            liveSealedGbp = today.sealed
+            interimDisplaySnapshot = nil
+            return
+        }
+        interimDisplaySnapshot = svc.interimPlaceholderSnapshot()
     }
 
-    private func reloadDashboardInventory(deferForLaunch: Bool) async {
+    private func ensureValuePlaceholderIfNeeded() {
+        guard authoritativeTodaySnapshot == nil, let svc = services.collectionValue else { return }
+        applyValuePlaceholder(from: svc)
+    }
+
+    private var needsFreshTodayCollectionValue: Bool {
+        let pricingStale = services.pricing.pricingCacheGeneration != pricingGenerationAtLastCompute
+        let dayStale = lastLiveValueComputedAt.map { !Calendar.current.isDateInToday($0) } ?? true
+        return !hasComputedLiveValueThisSession || pricingStale || dayStale
+    }
+
+    private func recomputeTodayCollectionValueIfStale(force: Bool) async {
+        guard collectionItems.count > 0 else { return }
+        if !force {
+            if !needsFreshTodayCollectionValue { return }
+            if let last = lastLiveValueComputedAt,
+               Calendar.current.isDateInToday(last),
+               services.pricing.pricingCacheGeneration == pricingGenerationAtLastCompute,
+               Date().timeIntervalSince(last) < 300 {
+                return
+            }
+        }
+        await reloadDashboardInventory(deferForLaunch: false)
+        await prefetchPricingForLiveValue()
+        if await computeLiveValue() {
+            await services.collectionValue?.loadAllFromStore()
+            chartRefreshID += 1
+        }
+    }
+
+    private func prefetchPricingForLiveValue() async {
+        let generation = services.pricing.pricingCacheGeneration
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        if services.pricing.pricingCacheGeneration != generation {
+            await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        }
+    }
+
+    private func refreshCollectionValueAfterMarketPricingUpdate() async {
+        await reloadDashboardInventory(deferForLaunch: false)
+        ensureValuePlaceholderIfNeeded()
+        await prefetchPricingForLiveValue()
+        if await computeLiveValue(), let snap = liveSnapshot {
+            await services.collectionValue?.forceRecalculate(
+                liveSnapshot: snap,
+                collectionItems: collectionItems
+            )
+        }
+        await services.collectionValue?.loadAllFromStore()
+        chartRefreshID += 1
+        await loadUpcomingReleases()
+    }
+
+    /// Tap-to-refresh beside the hero total — reloads pricing and recomputes today's value.
+    private func refreshCollectionValueManually() async {
+        guard !isManuallyRefreshingCollectionValue else { return }
         guard services.isLaunchCatalogPipelineComplete else { return }
-        guard !isLoadingDashboardInventory else { return }
+
+        isManuallyRefreshingCollectionValue = true
+        defer { isManuallyRefreshingCollectionValue = false }
+
+        liveValueComputeTask?.cancel()
+        liveValueComputeTask = nil
+
+        await reloadDashboardInventory(deferForLaunch: false, force: true)
+        recomputeCollectionStats()
+
+        services.pricing.clearSetPricingMemoryCache()
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        await services.sealedProducts.loadFromLocalIfAvailable()
+
+        if await executeLiveValueComputation(validateAgainstRestore: false, showsLoadingIndicator: false),
+           let snap = liveSnapshot,
+           let svc = services.collectionValue {
+            await svc.forceRecalculate(liveSnapshot: snap, collectionItems: collectionItems)
+        }
+
+        await services.collectionValue?.loadAllFromStore()
+        chartRefreshID += 1
+    }
+
+    private func reloadDashboardInventory(deferForLaunch: Bool, force: Bool = false) async {
+        guard services.isLaunchCatalogPipelineComplete else { return }
+        if !force {
+            guard !isLoadingDashboardInventory else { return }
+        } else if isLoadingDashboardInventory {
+            for _ in 0..<30 {
+                try? await Task.sleep(nanoseconds: 50_000_000)
+                if !isLoadingDashboardInventory { break }
+            }
+            guard !isLoadingDashboardInventory else { return }
+        }
         isLoadingDashboardInventory = true
         defer { isLoadingDashboardInventory = false }
 
@@ -1682,26 +1809,56 @@ struct DashboardView: View {
     }
 
     @discardableResult
-    private func computeLiveValue(validateAgainstRestore: Bool = false) async -> Bool {
-        guard !isComputingLiveValue else { return liveTotalGbp != nil }
+    private func computeLiveValue(validateAgainstRestore: Bool = false, force: Bool = false) async -> Bool {
+        if force {
+            liveValueComputeTask?.cancel()
+        } else if let existing = liveValueComputeTask {
+            return await existing.value
+        }
+
+        let task = Task { @MainActor in
+            await executeLiveValueComputation(validateAgainstRestore: validateAgainstRestore)
+        }
+        liveValueComputeTask = task
+        let result = await task.value
+        if liveValueComputeTask == task {
+            liveValueComputeTask = nil
+        }
+        return result
+    }
+
+    @discardableResult
+    private func executeLiveValueComputation(
+        validateAgainstRestore: Bool,
+        showsLoadingIndicator: Bool = true
+    ) async -> Bool {
+        guard !Task.isCancelled else { return false }
+
         isComputingLiveValue = true
-        isLoadingValue = true
+        if showsLoadingIndicator {
+            isLoadingValue = true
+        }
         defer {
             isComputingLiveValue = false
-            isLoadingValue = false
+            if showsLoadingIndicator {
+                isLoadingValue = false
+            }
         }
 
         if services.sealedProducts.products.isEmpty {
             await services.sealedProducts.loadFromLocalIfAvailable()
         }
-        if !services.pricing.isAllPokemonPricingPrefetched {
-            await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
-        }
+        guard !Task.isCancelled else { return false }
 
-        guard let svc = services.collectionValue else { return liveTotalGbp != nil }
+        ensureValuePlaceholderIfNeeded()
+        await prefetchPricingForLiveValue()
+        guard !Task.isCancelled else { return false }
+
+        guard let svc = services.collectionValue else { return false }
         guard let snap = await svc.computeLiveSnapshot(for: collectionItems), snap.total > 0 else {
-            return liveTotalGbp != nil
+            return false
         }
+        guard !Task.isCancelled else { return false }
 
         if validateAgainstRestore,
            let anchorTotal = svc.latestSnapshotTotalBeforeToday(),
@@ -1722,6 +1879,9 @@ struct DashboardView: View {
         liveCardsGbp = snap.cards
         liveSealedGbp = snap.sealed
         totalCostBasis = totalCost
+        interimDisplaySnapshot = nil
+        hasComputedLiveValueThisSession = true
+        pricingGenerationAtLastCompute = services.pricing.pricingCacheGeneration
 
         _ = svc.updateTodaySnapshot(snap)
         svc.persistLastKnownValue(snap)
@@ -1739,7 +1899,11 @@ struct DashboardView: View {
             try? await Task.sleep(for: .milliseconds(500))
             guard let svc = services.collectionValue else { return }
             await svc.loadAllFromStore()
+            ensureValuePlaceholderIfNeeded()
             chartRefreshID += 1
+            if services.dashboardMarketReloadToken > 0 {
+                await refreshCollectionValueAfterMarketPricingUpdate()
+            }
         }
     }
 

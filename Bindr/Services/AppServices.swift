@@ -451,6 +451,7 @@ final class AppServices {
             self.collectionValue?.invalidatePersistedSnapshot()
             await self.sealedProducts.reloadFromLocal()
             self.pricing.clearSetPricingMemoryCache()
+            await self.pricing.prefetchPokemonCardPricing(forSetCodes: [])
             self.requestDashboardMarketReload()
             return outcome
         }
@@ -703,6 +704,7 @@ final class AppServices {
 
         await sealedProducts.reloadFromLocal()
         await pricing.refreshFXRate()
+        await pricing.prefetchPokemonCardPricing(forSetCodes: [])
         requestDashboardMarketReload()
 
         catalogDownloadProgress = 1

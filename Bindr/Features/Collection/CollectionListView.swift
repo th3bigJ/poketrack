@@ -43,8 +43,14 @@ struct CollectionListView: View {
         return visibleCollectionItems.filter { filteredIDs.contains($0.cardID) }
     }
 
-    private var collectionSignature: String {
-        visibleCollectionItems.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§")
+    private var collectionSignature: Int {
+        var hasher = Hasher()
+        for item in visibleCollectionItems {
+            hasher.combine(item.cardID)
+            hasher.combine(item.variantKey)
+            hasher.combine(item.quantity)
+        }
+        return hasher.finalize()
     }
 
     private var orderedCards: [Card] {

@@ -20,7 +20,10 @@ final class PricingService {
     @ObservationIgnored private var pokemonPricingByMasterCardID: [String: CardPricingEntry?] = [:]
     @ObservationIgnored private var pokemonPricingPrefetchedSets: Set<String> = []
     @ObservationIgnored private var pokemonAllPricingPrefetched: Bool = false
+    @ObservationIgnored private var pokemonPricingPrefetchedGeneration: Int = -1
     private(set) var isAllPokemonPricingPrefetched: Bool = false
+    /// Incremented whenever `clearSetPricingMemoryCache()` runs so live-value recompute can detect stale prefetches.
+    private(set) var pricingCacheGeneration: Int = 0
 
     private let session: URLSession
     private let fileManager: FileManager
@@ -44,7 +47,9 @@ final class PricingService {
         pokemonPricingByMasterCardID.removeAll(keepingCapacity: false)
         pokemonPricingPrefetchedSets.removeAll(keepingCapacity: false)
         pokemonAllPricingPrefetched = false
+        pokemonPricingPrefetchedGeneration = -1
         isAllPokemonPricingPrefetched = false
+        pricingCacheGeneration += 1
     }
 
     /// Build a masterCardId-keyed index from already-loaded Card objects so that
@@ -97,7 +102,8 @@ final class PricingService {
     /// Bulk-populate the Pokemon card pricing cache from a single SQLite query covering all sets.
     /// Replaces per-set fetching which missed alternate set codes (swsh12tg, swsh45sv, etc.).
     func prefetchAllPokemonCardPricing() async {
-        guard !pokemonAllPricingPrefetched else { return }
+        let generation = pricingCacheGeneration
+        guard !pokemonAllPricingPrefetched || pokemonPricingPrefetchedGeneration != generation else { return }
         let allPrices = await CatalogStore.shared.fetchAllCardPrices(brand: .pokemon)
         // Decode all JSON blobs off @MainActor — with 800+ cards this loop accounts
         // for ~250ms of main-thread freeze on every cold launch.
@@ -117,6 +123,7 @@ final class PricingService {
         let merged = decoded.merging(pokemonCardPricingCache) { _, existing in existing }
         pokemonCardPricingCache = merged
         pokemonAllPricingPrefetched = true
+        pokemonPricingPrefetchedGeneration = generation
         isAllPokemonPricingPrefetched = true
     }
 

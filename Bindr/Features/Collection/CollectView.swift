@@ -28,7 +28,14 @@ struct CollectView: View {
     @State private var collectionNextIndex = 0
     @State private var isLoadingMoreCollectionItems = false
     @State private var collectionFeedDebounceTask: Task<Void, Never>? = nil
+    @State private var wishlistFeedDebounceTask: Task<Void, Never>? = nil
     @State private var openSealedSession: CollectionOpenSealedSession?
+    @State private var cachedVisibleCollectionItems: [CollectionItem] = []
+    @State private var cachedVisibleCollectionCardItems: [CollectionItem] = []
+    @State private var cachedVisibleWishlistItems: [WishlistItem] = []
+    @State private var cachedCollectionOwnedCardIDs: Set<String> = []
+    @State private var wishlistFilteredItemsForSelectedTypeCache: [WishlistItem] = []
+    @State private var wishlistOrderedCardsCache: [Card] = []
 
     // MARK: - Wishlist State
     @State private var wishlistItems: [WishlistItem] = []
@@ -97,13 +104,9 @@ struct CollectView: View {
         return map
     }
 
-    private var visibleCollectionItems: [CollectionItem] {
-        collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
-    }
+    private var visibleCollectionItems: [CollectionItem] { cachedVisibleCollectionItems }
 
-    private var visibleCollectionCardItems: [CollectionItem] {
-        visibleCollectionItems.filter { sealedProduct(for: $0) == nil }
-    }
+    private var visibleCollectionCardItems: [CollectionItem] { cachedVisibleCollectionCardItems }
 
     private var collectionSortNeedsResolvedCards: Bool {
         switch collectionFilters.sortBy {
@@ -178,11 +181,113 @@ struct CollectView: View {
         })
     }
 
-    private var visibleWishlistItems: [WishlistItem] {
-        wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
-    }
+    private var visibleWishlistItems: [WishlistItem] { cachedVisibleWishlistItems }
 
     var body: some View {
+        composedContent
+    }
+
+    private var baseContent: some View {
+        scrollContent
+            .refreshable {
+                await refreshCollectContent()
+            }
+            .bindrPageBackground()
+            .scrollDismissesKeyboard(.immediately)
+            .toolbar(hidesNavigationBar ? .hidden : .visible, for: .navigationBar)
+            .onAppear {
+                handlePrimaryAppear()
+            }
+    }
+
+    private var composedContent: AnyView {
+        let taskWrapped = applyTaskModifiers(to: AnyView(baseContent))
+        let observerWrapped = applyObserverModifiers(to: taskWrapped)
+        return applySheetModifiers(to: observerWrapped)
+    }
+
+    private func applyTaskModifiers(to content: AnyView) -> AnyView {
+        AnyView(
+            content
+                .task {
+                    await refreshSealedProductsIfNeeded()
+                }
+                .task(id: services.collectionInventoryRevision) {
+                    await reloadCollectionItems()
+                }
+                .task(id: services.wishlistInventoryRevision) {
+                    await reloadWishlistItems()
+                }
+                .task(id: collectionResolveTaskKey) {
+                    await resolveCollectionCards()
+                }
+                .task(id: wishlistResolveTaskKey) {
+                    await resolveWishlistCards()
+                }
+                .task(id: setNameCacheKey) {
+                    await refreshSetNameCache()
+                }
+                .task(id: sealedProductsSignature) {
+                    handleSealedProductsSignatureChange()
+                }
+        )
+    }
+
+    private func applyObserverModifiers(to content: AnyView) -> AnyView {
+        AnyView(
+            content
+                .onAppear {
+                    handleSecondaryAppear()
+                }
+                .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
+                    handleSelectedCatalogBrandChange(brand)
+                }
+                .onChange(of: selectedBrand) { _, _ in
+                    handleSelectedBrandChange()
+                }
+                .onChange(of: selectedContentTypeTab) { _, _ in
+                    handleSelectedContentTypeTabChange()
+                }
+                .onChange(of: collectionQuery) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: collectionFilters) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: collectionPriceByItemKey) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: collectionSortPriceByCardID) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: cardsByCardID) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: sealedProductByCollectionCardIDCache) { _, _ in
+                    handleSealedProductCacheChange()
+                }
+                .onChange(of: wishlistQuery) { _, _ in scheduleWishlistFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: wishlistFilters) { _, _ in scheduleWishlistFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: wishlistPriceByItemKey) { _, _ in scheduleWishlistFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: wishlistSortPriceByCardID) { _, _ in scheduleWishlistFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: wishlistCardsByID) { _, _ in scheduleWishlistFeedRefresh(requireResolvedPrices: true) }
+                .onChange(of: selectedSealedProduct?.id) { _, productID in
+                    handleSelectedSealedProductChange(productID)
+                }
+        )
+    }
+
+    private func applySheetModifiers(to content: AnyView) -> AnyView {
+        AnyView(
+            content
+                .sheet(item: $selectedSealedProduct) { product in
+                    SealedProductBrowseDetailView(products: [product], startProductID: product.id)
+                        .environment(services)
+                }
+                .sheet(item: $openSealedSession) { session in
+                    OpenSealedCollectionItemSheet(item: session.item, productName: session.productName)
+                        .environment(services)
+                }
+                .sheet(item: $pendingCardContextRequest) { req in
+                    CardContextActionSheet(request: req)
+                        .environment(services)
+                        .presentationDetents([.large])
+                        .presentationDragIndicator(.visible)
+                }
+        )
+    }
+
+    private var scrollContent: some View {
         ScrollView {
             VStack(spacing: 0) {
                 Color.clear.frame(height: rootFloatingChromeInset)
@@ -200,75 +305,6 @@ struct CollectView: View {
 
                 contentView
             }
-        }
-        .refreshable {
-            await refreshCollectContent()
-        }
-        .bindrPageBackground()
-        .scrollDismissesKeyboard(.immediately)
-        .toolbar(hidesNavigationBar ? .hidden : .visible, for: .navigationBar)
-        .onAppear {
-            services.setupCollectionLedger(modelContext: modelContext)
-            services.setupWishlist(modelContext: modelContext)
-            Task { await services.sealedProducts.loadFromLocalIfAvailable() }
-        }
-        .task {
-            if services.sealedProducts.products.isEmpty {
-                await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
-            }
-        }
-        .task(id: services.collectionInventoryRevision) {
-            await reloadCollectionItems()
-        }
-        .task(id: services.wishlistInventoryRevision) {
-            await reloadWishlistItems()
-        }
-        .task(id: collectionResolveTaskKey) {
-            await resolveCollectionCards()
-        }
-        .task(id: wishlistResolveTaskKey) {
-            await resolveWishlistCards()
-        }
-        .task(id: setNameCacheKey) {
-            await refreshSetNameCache()
-        }
-        .task(id: sealedProductsSignature) {
-            refreshSealedProductCaches()
-        }
-        .onAppear {
-            if selectedBrand != services.brandSettings.selectedCatalogBrand {
-                selectedBrand = services.brandSettings.selectedCatalogBrand
-            }
-            refreshSealedProductCaches()
-            refreshWishlistedSealedCollectionCardIDs()
-        }
-        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
-            selectedBrand = brand
-        }
-        .onChange(of: selectedBrand) { _, _ in scheduleCollectionFeedRefresh() }
-        .onChange(of: selectedContentTypeTab) { _, _ in scheduleCollectionFeedRefresh() }
-        .onChange(of: collectionQuery) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
-        .onChange(of: collectionFilters) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
-        .onChange(of: collectionPriceByItemKey) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
-        .onChange(of: collectionSortPriceByCardID) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
-        .onChange(of: cardsByCardID) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
-        .onChange(of: sealedProductByCollectionCardIDCache) { _, _ in scheduleCollectionFeedRefresh(requireResolvedPrices: true) }
-        .sheet(item: $selectedSealedProduct) { product in
-            SealedProductBrowseDetailView(products: [product], startProductID: product.id)
-                .environment(services)
-        }
-        .sheet(item: $openSealedSession) { session in
-            OpenSealedCollectionItemSheet(item: session.item, productName: session.productName)
-                .environment(services)
-        }
-        .sheet(item: $pendingCardContextRequest) { req in
-            CardContextActionSheet(request: req)
-                .environment(services)
-                .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
-        }
-        .onChange(of: selectedSealedProduct?.id) { _, productID in
-            services.isSealedDetailPresentationActive = (productID != nil)
         }
     }
 
@@ -296,6 +332,59 @@ struct CollectView: View {
         cachedSetNameByBrandAndCode = map
     }
 
+    private func loadSealedProductsFromLocal() {
+        Task {
+            await services.sealedProducts.loadFromLocalIfAvailable()
+        }
+    }
+
+    private func handlePrimaryAppear() {
+        services.setupCollectionLedger(modelContext: modelContext)
+        services.setupWishlist(modelContext: modelContext)
+        loadSealedProductsFromLocal()
+    }
+
+    private func handleSecondaryAppear() {
+        if selectedBrand != services.brandSettings.selectedCatalogBrand {
+            selectedBrand = services.brandSettings.selectedCatalogBrand
+        }
+        refreshSealedProductCaches()
+        refreshWishlistedSealedCollectionCardIDs()
+        refreshVisibilityCaches()
+        scheduleCollectionFeedRefresh()
+        scheduleWishlistFeedRefresh()
+    }
+
+    private func handleSelectedCatalogBrandChange(_ brand: TCGBrand?) {
+        selectedBrand = brand
+    }
+
+    private func handleSelectedBrandChange() {
+        refreshVisibilityCaches()
+        scheduleCollectionFeedRefresh()
+        scheduleWishlistFeedRefresh()
+    }
+
+    private func handleSelectedContentTypeTabChange() {
+        scheduleCollectionFeedRefresh()
+        scheduleWishlistFeedRefresh()
+    }
+
+    private func handleSealedProductCacheChange() {
+        scheduleCollectionFeedRefresh(requireResolvedPrices: true)
+        scheduleWishlistFeedRefresh(requireResolvedPrices: true)
+    }
+
+    private func handleSelectedSealedProductChange(_ productID: Int?) {
+        services.isSealedDetailPresentationActive = (productID != nil)
+    }
+
+    private func refreshSealedProductsIfNeeded() async {
+        if services.sealedProducts.products.isEmpty {
+            await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
+        }
+    }
+
     private func refreshSealedProductCaches() {
         var byID: [Int: SealedProduct] = [:]
         var byCollectionCardID: [String: SealedProduct] = [:]
@@ -309,6 +398,20 @@ struct CollectView: View {
         sealedProductByCollectionCardIDCache = byCollectionCardID
     }
 
+    private func refreshVisibilityCaches() {
+        let brand = activeBrand
+        let visibleCollection = collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
+        cachedVisibleCollectionItems = visibleCollection
+        cachedVisibleCollectionCardItems = visibleCollection.filter { sealedProduct(for: $0) == nil }
+        cachedCollectionOwnedCardIDs = Set(visibleCollection.map(\.cardID))
+        cachedVisibleWishlistItems = wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
+    }
+
+    private func handleSealedProductsSignatureChange() {
+        refreshSealedProductCaches()
+        refreshVisibilityCaches()
+    }
+
     @MainActor
     private func reloadCollectionItems() async {
         isLoadingCollectionItems = true
@@ -318,6 +421,7 @@ struct CollectView: View {
             sortBy: [SortDescriptor(\.dateAcquired, order: .reverse)]
         )
         collectionItems = (try? modelContext.fetch(descriptor)) ?? []
+        refreshVisibilityCaches()
     }
 
     @MainActor
@@ -331,6 +435,7 @@ struct CollectView: View {
         wishlistItems = (try? modelContext.fetch(descriptor)) ?? []
         services.wishlist?.loadItems()
         refreshWishlistedSealedCollectionCardIDs()
+        refreshVisibilityCaches()
     }
 
     // MARK: - Segmented Control
@@ -411,9 +516,9 @@ struct CollectView: View {
             return collectionFilteredItemsForSelectedTypeCache.count
         case .wishlist:
             if selectedContentTypeTab == .cards {
-                return Set(filteredWishlistItemsForSelectedType.map(\.cardID)).count
+                return Set(wishlistFilteredItemsForSelectedTypeCache.map(\.cardID)).count
             }
-            return filteredWishlistItemsForSelectedType.count
+            return wishlistFilteredItemsForSelectedTypeCache.count
         }
     }
 
@@ -604,7 +709,7 @@ struct CollectView: View {
     }
 
     private var collectionOwnedCardIDs: Set<String> {
-        Set(visibleCollectionItems.map(\.cardID))
+        cachedCollectionOwnedCardIDs
     }
 
     private var filteredCollectionItems: [CollectionItem] {
@@ -749,6 +854,17 @@ struct CollectView: View {
         }
     }
 
+    private func scheduleWishlistFeedRefresh(requireResolvedPrices: Bool = false) {
+        if requireResolvedPrices, isResolvingWishlistPrices { return }
+        wishlistFeedDebounceTask?.cancel()
+        wishlistFeedDebounceTask = Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 100_000_000)
+            guard !Task.isCancelled else { return }
+            if requireResolvedPrices, isResolvingWishlistPrices { return }
+            refreshWishlistFeed()
+        }
+    }
+
     private func resolveCollectionCards() async {
         let needsDeepPriceResolve = collectionFilters.sortBy == .price
         if needsDeepPriceResolve {
@@ -869,6 +985,7 @@ struct CollectView: View {
         await resolveCollectionCards()
         await resolveWishlistCards()
         refreshCollectionFeed()
+        refreshWishlistFeed()
     }
 
     private func refreshCollectionFeed() {
@@ -892,6 +1009,11 @@ struct CollectView: View {
         collectionDisplayedItems = Array(filtered.prefix(initialEnd))
         collectionNextIndex = initialEnd
         collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+    }
+
+    private func refreshWishlistFeed() {
+        wishlistFilteredItemsForSelectedTypeCache = filteredWishlistItemsForSelectedType
+        wishlistOrderedCardsCache = wishlistFilteredItemsForSelectedTypeCache.compactMap { wishlistCardsByID[$0.cardID] }
     }
 
     @MainActor
@@ -982,7 +1104,7 @@ struct CollectView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.top, 40)
-        } else if filteredWishlistItemsForSelectedType.isEmpty {
+        } else if wishlistFilteredItemsForSelectedTypeCache.isEmpty {
             emptyState(
                 title: "No matching \(selectedContentTypeTab.title.lowercased())",
                 image: "magnifyingglass",
@@ -1097,7 +1219,7 @@ struct CollectView: View {
     }
 
     private var indexedFilteredWishlistItemsForSelectedType: [IndexedGridItem<WishlistItem>] {
-        Array(filteredWishlistItemsForSelectedType.enumerated()).map { offset, item in
+        Array(wishlistFilteredItemsForSelectedTypeCache.enumerated()).map { offset, item in
             IndexedGridItem(index: offset, item: item)
         }
     }
@@ -1129,7 +1251,7 @@ struct CollectView: View {
     }
 
     private var orderedWishlistCards: [Card] {
-        indexedFilteredWishlistItemsForSelectedType.compactMap { wishlistCardsByID[$0.item.cardID] }
+        wishlistOrderedCardsCache
     }
 
     private var wishlistSignature: Int {
@@ -1203,6 +1325,7 @@ struct CollectView: View {
         wishlistPriceByItemKey = nextPrices
         wishlistSortPriceByCardID = nextCardPrices
         wishlistResolvedPriceItemKeys = resolvedPriceKeys
+        refreshWishlistFeed()
 
         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: 0, count: 24)
     }

@@ -716,365 +716,465 @@ struct RootView: View {
 
     @ViewBuilder
     private var mainContent: some View {
-        ZStack(alignment: .top) {
-            ZStack(alignment: .top) {
-                    TabView(selection: $selectedTab) {
-                        NavigationStack {
-                            DashboardView(onViewAllActivity: {
-                                suppressMorePathReset = true
-                                var path = NavigationPath()
-                                path.append(SideMenuPage.transactions)
-                                moreNavigationPath = path
-                                selectedTab = .more
-                            }, onOpenScanner: {
-                                showCardScanner = true
-                            }, onOpenCollection: {
-                                collectionNavigationPath = NavigationPath()
-                                collectSegment = .collection
-                                collectContentTypeTab = .cards
-                                selectedTab = .collect
-                            }, onOpenSealedProducts: {
-                                collectionNavigationPath = NavigationPath()
-                                collectSegment = .collection
-                                collectContentTypeTab = .products
-                                selectedTab = .collect
-                            }, onOpenWishlist: {
-                                collectionNavigationPath = NavigationPath()
-                                collectSegment = .wishlist
-                                collectContentTypeTab = .cards
-                                selectedTab = .collect
-                            }, onOpenBrowse: {
-                                suppressMorePathReset = true
-                                var path = NavigationPath()
-                                path.append(SideMenuPage.decks)
-                                moreNavigationPath = path
-                                selectedTab = .more
-                            }, onOpenActionableTrades: { tradeID in
-                                if let tradeID,
-                                   let url = URL(string: "bindr://social/trades/\(tradeID.uuidString)") {
-                                    handleSocialDeepLink(url)
-                                } else if let url = URL(string: "bindr://social/trades") {
-                                    handleSocialDeepLink(url)
-                                } else {
-                                    selectedTab = .social
-                                }
-                            }, onInitialLoadStatusChange: { status in
-                                dashboardLaunchStatus = status
-                            }, onInitialLoadComplete: {
-                                isDashboardDataReady = true
-                            })
-                        }
-                        .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
-                        .tabItem { Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.symbolName) }
-                        .tag(AppTab.dashboard)
+        mainContentWithPresentations
+    }
 
-                        NavigationStack(path: $browseNavigationPath) {
-                            if browseTabVisited {
-                                BrowseTabView(
-                                    filters: activeBrowseTabFiltersBinding,
-                                    inlineDetailFilters: activeBrowseTabInlineFiltersBinding,
-                                    gridOptions: activeBrowseGridOptionsBinding,
-                                    filterResultCount: $browseFilterResultCount,
-                                    filterEnergyOptions: $browseFilterEnergyOptions,
-                                    filterRarityOptions: $browseFilterRarityOptions,
-                                    filterTrainerTypeOptions: $browseFilterTrainerTypeOptions,
-                                    inlineDetailFilterResultCount: $browseInlineDetailFilterResultCount,
-                                    inlineDetailFilterEnergyOptions: $browseInlineDetailFilterEnergyOptions,
-                                    inlineDetailFilterRarityOptions: $browseInlineDetailFilterRarityOptions,
-                                    inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
-                                    selectedTab: $browseHomeTab,
-                                    inlineDetailRoute: $browseInlineDetailRoute,
-                                    query: $universalQuery
-                                )
-                            } else {
-                                Color.clear
-                            }
-                        }
-                        .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
-                        .tabItem { Label(AppTab.browse.title, systemImage: AppTab.browse.symbolName) }
-                        .tag(AppTab.browse)
-
-                        NavigationStack(path: $collectionNavigationPath) {
-                            if collectTabVisited {
-                                CollectTabView(
-                                    selectedSegment: $collectSegment,
-                                    selectedContentTypeTab: $collectContentTypeTab,
-                                    selectedBrand: $collectSelectedBrand,
-                                    collectionFilters: $collectFilters.collectionFilters,
-                                    wishlistFilters: $collectFilters.wishlistFilters,
-                                    collectFilterEnergyOptions: $collectFilterEnergyOptions,
-                                    collectFilterRarityOptions: $collectFilterRarityOptions,
-                                    collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
-                                    gridOptions: $collectFilters.gridOptions
-                                )
-                            } else {
-                                Color.clear
-                            }
-                        }
-                        .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
-                        .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
-                        .tag(AppTab.collect)
-
-                        NavigationStack {
-                            if socialTabVisited {
-                                SocialRootView()
-                            } else {
-                                Color.clear
-                            }
-                        }
-                        .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
-                        .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
-                        .tag(AppTab.social)
-
-                        NavigationStack(path: $moreNavigationPath) {
-                            if moreTabVisited {
-                                MoreView(navigationPath: $moreNavigationPath)
-                            } else {
-                                Color.clear
-                            }
-                        }
-                        .toolbarBackground(.hidden, for: .navigationBar)
-                        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
-                        .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
-                        .tag(AppTab.more)
-                    }
-                    .bindrDisableTabBarMinimize()
-                    .tint(tabBarTintColor)
-                    .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
-                    .toolbarBackground(.hidden, for: .tabBar)
-                    if isSearchExperiencePresented {
-                        searchOverlay
-                    }
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
-                .environment(\.rootFloatingChromeInset, chromeContentTopInset)
-
-                // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
-                Group {
-                    if !isSearchExperiencePresented {
-                        floatingSearchBar(
-                            hiddenOffset: chromeSearchBarHiddenOffset,
-                            topInset: chromeSearchBarTopInset,
-                            bottomInset: chromeSearchBarBottomInset
-                        )
-                        .transition(.opacity.combined(with: .offset(y: -10)))
-                    }
-                }
-                .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
-                    .sheet(isPresented: $showPremiumAutoSheet) {
-                        // Same `PaywallSheet` wrapper everywhere else uses,
-                        // so the user-initiated path and the auto-popup path
-                        // render the exact same `PremiumUpgradeView` body.
-                        PaywallSheet()
-                            .environment(services)
-                            .bindrTheme(accent: services.theme.accentColor)
-                            .presentationDetents([.large])
-                            .presentationDragIndicator(.visible)
-                    }
-                    .sheet(isPresented: $showSocialFeaturesSheet) {
-                        NavigationStack {
-                            SocialLandingView(
-                                currentNonce: .constant(nil),
-                                errorMessage: nil,
-                                headerInset: 0,
-                                onSignInResult: { _ in }
-                            )
-                            .toolbar {
-                                ToolbarItem(placement: .cancellationAction) {
-                                    Button("Done") { showSocialFeaturesSheet = false }
-                                        .glassToolbarButton()
-                                }
-                            }
-                        }
-                        .presentationDetents([.large])
-                        .presentationDragIndicator(.visible)
-                    }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        // Shared app backdrop shows through translucent chrome/material.
-        .bindrPageBackground()
-        .environment(\.restoreTabBarChrome, restoreTabBarGlassAppearance)
-        .environment(\.suppressTabBarForModalChrome, suppressTabBarForModalChrome)
-        .overlay {
-            if services.isCatalogDownloadInProgress {
-                ZStack {
-                    Color.black.opacity(0.48)
-                        .ignoresSafeArea()
-                    if services.catalogDownloadShowsByteProgressUI {
-                        LoadingScreen(
-                            message: services.catalogDownloadMessage,
-                            status: services.catalogDownloadStatus,
-                            progress: services.catalogDownloadProgress,
-                            downloadedBytes: services.catalogDownloadDownloadedBytes,
-                            totalBytes: services.catalogDownloadEstimatedTotalBytes
-                        )
-                    } else {
-                        CatalogEnablingBusyView(
-                            message: services.catalogDownloadMessage,
-                            status: services.catalogDownloadStatus
-                        )
-                    }
-                }
-                .transition(.opacity)
-                .zIndex(500)
-            }
-        }
-        .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
-        .overlay {
-            if selectedCardPresentation != nil || selectedSealedProductPresentation != nil || services.isSealedDetailPresentationActive {
-                BindrPageBackground()
-                    .ignoresSafeArea()
-                    .allowsHitTesting(false)
-                    .transition(.opacity)
-            }
-        }
-        .animation(
-            .easeInOut(duration: 0.25),
-            value: selectedCardPresentation != nil || selectedSealedProductPresentation != nil || services.isSealedDetailPresentationActive
-        )
-        .onChange(of: searchFieldFocused) { _, isFocused in
-            if isFocused {
-                Haptics.lightImpact()
-                if !isSearchExperiencePresented {
-                    presentSearchExperience(focusField: false)
-                }
-            }
-        }
-        .onAppear {
-            chromeScroll.configureForTab(selectedTab)
-            collectSelectedBrand = services.brandSettings.selectedCatalogBrand
-            tabBarTintColor = services.theme.accentColor
-            BindrApp.applyTabBarTint(accent: services.theme.accentColor)
-            // setupCollectionValue is called from onChange(of: services.isReady) which
-            // fires before mainContent is inserted. Call here only as a safety net for
-            // any code path where isReady was already true before onAppear.
-            if services.collectionValue == nil {
-                services.setupCollectionValue(modelContext: modelContext)
-            }
-        }
-        .onChange(of: services.theme.accentColorHex) { _, _ in
-            tabBarTintColor = services.theme.accentColor
-            BindrApp.applyTabBarTint(accent: services.theme.accentColor)
-        }
-        .onChange(of: selectedTab) { _, tab in
-            Haptics.selectionChanged()
-            chromeScroll.configureForTab(tab)
-            switch tab {
-            case .browse:  browseTabVisited = true
-            case .collect: collectTabVisited = true
-            case .social:  socialTabVisited = true
-            case .more:    moreTabVisited = true
-            case .dashboard: break
-            }
-            if tab == .collect {
-                collectionNavigationPath = NavigationPath()
-            }
-            if tab == .social {
-                services.socialFeed.clearUnreadState()
-                services.socialPush.clearAppBadgeCount()
-            }
-            if tab == .more {
-                if suppressMorePathReset {
-                    suppressMorePathReset = false
-                } else {
-                    moreNavigationPath = NavigationPath()
-                }
-            }
-        }
-        .onChange(of: browseNavigationPath.count) { _, newCount in
-            if newCount == 0 {
-                chromeScroll.forceVisible()
-            }
-        }
-        .onChange(of: isSearchExperiencePresented) { _, open in
-            if open {
-                chromeScroll.forceVisible()
-            } else {
-                searchNavigationPath = NavigationPath()
-                isSearchContentMounted = false
-            }
-        }
-        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
-            browseNavigationPath = NavigationPath()
-            collectionNavigationPath = NavigationPath()
-            searchNavigationPath = NavigationPath()
-            browseHomeTab = .cards
-            browseInlineDetailRoute = nil
-            selectedCardPresentation = nil
-            universalQuery = ""
-            searchFieldFocused = false
-            collectSelectedBrand = brand
-        }
-        .onChange(of: services.socialAuth.authState) { _, _ in
-            Task {
-                await services.socialPush.updateRegistrationState()
-                if services.socialAuth.isSignedIn {
-                    await services.restoreCloudBackupAfterSignIn(modelContext: modelContext)
-                }
-            }
-        }
-        .onOpenURL { url in
-            handleSocialDeepLink(url)
-        }
-        .onChange(of: services.socialPush.queuedDeepLinkURL) { _, queuedURL in
-            guard let queuedURL else { return }
-            handleSocialDeepLink(queuedURL)
-        }
-        .onChange(of: selectedCardPresentation?.id) { _, newID in
-            if newID != nil {
-                suppressTabBarForModalChrome()
-            }
-        }
-        .onChange(of: selectedSealedProductPresentation?.id) { _, newID in
-            if newID != nil {
-                suppressTabBarForModalChrome()
-            }
-        }
-        .sheet(item: $selectedCardPresentation, onDismiss: restoreTabBarGlassAppearance) { ctx in
-            CardDetailSheet(
-                cards: ctx.cards,
-                startIndex: ctx.startIndex
-            )
-            .environment(services)
-            .bindrTheme(accent: services.theme.accentColor)
-        }
-        .sheet(item: $selectedSealedProductPresentation, onDismiss: restoreTabBarGlassAppearance) { ctx in
-            if ctx.products.isEmpty {
-                ContentUnavailableView("No product", systemImage: "shippingbox")
-            } else {
-                SealedProductBrowseDetailView(
-                    products: ctx.products,
-                    startProductID: ctx.products[min(max(ctx.startIndex, 0), max(ctx.products.count - 1, 0))].id
+    @ViewBuilder
+    private var mainContentWithPresentations: some View {
+        mainContentWithEventHandlers
+            .sheet(item: $selectedCardPresentation, onDismiss: restoreTabBarGlassAppearance) { ctx in
+                CardDetailSheet(
+                    cards: ctx.cards,
+                    startIndex: ctx.startIndex
                 )
                 .environment(services)
+                .bindrTheme(accent: services.theme.accentColor)
             }
-        }
-        .fullScreenCover(isPresented: $showCardScanner) {
-            CardScannerView(
-                onMatch: { card in
-                    showCardScanner = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-                        selectedCardPresentation = CardPresentationContext(cards: [card], startIndex: 0)
-                    }
-                },
-                onDismiss: {
-                    showCardScanner = false
-                }
+            .sheet(item: $selectedSealedProductPresentation, onDismiss: restoreTabBarGlassAppearance) { ctx in
+                sealedProductPresentationSheet(ctx)
+            }
+            .fullScreenCover(isPresented: $showCardScanner) {
+                cardScannerCover
+            }
+            .bindrTheme(accent: services.theme.accentColor)
+    }
+
+    @ViewBuilder
+    private func sealedProductPresentationSheet(_ ctx: SealedProductPresentationContext) -> some View {
+        if ctx.products.isEmpty {
+            ContentUnavailableView("No product", systemImage: "shippingbox")
+        } else {
+            let safeIndex = min(max(ctx.startIndex, 0), max(ctx.products.count - 1, 0))
+            SealedProductBrowseDetailView(
+                products: ctx.products,
+                startProductID: ctx.products[safeIndex].id
             )
             .environment(services)
         }
-        // `.bindrTheme` injects the accent into both `\.bindrAccent` (read by
-        // `BindrPalette` consumers and any view using the new env-based
-        // approach) and SwiftUI's `\.tint` (read by Buttons, Toggles, etc.).
-        // Single source of truth replaces the prior split between
-        // `Color.accentColor` (asset, didn't track theme) and
-        // `services.theme.accentColor` scattered across 24 files.
-        .bindrTheme(accent: services.theme.accentColor)
+    }
+
+    private var cardScannerCover: some View {
+        CardScannerView(
+            onMatch: handleScannerMatch,
+            onDismiss: handleScannerDismiss
+        )
+        .environment(services)
+    }
+
+    @ViewBuilder
+    private var mainContentWithEventHandlers: some View {
+        mainContentWithAuthHandlers
+            .onChange(of: selectedCardPresentation?.id) { _, newID in
+                if newID != nil {
+                    suppressTabBarForModalChrome()
+                }
+            }
+            .onChange(of: selectedSealedProductPresentation?.id) { _, newID in
+                if newID != nil {
+                    suppressTabBarForModalChrome()
+                }
+            }
+    }
+
+    @ViewBuilder
+    private var mainContentWithAuthHandlers: some View {
+        mainContentWithNavigationHandlers
+            .onChange(of: services.socialAuth.authState) { _, _ in
+                Task {
+                    await services.socialPush.updateRegistrationState()
+                    if services.socialAuth.isSignedIn {
+                        await services.restoreCloudBackupAfterSignIn(modelContext: modelContext)
+                    }
+                }
+            }
+            .onOpenURL { url in
+                handleSocialDeepLink(url)
+            }
+            .onChange(of: services.socialPush.queuedDeepLinkURL) { _, queuedURL in
+                guard let queuedURL else { return }
+                handleSocialDeepLink(queuedURL)
+            }
+    }
+
+    @ViewBuilder
+    private var mainContentWithNavigationHandlers: some View {
+        mainContentChrome
+            .onChange(of: searchFieldFocused) { _, isFocused in
+                if isFocused {
+                    Haptics.lightImpact()
+                    if !isSearchExperiencePresented {
+                        presentSearchExperience(focusField: false)
+                    }
+                }
+            }
+            .onAppear {
+                chromeScroll.configureForTab(selectedTab)
+                collectSelectedBrand = services.brandSettings.selectedCatalogBrand
+                tabBarTintColor = services.theme.accentColor
+                BindrApp.applyTabBarTint(accent: services.theme.accentColor)
+                if services.collectionValue == nil {
+                    services.setupCollectionValue(modelContext: modelContext)
+                }
+            }
+            .onChange(of: services.theme.accentColorHex) { _, _ in
+                tabBarTintColor = services.theme.accentColor
+                BindrApp.applyTabBarTint(accent: services.theme.accentColor)
+            }
+            .onChange(of: selectedTab) { _, tab in
+                handleSelectedTabChange(tab)
+            }
+            .onChange(of: browseNavigationPath.count) { _, newCount in
+                if newCount == 0 {
+                    chromeScroll.forceVisible()
+                }
+            }
+            .onChange(of: isSearchExperiencePresented) { _, open in
+                if open {
+                    chromeScroll.forceVisible()
+                } else {
+                    searchNavigationPath = NavigationPath()
+                    isSearchContentMounted = false
+                }
+            }
+            .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
+                handleCatalogBrandChange(brand)
+            }
+    }
+
+    private func handleSelectedTabChange(_ tab: AppTab) {
+        Haptics.selectionChanged()
+        chromeScroll.configureForTab(tab)
+        switch tab {
+        case .browse:  browseTabVisited = true
+        case .collect: collectTabVisited = true
+        case .social:  socialTabVisited = true
+        case .more:    moreTabVisited = true
+        case .dashboard: break
+        }
+        if tab == .collect {
+            collectionNavigationPath = NavigationPath()
+        }
+        if tab == .social {
+            services.socialFeed.clearUnreadState()
+            services.socialPush.clearAppBadgeCount()
+        }
+        if tab == .more {
+            if suppressMorePathReset {
+                suppressMorePathReset = false
+            } else {
+                moreNavigationPath = NavigationPath()
+            }
+        }
+    }
+
+    private func handleCatalogBrandChange(_ brand: TCGBrand) {
+        browseNavigationPath = NavigationPath()
+        collectionNavigationPath = NavigationPath()
+        searchNavigationPath = NavigationPath()
+        browseHomeTab = .cards
+        browseInlineDetailRoute = nil
+        selectedCardPresentation = nil
+        universalQuery = ""
+        searchFieldFocused = false
+        collectSelectedBrand = brand
+    }
+
+    @ViewBuilder
+    private var mainContentChrome: some View {
+        mainTabShell
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            .bindrPageBackground()
+            .environment(\.restoreTabBarChrome, restoreTabBarGlassAppearance)
+            .environment(\.suppressTabBarForModalChrome, suppressTabBarForModalChrome)
+            .overlay { catalogDownloadOverlay }
+            .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
+            .overlay { cardDetailBackdropOverlay }
+            .animation(
+                .easeInOut(duration: 0.25),
+                value: selectedCardPresentation != nil || selectedSealedProductPresentation != nil || services.isSealedDetailPresentationActive
+            )
+    }
+
+    @ViewBuilder
+    private var catalogDownloadOverlay: some View {
+        if services.isCatalogDownloadInProgress {
+            ZStack {
+                Color.black.opacity(0.48)
+                    .ignoresSafeArea()
+                if services.catalogDownloadShowsByteProgressUI {
+                    LoadingScreen(
+                        message: services.catalogDownloadMessage,
+                        status: services.catalogDownloadStatus,
+                        progress: services.catalogDownloadProgress,
+                        downloadedBytes: services.catalogDownloadDownloadedBytes,
+                        totalBytes: services.catalogDownloadEstimatedTotalBytes
+                    )
+                } else {
+                    CatalogEnablingBusyView(
+                        message: services.catalogDownloadMessage,
+                        status: services.catalogDownloadStatus
+                    )
+                }
+            }
+            .transition(.opacity)
+            .zIndex(500)
+        }
+    }
+
+    @ViewBuilder
+    private var cardDetailBackdropOverlay: some View {
+        if selectedCardPresentation != nil || selectedSealedProductPresentation != nil || services.isSealedDetailPresentationActive {
+            BindrPageBackground()
+                .ignoresSafeArea()
+                .allowsHitTesting(false)
+                .transition(.opacity)
+        }
+    }
+
+    @ViewBuilder
+    private var mainTabShell: some View {
+        ZStack(alignment: .top) {
+            mainTabShellContent
+            floatingChromeLayer
+        }
+    }
+
+    private var mainTabShellContent: some View {
+        ZStack(alignment: .top) {
+            tabViewShell
+            if isSearchExperiencePresented {
+                searchOverlay
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
+        .environment(\.rootFloatingChromeInset, chromeContentTopInset)
+    }
+
+    private var floatingChromeLayer: some View {
+        Group {
+            if !isSearchExperiencePresented {
+                floatingSearchBar(
+                    hiddenOffset: chromeSearchBarHiddenOffset,
+                    topInset: chromeSearchBarTopInset,
+                    bottomInset: chromeSearchBarBottomInset
+                )
+                .transition(.opacity.combined(with: .offset(y: -10)))
+            }
+        }
+        .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
+        .sheet(isPresented: $showPremiumAutoSheet) {
+            premiumAutoSheet
+        }
+        .sheet(isPresented: $showSocialFeaturesSheet) {
+            socialFeaturesSheet
+        }
+    }
+
+    private var premiumAutoSheet: some View {
+        PaywallSheet()
+            .environment(services)
+            .bindrTheme(accent: services.theme.accentColor)
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
+    }
+
+    private var socialFeaturesSheet: some View {
+        NavigationStack {
+            SocialLandingView(
+                currentNonce: .constant(nil),
+                errorMessage: nil,
+                headerInset: 0,
+                onSignInResult: { _ in }
+            )
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Done") { showSocialFeaturesSheet = false }
+                        .glassToolbarButton()
+                }
+            }
+        }
+        .presentationDetents([.large])
+        .presentationDragIndicator(.visible)
+    }
+
+    private var tabViewShell: some View {
+        TabView(selection: $selectedTab) {
+            dashboardTab
+            browseTab
+            collectTab
+            socialTab
+            moreTab
+        }
+        .bindrDisableTabBarMinimize()
+        .tint(tabBarTintColor)
+        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+        .toolbarBackground(.hidden, for: .tabBar)
+    }
+
+    private var dashboardTab: some View {
+        NavigationStack {
+            dashboardTabRoot
+        }
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+        .tabItem { Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.symbolName) }
+        .tag(AppTab.dashboard)
+    }
+
+    private var dashboardTabRoot: some View {
+        DashboardView(
+            onViewAllActivity: dashboardOpenTransactions,
+            onOpenScanner: { showCardScanner = true },
+            onOpenCollection: dashboardOpenCollection,
+            onOpenSealedProducts: dashboardOpenSealedProducts,
+            onOpenWishlist: dashboardOpenWishlist,
+            onOpenBrowse: dashboardOpenDecks,
+            isActive: selectedTab == .dashboard,
+            onOpenActionableTrades: openActionableTrades,
+            onInitialLoadStatusChange: { status in
+                dashboardLaunchStatus = status
+            },
+            onInitialLoadComplete: {
+                isDashboardDataReady = true
+            }
+        )
+    }
+
+    private func dashboardOpenTransactions() {
+        suppressMorePathReset = true
+        var path = NavigationPath()
+        path.append(SideMenuPage.transactions)
+        moreNavigationPath = path
+        selectedTab = .more
+    }
+
+    private func dashboardOpenCollection() {
+        collectionNavigationPath = NavigationPath()
+        collectSegment = .collection
+        collectContentTypeTab = .cards
+        selectedTab = .collect
+    }
+
+    private func dashboardOpenSealedProducts() {
+        collectionNavigationPath = NavigationPath()
+        collectSegment = .collection
+        collectContentTypeTab = .products
+        selectedTab = .collect
+    }
+
+    private func dashboardOpenWishlist() {
+        collectionNavigationPath = NavigationPath()
+        collectSegment = .wishlist
+        collectContentTypeTab = .cards
+        selectedTab = .collect
+    }
+
+    private func dashboardOpenDecks() {
+        suppressMorePathReset = true
+        var path = NavigationPath()
+        path.append(SideMenuPage.decks)
+        moreNavigationPath = path
+        selectedTab = .more
+    }
+
+    private var browseTab: some View {
+        NavigationStack(path: $browseNavigationPath) {
+            browseTabRoot
+        }
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+        .tabItem { Label(AppTab.browse.title, systemImage: AppTab.browse.symbolName) }
+        .tag(AppTab.browse)
+    }
+
+    @ViewBuilder
+    private var browseTabRoot: some View {
+        if browseTabVisited {
+            browseTabView
+        } else {
+            Color.clear
+        }
+    }
+
+    private var browseTabView: some View {
+        BrowseTabView(
+            filters: activeBrowseTabFiltersBinding,
+            inlineDetailFilters: activeBrowseTabInlineFiltersBinding,
+            gridOptions: activeBrowseGridOptionsBinding,
+            filterResultCount: $browseFilterResultCount,
+            filterEnergyOptions: $browseFilterEnergyOptions,
+            filterRarityOptions: $browseFilterRarityOptions,
+            filterTrainerTypeOptions: $browseFilterTrainerTypeOptions,
+            inlineDetailFilterResultCount: $browseInlineDetailFilterResultCount,
+            inlineDetailFilterEnergyOptions: $browseInlineDetailFilterEnergyOptions,
+            inlineDetailFilterRarityOptions: $browseInlineDetailFilterRarityOptions,
+            inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
+            selectedTab: $browseHomeTab,
+            inlineDetailRoute: $browseInlineDetailRoute,
+            query: $universalQuery
+        )
+    }
+
+    private var collectTab: some View {
+        NavigationStack(path: $collectionNavigationPath) {
+            collectTabRoot
+        }
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+        .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
+        .tag(AppTab.collect)
+    }
+
+    @ViewBuilder
+    private var collectTabRoot: some View {
+        if collectTabVisited {
+            collectTabView
+        } else {
+            Color.clear
+        }
+    }
+
+    private var collectTabView: some View {
+        CollectTabView(
+            selectedSegment: $collectSegment,
+            selectedContentTypeTab: $collectContentTypeTab,
+            selectedBrand: $collectSelectedBrand,
+            collectionFilters: $collectFilters.collectionFilters,
+            wishlistFilters: $collectFilters.wishlistFilters,
+            collectFilterEnergyOptions: $collectFilterEnergyOptions,
+            collectFilterRarityOptions: $collectFilterRarityOptions,
+            collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
+            gridOptions: $collectFilters.gridOptions
+        )
+    }
+
+    private var socialTab: some View {
+        NavigationStack {
+            if socialTabVisited {
+                SocialRootView()
+            } else {
+                Color.clear
+            }
+        }
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+        .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
+        .tag(AppTab.social)
+    }
+
+    private var moreTab: some View {
+        NavigationStack(path: $moreNavigationPath) {
+            if moreTabVisited {
+                MoreView(navigationPath: $moreNavigationPath)
+            } else {
+                Color.clear
+            }
+        }
+        .toolbarBackground(.hidden, for: .navigationBar)
+        .toolbar(isTabBarHidden ? .hidden : .automatic, for: .tabBar)
+        .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
+        .tag(AppTab.more)
     }
 
     @ViewBuilder
@@ -1179,9 +1279,10 @@ struct RootView: View {
             .padding(.bottom, bottomInset)
             .frame(maxWidth: .infinity, alignment: .top)
             .allowsHitTesting(visible)
-            .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
-            .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
-            .animation(Self.searchPresentationAnimation, value: isSearchDetailActive)
+            .animation(
+                isSearchExperiencePresented ? Self.searchPresentationAnimation : .easeInOut(duration: 0.22),
+                value: visible
+            )
     }
 
     private func universalSearchBarControl(
@@ -1211,6 +1312,7 @@ struct RootView: View {
             filterMenuContent: filterContent,
             gridMenuContent: gridContent,
             searchFieldUseGlass: searchFieldUseGlass,
+            chromeUsesInteractiveGlass: false,
             showsBackButtonWhenOpen: showsBackButtonWhenOpen,
             collapsedLeadingButton: browseLeadingButton,
             trailingButton: chromeTrailingButton,
@@ -1232,6 +1334,32 @@ struct RootView: View {
                 SearchHistoryStore.addSearch(universalQuery)
             }
         )
+    }
+
+    private func handleScannerMatch(_ card: Card) {
+        showCardScanner = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+            selectedCardPresentation = CardPresentationContext(cards: [card], startIndex: 0)
+        }
+    }
+
+    private func handleScannerDismiss() {
+        showCardScanner = false
+    }
+
+    private func openActionableTrades(_ tradeID: UUID?) {
+        if let tradeID {
+            let deepLink = "bindr://social/trades/\(tradeID.uuidString)"
+            if let url = URL(string: deepLink) {
+                handleSocialDeepLink(url)
+                return
+            }
+        }
+        if let url = URL(string: "bindr://social/trades") {
+            handleSocialDeepLink(url)
+        } else {
+            selectedTab = .social
+        }
     }
 
     @ViewBuilder

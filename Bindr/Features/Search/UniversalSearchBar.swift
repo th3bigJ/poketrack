@@ -34,6 +34,9 @@ struct UniversalSearchBar: View {
     /// Search field capsule. `true` = Liquid Glass in all colour schemes;
     /// `false` = solid white fill in light mode (matches collapsed root bar).
     var searchFieldUseGlass: Bool = false
+    /// Root floating chrome can disable interactive Liquid Glass while it animates
+    /// on scroll to avoid repeated per-frame glass reconfiguration faults.
+    var chromeUsesInteractiveGlass: Bool = true
     /// The full-screen search overlay owns a separate back button above the
     /// search pill; other search presentations keep the inline back control.
     var showsBackButtonWhenOpen: Bool = true
@@ -102,7 +105,7 @@ struct UniversalSearchBar: View {
                                 Image(systemName: leadingSymbolName)
                                     .font(.system(size: 17, weight: .medium))
                                     .foregroundStyle(.primary)
-                                    .modifier(ChromeGlassCircleGlyphModifier())
+                                    .modifier(ChromeGlassCircleGlyphModifier(interactive: chromeUsesInteractiveGlass))
                                     .contentTransition(.symbolEffect(.replace))
                             }
                             .buttonStyle(.plain)
@@ -117,7 +120,7 @@ struct UniversalSearchBar: View {
                             .padding(.trailing, 8)
                             .frame(height: 44)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .searchFieldCapsuleChrome(darkGlass: .regularInteractive)
+                            .searchFieldCapsuleChrome(darkGlass: chromeUsesInteractiveGlass ? .regularInteractive : .clear)
                             .transition(.move(edge: .leading).combined(with: .opacity))
 
                         cameraButtonLiquid
@@ -153,7 +156,7 @@ struct UniversalSearchBar: View {
                             Image(systemName: leadingSymbolName)
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(.primary)
-                                .modifier(ChromeGlassCircleGlyphModifier())
+                                .modifier(ChromeGlassCircleGlyphModifier(interactive: chromeUsesInteractiveGlass))
                                 .contentTransition(.symbolEffect(.replace))
                         }
                         .buttonStyle(.plain)
@@ -168,7 +171,7 @@ struct UniversalSearchBar: View {
                         .padding(.trailing, 8)
                         .frame(height: 44)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .searchFieldCapsuleChrome(darkGlass: .regularInteractive)
+                        .searchFieldCapsuleChrome(darkGlass: chromeUsesInteractiveGlass ? .regularInteractive : .clear)
                         .transition(.move(edge: .leading).combined(with: .opacity))
 
                     cameraButtonFallback
@@ -205,7 +208,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                                .modifier(ChromeGlassCircleGlyphModifier())
+                .modifier(ChromeGlassCircleGlyphModifier(interactive: chromeUsesInteractiveGlass))
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -224,7 +227,7 @@ struct UniversalSearchBar: View {
             Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                            .modifier(ChromeGlassCircleGlyphModifier())
+                .modifier(ChromeGlassCircleGlyphModifier(interactive: chromeUsesInteractiveGlass))
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -512,8 +515,10 @@ struct UniversalSearchBar: View {
 
 /// Same circle glyph treatment as ``ChromeGlassCircleButton`` (for `Menu` labels and other non-`Button` wrappers).
 struct ChromeGlassCircleGlyphModifier: ViewModifier {
+    var interactive: Bool = true
+
     func body(content: Content) -> some View {
-        content.searchBarCircleChrome()
+        content.searchBarCircleChrome(interactive: interactive)
     }
 }
 

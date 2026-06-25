@@ -65,9 +65,15 @@ struct CardDetailContentView: View {
     let directTradeContext: CardTradeContext?
     let actions: CardDetailContentActions
 
-    @State private var isDetailsPageActive: Bool = false
+    @State private var activePage: CardDetailPage? = .landing
 
     private let actionButtonLandingDiameter: CGFloat = 56
+    private let collapsedCardWidth: CGFloat = 64
+
+    private enum CardDetailPage: String, Hashable {
+        case landing
+        case details
+    }
 
     private func groupedHoldings(
         collectionItems: [CollectionItem],
@@ -111,6 +117,9 @@ struct CardDetailContentView: View {
             scopedBody(collectionItems: collectionItems, ledgerLines: ledgerLines)
         }
         .id(card.masterCardId)
+        .onChange(of: card.masterCardId) { _, _ in
+            activePage = .landing
+        }
     }
 
     @ViewBuilder
@@ -121,59 +130,39 @@ struct CardDetailContentView: View {
         GeometryReader { geo in
             let contentWidth = geo.size.width - 32
             let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-            let pageHeight = geo.size.height - topChromeHeight - swipeHintHeight
+            let landingViewport = geo.size.height - topChromeHeight - swipeHintHeight
             let layout = landingLayoutMetrics(
-                viewportHeight: pageHeight,
+                viewportHeight: landingViewport,
                 contentWidth: contentWidth
             )
+            let collapsedCardHeight = collapsedCardWidth * 7 / 5
+            let onDetailsPage = activePage == .details
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 14) {
-                    ScrollOffsetAnchor { offset in
-                        let newDetailsPageActive = offset > pageHeight * 0.35
-                        if newDetailsPageActive != isDetailsPageActive {
-                            isDetailsPageActive = newDetailsPageActive
-                        }
-                    }
-
-                    landingSection(
-                        pageHeight: pageHeight,
+                VStack(spacing: 0) {
+                    landingPage(
                         cardWidth: layout.cardWidth,
                         chartHeight: layout.chartHeight,
                         collectionItems: collectionItems,
                         ledgerLines: ledgerLines
                     )
-
-                    Color.clear
-                        .frame(height: 1)
-                        .id("detailsTop")
-
-                    detailsScrollHeader
-
-                    sectionDivider
-                    expandedDetailsGrid
-
-                    if owned {
-                        sectionDivider
-                        collectionSection(collectionItems: collectionItems, ledgerLines: ledgerLines)
+                    .containerRelativeFrame(.vertical)
+                    .id(CardDetailPage.landing)
+                    .scrollTransition(.animated(.smooth)) { content, phase in
+                        content.opacity(phase.isIdentity ? 1 : 0)
                     }
 
-                    sectionDivider
-                    footerLinksSection
-
-                    if addToDeckAction == nil {
-                        sectionDivider
-                        CardFriendTradeMatchesSection(
-                            card: card,
-                            directContext: directTradeContext,
-                            maximumMatches: 1
-                        )
-                    }
+                    detailsPage(
+                        owned: owned,
+                        collectionItems: collectionItems,
+                        ledgerLines: ledgerLines
+                    )
+                    .id(CardDetailPage.details)
                 }
-                .padding(.horizontal, 16)
-                .padding(.bottom, 32)
+                .scrollTargetLayout()
             }
-            .coordinateSpace(name: "scroll")
+            .scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))
+            .scrollPosition(id: $activePage, anchor: .top)
             .scrollIndicators(.hidden)
             .scrollContentBackground(.hidden)
             .safeAreaInset(edge: .top, spacing: 0) {
@@ -182,17 +171,35 @@ struct CardDetailContentView: View {
 
                     navigationChrome
                         .padding(.horizontal, 16)
+
+                    if onDetailsPage {
+                        detailsPageHeaderRow(collapsedCardHeight: collapsedCardHeight)
+                            .transition(.opacity.combined(with: .move(edge: .top)))
+                    }
                 }
                 .padding(.bottom, 4)
+                .background {
+                    CardDetailTypeBackground(accent: resolvedTypeAccent)
+                }
+                .animation(.smooth(duration: 0.25), value: onDetailsPage)
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
-                if !isDetailsPageActive {
+                if !onDetailsPage {
                     VStack(spacing: 8) {
                         sectionDivider
                         swipeUpHint
                     }
                     .padding(.horizontal, 16)
+                    .padding(.top, 8)
+                    .background {
+                        CardDetailTypeBackground(accent: resolvedTypeAccent)
+                    }
+                    .transition(.opacity)
                 }
+            }
+            .onChange(of: activePage) { _, page in
+                guard page != nil else { return }
+                Haptics.lightImpact()
             }
         }
         .background(.clear)
@@ -311,54 +318,85 @@ struct CardDetailContentView: View {
             .accessibilityLabel("Swipe up for details")
     }
 
-    private func landingSection(
-        pageHeight: CGFloat,
+    private func landingPage(
         cardWidth: CGFloat,
         chartHeight: CGFloat,
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
     ) -> some View {
-        let landingHeight = max(0, pageHeight)
+        VStack(spacing: 6) {
+            cardImage(width: cardWidth)
+                .frame(maxWidth: .infinity)
 
-        return ZStack(alignment: .top) {
-            VStack(spacing: 6) {
-                cardImage(width: cardWidth)
-                    .frame(maxWidth: .infinity)
+            actionBar(
+                collectionItems: collectionItems,
+                ledgerLines: ledgerLines
+            )
 
-                actionBar(
-                    collectionItems: collectionItems,
-                    ledgerLines: ledgerLines
-                )
+            CardPricingPanel(
+                card: card,
+                useGlass: true,
+                chartHeight: chartHeight,
+                chartAccent: resolvedTypeAccent
+            )
 
-                CardPricingPanel(
-                    card: card,
-                    useGlass: true,
-                    chartHeight: chartHeight,
-                    chartAccent: resolvedTypeAccent
-                )
-            }
-            .frame(maxWidth: .infinity, alignment: .top)
-            .padding(.top, 2)
+            Spacer(minLength: 0)
         }
-        .frame(height: landingHeight, alignment: .top)
-        .clipped()
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .padding(.horizontal, 16)
+        .padding(.top, 2)
+        .padding(.bottom, 8)
     }
 
-    private var detailsScrollHeader: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .top, spacing: 12) {
-                cardImage(width: 64)
+    private func detailsPage(
+        owned: Bool,
+        collectionItems: [CollectionItem],
+        ledgerLines: [LedgerLine]
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 14) {
+            sectionDivider
+            expandedDetailsGrid
 
-                CardPricingPanel(
+            if owned {
+                sectionDivider
+                collectionSection(collectionItems: collectionItems, ledgerLines: ledgerLines)
+            }
+
+            sectionDivider
+            footerLinksSection
+
+            if addToDeckAction == nil {
+                sectionDivider
+                CardFriendTradeMatchesSection(
                     card: card,
-                    useGlass: true,
-                    showsChart: false,
-                    showsVariantMenu: false,
-                    chartAccent: resolvedTypeAccent
+                    directContext: directTradeContext,
+                    maximumMatches: 1
                 )
-                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
+        .padding(.horizontal, 16)
+        .padding(.top, 4)
+        .padding(.bottom, 32)
+        .background {
+            CardDetailTypeBackground(accent: resolvedTypeAccent)
+        }
+    }
+
+    private func detailsPageHeaderRow(collapsedCardHeight: CGFloat) -> some View {
+        HStack(alignment: .top, spacing: 12) {
+            cardImage(width: collapsedCardWidth)
+
+            CardPricingPanel(
+                card: card,
+                useGlass: true,
+                showsChart: false,
+                showsVariantMenu: false,
+                chartAccent: resolvedTypeAccent
+            )
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(.horizontal, 16)
+        .frame(height: collapsedCardHeight, alignment: .top)
     }
 
     private func cardImage(width: CGFloat) -> some View {

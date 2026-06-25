@@ -128,6 +128,16 @@ final class CollectionValueService {
         )
     }
 
+    /// Today's saved snapshot or the in-memory UserDefaults cache for this calendar day.
+    func authoritativeTodaySnapshot() -> BrandSnapshot? {
+        brandSnapshot(for: Date()) ?? todayPersistedSnapshot()
+    }
+
+    /// Most recent historical daily snapshot — display-only while today's live value is recomputing.
+    func interimPlaceholderSnapshot() -> BrandSnapshot? {
+        snapshots.last(where: { $0.totalGbp > 0 })?.asBrandSnapshot
+    }
+
     /// Today's live market value using current catalog pricing (same path as saved daily snapshots).
     func computeLiveSnapshot(for collectionItems: [CollectionItem]) async -> BrandSnapshot? {
         await computeValue(for: collectionItems, on: Date(), allowLiveFallback: true)
@@ -391,18 +401,12 @@ final class CollectionValueService {
             return
         }
 
-        let result: BrandSnapshot
-        if let preferredSnapshot, preferredSnapshot.total > 0 {
-            result = preferredSnapshot
-        } else {
-            isBackfilling = true
-            guard let computed = await computeValue(for: collectionItems, on: today) else {
-                isBackfilling = false
-                return
-            }
-            result = computed
+        isBackfilling = true
+        guard let result = await computeValue(for: collectionItems, on: today) else {
             isBackfilling = false
+            return
         }
+        isBackfilling = false
         guard result.total > 0 else {
             return
         }
