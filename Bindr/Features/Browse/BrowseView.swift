@@ -77,6 +77,7 @@ struct CardGridCell: View {
     var postPriceFootnote: String? = nil
     var overridePrice: Double? = nil
     var gradeLabel: String? = nil
+    var precomputedPriceLine: String? = nil
 
     init(
         card: Card,
@@ -95,7 +96,8 @@ struct CardGridCell: View {
         footnoteLeadingAvatarURL: URL? = nil,
         postPriceFootnote: String? = nil,
         overridePrice: Double? = nil,
-        gradeLabel: String? = nil
+        gradeLabel: String? = nil,
+        precomputedPriceLine: String? = nil
     ) {
         self.card = card
         self.services = services
@@ -114,6 +116,7 @@ struct CardGridCell: View {
         self.postPriceFootnote = postPriceFootnote
         self.overridePrice = overridePrice
         self.gradeLabel = gradeLabel
+        self.precomputedPriceLine = precomputedPriceLine
     }
 
     private var resolvedColorScheme: ColorScheme { colorScheme }
@@ -194,6 +197,7 @@ struct CardGridCell: View {
             postPriceFootnote: postPriceFootnote,
             overridePrice: overridePrice,
             gradeLabel: gradeLabel,
+            precomputedPriceLine: precomputedPriceLine,
             showsFooter: showsFooter,
             visibleOwnedCountBadge: visibleOwnedCountBadge,
             cardBorderColor: cardBorderColor,
@@ -246,6 +250,7 @@ private struct CardGridCellLayout: View {
     let postPriceFootnote: String?
     let overridePrice: Double?
     let gradeLabel: String?
+    let precomputedPriceLine: String?
     let showsFooter: Bool
     let visibleOwnedCountBadge: Int?
     let cardBorderColor: Color
@@ -370,6 +375,7 @@ private struct CardGridCellLayout: View {
             card: card,
             overridePrice: overridePrice,
             gradeLabel: gradeLabel,
+            precomputedPriceLine: precomputedPriceLine,
             variantKey: variantPricingKey,
             alignment: .leading,
             overlayTextColor: .white
@@ -421,8 +427,6 @@ private struct BrowseCardThumbnailView: View {
             localURL: imageLocalURL,
             reloadToken: imageReloadToken
         )
-            .saturation(colorScheme == .light ? 1.08 : 1)
-            .contrast(colorScheme == .light ? 1.06 : 1)
             .overlay(alignment: .bottomTrailing) {
                 if let ownedCountBadge, ownedCountBadge >= 1 {
                     ownedBadge(count: ownedCountBadge)
@@ -441,7 +445,6 @@ private struct BrowseCardThumbnailView: View {
                 .font(.system(size: 9, weight: .bold))
                 .foregroundStyle(.white)
         }
-        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
         .padding(6)
     }
 
@@ -568,6 +571,7 @@ private struct BrowseCardGridButton: View {
     @ObservationIgnored private let services: AppServices
     let accentColor: Color
     let colorScheme: ColorScheme
+    let precomputedPriceLine: String?
     let browseFeedCards: [Card]
     let onPresentCard: (Card, [Card]) -> Void
     @Binding var multiSelectedCardIDs: Set<String>
@@ -584,6 +588,7 @@ private struct BrowseCardGridButton: View {
         services: AppServices,
         accentColor: Color,
         colorScheme: ColorScheme,
+        precomputedPriceLine: String? = nil,
         browseFeedCards: [Card],
         onPresentCard: @escaping (Card, [Card]) -> Void,
         multiSelectedCardIDs: Binding<Set<String>>,
@@ -599,6 +604,7 @@ private struct BrowseCardGridButton: View {
         self.services = services
         self.accentColor = accentColor
         self.colorScheme = colorScheme
+        self.precomputedPriceLine = precomputedPriceLine
         self.browseFeedCards = browseFeedCards
         self.onPresentCard = onPresentCard
         self._multiSelectedCardIDs = multiSelectedCardIDs
@@ -632,7 +638,8 @@ private struct BrowseCardGridButton: View {
                 setName: row.setName,
                 isOwned: isOwned,
                 isWishlisted: isWishlisted,
-                ownedCountBadge: ownedCountBadge
+                ownedCountBadge: ownedCountBadge,
+                precomputedPriceLine: precomputedPriceLine
             )
             .overlay(alignment: .topTrailing) {
                 if isMultiSelectActive {
@@ -766,6 +773,7 @@ struct BrowseView: View {
     // Keyed by "masterCardId::variantKey" for per-variant ownership in the master set grid.
     @State private var ownedQuantityByCardVariant: [String: Int] = [:]
     @State private var ownedCardVariantKeys: Set<String> = []
+    @State private var browsePriceLineByCardID: [String: String] = [:]
 
     private var multiSelectedCards: [Card] {
         var cardsByMasterID: [String: Card] = [:]
@@ -787,6 +795,20 @@ struct BrowseView: View {
         f.numberStyle = .decimal
         return f
     }()
+
+    private var browseGridPriceTaskKey: Int {
+        var h = Hasher()
+        h.combine(isViewVisible)
+        h.combine(selectedTab.rawValue)
+        h.combine(gridOptions.showPricing)
+        h.combine(browseFeedSnapshot.cards.count)
+        h.combine(browseFeedSnapshot.cards.first?.masterCardId)
+        h.combine(browseFeedSnapshot.cards.last?.masterCardId)
+        h.combine(services.priceDisplay.currency.rawValue)
+        h.combine(services.pricing.usdToGbp)
+        h.combine(services.pricing.pricingCacheGeneration)
+        return h.finalize()
+    }
 
     var body: some View {
         Group {
@@ -923,6 +945,9 @@ struct BrowseView: View {
         }
         .task(id: inlineDetailPriceCacheTaskKey) {
             await refreshInlineDetailPriceCache()
+        }
+        .task(id: browseGridPriceTaskKey) {
+            await refreshBrowseGridPriceLines()
         }
         .onChange(of: inlineDetailFilters.sortBy) { _, sortBy in
             guard sortBy == .price else { return }
@@ -1081,6 +1106,7 @@ struct BrowseView: View {
         let ownedQuantities = ownedQuantityByCardID
         let wishlistedIDs = visibleWishlistedCardIDs
         let accentColor = services.theme.accentColor
+        let priceLines = browsePriceLineByCardID
         VStack(spacing: 0) {
             EagerVGrid(items: snapshot.rows, columns: safeColumnCount, spacing: BindrSpacing.cardGrid) { row in
                 BrowseCardGridButton(
@@ -1093,6 +1119,7 @@ struct BrowseView: View {
                     services: services,
                     accentColor: accentColor,
                     colorScheme: colorScheme,
+                    precomputedPriceLine: gridOptions.showPricing ? (priceLines[row.card.masterCardId] ?? "") : nil,
                     browseFeedCards: snapshot.cards,
                     onPresentCard: presentCard,
                     multiSelectedCardIDs: $multiSelectedCardIDs,
@@ -1215,9 +1242,7 @@ struct BrowseView: View {
                 }
             }
         }
-        .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
+        .scrollDismissesKeyboard(.interactively)
     }
 
     private var auxiliaryTabScrollView: some View {
@@ -1262,9 +1287,7 @@ struct BrowseView: View {
                 }
             }
         }
-        .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
+        .scrollDismissesKeyboard(.interactively)
     }
 
     /// Inline set/dex card grid — own `ScrollView` so grid scrolling does not move the sets list underneath.
@@ -1282,9 +1305,7 @@ struct BrowseView: View {
                 }
             }
         }
-        .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
+        .scrollDismissesKeyboard(.interactively)
     }
 
     @ViewBuilder
@@ -1425,6 +1446,7 @@ struct BrowseView: View {
                             }
                         }
                         .onAppear {
+                            guard indexedCard.index.isMultiple(of: max(safeColumnCount, 1)) else { return }
                             ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: indexedCard.index + 1)
                         }
                     }
@@ -2321,6 +2343,42 @@ struct BrowseView: View {
             filterRarityOptions = browseFilterRarityOptions(allBrowseFilterCards)
             filterTrainerTypeOptions = browseFilterTrainerTypeOptions(allBrowseFilterCards)
         }
+    }
+
+    @MainActor
+    private func refreshBrowseGridPriceLines() async {
+        guard isViewVisible, selectedTab == .cards, gridOptions.showPricing else {
+            browsePriceLineByCardID = [:]
+            return
+        }
+        let cards = browseFeedSnapshot.cards
+        guard !cards.isEmpty else {
+            browsePriceLineByCardID = [:]
+            return
+        }
+
+        let currency = services.priceDisplay.currency
+        let fx = services.pricing.usdToGbp
+        await services.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        await services.pricing.indexPricingForCards(cards)
+        guard isViewVisible, !Task.isCancelled else { return }
+
+        var next = browsePriceLineByCardID
+        next.reserveCapacity(cards.count)
+        let visibleIDs = Set(cards.map(\.masterCardId))
+        next = next.filter { visibleIDs.contains($0.key) }
+
+        for card in cards {
+            guard !Task.isCancelled else { return }
+            if let entry = services.pricing.cachedPricingEntry(for: card),
+               let line = browseMarketPriceLine(for: entry, currency: currency, usdToGbp: fx) {
+                next[card.masterCardId] = line
+            } else if services.pricing.isPricingIndexed(for: card) {
+                next[card.masterCardId] = "—"
+            }
+        }
+
+        browsePriceLineByCardID = next
     }
 
     private func tabSupportsInlineDetail(_ tab: BrowseHomeTab) -> Bool {
@@ -3670,6 +3728,7 @@ private struct BrowseGridPriceText: View {
     var overridePrice: Double? = nil
     /// When set, shown as a small pill badge next to the price (e.g. "PSA 10", "ACE 10").
     var gradeLabel: String? = nil
+    var precomputedPriceLine: String? = nil
     /// When true, render the resolved price in the current theme accent color.
     var usesAccentColor: Bool = false
     /// When set, show the price for this specific variant only (no range).
@@ -3687,6 +3746,7 @@ private struct BrowseGridPriceText: View {
         card: Card,
         overridePrice: Double? = nil,
         gradeLabel: String? = nil,
+        precomputedPriceLine: String? = nil,
         usesAccentColor: Bool = false,
         variantKey: String? = nil,
         alignment: HorizontalAlignment = .center,
@@ -3697,6 +3757,7 @@ private struct BrowseGridPriceText: View {
         self.card = card
         self.overridePrice = overridePrice
         self.gradeLabel = gradeLabel
+        self.precomputedPriceLine = precomputedPriceLine
         self.usesAccentColor = usesAccentColor
         self.variantKey = variantKey
         self.alignment = alignment
@@ -3722,44 +3783,20 @@ private struct BrowseGridPriceText: View {
 
     var body: some View {
         Group {
-            if let priceLine {
-                HStack(spacing: 3) {
-                    if let gradeLabel {
-                        Text(gradeLabel)
-                            .font(.system(size: 7, weight: .bold))
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 3)
-                            .padding(.vertical, 1.5)
-                            .background(accentColor, in: RoundedRectangle(cornerRadius: 3))
-                    }
-                    if let overlayTextColor {
-                        Text(priceLine)
-                            .font(.caption2.weight(.semibold))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-                            .foregroundStyle(overlayTextColor)
-                    } else if usesAccentColor {
-                        Text(priceLine)
-                            .font(.caption2.weight(.semibold))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-                            .foregroundStyle(accentColor)
-                    } else {
-                        Text(priceLine)
-                            .font(.caption2.weight(.semibold))
-                            .lineLimit(1)
-                            .minimumScaleFactor(0.7)
-                            .foregroundStyle(.secondary)
-                    }
+            if let precomputedPriceLine {
+                if precomputedPriceLine.isEmpty {
+                    pricePlaceholder
+                } else {
+                    priceContent(precomputedPriceLine)
                 }
-                .frame(maxWidth: alignment == .leading ? nil : .infinity, alignment: alignment == .leading ? .leading : .center)
+            } else if let priceLine {
+                priceContent(priceLine)
             } else {
-                Text(" ")
-                    .font(.caption2.weight(.semibold))
-                    .redacted(reason: .placeholder)
+                pricePlaceholder
             }
         }
         .task(id: taskKey) {
+            guard precomputedPriceLine == nil else { return }
             if let cached = await BrowseGridPriceLineCache.shared.value(for: taskKey) {
                 priceLine = cached
                 return
@@ -3824,6 +3861,45 @@ private struct BrowseGridPriceText: View {
                 await BrowseGridPriceLineCache.shared.set(line, for: taskKey)
             }
         }
+    }
+
+    private func priceContent(_ priceLine: String) -> some View {
+        HStack(spacing: 3) {
+            if let gradeLabel {
+                Text(gradeLabel)
+                    .font(.system(size: 7, weight: .bold))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 3)
+                    .padding(.vertical, 1.5)
+                    .background(accentColor, in: RoundedRectangle(cornerRadius: 3))
+            }
+            if let overlayTextColor {
+                Text(priceLine)
+                    .font(.caption2.weight(.semibold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .foregroundStyle(overlayTextColor)
+            } else if usesAccentColor {
+                Text(priceLine)
+                    .font(.caption2.weight(.semibold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .foregroundStyle(accentColor)
+            } else {
+                Text(priceLine)
+                    .font(.caption2.weight(.semibold))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .frame(maxWidth: alignment == .leading ? nil : .infinity, alignment: alignment == .leading ? .leading : .center)
+    }
+
+    private var pricePlaceholder: some View {
+        Text(" ")
+            .font(.caption2.weight(.semibold))
+            .redacted(reason: .placeholder)
     }
 
     /// Min/max raw (ungraded) market USD across Scrydex variants on the card.
@@ -4203,6 +4279,7 @@ struct SetCardsView: View {
                                     }
                                 }
                                 .onAppear {
+                                    guard indexedCard.index.isMultiple(of: max(safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), 1)) else { return }
                                     ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: indexedCard.index + 1)
                                 }
                             }
@@ -4619,6 +4696,7 @@ struct DexCardsView: View {
                         }
                         .buttonStyle(CardCellButtonStyle())
                         .onAppear {
+                            guard indexedCard.index.isMultiple(of: max(safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), 1)) else { return }
                             ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: indexedCard.index + 1)
                         }
                     }
@@ -5271,6 +5349,29 @@ private func browseMarketPriceUSD(for entry: CardPricingEntry?) -> Double? {
         return scrydex.values.compactMap { $0.rawMarketEstimateUSD() }.filter { $0 > 0 }.min()
     }
     return entry.tcgplayerMarketEstimateUSD()
+}
+
+private func browseMarketPriceLine(for entry: CardPricingEntry, currency: PriceDisplayCurrency, usdToGbp: Double) -> String? {
+    let range: (min: Double, max: Double)?
+    if let scrydex = entry.scrydex, !scrydex.isEmpty {
+        let values = scrydex.values.compactMap { $0.rawMarketEstimateUSD() }.filter { $0 > 0 }
+        if let min = values.min(), let max = values.max() {
+            range = (min, max)
+        } else {
+            range = nil
+        }
+    } else if let usd = entry.tcgplayerMarketEstimateUSD() {
+        range = (usd, usd)
+    } else {
+        range = nil
+    }
+    guard let range else { return nil }
+    if abs(range.max - range.min) < 0.005 {
+        return currency.format(amountUSD: range.min, usdToGbp: usdToGbp)
+    }
+    let low = currency.format(amountUSD: range.min, usdToGbp: usdToGbp)
+    let high = currency.format(amountUSD: range.max, usdToGbp: usdToGbp)
+    return "\(low) - \(high)"
 }
 
 private func isCommonOrUncommon(_ rarity: String?) -> Bool {

@@ -291,7 +291,10 @@ struct CardScannerView: View {
                 if case .scanning = viewModel.scanState {
                     EmptyView()
                 } else {
-                    ChromeGlassCircleButton(accessibilityLabel: "Close scanner", action: onDismiss) {
+                    ChromeGlassCircleButton(accessibilityLabel: "Close scanner") {
+                        viewModel.stopSession()
+                        onDismiss()
+                    } label: {
                         Image(systemName: "xmark")
                             .font(.system(size: 17, weight: .semibold))
                             .foregroundStyle(.white)

@@ -1,11 +1,10 @@
 import SwiftUI
 
 extension View {
-    /// Rasterizes image content once so SwiftUI does not re-run ColorSync display matching every frame.
-    ///
-    /// Use on catalog thumbnails in scrolling grids — the main source of repeated
-    /// `Invalid profile 'c2ci'` console noise on P3 displays.
+    /// Kept as a named display hook for image-heavy views.
+    /// Avoid forcing `drawingGroup` on scrolling thumbnails; it creates many
+    /// offscreen render passes and makes grids feel capped at a low frame rate.
     func bindrRasterizedForDisplay() -> some View {
-        drawingGroup(opaque: false, colorMode: .nonLinear)
+        self
     }
 }

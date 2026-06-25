@@ -8,6 +8,7 @@ final class ImagePrefetcher: @unchecked Sendable {
 
     /// Same pool as `CachedAsyncImage` so image traffic doesn't open two parallel session stacks to the CDN.
     private let session = AppURLSession.images
+    private let maxInFlightRequests = 8
 
     private var inFlight: [URL: Task<Void, Never>] = [:]
     private let lock = OSAllocatedUnfairLock()
@@ -19,6 +20,7 @@ final class ImagePrefetcher: @unchecked Sendable {
         for url in urls {
             let task: Task<Void, Never>? = lock.withLock {
                 guard inFlight[url] == nil else { return nil }
+                guard inFlight.count < maxInFlightRequests else { return nil }
                 let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
                 guard AppURLSession.imageURLCache.cachedResponse(for: request) == nil else { return nil }
                 let t = Task.detached(priority: priority) { [weak self] in

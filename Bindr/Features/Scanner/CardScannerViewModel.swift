@@ -132,6 +132,21 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     /// Serial queue for all `AVCaptureSession` mutations and `startRunning` / `stopRunning` (must not block the main thread).
     private let sessionQueue = DispatchQueue(label: "scanner.capture.session", qos: .userInitiated)
     private var didConfigureSession = false
+    private let sessionStateLock = NSLock()
+    private var _isSessionActive = false
+
+    private var isSessionActive: Bool {
+        get {
+            sessionStateLock.lock()
+            defer { sessionStateLock.unlock() }
+            return _isSessionActive
+        }
+        set {
+            sessionStateLock.lock()
+            _isSessionActive = newValue
+            sessionStateLock.unlock()
+        }
+    }
 
     /// Normalized rect (0–1) of the card reticle within the screen.
     var cardNormalizedRect: CGRect = .zero
@@ -149,15 +164,27 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     }()
 
     private var isAnalysingFrame = false        // prevent overlapping Vision calls
+    private var lastFrameAnalysisTime: CFTimeInterval = 0
+    private var didResetLiveAnalysisState = false
     /// Low-pass filtered quality so alignment UI does not flicker frame-to-frame.
     private var smoothedFrameQuality: Double = 0
     private static let frameQualitySmoothingFactor: Double = 0.10
     private static let frameQualityDecayFactor: Double = 0.82
+    private static let minimumLiveAnalysisInterval: CFTimeInterval = 0.22
     private static let alignmentTierDebounceInterval: CFTimeInterval = 0.35
     private var pendingAlignmentTier: ScannerAlignmentTier?
     private var pendingAlignmentTierTimestamp: CFTimeInterval = 0
     /// Token for the currently active OCR/search request. Replaced on each new scan and on cancel.
     private var activeScanRequestID = UUID()
+
+    deinit {
+        isSessionActive = false
+        sessionQueue.async { [session] in
+            if session.isRunning {
+                session.stopRunning()
+            }
+        }
+    }
 
     // MARK: - Setup
 
@@ -169,12 +196,18 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
     func startSession() {
         guard AVCaptureDevice.authorizationStatus(for: .video) != .denied else { return }
+        isSessionActive = true
         Task.detached(priority: .userInitiated) { [weak self] in
             await self?.setupCaptureSession()
         }
     }
 
     func stopSession() {
+        isSessionActive = false
+        DispatchQueue.main.async { [weak self] in
+            self?.isCameraReady = false
+            self?.resetLiveAnalysisStateIfNeeded()
+        }
         sessionQueue.async { [weak self] in
             guard let self else { return }
             if self.session.isRunning {
@@ -200,6 +233,14 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     private func resetAlignmentTier() {
         alignmentTier = .align
         pendingAlignmentTier = nil
+    }
+
+    private func resetLiveAnalysisStateIfNeeded() {
+        guard !didResetLiveAnalysisState else { return }
+        didResetLiveAnalysisState = true
+        smoothedFrameQuality = 0
+        frameQuality = 0
+        resetAlignmentTier()
     }
 
     private func updateAlignmentTier(for smoothedQuality: Double) {
@@ -295,6 +336,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     // MARK: - AVCaptureSession setup
 
     private func setupCaptureSession() async {
+        guard isSessionActive else { return }
         let status = AVCaptureDevice.authorizationStatus(for: .video)
         if status == .notDetermined {
             let granted = await AVCaptureDevice.requestAccess(for: .video)
@@ -303,6 +345,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 return
             }
         }
+        guard isSessionActive else { return }
         guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else {
             await MainActor.run { isCameraReady = false }
             return
@@ -316,6 +359,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 }
 
                 if self.didConfigureSession {
+                    guard self.isSessionActive else {
+                        continuation.resume()
+                        return
+                    }
                     if !self.session.isRunning {
                         self.session.startRunning()
                     }
@@ -336,7 +383,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 }
 
                 self.session.beginConfiguration()
-                self.session.sessionPreset = .hd1920x1080
+                self.session.sessionPreset = .hd1280x720
 
                 if self.session.canAddInput(input) { self.session.addInput(input) }
                 if self.session.canAddOutput(self.photoOutput) { self.session.addOutput(self.photoOutput) }
@@ -354,6 +401,10 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
                 self.session.commitConfiguration()
                 self.didConfigureSession = true
+                guard self.isSessionActive else {
+                    continuation.resume()
+                    return
+                }
                 if !self.session.isRunning {
                     self.session.startRunning()
                 }
@@ -371,35 +422,33 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         let requestID = UUID()
         activeScanRequestID = requestID
         scanState = .scanning
+        let normalizedRect = cardNormalizedRect
 
         guard let fullCG = image.cgImage else {
-            DispatchQueue.main.async { [weak self] in
-                self?.scanState = .idle
-                self?.lastErrorMessage = "Could not read this photo. Try again."
-            }
+            scanState = .idle
+            lastErrorMessage = "Could not read this photo. Try again."
             return
         }
 
-        let croppedCG = fullCG.croppedToCardRect(cardNormalizedRect, imageSize: image.size) ?? fullCG
-        let ocrCGImage = preprocessCardForOCR(croppedCG) ?? croppedCG
-        performOCR(on: ocrCGImage, requestID: requestID)
+        Task.detached(priority: .userInitiated) { [weak self] in
+            guard let self else { return }
+            let croppedCG = fullCG.croppedToCardRect(normalizedRect, imageSize: image.size) ?? fullCG
+            let ocrCGImage = self.preprocessCardForOCR(croppedCG) ?? croppedCG
+            await self.performOCR(on: ocrCGImage, requestID: requestID)
+        }
     }
 
-    private func performOCR(on ocrCGImage: CGImage, requestID: UUID) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            Task { [weak self] in
-                let observations = await self?.recognizeText(in: ocrCGImage) ?? []
-                if observations.isEmpty, Task.isCancelled == false {
-                    DispatchQueue.main.async { [weak self] in
-                        guard let self, self.activeScanRequestID == requestID else { return }
-                        self.scanState = .idle
-                        self.lastErrorMessage = "Text recognition failed. Try better light or retake."
-                    }
-                    return
-                }
-                self?.handleTextObservations(observations, requestID: requestID)
+    private func performOCR(on ocrCGImage: CGImage, requestID: UUID) async {
+        let observations = await recognizeText(in: ocrCGImage)
+        if observations.isEmpty, Task.isCancelled == false {
+            await MainActor.run { [weak self] in
+                guard let self, self.activeScanRequestID == requestID else { return }
+                self.scanState = .idle
+                self.lastErrorMessage = "Text recognition failed. Try better light or retake."
             }
+            return
         }
+        handleTextObservations(observations, requestID: requestID)
     }
 
     private func recognizeText(in image: CGImage) async -> [VNRecognizedTextObservation] {
@@ -763,26 +812,26 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
 extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        guard isSessionActive else { return }
         // Don't analyse while a capture or OCR pass is in flight
         guard !isCapturing, case .idle = scanState else {
             DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                self.smoothedFrameQuality = 0
-                self.frameQuality = 0
-                self.resetAlignmentTier()
+                guard let self, self.isSessionActive else { return }
+                self.resetLiveAnalysisStateIfNeeded()
             }
             return
         }
         guard !requiresBrandSelection else {
             DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                self.smoothedFrameQuality = 0
-                self.frameQuality = 0
-                self.resetAlignmentTier()
+                guard let self, self.isSessionActive else { return }
+                self.resetLiveAnalysisStateIfNeeded()
             }
             return
         }
         guard !isAnalysingFrame else { return }
+        let now = CACurrentMediaTime()
+        guard now - lastFrameAnalysisTime >= Self.minimumLiveAnalysisInterval else { return }
+        lastFrameAnalysisTime = now
 
         isAnalysingFrame = true
         defer { isAnalysingFrame = false }
@@ -804,6 +853,8 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         DispatchQueue.main.async { [weak self] in
             guard let self else { return }
+            guard self.isSessionActive else { return }
+            self.didResetLiveAnalysisState = false
             if quality <= 0 {
                 // Decay gradually instead of snapping to zero when Vision misses a frame.
                 self.smoothedFrameQuality *= Self.frameQualityDecayFactor

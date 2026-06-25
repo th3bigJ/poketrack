@@ -121,6 +121,7 @@ struct SocialRootView: View {
     }
 
     @Environment(AppServices.self) private var services
+    @Environment(\.scenePhase) private var scenePhase
 
     @State private var profile: SocialProfile?
     @State private var isProfileLoading = false
@@ -183,9 +184,11 @@ struct SocialRootView: View {
             await routeQueuedDeepLinkIfPossible()
             await services.socialPush.updateRegistrationState()
             
-            // Periodically refresh unread alert counts while Social is active
+            // Periodically refresh unread alert counts while Social is active and foregrounded.
             while !Task.isCancelled {
-                await services.socialFeed.refreshUnreadCounts()
+                if scenePhase == .active {
+                    await services.socialFeed.refreshUnreadCounts()
+                }
                 try? await Task.sleep(nanoseconds: 30_000_000_000) // 30 seconds
             }
         }

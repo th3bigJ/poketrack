@@ -178,21 +178,21 @@ struct LiveActivityItem: Identifiable, Hashable {
 
 // MARK: - Pulse glow modifier
 
-// A single TimelineView drives the pulse phase for all rows so we don't fan out
-// into N independent repeatForever animations — one per LiveActivityRow — which
-// each run their own CADisplayLink-backed animation loop even when off-screen.
+// Uses a simple implicit animation between two opacity/radius states rather than
+// a TimelineView. The animation only runs while the view is on-screen — when
+// onDisappear fires we reset the phase, which cancels the SwiftUI animation tree.
 private struct PulseGlow: ViewModifier {
+    @State private var pulsed = false
+
     func body(content: Content) -> some View {
-        TimelineView(.animation(minimumInterval: 1.0 / 8)) { timeline in
-            let t = timeline.date.timeIntervalSinceReferenceDate
-            // 1.2-second sine wave matching the old easeInOut(duration:1.2) period.
-            let phase = (sin(t * .pi / 1.2) + 1) / 2  // 0…1
-            content
-                .shadow(
-                    color: BindrPalette.ownedGreen.opacity(phase * 0.65),
-                    radius: phase * 5
-                )
-        }
+        content
+            .shadow(
+                color: BindrPalette.ownedGreen.opacity(pulsed ? 0.65 : 0.0),
+                radius: pulsed ? 5 : 0
+            )
+            .animation(.easeInOut(duration: 1.2).repeatForever(autoreverses: true), value: pulsed)
+            .onAppear { pulsed = true }
+            .onDisappear { pulsed = false }
     }
 }
 

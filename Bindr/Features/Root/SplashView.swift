@@ -130,6 +130,9 @@ struct SplashView: View {
                         shimmerPos = 1
                     }
                 }
+                .onDisappear {
+                    shimmerPos = -1
+                }
                 .allowsHitTesting(false)
         }
         .mask(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))

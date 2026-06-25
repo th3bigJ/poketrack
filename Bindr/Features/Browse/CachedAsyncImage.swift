@@ -113,12 +113,13 @@ private final class ImageLoader {
                     let (data, response) = try await AppURLSession.images.data(for: networkRequest)
                     guard !Task.isCancelled else { return }
                     let cachedResponse = CachedURLResponse(response: response, data: data)
-                    if decodeImage(from: cachedResponse, targetSize: targetSize, scale: scale) != nil {
+                    let networkDecoded = decodeImage(from: cachedResponse, targetSize: targetSize, scale: scale)
+                    if networkDecoded != nil {
                         AppURLSession.imageURLCache.storeCachedResponse(cachedResponse, for: request)
                     } else {
                         AppURLSession.imageURLCache.removeCachedResponse(for: request)
                     }
-                    decoded = decodeImage(from: cachedResponse, targetSize: targetSize, scale: scale)
+                    decoded = networkDecoded
                 } catch { }
             }
         }
@@ -165,7 +166,7 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
     }
 
     private var taskID: String {
-        "\(url?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(offlineContext?.packDataRevision ?? 0)"
+        "\(url?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(localURL?.path(percentEncoded: false) ?? "")"
     }
 
     var body: some View {
@@ -211,7 +212,7 @@ struct GridCardThumbnailImage: View {
     }
 
     private var taskID: String {
-        "\(url?.absoluteString ?? "")|\(reloadToken)"
+        "\(url?.absoluteString ?? "")|\(localURL?.path(percentEncoded: false) ?? "")|\(reloadToken)"
     }
 
     private var hasRenderableImage: Bool {
@@ -271,7 +272,7 @@ struct CachedCardThumbnailImage: View {
     }
 
     private var taskID: String {
-        "\(url?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(offlineContext?.packDataRevision ?? 0)"
+        "\(url?.absoluteString ?? "")|\(offlineContext?.isOfflineEnabled == true)|\(localURL?.path(percentEncoded: false) ?? "")"
     }
 
     var body: some View {

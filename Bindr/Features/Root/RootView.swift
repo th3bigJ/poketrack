@@ -1151,7 +1151,7 @@ struct RootView: View {
 
     private var socialTab: some View {
         NavigationStack {
-            if socialTabVisited {
+            if socialTabVisited && selectedTab == .social {
                 SocialRootView()
             } else {
                 Color.clear
@@ -1338,7 +1338,8 @@ struct RootView: View {
 
     private func handleScannerMatch(_ card: Card) {
         showCardScanner = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(350))
             selectedCardPresentation = CardPresentationContext(cards: [card], startIndex: 0)
         }
     }
@@ -1639,7 +1640,8 @@ struct RootView: View {
         // to fully settle before interrupting the user. The previous 2.5 s delay
         // coincided exactly with the end of the cold-start load, making the upsell
         // feel like a "reward" for surviving the freeze rather than a natural pause.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6.0) {
+        Task { @MainActor in
+            try? await Task.sleep(for: .seconds(6))
             // Re-check at fire time — nothing modal should be on screen, and
             // entitlements may have resolved since the initial isPremium gate above.
             guard !services.store.isPremium,

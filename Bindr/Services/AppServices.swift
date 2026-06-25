@@ -95,6 +95,9 @@ final class AppServices {
     /// Set in `init` when the user already completed the one-time blocking bootstrap; consumed by the first `.task` on the main UI to refresh catalogs in the background.
     private(set) var shouldRunBackgroundCatalogRefreshOnLaunch = false
     private var hasResolvedLaunchCatalogRefreshRequirement = true
+    private var launchCatalogRefreshRequirementContinuations: [CheckedContinuation<Void, Never>] = []
+    private var launchRefreshOutcomeContinuations: [CheckedContinuation<Void, Never>] = []
+    private var launchUsingSavedDataContinuations: [CheckedContinuation<Void, Never>] = []
     /// Mirrors card-detail root overlay behavior for sealed detail sheets so underlying UI is fully obscured.
     var isSealedDetailPresentationActive = false
     /// Mirrors card-detail sheets presented from nested surfaces (e.g. Dashboard).
@@ -200,6 +203,9 @@ final class AppServices {
                 if self.isLaunchCatalogPipelineComplete {
                     self.launchCatalogPipelineCompletedAt = Date()
                 }
+                let pending = self.launchCatalogRefreshRequirementContinuations
+                self.launchCatalogRefreshRequirementContinuations = []
+                for c in pending { c.resume() }
             }
         }
         Task { await refreshCatalogCardsLastUpdatedAtFromStore() }
@@ -211,12 +217,25 @@ final class AppServices {
             // @MainActor work from restoreSession doesn't freeze the onboarding UI.
             try? await Task.sleep(nanoseconds: 2_000_000_000)
             while !brandSettings.hasCompletedBrandOnboarding {
-                try? await Task.sleep(nanoseconds: 500_000_000)
+                await withCheckedContinuation { continuation in
+                    withObservationTracking {
+                        _ = brandSettings.hasCompletedBrandOnboarding
+                    } onChange: {
+                        continuation.resume()
+                    }
+                }
             }
             // First-run catalog bootstrap owns SQLite + R2; defer session restore until it finishes
             // so MainActor work cannot interleave with download progress on the post-onboarding screen.
             while !brandSettings.hasCompletedInitialAppBootstrap && !isReady {
-                try? await Task.sleep(nanoseconds: 200_000_000)
+                await withCheckedContinuation { continuation in
+                    withObservationTracking {
+                        _ = brandSettings.hasCompletedInitialAppBootstrap
+                        _ = isReady
+                    } onChange: {
+                        continuation.resume()
+                    }
+                }
             }
             await socialAuth.restoreSession()
             // syncSocialLibrariesIfPossible is intentionally omitted here.
@@ -292,8 +311,10 @@ final class AppServices {
 
     /// Returning-user launch path: quickly prime local catalog data, then refresh network-backed data in the background.
     func bootstrapCatalogInBackgroundIfNeeded() async {
-        while !hasResolvedLaunchCatalogRefreshRequirement {
-            try? await Task.sleep(nanoseconds: 200_000_000)
+        if !hasResolvedLaunchCatalogRefreshRequirement {
+            await withCheckedContinuation { continuation in
+                launchCatalogRefreshRequirementContinuations.append(continuation)
+            }
         }
         guard shouldRunBackgroundCatalogRefreshOnLaunch else {
             if !isLaunchCatalogPipelineComplete {
@@ -325,16 +346,42 @@ final class AppServices {
             launchRefreshLastMeaningfulProgressAt = .now
 
             scheduleBackgroundDailyCatalogRefreshIfNeeded()
-            while launchRefreshOutcome == nil && !launchUsingSavedData {
-                if hasSavedData,
-                   !hasOfferedSavedDataThisLaunch,
-                   let lastProgress = launchRefreshLastMeaningfulProgressAt,
-                   ContinuousClock.now - lastProgress >= slowLaunchRefreshThreshold {
-                    hasOfferedSavedDataThisLaunch = true
-                    shouldOfferSavedDataLaunch = true
+            if hasSavedData {
+                launchUsingSavedData = true
+                isLaunchCatalogPipelineComplete = true
+                launchCatalogPipelineCompletedAt = Date()
+                shouldRunDeferredLaunchServices = true
+                Task(priority: .background) { [weak self] in
+                    await self?.resumeOfflineDownloadsIfNeeded()
                 }
+                return
+            }
+            // No saved local data exists, so wait for the refresh. Polling avoids a
+            // continuation-registration race when the refresh finishes immediately.
+            let slowLaunchTimerTask = Task { [weak self] in
+                guard let self, hasSavedData else { return }
+                var sleepDuration = slowLaunchRefreshThreshold
+                while !Task.isCancelled {
+                    try? await Task.sleep(for: sleepDuration)
+                    guard !Task.isCancelled, !self.hasOfferedSavedDataThisLaunch else { return }
+                    if let lastProgress = self.launchRefreshLastMeaningfulProgressAt {
+                        let elapsed = ContinuousClock.now - lastProgress
+                        if elapsed >= self.slowLaunchRefreshThreshold {
+                            self.hasOfferedSavedDataThisLaunch = true
+                            self.shouldOfferSavedDataLaunch = true
+                            return
+                        }
+                        // Progress happened while we slept — wait out the remaining window.
+                        sleepDuration = self.slowLaunchRefreshThreshold - elapsed
+                    } else {
+                        return
+                    }
+                }
+            }
+            while launchRefreshOutcome == nil {
                 try? await Task.sleep(for: .milliseconds(200))
             }
+            slowLaunchTimerTask.cancel()
 
             if let outcome = launchRefreshOutcome,
                hasSavedData,
@@ -363,6 +410,9 @@ final class AppServices {
     func loadSavedDataForLaunch() {
         shouldOfferSavedDataLaunch = false
         launchUsingSavedData = true
+        let pending = launchUsingSavedDataContinuations
+        launchUsingSavedDataContinuations = []
+        for c in pending { c.resume() }
     }
 
     /// Called by RootView after the launch overlay fade completes so that
@@ -376,7 +426,7 @@ final class AppServices {
         // The sealed price-history blob is only needed for charts/detail, and loads on a
         // background context, so a short defer past the launch handoff is enough.
         Task(priority: .utility) { [weak self] in
-            try? await Task.sleep(nanoseconds: 1_000_000_000)
+            try? await Task.sleep(nanoseconds: 200_000_000)
             await self?.sealedProducts.loadSealedPriceHistoryIfNeeded()
         }
     }
@@ -461,6 +511,9 @@ final class AppServices {
             guard let self else { return }
             self.launchRefreshOutcome = outcome
             self.backgroundCatalogRefreshInFlight = nil
+            let pending = self.launchRefreshOutcomeContinuations
+            self.launchRefreshOutcomeContinuations = []
+            for c in pending { c.resume() }
         }
     }
 
@@ -569,9 +622,11 @@ final class AppServices {
             bootstrapStatus = "Card data is ready."
         }
 
-        // Warm pricing cache before `isReady` so the dashboard can compute collection value
-        // immediately after the launch overlay dismisses.
-        await pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        // Warm pricing cache after readiness so a slow SQLite pricing pass can never
+        // strand the launch overlay at "Card data is ready."
+        Task(priority: .utility) { [weak self] in
+            await self?.pricing.prefetchPokemonCardPricing(forSetCodes: [])
+        }
 
         return outcome
     }

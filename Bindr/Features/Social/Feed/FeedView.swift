@@ -323,6 +323,7 @@ private struct ShimmerFill: View {
 struct ShimmerCard: View {
     @Environment(\.colorScheme) private var colorScheme
     @State private var phase: CGFloat = -0.3
+    @State private var isVisible = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -380,9 +381,14 @@ struct ShimmerCard: View {
             .padding(.bottom, 14)
         }
         .onAppear {
+            isVisible = true
             withAnimation(.linear(duration: 1.4).repeatForever(autoreverses: false)) {
                 phase = 1.3
             }
+        }
+        .onDisappear {
+            isVisible = false
+            phase = -0.3
         }
     }
 }
@@ -415,6 +421,9 @@ struct ShimmerAlertRow: View {
             withAnimation(.linear(duration: 1.4).repeatForever(autoreverses: false)) {
                 phase = 1.3
             }
+        }
+        .onDisappear {
+            phase = -0.3
         }
     }
 }

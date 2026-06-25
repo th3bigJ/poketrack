@@ -502,7 +502,6 @@ struct DashboardView: View {
                 guard !Task.isCancelled else { return }
 
                 await reloadDashboardInventory(deferForLaunch: false)
-                await prefetchPricingForLiveValue()
                 if await computeLiveValue(validateAgainstRestore: attempt >= 2) {
                     if let snap = liveSnapshot {
                         await services.collectionValue?.forceRecalculate(
@@ -644,13 +643,14 @@ struct DashboardView: View {
             await refreshActionableTrades()
         }
         // Refresh ledger lines and collection items when SwiftData saves (e.g. CloudKit sync or
-        // card added mid-session). Debounce so rapid batch saves only trigger one fetch. The 2s
-        // debounce lets CloudKit finish delivering a batch before we read — avoids partial re-renders.
+        // card added mid-session). Debounce so rapid batch saves only trigger one fetch. The 5s
+        // debounce lets CloudKit finish delivering a batch before we read — avoids partial re-renders
+        // during background sync which can fire dozens of saves per minute.
         .onReceive(NotificationCenter.default.publisher(for: ModelContext.didSave)) { _ in
             guard isActive, hasFiredInitialLoadComplete else { return }
             ledgerRefreshDebounceTask?.cancel()
             ledgerRefreshDebounceTask = Task { @MainActor in
-                try? await Task.sleep(for: .seconds(2))
+                try? await Task.sleep(for: .seconds(5))
                 guard !Task.isCancelled else { return }
                 var d = FetchDescriptor<LedgerLine>(
                     sortBy: [SortDescriptor(\LedgerLine.occurredAt, order: .reverse)]
@@ -772,7 +772,7 @@ struct DashboardView: View {
             Text("Trainer.")
                 .bindrAccentForeground(services.theme.accentColor)
         }
-        .font(.title3.weight(.semibold))
+        .font(.title2.weight(.semibold))
         .foregroundStyle(dashboardPrimaryText)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -1182,17 +1182,8 @@ struct DashboardView: View {
                     .font(.caption)
                     .foregroundStyle(dashboardSecondaryText)
             }
-            .padding(.vertical, 14)
-            .padding(.horizontal, 4)
+            .padding(.vertical, 8)
             .frame(maxWidth: .infinity)
-            .glassInsetStyle(cornerRadius: 16)
-            .overlay(alignment: .bottom) {
-                RoundedRectangle(cornerRadius: 2, style: .continuous)
-                    .fill(iconColor)
-                    .frame(height: 3)
-                    .padding(.horizontal, 12)
-                    .padding(.bottom, 8)
-            }
             .contentShape(Rectangle())
         }
         .buttonStyle(DashboardPressStyle())
@@ -1469,23 +1460,129 @@ struct DashboardView: View {
                 }
             }
 
-            VStack(spacing: 0) {
-                ForEach(recentLines) { line in
-                    Button {
-                        openRecentActivityDetail(for: line)
-                    } label: {
-                        dashboardActivityRow(line: line)
-                    }
-                    .buttonStyle(.plain)
-                    if line.id != recentLines.last?.id {
-                        Divider()
-                            .overlay(dashboardDividerColor)
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(recentLines) { line in
+                        Button {
+                            openRecentActivityDetail(for: line)
+                        } label: {
+                            recentActivityTile(line)
+                        }
+                        .buttonStyle(.plain)
                     }
                 }
+                .padding(.vertical, 2)
             }
             .padding(16)
             .glassInsetStyle(cornerRadius: 20)
         }
+    }
+
+    private func recentActivityTile(_ line: LedgerLine) -> some View {
+        let displayValue = activityDisplayValue(for: line)
+
+        return VStack(alignment: .leading, spacing: 10) {
+            ZStack {
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(Color.white)
+
+                if let imageURL = activityImageURL(for: line) {
+                    CachedAsyncImage(
+                        url: imageURL,
+                        targetSize: CGSize(width: 280, height: 280)
+                    ) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .padding(8)
+                    } placeholder: {
+                        ProgressView()
+                            .scaleEffect(0.7)
+                            .tint(services.theme.accentColor)
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    activityTileFallbackArtwork(for: line)
+                }
+            }
+            .frame(width: 148, height: 148)
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(dashboardBorder.opacity(0.55), lineWidth: 1)
+            )
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(activityCardName(for: line))
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                    .frame(width: 148, height: 40, alignment: .topLeading)
+
+                if let badge = activityBadgeLabel(for: line) {
+                    Text(badge)
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(directionColor(for: line))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(
+                            Capsule(style: .continuous)
+                                .fill(directionColor(for: line).opacity(0.14))
+                        )
+                }
+
+                Text(displayValue ?? "—")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(displayValue != nil ? dashboardPrimaryText : dashboardSecondaryText.opacity(0.55))
+                    .frame(width: 148, height: 18, alignment: .leading)
+
+                Text(relativeTimeLabel(for: line.occurredAt))
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(dashboardSecondaryText)
+            }
+            .frame(width: 148, alignment: .leading)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(recentActivityAccessibilityLabel(for: line))
+    }
+
+    private func activityTileFallbackArtwork(for line: LedgerLine) -> some View {
+        let cardName: String = {
+            if let cardID = cleaned(line.cardID), let name = cardNamesByID[cardID] {
+                return name
+            }
+            return cleaned(line.lineDescription) ?? "Card"
+        }()
+
+        return RoundedRectangle(cornerRadius: 14, style: .continuous)
+            .fill(dashboardCardInsetBackground)
+            .overlay {
+                VStack(spacing: 8) {
+                    Text(cardArtworkFallback(for: cardName))
+                        .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .foregroundStyle(dashboardPrimaryText)
+                    Image(systemName: directionIcon(for: line))
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(directionColor(for: line))
+                }
+                .padding(12)
+            }
+    }
+
+    private func recentActivityAccessibilityLabel(for line: LedgerLine) -> String {
+        var parts = [activityCardName(for: line)]
+        if let setName = activitySetName(for: line) {
+            parts.append(setName)
+        }
+        if let badge = activityBadgeLabel(for: line) {
+            parts.append(badge)
+        }
+        if let value = activityDisplayValue(for: line) {
+            parts.append(value)
+        }
+        parts.append(relativeTimeLabel(for: line.occurredAt))
+        return parts.joined(separator: ", ")
     }
 
     private var dashboardBackground: some View {
@@ -1515,81 +1612,6 @@ struct DashboardView: View {
         ].map { "\($0)" }.joined(separator: "|")
     }
 
-    private func dashboardActivityRow(line: LedgerLine) -> some View {
-        HStack(spacing: 12) {
-            activityLeadingVisual(for: line)
-
-            VStack(alignment: .leading, spacing: 6) {
-                Text(activityCardName(for: line))
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(dashboardPrimaryText)
-                    .lineLimit(1)
-
-                HStack(spacing: 8) {
-                    if let setName = activitySetName(for: line) {
-                        Text(setName)
-                            .font(.caption)
-                            .foregroundStyle(dashboardSecondaryText)
-                            .lineLimit(1)
-                    }
-
-                    if let badge = activityBadgeLabel(for: line) {
-                        Text(badge)
-                            .font(.caption2.weight(.semibold))
-                            .foregroundStyle(DashboardPalette.success)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 3)
-                            .background(DashboardPalette.success.opacity(0.14), in: Capsule(style: .continuous))
-                    }
-                }
-            }
-
-            Spacer(minLength: 8)
-
-            VStack(alignment: .trailing, spacing: 4) {
-                if let value = activityDisplayValue(for: line) {
-                    Text(value)
-                        .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(dashboardPrimaryText)
-                }
-
-                HStack(spacing: 4) {
-                    Text(relativeTimeLabel(for: line.occurredAt))
-                        .font(.caption)
-                        .foregroundStyle(dashboardSecondaryText)
-                    Image(systemName: "chevron.right")
-                        .font(.caption2.weight(.bold))
-                        .foregroundStyle(dashboardSecondaryText.opacity(0.7))
-                }
-            }
-        }
-        .padding(.vertical, 10)
-        .contentShape(Rectangle())
-    }
-
-    @ViewBuilder
-    private func activityLeadingVisual(for line: LedgerLine) -> some View {
-        if let imageURL = activityImageURL(for: line) {
-            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } placeholder: {
-                fallbackCardArtwork(for: line)
-            }
-            .frame(width: 48, height: 68)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(dashboardBorder, lineWidth: 1)
-            )
-        } else {
-            fallbackCardArtwork(for: line)
-        }
-    }
-
     private func activityImageURL(for line: LedgerLine) -> URL? {
         if let cardID = cleaned(line.cardID), let imageURL = cardImageURLsByID[cardID] {
             return imageURL
@@ -1610,36 +1632,6 @@ struct DashboardView: View {
         }
 
         return nil
-    }
-
-    private func fallbackCardArtwork(for line: LedgerLine) -> some View {
-        let cardName: String = {
-            if let cardID = cleaned(line.cardID), let name = cardNamesByID[cardID] {
-                return name
-            }
-            return cleaned(line.lineDescription) ?? "Card"
-        }()
-
-        return RoundedRectangle(cornerRadius: 10, style: .continuous)
-            .fill(dashboardCardInsetBackground)
-            .frame(width: 48, height: 68)
-            .overlay {
-                VStack(spacing: 6) {
-                    Spacer(minLength: 0)
-                    Text(cardArtworkFallback(for: cardName))
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundStyle(dashboardPrimaryText)
-                    Image(systemName: "square.stack.3d.up.fill")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(dashboardSecondaryText)
-                    Spacer(minLength: 0)
-                }
-            .padding(.vertical, 6)
-            }
-            .overlay(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(dashboardBorder, lineWidth: 1)
-            )
     }
 
     private func dashboardSection<Content: View>(@ViewBuilder content: () -> Content) -> some View {
@@ -1713,7 +1705,6 @@ struct DashboardView: View {
             }
         }
         await reloadDashboardInventory(deferForLaunch: false)
-        await prefetchPricingForLiveValue()
         if await computeLiveValue() {
             await services.collectionValue?.loadAllFromStore()
             chartRefreshID += 1
@@ -1731,7 +1722,6 @@ struct DashboardView: View {
     private func refreshCollectionValueAfterMarketPricingUpdate() async {
         await reloadDashboardInventory(deferForLaunch: false)
         ensureValuePlaceholderIfNeeded()
-        await prefetchPricingForLiveValue()
         if await computeLiveValue(), let snap = liveSnapshot {
             await services.collectionValue?.forceRecalculate(
                 liveSnapshot: snap,
@@ -1867,12 +1857,20 @@ struct DashboardView: View {
             return false
         }
 
-        var totalCost = 0.0
-        for item in collectionItems {
-            guard item.quantity > 0 else { continue }
-            guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { continue }
-            totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)
+        let costInputs = collectionItems.map {
+            CollectionCostInput(
+                quantity: $0.quantity,
+                purchasePrice: $0.purchasePrice,
+                sealedStatus: $0.sealedStatus
+            )
         }
+        let totalCost = await Task.detached(priority: .utility) {
+            costInputs.reduce(0.0) { partial, item in
+                guard item.quantity > 0 else { return partial }
+                guard item.sealedStatus != SealedInventoryStatus.opened.rawValue else { return partial }
+                return partial + (item.purchasePrice ?? 0) * Double(item.quantity)
+            }
+        }.value
 
         liveTotalGbp = snap.total
         livePokemonGbp = snap.pokemon
@@ -1887,6 +1885,12 @@ struct DashboardView: View {
         svc.persistLastKnownValue(snap)
         lastLiveValueComputedAt = Date()
         return true
+    }
+
+    private struct CollectionCostInput: Sendable {
+        let quantity: Int
+        let purchasePrice: Double?
+        let sealedStatus: String?
     }
 
     private func fireInitialLoadCompleteIfReady() {

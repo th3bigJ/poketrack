@@ -23,50 +23,55 @@ import SwiftUI
 struct FloatingCardStack: View {
     @Environment(\.bindrAccent) private var accent
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var source: FloatingCardStackSource = .gradient(HeroCard.defaultTrio)
 
-    var body: some View {
-        TimelineView(.animation(minimumInterval: 1 / 60)) { ctx in
-            let t = ctx.date.timeIntervalSinceReferenceDate
-            ZStack {
-                ForEach(Array(faces.enumerated()), id: \.element.id) { index, face in
-                    floatingFace(face: face, index: index, t: t)
-                }
-            }
-            .frame(maxWidth: .infinity)
-        }
-    }
+    // Phase drives the bob/tilt animation. Toggled between 0 and 1 on
+    // appear/disappear so the animation only runs while the view is on-screen.
+    @State private var animationPhase: Bool = false
 
-    /// Stable view-model used by the layout — both modes lower into this
-    /// representation so the float/tilt math stays in one place.
-    private var faces: [FloatingFace] {
+    // Cached so `body` doesn't allocate a new array on every render.
+    private var cachedFaces: [FloatingFace] {
         switch source {
         case .gradient(let cards):
             return cards.prefix(3).map { card in
-                FloatingFace(
-                    id: card.id.uuidString,
-                    glow: card.glow,
-                    body: .gradient(card)
-                )
+                FloatingFace(id: card.id.uuidString, glow: card.glow, body: .gradient(card))
             }
         case .realCards(let cards):
             return cards.prefix(3).map { card in
-                FloatingFace(
-                    id: card.masterCardId,
-                    glow: glowColor(for: card),
-                    body: .real(card)
-                )
+                FloatingFace(id: card.masterCardId, glow: glowColor(for: card), body: .real(card))
             }
         }
     }
 
-    private func floatingFace(face: FloatingFace, index: Int, t: TimeInterval) -> some View {
-        // Each card gets a slightly different phase + amplitude so the
-        // stack never feels like one rigid rotation.
-        let phase = Double(index) * 1.7
-        let bob = sin((t + phase) * 0.9) * 6
-        let tilt = sin((t + phase) * 0.6) * 4
+    var body: some View {
+        ZStack {
+            ForEach(Array(cachedFaces.enumerated()), id: \.element.id) { index, face in
+                floatingFace(face: face, index: index)
+            }
+        }
+        .frame(maxWidth: .infinity)
+        .onAppear {
+            guard !reduceMotion else { return }
+            withAnimation(
+                .easeInOut(duration: 3.0)
+                .repeatForever(autoreverses: true)
+            ) {
+                animationPhase = true
+            }
+        }
+        .onDisappear {
+            animationPhase = false
+        }
+    }
+
+    private func floatingFace(face: FloatingFace, index: Int) -> some View {
+        // Each card gets a unique phase offset so the stack never feels rigid.
+        // bob/tilt animate between their -max and +max values via animationPhase.
+        let phaseOffset = Double(index) * 0.33 // 0, 0.33, 0.66 — spread across the cycle
+        let bobMax: CGFloat = 6
+        let tiltMax: Double = 4
         let baseRotation: Double
         let xOffset: CGFloat
         let yOffset: CGFloat
@@ -79,6 +84,12 @@ struct FloatingCardStack: View {
         default:
             baseRotation = 14;  xOffset = 92;  yOffset = 18; scale = 0.84
         }
+        // When animationPhase is true we push to the positive extreme; false is negative.
+        // The .animation repeatForever(autoreverses: true) on the parent toggles between them.
+        let bobSign: CGFloat = [1, -1, 1][index]
+        let tiltSign: Double = [-1, 1, -1][index]
+        let bob: CGFloat = animationPhase ? bobMax * bobSign : -bobMax * bobSign
+        let tilt: Double  = animationPhase ? tiltMax * tiltSign * (1 + phaseOffset * 0.3) : -tiltMax * tiltSign
 
         return HeroCardFace(face: face)
             .frame(width: 170, height: 240)
@@ -86,6 +97,10 @@ struct FloatingCardStack: View {
             .rotationEffect(.degrees(baseRotation + tilt))
             .offset(x: xOffset, y: yOffset + bob)
             .shadow(color: face.glow.opacity(colorScheme == .dark ? 0.42 : 0.28), radius: 28, x: 0, y: 18)
+            .animation(
+                reduceMotion ? nil : .easeInOut(duration: 2.6 + Double(index) * 0.4).repeatForever(autoreverses: true),
+                value: animationPhase
+            )
     }
 
     /// Crude per-card glow tint inferred from rarity / element. Doesn't
