@@ -644,7 +644,6 @@ struct CardDetailContentView: View {
     }
 
     private static let wishlistGold = Color(red: 0.98, green: 0.78, blue: 0.18)
-    private static let collectionActionGreen = Color(red: 0.28, green: 0.84, blue: 0.39)
 
     @ViewBuilder
     private func headerActionButtons(owned: Bool) -> some View {
@@ -758,7 +757,7 @@ struct CardDetailContentView: View {
             Image(systemName: systemImage)
                 .font(.system(size: iconSize, weight: .semibold))
                 .foregroundStyle(foreground)
-                .modifier(CardDetailActionCircleModifier(tint: actionTint(for: systemImage)))
+                .modifier(CardDetailActionCircleModifier(tint: actionTint))
         }
         .buttonStyle(.plain)
         .frame(width: diameter, height: diameter)
@@ -775,12 +774,12 @@ struct CardDetailContentView: View {
         Image(systemName: systemImage)
             .font(.system(size: iconSize, weight: .semibold))
             .foregroundStyle(foreground)
-            .modifier(CardDetailActionCircleModifier(tint: actionTint(for: systemImage)))
+            .modifier(CardDetailActionCircleModifier(tint: actionTint))
             .frame(width: diameter, height: diameter)
     }
 
-    private func actionTint(for systemImage: String) -> Color {
-        systemImage == "plus" ? Self.collectionActionGreen : resolvedTypeAccent
+    private var actionTint: Color {
+        resolvedTypeAccent
     }
 
     private var detailsSection: some View {
