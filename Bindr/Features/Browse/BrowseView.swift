@@ -96,10 +96,8 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
                 }
                 .buttonStyle(.plain)
             }
-
-            Spacer(minLength: 0)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     private var selectedForegroundColor: Color {
@@ -125,29 +123,13 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
 
 /// Card cell for browse/collection grids.
 ///
-/// Requires services and colorScheme as plain stored properties — no @Environment.
-/// iOS 26 corrupts the attribute graph when @Environment is accessed during ForEach
-/// item-update passes or lazy-container sizing. Plain stored lets are safe everywhere.
+/// All layout inputs are resolved in `init` and stored on `CardGridCellLayout`.
+/// `body` only returns that layout so iOS 26 lazy-grid measurement never reads
+/// `AppServices` or other observable state from the cell wrapper.
 struct CardGridCell: View {
-    let card: Card
-    @ObservationIgnored private let services: AppServices
-    let colorScheme: ColorScheme
-    let accentColor: Color
-    var gridOptions = BrowseGridOptions()
-    var setName: String? = nil
-    var isOwned = false
-    var isWishlisted = false
-    var ownedCountBadge: Int? = nil
-    var alwaysShowOwnedCountBadge = false
-    var variantLabel: String? = nil
-    var variantPricingKey: String? = nil
-    var footnote: String? = nil
-    var footnoteLeadingAvatarURL: URL? = nil
-    var postPriceFootnote: String? = nil
-    var overridePrice: Double? = nil
-    var gradeLabel: String? = nil
-    var precomputedPriceLine: String? = nil
+    private let layout: CardGridCellLayout
 
+    @MainActor
     init(
         card: Card,
         services: AppServices,
@@ -168,117 +150,90 @@ struct CardGridCell: View {
         gradeLabel: String? = nil,
         precomputedPriceLine: String? = nil
     ) {
-        self.card = card
-        self.services = services
-        self.colorScheme = colorScheme
-        self.accentColor = accentColor
-        self.gridOptions = gridOptions
-        self.setName = setName
-        self.isOwned = isOwned
-        self.isWishlisted = isWishlisted
-        self.ownedCountBadge = ownedCountBadge
-        self.alwaysShowOwnedCountBadge = alwaysShowOwnedCountBadge
-        self.variantLabel = variantLabel
-        self.variantPricingKey = variantPricingKey
-        self.footnote = footnote
-        self.footnoteLeadingAvatarURL = footnoteLeadingAvatarURL
-        self.postPriceFootnote = postPriceFootnote
-        self.overridePrice = overridePrice
-        self.gradeLabel = gradeLabel
-        self.precomputedPriceLine = precomputedPriceLine
-    }
+        let offlineContext = OfflineImageContext.snapshot(from: services)
+        let resolvedImageURL = AppConfiguration.resolvedImageURL(stored: card.displayImageSrc)
+        let imageLocalURL = resolvedImageURL.flatMap { offlineContext.localURL(for: $0) }
+        let footnoteAvatarLocalURL = footnoteLeadingAvatarURL.flatMap { offlineContext.localURL(for: $0) }
 
-    private var resolvedColorScheme: ColorScheme { colorScheme }
-
-    private var showsFooter: Bool {
-        (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
-            || !(postPriceFootnote?.isEmpty ?? true)
-    }
-
-    private var visibleOwnedCountBadge: Int? {
-        guard let ownedCountBadge else { return nil }
-        if ownedCountBadge > 1 {
-            return min(max(ownedCountBadge, 2), 999)
-        }
-        if (isOwned || alwaysShowOwnedCountBadge) && ownedCountBadge == 1 {
-            return 1
-        }
-        return nil
-    }
-
-    private var wishlistBorderColor: Color {
-        Color(red: 0.99, green: 0.72, blue: 0.22)
-    }
-
-    private var cardBorderColor: Color {
-        if isOwned { return accentColor }
-        if isWishlisted { return wishlistBorderColor }
-        return .clear
-    }
-
-    private var cardBorderWidth: CGFloat {
-        (isOwned || isWishlisted) ? 1.8 : 0
-    }
-
-    private var cardImageCornerRadius: CGFloat { 8 }
-
-    private func safeImageURL(relativePath: String) -> URL? {
-        AppConfiguration.resolvedImageURL(stored: relativePath)
-    }
-
-    private var trailingCardID: String {
         let number = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
-        return number.isEmpty ? card.setCode : number
-    }
+        let trailingCardID = number.isEmpty ? card.setCode : number
 
-    private var offlineImageContext: OfflineImageContext {
-        OfflineImageContext.snapshot(from: services)
-    }
+        let showsFooter = (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
+            || !(postPriceFootnote?.isEmpty ?? true)
 
-    private var resolvedImageURL: URL? {
-        safeImageURL(relativePath: card.displayImageSrc)
-    }
+        let visibleOwnedCountBadge: Int? = {
+            guard let ownedCountBadge else { return nil }
+            if ownedCountBadge > 1 {
+                return min(max(ownedCountBadge, 2), 999)
+            }
+            if (isOwned || alwaysShowOwnedCountBadge) && ownedCountBadge == 1 {
+                return 1
+            }
+            return nil
+        }()
 
-    private var imageLocalURL: URL? {
-        guard let resolvedImageURL else { return nil }
-        return offlineImageContext.localURL(for: resolvedImageURL)
-    }
+        let wishlistBorderColor = Color(red: 0.99, green: 0.72, blue: 0.22)
+        let cardBorderColor: Color = {
+            if isOwned { return accentColor }
+            if isWishlisted { return wishlistBorderColor }
+            return .clear
+        }()
+        let cardBorderWidth: CGFloat = (isOwned || isWishlisted) ? 1.8 : 0
 
-    private var footnoteAvatarLocalURL: URL? {
-        guard let footnoteLeadingAvatarURL else { return nil }
-        return offlineImageContext.localURL(for: footnoteLeadingAvatarURL)
-    }
+        let priceOverlayLine = Self.resolvedPriceOverlayLine(
+            showPricing: gridOptions.showPricing,
+            precomputedPriceLine: precomputedPriceLine,
+            overridePrice: overridePrice,
+            currency: services.priceDisplay.currency,
+            usdToGbp: services.pricing.usdToGbp
+        )
 
-    var body: some View {
-        CardGridCellLayout(
-            card: card,
+        self.layout = CardGridCellLayout(
             cardName: card.cardName,
-            services: services,
             gridOptions: gridOptions,
             setName: setName,
             isOwned: isOwned,
             isWishlisted: isWishlisted,
             variantLabel: variantLabel,
-            variantPricingKey: variantPricingKey,
             footnote: footnote,
             footnoteLeadingAvatarURL: footnoteLeadingAvatarURL,
             footnoteAvatarLocalURL: footnoteAvatarLocalURL,
             postPriceFootnote: postPriceFootnote,
-            overridePrice: overridePrice,
             gradeLabel: gradeLabel,
-            precomputedPriceLine: precomputedPriceLine,
+            priceOverlayLine: priceOverlayLine,
             showsFooter: showsFooter,
             visibleOwnedCountBadge: visibleOwnedCountBadge,
             cardBorderColor: cardBorderColor,
             cardBorderWidth: cardBorderWidth,
-            cardImageCornerRadius: cardImageCornerRadius,
+            cardImageCornerRadius: 8,
             trailingCardID: trailingCardID,
             accentColor: accentColor,
-            colorScheme: resolvedColorScheme,
+            colorScheme: colorScheme,
             imageURL: resolvedImageURL,
             imageLocalURL: imageLocalURL,
-            imageReloadToken: offlineImageContext.gridReloadToken
+            imageReloadToken: offlineContext.gridReloadToken
         )
+    }
+
+    var body: some View {
+        layout
+    }
+
+    private static func resolvedPriceOverlayLine(
+        showPricing: Bool,
+        precomputedPriceLine: String?,
+        overridePrice: Double?,
+        currency: PriceDisplayCurrency,
+        usdToGbp: Double
+    ) -> String? {
+        guard showPricing else { return nil }
+        if let precomputedPriceLine {
+            return precomputedPriceLine.isEmpty ? "—" : precomputedPriceLine
+        }
+        if let overridePrice {
+            return currency.format(amountUSD: overridePrice, usdToGbp: usdToGbp)
+        }
+        return "—"
     }
 
     static func pokemonTypeColor(_ type: String) -> Color {
@@ -304,22 +259,18 @@ struct CardGridCell: View {
 /// avoids the iOS 26 attribute graph crash that occurs when SwiftUI tries
 /// to resolve environment values during LazyVStack row measurement.
 private struct CardGridCellLayout: View {
-    let card: Card
     let cardName: String
-    let services: AppServices
     let gridOptions: BrowseGridOptions
     let setName: String?
     let isOwned: Bool
     let isWishlisted: Bool
     let variantLabel: String?
-    let variantPricingKey: String?
     let footnote: String?
     var footnoteLeadingAvatarURL: URL? = nil
     let footnoteAvatarLocalURL: URL?
     let postPriceFootnote: String?
-    let overridePrice: Double?
     let gradeLabel: String?
-    let precomputedPriceLine: String?
+    let priceOverlayLine: String?
     let showsFooter: Bool
     let visibleOwnedCountBadge: Int?
     let cardBorderColor: Color
@@ -375,8 +326,13 @@ private struct CardGridCellLayout: View {
                 }
             }
             .overlay(alignment: .bottomLeading) {
-                if gridOptions.showPricing {
-                    bottomLeadingPriceOverlay
+                if let priceOverlayLine {
+                    BrowseGridStaticPriceOverlay(
+                        priceLine: priceOverlayLine,
+                        gradeLabel: gradeLabel,
+                        accentColor: accentColor
+                    )
+                    .cardGridPriceBadgeStyle()
                 }
             }
 
@@ -436,22 +392,6 @@ private struct CardGridCellLayout: View {
         .padding(.bottom, 4)
     }
 
-    @ViewBuilder
-    private var bottomLeadingPriceOverlay: some View {
-        BrowseGridPriceText(
-            services: services,
-            accentColor: accentColor,
-            card: card,
-            overridePrice: overridePrice,
-            gradeLabel: gradeLabel,
-            precomputedPriceLine: precomputedPriceLine,
-            variantKey: variantPricingKey,
-            alignment: .leading,
-            overlayTextColor: .white
-        )
-        .cardGridPriceBadgeStyle()
-    }
-
     private func footerText(_ text: String, color: Color) -> some View {
         Text(text)
             .font(.caption2)
@@ -477,6 +417,32 @@ private struct CardGridCellLayout: View {
         } else {
             footerText(text, color: secondaryTextColor)
         }
+    }
+}
+
+/// Grid price badge with no `AppServices` dependency — safe during lazy layout passes.
+private struct BrowseGridStaticPriceOverlay: View {
+    let priceLine: String
+    let gradeLabel: String?
+    let accentColor: Color
+
+    var body: some View {
+        HStack(spacing: 3) {
+            if let gradeLabel {
+                Text(gradeLabel)
+                    .font(.system(size: 7, weight: .bold))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 3)
+                    .padding(.vertical, 1.5)
+                    .background(accentColor, in: RoundedRectangle(cornerRadius: 3))
+            }
+            Text(priceLine)
+                .font(.caption2.weight(.semibold))
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .foregroundStyle(.white)
+        }
+        .frame(maxWidth: nil, alignment: .leading)
     }
 }
 

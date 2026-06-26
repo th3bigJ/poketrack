@@ -486,10 +486,10 @@ struct SealedProductGridCell: View {
     private var imageHeight: CGFloat {
         let columns = min(max(gridOptions.columnCount, 1), 4)
         switch columns {
-        case 1: return 180
-        case 2: return 110
-        case 3: return 80
-        default: return 65
+        case 1: return 216
+        case 2: return 132
+        case 3: return 96
+        default: return 78
         }
     }
 
@@ -505,6 +505,7 @@ struct SealedProductGridCell: View {
                 isWishlisted: isWishlisted,
                 ownedCountBadge: ownedCountBadge
             )
+            .aspectRatio(1, contentMode: .fit)
             .frame(maxWidth: .infinity)
             .frame(height: imageHeight)
             .clipShape(RoundedRectangle(cornerRadius: imageCornerRadius, style: .continuous))
@@ -586,9 +587,9 @@ struct SealedProductRowCell: View {
     var ownedCountBadge: Int? = nil
     var showsChevron: Bool = true
 
-    static let dividerLeadingInset: CGFloat = 86
+    static let dividerLeadingInset: CGFloat = 98
 
-    private let imageSize: CGFloat = 56
+    private let imageSize: CGFloat = 68
     private let imageCornerRadius: CGFloat = 8
 
     var body: some View {
@@ -631,6 +632,7 @@ struct SealedProductRowCell: View {
             isWishlisted: isWishlisted,
             ownedCountBadge: ownedCountBadge
         )
+        .aspectRatio(1, contentMode: .fit)
         .frame(width: imageSize, height: imageSize)
         .clipShape(RoundedRectangle(cornerRadius: imageCornerRadius, style: .continuous))
         .overlay {
@@ -668,17 +670,20 @@ private struct SealedThumbnailView: View {
     var isWishlisted: Bool
     var ownedCountBadge: Int? = nil
 
+    private let contentAspectRatio: CGFloat = 1
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 260, height: 364)) { image in
+            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 280, height: 280)) { image in
                 image
                     .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .scaledToFill()
             } placeholder: {
                 Color.secondary.opacity(0.12)
                     .overlay { ProgressView() }
             }
+            .aspectRatio(contentAspectRatio, contentMode: .fill)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
 
             if let ownedCountBadge, ownedCountBadge >= 1 {
