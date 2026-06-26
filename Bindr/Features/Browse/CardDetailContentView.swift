@@ -256,11 +256,11 @@ struct CardDetailContentView: View {
         let priceBlockFixed = priceHeadlineHeight + chartChromeHeight + chartBottomInset + sectionSpacing
 
         var chartHeight: CGFloat = 128
-        var cardWidth: CGFloat = min(contentWidth * 0.92, 360)
+        var cardWidth: CGFloat = min(contentWidth * 0.96, 388)
 
         for _ in 0..<2 {
             let heroAvailable = viewportHeight - priceBlockFixed - chartHeight
-            cardWidth = min(contentWidth * 0.92, max(120, heroAvailable) * (5.0 / 7.0), 360)
+            cardWidth = min(contentWidth * 0.96, max(120, heroAvailable) * (5.0 / 7.0), 388)
             let cardHeight = cardWidth * 7.0 / 5.0
             let remaining = viewportHeight - priceBlockFixed - cardHeight - sectionSpacing
             chartHeight = max(96, min(172, remaining))
@@ -298,7 +298,7 @@ struct CardDetailContentView: View {
 
             if let setTitle = headerSetTitle {
                 Text(setTitle)
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.system(size: 12, weight: .medium))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                     .minimumScaleFactor(0.78)
@@ -649,27 +649,14 @@ struct CardDetailContentView: View {
     private func headerActionButtons(owned: Bool) -> some View {
         let diameter = chromeActionButtonDiameter
         let iconSize = chromeActionButtonIconSize
-        let spacing: CGFloat = 10
+        let spacing: CGFloat = 7
 
-        Group {
-            if #available(iOS 26.0, *) {
-                GlassEffectContainer(spacing: spacing) {
-                    headerActionButtonContent(
-                        owned: owned,
-                        diameter: diameter,
-                        iconSize: iconSize,
-                        spacing: spacing
-                    )
-                }
-            } else {
-                headerActionButtonContent(
-                    owned: owned,
-                    diameter: diameter,
-                    iconSize: iconSize,
-                    spacing: spacing
-                )
-            }
-        }
+        headerActionButtonContent(
+            owned: owned,
+            diameter: diameter,
+            iconSize: iconSize,
+            spacing: spacing
+        )
     }
 
     @ViewBuilder
@@ -733,6 +720,12 @@ struct CardDetailContentView: View {
             } label: {
                 glassCircleActionLabel(systemImage: "plus", diameter: diameter, iconSize: iconSize)
             }
+            .buttonStyle(.plain)
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+            .menuIndicator(.hidden)
+            .frame(width: diameter, height: diameter)
+            .contentShape(Rectangle())
             .accessibilityLabel(label)
         } else {
             glassCircleActionButton(
@@ -755,9 +748,9 @@ struct CardDetailContentView: View {
     ) -> some View {
         Button(action: action) {
             Image(systemName: systemImage)
-                .font(.system(size: iconSize, weight: .semibold))
+                .font(.system(size: iconSize, weight: .medium))
                 .foregroundStyle(foreground)
-                .modifier(CardDetailActionCircleModifier(tint: actionTint))
+                .modifier(ChromeGlassCircleGlyphModifier())
         }
         .buttonStyle(.plain)
         .frame(width: diameter, height: diameter)
@@ -772,14 +765,9 @@ struct CardDetailContentView: View {
         foreground: Color = .primary
     ) -> some View {
         Image(systemName: systemImage)
-            .font(.system(size: iconSize, weight: .semibold))
+            .font(.system(size: iconSize, weight: .medium))
             .foregroundStyle(foreground)
-            .modifier(CardDetailActionCircleModifier(tint: actionTint))
-            .frame(width: diameter, height: diameter)
-    }
-
-    private var actionTint: Color {
-        resolvedTypeAccent
+            .modifier(ChromeGlassCircleGlyphModifier())
     }
 
     private var detailsSection: some View {
@@ -1037,77 +1025,5 @@ private struct CardDetailPageSnapBehavior: ScrollTargetBehavior {
         // friend-trade row at the bottom instead of snapping back up.
         guard proposedY < pageHeight else { return }
         target.rect.origin.y = proposedY < pageHeight * 0.42 ? 0 : pageHeight
-    }
-}
-
-private struct CardDetailActionCircleModifier: ViewModifier {
-    @Environment(\.colorScheme) private var colorScheme
-
-    let tint: Color
-
-    private let visualDiameter: CGFloat = 40
-
-    func body(content: Content) -> some View {
-        if #available(iOS 26.0, *) {
-            content
-                .frame(width: visualDiameter, height: visualDiameter)
-                .background {
-                    circleFill
-                }
-                .glassEffect(Glass.clear.tint(tint.opacity(colorScheme == .dark ? 0.22 : 0.12)).interactive(), in: Circle())
-                .overlay {
-                    circleRim
-                }
-                .shadow(color: shadowColor, radius: 12, y: 6)
-                .contentShape(Circle())
-        } else {
-            content
-                .frame(width: visualDiameter, height: visualDiameter)
-                .background {
-                    circleFill
-                }
-                .overlay {
-                    circleRim
-                }
-                .shadow(color: shadowColor, radius: 12, y: 6)
-                .contentShape(Circle())
-        }
-    }
-
-    private var circleFill: some View {
-        Circle()
-            .fill(.ultraThinMaterial)
-            .overlay {
-                Circle()
-                    .fill(Color.white.opacity(colorScheme == .dark ? 0.04 : 0.22))
-            }
-            .overlay {
-                Circle()
-                    .fill(tint.opacity(colorScheme == .dark ? 0.18 : 0.10))
-            }
-    }
-
-    private var circleRim: some View {
-        Circle()
-            .strokeBorder(borderColor, lineWidth: 0.75)
-            .overlay(alignment: .topLeading) {
-                Circle()
-                    .strokeBorder(.white.opacity(colorScheme == .dark ? 0.12 : 0.48), lineWidth: 1)
-                    .mask(
-                        LinearGradient(
-                            colors: [.white, .clear],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-            }
-    }
-
-    private var borderColor: Color {
-        colorScheme == .dark ? .white.opacity(0.14) : .black.opacity(0.06)
-    }
-
-    private var shadowColor: Color {
-        colorScheme == .dark ? .black.opacity(0.22) : .black.opacity(0.10)
     }
 }

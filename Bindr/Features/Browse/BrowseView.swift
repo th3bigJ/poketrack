@@ -336,7 +336,7 @@ private struct CardGridCellLayout: View {
 
     @ViewBuilder
     private var metadataHeader: some View {
-        VStack(alignment: .leading, spacing: 1) {
+        VStack(alignment: .center, spacing: 1) {
             if gridOptions.showCardName {
                 Text(cardName)
                     .font(.caption2.weight(.semibold))
@@ -366,8 +366,8 @@ private struct CardGridCellLayout: View {
                     .foregroundStyle(.tertiary)
             }
         }
-        .multilineTextAlignment(.leading)
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .multilineTextAlignment(.center)
+        .frame(maxWidth: .infinity, alignment: .center)
         .padding(.horizontal, 8)
         .padding(.bottom, 4)
     }
@@ -3644,7 +3644,7 @@ private struct BrowseGridCardCell: View {
     var body: some View {
         VStack(spacing: 0) {
             if showsMetadataHeader {
-                VStack(alignment: .leading, spacing: 1) {
+                VStack(alignment: .center, spacing: 1) {
                     if gridOptions.showCardName {
                         Text(card.cardName)
                             .font(.caption2.weight(.semibold))
@@ -3665,8 +3665,8 @@ private struct BrowseGridCardCell: View {
                             .foregroundStyle(.tertiary)
                     }
                 }
-                .multilineTextAlignment(.leading)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.horizontal, 8)
                 .padding(.bottom, 4)
             }
