@@ -141,7 +141,8 @@ struct CardDetailContentView: View {
                 contentWidth: contentWidth
             )
             let collapsedCardHeight = collapsedCardWidth * 7 / 5
-            let detailsTopReservedHeight = collapsedCardHeight + 12
+            let detailsTopChromeHeight = topChromeHeight + 4 + collapsedCardHeight + 4
+            let detailsPageMinHeight = max(0, geo.size.height - detailsTopChromeHeight)
             let onDetailsPage = activePage == .details
             let showsDetailsChrome = onDetailsPage
 
@@ -159,7 +160,7 @@ struct CardDetailContentView: View {
                     }
 
                     detailsPage(
-                        topReservedHeight: detailsTopReservedHeight,
+                        minHeight: detailsPageMinHeight,
                         owned: owned,
                         collectionItems: collectionItems,
                         ledgerLines: ledgerLines
@@ -365,7 +366,7 @@ struct CardDetailContentView: View {
     }
 
     private func detailsPage(
-        topReservedHeight: CGFloat,
+        minHeight: CGFloat,
         owned: Bool,
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
@@ -390,9 +391,12 @@ struct CardDetailContentView: View {
                     maximumMatches: 1
                 )
             }
+
+            Spacer(minLength: 0)
         }
+        .frame(maxWidth: .infinity, minHeight: minHeight, alignment: .top)
         .padding(.horizontal, 16)
-        .padding(.top, topReservedHeight)
+        .padding(.top, 10)
         .padding(.bottom, 32)
     }
 
