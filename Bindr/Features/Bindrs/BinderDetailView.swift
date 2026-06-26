@@ -753,7 +753,7 @@ struct BinderDetailView: View {
         let maxWidth = max(available.width - horizontalPadding, 240)
         let maxHeight = max(available.height - verticalPadding, 320)
 
-        // Lock pageAspectRatio to coverAspect (0.707)
+        // Start from the largest A4 portrait that fits the screen.
         var width = min(maxWidth, maxHeight * coverAspect)
         var height = width / coverAspect
 
@@ -764,22 +764,33 @@ struct BinderDetailView: View {
 
         let totalGridSpacingX = CGFloat(max(cols - 1, 0)) * slotSpacing
         let totalGridSpacingY = CGFloat(max(rows - 1, 0)) * slotSpacing
-        let contentWidth = max(width - surfaceHorizontalChrome, 120)
-        let cellWidth = (contentWidth - totalGridSpacingX) / CGFloat(cols)
-        let gridHeight = cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
-        let desiredHeight = gridHeight + surfaceVerticalChrome
 
-        if desiredHeight > height {
-            // Grid wants more vertical room than is available — shrink both width and height
-            // proportionally to maintain the 0.707 aspect ratio exactly.
-            let R = CGFloat(rows) / (CGFloat(cols) * cardAspectRatio)
-            if R * coverAspect > 1.0 {
-                let maxAllowedH = (R * (surfaceHorizontalChrome + totalGridSpacingX) - totalGridSpacingY - surfaceVerticalChrome) / (R * coverAspect - 1.0)
-                if maxAllowedH < height {
-                    height = maxAllowedH
-                    width = height * coverAspect
-                }
+        func desiredHeight(forPageWidth pageWidth: CGFloat) -> CGFloat {
+            let contentWidth = max(pageWidth - surfaceHorizontalChrome, 120)
+            let cellWidth = (contentWidth - totalGridSpacingX) / CGFloat(cols)
+            let gridHeight = cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
+            return gridHeight + surfaceVerticalChrome
+        }
+
+        var needed = desiredHeight(forPageWidth: width)
+
+        if needed > height {
+            // Tall grids (e.g. 4×3) need more vertical room than A4 provides.
+            // Grow toward the content height instead of shrinking the whole page.
+            height = min(needed, maxHeight)
+            width = min(maxWidth, height * coverAspect)
+            needed = desiredHeight(forPageWidth: width)
+            if needed > height {
+                // Still taller than the screen — shrink card cells to fit.
+                let availableForGrid = height - surfaceVerticalChrome
+                let shrunkCellHeight = max((availableForGrid - totalGridSpacingY) / CGFloat(rows), 40)
+                let shrunkCellWidth = shrunkCellHeight * cardAspectRatio
+                let shrunkContentWidth = shrunkCellWidth * CGFloat(cols) + totalGridSpacingX
+                width = min(maxWidth, max(shrunkContentWidth + surfaceHorizontalChrome, 240))
             }
+        } else if needed < height {
+            // Compact grids — trim empty playmat below the card rows.
+            height = needed
         }
 
         return CGSize(width: width, height: height)

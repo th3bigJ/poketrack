@@ -1,9 +1,9 @@
 import SwiftData
 import SwiftUI
 
-/// A sliding segmented picker. `.accentTrack` is the filled glass track used across
-/// collection/social; `.pillLabel` is the browse-style row of text tabs with a pill on
-/// the active item only.
+/// A sliding segmented picker. `.pillLabel` (default) is the browse-style row of
+/// centered text tabs with a pill on the active item only. `.accentTrack` is the
+/// filled glass track with accent fill for legacy screens.
 enum SlidingSegmentedPickerStyle {
     case accentTrack
     case pillLabel
@@ -13,7 +13,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
     @Binding var selection: SelectionValue
     let items: [SelectionValue]
     let title: (SelectionValue) -> String
-    var style: SlidingSegmentedPickerStyle = .accentTrack
+    var style: SlidingSegmentedPickerStyle = .pillLabel
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
@@ -748,13 +748,14 @@ struct BrowseView: View {
     @State private var loadedBrand: TCGBrand?
     @State private var cachedSetNameByCode: [String: String] = [:]
     @Binding var query: String
+    @Binding var inlineDetailQuery: String
+    @Binding var scrollToTopRequest: Int
     @State private var inlineDetailCards: [Card] = []
     @State private var inlineDetailPriceByCardID: [String: Double] = [:]
     @State private var inlineDetailMasterPriceByCardID: [String: Double] = [:]
     @State private var inlineDetailVariantPriceByCardID: [String: [String: Double]] = [:]
     @State private var masterSetVariantRows: [MasterSetVariantRow] = []
     @State private var inlineDetailSetTrendChanges: (change1d: Double?, change7d: Double?, change30d: Double?) = (nil, nil, nil)
-    @State private var inlineDetailQuery = ""
     @State private var inlineDetailLoading = false
     @State private var ownedCardIDsCache: Set<String> = []
     @State private var isUsingCatalogFeedSelection = false
@@ -949,6 +950,7 @@ struct BrowseView: View {
                 await Task.yield()
                 guard isViewVisible else { return }
                 query = ""
+                inlineDetailQuery = ""
                 if tabSupportsInlineDetail(newValue) == false {
                     inlineDetailRoute = nil
                 }
@@ -1073,6 +1075,21 @@ struct BrowseView: View {
     }
 
     @MainActor
+    private func scrollBrowseToTop(using proxy: ScrollViewProxy) {
+        Task { @MainActor in
+            for attempt in 0..<4 {
+                if attempt > 0 {
+                    try? await Task.sleep(for: .milliseconds(40))
+                }
+                await Task.yield()
+                withAnimation(.easeOut(duration: 0.25)) {
+                    proxy.scrollTo(browseTopAnchorID(), anchor: .top)
+                }
+            }
+        }
+    }
+
+    @MainActor
     private func initializeBrowseData(
         for selectedBrand: TCGBrand,
         selectedTabSnapshot: BrowseHomeTab,
@@ -1185,31 +1202,6 @@ struct BrowseView: View {
         }
     }
 
-    private var formattedResultCount: String {
-        Self.resultCountFormatter.string(from: NSNumber(value: visibleBrowseResultCount)) ?? "\(visibleBrowseResultCount)"
-    }
-
-    private var browseSearchPlaceholder: String {
-        if let inlineDetailRoute {
-            switch inlineDetailRoute {
-            case .set:
-                return "Search \(formattedResultCount) cards in set"
-            case .dex:
-                return "Search \(formattedResultCount) cards for Pokémon"
-            }
-        }
-        switch selectedTab {
-        case .cards:
-            return "Search \(formattedResultCount) cards"
-        case .sets:
-            return "Search sets"
-        case .pokemon:
-            return "Search Pokémon"
-        case .products:
-            return "Search products"
-        }
-    }
-
     @ViewBuilder
     private var browseTabsRow: some View {
         if isInlineDetailPresented {
@@ -1218,11 +1210,10 @@ struct BrowseView: View {
             SlidingSegmentedPicker(
                 selection: $selectedTab,
                 items: BrowseHomeTab.allCases,
-                title: { $0.title },
-                style: .pillLabel
+                title: { $0.title }
             )
             .padding(.horizontal, 16)
-            .padding(.bottom, 10)
+            .padding(.bottom, 16)
         }
     }
 
@@ -1241,15 +1232,6 @@ struct BrowseView: View {
         }
     }
 
-    private var browseSearchRow: some View {
-        BrowseInlineSearchField(
-            title: browseSearchPlaceholder,
-            text: isInlineDetailPresented ? $inlineDetailQuery : $query
-        )
-        .padding(.horizontal, 16)
-        .padding(.bottom, 10)
-    }
-
     @ViewBuilder
     private var browseResultCountRow: some View {
         if selectedTab == .cards || isInlineDetailPresented {
@@ -1258,27 +1240,32 @@ struct BrowseView: View {
     }
 
     private var cardsTabScrollView: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: 0) {
-                // Keeps first row clear of the overlaid search bar; spacer scrolls away so cards can pass under the glass.
-                Color.clear
-                    .frame(height: rootFloatingChromeInset)
-                browseTabsRow
-                browseSearchRow
-                browseSetSummaryRow
-                browseResultCountRow
-                activeTabContent
-                if selectedTab == .cards && isPreparingFilterCatalog {
-                    ProgressView("Preparing filters…")
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 12)
-                }
-                if selectedTab == .cards && isLoadingMore {
-                    ProgressView().frame(maxWidth: .infinity).padding(.vertical, 12)
+        ScrollViewReader { proxy in
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 0) {
+                    // Keeps first row clear of the overlaid search bar; spacer scrolls away so cards can pass under the glass.
+                    Color.clear
+                        .frame(height: rootFloatingChromeInset)
+                        .id(browseTopAnchorID())
+                    browseTabsRow
+                    browseSetSummaryRow
+                    browseResultCountRow
+                    activeTabContent
+                    if selectedTab == .cards && isPreparingFilterCatalog {
+                        ProgressView("Preparing filters…")
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 12)
+                    }
+                    if selectedTab == .cards && isLoadingMore {
+                        ProgressView().frame(maxWidth: .infinity).padding(.vertical, 12)
+                    }
                 }
             }
+            .scrollDismissesKeyboard(.interactively)
+            .onChange(of: scrollToTopRequest) { _, _ in
+                scrollBrowseToTop(using: proxy)
+            }
         }
-        .scrollDismissesKeyboard(.interactively)
     }
 
     private var auxiliaryTabScrollView: some View {
@@ -1290,6 +1277,9 @@ struct BrowseView: View {
                     auxiliaryTabListScrollView(proxy: proxy)
                 }
             }
+            .onChange(of: scrollToTopRequest) { _, _ in
+                scrollBrowseToTop(using: proxy)
+            }
         }
     }
 
@@ -1299,9 +1289,8 @@ struct BrowseView: View {
             VStack(spacing: 0) {
                 Color.clear
                     .frame(height: rootFloatingChromeInset)
-                    .id(browseAuxTopAnchorID())
+                    .id(browseTopAnchorID())
                 browseTabsRow
-                browseSearchRow
                 browseSetSummaryRow
                 browseResultCountRow
                 activeTabContent
@@ -1333,7 +1322,7 @@ struct BrowseView: View {
                 // Spacer scrolls away so cards pass under the floating glass chrome, matching the Cards tab.
                 Color.clear
                     .frame(height: rootFloatingChromeInset)
-                browseSearchRow
+                    .id(browseTopAnchorID())
                 browseSetSummaryRow
                 browseResultCountRow
                 if let inlineDetailRoute {
@@ -2486,11 +2475,9 @@ struct BrowseView: View {
             Haptics.lightImpact()
         } label: {
             Text(label)
-                .font(.system(size: 12, weight: .bold, design: .rounded))
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
-                .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
+                .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
+                .lineLimit(1)
+                .browsePillTabChipStyle(isSelected: isSelected)
         }
         .buttonStyle(.plain)
         .animation(.easeInOut(duration: 0.15), value: isSelected)
@@ -2949,8 +2936,8 @@ private func browseSetRowScrollID(setCode: String) -> String {
     "browse-set-row-\(setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased())"
 }
 
-private func browseAuxTopAnchorID() -> String {
-    "browse-aux-top-anchor"
+private func browseTopAnchorID() -> String {
+    "browse-top-anchor"
 }
 
 private struct BrowseSetsTabContent: View {
@@ -3356,11 +3343,9 @@ private struct BrowseSetsTabContent: View {
             Haptics.lightImpact()
         } label: {
             Text(label)
-                .font(.system(size: 13, weight: .bold, design: .rounded))
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
-                .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
+                .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
+                .lineLimit(1)
+                .browsePillTabChipStyle(isSelected: isSelected)
         }
         .buttonStyle(.plain)
     }
@@ -3500,11 +3485,9 @@ private struct BrowsePokemonTabContent: View {
             Haptics.lightImpact()
         } label: {
             Text(label)
-                .font(.system(size: 13, weight: .bold, design: .rounded))
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
-                .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
+                .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
+                .lineLimit(1)
+                .browsePillTabChipStyle(isSelected: isSelected)
         }
         .buttonStyle(.plain)
     }
@@ -5750,7 +5733,9 @@ private func pokemonSetIsTournamentLegal(releaseDate: String?, now: Date = Date(
             inlineDetailRoute: .constant(nil),
             isMultiSelectActive: .constant(false),
             multiSelectedCardIDs: .constant([]),
-            query: .constant("")
+            query: .constant(""),
+            inlineDetailQuery: .constant(""),
+            scrollToTopRequest: .constant(0)
         )
     }
         .environment(AppServices())

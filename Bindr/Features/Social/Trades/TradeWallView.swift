@@ -40,16 +40,46 @@ struct TradeWallView: View {
         case suggested(SuggestedWallEntry)
         case card(WallEntry)
         case sealed(SealedWallEntry)
-        case seeAll(SocialProfile)
 
         var id: String {
             switch self {
             case .suggested(let entry): "suggested-\(entry.id)"
             case .card(let entry): "card-\(entry.id)"
             case .sealed(let entry): "sealed-\(entry.id)"
-            case .seeAll(let profile): "seeall-\(profile.id)"
             }
         }
+    }
+
+    private var suggestedSections: [(owner: SocialProfile, entries: [SuggestedWallEntry])] {
+        var grouped: [UUID: [SuggestedWallEntry]] = [:]
+        var order: [UUID] = []
+        for entry in suggestedEntries {
+            if grouped[entry.owner.id] == nil {
+                order.append(entry.owner.id)
+                grouped[entry.owner.id] = []
+            }
+            grouped[entry.owner.id, default: []].append(entry)
+        }
+        return order.compactMap { ownerID in
+            guard let entries = grouped[ownerID], let owner = entries.first?.owner else { return nil }
+            return (owner, entries)
+        }
+    }
+
+    private var supplementalGridItems: [TradeWallGridItem] {
+        let friendsWithSuggestions = Set(suggestedEntries.map(\.owner.id))
+        var items: [TradeWallGridItem] = []
+        items += cardEntries
+            .filter { !friendsWithSuggestions.contains($0.owner.id) }
+            .map { .card($0) }
+        items += sealedEntries
+            .filter { !friendsWithSuggestions.contains($0.owner.id) }
+            .map { .sealed($0) }
+        return items
+    }
+
+    private var gridItems: [TradeWallGridItem] {
+        suggestedEntries.map { .suggested($0) } + supplementalGridItems
     }
 
     private struct CardDetailSession: Identifiable {
@@ -57,26 +87,6 @@ struct TradeWallView: View {
         let card: Card
         let owner: SocialProfile
         let matchType: TradeSuggestion.MatchType?
-    }
-
-    private var gridItems: [TradeWallGridItem] {
-        // Interleave suggested entries with a "see all" card after the last
-        // suggestion for each friend.
-        var items: [TradeWallGridItem] = []
-        var seenFriendIDs: Set<UUID> = []
-        let friendsWithSuggestions = Set(suggestedEntries.map(\.owner.id))
-        for entry in suggestedEntries {
-            items.append(.suggested(entry))
-            let isLastForFriend = suggestedEntries.last(where: { $0.owner.id == entry.owner.id })?.id == entry.id
-            if isLastForFriend, !seenFriendIDs.contains(entry.owner.id) {
-                seenFriendIDs.insert(entry.owner.id)
-                items.append(.seeAll(entry.owner))
-            }
-        }
-        // Only show card/sealed wall entries for friends who had no suggestions
-        items += cardEntries.filter { !friendsWithSuggestions.contains($0.owner.id) }.map { .card($0) }
-        items += sealedEntries.filter { !friendsWithSuggestions.contains($0.owner.id) }.map { .sealed($0) }
-        return items
     }
 
     var body: some View {
@@ -115,7 +125,53 @@ struct TradeWallView: View {
     // MARK: - Grid
 
     private var unifiedGrid: some View {
-        EagerVGrid(items: gridItems, columns: 3, spacing: BindrSpacing.cardGrid) { item in
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(suggestedSections, id: \.owner.id) { section in
+                friendSuggestionSection(section)
+            }
+
+            if !supplementalGridItems.isEmpty {
+                tradeWallGrid(items: supplementalGridItems)
+            }
+        }
+        .padding(.horizontal, BindrSpacing.cardGridScreenInset)
+        .padding(.bottom, 8)
+    }
+
+    private func friendSuggestionSection(_ section: (owner: SocialProfile, entries: [SuggestedWallEntry])) -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            tradeWallGrid(items: section.entries.map { .suggested($0) })
+            seeAllFriendsCardsRow
+        }
+    }
+
+    private var seeAllFriendsCardsRow: some View {
+        Button {
+            Haptics.lightImpact()
+            navigationPath.append(SocialDestination.friendsCollection)
+        } label: {
+            HStack(spacing: 8) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("See all")
+                        .font(.system(size: 15, weight: .semibold))
+                    Text("friends' cards")
+                        .font(.system(size: 13))
+                        .foregroundStyle(.secondary)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(.secondary)
+            }
+            .foregroundStyle(.primary)
+            .padding(.vertical, 12)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func tradeWallGrid(items: [TradeWallGridItem]) -> some View {
+        EagerVGrid(items: items, columns: 3, spacing: BindrSpacing.cardGrid) { item in
             switch item {
             case .suggested(let entry):
                 Button {
@@ -147,19 +203,8 @@ struct TradeWallView: View {
                     TradeWallSealedCell(entry: entry)
                 }
                 .buttonStyle(TradeWallCellButtonStyle())
-
-            case .seeAll(let profile):
-                Button {
-                    Haptics.lightImpact()
-                    navigationPath.append(SocialDestination.friendsCollection)
-                } label: {
-                    TradeWallSeeAllCell(profile: profile)
-                }
-                .buttonStyle(TradeWallCellButtonStyle())
             }
         }
-        .padding(.horizontal, BindrSpacing.cardGridScreenInset)
-        .padding(.bottom, 8)
     }
 
     // MARK: - Empty state
@@ -498,36 +543,6 @@ private struct TradeWallSealedCell: View {
                 owner: entry.owner,
                 tag: .inCollection
             )
-        }
-        .padding(.bottom, BindrSpacing.xs)
-        .frame(maxWidth: .infinity)
-    }
-}
-
-// MARK: - TradeWallSeeAllCell
-
-private struct TradeWallSeeAllCell: View {
-    let profile: SocialProfile
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            tradeWallItemHeader(name: "See all", setName: "friends' cards")
-
-            ZStack {
-                tradeWallImagePlaceholder(icon: "person.2.fill")
-                    .aspectRatio(5/7, contentMode: .fit)
-                    .frame(maxWidth: .infinity)
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-
-                VStack(spacing: 8) {
-                    Image(systemName: "chevron.right.circle.fill")
-                        .font(.system(size: 22))
-                        .foregroundStyle(Color.primary.opacity(0.28))
-                }
-            }
-
-            TradeWallCellFooter(owner: profile, tag: .inCollection)
-                .hidden()
         }
         .padding(.bottom, BindrSpacing.xs)
         .frame(maxWidth: .infinity)

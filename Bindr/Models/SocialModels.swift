@@ -230,9 +230,18 @@ enum SharedContentType: String, Codable, Sendable, CaseIterable {
     case folder
 }
 
-enum SharedContentVisibility: String, Codable, Sendable, CaseIterable {
+enum SharedContentVisibility: String, Codable, Sendable, CaseIterable, Identifiable {
     case friends
     case link
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .friends: return "Friends"
+        case .link: return "Link"
+        }
+    }
 }
 
 struct SharedContent: Codable, Identifiable, Sendable {

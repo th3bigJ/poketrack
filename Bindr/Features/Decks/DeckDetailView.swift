@@ -57,7 +57,6 @@ private struct EnergySummaryChip: Identifiable {
 struct DeckDetailView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
     @Bindable var deck: Deck
     @Query private var collectionItems: [CollectionItem]
@@ -70,7 +69,6 @@ struct DeckDetailView: View {
     @State private var missingValue: Double? = nil
     @State private var isLoadingValue = false
     @State private var showShareSettings = false
-    @State private var showShareActions = false
     @State private var showOfficialDeckListSheet = false
     @State private var showOfficialDeckListUnavailable = false
     @State private var hasSettledAfterFirstPaint = false
@@ -213,9 +211,6 @@ struct DeckDetailView: View {
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
         }
-        .sheet(isPresented: $showShareActions) {
-            deckShareActionsSheet
-        }
         .sheet(isPresented: $showOfficialDeckListSheet) {
             OfficialDeckListSheet(deck: deck)
                 .environment(services)
@@ -316,14 +311,40 @@ struct DeckDetailView: View {
 
     private var deckHeaderTrailingButtons: some View {
         HStack(spacing: 8) {
-            ChromeGlassCircleButton(accessibilityLabel: "Share options") {
-                HapticManager.impact(.light)
-                showShareActions = true
+            Menu {
+                Button {
+                    HapticManager.impact(.light)
+                    showShareSettings = true
+                } label: {
+                    Label("Post to Social", systemImage: "person.2")
+                }
+
+                Button {
+                    HapticManager.impact(.light)
+                    Task { await copyDeckToTCGLive() }
+                } label: {
+                    Label("Copy to TCG Live", systemImage: "doc.on.doc")
+                }
+
+                Button {
+                    HapticManager.impact(.light)
+                    showOfficialDeckListSheet = true
+                } label: {
+                    Label("Create Deck List", systemImage: "list.bullet.rectangle.portrait")
+                }
             } label: {
                 Image(systemName: "square.and.arrow.up")
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(.primary)
+                    .modifier(ChromeGlassCircleGlyphModifier())
             }
+            .buttonStyle(.plain)
+            .menuIndicator(.hidden)
+            .menuOrder(.fixed)
+            .tint(.primary)
+            .frame(width: 48, height: 48)
+            .contentShape(Rectangle())
+            .accessibilityLabel("Share options")
 
             ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done editing deck" : "Edit deck") {
                 HapticManager.impact(.light)
@@ -336,44 +357,6 @@ struct DeckDetailView: View {
                     .foregroundStyle(.primary)
             }
         }
-    }
-
-    private var deckShareActionsSheet: some View {
-        VStack(spacing: 0) {
-            HStack(spacing: 0) {
-                Spacer(minLength: 0)
-                CircleShareActionButton(title: "Post to Social", systemImage: "person.2") {
-                    HapticManager.impact(.light)
-                    showShareActions = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                        showShareSettings = true
-                    }
-                }
-                Spacer(minLength: 0)
-                CircleShareActionButton(title: "Copy to TCG Live", systemImage: "doc.on.doc") {
-                    HapticManager.impact(.light)
-                    Task {
-                        await copyDeckToTCGLive()
-                        showShareActions = false
-                    }
-                }
-                Spacer(minLength: 0)
-                CircleShareActionButton(title: "Create Deck List", systemImage: "list.bullet.rectangle.portrait") {
-                    HapticManager.impact(.light)
-                    showShareActions = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                        showOfficialDeckListSheet = true
-                    }
-                }
-                Spacer(minLength: 0)
-            }
-            .padding(.top, 28)
-            .padding(.horizontal, 20)
-            .padding(.bottom, 24)
-        }
-        .frame(maxWidth: .infinity)
-        .presentationDetents([.height(200)])
-        .presentationDragIndicator(.visible)
     }
 
     private func copyDeckToTCGLive() async {
@@ -480,27 +463,7 @@ struct DeckDetailView: View {
             }
         }
         .padding(16)
-        .background(
-            colorScheme == .light
-                ? Color.white
-                : Color(uiColor: .secondarySystemGroupedBackground),
-            in: RoundedRectangle(cornerRadius: 16, style: .continuous)
-        )
-        .overlay {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .stroke(
-                    colorScheme == .light
-                        ? Color.black.opacity(0.08)
-                        : Color.white.opacity(0.08),
-                    lineWidth: 1
-                )
-        }
-        .shadow(
-            color: Color.black.opacity(colorScheme == .light ? 0.07 : 0.16),
-            radius: 10,
-            x: 0,
-            y: 4
-        )
+        .glassInsetStyle(cornerRadius: 16)
     }
 
     private func summaryPill(label: String, count: Int, color: Color) -> some View {

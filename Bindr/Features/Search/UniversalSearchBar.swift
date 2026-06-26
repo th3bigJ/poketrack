@@ -49,8 +49,21 @@ struct UniversalSearchBar: View {
     /// Optional second trailing control shown before filter/trailing button.
     var extraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
 
+    /// Browse tab: collapsed trailing shows filter + search (not universal overlay).
+    var isLocalSearchMode: Bool = false
+    var isLocalSearchExpanded: Bool = false
+    var localSearchPlaceholder: String = ""
+    var trailingControlsSpacing: CGFloat = 12
+    /// When `false`, hides scanner/camera controls in local-search chrome (e.g. deck picker sheet).
+    var showsCameraControl: Bool = true
+
+    /// When browse is in inline detail, search stays on the trailing edge because the leading slot is back.
+    var browseSearchOnTrailing: Bool = false
+
     /// Called when the leading back chevron is tapped (only visible while search is open).
     var onActivateSearch: () -> Void
+    var onActivateLocalSearch: () -> Void = {}
+    var onDismissLocalSearch: () -> Void = {}
     var onBack: () -> Void
     var onCamera: () -> Void
     var onFilter: () -> Void
@@ -64,6 +77,24 @@ struct UniversalSearchBar: View {
     private var leadingSymbolName: String { "chevron.left" }
 
     private var leadingAccessibilityLabel: String { "Back" }
+
+    private var showsExpandedSearchField: Bool {
+        isSearchOpen || (isLocalSearchMode && isLocalSearchExpanded)
+    }
+
+    private var searchPromptText: String {
+        if isLocalSearchMode && isLocalSearchExpanded, !localSearchPlaceholder.isEmpty {
+            return localSearchPlaceholder
+        }
+        return "Search cards, sets, Pokemon, sealed…"
+    }
+
+    private var dismissExpandedSearchAction: () -> Void {
+        if isLocalSearchMode && isLocalSearchExpanded {
+            return onDismissLocalSearch
+        }
+        return onBack
+    }
 
     private var filterMenuTouchDownHapticGesture: some Gesture {
         DragGesture(minimumDistance: 0)
@@ -86,6 +117,7 @@ struct UniversalSearchBar: View {
             }
         }
         .animation(.easeOut(duration: 0.18), value: isSearchOpen)
+        .animation(.easeOut(duration: 0.18), value: isLocalSearchExpanded)
     }
 
     // MARK: - Liquid Glass (iOS 26+)
@@ -98,10 +130,10 @@ struct UniversalSearchBar: View {
     @available(iOS 26.0, *)
     private var liquidGlassBarContent: some View {
             Group {
-                if isSearchOpen {
+                if showsExpandedSearchField {
                             HStack(spacing: 6) {
                         if showsBackButtonWhenOpen {
-                            Button(action: hapticBackThen(onBack)) {
+                            Button(action: hapticBackThen(dismissExpandedSearchAction)) {
                                 Image(systemName: leadingSymbolName)
                                     .font(.system(size: 17, weight: .medium))
                                     .foregroundStyle(.primary)
@@ -123,7 +155,9 @@ struct UniversalSearchBar: View {
                             .searchFieldCapsuleChrome(darkGlass: chromeUsesInteractiveGlass ? .regularInteractive : .clear)
                             .transition(.move(edge: .leading).combined(with: .opacity))
 
-                        cameraButtonLiquid
+                        if showsCameraControl {
+                            cameraButtonLiquid
+                        }
                     }
                 } else {
                     ZStack {
@@ -149,10 +183,10 @@ struct UniversalSearchBar: View {
 
     private var materialFallbackBar: some View {
         Group {
-            if isSearchOpen {
+            if showsExpandedSearchField {
                             HStack(spacing: 6) {
                     if showsBackButtonWhenOpen {
-                        Button(action: hapticBackThen(onBack)) {
+                        Button(action: hapticBackThen(dismissExpandedSearchAction)) {
                             Image(systemName: leadingSymbolName)
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundStyle(.primary)
@@ -174,7 +208,9 @@ struct UniversalSearchBar: View {
                         .searchFieldCapsuleChrome(darkGlass: chromeUsesInteractiveGlass ? .regularInteractive : .clear)
                         .transition(.move(edge: .leading).combined(with: .opacity))
 
-                    cameraButtonFallback
+                    if showsCameraControl {
+                        cameraButtonFallback
+                    }
                 }
             } else {
                 ZStack {
@@ -237,7 +273,7 @@ struct UniversalSearchBar: View {
 
     @available(iOS 26.0, *)
     private var collapsedTrailingControlsLiquid: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: trailingControlsSpacing) {
             if let extraTrailingButton {
                 trailingButtonLiquid(
                     symbol: extraTrailingButton.symbol,
@@ -245,7 +281,9 @@ struct UniversalSearchBar: View {
                     action: extraTrailingButton.action
                 )
             }
-            if let trailingButton {
+            if isLocalSearchMode {
+                browseLocalSearchTrailingControlsLiquid
+            } else if let trailingButton {
                 trailingButtonLiquid(
                     symbol: trailingButton.symbol,
                     accessibilityLabel: trailingButton.accessibilityLabel,
@@ -275,7 +313,7 @@ struct UniversalSearchBar: View {
     }
 
     private var collapsedTrailingControlsFallback: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: trailingControlsSpacing) {
             if let extraTrailingButton {
                 trailingButtonFallback(
                     symbol: extraTrailingButton.symbol,
@@ -283,7 +321,9 @@ struct UniversalSearchBar: View {
                     action: extraTrailingButton.action
                 )
             }
-            if let trailingButton {
+            if isLocalSearchMode {
+                browseLocalSearchTrailingControlsFallback
+            } else if let trailingButton {
                 trailingButtonFallback(
                     symbol: trailingButton.symbol,
                     accessibilityLabel: trailingButton.accessibilityLabel,
@@ -307,6 +347,51 @@ struct UniversalSearchBar: View {
                     )
                 } else {
                     filterButtonFallback
+                }
+            }
+        }
+    }
+
+    @available(iOS 26.0, *)
+    private var browseLocalSearchTrailingControlsLiquid: some View {
+        Group {
+            if let filterMenuContent, isFilterEnabled {
+                chromeMenuButton(
+                    symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
+                    tint: filterTint,
+                    accessibilityLabel: "Filters",
+                    content: { filterMenuContent }
+                )
+            }
+            if browseSearchOnTrailing {
+                trailingButtonLiquid(symbol: "magnifyingglass", accessibilityLabel: "Search") {
+                    onActivateLocalSearch()
+                }
+            } else if showsCameraControl {
+                trailingButtonLiquid(symbol: "camera.fill", accessibilityLabel: "Open scanner") {
+                    onCamera()
+                }
+            }
+        }
+    }
+
+    private var browseLocalSearchTrailingControlsFallback: some View {
+        Group {
+            if let filterMenuContent, isFilterEnabled {
+                chromeMenuButton(
+                    symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
+                    tint: filterTint,
+                    accessibilityLabel: "Filters",
+                    content: { filterMenuContent }
+                )
+            }
+            if browseSearchOnTrailing {
+                trailingButtonFallback(symbol: "magnifyingglass", accessibilityLabel: "Search") {
+                    onActivateLocalSearch()
+                }
+            } else if showsCameraControl {
+                trailingButtonFallback(symbol: "camera.fill", accessibilityLabel: "Open scanner") {
+                    onCamera()
                 }
             }
         }
@@ -481,7 +566,7 @@ struct UniversalSearchBar: View {
             TextField(
                 "",
                 text: $text,
-                prompt: Text("Search cards, sets, Pokemon, sealed…")
+                prompt: Text(searchPromptText)
                     .foregroundStyle(.primary.opacity(0.72))
             )
             .textInputAutocapitalization(.never)
@@ -490,10 +575,14 @@ struct UniversalSearchBar: View {
             .foregroundStyle(.primary)
             .submitLabel(.search)
             .onSubmit(onSubmitSearch)
-            .accessibilityLabel("Search cards, sets, Pokemon, sealed products")
+            .accessibilityLabel(
+                isLocalSearchMode && isLocalSearchExpanded && !localSearchPlaceholder.isEmpty
+                    ? localSearchPlaceholder
+                    : "Search cards, sets, Pokemon, sealed products"
+            )
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            if !isSearchOpen {
+            if !showsExpandedSearchField {
                 Button(action: {
                     Haptics.lightImpact()
                     onCamera()

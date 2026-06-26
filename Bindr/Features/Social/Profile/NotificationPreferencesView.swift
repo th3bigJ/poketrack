@@ -56,6 +56,8 @@ struct NotificationPreferencesView: View {
                 }
             }
         }
+        .listStyle(.insetGrouped)
+        .settingsListTint()
         .navigationTitle("Notification Preferences")
         .navigationBarTitleDisplayMode(.inline)
         .task {

@@ -1,10 +1,5 @@
 import SwiftUI
 
-private struct PresentedPostCards: Identifiable {
-    let id = UUID()
-    let cards: [Card]
-}
-
 // MARK: - FeedItemView
 
 struct FeedItemView: View {
@@ -20,9 +15,6 @@ struct FeedItemView: View {
 
     @State private var isCommentsPresented = false
     @State private var commentsRefreshToken = 0
-    /// Resolved cards for pull-type posts. These open directly in a swipeable
-    /// card detail sheet, avoiding the Comments → Shared Content detour.
-    @State private var presentedPostCards: PresentedPostCards?
 
     @State private var showDeleteAlert = false
     @State private var showEditSheet = false
@@ -42,6 +34,12 @@ struct FeedItemView: View {
     private var isMyItem: Bool {
         guard let myID = services.socialAuth.currentUserID else { return false }
         return item.actor?.id == myID
+    }
+
+    private func openCommentsIfAllowed() {
+        guard isCardTapEnabled, canOpenComments else { return }
+        Haptics.lightImpact()
+        isCommentsPresented = true
     }
 
     var body: some View {
@@ -109,40 +107,9 @@ struct FeedItemView: View {
                 }
                 .padding(.leading, 16)
                 .frame(maxWidth: .infinity, alignment: .topLeading)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    guard isCardTapEnabled, canOpenComments else { return }
-                    Haptics.lightImpact()
-                    isCommentsPresented = true
-                }
 
                 CardStackPreview(item: item, size: 100)
                     .padding(.trailing, 16)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        guard isCardTapEnabled else { return }
-                        if item.type == .pull {
-                            let cardIDs = item.thumbnails?.isEmpty == false
-                                ? item.thumbnails ?? []
-                                : item.pullCardID.map { [$0] } ?? []
-                            guard !cardIDs.isEmpty else { return }
-                            Haptics.lightImpact()
-                            Task {
-                                var orderedCards: [Card] = []
-                                for cardID in cardIDs {
-                                    if let card = await services.cardData.loadCard(masterCardId: cardID) {
-                                        orderedCards.append(card)
-                                    }
-                                }
-                                if !orderedCards.isEmpty {
-                                    presentedPostCards = PresentedPostCards(cards: orderedCards)
-                                }
-                            }
-                        } else if canOpenComments {
-                            Haptics.lightImpact()
-                            isCommentsPresented = true
-                        }
-                    }
             }
             .frame(minHeight: 100)
             .padding(.bottom, 12)
@@ -152,12 +119,16 @@ struct FeedItemView: View {
                 InteractionBar(
                     item: item,
                     refreshToken: commentsRefreshToken,
-                    onOpenComments: { isCommentsPresented = true }
+                    onOpenComments: openCommentsIfAllowed
                 )
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
                 .padding(.bottom, 14)
             }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            openCommentsIfAllowed()
         }
         .glassInsetStyle(cornerRadius: 16)
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
@@ -172,12 +143,6 @@ struct FeedItemView: View {
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
             }
-        }
-        .sheet(item: $presentedPostCards, onDismiss: {
-            restoreTabBarChrome?()
-        }) { selection in
-            CardDetailSheet(cards: selection.cards, startIndex: 0)
-                .environment(services)
         }
         .alert("Delete Post?", isPresented: $showDeleteAlert) {
             Button("Delete", role: .destructive) {

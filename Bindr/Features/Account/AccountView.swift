@@ -96,6 +96,7 @@ struct SettingsView: View {
             .padding(.bottom, BindrSpacing.xxl)
         }
         .bindrPageBackground()
+        .settingsListTint()
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
     }
@@ -157,6 +158,7 @@ struct MyAccountPrivacyView: View {
             }
         }
         .listStyle(.insetGrouped)
+        .settingsListTint()
         .navigationTitle("Account & Privacy")
         .navigationBarTitleDisplayMode(.large)
         .confirmationDialog(
@@ -256,6 +258,7 @@ private struct OfflineSettingsPage: View {
             }
         }
         .listStyle(.insetGrouped)
+        .settingsListTint()
         .navigationTitle("Offline Mode")
         .navigationBarTitleDisplayMode(.large)
     }
@@ -284,6 +287,7 @@ private struct PricingSettingsPage: View {
             }
         }
         .listStyle(.insetGrouped)
+        .settingsListTint()
         .navigationTitle("Pricing & Currency")
         .navigationBarTitleDisplayMode(.large)
     }
@@ -353,6 +357,7 @@ struct LibraryStorageSettingsPage: View {
             }
         }
         .listStyle(.insetGrouped)
+        .settingsListTint()
         .navigationTitle("Library Storage")
         .navigationBarTitleDisplayMode(.large)
         .task {
@@ -497,6 +502,7 @@ struct BackupRestoreSettingsPage: View {
             }
         }
         .listStyle(.insetGrouped)
+        .settingsListTint()
         .navigationTitle("Backup and Restore")
         .navigationBarTitleDisplayMode(.large)
         .confirmationDialog(
@@ -611,6 +617,7 @@ private struct DevToolsSettingsPage: View {
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
         .background(Color(uiColor: .systemGroupedBackground))
+        .settingsListTint()
         .navigationTitle("Developer Tools")
         .navigationBarTitleDisplayMode(.large)
     }
@@ -655,6 +662,7 @@ struct PremiumSettingsPage: View {
             }
         }
         .listStyle(.insetGrouped)
+        .settingsListTint()
         .navigationTitle("Premium")
         .navigationBarTitleDisplayMode(.large)
         .sheet(isPresented: $showPaywall) {

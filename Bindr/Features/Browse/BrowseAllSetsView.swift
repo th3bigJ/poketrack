@@ -116,8 +116,7 @@ struct BrowseAllSetsView: View {
                         SlidingSegmentedPicker(
                             selection: $selectedTab,
                             items: BrowseAllSetsTab.allCases,
-                            title: { $0.rawValue },
-                            style: .pillLabel
+                            title: { $0.rawValue }
                         )
                         .padding(.horizontal)
                         .padding(.top)
@@ -355,11 +354,9 @@ struct BrowseAllSetsView: View {
             Haptics.lightImpact()
         } label: {
             Text(label)
-                .font(.system(size: 13, weight: .bold, design: .rounded))
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
-                .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
+                .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
+                .lineLimit(1)
+                .browsePillTabChipStyle(isSelected: isSelected)
         }
         .buttonStyle(.plain)
     }

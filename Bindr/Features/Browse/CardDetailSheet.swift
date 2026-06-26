@@ -21,6 +21,7 @@ struct CardDetailSheet: View {
     var managesTabBarChrome: Bool = true
 
     @State private var index: Int
+    @State private var pagingScrollPosition: Int?
     @State private var editingLine: HoldingLine?
     @State private var dispositionFlowPayload: CollectionDispositionFlowPayload?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
@@ -60,6 +61,7 @@ struct CardDetailSheet: View {
         let clamped = cards.isEmpty ? 0 : min(max(0, startIndex), cards.count - 1)
         initialSessionCardID = cards.isEmpty ? "empty" : cards[clamped].masterCardId
         _index = State(initialValue: clamped)
+        _pagingScrollPosition = State(initialValue: clamped)
     }
 
     private var currentCard: Card { cards[index] }
@@ -163,16 +165,18 @@ struct CardDetailSheet: View {
 
     var body: some View {
         NavigationStack {
-            GeometryReader { geo in
-                TabView(selection: $index) {
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 0) {
                     ForEach(Array(cards.enumerated()), id: \.element.masterCardId) { i, card in
-                        cardPage(for: card, pageHeight: geo.size.height)
-                            .tag(i)
+                        cardPage(for: card)
+                            .containerRelativeFrame(.horizontal)
+                            .id(i)
                     }
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(width: geo.size.width, height: geo.size.height)
+                .scrollTargetLayout()
             }
+            .scrollTargetBehavior(.paging)
+            .scrollPosition(id: $pagingScrollPosition)
             .navigationDestination(item: $selectedSet) { set in
                 SetCardsView(set: set)
             }
@@ -187,7 +191,11 @@ struct CardDetailSheet: View {
         .task(id: currentCard.masterCardId) {
             await loadWishlistVariantKeys()
         }
+        .task(id: index) {
+            ImagePrefetcher.shared.prefetchHighResForDetailView(cards, currentIndex: index, window: 2)
+        }
         .onAppear {
+            pagingScrollPosition = index
             if managesTabBarChrome {
                 suppressTabBarForModalChrome?()
             }
@@ -198,8 +206,15 @@ struct CardDetailSheet: View {
                 isAuraReady = true
             }
         }
-        .onChange(of: index) { _, _ in
+        .onChange(of: pagingScrollPosition) { _, position in
+            guard let position, position != index else { return }
+            index = position
             HapticManager.selection()
+        }
+        .onChange(of: index) { _, newIndex in
+            if pagingScrollPosition != newIndex {
+                pagingScrollPosition = newIndex
+            }
         }
         .onDisappear {
             isAuraReady = false
@@ -300,7 +315,7 @@ struct CardDetailSheet: View {
         }
     }
 
-    private func cardPage(for pageCard: Card, pageHeight: CGFloat) -> some View {
+    private func cardPage(for pageCard: Card) -> some View {
         CardDetailContentView(
             card: pageCard,
             set: set(for: pageCard),
@@ -340,7 +355,7 @@ struct CardDetailSheet: View {
                 }
             )
         )
-        .frame(minHeight: pageHeight)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background {
             CardDetailTypeBackground(accent: typeAccent(for: pageCard))
                 .ignoresSafeArea()

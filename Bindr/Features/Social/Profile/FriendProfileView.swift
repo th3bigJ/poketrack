@@ -16,10 +16,12 @@ struct FriendProfileView: View {
         _selectedTab = State(initialValue: initialTab)
     }
 
-    enum ProfileTab: String, CaseIterable {
+    enum ProfileTab: String, CaseIterable, Identifiable {
         case posts
         case wishlist
         case collection
+
+        var id: String { rawValue }
     }
 
     @State private var profile: SocialProfile?
@@ -30,7 +32,6 @@ struct FriendProfileView: View {
     @State private var isMutating = false
     @State private var errorMessage: String?
     @State private var selectedTab: ProfileTab
-    @Namespace private var tabNamespace
     @State private var sharedWishlistCardIDs: [String] = []
     @State private var friendWishlistDateByCardID: [String: Date] = [:]
     @State private var friendCollectionCardIDs: [String] = []
@@ -469,38 +470,11 @@ struct FriendProfileView: View {
     }
 
     private var tabPicker: some View {
-        HStack(spacing: 0) {
-            ForEach(ProfileTab.allCases, id: \.self) { tab in
-                let isSelected = selectedTab == tab
-                Button {
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-                        selectedTab = tab
-                    }
-                    Haptics.lightImpact()
-                } label: {
-                    Text(tabTitle(tab))
-                        .font(.system(size: 13, weight: isSelected ? .bold : .semibold))
-                        .foregroundStyle(isSelected ? Color.white : Color.primary.opacity(0.6))
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 9)
-                        .background {
-                            if isSelected {
-                                Capsule()
-                                    .fill(accentColor)
-                                    .matchedGeometryEffect(id: "friendProfileTabHighlight", in: tabNamespace)
-                                    .shadow(color: accentColor.opacity(0.25), radius: 6, x: 0, y: 3)
-                            }
-                        }
-                        .contentShape(Capsule())
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .padding(BindrSpacing.xs)
-        .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
-        .overlay {
-            Capsule().stroke(Color.primary.opacity(0.06), lineWidth: 1)
-        }
+        SlidingSegmentedPicker(
+            selection: $selectedTab,
+            items: ProfileTab.allCases,
+            title: tabTitle
+        )
         .padding(.horizontal, BindrSpacing.lg)
     }
 

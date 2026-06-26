@@ -87,4 +87,22 @@ struct DashboardProgressTrackerStore: Equatable, Sendable {
         targets.removeAll { $0.id == id }
         persist()
     }
+
+    mutating func remove(atOffsets offsets: IndexSet) {
+        for index in offsets.sorted(by: >) {
+            guard targets.indices.contains(index) else { continue }
+            targets.remove(at: index)
+        }
+        persist()
+    }
+
+    mutating func move(from source: IndexSet, to destination: Int) {
+        let moving = source.sorted().map { targets[$0] }
+        for index in source.sorted(by: >) {
+            targets.remove(at: index)
+        }
+        let adjustedDestination = destination - source.filter { $0 < destination }.count
+        targets.insert(contentsOf: moving, at: min(max(adjustedDestination, 0), targets.count))
+        persist()
+    }
 }

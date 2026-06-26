@@ -21,6 +21,8 @@ private struct BrowseTabView: View {
     @Binding var selectedTab: BrowseHomeTab
     @Binding var inlineDetailRoute: BrowseInlineDetailRoute?
     @Binding var query: String
+    @Binding var inlineDetailQuery: String
+    @Binding var scrollToTopRequest: Int
 
     var body: some View {
         BrowseView(
@@ -40,7 +42,9 @@ private struct BrowseTabView: View {
             inlineDetailRoute: $inlineDetailRoute,
             isMultiSelectActive: .constant(false),
             multiSelectedCardIDs: .constant([]),
-            query: $query
+            query: $query,
+            inlineDetailQuery: $inlineDetailQuery,
+            scrollToTopRequest: $scrollToTopRequest
         )
     }
 }
@@ -59,6 +63,10 @@ private struct CollectTabView: View {
     @Binding var collectFilterRarityOptions: [String]
     @Binding var collectFilterTrainerTypeOptions: [String]
     @Binding var gridOptions: BrowseGridOptions
+    @Binding var collectionQuery: String
+    @Binding var wishlistQuery: String
+    @Binding var scrollToTopRequest: Int
+    @Binding var filterResultCount: Int
 
     var body: some View {
         CollectView(
@@ -70,7 +78,11 @@ private struct CollectTabView: View {
             collectFilterEnergyOptions: $collectFilterEnergyOptions,
             collectFilterRarityOptions: $collectFilterRarityOptions,
             collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
-            gridOptions: $gridOptions
+            gridOptions: $gridOptions,
+            collectionQuery: $collectionQuery,
+            wishlistQuery: $wishlistQuery,
+            scrollToTopRequest: $scrollToTopRequest,
+            filterResultCount: $filterResultCount
         )
     }
 }
@@ -85,6 +97,15 @@ struct RootView: View {
     @State private var collectSegment: CollectSegment = .collection
     @State private var collectContentTypeTab: CollectContentTypeTab = .cards
     @State private var universalQuery = ""
+    @State private var browseQuery = ""
+    @State private var browseInlineDetailQuery = ""
+    @State private var isBrowseSearchExpanded = false
+    @State private var browseScrollToTopRequest = 0
+    @State private var collectCollectionQuery = ""
+    @State private var collectWishlistQuery = ""
+    @State private var isCollectSearchExpanded = false
+    @State private var collectScrollToTopRequest = 0
+    @State private var collectFilterResultCount = 0
     @State private var showCardScanner = false
     @State private var browseFilters = BrowseFiltersSettings()
     @State private var browseFilterResultCount = 0
@@ -284,6 +305,20 @@ struct RootView: View {
         return chromeScroll.barsVisible
     }
 
+    private var isBrowseLocalSearchContextActive: Bool {
+        selectedTab == .browse
+            && browseNavigationPath.isEmpty
+            && !isSearchExperiencePresented
+    }
+
+    private var isCollectLocalSearchContextActive: Bool {
+        selectedTab == .collect && collectionNavigationPath.isEmpty
+    }
+
+    private var isLocalSearchContextActive: Bool {
+        isBrowseLocalSearchContextActive || isCollectLocalSearchContextActive
+    }
+
     private var isBrowseGridFilterContextActive: Bool {
         selectedTab == .browse
             && browseNavigationPath.isEmpty
@@ -323,21 +358,141 @@ struct RootView: View {
 
     private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
         switch selectedTab {
-        case .dashboard: return ("magnifyingglass", "Search", {
-            presentSearchExperience()
-        })
-        default: return nil
+        case .dashboard, .collect:
+            return ("camera.fill", "Open scanner", {
+                searchFieldFocused = false
+                showCardScanner = true
+            })
+        default:
+            return nil
+        }
+    }
+
+    private var chromeCollapsedLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
+        if selectedTab == .browse, browseInlineDetailRoute != nil {
+            return ("chevron.left", "Back", {
+                browseInlineDetailRoute = nil
+            })
+        }
+        switch selectedTab {
+        case .dashboard:
+            return ("magnifyingglass", "Search", {
+                presentSearchExperience()
+            })
+        case .browse where isBrowseLocalSearchContextActive:
+            return ("magnifyingglass", "Search", {
+                activateBrowseSearch()
+            })
+        case .collect where isCollectLocalSearchContextActive:
+            return ("magnifyingglass", "Search", {
+                activateCollectSearch()
+            })
+        default:
+            return nil
         }
     }
 
     private var chromeExtraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? { nil }
 
     private var rootChromeTitle: String {
+        if isBrowseLocalSearchContextActive, isBrowseSearchExpanded {
+            return ""
+        }
+        if isCollectLocalSearchContextActive, isCollectSearchExpanded {
+            return ""
+        }
         if selectedTab == .browse, let browseInlineDetailRoute {
             return browseInlineDetailRoute.title
         }
         return selectedTab.title
     }
+
+    private var activeLocalSearchTextBinding: Binding<String> {
+        if isBrowseLocalSearchContextActive {
+            return activeBrowseSearchTextBinding
+        }
+        if isCollectLocalSearchContextActive {
+            return activeCollectSearchTextBinding
+        }
+        return $universalQuery
+    }
+
+    private var activeCollectSearchTextBinding: Binding<String> {
+        switch collectSegment {
+        case .collection:
+            return $collectCollectionQuery
+        case .wishlist:
+            return $collectWishlistQuery
+        }
+    }
+
+    private var localSearchPlaceholder: String {
+        if isCollectLocalSearchContextActive {
+            return collectSearchPlaceholder
+        }
+        return browseSearchPlaceholder
+    }
+
+    private var isActiveLocalSearchExpanded: Bool {
+        if isBrowseLocalSearchContextActive {
+            return isBrowseSearchExpanded
+        }
+        if isCollectLocalSearchContextActive {
+            return isCollectSearchExpanded
+        }
+        return false
+    }
+
+    private var collectSearchPlaceholder: String {
+        let formatted = Self.browseResultCountFormatter.string(
+            from: NSNumber(value: collectFilterResultCount)
+        ) ?? "\(collectFilterResultCount)"
+        let itemLabel = collectContentTypeTab == .cards ? "cards" : "product"
+        switch collectSegment {
+        case .collection:
+            return "Search \(formatted) \(itemLabel) in collection"
+        case .wishlist:
+            return "Search \(formatted) \(itemLabel) in wishlist"
+        }
+    }
+
+    private var activeBrowseSearchTextBinding: Binding<String> {
+        if browseInlineDetailRoute != nil {
+            return $browseInlineDetailQuery
+        }
+        return $browseQuery
+    }
+
+    private var browseSearchPlaceholder: String {
+        let formatted = Self.browseResultCountFormatter.string(
+            from: NSNumber(value: browseFilterResultCount)
+        ) ?? "\(browseFilterResultCount)"
+
+        if let route = browseInlineDetailRoute {
+            switch route {
+            case .set:
+                return "Search \(formatted) cards in set"
+            case .dex:
+                return "Search \(formatted) cards for Pokémon"
+            }
+        }
+        switch browseHomeTab {
+        case .cards:
+            return "Search \(formatted) cards"
+        case .sets:
+            return "Search sets"
+        case .pokemon:
+            return "Search Pokémon"
+        case .products:
+            return "Search products"
+        }
+    }
+
+    private static let browseResultCountFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
 
     private var activeBrowseFilters: BrowseCardGridFilters {
         browseInlineDetailRoute == nil
@@ -665,6 +820,53 @@ struct RootView: View {
     }
 
     @MainActor
+    private func dismissCollectSearch(clearQuery: Bool = false) {
+        isCollectSearchExpanded = false
+        searchFieldFocused = false
+        guard clearQuery else { return }
+        switch collectSegment {
+        case .collection:
+            collectCollectionQuery = ""
+        case .wishlist:
+            collectWishlistQuery = ""
+        }
+        collectScrollToTopRequest += 1
+    }
+
+    @MainActor
+    private func activateCollectSearch() {
+        isCollectSearchExpanded = true
+        Task { @MainActor in
+            try? await Task.sleep(for: Self.searchFocusDelay)
+            guard isCollectSearchExpanded, isCollectLocalSearchContextActive else { return }
+            searchFieldFocused = true
+        }
+    }
+
+    @MainActor
+    private func dismissBrowseSearch(clearQuery: Bool = false) {
+        isBrowseSearchExpanded = false
+        searchFieldFocused = false
+        guard clearQuery else { return }
+        if browseInlineDetailRoute != nil {
+            browseInlineDetailQuery = ""
+        } else {
+            browseQuery = ""
+        }
+        browseScrollToTopRequest += 1
+    }
+
+    @MainActor
+    private func activateBrowseSearch() {
+        isBrowseSearchExpanded = true
+        Task { @MainActor in
+            try? await Task.sleep(for: Self.searchFocusDelay)
+            guard isBrowseSearchExpanded, isBrowseLocalSearchContextActive else { return }
+            searchFieldFocused = true
+        }
+    }
+
+    @MainActor
     private func dismissSearchExperience(clearQuery: Bool = true) {
         searchNavigationPath = NavigationPath()
         if clearQuery {
@@ -798,6 +1000,7 @@ struct RootView: View {
             .onChange(of: searchFieldFocused) { _, isFocused in
                 if isFocused {
                     Haptics.lightImpact()
+                    guard !isLocalSearchContextActive else { return }
                     if !isSearchExperiencePresented {
                         presentSearchExperience(focusField: false)
                     }
@@ -851,6 +1054,12 @@ struct RootView: View {
         case .more:    moreTabVisited = true
         case .dashboard: break
         }
+        if tab != .browse {
+            dismissBrowseSearch()
+        }
+        if tab != .collect {
+            dismissCollectSearch()
+        }
         if tab == .collect {
             collectionNavigationPath = NavigationPath()
         }
@@ -875,6 +1084,12 @@ struct RootView: View {
         browseInlineDetailRoute = nil
         selectedCardPresentation = nil
         universalQuery = ""
+        browseQuery = ""
+        browseInlineDetailQuery = ""
+        isBrowseSearchExpanded = false
+        collectCollectionQuery = ""
+        collectWishlistQuery = ""
+        isCollectSearchExpanded = false
         searchFieldFocused = false
         collectSelectedBrand = brand
     }
@@ -1112,8 +1327,16 @@ struct RootView: View {
             inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
             selectedTab: $browseHomeTab,
             inlineDetailRoute: $browseInlineDetailRoute,
-            query: $universalQuery
+            query: $browseQuery,
+            inlineDetailQuery: $browseInlineDetailQuery,
+            scrollToTopRequest: $browseScrollToTopRequest
         )
+        .onChange(of: browseHomeTab) { _, _ in
+            dismissBrowseSearch()
+        }
+        .onChange(of: browseInlineDetailRoute) { _, _ in
+            dismissBrowseSearch()
+        }
     }
 
     private var collectTab: some View {
@@ -1145,8 +1368,18 @@ struct RootView: View {
             collectFilterEnergyOptions: $collectFilterEnergyOptions,
             collectFilterRarityOptions: $collectFilterRarityOptions,
             collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
-            gridOptions: $collectFilters.gridOptions
+            gridOptions: $collectFilters.gridOptions,
+            collectionQuery: $collectCollectionQuery,
+            wishlistQuery: $collectWishlistQuery,
+            scrollToTopRequest: $collectScrollToTopRequest,
+            filterResultCount: $collectFilterResultCount
         )
+        .onChange(of: collectSegment) { _, _ in
+            dismissCollectSearch(clearQuery: true)
+        }
+        .onChange(of: collectContentTypeTab) { _, _ in
+            dismissCollectSearch(clearQuery: true)
+        }
     }
 
     private var socialTab: some View {
@@ -1289,36 +1522,48 @@ struct RootView: View {
         searchFieldUseGlass: Bool = false,
         showsBackButtonWhenOpen: Bool = true
     ) -> some View {
-        let browseLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? =
-            selectedTab == .browse && browseInlineDetailRoute != nil
-            ? ("chevron.left", "Back", {
-                browseInlineDetailRoute = nil
-            })
-            : nil
         let filterEnabled = isBrowseGridFilterContextActive || isCollectFilterContextActive
         let filterActive = isBrowseGridFilterContextActive ? activeBrowseFilters.isVisiblyCustomized
                          : isCollectFilterContextActive ? isCollectFilterActive : false
         let filterContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent)
                                     : isCollectFilterContextActive ? AnyView(collectFilterMenuContent) : nil
-        let gridContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(browseGridMenuContent)
-                                  : isCollectFilterContextActive ? AnyView(collectGridMenuContent) : nil
+        let usesLocalSearch = isLocalSearchContextActive
         return UniversalSearchBar(
-            text: $universalQuery,
+            text: usesLocalSearch ? activeLocalSearchTextBinding : $universalQuery,
             isFocused: $searchFieldFocused,
             title: rootChromeTitle,
             isSearchOpen: isSearchExperiencePresented,
             isFilterEnabled: filterEnabled,
             isFilterActive: filterActive,
             filterMenuContent: filterContent,
-            gridMenuContent: gridContent,
+            gridMenuContent: nil,
             searchFieldUseGlass: searchFieldUseGlass,
             chromeUsesInteractiveGlass: false,
             showsBackButtonWhenOpen: showsBackButtonWhenOpen,
-            collapsedLeadingButton: browseLeadingButton,
+            collapsedLeadingButton: chromeCollapsedLeadingButton,
             trailingButton: chromeTrailingButton,
             extraTrailingButton: chromeExtraTrailingButton,
+            isLocalSearchMode: usesLocalSearch,
+            isLocalSearchExpanded: isActiveLocalSearchExpanded,
+            localSearchPlaceholder: localSearchPlaceholder,
+            trailingControlsSpacing: usesLocalSearch ? 5 : 12,
+            browseSearchOnTrailing: browseInlineDetailRoute != nil,
             onActivateSearch: {
                 presentSearchExperience()
+            },
+            onActivateLocalSearch: {
+                if isBrowseLocalSearchContextActive {
+                    activateBrowseSearch()
+                } else if isCollectLocalSearchContextActive {
+                    activateCollectSearch()
+                }
+            },
+            onDismissLocalSearch: {
+                if isBrowseLocalSearchContextActive {
+                    dismissBrowseSearch(clearQuery: true)
+                } else if isCollectLocalSearchContextActive {
+                    dismissCollectSearch(clearQuery: true)
+                }
             },
             onBack: {
                 dismissSearchExperience()
@@ -1331,6 +1576,9 @@ struct RootView: View {
                 searchFieldFocused = false
             },
             onSubmitSearch: {
+                if usesLocalSearch {
+                    return
+                }
                 SearchHistoryStore.addSearch(universalQuery)
             }
         )
@@ -1401,18 +1649,22 @@ struct RootView: View {
     @ViewBuilder
     private var collectFilterMenuContent: some View {
         let showSealedProductTypeFilter = collectContentTypeTab == .products
-        let collectConfig = showSealedProductTypeFilter
-            ? FilterMenuConfig.products
-            : FilterMenuConfig(
+        let collectConfig: FilterMenuConfig = {
+            if showSealedProductTypeFilter {
+                var config = FilterMenuConfig.products
+                config.showGridOptions = true
+                return config
+            }
+            return FilterMenuConfig(
                 showAcquiredDateSort: true,
                 showRandomSort: false,
                 showCardNumberSort: false,
                 showHideOwned: false,
                 showOwnedOnly: false,
                 showShowDuplicates: true,
-                showGridOptions: false,
                 defaultSortBy: .price
             )
+        }()
         BrowseGridFiltersMenuContent(
             brand: collectActiveBrand,
             filters: activeCollectFiltersBinding,
@@ -1420,41 +1672,9 @@ struct RootView: View {
             rarityOptions: collectFilterRarityOptions,
             trainerTypeOptions: collectFilterTrainerTypeOptions,
             isAllBrands: isCollectAllBrands,
+            gridOptions: $collectFilters.gridOptions,
             config: collectConfig
         )
-    }
-
-    @ViewBuilder
-    private var collectGridMenuContent: some View {
-        if collectContentTypeTab == .products {
-            BrowseGridOptionsMenuContent(
-                gridOptions: $collectFilters.gridOptions,
-                nameToggleTitle: "Show product name",
-                showCardIDToggle: false,
-                showOwnedToggle: false
-            )
-        } else {
-            BrowseGridOptionsMenuContent(
-                gridOptions: $collectFilters.gridOptions,
-                ownedToggleTitle: "Show variant",
-                ownedToggleSystemImage: "tag"
-            )
-        }
-    }
-
-    @ViewBuilder
-    private var browseGridMenuContent: some View {
-        let isSealedTab = browseHomeTab == .products && browseInlineDetailRoute == nil
-        if isSealedTab {
-            BrowseGridOptionsMenuContent(
-                gridOptions: $browseFilters.productsGridOptions,
-                nameToggleTitle: "Show product name",
-                showCardIDToggle: false,
-                showOwnedToggle: false
-            )
-        } else {
-            BrowseGridOptionsMenuContent()
-        }
     }
 
     @ViewBuilder
@@ -1479,7 +1699,14 @@ struct RootView: View {
             }
         }()
 
-        let browseConfig = FilterMenuConfig(showGridOptions: false, defaultSortBy: defaultSortBy)
+        let browseConfig: FilterMenuConfig = {
+            if isSealedTab {
+                var config = FilterMenuConfig.products
+                config.showGridOptions = true
+                return config
+            }
+            return FilterMenuConfig(defaultSortBy: defaultSortBy)
+        }()
 
         BrowseGridFiltersMenuContent(
             brand: services.brandSettings.selectedCatalogBrand,
@@ -1488,7 +1715,8 @@ struct RootView: View {
             rarityOptions: activeBrowseFilterRarityOptions,
             trainerTypeOptions: activeBrowseFilterTrainerTypeOptions,
             isAllBrands: false,
-            config: isSealedTab ? .products : browseConfig
+            gridOptions: activeBrowseGridOptionsBinding,
+            config: browseConfig
         )
     }
 

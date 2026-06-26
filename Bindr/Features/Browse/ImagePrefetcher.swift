@@ -67,23 +67,28 @@ final class ImagePrefetcher: @unchecked Sendable {
         prefetch(urls, priority: .background)
     }
 
-    /// Prefetch high-res images for adjacent cards in detail view for instant swipe experience.
-    /// Called when viewing a card to prepare next/prev cards at high quality.
+    /// Prefetch high-res images for the current card and adjacent cards in detail view.
+    /// The visible card is warmed at higher priority so hi-res can replace low-res quickly on open.
     func prefetchHighResForDetailView(_ cards: [Card], currentIndex: Int, window: Int = 2) {
+        guard !cards.isEmpty, currentIndex >= 0, currentIndex < cards.count else { return }
+
         let start = max(0, currentIndex - window)
         let end = min(cards.count, currentIndex + window + 1)
 
-        var urls: [URL] = []
+        var adjacentURLs: [URL] = []
         for i in start..<end where i != currentIndex {
-            let card = cards[i]
-            if let highSrc = card.imageHighSrc {
-                urls.append(AppConfiguration.imageURL(relativePath: highSrc))
-            } else {
-                urls.append(AppConfiguration.imageURL(relativePath: card.displayImageSrc))
-            }
+            adjacentURLs.append(highResURL(for: cards[i]))
         }
 
-        prefetch(urls, priority: .medium)
+        prefetch([highResURL(for: cards[currentIndex])], priority: .userInitiated)
+        prefetch(adjacentURLs, priority: .medium)
+    }
+
+    private func highResURL(for card: Card) -> URL {
+        if let highSrc = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !highSrc.isEmpty {
+            return AppConfiguration.imageURL(relativePath: highSrc)
+        }
+        return AppConfiguration.imageURL(relativePath: card.displayImageSrc)
     }
 
     /// Prefetch low-res thumbnails for the entire visible range immediately.

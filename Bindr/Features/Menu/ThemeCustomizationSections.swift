@@ -2,16 +2,14 @@ import SwiftUI
 
 // MARK: - ThemeCustomizationSections
 //
-// Shared appearance, glow, and atmosphere controls used by ThemesView and onboarding.
+// Shared appearance and atmosphere controls used by ThemesView and onboarding.
 
 struct ThemeCustomizationSections: View {
     @Environment(AppServices.self) private var services
-    @Environment(\.bindrAccent) private var accent
 
     var body: some View {
         VStack(spacing: BindrSpacing.xl) {
             appearanceCard
-            glowCard
             backgroundStyleCard
         }
     }
@@ -23,33 +21,11 @@ struct ThemeCustomizationSections: View {
             title: "Appearance",
             footer: "Choose how Bindr looks on your device."
         ) {
-            Picker(
-                "Appearance",
-                selection: Bindable(services.theme).appearance
-            ) {
-                ForEach(ThemeSettings.AppAppearance.allCases) { option in
-                    Text(option.displayName).tag(option)
-                }
-            }
-            .pickerStyle(.segmented)
-        }
-    }
-
-    // MARK: Glow
-
-    private var glowCard: some View {
-        themeCardSection(
-            title: nil,
-            footer: "Adds a subtle color tint to the app background."
-        ) {
-            Toggle(isOn: Bindable(services.theme).backgroundGlowEnabled) {
-                Text("Background Glow")
-                    .font(.system(size: 15, weight: .semibold))
-            }
-            .tint(accent)
-            .onChange(of: services.theme.backgroundGlowEnabled) {
-                Haptics.lightImpact()
-            }
+            SlidingSegmentedPicker(
+                selection: Bindable(services.theme).appearance,
+                items: ThemeSettings.AppAppearance.allCases,
+                title: { $0.displayName }
+            )
         }
     }
 
@@ -61,7 +37,7 @@ struct ThemeCustomizationSections: View {
             footer: "Choose an atmosphere for Bindr. Each style includes its own matched accent and adapts automatically to light and dark mode."
         ) {
             LazyVGrid(
-                columns: Array(repeating: GridItem(.flexible(), spacing: BindrSpacing.sm), count: 2),
+                columns: Array(repeating: GridItem(.flexible(), spacing: BindrSpacing.sm), count: 3),
                 spacing: BindrSpacing.sm
             ) {
                 ForEach(ThemeSettings.BackgroundStyle.allCases) { style in
@@ -85,21 +61,24 @@ struct ThemeCustomizationSections: View {
                     endPoint: .bottom
                 )
 
-                HStack(spacing: 6) {
+                HStack(spacing: 4) {
                     Image(systemName: style.symbolName)
+                        .font(.system(size: 11, weight: .semibold))
                     Text(style.displayName)
+                        .font(.system(size: 11, weight: .semibold))
                         .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                     Spacer(minLength: 0)
                     if isSelected {
                         Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 12, weight: .semibold))
                     }
                 }
-                .font(.system(size: 13, weight: .semibold))
                 .foregroundStyle(.white)
-                .padding(10)
+                .padding(8)
             }
             .frame(maxWidth: .infinity)
-            .frame(height: 76)
+            .frame(height: 64)
             .background {
                 backgroundStylePreview(style)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

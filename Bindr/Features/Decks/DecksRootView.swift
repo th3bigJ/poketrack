@@ -12,6 +12,7 @@ struct DecksRootView: View {
     @State private var showImportSheet = false
     @State private var showPaywall = false
     @State private var deckToDelete: Deck?
+    @State private var deckToEdit: Deck?
     @State private var showDeleteConfirm = false
     @State private var newDeckMenuHapticSentForCurrentTouch = false
     @State private var hasReconciledSharedDecks = false
@@ -73,6 +74,11 @@ struct DecksRootView: View {
         .sheet(isPresented: $showCreateSheet) {
             CreateDeckSheet()
         }
+        .sheet(isPresented: editDeckSheetIsPresented) {
+            if let deckToEdit {
+                CreateDeckSheet(editingDeck: deckToEdit)
+            }
+        }
         .sheet(isPresented: $showImportSheet) {
             ImportPTCGLSheet()
                 .environment(services)
@@ -98,6 +104,15 @@ struct DecksRootView: View {
 
     private var deckReconcileSignature: String {
         decks.map(\.id.uuidString).sorted().joined(separator: ",")
+    }
+
+    private var editDeckSheetIsPresented: Binding<Bool> {
+        Binding(
+            get: { deckToEdit != nil },
+            set: { isPresented in
+                if !isPresented { deckToEdit = nil }
+            }
+        )
     }
 
     private var emptyDecksView: some View {
@@ -157,45 +172,63 @@ struct DecksRootView: View {
     }
 
     private var decksListView: some View {
-        ScrollView {
-            LazyVStack(spacing: BindrSpacing.sm) {
-                ForEach(visibleDecks) { deck in
-                    NavigationLink(value: deck) {
-                        DeckListRow(deck: deck)
-                            .padding(BindrSpacing.md)
-                            .glassCardStyle(cornerRadius: 16)
-                            .padding(.horizontal, BindrSpacing.lg)
+        List {
+            ForEach(visibleDecks) { deck in
+                NavigationLink(value: deck) {
+                    DeckListRow(deck: deck)
+                        .padding(BindrSpacing.md)
+                        .glassCardStyle(cornerRadius: 16)
+                }
+                .buttonStyle(.plain)
+                .navigationLinkIndicatorVisibility(.hidden)
+                .simultaneousGesture(
+                    TapGesture().onEnded {
+                        HapticManager.impact(.light)
                     }
-                    .buttonStyle(.plain)
-                    .simultaneousGesture(
-                        TapGesture().onEnded {
-                            HapticManager.impact(.light)
-                        }
-                    )
-                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                        Button(role: .destructive) {
-                            deckToDelete = deck
-                            showDeleteConfirm = true
-                        } label: {
-                            Label("Delete", systemImage: "trash")
-                        }
+                )
+                .listRowInsets(EdgeInsets(top: 4, leading: BindrSpacing.lg, bottom: 4, trailing: BindrSpacing.lg))
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    Button(role: .destructive) {
+                        deckToDelete = deck
+                        showDeleteConfirm = true
+                    } label: {
+                        Label("Delete", systemImage: "trash")
                     }
-                    .contextMenu {
-                        Button {
-                            duplicateDeck(deck)
-                        } label: {
-                            Label("Duplicate Deck", systemImage: "doc.on.doc")
-                        }
-                        Button(role: .destructive) {
-                            deckToDelete = deck
-                            showDeleteConfirm = true
-                        } label: {
-                            Label("Delete Deck", systemImage: "trash")
-                        }
+                    .tint(.red)
+
+                    Button {
+                        HapticManager.impact(.light)
+                        deckToEdit = deck
+                    } label: {
+                        Label("Edit", systemImage: "pencil")
+                    }
+                    .tint(.blue)
+                }
+                .contextMenu {
+                    Button {
+                        HapticManager.impact(.light)
+                        deckToEdit = deck
+                    } label: {
+                        Label("Edit Deck", systemImage: "pencil")
+                    }
+                    Button {
+                        duplicateDeck(deck)
+                    } label: {
+                        Label("Duplicate Deck", systemImage: "doc.on.doc")
+                    }
+                    Button(role: .destructive) {
+                        deckToDelete = deck
+                        showDeleteConfirm = true
+                    } label: {
+                        Label("Delete Deck", systemImage: "trash")
                     }
                 }
             }
         }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
     }
 
     private var decksHeader: some View {

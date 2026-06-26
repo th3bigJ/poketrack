@@ -121,9 +121,6 @@ struct CommentsView: View {
                     Spacer(minLength: 100) // Space for composer
                 }
             }
-            .refreshable {
-                await loadComments()
-            }
 
             composer
         }

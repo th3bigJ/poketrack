@@ -1,6 +1,7 @@
 import SwiftUI
 
 private enum DashboardProgressPickerStep: Equatable {
+    case manage
     case chooseKind
     case chooseSet
     case choosePokemon
@@ -20,14 +21,24 @@ struct DashboardProgressTrackerSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
 
-    let onAdd: (DashboardProgressTarget) -> Void
+    @Binding var progressTracker: DashboardProgressTrackerStore
+    let snapshots: [DashboardProgressSnapshot]
+    let onChange: () -> Void
 
-    @State private var step: DashboardProgressPickerStep = .chooseKind
+    @State private var step: DashboardProgressPickerStep = .manage
     @State private var setQuery = ""
     @State private var pokemonQuery = ""
     @State private var selectedMode: SetCompletionMode = .full
     @State private var pokemonRows: [NationalDexPokemon] = []
     @State private var isLoadingPokemon = false
+
+    private var toolbarTint: Color {
+        colorScheme == .dark ? .white : .black
+    }
+
+    private var canAddMoreTargets: Bool {
+        progressTracker.targets.count < DashboardProgressTrackerStore.maxTargets
+    }
 
     private var filteredSets: [TCGSet] {
         let sets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
@@ -54,6 +65,8 @@ struct DashboardProgressTrackerSheet: View {
         NavigationStack {
             Group {
                 switch step {
+                case .manage:
+                    manageTargetsStep
                 case .chooseKind:
                     chooseKindStep
                 case .chooseSet:
@@ -69,15 +82,32 @@ struct DashboardProgressTrackerSheet: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .glassToolbarButton()
+                }
+
+                if step == .manage, canAddMoreTargets {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button {
+                            withAnimation(.spring(response: 0.32, dampingFraction: 0.82)) {
+                                step = .chooseKind
+                            }
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.system(size: 17, weight: .semibold))
+                        }
+                        .accessibilityLabel("Add tracker")
+                    }
                 }
             }
         }
+        .tint(toolbarTint)
         .presentationDetents([.large])
         .presentationDragIndicator(.visible)
     }
 
     private var navigationTitle: String {
         switch step {
+        case .manage: return "Continue Collecting"
         case .chooseKind: return "Track Progress"
         case .chooseSet: return "Choose a Set"
         case .choosePokemon: return "Choose Pokémon"
@@ -87,7 +117,7 @@ struct DashboardProgressTrackerSheet: View {
 
     private var showsBackButton: Bool {
         switch step {
-        case .chooseKind: return false
+        case .manage: return false
         default: return true
         }
     }
@@ -113,8 +143,10 @@ struct DashboardProgressTrackerSheet: View {
 
     private func goBack() {
         switch step {
-        case .chooseKind:
+        case .manage:
             break
+        case .chooseKind:
+            step = .manage
         case .chooseSet, .choosePokemon:
             step = .chooseKind
         case .chooseMode(let draft):
@@ -122,8 +154,149 @@ struct DashboardProgressTrackerSheet: View {
         }
     }
 
+    private var manageTargetsStep: some View {
+        Group {
+            if progressTracker.targets.isEmpty {
+                VStack(alignment: .leading, spacing: 28) {
+                    Text("Track completion for TCG sets or every print of a Pokémon across your catalog.")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
+
+                    Button {
+                        withAnimation(.spring(response: 0.32, dampingFraction: 0.82)) {
+                            step = .chooseKind
+                        }
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: "plus.circle.fill")
+                                .font(.system(size: 22, weight: .semibold))
+                                .foregroundStyle(services.theme.accentColor)
+
+                            VStack(alignment: .leading, spacing: 3) {
+                                Text("Add a set or Pokémon")
+                                    .font(.body.weight(.semibold))
+                                    .foregroundStyle(.primary)
+                                Text("Full, master, or grand master completion")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                                    .multilineTextAlignment(.leading)
+                            }
+
+                            Spacer(minLength: 8)
+
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 13, weight: .semibold))
+                                .foregroundStyle(.tertiary)
+                        }
+                        .padding(.vertical, 14)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+
+                    Spacer(minLength: 0)
+                }
+                .padding(.horizontal, 20)
+                .padding(.top, 12)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            } else {
+                List {
+                    Section {
+                        ForEach(progressTracker.targets) { target in
+                            manageTargetRow(target)
+                        }
+                        .onMove { source, destination in
+                            progressTracker.move(from: source, to: destination)
+                            onChange()
+                        }
+                        .onDelete { indices in
+                            progressTracker.remove(atOffsets: indices)
+                            onChange()
+                        }
+                    } footer: {
+                        Text("Drag to reorder. Swipe left to remove a tracker.")
+                            .font(.caption)
+                    }
+                }
+                .listStyle(.insetGrouped)
+                .environment(\.editMode, .constant(.active))
+            }
+        }
+    }
+
+    private func manageTargetRow(_ target: DashboardProgressTarget) -> some View {
+        let snapshot = snapshots.first { $0.targetID == target.id }
+
+        return HStack(spacing: 12) {
+            manageTargetThumbnail(target: target, snapshot: snapshot)
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(target.displayTitle)
+                    .font(.body.weight(.medium))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
+
+                Text(target.completionMode.chipLabel)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
+                if let snapshot {
+                    Text("\(snapshot.collected) / \(snapshot.total) · \(Int(snapshot.progress * 100))%")
+                        .font(.caption.weight(.medium))
+                        .foregroundStyle(.secondary)
+                        .monospacedDigit()
+                }
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(.vertical, 4)
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(manageTargetAccessibilityLabel(target: target, snapshot: snapshot))
+    }
+
+    private func manageTargetAccessibilityLabel(
+        target: DashboardProgressTarget,
+        snapshot: DashboardProgressSnapshot?
+    ) -> String {
+        if let snapshot {
+            return "\(target.displayTitle), \(target.completionMode.chipLabel), \(snapshot.collected) of \(snapshot.total)"
+        }
+        return "\(target.displayTitle), \(target.completionMode.chipLabel)"
+    }
+
+    @ViewBuilder
+    private func manageTargetThumbnail(
+        target: DashboardProgressTarget,
+        snapshot: DashboardProgressSnapshot?
+    ) -> some View {
+        if let url = snapshot?.artworkURL {
+            CachedAsyncImage(url: url, targetSize: CGSize(width: 72, height: 72)) { image in
+                image.resizable().scaledToFit()
+            } placeholder: {
+                Color.primary.opacity(0.06)
+            }
+            .frame(width: 40, height: 40)
+        } else if target.kind == .set,
+                  let setCode = target.setCode,
+                  let set = services.cardData.allSetsSortedByReleaseDateNewestFirst()
+            .first(where: { $0.setCode.lowercased() == setCode.lowercased() }) {
+            setLogoThumbnail(for: set)
+        } else {
+            ZStack {
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
+                    .fill(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05))
+                Image(systemName: target.kind == .set ? "square.stack.3d.up.fill" : "hare.fill")
+                    .foregroundStyle(.secondary)
+            }
+            .frame(width: 40, height: 40)
+        }
+    }
+
     private var chooseKindStep: some View {
         VStack(alignment: .leading, spacing: 28) {
+            if showsBackButton { sheetBackButton }
+
             Text("Follow completion for a TCG set or every print of a Pokémon across your catalog.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -445,7 +618,12 @@ struct DashboardProgressTrackerSheet: View {
             completionMode: selectedMode
         )
         Haptics.success()
-        onAdd(target)
-        dismiss()
+        progressTracker.add(target)
+        onChange()
+        withAnimation(.spring(response: 0.32, dampingFraction: 0.82)) {
+            step = .manage
+        }
+        setQuery = ""
+        pokemonQuery = ""
     }
 }

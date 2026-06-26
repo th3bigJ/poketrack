@@ -727,10 +727,6 @@ private struct TradeCalculatorView: View {
         theirCardsValueUSD + displayAmountToUSD(parsedCash(theirCashText))
     }
 
-    private var balanceUSD: Double {
-        theirTotalUSD - myTotalUSD
-    }
-
     private var hasAnyTradeValue: Bool {
         myTotalUSD > 0 || theirTotalUSD > 0 || !myCards.isEmpty || !theirCards.isEmpty
     }
@@ -739,32 +735,9 @@ private struct TradeCalculatorView: View {
         hasAnyTradeValue && !isCompletingTrade
     }
 
-    private var fairnessTitle: String {
-        guard hasAnyTradeValue else { return "Build a trade" }
-        if abs(balanceUSD) < 0.01 { return "Looks even" }
-        return balanceUSD > 0 ? "You receive more value" : "They receive more value"
-    }
-
-    private var fairnessSubtitle: String {
-        guard hasAnyTradeValue else {
-            return "Add your cards from collection, then search the catalogue for what they are offering."
-        }
-        if abs(balanceUSD) < 0.01 {
-            return "Both sides are currently balanced."
-        }
-        return "\(formattedDisplayAmountUSD(abs(balanceUSD))) difference"
-    }
-
-    private var fairnessColor: Color {
-        guard hasAnyTradeValue else { return BindrPalette.deckBlue }
-        if abs(balanceUSD) < 0.01 { return BindrPalette.ownedGreen }
-        return balanceUSD > 0 ? BindrPalette.ownedGreen : BindrPalette.alertRed
-    }
-
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                summarySection
                 theirSideSection
                 tradeVersusSection
                 mySideSection
@@ -842,16 +815,6 @@ private struct TradeCalculatorView: View {
         }
     }
 
-    private var summarySection: some View {
-        Text(fairnessTitle + " · " + fairnessSubtitle)
-            .font(.system(size: 13, weight: .semibold))
-            .foregroundStyle(fairnessColor)
-            .frame(maxWidth: .infinity, alignment: .center)
-            .multilineTextAlignment(.center)
-            .padding(18)
-            .glassCardStyle(cornerRadius: 24, interactive: false)
-    }
-
     private var tradeVersusSection: some View {
         HStack(alignment: .center, spacing: 0) {
             VStack(spacing: 8) {
@@ -904,7 +867,8 @@ private struct TradeCalculatorView: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .padding(.vertical, 4)
+        .padding(16)
+        .glassInsetStyle(cornerRadius: 16)
     }
 
     private var completeTradeSection: some View {

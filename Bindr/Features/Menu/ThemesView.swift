@@ -3,13 +3,8 @@ import SwiftUI
 // MARK: - ThemesView
 //
 // Themes & appearance settings. Refactor brief:
-//   * Appearance picker uses native `Picker(.segmented)` — same control
-//     iOS Settings uses for "Appearance: Light / Dark / Automatic".
-//   * Background Glow uses a stock `Toggle` (no oversized custom styling)
-//     with the explainer text rendered as a proper footer below the row,
-//     not floating outside the card.
-//   * Background styles now own their matched tint colors, so the UI presents
-//     one atmosphere choice instead of separate color controls.
+//   * Appearance picker uses `SlidingSegmentedPicker` (pill-label tabs).
+//   * Background styles own their matched tint colors in a 3-column grid.
 
 struct ThemesView: View {
     @Environment(\.dismiss) private var dismiss
@@ -17,7 +12,8 @@ struct ThemesView: View {
     var body: some View {
         ScrollView {
             ThemeCustomizationSections()
-                .padding(BindrSpacing.lg)
+                .padding(.horizontal, BindrSpacing.lg)
+                .padding(.top, BindrSpacing.sm)
                 .padding(.bottom, BindrSpacing.xxxl)
         }
         .background(BindrPageBackground().ignoresSafeArea())

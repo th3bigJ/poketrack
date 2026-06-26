@@ -22,6 +22,7 @@ struct TransactionsView: View {
     @State private var loadedTransactionCount: Int = 50
     @State private var transactionSearchText: String = ""
     @State private var transactionFilters = ActivityTransactionFilters()
+    @State private var activityFilterMenuHapticSentForCurrentTouch = false
 
     private var activeBrand: TCGBrand { .pokemon }
 
@@ -176,7 +177,7 @@ struct TransactionsView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
-            transactionsHeader
+            activityHeader
         }
         .task(id: ledgerSignature) {
             await resolveCardNames()
@@ -217,34 +218,69 @@ struct TransactionsView: View {
         .background(BindrPageBackground().ignoresSafeArea())
     }
 
-    private var transactionsHeader: some View {
-        ZStack {
-            Text("Activity")
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
-
-            HStack {
+    private var activityHeader: some View {
+        BindrPageHeader(
+            title: "Activity",
+            leading: {
                 ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    HapticManager.impact(.light)
                     dismiss()
                 } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
                 }
-
-                Spacer(minLength: 0)
-
-                ChromeGlassCircleButton(accessibilityLabel: "Add activity") {
-                    showAddActivity = true
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
+            },
+            trailing: {
+                HStack(spacing: 5) {
+                    activityFilterMenuButton
+                    ChromeGlassCircleButton(accessibilityLabel: "Add activity") {
+                        HapticManager.impact(.light)
+                        showAddActivity = true
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
                 }
             }
+        )
+    }
+
+    private var activityFilterMenuTouchDownHapticGesture: some Gesture {
+        DragGesture(minimumDistance: 0)
+            .onChanged { _ in
+                guard !activityFilterMenuHapticSentForCurrentTouch else { return }
+                activityFilterMenuHapticSentForCurrentTouch = true
+                HapticManager.impact(.light)
+            }
+            .onEnded { _ in
+                activityFilterMenuHapticSentForCurrentTouch = false
+            }
+    }
+
+    private var activityFilterMenuButton: some View {
+        Menu {
+            ActivityTransactionFiltersMenuContent(filters: $transactionFilters)
+        } label: {
+            ChromeGlassCircleButton(accessibilityLabel: "Filter transactions", action: {}) {
+                Image(systemName: hasActiveTransactionFilters
+                    ? "line.3.horizontal.decrease.circle.fill"
+                    : "line.3.horizontal.decrease.circle")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(hasActiveTransactionFilters ? services.theme.accentColor : .primary)
+            }
+            .allowsHitTesting(false)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
+        .buttonStyle(.plain)
+        .menuActionDismissBehavior(.disabled)
+        .menuOrder(.fixed)
+        .menuIndicator(.hidden)
+        .simultaneousGesture(activityFilterMenuTouchDownHapticGesture)
+    }
+
+    private var transactionSearchRow: some View {
+        BrowseInlineSearchField(title: "Search transactions", text: $transactionSearchText)
     }
 
     private var emptyState: some View {
@@ -282,7 +318,7 @@ struct TransactionsView: View {
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
 
-            transactionSearchAndFilterRow
+            transactionSearchRow
                 .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 .listRowBackground(Color.clear)
                 .listRowSeparator(.hidden)
@@ -296,7 +332,7 @@ struct TransactionsView: View {
 
             ForEach(displayedActivityEntries) { entry in
                 activityRow(for: entry)
-                    .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     .listRowBackground(Color.clear)
                     .listRowSeparator(.hidden)
                     .contentShape(Rectangle())
@@ -365,28 +401,6 @@ struct TransactionsView: View {
         .background(Color.clear)
     }
 
-    private var transactionSearchAndFilterRow: some View {
-        HStack(spacing: 8) {
-            BrowseInlineSearchField(title: "Search transactions", text: $transactionSearchText)
-                .frame(maxWidth: .infinity)
-
-            Menu {
-                ActivityTransactionFiltersMenuContent(filters: $transactionFilters)
-            } label: {
-                Image(systemName: hasActiveTransactionFilters
-                    ? "line.3.horizontal.decrease.circle.fill"
-                    : "line.3.horizontal.decrease.circle")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(hasActiveTransactionFilters ? services.theme.accentColor : .primary)
-                    .modifier(ChromeGlassCircleGlyphModifier())
-            }
-            .buttonStyle(.plain)
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-            .accessibilityLabel("Filter transactions")
-        }
-    }
-
     @ViewBuilder
     private var transactionEmptyResultsView: some View {
         let trimmedQuery = transactionSearchText.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -410,22 +424,9 @@ struct TransactionsView: View {
     private var pnlSummaryCard: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack(alignment: .firstTextBaseline) {
-                HStack(spacing: 10) {
-                    Image(systemName: "chart.line.uptrend.xyaxis")
-                        .font(.system(size: 15, weight: .bold))
-                        .foregroundStyle(.white)
-                        .frame(width: 32, height: 32)
-                        .background(services.theme.accentColor.gradient, in: Circle())
-
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("Summary")
-                            .font(.title3.weight(.semibold))
-                            .foregroundStyle(dashboardPrimaryText)
-                        Text(pnlRange.title)
-                            .font(.caption.weight(.semibold))
-                            .foregroundStyle(services.theme.accentColor)
-                    }
-                }
+                Text("Summary")
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
                 Spacer()
                 Text("\(groupedActivityEntries.count) transactions")
                     .font(.caption.weight(.medium))
@@ -438,9 +439,6 @@ struct TransactionsView: View {
                 title: { $0.title }
             )
 
-            Divider()
-                .background(services.theme.accentColor.opacity(0.12))
-
             HStack(spacing: 10) {
                 summaryValueCell(title: "Bought", value: -boughtTotal, emphasize: false)
                 summaryValueCell(title: "Sold", value: soldTotal, emphasize: false)
@@ -451,62 +449,22 @@ struct TransactionsView: View {
                 summaryValueCell(title: "Profit", value: profitValue, emphasize: true)
             }
         }
-        .padding(18)
-        .glassCardStyle(cornerRadius: 24, interactive: true)
-        .overlay(alignment: .topTrailing) {
-            Circle()
-                .fill(services.theme.accentColor.opacity(colorScheme == .dark ? 0.20 : 0.12))
-                .frame(width: 96, height: 96)
-                .blur(radius: 28)
-                .offset(x: 22, y: -26)
-                .allowsHitTesting(false)
-        }
-    }
-
-    private func colorForStatType(title: String) -> Color {
-        switch title {
-        case "Sold", "Profit":
-            return ActivityPalette.success
-        case "Collection Value":
-            return services.theme.accentColor
-        case "Bought":
-            return .secondary
-        default:
-            return .secondary
-        }
+        .padding(16)
+        .glassInsetStyle(cornerRadius: 16)
     }
 
     private func summaryValueCell(title: String, value: Double, emphasize: Bool) -> some View {
-        let statColor = colorForStatType(title: title)
-        return HStack(spacing: 10) {
-            Image(systemName: summaryIcon(for: title))
-                .font(.system(size: 13, weight: .bold))
-                .foregroundStyle(statColor)
-                .frame(width: 28, height: 28)
-                .background(statColor.opacity(colorScheme == .dark ? 0.16 : 0.11), in: Circle())
-
-            VStack(alignment: .leading, spacing: 5) {
-                Text(title)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(dashboardSecondaryText)
-                Text(formatSignedCurrency(value))
-                    .font(.system(size: emphasize ? 22 : 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(colorForSignedValue(value))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.75)
-            }
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.caption.weight(.medium))
+                .foregroundStyle(dashboardSecondaryText)
+            Text(formatSignedCurrency(value))
+                .font(.system(size: emphasize ? 22 : 18, weight: .bold, design: .rounded))
+                .foregroundStyle(colorForSignedValue(value))
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-
-    private func summaryIcon(for title: String) -> String {
-        switch title {
-        case "Bought": return "cart.fill"
-        case "Sold": return "tag.fill"
-        case "Collection Value": return "rectangle.stack.fill"
-        case "Profit": return "sparkles"
-        default: return "chart.bar.fill"
-        }
     }
 
     @ViewBuilder
@@ -561,14 +519,8 @@ struct TransactionsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
-        .padding(.horizontal, 4)
-        .padding(.vertical, 8)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .overlay(alignment: .bottom) {
-            Rectangle()
-                .fill(services.theme.accentColor.opacity(0.12))
-                .frame(height: 0.5)
-        }
+        .padding(12)
+        .glassInsetStyle(cornerRadius: 16)
     }
 
     private func transactionRow(for line: LedgerLine) -> some View {
@@ -616,14 +568,8 @@ struct TransactionsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
-        .padding(.horizontal, 4)
-        .padding(.vertical, 8)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .overlay(alignment: .bottom) {
-            Rectangle()
-                .fill(services.theme.accentColor.opacity(0.12))
-                .frame(height: 0.5)
-        }
+        .padding(12)
+        .glassInsetStyle(cornerRadius: 16)
     }
 
     private func tradeSummary(for lines: [LedgerLine]) -> String {
@@ -677,14 +623,10 @@ struct TransactionsView: View {
             .font(.caption.weight(.medium))
             .foregroundStyle(tone ?? dashboardSecondaryText)
             .padding(.horizontal, 10)
-            .padding(.vertical, 6)
+            .padding(.vertical, 5)
             .background(
                 Capsule(style: .continuous)
-                    .fill((tone ?? dashboardSecondaryText).opacity(colorScheme == .dark ? 0.16 : 0.10))
-            )
-            .overlay(
-                Capsule(style: .continuous)
-                    .stroke((tone ?? dashboardSecondaryText).opacity(0.25), lineWidth: 1)
+                    .fill(Color(uiColor: .tertiarySystemFill))
             )
     }
 

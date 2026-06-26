@@ -34,11 +34,11 @@ struct ShareSettingsView: View {
                     TextField("Title", text: $title)
                     TextField("Description", text: $descriptionText, axis: .vertical)
                         .lineLimit(3, reservesSpace: true)
-                    Picker("Visibility", selection: $visibility) {
-                        Text("Friends").tag(SharedContentVisibility.friends)
-                        Text("Link").tag(SharedContentVisibility.link)
-                    }
-                    .pickerStyle(.segmented)
+                    SlidingSegmentedPicker(
+                        selection: $visibility,
+                        items: SharedContentVisibility.allCases,
+                        title: { $0.displayName }
+                    )
                     Toggle("Include market value", isOn: $includeValue)
                 } header: {
                     Text("Publication")

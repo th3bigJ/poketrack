@@ -30,6 +30,8 @@ struct CardPricingPanel: View {
     /// Fixed chart height. When nil, the chart expands to fill available vertical space
     /// (used by the one-screen card detail layout).
     var chartHeight: CGFloat? = 220
+    /// Tighter padding and typography on the card-detail landing page so the artwork can grow.
+    var landingCompact: Bool = false
     /// When false, only the market-price headline row is shown (compact sticky header).
     var showsChart: Bool = true
     /// When false, hides the variant / grade picker (e.g. details-page price headline).
@@ -215,7 +217,7 @@ struct CardPricingPanel: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: landingCompact ? 8 : 10) {
             HStack(alignment: .center, spacing: 16) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(scrubPoint != nil ? scrubLabel(scrubPoint!.label) : "Market Price")
@@ -224,7 +226,7 @@ struct CardPricingPanel: View {
                         .animation(.none, value: scrubPoint?.label)
 
                     Text(scrubPoint != nil ? services.priceDisplay.currency.format(amountUSD: scrubPoint!.price, usdToGbp: services.pricing.usdToGbp) : currentPrice)
-                        .font(.system(size: showsChart ? 34 : 28, weight: .bold, design: .rounded))
+                        .font(.system(size: landingCompactPriceFontSize, weight: .bold, design: .rounded))
                         .foregroundStyle(.primary)
                         .lineLimit(1)
                         .minimumScaleFactor(0.75)
@@ -259,7 +261,7 @@ struct CardPricingPanel: View {
                 }
             }
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, landingCompact ? 4 : 8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             Group {
@@ -415,7 +417,37 @@ struct CardPricingPanel: View {
         }
     }
 
+    @ViewBuilder
     private var chartRangePicker: some View {
+        if landingCompact {
+            compactChartRangePicker
+        } else {
+            fullWidthChartRangePicker
+        }
+    }
+
+    private var compactChartRangePicker: some View {
+        HStack(spacing: 8) {
+            ForEach(ChartRange.allCases, id: \.self) { range in
+                let isSelected = chartRange == range
+                Button {
+                    guard chartRange != range else { return }
+                    withAnimation(.spring(response: 0.32, dampingFraction: 0.86)) {
+                        chartRange = range
+                    }
+                    Haptics.lightImpact()
+                } label: {
+                    Text(range.rawValue)
+                        .font(.system(size: 13, weight: isSelected ? .semibold : .regular))
+                        .browsePillTabChipStyle(isSelected: isSelected)
+                }
+                .buttonStyle(.plain)
+            }
+            Spacer(minLength: 0)
+        }
+    }
+
+    private var fullWidthChartRangePicker: some View {
         HStack(spacing: 0) {
             ForEach(ChartRange.allCases, id: \.self) { range in
                 let isSelected = chartRange == range
@@ -533,7 +565,12 @@ struct CardPricingPanel: View {
         }
         .modifier(ChartSizing(height: chartHeight))
         .padding(.horizontal, -16)
-        .padding(.bottom, 10)
+        .padding(.bottom, landingCompact ? 0 : 10)
+    }
+
+    private var landingCompactPriceFontSize: CGFloat {
+        if landingCompact, showsChart { return 30 }
+        return showsChart ? 34 : 28
     }
 
     private func chartDate(for point: PriceDataPoint, resolution: ChartDataResolution) -> Date {

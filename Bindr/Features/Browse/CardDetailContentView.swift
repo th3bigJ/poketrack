@@ -135,8 +135,8 @@ struct CardDetailContentView: View {
         GeometryReader { geo in
             let contentWidth = geo.size.width - 32
             let owned = isOwned(collectionItems: collectionItems, ledgerLines: ledgerLines)
-            let landingViewport = geo.size.height - topChromeHeight - swipeHintHeight
-            let layout = landingLayoutMetrics(
+            let landingViewport = geo.size.height - topChromeHeight
+            let cardWidth = landingLayoutMetrics(
                 viewportHeight: landingViewport,
                 contentWidth: contentWidth
             )
@@ -148,8 +148,7 @@ struct CardDetailContentView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     landingPage(
-                        cardWidth: layout.cardWidth,
-                        chartHeight: layout.chartHeight,
+                        cardWidth: cardWidth,
                         collectionItems: collectionItems,
                         ledgerLines: ledgerLines
                     )
@@ -173,6 +172,7 @@ struct CardDetailContentView: View {
             .scrollPosition(id: $activePage, anchor: .top)
             .scrollIndicators(.hidden)
             .scrollContentBackground(.hidden)
+            .ignoresSafeArea(edges: .bottom)
             .safeAreaInset(edge: .top, spacing: 0) {
                 VStack(spacing: 4) {
                     dragPill
@@ -192,16 +192,6 @@ struct CardDetailContentView: View {
                 }
                 .animation(.smooth(duration: 0.22), value: showsDetailsChrome)
             }
-            .safeAreaInset(edge: .bottom, spacing: 0) {
-                if !onDetailsPage {
-                    swipeUpHintArea
-                    .padding(.horizontal, 16)
-                    .background {
-                        CardDetailTypeBackground(accent: resolvedTypeAccent)
-                    }
-                    .transition(.opacity)
-                }
-            }
             .onChange(of: activePage) { _, page in
                 guard page != nil else { return }
                 Haptics.lightImpact()
@@ -214,7 +204,10 @@ struct CardDetailContentView: View {
     }
 
     private var topChromeHeight: CGFloat { 65 }
-    private var swipeHintHeight: CGFloat { 64 }
+    private static let landingChartMinHeight: CGFloat = 88
+    /// Divider + label pinned to the landing-page bottom.
+    private static let landingSwipeHintContentHeight: CGFloat = 18
+    private static let landingSwipeHintBottomPadding: CGFloat = 12
 
     /// Slim grabber at the top of the header — indicates the sheet can be dismissed.
     private var dragPill: some View {
@@ -246,27 +239,24 @@ struct CardDetailContentView: View {
     private func landingLayoutMetrics(
         viewportHeight: CGFloat,
         contentWidth: CGFloat
-    ) -> (cardWidth: CGFloat, chartHeight: CGFloat) {
-        guard viewportHeight > 0 else { return (min(contentWidth * 0.92, 260), 96) }
+    ) -> CGFloat {
+        guard viewportHeight > 0 else { return min(contentWidth * 0.92, 260) }
 
-        let landingInsets: CGFloat = 10
+        let landingInsets: CGFloat = 6
         let vStackSpacing: CGFloat = 6
-        let priceHeadlineHeight: CGFloat = 78
-        let chartChromeHeight: CGFloat = 36
-        let panelVerticalPadding: CGFloat = 16
-        let panelSectionSpacing: CGFloat = 10
-        let chartBottomInset: CGFloat = 10
-        let minChartHeight: CGFloat = 88
+        let priceHeadlineHeight: CGFloat = 66
+        let chartChromeHeight: CGFloat = 28
+        let panelVerticalPadding: CGFloat = 8
+        let panelSectionSpacing: CGFloat = 8
+        let hintBlockHeight = Self.landingSwipeHintContentHeight
+            + Self.landingSwipeHintBottomPadding + vStackSpacing
 
-        let pricingFixed = panelVerticalPadding + priceHeadlineHeight + panelSectionSpacing + chartChromeHeight + chartBottomInset
+        let pricingFixed = panelVerticalPadding + priceHeadlineHeight + panelSectionSpacing
+            + chartChromeHeight + Self.landingChartMinHeight + hintBlockHeight
         let usableHeight = viewportHeight - landingInsets - vStackSpacing
 
-        let maxCardHeight = usableHeight - pricingFixed - minChartHeight
-        let cardWidth = min(contentWidth, max(120, maxCardHeight) * (5.0 / 7.0))
-        let cardHeight = cardWidth * 7.0 / 5.0
-        let chartHeight = max(minChartHeight, usableHeight - cardHeight - pricingFixed)
-
-        return (cardWidth, chartHeight)
+        let maxCardHeight = usableHeight - pricingFixed
+        return min(contentWidth, max(120, maxCardHeight) * (5.0 / 7.0))
     }
 
     private func navigationChrome(owned: Bool) -> some View {
@@ -304,20 +294,18 @@ struct CardDetailContentView: View {
 
     private var swipeUpHint: some View {
         Text("Swipe up for details")
-            .font(.caption.weight(.semibold))
+            .font(.caption2.weight(.semibold))
             .foregroundStyle(.secondary)
             .frame(maxWidth: .infinity)
             .accessibilityLabel("Swipe up for details")
     }
 
-    private var swipeUpHintArea: some View {
-        VStack(spacing: 8) {
+    private var landingSwipeHintBar: some View {
+        VStack(spacing: 2) {
             sectionDivider
             swipeUpHint
-                .padding(.top, 2)
         }
         .frame(maxWidth: .infinity)
-        .frame(height: swipeHintHeight, alignment: .top)
         .contentShape(Rectangle())
         .onTapGesture(perform: revealDetails)
         .accessibilityAddTraits(.isButton)
@@ -335,29 +323,45 @@ struct CardDetailContentView: View {
 
     private func landingPage(
         cardWidth: CGFloat,
-        chartHeight: CGFloat,
         collectionItems: [CollectionItem],
         ledgerLines: [LedgerLine]
     ) -> some View {
-        VStack(spacing: 6) {
-            cardImage(width: cardWidth)
-                .frame(maxWidth: .infinity)
-
-            CardPricingPanel(
-                card: card,
-                useGlass: true,
-                chartHeight: chartHeight,
-                chartAccent: resolvedTypeAccent,
-                onPriceResolved: { text, change in
-                    resolvedPriceText = text
-                    resolvedDailyChange = change
-                }
+        GeometryReader { pageGeo in
+            let cardHeight = cardWidth * 7 / 5
+            let pricingChrome: CGFloat = 66 + 8 + 8 + 8 + 28
+            let verticalGaps: CGFloat = 4
+            let hintBlock = Self.landingSwipeHintContentHeight + Self.landingSwipeHintBottomPadding
+            let chartHeight = max(
+                Self.landingChartMinHeight,
+                pageGeo.size.height - cardHeight - pricingChrome - hintBlock - verticalGaps
             )
+
+            VStack(spacing: 0) {
+                VStack(spacing: 4) {
+                    cardImage(width: cardWidth)
+                        .frame(maxWidth: .infinity, alignment: .top)
+
+                    CardPricingPanel(
+                        card: card,
+                        useGlass: true,
+                        chartHeight: chartHeight,
+                        landingCompact: true,
+                        chartAccent: resolvedTypeAccent,
+                        onPriceResolved: { text, change in
+                            resolvedPriceText = text
+                            resolvedDailyChange = change
+                        }
+                    )
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+
+                landingSwipeHintBar
+                    .padding(.bottom, Self.landingSwipeHintBottomPadding)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding(.horizontal, 16)
         .padding(.top, 2)
-        .padding(.bottom, 8)
     }
 
     private func detailsPage(
@@ -431,19 +435,28 @@ struct CardDetailContentView: View {
     private static let priceUpColor = Color(red: 0.28, green: 0.84, blue: 0.39)
     private static let priceDownColor = Color(red: 1.0, green: 0.36, blue: 0.34)
 
+    private var cardLowResImageURL: URL? {
+        let low = card.imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+        let path = low.isEmpty ? card.displayImageSrc : low
+        return AppConfiguration.imageURL(relativePath: path)
+    }
+
+    private var cardHighResImageURL: URL? {
+        guard let high = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !high.isEmpty else {
+            return nil
+        }
+        return AppConfiguration.imageURL(relativePath: high)
+    }
+
     private func cardImage(width: CGFloat) -> some View {
         Button {
             actions.onOpenImage()
             Haptics.lightImpact()
         } label: {
-            CachedAsyncImage(
-                url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
-                targetSize: CGSize(width: 520, height: 728)
-            ) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
+            ProgressiveAsyncImage(
+                lowResURL: cardLowResImageURL,
+                highResURL: cardHighResImageURL
+            ) {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .fill(Color.primary.opacity(0.07))
                     .aspectRatio(5 / 7, contentMode: .fit)

@@ -740,8 +740,10 @@ struct DashboardView: View {
             AddManualActivityView(ledgerLineToEdit: line)
         }
         .sheet(isPresented: $showProgressTrackerSheet) {
-            DashboardProgressTrackerSheet { target in
-                progressTracker.add(target)
+            DashboardProgressTrackerSheet(
+                progressTracker: $progressTracker,
+                snapshots: progressSnapshots
+            ) {
                 Task { await refreshProgressSnapshots() }
             }
             .environment(services)
@@ -1226,7 +1228,7 @@ struct DashboardView: View {
 
     private var continueCollectingSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            dashboardSectionHeader(title: "Continue Collecting") {
+            dashboardSectionHeader(title: "Continue Collecting", actionTitle: "Edit") {
                 Haptics.lightImpact()
                 showProgressTrackerSheet = true
             }
@@ -1292,7 +1294,11 @@ struct DashboardView: View {
         return palette[index % palette.count]
     }
 
-    private func dashboardSectionHeader(title: String, action: @escaping () -> Void) -> some View {
+    private func dashboardSectionHeader(
+        title: String,
+        actionTitle: String = "View All",
+        action: @escaping () -> Void
+    ) -> some View {
         HStack(alignment: .firstTextBaseline) {
             Text(title)
                 .font(.title3.weight(.semibold))
@@ -1301,13 +1307,9 @@ struct DashboardView: View {
             Spacer(minLength: 8)
 
             Button(action: action) {
-                HStack(spacing: 2) {
-                    Text("View All")
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.bold))
-                }
-                .font(.subheadline.weight(.medium))
-                .bindrAccentForeground(services.theme.accentColor)
+                Text(actionTitle)
+                    .font(.subheadline.weight(.medium))
+                    .bindrAccentForeground(services.theme.accentColor)
             }
             .buttonStyle(.plain)
         }

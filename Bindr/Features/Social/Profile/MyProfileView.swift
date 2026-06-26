@@ -25,8 +25,6 @@ struct MyProfileView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentCard) private var presentCard
 
-    @Namespace private var profileTabNamespace
-
     @State private var cardCount: Int = 0
     @State private var binderCount: Int = 0
     @State private var deckCount: Int = 0
@@ -343,40 +341,11 @@ struct MyProfileView: View {
     }
 
     private var profileTabPicker: some View {
-        HStack(spacing: 0) {
-            ForEach(availableProfileTabs, id: \.self) { tab in
-                let isSelected = activeProfileTab == tab
-                Button {
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
-                        profileTabBinding.wrappedValue = tab
-                    }
-                    Haptics.lightImpact()
-                } label: {
-                    Text(profileTabTitle(tab))
-                        .font(.system(size: 13, weight: isSelected ? .bold : .semibold))
-                        .foregroundStyle(isSelected ? Color.white : Color.primary.opacity(0.6))
-                        .frame(maxWidth: .infinity)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.75)
-                        .padding(.vertical, 9)
-                        .background {
-                            if isSelected {
-                                Capsule()
-                                    .fill(themeColor)
-                                    .matchedGeometryEffect(id: "profileTabHighlight", in: profileTabNamespace)
-                                    .shadow(color: themeColor.opacity(0.25), radius: 6, x: 0, y: 3)
-                            }
-                        }
-                        .contentShape(Capsule())
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .padding(BindrSpacing.xs)
-        .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
-        .overlay {
-            Capsule().stroke(Color.primary.opacity(0.06), lineWidth: 1)
-        }
+        SlidingSegmentedPicker(
+            selection: profileTabBinding,
+            items: availableProfileTabs,
+            title: profileTabTitle
+        )
         .padding(.horizontal, BindrSpacing.lg)
     }
 

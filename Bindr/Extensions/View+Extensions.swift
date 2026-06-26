@@ -407,6 +407,36 @@ struct GlassFilterChipModifier: ViewModifier {
     }
 }
 
+/// Matches ``SlidingSegmentedPicker`` `.pillLabel` tabs — soft capsule on the selected item only.
+struct BrowsePillTabChipModifier: ViewModifier {
+    let isSelected: Bool
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        content
+            .foregroundStyle(isSelected ? Color.primary : Color(uiColor: .secondaryLabel))
+            .padding(.horizontal, 14)
+            .padding(.vertical, 7)
+            .background {
+                if isSelected {
+                    Capsule(style: .continuous)
+                        .fill(
+                            colorScheme == .dark
+                                ? Color.white.opacity(0.14)
+                                : Color.black.opacity(0.07)
+                        )
+                }
+            }
+    }
+}
+
+extension View {
+    func browsePillTabChipStyle(isSelected: Bool) -> some View {
+        modifier(BrowsePillTabChipModifier(isSelected: isSelected))
+    }
+}
+
 struct CardGridPriceBadgeStyle: ViewModifier {
     func body(content: Content) -> some View {
         content

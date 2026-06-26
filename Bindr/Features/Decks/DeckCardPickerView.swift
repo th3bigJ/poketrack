@@ -308,6 +308,9 @@ struct DeckCardPickerView: View {
     @State private var setNameByCode: [String: String] = [:]
     @State private var releaseDateBySetCode: [String: String] = [:]
     @State private var cachedAllCardsEntries: [DeckPickerEntry] = []
+    @State private var isSearchExpanded = false
+
+    @FocusState private var isSearchFieldFocused: Bool
 
     @Environment(\.colorScheme) private var colorScheme
 
@@ -561,21 +564,7 @@ struct DeckCardPickerView: View {
             .toolbar(.hidden, for: .navigationBar)
             .toolbarBackground(.hidden, for: .navigationBar)
             .safeAreaInset(edge: .top) {
-                BindrPageHeader(
-                    title: "Add Cards",
-                    leading: {
-                        ChromeGlassCircleButton(accessibilityLabel: "Cancel") {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "xmark")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(.primary)
-                        }
-                    },
-                    trailing: {
-                        deckPickerToolbarTrailingControls
-                    }
-                )
+                deckPickerChromeBar
             }
             .navigationDestination(for: DeckPickerBrowseRoute.self) { route in
                 switch route {
@@ -700,6 +689,57 @@ struct DeckCardPickerView: View {
         }
         .tint(.primary)
         .presentationDetents([.large])
+        .presentationDragIndicator(.visible)
+    }
+
+    private var deckPickerChromeBar: some View {
+        UniversalSearchBar(
+            text: $query,
+            isFocused: $isSearchFieldFocused,
+            title: isSearchExpanded ? "" : "Add Cards",
+            isSearchOpen: false,
+            isFilterEnabled: true,
+            isFilterActive: filters.isVisiblyCustomized,
+            filterMenuContent: AnyView(deckPickerFilterMenuContent),
+            chromeUsesInteractiveGlass: false,
+            collapsedLeadingButton: ("magnifyingglass", "Search", {
+                activateDeckPickerSearch()
+            }),
+            isLocalSearchMode: true,
+            isLocalSearchExpanded: isSearchExpanded,
+            localSearchPlaceholder: searchPlaceholder,
+            trailingControlsSpacing: 5,
+            showsCameraControl: false,
+            onActivateSearch: {},
+            onActivateLocalSearch: {
+                activateDeckPickerSearch()
+            },
+            onDismissLocalSearch: {
+                dismissDeckPickerSearch(clearQuery: true)
+            },
+            onBack: {},
+            onCamera: {},
+            onFilter: {
+                isSearchFieldFocused = false
+            }
+        )
+    }
+
+    private func activateDeckPickerSearch() {
+        isSearchExpanded = true
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(140))
+            guard isSearchExpanded else { return }
+            isSearchFieldFocused = true
+        }
+    }
+
+    private func dismissDeckPickerSearch(clearQuery: Bool) {
+        isSearchExpanded = false
+        isSearchFieldFocused = false
+        guard clearQuery else { return }
+        query = ""
+        debouncedQuery = ""
     }
 
     private var deckPickerFilterMenuConfig: FilterMenuConfig {
@@ -711,55 +751,21 @@ struct DeckCardPickerView: View {
             showRarePlusOnly: true,
             showHideOwned: source == .allCards,
             showShowDuplicates: false,
-            showGridOptions: false,
+            showGridOptions: true,
             defaultSortBy: .newestSet
         )
     }
 
-    @ViewBuilder
-    private var deckPickerToolbarTrailingControls: some View {
-        HStack(spacing: 8) {
-            Menu {
-                BrowseGridOptionsMenuContent(gridOptions: $gridOptions)
-            } label: {
-                Image(systemName: "slider.horizontal.3")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(.primary)
-                    .modifier(ChromeGlassCircleGlyphModifier())
-            }
-            .buttonStyle(.plain)
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-            .menuIndicator(.hidden)
-            .frame(width: 48, height: 48)
-            .contentShape(Rectangle())
-            .accessibilityLabel("Grid options")
-
-            Menu {
-                BrowseGridFiltersMenuContent(
-                    brand: deck.tcgBrand,
-                    filters: $filters,
-                    energyOptions: energyOptions,
-                    rarityOptions: rarityOptions,
-                    trainerTypeOptions: trainerTypeOptions,
-                    config: deckPickerFilterMenuConfig
-                )
-            } label: {
-                Image(systemName: filters.isVisiblyCustomized
-                      ? "line.3.horizontal.decrease.circle.fill"
-                      : "line.3.horizontal.decrease.circle")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(.primary)
-                    .modifier(ChromeGlassCircleGlyphModifier())
-            }
-            .buttonStyle(.plain)
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-            .menuIndicator(.hidden)
-            .frame(width: 48, height: 48)
-            .contentShape(Rectangle())
-            .accessibilityLabel("Filters")
-        }
+    private var deckPickerFilterMenuContent: some View {
+        BrowseGridFiltersMenuContent(
+            brand: deck.tcgBrand,
+            filters: $filters,
+            energyOptions: energyOptions,
+            rarityOptions: rarityOptions,
+            trainerTypeOptions: trainerTypeOptions,
+            gridOptions: $gridOptions,
+            config: deckPickerFilterMenuConfig
+        )
     }
 
     // MARK: - Header
@@ -771,10 +777,6 @@ struct DeckCardPickerView: View {
                 items: DeckPickerSource.allCases,
                 title: { $0.title }
             )
-
-            browseShortcutRow
-
-            BrowseInlineSearchField(title: searchPlaceholder, text: $query)
 
             HStack {
                 Text("\(deck.deckFormat.displayName) · Ineligible cards filtered out")
@@ -794,31 +796,6 @@ struct DeckCardPickerView: View {
         .padding(.horizontal, 16)
         .padding(.top, 12)
         .padding(.bottom, 8)
-    }
-
-    @ViewBuilder
-    private var browseShortcutRow: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 10) {
-                NavigationLink(value: DeckPickerBrowseRoute.sets) {
-                    shortcutChip(title: "Sets")
-                }
-                NavigationLink(value: DeckPickerBrowseRoute.pokemon) {
-                    shortcutChip(title: "Pokémon")
-                }
-            }
-            .padding(.horizontal, 16)
-        }
-        .padding(.horizontal, -16)
-    }
-
-    private func shortcutChip(title: String) -> some View {
-        Text(title)
-            .font(.caption.weight(.semibold))
-            .foregroundStyle(.primary)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .background(Capsule().fill(Color(uiColor: .secondarySystemFill)))
     }
 
     private var searchPlaceholder: String {

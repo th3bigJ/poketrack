@@ -716,7 +716,7 @@ private struct SocialAlertsPreviewView: View {
                 items: SocialAlertsSheet.AlertTab.allCases,
                 title: { $0.rawValue }
             )
-            .padding(.horizontal, 40)
+            .padding(.horizontal, 16)
             .padding(.bottom, 12)
 
             if isLoading {

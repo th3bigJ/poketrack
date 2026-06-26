@@ -58,9 +58,11 @@ struct CollectView: View {
     @Binding var collectFilterRarityOptions: [String]
     @Binding var collectFilterTrainerTypeOptions: [String]
     @Binding var gridOptions: BrowseGridOptions
+    @Binding var collectionQuery: String
+    @Binding var wishlistQuery: String
+    @Binding var scrollToTopRequest: Int
+    @Binding var filterResultCount: Int
 
-    @State private var collectionQuery = ""
-    @State private var wishlistQuery = ""
     @State private var cachedWishlistedSealedCollectionCardIDs: Set<String> = []
     private static let collectionInitialBatchSize = 36
     private static let collectionPageSize = 18
@@ -288,24 +290,48 @@ struct CollectView: View {
     }
 
     private var scrollContent: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                Color.clear.frame(height: rootFloatingChromeInset)
+        ScrollViewReader { proxy in
+            ScrollView {
+                VStack(spacing: 0) {
+                    Color.clear
+                        .frame(height: rootFloatingChromeInset)
+                        .id(collectTopAnchorID())
 
-                VStack(spacing: 10) {
-                    if showsSegmentedControl {
-                        segmentedControl.padding(.horizontal, 16)
-                    }
-                    BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding) {
+                    VStack(spacing: 10) {
+                        if showsSegmentedControl {
+                            segmentedControl.padding(.horizontal, 16)
+                        }
                         contentTypeChips
+                            .padding(.horizontal, 16)
                     }
-                    .padding(.horizontal, 16)
-                }
-                .padding(.bottom, 10)
+                    .padding(.bottom, 16)
 
-                contentView
+                    contentView
+                }
+            }
+            .onChange(of: scrollToTopRequest) { _, _ in
+                scrollCollectToTop(using: proxy)
             }
         }
+    }
+
+    @MainActor
+    private func scrollCollectToTop(using proxy: ScrollViewProxy) {
+        Task { @MainActor in
+            for attempt in 0..<4 {
+                if attempt > 0 {
+                    try? await Task.sleep(for: .milliseconds(40))
+                }
+                await Task.yield()
+                withAnimation(.easeOut(duration: 0.25)) {
+                    proxy.scrollTo(collectTopAnchorID(), anchor: .top)
+                }
+            }
+        }
+    }
+
+    private func collectTopAnchorID() -> String {
+        "collect-top-anchor"
     }
 
     private func refreshSetNameCache() async {
@@ -448,60 +474,35 @@ struct CollectView: View {
         )
     }
 
-    private var searchPlaceholder: String {
-        let itemLabel = selectedContentTypeTab == .cards ? "cards" : "product"
-        switch selectedSegment {
-        case .collection:
-            return "Search \(formattedActiveFilteredCount) \(itemLabel) in collection"
-        case .wishlist:
-            return "Search \(formattedActiveFilteredCount) \(itemLabel) in wishlist"
-        }
-    }
-
-    private var activeQueryBinding: Binding<String> {
-        switch selectedSegment {
-        case .collection: return $collectionQuery
-        case .wishlist:   return $wishlistQuery
-        }
+    private func syncFilterResultCount() {
+        filterResultCount = activeFilteredCount
     }
 
     private var contentTypeChips: some View {
-        HStack(spacing: 6) {
+        HStack(spacing: 12) {
             contentTypeChip(for: .cards, icon: "square.stack.3d.up")
             contentTypeChip(for: .products, icon: "shippingbox")
-            if !activeQueryBinding.wrappedValue.isEmpty {
-                Button {
-                    activeQueryBinding.wrappedValue = ""
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundStyle(.tertiary)
-                }
-                .buttonStyle(.plain)
-                .padding(.leading, 2)
-            }
         }
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     private func contentTypeChip(for tab: CollectContentTypeTab, icon: String) -> some View {
         let isSelected = selectedContentTypeTab == tab
         return Button {
             guard selectedContentTypeTab != tab else { return }
-            withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
+            withAnimation(.spring(response: 0.32, dampingFraction: 0.86)) {
                 selectedContentTypeTab = tab
             }
             Haptics.lightImpact()
         } label: {
-            HStack(spacing: 4) {
+            HStack(spacing: 6) {
                 Image(systemName: icon)
-                    .font(.system(size: 11, weight: .semibold))
+                    .font(.system(size: 14, weight: .medium))
                 Text(tab.title)
-                    .font(.caption.weight(.semibold))
+                    .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
                     .lineLimit(1)
             }
-            .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
-            .padding(.horizontal, 8)
-            .padding(.vertical, 5)
-            .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
+            .browsePillTabChipStyle(isSelected: isSelected)
         }
         .buttonStyle(.plain)
         .accessibilityLabel(tab.title)
@@ -520,16 +521,6 @@ struct CollectView: View {
             }
             return wishlistFilteredItemsForSelectedTypeCache.count
         }
-    }
-
-    private static let activeFilteredCountFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        return formatter
-    }()
-
-    private var formattedActiveFilteredCount: String {
-        Self.activeFilteredCountFormatter.string(from: NSNumber(value: activeFilteredCount)) ?? "\(activeFilteredCount)"
     }
 
     // MARK: - Content View
@@ -1024,6 +1015,7 @@ struct CollectView: View {
 
         if filteredIDs == previousIDs && !collectionDisplayedItems.isEmpty {
             collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+            syncFilterResultCount()
             return
         }
 
@@ -1036,11 +1028,13 @@ struct CollectView: View {
         collectionDisplayedItems = Array(filtered.prefix(initialEnd))
         collectionNextIndex = initialEnd
         collectionDisplayedCards = collectionDisplayedItems.compactMap { cardsByCardID[$0.cardID] }
+        syncFilterResultCount()
     }
 
     private func refreshWishlistFeed() {
         wishlistFilteredItemsForSelectedTypeCache = filteredWishlistItemsForSelectedType
         wishlistOrderedCardsCache = wishlistFilteredItemsForSelectedTypeCache.compactMap { wishlistCardsByID[$0.cardID] }
+        syncFilterResultCount()
     }
 
     @MainActor

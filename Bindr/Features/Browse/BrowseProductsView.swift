@@ -321,58 +321,56 @@ struct BrowseProductsTabContent: View {
     private var productSetCarousel: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 12) {
-                // "All Sets" button
-                Button {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                productSetFilterChip(isSelected: selectedSet == nil) {
+                    withAnimation(.spring(response: 0.32, dampingFraction: 0.86)) {
                         selectedSet = nil
                     }
                     Haptics.lightImpact()
                 } label: {
                     Text("All Sets")
-                        .font(.system(size: 13, weight: .bold, design: .rounded))
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .foregroundStyle(selectedSet == nil ? .white : .primary.opacity(0.85))
-                        .glassFilterChipStyle(isSelected: selectedSet == nil, accentColor: services.theme.accentColor)
+                        .font(.system(size: 15, weight: selectedSet == nil ? .semibold : .regular))
                 }
-                .buttonStyle(.plain)
 
-                // ``carouselSets`` is precomputed in `recomputeCarouselSets`
-                // and only refreshed when the underlying data changes — it
-                // used to be calculated inline here, doing O(products × sets)
-                // string normalization on every render of the tab, which was
-                // the dominant source of lag when switching to the Products
-                // tab on devices with a large product feed.
                 ForEach(carouselSets) { set in
                     let isSelected = selectedSet?.id == set.id
 
-                    Button {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
+                    productSetFilterChip(isSelected: isSelected) {
+                        withAnimation(.spring(response: 0.32, dampingFraction: 0.86)) {
                             selectedSet = isSelected ? nil : set
                         }
                         Haptics.lightImpact()
                     } label: {
-                        HStack(spacing: 6) {
-                            SetLogoAsyncImage(logoSrc: set.logoSrc, height: 18, brand: services.brandSettings.selectedCatalogBrand)
-                                .grayscale(isSelected ? 0 : 1)
-                                .opacity(isSelected ? 1 : 0.5)
+                        HStack(spacing: 8) {
+                            SetLogoAsyncImage(
+                                logoSrc: set.logoSrc,
+                                height: 30,
+                                brand: services.brandSettings.selectedCatalogBrand
+                            )
+                            .frame(width: 88)
 
                             if isSelected {
                                 Text(set.name)
-                                    .font(.system(size: 13, weight: .bold, design: .rounded))
-                                    .foregroundStyle(.white)
-                                    .fixedSize()
+                                    .font(.system(size: 15, weight: .semibold))
+                                    .lineLimit(1)
                             }
                         }
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-                        .glassFilterChipStyle(isSelected: isSelected, accentColor: services.theme.accentColor)
                     }
-                    .buttonStyle(.plain)
                 }
             }
             .padding(.horizontal, 16)
         }
+    }
+
+    private func productSetFilterChip<Label: View>(
+        isSelected: Bool,
+        action: @escaping () -> Void,
+        @ViewBuilder label: () -> Label
+    ) -> some View {
+        Button(action: action) {
+            label()
+                .browsePillTabChipStyle(isSelected: isSelected)
+        }
+        .buttonStyle(.plain)
     }
 
     private func recomputeDisplayedProducts() {
@@ -670,21 +668,21 @@ private struct SealedThumbnailView: View {
     var isWishlisted: Bool
     var ownedCountBadge: Int? = nil
 
-    private let contentAspectRatio: CGFloat = 1
-
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                .fill(Color.white)
+
             CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 280, height: 280)) { image in
                 image
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
+                    .padding(6)
             } placeholder: {
                 Color.secondary.opacity(0.12)
-                    .overlay { ProgressView() }
+                    .overlay { ProgressView().scaleEffect(0.8) }
             }
-            .aspectRatio(contentAspectRatio, contentMode: .fill)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .clipped()
 
             if let ownedCountBadge, ownedCountBadge >= 1 {
                 ZStack {

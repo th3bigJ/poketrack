@@ -9,10 +9,16 @@ struct CardDetailFullscreenImageView: View {
     @State private var lastScale: CGFloat = 1
     @State private var offset: CGSize = .zero
     @State private var lastOffset: CGSize = .zero
+    @State private var dismissDragOffset: CGSize = .zero
+    @State private var backdropOpacity: Double = 1
+    @State private var imageOpacity: Double = 1
+
+    private var isZoomed: Bool { scale > 1.05 }
 
     var body: some View {
         ZStack {
             Color.black
+                .opacity(backdropOpacity)
                 .ignoresSafeArea()
 
             CachedAsyncImage(
@@ -27,11 +33,11 @@ struct CardDetailFullscreenImageView: View {
                     .tint(.white)
             }
             .scaleEffect(scale)
-            .offset(offset)
-            .opacity(isPresented ? 1 : 0)
+            .offset(combinedOffset)
+            .opacity(isPresented ? imageOpacity : 0)
             .scaleEffect(isPresented ? 1 : 0.985)
             .offset(y: isPresented ? 0 : 8)
-            .gesture(zoomGesture.simultaneously(with: panGesture))
+            .gesture(zoomGesture.simultaneously(with: dragGesture))
             .onTapGesture(count: 2) {
                 withAnimation(.spring(response: 0.34, dampingFraction: 0.84)) {
                     if scale > 1 {
@@ -48,7 +54,7 @@ struct CardDetailFullscreenImageView: View {
                     Spacer()
                     ChromeGlassCircleButton(
                         accessibilityLabel: "Close full screen card",
-                        action: dismissAnimated
+                        action: { dismissAnimated() }
                     ) {
                         Image(systemName: "xmark")
                             .font(.system(size: 17, weight: .semibold))
@@ -61,6 +67,7 @@ struct CardDetailFullscreenImageView: View {
 
                 Spacer()
             }
+            .opacity(imageOpacity)
         }
         .onAppear {
             withAnimation(.spring(response: 0.42, dampingFraction: 0.88)) {
@@ -72,12 +79,20 @@ struct CardDetailFullscreenImageView: View {
         }
     }
 
+    private var combinedOffset: CGSize {
+        if isZoomed {
+            return offset
+        }
+        return dismissDragOffset
+    }
+
     private var zoomGesture: some Gesture {
         MagnifyGesture()
             .onChanged { value in
                 scale = min(max(lastScale * value.magnification, 1), 5)
                 if scale <= 1 {
                     offset = .zero
+                    lastOffset = .zero
                 }
             }
             .onEnded { _ in
@@ -91,22 +106,43 @@ struct CardDetailFullscreenImageView: View {
             }
     }
 
-    private var panGesture: some Gesture {
+    private var dragGesture: some Gesture {
         DragGesture(minimumDistance: 2)
             .onChanged { value in
-                guard scale > 1 else { return }
-                offset = CGSize(
-                    width: lastOffset.width + value.translation.width,
-                    height: lastOffset.height + value.translation.height
-                )
+                if isZoomed {
+                    offset = CGSize(
+                        width: lastOffset.width + value.translation.width,
+                        height: lastOffset.height + value.translation.height
+                    )
+                } else {
+                    dismissDragOffset = value.translation
+                    let progress = min(1, dragDistance(value.translation) / 280)
+                    backdropOpacity = 1 - progress * 0.45
+                    imageOpacity = 1 - progress * 0.35
+                }
             }
-            .onEnded { _ in
-                guard scale > 1 else {
-                    resetTransform()
+            .onEnded { value in
+                if isZoomed {
+                    lastOffset = offset
                     return
                 }
-                lastOffset = offset
+
+                let distance = dragDistance(value.translation)
+                let velocity = dragDistance(value.velocity)
+                if distance > 100 || velocity > 600 {
+                    dismissAnimated(from: value.translation)
+                } else {
+                    withAnimation(.spring(response: 0.38, dampingFraction: 0.82)) {
+                        dismissDragOffset = .zero
+                        backdropOpacity = 1
+                        imageOpacity = 1
+                    }
+                }
             }
+    }
+
+    private func dragDistance(_ size: CGSize) -> CGFloat {
+        hypot(size.width, size.height)
     }
 
     private func resetTransform() {
@@ -114,14 +150,34 @@ struct CardDetailFullscreenImageView: View {
         lastScale = 1
         offset = .zero
         lastOffset = .zero
+        dismissDragOffset = .zero
+        backdropOpacity = 1
+        imageOpacity = 1
     }
 
-    private func dismissAnimated() {
-        withAnimation(.easeOut(duration: 0.18)) {
-            isPresented = false
+    private func dismissAnimated(from translation: CGSize = .zero) {
+        let distance = dragDistance(translation)
+        if distance > 8 {
+            let angle = atan2(translation.height, translation.width)
+            withAnimation(.easeOut(duration: 0.28)) {
+                dismissDragOffset = CGSize(
+                    width: cos(angle) * 420,
+                    height: sin(angle) * 420
+                )
+                backdropOpacity = 0
+                imageOpacity = 0
+                isPresented = false
+            }
+        } else {
+            withAnimation(.easeOut(duration: 0.18)) {
+                backdropOpacity = 0
+                imageOpacity = 0
+                isPresented = false
+            }
         }
+
         Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(180))
+            try? await Task.sleep(for: .milliseconds(280))
             onDismiss()
         }
     }

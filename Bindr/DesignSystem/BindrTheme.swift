@@ -125,6 +125,11 @@ extension View {
             .tint(accent)
     }
 
+    /// Settings sub-pages use neutral label chrome; status rows can still set their own color (e.g. green Premium active).
+    func settingsListTint() -> some View {
+        tint(.primary)
+    }
+
     /// Shared page backdrop used across top-level screens. Keeps native
     /// `systemBackground` as base, then adds a very subtle accent wash.
     func bindrPageBackground(typeAccent: Color? = nil, ignoresSafeArea: Bool = true) -> some View {

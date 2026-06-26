@@ -1,13 +1,14 @@
 import SwiftUI
 
 struct FriendsListView: View {
-    private enum FriendsTab: String, CaseIterable {
+    private enum FriendsTab: String, CaseIterable, Identifiable {
         case mine = "My Friends"
         case find = "Find Trainers"
+
+        var id: String { rawValue }
     }
 
     @Environment(AppServices.self) private var services
-    @Environment(\.bindrAccent) private var bindrAccent
     @Environment(\.dismiss) private var dismiss
 
     let onOpenSearch: () -> Void
@@ -201,34 +202,16 @@ struct FriendsListView: View {
     }
 
     private var tabPicker: some View {
-        HStack(spacing: 8) {
-            ForEach(FriendsTab.allCases, id: \.self) { tab in
-                Button {
-                    selectedTab = tab
-                    if tab == .find {
-                        onOpenSearch()
-                    }
-                } label: {
-                    Text(tab.rawValue)
-                        .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(selectedTab == tab ? Color.white : Color.secondary)
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 6)
-                        .background {
-                            Capsule()
-                                .bindrAccentFill(
-                                    selectedTab == tab ? bindrAccent : Color(uiColor: .secondarySystemBackground),
-                                    usesLogoGradient: selectedTab == tab
-                                )
-                        }
-                        .overlay {
-                            Capsule()
-                                .stroke(selectedTab == tab ? .clear : Color.primary.opacity(0.09), lineWidth: 1)
-                        }
-                }
-                .buttonStyle(.plain)
+        SlidingSegmentedPicker(
+            selection: $selectedTab,
+            items: FriendsTab.allCases,
+            title: { $0.rawValue }
+        )
+        .frame(maxWidth: .infinity, alignment: .center)
+        .onChange(of: selectedTab) { _, newTab in
+            if newTab == .find {
+                onOpenSearch()
             }
-            Spacer()
         }
     }
 
