@@ -131,16 +131,12 @@ struct FeedView: View {
             VStack(spacing: 0) {
                 tabPickerHeader
 
-                VStack(spacing: 0) {
-                    ForEach(0..<4, id: \.self) { index in
+                VStack(spacing: 12) {
+                    ForEach(0..<4, id: \.self) { _ in
                         ShimmerCard()
-                        if index < 3 {
-                            Rectangle()
-                                .fill(Color.primary.opacity(0.06))
-                                .frame(height: 1)
-                        }
                     }
                 }
+                .padding(.horizontal, 16)
                 .padding(.top, 8)
             }
         }
@@ -177,7 +173,7 @@ struct FeedView: View {
             VStack(spacing: 0) {
                 tabPickerHeader
 
-                LazyVStack(spacing: 0) {
+                LazyVStack(spacing: 12) {
                     ForEach(feedSections, id: \.title) { section in
                         Section {
                             ForEach(section.rows) { group in
@@ -195,7 +191,6 @@ struct FeedView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(.top, 12)
                                 .padding(.bottom, 8)
-                                .padding(.horizontal, 16)
                         }
                     }
 
@@ -211,6 +206,7 @@ struct FeedView: View {
                             .padding()
                     }
                 }
+                .padding(.horizontal, 16)
                 .padding(.top, 0)
                 .padding(.bottom, 100)
             }
@@ -380,6 +376,7 @@ struct ShimmerCard: View {
             .padding(.top, 8)
             .padding(.bottom, 14)
         }
+        .glassInsetStyle(cornerRadius: 16)
         .onAppear {
             isVisible = true
             withAnimation(.linear(duration: 1.4).repeatForever(autoreverses: false)) {

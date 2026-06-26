@@ -116,7 +116,8 @@ struct BrowseAllSetsView: View {
                         SlidingSegmentedPicker(
                             selection: $selectedTab,
                             items: BrowseAllSetsTab.allCases,
-                            title: { $0.rawValue }
+                            title: { $0.rawValue },
+                            style: .pillLabel
                         )
                         .padding(.horizontal)
                         .padding(.top)

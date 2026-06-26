@@ -1,18 +1,34 @@
 import SwiftData
 import SwiftUI
 
-/// A premium, sliding-highlight segmented picker that respects the user's theme accent color.
-/// Kept with Browse because Browse owns the primary tab treatment reused by collection/social.
+/// A sliding segmented picker. `.accentTrack` is the filled glass track used across
+/// collection/social; `.pillLabel` is the browse-style row of text tabs with a pill on
+/// the active item only.
+enum SlidingSegmentedPickerStyle {
+    case accentTrack
+    case pillLabel
+}
+
 struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
     @Binding var selection: SelectionValue
     let items: [SelectionValue]
     let title: (SelectionValue) -> String
+    var style: SlidingSegmentedPickerStyle = .accentTrack
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
     @Namespace private var namespace
 
     var body: some View {
+        switch style {
+        case .accentTrack:
+            accentTrackPicker
+        case .pillLabel:
+            pillLabelPicker
+        }
+    }
+
+    private var accentTrackPicker: some View {
         HStack(spacing: 0) {
             ForEach(items) { item in
                 let isSelected = selection == item
@@ -52,8 +68,56 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
         .glassSegmentedTrackStyle()
     }
 
+    private var pillLabelPicker: some View {
+        HStack(spacing: 20) {
+            ForEach(items) { item in
+                let isSelected = selection == item
+
+                Button {
+                    if selection != item {
+                        withAnimation(.spring(response: 0.32, dampingFraction: 0.86)) {
+                            selection = item
+                        }
+                        Haptics.lightImpact()
+                    }
+                } label: {
+                    Text(title(item))
+                        .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
+                        .foregroundStyle(isSelected ? pillLabelSelectedForeground : pillLabelInactiveForeground)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 7)
+                        .background {
+                            if isSelected {
+                                Capsule(style: .continuous)
+                                    .fill(pillLabelSelectedBackground)
+                                    .matchedGeometryEffect(id: "pillHighlight", in: namespace)
+                            }
+                        }
+                }
+                .buttonStyle(.plain)
+            }
+
+            Spacer(minLength: 0)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
     private var selectedForegroundColor: Color {
         services.theme.backgroundStyle == .classic && colorScheme == .dark ? .black : .white
+    }
+
+    private var pillLabelSelectedForeground: Color {
+        .primary
+    }
+
+    private var pillLabelInactiveForeground: Color {
+        Color(uiColor: .secondaryLabel)
+    }
+
+    private var pillLabelSelectedBackground: Color {
+        colorScheme == .dark
+            ? Color.white.opacity(0.14)
+            : Color.black.opacity(0.07)
     }
 }
 
@@ -1188,7 +1252,8 @@ struct BrowseView: View {
             SlidingSegmentedPicker(
                 selection: $selectedTab,
                 items: BrowseHomeTab.allCases,
-                title: { $0.title }
+                title: { $0.title },
+                style: .pillLabel
             )
             .padding(.horizontal, 16)
             .padding(.bottom, 10)

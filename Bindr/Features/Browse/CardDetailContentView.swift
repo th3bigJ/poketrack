@@ -213,7 +213,7 @@ struct CardDetailContentView: View {
         }
     }
 
-    private var topChromeHeight: CGFloat { 56 }
+    private var topChromeHeight: CGFloat { 65 }
     private var swipeHintHeight: CGFloat { 64 }
 
     /// Slim grabber at the top of the header — indicates the sheet can be dismissed.
@@ -247,38 +247,30 @@ struct CardDetailContentView: View {
         viewportHeight: CGFloat,
         contentWidth: CGFloat
     ) -> (cardWidth: CGFloat, chartHeight: CGFloat) {
-        guard viewportHeight > 0 else { return (min(contentWidth * 0.88, 240), 120) }
+        guard viewportHeight > 0 else { return (min(contentWidth * 0.92, 260), 96) }
 
-        let priceHeadlineHeight: CGFloat = 96
-        let chartChromeHeight: CGFloat = 44
+        let landingInsets: CGFloat = 10
+        let vStackSpacing: CGFloat = 6
+        let priceHeadlineHeight: CGFloat = 78
+        let chartChromeHeight: CGFloat = 36
+        let panelVerticalPadding: CGFloat = 16
+        let panelSectionSpacing: CGFloat = 10
         let chartBottomInset: CGFloat = 10
-        let sectionSpacing: CGFloat = 6
-        let priceBlockFixed = priceHeadlineHeight + chartChromeHeight + chartBottomInset + sectionSpacing
+        let minChartHeight: CGFloat = 88
 
-        var chartHeight: CGFloat = 128
-        var cardWidth: CGFloat = min(contentWidth * 0.96, 388)
+        let pricingFixed = panelVerticalPadding + priceHeadlineHeight + panelSectionSpacing + chartChromeHeight + chartBottomInset
+        let usableHeight = viewportHeight - landingInsets - vStackSpacing
 
-        for _ in 0..<2 {
-            let heroAvailable = viewportHeight - priceBlockFixed - chartHeight
-            cardWidth = min(contentWidth * 0.96, max(120, heroAvailable) * (5.0 / 7.0), 388)
-            let cardHeight = cardWidth * 7.0 / 5.0
-            let remaining = viewportHeight - priceBlockFixed - cardHeight - sectionSpacing
-            chartHeight = max(96, min(172, remaining))
-        }
+        let maxCardHeight = usableHeight - pricingFixed - minChartHeight
+        let cardWidth = min(contentWidth, max(120, maxCardHeight) * (5.0 / 7.0))
+        let cardHeight = cardWidth * 7.0 / 5.0
+        let chartHeight = max(minChartHeight, usableHeight - cardHeight - pricingFixed)
 
         return (cardWidth, chartHeight)
     }
 
     private func navigationChrome(owned: Bool) -> some View {
         HStack(alignment: .center, spacing: 12) {
-            glassCircleActionButton(
-                accessibilityLabel: "Back",
-                systemImage: "chevron.left",
-                diameter: chromeActionButtonDiameter,
-                iconSize: chromeActionButtonIconSize,
-                action: actions.onDismiss
-            )
-
             headerTitleBlock
                 .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -361,8 +353,6 @@ struct CardDetailContentView: View {
                     resolvedDailyChange = change
                 }
             )
-
-            Spacer(minLength: 0)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding(.horizontal, 16)
@@ -649,7 +639,7 @@ struct CardDetailContentView: View {
     private func headerActionButtons(owned: Bool) -> some View {
         let diameter = chromeActionButtonDiameter
         let iconSize = chromeActionButtonIconSize
-        let spacing: CGFloat = 7
+        let spacing: CGFloat = 4
 
         headerActionButtonContent(
             owned: owned,

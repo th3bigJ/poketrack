@@ -159,9 +159,7 @@ struct FeedItemView: View {
                 .padding(.bottom, 14)
             }
         }
-        .overlay(alignment: .bottom) {
-            feedDivider
-        }
+        .glassInsetStyle(cornerRadius: 16)
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
             restoreTabBarChrome?()
@@ -240,12 +238,6 @@ struct FeedItemView: View {
 
     private var metaTextColor: Color {
         colorScheme == .dark ? BindrPalette.feedMetaText : Color.secondary
-    }
-
-    private var feedDivider: some View {
-        Rectangle()
-            .fill(colorScheme == .dark ? BindrPalette.feedRowDivider : BindrPalette.feedCardBorder)
-            .frame(height: 1)
     }
 
     private var hashtagRow: some View {
