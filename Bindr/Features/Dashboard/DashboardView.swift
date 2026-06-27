@@ -9,6 +9,7 @@ struct DashboardView: View {
     var onOpenSealedProducts: (() -> Void)? = nil
     var onOpenWishlist: (() -> Void)? = nil
     var onOpenBrowse: (() -> Void)? = nil
+    var onOpenProgressTarget: ((DashboardProgressTarget) -> Void)? = nil
     var isActive: Bool = true
     /// Opens Social → Trades. Pass a trade ID to jump straight to that offer; pass nil for the trades list.
     var onOpenActionableTrades: ((UUID?) -> Void)? = nil
@@ -783,7 +784,7 @@ struct DashboardView: View {
             Text("Trainer.")
                 .bindrAccentForeground(services.theme.accentColor)
         }
-        .font(.title2.weight(.semibold))
+        .font(.title.weight(.semibold))
         .foregroundStyle(dashboardPrimaryText)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -1267,13 +1268,19 @@ struct DashboardView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
                         ForEach(Array(progressSnapshots.enumerated()), id: \.element.id) { index, snapshot in
-                            DashboardProgressRingTile(
-                                snapshot: snapshot,
-                                accentColor: progressAccentColor(at: index)
-                            ) {
-                                progressTracker.remove(id: snapshot.targetID)
-                                progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+                            Button {
+                                Haptics.lightImpact()
+                                openProgressSnapshot(snapshot)
+                            } label: {
+                                DashboardProgressRingTile(
+                                    snapshot: snapshot,
+                                    accentColor: progressAccentColor(at: index)
+                                ) {
+                                    progressTracker.remove(id: snapshot.targetID)
+                                    progressSnapshots.removeAll { $0.targetID == snapshot.targetID }
+                                }
                             }
+                            .buttonStyle(DashboardPressStyle())
                         }
                     }
                     .padding(.horizontal, 16)
@@ -1282,6 +1289,11 @@ struct DashboardView: View {
                 .padding(.horizontal, -16)
             }
         }
+    }
+
+    private func openProgressSnapshot(_ snapshot: DashboardProgressSnapshot) {
+        guard let target = progressTracker.targets.first(where: { $0.id == snapshot.targetID }) else { return }
+        onOpenProgressTarget?(target)
     }
 
     private func progressAccentColor(at index: Int) -> Color {
@@ -1335,7 +1347,7 @@ struct DashboardView: View {
     }
 
     private func upcomingReleaseTile(_ release: UpcomingRelease) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .center, spacing: 10) {
             ZStack {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .fill(Color.white)
@@ -1368,13 +1380,13 @@ struct DashboardView: View {
                     .stroke(dashboardBorder.opacity(0.55), lineWidth: 1)
             )
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .center, spacing: 4) {
                 Text(release.name.trimmingCharacters(in: .whitespacesAndNewlines))
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(dashboardPrimaryText)
                     .lineLimit(2)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 148, height: 40, alignment: .topLeading)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 148, height: 40, alignment: .top)
 
                 Text(release.type.trimmingCharacters(in: .whitespacesAndNewlines))
                     .font(.caption2.weight(.bold))
@@ -1392,8 +1404,9 @@ struct DashboardView: View {
                 Text(release.releaseDateLabel)
                     .font(.caption.weight(.medium))
                     .foregroundStyle(dashboardSecondaryText)
+                    .multilineTextAlignment(.center)
             }
-            .frame(width: 148, alignment: .leading)
+            .frame(width: 148, alignment: .center)
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(release.name), \(release.type), releases \(release.releaseDateAccessibilityLabel)")
@@ -1506,8 +1519,74 @@ struct DashboardView: View {
 
     private func recentActivityTile(_ line: LedgerLine) -> some View {
         let displayValue = activityDisplayValue(for: line)
+        let isCard = isCardActivityLine(line)
 
-        return VStack(alignment: .leading, spacing: 10) {
+        return VStack(alignment: .center, spacing: 10) {
+            recentActivityArtwork(for: line, isCard: isCard)
+
+            VStack(alignment: .center, spacing: 4) {
+                Text(activityCardName(for: line))
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+                    .frame(width: 148, height: 40, alignment: .top)
+
+                if let badge = activityBadgeLabel(for: line) {
+                    Text(badge)
+                        .font(.caption2.weight(.bold))
+                        .foregroundStyle(directionColor(for: line))
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 4)
+                        .background(
+                            Capsule(style: .continuous)
+                                .fill(directionColor(for: line).opacity(0.14))
+                        )
+                }
+
+                Text(displayValue ?? "—")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(displayValue != nil ? dashboardPrimaryText : dashboardSecondaryText.opacity(0.55))
+                    .frame(width: 148, height: 18, alignment: .center)
+
+                Text(relativeTimeLabel(for: line.occurredAt))
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(dashboardSecondaryText)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(width: 148, alignment: .center)
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityLabel(recentActivityAccessibilityLabel(for: line))
+    }
+
+    private func isCardActivityLine(_ line: LedgerLine) -> Bool {
+        line.productKind != ProductKind.sealedProduct.rawValue
+    }
+
+    @ViewBuilder
+    private func recentActivityArtwork(for line: LedgerLine, isCard: Bool) -> some View {
+        if isCard {
+            Group {
+                if let imageURL = activityImageURL(for: line) {
+                    CachedAsyncImage(
+                        url: imageURL,
+                        targetSize: CGSize(width: 280, height: 392)
+                    ) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                    } placeholder: {
+                        ProgressView()
+                            .scaleEffect(0.7)
+                            .tint(services.theme.accentColor)
+                    }
+                } else {
+                    activityTileFallbackArtwork(for: line, isCard: true)
+                }
+            }
+            .frame(width: 148, height: 148)
+        } else {
             ZStack {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .fill(Color.white)
@@ -1528,7 +1607,7 @@ struct DashboardView: View {
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
-                    activityTileFallbackArtwork(for: line)
+                    activityTileFallbackArtwork(for: line, isCard: false)
                 }
             }
             .frame(width: 148, height: 148)
@@ -1537,43 +1616,10 @@ struct DashboardView: View {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .stroke(dashboardBorder.opacity(0.55), lineWidth: 1)
             )
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(activityCardName(for: line))
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(dashboardPrimaryText)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 148, height: 40, alignment: .topLeading)
-
-                if let badge = activityBadgeLabel(for: line) {
-                    Text(badge)
-                        .font(.caption2.weight(.bold))
-                        .foregroundStyle(directionColor(for: line))
-                        .padding(.horizontal, 8)
-                        .padding(.vertical, 4)
-                        .background(
-                            Capsule(style: .continuous)
-                                .fill(directionColor(for: line).opacity(0.14))
-                        )
-                }
-
-                Text(displayValue ?? "—")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(displayValue != nil ? dashboardPrimaryText : dashboardSecondaryText.opacity(0.55))
-                    .frame(width: 148, height: 18, alignment: .leading)
-
-                Text(relativeTimeLabel(for: line.occurredAt))
-                    .font(.caption.weight(.medium))
-                    .foregroundStyle(dashboardSecondaryText)
-            }
-            .frame(width: 148, alignment: .leading)
         }
-        .accessibilityElement(children: .combine)
-        .accessibilityLabel(recentActivityAccessibilityLabel(for: line))
     }
 
-    private func activityTileFallbackArtwork(for line: LedgerLine) -> some View {
+    private func activityTileFallbackArtwork(for line: LedgerLine, isCard: Bool) -> some View {
         let cardName: String = {
             if let cardID = cleaned(line.cardID), let name = cardNamesByID[cardID] {
                 return name
@@ -1582,7 +1628,7 @@ struct DashboardView: View {
         }()
 
         return RoundedRectangle(cornerRadius: 14, style: .continuous)
-            .fill(dashboardCardInsetBackground)
+            .fill(isCard ? Color.clear : dashboardCardInsetBackground)
             .overlay {
                 VStack(spacing: 8) {
                     Text(cardArtworkFallback(for: cardName))
@@ -1593,6 +1639,13 @@ struct DashboardView: View {
                         .foregroundStyle(directionColor(for: line))
                 }
                 .padding(12)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background {
+                    if isCard {
+                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .fill(dashboardCardInsetBackground)
+                    }
+                }
             }
     }
 

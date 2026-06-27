@@ -97,6 +97,7 @@ struct RootView: View {
     @State private var collectSegment: CollectSegment = .collection
     @State private var collectContentTypeTab: CollectContentTypeTab = .cards
     @State private var universalQuery = ""
+    @State private var searchScopeCategory: SearchScopeCategory = .all
     @State private var browseQuery = ""
     @State private var browseInlineDetailQuery = ""
     @State private var isBrowseSearchExpanded = false
@@ -307,12 +308,12 @@ struct RootView: View {
 
     private var isBrowseLocalSearchContextActive: Bool {
         selectedTab == .browse
-            && browseNavigationPath.isEmpty
+            && browseInlineDetailRoute != nil
             && !isSearchExperiencePresented
     }
 
     private var isCollectLocalSearchContextActive: Bool {
-        selectedTab == .collect && collectionNavigationPath.isEmpty
+        false
     }
 
     private var isLocalSearchContextActive: Bool {
@@ -358,7 +359,7 @@ struct RootView: View {
 
     private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
         switch selectedTab {
-        case .dashboard, .collect:
+        case .dashboard:
             return ("camera.fill", "Open scanner", {
                 searchFieldFocused = false
                 showCardScanner = true
@@ -366,6 +367,10 @@ struct RootView: View {
         default:
             return nil
         }
+    }
+
+    private var showsChromeCameraControl: Bool {
+        selectedTab == .dashboard || isSearchExperiencePresented
     }
 
     private var chromeCollapsedLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
@@ -379,13 +384,13 @@ struct RootView: View {
             return ("magnifyingglass", "Search", {
                 presentSearchExperience()
             })
-        case .browse where isBrowseLocalSearchContextActive:
+        case .browse where browseInlineDetailRoute == nil:
             return ("magnifyingglass", "Search", {
-                activateBrowseSearch()
+                presentSearchExperience(scope: searchScopeForBrowseTab())
             })
-        case .collect where isCollectLocalSearchContextActive:
+        case .collect:
             return ("magnifyingglass", "Search", {
-                activateCollectSearch()
+                presentSearchExperience(scope: .collection)
             })
         default:
             return nil
@@ -806,7 +811,8 @@ struct RootView: View {
     }
 
     @MainActor
-    private func presentSearchExperience(focusField: Bool = true) {
+    private func presentSearchExperience(scope: SearchScopeCategory = .all, focusField: Bool = true) {
+        searchScopeCategory = scope
         isSearchContentMounted = true
         withAnimation(Self.searchPresentationAnimation) {
             isSearchExperiencePresented = true
@@ -816,6 +822,28 @@ struct RootView: View {
             try? await Task.sleep(for: Self.searchFocusDelay)
             guard isSearchExperiencePresented else { return }
             searchFieldFocused = true
+        }
+    }
+
+    private func searchScopeForBrowseTab() -> SearchScopeCategory {
+        switch browseHomeTab {
+        case .cards: return .cards
+        case .sets: return .sets
+        case .pokemon: return .pokemon
+        case .products: return .sealed
+        }
+    }
+
+    private func openSearchPost(_ contentID: UUID) {
+        searchFieldFocused = false
+        withAnimation(Self.searchPresentationAnimation) {
+            isSearchExperiencePresented = false
+        }
+        universalQuery = ""
+        if let url = URL(string: "bindr://social/feed?content_id=\(contentID.uuidString)") {
+            handleSocialDeepLink(url)
+        } else {
+            selectedTab = .social
         }
     }
 
@@ -1164,6 +1192,9 @@ struct RootView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
         .environment(\.rootFloatingChromeInset, chromeContentTopInset)
+        .environment(\.presentUniversalSearch) {
+            presentSearchExperience()
+        }
     }
 
     private var floatingChromeLayer: some View {
@@ -1245,6 +1276,7 @@ struct RootView: View {
             onOpenSealedProducts: dashboardOpenSealedProducts,
             onOpenWishlist: dashboardOpenWishlist,
             onOpenBrowse: dashboardOpenDecks,
+            onOpenProgressTarget: dashboardOpenProgressTarget,
             isActive: selectedTab == .dashboard,
             onOpenActionableTrades: openActionableTrades,
             onInitialLoadStatusChange: { status in
@@ -1291,6 +1323,32 @@ struct RootView: View {
         path.append(SideMenuPage.decks)
         moreNavigationPath = path
         selectedTab = .more
+    }
+
+    private func dashboardOpenProgressTarget(_ target: DashboardProgressTarget) {
+        browseNavigationPath = NavigationPath()
+        browseInlineDetailQuery = ""
+        browseQuery = ""
+        isBrowseSearchExpanded = false
+
+        switch target.kind {
+        case .set:
+            guard let setCode = target.setCode,
+                  let set = services.cardData.sets.first(where: { $0.setCode.lowercased() == setCode.lowercased() })
+            else { return }
+            browseHomeTab = .sets
+            browseInlineDetailRoute = .set(set)
+        case .pokemon:
+            guard let dexId = target.dexId else { return }
+            let displayName = target.pokemonDisplayName?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false
+                ? target.pokemonDisplayName!
+                : "Pokémon #\(dexId)"
+            browseHomeTab = .pokemon
+            browseInlineDetailRoute = .dex(dexId: dexId, displayName: displayName)
+        }
+
+        browseTabVisited = true
+        selectedTab = .browse
     }
 
     private var browseTab: some View {
@@ -1468,7 +1526,9 @@ struct RootView: View {
                 if isSearchContentMounted {
                     SearchExperienceView(
                         query: $universalQuery,
-                        onOpenCategory: openSearchCategory
+                        scopeCategory: $searchScopeCategory,
+                        showsScopeHeader: searchNavigationPath.isEmpty,
+                        onOpenPost: openSearchPost
                     )
                 } else {
                     Color.clear
@@ -1483,6 +1543,16 @@ struct RootView: View {
                         }
                 case .dex(let dexId, let displayName, _):
                     DexCardsView(dexId: dexId, displayName: displayName)
+                        .onAppear {
+                            searchFieldFocused = false
+                        }
+                case .deck(let id):
+                    SearchDeckDetailView(deckID: id)
+                        .onAppear {
+                            searchFieldFocused = false
+                        }
+                case .binder(let id):
+                    SearchBinderDetailView(binderID: id)
                         .onAppear {
                             searchFieldFocused = false
                         }
@@ -1547,9 +1617,16 @@ struct RootView: View {
             isLocalSearchExpanded: isActiveLocalSearchExpanded,
             localSearchPlaceholder: localSearchPlaceholder,
             trailingControlsSpacing: usesLocalSearch ? 5 : 12,
+            showsCameraControl: showsChromeCameraControl,
             browseSearchOnTrailing: browseInlineDetailRoute != nil,
             onActivateSearch: {
-                presentSearchExperience()
+                if selectedTab == .browse, browseInlineDetailRoute == nil {
+                    presentSearchExperience(scope: searchScopeForBrowseTab())
+                } else if selectedTab == .collect {
+                    presentSearchExperience(scope: .collection)
+                } else {
+                    presentSearchExperience()
+                }
             },
             onActivateLocalSearch: {
                 if isBrowseLocalSearchContextActive {
@@ -1787,27 +1864,6 @@ struct RootView: View {
         )
     }
 
-    private func openSearchCategory(_ category: SearchIdleCategory) {
-        browseTabVisited = true
-        browseNavigationPath = NavigationPath()
-        browseInlineDetailRoute = nil
-        switch category {
-        case .cards:
-            browseHomeTab = .cards
-        case .sets:
-            browseHomeTab = .sets
-        case .pokemon:
-            browseHomeTab = .pokemon
-        case .sealed:
-            browseHomeTab = .products
-        }
-        universalQuery = ""
-        searchFieldFocused = false
-        withAnimation(Self.searchPresentationAnimation) {
-            isSearchExperiencePresented = false
-            selectedTab = .browse
-        }
-    }
 
     private func handleSocialDeepLink(_ url: URL) {
         guard url.scheme?.lowercased() == "bindr" else { return }

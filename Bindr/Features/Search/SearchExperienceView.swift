@@ -1,32 +1,5 @@
 import SwiftUI
 
-enum SearchIdleCategory: String, CaseIterable, Identifiable {
-    case cards
-    case sets
-    case pokemon
-    case sealed
-
-    var id: String { rawValue }
-
-    var title: String {
-        switch self {
-        case .cards: return "Cards"
-        case .sets: return "Sets"
-        case .pokemon: return "Pokémon"
-        case .sealed: return "Sealed"
-        }
-    }
-
-    var symbol: String {
-        switch self {
-        case .cards: return "rectangle.stack.fill"
-        case .sets: return "square.grid.2x2.fill"
-        case .pokemon: return "pawprint.fill"
-        case .sealed: return "shippingbox.fill"
-        }
-    }
-}
-
 enum SearchHistoryStore {
     static let recentSearchesKey = "bindr.search.recentQueries"
     static let recentlyViewedCardsKey = "bindr.search.recentlyViewedCards"
@@ -56,28 +29,15 @@ enum SearchHistoryStore {
     }
 }
 
-enum SearchSourceScope: String, CaseIterable, Identifiable {
-    case allCards
-    case myCollection
-
-    var id: String { rawValue }
-
-    var title: String {
-        switch self {
-        case .allCards: return "All cards"
-        case .myCollection: return "My collection"
-        }
-    }
-}
-
 struct SearchExperienceView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentCard) private var presentCard
-    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     @Binding var query: String
-    let onOpenCategory: (SearchIdleCategory) -> Void
+    @Binding var scopeCategory: SearchScopeCategory
+    let showsScopeHeader: Bool
+    let onOpenPost: (UUID) -> Void
 
     @State private var recentSearches: [String] = SearchHistoryStore.strings(forKey: SearchHistoryStore.recentSearchesKey)
     @State private var recentlyViewedCardIDs: [String] = SearchHistoryStore.strings(forKey: SearchHistoryStore.recentlyViewedCardsKey)
@@ -85,17 +45,25 @@ struct SearchExperienceView: View {
     @State private var recentSets: [TCGSet] = []
 
     var body: some View {
-        UniversalSearchResultsView(
-            query: query,
-            selectedBrand: services.brandSettings.selectedCatalogBrand,
-            sourceScope: .allCards,
-            idleContent: AnyView(idleContent),
-            onCommitSearch: {
-                SearchHistoryStore.addSearch(query)
-                recentSearches = SearchHistoryStore.strings(forKey: SearchHistoryStore.recentSearchesKey)
+        VStack(spacing: 0) {
+            if showsScopeHeader {
+                scopeHeader
             }
-        )
+
+            UniversalSearchResultsView(
+                query: query,
+                selectedBrand: services.brandSettings.selectedCatalogBrand,
+                scopeCategory: scopeCategory,
+                idleContent: AnyView(idleContent),
+                onCommitSearch: {
+                    SearchHistoryStore.addSearch(query)
+                    recentSearches = SearchHistoryStore.strings(forKey: SearchHistoryStore.recentSearchesKey)
+                },
+                onOpenPost: onOpenPost
+            )
+        }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .bindrPageBackground()
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
@@ -116,35 +84,15 @@ struct SearchExperienceView: View {
         }
     }
 
+    private var scopeHeader: some View {
+        SearchCategoryChipBar(selection: $scopeCategory)
+            .padding(.top, RootChromeEnvironment.searchOverlayHeaderTopInset)
+            .padding(.bottom, 4)
+    }
+
     private var idleContent: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: RootChromeEnvironment.searchOverlaySectionSpacing) {
-                HStack(spacing: 10) {
-                    ForEach(SearchIdleCategory.allCases) { category in
-                        Button {
-                            Haptics.lightImpact()
-                            onOpenCategory(category)
-                        } label: {
-                            VStack(spacing: 8) {
-                                Image(systemName: category.symbol)
-                                    .font(.system(size: 18, weight: .semibold))
-                                    .foregroundStyle(categoryIconColor(category))
-                                Text(category.title)
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(.primary)
-                                    .lineLimit(1)
-                                    .minimumScaleFactor(0.85)
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .padding(.horizontal, 6)
-                            .glassCardStyle(cornerRadius: 16, interactive: true)
-                            .contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                    }
-                }
-
                 if !recentSearches.isEmpty {
                     recentSearchesSection
                 }
@@ -158,21 +106,11 @@ struct SearchExperienceView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 28)
         }
-        .safeAreaPadding(.top, rootFloatingChromeInset)
         .scrollDismissesKeyboard(.interactively)
     }
 
     private var sectionDividerColor: Color {
         colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
-    }
-
-    private func categoryIconColor(_ category: SearchIdleCategory) -> Color {
-        switch category {
-        case .cards: return SearchPalette.blue
-        case .sets: return SearchPalette.purple
-        case .pokemon: return SearchPalette.gold
-        case .sealed: return SearchPalette.success
-        }
     }
 
     private var recentSearchesSection: some View {
@@ -340,11 +278,4 @@ struct SearchExperienceView: View {
         }
         recentlyViewedCards = cards
     }
-}
-
-private enum SearchPalette {
-    static let purple = Color(red: 0.58, green: 0.33, blue: 1.0)
-    static let blue = Color(red: 0.24, green: 0.58, blue: 1.0)
-    static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
-    static let gold = Color(red: 0.99, green: 0.72, blue: 0.22)
 }

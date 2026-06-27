@@ -138,6 +138,7 @@ struct SocialRootView: View {
     @State private var deepLinkedCommentsContent: SocialFeedService.FeedContentSummary?
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
+    @Environment(\.presentUniversalSearch) private var presentUniversalSearch
 
     private var isConfigured: Bool {
         AppConfiguration.supabaseURL != nil && !AppConfiguration.supabasePublishableKey.isEmpty
@@ -232,26 +233,33 @@ struct SocialRootView: View {
         }
     }
 
-    /// Bell + unread badge. Always rendered (not conditional on selectedTab)
-    /// so its identity is stable as the user moves between tabs and there's
-    /// no flash from view tear-down on tab change.
     @ViewBuilder
     private var socialHeaderLeading: some View {
-        if services.socialAuth.isSignedIn {
-            ChromeGlassCircleButton(accessibilityLabel: "Alerts") {
-                Haptics.lightImpact()
-                isAlertsPresented = true
-            } label: {
-                if services.socialFeed.unreadAlertsCount > 0 {
-                    Image(systemName: "bell.fill")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(BindrPalette.alertRed)
-                        .bindrBadge(count: services.socialFeed.unreadAlertsCount)
-                } else {
-                    Image(systemName: "bell")
-                        .font(.system(size: 15, weight: .medium))
-                        .foregroundStyle(.primary)
-                }
+        ChromeGlassCircleButton(accessibilityLabel: "Search") {
+            Haptics.lightImpact()
+            presentUniversalSearch()
+        } label: {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+        }
+    }
+
+    @ViewBuilder
+    private var socialAlertsButton: some View {
+        ChromeGlassCircleButton(accessibilityLabel: "Alerts") {
+            Haptics.lightImpact()
+            isAlertsPresented = true
+        } label: {
+            if services.socialFeed.unreadAlertsCount > 0 {
+                Image(systemName: "bell.fill")
+                    .font(.system(size: 14, weight: .semibold))
+                    .foregroundStyle(BindrPalette.alertRed)
+                    .bindrBadge(count: services.socialFeed.unreadAlertsCount)
+            } else {
+                Image(systemName: "bell")
+                    .font(.system(size: 15, weight: .medium))
+                    .foregroundStyle(.primary)
             }
         }
     }
@@ -272,22 +280,6 @@ struct SocialRootView: View {
         switch selectedTab {
         case .feed:
             HStack(spacing: 12) {
-                Menu {
-                    Picker("Feed Filter", selection: Bindable(services.socialFeed).selectedScope) {
-                        Label("Friends", systemImage: "person.2").tag(SocialFeedService.FeedScope.following)
-                        Label("Everyone", systemImage: "globe").tag(SocialFeedService.FeedScope.everyone)
-                        Label("Mine", systemImage: "person").tag(SocialFeedService.FeedScope.mine)
-                    }
-                } label: {
-                    ChromeGlassCircleButton(accessibilityLabel: "Filter Feed") {
-                        // Menu action handled by label
-                    } label: {
-                        Image(systemName: "line.3.horizontal.decrease.circle")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
-                    }
-                }
-
                 ChromeGlassCircleButton(accessibilityLabel: "New Post") {
                     Haptics.lightImpact()
                     isNewPostPresented = true
@@ -296,6 +288,8 @@ struct SocialRootView: View {
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
                 }
+
+                socialAlertsButton
             }
         case .trades:
             ChromeGlassCircleButton(accessibilityLabel: "Create trade") {

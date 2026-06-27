@@ -88,7 +88,9 @@ struct FriendsCollectionView: View {
     }
 
     private var filterConfig: FilterMenuConfig {
-        .friendBrowsable
+        var config = FilterMenuConfig.friendBrowsable
+        config.showGridOwnedToggle = true
+        return config
     }
 
     private var gridOptionsBinding: Binding<BrowseGridOptions> {
@@ -109,8 +111,7 @@ struct FriendsCollectionView: View {
                     energyOptions: energyOptions,
                     rarityOptions: rarityOptions,
                     trainerTypeOptions: trainerTypeOptions,
-                    filterConfig: filterConfig,
-                    showGridOwnedToggle: true
+                    filterConfig: filterConfig
                 )
                 .padding(.horizontal, 16)
                 .padding(.top, 8)

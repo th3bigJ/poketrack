@@ -34,26 +34,28 @@ struct BrowseCardGridControlsBar: View {
             BrowseInlineSearchField(title: searchTitle, text: $query)
                 .frame(maxWidth: .infinity)
 
-            Menu {
-                BrowseGridOptionsMenuContent(
-                    gridOptions: $gridOptions,
-                    nameToggleTitle: gridNameToggleTitle,
-                    showCardIDToggle: showGridCardIDToggle,
-                    showOwnedToggle: showGridOwnedToggle
-                )
-            } label: {
-                Image(systemName: "slider.horizontal.3")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(.primary)
-                    .modifier(ChromeGlassCircleGlyphModifier())
+            if !filterConfig.showGridOptions {
+                Menu {
+                    BrowseGridOptionsMenuContent(
+                        gridOptions: $gridOptions,
+                        nameToggleTitle: gridNameToggleTitle,
+                        showCardIDToggle: showGridCardIDToggle,
+                        showOwnedToggle: showGridOwnedToggle
+                    )
+                } label: {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                        .modifier(ChromeGlassCircleGlyphModifier())
+                }
+                .buttonStyle(.plain)
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+                .menuIndicator(.hidden)
+                .frame(width: 48, height: 48)
+                .contentShape(Rectangle())
+                .accessibilityLabel("Grid options")
             }
-            .buttonStyle(.plain)
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-            .menuIndicator(.hidden)
-            .frame(width: 48, height: 48)
-            .contentShape(Rectangle())
-            .accessibilityLabel("Grid options")
 
             Menu {
                 BrowseGridFiltersMenuContent(

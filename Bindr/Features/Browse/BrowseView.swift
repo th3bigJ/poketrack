@@ -1419,7 +1419,9 @@ struct BrowseView: View {
                                 isWishlisted: wishlistedIDs.contains(row.card.masterCardId),
                                 ownedCountBadge: variantOwnedQuantities[variantCompositeKey],
                                 variantLabel: variantTitle(row.variant),
-                                variantPricingKey: row.variant
+                                variantPricingKey: row.variant,
+                                overridePrice: inlineDetailVariantPriceByCardID[row.card.masterCardId]?[row.variant]
+                                    ?? inlineDetailPriceByCardID[row.card.masterCardId]
                             )
                         }
                         .buttonStyle(CardCellButtonStyle())
@@ -1445,7 +1447,8 @@ struct BrowseView: View {
                                 setName: cachedSetNameByCode[card.setCode],
                                 isOwned: ownedCardIDsCache.contains(card.masterCardId),
                                 isWishlisted: wishlistedIDs.contains(card.masterCardId),
-                                ownedCountBadge: ownedQuantities[card.masterCardId]
+                                ownedCountBadge: ownedQuantities[card.masterCardId],
+                                overridePrice: inlineDetailPriceByCardID[card.masterCardId]
                             )
                             .overlay(alignment: .topTrailing) {
                                 if isMultiSelectActive {
@@ -4272,7 +4275,8 @@ struct SetCardsView: View {
                                         setName: set.name,
                                         isOwned: ownedCardIDs.contains(card.masterCardId),
                                         isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
-                                        ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
+                                        ownedCountBadge: ownedQuantityByCardID[card.masterCardId],
+                                        overridePrice: priceByCardID[card.masterCardId]
                                     )
                                     .overlay(alignment: .topTrailing) {
                                         if isMultiSelectActive {
@@ -4710,7 +4714,8 @@ struct DexCardsView: View {
                                     setName: setNameByCode[card.setCode],
                                     isOwned: ownedCardIDs.contains(card.masterCardId),
                                     isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
-                                    ownedCountBadge: ownedQuantityByCardID[card.masterCardId]
+                                    ownedCountBadge: ownedQuantityByCardID[card.masterCardId],
+                                    overridePrice: priceByCardID[card.masterCardId]
                                 )
                         }
                         .buttonStyle(CardCellButtonStyle())
@@ -4941,7 +4946,7 @@ struct FilterMenuConfig {
         showHideOwned: false,
         showOwnedOnly: false,
         showShowDuplicates: false,
-        showGridOptions: false,
+        showGridOptions: true,
         defaultSortBy: .acquiredDateNewest,
         showGridOwnedToggle: false
     )
@@ -5362,7 +5367,7 @@ func browseFilterTrainerTypeOptions(_ cards: [BrowseFilterCard]) -> [String] {
     Set(cards.compactMap { $0.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }).sorted()
 }
 
-private func browseMarketPriceUSD(for entry: CardPricingEntry?) -> Double? {
+func browseMarketPriceUSD(for entry: CardPricingEntry?) -> Double? {
     guard let entry else { return nil }
     if let scrydex = entry.scrydex, !scrydex.isEmpty {
         return scrydex.values.compactMap { $0.rawMarketEstimateUSD() }.filter { $0 > 0 }.min()
@@ -5370,7 +5375,7 @@ private func browseMarketPriceUSD(for entry: CardPricingEntry?) -> Double? {
     return entry.tcgplayerMarketEstimateUSD()
 }
 
-private func browseMarketPriceLine(for entry: CardPricingEntry, currency: PriceDisplayCurrency, usdToGbp: Double) -> String? {
+func browseMarketPriceLine(for entry: CardPricingEntry, currency: PriceDisplayCurrency, usdToGbp: Double) -> String? {
     let range: (min: Double, max: Double)?
     if let scrydex = entry.scrydex, !scrydex.isEmpty {
         let values = scrydex.values.compactMap { $0.rawMarketEstimateUSD() }.filter { $0 > 0 }

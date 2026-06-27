@@ -480,13 +480,13 @@ struct CollectView: View {
 
     private var contentTypeChips: some View {
         HStack(spacing: 12) {
-            contentTypeChip(for: .cards, icon: "square.stack.3d.up")
-            contentTypeChip(for: .products, icon: "shippingbox")
+            contentTypeChip(for: .cards)
+            contentTypeChip(for: .products)
         }
-        .frame(maxWidth: .infinity, alignment: .center)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    private func contentTypeChip(for tab: CollectContentTypeTab, icon: String) -> some View {
+    private func contentTypeChip(for tab: CollectContentTypeTab) -> some View {
         let isSelected = selectedContentTypeTab == tab
         return Button {
             guard selectedContentTypeTab != tab else { return }
@@ -495,14 +495,10 @@ struct CollectView: View {
             }
             Haptics.lightImpact()
         } label: {
-            HStack(spacing: 6) {
-                Image(systemName: icon)
-                    .font(.system(size: 14, weight: .medium))
-                Text(tab.title)
-                    .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
-                    .lineLimit(1)
-            }
-            .browsePillTabChipStyle(isSelected: isSelected)
+            Text(tab.title)
+                .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
+                .lineLimit(1)
+                .browsePillTabChipStyle(isSelected: isSelected)
         }
         .buttonStyle(.plain)
         .accessibilityLabel(tab.title)
@@ -1194,7 +1190,8 @@ struct CollectView: View {
                     accentColor: services.theme.accentColor,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
-                    footnote: nil
+                    isWishlisted: true,
+                    overridePrice: wishlistDisplayPrice(for: item)
                 )
             }
             .buttonStyle(CardCellButtonStyle())
@@ -1350,14 +1347,12 @@ struct CollectView: View {
             }
         }
 
-        if needsDeepPriceResolve {
-            await resolveMissingWishlistSortPrices(
-                cardItems: cardItems,
-                cardsByID: next,
-                itemPrices: &nextPrices,
-                cardPrices: &nextCardPrices
-            )
-        }
+        await resolveMissingWishlistSortPrices(
+            cardItems: cardItems,
+            cardsByID: next,
+            itemPrices: &nextPrices,
+            cardPrices: &nextCardPrices
+        )
 
         wishlistCardsByID = next
         wishlistPriceByItemKey = nextPrices

@@ -17,9 +17,10 @@ enum RootChromeEnvironment {
     static let searchOverlaySectionSpacing: CGFloat = 18
     /// Extra breathing room between the floating search bar and the first row.
     static let searchOverlayTopContentGap: CGFloat = 12
-    /// Scroll inset for the full-screen search overlay — clears the floating bar
-    /// stack plus a modest gap before the first section.
-    static let searchOverlayContentTopInset: CGFloat = searchBarStackHeight + searchOverlayTopContentGap
+    /// Top inset for the search overlay title row — clears the floating bar only.
+    static let searchOverlayHeaderTopInset: CGFloat = searchBarStackHeight + searchOverlayTopContentGap
+    /// Legacy alias kept for any scroll views that still read this key.
+    static let searchOverlayContentTopInset: CGFloat = searchOverlayHeaderTopInset
 }
 
 private struct RootFloatingChromeInsetKey: EnvironmentKey {
@@ -31,5 +32,17 @@ extension EnvironmentValues {
     var rootFloatingChromeInset: CGFloat {
         get { self[RootFloatingChromeInsetKey.self] }
         set { self[RootFloatingChromeInsetKey.self] = newValue }
+    }
+}
+
+private struct PresentUniversalSearchKey: EnvironmentKey {
+    static let defaultValue: () -> Void = {}
+}
+
+extension EnvironmentValues {
+    /// Opens the full-screen universal search overlay from tab chrome (e.g. Social header).
+    var presentUniversalSearch: () -> Void {
+        get { self[PresentUniversalSearchKey.self] }
+        set { self[PresentUniversalSearchKey.self] = newValue }
     }
 }

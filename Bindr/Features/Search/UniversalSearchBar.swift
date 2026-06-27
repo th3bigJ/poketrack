@@ -86,7 +86,7 @@ struct UniversalSearchBar: View {
         if isLocalSearchMode && isLocalSearchExpanded, !localSearchPlaceholder.isEmpty {
             return localSearchPlaceholder
         }
-        return "Search cards, sets, Pokemon, sealed…"
+        return "Search cards, sets, Pokémon, sealed, decks…"
     }
 
     private var dismissExpandedSearchAction: () -> Void {
@@ -94,6 +94,15 @@ struct UniversalSearchBar: View {
             return onDismissLocalSearch
         }
         return onBack
+    }
+
+    /// Universal search overlay: camera sits beside the pill, not inside it.
+    private var showsExternalExpandedCamera: Bool {
+        isSearchOpen && !isLocalSearchMode && showsCameraControl
+    }
+
+    private var showsCameraInsideSearchField: Bool {
+        showsCameraControl && !showsExternalExpandedCamera
     }
 
     private var filterMenuTouchDownHapticGesture: some Gesture {
@@ -155,7 +164,7 @@ struct UniversalSearchBar: View {
                             .searchFieldCapsuleChrome(darkGlass: chromeUsesInteractiveGlass ? .regularInteractive : .clear)
                             .transition(.move(edge: .leading).combined(with: .opacity))
 
-                        if showsCameraControl {
+                        if showsExternalExpandedCamera {
                             cameraButtonLiquid
                         }
                     }
@@ -208,7 +217,7 @@ struct UniversalSearchBar: View {
                         .searchFieldCapsuleChrome(darkGlass: chromeUsesInteractiveGlass ? .regularInteractive : .clear)
                         .transition(.move(edge: .leading).combined(with: .opacity))
 
-                    if showsCameraControl {
+                    if showsExternalExpandedCamera {
                         cameraButtonFallback
                     }
                 }
@@ -531,7 +540,7 @@ struct UniversalSearchBar: View {
             Image(systemName: "camera.fill")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                                .modifier(ChromeGlassCircleGlyphModifier())
+                .modifier(ChromeGlassCircleGlyphModifier(interactive: chromeUsesInteractiveGlass))
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -547,7 +556,7 @@ struct UniversalSearchBar: View {
             Image(systemName: "camera.fill")
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
-                            .modifier(ChromeGlassCircleGlyphModifier())
+                .modifier(ChromeGlassCircleGlyphModifier(interactive: chromeUsesInteractiveGlass))
         }
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
@@ -555,7 +564,7 @@ struct UniversalSearchBar: View {
         .accessibilityLabel("Scan with camera")
     }
 
-    /// Shared field content (icons + text + camera) for both Liquid Glass and material layouts.
+    /// Shared field content (icons + text) for both Liquid Glass and material layouts.
     /// Icons match the leading / trailing bar buttons (`.primary`); placeholder is slightly softer so typed text still reads as the main content.
     private var searchFieldInner: some View {
         HStack(spacing: 8) {
@@ -582,7 +591,7 @@ struct UniversalSearchBar: View {
             )
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            if !showsExpandedSearchField {
+            if showsCameraInsideSearchField {
                 Button(action: {
                     Haptics.lightImpact()
                     onCamera()

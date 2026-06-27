@@ -454,17 +454,19 @@ struct TransactionsView: View {
     }
 
     private func summaryValueCell(title: String, value: Double, emphasize: Bool) -> some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .center, spacing: 4) {
             Text(title)
                 .font(.caption.weight(.medium))
                 .foregroundStyle(dashboardSecondaryText)
+                .multilineTextAlignment(.center)
             Text(formatSignedCurrency(value))
                 .font(.system(size: emphasize ? 22 : 18, weight: .bold, design: .rounded))
                 .foregroundStyle(colorForSignedValue(value))
                 .lineLimit(1)
                 .minimumScaleFactor(0.75)
+                .multilineTextAlignment(.center)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 
     @ViewBuilder
@@ -506,11 +508,11 @@ struct TransactionsView: View {
 
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Local trade")
-                            .font(.system(size: 17, weight: .bold))
+                            .font(.subheadline.weight(.semibold))
                             .foregroundStyle(dashboardPrimaryText)
                             .lineLimit(1)
                         Text(summary)
-                            .font(.subheadline.weight(.medium))
+                            .font(.caption.weight(.medium))
                             .foregroundStyle(dashboardSecondaryText)
                             .lineLimit(2)
                             .fixedSize(horizontal: false, vertical: true)
@@ -555,7 +557,7 @@ struct TransactionsView: View {
 
                     HStack(spacing: 8) {
                         Text(primaryTitle(for: line))
-                            .font(.system(size: 17, weight: .bold))
+                            .font(.subheadline.weight(.semibold))
                             .foregroundStyle(dashboardPrimaryText)
                             .lineLimit(1)
                             .truncationMode(.tail)

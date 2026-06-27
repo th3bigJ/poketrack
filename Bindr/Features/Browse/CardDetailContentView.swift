@@ -716,14 +716,11 @@ struct CardDetailContentView: View {
         diameter: CGFloat,
         iconSize: CGFloat
     ) -> some View {
-        let label = isOwned ? "Add copy to collection" : "Add to collection"
-        if availableVariantKeys.count > 1 {
+        if isOwned {
+            collectionAddRemoveMenu(diameter: diameter, iconSize: iconSize)
+        } else if availableVariantKeys.count > 1 {
             Menu {
-                ForEach(availableVariantKeys, id: \.self) { key in
-                    Button(variantTitle(key)) {
-                        actions.onAddToCollection(key)
-                    }
-                }
+                addToCollectionMenuItems(addCopyLabel: false)
             } label: {
                 glassCircleActionLabel(systemImage: "plus", diameter: diameter, iconSize: iconSize)
             }
@@ -733,15 +730,64 @@ struct CardDetailContentView: View {
             .menuIndicator(.hidden)
             .frame(width: diameter, height: diameter)
             .contentShape(Rectangle())
-            .accessibilityLabel(label)
+            .accessibilityLabel("Add to collection")
         } else {
             glassCircleActionButton(
-                accessibilityLabel: label,
+                accessibilityLabel: "Add to collection",
                 systemImage: "plus",
                 diameter: diameter,
                 iconSize: iconSize,
                 action: { actions.onAddToCollection(preferredVariantKey) }
             )
+        }
+    }
+
+    @ViewBuilder
+    private func collectionAddRemoveMenu(diameter: CGFloat, iconSize: CGFloat) -> some View {
+        Menu {
+            addToCollectionMenuItems(addCopyLabel: true)
+
+            Button(role: .destructive) {
+                actions.onRemoveFromCollection()
+            } label: {
+                Label("Remove from collection", systemImage: "minus")
+            }
+        } label: {
+            glassCircleActionLabel(systemImage: "plusminus", diameter: diameter, iconSize: iconSize)
+        }
+        .buttonStyle(.plain)
+        .menuActionDismissBehavior(.disabled)
+        .menuOrder(.fixed)
+        .menuIndicator(.hidden)
+        .frame(width: diameter, height: diameter)
+        .contentShape(Rectangle())
+        .accessibilityLabel("Collection options")
+    }
+
+    @ViewBuilder
+    private func addToCollectionMenuItems(addCopyLabel: Bool) -> some View {
+        if availableVariantKeys.count > 1 {
+            Menu {
+                ForEach(availableVariantKeys, id: \.self) { key in
+                    Button(variantTitle(key)) {
+                        actions.onAddToCollection(key)
+                    }
+                }
+            } label: {
+                Label(
+                    addCopyLabel ? "Add copy to collection" : "Add to collection",
+                    systemImage: "plus"
+                )
+            }
+        } else {
+            Button {
+                actions.onAddToCollection(preferredVariantKey)
+            } label: {
+                Label(
+                    addCopyLabel ? "Add copy to collection" : "Add to collection",
+                    systemImage: "plus"
+                )
+            }
         }
     }
 

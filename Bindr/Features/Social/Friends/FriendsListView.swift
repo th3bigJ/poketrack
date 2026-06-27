@@ -202,17 +202,35 @@ struct FriendsListView: View {
     }
 
     private var tabPicker: some View {
-        SlidingSegmentedPicker(
-            selection: $selectedTab,
-            items: FriendsTab.allCases,
-            title: { $0.rawValue }
-        )
-        .frame(maxWidth: .infinity, alignment: .center)
+        HStack(spacing: 12) {
+            ForEach(FriendsTab.allCases) { tab in
+                friendsTabChip(for: tab)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .onChange(of: selectedTab) { _, newTab in
             if newTab == .find {
                 onOpenSearch()
             }
         }
+    }
+
+    private func friendsTabChip(for tab: FriendsTab) -> some View {
+        let isSelected = selectedTab == tab
+        return Button {
+            guard selectedTab != tab else { return }
+            withAnimation(.spring(response: 0.32, dampingFraction: 0.86)) {
+                selectedTab = tab
+            }
+            Haptics.lightImpact()
+        } label: {
+            Text(tab.rawValue)
+                .font(.system(size: 15, weight: isSelected ? .semibold : .regular))
+                .lineLimit(1)
+                .browsePillTabChipStyle(isSelected: isSelected)
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(tab.rawValue)
     }
 
     private var searchField: some View {

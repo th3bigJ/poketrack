@@ -18,6 +18,8 @@ struct DashboardProgressRingTile: View {
                 .foregroundStyle(.primary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.85)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, alignment: .center)
 
             HStack(spacing: 8) {
                 GeometryReader { geo in
