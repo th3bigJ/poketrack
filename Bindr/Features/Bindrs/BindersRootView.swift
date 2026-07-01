@@ -592,17 +592,27 @@ struct BinderOpenContainer: View {
     /// for the first non-zero value before kicking off the morph so the
     /// destination is real geometry, not the default zero rect.
     @State private var pageFrame: CGRect = .zero
-    /// Uniform scale applied to the overlay cover during the morph.
-    /// ``BinderCoverView`` lays its contents (text, ornament, peeking
-    /// thumbnails) out at fixed sizes — animating ``.frame`` alone clips
-    /// or stretches them. Rendering at a single reference size and
-    /// scaling the rendered view as a whole is what gives the open/close
-    /// that smooth, "lifting off the table" feel where every internal
-    /// element scales proportionally with the binder.
-    @State private var coverScale: CGFloat = 1.0
+    /// Live size of the overlay cover, in the same coordinate space as
+    /// ``sourceFrame`` and ``pageFrame``. Animated directly (rather than
+    /// rendering at a fixed reference size and applying a single uniform
+    /// ``scaleEffect``) because the source grid cell and the destination
+    /// page can now have *different* aspect ratios — most layouts stay
+    /// close to the cell's fixed A4 shape, but wide/tall row×column
+    /// combinations (e.g. 4×3, 2×3) no longer do. A single scalar scale
+    /// can only match one dimension at a time when the aspect ratio
+    /// itself changes between source and target, which is exactly what
+    /// produced the visible "snap" at the start/end of the morph — one
+    /// axis would be correctly scaled while the other jumped the moment
+    /// animation disabled. Animating width and height independently
+    /// tracks both dimensions exactly, at every point along the spring,
+    /// regardless of how source and target aspect ratios differ.
+    /// ``BinderCoverView`` re-derives its internal layout scale from its
+    /// own measured height every frame, so its contents resize smoothly
+    /// in lockstep rather than clipping or stretching.
+    @State private var coverSize: CGSize
     /// Live centre point of the overlay cover, in the global coordinate
     /// space shared with ``sourceFrame`` and ``pageFrame``. Animated
-    /// alongside ``coverScale`` to drive the position part of the morph.
+    /// alongside ``coverSize`` to drive the position part of the morph.
     /// Initialised to ``sourceFrame``'s midpoint (not .zero) so the cover
     /// is never positioned at the top-left corner on its first render.
     @State private var coverCenter: CGPoint
@@ -627,13 +637,14 @@ struct BinderOpenContainer: View {
     /// Drives the lift shadow under the cover. 0 at the source frame
     /// (small/tight, like the cell sitting on the grid), 1 at the page
     /// frame (large/diffuse, like the binder hovering near the lens).
-    /// Animated alongside ``coverScale`` so the shadow grows in lockstep
+    /// Animated alongside ``coverSize`` so the shadow grows in lockstep
     /// with the morph and reads as a single physical motion.
     @State private var liftIntensity: CGFloat = 0
     /// Tiny extra scale applied during the cover hold to give the binder
-    /// a subtle "breath". 1.0 at rest, ~1.012 at peak. Multiplied with
-    /// ``coverScale`` so the breath rides on top of the morph and stops
-    /// instantly when the page-curl auto-advance fires.
+    /// a subtle "breath". 1.0 at rest, ~1.012 at peak. Applied as its own
+    /// small ``scaleEffect`` on top of the correctly-sized frame so the
+    /// breath rides on top of the morph and stops instantly when the
+    /// page-curl auto-advance fires.
     @State private var breathingScale: CGFloat = 1.0
     /// Page frame captured the moment the open morph starts. Using a
     /// snapshot here (rather than the live ``pageFrame``) prevents layout
@@ -673,11 +684,16 @@ struct BinderOpenContainer: View {
         self.onSourceCoverReady = onSourceCoverReady
         self.onDismissComplete = onDismissComplete
         self.onStartClose = onStartClose
-        // Seed cover position at the grid cell so it is never at (0,0).
+        // Seed cover position and size at the grid cell so it is never at
+        // (0,0)/zero-sized. Both get corrected to the exact normalised
+        // source rect by the no-animation snap in ``startOpenMorph``
+        // before the overlay ever becomes visible (``coverOpacity``
+        // starts at 0), so an approximate seed here is harmless.
         self._coverCenter = State(initialValue: CGPoint(
             x: sourceFrame.midX,
             y: sourceFrame.midY
         ))
+        self._coverSize = State(initialValue: sourceFrame.size)
     }
 
     var body: some View {
@@ -724,12 +740,15 @@ struct BinderOpenContainer: View {
                 // Morphing cover overlay. Renders the same cover as
                 // ``BinderDetailView``'s page 0 so the hand-off is seamless.
                 //
-                // Sizing strategy: render the cover at the *target* page
-                // frame (always at the larger, "compact-false" geometry)
-                // and morph it via ``scaleEffect`` + ``position``. That
-                // way every internal layout sub-piece — title, ornament,
-                // value text, peeking card fan — scales uniformly, which
-                // is what stops the cards from "popping" mid-morph.
+                // Sizing strategy: animate the cover's actual ``.frame``
+                // size (``coverSize``) plus ``.position`` (``coverCenter``).
+                // ``BinderCoverView`` derives its own internal layout scale
+                // from its measured height every frame, so every sub-piece
+                // — title, ornament, value text, peeking card fan — resizes
+                // smoothly in lockstep as the frame animates, without a
+                // separate uniform ``scaleEffect`` that would only track
+                // one axis correctly when source and target aspect ratios
+                // differ (some row/column layouts are no longer A4-shaped).
                 BinderCoverView(
                     binder: binder,
                     compact: false,
@@ -739,16 +758,16 @@ struct BinderOpenContainer: View {
                 // immediately during the morph without re-loading.
                 .peekingURLsOverride(peekingURLs)
                 .subtitleOverride("\(binder.slotList.count) \(binder.slotList.count == 1 ? "card" : "cards")")
-                // Always render the overlay at the cover's *natural* A4
-                // aspect ratio. ``coverTargetFrame`` is an A4 rectangle
-                // fitted inside ``pageFrame`` and used as the morph end
-                // point. Because ``sourceFrame`` is also A4 (the grid
-                // cells are aspect-locked to 0.707), source and target
-                // share aspect — a single uniform ``scaleEffect`` morphs
-                // cleanly between them with no end-of-close height pop.
+                // ``coverSize`` is animated directly (see its declaration)
+                // so the overlay always renders at its true current size —
+                // exactly ``sourceCoverFrame``'s size at the start of an
+                // open (or end of a close) and exactly ``coverTargetFrame``'s
+                // size at the end of an open (or start of a close) — with
+                // no reliance on a single uniform scale to bridge two
+                // rects that may not share an aspect ratio.
                 .frame(
-                    width: max(coverTargetFrame.width, 1),
-                    height: max(coverTargetFrame.height, 1)
+                    width: max(coverSize.width, 1),
+                    height: max(coverSize.height, 1)
                 )
                 // Animated lift shadow — grows from a tight contact
                 // shadow at the source frame (binder sitting on the
@@ -762,7 +781,7 @@ struct BinderOpenContainer: View {
                     x: 0,
                     y: 2 + 18 * liftIntensity
                 )
-                .scaleEffect(coverScale * breathingScale, anchor: .center)
+                .scaleEffect(breathingScale, anchor: .center)
                 // ``coverCenter`` is stored in the "bindersRoot" coordinate space
                 // (same as the cell frames and the page-frame preference). The parent
                 // ZStack here starts at the top of the screen (y = 0) because
@@ -820,44 +839,26 @@ struct BinderOpenContainer: View {
     /// scaleEffect morph cleanly without distortion.
     private static let coverAspect: CGFloat = 0.707
 
-    /// A4-aspect rectangle fitted inside ``pageFrame`` and centred there.
-    /// This is the morph's actual destination — *not* the page frame
-    /// itself. Some layouts (4×3) produce a near-square page area; we
-    /// don't want the binder cover to morph into a square mid-flight.
+    /// The morph's actual destination. The detail view's front cover
+    /// always renders at exactly its page rect (no separate A4-fit step —
+    /// see `BinderDetailView.coverFrame`), sized to whatever that
+    /// binder's row/column layout naturally needs, so we target that same
+    /// rect directly here rather than re-fitting a fixed aspect inside
+    /// it — otherwise this overlay would land at a different size than
+    /// the real cover it's handing off to, popping at the end of the morph.
     ///
     /// Once ``stablePageFrame`` is locked (at the start of the open morph),
     /// we use that snapshot so chrome-reveal layout changes cannot shift
     /// the destination while the animation is in flight.
     private var coverTargetFrame: CGRect {
-        // Prefer the locked stable frame once it has been set.
-        let base = stablePageFrame != .zero ? stablePageFrame : pageFrame
-        guard base.width > 0, base.height > 0 else { return base }
-        let aspect = Self.coverAspect
-        let pageAspect = base.width / base.height
-        let width: CGFloat
-        let height: CGFloat
-        if pageAspect < aspect {
-            // Page is narrower than A4 — width-limited.
-            width = base.width
-            height = width / aspect
-        } else {
-            // Page is wider than (or equal to) A4 — height-limited.
-            height = base.height
-            width = height * aspect
-        }
-        return CGRect(
-            x: base.midX - width / 2,
-            y: base.midY - height / 2,
-            width: width,
-            height: height
-        )
+        stablePageFrame != .zero ? stablePageFrame : pageFrame
     }
 
     /// Source rectangle normalised to the cover's natural aspect ratio. Grid
     /// cells are intended to be A4, but SwiftUI's measured button frame can
     /// drift by a few pixels during layout. Fitting the cover inside that
-    /// measured frame keeps the morph scale uniform and avoids tiny height
-    /// pops at the start or end of the animation.
+    /// measured frame gives ``coverSize`` an exact, stable starting/ending
+    /// point regardless of tiny measurement jitter.
     private var sourceCoverFrame: CGRect {
         guard sourceFrame.width > 0, sourceFrame.height > 0 else { return sourceFrame }
         let aspect = Self.coverAspect
@@ -877,13 +878,6 @@ struct BinderOpenContainer: View {
             width: width,
             height: height
         )
-    }
-
-    /// Scale that maps the rendered cover (always at ``coverTargetFrame``
-    /// dimensions) down to the normalised source grid cover.
-    private var sourceScale: CGFloat {
-        guard coverTargetFrame.width > 0 else { return 1.0 }
-        return max(0.05, sourceCoverFrame.width / coverTargetFrame.width)
     }
 
     private var sourceCenter: CGPoint {
@@ -912,7 +906,7 @@ struct BinderOpenContainer: View {
         var snapTx = Transaction(animation: nil)
         snapTx.disablesAnimations = true
         withTransaction(snapTx) {
-            coverScale = sourceScale
+            coverSize = sourceCoverFrame.size
             coverCenter = sourceCenter
             coverOpacity = 1
             liftIntensity = 0
@@ -924,7 +918,7 @@ struct BinderOpenContainer: View {
         // overlay cover at the page frame so the cover-to-page-1 hand
         // off works the same way in ``BinderDetailView``.
         if reduceMotion {
-            coverScale = 1.0
+            coverSize = coverTargetFrame.size
             coverCenter = pageCenter
             liftIntensity = 1
             Task {
@@ -946,7 +940,7 @@ struct BinderOpenContainer: View {
             await Task.yield()
             await MainActor.run {
                 withAnimation(morphAnimation) {
-                    coverScale = 1.0
+                    coverSize = coverTargetFrame.size
                     coverCenter = pageCenter
                     liftIntensity = 1
                 }
@@ -1015,7 +1009,7 @@ struct BinderOpenContainer: View {
         var snapTx = Transaction(animation: nil)
         snapTx.disablesAnimations = true
         withTransaction(snapTx) {
-            coverScale = 1.0
+            coverSize = coverTargetFrame.size
             coverCenter = pageCenter   // reads stablePageFrame via coverTargetFrame
             coverOpacity = 1
             detailOpacity = 0
@@ -1050,7 +1044,7 @@ struct BinderOpenContainer: View {
                 // travels toward the grid cell, rather than immediately sinking
                 // (which created a visual drop at the start of the close).
                 withAnimation(morphAnimation) {
-                    coverScale = sourceScale
+                    coverSize = sourceCoverFrame.size
                     coverCenter = sourceCenter
                 }
                 // Shadow fades out near the END of the close travel so the

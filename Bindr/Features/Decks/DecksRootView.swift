@@ -382,10 +382,19 @@ private struct DeckListRow: View {
                 }
             }
 
-            VStack(alignment: .leading, spacing: 3) {
-                Text(deck.title)
-                    .font(.body.weight(.bold))
-                    .foregroundStyle(.primary)
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(alignment: .firstTextBaseline, spacing: 8) {
+                    Text(deck.title)
+                        .font(.body.weight(.bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .layoutPriority(1)
+
+                    if !deck.isValid {
+                        deckIssueBadge
+                            .fixedSize(horizontal: true, vertical: false)
+                    }
+                }
 
                 HStack(spacing: 5) {
                     Text(deck.tcgBrand.displayTitle)
@@ -403,25 +412,30 @@ private struct DeckListRow: View {
                     Text("\(deck.totalCardCount) cards")
                         .font(.caption)
                         .foregroundStyle(.secondary)
-
-                    if !deck.isValid {
-                        let issueCount = deck.validationIssues.count
-                        Text("·")
-                            .font(.caption)
-                            .foregroundStyle(.tertiary)
-                        Label(issueCount == 1 ? "1 issue" : "\(issueCount) issues", systemImage: "exclamationmark.triangle.fill")
-                            .font(.caption)
-                            .foregroundStyle(.orange)
-                    }
                 }
+                .lineLimit(1)
             }
-
-            Spacer()
+            .frame(maxWidth: .infinity, alignment: .leading)
 
             Image(systemName: "chevron.right")
                 .font(.system(size: 13, weight: .bold))
                 .foregroundStyle(.quaternary)
         }
+    }
+
+    private var deckIssueBadge: some View {
+        let issueCount = deck.validationIssues.count
+        return HStack(spacing: 4) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .font(.system(size: 10, weight: .bold))
+            Text(issueCount == 1 ? "1 issue" : "\(issueCount) issues")
+                .font(.system(size: 11, weight: .bold))
+                .lineLimit(1)
+        }
+        .foregroundStyle(.orange)
+        .padding(.horizontal, 7)
+        .padding(.vertical, 3)
+        .background(Color.orange.opacity(0.12), in: Capsule())
     }
 }
 

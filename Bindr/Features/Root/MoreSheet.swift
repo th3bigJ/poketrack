@@ -735,11 +735,28 @@ private struct TradeCalculatorView: View {
         hasAnyTradeValue && !isCompletingTrade
     }
 
+    private var tradeAdvantageUSD: Double {
+        theirTotalUSD - myTotalUSD
+    }
+
+    private var tradeBalanceTint: Color {
+        if abs(tradeAdvantageUSD) < 0.01 { return bindrAccent }
+        return tradeAdvantageUSD > 0 ? BindrPalette.ownedGreen : BindrPalette.alertRed
+    }
+
+    private var tradeBalanceText: String {
+        if abs(tradeAdvantageUSD) < 0.01 {
+            return "Balanced"
+        }
+        let amount = formattedDisplayAmountUSD(abs(tradeAdvantageUSD))
+        return tradeAdvantageUSD > 0 ? "+\(amount)" : "-\(amount)"
+    }
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack(spacing: 16) {
+                tradeSummarySection
                 theirSideSection
-                tradeVersusSection
                 mySideSection
                 if canCompleteTrade || isCompletingTrade {
                     completeTradeSection
@@ -815,64 +832,71 @@ private struct TradeCalculatorView: View {
         }
     }
 
-    private var tradeVersusSection: some View {
-        HStack(alignment: .center, spacing: 0) {
-            VStack(spacing: 8) {
-                Text("YOU")
-                    .font(.system(size: 10, weight: .black))
-                    .tracking(1.5)
-                    .foregroundStyle(bindrAccent)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 3)
-                    .background(bindrAccent.opacity(0.12), in: Capsule())
-
-                Text(formattedDisplayAmountUSD(myTotalUSD))
-                    .font(.system(size: 24, weight: .black, design: .rounded))
-                    .foregroundStyle(bindrAccent)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+    private var tradeSummarySection: some View {
+        VStack(spacing: 10) {
+            HStack(spacing: 10) {
+                tradeValuePill(
+                    title: "Receive",
+                    amountUSD: theirTotalUSD,
+                    tint: BindrPalette.ownedGreen
+                )
+                tradeBalancePill
+                tradeValuePill(
+                    title: "Give",
+                    amountUSD: myTotalUSD,
+                    tint: BindrPalette.alertRed
+                )
             }
-            .frame(maxWidth: .infinity)
-
-            ZStack {
-                Circle()
-                    .fill(LinearGradient(
-                        colors: [Color.cyan, Color.purple],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ))
-                    .frame(width: 38, height: 38)
-                    .shadow(color: Color.purple.opacity(0.35), radius: 6, x: 0, y: 3)
-
-                Text("VS")
-                    .font(.system(size: 13, weight: .black))
-                    .foregroundStyle(.white)
-            }
-            .padding(.horizontal, 12)
-
-            VStack(spacing: 8) {
-                Text("THEM")
-                    .font(.system(size: 10, weight: .black))
-                    .tracking(1.5)
-                    .foregroundStyle(.secondary)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 3)
-                    .background(Color.primary.opacity(0.08), in: Capsule())
-
-                Text(formattedDisplayAmountUSD(theirTotalUSD))
-                    .font(.system(size: 24, weight: .black, design: .rounded))
-                    .foregroundStyle(.primary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
-            }
-            .frame(maxWidth: .infinity)
         }
-        .padding(16)
+        .padding(12)
         .glassInsetStyle(cornerRadius: 16)
     }
 
+    private func tradeValuePill(title: String, amountUSD: Double, tint: Color) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.system(size: 10, weight: .bold))
+                .tracking(0.6)
+                .textCase(.uppercase)
+                .foregroundStyle(.secondary)
+
+            if isValuationLoading {
+                ProgressView()
+                    .tint(tint)
+                    .scaleEffect(0.8)
+                    .frame(height: 20, alignment: .leading)
+            } else {
+                Text(formattedDisplayAmountUSD(amountUSD))
+                    .font(.system(size: 16, weight: .black, design: .rounded))
+                    .foregroundStyle(tint)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.72)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
+        .background(Color.primary.opacity(colorScheme == .dark ? 0.07 : 0.04), in: RoundedRectangle(cornerRadius: 13, style: .continuous))
+    }
+
+    private var tradeBalancePill: some View {
+        VStack(spacing: 4) {
+            Image(systemName: "arrow.left.arrow.right")
+                .font(.system(size: 11, weight: .bold))
+                .foregroundStyle(.secondary)
+            Text(tradeBalanceText)
+                .font(.system(size: 10, weight: .black, design: .rounded))
+                .foregroundStyle(tradeBalanceTint)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+        }
+        .frame(width: 70)
+        .padding(.vertical, 10)
+        .background(tradeBalanceTint.opacity(colorScheme == .dark ? 0.12 : 0.07), in: RoundedRectangle(cornerRadius: 13, style: .continuous))
+    }
+
     private var completeTradeSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 10) {
             Button {
                 activeAlert = .confirmation
             } label: {
@@ -890,8 +914,11 @@ private struct TradeCalculatorView: View {
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)
-                .background(bindrAccent.gradient, in: Capsule())
-                .shadow(color: bindrAccent.opacity(0.35), radius: 8, x: 0, y: 4)
+                .background {
+                    Capsule()
+                        .bindrAccentFill(bindrAccent, logoOpacity: 0.96)
+                }
+                .shadow(color: bindrAccent.opacity(0.25), radius: 12, x: 0, y: 6)
             }
             .buttonStyle(.plain)
             .disabled(isCompletingTrade)
@@ -901,18 +928,19 @@ private struct TradeCalculatorView: View {
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.top, 2)
     }
 
     private var theirSideSection: some View {
         calculatorSideSection(
-            title: "Their Side",
-            footer: "Search the catalogue for cards they are offering, even if they do not use Bindr.",
+            title: "Receive",
+            subtitle: tradeSideDetail(cards: theirCards, cashText: theirCashText),
             cards: $theirCards,
             cashText: $theirCashText,
             cashLabel: "They add cash",
-            totalLabel: "Their total",
+            tint: BindrPalette.ownedGreen,
             focusedField: .theirs,
-            addTitle: "Add Their Cards",
+            addTitle: "Add cards",
             addAction: { isTheirCardPickerPresented = true },
             scanAction: { activeScannerSide = .theirs }
         )
@@ -920,14 +948,14 @@ private struct TradeCalculatorView: View {
 
     private var mySideSection: some View {
         calculatorSideSection(
-            title: "My Side",
-            footer: "Cards are selected from your collection.",
+            title: "Give",
+            subtitle: tradeSideDetail(cards: myCards, cashText: myCashText),
             cards: $myCards,
             cashText: $myCashText,
             cashLabel: "I add cash",
-            totalLabel: "My total",
+            tint: BindrPalette.alertRed,
             focusedField: .mine,
-            addTitle: "Add My Cards",
+            addTitle: "Add cards",
             addAction: { isMyCardPickerPresented = true },
             scanAction: { activeScannerSide = .mine }
         )
@@ -935,39 +963,50 @@ private struct TradeCalculatorView: View {
 
     private func calculatorSideSection(
         title: String,
-        footer: String,
+        subtitle: String,
         cards: Binding<[NewTradeItemInput]>,
         cashText: Binding<String>,
         cashLabel: String,
-        totalLabel: String,
+        tint: Color,
         focusedField: CashField,
         addTitle: String,
         addAction: @escaping () -> Void,
         scanAction: @escaping () -> Void
     ) -> some View {
-        VStack(alignment: .leading, spacing: 14) {
-            // Header
-            Text(title.uppercased())
-                .font(.caption.weight(.bold))
-                .tracking(1.0)
-                .foregroundStyle(bindrAccent)
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .center, spacing: 12) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(title)
+                        .font(.system(size: 18, weight: .heavy))
+                        .foregroundStyle(.primary)
+                    Text(subtitle)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(.secondary)
+                }
 
-            // Items List inside Inset Glass Box
+                Spacer(minLength: 0)
+
+                sideActionButton(systemImage: "plus", tint: tint, action: addAction)
+                    .accessibilityLabel(addTitle)
+
+                sideActionButton(systemImage: "camera.fill", tint: tint, action: scanAction)
+                    .accessibilityLabel("Scan cards for \(title.lowercased())")
+            }
+
             VStack(spacing: 12) {
                 if cards.wrappedValue.isEmpty {
-                    HStack {
-                        Spacer()
+                    VStack(spacing: 8) {
                         Text("No cards selected")
-                            .font(.system(size: 13))
+                            .font(.system(size: 13, weight: .semibold))
                             .foregroundStyle(.secondary)
-                            .italic()
-                        Spacer()
                     }
-                    .padding(.vertical, 8)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 18)
                 } else {
                     ForEach(cards.wrappedValue) { item in
                         TradeCalculatorCardRow(
                             item: item,
+                            tint: tint,
                             onQuantityChange: { quantity in
                                 updateQuantity(for: item, in: cards, quantity: quantity)
                             },
@@ -985,53 +1024,39 @@ private struct TradeCalculatorView: View {
             .padding(12)
             .glassInsetStyle(cornerRadius: 16)
 
-            // Actions row (Add + Camera)
-            HStack(spacing: 12) {
-                Button(action: addAction) {
-                    Label(addTitle, systemImage: "plus.circle.fill")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(bindrAccent)
-                }
-                .buttonStyle(.plain)
-
-                Spacer(minLength: 0)
-
-                Button(action: scanAction) {
-                    Image(systemName: "camera.fill")
-                        .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(bindrAccent)
-                        .frame(width: 36, height: 36)
-                        .background(bindrAccent.opacity(0.12), in: Circle())
-                }
-                .buttonStyle(.plain)
-                .accessibilityLabel("Scan cards for \(title.lowercased())")
-            }
-
-            Divider()
-                .overlay(colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10))
-
-            // Cash Row
-            cashRow(label: cashLabel, text: cashText, focusedField: focusedField)
-
-            // Footer Description
-            Text(footer)
-                .font(.system(size: 11))
-                .foregroundStyle(.secondary)
+            cashRow(label: cashLabel, text: cashText, tint: tint, focusedField: focusedField)
         }
-        .padding(18)
-        .glassCardStyle(cornerRadius: 24, interactive: false)
+        .padding(14)
+        .glassCardStyle(cornerRadius: 18, interactive: false)
     }
 
-    private func cashRow(label: String, text: Binding<String>, focusedField: CashField) -> some View {
+    private func sideActionButton(systemImage: String, tint: Color, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: systemImage)
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(tint)
+                .frame(width: 34, height: 34)
+                .background(Color.primary.opacity(colorScheme == .dark ? 0.08 : 0.05), in: Circle())
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func cashRow(label: String, text: Binding<String>, tint: Color, focusedField: CashField) -> some View {
         HStack {
-            Text(label)
-                .font(.system(size: 14))
-                .foregroundStyle(.primary)
+            Label {
+                Text(label)
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(.primary)
+            } icon: {
+                Image(systemName: "banknote.fill")
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(tint)
+            }
             Spacer()
             HStack(spacing: 4) {
                 Text(services.priceDisplay.currency.symbol)
                     .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(tint.opacity(0.85))
                 TextField("0.00", text: text)
                     .keyboardType(.decimalPad)
                     .focused($focusedCashField, equals: focusedField)
@@ -1041,12 +1066,25 @@ private struct TradeCalculatorView: View {
             }
             .padding(.horizontal, 10)
             .padding(.vertical, 6)
-            .background(Color.primary.opacity(0.06), in: RoundedRectangle(cornerRadius: 10))
+            .background(Color.primary.opacity(colorScheme == .dark ? 0.07 : 0.04), in: RoundedRectangle(cornerRadius: 10))
             .overlay {
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.primary.opacity(0.1), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
             }
         }
+    }
+
+    private func tradeSideDetail(cards: [NewTradeItemInput], cashText: String) -> String {
+        let quantity = cards.reduce(0) { $0 + max($1.quantity, 1) }
+        let cash = parsedCash(cashText)
+        var parts: [String] = []
+        if quantity > 0 {
+            parts.append("\(quantity) card\(quantity == 1 ? "" : "s")")
+        }
+        if cash > 0 {
+            parts.append("\(services.priceDisplay.currency.symbol)\(String(format: "%.2f", cash)) cash")
+        }
+        return parts.isEmpty ? "No items yet" : parts.joined(separator: " + ")
     }
 
     private enum TradeCalculatorSide: String, Identifiable {
@@ -1412,6 +1450,7 @@ private struct TradeCalculatorCardRow: View {
     @Environment(AppServices.self) private var services
 
     let item: NewTradeItemInput
+    let tint: Color
     let onQuantityChange: (Int) -> Void
     let onRemove: () -> Void
 
@@ -1419,7 +1458,7 @@ private struct TradeCalculatorCardRow: View {
     @State private var rowValueUSD: Double?
 
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 10) {
             ZStack {
                 if let imageURLString = card?.displayImageSrc {
                     CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
@@ -1431,32 +1470,49 @@ private struct TradeCalculatorCardRow: View {
                     shimmer
                 }
             }
-            .frame(width: 36, height: 50)
-            .clipShape(RoundedRectangle(cornerRadius: 4))
+            .frame(width: 42, height: 58)
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                    .stroke(Color.white.opacity(0.18), lineWidth: 0.8)
+            }
 
-            Text(card?.cardName ?? item.cardID)
-                .font(.system(size: 14, weight: .semibold))
-                .lineLimit(2)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(card?.cardName ?? item.cardID)
+                    .font(.system(size: 13, weight: .heavy))
+                    .foregroundStyle(.primary)
+                    .lineLimit(2)
 
-            VStack(alignment: .trailing, spacing: 8) {
-                Text(rowValueText)
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.trailing)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.75)
-
-                HStack(spacing: 8) {
-                    quantityButton(systemImage: "minus", isDisabled: item.quantity <= 1) {
-                        onQuantityChange(max(item.quantity - 1, 1))
+                HStack(spacing: 6) {
+                    if item.variantKey != "normal" {
+                        Text(item.variantKey)
+                            .font(.system(size: 10, weight: .semibold))
+                            .foregroundStyle(.secondary)
+                            .lineLimit(1)
                     }
 
                     Text("Qty \(item.quantity)")
-                        .font(.system(size: 12, weight: .bold))
-                        .foregroundStyle(.primary)
-                        .lineLimit(1)
-                        .frame(minWidth: 42)
+                        .font(.system(size: 10, weight: .black))
+                        .foregroundStyle(tint)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(tint.opacity(0.12), in: Capsule())
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            VStack(alignment: .trailing, spacing: 8) {
+                Text(rowValueText)
+                    .font(.system(size: 13, weight: .black, design: .rounded))
+                    .foregroundStyle(tint)
+                    .multilineTextAlignment(.trailing)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+
+                HStack(spacing: 6) {
+                    quantityButton(systemImage: "minus", isDisabled: item.quantity <= 1) {
+                        onQuantityChange(max(item.quantity - 1, 1))
+                    }
 
                     quantityButton(systemImage: "plus") {
                         onQuantityChange(item.quantity + 1)
@@ -1464,8 +1520,10 @@ private struct TradeCalculatorCardRow: View {
 
                     Button(role: .destructive, action: onRemove) {
                         Image(systemName: "trash")
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(.system(size: 13, weight: .semibold))
+                            .foregroundStyle(BindrPalette.alertRed)
                             .frame(width: 26, height: 26)
+                            .background(BindrPalette.alertRed.opacity(0.10), in: Circle())
                     }
                     .buttonStyle(.borderless)
                 }

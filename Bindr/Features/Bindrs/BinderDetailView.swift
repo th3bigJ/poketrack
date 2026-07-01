@@ -714,86 +714,104 @@ struct BinderDetailView: View {
             }
         }
         .frame(width: pageSize.width, height: pageSize.height)
-        .clipped()
+        // Match ``BinderCoverView``'s own internal texture-layer rounding
+        // (`height * 0.03`) rather than a plain rectangle — otherwise this
+        // flush outer clip leaves a tiny square gap outside the cover's
+        // rounded corners, exposing the app's themed background behind it
+        // as small grey triangles at each corner.
+        .clipShape(RoundedRectangle(cornerRadius: coverRect.height * 0.03, style: .continuous))
     }
 
+    /// The front cover always renders at exactly `pageSize` — no separate
+    /// aspect-fit step. ``binderPageSize`` already sizes the page to
+    /// exactly wrap this layout's grid, so the cover and the card-grid
+    /// page are the same rect *by construction* for every row/column
+    /// combination, and can never peek past one another while turning.
     private func coverFrame(in pageSize: CGSize, pageOrigin: CGPoint = .zero) -> CGRect {
-        let coverAspect: CGFloat = 0.707
-        let pageAspect = pageSize.width / max(pageSize.height, 1)
-        let coverWidth: CGFloat
-        let coverHeight: CGFloat
-        if pageAspect < coverAspect {
-            coverWidth = pageSize.width
-            coverHeight = coverWidth / coverAspect
-        } else {
-            coverHeight = pageSize.height
-            coverWidth = coverHeight * coverAspect
-        }
-        return CGRect(
-            x: pageOrigin.x + (pageSize.width - coverWidth) / 2,
-            y: pageOrigin.y + (pageSize.height - coverHeight) / 2,
-            width: coverWidth,
-            height: coverHeight
-        )
+        CGRect(origin: pageOrigin, size: pageSize)
     }
 
+    /// Card-cell aspect ratio — matches the card image proportions.
+    private var cardAspectRatio: CGFloat { 5.0 / 7.0 }
+
+    /// These must match the chrome inside `pageSurface`:
+    ///   .padding(.leading, 32)  + .padding(.trailing, 14) = 46pt
+    ///   .padding(.top, 14)     + .padding(.bottom, 14)   = 28pt
+    /// The leading inset reserves the binder-ring spine.
+    private var surfaceHorizontalChrome: CGFloat { 46 }
+    private var surfaceVerticalChrome: CGFloat { 28 }
+    private var slotSpacing: CGFloat { 8 }
+    private var totalGridSpacingX: CGFloat { CGFloat(max(cols - 1, 0)) * slotSpacing }
+    private var totalGridSpacingY: CGFloat { CGFloat(max(rows - 1, 0)) * slotSpacing }
+
+    /// The binder page — always sized to exactly wrap this layout's grid
+    /// (no fixed aspect ratio imposed), so every configuration uses all of
+    /// its own page: wide layouts (few rows, many columns, e.g. 4×3) never
+    /// leave empty felt below the grid, and tall layouts (many rows, few
+    /// columns, e.g. 2×3, 3×4) never need more room than the screen has —
+    /// cards shrink (still filling the page, via ``gridCellSize(for:)``)
+    /// instead of the top rows landing off-screen. Because the front cover
+    /// always renders at this same exact rect (see ``coverFrame``), the
+    /// two can never mismatch regardless of shape.
     private func binderPageSize(in available: CGSize) -> CGSize {
         let horizontalPadding: CGFloat = 32
         let verticalPadding: CGFloat = 40 // More vertical breathing room
-        let slotSpacing: CGFloat = 8
-        // These must match the chrome inside `pageSurface`:
-        //   .padding(.leading, 32)  + .padding(.trailing, 14) = 46pt
-        //   .padding(.top, 14)     + .padding(.bottom, 14)   = 28pt
-        // The leading inset reserves the binder-ring spine.
-        let surfaceHorizontalChrome: CGFloat = 46
-        let surfaceVerticalChrome: CGFloat = 28
-        let cardAspectRatio: CGFloat = 5.0 / 7.0
-        let coverAspect: CGFloat = 0.707
 
         let maxWidth = max(available.width - horizontalPadding, 240)
         let maxHeight = max(available.height - verticalPadding, 320)
 
-        // Start from the largest A4 portrait that fits the screen.
-        var width = min(maxWidth, maxHeight * coverAspect)
-        var height = width / coverAspect
+        var width = maxWidth
+        var height = naturalGridHeight(forPageWidth: width) + surfaceVerticalChrome
 
         if height > maxHeight {
+            // Needs more vertical room than the screen offers — shrink
+            // (via width, which drives cell size) until the content's
+            // natural height exactly matches the height budget. This is
+            // an exact algebraic inversion of ``naturalGridHeight``, not
+            // an approximation, so the grid always fits with zero overflow
+            // and zero leftover slack.
             height = maxHeight
-            width = height * coverAspect
+            width = min(maxWidth, gridWidth(forTargetContentHeight: maxHeight - surfaceVerticalChrome))
         }
 
-        let totalGridSpacingX = CGFloat(max(cols - 1, 0)) * slotSpacing
-        let totalGridSpacingY = CGFloat(max(rows - 1, 0)) * slotSpacing
+        return CGSize(width: max(width, 120), height: max(height, 160))
+    }
 
-        func desiredHeight(forPageWidth pageWidth: CGFloat) -> CGFloat {
-            let contentWidth = max(pageWidth - surfaceHorizontalChrome, 120)
-            let cellWidth = (contentWidth - totalGridSpacingX) / CGFloat(cols)
-            let gridHeight = cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
-            return gridHeight + surfaceVerticalChrome
-        }
+    /// Natural (unscaled) height the card grid needs at full page width —
+    /// i.e. cells sized by dividing the page's content width evenly across
+    /// `cols`, then deriving height from `cardAspectRatio`.
+    private func naturalGridHeight(forPageWidth pageWidth: CGFloat) -> CGFloat {
+        let contentWidth = max(pageWidth - surfaceHorizontalChrome, 40)
+        let cellWidth = (contentWidth - totalGridSpacingX) / CGFloat(cols)
+        return cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
+    }
 
-        var needed = desiredHeight(forPageWidth: width)
+    /// Inverse of ``naturalGridHeight``: the page width whose grid content
+    /// (excluding the page's own vertical chrome) needs exactly
+    /// `targetHeight`. Used to shrink the page down to a height budget
+    /// without any iteration/approximation, since the relationship between
+    /// page width and grid content height is linear.
+    private func gridWidth(forTargetContentHeight targetHeight: CGFloat) -> CGFloat {
+        let cellWidth = max(targetHeight - totalGridSpacingY, 20) * cardAspectRatio / CGFloat(rows)
+        return cellWidth * CGFloat(cols) + totalGridSpacingX + surfaceHorizontalChrome
+    }
 
-        if needed > height {
-            // Tall grids (e.g. 4×3) need more vertical room than A4 provides.
-            // Grow toward the content height instead of shrinking the whole page.
-            height = min(needed, maxHeight)
-            width = min(maxWidth, height * coverAspect)
-            needed = desiredHeight(forPageWidth: width)
-            if needed > height {
-                // Still taller than the screen — shrink card cells to fit.
-                let availableForGrid = height - surfaceVerticalChrome
-                let shrunkCellHeight = max((availableForGrid - totalGridSpacingY) / CGFloat(rows), 40)
-                let shrunkCellWidth = shrunkCellHeight * cardAspectRatio
-                let shrunkContentWidth = shrunkCellWidth * CGFloat(cols) + totalGridSpacingX
-                width = min(maxWidth, max(shrunkContentWidth + surfaceHorizontalChrome, 240))
-            }
-        } else if needed < height {
-            // Compact grids — trim empty playmat below the card rows.
-            height = needed
-        }
+    /// Card-cell size that exactly fills `pageSize`'s content box in
+    /// whichever dimension is the tighter constraint — full page width
+    /// divided across `cols` in the common case, or (for a page that had
+    /// to shrink to a height budget) the size that exactly fills the
+    /// available height across `rows`. Taking the smaller of the two
+    /// guards against any rounding drift ever pushing a row past the
+    /// page's edge.
+    private func gridCellSize(for pageSize: CGSize) -> CGSize {
+        let availableWidth = max(pageSize.width - surfaceHorizontalChrome - totalGridSpacingX, 20)
+        let availableHeight = max(pageSize.height - surfaceVerticalChrome - totalGridSpacingY, 20)
 
-        return CGSize(width: width, height: height)
+        let widthDrivenCellWidth = availableWidth / CGFloat(cols)
+        let heightDrivenCellWidth = (availableHeight / CGFloat(rows)) * cardAspectRatio
+
+        let cellWidth = min(widthDrivenCellWidth, heightDrivenCellWidth)
+        return CGSize(width: cellWidth, height: cellWidth / cardAspectRatio)
     }
 
     private func pageSurface(
@@ -807,6 +825,12 @@ struct BinderDetailView: View {
         // the mockup's pronounced, card-like rounding — the smaller radius read
         // as barely-rounded against the page chrome.
         let surfaceRadius: CGFloat = 22
+        // Cell size that exactly fills the page's content box (see
+        // ``gridCellSize(for:)``) — fixed-size columns rather than
+        // `.flexible()` so the grid's own laid-out size always matches its
+        // visible size 1:1, with no post-hoc scale/anchor step that could
+        // leave rows landing outside the page.
+        let cellSize = gridCellSize(for: pageSize)
 
         return ZStack {
             // 1. Base: binder colour + procedural cross-hatch weave (felt/baize).
@@ -820,9 +844,17 @@ struct BinderDetailView: View {
 
             // 2. Card grid — leading padding bumped to 32 to clear the ring
             //    spine; top/bottom padding match for even vertical margins.
+            //    Fixed-width columns (sized by ``gridCellSize(for:)``) so
+            //    the grid never overflows or underfills its content box;
+            //    the surrounding `.frame(maxWidth/maxHeight: .infinity)`
+            //    centres it whenever a layout's exact-fit size leaves a
+            //    little slack on one axis.
             LazyVGrid(
-                columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
-                spacing: 8
+                columns: Array(
+                    repeating: GridItem(.fixed(cellSize.width), spacing: slotSpacing),
+                    count: cols
+                ),
+                spacing: slotSpacing
             ) {
                 ForEach(positions, id: \.self) { pos in
                     let slot = sortedSlots.first { $0.position == pos }
@@ -837,9 +869,10 @@ struct BinderDetailView: View {
                             emptySlotCell(position: pos)
                         }
                     }
-                    .aspectRatio(5/7, contentMode: .fit)
+                    .frame(width: cellSize.width, height: cellSize.height)
                 }
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .padding(.leading, 32)
             .padding(.trailing, 14)
             .padding(.top, 14)
@@ -863,7 +896,7 @@ struct BinderDetailView: View {
             }
         }
         .frame(width: pageSize.width, height: pageSize.height)
-        .modifier(ClipIfEnabled(shouldClip: !forExport))
+        .modifier(ClipIfEnabled(shouldClip: !forExport, cornerRadius: surfaceRadius))
         .opacity(!forExport && isCoverPage(currentPage) && !isPageTurning ? 0 : 1)
     }
 
@@ -1722,12 +1755,20 @@ struct BinderDetailView: View {
 
 }
 
+/// Clips to a rounded rect matching the page's own corner radius — rather
+/// than a plain rectangle — so the outer page boundary never leaves a
+/// square gap outside an inner rounded layer (e.g. the felt playmat's own
+/// `RoundedRectangle` clip). A plain rectangular clip flush against a
+/// rounded shape exposes tiny triangular slivers of whatever sits behind
+/// the page (the app's themed background) at each corner; matching the
+/// clip shape to the content's rounding removes that gap entirely.
 private struct ClipIfEnabled: ViewModifier {
     let shouldClip: Bool
+    var cornerRadius: CGFloat = 0
 
     func body(content: Content) -> some View {
         if shouldClip {
-            content.clipped()
+            content.clipShape(RoundedRectangle(cornerRadius: cornerRadius, style: .continuous))
         } else {
             content
         }
