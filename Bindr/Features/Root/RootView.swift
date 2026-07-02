@@ -155,6 +155,8 @@ struct RootView: View {
     // user with a paywall before they've even seen the dashboard.
     @State private var showPremiumAutoSheet = false
     @State private var showSocialFeaturesSheet = false
+    @State private var showSocialAlertsSheet = false
+    @State private var showSocialShareSheet = false
     @State private var hasEvaluatedPremiumUpsellThisSession = false
     private static let premiumUpsellLastShownKey = "bindr_premium_upsell_last_shown_at"
     private static let premiumUpsellIntervalSeconds: TimeInterval = 7 * 24 * 60 * 60
@@ -300,7 +302,6 @@ struct RootView: View {
     /// Search open at root list: show chrome. Search with a pushed detail: hide chrome. Cards tab with a pushed detail: hide chrome. Else scroll-driven chrome on Browse.
     private var showUniversalSearchBar: Bool {
         if isSearchExperiencePresented { return true }
-        if selectedTab == .social { return false }
         if selectedTab == .more { return false }
         if selectedTab == .collect && !collectionNavigationPath.isEmpty { return false }
         return chromeScroll.barsVisible
@@ -364,6 +365,10 @@ struct RootView: View {
                 searchFieldFocused = false
                 showCardScanner = true
             })
+        case .social where services.socialAuth.isSignedIn:
+            return (services.socialFeed.unreadAlertsCount > 0 ? "bell.fill" : "bell", "Alerts", {
+                showSocialAlertsSheet = true
+            })
         default:
             return nil
         }
@@ -392,12 +397,23 @@ struct RootView: View {
             return ("magnifyingglass", "Search", {
                 presentSearchExperience(scope: .collection)
             })
+        case .social:
+            return ("magnifyingglass", "Search", {
+                presentSearchExperience()
+            })
         default:
             return nil
         }
     }
 
-    private var chromeExtraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? { nil }
+    private var chromeExtraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
+        if selectedTab == .social, services.socialAuth.isSignedIn {
+            return ("plus", "New Post", {
+                showSocialShareSheet = true
+            })
+        }
+        return nil
+    }
 
     private var rootChromeTitle: String {
         if isBrowseLocalSearchContextActive, isBrowseSearchExpanded {
@@ -1205,7 +1221,7 @@ struct RootView: View {
                     topInset: chromeSearchBarTopInset,
                     bottomInset: chromeSearchBarBottomInset
                 )
-                .transition(.opacity.combined(with: .offset(y: -10)))
+                .transition(.opacity)
             }
         }
         .animation(Self.searchPresentationAnimation, value: isSearchExperiencePresented)
@@ -1214,6 +1230,19 @@ struct RootView: View {
         }
         .sheet(isPresented: $showSocialFeaturesSheet) {
             socialFeaturesSheet
+        }
+        .sheet(isPresented: $showSocialAlertsSheet) {
+            SocialAlertsSheet(isPresented: $showSocialAlertsSheet) { deepLinkURL in
+                services.socialPush.queueDeepLink(url: deepLinkURL)
+            }
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $showSocialShareSheet) {
+            SocialShareSheet(item: .card)
+                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.hidden)
         }
     }
 
@@ -1442,7 +1471,7 @@ struct RootView: View {
 
     private var socialTab: some View {
         NavigationStack {
-            if socialTabVisited && selectedTab == .social {
+            if socialTabVisited {
                 SocialRootView()
             } else {
                 Color.clear
@@ -1697,7 +1726,11 @@ struct RootView: View {
             HStack(spacing: 0) {
                 ForEach(AppTab.visibleTabs) { tab in
                     Button {
-                        selectedTab = tab
+                        var transaction = Transaction()
+                        transaction.disablesAnimations = true
+                        withTransaction(transaction) {
+                            selectedTab = tab
+                        }
                     } label: {
                         VStack(spacing: 4) {
                             Image(systemName: selectedTab == tab ? tab.symbolName : tab.symbolName.replacingOccurrences(of: ".fill", with: ""))

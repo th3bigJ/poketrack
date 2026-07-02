@@ -145,17 +145,13 @@ struct SocialRootView: View {
     }
 
     var body: some View {
-        ZStack(alignment: .top) {
-            content
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            socialHeader
-        }
+        content
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         .bindrPageBackground()
         .tint(.primary)
         .navigationTitle("Social")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
-        .toolbar(.visible, for: .tabBar)
         .toolbarBackground(.hidden, for: .tabBar)
         .ignoresSafeArea(.keyboard, edges: .bottom)
         .sheet(isPresented: $showAccountProfile) {
