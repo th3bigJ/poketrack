@@ -24,7 +24,8 @@ struct ThemeCustomizationSections: View {
             SlidingSegmentedPicker(
                 selection: Bindable(services.theme).appearance,
                 items: ThemeSettings.AppAppearance.allCases,
-                title: { $0.displayName }
+                title: { $0.displayName },
+                labelAlignment: .leading
             )
         }
     }

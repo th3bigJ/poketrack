@@ -43,6 +43,7 @@ struct GreySegmentedPicker<SelectionValue: Hashable>: View {
     let title: (SelectionValue) -> String
 
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Namespace private var namespace
 
     var body: some View {
@@ -59,7 +60,14 @@ struct GreySegmentedPicker<SelectionValue: Hashable>: View {
                 } label: {
                     Text(title(item))
                         .font(.system(size: 13, weight: isSelected ? .bold : .medium))
-                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.6))
+                        .foregroundStyle(
+                            isSelected
+                                ? services.theme.accentColor.bindrChipLabelColor(
+                                    colorScheme: colorScheme,
+                                    usesGradient: services.theme.isGradientThemeSelected
+                                )
+                                : .primary.opacity(0.6)
+                        )
                         .lineLimit(1)
                         .minimumScaleFactor(0.8)
                         .frame(maxWidth: .infinity, minHeight: 32)

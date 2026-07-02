@@ -38,6 +38,7 @@ struct BindrOnboardingFlow: View {
         }
         .interactiveDismissDisabled()
         .preferredColorScheme(services.theme.colorScheme)
+        .bindrTheme(accent: services.theme.accentColor)
         .onDisappear {
             if !services.brandSettings.hasCompletedBrandOnboarding {
                 services.brandSettings.completeBrandOnboarding()
@@ -107,8 +108,10 @@ struct BindrOnboardingFlow: View {
                 advance()
             } label: {
                 Text("Skip")
-                    .font(.system(size: 13, weight: .semibold))
+                    .font(.system(size: 14, weight: .semibold))
                     .foregroundStyle(.secondary)
+                    .padding(.horizontal, BindrSpacing.sm)
+                    .padding(.vertical, 6)
             }
             .buttonStyle(.plain)
             .opacity(skipHidden ? 0 : 1)

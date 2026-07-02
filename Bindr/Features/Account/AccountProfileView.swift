@@ -144,40 +144,35 @@ struct AccountProfileView: View {
     // MARK: - Subviews
     
     private var signInView: some View {
-        Form {
-            Section {
-                Text("Sign in with your Apple ID to create and sync your social profile.")
+        ScrollView {
+            VStack(alignment: .leading, spacing: BindrSpacing.lg) {
+                Text("Sign in to create and sync your social profile, back up your library, and join the collector network.")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-                
-                SignInWithAppleButton(.signIn) { request in
-                    let nonce = randomNonceString()
-                    currentNonce = nonce
-                    request.requestedScopes = [.email, .fullName]
-                    request.nonce = sha256(nonce)
-                } onCompletion: { result in
-                    Task {
-                        await handleAppleSignInResult(result)
+
+                SocialSignInButtons(
+                    currentNonce: $currentNonce,
+                    isBusy: services.socialAuth.isBusy,
+                    onAppleSignInResult: { result in
+                        Task { await handleAppleSignInResult(result) }
+                    },
+                    onGoogleSignIn: {
+                        Task { await handleGoogleSignIn() }
                     }
-                }
-                .signInWithAppleButtonStyle(.black)
-                .frame(height: 48)
-            } header: {
-                Text("Account")
-            } footer: {
-                Text("This uses Apple’s native authentication sheet and then exchanges the Apple identity token for a Supabase session.")
-            }
-            
-            if let errorMessage {
-                Section {
+                )
+
+                if let errorMessage {
                     Text(errorMessage)
                         .font(.footnote)
-                        .foregroundStyle(.red)
+                        .foregroundStyle(BindrPalette.alertRed)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
                 }
             }
+            .padding(BindrSpacing.lg)
         }
         .scrollContentBackground(.hidden)
-        .background(Color(uiColor: .systemGroupedBackground))
+        .bindrPageBackground()
     }
     
     private var createProfilePrompt: some View {
@@ -190,7 +185,7 @@ struct AccountProfileView: View {
                 Button("Create Profile") {
                     navigationPath.append(Destination.editProfile)
                 }
-                .buttonStyle(.borderedProminent)
+                .bindrProminentButtonStyle(size: .flexible)
             }
             
             Section {
@@ -207,6 +202,24 @@ struct AccountProfileView: View {
     
     // MARK: - Helpers
     
+    private func handleGoogleSignIn() async {
+        errorMessage = nil
+        do {
+            try await services.socialAuth.signInWithGoogleOAuth()
+            await services.socialPush.updateRegistrationState()
+            await refreshProfileIfNeeded()
+            externalProfile = profile
+            if profile == nil {
+                navigationPath.append(Destination.editProfile)
+            }
+        } catch let error as GoogleOAuthSession.OAuthError {
+            if case .cancelled = error { return }
+            errorMessage = error.localizedDescription
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
     private func handleAppleSignInResult(_ result: Result<ASAuthorization, Error>) async {
         errorMessage = nil
         do {

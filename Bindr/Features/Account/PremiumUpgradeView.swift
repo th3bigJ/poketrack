@@ -244,7 +244,7 @@ struct PremiumUpgradeView: View {
                 if let meta {
                     Text(meta)
                         .font(.system(size: 11, weight: .bold))
-                        .foregroundStyle(.white)
+                        .bindrForegroundOnAccentFill(accent)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 4)
                         .background {

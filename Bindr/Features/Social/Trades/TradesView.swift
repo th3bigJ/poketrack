@@ -126,12 +126,15 @@ struct TradesView: View {
 
             if expandedSection == .wall {
                 TradeWallView(navigationPath: $navigationPath)
-                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .padding(16)
+                    .glassInsetStyle(cornerRadius: 16)
                     .padding(.horizontal, 16)
             }
 
             if expandedSection == .active {
                 activeTradesPanel
+                    .padding(16)
+                    .glassInsetStyle(cornerRadius: 16)
                     .padding(.horizontal, 16)
             }
         }
@@ -188,15 +191,17 @@ struct TradesView: View {
             .padding(12)
             .frame(maxWidth: .infinity, minHeight: 56)
             .background {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .bindrAccentFill(
-                        isExpanded ? accent : Color(uiColor: .secondarySystemBackground),
-                        usesLogoGradient: isExpanded
-                    )
+                if isExpanded {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .bindrAccentFill(accent, usesLogoGradient: true)
+                }
             }
+            .modifier(CollapsedGlassInsetModifier(isActive: !isExpanded, cornerRadius: 16))
             .overlay {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .stroke(isExpanded ? Color.white.opacity(0.18) : Color.primary.opacity(0.07), lineWidth: 1)
+                if isExpanded {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(Color.white.opacity(0.18), lineWidth: 1)
+                }
             }
         }
         .buttonStyle(.plain)
@@ -289,6 +294,7 @@ struct TradesView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 26)
+        .glassInsetStyle(cornerRadius: 14)
     }
 
     // MARK: - Data
@@ -521,5 +527,18 @@ struct TradesView: View {
             return card.cardName
         }
         return cardID
+    }
+}
+
+private struct CollapsedGlassInsetModifier: ViewModifier {
+    let isActive: Bool
+    let cornerRadius: CGFloat
+
+    func body(content: Content) -> some View {
+        if isActive {
+            content.glassInsetStyle(cornerRadius: cornerRadius)
+        } else {
+            content
+        }
     }
 }

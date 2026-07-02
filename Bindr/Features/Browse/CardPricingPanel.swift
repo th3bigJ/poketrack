@@ -460,7 +460,11 @@ struct CardPricingPanel: View {
                 } label: {
                     Text(range.rawValue)
                         .font(.system(size: 14, weight: .semibold))
-                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.82))
+                        .foregroundStyle(
+                            isSelected
+                                ? activeChartAccent.bindrLabelOnFill(in: colorScheme)
+                                : .primary.opacity(0.82)
+                        )
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 8)
                         .background {

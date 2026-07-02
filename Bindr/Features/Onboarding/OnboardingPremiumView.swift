@@ -239,6 +239,7 @@ struct OnboardingPremiumView: View {
                           ? accent.opacity(colorScheme == .dark ? 0.14 : 0.08)
                           : Color.primary.opacity(colorScheme == .dark ? 0.05 : 0.04))
             }
+            .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
             .overlay {
                 RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous)
                     .stroke(isSelected ? accent : Color.clear, lineWidth: 2)

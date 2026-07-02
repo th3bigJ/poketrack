@@ -34,7 +34,7 @@ struct TradeRowView: View {
                     ProfileAvatarView(profile: profile, size: 46)
                 } else {
                     Circle()
-                        .fill(Color(uiColor: .secondarySystemBackground))
+                        .glassInsetCircleStyle()
                         .frame(width: 46, height: 46)
                 }
 
@@ -66,7 +66,7 @@ struct TradeRowView: View {
             teaserStrip
         }
         .padding(14)
-        .background(Color(uiColor: colorScheme == .dark ? .secondarySystemBackground : .systemBackground), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .glassInsetStyle(cornerRadius: 16)
         .overlay {
             RoundedRectangle(cornerRadius: 16, style: .continuous)
                 .stroke(borderColor, lineWidth: 1)

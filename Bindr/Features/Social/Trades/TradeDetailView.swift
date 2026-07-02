@@ -134,39 +134,37 @@ struct TradeDetailView: View {
         let myTotalUSD = myItemsValueUSD + displayAmountToUSD(myCash)
         let theirTotalUSD = theirItemsValueUSD + displayAmountToUSD(theirCash)
 
-        return VStack(spacing: 0) {
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 16) {
-                    tradeSummaryCard(twi, myTotalUSD: myTotalUSD, theirTotalUSD: theirTotalUSD)
+        return ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 16) {
+                tradeSummaryCard(twi, myTotalUSD: myTotalUSD, theirTotalUSD: theirTotalUSD)
 
-                    tradeSection(
-                        title: "You give",
-                        detail: tradeSideDetail(items: myItems, cash: myCash),
-                        profile: myProfile,
-                        items: myItems,
-                        cash: myCash,
-                        totalValueUSD: myTotalUSD,
-                        tint: BindrPalette.alertRed,
-                        emptyText: "Nothing from your side yet."
-                    )
+                tradeSection(
+                    title: "You give",
+                    detail: tradeSideDetail(items: myItems, cash: myCash),
+                    profile: myProfile,
+                    items: myItems,
+                    cash: myCash,
+                    totalValueUSD: myTotalUSD,
+                    tint: BindrPalette.alertRed,
+                    emptyText: "Nothing from your side yet."
+                )
 
-                    tradeSection(
-                        title: "You receive",
-                        detail: tradeSideDetail(items: theirItems, cash: theirCash),
-                        profile: theirProfile,
-                        items: theirItems,
-                        cash: theirCash,
-                        totalValueUSD: theirTotalUSD,
-                        tint: BindrPalette.ownedGreen,
-                        emptyText: "Nothing from their side yet."
-                    )
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, 84)
-                .padding(.bottom, 10)
+                tradeSection(
+                    title: "You receive",
+                    detail: tradeSideDetail(items: theirItems, cash: theirCash),
+                    profile: theirProfile,
+                    items: theirItems,
+                    cash: theirCash,
+                    totalValueUSD: theirTotalUSD,
+                    tint: BindrPalette.ownedGreen,
+                    emptyText: "Nothing from their side yet."
+                )
+
+                actionFooter(twi)
             }
-            
-            actionFooter(twi)
+            .padding(.horizontal, 16)
+            .padding(.top, 84)
+            .padding(.bottom, 24)
         }
         .task(id: valuationSignature(for: twi)) {
             await refreshTradeValues(for: twi)
@@ -334,12 +332,8 @@ struct TradeDetailView: View {
     }
 
     private func actionFooter(_ twi: TradeWithItems) -> some View {
-        VStack(spacing: 12) {
-            actionButtons(twi)
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 8)
-        .padding(.bottom, 8)
+        actionButtons(twi)
+            .padding(.top, 4)
     }
 
     private func tradeSideDetail(items: [TradeItem], cash: Double) -> String {
@@ -456,24 +450,27 @@ struct TradeDetailView: View {
                 }
             } else if status == .accepted {
                 if iConfirmedCompletion {
-                    VStack(spacing: 8) {
-                        HStack(spacing: 8) {
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack(spacing: 10) {
                             Image(systemName: theyConfirmedCompletion ? "checkmark.circle.fill" : "clock.fill")
+                                .font(.system(size: 18, weight: .semibold))
+                                .foregroundStyle(theyConfirmedCompletion ? Color(hex: "52C97C") : Color(hex: "E8B84B"))
+
                             Text(theyConfirmedCompletion ? "Finalizing trade" : "Waiting for their confirmation")
                                 .font(.system(size: 15, weight: .bold))
+                                .foregroundStyle(.primary)
                         }
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 56)
-                        .foregroundStyle(theyConfirmedCompletion ? Color(hex: "52C97C") : Color(hex: "E8B84B"))
-                        .glassCardStyle(cornerRadius: 18, interactive: true)
 
                         if !theyConfirmedCompletion {
                             Text("Your collection has been updated. The trade will complete once they confirm theirs.")
-                                .font(.system(size: 12))
+                                .font(.system(size: 13))
                                 .foregroundStyle(.secondary)
-                                .multilineTextAlignment(.center)
+                                .fixedSize(horizontal: false, vertical: true)
                         }
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(16)
+                    .glassInsetStyle(cornerRadius: 18)
                 } else {
                     HStack(spacing: 12) {
                         Button { showConfirmComplete = true } label: {

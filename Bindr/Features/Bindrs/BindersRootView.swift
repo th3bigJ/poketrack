@@ -190,7 +190,7 @@ struct BindersRootView: View {
                     Text("Create a binder to organise your cards.")
                 } actions: {
                     Button("Create a Binder") { handleCreateTap() }
-                        .buttonStyle(.borderedProminent)
+                        .bindrProminentButtonStyle(size: .compact)
                 }
                 .frame(minHeight: 300)
             }
@@ -202,7 +202,7 @@ struct BindersRootView: View {
                     Text("Create a binder for \(activeBrand.displayTitle) to organise those cards.")
                 } actions: {
                     Button("Create a Binder") { handleCreateTap() }
-                        .buttonStyle(.borderedProminent)
+                        .bindrProminentButtonStyle(size: .compact)
                 }
                 .frame(minHeight: 300)
             }

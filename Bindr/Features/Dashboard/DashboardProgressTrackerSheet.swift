@@ -517,12 +517,10 @@ struct DashboardProgressTrackerSheet: View {
                 addTarget(from: draft)
             } label: {
                 Text("Start Tracking")
-                    .font(.body.weight(.semibold))
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 14)
             }
-            .buttonStyle(.borderedProminent)
-            .tint(services.theme.accentColor)
+            .bindrProminentButtonStyle(size: .flexible)
         }
         .padding(.horizontal, 20)
         .padding(.top, 12)
@@ -561,7 +559,13 @@ struct DashboardProgressTrackerSheet: View {
                             usesLogoGradient: isSelected
                         )
                 }
-                .foregroundStyle(isSelected ? .white : .primary.opacity(0.85))
+                .foregroundStyle(
+                    isSelected
+                        ? (services.theme.isGradientThemeSelected
+                            ? Color.white
+                            : services.theme.accentColor.bindrLabelOnFill(in: colorScheme))
+                        : .primary.opacity(0.85)
+                )
         }
         .buttonStyle(.plain)
     }

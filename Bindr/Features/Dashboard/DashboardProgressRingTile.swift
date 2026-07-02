@@ -67,13 +67,29 @@ struct DashboardProgressRingTile: View {
                     .resizable()
                     .scaledToFit()
             } placeholder: {
-                Color.primary.opacity(0.06)
+                progressArtworkPlaceholder(showSpinner: true)
             }
+            .id(url.absoluteString)
         } else {
-            Image(systemName: "square.stack.3d.up.fill")
-                .font(.system(size: 22, weight: .semibold))
-                .foregroundStyle(.secondary)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            progressArtworkPlaceholder(showSpinner: false)
         }
+    }
+
+    private func progressArtworkPlaceholder(showSpinner: Bool) -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .fill(Color.primary.opacity(0.06))
+
+            if showSpinner {
+                ProgressView()
+                    .controlSize(.small)
+                    .tint(accentColor)
+            } else {
+                Image(systemName: snapshot.kind == .pokemon ? "hare.fill" : "square.stack.3d.up.fill")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

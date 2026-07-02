@@ -195,9 +195,33 @@ struct BindrAccentForeground: ViewModifier {
     }
 }
 
+struct BindrForegroundOnAccentFillModifier: ViewModifier {
+    let accent: Color
+    let usesGradient: Bool
+
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(AppServices.self) private var services
+
+    private var labelColor: Color {
+        if usesGradient || services.theme.isGradientThemeSelected {
+            return .white
+        }
+        return accent.bindrLabelOnFill(in: colorScheme)
+    }
+
+    func body(content: Content) -> some View {
+        content.foregroundStyle(labelColor)
+    }
+}
+
 extension View {
     func bindrAccentForeground(_ fallback: Color) -> some View {
         modifier(BindrAccentForeground(fallback: fallback))
+    }
+
+    /// Readable label color on a solid or gradient accent fill (buttons, chips).
+    func bindrForegroundOnAccentFill(_ accent: Color, usesGradient: Bool = false) -> some View {
+        modifier(BindrForegroundOnAccentFillModifier(accent: accent, usesGradient: usesGradient))
     }
 }
 

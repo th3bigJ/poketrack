@@ -78,6 +78,7 @@ struct DeckDetailView: View {
     @State private var cachedPokemonCount: Int = 0
     @State private var cachedTrainerCount: Int = 0
     @State private var cachedEnergyCount: Int = 0
+    @State private var cachedCopiesNeededByDeckCard: [PersistentIdentifier: Int] = [:]
 
     private static func catalogSubtypeString(from card: Card) -> String? {
         if let s = card.subtype?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
@@ -119,8 +120,13 @@ struct DeckDetailView: View {
 
     /// Per `DeckCard` row: copies still missing from the collection to satisfy that line (same pool allocation as deck value).
     private var copiesNeededByDeckCard: [PersistentIdentifier: Int] {
+        cachedCopiesNeededByDeckCard
+    }
+
+    private func recomputeCopiesNeededByDeckCard() {
         var remaining = playableOwnedQuantityByCardID()
         var result: [PersistentIdentifier: Int] = [:]
+        result.reserveCapacity(deck.cardList.count)
         for deckCard in deck.cardList {
             let needed = deckCard.quantity
             let pool = remaining[deckCard.cardID] ?? 0
@@ -128,7 +134,7 @@ struct DeckDetailView: View {
             remaining[deckCard.cardID] = pool - covered
             result[deckCard.persistentModelID] = needed - covered
         }
-        return result
+        cachedCopiesNeededByDeckCard = result
     }
 
     private var pokemonCards: [DeckCard] { cachedPokemonCards }
@@ -153,6 +159,7 @@ struct DeckDetailView: View {
         cachedPokemonCount = pokemon.reduce(0) { $0 + $1.quantity }
         cachedTrainerCount = trainer.reduce(0) { $0 + $1.quantity }
         cachedEnergyCount  = energy.reduce(0)  { $0 + $1.quantity }
+        recomputeCopiesNeededByDeckCard()
     }
 
     private var validationColor: Color {
@@ -242,6 +249,9 @@ struct DeckDetailView: View {
                 cardData: services.cardData
             )
         }
+        .onChange(of: collectionItems.count) { _, _ in
+            recomputeCopiesNeededByDeckCard()
+        }
         .onChange(of: shareAutoSyncSignature) { _, _ in
             recomputeDeckCardSections()
             services.socialShare.scheduleAutoSync(deck: deck)
@@ -257,7 +267,9 @@ struct DeckDetailView: View {
 
     private func refreshDeckAfterFirstPaint() async {
         await backfillDeckCatalogMetadataIfNeeded()
+        guard !Task.isCancelled else { return }
         await syncDeckImagePathsFromCatalog()
+        guard !Task.isCancelled else { return }
         await refreshValue()
     }
 
@@ -561,9 +573,15 @@ struct DeckDetailView: View {
         }
         guard !cardsNeedingMetadata.isEmpty else { return }
 
+        let loadedCards = await services.cardData.loadCards(
+            masterCardIDs: cardsNeedingMetadata.map(\.cardID),
+            catalogBrand: deck.tcgBrand
+        )
+        let cardsByID = Dictionary(uniqueKeysWithValues: loadedCards.map { ($0.masterCardId, $0) })
+
         var didChange = false
         for deckCard in cardsNeedingMetadata {
-            guard let card = await services.cardData.loadCard(masterCardId: deckCard.cardID) else { continue }
+            guard let card = cardsByID[deckCard.cardID] else { continue }
 
             if deckCard.catalogCategory?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty != false,
                let category = card.category?.trimmingCharacters(in: .whitespacesAndNewlines),
@@ -593,9 +611,16 @@ struct DeckDetailView: View {
 
     @MainActor
     private func syncDeckImagePathsFromCatalog() async {
+        let cardIDs = deck.cardList.map(\.cardID)
+        let loadedCards = await services.cardData.loadCards(
+            masterCardIDs: cardIDs,
+            catalogBrand: deck.tcgBrand
+        )
+        let cardsByID = Dictionary(uniqueKeysWithValues: loadedCards.map { ($0.masterCardId, $0) })
+
         var didChange = false
         for deckCard in deck.cardList {
-            guard let card = await services.cardData.loadCard(masterCardId: deckCard.cardID) else { continue }
+            guard let card = cardsByID[deckCard.cardID] else { continue }
             let preferredPath = card.displayImageSrc.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !preferredPath.isEmpty else { continue }
 
@@ -746,8 +771,18 @@ struct DeckDetailView: View {
         /// Remaining collection copies we can allocate to deck lines (handles “own 1 of 4”).
         var remainingOwnedCopies = playableOwnedQuantityByCardID()
 
+        let loadedCards = await services.cardData.loadCards(
+            masterCardIDs: deck.cardList.map(\.cardID),
+            catalogBrand: deck.tcgBrand
+        )
+        let cardsByID = Dictionary(uniqueKeysWithValues: loadedCards.map { ($0.masterCardId, $0) })
+
         for deckCard in deck.cardList {
-            guard let card = await services.cardData.loadCard(masterCardId: deckCard.cardID) else { continue }
+            guard !Task.isCancelled else {
+                isLoadingValue = false
+                return
+            }
+            guard let card = cardsByID[deckCard.cardID] else { continue }
             let entry = await services.pricing.pricing(for: card)
             let unitUSD = bestPrice(entry) ?? 0.0
             let needed = deckCard.quantity
@@ -983,13 +1018,6 @@ private struct DeckCardGridCell: View {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(Color(uiColor: .systemGray5))
                     .aspectRatio(5/7, contentMode: .fit)
-                    .overlay {
-                        Text(deckCard.cardName)
-                            .font(.caption2)
-                            .multilineTextAlignment(.center)
-                            .padding(4)
-                            .foregroundStyle(.secondary)
-                    }
             }
             .aspectRatio(5/7, contentMode: .fit)
             .clipShape(RoundedRectangle(cornerRadius: 8))

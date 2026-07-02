@@ -471,7 +471,7 @@ struct CardScannerView: View {
                         UIApplication.shared.open(url)
                     }
                 }
-                .buttonStyle(.borderedProminent)
+                .bindrProminentButtonStyle(size: .compact)
             }
         }
     }

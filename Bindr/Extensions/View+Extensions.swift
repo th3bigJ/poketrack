@@ -372,6 +372,7 @@ struct GlassFilterChipModifier: ViewModifier {
     func body(content: Content) -> some View {
         if isSelected {
             content
+                .bindrForegroundOnAccentFill(accentColor)
                 .background {
                     Capsule(style: .continuous)
                         .bindrAccentFill(accentColor)

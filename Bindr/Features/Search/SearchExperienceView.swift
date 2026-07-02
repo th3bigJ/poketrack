@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 enum SearchHistoryStore {
@@ -33,6 +34,9 @@ struct SearchExperienceView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.presentCard) private var presentCard
+
+    @Query private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
 
     @Binding var query: String
     @Binding var scopeCategory: SearchScopeCategory
@@ -113,6 +117,30 @@ struct SearchExperienceView: View {
         colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
     }
 
+    private var activeBrand: TCGBrand {
+        services.brandSettings.selectedCatalogBrand
+    }
+
+    private var ownedQuantityByCardID: [String: Int] {
+        var qty: [String: Int] = [:]
+        for item in collectionItems {
+            guard item.quantity > 0 else { continue }
+            guard TCGBrand.inferredFromMasterCardId(item.cardID) == activeBrand else { continue }
+            qty[item.cardID, default: 0] += item.quantity
+        }
+        return qty
+    }
+
+    private var ownedCardIDs: Set<String> {
+        Set(ownedQuantityByCardID.keys)
+    }
+
+    private var wishlistedCardIDs: Set<String> {
+        Set(wishlistItems.compactMap { item in
+            TCGBrand.inferredFromMasterCardId(item.cardID) == activeBrand ? item.cardID : nil
+        })
+    }
+
     private var recentSearchesSection: some View {
         VStack(alignment: .leading, spacing: 14) {
             HStack {
@@ -187,28 +215,19 @@ struct SearchExperienceView: View {
                             SearchHistoryStore.recordViewedCard(card.masterCardId)
                             presentCard(card, recentlyViewedCards)
                         } label: {
-                            VStack(alignment: .leading, spacing: 6) {
-                                CachedAsyncImage(
-                                    url: AppConfiguration.imageURL(relativePath: card.displayImageSrc),
-                                    targetSize: CGSize(width: 150, height: 210)
-                                ) { image in
-                                    image.resizable().scaledToFit()
-                                } placeholder: {
-                                    Color.primary.opacity(0.06)
-                                }
-                                .frame(width: 82, height: 115)
-                                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-
-                                Text(card.cardName)
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(.primary)
-                                    .lineLimit(1)
-                                    .frame(width: 82, alignment: .leading)
-                            }
-                            .frame(width: 82, alignment: .leading)
-                            .contentShape(Rectangle())
+                            CardGridCell(
+                                card: card,
+                                services: services,
+                                colorScheme: colorScheme,
+                                accentColor: services.theme.accentColor,
+                                isOwned: ownedCardIDs.contains(card.masterCardId),
+                                isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
+                                ownedCountBadge: ownedQuantityByCardID[card.masterCardId],
+                                alwaysShowOwnedCountBadge: ownedCardIDs.contains(card.masterCardId)
+                            )
+                            .frame(width: 110)
                         }
-                        .buttonStyle(.plain)
+                        .buttonStyle(CardCellButtonStyle())
                     }
                 }
                 .padding(.vertical, 2)

@@ -374,8 +374,12 @@ struct SocialRootView: View {
             currentNonce: $currentNonce,
             errorMessage: errorMessage,
             headerInset: rootFloatingChromeInset,
+            isBusy: services.socialAuth.isBusy,
             onSignInResult: { result in
                 Task { await handleAppleSignInResult(result) }
+            },
+            onGoogleSignIn: {
+                Task { await handleGoogleSignIn() }
             }
         )
     }
@@ -520,6 +524,27 @@ struct SocialRootView: View {
         guard tabs.indices.contains(nextIndex) else { return }
         Haptics.lightImpact()
         selectedTab = tabs[nextIndex]
+    }
+
+    private func handleGoogleSignIn() async {
+        errorMessage = nil
+        do {
+            try await services.socialAuth.signInWithGoogleOAuth()
+            await services.socialPush.updateRegistrationState()
+            await refreshProfileIfNeeded()
+            await MainActor.run {
+                profilePopoverPath = NavigationPath()
+                if profile == nil {
+                    profilePopoverPath.append(AccountProfileView.Destination.editProfile)
+                }
+                showAccountProfile = true
+            }
+        } catch let error as GoogleOAuthSession.OAuthError {
+            if case .cancelled = error { return }
+            errorMessage = error.localizedDescription
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 
     private func handleAppleSignInResult(_ result: Result<ASAuthorization, Error>) async {

@@ -51,6 +51,7 @@ final class SocialAuthService {
         case invalidResponse
         case missingSession
         case notSignedIn
+        case googleSignInUnavailable
         case requestFailed(String)
 
         var errorDescription: String? {
@@ -63,6 +64,8 @@ final class SocialAuthService {
                 return "Authentication completed but no session was returned. Check email confirmation settings in Supabase Auth."
             case .notSignedIn:
                 return "Sign in to your Bindr account first."
+            case .googleSignInUnavailable:
+                return "Google sign-in is not available yet. Use Sign in with Apple, or try again after the next app update."
             case .requestFailed(let message):
                 return message
             }
@@ -135,6 +138,46 @@ final class SocialAuthService {
             KeychainStorage.saveAppleUserIdentifier(appleUserIdentifier)
         }
         statusMessage = "Signed in with Apple"
+    }
+
+    /// Exchanges a Google ID token (native SDK or OAuth) for a Supabase session.
+    func signInWithGoogle(idToken: String, accessToken: String? = nil) async throws {
+        try ensureConfigured()
+        isBusy = true
+        defer { isBusy = false }
+        statusMessage = "Signing in with Google…"
+
+        var payload: [String: String] = [
+            "provider": "google",
+            "id_token": idToken
+        ]
+        if let accessToken, !accessToken.isEmpty {
+            payload["access_token"] = accessToken
+        }
+
+        let response: AuthResponse = try await sendAuthRequest(
+            path: "/auth/v1/token?grant_type=id_token",
+            method: "POST",
+            body: payload
+        )
+        try applyAuthResponse(response)
+        statusMessage = "Signed in with Google"
+    }
+
+    /// Completes Google sign-in via Supabase OAuth in a web session.
+    func signInWithGoogleOAuth() async throws {
+        try ensureConfigured()
+        guard AppConfiguration.isGoogleSignInAvailable else {
+            throw SocialAuthError.googleSignInUnavailable
+        }
+
+        isBusy = true
+        defer { isBusy = false }
+        statusMessage = "Signing in with Google…"
+
+        let tokens = try await GoogleOAuthSession.signIn()
+        try await applySessionTokens(accessToken: tokens.accessToken, refreshToken: tokens.refreshToken)
+        statusMessage = "Signed in with Google"
     }
 
     func restoreSession() async {
@@ -244,6 +287,30 @@ final class SocialAuthService {
         }
         self.accessToken = accessToken
         self.refreshToken = refreshToken
+        authState = .signedIn(userID: user.id, email: user.email)
+        KeychainStorage.saveSocialSession(accessToken: accessToken, refreshToken: refreshToken, userID: user.id)
+    }
+
+    private func applySessionTokens(accessToken: String, refreshToken: String) async throws {
+        self.accessToken = accessToken
+        self.refreshToken = refreshToken
+
+        let url = try makeURL(path: "/auth/v1/user")
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue(publishableKey, forHTTPHeaderField: "apikey")
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+        guard let http = response as? HTTPURLResponse else {
+            throw SocialAuthError.invalidResponse
+        }
+        guard (200..<300).contains(http.statusCode) else {
+            throw SocialAuthError.requestFailed("Could not load Google account profile.")
+        }
+
+        let user = try JSONDecoder().decode(AuthUser.self, from: data)
         authState = .signedIn(userID: user.id, email: user.email)
         KeychainStorage.saveSocialSession(accessToken: accessToken, refreshToken: refreshToken, userID: user.id)
     }

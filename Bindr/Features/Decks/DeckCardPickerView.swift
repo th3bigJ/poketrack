@@ -196,6 +196,7 @@ enum DeckPickerPrewarm {
         format: DeckFormat,
         cardData: CardDataService
     ) async {
+        guard !Task.isCancelled else { return }
         let key = DeckPickerEligibilityCacheKey(brand: brand, format: format)
         if DeckPickerEligibilityCache.values[key] != nil,
            DeckPickerCatalogBootstrapCache.snapshotsByBrand[brand] != nil {
@@ -210,22 +211,30 @@ enum DeckPickerPrewarm {
             if let cached = DeckPickerCatalogBootstrapCache.snapshotsByBrand[brand] {
                 snapshot = cached
             } else {
+                guard !Task.isCancelled else { return }
                 try await CatalogStore.shared.open()
+                guard !Task.isCancelled else { return }
                 let sets = try await CatalogStore.shared.fetchAllSets(for: brand)
+                guard !Task.isCancelled else { return }
                 let refs = try await CatalogStore.shared.fetchAllCardRefs(for: brand)
+                guard !Task.isCancelled else { return }
                 let filterCards = try await CatalogStore.shared.fetchAllBrowseFilterCards(for: brand)
+                guard !Task.isCancelled else { return }
                 snapshot = DeckPickerCatalogSnapshot(sets: sets, refs: refs, filterCards: filterCards)
                 DeckPickerCatalogBootstrapCache.snapshotsByBrand[brand] = snapshot
             }
 
             // Prime "first paint" data by warming the newest set card cache.
             if let newestSet = snapshot.sets.max(by: { ($0.releaseDate ?? "") < ($1.releaseDate ?? "") }) {
+                guard !Task.isCancelled else { return }
                 _ = await cardData.loadCards(forSetCode: newestSet.setCode, catalogBrand: brand)
             }
 
             if DeckPickerEligibilityCache.values[key] == nil {
+                guard !Task.isCancelled else { return }
                 let releaseDateBySetCode = Dictionary(uniqueKeysWithValues: snapshot.sets.map { ($0.setCode, $0.releaseDate ?? "") })
                 let eligibleCards = snapshot.filterCards.filter { card in
+                    guard !Task.isCancelled else { return false }
                     if let legalSets = format.legalSetKeys, !legalSets.contains(card.setCode) { return false }
                     let releaseDate = releaseDateBySetCode[card.setCode]
                     if format == .pokemonStandard,

@@ -32,6 +32,27 @@ extension Color {
             return UIColor(hex: hex)
         })
     }
+
+    /// Label color that stays readable on a solid accent fill (buttons, chips).
+    /// Uses relative luminance so Classic dark (white accent) gets black text.
+    func bindrLabelOnFill(in colorScheme: ColorScheme) -> Color {
+        let trait = UITraitCollection(userInterfaceStyle: colorScheme == .dark ? .dark : .light)
+        let resolved = UIColor(self).resolvedColor(with: trait)
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        guard resolved.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+            return .white
+        }
+        let luminance = 0.2126 * red + 0.7152 * green + 0.0722 * blue
+        return luminance > 0.62 ? Color.black : Color.white
+    }
+
+    /// Selected chip / segment label on an accent (or gradient) fill.
+    func bindrChipLabelColor(colorScheme: ColorScheme, usesGradient: Bool) -> Color {
+        usesGradient ? .white : bindrLabelOnFill(in: colorScheme)
+    }
 }
 
 private extension UIColor {

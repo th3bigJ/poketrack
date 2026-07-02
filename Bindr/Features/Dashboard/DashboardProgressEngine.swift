@@ -2,6 +2,7 @@ import Foundation
 
 struct DashboardProgressSnapshot: Equatable, Identifiable, Sendable {
     let targetID: UUID
+    let kind: DashboardProgressTargetKind
     let title: String
     let modeLabel: String
     let collected: Int
@@ -25,6 +26,11 @@ enum DashboardProgressEngine {
     ) async -> [DashboardProgressSnapshot] {
         guard !targets.isEmpty else { return [] }
 
+        if targets.contains(where: { $0.kind == .pokemon }),
+           services.cardData.nationalDexPokemon.isEmpty {
+            await services.cardData.loadNationalDexPokemon()
+        }
+
         let brand = services.brandSettings.selectedCatalogBrand
         let ownedVariants = ownedVariantsByCardID(
             from: collectionItems,
@@ -36,6 +42,7 @@ enum DashboardProgressEngine {
         results.reserveCapacity(targets.count)
 
         for target in targets {
+            if Task.isCancelled { break }
             if let snapshot = await snapshot(
                 for: target,
                 ownedVariants: ownedVariants,
@@ -72,6 +79,7 @@ enum DashboardProgressEngine {
 
             return DashboardProgressSnapshot(
                 targetID: target.id,
+                kind: .set,
                 title: target.displayTitle,
                 modeLabel: target.completionMode.chipLabel,
                 collected: counts.collected,
@@ -97,6 +105,7 @@ enum DashboardProgressEngine {
 
             return DashboardProgressSnapshot(
                 targetID: target.id,
+                kind: .pokemon,
                 title: target.displayTitle,
                 modeLabel: target.completionMode.chipLabel,
                 collected: counts.collected,

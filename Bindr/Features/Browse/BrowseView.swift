@@ -14,6 +14,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
     let items: [SelectionValue]
     let title: (SelectionValue) -> String
     var style: SlidingSegmentedPickerStyle = .pillLabel
+    var labelAlignment: Alignment = .center
 
     @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
@@ -97,7 +98,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
                 .buttonStyle(.plain)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .center)
+        .frame(maxWidth: .infinity, alignment: labelAlignment)
     }
 
     private var selectedForegroundColor: Color {
@@ -476,9 +477,15 @@ private struct BrowseCardThumbnailView: View {
             Circle()
                 .fill(accentColor)
                 .frame(width: 24, height: 24)
-            Text("x\(count)")
-                .font(.system(size: 9, weight: .bold))
-                .foregroundStyle(.white)
+            if count == 1 {
+                Image(systemName: "checkmark")
+                    .font(.system(size: 11, weight: .bold))
+                    .foregroundStyle(.white)
+            } else {
+                Text("x\(count)")
+                    .font(.system(size: 9, weight: .bold))
+                    .foregroundStyle(.white)
+            }
         }
         .padding(6)
     }

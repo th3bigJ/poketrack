@@ -27,6 +27,45 @@ enum AppConfiguration {
         return nil
     }
 
+    /// iOS Google OAuth client ID (optional). Set `BINDR_GOOGLE_IOS_CLIENT_ID` in Info.plist
+    /// when enabling native Google Sign-In. Used for future SDK integration.
+    static var googleIOSClientID: String? {
+        trimmedPlistOrEnv("BINDR_GOOGLE_IOS_CLIENT_ID")
+    }
+
+    /// Google OAuth web client ID (optional). Required in Supabase Google provider settings.
+    static var googleWebClientID: String? {
+        trimmedPlistOrEnv("BINDR_GOOGLE_WEB_CLIENT_ID")
+    }
+
+    /// Custom URL scheme used for Supabase OAuth callbacks (`bindr://auth-callback`).
+    static var oauthRedirectScheme: String { "bindr" }
+
+    static var googleOAuthRedirectURL: URL {
+        URL(string: "\(oauthRedirectScheme)://auth-callback")!
+    }
+
+    /// True when Google OAuth credentials are present and sign-in can complete.
+    static var isGoogleSignInAvailable: Bool {
+        googleWebClientID != nil || googleIOSClientID != nil
+    }
+
+    /// Show the Google button in sign-in UI whenever social auth is configured,
+    /// even before Google credentials are wired up.
+    static var showsGoogleSignInButton: Bool {
+        isSocialAuthConfigured
+    }
+
+    /// True when Supabase auth is configured for social sign-in.
+    static var isSocialAuthConfigured: Bool {
+        supabaseURL != nil && !supabasePublishableKey.isEmpty
+    }
+
+    /// Backwards-compatible alias used by existing call sites.
+    static var isGoogleSignInConfigured: Bool {
+        isGoogleSignInAvailable
+    }
+
     /// Publishable Supabase key (safe for client apps when RLS is enabled).
     static var supabasePublishableKey: String {
         if let s = Bundle.main.object(forInfoDictionaryKey: "BINDR_SUPABASE_PUBLISHABLE_KEY") as? String {
@@ -427,6 +466,12 @@ enum AppConfiguration {
         if Bundle.main.object(forInfoDictionaryKey: key) != nil { return true }
         if let v = ProcessInfo.processInfo.environment[key], !v.isEmpty { return true }
         return false
+    }
+
+    private static func trimmedPlistOrEnv(_ key: String) -> String? {
+        let value = plistOrEnvTrimmed(key)?.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let value, !value.isEmpty else { return nil }
+        return value
     }
 
     private static func plistOrEnvTrimmed(_ key: String) -> String? {

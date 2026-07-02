@@ -28,25 +28,38 @@ struct SocialLandingView: View {
     @Binding var currentNonce: String?
     let errorMessage: String?
     let headerInset: CGFloat
+    let isBusy: Bool
     let onSignInResult: (Result<ASAuthorization, Error>) -> Void
+    let onGoogleSignIn: () -> Void
+
+    init(
+        currentNonce: Binding<String?>,
+        errorMessage: String?,
+        headerInset: CGFloat,
+        isBusy: Bool = false,
+        onSignInResult: @escaping (Result<ASAuthorization, Error>) -> Void,
+        onGoogleSignIn: @escaping () -> Void = {}
+    ) {
+        self._currentNonce = currentNonce
+        self.errorMessage = errorMessage
+        self.headerInset = headerInset
+        self.isBusy = isBusy
+        self.onSignInResult = onSignInResult
+        self.onGoogleSignIn = onGoogleSignIn
+    }
 
     var body: some View {
-        ZStack(alignment: .bottom) {
-            ScrollView {
-                VStack(spacing: BindrSpacing.lg) {
-                    heroBlock
-                    featuresBlock
-
-                    // Bottom safe area for the floating CTA panel.
-                    Color.clear.frame(height: 180)
-                }
-                .padding(.horizontal, BindrSpacing.lg)
+        ScrollView {
+            VStack(spacing: BindrSpacing.xl) {
+                heroBlock
+                featuresBlock
+                signInSection
             }
-            .contentMargins(.top, headerInset, for: .scrollContent)
-            .scrollIndicators(.hidden)
-
-            ctaPanel
+            .padding(.horizontal, BindrSpacing.lg)
+            .padding(.bottom, RootChromeEnvironment.floatingTabBarContentInset)
         }
+        .contentMargins(.top, headerInset, for: .scrollContent)
+        .scrollIndicators(.hidden)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 
@@ -67,16 +80,13 @@ struct SocialLandingView: View {
             }
             .multilineTextAlignment(.leading)
 
-            Text("Share your collection, spot trade opportunities, and react to friends' pulls. Sign in with Apple to join the network.")
+            Text("Share your collection, spot trade opportunities, and react to friends' pulls. Sign in with Apple or Google to join the network.")
                 .font(.system(size: 15))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .lineSpacing(2)
-
         }
     }
-
-
 
     // MARK: Features
 
@@ -85,8 +95,6 @@ struct SocialLandingView: View {
             SocialSectionEyebrow(title: "IN THE SOCIAL TAB")
 
             VStack(spacing: BindrSpacing.sm) {
-                // All feature icons use the accent tint via the
-                // SocialFeatureCard default — no per-tile pastel mixing.
                 SocialFeatureCard(
                     icon: "arrow.left.arrow.right",
                     title: "Trade Wall",
@@ -121,71 +129,35 @@ struct SocialLandingView: View {
         }
     }
 
+    // MARK: Sign in
 
+    private var signInSection: some View {
+        VStack(alignment: .leading, spacing: BindrSpacing.md) {
+            Text("Get started")
+                .font(.title3.weight(.semibold))
 
-    private func proofQuote(text: String, author: String) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Image(systemName: "quote.opening")
-                .font(.system(size: 14, weight: .bold))
-                .foregroundStyle(accent.opacity(0.7))
-            Text(text)
-                .font(.system(size: 15, weight: .medium))
-                .foregroundStyle(.primary)
-                .lineSpacing(1)
-            Text(author)
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(.secondary)
-        }
-        .padding(BindrSpacing.lg)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
-    }
+            VStack(spacing: BindrSpacing.md) {
+                if let errorMessage {
+                    Text(errorMessage)
+                        .font(.footnote)
+                        .foregroundStyle(BindrPalette.alertRed)
+                        .multilineTextAlignment(.center)
+                        .frame(maxWidth: .infinity)
+                }
 
-    // MARK: Sticky CTA panel
-
-    /// Bottom panel hosts the Apple sign-in button, a secondary auth slot,
-    /// and any error text from the most recent attempt. We mount it as a
-    /// `ZStack` overlay rather than padding the scroll view so the CTA
-    /// stays in thumb reach regardless of how far the user has scrolled.
-    private var ctaPanel: some View {
-        VStack(spacing: BindrSpacing.sm) {
-            if let errorMessage {
-                Text(errorMessage)
-                    .font(.footnote)
-                    .foregroundStyle(BindrPalette.alertRed)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, BindrSpacing.lg)
+                SocialSignInButtons(
+                    currentNonce: $currentNonce,
+                    isBusy: isBusy,
+                    legalStyle: .compact,
+                    showsGoogleUnavailableCaption: false,
+                    onAppleSignInResult: { result in
+                        onSignInResult(result)
+                    },
+                    onGoogleSignIn: onGoogleSignIn
+                )
             }
-
-            SignInWithAppleButton(.signIn) { request in
-                let nonce = SocialNonceGenerator.random()
-                currentNonce = nonce
-                request.requestedScopes = [.email, .fullName]
-                request.nonce = SocialNonceGenerator.sha256(nonce)
-            } onCompletion: { result in
-                Haptics.lightImpact()
-                onSignInResult(result)
-            }
-            .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
-            .frame(height: 54)
-            .clipShape(RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous))
-            .padding(.horizontal, BindrSpacing.lg)
-
-        }
-        .padding(.top, BindrSpacing.md)
-        .padding(.bottom, BindrSpacing.lg)
-        .frame(maxWidth: .infinity)
-        .background {
-            LinearGradient(
-                colors: [
-                    Color.clear,
-                    Color(uiColor: .systemBackground).opacity(0.65),
-                    Color(uiColor: .systemBackground)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea()
+            .padding(BindrSpacing.lg)
+            .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
         }
     }
 }

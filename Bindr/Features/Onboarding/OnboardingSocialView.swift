@@ -37,7 +37,7 @@ struct OnboardingSocialView: View {
                 VStack(alignment: .leading, spacing: BindrSpacing.xl) {
                     OnboardingHeadline(
                         title: "Join the\ncommunity.",
-                        subtitle: "Sign in with Apple to share binders, spot trade matches, and follow friends' latest pulls."
+                        subtitle: "Sign in with Apple or Google to share binders, spot trade matches, and follow friends' latest pulls."
                     )
 
                     if !isConfigured {
@@ -47,7 +47,7 @@ struct OnboardingSocialView: View {
                     }
 
                     socialFeatures
-                    Color.clear.frame(height: 80)
+                    Color.clear.frame(height: 140)
                 }
                 .padding(.horizontal, BindrSpacing.lg)
                 .padding(.top, BindrSpacing.xl)
@@ -101,28 +101,16 @@ struct OnboardingSocialView: View {
             } else if isSignedIn {
                 OnboardingPrimaryButton(title: "Continue", action: continueOnce)
             } else {
-                ZStack {
-                    SignInWithAppleButton(.signIn) { request in
-                        let nonce = SocialNonceGenerator.random()
-                        currentNonce = nonce
-                        request.requestedScopes = [.email, .fullName]
-                        request.nonce = SocialNonceGenerator.sha256(nonce)
-                    } onCompletion: { result in
-                        Haptics.lightImpact()
+                SocialSignInButtons(
+                    currentNonce: $currentNonce,
+                    isBusy: isSigningIn,
+                    onAppleSignInResult: { result in
                         Task { await handleAppleSignInResult(result) }
+                    },
+                    onGoogleSignIn: {
+                        Task { await handleGoogleSignIn() }
                     }
-                    .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
-                    .frame(height: 54)
-                    .clipShape(RoundedRectangle(cornerRadius: BindrRadius.xl, style: .continuous))
-                    .disabled(isSigningIn)
-                    .opacity(isSigningIn ? 0.35 : 1)
-
-                    if isSigningIn {
-                        ProgressView()
-                            .progressViewStyle(.circular)
-                            .tint(colorScheme == .dark ? .white : .black)
-                    }
-                }
+                )
             }
         }
     }
@@ -151,7 +139,7 @@ struct OnboardingSocialView: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(isRestoringLibrary || services.collectionSync.isRestoring
                      ? "Restoring your library…"
-                     : "Signed in with Apple")
+                     : "Signed in")
                     .font(.system(size: 15, weight: .semibold))
                 Text(isRestoringLibrary || services.collectionSync.isRestoring
                      ? "Downloading your cloud backup before you continue."
@@ -194,6 +182,26 @@ struct OnboardingSocialView: View {
     }
 
     // MARK: - Auth
+
+    private func handleGoogleSignIn() async {
+        errorMessage = nil
+        isSigningIn = true
+        defer { isSigningIn = false }
+
+        do {
+            try await services.socialAuth.signInWithGoogleOAuth()
+            await services.socialPush.updateRegistrationState()
+            await restoreLibraryFromCloud()
+            if !didContinue {
+                continueOnce()
+            }
+        } catch let error as GoogleOAuthSession.OAuthError {
+            if case .cancelled = error { return }
+            errorMessage = error.localizedDescription
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
 
     private func handleAppleSignInResult(_ result: Result<ASAuthorization, Error>) async {
         errorMessage = nil

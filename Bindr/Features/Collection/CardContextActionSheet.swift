@@ -218,7 +218,14 @@ struct CardContextActionSheet: View {
                 Text(action.rawValue)
                     .font(.system(size: 13, weight: .semibold))
             }
-            .foregroundStyle(isSelected ? .white : .primary)
+            .foregroundStyle(
+                isSelected
+                    ? services.theme.accentColor.bindrChipLabelColor(
+                        colorScheme: colorScheme,
+                        usesGradient: services.theme.isGradientThemeSelected
+                    )
+                    : .primary
+            )
             .padding(.horizontal, 12)
             .padding(.vertical, 7)
             .background(

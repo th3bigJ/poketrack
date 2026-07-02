@@ -43,6 +43,8 @@ private struct FavoriteCardSelection: Identifiable, Hashable {
 
 struct EditProfileView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.bindrAccent) private var accent
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
@@ -190,312 +192,34 @@ struct EditProfileView: View {
 
 
     var body: some View {
-        Form {
-            Section {
-                if !isUsernameLocked {
-                    TextField("Username", text: $username)
-                        .textInputAutocapitalization(.never)
-                        .autocorrectionDisabled()
-                }
+        ScrollView {
+            VStack(spacing: BindrSpacing.xl) {
+                profilePreviewCard
+                profileFieldsCard
+                avatarCustomizationCard
+                premiumBadgeCard
+                profileRolesCard
+                favoritesCard
 
-                TextField("Screen name", text: $displayName)
-
-                TextField("Bio", text: $bio, axis: .vertical)
-                    .lineLimit(3...6)
-            } header: {
-                Text("Profile")
-            } footer: {
-                if !isUsernameLocked {
-                    Text("Choose your public username. You cannot change it later.")
-                }
-            }
-
-            Section {
-                HStack(spacing: 14) {
-                    ProfileAvatarView(profile: previewProfile, size: 72)
-
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(displayName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Profile preview" : displayName)
-                            .font(.headline.weight(.semibold))
-                            .foregroundStyle(.primary)
-                            .lineLimit(1)
-                        Text(usernameSubtitle)
-                            .font(.subheadline.weight(.medium))
-                            .foregroundStyle(.secondary)
-                            .lineLimit(1)
-                        Text("Updates as you customise your avatar.")
-                            .font(.caption)
-                            .foregroundStyle(.tertiary)
-                            .lineLimit(1)
-                    }
-
-                    Spacer(minLength: 0)
-                }
-                .padding(.vertical, 6)
-            }
-
-            Section {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Avatar Background")
-                        .font(.footnote.weight(.medium))
-                        .foregroundStyle(.secondary)
-                    
-                    LazyVGrid(
-                        columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 6),
-                        spacing: 10
-                    ) {
-                        ForEach(ThemeSettings.avatarBackgroundColors, id: \.self) { hex in
-                            let isSelected = avatarBackgroundColor == hex
-                            Button {
-                                avatarBackgroundColor = hex
-                                Haptics.lightImpact()
-                            } label: {
-                                ZStack {
-                                    Circle()
-                                        .fill(Color(hex: hex))
-                                        .frame(width: 36, height: 36)
-
-                                    if isSelected {
-                                        Circle()
-                                            .stroke(Color.primary.opacity(0.92), lineWidth: 2)
-                                            .frame(width: 36, height: 36)
-                                        Image(systemName: "checkmark")
-                                            .font(.system(size: 13, weight: .bold))
-                                            .foregroundStyle(.white)
-                                            .shadow(color: .black.opacity(0.35), radius: 1, y: 0.5)
-                                    }
-                                }
-                                .frame(maxWidth: .infinity)
-                                .contentShape(Rectangle())
-                            }
-                            .buttonStyle(.plain)
-                        }
-                    }
-                    .padding(.vertical, 4)
-                    
-                    Divider().padding(.vertical, 4)
-                    
-                    Text("Avatar Outline Pattern")
-                        .font(.footnote.weight(.medium))
-                        .foregroundStyle(.secondary)
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 10) {
-                            let styles = [
-                                ("Solid", "solid"),
-                                ("Thick", "thick"),
-                                ("Dashed", "dashed"),
-                                ("Dotted", "dotted"),
-                                ("Double", "double"),
-                                ("Glow", "glow")
-                            ]
-                            
-                            ForEach(styles, id: \.1) { name, style in
-                                Button {
-                                    avatarOutlineStyle = style
-                                    Haptics.lightImpact()
-                                } label: {
-                                    Text(name)
-                                        .font(.system(size: 14, weight: .medium))
-                                        .padding(.horizontal, 16)
-                                        .padding(.vertical, 8)
-                                        .background(
-                                            Capsule()
-                                                .fill(avatarOutlineStyle == style ? services.theme.accentColor : Color.gray.opacity(0.1))
-                                        )
-                                        .foregroundStyle(avatarOutlineStyle == style ? .white : .primary)
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        }
-                        .padding(.vertical, 4)
-                    }
-                }
-                .padding(.vertical, 8)
-            } header: {
-                Text("Avatar Customization")
-            } footer: {
-                Text("Personalize your trainer profile picture with colors and patterns.")
-            }
-
-            // MARK: - Premium Badge Picker
-            Section {
-                VStack(alignment: .leading, spacing: 14) {
-                    Text("Profile Badge")
-                        .font(.footnote.weight(.medium))
-                        .foregroundStyle(.secondary)
-
-                    HStack(spacing: 12) {
-                        ForEach(PremiumBadgeStyle.allCases, id: \.self) { style in
-                            Button {
-                                premiumBadgeStyle = style
-                                Haptics.lightImpact()
-                            } label: {
-                                HStack(spacing: 8) {
-                                    PokeballEmblemView(size: 22)
-                                    VStack(alignment: .leading, spacing: 1) {
-                                        Text(style.displayName)
-                                            .font(.system(size: 13, weight: .semibold))
-                                        Text(style.gameHint)
-                                            .font(.system(size: 10))
-                                            .foregroundStyle(.secondary)
-                                    }
-                                    Spacer()
-                                    if premiumBadgeStyle == style {
-                                        Image(systemName: "checkmark.circle.fill")
-                                            .foregroundStyle(services.theme.accentColor)
-                                    }
-                                }
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 10)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                        .fill(premiumBadgeStyle == style
-                                              ? services.theme.accentColor.opacity(0.12)
-                                              : Color.gray.opacity(0.08))
-                                )
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                                        .stroke(premiumBadgeStyle == style ? services.theme.accentColor : Color.clear, lineWidth: 1.5)
-                                )
-                            }
-                            .buttonStyle(.plain)
-                            .frame(maxWidth: .infinity)
-                        }
-                    }
-                }
-                .padding(.vertical, 8)
-            } header: {
-                Text("Premium Badge")
-            } footer: {
-                // Temp: visible to all for testing. Production: guard on isPremium.
-                Text("Choose the badge that appears next to your name in the feed and on your profile.")
-            }
-
-            Section {
-                ForEach(ProfileRole.allCases) { role in
-                    Toggle(role.title, isOn: Binding(
-                        get: { profileRoles.contains(role) },
-                        set: { isOn in
-                            if isOn {
-                                guard profileRoles.count < ProfileRole.maxSelections else {
-                                    Haptics.warning()
-                                    return
-                                }
-                                profileRoles.insert(role)
-                            } else {
-                                profileRoles.remove(role)
-                            }
-                        }
-                    ))
-                    .disabled(!profileRoles.contains(role) && profileRoles.count >= ProfileRole.maxSelections)
-                }
-            } footer: {
-                Text("Choose up to \(ProfileRole.maxSelections) tags that best describe how you collect, trade, and play.")
-            }
-
-            Section {
-                Button {
-                    showPokemonPicker = true
-                } label: {
-                    HStack(spacing: 12) {
-                        if let favoritePokemon {
-                            if let imageURL = favoritePokemon.imageURL,
-                               let url = AppConfiguration.resolvedImageURL(stored: imageURL) {
-                                CachedAsyncImage(url: url) { image in
-                                    image.resizable().scaledToFit()
-                                } placeholder: {
-                                    Color.gray.opacity(0.12)
-                                }
-                                .frame(width: 34, height: 34)
-                            } else {
-                                Image(systemName: "hare")
-                                    .frame(width: 34, height: 34)
-                                    .foregroundStyle(.secondary)
-                            }
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("Favorite Pokémon")
-                                    .foregroundStyle(.secondary)
-                                Text(favoritePokemon.name)
-                                    .foregroundStyle(.primary)
-                            }
-                        } else {
-                            Label("Choose favorite Pokémon", systemImage: "hare")
-                        }
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .buttonStyle(.plain)
-
-                Button {
-                    showCardPicker = true
-                } label: {
-                    HStack(spacing: 12) {
-                        if let favoriteCard {
-                            if let imageURL = favoriteCard.imageURL,
-                               let url = AppConfiguration.resolvedImageURL(stored: imageURL) {
-                                CachedAsyncImage(url: url) { image in
-                                    image.resizable().scaledToFit()
-                                } placeholder: {
-                                    Color.gray.opacity(0.12)
-                                }
-                                .frame(width: 24, height: 34)
-                            } else {
-                                Image(systemName: "rectangle.stack.fill")
-                                    .frame(width: 24, height: 34)
-                                    .foregroundStyle(.secondary)
-                            }
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("Favorite card")
-                                    .foregroundStyle(.secondary)
-                                Text(favoriteCard.cardName)
-                                    .foregroundStyle(.primary)
-                                if !favoriteCard.setCode.isEmpty {
-                                    Text(favoriteCard.setCode)
-                                        .font(.caption)
-                                        .foregroundStyle(.secondary)
-                                }
-                            }
-                        } else {
-                            Label("Choose favorite card", systemImage: "rectangle.stack.fill")
-                        }
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .buttonStyle(.plain)
-
-                TextField("Favorite deck archetype", text: $favoriteDeckArchetype)
-            } header: {
-                Text("Favorites")
-            }
-
-            if let errorMessage {
-                Section {
+                if let errorMessage {
                     Text(errorMessage)
                         .font(.footnote)
-                        .foregroundStyle(.red)
+                        .foregroundStyle(BindrPalette.alertRed)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(BindrSpacing.lg)
+                        .glassCardStyle(cornerRadius: BindrRadius.lg, interactive: false)
                 }
-            }
 
-            if existingProfile != nil {
-                Section {
-                    Button("Sign Out", role: .destructive) {
-                        onSignOutTapped()
-                    }
-                    .frame(maxWidth: .infinity, alignment: .center)
-                } footer: {
-                    Text("Signing out will close this profile screen.")
+                if existingProfile != nil {
+                    signOutCard
                 }
             }
+            .padding(.horizontal, BindrSpacing.lg)
+            .padding(.vertical, BindrSpacing.lg)
         }
         .scrollContentBackground(.hidden)
-        .background(Color(uiColor: .systemGroupedBackground))
+        .bindrPageBackground()
+        .bindrTheme(accent: accent)
         .navigationTitle(existingProfile == nil ? "Create Profile" : "Edit Profile")
         .navigationBarTitleDisplayMode(.inline)
         .alert("Save Failed", isPresented: $showErrorAlert) {
@@ -527,6 +251,367 @@ struct EditProfileView: View {
                 .disabled(!canSave)
             }
         }
+    }
+
+    // MARK: - Sections
+
+    private var profilePreviewCard: some View {
+        profileFormSection(title: nil, footer: "Updates as you customise your avatar.") {
+            HStack(spacing: 14) {
+                ProfileAvatarView(profile: previewProfile, size: 72)
+
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(displayName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "Profile preview" : displayName)
+                        .font(.headline.weight(.semibold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                    Text(usernameSubtitle)
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.secondary)
+                        .lineLimit(1)
+                }
+
+                Spacer(minLength: 0)
+            }
+        }
+    }
+
+    private var profileFieldsCard: some View {
+        profileFormSection(
+            title: "Profile",
+            footer: isUsernameLocked
+                ? "Your public username cannot be changed."
+                : "Choose your public username. You cannot change it later."
+        ) {
+            VStack(spacing: BindrSpacing.sm) {
+                if !isUsernameLocked {
+                    profileTextField("Username", text: $username)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                }
+
+                profileTextField("Screen name", text: $displayName)
+                profileTextField("Bio", text: $bio, axis: .vertical, lineLimit: 3...6)
+            }
+        }
+    }
+
+    private var avatarCustomizationCard: some View {
+        profileFormSection(
+            title: "Avatar",
+            footer: "Personalize your trainer profile picture with colors and patterns."
+        ) {
+            VStack(alignment: .leading, spacing: BindrSpacing.md) {
+                Text("Background")
+                    .font(.footnote.weight(.medium))
+                    .foregroundStyle(.secondary)
+
+                LazyVGrid(
+                    columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 6),
+                    spacing: 10
+                ) {
+                    ForEach(ThemeSettings.avatarBackgroundColors, id: \.self) { hex in
+                        let isSelected = avatarBackgroundColor == hex
+                        Button {
+                            avatarBackgroundColor = hex
+                            Haptics.lightImpact()
+                        } label: {
+                            ZStack {
+                                Circle()
+                                    .fill(Color(hex: hex))
+                                    .frame(width: 36, height: 36)
+
+                                if isSelected {
+                                    Circle()
+                                        .stroke(Color.primary.opacity(0.92), lineWidth: 2)
+                                        .frame(width: 36, height: 36)
+                                    Image(systemName: "checkmark")
+                                        .font(.system(size: 13, weight: .bold))
+                                        .foregroundStyle(.white)
+                                        .shadow(color: .black.opacity(0.35), radius: 1, y: 0.5)
+                                }
+                            }
+                            .frame(maxWidth: .infinity)
+                            .contentShape(Rectangle())
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+
+                Text("Outline")
+                    .font(.footnote.weight(.medium))
+                    .foregroundStyle(.secondary)
+                    .padding(.top, 4)
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(avatarOutlineStyles, id: \.style) { item in
+                            Button {
+                                avatarOutlineStyle = item.style
+                                Haptics.lightImpact()
+                            } label: {
+                                Text(item.name)
+                                    .font(.system(size: 13, weight: .medium))
+                                    .padding(.horizontal, 14)
+                                    .padding(.vertical, 8)
+                                    .glassFilterChipStyle(
+                                        isSelected: avatarOutlineStyle == item.style,
+                                        accentColor: accent
+                                    )
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private var premiumBadgeCard: some View {
+        profileFormSection(
+            title: "Premium Badge",
+            footer: "Choose the badge that appears next to your name in the feed and on your profile."
+        ) {
+            VStack(spacing: BindrSpacing.sm) {
+                ForEach(PremiumBadgeStyle.allCases, id: \.self) { style in
+                    Button {
+                        premiumBadgeStyle = style
+                        Haptics.lightImpact()
+                    } label: {
+                        HStack(spacing: 10) {
+                            PokeballEmblemView(size: 22)
+                            VStack(alignment: .leading, spacing: 1) {
+                                Text(style.displayName)
+                                    .font(.system(size: 14, weight: .semibold))
+                                Text(style.gameHint)
+                                    .font(.system(size: 11))
+                                    .foregroundStyle(.secondary)
+                            }
+                            Spacer(minLength: 0)
+                            if premiumBadgeStyle == style {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .bindrAccentForeground(accent)
+                            }
+                        }
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 12)
+                        .glassInsetStyle(cornerRadius: 12)
+                        .overlay {
+                            if premiumBadgeStyle == style {
+                                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                                    .stroke(accent, lineWidth: 1.5)
+                            }
+                        }
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
+    }
+
+    private var profileRolesCard: some View {
+        profileFormSection(
+            title: "Collector Tags",
+            footer: "Choose up to \(ProfileRole.maxSelections) tags that best describe how you collect, trade, and play."
+        ) {
+            VStack(spacing: 0) {
+                ForEach(Array(ProfileRole.allCases.enumerated()), id: \.element.id) { index, role in
+                    Toggle(role.title, isOn: Binding(
+                        get: { profileRoles.contains(role) },
+                        set: { isOn in
+                            if isOn {
+                                guard profileRoles.count < ProfileRole.maxSelections else {
+                                    Haptics.warning()
+                                    return
+                                }
+                                profileRoles.insert(role)
+                            } else {
+                                profileRoles.remove(role)
+                            }
+                        }
+                    ))
+                    .disabled(!profileRoles.contains(role) && profileRoles.count >= ProfileRole.maxSelections)
+                    .padding(.vertical, 10)
+
+                    if index < ProfileRole.allCases.count - 1 {
+                        Divider()
+                            .overlay(colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.08))
+                    }
+                }
+            }
+        }
+    }
+
+    private var favoritesCard: some View {
+        profileFormSection(title: "Favorites", footer: "Show collectors what you love most.") {
+            VStack(spacing: BindrSpacing.sm) {
+                favoritePickerRow(
+                    title: favoritePokemon?.name ?? "Choose favorite Pokémon",
+                    subtitle: favoritePokemon == nil ? nil : "Favorite Pokémon",
+                    systemImage: "hare",
+                    thumbnail: { favoritePokemonThumbnail }
+                ) {
+                    showPokemonPicker = true
+                }
+
+                favoritePickerRow(
+                    title: favoriteCard?.cardName ?? "Choose favorite card",
+                    subtitle: favoriteCard == nil ? nil : "Favorite card",
+                    systemImage: "rectangle.stack.fill",
+                    thumbnail: { favoriteCardThumbnail },
+                    detail: favoriteCard.flatMap { $0.setCode.isEmpty ? nil : $0.setCode }
+                ) {
+                    showCardPicker = true
+                }
+
+                profileTextField("Favorite deck archetype", text: $favoriteDeckArchetype)
+            }
+        }
+    }
+
+    private var signOutCard: some View {
+        profileFormSection(title: nil, footer: "Signing out will close this profile screen.") {
+            Button("Sign Out", role: .destructive) {
+                onSignOutTapped()
+            }
+            .font(.body.weight(.semibold))
+            .frame(maxWidth: .infinity)
+        }
+    }
+
+    private var avatarOutlineStyles: [(name: String, style: String)] {
+        [
+            ("Solid", "solid"),
+            ("Thick", "thick"),
+            ("Dashed", "dashed"),
+            ("Dotted", "dotted"),
+            ("Double", "double"),
+            ("Glow", "glow")
+        ]
+    }
+
+    @ViewBuilder
+    private var favoritePokemonThumbnail: some View {
+        if let favoritePokemon,
+           let imageURL = favoritePokemon.imageURL,
+           let url = AppConfiguration.resolvedImageURL(stored: imageURL) {
+            CachedAsyncImage(url: url) { image in
+                image.resizable().scaledToFit()
+            } placeholder: {
+                Color.gray.opacity(0.12)
+            }
+            .frame(width: 34, height: 34)
+        }
+    }
+
+    @ViewBuilder
+    private var favoriteCardThumbnail: some View {
+        if let favoriteCard,
+           let imageURL = favoriteCard.imageURL,
+           let url = AppConfiguration.resolvedImageURL(stored: imageURL) {
+            CachedAsyncImage(url: url) { image in
+                image.resizable().scaledToFit()
+            } placeholder: {
+                Color.gray.opacity(0.12)
+            }
+            .frame(width: 24, height: 34)
+        }
+    }
+
+    private func favoritePickerRow<Thumbnail: View>(
+        title: String,
+        subtitle: String?,
+        systemImage: String,
+        @ViewBuilder thumbnail: () -> Thumbnail,
+        detail: String? = nil,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            HStack(spacing: 12) {
+                Group {
+                    if subtitle != nil {
+                        thumbnail()
+                    } else {
+                        Image(systemName: systemImage)
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                            .frame(width: 34, height: 34)
+                    }
+                }
+
+                VStack(alignment: .leading, spacing: 2) {
+                    if let subtitle {
+                        Text(subtitle)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    Text(title)
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                    if let detail {
+                        Text(detail)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+
+                Spacer(minLength: 0)
+
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.tertiary)
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 12)
+            .glassInsetStyle(cornerRadius: 12)
+            .contentShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        }
+        .buttonStyle(.plain)
+    }
+
+    @ViewBuilder
+    private func profileTextField(
+        _ placeholder: String,
+        text: Binding<String>,
+        axis: Axis = .horizontal,
+        lineLimit: ClosedRange<Int>? = nil
+    ) -> some View {
+        Group {
+            if axis == .vertical, let lineLimit {
+                TextField(placeholder, text: text, axis: axis)
+                    .lineLimit(lineLimit)
+            } else {
+                TextField(placeholder, text: text)
+            }
+        }
+        .font(.body)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+        .glassInsetStyle(cornerRadius: 12)
+    }
+
+    @ViewBuilder
+    private func profileFormSection<Content: View>(
+        title: String?,
+        footer: String,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        VStack(alignment: .leading, spacing: BindrSpacing.md) {
+            if let title {
+                Text(title)
+                    .font(.system(size: 15, weight: .semibold))
+            }
+
+            content()
+
+            Text(footer)
+                .font(.system(size: 12))
+                .foregroundStyle(.secondary)
+        }
+        .padding(BindrSpacing.lg)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .glassCardStyle(cornerRadius: BindrRadius.xl, interactive: false)
     }
 
     private func save() {
@@ -676,7 +761,7 @@ private struct FavoritePokemonPickerView: View {
         }
         .padding(6)
         .frame(maxWidth: .infinity)
-        .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.gray.opacity(0.1)))
+        .glassInsetStyle(cornerRadius: 10)
     }
 }
 
@@ -728,7 +813,7 @@ private struct FavoriteCardPickerView: View {
                                     gridOptions: BrowseGridOptions()
                                 )
                                 .padding(6)
-                                .background(RoundedRectangle(cornerRadius: 10, style: .continuous).fill(Color.gray.opacity(0.1)))
+                                .glassInsetStyle(cornerRadius: 10)
                             }
                             .buttonStyle(.plain)
                         }

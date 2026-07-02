@@ -47,12 +47,16 @@ struct OnboardingPrimaryButton: View {
 struct TactileBrandButtonStyle: ButtonStyle {
     @Environment(\.bindrAccent) private var accent
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(AppServices.self) private var services
     let disabled: Bool
 
     func makeBody(configuration: Configuration) -> some View {
+        let usesGradient = services.theme.isGradientThemeSelected
+        let labelColor = usesGradient ? Color.white : accent.bindrLabelOnFill(in: colorScheme)
+
         configuration.label
             .font(.system(size: 17, weight: .semibold))
-            .foregroundStyle(.white)
+            .foregroundStyle(labelColor)
             .frame(maxWidth: .infinity)
             .frame(height: 54)
             .background {
@@ -126,16 +130,7 @@ struct OnboardingFooterBar<Primary: View, Secondary: View>: View {
         .padding(.top, BindrSpacing.md)
         .padding(.bottom, BindrSpacing.lg)
         .background {
-            LinearGradient(
-                colors: [
-                    Color.clear,
-                    Color(uiColor: .systemBackground).opacity(0.7),
-                    Color(uiColor: .systemBackground)
-                ],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .ignoresSafeArea(edges: .bottom)
+            OnboardingStickyFooterBackground()
         }
     }
 }

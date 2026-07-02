@@ -182,6 +182,7 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
                 placeholder()
             }
         }
+        .id(taskID)
         .task(id: taskID) {
             await loader.load(url: url, localURL: localURL, targetSize: targetSize)
         }

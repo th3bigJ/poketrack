@@ -10,6 +10,7 @@ struct UniversalSearchResultsView: View {
     @Environment(\.presentSealedProduct) private var presentSealedProduct
 
     @Query private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     @Query(sort: \Deck.createdAt, order: .reverse) private var decks: [Deck]
     @Query(sort: \Binder.createdAt, order: .reverse) private var binders: [Binder]
 
@@ -80,6 +81,30 @@ struct UniversalSearchResultsView: View {
         _collectionItems = Query(
             sort: [SortDescriptor(\CollectionItem.dateAcquired, order: .reverse)]
         )
+        _wishlistItems = Query(
+            sort: [SortDescriptor(\WishlistItem.dateAdded, order: .reverse)]
+        )
+    }
+
+    private var ownedQuantityByCardID: [String: Int] {
+        var qty: [String: Int] = [:]
+        for item in collectionItems {
+            guard item.quantity > 0 else { continue }
+            guard TCGBrand.inferredFromMasterCardId(item.cardID) == selectedBrand else { continue }
+            qty[item.cardID, default: 0] += item.quantity
+        }
+        return qty
+    }
+
+    private var ownedCardIDs: Set<String> {
+        Set(ownedQuantityByCardID.keys)
+    }
+
+    private var wishlistedCardIDs: Set<String> {
+        Set(wishlistItems.compactMap { item in
+            let cardID = item.cardID
+            return TCGBrand.inferredFromMasterCardId(cardID) == selectedBrand ? cardID : nil
+        })
     }
 
     private struct SearchSetMatch: Identifiable {
@@ -786,8 +811,7 @@ struct UniversalSearchResultsView: View {
         if !collectionCards.isEmpty {
             cardResultsGrid(
                 cards: displayedCollectionCards,
-                priceLines: collectionPriceLineByCardID,
-                isOwned: true
+                priceLines: collectionPriceLineByCardID
             )
         }
     }
@@ -807,16 +831,14 @@ struct UniversalSearchResultsView: View {
         } else if !cards.isEmpty {
             cardResultsGrid(
                 cards: displayedCards,
-                priceLines: priceLineByCardID,
-                isOwned: scopeCategory == .collection
+                priceLines: priceLineByCardID
             )
         }
     }
 
     private func cardResultsGrid(
         cards: [Card],
-        priceLines: [String: String],
-        isOwned: Bool
+        priceLines: [String: String]
     ) -> some View {
         LazyVGrid(columns: cardColumns, spacing: BindrSpacing.cardGrid) {
             ForEach(cards) { card in
@@ -830,7 +852,10 @@ struct UniversalSearchResultsView: View {
                         services: services,
                         colorScheme: colorScheme,
                         accentColor: services.theme.accentColor,
-                        isOwned: isOwned,
+                        isOwned: ownedCardIDs.contains(card.masterCardId),
+                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId),
+                        ownedCountBadge: ownedQuantityByCardID[card.masterCardId],
+                        alwaysShowOwnedCountBadge: ownedCardIDs.contains(card.masterCardId),
                         precomputedPriceLine: priceLines[card.masterCardId] ?? ""
                     )
                 }

@@ -31,6 +31,10 @@
 	</array>
 	<key>BINDR_COLLECTION_SYNC_WORKER_URL</key>
 	<string>https://collection-sync.jordanhardcastle0.workers.dev</string>
+	<key>BINDR_GOOGLE_IOS_CLIENT_ID</key>
+	<string></string>
+	<key>BINDR_GOOGLE_WEB_CLIENT_ID</key>
+	<string></string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

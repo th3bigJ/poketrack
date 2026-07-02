@@ -94,9 +94,7 @@ struct FriendSearchView: View {
                 Button("Add") {
                     Task { await addFriend(for: result.profile.id) }
                 }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.small)
-                .buttonBorderShape(.capsule)
+                .bindrProminentButtonStyle(size: .compact, shape: .capsule)
             case .friends:
                 Label("Friends", systemImage: "checkmark")
                     .font(.caption.weight(.semibold))
@@ -109,9 +107,7 @@ struct FriendSearchView: View {
                 Button("Accept") {
                     Task { await respond(friendshipID: friendshipID, accepted: true) }
                 }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.small)
-                .buttonBorderShape(.capsule)
+                .bindrProminentButtonStyle(size: .compact, shape: .capsule)
             case .blocked:
                 Label("Blocked", systemImage: "hand.raised.fill")
                     .font(.caption.weight(.semibold))

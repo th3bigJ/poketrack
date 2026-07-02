@@ -85,6 +85,13 @@ struct MoreView: View {
                                 destination: .privacyPolicy
                             )
 
+                            MoreMenuRow(
+                                title: "Terms of Service",
+                                systemImage: "doc.text.fill",
+                                color: .indigo,
+                                destination: .termsOfService
+                            )
+
                             MoreMenuActionRow(
                                 title: "Contact Us",
                                 systemImage: "envelope.fill",
@@ -159,6 +166,8 @@ struct MoreView: View {
                 DisclaimerView()
             case .privacyPolicy:
                 PrivacyPolicyView()
+            case .termsOfService:
+                TermsOfServiceView()
             }
         }
     }
@@ -911,7 +920,7 @@ private struct TradeCalculatorView: View {
                     Text(isCompletingTrade ? "Completing..." : "Complete Trade")
                         .font(.system(size: 15, weight: .bold))
                 }
-                .foregroundStyle(.white)
+                .bindrForegroundOnAccentFill(bindrAccent)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 14)
                 .background {
