@@ -17,6 +17,8 @@ struct FriendsListView: View {
     var onSelectFriendForTrade: ((SocialProfile) -> Void)? = nil
     var socialSelectedTab: Binding<SocialTab>? = nil
     var headerInset: CGFloat = 0
+    var standaloneTitle = "Friends"
+    var standaloneCloseSystemImage = "chevron.left"
     /// When embedded in `MyProfileView`'s scroll view, skip the nested `ScrollView`
     /// so the friends header, tabs, and list scroll with the profile chrome.
     var embedInParentScrollView: Bool = false
@@ -104,13 +106,13 @@ struct FriendsListView: View {
                 .safeAreaInset(edge: .top, spacing: 0) {
                     if socialSelectedTab == nil {
                         BindrPageHeader(
-                            title: "Friends",
+                            title: standaloneTitle,
                             leading: {
                                 ChromeGlassCircleButton(accessibilityLabel: "Back") {
                                     HapticManager.impact(.light)
                                     dismiss()
                                 } label: {
-                                    Image(systemName: "chevron.left")
+                                    Image(systemName: standaloneCloseSystemImage)
                                         .font(.system(size: 17, weight: .medium))
                                         .foregroundStyle(.primary)
                                 }

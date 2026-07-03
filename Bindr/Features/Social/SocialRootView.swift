@@ -15,6 +15,18 @@ enum SocialTab: String, CaseIterable, Identifiable {
     var title: String { rawValue }
 }
 
+struct SocialRootChromeActionRequest: Equatable {
+    enum Action: Equatable {
+        case newPost
+        case addFriend
+        case newTrade
+        case editProfile
+    }
+
+    let id = UUID()
+    let action: Action
+}
+
 struct SocialRootView: View {
 
     private enum SocialDeepLinkDestination {
@@ -122,6 +134,9 @@ struct SocialRootView: View {
 
     @Environment(AppServices.self) private var services
     @Environment(\.scenePhase) private var scenePhase
+    private let externalSelectedTab: Binding<SocialTab>?
+    private let isNavigationActive: Binding<Bool>?
+    private let chromeActionRequest: Binding<SocialRootChromeActionRequest?>?
 
     @State private var profile: SocialProfile?
     @State private var isProfileLoading = false
@@ -130,15 +145,40 @@ struct SocialRootView: View {
     @State private var profilePopoverPath = NavigationPath()
     @State private var socialNavigationPath = NavigationPath()
     @State private var currentNonce: String?
-    @State private var selectedTab: SocialTab = .feed
+    @State private var localSelectedTab: SocialTab = .feed
     @State private var selectedProfileTab: MyProfileView.ProfileTab = .posts
     @State private var isAlertsPresented = false
     @State private var isNewPostPresented = false
+    @State private var isFriendSearchSheetPresented = false
+    @State private var isStartTradeSheetPresented = false
+    @State private var pendingTradeSheetFriend: SocialProfile?
     @State private var deepLinkedSharedContent: SharedContent?
     @State private var deepLinkedCommentsContent: SocialFeedService.FeedContentSummary?
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
-    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
     @Environment(\.presentUniversalSearch) private var presentUniversalSearch
+
+    init(
+        selectedTab: Binding<SocialTab>? = nil,
+        isNavigationActive: Binding<Bool>? = nil,
+        chromeActionRequest: Binding<SocialRootChromeActionRequest?>? = nil
+    ) {
+        self.externalSelectedTab = selectedTab
+        self.isNavigationActive = isNavigationActive
+        self.chromeActionRequest = chromeActionRequest
+    }
+
+    private var selectedTab: SocialTab {
+        externalSelectedTab?.wrappedValue ?? localSelectedTab
+    }
+
+    private var selectedTabBinding: Binding<SocialTab> {
+        Binding {
+            selectedTab
+        } set: { newValue in
+            localSelectedTab = newValue
+            externalSelectedTab?.wrappedValue = newValue
+        }
+    }
 
     private var isConfigured: Bool {
         AppConfiguration.supabaseURL != nil && !AppConfiguration.supabasePublishableKey.isEmpty
@@ -165,15 +205,47 @@ struct SocialRootView: View {
                     .environment(services)
             }
         }
-        .sheet(item: $deepLinkedCommentsContent, onDismiss: {
-            restoreTabBarChrome?()
-        }) { content in
+        .sheet(item: $deepLinkedCommentsContent) { content in
             NavigationStack {
                 CommentsView(content: content)
                     .environment(services)
             }
             .presentationDetents([.large])
             .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $isFriendSearchSheetPresented) {
+            NavigationStack {
+                FriendSearchView(showsDoneButton: true)
+                    .environment(services)
+            }
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $isStartTradeSheetPresented, onDismiss: {
+            handleStartTradeSheetDismiss()
+        }) {
+            NavigationStack {
+                FriendsListView(
+                    onOpenSearch: {},
+                    onOpenQR: { pushSocialDestination(.qrProfile) },
+                    onOpenUsername: { username in
+                        pushSocialDestination(.friendProfile(username: username))
+                    },
+                    onSelectFriendForTrade: { friend in
+                        pendingTradeSheetFriend = friend
+                        isStartTradeSheetPresented = false
+                    },
+                    standaloneTitle: "Start Trade",
+                    standaloneCloseSystemImage: "xmark"
+                )
+                .environment(services)
+            }
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
+            .onAppear {
+                services.pendingTradeSeed = nil
+                services.isCreatingNewTrade = true
+            }
         }
         .task {
             await services.socialAuth.restoreSession()
@@ -198,6 +270,7 @@ struct SocialRootView: View {
             if state == .signedOut {
                 profilePopoverPath = NavigationPath()
                 socialNavigationPath = NavigationPath()
+                isNavigationActive?.wrappedValue = false
                 showAccountProfile = false
             }
         }
@@ -205,6 +278,18 @@ struct SocialRootView: View {
             Task {
                 await routeQueuedDeepLinkIfPossible()
             }
+        }
+        .onChange(of: socialNavigationPath.count) { _, _ in
+            updateNavigationActiveState()
+        }
+        .onChange(of: chromeActionRequest?.wrappedValue?.id) { _, _ in
+            handleChromeActionRequest()
+        }
+        .onAppear {
+            updateNavigationActiveState()
+        }
+        .onDisappear {
+            isNavigationActive?.wrappedValue = false
         }
     }
 
@@ -278,7 +363,7 @@ struct SocialRootView: View {
             HStack(spacing: 12) {
                 ChromeGlassCircleButton(accessibilityLabel: "New Post") {
                     Haptics.lightImpact()
-                    isNewPostPresented = true
+                    presentNewPost()
                 } label: {
                     Image(systemName: "plus")
                         .font(.system(size: 17, weight: .medium))
@@ -290,9 +375,7 @@ struct SocialRootView: View {
         case .trades:
             ChromeGlassCircleButton(accessibilityLabel: "Create trade") {
                 Haptics.lightImpact()
-                services.pendingTradeSeed = nil
-                services.isCreatingNewTrade = true
-                socialNavigationPath.append(SocialDestination.friends)
+                startNewTrade()
             } label: {
                 Image(systemName: "plus")
                     .font(.system(size: 17, weight: .medium))
@@ -328,8 +411,7 @@ struct SocialRootView: View {
         case .profile:
             ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
                 Haptics.lightImpact()
-                profilePopoverPath.append(AccountProfileView.Destination.editProfile)
-                showAccountProfile = true
+                editProfile()
             } label: {
                 Image(systemName: "pencil")
                     .font(.system(size: 17, weight: .medium))
@@ -392,10 +474,10 @@ struct SocialRootView: View {
                     switch destination {
                     case .friends:
                         FriendsListView(
-                            onOpenSearch: { socialNavigationPath.append(SocialDestination.search) },
-                            onOpenQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
+                            onOpenSearch: { pushSocialDestination(.search) },
+                            onOpenQR: { pushSocialDestination(.qrProfile) },
                             onOpenUsername: { username in
-                                socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                                pushSocialDestination(.friendProfile(username: username))
                             },
                             onSelectFriendForTrade: { friend in
                                 openSeededTradeBuilder(with: friend)
@@ -409,7 +491,7 @@ struct SocialRootView: View {
                         FriendSearchView()
                     case .qrProfile:
                         QRProfileView(username: profile.username) { scannedUsername in
-                            socialNavigationPath.append(SocialDestination.friendProfile(username: scannedUsername))
+                            pushSocialDestination(.friendProfile(username: scannedUsername))
                         }
                     case .mutualTrade(let sessionID, let otherUserID, let otherUsername):
                         MutualTradeView(
@@ -453,36 +535,36 @@ struct SocialRootView: View {
             Group {
                 switch selectedTab {
                 case .feed:
-                    FeedView(selectedTab: $selectedTab, headerInset: rootFloatingChromeInset)
+                    FeedView(selectedTab: selectedTabBinding, headerInset: rootFloatingChromeInset)
                 case .friends:
                     FriendsListView(
-                        onOpenSearch: { selectedTab = .friends },
-                        onOpenQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
+                        onOpenSearch: {},
+                        onOpenQR: { pushSocialDestination(.qrProfile) },
                         onOpenUsername: { username in
-                            socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                            pushSocialDestination(.friendProfile(username: username))
                         },
                         onSelectFriendForTrade: { friend in
                             openSeededTradeBuilder(with: friend)
                         },
-                        socialSelectedTab: $selectedTab,
+                        socialSelectedTab: selectedTabBinding,
                         headerInset: rootFloatingChromeInset
                     )
                 case .trades:
                     TradesView(
                         navigationPath: $socialNavigationPath,
-                        selectedTab: $selectedTab,
+                        selectedTab: selectedTabBinding,
                         headerInset: rootFloatingChromeInset
                     )
                 case .profile:
                     MyProfileView(
                         profile: profile,
-                        selectedTab: $selectedTab,
+                        selectedTab: selectedTabBinding,
                         selectedProfileTab: $selectedProfileTab,
                         headerInset: rootFloatingChromeInset,
-                        onOpenFriendsSearch: { socialNavigationPath.append(SocialDestination.search) },
-                        onOpenFriendsQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
+                        onOpenFriendsSearch: { openFriendSearch() },
+                        onOpenFriendsQR: { pushSocialDestination(.qrProfile) },
                         onOpenFriendUsername: { username in
-                            socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                            pushSocialDestination(.friendProfile(username: username))
                         },
                         onSelectFriendForTrade: { friend in
                             openSeededTradeBuilder(with: friend)
@@ -519,7 +601,7 @@ struct SocialRootView: View {
         let nextIndex = currentIndex + offset
         guard tabs.indices.contains(nextIndex) else { return }
         Haptics.lightImpact()
-        selectedTab = tabs[nextIndex]
+        selectedTabBinding.wrappedValue = tabs[nextIndex]
     }
 
     private func handleGoogleSignIn() async {
@@ -639,31 +721,31 @@ struct SocialRootView: View {
     private func route(destination: SocialDeepLinkDestination) async {
         switch destination {
         case .feed:
-            selectedTab = .feed
+            selectedTabBinding.wrappedValue = .feed
         case .friends, .friendRequests:
-            selectedTab = .friends
+            selectedTabBinding.wrappedValue = .friends
         case .profile(let username):
             if profile == nil {
                 profilePopoverPath = NavigationPath()
                 profilePopoverPath.append(AccountProfileView.Destination.editProfile)
                 showAccountProfile = true
             } else {
-                selectedTab = .profile
+                selectedTabBinding.wrappedValue = .profile
                 socialNavigationPath = NavigationPath()
-                socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                pushSocialDestination(.friendProfile(username: username))
             }
         case .content(let id):
-            selectedTab = .feed
+            selectedTabBinding.wrappedValue = .feed
             guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) else { return }
             deepLinkedCommentsContent = nil
             deepLinkedSharedContent = sharedContent
         case .post(let id):
-            selectedTab = .feed
+            selectedTabBinding.wrappedValue = .feed
             guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) else { return }
             deepLinkedSharedContent = nil
             deepLinkedCommentsContent = feedContentSummary(from: sharedContent)
         case .comment(let id):
-            selectedTab = .feed
+            selectedTabBinding.wrappedValue = .feed
             if let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) {
                 deepLinkedSharedContent = nil
                 deepLinkedCommentsContent = feedContentSummary(from: sharedContent)
@@ -674,7 +756,7 @@ struct SocialRootView: View {
             deepLinkedSharedContent = nil
             deepLinkedCommentsContent = feedContentSummary(from: sharedContent)
         case .wishlistMatch(let id):
-            selectedTab = .feed
+            selectedTabBinding.wrappedValue = .feed
             if let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) {
                 deepLinkedCommentsContent = nil
                 deepLinkedSharedContent = sharedContent
@@ -685,12 +767,13 @@ struct SocialRootView: View {
             deepLinkedCommentsContent = nil
             deepLinkedSharedContent = sharedContent
         case .trade(let id):
-            selectedTab = .trades
+            selectedTabBinding.wrappedValue = .trades
             socialNavigationPath = NavigationPath()
-            socialNavigationPath.append(SocialDestination.tradeDetail(tradeID: id))
+            pushSocialDestination(.tradeDetail(tradeID: id))
         case .tradesList:
-            selectedTab = .trades
+            selectedTabBinding.wrappedValue = .trades
             socialNavigationPath = NavigationPath()
+            isNavigationActive?.wrappedValue = false
         }
     }
 
@@ -707,14 +790,78 @@ struct SocialRootView: View {
         )
     }
 
+    private func handleChromeActionRequest() {
+        guard let request = chromeActionRequest?.wrappedValue else { return }
+        switch request.action {
+        case .newPost:
+            presentNewPost()
+        case .addFriend:
+            presentFriendSearch()
+        case .newTrade:
+            presentStartTradeSheet()
+        case .editProfile:
+            editProfile()
+        }
+        chromeActionRequest?.wrappedValue = nil
+    }
+
+    private func presentNewPost() {
+        isNewPostPresented = true
+    }
+
+    private func presentFriendSearch() {
+        selectedTabBinding.wrappedValue = .friends
+        isFriendSearchSheetPresented = true
+    }
+
+    private func openFriendSearch() {
+        selectedTabBinding.wrappedValue = .friends
+        pushSocialDestination(.search)
+    }
+
+    private func startNewTrade() {
+        presentStartTradeSheet()
+    }
+
+    private func presentStartTradeSheet() {
+        services.pendingTradeSeed = nil
+        services.isCreatingNewTrade = true
+        selectedTabBinding.wrappedValue = .trades
+        isStartTradeSheetPresented = true
+    }
+
+    private func editProfile() {
+        profilePopoverPath.append(AccountProfileView.Destination.editProfile)
+        showAccountProfile = true
+    }
+
+    private func updateNavigationActiveState() {
+        isNavigationActive?.wrappedValue = socialNavigationPath.count > 0
+    }
+
+    private func pushSocialDestination(_ destination: SocialDestination) {
+        isNavigationActive?.wrappedValue = true
+        socialNavigationPath.append(destination)
+    }
+
+    private func handleStartTradeSheetDismiss() {
+        guard let friend = pendingTradeSheetFriend else {
+            services.pendingTradeSeed = nil
+            services.isCreatingNewTrade = false
+            return
+        }
+        pendingTradeSheetFriend = nil
+        openSeededTradeBuilder(with: friend)
+    }
+
     private func openSeededTradeBuilder(with friend: SocialProfile) {
         // Always clear both trade-initiation flags regardless of path taken below.
         services.isCreatingNewTrade = false
 
         guard let seed = services.pendingTradeSeed else {
             // No pre-seeded card (came from Trade Wall + button) — open a blank builder.
-            socialNavigationPath.append(
-                SocialDestination.tradeBuilder(
+            pushSocialDestination(
+                .tradeBuilder(
                     receiverID: friend.id,
                     theirCards: [],
                     myCards: []
@@ -741,8 +888,8 @@ struct SocialRootView: View {
             }
         }()
         services.pendingTradeSeed = nil
-        socialNavigationPath.append(
-            SocialDestination.tradeBuilder(
+        pushSocialDestination(
+            .tradeBuilder(
                 receiverID: friend.id,
                 theirCards: theirCards,
                 myCards: myCards

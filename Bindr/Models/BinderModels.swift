@@ -295,7 +295,7 @@ enum BinderEmbossMode: String, CaseIterable, Identifiable, Codable {
     var displayName: String {
         switch self {
         case .fullCard: return "Full Card"
-        case .character: return "Character"
+        case .character: return "Sprite"
         }
     }
 }

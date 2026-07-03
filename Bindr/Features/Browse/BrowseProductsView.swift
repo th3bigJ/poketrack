@@ -1478,7 +1478,11 @@ private struct SealedProductPricingPanel: View {
                                 let x = value.location.x - plotFrame.origin.x
                                 guard x >= 0, x <= plotFrame.width else { return }
                                 if let date: Date = proxy.value(atX: x) {
-                                    scrubPoint = nearestPoint(to: date, in: points, resolution: resolution)
+                                    let candidate = nearestPoint(to: date, in: points, resolution: resolution)
+                                    if candidate?.id != scrubPoint?.id {
+                                        scrubPoint = candidate
+                                        Haptics.selectionChanged()
+                                    }
                                 }
                             }
                             .onEnded { _ in scrubPoint = nil }

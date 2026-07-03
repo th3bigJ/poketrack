@@ -132,6 +132,10 @@ struct RootView: View {
     @State private var browseNavigationPath = NavigationPath()
     @State private var collectionNavigationPath = NavigationPath()
     @State private var moreNavigationPath = NavigationPath()
+    @State private var socialSelectedTab: SocialTab = .feed
+    @State private var isSocialNavigationActive = false
+    @State private var socialChromeActionRequest: SocialRootChromeActionRequest?
+    @State private var suppressFloatingChromeRevealAnimation = false
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var selectedSealedProductPresentation: SealedProductPresentationContext?
     @State private var cachedSetNameByCode: [String: String] = [:]
@@ -303,6 +307,7 @@ struct RootView: View {
     private var showUniversalSearchBar: Bool {
         if isSearchExperiencePresented { return true }
         if selectedTab == .more { return false }
+        if selectedTab == .social && isSocialNavigationActive { return false }
         if selectedTab == .collect && !collectionNavigationPath.isEmpty { return false }
         return chromeScroll.barsVisible
     }
@@ -408,9 +413,24 @@ struct RootView: View {
 
     private var chromeExtraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
         if selectedTab == .social, services.socialAuth.isSignedIn {
-            return ("plus", "New Post", {
-                showSocialShareSheet = true
-            })
+            switch socialSelectedTab {
+            case .feed:
+                return ("plus", "New Post", {
+                    showSocialShareSheet = true
+                })
+            case .friends:
+                return ("plus", "Add Friend", {
+                    socialChromeActionRequest = SocialRootChromeActionRequest(action: .addFriend)
+                })
+            case .trades:
+                return ("plus", "Create trade", {
+                    socialChromeActionRequest = SocialRootChromeActionRequest(action: .newTrade)
+                })
+            case .profile:
+                return ("pencil", "Edit Profile", {
+                    socialChromeActionRequest = SocialRootChromeActionRequest(action: .editProfile)
+                })
+            }
         }
         return nil
     }
@@ -807,7 +827,11 @@ struct RootView: View {
     private var chromeSearchBarBottomInset: CGFloat { RootChromeEnvironment.searchBarBottomInset }
     private var chromeFloatingInset: CGFloat { RootChromeEnvironment.floatingContentTopInset }
     private var chromeSearchBarHiddenOffset: CGFloat { -(chromeFloatingInset + 18) }
-    private var chromeContentTopInset: CGFloat { isSearchDetailActive ? 0 : chromeFloatingInset }
+    private var chromeContentTopInset: CGFloat {
+        if isSearchDetailActive { return 0 }
+        if selectedTab == .social && isSocialNavigationActive { return 0 }
+        return chromeFloatingInset
+    }
 
     private static let searchPresentationAnimation: Animation = .easeOut(duration: 0.18)
     private static let searchFocusDelay: Duration = .milliseconds(140)
@@ -1063,8 +1087,8 @@ struct RootView: View {
                 tabBarTintColor = services.theme.accentColor
                 BindrApp.applyTabBarTint(accent: services.theme.accentColor)
             }
-            .onChange(of: selectedTab) { _, tab in
-                handleSelectedTabChange(tab)
+            .onChange(of: selectedTab) { previousTab, tab in
+                handleSelectedTabChange(from: previousTab, to: tab)
             }
             .onChange(of: browseNavigationPath.count) { _, newCount in
                 if newCount == 0 {
@@ -1088,8 +1112,15 @@ struct RootView: View {
             }
     }
 
-    private func handleSelectedTabChange(_ tab: AppTab) {
+    private func handleSelectedTabChange(from previousTab: AppTab, to tab: AppTab) {
         Haptics.selectionChanged()
+        if previousTab == .more, tab != .more {
+            suppressFloatingChromeRevealAnimation = true
+            Task { @MainActor in
+                await Task.yield()
+                suppressFloatingChromeRevealAnimation = false
+            }
+        }
         chromeScroll.configureForTab(tab)
         switch tab {
         case .browse:  browseTabVisited = true
@@ -1472,7 +1503,11 @@ struct RootView: View {
     private var socialTab: some View {
         NavigationStack {
             if socialTabVisited {
-                SocialRootView()
+                SocialRootView(
+                    selectedTab: $socialSelectedTab,
+                    isNavigationActive: $isSocialNavigationActive,
+                    chromeActionRequest: $socialChromeActionRequest
+                )
             } else {
                 Color.clear
             }
@@ -1602,6 +1637,12 @@ struct RootView: View {
     @ViewBuilder
     private func floatingSearchBar(hiddenOffset: CGFloat, topInset: CGFloat, bottomInset: CGFloat) -> some View {
         let visible = showUniversalSearchBar && !isSearchDetailActive
+        let shouldSuppressVisibilityAnimation = selectedTab == .more
+            || (selectedTab == .social && isSocialNavigationActive)
+            || suppressFloatingChromeRevealAnimation
+        let visibilityAnimation: Animation? = shouldSuppressVisibilityAnimation
+            ? nil
+            : isSearchExperiencePresented ? Self.searchPresentationAnimation : .easeInOut(duration: 0.22)
         universalSearchBarControl()
             .frame(maxWidth: .infinity)
             .offset(y: visible ? 0 : hiddenOffset)
@@ -1611,10 +1652,7 @@ struct RootView: View {
             .padding(.bottom, bottomInset)
             .frame(maxWidth: .infinity, alignment: .top)
             .allowsHitTesting(visible)
-            .animation(
-                isSearchExperiencePresented ? Self.searchPresentationAnimation : .easeInOut(duration: 0.22),
-                value: visible
-            )
+            .animation(visibilityAnimation, value: visible)
     }
 
     private func universalSearchBarControl(

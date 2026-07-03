@@ -260,7 +260,7 @@ struct BinderStyleEditorSections: View {
 
     private var characterEmbossPicker: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Character")
+            Text("Sprite")
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(.secondary)
 
@@ -523,7 +523,7 @@ struct BinderStyleEditorSections: View {
         switch mode {
         case .cards: return "Fan the first cards across the cover"
         case .clean: return "Keep the material and title uncluttered"
-        case .embossed: return "Press a card or character into the surface"
+        case .embossed: return "Press a card or sprite into the surface"
         }
     }
 

@@ -2,6 +2,9 @@ import SwiftUI
 
 struct FriendSearchView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.dismiss) private var dismiss
+
+    var showsDoneButton = false
 
     @State private var query = ""
     @State private var results: [SocialFriendService.FriendSearchResult] = []
@@ -79,6 +82,13 @@ struct FriendSearchView: View {
             placement: .navigationBarDrawer(displayMode: .always),
             prompt: "Search username"
         )
+        .toolbar {
+            if showsDoneButton {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                }
+            }
+        }
         .onChange(of: query) { _, _ in
             scheduleSearch()
         }

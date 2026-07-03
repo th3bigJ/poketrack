@@ -5,7 +5,6 @@ import SwiftUI
 struct FeedItemView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.restoreTabBarChrome) private var restoreTabBarChrome
     let group: GroupedFeedItem
     var showsInteractionBar: Bool = true
     var isCardTapEnabled: Bool = true
@@ -133,7 +132,6 @@ struct FeedItemView: View {
         .glassInsetStyle(cornerRadius: 16)
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
-            restoreTabBarChrome?()
         }) {
             if let content = item.content {
                 NavigationStack {

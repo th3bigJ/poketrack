@@ -97,6 +97,13 @@ struct SharedBinderView: View {
 
     private var slotsPerPage: Int { layout.slotsPerPage ?? 9 }
     private var cols: Int { layout.columns }
+    private var rows: Int { layout.rows }
+    private var cardAspectRatio: CGFloat { 5.0 / 7.0 }
+    private var surfaceHorizontalChrome: CGFloat { 46 }
+    private var surfaceVerticalChrome: CGFloat { 28 }
+    private var slotSpacing: CGFloat { 8 }
+    private var totalGridSpacingX: CGFloat { CGFloat(max(cols - 1, 0)) * slotSpacing }
+    private var totalGridSpacingY: CGFloat { CGFloat(max(rows - 1, 0)) * slotSpacing }
 
     /// Number of pages needed to cover the highest occupied position. Empty
     /// binders still get one page so the grid surface always has something to
@@ -214,38 +221,41 @@ struct SharedBinderView: View {
     private func binderPageSize(in available: CGSize) -> CGSize {
         let horizontalPadding: CGFloat = 32
         let verticalPadding: CGFloat = 40
-        var width = available.width - horizontalPadding
-        var height = available.height - verticalPadding
 
-        // Calculate aspect-aware grid height to eliminate dead space at the bottom.
-        // We mirror BinderDetailView's logic here: calculate the width available
-        // for cells, derive the resulting grid height from the card aspect ratio (5:7),
-        // and shrink the container height if it's too tall for the actual content.
-        let cardAspectRatio: CGFloat = 5/7
-        let slotSpacing: CGFloat = 8
-        let surfaceHorizontalChrome: CGFloat = 28 // 14 padding * 2
-        let surfaceVerticalChrome: CGFloat = 28   // 14 top + 14 bottom padding
-        let rows = Int(ceil(Double(slotsPerPage) / Double(cols)))
-        
-        let totalGridSpacingX = CGFloat(max(cols - 1, 0)) * slotSpacing
-        let totalGridSpacingY = CGFloat(max(rows - 1, 0)) * slotSpacing
-        let contentWidth = max(width - surfaceHorizontalChrome, 120)
-        let cellWidth = (contentWidth - totalGridSpacingX) / CGFloat(cols)
-        let gridHeight = cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
-        let desiredHeight = gridHeight + surfaceVerticalChrome
+        let maxWidth = max(available.width - horizontalPadding, 240)
+        let maxHeight = max(available.height - verticalPadding, 320)
 
-        if desiredHeight < height {
-            height = desiredHeight
-        } else {
-            // If the grid wants more room than available, shrink cells to fit.
-            let availableForGrid = height - surfaceVerticalChrome
-            let shrunkCellHeight = max((availableForGrid - totalGridSpacingY) / CGFloat(rows), 40)
-            let shrunkCellWidth = shrunkCellHeight * cardAspectRatio
-            let shrunkContentWidth = shrunkCellWidth * CGFloat(cols) + totalGridSpacingX
-            width = min(width, shrunkContentWidth + surfaceHorizontalChrome)
+        var width = maxWidth
+        var height = naturalGridHeight(forPageWidth: width) + surfaceVerticalChrome
+
+        if height > maxHeight {
+            height = maxHeight
+            width = min(maxWidth, gridWidth(forTargetContentHeight: maxHeight - surfaceVerticalChrome))
         }
 
-        return CGSize(width: width, height: height)
+        return CGSize(width: max(width, 120), height: max(height, 160))
+    }
+
+    private func naturalGridHeight(forPageWidth pageWidth: CGFloat) -> CGFloat {
+        let contentWidth = max(pageWidth - surfaceHorizontalChrome, 40)
+        let cellWidth = (contentWidth - totalGridSpacingX) / CGFloat(cols)
+        return cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
+    }
+
+    private func gridWidth(forTargetContentHeight targetHeight: CGFloat) -> CGFloat {
+        let cellWidth = max(targetHeight - totalGridSpacingY, 20) * cardAspectRatio / CGFloat(rows)
+        return cellWidth * CGFloat(cols) + totalGridSpacingX + surfaceHorizontalChrome
+    }
+
+    private func gridCellSize(for pageSize: CGSize) -> CGSize {
+        let availableWidth = max(pageSize.width - surfaceHorizontalChrome - totalGridSpacingX, 20)
+        let availableHeight = max(pageSize.height - surfaceVerticalChrome - totalGridSpacingY, 20)
+
+        let widthDrivenCellWidth = availableWidth / CGFloat(cols)
+        let heightDrivenCellWidth = (availableHeight / CGFloat(rows)) * cardAspectRatio
+
+        let cellWidth = min(widthDrivenCellWidth, heightDrivenCellWidth)
+        return CGSize(width: cellWidth, height: cellWidth / cardAspectRatio)
     }
 
     private var pagedSurface: some View {
@@ -302,8 +312,8 @@ struct SharedBinderView: View {
     /// border, with the card grid sitting on top of all of it.
     private func pageSurface(pageIdx: Int, pageSize: CGSize) -> some View {
         let surfaceRadius: CGFloat = 22
-        let slotSpacing: CGFloat = 8
         let positions = positions(for: pageIdx)
+        let cellSize = gridCellSize(for: pageSize)
 
         return ZStack {
             // 1. Base: binder colour + procedural cross-hatch weave (felt/baize).
@@ -341,7 +351,10 @@ struct SharedBinderView: View {
 
             // 2. Card grid on top of the playmat.
             LazyVGrid(
-                columns: Array(repeating: GridItem(.flexible(), spacing: slotSpacing), count: cols),
+                columns: Array(
+                    repeating: GridItem(.fixed(cellSize.width), spacing: slotSpacing),
+                    count: cols
+                ),
                 spacing: slotSpacing
             ) {
                 ForEach(positions, id: \.self) { pos in
@@ -352,13 +365,22 @@ struct SharedBinderView: View {
                             emptySlot
                         }
                     }
-                    .aspectRatio(5/7, contentMode: .fit)
+                    .frame(width: cellSize.width, height: cellSize.height)
                 }
             }
-            .padding(.horizontal, 14)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.leading, 32)
+            .padding(.trailing, 14)
             .padding(.top, 14)
             .padding(.bottom, 14)
+
+            HStack {
+                binderRingSpine(pageHeight: pageSize.height)
+                    .padding(.leading, 8)
+                Spacer(minLength: 0)
+            }
         }
+        .frame(width: pageSize.width, height: pageSize.height)
     }
 
     /// Free-scroll layout — used when the publisher chose `freeScroll` instead
@@ -394,6 +416,61 @@ struct SharedBinderView: View {
             .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
+        }
+    }
+
+    private func binderRingSpine(pageHeight: CGFloat) -> some View {
+        ZStack(alignment: .top) {
+            ForEach(Array(BinderRingGuide.normalizedYPositions.enumerated()), id: \.offset) { _, yPosition in
+                binderRing()
+                    .position(x: 8, y: pageHeight * yPosition)
+            }
+        }
+        .frame(width: 16, height: pageHeight)
+        .allowsHitTesting(false)
+    }
+
+    private func binderRing() -> some View {
+        ZStack {
+            Circle()
+                .fill(
+                    LinearGradient(
+                        colors: [
+                            Color(white: 0.62),
+                            Color(white: 0.30),
+                            Color(white: 0.10)
+                        ],
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
+                )
+                .frame(width: 16, height: 16)
+                .shadow(color: .black.opacity(0.55), radius: 1.2, x: 0, y: 1.2)
+
+            Circle()
+                .fill(Color.black.opacity(0.92))
+                .frame(width: 8, height: 8)
+                .overlay {
+                    Circle()
+                        .stroke(Color.black.opacity(0.6), lineWidth: 0.5)
+                        .blur(radius: 0.8)
+                }
+
+            Circle()
+                .trim(from: 0.62, to: 0.92)
+                .stroke(
+                    LinearGradient(
+                        colors: [
+                            Color.white.opacity(0.0),
+                            Color.white.opacity(0.75),
+                            Color.white.opacity(0.0)
+                        ],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    ),
+                    style: StrokeStyle(lineWidth: 1.2, lineCap: .round)
+                )
+                .frame(width: 14, height: 14)
         }
     }
 
