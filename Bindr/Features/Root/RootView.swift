@@ -774,7 +774,7 @@ struct RootView: View {
             // Pick it up explicitly here.
             if let queuedURL = services.socialPush.queuedDeepLinkURL,
                queuedURL.scheme?.lowercased() == "bindr" {
-                selectedTab = .social
+                selectTab(.social)
                 await services.socialAuth.restoreSession()
             }
         }
@@ -883,7 +883,7 @@ struct RootView: View {
         if let url = URL(string: "bindr://social/feed?content_id=\(contentID.uuidString)") {
             handleSocialDeepLink(url)
         } else {
-            selectedTab = .social
+            selectTab(.social)
         }
     }
 
@@ -1114,13 +1114,6 @@ struct RootView: View {
 
     private func handleSelectedTabChange(from previousTab: AppTab, to tab: AppTab) {
         Haptics.selectionChanged()
-        if previousTab == .more, tab != .more {
-            suppressFloatingChromeRevealAnimation = true
-            Task { @MainActor in
-                await Task.yield()
-                suppressFloatingChromeRevealAnimation = false
-            }
-        }
         chromeScroll.configureForTab(tab)
         switch tab {
         case .browse:  browseTabVisited = true
@@ -1304,8 +1297,16 @@ struct RootView: View {
         .presentationDragIndicator(.visible)
     }
 
+    private var appTabSelection: Binding<AppTab> {
+        Binding {
+            selectedTab
+        } set: { tab in
+            selectTab(tab)
+        }
+    }
+
     private var tabViewShell: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: appTabSelection) {
             dashboardTab
             browseTab
             collectTab
@@ -1353,28 +1354,28 @@ struct RootView: View {
         var path = NavigationPath()
         path.append(SideMenuPage.transactions)
         moreNavigationPath = path
-        selectedTab = .more
+        selectTab(.more)
     }
 
     private func dashboardOpenCollection() {
         collectionNavigationPath = NavigationPath()
         collectSegment = .collection
         collectContentTypeTab = .cards
-        selectedTab = .collect
+        selectTab(.collect)
     }
 
     private func dashboardOpenSealedProducts() {
         collectionNavigationPath = NavigationPath()
         collectSegment = .collection
         collectContentTypeTab = .products
-        selectedTab = .collect
+        selectTab(.collect)
     }
 
     private func dashboardOpenWishlist() {
         collectionNavigationPath = NavigationPath()
         collectSegment = .wishlist
         collectContentTypeTab = .cards
-        selectedTab = .collect
+        selectTab(.collect)
     }
 
     private func dashboardOpenDecks() {
@@ -1382,7 +1383,7 @@ struct RootView: View {
         var path = NavigationPath()
         path.append(SideMenuPage.decks)
         moreNavigationPath = path
-        selectedTab = .more
+        selectTab(.more)
     }
 
     private func dashboardOpenProgressTarget(_ target: DashboardProgressTarget) {
@@ -1408,7 +1409,7 @@ struct RootView: View {
         }
 
         browseTabVisited = true
-        selectedTab = .browse
+        selectTab(.browse)
     }
 
     private var browseTab: some View {
@@ -1751,7 +1752,21 @@ struct RootView: View {
         if let url = URL(string: "bindr://social/trades") {
             handleSocialDeepLink(url)
         } else {
-            selectedTab = .social
+            selectTab(.social)
+        }
+    }
+
+    private func selectTab(_ tab: AppTab) {
+        guard tab != selectedTab else { return }
+        if selectedTab == .more, tab != .more {
+            suppressFloatingChromeRevealAnimation = true
+        }
+        selectedTab = tab
+        if suppressFloatingChromeRevealAnimation {
+            Task { @MainActor in
+                await Task.yield()
+                suppressFloatingChromeRevealAnimation = false
+            }
         }
     }
 
@@ -1767,7 +1782,7 @@ struct RootView: View {
                         var transaction = Transaction()
                         transaction.disablesAnimations = true
                         withTransaction(transaction) {
-                            selectedTab = tab
+                            selectTab(tab)
                         }
                     } label: {
                         VStack(spacing: 4) {
@@ -1921,7 +1936,7 @@ struct RootView: View {
         if let url = URL(string: "bindr://social/friends") {
             services.socialPush.queueDeepLink(url: url)
         }
-        selectedTab = .social
+        selectTab(.social)
     }
 
     private var wishlistRemovalPromptIsPresented: Binding<Bool> {
@@ -1941,7 +1956,7 @@ struct RootView: View {
         if services.socialPush.queuedDeepLinkURL != url {
             services.socialPush.queueDeepLink(url: url)
         }
-        selectedTab = .social
+        selectTab(.social)
         Task {
             await services.socialAuth.restoreSession()
         }

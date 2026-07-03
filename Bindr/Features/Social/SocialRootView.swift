@@ -149,6 +149,7 @@ struct SocialRootView: View {
     @State private var selectedProfileTab: MyProfileView.ProfileTab = .posts
     @State private var isAlertsPresented = false
     @State private var isNewPostPresented = false
+    @State private var isEditProfilePresented = false
     @State private var isFriendSearchSheetPresented = false
     @State private var isStartTradeSheetPresented = false
     @State private var pendingTradeSheetFriend: SocialProfile?
@@ -198,6 +199,26 @@ struct SocialRootView: View {
             profilePopover
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $isEditProfilePresented) {
+            NavigationStack {
+                EditProfileView(
+                    existingProfile: profile,
+                    onSignOutTapped: {
+                        services.socialAuth.signOut()
+                        profile = nil
+                        profilePopoverPath = NavigationPath()
+                        showAccountProfile = false
+                        isEditProfilePresented = false
+                    }
+                ) { payload in
+                    try await handleProfileSave(payload: payload)
+                }
+                .id(profile?.id)
+                .environment(services)
+            }
+            .presentationDetents([.large])
+            .presentationDragIndicator(.visible)
         }
         .sheet(item: $deepLinkedSharedContent) { content in
             NavigationStack {
@@ -831,8 +852,61 @@ struct SocialRootView: View {
     }
 
     private func editProfile() {
-        profilePopoverPath.append(AccountProfileView.Destination.editProfile)
-        showAccountProfile = true
+        isEditProfilePresented = true
+    }
+
+    private func handleProfileSave(payload: SocialProfileFormPayload) async throws {
+        if profile == nil {
+            profile = try await services.socialProfile.saveProfile(
+                username: payload.username,
+                displayName: payload.displayName,
+                bio: payload.bio,
+                profileRoles: payload.profileRoles,
+                favoritePokemonDex: payload.favoritePokemonDex,
+                favoritePokemonName: payload.favoritePokemonName,
+                favoritePokemonImageURL: payload.favoritePokemonImageURL,
+                favoriteCardID: payload.favoriteCardID,
+                favoriteCardName: payload.favoriteCardName,
+                favoriteCardSetCode: payload.favoriteCardSetCode,
+                favoriteCardImageURL: payload.favoriteCardImageURL,
+                favoriteDeckArchetype: payload.favoriteDeckArchetype,
+                avatarBackgroundColor: payload.avatarBackgroundColor,
+                avatarOutlineStyle: payload.avatarOutlineStyle,
+                collectionCardCount: payload.collectionCardCount,
+                collectionBinderCount: payload.collectionBinderCount,
+                collectionDeckCount: payload.collectionDeckCount,
+                friendCount: payload.friendCount,
+                collectionTotalValue: payload.collectionTotalValue,
+                premiumBadgeStyle: payload.premiumBadgeStyle
+            )
+        } else {
+            profile = try await services.socialProfile.updateProfile(
+                displayName: payload.displayName,
+                bio: payload.bio,
+                profileRoles: payload.profileRoles,
+                favoritePokemonDex: payload.favoritePokemonDex,
+                favoritePokemonName: payload.favoritePokemonName,
+                favoritePokemonImageURL: payload.favoritePokemonImageURL,
+                favoriteCardID: payload.favoriteCardID,
+                favoriteCardName: payload.favoriteCardName,
+                favoriteCardSetCode: payload.favoriteCardSetCode,
+                favoriteCardImageURL: payload.favoriteCardImageURL,
+                favoriteDeckArchetype: payload.favoriteDeckArchetype,
+                avatarBackgroundColor: payload.avatarBackgroundColor,
+                avatarOutlineStyle: payload.avatarOutlineStyle,
+                collectionCardCount: payload.collectionCardCount,
+                collectionBinderCount: payload.collectionBinderCount,
+                collectionDeckCount: payload.collectionDeckCount,
+                friendCount: payload.friendCount,
+                collectionTotalValue: payload.collectionTotalValue,
+                premiumBadgeStyle: payload.premiumBadgeStyle
+            )
+        }
+
+        _ = try? await services.socialFeed.fetchFeed(refresh: true)
+        profilePopoverPath = NavigationPath()
+        showAccountProfile = false
+        isEditProfilePresented = false
     }
 
     private func updateNavigationActiveState() {
